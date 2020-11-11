@@ -1,13 +1,8 @@
 ---
-title: "TypeName Element for EntrySelectedBy for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b8b6739b-770c-432a-95ab-551c7507c51f
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for EntrySelectedBy for GroupBy (Format)
+description: TypeName Element for EntrySelectedBy for GroupBy (Format)
 ---
 # TypeName Element for EntrySelectedBy for GroupBy (Format)
 

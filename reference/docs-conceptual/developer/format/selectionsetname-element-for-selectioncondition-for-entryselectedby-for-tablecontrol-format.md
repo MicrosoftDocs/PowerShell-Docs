@@ -1,13 +1,8 @@
 ---
-title: "SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 17ae4d6b-dc95-4a1d-8e32-31ff084a951f
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl (Format)
+description: SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl (Format)
 ---
 # SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl (Format)
 

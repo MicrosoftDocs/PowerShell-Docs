@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 04/22/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/show-controlpanelitem?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -93,7 +93,7 @@ characters are permitted. If you enter multiple names, this cmdlet opens control
 match any of the names, as if the items in the name list were separated by an **OR** operator.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CanonicalName
 Aliases:
 
@@ -111,7 +111,7 @@ that contains control panel item objects, or type a command or expression that g
 item objects, such as `Get-ControlPanelItem`.
 
 ```yaml
-Type: ControlPanelItem[]
+Type: Microsoft.PowerShell.Commands.ControlPanelItem[]
 Parameter Sets: ControlPanelItem
 Aliases:
 
@@ -129,7 +129,7 @@ names, this cmdlet opens control panel items that match any of the names, as if 
 name list were separated by an **OR** operator.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: RegularName
 Aliases:
 
@@ -163,4 +163,3 @@ This cmdlet does not return any output.
 ## RELATED LINKS
 
 [Get-ControlPanelItem](Get-ControlPanelItem.md)
-

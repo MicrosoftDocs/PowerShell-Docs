@@ -1,13 +1,8 @@
 ---
-title: "Name Element for Control for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b4371d45-49a4-4303-8384-5b54105bd0d6
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: Name Element for Control for Controls for Configuration (Format)
+description: Name Element for Control for Controls for Configuration (Format)
 ---
 # Name Element for Control for Controls for Configuration (Format)
 

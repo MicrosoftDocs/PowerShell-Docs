@@ -1,13 +1,8 @@
 ---
-title: "RightIndent Element for Frame for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3a6cedcc-0437-4312-961e-0845cc249532
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: RightIndent Element for Frame for Controls for Configuration (Format)
+description: RightIndent Element for Frame for Controls for Configuration (Format)
 ---
 # RightIndent Element for Frame for Controls for Configuration (Format)
 

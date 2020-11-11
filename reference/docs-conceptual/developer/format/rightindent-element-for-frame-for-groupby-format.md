@@ -1,13 +1,8 @@
 ---
-title: "RightIndent Element for Frame for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 43f940db-62e9-4c4d-945c-6f6f48880868
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: RightIndent Element for Frame for GroupBy (Format)
+description: RightIndent Element for Frame for GroupBy (Format)
 ---
 # RightIndent Element for Frame for GroupBy (Format)
 

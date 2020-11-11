@@ -1,13 +1,8 @@
 ---
-title: "RunSpace05 Code Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 9688cd69-07ea-4ea0-8822-0a4850bcf86c
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: RunSpace05 Code Sample
+description: RunSpace05 Code Sample
 ---
 # RunSpace05 Code Sample
 
@@ -26,7 +21,7 @@ pipeline with a single command, and then execute the pipeline. The command that 
 
 ## Code Sample
 
-[!code-csharp[Runspace05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace05/Runspace05.cs#L11-L86 "Runspace05.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace05/Runspace05.cs" range="11-86":::
 
 ## See Also
 

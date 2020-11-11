@@ -2,6 +2,7 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Manipulating Items Directly
+description: PowerShell provides several cmdlets that help manage items on local and remote computers. Items are objects exposed by PowerShell providers like the file system, registry, certificates, and others.
 ---
 # Manipulating Items Directly
 

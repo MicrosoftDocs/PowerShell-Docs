@@ -1,13 +1,8 @@
 ---
-title: "ScriptBlock Element for SelectionCondition for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 08512496-5682-4539-ab56-0c5394ce1f01
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: ScriptBlock Element for SelectionCondition for Controls for View (Format)
+description: ScriptBlock Element for SelectionCondition for Controls for View (Format)
 ---
 # ScriptBlock Element for SelectionCondition for Controls for View (Format)
 

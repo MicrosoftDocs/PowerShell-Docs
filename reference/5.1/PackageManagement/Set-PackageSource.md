@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PackageManagement
 ms.date: 04/03/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/set-packagesource?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -89,7 +89,7 @@ PS C:\> Set-PackageSource -Name MyNuget -NewName NewNuGet -Trusted -ProviderName
 Specifies a configuration file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
 Aliases:
 
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 Specifies a user account that has permission to install package providers.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -138,7 +138,7 @@ Indicates that `Set-PackageSource` forces **PackageManagement** to automatically
 provider.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -155,7 +155,7 @@ Specifies a package source ID object that represents the package that you want t
 source IDs are part of the results of the `Get-PackageSource` cmdlet.
 
 ```yaml
-Type: PackageSource
+Type: Microsoft.PackageManagement.Packaging.PackageSource
 Parameter Sets: SourceByInputObject
 Aliases:
 
@@ -172,7 +172,7 @@ Specifies the current package source location. The value can be a URI, a file pa
 destination format supported by the package provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SourceBySearch
 Aliases:
 
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 Specifies a package source's name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SourceBySearch
 Aliases: SourceName
 
@@ -205,7 +205,7 @@ Specifies the new location for a package source. The value can be a URI, a file 
 destination format supported by the package provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -221,7 +221,7 @@ Accept wildcard characters: False
 Specifies the new name you assign to a package source.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -237,7 +237,7 @@ Accept wildcard characters: False
 Specifies a package management provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
 Aliases:
 
@@ -253,10 +253,10 @@ Accept wildcard characters: False
 Specifies a provider name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SourceBySearch
 Aliases: Provider
-Accepted values: Bootstrap, msi, msu, NuGet, PowerShellGet, Programs
+Accepted values: Bootstrap, NuGet, PowerShellGet
 
 Required: False
 Position: Named
@@ -270,7 +270,7 @@ Accept wildcard characters: False
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -287,7 +287,7 @@ Specifies a user account that has permission to use the proxy server that is spe
 **Proxy** parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -303,7 +303,7 @@ Accept wildcard characters: False
 Specifies the publish location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
 Aliases:
 
@@ -319,7 +319,7 @@ Accept wildcard characters: False
 Specifies the script publish location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
 Aliases:
 
@@ -335,7 +335,7 @@ Accept wildcard characters: False
 Specifies the script source location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
 Aliases:
 
@@ -351,7 +351,7 @@ Accept wildcard characters: False
 Switch that skips validating the credentials of a package source.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
 Aliases:
 
@@ -368,7 +368,7 @@ Indicates that the source is a trusted package provider. Trusted sources don't p
 verification to install packages.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -384,7 +384,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -400,7 +400,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

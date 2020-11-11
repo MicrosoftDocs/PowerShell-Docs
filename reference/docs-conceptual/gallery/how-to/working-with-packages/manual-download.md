@@ -1,15 +1,14 @@
 ---
 ms.date:  09/11/2018
-contributor:  JKeithB
-keywords:  gallery,powershell,psgallery
 title:  Manual Package Download
+description: Describes how to manually download a package from the PowerShell Gallery.
 ---
 
 # Manual Package Download
 
 The PowerShell Gallery supports downloading a package from the website directly, without using the
-PowerShellGet cmdlets. You can download any package as a NuGet package (`.nupkg`) file, which you can
-then copy to an internal repository.
+PowerShellGet cmdlets. You can download any package as a NuGet package (`.nupkg`) file, which you
+can then copy to an internal repository.
 
 > [!NOTE]
 > Manual package download is **not** intended as a replacement for the `Install-Module` cmdlet.
@@ -20,7 +19,7 @@ then copy to an internal repository.
 
 Each page has a link for Manual Download, as shown here:
 
-![Manual Download](media/manual-download/packagedisplaypagewithpseditions.png)
+![Package display page with install options](media/manual-download/packagedisplaypagewithpseditions.png)
 
 To download manually, click on **Download the raw nupkg file**. A copy of the package is copied to
 the download folder for your browser with the name `<name>.<version>.nupkg`.
@@ -51,13 +50,14 @@ For the list of NuGet-specific elements, see [Using manual download to acquire a
 
 The steps are as follows:
 
-1. Unblock the Internet-downloaded NuGet package (`.nupkg`) file, for example using `Unblock-File -Path C:\Downloads\module.nupkg` cmdlet.
-2. Extract the contents of the NuGet package to a local folder.
-2. Delete the NuGet-specific elements from the folder.
-3. Rename the folder. The default folder name is usually `<name>.<version>`. The version can
+1. Unblock the Internet-downloaded NuGet package (`.nupkg`) file, for example using
+   `Unblock-File -Path C:\Downloads\module.nupkg` cmdlet.
+1. Extract the contents of the NuGet package to a local folder.
+1. Delete the NuGet-specific elements from the folder.
+1. Rename the folder. The default folder name is usually `<name>.<version>`. The version can
    include `-prerelease` if the module is tagged as a prerelease version. Rename the folder to just
    the module name. For example, `azurerm.storage.5.0.4-preview` becomes `azurerm.storage`.
-4. Copy the folder to one of the folders in the `$env:PSModulePath value`. `$env:PSModulePath` is a
+1. Copy the folder to one of the folders in the `$env:PSModulePath value`. `$env:PSModulePath` is a
    semicolon-delimited set of paths in which PowerShell should look for modules.
 
 > [!IMPORTANT]
@@ -75,10 +75,11 @@ The easiest approach is to extract the NuGet package, then use the script direct
 
 The steps are as follows:
 
-1. Unblock the Internet-downloaded NuGet package (`.nupkg`) file, for example using `Unblock-File -Path C:\Downloads\package.nupkg` cmdlet.
-2. Extract the contents of the NuGet package.
-2. The `.PS1` file in the folder can be used directly from this location.
-3. You may delete the NuGet-specific elements in the folder.
+1. Unblock the Internet-downloaded NuGet package (`.nupkg`) file, for example using
+   `Unblock-File -Path C:\Downloads\package.nupkg` cmdlet.
+1. Extract the contents of the NuGet package.
+1. The `.PS1` file in the folder can be used directly from this location.
+1. You may delete the NuGet-specific elements in the folder.
 
 For the list of NuGet-specific elements, see [Using manual download to acquire a package](#using-manual-download-to-acquire-a-package).
 

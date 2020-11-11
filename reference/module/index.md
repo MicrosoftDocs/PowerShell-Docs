@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: landing-page
 ms.manager: carmonm
-ms.date: 10/17/2019
+ms.date: 06/23/2020
 archive_url: ''
 layout: ApiBrowserPage
 apiPlatform: powershell
-quickFilterColumn1: powershell-6,win10-ps
-quickFilterColumn2: azps-2.8.0,win-mdop2-ps
-quickFilterColumn3: sqlserver-ps,systemcenter-ps-2016
+quickFilterColumn1: powershell-7,win10-ps
+quickFilterColumn2: azps-5.0.0,win-mdop2-ps
+quickFilterColumn3: sqlserver-ps,systemcenter-ps-2019
 ---
 
 # PowerShell Module Browser

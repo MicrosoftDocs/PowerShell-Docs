@@ -1,13 +1,8 @@
 ---
-title: "Frame Element for CustomItem for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ab2a5379-299d-4c97-86a2-b639ea890fae
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: Frame Element for CustomItem for GroupBy (Format)
+description: Frame Element for CustomItem for GroupBy (Format)
 ---
 # Frame Element for CustomItem for GroupBy (Format)
 

@@ -1,6 +1,7 @@
 ---
+description:  Describes new features that are included in Windows PowerShell 5.1. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 01/17/2018
 online version: https://docs.microsoft.com/powershell/module/?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -42,8 +43,7 @@ Be sure to read the download details, and meet all system requirements, before
 you install Windows Management Framework 5.1.
 
 You can also read about changes to Windows PowerShell 5.1 in
-[What's New in Windows PowerShell](/powershell/scripting/whats-new/what-s-new-with-powershell).
-
+[What's New in Windows PowerShell](/powershell/scripting/windows-powershell/whats-new/what-s-new-in-windows-powershell-50).
 
 ## New Scenarios and Features in WMF 5.1
 

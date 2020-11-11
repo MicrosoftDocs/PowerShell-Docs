@@ -1,9 +1,9 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 2/22/2019
+ms.date: 05/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-history?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-History
@@ -12,7 +12,7 @@ title: Clear-History
 # Clear-History
 
 ## SYNOPSIS
-Deletes entries from the PowerShell command history.
+Deletes entries from the PowerShell session command history.
 
 ## SYNTAX
 
@@ -41,8 +41,8 @@ use parameters with `Clear-History` to delete selected commands.
 a history file that contains every PowerShell command from every PowerShell session. From a
 PowerShell prompt, use the up and down arrows on your keyboard to scroll through the command
 history. To display the `PSReadLine` configuration for command history, use `Get-PSReadLineOption`.
-`PSReadLine` shipped with PowerShell 5.0 and above. For more information, see [PSReadLine](../PSReadLine/PSReadLine.md)
-and [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
+`PSReadLine` shipped with PowerShell 5.0 and above. For more information, see
+[about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
 ## EXAMPLES
 
@@ -50,20 +50,25 @@ and [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
 This command deletes all of the commands from a PowerShell session's history.
 
+```powershell
+Get-History
 ```
-PS> Get-History
 
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location .\Test
    2 Update-Help
    3 Set-Location C:\Test\Logs
    4 Get-Location
+```
 
-PS> Clear-History
+```powershell
+Clear-History
+Get-History
+```
 
-PS> Get-History
-
+```Output
   Id CommandLine
   -- -----------
    5 Clear-History
@@ -78,9 +83,11 @@ history was deleted.
 This command uses the **Count** and **Newest** parameters to delete the newest commands from a
 PowerShell session's history.
 
+```powershell
+Get-History
 ```
-PS> Get-History
 
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -93,11 +100,14 @@ PS> Get-History
    8 Set-Location C:\Test\Logs
    9 Get-Help Get-Variable
   10 Get-Help Get-ChildItem
+```
 
-PS> Clear-History -Count 5 -Newest
+```powershell
+Clear-History -Count 5 -Newest
+Get-History
+```
 
-PS> Get-History
-
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -118,9 +128,11 @@ five newest commands were deleted, **Id 6** - **Id 10**.
 
 This command deletes commands that match specific criteria defined by the **CommandLine** parameter.
 
+```powershell
+Get-History
 ```
-PS C:\Test> Get-History
 
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -130,11 +142,14 @@ PS C:\Test> Get-History
    5 Get-Help Get-Alias
    6 Get-Command Get-ChildItem -Syntax
    7 Get-Help Clear-History
+```
 
-PS> Clear-History -CommandLine *Help*, *Syntax
+```powershell
+Clear-History -CommandLine *Help*, *Syntax
+Get-History
+```
 
-PS> Get-History
-
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -153,9 +168,11 @@ command history. The **CommandLine** parameter specifies commands that contain *
 This command deletes specific history items using the **Id**. To delete multiple commands, submit a
 comma-separated list of **Id** numbers.
 
+```powershell
+Get-History
 ```
-PS> Get-History
 
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -164,11 +181,14 @@ PS> Get-History
    4 Get-Command Clear-History
    5 Get-Command Clear-History -Syntax
    6 Get-Command Clear-History -ShowCommandInfo
+```
 
-PS C:\> Clear-History -Id 3, 5
+```powershell
+Clear-History -Id 3, 5
+Get-History
+```
 
-PS> Get-History
-
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -188,9 +208,11 @@ updated command history and confirms that **Id 3** and **Id 5** were deleted.
 This command uses the **Id** and **Count** parameters to delete command history. Commands are
 deleted from the specified **Id** in reverse order, newest to oldest.
 
+```powershell
+Get-History
 ```
-PS> Get-History
 
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -203,11 +225,14 @@ PS> Get-History
    8 Set-Location C:\Test\Logs
    9 Get-Help Get-Variable
   10 Get-Help Get-ChildItem
+```
 
-PS> Clear-History -Id 7 -Count 5
+```powershell
+Clear-History -Id 7 -Count 5
+Get-History
+```
 
-PS> Get-History
-
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -235,7 +260,7 @@ enter more than one string, `Clear-History` deletes commands that match any of t
 For strings with a space, use single quotations. For more information, see [about_Quoting_Rules](About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CommandLineParameter
 Aliases:
 
@@ -261,7 +286,7 @@ commands to delete that match **CommandLine** parameter value. The commands are 
 sequential order.
 
 ```yaml
-Type: Int
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -279,7 +304,7 @@ the `Get-History` cmdlet. The **Id** numbers are sequential and commands keep th
 throughout a PowerShell session. The **Id** parameter can be used with **Count** and **Newest**.
 
 ```yaml
-Type: Int[]
+Type: System.Int32[]
 Parameter Sets: IDParameter
 Aliases:
 
@@ -301,7 +326,7 @@ the number of commands to delete, inclusive of the specified **Id**. Beginning a
 is 10, `Clear-History` deletes items 30 through 39.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -317,7 +342,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the `Clear-History` cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -333,7 +358,7 @@ Accept wildcard characters: False
 Shows what would happen if the `Clear-History` cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -348,7 +373,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -368,6 +394,10 @@ The PowerShell session history is a list of the commands entered during a PowerS
 can view the history, add and delete commands, and run commands from the history. For more
 information, see [about_History](About/about_History.md).
 
+The session history is managed separately from the history maintained by the **PSReadLine** module.
+Both histories are available in sessions where **PSReadLine** is loaded. This cmdlet only works with
+the session history. For more information see, [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
+
 ## RELATED LINKS
 
 [about_History](About/about_History.md)
@@ -380,10 +410,8 @@ information, see [about_History](About/about_History.md).
 
 [Get-History](Get-History.md)
 
-[Get-PSReadLineOption](/powershell/module/psreadline/get-psreadlineoption)
-
 [Invoke-History](Invoke-History.md)
 
-[PSReadLine](../PSReadLine/PSReadLine.md)
+[Get-PSReadLineOption](/powershell/module/psreadline/get-psreadlineoption)
 
 [Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption)

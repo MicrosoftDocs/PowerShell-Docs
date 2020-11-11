@@ -24,20 +24,20 @@ errors that must be fixed before we can accept your contribution.
 
 ## Formatting About_ files
 
-`About_*` files are now processed by [Pandoc][], instead of PlatyPS. `About_*` files are formatted
-for the best compatibility across all versions of PowerShell and with the publishing tools.
+`About_*` files are written in Markdown but are shipped as plain text files. We use [Pandoc][] to
+convert the Markdown to plain text. `About_*` files are formatted for the best compatibility across
+all versions of PowerShell and with the publishing tools.
 
 Basic formatting guidelines:
 
-- Limit lines to 80 characters
-- Code blocks and tables are limited to 76 characters because Pandoc indents these by four spaces during
-  conversion to plain text
-- Tables need to fit within 76 characters
-  - Manually wrap contents of cells across multiple lines
-  - Use opening and closing `|` characters on each line
-  - See a working example in [about_Comparison_Operators][about-example]
-- Using Pandoc special characters `\`,`$`, and `<`
-  - Within a header - these characters must be escaped using a leading `\` character or enclosed in backticks (`` ` ``)
+- Limit lines to 80 characters. Pandoc indents some Markdown blocks so those block must be adjusted.
+  - Code blocks are limited to 76 characters
+  - Tables are limited 76 characters
+  - Blockquotes (and Alerts) are limited 78 characters
+
+- Using Pandoc's special meta-characters `\`,`$`, and `<`
+  - Within a header - these characters must be escaped using a leading `\` character or enclosed in
+    code spans using backticks (`` ` ``)
   - Within a paragraph, these characters should be put into code spans. For example:
 
     ~~~markdown
@@ -45,6 +45,31 @@ Basic formatting guidelines:
 
     The `$foo` variable is used to store ...
     ~~~
+
+- Tables need to fit within 76 characters
+  - Manually wrap contents of cells across multiple lines
+  - Use opening and closing `|` characters on each line
+  - The following example illustrates how to properly construct a table that contains information
+    that wraps on multiple lines within a cell.
+
+    ~~~markdown
+    ```
+    |Operator|Description                |Example                          |
+    |--------|---------------------------|---------------------------------|
+    |`-is`   |Returns TRUE when the input|`(get-date) -is [DateTime]`      |
+    |        |is an instance of the      |`True`                           |
+    |        |specified .NET type.       |                                 |
+    |`-isNot`|Returns TRUE when the input|`(get-date) -isNot [DateTime]`   |
+    |        |not an instance of the     |`False`                          |
+    |        |specified.NET type.        |                                 |
+    |`-as`   |Converts the input to the  |`"5/7/07" -as [DateTime]`        |
+    |        |specified .NET type.       |`Monday, May 7, 2007 12:00:00 AM`|
+    ```
+    ~~~
+
+    > [!NOTE]
+    > The 76-column limitation applies only to `About_*` topics. You can use wide columns in
+    > conceptual or cmdlet reference articles.
 
 ## Structuring examples
 
@@ -88,5 +113,5 @@ Get-Command -ListImported
 [PlatyPS]: https://github.com/powershell/platyps
 [platyPS.schema.md]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md
 [issue1806]: https://github.com/MicrosoftDocs/PowerShell-Docs/issues/1806
-[about-example]: https://github.com/MicrosoftDocs/PowerShell-Docs/reference/5.1/Microsoft.PowerShell.Core/About/about_Comparison_Operators.md
+[about-example]: /PowerShell/module/Microsoft.PowerShell.Core/About/about_Comparison_Operators
 [Pandoc]: https://pandoc.org

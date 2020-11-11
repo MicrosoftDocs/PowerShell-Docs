@@ -1,13 +1,8 @@
 ---
-title: "OutputType Attribute Declaration | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a97a98ee-ffc0-42f0-a9a6-b0717b39c798
-caps.latest.revision: 5
+ms.date: 09/13/2016
+ms.topic: reference
+title: OutputType Attribute Declaration
+description: OutputType Attribute Declaration
 ---
 # OutputType Attribute Declaration
 

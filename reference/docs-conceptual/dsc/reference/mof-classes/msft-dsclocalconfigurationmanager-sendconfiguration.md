@@ -1,7 +1,8 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  SendConfiguration method
+ms.date: 07/17/2020
+ms.topic: reference
+title: SendConfiguration method
+description: SendConfiguration method
 ---
 # SendConfiguration method
 
@@ -18,10 +19,10 @@ uint32 SendConfiguration(
 
 ## Parameters
 
-*ConfigurationData* \[in\]
+**ConfigurationData** \[in\]
 The environment data for the configuration.
 
-*force* \[in\]
+**force** \[in\]
 **true** to force the configuration to stop.
 
 ## Return value

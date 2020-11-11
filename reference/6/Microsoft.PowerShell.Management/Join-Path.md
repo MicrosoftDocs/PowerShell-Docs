@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/join-path?view=powershell-6&WT.mc_id=ps-gethelp
@@ -59,7 +59,7 @@ Existing directory separators `\` and handled so there is only one separator bet
 Join-Path "C:\win*" "System*" -Resolve
 ```
 
-This command displays the files and folders that are referenced by joining the C:\Win* path and the System* child path.
+This command displays the files and folders that are referenced by joining the C:\Win\* path and the System\* child path.
 It displays the same files and folders as `Get-ChildItem`, but it displays the fully qualified path to each item.
 In this command, the `Path` and `ChildPath` optional parameter names are omitted.
 
@@ -140,7 +140,7 @@ This parameter is specified with the `ValueFromRemainingArguments` property whic
 joining an indefinite number of paths.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -158,7 +158,7 @@ Wildcards are permitted.
 The `ChildPath` parameter is required, although the parameter name ("ChildPath") is optional.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -177,7 +177,7 @@ Accept wildcard characters: True
 > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -197,7 +197,7 @@ The value of `Path` determines which provider joins the paths and adds the path 
 The `Path` parameter is required, although the parameter name ("Path") is optional.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: PSPath
 
@@ -216,7 +216,7 @@ Indicates that this cmdlet should attempt to resolve the joined path from the cu
 - If **no** wildcards are used, the cmdlet will error if the path does not exist.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -273,5 +273,3 @@ For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/a
 [Get-ChildItem](Get-ChildItem.md)
 
 [Get-PSDrive](Get-PSDrive.md)
-
-

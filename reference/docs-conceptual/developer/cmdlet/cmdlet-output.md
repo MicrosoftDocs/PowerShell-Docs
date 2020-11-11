@@ -1,13 +1,8 @@
 ---
-title: "Cmdlet Output | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1362f4cd-4e05-4ace-ade6-7128da8ad86c
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Output
+description: Cmdlet Output
 ---
 # Cmdlet Output
 

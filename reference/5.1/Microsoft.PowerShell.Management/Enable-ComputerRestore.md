@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/enable-computerrestore?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -33,6 +33,7 @@ System restore points and the ComputerRestore cmdlets are supported only on clie
 ## EXAMPLES
 
 ### Example 1: Enable System Restore on the specified drive
+
 ```
 PS C:\> Enable-ComputerRestore -Drive "C:\"
 ```
@@ -40,6 +41,7 @@ PS C:\> Enable-ComputerRestore -Drive "C:\"
 This command enables System Restore on the C: drive of the local computer.
 
 ### Example 2: Enable System Restore on multiple drives
+
 ```
 PS C:\> Enable-ComputerRestore -Drive "C:\", "D:\"
 ```
@@ -58,7 +60,7 @@ You cannot use this cmdlet to enable System Restore on a remote network drive, e
 To enable System Restore on any drive, System Restore must be enabled on the system drive, either before or concurrently.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -73,7 +75,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -89,7 +91,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -114,6 +116,7 @@ You cannot pipe objects to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To run this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with the Run as administrator option.
 
   To find the file system drives that are eligible for system restore, in System in Control Panel, see the System Protection tab.
@@ -134,5 +137,3 @@ To open this tab in Windows PowerShell, type `SystemPropertiesProtection`.
 [Restart-Computer](Restart-Computer.md)
 
 [Restore-Computer](Restore-Computer.md)
-
-

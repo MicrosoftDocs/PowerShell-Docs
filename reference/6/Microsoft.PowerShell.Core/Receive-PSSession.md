@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-6&WT.mc_id=ps-gethelp
@@ -355,7 +355,7 @@ Return 3
 Return 4
 ```
 
-The ` New-PSSession` cmdlet creates the Test session on the Server01 computer. The command saves the
+The `New-PSSession` cmdlet creates the Test session on the Server01 computer. The command saves the
 session in the `$s` variable.
 
 The `Invoke-Command` cmdlet runs a command in the session in the `$s` variable. The command uses the
@@ -397,7 +397,7 @@ of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCou
 `$PSSessionOption` preference variable. The default value is 5.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
@@ -422,7 +422,7 @@ The parameter's value is used to select and filter sessions. It doesn't change t
 the session uses.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerSessionName, ComputerInstanceId
 Aliases:
 
@@ -459,7 +459,7 @@ For more information about the values of this parameter, see
 > credentials that are passed to it can be used to control the network session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
 Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
@@ -483,7 +483,7 @@ To get a certificate thumbprint, use a `Get-Item` or `Get-ChildItem` command in 
 `Cert:` drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
@@ -505,7 +505,7 @@ Wildcard characters aren't permitted. To specify the local computer, type the co
 (`.`), `$env:COMPUTERNAME`, or localhost.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerSessionName, ComputerInstanceId
 Aliases: Cn
 
@@ -524,7 +524,7 @@ specified session configuration.
 Enter a configuration name or the fully qualified resource URI for a session configuration. If you
 specify only the configuration name, the following schema URI is prepended:
 
-`https://schemas.microsoft.com/powershell`.
+`http://schemas.microsoft.com/powershell`.
 
 The configuration name of a session is stored in the **ConfigurationName** property of the session.
 
@@ -535,7 +535,7 @@ For more information about session configurations, see
 [about_Session_Configurations](./About/about_Session_Configurations.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
@@ -571,7 +571,7 @@ If the destination computer redirects the connection to a different URI, PowerSh
 redirection unless you use the **AllowRedirection** parameter in the command.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases: URI, CU
 
@@ -599,7 +599,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
@@ -619,7 +619,7 @@ This parameter is valid, but not effective, when the session is stored on the lo
 wasn't connected to the current session.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Id
 Aliases:
 
@@ -637,7 +637,7 @@ identifies a **PSSession** on a local or remote computer. The instance ID is sto
 **InstanceID** property of the **PSSession**.
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, InstanceId
 Aliases:
 
@@ -665,7 +665,7 @@ If the default value or explicit value of the **OutTarget** parameter isn't Job,
 succeeds, but the **JobName** parameter has no effect.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -681,7 +681,7 @@ Accept wildcard characters: False
 Specifies the friendly name of the disconnected session.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerSessionName, ConnectionUriSessionName, SessionName
 Aliases:
 
@@ -710,7 +710,7 @@ Typically, the host program displays returned objects at the command line withou
 behavior can vary.
 
 ```yaml
-Type: OutTarget
+Type: Microsoft.PowerShell.Commands.OutTarget
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Host, Job
@@ -741,7 +741,7 @@ to all computers or sessions on which the command runs. An alternate port settin
 command from running on all computers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ComputerSessionName, ComputerInstanceId
 Aliases:
 
@@ -758,7 +758,7 @@ Specifies the disconnected session. Enter a variable that contains the **PSSessi
 that creates or gets the **PSSession**, such as a `Get-PSSession` command.
 
 ```yaml
-Type: PSSession
+Type: System.Management.Automation.Runspaces.PSSession
 Parameter Sets: Session
 Aliases:
 
@@ -790,7 +790,7 @@ session configurations, see
 [about_Session_Configurations](./About/about_Session_Configurations.md).
 
 ```yaml
-Type: PSSessionOption
+Type: System.Management.Automation.Remoting.PSSessionOption
 Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
@@ -813,7 +813,7 @@ If you use this parameter and SSL isn't available on the port that's used for th
 command fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerSessionName, ComputerInstanceId
 Aliases:
 
@@ -829,7 +829,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -845,7 +845,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -890,6 +890,8 @@ value or default value of the **OutTarget** parameter is Job, `Receive-PSSession
 object. Otherwise, it returns objects that represent that command results.
 
 ## NOTES
+
+This cmdlet is only available on Windows platforms.
 
 `Receive-PSSession` gets results only from sessions that were disconnected. Only sessions that are
 connected to, or terminate at, computers that run PowerShell 3.0 or later versions can be
@@ -960,8 +962,7 @@ When you disconnect a **PSSession**, the session state is Disconnected and the a
 - An **Availability** value of None indicates that you can connect to the session. A value of Busy
   indicates that you can't connect to the **PSSession** because it's connected to another session.
 - For more information about the values of the **State** property of sessions, see
-  [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate) in the MSDN
-  library.
+  [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate).
 - For more information about the values of the **Availability** property of sessions, see
   [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 

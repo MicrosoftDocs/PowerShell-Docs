@@ -1,13 +1,8 @@
 ---
-title: "RightIndent Element for Frame for CustomControl for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 501ccacc-5b3a-45b5-ae41-2f1e0675d416
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: RightIndent Element for Frame for CustomControl for View (Format)
+description: RightIndent Element for Frame for CustomControl for View (Format)
 ---
 # RightIndent Element for Frame for CustomControl for View (Format)
 

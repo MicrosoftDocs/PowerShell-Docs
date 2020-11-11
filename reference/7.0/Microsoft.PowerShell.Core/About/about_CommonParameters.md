@@ -1,6 +1,7 @@
 ---
+description:  Describes the parameters that can be used with any cmdlet. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 11/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -89,10 +90,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-The **Debug** parameter overrides the value of the `$DebugPreference` variable
-for the current command, setting the value of `$DebugPreference` to
-**Continue**. Because the default value of the `$DebugPreference` variable is
-**SilentlyContinue**, debugging messages aren't displayed by default.
+By default, debugging messages aren't displayed because the value of the
+`$DebugPreference` variable is **SilentlyContinue**.
+
+In interactive mode, the **Debug** parameter overrides the value of the
+`$DebugPreference` variable for the current command, setting the value of
+`$DebugPreference` to **Inquire**.
+
+In non-interactive mode, the **Debug** parameter overrides the value of the
+`$DebugPreference` variable for the current command, setting the value of
+`$DebugPreference` to **Continue**.
 
 `-Debug:$true` has the same effect as `-Debug`. Use `-Debug:$false` to
 suppress the display of debugging messages when `$DebugPreference` isn't
@@ -685,10 +692,10 @@ about_Common_Parameters
 
 [about_Preference_Variables](about_Preference_Variables.md)
 
-[Write-Debug](../../Microsoft.PowerShell.Utility/Write-Debug.md)
+[Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
 
-[Write-Warning](../../Microsoft.PowerShell.Utility/Write-Warning.md)
+[Write-Warning](xref:Microsoft.PowerShell.Utility.Write-Warning)
 
-[Write-Error](../../Microsoft.PowerShell.Utility/Write-Error.md)
+[Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
 
-[Write-Verbose](../../Microsoft.PowerShell.Utility/Write-Verbose.md)
+[Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)

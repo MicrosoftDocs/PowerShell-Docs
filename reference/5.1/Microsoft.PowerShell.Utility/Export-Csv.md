@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -358,7 +358,7 @@ this parameter, `Export-CSV` replaces the file contents without warning.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -375,7 +375,7 @@ Specifies a delimiter to separate the property values. The default is a comma (`
 character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in quotation marks.
 
 ```yaml
-Type: Char
+Type: System.Char
 Parameter Sets: Delimiter
 Aliases:
 
@@ -388,21 +388,21 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **ASCII**.
+Specifies the type of encoding for the target file. The default value is `ASCII`.
 
 The acceptable values for this parameter are as follows:
 
-- **ASCII** Uses ASCII (7-bit) character set.
-- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
-- **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **Unicode** Uses UTF-16 with the little-endian byte order.
-- **UTF7** Uses UTF-7.
-- **UTF8** Uses UTF-8.
-- **UTF32** Uses UTF-32 with the little-endian byte order.
+- `ASCII` Uses ASCII (7-bit) character set.
+- `BigEndianUnicode` Uses UTF-16 with the big-endian byte order.
+- `Default` Uses the encoding that corresponds to the system's active code page (usually ANSI).
+- `OEM` Uses the encoding that corresponds to the system's current OEM code page.
+- `Unicode` Uses UTF-16 with the little-endian byte order.
+- `UTF7` Uses UTF-7.
+- `UTF8` Uses UTF-8.
+- `UTF32` Uses UTF-32 with the little-endian byte order.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
@@ -423,7 +423,7 @@ can be written to a CSV file. Only the properties that match are written to the 
 mismatched properties are discarded.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -440,7 +440,7 @@ Specifies the objects to export as CSV strings. Enter a variable that contains t
 a command or expression that gets the objects. You can also pipe objects to `Export-CSV`.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -459,7 +459,7 @@ includes escape characters, use single quotation marks. Single quotation marks t
 PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: PSPath
 
@@ -476,7 +476,7 @@ Use this parameter so that `Export-CSV` does not overwrite an existing file. By 
 file exists in the specified path, `Export-CSV` overwrites the file without warning.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NoOverwrite
 
@@ -493,7 +493,7 @@ Removes the **#TYPE** information header from the output. This parameter became 
 PowerShell 6.0 and is included for backwards compatibility.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NTI
 
@@ -509,7 +509,7 @@ Accept wildcard characters: False
 A required parameter that specifies the location to save the CSV output file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -526,7 +526,7 @@ Uses the list separator for the current culture as the item delimiter. To find t
 for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UseCulture
 Aliases:
 
@@ -542,7 +542,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -559,7 +559,7 @@ Prevents the cmdlet from being processed or making changes. The output shows wha
 the cmdlet were run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/enable-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,17 +17,20 @@ Enables a scheduled job.
 ## SYNTAX
 
 ### Definition (Default)
+
 ```
 Enable-ScheduledJob [-InputObject] <ScheduledJobDefinition> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### DefinitionId
+
 ```
 Enable-ScheduledJob [-Id] <Int32> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DefinitionName
+
 ```
 Enable-ScheduledJob [-Name] <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -48,6 +51,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Enable a scheduled job
+
 ```
 PS C:\> Enable-ScheduledJob -ID 2 -Passthru
 Id         Name            Triggers        Command                                  Enabled
@@ -59,6 +63,7 @@ This command enables the scheduled job with ID 2 on the local computer.
 The output shows the effect of the command.
 
 ### Example 2: Enable all scheduled jobs
+
 ```
 PS C:\> Get-ScheduledJob | Enable-ScheduledJob -Passthru
 Id         Name            Triggers        Command                                  Enabled
@@ -75,6 +80,7 @@ It uses the Get-ScheduledJob cmdlet to get all scheduled job and the **Enable-Sc
 **Enable-ScheduledJob** does not generate warnings or errors if you enable a scheduled job that is already enabled, so you can enable all scheduled jobs without conditions.
 
 ### Example 3: Enable selected scheduled jobs
+
 ```
 PS C:\> Get-ScheduledJob | Get-ScheduledJobOption | Where-Object {$_.RunWithoutNetwork} | ForEach-Object {Enable-ScheduledJob -InputObject $_.JobDefinition}
 ```
@@ -90,6 +96,7 @@ The command uses a pipeline operator (|) to send the job options to the Where-Ob
 Another pipeline operator sends the selected scheduled job options objects to the ForEach-Object cmdlet which runs an **Enable-ScheduledJob** command on the scheduled job in the value of the JobDefinition property of each job options object.
 
 ### Example 4: Enable scheduled jobs on a remote computer
+
 ```
 PS C:\> Invoke-Command -ComputerName "Srv01,Srv10" -ScriptBlock {Enable-ScheduledJob -Name "Inventory"}
 ```
@@ -106,7 +113,7 @@ Enables the scheduled job with the specified identification number (ID).
 Enter the ID of a scheduled job.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: DefinitionId
 Aliases:
 
@@ -123,7 +130,7 @@ Enter a variable that contains **ScheduledJobDefinition** objects or type a comm
 You can also pipe a **ScheduledJobDefinition** object to **Enable-ScheduledJob**.
 
 ```yaml
-Type: ScheduledJobDefinition
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 Parameter Sets: Definition
 Aliases:
 
@@ -140,7 +147,7 @@ Enter the name of a scheduled job.
 Wildcards are supported.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DefinitionName
 Aliases:
 
@@ -156,7 +163,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -171,7 +178,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -187,7 +194,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -213,6 +220,7 @@ If you use the **Passthru** parameter, **Enable-ScheduledJob** returns the sched
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * **Enable-ScheduledJob** does not generate warnings or errors if you use it to enable a scheduled job that is already enabled.
 
 ## RELATED LINKS
@@ -248,5 +256,3 @@ Otherwise, this cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

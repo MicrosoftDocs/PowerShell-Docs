@@ -1,8 +1,7 @@
 ---
 ms.date:  09/10/2018
-contributor:  JKeithB
-keywords:  gallery,powershell,cmdlet,psgallery
 title:  Managing API keys
+description: The PowerShell Gallery uses API keys to authenticate access to the Gallery for content publishers.
 ---
 # Managing API keys
 
@@ -70,7 +69,7 @@ You can change some settings of an existing key. As previously noted, you cannot
 security scope for an existing API key or change the expiration. The changeable options are shown in
 the following screenshot:
 
-![Obtaining new API key value](media/creating-APIkeys/PSGallery_EditAPIKey.png)
+![Editing your API key value](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 To change the packages controlled by a key, you can choose individual packages from the list or
 change the glob pattern.

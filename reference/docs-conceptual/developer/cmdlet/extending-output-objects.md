@@ -1,13 +1,8 @@
 ---
-title: "Extending Output Objects | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: Extending Output Objects
+description: Extending Output Objects
 ---
 # Extending Output Objects
 
@@ -37,6 +32,7 @@ Get-Member -InputObject (1,2,3,4)
 ```
 
 The command returns the following results.
+
 ```output
 Name           MemberType    Definition
 ----           ----------    ----------
@@ -49,6 +45,7 @@ Get            Method        System.Object Get(Int32 )
 ...
 Length         Property      System.Int32 Length {get;}
 ```
+
 You can use either the `Count` property or the `Length` property to determine how many objects are in an array. For example:
 
 ```powershell

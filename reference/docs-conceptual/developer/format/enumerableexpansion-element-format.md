@@ -1,13 +1,8 @@
 ---
-title: "EnumerableExpansion Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 93d27173-9ae4-46e5-bb78-90525915cd70
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: EnumerableExpansion Element (Format)
+description: EnumerableExpansion Element (Format)
 ---
 # EnumerableExpansion Element (Format)
 

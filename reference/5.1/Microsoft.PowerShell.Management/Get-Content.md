@@ -1,7 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Management
 ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -260,7 +261,7 @@ permitted. The paths must be paths to items, not to containers. For example, you
 to one or more files, not a path to a directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -281,7 +282,7 @@ as escape sequences.
 For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath
 
@@ -303,7 +304,7 @@ line increases, but the total time for the operation decreases. This can make a 
 difference in large items.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -322,7 +323,7 @@ lines).
 You can use the **TotalCount** parameter name or its aliases, **First** or **Head**.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: (All)
 Aliases: First, Head
 
@@ -339,7 +340,7 @@ Specifies the number of lines from the end of a file or other item. You can use 
 parameter name or its alias, **Last**. This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: Last
 
@@ -359,7 +360,7 @@ Filters are more efficient than other parameters, because the provider applies t
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -379,7 +380,7 @@ command includes the contents of an item, such as `C:\Windows\*`, where the wild
 specifies the contents of the `C:\Windows` directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -403,7 +404,7 @@ such as `C:\Windows\*`, where the wildcard character specifies the contents of t
 directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -420,7 +421,7 @@ Accept wildcard characters: True
 **Force** parameter does not attempt to change file permissions or override security restrictions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -439,7 +440,7 @@ Accept wildcard characters: False
 > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -471,7 +472,7 @@ cmdlet. This parameter works only in file system drives.
 > a single, undelimited string. Enter a value that does not exist in the file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -493,7 +494,7 @@ reported.
 parameter works only in file system drives. **Wait** cannot be combined with **Raw**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -514,7 +515,7 @@ into an array of strings. This parameter was introduced in PowerShell 3.0.
 This parameter works only in file system drives.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -527,22 +528,22 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **Default**.
+Specifies the type of encoding for the target file. The default value is `Default`.
 
 The acceptable values for this parameter are as follows:
 
-- **ASCII** Uses ASCII (7-bit) character set.
-- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
-- **Byte** Encodes a set of characters into a sequence of bytes.
-- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
-- **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **String** Same as **Unicode**.
-- **Unicode** Uses UTF-16 with the little-endian byte order.
-- **Unknown** Same as **Unicode**.
-- **UTF7** Uses UTF-7.
-- **UTF8** Uses UTF-8.
-- **UTF32** Uses UTF-32 with the little-endian byte order.
+- `Ascii` Uses ASCII (7-bit) character set.
+- `BigEndianUnicode` Uses UTF-16 with the big-endian byte order.
+- `BigEndianUTF32` Uses UTF-32 with the big-endian byte order.
+- `Byte` Encodes a set of characters into a sequence of bytes.
+- `Default` Uses the encoding that corresponds to the system's active code page (usually ANSI).
+- `Oem` Uses the encoding that corresponds to the system's current OEM code page.
+- `String` Same as `Unicode`.
+- `Unicode` Uses UTF-16 with the little-endian byte order.
+- `Unknown` Same as `Unicode`.
+- `UTF7` Uses UTF-7.
+- `UTF8` Uses UTF-8.
+- `UTF32` Uses UTF-32 with the little-endian byte order.
 
 Encoding is a dynamic parameter that the **FileSystem** provider adds to the `Get-Content` cmdlet.
 This parameter works only in file system drives.
@@ -554,7 +555,7 @@ entire file in a single read operation and converts it into a single object (PSO
 object, which causes errors when you use the `Set-Content` cmdlet to write the bytes to a file.
 
 ```yaml
-Type: FileSystemCmdletProviderEncoding
+Type: Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
@@ -576,7 +577,7 @@ This parameter works only in file system drives on Windows systems. This paramet
 Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -593,7 +594,7 @@ Includes the command in the active transaction. This parameter is valid only whe
 in progress. For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 

@@ -1,13 +1,8 @@
 ---
-title: "ScriptBlock Element for ListItem for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 74e30938-00ef-46fd-84e5-f0a83706a50e
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: ScriptBlock Element for ListItem for ListControl (Format)
+description: ScriptBlock Element for ListItem for ListControl (Format)
 ---
 # ScriptBlock Element for ListItem for ListControl (Format)
 

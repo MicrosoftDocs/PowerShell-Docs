@@ -1,13 +1,8 @@
 ---
-title: "Defining Default Methods for Objects | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: Defining Default Methods for Objects
+description: Defining Default Methods for Objects
 ---
 
 # Defining Default Methods for Objects
@@ -17,21 +12,23 @@ The XML that is used to define these methods is described in the following secti
 
 > [!NOTE]
 > The examples in the following sections are from the `Types.ps1xml` types file in the Windows
-> PowerShell installation directory (`$PSHOME`). For more information, see [About Types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
+> PowerShell installation directory (`$PSHOME`). For more information, see
+> [About Types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
 
 ## Code methods
 
 A code method references a static method of a .NET Framework object.
 
-In the following example, the **ToString** method is added to the [System.Xml.XmlNode](/dotnet/api/System.Xml.XmlNode)
-type. The [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) element defines the
-extended method as a code method. The
-[Name](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)
+In the following example, the **ToString** method is added to the
+[System.Xml.XmlNode](/dotnet/api/System.Xml.XmlNode) type. The
+[PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) element defines the extended
+method as a code method. The
+[Name](/dotnet/api/system.management.automation.psmemberinfo.name#System_Management_Automation_PSMemberInfo_Name)
 element specifies the name of the extended method. And, the
-[CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference)
-element specifies the static method. You can also add the [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod)
-element to the members of the [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)
-element.
+[CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference#System_Management_Automation_PSCodeMethod_CodeReference)
+element specifies the static method. You can also add the
+[PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) element to the members of the
+[PSMemberSets](/dotnet/api/system.management.automation.psmemberset) element.
 
 ```xml
 <Type>
@@ -51,15 +48,16 @@ element.
 ## Script methods
 
 A script method defines a method whose value is the output of a script. In the following example,
-the **ConvertToDateTime** method is added to the [System.Management.ManagementObject](/dotnet/api/System.Management.ManagementObject)
-type. The [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0)
-element defines the extended method as a script method. The
-[Name](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)
+the **ConvertToDateTime** method is added to the
+[System.Management.ManagementObject](/dotnet/api/System.Management.ManagementObject) type. The
+[PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod) element defines the
+extended method as a script method. The
+[Name](/dotnet/api/system.management.automation.psmemberinfo.name#System_Management_Automation_PSMemberInfo_Name)
 element specifies the name of the extended method. And, the
-[Script](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script)
-element specifies the script that generates the method value. You can also add the [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0)
-element to the members of the [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)
-element.
+[Script](/dotnet/api/system.management.automation.psscriptmethod.script#System_Management_Automation_PSScriptMethod_Script)
+element specifies the script that generates the method value. You can also add the
+[PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod) element to the members of
+the [PSMemberSets](/dotnet/api/system.management.automation.psmemberset) element.
 
 ```xml
 <Type>

@@ -1,13 +1,8 @@
 ---
-title: "TypeName Element for EntrySelectedBy for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 30bb1382-8c6b-4371-82e6-baf427fa0781
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for EntrySelectedBy for Controls for Configuration (Format)
+description: TypeName Element for EntrySelectedBy for Controls for Configuration (Format)
 ---
 # TypeName Element for EntrySelectedBy for Controls for Configuration (Format)
 

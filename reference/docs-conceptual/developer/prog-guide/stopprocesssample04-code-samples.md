@@ -1,13 +1,8 @@
 ---
-title: "StopProcessSample04 Code Samples | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: dc68af2b-f622-47c4-964f-b07f3d5bdf14
-caps.latest.revision: 5
+ms.date: 09/13/2016
+ms.topic: reference
+title: StopProcessSample04 Code Samples
+description: StopProcessSample04 Code Samples
 ---
 # StopProcessSample04 Code Samples
 

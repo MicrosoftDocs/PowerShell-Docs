@@ -1,13 +1,8 @@
 ---
-title: "Required Development Guidelines | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
-caps.latest.revision: 19
+ms.date: 09/13/2016
+ms.topic: reference
+title: Required Development Guidelines
+description: Required Development Guidelines
 ---
 # Required Development Guidelines
 

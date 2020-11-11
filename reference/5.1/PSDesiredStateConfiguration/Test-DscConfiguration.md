@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/test-dscconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,36 +17,42 @@ Tests whether the actual configuration on the nodes matches the desired configur
 ## SYNTAX
 
 ### ComputerNameSet (Default)
+
 ```
 Test-DscConfiguration [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
  [-AsJob] [-Detailed] [<CommonParameters>]
 ```
 
 ### ComputerNameAndPathSet
+
 ```
 Test-DscConfiguration [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
  [-AsJob] [-Path] <String> [<CommonParameters>]
 ```
 
 ### ComputerNameAndReferenceConfigurationSet
+
 ```
 Test-DscConfiguration [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
  [-AsJob] -ReferenceConfiguration <String> [<CommonParameters>]
 ```
 
 ### CimSessionAndPathSet
+
 ```
 Test-DscConfiguration [-ThrottleLimit <Int32>] -CimSession <CimSession[]> [-AsJob] [-Path] <String>
  [<CommonParameters>]
 ```
 
 ### CimSessionAndReferenceConfigurationSet
+
 ```
 Test-DscConfiguration [-ThrottleLimit <Int32>] -CimSession <CimSession[]> [-AsJob]
  -ReferenceConfiguration <String> [<CommonParameters>]
 ```
 
 ### CimSessionSet
+
 ```
 Test-DscConfiguration [-ThrottleLimit <Int32>] -CimSession <CimSession[]> [-AsJob] [-Detailed]
  [<CommonParameters>]
@@ -63,6 +69,7 @@ Otherwise, it returns a string value of 'False'.
 ## EXAMPLES
 
 ### Example 1: Test configuration for the local computer
+
 ```
 PS C:\> Test-DscConfiguration
 ```
@@ -70,6 +77,7 @@ PS C:\> Test-DscConfiguration
 This command tests configuration for the local computer.
 
 ### Example 2: Test configuration for a specified computer
+
 ```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Test-DscConfiguration -CimSession $Session
@@ -86,6 +94,7 @@ For more information, type `Get-Help New-CimSession`.
 The second command tests configuration for the computers identified by the **CimSession** objects stored in the $Session variable, in this case, the computer named Server01.
 
 ### Example 3: Test configurations with detailed results
+
 ```
 PS C:\> Test-DscConfiguration -ComputerName "Server01", "Server02", "Server03" -Detailed
 ```
@@ -93,6 +102,7 @@ PS C:\> Test-DscConfiguration -ComputerName "Server01", "Server02", "Server03" -
 This command tests configurations for a set of computers specified by the *ComputerName* parameter and returns detailed information that includes the overall state, resources that are in the desired state, resources that are not in the desired state and computer name.
 
 ### Example 4: Test configurations specified in a folder
+
 ```
 PS C:\> Test-DscConfiguration -Path "C:\Dsc\Configurations"
 ```
@@ -101,6 +111,7 @@ This command tests configurations that are defined in a folder specified by the 
 The configurations are tested against a set of computers, each identified by the file name of the configuration file.
 
 ### Example 5: Test configurations specified in a file
+
 ```
 PS C:\> Test-DscConfiguration -ReferenceConfiguration "C:\Dsc\Configurations\WebServer.mof" -ComputerName "Server01", "Server02", "Server03"
 ```
@@ -124,7 +135,7 @@ For more information, see [about_Remote_Requirements](../Microsoft.PowerShell.Co
 For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -137,11 +148,11 @@ Accept wildcard characters: False
 
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
+Enter a computer name or a session object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet.
 The default is the current session on the local computer.
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: CimSessionAndPathSet, CimSessionAndReferenceConfigurationSet, CimSessionSet
 Aliases:
 
@@ -157,7 +168,7 @@ Specifies an array of computer names on which this cmdlet tests the configuratio
 The cmdlet tests the configuration document in the location specified by the *Path* parameter to these computers.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerNameSet, ComputerNameAndPathSet, ComputerNameAndReferenceConfigurationSet
 Aliases: CN, ServerName
 
@@ -174,7 +185,7 @@ To obtain a **PSCredential** object, use the Get-Credential cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ComputerNameSet, ComputerNameAndPathSet, ComputerNameAndReferenceConfigurationSet
 Aliases:
 
@@ -190,7 +201,7 @@ Indicates that this cmdlet returns a detailed result of comparing the configurat
 The result includes information such as overall state, resources that are in the desired state, resources that are not in desired state, and computer name.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerNameSet, CimSessionSet
 Aliases:
 
@@ -206,7 +217,7 @@ Specifies the path of a folder that contains configuration document files.
 The cmdlet tests the configuration against the desired state of computers specified by the *ComputerName* or *CimSession* parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerNameAndPathSet, CimSessionAndPathSet
 Aliases:
 
@@ -222,7 +233,7 @@ Specifies the path of the configuration document file.
 This cmdlet tests the configuration against the actual state of computers specified by the *ComputerName* or *CimSession* parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerNameAndReferenceConfigurationSet, CimSessionAndReferenceConfigurationSet
 Aliases:
 
@@ -239,7 +250,7 @@ If this parameter is omitted or a value of `0` is entered, then Windows PowerShe
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -270,6 +281,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Restore-DscConfiguration](Restore-DscConfiguration.md)
 
 [Start-DscConfiguration](Start-DscConfiguration.md)
-
-
-

@@ -1,13 +1,8 @@
 ---
-title: "WideControl Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 715ea055-037b-46ad-b70f-87b3f5134403
-caps.latest.revision: 14
+ms.date: 09/13/2016
+ms.topic: reference
+title: WideControl Element (Format)
+description: WideControl Element (Format)
 ---
 # WideControl Element (Format)
 

@@ -1,13 +1,8 @@
 ---
-title: "ViewDefinitions Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
-caps.latest.revision: 18
+ms.date: 09/13/2016
+ms.topic: reference
+title: ViewDefinitions Element (Format)
+description: ViewDefinitions Element (Format)
 ---
 # ViewDefinitions Element (Format)
 

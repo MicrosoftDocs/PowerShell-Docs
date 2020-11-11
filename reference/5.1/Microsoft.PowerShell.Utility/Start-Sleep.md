@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 3/13/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -61,9 +61,9 @@ Specifies how long the resource sleeps in milliseconds.
 The parameter can be abbreviated as **m**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Milliseconds
-Aliases: ms
+Aliases:
 
 Required: True
 Position: Named
@@ -78,7 +78,7 @@ Specifies how long the resource sleeps in seconds.
 You can omit the parameter name (**Seconds**), or you can abbreviate it as **s**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Seconds
 Aliases:
 
@@ -114,6 +114,5 @@ This cmdlet does not return any output.
 - `Ctrl+C` breaks out of `Start-Sleep`.
   - `Ctrl+C` does not break out of `[Threading.Thread]::Sleep`. For more information, see
     [Thread.Sleep Method](/dotnet/api/system.threading.thread.sleep).
-
 
 ## RELATED LINKS

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Utility-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-guid?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -27,6 +27,7 @@ If you need a unique ID in a script, you can create a GUID, as needed.
 ## EXAMPLES
 
 ### Example 1: Create a GUID
+
 ```
 PS C:\> New-Guid
 Guid

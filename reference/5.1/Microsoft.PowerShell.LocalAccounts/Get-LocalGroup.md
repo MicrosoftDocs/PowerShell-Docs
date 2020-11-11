@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/get-localgroup?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,11 +17,13 @@ Gets the local security groups.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Get-LocalGroup [[-Name] <String[]>] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Get-LocalGroup [[-SID] <SecurityIdentifier[]>] [<CommonParameters>]
 ```
@@ -37,6 +39,7 @@ This cmdlet gets default built-in groups and local security groups that you crea
 ## EXAMPLES
 
 ### Example 1: Get the Administrators group
+
 ```
 PS C:\> Get-LocalGroup -Name "Administrators"
 Name           Description
@@ -54,7 +57,7 @@ Specifies an array of names of security groups that this cmdlet gets.
 You can use the wildcard character.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases:
 
@@ -69,7 +72,7 @@ Accept wildcard characters: False
 Specifies an array of security IDs (SIDs) of security groups that this cmdlet gets.
 
 ```yaml
-Type: SecurityIdentifier[]
+Type: System.Security.Principal.SecurityIdentifier[]
 Parameter Sets: SecurityIdentifier
 Aliases:
 
@@ -94,6 +97,7 @@ You can pipe a string or a SID to this cmdlet.
 This cmdlet returns a local group.
 
 ## NOTES
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local
@@ -112,5 +116,3 @@ This cmdlet returns a local group.
 [Rename-LocalGroup](Rename-LocalGroup.md)
 
 [Set-LocalGroup](Set-LocalGroup.md)
-
-

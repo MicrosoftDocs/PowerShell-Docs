@@ -1,49 +1,57 @@
 ---
-title: "Host06 Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 459b6d0f-d596-4269-9113-915a283c1e28
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: Host06 Sample
+description: Host06 Sample
 ---
 # Host06 Sample
 
-This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console. In addition, this sample uses the Tokenizer APIs to specify the color of the text that is entered by the user.
+This sample shows how to build an interactive console-based host application that reads commands
+from the command line, executes the commands, and then displays the results to the console. In
+addition, this sample uses the Tokenizer APIs to specify the color of the text that is entered by
+the user.
 
 ## Requirements
 
 - This sample requires Windows PowerShell 2.0.
-
 - This application must be run in elevated mode (Run as administrator).
 
 ## Demonstrates
 
-- Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.
+- Creating a custom host whose classes derive from the
+  [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
+  class, the
+  [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+  class, and the
+  [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+  class.
 
-- Building a console application that uses these host classes to build an interactive Windows PowerShell shell.
+- Building a console application that uses these host classes to build an interactive Windows
+  PowerShell shell.
 
 - Creating a `$profile` variable and loading the following profiles.
 
   - current user, current host
-
   - current user, all hosts
-
   - all users, current host
-
   - all users, all hosts
 
-- Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.
+- Implement the
+  [System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)
+  interface.
 
-- Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.
+- Implement the
+  [System.Management.Automation.Host.IHostSupportsInteractiveSession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)
+  interface to support interactive remoting by using the
+  [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and
+  [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.
 
 - Use the Tokenize API to colorize the command line as it is typed.
 
-## Example
+## Example 1
 
- This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.
+This example allows the user to enter commands at a command line, processes those commands, and then
+prints out the results.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -404,9 +412,12 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## Example
+## Example 2
 
- The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
+The following code is the implementation of the
+[System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
+class that is used by this host application. Those elements that are not implemented throw an
+exception or return nothing.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -628,9 +639,11 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## Example
+## Example 3
 
- The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.
+The following code is the implementation of the
+[System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+class that is used by this host application.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1146,9 +1159,12 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## Example
+## Example 4
 
- The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
+The following code is the implementation of the
+[System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+class that is used by this host application. Those elements that are not implemented throw an
+exception or return nothing.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1358,9 +1374,12 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## Example
+## Example 5
 
- The following code reads the command line and colors the text as it is entered. Tokens are determined by using the [System.Management.Automation.Psparser.Tokenize*](/dotnet/api/System.Management.Automation.PSParser.Tokenize) method.
+The following code reads the command line and colors the text as it is entered. Tokens are
+determined by using the
+[System.Management.Automation.Psparser.Tokenize*](/dotnet/api/System.Management.Automation.PSParser.Tokenize)
+method.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

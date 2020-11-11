@@ -1,13 +1,8 @@
 ---
-title: "ExpressionBinding Element for CustomItem for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 2b9da6c5-548b-480f-86ae-6de6fecabaca
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: ExpressionBinding Element for CustomItem for Controls for View (Format)
+description: ExpressionBinding Element for CustomItem for Controls for View (Format)
 ---
 # ExpressionBinding Element for CustomItem for Controls for View (Format)
 

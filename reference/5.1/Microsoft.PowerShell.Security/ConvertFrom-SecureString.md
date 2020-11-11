@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 04/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -88,7 +88,7 @@ standard string.
 Specifies the encryption key as a byte array.
 
 ```yaml
-Type: Byte[]
+Type: System.Byte[]
 Parameter Sets: Open
 Aliases:
 
@@ -105,7 +105,7 @@ Specifies the encryption key as a secure string. The secure string value is conv
 array before being used as the key.
 
 ```yaml
-Type: SecureString
+Type: System.Security.SecureString
 Parameter Sets: Secure
 Aliases:
 
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 Specifies the secure string to convert to an encrypted standard string.
 
 ```yaml
-Type: SecureString
+Type: System.Security.SecureString
 Parameter Sets: (All)
 Aliases:
 
@@ -159,10 +159,12 @@ ConvertFrom-SecureString returns a standard string object.
   correct. For example, a key of 128 bits can be specified as a byte array of 16 decimal numerals.
   Similarly, 192-bit and 256-bit keys correspond to byte arrays of 24 and 32 decimal numerals,
   respectively.
+- Some characters, such as emoticons, correspond to several code points in the string that contains
+  them. Avoid using these characters because they may cause problems and misunderstandings when used
+  in a password.
 
 ## RELATED LINKS
 
 [ConvertTo-SecureString](ConvertTo-SecureString.md)
 
 [Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
-

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PackageManagement
 ms.date: 05/23/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-package?view=powershell-6&WT.mc_id=ps-gethelp
@@ -129,7 +129,7 @@ highest version in the range is installed.
  **AcceptLicense** automatically accepts the license agreement during installation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -146,7 +146,7 @@ Overrides warning messages about conflicts with existing commands. Overwrites ex
 have the same name as commands being installed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 Allows the installation of packages marked as prerelease.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject, PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 version is installed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 Specifies one or more commands that `Install-Package` searches.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 Specifies a path that contains a configuration file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
 Aliases:
 
@@ -228,7 +228,7 @@ Accept wildcard characters: False
 the object's property values.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
 Aliases:
 
@@ -248,7 +248,7 @@ name, such as **User01**, **Domain01\User01**, or enter a **PSCredential** objec
 When the **Credential** parameter isn't specified, `Install-Package` uses the current user.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -264,7 +264,7 @@ Accept wildcard characters: False
 Specifies a path to an input object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
 Aliases:
 
@@ -281,7 +281,7 @@ Specifies one or more Desired State Configuration (DSC) resources that are searc
 `Install-Package`. Use the `Find-DscResource` cmdlet to find DSC resources.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -297,7 +297,7 @@ Accept wildcard characters: False
 Switch to exclude the version number in the folder path.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
 Aliases:
 
@@ -313,7 +313,7 @@ Accept wildcard characters: False
 Specifies terms to search for within the **Name** and **Description** properties.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -329,7 +329,7 @@ Accept wildcard characters: False
 Specifies a tag that filters results and excludes results that don't contain the specified tag.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
 Aliases:
 
@@ -346,7 +346,7 @@ Forces the command to run without asking for user confirmation. Overrides restri
 `Install-Package` from succeeding, with the exception of security.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -363,7 +363,7 @@ Forces **PackageManagement** to automatically install the package provider for t
 package.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -379,7 +379,7 @@ Accept wildcard characters: False
 Specifies the package headers.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
 Aliases:
 
@@ -402,7 +402,7 @@ parameter are as follows:
 - Workflow
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 Accepted values: Cmdlet, DscResource, Function, RoleCapability, Workflow
@@ -420,7 +420,7 @@ Accepts pipeline input. Specifies a package by using the package's **SoftwareIde
 `Find-Package` outputs a **SoftwareIdentity** object.
 
 ```yaml
-Type: SoftwareIdentity[]
+Type: Microsoft.PackageManagement.Packaging.SoftwareIdentity[]
 Parameter Sets: PackageByInputObject
 Aliases:
 
@@ -436,7 +436,7 @@ Accept wildcard characters: False
 Indicates that `Install-Package` installs updates.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -453,7 +453,7 @@ Specifies the maximum allowed package version that you want to install. If you d
 parameter, `Install-Package` installs the package's newest version.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -471,7 +471,7 @@ parameter, `Install-Package` installs the package's newest version that satisfie
 specified by the **MaximumVersion** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -487,7 +487,7 @@ Accept wildcard characters: False
 Specifies one or more package names. Multiple package names must be separated by commas.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -504,7 +504,7 @@ Accept wildcard characters: False
 parameter added by the provider and isn't supported by `Install-Package`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -520,7 +520,7 @@ Accept wildcard characters: False
 Specifies the name of the **PackageManagement** provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -537,7 +537,7 @@ Specifies one or more package provider names to which to scope your package sear
 package provider names by running the `Get-PackageProvider` cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PackageBySearch
 Aliases: Provider
 Accepted values: Bootstrap, NuGet, PowerShellGet
@@ -554,7 +554,7 @@ Accept wildcard characters: False
 Specifies a proxy server for the request, rather than connecting directly to an internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -571,7 +571,7 @@ Specifies a user account that has permission to use the proxy server specified b
 parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -587,7 +587,7 @@ Accept wildcard characters: False
 Specifies the path to a package's published location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -605,7 +605,7 @@ parameter, `Install-Package` installs the package's newest version that satisfie
 specified by the **MaximumVersion** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -621,7 +621,7 @@ Accept wildcard characters: False
 Specifies an array of role capabilities.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -641,7 +641,7 @@ as follows:
 - AllUsers
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject, PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 Accepted values: CurrentUser, AllUsers
@@ -658,7 +658,7 @@ Accept wildcard characters: False
 Specifies the path to a script's published location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -674,7 +674,7 @@ Accept wildcard characters: False
 Specifies the script source location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -690,7 +690,7 @@ Accept wildcard characters: False
 Skips the installation of software dependencies.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
 Aliases:
 
@@ -708,7 +708,7 @@ installed package that is digitally signed by a trusted publisher but a new vers
 signed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -724,7 +724,7 @@ Accept wildcard characters: False
 Switch that skips validating the credentials of a package.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
 Aliases:
 
@@ -741,7 +741,7 @@ Specifies one or more package sources. Multiple package source names must be sep
 You can get package source names by running the `Get-PackageSource` cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -757,7 +757,7 @@ Accept wildcard characters: False
 Specifies one or more strings to search for in the package metadata.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
@@ -778,7 +778,7 @@ this parameter are as follows:
 - All
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 Accepted values: Module, Script, All
@@ -795,7 +795,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -811,7 +811,7 @@ Accept wildcard characters: False
 Shows what would happen if `Install-Package` cmdlet is run. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -847,7 +847,7 @@ parameter set that includes `-NoPathUpdate`, `AllowClobber`, and `SkipPublisherC
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
-[Find-DscResource](../PowershellGet/Find-DscResource)
+[Find-DscResource](../PowershellGet/Find-DscResource.md)
 
 [Get-Help](../Microsoft.PowerShell.Core/Get-Help.md)
 

@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC WaitForSome Resource
+description: DSC WaitForSome Resource
 ---
 # DSC WaitForSome Resource
 
@@ -10,6 +11,8 @@ title: DSC WaitForSome Resource
 The **WaitForSome** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](../../../configurations/configurations.md)
 to specify dependencies on configurations on other nodes.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 This resource succeeds if the resource specified by the **ResourceName** property is in the desired
 state on a minimum number of nodes (specified by **NodeCount**) defined by the **NodeName**
 property.
@@ -17,7 +20,7 @@ property.
 > [!NOTE]
 > **WaitForSome** resource uses Windows Remote Management to check the state of other Nodes. For
 > more information about port and security requirements for WinRM, see
-> [PowerShell Remoting Security Considerations](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
+> [PowerShell Remoting Security Considerations](/powershell/scripting/learn/remoting/winrmsecurity).
 
 ## Syntax
 

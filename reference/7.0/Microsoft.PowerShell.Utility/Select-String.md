@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/20/2019
+ms.date: 08/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
@@ -110,7 +110,7 @@ output displays the lines in those files that include the specified string.
 ```powershell
 Get-Alias | Out-File -FilePath .\Alias.txt
 Get-Command | Out-File -FilePath .\Command.txt
-Select-String -Path .\*.txt -Pattern 'Get'
+Select-String -Path .\*.txt -Pattern 'Get-'
 ```
 
 ```Output
@@ -345,7 +345,7 @@ matches.
 > more information about escaping regular expressions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -361,7 +361,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet matches are case-sensitive. By default, matches aren't case-sensitive.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -398,7 +398,7 @@ When the context includes a match, the **MatchInfo** object for each match inclu
 lines, but the overlapping lines appear only once in the display.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: (All)
 Aliases:
 
@@ -436,7 +436,7 @@ For more information about .NET CultureInfo.Name property, see
 The **Culture** parameter was introduced in PowerShell 7.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -449,19 +449,19 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **UTF8NoBOM**.
+Specifies the type of encoding for the target file. The default value is `utf8NoBOM`.
 
 The acceptable values for this parameter are as follows:
 
-- **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
-- **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
-- **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
-- **UTF7**: Encodes in UTF-7 format.
-- **UTF8**: Encodes in UTF-8 format.
-- **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
-- **UTF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
-- **UTF32**: Encodes in UTF-32 format.
+- `ascii`: Uses the encoding for the ASCII (7-bit) character set.
+- `bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.
+- `oem`: Uses the default encoding for MS-DOS and console programs.
+- `unicode`: Encodes in UTF-16 format using the little-endian byte order.
+- `utf7`: Encodes in UTF-7 format.
+- `utf8`: Encodes in UTF-8 format.
+- `utf8BOM`: Encodes in UTF-8 format with Byte Order Mark (BOM)
+- `utf8NoBOM`: Encodes in UTF-8 format without Byte Order Mark (BOM)
+- `utf32`: Encodes in UTF-32 format.
 
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
@@ -469,7 +469,7 @@ pages (like `-Encoding 1251`) or string names of registered code pages (like
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
-Type: Encoding
+Type: System.Text.Encoding
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
@@ -487,7 +487,7 @@ Exclude the specified items. The value of this parameter qualifies the **Path** 
 path element or pattern, such as `*.txt`. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -504,7 +504,7 @@ Includes the specified items. The value of this parameter qualifies the **Path**
 path element or pattern, such as `*.txt`. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -531,7 +531,7 @@ the collection as a single combined string. `Select-String` returns the strings 
 finds the search text in any string.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: ObjectRaw, Object
 Aliases:
 
@@ -550,7 +550,7 @@ efficient way to retrieve a list of files that have contents matching the regula
 By default, `Select-String` returns a **MatchInfo** object for each match it finds.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -569,7 +569,7 @@ characters, enclose it in single quotation marks. Single quotation marks tell Po
 interpret any characters as escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralFileRaw, LiteralFile
 Aliases: PSPath, LP
 
@@ -592,7 +592,7 @@ with black text.
 This parameter was introduced in PowerShell 7.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -608,7 +608,7 @@ Accept wildcard characters: False
 The **NotMatch** parameter finds text that doesn't match the specified pattern.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -628,7 +628,7 @@ Specify files in the directory, such as `log1.txt`, `*.doc`, or `*.*`. If you sp
 directory, the command fails.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: File, FileRaw
 Aliases:
 
@@ -646,7 +646,7 @@ Specifies the text to find on each line. The pattern value is treated as a regul
 To learn about regular expressions, see [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -663,7 +663,7 @@ Indicates that the cmdlet returns a Boolean value (True or False), instead of a 
 object. The value is True if the pattern is found; otherwise the value is False.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: File, Object, LiteralFile
 Aliases:
 
@@ -683,7 +683,7 @@ commands.
 This parameter was introduced in PowerShell 7.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ObjectRaw, FileRaw, LiteralFileRaw
 Aliases:
 
@@ -707,7 +707,7 @@ empty.
 > When this parameter is used with the **AllMatches** parameter, the **AllMatches** is ignored.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

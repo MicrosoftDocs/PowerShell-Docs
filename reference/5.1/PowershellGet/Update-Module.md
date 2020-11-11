@@ -1,14 +1,13 @@
 ---
 external help file: PSModule-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PowerShellGet
 ms.date: 07/16/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Module
 ---
-
 # Update-Module
 
 ## SYNOPSIS
@@ -21,8 +20,8 @@ computer.
 
 ```
 Update-Module [[-Name] <String[]>] [-RequiredVersion <String>] [-MaximumVersion <String>]
- [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Force]
- [-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Credential <PSCredential>] [-Scope <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-Force] [-AllowPrerelease] [-AcceptLicense] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -110,7 +109,7 @@ Update-Module -Name SpeculationControl -Force
 Automatically accept the license agreement during installation if the package requires it.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -126,7 +125,7 @@ Accept wildcard characters: False
 Allows you to update a module with the newer module marked as a prerelease.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -137,12 +136,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running `Update-Module`.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 Specifies a user account that has permission to update a module.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -159,7 +174,7 @@ Forces an update of each specified module without a prompt to request confirmati
 already installed, **Force** reinstalls the module.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -177,7 +192,7 @@ attempting to update multiple modules. The **MaximumVersion** and the **Required
 can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -198,7 +213,7 @@ Wildcards are accepted in module names. If you add wildcard characters to the sp
 matches are found, no error occurs.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -209,12 +224,29 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
+### -PassThru
+
+Returns an object representing the item with which you are working. By default, this cmdlet does not
+generate any output. The **PassThru** parameter support was added in **PowerShellGet** 2.0.0
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Proxy
 
 Specifies a proxy server for the request, rather than connecting directly to an internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -231,7 +263,7 @@ Specifies a user account that has permission to use the proxy server specified b
 parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -249,7 +281,7 @@ specified by **RequiredVersion** must exist in the online gallery or an error is
 than one module is updated in a single command, you can't use **RequiredVersion**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -260,18 +292,37 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirm
+### -Scope
 
-Prompts you for confirmation before running `Update-Module`.
+Specifies the installation scope of the module. The acceptable values for this parameter are
+**AllUsers** and **CurrentUser**. If **Scope** isn't specified, the update is installed in the
+**CurrentUser** scope.
+
+The **AllUsers** scope requires elevated permissions and installs modules in a location that is
+accessible to all users of the computer:
+
+`$env:ProgramFiles\PowerShell\Modules`
+
+The **CurrentUser** doesn't require elevated permissions and installs modules in a location that is
+accessible only to the current user of the computer:
+
+`$home\Documents\PowerShell\Modules`
+
+When no **Scope** is defined, the default is set based on the PowerShellGet version.
+
+- In PowerShellGet versions 2.0.0 and above, the default is **AllUsers** when running an elevated
+  session and **CurrentUser** for all others.
+- In PowerShellGet 1.x versions, the default is **AllUsers**, which requires elevation for install.
 
 ```yaml
-Type: SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
+Accepted values: CurrentUser, AllUsers
 
 Required: False
 Position: Named
-Default value: False
+Default value: CurrentUser
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -281,7 +332,7 @@ Accept wildcard characters: False
 Shows what would happen if `Update-Module` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -300,7 +351,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String[]
+
+### System.String
+
+### System.Management.Automation.PSCredential
+
+### System.Uri
+
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 

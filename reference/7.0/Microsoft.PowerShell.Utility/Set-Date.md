@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 4/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-date?view=powershell-7&WT.mc_id=ps-gethelp
@@ -101,7 +101,7 @@ can type an adjustment in standard date and time format for your locale or use t
 parameter to pass a **TimeSpan** object from `New-TimeSpan` to `Set-Date`.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: Adjust
 Aliases:
 
@@ -122,7 +122,7 @@ If you specify a date, but not a time, `Set-Date` changes the time to midnight o
 date. If you specify only a time, it does not change the date.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: Date
 Aliases:
 
@@ -138,18 +138,15 @@ Accept wildcard characters: False
 Specifies which elements of the date and time are displayed.The acceptable values for this parameter
 are:
 
-- Date.
-  displays only the date.
-- Time.
-  displays only the time.
-- DateTime.
-  displays the date and time.
+- **Date** - displays only the date.
+- **Time** - displays only the time.
+- **DateTime** - displays the date and time.
 
 This parameter affects only the display.
 It does not affect the **DateTime** object that `Get-Date` retrieves.
 
 ```yaml
-Type: DisplayHintType
+Type: Microsoft.PowerShell.Commands.DisplayHintType
 Parameter Sets: (All)
 Aliases:
 Accepted values: Date, Time, DateTime
@@ -166,7 +163,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -183,7 +180,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -221,7 +218,7 @@ You can pipe a date to `Set-Date`.
   `Set-Date`, such as **AddDays**, **AddMonths**, and **FromFileTime**. For more information, see
   [DateTime Methods](/dotnet/api/system.datetime) and
 
-  [TimeSpan Methods](/dotnet/api/system.timespan) in the MSDN library.
+  [TimeSpan Methods](/dotnet/api/system.timespan) in the .NET SDK.
 
 ## RELATED LINKS
 

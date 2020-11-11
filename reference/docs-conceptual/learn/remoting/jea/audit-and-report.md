@@ -2,6 +2,7 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Auditing and Reporting on JEA
+description: Auditing helps you assess that the correct people have access to the JEA endpoint and their assigned roles are still appropriate.
 ---
 
 # Auditing and Reporting on JEA

@@ -1,13 +1,8 @@
 ---
-title: "CustomEntry Element for CustomEntries for CustomControl for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ac3c0a25-f2ca-4e28-b3dc-9cb06a76d92a
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: CustomEntry Element for CustomEntries for CustomControl for View (Format)
+description: CustomEntry Element for CustomEntries for CustomControl for View (Format)
 ---
 # CustomEntry Element for CustomEntries for CustomControl for View (Format)
 

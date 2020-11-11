@@ -1,18 +1,8 @@
 ---
-title: "Error Reporting Concepts | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "non-terminating errors [PowerShell SDK]"
-  - "errors [PowerShell SDK], described"
-  - "terminating errors [PowerShell SDK]"
-  - "errors [PowerShell SDK]"
-ms.assetid: 0dce97c0-bd9a-4691-8ca3-e8d5dea902c5
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: Error Reporting Concepts
+description: Error Reporting Concepts
 ---
 # Error Reporting Concepts
 

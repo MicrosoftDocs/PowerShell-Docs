@@ -1,6 +1,7 @@
 ---
+description:  Describes how to run remote commands in Windows PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -99,8 +100,8 @@ these cmdlets in your session, type:
 
 ```powershell
 Get-Command | Where-Object {
-	$_.Parameters.Keys -contains 'ComputerName' -and
-	$_.Parameters.Keys -notcontains 'Session'
+  $_.Parameters.Keys -contains 'ComputerName' -and
+  $_.Parameters.Keys -notcontains 'Session'
 }
 ```
 
@@ -245,8 +246,8 @@ about_Remoting
 
 [about_Remote_Variables](about_Remote_Variables.md)
 
-[Enter-PSSession](../Enter-PSSession.md)
+[Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
 
-[Invoke-Command](../Invoke-Command.md)
+[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 
-[New-PSSession](../New-PSSession.md)
+[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)

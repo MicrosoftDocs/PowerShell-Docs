@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Host
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/stop-transcript?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/stop-transcript?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Transcript
 ---
@@ -61,5 +61,4 @@ This cmdlet returns a string that contains a status message and the path to the 
 ## RELATED LINKS
 
 [Start-Transcript](Start-Transcript.md)
-
 

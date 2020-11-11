@@ -1,13 +1,8 @@
 ---
-title: "TableColumnItem Element for TableColumnItems for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ef8395aa-4b31-48c0-a0b8-b481fd0b3738
-caps.latest.revision: 15
+ms.date: 09/13/2016
+ms.topic: reference
+title: TableColumnItem Element for TableColumnItems for TableControl (Format)
+description: TableColumnItem Element for TableColumnItems for TableControl (Format)
 ---
 # TableColumnItem Element for TableColumnItems for TableControl (Format)
 

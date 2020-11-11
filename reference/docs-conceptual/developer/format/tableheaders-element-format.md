@@ -1,13 +1,8 @@
 ---
-title: "TableHeaders Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
-caps.latest.revision: 15
+ms.date: 09/13/2016
+ms.topic: reference
+title: TableHeaders Element (Format)
+description: TableHeaders Element (Format)
 ---
 # TableHeaders Element (Format)
 

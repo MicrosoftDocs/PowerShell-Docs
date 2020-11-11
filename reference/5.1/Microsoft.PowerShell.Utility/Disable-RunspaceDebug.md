@@ -1,14 +1,13 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/19/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/disable-runspacedebug?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-RunspaceDebug
 ---
-
 # Disable-RunspaceDebug
 
 ## SYNOPSIS
@@ -17,51 +16,63 @@ Disables debugging on one or more runspaces, and releases any pending debugger s
 ## SYNTAX
 
 ### RunspaceNameParameterSet (Default)
+
 ```
 Disable-RunspaceDebug [[-RunspaceName] <String[]>] [<CommonParameters>]
 ```
 
 ### RunspaceParameterSet
+
 ```
 Disable-RunspaceDebug [-Runspace] <Runspace[]> [<CommonParameters>]
 ```
 
 ### RunspaceIdParameterSet
+
 ```
 Disable-RunspaceDebug [-RunspaceId] <Int32[]> [<CommonParameters>]
 ```
 
 ### RunspaceInstanceIdParameterSet
+
 ```
 Disable-RunspaceDebug [-RunspaceInstanceId] <Guid[]> [<CommonParameters>]
 ```
 
 ### ProcessNameParameterSet
+
 ```
 Disable-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Disable-RunspaceDebug** cmdlet disables debugging on one or more runspaces, and releases any pending debugger stop.
+
+The `Disable-RunspaceDebug` cmdlet disables debugging on one or more runspaces, and releases any
+pending debugger stop.
 
 ## EXAMPLES
 
-### 1:
+### 1: Disable the default runspace debugger
+
+```powershell
+Disable-RunspaceDebug
+Get-RunspaceDebug
 ```
 
-```
-
-### 2:
-```
-
+```Output
+ Id Name                 Enabled    BreakAll
+ -- ----                 -------    --------
+  1 Runspace1            False      False
 ```
 
 ## PARAMETERS
 
 ### -AppDomainName
 
+The name of the application domain that hosts the PowerShell runspace.
+
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ProcessNameParameterSet
 Aliases:
 
@@ -74,8 +85,10 @@ Accept wildcard characters: False
 
 ### -ProcessName
 
+The name of the process that hosts the PowerShell runspace.
+
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ProcessNameParameterSet
 Aliases:
 
@@ -87,11 +100,11 @@ Accept wildcard characters: False
 ```
 
 ### -Runspace
-Specifies a runspace object.
-The simplest way to provide a value for this parameter is to specify a variable that contains the results of a filtered **Get-Runspace** command.
+
+One or more **Runspace** objects to be disabled.
 
 ```yaml
-Type: Runspace[]
+Type: System.Management.Automation.Runspaces.Runspace[]
 Parameter Sets: RunspaceParameterSet
 Aliases:
 
@@ -104,8 +117,10 @@ Accept wildcard characters: False
 
 ### -RunspaceId
 
+One or more **Runspace** Id numbers to be disabled.
+
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: RunspaceIdParameterSet
 Aliases:
 
@@ -118,8 +133,10 @@ Accept wildcard characters: False
 
 ### -RunspaceInstanceId
 
+One or more **Runspace** GUIDs to be disabled.
+
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: RunspaceInstanceIdParameterSet
 Aliases:
 
@@ -132,8 +149,10 @@ Accept wildcard characters: False
 
 ### -RunspaceName
 
+One or more **Runspace** names to be disabled.
+
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: RunspaceNameParameterSet
 Aliases:
 
@@ -145,7 +164,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -158,5 +181,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Enable-RunspaceDebug](Enable-RunspaceDebug.md)
 
 [Get-RunspaceDebug](Get-RunspaceDebug.md)
-
-

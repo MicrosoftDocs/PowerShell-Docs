@@ -1,8 +1,8 @@
 ---
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=390816
-Help Version: 5.1.1.0
+Help Version: 5.2.0.0
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Guid: 50cdb55f-5ab7-489f-9e94-4ec21ff51e59
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
@@ -36,11 +36,11 @@ Enables a scheduled job.
 ### [Get-JobTrigger](Get-JobTrigger.md)
 Gets the job triggers of scheduled jobs.
 
-### [Get-ScheduledJobOption](Get-ScheduledJobOption.md)
-Gets the job options of scheduled jobs.
-
 ### [Get-ScheduledJob](Get-ScheduledJob.md)
 Gets scheduled jobs on the local computer.
+
+### [Get-ScheduledJobOption](Get-ScheduledJobOption.md)
+Gets the job options of scheduled jobs.
 
 ### [New-JobTrigger](New-JobTrigger.md)
 Creates a job trigger for a scheduled job.
@@ -57,11 +57,11 @@ Delete job triggers from scheduled jobs.
 ### [Set-JobTrigger](Set-JobTrigger.md)
 Changes the job trigger of a scheduled job.
 
-### [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
-Changes the job options of a scheduled job.
-
 ### [Set-ScheduledJob](Set-ScheduledJob.md)
 Changes scheduled jobs.
+
+### [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
+Changes the job options of a scheduled job.
 
 ### [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
 Deletes scheduled jobs on the local computer.

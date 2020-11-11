@@ -1,13 +1,8 @@
 ---
-title: "HideTableHeaders Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a20eaa3d-2bca-4a1f-8d40-fe038631d778
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: HideTableHeaders Element (Format)
+description: HideTableHeaders Element (Format)
 ---
 # HideTableHeaders Element (Format)
 

@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/17/2020
+ms.topic: reference
 title: DSC for Linux nxGroup Resource
+description: DSC for Linux nxGroup Resource
 ---
 # DSC for Linux nxGroup Resource
 

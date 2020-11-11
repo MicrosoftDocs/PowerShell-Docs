@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -213,7 +213,7 @@ This parameter does not rely on Windows PowerShell remoting.
 You can use the *ComputerName* parameter of **Get-Service** even if your computer is not configured to run remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Cn
 
@@ -231,7 +231,7 @@ Indicates that this cmdlet gets only the services that depend upon the specified
 By default, this cmdlet gets all services.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: DS
 
@@ -249,7 +249,7 @@ Wildcards are permitted.
 By default, this cmdlet gets all services on the computer.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DisplayName
 Aliases:
 
@@ -268,7 +268,7 @@ Enter a name element or pattern, such as "s*".
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -287,7 +287,7 @@ Enter a name element or pattern, such as "s*".
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -305,7 +305,7 @@ Enter a variable that contains the objects, or type a command or expression that
 You can also pipe a service object to this cmdlet.
 
 ```yaml
-Type: ServiceController[]
+Type: System.ServiceProcess.ServiceController[]
 Parameter Sets: InputObject
 Aliases:
 
@@ -323,7 +323,7 @@ Wildcards are permitted.
 By default, this cmdlet gets all of the services on the computer.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases: ServiceName
 
@@ -342,7 +342,7 @@ This parameter gets the value of the **ServicesDependedOn** property of the serv
 By default, this cmdlet gets all services.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: SDO, ServicesDependedOn
 
@@ -399,5 +399,3 @@ The sort is based on the integer value, not the name.
 [Stop-Service](Stop-Service.md)
 
 [Suspend-Service](Suspend-Service.md)
-
-

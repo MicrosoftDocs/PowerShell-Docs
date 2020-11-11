@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 5/15/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-psbreakpoint?view=powershell-7&WT.mc_id=ps-gethelp
@@ -149,7 +149,7 @@ Specifies an array of command breakpoints that are set on the specified command 
 Enter the command names, such as the name of a cmdlet or function.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Command
 Aliases:
 
@@ -167,7 +167,7 @@ Enter the IDs in a comma-separated list.
 You can also pipe breakpoint IDs to **Get-PSBreakpoint**.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Id
 Aliases:
 
@@ -185,7 +185,7 @@ Enter the path (optional) and names of one or more script files.
 If you omit the path, the default location is the current directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Script, Variable, Command, Type
 Aliases:
 
@@ -209,7 +209,7 @@ The acceptable values for this parameter are:
 You can also pipe breakpoint types to **Get-PSBreakPoint**.
 
 ```yaml
-Type: BreakpointType[]
+Type: Microsoft.PowerShell.Commands.BreakpointType[]
 Parameter Sets: Type
 Aliases:
 Accepted values: Line, Variable, Command
@@ -227,7 +227,7 @@ Specifies an array of variable breakpoints that are set on the specified variabl
 Enter the variable names without dollar signs.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Variable
 Aliases:
 
@@ -272,4 +272,3 @@ You can pipe breakpoint IDs and breakpoint types to **Get-PSBreakPoint**.
 [Remove-PSBreakpoint](Remove-PSBreakpoint.md)
 
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
-

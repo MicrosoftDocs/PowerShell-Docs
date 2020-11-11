@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pstransportoption?view=powershell-6&WT.mc_id=ps-gethelp
@@ -81,11 +81,11 @@ Get-PSSessionConfiguration -Name ITTasks | Format-List -Property *
 ```Output
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
-ResourceUri                   : https://schemas.microsoft.com/powershell/ITTasks
+ResourceUri                   : http://schemas.microsoft.com/powershell/ITTasks
 MaxConcurrentCommandsPerShell : 1000
 UseSharedProcess              : false
 ProcessIdleTimeoutSec         : 0
-xmlns                         : https://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+xmlns                         : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 MaxConcurrentUsers            : 5
 lang                          : en-US
 SupportsOptions               : true
@@ -190,7 +190,7 @@ If an idle time-out value is set in the session options and in the session confi
 To set the value of the **MaxIdleTimeoutMs** property, use the *MaxIdleTimeoutSec* parameter.
 
 ```yaml
-Type: Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
@@ -209,7 +209,7 @@ The default value is 1000.
 The *MaxConcurrentCommandsPerSession* parameter corresponds to the **MaxConcurrentCommandsPerShell** property of a session configuration.
 
 ```yaml
-Type: Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
@@ -226,7 +226,7 @@ Limits the number of users who can run commands at the same time in each session
 The default value is 5.
 
 ```yaml
-Type: Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
@@ -248,7 +248,7 @@ The user can reconnect only if the session has not timed out.
 The *MaxIdleTimeoutSec* parameter corresponds to the **MaxIdleTimeoutMs** property of a session configuration.
 
 ```yaml
-Type: Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
@@ -268,7 +268,7 @@ The default value is 1024 megabytes (1 GB).
 The *MaxMemoryPerSessionMB* parameter corresponds to the **MaxMemoryPerShellMB** property of a session configuration.
 
 ```yaml
-Type: Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
@@ -287,7 +287,7 @@ The default value is 15.
 The *MaxProcessesPerSession* parameter corresponds to the **MaxProcessesPerShell** property of a session configuration.
 
 ```yaml
-Type: Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
@@ -306,7 +306,7 @@ The default value is 25.
 The *MaxSessions* parameter corresponds to the **MaxShells** property of a session configuration.
 
 ```yaml
-Type: Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
@@ -327,7 +327,7 @@ When you specify this value, consider that many users might be using the credent
 The *MaxSessionsPerUser* parameter corresponds to the **MaxShellsPerUser** property of a session configuration.
 
 ```yaml
-Type: Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
@@ -354,7 +354,7 @@ No output buffering mode is specified.
 The default value of the **OutputBufferingMode** property of sessions is Block.
 
 ```yaml
-Type: OutputBufferingMode
+Type: System.Nullable`1[System.Management.Automation.Runspaces.OutputBufferingMode]
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, Drop, Block
@@ -375,7 +375,7 @@ Other session configurations have per-process time-out values.
 For example, the **Microsoft.PowerShell.Workflow** session configuration has a per-process time-out value of 28800 seconds (8 hours).
 
 ```yaml
-Type: Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
@@ -413,5 +413,3 @@ You cannot pipe input to this cmdlet.
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
 [Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
-
-

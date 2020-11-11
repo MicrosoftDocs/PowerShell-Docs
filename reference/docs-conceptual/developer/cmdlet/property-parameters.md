@@ -1,13 +1,8 @@
 ---
-title: "Property Parameters | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d17e0d66-42ea-4e4c-a85b-3ca09b146492
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: Property Parameters
+description: Property Parameters
 ---
 # Property Parameters
 

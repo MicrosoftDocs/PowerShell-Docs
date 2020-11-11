@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Service
 ---
@@ -38,8 +38,10 @@ Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <S
 
 ## DESCRIPTION
 
-The **Stop-Service** cmdlet sends a stop message to the Windows Service Controller for each of the specified services.
-You can specify the services by their service names or display names, or you can use the **InputObject** parameter to pass a service object that represents the service that you want to stop.
+The `Stop-Service` cmdlet sends a stop message to the Windows Service Controller for each of the
+specified services. You can specify the services by their service names or display names, or you can
+use the **InputObject** parameter to pass a service object that represents the service that you want
+to stop.
 
 ## EXAMPLES
 
@@ -57,9 +59,9 @@ This command stops the Performance Logs and Alerts (SysmonLog) service on the lo
 PS C:\> Get-Service -DisplayName "telnet" | Stop-Service
 ```
 
-This command stops the Telnet service on the local computer.
-The command uses **Get-Service** to get an object that represents the Telnet service.
-The pipeline operator (|) pipes the object to **Stop-Service**, which stops the service.
+This command stops the Telnet service on the local computer. The command uses `Get-Service` to get
+an object that represents the Telnet service. The pipeline operator (`|`) pipes the object to
+`Stop-Service`, which stops the service.
 
 ### Example 3: Stop a service that has dependent services
 
@@ -68,17 +70,18 @@ PS C:\> Get-Service -Name "iisadmin" | Format-List -Property Name, DependentServ
 PS C:\> Stop-Service -Name "iisadmin" -Force -Confirm
 ```
 
-This example stops the IISAdmin service on the local computer.
-Because stopping this service also stops the services that depend on the IISAdmin service, it is best to precede **Stop-Service** with a command that lists the services that depend on the IISAdmin service.
+This example stops the IISAdmin service on the local computer. Because stopping this service also
+stops the services that depend on the IISAdmin service, it is best to precede `Stop-Service` with a
+command that lists the services that depend on the IISAdmin service.
 
-The first command lists the services that depend on IISAdmin.
-It uses **Get-Service** to get an object that represents the IISAdmin service.
-The pipeline operator (|) passes the result to the Format-List cmdlet.
-The command uses the *Property* parameter of **Format-List** to list only the **Name** and **DependentServices** properties of the service.
+The first command lists the services that depend on IISAdmin. It uses `Get-Service` to get an object
+that represents the IISAdmin service. The pipeline operator (`|`) passes the result to the
+`Format-List` cmdlet. The command uses the **Property** parameter of `Format-List` to list only the
+**Name** and **DependentServices** properties of the service.
 
-The second command stops the IISAdmin service.
-The *Force* parameter is required to stop a service that has dependent services.
-The command uses the *Confirm* parameter to request confirmation from the user before it stops each service.
+The second command stops the IISAdmin service. The **Force** parameter is required to stop a service
+that has dependent services. The command uses the **Confirm** parameter to request confirmation from
+the user before it stops each service.
 
 ## PARAMETERS
 
@@ -88,7 +91,7 @@ Specifies the display names of the services to stop.
 Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DisplayName
 Aliases:
 
@@ -101,13 +104,11 @@ Accept wildcard characters: True
 
 ### -Exclude
 
-Specifies services that this cmdlet omits.
-The value of this parameter qualifies the *Name* parameter.
-Enter a name element or pattern, such as s*.
-Wildcard characters are permitted.
+Specifies services that this cmdlet omits. The value of this parameter qualifies the **Name**
+parameter. Enter a name element or pattern, such as s*. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -123,7 +124,7 @@ Accept wildcard characters: True
 Forces the cmdlet to stop a service even if that service has dependent services.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -136,13 +137,11 @@ Accept wildcard characters: False
 
 ### -Include
 
-Specifies services that this cmdlet stops.
-The value of this parameter qualifies the *Name* parameter.
-Enter a name element or pattern, such as s*.
-Wildcard characters are permitted.
+Specifies services that this cmdlet stops. The value of this parameter qualifies the **Name**
+parameter. Enter a name element or pattern, such as s*. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -155,11 +154,11 @@ Accept wildcard characters: True
 
 ### -InputObject
 
-Specifies **ServiceController** objects that represent the services to stop.
-Enter a variable that contains the objects, or type a command or expression that gets the objects.
+Specifies **ServiceController** objects that represent the services to stop. Enter a variable that
+contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
-Type: ServiceController[]
+Type: System.ServiceProcess.ServiceController[]
 Parameter Sets: InputObject
 Aliases:
 
@@ -172,11 +171,10 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies the service names of the services to stop.
-Wildcard characters are permitted.
+Specifies the service names of the services to stop. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases: ServiceName
 
@@ -192,7 +190,7 @@ Accept wildcard characters: True
 Indicates that this cmdlet uses the no wait option.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -205,11 +203,10 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Returns an object that represents the service.
-By default, this cmdlet does not generate any output.
+Returns an object that represents the service. By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -225,7 +222,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -238,11 +235,10 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -255,7 +251,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -267,20 +266,22 @@ You can pipe a service object or a string that contains the name of a service to
 
 ### None, System.ServiceProcess.ServiceController
 
-This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the service, if you use the *PassThru* parameter.
-Otherwise, this cmdlet does not generate any output.
+This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the
+service, if you use the **PassThru** parameter. Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-* You can also refer to **Stop-Service** by its built-in alias, **spsv**. For more information, see about_Aliases.
+This cmdlet is only available on Windows platforms.
 
-  **Stop-Service** can control services only when the current user has permission to do this.
-If a command does not work correctly, you might not have the required permissions.
+You can also refer to `Stop-Service` by its built-in alias, **spsv**. For more information, see
+about_Aliases.
 
-  To find the service names and display names of the services on your system, type `Get-Service`.
-The service names appear in the **Name** column and the display names appear in the **DisplayName** column.
+`Stop-Service` can control services only when the current user has permission to do this. If a
+command does not work correctly, you might not have the required permissions.
 
-*
+To find the service names and display names of the services on your system, type `Get-Service`. The
+service names appear in the **Name** column and the display names appear in the **DisplayName**
+column.
 
 ## RELATED LINKS
 
@@ -299,5 +300,3 @@ The service names appear in the **Name** column and the display names appear in 
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-
-

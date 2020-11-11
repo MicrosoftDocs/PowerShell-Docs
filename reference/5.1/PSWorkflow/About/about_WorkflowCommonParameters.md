@@ -1,6 +1,7 @@
 ---
+description:  This topic describes the parameters that are valid on all Windows PowerShell workflow commands. Because the Windows PowerShell engine adds them to workflows, you can use these parameters on any workflow and they are automatically enabled on the workflows that you author.
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_workflowcommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -50,7 +51,7 @@ Runs the workflow as a workflow job. The workflow command immediately returns
 an object that represents a parent job. The parent job contains the child jobs
 that are running on each of the target computers. To manage the job, use the
 Job cmdlets. To get the job results, use
-[Receive-Job](../../Microsoft.PowerShell.Core/Receive-Job.md).
+[Receive-Job](xref:Microsoft.PowerShell.Core.Receive-Job).
 
 #### -JobName \<String\>
 
@@ -79,7 +80,7 @@ setting the `MaximumConnectionRedirectionCount` property of the
 `MaximumConnectionRedirectionCount` property of the value of the
 `PSSessionOption parameter`. The default value is 5. For more information, see
 the description of the `PSSessionOption` parameter and
-[New-PSSessionOption](../../Microsoft.PowerShell.Core/New-PSSessionOption.md).
+[New-PSSessionOption](xref:Microsoft.PowerShell.Core.New-PSSessionOption).
 
 #### -PSApplicationName \<String\>
 
@@ -116,7 +117,7 @@ The default value is **Default**.
 
 For information about the values of this parameter, see the description of the
 `System.Management.Automation.Runspaces.AuthenticationMechanism` enumeration in
-MSDN.
+the PowerShell SDK.
 
 > [!WARNING]
 > Credential Security Service Provider (CredSSP) authentication, in which the
@@ -155,7 +156,7 @@ Certificates are used in client certificate-based authentication. They can only
 be mapped to local user accounts; they do not work with domain accounts.
 
 To get a certificate, use the
-[Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) or [Get-ChildItem]
+[Get-Item](xref:Microsoft.PowerShell.Management.Get-Item) or [Get-ChildItem]
 (../../Microsoft.PowerShell.Management/Get-Childitem.md) cmdlets in the Windows
 PowerShell Cert: drive.
 
@@ -349,6 +350,6 @@ the port used for the command, the command fails.
 
 - [about_ActivityCommonParameters](about_ActivityCommonParameters.md)
 - [about_Workflows](about_Workflows.md)
-- [Invoke-AsWorkflow](../../PSWorkflowUtility/Invoke-AsWorkflow.md)
-- [New-PSWorkflowExecutionOption](../New-PSWorkflowExecutionOption.md)
-- [New-PSWorkflowSession](../New-PSWorkflowSession.md)
+- [Invoke-AsWorkflow](xref:PSWorkflowUtility.Invoke-AsWorkflow)
+- [New-PSWorkflowExecutionOption](xref:PSWorkflow.New-PSWorkflowExecutionOption)
+- [New-PSWorkflowSession](xref:PSWorkflow.New-PSWorkflowSession)

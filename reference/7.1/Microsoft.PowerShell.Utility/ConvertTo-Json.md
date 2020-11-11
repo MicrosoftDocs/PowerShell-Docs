@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
 ---
@@ -23,7 +23,7 @@ ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
 
 ## DESCRIPTION
 
-The `ConvertTo-Json` cmdlet converts any object to a string in JavaScript Object Notation (JSON)
+The `ConvertTo-Json` cmdlet converts any .NET object to a string in JavaScript Object Notation (JSON)
 format. The properties are converted to field names, the field values are converted to property
 values, and the methods are removed.
 
@@ -40,10 +40,10 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ### Example 1
 
 ```powershell
-PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
+(Get-UICulture).Calendar | ConvertTo-Json
 ```
 
-```output
+```Output
 {
   "MinSupportedDateTime": "0001-01-01T00:00:00",
   "MaxSupportedDateTime": "9999-12-31T23:59:59.9999999",
@@ -63,10 +63,10 @@ JSON-formatted string.
 ### Example 2
 
 ```powershell
-PS C:\> Get-Date | ConvertTo-Json; Get-Date | ConvertTo-Json -AsArray
+Get-Date | ConvertTo-Json; Get-Date | ConvertTo-Json -AsArray
 ```
 
-```output
+```Output
 {
   "value": "2018-10-12T23:07:18.8450248-05:00",
   "DisplayHint": 2,
@@ -87,10 +87,10 @@ parameter. You can see the second portion of the output is wrapped in array brac
 ### Example 3
 
 ```powershell
-PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Compress
+@{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Compress
 ```
 
-```output
+```Output
 {"Domain":"Domain01","Account":"User01","Admin":"True"}
 ```
 
@@ -100,10 +100,10 @@ compression affects only the appearance of the string, not its validity.
 ### Example 4
 
 ```powershell
-PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
+Get-Date | Select-Object -Property * | ConvertTo-Json
 ```
 
-```output
+```Output
 {
   "DisplayHint": 2,
   "DateTime": "October 12, 2018 10:55:32 PM",
@@ -136,17 +136,17 @@ PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
 ```
 
 This example uses the `ConvertTo-Json` cmdlet to convert a **System.DateTime** object from the
-`Get-Date` cmdlet to a JSON-formatted string. The command uses the `Select-Object` cmdlet to get
-all (`*`) of the properties of the **DateTime** object. The output shows the JSON string that
+`Get-Date` cmdlet to a JSON-formatted string. The command uses the `Select-Object` cmdlet to get all
+(`*`) of the properties of the **DateTime** object. The output shows the JSON string that
 `ConvertTo-Json` returned.
 
 ### Example 5
 
 ```powershell
-PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
+Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
 ```
 
-```output
+```Output
 DisplayHint : 2
 DateTime    : October 12, 2018 10:55:52 PM
 Date        : 2018-10-12 12:00:00 AM
@@ -176,7 +176,7 @@ object to a JSON string and a JSON object.
 Outputs the object in array brackets, even if the input is a single object.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 Omits white space and indented formatting in the output string.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -209,7 +209,7 @@ Specifies how many levels of contained objects are included in the JSON represen
 value is 2.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 Provides an alternative serialization option that converts all enumerations to their string representation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -250,7 +250,7 @@ Acceptable values are:
 This parameter was introduced in PowerShell 6.2.
 
 ```yaml
-Type: StringEscapeHandling
+Type: Newtonsoft.Json.StringEscapeHandling
 Parameter Sets: (All)
 Aliases:
 
@@ -271,7 +271,7 @@ When the input object is `$null`, `ConvertTo-Json` does not generate any output.
 object is an empty string, `ConvertTo-Json` returns an empty string.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -285,8 +285,9 @@ Accept wildcard characters: False
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable,
--Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -300,11 +301,16 @@ You can pipe any object to `ConvertTo-Json`.
 
 ## NOTES
 
-The `ConvertTo-Json` cmdlet is implemented using [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
+The `ConvertTo-Json` cmdlet is implemented using
+[Newtonsoft Json.NET](https://www.newtonsoft.com/json).
 
 ## RELATED LINKS
 
+[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](/previous-versions/dotnet/articles/bb299886(v=msdn.10))
+
 [ConvertFrom-Json](ConvertFrom-Json.md)
+
+[Get-Content](../Microsoft.PowerShell.Management/Get-Content.md)
 
 [Get-UICulture](Get-UICulture.md)
 

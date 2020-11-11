@@ -1,9 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Utility
 ms.date: 09/19/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Json
 ---
@@ -15,8 +16,19 @@ Tests whether a string is a valid JSON document
 
 ## SYNTAX
 
+### __AllParameterSets (Default)
 ```
-Test-Json [-Json] <string> [[-Schema] <string>] [<CommonParameters>]
+Test-Json [-Json] <String> [<CommonParameters>]
+```
+
+### SchemaString
+```
+Test-Json [-Json] <String> [[-Schema] <String>] [<CommonParameters>]
+```
+
+### SchemaFile
+```
+Test-Json [-Json] <String> [-SchemaFile <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,6 +116,55 @@ input we tested uses a string value instead.
 
 For more information, see [JSON Schema](https://json-schema.org/).
 
+### Example 3: Test an object against a schema from file
+
+JSON schema can reference definitions using `$ref` keyword. The `$ref` can resolve to a URI that
+references another file. The `SchemaFile` parameter accepts literal path to the JSON schema file
+and allows JSON files to be validated against such schemas.
+
+In this example we have `schema.json` file which references `definitions.json`.
+
+```powershell
+PS> Get-Content schema.json
+
+{
+  "description":"A person",
+  "type":"object",
+  "properties":{
+    "name":{
+      "$ref":"definitions.json#/definitions/name"
+    },
+    "hobbies":{
+      "$ref":"definitions.json#/definitions/hobbies"
+    }
+  }
+}
+
+PS> Get-Content definitions.json
+
+{
+  "definitions":{
+    "name":{
+      "type":"string"
+    },
+    "hobbies":{
+      "type":"array",
+      "items":{
+        "type":"string"
+      }
+    }
+  }
+}
+
+'{"name": "James", "hobbies": [".NET", "Blogging"]}' | Test-Json -SchemaFile 'schema.json'
+```
+
+```Output
+True
+```
+
+For more information, see [Structuring a complex schema](https://json-schema.org/understanding-json-schema/structuring.html).
+
 ## PARAMETERS
 
 ### -Json
@@ -114,7 +175,7 @@ command or expression that gets the string. You can also pipe a string to `Test-
 The **Json** parameter is required.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -134,12 +195,32 @@ input conforms to the provided Schema.
 For more information, see [JSON Schema](https://json-schema.org/).
 
 ```yaml
-Type: String
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: SchemaString
 Aliases:
 
 Required: False
 Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchemaFile
+
+Specifies a schema file used to validate the JSON input. When used, the `Test-Json` returns `$True`
+only if the JSON input conforms to the Schema defined in the file specified by the **SchemaFile**
+parameter.
+
+For more information, see [JSON Schema](https://json-schema.org/).
+
+```yaml
+Type: System.String
+Parameter Sets: SchemaFile
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

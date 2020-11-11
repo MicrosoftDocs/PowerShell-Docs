@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -109,7 +109,7 @@ default is the current folder. Wildcard characters are supported, but they must 
 file. You can also pipe a session configuration file path to `Test-PSSessionConfigurationFile`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

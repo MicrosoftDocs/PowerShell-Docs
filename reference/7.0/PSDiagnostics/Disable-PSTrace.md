@@ -1,5 +1,6 @@
 ---
 external help file: PSDiagnostics-help.xml
+Locale: en-US
 Module Name: PSDiagnostics
 ms.date: 11/27/2018
 online version: https://docs.microsoft.com/powershell/module/psdiagnostics/disable-pstrace?view=powershell-7&WT.mc_id=ps-gethelp
@@ -43,7 +44,7 @@ When this parameter is used, the cmdlet disables the Analytic event log of the
 Microsoft-Windows-PowerShell provider. The Operational event log is not changed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

@@ -1,16 +1,8 @@
 ---
-title: "Creating a Windows PowerShell Item Provider | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "item providers [PowerShell Programmer's Guide]"
-  - "providers [PowerShell Programmer's Guide], item provider"
-ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a Windows PowerShell Item Provider
+description: Creating a Windows PowerShell Item Provider
 ---
 # Creating a Windows PowerShell Item Provider
 
@@ -37,7 +29,7 @@ A Windows PowerShell item provider must define a .NET class that derives from th
 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 base class. The following is the class definition for the item provider described in this section.
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L34-L36 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="34-36":::
 
 Note that in this class definition, the
 [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
@@ -83,7 +75,7 @@ Here is the implementation of the
 method for this provider. Note that this implementation calls a NormalizePath helper method to
 convert all separators in the path to a uniform one.
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L274-L298 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="274-298":::
 
 ## Determining if an Item Exists
 
@@ -98,7 +90,7 @@ Here is the implementation of the
 method for this provider. Note that this method calls the PathIsDrive, ChunkPath, and GetTable
 helper methods, and uses a provider defined DatabaseTableInfo object.
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L229-L267 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="229-267":::
 
 #### Things to Remember About Implementing ItemExists
 
@@ -151,7 +143,7 @@ method.
 
 Here is the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method for this provider. Note that this method uses the GetTable and GetRow helper methods to retrieve items that are either tables in the Access database or rows in a data table.
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L132-L163 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="132-163":::
 
 #### Things to Remember About Implementing GetItem
 

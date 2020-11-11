@@ -12,19 +12,28 @@ information outlined in the [Overview](overview.md#get-started-writing-docs).
 ## Product Terminology
 
 There are several variants of PowerShell.
-This table defines some of the different terms used to discuss PowerShell.
 
 - **PowerShell** - This is the default. We consider PowerShell 7 and beyond to be the one, true
   PowerShell going forward.
-
 - **PowerShell Core** - PowerShell built on .NET Core. Usage of the term **Core** should be limited
   to cases where it is necessary to differentiate it from Windows PowerShell.
-
 - **Windows PowerShell** - PowerShell built on .NET Framework. Windows PowerShell ships only on
   Windows and requires the complete Framework.
 
-In general, references to "Windows PowerShell" in documentation can be changed to "PowerShell".
-"Windows PowerShell" should **not** be changed when Windows-specific technology is being discussed.
+  In general, references to "Windows PowerShell" in documentation can be changed to "PowerShell".
+  "Windows PowerShell" should be used when "Windows PowerShell"-specific behavior is being
+  discussed.
+
+Related products
+
+- **Visual Studio Code (VS Code)** - This is Microsoft's free, open source editor. At first mention,
+  the full name should be used. After that you may use **VS Code**. Do not use "VSCode".
+- **PowerShell Extension for Visual Studio Code** - The extension turns VS Code into the preferred
+  IDE for PowerShell. At first mention, the full name should be used. After that you may use
+  **PowerShell extension**.
+- **Azure PowerShell** - This is the collection of PowerShell modules used to manage Azure services.
+- **Azure Stack PowerShell** - This is the collection of PowerShell modules used to manage
+  Microsoft's hybrid cloud solution.
 
 ## Markdown specifics
 
@@ -37,15 +46,17 @@ attention to the details provided in this document.
 
 ### Blank lines, spaces, and tabs
 
-Remove duplicate blank lines. Multiple blank lines render as a single blank line in HTML so there is
-not purpose for multiple blank lines.
-
 Blank lines also signal the end of a block in Markdown. There should be a single blank between
 Markdown blocks of different types (for example, between a paragraph and a list or header).
 
+Remove duplicate blank lines. Multiple blank lines render as a single blank line in HTML so there is
+no purpose for multiple blank lines. Multiple blank lines within a code block break the code block.
+
+Remove extra spaces at the end of lines.
+
 > [!NOTE]
-> Spacing is significant in Markdown. Always uses spaces instead of hard tabs. Remove
-> extra spaces at the end of lines.
+> Spacing is significant in Markdown. Always uses spaces instead of hard tabs. Trailing spaces can
+> change how Markdown renders.
 
 ### Titles and headings
 
@@ -61,12 +72,15 @@ Only use [ATX headings][atx] (# style, as opposed to `=` or `-` style headers).
 
 ### Limit line length to 100 characters
 
-This applies to conceptual articles and cmdlet reference. About_topics are limited to 80 characters.
-Limiting the line length improves the readability git diffs and history. It also makes it easier for
-other writers to make contributions.
+This applies to conceptual articles and cmdlet reference. Limiting the line length improves the
+readability of git diffs and history. It also makes it easier for other writers to make
+contributions.
 
 Use the [Reflow Markdown][reflow] extension in Visual Studio Code to easily reflow paragraphs to fit
 the prescribed line length.
+
+About_topics are limited to 80 characters. For more specific information, see
+[Editing reference articles](./editing-cmdlet-ref.md#formatting-about_-files).
 
 ### Lists
 
@@ -147,64 +161,6 @@ The resulting Markdown is rendered as follows:
 
 1. The next numbered item starts here.
 
-### Formatting command syntax elements
-
-- Always use the full name for cmdlets and parameters. Avoid using aliases unless you are
-  specifically demonstrating the alias.
-
-- Within a paragraph, language keywords, cmdlet names, variables, and file paths should be wrapped
-  in backtick (`` ` ``) characters. Property, parameter, and class names should be **bold**.
-
-  For example:
-
-  ~~~markdown
-  The following code uses `Get-ChildItem` to list the contents of `C:\Windows` and assigns
-  the output to the `$files` variable.
-
-  ```powershell
-  $files = Get-ChildItem C:\Windows
-  ```
-  ~~~
-
-- When referring to a parameter by name, the name should be **bold**. When illustrating the use of
-  a parameter with the hyphen prefix, the parameter should be wrapped in backticks. For example:
-
-  ```markdown
-  The parameter's name is **Name**, but it is typed as `-Name` when used on the command
-  line as a parameter.
-  ```
-
-- When referring to external commands (EXEs, scripts, etc.), the command name should be bold, all
-  lowercase (or capitalized if at the beginning of a sentence), and include the appropriate file
-  extension. For example:
-
-  ```markdown
-  For example, on Windows systems, you can use the `net start` and `net stop` commands
-  to start and stop a service. **Sc.exe** is another service control tool for Windows.
-  That name does not fit into the naming pattern for the **net.exe** service commands.
-  ```
-
-- When showing example usage of an external command, the example should be wrapped in backticks.
-  When there is a name collisions with an alias you must include the file extension in the command
-  example. For example:
-
-  ```markdown
-  To start the spooler service on a remote computer named DC01, you type `sc.exe \\DC01 start spooler`.
-  ```
-
-- When writing a conceptual article (as opposed to reference content), the first instance of a
-  cmdlet name should be hyperlinked to the cmdlet documentation. Do not use backticks, bold, or
-  other markup inside the brackets of a hyperlink.
-
-  For example:
-
-  ```markdown
-  This [Write-Host](/powershell/module/Microsoft.PowerShell.Utility/Write-Host) cmdlet
-  uses the **Object** parameter to ...
-  ```
-
-  For more information, see [Hyperlinks](#hyperlinks) section of this article.
-
 ### Images
 
 The syntax to include an image is:
@@ -231,9 +187,9 @@ The following image file types are supported: `*.png`, `*.gif`, `*.jpeg`, `*.jpg
 ### Markdown extensions supported by Open Publishing
 
 The [Microsoft Docs Authoring Pack](/contribute/how-to-write-docs-auth-pack) contains tools that
-support features unique to our publishing system. Alerts are a Markdown extension to create block
-quotes that render on docs.microsoft.com with colors and icons that indicate the significance of the
-content. The following alert types are supported:
+support features unique to our publishing system. Alerts are a Markdown extension to create
+blockquotes that render on docs.microsoft.com with colors and icons that highlight the significance
+of the content. The following alert types are supported:
 
 ```markdown
 > [!NOTE]
@@ -254,93 +210,179 @@ content. The following alert types are supported:
 
 These alerts look like this on docs.microsoft.com:
 
+Note block
+
 > [!NOTE]
 > Information the user should notice even if skimming.
+
+Tip block
 
 > [!TIP]
 > Optional information to help a user be more successful.
 
+Important block
+
 > [!IMPORTANT]
 > Essential information required for user success.
+
+Caution block
 
 > [!CAUTION]
 > Negative potential consequences of an action.
 
+Warning block
+
 > [!WARNING]
 > Dangerous certain consequences of an action.
 
-## Hyperlinks
+### Hyperlinks
 
-- Avoid using bare URLs. Links should use Markdown syntax `[friendlyname](url-or-path)`
-- Bare URLs may be used when necessary, but should be enclosed in backticks. For example:
+- Hyperlinks must use Markdown syntax `[friendlyname](url-or-path)`
+- Links should be HTTPS when possible.
+- Links must have a friendly name, usually the title of the linked topic
+- All items in the "related links" section at the bottom should be hyperlinked
+- Do not use backticks, bold, or other markup inside the brackets of a hyperlink.
+- Bare URLs may be used when you are talking about a specific URI. The URI must be enclosed in
+  backticks. For example:
 
   ```markdown
   By default, if you do not specify this parameter, the DMTF standard resource URI
   `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
   ```
 
-- URL links should be HTTPS when possible.
-- Links must have a friendly name, usually the title of the linked topic
-- All items in the "related links" section at the bottom should be hyperlinked.
-- Do not use backticks, bold, or other markup inside the brackets of a hyperlink.
+#### Linking to other content
 
-### Linking to other content
+There are two types of hyperlinks supported by the publishing system:
 
-There are two types of hyperlinks supported by the publishing system: URLs and file links.
-
-A URL link can be a URL path that is relative to the root of docs.microsoft.com. Or an absolute URL that include the full URL syntax. (For example: `https:/github.com/MicrosoftDocs/PowerShell-Docs`)
+A **URL link** can be a URL path that is relative to the root of docs.microsoft.com. Or an absolute
+URL that include the full URL syntax. For example: `https:/github.com/MicrosoftDocs/PowerShell-Docs`
 
 - Use URL links when linking to content outside of PowerShell-Docs or between cmdlet reference and
-  conceptual articles within PowerShell-docs.
-- The simplest way to link create a relative link is to copy the URL from your browser then remove
-  `https://docs.microsoft.com/en-us` from the value you paste into markdown.
-   - Do not include locales in URLs on Microsoft properties (eg. remove "/en-us" from URL).
+  conceptual articles within PowerShell-docs. The simplest way to create a relative link is to
+  copy the URL from your browser then remove `https://docs.microsoft.com/en-us` from the value you
+  paste into markdown.
+- Do not include locales in URLs on Microsoft properties (eg. remove `/en-us` from URL).
+- Remove any unnecessary query parameters from the URL unless you need to link to a specific
+  version of an article. Examples:
+  - `?view=powershell-5.1` - this is used to link to a specific version of PowerShell
+  - `?redirectedfrom=MSDN` - this is added to the URL when you get redirected from an old article
+    to its new location
 - All URLs to external websites should use HTTPS unless that is not valid for the target site.
 
-A file link is used to link from one reference article to another, or from one conceptual article to another. If you need to link to a reference article for a specific version of PowerShell, then you need to use a URL link.
+A **file link** is used to link from one reference article to another, or from one conceptual
+article to another. If you need to link to a reference article for a specific version of PowerShell,
+then you must use a URL link.
 
 - File links contain a relative file path (for example: `../folder/file.md`)
 - All file paths use forward-slash (`/`) characters
 
-## Formatting code samples
+Deep linking is allowed on both URL and file links. Add the anchor to the end of the target path.
+For example:
+
+- `[about_Splatting](about_Splatting.md#splatting-with-arrays)`
+- `[custom key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)`
+
+For more information, see [Use links in documentation](/contribute/how-to-write-links).
+
+## Formatting command syntax elements
+
+- Always use the full name for cmdlets and parameters. Avoid using aliases unless you are
+  specifically demonstrating the alias.
+
+- Property, parameter, object, type names, class names, class methods should be **bold**.
+  - Property and parameter values should be wrapped in backticks (`` ` ``).
+  - When referring to types using the bracketed style, use backticks. For example:
+    `[System.Io.FileInfo]`
+
+- Language keywords, cmdlet names, functions, variables, native EXEs, file paths, and inline syntax
+  examples should be wrapped in backtick (`` ` ``) characters.
+
+  For example:
+
+  ~~~markdown
+  The following code uses `Get-ChildItem` to list the contents of `C:\Windows` and assigns
+  the output to the `$files` variable.
+
+  ```powershell
+  $files = Get-ChildItem C:\Windows
+  ```
+  ~~~
+
+  - When referring to a parameter by name, the name should be **bold**. When illustrating the use of
+    a parameter with the hyphen prefix, the parameter should be wrapped in backticks. For example:
+
+    ```markdown
+    The parameter's name is **Name**, but it is typed as `-Name` when used on the command
+    line as a parameter.
+    ```
+
+  - When showing example usage of an external command, the example should be wrapped in backticks.
+    Always include the file extension in the native command. For example:
+
+    ```markdown
+    To start the spooler service on a remote computer named DC01, you type `sc.exe \\DC01 start spooler`.
+    ```
+
+    Including the file extension ensures that the correct command is executed according PowerShell's
+    command precedence.
+
+- When writing a conceptual article (as opposed to reference content), the first instance of a
+  cmdlet name should be hyperlinked to the cmdlet documentation. Do not use backticks, bold, or
+  other markup inside the brackets of a hyperlink.
+
+  For example:
+
+  ```markdown
+  This [Write-Host](/powershell/module/Microsoft.PowerShell.Utility/Write-Host) cmdlet
+  uses the **Object** parameter to ...
+  ```
+
+  For more information, see [Hyperlinks](#hyperlinks) section of this article.
+
+## Markdown for code samples
 
 Markdown supports two different code styles:
 
-- Code spans (inline) - marked by a single backtick (`` ` ``) character. Used within a paragraph
+- **Code spans (inline)** - marked by a single backtick (`` ` ``) character. Used within a paragraph
   rather than as a standalone block.
-- Code blocks - a multi-line block surrounded by triple-backtick (`` ``` ``) strings. Code blocks
-  may also have a language label following the backticks. The language label enables syntax
+- **Code blocks** - a multi-line block surrounded by triple-backtick (`` ``` ``) strings. Code
+  blocks may also have a language label following the backticks. The language label enables syntax
   highlighting for the contents of the code block.
 
-### Using code blocks
+All code blocks should be contained in a code fence. Never use indentation for code blocks. Markdown
+allows this pattern but it can be problematic and should be avoided.
 
-Markdown allows for indentation to signify a code block, but this pattern can be problematic and
-should be avoided. All code blocks should be contained in a code fence. A code fence is a block of
-code surrounded by triple-backtick (`` ``` ``) strings. The code fence markers must be on their own
-line before and after the code sample. The marker at the start of the code block may have an
-optional language label. Microsoft's Open Publishing System (OPS) uses the language label to support
-the syntax highlighting feature.
+A code block is one or more lines of code surrounded by a triple-backtick (`` ``` ``) code fence.
+The code fence markers must be on their own line before and after the code sample. The marker at the
+start of the code block may have an optional language label. Microsoft's Open Publishing System
+(OPS) uses the language label to support the syntax highlighting feature.
+
+For a full list of supported language tags, see [Fenced code blocks](/contribute/code-in-docs#fenced-code-blocks)
+in the centralized contributor guide.
 
 OPS also adds a **Copy** button that copies the contents of the code block to the clipboard. This
-allows you to quickly paste the code into a script for testing the code example. However, not all
-examples in our documentation are intended to be run. Some code blocks are simple illustrations of a
-PowerShell concept.
+allows you to quickly paste the code into a script to test the code sample. However, not all
+examples in our documentation are intended to be run as-is. Some code blocks are simple
+illustrations of a PowerShell concept.
 
-There are two types code blocks used in our documentation:
+There are three types code blocks used in our documentation:
 
+1. Syntax blocks
 1. Illustrative examples
-2. Executable examples
+1. Executable examples
 
 ### Syntax code blocks
 
-This example illustrates all the possible parameters of the `Get-Command` cmdlet.
+Syntax code blocks are used to describe the syntactic structure of a command. Do not use a language
+tag on the code fence. This example illustrates all the possible parameters of the `Get-Command`
+cmdlet.
 
 ~~~markdown
 ```
 Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
-  [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo]
-  [[-ArgumentList] <Object[]>] [-All] [-ListImported] [-ParameterName <String[]>]
-  [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+  [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax]
+  [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
+  [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 ~~~
 
@@ -356,11 +398,11 @@ for (<init>; <condition>; <repeat>)
 ### Illustrative examples
 
 Illustrative examples are used to explain a PowerShell concept. They are not meant to be copied to
-the clipboard for execution. These are most commonly used for simple examples that are easy to type.
-They are also used for syntax examples where you are illustrating the syntax of a command. The code
-block may contain example output from the command being illustrated.
+the clipboard for execution. These are most commonly used for simple examples that are easy to type
+and easy to understand. The code block can include the PowerShell prompt and example output.
 
-Here is a simple example illustrating a PowerShell comparison operators:
+Here is a simple example illustrating the PowerShell comparison operators. In this case, we don't
+intend the reader to copy and run this example.
 
 ~~~markdown
 ```powershell
@@ -384,17 +426,14 @@ abc
 ```
 ~~~
 
-Note that this example has the simplified PowerShell prompt and shows the resulting output. In this
-case, we don't intend the reader to copy and run this example.
-
 ### Executable examples
 
-More complex examples or examples that are intended to be useful to copy and execute should use the
-following block-style markup:
+Complex examples, or examples that are intended to be copied and executed, should use the following
+block-style markup:
 
 ~~~markdown
 ```powershell
-<PowerShell code goes here>
+<Your PowerShell code goes here>
 ```
 ~~~
 
@@ -472,13 +511,12 @@ GameConfigStore        GameDVR_Enabled                       : 1
 ### Do not use aliases in examples
 
 You should always use the full name of all cmdlets and parameters unless you are specifically
-talking about the alias. Cmdlet and parameter names must use the proper spelling defined in the
-code.
+talking about the alias. Cmdlet and parameter names must use the proper Pascal-cased names.
 
 ### Using parameters in examples
 
-Avoid using positional parameters. In general, you should use always include the parameter name in
-an example, even if the parameter positional. This reduces the chance of confusion in your examples.
+Avoid using positional parameters. In general, you should always include the parameter name in an
+example, even if the parameter is positional. This reduces the chance of confusion in your examples.
 
 ## Next steps
 

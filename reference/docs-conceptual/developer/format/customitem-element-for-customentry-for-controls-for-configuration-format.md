@@ -1,13 +1,8 @@
 ---
-title: "CustomItem Element for CustomEntry for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 73fb11ee-0ebd-477a-ac36-acdfbb32e70d
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: CustomItem Element for CustomEntry for Controls for Configuration (Format)
+description: CustomItem Element for CustomEntry for Controls for Configuration (Format)
 ---
 # CustomItem Element for CustomEntry for Controls for Configuration (Format)
 

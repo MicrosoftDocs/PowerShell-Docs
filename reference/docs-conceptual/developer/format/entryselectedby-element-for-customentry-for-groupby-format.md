@@ -1,13 +1,8 @@
 ---
-title: "EntrySelectedBy Element for CustomEntry for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a317d482-73cc-4c98-a002-1357fa879cd7
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: EntrySelectedBy Element for CustomEntry for GroupBy (Format)
+description: EntrySelectedBy Element for CustomEntry for GroupBy (Format)
 ---
 # EntrySelectedBy Element for CustomEntry for GroupBy (Format)
 

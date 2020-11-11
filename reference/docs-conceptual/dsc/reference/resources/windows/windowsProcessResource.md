@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords:  dsc,powershell,configuration,setup
-title:  DSC WindowsProcess Resource
+ms.date: 07/16/2020
+ms.topic: reference
+title: DSC WindowsProcess Resource
+description: DSC WindowsProcess Resource
 ---
 # DSC WindowsProcess Resource
 
@@ -9,6 +10,8 @@ title:  DSC WindowsProcess Resource
 
 The **WindowsProcess** resource in Windows PowerShell Desired State Configuration (DSC) provides a
 mechanism to configure processes on a target node.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 

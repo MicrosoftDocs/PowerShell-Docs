@@ -1,13 +1,8 @@
 ---
-title: "PropertyName Element for SelectionCondition for EntrySelectedBy for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 71c3f1f6-6fe2-42f1-8260-6974d3871748
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: PropertyName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
+description: PropertyName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
 ---
 # PropertyName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
 

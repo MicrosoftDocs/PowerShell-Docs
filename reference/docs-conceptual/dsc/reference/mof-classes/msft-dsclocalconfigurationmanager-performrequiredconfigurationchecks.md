@@ -1,7 +1,8 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  PerformRequiredConfigurationChecks method
+ms.date: 07/17/2020
+ms.topic: reference
+title: PerformRequiredConfigurationChecks method
+description: PerformRequiredConfigurationChecks method
 ---
 # PerformRequiredConfigurationChecks method
 
@@ -17,8 +18,8 @@ uint32 PerformRequiredConfigurationChecks(
 
 ## Parameters
 
-*Flags* \[in\]
-A bitmask that specifies the type of consistency check to run. The following values are valid, and can be combined by using a bitwise **OR** operation:
+**Flags** \[in\] A bitmask that specifies the type of consistency check to run. The following values
+are valid, and can be combined by using a bitwise **OR** operation:
 
 |Value |Description |
 |:--- |:---|

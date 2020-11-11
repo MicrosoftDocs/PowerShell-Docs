@@ -1,13 +1,8 @@
 ---
-title: "ScriptBlock Element for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: ScriptBlock Element for GroupBy (Format)
+description: ScriptBlock Element for GroupBy (Format)
 ---
 # ScriptBlock Element for GroupBy (Format)
 

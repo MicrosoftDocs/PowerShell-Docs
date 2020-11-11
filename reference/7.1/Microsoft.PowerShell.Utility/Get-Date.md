@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 6/27/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.x&WT.mc_id=ps-gethelp
+ms.date: 08/25/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
 ---
@@ -16,20 +16,36 @@ Gets the current date and time.
 
 ## SYNTAX
 
-### net (Default)
+### Date (Default)
 
 ```
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
  [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
- [-Format <String>] [<CommonParameters>]
+ [-Format <String>] [-AsUTC] [<CommonParameters>]
 ```
 
-### UFormat
+### DateUFormat
 
 ```
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
  [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
- [-UFormat <String>] [<CommonParameters>]
+ -UFormat <String> [<CommonParameters>]
+```
+
+### UnixTimeSeconds
+
+```
+Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
+ [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
+ [-Format <String>] [-AsUTC] [<CommonParameters>]
+```
+
+### UnixTimeSecondsUFormat
+
+```
+Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
+ [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
+ -UFormat <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -89,14 +105,14 @@ Tuesday 06/25/2019 16:17 -07:00
 
 The .NET format specifiers used in this example are defined as follows:
 
-| Specifier | Definition |
-| --- | --- |
-| `dddd` | Day of the week - full name |
-| `MM` | Month number |
-| `dd` | Day of the month - 2 digits |
-| `yyyy` | Year in 4-digit format |
-| `HH:mm` | Time in 24-hour format -no seconds |
-| `K` | Time zone offset from Universal Time Coordinate (UTC) |
+| Specifier |                      Definition                       |
+| --------- | ----------------------------------------------------- |
+| `dddd`    | Day of the week - full name                           |
+| `MM`      | Month number                                          |
+| `dd`      | Day of the month - 2 digits                           |
+| `yyyy`    | Year in 4-digit format                                |
+| `HH:mm`   | Time in 24-hour format - no seconds                    |
+| `K`       | Time zone offset from Universal Time Coordinate (UTC) |
 
 For more information about .NET format specifiers, see
 [Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).
@@ -118,14 +134,14 @@ Tuesday 06/25/2019 16:19 -07
 
 The **UFormat** format specifiers used in this example are defined as follows:
 
-| Specifier | Definition |
-| --- | --- |
-| `%A` | Day of the week - full name |
-| `%m` | Month number |
-| `%d` | Day of the month - 2 digits |
-| `%Y` | Year in 4-digit format |
-| `%R` | Time in 24-hour format -no seconds |
-| `%Z` | Time zone offset from Universal Time Coordinate (UTC) |
+| Specifier |                      Definition                       |
+| --------- | ----------------------------------------------------- |
+| `%A`      | Day of the week - full name                           |
+| `%m`      | Month number                                          |
+| `%d`      | Day of the month - 2 digits                           |
+| `%Y`      | Year in 4-digit format                                |
+| `%R`      | Time in 24-hour format - no seconds                    |
+| `%Z`      | Time zone offset from Universal Time Coordinate (UTC) |
 
 For a list of valid **UFormat** format specifiers, see the [Notes](#notes) section.
 
@@ -198,7 +214,7 @@ New-Item -Path C:\Test\$timestamp -Type Directory
 ```
 
 ```Output
-    Directory: C:\Test
+Directory: C:\Test
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
@@ -215,7 +231,68 @@ replaced by periods.
 includes the `$timestamp` variable as the directory name. The **Type** parameter specifies that a
 directory is created.
 
+### Example 9: Convert a Unix timestamp
+
+This example converts a Unix time (represented by the number of seconds since 1970-01-01 0:00:00) to DateTime.
+
+```powershell
+Get-Date -UnixTimeSeconds 1577836800
+```
+
+```Output
+Wednesday, January 01, 2020 12:00:00 AM
+```
+
+### Example 10: Return a date value interpreted as UTC
+
+This example shows how to interpret a date value as its UTC equivalent. For the example, this
+machine is set to **Pacific Standard Time**. By default, `Get-Date` returns values for that
+timezone. Use the **AsUTC** parameter to convert the value to the UTC equivalent time.
+
+```powershell
+PS> Get-TimeZone
+
+Id                         : Pacific Standard Time
+DisplayName                : (UTC-08:00) Pacific Time (US & Canada)
+StandardName               : Pacific Standard Time
+DaylightName               : Pacific Daylight Time
+BaseUtcOffset              : -08:00:00
+SupportsDaylightSavingTime : True
+
+PS> (Get-Date -Date "2020-01-01T00:00:00").Kind
+Unspecified
+
+PS> Get-Date -Date "2020-01-01T00:00:00"
+
+Wednesday, January 1, 2020 12:00:00 AM
+
+PS> (Get-Date -Date "2020-01-01T00:00:00" -AsUTC).Kind
+Utc
+
+PS> Get-Date -Date "2020-01-01T00:00:00" -AsUTC
+
+Wednesday, January 1, 2020 8:00:00 AM
+```
+
 ## PARAMETERS
+
+### -AsUTC
+
+Converts the date value to the equivalent time in UTC.
+
+This parameter was introduced in PowerShell 7.1.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Date
 
@@ -228,8 +305,8 @@ For example, in US English:
 `Get-Date -Date "6/25/2019 12:30:22"` returns Tuesday, June 25, 2019 12:30:22
 
 ```yaml
-Type: DateTime
-Parameter Sets: (All)
+Type: System.DateTime
+Parameter Sets: DateAndFormat, DateAndUFormat
 Aliases: LastWriteTime
 
 Required: False
@@ -247,7 +324,7 @@ If the specified value is greater than the number of days in a month, PowerShell
 days to the month. For example, `Get-Date -Month 2 -Day 31` displays **March 3**, not **February 31**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -269,7 +346,7 @@ The accepted values are as follows:
 - **DateTime**: displays the date and time
 
 ```yaml
-Type: DisplayHintType
+Type: Microsoft.PowerShell.Commands.DisplayHintType
 Parameter Sets: (All)
 Aliases:
 Accepted values: Date, Time, DateTime
@@ -316,8 +393,8 @@ Starting in PowerShell 5.0, you can use the following additional formats as valu
   indicator). For example: 20190627T1540500718Z.
 
 ```yaml
-Type: String
-Parameter Sets: net
+Type: System.String
+Parameter Sets: DateAndFormat, UnixTimeSecondsAndFormat
 Aliases:
 
 Required: False
@@ -332,7 +409,7 @@ Accept wildcard characters: False
 Specifies the hour that is displayed. Enter a value from 0 to 23.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -350,7 +427,7 @@ Specifies the milliseconds in the date. Enter a value from 0 to 999.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -366,7 +443,7 @@ Accept wildcard characters: False
 Specifies the minute that is displayed. Enter a value from 0 to 59.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -382,7 +459,7 @@ Accept wildcard characters: False
 Specifies the month that is displayed. Enter a value from 1 to 12.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -398,7 +475,7 @@ Accept wildcard characters: False
 Specifies the second that is displayed. Enter a value from 0 to 59.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -421,11 +498,29 @@ necessary to display the date. As a result, some of the properties and methods o
 objects might not be available.
 
 ```yaml
-Type: String
-Parameter Sets: UFormat
+Type: System.String
+Parameter Sets: DateAndUFormat, UnixTimeSecondsAndUFormat
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UnixTimeSeconds
+
+Date and time represented in seconds since January 1, 1970, 0:00:00.
+
+This parameter was introduced in PowerShell 7.1.
+
+```yaml
+Type: System.Int64
+Parameter Sets: UnixTimeSecondsAndFormat, UnixTimeSecondsAndUFormat
+Aliases: UnixTime
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -437,7 +532,7 @@ Accept wildcard characters: False
 Specifies the year that is displayed. Enter a value from 1 to 9999.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -452,7 +547,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -481,46 +577,46 @@ For example, `Get-Date | Get-Member`.
 
 The valid **UFormat specifiers** are displayed in the following table:
 
-| Format specifier | Meaning | Example |
-| ---------------- | ------- | ------- |
-| `%A` | Day of the week - full name | Monday |
-| `%a` | Day of the week - abbreviated name | Mon |
-| `%B` | Month name - full | January |
-| `%b` | Month name - abbreviated | Jan |
-| `%C` | Century | 20 for 2019 |
-| `%c` | Date and time - abbreviated | Thu Jun 27 08:44:18 2019 |
-| `%D` | Date in mm/dd/yy format | 06/27/19 |
-| `%d` | Day of the month - 2 digits | 05 |
-| `%e` | Day of the month - digit preceded by a space | \<space\>5 |
-| `%F` | Date in YYYY-mm-dd format, equal to %Y-%m-%d (the ISO 8601 date format) | 2019-06-27 |
-| `%G` | Same as 'Y' | |
-| `%g` | Same as 'y' | |
-| `%H` | Hour in 24-hour format | 17 |
-| `%h` | Same as 'b' | |
-| `%I` | Hour in 12-hour format | 05 |
-| `%j` | Day of the year | 1-366 |
-| `%k` | Same as 'H' | |
-| `%l` | Same as 'I' (Upper-case I) | 05 |
-| `%M` | Minutes | 35 |
-| `%m` | Month number | 06 |
-| `%n` | newline character | |
-| `%p` | AM or PM | |
-| `%R` | Time in 24-hour format -no seconds | 17:45 |
-| `%r` | Time in 12-hour format | 09:15:36 AM |
-| `%S` | Seconds | 05 |
-| `%s` | Seconds elapsed since January 1, 1970 00:00:00 | 1150451174.95705 |
-| `%t` | Horizontal tab character | |
-| `%T` | Time in 24-hour format | 17:45:52 |
-| `%U` | Same as 'W' | |
-| `%u` | Day of the week - number | Monday = 1 |
-| `%V` | Week of the year | 01-53 |
-| `%w` | Same as 'u' | |
-| `%W` | Week of the year | 00-52 |
-| `%X` | Same as 'T' |
-| `%x` | Date in standard format for locale | 06/27/19 for English-US |
-| `%Y` | Year in 4-digit format | 2019 |
-| `%y` | Year in 2-digit format | 19 |
-| `%Z` | Time zone offset from Universal Time Coordinate (UTC) | -07 |
+| Format specifier |                                 Meaning                     |         Example          |
+| ---- | ----------------------------------------------------------------------- | ------------------------ |
+| `%A` | Day of the week - full name                                             | Monday                   |
+| `%a` | Day of the week - abbreviated name                                      | Mon                      |
+| `%B` | Month name - full                                                       | January                  |
+| `%b` | Month name - abbreviated                                                | Jan                      |
+| `%C` | Century                                                                 | 20 for 2019              |
+| `%c` | Date and time - abbreviated                                             | Thu Jun 27 08:44:18 2019 |
+| `%D` | Date in mm/dd/yy format                                                 | 06/27/19                 |
+| `%d` | Day of the month - 2 digits                                             | 05                       |
+| `%e` | Day of the month - digit preceded by a space                            | \<space\>5               |
+| `%F` | Date in YYYY-mm-dd format, equal to %Y-%m-%d (the ISO 8601 date format) | 2019-06-27               |
+| `%G` | Same as 'Y'                                                             |                          |
+| `%g` | Same as 'y'                                                             |                          |
+| `%H` | Hour in 24-hour format                                                  | 17                       |
+| `%h` | Same as 'b'                                                             |                          |
+| `%I` | Hour in 12-hour format                                                  | 05                       |
+| `%j` | Day of the year                                                         | 1-366                    |
+| `%k` | Same as 'H'                                                             |                          |
+| `%l` | Same as 'I' (Upper-case I)                                              | 05                       |
+| `%M` | Minutes                                                                 | 35                       |
+| `%m` | Month number                                                            | 06                       |
+| `%n` | newline character                                                       |                          |
+| `%p` | AM or PM                                                                |                          |
+| `%R` | Time in 24-hour format -no seconds                                      | 17:45                    |
+| `%r` | Time in 12-hour format                                                  | 09:15:36 AM              |
+| `%S` | Seconds                                                                 | 05                       |
+| `%s` | Seconds elapsed since January 1, 1970 00:00:00                          | 1150451174               |
+| `%t` | Horizontal tab character                                                |                          |
+| `%T` | Time in 24-hour format                                                  | 17:45:52                 |
+| `%U` | Same as 'W'                                                             |                          |
+| `%u` | Day of the week - number                                                | Sunday = 0               |
+| `%V` | Week of the year                                                        | 01-53                    |
+| `%w` | Same as 'u'                                                             |                          |
+| `%W` | Week of the year                                                        | 00-52                    |
+| `%X` | Same as 'T'                                                             |                          |
+| `%x` | Date in standard format for locale                                      | 06/27/19 for English-US  |
+| `%Y` | Year in 4-digit format                                                  | 2019                     |
+| `%y` | Year in 2-digit format                                                  | 19                       |
+| `%Z` | Time zone offset from Universal Time Coordinate (UTC)                   | -07                      |
 
 ## RELATED LINKS
 

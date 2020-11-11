@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
 ms.date: 10/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -458,7 +458,7 @@ local computer.
 if your computer isn't configured to run remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Cn
 
@@ -476,7 +476,7 @@ When the **Continuous** is specified, `Get-Counter` gets samples until you press
 counter. Use the **SampleInterval** parameter to increase the interval between continuous samples.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GetCounterSet
 Aliases:
 
@@ -511,12 +511,12 @@ the computer name, `Get-Counter` uses the local computer.
 An asterisk (`*`) in the instance is a wildcard character to get all instances of the counter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: GetCounterSet
 Aliases:
 
 Required: False
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
@@ -540,12 +540,12 @@ For example to send each **Processor** counter path to `Get-Counter`:
 `Get-Counter -ListSet Processor | Get-Counter`
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ListSetSet
 Aliases:
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
@@ -563,7 +563,7 @@ To collect a large data set, run `Get-Counter` as a PowerShell background job. F
 see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md).
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: GetCounterSet
 Aliases:
 
@@ -580,7 +580,7 @@ Specifies the number of seconds between samples for each specified performance c
 **SampleInterval** parameter isn't specified, `Get-Counter` uses a one-second interval.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: GetCounterSet
 Aliases:
 

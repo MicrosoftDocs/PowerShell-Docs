@@ -1,14 +1,13 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 2/6/2019
+ms.date: 09/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-file?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-File
 ---
-
 # Out-File
 
 ## SYNOPSIS
@@ -32,8 +31,11 @@ Out-File [[-Encoding] <Encoding>] -LiteralPath <string> [-Append] [-Force] [-NoC
 
 ## DESCRIPTION
 
-The `Out-File` cmdlet sends output to a file. When you need to specify parameters for the output use
-`Out-File` rather than the redirection operator (`>`).
+The `Out-File` cmdlet sends output to a file. It implicitly uses PowerShell's formatting system to
+write to the file. The file receives the same display representation as the terminal. This means
+that the output may not be ideal for programmatic processing unless all input objects are strings.
+When you need to specify parameters for the output, use `Out-File` rather than the redirection
+operator (`>`). For more information about redirection, see [about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md).
 
 ## EXAMPLES
 
@@ -139,7 +141,7 @@ file's content in the PowerShell console.
 Adds the output to the end of an existing file.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -152,19 +154,19 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **UTF8NoBOM**.
+Specifies the type of encoding for the target file. The default value is `utf8NoBOM`.
 
 The acceptable values for this parameter are as follows:
 
-- **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
-- **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
-- **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
-- **UTF7**: Encodes in UTF-7 format.
-- **UTF8**: Encodes in UTF-8 format.
-- **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
-- **UTF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
-- **UTF32**: Encodes in UTF-32 format.
+- `ascii`: Uses the encoding for the ASCII (7-bit) character set.
+- `bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.
+- `oem`: Uses the default encoding for MS-DOS and console programs.
+- `unicode`: Encodes in UTF-16 format using the little-endian byte order.
+- `utf7`: Encodes in UTF-7 format.
+- `utf8`: Encodes in UTF-8 format.
+- `utf8BOM`: Encodes in UTF-8 format with Byte Order Mark (BOM)
+- `utf8NoBOM`: Encodes in UTF-8 format without Byte Order Mark (BOM)
+- `utf32`: Encodes in UTF-32 format.
 
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
@@ -172,7 +174,7 @@ pages (like `-Encoding 1251`) or string names of registered code pages (like
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
-Type: Encoding
+Type: System.Text.Encoding
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
@@ -189,7 +191,7 @@ Accept wildcard characters: False
 Specifies the path to the output file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByPath
 Aliases: Path
 
@@ -206,7 +208,7 @@ Overrides the read-only attribute and overwrites an existing read-only file. The
 does not override security restrictions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -223,7 +225,7 @@ Specifies the objects to be written to the file. Enter a variable that contains 
 a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -242,7 +244,7 @@ quotation marks. Single quotation marks tell PowerShell not to interpret any cha
 sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByLiteralPath
 Aliases: PSPath, LP
 
@@ -260,7 +262,7 @@ already exists. By default, if a file exists in the specified path, `Out-File` o
 without warning.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NoOverwrite
 
@@ -278,7 +280,7 @@ representations of the input objects are concatenated to form the output. No spa
 inserted between the output strings. No newline is added after the last output string.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -296,7 +298,7 @@ not wrapped. If this parameter is not used, the width is determined by the chara
 host. The default for the PowerShell console is 80 characters.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -312,7 +314,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -328,7 +330,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -359,15 +361,15 @@ You can pipe any object to `Out-File`.
 
 ## NOTES
 
-The `Out` cmdlets do not format objects; they just render them and send them to the specified
-display destination. If you send an unformatted object to an `Out` cmdlet, the cmdlet sends it to a
-formatting cmdlet before rendering it.
+Input objects are automatically formatted as they would be in the terminal, but you can use a
+`Format-*` cmdlet to explicitly control the formatting of the output to the file. For example,
+`Get-Date | Format-List | Out-File out.txt`
 
-To send a PowerShell command's output to the `Out-File` cmdlet, use the pipeline. You can store data
-in a variable and use the **InputObject** parameter to pass data to the `Out-File` cmdlet.
+To send a PowerShell command's output to the `Out-File` cmdlet, use the pipeline. Alternatively, you
+can store data in a variable and use the **InputObject** parameter to pass data to the `Out-File`
+cmdlet.
 
-`Out-File` sends data but it does not produce any output objects. If you pipe the output of
-`Out-File` to `Get-Member`, the `Get-Member` cmdlet reports that no objects were specified.
+`Out-File` saves data to a file but it does not produce any output objects to the pipeline.
 
 ## RELATED LINKS
 

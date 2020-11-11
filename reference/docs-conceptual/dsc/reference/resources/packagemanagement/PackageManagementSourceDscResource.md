@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/15/2020
+ms.topic: reference
 title: DSC PackageManagementSource Resource
+description: DSC PackageManagementSource Resource
 ---
 # DSC PackageManagementSource Resource
 
@@ -16,6 +17,8 @@ module, available from the [PowerShell Gallery](https://PowerShellGallery.com).
 > [!IMPORTANT]
 > The **PackageManagement** module should be at least version 1.1.7.0 for the following property
 > information to be correct.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 

@@ -1,13 +1,8 @@
 ---
-title: "ListItems Element for ListEntry for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d2c1da6d-acc7-4fe8-9e7d-6dcddc2787cd
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: ListItems Element for ListEntry for ListControl (Format)
+description: ListItems Element for ListEntry for ListControl (Format)
 ---
 # ListItems Element for ListEntry for ListControl (Format)
 

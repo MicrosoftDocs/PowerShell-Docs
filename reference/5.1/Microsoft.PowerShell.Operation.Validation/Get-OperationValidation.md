@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Operation.Validation-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Operation.Validation
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.operation.validation/get-operationvalidation?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -28,6 +28,7 @@ Modules that include a Diagnostics folder are inspected for Pester tests in the 
 ## EXAMPLES
 
 ### Example 1: Get Operation Validation tests
+
 ```
 PS C:\> Get-OperationValidation -ModuleName "C:\temp\modules\AddNumbers"
     Type:     Simple
@@ -54,7 +55,7 @@ This command gets validation tests from the module named AddNumbers in the C:\te
 Specifies an array of names of modules.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -71,7 +72,7 @@ Valid values are Simple, Comprehensive, or both.
 The default is "Simple,Comprehensive".
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 Accepted values: Simple, Comprehensive
@@ -101,5 +102,3 @@ The **PSCustomObject** describes the validation.
 ## RELATED LINKS
 
 [Invoke-OperationValidation](Invoke-OperationValidation.md)
-
-

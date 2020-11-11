@@ -1,7 +1,7 @@
 ---
 external help file: Enable-DscDebug.cdxml-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/enable-dscdebug?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -28,6 +28,7 @@ By default, all resource instances break into the debugger.
 ## EXAMPLES
 
 ### Example 1: Start debugging
+
 ```
 PS C:\> Enable-DscDebug -BreakAll
 ```
@@ -36,6 +37,7 @@ This command indicates to the DSC engine or LCM to start resource debugging.
 The next time the configuration is run, the process enters the debugger.
 
 ### Example 2: Start remote debugging
+
 ```
 PS C:\> Enable-DscDebug -BreakAll -CimSession DeploymentServer
 ```
@@ -48,7 +50,7 @@ This command indicates to the DSC engine of the remote computer to start resourc
 Indicates that this cmdlet runs the command as a background job.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -63,7 +65,7 @@ Accept wildcard characters: False
 Indicates that all resources enter the debugger when a configuration runs.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -76,11 +78,11 @@ Accept wildcard characters: False
 
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
+Enter a computer name or a session object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet.
 The default is the current session on the local computer.
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: (All)
 Aliases: Session
 
@@ -97,7 +99,7 @@ If this parameter is omitted or a value of `0` is entered, then Windows PowerShe
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -112,7 +114,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -128,7 +130,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -163,6 +165,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Start-DscConfiguration](Start-DscConfiguration.md)
 
 [Test-DscConfiguration](Test-DscConfiguration.md)
-
-
-

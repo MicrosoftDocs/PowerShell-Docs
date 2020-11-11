@@ -1,10 +1,10 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/14/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.x&WT.mc_id=ps-gethelp
+ms.date: 05/20/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
 ---
@@ -114,7 +114,7 @@ cmdlet when it is used in the Cert: drive. The Cert: drive is a PowerShell drive
 Certificate Provider adds to the session.
 
 ```powershell
-Get-Command Get-Childitem -Args Cert: -Syntax
+Get-Command  -Name Get-Childitem -Args Cert: -Syntax
 ```
 
 When you compare the syntax displayed in the output with the syntax that is displayed when you omit
@@ -132,7 +132,7 @@ that the Certificate provider adds to the `Get-ChildItem` cmdlet when it is used
 function Get-DynamicParameters
 {
     param ($Cmdlet, $PSDrive)
-    (Get-Command $Cmdlet -ArgumentList $PSDrive).ParameterSets | ForEach-Object {$_.Parameters} | Where-Object { $_.IsDynamic } | Select-Object -Property Name -Unique
+    (Get-Command -Name $Cmdlet -ArgumentList $PSDrive).ParameterSets | ForEach-Object {$_.Parameters} | Where-Object { $_.IsDynamic } | Select-Object -Property Name -Unique
 }
 Get-DynamicParameters -Cmdlet Get-ChildItem -PSDrive Cert:
 ```
@@ -179,7 +179,7 @@ value from those that take an **AuthenticationLevel** parameter, even when they 
 This example shows how to use the `Get-Command` cmdlet with an alias.
 
 ```powershell
-Get-Command dir
+Get-Command Name dir
 ```
 
 ```Output
@@ -194,9 +194,28 @@ aliases, and executable files.
 The output of the command shows the special view of the **Name** property value for aliases. The
 view shows the alias and the full command name.
 
-### Example 11: Get all instances of the Notepad command
+### Example 11: Get Syntax from an alias
 
-This example uses the **All** parameter of the `Get-Command` cmdlet to show all instances of the "Notepad" command on the local computer.
+This example shows how to get the syntax along with the standard name of an alias.
+
+The output of the command shows the labeled alias with the standard name, followed by the syntax.
+
+```powershell
+Get-Command -Name dir -Syntax
+```
+
+```Output
+dir (alias) -> Get-ChildItem
+
+dir [[-Path] <string[]>] [[-Filter] <string>] [-Include <string[]>] [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name] [-Attributes <FlagsExpression[FileAttributes]>] [-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+
+dir [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>] [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name] [-Attributes <FlagsExpression[FileAttributes]>] [-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+```
+
+### Example 12: Get all instances of the Notepad command
+
+This example uses the **All** parameter of the `Get-Command` cmdlet to show all instances of the
+`Notepad` command on the local computer.
 
 ```powershell
 Get-Command Notepad -All | Format-Table CommandType, Name, Definition
@@ -220,7 +239,7 @@ qualified path to the command.
 
 For more information about command precedence, see [about_Command_Precedence](About/about_Command_Precedence.md).
 
-### Example 12: Get the name of a module that contains a cmdlet
+### Example 13: Get the name of a module that contains a cmdlet
 
 This command gets the name of the module in which the `Get-Date` cmdlet originated.
 The command uses the **ModuleName** property of all commands.
@@ -235,7 +254,7 @@ Microsoft.PowerShell.Utility
 
 This command format works on commands in PowerShell modules, even if they are not imported into the session.
 
-### Example 13: Get cmdlets and functions that have an output type
+### Example 14: Get cmdlets and functions that have an output type
 
 ```powershell
 Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Property Name, OutputType
@@ -243,13 +262,15 @@ Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Property Name,
 
 This command gets the cmdlets and functions that have an output type and the type of objects that they return.
 
-The first part of the command gets all cmdlets.
-A pipeline operator (|) sends the cmdlets to the `Where-Object` cmdlet, which selects only the ones in which the **OutputType** property is populated.
-Another pipeline operator sends the selected cmdlet objects to the `Format-List` cmdlet, which displays the name and output type of each cmdlet in a list.
+The first part of the command gets all cmdlets. A pipeline operator (`|`) sends the cmdlets to the
+`Where-Object` cmdlet, which selects only the ones in which the **OutputType** property is
+populated. Another pipeline operator sends the selected cmdlet objects to the `Format-List` cmdlet,
+which displays the name and output type of each cmdlet in a list.
 
-The **OutputType** property of a **CommandInfo** object has a non-null value only when the cmdlet code defines the **OutputType** attribute for the cmdlet.
+The **OutputType** property of a **CommandInfo** object has a non-null value only when the cmdlet
+code defines the **OutputType** attribute for the cmdlet.
 
-### Example 14: Get cmdlets that take a specific object type as input
+### Example 15: Get cmdlets that take a specific object type as input
 
 ```powershell
 Get-Command -ParameterType (((Get-NetAdapter)[0]).PSTypeNames)
@@ -273,7 +294,7 @@ describe the object. To get the **PSTypeNames** property of a net adapter, and n
 **PSTypeNames** property of a collection of net adapters, the command uses array notation to get the
 first net adapter that the cmdlet returns.
 
-### Example 15: Get commands using a fuzzy match
+### Example 16: Get commands using a fuzzy match
 
 In this example, the name of the command deliberately has a typo as 'get-commnd'.
 Using the `-UseFuzzyMatching` switch, the cmdlet determined that the best match
@@ -309,8 +330,8 @@ This parameter was introduced in Windows PowerShell 3.0.
 In Windows PowerShell 2.0, `Get-Command` gets all commands by default.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: AllCommandSet
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -335,8 +356,8 @@ cmdlets return only the dynamic parameters for the first path the value of **Arg
 information about the provider cmdlets, see [about_Providers](About/about_Providers.md).
 
 ```yaml
-Type: Object[]
-Parameter Sets: AllCommandSet
+Type: System.Object[]
+Parameter Sets: (All)
 Aliases: Args
 
 Required: False
@@ -367,7 +388,7 @@ The acceptable values for this parameter are:
   value.
 
 ```yaml
-Type: CommandTypes
+Type: System.Management.Automation.CommandTypes
 Parameter Sets: AllCommandSet
 Aliases: Type
 Accepted values: Alias, Function, Filter, Cmdlet, ExternalScript, Application, Script, Workflow, Configuration, All
@@ -396,8 +417,8 @@ You cannot specify the **FullyQualifiedModule** parameter in the same command as
 parameter. The two parameters are mutually exclusive.
 
 ```yaml
-Type: ModuleSpecification[]
-Parameter Sets: AllCommandSet
+Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -418,8 +439,8 @@ gets only commands in the current session.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: AllCommandSet
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -438,9 +459,9 @@ This parameter takes string values, but the value of this parameter can also be 
 object, such as the objects that the `Get-Module` and `Import-PSSession` cmdlets return.
 
 ```yaml
-Type: String[]
-Parameter Sets: AllCommandSet
-Aliases:
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: PSSnapin
 
 Required: False
 Position: Named
@@ -458,7 +479,7 @@ To get commands that have the same name, use the **All** parameter. When two com
 name, by default, `Get-Command` gets the command that runs when you type the command name.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: AllCommandSet
 Aliases:
 
@@ -476,7 +497,7 @@ and aliases, that have names that include the specified noun. Enter one or more 
 patterns. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CmdletSet
 Aliases:
 
@@ -497,8 +518,8 @@ The **ParameterName** and **ParameterType** parameters search only commands in t
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String[]
-Parameter Sets: AllCommandSet
+Type: System.String[]
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -519,8 +540,8 @@ The **ParameterName** and **ParameterType** parameters search only commands in t
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: PSTypeName[]
-Parameter Sets: AllCommandSet
+Type: System.Management.Automation.PSTypeName[]
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -537,8 +558,8 @@ Indicates that this cmdlet displays command information.
 This parameter was introduced in Windows PowerShell 5.0.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: AllCommandSet
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -552,14 +573,14 @@ Accept wildcard characters: False
 
 Indicates that this cmdlet gets only the following specified data about the command:
 
-- Aliases. Gets the standard name.
+- Aliases. Gets the standard name and syntax.
 - Cmdlets. Gets the syntax.
 - Functions and filters. Gets the function definition.
 - Scripts and applications or files. Gets the path and filename.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: AllCommandSet
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -575,8 +596,8 @@ Specifies the number of commands to get. You can use this parameter to limit the
 command.
 
 ```yaml
-Type: Int32
-Parameter Sets: AllCommandSet
+Type: System.Int32
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -594,7 +615,7 @@ the characters to find matches an uppercase character in the result. When using 
 type of match, any wildcards will result in no matches.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AllCommandSet
 Aliases:
 
@@ -612,7 +633,7 @@ closest match to least likely match. Wildcards should not be used with fuzzy mat
 attempt to match commands that may contain those wildcard characters.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AllCommandSet
 Aliases:
 
@@ -630,7 +651,7 @@ and aliases, that have names that include the specified verb. Enter one or more 
 patterns. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CmdletSet
 Aliases:
 
@@ -701,3 +722,4 @@ Represents functions and filters.
 [Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 
 [about_Command_Precedence](About/about_Command_Precedence.md)
+

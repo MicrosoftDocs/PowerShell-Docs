@@ -1,13 +1,8 @@
 ---
-title: "TableRowEntries Element for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
-caps.latest.revision: 15
+ms.date: 09/13/2016
+ms.topic: reference
+title: TableRowEntries Element for TableControl (Format)
+description: TableRowEntries Element for TableControl (Format)
 ---
 # TableRowEntries Element for TableControl (Format)
 

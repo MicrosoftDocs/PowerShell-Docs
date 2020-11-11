@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/disable-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -43,6 +43,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Disable a job trigger
+
 ```
 PS C:\> Get-JobTrigger -Name "Backup-Archives" -TriggerID 1 | Disable-JobTrigger
 ```
@@ -53,6 +54,7 @@ The command uses the Get-JobTrigger cmdlet to get the job trigger.
 A pipeline operator sends the job trigger to the **Disable-JobTrigger** cmdlet, which disables it.
 
 ### Example 2: Disable all job triggers
+
 ```
 The first command uses the Get-ScheduledJob cmdlet to get the Backup-Archives and Inventory scheduled jobs. A pipeline operator (|) sends the scheduled jobs to the Get-JobTrigger cmdlet, which gets all job triggers of the scheduled jobs. Another pipeline operator sends the job triggers to the **Disable-JobTrigger** cmdlet, which disables them.The first command uses the **Get-ScheduledJob** cmdlet to get the jobs, because its *Name* parameter takes multiple names.
 PS C:\> Get-ScheduledJob -Name "Backup-Archives,Inventory" | Get-JobTrigger | Disable-JobTrigger
@@ -70,6 +72,7 @@ Id Frequency At                     DaysOfWeek Enabled JobName
 These commands disable all job triggers on two scheduled jobs and display the results.
 
 ### Example 3: Disable job trigger of a scheduled job on a remote computer
+
 ```
 PS C:\> Invoke-Command -ComputerName Server01 {Get-JobTrigger -Name DeployPackage | Where-Object {$_.Frequency -eq "Daily"} | Disable-JobTrigger}
 ```
@@ -89,7 +92,7 @@ Enter a variable that contains  **ScheduledJobTrigger** objects or type a comman
 You can also pipe a **ScheduledJobTrigger** object to **Disable-JobTrigger**.
 
 ```yaml
-Type: ScheduledJobTrigger[]
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger[]
 Parameter Sets: (All)
 Aliases:
 
@@ -105,7 +108,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -120,7 +123,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -136,7 +139,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -161,6 +164,7 @@ You can pipe job triggers to **Disable-JobTrigger**.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * **Disable-JobTrigger** does not generate errors or warnings if you disable a job trigger that is already disabled.
 
 ## RELATED LINKS
@@ -196,5 +200,3 @@ This cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

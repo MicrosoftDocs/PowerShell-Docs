@@ -1,13 +1,8 @@
 ---
-title: "GetProc04 Code Samples | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c00afd46-758a-4aec-b865-2c9d8f6a17ad
-caps.latest.revision: 5
+ms.date: 09/13/2016
+ms.topic: reference
+title: GetProc04 Code Samples
+description: GetProc04 Code Samples
 ---
 # GetProc04 Code Samples
 

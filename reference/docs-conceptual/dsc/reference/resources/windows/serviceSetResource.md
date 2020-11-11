@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC ServiceSet Resource
+description: DSC ServiceSet Resource
 ---
 # DSC ServiceSet Resource
 
@@ -13,6 +14,8 @@ that calls the [Service resource](serviceResource.md) for each service specified
 property.
 
 Use this resource when you want to configure a number of services to the same state.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 

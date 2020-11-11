@@ -1,17 +1,8 @@
 ---
-title: "ValidateCount Attribute Declaration | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "attributes, ValidateCount"
-  - "ValidateCount attribute, described"
-  - "ValidateCount attribute"
-ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: ValidateCount Attribute Declaration
+description: ValidateCount Attribute Declaration
 ---
 # ValidateCount Attribute Declaration
 
@@ -39,9 +30,9 @@ Required. Specifies the maximum number of arguments.
 
 - The Windows PowerShell runtime throws an error under the following conditions:
 
-    - The `MinLength` and `MaxLength` attribute parameters are not of type [System.Int32][].
+  - The `MinLength` and `MaxLength` attribute parameters are not of type [System.Int32][].
 
-    - The value of the `MaxLength` attribute parameter is less than the value of the `MinLength` attribute parameter.
+  - The value of the `MaxLength` attribute parameter is less than the value of the `MinLength` attribute parameter.
 
 - The ValidateCount attribute is defined by the [System.Management.Automation.ValidateCountAttribute][] class.
 

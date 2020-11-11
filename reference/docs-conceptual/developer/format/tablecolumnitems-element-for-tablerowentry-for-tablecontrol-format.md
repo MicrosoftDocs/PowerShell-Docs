@@ -1,13 +1,8 @@
 ---
-title: "TableColumnItems Element for TableRowEntry for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
-caps.latest.revision: 12
+ms.date: 09/13/2016
+ms.topic: reference
+title: TableColumnItems Element for TableRowEntry for TableControl (Format)
+description: TableColumnItems Element for TableRowEntry for TableControl (Format)
 ---
 # TableColumnItems Element for TableRowEntry for TableControl (Format)
 

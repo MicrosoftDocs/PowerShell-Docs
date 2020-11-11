@@ -1,13 +1,8 @@
 ---
-title: "Creating a Wide View | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 2d4303c5-b451-4ccb-9831-b17a17ceac20
-caps.latest.revision: 16
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a Wide View
+description: Creating a Wide View
 ---
 # Creating a Wide View
 

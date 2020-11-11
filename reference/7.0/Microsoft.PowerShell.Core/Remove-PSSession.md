@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/remove-pssession?view=powershell-7&WT.mc_id=ps-gethelp
@@ -160,7 +160,7 @@ Type the NetBIOS name, an IP address, or a fully qualified domain name of one or
 To specify the local computer, type the computer name, localhost, or a dot (.).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerName
 Aliases: Cn
 
@@ -178,7 +178,7 @@ containers. Use the `docker ps` command to get a list of container IDs. For more
 the help for the [docker ps](https://docs.docker.com/engine/reference/commandline/ps/) command.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ContainerId
 Aliases:
 
@@ -200,7 +200,7 @@ It is easier to remember and type than the *InstanceId*, but it is unique only i
 To find the ID of a **PSSession**, run the Get-PSSession cmdlet without parameters.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Id
 Aliases:
 
@@ -223,7 +223,7 @@ The instance ID is stored in the **InstanceID** property of the object that repr
 To find the **InstanceID** of the **PSSessions** in the current session, type `Get-PSSession | Format-Table Name, ComputerName, InstanceId`.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceId
 Aliases:
 
@@ -243,7 +243,7 @@ Wildcard characters are permitted.
 Because the friendly name of a **PSSession** might not be unique, when you use the *Name* parameter, consider also using the *WhatIf* or *Confirm* parameter in the **Remove-PSSession** command.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Name
 Aliases:
 
@@ -261,7 +261,7 @@ Enter a variable that contains the **PSSessions** or a command that creates or g
 You can also pipe one or more session objects to **Remove-PSSession**.
 
 ```yaml
-Type: PSSession[]
+Type: System.Management.Automation.Runspaces.PSSession[]
 Parameter Sets: Session
 Aliases:
 
@@ -281,7 +281,7 @@ To see the virtual machines that are available to you, use the following command
 `Get-VM | Select-Object -Property Name, ID`
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: VMId
 Aliases: VMGuid
 
@@ -299,7 +299,7 @@ This cmdlet starts an interactive session with each of the specified virtual mac
 To see the virtual machines that are available to you, use the **Get-VM** cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: VMName
 Aliases:
 
@@ -315,7 +315,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -332,7 +332,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -386,4 +386,3 @@ This cmdlet does not return any objects.
 [about_PSSessions](About/about_PSSessions.md)
 
 [about_Remote](About/about_Remote.md)
-

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 1/8/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-6&WT.mc_id=ps-gethelp
@@ -321,7 +321,7 @@ If you specify a character other than the actual string delimiter in the file, `
 create the objects from the CSV strings and will return the CSV strings.
 
 ```yaml
-Type: Char
+Type: System.Char
 Parameter Sets: DelimiterPath, DelimiterLiteralPath
 Aliases:
 
@@ -334,19 +334,19 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the encoding for the imported CSV file. The default value is **UTF8NoBOM**.
+Specifies the encoding for the imported CSV file. The default value is `utf8NoBOM`.
 
 The acceptable values for this parameter are as follows:
 
-- **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
-- **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
-- **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
-- **UTF7**: Encodes in UTF-7 format.
-- **UTF8**: Encodes in UTF-8 format.
-- **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
-- **UTF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
-- **UTF32**: Encodes in UTF-32 format.
+- `ascii`: Uses the encoding for the ASCII (7-bit) character set.
+- `bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.
+- `oem`: Uses the default encoding for MS-DOS and console programs.
+- `unicode`: Encodes in UTF-16 format using the little-endian byte order.
+- `utf7`: Encodes in UTF-7 format.
+- `utf8`: Encodes in UTF-8 format.
+- `utf8BOM`: Encodes in UTF-8 format with Byte Order Mark (BOM)
+- `utf8NoBOM`: Encodes in UTF-8 format without Byte Order Mark (BOM)
+- `utf32`: Encodes in UTF-32 format.
 
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
@@ -354,7 +354,7 @@ pages (like `-Encoding 1251`) or string names of registered code pages (like
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
-Type: Encoding
+Type: System.Text.Encoding
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
@@ -382,7 +382,7 @@ When using the **Header** parameter, delete the original header row from the CSV
 `Import-Csv` creates an extra object from the items in the header row.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -401,7 +401,7 @@ includes escape characters, enclose it in single quotation marks. Single quotati
 PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DelimiterLiteralPath, CultureLiteralPath
 Aliases: PSPath, LP
 
@@ -418,7 +418,7 @@ Specifies the path to the CSV file to import.
 You can also pipe a path to `Import-Csv`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DelimiterPath, CulturePath
 Aliases:
 
@@ -435,7 +435,7 @@ Uses the list separator for the current culture as the item delimiter. To find t
 for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CulturePath, CultureLiteralPath
 Aliases:
 
@@ -490,7 +490,7 @@ object, so they are represented by the name of the property value. `Export-Csv` 
 methods of the object.
 
 `Import-Csv` also supports the W3C Extended Log format. Lines starting with `#` are treated as
-comments and ignored unless the comment starts with `#Fields: ` and contains delimited list of
+comments and ignored unless the comment starts with `#Fields:` and contains delimited list of
 column names. In that case, the cmdlet uses those column names. This is the standard format for
 Windows IIS and other web server logs. For more information, see [Extended Log File Format](https://www.w3.org/TR/WD-logfile.html).
 

@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-pssessionconfiguration?view=powershell-6&WT.mc_id=ps-gethelp
@@ -151,7 +151,7 @@ Get-PSSessionConfiguration MaintenanceShell | Format-List -Property *
 ```
 
 ```Output
-xmlns            : https://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+xmlns            : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 Name             : MaintenanceShell
 Filename         : %windir%\system32\pwrshplugin.dll
 SDKVersion       : 1
@@ -159,7 +159,7 @@ XmlRenderingType : text
 lang             : en-US
 PSVersion        : 2.0
 startupscript    : c:\ps-test\Maintenance.ps1
-ResourceUri      : https://schemas.microsoft.com/powershell/MaintenanceShell
+ResourceUri      : http://schemas.microsoft.com/powershell/MaintenanceShell
 SupportsOptions  : true
 ExactMatch       : true
 Capability       : {Shell}
@@ -203,7 +203,7 @@ cmdlet enables all session configurations on the computer and permits remote acc
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: PSSessionConfigurationAccessMode
+Type: System.Management.Automation.Runspaces.PSSessionConfigurationAccessMode
 Parameter Sets: (All)
 Aliases:
 Accepted values: Disabled, Local, Remote
@@ -221,7 +221,7 @@ Specifies the path of the assembly file (\*.dll) that is specified in the value 
 **AssemblyName** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet, AssemblyNameParameterSet
 Aliases:
 
@@ -242,7 +242,7 @@ you enter only the file name, you can enter the path in the value of the **Appli
 parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: AssemblyNameParameterSet
 Aliases:
 
@@ -262,7 +262,7 @@ Specifies the type of the session configuration that is defined in the assembly 
 This parameter is required when you specify an assembly name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: AssemblyNameParameterSet
 Aliases:
 
@@ -281,7 +281,7 @@ service makes the configuration change effective.
 To prevent a restart and suppress the restart prompt, use the **NoServiceRestart** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -302,7 +302,7 @@ If a data size limit is defined in the configuration type that is specified in t
 parameter is ignored.
 
 ```yaml
-Type: Double
+Type: System.Nullable`1[System.Double]
 Parameter Sets: (All)
 Aliases:
 
@@ -323,7 +323,7 @@ If an object size limit is defined in the configuration type that is specified i
 parameter is ignored.
 
 ```yaml
-Type: Double
+Type: System.Nullable`1[System.Double]
 Parameter Sets: (All)
 Aliases:
 
@@ -353,7 +353,7 @@ The modules specified in this parameter value replace the list of modules specif
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: NameParameterSet, AssemblyNameParameterSet
 Aliases:
 
@@ -371,7 +371,7 @@ Specifies the name of the session configuration that you want to change.
 You cannot use this parameter to change the name of the session configuration.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -394,7 +394,7 @@ To restart the **WinRM** service without prompting, use the **Force** parameter.
 **WinRM** service manually, use the `Restart-Service` cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -416,7 +416,7 @@ For information about how to modify a session configuration file, see the help t
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SessionConfigurationFile
 Aliases:
 
@@ -437,7 +437,7 @@ session configuration file.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: NameParameterSet, AssemblyNameParameterSet
 Aliases: PowerShellVersion
 
@@ -456,7 +456,7 @@ the current user.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -482,7 +482,7 @@ If the security descriptor is complex, consider using the **ShowSecurityDescript
 instead of this one. You cannot use both parameters in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -508,7 +508,7 @@ configuration.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: PSSessionTypeOption
+Type: System.Management.Automation.PSSessionTypeOption
 Parameter Sets: NameParameterSet, AssemblyNameParameterSet
 Aliases:
 
@@ -531,7 +531,7 @@ Execute(Invoke) permission to use the session configuration in a session.
 You cannot use the **SecurityDescriptorSDDL** parameter and this parameter in the same command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -555,7 +555,7 @@ error, even a non-terminating error, the session is not created and the `New-PSS
 fails.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -582,7 +582,7 @@ The default value is **UseCurrentThread**.
 For more information, see [PSThreadOptions Enumeration](/dotnet/api/system.management.automation.runspaces.psthreadoptions).
 
 ```yaml
-Type: PSThreadOptions
+Type: System.Management.Automation.Runspaces.PSThreadOptions
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, UseNewThread, ReuseThread, UseCurrentThread
@@ -608,7 +608,7 @@ configuration.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: PSTransportOption
+Type: System.Management.Automation.PSTransportOption
 Parameter Sets: (All)
 Aliases:
 
@@ -627,7 +627,7 @@ configuration. By default, each session is hosted in its own process.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -643,7 +643,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -660,7 +660,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -688,6 +688,8 @@ You cannot pipe input to this cmdlet.
 ### Microsoft.WSMan.Management.WSManConfigLeafElement
 
 ## NOTES
+
+This cmdlet is only available on Windows platforms.
 
 To run this cmdlet, start PowerShell by using the Run as administrator option.
 
@@ -736,4 +738,3 @@ introduced in PowerShell 3.0, use the WSMan: drive in PowerShell 3.0.
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

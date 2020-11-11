@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 12/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -258,7 +258,7 @@ of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCou
 **$PSSessionOption** preference variable. The default value is 5.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Uri
 Aliases:
 
@@ -284,7 +284,7 @@ The value of this parameter should match the value of the **URLPrefix** property
 the remote computer.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName
 Aliases:
 
@@ -321,7 +321,7 @@ For more information about the values of this parameter, see
 > credentials that are passed to it can be used to control the network session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
 Parameter Sets: ComputerName, Uri
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
@@ -345,7 +345,7 @@ To get a certificate, use the `Get-Item` or `Get-ChildItem` command in the Power
 drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, Uri
 Aliases:
 
@@ -378,7 +378,7 @@ To include the local computer in the value of the **ComputerName** parameter, st
 PowerShell by using the Run as administrator option.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerName
 Aliases: Cn
 
@@ -395,7 +395,7 @@ Specifies the session configuration that is used for the new **PSSession**.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration. If you
 specify only the configuration name, the following schema URI is prepended:
-`https://schemas.microsoft.com/PowerShell`.
+`http://schemas.microsoft.com/PowerShell`.
 
 The session configuration for a session is located on the remote computer. If the specified session
 configuration does not exist on the remote computer, the command fails.
@@ -405,7 +405,7 @@ computer. If this preference variable is not set, the default is Microsoft.Power
 information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId
 Aliases:
 
@@ -439,7 +439,7 @@ If the destination computer redirects the connection to a different URI, PowerSh
 redirection unless you use the **AllowRedirection** parameter in the command.
 
 ```yaml
-Type: Uri[]
+Type: System.Uri[]
 Parameter Sets: Uri
 Aliases: URI, CU
 
@@ -458,7 +458,7 @@ information, see the help for the
 [docker ps](https://docs.docker.com/engine/reference/commandline/ps/) command.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ContainerId
 Aliases:
 
@@ -485,14 +485,15 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Accept pipeline input: True (ByPropertyName)
-Position: Named
-Accept wildcard characters: False
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ComputerName, Uri, VMId, VMName
-Required: True (VMId, VMName), False (ComputerName, Uri)
-Default value: Current user
 Aliases:
-Type: PSCredential
+
+Required: True (VMId, VMName), False (ComputerName, Uri)
+Position: Named
+Default value: Current user
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
 ```
 
 ### -EnableNetworkAccess
@@ -525,7 +526,7 @@ authentication can be reconnected from other computers. For more information, se
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName, Uri, Session
 Aliases:
 
@@ -545,7 +546,7 @@ You can use the name to refer to the **PSSession** when you use other cmdlets, s
 current session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -574,7 +575,7 @@ computers or sessions on which the command runs. An alternate port setting might
 from running on all computers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ComputerName
 Aliases:
 
@@ -590,7 +591,7 @@ Accept wildcard characters: False
 Indicates that the **PSSession** runs as administrator.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ContainerId
 Aliases:
 
@@ -615,7 +616,7 @@ port, configuration name, throttle limit, and Secure Sockets Layer (SSL) value a
 they have a different display name, ID, and instance ID (GUID).
 
 ```yaml
-Type: PSSession[]
+Type: System.Management.Automation.Runspaces.PSSession[]
 Parameter Sets: Session
 Aliases:
 
@@ -646,7 +647,7 @@ For a description of the session options that includes the default values, see
 session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
-Type: PSSessionOption
+Type: System.Management.Automation.Remoting.PSSessionOption
 Parameter Sets: ComputerName, Uri
 Aliases:
 
@@ -665,7 +666,7 @@ If you omit this parameter or enter a value of 0 (zero), the default value, 32, 
 The throttle limit applies only to the current command, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -689,7 +690,7 @@ If you use this parameter, but SSL is not available on the port that is used for
 command fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName
 Aliases:
 
@@ -709,7 +710,7 @@ following command:
 `Get-VM | Select-Object -Property Name, ID`
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: VMId
 Aliases: VMGuid
 
@@ -727,7 +728,7 @@ of the specified virtual machines. To see the virtual machines that are availabl
 `Get-VM` cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: VMName
 Aliases:
 

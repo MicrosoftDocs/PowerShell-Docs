@@ -1,15 +1,8 @@
 ---
-title: "How to Validate the Argument Length | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "ValidateLength attribute, example"
-ms.assetid: d5ddaa6e-4904-46da-beb0-0295a8f38332
-caps.latest.revision: 12
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Validate the Argument Length
+description: How to Validate the Argument Length
 ---
 # How to Validate the Argument Length
 

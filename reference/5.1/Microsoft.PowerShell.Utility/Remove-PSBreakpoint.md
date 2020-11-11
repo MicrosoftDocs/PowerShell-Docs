@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,11 +17,13 @@ Deletes breakpoints from the current console.
 ## SYNTAX
 
 ### Breakpoint (Default)
+
 ```
 Remove-PSBreakpoint [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Id
+
 ```
 Remove-PSBreakpoint [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -39,6 +41,7 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 ## EXAMPLES
 
 ### Example 1: Remove all breakpoints
+
 ```
 PS C:\> Get-PSBreakpoint | Remove-PSBreakpoint
 ```
@@ -46,6 +49,7 @@ PS C:\> Get-PSBreakpoint | Remove-PSBreakpoint
 This command deletes all of the breakpoints in the current console.
 
 ### Example 2: Remove a specified breakpoint
+
 ```
 PS C:\> $B = Set-PSBreakpoint -Script "sample.ps1" -Variable "Name"
 PS C:\> $B | Remove-PSBreakpoint
@@ -63,6 +67,7 @@ As a result of this command, if you run the script, it runs to completion withou
 Also, the **Get-PSBreakpoint** cmdlet does not return this breakpoint.
 
 ### Example 3: Remove a breakpoint by ID
+
 ```
 PS C:\> Remove-PSBreakpoint -Id 2
 ```
@@ -70,6 +75,7 @@ PS C:\> Remove-PSBreakpoint -Id 2
 This command deletes the breakpoint with breakpoint ID 2.
 
 ### Example 4: Use a function to remove all breakpoints
+
 ```
 PS C:\> function del-psb { get-psbreakpoint | remove-psbreakpoint }
 ```
@@ -90,7 +96,7 @@ Enter a variable that contains breakpoint objects or a command that gets breakpo
 You can also pipe breakpoint objects to **Remove-PSBreakpoint**.
 
 ```yaml
-Type: Breakpoint[]
+Type: System.Management.Automation.Breakpoint[]
 Parameter Sets: Breakpoint
 Aliases:
 
@@ -105,7 +111,7 @@ Accept wildcard characters: False
 Specifies breakpoint IDs for which this cmdlet deletes breakpoints.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Id
 Aliases:
 
@@ -120,7 +126,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -136,7 +142,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -173,5 +179,3 @@ The cmdlet does not generate any output.
 [Get-PSCallStack](Get-PSCallStack.md)
 
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
-
-

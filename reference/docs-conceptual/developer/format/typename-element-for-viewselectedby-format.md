@@ -1,13 +1,8 @@
 ---
-title: "TypeName Element for ViewSelectedBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 0ad807a9-d7d8-4e96-b799-9c6a7677cc2d
-caps.latest.revision: 12
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for ViewSelectedBy (Format)
+description: TypeName Element for ViewSelectedBy (Format)
 ---
 # TypeName Element for ViewSelectedBy (Format)
 

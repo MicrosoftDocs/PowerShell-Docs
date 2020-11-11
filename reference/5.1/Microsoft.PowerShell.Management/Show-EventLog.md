@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/show-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -31,6 +31,7 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 ## EXAMPLES
 
 ### Example 1: Display event logs for the local computer
+
 ```
 PS C:\> Show-EventLog
 ```
@@ -38,6 +39,7 @@ PS C:\> Show-EventLog
 This command opens Event Viewer and displays in it the classic event logs on the local computer.
 
 ### Example 2: Display event logs for a remote computer
+
 ```
 PS C:\> Show-EventLog -ComputerName "Server01"
 ```
@@ -57,7 +59,7 @@ This parameter does not rely on Windows PowerShell remoting.
 You can use the *ComputerName* parameter even if your computer is not configured to run remote commands.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: CN
 
@@ -82,6 +84,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The Windows PowerShell command prompt returns as soon as Event Viewer opens. You can work in the current session while Event Viewer is open.
 
   Because this cmdlet requires a user interface, it does not work on Server Core installations of Windows Server.
@@ -101,5 +104,3 @@ This cmdlet does not generate any output.
 [Remove-EventLog](Remove-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
-
-

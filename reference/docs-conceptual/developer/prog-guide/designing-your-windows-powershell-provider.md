@@ -1,15 +1,8 @@
 ---
-title: "Designing Your Windows PowerShell Provider | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "providers [PowerShell Programmer's Guide], designing"
-ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: Designing Your Windows PowerShell Provider
+description: Designing Your Windows PowerShell Provider
 ---
 # Designing Your Windows PowerShell Provider
 

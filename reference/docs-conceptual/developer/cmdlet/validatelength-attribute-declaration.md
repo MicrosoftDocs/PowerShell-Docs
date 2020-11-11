@@ -1,17 +1,8 @@
 ---
-title: "ValidateLength Attribute Declaration | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "ValidateLength attribute, described"
-  - "attributes, ValidateLength"
-  - "ValidateLength attribute"
-ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
-caps.latest.revision: 13
+ms.date: 09/13/2016
+ms.topic: reference
+title: ValidateLength Attribute Declaration
+description: ValidateLength Attribute Declaration
 ---
 # ValidateLength Attribute Declaration
 
@@ -39,11 +30,11 @@ Required. Specifies the maximum number of characters allowed.
 
 - The Windows PowerShell runtime throws an error under the following conditions:
 
-    - When the value of the `MaxLength` attribute parameter is less than the value of the `MinLength` attribute parameter.
+  - When the value of the `MaxLength` attribute parameter is less than the value of the `MinLength` attribute parameter.
 
-    - When the `MaxLength` attribute parameter is set to 0.
+  - When the `MaxLength` attribute parameter is set to 0.
 
-    - When the argument is not a string.
+  - When the argument is not a string.
 
 - The ValidateLength attribute is defined by the [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute) class.
 

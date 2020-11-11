@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/unregister-pssessionconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -86,7 +86,7 @@ PS> New-PSSession -ConfigurationName MaintenanceShell
 
 [localhost] Connecting to remote server failed with the following error message :
  The WS-Management service cannot process the request.
- The resource URI (https://schemas.microsoft.com/powershell/MaintenanceShell) was not found in the WS-Management catalog.
+ The resource URI (http://schemas.microsoft.com/powershell/MaintenanceShell) was not found in the WS-Management catalog.
  The catalog contains the metadata that describes resources, or logical endpoints.
  For more information, see the about_Remote_Troubleshooting Help topic.
  + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [], PSRemotingTransportException
@@ -118,7 +118,7 @@ without prompting. Restarting the service makes the configuration change effecti
 To prevent a restart and suppress the restart prompt, use the **NoServiceRestart** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -137,7 +137,7 @@ a configuration name pattern. Wildcard characters are permitted. This parameter 
 You can also pipe a session configurations to `Unregister-PSSessionConfiguration`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -162,7 +162,7 @@ To restart the **WinRM** service without prompting, specify the **Force** parame
 **WinRM** service manually, use the `Restart-Service` cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -195,7 +195,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -253,4 +253,3 @@ To run this cmdlet you must start PowerShell by using the **Run as administrator
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

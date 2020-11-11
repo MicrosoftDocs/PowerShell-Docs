@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
 ms.date: 02/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/get-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -54,7 +54,6 @@ Name             Enabled Description
 AdminContoso02   True    Description of this account.
 ```
 
-
 ### Example 2: Get an account that is connected to a Microsoft account
 
 This example gets a user account that is connected to a Microsoft account. This example uses a
@@ -92,7 +91,7 @@ Specifies an array of names of user accounts that this cmdlet gets. You can use 
 character.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases:
 
@@ -108,7 +107,7 @@ Accept wildcard characters: True
 Specifies an array of security IDs (SIDs) of user accounts that this cmdlet gets.
 
 ```yaml
-Type: SecurityIdentifier[]
+Type: System.Security.Principal.SecurityIdentifier[]
 Parameter Sets: SecurityIdentifier
 Aliases:
 

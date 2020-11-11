@@ -1,13 +1,8 @@
 ---
-title: "SelectionSetName Element for EntrySelectedBy for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 5dd0bd5d-f206-4cc6-a0f8-70700ee2c4b7
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for EntrySelectedBy for TableControl (Format)
+description: SelectionSetName Element for EntrySelectedBy for TableControl (Format)
 ---
 # SelectionSetName Element for EntrySelectedBy for TableControl (Format)
 

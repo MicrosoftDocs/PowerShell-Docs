@@ -1,13 +1,8 @@
 ---
-title: "Wrap Element for TableRowEntry for TableControl  (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 64087c6c-2abd-446d-b837-7d3ee03a6874
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: Wrap Element for TableRowEntry for TableControl  (Format)
+description: Wrap Element for TableRowEntry for TableControl  (Format)
 ---
 # Wrap Element for TableRowEntry for TableControl  (Format)
 

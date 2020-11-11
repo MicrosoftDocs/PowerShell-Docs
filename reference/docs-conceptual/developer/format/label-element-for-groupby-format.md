@@ -1,13 +1,8 @@
 ---
-title: "Label Element for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3351d237-e8c2-4ec5-9500-4eceadb407c2
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: Label Element for GroupBy (Format)
+description: Label Element for GroupBy (Format)
 ---
 # Label Element for GroupBy (Format)
 

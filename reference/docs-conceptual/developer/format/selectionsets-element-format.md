@@ -1,13 +1,8 @@
 ---
-title: "SelectionSets Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ebbac73a-1c99-4388-9f47-703cd024dc6d
-caps.latest.revision: 18
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSets Element (Format)
+description: SelectionSets Element (Format)
 ---
 # SelectionSets Element (Format)
 

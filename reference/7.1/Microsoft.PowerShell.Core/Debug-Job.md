@@ -1,10 +1,10 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/debug-job?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/debug-job?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Debug-Job
 ---
@@ -17,23 +17,27 @@ Debugs a running background, remote, or PowerShell Workflow job.
 ## SYNTAX
 
 ### JobParameterSet (Default)
+
 ```
-Debug-Job [-Job] <Job> [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Job [-Job] <Job> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### JobNameParameterSet
+
 ```
-Debug-Job [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Job [-Name] <String> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### JobIdParameterSet
+
 ```
-Debug-Job [-Id] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Job [-Id] <Int32> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### JobInstanceIdParameterSet
+
 ```
-Debug-Job [-InstanceId] <Guid> [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Job [-InstanceId] <Guid> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,6 +50,7 @@ Starting in Windows PowerShell 5.0, the **exit** command detaches the debugger, 
 ## EXAMPLES
 
 ### Example 1: Debug a job by job ID
+
 ```
 PS C:\> Debug-Job -ID 3
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
@@ -87,7 +92,7 @@ Specifies the ID number of a running job.
 To get the ID number of a job, run the Get-Job cmdlet.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: JobIdParameterSet
 Aliases:
 
@@ -105,7 +110,7 @@ To get the *InstanceId* of a job, run the **Get-Job** cmdlet, piping the results
 `Get-Job | Format-List -Property Id,Name,InstanceId,State`
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: JobInstanceIdParameterSet
 Aliases:
 
@@ -121,7 +126,7 @@ Specifies a running job object.
 The simplest way to use this parameter is to save the results of a **Get-Job** command that returns the running job that you want to debug in a variable, and then specify the variable as the value of this parameter.
 
 ```yaml
-Type: Job
+Type: System.Management.Automation.Job
 Parameter Sets: JobParameterSet
 Aliases:
 
@@ -137,7 +142,7 @@ Specifies a job by the friendly name of the job.
 When you start a job, you can specify a job name by adding the *JobName* parameter, in cmdlets such as Invoke-Command and Start-Job.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: JobNameParameterSet
 Aliases:
 
@@ -152,7 +157,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -168,13 +173,29 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BreakAll
+
+{{ Fill BreakAll Description }}
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -203,5 +224,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Stop-Job](Stop-Job.md)
 
 [Wait-Job](Wait-Job.md)
-
 

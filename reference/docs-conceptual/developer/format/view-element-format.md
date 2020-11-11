@@ -1,13 +1,8 @@
 ---
-title: "View Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d837d5d4-ed2e-4d84-a306-0b5d2ad2d0bf
-caps.latest.revision: 24
+ms.date: 09/13/2016
+ms.topic: reference
+title: View Element (Format)
+description: View Element (Format)
 ---
 # View Element (Format)
 

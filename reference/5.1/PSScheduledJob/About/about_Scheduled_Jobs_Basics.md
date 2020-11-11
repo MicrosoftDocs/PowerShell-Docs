@@ -1,6 +1,7 @@
 ---
+description:  Explains how to create and manage scheduled jobs. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_basics?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -19,7 +20,7 @@ This document shows how to perform basic tasks of creating and managing
 scheduled jobs. For information about more advanced tasks, see [about_Scheduled_Jobs_Advanced](about_Scheduled_Jobs_Advanced.md).
 
 For more information about the cmdlets contained in the **PSScheduledJob**
-module, see [PSScheduledJob](../PSScheduledJob.md).
+module, see [PSScheduledJob](xref:PSScheduledJob).
 
 ## How to create a scheduled job
 
@@ -75,7 +76,7 @@ or edit an existing job. You can change the job trigger of a scheduled job at
 any time.
 
 PowerShell uses some of the same job triggers that Task Scheduler uses. For
-detailed information about job triggers, see the help topic for the [New-JobTrigger](../New-JobTrigger.md)
+detailed information about job triggers, see the help topic for the [New-JobTrigger](xref:PSScheduledJob.New-JobTrigger)
 cmdlet.
 
 The following example uses splatting to create `$JobParms` which are parameter
@@ -131,7 +132,7 @@ prevent a job from running at the scheduled time, it is important to understand
 the job options and use them carefully.
 
 PowerShell uses the same job options that Task Scheduler uses. For detailed
-information about the job options, see the help topic for [New-ScheduledJobOption](../New-ScheduledJobOption.md).
+information about the job options, see the help topic for [New-ScheduledJobOption](xref:PSScheduledJob.New-ScheduledJobOption).
 
 Job options are stored in the scheduled job XML file. You can set job options
 when you create a scheduled job or change them at any time.
@@ -313,6 +314,6 @@ window.
 
 [about_Splatting.md](../../Microsoft.PowerShell.Core/About/about_Splatting.md)
 
-[PSScheduledJob](../PSScheduledJob.md) module cmdlets
+[PSScheduledJob](xref:PSScheduledJob) module cmdlets
 
 [Task Scheduler](/windows/desktop/TaskSchd/task-scheduler-reference)

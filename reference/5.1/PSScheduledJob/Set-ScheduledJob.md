@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/set-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,6 +17,7 @@ Changes scheduled jobs.
 ## SYNTAX
 
 ### ScriptBlock (Default)
+
 ```
 Set-ScheduledJob [-Name <String>] [-ScriptBlock <ScriptBlock>] [-Trigger <ScheduledJobTrigger[]>]
  [-InitializationScript <ScriptBlock>] [-RunAs32] [-Credential <PSCredential>]
@@ -26,6 +27,7 @@ Set-ScheduledJob [-Name <String>] [-ScriptBlock <ScriptBlock>] [-Trigger <Schedu
 ```
 
 ### FilePath
+
 ```
 Set-ScheduledJob [-Name <String>] [-FilePath <String>] [-Trigger <ScheduledJobTrigger[]>]
  [-InitializationScript <ScriptBlock>] [-RunAs32] [-Credential <PSCredential>]
@@ -35,6 +37,7 @@ Set-ScheduledJob [-Name <String>] [-FilePath <String>] [-Trigger <ScheduledJobTr
 ```
 
 ### Execution
+
 ```
 Set-ScheduledJob [-InputObject] <ScheduledJobDefinition> [-ClearExecutionHistory] [-PassThru]
  [<CommonParameters>]
@@ -64,6 +67,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Change the script that a job runs
+
 ```
 PS C:\> Get-ScheduledJob -Name "Inventory"
 Id         Name            Triggers        Command                                  Enabled
@@ -85,6 +89,7 @@ The output shows that the job runs the Get-Inventory.ps1 script.
 This command is not required; it is included only to show the effect of the script change.
 
 ### Example 2: Delete the execution history of a scheduled job
+
 ```
 PS C:\> Get-ScheduledJob BackupArchive | Set-ScheduledJob -ClearExecutionHistory
 ```
@@ -98,6 +103,7 @@ The **Set-ScheduledJob** cmdlet uses the *ClearExecutionHistory* parameter to de
 For more information about the execution history and saved job results of scheduled jobs, see about_Scheduled_Jobs.
 
 ### Example 3: Change scheduled jobs on a remote computer
+
 ```
 PS C:\> Invoke-Command -Computer "Server01, Server02" -ScriptBlock {Get-ScheduledJob | Set-ScheduledJob -InitializationScript \\SrvA\Scripts\SetForRun.ps1}
 ```
@@ -115,7 +121,7 @@ The scheduled jobs are piped to the **Set-ScheduledJob** cmdlet, which changes t
 Specifies values for the parameters of the script that is specified by the *FilePath* parameter or for the command that is specified by the *ScriptBlock* parameter.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: ScriptBlock, FilePath
 Aliases:
 
@@ -138,15 +144,17 @@ The acceptable values for this parameter are:
 - Negotiate
 - NegotiateWithImplicitCredential
 
-The default value is Default.
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
+The default value is Default. For more information about the values of this
+parameter, see
+[AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)
+in the PowerShell SDK.
 
 Caution: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
 If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
 Parameter Sets: ScriptBlock, FilePath
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
@@ -169,7 +177,7 @@ This parameter does not affect the events that Task Scheduler writes to the Wind
 To manage the number of job results that are saved, use the *MaxResultCount* parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Execution
 Aliases:
 
@@ -188,7 +196,7 @@ Type a user name, such as User01 or Domain01\User01, or enter a **PSCredential**
 If you enter only a user name, you will be prompted for a password.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ScriptBlock, FilePath
 Aliases:
 
@@ -206,7 +214,7 @@ To specify default values for the script parameters, use the *ArgumentList* para
 Every scheduled job must have either a *ScriptBlock* or *FilePath* value.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: FilePath
 Aliases:
 
@@ -227,7 +235,7 @@ To specify a script that runs the primary job commands, use the *FilePath* param
 If the initialization script generates an error, including a non-terminating error, the current instance of the scheduled job does not run and its status is Failed.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: ScriptBlock, FilePath
 Aliases:
 
@@ -246,7 +254,7 @@ You can also pipe a **ScheduledJobDefinition** object to **Set-ScheduledJob**.
 If you specify multiple scheduled jobs, **Set-ScheduledJob** makes the same changes to all jobs.
 
 ```yaml
-Type: ScheduledJobDefinition
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 Parameter Sets: (All)
 Aliases:
 
@@ -274,7 +282,7 @@ The *MaxResultCount* parameter sets the value of the ExecutionHistoryLength prop
 To delete the current execution history and job results, use the *ClearExecutionHistory* parameter.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ScriptBlock, FilePath
 Aliases:
 
@@ -295,7 +303,7 @@ This parameter does not change the names of job instances on disk.
 It affects only job instances that are started after this command completes.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ScriptBlock, FilePath
 Aliases:
 
@@ -311,7 +319,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -326,7 +334,7 @@ Accept wildcard characters: False
 Runs the scheduled job in a 32-bit process.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ScriptBlock, FilePath
 Aliases:
 
@@ -343,7 +351,7 @@ Used to specify how often to run the job. For example, use this option to run a 
 minutes.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: ScriptBlock, FilePath
 Aliases:
 
@@ -359,7 +367,7 @@ Starts a job immediately, as soon as the **Set-ScheduledJob** cmdlet is run.
 This parameter eliminates the need to trigger Task Scheduler to run a Windows PowerShell script immediately after registration, and does not require users to create a trigger that specifies a starting date and time.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ScriptBlock, FilePath
 Aliases:
 
@@ -386,7 +394,7 @@ In the following hash table, the keys are shown with their default values.
 `@{# Power SettingsStartIfOnBattery=$False;StopIfGoingOnBattery=$True; WakeToRun=$False; # Idle SettingsStartIfNotIdle=$False; IdleDuration="00:10:00"; IdleTimeout="01:00:00"; StopIfGoingOffIdle=$True; RestartOnIdleResume=$False;# Security settingsShowInTaskScheduler=$TrueRunElevated=$False;# MiscRunWithoutNetwork=$False;DoNotAllowDemandStart=$False;MultipleInstancePolicy=IgnoreNew# Can be IgnoreNew, Parallel, Queue, StopExisting}`
 
 ```yaml
-Type: ScheduledJobOptions
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 Parameter Sets: ScriptBlock, FilePath
 Aliases:
 
@@ -405,7 +413,7 @@ To specify default values for command parameters, use the *ArgumentList* paramet
 Every Register-ScheduledJob command must use either the *ScriptBlock* or *FilePath* parameters.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: ScriptBlock
 Aliases:
 
@@ -437,7 +445,7 @@ To submit a hash table, use the following keys.
 }
 
 ```yaml
-Type: ScheduledJobTrigger[]
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger[]
 Parameter Sets: ScriptBlock, FilePath
 Aliases:
 
@@ -497,5 +505,3 @@ Otherwise, this cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

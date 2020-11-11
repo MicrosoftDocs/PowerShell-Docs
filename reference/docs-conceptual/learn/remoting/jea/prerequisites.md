@@ -2,12 +2,12 @@
 ms.date:  07/10/2019
 keywords:  jea,powershell,security
 title:  JEA Prerequisites
+description: This article describes the prerequisites that must be satisfied to start using JEA.
 ---
 # Prerequisites
 
 Just Enough Administration is a feature included in PowerShell 5.0 and higher. This article
 describes the prerequisites that must be satisfied to start using JEA.
-
 
 ## Check which version of PowerShell is installed
 

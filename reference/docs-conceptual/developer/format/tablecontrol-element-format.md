@@ -1,13 +1,8 @@
 ---
-title: "TableControl Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
-caps.latest.revision: 15
+ms.date: 09/13/2016
+ms.topic: reference
+title: TableControl Element (Format)
+description: TableControl Element (Format)
 ---
 # TableControl Element (Format)
 

@@ -2,6 +2,7 @@
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  Understanding DSC's role in a CI/CD pipeline
+description: This article describes the types of approaches available for combining configurations and resources in a CI/CD pipeline.
 ---
 
 # Understanding DSC's role in a CI/CD pipeline
@@ -13,7 +14,7 @@ contributing to the outcome of a server deployment, such as an application owner
 application state and a central team releasing changes to security baselines. The nuances of each
 approach including the benefits and risks are detailed here.
 
-![Pipeline](media/authoringAdvanced/Pipeline.jpg)
+![Process flow of a CI/CD Pipeline](media/authoringAdvanced/Pipeline.jpg)
 
 ## Types of Collaborative Authoring Techniques
 
@@ -36,7 +37,7 @@ When using Partial Configurations, Local Configuration Manager is configured to 
 configurations independently. Configurations are compiled independently and then assigned to the
 node. This requires LCM to be configured in advance with the name of each configuration.
 
-![PartialConfiguration](media/authoringAdvanced/PartialConfiguration.jpg)
+![Diagram of Partial Configurations](media/authoringAdvanced/PartialConfiguration.jpg)
 
 Partial Configurations provide two, or more, teams complete control over configuration of a server,
 often without the benefit of communication or collaboration.
@@ -48,13 +49,13 @@ Additionally, customers have provided feedback that when using this model, each 
 configuration changes are unlikely to be fully tested through a release pipeline, leading to
 unexpected results in production.
 
-**It is critical that a single pipeline be used to evaluate all changes release to servers.**
+**It is critical that a single pipeline be used to evaluate all changes released to servers.**
 
 In the illustration below, Team B releases their partial configuration to Team A. Team A then runs
 their tests against a server with both configurations applied. In this model, only one authority has
 permission to make changes in production.
 
-![PartialSinglePipeline](media/authoringAdvanced/PartialSinglePipeline.jpg)
+![Diagram of a Partial Single Pipeline](media/authoringAdvanced/PartialSinglePipeline.jpg)
 
 When changes are required from Team B, they should submit a Pull Request against Team A's source
 control environment. Team A would then review the changes using test automation and release to
@@ -67,7 +68,7 @@ A composite resource is simply a DSC Configuration packaged as a resource. There
 requirements for configuring LCM to accept composite resources. The resources are used within a new
 configuration and a single compilation results in one MOF file.
 
-![CompositeResource](media/authoringAdvanced/CompositeResource.jpg)
+![Diagram of a Composite Resource](media/authoringAdvanced/CompositeResource.jpg)
 
 There are two common scenarios for composite resources. The first is to reduce complexity and
 abstract unique concepts. The second is to allow baselines to be packaged for an application team to

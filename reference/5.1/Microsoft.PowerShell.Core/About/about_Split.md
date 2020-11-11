@@ -1,6 +1,7 @@
 ---
+description:  Explains how to use the Split operator to split one or more strings into substrings. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 12/20/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -473,7 +474,7 @@ LastName, FirstName
 
 ## SEE ALSO
 
-[Split-Path](../../Microsoft.PowerShell.Management/Split-Path.md)
+[Split-Path](xref:Microsoft.PowerShell.Management.Split-Path)
 
 [about_Operators](about_Operators.md)
 

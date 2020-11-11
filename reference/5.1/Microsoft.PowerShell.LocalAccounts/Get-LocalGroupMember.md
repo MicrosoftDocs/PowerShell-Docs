@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/get-localgroupmember?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,16 +17,19 @@ Gets members from a local group.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Get-LocalGroupMember [[-Member] <String>] [-Name] <String> [<CommonParameters>]
 ```
 
 ### Group
+
 ```
 Get-LocalGroupMember [-Group] <LocalGroup> [[-Member] <String>] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Get-LocalGroupMember [[-Member] <String>] [-SID] <SecurityIdentifier> [<CommonParameters>]
 ```
@@ -41,6 +44,7 @@ The **Get-LocalGroupMember** cmdlet gets members from a local group.
 ## EXAMPLES
 
 ### Example 1: Get all members of the Administrators group
+
 ```
 PS C:\> Get-LocalGroupMember -Group "Administrators"
 ObjectClass Name                    PrincipalSource
@@ -57,7 +61,7 @@ This command gets all the members of the local Administrators group.
 Specifies the security group from which this cmdlet gets members.
 
 ```yaml
-Type: LocalGroup
+Type: Microsoft.PowerShell.Commands.LocalGroup
 Parameter Sets: Group
 Aliases:
 
@@ -78,7 +82,7 @@ You can use wildcard characters.
 If you do not specify this parameter, the cmdlet gets all members of the group.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -93,7 +97,7 @@ Accept wildcard characters: False
 Specifies the name of the security group from which this cmdlet gets members.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Default
 Aliases:
 
@@ -108,7 +112,7 @@ Accept wildcard characters: False
 Specifies the security ID of the security group from which this cmdlet gets members.
 
 ```yaml
-Type: SecurityIdentifier
+Type: System.Security.Principal.SecurityIdentifier
 Parameter Sets: SecurityIdentifier
 Aliases:
 
@@ -133,6 +137,7 @@ You can pipe a local group, a string, or a SID to this cmdlet.
 This cmdlet returns local principals.
 
 ## NOTES
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local
@@ -149,5 +154,3 @@ This cmdlet returns local principals.
 [New-LocalGroup](New-LocalGroup.md)
 
 [Remove-LocalGroupMember](Remove-LocalGroupMember.md)
-
-

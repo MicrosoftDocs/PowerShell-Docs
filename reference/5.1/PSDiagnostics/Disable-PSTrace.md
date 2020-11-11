@@ -14,7 +14,7 @@ Disables the Microsoft-Windows-PowerShell event provider logs.
 ## SYNTAX
 
 ```
-Disable-PSTrace [-AnalyticOnly]
+Disable-PSTrace [-AnalyticOnly] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### None
+### System.Object
 
 ## NOTES
 

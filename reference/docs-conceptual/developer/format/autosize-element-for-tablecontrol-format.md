@@ -1,13 +1,8 @@
 ---
-title: "AutoSize Element for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1df5de23-9ffc-427e-bb34-f5efe073f3fe
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: AutoSize Element for TableControl (Format)
+description: AutoSize Element for TableControl (Format)
 ---
 # AutoSize Element for TableControl (Format)
 

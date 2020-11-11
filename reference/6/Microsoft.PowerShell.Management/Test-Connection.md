@@ -1,7 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Management
 ms.date: 11/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -236,7 +237,7 @@ The `Test-Connection` command uses the **Traceroute** parameter. The results, wh
 Specifies the size, in bytes, of the buffer sent with this command. The default value is 32.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: PingCount, PingContinues
 Aliases: Size, Bytes, BS
 
@@ -247,29 +248,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Continues
-
-Causes the cmdlet to send ping requests continuously. This parameter can't be used with the
-**Count** parameter.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: PingContinues
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Count
 
 Specifies the number of echo requests to send. The default value is 4.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: PingCount
 Aliases:
 
@@ -285,7 +269,7 @@ Accept wildcard characters: False
 Specifies the interval between pings, in seconds.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: PingCount, PingContinues
 Aliases:
 
@@ -303,7 +287,7 @@ the **BufferSize** parameter to test the Path MTU size. For more information abo
 [Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PingCount, PingContinues
 Aliases:
 
@@ -319,7 +303,7 @@ Accept wildcard characters: False
 Forces the cmdlet to use the IPv4 protocol for the test.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -335,7 +319,7 @@ Accept wildcard characters: False
 Forces the cmdlet to use the IPv6 protocol for the test.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -352,7 +336,7 @@ Sets the maximum number of hops that an ICMP request message can be sent. The de
 controlled by the operating system. The default value for Windows 10 is 128 hops.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: PingCount, PingContinues, TraceRoute
 Aliases: Ttl, TimeToLive, Hops
 
@@ -363,30 +347,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MTUSizeDetect
-
-This parameter is used to discover the Path MTU size. The cmdlet returns a **PingReply#MTUSize**
-object that contains the Path MTU size to the target. For more information about Path MTU, see the
-[Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: DetectionOfMTUSize
-Aliases:
-
-Required: True
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Ping
 
 Causes the cmdlet to do a ping test, which is the default action.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PingCount, PingContinues
 Aliases:
 
@@ -410,7 +376,7 @@ If **any** ping succeeds, `$True` is returned.
 If **all** pings fail, `$False` is returned.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -426,7 +392,7 @@ Accept wildcard characters: False
 Causes the cmdlet to attempt to resolve the DNS name of the target.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -443,7 +409,7 @@ Specifies the names of the computers where the ping originates. Enter a comma-se
 computer names. The default is the local computer.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PingCount, PingContinues, TraceRoute, ConnectionByTCPPort
 Aliases:
 
@@ -461,7 +427,7 @@ format. Wildcard characters aren't permitted. This parameter is required. **Comp
 alias for this parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: ComputerName
 
@@ -478,7 +444,7 @@ Specifies the TCP port number on the target to be used in the TCP connection tes
 attempt to make a TCP connection to the specified port on the target.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ConnectionByTCPPort
 Aliases:
 
@@ -497,7 +463,7 @@ expires. The default is five seconds.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -514,8 +480,43 @@ Causes the cmdlet to do a traceroute test. When this parameter is used, the cmdl
 `TestConnectionCommand+TraceRouteResult` object.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: TraceRoute
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Continues
+
+Causes the cmdlet to send ping requests continuously. This parameter can't be used with the
+**Count** parameter.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: PingContinues
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MTUSizeDetect
+
+This parameter is used to discover the Path MTU size. The cmdlet returns a **PingReply#MTUSize**
+object that contains the Path MTU size to the target. For more information about Path MTU, see the
+[Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: DetectionOfMTUSize
 Aliases:
 
 Required: True

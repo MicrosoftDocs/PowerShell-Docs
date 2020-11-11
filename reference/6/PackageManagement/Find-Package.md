@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PackageManagement
 ms.date: 04/03/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/find-package?view=powershell-6&WT.mc_id=ps-gethelp
@@ -172,7 +172,7 @@ NuGet.Core           2.14.0     C:\LocalPkg\     NuGet.Core is the core framewor
 Automatically accepts a license agreement if the package requires it.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 Includes packages marked as a prerelease in the results.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -205,7 +205,7 @@ Indicates that `Find-Package` returns all available versions of the package. By 
 `Find-Package` only returns the newest available version.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -221,7 +221,7 @@ Accept wildcard characters: False
 Specifies an array of commands searched by `Find-Package`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -237,7 +237,7 @@ Accept wildcard characters: False
 Specifies a configuration file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet
 Aliases:
 
@@ -254,7 +254,7 @@ Accept wildcard characters: False
 specified value.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet
 Aliases:
 
@@ -270,7 +270,7 @@ Accept wildcard characters: False
 Specifies a user account that has permission to search for packages.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -286,7 +286,7 @@ Accept wildcard characters: False
 Specifies an array of Desired State Configuration (DSC) resources that this cmdlet searches.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -302,7 +302,7 @@ Accept wildcard characters: False
 Specifies terms to search for within the **Name** and **Description** properties.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -319,7 +319,7 @@ Specifies the tag that filters the results. Results that don't contain the speci
 excluded.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NuGet
 Aliases:
 
@@ -335,7 +335,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -352,7 +352,7 @@ Indicates that `Find-Package` forces **PackageManagement** to automatically inst
 provider.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -368,7 +368,7 @@ Accept wildcard characters: False
 Specifies the headers for the package.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NuGet
 Aliases:
 
@@ -384,7 +384,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet includes package dependencies in the results.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -408,7 +408,7 @@ The accepted values are as follows:
 - Workflow
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet
 Aliases:
 Accepted values: Cmdlet, DscResource, Function, RoleCapability, Workflow
@@ -425,7 +425,7 @@ Accept wildcard characters: False
 Specifies the maximum package version that you want to find.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -442,7 +442,7 @@ Specifies the minimum package version that you want to find. If a higher version
 version is returned.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -459,7 +459,7 @@ Specifies one or more package names, or package names with wildcard characters. 
 package names with commas.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -475,7 +475,7 @@ Accept wildcard characters: True
 Specifies the name of a package management provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -492,7 +492,7 @@ Specifies one or more package provider names. Separate multiple package provider
 Use `Get-PackageProvider` to get a list of available package providers.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Provider
 Accepted values: Bootstrap, NuGet, PowerShellGet
@@ -509,7 +509,7 @@ Accept wildcard characters: False
 Specifies a proxy server for the request, rather than a direct connection to the internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -526,7 +526,7 @@ Specifies a user account that has permission to use the proxy server that is spe
 **Proxy** parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -542,7 +542,7 @@ Accept wildcard characters: False
 Specifies a location for publishing the package.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -558,7 +558,7 @@ Accept wildcard characters: False
 Specifies an exact package version that you want to find.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -574,7 +574,7 @@ Accept wildcard characters: False
 Specifies an array of role capabilities.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -590,7 +590,7 @@ Accept wildcard characters: False
 Specifies a script publishing location for the package.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -606,7 +606,7 @@ Accept wildcard characters: False
 Specifies a script source location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -622,7 +622,7 @@ Accept wildcard characters: False
 Switch that skips package credential validation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NuGet
 Aliases:
 
@@ -639,7 +639,7 @@ Specifies one or more package sources. Use `Get-PackageSource` to get a list of 
 sources. A file system directory can be used as a source for download packages.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -655,7 +655,7 @@ Accept wildcard characters: False
 Specifies one or more strings to search for in the package metadata.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -671,7 +671,7 @@ Accept wildcard characters: False
 Specifies whether to search for packages with a module, a script, or either.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet
 Aliases:
 Accepted values: Module, Script, All

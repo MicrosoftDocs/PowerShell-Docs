@@ -1,13 +1,8 @@
 ---
-title: "Cmdlet Sets | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: bcf0739e-920e-4dd8-afca-2c6d6927bc2a
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Sets
+description: Cmdlet Sets
 ---
 # Cmdlet Sets
 

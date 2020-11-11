@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: CimCmdlets
 ms.date: 02/20/2019
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/register-cimindicationevent?view=powershell-7&WT.mc_id=ps-gethelp
@@ -70,6 +70,7 @@ class raises an event whenever a process starts.
 Register-CimIndicationEvent -ClassName 'Win32_ProcessStartTrace' -SourceIdentifier "ProcessStarted"
 Get-Event -SourceIdentifier "ProcessStarted"
 ```
+
 The `Get-Event` cmdlet gets the events with **ProcessStarted** subscription. For more information,
 see [Get-Event](../Microsoft.PowerShell.Utility/Get-Event.md).
 
@@ -128,7 +129,7 @@ to the **Action** script block. For more information, see
 [About Automatic Variables](../microsoft.powershell.core/about/about_automatic_variables.md).
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -147,7 +148,7 @@ cmdlets. For more information, see
 [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
-Type: CimSession
+Type: Microsoft.Management.Infrastructure.CimSession
 Parameter Sets: ClassNameSessionSet, QueryExpressionSessionSet
 Aliases:
 
@@ -165,7 +166,7 @@ the list of classes, because PowerShell gets a list of classes from the local WM
 a list of class names.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ClassNameComputerSet, ClassNameSessionSet
 Aliases:
 
@@ -189,7 +190,7 @@ If multiple operations are being performed on the same computer, connect using a
 better performance.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ClassNameComputerSet, QueryExpressionComputerSet
 Aliases: CN, ServerName
 
@@ -206,7 +207,7 @@ Indicates that events for the subscription are forwarded to the session on the l
 this parameter when you are registering for events on a remote computer or in a remote session.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -224,7 +225,7 @@ specified times. If the value is equal or less than zero, there is no limit on t
 the event can be triggered without being unregistered.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -241,7 +242,7 @@ Specifies any additional data to associate with this event subscription. The val
 appears in the **MessageData** property of all the events associated with this subscription.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -259,7 +260,7 @@ tab completion to browse the list of namespaces, because PowerShell gets a list 
 the local WMI server to provide the list of namespaces.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -282,7 +283,7 @@ parameter are not recoverable, because the operation on the server times out bef
 reconnect.
 
 ```yaml
-Type: UInt32
+Type: System.UInt32
 Parameter Sets: (All)
 Aliases: OT
 
@@ -302,7 +303,7 @@ following characters by enclosing them in square brackets `[]`: percent `%`, und
 opening square bracket `[`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: QueryExpressionSessionSet, QueryExpressionComputerSet
 Aliases:
 
@@ -319,7 +320,7 @@ Specifies the query language used for the **Query** parameter. The acceptable va
 parameter are: **WQL** or **CQL**. The default value is **WQL**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: QueryExpressionSessionSet, QueryExpressionComputerSet
 Aliases:
 
@@ -338,7 +339,7 @@ session. The default value is a GUID that PowerShell assigns. This value appears
 subscription.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -355,7 +356,7 @@ Indicates that the event subscription is hidden. Use this parameter when the cur
 part of a more complex event registration mechanism and it should not be discovered independently.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

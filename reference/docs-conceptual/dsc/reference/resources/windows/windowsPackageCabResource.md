@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC WindowsPackageCab Resource
+description: DSC WindowsPackageCab Resource
 ---
 # DSC WindowsPackageCab Resource
 
@@ -12,6 +13,8 @@ a mechanism to install or uninstall Windows cabinet (.cab) packages on a target 
 
 The target node must have the DISM PowerShell module installed. For information, see
 [Use DISM in Windows PowerShell](/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14).
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 

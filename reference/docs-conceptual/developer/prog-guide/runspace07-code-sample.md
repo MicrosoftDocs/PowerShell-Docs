@@ -1,13 +1,8 @@
 ---
-title: "RunSpace07 Code Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8ad306d9-45c2-4d55-8e64-fdcba43402c5
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: RunSpace07 Code Sample
+description: RunSpace07 Code Sample
 ---
 # RunSpace07 Code Sample
 
@@ -26,7 +21,7 @@ and then executes the pipeline. The commands added to the pipeline are the `Get-
 
 ## Code Sample
 
-[!code-csharp[Runspace07.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace07/Runspace07.cs#L11-L108 "Runspace07.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace07/Runspace07.cs" range="11-108":::
 
 ## See Also
 

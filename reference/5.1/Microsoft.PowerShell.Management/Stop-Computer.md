@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -130,7 +130,7 @@ For more information about PowerShell background jobs, see
 [about_Remote_Jobs](../microsoft.powershell.core/about/about_remote_jobs.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -152,7 +152,7 @@ This parameter doesn't rely on PowerShell remoting. You can use the **ComputerNa
 if your computer isn't configured to run remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: CN, __SERVER, Server, IPAddress
 
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -195,7 +195,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -226,7 +226,7 @@ For more information about the values of this parameter, see
 [AuthenticationLevel](/dotnet/api/system.management.authenticationlevel).
 
 ```yaml
-Type: AuthenticationLevel
+Type: System.Management.AuthenticationLevel
 Parameter Sets: (All)
 Aliases: Authentication
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
@@ -243,7 +243,7 @@ Accept wildcard characters: False
 Forces an immediate shut down of the computer.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -267,7 +267,7 @@ Specifies the impersonation level to use when this cmdlet calls WMI. The default
 - **Impersonate**: Allows objects to use the credentials of the caller.
 
 ```yaml
-Type: ImpersonationLevel
+Type: System.Management.ImpersonationLevel
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
@@ -287,7 +287,7 @@ are: **WSMan** and **DCOM**. The default value is **DCOM**.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: DCOM, WSMan
@@ -307,7 +307,7 @@ If you omit this parameter or enter a value of 0, the default value, 32, is used
 The throttle limit applies only to the current command, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -345,7 +345,7 @@ For more information about the values of this parameter, see
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Basic, Negotiate, CredSSP, Digest, Kerberos
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -395,7 +395,9 @@ The cmdlet returns a **System.Management.Automation.RemotingJob** object, if you
 
 ## NOTES
 
-This cmdlet uses the **Win32Shutdown** method of the **Win32_OperatingSystem** WMI class.
+This cmdlet uses the **Win32Shutdown** method of the **Win32_OperatingSystem** WMI class. This
+method requires the **SeShutdownPrivilege** privilege be enabled for the user account used to
+restart the machine.
 
 ## RELATED LINKS
 

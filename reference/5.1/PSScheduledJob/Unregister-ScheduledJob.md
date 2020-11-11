@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/unregister-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,17 +17,20 @@ Deletes scheduled jobs on the local computer.
 ## SYNTAX
 
 ### Definition (Default)
+
 ```
 Unregister-ScheduledJob [-InputObject] <ScheduledJobDefinition[]> [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### DefinitionId
+
 ```
 Unregister-ScheduledJob [-Id] <Int32[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DefinitionName
+
 ```
 Unregister-ScheduledJob [-Name] <String[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -53,6 +56,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Delete a scheduled job
+
 ```
 PS C:\> Unregister-ScheduledJob TestJob
 ```
@@ -60,6 +64,7 @@ PS C:\> Unregister-ScheduledJob TestJob
 This command deletes the TestJob scheduled job on the local computer.
 
 ### Example 2: Delete all scheduled jobs
+
 ```
 PS C:\> Get-ScheduledJob | Unregister-ScheduledJob -Force
 PS C:\> Unregister-ScheduledJob -Name "*" -Force
@@ -75,6 +80,7 @@ The second command uses the *Name* parameter of **Unregister-ScheduledJob** with
 Both commands use the *Force* parameter, which deletes a scheduled job even if an instance of the job is running.
 
 ### Example 3: Delete a scheduled job on a remote computer
+
 ```
 PS C:\> Invoke-Command -ComputerName "Server01" { Unregister-ScheduledJob -Name "Test*"}
 ```
@@ -89,7 +95,7 @@ Deletes the scheduled job even if an instance of the job is running.
 By default, **Unregister-ScheduledJob** does not interrupt running jobs.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -105,7 +111,7 @@ Deletes the scheduled jobs with the specified identification numbers (ID).
 Enter the IDs of scheduled jobs on the computer.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: DefinitionId
 Aliases:
 
@@ -122,7 +128,7 @@ Enter a variable that contains **ScheduledJob** objects or type a command or exp
 You can also pipe **ScheduledJob** objects to **Unregister-JobTrigger**.
 
 ```yaml
-Type: ScheduledJobDefinition[]
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition[]
 Parameter Sets: Definition
 Aliases:
 
@@ -139,7 +145,7 @@ Enter the names of one or more scheduled jobs on the computer.
 Wildcards are supported.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DefinitionName
 Aliases:
 
@@ -154,7 +160,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -170,7 +176,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -229,5 +235,3 @@ This cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

@@ -1,6 +1,7 @@
 ---
+description:  Provides essential information about objects in Windows PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 11/30/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_objects?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -76,4 +77,4 @@ The second command passes only the file objects to the third command
 
 [about_Pipelines](about_Pipelines.md)
 
-[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
+[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)

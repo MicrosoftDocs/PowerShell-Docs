@@ -1,13 +1,8 @@
 ---
-title: "WideItem Element for WideControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 17352fc4-ba83-4f04-86bc-f591765d85a8
-caps.latest.revision: 18
+ms.date: 09/13/2016
+ms.topic: reference
+title: WideItem Element for WideControl (Format)
+description: WideItem Element for WideControl (Format)
 ---
 # WideItem Element for WideControl (Format)
 

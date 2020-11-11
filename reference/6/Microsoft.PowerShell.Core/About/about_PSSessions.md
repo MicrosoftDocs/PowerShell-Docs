@@ -1,6 +1,7 @@
 ---
+description: Describes PowerShell sessions (PSSessions) and explains how to establish a persistent connection to a remote computer. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssessions?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -237,7 +238,7 @@ until it times out.
 
 You can also use the **IdleTimeout** parameter of the `New-PSSessionOption`
 cmdlet to set an expiration time for an idle PSSession. For more information,
-see [New-PSSessionOption](../New-PSSessionOption.md).
+see [New-PSSessionOption](xref:Microsoft.PowerShell.Core.New-PSSessionOption).
 
 ## The PSSession Cmdlets
 
@@ -269,18 +270,18 @@ For more information about PSSessions, see [about_PSSession_Details](about_PSSes
 
 [about_Remote_Requirements](about_Remote_Requirements.md)
 
-[Connect-PSSession](../Connect-PSSession.md)
+[Connect-PSSession](xref:Microsoft.PowerShell.Core.Connect-PSSession)
 
-[Disconnect-PSSession](../Disconnect-PSSession.md)
+[Disconnect-PSSession](xref:Microsoft.PowerShell.Core.Disconnect-PSSession)
 
-[Enter-PSSession](../Enter-PSSession.md)
+[Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
 
-[Exit-PSSession](../Exit-PSSession.md)
+[Exit-PSSession](xref:Microsoft.PowerShell.Core.Exit-PSSession)
 
-[Get-PSSession](../Get-PSSession.md)
+[Get-PSSession](xref:Microsoft.PowerShell.Core.Get-PSSession)
 
-[Invoke-Command](../Invoke-Command.md)
+[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 
-[New-PSSession](../New-PSSession.md)
+[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
 
-[Remove-PSSession](../Remove-PSSession.md)
+[Remove-PSSession](xref:Microsoft.PowerShell.Core.Remove-PSSession)

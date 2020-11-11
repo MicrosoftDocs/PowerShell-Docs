@@ -1,7 +1,7 @@
 ---
 external help file: PSModule-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PowerShellGet
 ms.date: 06/05/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-rolecapability?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -134,7 +134,7 @@ output confirms that the **JeaExamples** module was installed.
 Includes resources marked as a prerelease in the results.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -151,7 +151,7 @@ Indicates that this cmdlet gets all versions of a module. The **AllVersions** pa
 each of a module's available versions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -168,7 +168,7 @@ Finds resources based on the **PackageManagement** provider's search syntax. For
 words to search for within the **ModuleName** and **Description** properties.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -185,7 +185,7 @@ Specifies the maximum version of the module to include in results. The **Maximum
 **RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -202,7 +202,7 @@ Specifies the minimum version of the module to include in results. The **Minimum
 **RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -219,7 +219,7 @@ Specifies the name of the module in which to search for role capabilities. The d
 modules.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -236,7 +236,7 @@ Specifies the name of a role capability. The default is all role capabilities. U
 separate an array of resource names.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -252,7 +252,7 @@ Accept wildcard characters: False
 Specifies a proxy server for the request, rather than a direct connection to the internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -269,7 +269,7 @@ Specifies a user account with permission to use the proxy server specified in th
 parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -286,7 +286,7 @@ Specifies a repository to search for role capabilities. Use commas to separate a
 repository names.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -303,7 +303,7 @@ Specifies the module's exact version number to include in the results. The **Req
 the **MinimumVersion** parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -319,7 +319,7 @@ Accept wildcard characters: False
 Specifies tags that categorize modules in a repository. Use commas to separate an array of tags.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

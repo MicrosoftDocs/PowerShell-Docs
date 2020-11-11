@@ -1,13 +1,8 @@
 ---
-title: "GetProc Tutorial | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 4663905f-560a-4e39-9b03-6db2c315c322
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: GetProc Tutorial
+description: GetProc Tutorial
 ---
 # GetProc Tutorial
 

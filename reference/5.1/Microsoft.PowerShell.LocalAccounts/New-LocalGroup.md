@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/new-localgroup?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -30,6 +30,7 @@ The **New-LocalGroup** cmdlet creates a local security group in the Security Acc
 ## EXAMPLES
 
 ### Example 1: Create a security group
+
 ```
 PS C:\> New-LocalGroup -Name "SecurityGroup04"
 ```
@@ -43,7 +44,7 @@ Specifies a comment for the group.
 The maximum length is 48 characters.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -59,7 +60,7 @@ Specifies a name for the group.
 The maximum length is 256 characters.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -74,7 +75,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -90,7 +91,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -115,6 +116,7 @@ You can pipe a string to this cmdlet.
 This cmdlet returns a security group.
 
 ## NOTES
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local
@@ -133,5 +135,3 @@ This cmdlet returns a security group.
 [Rename-LocalGroup](Rename-LocalGroup.md)
 
 [Set-LocalGroup](Set-LocalGroup.md)
-
-

@@ -1,7 +1,8 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  TestConfiguration method
+ms.date: 07/17/2020
+ms.topic: reference
+title: TestConfiguration method
+description: TestConfiguration method
 ---
 # TestConfiguration method
 
@@ -20,17 +21,16 @@ uint32 TestConfiguration(
 
 ## Parameters
 
-*configurationData* \[in\]
-Environment data for the confuguration.
+**configurationData** \[in\] Environment data for the configuration.
 
-*InDesiredState* \[out\]
-On return, specifies whether the managed node is in the state specified by the configuration document.
+**InDesiredState** \[out\] On return, specifies whether the managed node is in the state specified
+by the configuration document.
 
-*ResourcesInDesiredState* \[out\]
-On return, contains an embedded instance of the **MSFT_ResourceInDesiredState** class that specifies resources that are in the desired state.
+**ResourcesInDesiredState** \[out\] On return, contains an embedded instance of the
+**MSFT_ResourceInDesiredState** class that specifies resources that are in the desired state.
 
-*ResourcesNotInDesiredState* \[out\]
-On return, contains an embedded instance of the **MSFT_ResourceNotInDesiredState** class that specifies resources that are not in the desired state.
+**ResourcesNotInDesiredState** \[out\] On return, contains an embedded instance of the
+**MSFT_ResourceNotInDesiredState** class that specifies resources that are not in the desired state.
 
 ## Return value
 

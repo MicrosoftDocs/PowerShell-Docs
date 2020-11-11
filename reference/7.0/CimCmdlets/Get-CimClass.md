@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimclass?view=powershell-7&WT.mc_id=ps-gethelp
@@ -120,7 +120,7 @@ object, such as the output of a `New-CimSession` or `Get-CimSession` cmdlet. The
 current session on the local computer.
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: SessionSet
 Aliases:
 
@@ -138,7 +138,7 @@ to browse the list of classes, because PowerShell gets a list of classes from th
 to provide a list of class names.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -164,7 +164,7 @@ If multiple operations are being performed on the same computer, using a CIM ses
 performance.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerSet
 Aliases: CN, ServerName
 
@@ -181,7 +181,7 @@ Finds the classes that have a method matching this name. You can use wildcard ch
 parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -199,7 +199,7 @@ completion to browse the list of namespaces, because PowerShell gets a list of n
 local WMI server to provide the list of namespaces.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -222,7 +222,7 @@ parameter are not recoverable, because the operation on the server times out bef
 reconnect.
 
 ```yaml
-Type: UInt32
+Type: System.UInt32
 Parameter Sets: (All)
 Aliases: OT
 
@@ -239,7 +239,7 @@ Finds the classes which have a property matching this name. You can use wildcard
 this parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -256,7 +256,7 @@ Filters the classes by class level qualifier name. You can use wildcard characte
 parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -291,4 +291,3 @@ This cmdlet returns a CIM class object.
 ## RELATED LINKS
 
 [New-CimSession](New-CimSession.md)
-

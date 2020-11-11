@@ -1,13 +1,8 @@
 ---
-title: "FormatString Element for ListItem for ListControl  (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: fd2cac66-88bb-449f-9d47-bd2cd4fe1801
-caps.latest.revision: 13
+ms.date: 09/13/2016
+ms.topic: reference
+title: FormatString Element for ListItem for ListControl  (Format)
+description: FormatString Element for ListItem for ListControl  (Format)
 ---
 # FormatString Element for ListItem for ListControl  (Format)
 

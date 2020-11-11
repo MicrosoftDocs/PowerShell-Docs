@@ -1,8 +1,8 @@
 ---
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=390782
-Help Version: 5.1.1.0
+Help Version: 5.2.0.0
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
@@ -26,7 +26,10 @@ Appends entries to the session history.
 Adds one or more Windows PowerShell snap-ins to the current session.
 
 ### [Clear-History](Clear-History.md)
-Deletes entries from the PowerShell command history.
+Deletes entries from the PowerShell session command history.
+
+### [Clear-Host](Clear-Host.md)
+Clears the display in the host program.
 
 ### [Connect-PSSession](Connect-PSSession.md)
 Reconnects to disconnected sessions.
@@ -35,7 +38,7 @@ Reconnects to disconnected sessions.
 Debugs a running background, remote, or Windows PowerShell Workflow job.
 
 ### [Disable-PSRemoting](Disable-PSRemoting.md)
-Prevents remote users from running commands on the local computer.
+Prevents PowerShell endpoints from receiving remote connections.
 
 ### [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 Disables session configurations on the local computer.
@@ -99,6 +102,9 @@ Gets the registered session configurations on the computer.
 
 ### [Get-PSSnapin](Get-PSSnapin.md)
 Gets the Windows PowerShell snap-ins on the computer.
+
+### [Get-Verb](Get-Verb.md)
+Gets approved PowerShell verbs.
 
 ### [Import-Module](Import-Module.md)
 Adds modules to the current session.
@@ -204,4 +210,3 @@ Suppresses the command prompt until one or all of the PowerShell background jobs
 
 ### [Where-Object](Where-Object.md)
 Selects objects from a collection based on their property values.
-

@@ -1,7 +1,7 @@
 ---
 external help file: Get-DscConfigurationStatus.cdxml-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/get-dscconfigurationstatus?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -29,6 +29,7 @@ This cmdlet is useful for finding historical information about configuration run
 ## EXAMPLES
 
 ### Example 1: Get information on the last configuration run
+
 ```
 PS C:\> Get-DscConfigurationStatus
 ```
@@ -36,6 +37,7 @@ PS C:\> Get-DscConfigurationStatus
 This command gets information on the last configuration run.
 
 ### Example 2: Get information on all configurations
+
 ```
 PS C:\> Get-DscConfigurationStatus -All
 ```
@@ -43,6 +45,7 @@ PS C:\> Get-DscConfigurationStatus -All
 This command gets information about all the configurations that were run on the system, including the Windows PowerShell Desired State Configuration (DSC) consistency check.
 
 ### Example 3: Get information on the configuration run on a remote computer
+
 ```
 PS C:\> Get-DscConfigurationStatus -CimSession "Server01"
 ```
@@ -56,7 +59,7 @@ This uses the WSMan transport to connect to the remote computer and requires tha
 Indicates that this cmdlet retrieves information about all the configuration runs on the computer, including the configuration application and the consistency check.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -71,7 +74,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet runs the command as a background job.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -84,11 +87,11 @@ Accept wildcard characters: False
 
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
+Enter a computer name or a session object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet.
 The default is the current session on the local computer.
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: (All)
 Aliases: Session
 
@@ -105,7 +108,7 @@ If this parameter is omitted or a value of `0` is entered, then Windows PowerShe
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -138,6 +141,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Start-DscConfiguration](Start-DscConfiguration.md)
 
 [Test-DscConfiguration](Test-DscConfiguration.md)
-
-
-

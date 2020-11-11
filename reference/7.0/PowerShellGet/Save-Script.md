@@ -1,7 +1,7 @@
 ---
 external help file: PSModule-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PowerShellGet
 ms.date: 07/02/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/save-script?view=powershell-7&WT.mc_id=ps-gethelp
@@ -83,7 +83,7 @@ parameter. `Test-ScriptFileInfo` specifies the **Path** and validates the script
 Automatically accept the license agreement if the script requires it.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 Allows you to save a script marked as a prerelease.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running `Save-Script`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 Specifies a user account that has permission to save a script.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 Forces `Save-Script` to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -164,7 +164,7 @@ Accepts a **PSRepositoryItemInfo** object. For example, output `Find-Script` to 
 that variable as the **InputObject** argument.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: InputObjectAndLiteralPathParameterSet, InputObjectAndPathParameterSet
 Aliases:
 
@@ -183,7 +183,7 @@ characters, enclose the path within single quotation marks. PowerShell doesn't i
 characters enclosed in single quotation marks as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameAndLiteralPathParameterSet, InputObjectAndLiteralPathParameterSet
 Aliases: PSPath
 
@@ -200,7 +200,7 @@ Specifies the maximum, or newest version of the script to save. The **MaximumVer
 **RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -217,7 +217,7 @@ Specifies the minimum version of a script to save. The **MinimumVersion** and **
 parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -233,7 +233,7 @@ Accept wildcard characters: False
 Specifies an array of script names to save.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -249,7 +249,7 @@ Accept wildcard characters: False
 Specifies the location on the local computer to store a saved module. Accepts wildcard characters.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameAndPathParameterSet, InputObjectAndPathParameterSet
 Aliases:
 
@@ -265,7 +265,7 @@ Accept wildcard characters: True
 Specifies a proxy server for the request, rather than connecting directly to an internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -282,7 +282,7 @@ Specifies a user account that has permission to use the proxy server specified b
 parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -299,7 +299,7 @@ Specifies the friendly name of a repository that has been registered by running
 `Register-PSRepository`. Use `Get-PSRepository` to display registered repositories.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -315,7 +315,7 @@ Accept wildcard characters: False
 Specifies the exact version number of the script to save.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -331,7 +331,7 @@ Accept wildcard characters: False
 Shows what would happen if `Save-Script` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

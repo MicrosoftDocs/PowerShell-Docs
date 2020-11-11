@@ -1,13 +1,8 @@
 ---
-title: "ItemSelectionCondition Element for ListItem for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d2668aea-37e9-4753-a4e9-7980ae5ec2eb
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: ItemSelectionCondition Element for ListItem for ListControl (Format)
+description: ItemSelectionCondition Element for ListItem for ListControl (Format)
 ---
 # ItemSelectionCondition Element for ListItem for ListControl (Format)
 

@@ -1,13 +1,8 @@
 ---
-title: "Provider Samples | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c4933dad-fec9-4337-a1a9-9dc16ee87cc3
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: Provider Samples
+description: Provider Samples
 ---
 # Provider Samples
 

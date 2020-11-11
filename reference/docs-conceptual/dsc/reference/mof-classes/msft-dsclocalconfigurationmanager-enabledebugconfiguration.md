@@ -1,7 +1,8 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  EnableDebugConfiguration method
+ms.date: 07/17/2020
+ms.topic: reference
+title: EnableDebugConfiguration method
+description: EnableDebugConfiguration method
 ---
 # EnableDebugConfiguration method
 
@@ -17,7 +18,7 @@ uint32 EnableDebugConfiguration(
 
 ## Parameters
 
-*BreakAll* \[in\]
+**BreakAll** \[in\]
 Sets a breakpoint at every line in the resource script.
 
 ## Return value

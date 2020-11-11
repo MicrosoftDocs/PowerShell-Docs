@@ -1,8 +1,9 @@
 ---
+description:  Exits the current scope, which can be a function, script, or script block. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 01/03/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Return
 ---
@@ -236,6 +237,7 @@ object to the pipeline, use one of the following two methods:
 
 [about_Classes](about_Classes.md)
 
-[Write-Information](../../Microsoft.PowerShell.Utility/Write-Information.md)
+[Write-Information](xref:Microsoft.PowerShell.Utility.Write-Information)
 
 [about_Script_Blocks](about_Script_Blocks.md)
+

@@ -1,26 +1,37 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Writing a custom DSC resource with PowerShell classes
+description: This article shows how to create a simple resource that manages a file in a specified path.
 ---
 
 # Writing a custom DSC resource with PowerShell classes
 
 > Applies To: Windows PowerShell 5.0
 
-With the introduction of PowerShell classes in Windows PowerShell 5.0, you can now define a DSC resource by creating a class. The class defines both the schema and the implementation of the resource, so there is no need to create a separate MOF file. The folder structure for a class-based resource is also simpler, because a **DSCResources** folder is not necessary.
+With the introduction of PowerShell classes in Windows PowerShell 5.0, you can now define a DSC
+resource by creating a class. The class defines both the schema and the implementation of the
+resource, so there is no need to create a separate MOF file. The folder structure for a class-based
+resource is also simpler, because a **DSCResources** folder is not necessary.
 
-In a class-based DSC resource, the schema is defined as properties of the class which can be modified with attributes to specify the property type.. The resource is implemented by **Get()**, **Set()**, and **Test()** methods (equivalent to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.
+In a class-based DSC resource, the schema is defined as properties of the class which can be
+modified with attributes to specify the property type.. The resource is implemented by `Get()`,
+`Set()`, and `Test()` methods (equivalent to the `Get-TargetResource`, `Set-TargetResource`,
+and `Test-TargetResource` functions in a script resource.
 
-In this topic, we will create a simple resource named **FileResource** that manages a file in a specified path.
+In this article, we will create a simple resource named **FileResource** that manages a file in a
+specified path.
 
 For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
->**Note:** Generic collections are not supported in class-based resources.
+> [!Note]
+> Generic collections are not supported in class-based resources.
 
 ## Folder structure for a class resource
 
-To implement a DSC custom resource with a PowerShell class, create the following folder structure. The class is defined in **MyDscResource.psm1** and the module manifest is defined in **MyDscResource.psd1**.
+To implement a DSC custom resource with a PowerShell class, create the following folder structure.
+The class is defined in `MyDscResource.psm1` and the module manifest is defined in
+`MyDscResource.psd1`.
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -31,7 +42,8 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 ## Create the class
 
-You use the class keyword to create a PowerShell class. To specify that a class is a DSC resource, use the **DscResource()** attribute. The name of the class is the name of the DSC resource.
+You use the class keyword to create a PowerShell class. To specify that a class is a DSC resource,
+use the `DscResource()` attribute. The name of the class is the name of the DSC resource.
 
 ```powershell
 [DscResource()]
@@ -41,7 +53,8 @@ class FileResource {
 
 ### Declare properties
 
-The DSC resource schema is defined as properties of the class. We declare three properties as follows.
+The DSC resource schema is defined as properties of the class. We declare three properties as
+follows.
 
 ```powershell
 [DscProperty(Key)]
@@ -59,12 +72,16 @@ The DSC resource schema is defined as properties of the class. We declare three 
 
 Notice that the properties are modified by attributes. The meaning of the attributes is as follows:
 
-- **DscProperty(Key)**: The property is required. The property is a key. The values of all properties marked as keys must combine to uniquely identify a resource instance within a configuration.
+- **DscProperty(Key)**: The property is required. The property is a key. The values of all
+  properties marked as keys must combine to uniquely identify a resource instance within a
+  configuration.
 - **DscProperty(Mandatory)**: The property is required.
-- **DscProperty(NotConfigurable)**: The property is read-only. Properties marked with this attribute cannot be set by a configuration, but are populated by the **Get()** method when present.
+- **DscProperty(NotConfigurable)**: The property is read-only. Properties marked with this attribute
+  cannot be set by a configuration, but are populated by the `Get()` method when present.
 - **DscProperty()**: The property is configurable, but it is not required.
 
-The **$Path** and **$SourcePath** properties are both strings. The **$CreationTime** is a [DateTime](/dotnet/api/system.datetime) property. The **$Ensure** property is an enumeration type, defined as follows.
+The `$Path` and `$SourcePath` properties are both strings. The `$CreationTime` is a [DateTime](/dotnet/api/system.datetime)
+property. The `$Ensure` property is an enumeration type, defined as follows.
 
 ```powershell
 enum Ensure
@@ -76,12 +93,14 @@ enum Ensure
 
 ### Implementing the methods
 
-The **Get()**, **Set()**, and **Test()** methods are analogous to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.
+The `Get()`, `Set()`, and `Test()` methods are analogous to the `Get-TargetResource`,
+`Set-TargetResource`, and `Test-TargetResource` functions in a script resource.
 
-This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**.
+This code also includes the `CopyFile()` function, a helper function that copies the file from
+`$SourcePath` to `$Path`.
 
 ```powershell
-	<#
+    <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
     #>
@@ -411,7 +430,9 @@ class FileResource
 
 ## Create a manifest
 
-To make a class-based resource available to the DSC engine, you must include a **DscResourcesToExport** statement in the manifest file that instructs the module to export the resource. Our manifest looks like this:
+To make a class-based resource available to the DSC engine, you must include a
+`DscResourcesToExport` statement in the manifest file that instructs the module to export the
+resource. Our manifest looks like this:
 
 ```powershell
 @{
@@ -449,7 +470,12 @@ PowerShellVersion = '5.0'
 
 ## Test the resource
 
-After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource. For information about how to run a DSC configuration, see [Enacting configurations](../pull-server/enactingConfigurations.md). The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).
+After saving the class and manifest files in the folder structure as described earlier, you can
+create a configuration that uses the new resource. For information about how to run a DSC
+configuration, see [Enacting configurations](../pull-server/enactingConfigurations.md). The
+following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if
+not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the
+configuration).
 
 ```powershell
 Configuration Test
@@ -468,23 +494,26 @@ Start-DscConfiguration -Wait -Force Test
 
 ## Supporting PsDscRunAsCredential
 
->**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
+> [Note]
+> **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
 
-The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the
-resource should be run under a specified set of credentials.
-For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).
+The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md)
+resource block to specify that the resource should be run under a specified set of credentials. For
+more information, see [Running DSC with user credentials](../configurations/runAsUser.md).
 
 ### Require or disallow PsDscRunAsCredential for your resource
 
-The **DscResource()** attribute takes an optional parameter **RunAsCredential**.
-This parameter takes one of three values:
+The `DscResource()` attribute takes an optional parameter **RunAsCredential**. This parameter
+takes one of three values:
 
-- `Optional` **PsDscRunAsCredential** is optional for configurations that call this resource. This is the default value.
+- `Optional` **PsDscRunAsCredential** is optional for configurations that call this resource. This
+  is the default value.
 - `Mandatory` **PsDscRunAsCredential** must be used for any configuration that calls this resource.
 - `NotSupported` Configurations that call this resource cannot use **PsDscRunAsCredential**.
 - `Default` Same as `Optional`.
 
-For example, use the following attribute to specify that your custom resource does not support using **PsDscRunAsCredential**:
+For example, use the following attribute to specify that your custom resource does not support using
+**PsDscRunAsCredential**:
 
 ```powershell
 [DscResource(RunAsCredential=NotSupported)]
@@ -494,9 +523,11 @@ class FileResource {
 
 ### Declaring multiple class resources in a module
 
-A module can define multiple class based DSC resources. You can create the folder structure in the following ways:
+A module can define multiple class based DSC resources. You can create the folder structure in the
+following ways:
 
-1. Define the first resource in the "<ModuleName>.psm1" file and subsequent resources under the **DSCResources** folder.
+1. Define the first resource in the `<ModuleName>.psm1` file and subsequent resources under the
+   **DSCResources** folder.
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -507,7 +538,7 @@ A module can define multiple class based DSC resources. You can create the folde
            |- SecondResource.psm1
    ```
 
-2. Define all resources under the **DSCResources** folder.
+1. Define all resources under the **DSCResources** folder.
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -520,13 +551,16 @@ A module can define multiple class based DSC resources. You can create the folde
    ```
 
 > [!NOTE]
-> In the examples above, add any PSM1 files under the **DSCResources** to the **NestedModules** key in your PSD1 file.
+> In the examples above, add any PSM1 files under the **DSCResources** to the **NestedModules** key
+> in your PSD1 file.
 
 ### Access the user context
 
-To access the user context from within a custom resource, you can use the automatic variable `$global:PsDscContext`.
+To access the user context from within a custom resource, you can use the automatic variable
+`$global:PsDscContext`.
 
-For example the following code would write the user context under which the resource is running to the verbose output stream:
+For example the following code would write the user context under which the resource is running to
+the verbose output stream:
 
 ```powershell
 if (PsDscContext.RunAsUser) {

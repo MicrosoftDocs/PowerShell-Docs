@@ -1,13 +1,8 @@
 ---
-title: "Text Element for CustomItem for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 5d3ecec9-cc95-482e-9ee0-4e4e353b6357
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: Text Element for CustomItem for Controls for View (Format)
+description: Text Element for CustomItem for Controls for View (Format)
 ---
 # Text Element for CustomItem for Controls for View (Format)
 

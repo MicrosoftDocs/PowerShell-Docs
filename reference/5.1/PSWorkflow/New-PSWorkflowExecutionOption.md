@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Powershell.Workflow.ServiceCore.dll-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSWorkflow
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/new-psworkflowexecutionoption?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -104,12 +104,12 @@ Get-PSSessionConfiguration ITWorkflows | Format-List -Property *
 ```Output
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
-ResourceUri                   : https://schemas.microsoft.com/powershell/ITWorkflows
+ResourceUri                   : http://schemas.microsoft.com/powershell/ITWorkflows
 MaxConcurrentCommandsPerShell : 1000
 allowedactivity               : PSDefaultActivities
 UseSharedProcess              : false
 ProcessIdleTimeoutSec         : 0
-xmlns                         : https://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+xmlns                         : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 MaxConcurrentUsers            : 5
 maxsessionsperworkflow        : 10
 lang                          : en-US
@@ -166,7 +166,7 @@ the interval expires, the process closes.
 Enter a value in seconds. The default value is 60.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -187,7 +187,7 @@ Windows Workflow Foundation activities and the activities that represent the Win
 cmdlets.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -206,7 +206,7 @@ The default value is True. To disable validation, use the following command form
 `-EnableValidation:$false`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -223,7 +223,7 @@ Specifies the maximum number of processes that can be created in the session to 
 activities. The default value is 5.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -240,7 +240,7 @@ Specifies the maximum number of remote sessions that are in an operational state
 applied to sessions connected to all remote nodes (target computers). The default value is 100.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -257,7 +257,7 @@ Specifies the maximum number of remote sessions that are in a disconnected state
 applied to sessions connected to all remote nodes (target computers). The default value is 1000.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -279,7 +279,7 @@ The persistence store contains data for all workflow jobs. The ability to store 
 to resume without losing state.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -296,7 +296,7 @@ Specifies that maximum number of workflows that can run in the session concurren
 The default value is 30.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -313,7 +313,7 @@ Specifies the maximum number of sessions that can be connected to each remote no
 computer). The default value is 5.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -330,7 +330,7 @@ Specifies the maximum number of session that can be created to support each work
 value is 5.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -347,7 +347,7 @@ Determines which allowed activities (specified by the **AllowedActivities** para
 out-of-process. The default value is **InlineScript**.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -367,7 +367,7 @@ failures.
 The default value is `$env:LocalAppData\Microsoft\Windows\PowerShell\WF\PS`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -384,7 +384,7 @@ Indicates that the workflow encrypts the data in the persistence store. Consider
 when storing persistence data in a network share.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -403,7 +403,7 @@ it is idle.
 Enter a value in seconds. The default value is 60.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -420,7 +420,7 @@ Specifies how many operations are created to support all workflows started in th
 default value is 100.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -441,7 +441,7 @@ Enter a value in milliseconds.
 The default value is 500.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 

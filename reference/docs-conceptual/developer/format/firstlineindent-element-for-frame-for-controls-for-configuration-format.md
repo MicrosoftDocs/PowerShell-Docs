@@ -1,13 +1,8 @@
 ---
-title: "FirstLineIndent Element for Frame for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 2f489720-11f6-4019-940e-07f423d4278d
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: FirstLineIndent Element for Frame for Controls for Configuration (Format)
+description: FirstLineIndent Element for Frame for Controls for Configuration (Format)
 ---
 # FirstLineIndent Element for Frame for Controls for Configuration (Format)
 

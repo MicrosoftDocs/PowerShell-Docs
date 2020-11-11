@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-eventsubscriber?view=powershell-6&WT.mc_id=ps-gethelp
@@ -147,7 +147,7 @@ For more information about modules, see [about_Modules](../Microsoft.PowerShell.
 Indicates that this cmdlet gets all event subscribers, including subscribers for events that are hidden by using the *SupportEvent* parameter of Register-ObjectEvent, Register-WmiEvent, and Register-EngineEvent.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -166,7 +166,7 @@ Wildcards are not permitted.
 This parameter is case-sensitive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: BySource
 Aliases:
 
@@ -183,7 +183,7 @@ Specifies the subscription identifier that this cmdlet gets.
 By default, **Get-EventSubscriber** gets all event subscribers in the session.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ById
 Aliases: Id
 
@@ -234,5 +234,3 @@ If you close the current session, the event queue is discarded and the event sub
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-
-

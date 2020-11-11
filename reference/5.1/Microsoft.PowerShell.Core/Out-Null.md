@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/out-null?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -29,6 +29,7 @@ makes it easier to test your command for any errors.
 ## EXAMPLES
 
 ### Example 1: Delete output
+
 ```
 PS C:\> Get-ChildItem | Out-Null
 ```
@@ -44,7 +45,7 @@ Specifies the object to be sent to NULL (removed from pipeline).
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -62,7 +63,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 You can pipe any object to this cmdlet.
-.
 
 ## OUTPUTS
 
@@ -70,6 +70,7 @@ You can pipe any object to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The cmdlets that contain the **Out** verb (the **Out** cmdlets) do not have parameters for names or file paths. To send data to an **Out** cmdlet, use a pipeline operator (|) to send the output of a Windows PowerShell command to the cmdlet. You can also store data in a variable and use the *InputObject* parameter to pass the data to the cmdlet. For more information, see the examples.
 * **Out-Null** does not return any output objects. If you pipe the output of **Out-Null** to the Get-Member cmdlet, **Get-Member** reports that no objects have been specified.
 
@@ -78,5 +79,3 @@ This cmdlet does not generate any output.
 [Out-Default](Out-Default.md)
 
 [Out-Host](Out-Host.md)
-
-

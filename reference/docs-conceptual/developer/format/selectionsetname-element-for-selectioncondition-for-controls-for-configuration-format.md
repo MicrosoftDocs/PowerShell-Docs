@@ -1,13 +1,8 @@
 ---
-title: "SelectionSetName Element for SelectionCondition for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 7dcaeadb-4e79-47a0-96e2-8952af26abbe
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for SelectionCondition for Controls for Configuration (Format)
+description: SelectionSetName Element for SelectionCondition for Controls for Configuration (Format)
 ---
 # SelectionSetName Element for SelectionCondition for Controls for Configuration (Format)
 

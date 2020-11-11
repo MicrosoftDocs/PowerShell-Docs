@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 08/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-markdown?view=powershell-6&WT.mc_id=ps-gethelp
@@ -90,7 +90,7 @@ A Markdown string that will be shown in the terminal. If you do not pass in a su
 `Show-Markdown` will emit an error.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: InputObject
 Aliases:
 
@@ -109,7 +109,7 @@ characters, enclose it in single quotation marks. Single quotation marks tell Po
 interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 Specifies the path to a Markdown file to be rendered.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -141,7 +141,7 @@ Accept wildcard characters: True
 Compiles the Markdown input as HTML and opens it in your default browser.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

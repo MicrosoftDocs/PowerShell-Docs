@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-computersecurechannel?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -35,6 +35,7 @@ Both NetDom and **Test-ComputerSecureChannel** use the **NetLogon** service to p
 ## EXAMPLES
 
 ### Example 1: Test a channel between the local computer and its domain
+
 ```
 PS C:\> Test-ComputerSecureChannel
 True
@@ -43,6 +44,7 @@ True
 This command tests the channel between the local computer and the domain to which it is joined.
 
 ### Example 2: Test a channel between the local computer and a domain controller
+
 ```
 PS C:\> Test-ComputerSecureChannel -Server "DCName.fabrikam.com"
 True
@@ -51,6 +53,7 @@ True
 This command specifies a preferred domain controller for the test.
 
 ### Example 3: Reset the channel between the local computer and its domain
+
 ```
 PS C:\> Test-ComputerSecureChannel -Repair
 True
@@ -59,6 +62,7 @@ True
 This command resets the channel between the local computer and its domain.
 
 ### Example 4: Display detailed information about the test
+
 ```
 PS C:\> Test-ComputerSecureChannel -verbose
 VERBOSE: Performing operation "Test-ComputerSecureChannel" on Target "SERVER01".
@@ -70,6 +74,7 @@ This command uses the *Verbose* common parameter to request detailed messages ab
 For more information about *Verbose*, see about_CommonParameters.
 
 ### Example 5: Test a connection before you run a script
+
 ```
 PS C:\> Set-Alias tcsc Test-ComputerSecureChannel
 if (!(tcsc))
@@ -94,7 +99,7 @@ By default, the cmdlet uses the credentials of the current user.
 The *Credential* parameter is designed for use in commands that use the *Repair* parameter to repair the channel between the computer and the domain.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -112,7 +117,7 @@ Use this parameter to try to restore a connection that has failed the test.
 To use this parameter, the current user must be a member of the Administrators group on the local computer.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -128,7 +133,7 @@ Specifies the domain controller to run the command.
 If this parameter is not specified, this cmdlet selects a default domain controller for the operation.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -143,7 +148,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -159,7 +164,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -184,6 +189,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet returns $True if the connection is working correctly and $False if it is not.
 
 ## NOTES
+
 * To run a **Test-ComputerSecureChannel** command on Windows Vista and later versions of the Windows operating system, open Windows PowerShell by using the Run as administrator option.
 * **Test-ComputerSecureChannel** is implemented by using the **I_NetLogonControl2** function, which controls various aspects of the Netlogon service.
 
@@ -196,5 +202,3 @@ This cmdlet returns $True if the connection is working correctly and $False if i
 [Restart-Computer](Restart-Computer.md)
 
 [Stop-Computer](Stop-Computer.md)
-
-

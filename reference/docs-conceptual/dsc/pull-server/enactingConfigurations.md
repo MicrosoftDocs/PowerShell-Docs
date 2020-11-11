@@ -2,6 +2,7 @@
 ms.date:  10/16/2017
 keywords:  dsc,powershell,configuration,setup
 title:  Enacting configurations
+description: There are two ways to enact PowerShell DSC configurations - push mode and pull mode.
 ---
 
 # Enacting configurations
@@ -13,7 +14,7 @@ and pull mode.
 
 ## Push mode
 
-![Push mode](media/enactingConfigurations/pushModel.png "How push mode works")
+![Overview of Push mode](media/enactingConfigurations/pushModel.png "How push mode works")
 
 Push mode refers to a user actively applying a configuration to a target node by calling the
 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
@@ -33,7 +34,7 @@ you would apply it to the local machine with the following command:
 
 ## Pull mode
 
-![Pull Mode](media/enactingConfigurations/pullModel.png "How pull mode works")
+![Overview of Pull Mode](media/enactingConfigurations/pullModel.png "How pull mode works")
 
 In pull mode, pull clients are configured to get their desired state configurations from a remote
 pull service. Likewise, the pull service has been set up to host the DSC service, and has been
@@ -60,6 +61,6 @@ limited features and does require some "do it yourself" integration.
 
 The following topics explain pull service and clients:
 
-- [Azure Automation DSC Overview](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [Azure Automation DSC Overview](/azure/automation/automation-dsc-overview)
 - [Setting up an SMB pull server](pullServerSMB.md)
 - [Configuring a pull client](pullClientConfigID.md)

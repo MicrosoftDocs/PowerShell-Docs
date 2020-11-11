@@ -1,13 +1,8 @@
 ---
-title: "PropertyName Element for ItemSelectionCondition for CustomControl for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f2b12006-8d52-486b-91a3-e6224ca80e56
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: PropertyName Element for ItemSelectionCondition for CustomControl for View (Format)
+description: PropertyName Element for ItemSelectionCondition for CustomControl for View (Format)
 ---
 # PropertyName Element for ItemSelectionCondition for CustomControl for View (Format)
 

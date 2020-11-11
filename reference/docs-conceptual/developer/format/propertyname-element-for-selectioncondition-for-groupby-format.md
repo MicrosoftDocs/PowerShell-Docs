@@ -1,13 +1,8 @@
 ---
-title: "PropertyName Element for SelectionCondition for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d1707317-6c26-4866-bcc1-8924103c9014
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: PropertyName Element for SelectionCondition for GroupBy (Format)
+description: PropertyName Element for SelectionCondition for GroupBy (Format)
 ---
 # PropertyName Element for SelectionCondition for GroupBy (Format)
 

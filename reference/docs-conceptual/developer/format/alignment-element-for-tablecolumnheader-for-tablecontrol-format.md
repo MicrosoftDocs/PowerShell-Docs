@@ -1,13 +1,8 @@
 ---
-title: "Alignment Element for TableColumnHeader for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ff85e83a-c9c2-4c37-accc-e6a27c182f3c
-caps.latest.revision: 19
+ms.date: 09/13/2016
+ms.topic: reference
+title: Alignment Element for TableColumnHeader for TableControl (Format)
+description: Alignment Element for TableColumnHeader for TableControl (Format)
 ---
 # Alignment Element for TableColumnHeader for TableControl (Format)
 

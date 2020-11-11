@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 05/20/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-HotFix
 ---
@@ -110,7 +110,7 @@ The **ComputerName** parameter doesn't rely on Windows PowerShell remoting. If y
 configured to run remote commands, use the **ComputerName** parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: CN, __Server, IPAddress
 
@@ -138,7 +138,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 `Get-HotFix` uses the **Description** parameter to specify hotfix types. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Description
 Aliases:
 
@@ -170,7 +170,7 @@ Accept wildcard characters: True
 Filters the `Get-HotFix` results for specific hotfix Ids. Wildcards aren't accepted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases: HFID
 
@@ -201,6 +201,8 @@ You can pipe one or more computer names to Get-HotFix.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 The **Win32_QuickFixEngineering** [WMI class](/windows/desktop/WmiSdk/retrieving-a-class) represents
 a small system-wide update, commonly referred to as a quick-fix engineering (QFE) update, applied to
 the current operating system. This class returns only the updates supplied by Component Based
@@ -215,8 +217,6 @@ The `Get-HotFix` output might vary on different operating systems.
 [about_Arrays](../Microsoft.PowerShell.Core/About/about_Arrays.md)
 
 [Add-Content](Add-Content.md)
-
-[Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
 
 [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
 

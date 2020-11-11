@@ -1,7 +1,8 @@
 ---
+description:  Certificate 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 10/18/2018
+Locale: en-US
+ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/about/about_certificate_provider?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Certificate Provider
@@ -9,6 +10,7 @@ title: Certificate Provider
 # Certificate Provider
 
 ## Provider name
+
 Certificate
 
 ## Drives
@@ -25,28 +27,28 @@ Provides access to X.509 certificate stores and certificates in PowerShell.
 
 ## Detailed description
 
-The PowerShell **Certificate** provider lets you get, add, change, clear, and delete
-certificates and certificate stores in PowerShell.
+The PowerShell **Certificate** provider lets you get, add, change, clear, and
+delete certificates and certificate stores in PowerShell.
 
-The **Certificate** drive is a hierarchical namespace containing the cerificate
-stores and certificates on your computer.
+The **Certificate** drive is a hierarchical namespace containing the
+certificate stores and certificates on your computer.
 
 The **Certificate** provider supports the following cmdlets, which are covered
 in this article.
 
-- [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
-- [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
-- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-- [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md)
-- [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
-- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
-- [Get-ItemProperty](../../Microsoft.PowerShell.Management/Get-ItemProperty.md)
-- [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
-- [Clear-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
-- [Get-AuthenticodeSignature](../Get-AuthenticodeSignature.md)
-- [Set-AuthenticodeSignature](../Set-AuthenticodeSignature.md)
+- [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
+- [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
+- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
+- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- [Invoke-Item](xref:Microsoft.PowerShell.Management.Invoke-Item)
+- [Move-Item](xref:Microsoft.PowerShell.Management.Move-Item)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
+- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
+- [Get-ItemProperty](xref:Microsoft.PowerShell.Management.Get-ItemProperty)
+- [Set-ItemProperty](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
+- [Clear-ItemProperty](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
+- [Get-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Get-AuthenticodeSignature)
+- [Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature)
 
 ## Types exposed by this provider
 
@@ -94,17 +96,11 @@ Set-Location C:
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
-> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
-> and `pwd` is an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
+> [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem),
+> `cd` is an alias for [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location).
+> and `pwd` is an alias for [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location).
 
 ## Displaying the Contents of the Cert: drive
-
-New dynamic parameters, `DnsName`, `EKU`, `SSLServerAuthentication`, and
-`ExpiringInDays` have been added to the `Get-ChildItem` cmdlet in the `Cert:`
-drive. The new dynamic parameters are available in the Windows PowerShell 3.0
-and newer PowerShell releases. The provider parameters work with IIS 8.0
-on Windows Server 2012 and later.
 
 This command uses the `Get-ChildItem` cmdlet to display the certificate stores
 in the CurrentUser certificate store location.
@@ -187,10 +183,11 @@ the following attributes:
 The **NotAfter** property stores the certificate expiration date.
 
 ```powershell
+[DateTime] $ValidThrough = (Get-Date) + (New-TimeSpan -Days 30)
 Get-ChildItem -Path cert:\* -Recurse -DNSName "*fabrikam*" `
   -EKU "*Client Authentication*" | Where-Object {
                                      $_.SendAsTrustedIssuer -and `
-                                     $_.NotAfter -gt (get-date).AddDays.(30)
+                                     $_.NotAfter -gt $ValidThrough
                                    }
 ```
 
@@ -418,86 +415,30 @@ Certificate provider, but are effective only on certificates.
 > Certificates that have an empty **EnhancedKeyUsageList** can be used for
 > all purposes.
 
-### ItemType \<String\>
+The following Certificate provider parameters were removed in PowerShell 6.0.
 
-This parameter allows you to specify the type of item created by `New-Item`.
-
-In a `Certificate` drive, the following values are allowed:
-
-- Certificate Provider
-- Certificate
-- Store
-- StoreLocation
-
-### Cmdlets Supported
-
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- DNSName
+- DocumentEncryptionCert
+- EKU
+- ExpiringInDays
+- SSLServerAuthentication
 
 ### CodeSigningCert <System.Management.Automation.SwitchParameter>
 
 #### Cmdlets supported
 
-- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
 
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
 
 This parameter gets certificates that have "Code Signing" in their
 **EnhancedKeyUsageList** property value.
-
-### DnsName <Microsoft.PowerShell.Commands.DnsNameRepresentation>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that have the specified domain name or name
-pattern in the **DNSNameList** property of the certificate. The value of this
-parameter can either be "Unicode" or "ASCII". Punycode values are converted to
-Unicode. Wildcard characters (*) are permitted.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-### EKU <System.String>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that have the specified text or text pattern
-in the `EnhancedKeyUsageList` property of the certificate. Wildcard characters
-(*) are permitted. The `EnhancedKeyUsageList` property contains the friendly
-name and the OID fields of the EKU.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-### ExpiringInDays <System.Int32>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that are expiring in or before the specified
-number of days. A value of 0 (zero) gets certificates that have expired.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-### SSLServerAuthentication <System.Management.Automation.SwitchParameter>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-Gets only server certificates for SSL web hosting. This parameter gets
-certificates that have "Server Authentication" in their `EnhancedKeyUsageList`
-property value.
-
-This parameter was introduced in Windows PowerShell 3.0.
 
 ### DeleteKey <System.Management.Automation.SwitchParameter>
 
 #### Cmdlets supported
 
-- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
 
 This parameter deletes the associated private key when it deletes the certificate.
 
@@ -509,6 +450,21 @@ This parameter deletes the associated private key when it deletes the certificat
 > before using `Remove-Item` with `Invoke-Command` and credential delegation.
 
 This parameter was introduced in Windows PowerShell 3.0.
+
+### ItemType \<String\>
+
+This parameter allows you to specify the type of item created by `New-Item`.
+
+In a `Certificate` drive, the following values are allowed:
+
+- Certificate Provider
+- Certificate
+- Store
+- StoreLocation
+
+#### Cmdlets Supported
+
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ## Script properties
 
@@ -547,8 +503,8 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) command in a file system drive or use the `-Path`
-parameter of [Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) to specify a file system drive.
+[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) command in a file system drive or use the
+`-Path` parameter of `Get-Help` to specify a file system drive.
 
 ```powershell
 Get-Help Get-ChildItem
@@ -564,8 +520,8 @@ Get-Help Get-ChildItem -Path cert:
 
 [about_Signing](../../Microsoft.PowerShell.Core/About/about_Signing.md)
 
-[Get-AuthenticodeSignature](../Get-AuthenticodeSignature.md)
+[Get-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Get-AuthenticodeSignature)
 
-[Set-AuthenticodeSignature](../Set-AuthenticodeSignature.md)
+[Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature)
 
-[Get-PfxCertificate](../Get-PfxCertificate.md)
+[Get-PfxCertificate](xref:Microsoft.PowerShell.Security.Get-PfxCertificate)

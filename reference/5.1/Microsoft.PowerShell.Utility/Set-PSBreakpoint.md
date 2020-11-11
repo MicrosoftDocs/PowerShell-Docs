@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/24/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -228,7 +228,7 @@ For more information, see [about_Script_Blocks](../Microsoft.PowerShell.Core/Abo
 [about_Continue](../Microsoft.PowerShell.Core/About/about_Continue.md).
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -254,7 +254,7 @@ a column that does not exist in the script, an error is not declared, but the br
 executed.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Line
 Aliases:
 
@@ -274,7 +274,7 @@ Execution stops just before each instance of each command is executed. If the co
 execution stops each time the function is called and at each BEGIN, PROCESS, and END section.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Command
 Aliases: C
 
@@ -295,7 +295,7 @@ If you specify a blank line, execution stops before the next non-blank line. If 
 range, the breakpoint is never hit.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Line
 Aliases:
 
@@ -320,7 +320,7 @@ applies to all breakpoints set in the command. The acceptable values for this pa
 - **ReadWrite** - Stops execution when the variable is read or written.
 
 ```yaml
-Type: VariableAccessMode
+Type: System.Management.Automation.VariableAccessMode
 Parameter Sets: Variable
 Aliases:
 Accepted values: Read, Write, ReadWrite
@@ -342,7 +342,7 @@ By default, variable breakpoints and command breakpoints are set on any command 
 current session. This parameter is required only when setting a line breakpoint.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Line, Command, Variable
 Aliases:
 
@@ -362,7 +362,7 @@ Use the **Mode** parameter to determine the mode of access that triggers the bre
 default mode, Write, stops execution just before a new value is written to the variable.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Variable
 Aliases: V
 
@@ -410,4 +410,3 @@ You cannot pipe input to `Set-PSBreakpoint`.
 [Get-PSCallStack](Get-PSCallStack.md)
 
 [Remove-PSBreakpoint](Remove-PSBreakpoint.md)
-

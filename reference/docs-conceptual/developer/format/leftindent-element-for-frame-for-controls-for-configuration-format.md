@@ -1,13 +1,8 @@
 ---
-title: "LeftIndent Element for Frame for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b97ee165-f1bd-4360-8ff0-7a1bb54adcd5
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: LeftIndent Element for Frame for Controls for Configuration (Format)
+description: LeftIndent Element for Frame for Controls for Configuration (Format)
 ---
 # LeftIndent Element for Frame for Controls for Configuration (Format)
 

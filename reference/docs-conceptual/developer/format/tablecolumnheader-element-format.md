@@ -1,13 +1,8 @@
 ---
-title: "TableColumnHeader Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
-caps.latest.revision: 19
+ms.date: 09/13/2016
+ms.topic: reference
+title: TableColumnHeader Element (Format)
+description: TableColumnHeader Element (Format)
 ---
 # TableColumnHeader Element (Format)
 

@@ -1,10 +1,10 @@
 ---
 external help file: PSModule-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/powershellget/test-scriptfileinfo?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/test-scriptfileinfo?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-ScriptFileInfo
 ---
@@ -102,7 +102,7 @@ If the path includes escape characters, enclose them in single quotation marks.
 Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: LiteralPathParameterSet
 Aliases: PSPath
 
@@ -120,7 +120,7 @@ Wildcards are permitted.
 The default location is the current directory (.).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PathParameterSet
 Aliases:
 
@@ -152,5 +152,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Publish-Script](Publish-Script.md)
 
 [Update-ScriptFileInfo](Update-ScriptFileInfo.md)
-
 

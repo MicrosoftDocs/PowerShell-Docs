@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-transaction?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -46,6 +46,7 @@ For more information, see about_Transactions.
 ## EXAMPLES
 
 ### Example 1: Start and roll back a transaction
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -58,6 +59,7 @@ These commands start and then roll back a transaction.
 Because the transaction is rolled back, no changes are made to the registry.
 
 ### Example 2: Start and complete a transaction
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -70,6 +72,7 @@ These commands start and then complete a transaction.
 No changes are made to the registry until the **Complete-Transaction** command is used.
 
 ### Example 3: Use different rollback preferences
+
 ```
 PS C:\> cd HKCU:\software
 PS HKCU:\software> Start-Transaction
@@ -124,6 +127,7 @@ As a result, when an error occurs in a transaction command, the transaction is s
 Because most transactions must be performed without error, the default value of *RollbackPreference* is typically preferred.
 
 ### Example 4: Use this cmdlet while a transaction is in progress
+
 ```
 PS C:\> cd HKCU:\software
 PS HKCU:\software> Start-Transaction
@@ -156,6 +160,7 @@ To complete the transaction, you must enter two **Complete-Transaction** command
 If you were to roll back the transaction at any point, all the transaction would be rolled back for both subscribers.
 
 ### Example 5: Start an independent transaction while one is in progress
+
 ```
 PS C:\> cd HKCU:\software
 PS HKCU:\software> Start-Transaction
@@ -202,6 +207,7 @@ The **New-ItemProperty** command, which is part of the original transaction, fin
 As a result, the registry is changed.
 
 ### Example 6: Run commands that are not part of a transaction
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -243,6 +249,7 @@ The **Complete-Transaction** command commits the transaction.
 As a result, the second dir command shows that all of the new items are added to the registry.
 
 ### Example 7: Roll back a transaction that does not finish in a specified time
+
 ```
 PS C:\> Start-Transaction -Timeout 2
 
@@ -289,7 +296,7 @@ If you specify the *Independent* parameter, this cmdlet creates a new transactio
 However, because only one transaction can be active at a time, you must complete or roll back the new transaction before resuming work on the original transaction.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -314,7 +321,7 @@ The transaction is never rolled back automatically.
 The default value is Error.
 
 ```yaml
-Type: RollbackSeverity
+Type: System.Management.Automation.RollbackSeverity
 Parameter Sets: (All)
 Aliases:
 Accepted values: Error, TerminatingError, Never
@@ -334,7 +341,7 @@ By default, there is no time-out for transactions that are started at the comman
 When transactions are started by a script, the default time-out is 30 minutes.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: TimeoutMins
 
@@ -349,7 +356,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -365,7 +372,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -400,5 +407,3 @@ This cmdlet does not generate any output.
 [Undo-Transaction](Undo-Transaction.md)
 
 [Use-Transaction](Use-Transaction.md)
-
-

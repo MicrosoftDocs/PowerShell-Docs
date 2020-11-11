@@ -1,7 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Management
 ms.date: 09/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-wmiobject?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -235,7 +236,7 @@ amended information. Typically, amended information is localizable information, 
 property descriptions, that is attached to the WMI object.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -268,7 +269,7 @@ For more information about Windows PowerShell background jobs, see [about_Jobs](
 and [about_Remote_Jobs](../Microsoft.PowerShell.Core/about/about_Remote_Jobs.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -298,7 +299,7 @@ Valid values are:
   encrypted.)
 
 ```yaml
-Type: AuthenticationLevel
+Type: System.Management.AuthenticationLevel
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
@@ -319,7 +320,7 @@ Kerberos authentication. To use NTLM, set the authority setting to `ntlmdomain:<
 the local computer.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -336,14 +337,15 @@ Specifies the name of a WMI class. When this parameter is used, the cmdlet retri
 the WMI class.
 
 ```yaml
-Accept pipeline input: False
-Position: 1
-Accept wildcard characters: False
+Type: System.String
 Parameter Sets: query, list
-Required: True (query), False (list)
-Default value: None
 Aliases: ClassName
-Type: String
+
+Required: True (query), False (list)
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -ComputerName
@@ -360,7 +362,7 @@ the **ComputerName** parameter of `Get-WmiObject` even if your computer is not c
 WS-Management remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Cn
 
@@ -380,7 +382,7 @@ type a user name, you are prompted for a password. Credentials cannot be used wh
 local computer.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -397,7 +399,7 @@ Specifies whether direct access to the WMI provider is requested for the specifi
 regard to its base class or to its derived classes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: query, WQLQuery
 Aliases:
 
@@ -413,7 +415,7 @@ Accept wildcard characters: False
 Enables all the privileges of the current user before the command makes the WMI call.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -438,7 +440,7 @@ Specifies a **Where** clause to use as a filter. Uses the syntax of the WMI Quer
 `Get-WmiObject win32_service -filter "name='WinRM'"`
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: query
 Aliases:
 
@@ -463,7 +465,7 @@ The acceptable values for this parameter are:
 - 4: Delegate. Allows objects to permit other objects to use the credentials of the caller.
 
 ```yaml
-Type: ImpersonationLevel
+Type: System.Management.ImpersonationLevel
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
@@ -486,7 +488,7 @@ entry in the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WBEM\Scripting` registry key
 default namespace.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: list
 Aliases:
 
@@ -503,7 +505,7 @@ Specifies the preferred locale for WMI objects.
 Enter a value in MS_\<LCID\> format.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -521,7 +523,7 @@ namespace where the specified WMI class is located. When used with the **List** 
 specifies the namespace from which to gather WMI class information.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: NS
 
@@ -537,7 +539,7 @@ Accept wildcard characters: False
 Specifies the WMI class properties that this cmdlet gets information from. Enter the property names.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: query
 Aliases:
 
@@ -554,7 +556,7 @@ Runs the specified WMI Query Language (WQL) statement. This parameter does not s
 queries.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: WQLQuery
 Aliases:
 
@@ -571,7 +573,7 @@ Searches the current namespace and all other namespaces for the class name that 
 **Class** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: list
 Aliases:
 
@@ -588,7 +590,7 @@ Specifies the maximum number of WMI operations that can be executed simultaneous
 is valid only when the **AsJob** parameter is used in the command.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -643,4 +645,3 @@ properties of a WMI object, use the `Get-Member` or `Format-List` cmdlets.
 [New-WSManInstance](../Microsoft.WsMan.Management/New-WSManInstance.md)
 
 [Remove-WSManInstance](../Microsoft.WsMan.Management/Remove-WSManInstance.md)
-

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/rename-localgroup?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,16 +17,19 @@ Renames a local security group.
 ## SYNTAX
 
 ### InputObject
+
 ```
 Rename-LocalGroup [-InputObject] <LocalGroup> [-NewName] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Rename-LocalGroup [-Name] <String> [-NewName] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Rename-LocalGroup [-NewName] <String> [-SID] <SecurityIdentifier> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -41,6 +44,7 @@ The **Rename-LocalGroup** cmdlet renames a local security group.
 ## EXAMPLES
 
 ### Example 1: Change the name of a group
+
 ```
 PS C:\> Rename-LocalGroup -Name "SecurityGroup" -NewName "SecurityGroup04"
 ```
@@ -54,7 +58,7 @@ Specifies the security group that this cmdlet renames.
 To obtain a security group, use the Get-LocalGroup cmdlet.
 
 ```yaml
-Type: LocalGroup
+Type: Microsoft.PowerShell.Commands.LocalGroup
 Parameter Sets: InputObject
 Aliases:
 
@@ -69,7 +73,7 @@ Accept wildcard characters: False
 Specifies the name of the security group that this cmdlet renames.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Default
 Aliases:
 
@@ -84,7 +88,7 @@ Accept wildcard characters: False
 Specifies a new name for the security group.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -99,7 +103,7 @@ Accept wildcard characters: False
 Specifies the security ID (SID) of a security group that this cmdlet renames.
 
 ```yaml
-Type: SecurityIdentifier
+Type: System.Security.Principal.SecurityIdentifier
 Parameter Sets: SecurityIdentifier
 Aliases:
 
@@ -114,7 +118,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -130,7 +134,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -155,6 +159,7 @@ You can pipe a security group, a string, or a SID to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local
@@ -173,5 +178,3 @@ This cmdlet does not generate any output.
 [Remove-LocalGroup](Remove-LocalGroup.md)
 
 [Set-LocalGroup](Set-LocalGroup.md)
-
-

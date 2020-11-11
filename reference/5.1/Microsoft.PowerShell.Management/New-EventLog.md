@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 01/22/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -64,7 +64,7 @@ The file must be present on the computer on which the event log is being created
 does not create or move files.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: CRF
 
@@ -86,7 +86,7 @@ This parameter does not rely on PowerShell remoting. You can use the **ComputerN
 parameter of `Get-EventLog` even if your computer is not configured to run remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: CN
 
@@ -106,7 +106,7 @@ If the log does not exist, `New-EventLog` creates the log and uses this value fo
 source for the event log.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: LN
 
@@ -126,7 +126,7 @@ The file must be present on the computer on which the event log is being created
 This parameter does not create or move files.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: MRF
 
@@ -146,7 +146,7 @@ The file must be present on the computer on which the event log is being created
 This parameter does not create or move files.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: PRF
 
@@ -163,7 +163,7 @@ Specifies the names of the event log sources, such as application programs that 
 log. This parameter is required.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: SRC
 
@@ -227,4 +227,3 @@ extension.
 [Show-EventLog](Show-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
-

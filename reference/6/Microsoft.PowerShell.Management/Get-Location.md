@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 03/12/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-location?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Location
@@ -29,150 +29,124 @@ Get-Location [-Stack] [-StackName <String[]>] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The **Get-Location** cmdlet gets an object that represents the current directory, much like the print working directory (pwd) command.
+The `Get-Location` cmdlet gets an object that represents the current directory, much like the print
+working directory (pwd) command.
 
-When you move between PowerShell drives, PowerShell retains your location in each drive.
-You can use this cmdlet to find your location in each drive.
+When you move between PowerShell drives, PowerShell retains your location in each drive. You can use
+this cmdlet to find your location in each drive.
 
-You can use this cmdlet to get the current directory at run time and use it in functions and scripts, such as in a function that displays the current directory in the PowerShell prompt.
+You can use this cmdlet to get the current directory at run time and use it in functions and
+scripts, such as in a function that displays the current directory in the PowerShell prompt.
 
-You can also use this cmdlet to display the locations in a location stack.
-For more information, see the Notes and the descriptions of the *Stack* and *StackName* parameters.
+You can also use this cmdlet to display the locations in a location stack. For more information, see
+the Notes and the descriptions of the **Stack** and **StackName** parameters.
 
 ## EXAMPLES
 
 ### Example 1: Display your current drive location
 
-```
+This command displays your location in the current PowerShell drive.
+
+```powershell
 PS C:\Windows> Get-Location
+```
+
+```Output
 Path
 ----
 C:\Windows
 ```
 
-This command displays your location in the current PowerShell drive.
-
-For instance, if you are in the Windows directory of the C: drive, it displays the path to that directory.
+For instance, if you are in the `Windows` directory of the `C:` drive, it displays the path to that
+directory.
 
 ### Example 2: Display your current location for different drives
 
-```
-The first command uses the **Set-Location** cmdlet to set the current location to the Windows subdirectory of the C: drive.
+This example demonstrates the use of `Get-Location` to display your current location in different
+PowerShell drives. `Set-Location` is used to change the location to several different paths on
+different PSDrives.
+
+```powershell
 PS C:\> Set-Location C:\Windows
-
-The second command uses the **Set-Location** cmdlet to change the location to the HKLM:\Software\Microsoft registry key. When you change to a location in the HKLM: drive, PowerShell retains your location in the C: drive.
 PS C:\Windows> Set-Location HKLM:\Software\Microsoft
-PS HKLM:\Software\Microsoft>
-
-The third command uses the **Set-Location** cmdlet to change the location to the HKCU:\Control Panel\Input Method registry key.
 PS HKLM:\Software\Microsoft> Set-Location "HKCU:\Control Panel\Input Method"
-PS HKCU:\Control Panel\Input Method>
-
-The fourth command uses the **Get-Location** cmdlet to find the current location on the C: drive. It uses the *PSDrive* parameter to specify the drive.
 PS HKCU:\Control Panel\Input Method> Get-Location -PSDrive C
-
-
 
 Path
 ----
 C:\Windows
 
-
-The fifth command uses the **Set-Location** cmdlet to return to the C: drive. Even though the command does not specify a subdirectory, PowerShell returns you to the saved location.
-PS HKCU:\Control Panel\Input Method> Set-Location C:
-PS C:\Windows>
-
-The sixth command uses the **Get-Location** cmdlet to find the current location in the drives supported by the PowerShell registry provider. **Get-Location** returns the location of the most recently accessed registry drive, HKCU.
-PS C:\Windows> Get-Location -PSProvider registry
-
-
-
-
-Path
-----
-HKCU:\Control Panel\Input Method
-
-
-To see the current location in the HKLM: drive, you need to use the *PSDrive* parameter to specify the drive. The seventh command does just this:
-PS C:\Windows> Get-Location -PSDrive HKLM
-
-
+PS HKCU:\Control Panel\Input Method> Get-Location -PSDrive HKLM
 
 Path
 ----
 HKLM:\Software\Microsoft
+
+PS HKCU:\Control Panel\Input Method> Set-Location C:
+PS C:\Windows> Get-Location -PSProvider Registry
+
+Path
+----
+HKCU:\Control Panel\Input Method
 ```
 
-This example demonstrates the use of **Get-Location** to display your current location in different PowerShell drives.
+### Example 3: Get locations using stacks
 
-### Example 3:
+This example shows how to use the **Stack** and **StackName** parameters of `Get-Location` to list
+the locations in the current location stack and alternate location stacks.
 
-```
-The first command sets the current location to the Windows directory on the C: drive.
-PS C:\> Set-Location C:\Windows
+The `Push-Location` cmdlet is used to change into three different locations. The third push uses a
+different stack name. The **Stack** parameter of `Get-Location` displays the contents of the default
+stack. The **StackName** parameter of `Get-Location` displays the contents of the stack named
+`Stack2`.
 
-The second command uses the **Push-Location** cmdlet to push the current location (C:\Windows) onto the current location stack and change to the System32 subdirectory. Because no stack is specified, the current location is pushed onto the current location stack. By default, the current location stack is the unnamed default location stack.
+```powershell
+PS C:\> Push-Location C:\Windows
 PS C:\Windows>Push-Location System32
-
-The third command uses the *StackName* parameter of the **Push-Location** cmdlet to push the current location (C:\Windows\System32) onto the Stack2 stack and to change the current location to the WindowsPowerShell subirectory. If the Stack2 stack does not exist, **Push-Location** creates it.
 PS C:\Windows\System32>Push-Location WindowsPowerShell -StackName Stack2
-
-The fourth command uses the *Stack* parameter of the **Get-Location** cmdlet to get the locations in the current location stack. By default, the current stack is the unnamed default location stack.
 C:\Windows\System32\WindowsPowerShell>Get-Location -Stack
-
-
 
 Path
 ----
 C:\Windows
+C:\
 
-
-The fifth command uses the *StackName* parameter of the **Get-Location** cmdlet to get the locations in the Stack2 stack.
 C:\Windows\System32\WindowsPowerShell>Get-Location -StackName Stack2
-
-
 
 Path
 ----
 C:\Windows\System32
 ```
 
-This example shows how to use the *Stack* and *StackName* parameters of **Get-Location** to list the locations in the current location stack and alternate location stacks.
-For more information about location stacks, see the Notes.
-
 ### Example 4: Customize the PowerShell prompt
 
-```
-PS C:\>
-function prompt { 'PowerShell: ' + (get-location) + '> '}
-PowerShell: C:\WINDOWS>
-```
-
 This example shows how to customize the PowerShell prompt.
-The function that defines the prompt includes a **Get-Location** command, which is run whenever the prompt appears in the console.
 
-The format of the default PowerShell prompt is defined by a special function named prompt.
-You can change the prompt in your console by creating a new function named prompt.
+```powershell
+PS C:\>
+function prompt { 'PowerShell: ' + (Get-Location) + '> '}
+PowerShell: C:\>
+```
 
-To see the current prompt function, type the following command: `Get-Content Function:prompt`
+The function that defines the prompt includes a `Get-Location` command, which is run whenever the
+prompt appears in the console.
 
-The command begins with the function keyword followed by the function name, prompt.
-The function body appears within braces ( {} ).
+The format of the default PowerShell prompt is defined by a special function named `prompt`. You can
+change the prompt in your console by creating a new function named `prompt`.
 
-This command defines a new prompt that begins with the string "PowerShell: ".
-To append the current location, it uses a **Get-Location** command, which runs when the prompt function is called.
-The prompt ends with the string "\> ".
+To see the current prompt function, type the following command: `Get-Content Function:\prompt`
 
 ## PARAMETERS
 
 ### -PSDrive
 
-Specifies the current location in the specified PowerShell drive that this cmdlet gets in the operation.
+Gets the current location in the specified PowerShell drive.
 
-For instance, if you are in the Certificate: drive, you can use this parameter to find your current location in the C: drive.
+For instance, if you are in the `Cert:` drive, you can use this parameter to find your
+current location in the `C:` drive.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Location
 Aliases:
 
@@ -185,14 +159,15 @@ Accept wildcard characters: False
 
 ### -PSProvider
 
-Specifies the current location in the drive supported by the PowerShell provider that this cmdlet gets in the operation.
+Gets the current location in the drive supported by the specified PowerShell provider.
+If the specified provider supports more than one drive, this cmdlet returns the location on the most
+recently accessed drive.
 
-If the specified provider supports more than one drive, this cmdlet returns the location on the most recently accessed drive.
-
-For example, if you are in the C: drive, you can use this parameter to find your current location in the drives of the PowerShellRegistry provider.
+For example, if you are in the `C:` drive, you can use this parameter to find your current location
+in the drives of the PowerShell **Registry** provider.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Location
 Aliases:
 
@@ -205,13 +180,14 @@ Accept wildcard characters: False
 
 ### -Stack
 
-Indicates that this cmdlet displays the locations in the current location stack.
+Indicates that this cmdlet displays the locations added to the current location stack. You can add
+locations to stacks by using the `Push-Location` cmdlet.
 
-To display the locations in a different location stack, use the *StackName* parameter.
-For information about location stacks, see the Notes.
+To display the locations in a different location stack, use the **StackName** parameter. For
+information about location stacks, see the [Notes](#notes).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Stack
 Aliases:
 
@@ -224,17 +200,16 @@ Accept wildcard characters: False
 
 ### -StackName
 
-Specifies, as a string array, the named location stacks.
-Enter one or more location stack names.
+Specifies, as a string array, the named location stacks. Enter one or more location stack names.
 
-To display the locations in the current location stack, use the *Stack* parameter.
-To make a location stack the current location stack, use the Set-Location parameter.
-For information about location stacks, see the Notes.
+To display the locations in the current location stack, use the **Stack** parameter. To make a
+location stack the current location stack, use the `Set-Location` cmdlet.
 
-This cmdlet cannot display the locations in the unnamed default stack unless it is the current stack.
+This cmdlet cannot display the locations in the unnamed default stack unless it is the current
+stack.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Stack
 Aliases:
 
@@ -247,7 +222,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -259,43 +237,55 @@ You cannot pipe input to this cmdlet.
 
 ### System.Management.Automation.PathInfo or System.Management.Automation.PathInfoStack
 
-If you use the *Stack* or *StackName* parameters, this cmdlet returns a **StackInfo** object.
-Otherwise, it returns a **PathInfo** object.
+If you use the **Stack** or **StackName** parameters, this cmdlet returns a **PathInfoStack**
+object. Otherwise, it returns a **PathInfo** object.
 
 ## NOTES
 
-* This cmdlet is designed to work with the data exposed by any provider. To list the providers in your session, type `Get-PSProvider`. For more information, see about_Providers.
+PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
+This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
+when calling .NET APIs or running native applications without providing explicit directory paths.
+The `Get-Location` cmdlet returns the current directory of the current PowerShell runspace.
 
-  The ways that the *PSProvider*, *PSDrive*, *Stack*, and *StackName* parameters interact depends on the provider.
-Some combinations will result in errors, such as specifying both a drive and a provider that does not expose that drive.
-If no parameters are specified, this cmdlet returns the **PathInfo** object for the provider that contains the current working location.
+This cmdlet is designed to work with the data exposed by any provider. To list the providers in your
+session, type `Get-PSProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-  A stack is a last-in, first-out list in which only the most recently added item is accessible.
-You add items to a stack in the order that you use them, and then retrieve them for use in the reverse order.
-PowerShell lets you store provider locations in location stacks.
-PowerShell creates an unnamed default location stack and you can create multiple named location stacks.
-If you do not specify a stack name, PowerShell uses the current location stack.
-By default, the unnamed default location is the current location stack, but you can use the **Set-Location** cmdlet to change the current location stack.
+The ways that the **PSProvider**, **PSDrive**, **Stack**, and **StackName** parameters interact
+depends on the provider. Some combinations will result in errors, such as specifying both a drive
+and a provider that does not expose that drive. If no parameters are specified, this cmdlet returns
+the **PathInfo** object for the provider that contains the current working location.
 
-  To manage location stacks, use the PowerShellLocation cmdlets, as follows.
+A stack is a last-in, first-out list in which only the most recently added item is accessible. You
+add items to a stack in the order that you use them, and then retrieve them for use in the reverse
+order. PowerShell lets you store provider locations in location stacks. PowerShell creates an
+unnamed default location stack and you can create multiple named location stacks. If you do not
+specify a stack name, PowerShell uses the current location stack. By default, the unnamed default
+location is the current location stack, but you can use the `Set-Location` cmdlet to change the
+current location stack.
 
-  - To add a location to a location stack, use the Push-Location cmdlet.
+To manage location stacks, use the PowerShell `*-Location` cmdlets, as follows.
 
-  - To get a location from a location stack, use the Pop-Location cmdlet.
+- To add a location to a location stack, use the `Push-Location` cmdlet.
 
-  - To display the locations in the current location stack, use the *Stack* parameter of the **Get-Location** cmdlet.
-To display the locations in a named location stack, use the *StackName* parameter of the **Get-Location** cmdlet.
+- To get a location from a location stack, use the `Pop-Location` cmdlet.
 
-  - To create a new location stack, use the *StackName* parameter of the **Push-Location** cmdlet.
-If you specify a stack that does not exist, **Push-Location** creates the stack.
+- To display the locations in the current location stack, use the **Stack** parameter of the
+  `Get-Location` cmdlet. To display the locations in a named location stack, use the **StackName**
+  parameter of the `Get-Location` cmdlet.
 
-  - To make a location stack the current location stack, use the *StackName* parameter of the **Set-Location** cmdlet.
+- To create a new location stack, use the **StackName** parameter of the `Push-Location` cmdlet.
+  If you specify a stack that does not exist, `Push-Location` creates the stack.
 
-  The unnamed default location stack is fully accessible only when it is the current location stack.
-If you make a named location stack the current location stack, you cannot no longer use the **Push-Location** or **Pop-Location** add or get items from the default stack or use this cmdlet command to display the locations in the unnamed stack.
-To make the unnamed stack the current stack, use the *StackName* parameter of the **Set-Location** cmdlet with a value of $null or an empty string ("").
+- To make a location stack the current location stack, use the **StackName** parameter of the
+  `Set-Location` cmdlet.
 
-*
+The unnamed default location stack is fully accessible only when it is the current location stack.
+If you make a named location stack the current location stack, you can no longer use the
+`Push-Location` or `Pop-Location` cmdlets to add or get items from the default stack or use this
+cmdlet to display the locations in the unnamed stack. To make the unnamed stack the current stack,
+use the **StackName** parameter of the `Set-Location` cmdlet with a value of `$null` or an empty
+string (`""`).
 
 ## RELATED LINKS
 
@@ -304,5 +294,3 @@ To make the unnamed stack the current stack, use the *StackName* parameter of th
 [Push-Location](Push-Location.md)
 
 [Set-Location](Set-Location.md)
-
-

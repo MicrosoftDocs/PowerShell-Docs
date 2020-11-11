@@ -1,13 +1,8 @@
 ---
-title: "DefaultSettings Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: DefaultSettings Element (Format)
+description: DefaultSettings Element (Format)
 ---
 # DefaultSettings Element (Format)
 

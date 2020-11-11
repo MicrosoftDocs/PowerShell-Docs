@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-error?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Error
@@ -71,7 +71,9 @@ Get-ChildItem | ForEach-Object {
 }
 ```
 
-This command declares a non-terminating error when the `Get-ChildItem` cmdlet returns a Microsoft.Win32.RegistryKey object, such as the objects in the HKLM: or HKCU: drives of the PowerShell Registry provider.
+This command declares a non-terminating error when the `Get-ChildItem` cmdlet returns a
+`Microsoft.Win32.RegistryKey` object, such as the objects in the `HKLM:` or `HKCU:` drives of the
+PowerShell Registry provider.
 
 ### Example 2: Write an error message to the console
 
@@ -79,8 +81,8 @@ This command declares a non-terminating error when the `Get-ChildItem` cmdlet re
 Write-Error "Access denied."
 ```
 
-This command declares a non-terminating error and writes an "Access denied" error.
-The command uses the **Message** parameter to specify the message, but omits the optional *Message* parameter name.
+This command declares a non-terminating error and writes an "Access denied" error. The command uses
+the **Message** parameter to specify the message, but omits the optional **Message** parameter name.
 
 ### Example 3: Write an error to the console and specify the category
 
@@ -149,7 +151,7 @@ for this parameter are:
 For information about the error categories, see [ErrorCategory Enumeration](https://go.microsoft.com/fwlink/?LinkId=143600).
 
 ```yaml
-Type: ErrorCategory
+Type: System.Management.Automation.ErrorCategory
 Parameter Sets: NoException, WithException
 Aliases:
 Accepted values: NotSpecified, OpenError, CloseError, DeviceError, DeadlockDetected, InvalidArgument, InvalidData, InvalidOperation, InvalidResult, InvalidType, MetadataError, NotImplemented, NotInstalled, ObjectNotFound, OperationStopped, OperationTimeout, SyntaxError, ParserError, PermissionDenied, ResourceBusy, ResourceExists, ResourceUnavailable, ReadError, WriteError, FromStdErr, SecurityError, ProtocolError, ConnectionError, AuthenticationError, LimitsExceeded, QuotaExceeded, NotEnabled
@@ -166,7 +168,7 @@ Accept wildcard characters: False
 Specifies the action that caused the error.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Activity
 
@@ -182,7 +184,7 @@ Accept wildcard characters: False
 Specifies how or why the activity caused the error.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Reason
 
@@ -198,7 +200,7 @@ Accept wildcard characters: False
 Specifies the name of the object that was being processed when the error occurred.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: TargetName
 
@@ -214,7 +216,7 @@ Accept wildcard characters: False
 Specifies the type of the object that was being processed when the error occurred.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: TargetType
 
@@ -230,7 +232,7 @@ Accept wildcard characters: False
 Specifies an ID string to identify the error. The string should be unique to the error.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NoException, WithException
 Aliases:
 
@@ -250,7 +252,7 @@ To create an error record object, use the `New-Object` cmdlet or get an error re
 array in the `$Error` automatic variable.
 
 ```yaml
-Type: ErrorRecord
+Type: System.Management.Automation.ErrorRecord
 Parameter Sets: ErrorRecord
 Aliases:
 
@@ -269,7 +271,7 @@ describe the error.
 To create an exception object, use a hash table or use the `New-Object` cmdlet.
 
 ```yaml
-Type: Exception
+Type: System.Exception
 Parameter Sets: WithException
 Aliases:
 
@@ -286,11 +288,11 @@ Specifies the message text of the error. If the text includes spaces or special 
 it in quotation marks. You can also pipe a message string to `Write-Error`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NoException, WithException
 Aliases: Msg
 
-Required: True
+Required: True (NoException), False (WithException)
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -302,7 +304,7 @@ Accept wildcard characters: False
 Specifies the action that the user should take to resolve or prevent the error.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -319,7 +321,7 @@ Specifies the object that was being processed when the error occurred. Enter the
 that contains the object, or a command that gets the object.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: NoException, WithException
 Aliases:
 
@@ -334,7 +336,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -350,7 +353,17 @@ You can pipe a string that contains an error message to `Write-Error`.
 
 ## NOTES
 
+`Write-Error` does not change the value of the `$?` automatic variable, therefore it does not signal
+a terminating error condition. To signal a terminating error, use the
+[$PSCmdlet.WriteError()](/dotnet/api/system.management.automation.cmdlet.writeerror) method.
+
 ## RELATED LINKS
+
+[about_Automatic_Variables](../microsoft.powershell.core/about/about_automatic_variables.md)
+
+[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
+
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 
 [Write-Debug](Write-Debug.md)
 
@@ -363,4 +376,3 @@ You can pipe a string that contains an error message to `Write-Error`.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-

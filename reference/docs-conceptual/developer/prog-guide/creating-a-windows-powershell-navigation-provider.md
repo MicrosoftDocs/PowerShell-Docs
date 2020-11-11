@@ -1,8 +1,8 @@
 ---
-title: Creating a Windows PowerShell Navigation Provider
 ms.date: 09/13/2016
-ms.topic: article
-ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
+ms.topic: reference
+title: Creating a Windows PowerShell Navigation Provider
+description: Creating a Windows PowerShell Navigation Provider
 ---
 # Creating a Windows PowerShell Navigation Provider
 
@@ -35,8 +35,7 @@ A Windows PowerShell navigation provider must create a .NET class that derives f
 [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
 base class. Here is the class definition for the navigation provider described in this section.
 
-[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32
-"AccessDBProviderSample05.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs" range="31-32":::
 
 Note that in this provider, the
 [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
@@ -65,7 +64,11 @@ of the
 base class. For more information about implementing these methods, see
 [Creating a Windows PowerShell Drive Provider](./creating-a-windows-powershell-drive-provider.md).
 
-To manipulate the items of a data store, such as getting, setting, and clearing items, the provider must implement the methods provided by the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) base class. For more information about implementing these methods, see [Creating an Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).
+To manipulate the items of a data store, such as getting, setting, and clearing items, the provider
+must implement the methods provided by the
+[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
+base class. For more information about implementing these methods, see
+[Creating an Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).
 
 To get to the child items, or their names, of the data store, as well as methods that create, copy,
 rename, and remove items, you must implement the methods provided by the
@@ -177,7 +180,7 @@ The following code shows the
 implementation in our sample navigation provider. The method verifies that the specified path is
 correct and if the table exists, and returns true if the path indicates a container.
 
-[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L847-L872 "AccessDBProviderSample05.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs" range="847-872":::
 
 #### Things to Remember About Implementing IsItemContainer
 

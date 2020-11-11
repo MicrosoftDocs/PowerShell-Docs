@@ -1,21 +1,8 @@
 ---
-title: "Cmdlet Parameters | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "optional parameters [PowerShell SDK]"
-  - "aliases [PowerShell SDK]"
-  - "parameter sets [PowerShell SDK]"
-  - "parameters [PowerShell SDK]"
-  - "mandatory parameters [PowerShell SDK]"
-  - "positional parameters [PowerShell SDK]"
-  - "cmdlets [PowerShell SDK], parameters"
-ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
-caps.latest.revision: 23
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Parameters
+description: Cmdlet Parameters
 ---
 # Cmdlet Parameters
 

@@ -1,13 +1,8 @@
 ---
-title: "PropertyName Element for SelectionCondition for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ec048408-e1c6-41ef-b39b-72f4c2dcf2ac
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: PropertyName Element for SelectionCondition for Controls for Configuration (Format)
+description: PropertyName Element for SelectionCondition for Controls for Configuration (Format)
 ---
 # PropertyName Element for SelectionCondition for Controls for Configuration (Format)
 

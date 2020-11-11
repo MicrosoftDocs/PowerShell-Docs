@@ -1,7 +1,7 @@
 ---
-external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
+external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSReadLine
 ms.date: 12/07/2018
 online version: https://docs.microsoft.com/powershell/module/psreadline/remove-psreadlinekeyhandler?view=powershell-6&WT.mc_id=ps-gethelp
@@ -29,11 +29,11 @@ The `Remove-PSReadLineKeyHandler` cmdlet removes a specified key binding.
 ### Example 1: Remove a binding
 
 ```powershell
-Remove-PSReadLineKeyHandler -Chord Ctrl+Shift+B
+Remove-PSReadLineKeyHandler -Chord Ctrl+B
 ```
 
-This command removes the binding from the key combination, or chord, `Ctrl+Shift+B`.
-The `Ctrl+Shift+B` chord is created in the `Set-PSReadLineKeyHandler` article.
+This command removes the binding from the key combination, or chord, `Ctrl+B`. The `Ctrl+B` chord is
+created in the `Set-PSReadLineKeyHandler` article.
 
 ## PARAMETERS
 
@@ -43,13 +43,13 @@ Specifies an array of keys or sequences of keys to be removed. A single binding 
 using a single string. If the binding is a sequence of keys, separate the keys by a comma, as in
 the following example:
 
-`Ctrl+X,Ctrl+L`
+`Ctrl+x,Ctrl+l`
 
 This parameter accepts an array of strings. Each string is a separate binding, not a sequence of
 keys for a single binding.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Key
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 Specify which vi mode the binding applies to. Possible values are: Insert, Command.
 
 ```yaml
-Type: ViMode
+Type: Microsoft.PowerShell.ViMode
 Parameter Sets: (All)
 Aliases:
 Accepted values: Insert, Command
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -105,4 +105,3 @@ You cannot pipe objects to this cmdlet.
 [Set-PSReadLineOption](Set-PSReadLineOption.md)
 
 [Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)
-

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-objectevent?view=powershell-6&WT.mc_id=ps-gethelp
@@ -203,7 +203,7 @@ When you specify an action, `Register-ObjectEvent` returns an event job object t
 that action. You can use the Job cmdlets to manage the event job.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -223,7 +223,7 @@ the **ManagementEventWatcher** class has events named **EventArrived** and **Sto
 event name of an event, use the `Get-Member` cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -240,7 +240,7 @@ Indicates that the cmdlet sends events for this subscription to a remote session
 when you are registering for events on a remote computer or in a remote session.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -257,7 +257,7 @@ Specifies the .NET object that generates the events. Enter a variable that conta
 type a command or expression that gets the object.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -273,7 +273,7 @@ Accept wildcard characters: False
 Specifies the maximum number of times an event can be triggered.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -290,7 +290,7 @@ Specifies any additional data to be associated with this event subscription. The
 parameter appears in the MessageData property of all events associated with this subscription.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -310,7 +310,7 @@ The value of this parameter appears in the value of the **SourceIdentifier** pro
 subscriber object and all event objects associated with this subscription.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -331,7 +331,7 @@ To view or cancel a subscription that was created with the **SupportEvent** para
 **Force** parameter of the `Get-EventSubscriber` and `Unregister-Event` cmdlets.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -379,4 +379,3 @@ current session, the event queue is discarded and the event subscription is canc
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-

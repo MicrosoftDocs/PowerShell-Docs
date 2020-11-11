@@ -1,13 +1,8 @@
 ---
-title: "ScriptBlock Element for ExpressionBinding for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3e022ec4-8531-468e-96ff-77607755ec92
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: ScriptBlock Element for ExpressionBinding for GroupBy (Format)
+description: ScriptBlock Element for ExpressionBinding for GroupBy (Format)
 ---
 # ScriptBlock Element for ExpressionBinding for GroupBy (Format)
 

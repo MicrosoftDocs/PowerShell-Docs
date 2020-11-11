@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/remove-localgroupmember?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,17 +17,20 @@ Removes members from a local group.
 ## SYNTAX
 
 ### Group
+
 ```
 Remove-LocalGroupMember [-Group] <LocalGroup> [-Member] <LocalPrincipal[]> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Remove-LocalGroupMember [-Member] <LocalPrincipal[]> [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Remove-LocalGroupMember [-Member] <LocalPrincipal[]> [-SID] <SecurityIdentifier> [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -43,6 +46,7 @@ The **Remove-LocalGroupMember** cmdlet removes users or groups from a local grou
 ## EXAMPLES
 
 ### Example 1: Remove members from the Administrators group
+
 ```
 PS C:\> Remove-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
 ```
@@ -57,7 +61,7 @@ This example uses a placeholder value for the user name of an account at Outlook
 Specifies the security group from which this cmdlet removes members.
 
 ```yaml
-Type: LocalGroup
+Type: Microsoft.PowerShell.Commands.LocalGroup
 Parameter Sets: Group
 Aliases:
 
@@ -76,7 +80,7 @@ Specify SID strings in S-R-I-S-S .
 format.
 
 ```yaml
-Type: LocalPrincipal[]
+Type: Microsoft.PowerShell.Commands.LocalPrincipal[]
 Parameter Sets: (All)
 Aliases:
 
@@ -91,7 +95,7 @@ Accept wildcard characters: False
 Specifies the name of the security group from which this cmdlet removes members.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Default
 Aliases:
 
@@ -106,7 +110,7 @@ Accept wildcard characters: False
 Specifies the security ID of the security group from which this cmdlet removes members.
 
 ```yaml
-Type: SecurityIdentifier
+Type: System.Security.Principal.SecurityIdentifier
 Parameter Sets: SecurityIdentifier
 Aliases:
 
@@ -121,7 +125,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -137,7 +141,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -162,6 +166,7 @@ You can pipe a local principal, a string, or a SID to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local
@@ -178,5 +183,3 @@ This cmdlet does not generate any output.
 [Get-LocalGroupMember](Get-LocalGroupMember.md)
 
 [New-LocalGroup](New-LocalGroup.md)
-
-

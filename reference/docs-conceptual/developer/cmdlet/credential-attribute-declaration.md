@@ -1,13 +1,8 @@
 ---
-title: "Credential Attribute Declaration | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 96a5dcad-faed-44d8-8c80-321f10499710
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: Credential Attribute Declaration
+description: Credential Attribute Declaration
 ---
 # Credential Attribute Declaration
 

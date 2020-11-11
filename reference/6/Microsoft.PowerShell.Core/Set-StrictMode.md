@@ -1,9 +1,9 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/22/2019
+ms.date: 04/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
@@ -120,7 +120,7 @@ At line:1 char:4
 ```powershell
 Set-StrictMode -Off
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
@@ -130,7 +130,7 @@ True
 ```powershell
 Set-StrictMode -Version 2.0
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
@@ -161,8 +161,8 @@ With strict mode set to **Off**, invalid or out of bounds indexes result return 
 ```powershell
 # Strict mode is off by default.
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
@@ -173,21 +173,21 @@ True
 ```powershell
 Set-StrictMode -Version 3
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
 Index was outside the bounds of the array.
 At line:1 char:1
-+ $a[2] -eq $null
++ $null -eq $a[2]
 + ~~~~~~~~~~~~~~~
     + CategoryInfo          : OperationStopped: (:) [], IndexOutOfRangeException
     + FullyQualifiedErrorId : System.IndexOutOfRangeException
 
 Cannot convert value "abc" to type "System.Int32". Error: "Input string was not in a correct format."
 At line:1 char:1
-+ $a['abc'] -eq $null
++ $null -eq $a['abc']
 + ~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [], RuntimeException
     + FullyQualifiedErrorId : InvalidCastFromStringToInteger
@@ -202,7 +202,7 @@ With strict mode set to version 3 or higher, invalid or out of bounds indexes re
 Indicates that this cmdlet turns strict mode off for the current scope and all child scopes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Off
 Aliases:
 
@@ -223,11 +223,13 @@ The effective values for this parameter are:
 - 1.0
   - Prohibits references to uninitialized variables, except for uninitialized variables in strings.
 - 2.0
-  - Prohibits references to uninitialized variables. This includes uninitialized variables in strings.
+  - Prohibits references to uninitialized variables. This includes uninitialized variables in
+    strings.
   - Prohibits references to non-existent properties of an object.
   - Prohibits function calls that use the syntax for calling methods.
 - 3.0
-  - Prohibits references to uninitialized variables. This includes uninitialized variables in strings.
+  - Prohibits references to uninitialized variables. This includes uninitialized variables in
+    strings.
   - Prohibits references to non-existent properties of an object.
   - Prohibits function calls that use the syntax for calling methods.
   - Prohibit out of bounds or unresolvable array indexes.
@@ -236,8 +238,14 @@ The effective values for this parameter are:
     make sure that scripts use the strictest available version, even when new versions are added to
     PowerShell.
 
+> [!CAUTION]
+> Using a **Version** of **Latest** in scripts. The meaning of **Latest** can change in new releases
+> of PowerShell. Therefore, a script written for an older version of PowerShell that uses
+> `Set-StrictMode -Version Latest` is subject to more restrictive rules when run in a newer version
+> of PowerShell.
+
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: Version
 Aliases: v
 
@@ -252,8 +260,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

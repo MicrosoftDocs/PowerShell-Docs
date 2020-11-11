@@ -76,7 +76,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### None
+### System.Object
 
 ## NOTES
 

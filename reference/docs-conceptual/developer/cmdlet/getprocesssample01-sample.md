@@ -1,13 +1,8 @@
 ---
-title: "GetProcessSample01 Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: GetProcessSample01 Sample
+description: GetProcessSample01 Sample
 ---
 # GetProcessSample01 Sample
 

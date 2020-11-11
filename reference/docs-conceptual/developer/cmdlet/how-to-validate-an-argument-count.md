@@ -1,15 +1,8 @@
 ---
-title: "How to Validate an Argument Count | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "ValidateCount attribute, example"
-ms.assetid: 4e6b6ac4-1003-4e7e-9d4a-9f1cf74fc4af
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Validate an Argument Count
+description: How to Validate an Argument Count
 ---
 # How to Validate an Argument Count
 

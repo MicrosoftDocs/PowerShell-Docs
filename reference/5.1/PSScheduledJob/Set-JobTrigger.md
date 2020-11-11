@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/set-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -48,6 +48,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Change the days in a job trigger
+
 ```
 PS C:\> Get-JobTrigger -Name "DeployPackage"
 Id         Frequency       Time                   DaysOfWeek              Enabled
@@ -69,6 +70,7 @@ The output shows that the trigger starts the job at midnight on Wednesdays and S
 This command is not required; it is included only to show the effect of the trigger change.
 
 ### Example 2: Change the job trigger type
+
 ```
 PS C:\> Get-JobTrigger -Name "Inventory"
 Id         Frequency       Time                   DaysOfWeek              Enabled
@@ -93,6 +95,7 @@ The output shows that the job has two triggers a daily trigger and an *AtStartup
 This command is not required; it is included only to show the effect of the trigger change.
 
 ### Example 3: Change the user on a remote job trigger
+
 ```
 PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-ScheduledJob | Get-JobTrigger | Where-Object {$_.User} | Set-JobTrigger -User "Domain01/Admin02"}
 ```
@@ -109,6 +112,7 @@ The job triggers are piped to the Where-Object cmdlet, which gets job triggers t
 The selected job triggers are piped to the **Set-JobTrigger** cmdlet, which changes the user to Domain01\Admin02.
 
 ### Example 4: Change one of many job triggers
+
 ```
 PS C:\> Get-JobTrigger -Name "SecurityCheck"
 Id         Frequency       Time                   DaysOfWeek              Enabled
@@ -170,7 +174,7 @@ Because the default date in a **DateTime** object is the current date, setting a
 **DateTime** objects, and strings that are converted to **DateTime** objects, are automatically adjusted to be compatible with the date and time formats selected for the local computer in Region and Language in Control Panel.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: (All)
 Aliases:
 
@@ -186,7 +190,7 @@ Starts the scheduled job when the specified users log on to the computer.
 To specify a user, use the *User* parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -201,7 +205,7 @@ Accept wildcard characters: False
 Starts the scheduled job when Windows starts.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -217,7 +221,7 @@ Specifies a recurring daily job schedule.
 Use the other parameters in the *Daily* parameter set to specify the schedule details.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -234,7 +238,7 @@ For example, a value of 3 starts the scheduled job on days 1, 4, 7 and so on.
 The default value is 1.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -247,7 +251,7 @@ Accept wildcard characters: False
 
 ### -DaysOfWeek
 Specifies the days of the week on which a weekly scheduled job runs.
-Enter day names, such as Monday, Thursday, integers 0-6, where 0 represents Sunday, or an asterisk (*) to represent every day.
+Enter day names, such as Monday, Thursday, integers 0-6, where 0 represents Sunday, or an asterisk (\*) to represent every day.
 This parameter is required in the Weekly parameter set.
 
 Day names are converted to their integer values in the job trigger.
@@ -256,7 +260,7 @@ If you enclose multiple day names in a single quotation mark pair, the correspon
 For example, "Monday, Tuesday" (1, 2) results in a value of "Wednesday" (3).
 
 ```yaml
-Type: DayOfWeek[]
+Type: System.DayOfWeek[]
 Parameter Sets: (All)
 Aliases:
 Accepted values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
@@ -276,7 +280,7 @@ You can also pipe a **ScheduledJobTrigger** object to **Set-JobTrigger**.
 If you specify multiple job triggers, **Set-JobTrigger** makes the same changes to all job triggers.
 
 ```yaml
-Type: ScheduledJobTrigger[]
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger[]
 Parameter Sets: (All)
 Aliases:
 
@@ -291,7 +295,7 @@ Accept wildcard characters: False
 Specifies a non-recurring (one time) schedule.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -307,7 +311,7 @@ Returns the job triggers that changed.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -326,7 +330,7 @@ The default value, zero (00:00:00), disables the random delay.
 Enter a timespan object, such as one returned by the New-TimeSpan cmdlet, or enter a value in \<hours\>:\<minutes\>:\<seconds\> format, which is automatically converted to a timespan object.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: (All)
 Aliases:
 
@@ -341,7 +345,7 @@ Accept wildcard characters: False
 This parameter, available starting in Windows PowerShell 4.0, eliminates the necessity of specifying a **TimeSpan.MaxValue** value for the *RepetitionDuration* parameter to run a scheduled job repeatedly, for an indefinite period.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -367,7 +371,7 @@ To change the repetition duration or repetition interval of a *Once* job trigger
 To change the repetition duration or repetition intervals of other types of job triggers, the command must include the *Once*, *At*, *RepetitionInterval* and *RepetitionDuration* parameters.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: (All)
 Aliases:
 
@@ -389,7 +393,7 @@ To change the repetition duration or repetition interval of a **Once** job trigg
 To change the repetition duration or repetition intervals of other types of job triggers, the command must include the **Once**, **At**, **RepetitionInterval** and **RepetitionDuration** parameters.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: (All)
 Aliases:
 
@@ -402,11 +406,11 @@ Accept wildcard characters: False
 
 ### -User
 Specifies the users who trigger an *AtLogon* start of a scheduled job.
-Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter an asterisk (*) to represent all users.
+Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter an asterisk (\*) to represent all users.
 The default value is all users.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -422,7 +426,7 @@ Specifies a recurring weekly job schedule.
 Use the other parameters in the *Weekly* parameter set to specify the schedule details.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -439,7 +443,7 @@ For example, a value of 3 starts the scheduled job on weeks 1, 4, 7 and so on.
 The default value is 1.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -465,6 +469,7 @@ When you use the *Passthru* parameter, **Set-JobTrigger** returns the job trigge
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * Job triggers have a JobDefintion property that associates them with the scheduled job. When you change the job trigger of a scheduled job, the job is changed. You do not need to use a Set-ScheduledJob command to apply the changed trigger to the scheduled job.
 
 ## RELATED LINKS
@@ -500,5 +505,3 @@ Otherwise, this cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

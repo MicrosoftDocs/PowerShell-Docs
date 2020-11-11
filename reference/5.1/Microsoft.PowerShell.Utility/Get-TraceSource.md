@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-tracesource?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -55,7 +55,7 @@ Wildcards are permitted.
 The parameter name *Name* is optional.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -89,5 +89,3 @@ You can pipe a string that contains the name of a trace source to **Get-TraceSou
 [Set-TraceSource](Set-TraceSource.md)
 
 [Trace-Command](Trace-Command.md)
-
-

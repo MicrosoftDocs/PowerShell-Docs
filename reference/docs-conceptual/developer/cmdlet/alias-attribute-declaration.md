@@ -1,17 +1,8 @@
 ---
-title: "Alias Attribute Declaration | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "Alias attribute"
-  - "attributes, Alias"
-  - "Alias attribute, described"
-ms.assetid: d0df3a46-b1cc-42b9-beb1-e16bce254007
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: Alias Attribute Declaration
+description: Alias Attribute Declaration
 ---
 # Alias Attribute Declaration
 

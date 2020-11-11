@@ -1,6 +1,7 @@
 ---
+description:  Beginning in PowerShell 6, the default views for objects are defined in PowerShell source code.  You can create your own `Format.ps1xml` files to change the display of objects or to define default displays for new object types that you create in PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 11/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -65,8 +66,8 @@ new objects, create your own `Format.ps1xml` files, and then add them to your
 PowerShell session.
 
 To create a `Format.ps1xml` file to define a custom view, use the
-[Get-FormatData](../../Microsoft.PowerShell.Utility/Get-FormatData.md) and
-[Export-FormatData](../../Microsoft.PowerShell.Utility/Export-FormatData.md)
+[Get-FormatData](xref:Microsoft.PowerShell.Utility.Get-FormatData) and
+[Export-FormatData](xref:Microsoft.PowerShell.Utility.Export-FormatData)
 cmdlets. Use a text editor to edit the file. The file can be saved to any
 directory that PowerShell can access, such as a subdirectory of `$HOME`.
 
@@ -77,7 +78,7 @@ are described in the next section. You can then delete all the other views in
 the file so that the changes are obvious to anyone examining the file.
 
 After you save the changes, use the
-[Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md) to
+[Update-FormatData](xref:Microsoft.PowerShell.Utility.Update-FormatData) to
 add the new file to your PowerShell session. If you want your view to take
 precedence over a view defined in the built-in files, use the **PrependPath**
 parameter. `Update-FormatData` affects only the current session. To make the
@@ -193,7 +194,7 @@ the current PowerShell session.
 
 This example uses the **PrependPath** parameter to place the new file in a
 higher precedence order than the original file. For more information, see
-[Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md).
+[Update-FormatData](xref:Microsoft.PowerShell.Utility.Update-FormatData).
 
 ```powershell
 Update-FormatData -PrependPath $HOME\Format\CultureInfo.Format.ps1xml
@@ -213,6 +214,9 @@ LCID  Name   Calendar                                DisplayName
 ```
 
 ## The XML in Format.ps1xml files
+
+The full schema definition can be found in [Format.xsd](https://github.com/PowerShell/PowerShell/blob/master/src/Schemas/Format.xsd)
+in the PowerShell source code repository on GitHub.
 
 The **ViewDefinitions** section of each `Format.ps1xml` file contains the
 `<View>` tags that define each view. A typical `<View>` tag includes the
@@ -302,8 +306,8 @@ value of the **Name** parameter:
 - FormatViewBinding
 
 For more information, see
-[Trace-Command](../../Microsoft.PowerShell.Utility/Trace-Command.md) and
-[Get-TraceSource](../../Microsoft.PowerShell.Utility/Get-TraceSource.md).
+[Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command) and
+[Get-TraceSource](xref:Microsoft.PowerShell.Utility.Get-TraceSource).
 
 ## Signing a Format.ps1xml file
 
@@ -334,7 +338,7 @@ For this example, the custom view must use the table format, otherwise,
 Use `Format-Table` with the **View** parameter to specify the custom view's
 name, **mygciview**, and format the table's output with the **CreationTime**
 column. For an example of how the command is run, see
-[Format-Table](../../Microsoft.PowerShell.Utility/Format-Table.md).
+[Format-Table](xref:Microsoft.PowerShell.Utility.Format-Table).
 
 > [!NOTE]
 > Although you can get the formatting XML from the source code to create a
@@ -421,16 +425,16 @@ Update-FormatData -AppendPath ./Mygciview.Format.ps1xml
 
 ## See also
 
-[Export-FormatData](../../Microsoft.PowerShell.Utility/Export-FormatData.md)
+[Export-FormatData](xref:Microsoft.PowerShell.Utility.Export-FormatData)
 
-[Get-FormatData](../../Microsoft.PowerShell.Utility/Get-FormatData.md)
+[Get-FormatData](xref:Microsoft.PowerShell.Utility.Get-FormatData)
 
-[Get-TraceSource](../../Microsoft.PowerShell.Utility/Get-TraceSource.md)
+[Get-TraceSource](xref:Microsoft.PowerShell.Utility.Get-TraceSource)
 
 [Format Schema XML Reference](/powershell/scripting/developer/format/format-schema-xml-reference)
 
-[Trace-Command](../../Microsoft.PowerShell.Utility/Trace-Command.md)
+[Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command)
 
-[Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md)
+[Update-FormatData](xref:Microsoft.PowerShell.Utility.Update-FormatData)
 
 [Writing a PowerShell Formatting File](/powershell/scripting/developer/format/writing-a-powershell-formatting-file)

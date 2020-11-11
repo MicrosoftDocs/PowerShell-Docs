@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC Log Resource
+description: DSC Log Resource
 ---
 # DSC Log Resource
 
@@ -9,6 +10,8 @@ title: DSC Log Resource
 
 The **Log** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to
 write messages to the Microsoft-Windows-Desired State Configuration/Analytic event log.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 
@@ -48,7 +51,7 @@ The following example shows how to include a message in the Microsoft-Windows-De
 Configuration/Analytic event log.
 
 > [!NOTE]
-> If you run [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration?view=powershell-5.1)
+> If you run [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration)
 > with this resource configured, it will always return **$false**.
 
 ```powershell

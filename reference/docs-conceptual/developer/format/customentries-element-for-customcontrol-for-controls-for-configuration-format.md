@@ -1,13 +1,8 @@
 ---
-title: "CustomEntries Element for CustomControl for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 80fc4de2-208f-4506-9a6a-c2675bb83be4
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: CustomEntries Element for CustomControl for Controls for Configuration (Format)
+description: CustomEntries Element for CustomControl for Controls for Configuration (Format)
 ---
 # CustomEntries Element for CustomControl for Controls for Configuration (Format)
 

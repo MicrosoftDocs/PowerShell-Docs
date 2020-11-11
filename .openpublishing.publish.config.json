@@ -1,70 +1,71 @@
 {
     "build_entry_point": "docs",
-    "docsets_to_publish": [{
-        "docset_name": "PowerShell_PowerShell-docs_reference",
-        "build_source_folder": "reference",
-        "build_output_subfolder": "reference",
-        "locale": "en-us",
-        "monikers": [],
-        "moniker_ranges": [],
-        "open_to_public_contributors": true,
-        "type_mapping": {
-            "AzurePSModulePage": "Content",
-            "Conceptual": "Content",
-            "ManagedReference": "Content",
-            "RestApi": "Content"
+    "dependent_packages": [{
+        "id": "Microsoft.DocAsCode.MAML2Yaml",
+        "nuget_feed": "https://www.myget.org/F/op/api/v2",
+        "path_to_root": "_dependentPackages/MAML2Yaml",
+        "target_framework": "net45",
+        "version": "latest"
+    }],
+    "dependent_repositories": [{
+            "branch": "master",
+            "branch_mapping": {},
+            "path_to_root": "_themes",
+            "url": "https://github.com/Microsoft/templates.docs.msft"
         },
+        {
+            "branch": "master",
+            "branch_mapping": {},
+            "path_to_root": "powershell-sdk-samples",
+            "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples"
+        },
+        {
+            "path_to_root": "_themes.pdf",
+            "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
+            "branch": "master"
+        }
+    ],
+    "docsets_to_publish": [{
         "build_entry_point": "docs",
-        "template_folder": "_themes",
+        "build_output_subfolder": "reference",
+        "build_source_folder": "reference",
         "customized_tasks": {
             "docset_prebuild": [
-                "_dependentPackages/CommonPlugins/tools/PowerShellReference.ps1"
+                "_dependentPackages/MAML2Yaml/tools/Run.ps1"
             ]
         },
-        "customized_template_paths": [
-            "_dependentPackages/azurecli.plugins/azurecli"
-        ],
+        "docset_name": "PowerShell_PowerShell-docs_reference",
+        "locale": "en-us",
         "monikerPath": [
             "mapping/monikerMapping.json"
         ],
+        "moniker_ranges": [">=powershell-5.1"],
+        "monikers": [],
+        "open_to_public_contributors": true,
+        "template_folder": "_themes",
+        "type_mapping": {
+            "PowershellModule": "Content",
+            "PowershellCmdlet": "Content",
+            "Conceptual": "Content"
+        },
+        "xref_query_tags": ["/dotnet", "/uwp/api"],
         "version": 0
     }],
+
+    "git_repository_branch_open_to_public_contributors": "staging",
+    "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/PowerShell-Docs",
+    "need_preview_pull_request": true,
+
     "notification_subscribers": [],
     "sync_notification_subscribers": [],
-    "branches_to_filter": [],
-    "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/PowerShell-Docs",
-    "git_repository_branch_open_to_public_contributors": "staging",
-    "skip_source_output_uploading": false,
-    "need_preview_pull_request": true,
+
     "contribution_branch_mappings": {},
-    "dependent_repositories": [{
-            "path_to_root": "_themes",
-            "url": "https://github.com/Microsoft/templates.docs.msft",
-            "branch": "master",
-            "branch_mapping": {}
-        },
-        {
-            "path_to_root": "powershell-sdk-samples",
-            "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples",
-            "branch": "master",
-            "branch_mapping": {}
-        }
-    ],
-    "branch_target_mapping": {},
+    "skip_source_output_uploading": false,
+
     "need_generate_pdf_url_template": false,
+    "branch_target_mapping": {},
     "targets": {},
-    "dependent_packages": [{
-            "id": "opbuild.templates.azurecli",
-            "nuget_feed": "https://www.myget.org/F/op/api/v2",
-            "path_to_root": "_dependentPackages/azurecli.plugins",
-            "version": "latest"
-        },
-        {
-            "id": "Microsoft.OpenPublishing.CommonPlugins",
-            "nuget_feed": "https://www.myget.org/F/op/api/v2",
-            "path_to_root": "_dependentPackages/CommonPlugins",
-            "target_framework": "net45",
-            "version": "latest"
-        }
-    ]
+    "docs_build_engine": {
+        "name": "docfx_v3"
+    }
 }

@@ -1,13 +1,8 @@
 ---
-title: "Creating remote runspaces | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/12/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
-caps.latest.revision: 5
+ms.date: 09/12/2016
+ms.topic: reference
+title: Creating remote runspaces
+description: Creating remote runspaces
 ---
 
 # Creating remote runspaces
@@ -54,7 +49,7 @@ namespace Samples
       // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also be used to specify connections to remote computers.
-      Uri RemoteComputerUri = new uri("http://Server01:5985/WSMAN");
+      Uri RemoteComputerUri = new Uri("http://Server01:5985/WSMAN");
       WSManConnectionInfo connectionInfo = new WSManConnectionInfo(RemoteComputerUri);
 
       // Set the OperationTimeout property and OpenTimeout properties.

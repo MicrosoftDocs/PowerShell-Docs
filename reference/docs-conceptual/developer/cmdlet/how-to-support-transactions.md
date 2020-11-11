@@ -1,13 +1,8 @@
 ---
-title: "How to Support Transactions | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 4732e38c-b1a0-4de7-b6de-75dbde850488
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Support Transactions
+description: How to Support Transactions
 ---
 # How to Support Transactions
 

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/remove-cimsession?view=powershell-7&WT.mc_id=ps-gethelp
@@ -17,26 +17,31 @@ Removes one or more CIM sessions.
 ## SYNTAX
 
 ### CimSessionSet (Default)
+
 ```
 Remove-CimSession [-CimSession] <CimSession[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ComputerNameSet
+
 ```
 Remove-CimSession [-ComputerName] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SessionIdSet
+
 ```
 Remove-CimSession [-Id] <UInt32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceIdSet
+
 ```
 Remove-CimSession -InstanceId <Guid[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameSet
+
 ```
 Remove-CimSession -Name <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -86,7 +91,7 @@ For more information, see
 [about_CimSessions](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: CimSessionSet
 Aliases:
 
@@ -103,7 +108,7 @@ Specifies an array of names of computers. Removes the sessions that connect to t
 computers. You can specify a fully qualified domain name (FQDN) or a NetBIOS name.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerNameSet
 Aliases: CN, ServerName
 
@@ -123,7 +128,7 @@ identifies the CIM session in the current PowerShell session.
 For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
 
 ```yaml
-Type: UInt32[]
+Type: System.UInt32[]
 Parameter Sets: SessionIdSet
 Aliases:
 
@@ -143,7 +148,7 @@ you have multiple sessions running in PowerShell.
 The **InstanceId** is stored in the **InstanceId** property of the object that represents a CIM session.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceIdSet
 Aliases:
 
@@ -160,7 +165,7 @@ Specifies the friendly name of the CIM session to remove. You can use wildcard c
 parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameSet
 Aliases:
 
@@ -176,7 +181,7 @@ Accept wildcard characters: True
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -192,7 +197,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -231,4 +236,3 @@ This cmdlet returns an object that contains CIM session information.
 [New-CimSession](New-CimSession.md)
 
 [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md)
-

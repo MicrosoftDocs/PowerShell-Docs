@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 02/18/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
 ---
@@ -46,7 +46,9 @@ This example registers for a PowerShell engine event on two remote computers.
 
 ```powershell
 $S = New-PSSession -ComputerName "Server01, Server02"
-Invoke-Command -Session $S { Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward }
+Invoke-Command -Session $S {
+Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward
+}
 ```
 
 `New-PSSession` creates a user-managed session (PSSession) on each of the remote computers.The
@@ -162,7 +164,7 @@ When you specify an action, `Register-EngineEvent` returns an event job object t
 action. You can use the Job cmdlets to manage the event job.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -179,7 +181,7 @@ Indicates that the cmdlet sends events for this subscription to the session on t
 Use this parameter when you are registering for events on a remote computer or in a remote session.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -195,7 +197,7 @@ Accept wildcard characters: False
 Specifies the maximum number of times that the action will be executed for the event subscription.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -212,7 +214,7 @@ Specifies additional data associated with the event. The value of this parameter
 **MessageData** property of the event object.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -236,7 +238,7 @@ with the `New-Event` cmdlet. The PowerShell engine supports the **EngineEvent** 
 **PowerShell.Exiting** and **PowerShell.OnIdle**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -257,7 +259,7 @@ To view or cancel a subscription that was created with the **SupportEvent** para
 **Force** parameter to the `Get-EventSubscriber` or `Unregister-Event` cmdlets.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -289,6 +291,8 @@ If you use the **Action** parameter, `Register-EngineEvent` returns a
 **System.Management.Automation.PSEventJob** object. Otherwise, it does not generate any output.
 
 ## NOTES
+
+No event sources available on the Linux or macOS platforms.
 
 Events, event subscriptions, and the event queue exist only in the current session. If you close the
 current session, the event queue is discarded and the event subscription is canceled.

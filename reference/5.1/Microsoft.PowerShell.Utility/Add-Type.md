@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 08/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -349,7 +349,7 @@ This parameter doesn't accept a path or a file name. To enter the path to the as
 library (DLL) file, use the **Path** parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: FromAssemblyName
 Aliases: AN
 
@@ -368,7 +368,7 @@ specified by using the **Language** parameter. The **CodeDomProvider** that you 
 to generate assemblies from source code.
 
 ```yaml
-Type: CodeDomProvider
+Type: System.CodeDom.Compiler.CodeDomProvider
 Parameter Sets: FromSource, FromMember
 Aliases: Provider
 
@@ -392,7 +392,7 @@ You can't use the **CompilerParameters** and **ReferencedAssemblies** parameters
 command.
 
 ```yaml
-Type: CompilerParameters
+Type: System.CodeDom.Compiler.CompilerParameters
 Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: CP
 
@@ -409,7 +409,7 @@ Ignores compiler warnings. Use this parameter to prevent `Add-Type` from handlin
 as errors.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -433,7 +433,7 @@ values for this parameter are as follows:
 - VisualBasic
 
 ```yaml
-Type: Language
+Type: Microsoft.PowerShell.Commands.Language
 Parameter Sets: FromSource, FromMember
 Aliases:
 Accepted values: CSharp, CSharpVersion2, CSharpVersion3, JScript, VisualBasic
@@ -453,7 +453,7 @@ are interpreted as wildcards. If the path includes escape characters, enclose it
 marks. Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: FromLiteralPath
 Aliases: PSPath
 
@@ -473,7 +473,7 @@ On Windows, you can use this feature to make Platform Invoke (P/Invoke) calls to
 in PowerShell.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: FromMember
 Aliases:
 
@@ -494,7 +494,7 @@ To change the code for a type, you must change the name or start a new PowerShel
 Otherwise, the command fails.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: FromMember
 Aliases:
 
@@ -515,7 +515,7 @@ in the command with an empty string value or a value of `$Null`, the type is gen
 namespace.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: FromMember
 Aliases: NS
 
@@ -533,7 +533,7 @@ path and file name. Wildcard characters are permitted. By default, `Add-Type` ge
 only in memory.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: OA
 
@@ -557,7 +557,7 @@ The acceptable values for this parameter are as follows:
 - WindowsApplication
 
 ```yaml
-Type: OutputAssemblyType
+Type: Microsoft.PowerShell.Commands.OutputAssemblyType
 Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: OT
 Accepted values: ConsoleApplication, Library, WindowsApplication
@@ -575,7 +575,7 @@ Returns a **System.Runtime** object that represents the types that were added. B
 cmdlet doesn't generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -598,7 +598,7 @@ If you submit an assembly file, `Add-Type` takes the types from the assembly. To
 in-memory assembly or the global assembly cache, use the **AssemblyName** parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: FromPath
 Aliases:
 
@@ -619,7 +619,7 @@ You can't use the **CompilerParameters** and **ReferencedAssemblies** parameters
 command.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: RA
 
@@ -642,7 +642,7 @@ unintentional overwrite. For example, if you define a type called **Exception**,
 **Exception** as the shortcut for **System.Exception** will fail.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: FromSource
 Aliases:
 
@@ -664,7 +664,7 @@ namespaces that you add by using the **UsingNamespace** parameter are referenced
 default namespaces.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: FromMember
 Aliases: Using
 

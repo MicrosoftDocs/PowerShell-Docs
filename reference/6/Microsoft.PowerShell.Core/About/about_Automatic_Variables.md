@@ -1,7 +1,8 @@
 ---
+description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 08/12/2019
+Locale: en-US
+ms.date: 08/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
@@ -187,6 +188,10 @@ blocks (which are unnamed functions).
   > [!NOTE]
   > You cannot use the `$input` variable inside both the Process block and the
   > End block in the same function or script block.
+
+Since `$input` is an enumerator, accessing any of it's properties causes
+`$input` to no longer be available. You can store `$input` in another variable to
+reuse the `$input` properties.
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
@@ -503,11 +508,13 @@ following items:
 | Property                  | Description                                   |
 | ------------------------- | --------------------------------------------- |
 | **PSVersion**             | The PowerShell version number                 |
-| **PSEdition**             | This property has the value of 'Desktop', for |
-|                           | Windows Server and Windows client versions.   |
+| **PSEdition**             | This property has the value of 'Desktop' for  |
+|                           | PowerShell 4 and below as well as PowerShell  |
+|                           | 5.1 on full-featured Windows editions.        |
 |                           | This property has the value of 'Core' for     |
-|                           | PowerShell running under Nano Server or       |
-|                           | Windows IOT.                                  |
+|                           | PowerShell 6 and above as well as PowerShell  |
+|                           | PowerShell 5.1 on reduced-footprint editions  |
+|                           | like Windows Nano Server or Windows IoT.      |
 | **GitCommitId**           | The commit Id of the source files, in GitHub, |
 | **OS**                    | Description of the operating system that      |
 |                           | PowerShell is running on.                     |
@@ -591,7 +598,7 @@ the enumerator has passed the end of the collection.
 > [!NOTE]
 > The **Boolean** value returned my **MoveNext** is sent to the output stream.
 > You can suppress the output by typecasting it to `[void]` or piping it to
-> [Out-Null](../Out-Null.md).
+> [Out-Null](xref:Microsoft.PowerShell.Core.Out-Null).
 >
 > ```powershell
 > $input.MoveNext() | Out-Null

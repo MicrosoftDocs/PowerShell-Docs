@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 08/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-help?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -89,10 +89,11 @@ version of a help file, use the **Online** parameter, such as: `Get-Help Get-Pro
 read all the PowerShell documentation, see the Microsoft Docs [PowerShell Documentation](/powershell).
 
 If you type `Get-Help` followed by the exact name of a help article, or by a word unique to a help
-article, `Get-Help` displays the article's content. If you enter a word or word pattern that appears
-in several help article titles, `Get-Help` displays a list of the matching titles. If you enter a
-word that doesn't appear in any help article titles, `Get-Help` displays a list of articles that
-include that word in their contents.
+article, `Get-Help` displays the article's content. If you specify the exact name of a command alias,
+`Get-Help` displays the help for the original command. If you enter a word or word pattern that appears
+in several help article titles, `Get-Help` displays a list of the matching titles. If you enter any text
+that doesn't appear in any help article titles, `Get-Help` displays a list of articles that
+include that text in their contents.
 
 `Get-Help` can get help articles for all supported languages and locales. `Get-Help` first looks for
 help files in the locale set for Windows, then in the parent locale, such as **pt** for **pt-BR**,
@@ -345,7 +346,7 @@ The acceptable values for this parameter are as follows:
 - Configuration
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 Accepted values: Alias, Cmdlet, Provider, General, FAQ, Glossary, HelpFile, ScriptCommand, Function, Filter, ExternalScript, All, DefaultHelp, Workflow, DscResource, Class, Configuration
@@ -364,7 +365,7 @@ Wildcard characters are permitted. This parameter has no effect on displays of c
 (**About_**) help.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -382,7 +383,7 @@ when the help files are installed on the computer. It has no effect on displays 
 (**About_**) help.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: DetailedView
 Aliases:
 
@@ -402,7 +403,7 @@ This parameter is effective only when the help files are installed on the comput
 on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Examples
 Aliases:
 
@@ -422,7 +423,7 @@ This parameter is effective only when the help files are installed on the comput
 on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AllUsersView
 Aliases:
 
@@ -439,7 +440,7 @@ Displays help for items with the specified functionality. Enter the functionalit
 characters are permitted. This parameter has no effect on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -465,14 +466,14 @@ If you enter the exact name of a help article, `Get-Help` displays the article c
 If you enter a word or word pattern that appears in several help article titles, `Get-Help` displays
 a list of the matching titles.
 
-If you enter a word that doesn't match any help article titles, `Get-Help` displays a list of
-articles that include that word in their contents.
+If you enter any text that doesn't match any help article titles, `Get-Help` displays a list of
+articles that include that text in their contents.
 
 The names of conceptual articles, such as `about_Objects`, must be entered in English, even in
 non-English versions of PowerShell.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -494,7 +495,7 @@ and [Supporting Online Help](/powershell/scripting/developer/module/supporting-o
 [Writing Help for PowerShell Cmdlets](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Online
 Aliases:
 
@@ -511,7 +512,7 @@ Displays only the detailed descriptions of the specified parameters. Wildcards a
 parameter has no effect on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Parameters
 Aliases:
 
@@ -541,7 +542,7 @@ help articles.
 For more information about PowerShell providers, see [about_Providers](./About/about_Providers.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -562,7 +563,7 @@ help files based on the value of this parameter. This parameter has no effect on
 cmdlets.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -585,7 +586,7 @@ workflows, scripts) and conceptual **About** articles. It does not support provi
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ShowWindow
 Aliases:
 

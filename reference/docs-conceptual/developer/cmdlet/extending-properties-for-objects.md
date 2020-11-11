@@ -1,13 +1,8 @@
 ---
-title: "Extending Properties for Objects | Microsoft Docs"
-ms.custom: ""
-ms.date: "08/21/2019"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
-caps.latest.revision: 11
+ms.date: 08/21/2019
+ms.topic: reference
+title: Extending Properties for Objects
+description: Extending Properties for Objects
 ---
 
 # Extending Properties for Objects

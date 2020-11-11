@@ -1,7 +1,8 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  ApplyConfiguration method
+ms.date: 07/14/2020
+ms.topic: reference
+title: ApplyConfiguration method
+description: ApplyConfiguration method
 ---
 # ApplyConfiguration method
 
@@ -19,8 +20,10 @@ uint32 ApplyConfiguration(
 
 ## Parameters
 
-*force* \[in\]
-If this is **true**, the current configuration is reapplied, even if there is a configuration pending.
+### force
+
+If this is **true**, the current configuration is reapplied, even if there is a configuration
+pending.
 
 ## Return value
 

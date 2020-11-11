@@ -1,13 +1,8 @@
 ---
-title: "ScriptBlock Element for SelectionCondition for EntrySelectedBy for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 2b11fbcf-3426-48ae-9319-2c847969f723
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: ScriptBlock Element for SelectionCondition for EntrySelectedBy for TableControl (Format)
+description: ScriptBlock Element for SelectionCondition for EntrySelectedBy for TableControl (Format)
 ---
 # ScriptBlock Element for SelectionCondition for EntrySelectedBy for TableControl (Format)
 

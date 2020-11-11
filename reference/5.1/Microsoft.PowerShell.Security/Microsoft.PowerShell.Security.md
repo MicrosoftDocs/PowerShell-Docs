@@ -1,8 +1,8 @@
 ---
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=390786
-Help Version: 5.1.1.0
+Help Version: 5.2.0.0
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Guid: a94c8c7e-9810-47c0-b8af-65089c13a35a
 Module Name: Microsoft.PowerShell.Security
 ms.date: 06/09/2017
@@ -65,4 +65,3 @@ catalog.
 
 ### [Unprotect-CmsMessage](Unprotect-CmsMessage.md)
 Decrypts content that has been encrypted by using the Cryptographic Message Syntax format.
-

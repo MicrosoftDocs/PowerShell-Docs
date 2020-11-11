@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-7&WT.mc_id=ps-gethelp
@@ -208,7 +208,7 @@ parameter to specify the **BITS** service. The **SecurityDescriptorSddl** parame
 Prompts you for confirmation before running `Set-Service`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -237,7 +237,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -257,7 +257,7 @@ property of the `Get-Service` **ServiceController** object. To see the service d
 `Get-CimInstance` that returns a **Win32_Service** object that represents the service.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -273,7 +273,7 @@ Accept wildcard characters: False
 Specifies a new display name for the service.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: DN
 
@@ -291,7 +291,7 @@ enabled, `Set-Service` stops the dependent services before the target service is
 default, exceptions are raised when other running services depend on the target service.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -309,7 +309,7 @@ that contains the object, or type a command or expression that gets the object, 
 `Get-Service` command. You can use the pipeline to send a service object to `Set-Service`.
 
 ```yaml
-Type: ServiceController
+Type: System.ServiceProcess.ServiceController
 Parameter Sets: InputObject
 Aliases:
 
@@ -326,7 +326,7 @@ Specifies the service name of the service to be changed. Wildcard characters are
 can use the pipeline to send a service name to `Set-Service`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Name
 Aliases: ServiceName, SN
 
@@ -343,7 +343,7 @@ Returns a **ServiceController** object that represents the services that were ch
 `Set-Service` doesn't generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -371,7 +371,7 @@ The acceptable values for this parameter are as follows:
   or by an application.
 
 ```yaml
-Type: ServiceStartupType
+Type: Microsoft.PowerShell.Commands.ServiceStartupType
 Parameter Sets: (All)
 Aliases: StartMode, SM, ST, StartType
 Accepted values: Automatic, AutomaticDelayedStart, Disabled, InvalidValue, Manual
@@ -394,7 +394,7 @@ The acceptable values for this parameter are as follows:
 - **Stopped**. Stops the service.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Paused, Running, Stopped
@@ -411,9 +411,9 @@ Accept wildcard characters: False
 Specifies the **SecurityDescriptor** for the service in **Sddl** format.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: sd
 
 Required: False
 Position: Named
@@ -427,7 +427,7 @@ Accept wildcard characters: False
 Shows what would happen if `Set-Service` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -459,6 +459,8 @@ By default, `Set-Service` doesn't return any objects. Use the **PassThru** param
 **ServiceController** object.
 
 ## NOTES
+
+This cmdlet is only available on Windows platforms.
 
 `Set-Service` requires elevated permissions. Use the **Run as administrator** option.
 

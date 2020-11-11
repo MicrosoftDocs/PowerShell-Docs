@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-psprovider?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -30,6 +30,7 @@ For information about Windows PowerShell providers, see about_Providers.
 ## EXAMPLES
 
 ### Example 1: Display a list of all available providers
+
 ```
 PS C:\> Get-PSProvider
 ```
@@ -37,6 +38,7 @@ PS C:\> Get-PSProvider
 This command displays a list of all available Windows PowerShell providers.
 
 ### Example 2: Display a list of all Windows PowerShell providers that begin with specified letters
+
 ```
 PS C:\> Get-PSProvider f*, r* | Format-List
 ```
@@ -44,6 +46,7 @@ PS C:\> Get-PSProvider f*, r* | Format-List
 This command displays a list of all Windows PowerShell providers with names that begin with the letter f or r.
 
 ### Example 3: Find snap-ins or module that added providers to your session
+
 ```
 PS C:\> Get-PSProvider | Format-Table name, module, pssnapin -auto
 
@@ -77,6 +80,7 @@ The first command gets all of the providers in the session and formats them in a
 The second command uses the Where-Object cmdlet to get the providers that come from the **Microsoft.PowerShell.Security** snap-in.
 
 ### Example 4: Resolve the path of the Home property of the file system provider
+
 ```
 PS C:\> Resolve-Path ~
 
@@ -97,7 +101,7 @@ The Home property value is optional, but for the FileSystem provider, it is defi
 Specifies the name or names of the Windows PowerShell providers about which this cmdlet gets information.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -127,5 +131,3 @@ This cmdlet returns objects that represent the Windows PowerShell providers in t
 ## RELATED LINKS
 
 ## RELATED LINKS
-
-

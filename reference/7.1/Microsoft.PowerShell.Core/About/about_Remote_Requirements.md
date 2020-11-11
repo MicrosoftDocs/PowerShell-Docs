@@ -1,8 +1,9 @@
 ---
+description: Describes the system requirements and configuration requirements for running remote commands in PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 01/03/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Remote_Requirements
 ---
@@ -261,6 +262,7 @@ in NTLM authentication between the client and server and payload is encrypted
 over HTTP.
 
 The following illustrates using Negotiate with New-PSSession:
+
 ```powershell
 # The specified user must have administrator rights on the target machine.
 $cred = Get-Credential username@hostname
@@ -283,8 +285,9 @@ $session = New-PSSession -Computer <hostname> -Credential $cred `
 
 [about_PSSessions](about_PSSessions.md)
 
-[Invoke-Command](../Invoke-Command.md)
+[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 
-[Enter-PSSession](../Enter-PSSession.md)
+[Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
 
-[New-PSSession](../New-PSSession.md)
+[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
+

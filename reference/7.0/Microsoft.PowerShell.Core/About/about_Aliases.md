@@ -1,6 +1,7 @@
 ---
+description: Describes how to use alternate names for cmdlets and commands in PowerShell.
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 11/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -195,8 +196,7 @@ Get-Help about_Functions
 
 PowerShell aliases are represented by objects that are instances of the
 System.Management.Automation.AliasInfo class. For more information about this
-type of object, see [AliasInfo Class][aliasinfo] in the Microsoft Developer
-Network (MSDN) library.
+type of object, see [AliasInfo Class][aliasinfo] in the PowerShell SDK.
 
 To view the properties and methods of the alias objects, get the aliases.
 Then, pipe them to the Get-Member cmdlet. For example:
@@ -257,13 +257,13 @@ Get-Help Alias
 
 ## SEE ALSO
 
-- [New-Alias](../../Microsoft.PowerShell.Utility/New-Alias.md)
-- [Get-Alias](../../Microsoft.PowerShell.Utility/Get-Alias.md)
-- [Set-Alias](../../Microsoft.PowerShell.Utility/Set-Alias.md)
-- [Export-Alias](../../Microsoft.PowerShell.Utility/Export-Alias.md)
-- [Import-Alias](../../Microsoft.PowerShell.Utility/Import-Alias.md)
-- [Get-PSProvider](../../Microsoft.PowerShell.Management/Get-PSProvider.md)
-- [Get-PSDrive](../../Microsoft.PowerShell.Management/Get-PSDrive.md)
+- [New-Alias](xref:Microsoft.PowerShell.Utility.New-Alias)
+- [Get-Alias](xref:Microsoft.PowerShell.Utility.Get-Alias)
+- [Set-Alias](xref:Microsoft.PowerShell.Utility.Set-Alias)
+- [Export-Alias](xref:Microsoft.PowerShell.Utility.Export-Alias)
+- [Import-Alias](xref:Microsoft.PowerShell.Utility.Import-Alias)
+- [Get-PSProvider](xref:Microsoft.PowerShell.Management.Get-PSProvider)
+- [Get-PSDrive](xref:Microsoft.PowerShell.Management.Get-PSDrive)
 - [about_functions](about_functions.md)
 - [about_profiles](about_profiles.md)
 - [about_providers](about_providers.md)

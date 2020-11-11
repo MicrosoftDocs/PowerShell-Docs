@@ -1,13 +1,8 @@
 ---
-title: "Cmdlet Aliases | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d0d70864-33fb-49ce-8054-c41ba19fd554
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Aliases
+description: Cmdlet Aliases
 ---
 # Cmdlet Aliases
 

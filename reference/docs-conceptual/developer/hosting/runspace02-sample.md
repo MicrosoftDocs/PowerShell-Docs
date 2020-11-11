@@ -1,13 +1,8 @@
 ---
-title: "Runspace02 Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 7630bb63-ef39-4abd-b795-8000f984c1e5
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: Runspace02 Sample
+description: Runspace02 Sample
 ---
 # Runspace02 Sample
 

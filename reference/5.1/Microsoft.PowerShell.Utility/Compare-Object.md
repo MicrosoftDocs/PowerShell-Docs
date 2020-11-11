@@ -1,22 +1,19 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/28/2019
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compare-Object
 ---
-
 # Compare-Object
 
-## SYNOPSIS
+## Synopsis
 Compares two sets of objects.
 
-## SYNTAX
-
-### All
+## Syntax
 
 ```
 Compare-Object [-ReferenceObject] <PSObject[]> [-DifferenceObject] <PSObject[]>
@@ -24,10 +21,15 @@ Compare-Object [-ReferenceObject] <PSObject[]> [-DifferenceObject] <PSObject[]>
  [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Compare-Object` cmdlet compares two sets of objects. One set of objects is the **reference**,
 and the other set of objects is the **difference**.
+
+`Compare-Object` checks for available methods of comparing a whole object. If it can't find a
+suitable method, it calls the **ToString()** methods of the input objects and compares the string
+results. You can provide one or more properties to be used for comparison. When properties are
+provided, the cmdlet compares the values of those properties only.
 
 The result of the comparison indicates whether a property value appeared only in the **reference**
 object (`<=`) or only in the **difference** object (`=>`). If the **IncludeEqual** parameter is
@@ -39,20 +41,19 @@ terminating error.
 Some examples use splatting to reduce the line length of the code samples. For more information, see
 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
 
-The examples use two text files, with each value on a separate line.
+## Examples
+
+### Example 1 - Compare the content of two text files
+
+This example compares the contents of two text files. The example uses the following two text files,
+with each value on a separate line.
 
 - `Testfile1.txt` contains the values: dog, squirrel, and bird.
 - `Testfile2.txt` contains the values: cat, bird, and racoon.
 
-## EXAMPLES
-
-### Example 1: Compare the content of two text files
-
-This example compares the contents of two text files. The output displays only the lines that are
-different between the files. `Testfile1.txt` is the **reference** object (`<=`) and
-`Testfile2.txt`is the **difference** object (`=>`).
-
-Lines with content that appear in both files aren't displayed.
+The output displays only the lines that are different between the files. `Testfile1.txt` is the
+**reference** object (`<=`) and `Testfile2.txt`is the **difference** object (`=>`). Lines with
+content that appear in both files aren't displayed.
 
 ```powershell
 Compare-Object -ReferenceObject (Get-Content -Path C:\Test\Testfile1.txt) -DifferenceObject (Get-Content -Path C:\Test\Testfile2.txt)
@@ -67,33 +68,7 @@ dog         <=
 squirrel    <=
 ```
 
-### Example 2: Compare each line of content in two text files
-
-This example uses the **IncludeEqual** to compare each line of content in two text files. All the
-lines of content from both files are displayed.
-
-The **SideIndicator** specifies if the line appears in the `Testfile1.txt` **reference** object
-(`<=`), `Testfile2.txt` **difference** object (`=>`), or both files (`==`).
-
-```powershell
-$objects = @{
-  ReferenceObject = (Get-Content -Path C:\Test\Testfile1.txt)
-  DifferenceObject = (Get-Content -Path C:\Test\Testfile2.txt)
-}
-Compare-Object @objects -IncludeEqual
-```
-
-```Output
-InputObject SideIndicator
------------ -------------
-bird        ==
-cat         =>
-racoon      =>
-dog         <=
-squirrel    <=
-```
-
-### Example 3: Compare each line of content and exclude the differences
+### Example 2 - Compare each line of content and exclude the differences
 
 This example uses the **IncludeEqual** and **ExcludeDifferent** parameters to compare each line of
 content in two text files.
@@ -115,32 +90,9 @@ InputObject SideIndicator
 bird        ==
 ```
 
-### Example 4: Compare two sets of process objects
+<a id="ex3" />
 
-This example compares two sets of objects that contain the computer's running processes.
-
-```powershell
-$Processes_Before = Get-Process
-notepad.exe
-$Processes_After = Get-Process
-Compare-Object -ReferenceObject $Processes_Before -DifferenceObject $Processes_After
-```
-
-```Output
-InputObject                            SideIndicator
------------                            -------------
-System.Diagnostics.Process (notepad)   =>
-```
-
-First, `Get-Process` gets a list of running processes and stores them in the `$Processes_Before`
-variable then the **notepad.exe** application is started. Next, `Get-Process` gets an updated list of
-running processes and stores them in the `$Processes_After` variable.
-
-`Compare-Object` compares the two sets of process objects. The output displays the difference,
-**notepad.exe**, from the `$Processes_After` object.
-
-<a name="ex5" />
-### Example 5: Show the difference when using the PassThru parameter
+### Example 3 - Show the difference when using the PassThru parameter
 
 Normally, `Compare-Object` returns a **PSCustomObject** type with the following properties:
 
@@ -216,14 +168,100 @@ output displayed by the default format for **System.Boolean** objects didn't dis
 **SideIndicator** property. However, the returned **System.Boolean** object has the added
 **NoteProperty**.
 
-## PARAMETERS
+### Example 4 - Compare two simple objects using properties
+
+In this example, we compare two different string that have the same length.
+
+```powershell
+Compare-Object -ReferenceObject 'abc' -DifferenceObject 'xyz' -Property Length -IncludeEqual
+```
+
+```Output
+Length SideIndicator
+------ -------------
+     3 ==
+```
+
+### Example 5 - Comparing complex objects using properties
+
+This example shows the behavior when comparing complex objects. In this example we store two
+different process objects for different instances of PowerShell. Both variables contain process
+objects with the same name. When the objects are compared without specifying the **Property**
+parameter, the cmdlet considers the objects to be equal. Notice that the value of the
+**InputObject** is the same as the result of the **ToString()** method. Since the
+**System.Diagnostics.Process** class does not have the **IComparable** interface, the cmdlet
+converts the objects to strings then compares the results.
+
+```powershell
+PS> Get-Process pwsh
+
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+    101   123.32     139.10      35.81   11168   1 pwsh
+     89   107.55      66.97      11.44   17600   1 pwsh
+
+PS> $a = Get-Process -Id 11168
+PS> $b = Get-Process -Id 17600
+PS> $a.ToString()
+System.Diagnostics.Process (pwsh)
+PS> $b.ToString()
+System.Diagnostics.Process (pwsh)
+PS> Compare-Object $a $b -IncludeEqual
+
+InputObject                       SideIndicator
+-----------                       -------------
+System.Diagnostics.Process (pwsh) ==
+
+PS> Compare-Object $a $b -Property ProcessName, Id, CPU
+
+ProcessName    Id       CPU SideIndicator
+-----------    --       --- -------------
+pwsh        17600   11.4375 =>
+pwsh        11168 36.203125 <=
+```
+
+When you specify properties to be compared, the cmdlet shows the differences.
+
+### Example 6 - Comparing complex objects that implement IComparable
+
+If the object implements **IComparable**, the cmdlet searches for ways to compare the objects.If the
+objects are different types, the **Difference** object is converted to the type of the
+**ReferenceObject** then compared.
+
+In this example, we are comparing a string to a **TimeSpan** object. In the first case, the string
+is converted to a **TimeSpan** so the objects are equal.
+
+```powershell
+Compare-Object ([TimeSpan]"0:0:1") "0:0:1" -IncludeEqual
+```
+
+```Output
+InputObject SideIndicator
+----------- -------------
+00:00:01    ==
+```
+
+```powershell
+Compare-Object "0:0:1" ([TimeSpan]"0:0:1")
+```
+
+```Output
+InputObject SideIndicator
+----------- -------------
+00:00:01    =>
+0:0:1       <=
+```
+
+In the second case, the **TimeSpan** is converted to a string so the object are different.
+
+## Parameters
 
 ### -CaseSensitive
 
 Indicates that comparisons should be case-sensitive.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -239,7 +277,7 @@ Accept wildcard characters: False
 Specifies the culture to use for comparisons.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -255,7 +293,7 @@ Accept wildcard characters: False
 Specifies the objects that are compared to the **reference** objects.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: (All)
 Aliases:
 
@@ -277,7 +315,7 @@ Use **ExcludeDifferent** with **IncludeEqual** to display only the lines that ma
 If **ExcludeDifferent** is specified without **IncludeEqual**, there's no output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -296,7 +334,7 @@ By default, the output also includes the differences between the **reference** a
 objects.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -313,7 +351,7 @@ When you use the **PassThru** parameter, `Compare-Object` omits the **PSCustomOb
 around the compared objects and returns the differing objects, unchanged.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -328,8 +366,16 @@ Accept wildcard characters: False
 
 Specifies an array of properties of the **reference** and **difference** objects to compare.
 
+The value of the **Property** parameter can be a new calculated property. The calculated property
+can be a script block or a hash table. Valid key-value pairs are:
+
+- Expression - `<string>` or `<script block>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
+
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -345,7 +391,7 @@ Accept wildcard characters: False
 Specifies an array of objects used as a reference for comparison.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: (All)
 Aliases:
 
@@ -364,7 +410,7 @@ in the same position in a collection. The default value is `[Int32]::MaxValue`, 
 `Compare-Object` examines the entire object collection.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -379,15 +425,16 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can send an object down the pipeline to the **DifferenceObject** parameter.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
@@ -403,14 +450,16 @@ When you use the **PassThru** parameter, the **Type** of the object is not chang
 of the object returned has an added **NoteProperty** named **SideIndicator**. **SideIndicator**
 shows which input object the output belongs to.
 
-## NOTES
+## Notes
 
 When using the **PassThru** parameter, the output displayed in the console may not include the
 **SideIndicator** property. The default format view of the for the object type output by
 `Compare-Object` does not include the **SideIndicator** property. For more information see
-[Example 5](#ex5) in this article.
+[Example 3](#ex3) in this article.
 
-## RELATED LINKS
+## Related links
+
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 
 [ForEach-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
 

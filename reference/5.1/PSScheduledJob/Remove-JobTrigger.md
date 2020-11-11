@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/remove-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,16 +17,19 @@ Delete job triggers from scheduled jobs.
 ## SYNTAX
 
 ### JobDefinition (Default)
+
 ```
 Remove-JobTrigger [-TriggerId <Int32[]>] [-InputObject] <ScheduledJobDefinition[]> [<CommonParameters>]
 ```
 
 ### JobDefinitionId
+
 ```
 Remove-JobTrigger [-TriggerId <Int32[]>] [-Id] <Int32[]> [<CommonParameters>]
 ```
 
 ### JobDefinitionName
+
 ```
 Remove-JobTrigger [-TriggerId <Int32[]>] [-Name] <String[]> [<CommonParameters>]
 ```
@@ -51,6 +54,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Delete all job triggers
+
 ```
 PS C:\> Remove-JobTrigger -Name "Test*"
 ```
@@ -58,6 +62,7 @@ PS C:\> Remove-JobTrigger -Name "Test*"
 This command deletes all job triggers from scheduled job that have names that begin with Test.
 
 ### Example 2: Delete selected job triggers
+
 ```
 PS C:\> Remove-JobTrigger -Name "BackupArchive" -TriggerID 3
 ```
@@ -65,6 +70,7 @@ PS C:\> Remove-JobTrigger -Name "BackupArchive" -TriggerID 3
 This command deletes only the third trigger (ID = 3) from the BackupArchive scheduled job.
 
 ### Example 3: Delete AtStartup job triggers from all scheduled jobs
+
 ```
 PS C:\> function Delete-AtStartup
 {
@@ -88,6 +94,7 @@ The value of the *InputObject* parameter of **Remove-JobTrigger** is the schedul
 The value of the *TriggerID* parameter is the identifier in the ID property of the job trigger.
 
 ### Example 4: Delete a job trigger from a remote scheduled job
+
 ```
 PS C:\> Invoke-Command -ComputerName "Server01" { Remove-JobTrigger -ID 38 -TriggerID 1 }
 ```
@@ -107,7 +114,7 @@ Specifies the identification numbers of the scheduled jobs.
 To get the identification number of scheduled jobs on the local computer or a remote computer, use the Get-ScheduledJob cmdlet.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: JobDefinitionId
 Aliases:
 
@@ -124,7 +131,7 @@ Enter a variable that contains **ScheduledJob** objects or type a command or exp
 You can also pipe **ScheduledJob** objects to **Remove-JobTrigger**.
 
 ```yaml
-Type: ScheduledJobDefinition[]
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition[]
 Parameter Sets: JobDefinition
 Aliases:
 
@@ -143,7 +150,7 @@ Wildcards are supported.
 To get the names of scheduled jobs on the local computer or a remote computer, use the Get-ScheduledJob cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: JobDefinitionName
 Aliases:
 
@@ -163,7 +170,7 @@ Enter the trigger IDs of one or more job triggers of a scheduled job.
 If you specify multiple scheduled jobs, **Remove-JobTrigger** deletes the job trigger with the specified ID from all scheduled jobs.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: (All)
 Aliases:
 
@@ -222,5 +229,3 @@ The cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

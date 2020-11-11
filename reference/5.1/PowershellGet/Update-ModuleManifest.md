@@ -1,7 +1,7 @@
 ---
 external help file: PSModule-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PowerShellGet
 ms.date: 07/08/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-modulemanifest?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -71,7 +71,7 @@ Use this parameter to restrict the aliases that are exported by the module. **Al
 remove aliases from the list of exported aliases, but it can't add aliases to the list.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -87,7 +87,7 @@ Accept wildcard characters: True
 Specifies the module author.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -104,7 +104,7 @@ Specifies the minimum version of the Common Language Runtime (CLR) of the Micros
 that the module requires.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -123,7 +123,7 @@ Use this parameter to restrict the cmdlets that are exported by the module. **Cm
 remove cmdlets from the list of exported cmdlets, but it can't add cmdlets to the list.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -139,7 +139,7 @@ Accept wildcard characters: True
 Specifies the company or vendor who created the module.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -156,7 +156,7 @@ Specifies the compatible **PSEditions** of the module. For information about **P
 [Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 Accepted values: Desktop, Core
@@ -168,12 +168,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running `Update-ModuleManifest`.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Copyright
 
 Specifies a copyright statement for the module.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -189,7 +205,7 @@ Accept wildcard characters: False
 Specifies the default command prefix.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -205,7 +221,7 @@ Accept wildcard characters: False
 Specifies a description of the module.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -221,7 +237,7 @@ Accept wildcard characters: False
 Specifies the minimum version of the Microsoft .NET Framework that the module requires.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -238,7 +254,7 @@ Specifies the Desired State Configuration (DSC) resources that the module export
 permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -254,7 +270,7 @@ Accept wildcard characters: False
 Specifies an array of external module dependencies.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -270,7 +286,7 @@ Accept wildcard characters: False
 Specifies all items that are included in the module.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -289,7 +305,7 @@ When you import a module, PowerShell runs the `Update-FormatData` cmdlet with th
 Because formatting files aren't scoped, they affect all session states in the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -308,7 +324,7 @@ Use this parameter to restrict the functions that are exported by the module. **
 can remove functions from the list of exported aliases, but it can't add functions to the list.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -325,7 +341,7 @@ Specifies a unique identifier for the module. The GUID can be used to distinguis
 the same name.
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: (All)
 Aliases:
 
@@ -349,7 +365,7 @@ For information about Updatable Help, see [about_Updatable_Help](../Microsoft.Po
 For information about the **HelpInfo XML** file, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -366,7 +382,7 @@ Specifies the URL of an icon for the module. The specified icon is displayed on 
 for the module.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -382,7 +398,7 @@ Accept wildcard characters: False
 Specifies the URL of licensing terms for the module.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -405,7 +421,7 @@ This key is designed to act as a module inventory. The modules that are listed i
 key aren't automatically processed.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -421,7 +437,7 @@ Accept wildcard characters: False
 Specifies the version of the module.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -443,7 +459,7 @@ keys. The hash table can also have an optional **GUID** key. You can combine str
 in the parameter value.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -459,7 +475,7 @@ Accept wildcard characters: False
 Specifies an array of package management providers.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -476,7 +492,7 @@ Returns an object representing the item with which you're working. By default,
 `Update-ModuleManifest` doesn't generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -502,7 +518,7 @@ You can't use variables, such as `$PSHOME` or `$HOME`, in response to a prompt f
 parameter value. To use a variable, include the **Path** parameter in the command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -521,7 +537,7 @@ host program, such as PowerShell ISE Host or ConsoleHost. Wildcards aren't permi
 To find the name of a host program, in the program, type `$Host.Name`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -538,7 +554,7 @@ Specifies the minimum version of the PowerShell host program that works with the
 version number, such as 1.1.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -555,7 +571,7 @@ Specifies the minimum version of PowerShell that will work with this module. For
 specify 3.0, 4.0, or 5.0 as the value of this parameter.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -571,7 +587,7 @@ Accept wildcard characters: False
 Indicates the module is prerelease.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -587,7 +603,7 @@ Accept wildcard characters: False
 Specifies data that is passed to the module when it's imported.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -612,10 +628,10 @@ The acceptable values for this parameter are:
 - X86
 
 ```yaml
-Type: ProcessorArchitecture
+Type: System.Reflection.ProcessorArchitecture
 Parameter Sets: (All)
 Aliases:
-Accepted values: Amd64, Arm, IA64, MSIL, None, X86
+Accepted values: None, MSIL, X86, IA64, Amd64, Arm
 
 Required: False
 Position: Named
@@ -629,7 +645,7 @@ Accept wildcard characters: False
 Specifies the URL of a web page about this project.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -646,7 +662,7 @@ Specifies a string array that contains release notes or comments that you want a
 version of the script.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -669,7 +685,7 @@ must be loaded to update any formatting or type files that are listed in the **F
 **NestedModules** key.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -687,7 +703,7 @@ global session state, PowerShell imports them. If the required modules aren't av
 `Import-Module` command fails.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -703,7 +719,7 @@ Accept wildcard characters: False
 Specifies that a license acceptance is required for the module.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -732,7 +748,7 @@ manifest. Otherwise, their members aren't exported.
 In PowerShell 2.0, this key was called **ModuleToProcess**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -751,7 +767,7 @@ You can use these scripts to prepare an environment, just as you might use a log
 To specify scripts that run in the module's session state, use the **NestedModules** key.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -767,7 +783,7 @@ Accept wildcard characters: False
 Specifies an array of tags.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -786,7 +802,7 @@ When you import the module, PowerShell runs the `Update-TypeData` cmdlet with th
 Because type files aren't scoped, they affect all session states in the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -805,7 +821,7 @@ Use this parameter to restrict the variables that are exported by the module. **
 can remove variables from the list of exported variables, but it can't add variables to the list.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -816,28 +832,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-Prompts you for confirmation before running `Update-ModuleManifest`.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
 Shows what would happen if `Update-ModuleManifest` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -856,7 +856,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String
+
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 

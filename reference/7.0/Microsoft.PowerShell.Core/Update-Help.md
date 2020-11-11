@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/16/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-7&WT.mc_id=ps-gethelp
@@ -37,7 +37,7 @@ Update-Help [[-Module] <String[]>] [-FullyQualifiedModule <ModuleSpecification[]
 ## DESCRIPTION
 
 The `Update-Help` cmdlet downloads the newest help files for PowerShell modules and installs them on
-your computer. You don't need to restart PowerShell to make the change effective. You can use the
+your computer. You need not restart PowerShell to make the change effective. You can use the
 `Get-Help` cmdlet to view the new help files immediately.
 
 `Update-Help` checks the version of the help files on your computer. If you don't have help files
@@ -47,16 +47,16 @@ help files can be downloaded and installed from the internet or a file share.
 Without parameters, `Update-Help` updates the help files for modules in the session and for all
 installed modules that support Updatable Help. Modules that are installed but not loaded in the
 current session are included. PowerShell modules are stored in a location listed in the
-`$env:PSModulePath` environment variable.
-For more information, see [about_Updatable_Help](./About/about_Updatable_Help.md).
+`$env:PSModulePath` environment variable. For more information, see
+[about_Updatable_Help](./About/about_Updatable_Help.md).
 
 You can use the **Module** parameter to update help files for a particular module. Use the
 **UICulture** parameter to download help files in multiple languages and locales.
 
-You can use `Update-Help` on computers that aren't connected to the internet. Use the `Save-Help`
-cmdlet to download help files from the internet and save them in a file system location, such as a
-shared folder or file system directory. Then use the **SourcePath** parameter of `Update-Help` to
-download the updated help files from a file system location and install them on the computer.
+You can also use `Update-Help` on computers that are not connected to the internet. First, use the
+`Save-Help`cmdlet to download help files from the internet and save them in a shared folder that is
+accessible to the system not connected to the internet. Then use the **SourcePath** parameter of
+`Update-Help` to download the updated help files from the shared and install them on the computer.
 
 You can automate help updates by adding the `Update-Help` cmdlet to your PowerShell profile. By
 default, `Update-Help` runs only one time per day on each computer. To override the once-per-day
@@ -66,8 +66,8 @@ The `Update-Help` cmdlet was introduced in Windows PowerShell 3.0.
 
 > [!IMPORTANT]
 > `Update-Help` requires administrative privileges in PowerShell 6.0 and below.
-> PowerShell 6.1 and above set the default `-Scope` to **CurrentUser**.
-> Prior to PowerShell 6.1, the `-Scope` parameter was not available.
+> PowerShell 6.1 and above set the default **Scope** to `CurrentUser`.
+> Prior to PowerShell 6.1, the **Scope** parameter was not available.
 >
 > You must be a member of the Administrators group on the computer
 > to update the help files for the PowerShell Core modules.
@@ -199,7 +199,7 @@ Param(
     [String[]]
     $Module
 )
-$HelpInfoNamespace = @{helpInfo='https://schemas.microsoft.com/powershell/help/2010/05'}
+$HelpInfoNamespace = @{helpInfo='http://schemas.microsoft.com/powershell/help/2010/05'}
 
 if ($Module) { $Modules = Get-Module $Module -ListAvailable | where {$_.HelpInfoUri} }
 else { $Modules = Get-Module -ListAvailable | where {$_.HelpInfoUri} }
@@ -259,7 +259,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -289,7 +289,7 @@ cultures in the same command, such as:
 `Update-Help -Module PSScheduledJobs -UICulture en-US, fr-FR, pt-BR`
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -321,7 +321,7 @@ You can't specify the **FullyQualifiedModule** parameter in the same command as 
 parameter.
 
 ```yaml
-Type: ModuleSpecification[]
+Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
 Parameter Sets: (All)
 Aliases:
 
@@ -347,7 +347,7 @@ it in single quotation marks. Single quotation marks tell PowerShell not to inte
 as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -378,7 +378,7 @@ or module manifest file. To update help for a module that isn't in a `$env:PSMod
 import the module into the current session before you run the `Update-Help` command.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Name
 
@@ -395,7 +395,7 @@ Performs a recursive search for help files in the specified directory. This para
 when the command uses the **SourcePath** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -422,7 +422,7 @@ The acceptable values are:
 - AllUsers
 
 ```yaml
-Type: UpdateHelpScope
+Type: Microsoft.PowerShell.Commands.UpdateHelpScope
 Parameter Sets: (All)
 Aliases:
 
@@ -449,7 +449,7 @@ using `Update-Help` to download help files from the internet.
 For more information, see [about_Group_Policy_Settings](./About/about_Group_Policy_Settings.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases: Path
 
@@ -470,12 +470,17 @@ permitted and you can't submit a partial language code, such as **de**.
 By default, `Update-Help` gets help files in the UI culture set for the operating system. If you
 specify the **UICulture** parameter, `Update-Help` looks for help only for the specified UI culture.
 
+> [!NOTE]
+> Ubuntu 18.04 changed the default locale setting to `C.UTF.8`, which is not a recognized UI
+> culture. `Update-Help` silently fails to download help unless you use this parameter with a
+> supported locale like `en-US`. This could occur on any platform that uses an unsupported value.
+
 Commands that use the **UICulture** parameter succeed only when the module provides help files for
 the specified UI culture. If the command fails because the specified UI culture isn't supported, an
 error message is displayed.
 
 ```yaml
-Type: CultureInfo[]
+Type: System.Globalization.CultureInfo[]
 Parameter Sets: (All)
 Aliases:
 
@@ -495,7 +500,7 @@ This parameter is effective only when the web download uses NT LAN Manager (NTLM
 Kerberos-based authentication.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -511,7 +516,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -527,7 +532,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

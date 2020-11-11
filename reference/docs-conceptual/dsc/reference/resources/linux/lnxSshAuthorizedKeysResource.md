@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/17/2020
+ms.topic: reference
 title: DSC for Linux nxSshAuthorizedKeys Resource
+description: DSC for Linux nxSshAuthorizedKeys Resource
 ---
 # DSC for Linux nxSshAuthorizedKeys Resource
 

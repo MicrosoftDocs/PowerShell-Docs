@@ -1,13 +1,8 @@
 ---
-title: "EntrySelectedBy Element for EnumerableExpansion (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3af6aff8-4c2d-4f08-9bb1-e1f3ed3e583e
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: EntrySelectedBy Element for EnumerableExpansion (Format)
+description: EntrySelectedBy Element for EnumerableExpansion (Format)
 ---
 # EntrySelectedBy Element for EnumerableExpansion (Format)
 

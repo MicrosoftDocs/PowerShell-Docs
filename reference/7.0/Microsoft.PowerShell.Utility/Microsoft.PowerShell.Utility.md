@@ -1,8 +1,8 @@
 ---
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113633
-Help Version: 7.0.0.0
+Help Version: 7.0.1.0
 keywords: powershell,cmdlet
-locale: en-US
+Locale: en-US
 Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
@@ -47,10 +47,10 @@ Converts a SDDL string to a custom object.
 Converts a string containing one or more key and value pairs to a hash table.
 
 ### [ConvertTo-Csv](ConvertTo-Csv.md)
-Converts objects into a series of character-separated value (CSV) strings.
+Converts .NET objects into a series of character-separated value (CSV) strings.
 
 ### [ConvertTo-Html](ConvertTo-Html.md)
-Converts Microsoft .NET Framework objects into HTML that can be displayed in a Web browser.
+Converts .NET objects into HTML that can be displayed in a Web browser.
 
 ### [ConvertTo-Json](ConvertTo-Json.md)
 Converts an object to a JSON-formatted string.
@@ -146,7 +146,7 @@ Displays the current call stack.
 Gets a random number, or selects objects randomly from a collection.
 
 ### [Get-Runspace](Get-Runspace.md)
-Gets active runspaces within a PowerShellhost process.
+Gets active runspaces within a PowerShell host process.
 
 ### [Get-RunspaceDebug](Get-RunspaceDebug.md)
 Shows runspace debugging options.
@@ -211,9 +211,6 @@ Measures the time it takes to run script blocks and cmdlets.
 ### [Measure-Object](Measure-Object.md)
 Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.
 
-### [Microsoft.PowerShell.Utility](Microsoft.PowerShell.Utility.md)
-This section contains the help topics for the cmdlets that are installed with the Microsoft.PowerShell.Utility module. This module contains cmdlets that manage the basic features of PowerShell.
-
 ### [New-Alias](New-Alias.md)
 Creates a new alias.
 
@@ -245,7 +242,7 @@ Sends output to an interactive table in a separate window.
 Sends output to a printer.
 
 ### [Out-String](Out-String.md)
-Sends objects to the host as a series of strings.
+Outputs input objects as a strings.
 
 ### [Read-Host](Read-Host.md)
 Reads a line of input from the console.
@@ -366,4 +363,3 @@ Writes text to the verbose message stream.
 
 ### [Write-Warning](Write-Warning.md)
 Writes a warning message.
-

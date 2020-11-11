@@ -1,6 +1,7 @@
 ---
 ms.date: 09/13/2019
 title: Creating Get-WinEvent queries with FilterHashtable
+description: This article how to use the FilterHashtable of Get-WinEvent to query the Windows Event logs.
 ---
 
 # Creating Get-WinEvent queries with FilterHashtable
@@ -116,9 +117,9 @@ Continue to build the hash table with the **ProviderName** key. The **ProviderNa
 that appears in the **Source** field in the **Windows Event Viewer**. For example, **.NET Runtime**
 in the following screenshot:
 
-![Image of Windows Event Viewer sources.](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
+![Image of Windows Event Viewer sources](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
-Update the hash table and include the **key-value** pair with the key, **ProviderName, and the
+Update the hash table and include the **key-value** pair with the key, **ProviderName**, and the
 value, **.NET Runtime**.
 
 ```powershell
@@ -153,7 +154,7 @@ Open the **Windows Event Viewer** and from the **Actions** pane, click on **Filt
 The **Keywords** drop-down menu displays the available keywords, as shown in the following
 screenshot:
 
-![Image of Windows Event Viewer keywords.](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
+![Image of Windows Event Viewer keywords](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
 
 Use the following command to display the `StandardEventKeywords` property names.
 
@@ -178,7 +179,7 @@ WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEv
 ```
 
 The enumerated values are documented in the **.NET Framework**. For more information, see
-[StandardEventKeywords Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2).
+[StandardEventKeywords Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords).
 
 The **Keywords** names and enumerated values are as follows:
 
@@ -267,7 +268,7 @@ Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 ```
 
 The enumerated values are documented in the **.NET Framework**. For more information, see
-[StandardEventLevel Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2).
+[StandardEventLevel Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel).
 
 The **Level** key's names and enumerated values are as follows:
 

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-uiculture?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -30,6 +30,7 @@ The culture determines the display format of items such as numbers, currency, an
 ## EXAMPLES
 
 ### Example 1: Get the UI culture
+
 ```
 PS C:\> Get-UICulture
 ```
@@ -37,6 +38,7 @@ PS C:\> Get-UICulture
 This command gets the current UI culture information.
 
 ### Example 2: Get the UI culture and format the results
+
 ```
 PS C:\> Get-UICulture | Format-List *
 ```
@@ -44,6 +46,7 @@ PS C:\> Get-UICulture | Format-List *
 This command displays the values of all of the properties of the current UI culture in a list.
 
 ### Example 3: Get the value of the Calendar property
+
 ```
 PS C:\> (Get-UICulture).Calendar
 ```
@@ -53,6 +56,7 @@ Calendar is just one property of UI culture.
 To see all of the properties, type `Get-UICulture | Get-Member`.
 
 ### Example 4: Get the short date pattern
+
 ```
 PS C:\> (Get-UICulture).DateTimeFormat.ShortDatePattern
 ```
@@ -78,6 +82,7 @@ In Windows PowerShell 3.0, it returns a **CultureInfo** object.
 In Windows PowerShell 2.0, it returns a **VistaCultureInfo** object.
 
 ## NOTES
+
 * You can also use the $PsCulture and $PsUICulture variables. The $PsCulture variable stores the name of the current culture, and the $PsUICulture variable stores the name of the current UI culture.
 
 *
@@ -85,5 +90,3 @@ In Windows PowerShell 2.0, it returns a **VistaCultureInfo** object.
 ## RELATED LINKS
 
 ## RELATED LINKS
-
-

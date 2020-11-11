@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC WindowsOptionalFeatureSet Resource
+description: DSC WindowsOptionalFeatureSet Resource
 ---
 # DSC WindowsOptionalFeatureSet Resource
 
@@ -14,13 +15,14 @@ for each feature specified in the **Name** property.
 
 Use this resource when you want to configure a number of Windows optional features to the same state.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax
 WindowsOptionalFeatureSet [string] #ResourceName
 {
     Name = [string[]]
-    [ Source = [string] ]
     [ RemoveFilesOnDisable = [bool] ]
     [ LogPath = [string] ]
     [ NoWindowsUpdateCheck = [bool] ]
@@ -36,7 +38,6 @@ WindowsOptionalFeatureSet [string] #ResourceName
 |Property |Description |
 |---|---|
 |Name |Indicates the name of the features that you want to ensure are enabled or disabled. |
-|Source |Not implemented. |
 |NoWindowsUpdateCheck |Specifies whether DISM contacts Windows Update (WU) when searching for the source files to enable features. If `$true`, DISM does not contact WU. |
 |RemoveFilesOnDisable |Set to `$true` to remove all files associated with the features when **Ensure** is set to **Absent**. |
 |LogLevel |The maximum output level shown in the logs. The accepted values are: **ErrorsOnly**, **ErrorsAndWarning**, and **ErrorsAndWarningAndInformation**. |

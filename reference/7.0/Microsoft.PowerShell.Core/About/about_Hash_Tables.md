@@ -1,6 +1,7 @@
 ---
+description: Describes how to create, use, and sort hash tables in PowerShell.
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 11/28/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -284,7 +285,8 @@ $hash.Remove("Time")
 
 You can use all of the properties and methods of Hashtable objects in
 PowerShell, including Contains, Clear, Clone, and CopyTo. For more information
-about Hashtable objects, see "System.Collections.Hashtable" on MSDN.
+about Hashtable objects, see
+[System.Collections.Hashtable](/dotnet/api/system.collections.hashtable).
 
 ### Object Types in HashTables
 
@@ -292,14 +294,14 @@ The keys and values in a hash table can have any .NET object type, and a
 single hash table can have keys and values of multiple types.
 
 The following statement creates a hash table of process name strings and
-process object values and saves it in the \$p variable.
+process object values and saves it in the `$p` variable.
 
 ```powershell
 $p = @{"PowerShell" = (Get-Process PowerShell);
 "Notepad" = (Get-Process notepad)}
 ```
 
-You can display the hash table in \$p and use the key-name properties to
+You can display the hash table in `$p` and use the key-name properties to
 display the values.
 
 ```powershell
@@ -322,7 +324,7 @@ C:\PS> $p.keys | foreach {$p.$_.handles}
 ```
 
 The keys in a hash table can also be any .NET type. The following statement
-adds a key/value pair to the hash table in the \$p variable. The key is a
+adds a key/value pair to the hash table in the `$p` variable. The key is a
 Service object that represents the WinRM service, and the value is the current
 status of the service.
 
@@ -355,7 +357,7 @@ winrm
 ```
 
 The keys and values in a hash table can also be Hashtable objects. The
-following statement adds key/value pair to the hash table in the \$p variable
+following statement adds key/value pair to the hash table in the `$p` variable
 in which the key is a string, Hash2, and the value is a hash table with three
 key/value pairs.
 
@@ -397,7 +399,7 @@ hash tables to enumerate the keys and values, and then use the Sort-Object
 cmdlet to sort the enumerated values for display.
 
 For example, the following commands enumerate the keys and values in the hash
-table in the \$p variable and then sort the keys in alphabetical order.
+table in the `$p` variable and then sort the keys in alphabetical order.
 
 ```powershell
 C:\PS> $p.GetEnumerator() | Sort-Object -Property key
@@ -494,8 +496,8 @@ For more information about here-strings, see [about_Quoting_Rules](about_Quoting
 
 [about_Script_Internationalization](about_Script_Internationalization.md)
 
-[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
+[ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
 
-[Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
+[Import-LocalizedData](xref:Microsoft.PowerShell.Utility.Import-LocalizedData)
 
 [System.Collections.Hashtable](/dotnet/api/system.collections.hashtable)

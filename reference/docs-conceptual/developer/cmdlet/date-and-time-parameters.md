@@ -1,13 +1,8 @@
 ---
-title: "Date and Time Parameters | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 71da921b-7c32-4155-b2f8-b19f30ec774d
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: Date and Time Parameters
+description: Date and Time Parameters
 ---
 # Date and Time Parameters
 

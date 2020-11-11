@@ -1,8 +1,9 @@
 ---
+description: Describes the operators that are supported by PowerShell.
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 08/28/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.x&WT.mc_id=ps-gethelp
+Locale: en-US
+ms.date: 10/28/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
 ---
@@ -28,7 +29,11 @@ returns the specified number of copies of each element. You can use arithmetic
 operators on any .NET type that implements them, such as: `Int`, `String`,
 `DateTime`, `Hashtable`, and Arrays.
 
-For more information, see [about_Arithmetic_Operators](about_Arithmetic_Operators.md).
+Bitwise operators (`-band`, `-bor`, `-bxor`, `-bnot`, `-shl`, `-shr`)
+manipulate the bit patterns in values.
+
+For more information, see
+[about_Arithmetic_Operators](about_Arithmetic_Operators.md).
 
 ### Assignment Operators
 
@@ -36,7 +41,8 @@ Use assignment operators (`=`, `+=`, `-=`, `*=`, `/=`, `%=`) to assign, change,
 or append values to variables. You can combine arithmetic operators with
 assignment to assign the result of the arithmetic operation to a variable.
 
-For more information, see [about_Assignment_Operators](about_Assignment_Operators.md).
+For more information, see
+[about_Assignment_Operators](about_Assignment_Operators.md).
 
 ### Comparison Operators
 
@@ -54,10 +60,8 @@ reference set (`-in`, `-notin`, `-contains`, `-notcontains`).
 Type comparison operators (`-is`, `-isnot`) determine whether an object is of a
 given type.
 
-Bitwise comparison operators (`-bAND`, `-bOR`, `-bXOR`, `-bNOT`) manipulate the
-bit patterns in values.
-
-For more information, see [about_Comparison_Operators](about_Comparison_Operators.md).
+For more information, see
+[about_Comparison_Operators](about_Comparison_Operators.md).
 
 ### Logical Operators
 
@@ -113,7 +117,8 @@ expressions. For example: `(1 + 2) / 3`
 
 However, in PowerShell, there are additional behaviors.
 
-- `(...)` allows you to let output from a _command_ participate in an expression. For example:
+- `(...)` allows you to let output from a _command_ participate in an
+  expression. For example:
 
   ```powershell
   PS> (Get-Item *.txt).Count -gt 10
@@ -122,7 +127,7 @@ However, in PowerShell, there are additional behaviors.
 
 - When used as the first segment of a pipeline, wrapping a command or
   expression in parentheses invariably causes _enumeration_ of the expression
-  result. if the parentheses wrap a _command_, it is run to completion with all
+  result. If the parentheses wrap a _command_, it is run to completion with all
   output _collected in memory_ before the results are sent through the
   pipeline.
 
@@ -150,12 +155,17 @@ item, the array has only one member.
 @(Get-CimInstance win32_logicalDisk)
 ```
 
+#### Hash table literal syntax `@{}`
+
+Similar to the array subexpression, this syntax is used to declare a hash table.
+For more information, see [about_Hash_Tables](about_Hash_Tables.md).
+
 #### Call operator `&`
 
 Runs a command, script, or script block. The call operator, also known as the
-"invocation operator," lets you run commands that are stored in variables and
+"invocation operator", lets you run commands that are stored in variables and
 represented by strings or script blocks. The call operator executes in a child
-scope. For more about scopes, see [about_scopes](about_scopes.md).
+scope. For more about scopes, see [about_Scopes](about_Scopes.md).
 
 This example stores a command in a string and executes it using the call
 operator.
@@ -180,24 +190,19 @@ PS> & $c
 cmdlet, function, script file, or operable program. Check the spelling of
 the name, or if a path was included, verify that the path is correct and
 try again.
-At line:1 char:2
-+ &$c
-+  ~~
-    + CategoryInfo          : ObjectNotFound: (Get-Service -Name Spooler:String) [], CommandNotFoundException
-    + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-The [Invoke-Expression](../../Microsoft.PowerShell.Utility/Invoke-Expression.md)
+The [Invoke-Expression](xref:Microsoft.PowerShell.Utility.Invoke-Expression)
 cmdlet can execute code that causes parsing errors when using the call
 operator.
 
 ```
-PS> &"1+1"
+PS> & "1+1"
 & : The term '1+1' is not recognized as the name of a cmdlet, function, script
 file, or operable program. Check the spelling of the name, or if a path was
 included, verify that the path is correct and try again.
 At line:1 char:2
-+ &"1+1"
++ & "1+1"
 +  ~~~~~
     + CategoryInfo          : ObjectNotFound: (1+1:String) [], CommandNotFoundException
     + FullyQualifiedErrorId : CommandNotFoundException
@@ -223,7 +228,7 @@ Mode                LastWriteTime         Length Name
 
 PS C:\Scripts> ".\script name with spaces.ps1"
 .\script name with spaces.ps1
-PS C:\Scripts> &".\script name with spaces.ps1"
+PS C:\Scripts> & ".\script name with spaces.ps1"
 Hello World!
 ```
 
@@ -233,7 +238,7 @@ For more about script blocks, see [about_Script_Blocks](about_Script_Blocks.md).
 
 Runs the pipeline before it in the background, in a PowerShell job. This
 operator acts similarly to the UNIX control operator ampersand (`&`), which
-runs the command before it asynchronously in sub shell as a job.
+runs the command before it asynchronously in subshell as a job.
 
 This operator is functionally equivalent to `Start-Job`. By default, the
 background operator starts the jobs in the current working directory of the
@@ -270,7 +275,6 @@ Receive-Job $job -Wait
 ```
 
 ```powershell
-$job = Get-Process -Name pwsh &
 Remove-Job $job
 ```
 
@@ -303,6 +307,10 @@ Receive-Job $job -Wait
 If you want to run multiple commands, each in their own background process but
 all on one line, simply place `&` between and after each of the commands.
 
+```powershell
+Get-Process -Name pwsh & Get-Service -Name BITS & Get-CimInstance -ClassName Win32_ComputerSystem &
+```
+
 For more information on PowerShell jobs, see [about_Jobs](about_Jobs.md).
 
 #### Cast operator `[ ]`
@@ -311,40 +319,53 @@ Converts or limits objects to the specified type. If the objects cannot be
 converted, PowerShell generates an error.
 
 ```powershell
-[datetime]$birthday = "1/20/88"
-[int64]$a = 34
+[DateTime]"2/20/88" - [DateTime]"1/20/88"
+[Int] (7/2)
+[String] 1 + 0
+[Int] '1' + 0
 ```
+
+A cast can also be performed when a variable is assigned to using
+[cast notation](about_Variables.md).
 
 #### Comma operator `,`
 
-As a binary operator, the comma creates an array. As a unary operator, the
-comma creates an array with one member. Place the comma before the member.
+As a binary operator, the comma creates an array or appends to the array being
+created. In expression mode, as a unary operator, the comma creates an array
+with just one member. Place the comma before the member.
 
 ```powershell
 $myArray = 1,2,3
 $SingleArray = ,1
+Write-Output (,1)
 ```
+
+Since `Write-Object` expects an argument, you must put the expression in
+parentheses.
 
 #### Dot sourcing operator `.`
 
 Runs a script in the current scope so that any functions, aliases, and
-variables that the script creates are added to the current scope.
+variables that the script creates are added to the current scope, overriding
+existing ones. Parameters declared by the script become variables. Parameters
+for which no value has been given become variables with no value. However, the
+automatic variable `$args` is preserved.
 
 ```powershell
-. c:\scripts\sample.ps1
+. c:\scripts\sample.ps1 1 2 -Also:3
 ```
 
 > [!NOTE]
 > The dot sourcing operator is followed by a space. Use the space to
 > distinguish the dot from the dot (`.`) symbol that represents the current
 > directory.
-
-In the following example, the Sample.ps1 script in the current directory is run
-in the current scope.
-
-```powershell
-. .\sample.ps1
-```
+>
+> In the following example, the Sample.ps1 script in the current directory is
+> run in the current scope.
+>
+> ```powershell
+> . .\sample.ps1
+> ```
 
 #### Format operator `-f`
 
@@ -358,6 +379,17 @@ right side of the operator.
 
 ```output
 1 hello      3.14
+```
+
+If you need to keep the curly braces (`{}`) in the formatted string, you can
+escape them by doubling the curly braces.
+
+```powershell
+"{0} vs. {{0}}" -f 'foo'
+```
+
+```Output
+foo vs. {0}
 ```
 
 For more information, see the [String.Format](/dotnet/api/system.string.format)
@@ -410,7 +442,7 @@ pipeline operator sends the objects one at a time.
 
 ```powershell
 Get-Process | Get-Member
-Get-PSSnapin | Where-Object {$_.vendor -ne "Microsoft"}
+Get-Service | Where-Object {$_.StartType -eq 'Automatic'}
 ```
 
 #### Pipeline chain operators `&&` and `||`
@@ -438,8 +470,14 @@ lower boundary.
 
 ```powershell
 1..10
-10..1
 foreach ($a in 1..$max) {Write-Host $a}
+```
+
+You can also create ranges in reverse order.
+
+```powershell
+10..1
+5..-5 | ForEach-Object {Write-Output $_}
 ```
 
 Beginning in PowerShell 6, the range operator works with **Characters** as
@@ -457,9 +495,6 @@ e
 f
 ```
 
-You can also create ranges in reverse order. PowerShell matches the case of
-the boundary characters automatically.
-
 ```powershell
 PS> 'F'..'A'
 F
@@ -472,21 +507,24 @@ A
 
 #### Member access operator `.`
 
-Accesses the properties and methods of an object.
+Accesses the properties and methods of an object. The member name may be an
+expression.
 
 ```powershell
 $myProcess.peakWorkingSet
 (Get-Process PowerShell).kill()
+'OS', 'Platform' | Foreach-Object { $PSVersionTable. $_ }
 ```
 
 #### Static member operator `::`
 
-Calls the static properties operator and methods of a .NET Framework class. To
+Calls the static properties and methods of a .NET Framework class. To
 find the static properties and methods of an object, use the Static parameter
-of the `Get-Member` cmdlet.
+of the `Get-Member` cmdlet.  The member name may be an expression.
 
 ```powershell
-[datetime]::now
+[datetime]::Now
+'MinValue', 'MaxValue' | Foreach-Object { [int]:: $_ }
 ```
 
 #### Ternary operator `? <if-true> : <if-false>`
@@ -498,9 +536,10 @@ For more information, see [about_If](about_If.md).
 
 #### Null-coalescing operator `??`
 
-The null-coalescing operator `??` returns the value of its left-hand operand if it isn't null.
-Otherwise, it evaluates the right-hand operand and returns its result. The `??` operator doesn't
-evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+The null-coalescing operator `??` returns the value of its left-hand operand if
+it isn't null. Otherwise, it evaluates the right-hand operand and returns its
+result. The `??` operator doesn't evaluate its right-hand operand if the
+left-hand operand evaluates to non-null.
 
 ```powershell
 $x = $null
@@ -524,9 +563,10 @@ $todaysDate ?? (Get-Date).ToShortDateString()
 
 #### Null-coalescing assignment operator `??=`
 
-The null-coalescing assignment operator `??=` assigns the value of its right-hand operand to its
-left-hand operand only if the left-hand operand evaluates to null. The `??=` operator doesn't
-evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+The null-coalescing assignment operator `??=` assigns the value of its
+right-hand operand to its left-hand operand only if the left-hand operand
+evaluates to null. The `??=` operator doesn't evaluate its right-hand operand
+if the left-hand operand evaluates to non-null.
 
 ```powershell
 $x = $null
@@ -552,15 +592,16 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 #### Null-conditional operators `?.` and `?[]`
 
 > [!NOTE]
-> This is an experimental feature. For more information see
-> [about_Experimental_Features](about_Experimental_Features.md).
+> This feature was moved from experimental to mainstream in PowerShell 7.1.
 
-A null-conditional operator applies a member access, `?.`, or element access, `?[]`, operation to
-its operand only if that operand evaluates to non-null; otherwise, it returns null.
+A null-conditional operator applies a member access, `?.`, or element access,
+`?[]`, operation to its operand only if that operand evaluates to non-null;
+otherwise, it returns null.
 
-Since PowerShell allows `?` to be part of the variable name, formal specification of the variable
-name is required for using these operators. So it is required to use `{}` around the variable names
-like `${a}` or when `?` is part of the variable name `${a?}`.
+Since PowerShell allows `?` to be part of the variable name, formal
+specification of the variable name is required for using these operators. So it
+is required to use `{}` around the variable names like `${a}` or when `?` is
+part of the variable name `${a?}`.
 
 In the following example, the value of **PropName** is returned.
 
@@ -573,7 +614,8 @@ ${a}?.PropName
 100
 ```
 
-The following example will return null, without trying to access the member name **PropName**.
+The following example will return null, without trying to access the member
+name **PropName**.
 
 ```powershell
 $a = $null
@@ -598,6 +640,16 @@ $a = $null
 ${a}?[0]
 ```
 
+> [!NOTE]
+> Since PowerShell allows `?` to be part of the variable name, formal
+> specification of the variable name is required for using these operators. So
+> it is required to use `{}` around the variable names like `${a}` or when `?`
+> is part of the variable name `${a?}`.
+>
+> The variable name syntax of `${<name>}` should not be confused with the `$()`
+> subexpression operator. For more information, see Variable name section of
+> [about_Variables](about_Variables.md#Variable-names-that-include-special-characters).
+
 ## See also
 
 [about_Arithmetic_Operators](about_Arithmetic_Operators.md)
@@ -607,6 +659,8 @@ ${a}?[0]
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Logical_Operators](about_logical_operators.md)
+
+[about_Operator_Precedence](about_operator_precedence.md)
 
 [about_Type_Operators](about_Type_Operators.md)
 

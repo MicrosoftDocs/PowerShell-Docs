@@ -1,13 +1,8 @@
 ---
-title: "How to Write a PowerShell Script Module | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/21/2019"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ed7645ea-5e52-4a45-81a7-aa3c2d605cde
-caps.latest.revision: 16
+ms.date: 11/21/2019
+ms.topic: reference
+title: How to Write a PowerShell Script Module
+description: How to Write a PowerShell Script Module
 ---
 
 # How to Write a PowerShell Script Module

@@ -1,8 +1,7 @@
 ---
 ms.date:  09/26/2017
-contributor:  keithb
-keywords:  gallery,powershell,cmdlet,psget
 title:  Prerelease Module Versions
+description: The PowerShellGet module provides support for tagging modules with versions greater than 1.0.0 as a prerelease using semantic versioning.
 ---
 # Prerelease Module Versions
 

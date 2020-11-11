@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC Group Resource
+description: DSC Group Resource
 ---
 # DSC Group Resource
 
@@ -9,6 +10,8 @@ title: DSC Group Resource
 
 The **Group** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism
 to manage local groups on the target node.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 

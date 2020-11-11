@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-tracesource?view=powershell-6&WT.mc_id=ps-gethelp
@@ -69,7 +69,7 @@ You can view the output in any user-mode or kernel mode debugger or in Microsoft
 This parameter also selects the default trace listener.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: optionsSet
 Aliases:
 
@@ -87,7 +87,7 @@ This parameter also selects the file trace listener.
 If you use this parameter to start the trace, use the *RemoveFileListener* parameter to stop the trace.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: optionsSet
 Aliases: PSPath, Path
 
@@ -104,7 +104,7 @@ Indicates that the cmdlet overwrites a read-only file.
 Use with the *FilePath* parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: optionsSet
 Aliases:
 
@@ -133,7 +133,7 @@ None is the default.
 To specify multiple options, separate them with commas, but with no spaces, and enclose them in quotation marks, such as "ProcessID,ThreadID".
 
 ```yaml
-Type: TraceOptions
+Type: System.Diagnostics.TraceOptions
 Parameter Sets: optionsSet
 Aliases:
 Accepted values: None, LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack
@@ -152,7 +152,7 @@ Enter the name of the trace source of each component.
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -200,7 +200,7 @@ The following values are combinations of other values:
 To specify multiple options, separate them with commas, but with no spaces, and enclose them in quotation marks, such as "Constructor,Dispose".
 
 ```yaml
-Type: PSTraceSourceOptions
+Type: System.Management.Automation.PSTraceSourceOptions
 Parameter Sets: optionsSet
 Aliases:
 Accepted values: None, Constructor, Dispose, Finalizer, Method, Property, Delegates, Events, Exception, Lock, Error, Errors, Warning, Verbose, WriteLine, Data, Scope, ExecutionFlow, Assert, All
@@ -218,7 +218,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: optionsSet
 Aliases:
 
@@ -235,7 +235,7 @@ ndicates that this cmdlet sends the trace output to the PowerShell host.
 This parameter also selects the PSHost trace listener.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: optionsSet
 Aliases:
 
@@ -252,7 +252,7 @@ Stops the trace by removing the file trace listener associated with the specifie
 Enter the path and file name of the trace output file.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: removeFileListenersSet
 Aliases:
 
@@ -276,7 +276,7 @@ Use the following values with *RemoveListener*:
 To remove the file trace listener, use the *RemoveFileListener* parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: removeAllListenersSet
 Aliases:
 

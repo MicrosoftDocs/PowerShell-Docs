@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 3/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -44,6 +44,10 @@ events that match the specified property values.
 PowerShell cmdlets that contain the `EventLog` noun work only on Windows classic event logs such as
 Application, System, or Security. To get logs that use the Windows Event Log technology in Windows
 Vista and later Windows versions, use `Get-WinEvent`.
+
+> [!NOTE]
+> `Get-EventLog` uses a Win32 API that is deprecated. The results may not be accurate. Use the 
+> `Get-WinEvent` cmdlet instead.
 
 ## EXAMPLES
 
@@ -308,7 +312,7 @@ excluded from the output. Enter a **DateTime** object, such as the value returne
 cmdlet.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: LogName
 Aliases:
 
@@ -329,7 +333,7 @@ To see the effect of this parameter, pipe the events to the `Get-Member` cmdlet 
 **TypeName** value in the result.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: LogName
 Aliases:
 
@@ -345,7 +349,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet returns the output as strings, instead of objects.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
 Aliases:
 
@@ -363,7 +367,7 @@ are excluded from the output. Enter a **DateTime** object, such as the value ret
 `Get-Date` cmdlet.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: LogName
 Aliases:
 
@@ -387,7 +391,7 @@ The **ComputerName** parameter doesn't rely on Windows PowerShell remoting. You 
 remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Cn
 
@@ -411,7 +415,7 @@ The acceptable values for this parameter are:
 - Warning
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LogName
 Aliases: ET
 Accepted values: Error, Information, FailureAudit, SuccessAudit, Warning
@@ -429,7 +433,7 @@ Specifies the index values to get from the event log. The parameter accepts a co
 of values.
 
 ```yaml
-Type: int[]
+Type: System.Int32[]
 Parameter Sets: LogName
 Aliases:
 
@@ -446,7 +450,7 @@ Specifies the Instance IDs to get from the event log. The parameter accepts a co
 of values.
 
 ```yaml
-Type: long[]
+Type: System.Int64[]
 Parameter Sets: LogName
 Aliases:
 
@@ -462,7 +466,7 @@ Accept wildcard characters: False
 Displays the list of event logs on the computer.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
 Aliases:
 
@@ -479,7 +483,7 @@ Specifies the name of one event log. To find the log names use `Get-EventLog -Li
 characters are permitted. This parameter is required.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: LogName
 Aliases: LN
 
@@ -496,7 +500,7 @@ Specifies a string in the event message. You can use this parameter to search fo
 contain certain words or phrases. Wildcards are permitted.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: LogName
 Aliases: MSG
 
@@ -513,7 +517,7 @@ Begins with the newest events and gets the specified number of events. The numbe
 required, for example `-Newest 100`. Specifies the maximum number of events that are returned.
 
 ```yaml
-Type: Int
+Type: System.Int32
 Parameter Sets: LogName
 Aliases:
 
@@ -530,7 +534,7 @@ Specifies, as a string array, sources that were written to the log that this cmd
 are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LogName
 Aliases: ABO
 
@@ -547,7 +551,7 @@ Specifies, as a string array, user names that are associated with events. Enter 
 patterns, such as `User01`, `User*`, or `Domain01\User*`. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LogName
 Aliases:
 

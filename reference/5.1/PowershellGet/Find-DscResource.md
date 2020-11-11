@@ -1,7 +1,7 @@
 ---
 external help file: PSModule-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PowerShellGet
 ms.date: 06/04/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-dscresource?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -165,7 +165,7 @@ dmAwsTagInstance        1.0.1      domainAwsDSCResources      PSGallery
 Includes resources marked as a prerelease in the results.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -183,7 +183,7 @@ the **AllVersions** parameter with the **MinimumVersion**, **MaximumVersion**, o
 **RequiredVersion** parameters.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -200,7 +200,7 @@ Finds resources based on the **PackageManagement** provider's search syntax. For
 words to search for within the **ModuleName** and **Description** properties.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -217,7 +217,7 @@ Specifies the maximum version of the resource to include in results. The **Maxim
 **RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -234,7 +234,7 @@ Specifies the minimum version of the resource to include in results. The **Minim
 **RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -250,7 +250,7 @@ Accept wildcard characters: False
 Specifies a module that contains the DSC resource.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -267,7 +267,7 @@ Specifies the name of a resource. The default is all resources. Use commas to se
 resource names.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -283,7 +283,7 @@ Accept wildcard characters: False
 Specifies a proxy server for the request, rather than a direct connection to the internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -300,7 +300,7 @@ Specifies a user account with permission to use the proxy server specified in th
 parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -316,7 +316,7 @@ Accept wildcard characters: False
 Specifies a repository to search for resources. Use commas to separate an array of repository names.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -333,7 +333,7 @@ Specifies the module's exact version number to include in the results. The **Req
 the **MinimumVersion** parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -349,7 +349,7 @@ Accept wildcard characters: False
 Specifies tags that categorize modules in a repository. Use commas to separate an array of tags.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

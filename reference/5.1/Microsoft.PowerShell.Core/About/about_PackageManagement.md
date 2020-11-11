@@ -1,16 +1,15 @@
 ---
+description: PackageManagement is an aggregator for software package managers. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 11/30/2017
+Locale: en-US
+ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_packagemanagement?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PackageManagement
 ---
-
 # About PackageManagement
 
 ## SHORT DESCRIPTION
-
 PackageManagement is an aggregator for software package managers.
 
 ## LONG DESCRIPTION
@@ -29,9 +28,9 @@ PackageManagement supports a flexible plug-in model that enables support for
 other software package management systems.
 
 The PackageManagement module is included with Windows PowerShell 5.0 and later
-releases of Windows PowerShell, and works on three levels of package
-management structure: package providers, package sources, and the packages
-themselves. Let us define some terms:
+releases of PowerShell, and works on three levels of package management
+structure: package providers, package sources, and the packages themselves. Let
+us define some terms:
 
 - Package manager: Software package management system. In PackageManagement
   terms, this is a package provider.
@@ -43,8 +42,7 @@ themselves. Let us define some terms:
   stored in a specific package source.
 
 The PackageManagement module includes the following cmdlets. For more
-information, see the
-[PackageManagement](/powershell/scripting/gallery/psget/oneget/packagemanagement_cmdlets)
+information, see the [PackageManagement](/powershell/module/packagemanagement)
 help.
 
 - `Get-PackageProvider`: Returns a list of package providers that are
@@ -107,22 +105,22 @@ PackageManagement project on GitHub at https://oneget.org.
 
 ## SEE ALSO
 
-[Get-PackageProvider](../../PackageManagement/Get-PackageProvider.md)
+[Get-PackageProvider](xref:PackageManagement.Get-PackageProvider)
 
-[Get-PackageSource](../../PackageManagement/Get-PackageSource.md)
+[Get-PackageSource](xref:PackageManagement.Get-PackageSource)
 
-[Register-PackageSource](../../PackageManagement/Register-PackageSource.md)
+[Register-PackageSource](xref:PackageManagement.Register-PackageSource)
 
-[Set-PackageSource](../../PackageManagement/Set-PackageSource.md)
+[Set-PackageSource](xref:PackageManagement.Set-PackageSource)
 
-[Unregister-PackageSource](../../PackageManagement/Unregister-PackageSource.md)
+[Unregister-PackageSource](xref:PackageManagement.Unregister-PackageSource)
 
-[Get-Package](../../PackageManagement/Get-Package.md)
+[Get-Package](xref:PackageManagement.Get-Package)
 
-[Find-Package](../../PackageManagement/Find-Package.md)
+[Find-Package](xref:PackageManagement.Find-Package)
 
-[Install-Package](../../PackageManagement/Install-Package.md)
+[Install-Package](xref:PackageManagement.Install-Package)
 
-[Save-Package](../../PackageManagement/Save-Package.md)
+[Save-Package](xref:PackageManagement.Save-Package)
 
-[Uninstall-Package](../../PackageManagement/Uninstall-Package.md)
+[Uninstall-Package](xref:PackageManagement.Uninstall-Package)

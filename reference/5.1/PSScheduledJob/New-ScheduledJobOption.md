@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/new-scheduledjoboption?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -45,6 +45,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Create a scheduled job option object with default values
+
 ```
 PS C:\> New-ScheduledJobOption
 StartIfOnBatteries     : False
@@ -66,6 +67,7 @@ NewJobDefinition       :
 This command creates a scheduled job option object that has all of the default values.
 
 ### Example 2: Create a scheduled job option object with custom values
+
 ```
 PS C:\> New-ScheduledJobOption -RequireNetwork -StartIfOnBattery
 StartIfOnBatteries     : True
@@ -89,6 +91,7 @@ The following command creates a scheduled job object that requires the network a
 The output shows that the *RequireNetwork* parameter changed the value of the RunWithoutNetwork property to $False and the *StartIfOnBattery* parameter changed the value of the StartIfOnBatteries property to $True.
 
 ### Example 3: Set options for a new scheduled job
+
 ```
 The first command creates a **ScheduledJobOptions** object with the *RunElevated* parameter. It saves the object in the $RunAsAdmin variable.
 PS C:\> $RunAsAdmin = New-ScheduledJobOption -RunElevated
@@ -117,6 +120,7 @@ JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinitio
 This example shows how to use the **ScheduledJobOptions** object that **New-ScheduledJobOption** returns to set the options for a new scheduled job.
 
 ### Example 4: Sort the properties of a scheduled job option object
+
 ```
 PS C:\> $Options = New-ScheduledJobOption -WakeToRun
 PS C:\> $Options.PSObject.Properties | Sort-Object -Property Name | Format-Table -Property Name, Value -Autosize
@@ -157,7 +161,7 @@ By default, scheduled jobs stop when the computer disconnects from AC power.
 The *ContinueIfGoingOnBattery* parameter sets the value of the StopIfGoingOnBatteries property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -178,7 +182,7 @@ It does not prevents users from using the Start-Job cmdlet to start the job.
 The *DoNotAllowDemandStart* parameter sets the value of the DoNotAllowDemandStart property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -199,7 +203,7 @@ Even if a task is hidden, users can display the task by selecting the Show hidde
 The *HideInTaskScheduler* parameter sets the value of the ShowInTaskScheduler property of scheduled jobs to $False.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -221,7 +225,7 @@ To enable this value, use the *StartIfIdle* parameter.
 By default, the StartIfNotIdle property of scheduled jobs is set to $True and Windows PowerShell ignores the *IdleDuration* and *IdleTimeout* values.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: (All)
 Aliases:
 
@@ -243,7 +247,7 @@ To enable this value, use the *StartIfIdle* parameter.
 By default, the StartIfNotIdle property of scheduled jobs is set to $True and Windows PowerShell ignores the *IdleDuration* and *IdleTimeout* values.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: (All)
 Aliases:
 
@@ -272,7 +276,7 @@ To run the job, all conditions for the job schedule must be met.
 For example, if the conditions that are set by the *RequireNetwork*, *IdleDuration*, and *IdleTimeout* parameters are not satisfied, the job instance is not started, regardless of the value of this parameter.
 
 ```yaml
-Type: TaskMultipleInstancePolicy
+Type: Microsoft.PowerShell.ScheduledJob.TaskMultipleInstancePolicy
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, IgnoreNew, Parallel, Queue, StopExisting
@@ -292,7 +296,7 @@ If you specify this parameter and the network is not available at the scheduled 
 The *RequireNetwork* parameter sets the value of the RunWithoutNetwork property of scheduled jobs to $False.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -310,7 +314,7 @@ This parameter works with the *StopIfGoingOffIdle* parameter, which suspends a r
 The *RestartOnIdleResume* parameter sets the value of the RestartOnIdleResume property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -329,7 +333,7 @@ To enable a scheduled job to run with Administrator permissions, use the *Creden
 The *RunElevated* parameter sets the value of the RunElevated property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -350,7 +354,7 @@ If you specify this parameter and the computer is busy (not idle) at the schedul
 The *StartIfIdle* parameter sets the value of the StartIfNotIdle property of scheduled jobs to $False.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -368,7 +372,7 @@ The default value is $False.
 The *StartIfOnBattery* parameter sets the value of the StartIfOnBatteries property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -388,7 +392,7 @@ To change this default behavior, use the *RestartOnIdleResume* parameter.
 The *StopIfGoingOffIdle* parameter sets the value of the StopIfGoingOffIdle property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -406,7 +410,7 @@ By default, if the computer is in a Hibernate or Sleep state at the scheduled st
 The *WakeToRun* parameter sets the value of the WakeToRun property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -430,6 +434,7 @@ You cannot pipe input to this cmdlet.
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 
 ## NOTES
+
 * You can use the **ScheduledJobOptions** object that **New-ScheduledJobOption** creates as the value of the *ScheduledJobOption* parameter of the Register-ScheduledJob cmdlet. However, the *ScheduledJobOption* parameter can also take a hash table value that specifies the properties of the **ScheduledJobOptions** object and their values, such as:
 
   `@{ShowInTaskScheduler=$False; RunElevated=$True; IdleDuration="00:05"}`
@@ -467,5 +472,3 @@ You cannot pipe input to this cmdlet.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

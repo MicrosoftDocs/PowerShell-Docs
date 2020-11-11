@@ -1,7 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Management
 ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-path?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -32,11 +33,11 @@ Test-Path -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exc
 
 ## DESCRIPTION
 
-The `Test-Path` cmdlet determines whether all elements of the path exist.
-It returns `$True` if all elements exist and `$False` if any are missing.
-It can also tell whether the path syntax is valid and whether the path leads to a container or a terminal or leaf element.
-If the `Path` is whitespace, then `$False` is returned.
-If the `Path` is an empty string, `$null`, array of `$null` or empty array, a non-terminating error is returned.
+The `Test-Path` cmdlet determines whether all elements of the path exist. It returns `$True` if all
+elements exist and `$False` if any are missing. It can also tell whether the path syntax is valid
+and whether the path leads to a container or a terminal or leaf element. If the `Path` is
+whitespace, then `$False` is returned. If the `Path` is an empty string, `$null`, array of `$null`
+or empty array, a non-terminating error is returned.
 
 ## EXAMPLES
 
@@ -50,8 +51,8 @@ Test-Path -Path "C:\Documents and Settings\DavidC"
 True
 ```
 
-This command checks whether all elements in the path exist, that is, the C: directory, the Documents and Settings directory, and the DavidC directory.
-If any are missing, the cmdlet returns `$False`.
+This command checks whether all elements in the path exist, that is, the C: directory, the Documents
+and Settings directory, and the DavidC directory. If any are missing, the cmdlet returns `$False`.
 Otherwise, it returns `$True`.
 
 ### Example 2: Test the path of a profile
@@ -74,10 +75,10 @@ True
 
 These commands test the path of the PowerShell profile.
 
-The first command determines whether all elements in the path exist.
-The second command determines whether the syntax of the path is correct.
-In this case, the path is `$False`, but the syntax is correct `$True`.
-These commands use `$profile`, the automatic variable that points to the location for the profile, even if the profile does not exist.
+The first command determines whether all elements in the path exist. The second command determines
+whether the syntax of the path is correct. In this case, the path is `$False`, but the syntax is
+correct `$True`. These commands use `$profile`, the automatic variable that points to the location
+for the profile, even if the profile does not exist.
 
 For more information about automatic variables, see about_Automatic_Variables.
 
@@ -91,14 +92,16 @@ Test-Path -Path "C:\CAD\Commercial Buildings\*" -Exclude *.dwg
 False
 ```
 
-This command checks whether there are any files in the Commercial Buildings directory other than .dwg files.
+This command checks whether there are any files in the Commercial Buildings directory other than
+.dwg files.
 
-The command uses the **Path** parameter to specify the path.
-Because the path includes a space, the path is enclosed in quotation marks.
-The asterisk at the end of the path indicates the contents of the Commercial Building directory.
-With long paths, such as this one, type the first few letters of the path, and then use the TAB key to complete the path.
+The command uses the **Path** parameter to specify the path. Because the path includes a space, the
+path is enclosed in quotation marks. The asterisk at the end of the path indicates the contents of
+the Commercial Building directory. With long paths, such as this one, type the first few letters of
+the path, and then use the TAB key to complete the path.
 
-The command specifies the **Exclude** parameter to specify files that will be omitted from the evaluation.
+The command specifies the **Exclude** parameter to specify files that will be omitted from the
+evaluation.
 
 In this case, because the directory contains only .dwg files, the result is `$False`.
 
@@ -112,19 +115,20 @@ Test-Path -Path $profile -PathType leaf
 True
 ```
 
-This command checks whether the path stored in the `$profile` variable leads to a file.
-In this case, because the PowerShell profile is a `.ps1` file, the cmdlet returns `$True`.
+This command checks whether the path stored in the `$profile` variable leads to a file. In this
+case, because the PowerShell profile is a `.ps1` file, the cmdlet returns `$True`.
 
 ### Example 5: Check paths in the Registry
 
 These commands use `Test-Path` with the PowerShell registry provider.
 
-The first command tests whether the registry path of the **Microsoft.PowerShell** registry key is correct on the system.
-If PowerShell is installed correctly, the cmdlet returns `$True`.
+The first command tests whether the registry path of the **Microsoft.PowerShell** registry key is
+correct on the system. If PowerShell is installed correctly, the cmdlet returns `$True`.
 
 > [!IMPORTANT]
-> `Test-Path` does not work correctly with all PowerShell providers.
-> For example, you can use `Test-Path` to test the path of a registry key, but if you use it to test the path of a registry entry, it always returns `$False`, even if the registry entry is present.
+> `Test-Path` does not work correctly with all PowerShell providers. For example, you can use
+> `Test-Path` to test the path of a registry key, but if you use it to test the path of a registry
+> entry, it always returns `$False`, even if the registry entry is present.
 
 ```powershell
 Test-Path -Path "HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell"
@@ -144,7 +148,8 @@ False
 
 ### Example 6: Test if a file is newer than a specified date
 
-This command uses the **NewerThan** dynamic parameter to determine whether the "PowerShell.exe" file on the computer is newer than "July 13, 2009".
+This command uses the **NewerThan** dynamic parameter to determine whether the "PowerShell.exe" file
+on the computer is newer than "July 13, 2009".
 
 The NewerThan parameter works only in file system drives.
 
@@ -158,9 +163,9 @@ True
 
 ### Example 7: Test a path with null as the value
 
-The error returned for `null`, array of `null` or empty array is a non-terminating error.
-It can be suppress by using `-ErrorAction SilentlyContinue`.
-The following example shows all cases which return the `NullPathNotPermitted` error.
+The error returned for `null`, array of `null` or empty array is a non-terminating error. It can be
+suppress by using `-ErrorAction SilentlyContinue`. The following example shows all cases which
+return the `NullPathNotPermitted` error.
 
 ```powershell
 Test-Path $null
@@ -203,12 +208,11 @@ At line:1 char:11
 ### -Credential
 
 > [!NOTE]
-> This parameter is not supported by any providers installed with PowerShell.
-> To impersonate another user, or elevate your credentials when running this cmdlet,
-> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
+> This parameter is not supported by any providers installed with PowerShell. To impersonate another
+> user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -221,13 +225,11 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Specifies items that this cmdlet omits.
-The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as "*.txt".
-Wildcard characters are permitted.
+Specifies items that this cmdlet omits. The value of this parameter qualifies the **Path**
+parameter. Enter a path element or pattern, such as "*.txt". Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -240,13 +242,14 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Specifies a filter in the format or language of the provider.
-The value of this parameter qualifies the **Path** parameter.
-The syntax of the filter, including the use of wildcard characters, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when it retrieves the objects instead of having PowerShell filter the objects after they are retrieved.
+Specifies a filter in the format or language of the provider. The value of this parameter qualifies
+the **Path** parameter. The syntax of the filter, including the use of wildcard characters, depends
+on the provider. Filters are more efficient than other parameters, because the provider applies them
+when it retrieves the objects instead of having PowerShell filter the objects after they are
+retrieved.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -259,13 +262,11 @@ Accept wildcard characters: True
 
 ### -Include
 
-Specifies paths that this cmdlet tests.
-The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as "*.txt".
-Wildcard characters are permitted.
+Specifies paths that this cmdlet tests. The value of this parameter qualifies the **Path**
+parameter. Enter a path element or pattern, such as "*.txt". Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -278,11 +279,11 @@ Accept wildcard characters: True
 
 ### -IsValid
 
-Indicates that this cmdlet tests the syntax of the path, regardless of whether the elements of the path exist.
-This cmdlet returns `$True` if the path syntax is valid and `$False` if it is not.
+Indicates that this cmdlet tests the syntax of the path, regardless of whether the elements of the
+path exist. This cmdlet returns `$True` if the path syntax is valid and `$False` if it is not.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -295,14 +296,13 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies a path to be tested.
-Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
-No characters are interpreted as wildcard characters.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+Specifies a path to be tested. Unlike **Path**, the value of the **LiteralPath** parameter is used
+exactly as it is typed. No characters are interpreted as wildcard characters. If the path includes
+characters that could be interpreted by PowerShell as escape sequences, you must enclose the path in
+single quote so that they won't be interpreted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath
 
@@ -318,7 +318,7 @@ Accept wildcard characters: False
 Specify a time as a **DateTime** object.
 
 ```yaml
-Type: DateTime
+Type: System.Nullable`1[System.DateTime]
 Parameter Sets: (All)
 Aliases:
 
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 Specify a time as a **DateTime** object.
 
 ```yaml
-Type: DateTime
+Type: System.Nullable`1[System.DateTime]
 Parameter Sets: (All)
 Aliases:
 
@@ -347,12 +347,11 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies a path to be tested.
-Wildcard characters are permitted.
-If the path includes spaces, enclose it in quotation marks.
+Specifies a path to be tested. Wildcard characters are permitted. If the path includes spaces,
+enclose it in quotation marks.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -365,9 +364,8 @@ Accept wildcard characters: True
 
 ### -PathType
 
-Specifies the type of the final element in the path.
-This cmdlet returns `$True` if the element is of the specified type and `$False` if it is not.
-The acceptable values for this parameter are:
+Specifies the type of the final element in the path. This cmdlet returns `$True` if the element is
+of the specified type and `$False` if it is not. The acceptable values for this parameter are:
 
 - Container.
   An element that contains other elements, such as a directory or registry key.
@@ -390,7 +388,7 @@ Tells whether the final element in the path is of a particular type.
 > confusion.
 
 ```yaml
-Type: TestPathType
+Type: Microsoft.PowerShell.Commands.TestPathType
 Parameter Sets: (All)
 Aliases: Type
 Accepted values: Any, Container, Leaf
@@ -404,12 +402,11 @@ Accept wildcard characters: False
 
 ### -UseTransaction
 
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
+Includes the command in the active transaction. This parameter is valid only when a transaction is
+in progress. For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 
@@ -422,7 +419,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
+`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
+`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -438,7 +437,11 @@ The cmdlet returns a **Boolean** value.
 
 ## NOTES
 
-The cmdlets that contain the **Path** noun (the **Path** cmdlets) work with path names and return the names in a concise format that all PowerShell providers can interpret. They are designed for use in programs and scripts where you want to display all or part of a path name in a particular format. Use them as you would use **Dirname**, **Normpath**, **Realpath**, **Join**, or other path manipulators.
+The cmdlets that contain the **Path** noun (the **Path** cmdlets) work with path names and return
+the names in a concise format that all PowerShell providers can interpret. They are designed for use
+in programs and scripts where you want to display all or part of a path name in a particular format.
+Use them as you would use **Dirname**, **Normpath**, **Realpath**, **Join**, or other path
+manipulators.
 
 The `Test-Path` is designed to work with the data exposed by any provider.
 To list the providers available in your session, type `Get-PSProvider`.

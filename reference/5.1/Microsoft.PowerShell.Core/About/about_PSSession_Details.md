@@ -1,6 +1,7 @@
 ---
+description:  Provides detailed information about Windows PowerShell sessions and the role they play in remote commands. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssession_details?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -141,7 +142,7 @@ In Windows PowerShell 2.0, you can get only the PSSessions
 that you have created in the current session. You cannot get
 PSSessions that you created in other sessions.
 
-For more information, see [Get-PSSession](../Get-PSSession.md).
+For more information, see [Get-PSSession](xref:Microsoft.PowerShell.Core.Get-PSSession).
 
 ## Can I See the PSSessions That Others Have Created on My Computer?
 
@@ -234,7 +235,7 @@ interactive session for use in later commands.
 When you end the interactive session, the PSSession remains open and
 available for use.
 
-For more information, see [Enter-PSSession](../Enter-PSSession.md) and [Exit-PSSession](../Exit-PSSession.md).
+For more information, see [Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession) and [Exit-PSSession](xref:Microsoft.PowerShell.Core.Exit-PSSession).
 
 ## Must I Delete the PSSessions?
 
@@ -249,7 +250,7 @@ PSSessions and releases all of the resources that they were using.
 
 You can also use the **IdleTimeOut** parameter of `New-PSSessionOption` to close
 an idle PSSession after an interval that you specify. For more information,
-see [New-PSSessionOption](../New-PSSessionOption.md).
+see [New-PSSessionOption](xref:Microsoft.PowerShell.Core.New-PSSessionOption).
 
 If you save a PSSession object in a variable and then delete the PSSession
 or let it time out, the variable still contains the PSSession object, but
@@ -273,14 +274,14 @@ another, it might be because the session is restricted.
 
 [about_Remote_Requirements](about_Remote_Requirements.md)
 
-[Invoke-Command](../Invoke-Command.md)
+[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 
-[Enter-PSSession](../Enter-PSSession.md)
+[Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
 
-[Exit-PSSession](../Exit-PSSession.md)
+[Exit-PSSession](xref:Microsoft.PowerShell.Core.Exit-PSSession)
 
-[Get-PSSession](../Get-PSSession.md)
+[Get-PSSession](xref:Microsoft.PowerShell.Core.Get-PSSession)
 
-[New-PSSession](../New-PSSession.md)
+[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
 
-[Remove-PSSession](../Remove-PSSession.md)
+[Remove-PSSession](xref:Microsoft.PowerShell.Core.Remove-PSSession)

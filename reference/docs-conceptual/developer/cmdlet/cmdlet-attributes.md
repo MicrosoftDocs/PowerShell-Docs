@@ -1,16 +1,8 @@
 ---
-title: "Cmdlet Attributes | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "attributes [PowerShell SDK]"
-  - "attributes [PowerShell SDK], described"
-ms.assetid: d3f4f652-d929-4c27-9358-9baa390a094c
-caps.latest.revision: 14
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Attributes
+description: Cmdlet Attributes
 ---
 # Cmdlet Attributes
 

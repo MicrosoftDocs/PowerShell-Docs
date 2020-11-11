@@ -2,10 +2,13 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Using Static Classes and Methods
+description: This article explains how to identify and use the properties and methods of .NET static classes.
 ---
 # Using Static Classes and Methods
 
-Not all .NET Framework classes can be created by using **New-Object**. For example, if you try to create a **System.Environment** or a **System.Math** object with **New-Object**, you will get the following error messages:
+Not all .NET Framework classes can be created by using **New-Object**. For example, if you try to
+create a **System.Environment** or a **System.Math** object with **New-Object**, you will get the
+following error messages:
 
 ```
 PS> New-Object System.Environment
@@ -21,15 +24,23 @@ At line:1 char:11
 + New-Object  <<<< System.Math
 ```
 
-These errors occur because there is no way to create a new object from these classes. These classes are reference libraries of methods and properties that do not change state. You don't need to create them, you simply use them. Classes and methods such as these are called *static classes* because they are not created, destroyed, or changed. To make this clear we will provide examples that use static classes.
+These errors occur because there is no way to create a new object from these classes. These classes
+are reference libraries of methods and properties that do not change state. You don't need to create
+them, you simply use them. Classes and methods such as these are called *static classes* because
+they are not created, destroyed, or changed. To make this clear we will provide examples that use
+static classes.
 
 ## Getting Environment Data with System.Environment
 
-Usually, the first step in working with an object in Windows PowerShell is to use Get-Member to find out what members it contains. With static classes, the process is a little different because the actual class is not an object.
+Usually, the first step in working with an object in Windows PowerShell is to use Get-Member to find
+out what members it contains. With static classes, the process is a little different because the
+actual class is not an object.
 
 ### Referring to the Static System.Environment Class
 
-You can refer to a static class by surrounding the class name with square brackets. For example, you can refer to **System.Environment** by typing the name within brackets. Doing so displays some generic type information:
+You can refer to a static class by surrounding the class name with square brackets. For example, you
+can refer to **System.Environment** by typing the name within brackets. Doing so displays some
+generic type information:
 
 ```
 PS> [System.Environment]
@@ -40,11 +51,15 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> As we mentioned previously, Windows PowerShell automatically prepends '**System.**' to type names when you use **New-Object**. The same thing happens when using a bracketed type name, so you can specify **\[System.Environment]** as **\[Environment]**.
+> As we mentioned previously, Windows PowerShell automatically prepends '**System.**' to type names
+> when you use **New-Object**. The same thing happens when using a bracketed type name, so you can
+> specify **\[System.Environment]** as **\[Environment]**.
 
-The **System.Environment** class contains general information about the working environment for the current process, which is powershell.exe when working within Windows PowerShell.
+The **System.Environment** class contains general information about the working environment for the
+current process, which is powershell.exe when working within Windows PowerShell.
 
-If you try to view details of this class by typing **\[System.Environment] | Get-Member**, the object type is reported as being **System.RuntimeType** , not **System.Environment**:
+If you try to view details of this class by typing **\[System.Environment] | Get-Member**, the
+object type is reported as being **System.RuntimeType** , not **System.Environment**:
 
 ```
 PS> [System.Environment] | Get-Member
@@ -87,7 +102,10 @@ We can now select properties to view from System.Environment.
 
 ### Displaying Static Properties of System.Environment
 
-The properties of System.Environment are also static, and must be specified in a different way than normal properties. We use **::** to indicate to Windows PowerShell that we want to work with a static method or property. To see the command that was used to launch Windows PowerShell, we check the **CommandLine** property by typing:
+The properties of System.Environment are also static, and must be specified in a different way than
+normal properties. We use **::** to indicate to Windows PowerShell that we want to work with a
+static method or property. To see the command that was used to launch Windows PowerShell, we check
+the **CommandLine** property by typing:
 
 ```
 PS> [System.Environment]::Commandline
@@ -104,7 +122,8 @@ PS> [System.Environment]::OSVersion
             Win32NT Service Pack 2      5.1.2600.131072     Microsoft Windows...
 ```
 
-We can check whether the computer is in the process of shutting down by displaying the **HasShutdownStarted** property:
+We can check whether the computer is in the process of shutting down by displaying the
+**HasShutdownStarted** property:
 
 ```
 PS> [System.Environment]::HasShutdownStarted
@@ -113,10 +132,12 @@ False
 
 ## Doing Math with System.Math
 
-The System.Math static class is useful for performing some mathematical operations. The important members of **System.Math** are mostly methods, which we can display by using **Get-Member**.
+The System.Math static class is useful for performing some mathematical operations. The important
+members of **System.Math** are mostly methods, which we can display by using **Get-Member**.
 
 > [!NOTE]
-> System.Math has several methods with the same name, but they are distinguished by the type of their parameters.
+> System.Math has several methods with the same name, but they are distinguished by the type of
+> their parameters.
 
 Type the following command to list the methods of the **System.Math** class.
 
@@ -157,7 +178,8 @@ Tanh            Method     static System.Double Tanh(Double value)
 Truncate        Method     static System.Decimal Truncate(Decimal d), static...
 ```
 
-This displays several mathematical methods. Here is a list of commands that demonstrate how some of the common methods work:
+This displays several mathematical methods. Here is a list of commands that demonstrate how some of
+the common methods work:
 
 ```
 PS> [System.Math]::Sqrt(9)

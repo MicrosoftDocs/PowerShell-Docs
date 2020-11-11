@@ -1,13 +1,8 @@
 ---
-title: "ItemSelectionCondition Element for ExpressionBinding for CustomControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f4bea9d8-27ad-410e-ad48-287f807d3e4e
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: ItemSelectionCondition Element for ExpressionBinding for CustomControl (Format)
+description: ItemSelectionCondition Element for ExpressionBinding for CustomControl (Format)
 ---
 # ItemSelectionCondition Element for ExpressionBinding for CustomControl (Format)
 

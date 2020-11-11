@@ -1,8 +1,9 @@
 ---
+description:  Describes how to use wildcard characters in PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 3/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Wildcards
 ---
@@ -30,10 +31,10 @@ PowerShell supports the following wildcard characters:
 
 |Wildcard|Description               |Example |Match        |No Match|
 |--------|--------------------------|--------|-------------|--------|
-|*       |Match zero or more characters | a*  | aA, ag, Apple | banana |
+|\*      |Match zero or more characters | a\*  | aA, ag, Apple | banana |
 |?       |Match one character in that position | ?n | an, in, on | ran |
-|[ ]     |Match a range of characters | [a-l]ook | book, cook, look | took |
-|[ ]     |Match specific characters | [bc]ook | book, cook | hook |
+|\[ \]   |Match a range of characters | \[a-l\]ook | book, cook, look | took |
+|\[ \]   |Match specific characters | \[bc\]ook | book, cook | hook |
 
 You can include multiple wildcard characters in the same word pattern. For
 example, to find text files with names that begin with the letters **a**
@@ -77,3 +78,4 @@ foreach ($point in $p) {
 [about_If](about_If.md)
 
 [about_Script_Blocks](about_Script_Blocks.md)
+

@@ -1,13 +1,8 @@
 ---
-title: "Runspace11 Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 9c90d268-730b-4e73-9dfd-5f288c27aed0
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: Runspace11 Sample
+description: Runspace11 Sample
 ---
 # Runspace11 Sample
 

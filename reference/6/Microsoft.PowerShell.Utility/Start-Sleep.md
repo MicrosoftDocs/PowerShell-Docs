@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/10/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-6&WT.mc_id=ps-gethelp
@@ -56,7 +56,7 @@ Start-Sleep -Seconds 1.5
 Specifies how long the resource sleeps in milliseconds. The parameter can be abbreviated as **m**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Milliseconds
 Aliases: ms
 
@@ -73,7 +73,7 @@ Specifies how long the resource sleeps in seconds. You can omit the parameter na
 abbreviate it as **s**. Beginning in PowerShell 6.2.0, this parameter now accepts fractional values.
 
 ```yaml
-Type: Double
+Type: System.Double
 Parameter Sets: Seconds
 Aliases:
 

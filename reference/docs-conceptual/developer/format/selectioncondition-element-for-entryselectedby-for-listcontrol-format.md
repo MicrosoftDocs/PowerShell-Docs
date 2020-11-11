@@ -1,13 +1,8 @@
 ---
-title: "SelectionCondition Element for EntrySelectedBy for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionCondition Element for EntrySelectedBy for ListControl (Format)
+description: SelectionCondition Element for EntrySelectedBy for ListControl (Format)
 ---
 # SelectionCondition Element for EntrySelectedBy for ListControl (Format)
 

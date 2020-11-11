@@ -1,9 +1,9 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 02/25/2020
+ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
@@ -232,8 +232,6 @@ member names, and then displays the prefixed member names. The **Prefix** parame
 applies only to the members in the current session. It does not change the module. The **PassThru**
 parameter returns a module object that represents the imported module.
 
-
-
 ```powershell
 Import-Module PSDiagnostics -Prefix x -PassThru
 ```
@@ -279,7 +277,6 @@ name of an imported member, including its module name.
 
 The **AsCustomObject** parameter can be used only when importing a script module. Use `Get-Module`
 to determine which of the available modules is a script module.
-
 
 ```powershell
 Get-Module -List | Format-Table -Property Name, ModuleType -AutoSize
@@ -567,7 +564,7 @@ Some modules automatically export selected aliases into your session when you im
 This parameter lets you select from among the exported aliases.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -583,11 +580,11 @@ Accept wildcard characters: True
 Specifies an array of arguments, or parameter values, that are passed to a script module during the
 `Import-Module` command. This parameter is valid only when you're importing a script module.
 
-You can also refer to the **ArgumentList** parameter by its alias, **args**. For more information,
-see [about_Aliases](About/about_Aliases.md).
+You can also refer to the **ArgumentList** parameter by its alias, **args**. For more information
+about the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases: Args
 
@@ -608,7 +605,7 @@ session and then returns a **PSCustomObject** object instead of a **PSModuleInfo
 save the custom object in a variable and use dot notation to invoke the members.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -631,7 +628,7 @@ important members of the module. Use this parameter for debugging and testing th
 you're instructed to use it by the module author.
 
 ```yaml
-Type: Assembly[]
+Type: System.Reflection.Assembly[]
 Parameter Sets: Assembly
 Aliases:
 
@@ -653,7 +650,7 @@ operating system.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: CimSession
 Aliases:
 
@@ -675,7 +672,7 @@ operating system.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: CimSession
 Aliases:
 
@@ -703,7 +700,7 @@ remoting enabled.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: CimSession
+Type: Microsoft.Management.Infrastructure.CimSession
 Parameter Sets: CimSession
 Aliases:
 
@@ -723,7 +720,7 @@ Some modules automatically export selected cmdlets into your session when you im
 This parameter lets you select from among the exported cmdlets.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -751,7 +748,7 @@ commands. Although the message is displayed to module users, the naming problem 
 the module author.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -767,7 +764,7 @@ Accept wildcard characters: False
 This parameter causes a module to be loaded, or reloaded, over top of the current one.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -792,7 +789,7 @@ strings and hash tables. The hash table has the following keys.
   - `MaximumVersion` - Specifies the maximum acceptable version of the module.
 
 ```yaml
-Type: ModuleSpecification[]
+Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
 Parameter Sets: FullyQualifiedName, FullyQualifiedNameAndPSSession
 Aliases:
 
@@ -811,7 +808,7 @@ session when you import the module. This parameter lets you select from among th
 functions.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -844,7 +841,7 @@ To restrict the commands that a module exports, use an `Export-ModuleMember` com
 module.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -861,8 +858,8 @@ Specifies a maximum version. This cmdlet imports only a version of the module th
 equal to the specified value. If no version qualifies, `Import-Module` returns an error.
 
 ```yaml
-Type: String
-Parameter Sets: Name, PSSession, CimSession
+Type: System.String
+Parameter Sets: Name, PSSession, CimSession, WinCompat
 Aliases:
 
 Required: False
@@ -885,8 +882,8 @@ a script.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Version
-Parameter Sets: Name, PSSession, CimSession
+Type: System.Version
+Parameter Sets: Name, PSSession, CimSession, WinCompat
 Aliases: Version
 
 Required: False
@@ -903,7 +900,7 @@ or a command that gets the module objects, such as the following command:
 `Get-Module -ListAvailable`. You can also pipe module objects to `Import-Module`.
 
 ```yaml
-Type: PSModuleInfo[]
+Type: System.Management.Automation.PSModuleInfo[]
 Parameter Sets: ModuleInfo
 Aliases:
 
@@ -928,8 +925,8 @@ are implemented in that file are imported. If the module contains other files, t
 imported, and you might be missing important members of the module.
 
 ```yaml
-Type: String[]
-Parameter Sets: Name, PSSession, CimSession
+Type: System.String[]
+Parameter Sets: Name, PSSession, CimSession, WinCompat
 Aliases:
 
 Required: True
@@ -952,7 +949,7 @@ and [about_Command_Precedence](about/about_Command_Precedence.md).
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NoOverwrite
 
@@ -969,7 +966,7 @@ Returns an object representing the item with which you're working. By default, t
 generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -996,7 +993,7 @@ The value of this parameter takes precedence over the **DefaultCommandPrefix** p
 module, which specifies the default prefix.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -1027,7 +1024,7 @@ modules have names that begin with Microsoft.PowerShell.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: PSSession
+Type: System.Management.Automation.Runspaces.PSSession
 Parameter Sets: PSSession, FullyQualifiedNameAndPSSession
 Aliases:
 
@@ -1058,8 +1055,8 @@ operating system are higher than module version numbers in existing releases of 
 operating system.
 
 ```yaml
-Type: Version
-Parameter Sets: Name, PSSession, CimSession
+Type: System.Version
+Parameter Sets: Name, PSSession, CimSession, WinCompat
 Aliases:
 
 Required: False
@@ -1092,7 +1089,7 @@ The **Global** parameter is equivalent to the **Scope** parameter with a value o
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Local, Global
@@ -1113,7 +1110,7 @@ Some modules automatically export selected variables into your session when you 
 This parameter lets you select from among the exported variables.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -1143,7 +1140,7 @@ For more information, see [about_PowerShell_Editions](About/about_PowerShell_Edi
 > incompatible API.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

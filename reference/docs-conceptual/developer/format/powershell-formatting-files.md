@@ -1,13 +1,8 @@
 ---
-title: "Windows PowerShell Formatting Files | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 5d4c8f84-ebd2-4405-bb10-cfc5400d4ad6
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: Windows PowerShell Formatting Files
+description: Windows PowerShell Formatting Files
 ---
 # Windows PowerShell Formatting Files
 

@@ -1,16 +1,15 @@
 ---
+description: Describes the keywords in the PowerShell scripting language. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 06/09/2017
+Locale: en-US
+ms.date: 10/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_keywords?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Language_Keywords
 ---
-
 # About Language Keywords
 
 ## SHORT DESCRIPTION
-
 Describes the keywords in the PowerShell scripting language.
 
 ## LONG DESCRIPTION
@@ -57,7 +56,6 @@ Until       | [about_Do](about_Do.md)
 Using       | [about_Using](about_Using.md), [about_Classes](about_Classes.md)
 Var         | Reserved for future use
 While       | [about_While](about_While.md), [about_Do](about_Do.md)
-
 
 Language Keywords
 
@@ -252,42 +250,44 @@ exit
 exit <exitcode>
 ```
 
-When you use `powershell.exe` with the **File** parameter, the .ps1 (script)
+When you use `powershell.exe` with the **File** parameter, the `.ps1` (script)
 file itself should include instructions for handling any errors or exceptions
-that occur while the script is running. You should only use the exit statement
+that occur while the script is running. You should only use the `exit` statement
 to indicate the post-execution status of the script.
 
-In PowerShell, the exit statement sets the value of the `$LASTEXITCODE`
+Any number between `[int]::MinValue` and `[int]::MaxValue` is allowed.
+
+In PowerShell, the `exit` statement sets the value of the `$LASTEXITCODE`
 variable. In the Windows Command Shell (cmd.exe), the exit statement sets the
 value of the `%ERRORLEVEL%` environment variable.
 
+Any argument that is non-numeric or outside the platform-specific range is
+translated to the value of `0`.
+
 In the following example, the user sets the error level variable value to 4 by
-adding `exit 4` to the script file _test.ps1_.
+adding `exit 4` to the script file `test.ps1`.
 
 ```cmd
 C:\scripts\test>type test.ps1
 1
-
 2
-
 3
-
 exit 4
 
 C:\scripts\test>powershell -file ./test.ps1
 1
-
 2
-
 3
 
 C:\scripts\test>echo %ERRORLEVEL%
 4
 ```
 
-When you run `powershell.exe -File <path to a script>`, the exit statement
-sets the `%ERRORLEVEL%` variable to a value other than zero. If you have an
-unhandled exception in your script, `%ERRORLEVEL%` is set to the value of 1.
+When you run `pwsh.exe -File <path to a script>` and the script file terminates
+with an `exit` command, the exit code is set to the numeric argument used with
+the `exit` command. If the script has no `exit` statement, the exit code is
+always `0` when the script completes without error or `1` when the script
+terminates from an unhandled exception.
 
 ### Filter
 
@@ -485,7 +485,7 @@ See `Class` for usage examples.
 ### Switch
 
 To check multiple conditions, use a `Switch` statement. The `Switch` statement is
-equivalent to a series of If statements, but it is simpler.
+equivalent to a series of `If` statements, but it is simpler.
 
 The `Switch` statement lists each condition and an optional action. If a
 condition obtains, the action is performed.

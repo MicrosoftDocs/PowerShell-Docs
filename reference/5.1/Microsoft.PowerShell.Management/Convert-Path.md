@@ -1,69 +1,78 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 03/12/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/convert-path?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Convert-Path
 ---
-
 # Convert-Path
 
 ## SYNOPSIS
-Converts a path from a Windows PowerShell path to a Windows PowerShell provider path.
+Converts a path from a PowerShell path to a PowerShell provider path.
 
 ## SYNTAX
 
 ### Path (Default)
+
 ```
 Convert-Path [-Path] <String[]> [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath
+
 ```
 Convert-Path -LiteralPath <String[]> [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Convert-Path** cmdlet converts a path from a Windows PowerShell path to a Windows PowerShell provider path.
+
+The `Convert-Path` cmdlet converts a path from a PowerShell path to a PowerShell provider path.
 
 ## EXAMPLES
 
 ### Example 1: Convert the working directory to a standard file system path
+
+This example converts the current working directory, which is represented by a dot (`.`), to a
+standard FileSystem path.
+
 ```
 PS C:\> Convert-Path .
+C:\
 ```
-
-This command converts the current working directory, which is represented by a dot (.), to a standard file system path.
 
 ### Example 2: Convert a provider path to a standard registry path
-```
-PS C:\> Convert-Path HKLM:\Software\Microsoft
-```
 
-This command converts the Windows PowerShell provider path to a standard registry path.
+This example converts the PowerShell provider path to a standard registry path.
+
+```powershell
+PS C:\> Convert-Path HKLM:\Software\Microsoft
+HKEY_LOCAL_MACHINE\Software\Microsoft
+```
 
 ### Example 3: Convert a path to a string
-```
+
+This example converts the path to the home directory of the current provider, which is the
+FileSystem provider, to a string.
+
+```powershell
 PS C:\> Convert-Path ~
 C:\Users\User01
 ```
 
-This command converts the path to the home directory of the current provider, which is the FileSystem provider, to a string.
-
 ## PARAMETERS
 
 ### -LiteralPath
-Specifies, as a string array, the path to be converted.
-The value of the *LiteralPath* parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+
+Specifies, as a string array, the path to be converted. The value of the **LiteralPath** parameter
+is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes
+escape characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not
+to interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath
 
@@ -75,10 +84,11 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the Windows PowerShell path to be converted.
+
+Specifies the PowerShell path to be converted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -95,7 +105,7 @@ This parameter is valid only when a transaction is in progress.
 For more information, see about_transactions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 
@@ -107,28 +117,40 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a path, but not a literal path, to this cmdlet.
 
 ## OUTPUTS
 
 ### System.String
+
 This cmdlet returns a string that contains the converted path.
 
 ## NOTES
-* The cmdlets that contain the Path noun manipulate path names and return the names in a concise format that all Windows PowerShell providers can interpret. They are designed for use in programs and scripts where you want to display all or part of a path name in a particular format. Use them like you would use Dirname, Normpath, Realpath, Join, or other path manipulators.
 
-  You can use the path cmdlets with several providers, including the FileSystem, Registry, and Certificate providers.
+The cmdlets that contain the Path noun manipulate path names and return the names in a concise
+format that all PowerShell providers can interpret. They are designed for use in programs and
+scripts where you want to display all or part of a path name in a particular format. Use them like
+you would use **Dirname**, **Normpath**, **Realpath**, **Join**, or other path manipulators.
 
-  This cmdlet is designed to work with the data exposed by any provider.
-To list the providers available in your session, type `Get-PSProvider`.
-For more information, see about_Providers.
+You can use the path cmdlets with several providers, including the FileSystem, Registry, and
+Certificate providers.
 
-*
+This cmdlet is designed to work with the data exposed by any provider. To list the providers
+available in your session, type `Get-PSProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+
+`Convert-Path` only converts existing paths. It cannot be used to convert a location that does not
+exist yet.
 
 ## RELATED LINKS
 
@@ -141,5 +163,3 @@ For more information, see about_Providers.
 [Test-Path](Test-Path.md)
 
 [Get-PSProvider](Get-PSProvider.md)
-
-

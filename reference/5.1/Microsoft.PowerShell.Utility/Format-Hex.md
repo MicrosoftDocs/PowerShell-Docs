@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Utility-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 01/17/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-hex?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -125,22 +125,22 @@ to their **Int32** types.
 ### -Encoding
 
 Specifies the encoding of the output. This only applies to `[string]` input. The parameter has no
-effect on numeric types. The default value is **ASCII**.
+effect on numeric types. The default value is `ASCII`.
 
 The acceptable values for this parameter are as follows:
 
-- **ASCII** Uses ASCII (7-bit) character set.
-- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **Unicode** Uses UTF-16 with the little-endian byte order.
-- **UTF7** Uses UTF-7.
-- **UTF8** Uses UTF-8.
-- **UTF32** Uses UTF-32 with the little-endian byte order.
+- `Ascii` Uses ASCII (7-bit) character set.
+- `BigEndianUnicode` Uses UTF-16 with the big-endian byte order.
+- `Unicode` Uses UTF-16 with the little-endian byte order.
+- `UTF7` Uses UTF-7.
+- `UTF8` Uses UTF-8.
+- `UTF32` Uses UTF-32 with the little-endian byte order.
 
 Non-ASCII characters in the input are output as literal `?` characters resulting in a loss of
 information.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByInputObject
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, Unicode, UTF7, UTF8, UTF32
@@ -165,7 +165,7 @@ The supported scalar types are:
 - `[long]`, `[int64]`
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: ByInputObject
 Aliases:
 
@@ -185,7 +185,7 @@ single quotation marks. PowerShell does not interpret any characters in a single
 escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath
 
@@ -204,7 +204,7 @@ includes escape characters, enclose the path in single quotation marks. To speci
 files, separate the paths with a comma.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -221,7 +221,7 @@ By default `Format-Hex` opts for compact output of numeric data types: single-by
 sequences are used if the value is small enough. The **Raw** parameter deactivates this behavior.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ByInputObject
 Aliases:
 

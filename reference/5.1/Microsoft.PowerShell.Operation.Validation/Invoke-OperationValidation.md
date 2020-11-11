@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Operation.Validation-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Operation.Validation
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.operation.validation/invoke-operationvalidation?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -18,18 +18,21 @@ Invokes Operation Validation Framework tests.
 ## SYNTAX
 
 ### FileAndTest (Default)
+
 ```
 Invoke-OperationValidation [-TestInfo <PSObject[]>] [-IncludePesterOutput] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Path
+
 ```
 Invoke-OperationValidation [-testFilePath <String[]>] [-IncludePesterOutput] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### UseGetOperationTest
+
 ```
 Invoke-OperationValidation [-ModuleName <String[]>] [-TestType <String[]>] [-IncludePesterOutput] [-WhatIf]
  [-Confirm] [<CommonParameters>]
@@ -88,7 +91,7 @@ Includes Pester test output.
 The default is $False.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -104,7 +107,7 @@ Accept wildcard characters: False
 Specifies an array of names of modules.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: UseGetOperationTest
 Aliases:
 
@@ -120,7 +123,7 @@ Accept wildcard characters: False
 Specifies the path of an Operation Validation Framework test file.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -136,7 +139,7 @@ Accept wildcard characters: False
 Specifies a custom object that specifies the path to the file and the name of the test to run.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: FileAndTest
 Aliases:
 
@@ -154,7 +157,7 @@ Valid values are Simple, Comprehensive, or both.
 The default is "Simple,Comprehensive".
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: UseGetOperationTest
 Aliases:
 Accepted values: Simple, Comprehensive
@@ -171,7 +174,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -188,7 +191,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -219,5 +222,3 @@ The **PSCustomObject** describes whether the validation was successful.
 ## RELATED LINKS
 
 [Get-OperationValidation](Get-OperationValidation.md)
-
-

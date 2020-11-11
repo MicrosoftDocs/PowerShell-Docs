@@ -1,8 +1,9 @@
 ---
+description:  About topics cover a ranges of concepts about PowerShell. 
 Download Help Link: https://Please-enter-FwLink-manually
 Help Version: 6.0
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: About
 ms.date: 02/25/2019
@@ -324,7 +325,7 @@ Describes how to use splatting to pass parameters to commands in PowerShell.
 Explains how to use the Split operator to split one or more strings into substrings.
 
 ### [about_Switch](about_Switch.md)
-Explains how to use a switch to handle multiple If statements.
+Explains how to use a switch to handle multiple `If` statements.
 
 ### [about_Throw](about_Throw.md)
 Describes the Throw keyword, which generates a terminating error.
@@ -379,6 +380,3 @@ Provides background information about Windows Management Instrumentation (WMI) a
 
 ### [about_WQL](about_WQL.md)
 Describes WMI Query Language (WQL), which can be used to get WMI objects in PowerShell.
-
-### [about_WS-Management_Cmdlets](about_WS-Management_Cmdlets.md)
-Provides an overview of Web Services for Management (WS-Management) as background for using the WS-Management cmdlets in PowerShell.

@@ -1,40 +1,38 @@
 ---
-external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
+external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSReadLine
-ms.date: 09/23/2019
+ms.date: 06/30/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
 ---
-
 # Set-PSReadLineOption
 
-## SYNOPSIS
+## Synopsis
 Customizes the behavior of command line editing in **PSReadLine**.
 
-## SYNTAX
-
-### All
+## Syntax
 
 ```
 Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-HistoryNoDuplicates]
- [-AddToHistoryHandler <Func`2>] [-CommandValidationHandler <Action`1>]
+ [-AddToHistoryHandler <System.Func[System.String,System.Object]>]
+ [-CommandValidationHandler <System.Action[System.Management.Automation.Language.CommandAst]>]
  [-HistorySearchCursorMovesToEnd] [-MaximumHistoryCount <Int32>] [-MaximumKillRingCount <Int32>]
  [-ShowToolTips] [-ExtraPromptLineCount <Int32>] [-DingTone <Int32>] [-DingDuration <Int32>]
  [-BellStyle <BellStyle>] [-CompletionQueryItems <Int32>] [-WordDelimiters <String>]
  [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <String>]
- [-AnsiEscapeTimeout <Int32>] [-PromptText <String>] [-ViModeIndicator <ViModeStyle>]
- [-Colors <Hashtable>] [<CommonParameters>]
+ [-AnsiEscapeTimeout <Int32>] [-PromptText <String[]>] [-ViModeIndicator <ViModeStyle>]
+ [-ViModeChangeHandler <ScriptBlock>] [-Colors <Hashtable>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-PSReadLineOption` cmdlet customizes the behavior of the **PSReadLine** module when you're
 editing the command line. To view the **PSReadLine** settings, use `Get-PSReadLineOption`.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Set foreground and background colors
 
@@ -47,7 +45,7 @@ Set-PSReadLineOption -Colors @{ "Comment"="`e[32;47m" }
 ```
 
 You can choose to set only a foreground text color. For example, a bright green foreground text
-color for the **Comment** token: `{ "Comment"="`e[92m" }`.
+color for the **Comment** token: ``"Comment"="`e[92m"``.
 
 ### Example 2: Set bell style
 
@@ -57,6 +55,9 @@ The **BellStyle** is set to emit an audible beep at 1221 Hz for 60 ms.
 ```powershell
 Set-PSReadLineOption -BellStyle Audible -DingTone 1221 -DingDuration 60
 ```
+
+> [!NOTE]
+> This feature may not work in all hosts on platforms.
 
 ### Example 3: Set multiple options
 
@@ -116,7 +117,31 @@ Set-PSReadLineOption -Colors @{
 }
 ```
 
-## PARAMETERS
+### Example 6: Use ViModeChangeHandler to display Vi mode changes
+
+This example emits a cursor change VT escape in response to a **Vi** mode change.
+
+```powershell
+function OnViModeChange {
+    if ($args[0] -eq 'Command') {
+        # Set the cursor to a blinking block.
+        Write-Host -NoNewLine "`e[1 q"
+    } else {
+        # Set the cursor to a blinking line.
+        Write-Host -NoNewLine "`e[5 q"
+    }
+}
+Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
+```
+
+The **OnViModeChange** function sets the cursor options for the **Vi** modes: insert and command.
+**ViModeChangeHandler** uses the `Function:` provider to reference **OnViModeChange** as a script
+block object.
+
+For more information, see
+[about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
+
+## Parameters
 
 ### -AddToHistoryHandler
 
@@ -126,7 +151,7 @@ The **ScriptBlock** receives the command line as input. If the **ScriptBlock** r
 command line is added to the history.
 
 ```yaml
-Type: Func[String, Boolean]
+Type: System.Func`2[System.String,System.Object]
 Parameter Sets: (All)
 Aliases:
 
@@ -152,7 +177,7 @@ waits for this timeout before concluding that it has received a complete escape 
 If you see random or unexpected characters when you type, you can adjust this timeout.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -174,10 +199,9 @@ The valid values are as follows:
 - **None**: No feedback.
 
 ```yaml
-Type: BellStyle
+Type: Microsoft.PowerShell.BellStyle
 Parameter Sets: (All)
 Aliases:
-Accepted values: None, Visual, Audible
 
 Required: False
 Position: Named
@@ -196,7 +220,7 @@ For more information, see [about_Hash_Tables](/powershell/module/microsoft.power
 Colors can be either a value from **ConsoleColor**, for example `[ConsoleColor]::Red`, or a valid
 ANSI escape sequence. Valid escape sequences depend on your terminal. In PowerShell 5.0, an example
 escape sequence for red text is `$([char]0x1b)[91m`. In PowerShell 6 and above, the same escape
-sequence is `e[91m`. You can specify other escape sequences including the following types:
+sequence is `` `e[91m``. You can specify other escape sequences including the following types:
 
 - 256 color
 - 24-bit color
@@ -224,7 +248,7 @@ The valid keys include:
 - **Member**: The member name token color.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -247,7 +271,7 @@ common typographical errors.
 **ValidateAndAcceptLine** is used to avoid cluttering your history with commands that can't work.
 
 ```yaml
-Type: Action[CommandAst]
+Type: System.Action`1[System.Management.Automation.Language.CommandAst]
 Parameter Sets: (All)
 Aliases:
 
@@ -266,7 +290,7 @@ If the number of items to show is greater than this value, **PSReadLine** prompt
 displaying the completion items.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -283,7 +307,7 @@ Specifies the string displayed at the beginning of the subsequent lines when mul
 entered. The default is double greater-than signs (`>>`). An empty string is valid.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -299,7 +323,7 @@ Accept wildcard characters: False
 Specifies the duration of the beep when **BellStyle** is set to **Audible**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -315,7 +339,7 @@ Accept wildcard characters: False
 Specifies the tone in Hertz (Hz) of the beep when **BellStyle** is set to **Audible**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -337,11 +361,12 @@ The valid values are as follows:
 - **Emacs**: Key bindings emulate Bash or Emacs.
 - **Vi**: Key bindings emulate Vi.
 
+Use `Get-PSReadLineKeyHandler` to see the key bindings for the currently configured **EditMode**.
+
 ```yaml
-Type: EditMode
+Type: Microsoft.PowerShell.EditMode
 Parameter Sets: (All)
 Aliases:
-Accepted values: Windows, Emacs, Vi
 
 Required: False
 Position: Named
@@ -362,7 +387,7 @@ This option is needed less than in previous versions of **PSReadLine**, but is u
 `InvokePrompt` function is used.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -376,13 +401,21 @@ Accept wildcard characters: False
 ### -HistoryNoDuplicates
 
 This option controls the recall behavior. Duplicate commands are still added to the history file.
-When this option is set, only the most recent invocation appears when recalling commands.
+When this option is set, only the most recent invocation appears when recalling commands. Repeated
+commands are added to history to preserve ordering during recall. However, you typically don't want
+to see the command multiple times when recalling or searching the history.
 
-Repeated commands are added to history to preserve ordering during recall. However, you typically
-don't want to see the command multiple times when recalling or searching the history.
+By default, the **HistoryNoDuplicates** property of the global **PSConsoleReadLineOptions** object
+is set to `True`. Using this **SwitchParameter** sets the property value to `True`. To change the
+property value, you must specify the value of the **SwitchParameter** as follows:
+`-HistoryNoDuplicates:$False`.
+
+Using the following command, you can set the property value directly:
+
+`(Get-PSReadLineOption).HistoryNoDuplicates = $False`
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -396,7 +429,7 @@ Accept wildcard characters: False
 ### -HistorySavePath
 
 Specifies the path to the file where history is saved. Computers running Windows or non-Windows
-platforms store the file in different locations. The file name is stored in a variable
+platforms store the file in different locations. The filename is stored in a variable
 `$($host.Name)_history.txt`, for example `ConsoleHost_history.txt`.
 
 If you don't use this parameter, the default path is as follows:
@@ -412,7 +445,7 @@ If you don't use this parameter, the default path is as follows:
 `$env:HOME/.local/share/powershell/PSReadLine\$($host.Name)_history.txt`
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -435,10 +468,9 @@ Valid values are as follows:
 - **SaveNothing**: Don't use a history file.
 
 ```yaml
-Type: HistorySaveStyle
+Type: Microsoft.PowerShell.HistorySaveStyle
 Parameter Sets: (All)
 Aliases:
-Accepted values: SaveIncrementally, SaveAtExit, SaveNothing
 
 Required: False
 Position: Named
@@ -452,8 +484,17 @@ Accept wildcard characters: False
 Specifies that history searching is case-sensitive in functions like **ReverseSearchHistory** or
 **HistorySearchBackward**.
 
+By default, the **HistorySearchCaseSensitive** property of the global **PSConsoleReadLineOptions**
+object is set to `False`. Using this **SwitchParameter** sets the property value to `True`. To
+change the property value back, you must specify the value of the **SwitchParameter** as follows:
+`-HistorySearchCaseSensitive:$False`.
+
+Using the following command, you can set the property value directly:
+
+`(Get-PSReadLineOption).HistorySearchCaseSensitive = $False`
+
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -470,14 +511,17 @@ Indicates that the cursor moves to the end of commands that you load from histor
 When this parameter is set to `$False`, the cursor remains at the position it was when you pressed
 the up or down arrows.
 
-To turn off this option, you can run either of the following commands:
+By default, the **HistorySearchCursorMovesToEnd** property of the global
+**PSConsoleReadLineOptions** object is set to `False`. Using this **SwitchParameter** set the
+property value to `True`. To change the property value back, you must specify the value of the
+**SwitchParameter** as follows: `-HistorySearchCursorMovesToEnd:$False`.
 
-`Set-PSReadLineOption -HistorySearchCursorMovesToEnd:$False`
+Using the following command, you can set the property value directly:
 
 `(Get-PSReadLineOption).HistorySearchCursorMovesToEnd = $False`
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -495,7 +539,7 @@ Specifies the maximum number of commands to save in **PSReadLine** history.
 **PSReadLine** history is separate from PowerShell history.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -511,7 +555,7 @@ Accept wildcard characters: False
 Specifies the maximum number of items stored in the kill ring.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -540,7 +584,7 @@ Then set:
 `Set-PSReadLineOption -PromptText "# "`
 
 ```yaml
-Type: String
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -558,14 +602,42 @@ When displaying possible completions, tooltips are shown in the list of completi
 This option is enabled by default. This option wasn't enabled by default in prior versions of
 **PSReadLine**. To disable, set this option to `$False`.
 
+By default, the **ShowToolTips** property of the global **PSConsoleReadLineOptions**
+object is set to `True`. Using this **SwitchParameter** sets the property value to `True`. To change
+the property value, you must specify the value of the **SwitchParameter** as follows:
+`-ShowToolTips:$False`.
+
+Using the following command, you can set the property value directly:
+
+`(Get-PSReadLineOption).ShowToolTips = $False`
+
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ViModeChangeHandler
+
+When the **ViModeIndicator** is set to `Script`, the script block provided will be invoked every
+time the mode changes. The script block is provided one argument of type `ViMode`.
+
+This parameter was introduced in PowerShell 7.
+
+```yaml
+Type: System.Management.Automation.ScriptBlock
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -580,12 +652,12 @@ The valid values are as follows:
 - **None**: There's no indication.
 - **Prompt**: The prompt changes color.
 - **Cursor**: The cursor changes size.
+- **Script**: User-specified text is printed.
 
 ```yaml
-Type: ViModeStyle
+Type: Microsoft.PowerShell.ViModeStyle
 Parameter Sets: (All)
 Aliases:
-Accepted values: None, Prompt, Cursor
 
 Required: False
 Position: Named
@@ -599,13 +671,13 @@ Accept wildcard characters: False
 Specifies the characters that delimit words for functions like **ForwardWord** or **KillWord**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: ;:,.[]{}()/\|^&*-=+'"---
+Default value: ;:,.[]{}()/\|^&*-=+'"–—―
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -614,23 +686,24 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
-
-### None
-
-You can't send objects down the pipeline to `Set-PSReadLineOption`.
-
-## OUTPUTS
+## Inputs
 
 ### None
 
-`Set-PSReadLineOption` doesn't generate output.
+You cannot pipe objects to `Set-PSReadLineOption.`
 
-## NOTES
+## Outputs
 
-## RELATED LINKS
+### None
+
+This cmdlet does not generate any output.
+
+## Notes
+
+## Related links
 
 [about_PSReadLine](./About/about_PSReadLine.md)
 

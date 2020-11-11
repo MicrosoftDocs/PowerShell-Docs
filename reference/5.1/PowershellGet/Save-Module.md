@@ -1,7 +1,7 @@
 ---
 external help file: PSModule-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PowerShellGet
 ms.date: 11/11/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/save-module?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -144,7 +144,7 @@ of **Path** where the files are stored.
 Automatically accept the license agreement if the package requires it.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 Allows you to save a module marked as a prerelease.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -171,12 +171,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running the `Save-Module`.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 Specifies a user account that has rights to save a module.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -192,7 +208,7 @@ Accept wildcard characters: False
 Forces `Save-Module` to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -209,7 +225,7 @@ Accepts a **PSRepositoryItemInfo** object. For example, output `Find-Module` to 
 that variable as the **InputObject** argument.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: InputObjectAndLiteralPathParameterSet, InputObjectAndPathParameterSet
 Aliases:
 
@@ -228,14 +244,14 @@ characters, enclose them in single quotation marks. PowerShell does not interpre
 enclosed in single quotation marks as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameAndLiteralPathParameterSet, InputObjectAndLiteralPathParameterSet
-Aliases:
+Aliases: PSPath
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -245,7 +261,7 @@ Specifies the maximum, or newest, version of the module to save. The **MaximumVe
 **RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -263,7 +279,7 @@ attempting to install multiple modules. The **MinimumVersion** and **RequiredVer
 can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -279,7 +295,7 @@ Accept wildcard characters: False
 Specifies an array of names of modules to save.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -295,14 +311,14 @@ Accept wildcard characters: False
 Specifies the location on the local computer to store a saved module. Accepts wildcard characters.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameAndPathParameterSet, InputObjectAndPathParameterSet
 Aliases:
 
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -311,7 +327,7 @@ Accept wildcard characters: True
 Specifies a proxy server for the request, rather than connecting directly to the internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -327,7 +343,7 @@ Accept wildcard characters: False
 Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -344,7 +360,7 @@ Specifies the friendly name of a repository that has been registered by running
 `Register-PSRepository`. Use `Get-PSRepository` to display registered repositories.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -360,7 +376,7 @@ Accept wildcard characters: False
 Specifies the exact version number of the module to save.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -371,28 +387,12 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-Prompts you for confirmation before running the `Save-Module`.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
 Shows what would happen if the `Save-Module` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -416,4 +416,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-

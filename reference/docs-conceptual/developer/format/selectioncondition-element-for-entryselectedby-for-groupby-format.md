@@ -1,13 +1,8 @@
 ---
-title: "SelectionCondition Element for EntrySelectedBy for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 6dc2093a-dc54-42c4-ada3-c8d089ba1e8e
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionCondition Element for EntrySelectedBy for GroupBy (Format)
+description: SelectionCondition Element for EntrySelectedBy for GroupBy (Format)
 ---
 # SelectionCondition Element for EntrySelectedBy for GroupBy (Format)
 

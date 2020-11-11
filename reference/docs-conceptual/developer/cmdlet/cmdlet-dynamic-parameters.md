@@ -1,13 +1,8 @@
 ---
-title: "Cmdlet Dynamic Parameters | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
-caps.latest.revision: 13
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Dynamic Parameters
+description: Cmdlet Dynamic Parameters
 ---
 
 # Cmdlet dynamic parameters

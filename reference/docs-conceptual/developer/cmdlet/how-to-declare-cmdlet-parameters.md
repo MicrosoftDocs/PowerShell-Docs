@@ -1,13 +1,8 @@
 ---
-title: "How to Declare Cmdlet Parameters | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Declare Cmdlet Parameters
+description: How to Declare Cmdlet Parameters
 ---
 # How to Declare Cmdlet Parameters
 

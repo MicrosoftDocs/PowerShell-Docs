@@ -1,13 +1,8 @@
 ---
-title: "FirstLineIndent Element for Frame for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ec63f4f9-8858-4529-8646-ffbbc278f83e
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: FirstLineIndent Element for Frame for Controls for View (Format)
+description: FirstLineIndent Element for Frame for Controls for View (Format)
 ---
 # FirstLineIndent Element for Frame for Controls for View (Format)
 

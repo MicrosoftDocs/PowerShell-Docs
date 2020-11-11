@@ -1,37 +1,42 @@
 ---
-title: "Host01 Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1fca30b1-13fe-48a2-b0dd-979c161177a6
-caps.latest.revision: 14
+ms.date: 09/13/2016
+ms.topic: reference
+title: Host01 Sample
+description: Host01 Sample
 ---
 # Host01 Sample
 
-This sample shows how to implement a host application that uses a custom host. In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit." The host application then looks at the output of the script and prints out the results.
+This sample shows how to implement a host application that uses a custom host. In this sample a
+runspace is created that uses the custom host, and then the
+[System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API
+is used to run a script that calls "exit." The host application then looks at the output of the
+script and prints out the results.
 
- This sample uses the default UI features provided by Windows PowerShell. For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).
+This sample uses the default UI features provided by Windows PowerShell. For more information about
+implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).
 
 ## Requirements
 
- This sample requires Windows PowerShell 2.0.
+This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
 
-- Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.
+- Creating a custom host class that derives from the
+  [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
+  class.
 
 - Creating a runspace that uses the custom host class.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.
+- Creating a
+  [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell)
+  object that runs a script that calls exit.
 
 - Verifying that the correct exit code was used in the exit process.
 
-## Example
+## Example 1
 
- The following code shows an implementation of a host application that uses a simple custom host interface.
+The following code shows an implementation of a host application that uses a simple custom host
+interface.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -131,9 +136,12 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## Example
+## Example 2
 
- The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
+The following code is the implementation of the
+[System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
+class that is used by this host application. Those elements that are not implemented throw an
+exception or return nothing.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

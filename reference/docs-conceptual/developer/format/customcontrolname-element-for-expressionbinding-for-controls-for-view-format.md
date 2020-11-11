@@ -1,13 +1,8 @@
 ---
-title: "CustomControlName Element for ExpressionBinding for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 4b6ee11e-9086-41d2-afd3-42fb9f24da69
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: CustomControlName Element for ExpressionBinding for Controls for View (Format)
+description: CustomControlName Element for ExpressionBinding for Controls for View (Format)
 ---
 # CustomControlName Element for ExpressionBinding for Controls for View (Format)
 

@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Archive-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 02/20/2020
+ms.date: 07/17/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Expand-Archive
@@ -63,17 +63,18 @@ Expand-Archive -Path Draftv2.Zip -DestinationPath C:\Reference
 
 ### -DestinationPath
 
-Specifies the path to the folder in which you want the command to save extracted files. Enter the
-path to a folder, but do not specify a filename or filename extension.
+By default, `Expand-Archive` creates a folder in the current location that is the same name as the
+ZIP file. The parameter allows you to specify the path to a different folder. The target folder is
+created if it does not exist.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: Current location
+Default value: A folder in the current location
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -83,7 +84,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -102,7 +103,7 @@ characters, enclose each escape character in single quotation marks, to instruct
 interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: LiteralPath
 Aliases: PSPath
 
@@ -118,7 +119,7 @@ Accept wildcard characters: False
 Causes the cmdlet to output a list of the files expanded from the archive.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -134,7 +135,7 @@ Accept wildcard characters: False
 Specifies the path to the archive file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Path
 Aliases:
 
@@ -150,7 +151,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -166,7 +167,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

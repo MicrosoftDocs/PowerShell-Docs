@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 6/17/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -172,7 +172,7 @@ For more information about Windows PowerShell background jobs, see [about_Jobs](
 and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AsJobSet
 Aliases:
 
@@ -197,7 +197,7 @@ if your computer isn't configured to run remote commands.
 If the **ComputerName** parameter isn't specified, `Restart-Computer` restarts the local computer.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: CN, __SERVER, Server, IPAddress
 
@@ -224,7 +224,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -255,7 +255,7 @@ For more information, see [AuthenticationLevel Enumeration](/dotnet/api/system.m
 This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: AuthenticationLevel
+Type: System.Management.AuthenticationLevel
 Parameter Sets: (All)
 Aliases: Authentication
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
@@ -279,7 +279,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 If the **Delay** parameter isn't specified, `Restart-Computer` uses a five second delay.
 
 ```yaml
-Type: Int16
+Type: System.Int16
 Parameter Sets: DefaultSet
 Aliases:
 
@@ -305,7 +305,7 @@ The acceptable values for this parameter are:
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: WaitForServiceTypes
+Type: Microsoft.PowerShell.Commands.WaitForServiceTypes
 Parameter Sets: DefaultSet
 Aliases:
 Accepted values: Wmi, WinRM, PowerShell
@@ -322,7 +322,7 @@ Accept wildcard characters: False
 Forces an immediate restart of the computer.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: f
 
@@ -344,7 +344,7 @@ The acceptable values for this parameter are:
 - **Impersonate**: Allows objects to use the credentials of the caller.
 
 ```yaml
-Type: ImpersonationLevel
+Type: System.Management.ImpersonationLevel
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
@@ -364,7 +364,7 @@ Specifies which protocol to use to restart the computers. The valid values are *
 This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DefaultSet
 Aliases:
 Accepted values: DCOM, WSMan
@@ -385,7 +385,7 @@ If the **ThrottleLimit** parameter isn't specified or a value of 0 is used, `Res
 a maximum of 32 concurrent connections.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: AsJobSet
 Aliases:
 
@@ -407,7 +407,7 @@ The **Timeout** parameter is only valid with the **Wait** parameter. **Timeout**
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: DefaultSet
 Aliases: TimeoutSec
 
@@ -436,7 +436,7 @@ for the remote computers to restart.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: DefaultSet
 Aliases:
 
@@ -466,7 +466,7 @@ For more information, see
 > credentials that are passed to it can be used to control the network session.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DefaultSet
 Aliases:
 Accepted values: Basic, CredSSP, Default, Digest, Kerberos, Negotiate
@@ -483,7 +483,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running `Restart-Computer`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -499,7 +499,7 @@ Accept wildcard characters: False
 Shows what would happen if the `Restart-Computer` runs. The `Restart-Computer` cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -539,7 +539,8 @@ output is generated.
   system, including the local system.
 - `Restart-Computer` uses the [Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
   of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
-  class.
+  class.  This method requires the **SeShutdownPrivilege** privilege be enabled for the user account
+  used to restart the machine.
 
 In Windows PowerShell 2.0, the **AsJob** parameter doesn't work reliably when you are restarting or
 stopping remote computers. In Windows PowerShell 3.0, the implementation is changed to resolve this

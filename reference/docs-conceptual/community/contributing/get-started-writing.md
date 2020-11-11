@@ -46,8 +46,8 @@ information.
 ## Using git branches
 
 The default branch for PowerShell-Docs is the `staging` branch. Changes made in working branches are
-merged into the `staging` branch before the being published. About once a week, the `staging` branch
-is merged into the `live` branch. The `live` branch contains the content that is published to
+merged into the `staging` branch before then being published. About once a week, the `staging`
+branch is merged into the `live` branch. The `live` branch contains the content that is published to
 docs.microsoft.com. Changes should never be made directly in the `live` branch.
 
 If you are submitting a change to documentation that only applies to an unreleased version of
@@ -61,7 +61,7 @@ repository before creating your working branch. The working branch should be cre
 update-to-date copy of the `staging` or `release` branch.
 
 Make the changes you want to submit following the process in the
-[Making your change][[making-changes] section of the central Contributor's Guide.
+[Making your change][making-changes] section of the central Contributor's Guide.
 
 ### Creating new articles
 
@@ -72,7 +72,7 @@ to the issue.
 
 Similar to the PowerShell [RFC process][rfc], creating an issue before writing the content ensures
 that you don't spend a lot of time and effort on something that gets rejected by the PowerShell-Docs
-team. This also allows us to consult with you on the scope of the content and where is should fit
+team. This also allows us to consult with you on the scope of the content and where it should fit
 within the PowerShell documentation.
 
 ### Updating existing articles

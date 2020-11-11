@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 4/26/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
 ---
@@ -230,8 +230,8 @@ Indicates that this cmdlet adds a new member even the object has a custom member
 You cannot use the **Force** parameter to replace a standard member of a type.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: NotePropertyMultiMemberSet, NotePropertySingleMemberSet, MemberSet
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: MemberSet, NotePropertySingleMemberSet, NotePropertyMultiMemberSet
 Aliases:
 
 Required: False
@@ -247,7 +247,7 @@ Specifies the object to which the new member is added.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -272,13 +272,13 @@ The acceptable values for this parameter are:
 - CodeMethod
 
 For information about these values, see [PSMemberTypes Enumeration](/dotnet/api/system.management.automation.psmembertypes)
-in the MSDN library.
+in the PowerShell SDK.
 
 Not all objects have every type of member.
 If you specify a member type that the object does not have, PowerShell returns an error.
 
 ```yaml
-Type: PSMemberTypes
+Type: System.Management.Automation.PSMemberTypes
 Parameter Sets: MemberSet
 Aliases: Type
 Accepted values: AliasProperty, CodeProperty, Property, NoteProperty, ScriptProperty, Properties, PropertySet, Method, CodeMethod, ScriptMethod, Methods, ParameterizedProperty, MemberSet, Event, Dynamic, All
@@ -295,7 +295,7 @@ Accept wildcard characters: False
 Specifies the name of the member that this cmdlet adds.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: MemberSet
 Aliases:
 
@@ -318,7 +318,7 @@ For more information about hash tables and ordered dictionaries in PowerShell, s
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: NotePropertyMultiMemberSet
 Aliases:
 
@@ -339,7 +339,7 @@ This parameter is optional.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NotePropertySingleMemberSet
 Aliases:
 
@@ -360,7 +360,7 @@ This parameter is optional.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: NotePropertySingleMemberSet
 Aliases:
 
@@ -386,7 +386,7 @@ Use the **PassThru** parameter to create an output object for any object that ha
 wrapper.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -416,7 +416,7 @@ used to get the value of a variable. The second **ScriptBlock**, specified in th
 **SecondValue** parameter, is used to set the value of a variable.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: MemberSet
 Aliases:
 
@@ -434,7 +434,7 @@ If you add an **AliasProperty**, **CodeProperty**, **ScriptProperty** or **CodeM
 can supply optional, additional information by using the **SecondValue** parameter.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: MemberSet
 Aliases:
 
@@ -456,7 +456,7 @@ This parameter is effective only when the **InputObject** is a **PSObject**.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: TypeNameSet, NotePropertyMultiMemberSet, NotePropertySingleMemberSet, MemberSet
 Aliases:
 
@@ -515,3 +515,4 @@ being added. For more information about the `$this` variable, see [about_Automat
 [New-Object](New-Object.md)
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+

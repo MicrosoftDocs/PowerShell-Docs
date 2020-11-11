@@ -1,13 +1,8 @@
 ---
-title: "Modifying the PSModulePath Installation Path | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: dc5ce5a2-50e9-4c88-abf1-ac148a8a6b7b
-caps.latest.revision: 15
+ms.date: 09/13/2016
+ms.topic: reference
+title: Modifying the PSModulePath Installation Path
+description: Modifying the PSModulePath Installation Path
 ---
 # Modifying the PSModulePath Installation Path
 
@@ -50,8 +45,8 @@ To add paths to this variable, use one of the following methods:
 - To add a persistent variable to the registry, create a new user environment variable called
   `PSModulePath` using the Environment Variables Editor in the **System Properties** dialog box.
 
-- To add a persistent variable by using a script, use the .Net method [SetEnvironmentVariable](https://docs.microsoft.com/dotnet/api/system.environment.setenvironmentvariable)
-  on the [System.Environment](https://docs.microsoft.com/dotnet/api/system.environment) class. For
+- To add a persistent variable by using a script, use the .Net method [SetEnvironmentVariable](/dotnet/api/system.environment.setenvironmentvariable)
+  on the [System.Environment](/dotnet/api/system.environment) class. For
   example, the following script adds the `C:\Program Files\Fabrikam\Module` path to the value of the
   `PSModulePath` environment variable for the computer. To add the path to the user `PSModulePath`
   environment variable, set the target to "User".

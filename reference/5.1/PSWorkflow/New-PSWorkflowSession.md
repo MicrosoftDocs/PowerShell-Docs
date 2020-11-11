@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Powershell.Workflow.ServiceCore.dll-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSWorkflow
 ms.date: 07/10/2019
 online version: https://docs.microsoft.com/powershell/module/psworkflow/new-psworkflowsession?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -84,7 +84,7 @@ The value of this parameter should match the value of the **URLPrefix** property
 the remote computer.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -124,7 +124,7 @@ For more information about the values of this parameter, see
 > compromised, the credentials that are passed to it can be used to control the network session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
@@ -148,7 +148,7 @@ To get a certificate thumbprint, use the `Get-Item` cmdlet or the `Get-ChildItem
 PowerShell Cert: drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -177,7 +177,7 @@ instructions for adding a computer name to the TrustedHosts list, see "How to Ad
 Trusted Host List" in [about_Remote_Troubleshooting](../Microsoft.PowerShell.Core/About/about_Remote_Troubleshooting.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Cn
 
@@ -197,7 +197,7 @@ user. Type a user name, such as User01, Domain01\User01, or User@Domain.com, or 
 When you type a user name, this cmdlet prompts you for a password.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -238,7 +238,7 @@ cmdlet.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -256,7 +256,7 @@ Specifies a friendly name for the workflow session. You can use the name with ot
 current session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -285,7 +285,7 @@ computers or sessions on which the command runs. An alternate port setting might
 from running on all computers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -314,7 +314,7 @@ For a description of the session options, including the default values, see `New
 For information about the `$PSSessionOption` preference variable, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 ```yaml
-Type: PSSessionOption
+Type: System.Management.Automation.Remoting.PSSessionOption
 Parameter Sets: (All)
 Aliases:
 
@@ -334,7 +334,7 @@ If you omit this parameter or enter a value of 0 (zero), the default value for t
 The throttle limit applies only to the current command, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -358,7 +358,7 @@ If you specify this parameter, but SSL is not available on the port that is used
 the command fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

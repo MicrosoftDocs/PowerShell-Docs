@@ -1,13 +1,8 @@
 ---
-title: "TypeName Element for SelectionCondition for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 290d38e3-b9bd-4382-9671-2e28b32b7260
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for SelectionCondition for GroupBy (Format)
+description: TypeName Element for SelectionCondition for GroupBy (Format)
 ---
 # TypeName Element for SelectionCondition for GroupBy (Format)
 

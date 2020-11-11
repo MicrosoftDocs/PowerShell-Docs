@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/17/2020
+ms.topic: reference
 title: DSC for Linux nxFile Resource
+description: DSC for Linux nxFile Resource
 ---
 # DSC for Linux nxFile Resource
 
@@ -80,8 +81,9 @@ break characters:
    }
    ```
 
-1. Read the file contents in the PowerShell script with [Get-Content](https://technet.microsoft.com/library/hh849787.aspx)
-   after setting the **$OFS** property to use the Linux line-break character.
+1. Read the file contents in the PowerShell script with
+   [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) after setting the **$OFS**
+   property to use the Linux line-break character.
 
    ```powershell
    Import-DSCResource -Module nx

@@ -2,6 +2,7 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Working with Registry Entries
+description: This article discusses how to deal with registry entries using PowerShell.
 ---
 # Working with Registry Entries
 
@@ -121,7 +122,7 @@ property.
 > [!NOTE]
 > Although `Get-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot
 > be used to filter by property name. These parameters refer to registry keys, which are item
-> paths and not registry entries. Registry entries which are item properties.
+> paths and not registry entries, which are item properties.
 
 Another option is to use the Reg.exe command line tool. For help with reg.exe, type `reg.exe /?`
 at a command prompt. To find the DevicePath entry, use reg.exe as shown in the following command:

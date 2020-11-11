@@ -1,13 +1,8 @@
 ---
-title: "TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: bd025a3a-3780-40db-a068-873e7df38015
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
+description: TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
 ---
 # TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
 

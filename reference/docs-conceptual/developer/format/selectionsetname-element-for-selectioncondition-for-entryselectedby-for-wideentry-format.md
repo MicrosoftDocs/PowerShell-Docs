@@ -1,13 +1,8 @@
 ---
-title: "SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a13a429c-a31b-4e29-828c-c0c0917b5415
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)
+description: SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)
 ---
 # SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)
 

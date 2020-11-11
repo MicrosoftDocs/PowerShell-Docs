@@ -1,8 +1,9 @@
 ---
 external help file: PSDiagnostics-help.xml
+Locale: en-US
 Module Name: PSDiagnostics
 ms.date: 11/27/2018
-online version: https://docs.microsoft.com/powershell/module/psdiagnostics/enable-pstrace?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/psdiagnostics/enable-pstrace?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSTrace
 ---
@@ -43,7 +44,7 @@ When this parameter is used, the cmdlet enables the Analytic event log of the
 Microsoft-Windows-PowerShell provider. The Operational event log is not changed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -59,7 +60,7 @@ Accept wildcard characters: False
 Used to force the change without prompting.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -94,3 +95,4 @@ You must run this cmdlet from an elevated PowerShell session.
 [Set-LogProperties](Set-LogProperties.md)
 
 [Disable-PSTrace](Disable-PSTrace.md)
+

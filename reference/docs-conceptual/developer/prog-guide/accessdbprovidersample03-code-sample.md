@@ -1,24 +1,23 @@
 ---
-title: "AccessDbProviderSample03 Code Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
-caps.latest.revision: 5
+ms.date: 09/13/2016
+ms.topic: reference
+title: AccessDbProviderSample03 Code Sample
+description: AccessDbProviderSample03 Code Sample
 ---
 # AccessDbProviderSample03 Code Sample
 
-The following code shows the implementation of the Windows PowerShell provider described in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md). This provider that can manipulate the data in a data store.
+The following code shows the implementation of the Windows PowerShell provider described in
+[Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).
+This provider that can manipulate the data in a data store.
 
 > [!NOTE]
-> You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
->
-> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
+> You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the
+> Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime
+> Components. For download instructions, see
+> [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> The downloaded source files are available in the **\<PowerShell Samples>** directory. For more
+> information about other Windows PowerShell provider implementations, see
+> [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
 ## Code Sample
 
@@ -991,7 +990,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 }
 ```
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L11-L976 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="11-976":::
 
 ## See Also
 

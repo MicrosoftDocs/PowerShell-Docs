@@ -1,13 +1,8 @@
 ---
-title: "Creating Custom Controls | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c3baa406-cd33-4420-be5a-07ef09d93480
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating Custom Controls
+description: Creating Custom Controls
 ---
 # Creating Custom Controls
 

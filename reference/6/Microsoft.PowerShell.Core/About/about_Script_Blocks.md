@@ -1,7 +1,8 @@
 ---
+description:  Defines what a script block is and explains how to use script blocks in the PowerShell programming language. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 08/28/2018
+Locale: en-US
+ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_blocks?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Script_Blocks
@@ -64,7 +65,7 @@ example:
 Invoke-Command -ScriptBlock { Get-Process }
 ```
 
-```output
+```Output
 Handles  NPM(K)    PM(K)     WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----     ----- -----   ------     -- -----------
 999          28    39100     45020   262    15.88   1844 communicator
@@ -82,7 +83,7 @@ Invoke-Command -ScriptBlock { param($p1, $p2)
 } -ArgumentList "First", "Second"
 ```
 
-```output
+```Output
 p1: First
 p2: Second
 ```
@@ -90,6 +91,9 @@ p2: Second
 The script block in the preceding example uses the `param` keyword to
 create a parameters `$p1` and `$p2`. The string "First" is bound to the
 first parameter (`$p1`) and "Second" is bound to (`$p2`).
+
+For more information about the behavior of **ArgumentList**, see
+[about_Splatting](about_Splatting.md#splatting-with-arrays).
 
 You can use variables to store and execute script blocks. The example below
 stores a script block in a variable and passes it to `Invoke-Command`.
@@ -99,7 +103,7 @@ $a = { Get-Service BITS }
 Invoke-Command -ScriptBlock $a
 ```
 
-```output
+```Output
 Status   Name               DisplayName
 ------   ----               -----------
 Running  BITS               Background Intelligent Transfer Ser...
@@ -118,7 +122,7 @@ $a ={ param($p1, $p2)
 &$a -p2 "First" -p1 "Second"
 ```
 
-```output
+```Output
 p1: Second
 p2: First
 ```

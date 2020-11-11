@@ -1,7 +1,8 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  GetConfigurationStatus method
+ms.date: 07/17/2020
+ms.topic: reference
+title: GetConfigurationStatus method
+description: GetConfigurationStatus method
 ---
 # GetConfigurationStatus method
 
@@ -18,12 +19,11 @@ uint32 GetConfigurationStatus(
 
 ## Parameters
 
-*All* \[in\]
-**true** if this method should return information about all the configuration runs on the machine, including
-the configuration application and the consistency check.
+**All** \[in\] **true** if this method should return information about all the configuration runs on
+the machine, including the configuration application and the consistency check.
 
-*configurationStatus* \[out\]
-On return, contains an embedded instance of the **MSFT_DSCConfigurationStatus** class that defines the settings.
+**configurationStatus** \[out\] On return, contains an embedded instance of the
+**MSFT_DSCConfigurationStatus** class that defines the settings.
 
 ## Return value
 

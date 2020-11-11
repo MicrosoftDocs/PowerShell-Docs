@@ -1,10 +1,10 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disconnect-pssession?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disconnect-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disconnect-PSSession
 ---
@@ -202,11 +202,11 @@ PS> Invoke-Command -ComputerName Server01 {Get-PSSessionConfiguration Microsoft.
 
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
-ResourceUri                   : https://schemas.microsoft.com/powershell/microsoft.powershell
+ResourceUri                   : http://schemas.microsoft.com/powershell/microsoft.powershell
 MaxConcurrentCommandsPerShell : 1000
 UseSharedProcess              : false
 ProcessIdleTimeoutSec         : 0
-xmlns                         : https://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+xmlns                         : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 MaxConcurrentUsers            : 5
 lang                          : en-US
 SupportsOptions               : true
@@ -219,14 +219,14 @@ AutoRestart                   : false
 SecurityDescriptorSddl        : O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;SA;GXGW;;;WD)
 MaxMemoryPerShellMB           : 1024
 MaxIdleTimeoutms              : 2147483647
-Uri                           : https://schemas.microsoft.com/powershell/microsoft.powershell
+Uri                           : http://schemas.microsoft.com/powershell/microsoft.powershell
 SDKVersion                    : 2
 Name                          : microsoft.powershell
 XmlRenderingType              : text
 Capability                    : {Shell}
 RunAsPassword                 :
 MaxProcessesPerShell          : 15
-ParentResourceUri             : https://schemas.microsoft.com/powershell/microsoft.powershell
+ParentResourceUri             : http://schemas.microsoft.com/powershell/microsoft.powershell
 Enabled                       : true
 MaxShells                     : 25
 MaxShellsPerUser              : 25
@@ -243,7 +243,7 @@ Scheme                            : http
 Port                              : 80
 AppName                           : /wsman
 Credential                        :
-ShellUri                          : https://schemas.microsoft.com/powershell/Microsoft.PowerShell
+ShellUri                          : http://schemas.microsoft.com/powershell/Microsoft.PowerShell
 AuthenticationMechanism           : Default
 CertificateThumbprint             :
 MaximumConnectionRedirectionCount : 5
@@ -322,7 +322,7 @@ To get the ID of a session, use the `Get-PSSession` cmdlet. The instance ID is s
 property of the session.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Id
 Aliases:
 
@@ -354,7 +354,7 @@ the session configuration. The default value of **MaxIdleTimeoutMs** is 12 hours
 milliseconds).
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -376,7 +376,7 @@ To get the instance ID of a session, use the `Get-PSSession` cmdlet. The instanc
 the **InstanceID** property of the session.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceId
 Aliases:
 
@@ -395,7 +395,7 @@ To get the friendly name of a session, use the `Get-PSSession` cmdlet. The frien
 in the **Name** property of the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Name
 Aliases:
 
@@ -418,7 +418,7 @@ session. If you pipe other PSSessions to `Disconnect-PSSession`, the `Disconnect
 fails.
 
 ```yaml
-Type: PSSession[]
+Type: System.Management.Automation.Runspaces.PSSession[]
 Parameter Sets: Session
 Aliases:
 
@@ -439,7 +439,7 @@ this command. If you omit this parameter or enter a value of 0, the default valu
 The throttle limit applies only to the current command, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -470,7 +470,7 @@ Valid values are:
   of the session configuration is used for the disconnected session.
 
 ```yaml
-Type: OutputBufferingMode
+Type: System.Management.Automation.Runspaces.OutputBufferingMode
 Parameter Sets: (All)
 Aliases:
 
@@ -486,7 +486,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -503,7 +503,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -534,6 +534,8 @@ You can pipe a session to `Disconnect-PSSession`.
 `Disconnect-PSSession` returns an object that represents the session that it disconnected.
 
 ## NOTES
+
+This cmdlet is only available on Windows platforms.
 
 - The `Disconnect-PSSession` cmdlet works only when the local and remote computers are running
   PowerShell 3.0 or later.

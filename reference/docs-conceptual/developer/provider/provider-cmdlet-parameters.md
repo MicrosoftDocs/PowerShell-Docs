@@ -1,13 +1,8 @@
 ---
-title: "Provider cmdlet parameters | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b3d09eaa-924f-4e2b-adfb-14bb729090dd
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: Provider cmdlet parameters
+description: Provider cmdlet parameters
 ---
 # Provider cmdlet parameters
 

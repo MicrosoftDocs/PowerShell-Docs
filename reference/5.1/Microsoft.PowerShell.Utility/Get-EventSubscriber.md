@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-eventsubscriber?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,11 +17,13 @@ Gets the event subscribers in the current session.
 ## SYNTAX
 
 ### BySource (Default)
+
 ```
 Get-EventSubscriber [[-SourceIdentifier] <String>] [-Force] [<CommonParameters>]
 ```
 
 ### ById
+
 ```
 Get-EventSubscriber [-SubscriptionId] <Int32> [-Force] [<CommonParameters>]
 ```
@@ -35,6 +37,7 @@ To cancel an event subscription, delete the event subscriber by using the Unregi
 ## EXAMPLES
 
 ### Example 1: Get the event subscriber for a timer event
+
 ```
 PS C:\> $Timer = New-Object Timers.Timer
 PS C:\> $Timer | Get-Member -Type Event
@@ -71,6 +74,7 @@ The third command uses the Register-ObjectEvent cmdlet to register for the Elaps
 The fourth command uses the **Get-EventSubscriber** cmdlet to get the event subscriber for the Elapsed event.
 
 ### Example 2: Use the dynamic module in PSEventJob in the Action property of the event subscriber
+
 ```
 PS C:\> $Timer = New-Object Timers.Timer
 PS C:\> $Timer.Interval = 500
@@ -142,7 +146,7 @@ For more information about modules, see [about_Modules](../Microsoft.PowerShell.
 Indicates that this cmdlet gets all event subscribers, including subscribers for events that are hidden by using the *SupportEvent* parameter of Register-ObjectEvent, Register-WmiEvent, and Register-EngineEvent.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -160,7 +164,7 @@ Wildcards are not permitted.
 This parameter is case-sensitive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: BySource
 Aliases:
 
@@ -176,7 +180,7 @@ Specifies the subscription identifier that this cmdlet gets.
 By default, **Get-EventSubscriber** gets all event subscribers in the session.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ById
 Aliases: Id
 
@@ -201,6 +205,7 @@ You cannot pipe input to this cmdlet.
 **Get-EventSubscriber** returns an object that represents each event subscriber.
 
 ## NOTES
+
 * The New-Event cmdlet, which creates a custom event, does not generate a subscriber. Therefore, the **Get-EventSubscriber** cmdlet will not find a subscriber object for these events. However, if you use the Register-EngineEvent cmdlet to subscribe to a custom event (in order to forward the event or to specify an action), **Get-EventSubscriber** will find the subscriber that **Register-EngineEvent** generates.
 
   Events, event subscriptions, and the event queue exist only in the current session.
@@ -223,5 +228,3 @@ If you close the current session, the event queue is discarded and the event sub
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-
-

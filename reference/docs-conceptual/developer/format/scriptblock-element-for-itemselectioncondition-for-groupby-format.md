@@ -1,13 +1,8 @@
 ---
-title: "ScriptBlock Element for ItemSelectionCondition for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 58d25835-4636-4c58-9f6c-0332b9318051
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: ScriptBlock Element for ItemSelectionCondition for GroupBy (Format)
+description: ScriptBlock Element for ItemSelectionCondition for GroupBy (Format)
 ---
 # ScriptBlock Element for ItemSelectionCondition for GroupBy (Format)
 

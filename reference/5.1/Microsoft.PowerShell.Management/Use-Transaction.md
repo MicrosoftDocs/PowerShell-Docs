@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/use-transaction?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -33,6 +33,7 @@ For more information, see about_Transactions.
 ## EXAMPLES
 
 ### Example 1: Script by using a transaction-enabled object
+
 ```
 PS C:\> Start-Transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
@@ -82,6 +83,7 @@ The seventh command uses the Complete-Transaction cmdlet to commit the transacti
 The final command uses the **ToString** method to display the resulting value of the variable as a string.
 
 ### Example 2: Roll back a transaction
+
 ```
 PS C:\> Start-Transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
@@ -119,7 +121,7 @@ Enter any valid script block enclosed in braces ( { } ).
 This parameter is required.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -136,7 +138,7 @@ This parameter is valid only when a transaction is in progress.
 For more information, see about_transactions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 
@@ -161,6 +163,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet returns the result of the transaction.
 
 ## NOTES
+
 * The *UseTransaction* parameter includes the command in the active transaction. Because the **Use-Transaction** cmdlet is always used in transactions, this parameter is required to make any **Use-Transaction** command effective.
 
 *
@@ -174,5 +177,3 @@ This cmdlet returns the result of the transaction.
 [Start-Transaction](Start-Transaction.md)
 
 [Undo-Transaction](Undo-Transaction.md)
-
-

@@ -1,69 +1,121 @@
 ---
+description: Describes the Group Policy settings for Windows PowerShell 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 11/28/2017
+Locale: en-US
+ms.date: 03/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_group_policy_settings?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Group_Policy_Settings
 ---
 # About Group Policy Settings
 
-## SHORT DESCRIPTION
+## Short description
 Describes the Group Policy settings for Windows PowerShell
 
-## LONG DESCRIPTION
+## Long description
 
 Windows PowerShell includes Group Policy settings to help you define
-consistent option values for servers in an enterprise environment.
+consistent configuration values for Windows computers in an enterprise
+environment.
 
-The Windows PowerShell Group Policy settings are in the following
-Group Policy paths:
+The PowerShell Group Policy settings are in the following Group Policy paths:
 
-    Computer Configuration\
-      Administrative Templates\
-        Windows Components\
-          Windows PowerShell
+```
+Computer Configuration\
+  Administrative Templates\
+    Windows Components\
+      Windows PowerShell
 
-    User Configuration\
-      Administrative Templates\
-        Windows Components\
-          Windows PowerShell
+User Configuration\
+  Administrative Templates\
+    Windows Components\
+      Windows PowerShell
+```
 
-Group policy settings in the User Configuration path take precedence
-over Group Policy settings in the Computer Configuration path.
+Group policy settings in the User Configuration path take precedence over Group
+Policy settings in the Computer Configuration path.
 
 The policies are as follows:
 
-- Turn on Script Execution: Sets the Windows PowerShell execution policy.
 - Turn on Module Logging: Sets the **LogPipelineExecutionDetails** property of
   modules.
-- Set the default source path for `Update-Help`: Sets the source for
-  Updatable Help to a directory, not the Internet.
+- Turn on PowerShell Script Block Logging: Enables detailed logging of all
+  PowerShell scripts.
+- Turn on Script Execution: Sets the PowerShell execution policy.
+- Turn on PowerShell Transcription: enables capturing of input and output of
+  PowerShell commands into text-based transcripts.
+- Set the default source path for `Update-Help`: Sets the source for Updatable
+  Help to a directory, not the Internet.
 
-To download spreadsheets that list all of the Group Policy settings for
-each version of Windows, see
-[Group Policy Settings Reference for Windows and Windows Server](https://www.microsoft.com/download/details.aspx?id=25250)
-in the Microsoft Download Center.
+For more information about acquiring other templates and configuring Group
+policy, see
+[How to create and manage the Central Store for Group Policy Administrative Templates in Windows][gpstore].
 
-## TURN ON SCRIPT EXECUTION
+## Turn on module logging
 
-The "Turn on Script Execution" policy setting sets the execution policy
-for computers and users, which determines which scripts are permitted to
-run.
+The **Turn on Module Logging** policy setting turns on logging for selected
+PowerShell modules. The setting is effective in all sessions on all affected
+computers.
+
+If you enable this policy setting and specify one or more modules, pipeline
+execution events for the specified modules are recorded in the Windows
+PowerShell log in Event Viewer.
+
+If you disable this policy setting, logging of execution events is disabled for
+all PowerShell modules.
+
+If this policy setting is not configured, the **LogPipelineExecutionDetails**
+property of each module determines whether the execution events of a module are
+logged. By default, the **LogPipelineExecutionDetails** property of all modules
+is set to False.
+
+To turn on module logging for a module, use the following command format. The
+module must be imported into the session and the setting is effective only in
+the current session.
+
+```powershell
+Import-Module <Module-Name>
+(Get-Module <Module-Name>).LogPipelineExecutionDetails = $true
+```
+
+To turn on module logging for all sessions on a particular computer, add the
+previous commands to the 'All Users' PowerShell profile
+(`$Profile.AllUsersAllHosts`).
+
+For more information about module logging, see [about_Modules](about_Modules.md).
+
+## Turn on PowerShell script block logging
+
+The **Turn on PowerShell Script Block Logging** policy setting enables logging
+of all PowerShell script input to the Microsoft-Windows-PowerShell/Operational
+event log. If you enable this policy setting, PowerShell Core will log the
+processing of commands, script blocks, functions, and scripts - whether invoked
+interactively, or through automation.
+
+If you disable this policy setting, logging of PowerShell script input is
+disabled. If you enable the Script Block Invocation Logging, PowerShell
+additionally logs events when invocation of a command, script block, function,
+or script starts or stops. Enabling Invocation Logging generates a high volume
+of event logs.
+
+## Turn on script execution
+
+The **Turn on Script Execution** policy setting sets the execution policy for
+computers and users, which determines which scripts are permitted to run.
 
 If you enable the policy setting, you can select from among the following
 policy settings.
 
-- "Allow only signed scripts" allows scripts to execute only if they are
+- **Allow only signed scripts** allows scripts to execute only if they are
   signed by a trusted publisher. This policy setting is equivalent to the
   AllSigned execution policy.
 
-- "Allow local scripts and remote signed scripts" allows all local scripts to
+- **Allow local scripts and remote signed scripts** allows all local scripts to
   run. Scripts that originate from the Internet must be signed by a trusted
   publisher. This policy setting is equivalent to the RemoteSigned execution
   policy.
 
-- "Allow all scripts" allows all scripts to run. This policy setting is
+- **Allow all scripts** allows all scripts to run. This policy setting is
   equivalent to the Unrestricted execution policy.
 
 If you disable this policy setting, no scripts are allowed to run. This policy
@@ -76,85 +128,71 @@ Restricted.
 
 For more information, see [about_Execution_Policies](about_Execution_Policies.md).
 
-## TURN ON MODULE LOGGING
+## Turn on powershell transcription
 
-The "Turn on Module Logging" policy setting turns on logging for
-selected Windows PowerShell modules. The setting is effective in
-all sessions on all affected computers.
+The **Turn on PowerShell Transcription** policy setting lets you capture the
+input and output of PowerShell Core commands into text-based transcripts. If
+you enable this policy setting, PowerShell Core will enable transcription
+logging for PowerShell Core and any other applications that leverage the
+PowerShell Core engine. By default, PowerShell Core will record transcript
+output to each users' My Documents directory, with a file name that includes
+'PowerShell_transcript', along with the computer name and time started.
+Enabling this policy is equivalent to calling the Start-Transcript cmdlet on
+each PowerShell Core session.
 
-If you enable this policy setting and specify one or more modules,
-pipeline execution events for the specified modules are recorded in
-the Windows PowerShell log in Event Viewer.
+If you disable this policy setting, transcription logging of PowerShell-based
+applications is disabled by default, although transcripting can still be
+enabled through the Start-Transcript cmdlet.
 
-If you disable this policy setting, logging of execution events is
-disabled for all Windows PowerShell modules.
+If you use the OutputDirectory setting to enable transcription logging to a
+shared location, be sure to limit access to that directory to prevent users
+from viewing the transcripts of other users or computers.
 
-If this policy setting is not configured, the **LogPipelineExecutionDetails**
-property of each module or snap-in determines whether the execution
-events of a module or snap-in are logged. By default, the
-**LogPipelineExecutionDetails** property of all modules and snap-ins is set
-to False.
+## Set the default source path for Update-Help
 
-To turn on module logging for a module, use the following command format.
-The module must be imported into the session and the setting is effective
-only in the current session.
+The **Set the Default Source Path for Update-Help** policy setting sets a
+default value for the **SourcePath** parameter of the `Update-Help` cmdlet.
+This setting prevents users from using the `Update-Help` cmdlet to download
+help files from the Internet.
 
-```powershell
-Import-Module <Module-Name>
-(Get-Module <Module-Name>).LogPipelineExecutionDetails = $true
-```
-
-To turn on module logging for all sessions on a particular computer,
-add the previous commands to the 'All Users' Windows PowerShell profile
-($Profile.AllUsersAllHosts).
-
-For more information about module logging, see [about_Modules](about_Modules.md).
-
-## SET THE DEFAULT SOURCE PATH FOR UPDATE-HELP
-
-The "Set the Default Source Path for Update-Help" policy setting sets a
-default value for the **SourcePath** parameter of the `Update-Help` cmdlet. This
-setting prevents users from using the `Update-Help` cmdlet to download help
-files from the Internet.
-
-NOTE: The "Set the default source path for Update-Help" Group Policy setting
-appears under 'Computer Configuration' and 'User Configuration'. However, only
-the Group Policy setting under 'Computer Configuration' is effective. The Group
-Policy setting under 'User Configuration' is ignored.
+> [!NOTE]
+> This Group Policy setting appears under **Computer Configuration** and **User
+> Configuration**. However, only the Group Policy setting under **Computer
+> Configuration** is effective. The Group Policy setting under **User
+> Configuration** is ignored.
 
 The `Update-Help` cmdlet downloads and installs the newest help files for
-Windows PowerShell modules and installs them on the computer. By default,
-`Update-Help` downloads new help files from an Internet location specified by
-the module.
+PowerShell modules and installs them on the computer. By default, `Update-Help`
+downloads new help files from an Internet location specified by the module.
 
-However, you can use the `Save-Help` cmdlet to download the newest help files to
-a file system location, such as a network share, and then use the `Update-Help`
-cmdlet to get the help files from the file system location and install them on
-the computer. The **SourcePath** parameter of the `Update-Help` cmdlet specifies
-the file system location.
+However, you can use the `Save-Help` cmdlet to download the newest help files
+to a file system location, such as a network share, and then use the
+`Update-Help` cmdlet to get the help files from the file system location and
+install them on the computer. The **SourcePath** parameter of the `Update-Help`
+cmdlet specifies the file system location.
 
-By providing a default value for the **SourcePath** parameter, this Group Policy
-setting implicitly adds the **SourcePath** parameter to all `Update-Help`
-commands.
-Users can override the particular file system location specified as the
-default value by entering a different file system location. But they cannot
-remove the **SourcePath** parameter from the `Update-Help` command.
+By providing a default value for the **SourcePath** parameter, this Group
+Policy setting implicitly adds the **SourcePath** parameter to all
+`Update-Help` commands. Users can override the particular file system location
+specified as the default value by entering a different file system location.
+But they cannot remove the **SourcePath** parameter from the `Update-Help`
+command.
 
 If you enable this policy setting, you can specify a default value for the
 **SourcePath** parameter. Enter a file system location.
 
-If this policy setting is disabled or not configured, there is no default
-value for the **SourcePath** parameter of the `Update-Help` cmdlet. Users can
+If this policy setting is disabled or not configured, there is no default value
+for the **SourcePath** parameter of the `Update-Help` cmdlet. Users can
 download help from the Internet or from any file system location.
 
 For more information, see [about_Updatable_Help](about_Updatable_Help.md).
 
-## KEYWORDS
+## Keywords
 
 about_Group_Policies
 about_GroupPolicy
 
-## SEE ALSO
+## See also
 
 [about_Execution_Policies](about_Execution_Policies.md)
 
@@ -162,12 +200,15 @@ about_GroupPolicy
 
 [about_Updatable_Help](about_Updatable_Help.md)
 
-[Get-ExecutionPolicy](../../Microsoft.PowerShell.Security/Get-ExecutionPolicy.md)
+[Get-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy)
 
-[Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
 
-[Get-Module](../Get-Module.md)
+[Get-Module](xref:Microsoft.PowerShell.Core.Get-Module)
 
-[Update-Help](../Update-Help.md)
+[Update-Help](xref:Microsoft.PowerShell.Core.Update-Help)
 
-[Save-Help](../Save-Help.md)
+[Save-Help](xref:Microsoft.PowerShell.Core.Save-Help)
+
+<!-- link references -->
+[gpstore]: https://support.microsoft.com/help/3087759

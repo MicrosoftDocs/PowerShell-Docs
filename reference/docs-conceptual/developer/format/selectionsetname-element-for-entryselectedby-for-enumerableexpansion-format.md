@@ -1,13 +1,8 @@
 ---
-title: "SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 936d09f2-2c48-49e8-ab2d-0c8729199a2e
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)
+description: SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)
 ---
 # SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)
 

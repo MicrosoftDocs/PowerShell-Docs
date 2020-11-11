@@ -1,13 +1,8 @@
 ---
-title: "GetProcessSample03 Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: fc9d80ee-6ebd-48cd-a7ea-53cb2b442a22
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: GetProcessSample03 Sample
+description: GetProcessSample03 Sample
 ---
 # GetProcessSample03 Sample
 

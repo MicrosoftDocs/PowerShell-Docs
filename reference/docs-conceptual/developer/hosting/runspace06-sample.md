@@ -1,13 +1,8 @@
 ---
-title: "Runspace06 Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 471c85f3-9287-45c2-b4bc-833caa1b7634
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: Runspace06 Sample
+description: Runspace06 Sample
 ---
 # Runspace06 Sample
 

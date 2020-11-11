@@ -1,13 +1,8 @@
 ---
-title: "TypeName Element for Types (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 0595b99e-b438-4240-b47b-555cf0316f33
-caps.latest.revision: 15
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for Types (Format)
+description: TypeName Element for Types (Format)
 ---
 # TypeName Element for Types (Format)
 

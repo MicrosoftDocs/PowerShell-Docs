@@ -1,7 +1,8 @@
 ---
 external help file: ISE-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: ISE
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/ise/import-isesnippet?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -109,30 +110,18 @@ available in every Windows PowerShell ISE session.
 
 ## PARAMETERS
 
-### -Path
+### -ListAvailable
 
-Specifies the path to the snippets directory in which this cmdlet imports snippets.
+Indicates that this cmdlet gets snippets from modules that are installed on the computer, even if
+the modules are not imported into the current session. If this parameter is omitted, and the module
+that is specified by the **Module** parameter is not imported into the current session, the attempt
+to get the snippets from the module fails.
 
-```yaml
-Type: String
-Parameter Sets: FromFolder
-Aliases:
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Recurse
-
-Indicates that this cmdlet imports snippets from all subdirectories of the value of the **Path**
-parameter.
+This parameter is valid only when the **Module** parameter is used in the command.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: FromModule
 Aliases:
 
 Required: False
@@ -156,7 +145,7 @@ automatically imported with the module, but you can use an `Import-IseSnippet` c
 them.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: FromModule
 Aliases:
 
@@ -167,18 +156,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ListAvailable
+### -Path
 
-Indicates that this cmdlet gets snippets from modules that are installed on the computer, even if
-the modules are not imported into the current session. If this parameter is omitted, and the module
-that is specified by the **Module** parameter is not imported into the current session, the attempt
-to get the snippets from the module fails.
-
-This parameter is valid only when the **Module** parameter is used in the command.
+Specifies the path to the snippets directory in which this cmdlet imports snippets.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: FromModule
+Type: System.String
+Parameter Sets: FromFolder
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### -Recurse
+
+Indicates that this cmdlet imports snippets from all subdirectories of the value of the **Path**
+parameter.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False

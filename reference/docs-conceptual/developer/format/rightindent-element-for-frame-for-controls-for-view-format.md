@@ -1,13 +1,8 @@
 ---
-title: "RightIndent Element for Frame for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: af128d87-24f3-4e33-9457-6f8678993236
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: RightIndent Element for Frame for Controls for View (Format)
+description: RightIndent Element for Frame for Controls for View (Format)
 ---
 # RightIndent Element for Frame for Controls for View (Format)
 

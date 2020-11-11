@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Archive-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
 ms.date: 02/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/compress-archive?view=powershell-7&WT.mc_id=ps-gethelp
@@ -249,7 +249,7 @@ The following are the acceptable values for this parameter:
 - **Optimal**. Processing time is dependent on file size.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Optimal, NoCompression, Fastest
@@ -266,7 +266,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -287,7 +287,7 @@ If the file name in **DestinationPath** doesn't have a `.zip` file name extensio
 the `.zip` file name extension.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -303,7 +303,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PathWithForce, LiteralPathWithForce
 Aliases:
 
@@ -324,7 +324,7 @@ To specify multiple paths, and include files in multiple locations in your outpu
 commas to separate the paths.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPathWithUpdate, LiteralPathWithForce, LiteralPath
 Aliases: PSPath
 
@@ -342,7 +342,7 @@ Causes the cmdlet to output a file object representing the archive file created.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -372,7 +372,7 @@ Using wildcards with a root directory affects the archive's contents:
   `-Path C:\Reference\*.*`
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path, PathWithUpdate, PathWithForce
 Aliases:
 
@@ -390,7 +390,7 @@ versions that have the same names. You can also add this parameter to add files 
 archive.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PathWithUpdate, LiteralPathWithUpdate
 Aliases:
 
@@ -406,7 +406,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -1,6 +1,6 @@
 ---
 title: Contributing to PowerShell documentation
-description: This article is an overview of how to get started as a contributor to the PowerShell documentation.
+description: This article outlines the steps required to contribute to the PowerShell documentation.
 ms.date: 03/05/2020
 ms.topic: conceptual
 ---
@@ -95,6 +95,6 @@ Additional resources
 [docs]: https://docs.microsoft.com/
 [file-an-issue]: file-an-issue.md
 [posh-git]: https://www.powershellgallery.com/packages/posh-git
-[psdocs]: https://docs.microsoft.com/powershell
-[style-guide]: https://docs.microsoft.com/style-guide/welcome/
-[terms-of-use]: https://docs.microsoft.com/legal/termsofuse
+[psdocs]: /powershell
+[style-guide]: /style-guide/welcome/
+[terms-of-use]: /legal/termsofuse

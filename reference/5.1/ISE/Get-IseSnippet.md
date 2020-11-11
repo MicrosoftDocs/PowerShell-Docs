@@ -1,7 +1,8 @@
 ---
 external help file: ISE-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: ISE
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/ise/get-isesnippet?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -64,7 +65,7 @@ snippet on the local computer.
 #Parse-Snippet Function
 function Parse-Snippet {
   $SnippetFiles = Get-IseSnippet
-  $SnippetNamespace = @{x="https://schemas.microsoft.com/PowerShell/Snippets"}
+  $SnippetNamespace = @{x="http://schemas.microsoft.com/PowerShell/Snippets"}
   foreach ($SnippetFile in $SnippetFiles) {
      Write-Host ""
      $Title = Select-Xml -Path $SnippetFile.FullName -Namespace $SnippetNamespace -XPath "//x:Title" |

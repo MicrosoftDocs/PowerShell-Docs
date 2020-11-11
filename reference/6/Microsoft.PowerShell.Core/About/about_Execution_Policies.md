@@ -1,7 +1,8 @@
 ---
+description: Describes the PowerShell execution policies and explains how to manage them. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 02/19/2020
+Locale: en-US
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Execution_Policies
@@ -93,7 +94,8 @@ execution policies are as follows:
 
 - There is no execution policy set in the current scope.
 - If the execution policy in all scopes is **Undefined**, the effective
-  execution policy is **Restricted**, which is the default execution policy.
+  execution policy is **Restricted** for Windows clients and
+  **RemoteSigned** for Windows Server.
 
 ### Unrestricted
 
@@ -120,7 +122,7 @@ The **Scope** values are listed in precedence order. The policy that takes
 precedence is effective in the current session, even if a more restrictive
 policy was set at a lower level of precedence.
 
-For more information, see [Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md).
+For more information, see [Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy).
 
 ### MachinePolicy
 
@@ -355,8 +357,8 @@ Beginning in PowerShell 3.0, you can use the **Stream** parameter of the
 from the internet. Use the `Unblock-File` cmdlet to unblock the scripts so that
 you can run them in PowerShell.
 
-For more information, see [about_Signing](about_Signing.md), [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md),
-and [Unblock-File](../../Microsoft.PowerShell.Utility/Unblock-File.md).
+For more information, see [about_Signing](about_Signing.md), [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item),
+and [Unblock-File](xref:Microsoft.PowerShell.Utility.Unblock-File).
 
 > [!NOTE]
 > Other methods of downloading files may not mark the files as coming from the
@@ -400,12 +402,12 @@ Zone check which avoids the problem.
 
 [about_Signing](about_Signing.md)
 
-[Get-ExecutionPolicy](../../Microsoft.PowerShell.Security/Get-ExecutionPolicy.md)
+[Get-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy)
 
-[Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+[Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
 
 [Pwsh Console Help](about_pwsh.md)
 
-[Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
 
-[Unblock-File](../../Microsoft.PowerShell.Utility/Unblock-File.md)
+[Unblock-File](xref:Microsoft.PowerShell.Utility.Unblock-File)

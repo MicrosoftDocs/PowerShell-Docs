@@ -1,17 +1,8 @@
 ---
-title: "Cmdlet Attribute Declaration | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "Cmdlet attribute, described"
-  - "attributes, Cmdlet"
-  - "Cmdlet attribute"
-ms.assetid: 1d323332-f773-4c0e-8a69-2aada765afb2
-caps.latest.revision: 12
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Attribute Declaration
+description: Cmdlet Attribute Declaration
 ---
 # Cmdlet Attribute Declaration
 

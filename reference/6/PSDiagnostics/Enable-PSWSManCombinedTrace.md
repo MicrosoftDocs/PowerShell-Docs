@@ -1,7 +1,7 @@
 ---
 external help file: PSDiagnostics-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSDiagnostics
 ms.date: 11/29/2018
 online version: https://docs.microsoft.com/powershell/module/psdiagnostics/enable-pswsmancombinedtrace?view=powershell-6&WT.mc_id=ps-gethelp
@@ -48,7 +48,7 @@ By default, the events are written to "$pshome\Traces\PSTrace.etl". When this pa
 the cmdlet creates a unique filename: "$pshome\Traces\PSTrace_{guid}.etl"
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -83,4 +83,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Start-Trace](start-trace.md)
 
 [Disable-PSWSManCombinedTrace](Disable-PSWSManCombinedTrace.md)
-

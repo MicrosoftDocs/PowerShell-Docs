@@ -2,6 +2,7 @@
 ms.date:  08/09/2018
 keywords:  install, windows, linux, macOS, ARM, raspbian
 title:  Installing PowerShell
+description: Where to find instruction for installing PowerShell for each of the supported platforms.
 ---
 # Installing various versions of PowerShell
 
@@ -23,4 +24,4 @@ experimental platforms.
 ## Windows PowerShell
 
 For more information about installing the legacy versions of PowerShell on Windows, see
-[Installing Windows PowerShell](installing-windows-powershell.md).
+[Installing Windows PowerShell](../windows-powershell/install/installing-windows-powershell.md).

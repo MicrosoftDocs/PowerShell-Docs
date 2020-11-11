@@ -1,13 +1,8 @@
 ---
-title: "Formatting File Concepts | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1804dbe4-69eb-4b0b-bc40-cbb2f00bb083
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: Formatting File Concepts
+description: Formatting File Concepts
 ---
 # Formatting File Concepts
 

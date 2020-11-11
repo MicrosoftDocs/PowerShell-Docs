@@ -1,7 +1,8 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.topic: reference
 title: DSC Service Resource
+description: DSC Service Resource
 ---
 # DSC Service Resource
 
@@ -9,6 +10,8 @@ title: DSC Service Resource
 
 The **Service** resource in Windows PowerShell Desired State Configuration (DSC) provides a
 mechanism to manage services on the target node.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 
@@ -19,7 +22,8 @@ Service [string] #ResourceName
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
-    [ State = [string] { Running | Stopped }  ]
+    [ State = [string] { Ignore | Running | Stopped }  ]
+    [ Dependencies = [string[]] ]
     [ Description = [string] ]
     [ DisplayName = [string] ]
     [ Path = [string] ]
@@ -38,6 +42,7 @@ Service [string] #ResourceName
 |Credential |Indicates credentials for the account that the service will run under. This property and the **BuiltinAccount** property cannot be used together. |
 |StartupType |Indicates the startup type for the service. The values that are allowed for this property are: **Automatic**, **Disabled**, and **Manual**. |
 |State |Indicates the state you want to ensure for the service. The values are: **Running** or **Stopped**. |
+|Dependencies | An array of the names of the dependencies the service should have. |
 |Description |Indicates the description of the target service. |
 |DisplayName |Indicates the display name of the target service. |
 |Path |Indicates the path to the binary file for a new service. |

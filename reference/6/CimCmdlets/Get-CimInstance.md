@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: CimCmdlets
 ms.date: 02/21/2019
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/get-ciminstance?view=powershell-6&WT.mc_id=ps-gethelp
@@ -218,7 +218,7 @@ a command that creates or gets the CIM session, such as the `New-CimSession` or 
 cmdlets. For more information, see [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: ResourceUriSessionSet, QuerySessionSet, ClassNameSessionSet, CimInstanceSessionSet
 Aliases:
 
@@ -236,7 +236,7 @@ completion to browse the list of classes, because PowerShell gets a list of clas
 WMI server to provide a list of class names.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ClassNameComputerSet, ClassNameSessionSet
 Aliases:
 
@@ -260,7 +260,7 @@ If multiple operations are being performed on the same computer, connect using a
 better performance.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ClassNameComputerSet, CimInstanceComputerSet, ResourceUriComputerSet, QueryComputerSet
 Aliases: CN, ServerName
 
@@ -277,7 +277,7 @@ Specifies a where clause to use as a filter. Specify the clause in either the **
 query language. Do not include the `WHERE` keyword in the value of the parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ClassNameComputerSet, ResourceUriSessionSet, ClassNameSessionSet, ResourceUriComputerSet
 Aliases:
 
@@ -302,7 +302,7 @@ If the CIM class does not implement the get operation, then specifying the **Inp
 returns an error.
 
 ```yaml
-Type: CimInstance
+Type: Microsoft.Management.Infrastructure.CimInstance
 Parameter Sets: CimInstanceSessionSet, CimInstanceComputerSet
 Aliases: CimInstance
 
@@ -322,7 +322,7 @@ Use the **KeyOnly** parameter to return only a small portion of the object, whic
 operations, such as the `Set-CimInstance` or `Get-CimAssociatedInstance` cmdlets.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ClassNameComputerSet, ResourceUriSessionSet, ClassNameSessionSet, ResourceUriComputerSet
 Aliases:
 
@@ -342,7 +342,7 @@ namespaces, because PowerShell gets a list of namespaces from the local WMI serv
 list of namespaces.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ClassNameComputerSet, ResourceUriSessionSet, QuerySessionSet, ClassNameSessionSet, ResourceUriComputerSet, QueryComputerSet
 Aliases:
 
@@ -365,7 +365,7 @@ parameter are not recoverable, because the operation on the server times out bef
 reconnect.
 
 ```yaml
-Type: UInt32
+Type: System.UInt32
 Parameter Sets: (All)
 Aliases: OT
 
@@ -384,7 +384,7 @@ the key properties even if you have not listed them using the **Property** param
 properties of the class are present but they are not populated.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ClassNameComputerSet, ResourceUriSessionSet, ClassNameSessionSet, ResourceUriComputerSet
 Aliases: SelectProperties
 
@@ -410,7 +410,7 @@ of classes, use the `Get-CimClass` cmdlet. To retrieve an event query, use the
 You can specify the query dialect using the **QueryDialect** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: QuerySessionSet, QueryComputerSet
 Aliases:
 
@@ -427,7 +427,7 @@ Specifies the query language used for the Query parameter. The acceptable values
 are: **WQL** or **CQL**. The default value is **WQL**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ClassNameComputerSet, QuerySessionSet, ClassNameSessionSet, QueryComputerSet
 Aliases:
 
@@ -445,7 +445,7 @@ is used to identify a specific type of resource, such as disks or processes, on 
 
 A URI consists of a prefix and a path to a resource. For example:
 
-- `https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+- `http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 - `http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
 
 By default, if you do not specify this parameter, the DMTF standard resource URI
@@ -461,7 +461,7 @@ If both the **ResourceUri** parameter and the **Filter** parameter are specified
 parameter is ignored.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: ResourceUriSessionSet, ResourceUriComputerSet, QuerySessionSet, QueryComputerSet, CimInstanceSessionSet, CimInstanceComputerSet
 Aliases:
 
@@ -478,7 +478,7 @@ Indicates that the instances of a class are returned without including the insta
 classes. By default, the cmdlet returns the instances of a class and its child classes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ClassNameComputerSet, ResourceUriSessionSet, QuerySessionSet, ClassNameSessionSet, ResourceUriComputerSet, QueryComputerSet
 Aliases:
 

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 3/22/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -169,7 +169,7 @@ Gets all execution policy values for the session listed in precedence order. By 
 `Get-ExecutionPolicy` gets only the effective execution policy.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -193,7 +193,7 @@ The effective execution policy is determined by the order of precedence as follo
 - **LocalMachine**. Default scope that affects all users of the computer.
 
 ```yaml
-Type: ExecutionPolicyScope
+Type: Microsoft.PowerShell.ExecutionPolicyScope
 Parameter Sets: (All)
 Aliases:
 Accepted values: CurrentUser, LocalMachine, MachinePolicy, Process, UserPolicy
@@ -238,4 +238,3 @@ whether scripts must be digitally signed before they are run.
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
-

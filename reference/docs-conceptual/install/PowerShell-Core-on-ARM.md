@@ -1,18 +1,18 @@
 ---
 title: Installing PowerShell Core on ARM
 description: Installing PowerShell Core on ARM-based systems
-ms.date: 08/06/2018
+ms.date: 10/30/2020
 ---
 
 # PowerShell Core on ARM
 
-Today, PowerShell Core works on some ARM devices, including Windows 10 ARM32/ARM64 and Raspbian.
-PowerShell Core for ARM is an experimental release that is unsupported.
+Support of PowerShell on ARM is based on the
+[.NET Core Supported OS Lifecycle Policy](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md).
+PowerShell is supported on the platform supported under this policy.
 
-For more information on installing these experimental builds, see the installation instructions for
-[Windows 10 IoT](installing-powershell-core-on-windows.md#deploying-on-windows-iot)
-and [Raspbian](installing-powershell-core-on-linux.md#raspbian).
+For installation instructions, see the following articles:
 
-More information will be available here as our ARM64 story progresses.
-
-Stay tuned!
+- [Windows 10 on ARM](installing-powershell-core-on-windows.md#installing-the-zip-package)
+- [Windows 10 IoT Enterprise](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-enterprise)
+- [Windows 10 IoT Core](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-core)
+- [Raspbian](installing-powershell-core-on-linux.md#raspbian)

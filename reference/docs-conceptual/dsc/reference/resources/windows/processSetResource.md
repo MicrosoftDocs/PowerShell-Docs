@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC ProcessSet Resource
+description: DSC ProcessSet Resource
 ---
 # DSC ProcessSet Resource
 
@@ -9,6 +10,8 @@ title: DSC ProcessSet Resource
 
 The **ProcessSet** resource in Windows PowerShell Desired State Configuration (DSC) provides a
 mechanism to configure processes on a target node.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 

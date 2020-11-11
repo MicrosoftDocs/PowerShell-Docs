@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 10/09/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -180,7 +180,7 @@ For more information about PowerShell background jobs, see
 [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_remote_jobs.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Default, Source
 Aliases:
 
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 Specifies the size, in bytes, of the buffer sent with this command. The default value is 32.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: Size, Bytes, BS
 
@@ -215,8 +215,11 @@ format. Wildcard characters are not permitted. This parameter is required.
 This parameter doesn't rely on PowerShell remoting. You can use the **ComputerName** parameter even
 if your computer isn't configured to run remote commands.
 
+> [!NOTE]
+> The **ComputerName** parameter is renamed to **TargetName** in PowerShell 6.0 and above.
+
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: CN, IPAddress, __SERVER, Server, Destination
 
@@ -232,7 +235,7 @@ Accept wildcard characters: False
 Specifies the number of echo requests to send. The default value is 4.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -253,7 +256,7 @@ The **Credential** parameter is valid only when the **Source** parameter is used
 credentials don't affect the destination computer.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: Source
 Aliases:
 
@@ -284,7 +287,7 @@ the values of this parameter, see
 [AuthenticationLevel](/dotnet/api/system.management.authenticationlevel) enumeration.
 
 ```yaml
-Type: AuthenticationLevel
+Type: System.Management.AuthenticationLevel
 Parameter Sets: (All)
 Aliases: Authentication
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
@@ -301,7 +304,7 @@ Accept wildcard characters: False
 Specifies the interval between pings, in seconds.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -326,7 +329,7 @@ The acceptable values for this parameter are as follows:
 The default value is **Impersonate**.
 
 ```yaml
-Type: ImpersonationLevel
+Type: System.Management.ImpersonationLevel
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
@@ -343,7 +346,7 @@ Accept wildcard characters: False
 Specifies a protocol. The acceptable values for this parameter are DCOM and WSMan.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: DCOM, WSMan
@@ -368,7 +371,7 @@ If **any** ping succeeds, `$True` is returned.
 If **all** pings fail, `$False` is returned.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Quiet
 Aliases:
 
@@ -385,7 +388,7 @@ Specifies the names of the computers where the ping originates. Enter a comma-se
 computer names. The default is the local computer.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Source
 Aliases: FCN, SRC
 
@@ -404,7 +407,7 @@ If you omit this parameter or enter a value of 0, the default value, 32, is used
 The throttle limit applies only to the current command, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Default, Source
 Aliases:
 
@@ -422,7 +425,7 @@ Specifies the maximum times a packet can be forwarded. For every hop in gateways
 In **Windows**, The default value is **128**. The alias of the **TimeToLive** parameter is **TTL**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: TTL
 
@@ -457,7 +460,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Basic, Negotiate, CredSSP, Digest, Kerberos

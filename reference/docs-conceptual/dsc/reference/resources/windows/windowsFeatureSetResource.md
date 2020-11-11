@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC WindowsFeatureSet Resource
+description: DSC WindowsFeatureSet Resource
 ---
 # DSC WindowsFeatureSet Resource
 
@@ -13,6 +14,8 @@ is a [composite resource](../../../resources/authoringResourceComposite.md) that
 for each feature specified in the **Name** property.
 
 Use this resource when you want to configure a number of Windows Features to the same state.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 
@@ -34,7 +37,7 @@ WindowsFeatureSet [string] #ResourceName
 
 |  Property  |  Description   |
 |---|---|
-|Name |The names of the roles or features that you want to ensure are added or removed. This is the same as the **Name** property of the [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) cmdlet, and not the display name of the roles or features. |
+|Name |The names of the roles or features that you want to ensure are added or removed. This is the same as the **Name** property of the [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) cmdlet, and not the display name of the roles or features. |
 |Source |Indicates the location of the source file to use for installation, if necessary. |
 |IncludeAllSubFeature |Set this property to `$true` to include all required subfeatures with of the features you specify with the **Name** property. |
 |Credential |The credentials to use to add or remove the roles or features. |

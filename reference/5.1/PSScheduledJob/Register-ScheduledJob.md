@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/register-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -228,7 +228,7 @@ Specifies values for the parameters of the script that is specified by the **Fil
 for the command that is specified by the **ScriptBlock** parameter.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -265,7 +265,7 @@ For more information about the values of this parameter, see
 > credentials that are passed to it can be used to control the network session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
@@ -282,7 +282,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -310,7 +310,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -329,7 +329,7 @@ Every `Register-ScheduledJob` command must use either the **ScriptBlock** or **F
 parameters.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: FilePath
 Aliases:
 
@@ -354,7 +354,7 @@ If the initialization script generates an error, even a non-terminating error, t
 of the scheduled job doesn't run and its status is **Failed**.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -387,7 +387,7 @@ To delete the current execution history and job results, use the **ClearExecutio
 of the `Set-ScheduledJob` cmdlet.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -404,7 +404,7 @@ Specifies a name for the scheduled job. The name is also used for all started in
 scheduled job. The name must be unique on the computer. This parameter is required.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -420,7 +420,7 @@ Accept wildcard characters: False
 Runs the scheduled job in a 32-bit process.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -437,7 +437,7 @@ Used to specify how often to run the job. For example, use this option to run a 
 minutes.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: (All)
 Aliases:
 
@@ -455,7 +455,7 @@ eliminates the need to trigger Task Scheduler to run a Windows PowerShell script
 registration, and doesn't require users to create a trigger that specifies a starting date and time.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -484,7 +484,7 @@ their default values.
 `@{StartIfOnBattery=$False; StopIfGoingOnBattery=$True; WakeToRun=$False; StartIfNotIdle=$False; IdleDuration="00:10:00"; IdleTimeout="01:00:00"; StopIfGoingOffIdle=$True; RestartOnIdleResume=$False; ShowInTaskScheduler=$True; RunElevated=$False; RunWithoutNetwork=$False; DoNotAllowDemandStart=$False; MultipleInstancePolicy="IgnoreNew"}`
 
 ```yaml
-Type: ScheduledJobOptions
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 Parameter Sets: (All)
 Aliases:
 
@@ -505,7 +505,7 @@ Every `Register-ScheduledJob` command must use either the **ScriptBlock** or **F
 parameters.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: ScriptBlock
 Aliases:
 
@@ -544,7 +544,7 @@ For example:
 `@{Frequency="Once"; At="3am"; DaysOfWeek="Monday", "Wednesday"; Interval=2; RandomDelay="30minutes"; User="Domain1\User01"}`
 
 ```yaml
-Type: ScheduledJobTrigger[]
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger[]
 Parameter Sets: (All)
 Aliases:
 
@@ -560,7 +560,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

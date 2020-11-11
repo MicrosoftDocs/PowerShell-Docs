@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/09/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/enable-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -123,7 +123,7 @@ gets breakpoint objects, such as `Get-PSBreakpoint`. You can also pipe breakpoin
 `Enable-PSBreakpoint`.
 
 ```yaml
-Type: Breakpoint[]
+Type: System.Management.Automation.Breakpoint[]
 Parameter Sets: Breakpoint
 Aliases:
 
@@ -141,7 +141,7 @@ Provide the **Id** by number or in a variable. You can't pipe **Id** numbers to
 `Enable-PSBreakpoint`. To find the **Id** of a breakpoint, use the `Get-PSBreakpoint` cmdlet.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Id
 Aliases:
 
@@ -158,7 +158,7 @@ Returns an object representing the breakpoint being enabled. By default, this cm
 generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -190,7 +190,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

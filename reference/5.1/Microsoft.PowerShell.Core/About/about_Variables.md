@@ -1,7 +1,8 @@
 ---
+description:  Describes how variables store values that can be used in PowerShell.
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 09/03/2019
+Locale: en-US
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Variables
@@ -142,8 +143,8 @@ Clear-Variable -Name MyVariable
 $MyVariable = $null
 ```
 
-To delete the variable, use [Remove-Variable](../../Microsoft.PowerShell.Utility/Remove-Variable.md)
-or [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md).
+To delete the variable, use [Remove-Variable](xref:Microsoft.PowerShell.Utility.Remove-Variable)
+or [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item).
 
 ```powershell
 Remove-Variable -Name MyVariable
@@ -164,7 +165,8 @@ a particular type of object. A single variable can even contain a collection,
 or array, of different types of objects at the same time.
 
 The data type of a variable is determined by the .NET types of the values of
-the variable. To view a variable's object type, use [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md).
+the variable. To view a variable's object type, use
+[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member).
 
 For example:
 
@@ -245,7 +247,8 @@ used in the command or expression.
 If the variable name and dollar sign are enclosed in single quotation (`'`)
 marks, the variable name is used in the expression.
 
-For more information about using quotation marks in PowerShell, see [about_Quoting_Rules](about_Quoting_Rules.md).
+For more information about using quotation marks in PowerShell, see
+[about_Quoting_Rules](about_Quoting_Rules.md).
 
 This example gets the value of the `$PROFILE` variable, which is the path to
 the PowerShell user profile file in the PowerShell console.
@@ -327,7 +330,8 @@ Special character variable names can contain these characters:
     Unicode characters so they're treated as literals.
 
 PowerShell has reserved variables such as `$$`, `$?`, `$^`, and `$_` that
-contain alphanumeric and special characters. For more information, see [about_Automatic_Variables](about_automatic_variables.md).
+contain alphanumeric and special characters. For more information, see
+[about_Automatic_Variables](about_automatic_variables.md).
 
 For example, the following command creates the variable named `save-items`. The
 curly braces (`{}`) are needed because variable name includes a hyphen (`-`)
@@ -380,6 +384,12 @@ global scope, even when it's created in a script or function.
 ```powershell
 $Global:Computers = "Server01"
 ```
+
+For any script or command that executes out of session, you need the `Using`
+scope modifier to embed variable values from the calling session scope, so that
+out of session code can access them.
+
+For more information, see [about_Remote_Variables](about_Remote_Variables.md).
 
 ## Saving variables
 
@@ -491,3 +501,5 @@ Get-Help <cmdlet-name>
 [about_Quoting_Rules](about_Quoting_Rules.md)
 
 [about_Scopes](about_Scopes.md)
+
+[about_Remote_Variables](about_Remote_Variables.md)

@@ -1,13 +1,8 @@
 ---
-title: "Creating an InitialSessionState | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
-caps.latest.revision: 5
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating an InitialSessionState
+description: Creating an InitialSessionState
 ---
 # Creating an InitialSessionState
 

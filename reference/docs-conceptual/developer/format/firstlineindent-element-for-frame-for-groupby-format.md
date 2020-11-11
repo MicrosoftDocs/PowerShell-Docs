@@ -1,13 +1,8 @@
 ---
-title: "FirstLineIndent Element for Frame for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 33be3b9e-53c8-433f-8c11-c65b0d46744c
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: FirstLineIndent Element for Frame for GroupBy (Format)
+description: FirstLineIndent Element for Frame for GroupBy (Format)
 ---
 # FirstLineIndent Element for Frame for GroupBy (Format)
 

@@ -1,8 +1,9 @@
 ---
+description:  PowerShell logs internal operations from the engine, providers, and cmdlets to the Windows event log.
 keywords: powershell
-locale: en-us
-ms.date: 12/14/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7.x&WT.mc_id=ps-gethelp
+Locale: en-US
+ms.date: 03/30/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging-Windows
 ---
@@ -10,8 +11,8 @@ title: about_Logging-Windows
 # About Logging Windows
 
 ## Short description
-
-PowerShell logs internal operations from the engine, providers, and cmdlets.
+PowerShell logs internal operations from the engine, providers, and cmdlets to
+the Windows event log.
 
 ## Long description
 
@@ -35,14 +36,14 @@ located in the Application and Services Logs group and is named
 When Script Block Logging is enabled, PowerShell logs the following events to
 the `PowerShellCore/Operational` log:
 
-|Field| Value|
-|-|-|
-|EventId|`4104` / `0x1008`|
-|Channel|`Operational`|
-|Level|`Verbose`|
-|Opcode|`Create`|
-|Task|`CommandStart`|
-|Keyword|`Runspace`|
+|  Field  |       Value       |
+| ------- | ----------------- |
+| EventId | `4104` / `0x1008` |
+| Channel | `Operational`     |
+| Level   | `Verbose`         |
+| Opcode  | `Create`          |
+| Task    | `CommandStart`    |
+| Keyword | `Runspace`        |
 
 ### Registering the PowerShell event provider on Windows
 
@@ -132,8 +133,8 @@ more information about Public Key Cryptography, see
 To enable a Protected Event Logging policy, deploy a public key to all machines
 that have event log data to protect. The corresponding private key is used to
 post-process the event logs at a more secure location such as a central event
-log collector, or [SIEM](https://en.wikipedia.org/wiki/Security_information_and_event_management)
-aggregator.
+log collector, or [SIEM][] aggregator. You can set up SIEM in Azure. For more
+information, see [Generic SIEM integration](/cloud-app-security/siem).
 
 ### Enabling Protected Event Logging via Group Policy
 
@@ -175,3 +176,8 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 [about_Logging_Non-Windows](about_Logging_Non-Windows.md)
 
 [PowerShell the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
+
+[Generic SIEM integration](/cloud-app-security/siem)
+
+<!-- link references -->
+[SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management

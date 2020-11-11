@@ -1,13 +1,8 @@
 ---
-title: "How to Write a Simple Cmdlet | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/15/2019"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 137543d8-0012-4cba-bcd6-98b25aac83bb
-caps.latest.revision: 9
+ms.date: 01/15/2019
+ms.topic: reference
+title: How to Write a Simple Cmdlet
+description: How to Write a Simple Cmdlet
 ---
 
 # How to write a cmdlet

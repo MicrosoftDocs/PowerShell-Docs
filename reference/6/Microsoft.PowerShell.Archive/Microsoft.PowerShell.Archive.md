@@ -1,8 +1,8 @@
 ---
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=855952
-Help Version: 6.1.0.1
+Help Version: 6.2.5.0
 keywords: powershell,cmdlet
-locale: en-US
+Locale: en-US
 Module Guid: eb74e8da-9ae2-482a-a648-e96550fb8733
 Module Name: Microsoft.PowerShell.Archive
 ms.date: 06/09/2017
@@ -19,7 +19,7 @@ This section contains the help topics for the cmdlets that are installed with th
 ## Microsoft.PowerShell.Archive Cmdlets
 
 ### [Compress-Archive](Compress-Archive.md)
-Creates an archive, or zipped file, from specified files and folders.
+Creates a compressed archive, or zipped file, from specified files and directories.
 
 ### [Expand-Archive](Expand-Archive.md)
 Extracts files from a specified archive (zipped) file.

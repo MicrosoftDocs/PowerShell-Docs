@@ -1,13 +1,8 @@
 ---
-title: "TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d9100ab7-fbdc-4c0d-bb56-57669ef42b95
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
+description: TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
 ---
 # TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
 

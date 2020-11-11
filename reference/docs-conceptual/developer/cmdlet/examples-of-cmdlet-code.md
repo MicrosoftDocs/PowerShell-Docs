@@ -1,13 +1,8 @@
 ---
-title: "Examples of Cmdlet Code | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 6fed2f68-ce6d-4a8f-bf21-f94f27a155c2
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: Examples of Cmdlet Code
+description: Examples of Cmdlet Code
 ---
 # Examples of Cmdlet Code
 

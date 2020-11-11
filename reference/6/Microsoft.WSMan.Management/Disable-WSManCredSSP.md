@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.WSMan.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/disable-wsmancredssp?view=powershell-6&WT.mc_id=ps-gethelp
@@ -42,6 +42,7 @@ If the remote computer is compromised, when credentials are passed to it, the cr
 ## EXAMPLES
 
 ### Example 1: Disable CredSSP on a client
+
 ```
 PS C:\> Disable-WSManCredSSP -Role Client
 ```
@@ -49,6 +50,7 @@ PS C:\> Disable-WSManCredSSP -Role Client
 This command disables CredSSP on the client, which prevents delegation to servers.
 
 ### Example 2: Disable CredSSP on a server
+
 ```
 PS C:\> Disable-WSManCredSSP -Role Server
 ```
@@ -71,7 +73,7 @@ If you specify Server, this cmdlet performs the following action:
 - Disables CredSSP on the server. This cmdlet sets the WS-Management setting **\<localhost|computername\>\Service\Auth\CredSSP** to false.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Client, Server
@@ -97,6 +99,7 @@ This cmdlet does not accept any input.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To enable CredSSP authentication, use the Enable-WSManCredSSP cmdlet.
 
 *
@@ -126,5 +129,3 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-
-

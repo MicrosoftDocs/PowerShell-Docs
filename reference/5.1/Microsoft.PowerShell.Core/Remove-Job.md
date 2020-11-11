@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 07/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/remove-job?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -216,7 +216,7 @@ asterisk (`*`) to specify that all the object's properties are displayed in a li
 Deletes jobs that include the specified words in the command. You can enter a comma-separated array.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CommandParameterSet
 Aliases:
 
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before `Remove-Job` is run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -254,7 +254,7 @@ work on standard background jobs, such as those created by using the `Start-Job`
 This parameter is introduced in PowerShell 3.0.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: FilterParameterSet
 Aliases:
 
@@ -271,7 +271,7 @@ Deletes a job even if the job's state is **Running**. If the **Force** parameter
 `Remove-Job` doesn't delete running jobs.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: SessionIdParameterSet, JobParameterSet, NameParameterSet, InstanceIdParameterSet, FilterParameterSet
 Aliases: F
 
@@ -290,7 +290,7 @@ Deletes background jobs with the specified **Id**. You can enter a comma-separat
 To find a job's **Id**, use `Get-Job` without parameters.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: SessionIdParameterSet
 Aliases:
 
@@ -309,7 +309,7 @@ Deletes jobs with the specified **InstanceId**. You can enter a comma-separated 
 To find a job's **InstanceId**, use `Get-Job`.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceIdParameterSet
 Aliases:
 
@@ -328,7 +328,7 @@ jobs. You can enter a comma-separated array.
 You can send job objects down the pipeline to `Remove-Job`.
 
 ```yaml
-Type: Job[]
+Type: System.Management.Automation.Job[]
 Parameter Sets: JobParameterSet
 Aliases:
 
@@ -348,7 +348,7 @@ Friendly names for jobs aren't guaranteed to be unique, even within a PowerShell
 **WhatIf** and **Confirm** parameters when you delete files by name.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -379,7 +379,7 @@ Accepted values:
 - Suspending
 
 ```yaml
-Type: JobState
+Type: System.Management.Automation.JobState
 Parameter Sets: StateParameterSet
 Aliases:
 Accepted values: AtBreakpoint, Blocked, Completed, Disconnected, Failed, NotStarted, Running, Stopped, Stopping, Suspended, Suspending
@@ -396,7 +396,7 @@ Accept wildcard characters: False
 Shows what would happen if `Remove-Job` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

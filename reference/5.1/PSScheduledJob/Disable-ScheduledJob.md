@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/disable-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,17 +17,20 @@ Disables a scheduled job.
 ## SYNTAX
 
 ### Definition (Default)
+
 ```
 Disable-ScheduledJob [-InputObject] <ScheduledJobDefinition> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### DefinitionId
+
 ```
 Disable-ScheduledJob [-Id] <Int32> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DefinitionName
+
 ```
 Disable-ScheduledJob [-Name] <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -50,6 +53,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Disable a scheduled job
+
 ```
 PS C:\> Disable-ScheduledJob -ID 2 -Passthru
 Id         Name            Triggers        Command                                  Enabled
@@ -61,6 +65,7 @@ This command disables the scheduled job with ID 2 on the local computer.
 The output shows the effect of the command.
 
 ### Example 2: Disable all scheduled jobs
+
 ```
 PS C:\> Get-ScheduledJob | Disable-ScheduledJob -Passthru
 Id         Name            Triggers        Command                                  Enabled
@@ -79,6 +84,7 @@ You can re-enable scheduled job by using the Enable-ScheduledJob cmdlet and run 
 **Disable-ScheduledJob** does not generate warnings or errors if you disable a scheduled job that is already disabled, so you can disable all scheduled jobs without conditions.
 
 ### Example 3: Disable selected scheduled jobs
+
 ```
 PS C:\> Get-ScheduledJob | Where-Object {!$_.Credential} | Disable-ScheduledJob
 ```
@@ -92,6 +98,7 @@ The command uses the not (!) operator and references the Credential property of 
 Another pipeline operator sends the selected scheduled jobs to the **Disable-ScheduledJob** cmdlet, which disables them.
 
 ### Example 4: Disable scheduled jobs on a remote computer
+
 ```
 PS C:\> Invoke-Command -ComputerName Srv01, Srv10 -ScriptBlock {Disable-ScheduledJob -Name TestJob}
 ```
@@ -102,6 +109,7 @@ The command uses the Invoke-Command cmdlet to run a **Disable-ScheduledJob** com
 The command uses the *Name* parameter of **Disable-ScheduledJob** to select the TestJob scheduled job on each computer.
 
 ### Example 5: Disable a scheduled job by its global ID
+
 ```
 The first command demonstrates one way of finding the GlobalID of a scheduled job. The command uses the Get-ScheduledJob cmdlet to get the scheduled jobs on the computer. A pipeline operator (|) sends the scheduled jobs to the Format-Table cmdlet, which displays the Name, GlobalID, and Command properties of each job in a table.
 PS C:\> Get-ScheduledJob | Format-Table -Property Name, GlobalID, Command -Autosize
@@ -128,7 +136,7 @@ Disables the scheduled job with the specified identification number (ID).
 Enter the ID of a scheduled job.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: DefinitionId
 Aliases:
 
@@ -145,7 +153,7 @@ Enter a variable that contains  **ScheduledJobDefinition** objects or type a com
 You can also pipe a **ScheduledJobDefinition** object to **Disable-ScheduledJob**.
 
 ```yaml
-Type: ScheduledJobDefinition
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 Parameter Sets: Definition
 Aliases:
 
@@ -162,7 +170,7 @@ Enter the name of a scheduled job.
 Wildcards are supported.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DefinitionName
 Aliases:
 
@@ -178,7 +186,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -193,7 +201,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -209,7 +217,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -235,6 +243,7 @@ If you use the **Passthru** parameter, **Disable-ScheduledJob** returns the sche
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * **Disable-ScheduledJob** does not generate warnings or errors if you use it to disable a scheduled job that is already disabled.
 
 ## RELATED LINKS
@@ -270,5 +279,3 @@ Otherwise, this cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

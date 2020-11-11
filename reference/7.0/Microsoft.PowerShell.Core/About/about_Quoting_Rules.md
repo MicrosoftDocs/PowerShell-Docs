@@ -1,7 +1,8 @@
 ---
+description: Describes rules for using single and double quotation marks in PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 01/03/2018
+Locale: en-US
+ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Quoting_Rules
@@ -14,7 +15,7 @@ Describes rules for using single and double quotation marks in PowerShell.
 ## LONG DESCRIPTION
 
 Quotation marks are used to specify a literal string. You can enclose a string
-in single quotation marks (') or double quotation marks (").
+in single quotation marks (`'`) or double quotation marks (`"`).
 
 Quotation marks are also used to create a here-string. A here-string is a
 single-quoted or double-quoted string in which quotation marks are interpreted
@@ -30,7 +31,7 @@ on the local computer or on the remote computer.
 ### SINGLE AND DOUBLE-QUOTED STRINGS
 
 When you enclose a string in double quotation marks (a double-quoted string),
-variable names that are preceded by a dollar sign ($) are replaced with the
+variable names that are preceded by a dollar sign (`$`) are replaced with the
 variable's value before the string is passed to the command for processing.
 
 For example:
@@ -42,7 +43,7 @@ $i = 5
 
 The output of this command is:
 
-```output
+```Output
 The value of 5 is 5.
 ```
 
@@ -55,7 +56,7 @@ inserted in the string. For example:
 
 The output of this command is:
 
-```output
+```Output
 The value of 5 is 5.
 ```
 
@@ -70,7 +71,7 @@ $i = 5
 
 The output of this command is:
 
-```output
+```Output
 The value $i is $i.
 ```
 
@@ -83,17 +84,17 @@ interpreted as literals. For example:
 
 The output of this command is:
 
-```output
+```Output
 The value of $(2+3) is 5.
 ```
 
 To prevent the substitution of a variable value in a double-quoted string, use
-the backtick character (`)(ASCII 96), which is the PowerShell escape
+the backtick character (`` ` ``)(ASCII 96), which is the PowerShell escape
 character.
 
 In the following example, the backtick character that precedes the first $i
-variable prevents PowerShell from replacing the variable name with its
-value. For example:
+variable prevents PowerShell from replacing the variable name with its value.
+For example:
 
 ```powershell
 $i = 5
@@ -102,7 +103,7 @@ $i = 5
 
 The output of this command is:
 
-```output
+```Output
 The value $i is 5.
 ```
 
@@ -115,7 +116,7 @@ in single quotation marks. For example:
 
 The output of this command is:
 
-```output
+```Output
 As they say, "live and learn."
 ```
 
@@ -128,7 +129,7 @@ example:
 
 The output of this command is:
 
-```output
+```Output
 As they say, 'live and learn.'
 ```
 
@@ -140,7 +141,7 @@ Or, double the quotation marks around a double-quoted phrase. For example:
 
 The output of this command is:
 
-```output
+```Output
 As they say, "live and learn."
 ```
 
@@ -153,40 +154,32 @@ consecutive single quote. For example:
 
 The output of this command is:
 
-```output
+```Output
 don't
 ```
 
-To force PowerShell to interpret a double quotation mark literally,
-use a backtick character. This prevents PowerShell from interpreting
-the quotation mark as a string delimiter. For example:
+To force PowerShell to interpret a double quotation mark literally, use a
+backtick character. This prevents PowerShell from interpreting the quotation
+mark as a string delimiter. For example:
 
 ```powershell
-"Use a quotation mark (`") to begin a string."
+PS> "Use a quotation mark (`") to begin a string."
+Use a quotation mark (") to begin a string.
+PS> 'Use a quotation mark (`") to begin a string.'
+Use a quotation mark (`") to begin a string.
 ```
 
 Because the contents of single-quoted strings are interpreted literally, you
-cannot use the backtick character to force a literal character interpretation
-in a single-quoted string.
-
-For example, the following command generates an error because PowerShell does
-not recognize the escape character. Instead, it interprets the second quotation
-mark as the end of the string.
-
-```output
-PS C:\> 'Use a quotation mark (`') to begin a string.'
-Unexpected token ')' in expression or statement.
-At line:1 char:27
-+ 'Use a quotation mark (`') <<<<  to begin a string.'
-```
+the backtick character is treated as a literal character and displayed in the
+output.
 
 ### HERE-STRINGS
 
 The quotation rules for here-strings are slightly different.
 
 A here-string is a single-quoted or double-quoted string in which quotation
-marks are interpreted literally. A here-string can span multiple lines. All
-the lines in a here-string are interpreted as strings even though they are not
+marks are interpreted literally. A here-string can span multiple lines. All the
+lines in a here-string are interpreted as strings even though they are not
 enclosed in quotation marks.
 
 Like regular strings, variables are replaced by their values in double-quoted
@@ -200,9 +193,9 @@ the following kinds of text:
 - Multiple lines of text, such as the text in an HTML or XML
 - The Help text for a script or function document
 
-A here-string can have either of the following formats, where \<Enter\>
+A here-string can have either of the following formats, where `<Enter>`
 represents the linefeed or newline hidden character that is added when you
-press the ENTER key.
+press the <kbd>ENTER</kbd> key.
 
 Double-quotes:
 
@@ -213,6 +206,7 @@ Double-quotes:
 ```
 
 Single-quotes:
+
 ```
 @'<Enter>
 <string> [string] ...<Enter>
@@ -233,7 +227,7 @@ For help, type "get-help"
 
 The output of this command is:
 
-```output
+```Output
 For help, type "get-help"
 ```
 
@@ -247,7 +241,7 @@ Use a quotation mark (') to begin a string.
 
 The output of this command is:
 
-```output
+```Output
 Use a quotation mark (') to begin a string.
 ```
 
@@ -257,15 +251,15 @@ reproduced exactly. For example:
 ```powershell
 @'
 The $profile variable contains the path
-of your Windows PowerShell profile.
+of your PowerShell profile.
 '@
 ```
 
 The output of this command is:
 
-```output
+```Output
 The $profile variable contains the path
-of your Windows PowerShell profile.
+of your PowerShell profile.
 ```
 
 In double-quoted here-strings, variables are replaced by their values. For
@@ -281,21 +275,20 @@ $profile.
 
 The output of this command is:
 
-```output
+```Output
 Even if you have not created a profile,
 the path of the profile file is:
 C:\Users\User1\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1.
 ```
 
 Here-strings are typically used to assign multiple lines to a variable. For
-example, the following here-string assigns a page of XML to the $page
-variable.
+example, the following here-string assigns a page of XML to the $page variable.
 
 ```powershell
 $page = [XML] @"
-<command:command xmlns:maml="https://schemas.microsoft.com/maml/2004/10"
-xmlns:command="https://schemas.microsoft.com/maml/dev/command/2004/10"
-xmlns:dev="https://schemas.microsoft.com/maml/dev/2004/10">
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
+xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
+xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
 <command:details>
         <command:name>
                Format-Table
@@ -313,11 +306,11 @@ xmlns:dev="https://schemas.microsoft.com/maml/dev/2004/10">
 ```
 
 Here-strings are also a convenient format for input to the
-ConvertFrom-StringData cmdlet, which converts here-strings to hash tables. For
-more information, see ConvertFrom-StringData.
+`ConvertFrom-StringData` cmdlet, which converts here-strings to hash tables.
+For more information, see `ConvertFrom-StringData`.
 
 ## SEE ALSO
 
 [about_Special_Characters](about_Special_Characters.md)
 
-[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
+[ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)

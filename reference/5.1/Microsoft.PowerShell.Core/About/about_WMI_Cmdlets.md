@@ -1,6 +1,7 @@
 ---
+description:  Provides background information about Windows Management Instrumentation (WMI) and Windows PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 12/01/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wmi_cmdlets?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -166,7 +167,9 @@ Problem 1: The remote computer is not online.
 If a computer is offline, you will not be able to connect to it by using WMI.
 You may receive the following error message:
 
-    Remote server machine does not exist or is unavailable
+```
+Remote server machine does not exist or is unavailable
+```
 
 If you receive this error message, verify that the computer is online. Try to
 ping the remote computer.
@@ -193,7 +196,9 @@ configured to automatically block all unsolicited network traffic, including
 DCOM and WMI. In its default configuration, Windows Firewall rejects an
 incoming WMI request, and you receive the following error message:
 
-    Remote server machine does not exist or is unavailable
+```
+Remote server machine does not exist or is unavailable
+```
 
 ## SEE ALSO
 
@@ -201,12 +206,12 @@ incoming WMI request, and you receive the following error message:
 
 [WMI Troubleshooting](/windows/win32/wmisdk/wmi-troubleshooting)
 
-[Get-WmiObject](../../Microsoft.PowerShell.Management/Get-WmiObject.md)
+[Get-WmiObject](xref:Microsoft.PowerShell.Management.Get-WmiObject)
 
-[Invoke-WmiMethod](../../Microsoft.PowerShell.Management/Invoke-WmiMethod.md)
+[Invoke-WmiMethod](xref:Microsoft.PowerShell.Management.Invoke-WmiMethod)
 
-[Register-WmiEvent](../../Microsoft.PowerShell.Management/Register-WmiEvent.md)
+[Register-WmiEvent](xref:Microsoft.PowerShell.Management.Register-WmiEvent)
 
-[Remove-WmiObject](../../Microsoft.PowerShell.Management/Remove-WmiObject.md)
+[Remove-WmiObject](xref:Microsoft.PowerShell.Management.Remove-WmiObject)
 
-[Set-WmiInstance](../../Microsoft.PowerShell.Management/Set-WmiInstance.md)
+[Set-WmiInstance](xref:Microsoft.PowerShell.Management.Set-WmiInstance)

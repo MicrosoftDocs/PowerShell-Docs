@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Host
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/stop-transcript?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -27,6 +27,7 @@ Alternatively, you can end a session to stop a transcript.
 ## EXAMPLES
 
 ### Example 1: Stop all transcripts
+
 ```powershell
 Stop-Transcript
 ```
@@ -49,6 +50,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet returns a string that contains a status message and the path to the output file.
 
 ## NOTES
+
 * If a transcript has not been started, the command fails.
 
 *
@@ -56,5 +58,3 @@ This cmdlet returns a string that contains a status message and the path to the 
 ## RELATED LINKS
 
 [Start-Transcript](Start-Transcript.md)
-
-

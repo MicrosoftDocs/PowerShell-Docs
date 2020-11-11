@@ -1,13 +1,8 @@
 ---
-title: "Controls Element for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3bd82666-447f-40fe-bd87-c8b182522f4f
-caps.latest.revision: 14
+ms.date: 09/13/2016
+ms.topic: reference
+title: Controls Element for View (Format)
+description: Controls Element for View (Format)
 ---
 # Controls Element for View (Format)
 

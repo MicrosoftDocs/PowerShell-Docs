@@ -1,17 +1,16 @@
 ---
-title: "GetProc02 (VB.NET) Sample Code | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f3497546-5b3a-4e29-84ba-cd9747be64b3
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: GetProc02 (VB.NET) Sample Code
+description: GetProc02 (VB.NET) Sample Code
 ---
 # GetProc02 (VB.NET) Sample Code
 
-The following code shows the implementation of a `Get-Process` cmdlet that accepts command-line input. Notice that this implementation defines a `Name` parameter to allow command-line input, and it uses the [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) method as the output mechanism for sending output objects to the pipeline.
+The following code shows the implementation of a `Get-Process` cmdlet that accepts command-line
+input. Notice that this implementation defines a `Name` parameter to allow command-line input, and
+it uses the
+[WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)
+method as the output mechanism for sending output objects to the pipeline.
 
 ## Code Sample
 

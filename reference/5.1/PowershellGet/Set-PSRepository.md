@@ -1,9 +1,9 @@
 ---
 external help file: PSModule-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PowerShellGet
-ms.date: 06/09/2017
+ms.date: 04/22/2020
 online version: https://docs.microsoft.com/powershell/module/powershellget/set-psrepository?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSRepository
@@ -24,32 +24,35 @@ Set-PSRepository [-Name] <String> [[-SourceLocation] <Uri>] [-PublishLocation <U
 
 ## DESCRIPTION
 
-The **Set-PSRepository** cmdlet sets values for a registered module repository.
+The `Set-PSRepository` cmdlet sets values for a registered module repository. The settings are
+persistent for the current user and apply to all versions of PowerShell installed for that user.
 
 ## EXAMPLES
 
 ### Example 1: Set the installation policy for a repository
 
-```
-PS C:\> Set-PSRepository -Name "myInternalSource" -InstallationPolicy Trusted
+```powershell
+Set-PSRepository -Name "myInternalSource" -InstallationPolicy Trusted
 ```
 
-This command sets the installation policy for the myInternalSource repository to Trusted, so that users are not prompted before installing modules from that source.
+This command sets the installation policy for the **myInternalSource** repository to **Trusted**, so
+that you are not prompted before installing modules from that source.
 
 ### Example 2: Set the source and publish locations for a repository
 
-```
-PS C:\> Set-PSRepository -Name "myInternalSource" -SourceLocation 'https://someNuGetUrl.com/api/v2' -PublishLocation 'https://someNuGetUrl.com/api/v2/packages'
+```powershell
+Set-PSRepository -Name "myInternalSource" -SourceLocation 'https://someNuGetUrl.com/api/v2' -PublishLocation 'https://someNuGetUrl.com/api/v2/packages'
 ```
 
-This command sets the source location and publish location for myInternalSource to the specified URIs.
+This command sets the source location and publish location for **myInternalSource** to the specified
+URIs.
 
 ## PARAMETERS
 
 ### -Credential
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -62,11 +65,10 @@ Accept wildcard characters: False
 
 ### -InstallationPolicy
 
-Specifies the installation policy.
-Valid values are: Trusted, UnTrusted.
+Specifies the installation policy. Valid values are: **Trusted**, **Untrusted**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Trusted, Untrusted
@@ -83,14 +85,14 @@ Accept wildcard characters: False
 Specifies the name of the repository.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -99,7 +101,7 @@ Accept wildcard characters: False
 Specifies the package management provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -111,10 +113,11 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
+
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -126,10 +129,12 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
+
+Specifies a user account that has permission to use the proxy server that is specified by the
+**Proxy** parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -142,11 +147,11 @@ Accept wildcard characters: False
 
 ### -PublishLocation
 
-Specifies the URI of the publish location.
-For example, for NuGet-based repositories, the publish location is similar to http://someNuGetUrl.com/api/v2/Packages.
+Specifies the URI of the publish location. For example, for NuGet-based repositories, the publish
+location is similar to `https://someNuGetUrl.com/api/v2/Packages`.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -158,10 +163,11 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptPublishLocation
+
 Specifies the script publish location.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -173,10 +179,11 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptSourceLocation
+
 Specifies the script source location.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -189,11 +196,11 @@ Accept wildcard characters: False
 
 ### -SourceLocation
 
-Specifies the URI for discovering and installing modules from this repository.
-For example, for NuGet-based repositories, the source location is similar to http://someNuGetUrl.com/api/v2.
+Specifies the URI for discovering and installing modules from this repository. For example, for
+NuGet-based repositories, the source location is similar to `https://someNuGetUrl.com/api/v2`.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -206,11 +213,22 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+### System.String
+
+### System.Management.Automation.PSCredential
+
+### System.Uri
+
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 
@@ -221,5 +239,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Register-PSRepository](Register-PSRepository.md)
 
 [Unregister-PSRepository](Unregister-PSRepository.md)
-
-

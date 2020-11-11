@@ -1,6 +1,7 @@
 ---
+description:  Describes the `Suspend-Workflow` activity, which suspends the workflow in which the activity appears. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_suspend-workflow?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -129,8 +130,8 @@ PSComputerName    : localhost
 
 [about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)
 
-[PSWorkflow](../PSWorkflow.md) cmdlets
+[PSWorkflow](xref:PSWorkflow) cmdlets
 
-[Workflows Guide](/powershell/scripting/components/workflows-guide)
+[Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
 
-[Writing a Windows PowerShell Workflow](/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)
+[Writing a Windows PowerShell Workflow](/previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)

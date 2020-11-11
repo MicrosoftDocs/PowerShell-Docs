@@ -1,7 +1,8 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  RollBack method
+ms.date: 07/17/2020
+ms.topic: reference
+title: RollBack method
+description: RollBack method
 ---
 # RollBack method
 
@@ -17,7 +18,7 @@ uint32 RollBack(
 
 ## Parameters
 
-*configurationNumber* \[in\]
+**configurationNumber** \[in\]
 Specifies the requested configuration.
 
 ## Return value

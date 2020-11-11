@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,11 +17,13 @@ Deletes an event log or unregisters an event source.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Remove-EventLog [[-ComputerName] <String[]>] [-LogName] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Source
+
 ```
 Remove-EventLog [[-ComputerName] <String[]>] [-Source <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -38,6 +40,7 @@ CAUTION: This cmdlet can delete operating system event logs, which might cause a
 ## EXAMPLES
 
 ### Example 1: Remove an event log from the local computer
+
 ```
 PS C:\> Remove-EventLog -LogName "MyLog"
 ```
@@ -45,6 +48,7 @@ PS C:\> Remove-EventLog -LogName "MyLog"
 This command deletes the MyLog event log from the local computer and unregisters its event sources.
 
 ### Example 2: Remove an event log from several computers
+
 ```
 PS C:\> Remove-EventLog -LogName "MyLog", "TestLog" -ComputerName "Server01", "Server02", "localhost"
 ```
@@ -53,6 +57,7 @@ This command deletes the MyLog and TestLog event logs from the local computer an
 The command also unregisters the event sources for these logs.
 
 ### Example 3: Delete an event source
+
 ```
 PS C:\> Remove-EventLog -Source "MyApp"
 ```
@@ -61,6 +66,7 @@ This command deletes the MyApp event source from the logs on the local computer.
 When the command finishes, the MyApp program cannot write to any event logs.
 
 ### Example 4: Remove an event log and confirm the action
+
 ```
 The first command lists the event logs on the local computer.
 PS C:\> Get-EventLog -List
@@ -96,6 +102,7 @@ Max(K) Retain OverflowAction        Entries Log
 These commands show how to list the event logs on a computer and verify that a **Remove-EventLog** command was successful.
 
 ### Example 5: Remove an event source and confirm the action
+
 ```
 PS C:\> Get-WmiObject win32_nteventlogfile -Filter "logfilename='TestLog'" | foreach {$_.sources}
 MyApp
@@ -129,7 +136,7 @@ This parameter does not rely on Windows PowerShell remoting.
 You can use the *ComputerName* parameter of **Remove-EventLog** even if your computer is not configured to run remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: CN
 
@@ -147,7 +154,7 @@ The log name is the value of the **Log** property, not the *LogDisplayName*, Wil
 This parameter is required.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases: LN
 
@@ -163,7 +170,7 @@ Specifies the event sources that this cmdlet unregisters.
 Enter the source names, not the executable name, separated by commas.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Source
 Aliases: SRC
 
@@ -178,7 +185,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -194,7 +201,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -219,6 +226,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not return any output.
 
 ## NOTES
+
 * To use **Remove-EventLog** on Windows Vista and later versions of the Windows operating system, start Windows PowerShell by using the Run as administrator option.
 
   If you remove an event log and then re-create the log, you will not be able to register the same event sources.
@@ -241,5 +249,3 @@ Applications that used the events sources to write entries to the original log w
 [Show-EventLog](Show-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
-
-

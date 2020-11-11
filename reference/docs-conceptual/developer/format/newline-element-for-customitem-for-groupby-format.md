@@ -1,13 +1,8 @@
 ---
-title: "NewLine Element for CustomItem for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8e37477e-cf2c-4ebd-85d1-eb923e2f4eea
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: NewLine Element for CustomItem for GroupBy (Format)
+description: NewLine Element for CustomItem for GroupBy (Format)
 ---
 # NewLine Element for CustomItem for GroupBy (Format)
 

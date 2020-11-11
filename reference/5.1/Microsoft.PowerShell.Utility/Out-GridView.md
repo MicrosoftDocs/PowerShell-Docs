@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -162,7 +162,7 @@ represents the collection. To display the each object in the collection, use a p
 to send objects to `Out-GridView`.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -190,7 +190,7 @@ The values of this parameter determine how many items you can send down the pipe
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: OutputModeOption
+Type: Microsoft.PowerShell.Commands.OutputModeOption
 Parameter Sets: OutputMode
 Aliases:
 Accepted values: None, Single, Multiple
@@ -212,7 +212,7 @@ To send items from the interactive window down the pipeline, click to select the
 click OK. Shift-click and Ctrl-click are supported.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PassThru
 Aliases:
 
@@ -229,7 +229,7 @@ Specifies the text that appears in the title bar of the `Out-GridView` window. B
 bar displays the command that invokes `Out-GridView`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -251,7 +251,7 @@ used in a shortcut without the **Wait** parameter, the `Out-GridView` window app
 momentarily before PowerShell closes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Wait
 Aliases:
 

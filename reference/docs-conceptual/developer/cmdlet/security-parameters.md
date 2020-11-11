@@ -1,13 +1,8 @@
 ---
-title: "Security Parameters | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: Security Parameters
+description: Security Parameters
 ---
 # Security Parameters
 

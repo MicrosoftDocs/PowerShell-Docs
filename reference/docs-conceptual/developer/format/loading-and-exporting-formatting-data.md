@@ -1,13 +1,8 @@
 ---
-title: "Loading and Exporting Formatting Data | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: Loading and Exporting Formatting Data
+description: Loading and Exporting Formatting Data
 ---
 # Loading and Exporting Formatting Data
 

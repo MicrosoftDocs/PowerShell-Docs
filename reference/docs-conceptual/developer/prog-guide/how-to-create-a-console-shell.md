@@ -1,15 +1,8 @@
 ---
-title: "How to Create a Console Shell | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "Make-Shell [PowerShell Programmer's Guide]"
-ms.assetid: 6c24dd44-a8ec-421d-ac86-90912e1a8cc6
-caps.latest.revision: 5
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Create a Console Shell
+description: How to Create a Console Shell
 ---
 # How to Create a Console Shell
 

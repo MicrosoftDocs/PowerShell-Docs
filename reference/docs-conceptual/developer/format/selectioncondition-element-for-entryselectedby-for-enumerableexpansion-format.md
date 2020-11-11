@@ -1,13 +1,8 @@
 ---
-title: "SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8c012115-9241-4851-9015-841eb508faf3
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)
+description: SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)
 ---
 # SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)
 

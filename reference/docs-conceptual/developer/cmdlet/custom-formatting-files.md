@@ -1,13 +1,8 @@
 ---
-title: "Custom Formatting Files | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 85d27545-8097-4010-9947-6d8b3ce2eac0
-caps.latest.revision: 15
+ms.date: 09/13/2016
+ms.topic: reference
+title: Custom Formatting Files
+description: Custom Formatting Files
 ---
 # Custom Formatting Files
 

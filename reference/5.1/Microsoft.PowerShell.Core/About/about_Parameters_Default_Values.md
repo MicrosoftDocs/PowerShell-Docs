@@ -1,6 +1,7 @@
 ---
+description:  Describes how to set custom default values for cmdlet parameters and advanced functions. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 5/31/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0

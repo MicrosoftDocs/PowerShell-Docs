@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/29/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -197,7 +197,7 @@ command and returning its output to a new command. You can use this feature to s
 results in a variable.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -216,7 +216,7 @@ on the screen, `Show-Command` generates an error. The default height is 600 pixe
 `Show-Command` command that includes the **Name** parameter, the default height is 300 pixels.
 
 ```yaml
-Type: Double
+Type: System.Double
 Parameter Sets: (All)
 Aliases:
 
@@ -234,7 +234,7 @@ of a cmdlet, function, or CIM command. If you omit this parameter, `Show-Command
 window that lists all of the PowerShell commands in all modules installed on the computer.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: CommandName
 
@@ -251,7 +251,7 @@ Indicates that this cmdlet omits the Common Parameters section of the command di
 the Common Parameters appear in an expandable section at the bottom of the command window.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -269,7 +269,7 @@ generate any output. To run the command string, copy and paste it at the command
 in a variable and use the `Invoke-Expression` cmdlet to run the string in the variable.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -287,7 +287,7 @@ of pixels in the screen resolution. If the value is too large to display the com
 screen, `Show-Command` generates an error. The default width is 300 pixels.
 
 ```yaml
-Type: Double
+Type: System.Double
 Parameter Sets: (All)
 Aliases:
 

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession?view=powershell-7&WT.mc_id=ps-gethelp
@@ -57,7 +57,8 @@ New-CimSession
 This example creates a CIM session to the computer specified by **ComputerName**.
 By default, `New-CimSession` creates a WSMan session when **ComputerName** is specified.
 
-```powershell New-CimSession -ComputerName Server01
+```powershell
+New-CimSession -ComputerName Server01
 ```
 
 ### Example 3: Create a CIM session to multiple computers
@@ -139,7 +140,7 @@ Windows.
 > compromised, the credentials that are passed to it can be used to control the network session.
 
 ```yaml
-Type: PasswordAuthenticationMechanism
+Type: Microsoft.Management.Infrastructure.Options.PasswordAuthenticationMechanism
 Parameter Sets: CredentialParameterSet
 Aliases:
 Accepted values: Default, Digest, Negotiate, Basic, Kerberos, NtlmDomain, CredSsp
@@ -167,8 +168,8 @@ Certificate Provider.
 For more information, see [about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
 
 ```yaml
-Type: String
-Parameter Sets: CertificatePrameterSet
+Type: System.String
+Parameter Sets: CertificateParameterSet
 Aliases:
 
 Required: False
@@ -194,7 +195,7 @@ If the computer is in a different domain than the user, you must specify the ful
 name.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: CN, ServerName
 
@@ -220,7 +221,7 @@ Specify the value for **Credential** using one of the following formats:
 When you type a user name, you are prompted for a password.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: CredentialParameterSet
 Aliases:
 
@@ -239,7 +240,7 @@ You can use the name to refer to the CIM session when using other cmdlets, such 
 The name is not required to be unique to the computer or the current session.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -263,7 +264,7 @@ parameter are not recoverable, because the operation on the server times out bef
 reconnect.
 
 ```yaml
-Type: UInt32
+Type: System.UInt32
 Parameter Sets: (All)
 Aliases: OT
 
@@ -292,7 +293,7 @@ computers or sessions on which the command runs. An alternate port setting might
 from running on all computers.
 
 ```yaml
-Type: UInt32
+Type: System.UInt32
 Parameter Sets: (All)
 Aliases:
 
@@ -309,7 +310,7 @@ Sets advanced options for the new CIM session. Enter the name of a **CimSessionO
 created using the [`New-CimSessionOption`](New-CimSessionOption.md) cmdlet.
 
 ```yaml
-Type: CimSessionOptions
+Type: Microsoft.Management.Infrastructure.Options.CimSessionOptions
 Parameter Sets: (All)
 Aliases:
 
@@ -330,7 +331,7 @@ verification is accomplished using a standard WS-Identity operation. You can add
 or to reduce some data transmission time.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

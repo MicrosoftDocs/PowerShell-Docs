@@ -1,8 +1,8 @@
 ---
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=855958
-Help Version: 6.1.0.1
+Help Version: 6.2.5.0
 keywords: powershell,cmdlet
-locale: en-US
+Locale: en-US
 Module Guid: eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
 Module Name: Microsoft.PowerShell.Management
 ms.date: 03/01/2019
@@ -189,4 +189,3 @@ Determines whether all elements of a path exist.
 
 ### [Wait-Process](Wait-Process.md)
 Waits for the processes to be stopped before accepting more input.
-

@@ -1,17 +1,8 @@
 ---
-title: "Validating Parameter Input | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "parameters, validation rules"
-  - "validation, examples"
-  - "validation"
-ms.assetid: 3f15bf20-a068-4a7d-a170-bc43f755d1fe
-caps.latest.revision: 14
+ms.date: 09/13/2016
+ms.topic: reference
+title: Validating Parameter Input
+description: Validating Parameter Input
 ---
 # Validating Parameter Input
 

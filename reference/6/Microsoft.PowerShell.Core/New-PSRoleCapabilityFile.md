@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 09/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile?view=powershell-6&WT.mc_id=ps-gethelp
@@ -93,7 +93,7 @@ the following keys:
 For example: `@{Name="hlp";Value="Get-Help";Description="Gets help";Options="ReadOnly"}`
 
 ```yaml
-Type: IDictionary[]
+Type: System.Collections.IDictionary[]
 Parameter Sets: (All)
 Aliases:
 
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 Specifies the assemblies to load into the sessions that use the role capability file.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 Specifies the user that created the role capability file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -142,7 +142,7 @@ Identifies the company that created the role capability file.
 The default value is Unknown.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -160,7 +160,7 @@ Specifies a copyright for the role capability file. If you omit this parameter,
 parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 Specifies a description for the role capability file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -196,7 +196,7 @@ variable values.
 For example: `EnvironmentVariables=@{TestShare="\\\\Server01\TestShare"}`
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -213,7 +213,7 @@ Specifies the formatting files (.ps1xml) that run in sessions that use the role 
 value of this parameter must be a full or absolute path of the formatting files.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -239,7 +239,7 @@ For example:
 `@{Name="Get-PowerShellProcess";ScriptBlock={Get-Process PowerShell};Options="AllScope"}`
 
 ```yaml
-Type: IDictionary[]
+Type: System.Collections.IDictionary[]
 Parameter Sets: (All)
 Aliases:
 
@@ -257,7 +257,7 @@ Specifies a unique identifier for the role capability file. If you omit this par
 type `[guid]::NewGuid()`.
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: (All)
 Aliases:
 
@@ -285,7 +285,7 @@ and hash tables, in any order, is valid.
 `"TroubleshootingPack", @{ModuleName="PSDiagnostics"; ModuleVersion="1.0.0.0";GUID="c61d6278-02a3-4618-ae37-a524d40a7f44"}`
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -302,7 +302,7 @@ Specifies the path and filename of the role capability file. The file must have 
 extension.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -320,7 +320,7 @@ names of the scripts. The value of this parameter must be a full or absolute pat
 names.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -337,7 +337,7 @@ Specifies type files (.ps1xml) to add to sessions that use the role capability f
 filenames. The value of this parameter must be a full or absolute path of the type filenames.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -361,7 +361,7 @@ the following keys:
 For example: `@{Name="WarningPreference";Value="SilentlyContinue";Options="AllScope"}`
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -386,7 +386,7 @@ When any **Visible** parameter is included in the role capability file, PowerShe
 `Import-Module` cmdlet and its `ipmo` alias from the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -411,7 +411,7 @@ When any **Visible** parameter is included in the session configuration file, Po
 `Import-Module` cmdlet and its `ipmo` alias from the session.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -433,7 +433,7 @@ When any **Visible** parameter is included in the session configuration file, Po
 `Import-Module` cmdlet and its `ipmo` alias from the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -458,7 +458,7 @@ When any **Visible** parameter is included in the session configuration file, Po
 `Import-Module` cmdlet and its `ipmo` alias from the session.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -482,7 +482,7 @@ When any **Visible** parameter is included in the session configuration file, Po
 `Import-Module` cmdlet and its `ipmo` alias from the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

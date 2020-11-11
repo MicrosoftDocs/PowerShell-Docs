@@ -1,13 +1,8 @@
 ---
-title: "Runspace02 Code Samples | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ce442990-b5f1-4334-b6d8-080e527ccea1
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: Runspace02 Code Samples
+description: Runspace02 Code Samples
 ---
 # Runspace02 Code Samples
 

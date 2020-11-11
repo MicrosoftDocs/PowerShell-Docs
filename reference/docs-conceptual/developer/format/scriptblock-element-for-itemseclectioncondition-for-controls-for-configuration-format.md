@@ -1,13 +1,8 @@
 ---
-title: "ScriptBlock Element for ItemSeclectionCondition for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 51f7aec9-7b01-4370-84f4-1e58508a851f
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: ScriptBlock Element for ItemSeclectionCondition for Controls for Configuration (Format)
+description: ScriptBlock Element for ItemSeclectionCondition for Controls for Configuration (Format)
 ---
 # ScriptBlock Element for ItemSeclectionCondition for Controls for Configuration (Format)
 

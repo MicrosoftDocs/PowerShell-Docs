@@ -1,13 +1,8 @@
 ---
-title: "How to Declare Parameter Sets | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 46905eb9-64d7-4c55-9c2a-7bc7bf04e14b
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Declare Parameter Sets
+description: How to Declare Parameter Sets
 ---
 # How to Declare Parameter Sets
 

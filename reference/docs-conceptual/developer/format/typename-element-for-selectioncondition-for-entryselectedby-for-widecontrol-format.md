@@ -1,13 +1,8 @@
 ---
-title: "TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 6d6d43fa-c900-4e2f-952d-deccd584236f
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
+description: TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
 ---
 # TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
 

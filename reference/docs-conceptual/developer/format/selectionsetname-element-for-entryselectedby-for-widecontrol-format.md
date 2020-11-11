@@ -1,13 +1,8 @@
 ---
-title: "SelectionSetName Element for EntrySelectedBy for WideControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c9c6e18f-6cca-465c-bd20-3969e7897a96
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for EntrySelectedBy for WideControl (Format)
+description: SelectionSetName Element for EntrySelectedBy for WideControl (Format)
 ---
 # SelectionSetName Element for EntrySelectedBy for WideControl (Format)
 

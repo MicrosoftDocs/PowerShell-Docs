@@ -1,13 +1,8 @@
 ---
-title: "StopProcessSample02 Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: StopProcessSample02 Sample
+description: StopProcessSample02 Sample
 ---
 # StopProcessSample02 Sample
 

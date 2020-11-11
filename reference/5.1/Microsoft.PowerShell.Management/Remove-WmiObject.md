@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-wmiobject?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,6 +17,7 @@ Deletes an instance of an existing Windows Management Instrumentation (WMI) clas
 ## SYNTAX
 
 ### class (Default)
+
 ```
 Remove-WmiObject [-Class] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -25,12 +26,14 @@ Remove-WmiObject [-Class] <String> [-AsJob] [-Impersonation <ImpersonationLevel>
 ```
 
 ### object
+
 ```
 Remove-WmiObject -InputObject <ManagementObject> [-AsJob] [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### path
+
 ```
 Remove-WmiObject -Path <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -39,6 +42,7 @@ Remove-WmiObject -Path <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
 ```
 
 ### WQLQuery
+
 ```
 Remove-WmiObject [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
@@ -47,6 +51,7 @@ Remove-WmiObject [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication
 ```
 
 ### query
+
 ```
 Remove-WmiObject [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
@@ -55,6 +60,7 @@ Remove-WmiObject [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication
 ```
 
 ### list
+
 ```
 Remove-WmiObject [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
@@ -68,6 +74,7 @@ The **Remove-WmiObject** cmdlet deletes an instance of an existing Windows Manag
 ## EXAMPLES
 
 ### Example 1: Close all instances of a Win32 process
+
 ```
 PS C:\> notepad
 PS C:\> $np = Get-WmiObject -Query "select * from win32_process where name='notepad.exe'"
@@ -83,6 +90,7 @@ The second command uses the Get-WmiObject cmdlet to retrieve the instances of th
 The third command passes the object in the $np variable to **Remove-WmiObject**, which deletes all the instances of Notepad.exe.
 
 ### Example 2: Delete a folder
+
 ```
 PS C:\> $a = Get-WMIObject -Query "Select * From Win32_Directory Where Name ='C:\\Test'"
 PS C:\> $a | Remove-WMIObject
@@ -117,7 +125,7 @@ For more information, see about_Remote_Requirements.
 For more information about Windows PowerShell background jobs, see about_Jobs and about_Remote_Jobs.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -148,7 +156,7 @@ All the data that is transferred between the client and the application is authe
 The properties of the other authentication levels are used, and all the data is encrypted.
 
 ```yaml
-Type: AuthenticationLevel
+Type: System.Management.AuthenticationLevel
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
@@ -168,7 +176,7 @@ To use Kerberos, specify kerberos:\<DomainName\>\\\<ServerName\>.
 You cannot include the authority setting when you connect to the local computer.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 
@@ -183,7 +191,7 @@ Accept wildcard characters: False
 Specifies the name of a WMI class that this cmdlet deletes.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: class
 Aliases:
 
@@ -205,7 +213,7 @@ This parameter does not rely on Windows PowerShell remoting.
 You can use the *ComputerName* parameter even if your computer is not configured to run remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases: Cn
 
@@ -224,7 +232,7 @@ Type a user name, such as User01 or Domain01\User01, or enter a **PSCredential**
 If you type a user name, this cmdlet prompts you for a password.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 
@@ -239,7 +247,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet enables all the permissions of the current user before the command it makes the WMI call.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 
@@ -266,7 +274,7 @@ Allows objects to use the credentials of the caller.
 Allows objects to permit other objects to use the credentials of the caller.
 
 ```yaml
-Type: ImpersonationLevel
+Type: System.Management.ImpersonationLevel
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
@@ -283,7 +291,7 @@ Specifies a **ManagementObject** object to use as input.
 When this parameter is used, all other parameters are ignored.
 
 ```yaml
-Type: ManagementObject
+Type: System.Management.ManagementObject
 Parameter Sets: object
 Aliases:
 
@@ -299,7 +307,7 @@ Specifies the preferred locale for WMI objects.
 The *Locale* parameter is specified as an array in the MS_\<LCID\> format in the preferred order.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 
@@ -314,7 +322,7 @@ Accept wildcard characters: False
 Specifies the WMI repository namespace where the referenced WMI class is located when it is used with the *Class* parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases: NS
 
@@ -329,7 +337,7 @@ Accept wildcard characters: False
 Specifies the WMI object path of a WMI class, or specifies the WMI object path of an instance of a WMI class to delete.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: path
 Aliases:
 
@@ -346,7 +354,7 @@ This parameter is used together with the *AsJob* parameter.
 The throttle limit applies only to the current command, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -361,7 +369,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -377,7 +385,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -411,6 +419,3 @@ Otherwise, it does not generate any output.
 [Invoke-WmiMethod](Invoke-WmiMethod.md)
 
 [Set-WmiInstance](Set-WmiInstance.md)
-
-
-

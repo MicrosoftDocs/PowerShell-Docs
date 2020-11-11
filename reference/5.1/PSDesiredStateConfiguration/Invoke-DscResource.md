@@ -1,7 +1,7 @@
 ---
-external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-help.xml
+external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -32,6 +32,7 @@ This cmdlet also enables debugging of resources when the DSC engine or LCM is ru
 ## EXAMPLES
 
 ### Example 1: Invoke the Set method of a resource by specifying its mandatory properties
+
 ```
 PS C:\> Invoke-DscResource -Name Log -Method Set -Property @{Message = 'Hello World'} -ModuleName PSDesiredStateConfiguration
 ```
@@ -39,6 +40,7 @@ PS C:\> Invoke-DscResource -Name Log -Method Set -Property @{Message = 'Hello Wo
 This command invokes the **Set** method of a resource named Log and specifies a **Message** property for it.
 
 ### Example 2: Invoke the Test method of a resource for a specified module
+
 ```
 PS C:\> Invoke-DscResource -Name WindowsProcess -Method Test -Property @{Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'; Arguments = ''} -ModuleName PSDesiredStateConfiguration
 ```
@@ -51,7 +53,7 @@ This command invokes the **Test** method of a resource named WindowsProcess, whi
 Specifies the method of the resource that this cmdlet invokes. The acceptable values for this parameter are: Get, Set, and Test.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Get, Set, Test
@@ -67,7 +69,7 @@ Accept wildcard characters: False
 Specifies the name of the module from which this cmdlet invokes the specified resource.
 
 ```yaml
-Type: ModuleSpecification
+Type: Microsoft.PowerShell.Commands.ModuleSpecification
 Parameter Sets: (All)
 Aliases:
 
@@ -82,7 +84,7 @@ Accept wildcard characters: False
 Specifies the name of the DSC resource to start.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -97,7 +99,7 @@ Accept wildcard characters: False
 Specifies the resource property name and its value in a hash table as key and value, respectively. Use the **Get-DscResource** cmdlet to discover resource properties and their types.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -136,6 +138,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Start-DscConfiguration](Start-DscConfiguration.md)
 
 [Test-DscConfiguration](Test-DscConfiguration.md)
-
-
-

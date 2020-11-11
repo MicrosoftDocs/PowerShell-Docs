@@ -1,30 +1,29 @@
 ---
-title: "Events01 Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: Events01 Sample
+description: Events01 Sample
 ---
 # Events01 Sample
 
-This sample shows how to create a cmdlet that allows the user to register for events that are raised by [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
-With this cmdlet, users can register an action to execute when a file is created under a specific directory.
-This sample derives from the [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) base class.
+This sample shows how to create a cmdlet that allows the user to register for events that are raised
+by [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher). With this cmdlet, users
+can register an action to execute when a file is created under a specific directory. This sample
+derives from the
+[Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)
+base class.
 
 ## How to build the sample by using Visual Studio.
 
-1. With the Windows PowerShell 2.0 SDK installed, navigate to the Events01 folder.
-   The default location is `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
+1. With the Windows PowerShell 2.0 SDK installed, navigate to the Events01 folder. The default
+   location is
+   `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
 
-2. Double-click the icon for the solution (.sln) file.
-   This opens the sample project in Microsoft Visual Studio.
+2. Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft
+   Visual Studio.
 
-3. In the **Build** menu, select **Build Solution**.
-   The library for the sample will be built in the default `\bin` or `\bin\debug` folders.
+3. In the **Build** menu, select **Build Solution**. The library for the sample will be built in the
+   default `\bin` or `\bin\debug` folders.
 
 ### How to run the sample
 
@@ -42,13 +41,15 @@ This sample derives from the [Microsoft.PowerShell.Commands.ObjectEventRegistrat
     import-module events01
     ```
 
-5. Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a file is created under the TEMP directory.
+5. Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a
+   file is created under the TEMP directory.
 
     ```powershell
     Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }
     ```
 
-6. Create a file under the TEMP directory and note that the action is executed (the message is displayed).
+6. Create a file under the TEMP directory and note that the action is executed (the message is
+   displayed).
 
 This is a sample output that results by following these steps.
 
@@ -77,12 +78,18 @@ This sample demonstrates the following.
 
 ### How to write a cmdlet for event registration
 
-The cmdlet derives from the [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) class, which provides support for parameters common to the `Register-*Event` cmdlets.
-Cmdlets that are derived from [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) need only to define their particular parameters and override the `GetSourceObject` and `GetSourceObjectEventName` abstract methods.
+The cmdlet derives from the
+[Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)
+class, which provides support for parameters common to the `Register-*Event` cmdlets. Cmdlets that
+are derived from
+[Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)
+need only to define their particular parameters and override the `GetSourceObject` and
+`GetSourceObjectEventName` abstract methods.
 
 ## Example
 
-This sample shows how to register for events raised by [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
+This sample shows how to register for events raised by
+[System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
 
 ```csharp
 namespace Sample
@@ -123,7 +130,7 @@ namespace Sample
         /// Gets or sets the name of the event to which the cmdlet registers.
         /// <para>
         /// Currently System.IO.FileSystemWatcher exposes 6 events: Changed, Created,
-        /// Deleted, Disposed, Error, and Renamed. Check the MSDN documentation of
+        /// Deleted, Disposed, Error, and Renamed. Check the documentation of
         /// FileSystemWatcher for details on each event.
         /// </para>
         /// </summary>

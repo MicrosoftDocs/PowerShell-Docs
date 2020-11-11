@@ -1,8 +1,9 @@
 ---
+description: Describes how to work with command parameters in PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 02/12/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameters?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameters?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Parameters
 ---
@@ -243,3 +244,4 @@ information about common parameters, see [about_CommonParameters](about_CommonPa
 [about_Pipelines](about_Pipelines.md)
 
 [about_Wildcards](about_Wildcards.md)
+

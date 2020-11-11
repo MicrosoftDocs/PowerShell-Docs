@@ -1,13 +1,8 @@
 ---
-title: "LeftIndent Element for Frame for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 72f272db-455f-44db-9ab4-6475390a83c4
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: LeftIndent Element for Frame for GroupBy (Format)
+description: LeftIndent Element for Frame for GroupBy (Format)
 ---
 # LeftIndent Element for Frame for GroupBy (Format)
 

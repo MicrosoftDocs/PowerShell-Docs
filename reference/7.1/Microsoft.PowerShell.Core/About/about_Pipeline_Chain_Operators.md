@@ -1,7 +1,8 @@
 ---
+description:  Describes chaining pipelines with the `&&` and `||` operators in PowerShell. 
 ms.date:  09/30/2019
 schema:  2.0.0
-locale:  en-us
+Locale: en-US
 keywords:  powershell,cmdlet
 title:  about_Pipeline_Chain_Operators
 ---
@@ -307,3 +308,4 @@ deemed to have failed after generating the non-terminating error.
 - [about_Operators](about_Operators.md)
 - [about_Automatic_Variables](about_Automatic_Variables.md)
 - [about_pipelines](about_pipelines.md)
+

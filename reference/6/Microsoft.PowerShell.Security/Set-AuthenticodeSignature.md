@@ -1,8 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 02/19/2019
+Locale: en-US
+Module Name: Microsoft.PowerShell.Security
+ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-AuthenticodeSignature
@@ -61,10 +62,10 @@ Set-AuthenticodeSignature -FilePath PsTestInternet2.ps1 -Certificate $cert
 ```
 
 The first command uses the `Get-ChildItem` cmdlet and the PowerShell certificate provider to get the
-certificates in the `Cert:\CurrentUser\My` subdirectory of the certificate store. The `Cert:` drive is
-the drive exposed by the certificate provider. The **CodeSigningCert** parameter, which is supported
-only by the certificate provider, limits the certificates retrieved to those with code-signing
-authority. The command stores the result in the `$cert` variable.
+certificates in the `Cert:\CurrentUser\My` subdirectory of the certificate store. The `Cert:` drive
+is the drive exposed by the certificate provider. The **CodeSigningCert** parameter, which is
+supported only by the certificate provider, limits the certificates retrieved to those with
+code-signing authority. The command stores the result in the `$cert` variable.
 
 The second command uses the `Set-AuthenticodeSignature` cmdlet to sign the `PSTestInternet2.ps1`
 script. It uses the **FilePath** parameter to specify the name of the script and the **Certificate**
@@ -88,8 +89,8 @@ Set-AuthenticodeSignature -FilePath ServerProps.ps1 -Certificate $cert
 The first command uses the `Get-PfxCertificate` cmdlet to load the C:\Test\MySign.pfx certificate
 into the `$cert` variable.
 
-The second command uses `Set-AuthenticodeSignature` to sign the script. The **FilePath** parameter of
-`Set-AuthenticodeSignature` specifies the path to the script file being signed and the **Cert**
+The second command uses `Set-AuthenticodeSignature` to sign the script. The **FilePath** parameter
+of `Set-AuthenticodeSignature` specifies the path to the script file being signed and the **Cert**
 parameter passes the `$cert` variable containing the certificate to `Set-AuthenticodeSignature`.
 
 If the certificate file is password protected, PowerShell prompts you for the password.
@@ -121,7 +122,7 @@ To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdle
 command fails.
 
 ```yaml
-Type: X509Certificate2
+Type: System.Security.Cryptography.X509Certificates.X509Certificate2
 Parameter Sets: (All)
 Aliases:
 
@@ -137,7 +138,7 @@ Accept wildcard characters: False
 Specifies the path to a file that is being signed.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByPath
 Aliases:
 
@@ -154,7 +155,7 @@ Allows the cmdlet to append a signature to a read-only file. Even using the **Fo
 cmdlet cannot override security restrictions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -177,7 +178,7 @@ operating system.
 For a list of possible values, see [HashAlgorithmName Struct](/dotnet/api/system.security.cryptography.hashalgorithmname?view=netframework-4.7.2#properties).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -200,7 +201,7 @@ Valid values are:
 - All: Includes all the certificates in the certificate chain.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -221,7 +222,7 @@ prevents the script from failing if the certificate expires because users and pr
 that the certificate was valid at the time of signing.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -240,7 +241,7 @@ wildcards. If the path includes escape characters, enclose it in single quotatio
 quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByLiteralPath
 Aliases: PSPath
 
@@ -253,11 +254,11 @@ Accept wildcard characters: False
 
 ### -SourcePathOrExtension
 
-Path to the file or file type of the content, on which digital signature is added.
-This parameter is used with **Content** where file content is passed as a byte array.
+Path to the file or file type of the content for which the digital signature is added. This
+parameter is used with **Content** where file content is passed as a byte array.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByContent
 Aliases:
 
@@ -270,11 +271,12 @@ Accept wildcard characters: False
 
 ### -Content
 
-Contents of a file as a byte array, on which digital signature is added.
-This parameter must be used with `-SourcePathorExtension` parameter.
+Contents of a file as a byte array for which the digital signature is added. This parameter must be
+used with **SourcePathOrExtension** parameter. The contents of the file must be in Unicode
+(UTF-16LE) format.
 
 ```yaml
-Type: Byte[]
+Type: System.Byte[]
 Parameter Sets: ByContent
 Aliases:
 
@@ -290,7 +292,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -303,11 +305,10 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -322,7 +323,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -335,6 +337,8 @@ You can pipe a string that contains the file path to `Set-AuthenticodeSignature`
 ### System.Management.Automation.Signature
 
 ## NOTES
+
+This cmdlet is only available on Windows platforms.
 
 ## RELATED LINKS
 
@@ -349,4 +353,3 @@ You can pipe a string that contains the file path to `Set-AuthenticodeSignature`
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-

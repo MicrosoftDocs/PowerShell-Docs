@@ -1,13 +1,8 @@
 ---
-title: "TypeName Element for SelectionCondition for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 477c8711-fffc-4f92-af45-6d4f80990474
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for SelectionCondition for Controls for Configuration (Format)
+description: TypeName Element for SelectionCondition for Controls for Configuration (Format)
 ---
 # TypeName Element for SelectionCondition for Controls for Configuration (Format)
 

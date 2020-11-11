@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PackageManagement
 ms.date: 03/29/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-packagesource?view=powershell-6&WT.mc_id=ps-gethelp
@@ -99,7 +99,7 @@ is sent down the pipeline to `Get-PackageSource`.
 Specifies a configuration file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet
 Aliases:
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet forces **PackageManagement** to automatically install a package provider.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 Specifies the location of a package management source or repository.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 Specifies the name of a package management source.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 Specifies a package management provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -196,7 +196,7 @@ Specifies one or more package provider names. Separate multiple package provider
 Use `Get-PackageProvider` to get a list of available package providers.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Provider
 Accepted values: Bootstrap, NuGet, PowerShellGet
@@ -213,7 +213,7 @@ Accept wildcard characters: False
 Specifies the publish location for the package source.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -229,7 +229,7 @@ Accept wildcard characters: False
 Specifies the script publish location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -245,7 +245,7 @@ Accept wildcard characters: False
 Specifies the script source location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet
 Aliases:
 
@@ -261,7 +261,7 @@ Accept wildcard characters: False
 Switch that skips validating the credentials of a package source.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NuGet
 Aliases:
 

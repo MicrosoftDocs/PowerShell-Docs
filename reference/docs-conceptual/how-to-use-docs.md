@@ -1,14 +1,15 @@
 ---
-ms.date:  10/20/2019
+ms.date: 07/29/2020
 keywords:  powershell,cmdlet
 title:  How to use the PowerShell documentation
+description: This articles explains how to use the features of this site including search filtering and version selection.
 ---
 # How to use the PowerShell documentation
 
 Welcome to the PowerShell online documentation. This site contains cmdlet reference for the
 following versions of PowerShell:
 
-- PowerShell 7 (preview)
+- PowerShell 7
 - PowerShell 6
 - PowerShell 5.1
 
@@ -25,10 +26,10 @@ documentation for the version of PowerShell you are using.
 
 Use the version picker at the top of the page to select the version of PowerShell you want.
 
-![version picker](media/how-to-use-docs/version-search.gif)
+![Using the version picker](media/how-to-use-docs/version-search.gif)
 
 You can verify the version of PowerShell you are using by inspecting the `$PSversionTable.PSVersion`
-value. The following example shows the output for Windows PowerShell v5.1.
+value. The following example shows the output for Windows PowerShell 5.1.
 
 ```powershell
 $PSVersionTable.PSVersion
@@ -37,5 +38,21 @@ $PSVersionTable.PSVersion
 ```Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
-5      1      18362  145
+5      1      19041  1
 ```
+
+If you are new to PowerShell and need help understanding the command syntax, see
+[about_Command_Syntax](/powershell/module/microsoft.powershell.core/about/about_command_syntax).
+
+## Finding articles for previous versions
+
+Documentation for older versions of PowerShell has been archived in our
+[Previous Versions](https://aka.ms/PSLegacyDocs) site.
+
+This site contains documentation for the following topics:
+
+- PowerShell 3.0
+- PowerShell 4.0
+- PowerShell 5.0
+- PowerShell Workflows
+- PowerShell Web Access

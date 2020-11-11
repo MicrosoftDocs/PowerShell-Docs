@@ -1,13 +1,8 @@
 ---
-title: "FirstLineHanging Element for Frame for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1cdcf66e-96a5-47b5-9269-b4330bde29f2
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: FirstLineHanging Element for Frame for GroupBy (Format)
+description: FirstLineHanging Element for Frame for GroupBy (Format)
 ---
 # FirstLineHanging Element for Frame for GroupBy (Format)
 

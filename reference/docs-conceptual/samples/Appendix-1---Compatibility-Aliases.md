@@ -1,7 +1,8 @@
 ---
-ms.date:  09/09/2019
+ms.date: 08/03/2020
 keywords:  powershell,cmdlet
 title:  Appendix 1 Compatibility Aliases
+description: PowerShell has several aliases that allow UNIX and cmd.exe users to use familiar commands.
 ---
 # Appendix 1 - Compatibility Aliases
 
@@ -9,21 +10,22 @@ PowerShell has several aliases that allow **UNIX** and **cmd.exe** users to use 
 The commands and their related PowerShell cmdlet and PowerShell alias are shown in the following
 table:
 
-|cmd.exe command|UNIX command|PowerShell cmdlet|PowerShell alias|
-|---------------|----------------|--------------|------------|
-|**cls**|**clear**|`Clear-Host` (function)|`cls`|
-|**copy**|**cp**|`Copy-Item`|`cpi`|
-|**dir**|**ls**|`Get-ChildItem`|`gci`|
-|**type**|**cat**|`Get-Content`|`gc`|
-|**move**|**mv**|`Move-Item`|`mi`|
-|**md**|**mkdir**|`New-Item`|`ni`|
-|**pushd**|**pushd**|`Push-Location`|`pushd`|
-|**popd**|**popd**|`Pop-Location`|`popd`|
-|**del**, **erase**, **rd**, **rmdir**|**rm**|`Remove-Item`|`ri`|
-|**ren**|**mv**|`Rename-Item`|`rni`|
-|**cd**, **chdir**|**cd**|`Set-Location`|`sl`|
+|            cmd.exe command            | UNIX command | PowerShell cmdlet | PowerShell alias |
+| ------------------------------------- | ------------ | ----------------- | ---------------- |
+| **cd**, **chdir**                     | **cd**       | `Set-Location`    | `sl`             |
+| **cls**                               | **clear**    | `Clear-Host`      | `cls`            |
+| **copy**                              | **cp**       | `Copy-Item`       | `cpi`            |
+| **del**, **erase**, **rd**, **rmdir** | **rm**       | `Remove-Item`     | `ri`             |
+| **dir**                               | **ls**       | `Get-ChildItem`   | `gci`            |
+| **echo**                              | **echo**     | `Write-Output`    | `write`          |
+| **md**                                | **mkdir**    | `New-Item`        | `ni`             |
+| **move**                              | **mv**       | `Move-Item`       | `mi`             |
+| **popd**                              | **popd**     | `Pop-Location`    | `popd`           |
+| **pushd**                             | **pushd**    | `Push-Location`   | `pushd`          |
+| **ren**                               | **mv**       | `Rename-Item`     | `rni`            |
+| **type**                              | **cat**      | `Get-Content`     | `gc`             |
 
-To find the PowerShell aliases, use the [Get-Alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias)
+To find the PowerShell aliases, use the [Get-Alias](xref:Microsoft.PowerShell.Utility.Get-Alias)
 cmdlet. To display a cmdlet's aliases, use the **Definition** parameter and specify the cmdlet name.
 Or, to find an alias's cmdlet name, use the **Name** parameter and specify the alias.
 

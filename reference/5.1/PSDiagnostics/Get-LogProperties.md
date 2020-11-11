@@ -46,7 +46,7 @@ MaxLogSize : 15728640
 The name of the event provider.
 
 ```yaml
-Type: System.String
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -66,7 +66,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String
+### System.Object
 
 ## OUTPUTS
 
@@ -84,4 +84,3 @@ The **PSDiagnostics** module adds the **LogDetails** class to the
 [Enable-PSTrace](Enable-PSTrace.md)
 
 [Disable-PSTrace](Disable-PSTrace.md)
-

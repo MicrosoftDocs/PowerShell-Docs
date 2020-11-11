@@ -1,8 +1,6 @@
 ---
 ms.date:  06/12/2017
-contributor:  JKeithB, SydneyhSmith
-keywords:  gallery,powershell,cmdlet,psgallery
-description:  Guidelines for Publishers
+description:  This article describes recommended steps to ensure the packages published to the PowerShell Gallery are widely adopted and provide high value to users.
 title:  PowerShell Gallery Publishing Guidelines and Best Practices
 ---
 # PowerShellGallery Publishing Guidelines and Best Practices
@@ -14,15 +12,17 @@ users. Packages that are published following these guidelines will be more likel
 trusted, and attract more users.
 
 Included below are guidelines for what makes a good PowerShell Gallery package, what optional
-Manifest settings are most important, improving your code with feedback from initial reviewers and [Powershell Script Analyzer](https://aka.ms/psscriptanalyzer),
-versioning your module, documentation, tests and examples for how to use what you have shared. Much
-of this documentation follows the guidelines for publishing
+Manifest settings are most important, improving your code with feedback from initial reviewers and
+[Powershell Script Analyzer](https://aka.ms/psscriptanalyzer), versioning your module,
+documentation, tests and examples for how to use what you have shared. Much of this documentation
+follows the guidelines for publishing
 [High Quality DSC Resource Modules](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
 For the mechanics of publishing a package to the PowerShell Gallery, see
 [Creating and Publishing a Package](../how-to/publishing-packages/publishing-a-package.md).
 
-Feedback on these guidelines is welcomed. If you do have feedback, please open issues in our [GitHub documentation repository](https://github.com/powershell/powershell-docs/issues).
+Feedback on these guidelines is welcomed. If you do have feedback, please open issues in our
+[GitHub documentation repository](https://github.com/powershell/powershell-docs/issues).
 
 ## Best practices for publishing packages
 
@@ -122,18 +122,12 @@ Package owners who respond properly to feedback are highly valued by the communi
 provide constructive feedback are important to respond to, as they're interested enough in the
 package to try to help improve it.
 
-There are two feedback methods available in the PowerShell Gallery:
+There is one feedback method available in the PowerShell Gallery:
 
 - Contact Owner: This allows a user to send an email to the package owner. As a package owner, is
   important to monitor the email address used with the PowerShell Gallery packages, and respond to
   issues that are raised. The one disadvantage to this method is that only the user and owner will
   ever see the communication, so the owner may have to answer the same question many times.
-- Comments: At the bottom of the package page is a **Comment** field. The advantage to this system
-  is that other users can see the comments and responses, which reduces the number of times any
-  single question must be answered. As a package owner, it's strongly recommended that you follow
-  the comments made for each package. See
-  [Providing Feedback via Social Media or Comments](../how-to/working-with-packages/social-media-feedback.md)
-  for details on how to do that.
 
 Owners who respond to feedback constructively are appreciated by the community. Use the opportunity
 in the report to request more information. If needed, provide a workaround, or identify if an update
@@ -197,7 +191,7 @@ By tagging your package with the compatible platform(s) it will be included in t
 filters on the left pane of the search results. If you host your package on GitHub, when you tag
 your package, you can also take advantage of our
 [PowerShell Gallery compatibility shields](https://img.shields.io/powershellgallery/p/:packageName.svg)
-![compatibility shield](media/publishing-guidelines/CosmosDB.svg).
+![compatibility shield example](media/publishing-guidelines/CosmosDB.svg).
 
 ## Include tests
 
@@ -254,9 +248,10 @@ script is loaded. PowerShell can be constrained using the [Execution Policy](/po
 cmdlets to ensure use of signed scripts.
 
 Catalog signing modules is a feature added to PowerShell in version 5.1. How to sign a module is
-covered in the [Catalog Cmdlets](/powershell/scripting/wmf/5.1/catalog-cmdlets) article. In overview, catalog
-signing is done by creating a catalog file, which contains a hash value for every file in the
-module, and then signing that file.
+covered in the
+[Catalog Cmdlets](/powershell/scripting/wmf/whats-new/new-updated-cmdlets#catalog-cmdlets) article.
+In overview, catalog signing is done by creating a catalog file, which contains a hash value for
+every file in the module, and then signing that file.
 
 The **PowerShellGet** `Publish-Module`, `Install-Module`, and `Update-Module` cmdlets will check the
 signature to ensure it's valid, then confirm that the hash value for each package matches what is in
@@ -303,11 +298,11 @@ The PowerShell Gallery isn't designed to be a target for testing the publishing 
 way to test out the end-to-end process of publishing to the PowerShell Gallery is to set up and use
 your own local repository. This can be done in a few ways, including:
 
-- Set up a local PowerShell Gallery instance, using the [PS Private Gallery project](https://github.com/PowerShell/PSPrivateGallery)
-  in GitHub. This preview project will help you set up an instance of the PowerShell Gallery that
-  you can control, and use for your tests.
-- Set up an
-  [internal Nuget repository](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/).
+- Set up a local PowerShell Gallery instance, using the
+  [PS Private Gallery project](https://github.com/PowerShell/PSPrivateGallery) in GitHub. This
+  preview project will help you set up an instance of the PowerShell Gallery that you can control,
+  and use for your tests.
+- Set up an [internal Nuget repository](https://devblogs.microsoft.com/powershell/setting-up-an-internal-powershellget-repository/).
   This will require more work to set up, but will have the advantage of validating a few more of the
   requirements, notably validating use of an API key, and whether or not dependencies are present in
   the target when you publish.

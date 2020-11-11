@@ -1,7 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet,markdown
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Utility
 ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-markdown?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -96,7 +97,7 @@ VT100-encoded string and available in **VT100EncodedString** property.
 Specifies if the output should be encoded as a string with VT100 escape codes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -114,7 +115,7 @@ string is converted. When an object of type **System.IO.FileInfo** is specified,
 file specified by the object are converted. Objects of any other type result in an error.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: InputObjParamSet
 Aliases:
 
@@ -130,7 +131,7 @@ Accept wildcard characters: False
 Specifies a path to the file to be converted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralParamSet
 Aliases: PSPath, LP
 
@@ -146,7 +147,7 @@ Accept wildcard characters: False
 Specifies a path to the file to be converted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PathParamSet
 Aliases:
 

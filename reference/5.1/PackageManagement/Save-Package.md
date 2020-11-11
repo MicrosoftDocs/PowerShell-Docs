@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PackageManagement
 ms.date: 04/03/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/save-package?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -154,7 +154,7 @@ PS> Install-Package C:\LocalPkg\NuGet.Core.2.14.0.nupkg
 Automatically accept the license agreement during installation if the package requires it.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 Allows packages marked as Prerelease to be saved.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NuGet:PackageByInputObject, NuGet, PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
@@ -186,7 +186,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet saves all available versions of the package.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -202,7 +202,7 @@ Accept wildcard characters: False
 Specifies one or more commands included in the package.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
@@ -218,7 +218,7 @@ Accept wildcard characters: False
 Specifies a configuration File.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet:PackageByInputObject, NuGet
 Aliases:
 
@@ -235,7 +235,7 @@ Accept wildcard characters: False
 specified value.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet:PackageByInputObject, NuGet
 Aliases:
 
@@ -252,7 +252,7 @@ Specifies a user account that has permission to save a package from a specified 
 source.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -268,7 +268,7 @@ Accept wildcard characters: False
 Specifies one or more Desired State Configuration (DSC) resources for the package.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
@@ -284,7 +284,7 @@ Accept wildcard characters: False
 Specifies a filter for the package.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
@@ -300,7 +300,7 @@ Accept wildcard characters: False
 Specifies the tag that filters the results. Results that don't contain the specified tag are excluded.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NuGet:PackageByInputObject, NuGet
 Aliases:
 
@@ -316,7 +316,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -333,7 +333,7 @@ Indicates that `Save-Package` forces **PackageManagement** to automatically inst
 provider for the specified package.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -349,7 +349,7 @@ Accept wildcard characters: False
 Specifies the headers for the package.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NuGet:PackageByInputObject, NuGet
 Aliases:
 
@@ -365,7 +365,7 @@ Accept wildcard characters: False
 Indicates the resources that the package includes.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 Accepted values: DscResource, Cmdlet, Function, Workflow, RoleCapability
@@ -383,7 +383,7 @@ A software ID object that represents the package that you want to save. Software
 results of the `Find-Package` cmdlet.
 
 ```yaml
-Type: SoftwareIdentity
+Type: Microsoft.PackageManagement.Packaging.SoftwareIdentity
 Parameter Sets: PackageByInputObject
 Aliases:
 
@@ -400,7 +400,7 @@ Specifies the literal path to which you want to save the package. You cannot add
 and the **Path** parameter to the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -416,7 +416,7 @@ Accept wildcard characters: False
 Specifies the maximum version of the package that you want to save.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -432,7 +432,7 @@ Accept wildcard characters: False
 Specifies the minimum version of the package that you want to find.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -448,7 +448,7 @@ Accept wildcard characters: False
 Specifies one or more package names.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -464,7 +464,7 @@ Accept wildcard characters: False
 Specifies a package management provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
@@ -480,7 +480,7 @@ Accept wildcard characters: False
 Specifies the location on the local computer to store the package.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -496,10 +496,10 @@ Accept wildcard characters: False
 Specifies one or more provider names.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PackageBySearch
 Aliases: Provider
-Accepted values: Bootstrap, msi, msu, NuGet, PowerShellGet, Programs
+Accepted values: Bootstrap, NuGet, PowerShellGet
 
 Required: False
 Position: Named
@@ -513,7 +513,7 @@ Accept wildcard characters: False
 Specifies a proxy server for the request, rather than a direct connection to the internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -530,7 +530,7 @@ Specifies a user account that has permission to use the proxy server that is spe
 **Proxy** parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -546,7 +546,7 @@ Accept wildcard characters: False
 Specifies the publish location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
@@ -562,7 +562,7 @@ Accept wildcard characters: False
 Specifies the exact version of the package to save.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -578,7 +578,7 @@ Accept wildcard characters: False
 Specifies an array of role capabilities.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
@@ -594,7 +594,7 @@ Accept wildcard characters: False
 Specifies the script publish location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
@@ -610,7 +610,7 @@ Accept wildcard characters: False
 Specifies the script source location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
@@ -626,7 +626,7 @@ Accept wildcard characters: False
 Switch that skips validating the credentials of a package.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NuGet:PackageByInputObject, NuGet
 Aliases:
 
@@ -642,7 +642,7 @@ Accept wildcard characters: False
 Specifies one or more package sources.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -658,7 +658,7 @@ Accept wildcard characters: False
 Specifies a tag to search for within the package metadata.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
@@ -674,7 +674,7 @@ Accept wildcard characters: False
 Specifies whether to search for packages with a module, a script, or either.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 Accepted values: Module, Script, All
@@ -691,7 +691,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -707,7 +707,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 09/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-object?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -67,7 +67,6 @@ $IE2 = New-Object -COMObject InternetExplorer.Application`
 $IE2.Navigate2("www.microsoft.com")`
 $IE2.Visible = $True`
 ```
-
 
 ### Example 3: Use the Strict parameter to generate a non-terminating error
 
@@ -212,10 +211,12 @@ array. For example:
 
 `$cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate -ArgumentList (,$bytes)`
 
+For more information about the behavior of **ArgumentList**, see [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md#splatting-with-arrays).
+
 The alias for **ArgumentList** is **Args**.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: Net
 Aliases: Args
 
@@ -231,7 +232,7 @@ Accept wildcard characters: False
 Specifies the programmatic identifier (ProgID) of the COM object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Com
 Aliases:
 
@@ -255,7 +256,7 @@ exist on the object, `New-Object` adds the specified property to the object as a
 the object is not a **PSObject**, the command generates a non-terminating error.
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -273,7 +274,7 @@ create uses an interop assembly. This feature distinguishes actual COM objects f
 objects with COM-callable wrappers.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Com
 Aliases:
 
@@ -290,7 +291,7 @@ Specifies the fully qualified name of the .NET Framework class. You cannot speci
 **TypeName** parameter and the **ComObject** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Net
 Aliases:
 
@@ -342,4 +343,3 @@ You cannot pipe input to this cmdlet.
 [Sort-Object](Sort-Object.md)
 
 [Tee-Object](Tee-Object.md)
-

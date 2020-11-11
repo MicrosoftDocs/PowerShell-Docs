@@ -1,13 +1,8 @@
 ---
-title: "Resource Parameters | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 460c43aa-f5c5-4a1a-a6f2-5e07db143de1
-caps.latest.revision: 5
+ms.date: 09/13/2016
+ms.topic: reference
+title: Resource Parameters
+description: Resource Parameters
 ---
 # Resource Parameters
 

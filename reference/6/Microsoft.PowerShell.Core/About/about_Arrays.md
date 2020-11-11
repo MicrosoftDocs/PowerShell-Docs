@@ -1,7 +1,8 @@
 ---
+description: Describes arrays, which are data structures designed to store collections of items. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 12/04/2019
+Locale: en-US
+ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
@@ -24,7 +25,7 @@ some properties of arrays.
 
 To create and initialize an array, assign multiple values to a variable. The
 values stored in the array are delimited with a comma and separated from the
-variable name by the assignment operator (=).
+variable name by the assignment operator (`=`).
 
 For example, to create an array named `$A` that contains the seven numeric (int)
 values of 22, 5, 10, 8, 12, 9, and 80, type:
@@ -33,14 +34,24 @@ values of 22, 5, 10, 8, 12, 9, and 80, type:
 $A = 22,5,10,8,12,9,80
 ```
 
+The comma can also be used to initialize a single item array by placing the
+comma before the single item.
+
+For example, to create a single item array named `$B` containing the single
+value of 7, type:
+
+```powershell
+$B = ,7
+```
+
 You can also create and initialize an array by using the range operator (`..`).
 The following example creates an array containing the values 5 through 8.
 
 ```powershell
-$B = 5..8
+$C = 5..8
 ```
 
-As a result, `$B` contains four values: 5, 6, 7, and 8.
+As a result, `$C` contains four values: 5, 6, 7, and 8.
 
 When no data type is specified, PowerShell creates each array as an object
 array (**System.Object[]**). To determine the data type of an array, use the
@@ -48,7 +59,7 @@ array (**System.Object[]**). To determine the data type of an array, use the
 array, type:
 
 ```powershell
-$a.GetType()
+$A.GetType()
 ```
 
 To create a strongly typed array, that is, an array that can contain only
@@ -75,8 +86,9 @@ strongly typed array of process objects, enter the following command:
 
 ## The array sub-expression operator
 
-The array sub-expression operator creates an array, even if it contains zero
-or one object.
+The array sub-expression operator creates an array from the statements inside
+it. Whatever the statement inside the operator produces, the operator will
+place it in an array. Even if there is zero or one object.
 
 The syntax of the array operator is as follows:
 
@@ -225,7 +237,7 @@ Also, one common mistake is to assume `$a[0..-2]` refers to all the elements
 of the array, except for the last one. It refers to the first, last, and
 second-to-last elements in the array.
 
-You can use the plus operator (+) to combine a ranges with a list of elements
+You can use the plus operator (`+`) to combine a ranges with a list of elements
 in an array. For example, to display the elements at index positions 0, 2, and
 4 through 6, type:
 
@@ -442,7 +454,7 @@ This method was added in PowerShell v4.
 > [!NOTE]
 > The syntax requires the usage of a script block. Parentheses are optional if
 > the scriptblock is the only parameter. Also, there must not be a space
-> between the method and the opening parentheses or brace.
+> between the method and the opening parenthesis or brace.
 
 The following example shows how use the foreach method. In this case the
 intent is to generate the square value of the elements in the array.
@@ -462,6 +474,9 @@ $a.ForEach({ $_ * $_})
 Just like the `-ArgumentList` parameter of `ForEach-Object`, the `arguments`
 parameter allows the passing of an array of arguments to a script block
 configured to accept them.
+
+For more information about the behavior of **ArgumentList**, see
+[about_Splatting](about_Splatting.md#splatting-with-arrays).
 
 #### ForEach(type convertToType)
 
@@ -521,9 +536,9 @@ configured to accept them.
 
 > [!NOTE]
 > Starting in Windows PowerShell 3.0 retrieving properties and executing
-methods for each item in a collection can also be accomplished using
-> "Methods of scalar objects and collections"
-> You can read more about that here [about_methods](about_methods.md)
+> methods for each item in a collection can also be accomplished using "Methods
+> of scalar objects and collections" You can read more about that here
+> [about_methods](about_methods.md).
 
 ### Where
 
@@ -541,12 +556,24 @@ Where(scriptblock expression[, WhereOperatorSelectionMode mode
 > [!NOTE]
 > The syntax requires the usage of a script block. Parentheses are optional if
 > the scriptblock is the only parameter. Also, there must not be a space
-> between the method and the opening parentheses or brace.
+> between the method and the opening parenthesis or brace.
 
 The `Expression` is scriptblock that is required for filtering, the `mode`
 optional argument allows additional selection capabilities, and the
 `numberToReturn` optional argument allows the ability to limit how many items
 are returned from the filter.
+
+The acceptable values for `mode` are:
+
+- Default (0) - Return all items
+- First (1) - Return the first item
+- Last (2) - Return the last item
+- SkipUntil (3) - Skip items until condition is true, the return the remaining
+  items
+- Until (4) - Return all items until condition is true
+- Split (5) - Return an array of two elements
+  - The first element contains matching items
+  - The second element contains the remaining items
 
 The following example shows how to select all odd numbers from the array.
 
@@ -562,17 +589,16 @@ The following example shows how to select all odd numbers from the array.
 9
 ```
 
-The acceptable values for `mode` are:
+This example show how to select the strings that are not empty.
 
-- Default (0) - Return all items
-- First (1) - Return the first item
-- Last (2) - Return the last item
-- SkipUntil (3) - Skip items until condition is true, the return the remaining
-  items
-- Until (4) - Return all items until condition is true
-- Split (5) - Return an array of two elements
-  - The first element contains matching items
-  - The second element contains the remaining items
+```powershell
+('hi', '', 'there').Where({$_.Length})
+```
+
+```Output
+hi
+there
+```
 
 #### Default
 
@@ -623,7 +649,7 @@ $computers.Where({ Test-Connection $_ }, 'SkipUntil', 1)
 localhost
 ```
 
-### Until
+#### Until
 
 The `Until` mode inverts the `SkipUntil` mode.  It returns **ALL** items in a
 collection until an item passes the script block expression. Once an item
@@ -741,7 +767,7 @@ combine the values from two arrays into a third array.
 
 To change the value of a particular element in an array, specify the array
 name and the index of the element that you want to change, and then use the
-assignment operator (=) to specify a new value for the element. For example,
+assignment operator (`=`) to specify a new value for the element. For example,
 to change the value of the second item in the `$a` array (index position 1) to
 10, type:
 
@@ -749,7 +775,7 @@ to change the value of the second item in the `$a` array (index position 1) to
 $a[1] = 10
 ```
 
-You can also use the SetValue method of an array to change a value. The
+You can also use the **SetValue** method of an array to change a value. The
 following example changes the second value (index position 1) of the `$a` array
 to 500:
 
@@ -757,7 +783,7 @@ to 500:
 $a.SetValue(500,1)
 ```
 
-You can use the += operator to add an element to an array. The following
+You can use the `+=` operator to add an element to an array. The following
 example shows how to add an element to the `$a` array.
 
 ```powershell
@@ -780,7 +806,7 @@ value at index position 2, type:
 $t = $a[0,1 + 3..($a.length - 1)]
 ```
 
-To combine two arrays into a single array, use the plus operator (+). The
+To combine two arrays into a single array, use the plus operator (`+`). The
 following example creates two arrays, combines them, and then displays the
 resulting combined array.
 
@@ -809,7 +835,7 @@ command that expects a collection gets fewer than two items.
 
 The following examples demonstrate this feature.
 
-## Zero objects
+### Zero objects
 
 ```powershell
 $a = $null
@@ -822,7 +848,7 @@ $a.Length
 0
 ```
 
-## One object
+### One object
 
 ```powershell
 $a = 4
@@ -838,6 +864,30 @@ $a[-1]
 4
 4
 ```
+
+## Indexing support for System.Tuple objects
+
+PowerShell 6.1 added the support for indexed access of **Tuple** objects, similar to arrays.
+For example:
+
+```powershell
+PS> $tuple = [Tuple]::Create(1, 'test')
+PS> $tuple[0]
+1
+PS> $tuple[1]
+test
+PS> $tuple[0..1]
+1
+test
+PS> $tuple[-1]
+test
+```
+
+Unlike arrays and other collection objects, **Tuple** objects are treated as a
+single object when passed through the pipeline or by parameters that support
+arrays of objects.
+
+For more information, see [System.Tuple](/dotnet/api/system.tuple).
 
 ## See also
 

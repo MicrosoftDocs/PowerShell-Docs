@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 06/09/2017
+ms.date: 04/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
@@ -65,7 +65,7 @@ This command starts a transcript in the default file location.
 Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
 ```
 
-This command starts a transcript in the Transcript0.txt file in C:\transcripts. Since the
+This command starts a transcript in the `Transcript0.txt` file in `C:\transcripts`. Since the
 **NoClobber** parameter is used, the command prevents any existing files from being overwritten. If
 the `Transcript0.txt` file already exists, the command fails.
 
@@ -77,7 +77,7 @@ Indicates that this cmdlet adds the new transcript to the end of an existing fil
 parameter to specify the file.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -95,7 +95,7 @@ file, the cmdlet changes the file permission to read-write. The cmdlet cannot ov
 restrictions when this parameter is used.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet logs the time stamp when commands are run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -128,7 +128,7 @@ Prepend a short header to the transcript, instead of the detailed header include
 parameter was added in PowerShell 6.2.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -147,7 +147,7 @@ wildcards. If the path includes escape characters, enclose it in single quotatio
 quotation marks inform PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByLiteralPath
 Aliases: PSPath, LP
 
@@ -164,7 +164,7 @@ Indicates that this cmdlet will not overwrite of an existing file. By default, i
 exists in the specified path, `Start-Transcript` overwrites the file without warning.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NoOverwrite
 
@@ -181,7 +181,7 @@ Specifies a specific path and folder in which to save a transcript. PowerShell a
 the transcript name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByOutputDirectory
 Aliases:
 
@@ -194,17 +194,17 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies a location to the transcript file. Enter a path to a .txt file. Wildcards are not
+Specifies a location to the transcript file. Enter a path to a `.txt` file. Wildcards are not
 permitted.
 
-If you do not specify a path, `Start-Transcript` uses the path in the value of the $Transcript
+If you do not specify a path, `Start-Transcript` uses the path in the value of the `$Transcript`
 global variable. If you have not created this variable, `Start-Transcript` stores the transcripts in
 the `$Home\My Documents directory as \PowerShell_transcript.<time-stamp>.txt` files.
 
 If any of the directories in the path do not exist, the command fails.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByPath
 Aliases:
 
@@ -220,7 +220,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -237,7 +237,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -276,4 +276,3 @@ information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profi
 ## RELATED LINKS
 
 [Stop-Transcript](Stop-Transcript.md)
-

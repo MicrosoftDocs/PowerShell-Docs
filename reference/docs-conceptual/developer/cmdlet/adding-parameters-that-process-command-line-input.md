@@ -1,20 +1,8 @@
 ---
-title: "Adding Parameters That Process Command-Line Input | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-- "cmdlets [PowerShell Programmer's Guide], parameters"
-- "Get-Proc cmdlet [PowerShell Programmer's Guide]"
-- "cmdlets [PowerShell Programmer's Guide], command line input"
-- "command line input [PowerShell Programmer's Guide]"
-- "parameters [PowerShell Programmer's Guide]"
-- "cmdlets [PowerShell Programmer's Guide], creating"
-ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: Adding Parameters That Process Command-Line Input
+description: Adding Parameters That Process Command-Line Input
 ---
 # Adding Parameters That Process Command-Line Input
 
@@ -178,7 +166,7 @@ processes for each requested process name, or all for processes if no name is pr
 in
 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord),
 the call to
-[System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)
+[System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)
 is the output mechanism for sending output objects to the pipeline. The second parameter of this
 call, `enumerateCollection`, is set to `true` to inform the Windows PowerShell runtime to enumerate
 the output array of process objects and write one process at a time to the command line.

@@ -1,8 +1,9 @@
 ---
-external help file: System.Management.Automation.dll-help.xml
+external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 09/07/2018
+Module Name: Microsoft.PowerShell.Core
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/functions/get-verb?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Verb
@@ -15,7 +16,7 @@ Gets approved PowerShell verbs.
 ## SYNTAX
 
 ```
-Get-Verb [[-verb] <String[]>]
+Get-Verb [[-verb] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,7 +34,7 @@ warning message.
 > [!NOTE]
 > The verb list that `Get-Verb` returns might not be complete. For an updated list of approved
 > PowerShell verbs with descriptions, see
-> [Approved Verbs](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands) in
+> [Approved Verbs](../../docs-conceptual/developer/cmdlet/approved-verbs-for-windows-powershell-commands.md) in
 > the Microsoft Docs.
 
 ## EXAMPLES
@@ -101,7 +102,7 @@ Enter the name of a verb or a name pattern.
 Wildcards are allowed.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -123,14 +124,13 @@ Accept wildcard characters: True
 ## NOTES
 
 `Get-Verb` returns a modified version of a Microsoft.PowerShell.Commands.MemberDefinition object.
-The object does not have the standard properties of a MemberDefinition object.
-Instead it has Verb and Group properties.
-The Verb property contains a string with the verb name.
-The Group property contains a string with the verb group.
+The object does not have the standard properties of a MemberDefinition object. Instead it has Verb
+and Group properties. The Verb property contains a string with the verb name. The Group property
+contains a string with the verb group.
 
-PowerShell verbs are assigned to a group based on their most common use.
-The groups are designed to make the verbs easy to find and compare, not to restrict their use.
-You can use any approved verb for any type of command.
+PowerShell verbs are assigned to a group based on their most common use. The groups are designed to
+make the verbs easy to find and compare, not to restrict their use. You can use any approved verb
+for any type of command.
 
 Each PowerShell verb is assigned to one of the following groups.
 
@@ -148,4 +148,4 @@ unapproved verbs. These cmdlets are historic exceptions and their verbs are clas
 
 ## RELATED LINKS
 
-[Import-Module](../import-module.md)
+[Import-Module](import-module.md)

@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 12/14/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-6&WT.mc_id=ps-gethelp
@@ -309,8 +309,8 @@ This parameter was introduced in Windows PowerShell 3.0.
 In Windows PowerShell 2.0, `Get-Command` gets all commands by default.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: AllCommandSet
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -335,8 +335,8 @@ cmdlets return only the dynamic parameters for the first path the value of **Arg
 information about the provider cmdlets, see [about_Providers](About/about_Providers.md).
 
 ```yaml
-Type: Object[]
-Parameter Sets: AllCommandSet
+Type: System.Object[]
+Parameter Sets: (All)
 Aliases: Args
 
 Required: False
@@ -367,7 +367,7 @@ The acceptable values for this parameter are:
   value.
 
 ```yaml
-Type: CommandTypes
+Type: System.Management.Automation.CommandTypes
 Parameter Sets: AllCommandSet
 Aliases: Type
 Accepted values: Alias, Function, Filter, Cmdlet, ExternalScript, Application, Script, Workflow, Configuration, All
@@ -396,8 +396,8 @@ You cannot specify the **FullyQualifiedModule** parameter in the same command as
 parameter. The two parameters are mutually exclusive.
 
 ```yaml
-Type: ModuleSpecification[]
-Parameter Sets: AllCommandSet
+Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -418,8 +418,8 @@ gets only commands in the current session.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: AllCommandSet
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -438,9 +438,9 @@ This parameter takes string values, but the value of this parameter can also be 
 object, such as the objects that the `Get-Module` and `Import-PSSession` cmdlets return.
 
 ```yaml
-Type: String[]
-Parameter Sets: AllCommandSet
-Aliases:
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: PSSnapin
 
 Required: False
 Position: Named
@@ -458,7 +458,7 @@ To get commands that have the same name, use the **All** parameter. When two com
 name, by default, `Get-Command` gets the command that runs when you type the command name.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: AllCommandSet
 Aliases:
 
@@ -476,7 +476,7 @@ and aliases, that have names that include the specified noun. Enter one or more 
 patterns. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CmdletSet
 Aliases:
 
@@ -497,8 +497,8 @@ The **ParameterName** and **ParameterType** parameters search only commands in t
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String[]
-Parameter Sets: AllCommandSet
+Type: System.String[]
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -519,8 +519,8 @@ The **ParameterName** and **ParameterType** parameters search only commands in t
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: PSTypeName[]
-Parameter Sets: AllCommandSet
+Type: System.Management.Automation.PSTypeName[]
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -537,8 +537,8 @@ Indicates that this cmdlet displays command information.
 This parameter was introduced in Windows PowerShell 5.0.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: AllCommandSet
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -558,8 +558,8 @@ Indicates that this cmdlet gets only the following specified data about the comm
 - Scripts and applications or files. Gets the path and filename.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: AllCommandSet
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -575,7 +575,7 @@ Specifies the number of commands to get. You can use this parameter to limit the
 command.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -593,7 +593,7 @@ closest match to least likely match. Wildcards should not be used with fuzzy mat
 attempt to match commands that may contain those wildcard characters.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AllCommandSet
 Aliases:
 
@@ -611,7 +611,7 @@ and aliases, that have names that include the specified verb. Enter one or more 
 patterns. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CmdletSet
 Aliases:
 

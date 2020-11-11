@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -30,6 +30,7 @@ You can later use **Import-Alias** to retrieve that saved alias information.
 ## EXAMPLES
 
 ### Example 1: Create an alias for a cmdlet
+
 ```
 PS C:\> New-Alias -Name "List" Get-ChildItem
 ```
@@ -37,6 +38,7 @@ PS C:\> New-Alias -Name "List" Get-ChildItem
 This command creates an alias named List to represent the Get-ChildItem cmdlet.
 
 ### Example 2: Create a read-only alias for a cmdlet
+
 ```
 PS C:\> New-Alias -Name "W" -Value Get-WmiObject -Description "quick wmi alias" -Option ReadOnly
 PS C:\> Get-Alias -Name "W" | Format-List *
@@ -54,7 +56,7 @@ You can type any string.
 If the description includes spaces, enclose it in quotation marks.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -69,7 +71,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet acts like Set-Alias if the alias named already exists.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -85,7 +87,7 @@ Specifies the new alias.
 You can use any alphanumeric characters in an alias, but the first character cannot be a number.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -110,7 +112,7 @@ Valid values are:
 To see the **Options** property of all aliases in the session, type `Get-Alias | Format-Table -Property Name, Options -AutoSize`.
 
 ```yaml
-Type: ScopedItemOptions
+Type: System.Management.Automation.ScopedItemOptions
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, ReadOnly, Constant, Private, AllScope, Unspecified
@@ -127,7 +129,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -151,7 +153,7 @@ Local is the default.
 For more information, see about_Scopes.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -166,7 +168,7 @@ Accept wildcard characters: False
 Specifies the name of the cmdlet or command element that is being aliased.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -181,7 +183,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -197,7 +199,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -223,6 +225,7 @@ When you use the *Passthru* parameter, **New-Alias** generates a **System.Manage
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * To create a new alias, use Set-Alias or New-Alias. To change an alias, use **Set-Alias**. To delete an alias, use Remove-Item.
 
 *
@@ -236,5 +239,3 @@ Otherwise, this cmdlet does not generate any output.
 [Import-Alias](Import-Alias.md)
 
 [Set-Alias](Set-Alias.md)
-
-

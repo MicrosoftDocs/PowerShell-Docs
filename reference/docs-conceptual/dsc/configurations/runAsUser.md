@@ -2,6 +2,7 @@
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  Use Credentials with DSC Resources
+description: DSC allows you to provide credentials to a configuration so that configuration settings can be applied the in the context of a specific user account rather than the Local System account.
 ---
 # Use Credentials with DSC Resources
 
@@ -17,9 +18,10 @@ machine, for any account you specify to **PSDSCRunAsCredential**. For more infor
 
 Every DSC resource has a **PsDscRunAsCredential** property that can be set to any user credentials
 (a [PSCredential](/dotnet/api/system.management.automation.pscredential) object). The credential can
-be hard-coded as the value of the property in the configuration, or you can set the value to [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential),
-which will prompt the user for a credential when the configuration is compiled (for information
-about compiling configurations, see [Configurations](configurations.md).
+be hard-coded as the value of the property in the configuration, or you can set the value to
+[Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential), which will prompt
+the user for a credential when the configuration is compiled (for information about compiling
+configurations, see [Configurations](configurations.md).
 
 > [!NOTE]
 > In PowerShell 5.0, using the **PsDscRunAsCredential** property in configurations calling
@@ -67,6 +69,7 @@ ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
 
 > [!NOTE]
-> This example assumes that you have a valid certificate at `C:\publicKeys\targetNode.cer`,
-> and that the thumbprint of that certificate is the value shown. For information about encrypting
-> credentials in DSC configuration MOF files, see [Securing the MOF file](../pull-server/secureMOF.md).
+> This example assumes that you have a valid certificate at `C:\publicKeys\targetNode.cer`, and that
+> the thumbprint of that certificate is the value shown. For information about encrypting
+> credentials in DSC configuration MOF files, see
+> [Securing the MOF file](../pull-server/secureMOF.md).

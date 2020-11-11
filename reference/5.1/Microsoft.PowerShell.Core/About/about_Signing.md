@@ -1,20 +1,19 @@
 ---
+description: Explains how to sign scripts so that they comply with the PowerShell execution policies. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 08/21/2018
+Locale: en-US
+ms.date: 07/31/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Signing
 ---
-
 # About Signing
 
-## SHORT DESCRIPTION
-
+## Short description
 Explains how to sign scripts so that they comply with the PowerShell execution
 policies.
 
-## LONG DESCRIPTION
+## Long description
 
 The Restricted execution policy does not permit any scripts to run. The
 **AllSigned** and **RemoteSigned** execution policies prevent PowerShell from
@@ -27,7 +26,7 @@ your own use.
 For more information about PowerShell execution policies, see
 [about_Execution_Policies](about_Execution_Policies.md).
 
-## TO PERMIT SIGNED SCRIPTS TO RUN
+## To permit signed scripts to run
 
 When you start PowerShell on a computer for the first time, the **Restricted**
 execution policy (the default) is likely to be in effect.
@@ -51,16 +50,16 @@ Set-ExecutionPolicy RemoteSigned
 
 For more information, see the help topic for the `Set-ExecutionPolicy` cmdlet.
 
-## RUNNING UNSIGNED SCRIPTS (REMOTESIGNED EXECUTION POLICY)
+## Running unsigned scripts using the RemoteSigned execution policy
 
 If your PowerShell execution policy is **RemoteSigned**, PowerShell
-will not run unsigned scripts that are downloaded from the Internet, including
-unsigned scripts you receive through e-mail and instant messaging programs.
+will not run unsigned scripts that are downloaded from the internet, including
+unsigned scripts you receive through email and instant messaging programs.
 
 If you try to run a downloaded script, PowerShell displays the following error
 message:
 
-```output
+```Output
 The file <file-name> cannot be loaded. The file <file-name> is not digitally
 signed. The script will not execute on the system. Please see "Get-Help
 about_Signing" for more details.
@@ -77,11 +76,11 @@ procedure.
 3. Right-click the script file, and then click Properties.
 4. Click Unblock.
 
-If a script that was downloaded from the Internet is digitally signed, but you
+If a script that was downloaded from the internet is digitally signed, but you
 have not yet chosen to trust its publisher, PowerShell displays the following
 message:
 
-```output
+```Output
 Do you want to run software from this untrusted publisher?
 The file <file-name> is published by CN=<publisher-name>. This
 publisher is not trusted on your system. Only run scripts
@@ -96,7 +95,7 @@ trust the publisher, select either "Never run" or "Do not run." If you select
 "Never run" or "Always run," PowerShell will not prompt you again for
 this publisher.
 
-## METHODS OF SIGNING SCRIPTS
+## Methods of signing scripts
 
 You can sign the scripts that you write and the scripts that you obtain from
 other sources. Before you sign any script, examine each command to verify that
@@ -106,7 +105,7 @@ For best practices about code signing, see
 [Code-Signing Best Practices](/previous-versions/windows/hardware/design/dn653556(v=vs.85)).
 
 For more information about how to sign a script file, see
-[Set-AuthenticodeSignature](../../microsoft.powershell.security/set-authenticodesignature.md).
+[Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature).
 
 The `New-SelfSignedCertificate` cmdlet, introduced in the PKI module in
 PowerShell 3.0, creates a self-signed certificate that is Appropriate for
@@ -139,20 +138,20 @@ protection on your certificate. This prevents malicious programs from signing
 scripts on your behalf. The instructions are included at the end of this
 topic.
 
-## CREATE A SELF-SIGNED CERTIFICATE
+## Create a self-signed certificate
 
-To create a self-signed certificate in use the New-SelfSignedCertificate
+To create a self-signed certificate in use the `New-SelfSignedCertificate`
 cmdlet in the PKI module. This module is introduced in PowerShell 3.0 and is
 included in Windows 8 and Windows Server 2012. For more information, see the
-help topic for the New-SelfSignedCertificate cmdlet.
+help topic for the `New-SelfSignedCertificate` cmdlet.
 
 To create a self-signed certificate in earlier versions of Windows, use the
-Certificate Creation tool (MakeCert.exe). This tool is included in the
-Microsoft .NET Framework SDK (versions 1.1 and later) and in the Microsoft
-Windows SDK.
+Certificate Creation tool `MakeCert.exe`. This tool is included in the
+Microsoft .NET SDK (versions 1.1 and later) and in the Microsoft Windows SDK.
 
 For more information about the syntax and the parameter descriptions of the
-MakeCert.exe tool, see [Certificate Creation Tool (MakeCert.exe)](/previous-versions/dotnet/netframework-2.0/bfsktky3(v=vs.80)).
+MakeCert.exe tool, see
+[Certificate Creation Tool (MakeCert.exe)](/previous-versions/dotnet/netframework-2.0/bfsktky3(v=vs.80)).
 
 To use the MakeCert.exe tool to create a certificate, run the following
 commands in an SDK Command Prompt window.
@@ -179,8 +178,8 @@ Create and enter a password that you can remember. You will use this password
 later to retrieve the certificate.
 
 To verify that the certificate was generated correctly, use the following
-command to get the certificate in the certificate store on the computer. (You
-will not find a certificate file in the file system directory.)
+command to get the certificate in the certificate store on the computer. You
+will not find a certificate file in the file system directory.
 
 At the PowerShell prompt, type:
 
@@ -191,10 +190,10 @@ Get-ChildItem cert:\CurrentUser\my -codesigning
 This command uses the PowerShell Certificate provider to view information
 about the certificate.
 
-If the certificate was created, the output shows the thumbprint that
+If the certificate was created, the output shows the **thumbprint** that
 identifies the certificate in a display that resembles the following:
 
-```output
+```Output
 Directory: Microsoft.PowerShell.Security\Certificate::CurrentUser\My
 
 Thumbprint                                Subject
@@ -202,18 +201,23 @@ Thumbprint                                Subject
 4D4917CB140714BA5B81B96E0B18AAF2C4564FDF  CN=PowerShell User ]
 ```
 
-## SIGN A SCRIPT
+## Sign a script
 
 After you create a self-signed certificate, you can sign scripts. If you use
-the AllSigned execution policy, signing a script permits you to run the script
+the **AllSigned** execution policy, signing a script permits you to run the script
 on your computer.
 
-The following sample script, Add-Signature.ps1, signs a script. However, if
-you are using the AllSigned execution policy, you must sign the
-Add-Signature.ps1 script before you run it.
+The following sample script, `Add-Signature.ps1`, signs a script. However, if
+you are using the **AllSigned** execution policy, you must sign the
+`Add-Signature.ps1` script before you run it.
+
+> [!IMPORTANT]
+> The script must be saved using ASCII or UTF8NoBOM encoding.You can sign a
+> script file that uses a different encoding. But the script fails to run or the
+> module containing the script fails to import.
 
 To use this script, copy the following text into a text file, and name it
-Add-Signature.ps1.
+`Add-Signature.ps1`.
 
 ```powershell
 ## Signs a file
@@ -222,7 +226,7 @@ $cert = @(Get-ChildItem cert:\CurrentUser\My -codesigning)[0]
 Set-AuthenticodeSignature $file $cert
 ```
 
-To sign the Add-Signature.ps1 script file, type the following commands at the
+To sign the `Add-Signature.ps1` script file, type the following commands at the
 PowerShell command prompt:
 
 ```powershell
@@ -231,11 +235,11 @@ Set-AuthenticodeSignature add-signature.ps1 $cert
 ```
 
 After the script is signed, you can run it on the local computer. However, the
-script will not run on computers on which the PowerShell execution
-policy requires a digital signature from a trusted authority. If you try,
-PowerShell displays the following error message:
+script will not run on computers on which the PowerShell execution policy
+requires a digital signature from a trusted authority. If you try, PowerShell
+displays the following error message:
 
-```output
+```Output
 The file C:\remote_file.ps1 cannot be loaded. The signature of the
 certificate cannot be verified.
 At line:1 char:15
@@ -246,16 +250,15 @@ If PowerShell displays this message when you run a script that you did not
 write, treat the file as you would treat any unsigned script. Review the code
 to determine whether you can trust the script.
 
-## ENABLE STRONG PRIVATE KEY PROTECTION FOR YOUR CERTIFICATE
+## Enable strong private key protection for your certificate
 
-If you have a private certificate on your computer, malicious programs might
-be able to sign scripts on your behalf, which authorizes PowerShell to run
-them.
+If you have a private certificate on your computer, malicious programs might be
+able to sign scripts on your behalf, which authorizes PowerShell to run them.
 
 To prevent automated signing on your behalf, use Certificate Manager
-(Certmgr.exe) to export your signing certificate to a .pfx file. Certificate
-Manager is included in the Microsoft .NET Framework SDK, the Microsoft Windows
-SDK, and in Internet Explorer 5.0 and later versions.
+`Certmgr.exe` to export your signing certificate to a `.pfx` file. Certificate
+Manager is included in the Microsoft .NET SDK, the Microsoft Windows SDK, and
+in internet Explorer.
 
 To export the certificate:
 
@@ -274,31 +277,30 @@ To re-import the certificate:
 2. Click Import to start the Certificate Import Wizard.
 3. Open to the location of the .pfx file that you created during the export
    process.
-4. On the Password page, select "Enable strong private key protection",
-   and then enter the password that you assigned during the export
-   process.
+4. On the Password page, select "Enable strong private key protection", and
+   then enter the password that you assigned during the export process.
 5. Select the Personal certificate store.
 6. Click Finish.
 
-## PREVENT THE SIGNATURE FROM EXPIRING
+## Prevent the signature from expiring
 
 The digital signature in a script is valid until the signing certificate
-expires or as long as a time stamp server can verify that the script was
-signed while the signing certificate was valid.
+expires or as long as a timestamp server can verify that the script was signed
+while the signing certificate was valid.
 
 Because most signing certificates are valid for one year only, using a time
 stamp server ensures that users can use your script for many years to come.
 
-## SEE ALSO
+## See also
 
 [about_Execution_Policies](about_Execution_Policies.md)
 
 [about_Profiles](about_Profiles.md)
 
-[Get-ExecutionPolicy](../../Microsoft.PowerShell.Security/Get-ExecutionPolicy.md)
+[Get-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy)
 
-[Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
 
-[Set-AuthenticodeSignature](../../Microsoft.PowerShell.Security/Set-AuthenticodeSignature.md)
+[Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature)
 
 [Introduction to Code Signing](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85))

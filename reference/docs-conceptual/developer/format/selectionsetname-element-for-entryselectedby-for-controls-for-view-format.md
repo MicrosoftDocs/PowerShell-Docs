@@ -1,13 +1,8 @@
 ---
-title: "SelectionSetName Element for EntrySelectedBy for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b594a064-746f-4900-99e4-7be7bf5aa5a2
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for EntrySelectedBy for Controls for View (Format)
+description: SelectionSetName Element for EntrySelectedBy for Controls for View (Format)
 ---
 # SelectionSetName Element for EntrySelectedBy for Controls for View (Format)
 

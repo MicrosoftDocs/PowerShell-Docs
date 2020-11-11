@@ -1,7 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/24/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-alias?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -63,7 +64,7 @@ Indicates that the cmdlet removes an alias, including aliases with the **Option*
 **Constant**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -79,7 +80,7 @@ Accept wildcard characters: False
 Specifies the name of the alias to remove.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -104,7 +105,7 @@ The acceptable values for this parameter are:
   scope and 1 is its parent)
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

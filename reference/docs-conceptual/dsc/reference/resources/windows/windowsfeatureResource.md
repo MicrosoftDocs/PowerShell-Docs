@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC WindowsFeature Resource
+description: DSC WindowsFeature Resource
 ---
 # DSC WindowsFeature Resource
 
@@ -9,6 +10,8 @@ title: DSC WindowsFeature Resource
 
 The **WindowsFeature** resource in Windows PowerShell Desired State Configuration (DSC) provides a
 mechanism to ensure that roles and features are added or removed on a target node.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 
@@ -19,7 +22,6 @@ WindowsFeature [string] #ResourceName
     [ Credential = [PSCredential] ]
     [ IncludeAllSubFeature = [bool] ]
     [ LogPath = [string] ]
-    [ Source = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
     [ PsDscRunAsCredential = [PSCredential] ]
@@ -34,7 +36,6 @@ WindowsFeature [string] #ResourceName
 |Credential |Indicates the credentials to use to add or remove the role or feature. |
 |IncludeAllSubFeature |Set this property to `$true` to ensure the state of all required subfeatures with the state of the feature you specify with the **Name** property. |
 |LogPath |Indicates the path to a log file where you want the resource provider to log the operation. |
-|Source |Indicates the location of the source file to use for installation, if necessary. |
 
 ## Common properties
 

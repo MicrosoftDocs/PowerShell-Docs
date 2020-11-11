@@ -2,23 +2,33 @@
 ms.date:  12/12/2018
 keywords:  dsc,powershell,configuration,setup
 title:  Specifying cross-node dependencies
+description: DSC provides special resources that are used in configurations to specify dependencies on configurations on other nodes.
 ---
 
 # Specifying cross-node dependencies
 
 > Applies To: Windows PowerShell 5.0
 
-DSC provides special resources, **WaitForAll**, **WaitForAny**, and **WaitForSome** that can be used in configurations to specify dependencies on configurations on other nodes. The
-behavior of these resources is as follows:
+DSC provides special resources, **WaitForAll**, **WaitForAny**, and **WaitForSome** that can be used
+in configurations to specify dependencies on configurations on other nodes. The behavior of these
+resources is as follows:
 
-- **WaitForAll**: Succeeds if the specified resource is in the desired state on all target nodes defined in the **NodeName** property.
-- **WaitForAny**: Succeeds if the specified resource is in the desired state on at least one of the target nodes defined in the **NodeName** property.
-- **WaitForSome**: Specifies a **NodeCount** property in addition to a **NodeName** property. The resource succeeds if the resource is in the desired state on a minimum number of nodes (specified by **NodeCount**) defined by the **NodeName** property.
+- **WaitForAll**: Succeeds if the specified resource is in the desired state on all target nodes
+  defined in the **NodeName** property.
+- **WaitForAny**: Succeeds if the specified resource is in the desired state on at least one of the
+  target nodes defined in the **NodeName** property.
+- **WaitForSome**: Specifies a **NodeCount** property in addition to a **NodeName** property. The
+  resource succeeds if the resource is in the desired state on a minimum number of nodes (specified
+  by **NodeCount**) defined by the **NodeName** property.
 
 ## Syntax
 
-The **WaitForAll** and **WaitForAny** resources share the same syntax. Replace \<ResourceType\> in the example below with either **WaitForAny** or **WaitForAll**.
-Like the **DependsOn** keyword, you will need to format the name as "[ResourceType]ResourceName". If the resource belongs to a separate [Configuration](configurations.md), include the **ConfigurationName** in the formatted string "[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]". The **NodeName** is the computer, or Node, on which the current resource should wait.
+The **WaitForAll** and **WaitForAny** resources share the same syntax. Replace `<ResourceType>` in
+the example below with either **WaitForAny** or **WaitForAll**. Like the **DependsOn** keyword, you
+will need to format the name as `[ResourceType]ResourceName`. If the resource belongs to a separate
+[Configuration](configurations.md), include the **ConfigurationName** in the formatted string
+`[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]`. The **NodeName** is the
+computer, or Node, on which the current resource should wait.
 
 ```
 <ResourceType> [string] #ResourceName
@@ -52,13 +62,13 @@ WaitForSome [String] #ResourceName
 
 All **WaitForXXXX** share the following syntax keys.
 
-|Property|  Description   |
-|---------|---------------------|
-| RetryIntervalSec| The number of seconds before retrying. Minimum is 1.|
-| RetryCount| The maximum number of times to retry.|
-| ThrottleLimit| Number of machines to connect simultaneously. Default is `New-CimSession` default.|
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For more information, see [DependsOn](resource-depends-on.md)|
-| PsDscRunAsCredential | See [Using DSC with User Credentials](./runAsUser.md) |
+|       Property       |                                                                           Description                                                                           |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RetryIntervalSec     | The number of seconds before retrying. Minimum is 1.                                                                                                            |
+| RetryCount           | The maximum number of times to retry.                                                                                                                           |
+| ThrottleLimit        | Number of machines to connect simultaneously. Default is `New-CimSession` default.                                                                              |
+| DependsOn            | Indicates that the configuration of another resource must run before this resource is configured. For more information, see [DependsOn](resource-depends-on.md) |
+| PsDscRunAsCredential | See [Using DSC with User Credentials](./runAsUser.md)                                                                                                           |
 
 ## Using WaitForXXXX resources
 
@@ -70,8 +80,8 @@ For example, in the following configuration, the target node is waiting for the 
 resource to finish on the **MyDC** node with maximum number of 30 retries, at 15-second intervals,
 before the target node can join the domain.
 
-By default the **WaitForXXX** resources try one time and then fail. Although it is not
-required, you will typically want to specify a **RetryCount** and **RetryIntervalSec**.
+By default the **WaitForXXX** resources try one time and then fail. Although it is not required, you
+will typically want to specify a **RetryCount** and **RetryIntervalSec**.
 
 ```powershell
 Configuration JoinDomain
@@ -119,13 +129,14 @@ Configuration JoinDomain
 ```
 
 When you compile the Configuration, two ".mof" files are generated. Apply both ".mof" files to the
-target Nodes using the [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
+target Nodes using the
+[Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
 cmdlet
 
 > [!NOTE]
-> **WaitForXXX** resources use Windows Remote Management to check the state of other Nodes.
-> For more information about port and security requirements for WinRM, see
-> [PowerShell Remoting Security Considerations](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
+> **WaitForXXX** resources use Windows Remote Management to check the state of other Nodes. For more
+> information about port and security requirements for WinRM, see
+> [PowerShell Remoting Security Considerations](/powershell/scripting/learn/remoting/winrmsecurity).
 
 ## See Also
 

@@ -1,13 +1,8 @@
 ---
-title: "Format Schema XML Reference | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
-caps.latest.revision: 21
+ms.date: 09/13/2016
+ms.topic: reference
+title: Format Schema XML Reference
+description: Format Schema XML Reference
 ---
 # Format Schema XML Reference
 

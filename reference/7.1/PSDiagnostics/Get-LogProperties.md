@@ -1,8 +1,9 @@
 ---
 external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
+Locale: en-US
 ms.date: 11/27/2018
-online version: https://docs.microsoft.com/powershell/module/psdiagnostics/get-logproperties?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/psdiagnostics/get-logproperties?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-LogProperties
 ---
@@ -14,7 +15,7 @@ Retrieves the properties of a Windows event log.
 ## SYNTAX
 
 ```
-Get-LogProperties [-Name] <string> [<CommonParameters>]
+Get-LogProperties [-Name] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,7 +47,7 @@ MaxLogSize : 15728640
 The name of the event provider.
 
 ```yaml
-Type: System.String
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 

@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 01/27/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-formatdata?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-formatdata?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-FormatData
 ---
@@ -149,11 +149,6 @@ TypeNames                               FormatViewDefinition
 {Microsoft.Powershell.Utility.FileHash} {Microsoft.Powershell.Utility.FileHash}
 ```
 
-> [!IMPORTANT]
-> To ensure that the complete type formatting information is returned, you should always include the
-> **PowerShellVersion** parameter with the appropriate version. If the parameter and value are
-> omitted, you may not get all the correct type information.
-
 ## PARAMETERS
 
 ### -PowerShellVersion
@@ -165,7 +160,7 @@ This parameter was added in PowerShell 5.1 to improve compatibility when remotin
 older versions of PowerShell.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -183,7 +178,7 @@ Enter the type names.
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

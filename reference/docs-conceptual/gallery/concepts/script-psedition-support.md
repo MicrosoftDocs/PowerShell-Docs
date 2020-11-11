@@ -1,8 +1,7 @@
 ---
 ms.date:  06/12/2017
-contributor:  manikb
-keywords:  gallery,powershell,cmdlet,psget
 title:  Script with compatible PowerShell editions
+description: This article explains how the PowerShellGet cmdlets support the Desktop and Core editions of PowerShell scripts.
 ---
 # Script with compatible PowerShell editions
 

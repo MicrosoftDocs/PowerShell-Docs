@@ -1,13 +1,8 @@
 ---
-title: "DisplayError Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 45c45800-a87d-456e-b07c-12d4d8c27c67
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: DisplayError Element (Format)
+description: DisplayError Element (Format)
 ---
 # DisplayError Element (Format)
 

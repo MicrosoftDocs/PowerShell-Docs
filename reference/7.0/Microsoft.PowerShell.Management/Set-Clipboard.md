@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 08/09/2019
 online version: https://go.microsoft.com/fwlink/?linkid=526220
@@ -23,7 +23,7 @@ Set-Clipboard [-Value] <string[]> [-Append] [-WhatIf] [-Confirm] [<CommonParamet
 
 The `Set-Clipboard` cmdlet sets the contents of the clipboard.
 
-[!NOTE]
+> [!NOTE]
 > On Linux, this cmdlet requires the `xclip` utility to be in the path.
 
 ## EXAMPLES
@@ -41,7 +41,7 @@ Set-Clipboard -Value "This is a test string"
 Indicates that the cmdlet does not clear the clipboard and appends content to it.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -57,7 +57,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -81,6 +81,22 @@ Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Value
+
+The string values to be added to the clipboard.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -97,6 +113,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+In rare cases when using `Set-Clipboard` with a high number of values in rapid succession, like in a
+loop, you might sporadically get a blank value from the clipboard. This can be fixed by using
+`Start-Sleep -Milliseconds 1` in the loop.
 
 ## RELATED LINKS
 

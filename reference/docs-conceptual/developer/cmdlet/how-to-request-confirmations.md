@@ -1,13 +1,8 @@
 ---
-title: "How to Request Confirmations | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Request Confirmations
+description: How to Request Confirmations
 ---
 # How to Request Confirmations
 

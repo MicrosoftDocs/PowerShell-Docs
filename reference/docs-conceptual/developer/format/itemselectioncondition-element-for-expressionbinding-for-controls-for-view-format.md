@@ -1,13 +1,8 @@
 ---
-title: "ItemSelectionCondition Element for ExpressionBinding for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 82c15014-2440-410d-b02d-b7f1a49240a0
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: ItemSelectionCondition Element for ExpressionBinding for Controls for View (Format)
+description: ItemSelectionCondition Element for ExpressionBinding for Controls for View (Format)
 ---
 # ItemSelectionCondition Element for ExpressionBinding for Controls for View (Format)
 

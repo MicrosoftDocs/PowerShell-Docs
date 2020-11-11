@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-variable?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -33,6 +33,7 @@ Typically, you create a new variable by typing the variable name and its value, 
 ## EXAMPLES
 
 ### Example 1: Create a variable
+
 ```
 PS C:\> New-Variable days
 ```
@@ -41,6 +42,7 @@ This command creates a new variable named days.
 You are not required to type the *Name* parameter.
 
 ### Example 2: Create a variable and assign it a value
+
 ```
 PS C:\> New-Variable -Name "zipcode" -Value 98033
 ```
@@ -48,6 +50,7 @@ PS C:\> New-Variable -Name "zipcode" -Value 98033
 This command creates a variable named zipcode and assigns it the value 98033.
 
 ### Example 3: Create a variable with the ReadOnly option
+
 ```
 PS C:\> New-Variable -Name Max -Value 256 -Option ReadOnly
 PS C:\> New-Variable -Name max -Value 1024
@@ -74,6 +77,7 @@ The third command uses the *Force* parameter to override the read-only protectio
 In this case, the command to create a new variable with the same name succeeds.
 
 ### Example 4: Create a private variable
+
 ```
 PS C:\> New-Variable -Name counter -Visibility Private
 
@@ -111,6 +115,7 @@ The sample output shows the behavior of a private variable.
 The user who has loaded the module cannot view or change the value of the Counter variable, but the Counter variable can be read and changed by the commands in the module.
 
 ### Example 5: Create a variable with a space
+
 ```
 PS C:\> New-Variable -Name 'with space' -Value 'abc123xyz'
 
@@ -133,7 +138,7 @@ The variables can be accessed using the **Get-Variable** cmdlet or directly by d
 Specifies a description of the variable.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -151,7 +156,7 @@ By default, you can overwrite a variable unless the variable has an option value
 For more information, see the *Option* parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -166,7 +171,7 @@ Accept wildcard characters: False
 Specifies a name for the new variable.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -198,7 +203,7 @@ You cannot change the options of an existing variable to Constant.
 To see the **Options** property of all variables in the session, type `Get-Variable | Format-Table -Property name, options -autosize`.
 
 ```yaml
-Type: ScopedItemOptions
+Type: System.Management.Automation.ScopedItemOptions
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, ReadOnly, Constant, Private, AllScope, Unspecified
@@ -215,7 +220,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -247,7 +252,7 @@ Local is the default scope when the scope parameter is not specified.
 For more information, see about_Scopes.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -262,7 +267,7 @@ Accept wildcard characters: False
 Specifies the initial value of the variable.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -289,7 +294,7 @@ Commands to read or change the value of a private variable return an error.
 However, the user can run commands that use a private variable if the commands were written in the session in which the variable was defined.
 
 ```yaml
-Type: SessionStateEntryVisibility
+Type: System.Management.Automation.SessionStateEntryVisibility
 Parameter Sets: (All)
 Aliases:
 Accepted values: Public, Private
@@ -305,7 +310,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -321,7 +326,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -357,5 +362,3 @@ Otherwise, this cmdlet does not generate any output.
 [Remove-Variable](Remove-Variable.md)
 
 [Set-Variable](Set-Variable.md)
-
-

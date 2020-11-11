@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/enable-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -39,6 +39,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Enable a job trigger
+
 ```
 PS C:\> Get-JobTrigger -Name Backup-Archives -TriggerID 1 | Enable-JobTrigger
 ```
@@ -49,6 +50,7 @@ The command uses the Get-JobTrigger cmdlet to get the job trigger.
 A pipeline operator sends the job trigger to the **Enable-JobTrigger** cmdlet, which enables it.
 
 ### Example 2: Enable all job triggers
+
 ```
 PS C:\> Get-ScheduledJob | Get-JobTrigger | Enable-JobTrigger
 ```
@@ -58,6 +60,7 @@ A pipeline operator (|) sends the scheduled jobs to the Get-JobTrigger cmdlet, w
 Another pipeline operator sends the job triggers to the **Enable-JobTrigger** cmdlet, which enables them.
 
 ### Example 3: Enable the job trigger of a scheduled job on a remote computer
+
 ```
 PS C:\> Invoke-Command -ComputerName Server01 {Get-JobTrigger -Name DeployPackage | Where-Object {$_.Frequency -eq "AtLogon"} | Enable-JobTrigger}
 ```
@@ -70,6 +73,7 @@ A pipeline operator sends the job triggers to the Where-Object cmdlet which retu
 A pipeline operator sends the AtLogon job triggers to the **Enable-JobTrigger** cmdlet, which enables them.
 
 ### Example 4: Display disabled job triggers
+
 ```
 PS C:\> Get-ScheduledJob | Get-JobTrigger | where {!$_.Enabled} | Format-Table Id, Frequency, At, DaysOfWeek, Enabled, @{Label="JobName";Expression={$_.JobDefinition.Name}}
 Id Frequency At                     DaysOfWeek Enabled JobName
@@ -98,7 +102,7 @@ Enter a variable that contains **ScheduledJobTrigger** objects or type a command
 You can also pipe a **ScheduledJobTrigger** object to **Enable-JobTrigger**.
 
 ```yaml
-Type: ScheduledJobTrigger[]
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger[]
 Parameter Sets: (All)
 Aliases:
 
@@ -114,7 +118,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -129,7 +133,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -145,7 +149,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -170,6 +174,7 @@ You can pipe job triggers to **Enable-JobTrigger**.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * **Enable-JobTrigger** does not generate errors or warnings if you enable a job trigger that is already enabled.
 
 ## RELATED LINKS
@@ -205,5 +210,3 @@ This cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

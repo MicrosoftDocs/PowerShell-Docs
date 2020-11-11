@@ -1,13 +1,8 @@
 ---
-title: "SelectionSetName Element for SelectionCondition for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 7b9a4912-d755-42f3-8058-53c0797e28e4
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for SelectionCondition for GroupBy (Format)
+description: SelectionSetName Element for SelectionCondition for GroupBy (Format)
 ---
 # SelectionSetName Element for SelectionCondition for GroupBy (Format)
 

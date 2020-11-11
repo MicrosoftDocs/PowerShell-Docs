@@ -1,6 +1,7 @@
 ---
+description:  The `Format.ps1xml` files in PowerShell define the default display of objects in the PowerShell console. You can create your own `Format.ps1xml` files to change the display of objects or to define default displays for new object types that you create in PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 11/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -289,7 +290,7 @@ the current PowerShell session.
 
 This example uses the **PrependPath** parameter to place the new file in a
 higher precedence order than the original file. For more information, see
-[Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md).
+[Update-FormatData](xref:Microsoft.PowerShell.Utility.Update-FormatData).
 
 ```powershell
 Update-FormatData -PrependPath $PSHOME\MyDotNetTypes.Format.ps1xml
@@ -309,6 +310,9 @@ LCID Name  Calendar                               DisplayName
 ```
 
 ## The XML in Format.ps1xml files
+
+The full schema definition can be found in [Format.xsd](https://github.com/PowerShell/PowerShell/blob/master/src/Schemas/Format.xsd)
+in the PowerShell source code repository on GitHub.
 
 The **ViewDefinitions** section of each `Format.ps1xml` file contains the
 `<View>` tags that define each view. A typical `<View>` tag includes the
@@ -410,8 +414,8 @@ value of the **Name** parameter:
 - FormatViewBinding
 
 For more information, see
-[Trace-Command](../../Microsoft.PowerShell.Utility/Trace-Command.md) and
-[Get-TraceSource](../../Microsoft.PowerShell.Utility/Get-TraceSource.md).
+[Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command) and
+[Get-TraceSource](xref:Microsoft.PowerShell.Utility.Get-TraceSource).
 
 ## Signing a Format.ps1xml file
 
@@ -435,7 +439,7 @@ the table format, otherwise, `Format-Table` fails.
 
 Use `Format-Table` with the **View** parameter to specify the custom view's
 name and format the table's output. For an example of how the command is run,
-see [Format-Table](../../Microsoft.PowerShell.Utility/Format-Table.md).
+see [Format-Table](xref:Microsoft.PowerShell.Utility.Format-Table).
 
 ```powershell
 $Parms = @{
@@ -562,16 +566,16 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 
 ## See also
 
-[Export-FormatData](../../Microsoft.PowerShell.Utility/Export-FormatData.md)
+[Export-FormatData](xref:Microsoft.PowerShell.Utility.Export-FormatData)
 
-[Get-FormatData](../../Microsoft.PowerShell.Utility/Get-FormatData.md)
+[Get-FormatData](xref:Microsoft.PowerShell.Utility.Get-FormatData)
 
-[Get-TraceSource](../../Microsoft.PowerShell.Utility/Get-TraceSource.md)
+[Get-TraceSource](xref:Microsoft.PowerShell.Utility.Get-TraceSource)
 
 [Format Schema XML Reference](/powershell/scripting/developer/format/format-schema-xml-reference)
 
-[Trace-Command](../../Microsoft.PowerShell.Utility/Trace-Command.md)
+[Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command)
 
-[Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md)
+[Update-FormatData](xref:Microsoft.PowerShell.Utility.Update-FormatData)
 
 [Writing a PowerShell Formatting File](/powershell/scripting/developer/format/writing-a-powershell-formatting-file)

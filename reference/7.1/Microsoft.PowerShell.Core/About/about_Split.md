@@ -1,8 +1,9 @@
 ---
+description: Explains how to use the Split operator to split one or more strings into substrings. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 12/20/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-7.x&WT.mc_id=ps-gethelp
+Locale: en-US
+ms.date: 03/24/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Split
 ---
@@ -114,7 +115,7 @@ substring become part of the substring.
 'Chocolate-Vanilla-Strawberry-Blueberry' -split '(-)', 3
 ```
 
-```output
+```Output
 Chocolate
 -
 Vanilla
@@ -131,10 +132,13 @@ the substrings are returned. A value of 0 returns all the substrings. Negative
 values return the amount of substrings requested starting from the end of the
 input string.
 
-Max-substrings does not specify the maximum number of objects that are
-returned; its value equals the maximum number of times that a string is split.
-If you submit more than one string (an array of strings) to the Split operator
-, the Max-substrings limit is applied to each string separately.
+> [!NOTE]
+> Support for negative values was added in PowerShell 7.
+
+**Max-substrings** does not specify the maximum number of objects that are
+returned. Its value equals the maximum number of times that a string is split.
+If you submit more than one string (an array of strings) to the `-split`
+operator, the **Max-substrings** limit is applied to each string separately.
 
 Example:
 
@@ -143,7 +147,7 @@ $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
 $c -split ",", 5
 ```
 
-```output
+```Output
 Mercury
 Venus
 Earth
@@ -156,7 +160,7 @@ $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
 $c -split ",", -5
 ```
 
-```output
+```Output
 Mercury,Venus,Earth,Mars
 Jupiter
 Saturn
@@ -176,7 +180,7 @@ $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
 $c -split {$_ -eq "e" -or $_ -eq "p"}
 ```
 
-```output
+```Output
 M
 rcury,V
 nus,
@@ -285,7 +289,7 @@ The following statement splits the string at whitespace.
 -split "Windows PowerShell 2.0`nWindows PowerShell with remoting"
 ```
 
-```output
+```Output
 
 Windows
 PowerShell
@@ -302,7 +306,7 @@ The following statement splits the string at any comma.
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split ','
 ```
 
-```output
+```Output
 Mercury
 Venus
 Earth
@@ -319,7 +323,7 @@ The following statement splits the string at the pattern "er".
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split 'er'
 ```
 
-```output
+```Output
 M
 cury,Venus,Earth,Mars,Jupit
 ,Saturn,Uranus,Neptune
@@ -331,7 +335,7 @@ The following statement performs a case-sensitive split at the letter "N".
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -cSplit 'N'
 ```
 
-```output
+```Output
 Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,
 eptune
 ```
@@ -342,7 +346,7 @@ The following statement splits the string at "e" and "t".
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[et]'
 ```
 
-```output
+```Output
 M
 rcury,V
 nus,
@@ -362,7 +366,7 @@ resulting substrings to six substrings.
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[er]', 6
 ```
 
-```output
+```Output
 M
 
 cu
@@ -377,7 +381,7 @@ The following statement splits a string into three substrings.
 "a,b,c,d,e,f,g,h" -split ",", 3
 ```
 
-```output
+```Output
 a
 b
 c,d,e,f,g,h
@@ -390,7 +394,7 @@ starting from the end of the string.
 "a,b,c,d,e,f,g,h" -split ",", -3
 ```
 
-```output
+```Output
 a,b,c,d,e,f
 g
 h
@@ -403,7 +407,7 @@ The following statement splits two strings into three substrings.
 "a,b,c,d", "e,f,g,h" -split ",", 3
 ```
 
-```output
+```Output
 a
 b
 c,d
@@ -429,7 +433,7 @@ $a = @'
 $a -split "^\d", 0, "multiline"
 ```
 
-```output
+```Output
 
 The first line.
 
@@ -450,7 +454,7 @@ newline.
 "This.is.a.test" -split "\."
 ```
 
-```output
+```Output
 This
 is
 a
@@ -468,7 +472,7 @@ specified.
 "This.is.a.test" -split ".", 0, "simplematch"
 ```
 
-```output
+```Output
 This
 is
 a
@@ -484,17 +488,18 @@ $c = "LastName, FirstName; Address, City, State, Zip"
 $c -split $(if ($i -lt 1) {","} else {";"})
 ```
 
-```output
+```Output
 LastName, FirstName
  Address, City, State, Zip
 ```
 
 ## SEE ALSO
 
-[Split-Path](../../Microsoft.PowerShell.Management/Split-Path.md)
+[Split-Path](xref:Microsoft.PowerShell.Management.Split-Path)
 
 [about_Operators](about_Operators.md)
 
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Join](about_Join.md)
+

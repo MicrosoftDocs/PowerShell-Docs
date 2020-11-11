@@ -1,31 +1,35 @@
 ---
-title: "Host03 Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c9864f46-200d-422e-86ed-2fddcb5b7503
-caps.latest.revision: 12
+ms.date: 09/13/2016
+ms.topic: reference
+title: Host03 Sample
+description: Host03 Sample
 ---
 # Host03 Sample
 
-This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.
+This sample shows how to build an interactive console-based host application that reads commands
+from the command line, executes the commands, and then displays the results to the console.
 
 ## Requirements
 
- This sample requires Windows PowerShell 2.0.
+This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
 
-- Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.
+- Creating a custom host whose classes derive from the
+  [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
+  class, the
+  [System.Management.Automation.Host.PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+  class, and the
+  [System.Management.Automation.Host.PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+  class.
 
-- Building a console application that uses these host classes to build an interactive Windows PowerShell shell.
+- Building a console application that uses these host classes to build an interactive Windows
+  PowerShell shell.
 
-## Example
+## Example 1
 
- This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.
+This example allows the user to enter commands at a command line, processes those commands, and then
+prints out the results.
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -311,9 +315,12 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## Example
+## Example 2
 
- The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
+The following code is the implementation of the
+[System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
+class that is used by this host application. Those elements that are not implemented throw an
+exception or return nothing.
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -552,9 +559,11 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## Example
+## Example 3
 
- The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.
+The following code is the implementation of the
+[System.Management.Automation.Host.PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+class that is used by this host application.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -957,9 +966,12 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## Example
+## Example 4
 
- The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
+The following code is the implementation of the
+[System.Management.Automation.Host.PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+class that is used by this host application. Those elements that are not implemented throw an
+exception or return nothing.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

@@ -1,13 +1,8 @@
 ---
-title: "PropertyName Element for ItemSelectionCondition for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d5e707ae-3c84-4ceb-ba31-56b3ffde6d6c
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: PropertyName Element for ItemSelectionCondition for ListControl (Format)
+description: PropertyName Element for ItemSelectionCondition for ListControl (Format)
 ---
 # PropertyName Element for ItemSelectionCondition for ListControl (Format)
 

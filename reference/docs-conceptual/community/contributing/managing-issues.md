@@ -1,6 +1,6 @@
 ---
 title: How we manage issues
-description: This article explains how the PowerShell-Docs team manages pull requests.
+description: This article explains how the PowerShell-Docs team manages issues.
 ms.date: 03/05/2020
 ms.topic: conceptual
 ---
@@ -65,14 +65,14 @@ detail, as needed.
 - Optional: Copy the issue to the appropriate product feedback location, add a link to the copied
   item, and close the issue. DO NOT copy issues to UserVoice.
 
-  | DocSet    | Product Feedback URL                                         |
-  | --------- | ------------------------------------------------------------ |
-  | developer | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-  | dsc       | https://windowsserver.uservoice.com/forums/301869-powershell |
-  | gallery   | https://github.com/powershell/powershellgallery/issues/new   |
-  | jea       | https://github.com/powershell/jea/issues/new                 |
-  | reference | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-  | wmf       | https://windowsserver.uservoice.com/forums/301869-powershell |
+  | DocSet    | Product Feedback URL                                           |
+  | --------- | -------------------------------------------------------------- |
+  | developer | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
+  | dsc       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
+  | gallery   | `https://github.com/powershell/powershellgallery/issues/new`   |
+  | jea       | `https://github.com/powershell/jea/issues/new`                 |
+  | reference | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
+  | wmf       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
 
 ### Support requests
 
@@ -80,9 +80,11 @@ detail, as needed.
 - If the question is more complicated, or the submitter replies with more questions, redirect them
   to forums and support channels. Suggested text for redirecting to forums:
 
-    > This is not the right forum for these kinds of questions. Try posting your question in a
-    > community support forum. For a list of community forums see:
-    > https://docs.microsoft.com/powershell/scripting/community/community-support
+  ```Markdown
+  > This is not the right forum for these kinds of questions. Try posting your question in a
+  > community support forum. For a list of community forums see:
+  > https://docs.microsoft.com/powershell/scripting/community/community-support
+  ```
 
 ### Code of conduct violations
 

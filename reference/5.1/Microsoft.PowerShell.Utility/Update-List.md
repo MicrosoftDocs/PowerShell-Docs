@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 11/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/update-list?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -179,7 +179,7 @@ Specifies the property values to be added to the collection. Enter the values in
 should appear in the collection.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: AddRemoveSet
 Aliases:
 
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 Specifies the objects to be updated. You can also pipe the object to be updated to `Update-List`.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -213,7 +213,7 @@ parameter, `Update-List` returns an object that represents the change instead of
 object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -229,7 +229,7 @@ Accept wildcard characters: False
 Specifies the property values to be removed from the collection.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: AddRemoveSet
 Aliases:
 
@@ -246,7 +246,7 @@ Specifies a new collection. This parameter replaces all items in the original co
 items specified by this parameter.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: ReplaceSet
 Aliases:
 

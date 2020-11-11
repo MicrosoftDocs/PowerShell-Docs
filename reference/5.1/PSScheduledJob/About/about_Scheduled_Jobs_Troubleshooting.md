@@ -1,6 +1,7 @@
 ---
+description:  Explains how to resolve problems with scheduled jobs 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_troubleshooting?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -23,7 +24,7 @@ Before using PowerShell scheduled jobs, see [about_Scheduled_Jobs](about_Schedul
 and the related scheduled jobs about topics.
 
 For more information about the cmdlets contained in the **PSScheduledJob**
-module, see [PSScheduledJob](../PSScheduledJob.md).
+module, see [PSScheduledJob](xref:PSScheduledJob).
 
 ## Can't find job results
 
@@ -100,13 +101,11 @@ The execution history contains a record of all triggered job instances.
 Verify that there is a timestamp-named directory in the directory for a
 scheduled job in the following path:
 
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJob
-<ScheduledJobName>\Output`
+`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJob\<ScheduledJobName>\Output`
 
 For example:
 
-`C:\Users<UserName>\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJob
-<ScheduledJobName>\Output`
+`C:\Users<UserName>\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJob\<ScheduledJobName>\Output`
 
 For example, the `Get-ChildItem` cmdlet gets the on-disk execution history of
 the **ProcessJob** scheduled job.
@@ -417,7 +416,7 @@ MultipleInstancePolicy : IgnoreNew
 JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 ```
 
-For descriptions of the scheduled job options, see [New-ScheduledJobOption](../New-ScheduledJobOption.md).
+For descriptions of the scheduled job options, see [New-ScheduledJobOption](xref:PSScheduledJob.New-ScheduledJobOption).
 
 ### The scheduled job instance might have failed
 
@@ -431,7 +430,7 @@ Check the Task Scheduler event log for errors. To check the log, use Event
 Viewer or a PowerShell command such as the following:
 
 ```powershell
-Get-WinEvent -LogName Microsoft-Windows-TaskScheduler/Operational | 
+Get-WinEvent -LogName Microsoft-Windows-TaskScheduler/Operational |
  Where {$_.Message -like "fail"}
 ```
 
@@ -468,19 +467,16 @@ the **ScheduledJob** directory.
 
 The directory's location:
 
-`$env:UserProfile\AppData\Local\Microsoft\Windows\PowerShell
-\ScheduledJobs<ScheduledJobName>`
+`$env:UserProfile\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs<ScheduledJobName>`
 
 For example:
 
-`C:\Users<UserName>\AppData\Local\Microsoft\Windows\PowerShell\
-ScheduledJobs<ScheduledJobName>.`
+`C:\Users<UserName>\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs<ScheduledJobName>.`
 
 Use Task Scheduler to delete the scheduled job. PowerShell scheduled tasks
 appear in the following Task Scheduler path:
 
-`Task Scheduler Library\Microsoft\Windows\PowerShell
-\ScheduledJobs<ScheduledJobName>`
+`Task Scheduler Library\Microsoft\Windows\PowerShell\ScheduledJobs<ScheduledJobName>`
 
 ## Job cmdlets can't consistently find scheduled jobs
 
@@ -548,6 +544,6 @@ imports the **PSScheduledJob** module, and then runs the command.
 
 [about_Scheduled_Jobs](about_Scheduled_Jobs.md)
 
-[PSScheduledJob](../PSScheduledJob.md) module cmdlets
+[PSScheduledJob](xref:PSScheduledJob) module cmdlets
 
 [Task Scheduler](/windows/desktop/TaskSchd/task-scheduler-reference)

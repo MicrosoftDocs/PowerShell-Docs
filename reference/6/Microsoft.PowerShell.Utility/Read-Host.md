@@ -1,14 +1,13 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
 ---
-
 # Read-Host
 
 ## SYNOPSIS
@@ -21,38 +20,42 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Read-Host** cmdlet reads a line of input from the console.
-You can use it to prompt a user for input.
-Because you can save the input as a secure string, you can use this cmdlet to prompt users for secure data, such as passwords, as well as shared data.
+
+The `Read-Host` cmdlet reads a line of input from the console. You can use it to prompt a user for
+input. Because you can save the input as a secure string, you can use this cmdlet to prompt users
+for secure data, such as passwords, as well as shared data.
 
 ## EXAMPLES
 
 ### Example 1: Save console input to a variable
-```
-PS C:\> $Age = Read-Host "Please enter your age"
-```
 
-This command displays the string "Please enter your age:" as a prompt.
-When a value is entered and the Enter key is pressed, the value is stored in the $Age variable.
+This example displays the string "Please enter your age:" as a prompt. When a value is entered and
+the Enter key is pressed, the value is stored in the `$Age` variable.
+
+```powershell
+$Age = Read-Host "Please enter your age"
+```
 
 ### Example 2: Save console input as a secure string
-```
-PS C:\> $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
-```
 
-This command displays the string "Enter a Password:" as a prompt.
-As a value is being entered, asterisks (*) appear on the console in place of the input.
-When the Enter key is pressed, the value is stored as a **SecureString** object in the $pwd_secure_string variable.
+This example displays the string "Enter a Password:" as a prompt. As a value is being entered,
+asterisks (`*`) appear on the console in place of the input. When the Enter key is pressed, the
+value is stored as a **SecureString** object in the `$pwd_secure_string` variable.
+
+```powershell
+$pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
+```
 
 ## PARAMETERS
 
 ### -AsSecureString
-Indicates that the cmdlet displays asterisks (*) in place of the characters that the user types as input.
 
-When you use this parameter, the output of the **Read-Host** cmdlet is a **SecureString** object (**System.Security.SecureString**).
+Indicates that the cmdlet displays asterisks (`*`) in place of the characters that the user types as
+input. When you use this parameter, the output of the `Read-Host` cmdlet is a **SecureString**
+object (**System.Security.SecureString**).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -64,13 +67,14 @@ Accept wildcard characters: False
 ```
 
 ### -Prompt
+
 Specifies the text of the prompt.
 Type a string.
 If the string includes spaces, enclose it in quotation marks.
-PowerShell appends a colon (:) to the text that you enter.
+PowerShell appends a colon (`:`) to the text that you enter.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -82,18 +86,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.String or System.Security.SecureString
-If the *AsSecureString* parameter is used, **Read-Host** returns a **SecureString**.
-Otherwise, it returns a string.
+
+If the **AsSecureString** parameter is used, `Read-Host` returns a **SecureString**. Otherwise, it
+returns a string.
 
 ## NOTES
 
@@ -105,4 +115,4 @@ Otherwise, it returns a string.
 
 [Write-Host](Write-Host.md)
 
-
+[ConvertFrom-SecureString](../Microsoft.PowerShell.Security/ConvertFrom-SecureString.md)

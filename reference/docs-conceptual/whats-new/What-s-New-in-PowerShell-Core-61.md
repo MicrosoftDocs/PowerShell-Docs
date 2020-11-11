@@ -20,18 +20,18 @@ that made this release possible.
 ## .NET Core 2.1
 
 PowerShell Core 6.1 moved to .NET Core 2.1 after it was
-[released in May](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/),
-resulting in a number of improvements to PowerShell, including:
+[released in May](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-1/), resulting in a
+number of improvements to PowerShell, including:
 
 - performance improvements (see [below](#performance-improvements))
 - Alpine Linux support (preview)
 - [.NET global tool support](/dotnet/core/tools/global-tools) - coming soon to PowerShell
-- [`Span<T>`](/dotnet/api/system.span-1?view=netcore-2.1)
+- [`Span<T>`](/dotnet/api/system.span-1)
 
 ## Windows Compatibility Pack for .NET Core
 
 On Windows, the .NET team shipped the
-[Windows Compatibility Pack for .NET Core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/),
+[Windows Compatibility Pack for .NET Core](https://devblogs.microsoft.com/dotnet/announcing-the-windows-compatibility-pack-for-net-core/),
 a set of assemblies that add a number of removed APIs back to .NET Core on Windows.
 
 We've added the Windows Compatibility Pack to PowerShell Core 6.1 release so that any modules or
@@ -40,15 +40,15 @@ scripts that use these APIs can rely on them being available.
 The Windows Compatibility Pack enables PowerShell Core to use **more than 1900 cmdlets that ship
 with Windows 10 October 2018 Update and Windows Server 2019**.
 
-## Support for Application Whitelisting
+## Support for Application allow lists
 
 PowerShell Core 6.1 has parity with Windows PowerShell 5.1 supporting
-[AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview)
+[AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview)
 and
-[Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
-application whitelisting. Application whitelisting allows granular control of what binaries are
+[Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
+application allow lists. Application allow lists allow granular control of what binaries are
 allowed to be executed used with PowerShell
-[Constrained Language mode](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
+[Constrained Language mode](https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode/).
 
 ## Performance improvements
 
@@ -61,8 +61,8 @@ For example, `Group-Object` has been sped up by 66%:
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
-|--------------|------------------------|---------------------|---------------------|
+|    Metric    | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
+| ------------ | ---------------------- | ------------------- | ------------------- |
 | Time (sec)   | 25.178                 | 19.653              | 6.641               |
 | Speed-up (%) | N/A                    | 21.9%               | 66.2%               |
 
@@ -72,8 +72,8 @@ Similarly, sorting scenarios like this one have improved by more than 15%:
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
-|--------------|------------------------|---------------------|---------------------|
+|    Metric    | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
+| ------------ | ---------------------- | ------------------- | ------------------- |
 | Time (sec)   | 12.170                 | 8.493               | 7.08                |
 | Speed-up (%) | N/A                    | 30.2%               | 16.6%               |
 
@@ -84,8 +84,8 @@ The following example uses a test CSV with 26,616 rows and six columns:
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
-|--------------|------------------------|---------------------|------------------------|
+|    Metric    | Windows PowerShell 5.1 | PowerShell Core 6.0 |  PowerShell Core 6.1   |
+| ------------ | ---------------------- | ------------------- | ---------------------- |
 | Time (sec)   | 0.441                  | 1.069               | 0.268                  |
 | Speed-up (%) | N/A                    | -142.4%             | 74.9% (39.2% from WPS) |
 
@@ -97,20 +97,19 @@ The following example uses a ~2MB test JSON file:
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
-|--------------|------------------------|---------------------|------------------------|
+|    Metric    | Windows PowerShell 5.1 | PowerShell Core 6.0 |  PowerShell Core 6.1   |
+| ------------ | ---------------------- | ------------------- | ---------------------- |
 | Time (sec)   | 0.259                  | 0.577               | 0.125                  |
 | Speed-up (%) | N/A                    | -122.8%             | 78.3% (51.7% from WPS) |
 
-## Check `system32` for compatible in-box modules on Windows
+## Check `system32` for compatible built-in modules on Windows
 
-In the Windows 10 1809 update and Windows Server 2019, we updated a number of in-box PowerShell
+In the Windows 10 1809 update and Windows Server 2019, we updated a number of built-in PowerShell
 modules to mark them as compatible with PowerShell Core.
 
 When PowerShell Core 6.1 starts up, it will automatically include `$windir\System32` as part of the
 `PSModulePath` environment variable. However, it only exposes modules to `Get-Module` and
 `Import-Module` if its `CompatiblePSEdition` is marked as compatible with `Core`.
-
 
 ```powershell
 Get-Module -ListAvailable
@@ -231,7 +230,7 @@ and [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke
 PowerShell and Hyper-V that allows you to connect to a Hyper-V VM or Container without network
 connectivity or other remote management services.
 
-In the past, PowerShell Direct connected using the inbox Windows PowerShell instance on the
+In the past, PowerShell Direct connected using the built-in Windows PowerShell instance on the
 Container. Now, PowerShell Direct first attempts to connect using any available `pwsh.exe` on the
 `PATH` environment variable. If `pwsh.exe` isn't available, PowerShell Direct falls back to use
 `powershell.exe`.

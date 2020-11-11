@@ -1,13 +1,8 @@
 ---
-title: "StopProcessSample04 (VB.NET) Sample Code | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 48019ceb-0aeb-4cd1-8b42-79f2c29c3e65
-caps.latest.revision: 5
+ms.date: 09/13/2016
+ms.topic: reference
+title: StopProcessSample04 (VB.NET) Sample Code
+description: StopProcessSample04 (VB.NET) Sample Code
 ---
 # StopProcessSample04 (VB.NET) Sample Code
 

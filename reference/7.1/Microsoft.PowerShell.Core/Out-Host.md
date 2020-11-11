@@ -1,10 +1,10 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 08/07/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/out-host?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/out-host?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Host
 ---
@@ -77,7 +77,7 @@ Specifies the objects that are written to the console. Enter a variable that con
 or type a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -103,7 +103,7 @@ view the next line of output. Press <kbd>Q</kbd> to quit.
 > The **Paging** parameter isn't supported by the PowerShell ISE host.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -164,3 +164,4 @@ variable and use the **InputObject** parameter to pass the data to the cmdlet.
 [Out-String](../Microsoft.PowerShell.Utility/Out-String.md)
 
 [Write-Host](../Microsoft.PowerShell.Utility/Write-Host.md)
+

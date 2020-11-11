@@ -1,15 +1,8 @@
 ---
-title: "Cmdlet Input Processing Methods | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "virtual methods (PowerShell SDK]"
-ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
-caps.latest.revision: 12
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Input Processing Methods
+description: Cmdlet Input Processing Methods
 ---
 # Cmdlet Input Processing Methods
 

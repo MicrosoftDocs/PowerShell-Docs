@@ -1,13 +1,8 @@
 ---
-title: "Text Element for CustomItem for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 87a4079e-602c-42de-9de5-9b59df986caa
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: Text Element for CustomItem for Controls for Configuration (Format)
+description: Text Element for CustomItem for Controls for Configuration (Format)
 ---
 # Text Element for CustomItem for Controls for Configuration (Format)
 

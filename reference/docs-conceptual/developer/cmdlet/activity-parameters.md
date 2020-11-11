@@ -1,13 +1,8 @@
 ---
-title: "Activity Parameters | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 6e4e0cf6-19e0-44b8-8b40-d6f6075276cf
-caps.latest.revision: 5
+ms.date: 09/13/2016
+ms.topic: reference
+title: Activity Parameters
+description: Activity Parameters
 ---
 # Activity Parameters
 

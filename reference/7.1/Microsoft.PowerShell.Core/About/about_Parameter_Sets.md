@@ -1,4 +1,5 @@
 ---
+description: Describes how to define and use parameter sets in advanced functions. 
 title: about_Parameter_Sets
 ms.date: 02/11/2020
 ---
@@ -196,3 +197,4 @@ C:\temp\test\test.md          30  1527       3224
 C:\temp\test\test.ps1          3     3         79
 C:\temp\test\test[1].txt      31   562       2059
 ```
+

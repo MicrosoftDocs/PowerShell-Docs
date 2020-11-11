@@ -1,13 +1,8 @@
 ---
-title: "Declaring Properties as Parameters | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f71ea35d-cff5-4e44-a5c6-3a747ed4c4d9
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: Declaring Properties as Parameters
+description: Declaring Properties as Parameters
 ---
 # Declaring Properties as Parameters
 

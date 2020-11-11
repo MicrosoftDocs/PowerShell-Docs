@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/09/2019
+ms.date: 03/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/sort-object?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Sort-Object
@@ -40,7 +40,10 @@ Sort-Object [-Descending] [-Unique] -Bottom <Int32> [-InputObject <PSObject>] [[
 ## DESCRIPTION
 
 The `Sort-Object` cmdlet sorts objects in ascending or descending order based on object property
-values. If sort properties are not included in a command, PowerShell uses default sort properties.
+values. If sort properties are not included in a command, PowerShell uses default sort properties
+of the first input object. If the type of the input object has no default sort properties,
+PowerShell attempts to compare the objects themselves. For more information, see the [Notes](#notes)
+section.
 
 You can sort objects by a single property or multiple properties. Multiple properties use hash
 tables to sort in ascending order, descending order, or a combination of sort orders. Properties are
@@ -273,7 +276,11 @@ duplicate computer names. The list is sorted in the default order, ascending.
 ### Example 8: Sort a string as an integer
 
 This example shows how to sort a text file that contains string objects as integers. You can send
-each command down the pipeline to `Get-Member` and verify that the objects are strings or integers.
+each command down the pipeline to `Get-Member` and verify that the objects are strings instead of
+integers. For these examples, the `ProductId.txt` file contains an unsorted list of product numbers.
+
+In the first example, `Get-Content` gets the contents of the file and pipes lines to the
+`Sort-Object` cmdlet. `Sort-Object` sorts the string objects in ascending order.
 
 ```
 PS> Get-Content -Path C:\Test\ProductId.txt | Sort-Object
@@ -307,17 +314,11 @@ PS> Get-Content -Path C:\Test\ProductId.txt | Sort-Object {[int]$_}
 99999
 ```
 
-The `Get-Content` cmdlet uses the **Path** parameter to specify the directory and file name. The
-file **ProductId.txt** contains an unsorted list of product numbers. The string objects are sent
-down the pipeline to the `Sort-Object` cmdlet. `Sort-Object` sorts the string objects in ascending
-order.
-
-The `Get-Content` cmdlet uses the **Path** parameter to specify the directory and file name. The
-file **ProductId.txt** contains an unsorted list of product numbers. The string objects are sent
-down the pipeline to the `ForEach-Object` cmdlet. `ForEach-Object` uses a script block to convert
-the strings to integers. In the sample code, `[int]` converts the string to an integer and `$_`
-represents each string as it comes down the pipeline. The integer objects are sent down the pipeline
-to the `Sort-Object` cmdlet. `Sort-Object` sorts the integer objects in numeric order.
+In the second example, `Get-Content` gets the contents of the file and pipes lines to the
+`Sort-Object` cmdlet. `Sort-Object` uses a script block to convert the strings to integers. In the
+sample code, `[int]` converts the string to an integer and `$_` represents each string as it comes
+down the pipeline. The integer objects are sent down the pipeline to the `Sort-Object` cmdlet.
+`Sort-Object` sorts the integer objects in numeric order.
 
 ### Example 9: Using stable sorts
 
@@ -386,7 +387,7 @@ stable sort.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Bottom
 Aliases:
 
@@ -402,7 +403,7 @@ Accept wildcard characters: False
 Indicates that the sort is case-sensitive. By default, sorts are not case-sensitive.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -419,7 +420,7 @@ Specifies the cultural configuration to use for sorts. Use `Get-Culture` to disp
 culture configuration.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -438,7 +439,7 @@ To sort multiple properties with different sort orders, use a hash table. For ex
 table you can sort one property in ascending order and another property in descending order.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -457,7 +458,7 @@ collection. Because one object cannot be sorted, `Sort-Object` returns the entir
 unchanged.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -472,7 +473,7 @@ Accept wildcard characters: False
 
 Specifies the property names that `Sort-Object` uses to sort the objects. Wildcards are permitted.
 Objects are sorted based on the property values. If you do not specify a property, `Sort-Object`
-sorts based on default properties for the object type.
+sorts based on default properties for the object type or the objects themselves.
 
 Multiple properties can be sorted in ascending order, descending order, or a combination of sort
 orders. When you specify multiple properties, the objects are sorted by the first property. If
@@ -485,12 +486,14 @@ use a hash table.
 
 Valid keys for a hash table are as follows:
 
-- Expression \<string\> or \<script block\>
-- Ascending \<Boolean\>
-- Descending \<Boolean\>
+- `expression` - `<string>` or `<script block>`
+- `ascending` or `descending` - `<boolean>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -509,7 +512,7 @@ stable sort.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Top
 Aliases:
 
@@ -529,7 +532,7 @@ collection. The first instance of a unique value is included in the sorted outpu
 For example, character and CHARACTER.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -547,7 +550,7 @@ The sorted objects are delivered in the order they were received when the sort c
 This parameter was added in PowerShell v6.2.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Default
 Aliases:
 
@@ -579,23 +582,33 @@ You can pipe the objects to be sorted to `Sort-Object`.
 ## NOTES
 
 The `Sort-Object` cmdlet sorts objects based on properties specified in the command or the default
-sort properties for the object type. If an object does not have one of the specified properties, the
-property value for that object is interpreted by `Sort-Object` as **Null** and placed at the end of
-the sort order.
+sort properties for the object type. Default sort properties are defined using the `PropertySet`
+named `DefaultKeyPropertySet` in a `types.ps1xml` file. For more information, see
+[about_Types.ps1xml](/powershell/module/Microsoft.PowerShell.Core/About/about_Types.ps1xml).
 
+If an object does not have one of the specified properties, the property value for that object is
+interpreted by `Sort-Object` as **Null** and placed at the end of the sort order.
+
+When no sort properties are available, PowerShell attempts to compare the objects themselves.
 `Sort-Object` uses the **Compare** method for each property. If a property does not implement
 **IComparable**, the cmdlet converts the property value to a string and uses the **Compare** method
-for **System.String**. For more information, see [PSObject.CompareTo(Object) Method](/dotnet/api/system.management.automation.psobject.compareto).
+for **System.String**. For more information, see
+[PSObject.CompareTo(Object) Method](/dotnet/api/system.management.automation.psobject.compareto).
 
 If you sort on an enumerated property such as **Status**, `Sort-Object` sorts by the enumeration
-values. **Stopped** has a value of **1** and **Running** has a value of **4**. **Stopped** is sorted
-before **Running** because of the enumerated values. For more information, see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
+values. For Windows services, **Stopped** has a value of **1** and **Running** has a value of **4**.
+**Stopped** is sorted before **Running** because of the enumerated values. For more information,
+see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
 
 The performance of the sorting algorithm is slower when doing a stable sort.
 
 ## RELATED LINKS
 
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
+
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md)
+
+[about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md)
 
 [Compare-Object](Compare-Object.md)
 

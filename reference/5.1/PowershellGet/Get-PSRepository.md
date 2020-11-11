@@ -1,7 +1,7 @@
 ---
 external help file: PSModule-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PowerShellGet
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/powershellget/get-psrepository?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -26,6 +26,7 @@ The **Get-PSRepository** cmdlet gets PowerShell module repositories that are reg
 ## EXAMPLES
 
 ### Example 1: Get all module repositories
+
 ```
 PS C:\> Get-PSRepository
 Name                                     SourceLocation                                     OneGetProvider       InstallationPolicy
@@ -37,6 +38,7 @@ myNuGetSource                            https://myget.c...                     
 This command gets all module repositories registered for the current user.
 
 ### Example 2: Get module repositories by name
+
 ```
 PS C:\> Get-PSRepository -Name "*NuGet*"
 ```
@@ -44,6 +46,7 @@ PS C:\> Get-PSRepository -Name "*NuGet*"
 This command gets all module repositories that include NuGet in their names.
 
 ### Example 3: Get a module repository and format the output
+
 ```
 PS C:\> Get-PSRepository -Name "Local01" | Format-List * -Force
 Name                      : local01
@@ -66,7 +69,7 @@ This command gets the repository named Local01 and uses the pipeline operator to
 Specifies the names of the repositories to get.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -93,5 +96,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Set-PSRepository](Set-PSRepository.md)
 
 [Unregister-PSRepository](Unregister-PSRepository.md)
-
-

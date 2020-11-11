@@ -1,6 +1,7 @@
 ---
+description: Describes the operators that compare values in PowerShell.
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 01/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -267,9 +268,6 @@ Server
 Description: Matches a string using regular expressions. When the input is
 scalar, it populates the `$Matches` automatic variable.
 
-The match operators search only in strings. They cannot search in arrays of
-integers or other objects.
-
 If the input is a collection, the `-match` and `-notmatch` operators return
 the matching members of that collection, but the operator does not populate
 the `$Matches` variable.
@@ -525,7 +523,7 @@ The `-notin` operator was introduced in PowerShell 3.0.
 
 Syntax:
 
-`<Test-value> -notin \<Reference-values>`
+`<Test-value> -notin <Reference-values>`
 
 Examples:
 
@@ -668,6 +666,6 @@ True
 - [about_Operators](about_Operators.md)
 - [about_Regular_Expressions](about_Regular_Expressions.md)
 - [about_Wildcards](about_Wildcards.md)
-- [Compare-Object](../../Microsoft.PowerShell.Utility/Compare-Object.md)
-- [Foreach-Object](../ForEach-Object.md)
-- [Where-Object](../Where-Object.md)
+- [Compare-Object](xref:Microsoft.PowerShell.Utility.Compare-Object)
+- [Foreach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
+- [Where-Object](xref:Microsoft.PowerShell.Core.Where-Object)

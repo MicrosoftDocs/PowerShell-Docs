@@ -1,13 +1,8 @@
 ---
-title: "EnumerateCollection Element for ExpressionBinding for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a4544c0b-2347-4f3f-9bdb-ed2714bee048
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: EnumerateCollection Element for ExpressionBinding for GroupBy (Format)
+description: EnumerateCollection Element for ExpressionBinding for GroupBy (Format)
 ---
 # EnumerateCollection Element for ExpressionBinding for GroupBy (Format)
 

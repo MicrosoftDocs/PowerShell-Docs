@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/get-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,16 +17,19 @@ Gets the job triggers of scheduled jobs.
 ## SYNTAX
 
 ### JobDefinition (Default)
+
 ```
 Get-JobTrigger [[-TriggerId] <Int32[]>] [-InputObject] <ScheduledJobDefinition> [<CommonParameters>]
 ```
 
 ### JobDefinitionId
+
 ```
 Get-JobTrigger [[-TriggerId] <Int32[]>] [-Id] <Int32> [<CommonParameters>]
 ```
 
 ### JobDefinitionName
+
 ```
 Get-JobTrigger [[-TriggerId] <Int32[]>] [-Name] <String> [<CommonParameters>]
 ```
@@ -52,6 +55,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Get a job trigger by scheduled job name
+
 ```
 PS C:\> Get-JobTrigger -Name "BackupJob"
 ```
@@ -59,6 +63,7 @@ PS C:\> Get-JobTrigger -Name "BackupJob"
 The command uses the *Name* parameter of **Get-JobTrigger** to get the job triggers of the BackupJob scheduled job.
 
 ### Example 2: Get a job trigger by ID
+
 ```
 The first command uses the Get-ScheduledJob cmdlet to display the scheduled jobs on the local computer. The display includes the IDs of the scheduled jobs.
 PS C:\> Get-ScheduledJob
@@ -76,6 +81,7 @@ PS C:\> Get-JobTrigger -ID 3
 The example uses the *ID* parameter of **Get-JobTrigger** to get the job triggers of a scheduled job.
 
 ### Example 3: Get job triggers by piping a job
+
 ```
 PS C:\> Get-ScheduledJob -Name *Backup*, *Archive* | Get-JobTrigger
 ```
@@ -83,6 +89,7 @@ PS C:\> Get-ScheduledJob -Name *Backup*, *Archive* | Get-JobTrigger
 This command gets the job triggers of all jobs that have Backup or Archive in their names.
 
 ### Example 4: Get the job trigger of a job on a remote computer
+
 ```
 PS C:\> Invoke-Command -ComputerName Server01 { Get-ScheduledJob Backup | Get-JobTrigger -TriggerID 2 }
 ```
@@ -94,6 +101,7 @@ It uses the Get-ScheduledJob cmdlet to get the Backup scheduled job, which it pi
 It uses the *TriggerID* parameter to get only the second trigger.
 
 ### Example 5: Get all job triggers
+
 ```
 PS C:\> Get-ScheduledJob | Get-JobTrigger | Format-Table -Property ID, Frequency, At, DaysOfWeek, Enabled, @{Label="ScheduledJob";Expression={$_.JobDefinition.Name}} -AutoSize
 Id Frequency At                    DaysOfWeek Enabled ScheduledJob
@@ -110,6 +118,7 @@ To add the name of the scheduled job to the job trigger display, the command use
 In addition to the job trigger properties that are displayed by default, the command creates a new ScheduledJob property that displays the name of the scheduled job.
 
 ### Example 6: Get the job trigger property of a scheduled job
+
 ```
 The command uses the Get-ScheduledJob cmdlet to get the Test-HelpFiles scheduled job. Then it uses the dot method (.) to get the JobTriggers property of the Test-HelpFiles scheduled job.
 PS C:\> (Get-ScheduledJob Test-HelpFiles).JobTriggers
@@ -123,6 +132,7 @@ This example shows alternatives to using the **Get-JobTrigger** cmdlet to get jo
 The results are identical to using the **Get-JobTrigger** cmdlet and the techniques can be used interchangeably.
 
 ### Example 7: Compare job triggers
+
 ```
 The first command gets the job trigger of the ArchiveProjects scheduled job. The command pipes the job trigger to the Tee-Object cmdlet, which saves the job trigger in the $T1 variable and displays it at the command line.
 PS C:\> Get-ScheduledJob -Name ArchiveProjects | Get-JobTrigger | Tee-Object -Variable T1
@@ -155,7 +165,7 @@ Specifies the identification number of a scheduled job.
 To get the identification number of scheduled jobs on the local computer or a remote computer, use the Get-ScheduledJob cmdlet.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: JobDefinitionId
 Aliases:
 
@@ -172,7 +182,7 @@ Enter a variable that contains  **ScheduledJob** objects or type a command or ex
 You can also pipe **ScheduledJob** objects to **Get-JobTrigger**.
 
 ```yaml
-Type: ScheduledJobDefinition
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 Parameter Sets: JobDefinition
 Aliases:
 
@@ -191,7 +201,7 @@ Wildcards are supported.
 To get the names of scheduled jobs on the local computer or a remote computer, use the Get-ScheduledJob cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: JobDefinitionName
 Aliases:
 
@@ -208,7 +218,7 @@ Enter the trigger IDs of one or more job triggers of a scheduled job.
 Use this parameter when the scheduled job that is specified by the *Name*, *ID*, or *InputObject* parameters has multiple job triggers.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: (All)
 Aliases:
 
@@ -266,5 +276,3 @@ You can pipe a scheduled job from Get-ScheduledJob to **Get-JobTrigger**.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

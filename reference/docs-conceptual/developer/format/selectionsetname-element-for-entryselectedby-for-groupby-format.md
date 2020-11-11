@@ -1,13 +1,8 @@
 ---
-title: "SelectionSetName Element for EntrySelectedBy for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d569c623-2277-49e3-933e-c26262b91cd5
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for EntrySelectedBy for GroupBy (Format)
+description: SelectionSetName Element for EntrySelectedBy for GroupBy (Format)
 ---
 # SelectionSetName Element for EntrySelectedBy for GroupBy (Format)
 

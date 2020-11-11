@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/04/2019
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/group-object?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Group-Object
@@ -217,7 +217,7 @@ the grouped object. When used with the **AsString** parameter, the keys in the h
 strings.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: AHT
 
@@ -235,7 +235,7 @@ are instances of the grouped object. This parameter is valid only when used with
 parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -252,7 +252,7 @@ Indicates that this cmdlet makes the grouping case-sensitive. Without this param
 values of objects in a group might have different cases.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -268,7 +268,7 @@ Accept wildcard characters: False
 Specifies the culture to use when comparing strings.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -291,7 +291,7 @@ group with that object as its member.
 To group the objects in a collection, pipe the objects to `Group-Object`.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -307,7 +307,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet omits the members of a group from the results.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -323,12 +323,16 @@ Accept wildcard characters: False
 Specifies the properties for grouping. The objects are arranged into groups based on the value of
 the specified property.
 
-The value of the **Property** parameter can be a new calculated property. To create a calculated,
-property, create a hash table with an **Expression** key that specifies a string or script block
-value.
+The value of the **Property** parameter can be a new calculated property. The calculated property
+can be a script block or a hash table. Valid key-value pairs are:
+
+- Expression - `<string>` or `<script block>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -389,6 +393,8 @@ type. When grouping objects of different .NET Core types, `Group-Object` uses th
   in the final **GroupInfo** object output in a group named `AutomationNull.Value`.
 
 ## RELATED LINKS
+
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md)
 

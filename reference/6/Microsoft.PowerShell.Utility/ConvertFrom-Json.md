@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/10/2019
+ms.date: 10/19/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
@@ -33,7 +33,10 @@ To generate a JSON string from any object, use the `ConvertTo-Json` cmdlet.
 This cmdlet was introduced in PowerShell 3.0.
 
 > [!NOTE]
-> Beginning with PowerShell 6, this cmdlet supports JSON with comments.
+> Beginning with PowerShell 6, this cmdlet supports JSON with comments. Accepted comments are
+> started with two forward slashes (`//`). The comment will not be represented in the data and can
+> be written in the file without corrupting the data or throwing an error as it did in PowerShell
+> 5.1.
 
 ## EXAMPLES
 
@@ -81,7 +84,8 @@ that can be managed in PowerShell.
 $j = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/issues' | ConvertFrom-Json
 ```
 
-You can also use the `Invoke-RestMethod` cmdlet, which automatically converts JSON content to objects.
+You can also use the `Invoke-RestMethod` cmdlet, which automatically converts JSON content to
+objects.
 
 ### Example 3: Convert a JSON string to a custom object
 
@@ -98,31 +102,32 @@ custom object.
 
 ### Example 4: Convert a JSON string to a hash table
 
-This command shows an example where the `-AsHashtable` switch can overcome limitations of the command.
+This command shows an example where the `-AsHashtable` switch can overcome limitations of the
+command.
 
 ```powershell
 '{ "key":"value1", "Key":"value2" }' | ConvertFrom-Json -AsHashtable
 ```
 
-The JSON string contains two key value pairs with keys that differ only in casing. Without the switch,
-the command would have thrown an error.
+The JSON string contains two key value pairs with keys that differ only in casing. Without the
+switch, the command would have thrown an error.
 
 ## PARAMETERS
 
 ### -AsHashtable
 
-Converts the JSON to a hash table object. This switch was introduced in PowerShell 6.0.
-There are several scenarios where it can overcome some limitations of the `ConvertFrom-Json` cmdlet.
+Converts the JSON to a hash table object. This switch was introduced in PowerShell 6.0. There are
+several scenarios where it can overcome some limitations of the `ConvertFrom-Json` cmdlet.
 
 - If the JSON contains a list with keys that only differ in casing. Without the switch, those keys
   would be seen as identical keys and therefore only the last one would get used.
 - If the JSON contains a key that is an empty string. Without the switch, the cmdlet would throw an
   error since a `PSCustomObject` does not allow for that but a hash table does. An example use case
- where this can occurs are `project.lock.json` files.
+  where this can occurs are `project.lock.json` files.
 - Hash tables can be processed faster for certain data structures.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -135,13 +140,12 @@ Accept wildcard characters: False
 
 ### -Depth
 
-Gets or sets the maximum depth the JSON input is allowed to have.
-By default, it is 1024.
+Gets or sets the maximum depth the JSON input is allowed to have. By default, it is 1024.
 
 This parameter was introduced in PowerShell 6.2.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -163,7 +167,7 @@ object is an empty string, `ConvertFrom-Json` does not generate any output. The 
 value cannot be `$null`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -195,7 +199,17 @@ You can pipe a JSON string to `ConvertFrom-Json`.
 
 ## NOTES
 
-The `ConvertFrom-Json` cmdlet is implemented using [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
+This cmdlet is implemented using [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
+
+Beginning in PowerShell 6, `ConvertTo-Json` attempts to convert strings formatted as timestamps to
+**DateTime** values. The converted value is a `[datetime]` instance with a `Kind` property set as
+follows:
+
+- `Unspecified`, if there is no time zone information in the input string.
+- `Utc`, if the time zone information is a trailing `Z`.
+- `Local`, if the time zone information is given as a trailing UTC _offset_ like `+02:00`. The
+  offset is properly converted to the caller's configured time zone. The default output formatting
+  does not indicate the original time zone offset.
 
 ## RELATED LINKS
 

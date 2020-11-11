@@ -1,19 +1,8 @@
 ---
-title: "Requesting Confirmation from Cmdlets | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "ConfirmImpact [PowerShell Programmer's Guide], described"
-  - "ShouldContinue [PowerShell Programmer's Guide], described"
-  - "user feedback [PowerShell Programmer's Guide], requesting"
-  - "ShouldProcess [PowerShell Programmer's Guide], described"
-  - "ConfirmPreference [PowerShell Programmer's Guide], described"
-ms.assetid: 37d6e87f-57b7-40bd-b645-392cf0b6e88e
-caps.latest.revision: 13
+ms.date: 09/13/2016
+ms.topic: reference
+title: Requesting Confirmation from Cmdlets
+description: Requesting Confirmation from Cmdlets
 ---
 # Requesting Confirmation from Cmdlets
 

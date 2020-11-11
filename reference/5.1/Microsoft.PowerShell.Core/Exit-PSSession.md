@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -29,6 +29,7 @@ The effect is the same as using **Exit-PSSession**.
 ## EXAMPLES
 
 ### Example 1: Start and stop an interactive session
+
 ```
 PS C:\> Enter-PSSession -computername Server01
 Server01\PS> Exit-PSSession
@@ -38,6 +39,7 @@ PS C:\>
 These commands start and then stop an interactive session with the Server01 remote computer.
 
 ### Example 2: Start and stop an interactive session by using a PSSession object
+
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01
 PS C:\> Enter-PSSession -Session $s
@@ -64,6 +66,7 @@ The final command displays the **PSSession** in the $s variable.
 The **State** property shows the **PSSession** is still open and available for use.
 
 ### Example 3: Use the Exit keyword to stop a session
+
 ```
 PS C:\> Enter-PSSession -computername Server01
 Server01\PS> exit
@@ -89,9 +92,9 @@ You cannot pipe objects to this cmdlet.
 This cmdlet does not return any output.
 
 ## NOTES
+
 * This cmdlet takes only the common parameters.
 
-*
 
 ## RELATED LINKS
 
@@ -110,5 +113,3 @@ This cmdlet does not return any output.
 [Receive-PSSession](Receive-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
-
-

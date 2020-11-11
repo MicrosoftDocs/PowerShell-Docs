@@ -1,9 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Security
 ms.date: 02/03/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-cmsmessage?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-cmsmessage?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-CmsMessage
 ---
@@ -54,8 +55,7 @@ path to the encrypted content. You can pipe the results of `Get-CmsMessage` to
 `Unprotect-CmsMessage` to decrypt the content, provided that you have information about the document
 encryption certificate that was used to encrypt the content.
 
-> [!NOTE]
-> This cmdlet is only available on Windows.
+Support for Linux and macOS was added in PowerShell 7.1.
 
 ## EXAMPLES
 
@@ -104,7 +104,7 @@ message, "Try the new Break All command," is the result.
 Specifies an encrypted string, or a variable containing an encrypted string.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByContent
 Aliases:
 
@@ -123,7 +123,7 @@ characters. If the path includes escape characters, enclose each one in single q
 Single quotation marks tell PowerShell not to interpret enclosed characters as escape characters.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByLiteralPath
 Aliases:
 
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 Specifies the path to encrypted content that you want to decrypt.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByPath
 Aliases:
 
@@ -170,5 +170,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Protect-CmsMessage](Protect-CmsMessage.md)
 
 [Unprotect-CmsMessage](Unprotect-CmsMessage.md)
-
 

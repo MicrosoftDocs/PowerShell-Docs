@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.WSMan.Management
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/set-wsmaninstance?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/set-wsmaninstance?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-WSManInstance
 ---
@@ -49,7 +49,7 @@ Set-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{address="*";
 ```
 
 ```Output
-cfg                   : https://schemas.microsoft.com/wbem/wsman/1/config/listener
+cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
 Address               : *
@@ -79,7 +79,7 @@ Set-WSManInstance -ResourceURI winrm/config -ValueSet @{MaxEnvelopeSizekb = "200
 ```
 
 ```Output
-cfg                 : https://schemas.microsoft.com/wbem/wsman/1/config
+cfg                 : http://schemas.microsoft.com/wbem/wsman/1/config
 lang                : en-US
 MaxEnvelopeSizekb   : 200
 MaxTimeoutms        : 60000
@@ -107,7 +107,7 @@ Set-WSManInstance -ResourceURI winrm/config/listener -ComputerName SERVER02 -Sel
 ```
 
 ```Output
-cfg                   : https://schemas.microsoft.com/wbem/wsman/1/config/listener
+cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
 Address               : *
@@ -150,7 +150,7 @@ This parameter is designed to be used when numerous computers establish remote c
 In this case, IIS hosts Web Services for Management (WS-Management ) for efficiency.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName
 Aliases:
 
@@ -178,7 +178,7 @@ This practice increases the security risk of the remote operation.
 If the remote computer is compromised, when credentials are passed to it, the credentials can be used to control the network session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: Microsoft.WSMan.Management.AuthenticationMechanism
 Parameter Sets: (All)
 Aliases: auth, am
 
@@ -200,7 +200,7 @@ They can be mapped only to local user accounts; they do not work with domain acc
 To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the PowerShell Cert: drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -221,7 +221,7 @@ When the remote computer is in a different domain from the user, you must use a 
 You can pipe a value for this parameter to the cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName
 Aliases: cn
 
@@ -246,7 +246,7 @@ The following string is a properly formatted value for this parameter:
 The URI must be fully qualified .
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: URI
 Aliases:
 
@@ -266,7 +266,7 @@ Or, enter a PSCredential object, such as one returned by the Get-Credential cmdl
 When you type a user name, you will be prompted for a password.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases: cred, c
 
@@ -283,18 +283,18 @@ Specifies the dialect to use in the filter predicate.
 This can be any dialect that is supported by the remote service.
 The following aliases can be used for the dialect URI:
 
-- WQL: `https://schemas.microsoft.com/wbem/wsman/1/WQL`
-- Selector: `https://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter`
+- WQL: `http://schemas.microsoft.com/wbem/wsman/1/WQL`
+- Selector: `http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter`
 - Association: `http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter`
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: https://schemas.microsoft.com/wbem/wsman/1/WQL
+Default value: http://schemas.microsoft.com/wbem/wsman/1/WQL
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -310,10 +310,10 @@ For example, the following command uses the FilePath parameter:
 This command calls the StopService method on the Spooler service by using input from a file.
 The file, Input.xml, contains the following content:
 
-`<p:StopService_INPUT xmlns:p="https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />`
+`<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />`
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Path
 
@@ -330,7 +330,7 @@ Specifies a section inside the instance that is to be updated or retrieved for t
 For example, to get the status of a spooler service, specify "-Fragment Status".
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -352,7 +352,7 @@ The following example demonstrates the syntax that passes the values 1, 2, and 3
 -OptionSet @{a=1;b=2;c=3}
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases: os
 
@@ -373,7 +373,7 @@ However, if the SkipCNCheck parameter is specified as part of the SessionOption 
 The SkipCNCheck parameter should be used only for trusted machines.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ComputerName
 Aliases:
 
@@ -392,12 +392,12 @@ The URI is used to identify a specific type of resource, such as disks or proces
 A URI consists of a prefix and a path to a resource.
 For example:
 
-`https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases: ruri
 
@@ -418,7 +418,7 @@ The following example shows how to enter a value for this parameter:
 -SelectorSet @{Name="WinRM";ID="yyy"}
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -436,7 +436,7 @@ Enter a SessionOption object that you create by using the New-WSManSessionOption
 For more information about the options that are available, see New-WSManSessionOption.
 
 ```yaml
-Type: SessionOption
+Type: Microsoft.WSMan.Management.SessionOption
 Parameter Sets: (All)
 Aliases: so
 
@@ -457,7 +457,7 @@ The UseSSL parameter lets you specify the additional protection of HTTPS instead
 If SSL is not available on the port that is used for the connection and you specify this parameter, the command fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName
 Aliases: ssl
 
@@ -475,7 +475,7 @@ You specify the management resource by using the ResourceURI parameter and the S
 The value of the ValueSet parameter must be a hash table.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -529,3 +529,4 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
+

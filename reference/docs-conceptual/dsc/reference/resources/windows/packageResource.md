@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC Package Resource
+description: DSC Package Resource
 ---
 # DSC Package Resource
 
@@ -10,6 +11,8 @@ title: DSC Package Resource
 The **Package** resource in Windows PowerShell Desired State Configuration (DSC) provides a
 mechanism to install or uninstall packages, such as Windows Installer and setup.exe packages, on a
 target node.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 

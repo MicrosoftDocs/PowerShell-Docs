@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimassociatedinstance?view=powershell-7&WT.mc_id=ps-gethelp
@@ -112,7 +112,7 @@ For example, if class A is associated with class B through two associations, AB1
 parameter can be used to specify the type of association, either AB1 or AB2.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -130,7 +130,7 @@ a command that creates or gets the CIM session, such as `New-CimSession` or `Get
 more information, see [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: SessionSet
 Aliases:
 
@@ -156,7 +156,7 @@ If multiple operations are being performed on the same computer, connecting usin
 gives better performance.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerSet
 Aliases: CN, ServerName
 
@@ -173,7 +173,7 @@ Specifies the input to this cmdlet. You can use this parameter, or you can pipe 
 cmdlet.
 
 ```yaml
-Type: CimInstance
+Type: Microsoft.Management.Infrastructure.CimInstance
 Parameter Sets: (All)
 Aliases: CimInstance
 
@@ -190,7 +190,7 @@ Returns objects with only key properties populated. This reduces the amount of d
 transferred over the network.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -210,7 +210,7 @@ Specifies the namespace for the CIM operation. The default namespace is root/cim
 > list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -233,7 +233,7 @@ parameter are not recoverable, because the operation on the server times out bef
 reconnect.
 
 ```yaml
-Type: UInt32
+Type: System.UInt32
 Parameter Sets: (All)
 Aliases: OT
 
@@ -251,7 +251,7 @@ is used to identify a specific type of resource, such as disks or processes, on 
 
 A URI consists of a prefix and a path to a resource. For example:
 
-- `https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+- `http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 - `http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
 
 By default, if you do not specify this parameter, the DMTF standard resource URI
@@ -267,7 +267,7 @@ If both the **ResourceUri** parameter and the **Filter** parameter are specified
 parameter is ignored.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -292,7 +292,7 @@ associations. For example, if class A is associated with classes B, C and D, the
 be used to restrict the output to a specific type (B, C or D).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -329,4 +329,3 @@ This cmdlet returns an object.
 [Get-CimClass](get-cimclass.md)
 
 [Get-CimInstance](get-ciminstance.md)
-

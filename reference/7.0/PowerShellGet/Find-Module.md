@@ -1,7 +1,7 @@
 ---
 external help file: PSModule-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PowerShellGet
 ms.date: 03/11/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-module?view=powershell-7&WT.mc_id=ps-gethelp
@@ -239,7 +239,7 @@ Specifies to include all versions of a module in the results. You cannot use the
 parameter with the **MinimumVersion**, **MaximumVersion**, or **RequiredVersion** parameters.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -255,7 +255,7 @@ Accept wildcard characters: False
 Specifies an array of commands to find in modules. A command can be a function or workflow.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -272,7 +272,7 @@ Specifies a user account that has rights to install a module for a specified pac
 source.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -289,7 +289,7 @@ Specifies the name, or part of the name, of modules that contain DSC resources. 
 conventions, performs an **OR** search when you provide multiple arguments.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -307,7 +307,7 @@ modules, this parameter is the equivalent of searching by using the Search bar o
 website.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -324,7 +324,7 @@ Indicates that this operation includes all modules that are dependent upon the m
 the **Name** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -347,7 +347,7 @@ parameter are as follows:
 - RoleCapability
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 Accepted values: DscResource, Cmdlet, Function, RoleCapability
@@ -365,7 +365,7 @@ Specifies the maximum, or latest, version of the module to include in the search
 **MaximumVersion** and **RequiredVersion** cannot be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -382,7 +382,7 @@ Specifies the minimum version of the module to include in results. **MinimumVers
 **RequiredVersion** cannot be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -399,7 +399,7 @@ Specifies the names of modules to search for in the repository. A comma-separate
 names is accepted. Wildcards are accepted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -415,7 +415,7 @@ Accept wildcard characters: True
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -432,7 +432,7 @@ Specifies a user account that has permission to use the proxy server that is spe
 **Proxy** parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -450,7 +450,7 @@ multiple repositories are registered. Accepts a comma-separated list of reposito
 repository, use `Register-PSRepository`. To display registered repositories, use `Get-PSRepository`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -467,7 +467,7 @@ Specifies the exact version number of the module to include in the results. **Re
 cannot be used in the same command as **MinimumVersion** or **MaximumVersion**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -483,7 +483,7 @@ Accept wildcard characters: False
 Specifies an array of role capabilities.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -500,7 +500,7 @@ Specifies an array of tags. Example tags include **DesiredStateConfiguration**, 
 **DSCResourceKit**, or **PSModule**.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

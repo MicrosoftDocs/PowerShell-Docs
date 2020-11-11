@@ -29,7 +29,13 @@ steps:
 
   # We run tests on Windows PowerShell. Changing to PowerShell core would need changes to the tests
 - powershell: |
-    Install-Module -Name Pester -Repository PSGallery -Force -SkipPublisherCheck
+    $pester5 = Get-Module -Name Pester -ListAvailable | Where-Object { $_.Version.Major -ge 5 }
+
+    if ($pester5) {
+      Write-Verbose -Message "Pester version 5+ found. Uninstalling it." -Verbose
+      Uninstall-Module -Name Pester -MinimumVersion 5.0.0 -Verbose
+    }
+    Install-Module -Name Pester -Repository PSGallery -Force -SkipPublisherCheck -RequiredVersion 4.10.1 -Verbose
     Import-Module "$(Build.SourcesDirectory)/tests/PowerShellDocsTests.psm1" -Force
     Invoke-Test
   displayName: Test

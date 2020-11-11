@@ -1,13 +1,8 @@
 ---
-title: "Tutorials for Writing Cmdlets | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d0b548aa-febf-45dd-bf71-2077730b9b73
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: Tutorials for Writing Cmdlets
+description: Tutorials for Writing Cmdlets
 ---
 # Tutorials for Writing Cmdlets
 

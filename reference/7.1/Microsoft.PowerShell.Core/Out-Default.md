@@ -1,10 +1,10 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 04/26/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/out-default?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/out-default?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Default
 ---
@@ -63,7 +63,7 @@ Get-Process | Select-Object -First 5 | Out-Default
 Accepts input to the cmdlet.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 Determines whether the output should be sent to PowerShell's transcription services.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -113,8 +113,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Format-Wide](../Microsoft.PowerShell.Utility/Format-Wide.md)
 
 [about_Format.ps1xml](About/about_Format.ps1xml.md)
-
-[Out-Default: Secrets Revealed](https://get-powershellblog.blogspot.com/2017/04/out-default-secrets-revealed.html)
 
 [How PowerShell Formatting and Outputting REALLY works](https://devblogs.microsoft.com/powershell/how-powershell-formatting-and-outputting-really-works/)
 

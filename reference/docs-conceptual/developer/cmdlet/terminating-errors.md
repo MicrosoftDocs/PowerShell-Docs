@@ -1,13 +1,8 @@
 ---
-title: "Terminating Errors | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b804e738-aefa-41bb-9649-f9ed897fd96c
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: Terminating Errors
+description: Terminating Errors
 ---
 # Terminating Errors
 

@@ -1,13 +1,8 @@
 ---
-title: "CustomControl Element for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 2edac16c-0b30-4985-ac84-0821aa9a9f6d
-caps.latest.revision: 12
+ms.date: 09/13/2016
+ms.topic: reference
+title: CustomControl Element for View (Format)
+description: CustomControl Element for View (Format)
 ---
 # CustomControl Element for View (Format)
 

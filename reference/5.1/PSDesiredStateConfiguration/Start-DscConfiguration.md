@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/start-dscconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,6 +17,7 @@ Applies configuration to nodes.
 ## SYNTAX
 
 ### ComputerNameAndPathSet (Default)
+
 ```
 Start-DscConfiguration [-Wait] [-Force] [[-Path] <String>] [[-ComputerName] <String[]>]
  [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-JobName <String>] [-WhatIf] [-Confirm]
@@ -24,18 +25,21 @@ Start-DscConfiguration [-Wait] [-Force] [[-Path] <String>] [[-ComputerName] <Str
 ```
 
 ### CimSessionAndPathSet
+
 ```
 Start-DscConfiguration [-Wait] [-Force] [[-Path] <String>] -CimSession <CimSession[]> [-ThrottleLimit <Int32>]
  [-JobName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ComputerNameAndUseExistingSet
+
 ```
 Start-DscConfiguration [-Wait] [-Force] [[-ComputerName] <String[]>] [-Credential <PSCredential>]
  [-ThrottleLimit <Int32>] [-UseExisting] [-JobName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimSessionAndUseExistingSet
+
 ```
 Start-DscConfiguration [-Wait] [-Force] -CimSession <CimSession[]> [-ThrottleLimit <Int32>] [-UseExisting]
  [-JobName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -55,6 +59,7 @@ Specify the *Verbose* parameter to see details of what the cmdlet does when it a
 ## EXAMPLES
 
 ### Example 1: Apply configuration settings
+
 ```
 PS C:\> Start-DscConfiguration -Path "C:\DSC\Configurations\"
 ```
@@ -63,6 +68,7 @@ This command applies the configuration settings from C:\DSC\Configurations\ to t
 The command returns **Job** objects for each target node deployed to.
 
 ### Example 2: Apply configuration settings and wait for configuration to complete
+
 ```
 PS C:\> Start-DscConfiguration -Path "C:\DSC\Configurations\" -Wait -Verbose
 ```
@@ -75,6 +81,7 @@ The command includes the *Wait* parameter.
 Therefore, you cannot use the console until the command finishes all configuration tasks.
 
 ### Example 3: Apply configuration settings by using a CIM session
+
 ```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Start-DscConfiguration -Path "C:\DSC\Configurations\" -CimSession $Session
@@ -97,11 +104,11 @@ The command creates **Job** objects for each configured computer.
 
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
+Enter a computer name or a session object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet.
 The default is the current session on the local computer.
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: CimSessionAndPathSet, CimSessionAndUseExistingSet
 Aliases:
 
@@ -117,7 +124,7 @@ Specifies an array of computer names.
 This parameter restricts the computers that have configuration documents in the *Path* parameter to those specified in the array.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerNameAndPathSet, ComputerNameAndUseExistingSet
 Aliases: CN, ServerName
 
@@ -134,7 +141,7 @@ To obtain a **PSCredential** object, use the Get-Credential cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ComputerNameAndPathSet, ComputerNameAndUseExistingSet
 Aliases:
 
@@ -150,7 +157,7 @@ Stops the configuration operation currently running on the target computer and b
 If the **RefreshMode** property of the Local Configuration Manager is set to **Pull**, specifying this parameter changes it to **Push**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -170,7 +177,7 @@ By default, Windows PowerShell assigns the name JobN where N is an integer.
 If you specify the *Wait* parameter, do not specify this parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -187,7 +194,7 @@ This cmdlet publishes and applies these configuration settings to computers that
 Each target node must have a settings file of the following format: NetBIOS Name.mof.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerNameAndPathSet, CimSessionAndPathSet
 Aliases:
 
@@ -204,7 +211,7 @@ If this parameter is omitted or a value of `0` is entered, then Windows PowerShe
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -219,10 +226,10 @@ Accept wildcard characters: False
 Indicates that this cmdlet applies the existing configuration.
 The configuration can exist on the target computer by enactment using **Start-DscConfiguration** or by publication using the Publish-DscConfiguration cmdlet.
 
-Before you specify this parameter for this cmdlet, review the information in [What's New in Windows PowerShell 5.0](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50)
+Before you specify this parameter for this cmdlet, review the information in [What's New in Windows PowerShell 5.0](/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50)
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerNameAndUseExistingSet, CimSessionAndUseExistingSet
 Aliases:
 
@@ -239,7 +246,7 @@ Indicates that the cmdlet blocks the console until it finishes all configuration
 If you specify this parameter, do not specify the *JobName* parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -254,7 +261,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -270,7 +277,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -305,5 +312,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Test-DscConfiguration](Test-DscConfiguration.md)
 
 [Update-DscConfiguration](Update-DscConfiguration.md)
-
-

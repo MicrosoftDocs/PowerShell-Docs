@@ -1,15 +1,8 @@
 ---
-title: "How to Validate an Argument Range | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "ValidateRange attribute, example"
-ms.assetid: 3cba3ab7-c3b6-4d17-aa17-88377496551b
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Validate an Argument Range
+description: How to Validate an Argument Range
 ---
 # How to Validate an Argument Range
 

@@ -1,101 +1,58 @@
 ---
+description:  Explains how to create objects in PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 06/03/2019
+Locale: en-US
+ms.date: 09/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_object_creation?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Object_Creation
 ---
 # About Object Creation
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains how to create objects in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 You can create objects in PowerShell and use the objects that you create in
 commands and scripts.
 
 There are many ways to create objects, this list is not definitive:
 
-- [New-Object](../../Microsoft.PowerShell.Utility/New-Object.md): Creates an
+- [New-Object](xref:Microsoft.PowerShell.Utility.New-Object): Creates an
   instance of a .NET Framework object or COM object.
-- [Import-Csv](../../Microsoft.PowerShell.Utility/Import-CSV.md)/
-  [ConvertFrom-CSV](../../Microsoft.PowerShell.Utility/ConvertFrom-CSV.md):
+- [Import-Csv](xref:Microsoft.PowerShell.Utility.Import-Csv)/
+  [ConvertFrom-CSV](xref:Microsoft.PowerShell.Utility.ConvertFrom-Csv):
   Creates custom objects (**PSCustomObject**) from the items defined as comma
   separated values.
-- [ConvertFrom-Json](../../Microsoft.PowerShell.Utility/ConvertFrom-Json.md):
+- [ConvertFrom-Json](xref:Microsoft.PowerShell.Utility.ConvertFrom-Json):
   Creates custom objects defined in JavaScript Object Notation (JSON).
-- [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md):
+- [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData):
   Creates custom objects defined as key value pairs.
-- [Add-Type](../../Microsoft.PowerShell.Utility/Add-Type.md): Allows you to
+- [Add-Type](xref:Microsoft.PowerShell.Utility.Add-Type): Allows you to
   define a class in your PowerShell session that you can instantiate with
   `New-Object`.
-- [New-Module](../New-Module.md): The **AsCustomObject** parameter creates a
+- [New-Module](xref:Microsoft.PowerShell.Core.New-Module): The **AsCustomObject** parameter creates a
   custom object you define using script block.
-- [Add-Member](../../Microsoft.PowerShell.Utility/Add-Member.md): Adds
+- [Add-Member](xref:Microsoft.PowerShell.Utility.Add-Member): Adds
   properties to existing objects. You can use `Add-Member` to create a custom
   object out of a simple type, like `[System.Int32]`.
-- [Select-Object](../../Microsoft.PowerShell.Utility/Select-Object.md): Selects
+- [Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object): Selects
   properties on an object. You can use `Select-Object` to create custom and
   calculated properties on an already instantiated object.
 
 The following additional methods are covered in this article:
 
-- Static `new` operator: Beginning in PowerShell 5.0, you can create objects by
-  calling a type's constructor using a static `new` operator.
-- [System.Activator](/dotnet/api/system.activator) class: Creates objects
-  given the assembly name and type name.
-- Hash tables: Beginning in PowerShell 3.0, you can create objects
-  from hash tables of property names and property values.
+- By calling a type's constructor using a static `new()` method
+- By typecasting hash tables of property names and property values
 
-### Determining constructors for a type
+## Static new() method
 
-You can determine the available constructors for a given type using the
-following sample script.
+All .NET types have a `new()` method that allows you to construct instances
+more easily. You can also see all the available constructors for a given type.
 
-```powershell
-function Get-Constructors ([type]$type)
-{
-    foreach ($constr in $type.GetConstructors())
-    {
-        $params = ''
-        foreach ($parameter in $constr.GetParameters())
-        {
-            if ($params -eq '') {
-                $params =  "{0} {1}" -f $parameter.parametertype.fullname,
-                    $parameter.name
-            } else {
-              $params +=  ", {0} {1}" -f $parameter.parametertype.fullname,
-                  $parameter.name
-            }
-        }
-        Write-Host $($constr.DeclaringType.Name) "($params)"
-    }
-}
-Get-Constructors "System.String"
-```
-
-```Output
-String (System.Char[] value)
-String (System.Char[] value, System.Int32 startIndex, System.Int32 length)
-String (System.Char* value)
-String (System.Char* value, System.Int32 startIndex, System.Int32 length)
-String (System.SByte* value)
-String (System.SByte* value, System.Int32 startIndex, System.Int32 length)
-String (System.SByte* value, System.Int32 startIndex, System.Int32 length, System.Text.Encoding enc)
-String (System.Char c, System.Int32 count)
-String (System.ReadOnlySpan`1[[System.Char, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] value)
-```
-
-### Static new() method
-
-Beginning in PowerShell 5.0, all .NET types have an added `new` operator which
-allows you to construct instances more easily. You can also see all the
-available constructors for a given type.
-
-To see the constructors for a type, specify the `new` static method after the
+To see the constructors for a type, specify the `new` method name after the
 type name and press `<ENTER>`.
 
 ```powershell
@@ -131,42 +88,60 @@ You can use the following sample to determine what .NET types are currently
 loaded for you to instantiate.
 
 ```powershell
-[AppDomain]::CurrentDomain.GetAssemblies() | ForEach-Object {
-                $_.GetExportedTypes() | ForEach-Object { $_.FullName }
-} | Out-Host -Paging
+[AppDomain]::CurrentDomain.GetAssemblies() |
+  ForEach-Object {
+    $_.GetExportedTypes() |
+      ForEach-Object { $_.FullName }
+  }
 ```
 
-### System.Activator class
+Objects created using the `new()` method may not have the same properties as
+objects of the same type that are created by PowerShell cmdlets. PowerShell
+cmdlets, providers, and Extended Type System can add extra properties to the
+instance.
 
-The **System.Activator** class allows you to create a type by specifying the
-assembly and type name.
-
-You can view the static methods of the **System.Activator** class using
-`Get-Member` with the **Static** parameter.
-
-```powershell
-[System.Activator] | Get-Member -Static
-```
-
-The following example creates a **System.Diagnostics.Stopwatch** using the
-**CreateInstance** static method which takes a type and array of arguments.
-The **System.Diagnostics.Stopwatch** constructor takes no arguments, so we
-pass an empty array.
+For example, the FileSystem provider in PowerShell adds six **NoteProperty**
+values to the **DirectoryInfo** object returned by `Get-Item`.
 
 ```powershell
-[System.Activator]::CreateInstance([System.Diagnostics.Stopwatch], @())
+$PSDirInfo = Get-Item /
+$PSDirInfo | Get-Member | Group-Object MemberType | Select-Object Count, Name
 ```
 
 ```Output
-IsRunning Elapsed  ElapsedMilliseconds ElapsedTicks
---------- -------  ------------------- ------------
-    False 00:00:00                   0            0
+Count Name
+----- ----
+    4 CodeProperty
+   13 Property
+    6 NoteProperty
+    1 ScriptProperty
+   18 Method
 ```
 
-### CREATE OBJECTS FROM HASH TABLES
+When you create a **DirectoryInfo** object directly, it does not have those six
+**NoteProperty** values.
 
-Beginning in PowerShell 3.0, you can create an object from a hash table of
-properties and property values.
+```powershell
+$NewDirInfo = [System.IO.DirectoryInfo]::new('/')
+$NewDirInfo | Get-Member | Group-Object MemberType | Select-Object Count, Name
+```
+
+```Output
+Count Name
+----- ----
+    4 CodeProperty
+   13 Property
+    1 ScriptProperty
+   18 Method
+```
+
+For more information about the Extended Type System, see [about_Types.ps1xml](about_Types.ps1xml.md).
+
+This feature was added in PowerShell 5.0
+
+## Create objects from hash tables
+
+You can create an object from a hash table of properties and property values.
 
 The syntax is as follows:
 
@@ -177,14 +152,15 @@ The syntax is as follows:
 }
 ```
 
-This method works only for classes that have a null constructor, that is, a
-constructor that has no parameters. The object properties must be public and
-settable.
+This method works only for classes that have a parameterless constructor. The
+object properties must be public and settable.
 
-### CREATE CUSTOM OBJECTS FROM HASH TABLES
+This feature was added in PowerShell version 3.0
+
+## Create custom objects from hash tables
 
 Custom objects are very useful and are easy to create using the hash table
-method. The PSCustomObject class is designed specifically for this purpose.
+method. The **PSCustomObject** class is designed specifically for this purpose.
 
 Custom objects are an excellent way to return customized output from a function
 or script. This is more useful than returning formatted output that cannot be
@@ -238,12 +214,11 @@ standard objects.
  PSWorkflow
 ```
 
-#### CREATE NON-CUSTOM OBJECTS FROM HASH TABLES
+## Create non-custom objects from hash tables
 
-You can also use hash tables to create objects for non-custom classes. When
-you create an object for a non-custom class, the full namespace name is
-required unless class is in the **System** namespace. Use only the properties of
-the class.
+You can also use hash tables to create objects for non-custom classes. When you
+create an object for a non-custom class, the namespace-qualified type name is
+required, although you may omit any initial **System** namespace component.
 
 For example, the following command creates a session option object.
 
@@ -254,10 +229,10 @@ For example, the following command creates a session option object.
 }
 ```
 
-The requirements of the hash table feature, especially the null constructor
-requirement, eliminate many existing classes. However, most PowerShell option
-classes are designed to work with this feature, as well as other very useful
-classes, such as the **ProcessStartInfo** class.
+The requirements of the hash table feature, especially the parameterless
+constructor requirement, eliminate many existing classes. However, most
+PowerShell _option_ classes are designed to work with this feature, as well as
+other very useful classes, such as the **ProcessStartInfo** class.
 
 ```powershell
 [System.Diagnostics.ProcessStartInfo]@{
@@ -271,12 +246,12 @@ Arguments               :
 ArgumentList            : {}
 CreateNoWindow          : True
 EnvironmentVariables    : {OneDriveConsumer, PROCESSOR_ARCHITECTURE,
-                           CommonProgramFiles(x86), APPDATA…}
-Environment             : {[OneDriveConsumer, C:\Users\robreed\OneDrive],
+                           CommonProgramFiles(x86), APPDATA...}
+Environment             : {[OneDriveConsumer, C:\Users\user1\OneDrive],
                            [PROCESSOR_ARCHITECTURE, AMD64],
                            [CommonProgramFiles(x86),
                            C:\Program Files (x86)\Common Files],
-                           [APPDATA, C:\Users\robreed\AppData\Roaming]…}
+                           [APPDATA, C:\Users\user1\AppData\Roaming]...}
 RedirectStandardInput   : False
 RedirectStandardOutput  : False
 RedirectStandardError   : False
@@ -298,7 +273,7 @@ Register-ScheduledJob Name Test -FilePath .\Get-Inventory.ps1 -Trigger @{
 }
 ```
 
-### Generic Objects
+## Generic objects
 
 You can also create generic objects in PowerShell. Generics are classes,
 structures, interfaces, and methods that have placeholders (type parameters)
@@ -320,7 +295,7 @@ One     1
 
 For more information on Generics, see [Generics in .NET](/dotnet/standard/generics).
 
-## SEE ALSO
+## See also
 
 [about_Objects](about_Objects.md)
 
@@ -329,3 +304,5 @@ For more information on Generics, see [Generics in .NET](/dotnet/standard/generi
 [about_Properties](about_Properties.md)
 
 [about_Pipelines](about_Pipelines.md)
+
+[about_Types.ps1xml](about_Types.ps1xml.md)

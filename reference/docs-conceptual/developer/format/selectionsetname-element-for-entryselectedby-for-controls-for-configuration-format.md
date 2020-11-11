@@ -1,13 +1,8 @@
 ---
-title: "SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 42143d1e-7cda-4c4a-b568-fa1951bb9417
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)
+description: SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)
 ---
 # SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)
 

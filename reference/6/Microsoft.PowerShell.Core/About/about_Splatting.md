@@ -1,7 +1,8 @@
 ---
+description:  Describes how to use splatting to pass parameters to commands in PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 09/09/2019
+Locale: en-US
+ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Splatting
@@ -9,14 +10,14 @@ title: about_Splatting
 
 # About Splatting
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to use splatting to pass parameters to commands in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 Splatting is a method of passing a collection of parameter values to a command
-as unit. PowerShell associates each value in the collection with a command
+as a unit. PowerShell associates each value in the collection with a command
 parameter. Splatted parameter values are stored in named splatting variables,
 which look like standard variables, but begin with an At symbol (`@`) instead
 of a dollar sign (`$`). The At symbol tells PowerShell that you are passing a
@@ -30,7 +31,7 @@ functions.
 Beginning in Windows PowerShell 3.0, you can also use splatting to represent
 all parameters of a command.
 
-## SYNTAX
+## Syntax
 
 ```
 <CommandName> <optional parameters> @<HashTable> <optional parameters>
@@ -47,7 +48,7 @@ parameters. You may pass some parameters by using splatting and pass others by
 position or by parameter name. Also, you can splat multiple objects in a single
 command so you don't pass more than one value for each parameter.
 
-## SPLATTING WITH HASH TABLES
+## Splatting with hash tables
 
 Use a hash table to splat parameter name and value pairs. You can use this
 format for all parameter types, including positional and switch parameters.
@@ -80,11 +81,12 @@ $HashArguments = @{
 Copy-Item @HashArguments
 ```
 
-Note: In the first command, the At symbol (@) indicates a hash table, not a
-splatted value. The syntax for hash tables in PowerShell is:
-`@{\<name\>=\<value\>; \<name\>=\<value\>; ...}*`
+> [!NOTE]
+> In the first command, the At symbol (`@`) indicates a hash table, not a
+> splatted value. The syntax for hash tables in PowerShell is:
+> `@{<name>=<value>; <name>=<value>; ...}`
 
-## SPLATTING WITH ARRAYS
+## Splatting with arrays
 
 Use an array to splat values for positional parameters, which do not require
 parameter names. The values must be in position-number order in the array.
@@ -111,7 +113,47 @@ $ArrayArguments = "test.txt", "test2.txt"
 Copy-Item @ArrayArguments -WhatIf
 ```
 
-## EXAMPLES
+### Using the ArgumentList parameter
+
+Several cmdlets have an **ArgumentList** parameter that is used to pass
+parameter values to a script block that is executed by the cmdlet. The
+**ArgumentList** parameter takes an array of values that is passed to the
+script block. PowerShell is effectively using array splatting to bind the
+values to the parameters of the script block. When using **ArgumentList**, if
+you need to pass an array as a single object bound to a single parameter, you
+must wrap the array as the only element of another array.
+
+The following example has a script block that takes a single parameter that is
+an array of strings.
+
+```powershell
+$array = 'Hello', 'World!'
+Invoke-Command -ScriptBlock {
+  param([string[]]$words) $words -join ' '
+  } -ArgumentList $array
+```
+
+In this example, only the first item in `$array` is passed to the script block.
+
+```Output
+Hello
+```
+
+```powershell
+$array = 'Hello', 'World!'
+Invoke-Command -ScriptBlock {
+  param([string[]]$words) $words -join ' '
+} -ArgumentList (,$array)
+```
+
+In this example, `$array` is wrapped in an array so that the entire
+array is passed to the script block as a single object.
+
+```Output
+Hello World!
+```
+
+## Examples
 
 This example shows how to reuse splatted values in different commands. The
 commands in this example use the `Write-Host` cmdlet to write messages to the
@@ -186,7 +228,7 @@ Test2 -a 1 -b 2 -c 3
 3
 ```
 
-## SPLATTING COMMAND PARAMETERS
+## Splatting command parameters
 
 You can use splatting to represent the parameters of a command. This technique
 is useful when you are creating a proxy function, that is, a function that
@@ -278,7 +320,7 @@ FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell
                      Language:         English (United States)
 ```
 
-## NOTES
+## Notes
 
 If you make a function into an advanced function by using either the
 **CmdletBinding** or **Parameter** attributes, the `$args` automatic variable
@@ -289,7 +331,7 @@ PowerShell Desired State Configuration (DSC) was not designed to use splatting.
 You cannot use splatting to pass values into a DSC resource. For more
 information, see Gael Colas' article [Pseudo-Splatting DSC Resources](https://gaelcolas.com/2017/11/05/pseudo-splatting-dsc-resources/).
 
-## SEE ALSO
+## See also
 
 [about_Arrays](about_Arrays.md)
 

@@ -1,13 +1,8 @@
 ---
-title: "WideEntries Element for WideControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 0c4bff45-0960-4b3a-95e7-47f2cee03ac5
-caps.latest.revision: 12
+ms.date: 09/13/2016
+ms.topic: reference
+title: WideEntries Element for WideControl (Format)
+description: WideEntries Element for WideControl (Format)
 ---
 # WideEntries Element for WideControl (Format)
 

@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC Environment Resource
+description: DSC Environment Resource
 ---
 # DSC Environment Resource
 
@@ -9,6 +10,8 @@ title: DSC Environment Resource
 
 The **Environment** resource in Windows PowerShell Desired State Configuration (DSC) provides a
 mechanism to manage system environment variables.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 

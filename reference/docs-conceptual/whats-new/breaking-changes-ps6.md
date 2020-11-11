@@ -2,6 +2,7 @@
 ms.date: 02/03/2020
 keywords:  powershell,core
 title:  Breaking Changes for PowerShell 6.0
+description: This article summarizes the differences between Windows PowerShell 5.1 and PowerShell 6.0.
 ---
 
 # Breaking Changes for PowerShell 6.x
@@ -36,8 +37,8 @@ If there is a need to use checkpoints to resume a script after the OS restarts, 
 using Task Scheduler to run a script on OS startup, but the script would need to maintain
 its own state (like persisting it to a file).
 
-[workflow]: /powershell/scripting/components/workflows-guide
-[workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
+[workflow]: /previous-versions/powershell/scripting/components/workflows-guide
+[workflow-foundation]: /dotnet/framework/windows-workflow-foundation/
 
 ### Custom snap-ins
 
@@ -49,7 +50,7 @@ support custom snap-ins in PowerShell Core.
 
 Today, this breaks the `ActiveDirectory` and `DnsClient` modules in Windows and Windows Server.
 
-[snapin]: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins
+[snapin]: /powershell/module/microsoft.powershell.core/about/about_pssnapins
 
 ### WMI v1 cmdlets
 
@@ -292,8 +293,8 @@ Previously, when creating a PowerShell runspace programmatically using the API y
 legacy [`RunspaceConfiguration`][runspaceconfig] or the newer [`InitialSessionState`][iss]. This
 change removed support for `RunspaceConfiguration` and only supports `InitialSessionState`.
 
-[runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
-[iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
+[runspaceconfig]: /dotnet/api/system.management.automation.runspaces.runspaceconfiguration
+[iss]: /dotnet/api/system.management.automation.runspaces.initialsessionstate
 
 ### `CommandInvocationIntrinsics.InvokeScript` bind arguments to `$input` instead of `$args` [#4923](https://github.com/PowerShell/PowerShell/issues/4923)
 

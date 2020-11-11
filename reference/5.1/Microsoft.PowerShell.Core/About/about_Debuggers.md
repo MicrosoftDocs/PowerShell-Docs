@@ -1,6 +1,7 @@
 ---
+description: Describes the PowerShell debugger. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 08/06/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_debuggers?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -850,11 +851,11 @@ features that you can use to debug scripts and functions.
 
 ## SEE ALSO
 
-- [Disable-PSBreakpoint](../../Microsoft.PowerShell.Utility/Disable-PsBreakpoint.md)
-- [Enable-PSBreakpoint](../../Microsoft.PowerShell.Utility/Enable-PsBreakpoint.md)
-- [Get-PSBreakpoint](../../Microsoft.PowerShell.Utility/Get-PsBreakpoint.md)
-- [Get-PSCallStack](../../Microsoft.PowerShell.Utility/Get-PsCallStack.md)
-- [Remove-PSBreakpoint](../../Microsoft.PowerShell.Utility/Remove-PsBreakpoint.md)
-- [Set-PSBreakpoint](../../Microsoft.PowerShell.Utility/Set-PSBreakpoint.md)
-- [Write-Debug](../../Microsoft.PowerShell.Utility/Write-Debug.md)
-- [Write-Verbose](../../Microsoft.PowerShell.Utility/Write-Verbose.md)
+- [Disable-PSBreakpoint](xref:Microsoft.PowerShell.Utility.Disable-PSBreakpoint)
+- [Enable-PSBreakpoint](xref:Microsoft.PowerShell.Utility.Enable-PSBreakpoint)
+- [Get-PSBreakpoint](xref:Microsoft.PowerShell.Utility.Get-PSBreakpoint)
+- [Get-PSCallStack](xref:Microsoft.PowerShell.Utility.Get-PSCallStack)
+- [Remove-PSBreakpoint](xref:Microsoft.PowerShell.Utility.Remove-PSBreakpoint)
+- [Set-PSBreakpoint](xref:Microsoft.PowerShell.Utility.Set-PSBreakpoint)
+- [Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
+- [Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)

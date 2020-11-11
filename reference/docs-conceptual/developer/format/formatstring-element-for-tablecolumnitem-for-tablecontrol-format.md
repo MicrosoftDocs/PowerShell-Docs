@@ -1,13 +1,8 @@
 ---
-title: "FormatString Element for TableColumnItem for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8a150731-d4b4-4d63-8db5-f14d463c8c37
-caps.latest.revision: 13
+ms.date: 09/13/2016
+ms.topic: reference
+title: FormatString Element for TableColumnItem for TableControl (Format)
+description: FormatString Element for TableColumnItem for TableControl (Format)
 ---
 # FormatString Element for TableColumnItem for TableControl (Format)
 

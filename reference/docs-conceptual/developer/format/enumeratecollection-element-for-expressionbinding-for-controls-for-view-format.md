@@ -1,13 +1,8 @@
 ---
-title: "EnumerateCollection Element for ExpressionBinding for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 9e5d4cab-6d93-4d59-80cf-9ca0c0633309
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: EnumerateCollection Element for ExpressionBinding for Controls for View (Format)
+description: EnumerateCollection Element for ExpressionBinding for Controls for View (Format)
 ---
 # EnumerateCollection Element for ExpressionBinding for Controls for View (Format)
 

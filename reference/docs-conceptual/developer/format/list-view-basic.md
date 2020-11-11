@@ -1,13 +1,8 @@
 ---
-title: "List View (Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 918f381c-43e6-4594-a468-a40bfa8a16d6
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: List View (Basic)
+description: List View (Basic)
 ---
 # List View (Basic)
 

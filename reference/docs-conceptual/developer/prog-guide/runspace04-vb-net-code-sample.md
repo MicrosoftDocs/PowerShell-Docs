@@ -1,13 +1,8 @@
 ---
-title: "RunSpace04  (VB.NET) Code Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8f0dea3c-4354-4d7d-9823-5e6234c9a89e
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: RunSpace04  (VB.NET) Code Sample
+description: RunSpace04  (VB.NET) Code Sample
 ---
 # RunSpace04  (VB.NET) Code Sample
 

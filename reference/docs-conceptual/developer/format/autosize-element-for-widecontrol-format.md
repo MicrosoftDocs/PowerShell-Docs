@@ -1,13 +1,8 @@
 ---
-title: "AutoSize Element for WideControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: def37479-7b6e-40cf-bc81-0f7cbc651b31
-caps.latest.revision: 11
+ms.date: 09/13/2016
+ms.topic: reference
+title: AutoSize Element for WideControl (Format)
+description: AutoSize Element for WideControl (Format)
 ---
 # AutoSize Element for WideControl (Format)
 

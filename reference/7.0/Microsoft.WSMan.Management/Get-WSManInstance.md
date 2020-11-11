@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.WSMan.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/get-wsmaninstance?view=powershell-7&WT.mc_id=ps-gethelp
@@ -17,6 +17,7 @@ Displays management information for a resource instance specified by a Resource 
 ## SYNTAX
 
 ### GetInstance (Default)
+
 ```
 Get-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-ConnectionURI <Uri>] [-Dialect <Uri>]
  [-Fragment <String>] [-OptionSet <Hashtable>] [-Port <Int32>] [-ResourceURI] <Uri> [-SelectorSet <Hashtable>]
@@ -25,6 +26,7 @@ Get-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-Connect
 ```
 
 ### Enumerate
+
 ```
 Get-WSManInstance [-ApplicationName <String>] [-BasePropertiesOnly] [-ComputerName <String>]
  [-ConnectionURI <Uri>] [-Dialect <Uri>] [-Enumerate] [-Filter <String>] [-OptionSet <Hashtable>]
@@ -43,10 +45,11 @@ This cmdlet uses the WS-Management connection/transport layer to retrieve inform
 ## EXAMPLES
 
 ### Example 1: Get all information from WMI
+
 ```
 PS C:\> Get-WSManInstance -ResourceURI wmicimv2/win32_service -SelectorSet @{name="winrm"} -ComputerName "Server01"
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
-p                       : https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
+p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
 type                    : p:Win32_Service_Type
 lang                    : en-US
@@ -90,6 +93,7 @@ WaitHint                : 0
 This command returns all of the information that Windows Management Instrumentation (WMI) exposes about the **WinRM** service on the remote server01 computer.
 
 ### Example 2: Get the status of the Spooler service
+
 ```
 PS C:\> Get-WSManInstance -ResourceURI wmicimv2/win32_service -SelectorSet @{name="spooler"} -Fragment Status -ComputerName "Server01"
 XmlFragment=OK
@@ -98,10 +102,11 @@ XmlFragment=OK
 This command returns only the status of the **Spooler** service on the remote server01 computer.
 
 ### Example 3: Get endpoint references for all services
+
 ```
 PS C:\> Get-WSManInstance -Enumerate -ResourceURI wmicimv2/win32_service -ReturnType EPR
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
-p                       : https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
+p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
 type                    : p:Win32_Service_Type
 lang                    : en-US
@@ -138,10 +143,11 @@ WaitHint                : 0
 This command returns endpoint references that correspond to all the services on the local computer.
 
 ### Example 4: Get services that meet specified criteria
+
 ```
 PS C:\> Get-WSManInstance -Enumerate -ResourceURI wmicimv2/* -Filter "select * from win32_service where StartMode = 'Auto' and State = 'Stopped'" -ComputerName "Server01"
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
-p                       : https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
+p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
 type                    : p:Win32_Service_Type
 lang                    : en-US
@@ -180,9 +186,10 @@ This command lists all of the services that meet the following criteria on the r
 - The service is stopped.
 
 ### Example 5: Get listener configuration that matches criteria on the local computer
+
 ```
 PS C:\> Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"}
-cfg                   : https://schemas.microsoft.com/wbem/wsman/1/config/listener
+cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
 Address               : *
@@ -198,9 +205,10 @@ ListeningOn           : {100.0.0.1, 123.123.123.123, ::1, 2001:4898:0:fff:0:5efe
 This command lists the WS-Management listener configuration on the local computer for the listener that matches the criteria in the selector set.
 
 ### Example 6: Get listener configuration that matches criteria on a remote computer
+
 ```
 PS C:\> Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"} -ComputerName "Server01"
-cfg                   : https://schemas.microsoft.com/wbem/wsman/1/config/listener
+cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
 Address               : *
@@ -216,10 +224,11 @@ ListeningOn           : {100.0.0.1, 123.123.123.124, ::1, 2001:4898:0:fff:0:5efe
 This command lists the WS-Management listener configuration on the remote server01 computer for the listener that matches the criteria in the selector set.
 
 ### Example 7: Get associated instances related to a specified instance
+
 ```
 PS C:\> Get-WSManInstance -Enumerate -Dialect Association -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
 xsi                       : http://www.w3.org/2001/XMLSchema-instance
-p                         : https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_ComputerSystem
+p                         : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_ComputerSystem
 cim                       : http://schemas.dmtf.org/wbem/wscim/1/common
 type                      : p:Win32_ComputerSystem_Type
 lang                      : en-US
@@ -277,7 +286,7 @@ UserName                  : FABRIKAM\testuser01
 WakeUpType                : 6
 Workgroup                 : Workgroup
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
-p                       : https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
+p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
 type                    : p:Win32_Service_Type
 lang                    : en-US
@@ -310,7 +319,7 @@ TagId                   : 0
 WaitHint                : 0
 
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
-p                       : https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_SystemDriver
+p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_SystemDriver
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
 type                    : p:Win32_SystemDriver_Type
 lang                    : en-US
@@ -343,6 +352,7 @@ This command gets the associated instances that are related to the specified ins
 You must enclose the filter in quotation marks, as shown in the example.
 
 ### Example 8: Get association instances related to a specified instance
+
 ```
 PS C:\> Get-WSManInstance -Enumerate -Dialect Association -Associations -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
 ```
@@ -369,7 +379,7 @@ This parameter is designed to be used if many computers establish remote connect
 In this case, IIS hosts WS-Management for efficiency.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -385,7 +395,7 @@ Indicates that this cmdlet gets association instances, not associated instances.
 You can use this parameter only when the *Dialect* parameter has a value of Association.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Enumerate
 Aliases:
 
@@ -421,7 +431,7 @@ This practice increases the security risk of the remote operation.
 If the remote computer is compromised, when credentials are passed to it, the credentials can be used to control the network session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: Microsoft.WSMan.Management.AuthenticationMechanism
 Parameter Sets: (All)
 Aliases: auth, am
 Accepted values: None, Default, Digest, Negotiate, Basic, Kerberos, ClientCertificate, Credssp
@@ -438,7 +448,7 @@ Indicates that this cmdlet enumerates only the properties that are part of the b
 This parameter has no effect if the *Shallow* parameter is specified.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Enumerate
 Aliases: UBPO, Base
 
@@ -459,7 +469,7 @@ They can be mapped only to local user accounts; they do not work with domain acc
 To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the PowerShell Cert: drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -479,7 +489,7 @@ When the remote computer is in a different domain from the user, you must use a 
 You can pipe a value for this parameter to the cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: CN
 
@@ -503,7 +513,7 @@ The following string is a correctly formatted value for this parameter:
 The URI must be fully qualified.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases: CURI, CU
 
@@ -522,7 +532,7 @@ Or, enter a **PSCredential** object, such as one returned by the Get-Credential 
 When you type a user name, this cmdlet prompts you for a password.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases: cred, c
 
@@ -538,12 +548,12 @@ Specifies the dialect to use in the filter predicate.
 This can be any dialect that is supported by the remote service.
 The following aliases can be used for the dialect URI:
 
-- WQL `https://schemas.microsoft.com/wbem/wsman/1/WQL`
-- Selector `https://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter`
+- WQL `http://schemas.microsoft.com/wbem/wsman/1/WQL`
+- Selector `http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter`
 - Association `http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter`
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -558,7 +568,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet returns all of the instances of a management resource.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Enumerate
 Aliases:
 
@@ -583,7 +593,7 @@ If *Dialect* is Association, *Filter* must contain a string, and the string must
 `-filter:Object=EPR\[;AssociationClassName=AssocClassName\]\[;ResultClassName=ClassName\]\[;Role=RefPropertyName\]\[;ResultRole=RefPropertyName\]}`
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Enumerate
 Aliases:
 
@@ -601,7 +611,7 @@ For example, to get the status of a spooler service, specify the following:
 `-Fragment Status`
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: GetInstance
 Aliases:
 
@@ -622,7 +632,7 @@ The following example demonstrates the syntax that passes the values 1, 2, and 3
 `-OptionSet @{a=1;b=2;c=3}`
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases: OS
 
@@ -643,7 +653,7 @@ However, if the *SkipCNCheck* parameter is specified as part of the *SessionOpti
 The *SkipCNCheck* parameter should be used only for trusted computers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -661,12 +671,12 @@ The URI identifies a specific type of resource, such as disks or processes, on a
 A URI consists of a prefix and a path of a resource.
 For example:
 
-`https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases: RURI
 
@@ -693,7 +703,7 @@ Endpoint references contain information about the resource URI and the selectors
 If you specify ObjectAndEPR, this cmdlet returns both the object and its associated endpoint references.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Enumerate
 Aliases: RT
 Accepted values: object, epr, objectandepr
@@ -715,7 +725,7 @@ The following example shows how to enter a value for this parameter:
 `-SelectorSet @{Name="WinRM";ID="yyy"}`
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: GetInstance
 Aliases:
 
@@ -732,7 +742,7 @@ Enter a **SessionOption** object that you create by using the New-WSManSessionOp
 For more information about the options that are available, type `Get-Help New-WSManSessionOption`.
 
 ```yaml
-Type: SessionOption
+Type: Microsoft.WSMan.Management.SessionOption
 Parameter Sets: (All)
 Aliases: SO
 
@@ -748,7 +758,7 @@ Indicates that this cmdlet returns only instances of the base class that is spec
 If you do not specify this parameter,, this cmdlet returns instances of the base class that is specified in the URI and in all its derived classes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Enumerate
 Aliases:
 
@@ -768,7 +778,7 @@ The *UseSSL* parameter lets you specify the additional protection of HTTPS inste
 If SSL is not available on the port that is used for the connection, and you specify this parameter, the command fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: SSL
 

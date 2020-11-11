@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/reset-computermachinepassword?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -28,6 +28,7 @@ You can use it to reset the password of the local computer.
 ## EXAMPLES
 
 ### Example 1: Reset the password for the local computer
+
 ```
 PS C:\> Reset-ComputerMachinePassword
 ```
@@ -36,6 +37,7 @@ This command resets the computer password for the local computer.
 The command runs with the credentials of the current user.
 
 ### Example 2: Reset the password for the local computer by using a specified domain controller
+
 ```
 PS C:\> Reset-ComputerMachinePassword -Server "DC01" -Credential Domain01\Admin01
 ```
@@ -44,8 +46,10 @@ This command resets the computer password of the local computer by using the DC0
 It uses the *Credential* parameter to specify a user account that has permission to reset a computer password in the domain.
 
 ### Example 3: Reset the password on a remote computer
+
 ```
-PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Reset-ComputerMachinePassword}
+$cred = Get-Credential
+PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Reset-ComputerMachinePassword -Credential $using:cred}
 ```
 
 This command uses the Invoke-Command cmdlet to run a **Reset-ComputerMachinePassword** command on the Server01 remote computer.
@@ -64,7 +68,7 @@ If you type a user name, this cmdlet prompts you for a password.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -82,7 +86,7 @@ This parameter is optional.
 If you omit this parameter, a domain controller is chosen to service the command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -97,7 +101,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -113,7 +117,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -142,5 +146,3 @@ This cmdlet does not generate any output.
 ## RELATED LINKS
 
 ## RELATED LINKS
-
-

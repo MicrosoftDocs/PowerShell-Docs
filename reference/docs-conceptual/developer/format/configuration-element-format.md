@@ -1,13 +1,8 @@
 ---
-title: "Configuration Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d46df0cb-50b7-4b81-82ba-37186a7b7a7f
-caps.latest.revision: 28
+ms.date: 09/13/2016
+ms.topic: reference
+title: Configuration Element (Format)
+description: Configuration Element (Format)
 ---
 # Configuration Element (Format)
 

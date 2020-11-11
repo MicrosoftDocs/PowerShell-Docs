@@ -1,13 +1,8 @@
 ---
-title: "GetProc03 Code Samples | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8ad39c7d-2f64-49d1-9be0-d2295e4302b3
-caps.latest.revision: 5
+ms.date: 09/13/2016
+ms.topic: reference
+title: GetProc03 Code Samples
+description: GetProc03 Code Samples
 ---
 # GetProc03 Code Samples
 

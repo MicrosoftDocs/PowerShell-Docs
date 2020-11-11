@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/27/2019
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-table?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Table
@@ -94,13 +94,13 @@ own `format.ps1xml` files with customized views.
 
 ### Example 4: Use a custom view for table output
 
-In this example, a custom view displays a directory's contents. The custom view adds a column to the
-table output for **System.IO.DirectoryInfo** and **System.IO.FileInfo** objects created by
-`Get-ChildItem`.
+In this example, a custom view displays a directory's contents. The custom view adds the
+**CreationTime** column to the table output for **System.IO.DirectoryInfo** and
+**System.IO.FileInfo** objects created by `Get-ChildItem`.
 
-The custom view in this example was created from the `FileSystem.format.ps1xml` file that's stored
-in `$PSHOME` on PowerShell 5.1. For more information about views and the code used to create this
-example's view, see [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md#sample-xml-for-a-format-table-custom-view).
+The custom view in this example was created from the view defined in PowerShell source code. For
+more information about views and the code used to create this example's view, see
+[about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md#sample-xml-for-a-format-table-custom-view).
 
 ```powershell
 Get-ChildItem  -Path C:\Test | Format-Table -View mygciview
@@ -172,13 +172,13 @@ from the result of a `Get-Date` command, which gets the current date and time.
 
 ### Example 7: Format Notepad processes
 
-This example uses `Get-WmiObject` to get the running time for all **notepad** processes on the local
-computer. You can use `Get-WmiObject` with the **ComputerName** parameter to get information from
+This example uses `Get-CimInstance` to get the running time for all **notepad** processes on the local
+computer. You can use `Get-CimInstance` with the **ComputerName** parameter to get information from
 remote computers.
 
 ```powershell
-$Processes = Get-WmiObject -Class win32_process -Filter "name='notepad.exe'"
-$Processes | Format-Table ProcessName, @{ Label = "Total Running Time"; Expression={(Get-Date) - $_.ConvertToDateTime($_.CreationDate)}}
+$Processes = Get-CimInstance -Class win32_process -Filter "name='notepad.exe'"
+$Processes | Format-Table ProcessName, @{ Label = "Total Running Time"; Expression={(Get-Date) - $_.CreationDate}}
 ```
 
 ```Output
@@ -188,7 +188,7 @@ notepad.exe 03:39:39.6260693
 notepad.exe 00:19:56.1376922
 ```
 
-`Get-WmiObject` gets instances of the WMI **Win32_Process** class that describes all the local
+`Get-CimInstance` gets instances of the WMI **Win32_Process** class that describes all the local
 computer's processes named **notepad.exe**. The process objects are stored in the `$Processes`
 variable.
 
@@ -198,10 +198,8 @@ displays the **ProcessName** property and a new calculated property, **Total Run
 The command assigns the name of the new calculated property, **Total Running Time**, to the
 **Label** key. The **Expression** key's script block calculates how long the process has been
 running by subtracting the processes creation date from the current date. The `Get-Date` cmdlet gets
-the current date. The **ConvertToDateTime** method converts the **CreationDate** property of the
-**Win32_Process** object from a **WMI CIM_DATETIME** object to a .NET **DateTime** object that can
-be compared with the output of `Get-Date`. The converted creation date is subtracted from the
-current date. The result is the value of **Total Running Time**.
+the current date. The creation date is subtracted from the current date. The result is the value of
+**Total Running Time**.
 
 ### Example 8: Troubleshooting format errors
 
@@ -239,7 +237,7 @@ Indicates that the cmdlet adjusts the column size and number of columns based on
 data. By default, the column size and number are determined by the view.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -257,7 +255,7 @@ debugging aid when you're formatting expressions in a `Format-Table` command and
 troubleshoot the expressions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -282,7 +280,7 @@ The acceptable values for this parameter are as follows:
   collection.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: CoreOnly, EnumOnly, Both
@@ -301,7 +299,7 @@ Indicates that the cmdlet directs the cmdlet to display all the error informatio
 error or display streams, only some of the error information is displayed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -320,15 +318,18 @@ Specifies sorted output in separate tables based on a property value. For exampl
 Enter an expression or a property. The **GroupBy** parameter expects that the objects are sorted.
 Use the `Sort-Object` cmdlet before using `Format-Table` to group the objects.
 
-The value of the **GroupBy** parameter can be a new calculated property. To create a calculated,
-property, use a hash table. The valid keys are as follows:
+The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
+be a script block or a hash table. Valid key-value pairs are:
 
-- Name (or Label) = `<string>`
-- Expression = `<string>` or `<script block>`
-- FormatString = `<string>`
+- Name (or Label) - `<string>`
+- Expression - `<string>` or `<script block>`
+- FormatString - `<string>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -344,7 +345,7 @@ Accept wildcard characters: False
 Omits the column headings from the table.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -361,7 +362,7 @@ Specifies the objects to format. Enter a variable that contains the objects, or 
 expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -386,17 +387,20 @@ objects have **PropertyA**, **PropertyB**, and **PropertyC**, then only the **Pr
 The **Property** parameter is optional. You can't use the **Property** and **View** parameters in
 the same command.
 
-The value of the **Property** parameter can be a new calculated property. To create a calculated
-property, use a hash table. The valid keys are as follows:
+The value of the **Property** parameter can be a new calculated property. The calculated property can
+be a script block or a hash table. Valid key-value pairs are:
 
-- Name (or Label) = `<string>`
-- Expression = `<string>` or `<script block>`
-- FormatString = `<string>`
-- Width = `<int32>`
-- Alignment = value can be Left, Center, or Right
+- Name (or Label) `<string>`
+- Expression - `<string>` or `<script block>`
+- FormatString - `<string>`
+- Width - `<int32>` - must be greater than `0`
+- Alignment - value can be `Left`, `Center`, or `Right`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -413,7 +417,7 @@ Repeats displaying the header of a table after every screen full. The repeated h
 the output is piped to a pager such as `less` or `more` or paging with a screen reader.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -430,7 +434,7 @@ This parameter sends errors through the pipeline. This parameter can be used as 
 you're formatting expressions in a `Format-Table` command and need to troubleshoot the expressions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -457,7 +461,7 @@ alternate view isn't a list or a table, use the `Format-Custom` cmdlet.
 You can't use the **Property** and **View** parameters in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -474,7 +478,7 @@ Displays text that exceeds the column width on the next line. By default, text t
 column width is truncated.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -508,6 +512,8 @@ You can send any object down the pipeline to `Format-Table`.
 
 ## RELATED LINKS
 
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
+
 [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md)
 
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md)
@@ -526,6 +532,6 @@ You can send any object down the pipeline to `Format-Table`.
 
 [Get-Member](Get-Member.md)
 
-[Get-WmiObject](../Microsoft.PowerShell.Management/Get-WmiObject.md)
+[Get-CimInstance](../CimCmdlets/Get-CimInstance.md)
 
 [Update-FormatData](Update-FormatData.md)

@@ -1,13 +1,8 @@
 ---
-title: "EntrySelectedBy Element for CustomEntry for CustomControl for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 7828b45b-eabf-4432-b127-131b4ef0c800
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: EntrySelectedBy Element for CustomEntry for CustomControl for View (Format)
+description: EntrySelectedBy Element for CustomEntry for CustomControl for View (Format)
 ---
 # EntrySelectedBy Element for CustomEntry for CustomControl for View (Format)
 

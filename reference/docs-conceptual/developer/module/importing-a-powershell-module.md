@@ -1,13 +1,8 @@
 ---
-title: "Importing a PowerShell Module | Microsoft Docs"
-ms.custom: ""
-ms.date: "02/03/2020"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 697791b3-2135-4a39-b9d7-8566ed67acf2
-caps.latest.revision: 13
+ms.date: 02/03/2020
+ms.topic: reference
+title: Importing a PowerShell Module
+description: Importing a PowerShell Module
 ---
 # Importing a PowerShell Module
 

@@ -1,13 +1,8 @@
 ---
-title: "PropertyName Element for ItemSelectionCondition for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 221cbdc2-f794-4f3a-9d40-bfdd8cba1013
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: PropertyName Element for ItemSelectionCondition for GroupBy (Format)
+description: PropertyName Element for ItemSelectionCondition for GroupBy (Format)
 ---
 # PropertyName Element for ItemSelectionCondition for GroupBy (Format)
 

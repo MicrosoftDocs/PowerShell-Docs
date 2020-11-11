@@ -1,8 +1,9 @@
 ---
+description:  PowerShell logs internal operations from the engine, providers, and cmdlets.
 keywords: powershell
-locale: en-us
-ms.date: 12/14/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.x&WT.mc_id=ps-gethelp
+Locale: en-US
+ms.date: 03/30/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging_Non-Windows
 ---
@@ -10,7 +11,6 @@ title: about_Logging_Non-Windows
 # About Logging Non-Windows
 
 ## Short description
-
 PowerShell logs internal operations from the engine, providers, and cmdlets.
 
 ## Long description
@@ -161,6 +161,11 @@ You can get help for `log` by running `log show --help` for additional details.
 > within. This avoids the need to escape double quote characters within the
 > predicate string.
 
+You may also want to consider saving the event logs to a more secure location
+such as a central event log collector, or [SIEM][] aggregator. You can set up
+SIEM in Azure. For more information, see
+[Generic SIEM integration](/cloud-app-security/siem).
+
 ## Configuring logging on a non-Windows system
 
 On Windows, logging is configured by creating ETW trace listeners or by using
@@ -268,3 +273,8 @@ For macOS **os_log** information, see
 [os_log developer documentation](https://developer.apple.com/documentation/os/os_log).
 
 [about_Logging_Windows](about_Logging_Windows.md)
+
+[Generic SIEM integration](/cloud-app-security/siem)
+
+<!-- link references -->
+[SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management

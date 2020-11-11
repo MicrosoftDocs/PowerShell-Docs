@@ -1,13 +1,8 @@
 ---
-title: "Windows PowerShell01 Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: Windows PowerShell01 Sample
+description: Windows PowerShell01 Sample
 ---
 # Windows PowerShell01 Sample
 

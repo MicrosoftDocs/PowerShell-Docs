@@ -1,6 +1,7 @@
 ---
+description: Describes the operators that connect statements in PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logical_operators?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -63,13 +64,13 @@ determine the truth value of the statement. If the left operand in a statement
 that contains the and operator is FALSE, the right operand is not evaluated.
 If the left operand in a statement that contains the or statement is TRUE, the
 right operand is not evaluated. As a result, you can use these statements in
-the same way that you would use the If statement.
+the same way that you would use the `If` statement.
 
 ## SEE ALSO
 
 [about_Operators](about_Operators.md)
 
-[Compare-Object](../../Microsoft.PowerShell.Utility/Compare-Object.md)
+[Compare-Object](xref:Microsoft.PowerShell.Utility.Compare-Object)
 
 [about_Comparison_operators](about_Comparison_Operators.md)
 

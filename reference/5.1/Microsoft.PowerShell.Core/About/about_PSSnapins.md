@@ -1,6 +1,7 @@
 ---
+description:  Describes  Windows PowerShell snap-ins and shows how to use and manage them.
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -30,10 +31,11 @@ to a console file and then use it in future sessions. You can even save
 multiple console files, each with a different set of snap-ins.
 
 NOTE: Windows PowerShell snap-ins (PSSnapins) are available for use in Windows
-PowerShell 3.0 and Windows PowerShell 2.0. They might be altered or
-unavailable in subsequent versions. To package Windows PowerShell cmdlets and
-providers, use modules. For information about creating modules and converting
-snap-ins to modules, see [Writing a Windows PowerShell Module](/powershell/scripting/developer/module/writing-a-windows-powershell-module).
+PowerShell 3.0 and Windows PowerShell 2.0. They might be altered or unavailable
+in subsequent versions. To package Windows PowerShell cmdlets and providers,
+use modules. For information about creating modules and converting snap-ins to
+modules, see
+[Writing a Windows PowerShell Module](/powershell/scripting/developer/module/writing-a-windows-powershell-module).
 
 ### FINDING SNAP-INS
 
@@ -71,8 +73,7 @@ snap-in, you must first register the snap-in (add it to the registry).
 Most snap-ins include an installation program (an .exe or .msi file) that
 registers the .dll file for you. However, if you receive a snap-in as a .dll
 file, you can register it on your system. For more information, see
-[How to Register Cmdlets, Providers, and Host Applications](https://go.microsoft.com/fwlink/?LinkID=143619)
-in the MSDN library.
+[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
 
 To get all the registered snap-ins on your system or to verify that a snap-in
 is registered, type:
@@ -198,15 +199,15 @@ information, see [about_EventLogs](about_EventLogs.md).
 
 ## SEE ALSO
 
-[Add-PsSnapin](../Add-PsSnapin.md)
+[Add-PsSnapin](xref:Microsoft.PowerShell.Core.Add-PSSnapin)
 
-[Get-PsSnapin](../Get-PsSnapin.md)
+[Get-PsSnapin](xref:Microsoft.PowerShell.Core.Get-PSSnapin)
 
-[Remove-PsSnapin](../Remove-PsSnapin.md)
+[Remove-PsSnapin](xref:Microsoft.PowerShell.Core.Remove-PSSnapin)
 
-[Export-Console](../Export-Console.md)
+[Export-Console](xref:Microsoft.PowerShell.Core.Export-Console)
 
-[Get-Command](../Get-Command.md)
+[Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
 
 [about_Profiles](about_Profiles.md)
 

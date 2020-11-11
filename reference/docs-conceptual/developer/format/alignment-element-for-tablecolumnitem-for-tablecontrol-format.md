@@ -1,13 +1,8 @@
 ---
-title: "Alignment Element for TableColumnItem for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b07a53df-64f1-49b0-8cea-c993b3f1f76b
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: Alignment Element for TableColumnItem for TableControl (Format)
+description: Alignment Element for TableColumnItem for TableControl (Format)
 ---
 # Alignment Element for TableColumnItem for TableControl (Format)
 

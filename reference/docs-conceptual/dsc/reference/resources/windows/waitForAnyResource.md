@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC WaitForAny Resource
+description: DSC WaitForAny Resource
 ---
 # DSC WaitForAny Resource
 
@@ -10,13 +11,15 @@ title: DSC WaitForAny Resource
 The **WaitForAny** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](../../../configurations/configurations.md)
 to specify dependencies on configurations on other nodes.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 This resource succeeds if the resource specified by the **ResourceName** property is in the desired
 state on any target nodes defined in the **NodeName** property.
 
 > [!NOTE]
 > **WaitForAny** resource uses Windows Remote Management to check the state of other Nodes. For more
 > information about port and security requirements for WinRM, see
-> [PowerShell Remoting Security Considerations](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
+> [PowerShell Remoting Security Considerations](/powershell/scripting/learn/remoting/winrmsecurity).
 
 ## Syntax
 

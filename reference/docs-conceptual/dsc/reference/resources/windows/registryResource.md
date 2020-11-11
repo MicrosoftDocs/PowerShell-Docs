@@ -1,7 +1,8 @@
 ---
-ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 07/16/2020
+ms.topic: reference
 title: DSC Registry Resource
+description: DSC Registry Resource
 ---
 # DSC Registry Resource
 
@@ -9,6 +10,8 @@ title: DSC Registry Resource
 
 The **Registry** resource in Windows PowerShell Desired State Configuration (DSC) provides a
 mechanism to manage registry keys and values on a target node.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## Syntax
 
@@ -50,9 +53,11 @@ Registry [string] #ResourceName
 > The **PsDscRunAsCredential** common property was added in WMF 5.0 to allow running any DSC
 > resource in the context of other credentials. For more information, see [Use Credentials with DSC Resources](../../../configurations/runasuser.md).
 
-## Example
+## Examples
 
-This example ensures that a key named "ExampleKey" is present in the **HKEY\_LOCAL\_MACHINE** hive.
+### Example 1: Ensure specified Value and Data under specified registry key
+
+This example ensures that the registry value "TestValue" under a key named "ExampleKey1" is present in the `HKEY\_LOCAL\_MACHINE` hive and has the data "TestData".
 
 ```powershell
 Configuration RegistryTest
@@ -60,9 +65,25 @@ Configuration RegistryTest
     Registry RegistryExample
     {
         Ensure      = "Present"  # You can also set Ensure to "Absent"
-        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey1"
         ValueName   = "TestValue"
         ValueData   = "TestData"
+    }
+}
+```
+
+### Example 2: Ensure specified registry key exists
+
+This example ensures that a key named "ExampleKey2" is present in the **HKEY\_LOCAL\_MACHINE** hive.
+
+```powershell
+Configuration RegistryTest
+{
+    Registry RegistryExample
+    {
+        Ensure      = "Present"  # You can also set Ensure to "Absent"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey2"
+        ValueName   = ""
     }
 }
 ```

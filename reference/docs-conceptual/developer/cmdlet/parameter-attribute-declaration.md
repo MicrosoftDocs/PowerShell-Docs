@@ -1,17 +1,8 @@
 ---
-title: "Parameter Attribute Declaration | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "attributes, Parameter"
-  - "Parameter attribute, described"
-  - "Parameter attribute"
-ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
-caps.latest.revision: 13
+ms.date: 09/13/2016
+ms.topic: reference
+title: Parameter Attribute Declaration
+description: Parameter Attribute Declaration
 ---
 # Parameter Attribute Declaration
 
@@ -67,13 +58,13 @@ Optional named parameter.Specifies the resource identifier for a Help message.
 
 - When you use parameter sets, note the following:
 
-    - Each parameter set must have at least one unique parameter. Good cmdlet design indicates this unique parameter should also be mandatory if possible. If your cmdlet is designed to be run without parameters, the unique parameter cannot be mandatory.
+  - Each parameter set must have at least one unique parameter. Good cmdlet design indicates this unique parameter should also be mandatory if possible. If your cmdlet is designed to be run without parameters, the unique parameter cannot be mandatory.
 
-    - No parameter set should contain more than one positional parameter with the same position.
+  - No parameter set should contain more than one positional parameter with the same position.
 
-    - Only one parameter in a parameter set should declare `ValueFromPipeline = true`. Multiple parameters can define `ValueFromPipelineByPropertyName = true`.
+  - Only one parameter in a parameter set should declare `ValueFromPipeline = true`. Multiple parameters can define `ValueFromPipelineByPropertyName = true`.
 
-    - Multiple parameters can define `ValueFromPipelineByPropertyName = true`.
+  - Multiple parameters can define `ValueFromPipelineByPropertyName = true`.
 
 - For more information about the guidelines for parameter names, see [Cmdlet Parameter Names](standard-cmdlet-parameter-names-and-types.md).
 

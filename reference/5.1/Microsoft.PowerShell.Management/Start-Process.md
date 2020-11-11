@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/18/2019
+ms.date: 08/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -19,24 +19,29 @@ Starts one or more processes on the local computer.
 
 ```
 Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-Credential <PSCredential>]
- [-WorkingDirectory <String>] [-LoadUserProfile] [-NoNewWindow] [-PassThru] [-RedirectStandardError <String>]
- [-RedirectStandardInput <String>] [-RedirectStandardOutput <String>] [-WindowStyle <ProcessWindowStyle>]
- [-Wait] [-UseNewEnvironment] [<CommonParameters>]
+ [-WorkingDirectory <String>] [-LoadUserProfile] [-NoNewWindow] [-PassThru]
+ [-RedirectStandardError <String>] [-RedirectStandardInput <String>]
+ [-RedirectStandardOutput <String>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [-UseNewEnvironment]
+ [<CommonParameters>]
 ```
 
 ### UseShellExecute
 
 ```
-Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-WorkingDirectory <String>] [-PassThru]
- [-Verb <String>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [<CommonParameters>]
+Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-WorkingDirectory <String>]
+ [-PassThru] [-Verb <String>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Start-Process` cmdlet starts one or more processes on the local computer. To specify the
-program that runs in the process, enter an executable file or script file, or a file that can be
-opened by using a program on the computer. If you specify a non-executable file, `Start-Process`
-starts the program that is associated with the file, similar to the `Invoke-Item` cmdlet.
+The `Start-Process` cmdlet starts one or more processes on the local computer. By default,
+`Start-Process` creates a new process that inherits all the environment variables that are defined
+in the current process.
+
+To specify the program that runs in the process, enter an executable file or script file, or a file
+that can be opened by using a program on the computer. If you specify a non-executable file,
+`Start-Process` starts the program that is associated with the file, similar to the `Invoke-Item`
+cmdlet.
 
 You can use the parameters of `Start-Process` to specify options, such as loading a user profile,
 starting the process in a new window, or using alternate credentials.
@@ -45,8 +50,8 @@ starting the process in a new window, or using alternate credentials.
 
 ### Example 1: Start a process that uses default values
 
-This example starts a process that uses the **Sort.exe** file in the current folder. The command
-uses all of the default values, including the default window style, working folder, and credentials.
+This example starts a process that uses the `Sort.exe` file in the current folder. The command uses
+all of the default values, including the default window style, working folder, and credentials.
 
 ```powershell
 Start-Process -FilePath "sort.exe"
@@ -54,7 +59,7 @@ Start-Process -FilePath "sort.exe"
 
 ### Example 2: Print a text file
 
-This example starts a process that prints the C:\PS-Test\MyFile.txt file.
+This example starts a process that prints the `C:\PS-Test\MyFile.txt` file.
 
 ```powershell
 Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test" -Verb Print
@@ -62,8 +67,8 @@ Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test" -Verb Print
 
 ### Example 3: Start a process to sort items to a new file
 
-This example starts a process that sorts items in the Testsort.txt file and returns the sorted items
-in the Sorted.txt files. Any errors are written to the SortError.txt file.
+This example starts a process that sorts items in the `Testsort.txt` file and returns the sorted
+items in the `Sorted.txt` files. Any errors are written to the `SortError.txt` file.
 
 ```powershell
 Start-Process -FilePath "Sort.exe" -RedirectStandardInput "Testsort.txt" -RedirectStandardOutput "Sorted.txt" -RedirectStandardError "SortError.txt" -UseNewEnvironment
@@ -74,8 +79,8 @@ variables.
 
 ### Example 4: Start a process in a maximized window
 
-This example starts the **Notepad.exe** process. It maximizes the window and retains the window until the
-process completes.
+This example starts the `Notepad.exe` process. It maximizes the window and retains the window until
+the process completes.
 
 ```powershell
 Start-Process -FilePath "notepad" -Wait -WindowStyle Maximized
@@ -83,7 +88,7 @@ Start-Process -FilePath "notepad" -Wait -WindowStyle Maximized
 
 ### Example 5: Start PowerShell as an administrator
 
-This example starts PowerShell by using the "Run as administrator" option.
+This example starts PowerShell by using the **Run as administrator** option.
 
 ```powershell
 Start-Process -FilePath "powershell" -Verb RunAs
@@ -108,13 +113,14 @@ runasuser
 The example uses `New-Object` to create a **System.Diagnostics.ProcessStartInfo** object for
 **PowerShell.exe**, the file that runs in the PowerShell process. The **Verbs** property of the
 **ProcessStartInfo** object shows that you can use the **Open** and **RunAs** verbs with
-**PowerShell.exe**, or with any process that runs a .exe file.
+`PowerShell.exe`, or with any process that runs a `.exe` file.
 
 ### Example 7: Specifying arguments to the process
 
-Both commands start the Windows command interpreter, issuing a dir command on the 'Program Files'
+Both commands start the Windows command interpreter, issuing a `dir` command on the `Program Files`
 folder. Because this foldername contains a space, the value needs surrounded with escaped quotes.
-Note that the first command specifies a string as ArgumentList. The second command a string array.
+Note that the first command specifies a string as **ArgumentList**. The second command is a string
+array.
 
 ```powershell
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
@@ -125,11 +131,15 @@ Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%
 
 ### -ArgumentList
 
-Specifies parameters or parameter values to use when this cmdlet starts the process. If parameters
-or parameter values contain a space, they need surrounded with escaped double quotes.
+Specifies parameters or parameter values to use when this cmdlet starts the process. Arguments can
+be accepted as a single string with the arguments separated by spaces, or as an array of strings
+separated by commas.
+
+If parameters or parameter values contain a space, they need to be surrounded with escaped double
+quotes. For more information, see [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Args
 
@@ -157,7 +167,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: Default
 Aliases: RunAs
 
@@ -171,13 +181,13 @@ Accept wildcard characters: False
 ### -FilePath
 
 Specifies the optional path and filename of the program that runs in the process. Enter the name of
-an executable file or of a document, such as a .txt or .doc file, that is associated with a program
-on the computer. This parameter is required.
+an executable file or of a document, such as a `.txt` or `.doc` file, that is associated with a
+program on the computer. This parameter is required.
 
 If you specify only a filename, use the **WorkingDirectory** parameter to specify the path.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: PSPath
 
@@ -190,13 +200,14 @@ Accept wildcard characters: False
 
 ### -LoadUserProfile
 
-Indicates that this cmdlet loads the Windows user profile stored in the **HKEY_USERS** registry key
+Indicates that this cmdlet loads the Windows user profile stored in the `HKEY_USERS` registry key
 for the current user.
 
-This parameter does not affect the PowerShell profiles. For more information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
+This parameter does not affect the PowerShell profiles. For more information, see
+[about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Default
 Aliases: Lup
 
@@ -214,7 +225,7 @@ Start the new process in the current console window. By default PowerShell opens
 You cannot use the **NoNewWindow** and **WindowStyle** parameters in the same command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Default
 Aliases: nnw
 
@@ -231,7 +242,7 @@ Returns a process object for each process that the cmdlet started. By default, t
 generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -248,7 +259,7 @@ Specifies a file. This cmdlet sends any errors generated by the process to a fil
 Enter the path and filename. By default, the errors are displayed in the console.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Default
 Aliases: RSE
 
@@ -265,7 +276,7 @@ Specifies a file. This cmdlet reads input from the specified file. Enter the pat
 the input file. By default, the process gets its input from the keyboard.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Default
 Aliases: RSI
 
@@ -282,7 +293,7 @@ Specifies a file. This cmdlet sends the output generated by the process to a fil
 Enter the path and filename. By default, the output is displayed in the console.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Default
 Aliases: RSO
 
@@ -296,10 +307,10 @@ Accept wildcard characters: False
 ### -UseNewEnvironment
 
 Indicates that this cmdlet uses new environment variables specified for the process. By default, the
-started process runs with the environment variables specified for the computer and user.
+started process runs with the environment variables inherited from the parent process.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Default
 Aliases:
 
@@ -329,7 +340,7 @@ to create a **System.Diagnostics.ProcessStartInfo** object for the file. The ava
 the **Verbs** property of the **ProcessStartInfo** object. For details, see the examples.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: UseShellExecute
 Aliases:
 
@@ -347,7 +358,7 @@ accepting more input. This parameter suppresses the command prompt or retains th
 processes finish.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -361,12 +372,13 @@ Accept wildcard characters: False
 ### -WindowStyle
 
 Specifies the state of the window that is used for the new process. The acceptable values for this
-parameter are: **Normal**, **Hidden**, **Minimized**, and **Maximized**. The default value is **Normal**.
+parameter are: **Normal**, **Hidden**, **Minimized**, and **Maximized**. The default value is
+**Normal**.
 
 You cannot use the **WindowStyle** and **NoNewWindow** parameters in the same command.
 
 ```yaml
-Type: ProcessWindowStyle
+Type: System.Diagnostics.ProcessWindowStyle
 Parameter Sets: (All)
 Aliases:
 Accepted values: Normal, Hidden, Minimized, Maximized
@@ -380,11 +392,12 @@ Accept wildcard characters: False
 
 ### -WorkingDirectory
 
-Specifies the location of the executable file or document that runs in the process. The default is
-the folder for the new process.
+Specifies the location that the new process should start in. The default is the location of the
+executable file or document being started. Wildcards are not supported. The path name must not
+contain characters that would be interpreted as wildcards.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -399,7 +412,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -416,11 +430,17 @@ parameter. Otherwise, this cmdlet does not return any output.
 
 ## NOTES
 
-* This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process**
+- This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process**
   class. For more information about this method, see
-  [Process.Start Method](/dotnet/api/system.diagnostics.process.start?view=netframework-4.7.2#overloads).
+  [Process.Start Method](/dotnet/api/system.diagnostics.process.start#overloads).
+
+- On Windows, when you use **UseNewEnvironment**, the new process starts only containing the default
+  environment variables defined for the **Machine** scope. This has the side affect that the
+  `$env:USERNAME` is set to **SYSTEM**. None of the variables from the **User** scope are included.
 
 ## RELATED LINKS
+
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md)
 
 [Debug-Process](Debug-Process.md)
 
@@ -431,4 +451,3 @@ parameter. Otherwise, this cmdlet does not return any output.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
-

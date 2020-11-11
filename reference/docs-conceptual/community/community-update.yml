@@ -1,0 +1,85 @@
+### YamlMime:Landing
+
+title: Community Update # < 60 chars
+summary: A list of resources and a summary of new articles and community contributions. # < 160 chars
+
+metadata:
+  title: Community Update # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: A list of resources and a summary of new articles and community contributions. # < 160 chars
+  ms.topic: landing-page # Required
+  author: sdwheeler #Required; your GitHub user alias, with correct capitalization.
+  ms.author: sewhee #Required; microsoft alias of author; optional team alias.
+  ms.date: 10/31/2020
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn |
+#               overview | quickstart | reference | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+- title: Get involved!
+  linkLists:
+    - linkListType: get-started
+      links:
+        - text: PowerShell Contributor Guide
+          url: contributing/overview.md
+        - text: Get started writing
+          url: contributing/get-started-writing.md
+    - linkListType: how-to-guide
+      links:
+        - text: How to file an issue
+          url: contributing/file-an-issue.md
+        - text: Submitting a pull request
+          url: contributing/pull-requests.md
+        - text: PowerShell-Docs style guide
+          url: contributing/powershell-style-guide.md
+        - text: Editing cmdlet reference
+          url: contributing/editing-cmdlet-ref.md
+    - linkListType: reference
+      links:
+        - text: Editorial checklist
+          url: contributing/editorial-checklist.md
+        - text: How we manage issues
+          url: contributing/managing-issues.md
+        - text: How we manage pull requests
+          url: contributing/managing-pull-requests.md
+- title: What's new?
+  linkLists:
+    - linkListType: whats-new
+      links:
+        - text: 2020-Q4
+          url: ./2020-Q4.md
+        - text: 2020-Q3
+          url: ./2020-Q3.md
+        - text: 2020-Q2
+          url: ./2020-Q2.md
+        - text: 2020-Q1
+          url: ./2020-Q1.md
+        - text: Contributor Hall of Fame
+          url: hall-of-fame.md
+- title: Community resources
+  linkLists:
+    - linkListType: overview
+      links:
+        - text: Community support
+          url: community-support.md
+    - linkListType: learn
+      links:
+        - text: PowerShell 101
+          url: ../learn/ps101/00-introduction.md
+        - text: Deep Dives
+          url: ../learn/deep-dives/overview.md
+    - linkListType: download
+      links:
+        - text: Digital art
+          url: digital-art.md
+    - linkListType: video
+      links:
+      - text: Jason Helmick's - The Show
+        url: https://www.youtube.com/user/JasonHelmick/videos
+      - text: The PSConfEU Channel
+        url: https://www.youtube.com/channel/UCxgrI58XiKnDDByjhRJs5fg
+      - text: The PowerShell.org Channel
+        url: https://www.youtube.com/user/powershellorg
+      - text: Channel 9 - PowerShell videos
+        url: https://channel9.msdn.com/Tags/powershell

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/add-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,17 +17,20 @@ Adds job triggers to scheduled jobs.
 ## SYNTAX
 
 ### JobDefinition (Default)
+
 ```
 Add-JobTrigger [-Trigger] <ScheduledJobTrigger[]> [-InputObject] <ScheduledJobDefinition[]>
  [<CommonParameters>]
 ```
 
 ### JobDefinitionId
+
 ```
 Add-JobTrigger [-Trigger] <ScheduledJobTrigger[]> [-Id] <Int32[]> [<CommonParameters>]
 ```
 
 ### JobDefinitionName
+
 ```
 Add-JobTrigger [-Trigger] <ScheduledJobTrigger[]> [-Name] <String[]> [<CommonParameters>]
 ```
@@ -53,6 +56,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Add a job trigger to a scheduled job
+
 ```
 PS C:\> $Daily = New-JobTrigger -Daily -At 3AMPS
 PS C:\> Add-JobTrigger -Trigger $Daily -Name "TestJob"
@@ -66,6 +70,7 @@ The command saves the job trigger in the $Daily variable.
 The second command uses the **Add-JobTrigger** cmdlet to add the job trigger in the $Startup variable to the TestJob scheduled job.
 
 ### Example 2: Add a job trigger to several scheduled jobs
+
 ```
 PS C:\> Get-ScheduledJob | Add-JobTrigger -Trigger (New-JobTrigger -AtStartup)
 ```
@@ -76,6 +81,7 @@ It uses a pipeline operator (|) to send the jobs to the **Add-JobTrigger** cmdle
 The value of the *Trigger* parameter is a New-JobTrigger command that creates the AtStartup job trigger.
 
 ### Example 3: Copy a job trigger
+
 ```
 PS C:\> $T = Get-JobTrigger -Name "BackupArchives"
 PS C:\> Add-JobTrigger -Name "TestBackup,BackupLogs" -Trigger $T
@@ -97,7 +103,7 @@ Specifies the identification numbers of the scheduled jobs.
 To get the identification number of scheduled jobs on the local computer or a remote computer, use the Get-ScheduledJob cmdlet.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: JobDefinitionId
 Aliases:
 
@@ -114,7 +120,7 @@ Enter a variable that contains **ScheduledJob** objects or type a command or exp
 You can also pipe **ScheduledJob** objects to **Add-JobTrigger**.
 
 ```yaml
-Type: ScheduledJobDefinition[]
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition[]
 Parameter Sets: JobDefinition
 Aliases:
 
@@ -133,7 +139,7 @@ Wildcards are supported.
 To get the names of scheduled jobs on the local computer or a remote computer, use the Get-ScheduledJob cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: JobDefinitionName
 Aliases:
 
@@ -150,7 +156,7 @@ Enter a hash table that specifies job triggers or a variable that contains **Sch
 You can also pipe **ScheduledJobTrigger** objects to **Add-JobTrigger**.
 
 ```yaml
-Type: ScheduledJobTrigger[]
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger[]
 Parameter Sets: (All)
 Aliases:
 
@@ -209,5 +215,3 @@ This cmdlet does not return any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

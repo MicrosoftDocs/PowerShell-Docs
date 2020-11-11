@@ -1,19 +1,8 @@
 ---
-title: "Cmdlet Error Reporting | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "error records [PowerShell], terminating"
-  - "non-terminating errors [PowerShell]"
-  - "error records [PowerShell]"
-  - "terminating errors [PowerShell]"
-  - "error records [PowerShell], non-terminating"
-ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Error Reporting
+description: Cmdlet Error Reporting
 ---
 
 # Cmdlet error reporting

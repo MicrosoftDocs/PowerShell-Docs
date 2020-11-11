@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/23/2019
+ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
@@ -167,7 +167,7 @@ command hides or replaces the original commands. For more information, see
 [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -187,7 +187,7 @@ For example, to export the variant of the `Get-Item` command in the certificate 
 the PSSession in `$S`, type `Export-PSSession -Session $S -Command Get-Item -ArgumentList cert:`.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases: Args
 
@@ -209,7 +209,7 @@ Certificate (Cert:) drive. If the certificate is not valid or does not have suff
 the command fails.
 
 ```yaml
-Type: X509Certificate2
+Type: System.Security.Cryptography.X509Certificates.X509Certificate2
 Parameter Sets: (All)
 Aliases:
 
@@ -235,7 +235,7 @@ unless you use the **FormatTypeName** parameter. Similarly, if you use the **For
 parameter, no commands are exported unless you use the **CommandName** parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Name
 
@@ -266,7 +266,7 @@ The acceptable values for this parameter are as follows:
 - Workflow. A PowerShell workflow. For more information, see [about_Workflows](../PSWorkflow/About/about_Workflows.md).
 
 ```yaml
-Type: CommandTypes
+Type: System.Management.Automation.CommandTypes
 Parameter Sets: (All)
 Aliases: Type
 Accepted values: Alias, All, Application, Cmdlet, Configuration, ExternalScript, Filter, Function, Script, Workflow
@@ -280,21 +280,21 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **UTF8**.
+Specifies the type of encoding for the target file. The default value is `UTF8`.
 
 The acceptable values for this parameter are as follows:
 
-- **ASCII** Uses ASCII (7-bit) character set.
-- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **Default** Uses the encoding that corresponds to the system's active code page.
-- **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **Unicode** Uses UTF-16 with the little-endian byte order.
-- **UTF7** Uses UTF-7.
-- **UTF8** Uses UTF-8.
-- **UTF32** Uses UTF-32 with the little-endian byte order.
+- `ASCII` Uses ASCII (7-bit) character set.
+- `BigEndianUnicode` Uses UTF-16 with the big-endian byte order.
+- `Default` Uses the encoding that corresponds to the system's active code page.
+- `OEM` Uses the encoding that corresponds to the system's current OEM code page.
+- `Unicode` Uses UTF-16 with the little-endian byte order.
+- `UTF7` Uses UTF-7.
+- `UTF8` Uses UTF-8.
+- `UTF32` Uses UTF-32 with the little-endian byte order.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
@@ -311,7 +311,7 @@ Accept wildcard characters: False
 Overwrites one or more existing output files, even if the file has the read-only attribute.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -339,7 +339,7 @@ If you use the **CommandName** parameter, the formatting files for the commands 
 unless you use the **FormatTypeName** parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -352,22 +352,22 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-Specifies modules with names that are specified in the form of **ModuleSpecification** objects.
-See the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290).
+Specifies modules with names that are specified in the form of **ModuleSpecification** objects. See
+the Remarks section of
+[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
 For example, the **FullyQualifiedModule** parameter accepts a module name that is specified in
 either of these formats:
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
-
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
 **ModuleName** and **ModuleVersion** are required, but **Guid** is optional. You cannot specify the
-**FullyQualifiedModule** parameter in the same command as a **Module** parameter; the two
+**FullyQualifiedModule** parameter in the same command as a **Module** parameter. the two
 parameters are mutually exclusive.
 
 ```yaml
-Type: ModuleSpecification[]
+Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
 Parameter Sets: (All)
 Aliases:
 
@@ -387,7 +387,7 @@ For more information, see `Import-Module` and
 [about_PSSnapins](../Microsoft.PowerShell.Core/About/about_PSSnapins.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: PSSnapin
 
@@ -407,7 +407,7 @@ If the module subdirectory or any of the files that `Export-PSSession` creates a
 command fails. To overwrite existing files, use the **Force** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: PSPath, ModuleName
 
@@ -425,7 +425,7 @@ session object or a command that gets a session object, such as a `Get-PSSession
 parameter is required.
 
 ```yaml
-Type: PSSession
+Type: System.Management.Automation.Runspaces.PSSession
 Parameter Sets: (All)
 Aliases:
 

@@ -1,13 +1,8 @@
 ---
-title: "CustomControl Element for Control for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d9d92a9e-c680-46ca-962e-e82452726953
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: CustomControl Element for Control for Controls for Configuration (Format)
+description: CustomControl Element for Control for Controls for Configuration (Format)
 ---
 # CustomControl Element for Control for Controls for Configuration (Format)
 

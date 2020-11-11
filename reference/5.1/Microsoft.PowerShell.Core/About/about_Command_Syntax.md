@@ -1,4 +1,5 @@
 ---
+description:  Describes the syntax diagrams that are used in PowerShell. 
 keywords: powershell,cmdlet
 ms.date: 06/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_syntax?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -14,8 +15,8 @@ Describes the syntax diagrams that are used in PowerShell.
 
 ## LONG DESCRIPTION
 
-The [Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) and
-[Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md) cmdlets display
+The [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) and
+[Get-Command](xref:Microsoft.PowerShell.Core.Get-Command) cmdlets display
 syntax diagrams to help you construct commands correctly. This topic
 explains how to interpret the syntax diagrams.
 
@@ -36,7 +37,7 @@ PowerShell uses the following notation for syntax diagrams.
 [-<Optional Parameter Name>] <Required Parameter Value>
 ```
 
-The following is the syntax for the [New-Alias](../../Microsoft.PowerShell.Utility/New-Alias.md)
+The following is the syntax for the [New-Alias](xref:Microsoft.PowerShell.Utility.New-Alias)
 cmdlet.
 
 ```powershell
@@ -136,7 +137,7 @@ the format of a valid command. A parameter set includes only parameters that
 can be used together in a command. If parameters cannot be used in the same
 command, they appear in separate parameter sets.
 
-For example, the [Get-Random](../../Microsoft.PowerShell.Utility/Get-Random.md)
+For example, the [Get-Random](xref:Microsoft.PowerShell.Utility.Get-Random)
 cmdlet has the following parameter sets:
 
 ```powershell
@@ -222,7 +223,7 @@ The syntax diagrams use the following symbols:
 
   For example, the **Name** parameter of the `New-Alias` cmdlet takes only
   one string, but the **Name** parameter of
-  [Get-Process](../../Microsoft.PowerShell.Management/Get-Process.md) can take
+  [Get-Process](xref:Microsoft.PowerShell.Management.Get-Process) can take
   one or many strings.
 
   ```powershell
@@ -314,5 +315,5 @@ optional.
 ## SEE ALSO
 
 - [about_Parameters](about_Parameters.md)
-- [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
-- [Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md)
+- [Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
+- [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)

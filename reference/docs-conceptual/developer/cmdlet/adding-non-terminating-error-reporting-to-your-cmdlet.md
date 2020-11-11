@@ -1,13 +1,8 @@
 ---
-title: "Adding Non-Terminating Error Reporting to Your Cmdlet | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: Adding Non-Terminating Error Reporting to Your Cmdlet
+description: Adding Non-Terminating Error Reporting to Your Cmdlet
 ---
 # Adding Non-Terminating Error Reporting to Your Cmdlet
 

@@ -1,13 +1,8 @@
 ---
-title: "EntrySelectedBy Element for TableRowEntry  for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 49623fcf-1238-4d20-a7ce-238d47d9d565
-caps.latest.revision: 15
+ms.date: 09/13/2016
+ms.topic: reference
+title: EntrySelectedBy Element for TableRowEntry  for TableControl (Format)
+description: EntrySelectedBy Element for TableRowEntry  for TableControl (Format)
 ---
 # EntrySelectedBy Element for TableRowEntry  for TableControl (Format)
 

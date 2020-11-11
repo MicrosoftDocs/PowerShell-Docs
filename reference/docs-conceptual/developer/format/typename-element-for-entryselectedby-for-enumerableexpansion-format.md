@@ -1,13 +1,8 @@
 ---
-title: "TypeName Element for EntrySelectedBy for EnumerableExpansion (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c0506928-db92-4ec4-855f-6f3592a383ae
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)
+description: TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)
 ---
 # TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)
 

@@ -1,6 +1,7 @@
 ---
+description:  Describes the parameters that can be used with any cmdlet. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 11/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -89,10 +90,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-The **Debug** parameter overrides the value of the `$DebugPreference` variable
-for the current command, setting the value of `$DebugPreference` to
-**Continue**. Because the default value of the `$DebugPreference` variable is
-**SilentlyContinue**, debugging messages aren't displayed by default.
+By default, debugging messages aren't displayed because the value of the
+`$DebugPreference` variable is **SilentlyContinue**.
+
+In interactive mode, the **Debug** parameter overrides the value of the
+`$DebugPreference` variable for the current command, setting the value of
+`$DebugPreference` to **Inquire**.
+
+In non-interactive mode, the **Debug** parameter overrides the value of the
+`$DebugPreference` variable for the current command, setting the value of
+`$DebugPreference` to **Continue**.
 
 `-Debug:$true` has the same effect as `-Debug`. Use `-Debug:$false` to
 suppress the display of debugging messages when `$DebugPreference` isn't
@@ -141,8 +148,8 @@ executing the command.
 
 `-ErrorAction:Stop` displays the error message and stops executing the command.
 
-`-ErrorAction:Suspend` suspends execution of a workflow. You are presented with
- a nested command prompt from which you can inspect the suspended state.
+`-ErrorAction:Suspend` is only available for workflows which aren't supported
+in PowerShell 6 and beyond.
 
 > [!NOTE]
 > The **ErrorAction** parameter overrides, but does not replace the value of
@@ -684,10 +691,10 @@ about_Common_Parameters
 
 [about_Preference_Variables](about_Preference_Variables.md)
 
-[Write-Debug](../../Microsoft.PowerShell.Utility/Write-Debug.md)
+[Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
 
-[Write-Warning](../../Microsoft.PowerShell.Utility/Write-Warning.md)
+[Write-Warning](xref:Microsoft.PowerShell.Utility.Write-Warning)
 
-[Write-Error](../../Microsoft.PowerShell.Utility/Write-Error.md)
+[Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
 
-[Write-Verbose](../../Microsoft.PowerShell.Utility/Write-Verbose.md)
+[Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)

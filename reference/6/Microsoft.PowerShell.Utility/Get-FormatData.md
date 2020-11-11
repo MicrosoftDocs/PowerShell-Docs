@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 01/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-formatdata?view=powershell-6&WT.mc_id=ps-gethelp
@@ -41,8 +41,14 @@ For more information about formatting files in PowerShell, see
 This example gets all the formatting data in the session.
 
 ```powershell
-Get-FormatData
+Get-FormatData -PowerShellVersion 5.1
 ```
+
+> [!IMPORTANT]
+> To ensure that the complete type formatting information is returned, you should always include the
+> **PowerShellVersion** parameter with the value `5.1` when using a local invocation of
+> `Get-FormatData`. If the parameter and value are omitted, you may not get all the correct type
+> information.
 
 ### Example 2: Get formatting data by type name
 
@@ -50,7 +56,7 @@ This example gets the formatting data items whose names begin with
 `System.Management.Automation.Cmd`.
 
 ```powershell
-Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
+Get-FormatData -TypeName 'System.Management.Automation.Cmd*' -PowerShellVersion 5.1
 ```
 
 ### Example 3: Examine a formatting data object
@@ -58,7 +64,7 @@ Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
 This example shows how to get a formatting data object and examine its properties.
 
 ```powershell
-$F = Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
+$F = Get-FormatData -TypeName 'System.Management.Automation.Cmd*' -PowerShellVersion 5.1
 $F
 ```
 
@@ -103,9 +109,9 @@ This example shows how to use `Get-FormatData` and `Export-FormatData` to export
 data that is added by a module.
 
 ```powershell
-$A = Get-FormatData
+$A = Get-FormatData -PowerShellVersion 5.1
 Import-Module bitstransfer
-$B = Get-FormatData
+$B = Get-FormatData -PowerShellVersion 5.1
 Compare-Object $A $B
 ```
 
@@ -149,11 +155,6 @@ TypeNames                               FormatViewDefinition
 {Microsoft.Powershell.Utility.FileHash} {Microsoft.Powershell.Utility.FileHash}
 ```
 
-> [!IMPORTANT]
-> To ensure that the complete type formatting information is returned, you should always include the
-> **PowerShellVersion** parameter with the appropriate version. If the parameter and value are
-> omitted, you may not get all the correct type information.
-
 ## PARAMETERS
 
 ### -PowerShellVersion
@@ -165,7 +166,7 @@ This parameter was added in PowerShell 5.1 to improve compatibility when remotin
 older versions of PowerShell.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -183,7 +184,7 @@ Enter the type names.
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -218,4 +219,3 @@ You cannot pipe input to this cmdlet.
 [Export-FormatData](Export-FormatData.md)
 
 [Update-FormatData](Update-FormatData.md)
-

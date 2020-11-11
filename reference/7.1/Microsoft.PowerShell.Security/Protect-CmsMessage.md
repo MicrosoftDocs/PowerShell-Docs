@@ -1,9 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Security
 ms.date: 02/03/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/protect-cmsmessage?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/protect-cmsmessage?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Protect-CmsMessage
 ---
@@ -54,8 +55,7 @@ To be recognized in PowerShell, encryption certificates require a unique extende
 the IDs for Code Signing and Encrypted Mail). For an example of a certificate that would work for
 document encryption, see Example 1 in this topic.
 
-> [!NOTE]
-> This cmdlet is only available on Windows.
+Support for Linux and macOS was added in PowerShell 7.1.
 
 ## EXAMPLES
 
@@ -130,7 +130,7 @@ cmdlet to get the contents of a file, such as a Microsoft Word document, and sav
 variable that you use as the value of the **Content** parameter.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: ByContent
 Aliases:
 
@@ -149,7 +149,7 @@ path includes escape characters, enclose it in single quotation marks. Single qu
 PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByLiteralPath
 Aliases:
 
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 Specifies the path and file name of a file to which you want to send the encrypted content.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -181,7 +181,7 @@ Accept wildcard characters: False
 Specifies the path to content that you want to encrypt.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByPath
 Aliases:
 
@@ -203,7 +203,7 @@ Specifies one or more CMS message recipients, identified in any of the following
 - Subject name of the certificate (used to look in the certificate store).
 
 ```yaml
-Type: CmsMessageRecipient[]
+Type: System.Management.Automation.CmsMessageRecipient[]
 Parameter Sets: (All)
 Aliases:
 

@@ -1,13 +1,8 @@
 ---
-title: "Width Element for TableColumnHeader for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 94eb0535-8002-4f17-9a2b-4be75ec20e5c
-caps.latest.revision: 18
+ms.date: 09/13/2016
+ms.topic: reference
+title: Width Element for TableColumnHeader for TableControl (Format)
+description: Width Element for TableColumnHeader for TableControl (Format)
 ---
 # Width Element for TableColumnHeader for TableControl (Format)
 

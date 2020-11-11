@@ -1,7 +1,8 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  StopConfiguration method
+ms.date: 07/17/2020
+ms.topic: reference
+title: StopConfiguration method
+description: StopConfiguration method
 ---
 # StopConfiguration method
 
@@ -17,7 +18,7 @@ uint32 StopConfiguration(
 
 ## Parameters
 
-*force* \[in\]
+**force** \[in\]
 **true** to force the configuration to stop.
 
 ## Return value

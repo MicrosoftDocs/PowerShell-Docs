@@ -1,13 +1,8 @@
 ---
-title: "Windows PowerShell Error Reporting | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 61b7773a-c346-4835-a928-7212dc4c85bc
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: Windows PowerShell Error Reporting
+description: Windows PowerShell Error Reporting
 ---
 # Windows PowerShell Error Reporting
 

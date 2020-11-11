@@ -1,8 +1,8 @@
 ---
 description: Describes how you can use classes to create your own custom types.
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 08/15/2019
+Locale: en-US
+ms.date: 09/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
@@ -60,7 +60,7 @@ Classes are instantiated using either of the following syntaxes:
 ```
 
 > [!NOTE]
-> When using the `[<class-name>]::new(` syntax, brackets around the class name
+> When using the `[<class-name>]::new()` syntax, brackets around the class name
 > are mandatory. The brackets signal a type definition for PowerShell.
 
 ### Example syntax and usage
@@ -245,6 +245,12 @@ code.
 > This is fundamentally different from how PowerShell functions handle output,
 > where everything goes to the pipeline.
 
+Non-terminating errors written to the error stream from inside a class method
+are not passed through. You must use `throw` to surface a terminating error.
+Using the `Write-*` cmdlets, you can still write to PowerShell's output streams
+from within a class method. However, this should be avoided so that the method
+emits objects using only the `return` statement.
+
 ### Method output
 
 This example demonstrates no accidental output to the pipeline from class
@@ -274,11 +280,8 @@ class FunWithIntegers
 }
 
 $ints = [FunWithIntegers]::new()
-
 $ints.GetOddIntegers()
-
 $ints.GetEvenIntegers()
-
 $ints.SayHello()
 ```
 
@@ -385,11 +388,10 @@ Microsoft   Surface Pro 4   5072641000
 
 ## Hidden attribute
 
-The `hidden` attribute makes a property or method less visible. The property or
-method is still accessible to the user and is available in all scopes in which
-the object is available. Hidden members are hidden from the `Get-Member` cmdlet
-and can't be displayed using tab completion or IntelliSense outside of the
-class definition.
+The `hidden` attribute hides a property or method. The property or method is
+still accessible to the user and is available in all scopes in which the object
+is available. Hidden members are hidden from the `Get-Member` cmdlet and can't
+be displayed using tab completion or IntelliSense outside the class definition.
 
 For more information, see [About_hidden](About_hidden.md).
 
@@ -593,7 +595,7 @@ This example shows inheritance with an interface declaration coming after the
 base class.
 
 ```powershell
-Class Derived : Base.Interface {...}
+Class Derived : Base, Interface {...}
 ```
 
 ### Example of simple inheritance in PowerShell classes
@@ -716,7 +718,7 @@ Brand               : Fabrikam, Inc.
 Model               : Fbk5040
 ```
 
-## Calling base class constructors
+### Calling base class constructors
 
 To invoke a base class constructor from a subclass, add the `base` keyword.
 
@@ -749,9 +751,9 @@ $littleone.Age
 10
 ```
 
-## Invoke base class methods
+### Invoke base class methods
 
-To override existing methods in subclasses, declare methods by using the same
+To override existing methods in subclasses, declare methods using the same
 name and signature.
 
 ```powershell
@@ -796,14 +798,22 @@ class ChildClass1 : BaseClass
 1
 ```
 
-## Interfaces
+### Inheriting from interfaces
 
-The syntax for declaring interfaces is similar to C#. You can declare
-interfaces after base types or immediately after a colon (`:`) when there is no
-base type specified. Separate all type names with commas.
+PowerShell classes can implement an interface using the same inheritance syntax
+used to extend base classes. Because interfaces allow multiple inheritance, a
+PowerShell class implementing an interface may inherit from multiple types, by
+separating the type names after the colon (`:`) with commas (`,`). A PowerShell
+class that implements an interface must implement all the members of that
+interface. Omitting the implemention interface members causes a parse-time
+error in the script.
+
+> [!NOTE]
+> PowerShell does not currently support declaring new interfaces in PowerShell
+> script.
 
 ```powershell
-class MyComparable : system.IComparable
+class MyComparable : System.IComparable
 {
     [int] CompareTo([object] $obj)
     {
@@ -811,7 +821,7 @@ class MyComparable : system.IComparable
     }
 }
 
-class MyComparableBar : bar, system.IComparable
+class MyComparableBar : bar, System.IComparable
 {
     [int] CompareTo([object] $obj)
     {
@@ -825,7 +835,18 @@ class MyComparableBar : bar, system.IComparable
 `Import-Module` and the `#requires` statement only import the module functions,
 aliases, and variables, as defined by the module. Classes are not imported. The
 `using module` statement imports the classes defined in the module. If the
-module isn't loaded in the current session, the `using` statement fails.
+module isn't loaded in the current session, the `using` statement fails. For
+more information about the `using` statement, see [about_Using](about_Using.md).
+
+## The PSReference type is not supported with class members
+
+Using the `[ref]` type-cast with a class member silently fails. APIs that use
+`[ref]` parameters cannot be used with class members. The **PSReference** was
+designed to support COM objects. COM objects have cases where you need to pass
+a value in by reference.
+
+For more information about the `[ref]` type, see
+[PSReference Class](/dotnet/api/system.management.automation.psreference).
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 5/1/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-timespan?view=powershell-6&WT.mc_id=ps-gethelp
@@ -119,7 +119,7 @@ Specifies the days in the time span.
 The default value is 0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Time
 Aliases:
 
@@ -136,7 +136,7 @@ Specifies the end of a time span.
 The default value is the current date and time.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: Date
 Aliases:
 
@@ -153,7 +153,7 @@ Specifies the hours in the time span.
 The default value is zero.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Time
 Aliases:
 
@@ -170,7 +170,7 @@ Specifies the minutes in the time span.
 The default value is 0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Time
 Aliases:
 
@@ -187,7 +187,7 @@ Specifies the length of the time span in seconds.
 The default value is 0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Time
 Aliases:
 
@@ -209,7 +209,7 @@ The **LastWriteTime** alias lets you pipe objects that have a **LastWriteTime** 
 such as files in the file system `[System.Io.FileIO]`, to the **Start** parameter of `New-TimeSpan`.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: Date
 Aliases: LastWriteTime
 

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PackageManagement
 ms.date: 05/24/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/unregister-packagesource?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -104,7 +104,7 @@ parameter:
 Specifies a configuration file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
 Aliases:
 
@@ -124,7 +124,7 @@ name, such as **User01**, **Domain01\User01**, or enter a **PSCredential** objec
 When the **Credential** parameter isn't specified, the current user account is used.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -141,7 +141,7 @@ Forces the command to run without asking for user confirmation. Overrides restri
 `Unregister-PackageSource` from succeeding, with the exception of security.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -158,7 +158,7 @@ Indicates that `Unregister-PackageSource` forces **PackageManagement** to automa
 the package provider for the specified package source.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -176,7 +176,7 @@ cmdlet. **InputObject** accepts the **PackageSource** object as a `Get-PackageSo
 variable that contains the object.
 
 ```yaml
-Type: PackageSource[]
+Type: Microsoft.PackageManagement.Packaging.PackageSource[]
 Parameter Sets: SourceByInputObject
 Aliases:
 
@@ -193,7 +193,7 @@ Specifies the location to which a package source points. The value of this param
 file path, or any other destination format that is supported by the package provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SourceBySearch
 Aliases:
 
@@ -209,7 +209,7 @@ Accept wildcard characters: False
 Specifies the **PackageManagement** provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
 Aliases:
 
@@ -225,10 +225,10 @@ Accept wildcard characters: False
 Specifies the provider name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SourceBySearch
 Aliases: Provider
-Accepted values: Programs, msi, msu, NuGet, PowerShellGet, psl, chocolatey
+Accepted values: Bootstrap, NuGet, PowerShellGet
 
 Required: False
 Position: Named
@@ -242,7 +242,7 @@ Accept wildcard characters: False
 Specifies the publish location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
 Aliases:
 
@@ -258,7 +258,7 @@ Accept wildcard characters: False
 Specifies the script publish location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
 Aliases:
 
@@ -274,7 +274,7 @@ Accept wildcard characters: False
 Specifies the script source location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
 Aliases:
 
@@ -290,7 +290,7 @@ Accept wildcard characters: False
 Switch that skips validating the credentials of a package source.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
 Aliases:
 
@@ -306,7 +306,7 @@ Accept wildcard characters: False
 Specifies the friendly name of the package source.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SourceBySearch
 Aliases: Name
 
@@ -322,7 +322,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before `Unregister-PackageSource` is run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -338,7 +338,7 @@ Accept wildcard characters: False
 Shows what would happen if `Unregister-PackageSource` cmdlet is run. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

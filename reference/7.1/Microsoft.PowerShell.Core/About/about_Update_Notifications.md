@@ -1,8 +1,9 @@
 ---
+description:  Notifies users on startup of PowerShell that a new version of PowerShell has been released. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 01/10/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Update_Notifications
 ---
@@ -53,3 +54,4 @@ The update notification doesn't provide any way to automatically update
 PowerShell. In the future, there may be more instructions or capabilities to
 update from within PowerShell, but today, you should use the same install
 mechanism you used to install PowerShell to update it.
+

@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/14/2019
+ms.date: 05/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-clixml?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Clixml
@@ -74,14 +74,15 @@ object is stored in a file named `FileACL.xml`.
 The `Import-Clixml` cmdlet creates an object from the XML in the `FileACL.xml` file. Then, it saves
 the object in the `$fileacl` variable.
 
-### Example 3: Encrypt an exported credential object
+### Example 3: Encrypt an exported credential object on Windows
 
 In this example, given a credential that you've stored in the `$Credential` variable by running the
 `Get-Credential` cmdlet, you can run the `Export-Clixml` cmdlet to save the credential to disk.
 
 > [!IMPORTANT]
 > `Export-Clixml` only exports encrypted credentials on Windows. On non-Windows operating systems
-> such as macOS and Linux, credentials are exported in plain text.
+> such as macOS and Linux, credentials are exported as a plain text stored as a Unicode character
+> array. This provides some obfuscation but does not provide encryption.
 
 ```powershell
 $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
@@ -90,10 +91,10 @@ $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
 $Credential = Import-Clixml $Credxmlpath
 ```
 
-The `Export-Clixml` cmdlet encrypts credential objects by using the Windows [Data Protection API](/previous-versions/windows/apps/hh464970(v=win.10)).
-The encryption ensures that only your user account on only that computer can decrypt the contents of
-the credential object. The exported `CLIXML` file can't be used on a different computer or by a
-different user.
+The `Export-Clixml` cmdlet encrypts credential objects by using the Windows
+[Data Protection API](/previous-versions/windows/apps/hh464970(v=win.10)). The encryption ensures
+that only your user account on only that computer can decrypt the contents of the credential object.
+The exported `CLIXML` file can't be used on a different computer or by a different user.
 
 In the example, the file in which the credential is stored is represented by
 `TestScript.ps1.credential`. Replace **TestScript** with the name of the script with which you're
@@ -106,6 +107,44 @@ To import the credential automatically into your script, run the final two comma
 `Import-Clixml` to import the secured credential object into your script. This import eliminates the
 risk of exposing plain-text passwords in your script.
 
+### Example 4: Exporting a credential object on Linux or macOS
+
+In this example, we create a **PSCredential** in the `$Credential` variable using the
+`Get-Credential` cmdlet. Then we use `Export-Clixml` to save the credential to disk.
+
+> [!IMPORTANT]
+> `Export-Clixml` only exports encrypted credentials on Windows. On non-Windows operating systems
+> such as macOS and Linux, credentials are exported as a plain text stored as a Unicode character
+> array. This provides some obfuscation but does not provide encryption.
+
+```powershell
+PS> $Credential = Get-Credential
+
+PowerShell credential request
+Enter your credentials.
+User: User1
+Password for user User1: ********
+
+PS> $Credential | Export-Clixml ./cred2.xml
+PS> Get-Content ./cred2.xml
+
+...
+    <Props>
+      <S N="UserName">User1</S>
+      <SS N="Password">700061007300730077006f0072006400</SS>
+    </Props>
+...
+
+PS> 'password' | Format-Hex -Encoding unicode
+
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+0000000000000000 70 00 61 00 73 00 73 00 77 00 6F 00 72 00 64 00 p a s s w o r d
+```
+
+The output of `Get-Content` in this example has been truncate to focus on the credential information
+in the XML file. Note that the plain text value of the password is stored in the XML file as a
+Unicode character array as proven by `Format-Hex`. So the value is encoded but not encrypted.
+
 ## PARAMETERS
 
 ### -Confirm
@@ -113,7 +152,7 @@ risk of exposing plain-text passwords in your script.
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -133,7 +172,7 @@ The default value can be overridden for the object type in the `Types.ps1xml` fi
 information, see [about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md).
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -146,19 +185,19 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **UTF8NoBOM**.
+Specifies the type of encoding for the target file. The default value is `utf8NoBOM`.
 
 The acceptable values for this parameter are as follows:
 
-- **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
-- **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
-- **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
-- **UTF7**: Encodes in UTF-7 format.
-- **UTF8**: Encodes in UTF-8 format.
-- **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
-- **UTF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
-- **UTF32**: Encodes in UTF-32 format.
+- `ascii`: Uses the encoding for the ASCII (7-bit) character set.
+- `bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.
+- `oem`: Uses the default encoding for MS-DOS and console programs.
+- `unicode`: Encodes in UTF-16 format using the little-endian byte order.
+- `utf7`: Encodes in UTF-7 format.
+- `utf8`: Encodes in UTF-8 format.
+- `utf8BOM`: Encodes in UTF-8 format with Byte Order Mark (BOM)
+- `utf8NoBOM`: Encodes in UTF-8 format without Byte Order Mark (BOM)
+- `utf32`: Encodes in UTF-32 format.
 
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
@@ -166,7 +205,7 @@ pages (like `-Encoding 1251`) or string names of registered code pages (like
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
-Type: Encoding
+Type: System.Text.Encoding
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
@@ -186,7 +225,7 @@ Causes the cmdlet to clear the read-only attribute of the output file if necessa
 attempt to reset the read-only attribute when the command completes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -203,7 +242,7 @@ Specifies the object to be converted. Enter a variable that contains the objects
 or expression that gets the objects. You can also pipe objects to `Export-Clixml`.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -222,7 +261,7 @@ are interpreted as wildcards. If the path includes escape characters, enclose it
 marks. Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByLiteralPath
 Aliases: PSPath, LP
 
@@ -239,7 +278,7 @@ Indicates that the cmdlet doesn't overwrite the contents of an existing file. By
 exists in the specified path, `Export-Clixml` overwrites the file without warning.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NoOverwrite
 
@@ -255,7 +294,7 @@ Accept wildcard characters: False
 Specifies the path to the file where the XML representation of the object will be stored.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByPath
 Aliases:
 
@@ -271,7 +310,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

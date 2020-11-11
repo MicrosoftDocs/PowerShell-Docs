@@ -1,5 +1,6 @@
 ---
-locale: en-us
+description: Different editions of PowerShell run on different underlying runtimes. 
+Locale: en-US
 ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_editions?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -235,13 +236,13 @@ to catch possible behavioral differences between editions. For this you must sti
 ## See also
 
 - [about_Automatic_Variables](about_Automatic_Variables.md)
-- [Import-Module](../Import-Module.md)
-- [Get-Module](../Get-Module.md)
+- [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
+- [Get-Module](xref:Microsoft.PowerShell.Core.Get-Module)
 - [Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support)
 
 [Pester]: https://github.com/pester/Pester/wiki/Pester
 [PSScriptAnalyzer]: https://github.com/PowerShell/PSScriptAnalyzer
 [`PSUseCompatibleCommands`]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleCommands.md
 [`PSUseCompatibleTypes`]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleTypes.md
-[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Standard]: /dotnet/standard/net-standard
 [PowerShell Standard]: https://devblogs.microsoft.com/powershell/powershell-standard-library-build-single-module-that-works-across-windows-powershell-and-powershell-core/

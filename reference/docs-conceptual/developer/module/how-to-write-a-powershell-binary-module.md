@@ -1,13 +1,8 @@
 ---
-title: "How to Write a PowerShell Binary Module | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
-caps.latest.revision: 15
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Write a PowerShell Binary Module
+description: How to Write a PowerShell Binary Module
 ---
 # How to Write a PowerShell Binary Module
 

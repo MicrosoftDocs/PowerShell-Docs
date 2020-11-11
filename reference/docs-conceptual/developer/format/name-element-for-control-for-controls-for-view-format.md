@@ -1,13 +1,8 @@
 ---
-title: "Name Element for Control for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 26437467-d578-4e8d-8cdd-17dfe644957a
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: Name Element for Control for Controls for View (Format)
+description: Name Element for Control for Controls for View (Format)
 ---
 # Name Element for Control for Controls for View (Format)
 

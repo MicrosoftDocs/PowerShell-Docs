@@ -1,13 +1,8 @@
 ---
-title: "RunSpace03 (C#) Code Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 9ac8ab99-1856-4d6f-b30d-c0a18b8dd1fc
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: RunSpace03 (C#) Code Sample
+description: RunSpace03 (C#) Code Sample
 ---
 # RunSpace03 (C#) Code Sample
 
@@ -28,7 +23,7 @@ a script and how to retrieve error objects as well as the output objects.
 
 ## Code Sample
 
-[!code-csharp[Runspace03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace03/Runspace03.cs#L11-L88 "Runspace03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace03/Runspace03.cs" range="11-88":::
 
 ## See Also
 

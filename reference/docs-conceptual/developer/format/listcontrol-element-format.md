@@ -1,13 +1,8 @@
 ---
-title: "ListControl Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 37beeb0b-7a81-4747-becb-e309e17278fb
-caps.latest.revision: 12
+ms.date: 09/13/2016
+ms.topic: reference
+title: ListControl Element (Format)
+description: ListControl Element (Format)
 ---
 # ListControl Element (Format)
 

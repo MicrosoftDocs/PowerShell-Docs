@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/06/2020
+ms.date: 05/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-FileHash
@@ -124,7 +124,7 @@ Get-FileHash -InputStream $stringAsStream | Select-Object Hash
 ```Output
 Hash
 ----
-E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855
+64EC88CA00B268E5BA1A35678A1B5316D212F4F366B2477232534A8AECA37F3C
 ```
 
 ## PARAMETERS
@@ -149,7 +149,7 @@ simple change validation, and should not be used to generate hash values for fil
 protection from attack or tampering.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: SHA1, SHA256, SHA384, SHA512, MD5
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 Specifies the input stream.
 
 ```yaml
-Type: Stream
+Type: System.IO.Stream
 Parameter Sets: StreamParameterSet
 Aliases:
 
@@ -185,7 +185,7 @@ the path includes escape characters, enclose the path in single quotation marks.
 marks instruct PowerShell not to interpret characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 Specifies the path to one or more files as an array. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -237,4 +237,3 @@ computed hash, and the algorithm used to compute the hash.
 ## RELATED LINKS
 
 [Format-List](Format-List.md)
-

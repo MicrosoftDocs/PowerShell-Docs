@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PackageManagement
 ms.date: 05/24/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/uninstall-package?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -127,29 +127,13 @@ parameter:
 
 ## PARAMETERS
 
-### -AdditionalArguments
-
-Specifies additional arguments.
-
-```yaml
-Type: String[]
-Parameter Sets: msi:PackageByInputObject, msi:PackageBySearch
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -AllowClobber
 
 Overrides warning messages about conflicts with existing commands. Overwrites existing commands that
 have the same name as commands being installed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
 Aliases:
 
@@ -165,7 +149,7 @@ Accept wildcard characters: False
 Allows packages marked as prerelease to be uninstalled.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
 Aliases:
 
@@ -181,7 +165,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet uninstalls all versions of the package.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -197,7 +181,7 @@ Accept wildcard characters: False
 Specifies a string of the path to the input object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet:PackageByInputObject, NuGet:PackageBySearch
 Aliases:
 
@@ -213,7 +197,7 @@ Accept wildcard characters: False
 Switch to exclude the version number in the folder path.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NuGet:PackageByInputObject, NuGet:PackageBySearch
 Aliases:
 
@@ -229,7 +213,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -246,40 +230,8 @@ Forces **PackageManagement** to automatically install the package provider for t
 package.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeSystemComponent
-
-Specifies that this cmdlet uninstalls system components.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Programs:PackageByInputObject, Programs:PackageBySearch
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeWindowsInstaller
-
-Indicates that this cmdlet uninstalls the package through Windows Installer.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Programs:PackageByInputObject, Programs:PackageBySearch
 Aliases:
 
 Required: False
@@ -296,7 +248,7 @@ Accepts pipeline input that specifies the package's **SoftwareIdentity** object 
 value or a variable that contains the object.
 
 ```yaml
-Type: SoftwareIdentity[]
+Type: Microsoft.PackageManagement.Packaging.SoftwareIdentity[]
 Parameter Sets: PackageByInputObject
 Aliases:
 
@@ -312,7 +264,7 @@ Accept wildcard characters: False
 Indicates that `Uninstall-Package` uninstalls updates.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
 Aliases:
 
@@ -329,7 +281,7 @@ Specifies the maximum allowed package version that you want to uninstall. If you
 parameter, `Uninstall-Package` uninstalls the package's newest version.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -347,7 +299,7 @@ parameter, `Uninstall-Package` uninstalls the package's newest version that sati
 specified by the **MaximumVersion** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -363,7 +315,7 @@ Accept wildcard characters: False
 Specifies one or more package names. Multiple package names must be separated by commas.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -380,7 +332,7 @@ Accept wildcard characters: False
 parameter added by the provider and isn't supported by `Uninstall-Package`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
 Aliases:
 
@@ -396,7 +348,7 @@ Accept wildcard characters: False
 Specifies the **PackageManagement** provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
 Aliases:
 
@@ -413,10 +365,10 @@ Specifies one or more package provider names to search for packages. You can get
 names by running the `Get-PackageProvider` cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PackageBySearch
 Aliases: Provider
-Accepted values: Programs, msi, msu, NuGet, PowerShellGet, psl, chocolatey
+Accepted values: Bootstrap, NuGet, PowerShellGet
 
 Required: False
 Position: Named
@@ -432,7 +384,7 @@ parameter, `Uninstall-Package` uninstalls the package's newest version that sati
 specified by the **MaximumVersion** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -452,7 +404,7 @@ as follows:
 - AllUsers
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NuGet:PackageByInputObject, NuGet:PackageBySearch, PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
 Aliases:
 Accepted values: CurrentUser, AllUsers
@@ -469,7 +421,7 @@ Accept wildcard characters: False
 Skips the uninstallation of software dependencies.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NuGet:PackageByInputObject, NuGet:PackageBySearch
 Aliases:
 
@@ -487,7 +439,7 @@ installed package that is digitally signed by a trusted publisher but a new vers
 signed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
 Aliases:
 
@@ -508,7 +460,7 @@ this parameter are as follows:
 - All
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
 Aliases:
 Accepted values: Module, Script, All
@@ -525,7 +477,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -541,13 +493,61 @@ Accept wildcard characters: False
 Shows what would happen if `Uninstall-Package` cmdlet is run. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdditionalArguments
+
+Specifies additional arguments.
+
+```yaml
+Type: System.String[]
+Parameter Sets: msi:PackageByInputObject, msi:PackageBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeSystemComponent
+
+Specifies that this cmdlet uninstalls system components.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Programs:PackageByInputObject, Programs:PackageBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeWindowsInstaller
+
+Indicates that this cmdlet uninstalls the package through Windows Installer.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Programs:PackageByInputObject, Programs:PackageBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

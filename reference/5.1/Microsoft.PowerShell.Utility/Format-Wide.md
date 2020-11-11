@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/19/2018
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-wide?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Wide
@@ -83,7 +83,7 @@ column size and number are determined by the view. You cannot use the **AutoSize
 parameters in the same command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -100,7 +100,7 @@ Specifies the number of columns in the display. You cannot use the **AutoSize** 
 parameters in the same command.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -118,7 +118,7 @@ aid when you are formatting expressions in a `Format-Wide` command, and the expr
 appear to be working.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -143,7 +143,7 @@ Valid values are:
   collection.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: CoreOnly, EnumOnly, Both
@@ -163,7 +163,7 @@ attribute or create directories to complete a file path, but it will not attempt
 permissions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -179,15 +179,18 @@ Accept wildcard characters: False
 Formats the output in groups based on a shared property or value. Enter an expression or a property
 of the output.
 
-The value of the **GroupBy** parameter can be a new calculated property. To create a calculated,
-property, use a hash table. The acceptable values for this parameter are:
+The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
+be a script block or a hash table. Valid key-value pairs are:
 
-- Name (or Label) \<string\>
-- Expression \<string\> or \<script block\>
-- FormatString \<string\>
+- Name (or Label) - `<string>`
+- Expression - `<string>` or `<script block>`
+- FormatString - `<string>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -204,7 +207,7 @@ Specifies the objects to format. Enter a variable that contains the objects, or 
 expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -224,14 +227,17 @@ If you omit this parameter, the properties that appear in the display depend on 
 displayed. The parameter name "Property" is optional. You cannot use the **Property** and **View**
 parameters in the same command.
 
-The value of the **Property** parameter can be a new calculated property. To create a calculated
-property, use a hash table. Valid keys are:
+The value of the **Property** parameter can be a new calculated property. The calculated property can
+be a script block or a hash table. Valid key-value pairs are:
 
-- Expression \<string\> or \<script block\>
-- FormatString \<string\>
+- Expression - `<string>` or `<script block>`
+- FormatString - `<string>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -249,7 +255,7 @@ aid when you are formatting expressions in a `Format-Wide` command, and the expr
 appear to be working.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -266,7 +272,7 @@ Specifies the name of an alternate table format or view. You cannot use the **Pr
 **View** parameters in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -313,6 +319,8 @@ nor a table, use Format-Custom.
 
 ## RELATED LINKS
 
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
+
 [Format-Custom](Format-Custom.md)
 
 [Format-Hex](Format-Hex.md)
@@ -320,4 +328,3 @@ nor a table, use Format-Custom.
 [Format-List](Format-List.md)
 
 [Format-Table](Format-Table.md)
-

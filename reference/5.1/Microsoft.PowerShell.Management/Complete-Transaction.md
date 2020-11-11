@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/complete-transaction?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -32,6 +32,7 @@ For more information, see about_Transactions.
 ## EXAMPLES
 
 ### Example 1: Commit a transaction
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -64,6 +65,7 @@ The **Complete-Transaction** command commits the transaction, which makes the re
 As a result, the second dir command shows that the registry is changed.
 
 ### Example 2: Commit a transaction that has more than one subscriber
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -136,6 +138,7 @@ The second **Complete-Transaction** command commits the entire transaction and c
 This is confirmed by a second dir m* command, which shows the changes.
 
 ### Example 3: Perform a transaction that does not change any data
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -158,8 +161,8 @@ SKC  VC Name                           Property
 PS HKCU:\software> Complete-Transaction
 ```
 
-This example shows the value of using Get-* commands, and other commands that do not change data, in a transaction.
-When a Get-* command is used in a transaction, it gets the objects that are part of the transaction.
+This example shows the value of using Get-\* commands, and other commands that do not change data, in a transaction.
+When a Get-\* command is used in a transaction, it gets the objects that are part of the transaction.
 This allows you to preview the changes in the transaction before the changes are committed.
 
 In this example, a transaction is started.
@@ -175,7 +178,7 @@ However, when you add the *UseTransaction* parameter to the dir command, the com
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -191,7 +194,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -216,6 +219,7 @@ You cannot pipe objects to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * You cannot roll back a transaction that has been committed, or commit a transaction that has been rolled back.
 
   You cannot roll back any transaction other than the active transaction.
@@ -240,5 +244,3 @@ To roll back a different transaction, you must first commit or roll back the act
 [New-Item](New-Item.md)
 
 [New-ItemProperty](New-ItemProperty.md)
-
-

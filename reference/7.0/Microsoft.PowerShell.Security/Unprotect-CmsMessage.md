@@ -1,7 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Security
 ms.date: 02/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -92,7 +93,7 @@ Try the new Break All command
 Specifies an encrypted string, or a variable containing an encrypted string.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByContent
 Aliases:
 
@@ -108,7 +109,7 @@ Accept wildcard characters: False
 Specifies an event log record ID that represents a CMS encryption operation.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: ByWinEvent
 Aliases:
 
@@ -122,7 +123,7 @@ Accept wildcard characters: False
 ### -IncludeContext
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -141,7 +142,7 @@ characters. If the path includes escape characters, enclose it in single quotati
 quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByLiteralPath
 Aliases:
 
@@ -157,7 +158,7 @@ Accept wildcard characters: False
 Specifies the path to encrypted content that you want to decrypt.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByPath
 Aliases:
 
@@ -179,7 +180,7 @@ Specifies one or more CMS message recipients, identified in any of the following
 - Subject name of the certificate (used to look in the certificate store).
 
 ```yaml
-Type: CmsMessageRecipient[]
+Type: System.Management.Automation.CmsMessageRecipient[]
 Parameter Sets: (All)
 Aliases:
 
@@ -211,6 +212,8 @@ The unencrypted message.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 ## RELATED LINKS
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
@@ -218,5 +221,3 @@ The unencrypted message.
 [Get-CmsMessage](Get-CmsMessage.md)
 
 [Protect-CmsMessage](Protect-CmsMessage.md)
-
-

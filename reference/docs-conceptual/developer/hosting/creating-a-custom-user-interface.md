@@ -1,13 +1,8 @@
 ---
-title: "Creating a custom user interface | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d7286443-eed4-43d5-b809-50cdcdcba088
-caps.latest.revision: 4
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a custom user interface
+description: Creating a custom user interface
 ---
 # Creating a custom user interface
 

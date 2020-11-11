@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-pshostprocessinfo?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -34,6 +34,11 @@ Get-PSHostProcessInfo [-Id] <Int32[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+The `Get-PSHostProcessInfo` cmdlet gets information about PowerShell host processes running on the
+local computer.
+
+Beginning in PowerShell 6.2, this cmdlet is supported on non-Windows platforms.
 
 ## EXAMPLES
 
@@ -69,7 +74,7 @@ powershell      14676 DefaultAppDomain Windows PowerShell
 Specifies a process by the process ID. To get a process ID, run the `Get-Process` cmdlet.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: ProcessIdParameterSet
 Aliases:
 
@@ -82,11 +87,10 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies a process by the process name. To get a process name, run the `Get-Process` cmdlet. You
-can also get process names from the Properties dialog box of a process in Task Manager.
+Specifies a process by the process name. To get a process name, run the `Get-Process` cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ProcessNameParameterSet
 Aliases:
 
@@ -104,7 +108,7 @@ results of a `Get-Process` command that returns process that you want to enter i
 then specify the variable as the value of this parameter.
 
 ```yaml
-Type: Process[]
+Type: System.Diagnostics.Process[]
 Parameter Sets: ProcessParameterSet
 Aliases:
 
@@ -136,4 +140,3 @@ You can pipe a **Process** object from `Get-Process` to this cmdlet.
 ## RELATED LINKS
 
 [Get-Process](../Microsoft.PowerShell.Management/get-process.md)
-

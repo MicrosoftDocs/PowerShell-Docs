@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: CimCmdlets
 ms.date: 02/20/2019
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/export-binarymilog?WT.mc_id=ps-gethelp
@@ -49,7 +49,7 @@ Specifies the input to this cmdlet. You can use this parameter, or you can pipe 
 cmdlet.
 
 ```yaml
-Type: CimInstance
+Type: Microsoft.Management.Infrastructure.CimInstance
 Parameter Sets: (All)
 Aliases:
 
@@ -67,7 +67,7 @@ Specifies the path of the file in which to store the binary representation of th
 path resolves to more than one file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

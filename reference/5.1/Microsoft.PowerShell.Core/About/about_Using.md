@@ -1,6 +1,7 @@
 ---
+description: Allows you to indicate which namespaces are used in the session. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 01/29/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -56,7 +57,7 @@ Cache (GAC) for the associated assembly.
 
 If you are not creating new PowerShell classes, use the `Add-Type` cmdlet
 instead. For more information, see
-[Add-Type](../../Microsoft.PowerShell.Utility/Add-Type.md).
+[Add-Type](xref:Microsoft.PowerShell.Utility.Add-Type).
 
 ## Examples
 

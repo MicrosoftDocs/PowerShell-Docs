@@ -1,7 +1,7 @@
 ---
 external help file: PSModule-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PowerShellGet
 ms.date: 07/02/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/uninstall-module?view=powershell-7&WT.mc_id=ps-gethelp
@@ -66,7 +66,7 @@ pipeline to `Uninstall-Module` and is uninstalled.
 Allows you to uninstall a module marked as a prerelease.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -84,7 +84,7 @@ Specifies that you want to include all available versions of a module. You can't
 parameters.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the `Uninstall-Module`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -116,7 +116,7 @@ Accept wildcard characters: False
 Forces `Uninstall-Module` to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -133,7 +133,7 @@ Accepts a **PSRepositoryItemInfo** object. For example, output `Get-InstalledMod
 and use that variable as the **InputObject** argument.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: InputObject
 Aliases:
 
@@ -150,7 +150,7 @@ Specifies the maximum, or newest, version of the module to uninstall. The **Maxi
 **RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -167,7 +167,7 @@ Specifies the minimum version of the module to uninstall. The **MinimumVersion**
 **RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -183,7 +183,7 @@ Accept wildcard characters: False
 Specifies an array of module names to uninstall.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -199,7 +199,7 @@ Accept wildcard characters: False
 Specifies the exact version number of the module to uninstall.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 Shows what would happen if `Uninstall-Module` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

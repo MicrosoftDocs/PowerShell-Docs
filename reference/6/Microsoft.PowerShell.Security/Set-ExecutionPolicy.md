@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 3/22/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6&WT.mc_id=ps-gethelp
@@ -256,7 +256,7 @@ to run because it was unblocked by the `Unblock-File` cmdlet.
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -292,7 +292,7 @@ The acceptable execution policy values are as follows:
   before it runs.
 
 ```yaml
-Type: ExecutionPolicy
+Type: Microsoft.PowerShell.ExecutionPolicy
 Parameter Sets: (All)
 Aliases:
 Accepted values: AllSigned, Bypass, Default, RemoteSigned, Restricted, Undefined, Unrestricted
@@ -310,7 +310,7 @@ Suppresses all the confirmation prompts. Use caution with this parameter to avoi
 results.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -344,7 +344,7 @@ Execution policies for the **LocalMachine** scope are written to the registry hi
 **HKEY_LOCAL_MACHINE**.
 
 ```yaml
-Type: ExecutionPolicyScope
+Type: Microsoft.PowerShell.ExecutionPolicyScope
 Parameter Sets: (All)
 Aliases:
 Accepted values: CurrentUser, LocalMachine, MachinePolicy, Process, UserPolicy
@@ -361,7 +361,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

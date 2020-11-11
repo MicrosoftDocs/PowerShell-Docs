@@ -51,7 +51,7 @@ MaxLogSize : 15728640
 Used to force the change without prompting.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 The updated configuration settings to be assigned to the event log.
 
 ```yaml
-Type: LogDetails
+Type: Microsoft.PowerShell.Diagnostics.LogDetails
 Parameter Sets: (All)
 Aliases:
 
@@ -108,4 +108,3 @@ You must run this cmdlet from an elevated PowerShell session.
 [Enable-PSTrace](Enable-PSTrace.md)
 
 [Disable-PSTrace](Disable-PSTrace.md)
-

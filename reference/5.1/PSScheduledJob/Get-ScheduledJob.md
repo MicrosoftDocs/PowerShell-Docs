@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/get-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,11 +17,13 @@ Gets scheduled jobs on the local computer.
 ## SYNTAX
 
 ### DefinitionId (Default)
+
 ```
 Get-ScheduledJob [[-Id] <Int32[]>] [<CommonParameters>]
 ```
 
 ### DefinitionName
+
 ```
 Get-ScheduledJob [-Name] <String[]> [<CommonParameters>]
 ```
@@ -46,6 +48,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Get all scheduled jobs
+
 ```
 PS C:\> Get-ScheduledJob
 ```
@@ -53,6 +56,7 @@ PS C:\> Get-ScheduledJob
 This command gets all scheduled jobs on the local computer.
 
 ### Example 2: Get scheduled jobs by name
+
 ```
 PS C:\> Get-ScheduledJob -Name *Backup*, *Archive*
 ```
@@ -61,6 +65,7 @@ This command gets all scheduled jobs on the computer that have names that includ
 This command format lets you search for particular jobs.
 
 ### Example 3: Get scheduled jobs on remote computers
+
 ```
 PS C:\> Invoke-Command -ComputerName (Get-Content Servers.txt) {Get-ScheduledJob}
 ```
@@ -69,6 +74,7 @@ This command gets all scheduled jobs on the computers that are listed in the Ser
 The command uses the Invoke-Command cmdlet to run a **Get-ScheduleJob** command on each computer.
 
 ### Example 4: Pipe scheduled jobs to other cmdlets
+
 ```
 PS C:\> Get-ScheduledJob DailyBackup, WeeklyBackup | Get-JobTrigger
 ```
@@ -84,7 +90,7 @@ Enter one or more IDs of scheduled jobs on the computer.
 By default, **Get-ScheduledJob** gets all scheduled jobs on the computer.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: DefinitionId
 Aliases:
 
@@ -102,7 +108,7 @@ Wildcards are supported.
 By default, **Get-ScheduledJob** gets all scheduled jobs on the computer.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DefinitionName
 Aliases:
 
@@ -126,6 +132,7 @@ You cannot pipe input to **Get-ScheduledJob**.
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 ## NOTES
+
 * Each scheduled job is saved in a subdirectory of the $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory on the local computer. The subdirectory is named for the scheduled job and contains the XML file for the scheduled job and records of its execution history. For more information about scheduled jobs on disk, see about_Scheduled_Jobs_Advanced.
 * Scheduled jobs that you create in Windows PowerShell appear in Task Scheduler in the Task Scheduler Library\Microsoft\Windows\PowerShell\ScheduledJobs folder. You can use Task Scheduler to view and edit the scheduled job.
 * You can use Task Scheduler, the SchTasks.exe command-line tool, and the Task Scheduler cmdlets to manage scheduled jobs that you create with the Scheduled Job cmdlets. However, you cannot use the Scheduled Job cmdlets to manage tasks that you create in Task Scheduler.
@@ -163,5 +170,3 @@ You cannot pipe input to **Get-ScheduledJob**.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

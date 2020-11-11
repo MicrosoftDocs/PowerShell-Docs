@@ -1,13 +1,8 @@
 ---
-title: "How to Support Jobs | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Support Jobs
+description: How to Support Jobs
 ---
 # How to Support Jobs
 

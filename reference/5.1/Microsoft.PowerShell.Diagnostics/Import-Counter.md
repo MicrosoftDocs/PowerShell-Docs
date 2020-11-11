@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/import-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -226,7 +226,7 @@ For example:
 - `\\Server01\Processor(*)\% Processor Time`
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: GetCounterSet
 Aliases:
 
@@ -244,7 +244,7 @@ Enter a **DateTime** object, such as one created by the Get-Date cmdlet.
 By default, **Import-Counter** imports all counter data in the files specified by the *Path* parameter.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: GetCounterSet
 Aliases:
 
@@ -265,7 +265,7 @@ Wildcards are permitted.
 To get all counter sets in the file, type `Import-Counter -ListSet *`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ListSetSet
 Aliases:
 
@@ -282,7 +282,7 @@ Specifies the maximum number of samples of each counter to import.
 By default, **Get-Counter** imports all of the data in the files specified by the *Path* parameter.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: GetCounterSet
 Aliases:
 
@@ -303,12 +303,12 @@ You can specify only one .csv or .tsv file, but you can specify multiple .blg fi
 You can also pipe file path strings (in quotation marks) to **Import-Counter**.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: PSPath
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
@@ -321,7 +321,7 @@ Enter a **DateTime** object, such as one created by the **Get-Date** cmdlet.
 By default, **Import-Counter** imports all counter data in the files specified by the *Path* parameter.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: GetCounterSet
 Aliases:
 
@@ -337,7 +337,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets a summary of the imported data, instead of getting individual counter data samples.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: SummarySet
 Aliases:
 

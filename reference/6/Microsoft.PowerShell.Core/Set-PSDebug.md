@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 08/22/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-psdebug?view=powershell-6&WT.mc_id=ps-gethelp
@@ -122,7 +122,7 @@ Set-PSDebug -Off; foreach ($i in 1..3) {$i}
 Turns off all script debugging features.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: off
 Aliases:
 
@@ -141,7 +141,7 @@ a new interpreter level to inspect the state of the script.
 Specifying the **Step** parameter automatically sets a trace level of `1`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: on
 Aliases:
 
@@ -159,7 +159,7 @@ is referenced before a value is assigned, PowerShell returns an exception error.
 to `Set-StrictMode -Version 1`. For more information, see [Set-StrictMode](Set-StrictMode.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: on
 Aliases:
 
@@ -181,7 +181,7 @@ The acceptable values for this parameter are as follows:
 - 2: Trace script lines, variable assignments, function calls, and scripts.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: on
 Aliases:
 

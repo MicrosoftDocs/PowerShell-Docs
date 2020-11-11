@@ -1,6 +1,7 @@
 ---
+description: Describes how to work with command parameters in PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 02/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameters?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0

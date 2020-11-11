@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/export-console?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -31,6 +31,7 @@ For more information about Windows PowerShell snap-ins, see about_PSSnapins.
 ## EXAMPLES
 
 ### Example 1: Export the names of snap-ins in the current session
+
 ```
 PS C:\> Export-Console -Path $pshome\Consoles\ConsoleS1.psc1
 ```
@@ -38,6 +39,7 @@ PS C:\> Export-Console -Path $pshome\Consoles\ConsoleS1.psc1
 This command exports the names of Windows PowerShell snap-ins in the current session to the ConsoleS1.psc1 file in the Consoles folder of the Windows PowerShell installation folder, $pshome.
 
 ### Example 2: Export the names of snap-ins to the most recent console file
+
 ```
 PS C:\> Export-Console
 ```
@@ -48,6 +50,7 @@ It overwrites the previous file contents.
 If you have not exported a console file during the current session, you are prompted for permission to continue and then prompted for a file name.
 
 ### Example 3: Add a snap-in and export the names of snap-ins
+
 ```
 PS C:\> Add-PSSnapin NewPSSnapin
 PS C:\> Export-Console -path NewPSSnapinConsole.psc1
@@ -65,6 +68,7 @@ The third command starts Windows PowerShell with the NewPSSnapinConsole.psc1 fil
 Because the console file includes the Windows PowerShell snap-in name, the cmdlets and providers in the snap-in are available in the current session.
 
 ### Example 4: Export names of snap-ins to a specified location
+
 ```
 PS C:\> export-console -path Console01
 PS C:\> notepad console01.psc1
@@ -82,6 +86,7 @@ This command exports the names of the Windows PowerShell snap-ins in the current
 The second command displays the contents of the Console01.psc1 file in Notepad.
 
 ### Example 5: Determine the console file to update
+
 ```
 PS C:\> powershell.exe -PSConsoleFile Console01.psc1
 PS C:\> Add-PSSnapin MySnapin
@@ -115,7 +120,7 @@ Indicates that this cmdlet overwrites the data in a console file without warning
 The read-only attribute is changed and is not reset when the command finishes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -131,7 +136,7 @@ Indicates that this cmdlet does not overwrite  an existing console file.
 By default, if a file occurs in the specified path, **Export-Console** overwrites the file without warning.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NoOverwrite
 
@@ -157,7 +162,7 @@ The path of the most recently used console file is stored in the value of the $C
 For more information, see about_Automatic_Variables.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: PSPath
 
@@ -172,7 +177,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -188,7 +193,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -213,6 +218,7 @@ You can pipe a path string to this cmdlet.
 This cmdlet creates a file that contains the exported aliases.
 
 ## NOTES
+
 * When a console file (.psc1) is used to start the session, the name of the console file is automatically stored in the $ConsoleFileName automatic variable. The value of $ConsoleFileName is updated when you use the *Path* parameter of **Export-Console** to specify a new console file. When no console file is used, $ConsoleFileName has no value ($Null).
 
   To use a Windows PowerShell console file in a new session, use the following syntax to start Windows PowerShell:
@@ -222,7 +228,6 @@ This cmdlet creates a file that contains the exported aliases.
   You can also save Windows PowerShell snap-ins for future sessions by adding an Add-PSSnapin command to your Windows PowerShell profile.
 For more information, see about_Profiles.
 
-*
 
 ## RELATED LINKS
 
@@ -231,5 +236,3 @@ For more information, see about_Profiles.
 [Get-PSSnapin](Get-PSSnapin.md)
 
 [Remove-PSSnapin](Remove-PSSnapin.md)
-
-

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-transaction?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -34,6 +34,7 @@ For more information, see about_Transactions.
 ## EXAMPLES
 
 ### Example 1: Get the current transaction
+
 ```
 PS C:\> Start-Transaction
 PS C:\> Get-Transaction
@@ -46,6 +47,7 @@ Error                1                 Active
 This command uses the Get-Transaction cmdlet to get the current transaction.
 
 ### Example 2: Show the properties and methods of the transaction object
+
 ```
 PS C:\> Get-Transaction | Get-Member
 
@@ -65,6 +67,7 @@ SubscriberCount    Property   System.Int32 SubscriberCount {get;set;}
 This command uses the Get-Member cmdlet to show the properties and methods of the transaction object.
 
 ### Example 3: Show the property values of a rolled back transaction
+
 ```
 PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
@@ -80,6 +83,7 @@ Error                0                 RolledBack
 This command shows the property values of a transaction object for a transaction that has been rolled back.
 
 ### Example 4: Show the property values of a committed transaction
+
 ```
 PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
@@ -95,6 +99,7 @@ Error                1                 Committed
 This command shows the property values of a transaction object for a transaction that has been committed.
 
 ### Example 5: Start a transaction while another is in progress
+
 ```
 PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
@@ -142,6 +147,7 @@ The first Complete-Transaction command does not commit the transaction, but it r
 The second **Complete-Transaction** command commits the transaction.
 
 ### Example 6: Start an independent transaction while another is in progress
+
 ```
 PS C:\>
 HKLM:\SOFTWARE> Start-Transaction
@@ -207,5 +213,3 @@ This cmdlet returns an object that represents the current transaction.
 [Use-Transaction](Use-Transaction.md)
 
 [New-Item](New-Item.md)
-
-

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/limit-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -31,6 +31,7 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 ## EXAMPLES
 
 ### Example 1: Increase the size of an event log
+
 ```
 PS C:\> Limit-EventLog -LogName "Windows PowerShell" -MaximumSize 20KB
 ```
@@ -38,6 +39,7 @@ PS C:\> Limit-EventLog -LogName "Windows PowerShell" -MaximumSize 20KB
 This command increases the maximum size of the Windows PowerShell event log on the local computer to 20480 bytes (20 KB).
 
 ### Example 2: Retain an event log for a specified duration
+
 ```
 PS C:\> Limit-EventLog -LogName Security -ComputerName "Server01", "Server02" -RetentionDays 7
 ```
@@ -45,6 +47,7 @@ PS C:\> Limit-EventLog -LogName Security -ComputerName "Server01", "Server02" -R
 This command ensures that events in the Security log on the Server01 and Server02 computers are retained for at least 7 days.
 
 ### Example 3: Change the overflow action of all event logs
+
 ```
 PS C:\> $Logs = Get-EventLog -List | ForEach {$_.log}
 PS C:\> Limit-EventLog -OverflowAction OverwriteOlder -LogName $Logs
@@ -83,7 +86,7 @@ This parameter does not rely on Windows PowerShell remoting.
 You can use the *ComputerName* parameter of **Limit-EventLog** even if your computer is not configured to run remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: CN
 
@@ -101,7 +104,7 @@ Wildcard characters are not permitted.
 This parameter is required.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: LN
 
@@ -120,7 +123,7 @@ The value must be divisible by 64 KB (65536).
 This parameter specifies the value of the **MaximumKilobytes** property of the **System.Diagnostics.EventLog** object that represents a classic event log.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -143,7 +146,7 @@ The acceptable values for this parameter are:
 This parameter specifies the value of the **OverflowAction** property of the **System.Diagnostics.EventLog** object that represents a classic event log.
 
 ```yaml
-Type: OverflowAction
+Type: System.Diagnostics.OverflowAction
 Parameter Sets: (All)
 Aliases: OFA
 Accepted values: OverwriteOlder, OverwriteAsNeeded, DoNotOverwrite
@@ -161,7 +164,7 @@ Specifies the minimum number of days that an event must remain in the event log.
 This parameter specifies the value of the **MinimumRetentionDays** property of the **System.Diagnostics.EventLog** object that represents a classic event log.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: MRD
 
@@ -176,7 +179,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -192,7 +195,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -217,6 +220,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To use this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with the Run as administrator option.
 
   This cmdlet changes the properties of the **System.Diagnostics.EventLog** object that represents a classic event log.
@@ -239,5 +243,3 @@ To see the current settings of the event log properties, type `Get-EventLog -Lis
 [Show-EventLog](Show-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
-
-

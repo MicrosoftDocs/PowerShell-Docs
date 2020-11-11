@@ -1,13 +1,8 @@
 ---
-title: "RunSpace04 Code Samples | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: cb6fcc47-cf89-43e7-b686-3d60934ce3e7
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: RunSpace04 Code Samples
+description: RunSpace04 Code Samples
 ---
 # RunSpace04 Code Samples
 

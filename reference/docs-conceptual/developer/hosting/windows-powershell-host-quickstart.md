@@ -1,13 +1,8 @@
 ---
-title: "Windows PowerShell Host Quickstart | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/12/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
-caps.latest.revision: 9
+ms.date: 09/12/2016
+ms.topic: reference
+title: Windows PowerShell Host Quickstart
+description: Windows PowerShell Host Quickstart
 ---
 # Windows PowerShell Host Quickstart
 

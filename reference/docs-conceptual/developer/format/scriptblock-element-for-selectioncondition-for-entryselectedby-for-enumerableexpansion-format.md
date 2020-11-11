@@ -1,13 +1,8 @@
 ---
-title: "ScriptBlock Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 4126b799-c43d-4175-8513-6d761c65437e
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: ScriptBlock Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
+description: ScriptBlock Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
 ---
 # ScriptBlock Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
 

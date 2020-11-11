@@ -1,7 +1,8 @@
 ---
+description: Describes the `Prompt` function and demonstrates how to create a custom `Prompt` function. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 10/04/2019
+Locale: en-US
+ms.date: 04/15/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Prompts
@@ -217,10 +218,10 @@ built-in PowerShell prompt when PowerShell is opened by using the
 function prompt {
   $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
   $principal = [Security.Principal.WindowsPrincipal] $identity
+  $adminRole = [Security.Principal.WindowsBuiltInRole]::Administrator
 
   $(if (Test-Path variable:/PSDebugContext) { '[DBG]: ' }
-    elseif($principal.IsInRole([Security.Principal.WindowsBuiltInRole]
-      "Administrator")) { "[ADMIN]: " }
+    elseif($principal.IsInRole($adminRole)) { "[ADMIN]: " }
     else { '' }
   ) + 'PS ' + $(Get-Location) +
     $(if ($NestedPromptLevel -ge 1) { '>>' }) + '> '
@@ -275,15 +276,15 @@ profiles. For more information about profiles, see [about_Profiles](about_Profil
 
 ## See also
 
-[Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
+[Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
 
-[Enter-PSSession](../Enter-PSSession.md)
+[Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
 
-[Get-History](../Get-History.md)
+[Get-History](xref:Microsoft.PowerShell.Core.Get-History)
 
-[Get-Random](../../Microsoft.PowerShell.Utility/Get-Random.md)
+[Get-Random](xref:Microsoft.PowerShell.Utility.Get-Random)
 
-[Write-Host](../../Microsoft.PowerShell.Utility/Write-Host.md)
+[Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host)
 
 [about_Profiles](about_Profiles.md)
 

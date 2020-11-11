@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/debug-runspace?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/debug-runspace?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Debug-Runspace
 ---
@@ -18,25 +18,25 @@ Starts an interactive debugging session with a runspace.
 ### RunspaceParameterSet (Default)
 
 ```
-Debug-Runspace [-Runspace] <Runspace> [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Runspace [-Runspace] <Runspace> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameParameterSet
 
 ```
-Debug-Runspace [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Runspace [-Name] <String> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### IdParameterSet
 
 ```
-Debug-Runspace [-Id] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Runspace [-Id] <Int32> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceIdParameterSet
 
 ```
-Debug-Runspace [-InstanceId] <Guid> [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Runspace [-InstanceId] <Guid> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -110,7 +110,7 @@ the **Id** parameter. Because there's a breakpoint in the script, the debugger o
 Specifies the ID number of a runspace. You can run `Get-Runspace` to show runspace IDs.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: IdParameterSet
 Aliases:
 
@@ -126,7 +126,7 @@ Accept wildcard characters: False
 Specifies a runspace by its instance ID, a GUID that you can show by running `Get-Runspace`.
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: InstanceIdParameterSet
 Aliases:
 
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 Specifies a runspace by its name. You can run `Get-Runspace` to show the names of runspaces.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -159,7 +159,7 @@ Specifies a runspace object. The simplest way to provide a value for this parame
 variable that contains the results of a filtered `Get-Runspace` command.
 
 ```yaml
-Type: Runspace
+Type: System.Management.Automation.Runspaces.Runspace
 Parameter Sets: RunspaceParameterSet
 Aliases:
 
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -191,13 +191,29 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
 Required: False
 Position: Named
 Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BreakAll
+
+{{ Fill BreakAll Description }}
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -240,3 +256,4 @@ added to the running list only if it meets the following criteria.
 [Enter-PSHostProcess](../Microsoft.PowerShell.Core/Enter-PSHostProcess.md)
 
 [Enter-PSSession](../Microsoft.PowerShell.Core/Enter-PSSession.md)
+

@@ -40,10 +40,10 @@ Additionally, PowerShell 7.0 supports ARM32 and ARM64 flavors of Debian, Ubuntu,
 Linux.
 
 Check the installation instructions for your preferred operating system
-[Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7),
-[macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7),
+[Windows](/powershell/scripting/install/installing-powershell-core-on-windows),
+[macOS](/powershell/scripting/install/installing-powershell-core-on-macos),
 or
-[Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7).
+[Linux](/powershell/scripting/install/installing-powershell-core-on-linux).
 
 While not officially supported, the community has also provided packages for
 [Arch](https://aur.archlinux.org/packages/powershell/) and Kali Linux.
@@ -51,20 +51,21 @@ While not officially supported, the community has also provided packages for
 > [!NOTE]
 > Debian 10 and CentOS 8 currently do not support WinRM remoting. For details on setting up
 > SSH-based remoting, see
-> [PowerShell Remoting over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7).
+> [PowerShell Remoting over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 For more up-to-date information about supported operating systems and support lifecycle, see the
-[PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle?view=powershell-7).
+[PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle).
 
 ## Running PowerShell 7
 
-PowerShell 7 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. For
+PowerShell 7 installs to a directory seperately from Windows PowerShell.
+This enables you to run PowerShell 7 side-by-side with Windows PowerShell 5.1. For
 PowerShell Core 6.x, PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
 
 - PowerShell 7 is installed to `%programfiles%\PowerShell\7`
 - The `%programfiles%\PowerShell\7` folder is added to `$env:PATH`
 
-The PowerShell 7 installer packages upgrade previous versions of PowerShell Core 6.x:
+The PowerShell 7 installer package upgrades previous versions of PowerShell Core 6.x:
 
 - PowerShell Core 6.x on Windows: `%programfiles%\PowerShell\6` is replaced by
   `%programfiles%\PowerShell\7`
@@ -73,8 +74,8 @@ The PowerShell 7 installer packages upgrade previous versions of PowerShell Core
 
 > [!NOTE]
 > In Windows PowerShell, the executable to launch PowerShell is named `powershell.exe`. In version 6
-> and above, the executable is changed to support side-by-side execution. The new executable to
-> launch PowerShell 7 is `pwsh.exe`. Preview builds will remain in-place as `pwsh-preview` instead
+> and above, the executable name is changed to support side-by-side execution. The new executable name to
+> launch PowerShell 7 is `pwsh.exe`. Preview builds remain in-place as `pwsh-preview` instead
 > of `pwsh` under the 7-preview directory.
 
 ## Improved backwards compatibility with Windows PowerShell
@@ -87,7 +88,7 @@ ship as part of Windows.
 For Windows, a new switch parameter **UseWindowsPowerShell** is added to `Import-Module`. This
 switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
 implicitly run any cmdlets contained in that module. For more information on
-[Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7).
+[Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7&preserve-view=true).
 
 For more information on which Microsoft modules work with PowerShell 7.0, see the
 [Module Compatibility Table](https://aka.ms/PSModuleCompat).
@@ -123,7 +124,7 @@ Use the `$_` variable to represent the current input object in the script block.
 `$using:` scope to pass variable references to the running script block.
 
 For more information about
-[ForEach-Object](/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7).
+[ForEach-Object](/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&preserve-view=true).
 
 ## Ternary operator
 
@@ -150,7 +151,7 @@ In this example, if the path exists, then **Path exists** is displayed. If the p
 then **Path not found** is displayed.
 
 For more information
-[About If](/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7).
+[About If](/powershell/module/microsoft.powershell.core/about/about_if).
 
 ## Pipeline chain operators
 
@@ -209,7 +210,7 @@ Second
 ```
 
 For more information
-[About Pipeline Chain Operators](/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7).
+[About Pipeline Chain Operators](/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7&preserve-view=true).
 
 ## Null-coalescing, assignment, and conditional operators
 
@@ -249,7 +250,7 @@ $x
 100
 ```
 
-In the following example, the right-hand operand won't be evaluated:
+In the following example, the right-hand operand is not evaluated:
 
 ```powershell
 [string] $todaysDate = '1/10/2020'
@@ -260,8 +261,8 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 ### Null conditional member access operators ?. and ?[] (Experimental)
 
 > [!NOTE]
-> This is an experimental feature named **PSNullConditionalOperators**. Learn more
-> [About Experimental Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+> This is an experimental feature named **PSNullConditionalOperators**. For more information, see
+> [Using Experimental Features](/powershell/scripting/learn/experimental-features).
 
 A null conditional operator permits member access, `?.`, or element access, `?[]`, to its operand
 only if that operand evaluates to non-null; otherwise, it returns null.
@@ -279,14 +280,14 @@ ${Service}?.status
 Stopped
 ```
 
-The following example will return null, without trying to access the member name **Status**:
+The following example returns null, without trying to access the member name **Status**:
 
 ```powershell
 $service = $Null
 ${Service}?.status
 ```
 
-Similarly, using `?[]`, the value of the element will be returned:
+Similarly, using `?[]`, the value of the element is returned:
 
 ```powershell
 $a = 1..10
@@ -302,11 +303,11 @@ ${a}?[0]
 ```
 
 For more information
-[About_Operators](/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7).
+[About_Operators](/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&preserve-view=true).
 
 ## New view ConciseView and cmdlet Get-Error
 
-The display of error messages has been improved to enhance the readability of interactive and script
+PowerShell 7.0 enhances the display of error messages to improve the readability of interactive and script
 errors with a new default view **ConciseView**. The views are user-selectable through the preference
 variable `$ErrorView`.
 
@@ -327,8 +328,7 @@ that line. If the terminal doesn't support ANSI color escape sequences (VT100), 
 
 ![Error display from a script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-The default view in PowerShell 7 is **ConciseView**. The previous default view was **NormalView** and is
-user selectable by setting the preference variable `$ErrorView`.
+The default view in PowerShell 7 is **ConciseView**. The previous default view was **NormalView** and you can select thisby setting the preference variable `$ErrorView`.
 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
@@ -339,7 +339,7 @@ $ErrorView = 'ConciseView' # Sets the error view to ConciseView
 > A new property **ErrorAccentColor** is added to `$Host.PrivateData` to support changing
 > the accent color of the error message.
 
-A new cmdlet `Get-Error` provides complete detailed view of the fully qualified error when desired.
+A new cmdlet `Get-Error` provides a complete detailed view of the fully qualified error when desired.
 By default the cmdlet displays the full details, including inner exceptions, of the last error that
 occurred.
 
@@ -359,7 +359,7 @@ from the current session you wish displayed.
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
 ```
 
-For more information about [Get-Error](/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7).
+For more information about [Get-Error](/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7&preserve-view=true).
 
 ## New version notification
 
@@ -401,14 +401,15 @@ To set the version notification to the `Default` behavior:
 $Env:POWERSHELL_UPDATECHECK = 'Default'
 ```
 
-For more information [About Update Notifications](/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7).
+For more information
+[About Update Notifications](/powershell/module/microsoft.powershell.core/about/about_update_notifications).
 
 ## New DSC Resource support with Invoke-DSCResource (Experimental)
 
 > [!NOTE]
-> This is an experimental feature named **PSDesiredStateConfiguration.InvokeDscResource**. Learn
-> more
-> [About Experimental Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+> This is an experimental feature named **PSDesiredStateConfiguration.InvokeDscResource**. For more
+> information, see
+> [Using Experimental Features](/powershell/scripting/learn/experimental-features).
 
 The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired State Configuration
 (DSC) resource.
@@ -417,16 +418,18 @@ This cmdlet invokes a DSC resource directly, without creating a configuration do
 cmdlet, configuration management products can manage Windows or Linux by using DSC resources. This
 cmdlet also enables debugging of resources when the DSC engine is running with debugging enabled.
 
-This command invokes the **Set** method of a resource named Log and specifies a **Message** property.
+This command invokes the **Set** method of a resource named **WindowsProcess** and provides the
+mandatory **Path** and **Arguments** properties to start the specified Windows process.
 
 ```powershell
-Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
-  Message = 'Hello World'
+Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+  Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+  Arguments = ''
 }
 ```
 
 For more information about
-[Invoke-DSCResource](/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7).
+[Invoke-DSCResource](/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7&preserve-view=true).
 
 ## Breaking Changes and Improvements
 
@@ -458,6 +461,7 @@ For more information about
 - Fix a resource leak by unregistering the event handler from AppDomain.CurrentDomain.ProcessExit (#10626)
 - Add support to ActionPreference.Break to break into debugger when Debug, Error, Information, Progress, Verbose or Warning messages are generated (#8205) (Thanks @KirkMunro!)
 - Enable starting control panel add-ins within PowerShell Core without specifying .CPL extension. (#9828)
+- Support negative numbers in -split operator (#8960) (Thanks @ece-jacob-scott!)
 
 ### General Cmdlet Updates and Fixes
 
@@ -578,7 +582,7 @@ For more information about
 - Clean up CodeFactor style issues coming in commits for the last month (#10591) (Thanks @iSazonov!)
 - Fix typo in description of PSTernaryOperator experimental feature (#10586) (Thanks @bergmeister!)
 - Convert ActionPreference.Suspend enumeration value into a non-supported, reserved state, and remove restriction on using ActionPreference.Ignore in preference variables (#10317) (Thanks @KirkMunro!)
-- Replace ArrayList with List<T> to get more readable and reliable code without changing functionality (#10333) (Thanks @iSazonov!)
+- Replace ArrayList with List\<T> to get more readable and reliable code without changing functionality (#10333) (Thanks @iSazonov!)
 - Make code style fixes to TestConnectionCommand (#10439) (Thanks @vexx32!)
 - Cleanup AutomationEngine and remove extra SetSessionStateDrive method call (#10416) (Thanks @iSazonov!)
 - Rename default ParameterSetName back to Delimiter for ConvertTo-Csv and ConvertFrom-Csv (#10425)

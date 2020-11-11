@@ -1,8 +1,8 @@
 ---
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=392040
-Help Version: 5.1.1.0
+Help Version: 5.2.0.0
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Guid: 4ae9fd46-338a-459c-8186-07f910774cb8
 Module Name: PackageManagement
 ms.date: 06/09/2017
@@ -24,7 +24,7 @@ Finds software packages in available package sources.
 Returns a list of Package Management package providers available for installation.
 
 ### [Get-Package](Get-Package.md)
-Returns a list of all software packages that have been installed by using Package Management.
+Returns a list of all software packages that were installed with **PackageManagement**.
 
 ### [Get-PackageProvider](Get-PackageProvider.md)
 Returns a list of package providers that are connected to Package Management.
@@ -55,4 +55,3 @@ Uninstalls one or more software packages.
 
 ### [Unregister-PackageSource](Unregister-PackageSource.md)
 Removes a registered package source.
-

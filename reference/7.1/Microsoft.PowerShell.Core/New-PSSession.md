@@ -1,10 +1,10 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 12/20/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
 ---
@@ -24,13 +24,6 @@ New-PSSession [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Name <
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
-### VMId
-
-```
-New-PSSession -Credential <PSCredential> [-Name <String[]>] [-ConfigurationName <String>]
- [-VMId] <Guid[]> [-ThrottleLimit <Int32>] [<CommonParameters>]
-```
-
 ### Uri
 
 ```
@@ -38,6 +31,13 @@ New-PSSession [-Credential <PSCredential>] [-Name <String[]>] [-EnableNetworkAcc
  [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-ConnectionUri] <Uri[]> [-AllowRedirection]
  [-SessionOption <PSSessionOption>] [-Authentication <AuthenticationMechanism>]
  [-CertificateThumbprint <String>] [<CommonParameters>]
+```
+
+### VMId
+
+```
+New-PSSession -Credential <PSCredential> [-Name <String[]>] [-ConfigurationName <String>]
+ [-VMId] <Guid[]> [-ThrottleLimit <Int32>] [<CommonParameters>]
 ```
 
 ### VMName
@@ -64,7 +64,7 @@ New-PSSession [-Name <String[]>] [-ConfigurationName <String>] -ContainerId <Str
 ### UseWindowsPowerShellParameterSet
 
 ```
-New-PSSession [-Name <String[]>] -UseWindowsPowerShell [<CommonParameters>]
+New-PSSession [-Name <String[]>] [-UseWindowsPowerShell] [<CommonParameters>]
 ```
 
 ### SSHHost
@@ -102,7 +102,7 @@ configured with a PowerShell SSH endpoint. The benefit of an SSH based PowerShel
 that it can work across multiple platforms (Windows, Linux, macOS). For SSH based sessions you use
 the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant
 connection information. For more information about how to set up PowerShell SSH remoting, see
-[PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
+[PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 > [!NOTE]
 > When using WSMan remoting from a Linux or macOS client with a HTTPS endpoint where the server
@@ -324,7 +324,7 @@ of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCou
 **$PSSessionOption** preference variable. The default value is 5.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Uri
 Aliases:
 
@@ -350,7 +350,7 @@ The value of this parameter should match the value of the **URLPrefix** property
 the remote computer.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName
 Aliases:
 
@@ -387,7 +387,7 @@ For more information about the values of this parameter, see
 > credentials that are passed to it can be used to control the network session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
 Parameter Sets: ComputerName, Uri
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
@@ -411,7 +411,7 @@ To get a certificate, use the `Get-Item` or `Get-ChildItem` command in the Power
 drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, Uri
 Aliases:
 
@@ -444,7 +444,7 @@ To include the local computer in the value of the **ComputerName** parameter, st
 PowerShell by using the Run as administrator option.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerName
 Aliases: Cn
 
@@ -461,7 +461,7 @@ Specifies the session configuration that is used for the new **PSSession**.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration. If you
 specify only the configuration name, the following schema URI is prepended:
-`https://schemas.microsoft.com/PowerShell`.
+`http://schemas.microsoft.com/PowerShell`.
 
 The session configuration for a session is located on the remote computer. If the specified session
 configuration does not exist on the remote computer, the command fails.
@@ -471,7 +471,7 @@ computer. If this preference variable is not set, the default is Microsoft.Power
 information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId
 Aliases:
 
@@ -505,7 +505,7 @@ If the destination computer redirects the connection to a different URI, PowerSh
 redirection unless you use the **AllowRedirection** parameter in the command.
 
 ```yaml
-Type: Uri[]
+Type: System.Uri[]
 Parameter Sets: Uri
 Aliases: URI, CU
 
@@ -524,7 +524,7 @@ information, see the help for the
 [docker ps](https://docs.docker.com/engine/reference/commandline/ps/) command.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ContainerId
 Aliases:
 
@@ -551,14 +551,15 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Accept pipeline input: True (ByPropertyName)
-Position: Named
-Accept wildcard characters: False
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ComputerName, Uri, VMId, VMName
-Required: True (VMId, VMName), False (ComputerName, Uri)
-Default value: Current user
 Aliases:
-Type: PSCredential
+
+Required: True (VMId, VMName), False (ComputerName, Uri)
+Position: Named
+Default value: Current user
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
 ```
 
 ### -EnableNetworkAccess
@@ -591,7 +592,7 @@ authentication can be reconnected from other computers. For more information, se
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName, Uri, Session
 Aliases:
 
@@ -611,7 +612,7 @@ rather than Windows WinRM.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: SSHHost
 Aliases:
 
@@ -633,7 +634,7 @@ parameter can be used to provide the key that identifies the user.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SSHHost
 Aliases: IdentityFilePath
 
@@ -653,7 +654,7 @@ You can use the name to refer to the **PSSession** when you use other cmdlets, s
 current session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -682,7 +683,7 @@ computers or sessions on which the command runs. An alternate port setting might
 from running on all computers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ComputerName, SSHHost
 Aliases:
 
@@ -698,7 +699,7 @@ Accept wildcard characters: False
 Indicates that the **PSSession** runs as administrator.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ContainerId
 Aliases:
 
@@ -723,7 +724,7 @@ port, configuration name, throttle limit, and Secure Sockets Layer (SSL) value a
 they have a different display name, ID, and instance ID (GUID).
 
 ```yaml
-Type: PSSession[]
+Type: System.Management.Automation.Runspaces.PSSession[]
 Parameter Sets: Session
 Aliases:
 
@@ -754,7 +755,7 @@ For a description of the session options that includes the default values, see
 session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
-Type: PSSessionOption
+Type: System.Management.Automation.Remoting.PSSessionOption
 Parameter Sets: ComputerName, Uri
 Aliases:
 
@@ -779,7 +780,7 @@ different connection information.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: Hashtable[]
+Type: System.Collections.Hashtable[]
 Parameter Sets: SSHHostHashParam
 Aliases:
 
@@ -800,7 +801,7 @@ PowerShell to use the HostName parameter set for establishing an SSH based remot
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: SSHHost
 Aliases:
 Accepted values: true
@@ -820,8 +821,8 @@ If you omit this parameter or enter a value of 0 (zero), the default value, 32, 
 The throttle limit applies only to the current command, not to the session or to the computer.
 
 ```yaml
-Type: Int32
-Parameter Sets: ComputerName, VMName, Uri, VMId, Session, ContainerId
+Type: System.Int32
+Parameter Sets: ComputerName, Uri, VMId, VMName, Session, ContainerId
 Aliases:
 
 Required: False
@@ -851,7 +852,7 @@ name is used for the connection.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SSHHost
 Aliases:
 
@@ -875,7 +876,7 @@ If you use this parameter, but SSL is not available on the port that is used for
 command fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName
 Aliases:
 
@@ -895,7 +896,7 @@ following command:
 `Get-VM | Select-Object -Property Name, ID`
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: VMId
 Aliases: VMGuid
 
@@ -913,7 +914,7 @@ of the specified virtual machines. To see the virtual machines that are availabl
 `Get-VM` cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: VMName
 Aliases:
 
@@ -921,137 +922,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -HostName
-
-Specifies an array of computer names for a Secure Shell (SSH) based connection. This is similar to
-the ComputerName parameter except that the connection to the remote computer is made using SSH
-rather than Windows WinRM.
-This parameter supports specifying the user name and/or port as part of the host name parameter
-value using the form `user@hostname:port`.
-The user name and/or port specified as part of the host name takes precedence over the `-UserName`
-and `-Port` parameters, if specified.
-This allows passing multiple computer names to this parameter where some have specific user names
-and/or ports, while others use the user name and/or port from the `-UserName` and `-Port`
-parameters.
-
-This parameter was introduced in PowerShell 6.0.
-
-```yaml
-Type: String[]
-Parameter Sets: HostName
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -KeyFilePath
-
-Specifies a key file path used by Secure Shell (SSH) to authenticate a user on a remote computer.
-
-SSH allows user authentication to be performed via private/public keys as an alternative to basic
-password authentication. If the remote computer is configured for key authentication then this
-parameter can be used to provide the key that identifies the user.
-
-This parameter was introduced in PowerShell 6.0.
-
-```yaml
-Type: String
-Parameter Sets: HostName
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SSHTransport
-
-Indicates that the remote connection is established using Secure Shell (SSH).
-
-By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces
-PowerShell to use the HostName parameter set for establishing an SSH based remote connection.
-
-This parameter was introduced in PowerShell 6.0.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: HostName
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserName
-
-Specifies the user name for the account used to create a session on the remote computer. User
-authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
-
-If SSH is configured for basic password authentication then you will be prompted for the user
-password.
-
-If SSH is configured for key based user authentication then a key file path can be provided via the
-KeyFilePath parameter and no password prompt will occur. Note that if the client user key file is
-located in an SSH known location then the KeyFilePath parameter is not needed for key based
-authentication, and user authentication will occur automatically based on the user name. See SSH
-documentation about key based user authentication for more information.
-
-This is not a required parameter. If no UserName parameter is specified then the current log on user
-name is used for the connection.
-
-This parameter was introduced in PowerShell 6.0.
-
-```yaml
-Type: String
-Parameter Sets: HostName
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SSHConnection
-
-This parameter takes an array of hashtables where each hashtable contains one or more connection
-parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName,
-KeyFilePath, Subsystem).
-
-The hashtable connection parameters are the same as defined for the **HostName** parameter set.
-Note that the order of the keys in the hashtable result in user name and port being used for the
-connection where the last one specified is used.  For example, if you use
-`@{UserName="first";HostName="second@host"}`, then the user name `second` will be used.  However, if
-you use `@{HostName="second@host:22";Port=23}`, then port 23 will be used.
-
-This parameter was introduced in PowerShell 6.0.
-
-The **SSHConnection** parameter is useful for creating multiple sessions where each session requires
-different connection information.
-
-
-```yaml
-Type: hashtable
-Parameter Sets: SSHConnection
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -1066,14 +936,30 @@ If the specified subsystem does not exist on the remote computer, the command fa
 If this parameter is not used, the default is the 'powershell' subsystem.
 
 ```yaml
-Type: String
-Parameter Sets: HostName
+Type: System.String
+Parameter Sets: SSHHost
 Aliases:
 
 Required: False
 Position: Named
 Default value: powershell
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -UseWindowsPowerShell
+
+{{ Fill UseWindowsPowerShell Description }}
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UseWindowsPowerShellParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -1111,7 +997,7 @@ You can pipe a string, URI, or session object to this cmdlet.
   specific features and limitations do not apply. For example WinRM based quotas, session options,
   custom endpoint configuration, and disconnect/reconnect features are currently not supported. For
   more information about how to set up PowerShell SSH remoting, see
-  [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
+  [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS
 
@@ -1130,3 +1016,4 @@ You can pipe a string, URI, or session object to this cmdlet.
 [Receive-PSSession](Receive-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
+

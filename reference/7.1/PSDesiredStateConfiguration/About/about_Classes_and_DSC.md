@@ -1,8 +1,9 @@
 ---
+description:  Describes how you can use classes to develop in PowerShell with Desired State Configuration (DSC). 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 1/11/2019
-online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes_and_DSC
 ---
@@ -979,4 +980,5 @@ function Html ([HTML] $doc) { return $doc }
 
 [about_Methods](../../Microsoft.PowerShell.Core/About/about_Methods.md)
 
-[Build Custom PowerShell Desired State Configuration Resources](https://docs.microsoft.com/powershell/scripting/dsc/resources/authoringResource)
+[Build Custom PowerShell Desired State Configuration Resources](/powershell/scripting/dsc/resources/authoringResource)
+

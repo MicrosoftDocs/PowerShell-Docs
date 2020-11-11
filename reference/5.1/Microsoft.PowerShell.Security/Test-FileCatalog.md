@@ -1,21 +1,18 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-FileCatalog
 ---
-
 # Test-FileCatalog
 
 ## SYNOPSIS
-
-`Test-FileCatalog` validates whether the hashes contained in a catalog file
-(.cat) matches the hashes of the actual files in order to validate their
-authenticity.
+`Test-FileCatalog` validates whether the hashes contained in a catalog file (.cat) matches the
+hashes of the actual files in order to validate their authenticity.
 
 This cmdlet is only supported on Windows.
 
@@ -28,11 +25,12 @@ Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <Strin
 
 ## DESCRIPTION
 
-`Test-FileCatalog` validates the authenticity of files by comparing the file
-hashes of a catalog file (.cat) with the hashes of actual files on disk.
-If it detects any mismatches, it returns the status as ValidationFailed. Users can retrieve all this information by using the -Detailed parameter.
-It also displays signing status of catalog in Signature property which is equivalent to calling `Get-AuthenticodeSignature` cmdlet on the catalog file.
-Users can also skip any file during validation by using the -FilesToSkip parameter.
+`Test-FileCatalog` validates the authenticity of files by comparing the file hashes of a catalog
+file (.cat) with the hashes of actual files on disk. If it detects any mismatches, it returns the
+status as ValidationFailed. Users can retrieve all this information by using the -Detailed
+parameter. It also displays signing status of catalog in Signature property which is equivalent to
+calling `Get-AuthenticodeSignature` cmdlet on the catalog file. Users can also skip any file during
+validation by using the -FilesToSkip parameter.
 
 This cmdlet is only supported on Windows.
 
@@ -75,7 +73,7 @@ Signature     : System.Management.Automation.Signature
 A path to a catalog file (.cat) that contains the hashes to be used for validation.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -91,7 +89,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -104,12 +102,11 @@ Accept wildcard characters: False
 
 ### -Detailed
 
-Returns more information a more detailed `CatalogInformation` object that
-contains the files tested, their expected/actual hashes, and an Authenticode
-signature of the catalog file if it's signed.
+Returns more information a more detailed `CatalogInformation` object that contains the files tested,
+their expected/actual hashes, and an Authenticode signature of the catalog file if it's signed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -125,7 +122,7 @@ Accept wildcard characters: False
 An array of paths that should not be tested as part of the validation.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -141,7 +138,7 @@ Accept wildcard characters: False
 A folder or array of files that should be validated against the catalog file.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -152,28 +149,12 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -186,27 +167,28 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction,
+-InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and
+-WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.IO.DirectoryInfo[], System.String[]
 
-The pipeline accepts an array of strings or `DirectoryInfo` objects that
-represent paths to the files that need to be validated.
+The pipeline accepts an array of strings or `DirectoryInfo` objects that represent paths to the
+files that need to be validated.
 
 ## OUTPUTS
 
 ### System.Management.Automation.CatalogValidationStatus
 
-The default return type containing a value of either `Valid` or
-`ValidationFailed`.
+The default return type containing a value of either `Valid` or `ValidationFailed`.
 
 ### System.Management.Automation.CatalogInformation
 
-A more detailed object returned when using `-Detailed` which can be used to
-analyze specific files that may or may not have passed validation,
-which hashes were expected vs. found, and the algorithm used in the catalog.
+A more detailed object returned when using `-Detailed` which can be used to analyze specific files
+that may or may not have passed validation, which hashes were expected vs. found, and the algorithm
+used in the catalog.
 
 ## NOTES
 
@@ -214,4 +196,4 @@ which hashes were expected vs. found, and the algorithm used in the catalog.
 
 [New-FileCatalog](New-FileCatalog.md)
 
-[PowerShellGet](../PowerShellGet/PowerShellGet.md)
+[PowerShellGet](/powershell/module/PowerShellGet)

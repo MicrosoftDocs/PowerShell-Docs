@@ -1,7 +1,7 @@
 ---
 external help file: Restore-DSCConfiguration.cdxml-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/restore-dscconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -32,6 +32,7 @@ This cmdlet does not support the **Confirm** parameter.
 ## EXAMPLES
 
 ### Example 1: Restore the configuration for the local computer
+
 ```
 PS C:\> Restore-DscConfiguration
 ```
@@ -39,6 +40,7 @@ PS C:\> Restore-DscConfiguration
 This command restores the configuration for the local computer.
 
 ### Example 2: Restore configuration for a specified computer
+
 ```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Restore-DscConfiguration -CimSession $Session
@@ -60,7 +62,7 @@ The second command restores the configuration for the computers identified by th
 Indicates that this cmdlet runs the command as a background job.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -76,7 +78,7 @@ Runs the cmdlet in a remote session or on a remote computer.
 Enter a computer name or a session object, such as the output of a **New-CimSession** or **Get-CimSession** cmdlet.
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: (All)
 Aliases: Session
 
@@ -91,7 +93,7 @@ Accept wildcard characters: False
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -106,7 +108,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -122,7 +124,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -153,6 +155,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Start-DscConfiguration](Start-DscConfiguration.md)
 
 [Test-DscConfiguration](Test-DscConfiguration.md)
-
-
-

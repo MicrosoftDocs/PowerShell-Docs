@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/03/2019
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -85,6 +85,9 @@ the response and returns collections of links, images, and other significant HTM
 
 This cmdlet was introduced in PowerShell 3.0.
 
+Beginning in PowerShell 7.0, `Invoke-WebRequest` supports proxy configuration defined by environment
+variables. See the [Notes](#notes) section of this article.
+
 ## EXAMPLES
 
 ### Example 1: Send a web request
@@ -92,8 +95,8 @@ This cmdlet was introduced in PowerShell 3.0.
 This example uses the `Invoke-WebRequest` cmdlet to send a web request to the Bing.com site.
 
 ```powershell
-$response = Invoke-WebRequest -URI https://www.bing.com/search?q=how+many+feet+in+a+mile
-$response.InputFields | Where-Object {
+$Response = Invoke-WebRequest -URI https://www.bing.com/search?q=how+many+feet+in+a+mile
+$Response.InputFields | Where-Object {
     $_.name -like "* Value*"
 } | Select-Object Name, Value
 ```
@@ -105,7 +108,7 @@ From Value 1
 To Value   5280
 ```
 
-The first command issues the request and saves the response in the `$response` variable.
+The first command issues the request and saves the response in the `$Response` variable.
 
 The second command gets any **InputField** where the **Name** property is like `"* Value"`. The
 filtered results are piped to `Select-Object` to select the **Name** and **Value** properties.
@@ -162,7 +165,7 @@ documentation page.
 $Response = Invoke-WebRequest -Uri "https://aka.ms/pscore6-docs"
 $Stream = [System.IO.StreamWriter]::new('.\docspage.html', $false, $Response.Encoding)
 try {
-    $Stream.Write($response.Content)
+    $Stream.Write($Response.Content)
 }
 finally {
     $Stream.Dispose()
@@ -218,7 +221,7 @@ $Form = @{
     birthday   = '1980-10-15'
     hobbies    = 'Hiking','Fishing','Jogging'
 }
-$Result = Invoke-RestMethod -Uri $Uri -Method Post -Form $Form
+$Result = Invoke-WebRequest -Uri $Uri -Method Post -Form $Form
 ```
 
 The profile form requires these fields: `firstName`, `lastName`, `email`, `avatar`, `birthday`, and
@@ -245,7 +248,7 @@ enclose execution in a `try/catch` block.
 ```powershell
 try
 {
-    $response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
 }
@@ -281,7 +284,7 @@ plain text over unencrypted connections. To override this behavior at your own r
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -314,7 +317,7 @@ included in **WebSession**.
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: WebAuthenticationType
+Type: Microsoft.PowerShell.Commands.WebAuthenticationType
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, Basic, Bearer, OAuth
@@ -345,7 +348,7 @@ for **Body**, any Content related headers supplied to the **ContentType**, **Hea
 object. This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -366,7 +369,7 @@ To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdle
 fails.
 
 ```yaml
-Type: X509Certificate
+Type: System.Security.Cryptography.X509Certificates.X509Certificate
 Parameter Sets: (All)
 Aliases:
 
@@ -392,7 +395,7 @@ To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command i
 > This feature is currently only supported on Windows OS platforms.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -414,7 +417,7 @@ call.
 **ContentType** is overridden when a **MultipartFormDataContent** object is supplied for **Body**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -445,7 +448,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -469,8 +472,8 @@ This example makes a `TEST` HTTP request to the API:
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: String
-Parameter Sets: CustomMethod, CustomMethodNoProxy
+Type: System.String
+Parameter Sets: CustomMethodNoProxy, CustomMethod
 Aliases: CM
 
 Required: True
@@ -487,7 +490,7 @@ Indicates that the cmdlet sets the **KeepAlive** value in the HTTP header to **F
 facilitate subsequent requests.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -535,7 +538,7 @@ In the above example the `tags` field are supplied three times in the form, once
 This feature was added in PowerShell 6.1.0.
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -557,7 +560,7 @@ Content related headers, such as `Content-Type` is overridden when a **Multipart
 object is supplied for **Body**.
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -574,7 +577,7 @@ Gets the content of the web request from a file. Enter a path and file name. If 
 the default is the current location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -592,7 +595,7 @@ Identifier (URI) before the connection fails. The default value is 5. A value of
 all redirection.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -610,7 +613,7 @@ inclusive or 304 is received. Also see **RetryIntervalSec** parameter for specif
 retries.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -639,7 +642,7 @@ Specifies the method used for the web request. The acceptable values for this pa
 The **CustomMethod** parameter can be used for Request Methods not listed above.
 
 ```yaml
-Type: WebRequestMethod
+Type: Microsoft.PowerShell.Commands.WebRequestMethod
 Parameter Sets: StandardMethod, StandardMethodNoProxy
 Aliases:
 Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, Patch
@@ -658,7 +661,7 @@ the proxy configured in the environment, use this switch. This feature was added
 6.0.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: StandardMethodNoProxy, CustomMethodNoProxy
 Aliases:
 
@@ -678,7 +681,7 @@ By default, `Invoke-WebRequest` returns the results to the pipeline. To send the
 and to the pipeline, use the **Passthru** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -695,7 +698,7 @@ Indicates that the cmdlet returns the results, in addition to writing them to a 
 is valid only when the **OutFile** parameter is also used in the command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -717,7 +720,7 @@ location.
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -734,7 +737,7 @@ Specifies a proxy server for the request, rather than connecting directly to the
 Enter the URI of a network proxy server.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: StandardMethod, CustomMethod
 Aliases:
 
@@ -757,7 +760,7 @@ This parameter is valid only when the **Proxy** parameter is also used in the co
 the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: StandardMethod, CustomMethod
 Aliases:
 
@@ -777,7 +780,7 @@ This parameter is valid only when the **Proxy** parameter is also used in the co
 the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: StandardMethod, CustomMethod
 Aliases:
 
@@ -816,7 +819,7 @@ downloaded. This behavior is the same as using **OutFile** without **Resume**.
 This feature was added in PowerShell 6.1.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -834,7 +837,7 @@ inclusive or 304 is received. Also see **MaximumRetryCount** parameter for speci
 retries.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -868,7 +871,7 @@ the web request session.
 You can't use the **SessionVariable** and **WebSession** parameters in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: SV
 
@@ -891,7 +894,7 @@ trusted root authority, etc.
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -916,7 +919,7 @@ This switch disables validation for values passed to the **ContentType**, **Head
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -935,7 +938,7 @@ The error responses are written to the pipeline just as if they were successful.
 This parameter was introduced in PowerShell 7.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -962,7 +965,7 @@ supplying multiple protocols is not supported on all platforms.
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: WebSslProtocol
+Type: Microsoft.PowerShell.Commands.WebSslProtocol
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Tls, Tls11, Tls12
@@ -985,7 +988,7 @@ zero, but less than 15 seconds, it can take 15 seconds or more before a WebExcep
 your request times out.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -1009,7 +1012,7 @@ following:
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SecureString
+Type: System.Security.SecureString
 Parameter Sets: (All)
 Aliases:
 
@@ -1032,7 +1035,7 @@ parameter are:
 - Identity
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: chunked, compress, deflate, gzip, identity
@@ -1052,7 +1055,7 @@ sent. Enter a URI. This parameter supports HTTP or HTTPS only.
 This parameter is required. The parameter name **Uri** is optional.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -1070,7 +1073,7 @@ parsing only. This parameter is included for backwards compatibility only and an
 effect on the operation of the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -1087,7 +1090,7 @@ Indicates that the cmdlet uses the credentials of the current user to send the w
 can't be used with **Authentication** or **Credential** and may not be supported on all platforms.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -1117,7 +1120,7 @@ Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Co
 ```
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -1150,7 +1153,7 @@ session and saves it in the variable. In subsequent commands, use the variable a
 You can't use the **SessionVariable** and **WebSession** parameters in the same command.
 
 ```yaml
-Type: WebRequestSession
+Type: Microsoft.PowerShell.Commands.WebRequestSession
 Parameter Sets: (All)
 Aliases:
 
@@ -1182,12 +1185,30 @@ You can pipe the body of a web request to `Invoke-WebRequest`.
 
 Beginning with PowerShell 6.0.0 `Invoke-WebRequest` supports basic parsing only.
 
-For more information about the **Microsoft.PowerShell.Commands.BasicHtmlWebResponseObject** object
-type, see
+For more information, see
 [BasicHtmlWebResponseObject](/dotnet/api/microsoft.powershell.commands.basichtmlwebresponseobject).
 
-For more information about how .NET provides proxy services to PowerShell, see
-[Accessing the Internet Through a Proxy](/dotnet/framework/network-programming/accessing-the-internet-through-a-proxy).
+Because of changes in .NET Core 3.1, PowerShell 7.0 and higher use the
+[HttpClient.DefaultProxy](/dotnet/api/system.net.http.httpclient.defaultproxy?view=netcore-3.1)
+Property to determine the proxy configuration.
+
+The value of this property is determined by your platform:
+
+- **For Windows**: Reads proxy configuration from environment variables. If those variables are not
+  defined the property is derived from the user's proxy settings.
+- **For macOS**: Reads proxy configuration from environment variables. If those variables are not
+  defined the property is derived from the system's proxy settings.
+- **For Linux**: Reads proxy configuration from environment variables. If those variables are not
+  defined the property initializes a non-configured instance that bypasses all addresses.
+
+The environment variables used for `DefaultProxy` initialization on Windows and Unix-based platforms
+are:
+
+- ` HTTP_PROXY`: the hostname or IP address of the proxy server used on HTTP requests.
+- `HTTPS_PROXY`: the hostname or IP address of the proxy server used on HTTPS requests.
+- `ALL_PROXY`: the hostname or IP address of the proxy server used on HTTP and HTTPS requests in
+  case `HTTP_PROXY` or `HTTPS_PROXY` are not defined.
+- `NO_PROXY`: a comma-separated list of hostnames that should be excluded from proxying.
 
 ## RELATED LINKS
 

@@ -1,8 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 5/30/2019
+Locale: en-US
+Module Name: Microsoft.PowerShell.Management
+ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/copy-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Copy-Item
@@ -76,7 +77,7 @@ Copy-Item -Path "C:\Logfiles\*" -Destination "C:\Drawings" -Recurse
 >
 > `Copy-Item -Path "C:\Logfiles" -Destination "C:\Drawings" -Recurse`
 
-### Example 3: Copy directory contents to a new directory
+### Example 3: Copy directory and contents to a new directory
 
 This example copies the contents of the `C:\Logfiles` source directory and creates a new destination
 directory. The new destination directory, `\Logs` is created in `C:\Drawings`.
@@ -89,8 +90,8 @@ Copy-Item -Path "C:\Logfiles" -Destination "C:\Drawings\Logs" -Recurse
 ```
 
 > [!NOTE]
-> If the **Path** includes `\*`, all the directory's file contents, without the subdirectory trees,
-> are copied to the new destination directory. For example:
+> If the **Path** includes `\*`, all the directory's file contents, including the subdirectory
+> trees, are copied to the new destination directory. For example:
 >
 > `Copy-Item -Path "C:\Logfiles\*" -Destination "C:\Drawings\Logs" -Recurse`
 
@@ -210,6 +211,45 @@ $Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\User01"
 Copy-Item "C:\MyRemoteData\scripts" -Destination "D:\MyLocalData\scripts" -FromSession $Session -Recurse
 ```
 
+### Example 12: Recursively copy files from a folder tree into the current folder
+
+This example shows how to copy files from a multilevel folder structure into a single flat folder.
+The first three commands show the existing folder structure and the contents of two files, both
+names `file3.txt`.
+
+```powershell
+PS C:\temp\test> (Get-ChildItem C:\temp\tree -Recurse).FullName
+C:\temp\tree\subfolder
+C:\temp\tree\file1.txt
+C:\temp\tree\file2.txt
+C:\temp\tree\file3.txt
+C:\temp\tree\subfolder\file3.txt
+C:\temp\tree\subfolder\file4.txt
+C:\temp\tree\subfolder\file5.txt
+
+PS C:\temp\test> Get-Content C:\temp\tree\file3.txt
+This is file3.txt in the root folder
+
+PS C:\temp\test> Get-Content C:\temp\tree\subfolder\file3.txt
+This is file3.txt in the subfolder
+
+PS C:\temp\test> Copy-Item -Path C:\temp\tree -Filter *.txt -Recurse -Container:$false
+PS C:\temp\test> (Get-ChildItem . -Recurse).FullName
+C:\temp\test\subfolder
+C:\temp\test\file1.txt
+C:\temp\test\file2.txt
+C:\temp\test\file3.txt
+C:\temp\test\file4.txt
+C:\temp\test\file5.txt
+
+PS C:\temp\test> Get-Content .\file3.txt
+This is file3.txt in the subfolder
+```
+
+The `Copy-Item` cmdlet has the **Container** parameter set to `$false`. This causes the contents of
+the source folder to be copied but does not preserve the folder structure. Notice that files with
+the same name are overwritten in the destination folder.
+
 ## PARAMETERS
 
 ### -Confirm
@@ -217,7 +257,7 @@ Copy-Item "C:\MyRemoteData\scripts" -Destination "D:\MyLocalData\scripts" -FromS
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -234,7 +274,7 @@ Indicates that this cmdlet preserves container objects during the copy operation
 **Container** parameter is set to **True**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -253,7 +293,7 @@ Accept wildcard characters: False
 > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -271,7 +311,7 @@ Specifies the path to the new location. The default is the current directory.
 To rename the item being copied, specify a new name in the value of the **Destination** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -291,7 +331,7 @@ command includes the contents of an item, such as `C:\Windows\*`, where the wild
 specifies the contents of the `C:\Windows` directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -311,7 +351,7 @@ Filters are more efficient than other parameters, because the provider applies t
 gets the objects rather than having PowerShell filter the objects after they're retrieved.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -328,7 +368,7 @@ Indicates that this cmdlet copies items that can't otherwise be changed, such as
 read-only file or alias.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -346,7 +386,7 @@ parameter, the **Path** and **LiteralPath** parameters refer to the local path o
 machine.
 
 ```yaml
-Type: PSSession
+Type: System.Management.Automation.Runspaces.PSSession
 Parameter Sets: (All)
 Aliases:
 
@@ -366,7 +406,7 @@ command includes the contents of an item, such as `C:\Windows\*`, where the wild
 specifies the contents of the `C:\Windows` directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -387,7 +427,7 @@ as escape sequences.
 For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath
 
@@ -404,7 +444,7 @@ Returns an object that represents the item with which you're working. By default
 doesn't generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -420,7 +460,7 @@ Accept wildcard characters: False
 Specifies, as a string array, the path to the items to copy. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -436,7 +476,7 @@ Accept wildcard characters: True
 Indicates that this cmdlet does a recursive copy.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -454,7 +494,7 @@ parameter, the **Destination** parameter refers to the local path on the remote
 machine.
 
 ```yaml
-Type: PSSession
+Type: System.Management.Automation.Runspaces.PSSession
 Parameter Sets: (All)
 Aliases:
 
@@ -471,7 +511,7 @@ Includes the command in the active transaction. This parameter is valid only whe
 in progress. For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 
@@ -487,7 +527,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

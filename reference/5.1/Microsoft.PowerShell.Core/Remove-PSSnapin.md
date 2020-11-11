@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/remove-pssnapin?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -29,6 +29,7 @@ After you remove a snap-in from the current session, the snap-in is still loaded
 ## EXAMPLES
 
 ### Example 1: Remove a snap-in
+
 ```
 PS C:\> remove-pssnapin -Name Microsoft.Exchange
 ```
@@ -37,6 +38,7 @@ This command removes the **Microsoft.Exchange** snap-in from the current session
 When the command is complete, the cmdlets and providers that the snap-in supported are not available in the session.
 
 ### Example 2: Remove snap-ins by using names with the pipeline
+
 ```
 PS C:\> Get-PSSnapIn smp* | Remove-PSSnapIn
 ```
@@ -50,6 +52,7 @@ The providers and cmdlets that this snap-in supports are no longer available in 
 When you pipe objects to **Remove-PSSnapin**, the names of the objects are associated with the *Name* parameter, which accepts objects from the pipeline that have a **Name** property.
 
 ### Example 3: Remove snap-ins by using names
+
 ```
 PS C:\> Remove-PSSnapin -Name *event*
 ```
@@ -63,7 +66,7 @@ Specifies the names of Windows PowerShell snap-ins to remove from the current se
 Wildcard characters (*) are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -79,7 +82,7 @@ Returns an object that represents the snap-in.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -94,7 +97,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -110,7 +113,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -136,6 +139,7 @@ This cmdlet generates a **System.Management.Automation.PSSnapInInfo** object tha
 By default, **Remove-PSSnapin** does not generate any output.
 
 ## NOTES
+
 * **Remove-PSSnapin** does not check the version of Windows PowerShell before removing a snap-in from the session. If a snap-in cannot be removed, a warning appears and the command fails.
 * **Remove-PSSnapin** affects only the current session. If you have added an Add-PSSnapin command to your Windows PowerShell profile, you should delete the command to remove the snap-in from future sessions. For instructions, type `Get-Help about_Profiles`.
 
@@ -144,5 +148,3 @@ By default, **Remove-PSSnapin** does not generate any output.
 [Add-PSSnapin](Add-PSSnapin.md)
 
 [Get-PSSnapin](Get-PSSnapin.md)
-
-

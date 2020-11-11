@@ -1,13 +1,8 @@
 ---
-title: "Writing a Windows PowerShell Module | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: bfbccc5b-2b2b-432a-a971-9f8ab503cdc3
-caps.latest.revision: 17
+ms.date: 09/13/2016
+ms.topic: reference
+title: Writing a Windows PowerShell Module
+description: Writing a Windows PowerShell Module
 ---
 # Writing a Windows PowerShell Module
 

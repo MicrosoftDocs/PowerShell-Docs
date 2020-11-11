@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/remove-localgroup?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -17,16 +17,19 @@ Deletes local security groups.
 ## SYNTAX
 
 ### InputObject
+
 ```
 Remove-LocalGroup [-InputObject] <LocalGroup[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Remove-LocalGroup [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Remove-LocalGroup [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -47,6 +50,7 @@ The new group does not inherit the permissions that were assigned to the group.
 ## EXAMPLES
 
 ### Example 1: Delete a security group
+
 ```
 PS C:\> Remove-LocalGroup -Name "SecurityGroup04"
 ```
@@ -60,7 +64,7 @@ Specifies an array of security groups that this cmdlet deletes.
 To obtain groups, use the Get-LocalGroup cmdlet.
 
 ```yaml
-Type: LocalGroup[]
+Type: Microsoft.PowerShell.Commands.LocalGroup[]
 Parameter Sets: InputObject
 Aliases:
 
@@ -75,7 +79,7 @@ Accept wildcard characters: False
 Specifies an array of names of the security groups that this cmdlet deletes.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases:
 
@@ -90,7 +94,7 @@ Accept wildcard characters: False
 Specifies an array of security IDs (SIDs) of security groups that this cmdlet deletes.
 
 ```yaml
-Type: SecurityIdentifier[]
+Type: System.Security.Principal.SecurityIdentifier[]
 Parameter Sets: SecurityIdentifier
 Aliases:
 
@@ -105,7 +109,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -121,7 +125,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -146,6 +150,7 @@ You can pipe a security group, a string, or a SID to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * This cmdlet cannot delete the following default groups:
 
 - Administrators
@@ -165,6 +170,7 @@ This cmdlet does not generate any output.
 - Replicator
 - Users
 - WinRMRemoteWMIUsers__
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local
@@ -183,5 +189,3 @@ This cmdlet does not generate any output.
 [Rename-LocalGroup](Rename-LocalGroup.md)
 
 [Set-LocalGroup](Set-LocalGroup.md)
-
-

@@ -1,13 +1,8 @@
 ---
-title: "Attributes in Cmdlet Code | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: aea8d293-c45b-41eb-8385-548f7c9b280b
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: Attributes in Cmdlet Code
+description: Attributes in Cmdlet Code
 ---
 # Attributes in Cmdlet Code
 

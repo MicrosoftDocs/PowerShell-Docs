@@ -1,13 +1,8 @@
 ---
-title: "ScriptBlock Element for WideItem for WideControl (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: e00e8f36-76f2-49a0-9b02-3a2a7fceb2dd
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: ScriptBlock Element for WideItem for WideControl (Format)
+description: ScriptBlock Element for WideItem for WideControl (Format)
 ---
 # ScriptBlock Element for WideItem for WideControl (Format)
 

@@ -1,13 +1,8 @@
 ---
-title: "PropertyName Element for ExpressionBinding for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f4da7f70-acfb-4cae-9dc9-e15d8fe19d63
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: PropertyName Element for ExpressionBinding for Controls for Configuration (Format)
+description: PropertyName Element for ExpressionBinding for Controls for Configuration (Format)
 ---
 # PropertyName Element for ExpressionBinding for Controls for Configuration (Format)
 

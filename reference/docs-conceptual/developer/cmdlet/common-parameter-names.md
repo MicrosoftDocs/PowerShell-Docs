@@ -1,13 +1,8 @@
 ---
-title: "Common Parameter Names | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
-caps.latest.revision: 12
+ms.date: 09/13/2016
+ms.topic: reference
+title: Common Parameter Names
+description: Common Parameter Names
 ---
 # Common Parameter Names
 

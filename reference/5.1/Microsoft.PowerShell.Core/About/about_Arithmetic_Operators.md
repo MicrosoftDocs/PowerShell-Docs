@@ -1,16 +1,15 @@
 ---
+description: Describes the operators that perform arithmetic in PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 11/27/2017
+Locale: en-US
+ms.date: 10/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arithmetic_Operators
 ---
-
 # About Arithmetic Operators
 
 ## SHORT DESCRIPTION
-
 Describes the operators that perform arithmetic in PowerShell.
 
 ## LONG DESCRIPTION
@@ -54,8 +53,7 @@ PowerShell supports the following arithmetic operators:
 |-bnot   |Bitwise NOT                       |`-bnot 5`                    |
 |-bor    |Bitwise OR                        |`5 -bor 0x03`                |
 |-bxor   |Bitwise XOR                       |`5 -bxor 3`                  |
-|-shl    |Shifts bits to the left the       |`102 -shl 2`                 |
-|        |specified number of times         |                             |
+|-shl    |Shifts bits to the left           |`102 -shl 2`                 |
 |-shr    |Shifts bits to the right          |`102 -shr 2`                 |
 
 The bitwise operators only work on integer types.
@@ -64,12 +62,15 @@ The bitwise operators only work on integer types.
 
 PowerShell processes arithmetic operators in the following order:
 
-|Precedence|Operator       |Description                            |
-|----------|---------------|---------------------------------------|
-|1         | `()`          |Parentheses                            |
-|2         | `-`           |For a negative number or unary operator|
-|3         | `*`, `/`, `%` |For multiplication and division         |
-|4         | `+`, `-`      |For addition and subtraction           |
+|Precedence|Operator          |Description                            |
+|----------|------------------|---------------------------------------|
+|1         | `()`             |Parentheses                            |
+|2         | `-`              |For a negative number or unary operator|
+|3         | `*`, `/`, `%`    |For multiplication and division        |
+|4         | `+`, `-`         |For addition and subtraction           |
+|5         | `-band`, `-bnot` |For bitwise operations                 |
+|5         | `-bor`, `-bxor`  |For bitwise operations                 |
+|5         | `-shr`, `-shl`   |For bitwise operations                 |
 
 PowerShell processes the expressions from left to right according to the
 precedence rules. The following examples show the effect of the precedence
@@ -127,6 +128,17 @@ integer.
 
 Notice how **_5/2_ = 2.5** gets rounded to **2**. But, **_7/2_ = 3.5** gets
 rounded to **4**.
+
+You can use the `[Math]` class to get different rounding behavior.
+
+|                          Expression                          | Result |
+| ------------------------------------------------------------ | ------ |
+| `[int][Math]::Round(5 / 2,[MidpointRounding]::AwayFromZero)` | `3`    |
+| `[int][Math]::Ceiling(5 / 2)`                                | `3`    |
+| `[int][Math]::Floor(5 / 2)`                                  | `2`    |
+
+For more information, see the
+[Math.Round](/dotnet/api/system.math.round) method.
 
 ## ADDING AND MULTIPLYING NON-NUMERIC TYPES
 
@@ -457,7 +469,10 @@ For example, the binary complement of 0 is -1, the maximum unsigned integer
 (0xffffffff), and the binary complement of -1 is 0.
 
 ```powershell
-PS C:\> -bNot 10
+-bNot 10
+```
+
+```Output
 -11
 ```
 
@@ -510,11 +525,11 @@ right operand determine how many bits of the left operand are shifted.
 
 ## SEE ALSO
 
-* [about_arrays](about_Arrays.md)
-* [about_assignment_operators](about_Assignment_Operators.md)
-* [about_comparison_operators](about_Comparison_Operators.md)
-* [about_hash_tables](about_Hash_Tables.md)
-* [about_operators](about_Operators.md)
-* [about_variables](about_Variables.md)
-* [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
-* [New-TimeSpan](../../Microsoft.PowerShell.Utility/New-TimeSpan.md)
+- [about_arrays](about_Arrays.md)
+- [about_assignment_operators](about_Assignment_Operators.md)
+- [about_comparison_operators](about_Comparison_Operators.md)
+- [about_hash_tables](about_Hash_Tables.md)
+- [about_operators](about_Operators.md)
+- [about_variables](about_Variables.md)
+- [Get-Date](xref:Microsoft.PowerShell.Utility.Get-Date)
+- [New-TimeSpan](xref:Microsoft.PowerShell.Utility.New-TimeSpan)

@@ -1,13 +1,8 @@
 ---
-title: "Provider types | Microsoft Docs"
-ms.custom: ""
-ms.date: "08/21/2019"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
-caps.latest.revision: 12
+ms.date: 08/21/2019
+ms.topic: reference
+title: Provider types
+description: Provider types
 ---
 
 # Provider types

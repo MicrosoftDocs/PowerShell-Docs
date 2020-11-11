@@ -1,13 +1,8 @@
 ---
-title: "ScriptBlock Element for ItemSelectionCondition for CustomControl for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 946cd2b5-ac37-4a13-bb49-29fbc70ec8d7
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: ScriptBlock Element for ItemSelectionCondition for CustomControl for View (Format)
+description: ScriptBlock Element for ItemSelectionCondition for CustomControl for View (Format)
 ---
 # ScriptBlock Element for ItemSelectionCondition for CustomControl for View (Format)
 

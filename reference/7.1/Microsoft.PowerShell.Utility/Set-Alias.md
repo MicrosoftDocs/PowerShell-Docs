@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 2/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Alias
 ---
@@ -179,7 +179,7 @@ Specifies a description of the alias. You can type any string. If the descriptio
 enclose it single quotation marks.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -199,7 +199,7 @@ The **Force** parameter cannot change or delete an alias with the **Option** par
 **Constant**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -216,7 +216,7 @@ Specifies the name of a new alias. An alias name can contain alphanumeric charac
 cannot be numeric, such as 123.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -243,7 +243,7 @@ The acceptable values for this parameter are as follows:
 - **Unspecified**
 
 ```yaml
-Type: ScopedItemOptions
+Type: System.Management.Automation.ScopedItemOptions
 Parameter Sets: (All)
 Aliases:
 Accepted values: AllScope, Constant, None, Private, ReadOnly, Unspecified
@@ -261,7 +261,7 @@ Returns an object that represents the alias. Use a format cmdlet such as `Format
 the object. By default, `Set-Alias` does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -286,7 +286,7 @@ The acceptable values are as follows:
 - Script
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Global, Local, Private, Numbered scopes, Script
@@ -304,7 +304,7 @@ Specifies the name of the cmdlet or command that the alias runs. The **Value** p
 alias's **Definition** property.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -320,7 +320,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -336,7 +336,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -405,3 +405,4 @@ save an alias to a file, use `Export-Alias`. To add a saved alias to a new Power
 [Remove-Alias](Remove-Alias.md)
 
 [Remove-Item](../Microsoft.PowerShell.Management/Remove-Item.md)
+

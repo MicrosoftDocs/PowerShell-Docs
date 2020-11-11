@@ -1,13 +1,8 @@
 ---
-title: "WrapTables Element (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 47358eca-7719-4d77-9e49-676b78e25aec
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: WrapTables Element (Format)
+description: WrapTables Element (Format)
 ---
 # WrapTables Element (Format)
 

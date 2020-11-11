@@ -1,13 +1,8 @@
 ---
-title: "Text Element for CustomItem for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 66d8c63c-6ce4-480d-ad65-e777052c3818
-caps.latest.revision: 6
+ms.date: 09/13/2016
+ms.topic: reference
+title: Text Element for CustomItem for GroupBy (Format)
+description: Text Element for CustomItem for GroupBy (Format)
 ---
 # Text Element for CustomItem for GroupBy (Format)
 

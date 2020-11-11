@@ -1,15 +1,8 @@
 ---
-title: "How to Validate an Argument Set | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "ValidateSet attribute, example"
-ms.assetid: 55f0f664-d2ad-4501-a3dc-9f7a27c8ab11
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Validate an Argument Set
+description: How to Validate an Argument Set
 ---
 # How to Validate an Argument Set
 

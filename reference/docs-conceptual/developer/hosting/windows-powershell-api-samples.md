@@ -1,13 +1,8 @@
 ---
-title: "Windows PowerShell API Samples | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 82df2cde-ba12-46d2-b6ec-da5455fd9b57
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: Windows PowerShell API Samples
+description: Windows PowerShell API Samples
 ---
 # Windows PowerShell API Samples
 

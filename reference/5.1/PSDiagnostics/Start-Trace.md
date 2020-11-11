@@ -1,7 +1,7 @@
 ---
 external help file: PSDiagnostics-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSDiagnostics
 ms.date: 11/27/2018
 online version: https://docs.microsoft.com/powershell/module/psdiagnostics/start-trace?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -46,7 +46,7 @@ Start-Trace -SessionName 'wsmlog' -ETS -OutputFilePath "$env:windir\system32\wsm
 Event Trace Session buffer size in kilobytes (KB).
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 Send commands to Event Trace Sessions directly without saving or scheduling.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -83,7 +83,7 @@ option in the command line with the `dsn!log` value. The default is binary (bin)
 - sql - SQL database
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 Accepted values: bin, bincirc, csv, tsv, sql
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 Sets the maximum number of Event Trace Session buffers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 Sets the maximum log file size in megabytes (MB) or number of records for SQL logs.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 Sets the minimum number of Event Trace Session buffers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -145,7 +145,7 @@ Path of the output log file or the DSN and log set name in a SQL database. The d
 `$env:systemdrive\PerfLogs\Admin`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 File listing multiple Event Trace providers to enable.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 The name of the Event Trace session. To stop a trace session you must know the session name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -199,7 +199,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### None
+### System.Object
 
 ## NOTES
 
@@ -216,4 +216,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Enable-PSWSManCombinedTrace](Enable-PSWSManCombinedTrace.md)
 
 [Enable-WSManTrace](Enable-WSManTrace.md)
-

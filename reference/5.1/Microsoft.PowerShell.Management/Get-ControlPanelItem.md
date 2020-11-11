@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 09/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-controlpanelitem?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -131,7 +131,7 @@ panel items that match any of the names, as though the items in the name list we
 By default, this cmdlet gets all control panel items in the system.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CanonicalName
 Aliases:
 
@@ -151,7 +151,7 @@ items in the name list were separated by an "or" operator. By default, this cmdl
 panel items in the system.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -168,7 +168,7 @@ Specifies, as a string array, the names or name patterns of the control panel th
 Wildcards are permitted. You can also pipe a name or name pattern to this cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: RegularName
 Aliases:
 

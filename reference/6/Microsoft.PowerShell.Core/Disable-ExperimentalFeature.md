@@ -1,5 +1,6 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/06/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-experimentalfeature?view=powershell-6&WT.mc_id=ps-gethelp
@@ -50,7 +51,7 @@ WARNING: Enabling and disabling experimental features do not take effect until n
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -66,7 +67,7 @@ Accept wildcard characters: False
 The name or names of the experimental features to disable.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -83,7 +84,7 @@ Determines which `powershell.config.json` to update whether it affects all users
 just the current user.
 
 ```yaml
-Type: ConfigScope
+Type: System.Management.Automation.Configuration.ConfigScope
 Parameter Sets: (All)
 Aliases:
 Accepted values: AllUsers, CurrentUser
@@ -101,7 +102,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -139,4 +140,3 @@ Changes to state of an experimental feature only take effect on restart of Power
 [Enable-ExperimentalFeature](Enable-ExperimentalFeature.md)
 
 [Get-ExperimentalFeature](Get-ExperimentalFeature.md)
-

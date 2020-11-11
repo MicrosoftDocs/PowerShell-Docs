@@ -1,9 +1,9 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/26/2019
+ms.date: 06/24/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
@@ -16,16 +16,18 @@ Creates a file that defines a session configuration.
 ## SYNTAX
 
 ```
-New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Guid <Guid>] [-Author <String>]
-[-Description <String>] [-CompanyName <String>] [-Copyright <String>] [-SessionType <SessionType>]
-[-TranscriptDirectory <String>] [-RunAsVirtualAccount] [-RunAsVirtualAccountGroups <String[]>]
-[-MountUserDrive] [-UserDriveMaximumSize <Int64>] [-GroupManagedServiceAccount <String>] [-ScriptsToProcess <String[]>]
-[-RoleDefinitions <IDictionary>] [-RequiredGroups <IDictionary>] [-LanguageMode <PSLanguageMode>]
-[-ExecutionPolicy <ExecutionPolicy>] [-PowerShellVersion <Version>] [-ModulesToImport <Object[]>]
-[-VisibleAliases <String[]>] [-VisibleCmdlets <Object[]>] [-VisibleFunctions <Object[]>] [-VisibleExternalCommands <String[]>]
-[-VisibleProviders <String[]>] [-AliasDefinitions <IDictionary[]>] [-FunctionDefinitions <IDictionary[]>]
-[-VariableDefinitions <Object>] [-EnvironmentVariables <IDictionary>] [-TypesToProcess <String[]>]
-[-FormatsToProcess <String[]>] [-AssembliesToLoad <String[]>] [-Full] [<CommonParameters>]
+New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Guid <Guid>]
+ [-Author <String>] [-Description <String>] [-CompanyName <String>] [-Copyright <String>]
+ [-SessionType <SessionType>] [-TranscriptDirectory <String>] [-RunAsVirtualAccount]
+ [-RunAsVirtualAccountGroups <String[]>] [-MountUserDrive] [-UserDriveMaximumSize <Int64>]
+ [-GroupManagedServiceAccount <String>] [-ScriptsToProcess <String[]>]
+ [-RoleDefinitions <IDictionary>] [-RequiredGroups <IDictionary>] [-LanguageMode <PSLanguageMode>]
+ [-ExecutionPolicy <ExecutionPolicy>] [-PowerShellVersion <Version>] [-ModulesToImport <Object[]>]
+ [-VisibleAliases <String[]>] [-VisibleCmdlets <Object[]>] [-VisibleFunctions <Object[]>]
+ [-VisibleExternalCommands <String[]>] [-VisibleProviders <String[]>]
+ [-AliasDefinitions <IDictionary[]>] [-FunctionDefinitions <IDictionary[]>]
+ [-VariableDefinitions <Object>] [-EnvironmentVariables <IDictionary>] [-TypesToProcess <String[]>]
+ [-FormatsToProcess <String[]>] [-AssembliesToLoad <String[]>] [-Full] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,8 +55,9 @@ A session configuration file makes it easy to define a session configuration wit
 or code assemblies. The settings in the file are used with the optional startup script and any
 assemblies in the session configuration.
 
-For more information about session configurations and session configuration files, see [about_Session_Configurations](About/about_Session_Configurations.md)
-and [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
+For more information about session configurations and session configuration files, see
+[about_Session_Configurations](About/about_Session_Configurations.md) and
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
 This cmdlet was introduced in PowerShell 3.0.
 
@@ -77,8 +80,10 @@ option. This option is required to run the `Register-PSSessionConfiguration` cmd
 ```powershell
 New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
 Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
-$NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
-Invoke-Command -Session $NoLanguage -ScriptBlock { if ((Get-Date) -lt '1January2099') {'Before'} else {'After'} }
+$NoLanguageSession = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
+Invoke-Command -Session $NoLanguageSession -ScriptBlock {
+  if ((Get-Date) -lt '1January2099') {'Before'} else {'After'}
+}
 ```
 
 ```Output
@@ -107,8 +112,10 @@ option. This option is required to run the `Register-PSSessionConfiguration` cmd
 ```powershell
 New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode RestrictedLanguage
 Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name RestrictedLanguage -Force
-$NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
-Invoke-Command -Session $NoLanguage -ScriptBlock { if ((Get-Date) -lt '1January2099') {'Before'} else {'After'} }
+$RestrictedSession = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
+Invoke-Command -Session $RestrictedSession -ScriptBlock {
+  if ((Get-Date) -lt '1January2099') {'Before'} else {'After'}
+}
 ```
 
 ```Output
@@ -190,7 +197,8 @@ $configSettings = @{
     TypesToProcess = 'Types1.ps1xml','Types2.ps1xml'
     FormatsToProcess = 'CustomFormats.ps1xml'
     ScriptsToProcess = 'Get-Inputs.ps1'
-    AliasDefinitions = @{Name='hlp';Value='Get-Help';Description='Gets help.';Options='AllScope'},@{Name='Update';Value='Update-Help';Description='Updates help';Options='ReadOnly'}
+    AliasDefinitions = @{Name='hlp';Value='Get-Help';Description='Gets help.';Options='AllScope'},
+        @{Name='Update';Value='Update-Help';Description='Updates help';Options='ReadOnly'}
     FunctionDefinitions = @{Name='Get-Function';ScriptBlock={Get-Command -CommandType Function};Options='ReadOnly'}
     VariableDefinitions = @{Name='WarningPreference';Value='SilentlyContinue'}
     VisibleAliases = 'c*','g*','i*','s*'
@@ -324,7 +332,7 @@ the following keys:
 For example: `@{Name='hlp';Value='Get-Help';Description='Gets help';Options='ReadOnly'}`
 
 ```yaml
-Type: IDictionary[]
+Type: System.Collections.IDictionary[]
 Parameter Sets: (All)
 Aliases:
 
@@ -340,7 +348,7 @@ Accept wildcard characters: False
 Specifies the assemblies to load into the sessions that use the session configuration.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -358,7 +366,7 @@ current user. The value of this parameter is visible in the session configuratio
 not a property of the session configuration object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -376,7 +384,7 @@ value is **Unknown**. The value of this parameter is visible in the session conf
 it is not a property of the session configuration object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -396,7 +404,7 @@ If you omit this parameter, `New-PSSessionConfigurationFile` generates a copyrig
 using the value of the **Author** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -414,7 +422,7 @@ this parameter is visible in the session configuration file, but it is not a pro
 configuration object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -433,7 +441,7 @@ variable names and the values are the environment variable values.
 For example: `EnvironmentVariables=@{TestShare='\\Server01\TestShare'}`
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -448,10 +456,11 @@ Accept wildcard characters: False
 
 Specifies the execution policy of sessions that use the session configuration. If you omit this
 parameter, the value of the **ExecutionPolicy** key in the session configuration file is
-**Restricted**. For information about execution policies in PowerShell, see [about_Execution_Policies](about/about_Execution_Policies.md).
+**Restricted**. For information about execution policies in PowerShell, see
+[about_Execution_Policies](about/about_Execution_Policies.md).
 
 ```yaml
-Type: ExecutionPolicy
+Type: Microsoft.PowerShell.ExecutionPolicy
 Parameter Sets: (All)
 Aliases:
 Accepted values: Unrestricted, RemoteSigned, AllSigned, Restricted, Default, Bypass, Undefined
@@ -469,7 +478,7 @@ Specifies the formatting files (.ps1xml) that run in sessions that use the sessi
 The value of this parameter must be a full or absolute path of the formatting files.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -486,7 +495,7 @@ Indicates that this operation includes all possible configuration properties in 
 configuration file.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -507,10 +516,11 @@ the following keys:
 - Options - Function options. This key is optional. The default value is **None**. The acceptable
   values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
 
-For example: `@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process PowerShell};Options='AllScope'}`
+For example:
+`@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process PowerShell};Options='AllScope'}`
 
 ```yaml
-Type: IDictionary[]
+Type: System.Collections.IDictionary[]
 Parameter Sets: (All)
 Aliases:
 
@@ -529,7 +539,7 @@ permission to request the gMSA password in order for sessions to be created succ
 cannot be used with the **RunAsVirtualAccount** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -547,7 +557,7 @@ Specifies a unique identifier for the session configuration file. If you omit th
 type `New-Guid`.
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: (All)
 Aliases:
 
@@ -585,7 +595,7 @@ parameter.
 - Default - FullLanguage
 
 ```yaml
-Type: PSLanguageMode
+Type: System.Management.Automation.PSLanguageMode
 Parameter Sets: (All)
 Aliases:
 Accepted values: FullLanguage, RestrictedLanguage, NoLanguage, ConstrainedLanguage
@@ -620,7 +630,7 @@ The value of the **ModulesToImport** parameter of the `Register-PSSessionConfigu
 precedence over the value of the **ModulesToImport** key in the session configuration file.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -634,16 +644,17 @@ Accept wildcard characters: False
 ### -MountUserDrive
 
 Configures sessions that use this session configuration to expose the `User:` PSDrive. User drives
-are unique for each connecting user and allow users to copy data to/from PowerShell endpoints even
-if the File System provider is not exposed. User drive roots are created under
-`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`.
+are unique for each connecting user and allow users to copy data to and from PowerShell endpoints
+even if the File System provider is not exposed. User drive roots are created under
+`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`. For each user connecting to the
+endpoint, a folder is created with the name `$env:USERDOMAIN_$env:USERNAME`.
 
 Contents in the user drive persist across user sessions and are not automatically removed. By
 default, users can only store up to 50MB of data in the user drive. This can be customized with the
 **UserDriveMaximumSize** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -660,7 +671,7 @@ Specifies the path and filename of the session configuration file. The file must
 name extension.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -681,7 +692,7 @@ The value of the **PSVersion** parameter of the `Register-PSSessionConfiguration
 precedence over the value of the **PowerShellVersion** key in the session configuration file.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -706,7 +717,7 @@ Example requiring users to belong to group A, or both groups B and C, to access 
 `@{ Or = 'GroupA', @{ And = 'GroupB', 'GroupC' } }`
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -726,10 +737,11 @@ session is created.
 Enter a hash table in which the keys are the name of the security group and the values are hash
 tables that contain a list of role capabilities that should be made available to the security group.
 
-For example: `@{'Contoso\Level 2 Helpdesk Users' = @{ RoleCapabilities = 'Maintenance', 'ADHelpDesk' }}`
+For example:
+`@{'Contoso\Level 2 Helpdesk Users' = @{ RoleCapabilities = 'Maintenance', 'ADHelpDesk' }}`
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -746,7 +758,7 @@ Configures sessions using this session configuration to be run as the computer's
 administrator account. This field cannot be used with the **GroupManagedServiceAccount** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -764,7 +776,7 @@ session configuration is run as a virtual account. If omitted, the virtual accou
 Admins on domain controllers and Administrators on all other computers.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -780,7 +792,7 @@ Accept wildcard characters: False
 Specifies the version of the session configuration file schema. The default value is "1.0.0.0".
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -798,7 +810,7 @@ names of the scripts. The value of this parameter must be a full or absolute pat
 names.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -827,7 +839,7 @@ is Default. The acceptable values for this parameter are:
   session.
 
 ```yaml
-Type: SessionType
+Type: System.Management.Automation.Remoting.SessionType
 Parameter Sets: (All)
 Aliases:
 Accepted values: Empty, RestrictedRemoteServer, Default
@@ -844,7 +856,7 @@ Accept wildcard characters: False
 Specifies the directory to place session transcripts for sessions using this session configuration.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -861,7 +873,7 @@ Adds the specified `.ps1xml` type files to sessions that use the session configu
 type filenames. The value of this parameter must be a full or absolute path to type filenames.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -880,7 +892,7 @@ When omitted, the default size of each `User:` drive root is 50MB.
 This parameter should be used with **MountUserDrive**.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -904,7 +916,7 @@ the following keys:
 For example: `@{Name='WarningPreference';Value='SilentlyContinue';Options='AllScope'}`
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -928,7 +940,7 @@ When any **Visible** parameter is included in the session configuration file, Po
 removes the `Import-Module` cmdlet and its ipmo alias from the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -945,15 +957,15 @@ Limits the cmdlets in the session to those specified in the value of this parame
 characters and Module Qualified Names are supported.
 
 By default, all cmdlets that modules in the session export are visible in the session. Use the
-**SessionType** and **ModulesToImport** parameters to determine which modules and snap-ins are imported
-into the session. If no modules in **ModulesToImport** expose the cmdlet, the appropriate module will
-attempt to be autoloaded.
+**SessionType** and **ModulesToImport** parameters to determine which modules and snap-ins are
+imported into the session. If no modules in **ModulesToImport** expose the cmdlet, the appropriate
+module will attempt to be autoloaded.
 
 When any **Visible** parameter is included in the session configuration file, PowerShell
 removes the `Import-Module` cmdlet and its ipmo alias from the session.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -975,7 +987,7 @@ When any **Visible** parameter is included in the session configuration file, Po
 removes the `Import-Module` cmdlet and its ipmo alias from the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -989,17 +1001,18 @@ Accept wildcard characters: True
 ### -VisibleFunctions
 
 Limits the functions in the session to those specified in the value of this parameter, plus any
-functions that you define in the **FunctionDefinition** parameter. Wildcard characters are supported.
+functions that you define in the **FunctionDefinition** parameter. Wildcard characters are
+supported.
 
 By default, all functions that modules in the session export are visible in the session. Use the
-**SessionType** and **ModulesToImport** parameters to determine which modules and snap-ins are imported
-into the session.
+**SessionType** and **ModulesToImport** parameters to determine which modules and snap-ins are
+imported into the session.
 
 When any **Visible** parameter is included in the session configuration file, PowerShell
 removes the `Import-Module` cmdlet and its ipmo alias from the session.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -1023,7 +1036,7 @@ When any **Visible** parameter is included in the session configuration file, Po
 removes the `Import-Module` cmdlet and its `ipmo` alias from the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -1038,7 +1051,8 @@ Accept wildcard characters: True
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

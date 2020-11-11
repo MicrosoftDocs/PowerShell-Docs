@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsessionoption?view=powershell-7&WT.mc_id=ps-gethelp
@@ -97,7 +97,7 @@ parameter using one of the following formats:
 - A command that gets a **CultureInfo** object, such as [Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
 
 ```yaml
-Type: CultureInfo
+Type: System.Globalization.CultureInfo
 Parameter Sets: (All)
 Aliases:
 
@@ -114,7 +114,7 @@ Indicates that the Kerberos connection is connecting to a service whose service 
 includes the service port number. This type of connection is not common.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: WSManParameterSet
 Aliases:
 
@@ -131,7 +131,7 @@ Specifies the encoding used for the WsMan protocol. The acceptable values for th
 **Default**, **Utf8**, or **Utf16**.
 
 ```yaml
-Type: PacketEncoding
+Type: Microsoft.Management.Infrastructure.Options.PacketEncoding
 Parameter Sets: WSManParameterSet
 Aliases:
 Accepted values: Default, Utf8, Utf16
@@ -149,7 +149,7 @@ Specifies the part of the HTTP URL after the computer name and port number. Chan
 common. By default, the value of this parameter is **/wsman**.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: WSManParameterSet
 Aliases:
 
@@ -177,7 +177,7 @@ If **Impersonation** is not specified, the `New-CimSession` cmdlet uses the valu
 **Impersonate**.
 
 ```yaml
-Type: ImpersonationType
+Type: Microsoft.Management.Infrastructure.Options.ImpersonationType
 Parameter Sets: DcomParameterSet
 Aliases:
 Accepted values: Default, None, Identify, Impersonate, Delegate
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 Specifies the size limit of WsMan XML messages for either direction.
 
 ```yaml
-Type: UInt32
+Type: System.UInt32
 Parameter Sets: WSManParameterSet
 Aliases:
 
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 Specifies that data encryption is turned off.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: WSManParameterSet
 Aliases:
 
@@ -228,7 +228,7 @@ _PacketIntegrity_ functionality. By default, all CIM sessions created using DCOM
 **PacketIntegrity** parameter set to **True**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: DcomParameterSet
 Aliases:
 
@@ -245,7 +245,7 @@ Creates a DCOM session to WMI using the COM _PacketPrivacy_. By default, all CIM
 using DCOM have the **PacketPrivacy** parameter set to **true**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: DcomParameterSet
 Aliases:
 
@@ -262,7 +262,7 @@ Specifies the protocol to use. The acceptable values for this parameter are: **D
 or **Wsman**.
 
 ```yaml
-Type: ProtocolType
+Type: Microsoft.Management.Infrastructure.CimCmdlets.ProtocolType
 Parameter Sets: ProtocolTypeSet
 Aliases:
 Accepted values: Dcom, Default, Wsman
@@ -281,7 +281,7 @@ parameter are: **Default**, **Digest**, **Negotiate**, **Basic**, **Kerberos**, 
 **CredSsp**.
 
 ```yaml
-Type: PasswordAuthenticationMechanism
+Type: Microsoft.Management.Infrastructure.Options.PasswordAuthenticationMechanism
 Parameter Sets: WSManParameterSet
 Aliases:
 Accepted values: Default, Digest, Negotiate, Basic, Kerberos, NtlmDomain, CredSsp
@@ -304,7 +304,7 @@ To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` cmdlets i
 Cert: drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: WSManParameterSet
 Aliases:
 
@@ -325,7 +325,7 @@ Specifies the credentials to use for proxy authentication. Enter one of the foll
 If this option is not set, then you cannot specify any credentials.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: WSManParameterSet
 Aliases:
 
@@ -344,7 +344,7 @@ Specifies the host name resolution mechanism to use. The acceptable values for t
 The default value of this parameter is **InternetExplorer**.
 
 ```yaml
-Type: ProxyType
+Type: Microsoft.Management.Infrastructure.Options.ProxyType
 Parameter Sets: WSManParameterSet
 Aliases:
 Accepted values: None, WinHttp, Auto, InternetExplorer
@@ -366,7 +366,7 @@ the remote computer is part of a network that is physically secure and isolated,
 computer is listed as a trusted host in a WinRM configuration.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: WSManParameterSet
 Aliases:
 
@@ -384,7 +384,7 @@ the server. Use this parameter for remote operations only with trusted computers
 protocol.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: WSManParameterSet
 Aliases:
 
@@ -401,7 +401,7 @@ Indicates that the revocation check for server certificates is skipped. Use this
 trusted computers.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: WSManParameterSet
 Aliases:
 
@@ -421,9 +421,8 @@ parameter using one of the following formats:
 - A variable that contains a CultureInfo object.
 - A command that gets a CultureInfo object, such as `Get-Culture`.
 
-
 ```yaml
-Type: CultureInfo
+Type: System.Globalization.CultureInfo
 Parameter Sets: (All)
 Aliases:
 
@@ -447,7 +446,7 @@ It is recommended that you use this parameter only when the **PacketPrivacy** pa
 specified.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: WSManParameterSet
 Aliases:
 

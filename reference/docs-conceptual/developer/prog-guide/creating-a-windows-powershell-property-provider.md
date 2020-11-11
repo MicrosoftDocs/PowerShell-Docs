@@ -1,16 +1,8 @@
 ---
-title: "Creating a Windows PowerShell Property Provider | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "property providers [PowerShell Programmer's Guide]"
-  - "providers [PowerShell Programmer's Guide], property provider"
-ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
-caps.latest.revision: 5
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a Windows PowerShell Property Provider
+description: Creating a Windows PowerShell Property Provider
 ---
 # Creating a Windows PowerShell Property Provider
 
@@ -285,7 +277,7 @@ from the TemplateProvider.cs file provided by Windows PowerShell.
 
 ## Building the Windows PowerShell provider
 
-See [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+See [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
 
 ## See Also
 
@@ -293,6 +285,6 @@ See [How to Register Cmdlets, Providers, and Host Applications](https://msdn.mic
 
 [Design Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
 
-[Extending Object Types and Formatting](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
 
-[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))

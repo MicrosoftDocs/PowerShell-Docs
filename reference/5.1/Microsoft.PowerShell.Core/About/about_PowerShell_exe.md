@@ -1,22 +1,19 @@
 ---
+description: Explains how to use the `powershell.exe` command-line interface. Displays the command-line parameters and describes the syntax.
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 05/02/2019
+Locale: en-US
+ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PowerShell_exe
 ---
 # About PowerShell.exe
 
-## SHORT DESCRIPTION
+## Short Description
+Explains how to use the `powershell.exe` command-line interface. Displays the
+command-line parameters and describes the syntax.
 
-Explains how to use the **PowerShell.exe** command-line tool. Displays the
-syntax and describes the command-line switches.
-
-PowerShell.exe starts a PowerShell session. You can use it in
-**Cmd.exe** and in PowerShell.
-
-## LONG DESCRIPTION
+## Long Description
 
 ### SYNTAX
 
@@ -137,6 +134,12 @@ because it has no special meaning to the current **cmd.exe** shell. The
 `$env:windir` style of environment variable reference _can_ be used inside a
 **Command** parameter, since there it will be interpreted as PowerShell code.
 
+Similarly, if you want to execute the same command from a **Batch script**, you
+would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current
+execution directory: `powershell.exe -File %~dp0test.ps1 -TestParam %windir%`.
+If you instead used `.\test.ps1`, PowerShell would throw an error because it
+cannot find the literal path `.\test.ps1`
+
 When the value of **File** is a file path, **File** _must_ be the last
 parameter in the command because any characters typed after the **File**
 parameter name are interpreted as the script file path followed by the script
@@ -149,10 +152,10 @@ Typically, the switch parameters of a script are either included or omitted.
 For example, the following command uses the **All** parameter of the
 `Get-Script.ps1` script file: `-File .\Get-Script.ps1 -All`
 
-In rare cases, you might need to provide a **Boolean** value for a switch
-parameter. To provide a **Boolean** value for a switch parameter in the value
-of the File parameter, enclose the parameter name and value in curly braces,
-such as the following: `-File .\Get-Script.ps1 {-All:$False}`.
+In rare cases, you might need to provide a **Boolean** value for a parameter.
+It is not possible to pass an explicit boolean value for a switch parameter
+when running a script in this way. This limitation was removed in PowerShell 6
+(`pwsh.exe`).
 
 #### -ExecutionPolicy \<ExecutionPolicy\>
 
@@ -164,17 +167,49 @@ values, see [about_Execution_Policies](about_Execution_Policies.md).
 
 #### -Command
 
-Executes the specified commands (with any parameters) as though they were typed
-at the PowerShell command prompt. After execution, PowerShell exits unless the
-**NoExit** parameter is specified. Any text after `-Command` is sent as a
-single command line to PowerShell. This is different from how `-File` handles
-parameters sent to a script.
+Executes the specified commands (and any parameters) as though they were typed
+at the PowerShell command prompt, and then exits, unless the `NoExit`
+parameter is specified.
 
-The value of **Command** can be "-", a string, or a script block. The results
-of the command are returned to the parent shell as deserialized XML objects,
-not live objects.
+The value of **Command** can be `-`, a script block, or a string. If the value
+of **Command** is `-`, the command text is read from standard input.
 
-If the value of **Command** is "-", the command text is read from standard
+The **Command** parameter only accepts a script block for execution when it can
+recognize the value passed to **Command** as a **ScriptBlock** type. This is
+_only_ possible when running `powershell.exe` from another PowerShell host. The
+**ScriptBlock** type may be contained in an existing variable, returned from an
+expression, or parsed by the PowerShell host as a literal script block enclosed
+in curly braces (`{}`), before being passed to `powershell.exe`.
+
+```powershell
+powershell -Command {Get-WinEvent -LogName security}
+```
+
+In `cmd.exe`, there is no such thing as a script block (or **ScriptBlock**
+type), so the value passed to **Command** will _always_ be a string. You can
+write a script block inside the string, but instead of being executed it will
+behave exactly as though you typed it at a typical PowerShell prompt, printing
+the contents of the script block back out to you.
+
+A string passed to **Command** is still executed as PowerShell code, so the
+script block curly braces are often not required in the first place when
+running from `cmd.exe`. To execute an inline script block defined inside a
+string, the [call operator](about_operators.md#special-operators) `&` can be
+used:
+
+```cmd
+pwsh -Command "& {Get-WinEvent -LogName security}"
+```
+
+If the value of **Command** is a string, **Command** must be the last parameter
+for pwsh, because all arguments following it are interpreted as part of the
+command to execute.
+
+When called from within an existing PowerShell session, the results are
+returned to the parent shell as deserialized XML objects, not live objects. For
+other shells, the results are returned as strings.
+
+If the value of **Command** is `-`, the command text is read from standard
 input. You must redirect standard input when using the **Command** parameter
 with standard input. For example:
 
@@ -197,12 +232,17 @@ hi there
 out
 ```
 
-When the value of **Command** is a string, **Command** _must_ be the last
-parameter specified because any characters typed after the command are
-interpreted as the command arguments.
+The process exit code is determined by status of the last (executed) command
+within the script block. The exit code is `0` when `$?` is `$true` or `1` when
+`$?` is `$false`. If the last command is an external program or a PowerShell
+script that explicitly sets an exit code other than `0` or `1`, that exit code
+is converted to `1` for process exit code. To preserve the specific exit code,
+add `exit $LASTEXITCODE` to your command string or script block.
 
-The **Command** parameter only accepts a script block for execution when it can
-recognize the value passed to **Command** as a **ScriptBlock** type. This is
+Similarly, the value 1 is returned when a script-terminating
+(runspace-terminating) error, such as a `throw` or `-ErrorAction Stop`, occurs
+or when execution is interrupted with <kbd>Ctrl</kbd>-<kbd>C</kbd>.
+
 _only_ possible when running **PowerShell.exe** from another PowerShell host.
 The **ScriptBlock** type may be contained in an existing variable, returned
 from an expression, or parsed by the PowerShell host as a literal script block

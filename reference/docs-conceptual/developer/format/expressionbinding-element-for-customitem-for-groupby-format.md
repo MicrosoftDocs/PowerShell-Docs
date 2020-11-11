@@ -1,13 +1,8 @@
 ---
-title: "ExpressionBinding Element for CustomItem for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 5eae5088-7605-4ef2-a703-faf3e5a5fc94
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: ExpressionBinding Element for CustomItem for GroupBy (Format)
+description: ExpressionBinding Element for CustomItem for GroupBy (Format)
 ---
 # ExpressionBinding Element for CustomItem for GroupBy (Format)
 

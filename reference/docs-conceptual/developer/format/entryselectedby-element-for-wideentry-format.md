@@ -1,13 +1,8 @@
 ---
-title: "EntrySelectedBy Element for WideEntry (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: e0c98933-b7a5-4205-b811-06c0b0bf8988
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: EntrySelectedBy Element for WideEntry (Format)
+description: EntrySelectedBy Element for WideEntry (Format)
 ---
 # EntrySelectedBy Element for WideEntry (Format)
 

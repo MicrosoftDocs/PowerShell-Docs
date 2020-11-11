@@ -1,6 +1,7 @@
 ---
+description:  PowerShell logs internal operations from the engine, providers, and cmdlets. 
 keywords: powershell
-locale: en-us
+Locale: en-US
 ms.date: 12/14/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -106,8 +107,8 @@ more information about Public Key Cryptography, see
 To enable a Protected Event Logging policy, deploy a public key to all machines
 that have event log data to protect. The corresponding private key is used to
 post-process the event logs at a more secure location such as a central event
-log collector, or [SIEM](https://en.wikipedia.org/wiki/Security_information_and_event_management)
-aggregator.
+log collector, or [SIEM][] aggregator. You can set up SIEM in Azure. For more
+information, see [Generic SIEM integration](/cloud-app-security/siem).
 
 ### Enabling Protected Event Logging via Group Policy
 
@@ -147,3 +148,8 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 ## See also
 
 [PowerShell the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
+
+[Generic SIEM integration](/cloud-app-security/siem)
+
+<!-- link references -->
+[SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management

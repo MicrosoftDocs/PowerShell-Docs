@@ -1,13 +1,8 @@
 ---
-title: "Types of Cmdlet Parameters | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
-caps.latest.revision: 14
+ms.date: 09/13/2016
+ms.topic: reference
+title: Types of Cmdlet Parameters
+description: Types of Cmdlet Parameters
 ---
 # Types of Cmdlet Parameters
 

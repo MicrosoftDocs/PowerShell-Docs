@@ -1,6 +1,7 @@
 ---
+description: Describes an attribute that reports the type of object that the function returns. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0

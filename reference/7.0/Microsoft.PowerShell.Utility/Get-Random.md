@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/20/2019
+ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Random
@@ -18,7 +18,7 @@ Gets a random number, or selects objects randomly from a collection.
 ### RandomNumberParameterSet (Default)
 
 ```
-Get-Random [-SetSeed <Int32>] [[-Maximum] <Object>] [-Minimum <Object>] [<CommonParameters>]
+Get-Random [-SetSeed <Int32>] [[-Maximum] <Object>] [-Minimum <Object>] [-Count <Int32>] [<CommonParameters>]
 ```
 
 ### RandomListItemParameterSet
@@ -263,8 +263,8 @@ When used with `InputObject`, if the value of **Count** exceeds the number of ob
 collection, `Get-Random` returns all of the objects in random order.
 
 ```yaml
-Type: Int32
-Parameter Sets: RandomListItemParameterSet
+Type: System.Int32
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -285,7 +285,7 @@ Beginning in PowerShell 7, the **InputObject** parameter accepts arrays that can
 string or `$null`. The array can be sent down the pipeline or as an **InputObject** parameter value.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: RandomListItemParameterSet
 Aliases:
 
@@ -313,7 +313,7 @@ If the value of **Minimum** is a double (a floating-point number), the default v
 is **Double.MaxValue**. Otherwise, the default value is **Int32.MaxValue**.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: RandomNumberParameterSet
 Aliases:
 
@@ -335,7 +335,7 @@ The value of **Minimum** must be less than (not equal to) the value of **Maximum
 floating-point number.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: RandomNumberParameterSet
 Aliases:
 
@@ -359,7 +359,7 @@ used only when trying to reproduce behavior, such as when debugging or analyzing
 includes `Get-Random` commands.
 
 ```yaml
-Type: Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
@@ -393,6 +393,22 @@ submitted collection.
 
 `Get-Random` sets a default seed for each session based on the system time clock when the session
 starts.
+
+`Get-Random` does not alway return the same data type as the input value. The following table shows
+the output type for each of the numeric input types.
+
+| Input Type | Output Type |
+| :--------: | :---------: |
+|   SByte    |   Double    |
+|    Byte    |   Double    |
+|   Int16    |   Double    |
+|   UInt16   |   Double    |
+|   Int32    |    Int32    |
+|   UInt32   |   Double    |
+|   Int64    |    Int64    |
+|   UInt64   |   Double    |
+|   Double   |   Double    |
+|   Single   |   Double    |
 
 Beginning in Windows PowerShell 3.0, `Get-Random` supports 64-bit integers. In Windows PowerShell
 2.0, all values are cast to **System.Int32**.

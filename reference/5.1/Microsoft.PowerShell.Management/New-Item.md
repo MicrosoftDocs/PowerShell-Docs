@@ -1,7 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Management
 ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -105,6 +106,57 @@ you can use it to create multiple items.
 New-Item -ItemType "file" -Path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log"
 ```
 
+### Example 6: Use the -Force parameter to attempt to recreate folders
+
+This example creates a folder with a file inside. Then, attempts to create the same folder using
+`-Force`. It will not overwrite the folder but simply return the existing folder object with the
+file created intact.
+
+```powershell
+PS> New-Item -Path .\TestFolder -ItemType Directory
+PS> New-Item -Path .\TestFolder\TestFile.txt -ItemType File
+
+PS> New-Item -Path .\TestFolder -ItemType Directory -Force
+
+    Directory: C:\
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         5/1/2020   8:03 AM                TestFolder
+
+PS> Get-ChildItem .\TestFolder\
+
+    Directory: C:\TestFolder
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         5/1/2020   8:03 AM              0 TestFile.txt
+```
+
+### Example 7: Use the -Force parameter to overwrite existing files
+
+This example creates a file with a value and then recreates the file using `-Force`. This overwrites
+The existing file and it will lose it's content as you can see by the length property
+
+```powershell
+PS> New-Item ./TestFile.txt -ItemType File -Value 'This is just a test file'
+
+    Directory: C:\Source\Test
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         5/1/2020   8:32 AM             24 TestFile.txt
+
+New-Item ./TestFile.txt -ItemType File -Force
+
+    Directory: C:\Source\Test
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         5/1/2020   8:32 AM              0 TestFile.txt
+```
+
+> [!NOTE]
+> When using `New-Item` with the `-Force` switch to create registry keys, the command will behave
+> the same as when overwriting a file. If the registry key already exists, the key and all
+> properties and values will be overwritten with an empty registry key.
+
 ## PARAMETERS
 
 ### -Credential
@@ -114,7 +166,7 @@ New-Item -ItemType "file" -Path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log
 > user or elevate your credentials when running this cmdlet, use `Invoke-Command`.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -128,11 +180,11 @@ Accept wildcard characters: False
 ### -Force
 
 Forces this cmdlet to create an item that writes over an existing read-only item. Implementation
-varies from provider to provider. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
-Even using the **Force** parameter, the cmdlet cannot override security restrictions.
+varies from provider to provider. Even using the **Force** parameter, the cmdlet cannot override
+security restrictions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -169,7 +221,7 @@ In a `Certificate` drive, these are the values you can specify:
 For more information see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Type
 
@@ -188,7 +240,7 @@ value. Items names passed using the **Name** parameter are created relative to t
 **Path** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: nameSet
 Aliases:
 
@@ -212,7 +264,7 @@ provider may not support all characters. For example, you cannot create a filena
 asterisk (`*`) character.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: pathSet, nameSet
 Aliases:
 
@@ -229,7 +281,7 @@ Includes the command in the active transaction. This parameter is valid only whe
 in progress. For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 
@@ -245,7 +297,7 @@ Accept wildcard characters: False
 Specifies the value of the new item. You can also pipe a value to `New-Item`.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases: Target
 
@@ -261,7 +313,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -278,7 +330,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

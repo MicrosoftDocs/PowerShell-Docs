@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession?view=powershell-6&WT.mc_id=ps-gethelp
@@ -17,21 +17,25 @@ Gets the CIM session objects from the current session.
 ## SYNTAX
 
 ### ComputerNameSet (Default)
+
 ```
 Get-CimSession [[-ComputerName] <String[]>] [<CommonParameters>]
 ```
 
 ### SessionIdSet
+
 ```
 Get-CimSession [-Id] <UInt32[]> [<CommonParameters>]
 ```
 
 ### InstanceIdSet
+
 ```
 Get-CimSession -InstanceId <Guid[]> [<CommonParameters>]
 ```
 
 ### NameSet
+
 ```
 Get-CimSession -Name <String[]> [<CommonParameters>]
 ```
@@ -149,7 +153,7 @@ Specifies the name of the computer to get CIM sessions connected to. Wildcard ch
 permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerNameSet
 Aliases: CN, ServerName
 
@@ -169,7 +173,7 @@ identifies the CIM session within the current PowerShell session.
 For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
 
 ```yaml
-Type: UInt32[]
+Type: System.UInt32[]
 Parameter Sets: SessionIdSet
 Aliases:
 
@@ -191,7 +195,7 @@ The **InstanceId** is stored in the **InstanceId** property of the object that r
 session.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceIdSet
 Aliases:
 
@@ -208,7 +212,7 @@ Gets one or more CIM sessions which contain the specified friendly names. Wildca
 permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameSet
 Aliases:
 

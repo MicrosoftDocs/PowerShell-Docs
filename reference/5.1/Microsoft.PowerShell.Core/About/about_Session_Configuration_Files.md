@@ -1,6 +1,7 @@
 ---
+description:  Describes session configuration files, which are used in a session configuration (also known as an "endpoint") to define the environment of sessions that use the session configuration. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -384,24 +385,24 @@ working with an empty session.
 
 [about_Session_Configurations](about_Session_Configurations.md)
 
-[New-PSSession](../New-PSSession.md)
+[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
 
-[Disable-PSSessionConfiguration](../Disable-PSSessionConfiguration.md)
+[Disable-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Disable-PSSessionConfiguration)
 
-[Enable-PSSessionConfiguration](../Enable-PSSessionConfiguration.md)
+[Enable-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Enable-PSSessionConfiguration)
 
-[Get-PSSessionConfiguration](../Get-PSSessionConfiguration.md)
+[Get-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Get-PSSessionConfiguration)
 
-[New-PSSessionConfigurationFile](../New-PSSessionConfigurationFile.md)
+[New-PSSessionConfigurationFile](xref:Microsoft.PowerShell.Core.New-PSSessionConfigurationFile)
 
-[Register-PSSessionConfiguration](../Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
 
-[Set-PSSessionConfiguration](../Set-PSSessionConfiguration.md)
+[Set-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Set-PSSessionConfiguration)
 
-[Test-PSSessionConfigurationFile](../Test-PSSessionConfigurationFile.md)
+[Test-PSSessionConfigurationFile](xref:Microsoft.PowerShell.Core.Test-PSSessionConfigurationFile)
 
-[Unregister-PSSessionConfiguration](../Unregister-PSSessionConfiguration.md)
+[Unregister-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Unregister-PSSessionConfiguration)
 
-[Get-PSSessionCapability](../Get-PSSessionCapability.md)
+[Get-PSSessionCapability](xref:Microsoft.PowerShell.Core.Get-PSSessionCapability)
 
-[New-PSRoleCapabilityFile](../New-PSRoleCapabilityFile.md)
+[New-PSRoleCapabilityFile](xref:Microsoft.PowerShell.Core.New-PSRoleCapabilityFile)

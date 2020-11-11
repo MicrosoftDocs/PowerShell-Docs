@@ -1,8 +1,8 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113536
-Help Version: 7.0.0.0
+Download Help Link: https://aka.ms/powershell71-help
+Help Version: 7.1.0.0
 keywords: powershell,cmdlet
-locale: en-US
+Locale: en-US
 Module Guid: fb6cc51d-c096-4b38-b78d-0fed6277096a
 Module Name: CimCmdlets
 ms.date: 02/20/2019
@@ -59,3 +59,4 @@ Removes one or more CIM sessions.
 
 ### [Set-CimInstance](Set-CimInstance.md)
 Modifies a CIM instance on a CIM server by calling the **ModifyInstance** method of the CIM class.
+

@@ -1,8 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 02/19/2019
+Locale: en-US
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Progress
@@ -22,10 +23,9 @@ Write-Progress [-Activity] <String> [[-Status] <String>] [[-Id] <Int32>] [-Perce
 
 ## DESCRIPTION
 
-The `Write-Progress` cmdlet displays a progress bar in a PowerShell command window that
-depicts the status of a running command or script.
-You can select the indicators that the bar reflects and the text that appears above and below the
-progress bar.
+The `Write-Progress` cmdlet displays a progress bar in a PowerShell command window that depicts the
+status of a running command or script. You can select the indicators that the bar reflects and the
+text that appears above and below the progress bar.
 
 ## EXAMPLES
 
@@ -56,7 +56,7 @@ for($I = 1; $I -lt 101; $I++ )
 }
 ```
 
-```powershell
+```Output
 Updating
 Progress ->
  [ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]
@@ -147,7 +147,7 @@ Specifies the first line of text in the heading above the status bar.
 This text describes the activity whose progress is being reported.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -164,7 +164,7 @@ Indicates whether the progress bar is visible.
 If this parameter is omitted, `Write-Progress` displays progress information.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -181,7 +181,7 @@ Specifies the line of text below the progress bar.
 This text describes the operation that is currently taking place.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -199,7 +199,7 @@ are creating more than one progress bar in a single command. If the progress bar
 different IDs, they are superimposed instead of being displayed in a series.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -216,7 +216,7 @@ Specifies the parent activity of the current activity.
 Use the value -1 if the current activity has no parent activity.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -233,7 +233,7 @@ Specifies the percentage of the activity that is completed.
 Use the value -1 if the percentage complete is unknown or not applicable.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -250,7 +250,7 @@ Specifies the projected number of seconds remaining until the activity is comple
 Use the value -1 if the number of seconds remaining is unknown or not applicable.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -267,7 +267,7 @@ Specifies the source of the record. You can use this in place of **Id** but cann
 other parameters like **ParentId**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -284,7 +284,7 @@ Specifies the second line of text in the heading above the status bar.
 This text describes current state of the activity.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -299,7 +299,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -317,12 +318,12 @@ You cannot pipe input to this cmdlet.
 
 If the progress bar does not appear, check the value of the `$ProgressPreference` variable. If the
 value is set to SilentlyContinue, the progress bar is not displayed. For more information about
-PowerShell preferences, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+PowerShell preferences, see
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 The parameters of the cmdlet correspond to the properties of the
 **System.Management.Automation.ProgressRecord** class. For more information, see
-[ProgressRecord Class](/dotnet/api/system.management.automation.progressrecord)
-in the MSDN library.
+[ProgressRecord Class](/dotnet/api/system.management.automation.progressrecord).
 
 ## RELATED LINKS
 

@@ -1,7 +1,8 @@
 ---
+description: Describes how PowerShell providers provide access to data and components that wouldn't otherwise be easily accessible at the command line. The data is presented in a consistent format that resembles a file system drive. 
 keywords: powershell,cmdlet
-locale: en-us
-ms.date: 01/03/2018
+Locale: en-US
+ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Providers
@@ -10,40 +11,39 @@ title: about_Providers
 
 ## Short description
 Describes how PowerShell providers provide access to data and
-components that would not otherwise be easily accessible at the command line.
+components that wouldn't otherwise be easily accessible at the command line.
 The data is presented in a consistent format that resembles a file system
 drive.
 
 ## Long description
 
-PowerShell providers are Microsoft .NET Framework-based programs that
-make the data in a specialized data store available in PowerShell so
-that you can view and manage it.
-
-The data that a provider exposes appears in a drive, and you access the data
-in a path like you would on a hard disk drive. You can use any of the built-in
-cmdlets that the provider supports to manage the data in the provider drive.
-And, you can use custom cmdlets that are designed especially for the data.
+PowerShell providers are .NET programs that provide access to specialized data
+stores for easier viewing and management. The data appears in a drive, and you
+access the data in a path like you would on a hard disk drive. You can use any
+of the built-in cmdlets that the provider supports to manage the data in the
+provider drive. And, you can use custom cmdlets that are designed especially
+for the data.
 
 The providers can also add dynamic parameters to the built-in cmdlets. These
-are parameters that are available only when you use the cmdlet with the
-provider data.
+parameters are only available when you use the cmdlet with the provider data.
 
 ## Built-in providers
 
 PowerShell includes a set of built-in providers that you can use to
 access the different types of data stores.
 
-|Provider    |Drive        |Data store                                 |
-|------------|-------------|-------------------------------------------|
-|Alias       |Alias:       |PowerShell aliases                 |
-|Certificate |Cert:        |x509 certificates for digital signatures   |
-|Environment |Env:         |Windows environment variables              |
-|FileSystem  |(*)          |File system drives, directories, and files |
-|Function    |Function:    |PowerShell functions               |
-|Registry    |HKLM:, HKCU: |Windows registry                           |
-|Variable    |Variable:    |PowerShell variables               |
-|WSMan       |WSMan:       |WS-Management configuration information    |
+| Provider   |   Drive(s)  |OutputType                                                    |
+|----------- |------------ |--------------------------------------------------------------|
+|Alias       |Alias:       |System.Management.Automation.AliasInfo                        |
+|Certificate |Cert:        |Microsoft.PowerShell.Commands.X509StoreLocation               |
+|            |             |System.Security.Cryptography.X509Certificates.X509Certificate2|
+|Environment |Env:         |System.Collections.DictionaryEntry                            |
+|FileSystem  |C: (*)       |System.IO.FileInfo                                            |
+|            |             |System.IO.DirectoryInfo                                       |
+|Function    |Function:    |System.Management.Automation.FunctionInfo                     |
+|Registry    |HKLM: HKCU:  |Microsoft.Win32.RegistryKey                                   |
+|Variable    |Variable:    |System.Management.Automation.PSVariable                       |
+|WSMan       |WSMan:       |Microsoft.WSMan.Management.WSManConfigContainerElement        |
 
 (*) The FileSystem drives vary on each system.
 
@@ -58,15 +58,15 @@ Get-PSProvider
 ## Installing and removing providers
 
 Providers are typically installed via PowerShell modules. Importing the module
-loads the provider into your session. You cannot uninstall the built-in
+loads the provider into your session. You can't uninstall the built-in
 providers. You can uninstall providers loaded by other modules.
 
-You can unload a provider from the current session. You can do this by using the
-`Remove-Module` cmdlet. This cmdlet does not uninstall the provider, but it
-makes the provider unavailable in the session.
+You can unload a provider from the current session using the `Remove-Module`
+cmdlet. This cmdlet doesn't uninstall the provider, but it makes the provider
+unavailable in the session.
 
 You can also use the `Remove-PSDrive` cmdlet to remove any drive from the
-current session. This data on the drive is not affected, but the drive is no
+current session. This data on the drive isn't affected, but the drive is no
 longer available in that session.
 
 ## Viewing providers
@@ -101,62 +101,62 @@ Get-Help <cmdlet-name> -Detailed
 
 ### ChildItem cmdlets
 
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
 
 ### Content Cmdlets
 
-- [Add-Content](../../Microsoft.PowerShell.Management/Add-Content.md)
-- [Clear-Content](../../Microsoft.PowerShell.Management/Clear-Content.md)
-- [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)
-- [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md)
+- [Add-Content](xref:Microsoft.PowerShell.Management.Add-Content)
+- [Clear-Content](xref:Microsoft.PowerShell.Management.Clear-Content)
+- [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)
+- [Set-Content](xref:Microsoft.PowerShell.Management.Set-Content)
 
 ### Item Cmdlets
 
-- [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
-- [Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md)
-- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
-- [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md)
-- [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
-- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
-- [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md)
-- [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)
+- [Clear-Item](xref:Microsoft.PowerShell.Management.Clear-Item)
+- [Copy-Item](xref:Microsoft.PowerShell.Management.Copy-Item)
+- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
+- [Invoke-Item](xref:Microsoft.PowerShell.Management.Invoke-Item)
+- [Move-Item](xref:Microsoft.PowerShell.Management.Move-Item)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
+- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
+- [Rename-Item](xref:Microsoft.PowerShell.Management.Rename-Item)
+- [Set-Item](xref:Microsoft.PowerShell.Management.Set-Item)
 
 ### ItemProperty cmdlets
 
-- [Clear-ItemProperty](../../Microsoft.PowerShell.Management/Clear-ItemProperty.md)
-- [Copy-ItemProperty](../../Microsoft.PowerShell.Management/Copy-ItemProperty.md)
-- [Get-ItemProperty](../../Microsoft.PowerShell.Management/Get-ItemProperty.md)
-- [Move-ItemProperty](../../Microsoft.PowerShell.Management/Move-ItemProperty.md)
-- [New-ItemProperty](../../Microsoft.PowerShell.Management/New-ItemProperty.md)
-- [Remove-ItemProperty](../../Microsoft.PowerShell.Management/Remove-ItemProperty.md)
-- [Rename-ItemProperty](../../Microsoft.PowerShell.Management/Rename-ItemProperty.md)
-- [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
+- [Clear-ItemProperty](xref:Microsoft.PowerShell.Management.Clear-ItemProperty)
+- [Copy-ItemProperty](xref:Microsoft.PowerShell.Management.Copy-ItemProperty)
+- [Get-ItemProperty](xref:Microsoft.PowerShell.Management.Get-ItemProperty)
+- [Move-ItemProperty](xref:Microsoft.PowerShell.Management.Move-ItemProperty)
+- [New-ItemProperty](xref:Microsoft.PowerShell.Management.New-ItemProperty)
+- [Remove-ItemProperty](xref:Microsoft.PowerShell.Management.Remove-ItemProperty)
+- [Rename-ItemProperty](xref:Microsoft.PowerShell.Management.Rename-ItemProperty)
+- [Set-ItemProperty](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
 
 ### Location cmdlets
 
-- [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
-- [Pop-Location](../../Microsoft.PowerShell.Management/Pop-Location.md)
-- [Push-Location](../../Microsoft.PowerShell.Management/Push-Location.md)
-- [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
+- [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
+- [Pop-Location](xref:Microsoft.PowerShell.Management.Pop-Location)
+- [Push-Location](xref:Microsoft.PowerShell.Management.Push-Location)
+- [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
 
 ### Path cmdlets
 
-- [Join-Path](../../Microsoft.PowerShell.Management/Join-Path.md)
-- [Convert-Path](../../Microsoft.PowerShell.Management/Convert-Path.md)
-- [Split-Path](../../Microsoft.PowerShell.Management/Split-Path.md)
-- [Resolve-Path](../../Microsoft.PowerShell.Management/Resolve-Path.md)
-- [Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md)
+- [Join-Path](xref:Microsoft.PowerShell.Management.Join-Path)
+- [Convert-Path](xref:Microsoft.PowerShell.Management.Convert-Path)
+- [Split-Path](xref:Microsoft.PowerShell.Management.Split-Path)
+- [Resolve-Path](xref:Microsoft.PowerShell.Management.Resolve-Path)
+- [Test-Path](xref:Microsoft.PowerShell.Management.Test-Path)
 
 ### PSDrive cmdlets
 
-- [Get-PSDrive](../../Microsoft.PowerShell.Management/Get-PSDrive.md)
-- [New-PSDrive](../../Microsoft.PowerShell.Management/New-PSDrive.md)
-- [Remove-PSDrive](../../Microsoft.PowerShell.Management/Remove-PSDrive.md)
+- [Get-PSDrive](xref:Microsoft.PowerShell.Management.Get-PSDrive)
+- [New-PSDrive](xref:Microsoft.PowerShell.Management.New-PSDrive)
+- [Remove-PSDrive](xref:Microsoft.PowerShell.Management.Remove-PSDrive)
 
 ### PSProvider Cmdlets
 
-- [Get-PSProvider](../../Microsoft.PowerShell.Management/Get-PSProvider.md)
+- [Get-PSProvider](xref:Microsoft.PowerShell.Management.Get-PSProvider)
 
 ## Viewing provider data
 
@@ -164,15 +164,13 @@ The primary benefit of a provider is that it exposes its data in a familiar
 and consistent way. The model for data presentation is a file system
 drive.
 
-To use data that the provider exposes, you view it, move through it,
-and change it as though it were data on a hard drive. Therefore, the most
-important information about a provider is the name of the drive
-that it supports.
+The provider allows you to view, navigate, and change items in the data store
+as though they were data in a file system. The data store is accessed by the name
+of the drive that it supports.
 
-The drive is listed in the default display of the `Get-PSProvider` cmdlet,
-but you can get information about the provider drive by using the
-`Get-PSDrive` cmdlet. For example, to get all the properties of the
-Function: drive, type:
+The drive is listed in the default display of the `Get-PSProvider` cmdlet, but
+you can get information about the provider drive using the `Get-PSDrive`
+cmdlet. For example, to get all the properties of the Function: drive, type:
 
 ```powershell
 Get-PSDrive Function | Format-List *
@@ -229,7 +227,7 @@ Set-Location HKLM:\SOFTWARE\
 ```
 
 If any element in the fully qualified name includes spaces, you must enclose
-the name in quotation marks `" "`. The following example shows a fully
+the name in double-quotation marks (`"`). The following example shows a fully
 qualified path that includes spaces.
 
 ```
@@ -237,21 +235,21 @@ qualified path that includes spaces.
 ```
 
 You can also use relative references to locations. A dot (`.`) represents the
-current location. For example, if you are in the HKLM:\Software\Microsoft
+current location. For example, if you are in the `HKLM:\Software\Microsoft`
 registry key, and you want to list the registry subkeys in the
-HKLM:\Software\Microsoft\PowerShell key, type the following command:
+`HKLM:\Software\Microsoft\PowerShell` key, type the following command:
 
 ```powershell
 Get-ChildItem .\PowerShell
 ```
 
-In addition, two dots (`..`) refers to the directory or container directly
-above your current location. You can combine dots (`.`) and double dots (`..`)
-along with your paths to work through a provider hierarchy.
+Also, double-dots (`..`) refers to the directory or container directly above
+your current location. You can use double-dots (`..`) to navigate through a
+provider hierarchy.
 
 ```
-PS C:\Windows\System32> cd "..\..\Program Files"
-PS C:\Program Files>
+PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\> cd ..\..\LanmanWorkstation\Parameters
+PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters>
 ```
 
 ## Provider Home
@@ -264,20 +262,21 @@ property of the provider.
 Get-PSProvider | Format-Table Name, Home
 ```
 
-```output
+```Output
 Name        Home
 ----        ----
 Registry
 Alias
 Environment
-FileSystem  C:\Users\robreed
+FileSystem  C:\Users\username
 Function
 Variable
 Certificate
 ```
 
 The **FileSystem** provider is the only provider that has a default value for
-**Home**. It is the same value as `$Home` see [about_Automatic_Variables](about_Automatic_Variables.md).
+**Home**. It's the same value as `$Home`. For more information, see
+[about_Automatic_Variables](about_Automatic_Variables.md).
 
 You can set the **Home** directory for a provider, for the current session,
 using its property.
@@ -287,14 +286,14 @@ using its property.
 ```
 
 The `~` character can be used to represent the provider's home directory.
-If the provider does not have a **Home** location set, you will see an error.
+If the provider doesn't have a **Home** location set, you see an error.
 
 ```powershell
 Cert:\> Set-Location ~
 ```
 
-```output
-Set-Location : Home location for this provider is not set. To set the home
+```Output
+Set-Location : Home location for this provider isn't set. To set the home
 location, call "(get-psprovider 'Certificate').Home = 'path'".
 At line:1 char:1
 + Set-Location ~
@@ -329,7 +328,7 @@ Get-Help certificate
 
 ## Learning about providers
 
-Although all provider data appears in drives, and you use the same methods to
+Although all provider data appears in drives and you use the same methods to
 move through them, the similarity stops there. The data stores that the
 provider exposes can be as varied as Active Directory locations and Microsoft
 Exchange Server mailboxes.

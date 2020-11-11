@@ -1,13 +1,8 @@
 ---
-title: "TypeName Element for EntrySelectedBy for CustomEntry for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 76548af7-05bd-4d12-bf71-6fb69c434ef2
-caps.latest.revision: 10
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for EntrySelectedBy for CustomEntry for View (Format)
+description: TypeName Element for EntrySelectedBy for CustomEntry for View (Format)
 ---
 # TypeName Element for EntrySelectedBy for CustomEntry for View (Format)
 

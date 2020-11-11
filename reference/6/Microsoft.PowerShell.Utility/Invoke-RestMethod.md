@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/03/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-6&WT.mc_id=ps-gethelp
@@ -224,7 +224,7 @@ in plain text over unencrypted connections. To override this behavior at your ow
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -257,7 +257,7 @@ included in **WebSession**.
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: WebAuthenticationType
+Type: Microsoft.PowerShell.Commands.WebAuthenticationType
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, Basic, Bearer, OAuth
@@ -291,7 +291,7 @@ supplied for **Body**, any content related headers supplied to the **ContentType
 `MultipartFormDataContent` object. This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -312,7 +312,7 @@ To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdle
 fails.
 
 ```yaml
-Type: X509Certificate
+Type: System.Security.Cryptography.X509Certificates.X509Certificate
 Parameter Sets: (All)
 Aliases:
 
@@ -338,7 +338,7 @@ To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command i
 > This feature is currently only supported on Windows OS platforms.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -361,7 +361,7 @@ call.
 **Body**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -392,7 +392,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -411,15 +411,15 @@ be used together.
 
 Example:
 
-`Invoke-WebRequest -uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'`
+`Invoke-RestMethod -uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'`
 
 This makes a `TEST` HTTP request to the API.
 
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: String
-Parameter Sets: CustomMethod, CustomMethodNoProxy
+Type: System.String
+Parameter Sets: CustomMethodNoProxy, CustomMethod
 Aliases: CM
 
 Required: True
@@ -436,7 +436,7 @@ Indicates that the cmdlet sets the **KeepAlive** value in the HTTP header to Fal
 subsequent requests.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -462,7 +462,7 @@ may contain multiple result items.
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: FL
 
@@ -475,8 +475,8 @@ Accept wildcard characters: False
 
 ### -Form
 
-Converts a dictionary to a `multipart/form-data` submission. `-Form` may not be used with `-Body`.
-If `-ContentType` will be ignored.
+Converts a dictionary to a `multipart/form-data` submission. **Form** may not be used with **Body**.
+If **ContentType** will be ignored.
 
 The keys of the dictionary will be used as the form field names. By default, form values will be
 converted to string values.
@@ -512,7 +512,7 @@ values.
 This feature was added in PowerShell 6.1.0.
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -534,7 +534,7 @@ Content related headers, such as `Content-Type` will be overridden when a `Multi
 object is supplied for **Body**.
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -552,7 +552,7 @@ Gets the content of the web request from a file.
 Enter a path and file name. If you omit the path, the default is the current location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -570,7 +570,7 @@ be needed if the REST api throttles due to too many requests. The default value 
 `[Int32]::MaxValue`. A value of 0 (zero) prevents following relation links.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: ML
 
@@ -588,7 +588,7 @@ Identifier (URI) before the connection fails. The default value is 5. A value of
 all redirection.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -606,7 +606,7 @@ inclusive or 304 is received. Also see **RetryIntervalSec** parameter for specif
 retries.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -635,7 +635,7 @@ Specifies the method used for the web request. The acceptable values for this pa
 The **CustomMethod** parameter can be used for Request Methods not listed above.
 
 ```yaml
-Type: WebRequestMethod
+Type: Microsoft.PowerShell.Commands.WebRequestMethod
 Parameter Sets: StandardMethod, StandardMethodNoProxy
 Aliases:
 Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, Patch
@@ -657,7 +657,7 @@ environment, use this switch.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: StandardMethodNoProxy, CustomMethodNoProxy
 Aliases:
 
@@ -677,7 +677,7 @@ By default, `Invoke-RestMethod` returns the results to the pipeline. To send the
 and to the pipeline, use the **Passthru** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -694,7 +694,7 @@ Returns the results, in addition to writing them to a file. This parameter is va
 **OutFile** parameter is also used in the command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -716,7 +716,7 @@ location.
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -735,7 +735,7 @@ the Uniform Resource Identifier (URI) of a network proxy server.
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: StandardMethod, CustomMethod
 Aliases:
 
@@ -758,7 +758,7 @@ This parameter is valid only when the **Proxy** parameter is also used in the co
 the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: StandardMethod, CustomMethod
 Aliases:
 
@@ -778,7 +778,7 @@ This parameter is valid only when the **Proxy** parameter is also used in the co
 the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: StandardMethod, CustomMethod
 Aliases:
 
@@ -798,7 +798,7 @@ the values will be the respective field values.
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: RHV
 
@@ -837,7 +837,7 @@ be completely downloaded. This behavior is the same as using **OutFile** without
 This feature was added in PowerShell 6.1.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -855,7 +855,7 @@ inclusive or 304 is received. Also see **MaximumRetryCount** parameter for speci
 retries.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -871,7 +871,7 @@ Accept wildcard characters: False
 Specifies a variable for which this cmdlet creates a web request session and saves it in the value.
 Enter a variable name without the dollar sign (`$`) symbol.
 
-When you specify a session variable, `Invoke-WebRequest` creates a web request session object and
+When you specify a session variable, `Invoke-RestMethod` creates a web request session object and
 assigns it to a variable with the specified name in your PowerShell session. You can use the
 variable in your session as soon as the command completes.
 
@@ -889,7 +889,7 @@ the web request session.
 You can't use the **SessionVariable** and **WebSession** parameters in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: SV
 
@@ -912,7 +912,7 @@ trusted root authority, etc.
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -931,13 +931,13 @@ This switch should be used for sites that require header values that do not conf
 Specifying this switch disables validation to allow the value to be passed unchecked. When
 specified, all headers are added without validation.
 
-This will disable validation for values passed to the **ContentType**, **Headers, and **UserAgent**
+This will disable validation for values passed to the **ContentType**, **Headers**, and **UserAgent**
 parameters.
 
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -1112,10 +1112,6 @@ To test a website with the standard user agent string that is used by most inter
 the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class,
 such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
-For example, the following command uses the user agent string for Internet Explorer.
-
-`Invoke-RestMethod -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`
-
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -1143,7 +1139,7 @@ maximum redirection value, and the user agent string. You can use it to share st
 web requests.
 
 To create a web request session, enter a variable name, without a dollar sign, in the value of the
-**SessionVariable** parameter of an `Invoke-WebRequest` command. `Invoke-WebRequest` creates the
+**SessionVariable** parameter of an `Invoke-RestMethod` command. `Invoke-RestMethod` creates the
 session and saves it in the variable. In subsequent commands, use the variable as the value of the
 **WebSession** parameter.
 

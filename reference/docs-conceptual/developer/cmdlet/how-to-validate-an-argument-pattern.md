@@ -1,15 +1,8 @@
 ---
-title: "How to Validate an Argument Pattern | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "ValidatePattern attribute, example"
-ms.assetid: 7ff76d4c-443a-4887-9ff8-241225f0aeec
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Validate an Argument Pattern
+description: How to Validate an Argument Pattern
 ---
 # How to Validate an Argument Pattern
 

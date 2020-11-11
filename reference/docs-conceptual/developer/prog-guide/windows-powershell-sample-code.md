@@ -1,17 +1,12 @@
 ---
-title: "Windows PowerShell Sample Code | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: Windows PowerShell Sample Code
+description: Windows PowerShell Sample Code
 ---
 # Windows PowerShell Sample Code
 
-Windows PowerShell® samples are available through the Windows SDK. This section contains the sample
+Windows PowerShell&reg; samples are available through the Windows SDK. This section contains the sample
 code that is contained in the Windows SDK samples.
 
 > [!NOTE]
@@ -42,11 +37,11 @@ code that is contained in the Windows SDK samples.
 | [Runspace02 Code Samples](./runspace02-code-samples.md)                           | This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.                                                                                                            |
 | [RunSpace03 Code Samples](./runspace03-code-samples.md)                           | These are the code samples for the runspace described in "Creating a Console Application That Runs a Specified Script".                                                                                                                                                                         |
 | [RunSpace04 Code Samples](./runspace04-code-samples.md)                           | This is a code sample for a runspace that uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.                                                                         |
-| [RunSpace05 Code Sample](./runspace05-code-sample.md)                             | This is the source code for the Runspace05 sample described in [Configuring a Runspace Using RunspaceConfiguration](https://msdn.microsoft.com/42681d19-2d05-4975-befd-afb1990e79b2).                                                                                                           |
-| [RunSpace06 Code Sample](./runspace06-code-sample.md)                             | This is the source code for the Runspace06 sample described in [Configuring a Runspace Using a Windows PowerShell Snap-in](https://msdn.microsoft.com/a7289ee8-9732-49ee-91c7-d533e9538b83).                                                                                                    |
-| [RunSpace07 Code Sample](./runspace07-code-sample.md)                             | This is the source code for the Runspace07 sample described in [Creating a Console Application That Adds Commands to a Pipeline](https://msdn.microsoft.com/01eb7808-e97b-4905-80be-9e2fa38c262e).                                                                                              |
-| [RunSpace08 Code Sample](./runspace08-code-sample.md)                             | This is the source code for the Runspace08 sample described in [Creating a Console Application That Adds Parameters to a Command](https://msdn.microsoft.com/848b2b46-60f1-4a86-b448-cfc7c0cccfba).                                                                                             |
-| [RunSpace09 Code Sample](./runspace09-code-sample.md)                             | This is the source code for the Runspace09 sample described in [Creating a Console Application That Invokes a Pipeline Asynchronously](https://msdn.microsoft.com/198c1c94-2a06-457e-93ce-c0d910618e47).                                                                                        |
+| [RunSpace05 Code Sample](./runspace05-code-sample.md)                             |                                                                                                            |
+| [RunSpace06 Code Sample](./runspace06-code-sample.md)                             |                                                                                                     |
+| [RunSpace07 Code Sample](./runspace07-code-sample.md)                             |                                                                                               |
+| [RunSpace08 Code Sample](./runspace08-code-sample.md)                             |                                                                                              |
+| [RunSpace09 Code Sample](./runspace09-code-sample.md)                             |                                                                                       |
 | [RunSpace10 Code Sample](./runspace10-code-sample.md)                             | This is the source code for the Runspace10 sample, which adds a cmdlet to [System.Management.Automation.Runspaces.Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) and then uses the modified configuration information to create the runspace. |
 
 ## See Also

@@ -1,8 +1,9 @@
 ---
+description: Configuration files for PowerShell Core, replacing Registry configuration. 
 keywords: powershell
-locale: en-us
+Locale: en-US
 ms.date: 11/02/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PowerShell_Config
 ---
@@ -60,7 +61,7 @@ For AllUsers configurations, this sets the **LocalMachine** execution policy.
 For CurrentUser configurations, this sets the **CurrentUser** execution policy.
 
 > [!NOTE]
-> The [`Set-ExecutionPolicy`](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+> The [`Set-ExecutionPolicy`](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
 > cmdlet modifies this setting in the AllUsers configuration file
 > when invoked with `-Scope LocalMachine`,
 > and modifies this setting in the CurrentUser configuration file
@@ -97,7 +98,7 @@ the configuration is for all users, sets the AllUser module path.
 
 > [!WARNING]
 > Configuring an AllUsers or CurrentUser module path here
-> will not change the scoped installation location for PowerShellGet modules like [Install-Module](https://docs.microsoft.com/powershell/module/powershellget/install-module).
+> will not change the scoped installation location for PowerShellGet modules like [Install-Module](/powershell/module/powershellget/install-module).
 > These cmdlets always use the *default* module paths.
 
 If no value is set, the default value for the respective module path component
@@ -386,7 +387,6 @@ This configuration sets a number of options that only work in macOS or Linux:
 - This PowerShell installation writes to the logs using the **home-powershell**
   identity.
 
-
 ```json
 {
   "PSModulePath": "%HOME%/.powershell/Modules",
@@ -403,3 +403,4 @@ This configuration sets a number of options that only work in macOS or Linux:
 [About Automatic Variables](./about_Automatic_Variables.md)
 
 [RFC0029]: https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md
+

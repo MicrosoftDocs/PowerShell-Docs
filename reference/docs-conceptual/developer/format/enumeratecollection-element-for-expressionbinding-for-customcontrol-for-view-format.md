@@ -1,13 +1,8 @@
 ---
-title: "EnumerateCollection Element for ExpressionBinding for CustomControl for View (Format) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3182c0c5-ba43-4d00-b3e0-27f24d272b2f
-caps.latest.revision: 9
+ms.date: 09/13/2016
+ms.topic: reference
+title: EnumerateCollection Element for ExpressionBinding for CustomControl for View (Format)
+description: EnumerateCollection Element for ExpressionBinding for CustomControl for View (Format)
 ---
 # EnumerateCollection Element for ExpressionBinding for CustomControl for View (Format)
 

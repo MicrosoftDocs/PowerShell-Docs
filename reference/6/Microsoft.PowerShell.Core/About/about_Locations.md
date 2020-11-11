@@ -1,6 +1,7 @@
 ---
+description: Describes how to access items from the working location in PowerShell. 
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_locations?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -122,7 +123,7 @@ location).
 
 ## SEE ALSO
 
-[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
+[Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
 
 [about_Providers](about_Providers.md)
 

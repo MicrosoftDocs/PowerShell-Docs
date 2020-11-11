@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-psprovider?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-psprovider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSProvider
 ---
@@ -121,7 +121,7 @@ The **Home** property value is optional, but for the **FileSystem** provider, it
 Specifies the name or names of the PowerShell providers about which this cmdlet gets information.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -153,3 +153,4 @@ This cmdlet returns objects that represent the PowerShell providers in the sessi
 ## NOTES
 
 ## RELATED LINKS
+

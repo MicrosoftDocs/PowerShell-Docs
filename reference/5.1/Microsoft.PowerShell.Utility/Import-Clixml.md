@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 08/15/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-clixml?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -93,7 +93,7 @@ risk of exposing plain-text passwords in your script.
 Gets only the specified number of objects. Enter the number of objects to get.
 
 ```yaml
-Type: UInt64
+Type: System.UInt64
 Parameter Sets: (All)
 Aliases:
 
@@ -114,7 +114,7 @@ objects, `1.0` means that the count is exact, and a value between `0.0` and `1.0
 increasingly reliable estimate.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -133,7 +133,7 @@ characters, enclose it in single quotation marks. Single quotation marks tell Po
 interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByLiteralPath
 Aliases: PSPath
 
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 Specifies the path to the XML files.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByPath
 Aliases:
 
@@ -166,7 +166,7 @@ Ignores the specified number of objects and then gets the remaining objects. Ent
 objects to skip.
 
 ```yaml
-Type: UInt64
+Type: System.UInt64
 Parameter Sets: (All)
 Aliases:
 

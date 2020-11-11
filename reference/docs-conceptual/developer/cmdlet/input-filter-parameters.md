@@ -1,13 +1,8 @@
 ---
-title: "Input Filter Parameters | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: e45929d1-bbb4-4dc6-892f-f9eacdb1c84c
-caps.latest.revision: 8
+ms.date: 09/13/2016
+ms.topic: reference
+title: Input Filter Parameters
+description: Input Filter Parameters
 ---
 # Input Filter Parameters
 

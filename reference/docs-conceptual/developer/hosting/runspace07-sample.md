@@ -1,13 +1,8 @@
 ---
-title: "Runspace07 Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 4f7bf81e-4f95-4150-afc3-c0872b24d026
-caps.latest.revision: 7
+ms.date: 09/13/2016
+ms.topic: reference
+title: Runspace07 Sample
+description: Runspace07 Sample
 ---
 # Runspace07 Sample
 

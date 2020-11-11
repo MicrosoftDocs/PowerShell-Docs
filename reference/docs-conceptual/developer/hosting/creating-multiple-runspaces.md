@@ -1,13 +1,8 @@
 ---
-title: "Creating multiple runspaces | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 42c40c7f-1ee7-4021-950c-2e013c8f2a4a
-caps.latest.revision: 4
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating multiple runspaces
+description: Creating multiple runspaces
 ---
 # Creating multiple runspaces
 

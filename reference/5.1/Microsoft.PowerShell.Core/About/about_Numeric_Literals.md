@@ -1,6 +1,6 @@
 ---
-keywords: powershell,cmdlet
-locale: en-us
+description: Both integer and real numeric literals can have type and multiplier suffixes.
+Locale: en-US
 ms.date: 04/09/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
