@@ -29,7 +29,7 @@ PowerShell 7.1 currently supports the following operating systems on x64, includ
 
 We also have community support for:
 
-- Arc Linux
+- Arch Linux
 - Raspbian Linux
 - Kali Linux
 
@@ -171,7 +171,7 @@ repository.
 - Change `CimCmdlets` to use `AliasAttribute` (#12617) (Thanks @thlac!)
 - Fix incorrect index in format string in ParameterBinderBase (#12630) (Thanks @powercode!)
 - Copy the `CommandInfo` property in `Command.Clone()` (#12301) (Thanks @TylerLeonhardt!)
-- Apply `-IncludeEqual` in `Compa-Object` when `-ExcludeDifferent` is specified (#12317) (Thanks @davidseibel!)
+- Apply `-IncludeEqual` in `Compare-Object` when `-ExcludeDifferent` is specified (#12317) (Thanks @davidseibel!)
 - Change `Get-FileHash` to close file handles before writing output (#12474) (Thanks @HumanEquivalentUnit!)
 - Fix inconsistent exception message in `-replace` operator (#12388) (Thanks @jackdcasey!)
 - Fix `WinCompat` module loading to treat PowerShell 7 modules with higher priority (#12269)
