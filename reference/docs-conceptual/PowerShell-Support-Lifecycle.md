@@ -1,7 +1,7 @@
 ---
 title: PowerShell Core Support Lifecycle
 description: Details the policies governing support for PowerShell
-ms.date: 03/09/2020
+ms.date: 11/11/2020
 ---
 # PowerShell Support Lifecycle
 
@@ -42,34 +42,6 @@ the next Current or LTS release.
 > You must have the latest patch update installed to qualify for support. For example, if you're
 > running PowerShell 7.0 and 7.0.1 has been released, you must update to 7.0.1 to qualify for
 > support.
-
-## Lifecycle of PowerShell Core 6.x
-
-PowerShell Core used the [Microsoft Modern Lifecycle Policy][modern]. This support lifecycle
-is intended to keep customers up-to-date with the latest versions.
-
-The version 6.x branch of PowerShell Core was updated approximately once every six months (examples:
-6.0, 6.1, 6.2, etc.). However, with the release of PowerShell 7, there won't be anymore minor
-version releases of 6.x. PowerShell 6.2.x will continue to receive servicing updates while still
-supported.
-
-> [!IMPORTANT]
-> You must update within six months after each new minor version release to continue receiving
-> support.
-
-For example, if PowerShell Core 6.1 is released on July 1, 2018, you would be expected to update to
-PowerShell Core 6.1 by January 1, 2019 to maintain support.
-
-> [!IMPORTANT]
-> You must update within 30 days after each new patch version release to continue receiving support.
-
-For example, If you're running PowerShell Core 6.1 and 6.1.3 was released on February 19, 2019, you
-would be expected to update to PowerShell Core 6.1.3 by March 21, 2019, which is 30 days after the
-release to maintain support. If any fixes are found to be required, the fixes will be released in
-our next cumulative update.
-
-The Modern Lifecycle Policy also requires that Microsoft give customers 12 months notice before
-discontinuing support for a product (that is, PowerShell Core).
 
 ## Supported platforms
 
@@ -205,10 +177,10 @@ for historical reference. It is not intended for use to determine the support li
 | PowerShell 7.1 (current) |   Nov-2020   | Built on .NET Core 5.0 (current)                                                                                                              |
 | PowerShell 7.0 (LTS)     |   Mar-2020   | Built on .NET Core 3.1 (LTS)                                                                                                                  |
 | PowerShell 6.0           |   Jan-2018   | First release, built on .NET Core 2.1. Installable on Windows, Linux, and macOS.                                                              |
-| PowerShell 5.1           |   Aug-2016   | Released in Windows 10 Anniversary Update and Windows Server 2016                                                                             |
+| PowerShell 5.1           |   Aug-2016   | Released in Windows 10 Anniversary Update and Windows Server 2016                                                                             |
 | PowerShell 5.0           |   Feb-2016   | Released in Windows Management Framework (WMF) 5.0                                                                                            |
 | PowerShell 4.0           |   Oct-2013   | Integrated in Windows 8.1 and with Windows Server 2012 R2. Installable on Windows 7 SP1, Windows Server 2008 R2 SP1, and Windows Server 2012. |
-| PowerShell 3.0           |   Oct-2012   | Integrated in Windows 8 and with Windows Server 2012. Installable on Windows 7 SP1, Windows Server 2008 SP1, and Windows Server 2008 R2 SP1.  |
+| PowerShell 3.0           |   Oct-2012   | Integrated in Windows 8 and with Windows Server 2012. Installable on Windows 7 SP1, Windows Server 2008 SP1, and Windows Server 2008 R2 SP1.  |
 | PowerShell 2.0           |   Jul-2009   | Integrated in Windows 7 and Windows Server 2008 R2. Installable on Windows XP SP3, Windows Server 2003 SP2, and Windows Vista SP1.            |
 | PowerShell 1.0           |   Nov-2006   | Installable on Windows XP SP2, Windows Server 2003 SP1 and Windows Vista. Optional component of Windows Server 2008.                          |
 
