@@ -139,7 +139,6 @@ repository.
 - Fix error message from new symbolic link missing target (#13085) (Thanks @yecril71pl!)
 - Make the parameter `args` non-nullable in the public `ConsoleHost` APIs (#13429)
 - Add missing dispose for `CancellationTokenSource` (#13420) (Thanks @Youssef1313!)
-- Add the parameter `-Paged` to `Get-Help` to support paging (#13374)
 - Fix `Get-Help` not properly displaying if parameter supports wildcards (#13353) (Thanks @ThomasNieto!)
 - Update `pwsh` help for `-InputFormat` parameter (#13355) (Thanks @sethvs!)
 - Declare MIT license for files copied from Roslyn (#13305) (Thanks @xtqqczze!)
