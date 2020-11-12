@@ -27,7 +27,16 @@ the OS in separate steps.
 
 <!-- TODO: Update for supported releases v7.0 & v7.1 -->
 
-Officially supported releases
+Officially supported platform releases for PowerShell 7.1
+
+- Ubuntu 16.04/18.04/20.04 (including ARM64)
+- Ubuntu 19.10 (via Snap package)
+- Debian 9/10
+- CentOS and RHEL 7/8
+- Fedora 30
+- Alpine 3.11+ (including ARM64)
+
+Officially supported platform releases for PowerShell 7.0
 
 - Ubuntu 16.04
 - Ubuntu 18.04 and 20.04

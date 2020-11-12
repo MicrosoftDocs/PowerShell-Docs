@@ -17,13 +17,21 @@ a stable and performant platform.
 
 PowerShell 7.1 currently supports the following operating systems on x64, including:
 
-- Windows 8.1, and 10
-- Windows Server 2012 R2, 2016, and 2019
+- Windows 8.1/10 (including ARM64)
+- Windows Server 2012 R2, 2016, 2019, and Semi-Annual Channel (SAC)
+- Ubuntu 16.04/18.04/20.04 (including ARM64)
+- Ubuntu 19.10 (via Snap package)
+- Debian 9/10
+- CentOS and RHEL 7/8
+- Fedora 30
+- Alpine 3.11+ (including ARM64)
 - macOS 10.13+
-- Red Hat Enterprise Linux (RHEL) / CentOS 7 and 8
-- Debian 9, and 10
-- Ubuntu 18.04, and 20.04
-- Alpine Linux 3.10, and 3.11+
+
+We also have community support for:
+
+- Arc Linux
+- Raspbian Linux
+- Kali Linux
 
 For more up-to-date information about supported operating systems and support lifecycle, see the
 [PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle)

@@ -1,5 +1,5 @@
 ---
-ms.date: 10/15/2020
+ms.date: 11/11/2020
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -34,7 +34,7 @@ This article describes the experimental features that are available and how to u
 | Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; | &check; |
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
 | PSNullConditionalOperators (mainstream in PS 7.1+)         |         | &check; |         |
-| PSUnixFileStat (non-Windows only)                          |         | &check; | &check; |
+| PSUnixFileStat (non-Windows only - mainstream in PS 7.1+)  |         | &check; |         |
 | PSNativePSPathResolution                                   |         |         | &check; |
 | PSCultureInvariantReplaceOperator                          |         |         | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; |
@@ -248,6 +248,10 @@ drwxr-xr-x jimtru    staff         11/8/2019 10:37         896 tools
 -rw-r--r-- jimtru    staff         11/8/2019 10:37      112858 build.psm1
 -rw-r--r-- jimtru    staff         11/8/2019 10:37      201297 CHANGELOG.md
 ```
+
+> [!NOTE]
+> This feature has moved out of the experimental phase and is a mainstream feature in PowerShell 7.1
+> and higher.
 
 ## PSUseAbbreviationExpansion
 
