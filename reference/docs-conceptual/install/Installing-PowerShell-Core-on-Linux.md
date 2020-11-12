@@ -206,7 +206,7 @@ onto the Ubuntu machine.
 Then, in the terminal, execute the following commands:
 
 ```sh
-sudo dpkg -i powershell_7.1.0-1.ubuntu.20.04_amd64.deb
+sudo dpkg -i powershell-lts_7.1.0-1.ubuntu.20.04_amd64.deb
 sudo apt-get install -f
 ```
 
