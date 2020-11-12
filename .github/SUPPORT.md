@@ -15,5 +15,5 @@ assignees: ''
 
 ## Community Resources
 
-See the [Community support](https://docs.microsoft.com/en-us/powershell/scripting/community/community-support)
+See the [Community support](https://docs.microsoft.com/powershell/scripting/community/community-support)
 for more links to community-based support forums.

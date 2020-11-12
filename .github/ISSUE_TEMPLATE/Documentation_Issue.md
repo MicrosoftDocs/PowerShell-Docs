@@ -35,7 +35,8 @@ Be sure to change the issue title. Titles should be brief and meaningful.
   - [ ] Legacy SDK
 
 **Cmdlet reference & about_ topics**
-- [ ] Version 7.1 preview content
+- [ ] Preview content
+- [ ] Version 7.1 content
 - [ ] Version 7.0 content
 - [ ] Version 6 content
 - [ ] Version 5.1 content
