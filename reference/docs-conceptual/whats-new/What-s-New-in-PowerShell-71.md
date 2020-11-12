@@ -29,7 +29,7 @@ PowerShell 7.1 currently supports the following operating systems on x64, includ
 
 We also have community support for:
 
-- Arc Linux
+- Arch Linux
 - Raspbian Linux
 - Kali Linux
 
@@ -139,7 +139,6 @@ repository.
 - Fix error message from new symbolic link missing target (#13085) (Thanks @yecril71pl!)
 - Make the parameter `args` non-nullable in the public `ConsoleHost` APIs (#13429)
 - Add missing dispose for `CancellationTokenSource` (#13420) (Thanks @Youssef1313!)
-- Add the parameter `-Paged` to `Get-Help` to support paging (#13374)
 - Fix `Get-Help` not properly displaying if parameter supports wildcards (#13353) (Thanks @ThomasNieto!)
 - Update `pwsh` help for `-InputFormat` parameter (#13355) (Thanks @sethvs!)
 - Declare MIT license for files copied from Roslyn (#13305) (Thanks @xtqqczze!)
@@ -171,7 +170,7 @@ repository.
 - Change `CimCmdlets` to use `AliasAttribute` (#12617) (Thanks @thlac!)
 - Fix incorrect index in format string in ParameterBinderBase (#12630) (Thanks @powercode!)
 - Copy the `CommandInfo` property in `Command.Clone()` (#12301) (Thanks @TylerLeonhardt!)
-- Apply `-IncludeEqual` in `Compa-Object` when `-ExcludeDifferent` is specified (#12317) (Thanks @davidseibel!)
+- Apply `-IncludeEqual` in `Compare-Object` when `-ExcludeDifferent` is specified (#12317) (Thanks @davidseibel!)
 - Change `Get-FileHash` to close file handles before writing output (#12474) (Thanks @HumanEquivalentUnit!)
 - Fix inconsistent exception message in `-replace` operator (#12388) (Thanks @jackdcasey!)
 - Fix `WinCompat` module loading to treat PowerShell 7 modules with higher priority (#12269)
