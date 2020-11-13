@@ -10,12 +10,12 @@ PowerShell 7.0 or higher require macOS 10.13 and higher. All packages are availa
 [releases][] page. After the package is installed, run `pwsh` from a terminal.
 
 > [!NOTE]
-> PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
+> PowerShell 7.1 is an in-place upgrade that removes PowerShell Core 6.x and 7.0.
 >
 > The `/usr/local/microsoft/powershell/6` folder is replaced by `/usr/local/microsoft/powershell/7`.
 >
-> If you need to run PowerShell 6 side-by-side with PowerShell 7, reinstall PowerShell 6 using the
-> [binary archive](#binary-archives) method.
+> If you need to run and older version of PowerShell core side-by-side with PowerShell 7.1, install
+> the version you want using the [binary archive](#binary-archives) method.
 
 There are several ways to install PowerShell on macOS. Choose one of the following methods:
 
@@ -118,13 +118,13 @@ brew upgrade powershell
 
 ## Installation via Direct Download
 
-Download the PKG package `powershell-lts-7.1.0-osx-x64.pkg` from the [releases][] page onto your
+Download the PKG package `powershell-7.1.0-osx-x64.pkg` from the [releases][] page onto your
 macOS machine.
 
 You can double-click the file and follow the prompts, or install it from the terminal:
 
 ```sh
-sudo installer -pkg powershell-lts-7.1.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-7.1.0-osx-x64.pkg -target /
 ```
 
 Install [OpenSSL](#installing-dependencies). OpenSSL is needed for PowerShell remoting and CIM
