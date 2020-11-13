@@ -1,5 +1,5 @@
 ---
-description: Explains language modes and their effect on PowerShell sessions. 
+description: Explains language modes and their effect on PowerShell sessions.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 09/09/2019
@@ -249,15 +249,7 @@ NoLanguage session, PowerShell returns the ScriptsNotAllowed error message.
 - ScriptsNotAllowed: The syntax is not supported by this runspace. This might
   be because it is in no-language mode.
 
-## KEYWORDS
-
-- about_ConstrainedLanguage
-- about_FullLanguage
-- about_NoLanguage
-- about_RestrictedLanguage
-
 ## SEE ALSO
 
 - [about_Session_Configuration_Files](about_Session_Configuration_Files.md)
 - [about_Session_Configurations](about_Session_Configurations.md)
-
