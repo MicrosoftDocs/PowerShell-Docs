@@ -29,12 +29,12 @@ This article describes the experimental features that are available and how to u
 | ---------------------------------------------------------- | :-----: | :-----: | :-----: |
 | PSTempDrive (mainstream in PS 7.0+)                        | &check; |         |         |
 | PSUseAbbreviationExpansion (mainstream in PS 7.0+)         | &check; |         |         |
+| PSNullConditionalOperators (mainstream in PS 7.1+)         |         | &check; |         |
+| PSUnixFileStat (non-Windows only - mainstream in PS 7.1+)  |         | &check; |         |
 | PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
 | PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
 | Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; | &check; |
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
-| PSNullConditionalOperators (mainstream in PS 7.1+)         |         | &check; |         |
-| PSUnixFileStat (non-Windows only - mainstream in PS 7.1+)  |         | &check; |         |
 | PSNativePSPathResolution                                   |         |         | &check; |
 | PSCultureInvariantReplaceOperator                          |         |         | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; |

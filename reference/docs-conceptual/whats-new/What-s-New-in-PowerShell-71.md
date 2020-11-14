@@ -13,7 +13,14 @@ Building on the foundation established in PowerShell 7.0, our efforts focused on
 and include a number of improvements and fixes. We are committed to ensuring that PowerShell remains
 a stable and performant platform.
 
+PowerShell 7.1 also include PSReadLine 2.1.0. This version includes Predictive IntelliSense. For
+more information about the Predictive IntelliSense feature, see the
+[announcement](https://devblogs.microsoft.com/powershell/announcing-psreadline-2-1-with-predictive-intellisense/)
+in the PowerShell blog.
+
 ## Where can I install PowerShell?
+
+<!-- TODO: Update list of OS below - make sure this is consistent across all docs -->
 
 PowerShell 7.1 currently supports the following operating systems on x64, including:
 
@@ -23,7 +30,7 @@ PowerShell 7.1 currently supports the following operating systems on x64, includ
 - Ubuntu 19.10 (via Snap package)
 - Debian 9/10
 - CentOS and RHEL 7/8
-- Fedora 30
+- Fedora 32
 - Alpine 3.11+ (including ARM64)
 - macOS 10.13+
 
@@ -96,7 +103,7 @@ repository.
 
 ### Breaking Changes
 
-<!-- TODO: Add descriptions for each breaking change  -->
+<!-- TODO: Add descriptions for each breaking change - this might need to be a separate article that we link to -->
 
 - Fix `$?` to not be `$false` when native command writes to `stderr` (#13395)
 - Rename `-FromUnixTime` to `-UnixTimeSeconds` on `Get-Date` to allow Unix time input (#13084) (Thanks @aetos382!)
@@ -107,18 +114,20 @@ repository.
 - Make `-OutFile` parameter in web cmdlets to work like `-LiteralPath` (#11701) (Thanks @iSazonov!)
 - Fix string parameter binding for `BigInteger` numeric literals (#11634) (Thanks @vexx32!)
 - On Windows, `Start-Process` creates a process environment with all the environment variables from
-  current session, using `-UseNewEnvironment` creates a new default process environment (#10830)
-  (Thanks @iSazonov!)
+  current session, using `-UseNewEnvironment` creates a new default process environment (#10830) (Thanks @iSazonov!)
 - Do not wrap return result to `PSObject` when converting ScriptBlock to delegate (#10619)
 - Use invariant culture string conversion for `-replace` operator (#10954) (Thanks @iSazonov!)
 
 ### Experimental Features
 
-<!-- TODO: note which features are now mainstream  -->
+For more information about the Experimental Features, see [Using Experimental Features](../learn/experimental-features.md).
 
+- Move `PSNullConditionalOperators` feature out of experimental (#13529)
+- Move `PSUnixFileStat` feature out of experimental
 - Add `-Runspace` parameter to all `*-PSBreakpoint` cmdlets (#10492) (Thanks @KirkMunro!)
-- Support passing `PSPath` to native commands (#12386)
+- Add `PSNativePSPathResolution` to support passing `PSPath` to native commands (#12386)
 - Use invariant culture string conversion for `-replace` operator (#10954) (Thanks @iSazonov!)
+- Add `PSSubsystemPluginModel` to support future Predictive IntelliSense plug-ins
 
 ### General Cmdlet Updates and Fixes
 
@@ -129,8 +138,6 @@ repository.
 - Add support for `TLS` 1.3 in Web cmdlets (#13409) (Thanks @iSazonov!)
 - Add null check for `args` in `CommandLineParser` (#13451) (Thanks @iSazonov!)
 - Process reparse points for Microsoft Store applications (#13481) (Thanks @iSazonov!)
-- Move `PSNullConditionalOperators` feature out of experimental (#13529)
-- Move `PSNativePSPathResolution` feature out of Experimental (#13522)
 - Use field if property does not exist for `ObRoot` when using PowerShell Direct to container (#13375) (Thanks @hemisphera!)
 - Suppress `UTF-7` obsolete warnings (#13484)
 - Avoid multiple enumerations of an `IEnumerable<Expression>` instance in `Compiler.cs` (#13491)
