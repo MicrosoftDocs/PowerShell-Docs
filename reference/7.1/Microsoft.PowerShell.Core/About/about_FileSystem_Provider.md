@@ -1,8 +1,8 @@
 ---
-description: FileSystem 
+description: FileSystem
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 06/18/2019
+ms.date: 11/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem Provider
@@ -32,13 +32,14 @@ delete files and directories in PowerShell.
 
 The **FileSystem** drives are a hierarchical namespace containing the
 directories and files on your computer. A **FileSystem** drive can be a logical
-or phsyical drive, directory, or mapped network share.
+or physical drive, directory, or mapped network share.
 
 A drive called `TEMP:` will be mapped to the user's temporary directory path.
 
 >[!NOTE]
 > Contents in the TEMP: drive are not automatically removed by PowerShell and
-> is up to the user or operating system to manage.
+> is up to the user or operating system to manage. This Feature was moved out
+> of experimental features in PowerShell Version 7.0
 
 The **FileSystem** provider supports the following cmdlets, which are covered
 in this article.
@@ -64,14 +65,15 @@ in this article.
 
 ## Types exposed by this provider
 
-Files are instances of the [System.IO.FileInfo](/dotnet/api/system.io.fileinfo) class.  Directories are
-instances of the [System.IO.DirectoryInfo](/dotnet/api/system.io.directoryinfo) class.
+Files are instances of the [System.IO.FileInfo](/dotnet/api/system.io.fileinfo)
+class. Directories are instances of the [System.IO.DirectoryInfo](/dotnet/api/system.io.directoryinfo)
+class.
 
 ## Navigating the FileSystem drives
 
 The **FileSystem** provider exposes its data stores by mapping any logical
 drives on the computer as PowerShell drives. To work with a **FileSystem**
-drive you can change your location to a drive uing the drive name followed
+drive you can change your location to a drive using the drive name followed
 by a colon (`:`).
 
 ```powershell
@@ -79,7 +81,8 @@ Set-Location C:
 ```
 
 You can also work with the **FileSystem** provider from any other PowerShell
-drive. To reference a file or directory from another location, use the drive name (`C:`, `D:`, ...) in the path.
+drive. To reference a file or directory from another location, use the drive
+name (`C:`, `D:`, ...) in the path.
 
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
