@@ -18,7 +18,7 @@ PowerShell console.
 
 ## LONG DESCRIPTION
 
-PSReadLine 2.0 provides a powerful command-line editing experience for the
+PSReadLine 2.1 provides a powerful command-line editing experience for the
 PowerShell console. It provides:
 
 - Syntax coloring of the command line
@@ -30,6 +30,7 @@ PowerShell console. It provides:
 - Bash style completion (optional in Cmd mode, default in Emacs mode)
 - Emacs yank/kill-ring
 - PowerShell token based "word" movement and kill
+- Predictive IntelliSense
 
 The following functions are available in the class
 **[Microsoft.PowerShell.PSConsoleReadLine]**.
@@ -40,6 +41,34 @@ The following functions are available in the class
 > work well with the screen readers. The default rendering and formatting of
 > PowerShell 7.0 on Windows works properly. You can manually load the module if
 > necessary.
+
+## Predictive IntelliSense
+
+Predictive IntelliSense is an addition to the concept of tab completion that
+assists the use in successfully completing commands. It enables users to
+discover, edit, and execute full commands based on matching predictions from the
+user's history and additional domain specific plugins.
+
+> [!NOTE]
+> PSReadLine 2.1.0 is not supported in PowerShell Core 6.X
+
+### Enable Predictive IntelliSense
+
+Predictive IntelliSense is disabled by default. To enable predictions, just run
+the following command:
+
+```powershell
+Set-PSReadLineOption -PredictionSource History
+```
+
+The **PredictionSource** parameter can also accept plugins for domain specific
+and custom requirements.
+
+To disable Predictive IntelliSense, just run:
+
+```powershell
+Set-PSReadLineOption -PredictionSource None
+```
 
 ## Basic editing functions
 
@@ -1198,6 +1227,26 @@ command.
 
 - Emacs: `<Ctrl+@>`
 
+## Predictive IntelliSense functions
+
+> [!NOTE]
+> Predictive IntelliSense needs to be enabled to use these functions.
+
+### AcceptNextWordSuggestion
+
+Accepts the next word of the inline suggestion from Predictive IntelliSense.
+This function can be bound with <kbd>Ctrl</kbd>+<kbd>F</kbd> by running the
+following command.
+
+```powershell
+Set-PSReadLineKeyHandler -Chord "Ctrl+f" -Function ForwardWord
+```
+
+### AcceptSuggestion
+
+Accepts the current inline suggestion from Predictive IntelliSense by pressing
+<kbd>RightArrow</kbd> when the cursor is at the end of the current line.
+
 ## Search functions
 
 ### CharacterSearch
@@ -1493,4 +1542,3 @@ Feel free to submit a pull request or submit feedback on the GitHub page.
 
 PSReadLine is heavily influenced by the GNU
 [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) library.
-
