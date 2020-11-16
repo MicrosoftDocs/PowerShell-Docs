@@ -91,40 +91,6 @@ This can be used by administrators and developers to find the path to PowerShell
 values will be the same for all preview and minor version releases. The `<GUID>`
 values are changed for each major release.
 
-## <a id="msix" />Installing from the Microsoft Store
-
-PowerShell 7.1 has been published to the Microsoft Store. You can find the PowerShell release on the
-[Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) website or in the
-Store application in Windows.
-
-Benefits of the Microsoft Store package:
-
-- Automatic updates built right into Windows 10
-- Integrates with other software distribution mechanisms like Intune and SCCM
-
-> [!NOTE]
-> Any system-level configuration settings stored in `$PSHOME` cannot be modified. This includes the
-> WSMAN configuration. This prevents remote sessions from connecting to Store-based installs of
-> PowerShell. User-level configurations and SSH remoting are supported.
-
-### Using the MSIX package
-
-> [!NOTE]
-> The preview builds of PowerShell include an MSIX package. The MSIX package is not officially
-> supported. We continue to build the package for internal testing purposes only.
-
-To manually install the MSIX package on a Windows 10 client, download the MSIX package from our
-GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to
-install. The Assets section may be collapsed, so you may need to click to expand it.
-
-The MSIX file looks like this - `PowerShell-<version>-win-<os-arch>.msix`
-
-To install the package, you must use the `Add-AppxPackage` cmdlet.
-
-```powershell
-Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
-```
-
 ## <a id="zip" />Installing the ZIP package
 
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
@@ -304,6 +270,49 @@ The following commands can be used to install PowerShell using the published `wi
    winget install --name PowerShell --exact
    winget install --name PowerShell-Preview --exact
    ```
+
+## <a id="msix" />Installing from the Microsoft Store
+
+PowerShell 7.1 has been published to the Microsoft Store. You can find the PowerShell release on the
+[Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) website or in the
+Store application in Windows.
+
+Benefits of the Microsoft Store package:
+
+- Automatic updates built right into Windows 10
+- Integrates with other software distribution mechanisms like Intune and SCCM
+
+Limitations
+
+MSIX packages run in an application sandbox that virtualizes access to some filesystem and registry
+locations.
+
+- All registry changes under HKEY_CURRENT_USER are copied on write to a private per-user, per-app
+  location. Therefore, those values are not available to other applications.
+- Any system-level configuration settings stored in `$PSHOME` cannot be modified. This includes the
+  WSMAN configuration. This prevents remote sessions from connecting to Store-based installs of
+  PowerShell. User-level configurations and SSH remoting are supported.
+
+For more information, see
+[Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes).
+
+### Using the MSIX package
+
+> [!NOTE]
+> The preview builds of PowerShell include an MSIX package. The MSIX package is not officially
+> supported. The package is built for testing purposes during the preview period.
+
+To manually install the MSIX package on a Windows 10 client, download the MSIX package from our
+GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to
+install. The Assets section may be collapsed, so you may need to click to expand it.
+
+The MSIX file looks like this - `PowerShell-<version>-win-<os-arch>.msix`
+
+To install the package, you must use the `Add-AppxPackage` cmdlet.
+
+```powershell
+Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
+```
 
 ## How to create a remoting endpoint
 
