@@ -45,7 +45,7 @@ The following functions are available in the class
 ## Predictive IntelliSense
 
 Predictive IntelliSense is an addition to the concept of tab completion that
-assists the use in successfully completing commands. It enables users to
+assists the user in successfully completing commands. It enables users to
 discover, edit, and execute full commands based on matching predictions from the
 user's history and additional domain specific plugins.
 
