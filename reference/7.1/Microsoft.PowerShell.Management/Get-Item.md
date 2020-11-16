@@ -138,9 +138,9 @@ information, pipe the output to `Format-Table -View childrenWithHardlink`
 Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
 ```
 
-### Example 9: Output for experimental feature PSUnixFileStat
+### Example 9: Output for Non-Windows Operating Systems
 
-In PowerShell 7 on Unix systems, the experimental feature **PSUnixFileStat** provides Unix-like
+In PowerShell 7.1 on Unix systems, the `Get-Item` cmdlet provides Unix-like
 output:
 
 ```powershell
@@ -161,6 +161,9 @@ The new properties that are now part of the output are:
 - **User** is the file owner
 - **Group** is the group owner
 - **Size** is the size of the file or directory as represented on a Unix system
+
+> [!NOTE]
+> This feature was moved from experimental to mainstream in PowerShell 7.1.
 
 ## PARAMETERS
 
@@ -351,7 +354,7 @@ To get the contents of an item recursively, use `Get-ChildItem`.
 To navigate through the registry, use this cmdlet to get registry keys and the `Get-ItemProperty`
 to get registry values and data. The registry values are considered to be properties of the
 registry key.
-  
+
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PsProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).

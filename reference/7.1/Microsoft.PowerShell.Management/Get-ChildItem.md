@@ -352,9 +352,9 @@ In PowerShell 6.2, an alternate view was added to get hard link information.
 Get-ChildItem -Path C:\PathContainingHardLink | Format-Table -View childrenWithHardLink
 ```
 
-### Example 9: Output for experimental feature PSUnixFileStat
+### Example 9: Output for Non-Windows Operating Systems
 
-In PowerShell 7 on Unix systems, the experimental feature **PSUnixFileStat** provides Unix-like output:
+In PowerShell 7.1 on Unix systems, the `Get-ChildItem` provides Unix-like output:
 
 ```powershell
 PS> Get-ChildItem /etc/r*
@@ -383,6 +383,9 @@ The new properties that are now part of the output are:
 - **User** is the file owner
 - **Group** is the group owner
 - **Size** is the size of the file or directory as represented on a Unix system
+
+> [!NOTE]
+> This feature was moved from experimental to mainstream in PowerShell 7.1.
 
 ## Parameters
 
