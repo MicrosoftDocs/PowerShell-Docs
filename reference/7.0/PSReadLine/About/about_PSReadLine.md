@@ -11,12 +11,12 @@ title: About PSReadLine
 
 ## about_PSReadLine
 
-## SHORT DESCRIPTION
+## Short Description
 
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
 
-## LONG DESCRIPTION
+## Long Description
 
 PSReadLine 2.0 provides a powerful command-line editing experience for the
 PowerShell console. It provides:
@@ -31,15 +31,15 @@ PowerShell console. It provides:
 - Emacs yank/kill-ring
 - PowerShell token based "word" movement and kill
 
-The following functions are available in the class
-**[Microsoft.PowerShell.PSConsoleReadLine]**.
-
 > [!NOTE]
 > Beginning with PowerShell 7.0, PowerShell skips auto-loading PSReadLine on
 > Windows if a screen reader program is detected. Currently, PSReadLine doesn't
 > work well with the screen readers. The default rendering and formatting of
 > PowerShell 7.0 on Windows works properly. You can manually load the module if
 > necessary.
+
+The following functions are available in the class
+**[Microsoft.PowerShell.PSConsoleReadLine]**.
 
 ## Basic editing functions
 
@@ -1409,14 +1409,9 @@ typical call looks like
   [ref]$numericArg, 1)
 ```
 
-## NOTE
+## Note
 
-### POWERSHELL COMPATIBILITY
-
-PSReadLine requires PowerShell 3.0, or newer, and the console host. It does
-not work in PowerShell ISE. It does work in the console of Visual Studio Code.
-
-### COMMAND HISTORY
+### Command History
 
 PSReadLine maintains a history file containing all the commands and data you have entered from the
 command line. This may contain sensitive data including passwords. For example, if you use the
@@ -1426,13 +1421,13 @@ stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On non-Windows
 history files is stored at `$env:XDG_DATA_HOME/powershell/PSReadLine` or
 `$env:HOME/.local/share/powershell/PSReadLine`.
 
-### FEEDBACK & CONTRIBUTING TO PSReadLine
+### Feedback & Contributing To PSReadLine
 
 [PSReadLine on GitHub](https://github.com/PowerShell/PSReadLine)
 
 Feel free to submit a pull request or submit feedback on the GitHub page.
 
-## SEE ALSO
+## See Also
 
 PSReadLine is heavily influenced by the GNU
 [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) library.

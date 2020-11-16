@@ -2,7 +2,7 @@
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 keywords: powershell
 Locale: en-US
-ms.date: 02/10/2020
+ms.date: 11/16/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: About PSReadLine
@@ -11,12 +11,12 @@ title: About PSReadLine
 
 ## about_PSReadLine
 
-## SHORT DESCRIPTION
+## Short Description
 
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
 
-## LONG DESCRIPTION
+## Long Description
 
 PSReadLine 2.1 provides a powerful command-line editing experience for the
 PowerShell console. It provides:
@@ -32,8 +32,17 @@ PowerShell console. It provides:
 - PowerShell token based "word" movement and kill
 - Predictive IntelliSense
 
-The following functions are available in the class
-**[Microsoft.PowerShell.PSConsoleReadLine]**.
+PSReadLine requires PowerShell 3.0, or newer, and the console host. It does
+not work in PowerShell ISE. It does work in the console of Visual Studio Code.
+
+PSReadLine 2.1.0 ships with PowerShell 7.1 and is supported in all supported
+versions of PowerShell. It is available to install from the PowerShell Gallery.
+To install PSReadLine 2.1.0 in a supported version of PowerShell run the
+following command.
+
+```powershell
+Install-Module -Name PSReadLine -RequiredVersion 2.1.0
+```
 
 > [!NOTE]
 > Beginning with PowerShell 7.0, PowerShell skips auto-loading PSReadLine on
@@ -42,15 +51,15 @@ The following functions are available in the class
 > PowerShell 7.0 on Windows works properly. You can manually load the module if
 > necessary.
 
+The following functions are available in the class
+**[Microsoft.PowerShell.PSConsoleReadLine]**.
+
 ## Predictive IntelliSense
 
 Predictive IntelliSense is an addition to the concept of tab completion that
 assists the user in successfully completing commands. It enables users to
 discover, edit, and execute full commands based on matching predictions from the
 user's history and additional domain specific plugins.
-
-> [!NOTE]
-> PSReadLine 2.1.0 is not supported in PowerShell Core 6.X
 
 ### Enable Predictive IntelliSense
 
@@ -1515,14 +1524,9 @@ typical call looks like
   [ref]$numericArg, 1)
 ```
 
-## NOTE
+## Note
 
-### POWERSHELL COMPATIBILITY
-
-PSReadLine requires PowerShell 3.0, or newer, and the console host. It does
-not work in PowerShell ISE. It does work in the console of Visual Studio Code.
-
-### COMMAND HISTORY
+### Command History
 
 PSReadLine maintains a history file containing all the commands and data you have entered from the
 command line. This may contain sensitive data including passwords. For example, if you use the
@@ -1532,13 +1536,13 @@ stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On non-Windows
 history files is stored at `$env:XDG_DATA_HOME/powershell/PSReadLine` or
 `$env:HOME/.local/share/powershell/PSReadLine`.
 
-### FEEDBACK & CONTRIBUTING TO PSReadLine
+### Feedback & Contributing To PSReadLine
 
 [PSReadLine on GitHub](https://github.com/PowerShell/PSReadLine)
 
 Feel free to submit a pull request or submit feedback on the GitHub page.
 
-## SEE ALSO
+## See Also
 
 PSReadLine is heavily influenced by the GNU
 [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) library.

@@ -2,7 +2,7 @@
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 keywords: powershell
 Locale: en-US
-ms.date: 02/10/2020
+ms.date: 11/16/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: About PSReadLine
@@ -11,12 +11,12 @@ title: About PSReadLine
 
 ## about_PSReadLine
 
-## SHORT DESCRIPTION
+## Short Description
 
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
 
-## LONG DESCRIPTION
+## Long Description
 
 PSReadLine 2.0 provides a powerful command-line editing experience for the
 PowerShell console. It provides:
@@ -30,6 +30,9 @@ PowerShell console. It provides:
 - Bash style completion (optional in Cmd mode, default in Emacs mode)
 - Emacs yank/kill-ring
 - PowerShell token based "word" movement and kill
+
+PSReadLine requires PowerShell 3.0, or newer, and the console host. It does
+not work in PowerShell ISE. It does work in the console of Visual Studio Code.
 
 The following functions are available in the class
 **[Microsoft.PowerShell.PSConsoleReadLine]**.
@@ -1402,14 +1405,9 @@ typical call looks like
   [ref]$numericArg, 1)
 ```
 
-## NOTE
+## Note
 
-### POWERSHELL COMPATIBILITY
-
-PSReadLine requires PowerShell 3.0, or newer, and the console host. It does
-not work in PowerShell ISE. It does work in the console of Visual Studio Code.
-
-### COMMAND HISTORY
+### Command History
 
 PSReadLine maintains a history file containing all the commands and data you have entered from the
 command line. This may contain sensitive data including passwords. For example, if you use the
@@ -1417,13 +1415,13 @@ command line. This may contain sensitive data including passwords. For example, 
 history files is a file named `$($host.Name)_history.txt`. On Windows systems the history file is
 stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`.
 
-### FEEDBACK & CONTRIBUTING TO PSReadLine
+### Feedback & Contributing To PSReadLine
 
 [PSReadLine on GitHub](https://github.com/PowerShell/PSReadLine)
 
 Feel free to submit a pull request or submit feedback on the GitHub page.
 
-## SEE ALSO
+## See Also
 
 PSReadLine is heavily influenced by the GNU
 [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) library.
