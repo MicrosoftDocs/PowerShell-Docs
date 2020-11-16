@@ -282,12 +282,12 @@ Benefits of the Microsoft Store package:
 - Automatic updates built right into Windows 10
 - Integrates with other software distribution mechanisms like Intune and SCCM
 
-Limitations
+Limitations:
 
 MSIX packages run in an application sandbox that virtualizes access to some filesystem and registry
 locations.
 
-- All registry changes under HKEY_CURRENT_USER are copied on write to a private per-user, per-app
+- All registry changes under HKEY_CURRENT_USER are copied on write to a private, per-user, per-app
   location. Therefore, those values are not available to other applications.
 - Any system-level configuration settings stored in `$PSHOME` cannot be modified. This includes the
   WSMAN configuration. This prevents remote sessions from connecting to Store-based installs of
