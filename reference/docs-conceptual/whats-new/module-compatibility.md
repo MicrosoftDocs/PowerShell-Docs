@@ -79,7 +79,7 @@ administrator**.
 | AppBackgroundTask                  | Natively Compatible                  | Windows 10 1903+                   |
 | AppLocker                          | Untested with Compatibility Layer    |                                    |
 | AppvClient                         | Untested with Compatibility Layer    |                                    |
-| Appx                               | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+ |
+| Appx                               | Natively Compatible**                | Windows Server 1809+<br>Windows 10 1809+<br>**Must use Compatibility Layer with PowerShell 7.1 |
 | AssignedAccess                     | Natively Compatible                  | Windows 10 1809+                   |
 | BestPractices                      | Not Supported by Compatibility Layer |                                    |
 | BitLocker                          | Natively Compatible                  | Windows Server 1809+ with BitLocker<br>Windows 10 1809+ |
