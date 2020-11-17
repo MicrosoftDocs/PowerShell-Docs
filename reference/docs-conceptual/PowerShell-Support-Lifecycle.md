@@ -71,20 +71,18 @@ experimentation and feedback.
 | Red Hat Enterprise Linux 7                        |   Supported   |   Supported   |
 | Red Hat Enterprise Linux 8                        |   Supported   |   Supported   |
 | Fedora 31+                                        |   Supported   | Not Supported |
-| Alpine 3.10                                       |   See Note    | Not Supported |
-| Alpine 3.11+                                      |   See Note    |   See Note    |
+| Alpine 3.10                                       |   See Note 1  | Not Supported |
+| Alpine 3.11+                                      |   See Note 1  |   See Note 1  |
 | macOS 10.13+                                      |   Supported   |   Supported   |
 | Arch                                              |   Community   |   Community   |
 | Raspbian                                          |   Community   |   Community   |
 | Kali                                              |   Community   |   Community   |
 | AppImage (works on multiple Linux platforms)      |   Community   |   Community   |
-| [Snap Package](https://snapcraft.io/powershell)   |   See note    |   See note    |
+| [Snap Package](https://snapcraft.io/powershell)   |   See note 2  |   See note    |
 
 > [!NOTE]
-> Snap packages are supported the same as the distribution you're running the package on.
-
-> [!NOTE]
-> CIM, PowerShell Remoting, and DSC are not supported on Alpine.
+> - 1 - CIM, PowerShell Remoting, and DSC are not supported on Alpine.
+> - 2 - Snap packages are supported the same as the distribution you're running the package on.
 
 ## PowerShell releases end of life
 
