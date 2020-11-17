@@ -51,9 +51,6 @@ Install-Module -Name PSReadLine -RequiredVersion 2.1.0
 > PowerShell 7.0 on Windows works properly. You can manually load the module if
 > necessary.
 
-The following functions are available in the class
-**[Microsoft.PowerShell.PSConsoleReadLine]**.
-
 ## Predictive IntelliSense
 
 Predictive IntelliSense is an addition to the concept of tab completion that
@@ -78,6 +75,9 @@ To disable Predictive IntelliSense, just run:
 ```powershell
 Set-PSReadLineOption -PredictionSource None
 ```
+
+The following functions are available in the class
+**[Microsoft.PowerShell.PSConsoleReadLine]**.
 
 ## Basic editing functions
 
