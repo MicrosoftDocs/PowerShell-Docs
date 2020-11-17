@@ -6,12 +6,12 @@
         "externalReference": [],
         "groups": {
             "powershell-5.1": { "moniker_range": "powershell-5.1" },
-            "powershell-6": { "moniker_range": "powershell-6" },
             "powershell-7": { "moniker_range": "powershell-7" },
             "powershell-7.1": { "moniker_range": "powershell-7.1" },
             "conceptual": { "moniker_range": ">=powershell-5.1" }
         },
-        "content": [{
+        "content": [
+            {
                 "files": ["index.yml", "module/index.md"],
                 "exclude": ["**/obj/**", "**/includes/**", "**/_themes/**", "README.md", "**/README.md"],
                 "dest": ""
@@ -23,9 +23,6 @@
             { "files": ["toc.yml"], "src": "5.1", "group": "powershell-5.1", "dest": "module/psdocs" },
             { "files": ["**/*.yml", "**/About/*.md"], "src": "5.1", "group": "powershell-5.1", "exclude": ["docs-conceptual/**"], "dest": "module" },
 
-            { "files": ["toc.yml"], "src": "6", "group": "powershell-6", "dest": "module/psdocs" },
-            { "files": ["**/*.yml", "**/About/*.md"], "src": "6", "group": "powershell-6", "exclude": ["docs-conceptual/**"], "dest": "module" },
-
             { "files": ["toc.yml"], "src": "7.0", "group": "powershell-7", "dest": "module/psdocs" },
             { "files": ["**/*.yml", "**/About/*.md"], "src": "7.0", "group": "powershell-7", "exclude": ["docs-conceptual/**"], "dest": "module" },
 
@@ -35,7 +32,8 @@
             { "files": ["**/*.md"], "src": "virtual-directory", "dest": "scripting" },
             { "files": ["**/*.md"], "src": "virtual-directory-module", "dest": "module" }
         ],
-        "resource": [{
+        "resource": [
+            {
                 "files": ["**/media/**/*.png", "**/media/**/*.gif", "**/media/**/*.jpeg", "**/media/**/*.jpg", "**/media/**/*.svg"],
                 "exclude": ["**/obj/**", "**/includes/**"]
             }
@@ -81,8 +79,6 @@
             "ms.technology": {
                 "5.1/**.yml": "powershell-cmdlets",
                 "5.1/**.md": "powershell-conceptual",
-                "6/**.yml": "powershell-cmdlets",
-                "6/**.md": "powershell-conceptual",
                 "7.0/**.yml": "powershell-cmdlets",
                 "7.0/**.md": "powershell-conceptual",
                 "7.1/**.yml": "powershell-cmdlets",
@@ -92,8 +88,6 @@
             "ms.topic": {
                 "5.1/**.yml": "reference",
                 "5.1/**.md": "reference",
-                "6/**.yml": "reference",
-                "6/**.md": "reference",
                 "7.0/**.yml": "reference",
                 "7.0/**.md": "reference",
                 "7.1/**.yml": "reference",
@@ -104,7 +98,7 @@
                 "docs-conceptual/samples/**/**.md": "sample",
                 "docs-conceptual/**.md": "conceptual"
             },
-            "manager": { "**/**": "daberry" },
+            "manager": { "**/**": "sewhee" },
             "ms.tgt_pltfr": { "**/**": "windows, macos, linux" },
             "author": {
                 "**/CimCmdlets/**.yml": "SteveL-MSFT",
