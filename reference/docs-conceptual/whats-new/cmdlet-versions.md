@@ -11,11 +11,6 @@ is a summary of information found in the release notes. More detailed informatio
 the release notes:
 
 - [What's new in PowerShell 7.0](what-s-new-in-powershell-70.md)
-- [What's new in PowerShell 6.2](what-s-new-in-powershell-core-62.md)
-- [What's new in PowerShell 6.1](what-s-new-in-powershell-core-61.md)
-- [What's new in PowerShell 6.0](what-s-new-in-powershell-core-60.md)
-- [Breaking changes in PowerShell 6.0](breaking-changes-ps6.md)
-- [Known issues in PowerShell 6.0](known-issues-ps6.md)
 
 This is a work in progress. Please help us keep this information fresh.
 
@@ -41,7 +36,8 @@ This is a work in progress. Please help us keep this information fresh.
 | PSDesiredStateConfiguration               | &check; | &check; | &check; | &check; |              |
 | PSDiagnostics                             | &check; | &check; | &check; | &check; | Windows only |
 | PSReadline 1.x                            | &check; |         |         |         | Windows only |
-| PSReadline 2.x                            |         | &check; | &check; | &check; |              |
+| PSReadline 2.0                            |         | &check; | &check; |         |              |
+| PSReadline 2.1                            |         |         |         | &check; |              |
 | PSScheduledJob                            | &check; |         |         |         | Windows only |
 | PSWorkflow                                | &check; |         |         |         | Windows only |
 | PSWorkflowUtility                         | &check; |         |         |         | Windows only |

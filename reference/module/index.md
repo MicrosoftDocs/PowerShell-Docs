@@ -3,12 +3,12 @@ title: PowerShell Module Browser
 description: Search all PowerShell modules and cmdlets from Microsoft
 author: sdwheeler
 ms.author: sewhee
-manager: carmonm
+manager: sewhee
 ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: landing-page
-ms.manager: carmonm
+ms.manager: sewhee
 ms.date: 06/23/2020
 archive_url: ''
 layout: ApiBrowserPage
