@@ -144,7 +144,7 @@ better solution is found.
 ### `*-EventLog` cmdlets
 
 Due to the use of unsupported APIs, the `*-EventLog` has been removed from PowerShell Core. until a
-better solution is found. `Get-WinEvent` and `Create-WinEvent` are available to get and create
+better solution is found. `Get-WinEvent` and `New-WinEvent` are available to get and create
 events on Windows.
 
 ### Cmdlets that use WPF removed
