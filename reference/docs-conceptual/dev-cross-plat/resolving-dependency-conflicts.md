@@ -218,8 +218,8 @@ public static class Program
 ```
 
 This is a good practice since it minimizes the memory and filesystem I/O and uses the resources
-more efficiently. The unfortunate a side effect of this is that we won't know that the assembly fails to
-load until we reach the code path that tries to load the assembly.
+more efficiently. The unfortunate a side effect of this is that we won't know that the assembly fails
+to load until we reach the code path that tries to load the assembly.
 
 It can also create a timing condition for assembly load conflicts. If two parts of the same program
 try to load different versions of the same assembly, the version loaded depends on which code path
@@ -638,7 +638,7 @@ namespace AlcModule.Cmdlets
 
         public AlcModuleAssemblyLoadContext(string dependencyDirPath)
         {
-            _depdendencyDirPath = dependencyDirPath;
+            _dependencyDirPath = dependencyDirPath;
         }
 
         protected override Assembly Load(AssemblyName assemblyName)
@@ -647,7 +647,7 @@ namespace AlcModule.Cmdlets
             // looking for an assembly of the given name
             // in the configured dependency directory
             string assemblyPath = Path.Combine(
-                s_dependencyDirPath,
+                _dependencyDirPath,
                 $"{assemblyName.Name}.dll");
 
             // The ALC must use inherited methods to load assemblies
