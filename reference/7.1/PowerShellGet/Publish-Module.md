@@ -402,6 +402,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 `Publish-Module` runs on PowerShell 3.0 or later releases of PowerShell, on Windows 7 or Windows
 2008 R2 and later releases of Windows.
 
+> [!IMPORTANT]
+> As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+> versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+> trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+> 1.2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> For more information, see the
+> [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+> PowerShell blog.
+
 Publishing a module requires metadata that is displayed on the gallery page for the module. Required
 metadata includes the module name, version, description, and author. Most metadata is taken from the
 module manifest, but some metadata can be specified in `Publish-Module` parameters, such as **Tag**,
@@ -421,4 +433,3 @@ module manifest, but some metadata can be specified in `Publish-Module` paramete
 [Uninstall-Module](Uninstall-Module.md)
 
 [Update-Module](Update-Module.md)
-
