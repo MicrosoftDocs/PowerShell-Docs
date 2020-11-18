@@ -1,8 +1,7 @@
 ---
-description: Allows you to indicate which namespaces are used in the session. 
-keywords: powershell,cmdlet
+description: Allows you to indicate which namespaces are used in the session.
 Locale: en-US
-ms.date: 01/29/2020
+ms.date: 11/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
@@ -24,7 +23,7 @@ The `using` statement should not be confused with the `using:` scope modifier
 for variables. For more information, see
 [about_Remote_Variables](about_Remote_Variables.md).
 
-## Syntax
+## Namespace syntax
 
 To specify .NET namespaces from which to resolve types:
 
@@ -32,11 +31,37 @@ To specify .NET namespaces from which to resolve types:
 using namespace <.NET-namespace>
 ```
 
+Specifying a namespace makes it easier to reference types by their short names.
+
+## Module syntax
+
 To load classes from a PowerShell module:
 
 ```
 using module <module-name>
 ```
+
+The value of `<module-name>` can be a module name, a full module specification,
+or a path to a module file.
+
+When `<module-name>` is a path, the path can be fully qualified or relative. A
+relative path is resolved relative to the script that contains the using
+statement.
+
+When `<module-name>` is a name or module specification, PowerShell searches the
+**PSModulePath** for the specified module.
+
+A module specification is a hash table that has the following keys.
+
+- `ModuleName` - **Required** Specifies the module name.
+- `GUID` - **Optional** Specifies the GUID of the module.
+- It's also **Required** to specify one of the three below keys. These keys
+  can't be used together.
+  - `ModuleVersion` - Specifies a minimum acceptable version of the module.
+  - `RequiredVersion` - Specifies an exact, required version of the module.
+  - `MaximumVersion` - Specifies the maximum acceptable version of the module.
+
+## Assembly syntax
 
 To preload types from a .NET assembly:
 
@@ -44,8 +69,6 @@ To preload types from a .NET assembly:
 using assembly <.NET-assembly-path>
 using assembly <.NET-namespace>
 ```
-
-Specifying a namespace makes it easier to reference types by their short names.
 
 Loading an assembly preloads .NET types from that assembly into a script at
 parse time. This allows you to create new PowerShell classes that use types
