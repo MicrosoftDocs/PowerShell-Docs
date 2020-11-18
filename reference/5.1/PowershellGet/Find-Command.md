@@ -339,6 +339,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
+[!INCLUDE [TLS1.2 requirement](../../includes/tls-gallery.md)]
+
 ## RELATED LINKS
 
 [Get-InstalledModule](Get-InstalledModule.md)
