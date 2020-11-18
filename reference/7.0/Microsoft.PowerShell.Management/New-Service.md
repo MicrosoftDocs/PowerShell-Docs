@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/25/2019
+ms.date: 11/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
@@ -34,7 +33,7 @@ dependencies of the service.
 ### Example 1: Create a service
 
 ```powershell
-New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+New-Service -Name "TestService" -BinaryPathName '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
 ```
 
 This command creates a service named TestService.
@@ -44,7 +43,7 @@ This command creates a service named TestService.
 ```powershell
 $params = @{
   Name = "TestService"
-  BinaryPathName = "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
   DisplayName = "Test Service"
   StartupType = "Manual"
@@ -81,7 +80,7 @@ This example adds the **SecurityDescriptor** of the service being created.
 ```powershell
 $SDDL = "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;SU)"
 $params = @{
-  BinaryPathName = "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
   DisplayName "Test Service"
   StartupType = "Manual"
@@ -99,6 +98,16 @@ parameter uses `$SDDL` to set the **SecurityDescriptor** of the new service.
 ### -BinaryPathName
 
 Specifies the path of the executable file for the service. This parameter is required.
+
+The fully qualified path to the service binary file. If the path contains a space, it must be quoted
+so that it is correctly interpreted. For example, `d:\my share\myservice.exe` should be specified as
+`'"d:\my share\myservice.exe"'`.
+
+The path can also include arguments for an auto-start service. For example,
+`'"d:\myshare\myservice.exe arg1 arg2"'`. These arguments are passed to the service entry point.
+
+For more information, see the **lpBinaryPathName** parameter of
+[CreateServiceW](/windows/win32/api/winsvc/nf-winsvc-createservicew) API.
 
 ```yaml
 Type: System.String
