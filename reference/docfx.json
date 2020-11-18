@@ -8,6 +8,7 @@
             "powershell-5.1": { "moniker_range": "powershell-5.1" },
             "powershell-7": { "moniker_range": "powershell-7" },
             "powershell-7.1": { "moniker_range": "powershell-7.1" },
+            "powershell-7.2": { "moniker_range": "powershell-7.2" },
             "conceptual": { "moniker_range": ">=powershell-5.1" }
         },
         "content": [
@@ -28,6 +29,9 @@
 
             { "files": ["toc.yml"], "src": "7.1", "group": "powershell-7.1", "dest": "module/psdocs" },
             { "files": ["**/*.yml", "**/About/*.md"], "src": "7.1", "group": "powershell-7.1", "exclude": ["docs-conceptual/**"], "dest": "module" },
+
+            { "files": ["toc.yml"], "src": "7.2", "group": "powershell-7.2", "dest": "module/psdocs" },
+            { "files": ["**/*.yml", "**/About/*.md"], "src": "7.2", "group": "powershell-7.2", "exclude": ["docs-conceptual/**"], "dest": "module" },
 
             { "files": ["**/*.md"], "src": "virtual-directory", "dest": "scripting" },
             { "files": ["**/*.md"], "src": "virtual-directory-module", "dest": "module" }
@@ -83,6 +87,8 @@
                 "7.0/**.md": "powershell-conceptual",
                 "7.1/**.yml": "powershell-cmdlets",
                 "7.1/**.md": "powershell-conceptual",
+                "7.2/**.yml": "powershell-cmdlets",
+                "7.2/**.md": "powershell-conceptual",
                 "docs-conceptual/**.md": "powershell-conceptual"
             },
             "ms.topic": {
@@ -92,6 +98,8 @@
                 "7.0/**.md": "reference",
                 "7.1/**.yml": "reference",
                 "7.1/**.md": "reference",
+                "7.2/**.yml": "reference",
+                "7.2/**.md": "reference",
                 "docs-conceptual/dev-cross-plat/**/**.md": "reference",
                 "docs-conceptual/developer/**/**.md": "reference",
                 "docs-conceptual/learn/**/**.md": "tutorial",
