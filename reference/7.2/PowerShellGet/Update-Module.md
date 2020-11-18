@@ -376,9 +376,7 @@ permissions.
 > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
 > 1.2:
 >
-> ```powershell
-> [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-> ```
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
 >
 > For more information, see the
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
@@ -408,4 +406,3 @@ processes are stopped.
 [Publish-Module](Publish-Module.md)
 
 [Uninstall-Module](Uninstall-Module.md)
-
