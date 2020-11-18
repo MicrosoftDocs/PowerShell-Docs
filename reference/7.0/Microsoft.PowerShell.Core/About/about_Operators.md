@@ -644,7 +644,7 @@ ${a}?[0]
 >
 > The variable name syntax of `${<name>}` should not be confused with the `$()`
 > subexpression operator. For more information, see Variable name section of
-> [about_Variables](about_Variables.md#Variable-names-that-include-special-characters).
+> [about_Variables](about_Variables.md#variable-names-that-include-special-characters).
 
 ## See also
 
