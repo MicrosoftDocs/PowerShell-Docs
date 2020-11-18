@@ -133,6 +133,8 @@ The PowerShell Gallery uses the following hostnames.
 
 These hostnames should be added to the allow lists that control access from your network.
 
+[!INCLUDE [TLS 1.2 Requirement](../../includes/tls-gallery.md)]
+
 [Find-DscResource]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module
 [Find-Script]: /powershell/module/powershellget/Find-Script
