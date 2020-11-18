@@ -8,7 +8,7 @@ ms.date: 11/11/2020
 
 Support of PowerShell on Arm is based on the **.NET Core Supported OS Lifecycle Policies**.
 
-PowerShell 7.0 is based on the [.NET Core 3.1 Supported OS Lifecycle Policy](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) and supports the following platforms:
+PowerShell 7.1 is based on the [.NET Core 3.1 Supported OS Lifecycle Policy](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) and supports the following platforms:
 
 |         OS          |          Version           | Architectures |          Lifecycle           |
 | ------------------- | -------------------------- | ------------- | ---------------------------- |
