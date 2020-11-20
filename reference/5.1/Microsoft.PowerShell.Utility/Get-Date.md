@@ -481,6 +481,12 @@ For example, `Get-Date | Get-Member`.
 
 The valid **UFormat specifiers** are displayed in the following table:
 
+> [!IMPORTANT]
+> Additional **UFormat** specifiers are added in newer versions of PowerShell. For example, `%F` was
+> added in PowerShell 6.2, so it isn't available in Windows PowerShell 5.1 or older. Keep this in
+> mind when using **UFormat** specifiers in scripts designed to be run on multiple versions of
+> PowerShell.
+
 | Format specifier |                                 Meaning                     |         Example          |
 | ---- | ----------------------------------------------------------------------- | ------------------------ |
 | `%A` | Day of the week - full name                                             | Monday                   |
