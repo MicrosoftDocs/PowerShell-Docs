@@ -310,16 +310,18 @@ PS Env:\> Get-ChildItem ComputerName
 
 ### Saving changes to environment variables
 
-To make a persistent change to an environment variable on Windows, use the
-System Control Panel. Select **Advanced System Settings**. On the **Advanced**
-tab, click **Environment Variable...**. You can add or edit existing
-environment variables in the **User** and **System** (Machine) scopes. Windows
-writes these values to the Registry so that they persist across sessions and
-system restarts.
+To make a persistent change to an environment variable on Windows, use either of
+the following:
+
+1. The [setx.exe](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/setx)
+   command-line utility.
+1. The Advanced tab of the System applet in Control Panel. Issuing the
+   `SystemPropertiesAdvanced.exe` command at the PowerShell prompt is a
+   straightforward way of accessing it.
 
 Alternately, you can add or change environment variables in your PowerShell
 profile. This method works for any version of PowerShell on any supported
-platform.
+platform, but restricts the changes to PowerShell and its child processes.
 
 ### Using System.Environment methods
 
