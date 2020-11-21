@@ -18,6 +18,12 @@ To enable PowerShell remoting over WSMan, the following prerequisites need to be
   patched systems already have this package installed.
 - Install the Windows Management Framework (WMF) 4.0 or newer on Windows 7 and Windows Server 2008
   R2. For more information about WMF, see [WMF Overview](/powershell/scripting/wmf/overview).
+ 
+## Download and install using the Microsoft Store
+
+The most convenient and easy way to get PowerShell on Windows 10 is to use the Microsoft Store. Updates will be automatically handled by Windows.
+
+[Download PowerShell from the Microsoft Store](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D)
 
 ## Download the installer package
 
