@@ -33,15 +33,16 @@ The following list describes the main folders in this repository.
   [docs.microsoft.com]([https://docs.microsoft.com/powershell/scripting/). This includes both
   reference and conceptual content.
   - `5.1` - contains the cmdlet reference and about topics for PowerShell 5.1
-  - `6` - contains the cmdlet reference and about topics for PowerShell 6
   - `7.0` - contains the cmdlet reference and about topics for PowerShell 7.0
   - `7.1` - contains the cmdlet reference and about topics for PowerShell 7.1
+  - `7.2` - contains the cmdlet reference and about topics for PowerShell 7.2 (preview)
   - `bread` - contains the TOC used for breadcrumb navigation
   - `docs-conceptual` - contains the conceptual articles that are published to the Docs site. In
     general, the folder structure mirrors the Table of Contents (TOC).
   - `mapping` - contains the version mapping configuration used by the build system
   - `media` - contains image files used in documentation. There are media folders throughout the
-    `docs-conceptual` content. See the Contributor Guide for information on using images in documentation.
+    `docs-conceptual` content. See the Contributor Guide for information on using images in
+    documentation.
   - `module` - contains the markdown source for the Module Browser page
 - `tests` - contains the Pester tests used by the build system
 - `tools` - contains other tools used by the build system
