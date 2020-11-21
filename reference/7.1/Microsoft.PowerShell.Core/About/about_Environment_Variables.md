@@ -313,7 +313,7 @@ PS Env:\> Get-ChildItem ComputerName
 To make a persistent change to an environment variable on Windows, use either of
 the following:
 
-1. The [setx.exe](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/setx)
+1. The [setx.exe](https://docs.microsoft.com/windows-server/administration/windows-commands/setx)
    command-line utility.
 1. The Advanced tab of the System applet in Control Panel. Issuing the
    `SystemPropertiesAdvanced.exe` command at the PowerShell prompt is a
