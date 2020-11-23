@@ -587,7 +587,7 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%c` | Date and time - abbreviated                                             | Thu Jun 27 08:44:18 2019 |
 | `%D` | Date in mm/dd/yy format                                                 | 06/27/19                 |
 | `%d` | Day of the month - 2 digits                                             | 05                       |
-| `%e` | Day of the month - digit preceded by a space                            | \<space\>5               |
+| `%e` | Day of the month - preceded by a space if only a single digit           | \<space\>5               |
 | `%F` | Date in YYYY-mm-dd format, equal to %Y-%m-%d (the ISO 8601 date format) | 2019-06-27               |
 | `%G` | Same as 'Y'                                                             |                          |
 | `%g` | Same as 'y'                                                             |                          |

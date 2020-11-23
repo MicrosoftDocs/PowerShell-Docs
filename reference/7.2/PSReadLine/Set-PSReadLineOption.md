@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 06/30/2020
+ms.date: 11/23/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
 ---
+
 # Set-PSReadLineOption
 
 ## Synopsis
@@ -16,15 +17,15 @@ Customizes the behavior of command line editing in **PSReadLine**.
 
 ```
 Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-HistoryNoDuplicates]
- [-AddToHistoryHandler <System.Func[System.String,System.Object]>]
- [-CommandValidationHandler <System.Action[System.Management.Automation.Language.CommandAst]>]
+ [-AddToHistoryHandler <System.Func`2[System.String,System.Object]>]
+ [-CommandValidationHandler <System.Action`1[System.Management.Automation.Language.CommandAst]>]
  [-HistorySearchCursorMovesToEnd] [-MaximumHistoryCount <Int32>] [-MaximumKillRingCount <Int32>]
  [-ShowToolTips] [-ExtraPromptLineCount <Int32>] [-DingTone <Int32>] [-DingDuration <Int32>]
  [-BellStyle <BellStyle>] [-CompletionQueryItems <Int32>] [-WordDelimiters <String>]
  [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <String>]
  [-AnsiEscapeTimeout <Int32>] [-PromptText <String[]>] [-ViModeIndicator <ViModeStyle>]
- [-ViModeChangeHandler <ScriptBlock>] [-Colors <Hashtable>] [-PredictionSource <PredictionSource>]
- [<CommonParameters>]
+ [-ViModeChangeHandler <ScriptBlock>] [-PredictionSource <PredictionSource>]
+ [-PredictionViewStyle <PredictionViewStyle>] [-Colors <Hashtable>] [<CommonParameters>]
 ```
 
 ## Description
@@ -221,6 +222,13 @@ Colors can be either a value from **ConsoleColor**, for example `[ConsoleColor]:
 ANSI escape sequence. Valid escape sequences depend on your terminal. In PowerShell 5.0, an example
 escape sequence for red text is `$([char]0x1b)[91m`. In PowerShell 6 and above, the same escape
 sequence is `` `e[91m``. You can specify other escape sequences including the following types:
+
+Two color settings were added to support customization of the `ListView` in PSReadLine 2.2.0:
+
+- **ListPredictionColor** - set color for the leading `>` character and the trailing source name,
+  e.g. `[History]`. By default, it uses `DarkYellow` as the foreground color.
+- **ListPredictionSelectedColor** - set color for indicating a list item is selected. By default, it
+  uses `DarkBlack` as the background color.
 
 - 256 color
 - 24-bit color
@@ -567,27 +575,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PredictionSource
-
-Specifies the source for PSReadLine to get predictive suggestions.
-
-Valid values are:
-
-- **None**: disable the predictive suggestion feature
-- **History**: get predictive suggestions from history only
-
-```yaml
-Type: PredictionSource
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PromptText
 
 When there's a parse error, **PSReadLine** changes a part of the prompt red. **PSReadLine** analyzes
@@ -699,7 +686,55 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: ;:,.[]{}()/\|^&*-=+'"–—―
+Default value: ;:,.[]{}()/\|^&*-=+'"---
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PredictionSource
+
+Specifies the source for PSReadLine to get predictive suggestions.
+
+Valid values are:
+
+- **None** - disable the predictive IntelliSense feature (default).
+-`**History** - enable the predictive IntelliSense feature and use the PSReadLine history as the
+  only source.
+- **Plugin** - enable the predictive IntelliSense feature and use the plugins (`CommandPrediction`)
+  as the only source. This value was added in PSReadLine 2.2.0
+- **HistoryAndPlugin** - enable the predictive IntelliSense feature and use both history and plugin
+  as the sources. This value was added in PSReadLine 2.2.0
+
+```yaml
+Type: Microsoft.PowerShell.PredictionSource
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PredictionViewStyle
+
+Sets the style for the display of the predictive text. The default is **InlineView**.
+
+- **InlineView** - the style as existing today, similar as in fish shell and zsh. (default)
+- **ListView** - suggestions are rendered in a drop down list, and users can select using
+  <kbd>UpArrow</kbd> and <kbd>DownArrow</kbd>.
+
+This parameter was added in PSReadLine 2.2.0
+
+```yaml
+Type: Microsoft.PowerShell.PredictionViewStyle
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: InlineView
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -709,7 +744,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
