@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 11/16/2020
+ms.date: 11/23/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: About PSReadLine
@@ -17,7 +17,7 @@ PowerShell console.
 
 ## Long Description
 
-PSReadLine 2.1 provides a powerful command-line editing experience for the
+PSReadLine 2.2 provides a powerful command-line editing experience for the
 PowerShell console. It provides:
 
 - Syntax coloring of the command line
@@ -31,16 +31,25 @@ PowerShell console. It provides:
 - PowerShell token based "word" movement and kill
 - Predictive IntelliSense
 
-PSReadLine requires PowerShell 3.0, or newer, and the console host. It does
-not work in PowerShell ISE. It does work in the console of Visual Studio Code.
+PSReadLine 2.2.0 added two new predictive IntelliSense features:
 
-PSReadLine 2.1.0 ships with PowerShell 7.1 and is supported in all supported
+- Added the **PredictionViewStyle** parameter to allow for the selection of the
+  new `ListView`.
+- Connected PSReadLine to the `CommandPrediction` APIs introduced in PS 7.1 to
+  allow a user can import a predictor module that can render the suggestions
+  from a custom source.
+
+PSReadLine requires PowerShell 3.0, or newer. PSReadLine works with default
+console host, Visual Studio Code, and Window Terminal. It does not work in
+PowerShell ISE.
+
+PSReadLine 2.2.0 ships with PowerShell 7.2 and is supported in all supported
 versions of PowerShell. It is available to install from the PowerShell Gallery.
-To install PSReadLine 2.1.0 in a supported version of PowerShell run the
+To install PSReadLine 2.2.0 in a supported version of PowerShell run the
 following command.
 
 ```powershell
-Install-Module -Name PSReadLine -RequiredVersion 2.1.0
+Install-Module -Name PSReadLine -AllowPrerelease
 ```
 
 > [!NOTE]
@@ -1523,7 +1532,7 @@ typical call looks like
   [ref]$numericArg, 1)
 ```
 
-## Note
+## Notes
 
 ### Command History
 
