@@ -17,7 +17,7 @@ PowerShell console.
 
 ## Long Description
 
-PSReadLine 2.w provides a powerful command-line editing experience for the
+PSReadLine 2.2 provides a powerful command-line editing experience for the
 PowerShell console. It provides:
 
 - Syntax coloring of the command line
@@ -1532,7 +1532,7 @@ typical call looks like
   [ref]$numericArg, 1)
 ```
 
-## Note
+## Notes
 
 ### Command History
 

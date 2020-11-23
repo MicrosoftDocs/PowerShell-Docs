@@ -10,10 +10,10 @@ title: Set-PSReadLineOption
 
 # Set-PSReadLineOption
 
-## SYNOPSIS
+## Synopsis
 Customizes the behavior of command line editing in **PSReadLine**.
 
-## SYNTAX
+## Syntax
 
 ```
 Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-HistoryNoDuplicates]
@@ -28,12 +28,12 @@ Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-His
  [-PredictionViewStyle <PredictionViewStyle>] [-Colors <Hashtable>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-PSReadLineOption` cmdlet customizes the behavior of the **PSReadLine** module when you're
 editing the command line. To view the **PSReadLine** settings, use `Get-PSReadLineOption`.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Set foreground and background colors
 
@@ -142,7 +142,7 @@ block object.
 For more information, see
 [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 
-## PARAMETERS
+## Parameters
 
 ### -AddToHistoryHandler
 
@@ -746,21 +746,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe objects to `Set-PSReadLineOption.`
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [about_PSReadLine](./About/about_PSReadLine.md)
 
