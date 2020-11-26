@@ -34,6 +34,11 @@ The `Set-Clipboard` cmdlet sets the contents of the clipboard.
 Set-Clipboard -Value "This is a test string"
 ```
 
+### Example 2: Copy public ssh key to clipboard to add to GitHub
+```powershell
+Get-Content C:\Users\<username>\.ssh\id_ed25519.pub | Set-Clipboard
+```
+
 ## PARAMETERS
 
 ### -Append
