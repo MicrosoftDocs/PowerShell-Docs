@@ -255,7 +255,7 @@ Deletes the current logical line and the next requested logical lines in a multi
 
 ### DeleteLineToFirstChar
 
-Deletes text from the cursor to the first non-blank character of the line.
+Deletes from the first non-blank character of the current logical line in a multiline buffer.
 
 - Vi command mode: `<d,^>`
 
