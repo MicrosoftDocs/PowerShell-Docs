@@ -50,8 +50,7 @@ The following cmdlets have the **Encoding** parameter:
 The byte-order-mark (BOM) is a _Unicode signature_ in the first few bytes of a
 file or text stream that indicate which Unicode encoding used for the data. For
 more information, see the
-[Byte order mark](https://wikipedia.org/wiki/Byte_order_mark) article in
-Wikipedia.
+[Byte order mark](/globalization/encoding/byte-order-mark) documentation.
 
 In Windows PowerShell, any Unicode encoding, except `UTF7`, always creates a
 BOM. PowerShell Core defaults to `utf8NoBOM` for all text output.

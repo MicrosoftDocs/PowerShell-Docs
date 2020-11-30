@@ -1,10 +1,10 @@
 ---
-title: about_Character_Encoding
 description: Describes how PowerShell uses character encoding for input and output of string data.
-ms.date: 10/21/2020
 Locale: en-US
+ms.date: 10/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
+title: about_Character_Encoding
 ---
 # about_Character_Encoding
 
@@ -50,8 +50,7 @@ The following cmdlets have the **Encoding** parameter:
 The byte-order-mark (BOM) is a _Unicode signature_ in the first few bytes of a
 file or text stream that indicate which Unicode encoding used for the data. For
 more information, see the
-[Byte order mark](https://wikipedia.org/wiki/Byte_order_mark) article in
-Wikipedia.
+[Byte order mark](/globalization/encoding/byte-order-mark) documentation.
 
 In Windows PowerShell, any Unicode encoding, except `UTF7`, always creates a
 BOM. PowerShell Core defaults to `utf8NoBOM` for all text output.
