@@ -233,7 +233,7 @@ Configuration TestConfig
         $State="Running",
 
         [String]
-        $ComputerName="localhost",
+        $ComputerName="localhost"
     )
 
     # It is best practice to explicitly import any required resources or modules.

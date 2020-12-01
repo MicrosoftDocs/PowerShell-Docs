@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date: 12/01/2020
 title:  The PowerShell Gallery
 description: The PowerShell Gallery is the central repository for PowerShell modules, scripts, and DSC resources.
 ---
@@ -8,8 +8,8 @@ description: The PowerShell Gallery is the central repository for PowerShell mod
 The PowerShell Gallery is the central repository for PowerShell content. In it, you can find useful
 PowerShell modules containing PowerShell commands and Desired State Configuration (DSC) resources.
 You can also find PowerShell scripts, some of which may contain PowerShell workflows, and which
-outline a set of tasks and provide sequencing for those tasks. Some of these packages are authored by
-Microsoft, and others are authored by the PowerShell community.
+outline a set of tasks and provide sequencing for those tasks. Some of these packages are authored
+by Microsoft, and others are authored by the PowerShell community.
 
 ## PowerShellGet Overview
 
@@ -45,5 +45,11 @@ Please refer to the documentation for the modules for more information.
 ## Got a question? Have feedback?
 
 More information about the PowerShell Gallery and PowerShellGet can be found in the
-[Getting Started](getting-started.md) page. Please provide feedback and report issues using
-[UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
+[Getting Started](getting-started.md) page.
+
+To see the current status of the PowerShell Gallery services, see the
+[PowerShell Gallery Status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md)
+page on GitHub.
+
+Please provide feedback and report issues the
+[GitHub repository](https://github.com/PowerShell/PowerShellGallery/issues).

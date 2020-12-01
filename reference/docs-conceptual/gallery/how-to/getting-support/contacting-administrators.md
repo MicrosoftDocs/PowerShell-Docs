@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date: 12/01/2020
 title:  Contact Gallery administrators
 description: This article describe how and when to contact an administrator of the PowerShell Gallery
 ---
@@ -22,5 +22,6 @@ You should contact gallery administrators when:
 1. Send us an email: cgadmin@microsoft.com.
 1. If you are reporting abuse of a package, you can find Report Abuse link below the package
    information on the left panel.
-1. For any other general questions regarding the Gallery, please submit your question to
-   [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)
+1. For any other general questions regarding the Gallery, please submit your question to the
+   [PowerShell Gallery Issues](https://github.com/PowerShell/PowerShellGallery/issues)
+   page on GitHub.
