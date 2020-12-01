@@ -47,9 +47,9 @@ Please refer to the documentation for the modules for more information.
 More information about the PowerShell Gallery and PowerShellGet can be found in the
 [Getting Started](getting-started.md) page.
 
-To see the current status of the PowerShell Gallery, see the
-[status page](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) on
-GitHub.
+To see the current status of the PowerShell Gallery services, see the
+[PowerShell Gallery Status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md)
+page on GitHub.
 
 Please provide feedback and report issues the
 [GitHub repository](https://github.com/PowerShell/PowerShellGallery/issues).

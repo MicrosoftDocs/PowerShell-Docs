@@ -5,10 +5,6 @@ description: This article provide information and steps for troubleshooting erro
 ---
 # Troubleshooting cmdlets
 
-To see the current status of the PowerShell Gallery, see the
-[status page](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) on
-GitHub.
-
 ## How to resolve "WARNING: Package 'your package name' failed to download" issue
 
 It is reported that `Install-Module` or `Update-Module` sometimes fails on some machines. Based on
@@ -23,7 +19,7 @@ Launch new PowerShell Console
 Update-Module Azure -Verbose
 ```
 
-### Required network endpoints
+## Required network endpoints
 
 The Install and Update cmdlets require internet access to connect to the network endpoints used by
 by the PowerShell Gallery. Ensure that your network access policies allow you to connect to the
@@ -34,3 +30,9 @@ following endpoints.
 - az818661.vo.msecnd.net
 - www.powershellgallery.com
 - devopsgallerystorage.blob.core.windows.net
+
+> [!NOTE]
+> Cmdlets that interact with the PowerShell Gallery can fail with unexpected errors when there is an
+> outage of the PowerShell Gallery services. To see the current status of the PowerShell Gallery,
+> see the [PowerShell Gallery Status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md)
+> page on GitHub.
