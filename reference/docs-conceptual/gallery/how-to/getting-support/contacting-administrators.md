@@ -23,5 +23,5 @@ You should contact gallery administrators when:
 1. If you are reporting abuse of a package, you can find Report Abuse link below the package
    information on the left panel.
 1. For any other general questions regarding the Gallery, please submit your question to the
-   [PowerShell Gallery Status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md)
+   [PowerShell Gallery Issues](https://github.com/PowerShell/PowerShellGallery/issues)
    page on GitHub.
