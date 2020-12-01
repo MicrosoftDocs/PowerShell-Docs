@@ -495,7 +495,7 @@ If you recall from the `ConfirmImpact` section, they actually need to call it li
 Test-ShouldProcess -Confirm:$false
 ```
 
-Not everyone realizes they need to do that and `-Confirm:$false` doesn't suppress `ShouldContinue`.
+Not everyone realizes they need to do that and `-Force` doesn't suppress `ShouldContinue`.
 So we should implement `-Force` for the sanity of our users. Take a look at this full example here:
 
 ```powershell
@@ -508,7 +508,7 @@ function Test-ShouldProcess {
         [Switch]$Force
     )
 
-    if ($Force -and -not $Confirm){
+    if ($Force){
         $ConfirmPreference = 'None'
     }
 
@@ -518,8 +518,8 @@ function Test-ShouldProcess {
 }
 ```
 
-We add our own `-Force` switch as a parameter and use the `$Confirm` automatic parameter that is
-available when adding `SupportsShouldProcess` in the `CmdletBinding`.
+We add our own `-Force` switch as a parameter. The `-Confirm` parameter is automatically added
+when using `SupportsShouldProcess` in the `CmdletBinding`.
 
 ```powershell
 [CmdletBinding(
@@ -534,17 +534,18 @@ param(
 Focusing in on the `-Force` logic here:
 
 ```powershell
-if ($Force -and -not $Confirm){
+if ($Force){
     $ConfirmPreference = 'None'
 }
 ```
 
 If the user specifies `-Force`, we want to suppress the confirm prompt unless they also specify
 `-Confirm`. This allows a user to force a change but still confirm the change. Then we set
-`$ConfirmPreference` in the local scope where our call to `ShouldProcess` discoverers it.
+`$ConfirmPreference` in the local scope. Now, using the `-Force` parameter temporarily sets the
+`$ConfirmPreference` to none, disabling prompt for confirmation.
 
 ```powershell
-if ($PSCmdlet.ShouldProcess('TARGET')){
+if ($Force -or $PSCmdlet.ShouldProcess('TARGET')){
         Write-Output "Some Action"
     }
 ```
