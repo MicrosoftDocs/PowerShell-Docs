@@ -1,9 +1,13 @@
 ---
-ms.date:  06/12/2017
+ms.date: 12/01/2020
 title:  Troubleshooting cmdlets
 description: This article provide information and steps for troubleshooting errors using the PowerShell Gallery
 ---
 # Troubleshooting cmdlets
+
+To see the current status of the PowerShell Gallery, see the
+[status page](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) on
+GitHub.
 
 ## How to resolve "WARNING: Package 'your package name' failed to download" issue
 
