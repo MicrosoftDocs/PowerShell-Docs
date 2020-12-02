@@ -34,7 +34,7 @@ If the `brew` command is not found, you need to install Homebrew following
 Now, you can install PowerShell:
 
 ```sh
-brew cask install powershell
+brew install --cask powershell
 ```
 
 Finally, verify that your install is working properly:
@@ -69,7 +69,7 @@ brew tap homebrew/cask-versions
 Now, you can install PowerShell:
 
 ```sh
-brew cask install powershell-preview
+brew install --cask powershell-preview
 ```
 
 Finally, verify that your install is working properly:
