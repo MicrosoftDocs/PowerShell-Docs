@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
@@ -53,10 +52,19 @@ Set-Clipboard -Value "This is a test string"
 
 ### Example 2: Copy the contents of a directory to the clipboard
 
-This command copies the content of the specified folder to the clipboard.
+This example copies the content of the specified folder to the clipboard.
 
 ```powershell
 Set-Clipboard -Path "C:\Staging\"
+```
+
+### Example 3: Copy the contents of a file to the clipboard
+
+This example pipes the contents of a file to the clipboard. In this example, we are getting a public
+ssh key so that it can be pasted into another application, like GitHub.
+
+```powershell
+Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
 ```
 
 ## PARAMETERS
