@@ -1,9 +1,8 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
@@ -127,13 +126,12 @@ profiles, see [about_Profiles](About/about_Profiles.md).
 
 You can manage remote Windows computers that have PowerShell remoting enabled by creating a
 **PSSession** on the remote computer. Then use the **PSSession** parameter of `Import-Module` to
-import the modules that are installed on the remote computer. You can now use the imported commands
-in the current session. The commands implicitly run on the remote computer.
+import the modules that are installed on the remote computer. When you use the imported commands in
+the current session the commands implicitly run on the remote computer.
 
 Starting in Windows PowerShell 3.0, you can use `Import-Module` to import Common Information Model
-(CIM) modules, in which the cmdlets are defined in Cmdlet Definition XML (CDXML) files. This feature
-allows you to use cmdlets that are implemented in non-managed code assemblies, such as those written
-in C++.
+(CIM) modules. CIM modules define cmdlets in Cmdlet Definition XML (CDXML) files. This feature lets
+you use cmdlets that are implemented in non-managed code assemblies, such as those written in C++.
 
 For remote computers that don't have PowerShell remoting enabled, including computers that aren't
 running the Windows operating system, you can use the **CIMSession** parameter of `Import-Module` to
@@ -285,7 +283,7 @@ module members were correctly prefixed.
 
 ### Example 7: Get and use a custom object
 
-This example demonstrates how to get and use the custom object returned by **Import-Module**.
+This example demonstrates how to get and use the custom object returned by `Import-Module`.
 
 Custom objects include synthetic members that represent each of the imported module members. For
 example, the cmdlets and functions in a module are converted to script methods of the custom object.
@@ -331,14 +329,14 @@ Show-Calendar ScriptMethod System.Object Show-Calendar();
 $a."Show-Calendar"()
 ```
 
-The **Show-Calendar** script module is imported using the **AsCustomObject** parameter to request a
+The `Show-Calendar` script module is imported using the **AsCustomObject** parameter to request a
 custom object and the **PassThru** parameter to return the object. The resulting custom object is
 saved in the `$a` variable.
 
 The `$a` variable is piped to the `Get-Member` cmdlet to show the properties and methods of the
-saved object. The output shows a **Show-Calendar** script method.
+saved object. The output shows a `Show-Calendar` script method.
 
-To call the **Show-Calendar** script method, the method name must be enclosed in quotation marks
+To call the `Show-Calendar` script method, the method name must be enclosed in quotation marks
 because the name includes a hyphen.
 
 ### Example 8: Reimport a module into the same session
@@ -933,8 +931,8 @@ Accept wildcard characters: False
 ### -Name
 
 Specifies the names of the modules to import. Enter the name of the module or the name of a file in
-the module, such as a `.psd1`, `.psm1`, `.dll`, or `.ps1` file. File paths are optional. Wildcard characters
-aren't permitted. You can also pipe module names and filenames to `Import-Module`.
+the module, such as a `.psd1`, `.psm1`, `.dll`, or `.ps1` file. File paths are optional. Wildcard
+characters aren't permitted. You can also pipe module names and filenames to `Import-Module`.
 
 If you omit a path, `Import-Module` looks for the module in the paths saved in the
 `$env:PSModulePath` environment variable.
@@ -942,6 +940,11 @@ If you omit a path, `Import-Module` looks for the module in the paths saved in t
 Specify only the module name whenever possible. When you specify a file name, only the members that
 are implemented in that file are imported. If the module contains other files, they aren't
 imported, and you might be missing important members of the module.
+
+> [!NOTE]
+> While it is possible to import a script (`.ps1`) file as a module, script files are usually not
+> structured like script modules file (`.psm1`) file. Importing a script file does not guarantee
+> that it is usable as a module. For more information, see [about_Modules](about/about_Modules.md).
 
 ```yaml
 Type: System.String[]
@@ -962,8 +965,9 @@ default, `Import-Module` imports all exported module commands.
 
 Commands that have the same names can hide or replace commands in the session. To avoid command name
 conflicts in a session, use the **Prefix** or **NoClobber** parameters. For more information about
-name conflicts and command precedence, see "Modules and Name Conflicts" in [about_Modules](about/about_Modules.md)
-and [about_Command_Precedence](about/about_Command_Precedence.md).
+name conflicts and command precedence, see "Modules and Name Conflicts" in
+[about_Modules](about/about_Modules.md) and
+[about_Command_Precedence](about/about_Command_Precedence.md).
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -1095,15 +1099,15 @@ The acceptable values for this parameter are:
 - **Local**. Available only in the current scope.
 
 By default, when `Import-Module` cmdlet is called from the command prompt, script file, or
-scriptblock, all the commands are imported into the global session state. You can use the **-Scope**
-parameter with the value of **Local** to import module content into the script or scriptblock scope.
+scriptblock, all the commands are imported into the global session state. You can use the
+`-Scope Local` parameter to import module content into the script or scriptblock scope.
 
 When invoked from another module, `Import-Module` cmdlet imports the commands in a module, including
 commands from nested modules, into the caller's session state. Specifying `-Scope Global` or
 `-Global` indicates that this cmdlet imports modules into the global session state so they are
 available to all commands in the session.
 
-The **Global** parameter is equivalent to the **Scope** parameter with a value of Global.
+The **Global** parameter is equivalent to the **Scope** parameter with a value of **Global**.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -1192,7 +1196,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -1239,23 +1244,19 @@ module. If you specify the **AsCustomObject** parameter, it generates a **PSCust
   For information about the **CreateDefault2** method that creates newer-style sessions with core
   modules, see the [CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2).
 
-- `Import-Module` cannot import PowerShell Core modules from another session. The PowerShell Core
-  modules have names that begin with `Microsoft.PowerShell`.
-
 - In Windows PowerShell 2.0, some of the property values of the module object, such as the
   **ExportedCmdlets** and **NestedModules** property values, were not populated until the module was
-  imported and were not available on the module object that the **PassThru** parameter returns. In
-  Windows PowerShell 3.0, all module property values are populated.
+  imported.
 
 - If you attempt to import a module that contains mixed-mode assemblies that aren't compatible with
-  Windows PowerShell 3.0, `Import-Module` returns an error message like the following one.
+  Windows PowerShell 3.0+, `Import-Module` returns an error message like the following one.
 
   > Import-Module : Mixed mode assembly is built against version 'v2.0.50727' of the runtime and
   > cannot be loaded in the 4.0 runtime without additional configuration information.
 
   This error occurs when a module that is designed for Windows PowerShell 2.0 contains at least one
-  mixed-module assembly, that is, an assembly that includes both managed and non-managed code, such
-  as C++ and C#.
+  mixed-module assembly. A mixed-module assembly that includes both managed and non-managed code,
+  such as C++ and C#.
 
   To import a module that contains mixed-mode assemblies, start Windows PowerShell 2.0 by using the
   following command, and then try the `Import-Module` command again.
@@ -1286,11 +1287,13 @@ module. If you specify the **AsCustomObject** parameter, it generates a **PSCust
   > locally in a descendant scope. Use `Get-Command -Module modulename` to see which members are
   > loaded in the current scope.
 
-  If the module includes class and enum definitions, use `using module` at the beginning of your
-  script. This import the scripts, including the class and enum definitions. For more information,
-  see [about_Using](About/about_Using.md).
+  `Import-Module` does not load class and enum definitions in the module. Use the `using module`
+  statement at the beginning of your script. This imports the module, including the class and enum
+  definitions. For more information, see [about_Using](About/about_Using.md).
 
 ## RELATED LINKS
+
+[about_Modules](about/about_Modules.md)
 
 [Export-ModuleMember](Export-ModuleMember.md)
 
