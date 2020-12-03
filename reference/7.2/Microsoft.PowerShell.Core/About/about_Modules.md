@@ -1,7 +1,7 @@
 ---
 description: Explains how to install, import, and use PowerShell modules.
 Locale: en-US
-ms.date: 09/15/2020
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Modules
@@ -13,7 +13,7 @@ Explains how to install, import, and use PowerShell modules.
 
 ## Long Description
 
-A module is a package that contains PowerShell commands, such as cmdlets,
+A module is a package that contains PowerShell members, such as cmdlets,
 providers, functions, workflows, variables, and aliases.
 
 People who write commands can use modules to organize their commands and share
@@ -27,8 +27,13 @@ write PowerShell modules, see
 
 ## What Is a Module?
 
-A module is a package of commands. All cmdlets and providers in your session
-are added by a module or a snap-in.
+A module is a package that contains PowerShell members, such as cmdlets,
+providers, functions, workflows, variables, and aliases. The members of this
+package can be implemented in a PowerShell script, a compiled DLL, or a
+combination of both. These files are usually grouped together in a single
+directory. For more information, see
+[Understanding a Windows PowerShell Module](/powershell/scripting/developer/module/understanding-a-windows-powershell-module)
+in the SDK documentation.
 
 ## Module Auto-Loading
 
@@ -39,7 +44,8 @@ need to manage modules after you install them on your computer.
 
 The commands in a module are also easier to find. The `Get-Command` cmdlet now
 gets all commands in all installed modules, even if they are not yet in the
-session, so you can find a command and use it without importing.
+session. You can find a command and use it without importing needing to import
+the module first.
 
 Each of the following examples cause the CimCmdlets module, which contains
 `Get-CimInstance`, to be imported into your session.
