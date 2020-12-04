@@ -143,7 +143,7 @@ to other commands. I recommend that you do the same.
 function Test-ShouldProcess {
     [CmdletBinding(SupportsShouldProcess)]
     param()
-    Remove-Item .\myfile1.txt -WhatIf:$WhatIf
+    Remove-Item .\myfile1.txt -WhatIf:$WhatIfPreference
 }
 ```
 
@@ -258,7 +258,7 @@ I tend to use the one with two parameters.
 
 We have a fourth overload that's more advanced than the others. It allows you to get the reason
 `ShouldProcess` was executed. I'm only adding this here for completeness because we can just check
-if `$WhatIf` is `$true` instead.
+if `$WhatIfPreference` is `$true` instead.
 
 ```powershell
 $reason = ''
