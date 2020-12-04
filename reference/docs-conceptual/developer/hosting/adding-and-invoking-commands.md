@@ -84,7 +84,7 @@ IDictionary parameters = new Dictionary<String, String>();
 parameters.Add("Name", "Get-VM");
 
 parameters.Add("Module", "Hyper-V");
-PowerShell.Create().AddCommand("Get-Process")
+PowerShell.Create().AddCommand("Get-Command")
    .AddParameters(parameters)
       .Invoke()
 
