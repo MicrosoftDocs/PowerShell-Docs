@@ -1,8 +1,8 @@
 ---
-external help file: ThreadJob.dll-Help.xml
+external help file: Microsoft.PowerShell.ThreadJob.dll-Help.xml
 Locale: en-US
 Module Name: ThreadJob
-ms.date: 01/28/2020
+ms.date: 12/05/2020
 online version: https://docs.microsoft.com/powershell/module/threadjob/start-threadjob?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-ThreadJob
@@ -18,14 +18,16 @@ Creates background jobs similar to the `Start-Job` cmdlet.
 
 ```
 Start-ThreadJob [-ScriptBlock] <ScriptBlock> [-Name <String>] [-InitializationScript <ScriptBlock>]
- [-InputObject <PSObject>] [-ArgumentList <Object[]>] [-ThrottleLimit <Int32>] [<CommonParameters>]
+ [-InputObject <PSObject>] [-ArgumentList <Object[]>] [-ThrottleLimit <Int32>]
+ [-StreamingHost <PSHost>] [<CommonParameters>]
 ```
 
 ### FilePath
 
 ```
 Start-ThreadJob [-FilePath] <String> [-Name <String>] [-InitializationScript <ScriptBlock>]
- [-InputObject <PSObject>] [-ArgumentList <Object[]>] [-ThrottleLimit <Int32>] [<CommonParameters>]
+ [-InputObject <PSObject>] [-ArgumentList <Object[]>] [-ThrottleLimit <Int32>]
+ [-StreamingHost <PSHost>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,6 +110,34 @@ $j | Wait-Job | Receive-Job
      94   145.80     159.02      18.31   18276   1 pwsh
     101   163.30     222.05      29.00   35928   1 pwsh
 ```
+
+### Example 4 - Stream job output to parent host
+
+Using the **StreamingHost** parameter you can tell a job to direct all host output to a specific
+host. Without this parameter the output goes to the job data stream collection and doesn't appear in
+a host console until you receive the output from the job.
+
+For this example, the current host is passed to `Start-ThreadJob` using the `$Host` automatic
+variable.
+
+```powershell
+PS> Start-ThreadJob -ScriptBlock { Read-Host 'Say hello'; Write-Warning 'Warning output' } -StreamingHost $Host
+
+Id   Name   PSJobTypeName   State         HasMoreData     Location      Command
+--   ----   -------------   -----         -----------     --------      -------
+7    Job7   ThreadJob       NotStarted    False           PowerShell    Read-Host 'Say hello'; …
+
+PS> Say hello: Hello
+WARNING: Warning output
+PS> Receive-Job -Id 7
+Hello
+WARNING: Warning output
+PS>
+```
+
+Notice that the prompt from `Read-Host` is displayed and you are able to type input. Then, the
+message from `Write-Warning` is displayed. The `Receive-Job` cmdlet returns all the output from the
+job.
 
 ## PARAMETERS
 
@@ -289,4 +319,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Stop-Job](../Microsoft.PowerShell.Core/Stop-Job.md)
 
 [Receive-Job](../Microsoft.PowerShell.Core/Receive-Job.md)
-
