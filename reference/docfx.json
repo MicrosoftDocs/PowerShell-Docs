@@ -89,7 +89,7 @@
                 "7.1/**.md": "powershell-conceptual",
                 "7.2/**.yml": "powershell-cmdlets",
                 "7.2/**.md": "powershell-conceptual",
-                "docs-conceptual/**.md": "powershell-conceptual"
+                "docs-conceptual/**/**.md": "powershell-conceptual"
             },
             "ms.topic": {
                 "5.1/**.yml": "reference",
@@ -104,7 +104,7 @@
                 "docs-conceptual/developer/**/**.md": "reference",
                 "docs-conceptual/learn/**/**.md": "tutorial",
                 "docs-conceptual/samples/**/**.md": "sample",
-                "docs-conceptual/**.md": "conceptual"
+                "docs-conceptual/**/**.md": "conceptual"
             },
             "manager": { "**/**": "sewhee" },
             "ms.tgt_pltfr": { "**/**": "windows, macos, linux" },
@@ -139,13 +139,20 @@
                 "**/PSWorkflow/**.md": "SteveL-MSFT",
                 "**/PSWorkflowUtility/**.yml": "SteveL-MSFT",
                 "**/ThreadJob/**.yml": "PaulHigin",
-                "docs-conceptual/learn/**/**.md": "sdwheeler",
-                "docs-conceptual/learn/ps101/**.md": "mikefrobbins",
-                "docs-conceptual/learn/remoting/jea/**.md": "rpsqrd",
-                "docs-conceptual/gallery/**/**.md": "SydneyhSmith",
-                "docs-conceptual/dsc/**/**.md": "mgreenegit",
+                "docs-conceptual/community/**.md": "sdwheeler",
                 "docs-conceptual/dev-cross-plat/**/**.md": "sdwheeler",
                 "docs-conceptual/developer/**/**.md": "joeyaiello",
+                "docs-conceptual/dsc/**/**.md": "mgreenegit",
+                "docs-conceptual/gallery/**/**.md": "SydneyhSmith",
+                "docs-conceptual/install/**.md": "joeyaiello",
+                "docs-conceptual/learn/**.md": "sdwheeler",
+                "docs-conceptual/learn/deep-dives/**.md": "sdwheeler",
+                "docs-conceptual/learn/ps101/**.md": "mikefrobbins",
+                "docs-conceptual/learn/remoting/**.md": "joeyaiello",
+                "docs-conceptual/learn/remoting/jea/**.md": "rpsqrd",
+                "docs-conceptual/samples/**.md": "joeyaiello",
+                "docs-conceptual/whats-new/**.md": "joeyaiello",
+                "docs-conceptual/windows-powershell/**.md": "joeyaiello",
                 "docs-conceptual/**.md": "joeyaiello"
             },
             "ms.author": {
@@ -178,13 +185,20 @@
                 "**/PSWorkflow/**.md": "slee",
                 "**/PSWorkflowUtility/**.yml": "slee",
                 "**/ThreadJob/**.yml": "paulhi",
-                "docs-conceptual/learn/remoting/jea/**/**.md": "ryanpu",
-                "docs-conceptual/learn/deep-dive/**.md": "sewhee",
-                "docs-conceptual/learn/ps101/**.md": "mirobb",
-                "docs-conceptual/gallery/**/**.md": "sysmith",
-                "docs-conceptual/dsc/**/**.md": "migreene",
+                "docs-conceptual/community/**.md": "sewhee",
                 "docs-conceptual/dev-cross-plat/**/**.md": "sewhee",
                 "docs-conceptual/developer/**/**.md": "jaiello",
+                "docs-conceptual/dsc/**/**.md": "migreene",
+                "docs-conceptual/gallery/**/**.md": "sysmith",
+                "docs-conceptual/install/**.md": "jaiello",
+                "docs-conceptual/learn/**.md": "sewhee",
+                "docs-conceptual/learn/deep-dive/**.md": "sewhee",
+                "docs-conceptual/learn/ps101/**.md": "mirobb",
+                "docs-conceptual/learn/remoting/**.md": "jaiello",
+                "docs-conceptual/learn/remoting/jea/**.md": "ryanpu",
+                "docs-conceptual/samples/**.md": "jaiello",
+                "docs-conceptual/whats-new/**.md": "jaiello",
+                "docs-conceptual/windows-powershell/**.md": "jaiello",
                 "docs-conceptual/**.md": "jaiello"
             }
         }
