@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/24/2020
+ms.date: 12/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Command
@@ -93,7 +93,7 @@ Objects that are piped to `Measure-Command` are available to the script block th
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
 # Note that no output is displayed.
-10, 20, 50 | Measure-Command -Expression { for ($i=0; $i -lt $_ i++) {$i} }
+10, 20, 50 | Measure-Command -Expression { for ($i=0; $i -lt $_; $i++) {$i} }
 ```
 
 ```Output
