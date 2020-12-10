@@ -60,7 +60,11 @@
             "redirect_url": "/azure/automation/automation-dsc-getting-started",
             "redirect_document_id": false
         },
-
+        {
+          "source_path": "reference/docs-conceptual/community/contributing/editing-cmdlet-ref.md",
+          "redirect_url": "/powershell/scripting/community/contributing/powershell-style-guide",
+          "redirect_document_id": false
+        },
 
         {
             "source_path": "reference/docs-conceptual/whats-new/experimental-features.md",

@@ -590,8 +590,6 @@
       href: community/contributing/pull-requests.md
     - name: PowerShell-Docs style guide
       href: community/contributing/powershell-style-guide.md
-    - name: Editing cmdlet reference
-      href: community/contributing/editing-cmdlet-ref.md
     - name: Additional resources
       items:
       - name: Editorial checklist

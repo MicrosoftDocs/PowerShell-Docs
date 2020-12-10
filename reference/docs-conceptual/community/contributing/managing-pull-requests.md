@@ -1,18 +1,18 @@
 ---
 title: How we manage pull requests
 description: This article explains how the PowerShell-Docs team manages pull requests.
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
 ---
 # Managing pull requests
 
 This article documents how we manage pull requests in the PowerShell-Docs repository. This article
-is designed to be a job aid for members of the PowerShell-Docs team. It is published here to provide
+is designed to be a job aid for members of the PowerShell-Docs team. It's published here to provide
 process transparency for our public contributors.
 
 ## Best practices
 
-- The person submitting the PR should not merge the PR without a peer review.
+- The person submitting the PR shouldn't merge the PR without a peer review.
 - Assign the peer reviewer when the PR is submitted. Early assignment allows the reviewer to respond
   sooner with editorial remarks.
 - Use comments to describe the nature of the change or the type of review being requested. Be sure
@@ -43,7 +43,7 @@ See the [editorial checklist](editorial-checklist.md) for a more comprehensive l
 - Check Preview rendering
 - Check metadata - ms.date, remove ms.assetid, ensure required fields
 - Validate markdown correctness
-  - See style guide for formatting specific content
+  - See style guide for content-specific formatting rules
 - Reorganize examples as follows:
   - Intro sentence(s)
   - Code and output
@@ -60,7 +60,7 @@ See the [editorial checklist](editorial-checklist.md) for a more comprehensive l
 
 ## Branch Merge Process
 
-The staging branch is the only branch that should ever be merged into live. Merges from short-lived
+The `staging` branch is the only branch that is merged into `live`. Merges from short-lived
 (working) branches should be squashed.
 
 | *Merge from/to*  | *release-branch* | *staging*        | *live*      |
@@ -103,9 +103,9 @@ unresolved conflicts that need to be fixed.
 ## Publishing to Live
 
 Periodically, the changes accumulated in the `staging` branch need to be published to the live
-website. This require merging the `staging` branch into the `live` branch.
+website.
 
-- The `staging` branch should be merged to `live` at least once per week.
+- The `staging` branch is merged to `live` each weekday at 3pm PST.
 - The `staging` branch should be merged to `live` after any significant change.
   - Changes to 50 or more files
   - After merging a release branch
