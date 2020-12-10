@@ -1,13 +1,13 @@
 ---
 title: How we manage issues
 description: This article explains how the PowerShell-Docs team manages issues.
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
 ---
 # How we manage issues
 
 This article documents how we manage issues in the PowerShell-Docs repo. This article is designed to
-be a job aid for members of the PowerShell-Docs team. It is published here to provide process
+be a job aid for members of the PowerShell-Docs team. It's published here to provide process
 transparency for our public contributors.
 
 ## Sources of issues
@@ -19,49 +19,46 @@ transparency for our public contributors.
 
 ## Response time targets
 
-- Triaged - 5 business days
-- Fix or change - no specific target - best effort only
+80% of new issues are closed within 3 business days.
+
+- Triaged - 1 business days
+- Fix or change - 10 business days
 
 ### Labeling & Milestones
 
 #### Label Types
 
-|Prefix  | Description                                                         |
-|------- | --------------------------------------------------------------------|
-|Area    | Used to indicate what part of PowerShell or the docs that the issue is discussing.<br>Useful for feature owners to find issues for their feature.|
-|Pri     | Used to indicate the priority of the issue. Value range 0-4.        |
-|Issue   | Used to classify the type of feedback for issue                     |
-|Review  | Used for issue that require further review by the team              |
-|Status  | Used to indicate the status of the work item                        |
-|Waiting | Used to indicate that we are waiting on something                   |
+|   Type   | Description                                                         |
+| -------- | ------------------------------------------------------------------- |
+| Area     | Used to indicate what part of PowerShell or the docs that the issue is discussing.<br>Useful for feature owners to find issues for their feature. |
+| Issue    | Indicates the type of issue                                         |
+| Priority | Indicates the priority of the issue. Value range 0 (high) -4 (low)  |
+| Status   | Indicates the status of the work item or why it was closed          |
+| Tag      | Labels used to for additional classification                        |
+| Waiting  | Indicates that we're waiting on someone or some other event         |
 
 #### Milestones
 
-Issues and PRs should be tagged with the appropriate milestone. If the issue is not targeted for a
-specific version then no milestone is used. Issues for Docs PRs for changes that have yet to be
+Issues and PRs should be tagged with the appropriate milestone. If the issue doesn't apply to a
+specific version, then no milestone is used. PRs and related issues for changes that have yet to be
 merged into the PowerShell code base should be assigned to the **Future** milestone. After the code
 change has been merged, change the milestone to the appropriate version.
 
 |    Milestone     |                    Description                     |
 | ---------------- | -------------------------------------------------- |
-| 6.x              | Work items related to PowerShell 6.0 through 6.2.x |
 | 7.0.0            | Work items related to PowerShell 7.0               |
 | 7.1.0            | Work items related to PowerShell 7.1               |
+| 7.2.0            | Work items related to PowerShell 7.2               |
 | Future           | Work items a future version of PowerShell          |
-| PSReadline-vNext | Work items a future version of PSReadline          |
 
 ## Triage process
 
-The PowerShell docs team meets once per week to discuss any issues added since last meeting. An
-issue is considered to have been triaged when labels have been assigned or an owner has been
-assigned. PowerShell docs team members are encouraged to review the issues daily and triage new
-issues as they arrive. The weekly triage meeting can then be used to discuss the new issues in more
-detail, as needed.
+PowerShell docs team members review the issues daily and triage new issues as they arrive. The team
+meets weekly to discuss issues that need triage or remain unresolved.
 
 ### Misplaced product feedback
 
-- Enter a comment for the customer indicating it is product feedback and provide a link to the
-  appropriate feedback channel.
+- Enter a comment redirecting the customer to the correct feedback channel.
 - Optional: Copy the issue to the appropriate product feedback location, add a link to the copied
   item, and close the issue. DO NOT copy issues to UserVoice.
 
@@ -91,5 +88,5 @@ detail, as needed.
 - Edit the issue to remove any offensive content, if necessary.
 - Enter a comment indicating the issue is spam, close the issue, and then lock it to prevent further
   comments.
-- Each occurrence of this should be discussed in the weekly triage to determine the need for further
-  action (report to GitHub or Microsoft Legal).
+- Each violation should be discussed in the weekly triage to determine the need for further action
+  (report to GitHub or Microsoft Legal).

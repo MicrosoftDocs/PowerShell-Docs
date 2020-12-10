@@ -1,14 +1,14 @@
 ---
 title: Contributing to PowerShell documentation
 description: This article outlines the steps required to contribute to the PowerShell documentation.
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
 ---
 # Contributing to PowerShell documentation
 
 Thank you for your support of PowerShell!
 
-The Contributor's Guide is a collection of articles that explain the tools and processes we use to
+The Contributor's Guide is a collection of articles that describe the tools and processes we use to
 create documentation at Microsoft. Some of these guides cover information that is common to any
 documentation set published to [docs.microsoft.com][docs]. Some of the guides are specific to how we
 write documentation for PowerShell.
@@ -24,14 +24,14 @@ There are two ways to contribute. Both contributions are valuable to us.
   the issues are difficult to resolve, requiring more investigation and research. The issue process
   allows us to have a conversation about the problem and develop a satisfactory resolution.
 
-- Submitting new content or changes to existing articles is a more involved process. The following
-  information outlines the tools, processes, and standards for submitting content to the
-  documentation.
+- [Submitting a pull request](pull-requests.md) to add or change content is a more involved process.
+  The following information outlines the tools, processes, and standards for submitting content to
+  the documentation.
 
 ## Prepare to make a contribution
 
-Contributing to the documentation requires a GitHub account. Use the following checklist to get the
-tools and understand the processes we use for making contributions.
+Contributing to the documentation requires a GitHub account. Use the following checklist to install
+and configure the tools you need to make contributions.
 
 1. [Sign up for GitHub](/contribute/get-started-setup-github)
 1. [Install Git and Markdown tools](/contribute/get-started-setup-tools)
@@ -81,7 +81,6 @@ Review the following documents:
 - [Get started writing docs](get-started-writing.md)
 - [Submitting a pull request](pull-requests.md)
 - [PowerShell-Docs style guide](powershell-style-guide.md)
-- [Editing cmdlet reference](editing-cmdlet-ref.md)
 
 Additional resources
 

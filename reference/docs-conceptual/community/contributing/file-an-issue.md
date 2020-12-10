@@ -1,7 +1,7 @@
 ---
 title: How to file a PowerShell-Docs issue
 description: This article explains how to give feedback about the PowerShell documentation.
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
 ---
 # How to file a PowerShell-Docs issue
@@ -13,17 +13,17 @@ There are two ways to create an issue:
 
 ## Using the feedback controls
 
-For a full description of the feedback controls, see the Docs Team blog announcing this [feature][feedback].
+For a full description of the feedback controls, see the Docs Team blog announcing this
+[feature][feedback].
 
 At the bottom of most pages on `docs.microsoft.com`, you'll see two feedback buttons. One is a link
 for product feedback and one is for documentation feedback. The documentation feedback requires a
-GitHub account. Clicking the button authenticates you in GitHub, then presents a simple form to
-enter your feedback. When you submit the form, the feedback control creates a new GitHub issue and
-links it to the current article.
+GitHub account. Clicking the button takes you in GitHub and presents a prepopulated issue template.
+Enter your feedback and submit the form.
 
 > [!NOTE]
 > This is not a support channel. This is a way to ask clarifying questions about documentation or
-> report errors and omissions. If you need technical support, see
+> to report errors and omissions. If you need technical support, see
 > [Community resources](../community-support.md).
 
 ## Filing issues on GitHub
