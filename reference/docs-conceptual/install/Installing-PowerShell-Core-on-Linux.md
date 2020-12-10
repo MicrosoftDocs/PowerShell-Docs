@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on Linux
 description: Information about installing PowerShell on various Linux distributions
-ms.date: 11/11/2020
+ms.date: 12/10/2020
 ---
 # Installing PowerShell on Linux
 
@@ -78,7 +78,7 @@ The preferred method is as follows:
 # Update the list of packages
 sudo apt-get update
 # Install pre-requisite packages.
-sudo apt-get install -y wget apt-transport-https
+sudo apt-get install -y wget apt-transport-https software-properties-common
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
 # Register the Microsoft repository GPG keys
@@ -128,7 +128,7 @@ The preferred method is as follows:
 # Update the list of packages
 sudo apt-get update
 # Install pre-requisite packages.
-sudo apt-get install -y wget apt-transport-https
+sudo apt-get install -y wget apt-transport-https software-properties-common
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
 # Register the Microsoft repository GPG keys
@@ -180,7 +180,7 @@ The preferred method is as follows:
 # Update the list of packages
 sudo apt-get update
 # Install pre-requisite packages.
-sudo apt-get install -y wget apt-transport-https
+sudo apt-get install -y wget apt-transport-https software-properties-common
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
 # Register the Microsoft repository GPG keys
