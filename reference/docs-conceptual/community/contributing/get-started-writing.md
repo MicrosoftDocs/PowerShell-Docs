@@ -82,9 +82,10 @@ from the English content first. We use both human and machine translation.
 | Human translation   | de-DE, es-ES, fr-FR, it-IT, ja-JP, ko-KR, pt-BR, ru-RU, zh-CN, zh-TW |
 | Machine translation | cs-CZ, hu-HU, nl-NL, pl-PL, pt-PT, sv-SE, tr-TR                      |
 
-If you find an error in translation, rather than in the technical details of the article, open an
-issue in the localized repository. Explain why you think the translation is incorrect. Our
-localization team reviews and responds to these issues.
+The content translated by machine translation may not always result in correct word choices and
+grammar. If you find an error in translation for any language, rather than in the technical details
+of the article, open an issue in the localized repository. Explain why you think the translation is
+incorrect. Our localization team reviews and responds to these issues.
 
 ## Next steps
 
