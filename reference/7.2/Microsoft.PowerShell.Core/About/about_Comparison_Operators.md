@@ -616,7 +616,7 @@ Capture groups can be referenced by **Number** or **Name**
   ```
 
 > [!WARNING]
-> Since the `$` character is used in string expansion, you will must use
+> Since the `$` character is used in string expansion, you must use
 > literal strings or escape the `$` character.
 >
 > ```powershell
@@ -632,7 +632,7 @@ Capture groups can be referenced by **Number** or **Name**
 > $5.72
 > ```
 
-To learn more see [about_Regular_Expressions](about_Regular_Expressions.md) and
+To learn more, see [about_Regular_Expressions](about_Regular_Expressions.md) and
 [Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions)
 
 ### Substituting in a collection
