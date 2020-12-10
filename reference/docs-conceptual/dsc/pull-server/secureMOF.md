@@ -129,9 +129,11 @@ Once exported, the `DscPublicKey.cer` would need to be copied to the **Authoring
 > Because the `New-SelfSignedCertificate` cmdlet on Windows Operating Systems prior to Windows 10
 > and Windows Server 2016 do not support the **Type** parameter, an alternate method of creating
 > this certificate is required on these operating systems. In this case you can use `makecert.exe`
-> or `certutil.exe` to create the certificate. An alternate method is to download the
+> or `certutil.exe` to create the certificate. This example uses the
 > [New-SelfSignedCertificateEx.ps1](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)
-> script from Microsoft Script Center and use it to create the certificate instead:
+> script from Microsoft Script Center as an alternate way to create the certificate. An updated
+> version of this script is available in the
+> [PSPKI](https://www.powershellgallery.com/packages/PSPKI/) module in the PowerShell Gallery.
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
