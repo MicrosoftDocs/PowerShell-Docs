@@ -616,7 +616,7 @@ Capture groups can be referenced by **Number** or **Name**
   ```
 
 > [!WARNING]
-> Since the `$` character is used in string expansion, you will must use
+> Since the `$` character is used in string expansion, you must use
 > literal strings or escape the `$` character.
 >
 > ```powershell
