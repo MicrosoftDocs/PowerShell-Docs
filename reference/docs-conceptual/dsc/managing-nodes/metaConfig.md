@@ -103,6 +103,11 @@ of the LCM are configured in a **Settings** block. The following properties are 
 > occurs at T1. The Node does not finish work for 16 minutes. The first 15 minute cycle is ignored,
 > and next pull will happen at T1+15+15.
 
+> [!NOTE]
+> Typically in Pull scenarios, the `RefreshFrequencyMins` is set to a longer time than the
+> `ConfigurationModeFrequencyMins`. This saves on network traffic and redundant configuration
+> checks.
+
 ## Pull service
 
 LCM configuration supports defining the following types of pull service endpoints:
