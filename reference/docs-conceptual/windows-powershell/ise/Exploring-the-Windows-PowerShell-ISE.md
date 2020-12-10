@@ -2,7 +2,7 @@
 ms.date:  01/02/2020
 title:  Exploring the Windows PowerShell ISE
 description: This article is an overview of the features of the Windows PowerShell ISE
-ms.topic: landing-page
+ms.topic: conceptual
 ms.custom: ISE-F1-page
 ---
 
