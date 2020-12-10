@@ -1,8 +1,7 @@
 ---
-description: Describes the operators that compare values in PowerShell. 
-keywords: powershell,cmdlet
+description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 01/16/2020
+ms.date: 12/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
@@ -89,7 +88,7 @@ operators, which always return a **Boolean** value.
 > hello
 > ```
 
-### Equality Operators
+## Equality operators
 
 The equality operators (`-eq`, `-ne`) return a value of TRUE or the matches
 when one or more of the input values is identical to the specified pattern. The
@@ -97,7 +96,7 @@ entire pattern must match an entire value.
 
 Example:
 
-#### -eq
+### -eq
 
 Description: Equal to. Includes an identical value.
 
@@ -122,7 +121,7 @@ PS> "abc", "def" -eq "abc"
 abc
 ```
 
-#### -ne
+### -ne
 
 Description: Not equal to. Includes a different value.
 
@@ -142,7 +141,7 @@ PS> "abc", "def" -ne "abc"
 def
 ```
 
-#### -gt
+### -gt
 
 Description: Greater-than.
 
@@ -162,7 +161,7 @@ PS> 7, 8, 9 -gt 8
 > more information, see
 > [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators).
 
-#### -ge
+### -ge
 
 Description: Greater-than or equal to.
 
@@ -177,7 +176,7 @@ PS> 7, 8, 9 -ge 8
 9
 ```
 
-#### -lt
+### -lt
 
 Description: Less-than.
 
@@ -192,7 +191,7 @@ PS> 7, 8, 9 -lt 8
 7
 ```
 
-#### -le
+### -le
 
 Description: Less-than or equal to.
 
@@ -207,7 +206,7 @@ PS> 7, 8, 9 -le 8
 8
 ```
 
-### Matching Operators
+## Matching operators
 
 The like operators (`-like` and `-notlike`) find elements that match or do not
 match a specified pattern using wildcard expressions.
@@ -235,7 +234,7 @@ The syntax is:
 <string[]> -notmatch <regular-expression>
 ```
 
-#### -like
+### -like
 
 Description: Match using the wildcard character (\*).
 
@@ -249,7 +248,7 @@ PS> "PowerShell", "Server" -like "*shell"
 PowerShell
 ```
 
-#### -notlike
+### -notlike
 
 Description: Does not match using the wildcard character (\*).
 
@@ -355,7 +354,7 @@ Name                           Value
 0                              day
 ```
 
-#### -notmatch
+### -notmatch
 
 Description: Does not match a string. Uses regular expressions. When the input
 is scalar, it populates the `$Matches` automatic variable.
@@ -375,7 +374,7 @@ PS> "Sunday", "Monday" -notmatch "sun"
 Monday
 ```
 
-### Containment Operators
+## Containment operators
 
 The containment operators (`-contains` and `-notcontains`) are similar to the
 equality operators. However, the containment operators always return a Boolean
@@ -385,7 +384,7 @@ Also, unlike the equality operators, the containment operators return a value
 as soon as they detect the first match. The equality operators evaluate all
 input and then return all the matches in the collection.
 
-#### -contains
+### -contains
 
 Description: Containment operator. Tells whether a collection of reference
 values includes a single test value. Always returns a Boolean value. Returns
@@ -426,7 +425,7 @@ PS> $a, "ghi" -contains $a
 True
 ```
 
-#### -notcontains
+### -notcontains
 
 Description: Containment operator. Tells whether a collection of reference
 values includes a single test value. Always returns a Boolean value. Returns
@@ -469,7 +468,7 @@ Tee
 Where
 ```
 
-#### -in
+### -in
 
 Description: In operator. Tells whether a test value appears in a collection of
 reference values. Always return as Boolean value. Returns TRUE only when the
@@ -509,7 +508,7 @@ PS> $thisComputer -in  $domainServers
 True
 ```
 
-#### -notin
+### -notin
 
 Description: Tells whether a test value appears in a collection of reference
 values. Always returns a Boolean value. Returns TRUE when the test value is not
@@ -551,22 +550,26 @@ Tee
 Where
 ```
 
-### Replacement Operator
+## Replacement Operator
 
-The `-replace` operator replaces all or part of a value with the specified
-value using regular expressions. You can use the `-replace` operator for many
-administrative tasks, such as renaming files. For example, the following
-command changes the file name extensions of all .txt files to .log:
+The `-replace` operator has the following syntax:
+
+`<input> -replace <original>, <substitute>`
+
+The `<original>` placeholder is a regular expression matching the characters to
+be replaced. The `<substitute>` placeholder is a literal string that replaces
+them.
+
+The operator replaces all or part of a value with the specified value using
+regular expressions. You can use the operator for many administrative tasks,
+such as renaming files. For example, the following command changes the file
+name extensions of all `.txt` files to `.log`:
 
 ```powershell
 Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 ```
 
-The syntax of the `-replace` operator is as follows, where the `<original>`
-placeholder represents the characters to be replaced, and the `<substitute>`
-placeholder represents the characters that will replace them:
-
-`<input> <operator> <original>, <substitute>`
+### Case-sensitive matches
 
 By default, the `-replace` operator is case-insensitive. To make it case
 sensitive, use `-creplace`. To make it explicitly case-insensitive, use
@@ -576,93 +579,82 @@ Consider the following examples:
 
 ```powershell
 PS> "book" -replace "B", "C"
-```
-
-```Output
 Cook
 ```
 
 ```powershell
-"book" -ireplace "B", "C"
-```
-
-```Output
+PS> "book" -ireplace "B", "C"
 Cook
 ```
 
 ```powershell
-"book" -creplace "B", "C"
-```
-
-```Output
+PS> "book" -creplace "B", "C"
 book
 ```
 
+### Substitutions in regular expressions
+
 It is also possible to use regular expressions to dynamically replace text
-using capturing groups, and substitutions. For more information, see
-[about_Regular_Expressions](about_Regular_Expressions.md).
+using capturing groups, and substitutions. Capture groups can be referenced in
+the `<substitute>` string using the dollar sign (`$`) character before the
+group identifier.
 
-#### Substitutions in Regular Expressions
+Capture groups can be referenced by **Number** or **Name**
 
-Additionally, capturing groups can be referenced in the \<substitute\> string.
-This is done by using the `$` character before the group identifier.
-
-Two of the ways to reference capturing groups is by **Number** and by **Name**
-
-- By **Number** -
-  Capturing Groups are numbered from left to right.
+- By **Number** - Capturing Groups are numbered from left to right.
 
   ```powershell
-  "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
-  ```
-
-  ```Output
+  PS> "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
   John.D.Smith@contoso.com
   ```
 
-- By **Name** -
-  Capturing Groups can also be referenced by name.
+- By **Name** - Capturing Groups can also be referenced by name.
 
   ```powershell
-  "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
-  ```
-
-  ```Output
-  FABRIKOM\Administrator
+  PS> "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
+  FABRIKAM\Administrator
   ```
 
 > [!WARNING]
-> Since the `$` character is used in string expansion, you will need to use
-> literal strings with substitution, or escape the `$` character.
+> Since the `$` character is used in string expansion, you must use
+> literal strings or escape the `$` character.
 >
 > ```powershell
-> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
-> ```
->
-> ```Output
+> PS> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
 > Hello Universe
 > ```
 >
-> Additionally, since the `$` character is used in substitution, you will need
-> to escape any instances in your string.
+> Additionally, since the `$` character is used in substitution, you must
+> escape any instances in your string.
 >
 > ```powershell
-> '5.72' -replace '(.+)', '$$$1'
-> ```
->
-> ```Output
+> PS> '5.72' -replace '(.+)', '$$$1'
 > $5.72
 > ```
 
 To learn more see [about_Regular_Expressions](about_Regular_Expressions.md) and
 [Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions)
 
-### Type comparison
+### Substituting in a collection
+
+When the `<input>` to the `-replace` operator is a collection, PowerShell
+applies the replacement to every value in the collection. For example:
+
+```powershell
+"B1","B2","B3","B4","B5" -replace "B", 'a'
+a1
+a2
+a3
+a4
+a5
+```
+
+## Type comparison
 
 The type comparison operators (`-is` and `-isnot`) are used to determine if an
 object is a specific type.
 
-#### -is
+### -is
 
 Syntax:
 
@@ -679,7 +671,7 @@ PS> $a -is $b.GetType()
 False
 ```
 
-#### -isnot
+### -isnot
 
 Syntax:
 
@@ -696,7 +688,7 @@ PS> $b -isnot [int]
 True
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Operators](about_Operators.md)
 - [about_Regular_Expressions](about_Regular_Expressions.md)
