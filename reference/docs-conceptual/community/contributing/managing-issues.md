@@ -62,14 +62,17 @@ meets weekly to discuss issues that need triage or remain unresolved.
 - Optional: Copy the issue to the appropriate product feedback location, add a link to the copied
   item, and close the issue. DO NOT copy issues to UserVoice.
 
-  | DocSet    | Product Feedback URL                                           |
-  | --------- | -------------------------------------------------------------- |
-  | developer | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
-  | dsc       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
-  | gallery   | `https://github.com/powershell/powershellgallery/issues/new`   |
-  | jea       | `https://github.com/powershell/jea/issues/new`                 |
-  | reference | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
-  | wmf       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
+  The default location for PowerShell issues is
+  [https://github.com/PowerShell/PowerShell/issues/new/choose](https://github.com/PowerShell/PowerShell/issues/new/choose).
+
+  The following subject areas have different locations for issues:
+
+  | Subjects |                                                     Product Feedback URL                                                     |
+  | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+  | dsc      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
+  | gallery  | [https://github.com/powershell/powershellgallery/issues/new](https://github.com/powershell/powershellgallery/issues/new)     |
+  | jea      | [https://github.com/powershell/jea/issues/new](https://github.com/powershell/jea/issues/new)                                 |
+  | wmf      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
 
 ### Support requests
 
