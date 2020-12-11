@@ -188,7 +188,8 @@ In the following examples, all statements return True.
 8 -le 8  # Ouput: True
 ```
 
-> [!NOTE] The greater-than operator, in most programming languages, is `>`. In
+> [!NOTE]
+> The greater-than operator, in most programming languages, is `>`. In
 > PowerShell, however, this character is used for redirection. For details, see
 > [About_redirection][3].
 
@@ -591,6 +592,6 @@ $a -isnot $b.GetType() # Output: True
 - [Foreach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
 - [Where-Object](xref:Microsoft.PowerShell.Core.Where-Object)
 
-[1]: https://docs.microsoft.com/en-us/dotnet/api/system.icomparable?view=netstandard-2.0
-[2]: https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.match?view=netstandard-1.6
+[1]: https://docs.microsoft.com/dotnet/api/system.icomparable?view=netstandard-2.0
+[2]: https://docs.microsoft.com/dotnet/api/system.text.regularexpressions.match?view=netstandard-1.6
 [3]: about_Redirection.md#potential-confusion-with-comparison-operators
