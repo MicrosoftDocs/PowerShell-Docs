@@ -83,7 +83,7 @@ of the LCM are configured in a **Settings** block. The following properties are 
 | DebugMode| string| Possible values are __None__, __ForceModuleImport__, and __All__. <ul><li>Set to __None__ to use cached resources. This is the default and should be used in production scenarios.</li><li>Setting to __ForceModuleImport__, causes the LCM to reload any DSC resource modules, even if they have been previously loaded and cached. This impacts the performance of DSC operations as each module is reloaded on use. Typically you would use this value while debugging a resource</li><li>In this release, __All__ is same as __ForceModuleImport__</li></ul> |
 | RebootNodeIfNeeded| bool| Set this to `$true` to allow resources to reboot the Node using the `$global:DSCMachineStatus` flag. Otherwise, you will have to manually reboot the node for any configuration that requires it. The default value is `$false`. To use this setting when a reboot condition is enacted by something other than DSC (such as Windows Installer), combine this setting with the __PendingReboot__ resource in the [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc) module.|
 | RefreshMode| string| Specifies how the LCM gets configurations. The possible values are __"Disabled"__, __"Push"__, and __"Pull"__. <ul><li>__Disabled__: DSC configurations are disabled for this node.</li><li> __Push__: Configurations are initiated by calling the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet. The configuration is applied immediately to the node. This is the default value.</li><li>__Pull:__ The node is configured to regularly check for configurations from a pull service or SMB path. If this property is set to __Pull__, you must specify an HTTP (service) or SMB (share) path in a __ConfigurationRepositoryWeb__ or __ConfigurationRepositoryShare__ block.</li></ul>|
-| RefreshFrequencyMins| Uint32| The time interval, in minutes, at which the LCM checks a pull service to get updated configurations. This value is ignored if the LCM is not configured in pull mode. The default value is 30.|
+| RefreshFrequencyMins| Uint32| The time interval, in minutes, at which the LCM checks a pull service to get updated configurations and checks local configuration for drift. The configuration is applied regardless of whether an update was downloaded. This value is ignored if the LCM is not configured in pull mode. The default value is 30.|
 | ReportManagers| CimInstance[]| Obsolete. Use __ReportServerWeb__ blocks to define an endpoint to send reporting data to a pull service.|
 | ResourceModuleManagers| CimInstance[]| Obsolete. Use __ResourceRepositoryWeb__ and __ResourceRepositoryShare__ blocks to define pull service HTTP endpoints or SMB paths, respectively.|
 | PartialConfigurations| CimInstance| Not implemented. Do not use.|
@@ -102,6 +102,11 @@ of the LCM are configured in a **Settings** block. The following properties are 
 > will not start. Example, the metaconfig is configured at a 15 minute pull frequency and a pull
 > occurs at T1. The Node does not finish work for 16 minutes. The first 15 minute cycle is ignored,
 > and next pull will happen at T1+15+15.
+>
+> The original intent in Pull scenarios was that the `RefreshFrequencyMins` is set to a longer
+> time than the `ConfigurationModeFrequencyMins`. Local configurations would be manged primarily by
+> `ConfigurationModeFrequencyMins` to avoid configuration drift and `RefreshFrequencyMins` is used
+> to keep track of actual configuration changes made by administrator.
 
 ## Pull service
 

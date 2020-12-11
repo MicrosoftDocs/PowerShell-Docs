@@ -236,10 +236,16 @@ Warning block
 
 ### Hyperlinks
 
-- Hyperlinks must use Markdown syntax `[friendlyname](url-or-path)`
-- Links should be HTTPS when possible.
+- Hyperlinks must use Markdown syntax `[friendlyname](url-or-path)`. [Link references][linkref] are
+  supported.
+- The publishing system supports three types of links:
+  - URL links
+  - File links
+  - Cross-reference links
+- Links to other articles on docs.microsoft.com must be site-relative paths
+- All URLs to external websites should use HTTPS unless that isn't valid for the target site.
 - Links must have a friendly name, usually the title of the linked article
-- All items in the "related links" section at the bottom should be hyperlinked
+- All items in the _Related links_ section at the bottom should be hyperlinked
 - Don't use backticks, bold, or other markup inside the brackets of a hyperlink.
 - Bare URLs may be used when you're documenting a specific URI. The URI must be enclosed in
   backticks. For example:
@@ -249,46 +255,40 @@ Warning block
   `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
   ```
 
-#### Linking to other content
+#### Linking to other content on docs.microsoft.com
 
-There are three types of hyperlinks supported by the publishing system:
+- **URL links** to other articles on docs.microsoft.com must be site-relative paths. The simplest
+  way to create a relative link is to copy the URL from your browser then remove
+  `https://docs.microsoft.com/en-us` from the value you paste into markdown. Don't include locales
+  in URLs on Microsoft properties (remove `/en-us` from URL). Remove any unnecessary query
+  parameters from the URL. Examples that should be removed:
 
-1. A **URL link** can be a URL path that is relative to the root of docs.microsoft.com. Or an
-   absolute URL that includes the full URL syntax. For example:
-   `https:/github.com/MicrosoftDocs/PowerShell-Docs`
+  - `?view=powershell-5.1` - used to link to a specific version of PowerShell
+  - `?redirectedfrom=MSDN` - added to the URL when you get redirected from an old article to its new
+    location
 
-   - Use URL links when linking to content outside of PowerShell-Docs or between cmdlet reference
-     and conceptual articles within PowerShell-docs. The simplest way to create a relative link is
-     to copy the URL from your browser then remove `https://docs.microsoft.com/en-us` from the value
-     you paste into markdown.
-   - Don't include locales in URLs on Microsoft properties (remove `/en-us` from URL).
-   - Remove any unnecessary query parameters from the URL unless you need to link to a specific
-     version of an article. Examples:
-     - `?view=powershell-5.1` - used to link to a specific version of PowerShell
-     - `?redirectedfrom=MSDN` - added to the URL when you get redirected from an old article to its
-       new location
-     - If you need to link to a specific version of a document, then you need to add the
-       `&preserve_view=true` parameter to the query string. For example:
-       `?view=powershell-5.1&preserve_view=true`
-   - All URLs to external websites should use HTTPS unless that isn't valid for the target site.
+  If you need to link to a specific version of a document, then you need to add the
+  `&preserve_view=true` parameter to the query string. For example:
+  `?view=powershell-5.1&preserve_view=true`
 
-1. A **file link** is used to link from one reference article to another, or from one conceptual
-   article to another. If you need to link to a reference article for a specific version of
-   PowerShell, then you must use a URL link.
+- A **file link** is used to link from one reference article to another, or from one conceptual
+  article to another. If you need to link to a reference article for a specific version of
+  PowerShell, then you must use a URL link.
 
-   - File links contain a relative file path (for example: `../folder/file.md`)
-   - All file paths use forward-slash (`/`) characters
+  - File links contain a relative file path (for example: `../folder/file.md`)
+  - All file paths use forward-slash (`/`) characters
 
-1. Cross-reference links are a special feature supported by the publishing system. You can use
-   cross-reference links in conceptual articles to link to .NET API or cmdlet reference.
+- **Cross-reference links** are a special feature supported by the publishing system. You can use
+  cross-reference links in conceptual articles to link to .NET API or cmdlet reference.
 
-   For links to .NET API reference, see
-   [Use links in documentation](/contribute/how-to-write-links#xref-cross-reference-links) in the
-   central Contributor Guide. Links to cmdlet reference have the following format:
-   `xref:<module-name>.<cmdlet-name>`. For example, use the following Markdown to link to the
-   `Get-Content` cmdlet from the **Microsoft.PowerShell.Management** module.
+  For links to .NET API reference, see
+  [Use links in documentation](/contribute/how-to-write-links#xref-cross-reference-links) in the
+  central Contributor Guide.
 
-   `[Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)`
+  Links to cmdlet reference have the following format: `xref:<module-name>.<cmdlet-name>`. For
+  example, to link to the `Get-Content` cmdlet in the **Microsoft.PowerShell.Management** module.
+
+  `[Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)`
 
 Deep linking is allowed on both URL and file links. Add the anchor to the end of the target path.
 For example:
@@ -642,3 +642,4 @@ Basic formatting guidelines:
 [platyPS.schema.md]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md
 [PlatyPS]: https://github.com/powershell/platyps
 [reflow]: https://marketplace.visualstudio.com/items?itemName=marvhen.reflow-markdown
+[linkref]: https://spec.commonmark.org/0.29/#link-reference-definitions

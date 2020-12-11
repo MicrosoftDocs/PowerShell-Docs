@@ -10,15 +10,15 @@ This article is an overview of how to get started as a contributor to the PowerS
 
 ## PowerShell-Docs structure
 
-The [PowerShell-Docs repository][psdocs] is divided into two groups of content. Git branches are
-used to manage how and when documentation gets published.
+The [PowerShell-Docs repository][psdocs] is divided into two groups of content: reference and
+conceptual.
 
 ### Reference content
 
 The reference content is the PowerShell cmdlet reference for the cmdlets that ship in PowerShell.
-The [reference][ref] is collected in versions folders (5.1, 6, 7.0, and 7.1). This content contains
-cmdlet reference only for the modules that ship with PowerShell. This content is also used to create
-the help information displayed by the `Get-Help` cmdlet.
+The [reference][ref] is collected in versions folders (5.1, 7.0, 7.1, and 7.2). This content
+contains cmdlet reference only for the modules that ship with PowerShell. This content is also used
+to create the help information displayed by the `Get-Help` cmdlet.
 
 ### Conceptual content
 
