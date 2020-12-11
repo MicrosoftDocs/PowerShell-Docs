@@ -10,6 +10,7 @@ title: about_Redirection
 # About Redirection
 
 ## Short description
+
 Explains how to redirect output from PowerShell to text files.
 
 ## Long description
@@ -220,7 +221,7 @@ formatted correctly. To write to files with a different encoding, use the
 ### Potential confusion with comparison operators
 
 The `>` operator is not to be confused with the
-[Greater-than](about_Comparison_Operators.md##-gt--ge--lt-and--le) comparison operator (often
+[Greater-than](about_Comparison_Operators.md#-gt--ge--lt-and--le) comparison operator (often
 denoted as `>` in other programming languages).
 
 Depending on the objects being compared, the output using `>` can appear to be
@@ -253,12 +254,12 @@ At line:1 char:8
 + if (36 < 42) { "true" } else { "false" }
 +        ~
 The '<' operator is reserved for future use.
-+ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-+ FullyQualifiedErrorId : RedirectionNotSupported
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : RedirectionNotSupported
 ```
 
 If numeric comparison is the required operation, `-lt` and `-gt` should be
-used. See: [`-gt` Comparison Operator](about_Comparison_Operators.md#-gt)
+used. See: [`-gt` Comparison Operator](about_Comparison_Operators.md#-gt--ge--lt-and--le)
 
 ## See also
 
