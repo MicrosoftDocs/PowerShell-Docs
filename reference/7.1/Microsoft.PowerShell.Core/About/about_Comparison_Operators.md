@@ -430,7 +430,8 @@ book
 It is also possible to use regular expressions to dynamically replace text
 using capturing groups, and substitutions.
 
-In the following example, the `-replace` operator accepts a username in the form of `DomainName\Username` and converts to the `Username@DomainName` format:
+In the following example, the `-replace` operator accepts a username in the form
+of `DomainName\Username` and converts to the `Username@DomainName` format:
 
 ```powershell
 $SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
@@ -447,7 +448,7 @@ For details, see [about_Regular_Expressions](about_Regular_Expressions.md).
 
 ### Replacement with a script block
 
-In Powershell 6 and later, the `-replace` operator also accepts a script block
+In PowerShell 6 and later, the `-replace` operator also accepts a script block
 that performs the replacement. The script block runs once for every match.
 
 Syntax:
@@ -592,6 +593,6 @@ $a -isnot $b.GetType() # Output: True
 - [Foreach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
 - [Where-Object](xref:Microsoft.PowerShell.Core.Where-Object)
 
-[1]: https://docs.microsoft.com/dotnet/api/system.icomparable?view=netstandard-2.0
-[2]: https://docs.microsoft.com/dotnet/api/system.text.regularexpressions.match?view=netstandard-1.6
+[1]: https://docs.microsoft.com/dotnet/api/system.icomparable?view=netstandard-2.0&preserve-view=true
+[2]: https://docs.microsoft.com/dotnet/api/system.text.regularexpressions.match?view=netstandard-1.6&preserve-view=true
 [3]: about_Redirection.md#potential-confusion-with-comparison-operators

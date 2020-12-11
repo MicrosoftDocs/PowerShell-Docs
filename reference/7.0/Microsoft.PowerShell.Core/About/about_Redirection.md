@@ -220,7 +220,7 @@ formatted correctly. To write to files with a different encoding, use the
 ### Potential confusion with comparison operators
 
 The `>` operator is not to be confused with the
-[Greater-than](about_Comparison_Operators.md#-gt) comparison operator (often
+[Greater-than](about_Comparison_Operators.md##-gt--ge--lt-and--le) comparison operator (often
 denoted as `>` in other programming languages).
 
 Depending on the objects being compared, the output using `>` can appear to be
