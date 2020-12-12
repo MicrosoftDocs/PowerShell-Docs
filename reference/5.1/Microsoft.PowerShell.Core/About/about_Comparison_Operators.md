@@ -65,10 +65,10 @@ Object[]
 
 There are a few exceptions:
 
-- The containment and type operators. They always return a **Boolean** value.
-- The `-replace` operator returns the values resulting from the replacement.
+- The containment and type operators always return a **Boolean** value
+- The `-replace` operator returns the replacement result
 - The `-match` and `-notmatch` operators also populate the `$Matches` automatic
-  variable.
+  variable
 
 ## Equality operators
 
@@ -323,10 +323,9 @@ automatic variable.
 ### -match and -notmatch
 
 `-match` and `-notmatch` use regular expressions to search for pattern in the
-left-hand side values. Regular expressions can be used to match complex
-patterns like email addresses, UNC paths, or formatted phone numbers. The
-right-hand side string must adhere to the
-[regular expressions](about_Regular_Expressions.md) rules.
+left-hand side values. Regular expressions can match complex patterns like email
+addresses, UNC paths, or formatted phone numbers. The right-hand side string
+must adhere to the [regular expressions](about_Regular_Expressions.md) rules.
 
 Scalar examples:
 
@@ -402,9 +401,10 @@ For details, see [about_Regular_Expressions](about_Regular_Expressions.md).
 
 ### Replacement with regular expressions
 
-The replacement , , is an extension of the `-match` operator. Like `-match`,
-`-replace` operator uses regular expressions to find the specified pattern. But
-unlike `-match`, it replaces the matches with another specified value.
+The replacement operator, `-replace`, is an extension of the `-match` operator.
+Like `-match`, the `-replace` operator uses regular expressions to find the
+specified pattern. But unlike `-match`, it replaces the matches with another
+specified value.
 
 Syntax:
 
@@ -436,6 +436,7 @@ Examples:
 Cook
 book
 ```
+
 ### Regular expressions substitutions
 
 It is also possible to use regular expressions to dynamically replace text
@@ -458,24 +459,34 @@ John.Doe@Contoso.local
 ```
 
 > [!WARNING]
-> Since the `$` character is used in string expansion, you will must use
-> literal strings or escape the `$` character.
+> The `$` has syntatic roles in both PowerShell and regular expressions: - In
+> PowerShell, between double quotation marks, it designates variables and acts
+> as a subexpression operator. - In Regex search strings, it denotes end of the
+> line - In Regex substitution strings, it denotes captured groups As such, be
+> sure to either put your regular expressions between single quotation marks or
+> insert a backtick (\`) character before them. For example:
 >
 > ```powershell
-> PS> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
-> Hello Universe
+> $1 = 'Goodbye'
+> 
+> 'Hello World' -replace '(\w+) \w+', "$1 Universe"
+> # Output: Goodbye Universe
+> 
+> 'Hello World' -replace '(\w+) \w+', '$1 Universe'
+> # Output: Hello Universe
 > ```
 >
-> Additionally, since the `$` character is used in substitution, you must
-> escape any instances in your string.
+> `$$` in Regex denotes a literal `$`. Be sure to understand its caveats. For
+> example:
 >
 > ```powershell
-> PS> '5.72' -replace '(.+)', '$$$1'
-> $5.72
+> '5.72' -replace '(.+)', '$ $1' # Output: $ 5.72
+> '5.72' -replace '(.+)', '$$$1' # Output: $5.72
+> '5.72' -replace '(.+)', '$$1'  # Output: $1
 > ```
 
-To learn more see [about_Regular_Expressions](about_Regular_Expressions.md) and
-[Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions)
+To learn more, see [about_Regular_Expressions](about_Regular_Expressions.md) and
+[Substitutions in Regular Expressions][4]
 
 ### Substituting in a collection
 
@@ -614,3 +625,4 @@ $a -isnot $b.GetType() # Output: True
 [1]: /dotnet/api/system.icomparable
 [2]: /dotnet/api/system.text.regularexpressions.match
 [3]: about_Redirection.md#potential-confusion-with-comparison-operators
+[4]: /dotnet/standard/base-types/substitutions-in-regular-expressions
