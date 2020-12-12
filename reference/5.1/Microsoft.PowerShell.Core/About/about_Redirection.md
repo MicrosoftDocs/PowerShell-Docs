@@ -1,6 +1,5 @@
 ---
 description: Explains how to redirect output from PowerShell to text files.
-keywords: PowerShell,cmdlet
 Locale: en-US
 ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -10,7 +9,6 @@ title: about_Redirection
 # About Redirection
 
 ## Short description
-
 Explains how to redirect output from PowerShell to text files.
 
 ## Long description
@@ -259,7 +257,8 @@ The '<' operator is reserved for future use.
 ```
 
 If numeric comparison is the required operation, `-lt` and `-gt` should be
-used. See: [`-gt` Comparison Operator](about_Comparison_Operators.md#-gt--ge--lt-and--le)
+used. For more information, see the `-gt` operator in
+[about_Comparison_Operators](about_Comparison_Operators.md#-gt--ge--lt-and--le).
 
 ## See also
 

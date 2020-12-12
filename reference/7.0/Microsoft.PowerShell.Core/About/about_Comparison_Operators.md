@@ -1,6 +1,5 @@
 ---
 description: Describes the operators that compare values in PowerShell.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 12/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7&WT.mc_id=ps-gethelp
@@ -9,37 +8,35 @@ title: about_Comparison_Operators
 ---
 # About Comparison Operators
 
-## Abstract
+## Short description
 
 The comparison operators in PowerShell can either compare two values or filter
-elements of a collection against an input value. These operators include:
-`-eq`,`-ne`,`-gt`,`-ge`,`-lt`,`-le`,`-like`,`-notlike`,`-match`,`-notmatch`,
-`-replace`,`-contains`,`-notcontains`,`-in`,`-notin`,`-is`,`-isnot`.
+elements of a collection against an input value.
 
-## The operators
+## Long description
 
 Comparison operators let you compare values or finding values that match
 specified patterns. PowerShell includes the following comparison operators:
 
-| Type        | Operator     | Comparison test
-| ----------- | ------------ | ------------------------------------------------
-| Equality    | -eq          | equals
-|             | -ne          | not equals
-|             | -gt          | greater than
-|             | -ge          | greater than or equal
-|             | -lt          | less than
-|             | -le          | less than or equal
-| Matching    | -like        | string matches wildcard pattern
-|             | -notlike     | string does not match wildcard pattern
-|             | -match       | string matches regex pattern
-|             | -notmatch    | string does not match regex pattern
-| Replacement | -replace     | string matches regex pattern; replaces the match
-| Containment | -contains    | collection contains a value
-|             | -notcontains | collection does not contain a value
-|             | -in          | value is in a collection
-|             | -notin       | value is not in a collection
-| Type        | -is          | both objectd are the same type
-|             | -isnot       | the objects are not the same type
+|    Type     |   Operator   |              Comparison test              |
+| ----------- | ------------ | ----------------------------------------- |
+| Equality    | -eq          | equals                                    |
+|             | -ne          | not equals                                |
+|             | -gt          | greater than                              |
+|             | -ge          | greater than or equal                     |
+|             | -lt          | less than                                 |
+|             | -le          | less than or equal                        |
+| Matching    | -like        | string matches wildcard pattern           |
+|             | -notlike     | string does not match wildcard pattern    |
+|             | -match       | string matches regex pattern              |
+|             | -notmatch    | string does not match regex pattern       |
+| Replacement | -replace     | replaces strings matching a regex pattern |
+| Containment | -contains    | collection contains a value               |
+|             | -notcontains | collection does not contain a value       |
+|             | -in          | value is in a collection                  |
+|             | -notin       | value is not in a collection              |
+| Type        | -is          | both objects are the same type            |
+|             | -isnot       | the objects are not the same type         |
 
 ## Common features
 
@@ -49,10 +46,11 @@ case-sensitive version of `-eq`. To make the case-insensitivity explicit,
 add an `i` before `-`. For example, `-ieq` is the explicitly case-insensitive
 version of `-eq`.
 
-When the input of an operator is a scalar value, the operator returns a Boolean
-value. When the input is a collection, the operator returns those collection
-elements that match the input. If there are no matches in the collection,
-comparison operators return an empty array. For example:
+When the input of an operator is a scalar value, the operator returns a
+**Boolean** value. When the input is a collection, the operator returns the
+elements of the collection that match the right-hand value of the expression.
+If there are no matches in the collection, comparison operators return an empty
+array. For example:
 
 ```powershell
 $a = (1, 2 -eq 3)
@@ -65,27 +63,31 @@ Object[]
 0
 ```
 
-The exceptions are the containment operators and the type operators; they always
-return a Boolean value.
+There are a few exceptions:
+
+- The containment and type operators. They always return a **Boolean** value.
+- The `-replace` operator returns the values resulting from the replacement.
+- The `-match` and `-notmatch` operators also populate the `$Matches` automatic
+  variable.
 
 ## Equality operators
 
 ### -eq and -ne
 
-When the left-hand side is scalar, `-eq` returns True if the right-hand side is
-an exact match; otherwise, `-eq` returns False. `-ne` does the opposite; it
-returns False when both sides match; otherwise, `-ne` returns True.
+When the left-hand side is scalar, `-eq` returns **True** if the right-hand side is
+an exact match, otherwise, `-eq` returns **False**. `-ne` does the opposite; it
+returns **False** when both sides match; otherwise, `-ne` returns True.
 
 Example:
 
 ```powershell
-2 -eq 2                 # Ouput: True
-2 -eq 3                 # Ouput: False
-"abc" -eq "abc"         # Ouput: True
-"abc" -eq "abc", "def"  # Ouput: False
-"abc" -ne "def"         # Ouput: True
-"abc" -ne "abc"         # Ouput: False
-"abc" -ne "abc", "def"  # Ouput: True
+2 -eq 2                 # Output: True
+2 -eq 3                 # Output: False
+"abc" -eq "abc"         # Output: True
+"abc" -eq "abc", "def"  # Output: False
+"abc" -ne "def"         # Output: True
+"abc" -ne "abc"         # Output: False
+"abc" -ne "abc", "def"  # Output: True
 ```
 
 When the left-hand side is a collection, `-eq` returns those members that match
@@ -94,9 +96,9 @@ the right-hand side, while `-ne` filters them out.
 Example:
 
 ```powershell
-1,2,3 -eq 2             # Ouput: 2
-"abc", "def" -eq "abc"  # Ouput: abc
-"abc", "def" -ne "abc"  # Ouput: def
+1,2,3 -eq 2             # Output: 2
+"abc", "def" -eq "abc"  # Output: abc
+"abc", "def" -ne "abc"  # Output: def
 ```
 
 These operators process all elements of the collection. Example:
@@ -110,7 +112,7 @@ zzz
 zzz
 ```
 
-The equality operators accept any two objects, not just scalar or collection.
+The equality operators accept any two objects, not just a scalar or collection.
 But the comparison result is not guaranteed to be meaningful for the end-user.
 The following example demonstrates the issue.
 
@@ -129,7 +131,7 @@ False
 ```
 
 In this example, we created two objects with identical properties. Yet, the
-equality test result is False, because they are different objects. If you intend
+equality test result is **False** because they are different objects. If you intend
 to develop meaningfully comparable classes, you need to implement
 [System.IComparable][1] in your class.
 
@@ -170,7 +172,7 @@ $a -ne $null # Output: 1, 2, 4, 6
 ### -gt, -ge, -lt, and -le
 
 `-gt`, `-ge`, `-lt`, and `-le` behave very similarly. When both sides are scalar
-they return True or False depending on how the two sides compare:
+they return **True** or **False** depending on how the two sides compare:
 
 | Operator | Returns True when...                   |
 | -------- | -------------------------------------- |
@@ -182,16 +184,16 @@ they return True or False depending on how the two sides compare:
 In the following examples, all statements return True.
 
 ```powershell
-8 -gt 6  # Ouput: True
-8 -ge 8  # Ouput: True
-6 -lt 8  # Ouput: True
-8 -le 8  # Ouput: True
+8 -gt 6  # Output: True
+8 -ge 8  # Output: True
+6 -lt 8  # Output: True
+8 -le 8  # Output: True
 ```
 
 > [!NOTE]
-> The greater-than operator, in most programming languages, is `>`. In
-> PowerShell, however, this character is used for redirection. For details, see
-> [About_redirection][3].
+> In most programming languages the greater-than operator is `>`. In
+> PowerShell, this character is used for redirection. For details, see
+> [about_Redirection][3].
 
 When the left-hand side is a collection, these operators compare each member of
 the collection with the right-hand side. Depending on their logic, they either
@@ -266,8 +268,8 @@ keyboard that gets sorted after 'a'. It feeds a set containing all such symbols
 to the `-gt` operator to compare them against 'a'. The output is an empty array.
 
 ```powershell
-$a=' ','`','~','!','@','#','$','%','^','&','*','(',')','_','+','-','=','{','}',
-   '[',']',':',';','"','''','\','|','/','?','.','>',',','<'
+$a=' ','`','~','!','@','#','$','%','^','&','*','(',')','_','+','-','=',
+   '{','}','[',']',':',';','"','''','\','|','/','?','.','>',',','<'
 $a -gt 'a'
 # Output: Nothing
 ```
@@ -284,14 +286,14 @@ and `-notlike` is a wildcard expression (containing `*`, `?`, and `[ ]`), while
 
 The syntax is:
 
-```powershell
+```
 <string[]> -like    <wildcard-expression>
 <string[]> -notlike <wildcard-expression>
 <string[]> -match    <regular-expression>
 <string[]> -notmatch <regular-expression>
 ```
 
-When the input of these operators is a scalar value, they return a Boolean
+When the input of these operators is a scalar value, they return a **Boolean**
 value. When the input is a collection of values, the operators return any
 matching members. If there are no matches in a collection, the operators return
 an empty array.
@@ -304,35 +306,42 @@ side could be a string containing [wildcards](about_Wildcards.md).
 Example:
 
 ```powershell
-"PowerShell" -like    "*shell"           # Ouput: True
-"PowerShell" -notlike "*shell"           # Ouput: False
-"PowerShell" -like    "Power?hell"       # Ouput: True
-"PowerShell" -notlike "Power?hell"       # Ouput: False
-"PowerShell" -like    "Power[p-w]hell"   # Ouput: True
-"PowerShell" -notlike "Power[p-w]hell"   # Ouput: False
+"PowerShell" -like    "*shell"           # Output: True
+"PowerShell" -notlike "*shell"           # Output: False
+"PowerShell" -like    "Power?hell"       # Output: True
+"PowerShell" -notlike "Power?hell"       # Output: False
+"PowerShell" -like    "Power[p-w]hell"   # Output: True
+"PowerShell" -notlike "Power[p-w]hell"   # Output: False
 
-"PowerShell", "Server" -like "*shell"    # Ouput: PowerShell
-"PowerShell", "Server" -notlike "*shell" # Ouput: Server
+"PowerShell", "Server" -like "*shell"    # Output: PowerShell
+"PowerShell", "Server" -notlike "*shell" # Output: Server
 ```
 
-## -match and -notmatch
+Unlike `-match` and `-notmatch`, these operators don't affect the `$Matches`
+automatic variable.
 
-`-match` and `-notmatch` use regular expressions to conduct their search. As
-such, they support very complex searches, e.g. they can find email addresses,
-UNC paths, or dash-formatted phone numbers. The right-hand side string must
-adhere to the [regular expressions](about_Regular_Expressions.md) rules.
+### -match and -notmatch
+
+`-match` and `-notmatch` use regular expressions to search for pattern in the
+left-hand side values. Regular expressions can be used to match complex
+patterns like email addresses, UNC paths, or formatted phone numbers. The
+right-hand side string must adhere to the
+[regular expressions](about_Regular_Expressions.md) rules.
 
 Scalar examples:
 
 ```powershell
 # Partial match test, showing how differently -match and -like behave
-"PowerShell" -match 'shell'        # Ouput: True
-"PowerShell" -like  'shell'        # Ouput: False
+"PowerShell" -match 'shell'        # Output: True
+"PowerShell" -like  'shell'        # Output: False
 
 # Regex syntax test
-"PowerShell" -match    '^Power\w+' # Ouput: True
-'bag'        -notmatch 'b[iou]g'   # Ouput: True
+"PowerShell" -match    '^Power\w+' # Output: True
+'bag'        -notmatch 'b[iou]g'   # Output: True
 ```
+
+If the input is a collection, the operators return the matching members of that
+collection. However, the `$Matches` variable isn't populated.
 
 Collection examples:
 
@@ -341,7 +350,7 @@ Collection examples:
 # Output: PowerShell
 
 "Rhell", "Chell", "Mel", "Smell", "Shell" -match "hell"
-# Ouput: Rhell, Chell, Shell
+# Output: Rhell, Chell, Shell
 
 "Bag", "Beg", "Big", "Bog", "Bug"  -match 'b[iou]g'
 #Output: Big, Bog, Bug
@@ -351,10 +360,10 @@ Collection examples:
 ```
 
 `-match` and `-notmatch` support regex capture groups. Each time they run, they
-overwrite the `$Matches` automatic variable with their findings. This variable
-is a **Hashtable** and always has a key named '0' that stores the entire match.
-If the regular expression contains capture groups, the Hashtable will contain
-additional corresponding keys.
+overwrite the `$Matches` automatic variable with their findings. `$Matches` is
+a **Hashtable** that always has a key named '0', which stores the entire match.
+If the regular expression contains capture groups, the `$Matches` contains
+additional keys for each group.
 
 Example:
 
@@ -393,19 +402,20 @@ For details, see [about_Regular_Expressions](about_Regular_Expressions.md).
 
 ### Replacement with regular expressions
 
-The replacement operator, `-replace`, is an extension of the `-match` operator.
-Like `-match`, it finds the specified pattern, but unlike `-match`, it replaces
-them with another specified value.
+The replacement , , is an extension of the `-match` operator. Like `-match`,
+`-replace` operator uses regular expressions to find the specified pattern. But
+unlike `-match`, it replaces the matches with another specified value.
 
 Syntax:
 
-```powershell
-<String> -replace <regular-expression>, <substitute>
+```
+<input> -replace <regular-expression>, <substitute>
 ```
 
-You can use the `-replace` operator for many administrative tasks, such as
-renaming files. For example, the following command changes the file name
-extensions of all `.txt` files to `.log`:
+The operator replaces all or part of a value with the specified value using
+regular expressions. You can use the operator for many administrative tasks,
+such as renaming files. For example, the following command changes the file
+name extensions of all `.txt` files to `.log`:
 
 ```powershell
 Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
@@ -426,9 +436,12 @@ Examples:
 Cook
 book
 ```
+### Regular expressions substitutions
 
 It is also possible to use regular expressions to dynamically replace text
-using capturing groups, and substitutions.
+using capturing groups, and substitutions. Capture groups can be referenced in
+the `<substitute>` string using the dollar sign (`$`) character before the
+group identifier.
 
 In the following example, the `-replace` operator accepts a username in the form
 of `DomainName\Username` and converts to the `Username@DomainName` format:
@@ -444,7 +457,39 @@ $ReplaceExp = '${Username}@${DomainName}'
 John.Doe@Contoso.local
 ```
 
-For details, see [about_Regular_Expressions](about_Regular_Expressions.md).
+> [!WARNING]
+> Since the `$` character is used in string expansion, you will must use
+> literal strings or escape the `$` character.
+>
+> ```powershell
+> PS> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
+> Hello Universe
+> ```
+>
+> Additionally, since the `$` character is used in substitution, you must
+> escape any instances in your string.
+>
+> ```powershell
+> PS> '5.72' -replace '(.+)', '$$$1'
+> $5.72
+> ```
+
+To learn more see [about_Regular_Expressions](about_Regular_Expressions.md) and
+[Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions)
+
+### Substituting in a collection
+
+When the `<input>` to the `-replace` operator is a collection, PowerShell
+applies the replacement to every value in the collection. For example:
+
+```powershell
+"B1","B2","B3","B4","B5" -replace "B", 'a'
+a1
+a2
+a3
+a4
+a5
+```
 
 ### Replacement with a script block
 
@@ -476,7 +521,7 @@ Hello
 ## Containment operators
 
 The containment operators (`-contains`, `-notcontains`, `-in`, and `-notin`) are
-similar to the equality operators, except that they always return a Boolean
+similar to the equality operators, except that they always return a **Boolean**
 value, even when the input is a collection. These operators stop comparing as
 soon as they detect the first match, whereas the equality operators evaluate all
 input members. In a very large collection, these operators return quicker than
@@ -484,7 +529,7 @@ the equality operators.
 
 Syntax:
 
-```powershell
+```
 <Collection> -contains <Test-object>
 <Collection> -notcontains <Test-object>
 <Test-object> -in <Collection>
@@ -529,10 +574,10 @@ $a, "ghi" -contains $a           # Output: True
 
 The `-in` and -`notin` operators were introduced in PowerShell 3 as the
 syntactic reverse of the of `contains` and `-notcontain` operators. `-in`
-returns True when the left-hand side (test object) matches one of the elements
-in the set. `-notin` returns False instead. When the test object is a set, these
-operators use reference equality, i.e. they check whether one of the set's
-elements is the same instance of the test object.
+returns **True** when the left-hand side `<test-object>` matches one of the
+elements in the set. `-notin` returns **False** instead. When the test object
+is a set, these operators use reference equality to check whether one of the
+set's elements is the same instance of the test object.
 
 The following examples do the same thing that the examples for `-contain`
 and `-notcontain` do, but they are written with `-in` and `-notin` instead.
@@ -593,6 +638,6 @@ $a -isnot $b.GetType() # Output: True
 - [Foreach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
 - [Where-Object](xref:Microsoft.PowerShell.Core.Where-Object)
 
-[1]: https://docs.microsoft.com/dotnet/api/system.icomparable?view=netstandard-2.0&preserve-view=true
-[2]: https://docs.microsoft.com/dotnet/api/system.text.regularexpressions.match?view=netstandard-1.6&preserve-view=true
+[1]: /dotnet/api/system.icomparable
+[2]: /dotnet/api/system.text.regularexpressions.match
 [3]: about_Redirection.md#potential-confusion-with-comparison-operators
