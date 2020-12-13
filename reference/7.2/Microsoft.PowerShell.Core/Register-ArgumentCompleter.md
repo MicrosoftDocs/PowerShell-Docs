@@ -64,7 +64,7 @@ Within the script block, the available values for **Id** are retrieved using the
 cmdlet. The **Id** property for each Time Zone is piped to the `Where-Object` cmdlet. The
 `Where-Object` cmdlet filters out any ids that do not start with the value provided by
 `$wordToComplete`, which represents the text the user typed before they pressed <kbd>Tab</kbd>. The
-filtered ids are piped to the `For-EachObject` cmdlet which encloses each value in quotes, should
+filtered ids are piped to the `ForEach-Object` cmdlet which encloses each value in quotes, should
 the value contain spaces.
 
 The second command registers the argument completer by passing the scriptblock, the

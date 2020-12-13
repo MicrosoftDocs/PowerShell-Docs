@@ -208,7 +208,7 @@ $Sample = $Files | Get-Random -Count 50
 
 ### Example 11: Roll fair dice
 
-This example rolls a fair die 1200 times and counts the outcomes. The first command, `For-EachObject`
+This example rolls a fair die 1200 times and counts the outcomes. The first command, `ForEach-Object`
 repeats the call to `Get-Random` from the piped in numbers (1-6). The results are grouped by their
 value with `Group-Object` and formatted as a table with `Select-Object`.
 
