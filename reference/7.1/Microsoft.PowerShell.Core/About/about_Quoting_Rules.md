@@ -1,23 +1,22 @@
 ---
-description: Describes rules for using single and double quotation marks in PowerShell. 
-keywords: powershell,cmdlet
+description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 10/05/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Quoting_Rules
 ---
 # About Quoting Rules
 
-## SHORT DESCRIPTION
+## Short description
 Describes rules for using single and double quotation marks in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 Quotation marks are used to specify a literal string. You can enclose a string
 in single quotation marks (`'`) or double quotation marks (`"`).
 
-Quotation marks are also used to create a here-string. A here-string is a
+Quotation marks are also used to create a _here-string_. A here-string is a
 single-quoted or double-quoted string in which quotation marks are interpreted
 literally. A here-string can span multiple lines. All the lines in a
 here-string are interpreted as strings, even though they are not enclosed in
@@ -28,11 +27,11 @@ command that are run on the remote computer. In a remote session, quotation
 marks also determine whether the variables in a command are interpreted first
 on the local computer or on the remote computer.
 
-### SINGLE AND DOUBLE-QUOTED STRINGS
+## Single and double-quoted strings
 
-When you enclose a string in double quotation marks (a double-quoted string),
-variable names that are preceded by a dollar sign (`$`) are replaced with the
-variable's value before the string is passed to the command for processing.
+A string enclosed in double quotation marks is an _expandable_ string. Variable
+names preceded by a dollar sign (`$`) are replaced with the variable's value
+before the string is passed to the command for processing.
 
 For example:
 
@@ -60,9 +59,9 @@ The output of this command is:
 The value of 5 is 5.
 ```
 
-When you enclose a string in single-quotation marks (a single-quoted string),
-the string is passed to the command exactly as you type it. No substitution is
-performed. For example:
+A string enclosed in single-quotation marks is a _verbatim_ string. The string
+is passed to the command exactly as you type it. No substitution is performed.
+For example:
 
 ```powershell
 $i = 5
@@ -92,7 +91,7 @@ To prevent the substitution of a variable value in a double-quoted string, use
 the backtick character (`` ` ``)(ASCII 96), which is the PowerShell escape
 character.
 
-In the following example, the backtick character that precedes the first $i
+In the following example, the backtick character that precedes the first `$i`
 variable prevents PowerShell from replacing the variable name with its value.
 For example:
 
@@ -173,7 +172,7 @@ Because the contents of single-quoted strings are interpreted literally, you
 the backtick character is treated as a literal character and displayed in the
 output.
 
-### HERE-STRINGS
+## Here-strings
 
 The quotation rules for here-strings are slightly different.
 
@@ -309,7 +308,7 @@ Here-strings are also a convenient format for input to the
 `ConvertFrom-StringData` cmdlet, which converts here-strings to hash tables.
 For more information, see `ConvertFrom-StringData`.
 
-## SEE ALSO
+## See also
 
 [about_Special_Characters](about_Special_Characters.md)
 
