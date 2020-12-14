@@ -502,8 +502,7 @@ property, use the **ApplicationArguments** parameter of the
 
 ### $PSStyle
 
-The `$PSStyle` automatic variable to control ANSI
-rendering of string output.
+The `$PSStyle` automatic variable to control ANSI rendering of string output.
 
 ### $PSUICulture
 
