@@ -317,15 +317,13 @@ Example:
 "PowerShell", "Server" -notlike "*shell" # Output: Server
 ```
 
-Unlike `-match` and `-notmatch`, these operators don't affect the `$Matches`
-automatic variable.
-
 ### -match and -notmatch
 
 `-match` and `-notmatch` use regular expressions to search for pattern in the
-left-hand side values. Regular expressions can match complex patterns like email
-addresses, UNC paths, or formatted phone numbers. The right-hand side string
-must adhere to the [regular expressions](about_Regular_Expressions.md) rules.
+left-hand side values. Regular expressions can match complex patterns like
+email addresses, UNC paths, or formatted phone numbers. The right-hand side
+string must adhere to the [regular expressions](about_Regular_Expressions.md)
+rules.
 
 Scalar examples:
 
@@ -340,7 +338,7 @@ Scalar examples:
 ```
 
 If the input is a collection, the operators return the matching members of that
-collection. However, the `$Matches` variable isn't populated.
+collection.
 
 Collection examples:
 
@@ -359,10 +357,11 @@ Collection examples:
 ```
 
 `-match` and `-notmatch` support regex capture groups. Each time they run, they
-overwrite the `$Matches` automatic variable with their findings. `$Matches` is
-a **Hashtable** that always has a key named '0', which stores the entire match.
-If the regular expression contains capture groups, the `$Matches` contains
-additional keys for each group.
+overwrite the `$Matches` automatic variable. When `<input>` is a collection the
+`$Matches` variable is `$null`. `$Matches` is a **Hashtable** that always has a
+key named '0', which stores the entire match. If the regular expression
+contains capture groups, the `$Matches` contains additional keys for each
+group.
 
 Example:
 
@@ -401,7 +400,6 @@ For details, see [about_Regular_Expressions](about_Regular_Expressions.md).
 
 ### Replacement with regular expressions
 
-The replacement operator, `-replace`, is an extension of the `-match` operator.
 Like `-match`, the `-replace` operator uses regular expressions to find the
 specified pattern. But unlike `-match`, it replaces the matches with another
 specified value.
@@ -459,34 +457,39 @@ John.Doe@Contoso.local
 ```
 
 > [!WARNING]
-> The `$` has syntatic roles in both PowerShell and regular expressions: - In
-> PowerShell, between double quotation marks, it designates variables and acts
-> as a subexpression operator. - In Regex search strings, it denotes end of the
-> line - In Regex substitution strings, it denotes captured groups As such, be
-> sure to either put your regular expressions between single quotation marks or
-> insert a backtick (\`) character before them. For example:
+> The `$` character has syntatic roles in both PowerShell and regular
+> expressions:
 >
-> ```powershell
-> $1 = 'Goodbye'
-> 
-> 'Hello World' -replace '(\w+) \w+', "$1 Universe"
-> # Output: Goodbye Universe
-> 
-> 'Hello World' -replace '(\w+) \w+', '$1 Universe'
-> # Output: Hello Universe
-> ```
->
-> `$$` in Regex denotes a literal `$`. Be sure to understand its caveats. For
-> example:
->
-> ```powershell
-> '5.72' -replace '(.+)', '$ $1' # Output: $ 5.72
-> '5.72' -replace '(.+)', '$$$1' # Output: $5.72
-> '5.72' -replace '(.+)', '$$1'  # Output: $1
-> ```
+> - In PowerShell, between double quotation marks, it designates variables and
+>   acts as a subexpression operator.
+> - In Regex search strings, it denotes end of the line
+> - In Regex substitution strings, it denotes captured groups As such, be sure
+>   to to either put your regular expressions between single quotation marks or
+>   insert a backtick (`` ` ``) character before them.
+
+For example:
+
+```powershell
+$1 = 'Goodbye'
+
+'Hello World' -replace '(\w+) \w+', "$1 Universe"
+# Output: Goodbye Universe
+
+'Hello World' -replace '(\w+) \w+', '$1 Universe'
+# Output: Hello Universe
+```
+
+`$$` in Regex denotes a literal `$`. This `$$` in the substitution string to
+include a a literal `$` in the resulting replacement. For example:
+
+```powershell
+'5.72' -replace '(.+)', '$ $1' # Output: $ 5.72
+'5.72' -replace '(.+)', '$$$1' # Output: $5.72
+'5.72' -replace '(.+)', '$$1'  # Output: $1
+```
 
 To learn more, see [about_Regular_Expressions](about_Regular_Expressions.md) and
-[Substitutions in Regular Expressions][4]
+[Substitutions in Regular Expressions][4].
 
 ### Substituting in a collection
 
