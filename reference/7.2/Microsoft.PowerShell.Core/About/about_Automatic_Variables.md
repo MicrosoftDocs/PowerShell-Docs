@@ -494,7 +494,66 @@ property, use the **ApplicationArguments** parameter of the
 
 ### $PSStyle
 
-The `$PSStyle` automatic variable to control ANSI rendering of string output.
+> [!NOTE]
+> This is an experimental feature. For more information see
+> [about_Experimental_Features](about_Experimental_Features.md).
+
+As of PowerShell 7.2 you can now access the `$PSStyle` automatic variable to
+view and change the rendering of ANSI string output. The variable contains the
+following properties:
+
+| Property        | Description                                                |
+| --------------- | ---------------------------------------------------------- |
+| AttributesOff   | |
+| Background      | Nested object to control background coloring               |
+| Blink           | Turns Blink on.                                            |
+| BlinkOff        | Turns Blink off.                                           |
+| Bold            | Turns Bold on.                                             |
+| BoldOff         | Turns Bold off.                                            |
+| Foreground      | Nested object to control foreground coloring.              |
+| Formatting      | A nested object to control default formatting like in      |
+|                 | `Host.PrivateData` such as errors, warnings, etc. In       |
+|                 | addition to colring, you can also control extra attributes |
+|                 | like bolding and underlining as well.                      |
+| Hidden          | Turns Hidden on.                                           |
+| HiddenOff       | Turns Hidden off.                                          |
+| OutputRendering | This is a nested `OutputRendering` object to control output|
+|                 | rendering.                                                 |
+| Reverse         | Turns Reverse on.                                          |
+| ReverseOff      | Turns Reverse off.                                         |
+| Standout        | Turns Standout on.                                         |
+| StandoutOff     | Turns Standout off.                                        |
+| Underlined      | Turns Underlined on.                                       |
+| UnderlinedOff   | Turns Underlined off.                                      |
+
+The base members return ANSI escape sequences mapped to their names. These are
+also settable so you can change bold to underlined, for example. This makes it
+easier for you to author decorated strings with tab completion:
+
+```powershell
+"$($PSStyle.Background.LightCyan)Power$($PSStyle.Underlined)$($PSStyle.Bold)Shell$($PSStyle.AttributesOff)"
+```
+
+The `$PSStyle.Background` and `$PSStyle.Foreground` members contain the
+standard 16 consol colors as well as `RGB()` methods to specify 24-bit color.
+The values are settable and as strings, they can be any string content and any
+number of ANSI escape sequences.
+
+`$PSStyle.Formatting` effectively replaces `$Host.PrivateData` as the way to
+read or configure colors for formatting rendering. `$Host.PrivateData` will
+continue to exist for backwards compatibility but is not connected to
+`$PSStyle.Formatting`.
+
+`$PSStyle.OutputRendering` is a `System.Management.Automation.OutputRendering`
+which is an enum with the values:
+
+- **Automatic**: This is the default. If the host supports VirtualTerminal,
+  then ANSI is always passed as-is, otherwise plaintext
+- **ANSI**: ANSI is always passed through as-is
+- **PlainText**: ANSI escape sequences are always stripped so that it is only
+  plain text
+- **HostOnly**: This would be the macOS behavior where the ANSI escape
+  sequences are removed in redirected or piped output.
 
 ### $PSUICulture
 
