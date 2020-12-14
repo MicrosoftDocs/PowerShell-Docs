@@ -111,7 +111,7 @@ strings with tab completion:
 "$($PSStyle.Background.LightCyan)Power$($PSStyle.Underlined)$($PSStyle.Bold)Shell$($PSStyle.AttributesOff)"
 ```
 
-For more information, see [about_automatic_variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md#$psstyle)
+For more information, see [about_automatic_variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 
 ## PSCommandNotFoundSuggestion
 
