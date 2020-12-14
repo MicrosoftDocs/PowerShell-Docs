@@ -201,7 +201,7 @@ The `$input` variable is also available to the command specified by the
 following example is run from the Windows Command shell.
 
 ```CMD
-echo Hello | pwsh -Command """$input World!"""
+echo Hello | powershell -Command """$input World!"""
 ```
 
 ### $LastExitCode
