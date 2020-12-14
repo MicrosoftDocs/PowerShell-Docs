@@ -25,20 +25,21 @@ For more information about enabling or disabling these features, see
 
 This article describes the experimental features that are available and how to use the feature.
 
-|                            Name                            |   6.2   |   7.0   |   7.1   |
-| ---------------------------------------------------------- | :-----: | :-----: | :-----: |
-| PSTempDrive (mainstream in PS 7.0+)                        | &check; |         |         |
-| PSUseAbbreviationExpansion (mainstream in PS 7.0+)         | &check; |         |         |
-| PSNullConditionalOperators (mainstream in PS 7.1+)         |         | &check; |         |
-| PSUnixFileStat (non-Windows only - mainstream in PS 7.1+)  |         | &check; |         |
-| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
-| PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
-| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; | &check; |
-| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
-| PSNativePSPathResolution                                   |         |         | &check; |
-| PSCultureInvariantReplaceOperator                          |         |         | &check; |
-| PSNotApplyErrorActionToStderr                              |         |         | &check; |
-| PSSubsystemPluginModel                                     |         |         | &check; |
+|                            Name                            |   6.2   |   7.0   |   7.1   |   7.2   |
+| ---------------------------------------------------------- | :-----: | :-----: | :-----: | :-----: |
+| PSTempDrive (mainstream in PS 7.0+)                        | &check; |         |         |         |
+| PSUseAbbreviationExpansion (mainstream in PS 7.0+)         | &check; |         |         |         |
+| PSNullConditionalOperators (mainstream in PS 7.1+)         |         | &check; |         |         |
+| PSUnixFileStat (non-Windows only - mainstream in PS 7.1+)  |         | &check; |         |         |
+| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; | &check; |
+| PSImplicitRemotingBatching                                 | &check; | &check; | &check; | &check; |
+| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; | &check; | &check; |
+| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; | &check; |
+| PSNativePSPathResolution                                   |         |         | &check; | &check; |
+| PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
+| PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
+| PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiRendering                                            |         |         |         | &check: |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -72,6 +73,45 @@ $breakpoint = Get-PSBreakPoint -Runspace $runspace
 In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakPoint` is
 run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` command with the
 **Runspace** parameter. You can then inspect the breakpoint in the `$breakpoint` variable.
+
+## PSAnsiRendering
+
+In PowerShell 7.2, this experiment enables the `$PSStyle` automatic variable to control ANSI
+rendering of string output.
+
+```powershell
+PS> $PSStyle
+
+Name            MemberType Definition
+----            ---------- ----------
+AttributesOff   Property   string AttributesOff {get;set;}
+Background      Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;set;}
+Blink           Property   string Blink {get;set;}
+BlinkOff        Property   string BlinkOff {get;set;}
+Bold            Property   string Bold {get;set;}
+BoldOff         Property   string BoldOff {get;set;}
+Foreground      Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;set;}
+Formatting      Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;set;}
+Hidden          Property   string Hidden {get;set;}
+HiddenOff       Property   string HiddenOff {get;set;}
+OutputRendering Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
+Reverse         Property   string Reverse {get;set;}
+ReverseOff      Property   string ReverseOff {get;set;}
+Standout        Property   string Standout {get;set;}
+StandoutOff     Property   string StandoutOff {get;set;}
+Underlined      Property   string Underlined {get;set;}
+UnderlinedOff   Property   string UnderlinedOff {get;set;}
+```
+
+The base members return ANSI escape sequences mapped to their names. These are also settable so you
+can change bold to underlined, for example. This makes it easier for scripters to author decorated
+strings with tab completion:
+
+```powershell
+"$($PSStyle.Background.LightCyan)Power$($PSStyle.Underlined)$($PSStyle.Bold)Shell$($PSStyle.AttributesOff)"
+```
+
+For more information, see [about_automatic_variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md#$psstyle)
 
 ## PSCommandNotFoundSuggestion
 

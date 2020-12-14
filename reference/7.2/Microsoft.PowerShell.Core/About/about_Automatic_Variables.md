@@ -492,6 +492,11 @@ from the originating session. To add data to the **ApplicationArguments**
 property, use the **ApplicationArguments** parameter of the
 `New-PSSessionOption` cmdlet.
 
+### $PSStyle
+
+The `$PSStyle` automatic variable to control ANSI
+rendering of string output.
+
 ### $PSUICulture
 
 Contains the name of the user interface (UI) culture that's currently in use
