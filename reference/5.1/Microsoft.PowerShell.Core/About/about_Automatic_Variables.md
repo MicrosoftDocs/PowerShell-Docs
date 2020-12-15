@@ -1,8 +1,7 @@
 ---
-description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell. 
-keywords: powershell,cmdlet
+description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 08/14/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
@@ -197,6 +196,13 @@ Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
 [Using Enumerators](#using-enumerators).
 
+The `$input` variable is also available to the command specified by the
+`-Command` parameter of `pwsh` when invoked from the command line. The
+following example is run from the Windows Command shell.
+
+```CMD
+echo Hello | powershell -Command """$input World!"""
+```
 
 ### $LastExitCode
 
