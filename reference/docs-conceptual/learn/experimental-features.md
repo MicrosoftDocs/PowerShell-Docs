@@ -1,5 +1,5 @@
 ---
-ms.date: 11/11/2020
+ms.date: 12/14/2020
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -25,20 +25,21 @@ For more information about enabling or disabling these features, see
 
 This article describes the experimental features that are available and how to use the feature.
 
-|                            Name                            |   6.2   |   7.0   |   7.1   |
-| ---------------------------------------------------------- | :-----: | :-----: | :-----: |
-| PSTempDrive (mainstream in PS 7.0+)                        | &check; |         |         |
-| PSUseAbbreviationExpansion (mainstream in PS 7.0+)         | &check; |         |         |
-| PSNullConditionalOperators (mainstream in PS 7.1+)         |         | &check; |         |
-| PSUnixFileStat (non-Windows only - mainstream in PS 7.1+)  |         | &check; |         |
-| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
-| PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
-| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; | &check; |
-| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
-| PSNativePSPathResolution                                   |         |         | &check; |
-| PSCultureInvariantReplaceOperator                          |         |         | &check; |
-| PSNotApplyErrorActionToStderr                              |         |         | &check; |
-| PSSubsystemPluginModel                                     |         |         | &check; |
+|                            Name                            |   6.2   |   7.0   |   7.1   |   7.2   |
+| ---------------------------------------------------------- | :-----: | :-----: | :-----: | :-----: |
+| PSTempDrive (mainstream in PS 7.0+)                        | &check; |         |         |         |
+| PSUseAbbreviationExpansion (mainstream in PS 7.0+)         | &check; |         |         |         |
+| PSNullConditionalOperators (mainstream in PS 7.1+)         |         | &check; |         |         |
+| PSUnixFileStat (non-Windows only - mainstream in PS 7.1+)  |         | &check; |         |         |
+| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; | &check; |
+| PSImplicitRemotingBatching                                 | &check; | &check; | &check; | &check; |
+| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; | &check; | &check; |
+| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; | &check; |
+| PSNativePSPathResolution                                   |         |         | &check; | &check; |
+| PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
+| PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
+| PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiRendering                                            |         |         |         | &check: |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -72,6 +73,64 @@ $breakpoint = Get-PSBreakPoint -Runspace $runspace
 In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakPoint` is
 run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` command with the
 **Runspace** parameter. You can then inspect the breakpoint in the `$breakpoint` variable.
+
+## PSAnsiRendering
+
+This experiment was added in PowerShell 7.2. The feature enables changes how the PowerShell engine
+outputs text and add the `$PSStyle` automatic variable to control ANSI rendering of string output.
+
+```powershell
+PS> $PSStyle
+
+Name            MemberType Definition
+----            ---------- ----------
+Reset           Property   string AttributesOff {get;set;}
+Background      Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;set;}
+Blink           Property   string Blink {get;set;}
+BlinkOff        Property   string BlinkOff {get;set;}
+Bold            Property   string Bold {get;set;}
+BoldOff         Property   string BoldOff {get;set;}
+Foreground      Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;set;}
+Formatting      Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;set;}
+Hidden          Property   string Hidden {get;set;}
+HiddenOff       Property   string HiddenOff {get;set;}
+OutputRendering Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
+Reverse         Property   string Reverse {get;set;}
+ReverseOff      Property   string ReverseOff {get;set;}
+Italic          Property   string Standout {get;set;}
+ItalicOff       Property   string StandoutOff {get;set;}
+Underline       Property   string Underlined {get;set;}
+Underline Off   Property   string UnderlinedOff {get;set;}
+```
+
+The base members return strings of ANSI escape sequences mapped to their names. The values are
+settable to allow customization.
+
+For more information, see [about_Automatic_Variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+
+> [!NOTE]
+> For C# developers, you can access `PSStyle` as a singleton. Usage will look like this:
+>
+> ```csharp
+> string output = $"{PSStyle.Instance.Foreground.Red}{PSStyle.Instance.Bold}Hello{PSStyle.Instance.Reset}";
+> ```
+>
+> `PSStyle` exists in the System.Management.Automation namespace.
+
+Along with access to `$PSStyle`, this introduces changes to the PowerShell engine. The PowerShell
+formatting system is updated to respect `$PSStyle.OutputRendering`.
+
+- `StringDecorated` type is added to handle ANSI escaped strings.
+- `string IsDecorated` boolean property is added to return if the string contains ANSI escape
+  sequences based on if the string contains ESC or C1 CSI.
+- The `Length` property returns _only_ the length for the text without the ANSI escape sequences.
+- `StringDecorated Substring(int contentLength)` method returns a substring starting at index 0 up
+  to the content length that is not a part of ANSI escape sequences. This is needed for table
+  formatting to truncate strings and preserve ANSI escape sequences that don't take up printable
+  character space.
+- `string ToString()` method stays the same and returns the plaintext version of the string.
+- `string ToString(bool Ansi)` method returns the raw ANSI embedded string if the `Ansi` parameter
+  is true. Otherwise, a plaintext version with ANSI escape sequences removed is returned.
 
 ## PSCommandNotFoundSuggestion
 
