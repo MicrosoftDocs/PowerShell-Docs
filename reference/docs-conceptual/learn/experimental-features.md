@@ -1,5 +1,5 @@
 ---
-ms.date: 11/11/2020
+ms.date: 12/14/2020
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -84,7 +84,7 @@ PS> $PSStyle
 
 Name            MemberType Definition
 ----            ---------- ----------
-AttributesOff   Property   string AttributesOff {get;set;}
+Reset           Property   string AttributesOff {get;set;}
 Background      Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;set;}
 Blink           Property   string Blink {get;set;}
 BlinkOff        Property   string BlinkOff {get;set;}
@@ -97,10 +97,10 @@ HiddenOff       Property   string HiddenOff {get;set;}
 OutputRendering Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
 Reverse         Property   string Reverse {get;set;}
 ReverseOff      Property   string ReverseOff {get;set;}
-Standout        Property   string Standout {get;set;}
-StandoutOff     Property   string StandoutOff {get;set;}
-Underlined      Property   string Underlined {get;set;}
-UnderlinedOff   Property   string UnderlinedOff {get;set;}
+Italic          Property   string Standout {get;set;}
+ItalicOff       Property   string StandoutOff {get;set;}
+Underline       Property   string Underlined {get;set;}
+Underline Off   Property   string UnderlinedOff {get;set;}
 ```
 
 The base members return ANSI escape sequences mapped to their names. These are also settable so you
@@ -112,6 +112,15 @@ strings with tab completion:
 ```
 
 For more information, see [about_automatic_variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+
+> [!NOTE]
+> For C# developers, you can access `PSStyle` as a singleton. Usage will look like this:
+>
+> ```powershell
+> string output = $"{PSStyle.Instance.Foreground.Red}{PSStyle.Instance.Bold}Hello{PSStyle.Instance.Reset}";
+> ```
+>
+> `PSStyle` exists in the System.Management.Automation namespace.
 
 ## PSCommandNotFoundSuggestion
 
