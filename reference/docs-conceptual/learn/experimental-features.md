@@ -117,6 +117,21 @@ For more information, see [about_Automatic_Variables](/reference/7.2/Microsoft.P
 >
 > `PSStyle` exists in the System.Management.Automation namespace.
 
+Along with access to `$PSStyle`, this introduces changes to the PowerShell engine. The PowerShell
+formatting system is updated to respect `$PSStyle.OutputRendering`.
+
+- `StringDecorated` type is added to handle ANSI escaped strings.
+- `string IsDecorated` boolean property is added to return if the string contains ANSI escape
+  sequences based on if the string contains ESC or C1 CSI.
+- The `Length` property returns _only_ the length for the text without the ANSI escape sequences.
+- `StringDecorated Substring(int contentLength)` method returns a substring starting at index 0 up
+  to the content length that is not a part of ANSI escape sequences. This is needed for table
+  formatting to truncate strings and preserve ANSI escape sequences that don't take up printable
+  character space.
+- `string ToString()` method stays the same and returns the plaintext version of the string.
+- `string ToString(bool Ansi)` method returns the raw ANSI embedded string if the `Ansi` parameter
+  is true. Otherwise, a plaintext version with ANSI escape sequences removed is returned.
+
 ## PSCommandNotFoundSuggestion
 
 Recommends potential commands based on fuzzy matching search after a **CommandNotFoundException**.
