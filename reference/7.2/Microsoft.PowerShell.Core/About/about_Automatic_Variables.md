@@ -512,7 +512,7 @@ following properties:
 
 | Property        | Description                                                |
 | --------------- | ---------------------------------------------------------- |
-| AttributesOff   | |
+| Reset           | Turns off all decorations.                                 |
 | Background      | Nested object to control background coloring               |
 | Blink           | Turns Blink on.                                            |
 | BlinkOff        | Turns Blink off.                                           |
@@ -521,7 +521,7 @@ following properties:
 | Foreground      | Nested object to control foreground coloring.              |
 | Formatting      | A nested object to control default formatting like in      |
 |                 | `Host.PrivateData` such as errors, warnings, etc. In       |
-|                 | addition to colring, you can also control extra attributes |
+|                 | addition to coloring, you can also control extra attributes|
 |                 | like bolding and underlining as well.                      |
 | Hidden          | Turns Hidden on.                                           |
 | HiddenOff       | Turns Hidden off.                                          |
@@ -529,17 +529,17 @@ following properties:
 |                 | rendering.                                                 |
 | Reverse         | Turns Reverse on.                                          |
 | ReverseOff      | Turns Reverse off.                                         |
-| Standout        | Turns Standout on.                                         |
-| StandoutOff     | Turns Standout off.                                        |
-| Underlined      | Turns Underlined on.                                       |
-| UnderlinedOff   | Turns Underlined off.                                      |
+| Italic          | Turns Italic on.                                           |
+| ItalicOff       | Turns Italic off.                                          |
+| Underline       | Turns underlining on.                                      |
+| UnderlineOff    | Turns underlining off.                                     |
 
 The base members return ANSI escape sequences mapped to their names. These are
 also settable so you can change bold to underlined, for example. This makes it
 easier for you to author decorated strings with tab completion:
 
 ```powershell
-"$($PSStyle.Background.LightCyan)Power$($PSStyle.Underlined)$($PSStyle.Bold)Shell$($PSStyle.AttributesOff)"
+"$($PSStyle.Background.LightCyan)Power$($PSStyle.Underlined)$($PSStyle.Bold)Shell$($PSStyle.Reset)"
 ```
 
 The `$PSStyle.Background` and `$PSStyle.Foreground` members contain the
