@@ -76,8 +76,8 @@ run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` c
 
 ## PSAnsiRendering
 
-In PowerShell 7.2, this experiment enables the `$PSStyle` automatic variable to control ANSI
-rendering of string output.
+This experiment was added in PowerShell 7.2. The feature enables changes how the PowerShell engine
+outputs text and add the `$PSStyle` automatic variable to control ANSI rendering of string output.
 
 ```powershell
 PS> $PSStyle
@@ -103,20 +103,15 @@ Underline       Property   string Underlined {get;set;}
 Underline Off   Property   string UnderlinedOff {get;set;}
 ```
 
-The base members return ANSI escape sequences mapped to their names. These are also settable so you
-can change bold to underlined, for example. This makes it easier for scripters to author decorated
-strings with tab completion:
+The base members return strings of ANSI escape sequences mapped to their names. The values are
+settable to allow customization.
 
-```powershell
-"$($PSStyle.Background.LightCyan)Power$($PSStyle.Underlined)$($PSStyle.Bold)Shell$($PSStyle.AttributesOff)"
-```
-
-For more information, see [about_automatic_variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+For more information, see [about_Automatic_Variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 
 > [!NOTE]
 > For C# developers, you can access `PSStyle` as a singleton. Usage will look like this:
 >
-> ```powershell
+> ```csharp
 > string output = $"{PSStyle.Instance.Foreground.Red}{PSStyle.Instance.Bold}Hello{PSStyle.Instance.Reset}";
 > ```
 >
