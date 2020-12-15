@@ -1,7 +1,7 @@
 ---
-description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
+description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 08/14/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
@@ -189,12 +189,20 @@ blocks (which are unnamed functions).
   > End block in the same function or script block.
 
 Since `$input` is an enumerator, accessing any of it's properties causes
-`$input` to no longer be available. You can store `$input` in another variable to
-reuse the `$input` properties.
+`$input` to no longer be available. You can store `$input` in another variable
+to reuse the `$input` properties.
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
 [Using Enumerators](#using-enumerators).
+
+The `$input` variable is also available to the command specified by the
+`-Command` parameter of `pwsh` when invoked from the command line. The
+following example is run from the Windows Command shell.
+
+```CMD
+echo Hello | pwsh -Command """$input World!"""
+```
 
 ### $IsCoreCLR
 
@@ -249,15 +257,12 @@ is particularly useful for finding the name of the current script.
 Beginning in PowerShell 3.0, `MyInvocation` has the following new
 properties.
 
-| Property      | Description                                         |
-| ------------- | --------------------------------------------------- |
-| **PSScriptRoot**  | Contains the full path to the script that invoked   |
-|               | the current command. The value of this property is  |
-|               | populated only when the caller is a script.         |
-| **PSCommandPath** | Contains the full path and file name of the script  |
-|               | that invoked the current command. The value of this |
-|               | property is populated only when the caller is a     |
-|               | script.                                             |
+- **PSScriptRoot** - Contains the full path to the script that invoked the
+  current command. The value of this property is populated only when the caller
+  is a script.
+- **PSCommandPath** - Contains the full path and file name of the script that
+  invoked the current command. The value of this property is populated only
+  when the caller is a script.
 
 Unlike the `$PSScriptRoot` and `$PSCommandPath` automatic variables, the
 **PSScriptRoot** and **PSCommandPath** properties of the `$MyInvocation`
@@ -492,6 +497,67 @@ from the originating session. To add data to the **ApplicationArguments**
 property, use the **ApplicationArguments** parameter of the
 `New-PSSessionOption` cmdlet.
 
+### $PSStyle
+
+> [!NOTE]
+> This variable is only available when the `PSAnsiRendering` experimental
+> feature ia enabled. For more information, see
+> [about_Experimental_Features](about_Experimental_Features.md) and
+> [Using experimental features](/powershell/scripting/learn/experimental-features).
+
+As of PowerShell 7.2 you can now access the `$PSStyle` automatic variable to
+view and change the rendering of ANSI string output. The variable contains the
+following properties:
+
+- **Reset** - Turns off all decorations
+- **Background** - Nested object to control background coloring
+- **Blink** - Turns Blink on
+- **BlinkOff** - Turns Blink off
+- **Bold** - Turns Bold on
+- **BoldOff** - Turns Bold off
+- **Foreground** - Nested object to control foreground coloring
+- **Formatting** - Controls default formatting for output streams
+- **Hidden** - Turns Hidden on
+- **HiddenOff** - Turns Hidden off
+- **OutputRendering** - Control when output rendering is used
+- **Reverse** - Turns Reverse on
+- **ReverseOff** - Turns Reverse off
+- **Italic** - Turns Italic on
+- **ItalicOff** - Turns Italic off
+- **Underline** - Turns underlining on
+- **UnderlineOff** - Turns underlining off
+
+The base members return strings of ANSI escape sequences mapped to their names.
+The values are settable to allow customization. For example, you could change
+bold to underlined. The property names makes it easier for you to create
+decorated strings using tab completion:
+
+```powershell
+"$($PSStyle.Background.LightCyan)Power$($PSStyle.Underline)$($PSStyle.Bold)Shell$($PSStyle.Reset)"
+```
+
+The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
+contain the ANSI escape sequences for the 16 standard console colors as well as
+an `Rgb()` method to specify 24-bit color. The values are settable and can
+contain any number of ANSI escape sequences.
+
+`$PSStyle.Formatting` is a nested object to control default formatting of
+debug, error, verbose, and warning messages. You can also control attributes
+like bolding and underlining. It replaces `$Host.PrivateData` as the way to
+manage colors for formatting rendering. `$Host.PrivateData` continues to exist
+for backwards compatibility but is not connected to `$PSStyle.Formatting`.
+
+`$PSStyle.OutputRendering` is a `System.Management.Automation.OutputRendering`
+enum with the values:
+
+- **Automatic**: This is the default. If the host supports VirtualTerminal,
+  then ANSI is always passed as-is, otherwise plaintext
+- **ANSI**: ANSI is always passed through as-is
+- **PlainText**: ANSI escape sequences are always stripped so that it is only
+  plain text
+- **HostOnly**: This would be the macOS behavior where the ANSI escape
+  sequences are removed in redirected or piped output.
+
 ### $PSUICulture
 
 Contains the name of the user interface (UI) culture that's currently in use
@@ -507,28 +573,22 @@ Contains a read-only hash table that displays details about the version of
 PowerShell that is running in the current session. The table includes the
 following items:
 
-| Property                  | Description                                   |
-| ------------------------- | --------------------------------------------- |
-| **PSVersion**             | The PowerShell version number                 |
-| **PSEdition**             | This property has the value of 'Desktop' for  |
-|                           | PowerShell 4 and below as well as PowerShell  |
-|                           | 5.1 on full-featured Windows editions.        |
-|                           | This property has the value of 'Core' for     |
-|                           | PowerShell 6 and above as well as PowerShell  |
-|                           | PowerShell 5.1 on reduced-footprint editions  |
-|                           | like Windows Nano Server or Windows IoT.      |
-| **GitCommitId**           | The commit Id of the source files, in GitHub, |
-| **OS**                    | Description of the operating system that      |
-|                           | PowerShell is running on.                     |
-| **Platform**              | Platform that the operating system is running |
-|                           | on. The value on Linux and macOS is **Unix**. |
-|                           | See `$IsMacOs` and `$IsLinux`.                |
-| **PSCompatibleVersions**  | Versions of PowerShell that are compatible    |
-|                           | with the current version                      |
-| **PSRemotingProtocolVersion** | The version of the PowerShell remote      |
-|                           | management protocol.                          |
-| **SerializationVersion**  | The version of the serialization method       |
-| **WSManStackVersion**     | The version number of the WS-Management stack |
+- **PSVersion** - The PowerShell version number
+- **PSEdition** - This property has the value of 'Desktop' for PowerShell 4 and
+  below as well as PowerShell 5.1 on full-featured Windows editions. This
+  property has the value of 'Core' for PowerShell 6 and above as well as
+  PowerShell PowerShell 5.1 on reduced-footprint editions like Windows Nano
+  Server or Windows IoT.
+- **GitCommitId** - The commit Id of the source files, in GitHub,
+- **OS** - Description of the operating system that PowerShell is running on.
+- **Platform** - Platform that the operating system is running on. The value on
+  Linux and macOS is **Unix**. See `$IsMacOs` and `$IsLinux`.
+- **PSCompatibleVersions** - Versions of PowerShell that are compatible with
+  the current version
+- **PSRemotingProtocolVersion** - The version of the PowerShell remote
+  management protocol.
+- **SerializationVersion** - The version of the serialization method
+- **WSManStackVersion** - The version number of the WS-Management stack
 
 ### $PWD
 
