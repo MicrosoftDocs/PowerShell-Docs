@@ -228,20 +228,20 @@ Test collection:
 8
 9
 
-Memebers greater than 7
+Members greater than 7
 8
 9
 
-Memebers greater than or equal to 7
+Members greater than or equal to 7
 7
 8
 9
 
-Memebers smaller than 7
+Members smaller than 7
 5
 6
 
-Memebers smaller than or equal to 7
+Members smaller than or equal to 7
 5
 6
 7
