@@ -1,7 +1,7 @@
 ---
-description:  Describes how the `continue` statement immediately returns the program flow to the top of a program loop, a `switch` statement, or a `trap` statement. 
+description:  Describes how the `continue` statement immediately returns the program flow to the top of a program loop, a `switch` statement, or a `trap` statement.
 keywords: powershell,cmdlet
-ms.date: 06/04/2020
+ms.date: 12/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_continue?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Continue
@@ -126,7 +126,7 @@ outside of an enclosing construct that supports it, can inadvertently terminate
 their _callers_.
 
 Using `continue` inside a pipeline, such as a `ForEach-Object` script block,
-not only exits the pipeline, tt potentially terminates the entire runspace.
+not only exits the pipeline, it potentially terminates the entire runspace.
 
 ## See also
 
