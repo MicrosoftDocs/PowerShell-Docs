@@ -126,7 +126,7 @@ outside of an enclosing construct that supports it, can inadvertently terminate
 their _callers_.
 
 Using `continue` inside a pipeline, such as a `ForEach-Object` script block,
-not only exits the pipeline, tt potentially terminates the entire runspace.
+not only exits the pipeline, it potentially terminates the entire runspace.
 
 ## See also
 
