@@ -1,0 +1,19 @@
+
+    Directory: C:\Git\PS-Docs\PowerShell-Docs\reference
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          12/16/2020  8:22 AM                5.1
+d----          12/16/2020  8:43 AM                7.0
+d----           11/4/2020  1:38 PM                7.1
+d----          11/17/2020 10:42 AM                7.2
+d----          10/29/2020  8:27 PM                bread
+d----          12/10/2020  1:52 PM                docs-conceptual
+d----          11/18/2020  4:41 PM                includes
+d----          11/17/2020  7:04 PM                mapping
+d----          10/29/2020  8:27 PM                media
+d----          12/10/2020  1:52 PM                module
+-a---          12/10/2020  1:52 PM          11736 docfx.json
+-a---          11/11/2020  1:38 PM           7484 index.yml
+-a---          10/29/2020  8:27 PM           2613 README.md
+
