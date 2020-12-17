@@ -74,9 +74,10 @@ There are a few exceptions:
 
 ### -eq and -ne
 
-When the left-hand side is scalar, `-eq` returns **True** if the right-hand side is
-an exact match, otherwise, `-eq` returns **False**. `-ne` does the opposite; it
-returns **False** when both sides match; otherwise, `-ne` returns True.
+When the left-hand side is scalar, `-eq` returns **True** if the right-hand
+side is an exact match, otherwise, `-eq` returns **False**. `-ne` does the
+opposite; it returns **False** when both sides match; otherwise, `-ne` returns
+True.
 
 Example:
 
@@ -131,12 +132,12 @@ False
 ```
 
 In this example, we created two objects with identical properties. Yet, the
-equality test result is **False** because they are different objects. If you intend
-to develop meaningfully comparable classes, you need to implement
-[System.IEquatable\<T>][2] in your class.The following example demonstrates the partial
-implementation of a MyFileInfoSet class that implements [System.IEquatable\<T>][2] and has two properties,
-File and Size. The Equals method returns True if the File and Size properties of two MyFileInfoSet
-objects are identical; otherwise, it returns False.
+equality test result is **False** because they are different objects. To create
+comparable classes, you need to implement [System.IEquatable\<T>][2] in your
+class. The following example demonstrates the partial implementation of a
+**MyFileInfoSet** class that implements [System.IEquatable\<T>][2] and has two
+properties, **File** and **Size**. The `Equals()` method returns True if the
+File and Size properties of two **MyFileInfoSet** objects are the same.
 
 ```powershell
 class MyFileInfoSet : System.IEquatable[Object] {
@@ -268,8 +269,7 @@ Members smaller than or equal to 7
 7
 ```
 
-These operators aren't restricted to numbers; they work with any class that
-implements [System.IComparable][1].
+These operators work with any class that implements [System.IComparable][1].
 
 Examples:
 
