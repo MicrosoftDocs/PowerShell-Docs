@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 12/11/2020
+ms.date: 12/17/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
@@ -119,7 +119,7 @@ The following example demonstrates the issue.
 ```powershell
 class MyFileInfoSet {
     [String]$File
-    [String]$Size
+    [Int64]$Size
 }
 $a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
 $b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
@@ -133,7 +133,28 @@ False
 In this example, we created two objects with identical properties. Yet, the
 equality test result is **False** because they are different objects. If you intend
 to develop meaningfully comparable classes, you need to implement
-[System.IComparable][1] in your class.
+[System.IEquatable\<T>][2] in your class.The following example demonstrates the partial
+implementation of a MyFileInfoSet class that implements [System.IEquatable\<T>][2] and has two properties,
+File and Size. The Equals method returns True if the File and Size properties of two MyFileInfoSet
+objects are identical; otherwise, it returns False.
+
+```powershell
+class MyFileInfoSet : System.IEquatable[Object] {
+    [String]$File
+    [Int64]$Size
+
+    [bool] Equals([Object] $obj) {
+        return ($this.File -eq $obj.File) -and ($this.Size -eq $obj.Size)
+    }
+}
+$a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$a -eq $b
+```
+
+```Output
+True
+```
 
 A prominent example of comparing arbitrary objects is to find out if they are
 null. But if you need to determine whether a variable is `$null`, you must put
@@ -653,6 +674,7 @@ $a -isnot $b.GetType() # Output: True
 - [Where-Object](xref:Microsoft.PowerShell.Core.Where-Object)
 
 [1]: /dotnet/api/system.icomparable
-[2]: /dotnet/api/system.text.regularexpressions.match
-[3]: about_Redirection.md#potential-confusion-with-comparison-operators
-[4]: /dotnet/standard/base-types/substitutions-in-regular-expressions
+[2]: /dotnet/api/system.iequatable-1
+[3]: /dotnet/api/system.text.regularexpressions.match
+[4]: about_Redirection.md#potential-confusion-with-comparison-operators
+[5]: /dotnet/standard/base-types/substitutions-in-regular-expressions
