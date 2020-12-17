@@ -39,7 +39,7 @@ This article describes the experimental features that are available and how to u
 | PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
 | PSSubsystemPluginModel                                     |         |         | &check; | &check; |
-| PSAnsiRendering                                            |         |         |         | &check: |
+| PSAnsiRendering                                            |         |         |         | &check; |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
