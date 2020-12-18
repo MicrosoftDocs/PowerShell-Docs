@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
@@ -168,11 +168,15 @@ The new properties that are now part of the output are:
 
 ### -Stream
 
-Gets the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are
-supported. To get all streams, use an asterisk (`*`). This parameter isn't valid on folders.
+> [!NOTE]
+> This Parameter is only available on Windows.
 
-**Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Item` cmdlet.
-This parameter works only in file system drives.
+Gets the specified alternative data stream from the file. Enter the stream name. Wildcards are
+supported. To get all streams, use an asterisk (`*`). This parameter is valid on directories, but
+note that directories do not have data streams by default.
+
+This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.2, `Get-Item` can get
+alternative data streams from both files and directories.
 
 ```yaml
 Type: System.String[]

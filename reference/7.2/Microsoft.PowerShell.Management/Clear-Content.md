@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/18/2018
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-content?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Content
@@ -84,16 +84,24 @@ PS C:\>
 
 ### -Stream
 
+> [!NOTE]
+> This Parameter is only available on Windows.
+
 Specifies an alternative data stream for content.
 If the stream does not exist, this cmdlet creates it.
 Wildcard characters are not supported.
 
-Stream is a dynamic parameter that the FileSystem provider adds to `Clear-Content`.
-This parameter works only in file system drives.
+**Stream** is a dynamic parameter that the FileSystem provider adds to `Clear-Content`. This
+parameter works only in file system drives, and will clear the content of alternative data streams
+on both files and directories.
 
-You can use the `Clear-Content` cmdlet to change the content of the Zone.Identifier alternate data stream.
-However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
-If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
+You can use the `Clear-Content` cmdlet to change the content of the `Zone.Identifier` alternate data
+stream. However, we do not recommend this as a way to eliminate security checks that block files
+that are downloaded from the Internet. If you verify that a downloaded file is safe, use the
+`Unblock-File` cmdlet.
+
+This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.2, `Clear-Content` can set the
+content of alternative data streams on both files and directories.
 
 ```yaml
 Type: System.String

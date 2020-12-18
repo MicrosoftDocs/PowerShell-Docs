@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/07/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
@@ -352,6 +352,9 @@ Accept wildcard characters: False
 
 ### -Stream
 
+> [!NOTE]
+> This Parameter is only available on Windows.
+
 The **Stream** parameter is a dynamic parameter that the FileSystem provider adds to `Remove-Item`.
 This parameter works only in file system drives.
 
@@ -359,7 +362,8 @@ You can use `Remove-Item` to delete an alternative data stream. However, it is n
 way to eliminate security checks that block files that are downloaded from the Internet. If you
 verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
 
-This parameter was introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0. As of Windows PowerShell 7.2, `Remove-Item`
+can remove alternative data streams from directories as well as files.
 
 ```yaml
 Type: System.String[]
