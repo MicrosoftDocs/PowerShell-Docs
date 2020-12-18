@@ -176,7 +176,7 @@ supported. To get all streams, use an asterisk (`*`). This parameter is valid on
 note that directories do not have data streams by default.
 
 This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.2, `Get-Item` can get
-alternative data streams from both files and directories.
+alternative data streams from directories as well as files.
 
 ```yaml
 Type: System.String[]
@@ -231,11 +231,12 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
-provider is the only installed PowerShell provider that supports filters. Filters are more efficient
-than other parameters. The provider applies filter when the cmdlet gets the objects rather than
-having PowerShell filter the objects after they're retrieved. The filter string is passed to the
-.NET API to enumerate files. The API only supports `*` and `?` wildcards.
+Specifies a filter to qualify the **Path** parameter. The
+[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only
+installed PowerShell provider that supports filters. Filters are more efficient than other
+parameters. The provider applies filter when the cmdlet gets the objects rather than having
+PowerShell filter the objects after they're retrieved. The filter string is passed to the .NET API
+to enumerate files. The API only supports `*` and `?` wildcards.
 
 ```yaml
 Type: System.String
@@ -331,10 +332,10 @@ Accept wildcard characters: True
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

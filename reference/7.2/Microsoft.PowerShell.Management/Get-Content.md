@@ -146,8 +146,8 @@ Length        : 44
 ```
 
 ```powershell
-# Retrieve the content of the primary, or $DATA stream.	# Retrieve the content of the primary stream. Note the singlequotes to prevent variable substitution.
-Get-Content -Path .\Stream.txt -Stream $DATA	Get-Content -Path .\Stream.txt -Stream ':$DATA'
+# Retrieve the content of the primary, or $DATA stream.    # Retrieve the content of the primary stream. Note the singlequotes to prevent variable substitution.
+Get-Content -Path .\Stream.txt -Stream $DATA    Get-Content -Path .\Stream.txt -Stream ':$DATA'
 ```
 
 ```Output
@@ -604,7 +604,7 @@ Wildcards are not supported.
 This parameter works only in file system drives on Windows systems.
 
 This parameter was introduced in Windows PowerShell 3.0. In PowerShell 7.2, Get-Content can retrieve
-the content of alternative data streams on both files and directories.
+the content of alternative data streams from directories as well as files.
 
 ```yaml
 Type: System.String
@@ -640,10 +640,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
