@@ -471,4 +471,3 @@ design.
 [about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
 
 [about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
-
