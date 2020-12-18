@@ -402,6 +402,9 @@ Accept wildcard characters: True
 
 ### -Stream
 
+> [!NOTE]
+> This Parameter is only available on Windows.
+
 Specifies an alternative data stream for content. If the stream does not exist, this cmdlet creates
 it. Wildcard characters are not supported.
 
