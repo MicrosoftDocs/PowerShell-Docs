@@ -392,7 +392,7 @@ stream. However, we do not recommend this as a way to eliminate security checks 
 that are downloaded from the Internet. If you verify that a downloaded file is safe, use the
 `Unblock-File` cmdlet.
 
-This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.1, Set-Content can set the
+This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.2, Set-Content can set the
 content of alternative data streams on both files and directories.
 
 ```yaml

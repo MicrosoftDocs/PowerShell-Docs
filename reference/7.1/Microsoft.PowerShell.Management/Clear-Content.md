@@ -102,7 +102,7 @@ You can use the `Clear-Content` cmdlet to change the content of the Zone.Identif
 However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
 If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
 
-This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.1, Clear-Content can set the
+This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.2, Clear-Content can set the
 content of alternative data streams on both files and directories.
 
 ```yaml

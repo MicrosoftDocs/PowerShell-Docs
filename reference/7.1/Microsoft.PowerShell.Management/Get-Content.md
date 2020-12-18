@@ -609,7 +609,7 @@ Wildcards are not supported.
 **Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Content` cmdlet.
 This parameter works only in file system drives on Windows systems.
 
-This parameter was introduced in Windows PowerShell 3.0.  In PowerShell 7.1, Get-Content can
+This parameter was introduced in Windows PowerShell 3.0.  In PowerShell 7.2, Get-Content can
 retrieve the content of alternative data streams on both files and directories.
 
 ```yaml

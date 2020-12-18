@@ -175,7 +175,7 @@ This parameter is valid on directories, but note that directories do not have da
 **Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Item` cmdlet.
 This parameter works only in file system drives.
 
-This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.1, Get-Item can get
+This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.2, Get-Item can get
 alternative data streams from both files and directories.
 
 ```yaml

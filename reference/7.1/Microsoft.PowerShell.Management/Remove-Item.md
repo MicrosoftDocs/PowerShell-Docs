@@ -362,7 +362,7 @@ You can use `Remove-Item` to delete an alternative data stream. However, it is n
 way to eliminate security checks that block files that are downloaded from the Internet. If you
 verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
 
-This parameter was introduced in Windows PowerShell 3.0.  As of Windows PowerShell 7.1, Remove-Item
+This parameter was introduced in Windows PowerShell 3.0.  As of Windows PowerShell 7.2, Remove-Item
 can remove alternative data streams from directories as well as files.
 
 ```yaml
