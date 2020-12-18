@@ -125,7 +125,8 @@ faster than retrieving all of the lines and using the `[-1]` index notation.
 ### Example 5: Get the content of an alternate data stream
 
 This example describes how to use the **Stream** parameter to get the content of an alternate data
-stream for files stored on a Windows NTFS volume. In this example, the `Set-Content` cmdlet is used
+stream for files and directories stored on a Windows NTFS volume.
+In this example, the `Set-Content` cmdlet is used
 to create sample content in a file named `Stream.txt`.
 
 ```powershell
@@ -147,8 +148,30 @@ Length        : 44
 ```
 
 ```powershell
-# Retrieve the content of the primary, or $DATA stream.
-Get-Content -Path .\Stream.txt -Stream $DATA
+# Retrieve the content of the primary stream. Note the singlequotes to prevent variable substitution.
+Get-Content -Path .\Stream.txt -Stream ':$DATA'
+```
+
+```Output
+This is the content of the Stream.txt file
+```
+
+```powershell
+# Alternative way to get the same content.
+Get-Content -Path .\Stream.txt -Stream ""
+# The primary stream doesn't need to be specified to get the primary stream of the file.
+# This gets the same data as the prior two examples.
+Get-Content -Path .\Stream.txt
+```
+
+```Output
+This is the content of the Stream.txt file
+```
+
+```powershell
+# The primary stream doesn't need to be specified to get the primary stream of the file.
+# This gets the same data as the prior two examples.
+Get-Content -Path .\Stream.txt
 ```
 
 ```Output
@@ -195,8 +218,10 @@ Added a stream named NewStream to Stream.txt
 
 The **Stream** parameter is a dynamic parameter of the
 [FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
-By default `Get-Content` only retrieves data from the primary, or `$DATA` stream. **Streams** can be
+By default `Get-Content` only retrieves data from the default, or `':$DATA'` stream. **Streams** can be
 used to store hidden data such as attributes, security settings, or other data.
+They can also be stored on directories without being child items. Directories cannot and do not
+have default data streams.
 
 ### Example 6: Get raw content
 
@@ -576,12 +601,16 @@ Accept wildcard characters: False
 
 ### -Stream
 
-Gets the contents of the specified alternate NTFS file stream from the file. Enter the stream name.
+This parameter is valid only on Windows.
+
+Gets the contents of the specified alternative data stream from the file. Enter the stream name.
 Wildcards are not supported.
 
 **Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Content` cmdlet.
-This parameter works only in file system drives on Windows systems. This parameter was introduced in
-Windows PowerShell 3.0.
+This parameter works only in file system drives on Windows systems.
+
+This parameter was introduced in Windows PowerShell 3.0.  In PowerShell 7.1, Get-Content can
+retrieve the content of alternative data streams on both files and directories.
 
 ```yaml
 Type: System.String

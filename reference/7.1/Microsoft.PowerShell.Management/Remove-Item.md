@@ -353,6 +353,8 @@ Accept wildcard characters: False
 
 ### -Stream
 
+This parameter is valid only on Windows.
+
 The **Stream** parameter is a dynamic parameter that the FileSystem provider adds to `Remove-Item`.
 This parameter works only in file system drives.
 
@@ -360,7 +362,8 @@ You can use `Remove-Item` to delete an alternative data stream. However, it is n
 way to eliminate security checks that block files that are downloaded from the Internet. If you
 verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
 
-This parameter was introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.  As of Windows PowerShell 7.1, Remove-Item
+can remove alternative data streams from directories as well as files.
 
 ```yaml
 Type: System.String[]

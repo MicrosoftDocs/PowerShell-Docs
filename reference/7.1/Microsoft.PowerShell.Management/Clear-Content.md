@@ -85,16 +85,25 @@ PS C:\>
 
 ### -Stream
 
+This parameter is valid only on Windows.
+
 Specifies an alternative data stream for content.
 If the stream does not exist, this cmdlet creates it.
 Wildcard characters are not supported.
 
+**Stream** is a dynamic parameter that the **FileSystem** provider adds to `Clear-Content`. This
+parameter works only in file system drives.
+
 Stream is a dynamic parameter that the FileSystem provider adds to `Clear-Content`.
-This parameter works only in file system drives.
+This parameter works only in file system drives,
+and will clear the content of alternative data streams on both files and directories.
 
 You can use the `Clear-Content` cmdlet to change the content of the Zone.Identifier alternate data stream.
 However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
 If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
+
+This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.1, Clear-Content can set the
+content of alternative data streams on both files and directories.
 
 ```yaml
 Type: System.String

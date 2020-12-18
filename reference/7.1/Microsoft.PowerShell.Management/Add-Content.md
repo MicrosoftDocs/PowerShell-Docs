@@ -407,6 +407,8 @@ Accept wildcard characters: True
 
 ### -Stream
 
+This parameter is valid only on Windows.
+
 Specifies an alternative data stream for content. If the stream does not exist, this cmdlet creates
 it. Wildcard characters are not supported.
 
@@ -418,7 +420,8 @@ data stream. However, we do not recommend this as a way to eliminate security ch
 files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the
 `Unblock-File` cmdlet.
 
-This parameter was introduced in PowerShell 3.0.
+This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.1, Add-Content can
+target alternative data streams on both files and directories.
 
 ```yaml
 Type: System.String
