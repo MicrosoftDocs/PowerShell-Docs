@@ -195,11 +195,11 @@ namespace HostPS3
       // Create an IAsyncResult object and call the
       // BeginInvoke method to start running the
       // command pipeline asynchronously.
-      IAsyncResult async = ps.BeginInvoke();
+      IAsyncResult asyncpl = ps.BeginInvoke();
 
       // Using the PowerShell.Invoke method, run the command
       // pipeline using the default runspace.
-      foreach (PSObject result in ps.EndInvoke(async))
+      foreach (PSObject result in ps.EndInvoke(asyncpl))
       {
         Console.WriteLine("{0,-20}{1}",
                 result.Members["ProcessName"].Value,
