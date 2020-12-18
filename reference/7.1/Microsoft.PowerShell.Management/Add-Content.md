@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/19/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
@@ -407,15 +406,19 @@ Accept wildcard characters: True
 
 ### -Stream
 
+> [!NOTE]
+> This Parameter is only available on Windows.
+
 Specifies an alternative data stream for content. If the stream does not exist, this cmdlet creates
 it. Wildcard characters are not supported.
 
 **Stream** is a dynamic parameter that the FileSystem provider adds to `Add-Content`. This
 parameter works only in file system drives.
 
-You can use the `Add-Content` cmdlet to change the content of the **Zone.Identifier** alternate
-data stream. However, we do not recommend this as a way to eliminate security checks that block
-files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the
+You can use the `Add-Content` cmdlet to change the content of any alternate
+data stream, such as `Zone.Identifier`. However, we do not recommend this as
+a way to eliminate security checks that block files that are downloaded from
+the Internet. If you verify that a downloaded file is safe, use the
 `Unblock-File` cmdlet.
 
 This parameter was introduced in PowerShell 3.0.
@@ -486,7 +489,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -528,4 +535,3 @@ represents the content. Otherwise, this cmdlet does not generate any output.
 [New-Item](New-Item.md)
 
 [Set-Content](Set-Content.md)
-

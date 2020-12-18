@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/19/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
@@ -146,12 +146,30 @@ Length        : 44
 ```
 
 ```powershell
-# Retrieve the content of the primary, or $DATA stream.
-Get-Content -Path .\Stream.txt -Stream $DATA
+# Retrieve the content of the primary, or $DATA stream.    # Retrieve the content of the primary stream. Note the singlequotes to prevent variable substitution.
+Get-Content -Path .\Stream.txt -Stream $DATA    Get-Content -Path .\Stream.txt -Stream ':$DATA'
 ```
 
 ```Output
 This is the content of the Stream.txt file
+```
+
+```powershell
+# Alternative way to get the same content.
+Get-Content -Path .\Stream.txt -Stream ""
+# The primary stream doesn't need to be specified to get the primary stream of the file.
+# This gets the same data as the prior two examples.
+Get-Content -Path .\Stream.txt
+```
+
+```Output
+This is the content of the Stream.txt file
+```
+
+```powershell
+# The primary stream doesn't need to be specified to get the primary stream of the file.
+# This gets the same data as the prior two examples.
+Get-Content -Path .\Stream.txt
 ```
 
 ```powershell
@@ -192,10 +210,10 @@ Get-Content -Path .\Stream.txt -Stream NewStream
 Added a stream named NewStream to Stream.txt
 ```
 
-The **Stream** parameter is a dynamic parameter of the
-[FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
-By default `Get-Content` only retrieves data from the primary, or `$DATA` stream. **Streams** can be
-used to store hidden data such as attributes, security settings, or other data.
+The **Stream** parameter is a dynamic parameter of the [FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
+By default `Get-Content` only retrieves data from the default, or `:$DATA` stream. **Streams** can
+be used to store hidden data such as attributes, security settings, or other data. They can also be
+stored on directories without being child items.
 
 ### Example 6: Get raw content
 
@@ -575,12 +593,17 @@ Accept wildcard characters: False
 
 ### -Stream
 
+> [!NOTE]
+> This Parameter is only available on Windows.
+
 Gets the contents of the specified alternate NTFS file stream from the file. Enter the stream name.
 Wildcards are not supported.
 
 **Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Content` cmdlet.
-This parameter works only in file system drives on Windows systems. This parameter was introduced in
-Windows PowerShell 3.0.
+This parameter works only in file system drives on Windows systems.
+
+This parameter was introduced in Windows PowerShell 3.0. In PowerShell 7.2, Get-Content can retrieve
+the content of alternative data streams from directories as well as files.
 
 ```yaml
 Type: System.String
@@ -616,10 +639,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -655,4 +678,3 @@ providers in your session, use the `Get-PSProvider` cmdlet. For more information
 [Get-PSProvider](Get-PSProvider.md)
 
 [Set-Content](Set-Content.md)
-

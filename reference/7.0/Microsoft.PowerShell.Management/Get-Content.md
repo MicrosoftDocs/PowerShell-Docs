@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
@@ -193,10 +192,10 @@ Get-Content -Path .\Stream.txt -Stream NewStream
 Added a stream named NewStream to Stream.txt
 ```
 
-The **Stream** parameter is a dynamic parameter of the
-[FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
-By default `Get-Content` only retrieves data from the primary, or `$DATA` stream. **Streams** can be
-used to store hidden data such as attributes, security settings, or other data.
+The **Stream** parameter is a dynamic parameter of the [FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
+By default `Get-Content` only retrieves data from the default, or `:$DATA` stream. **Streams** can
+be used to store hidden data such as attributes, security settings, or other data. They can also be
+stored on directories without being child items.
 
 ### Example 6: Get raw content
 
@@ -239,7 +238,7 @@ Get-Member -InputObject $bytearray
 ```
 
 ```Output
-TypeName: System.Byte[]
+   TypeName: System.Byte[]
 
 Name           MemberType            Definition
 ----           ----------            ----------
@@ -570,6 +569,9 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
+
+> [!NOTE]
+> This Parameter is only available on Windows.
 
 Gets the contents of the specified alternate NTFS file stream from the file. Enter the stream name.
 Wildcards are not supported.
