@@ -204,7 +204,7 @@ Enter-PSHostProcess -CustomPipeName mydebugpipe
 
 Accepts a Base64-encoded string version of a command. Use this parameter to
 submit commands to PowerShell that require complex, nested quoting. The Base64
-representation must be a UTF-16 encoded string.
+representation must be a UTF-16LE encoded string.
 
 For example:
 

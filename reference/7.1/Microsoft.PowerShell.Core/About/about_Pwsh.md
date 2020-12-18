@@ -1,6 +1,5 @@
 ---
-description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax. 
-keywords: powershell,cmdlet
+description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -205,7 +204,7 @@ Enter-PSHostProcess -CustomPipeName mydebugpipe
 
 Accepts a Base64-encoded string version of a command. Use this parameter to
 submit commands to PowerShell that require complex, nested quoting. The Base64
-representation must be a UTF-16 encoded string.
+representation must be a UTF-16LE encoded string.
 
 For example:
 
