@@ -62,7 +62,7 @@ For example, you can add a new registry entry to a key and establish or change i
 
 This command sets the value of the **IsReadOnly** property of the "final.doc" file to "true". It
 uses **Path** to specify the file, **Name** to specify the name of the property, and the **Value**
-pazrameter to specify the new value.
+parameter to specify the new value.
 
 The file is a **System.IO.FileInfo** object and **IsReadOnly** is just one of its properties.
 To see all of the properties, type `Get-Item C:\GroupFiles\final.doc | Get-Member -MemberType Property`.
