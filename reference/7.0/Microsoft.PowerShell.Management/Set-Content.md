@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-content?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Content
@@ -373,6 +373,9 @@ Accept wildcard characters: True
 ```
 
 ### -Stream
+
+> [!NOTE]
+> This Parameter is only available on Windows.
 
 Specifies an alternative data stream for content. If the stream does not exist, this cmdlet creates
 it. Wildcard characters are not supported.
