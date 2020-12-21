@@ -612,13 +612,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ThrottleLimit
-
-Specifies the number of script blocks that in parallel. Input objects are blocked until
-the running script block count falls below the **ThrottleLimit**. The default value is `5`.
-
-This parameter was introduced in PowerShell 7.0.
-
 ```yaml
 Type: System.Int32
 Parameter Sets: ParallelParameterSet
