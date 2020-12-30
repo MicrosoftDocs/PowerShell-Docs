@@ -133,11 +133,18 @@ $Node = "ostc-dsc-01"
 $Credential = Get-Credential -UserName "root" -Message "Enter Password:"
 
 #Ignore SSL certificate validation
-#$opt = New-CimSessionOption -UseSsl $true -SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true
+#$opt = New-CimSessionOption -UseSsl -SkipCACheck -SkipCNCheck -SkipRevocationCheck
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl $true
-$Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Authentication basic -SessionOption $opt -OperationTimeoutSec 90
+$opt = New-CimSessionOption -UseSsl
+
+$Sess = New-CimSession `
+    -Credential $credential `
+    -ComputerName $Node `
+    -Port 5986 `
+    -Authentication basic `
+    -SessionOption $opt `
+    -OperationTimeoutSec 90
 ```
 
 > [!NOTE]
@@ -148,7 +155,7 @@ $Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Aut
 > is not trusted by the Windows computer that you are running the
 > [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet on, you can choose to ignore
 > certificate validation with the CIMSession Options:
-> `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
+> `-SkipCACheck -SkipCNCheck -SkipRevocationCheck`
 
 Run the following command to push the DSC configuration to the Linux node.
 
@@ -184,7 +191,7 @@ scripts are locate in `/opt/microsoft/dsc/Scripts` and include the following:
 
   Installs a custom DSC resource module. Requires the path to a .zip file containing the module shared object library and schema MOF files.
 
- `# sudo ./InstallModule.py /tmp/cnx_Resource.zip`
+  `# sudo ./InstallModule.py /tmp/cnx_Resource.zip`
 
 - RemoveModule.py
 
