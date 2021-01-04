@@ -179,7 +179,7 @@ value from those that take an **AuthenticationLevel** parameter, even when they 
 This example shows how to use the `Get-Command` cmdlet with an alias.
 
 ```powershell
-Get-Command Name dir
+Get-Command -Name dir
 ```
 
 ```Output
