@@ -1,5 +1,5 @@
 ---
-ms.date: 10/16/2019
+ms.date: 01/04/2021
 ms.topic: reference
 title: How to Write a PowerShell Module Manifest
 description: How to Write a PowerShell Module Manifest
@@ -97,7 +97,7 @@ The following table describes the elements you can include in a module manifest.
 |**CompanyName**<br /> Type: `String`|`'Unknown'`|Company or vendor of this module. If a value isn't specified, `New-ModuleManifest` uses the default.<br /> Example: `CompanyName = 'Fabrikam'`|
 |**Copyright**<br /> Type: `String`|`'(c) <Author>. All rights reserved.'`| Copyright statement for this module. If a value isn't specified, `New-ModuleManifest` uses the default with the current user as the `<Author>`. To specify an author, use the **Author** parameter. <br /> Example: `Copyright = '2019 AuthorName. All rights reserved.'`|
 |**Description**<br /> Type: `String`|`<empty string>`|Description of the functionality provided by this module.<br /> Example: `Description = 'This is the module's description.'`|
-|**PowerShellVersion**<br /> Type: `Version`|`<empty string>`|Minimum version of the PowerShell engine required by this module. Valid values are 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6, and 7.<br /> Example: `PowerShellVersion = '5.0'`|
+|**PowerShellVersion**<br /> Type: `Version`|`<empty string>`|Minimum version of the PowerShell engine required by this module. Valid values are 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 6.1, 6.2, 7.0 and 7.1.<br /> Example: `PowerShellVersion = '5.0'`|
 |**PowerShellHostName**<br /> Type: `String`|`<empty string>`|Name of the PowerShell host required by this module. This name is provided by PowerShell. To find the name of a host program, in the program, type: `$host.name`.<br /> Example: `PowerShellHostName = 'ConsoleHost'`|
 |**PowerShellHostVersion**<br /> Type: `Version`|`<empty string>`|Minimum version of the PowerShell host required by this module.<br /> Example: `PowerShellHostVersion = '2.0'`|
 |**DotNetFrameworkVersion**<br /> Type: `Version`|`<empty string>`|Minimum version of Microsoft .NET Framework required by this module. This prerequisite is valid for the PowerShell Desktop edition only, such as PowerShell 5.1.<br /> Example: `DotNetFrameworkVersion = '3.5'`|
