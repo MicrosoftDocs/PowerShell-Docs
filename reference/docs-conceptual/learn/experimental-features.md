@@ -249,7 +249,7 @@ When a native command has a non-zero exit code, `$?` is set to `$false`. If the 
 ## PSNullConditionalOperators
 
 Introduces new operators for Null conditional member access operators - `?.` and `?[]`. Null member
-access operators can used on scalar types and array types. Return the value of the accessed member
+access operators can be used on scalar types and array types. Return the value of the accessed member
 if the variable is not null. If the value of the variable is null, then return null.
 
 ```powershell
