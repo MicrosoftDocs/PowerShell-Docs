@@ -20,7 +20,7 @@ For complete sample code, see the following topics.
 
 |Language|Topic|
 |--------------|-----------|
-|VB.NET|[Runspace01 (VB.NET) Code Sample](./runspace04-vb-net-code-sample.md)|
+|VB.NET|[Runspace04 (VB.NET) Code Sample](./runspace04-vb-net-code-sample.md)|
 
 ## See Also
 
