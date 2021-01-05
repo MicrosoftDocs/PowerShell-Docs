@@ -19,10 +19,8 @@ based on the parameters specified by the user.
 
 The following requirements apply to all parameter sets.
 
-- Each parameter set must have at least one unique parameter. Meaning, each
-  parameter set must be a unique combination of parameters even if only one
-  parameter is different than the other sets. If possible, make this parameter
-  a mandatory parameter.
+- Each parameter set must have a unique combination of parameters. If possible,
+   at least one of the unique parameters should be a mandatory parameter.
 
 - A parameter set that contains multiple positional parameters must define
   unique positions for each parameter. No two positional parameters can specify
