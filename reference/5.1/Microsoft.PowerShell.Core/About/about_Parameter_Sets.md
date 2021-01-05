@@ -1,7 +1,7 @@
 ---
-description: Describes how to define and use parameter sets in advanced functions. 
+description: Describes how to define and use parameter sets in advanced functions.
 title: about_Parameter_Sets
-ms.date: 02/11/2020
+ms.date: 01/04/2021
 ---
 # About parameter sets
 
@@ -19,8 +19,10 @@ based on the parameters specified by the user.
 
 The following requirements apply to all parameter sets.
 
-- Each parameter set must have at least one unique parameter. If possible, make
-  this parameter a mandatory parameter.
+- Each parameter set must have at least one unique parameter. Meaning, each
+  parameter set must be a unique combination of parameters even if only one
+  parameter is different than the other sets. If possible, make this parameter
+  a mandatory parameter.
 
 - A parameter set that contains multiple positional parameters must define
   unique positions for each parameter. No two positional parameters can specify
