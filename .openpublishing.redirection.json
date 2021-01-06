@@ -1,5 +1,6 @@
 {
-    "redirections": [{
+    "redirections": [
+       {
             "source_path": "reference/docs-conceptual/dsc/tutorials/dscCiCd.md",
             "redirect_url": "/azure/devops/pipelines/get-started/dsc-cicd",
             "redirect_document_id": false
@@ -10,13 +11,8 @@
             "redirect_document_id": true
         },
         {
-            "source_path": "digital-art.md",
-            "redirect_url": "/powershell/scripting/community/digital-art",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "reference/digital-art.md",
-            "redirect_url": "/powershell/scripting/community/digital-art",
+            "source_path": "reference/docs-conceptual/samples/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md",
+            "redirect_url": "/powershell/module/microsoft.powershell.core/foreach-object",
             "redirect_document_id": false
         },
         {
