@@ -1039,9 +1039,8 @@ need to make a deep copy to truly have a second hashtable that isn't linked to t
 
 ### Deep copies
 
-At the time of writing this, I'm not aware of any clever ways to just make a deep copy of a
-hashtable (and keep it as a hashtable). That's just one of those things that someone needs to write.
-Here is a quick method to do that.
+There are a couple of ways to make a deep copy of a hashtable (and keep it as a hashtable). Here's a
+function using PowerShell to recursively create a deep copy:
 
 ```powershell
 function Get-DeepClone
@@ -1067,6 +1066,25 @@ function Get-DeepClone
 ```
 
 It doesn't handle any other reference types or arrays, but it's a good starting point.
+
+Another way is to us .Net to deserialize it using CliXml like in this function.
+
+```powershell
+function Get-DeepClone
+{
+    param(
+        $InputObject
+    )
+    $TempCliXmlString = [System.Management.Automation.PSSerializer]::Serialize($obj, [int32]::MaxValue)
+    return [System.Management.Automation.PSSerializer]::Deserialize($TempCliXmlString)
+}
+```
+
+For extremely large hashtables, the deserializing function is faster as it scales out. However,
+there are some things to consider when using this method. Since it uses **CliXml**, it's memory
+intensive and if you are cloning huge hashtables, that might be a problem. Another limitation of the
+**CliXml** is there is a depth limitation of 48. Meaning, if you have a hashtable with 48 layers of
+nests, the cloning will fail and no hashtable will be output at all.
 
 ## Anything else?
 
