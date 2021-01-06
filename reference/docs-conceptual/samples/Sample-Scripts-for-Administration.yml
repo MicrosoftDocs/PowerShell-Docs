@@ -29,8 +29,6 @@ landingContent:
             url: ./removing-objects-from-the-pipeline--where-object-.md
           - text: Sorting objects
             url: ./sorting-objects.md
-          - text: Repeating a task for multiple objects
-            url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
           - text: Creating .NET and COM objects
             url: ./creating-.net-and-com-objects--new-object-.md
           - text: Using static classes and methods
