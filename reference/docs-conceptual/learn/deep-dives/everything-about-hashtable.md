@@ -1067,7 +1067,7 @@ function Get-DeepClone
 
 It doesn't handle any other reference types or arrays, but it's a good starting point.
 
-Another way is to us .Net to deserialize it using CliXml like in this function.
+Another way is to use .Net to deserialize it using **CliXml** like in this function:
 
 ```powershell
 function Get-DeepClone
@@ -1084,7 +1084,7 @@ For extremely large hashtables, the deserializing function is faster as it scale
 there are some things to consider when using this method. Since it uses **CliXml**, it's memory
 intensive and if you are cloning huge hashtables, that might be a problem. Another limitation of the
 **CliXml** is there is a depth limitation of 48. Meaning, if you have a hashtable with 48 layers of
-nests, the cloning will fail and no hashtable will be output at all.
+nested hashtables, the cloning will fail and no hashtable will be output at all.
 
 ## Anything else?
 
