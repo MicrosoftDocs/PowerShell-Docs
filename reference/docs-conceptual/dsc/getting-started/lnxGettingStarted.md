@@ -1,5 +1,5 @@
 ---
-ms.date:  11/20/2020
+ms.date:  01/07/2021
 keywords:  dsc,powershell,configuration,setup
 title:  Get started with Desired State Configuration (DSC) for Linux
 description: This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Linux.
@@ -133,18 +133,21 @@ $Node = "ostc-dsc-01"
 $Credential = Get-Credential -UserName "root" -Message "Enter Password:"
 
 #Ignore SSL certificate validation
-#$opt = New-CimSessionOption -UseSsl -SkipCACheck -SkipCNCheck -SkipRevocationCheck
+# $opt = New-CimSessionOption -UseSsl -SkipCACheck -SkipCNCheck -SkipRevocationCheck
 
 #Options for a trusted SSL certificate
 $opt = New-CimSessionOption -UseSsl
 
-$Sess = New-CimSession `
-    -Credential $credential `
-    -ComputerName $Node `
-    -Port 5986 `
-    -Authentication basic `
-    -SessionOption $opt `
-    -OperationTimeoutSec 90
+$sessParams = @{
+    Credential = $credential
+    ComputerName = $Node
+    Port = 5986
+    Authentication = 'basic'
+    SessionOption = $opt
+    OperationTimeoutSec = 90
+}
+
+$Sess = New-CimSession @sessParams
 ```
 
 > [!NOTE]
