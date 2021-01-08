@@ -98,7 +98,7 @@ desired result.
    Write-Warning "hello"
    Write-Error "hello"
    Write-Output "hi"
-} 3>&1 2>&1 > P:\Temp\redirection.log
+} 3>&1 2>&1 > C:\Temp\redirection.log
 ```
 
 - `3>&1` redirects the **Warning** stream to the **Success** stream.
