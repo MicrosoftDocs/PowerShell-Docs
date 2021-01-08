@@ -59,6 +59,8 @@ installation options:
 
 - **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - This property controls the option for adding the
   **Open PowerShell** item to the context menu in Windows Explorer.
+- **ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL** - This property controls the option for adding the
+  **Run with PowerShell** item to the context menu in Windows Explorer.
 - **ENABLE_PSREMOTING** - This property controls the option for enabling PowerShell remoting during
   installation.
 - **REGISTER_MANIFEST** - This property controls the option for registering the Windows Event

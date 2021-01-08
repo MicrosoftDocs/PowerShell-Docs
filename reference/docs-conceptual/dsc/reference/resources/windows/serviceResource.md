@@ -1,5 +1,5 @@
 ---
-ms.date: 09/20/2019
+ms.date: 01/06/2021
 ms.topic: reference
 title: DSC Service Resource
 description: DSC Service Resource
@@ -22,7 +22,7 @@ Service [string] #ResourceName
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
-    [ State = [string] { Ignore | Running | Stopped }  ]
+    [ State = [string] { Running | Stopped }  ]
     [ Dependencies = [string[]] ]
     [ Description = [string] ]
     [ DisplayName = [string] ]

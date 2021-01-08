@@ -87,7 +87,7 @@ The value of `-SupportedCommand` is a comma-separated list of one or more
 cmdlet or function names.
 
 For example, the following data section includes a user-written cmdlet,
-`Format-XML`, that formats data in an XML file:
+`Format-Xml`, that formats data in an XML file:
 
 ```powershell
 DATA -supportedCommand Format-Xml
