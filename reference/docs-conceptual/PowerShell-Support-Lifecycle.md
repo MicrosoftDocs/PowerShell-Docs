@@ -172,11 +172,13 @@ for historical reference. It is not intended for use to determine the support li
 
 |         Version          | Release Date |                                                                     Note                                                                      |
 | ------------------------ | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| PowerShell 7.1 (current) |   Nov-2020   | Built on .NET Core 5.0 (current)                                                                                                              |
-| PowerShell 7.0 (LTS)     |   Mar-2020   | Built on .NET Core 3.1 (LTS)                                                                                                                  |
-| PowerShell 6.0           |   Jan-2018   | First release, built on .NET Core 2.1. Installable on Windows, Linux, and macOS.                                                              |
-| PowerShell 5.1           |   Aug-2016   | Released in Windows 10 Anniversary Update and Windows Server 2016                                                                             |
-| PowerShell 5.0           |   Feb-2016   | Released in Windows Management Framework (WMF) 5.0                                                                                            |
+| PowerShell 7.1 (current) |   Nov-2020   | Built on .NET Core 5.0 (current).                                                                                                             |
+| PowerShell 7.0 (LTS)     |   Mar-2020   | Built on .NET Core 3.1 (LTS).                                                                                                                 |
+| PowerShell 6.2           |   Mar-2019   |                                                                                                                                               |
+| PowerShell 6.1           |   Sep-2018   | Built on .NET Core 2.1.                                                                                                                       |
+| PowerShell 6.0           |   Jan-2018   | First release, built on .NET Core 2.0. Installable on Windows, Linux, and macOS.                                                              |
+| PowerShell 5.1           |   Aug-2016   | Released in Windows 10 Anniversary Update and Windows Server 2016.                                                                            |
+| PowerShell 5.0           |   Feb-2016   | Released in Windows Management Framework (WMF) 5.0.                                                                                           |
 | PowerShell 4.0           |   Oct-2013   | Integrated in Windows 8.1 and with Windows Server 2012 R2. Installable on Windows 7 SP1, Windows Server 2008 R2 SP1, and Windows Server 2012. |
 | PowerShell 3.0           |   Oct-2012   | Integrated in Windows 8 and with Windows Server 2012. Installable on Windows 7 SP1, Windows Server 2008 SP1, and Windows Server 2008 R2 SP1.  |
 | PowerShell 2.0           |   Jul-2009   | Integrated in Windows 7 and Windows Server 2008 R2. Installable on Windows XP SP3, Windows Server 2003 SP2, and Windows Vista SP1.            |

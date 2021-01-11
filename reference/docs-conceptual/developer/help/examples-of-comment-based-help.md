@@ -1,5 +1,5 @@
 ---
-ms.date: 09/12/2016
+ms.date: 01/11/2021
 ms.topic: reference
 title: Examples of Comment-Based Help
 description: Examples of Comment-Based Help
@@ -42,15 +42,15 @@ function Add-Extension
         System.String. Add-Extension returns a string with the extension or file name.
 
         .EXAMPLE
-        C:\PS> extension -name "File"
+        PS> extension -name "File"
         File.txt
 
         .EXAMPLE
-        C:\PS> extension -name "File" -extension "doc"
+        PS> extension -name "File" -extension "doc"
         File.doc
 
         .EXAMPLE
-        C:\PS> extension "File" "doc"
+        PS> extension "File" "doc"
         File.doc
 
         .LINK
@@ -66,7 +66,7 @@ The following output shows the results of a `Get-Help` command that displays the
 `Add-Extension` function.
 
 ```powershell
-C:\PS> get-help add-extension -full
+PS> Get-Help Add-Extension -full
 ```
 
 ```Output
@@ -115,17 +115,17 @@ C:\PS> get-help add-extension -full
 
             -------------------------- EXAMPLE 1 --------------------------
 
-            C:\PS> extension -name "File"
+            PS> extension -name "File"
             File.txt
 
             -------------------------- EXAMPLE 2 --------------------------
 
-            C:\PS> extension -name "File" -extension "doc"
+            PS> extension -name "File" -extension "doc"
             File.doc
 
             -------------------------- EXAMPLE 3 --------------------------
 
-            C:\PS> extension "File" "doc"
+            PS> extension "File" "doc"
             File.doc
 
         RELATED LINKS
@@ -166,13 +166,13 @@ the Help topic with the function, instead of the script.
   None. Update-Month.ps1 does not generate any output.
 
   .EXAMPLE
-  C:\PS> .\Update-Month.ps1
+  PS> .\Update-Month.ps1
 
   .EXAMPLE
-  C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+  PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
 
   .EXAMPLE
-  C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath C:\Reports\2009\January.csv
+  PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath C:\Reports\2009\January.csv
 #>
 
 param ([string]$InputPath, [string]$OutPutPath)
@@ -185,7 +185,7 @@ in the Path environment variable, the `Get-Help` command that gets the script He
 script path.
 
 ```powershell
-C:\PS> get-help c:\ps-test\update-month.ps1 -full
+PS> Get-Help c:\ps-test\update-month.ps1 -full
 ```
 
 ```Output
@@ -238,15 +238,15 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
             -------------------------- EXAMPLE 1 --------------------------
 
-            C:\PS> .\Update-Month.ps1
+            PS> .\Update-Month.ps1
 
             -------------------------- EXAMPLE 2 --------------------------
 
-            C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+            PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
 
             -------------------------- EXAMPLE 3 --------------------------
 
-            C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
+            PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
             C:\Reports\2009\January.csv
 
             RELATED LINKS
@@ -339,7 +339,7 @@ The following command uses this feature. When a user types a `Get-Help` command 
 function, `Get-Help` displays the Help topic for the `Get-Help` cmdlet.
 
 ```powershell
-C:\PS> get-help help
+PS> get-help help
 ```
 
 ```Output
