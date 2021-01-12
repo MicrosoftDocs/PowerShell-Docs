@@ -21,7 +21,7 @@ PowerShell 7.1 is based on the [.NET 5.0 Supported OS Lifecycle Policy](https://
 
 |        OS         |          Version           | Architectures |          Lifecycle           |
 | ----------------- | -------------------------- | ------------- | ---------------------------- |
-| Windows 10 Client | Version 1703+              | Arm64         | [Windows][Windows-lifecycle] |
+| Windows 10 Client | Version 1709+              | Arm64         | [Windows][Windows-lifecycle] |
 | Alpine Linux      | 3.11+                      | Arm64         | [Alpine][Alpine-lifecycle]   |
 | Debian            | 9+                         | Arm32, Arm64  | [Debian][Debian-lifecycle]   |
 | Ubuntu            | 20.10, 20.04, 18.04, 16.04 | Arm32, Arm64  | [Ubuntu][Ubuntu-lifecycle]   |
