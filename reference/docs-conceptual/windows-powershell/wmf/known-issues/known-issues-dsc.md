@@ -238,8 +238,8 @@ Configuration $configName
     {
         DependsOn = "[Registry]SetRegisteredOwner"
         getscript = "@{}"
-        testscript = 'Remove-Item -Path $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis -Force -Recurse -ErrorAction SilentlyContinue -ErrorVariable ev | out-null;$true'
-        setscript = '$true'
+        setscript = 'Remove-Item -Path $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis -Force -Recurse -ErrorAction SilentlyContinue -ErrorVariable ev | out-null;$true'
+        testscript = '$true'
     }
 }
 ```
