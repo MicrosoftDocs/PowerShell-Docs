@@ -2,7 +2,6 @@
 title: Discovering objects, properties, and methods
 description: You don't have to be a developer to understand and use objects, properties, and methods.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ---
@@ -764,7 +763,7 @@ that limit the properties that are returned by default.
 - [about_Objects][]
 - [about_Properties][]
 - [about_Methods][]
-- [No PowerShell Cmdlet to Start or Stop Something? Don’t Forget to Check for Methods on the Get Cmdlets][use-methods]
+- [No PowerShell Cmdlet to Start or Stop Something? Don't Forget to Check for Methods on the Get Cmdlets][use-methods]
 
 <!-- link references -->
 [RSAT for Windows]: https://support.microsoft.com/help/2693643

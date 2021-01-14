@@ -2,7 +2,6 @@
 title: One-liners and the pipeline
 description: A PowerShell one-liner is one continuous pipeline, containing multiple commands, to accomplish a single task.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ---
@@ -23,7 +22,7 @@ As with previous chapters, be sure to follow along on your Windows 10 lab enviro
 
 ## One-Liners
 
-A PowerShell one-liner is one continuous pipeline and not necessarily a command that’s on one
+A PowerShell one-liner is one continuous pipeline and not necessarily a command that's on one
 physical line. Not all commands that are on one physical line are one-liners.
 
 Even though the following command is on multiple physical lines, it's a PowerShell one-liner because
