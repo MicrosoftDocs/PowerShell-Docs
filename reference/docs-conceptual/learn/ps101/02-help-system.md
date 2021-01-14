@@ -2,7 +2,6 @@
 title: The Help System
 description: Mastering the help system is the key to being successful with PowerShell.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ---

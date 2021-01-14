@@ -1,6 +1,7 @@
 ---
 ms.date: 07/29/2020
 keywords:  powershell,cmdlet
+ms.topic: how-to
 title:  How to use the PowerShell documentation
 description: This articles explains how to use the features of this site including search filtering and version selection.
 ---

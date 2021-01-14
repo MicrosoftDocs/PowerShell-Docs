@@ -2,7 +2,6 @@
 title: Script modules
 description: Script modules are an easy way to package scripts and functions into a reusable tool.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ---
