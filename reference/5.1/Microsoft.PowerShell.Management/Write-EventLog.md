@@ -218,8 +218,8 @@ This cmdlet returns objects that represents the events in the logs.
 
 ## NOTES
 
-For csme of Windows event logs, writing events requires administrator rights. You must start
-PowerShell using the **Run as administrator** option.
+For some Windows event logs, writing events requires administrator rights. You must start
+PowerShell using the **Run as Administrator** option.
 
 ## RELATED LINKS
 
