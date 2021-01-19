@@ -22,6 +22,7 @@ Write-EventLog [-LogName] <String> [-Source] <String> [[-EntryType] <EventLogEnt
 ```
 
 ## DESCRIPTION
+
 The `Write-EventLog` cmdlet writes an event to an event log.
 
 To write an event to an event log, the event log must exist on the computer and the source must be
@@ -206,16 +207,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Diagnostics.EventLogEntry
+
 This cmdlet returns objects that represents the events in the logs.
 
 ## NOTES
 
-To use `Write-EventLog`, start Windows PowerShell by using the Run as administrator option.
+For some Windows event logs, writing events requires administrator rights. You must start
+PowerShell using the **Run as Administrator** option.
 
 ## RELATED LINKS
 
