@@ -67,7 +67,8 @@ A module specification is a hash table that has the following keys.
 The `using module` statement imports classes from the root module
 (`ModuleToProcess`) of a script module or binary module. It does not
 consistently import classes defined in nested modules or classes defined in
-scripts that are dot-sourced into the module.
+scripts that are dot-sourced into the module. Classes that you want to be
+available to users outside of the module should be defined in the root module.
 
 ## Assembly syntax
 
