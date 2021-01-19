@@ -133,14 +133,21 @@ Delete the character before the cursor.
 - Vi insert mode: `<Backspace>`
 - Vi command mode: `<X>`, `<d,h>`
 
+### BackwardDeleteInput
+
+Like BackwardKillInput - deletes text from the point to the start of the input,
+but does not put the deleted text in the kill-ring.
+
+- Cmd: `<Ctrl+Home>`
+- Vi insert mode: `<Ctrl+u>`, `<Ctrl+Home>`
+- Vi command mode: `<Ctrl+u>`, `<Ctrl+Home>`
+
 ### BackwardDeleteLine
 
 Like BackwardKillLine - deletes text from the point to the start of the line,
 but does not put the deleted text in the kill-ring.
 
-- Cmd: `<Ctrl+Home>`
-- Vi insert mode: `<Ctrl+u>`, `<Ctrl+Home>`
-- Vi command mode: `<Ctrl+u>`, `<Ctrl+Home>`, `<d,0>`
+- Vi command mode: `<d,0>`
 
 ### BackwardDeleteWord
 
