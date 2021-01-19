@@ -155,12 +155,19 @@ Deletes the previous word.
 
 - Vi command mode: `<Ctrl+w>`, `<d,b>`
 
-### BackwardKillLine
+### BackwardKillInput
 
-Clear the input from the start of the input to the cursor. The cleared text is
+Clear the text from the start of the input to the cursor. The cleared text is
 placed in the kill-ring.
 
 - Emacs: `<Ctrl+u>`, `<Ctrl+x,Backspace>`
+
+### BackwardKillLine
+
+Clear the text from the start of the current logical line to the cursor. The cleared text is
+placed in the kill-ring.
+
+- Function is unbound.
 
 ### BackwardKillWord
 
