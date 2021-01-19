@@ -12,7 +12,7 @@ on the .NET Framework and only worked on Windows systems. With the current relea
 
 ## PowerShell
 
-PowerShell Core is an Open Source project on [GitHub](https://github.com/powershell/powershell). See
+PowerShell is an Open Source project on [GitHub](https://github.com/powershell/powershell). See
 the following articles for more information on installing PowerShell on various supported and
 experimental platforms.
 
