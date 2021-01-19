@@ -89,7 +89,7 @@ variable, use the following syntax:
 $Env:Path += ";c:\temp"
 ```
 
-On Linux or MacOS, the colon (`:`) in the command separates the new path from
+On Linux or macOS, the colon (`:`) in the command separates the new path from
 the path that precedes it in the list.
 
 ```powershell
