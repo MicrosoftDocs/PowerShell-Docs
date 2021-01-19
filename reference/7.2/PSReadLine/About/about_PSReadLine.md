@@ -285,14 +285,21 @@ Delete the next word.
 
 - Vi command mode: `<d,w>`
 
-### ForwardDeleteLine
+### ForwardDeleteInput
 
-Like ForwardKillLine - deletes text from the point to the end of the line, but
+Like KillLine - deletes text from the point to the end of the input, but
 does not put the deleted text in the kill-ring.
 
 - Cmd: `<Ctrl+End>`
 - Vi insert mode: `<Ctrl+End>`
 - Vi command mode: `<Ctrl+End>`
+
+### ForwardDeleteLine
+
+Deletes text from the point to the end of the current logical line, but
+does not put the deleted text in the kill-ring.
+
+- Function is unbound
 
 ### InsertLineAbove
 
