@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/29/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
@@ -170,8 +170,10 @@ Accept wildcard characters: False
 
 ### -Stream
 
-Indicates that the cmdlet sends a separate string for each line of an input object. By default, the
-strings for each object are accumulated and sent as a single string.
+By default, the strings for each object are accumulated and sent as a single string. The **Stream**
+parameter indicates that the cmdlet sends a separate string for each item of an input object. The
+exception is when the item is a multiline string. In that case, the multiline string is output as a
+single object.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
