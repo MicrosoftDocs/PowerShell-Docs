@@ -1,7 +1,7 @@
 ---
 description: Allows you to indicate which namespaces are used in the session.
 Locale: en-US
-ms.date: 11/18/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
@@ -17,7 +17,10 @@ The `using` statement allows you to specify which namespaces are used in the
 session. Adding namespaces simplifies usage of .NET classes and member and
 allows you to import classes from script modules and assemblies.
 
-The `using` statements must come before any other statements in a script.
+The `using` statements must come before any other statements in a script or
+module. No uncommented statement can precede it, including parameters.
+
+The `using` statement must not contain any variables.
 
 The `using` statement should not be confused with the `using:` scope modifier
 for variables. For more information, see

@@ -1,7 +1,7 @@
 ---
 description: Describes how you can use classes to create your own custom types.
 Locale: en-US
-ms.date: 09/16/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
@@ -837,12 +837,17 @@ aliases, and variables, as defined by the module. Classes are not imported. The
 module isn't loaded in the current session, the `using` statement fails. For
 more information about the `using` statement, see [about_Using](about_Using.md).
 
+The `using module` statement imports classes from the root module
+(`ModuleToProcess`) of a script module or binary module. It does not
+consistently import classes defined in nested modules or classes defined in
+scripts that are dot-sourced into the module.
+
 ## The PSReference type is not supported with class members
 
 Using the `[ref]` type-cast with a class member silently fails. APIs that use
-`[ref]` parameters cannot be used with class members. The **PSReference** was
-designed to support COM objects. COM objects have cases where you need to pass
-a value in by reference.
+`[ref]` parameters cannot be used with class members. The **PSReference** class
+was designed to support COM objects. COM objects have cases where you need to
+pass a value in by reference.
 
 For more information about the `[ref]` type, see
 [PSReference Class](/dotnet/api/system.management.automation.psreference).
