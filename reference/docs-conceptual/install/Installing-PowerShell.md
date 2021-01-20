@@ -8,7 +8,7 @@ description: Where to find instruction for installing PowerShell for each of the
 
 Over the years, there have been many releases of PowerShell. Initially, Windows PowerShell was built
 on the .NET Framework and only worked on Windows systems. With the current release, PowerShell uses
-.NET Core 3.1 as its runtime. PowerShell runs on Windows, macOS, and Linux platforms.
+.NET Core 5.0 as its runtime. PowerShell runs on Windows, macOS, and Linux platforms.
 
 ## PowerShell
 
