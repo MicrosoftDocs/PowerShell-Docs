@@ -146,10 +146,11 @@ Accept wildcard characters: False
 
 ### -Stream
 
-By default, the strings for each object are accumulated and sent as a single string. The **Stream**
-parameter indicates that the cmdlet sends a separate string for each item of an input object. The
-exception is when the item is a multiline string. In that case, the multiline string is output as a
-single object.
+By default, when multiple objects are passed to `Out-String` the strings for
+each object are accumulated and sent as a single multiline string. 
+
+When the **Stream** parameter is used, the cmdlet outputs a separate string for
+each input object. 
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
