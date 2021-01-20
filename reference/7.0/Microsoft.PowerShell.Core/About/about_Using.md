@@ -75,6 +75,17 @@ consistently import classes defined in nested modules or classes defined in
 scripts that are dot-sourced into the module. Classes that you want to be
 available to users outside of the module should be defined in the root module.
 
+During development of a script module, it is common to make changes to the code
+then load the new version of the module using `Import-Module` with the
+**Force** parameter. This works for changes to functions in the root module
+only. `Import-Module` does not reload any nested modules. Also, there is no way
+to load any updated classes.
+
+To ensure that you are running the latest version, you must unload the module
+using the `Remove-Module` cmdlet. `Remove-Module` removes the root module, all
+nested modules, and any classes defined in the modules. Then you can reload the
+module and the classes using `Import-Module` and the `using module` statement.
+
 ## Assembly syntax
 
 To preload types from a .NET assembly:
