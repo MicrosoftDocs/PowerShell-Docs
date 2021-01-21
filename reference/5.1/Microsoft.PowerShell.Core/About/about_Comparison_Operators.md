@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 12/17/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
@@ -633,7 +633,7 @@ $a = 1
 $b = "1"
 $a -is [int]           # Output: True
 $a -is $b.GetType()    # Output: False
-$b -isnot [int]        # Output: False
+$b -isnot [int]        # Output: True
 $a -isnot $b.GetType() # Output: True
 ```
 
