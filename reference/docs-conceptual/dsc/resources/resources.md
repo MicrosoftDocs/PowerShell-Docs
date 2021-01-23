@@ -139,7 +139,7 @@ Configuration TestConfig
 
 Windows comes with built in resources and Linux has OS specific resources. There are resources for
 [cross-node dependencies](../configurations/crossNodeDependencies.md), package management resources,
-as well as[community owned and maintained resources](https://github.com/dsccommunity). You can use
+as well as [community owned and maintained resources](https://github.com/dsccommunity). You can use
 the above steps to determine the syntax of these resources and how to use them. The pages that serve
 these resources have been archived under **Reference**.
 
