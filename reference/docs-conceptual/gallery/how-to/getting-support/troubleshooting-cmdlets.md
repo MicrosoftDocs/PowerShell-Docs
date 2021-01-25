@@ -1,5 +1,5 @@
 ---
-ms.date: 12/01/2020
+ms.date: 01/25/2021
 title:  Troubleshooting cmdlets
 description: This article provide information and steps for troubleshooting errors using the PowerShell Gallery
 ---
@@ -30,6 +30,7 @@ following endpoints.
 - `devopsgallerystorage.blob.core.windows.net` - storage account hostname
 - `*.powershellgallery.com` - website
 - `go.microsoft.com` - redirection service
+- `onegetcdn.azureedge.net` - bootstrap the NuGet Provider in `PowerShellGet/PackageManagement`
 
 > [!NOTE]
 > Cmdlets that interact with the PowerShell Gallery can fail with unexpected errors when there is an
