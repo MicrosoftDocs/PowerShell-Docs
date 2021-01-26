@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -248,7 +247,7 @@ enclose execution in a `try/catch` block.
 ```powershell
 try
 {
-    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost"
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
 }
@@ -263,9 +262,8 @@ $StatusCode
 404
 ```
 
-The command calls `Invoke-WebRequest` with an **ErrorAction** of **Stop**, which forces
-`Invoke-WebRequest` to throw a terminating error on any failed requests. The terminating error is
-caught by the `catch` block which retrieves the **StatusCode** from the **Exception** object.
+The terminating error is caught by the `catch` block, which retrieves the **StatusCode** from the
+**Exception** object.
 
 ## PARAMETERS
 
@@ -960,7 +958,7 @@ protocol using flag notation or combining multiple **WebSslProtocol** options wi
 supplying multiple protocols is not supported on all platforms.
 
 > [!NOTE]
-> On non-Windows platforms it may not be possible to supply `'Tls, Tls12'` as an option.
+> On non-Windows platforms it may not be possible to supply `Tls` or `Tls12` as an option.
 
 This feature was added in PowerShell 6.0.0.
 
