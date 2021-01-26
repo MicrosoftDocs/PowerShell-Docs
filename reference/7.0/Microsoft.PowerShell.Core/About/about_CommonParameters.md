@@ -2,7 +2,7 @@
 description:  Describes the parameters that can be used with any cmdlet. 
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 11/26/2019
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_CommonParameters
@@ -372,9 +372,9 @@ $out
 variable, for any named command as it flows through the pipeline.
 
 >[!NOTE]
-> When using the **PipelineVariable** parameter with [advanced functions](about_functions_advanced),
-> it will only accept the first value from the function to the pipeline and any
-> others will be ignored. The behavior is corrected in PowerShell 7.2
+> When using the **PipelineVariable** parameter with [advanced functions](about_functions_advanced)
+> and `begin`, `process`, `end` blocks, only values from the first keyword block are assigned to the
+> variable as values flow through the pipeline. PowerShell 7.2 corrects this behavior.
 
 ```yaml
 Type: String
