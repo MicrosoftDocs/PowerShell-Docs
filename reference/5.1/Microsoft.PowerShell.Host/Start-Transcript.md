@@ -3,14 +3,14 @@ external help file: Microsoft.PowerShell.ConsoleHost.dll-help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 04/22/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
 ---
 # Start-Transcript
 
-## SYNOPSIS
+## SYNOPSIS7175
 Creates a record of all or part of a PowerShell session to a text file.
 
 ## SYNTAX
@@ -48,6 +48,9 @@ Files that are created by the `Start-Transcript` cmdlet include random character
 prevent potential overwrites or duplication when two or more transcripts are started simultaneously.
 This also prevents unauthorized discovery of transcripts that are stored in a centralized file
 share.
+
+If the target file doesn't have a Byte Order Mark (BOM), `Start-Transcript` defaults to `ASCII`
+encoding in the target file.
 
 ## EXAMPLES
 
