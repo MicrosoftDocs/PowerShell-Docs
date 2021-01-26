@@ -17,13 +17,13 @@ Imports values from a `.PSD1` file without invoking its contents.
 ### ByPath (Default)
 
 ```
-Import-PowerShellDataFile [-Path] <String[]> [<CommonParameters>]
+Import-PowerShellDataFile [-Path] <String[]> [-SkipLimitCheck] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Import-PowerShellDataFile [-LiteralPath] <String[]> [<CommonParameters>]
+Import-PowerShellDataFile [-LiteralPath] <String[]> [-SkipLimitCheck] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,8 +104,8 @@ Accept wildcard characters: True
 
 ### -SkipLimitCheck
 
-By default `Import-PowerShellDataFile` has a limit of 500 keys you can import from a `.psd1` file.
-The **SkipLimitCheck** switch will bypass this limit and allow you to import more keys.
+By default `Import-PowerShellDataFile` imports only 500 keys from a `.psd1` file. Use
+**SkipLimitCheck** to import more than 500 keys.
 
 ```yaml
 Type: Switch
