@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 06/09/2017
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
@@ -47,6 +47,9 @@ Files that are created by the `Start-Transcript` cmdlet include random character
 prevent potential overwrites or duplication when two or more transcripts are started simultaneously.
 This also prevents unauthorized discovery of transcripts that are stored in a centralized file
 share.
+
+If the target file doesn't have a Byte Order Mark (BOM), `Start-Transcript` defaults to `UTF8NoBom`
+encoding in the target file.
 
 ## EXAMPLES
 
