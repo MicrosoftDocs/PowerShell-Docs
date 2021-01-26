@@ -113,7 +113,7 @@ the cmdlet without actually performing any action.
 
 The following parameter is added to cmdlets that support transactions. These parameters are defined
 by the [System.Management.Automation.Internal.Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)
-class.
+class. Transaction support was introduced in PowerShell 3.0 and discontinued in PowerShell 6.0.
 
 ### UseTransaction (alias: usetx)
 
