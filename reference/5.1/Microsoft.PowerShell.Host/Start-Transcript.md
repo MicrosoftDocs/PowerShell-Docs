@@ -49,8 +49,8 @@ prevent potential overwrites or duplication when two or more transcripts are sta
 This also prevents unauthorized discovery of transcripts that are stored in a centralized file
 share.
 
-If the target file doesn't have a Byte Order Mark (BOM), `Start-Transcript` defaults to `ASCII`
-encoding in the target file.
+If the target file doesn't have a Byte Order Mark (BOM), when using the **Append** parameter,
+`Start-Transcript` defaults to `ASCII` encoding in the target file.
 
 ## Examples
 
