@@ -372,9 +372,11 @@ $out
 variable, for any named command as it flows through the pipeline.
 
 >[!NOTE]
-> When using the **PipelineVariable** parameter with [advanced functions](about_functions_advanced)
-> and `begin`, `process`, `end` blocks, only values from the first keyword block are assigned to the
-> variable as values flow through the pipeline. PowerShell 7.2 corrects this behavior.
+> Advanced functions can have up to three script blocks: `begin`, `process`,
+> and `end`. When using the **PipelineVariable** parameter with advanced
+> functions only values from the first defined script block are assigned to the
+> variable as the function runs. For more information, see [Advanced functions](./about_functions_advanced.md).
+> PowerShell 7.2 corrects this behavior.
 
 ```yaml
 Type: String
