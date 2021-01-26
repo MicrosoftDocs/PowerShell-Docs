@@ -49,8 +49,9 @@ prevent potential overwrites or duplication when two or more transcripts are sta
 This also prevents unauthorized discovery of transcripts that are stored in a centralized file
 share.
 
-If the target file doesn't have a Byte Order Mark (BOM), when using the **Append** parameter,
-`Start-Transcript` defaults to `ASCII` encoding in the target file.
+When using the **Append** parameter, if the target file doesn't have a Byte Order Mark (BOM)
+`Start-Transcript` defaults to `ASCII` encoding in the target file. This behavior can result in
+improper encoding of mulitbyte characters in the transcript.
 
 ## Examples
 
@@ -279,4 +280,3 @@ information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profi
 ## Related Links
 
 [Stop-Transcript](Stop-Transcript.md)
-
