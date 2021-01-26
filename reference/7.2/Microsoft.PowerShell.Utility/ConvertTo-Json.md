@@ -32,7 +32,7 @@ object, which is easily managed in PowerShell.
 Many web sites use JSON instead of XML to serialize data for communication between servers and
 web-based apps.
 
-As of PowerShell 7.2, `ConvertTo-Json` will emit a warning if the depth of the input object exceeds
+As of PowerShell 7.2, `ConvertTo-Json` emits a warning if the depth of the input object exceeds
 the depth specified for the command. This prevents unwanted data loss when converting objects.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
