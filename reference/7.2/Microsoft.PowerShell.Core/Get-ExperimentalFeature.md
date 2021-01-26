@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/01/2019
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-experimentalfeature?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExperimentalFeature
@@ -72,7 +72,7 @@ Name or names of experimental features to return.
 
 ## OUTPUTS
 
-### ExperimentalFeature
+### System.Management.Automation.ExperimentalFeature
 
 Returns instances that match the requested names or all experimental features if no name is
 specified.
@@ -82,4 +82,3 @@ specified.
 [Disable-ExperimentalFeature](Disable-ExperimentalFeature.md)
 
 [Enable-ExperimentalFeature](Enable-ExperimentalFeature.md)
-
