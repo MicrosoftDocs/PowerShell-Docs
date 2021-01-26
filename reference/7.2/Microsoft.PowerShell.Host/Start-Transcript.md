@@ -9,10 +9,10 @@ title: Start-Transcript
 ---
 # Start-Transcript
 
-## SYNOPSIS
+## Synopsis
 Creates a record of all or part of a PowerShell session to a text file.
 
-## SYNTAX
+## Syntax
 
 ### ByPath (Default)
 
@@ -35,7 +35,7 @@ Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber]
  [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Start-Transcript` cmdlet creates a record of all or part of a PowerShell session to a text
 file. The transcript includes all command that the user types and all output that appears on the
@@ -51,7 +51,7 @@ share.
 If the target file doesn't have a Byte Order Mark (BOM), `Start-Transcript` defaults to `Utf8NoBom`
 encoding in the target file.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Start a transcript file with default settings
 
@@ -71,7 +71,7 @@ This command starts a transcript in the `Transcript0.txt` file in `C:\transcript
 **NoClobber** parameter is used, the command prevents any existing files from being overwritten. If
 the `Transcript0.txt` file already exists, the command fails.
 
-## PARAMETERS
+## Parameters
 
 ### -Append
 
@@ -256,26 +256,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.String
 
 This cmdlet returns a string that contains a confirmation message and the path to the output file.
 
-## NOTES
+## Notes
 
 To stop a transcript, use the `Stop-Transcript` cmdlet.
 
 To record an entire session, add the `Start-Transcript` command to your profile. For more
 information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
-## RELATED LINKS
+## Related Links
 
 [Stop-Transcript](Stop-Transcript.md)
-
