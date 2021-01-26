@@ -208,7 +208,7 @@ Accept wildcard characters: False
 ### -Depth
 
 Specifies how many levels of contained objects are included in the JSON representation. The default
-value is 2. As of PowerShell 7.2, `ConvertTo-Json` will emit a warning if the number of layers in an
+value is 2. As of PowerShell 7.2, `ConvertTo-Json` emits a warning if the number of levels in an
 input object exceeds this number.
 
 ```yaml
