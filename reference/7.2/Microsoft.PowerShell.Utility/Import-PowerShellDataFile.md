@@ -32,7 +32,7 @@ The `Import-PowerShellDataFile` cmdlet safely imports key-value pairs from hasht
 `.PSD1` file. The values could be imported using `Invoke-Expression` on the contents of the file.
 However, `Invoke-Expression` runs any code contained in the file. This could produce unwanted
 results or execute unsafe code. `Import-PowerShellDataFile` imports the data without invoking the
-code.
+code. By default there is a 500 key limit but can be bypassed with the **SkipLimitCheck** switch.
 
 ## EXAMPLES
 
@@ -102,6 +102,23 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
+### -SkipLimitCheck
+
+By default `Import-PowerShellDataFile` has a limit of 500 keys you can import from a `.psd1` file.
+The **SkipLimitCheck** switch will bypass this limit and allow you to import more keys.
+
+```yaml
+Type: Switch
+Parameter Sets: All
+Aliases:
+
+Required: False
+Position: 0
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
@@ -121,4 +138,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Invoke-Expression](Invoke-Expression.md)
 
 [Import-LocalizedData](Import-LocalizedData.md)
-
