@@ -371,6 +371,11 @@ $out
 **PipelineVariable** stores the value of the current pipeline element as a
 variable, for any named command as it flows through the pipeline.
 
+>[!NOTE]
+> When using the **PipelineVariable** parameter with [advanced functions](about_functions_advanced),
+> it will only accept the first value from the function to the pipeline and any
+> others will be ignored. The behavior is corrected in PowerShell 7.2
+
 ```yaml
 Type: String
 Aliases: pv
