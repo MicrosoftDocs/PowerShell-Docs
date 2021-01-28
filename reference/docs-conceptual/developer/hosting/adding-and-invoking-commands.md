@@ -113,7 +113,7 @@ is already a script named `MyScript.ps1` in a folder named `D:\PSScripts`.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
-ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
+ps.AddScript(File.ReadAllText(@"D:\PSScripts\MyScript.ps1")).Invoke();
 ```
 
 There is also a version of the
@@ -124,7 +124,7 @@ scope.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
-ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
+ps.AddScript(File.ReadAllText(@"D:\PSScripts\MyScript.ps1"), true).Invoke();
 ```
 
 ### Invoking a pipeline synchronously
