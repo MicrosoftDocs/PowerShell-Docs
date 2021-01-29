@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 6/24/2019
+ms.date: 01/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-recyclebin?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-RecycleBin
@@ -91,7 +90,8 @@ Accept wildcard characters: False
 
 ### -Force
 
-Specifies that the user isn't prompted for confirmation to clear a recycle bin.
+Specifies that the user isn't prompted for confirmation to clear a recycle bin. The **Force**
+parameter also overrides the **WhatIf** and **Confirm** parameters.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
