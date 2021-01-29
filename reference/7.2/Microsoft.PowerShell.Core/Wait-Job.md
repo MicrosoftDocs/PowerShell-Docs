@@ -52,8 +52,8 @@ Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Filter] <Hashtable> [<CommonParame
 
 ## DESCRIPTION
 
-The `Wait-Job` cmdlet waits for a job to be in a terminating state before it displays the command
-prompt. The terminating states are:
+The `Wait-Job` cmdlet waits for a job to be in a terminating state before continuing execution.
+The terminating states are:
 
 - Completed
 - Failed
