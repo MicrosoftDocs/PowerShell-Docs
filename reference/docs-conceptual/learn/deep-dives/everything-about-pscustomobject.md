@@ -81,7 +81,7 @@ I find the best way to save a hashtable to a file is to save it as JSON. You can
 a `[PSCustomObject]`
 
 ```powershell
-$myObject | ConvertTo-Json -depth 1- | Set-Content -Path $Path
+$myObject | ConvertTo-Json -depth 1 | Set-Content -Path $Path
 $myObject = Get-Content -Path $Path | ConvertFrom-Json
 ```
 
@@ -95,7 +95,7 @@ I cover more ways to save objects to a file in my article on
 You can still add new properties to your `PSCustomObject` with `Add-Member`.
 
 ```powershell
-$myObject | Add-Member -MemberType NoteProperty -Name `ID` -Value 'KevinMarquette'
+$myObject | Add-Member -MemberType NoteProperty -Name 'ID' -Value 'KevinMarquette'
 
 $myObject.ID
 ```
