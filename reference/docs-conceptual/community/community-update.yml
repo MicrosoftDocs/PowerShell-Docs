@@ -47,14 +47,10 @@ landingContent:
   linkLists:
     - linkListType: whats-new
       links:
-        - text: 2020-Q4
-          url: ./2020-Q4.md
-        - text: 2020-Q3
-          url: ./2020-Q3.md
-        - text: 2020-Q2
-          url: ./2020-Q2.md
-        - text: 2020-Q1
-          url: ./2020-Q1.md
+        - text: 2021 Updates
+          url: ./2021-updates.md
+        - text: 2020 Updates
+          url: ./2020-updates.md
         - text: Contributor Hall of Fame
           url: hall-of-fame.md
 - title: Community resources
