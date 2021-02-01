@@ -570,14 +570,10 @@
     href: community/hall-of-fame.md
   - name: What's new in Docs
     items:
-    - name: 2020-Q4
-      href: community/2020-Q4.md
-    - name: 2020-Q3
-      href: community/2020-Q3.md
-    - name: 2020-Q2
-      href: community/2020-Q2.md
-    - name: 2020-Q1
-      href: community/2020-Q1.md
+    - name: 2021 Updates
+      href: community/2021-updates.md
+    - name: 2020 Updates
+      href: community/2020-updates.md
   - name: Contributor's Guide
     items:
     - name: Overview

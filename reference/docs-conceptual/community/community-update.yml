@@ -48,7 +48,7 @@ landingContent:
     - linkListType: whats-new
       links:
         - text: 2021 Updates
-          url: ./2020-updates.md
+          url: ./2021-updates.md
         - text: 2020 Updates
           url: ./2020-updates.md
         - text: Contributor Hall of Fame
