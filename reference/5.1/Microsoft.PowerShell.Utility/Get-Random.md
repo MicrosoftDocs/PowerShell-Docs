@@ -37,11 +37,11 @@ integer between 0 (zero) and **Int32.MaxValue** (`0x7FFFFFFF`, `2,147,483,647`).
 By default, `Get-Random` generates cryptographically secure randomness using the
 [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) class.
 
-You can use the parameters of `Get-Random` to specify a seed number, minimum and maximum values, and
-the number of objects returned from a submitted collection.
+You can use the parameters of `Get-Random` to specify the minimum and maximum values, the number of
+objects returned from a collection, or a seed number.
 
 > [!CAUTION]
-> Setting the seed deliberately results in non-random repeatable behavior. It should only be used
+> Setting the seed deliberately results in non-random, repeatable behavior. It should only be used
 > when trying to reproduce behavior, such as when debugging or analyzing a script that includes
 > `Get-Random` commands.
 >
