@@ -375,8 +375,8 @@ submitted collection.
 
 ## NOTES
 
-By default, `Get-Random` generates cryptographically strong randomness using the
-[RandomNumberGenerator()](/dotnet/api/system.security.cryptography.randomnumbergenerator) method.
+By default, `Get-Random` generates cryptographically secure randomness using the
+[RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) class.
 
 `Get-Random` does not alway return the same data type as the input value. The following table shows
 the output type for each of the numeric input types.
