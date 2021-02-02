@@ -912,7 +912,7 @@ installation available from other sources. While those tools and methods may wor
 support those methods.
 
 <!-- link references -->
-[releases]: https://aka.ms/PowerShell-Release?tag=v7.1.1
+[releases]: https://aka.ms/PowerShell-Release?tag=stable
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 [distros]: https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md#linux
 [Distribution Support Request]: https://github.com/PowerShell/PowerShell/issues/new?assignees=&labels=Distribution-Request&template=Distribution_Request.md&title=Distribution+Support+Request
