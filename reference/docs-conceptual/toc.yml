@@ -771,7 +771,7 @@
     - name: GDPR Compliance
       href: gallery/how-to/getting-support/gdpr-dsr-policy.md
   - name: Gallery FAQs
-    href: gallery/faqs.md
+    href: gallery/faqs.yml
 - name: Scripting and development
   items:
   - name: Visual Studio Code

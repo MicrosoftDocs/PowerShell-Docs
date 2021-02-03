@@ -257,5 +257,5 @@ support those methods.
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[releases]: https://aka.ms/PowerShell-Release?tag=v7.1.1
+[releases]: https://aka.ms/powershell-release?tag=stable
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
