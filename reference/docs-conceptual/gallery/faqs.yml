@@ -42,20 +42,22 @@ sections:
           the first time. Afterwards, your NuGetApiKey is available on your profile page.
 
           Once you have registered in the Gallery, use the
-          [Publish-Module](xref:PowershellGet.Publish-Module) or
-          [Publish-Script](xref:PowershellGet.Publish-Script) cmdlets to publish your package to the
+          [Publish-Module](xref:PowerShellGet.Publish-Module) or
+          [Publish-Script](xref:PowerShellGet.Publish-Script) cmdlets to publish your package to the
           Gallery. For more details on how to run these cmdlets, visit the Publish tab, or read the
-          [Publish-Module](xref:PowershellGet.Publish-Module) and
-          [Publish-Script](xref:PowershellGet.Publish-Script) documentation.
+          [Publish-Module](xref:PowerShellGet.Publish-Module) and
+          [Publish-Script](xref:PowerShellGet.Publish-Script) documentation.
 
           **You do not need to register or sign in to the Gallery to install or save packages.**
 
       - question: |
-          I received "Failed to process request. 'The specified API key is invalid or does not have
-          permission to access the specified package.'. The remote server returned an error: (403)
-          Forbidden." error when I tried to publish a package to the PowerShell Gallery. What does
-          that mean?
+          I received "Failed to process request." when I tried to publish a package to the
+          PowerShell Gallery. What does that mean?
         answer: |
+          The full error message is: "Failed to process request." 'The specified API key is invalid
+          or does not have permission to access the specified package.'. The remote server returned
+          an error: (403) Forbidden."
+
           This error can occur for the following reasons:
 
           - **The specified API key is invalid.** Ensure that you have specified the valid API key
@@ -95,7 +97,7 @@ sections:
           published to the gallery. To publish a module, PowerShellGet needs to know a few things
           about it - the version, description, author, and how it is licensed. This information is
           read as part of the publishing process from the *module manifest* (.psd1) file, or from
-          the value of the [Publish-Module](xref:PowershellGet.Publish-Module) cmdlet's
+          the value of the [Publish-Module](xref:PowerShellGet.Publish-Module) cmdlet's
           **LicenseUri** parameter. All modules published to the Gallery must have module manifests.
           Any module that includes the following information in its manifest can be published to the
           Gallery:
@@ -105,7 +107,7 @@ sections:
           - Author
           - A URI to the license terms of the module, either as part of the **PrivateData** section
             of the manifest, or in the **LicenseUri** parameter of the
-            [Publish-Module](xref:PowershellGet.Publish-Module) cmdlet.
+            [Publish-Module](xref:PowerShellGet.Publish-Module) cmdlet.
 
       - question: How do I create a correctly-formatted module manifest?
         answer: |
@@ -128,7 +130,7 @@ sections:
           publish a script, PowerShellGet needs to know a few things about it - the version,
           description, author, and how it is licensed. This information is read as part of the
           publishing process from the script file's *PSScriptInfo* section, or from the value of the
-          [Publish-Script](xref:PowershellGet.Publish-Script) cmdlet's **LicenseUri** parameter. All
+          [Publish-Script](xref:PowerShellGet.Publish-Script) cmdlet's **LicenseUri** parameter. All
           scripts published to the Gallery must have metadata information. Any script that includes
           the following information in its PSScriptInfo section can be published to the Gallery:
 
@@ -137,7 +139,7 @@ sections:
           - Author
           - A URI to the license terms of the script, either as part of the **PSScriptInfo** section
             of the script, or in the **LicenseUri** parameter of the
-            [Publish-Script](xref:PowershellGet.Publish-Script) cmdlet.
+            [Publish-Script](xref:PowerShellGet.Publish-Script) cmdlet.
 
       - question: How do I search?
         answer: |
@@ -161,16 +163,16 @@ sections:
       - question: How do I create a correctly-formatted script file?
         answer: |
           The easiest way to create a properly-formatted script file is to run the
-          [New-ScriptFileInfo](xref:PowershellGet.New-ScriptFileInfo) cmdlet. In PowerShell 5.0,
+          [New-ScriptFileInfo](xref:PowerShellGet.New-ScriptFileInfo) cmdlet. In PowerShell 5.0,
           New-ScriptFileInfo generates a correctly-formatted script file with blank fields for
           useful metadata like **ProjectUri**, **LicenseUri**, and **Tags**. Simply fill in the
           blanks, or use the generated script file as an example of correct formatting.
 
           To verify that all required metadata fields have been properly filled, use the
-          [Test-ScriptFileInfo](xref:PowershellGet.Test-ScriptFileInfo) cmdlet.
+          [Test-ScriptFileInfo](xref:PowerShellGet.Test-ScriptFileInfo) cmdlet.
 
           To update the script metadata fields, use the
-          [Update-ScriptFileInfo](xref:PowershellGet.Update-ScriptFileInfo) cmdlet.
+          [Update-ScriptFileInfo](xref:PowerShellGet.Update-ScriptFileInfo) cmdlet.
 
       - question: What other types of PowerShell Modules exist?
         answer: |
@@ -202,11 +204,11 @@ sections:
 
           PowerShellGet is the package manager for PowerShell packages. There is a PSModule package
           provider that exposes PowerShellGet functionality through PackageManagement. Because of
-          this, you can either run [Install-Module](xref:PowershellGet.Install-Module) or
+          this, you can either run [Install-Module](xref:PowerShellGet.Install-Module) or
           `Install-Package -Provider PSModule` to install a module from the PowerShell Gallery.
           Certain PowerShellGet functionality, including
-          [Update-Module](xref:PowershellGet.Update-Module) and
-          [Publish-Module](xref:PowershellGet.Publish-Module), cannot be accessed through
+          [Update-Module](xref:PowerShellGet.Update-Module) and
+          [Publish-Module](xref:PowerShellGet.Publish-Module), cannot be accessed through
           PackageManagement commands.
 
           In summary, PowerShellGet is solely focused on having a premium package management
@@ -226,7 +228,7 @@ sections:
 
           You can use PowerShellGet against any valid NuGet repository or file share. You simply
           need to add the repository by running the
-          [Register-PSRepository](xref:PowershellGet.Register-PSRepository) cmdlet.
+          [Register-PSRepository](xref:PowerShellGet.Register-PSRepository) cmdlet.
 
       - question: Does that mean I can use NuGet.exe to work with the Gallery?
         answer: Yes.
@@ -235,7 +237,7 @@ sections:
         answer: |
           Under the hood, PowerShellGet heavily leverages PackageManagement infrastructure.
 
-          At the PowerShell cmdlet layer, [Install-Module](xref:PowershellGet.Install-Module) is
+          At the PowerShell cmdlet layer, [Install-Module](xref:PowerShellGet.Install-Module) is
           actually a thin wrapper around `Install-Package -Provider PSModule`.
 
           At the PackageManagement package provider layer, the PSModule package provider actually
