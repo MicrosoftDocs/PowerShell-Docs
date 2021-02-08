@@ -146,8 +146,9 @@ Column1         Column2         Column3
 
 ## Vertical tab (`v)
 
-The horizontal tabs (```v``) effect is device and terminal dependant. Here
-are _some_ examples from different terminals:
+The vertical tab (`` `v ``) character advances to the next vertical tab stop
+and writes the remaining output at that point.
+The rendering of the the vertical tab is device and terminal dependent.
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
