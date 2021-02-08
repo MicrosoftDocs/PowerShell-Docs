@@ -147,32 +147,34 @@ Column1         Column2         Column3
 ## Vertical tab (`v)
 
 The vertical tab (`` `v ``) character advances to the next vertical tab stop
-and writes the remaining output at that point.
-The rendering of the the vertical tab is device and terminal dependent.
+and writes the remaining output at that point. The rendering of the the
+vertical tab is device and terminal dependent.
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
 ```
 
-The following example shows the output of a default terminal in Windows. The
-terminal interprets ```v`` as the `♂` character with no extra spacing added.
+The following examples show the rendered output of the vertical tab in some
+common environments.
+
+The Windows Console host application interprets (`` `v ``) as a special
+character with no extra spacing added.
 
 ```Output
 There is a vertical tab♂between the words.
 ```
 
-The following example shows the output of [Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701).
-The ```v`` character acts as a carriage return character and the rest of the
-output is printed on the following line.
+The [Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)
+renders the vertical tab character as a carriage return and line feed. The rest
+of the output is printed at the beginning of the next line.
 
 ```Output
 There is a vertical tab
 between the words.
 ```
 
-The following example shows the output you would get on a printer or in a unix
-based console host. The vertical tab (```v``) character advances to the next
-vertical tab stop and writes the remaining output at that point.
+On printers or in a unix-based consoles, the vertical tab character advances to
+the next line and writes the remaining output at that point.
 
 ```Output
 There is a vertical tab
