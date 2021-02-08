@@ -1,0 +1,57 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Hides the output instead of sending it down the pipeline or displaying it.
+module: Microsoft.PowerShell.Core
+notes: |-
+  * The cmdlets that contain the **Out** verb (the **Out** cmdlets) do not have parameters for names or file paths. To send data to an **Out** cmdlet, use a pipeline operator (|) to send the output of a PowerShell command to the cmdlet. You can also store data in a variable and use the *InputObject* parameter to pass the data to the cmdlet. For more information, see the examples.
+  * **Out-Null** does not return any output objects. If you pipe the output of **Out-Null** to the Get-Member cmdlet, **Get-Member** reports that no objects have been specified.
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe any object to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+links:
+- text: Out-Default
+  href: Out-Default.yml
+- text: Out-Host
+  href: Out-Host.yml
+syntaxes:
+- Out-Null [-InputObject <PSObject>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Delete output'
+  code: |-
+    Get-ChildItem | Out-Null
+  description: |-
+    This command gets items in the current location/directory, but its output is not passed through
+    the pipeline nor displayed at the command line.
+    This is useful for hiding output that you do not need.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  name: InputObject
+  description: |+
+    Specifies the object to be sent to NULL (removed from pipeline).
+    Enter a variable that contains the objects, or type a command or expression that gets the objects.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Core.Out-Null
+name: Out-Null
+description: |-
+  The **Out-Null** cmdlet sends its output to NULL, in effect, removing it from the pipeline and
+  preventing the output to be displayed at the screen.
+metadata:
+  external help file: System.Management.Automation.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/out-null?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Out-Null

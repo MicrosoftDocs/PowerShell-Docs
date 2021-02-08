@@ -1,0 +1,110 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Enables debugging on runspaces where any breakpoint is preserved until a debugger is attached.
+module: Microsoft.PowerShell.Utility
+notes: ""
+links:
+- text: Disable-RunspaceDebug
+  href: Disable-RunspaceDebug.yml
+- text: Get-RunspaceDebug
+  href: Get-RunspaceDebug.yml
+syntaxes:
+- Enable-RunspaceDebug [-BreakAll] [[-RunspaceName] <String[]>] [<CommonParameters>]
+- Enable-RunspaceDebug [-BreakAll] [-Runspace] <Runspace[]> [<CommonParameters>]
+- Enable-RunspaceDebug [-BreakAll] [-RunspaceId] <Int32[]> [<CommonParameters>]
+- Enable-RunspaceDebug [-RunspaceInstanceId] <Guid[]> [<CommonParameters>]
+- Enable-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>] [<CommonParameters>]
+examples:
+- title: '1: Enable the default runspace debugger'
+  code: |-
+    Enable-RunspaceDebug
+    Get-RunspaceDebug
+
+    Id Name                 Enabled    BreakAll
+     -- ----                 -------    --------
+      1 Runspace1            True       False
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: AppDomainName
+  description: |+
+    The name of the application domain that hosts the PowerShell runspace.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: BreakAll
+  description: |+
+    Causes any running command or script in the Runspace to stop in step mode, regardless of whether a
+    debugger is currently attached. The script or command will remain stopped until a debugger is
+    attached to debug the current stop point.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ProcessName
+  description: |+
+    The name of the process that hosts the PowerShell runspace.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.Runspaces.Runspace" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Runspace
+  isRequired: true
+  description: |+
+    One or more **Runspace** objects to be disabled.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: RunspaceId
+  isRequired: true
+  description: |+
+    One or more **Runspace** Id numbers to be disabled.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Guid" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: RunspaceInstanceId
+  isRequired: true
+  description: |+
+    One or more **Runspace** GUIDs to be disabled.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: RunspaceName
+  description: |+
+    One or more **Runspace** names to be disabled.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Enable-RunspaceDebug
+name: Enable-RunspaceDebug
+description: |-
+  The `Enable-RunspaceDebug` cmdlet enables debugging on runspaces where any breakpoint is preserved
+  until a debugger is attached.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 03/19/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/enable-runspacedebug?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Enable-RunspaceDebug

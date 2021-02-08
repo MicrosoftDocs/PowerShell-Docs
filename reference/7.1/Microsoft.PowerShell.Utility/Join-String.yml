@@ -1,0 +1,245 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Combines objects from the pipeline into a single string.
+module: Microsoft.PowerShell.Utility
+notes: ""
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: about_Automatic_Variables
+  href: ../microsoft.powershell.core/about/about_automatic_variables.md
+- text: about_Special_Characters
+  href: ..//microsoft.powershell.core/about/about_special_characters.md
+- text: Substring
+  href: /dotnet/api/system.string.substring
+syntaxes:
+- >-
+  Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-OutputPrefix <String>]
+
+   [-OutputSuffix <String>] [-UseCulture] [-InputObject <PSObject[]>] [<CommonParameters>]
+- >-
+  Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-OutputPrefix <String>]
+
+   [-OutputSuffix <String>] [-SingleQuote] [-UseCulture] [-InputObject <PSObject[]>]
+
+   [<CommonParameters>]
+- >-
+  Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-OutputPrefix <String>]
+
+   [-OutputSuffix <String>] [-DoubleQuote] [-UseCulture] [-InputObject <PSObject[]>]
+
+   [<CommonParameters>]
+- >-
+  Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-OutputPrefix <String>]
+
+   [-OutputSuffix <String>] [-FormatString <String>] [-UseCulture] [-InputObject <PSObject[]>]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Join directory names'
+  code: |-
+    Get-ChildItem -Directory C:\ | Join-String -Property Name -DoubleQuote -Separator ', '
+
+    "PerfLogs", "Program Files", "Program Files (x86)", "Users", "Windows"
+  description: |-
+    `Get-ChildItem` uses the **Directory** parameter to get all the directory names for the `C:\` drive.
+    The objects are sent down the pipeline to `Join-String`. The **Property** parameter specifies the
+    directory names. The **DoubleQuote** parameter wraps the directory names with double-quote marks.
+    The **Separator** parameter specifies to use a comma and space (`, `) to separate the directory
+    names.
+
+    The `Get-ChildItem` objects are **System.IO.DirectoryInfo** and `Join-String` converts the objects
+    to **System.String**.
+  summary: |+
+    <!-- markdownlint-disable MD038 -->
+    This example joins directory names, wraps the output in double-quotes, and separates the directory
+    names with a comma and space (`, `). The output is a string object.
+
+- title: 'Example 2: Use a property substring to join directory names'
+  code: |-
+    Get-ChildItem -Directory C:\ | Join-String -Property {$_.Name.SubString(0,4)} -SingleQuote -Separator ';'
+
+    'Perf';'Prog';'Prog';'User';'Wind'
+  description: |-
+    `Get-ChildItem` uses the **Directory** parameter to get all the directory names for the `C:\` drive.
+    The objects are sent down the pipeline to `Join-String`.
+
+    The **Property** parameter script block uses automatic variable (`$_`) to specify each object's
+    **Name** property substring. The substring gets the first four letters of each directory name. The
+    substring specifies the character start and end positions. The **SingleQuote** parameter wraps the
+    directory names with single-quote marks. The **Separator** parameter specifies to use a semicolon
+    (`;`) to separate the directory names.
+
+    For more information about automatic variables and substrings, see
+    [about_Automatic_Variables](../microsoft.powershell.core/about/about_automatic_variables.md) and
+    [Substring](/dotnet/api/system.string.substring).
+  summary: |+
+    This example uses a substring method to get the first four letters of directory names, wraps the
+    output in single-quotes, and separates the directory names with a semicolon (`;`).
+
+- title: 'Example 3: Display join output on a separate line'
+  code: |-
+    Get-Service -Name se* | Join-String -Property Name -Separator "`r`n`t" -OutputPrefix "Services:`n`t"
+
+    Services:
+        seclogon
+        SecurityHealthService
+        SEMgrSvc
+        SENS
+        Sense
+        SensorDataService
+        SensorService
+        SensrSvc
+        SessionEnv
+  description: |-
+    `Get-Service` uses the **Name** parameter with to specify services that begin with `se*`. The
+    asterisk (`*`) is a wildcard for any character.
+
+    The objects are sent down the pipeline to `Join-String` that uses the **Property** parameter to
+    specify the service names. The **Separator** parameter specifies three special characters that
+    represent a carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``). The **OutputPrefix**
+    inserts a label **Services:** with a new line and tab before the first line of output.
+
+    For more information about special characters, see
+    [about_Special_Characters](..//microsoft.powershell.core/about/about_special_characters.md).
+  summary: |+
+    This example joins service names with each service on a separate line and indented by a tab.
+
+- title: 'Example 4: Create a class definition from an object'
+  code: |-
+    $obj = [pscustomobject] @{Name = "Joe"; Age = 42}
+    $parms = @{
+      Property = "Name"
+      FormatString = '  ${0}'
+      OutputPrefix = "class {`n"
+      OutputSuffix = "`n}`n"
+      Separator = "`n"
+    }
+    $obj.PSObject.Properties | Join-String @parms
+
+    class {
+      $Name
+      $Age
+    }
+  description: ""
+  summary: |+
+    This example generates a PowerShell class definition using an existing object as a template.
+
+    This code sample uses splatting to reduce the line length and improve readability. For more
+    information, see [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: DoubleQuote
+  description: |+
+    Wraps the string value of each pipeline object in double-quotes.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: FormatString
+  description: |+
+    A format string that specifies how each item should be formatted.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InputObject
+  description: |+
+    Specifies the text to be joined. Enter a variable that contains the text, or type a command or
+    expression that gets the objects to join into strings.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: OutputPrefix
+  description: |+
+    Text that's inserted before the output string. The string can contain special characters such as
+    carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``).
+
+  defaultValue: None
+  position: Named
+  aliases: op
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: OutputSuffix
+  description: |+
+    Text that's appended to the output string. The string can contain special characters such as
+    carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``).
+
+  defaultValue: None
+  position: Named
+  aliases: os
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.Commands.PSPropertyExpression" data-throw-if-not-resolved="False" />
+  name: Property
+  description: |+
+    The name of a property, or a property expression, that will project the pipeline object to text.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Separator
+  description: |+
+    Text or characters such as a comma or semicolon that's inserted between the text for each pipeline
+    object.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: SingleQuote
+  description: |+
+    Wraps the string value of each pipeline object in single quotes.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: UseCulture
+  description: |+
+    Uses the list separator for the current culture as the item delimiter. To find the list separator
+    for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Join-String
+name: Join-String
+description: |-
+  The `Join-String` cmdlet joins, or combines, text from pipeline objects into a single string.
+
+  If no parameters are specified, the pipeline objects are converted to a string and joined with the
+  default separator `$OFS`.
+
+  By specifying a property name, the property's value is converted to a string and joined into a
+  string.
+
+  Instead of a property name, a script block can be used. The script block's result is converted to a
+  string before it's joined to form the result. It can either combine the text of an object's property
+  or the result of the object that was converted to a string.
+
+  This cmdlet was introduced in PowerShell 6.2.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 12/12/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/join-string?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Join-String

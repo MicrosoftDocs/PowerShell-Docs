@@ -1,0 +1,220 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Renames a property of an item.
+module: Microsoft.PowerShell.Management
+notes: |-
+  `Remove-ItemProperty` is designed to work with the data exposed by any provider. To list the
+  providers available in your session, type `Get-PSProvider`. For more information, see
+  [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains a path, but not a literal path, to this cmdlet.
+outputs:
+- name: <xref href="None, System.Management.Automation.PSCustomObject" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet generates a **PSCustomObject** that represents the renamed item property, if you specify
+    the **PassThru** parameter. Otherwise, this cmdlet does not generate any output.
+links:
+- text: Clear-ItemProperty
+  href: Clear-ItemProperty.yml
+- text: Copy-ItemProperty
+  href: Copy-ItemProperty.yml
+- text: Get-ItemProperty
+  href: Get-ItemProperty.yml
+- text: Move-ItemProperty
+  href: Move-ItemProperty.yml
+- text: New-ItemProperty
+  href: New-ItemProperty.yml
+- text: Remove-ItemProperty
+  href: Remove-ItemProperty.yml
+- text: Rename-Item
+  href: Rename-Item.yml
+- text: Set-ItemProperty
+  href: Set-ItemProperty.yml
+- text: about_Providers
+  href: ../Microsoft.PowerShell.Core/About/about_Providers.md
+syntaxes:
+- >-
+  Rename-ItemProperty [-Path] <String> [-Name] <String> [-NewName] <String> [-PassThru] [-Force]
+
+   [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Rename-ItemProperty -LiteralPath <String> [-Name] <String> [-NewName] <String> [-PassThru] [-Force]
+
+   [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Rename a registry entry'
+  code: |-
+    Rename-ItemProperty -Path HKLM:\Software\SmpApplication -Name config -NewName oldconfig
+  description: ""
+  summary: |+
+    This command renames the config registry entry that is contained in the
+    `HKEY_LOCAL_MACHINE\Software\SmpApplication` key to "oldconfig".
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    > [!NOTE]
+    > This parameter is not supported by any providers installed with PowerShell.
+    > To impersonate another user, or elevate your credentials when running this cmdlet,
+    > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.yml).
+
+  defaultValue: Current user
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Exclude
+  description: |+
+    Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+    of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+    `*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+    command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+    specifies the contents of the `C:\Windows` directory.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Filter
+  description: |+
+    Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+    provider is the only installed PowerShell provider that supports the use of filters. You can find
+    the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
+    Filters are more efficient than other parameters, because the provider applies them when the cmdlet
+    gets the objects rather than having PowerShell filter the objects after they are retrieved.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the cmdlet to rename a property of an object that cannot otherwise be accessed by the user.
+    Implementation varies from provider to provider.
+    For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Include
+  description: |+
+    Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+    of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+    `"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+    command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+    specifies the contents of the `C:\Windows` directory.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+    typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
+    it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
+    as escape sequences.
+
+    For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath, LP
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the current name of the property to rename.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: PSProperty
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: NewName
+  isRequired: true
+  description: |+
+    Specifies the new name for the property.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "2"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object that represents the item property.
+    By default, this cmdlet does not generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path of the item to rename.
+    Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Rename-ItemProperty
+name: Rename-ItemProperty
+description: |-
+  The `Rename-ItemProperty` cmdlet changes the name of a specified item property.
+  The value of the property is not changed.
+  For example, you can use `Rename-ItemProperty` to change the name of a registry entry.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 5/14/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-itemproperty?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Rename-ItemProperty

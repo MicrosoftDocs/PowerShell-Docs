@@ -1,0 +1,71 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Stop an Event Trace logging session.
+module: PSDiagnostics
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Event Tracing
+  href: /windows/desktop/ETW/event-tracing-portal
+- text: Start-Trace
+  href: start-trace.yml
+- text: Disable-PSWSManCombinedTrace
+  href: Disable-PSWSManCombinedTrace.yml
+- text: Disable-WSManTrace
+  href: Disable-WSManTrace.yml
+- text: Enable-PSWSManCombinedTrace
+  href: Enable-PSWSManCombinedTrace.yml
+- text: Enable-WSManTrace
+  href: Enable-WSManTrace.yml
+syntaxes:
+- Stop-Trace [-SessionName] <Object> [-ETS] [<CommonParameters>]
+examples:
+- title: 'Example 1: Stop a WSMan Trace logging session'
+  code: |-
+    Stop-Trace -SessionName 'wsmlog'
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ETS
+  description: |+
+    Send commands to Event Trace Sessions directly without saving or scheduling.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: SessionName
+  isRequired: true
+  description: |+
+    The name of the Event Trace session to be stopped.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: PSDiagnostics.Stop-Trace
+name: Stop-Trace
+description: |-
+  This cmdlet stops a Windows Event Trace logging session.
+
+  This cmdlet is used by the following cmdlets:
+
+  - `Disable-PSWSManCombinedTrace`
+  - `Disable-WSManTrace`
+
+  You must run this cmdlet from an elevated PowerShell session.
+metadata:
+  external help file: PSDiagnostics-help.xml
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 11/27/2018
+  online version: https://docs.microsoft.com/powershell/module/psdiagnostics/stop-trace?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Stop-Trace

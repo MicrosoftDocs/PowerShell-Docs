@@ -1,0 +1,95 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Writes text to the verbose message stream.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  - Verbose messages are returned only when the command uses the **Verbose** common parameter. For
+    more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+  - In Windows PowerShell background jobs and remote commands, the `$VerbosePreference` variable in
+    the job session and remote session determine whether the verbose message is displayed by default.
+    For more information about the `$VerbosePreference` variable, see
+    [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains the message to `Write-Verbose`.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    `Write-Verbose` writes only to the verbose message stream.
+links:
+- text: about_Output_Streams
+  href: ../Microsoft.PowerShell.Core/About/about_Output_Streams.md
+- text: about_Redirection
+  href: ../Microsoft.PowerShell.Core/About/about_Redirection.md
+- text: Write-Debug
+  href: Write-Debug.yml
+- text: Write-Error
+  href: Write-Error.yml
+- text: Write-Host
+  href: Write-Host.yml
+- text: Write-Information
+  href: Write-Information.yml
+- text: Write-Output
+  href: Write-Output.yml
+- text: Write-Progress
+  href: Write-Progress.yml
+- text: Write-Warning
+  href: Write-Warning.yml
+syntaxes:
+- Write-Verbose [-Message] <String> [<CommonParameters>]
+examples:
+- title: 'Example 1: Write a status message'
+  code: |-
+    Write-Verbose -Message "Searching the Application Event Log."
+    Write-Verbose -Message "Searching the Application Event Log." -Verbose
+  description: |-
+    These commands use the `Write-Verbose` cmdlet to display a status message. By default, the message
+    is not displayed.
+
+    The second command uses the **Verbose** common parameter, which displays any verbose messages,
+    regardless of the value of the `$VerbosePreference` variable.
+  summary: ""
+- title: 'Example 2: Set $VerbosePreference and write a status message'
+  code: |-
+    $VerbosePreference = "Continue"
+    Write-Verbose "Copying file $filename"
+  description: |-
+    These commands use the `Write-Verbose` cmdlet to display a status message. By default, the message
+    is not displayed.
+
+    The first command assigns a value of Continue to the `$VerbosePreference` preference variable. The
+    default value, `SilentlyContinue`, suppresses verbose messages. The second command writes a verbose
+    message.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Message
+  isRequired: true
+  description: |+
+    Specifies the message to display. This parameter is required. You can also pipe a message string to
+    `Write-Verbose`.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: Msg
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Write-Verbose
+name: Write-Verbose
+description: |-
+  The `Write-Verbose` cmdlet writes text to the verbose message stream in PowerShell. Typically, the
+  verbose message stream is used to deliver more in depth information about command processing.
+
+  By default, the verbose message stream is not displayed, but you can display it by changing the
+  value of the `$VerbosePreference` variable or using the **Verbose** common parameter in any
+  command.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 10/14/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-verbose?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Write-Verbose

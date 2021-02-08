@@ -1,0 +1,351 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Invokes a method of a CIM class.
+module: CimCmdlets
+notes: ""
+inputs:
+- name: <xref href="CIM class" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet accepts a CIM class as an input object.
+- name: <xref href="CIM instance" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet accepts a CIM instance as an input object.
+outputs:
+- name: <xref href="System.Management.Automation.PSCustomObject" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns an object.
+links:
+- text: Get-CimClass
+  href: get-cimclass.yml
+- text: Get-CimInstance
+  href: get-ciminstance.yml
+- text: Get-CimSession
+  href: Get-CimSession.yml
+- text: New-CimSession
+  href: New-CimSession.yml
+syntaxes:
+- >-
+  Invoke-CimMethod [-ClassName] <String> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
+
+   [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+- >-
+  Invoke-CimMethod [-ClassName] <String> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
+
+   [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+- >-
+  Invoke-CimMethod -ResourceUri <Uri> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
+
+   [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+- >-
+  Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance> -CimSession <CimSession[]>
+
+   [[-Arguments] <IDictionary>] [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf]
+
+   [-Confirm] [<CommonParameters>]
+- >-
+  Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance> [-ComputerName <String[]>]
+
+   [[-Arguments] <IDictionary>] [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf]
+
+   [-Confirm] [<CommonParameters>]
+- >-
+  Invoke-CimMethod -ResourceUri <Uri> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
+
+   [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+- >-
+  Invoke-CimMethod [-CimClass] <CimClass> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
+
+   [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Invoke-CimMethod [-CimClass] <CimClass> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
+
+   [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Invoke-CimMethod -Query <String> [-QueryDialect <String>] [-ComputerName <String[]>]
+
+   [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>]
+
+   [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Invoke-CimMethod -Query <String> [-QueryDialect <String>] -CimSession <CimSession[]>
+
+   [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>]
+
+   [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Invoke a method'
+  code: |-
+    Invoke-CimMethod -Query 'select * from Win32_Process where name like "notepad%"' -MethodName "Terminate"
+  description: ""
+  summary: |+
+    This example invokes the **Terminate** method of the **Win32_Process** class.
+
+- title: 'Example 2: Invoke a method using CIM instance object'
+  code: |-
+    $x = Get-CimInstance -Query 'Select * from Win32_Process where name like "notepad%"'
+    Invoke-CimMethod -InputObject $x -MethodName GetOwner
+  description: ""
+  summary: |+
+    This example retrieves the CIM instance object and stores it in a variable named `$x` using the
+    `Get-CimInstance` cmdlet. The contents of the variable are then used as the **InputObject** for the
+    `Invoke-CimMethod` cmdlet. The **GetOwner** method is invoked for the **CimInstance**.
+
+- title: 'Example 3: Invoke a static method using arguments'
+  code: |-
+    Invoke-CimMethod -ClassName Win32_Process -MethodName "Create" -Arguments @{
+      CommandLine = 'notepad.exe'; CurrentDirectory = "C:\windows\system32"
+    }
+  description: ""
+  summary: |+
+    This example invokes the **Create** method named using the **Arguments** parameter.
+
+- title: 'Example 4: Client-side validation'
+  code: |-
+    $c = Get-CimClass -ClassName Win32_Process
+    Invoke-CimMethod -CimClass $c -MethodName "xyz" -Arguments @{ CommandLine = 'notepad.exe' }
+  description: ""
+  summary: |+
+    This example performs client-side validation for the **xyz** method by passing a **CimClass** object
+    to `Invoke-CimMethod`.
+
+parameters:
+- type: <xref href="System.Collections.IDictionary" data-throw-if-not-resolved="False" />
+  name: Arguments
+  description: |+
+    Specifies the parameters to pass to the called method. Specify the values for this parameter as
+    name-value pairs, stored in a hash table. The order of the values entered isn't important.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.Management.Infrastructure.CimClass" data-throw-if-not-resolved="False" />
+  name: CimClass
+  isRequired: true
+  description: |+
+    Specifies a CIM class object that represents a CIM class definition on the server. Use this
+    parameter when invoking a static method of a class.
+
+    You can use the `Get-CimClass` cmdlet to retrieve a class definition from the server.
+
+    Using this parameter results in better client side schema validations.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.Management.Infrastructure.CimSession" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: CimSession
+  isRequired: true
+  description: |+
+    Runs the command using the specified CIM session. Enter a variable that contains the CIM session, or
+    a command that creates or gets the CIM session, such as the `New-CimSession` or `Get-CimSession`
+    cmdlets. For more information, see
+    [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ClassName
+  isRequired: true
+  description: |+
+    Specifies the name of the CIM class for which to perform the operation. This parameter is only used
+    for static methods. You can use tab completion to browse the list of classes, because PowerShell
+    gets a list of classes from the local WMI server to provide a list of class names.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: Class
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ComputerName
+  description: |+
+    Specifies the name of the computer on which you want to run the CIM operation. You can specify a
+    fully qualified domain name (FQDN), a NetBIOS name, or an IP address.
+
+    When using this parameter, the cmdlet creates a temporary session to the specified computer using
+    the WsMan protocol. Otherwise, the cmdlet performs the operation on the local computer using
+    Component Object Model (COM).
+
+    Connect using a CIM session for better performance when multiple operations are being performed on
+    the same computer.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: CN, ServerName
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.Management.Infrastructure.CimInstance" data-throw-if-not-resolved="False" />
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies a CIM instance object to use as input to invoke a method. This parameter can only be used
+    to invoke instance methods. To invoke class static methods, use the **Class** parameter or the
+    **CimClass** parameter.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: CimInstance
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MethodName
+  isRequired: true
+  description: |+
+    Specifies the name of the CIM method to invoke. This parameter is mandatory and cannot be null or
+    empty. To invoke static method of a CIM class use the **ClassName** or the **CimClass** parameter.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "2"
+  aliases: Name
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Namespace
+  description: |+
+    Specifies the namespace for the CIM operation. The default namespace is **root/cimv2**. You can use
+    tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from
+    the local WMI server to provide the list of namespaces.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.UInt32" data-throw-if-not-resolved="False" />
+  name: OperationTimeoutSec
+  description: |+
+    Specifies the amount of time that the cmdlet waits for a response from the computer. By default, the
+    value is 0, which means that the cmdlet uses the default timeout value for the server.
+
+    If the **OperationTimeoutSec** parameter is set to a value less than the default connection retry
+    timeout of 3 minutes, network failures that last more than the value of the **OperationTimeoutSec**
+    parameter are not recoverable.
+
+  defaultValue: None
+  position: Named
+  aliases: OT
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Query
+  isRequired: true
+  description: |+
+    Specifies a query to run on the CIM server. A method is invoked on the instances received as a
+    result of the query. You can specify the query dialect using the **QueryDialect** parameter.
+
+    If the value specified contains double quotes (`"`), single quotes (`'`), or a backslash (`\`), you
+    must escape those characters by prefixing them with the backslash (`\`) character. If the value
+    specified uses the WQL LIKE operator, then you must escape the following characters by enclosing
+    them in square brackets (`[]`): percent (`%`), underscore (`_`), or opening square bracket (`[`).
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: QueryDialect
+  description: |+
+    Specifies the query language used for the Query parameter. The acceptable values for this parameter
+    are: **WQL** or **CQL**.
+
+    The default value is **WQL**.
+
+  defaultValue: WQL
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: ResourceUri
+  description: |+
+    Specifies the resource uniform resource identifier (URI) of the resource class or instance.
+    The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
+
+    A URI consists of a prefix and a path to a resource. For example:
+
+    `http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+
+    `http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
+
+    By default, if you do not specify this parameter, the DMTF standard resource URI
+    `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
+
+    **ResourceURI** can only be used with CIM sessions created using the WSMan protocol, or when
+    specifying the **ComputerName** parameter, which creates a CIM session using WSMan.
+
+    When you specify this parameter without specifying the **ComputerName** parameter, or when you
+    specify a CIM session created using DCOM protocol, you get an error. The DCOM protocol does not
+    support the **ResourceURI** parameter.
+
+    If both the **ResourceUri** parameter and the **Filter** parameter are specified, the **Filter**
+    parameter is ignored.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: CimCmdlets.Invoke-CimMethod
+name: Invoke-CimMethod
+description: |-
+  The `Invoke-CimMethod` cmdlet invokes a method of a CIM class or CIM instance using the name-value
+  pairs specified by the **Arguments** parameter.
+
+  If the **InputObject** parameter is not specified, the cmdlet works in one of the following ways:
+
+  - If neither the **ComputerName** parameter nor the **CimSession** parameter is specified, then this
+    cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model
+    (COM) session.
+  - If either the **ComputerName** parameter or the **CimSession** parameter is specified, then this
+    cmdlet works against the CIM server specified by either the **ComputerName** parameter or the
+    **CimSession** parameter.
+
+  If the **InputObject** parameter is specified, the cmdlet works in one of the following ways:
+
+  - If neither the **ComputerName** parameter nor the **CimSession** parameter is specified, then this
+    cmdlet uses the CIM session or computer name from the input object.
+  - If the either the **ComputerName** parameter or the **CimSession** parameter is specified, then
+    this cmdlet uses the either the **CimSession** parameter value or **ComputerName** parameter
+    value. This is not a common scenario.
+metadata:
+  external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: CimCmdlets
+  ms.date: 01/21/2020
+  online version: https://docs.microsoft.com/powershell/module/cimcmdlets/invoke-cimmethod?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Invoke-CimMethod

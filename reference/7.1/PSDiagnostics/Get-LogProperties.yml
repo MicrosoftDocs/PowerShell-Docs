@@ -1,0 +1,60 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Retrieves the properties of a Windows event log.
+module: PSDiagnostics
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="Microsoft.PowerShell.Diagnostics.LogDetails" data-throw-if-not-resolved="False" />
+  description: |-
+    The **PSDiagnostics** module adds the **LogDetails** class to the
+    `Microsoft.PowerShell.Diagnostics` namespace.
+links:
+- text: Set-LogProperties
+  href: Set-LogProperties.yml
+- text: Enable-PSTrace
+  href: Enable-PSTrace.yml
+- text: Disable-PSTrace
+  href: Disable-PSTrace.yml
+syntaxes:
+- Get-LogProperties [-Name] <Object> [<CommonParameters>]
+examples:
+- title: 'Example 1: Get the configuration settings of the Windows PowerShell event log'
+  code: |-
+    Get-LogProperties 'Windows PowerShell'
+
+    Name       : Windows PowerShell
+    Enabled    : True
+    Type       : Admin
+    Retention  : False
+    AutoBackup : False
+    MaxLogSize : 15728640
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    The name of the event provider.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: PSDiagnostics.Get-LogProperties
+name: Get-LogProperties
+description: |-
+  This cmdlet gets the configuration settings of a Windows event log. This cmdlet is used by the
+  `Enable-PSTrace` and `Disable-PSTrace` cmdlets.
+metadata:
+  external help file: PSDiagnostics-help.xml
+  Module Name: PSDiagnostics
+  Locale: en-US
+  ms.date: 11/27/2018
+  online version: https://docs.microsoft.com/powershell/module/psdiagnostics/get-logproperties?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-LogProperties

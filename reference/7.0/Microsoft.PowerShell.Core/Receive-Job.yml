@@ -1,0 +1,468 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets the results of the PowerShell background jobs in the current session.
+module: Microsoft.PowerShell.Core
+notes: ""
+inputs:
+- name: <xref href="System.Management.Automation.Job" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe job objects to this cmdlet.
+outputs:
+- name: <xref href="PSObject" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns the results of the commands in the job.
+links:
+- text: Get-Job
+  href: Get-Job.yml
+- text: Invoke-Command
+  href: Invoke-Command.yml
+- text: Remove-Job
+  href: Remove-Job.yml
+- text: Start-Job
+  href: Start-Job.yml
+- text: Stop-Job
+  href: Stop-Job.yml
+- text: Wait-Job
+  href: Wait-Job.yml
+syntaxes:
+- >-
+  Receive-Job [-Job] <Job[]> [[-Location] <String[]>] [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob]
+
+   [-WriteEvents] [-WriteJobInResults] [<CommonParameters>]
+- >-
+  Receive-Job [-Job] <Job[]> [[-ComputerName] <String[]>] [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob]
+
+   [-WriteEvents] [-WriteJobInResults] [<CommonParameters>]
+- >-
+  Receive-Job [-Job] <Job[]> [[-Session] <PSSession[]>] [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob]
+
+   [-WriteEvents] [-WriteJobInResults] [<CommonParameters>]
+- >-
+  Receive-Job [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob] [-WriteEvents] [-WriteJobInResults]
+
+   [-Name] <String[]> [<CommonParameters>]
+- >-
+  Receive-Job [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob] [-WriteEvents] [-WriteJobInResults]
+
+   [-InstanceId] <Guid[]> [<CommonParameters>]
+- >-
+  Receive-Job [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob] [-WriteEvents] [-WriteJobInResults]
+
+   [-Id] <Int32[]> [<CommonParameters>]
+examples:
+- title: 'Example 1: Get results for a particular job'
+  code: |-
+    $job = Start-Job -ScriptBlock {Get-Process}
+    Receive-Job -Job $job
+  description: |-
+    These commands use the **Job** parameter of `Receive-Job` to get the results of a particular job.
+
+    The first command starts a job with `Start-Job` and stores the job object in the `$job` variable.
+
+    The second command uses the `Receive-Job` cmdlet to get the results of the job.
+    It uses the **Job** parameter to specify the job.
+  summary: ""
+- title: 'Example 2: Use the Keep parameter'
+  code: |-
+    $job = Start-Job -ScriptBlock {Get-Service dhcp, fakeservice}
+    $job | Receive-Job -Keep
+
+    Cannot find any service with service name 'fakeservice'.
+        + CategoryInfo          : ObjectNotFound: (fakeservice:String) [Get-Service], ServiceCommandException
+        + FullyQualifiedErrorId : NoServiceFoundForGivenName,Microsoft.PowerShell.Commands.GetServiceCommand
+        + PSComputerName        : localhost
+
+    Status   Name               DisplayName
+    ------   ----               -----------
+    Running  dhcp               DHCP Client
+
+    $job | Receive-Job -Keep
+
+    Cannot find any service with service name 'fakeservice'.
+        + CategoryInfo          : ObjectNotFound: (fakeservice:String) [Get-Service], ServiceCommandException
+        + FullyQualifiedErrorId : NoServiceFoundForGivenName,Microsoft.PowerShell.Commands.GetServiceCommand
+        + PSComputerName        : localhost
+
+    Status   Name               DisplayName
+    ------   ----               -----------
+    Running  dhcp               DHCP Client
+  description: |-
+    This example stores a job in the `$job` variable, and pipes the job to the `Receive-Job` cmdlet. The
+    `-Keep` parameter is also used to allow all aggregated stream data to be retrieved again
+    after first view.
+  summary: ""
+- title: 'Example 3: Get results of several background jobs'
+  code: |-
+    # Use the Invoke-Command cmdlet with the -AsJob parameter to start a background job that runs a Get-Service command on three remote computers.
+    # Store the resulting job object in the $j variable
+    $j = Invoke-Command -ComputerName Server01, Server02, Server03 -ScriptBlock {Get-Service} -AsJob
+    # Display the value of the **ChildJobs** property of the job object in $j.
+    # The display shows that the command created three child jobs, one for the job on each remote computer.
+    # You could also use the -IncludeChildJobs parameter of the Get-Job cmdlet.
+    $j.ChildJobs
+
+    Id   Name     State      HasMoreData   Location       Command
+    --   ----     -----      -----------   --------       -------
+    2    Job2     Completed  True          Server01       Get-Service
+    3    Job3     Completed  True          Server02       Get-Service
+    4    Job4     Completed  True          Server03       Get-Service
+
+    # Use the Receive-Job cmdlet to get the results of just the Job3 child job that ran on the Server02 computer.
+    # Use the *Keep* parameter to allow you to view the aggregated stream data more than once.
+    Receive-Job -Name Job3 -Keep
+
+    Status  Name        DisplayName                        PSComputerName
+    ------  ----------- -----------                        --------------
+    Running AeLookupSvc Application Experience             Server02
+    Stopped ALG         Application Layer Gateway Service  Server02
+    Running Appinfo     Application Information            Server02
+    Running AppMgmt     Application Management             Server02
+  description: ""
+  summary: |+
+    When you use the **AsJob** parameter of `Invoke-Command` to start a job, the job object is created
+    on the local computer, even though the job runs on the remote computers.
+    As a result, you use local commands to manage the job.
+
+    Also, when you use **AsJob**, PowerShell returns one job object that contains a child job for each
+    job
+    that was started. In this case, the job object contains three child jobs, one for each job on each
+    remote computer.
+
+- title: 'Example 4: Get results of background jobs on multiple remote computers'
+  code: |-
+    # Use the New-PSSession cmdlet to create three user-managed PSSessions on three servers, and save the sessions in the $s variable.
+    $s = New-PSSession -ComputerName Server01, Server02, Server03
+    # Use Invoke-Command run a Start-Job command in each of the PSSessions in the $s variable.
+    # The job outputs the ComputerName of each server.
+    # Save the job objects in the $j variable.
+    $j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {$env:COMPUTERNAME}}
+    # To confirm that these job objects are from the remote machines, run Get-Job to show no local jobs running.
+    Get-Job
+
+
+
+    # Display the three job objects in $j.
+    # Note that the Localhost location is not the local computer, but instead localhost as it relates to the job on each Server.
+    $j
+
+    Id   Name     State      HasMoreData   Location   Command
+    --   ----     -----      -----------   --------   -------
+    1    Job1     Completed  True          Localhost  $env:COMPUTERNAME
+    2    Job2     Completed  True          Localhost  $env:COMPUTERNAME
+    3    Job3     Completed  True          Localhost  $env:COMPUTERNAME
+
+    # Use Invoke-Command to run a Receive-Job command in each of the sessions in the $s variable and save the results in the $Results variable.
+    # The Receive-Job command must be run in each session because the jobs were run locally on each server.
+    $results = Invoke-Command -Session $s -ScriptBlock {Receive-Job -Job $Using:j}
+
+    Server01
+    Server02
+    Server03
+  description: |-
+    This example shows how to get the results of background jobs run on three remote computers.
+    Unlike the previous example, using `Invoke-Command` to run the `Start-Job` command actually
+    started three independent jobs on each of the three computers. As a result, the command returned
+    three job objects representing three jobs run locally on three different computers.
+
+    > [!NOTE]
+    > In the last command, because `$j` is a local variable, the script block uses the **Using** scope
+    > modifier to identify the `$j` variable. For more information about the **Using** scope modifier,
+    > see [about_Remote_Variables](./About/about_Remote_Variables.md).
+  summary: ""
+- title: 'Example 5: Access child jobs'
+  code: |-
+    Start-Job -Name TestJob -ScriptBlock {dir C:\, Z:\}
+    # Without the Keep parameter, aggregated child job data is displayed once.
+    # Then destroyed.
+    Receive-Job -Name TestJob
+
+    Directory: C:\
+
+    Mode                LastWriteTime         Length Name
+    ----                -------------         ------ ----
+    d-r---        1/24/2019   7:11 AM                Program Files
+    d-r---        2/13/2019   8:32 AM                Program Files (x86)
+    d-r---        10/3/2018  11:47 AM                Users
+    d-----         2/7/2019   1:52 AM                Windows
+    Cannot find drive. A drive with the name 'Z' does not exist.
+        + CategoryInfo          : ObjectNotFound: (Z:String) [Get-ChildItem], DriveNotFoundException
+        + FullyQualifiedErrorId : DriveNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+        + PSComputerName        : localhost
+
+    # It would seem that the child job data is gone.
+    Receive-Job -Name TestJob
+
+
+
+    # Using the object model, you can still retrieve child job data and streams.
+    $job = Get-Job -Name TestJob
+    $job.ChildJobs[0].Error
+
+    Cannot find drive. A drive with the name 'Z' does not exist.
+        + CategoryInfo          : ObjectNotFound: (Z:String) [Get-ChildItem], DriveNotFoundException
+        + FullyQualifiedErrorId : DriveNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+        + PSComputerName        : localhost
+  description: ""
+  summary: |+
+    The `-Keep` parameter preserves the state of the aggregated streams of a job so that it
+    can be viewed again. Without this parameter all aggregated stream data is erased when the job
+    is received. For more information, see [about_Job_Details](About/about_Job_Details.md#child-jobs)
+
+    > [!NOTE]
+    > The aggregated streams include the streams of all child jobs. You can still reach the individual
+    > streams of data through the job object and child job objects.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AutoRemoveJob
+  description: |+
+    Indicates that this cmdlet deletes the job after it returns the job results.
+    If the job has more results, the job is still deleted, but `Receive-Job` displays a message.
+
+    This parameter works only on custom job types.
+    It is designed for instances of job types that save the job or the type outside of the session, such
+    as instances of scheduled jobs.
+
+    This parameter cannot be used without the **Wait** parameter.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ComputerName
+  description: |+
+    Specifies an array of names of computers.
+
+    This parameter selects from among the job results that are stored on the local computer.
+    It does not get data for jobs run on remote computers.
+    To get job results that are stored on remote computers, use the `Invoke-Command` cmdlet to run a
+    `Receive-Job` command remotely.
+
+  defaultValue: All computers available
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "1"
+  aliases: Cn
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Indicates that this cmdlet continues waiting if jobs are in the **Suspended** or **Disconnected**
+    state. By default, the **Wait** parameter of `Receive-Job` returns, or terminates the wait, when
+    jobs are in one of the following states:
+
+    - Completed
+    - Failed
+    - Stopped
+    - Suspended
+    - Disconnected.
+
+    The **Force** parameter is valid only when the **Wait** parameter is also used in the command.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Id
+  isRequired: true
+  description: |+
+    Specifies an array of IDs.
+    This cmdlet gets the results of jobs with the specified IDs.
+
+    The ID is an integer that uniquely identifies the job in the current session.
+    It is easier to remember and type than the instance ID, but it is unique only in the current
+    session. You can type one or more IDs separated by commas.
+    To find the ID of a job, use `Get-Job`.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Guid" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InstanceId
+  isRequired: true
+  description: |+
+    Specifies an array of instance IDs.
+    This cmdlet gets the results of jobs with the specified instance IDs.
+
+    An instance ID is a GUID that uniquely identifies the job on the computer.
+    To find the instance ID of a job, use the `Get-Job` cmdlet.
+
+  defaultValue: All instances
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.Job" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Job
+  isRequired: true
+  description: |+
+    Specifies the job for which results are being retrieved.
+
+    Enter a variable that contains the job or a command that gets the job.
+    You can also pipe a job object to `Receive-Job`.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Keep
+  description: |+
+    Indicates that this cmdlet saves the aggregated stream data in the system, even after you have
+    received them. By default, aggregated stream data is erased after viewed with `Receive-Job`.
+
+    Closing the session, or removing the job with the `Remove-Job` cmdlet also deletes aggregated
+    stream data.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Location
+  description: |+
+    Specifies an array of locations.
+    This cmdlet gets only the results of jobs in the specified locations.
+
+  defaultValue: All locations
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies an array of friendly names.
+    This cmdlet gets the results of jobs that have the specified names.
+    Wildcard characters are supported.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NoRecurse
+  description: |+
+    Indicates that this cmdlet gets results only from the specified job.
+    By default, `Receive-Job` also gets the results of all child jobs of the specified job.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.Runspaces.PSSession" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Session
+  description: |+
+    Specifies an array of sessions.
+    This cmdlet gets the results of jobs that were run in the specified PowerShell session
+    (**PSSession**).
+    Enter a variable that contains the **PSSession** or a command that gets the **PSSession**, such as a
+    `Get-PSSession` command.
+
+  defaultValue: All sessions
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Wait
+  description: |+
+    Indicates that this cmdlet suppresses the command prompt until all job results are received.
+    By default, `Receive-Job` immediately returns the available results.
+
+    By default, the **Wait** parameter waits until the job is in one of the following states:
+
+    - Completed
+    - Failed
+    - Stopped
+    - Suspended
+    - Disconnected.
+
+    To direct the **Wait** parameter to continue waiting if the job state is Suspended or Disconnected,
+    use the **Force** parameter together with the **Wait** parameter.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WriteEvents
+  description: |+
+    Indicates that this cmdlet reports changes in the job state while it waits for the job to finish.
+
+    This parameter is valid only when the **Wait** parameter is used in the command and the **Keep**
+    parameter is omitted.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WriteJobInResults
+  description: |+
+    Indicates that this cmdlet returns the job object followed by the results.
+
+    This parameter is valid only when the **Wait** parameter is used in the command and the **Keep**
+    parameter is omitted.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Core.Receive-Job
+name: Receive-Job
+description: |-
+  The `Receive-Job` cmdlet gets the results of PowerShell background jobs, such as those started by
+  using the `Start-Job` cmdlet or the **AsJob** parameter of any cmdlet.
+  You can get the results of all jobs or identify jobs by their name, ID, instance ID, computer name,
+  location, or session, or by submitting a job object.
+
+  When you start a PowerShell background job, the job starts, but the results do not appear
+  immediately. Instead, the command returns an object that represents the background job.
+  The job object contains useful information about the job, but it does not contain the results.
+  This method lets you continue to work in the session while the job runs.
+  For more information about background jobs in PowerShell, see [about_Jobs](./About/about_Jobs.md).
+
+  The `Receive-Job` cmdlet gets the results that have been generated by the time that the
+  `Receive-Job` command is submitted.
+  If the results are not yet complete, you can run additional `Receive-Job` commands to get the
+  remaining results.
+
+  By default, job results are deleted from the system when you receive them, but you can use the
+  **Keep** parameter to save the results so that you can receive them again.
+  To delete the job results, run the `Receive-Job` command again without the **Keep** parameter, close
+  the session, or use the `Remove-Job` cmdlet to delete the job from the session.
+
+  Starting in Windows PowerShell 3.0, `Receive-Job` also gets the results of custom job types, such as
+  workflow jobs and instances of scheduled jobs.
+  To enable `Receive-Job` to get the results a custom job type, import the module that supports the
+  custom job type into the session before it runs a `Receive-Job` command, either by using the
+  `Import-Module` cmdlet or by using or getting a cmdlet in the module.
+  For information about a particular custom job type, see the documentation of the custom job type
+  feature.
+metadata:
+  external help file: System.Management.Automation.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-job?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Receive-Job

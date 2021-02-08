@@ -1,0 +1,36 @@
+### YamlMime:PowershellModule
+children:
+- title: Microsoft.PowerShell.LocalAccounts
+  cmdlets:
+  - Microsoft.PowerShell.LocalAccounts.Add-LocalGroupMember
+  - Microsoft.PowerShell.LocalAccounts.Disable-LocalUser
+  - Microsoft.PowerShell.LocalAccounts.Enable-LocalUser
+  - Microsoft.PowerShell.LocalAccounts.Get-LocalGroup
+  - Microsoft.PowerShell.LocalAccounts.Get-LocalGroupMember
+  - Microsoft.PowerShell.LocalAccounts.Get-LocalUser
+  - Microsoft.PowerShell.LocalAccounts.New-LocalGroup
+  - Microsoft.PowerShell.LocalAccounts.New-LocalUser
+  - Microsoft.PowerShell.LocalAccounts.Remove-LocalGroup
+  - Microsoft.PowerShell.LocalAccounts.Remove-LocalGroupMember
+  - Microsoft.PowerShell.LocalAccounts.Remove-LocalUser
+  - Microsoft.PowerShell.LocalAccounts.Rename-LocalGroup
+  - Microsoft.PowerShell.LocalAccounts.Rename-LocalUser
+  - Microsoft.PowerShell.LocalAccounts.Set-LocalGroup
+  - Microsoft.PowerShell.LocalAccounts.Set-LocalUser
+uid: Microsoft.PowerShell.LocalAccounts
+name: Microsoft.PowerShell.LocalAccounts
+description: |-
+  This section contains the help topics for the Local Accounts cmdlets in Windows PowerShell.
+
+  > [!NOTE]
+  > This module is not available in 32-bit PowerShell on a 64-bit system.
+metadata:
+  Download Help Link: https://go.microsoft.com/fwlink/?LinkId=717973
+  Help Version: 5.2.0.0
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Guid: 8e362604-2c0b-448f-a414-a6a690a644e2
+  Module Name: Microsoft.PowerShell.LocalAccounts
+  ms.date: 06/09/2017
+  schema: 2.0.0
+  title: Microsoft.PowerShell.LocalAccounts

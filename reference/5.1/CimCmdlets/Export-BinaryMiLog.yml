@@ -1,0 +1,72 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates a binary encoded representation of an object or objects and stores it in a file.
+module: CimCmdlets
+notes: ""
+inputs:
+- name: <xref href="Microsoft.Management.Infrastructure.CimInstance" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Get-CimInstance
+  href: get-ciminstance.yml
+- text: Import-BinaryMiLog
+  href: import-binarymilog.yml
+- text: Import-Clixml
+  href: ../microsoft.powershell.utility/import-clixml.yml
+syntaxes:
+- Export-BinaryMiLog [-InputObject <CimInstance>] [-Path] <String> [<CommonParameters>]
+examples:
+- title: Example 1 - Create a binary representation of CimInstances
+  code: |-
+    Get-CimInstance Win32_Process | Export-BinaryMiLog -Path "Processes.bmil"
+  description: |-
+    This command exports **CimInstances** to a binary MI log file specified by the Path parameter. See
+    the example for Import-BinaryMiLog to see how to recreate the **CimInstances** by importing this
+    file.
+  summary: ""
+parameters:
+- type: <xref href="Microsoft.Management.Infrastructure.CimInstance" data-throw-if-not-resolved="False" />
+  name: InputObject
+  description: |+
+    Specifies the input to this cmdlet. You can use this parameter, or you can pipe the input to this
+    cmdlet.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path of the file in which to store the binary representation of the object. The
+    **Path** parameter supports wildcards and relative paths. This cmdlet generates an error if the
+    path resolves to more than one file.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: CimCmdlets.Export-BinaryMiLog
+name: Export-BinaryMiLog
+description: |-
+  The `Export-BinaryMILog` cmdlet creates a binary-based representation of an object or objects and
+  stores it in a file. You can then use the `Import-BinaryMiLog` cmdlet to re-create the saved object
+  based on the contents of that file.
+
+  This cmdlet is similar to `Import-Clixml`, except that `Export-BinaryMILog` stores the resulting
+  object in a binary encoded file.
+metadata:
+  external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: CimCmdlets
+  ms.date: 02/20/2019
+  online version: https://docs.microsoft.com/powershell/module/cimcmdlets/export-binarymilog?WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Export-BinaryMiLog

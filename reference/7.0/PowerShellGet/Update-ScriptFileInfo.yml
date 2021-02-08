@@ -1,0 +1,328 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Updates information for a script.
+module: PowerShellGet
+notes: |-
+  Use the `Test-ScriptFileInfo` cmdlet to validate a script's metadata. Scripts must include values
+  for version, GUID, description, and author.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: New-ScriptFileInfo
+  href: New-ScriptFileInfo.yml
+- text: Test-ScriptFileInfo
+  href: Test-ScriptFileInfo.yml
+syntaxes:
+- >-
+  Update-ScriptFileInfo [-Path] <String> [-Version <String>] [-Author <String>] [-Guid <Guid>]
+
+   [-Description <String>] [-CompanyName <String>] [-Copyright <String>] [-RequiredModules <Object[]>]
+
+   [-ExternalModuleDependencies <String[]>] [-RequiredScripts <String[]>]
+
+   [-ExternalScriptDependencies <String[]>] [-Tags <String[]>] [-ProjectUri <Uri>] [-LicenseUri <Uri>]
+
+   [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PrivateData <String>] [-PassThru] [-Force] [-WhatIf]
+
+   [-Confirm] [<CommonParameters>]
+- >-
+  Update-ScriptFileInfo [-LiteralPath] <String> [-Version <String>] [-Author <String>] [-Guid <Guid>]
+
+   [-Description <String>] [-CompanyName <String>] [-Copyright <String>] [-RequiredModules <Object[]>]
+
+   [-ExternalModuleDependencies <String[]>] [-RequiredScripts <String[]>]
+
+   [-ExternalScriptDependencies <String[]>] [-Tags <String[]>] [-ProjectUri <Uri>] [-LicenseUri <Uri>]
+
+   [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PrivateData <String>] [-PassThru] [-Force] [-WhatIf]
+
+   [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Update the version of a script file'
+  code: |-
+    $Parms = @{
+      Path = "C:\Test\Temp-Scriptfile.ps1"
+      Version = "2.0"
+      Author = "bob@contoso.com"
+      CompanyName = "Contoso"
+      Description = "This is the updated description"
+      }
+    Update-ScriptFileInfo @Parms -PassThru
+
+    <#PSScriptInfo
+
+    .VERSION 2.0
+
+    .GUID 4609f00c-e850-4d3f-9c69-3741e56e4133
+
+    .AUTHOR bob@contoso.com
+
+    .COMPANYNAME Contoso
+
+    .COPYRIGHT
+
+    .TAGS
+
+    .LICENSEURI
+
+    .PROJECTURI
+
+    .ICONURI
+
+    .EXTERNALMODULEDEPENDENCIES
+
+    .REQUIREDSCRIPTS
+
+    .EXTERNALSCRIPTDEPENDENCIES
+
+    .RELEASENOTES
+
+    .PRIVATEDATA
+
+    #>
+
+    <#
+
+    .DESCRIPTION
+    This is the updated description
+
+    #>
+    Param()
+  description: |-
+    `$Parms` stores the parameter values for **Path**, **Version**, **Author**, **CompanyName**, and
+    **Description**. `Update-ScriptFileInfo` gets the parameter values from `@Parms` and updates the
+    script. The **PassThru** parameter displays the script's contents in the PowerShell console.
+  summary: |+
+    In this example, an existing script file is updated with new property values.
+
+    Splatting is used to pass parameters to the `Update-ScriptFileInfo` cmdlet. For more information,
+    see [about_Splatting](../Microsoft.Powershell.Core/About/about_splatting.md).
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Author
+  description: |+
+    Specifies the script author.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: CompanyName
+  description: |+
+    Specifies the company or vendor who created the script.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running `Update-ScriptFileInfo`.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Copyright
+  description: |+
+    Specifies a copyright statement for the script.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Description
+  description: |+
+    Specifies a description for the script.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ExternalModuleDependencies
+  description: |+
+    Specifies an array of external module dependencies.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ExternalScriptDependencies
+  description: |+
+    Specifies an array of external script dependencies.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces `Update-ScriptFileInfo` to run without asking for user confirmation.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Guid" data-throw-if-not-resolved="False" />
+  name: Guid
+  description: |+
+    Specifies a unique ID for a script.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: IconUri
+  description: |+
+    Specifies the URL of an icon for the script. The specified icon is displayed on the gallery web page
+    for the script.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: LicenseUri
+  description: |+
+    Specifies the URL of licensing terms.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies a path to one or more locations. The **LiteralPath** parameter's value is used exactly as
+    it's entered. No characters are interpreted as wildcards. If the path includes escape characters,
+    enclose them in single quotation marks. Single quotation marks tell PowerShell not to interpret any
+    characters as escape sequences.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: PSPath
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object that represents the item with which you're working. By default,
+    `Update-ScriptFileInfo` doesn't generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the script file's location. Wildcards are permitted.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: PrivateData
+  description: |+
+    Specifies the private data for the script.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: ProjectUri
+  description: |+
+    Specifies the URL of a web page about this project.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ReleaseNotes
+  description: |+
+    Specifies a string array that contains release notes or comments that you want available for this
+    version of the script.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: RequiredModules
+  description: |+
+    Specifies modules that must be in the global session state. If the required modules aren't in the
+    global session state, PowerShell imports them.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: RequiredScripts
+  description: |+
+    Specifies an array of required scripts.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Tags
+  description: |+
+    Specifies an array of tags.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Version
+  description: |+
+    Specifies the script's version.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if `Update-ScriptFileInfo` runs. The cmdlet isn't run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: PowerShellGet.Update-ScriptFileInfo
+name: Update-ScriptFileInfo
+description: |-
+  The `Update-ScriptFileInfo` cmdlet updates a script's property values. For example, the values for
+  version, author, or description.
+metadata:
+  external help file: PSModule-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 07/09/2019
+  online version: https://docs.microsoft.com/powershell/module/powershellget/update-scriptfileinfo?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Update-ScriptFileInfo

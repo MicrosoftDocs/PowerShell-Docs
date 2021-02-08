@@ -1,0 +1,207 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Stops one or more running services.
+module: Microsoft.PowerShell.Management
+notes: |-
+  This cmdlet is only available on Windows platforms.
+
+  You can also refer to `Stop-Service` by its built-in alias, **spsv**. For more information, see
+  about_Aliases.
+
+  `Stop-Service` can control services only when the current user has permission to do this. If a
+  command does not work correctly, you might not have the required permissions.
+
+  To find the service names and display names of the services on your system, type `Get-Service`. The
+  service names appear in the **Name** column and the display names appear in the **DisplayName**
+  column.
+inputs:
+- name: <xref href="System.ServiceProcess.ServiceController, System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a service object or a string that contains the name of a service to this cmdlet.
+outputs:
+- name: <xref href="None, System.ServiceProcess.ServiceController" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the
+    service, if you use the **PassThru** parameter. Otherwise, this cmdlet does not generate any output.
+links:
+- text: Get-Service
+  href: Get-Service.yml
+- text: New-Service
+  href: New-Service.yml
+- text: Restart-Service
+  href: Restart-Service.yml
+- text: Resume-Service
+  href: Resume-Service.yml
+- text: Set-Service
+  href: Set-Service.yml
+- text: Start-Service
+  href: Start-Service.yml
+- text: Suspend-Service
+  href: Suspend-Service.yml
+- text: Remove-Service
+  href: Remove-Service.yml
+syntaxes:
+- >-
+  Stop-Service [-Force] [-NoWait] [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>]
+
+   [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Stop-Service [-Force] [-NoWait] [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Stop a service on the local computer'
+  code: |-
+    PS C:\> Stop-Service -Name "sysmonlog"
+  description: |-
+    This command stops the Performance Logs and Alerts (SysmonLog) service on the local computer.
+  summary: ""
+- title: 'Example 2: Stop a service by using the display name'
+  code: |-
+    PS C:\> Get-Service -DisplayName "telnet" | Stop-Service
+  description: |-
+    This command stops the Telnet service on the local computer. The command uses `Get-Service` to get
+    an object that represents the Telnet service. The pipeline operator (`|`) pipes the object to
+    `Stop-Service`, which stops the service.
+  summary: ""
+- title: 'Example 3: Stop a service that has dependent services'
+  code: |-
+    PS C:\> Get-Service -Name "iisadmin" | Format-List -Property Name, DependentServices
+    PS C:\> Stop-Service -Name "iisadmin" -Force -Confirm
+  description: |-
+    This example stops the IISAdmin service on the local computer. Because stopping this service also
+    stops the services that depend on the IISAdmin service, it is best to precede `Stop-Service` with a
+    command that lists the services that depend on the IISAdmin service.
+
+    The first command lists the services that depend on IISAdmin. It uses `Get-Service` to get an object
+    that represents the IISAdmin service. The pipeline operator (`|`) passes the result to the
+    `Format-List` cmdlet. The command uses the **Property** parameter of `Format-List` to list only the
+    **Name** and **DependentServices** properties of the service.
+
+    The second command stops the IISAdmin service. The **Force** parameter is required to stop a service
+    that has dependent services. The command uses the **Confirm** parameter to request confirmation from
+    the user before it stops each service.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: DisplayName
+  isRequired: true
+  description: |+
+    Specifies the display names of the services to stop.
+    Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Exclude
+  description: |+
+    Specifies services that this cmdlet omits. The value of this parameter qualifies the **Name**
+    parameter. Enter a name element or pattern, such as s*. Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the cmdlet to stop a service even if that service has dependent services.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Include
+  description: |+
+    Specifies services that this cmdlet stops. The value of this parameter qualifies the **Name**
+    parameter. Enter a name element or pattern, such as s*. Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.ServiceProcess.ServiceController" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies **ServiceController** objects that represent the services to stop. Enter a variable that
+    contains the objects, or type a command or expression that gets the objects.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the service names of the services to stop. Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ServiceName
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NoWait
+  description: |+
+    Indicates that this cmdlet uses the no wait option.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object that represents the service. By default, this cmdlet does not generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Stop-Service
+name: Stop-Service
+description: |-
+  The `Stop-Service` cmdlet sends a stop message to the Windows Service Controller for each of the
+  specified services. You can specify the services by their service names or display names, or you can
+  use the **InputObject** parameter to pass a service object that represents the service that you want
+  to stop.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Stop-Service

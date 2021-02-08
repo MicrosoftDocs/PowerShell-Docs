@@ -1,0 +1,334 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets a random number, or selects objects randomly from a collection.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  By default, `Get-Random` generates cryptographically secure randomness using the
+  [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) class.
+
+  `Get-Random` does not alway return the same data type as the input value. The following table shows
+  the output type for each of the numeric input types.
+
+  | Input Type | Output Type |
+  | :--------: | :---------: |
+  |   SByte    |   Double    |
+  |    Byte    |   Double    |
+  |   Int16    |   Double    |
+  |   UInt16   |   Double    |
+  |   Int32    |    Int32    |
+  |   UInt32   |   Double    |
+  |   Int64    |    Int64    |
+  |   UInt64   |   Double    |
+  |   Double   |   Double    |
+  |   Single   |   Double    |
+
+  Beginning in Windows PowerShell 3.0, `Get-Random` supports 64-bit integers. In Windows PowerShell
+  2.0, all values are cast to **System.Int32**.
+
+  Beginning in PowerShell 7, the **InputObject** parameter in the **RandomListItemParameterSet**
+  parameter set accepts arrays that contain an empty string or `$null`. In earlier PowerShell
+  versions, only the **Maximum** parameter in the **RandomNumberParameterSet** parameter set accepted
+  an empty string or `$null`.
+inputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe one or more objects. `Get-Random` selects values randomly from the piped objects.
+outputs:
+- name: <xref href="System.Int32, System.Int64, System.Double" data-throw-if-not-resolved="False" />
+  description: |-
+    `Get-Random` returns an integer or floating-point number, or an object selected randomly from a
+    submitted collection.
+links:
+- text: System.Security.Cryptography.RandomNumberGenerator()
+  href: /dotnet/api/system.security.cryptography.randomnumbergenerator
+- text: Sytem.Random
+  href: /dotnet/api/system.random
+syntaxes:
+- Get-Random [-SetSeed <Int32>] [[-Maximum] <Object>] [-Minimum <Object>] [-Count <Int32>] [<CommonParameters>]
+- Get-Random [-SetSeed <Int32>] [-InputObject] <Object[]> [-Count <Int32>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get a random integer'
+  code: |-
+    Get-Random
+
+    3951433
+  description: ""
+  summary: |+
+    This command gets a random integer between 0 (zero) and **Int32.MaxValue**.
+
+- title: 'Example 2: Get a random integer between 0 and 99'
+  code: |-
+    Get-Random -Maximum 100
+
+    47
+  description: ""
+  summary: ""
+- title: 'Example 3: Get a random integer between -100 and 99'
+  code: |-
+    Get-Random -Minimum -100 -Maximum 100
+
+    56
+  description: ""
+  summary: ""
+- title: 'Example 4: Get a random floating-point number'
+  code: |-
+    Get-Random -Minimum 10.7 -Maximum 20.93
+
+    18.08467273887
+  description: ""
+  summary: |+
+    This command gets a random floating-point number greater than or equal to 10.7 and less than 20.92.
+
+- title: 'Example 5: Get a random integer from an array'
+  code: |-
+    1, 2, 3, 5, 8, 13 | Get-Random
+
+    8
+  description: ""
+  summary: |+
+    This command gets a randomly selected number from the specified array.
+
+- title: 'Example 6: Get several random integers from an array'
+  code: |-
+    1, 2, 3, 5, 8, 13 | Get-Random -Count 3
+
+    3
+    1
+    13
+  description: ""
+  summary: |+
+    This command gets three randomly selected numbers in random order from an array.
+
+- title: 'Example 7: Randomize an entire collection'
+  code: |-
+    1, 2, 3, 5, 8, 13 | Get-Random -Count ([int]::MaxValue)
+
+    2
+    3
+    5
+    1
+    8
+    13
+  description: ""
+  summary: |+
+    This command returns the entire collection in random order.
+
+    The value of the **Count** parameter is the **MaxValue** static property of integers.
+
+    To return an entire collection in random order, enter any number that is greater than or equal to
+    the number of objects in the collection.
+
+- title: 'Example 8: Get a random non-numeric value'
+  code: |-
+    "red", "yellow", "blue" | Get-Random
+
+    yellow
+  description: ""
+  summary: |+
+    This command returns a random value from a non-numeric collection.
+
+- title: 'Example 9: Use the SetSeed parameter'
+  code: |-
+    # Commands with the default seed are pseudorandom
+    Get-Random -Maximum 100 -SetSeed 23
+    Get-Random -Maximum 100
+    Get-Random -Maximum 100
+    Get-Random -Maximum 100
+
+    74
+    56
+    84
+    46
+
+    # Commands with the same seed are not random
+    Get-Random -Maximum 100 -SetSeed 23
+    Get-Random -Maximum 100 -SetSeed 23
+    Get-Random -Maximum 100 -SetSeed 23
+
+    74
+    74
+    74
+
+    # SetSeed results in a repeatable series
+    Get-Random -Maximum 100 -SetSeed 23
+    Get-Random -Maximum 100
+    Get-Random -Maximum 100
+    Get-Random -Maximum 100
+
+    74
+    56
+    84
+    46
+  description: ""
+  summary: |+
+    This example shows the effect of using the **SetSeed** parameter.
+
+    Because **SetSeed** produces non-random behavior, it's typically used only to reproduce results,
+    such as when debugging or analyzing a script.
+
+- title: 'Example 10: Get random files'
+  code: |-
+    $Files = Get-ChildItem -Path C:\* -Recurse
+    $Sample = $Files | Get-Random -Count 50
+  description: ""
+  summary: |+
+    These commands get a randomly selected sample of 50 files from the `C:` drive of the local computer.
+
+- title: 'Example 11: Roll fair dice'
+  code: |-
+    1..1200 | ForEach-Object {
+        1..6 | Get-Random
+    } | Group-Object | Select-Object Name,Count
+
+    Name Count
+    ---- -----
+    1      206
+    2      199
+    3      196
+    4      226
+    5      185
+    6      188
+  description: ""
+  summary: |+
+    This example rolls a fair die 1200 times and counts the outcomes. The first command,
+    `ForEach-Object` repeats the call to `Get-Random` from the piped in numbers (1-6). The results are
+    grouped by their value with `Group-Object` and formatted as a table with `Select-Object`.
+
+- title: 'Example 12: Use the Count parameter'
+  code: |-
+    Get-Random -Count 3 -Maximum 10
+
+    9
+    0
+    8
+  description: ""
+  summary: |+
+    You can now use the **Count** parameter without piping objects to `Get-Random`.
+    The following example gets three random numbers less than 10.
+
+- title: 'Example 13: Use the InputObject parameter with an empty string or $null'
+  code: |-
+    Get-Random -InputObject @('a','',$null)
+  description: |-
+    `Get-Random` will return either `a`, empty string, or `$null`. The empty sting displays as a blank
+    line and `$null` returns to a PowerShell prompt.
+  summary: |+
+    In this example, the **InputObject** parameter specifies an array that contains an empty string
+    (`''`) and `$null`.
+
+parameters:
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: Count
+  description: |+
+    Specifies the number of random objects or numbers to return. The default is 1.
+
+    When used with `InputObject`, if the value of **Count** exceeds the number of objects in the
+    collection, `Get-Random` returns all of the objects in random order.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies a collection of objects. `Get-Random` gets randomly selected objects in random order from
+    the collection up to the number specified by **Count**. Enter the objects, a variable that contains
+    the objects, or a command or expression that gets the objects. You can also pipe a collection of
+    objects to `Get-Random`.
+
+    Beginning in PowerShell 7, the **InputObject** parameter accepts arrays that can contain an empty
+    string or `$null`. The array can be sent down the pipeline or as an **InputObject** parameter value.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: Maximum
+  description: |+
+    Specifies a maximum value for the random number. `Get-Random` returns a value that is less than the
+    maximum (not equal). Enter an integer, a double-precision floating-point number, or an object that
+    can be converted to an integer or double, such as a numeric string ("100").
+
+    The value of **Maximum** must be greater than (not equal to) the value of **Minimum**. If the value
+    of **Maximum** or **Minimum** is a floating-point number, `Get-Random` returns a randomly selected
+    floating-point number.
+
+    On a 64-bit computer, if the value of **Minimum** is a 32-bit integer, the default value of
+    **Maximum** is **Int32.MaxValue**.
+
+    If the value of **Minimum** is a double (a floating-point number), the default value of **Maximum**
+    is **Double.MaxValue**. Otherwise, the default value is **Int32.MaxValue**.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: Minimum
+  description: |+
+    Specifies a minimum value for the random number. Enter an integer, a double-precision floating-point
+    number, or an object that can be converted to an integer or double, such as a numeric string
+    ("100"). The default value is 0 (zero).
+
+    The value of **Minimum** must be less than (not equal to) the value of **Maximum**. If the value of
+    **Maximum** or **Minimum** is a floating-point number, `Get-Random` returns a randomly selected
+    floating-point number.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Nullable`1" data-throw-if-not-resolved="False" /><span>[</span><xref href="System.Int32" data-throw-if-not-resolved="False" /><span>]</span>
+  name: SetSeed
+  description: |+
+    Specifies a seed value for the random number generator. When you use **SetSeed**, the cmdlet uses
+    the [System.Random](/dotnet/api/system.random) method to generate pseudorandom numbers, which is not
+    cryptographically secure.
+
+    > [!CAUTION]
+    > Setting the seed results in non-random behavior. It should only be used when trying to reproduce
+    > behavior, such as when debugging or analyzing a script that includes `Get-Random` commands.
+    >
+    > This seed value is used for the current command and for all subsequent `Get-Random` commands in
+    > the current session until you use **SetSeed** again or close the session. You can't reset the seed
+    > to its default value.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Get-Random
+name: Get-Random
+description: |-
+  The `Get-Random` cmdlet gets a randomly selected number. If you submit a collection of objects to
+  `Get-Random`, it gets one or more randomly selected objects from the collection.
+
+  Without parameters or input, a `Get-Random` command returns a randomly selected 32-bit unsigned
+  integer between 0 (zero) and **Int32.MaxValue** (`0x7FFFFFFF`, `2,147,483,647`).
+
+  By default, `Get-Random` generates cryptographically secure randomness using the
+  [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) class.
+
+  You can use the parameters of `Get-Random` to specify the minimum and maximum values, the number of
+  objects returned from a collection, or a seed number.
+
+  > [!CAUTION]
+  > Setting the seed deliberately results in non-random, repeatable behavior. It should only be used
+  > when trying to reproduce behavior, such as when debugging or analyzing a script that includes
+  > `Get-Random` commands.
+  >
+  > This seed value is used for the current command and for all subsequent `Get-Random` commands in
+  > the current session until you use **SetSeed** again or close the session. You can't reset the seed
+  > to its default value.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 02/02/2021
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-Random

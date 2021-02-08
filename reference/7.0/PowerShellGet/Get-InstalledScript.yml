@@ -1,0 +1,114 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets an installed script.
+module: PowerShellGet
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Install-Script
+  href: Install-Script.yml
+- text: Uninstall-Script
+  href: Uninstall-Script.yml
+syntaxes:
+- >-
+  Get-InstalledScript [[-Name] <String[]>] [-MinimumVersion <String>] [-RequiredVersion <String>]
+
+   [-MaximumVersion <String>] [-AllowPrerelease] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get all installed scripts'
+  code: |-
+    PS C:\> Get-InstalledScript
+    Version    Name                                Type       Repository           Description
+    -------    ----                                ----       ----------           -----------
+    2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script
+    2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script
+    2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script
+    2.0        Script-WithDependencies1            Script     local1               Description for the Script-WithDependencies1 script
+  description: |-
+    This command gets all installed scripts.
+  summary: ""
+- title: 'Example 2: Get installed scripts by name'
+  code: |-
+    PS C:\> Get-InstalledScript -Name "Required-Scri*"
+    Version    Name                                Type       Repository           Description
+    -------    ----                                ----       ----------           -----------
+    2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script
+    2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script
+    2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script
+  description: |-
+    This command gets scripts where the name begins with Required-Scri.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowPrerelease
+  description: |+
+    Includes in the results scripts marked as a prerelease.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MaximumVersion
+  description: |+
+    Specifies the maximum, or latest, version of a script to get.
+    The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MinimumVersion
+  description: |+
+    Specifies the minimum version of a script to get.
+    The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Specifies an array of names of scripts to get.
+    Wildcards are accepted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RequiredVersion
+  description: |+
+    Specifies the exact version of a script to get.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: PowerShellGet.Get-InstalledScript
+name: Get-InstalledScript
+description: |-
+  The **Get-InstalledScript** cmdlet gets installed scripts for CurrentUser and AllUsers scopes.
+metadata:
+  external help file: PSModule-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/powershellget/get-installedscript?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-InstalledScript

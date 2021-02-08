@@ -1,0 +1,96 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets the current Windows clipboard entry.
+module: Microsoft.PowerShell.Management
+notes: ""
+outputs:
+- name: <xref href="System.String, System.IO.FileInfo, System.IO.Stream, System.Drawing.Image" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Set-Clipboard
+  href: Set-Clipboard.yml
+syntaxes:
+- Get-Clipboard [-Format <ClipboardFormat>] [-TextFormatType <TextDataFormat>] [-Raw] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get the content of the clipboard and display it to the command-line'
+  code: |-
+    Get-Clipboard
+
+    https://en.wikipedia.org/wiki/PowerShell
+  description: ""
+  summary: |+
+    In this example we have right-clicked on an image in a browser and chose the **Copy** action. The
+    following command displays the link, as a URL, of the image that is stored in the clipboard.
+
+- title: 'Example 2: Get the content of the clipboard in a specific format'
+  code: |-
+    Get-Clipboard -Format FileDropList
+
+    Directory: C:\Git\PS-Docs\PowerShell-Docs\wmf
+
+    Mode                LastWriteTime         Length Name
+    ----                -------------         ------ ----
+    -a----         5/7/2019   1:11 PM          10010 TOC.yml
+    -a----       11/18/2016  10:10 AM             53 md.style
+    -a----         5/6/2019   9:32 AM           4177 overview.md
+    -a----        6/28/2018   2:28 PM            345 README.md
+  description: ""
+  summary: |+
+    In this example we copied files to the clipboard in Windows Explorerby selecting them and pressing
+    <kbd>Ctrl-C</kbd>. Using the following command, you can access the contents of the clipboard as a
+    list of files:
+
+parameters:
+- type: <xref href="Microsoft.PowerShell.Commands.ClipboardFormat" data-throw-if-not-resolved="False" />
+  name: Format
+  description: |+
+    Specifies the type, or format, of the clipboard. The acceptable values for this parameter are:
+
+    - Text
+    - FileDropList
+    - Image
+    - Audio
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Text, FileDropList, Image, Audio
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Raw
+  description: |+
+    Gets the entire contents of the clipboard. Multiline text is returned as a single multiline string
+    rather than an array of strings.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Windows.Forms.TextDataFormat" data-throw-if-not-resolved="False" />
+  name: TextFormatType
+  description: |+
+    Specifies the text data format type of the clipboard. The acceptable values for this parameter are:
+
+    - Text
+    - UnicodeText
+    - Rtf
+    - Html
+    - CommaSeparatedValue
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Text, UnicodeText, Rtf, Html, CommaSeparatedValue
+uid: Microsoft.PowerShell.Management.Get-Clipboard
+name: Get-Clipboard
+description: |-
+  The `Get-Clipboard` cmdlet gets the current Windows clipboard entry. Multiple lines of text are
+  returned as an array of strings similar to `Get-Content`.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 09/21/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-Clipboard

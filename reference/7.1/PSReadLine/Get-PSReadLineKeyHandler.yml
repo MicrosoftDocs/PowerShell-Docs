@@ -1,0 +1,152 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets the bound key functions for the PSReadLine module.
+module: PSReadLine
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe objects to this cmdlet.
+outputs:
+- name: <xref href="Microsoft.PowerShell.KeyHandler" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Remove-PSReadLineKeyHandler
+  href: Remove-PSReadLineKeyHandler.yml
+- text: Get-PSReadLineOption
+  href: Get-PSReadLineOption.yml
+- text: Set-PSReadLineOption
+  href: Set-PSReadLineOption.yml
+- text: Set-PSReadLineKeyHandler
+  href: Set-PSReadLineKeyHandler.yml
+syntaxes:
+- Get-PSReadLineKeyHandler [-Bound] [-Unbound] [<CommonParameters>]
+- Get-PSReadLineKeyHandler [-Chord] <String[]> [<CommonParameters>]
+examples:
+- title: 'Example 1: Get all key mappings'
+  code: |-
+    Get-PSReadLineKeyHandler -Bound -Unbound
+
+    Key                   Function                Description
+    ---                   --------                -----------
+    Enter                 AcceptLine              Accept the input or move to the next line if input is missing a closing token.
+    Shift+Enter           AddLine                 Move the cursor to the next line without attempting to execute the input
+    Escape                RevertLine              Equivalent to undo all edits (clears the line except lines imported from history)
+    LeftArrow             BackwardChar            Move the cursor back one character
+    RightArrow            ForwardChar             Move the cursor forward one character
+    Ctrl+LeftArrow        BackwardWord            Move the cursor to the beginning of the current or previous word
+    Ctrl+RightArrow       NextWord                Move the cursor forward to the start of the next word
+    Shift+LeftArrow       SelectBackwardChar      Adjust the current selection to include the previous character
+    Shift+RightArrow      SelectForwardChar       Adjust the current selection to include the next character
+    Ctrl+Shift+LeftArrow  SelectBackwardWord      Adjust the current selection to include the previous word
+    Ctrl+Shift+RightArrow SelectNextWord          Adjust the current selection to include the next word
+    UpArrow               PreviousHistory         Replace the input with the previous item in the history
+    DownArrow             NextHistory             Replace the input with the next item in the history
+    Home                  BeginningOfLine         Move the cursor to the beginning of the line
+    End                   EndOfLine               Move the cursor to the end of the line
+    Shift+Home            SelectBackwardsLine     Adjust the current selection to include from the cursor to the end of the line
+    Shift+End             SelectLine              Adjust the current selection to include from the cursor to the start of the line
+    Delete                DeleteChar              Delete the character under the cursor
+    Backspace             BackwardDeleteChar      Delete the character before the cursor
+    Ctrl+Spacebar         MenuComplete            Complete the input if there is a single completion, otherwise complete the input by selecting from a menu o...
+    Tab                   TabCompleteNext         Complete the input using the next completion
+    Shift+Tab             TabCompletePrevious     Complete the input using the previous completion
+    Ctrl+a                SelectAll               Select the entire line. Moves the cursor to the end of the line
+    Ctrl+c                CopyOrCancelLine        Either copy selected text to the clipboard, or if no text is selected, cancel editing the line with Cancel...
+    Ctrl+C                Copy                    Copy selected region to the system clipboard.  If no region is selected, copy the whole line
+    Ctrl+l                ClearScreen             Clear the screen and redraw the current line at the top of the screen
+    Ctrl+r                ReverseSearchHistory    Search history backwards interactively
+    ...
+  description: ""
+  summary: |+
+    This command returns all key mappings, bound and unbound.
+
+- title: 'Example 2: Get bound keys'
+  code: |-
+    Get-PSReadLineKeyHandler
+
+    Key                   Function                Description
+    ---                   --------                -----------
+    Enter                 AcceptLine              Accept the input or move to the next line if input is missing a closing token.
+    Shift+Enter           AddLine                 Move the cursor to the next line without attempting to execute the input
+    Escape                RevertLine              Equivalent to undo all edits (clears the line except lines imported from history)
+    LeftArrow             BackwardChar            Move the cursor back one character
+    RightArrow            ForwardChar             Move the cursor forward one character
+    Ctrl+LeftArrow        BackwardWord            Move the cursor to the beginning of the current or previous word
+    Ctrl+RightArrow       NextWord                Move the cursor forward to the start of the next word
+    Shift+LeftArrow       SelectBackwardChar      Adjust the current selection to include the previous character
+    Shift+RightArrow      SelectForwardChar       Adjust the current selection to include the next character
+    Ctrl+Shift+LeftArrow  SelectBackwardWord      Adjust the current selection to include the previous word
+    Ctrl+Shift+RightArrow SelectNextWord          Adjust the current selection to include the next word
+    UpArrow               PreviousHistory         Replace the input with the previous item in the history
+    DownArrow             NextHistory             Replace the input with the next item in the history
+    Home                  BeginningOfLine         Move the cursor to the beginning of the line
+    End                   EndOfLine               Move the cursor to the end of the line
+    Shift+Home            SelectBackwardsLine     Adjust the current selection to include from the cursor to the end of the line
+    Shift+End             SelectLine              Adjust the current selection to include from the cursor to the start of the line
+    Delete                DeleteChar              Delete the character under the cursor
+    Backspace             BackwardDeleteChar      Delete the character before the cursor
+    Ctrl+Spacebar         MenuComplete            Complete the input if there is a single completion, otherwise complete the input by selecting from a menu o...
+    Tab                   TabCompleteNext         Complete the input using the next completion
+    ...
+  description: ""
+  summary: |+
+    This command returns only bound keys and key combinations.
+
+- title: 'Example 3: Get specific key bindings'
+  code: |-
+    Get-PSReadLineKeyHandler -Chord Enter, Shift+Enter
+
+    Key         Function   Description
+    ---         --------   -----------
+    Enter       AcceptLine Accept the input or move to the next line if input is missing a closing token.
+    Shift+Enter AddLine    Move the cursor to the next line without attempting to execute the input
+    ...
+  description: ""
+  summary: |+
+    This command returns only the bindings for the specified keys.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Bound
+  description: |+
+    Indicates that this cmdlet returns functions that are bound.
+
+  defaultValue: "True"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Chord
+  isRequired: true
+  description: |+
+    Return only functions bound to specific keys or sequences.
+
+  defaultValue: None
+  position: "0"
+  aliases: Key
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Unbound
+  description: |+
+    Indicates that this cmdlet returns functions that are unbound.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: PSReadLine.Get-PSReadLineKeyHandler
+name: Get-PSReadLineKeyHandler
+description: |-
+  If no parameter is specified, returns the currently bound key functions for the PSReadLine module.
+
+  If **Chord** parameter is specified, the cmdlet returns the specific bound keys.
+metadata:
+  external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSReadLine
+  ms.date: 12/07/2018
+  online version: https://docs.microsoft.com/powershell/module/psreadline/get-psreadlinekeyhandler?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-PSReadLineKeyHandler

@@ -1,0 +1,125 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates an XML-based representation of an object.
+module: Microsoft.PowerShell.Utility
+notes: ""
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe any object to **ConvertTo-XML**.
+outputs:
+- name: <xref href="System.String or System.Xml.XmlDocument" data-throw-if-not-resolved="False" />
+  description: |-
+    The value of the *As* parameter determines the type of object that **ConvertTo-XML** returns.
+links:
+- text: ConvertTo-Csv
+  href: ConvertTo-Csv.yml
+- text: ConvertTo-Html
+  href: ConvertTo-Html.yml
+- text: Export-Clixml
+  href: Export-Clixml.yml
+- text: Get-Date
+  href: Get-Date.yml
+- text: Import-Clixml
+  href: Import-Clixml.yml
+syntaxes:
+- >-
+  ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation] [-As <String>]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Convert a date to XML'
+  code: |-
+    PS C:\> Get-Date | ConvertTo-Xml
+  description: |-
+    This command converts the current date (a **DateTime** object) to XML.
+  summary: ""
+- title: 'Example 2: Convert processes to XML'
+  code: |-
+    PS C:\> ConvertTo-Xml -As "Document" -InputObject (Get-Process) -Depth 3
+  description: |-
+    This command converts the process objects that represent all of the processes on the computer into
+    an XML document. The objects are expanded to a depth of three levels.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: As
+  description: |+
+    Determines the output format.
+    The acceptable values for this parameter are:
+
+    - String.
+    Returns a single string.
+    - Stream.
+    Returns an array of strings.
+    - Document.
+    Returns an **XmlDocument** object.
+
+    The default value is Document.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Stream, String, Document
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: Depth
+  description: |+
+    Specifies how many levels of contained objects are included in the XML representation. The default
+    value is 1.
+
+    For example, if the object's properties also contain objects, to save an XML representation of the
+    properties of the contained objects, you must specify a depth of 2.
+
+    The default value can be overridden for the object type in the Types.ps1xml files. For more
+    information, see about_Types.ps1xml.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies the object to be converted. Enter a variable that contains the objects, or type a command
+    or expression that gets the objects. You can also pipe objects to **ConvertTo-XML**.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NoTypeInformation
+  description: |+
+    Omits the Type attribute from the object nodes.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.ConvertTo-Xml
+name: ConvertTo-Xml
+description: |-
+  The `ConvertTo-Xml` cmdlet creates an [XML-based](/dotnet/api/system.xml.xmldocument) representation
+  of one or more .NET objects. To use this cmdlet, pipe one or more objects to the
+  cmdlet, or use the **InputObject** parameter to specify the object.
+
+  When you pipe multiple objects to `ConvertTo-Xml` or use the **InputObject** parameter to submit
+  multiple objects, `ConvertTo-Xml` returns a single, in-memory XML document that includes
+  representations of all of the objects.
+
+  This cmdlet is similar to [Export-Clixml](./Export-Clixml.yml) except that `Export-Clixml` stores the
+  resulting XML in a [Common Language Infrastructure(CLI) XML](https://www.ecma-international.org/publications/standards/Ecma-335.htm)
+  file that can be reimported as objects with [Import-Clixml](./Import-Clixml.yml). `ConvertTo-Xml`
+  returns an in-memory representation of an XML document, so you can continue to process it in
+  PowerShell. `ConvertTo-Xml` does not have an option to convert objects to CLI XML.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 03/12/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-xml?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: ConvertTo-Xml

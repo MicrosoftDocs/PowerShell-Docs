@@ -1,0 +1,417 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Calls WMI methods.
+module: Microsoft.PowerShell.Management
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not accept any input.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+links:
+- text: Get-WSManInstance
+  href: ../Microsoft.WsMan.Management/Get-WSManInstance.yml
+- text: Invoke-WSManAction
+  href: ../Microsoft.WsMan.Management/Invoke-WSManAction.yml
+- text: New-WSManInstance
+  href: ../Microsoft.WsMan.Management/New-WSManInstance.yml
+- text: Remove-WSManInstance
+  href: ../Microsoft.WsMan.Management/Remove-WSManInstance.yml
+- text: Get-WmiObject
+  href: Get-WmiObject.yml
+- text: Remove-WmiObject
+  href: Remove-WmiObject.yml
+- text: Set-WmiInstance
+  href: Set-WmiInstance.yml
+syntaxes:
+- >-
+  Invoke-WmiMethod [-Class] <String> [-Name] <String> [-ArgumentList <Object[]>] [-AsJob]
+
+   [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
+
+   [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
+
+   [-ComputerName <String[]>] [-Namespace <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Invoke-WmiMethod -InputObject <ManagementObject> [-Name] <String> [-ArgumentList <Object[]>] [-AsJob]
+
+   [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Invoke-WmiMethod -Path <String> [-Name] <String> [-ArgumentList <Object[]>] [-AsJob]
+
+   [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
+
+   [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
+
+   [-ComputerName <String[]>] [-Namespace <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
+
+   [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
+
+   [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
+
+   [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
+
+   [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
+
+   [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
+
+   [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: List the required order of WMI objects'
+  code: |-
+    ([wmiclass]'Win32_Volume').GetMethodParameters('Format')
+
+    __GENUS           : 2
+    __CLASS           : __PARAMETERS
+    __SUPERCLASS      :
+    __DYNASTY         : __PARAMETERS
+    __RELPATH         :
+    __PROPERTY_COUNT  : 6
+    __DERIVATION      : {}
+    __SERVER          :
+    __NAMESPACE       :
+    __PATH            :
+    ClusterSize       : 0
+    EnableCompression : False
+    FileSystem        : NTFS
+    Label             :
+    QuickFormat       : False
+    Version           : 0
+    PSComputerName    :
+  description: |-
+    This command lists the required order of the objects. To invoke WMI in PowerShell 3.0 differs from
+    alternate methods, and requires that object values are entered in a specific order.
+  summary: ""
+- title: 'Example 2: Start an instance of an application'
+  code: |-
+    ([Wmiclass]'Win32_Process').GetMethodParameters('Create')
+
+    __GENUS                   : 2
+    __CLASS                   : __PARAMETERS
+    __SUPERCLASS              :
+    __DYNASTY                 : __PARAMETERS
+    __RELPATH                 :
+    __PROPERTY_COUNT          : 3
+    __DERIVATION              : {}
+    __SERVER                  :
+    __NAMESPACE               :
+    __PATH                    :
+    CommandLine               :
+    CurrentDirectory          :
+    ProcessStartupInformation :
+    PSComputerName            :
+
+    Invoke-WmiMethod -Path win32_process -Name create -ArgumentList notepad.exe
+
+    __GENUS          : 2
+    __CLASS          : __PARAMETERS
+    __SUPERCLASS     :
+    __DYNASTY        : __PARAMETERS
+    __RELPATH        :
+    __PROPERTY_COUNT : 2
+    __DERIVATION     : {}
+    __SERVER         :
+    __NAMESPACE      :
+    __PATH           :
+    ProcessId        : 11312
+    ReturnValue      : 0
+    PSComputerName   :
+  description: |-
+    This command starts an instance of Notepad by calling the `Create` method of the **Win32_Process**
+    class.
+
+    The **ReturnValue** property is populated with a 0, and the **ProcessId** property is populated with
+    an integer (the next process ID number) if the command is completed.
+  summary: ""
+- title: 'Example 3: Rename a file'
+  code: |-
+    Invoke-WmiMethod -Path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
+
+    __GENUS          : 2
+    __CLASS          : __PARAMETERS
+    __SUPERCLASS     :
+    __DYNASTY        : __PARAMETERS
+    __RELPATH        :
+    __PROPERTY_COUNT : 1
+    __DERIVATION     : {}
+    __SERVER         :
+    __NAMESPACE      :
+    __PATH           :
+    ReturnValue      : 0
+  description: |-
+    This command renames a file. It uses the **Path** parameter to reference an instance of the
+    **CIM_DataFile** class. Then, it applies the Rename method to that particular instance.
+
+    The **ReturnValue** property is populated with a 0 if the command is completed.
+  summary: ""
+- title: 'Example 4: Passing an array of values using `-ArgumentList`'
+  code: |-
+    $acl = get-acl test.txt
+    $binSD = $acl.GetSecurityDescriptorBinaryForm()
+    Invoke-WmiMethod -class Win32_SecurityDescriptorHelper -Name BinarySDToSDDL -ArgumentList $binSD, $null
+  description: ""
+  summary: |+
+    An example using an array of objects `$binSD` followed by a `$null` value.
+
+parameters:
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ArgumentList
+  description: |+
+    Specifies the parameters to pass to the called method. The value of this parameter must be an array
+    of objects, and they must appear in the order required by the called method. The
+    `Invoke-CimCommand` cmdlet does not have these limitations.
+
+    To determine the order in which to list those objects, run the `GetMethodParameters()` method on the
+    WMI class, as illustrated in Example 1, near the end of this topic.
+
+    > [!IMPORTANT]
+    > If the first value is an array that contains more than one element, a second value of $null is
+    > required. Otherwise, the command generates an error, such as "Unable to cast object of type
+    > 'System.Byte' to type 'System.Array'.". See example 4 above.
+
+  defaultValue: None
+  position: Named
+  aliases: Args
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AsJob
+  description: |+
+    Indicates that this cmdlet runs the command as a background job. Use this parameter to run commands
+    that take a long time to finish.
+
+    When you use the **AsJob** parameter, the command returns an object that represents the background
+    job and then displays the command prompt. You can continue to work in the session while the job
+    finishes. If `Invoke-WmiMethod` is used against a remote computer, the job is created on the local
+    computer, and the results from remote computers are automatically returned to the local computer. To
+    manage the job, use the cmdlets that contain the Job noun (the Job cmdlets). To get the job results,
+    use the Receive-Job cmdlet.
+
+    To use this parameter with remote computers, the local and remote computers must be configured for
+    remoting. Additionally, you must start Windows PowerShell by using the Run as administrator option
+    in Windows Vista and later versions of Windows. For more information, see about_Remote_Requirements.
+
+    For more information about Windows PowerShell background jobs, see about_Jobs and about_Remote_Jobs.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.AuthenticationLevel" data-throw-if-not-resolved="False" />
+  name: Authentication
+  description: |+
+    Specifies the authentication level to be used with the WMI connection. The acceptable values for
+    this parameter are:
+
+    - -1: Unchanged
+    - 0: Default
+    - 1: None (No authentication in performed.)
+    - 2: Connect (Authentication is performed only when the client establishes a relationship with the
+      application.)
+    - 3: Call (Authentication is performed only at the beginning of each call when the application
+      receives the request.)
+    - 4: Packet (Authentication is performed on all the data that is received from the client.)
+    - 5: PacketIntegrity (All the data that is transferred between the client and the application is
+      authenticated and verified.)
+    - 6: PacketPrivacy (The properties of the other authentication levels are used, and all the data is
+      encrypted.)
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Authority
+  description: |+
+    Specifies the authority to use to authenticate the WMI connection. You can specify standard Windows
+    NT LAN Manager (NTLM) or Kerberos authentication. To use NTLM, set the authority setting to
+    ntlmdomain:\<DomainName\>, where \<DomainName\> identifies a valid NTLM domain name. To use
+    Kerberos, specify kerberos:\<DomainName\ServerName\>. You cannot include the authority setting when
+    you connect to the local computer.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Class
+  isRequired: true
+  description: |+
+    Specifies the WMI class that contains a static method to call.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ComputerName
+  description: |+
+    Specifies, as a string array, the computers that this cmdlet runs the command on. The default is the
+    local computer.
+
+    Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more computers. To
+    specify the local computer, type the computer name, a dot (.), or localhost.
+
+    This parameter does not rely on Windows PowerShell remoting. You can use the **ComputerName**
+    parameter even if your computer is not configured to run remote commands.
+
+  defaultValue: None
+  position: Named
+  aliases: Cn
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user account that has permission to perform this action. The default is the current
+    user. Type a user name, such as `User01`, `Domain01\User01`, or `User@Contoso.com`. Or, enter a
+    **PSCredential** object, such as an object that is returned by the Get-Credential cmdlet. When you
+    type a user name, you will be prompted for a password.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: EnableAllPrivileges
+  description: |+
+    Indicates that this cmdlet enables all the privileges of the current user before the command makes
+    the WMI call.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.ImpersonationLevel" data-throw-if-not-resolved="False" />
+  name: Impersonation
+  description: |+
+    Specifies the impersonation level to use. The acceptable values for this parameter are:
+
+    - 0: Default (Reads the local registry for the default impersonation level, which is usually set to
+      "3: Impersonate".)
+    - 1: Anonymous (Hides the credentials of the caller.)
+    - 2: Identify (Allows objects to query the credentials of the caller.)
+    - 3: Impersonate (Allows objects to use the credentials of the caller.)
+    - 4: Delegate (Allows objects to permit other objects to use the credentials of the caller.)
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Default, Anonymous, Identify, Impersonate, Delegate
+- type: <xref href="System.Management.ManagementObject" data-throw-if-not-resolved="False" />
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies a **ManagementObject** object to use as input. When this parameter is used, all other
+    parameters except the **Flag** and **Argument** parameters are ignored.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Locale
+  description: |+
+    Specifies the preferred locale for WMI objects. Specify the value of the **Locale** parameter as an
+    array in the `MS_<LCID>` format in the preferred order.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the method to be invoked. This parameter is mandatory and cannot be null or
+    empty.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Namespace
+  description: |+
+    When used with the **Class** parameter, this parameter specifies the WMI repository namespace where
+    the referenced WMI class or object is located.
+
+  defaultValue: None
+  position: Named
+  aliases: NS
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the WMI object path of a WMI class, or specifies the WMI object path of an instance of a
+    WMI class. The class or the instance that you specify must contain the method that is specified in
+    the **Name** parameter.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: ThrottleLimit
+  description: |+
+    Specifies a throttle value for the number of WMI operations that can be executed simultaneously.
+    This parameter is used together with the **AsJob** parameter. The throttle limit applies only to the
+    current command, not to the session or to the computer.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Invoke-WmiMethod
+name: Invoke-WmiMethod
+description: |-
+  The `Invoke-WmiMethod` cmdlet calls the methods of Windows Management Instrumentation (WMI)
+  objects.
+
+  New Common Information Model (CIM) cmdlets, introduced in Windows PowerShell 3.0, perform the same
+  tasks as the WMI cmdlets. The CIM cmdlets comply with WS-Management (WSMan) standards and with the
+  CIM standard, which enables the cmdlets to use the same techniques to manage Windows computers and
+  those running other operating systems. Instead of using `Invoke-WmiMethod`, consider using
+  [Invoke-CimMethod](../cimcmdlets/invoke-cimmethod.yml).
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/invoke-wmimethod?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Invoke-WmiMethod

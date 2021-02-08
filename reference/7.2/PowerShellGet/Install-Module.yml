@@ -1,0 +1,398 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Downloads one or more modules from a repository, and installs them on the local computer.
+module: PowerShellGet
+notes: |-
+  `Install-Module` runs on PowerShell 5.0 or later releases, on Windows 7 or Windows 2008 R2 and later
+  releases of Windows.
+
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+
+  As a security best practice, evaluate a module's code before running any cmdlets or functions for
+  the first time. To prevent running modules that contain malicious code, installed modules are not
+  automatically imported after installation.
+
+  If the module name specified by the **Name** parameter does not exist in the repository,
+  `Install-Module` returns an error.
+
+  To install multiple modules, use the **Name** parameter and specify a comma-separated array of
+  module names. If you specify multiple module names, you cannot use **MinimumVersion**,
+  **MaximumVersion**, or **RequiredVersion**. `Find-Module` creates **PSRepositoryItemInfo** objects
+  that can be sent down the pipeline to `Install-Module`. The pipeline is another way to specify
+  multiple modules to install in a single command.
+
+  By default, modules for the scope of **AllUsers** are installed in
+  `$env:ProgramFiles\PowerShell\Modules`. The default prevents confusion when you install PowerShell
+  Desired State Configuration (DSC) resources.
+
+  A module installation fails and cannot be imported if it does not have a `.psm1`, `.psd1`, or `.dll`
+  of the same name within the folder. Use the **Force** parameter to install the module.
+
+  If an existing module's version matches the name specified by the **Name** parameter, and the
+  **MinimumVersion** or **RequiredVersion** parameter are not used, `Install-Module` silently
+  continues but does not install the module.
+
+  If an existing module's version is greater than the value of the **MinimumVersion** parameter, or
+  equal to the value of the **RequiredVersion** parameter, `Install-Module` silently continues but
+  does not install the module.
+
+  If the existing module does not match the values specified by the **MinimumVersion** or
+  **RequiredVersion** parameters, an error occurs in the `Install-Module` command. For example, if the
+  version of the existing installed module is lower than the **MinimumVersion** value or not equal to
+  the **RequiredVersion** value.
+
+  A module installation will also install any dependent modules specified as required by the module publisher.
+  The publisher will specify the required modules and their versions in the module manifest.
+inputs:
+- name: <xref href="PSRepositoryItemInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    `Find-Module` creates **PSRepositoryItemInfo** objects that can be sent down the pipeline to
+    `Install-Module`.
+- name: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="Microsoft.PowerShell.Commands.PSRepositoryItemInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    When using the **PassThru** parameter, `Install-Module` outputs a **PSRepositoryItemInfo** object
+    for the module. This is the same information that you get from the `Find-Module` cmdlet.
+links:
+- text: Find-Module
+  href: Find-Module.yml
+- text: Get-PSRepository
+  href: Get-PSRepository.yml
+- text: Import-Module
+  href: ../Microsoft.PowerShell.Core/Import-Module.yml
+- text: Publish-Module
+  href: Publish-Module.yml
+- text: Register-PSRepository
+  href: Register-PSRepository.yml
+- text: Uninstall-Module
+  href: Uninstall-Module.yml
+- text: Update-Module
+  href: Update-Module.yml
+- text: about_Module
+  href: ../Microsoft.PowerShell.Core/About/about_Modules.md
+syntaxes:
+- >-
+  Install-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
+
+   [-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
+
+   [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
+
+   [-AllowPrerelease] [-AcceptLicense] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope <String>]
+
+   [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
+
+   [-AcceptLicense] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Find and install a module'
+  code: |-
+    Find-Module -Name PowerShellGet | Install-Module
+  description: |-
+    The `Find-Module` uses the **Name** parameter to specify the **PowerShellGet** module. By default,
+    the newest version of the module is downloaded from the repository. The object is sent down the
+    pipeline to the `Install-Module` cmdlet. `Install-Module` installs the module for all users in
+    `$env:ProgramFiles\PowerShell\Modules`.
+  summary: |+
+    This example finds a module in the repository and installs the module.
+
+- title: 'Example 2: Install a module by name'
+  code: |-
+    Install-Module -Name PowerShellGet
+  description: |-
+    The `Install-Module` uses the **Name** parameter to specify the **PowerShellGet** module. By
+    default, the newest version of the module is downloaded from the repository and installed.
+  summary: |+
+    In this example, the newest version of the **PowerShellGet** module is installed.
+
+- title: 'Example 3: Install a module using its minimum version'
+  code: |-
+    Install-Module -Name PowerShellGet -MinimumVersion 2.0.1
+  description: |-
+    The `Install-Module` uses the **Name** parameter to specify the **PowerShellGet** module. The
+    **MinimumVersion** parameter specifies that version **2.0.1** is downloaded from the repository and
+    installed. Because version **2.0.4** is available, that version is downloaded and installed for all
+    users.
+  summary: |+
+    In this example, the minimum version of the **PowerShellGet** module is installed. The
+    **MinimumVersion** parameter specifies the lowest version of the module that should be installed. If
+    a newer version of the module is available, that version is downloaded and installed for all users.
+
+- title: 'Example 4: Install a specific version of a module'
+  code: |-
+    Install-Module -Name PowerShellGet -RequiredVersion 2.0.0
+  description: |-
+    The `Install-Module` uses the **Name** parameter to specify the **PowerShellGet** module. The
+    **RequiredVersion** parameter specifies that version **2.0.0** is downloaded and installed for all
+    users.
+  summary: |+
+    In this example, a specific version of the **PowerShellGet** module is installed.
+
+- title: 'Example 5: Install a module only for the current user'
+  code: |-
+    Install-Module -Name PowerShellGet -Scope CurrentUser
+  description: |-
+    The `Install-Module` uses the **Name** parameter to specify the **PowerShellGet** module.
+    `Install-Module` downloads and installs the newest version of **PowerShellGet** into the current
+    user's directory, `$home\Documents\PowerShell\Modules`.
+  summary: |+
+    This example downloads and installs the newest version of a module, only for the current user.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AcceptLicense
+  description: |+
+    For modules that require a license, **AcceptLicense** automatically accepts the license agreement
+    during installation. For more information, see [Modules Requiring License Acceptance](/powershell/scripting/gallery/concepts/module-license-acceptance).
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowClobber
+  description: |+
+    Overrides warning messages about installation conflicts about existing commands on a computer.
+    Overwrites existing commands that have the same name as commands being installed by a module.
+    **AllowClobber** and **Force** can be used together in an `Install-Module` command.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowPrerelease
+  description: |+
+    Allows you to install a module marked as a pre-release.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the `Install-Module` cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user account that has rights to install a module for a specified package provider or
+    source.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Installs a module and overrides warning messages about module installation conflicts. If a module
+    with the same name already exists on the computer, **Force** allows for multiple versions to be
+    installed. If there is an existing module with the same name and version, **Force** overwrites that
+    version. **Force** and **AllowClobber** can be used together in an `Install-Module` command.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InputObject
+  isRequired: true
+  description: |+
+    Used for pipeline input.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MaximumVersion
+  description: |+
+    Specifies the maximum version of a single module to install. The version installed must be less than
+    or equal to **MaximumVersion**. If you want to install multiple modules, you cannot use
+    **MaximumVersion**. **MaximumVersion** and **RequiredVersion** cannot be used in the same
+    `Install-Module` command.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MinimumVersion
+  description: |+
+    Specifies the minimum version of a single module to install. The version installed must be greater than
+    or equal to **MinimumVersion**. If there is a newer version of the module available, the newer
+    version is installed. If you want to install multiple modules, you cannot use **MinimumVersion**.
+    **MinimumVersion** and **RequiredVersion** cannot be used in the same `Install-Module` command.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the exact names of modules to install from the online gallery. A comma-separated list of
+    module names is accepted. The module name must match the module name in the repository. Use
+    `Find-Module` to get a list of module names.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: ""
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: Proxy
+  description: |+
+    Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: ProxyCredential
+  description: |+
+    Specifies a user account that has permission to use the proxy server that is specified by the
+    **Proxy** parameter.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Repository
+  description: |+
+    Use the **Repository** parameter to specify which repository is used to download and install a
+    module. Used when multiple repositories are registered. Specifies the name of a registered
+    repository in the `Install-Module` command. To register a repository, use `Register-PSRepository`.
+    To display registered repositories, use `Get-PSRepository`.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RequiredVersion
+  description: |+
+    Specifies the exact version of a single module to install. If there is no match in the repository
+    for the specified version, an error is displayed. If you want to install multiple modules, you
+    cannot use **RequiredVersion**. **RequiredVersion** cannot be used in the same `Install-Module`
+    command as **MinimumVersion** or **MaximumVersion**.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Scope
+  description: |+
+    Specifies the installation scope of the module. The acceptable values for this parameter are
+    **AllUsers** and **CurrentUser**.
+
+    The **AllUsers** scope installs modules in a location that is accessible to all users of the
+    computer:
+
+    `$env:ProgramFiles\PowerShell\Modules`
+
+    The **CurrentUser** installs modules in a location that is accessible only to the current user of
+    the computer. For example:
+
+    `$home\Documents\PowerShell\Modules`
+
+    When no **Scope** is defined, the default is set based on the PowerShellGet version.
+
+    - In PowerShellGet versions 2.0.0 and above, the default is **CurrentUser**, which does not require
+      elevation for install.
+    - In PowerShellGet 1.x versions, the default is **AllUsers**, which requires elevation for install.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: CurrentUser, AllUsers
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: SkipPublisherCheck
+  description: |+
+    Allows you to install a newer version of a module that already exists on your computer. For example,
+    when an existing module is digitally signed by a trusted publisher but the new version is not
+    digitally signed by a trusted publisher.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if an `Install-Module` command was run. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: PowerShellGet.Install-Module
+name: Install-Module
+description: |-
+  The `Install-Module` cmdlet gets one or more modules that meet specified criteria from an online
+  repository. The cmdlet verifies that search results are valid modules and copies the module folders
+  to the installation location. Installed modules are not automatically imported after installation.
+  You can filter which module is installed based on the minimum, maximum, and exact versions of
+  specified modules.
+
+  If the module being installed has the same name or version, or contains commands in an existing
+  module, warning messages are displayed. After you confirm that you want to install the module and
+  override the warnings, use the `-Force` and `-AllowClobber` parameters. Dependent upon your
+  repository settings, you might need to answer a prompt for the module installation to continue.
+
+  These examples use the [PowerShell Gallery](https://www.powershellgallery.com/) as the only
+  registered repository. `Get-PSRepository` displays the registered repositories. If you have multiple
+  registered repositories, use the `-Repository` parameter to specify the repository's name.
+metadata:
+  external help file: PSModule-help.xml
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 08/03/2020
+  online version: https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Install-Module

@@ -1,0 +1,841 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Selects objects from a collection based on their property values.
+module: Microsoft.PowerShell.Core
+notes: |-
+  Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections.
+
+  You can read more about these new methods here [about_arrays](./About/about_Arrays.md)
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe the objects to this cmdlet.
+outputs:
+- name: <xref href="Object" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns selected items from the input object set.
+links:
+- text: Compare-Object
+  href: ../Microsoft.PowerShell.Utility/Compare-Object.yml
+- text: ForEach-Object
+  href: ForEach-Object.yml
+- text: Group-Object
+  href: ../Microsoft.PowerShell.Utility/Group-Object.yml
+- text: Measure-Object
+  href: ../Microsoft.PowerShell.Utility/Measure-Object.yml
+- text: New-Object
+  href: ../Microsoft.PowerShell.Utility/New-Object.yml
+- text: Select-Object
+  href: ../Microsoft.PowerShell.Utility/Select-Object.yml
+- text: Sort-Object
+  href: ../Microsoft.PowerShell.Utility/Sort-Object.yml
+- text: Tee-Object
+  href: ../Microsoft.PowerShell.Utility/Tee-Object.yml
+syntaxes:
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-EQ]
+
+   [<CommonParameters>]
+- Where-Object [-InputObject <PSObject>] [-FilterScript] <ScriptBlock> [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -Match
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CEQ
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -NE
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CNE
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -GT
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CGT
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -LT
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CLT
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -GE
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CGE
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -LE
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CLE
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -Like
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CLike
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -NotLike
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CNotLike
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CMatch
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -NotMatch
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CNotMatch
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -Contains
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CContains
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -NotContains
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CNotContains
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -In
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CIn
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -NotIn
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CNotIn
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -Is
+
+   [<CommonParameters>]
+- >-
+  Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -IsNot
+
+   [<CommonParameters>]
+- Where-Object [-InputObject <PSObject>] [-Property] <String> -Not [<CommonParameters>]
+examples:
+- title: 'Example 1: Get stopped services'
+  code: |-
+    Get-Service | Where-Object {$_.Status -eq "Stopped"}
+    Get-Service | where Status -eq "Stopped"
+  description: ""
+  summary: |+
+    These commands get a list of all services that are currently stopped. The `$_` automatic variable
+    represents each object that is passed to the `Where-Object` cmdlet.
+
+    The first command uses the script block format, the second command uses the comparison statement
+    format. The commands are equivalent and can be used interchangeably.
+
+- title: 'Example 2: Get processes based on working set'
+  code: |-
+    Get-Process | Where-Object {$_.WorkingSet -GT 250MB}
+    Get-Process | Where-Object WorkingSet -GT (250MB)
+  description: ""
+  summary: |+
+    These commands list processes that have a working set greater than 250 megabytes (KB). The
+    scriptblock and statement syntax are equivalent and can be used interchangeably.
+
+- title: 'Example 3: Get processes based on process name'
+  code: |-
+    Get-Process | Where-Object {$_.ProcessName -Match "^p.*"}
+    Get-Process | Where-Object ProcessName -Match "^p.*"
+  description: ""
+  summary: |+
+    These commands get the processes that have a **ProcessName** property value that begins with the
+    letter `p`. The **Match** operator lets you use regular expression matches.
+
+    The scriptblock and statement syntax are equivalent and can be used interchangeably.
+
+- title: 'Example 4: Use the comparison statement format'
+  code: |-
+    Get-Process | Where-Object -Property Handles -GE -Value 1000
+    Get-Process | where Handles -GE 1000
+  description: ""
+  summary: |+
+    This example shows how to use the new comparison statement format of the `Where-Object` cmdlet.
+
+    The first command uses the comparison statement format.
+    In this command, no aliases are used and all parameters include the parameter name.
+
+    The second command is the more natural use of the comparison command format. The `where` alias is
+    substituted for the `Where-Object` cmdlet name and all optional parameter names are omitted.
+
+- title: 'Example 5: Get commands based on properties'
+  code: |-
+    # Use Where-Object to get commands that have any value for the OutputType property of the command.
+    # This omits commands that do not have an OutputType property and those that have an OutputType property, but no property value.
+    Get-Command | where OutputType
+    Get-Command | where {$_.OutputType}
+
+    # Use Where-Object to get objects that are containers.
+    # This gets objects that have the **PSIsContainer** property with a value of $True and excludes all others.
+    Get-ChildItem | where PSIsContainer
+    Get-ChildItem | where {$_.PSIsContainer}
+
+    # Finally, use the Not operator (!) to get objects that are not containers.
+    # This gets objects that do have the **PSIsContainer** property and those that have a value of $False for the **PSIsContainer** property.
+    Get-ChildItem | where {!$_.PSIsContainer}
+    # You cannot use the Not operator (!) in the comparison statement format of the command.
+    Get-ChildItem | where PSIsContainer -eq $False
+  description: ""
+  summary: |+
+    This example shows how to write commands that return items that are true or false or have any value
+    for a specified property. Each example shows both the script block and comparison statement formats
+    for the command.
+
+- title: 'Example 6: Use multiple conditions'
+  code: |-
+    Get-Module -ListAvailable | where {($_.Name -notlike "Microsoft*" -and $_.Name -notlike "PS*") -and $_.HelpInfoUri}
+  description: |-
+    This example shows how to create a `Where-Object` command with multiple conditions.
+
+    This command gets non-core modules that support the Updatable Help feature. The command uses the
+    **ListAvailable** parameter of the `Get-Module` cmdlet to get all modules on the computer. A
+    pipeline operator (`|`) sends the modules to the `Where-Object` cmdlet, which gets modules whose
+    names do not begin with Microsoft or PS, and have a value for the **HelpInfoURI** property, which
+    tells PowerShell where to find updated help files for the module. The comparison statements are
+    connected by the **And** logical operator.
+
+    The example uses the script block command format. Logical operators, such as **And** and **Or**, are
+    valid only in script blocks. You cannot use them in the comparison statement format of a
+    `Where-Object` command.
+
+    - For more information about PowerShell logical operators, see [about_Logical_Operators](./About/about_logical_operators.md).
+    - For more information about the Updatable Help feature, see [about_Updatable_Help](./About/about_Updatable_Help.md).
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CContains
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects from a collection if the property value of the object is an
+    exact match for the specified value. This operation is case-sensitive.
+
+    For example: `Get-Process | where ProcessName -CContains "svchost"`
+
+    **CContains** refers to a collection of values and is true if the collection contains an item that
+    is an exact match for the specified value. If the input is a single object, PowerShell converts it
+    to a collection of one object.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CEQ
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is the same as the specified value.
+    This operation is case-sensitive.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CGE
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is greater than or equal to the
+    specified value. This operation is case-sensitive.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CGT
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is greater than the specified value.
+    This operation is case-sensitive.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CIn
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value includes the specified value. This
+    operation is case-sensitive.
+
+    For example: `Get-Process | where -Value "svchost" -CIn ProcessName`
+
+    **CIn** resembles **CContains**, except that the property and value positions are reversed. For
+    example, the following statements are both true.
+
+    `"abc", "def" -CContains "abc"`
+
+    `"abc" -CIn "abc", "def"`
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CLE
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is less-than or equal to the specified
+    value. This operation is case-sensitive.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CLike
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value matches a value that includes wildcard
+    characters. This operation is case-sensitive.
+
+    For example: `Get-Process | where ProcessName -CLike "*host"`
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CLT
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is less-than the specified value. This
+    operation is case-sensitive.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CMatch
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value matches the specified regular
+    expression. This operation is case-sensitive. When the input is scalar, the matched value is saved
+    in `$Matches` automatic variable.
+
+    For example: `Get-Process | where ProcessName -CMatch "Shell"`
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CNE
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is different than the specified value.
+    This operation is case-sensitive.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CNotContains
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value of the object is not an exact match
+    for the specified value. This operation is case-sensitive.
+
+    For example: `Get-Process | where ProcessName -CNotContains "svchost"`
+
+    **NotContains** and **CNotContains** refer to a collection of values and are true when the
+    collection does not contains any items that are an exact match for the specified value. If the input
+    is a single object, PowerShell converts it to a collection of one object.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CNotIn
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is not an exact match for the
+    specified value. This operation is case-sensitive.
+
+    For example: `Get-Process | where -Value "svchost" -CNotIn -Property ProcessName`
+
+    **NotIn** and **CNotIn** operators resemble **NotContains** and **CNotContains**, except that the
+    property and value positions are reversed. For example, the following statements are true.
+
+    `"abc", "def" -CNotContains "Abc"`
+
+    `"abc" -CNotIn "Abc", "def"`
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CNotLike
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value does not match a value that includes
+    wildcard characters. This operation is case-sensitive.
+
+    For example: `Get-Process | where ProcessName -CNotLike "*host"`
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: CNotMatch
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value does not match the specified regular
+    expression. This operation is case-sensitive. When the input is scalar, the matched value is saved
+    in `$Matches` automatic variable.
+
+    For example: `Get-Process | where ProcessName -CNotMatch "Shell"`
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Contains
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if any item in the property value of the object is an exact
+    match for the specified value.
+
+    For example: `Get-Process | where ProcessName -Contains "Svchost"`
+
+    If the property value contains a single object, PowerShell converts it to a collection of one
+    object.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: IContains
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: EQ
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is the same as the specified value.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: IEQ
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.ScriptBlock" data-throw-if-not-resolved="False" />
+  name: FilterScript
+  isRequired: true
+  description: |+
+    Specifies the script block that is used to filter the objects. Enclose the script block in braces
+    (`{}`).
+
+    The parameter name, **FilterScript**, is optional.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: GE
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is greater than or equal to the
+    specified value.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: IGE
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: GT
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is greater than the specified value.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: IGT
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: In
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value matches any of the specified values.
+    For example:
+
+    `Get-Process | where -Property ProcessName -in -Value "Svchost", "TaskHost", "WsmProvHost"`
+
+    If the value of the **Value** parameter is a single object, PowerShell converts it to a collection of
+    one object.
+
+    If the property value of an object is an array, PowerShell uses reference equality to determine a
+    match. `Where-Object` returns the object only if the value of the **Property** parameter and any
+    value of **Value** are the same instance of an object.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: IIn
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  name: InputObject
+  description: |+
+    Specifies the objects to be filtered. You can also pipe the objects to `Where-Object`.
+
+    When you use the **InputObject** parameter with `Where-Object`, instead of piping command results to
+    `Where-Object`, the **InputObject** value is treated as a single object. This is true even if the
+    value is a collection that is the result of a command, such as `-InputObject (Get-Process)`. Because
+    **InputObject** cannot return individual properties from an array or collection of objects, we
+    recommend that, if you use `Where-Object` to filter a collection of objects for those objects that
+    have specific values in defined properties, you use `Where-Object` in the pipeline, as shown in the
+    examples in this topic.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Is
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is an instance of the specified .NET
+    type. Enclose the type name in square brackets.
+
+    For example, `Get-Process | where StartTime -Is [DateTime]`
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: IsNot
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is not an instance of the specified
+    .NET type.
+
+    For example, `Get-Process | where StartTime -IsNot [DateTime]`
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: LE
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is less than or equal to the specified
+    value.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ILE
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Like
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value matches a value that includes wildcard
+    characters.
+
+    For example: `Get-Process | where ProcessName -Like "*host"`
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ILike
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: LT
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is less than the specified value.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ILT
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Match
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value matches the specified regular
+    expression. When the input is scalar, the matched value is saved in `$Matches` automatic variable.
+
+    For example: `Get-Process | where ProcessName -Match "shell"`
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: IMatch
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NE
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is different than the specified value.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: INE
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Not
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property does not exist or has a value of null or
+    false.
+
+    For example: `Get-Service | where -Not "DependentServices"`
+
+    This parameter was introduced in Windows PowerShell 6.1.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NotContains
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if none of the items in the property value is an exact match
+    for the specified value.
+
+    For example: `Get-Process | where ProcessName -NotContains "Svchost"`
+
+    **NotContains** refers to a collection of values and is true if the collection does not contain any
+    items that are an exact match for the specified value. If the input is a single object, PowerShell
+    converts it to a collection of one object.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: INotContains
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NotIn
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value is not an exact match for any of the
+    specified values.
+
+    For example: `Get-Process | where -Value "svchost" -NotIn -Property ProcessName`
+
+    If the value of **Value** is a single object, PowerShell converts it to a collection of one object.
+
+    If the property value of an object is an array, PowerShell uses reference equality to determine a
+    match. `Where-Object` returns the object only if the value of **Property** and any value of
+    **Value** are not the same instance of an object.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: INotIn
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NotLike
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects if the property value does not match a value that includes
+    wildcard characters.
+
+    For example: `Get-Process | where ProcessName -NotLike "*host"`
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: INotLike
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NotMatch
+  isRequired: true
+  description: |+
+    Indicates that this cmdlet gets objects when the property value does not match the specified regular
+    expression. When the input is scalar, the matched value is saved in `$Matches` automatic variable.
+
+    For example: `Get-Process | where ProcessName -NotMatch "PowerShell"`
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: INotMatch
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Property
+  isRequired: true
+  description: |+
+    Specifies the name of an object property. The parameter name, **Property**, is optional.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: Value
+  description: |+
+    Specifies a property value. The parameter name, **Value**, is optional. This parameter accepts
+    wildcard characters when used with the following comparison parameters:
+
+    - **CLike**
+    - **CNotLike**
+    - **Like**
+    - **NotLike**
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Core.Where-Object
+name: Where-Object
+description: |-
+  The `Where-Object` cmdlet selects objects that have particular property values from the collection
+  of objects that are passed to it. For example, you can use the `Where-Object` cmdlet to select files
+  that were created after a certain date, events with a particular ID, or computers that use a
+  particular version of Windows.
+
+  Starting in Windows PowerShell 3.0, there are two different ways to construct a `Where-Object`
+  command.
+
+  - **Script block**. You can use a script block to specify the property name, a comparison operator,
+    and a property value. `Where-Object` returns all objects for which the script block statement is
+    true.
+
+    For example, the following command gets processes in the Normal priority class, that is, processes
+    where the value of the **PriorityClass** property equals Normal.
+
+    `Get-Process | Where-Object {$_.PriorityClass -eq "Normal"}`
+
+    All PowerShell comparison operators are valid in the script block format. For more information
+    about comparison operators, see
+    [about_Comparison_Operators](./About/about_Comparison_Operators.md).
+
+  - **Comparison statement**. You can also write a comparison statement, which is much more like
+    natural language. Comparison statements were introduced in Windows PowerShell 3.0.
+
+    For example, the following commands also get processes that have a priority class of Normal. These
+    commands are equivalent and can be used interchangeably.
+
+    `Get-Process | Where-Object -Property PriorityClass -eq -Value "Normal"`
+
+    `Get-Process | Where-Object PriorityClass -eq "Normal"`
+
+    Starting in Windows PowerShell 3.0, `Where-Object` adds comparison operators as parameters in a
+    `Where-Object` command. Unless specified, all operators are case-insensitive. Prior to Windows
+    PowerShell 3.0, the comparison operators in the PowerShell language could be used only in script
+    blocks.
+
+  When you provide a single **Property** to `Where-Object`, the value of the property is treated as
+  a boolean expression. When the value of **Length** is not zero, the expression evaluates to
+  **True**. For example: `('hi', '', 'there') | Where-Object Length`
+
+  The previous example is functionally equivalent to:
+
+  - `('hi', '', 'there') | Where-Object Length -GT 0`
+  - `('hi', '', 'there') | Where-Object {$_.Length -gt 0}`
+metadata:
+  external help file: System.Management.Automation.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 03/19/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Where-Object

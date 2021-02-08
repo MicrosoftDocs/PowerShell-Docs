@@ -1,0 +1,21 @@
+### YamlMime:PowershellModule
+children:
+- title: PSWorkflow
+  cmdlets:
+  - PSWorkflow.New-PSWorkflowExecutionOption
+  - PSWorkflow.New-PSWorkflowSession
+uid: PSWorkflow
+name: PSWorkflow
+description: |-
+  This section contains the help topics for the cmdlets that are installed with Windows PowerShell
+  PSWorkflow module, which contains cmdlets that support the Windows PowerShell Workflow feature.
+metadata:
+  Download Help Link: https://go.microsoft.com/fwlink/?linkid=390817
+  Help Version: 5.2.0.0
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Guid: 3b6cc51d-c096-4b38-b78d-0fed6277096a
+  Module Name: PSWorkflow
+  ms.date: 06/09/2017
+  schema: 2.0.0
+  title: PSWorkflow

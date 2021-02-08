@@ -1,0 +1,244 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Converts an object to a JSON-formatted string.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  The `ConvertTo-Json` cmdlet is implemented using
+  [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
+inputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe any object to `ConvertTo-Json`.
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET
+  href: /previous-versions/dotnet/articles/bb299886(v=msdn.10)
+- text: ConvertFrom-Json
+  href: ConvertFrom-Json.yml
+- text: Get-Content
+  href: ../Microsoft.PowerShell.Management/Get-Content.yml
+- text: Get-UICulture
+  href: Get-UICulture.yml
+- text: Invoke-WebRequest
+  href: Invoke-WebRequest.yml
+- text: Invoke-RestMethod
+  href: Invoke-RestMethod.yml
+- text: NewtonSoft.Json.StringEscapeHandling
+  href: https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_StringEscapeHandling.htm
+syntaxes:
+- >-
+  ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
+
+  [-EnumsAsStrings] [-AsArray] [-EscapeHandling <StringEscapeHandling>]
+
+  [<CommonParameters>]
+examples:
+- title: Example 1
+  code: |-
+    (Get-UICulture).Calendar | ConvertTo-Json
+
+    {
+      "MinSupportedDateTime": "0001-01-01T00:00:00",
+      "MaxSupportedDateTime": "9999-12-31T23:59:59.9999999",
+      "AlgorithmType": 1,
+      "CalendarType": 1,
+      "Eras": [
+        1
+      ],
+      "TwoDigitYearMax": 2029,
+      "IsReadOnly": true
+    }
+  description: |-
+    This command uses the `ConvertTo-Json` cmdlet to convert a GregorianCalendar object to a
+    JSON-formatted string.
+  summary: ""
+- title: Example 2
+  code: |-
+    Get-Date | ConvertTo-Json; Get-Date | ConvertTo-Json -AsArray
+
+    {
+      "value": "2018-10-12T23:07:18.8450248-05:00",
+      "DisplayHint": 2,
+      "DateTime": "October 12, 2018 11:07:18 PM"
+    }
+    [
+      {
+        "value": "2018-10-12T23:07:18.8480668-05:00",
+        "DisplayHint": 2,
+        "DateTime": "October 12, 2018 11:07:18 PM"
+      }
+    ]
+  description: |-
+    This example shows the output from `ConvertTo-Json` cmdlet with and without the **AsArray** switch
+    parameter. You can see the second portion of the output is wrapped in array brackets.
+  summary: ""
+- title: Example 3
+  code: |-
+    @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Compress
+
+    {"Domain":"Domain01","Account":"User01","Admin":"True"}
+  description: |-
+    This command shows the effect of using the **Compress** parameter of `ConvertTo-Json`. The
+    compression affects only the appearance of the string, not its validity.
+  summary: ""
+- title: Example 4
+  code: |-
+    Get-Date | Select-Object -Property * | ConvertTo-Json
+
+    {
+      "DisplayHint": 2,
+      "DateTime": "October 12, 2018 10:55:32 PM",
+      "Date": "2018-10-12T00:00:00-05:00",
+      "Day": 12,
+      "DayOfWeek": 5,
+      "DayOfYear": 285,
+      "Hour": 22,
+      "Kind": 2,
+      "Millisecond": 639,
+      "Minute": 55,
+      "Month": 10,
+      "Second": 32,
+      "Ticks": 636749817326397744,
+      "TimeOfDay": {
+        "Ticks": 825326397744,
+        "Days": 0,
+        "Hours": 22,
+        "Milliseconds": 639,
+        "Minutes": 55,
+        "Seconds": 32,
+        "TotalDays": 0.95523888627777775,
+        "TotalHours": 22.925733270666665,
+        "TotalMilliseconds": 82532639.774400011,
+        "TotalMinutes": 1375.54399624,
+        "TotalSeconds": 82532.6397744
+      },
+      "Year": 2018
+    }
+  description: |-
+    This example uses the `ConvertTo-Json` cmdlet to convert a **System.DateTime** object from the
+    `Get-Date` cmdlet to a JSON-formatted string. The command uses the `Select-Object` cmdlet to get all
+    (`*`) of the properties of the **DateTime** object. The output shows the JSON string that
+    `ConvertTo-Json` returned.
+  summary: ""
+- title: Example 5
+  code: |-
+    Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
+
+    DisplayHint : 2
+    DateTime    : October 12, 2018 10:55:52 PM
+    Date        : 2018-10-12 12:00:00 AM
+    Day         : 12
+    DayOfWeek   : 5
+    DayOfYear   : 285
+    Hour        : 22
+    Kind        : 2
+    Millisecond : 768
+    Minute      : 55
+    Month       : 10
+    Second      : 52
+    Ticks       : 636749817527683372
+    TimeOfDay   : @{Ticks=825527683372; Days=0; Hours=22; Milliseconds=768; Minutes=55; Seconds=52;
+                  TotalDays=0.95547185575463; TotalHours=22.9313245381111; TotalMilliseconds=82552768.3372;
+                  TotalMinutes=1375.87947228667; TotalSeconds=82552.7683372}
+    Year        : 2018
+  description: |-
+    This example shows how to use the `ConvertTo-Json` and `ConvertFrom-Json` cmdlets to convert an
+    object to a JSON string and a JSON object.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AsArray
+  description: |+
+    Outputs the object in array brackets, even if the input is a single object.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Compress
+  description: |+
+    Omits white space and indented formatting in the output string.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: Depth
+  description: |+
+    Specifies how many levels of contained objects are included in the JSON representation. The default
+    value is 2.
+
+  defaultValue: "2"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: EnumsAsStrings
+  description: |+
+    Provides an alternative serialization option that converts all enumerations to their string representation.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Newtonsoft.Json.StringEscapeHandling" data-throw-if-not-resolved="False" />
+  name: EscapeHandling
+  description: |+
+    Controls how certain characters are escaped in the resulting JSON output. By default, only control
+    characters (like newline) are escaped.
+
+    Acceptable values are:
+
+    - Default - Only control characters are escaped.
+    - EscapeNonAscii - All non-ASCII and control characters are escaped.
+    - EscapeHtml - HTML (`<`, `>`, `&`, `'`, `"`) and control characters are escaped.
+
+    This parameter was introduced in PowerShell 6.2.
+
+  defaultValue: Default
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies the objects to convert to JSON format. Enter a variable that contains the objects, or type
+    a command or expression that gets the objects. You can also pipe an object to `ConvertTo-Json`.
+
+    The **InputObject** parameter is required, but its value can be null (`$null`) or an empty string.
+    When the input object is `$null`, `ConvertTo-Json` does not generate any output. When the input
+    object is an empty string, `ConvertTo-Json` returns an empty string.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.ConvertTo-Json
+name: ConvertTo-Json
+description: |-
+  The `ConvertTo-Json` cmdlet converts any .NET object to a string in JavaScript Object Notation (JSON)
+  format. The properties are converted to field names, the field values are converted to property
+  values, and the methods are removed.
+
+  You can then use the `ConvertFrom-Json` cmdlet to convert a JSON-formatted string to a JSON
+  object, which is easily managed in PowerShell.
+
+  Many web sites use JSON instead of XML to serialize data for communication between servers and
+  web-based apps.
+
+  This cmdlet was introduced in Windows PowerShell 3.0.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: ConvertTo-Json

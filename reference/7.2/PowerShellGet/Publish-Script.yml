@@ -1,0 +1,214 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Publishes a script.
+module: PowerShellGet
+notes: |-
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Find-Script
+  href: Find-Script.yml
+- text: Install-Script
+  href: Install-Script.yml
+- text: Publish-Script
+  href: Publish-Script.yml
+- text: Save-Script
+  href: Save-Script.yml
+- text: Update-Script
+  href: Update-Script.yml
+syntaxes:
+- >-
+  Publish-Script -Path <String> [-NuGetApiKey <String>] [-Repository <String>]
+
+   [-Credential <PSCredential>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Publish-Script -LiteralPath <String> [-NuGetApiKey <String>] [-Repository <String>]
+
+   [-Credential <PSCredential>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Create a script file, add content to it, and publish it'
+  code: |-
+    $newScriptInfo = @{
+      Path = 'D:\ScriptSharingDemo\Demo-Script.ps1'
+      Version = '1.0'
+      Author = 'author@contoso.com'
+      Description = "my test script file description goes here"
+    }
+    New-ScriptFileInfo @newScriptInfo
+    Get-Content -Path $newScriptInfo.Path
+
+    <#PSScriptInfo
+
+    .VERSION 1.0
+
+    .AUTHOR pattif@microsoft.com
+
+    .COMPANYNAME
+
+    .COPYRIGHT
+
+    .TAGS
+
+    .LICENSEURI
+
+    .PROJECTURI
+
+    .ICONURI
+
+    .EXTERNALMODULEDEPENDENCIES
+
+    .REQUIREDSCRIPTS
+
+    .EXTERNALSCRIPTDEPENDENCIES
+
+    .RELEASENOTES
+    #>
+
+    <#
+    .DESCRIPTION
+     my test script file description goes here
+    #>
+    Param()
+
+    Add-Content -Path D:\ScriptSharingDemo\Demo-Script.ps1 -Value @"
+
+    Function Demo-ScriptFunction { 'Demo-ScriptFunction' }
+
+    Workflow Demo-ScriptWorkflow { 'Demo-ScriptWorkflow' }
+
+    Demo-ScriptFunction
+    Demo-ScriptWorkflow
+    "@
+    Test-ScriptFileInfo -Path D:\ScriptSharingDemo\Demo-Script.ps1
+
+    Version    Name                 Author                   Description
+    -------    ----                 ------                   -----------
+    1.0        Demo-Script          author@contoso.com       my test script file description goes here
+
+    Publish-Script -Path D:\ScriptSharingDemo\Demo-Script.ps1 -Repository LocalRepo1
+    Find-Script -Repository LocalRepo1 -Name "Demo-Script"
+
+    Version    Name                 Type       Repository    Description
+    -------    ----                 ----       ----------    -----------
+    1.0        Demo-Script          Script     LocalRepo1    my test script file description goes here
+  description: |-
+    The `Test-ScriptFileInfo` cmdlet validates `Demo-Script.ps1`. The `Publish-Script` cmdlet publishes
+    the script to the **LocalRepo1** repository. Finally. `Find-Script` is used to search for
+    `Demo-Script.ps1` in the **LocalRepo1** repository.
+  summary: |+
+    The `New-ScriptFileInfo` cmdlet creates a script file named `Demo-Script.ps1`. `Get-Content`
+    displays the content of `Demo-Script.ps1`. The `Add-Content` cmdlet adds a function and a workflow
+    to `Demo-Script.ps1`.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: ""
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the command to run without asking for user confirmation.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies a path to one or more locations. Unlike the **Path** parameter, the value of the
+    **LiteralPath** parameter is used exactly as entered. No characters are interpreted as wildcards. If
+    the path includes escape characters, enclose them in single quotation marks. Single quotation marks
+    tell Windows PowerShell not to interpret any characters as escape sequences.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: NuGetApiKey
+  description: |+
+    Specifies the API key that you want to use to publish a script to the online gallery. The API key is
+    part of your profile in the online gallery. For more information see [Managing API keys](/powershell/scripting/gallery/how-to/managing-profile/creating-apikeys).
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies a path to one or more locations. Wildcards are permitted. The default location is the
+    current directory.
+
+  defaultValue: <Current location>
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Repository
+  description: |+
+    Specifies the friendly name of a repository that has been registered by running
+    `Register-PSRepository`.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: PowerShellGet.Publish-Script
+name: Publish-Script
+description: |-
+  The `Publish-Script` cmdlet publishes the specified script to the online gallery.
+metadata:
+  external help file: PSModule-help.xml
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 03/27/2020
+  online version: https://docs.microsoft.com/powershell/module/powershellget/publish-script?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Publish-Script

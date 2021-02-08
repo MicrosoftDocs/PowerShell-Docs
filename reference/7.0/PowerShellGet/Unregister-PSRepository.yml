@@ -1,0 +1,60 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Unregisters a repository.
+module: PowerShellGet
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Get-PSRepository
+  href: Get-PSRepository.yml
+- text: Register-PSRepository
+  href: Register-PSRepository.yml
+- text: Set-PSRepository
+  href: Set-PSRepository.yml
+syntaxes:
+- Unregister-PSRepository [-Name] <String[]> [<CommonParameters>]
+examples:
+- title: 'Example 1: Unregister a repository'
+  code: |-
+    Unregister-PSRepository -Name "myNuGetSource"
+  description: ""
+  summary: |+
+    This example unregisters the repository named myNuGetSource.
+
+- title: 'Example 2: Unregister all repositories'
+  code: |-
+    Get-PSRepository | Unregister-PSRepository
+  description: ""
+  summary: |+
+    This example uses `Get-PSRepository` to get all registered repositories, and uses the pipeline operator to pass them to `Unregister-PSRepository` to unregister them.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies an array of names of the repositories to remove.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: PowerShellGet.Unregister-PSRepository
+name: Unregister-PSRepository
+description: |-
+  The `Unregister-PSRepository` cmdlet unregisters a repository for the current user.
+metadata:
+  external help file: PSModule-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/powershellget/unregister-psrepository?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Unregister-PSRepository

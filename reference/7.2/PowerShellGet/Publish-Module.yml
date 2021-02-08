@@ -1,0 +1,293 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Publishes a specified module from the local computer to an online gallery.
+module: PowerShellGet
+notes: |-
+  `Publish-Module` runs on PowerShell 3.0 or later releases of PowerShell, on Windows 7 or Windows
+  2008 R2 and later releases of Windows.
+
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+
+  Publishing a module requires metadata that is displayed on the gallery page for the module. Required
+  metadata includes the module name, version, description, and author. Most metadata is taken from the
+  module manifest, but some metadata can be specified in `Publish-Module` parameters, such as **Tag**,
+  **ReleaseNote**, **IconUri**, **ProjectUri**, and **LicenseUri**. For more information, see
+  [Package manifest values that impact the PowerShell Gallery UI](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui).
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Find-Module
+  href: Find-Module.yml
+- text: Install-Module
+  href: Install-Module.yml
+- text: Register-PSRepository
+  href: Register-PSRepository.yml
+- text: Set-PSRepository
+  href: Set-PSRepository.yml
+- text: Uninstall-Module
+  href: Uninstall-Module.yml
+- text: Update-Module
+  href: Update-Module.yml
+syntaxes:
+- >-
+  Publish-Module -Name <String> [-RequiredVersion <String>] [-NuGetApiKey <String>]
+
+   [-Repository <String>] [-Credential <PSCredential>] [-FormatVersion <Version>]
+
+   [-ReleaseNotes <String[]>] [-Tags <String[]>] [-LicenseUri <Uri>] [-IconUri <Uri>]
+
+   [-ProjectUri <Uri>] [-Exclude <String[]>] [-Force] [-AllowPrerelease] [-SkipAutomaticTags]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Publish-Module -Path <String> [-NuGetApiKey <String>] [-Repository <String>]
+
+   [-Credential <PSCredential>] [-FormatVersion <Version>] [-ReleaseNotes <String[]>]
+
+   [-Tags <String[]>] [-LicenseUri <Uri>] [-IconUri <Uri>] [-ProjectUri <Uri>] [-Force]
+
+   [-SkipAutomaticTags] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Publish a module'
+  code: |-
+    Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73"
+  description: ""
+  summary: |+
+    In this example, MyDscModule is published to the online gallery by using the API key to indicate the
+    module owner's online gallery account. If MyDscModule is not a valid manifest module that specifies
+    a name, version, description, and author, an error occurs.
+
+- title: 'Example 2: Publish a module with gallery metadata'
+  code: |-
+    Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73" -LicenseUri "http://contoso.com/license" -Tag "Active Directory","DSC" -ReleaseNote "Updated the ActiveDirectory DSC Resources to support adding users."
+  description: ""
+  summary: |+
+    In this example, MyDscModule is published to the online gallery by using the API key to indicate the
+    module owner's gallery account. The additional metadata provided is displayed on the webpage for the
+    module in the gallery. The owner adds two search tags for the module, relating it to Active
+    Directory; a brief release note is added. If MyDscModule is not a valid manifest module that
+    specifies a name, version, description, and author, an error occurs.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowPrerelease
+  description: |+
+    Allows modules marked as prerelease to be published.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the `Publish-Module`.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user account that has rights to publish a module for a specified package provider or
+    source.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Exclude
+  description: |+
+    Defines files to exclude from the published module.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the command to run without asking for user confirmation.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Version" data-throw-if-not-resolved="False" />
+  name: FormatVersion
+  description: |+
+    Accepts only valid values specified by the **ValidateSet** attribute.
+
+    For more information, see [ValidateSet Attribute Declaration](/powershell/scripting/developer/cmdlet/validateset-attribute-declaration)
+    and [ValidateSetAttribute](/dotnet/api/system.management.automation.validatesetattribute).
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: "2.0"
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: IconUri
+  description: |+
+    Specifies the URL of an icon for the module. The specified icon is displayed on the gallery webpage
+    for the module.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: LicenseUri
+  description: |+
+    Specifies the URL of licensing terms for the module you want to publish.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the module that you want to publish. `Publish-Module` searches for the
+    specified module name in `$Env:PSModulePath`.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: NuGetApiKey
+  description: |+
+    Specifies the API key that you want to use to publish a module to the online gallery. The API key is
+    part of your profile in the online gallery, and can be found on your user account page in the
+    gallery. The API key is NuGet-specific functionality.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path to the module that you want to publish. This parameter accepts the path to the
+    folder that contains the module.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: ProjectUri
+  description: |+
+    Specifies the URL of a webpage about this project.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ReleaseNotes
+  description: |+
+    Specifies a string containing release notes or comments that you want to be available to users of
+    this version of the module.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Repository
+  description: |+
+    Specifies the friendly name of a repository that has been registered by running
+    `Register-PSRepository`. The repository must have a **PublishLocation**, which is a valid NuGet URI.
+    The **PublishLocation** can be set by running `Set-PSRepository`.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RequiredVersion
+  description: |+
+    Specifies the exact version of a single module to publish.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: SkipAutomaticTags
+  description: |+
+    Removes commands and resources from being included as tags. Skips automatically adding tags to a
+    module.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Tags
+  description: |+
+    Adds one or more tags to the module that you are publishing. Example tags include
+    DesiredStateConfiguration, DSC, DSCResourceKit, or PSModule. Separate multiple tags with commas.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the `Publish-Module` runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: PowerShellGet.Publish-Module
+name: Publish-Module
+description: |-
+  The `Publish-Module` cmdlet publishes a module to an online NuGet-based gallery by using an API key,
+  stored as part of a user's profile in the gallery. You can specify the module to publish either by
+  the module's name, or by the path to the folder containing the module.
+
+  When you specify a module by name, `Publish-Module` publishes the first module that would be found
+  by running `Get-Module -ListAvailable <Name>`. If you specify a minimum version of a module to
+  publish, `Publish-Module` publishes the first module with a version that is greater than or equal to
+  the minimum version that you have specified.
+
+  Publishing a module requires metadata that is displayed on the gallery page for the module. Required
+  metadata includes the module name, version, description, and author. Although most metadata is taken
+  from the module manifest, some metadata must be specified in `Publish-Module` parameters, such as
+  **Tag**, **ReleaseNote**, **IconUri**, **ProjectUri**, and **LicenseUri**, because these parameters
+  match fields in a NuGet-based gallery.
+metadata:
+  external help file: PSModule-help.xml
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 10/03/2019
+  online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Publish-Module

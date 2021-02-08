@@ -1,0 +1,87 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets values for the options that can be configured.
+module: PSReadLine
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe objects to this cmdlet.
+outputs:
+- name: <xref href="Microsoft.PowerShell.PSConsoleReadLineOptions" data-throw-if-not-resolved="False" />
+  description: |-
+    An instance of the current options. Changing the property values of this object updates the settings
+    in PSReadLine directly without invoking `Set-PSReadLineOption`.
+links:
+- text: Remove-PSReadLineKeyHandler
+  href: Remove-PSReadLineKeyHandler.yml
+- text: Get-PSReadLineKeyHandler
+  href: Get-PSReadLineKeyHandler.yml
+- text: Set-PSReadLineOption
+  href: Set-PSReadLineOption.yml
+- text: Set-PSReadLineKeyHandler
+  href: Set-PSReadLineKeyHandler.yml
+syntaxes:
+- Get-PSReadLineOption [<CommonParameters>]
+examples:
+- title: 'Example 1: Get options and their values'
+  code: |-
+    Get-PSReadLineOption
+
+    EditMode                               : Windows
+    AddToHistoryHandler                    : System.Func`2[System.String,System.Object]
+    HistoryNoDuplicates                    : True
+    HistorySavePath                        : C:\Users\username\AppData\Roaming\Microsoft\Windows\
+                                             PowerShell\PSReadLine\ConsoleHost_history.txt
+    HistorySaveStyle                       : SaveIncrementally
+    HistorySearchCaseSensitive             : False
+    HistorySearchCursorMovesToEnd          : False
+    MaximumHistoryCount                    : 4096
+    ContinuationPrompt                     : >>
+    ExtraPromptLineCount                   : 0
+    PromptText                             : {> }
+    BellStyle                              : Audible
+    DingDuration                           : 50
+    DingTone                               : 1221
+    CommandsToValidateScriptBlockArguments : {ForEach-Object, %, Invoke-Command, icm...}
+    CommandValidationHandler               :
+    CompletionQueryItems                   : 100
+    MaximumKillRingCount                   : 10
+    ShowToolTips                           : True
+    ViModeIndicator                        : None
+    WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"---
+    AnsiEscapeTimeout                      : 100
+    CommandColor                           : "$([char]0x1b)[93m"
+    CommentColor                           : "$([char]0x1b)[32m"
+    ContinuationPromptColor                : "$([char]0x1b)[37m"
+    DefaultTokenColor                      : "$([char]0x1b)[37m"
+    EmphasisColor                          : "$([char]0x1b)[96m"
+    ErrorColor                             : "$([char]0x1b)[91m"
+    KeywordColor                           : "$([char]0x1b)[92m"
+    MemberColor                            : "$([char]0x1b)[97m"
+    NumberColor                            : "$([char]0x1b)[97m"
+    OperatorColor                          : "$([char]0x1b)[90m"
+    ParameterColor                         : "$([char]0x1b)[90m"
+    SelectionColor                         : "$([char]0x1b)[30;47m"
+    StringColor                            : "$([char]0x1b)[36m"
+    TypeColor                              : "$([char]0x1b)[37m"
+    VariableColor                          : "$([char]0x1b)[92m"
+  description: |-
+    This command returns the list of available PSReadLine options and their current values.
+  summary: ""
+uid: PSReadLine.Get-PSReadLineOption
+name: Get-PSReadLineOption
+description: |-
+  The `Get-PSReadLineOption` cmdlet returns the current state of the settings that can be configured
+  by using the `Set-PSReadLineOption` cmdlet. You can use the returned object to change
+  **PSReadLine** options. This provides a slightly simpler way to set syntax coloring options for
+  multiple kinds of tokens.
+metadata:
+  external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSReadline
+  ms.date: 06/30/2020
+  online version: https://docs.microsoft.com/powershell/module/psreadline/get-psreadlineoption?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-PSReadLineOption

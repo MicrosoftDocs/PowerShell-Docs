@@ -1,0 +1,42 @@
+### YamlMime:PowershellModule
+children:
+- title: PackageManagement
+  cmdlets:
+  - PackageManagement.Find-Package
+  - PackageManagement.Find-PackageProvider
+  - PackageManagement.Get-Package
+  - PackageManagement.Get-PackageProvider
+  - PackageManagement.Get-PackageSource
+  - PackageManagement.Import-PackageProvider
+  - PackageManagement.Install-Package
+  - PackageManagement.Install-PackageProvider
+  - PackageManagement.Register-PackageSource
+  - PackageManagement.Save-Package
+  - PackageManagement.Set-PackageSource
+  - PackageManagement.Uninstall-Package
+  - PackageManagement.Unregister-PackageSource
+uid: PackageManagement
+name: PackageManagement
+description: |-
+  This topic displays help topics for the Package Management Cmdlets.
+
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+metadata:
+  Download Help Link: https://aka.ms/powershell72-help
+  Help Version: 7.2.0.0
+  Locale: en-US
+  Module Guid: 4ae9fd46-338a-459c-8186-07f910774cb8
+  Module Name: PackageManagement
+  ms.date: 06/09/2017
+  schema: 2.0.0
+  title: PackageManagement

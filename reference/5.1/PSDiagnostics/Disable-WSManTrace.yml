@@ -1,0 +1,43 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Stop the WSMan logging session started by Enable-WSManTrace.
+module: PSDiagnostics
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Event Tracing
+  href: /windows/desktop/ETW/event-tracing-portal
+- text: Stop-Trace
+  href: stop-trace.yml
+- text: Enable-WSManTrace
+  href: Enable-WSManTrace.yml
+syntaxes:
+- Disable-WSManTrace [<CommonParameters>]
+examples:
+- title: 'Example 1: Stop a WSMan trace'
+  code: |-
+    Disable-WSManTrace
+  description: ""
+  summary: ""
+uid: PSDiagnostics.Disable-WSManTrace
+name: Disable-WSManTrace
+description: |-
+  This cmdlet stops the WSMan logging session started by Enable-WSManTrace.
+
+  This cmdlet uses the `Stop-Trace` cmdlet.
+
+  You must run this cmdlet from an elevated PowerShell session.
+metadata:
+  external help file: PSDiagnostics-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 11/29/2018
+  online version: https://docs.microsoft.com/powershell/module/psdiagnostics/disable-wsmantrace?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Disable-WSManTrace

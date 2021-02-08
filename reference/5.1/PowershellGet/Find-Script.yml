@@ -1,0 +1,331 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Finds a script.
+module: PowerShellGet
+notes: |-
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+outputs:
+- name: <xref href="PSRepositoryItemInfo" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Install-Script
+  href: Install-Script.yml
+- text: Publish-Script
+  href: Publish-Script.yml
+- text: Save-Script
+  href: Save-Script.yml
+- text: Uninstall-Script
+  href: Uninstall-Script.yml
+- text: Update-Script
+  href: Update-Script.yml
+syntaxes:
+- >-
+  Find-Script [[-Name] <String[]>] [-MinimumVersion <String>] [-MaximumVersion <String>]
+
+   [-RequiredVersion <String>] [-AllVersions] [-IncludeDependencies] [-Filter <String>] [-Tag <String[]>]
+
+   [-Includes <String[]>] [-Command <String[]>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+
+   [-Repository <String[]>] [-Credential <PSCredential>] [-AllowPrerelease] [<CommonParameters>]
+examples:
+- title: 'Example 1: Find all available scripts'
+  code: |-
+    PS C:\> Find-Script
+    Version    Name                                Type       Repository           Description
+    -------    ----                                ----       ----------           -----------
+    2.5        Fabrikam-ClientScript               Script     LocalRepo1           Description for the Fabrikam-ClientScript script
+    2.5        Fabrikam-Script                     Script     LocalRepo1           Description for the Fabrikam-Script script
+    2.5        Fabrikam-ServerScript               Script     LocalRepo1           Description for the Fabrikam-ServerScript script
+    2.5        Required-Script1                    Script     LocalRepo1           Description for the Required-Script1 script
+    2.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
+    2.5        Required-Script3                    Script     LocalRepo1           Description for the Required-Script3 script
+    2.0        Script-WithDependencies1            Script     LocalRepo1           Description for the Script-WithDependencies1 script
+    2.0        Script-WithDependencies2            Script     LocalRepo1           Description for the Script-WithDependencies2 script
+    2.0        Start-WFContosoServer               Script     LocalRepo1           Start-WFContosoServer Script example
+    2.1        Test-Script1                        Script     LocalRepo1           Test-Script1 Script example
+    2.0        Test-Script2                        Script     LocalRepo1           Test-Script2 Script example
+    1.0        TestRunbook                         Script     LocalRepo1           Contoso Script example
+  description: |-
+    This command finds all available scripts.
+  summary: ""
+- title: 'Example 2: Find a script by name'
+  code: |-
+    PS C:\> Find-Script -Name "Start-WFContosoServer"
+    Version    Name                                Type       Repository           Description
+    -------    ----                                ----       ----------           -----------
+    2.0        Start-WFContosoServer               Script     LocalRepo1           Start-WFContosoServer Script example
+  description: |-
+    This command find the script named Start-WFContosoServer.
+  summary: ""
+- title: 'Example 3: Find a script by name, required version, and from a specified repository'
+  code: |-
+    PS C:\> Find-Script -Name "Required-Script2" -RequiredVersion 2.0 -Repository "LocalRepo01"
+  description: |-
+    This command finds a script by name and required version in the LocalRepo01 repository.
+  summary: ""
+- title: 'Example 4: Find a script and format the output as a list'
+  code: |-
+    PS C:\> Find-Script -Name "Required-Script2" -RequiredVersion 2.0 -Repository "LocalRepo1" | Format-List * -Force
+    Name                       : Required-Script2
+    Version                    : 2.0
+    Type                       : Script
+    Description                : Description for the Required-Script2 script
+    Author                     : pattif
+    CompanyName                : Microsoft Corporation
+    Copyright                  : 2015 Microsoft Corporation. All rights reserved.
+    PublishedDate              : 8/14/2015 2:37:01 PM
+    LicenseUri                 : http://required-script2.com/license
+    ProjectUri                 : http://required-script2.com/
+    IconUri                    : http://required-script2.com/icon
+    Tags                       : {, Tag1, Tag2, Tag-Required-Script2-2.0...}
+    Includes                   : {Function, DscResource, Cmdlet, Command}
+    PowerShellGetFormatVersion :
+    ReleaseNotes               : Required-Script2 release notes
+    Dependencies               : {}
+    RepositorySourceLocation   : C:\MyLocalRepo
+    Repository                 : LocalRepo01
+    PackageManagementProvider  : NuGet
+  description: |-
+    This command finds Required-Script2 in the LocalRepo1 repository, and then passes the resulting **PSRepositoryItemInfo** object to the Format-List cmdlet.
+  summary: ""
+- title: 'Example 5: Find a script in the specified version range'
+  code: |-
+    PS C:\> Find-Script -Name "Required-Script2" -MinimumVersion 2.1 -MaximumVersion 2.5 -Repository "LocalRepo1"
+    Version    Name                                Type       Repository           Description
+    -------    ----                                ----       ----------           -----------
+    2.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
+  description: |-
+    This command finds all versions of RequiredScript2 between versions 2.1 and 2.5 in the LocalRepo1 respository.
+  summary: ""
+- title: 'Example 6: Find all versions of a script'
+  code: |-
+    PS C:\> Find-Script -Name "Required-Script02" -AllVersions
+    Version    Name                                Type       Repository           Description
+    -------    ----                                ----       ----------           -----------
+    1.0        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
+    1.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
+    2.0        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
+    2.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
+  description: |-
+    This command finds all versions of Required-Script02.
+  summary: ""
+- title: 'Example 7: Find a script and its dependencies'
+  code: |-
+    PS C:\> Find-Script -Name "Script-WithDependencies1" -IncludeDependencies -Repository "LocalRepo1"
+    Version    Name                                Type       Repository           Description
+    -------    ----                                ----       ----------           -----------
+    1.0        Script-WithDependencies1            Script     LocalRepo1           Description for the Script-WithDependencies1 script
+    2.0        RequiredModule3                     Script     LocalRepo1           RequiredModule3 module
+    2.5        Required-Script1                    Script     LocalRepo1           Description for the Required-Script1 script
+    2.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
+  description: |-
+    This command finds a script and its dependencies.
+  summary: ""
+- title: 'Example 8: Find scripts with the specified tag'
+  code: |-
+    PS C:\> Find-Script -Tag "Tag1" -Repository "LocalRepo1"
+    Version    Name                                Type       Repository           Description
+    -------    ----                                ----       ----------           -----------
+    1.0        Fabrikam-ClientScript               Script     LocalRepo1           Description for the Fabrikam-ClientScript script
+  description: |-
+    This command finds scripts that have the tag Tag1 in the LocalRepo1 repository
+  summary: ""
+- title: 'Example 9: Find scripts with specified command name'
+  code: |-
+    PS C:\> Find-Script -Command Test-FunctionFromScript_Required-Script3 -Repository "LocalRepo1"
+    Version    Name                                Type       Repository           Description
+    -------    ----                                ----       ----------           -----------
+    2.5        Required-Script3                    Script     LocalRepo1           Description for the Required-Script3 script
+  description: |-
+    This command finds a script that contains the specified command name.
+  summary: ""
+- title: 'Example 10: Find scripts with workflows'
+  code: |-
+    PS C:\> Find-Script -Includes "Workflow" -Repository "LocalRepo1"
+    Version    Name                                Type       Repository           Description
+    -------    ----                                ----       ----------           -----------
+    2.5        Fabrikam-ClientScript               Script     LocalRepo1           Description for the Fabrikam-ClientScript script
+    1.0        Fabrikam-Script                     Script     LocalRepo1           Description for the Fabrikam-Script script
+  description: |-
+    This command finds workflow scripts in the LocalRepo1 repository.
+  summary: ""
+- title: 'Example 11: Find scripts using wildcards'
+  code: |-
+    PS C:\> Find-Script -Name "Required-Script*" -Repository "LocalRepo1"
+    Version    Name                                Type       Repository           Description
+    -------    ----                                ----       ----------           -----------
+    2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script
+    2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script
+    2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script
+  description: |-
+    This command uses the wildcard character (*) to find scripts that begin with Required-Script.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowPrerelease
+  description: |+
+    Includes in the results scripts marked as a prerelease.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllVersions
+  description: |+
+    Indicates that this operation finds all script versions.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Command
+  description: |+
+    Specifies an array of commands to find in scripts.
+    A command can be a function or workflow.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: ""
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Filter
+  description: |+
+    Finds scripts based on the PackageManagement provider-specific search syntax.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: IncludeDependencies
+  description: |+
+    Indicates that this operation gets all scripts that are dependent upon the script specified in the *Name* parameter.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Includes
+  description: |+
+    Specifies type of script to get.
+    The acceptable values for this parameter are: Function, Workflow.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Function, Workflow
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MaximumVersion
+  description: |+
+    Specifies the maximum, or newest, version of the script to find.
+    The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MinimumVersion
+  description: |+
+    Specifies the minimum version of the script to find.
+    The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Specifies an array of names of scripts to find.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: Proxy
+  description: |+
+    Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: ProxyCredential
+  description: |+
+    Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Repository
+  description: |+
+    Specifies the friendly name of a repository that has been registered by running Register-PSRepository.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RequiredVersion
+  description: |+
+    Specifies the exact version number of the script to find.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Tag
+  description: |+
+    Specifies an array of tags.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: PowerShellGet.Find-Script
+name: Find-Script
+description: |-
+  The **Find-Script** cmdlet finds a specified script in registered repositories.
+metadata:
+  external help file: PSModule-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/powershellget/find-script?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Find-Script

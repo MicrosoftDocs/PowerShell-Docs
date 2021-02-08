@@ -1,0 +1,117 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Sets the system time zone to a specified time zone.
+module: Microsoft.PowerShell.Management
+notes: |-
+  This cmdlet is only available on Windows platforms.
+inputs:
+- name: <xref href="System.String, System.TimeZoneInfo, System.String" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Get-TimeZone
+  href: Get-TimeZone.yml
+syntaxes:
+- Set-TimeZone [-Name] <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+- Set-TimeZone -Id <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+- Set-TimeZone [-InputObject] <TimeZoneInfo> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Set the time zone by Id'
+  code: |-
+    Set-TimeZone -Id "Russian Standard Time" -PassThru
+
+    Id                         : Russian Standard Time
+    DisplayName                : (UTC+03:00) Moscow, St. Petersburg
+    StandardName               : Russia TZ 2 Standard Time
+    DaylightName               : Russia TZ 2 Daylight Time
+    BaseUtcOffset              : 03:00:00
+    SupportsDaylightSavingTime : True
+  description: ""
+  summary: |+
+    This example sets the time zone on the local computer to Russian Standard Time.
+
+- title: 'Example 2: Set the time zone by name'
+  code: |-
+    Set-TimeZone -Name "Russia TZ 2 Standard Time"
+  description: |-
+    As we saw in the previous example, the **Id** and the **Name** of the Time Zone do not always match.
+    The **Name** parameter must match the **StandardName** or **DaylightName** properties of the
+    **TimeZoneInfo** object.
+  summary: |+
+    This example sets the time zone on the local computer to Russian Standard Time.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Id
+  isRequired: true
+  description: |+
+    Specifies the ID of the time zone that this cmdlet sets. A full list of Time Zone IDs can be
+    obtained by running the following command: `Get-TimeZone -ListAvailable`.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.TimeZoneInfo" data-throw-if-not-resolved="False" />
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies a **TimeZoneInfo** object to use as input.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the time zone that this cmdlet sets. A full list of Time Zone names can be
+    obtained by running the following command: `Get-TimeZone -ListAvailable`.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object representing the item with which you are working. By default, this cmdlet does not
+    generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Set-TimeZone
+name: Set-TimeZone
+description: |-
+  The `Set-TimeZone` cmdlet sets the system time zone to a specified time zone.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 09/18/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-timezone?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Set-TimeZone

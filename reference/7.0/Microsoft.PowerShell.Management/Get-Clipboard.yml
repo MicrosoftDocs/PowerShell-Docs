@@ -1,0 +1,52 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets the contents of the clipboard.
+module: Microsoft.PowerShell.Management
+notes: ""
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Set-Clipboard
+  href: Set-Clipboard.yml
+syntaxes:
+- Get-Clipboard [-Raw] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get the content of the clipboard and display it to the command-line'
+  code: |-
+    Get-Clipboard
+
+    hello
+  description: ""
+  summary: |+
+    In this example we have copied the text "hello" into the clipboard.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Raw
+  description: |+
+    Gets the entire contents of the clipboard. Multiline text is returned as a single multiline string
+    rather than an array of strings.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Get-Clipboard
+name: Get-Clipboard
+description: |-
+  The `Get-Clipboard` cmdlet gets the contents of the clipboard as text. Multiple lines of text are
+  returned as an array of strings similar to `Get-Content`.
+
+  > [!NOTE]
+  > On Linux, this cmdlet requires the `xclip` utility to be in the path. This cmdlet is not supported
+  > on macOS.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 09/21/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-Clipboard

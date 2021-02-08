@@ -1,0 +1,100 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Retrieves information about the subsystems registered in PowerShell.
+module: Microsoft.PowerShell.Core
+notes: ""
+inputs:
+- name: <xref href="System.Management.Automation.Subsystem.SubsystemKind" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="System.Type" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Management.Automation.Subsystem.SubsystemInfo" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: about_experimental_features
+  href: about/about_experimental_features.md
+- text: Disable-ExperimentalFeature
+  href: Disable-ExperimentalFeature.yml
+- text: Enable-ExperimentalFeature
+  href: Get-ExperimentalFeature.yml
+- text: Get-ExperimentalFeature
+  href: Get-ExperimentalFeature.yml
+- text: Using Experimental Features
+  href: /powershell/scripting/learn/experimental-features
+syntaxes:
+- Get-PSSubsystem [<CommonParameters>]
+- Get-PSSubsystem -Kind <SubsystemKind> [<CommonParameters>]
+- Get-PSSubsystem -SubsystemType <Type> [<CommonParameters>]
+examples:
+- title: Example 1 - Display all available subsystems
+  code: |-
+    Get-PSSubsystem
+
+    Kind              SubsystemType     IsRegistered Implementations
+    ----              -------------     ------------ ---------------
+    CommandPredictor  ICommandPredictor        False {}
+  description: ""
+  summary: ""
+- title: Example 2 - Display all available subsystems of a specific kind
+  code: |-
+    PS> Get-PSSubsystem -Kind CommandPredictor | Format-List
+
+    Kind                      : CommandPredictor
+    SubsystemType             : System.Management.Automation.Subsystem.ICommandPredictor
+    AllowUnregistration       : True
+    AllowMultipleRegistration : True
+    RequiredCmdlets           : {}
+    RequiredFunctions         : {}
+    IsRegistered              : False
+    Implementations           : {}
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.Subsystem.SubsystemKind" data-throw-if-not-resolved="False" />
+  name: Kind
+  isRequired: true
+  description: |+
+    Specifies the kind of subsystem to be returned. Valid values are: `CommandPredictor`.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: CommandPredictor
+- type: <xref href="System.Type" data-throw-if-not-resolved="False" />
+  name: SubsystemType
+  isRequired: true
+  description: |+
+    Specifies the type of subsystem to be returned.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Core.Get-PSSubsystem
+name: Get-PSSubsystem
+description: |-
+  Retrieves information about the subsystems registered in PowerShell.
+
+  > [!NOTE]
+  > This is an experimental feature. This cmdlet is only available when the `PSSubsystemPluginModel`
+  > feature is enabled. For more information, see
+  > [Using Experimental Features](/powershell/scripting/learn/experimental-features).
+
+  The feature makes it possible to separate components of `System.Management.Automation.dll` into
+  individual subsystems that reside in their own assembly. This separation reduces the disk footprint
+  of the core PowerShell engine and allows these components to become optional features for a minimal
+  PowerShell installation.
+
+  Currently, only the **CommandPredictor** subsystem is supported. This subsystem is used along with
+  the PSReadLine module to provide custom prediction plugins. In future, **Job**,
+  **CommandCompleter**, **Remoting** and other components could be separated into subsystem assemblies
+  outside of `System.Management.Automation.dll`.
+metadata:
+  external help file: System.Management.Automation.dll-Help.xml
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 10/15/2020
+  online version: ""
+  schema: 2.0.0

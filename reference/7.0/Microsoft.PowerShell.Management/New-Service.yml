@@ -1,0 +1,237 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates a new Windows service.
+module: Microsoft.PowerShell.Management
+notes: |-
+  This cmdlet is only available on Windows platforms.
+
+  To run this cmdlet, start PowerShell by using the **Run as administrator** option.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe input to this cmdlet.
+outputs:
+- name: <xref href="System.ServiceProcess.ServiceController" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns an object that represents the new service.
+links:
+- text: Get-Service
+  href: Get-Service.yml
+- text: Restart-Service
+  href: Restart-Service.yml
+- text: Resume-Service
+  href: Resume-Service.yml
+- text: Set-Service
+  href: Set-Service.yml
+- text: Start-Service
+  href: Start-Service.yml
+- text: Stop-Service
+  href: Stop-Service.yml
+- text: Suspend-Service
+  href: Suspend-Service.yml
+- text: Remove-Service
+  href: Remove-Service.yml
+syntaxes:
+- >-
+  New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] [-Description <String>]
+
+   [-SecurityDescriptorSddl <String>] [-StartupType <ServiceStartupType>] [-Credential <PSCredential>]
+
+   [-DependsOn <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Create a service'
+  code: |-
+    New-Service -Name "TestService" -BinaryPathName '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
+  description: |-
+    This command creates a service named TestService.
+  summary: ""
+- title: 'Example 2: Create a service that includes description, startup type, and display name'
+  code: |-
+    $params = @{
+      Name = "TestService"
+      BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
+      DependsOn = "NetLogon"
+      DisplayName = "Test Service"
+      StartupType = "Manual"
+      Description = "This is a test service."
+    }
+    New-Service @params
+  description: |-
+    This command creates a service named TestService. It uses the parameters of `New-Service` to specify
+    a description, startup type, and display name for the new service.
+  summary: ""
+- title: 'Example 3: View the new service'
+  code: |-
+    Get-CimInstance -ClassName Win32_Service -Filter "Name='testservice'"
+
+    ExitCode  : 0
+    Name      : testservice
+    ProcessId : 0
+    StartMode : Auto
+    State     : Stopped
+    Status    : OK
+  description: |-
+    This command uses `Get-CimInstance` to get the **Win32_Service** object for the new service. This
+    object includes the start mode and the service description.
+  summary: ""
+- title: 'Example 4: Set the SecurityDescriptor of a service when creating.'
+  code: |-
+    $SDDL = "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;SU)"
+    $params = @{
+      BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
+      DependsOn = "NetLogon"
+      DisplayName "Test Service"
+      StartupType = "Manual"
+      Description = "This is a test service."
+      SecurityDescriptorSddl = $SDDL
+    }
+    New-Service @params
+  description: |-
+    The **SecurityDescriptor** is stored in the `$SDDLToSet` variable. The **SecurityDescriptorSddl**
+    parameter uses `$SDDL` to set the **SecurityDescriptor** of the new service.
+  summary: |+
+    This example adds the **SecurityDescriptor** of the service being created.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: BinaryPathName
+  isRequired: true
+  description: |+
+    Specifies the path of the executable file for the service. This parameter is required.
+
+    The fully qualified path to the service binary file. If the path contains a space, it must be quoted
+    so that it is correctly interpreted. For example, `d:\my share\myservice.exe` should be specified as
+    `'"d:\my share\myservice.exe"'`.
+
+    The path can also include arguments for an auto-start service. For example,
+    `'"d:\myshare\myservice.exe arg1 arg2"'`. These arguments are passed to the service entry point.
+
+    For more information, see the **lpBinaryPathName** parameter of
+    [CreateServiceW](/windows/win32/api/winsvc/nf-winsvc-createservicew) API.
+
+  defaultValue: None
+  position: "1"
+  aliases: Path
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies the account used by the service as the
+    [Service Logon Account](/windows/desktop/ad/about-service-logon-accounts).
+
+    Type a user name, such as **User01** or **Domain01\User01**, or enter a **PSCredential** object,
+    such as one generated by the `Get-Credential` cmdlet. If you type a user name, this cmdlet prompts
+    you for a password.
+
+    Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential)
+    object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).
+
+    > [!NOTE]
+    > For more information about **SecureString** data protection, see
+    > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: DependsOn
+  description: |+
+    Specifies the names of other services upon which the new service depends. To enter multiple service
+    names, use a comma to separate the names.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Description
+  description: |+
+    Specifies a description of the service.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: DisplayName
+  description: |+
+    Specifies a display name for the service.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the service. This parameter is required.
+
+  defaultValue: None
+  position: "0"
+  aliases: ServiceName
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: SecurityDescriptorSddl
+  description: |+
+    Specifies the **SecurityDescriptor** for the service in **Sddl** format.
+
+  defaultValue: None
+  position: Named
+  aliases: sd
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.Commands.ServiceStartupType" data-throw-if-not-resolved="False" />
+  name: StartupType
+  description: |+
+    Sets the startup type of the service. The acceptable values for this parameter are:
+
+    - **Automatic** - The service is started or was started by the operating system, at system start-up.
+      If an automatically started service depends on a manually started service, the manually started
+      service is also started automatically at system startup.
+    - **AutomaticDelayedStart** - Starts shortly after the system boots.
+    - **Disabled** - The service is disabled and cannot be started by a user or application.
+    - **InvalidValue** - This value is not supported. Using this value results in an error.
+    - **Manual** - The service is started only manually, by a user, using the Service Control Manager,
+      or by an application.
+
+     The default value is **Automatic**.
+
+  defaultValue: Automatic
+  position: Named
+  aliases: ""
+  parameterValueGroup: Automatic, Manual, Disabled, AutomaticDelayedStart, InvalidValue
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.New-Service
+name: New-Service
+description: |-
+  The `New-Service` cmdlet creates a new entry for a Windows service in the registry and in the
+  service database. A new service requires an executable file that runs during the service.
+
+  The parameters of this cmdlet let you set the display name, description, startup type, and
+  dependencies of the service.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 11/18/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: New-Service

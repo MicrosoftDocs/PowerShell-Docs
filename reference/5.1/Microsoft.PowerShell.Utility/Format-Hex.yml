@@ -1,0 +1,201 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Displays a file or other input as hexadecimal.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  The right-most column of output tries to render the bytes as characters:
+
+  Generally, each byte is interpreted as a Unicode code point, which means that:
+
+  - Printable ASCII characters are always rendered correctly
+  - Multi-byte UTF-8 characters never render correctly
+  - UTF-16 characters render correctly only if their high-order byte happens be `NUL`.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string to this cmdlet.
+outputs:
+- name: <xref href="Microsoft.PowerShell.Commands.ByteCollection" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a **ByteCollection**. This object represents a collection of bytes. It includes
+    methods that convert the collection of bytes to a string formatted like each line of output returned
+    by `Format-Hex`. If you specify the **Path** or **LiteralPath** parameter, the object also contains
+    the path of the file that contains each byte.
+links:
+- text: about_Quoting_Rules
+  href: ../Microsoft.Powershell.Core/About/about_Quoting_Rules.md
+- text: Format-Custom
+  href: Format-Custom.yml
+- text: Format-List
+  href: Format-List.yml
+- text: Format-Table
+  href: Format-Table.yml
+- text: Format-Wide
+  href: Format-Wide.yml
+syntaxes:
+- Format-Hex [-Path] <string[]> [<CommonParameters>]
+- Format-Hex -LiteralPath <string[]> [<CommonParameters>]
+- Format-Hex -InputObject <Object> [-Encoding <string>] [-Raw] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get the hexadecimal representation of a string'
+  code: |-
+    'Hello World' | Format-Hex
+
+    00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+
+    00000000   48 65 6C 6C 6F 20 57 6F 72 6C 64                 Hello World
+  description: |-
+    The string **Hello World** is sent down the pipeline to the `Format-Hex` cmdlet. The hexadecimal
+    output from `Format-Hex` shows the values of each character in the string.
+  summary: |+
+    This command returns the hexadecimal values of a string.
+
+- title: 'Example 2: Find a file type from hexadecimal output'
+  code: |-
+    Format-Hex -Path .\File.t7f
+
+    Path: C:\Test\File.t7f
+
+               00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+
+    00000000   25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D  %PDF-1.5..%????.
+    00000010   0A 31 20 30 20 6F 62 6A 0D 0A 3C 3C 2F 54 79 70  .1 0 obj..<</Typ
+    00000020   65 2F 43 61 74 61 6C 6F 67 2F 50 61 67 65 73 20  e/Catalog/Pages
+  description: |-
+    The `Format-Hex` cmdlet uses the **Path** parameter to specify a filename in the current directory,
+    `File.t7f`. The file extension `.t7f` is uncommon, but the hexadecimal output `%PDF` shows
+    that it is a PDF file.
+  summary: |+
+    This example uses the hexadecimal output to determine the file type. The cmdlet displays the file's
+    full path and the hexadecimal values.
+
+    To test the following command, make a copy of an existing PDF file on your local computer and rename
+    the copied file to **File.t7f**.
+
+- title: 'Example 3: Display raw hexadecimal output'
+  code: |-
+    PS> 1,2,3,1000 | Format-Hex
+
+               Path:
+
+               00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+
+    00000000   01 02 03 E8 03                                   ...è.
+
+
+    PS> 1,2,3,1000 | Format-Hex -Raw
+
+               Path:
+
+               00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+
+    00000000   01 00 00 00 02 00 00 00 03 00 00 00 E8 03 00 00  ............è...
+  description: |-
+    Notice the difference in output. The **Raw** parameter displays the numbers as 4-byte values, true
+    to their **Int32** types.
+  summary: |+
+    By default `Format-Hex` opts for compact output of numeric data types: single-byte or double-byte
+    sequences are used if the value is small enough. The **Raw** parameter deactivates this behavior.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Encoding
+  description: |+
+    Specifies the encoding of the output. This only applies to `[string]` input. The parameter has no
+    effect on numeric types. The default value is `ASCII`.
+
+    The acceptable values for this parameter are as follows:
+
+    - `Ascii` Uses ASCII (7-bit) character set.
+    - `BigEndianUnicode` Uses UTF-16 with the big-endian byte order.
+    - `Unicode` Uses UTF-16 with the little-endian byte order.
+    - `UTF7` Uses UTF-7.
+    - `UTF8` Uses UTF-8.
+    - `UTF32` Uses UTF-32 with the little-endian byte order.
+
+    Non-ASCII characters in the input are output as literal `?` characters resulting in a loss of
+    information.
+
+  defaultValue: ASCII
+  position: Named
+  aliases: ""
+  parameterValueGroup: ASCII, BigEndianUnicode, Unicode, UTF7, UTF8, UTF32
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: InputObject
+  isRequired: true
+  description: |+
+    Used for pipeline input. Pipeline input supports only certain scalar types and `[system.io.fileinfo]`
+    instances for piping from `Get-ChildItem`.
+
+    The supported scalar types are:
+
+    - `[string]`
+    - `[byte]`
+    - `[int]`, `[int32]`
+    - `[long]`, `[int64]`
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies the complete path to a file. The value of **LiteralPath** is used exactly as it is typed.
+    This parameter does not accept wildcard characters. To specify multiple paths to files, separate the
+    paths with a comma. If the **LiteralPath** parameter includes escape characters, enclose the path in
+    single quotation marks. PowerShell does not interpret any characters in a single quoted string as
+    escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+
+  defaultValue: None
+  position: Named
+  aliases: PSPath
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path to files. Use a dot (`.`) to specify the current location. The wildcard character
+    (`*`) is accepted and can be used to specify all the items in a location. If the **Path** parameter
+    includes escape characters, enclose the path in single quotation marks. To specify multiple paths to
+    files, separate the paths with a comma.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Raw
+  description: |+
+    By default `Format-Hex` opts for compact output of numeric data types: single-byte or double-byte
+    sequences are used if the value is small enough. The **Raw** parameter deactivates this behavior.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Format-Hex
+name: Format-Hex
+description: |-
+  The `Format-Hex` cmdlet displays a file or other input as hexadecimal values. To determine the
+  offset of a character from the output, add the number at the leftmost of the row to the number at
+  the top of the column for that character.
+
+  The `Format-Hex` cmdlet can help you determine the file type of a corrupted file or a file that
+  might not have a filename extension. You can run this cmdlet, and then read the hexadecimal output
+  to get file information.
+
+  When using `Format-Hex` on a file, the cmdlet ignores newline characters and returns the entire
+  contents of a file in one string with the newline characters preserved.
+metadata:
+  external help file: Microsoft.PowerShell.Utility-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 01/17/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-hex?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Format-Hex

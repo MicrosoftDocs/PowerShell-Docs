@@ -1,0 +1,42 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Stop the logging session started by Enable-PSWSManCombinedTrace.
+module: PSDiagnostics
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Event Tracing
+  href: /windows/desktop/ETW/event-tracing-portal
+- text: Stop-Trace
+  href: stop-trace.yml
+- text: Enable-PSWSManCombinedTrace
+  href: Enable-PSWSManCombinedTrace.yml
+syntaxes:
+- Disable-PSWSManCombinedTrace [<CommonParameters>]
+examples:
+- title: 'Example 1: Disable the combined logging session'
+  code: |-
+    Disable-PSWSManCombinedTrace
+  description: ""
+  summary: ""
+uid: PSDiagnostics.Disable-PSWSManCombinedTrace
+name: Disable-PSWSManCombinedTrace
+description: |-
+  This cmdlet stops the logging session started by `Enable-PSWSManCombinedTrace`.
+
+  This cmdlet uses the `Stop-Trace` cmdlet.
+
+  You must run this cmdlet from an elevated PowerShell session.
+metadata:
+  external help file: PSDiagnostics-help.xml
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 11/29/2018
+  online version: https://docs.microsoft.com/powershell/module/psdiagnostics/disable-pswsmancombinedtrace?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Disable-PSWSManCombinedTrace

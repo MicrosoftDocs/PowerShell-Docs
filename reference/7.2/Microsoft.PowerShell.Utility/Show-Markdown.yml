@@ -1,0 +1,120 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Shows a Markdown file or string in the console in a friendly way using VT100 escape sequences or in
+  a browser using HTML.
+module: Microsoft.PowerShell.Utility
+notes: ""
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: ConvertFrom-Markdown
+  href: ConvertFrom-Markdown.yml
+syntaxes:
+- Show-Markdown [-Path] <String[]> [-UseBrowser] [<CommonParameters>]
+- Show-Markdown -InputObject <PSObject> [-UseBrowser] [<CommonParameters>]
+- Show-Markdown -LiteralPath <String[]> [-UseBrowser] [<CommonParameters>]
+examples:
+- title: 'Example 1: Simple example specifying a path'
+  code: |-
+    Show-Markdown -Path ./README.md
+  description: ""
+  summary: ""
+- title: 'Example 2: Simple example specifying a string'
+  code: |-
+    @"
+    # Show-Markdown
+
+    ## Markdown
+
+    You can now interact with Markdown via PowerShell!
+
+    *stars*
+    __underlines__
+    "@ | Show-Markdown
+  description: ""
+  summary: ""
+- title: 'Example 2: Opening Markdown in a browser'
+  code: |-
+    Show-Markdown -Path ./README.md -UseBrowser
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  name: InputObject
+  isRequired: true
+  description: |+
+    A Markdown string that will be shown in the terminal. If you do not pass in a supported format,
+    `Show-Markdown` will emit an error.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies the path to a Markdown file. Unlike the Path parameter, the value of LiteralPath is used
+    exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape
+    characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
+    interpret any characters as escape sequences.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath, LP
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path to a Markdown file to be rendered.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: UseBrowser
+  description: |+
+    Compiles the Markdown input as HTML and opens it in your default browser.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Show-Markdown
+name: Show-Markdown
+description: |-
+  The `Show-Markdown` cmdlet is used to render Markdown in a human readable format either in a
+  terminal or in a browser.
+
+  `Show-Markdown` can return a string that includes the VT100 escape sequences which the terminal
+  renders (if it supports VT100 escape sequences). This is primarily used for viewing Markdown files
+  in a terminal. You can also get this string via the `ConvertFrom-Markdown` by specifying the
+  **AsVT100EncodedString** parameter.
+
+  `Show-Markdown` also has the ability to open a browser and show you a rendered version of the
+  Markdown. It renders the Markdown by turning it into HTML and opening the HTML file in your default
+  browser.
+
+  You can change how `Show-Markdown` renders Markdown in a terminal by using `Set-MarkdownOption`.
+
+  This cmdlet was introduced in PowerShell 6.1.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 08/23/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-markdown?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Show-Markdown

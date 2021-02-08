@@ -1,0 +1,92 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates a new Windows event for the specified event provider.
+module: Microsoft.PowerShell.Diagnostics
+notes: |-
+  * After the provider writes the even to an eventlog, you can use the Get-WinEvent cmdlet to get the
+    event from the event log.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not take input from the pipeline.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does to generate any output.
+links:
+- text: Get-WinEvent
+  href: Get-WinEvent.yml
+syntaxes:
+- >-
+  New-WinEvent [-ProviderName] <String> [-Id] <Int32> [-Version <Byte>] [[-Payload] <Object[]>]
+
+   [<CommonParameters>]
+examples:
+- title: Example 1
+  code: |-
+    PS C:\> New-WinEvent -ProviderName Microsoft-Windows-PowerShell -Id 45090 -Payload @("Workflow", "Running")
+  description: |-
+    This command uses the **New-WinEvent** cmdlet to create event 45090 for the
+    Microsoft-Windows-PowerShell provider.
+  summary: ""
+parameters:
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: Id
+  isRequired: true
+  description: |+
+    Specifies an event id that was registered through an instrumentation manifest.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Payload
+  description: |+
+    Specifies the message for the event. When the event is written to an event log, the payload is
+    stored in the **Message** property of the event object.
+
+    When the specified payload does not match the payload in the event definition, PowerShell generates a warning, but the command still succeeds.
+
+  defaultValue: None
+  position: "2"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ProviderName
+  isRequired: true
+  description: |+
+    Specifies the event provider that writes the event to an event log, such as
+    "Microsoft-Windows-PowerShell". An ETW event provider is a logical entity that writes events to ETW
+    sessions.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Byte" data-throw-if-not-resolved="False" />
+  name: Version
+  description: |+
+    Specifies the version number of the event. Type the event number. PowerShell converts the
+    number to the required Byte type.
+
+    This parameter lets you specify an event when different versions of the same event are defined.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Diagnostics.New-WinEvent
+name: New-WinEvent
+description: |-
+  The **New-WinEvent** cmdlet creates an Event Tracing for Windows (ETW) event for an event provider.
+  You can use this cmdlet to add events to ETW channels from PowerShell.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Diagnostics
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/new-winevent?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: New-WinEvent

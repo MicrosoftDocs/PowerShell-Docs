@@ -1,0 +1,151 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Updates the formatting data in the current session.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  - `Update-FormatData` also updates the formatting data for commands in the session that were
+    imported from modules. If the formatting file for a module changes, you can run an
+    `Update-FormatData` command to update the formatting data for imported commands. You do not need
+    to import the module again.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains the append path to `Update-FormatData`.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    The cmdlet does not return any output.
+links:
+- text: Get-FormatData
+  href: Get-FormatData.yml
+- text: Export-FormatData
+  href: Export-FormatData.yml
+syntaxes:
+- >-
+  Update-FormatData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Reload previously loaded formatting files'
+  code: |-
+    Update-FormatData
+  description: |-
+    This command reloads the formatting files that it loaded previously.
+  summary: ""
+- title: 'Example 2: Reload formatting files and trace and log formatting files'
+  code: |-
+    Update-FormatData -AppendPath "trace.format.ps1xml, log.format.ps1xml"
+  description: |-
+    This command reloads the formatting files into the session, including two new files,
+    Trace.format.ps1xml and Log.format.ps1xml.
+
+    Because the command uses the **AppendPath** parameter, the formatting data in the new files is loaded
+    after the formatting data from the built-in files.
+
+    The **AppendPath** parameter is used because the new files contain formatting data for objects that
+    are not referenced in the built-in files.
+  summary: ""
+- title: 'Example 3: Edit a formatting file and reload it'
+  code: |-
+    Update-FormatData -PrependPath "c:\test\NewFiles.format.ps1xml"
+
+    # Edit the NewFiles.format.ps1 file.
+
+    Update-FormatData
+  description: |-
+    This example shows how to reload a formatting file after you have edited it.
+
+    The first command adds the NewFiles.format.ps1xml file to the session. It uses the **PrependPath**
+    parameter because the file contains formatting data for objects that are referenced in the built-in
+    files.
+
+    After adding the NewFiles.format.ps1xml file and testing it in these sessions, the author edits the
+    file.
+
+    The second command uses the `Update-FormatData` cmdlet to reload the formatting files. Because the
+    NewFiles.format.ps1xml file was previously loaded, `Update-FormatData` automatically reloads it
+    without using parameters.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: AppendPath
+  description: |+
+    Specifies formatting files that this cmdlet adds to the session. The files are loaded after
+    PowerShell loads the built-in formatting files.
+
+    When formatting .NET objects, PowerShell uses the first formatting definition that it finds for each
+    .NET type. If you use the **AppendPath** parameter, PowerShell searches the data from the built-in
+    files before it encounters the formatting data that you are adding.
+
+    Use this parameter to add a file that formats a .NET object that is not referenced in the built-in
+    formatting files.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: PSPath, Path
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: PrependPath
+  description: |+
+    Specifies formatting files that this cmdlet adds to the session. The files are loaded before
+    PowerShell loads the built-in formatting files.
+
+    When formatting .NET objects, PowerShell uses the first formatting definition that it finds for each
+    .NET type. If you use the **PrependPath** parameter, PowerShell searches the data from the files that
+    you are adding before it encounters the formatting data from the built-in files.
+
+    Use this parameter to add a file that formats a .NET object that is also referenced in the built-in
+    formatting files.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Update-FormatData
+name: Update-FormatData
+description: |-
+  The `Update-FormatData` cmdlet reloads the formatting data from formatting files into the current
+  session. This cmdlet lets you update the formatting data without restarting PowerShell.
+
+  Without parameters, `Update-FormatData` reloads the formatting files that it loaded previously.
+  You can use the parameters of `Update-FormatData` to add new formatting files to the session.
+
+  Formatting files are text files in XML format with the `format.ps1xml` file name extension. The
+  formatting data in the files defines the display of Microsoft .NET Framework objects in the session.
+
+  When PowerShell starts, it loads the format data from the PowerShell source code. However, you can
+  create custom format.ps1xml files to update formatting in the current session. You can use
+  `Update-FormatData` to reload the formatting data into the current session without restarting
+  PowerShell. This is useful when you have added or changed a formatting file, but do not want to
+  interrupt the session.
+
+  For more information about formatting files in PowerShell, see [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/update-formatdata?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Update-FormatData

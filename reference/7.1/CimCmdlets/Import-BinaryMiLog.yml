@@ -1,0 +1,48 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Used to re-create the saved objects based on the contents of an export file.
+module: CimCmdlets
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+syntaxes:
+- Import-BinaryMiLog [-Path] <String> [<CommonParameters>]
+examples:
+- title: Example 1 - Restore objects exported to a file
+  code: |-
+    Import-BinaryMiLog -Path "Processes.bmil"
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path of the file in which to store the binary representation of the object. The
+    **Path** parameter supports wildcards and relative paths. This cmdlet generates an error if the path
+    resolves to more than one file.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: CimCmdlets.Import-BinaryMiLog
+name: Import-BinaryMiLog
+description: |-
+  Use this cmdlet to re-create saved objects based on the contents of an export file created by
+  `Export-BinaryMILog`. This cmdlet is similar to `Import-Clixml`, except that `Export-BinaryMILog`
+  stores the resulting object in a binary encoded file.
+metadata:
+  external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: CimCmdlets
+  ms.date: 02/20/2019
+  online version: https://docs.microsoft.com/powershell/module/cimcmdlets/import-binarymilog?WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Import-BinaryMiLog

@@ -1,0 +1,88 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets information about PFX certificate files on the computer.
+module: Microsoft.PowerShell.Security
+notes: |-
+  When using the `Invoke-Command` cmdlet to run a `Get-PfxCertificate` command remotely, and the PFX
+  certificate file is not password protected, the value of the **Authentication** parameter of
+  `Invoke-Command` must be CredSSP.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains a file path to `Get-PfxCertificate`.
+outputs:
+- name: <xref href="System.Security.Cryptography.X509Certificates.X509Certificate2" data-throw-if-not-resolved="False" />
+  description: |-
+    `Get-PfxCertificate` returns an object for each certificate that it gets.
+links:
+- text: Get-AuthenticodeSignature
+  href: Get-AuthenticodeSignature.yml
+- text: Set-AuthenticodeSignature
+  href: Set-AuthenticodeSignature.yml
+syntaxes:
+- Get-PfxCertificate [-FilePath] <String[]> [<CommonParameters>]
+- Get-PfxCertificate -LiteralPath <String[]> [<CommonParameters>]
+examples:
+- title: 'Example 1: Get a PFX certificate'
+  code: |-
+    Get-PfxCertificate -FilePath "C:\windows\system32\Test.pfx"
+
+    Password: ******
+    Signer Certificate:      David Chew (Self Certificate)
+    Time Certificate:
+    Time Stamp:
+    Path:                    C:\windows\system32\zap.pfx
+  description: |-
+    This command gets information about the Test.pfx certificate file on the system.
+  summary: ""
+- title: 'Example 2: Get a PFX certificate from a remote computer'
+  code: |-
+    Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-PfxCertificate -FilePath "C:\Text\TestNoPassword.pfx"} -Authentication CredSSP
+  description: |-
+    This command gets a PFX certificate file from the Server01 remote computer. It uses `Invoke-Command`
+    to run a `Get-PfxCertificate` command remotely.
+
+    When the PFX certificate file is not password-protected, the value of the **Authentication**
+    parameter of `Invoke-Command` must be CredSSP.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: FilePath
+  isRequired: true
+  description: |+
+    Specifies the full path to the PFX file of the secured file. If you specify a value for this
+    parameter, it is not necessary to type `-FilePath` at the command line.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    The full path to the PFX file of the secured file. Unlike **FilePath**, the value of the
+    **LiteralPath** parameter is used exactly as it is typed. No characters are interpreted as
+    wildcards. If the path includes escape characters, enclose it in single quotation marks. Single
+    quotation marks tell PowerShell not to interpret any characters as escape sequences.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Security.Get-PfxCertificate
+name: Get-PfxCertificate
+description: |-
+  The `Get-PfxCertificate` cmdlet gets an object representing each specified PFX certificate file.
+  A PFX file includes both the certificate and a private key.
+metadata:
+  external help file: Microsoft.PowerShell.Security.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Security
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-pfxcertificate?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-PfxCertificate

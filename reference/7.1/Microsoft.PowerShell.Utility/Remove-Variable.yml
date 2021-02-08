@@ -1,0 +1,137 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Deletes a variable and its value.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  - Changes affect only the current scope, such as a session. To delete a variable from all sessions,
+    add a `Remove-Variable` command to your PowerShell profile.
+
+  - You can also refer to `Remove-Variable` by its built-in alias, `rv`. For more information, see
+    [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+inputs:
+- name: <xref href="System.Management.Automation.PSVariable" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a variable object to `Remove-Variable`.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not return any output.
+links:
+- text: Clear-Variable
+  href: Clear-Variable.yml
+- text: Get-Variable
+  href: Get-Variable.yml
+- text: New-Variable
+  href: New-Variable.yml
+- text: Set-Variable
+  href: Set-Variable.yml
+syntaxes:
+- >-
+  Remove-Variable [-Name] <String[]> [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Scope <String>]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Remove a variable'
+  code: |-
+    Remove-Variable Smp
+  description: |-
+    This command deletes the `$Smp` variable.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Exclude
+  description: |+
+    Specifies an array of items that this cmdlet omits from the operation. The value of this parameter
+    qualifies the **Name** parameter. Enter a name element or pattern, such as "s*". Wildcards are
+    permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Indicates that the cmdlet removes a variable even if it is read-only. Even using the **Force**
+    parameter, the cmdlet cannot remove a constant.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Include
+  description: |+
+    Specifies an array of items that this cmdlet deletes in the operation. The value of this parameter
+    qualifies the **Name** parameter. Enter a name element or pattern, such as s*. Wildcards are
+    permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the variable to be removed. The parameter name (**Name**) is optional.
+    Wildcards are permitted
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Scope
+  description: |+
+    Gets only the variables in the specified scope. The acceptable values for this parameter are:
+
+    - Global
+    - Local
+    - Script
+    - A number relative to the current scope (0 through the number of scopes, where 0 is the current
+      scope and 1 is its parent)
+
+    Local is the default. For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Remove-Variable
+name: Remove-Variable
+description: |-
+  The `Remove-Variable` cmdlet deletes a variable and its value from the scope in which it is defined,
+  such as the current session. You cannot use this cmdlet to delete variables that are set as
+  constants or those that are owned by the system.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 07/21/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-variable?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Remove-Variable

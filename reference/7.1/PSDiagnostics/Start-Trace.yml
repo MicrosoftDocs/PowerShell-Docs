@@ -1,0 +1,148 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Start an Event Trace logging session.
+module: PSDiagnostics
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Event Tracing
+  href: /windows/desktop/ETW/event-tracing-portal
+- text: Stop-Trace
+  href: stop-trace.yml
+- text: Disable-PSWSManCombinedTrace
+  href: Disable-PSWSManCombinedTrace.yml
+- text: Disable-WSManTrace
+  href: Disable-WSManTrace.yml
+- text: Enable-PSWSManCombinedTrace
+  href: Enable-PSWSManCombinedTrace.yml
+- text: Enable-WSManTrace
+  href: Enable-WSManTrace.yml
+syntaxes:
+- >-
+  Start-Trace [-SessionName] <String> [[-OutputFilePath] <String>] [[-ProviderFilePath] <String>]
+
+   [-ETS] [-Format <String>] [-MinBuffers <Int32>] [-MaxBuffers <Int32>]
+
+   [-BufferSizeInKB <Int32>] [-MaxLogFileSizeInMB <Int32>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Start a WSMan Trace logging session'
+  code: |-
+    Start-Trace -SessionName 'wsmlog' -ETS -OutputFilePath "$env:windir\system32\wsmtraces.log" -Format 'bincirc' -MinBuffers 16 -MaxBuffers 256 -BufferSizeInKb 64 -MaxLogFileSizeInMB 256 -ProviderFilePath "$env:windir\system32\wsmtraceproviders.txt"
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: BufferSizeInKB
+  description: |+
+    Event Trace Session buffer size in kilobytes (KB).
+
+  defaultValue: "0"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ETS
+  description: |+
+    Send commands to Event Trace Sessions directly without saving or scheduling.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: Format
+  description: |+
+    Specifies the log format for the data collector. For SQL database format, you must use the **OutputFilePath**
+    option in the command line with the `dsn!log` value. The default is binary (bin). The possible values are:
+
+    - bin - binary
+    - bincirc - binary with circular logging
+    - csv - Comma-separated values
+    - tsv - Tab-separated values
+    - sql - SQL database
+
+  defaultValue: bin
+  position: Named
+  aliases: ""
+  parameterValueGroup: bin, bincirc, csv, tsv, sql
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: MaxBuffers
+  description: |+
+    Sets the maximum number of Event Trace Session buffers.
+
+  defaultValue: "256"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: MaxLogFileSizeInMB
+  description: |+
+    Sets the maximum log file size in megabytes (MB) or number of records for SQL logs.
+
+  defaultValue: 0 (no limit)
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: MinBuffers
+  description: |+
+    Sets the minimum number of Event Trace Session buffers.
+
+  defaultValue: "0"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: OutputFilePath
+  description: |+
+    Path of the output log file or the DSN and log set name in a SQL database. The default path is
+    `$env:systemdrive\PerfLogs\Admin`.
+
+  defaultValue: $env:systemdrive\PerfLogs\Admin
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ProviderFilePath
+  description: |+
+    File listing multiple Event Trace providers to enable.
+
+  defaultValue: None
+  position: "2"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: SessionName
+  isRequired: true
+  description: |+
+    The name of the Event Trace session. To stop a trace session you must know the session name.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: PSDiagnostics.Start-Trace
+name: Start-Trace
+description: |-
+  This cmdlet starts a Windows Event Trace logging session.
+
+  This cmdlet is used by the following cmdlets:
+
+  - `Enable-PSWSManCombinedTrace`
+  - `Enable-WSManTrace`
+
+  You must run this cmdlet from an elevated PowerShell session.
+metadata:
+  external help file: PSDiagnostics-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 11/27/2018
+  online version: https://docs.microsoft.com/powershell/module/psdiagnostics/start-trace?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Start-Trace

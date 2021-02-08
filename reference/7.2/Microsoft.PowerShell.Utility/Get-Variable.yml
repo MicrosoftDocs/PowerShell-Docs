@@ -1,0 +1,149 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets the variables in the current console.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  - This cmdlet does not manage environment variables. To manage environment variables, you can use
+  the environment variable provider.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains the variable name to `Get-Variable`.
+outputs:
+- name: <xref href="System.Management.Automation.PSVariable" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a **System.Management.AutomationPSVariable** object for each variable that it
+    gets. The object type depends on the variable.
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: |-
+    When you specify the **ValueOnly** parameter, if the specified variable's value is a collection,
+    `Get-Variable` returns a `[System.Object[]]`. This behavior prevents normal pipeline operation from
+    processing the variable's values one at a time. A workaround to force collection enumeration is to
+    enclose the `Get-Variable` command in parenthesis.
+links:
+- text: Clear-Variable
+  href: Clear-Variable.yml
+- text: New-Variable
+  href: New-Variable.yml
+- text: Remove-Variable
+  href: Remove-Variable.yml
+- text: Set-Variable
+  href: Set-Variable.yml
+syntaxes:
+- >-
+  Get-Variable [[-Name] <String[]>] [-ValueOnly] [-Include <String[]>] [-Exclude <String[]>] [-Scope <String>]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Get variables by letter'
+  code: |-
+    Get-Variable m*
+  description: ""
+  summary: |+
+    This command gets variables with names that begin with the letter m.
+    The command also gets the value of the variables.
+
+- title: 'Example 2: Get variable values by letter'
+  code: |-
+    Get-Variable m* -ValueOnly
+  description: ""
+  summary: |+
+    This command gets only the values of the variables that have names that begin with m.
+
+- title: 'Example 3: Get variables by two letters'
+  code: |-
+    Get-Variable -Include M*,P*
+  description: ""
+  summary: |+
+    This command gets information about the variables that begin with either the letter M or the letter
+    P.
+
+- title: 'Example 4: Get variables by scope'
+  code: |-
+    Get-Variable -Scope 0
+    Compare-Object (Get-Variable -Scope 0) (Get-Variable -Scope 1)
+  description: ""
+  summary: |+
+    The first command gets only the variables that are defined in the local scope.
+    It is equivalent to `Get-Variable -Scope Local` and can be abbreviated as `gv -s 0`.
+
+    The second command uses the `Compare-Object` cmdlet to find the variables that are defined in the
+    parent scope (Scope 1) but are visible only in the local scope (Scope 0).
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Exclude
+  description: |+
+    Specifies an array of items that this cmdlet excludes from the operation.
+    Wildcards are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Include
+  description: |+
+    Specifies an array of items upon which the cmdlet will act, excluding all others.
+    Wildcards are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Specifies the name of the variable.
+    Wildcards are permitted.
+    You can also pipe a variable name to `Get-Variable`.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Scope
+  description: |+
+    Specifies the variables in the scope.The acceptable values for this parameter are:
+
+    - **Global**
+    - **Local**
+    - **Script**
+    - A number relative to the current scope (0 through the number of scopes, where 0 is the current
+    scope and 1 is its parent)
+
+    **Local** is the default.
+    For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ValueOnly
+  description: |+
+    Indicates that this cmdlet gets only the value of the variable.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Get-Variable
+name: Get-Variable
+description: |-
+  The `Get-Variable` cmdlet gets the PowerShell variables in the current console.
+  You can retrieve just the values of the variables by specifying the **ValueOnly** parameter, and you
+  can filter the variables returned by name.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 05/28/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-variable?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-Variable

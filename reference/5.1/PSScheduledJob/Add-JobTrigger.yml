@@ -1,0 +1,169 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Adds job triggers to scheduled jobs.
+module: PSScheduledJob
+notes: ""
+inputs:
+- name: <xref href="Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger, Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe job triggers or scheduled jobs to **Add-JobTrigger**.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not return any output.
+links:
+- text: Add-JobTrigger
+  href: Add-JobTrigger.yml
+- text: Disable-JobTrigger
+  href: Disable-JobTrigger.yml
+- text: Disable-ScheduledJob
+  href: Disable-ScheduledJob.yml
+- text: Enable-JobTrigger
+  href: Enable-JobTrigger.yml
+- text: Enable-ScheduledJob
+  href: Enable-ScheduledJob.yml
+- text: Get-JobTrigger
+  href: Get-JobTrigger.yml
+- text: Get-ScheduledJob
+  href: Get-ScheduledJob.yml
+- text: Get-ScheduledJobOption
+  href: Get-ScheduledJobOption.yml
+- text: New-JobTrigger
+  href: New-JobTrigger.yml
+- text: New-ScheduledJobOption
+  href: New-ScheduledJobOption.yml
+- text: Register-ScheduledJob
+  href: Register-ScheduledJob.yml
+- text: Remove-JobTrigger
+  href: Remove-JobTrigger.yml
+- text: Set-JobTrigger
+  href: Set-JobTrigger.yml
+- text: Set-ScheduledJob
+  href: Set-ScheduledJob.yml
+- text: Set-ScheduledJobOption
+  href: Set-ScheduledJobOption.yml
+- text: Unregister-ScheduledJob
+  href: Unregister-ScheduledJob.yml
+syntaxes:
+- >-
+  Add-JobTrigger [-Trigger] <ScheduledJobTrigger[]> [-InputObject] <ScheduledJobDefinition[]>
+
+   [<CommonParameters>]
+- Add-JobTrigger [-Trigger] <ScheduledJobTrigger[]> [-Id] <Int32[]> [<CommonParameters>]
+- Add-JobTrigger [-Trigger] <ScheduledJobTrigger[]> [-Name] <String[]> [<CommonParameters>]
+examples:
+- title: 'Example 1: Add a job trigger to a scheduled job'
+  code: |-
+    PS C:\> $Daily = New-JobTrigger -Daily -At 3AMPS
+    PS C:\> Add-JobTrigger -Trigger $Daily -Name "TestJob"
+  description: |-
+    These commands add the Daily job trigger to the TestJob scheduled job.
+
+    The first command uses the New-JobTrigger cmdlet to create a job trigger that starts a scheduled job every day at 3:00 a.m.
+    The command saves the job trigger in the $Daily variable.
+
+    The second command uses the **Add-JobTrigger** cmdlet to add the job trigger in the $Startup variable to the TestJob scheduled job.
+  summary: ""
+- title: 'Example 2: Add a job trigger to several scheduled jobs'
+  code: |-
+    PS C:\> Get-ScheduledJob | Add-JobTrigger -Trigger (New-JobTrigger -AtStartup)
+  description: |-
+    This command adds an AtStartup job trigger to all scheduled jobs on the local computer.
+    It uses the Get-ScheduledJob to get all of the scheduled jobs on the computer.
+    It uses a pipeline operator (|) to send the jobs to the **Add-JobTrigger** cmdlet, which adds the job trigger to each of the scheduled jobs.
+    The value of the *Trigger* parameter is a New-JobTrigger command that creates the AtStartup job trigger.
+  summary: ""
+- title: 'Example 3: Copy a job trigger'
+  code: |-
+    PS C:\> $T = Get-JobTrigger -Name "BackupArchives"
+    PS C:\> Add-JobTrigger -Name "TestBackup,BackupLogs" -Trigger $T
+  description: |-
+    These commands copy the job trigger from the BackupArchives scheduled job and add it to the TestBackup and BackupLogs scheduled jobs.
+
+    The first command uses the Get-JobTrigger cmdlet to get the job trigger of the BackupArchives scheduled job.
+    The command saves the trigger in the $t variable.
+
+    The second command uses the **Add-JobTrigger** cmdlet to add the job trigger in $t to the TestBackup and BackupLogs scheduled jobs.
+  summary: ""
+parameters:
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Id
+  isRequired: true
+  description: |+
+    Specifies the identification numbers of the scheduled jobs.
+    **Add-JobTrigger** adds the job trigger to the specified scheduled jobs.
+
+    To get the identification number of scheduled jobs on the local computer or a remote computer, use the Get-ScheduledJob cmdlet.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies the scheduled jobs.
+    Enter a variable that contains **ScheduledJob** objects or type a command or expression that gets **ScheduledJob** objects, such as a Get-ScheduledJob command.
+    You can also pipe **ScheduledJob** objects to **Add-JobTrigger**.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the names of the scheduled jobs.
+    **Add-JobTrigger** adds the job triggers to the specified scheduled jobs.
+    Wildcards are supported.
+
+    To get the names of scheduled jobs on the local computer or a remote computer, use the Get-ScheduledJob cmdlet.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Trigger
+  isRequired: true
+  description: |+
+    Specifies the job triggers to add.
+    Enter a hash table that specifies job triggers or a variable that contains **ScheduledJobTrigger** objects, or type a command or expression that gets **ScheduledJobTrigger** objects, such as a Get-JobTrigger command.
+    You can also pipe **ScheduledJobTrigger** objects to **Add-JobTrigger**.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+uid: PSScheduledJob.Add-JobTrigger
+name: Add-JobTrigger
+description: |-
+  The **Add-JobTrigger** cmdlet adds job triggers to scheduled jobs.
+  You can use it to add multiple triggers to multiple scheduled jobs.
+
+  A job trigger starts a scheduled job on a one-time or recurring schedule or when an event occurs.
+
+  Use the *Trigger* parameter of **Add-JobTrigger** to identify the job triggers to add.
+  Use the *Name*, *ID*, or *InputObject* parameters of **Add-JobTrigger** to identify the scheduled job to which the triggers are added.
+
+  To create job triggers for the value of the *Trigger* parameter, use the New-JobTrigger cmdlet or use a hash table to specify the job trigger.
+
+  **Add-JobTrigger** is one of a collection of job scheduling cmdlets in the **PSScheduledJob** module that is included in Windows PowerShell.
+
+  For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module.
+  Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see about_Scheduled_Jobs.
+
+  This cmdlet was introduced in Windows PowerShell 3.0.
+metadata:
+  external help file: Microsoft.PowerShell.ScheduledJob.dll-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSScheduledJob
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/psscheduledjob/add-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Add-JobTrigger

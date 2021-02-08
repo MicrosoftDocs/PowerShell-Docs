@@ -1,0 +1,209 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Writes customized output to a host.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  - When writing a collection to the host, elements of the collection are printed on the same line
+    separated by a single space. This can be overridden with the **Separator** parameter.
+
+  - Non-primitive data types such as objects with properties can cause unexpected results and not
+    provide meaningful output. For example, `Write-Host @{a = 1; b = 2}` will print
+    `System.Collections.DictionaryEntry System.Collections.DictionaryEntry` to the host.
+inputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe objects to be written to the host.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    `Write-Host` sends the objects to the host. It does not return any objects. However, the host
+    displays the objects that `Write-Host` sends to it.
+links:
+- text: Clear-Host
+  href: ../Microsoft.PowerShell.Core/Clear-Host.yml
+- text: Out-Host
+  href: ../Microsoft.PowerShell.Core/Out-Host.yml
+- text: Write-Debug
+  href: Write-Debug.yml
+- text: Write-Error
+  href: Write-Error.yml
+- text: Write-Output
+  href: Write-Output.yml
+- text: Write-Progress
+  href: Write-Progress.yml
+- text: Write-Verbose
+  href: Write-Verbose.yml
+- text: Write-Warning
+  href: Write-Warning.yml
+syntaxes:
+- >-
+  Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>] [-ForegroundColor <ConsoleColor>]
+
+   [-BackgroundColor <ConsoleColor>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Write to the console without adding a new line'
+  code: |-
+    Write-Host "no newline test " -NoNewline
+    Write-Host "second string"
+
+    no newline test second string
+  description: |-
+    This command displays the string 'no newline test' with the `NoNewline` parameter.
+
+    A second string is written, but it ends up on the same line as the first due to the absence of a
+    newline separating the strings.
+  summary: ""
+- title: 'Example 2: Write to the console and include a separator'
+  code: |-
+    Write-Host (2,4,6,8,10,12) -Separator ", +2= "
+
+    2, +2= 4, +2= 6, +2= 8, +2= 10, +2= 12
+  description: |-
+    This command displays the even numbers from two through twelve. The **Separator** parameter is used
+    to add the string `, +2= ` (comma, space, `+`, `2`, `=`, space).
+  summary: ""
+- title: 'Example 3: Write with different text and background colors'
+  code: |-
+    Write-Host (2,4,6,8,10,12) -Separator ", -> " -ForegroundColor DarkGreen -BackgroundColor White
+
+    2, -> 4, -> 6, -> 8, -> 10, -> 12
+  description: |-
+    This command displays the even numbers from two through twelve. It uses the `ForegroundColor`
+    parameter to output dark green text and the `BackgroundColor` parameter to display a white
+    background.
+  summary: ""
+- title: 'Example 4: Write with different text and background colors'
+  code: |-
+    Write-Host "Red on white text." -ForegroundColor red -BackgroundColor white
+
+    Red on white text.
+  description: |-
+    This command displays the string "Red on white text." The text is red, as defined by the
+    `ForegroundColor` parameter. The background is white, as defined by the `BackgroundColor`
+    parameter.
+  summary: ""
+- title: 'Example 5: Suppress output from Write-Host'
+  code: |+
+    # The following two statements can be used to effectively suppress output from Write-Host
+    Write-Host "I won't print" -InformationAction Ignore
+    Write-Host "I won't print" 6>$null
+
+  description: |-
+    These commands effectively suppress output of the `Write-Host` cmdlet. The first one uses the
+    `InformationAction` parameter with the `Ignore` Value to suppress output to the information stream.
+    The second example redirects the information stream of the command to the `$null` variable and
+    thereby suppresses it.
+  summary: ""
+parameters:
+- type: <xref href="System.ConsoleColor" data-throw-if-not-resolved="False" />
+  name: BackgroundColor
+  description: |+
+    Specifies the background color. There is no default. The acceptable values for this parameter are:
+
+    - Black
+    - DarkBlue
+    - DarkGreen
+    - DarkCyan
+    - DarkRed
+    - DarkMagenta
+    - DarkYellow
+    - Gray
+    - DarkGray
+    - Blue
+    - Green
+    - Cyan
+    - Red
+    - Magenta
+    - Yellow
+    - White
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
+- type: <xref href="System.ConsoleColor" data-throw-if-not-resolved="False" />
+  name: ForegroundColor
+  description: |+
+    Specifies the text color. There is no default. The acceptable values for this parameter are:
+
+    - Black
+    - DarkBlue
+    - DarkGreen
+    - DarkCyan
+    - DarkRed
+    - DarkMagenta
+    - DarkYellow
+    - Gray
+    - DarkGray
+    - Blue
+    - Green
+    - Cyan
+    - Red
+    - Magenta
+    - Yellow
+    - White
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NoNewline
+  description: |+
+    The string representations of the input objects are concatenated to form the output. No spaces or
+    newlines are inserted between the output strings. No newline is added after the last output string.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: Object
+  description: |+
+    Objects to display in the host.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: Msg, Message
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: Separator
+  description: |+
+    Specifies a separator string to insert between objects displayed by the host.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Write-Host
+name: Write-Host
+description: |-
+  The `Write-Host` cmdlet's primary purpose is to produce for-(host)-display-only output, such as
+  printing colored text like when prompting the user for input in conjunction with [Read-Host](Read-Host.yml).
+  `Write-Host` uses the [ToString()](/dotnet/api/system.object.tostring) method to write the
+  output. By contrast, to output data to the pipeline, use [Write-Output](Write-Output.yml) or implicit
+  output.
+
+  You can specify the color of text by using the `ForegroundColor` parameter, and you can specify the
+  background color by using the `BackgroundColor` parameter. The Separator parameter lets you specify
+  a string to use to separate displayed objects. The particular result depends on the program that is
+  hosting PowerShell.
+
+  > [!NOTE]
+  > Starting in Windows PowerShell 5.0, `Write-Host` is a wrapper for `Write-Information` This allows
+  > you to use `Write-Host` to emit output to the information stream. This enables the **capture** or
+  > **suppression** of data written using `Write-Host` while preserving backwards compatibility.
+  >
+  > The `$InformationPreference` preference variable and `InformationAction` common parameter do not
+  > affect `Write-Host` messages. The exception to this rule is `-InformationAction Ignore`, which
+  > effectively suppresses `Write-Host` output. (see "Example 5")
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 09/14/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Write-Host

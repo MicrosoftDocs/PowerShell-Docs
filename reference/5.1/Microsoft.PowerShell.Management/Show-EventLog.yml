@@ -1,0 +1,81 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Displays the event logs of the local or a remote computer in Event Viewer.
+module: Microsoft.PowerShell.Management
+notes: |-
+  * The Windows PowerShell command prompt returns as soon as Event Viewer opens. You can work in the current session while Event Viewer is open.
+
+    Because this cmdlet requires a user interface, it does not work on Server Core installations of Windows Server.
+
+  *
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe input to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+links:
+- text: Clear-EventLog
+  href: Clear-EventLog.yml
+- text: Get-EventLog
+  href: Get-EventLog.yml
+- text: Limit-EventLog
+  href: Limit-EventLog.yml
+- text: New-EventLog
+  href: New-EventLog.yml
+- text: Remove-EventLog
+  href: Remove-EventLog.yml
+- text: Write-EventLog
+  href: Write-EventLog.yml
+syntaxes:
+- Show-EventLog [[-ComputerName] <String>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Display event logs for the local computer'
+  code: |-
+    PS C:\> Show-EventLog
+  description: |-
+    This command opens Event Viewer and displays in it the classic event logs on the local computer.
+  summary: ""
+- title: 'Example 2: Display event logs for a remote computer'
+  code: |-
+    PS C:\> Show-EventLog -ComputerName "Server01"
+  description: |-
+    This command opens Event Viewer and displays in it the classic event logs on the Server01 computer.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ComputerName
+  description: |+
+    Specifies a remote computer.
+    **Show-EventLog** displays the event logs from the specified computer in Event Viewer on the local computer.
+    The default is the local computer.
+
+    Type the NetBIOS name, an IP address, or a fully qualified domain name of a remote computer.
+
+    This parameter does not rely on Windows PowerShell remoting.
+    You can use the *ComputerName* parameter even if your computer is not configured to run remote commands.
+
+  defaultValue: None
+  position: "0"
+  aliases: CN
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Show-EventLog
+name: Show-EventLog
+description: |-
+  The **Show-EventLog** cmdlet opens Event Viewer on the local computer and displays in it all of the classic event logs on the local computer or a remote computer.
+
+  To open Event Viewer on Windows Vista and later versions of the Windows operating system, the current user must be a member of the Administrators group on the local computer.
+
+  The cmdlets that contain the **EventLog** noun (the **EventLog** cmdlets) work only on classic event logs.
+  To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of the Windows operating system, use the Get-WinEvent cmdlet.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/show-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Show-EventLog

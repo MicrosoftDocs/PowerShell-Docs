@@ -1,0 +1,570 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates and registers a new session configuration.
+module: Microsoft.PowerShell.Core
+notes: |-
+  This cmdlet is only available on Windows platforms.
+
+  To run this cmdlet you must start PowerShell by using the **Run as administrator** option.
+
+  This cmdlet generates XML that represents a Web Services for Management (WS-Management) plug-in
+  configuration and sends the XML to WS-Management, which registers the plug-in on the local computer
+  (`New-Item wsman:\localhost\plugin`).
+
+  The properties of a session configuration object vary with the options set for the session
+  configuration and the values of those options. Also, session configurations that use a session
+  configuration file have additional properties.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe input to this cmdlet.
+outputs:
+- name: <xref href="Microsoft.WSMan.Management.WSManConfigContainerElement" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Disable-PSSessionConfiguration
+  href: Disable-PSSessionConfiguration.yml
+- text: Enable-PSSessionConfiguration
+  href: Enable-PSSessionConfiguration.yml
+- text: Get-PSSessionConfiguration
+  href: Get-PSSessionConfiguration.yml
+- text: New-PSSessionConfigurationFile
+  href: New-PSSessionConfigurationFile.yml
+- text: Set-PSSessionConfiguration
+  href: Set-PSSessionConfiguration.yml
+- text: Test-PSSessionConfigurationFile
+  href: Test-PSSessionConfigurationFile.yml
+- text: Unregister-PSSessionConfiguration
+  href: Unregister-PSSessionConfiguration.yml
+- text: WSMan Provider
+  href: ../Microsoft.WsMan.Management/About/about_WSMan_Provider.md
+- text: about_Session_Configurations
+  href: About/about_Session_Configurations.md
+- text: about_Session_Configuration_Files
+  href: About/about_Session_Configuration_Files.md
+syntaxes:
+- >-
+  Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <String> [-ApplicationBase <String>]
+
+   [-RunAsCredential <PSCredential>] [-ThreadApartmentState <ApartmentState>] [-ThreadOptions <PSThreadOptions>]
+
+   [-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess] [-StartupScript <String>]
+
+   [-MaximumReceivedDataSizePerCommandMB <Double>] [-MaximumReceivedObjectSizeMB <Double>]
+
+   [-SecurityDescriptorSddl <String>] [-ShowSecurityDescriptorUI] [-Force] [-NoServiceRestart]
+
+   [-PSVersion <Version>] [-SessionTypeOption <PSSessionTypeOption>] [-TransportOption <PSTransportOption>]
+
+   [-ModulesToImport <Object[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <String> [-AssemblyName] <String>
+
+   [-ApplicationBase <String>] [-ConfigurationTypeName] <String> [-RunAsCredential <PSCredential>]
+
+   [-ThreadApartmentState <ApartmentState>] [-ThreadOptions <PSThreadOptions>]
+
+   [-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess] [-StartupScript <String>]
+
+   [-MaximumReceivedDataSizePerCommandMB <Double>] [-MaximumReceivedObjectSizeMB <Double>]
+
+   [-SecurityDescriptorSddl <String>] [-ShowSecurityDescriptorUI] [-Force] [-NoServiceRestart]
+
+   [-PSVersion <Version>] [-SessionTypeOption <PSSessionTypeOption>] [-TransportOption <PSTransportOption>]
+
+   [-ModulesToImport <Object[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <String>
+
+   [-RunAsCredential <PSCredential>] [-ThreadApartmentState <ApartmentState>] [-ThreadOptions <PSThreadOptions>]
+
+   [-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess] [-StartupScript <String>]
+
+   [-MaximumReceivedDataSizePerCommandMB <Double>] [-MaximumReceivedObjectSizeMB <Double>]
+
+   [-SecurityDescriptorSddl <String>] [-ShowSecurityDescriptorUI] [-Force] [-NoServiceRestart]
+
+   [-TransportOption <PSTransportOption>] -Path <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Register a NewShell session configuration'
+  code: |-
+    $sessionConfiguration = @{
+        Name='NewShell'
+        ApplicationBase='c:\MyShells\'
+        AssemblyName='MyShell.dll'
+        ConfigurationTypeName='MyClass'
+    }
+    Register-PSSessionConfiguration @sessionConfiguration
+  description: |-
+    To use this configuration, type `New-PSSession -ConfigurationName newshell`.
+  summary: |+
+    In this example, we register the **NewShell** session configuration. The **AssemblyName** and
+    **ApplicationBase** parameters specify the location of the **MyShell.dll** file, which specifies
+    the cmdlets and providers in the session configuration. The **ConfigurationTypeName**
+    parameter specifies the configuration class to use from the assembly.
+
+- title: 'Example 2: Register a MaintenanceShell session configuration'
+  code: |-
+    Register-PSSessionConfiguration -Name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1
+  description: |-
+    When a user uses a `New-PSSession` command and selects the **MaintenanceShell** configuration, the
+    `Maintenance.ps1` script runs in the new session. The script can configure the session. This
+    includes importing modules and setting the execution policy for the session. If the script generates
+    any errors, including non-terminating errors, the `New-PSSession` command fails.
+  summary: |+
+    This example registers the **MaintenanceShell** session configuration on the local computer. The
+    **StartupScript** parameter specifies the `Maintenance.ps1` script.
+
+- title: 'Example 3: Register a session configuration'
+  code: |-
+    $sddl = "O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;FA;SA;GWGX;;WD)"
+    $sessionParams = @{
+        Name="AdminShell"
+        SecurityDescriptorSDDL=$sddl
+        MaximumReceivedObjectSizeMB=20
+        StartupScript="C:\scripts\AdminShell.ps1"
+    }
+    Register-PSSessionConfiguration @sessionParams
+  description: ""
+  summary: |+
+    This example registers the **AdminShell** session configuration.
+
+    The `$sessionParams` variable is a hashtable containing all the parameter values. This hashtable is
+    passed to the cmdlet using PowerShell splatting. The `Register-PSSessionConfiguration` command uses
+    the **SecurityDescritorSDDL** parameter to specify the SDDL in the value of the `$sddl` variable and
+    the **MaximumReceivedObjectSizeMB** parameter to increase the object size limit. It also uses the
+    **StartupScript** parameter to specify a script that configures the session.
+
+- title: 'Example 4: Return a configuration container element'
+  code: |-
+    $s = Register-PSSessionConfiguration -Name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1
+    $s | Format-List -Property *
+    dir WSMan:\LocalHost\Plugin
+
+    PSPath            : Microsoft.WSMan.Management\WSMan::localhost\Plugin\MaintenanceShell
+    PSParentPath      : Microsoft.WSMan.Management\WSMan::localhost\Plugin
+    PSChildName       : MaintenanceShell
+    PSDrive           : WSMan
+    PSProvider        : Microsoft.WSMan.Management\WSMan
+    PSIsContainer     : True
+    Keys              : {Name=MaintenanceShell}
+    Name              : MaintenanceShell
+    TypeNameOfElement : Container
+
+    Name                      Type                 Keys
+    ----                      ----                 ----
+    MaintenanceShell          Container            {Name=MaintenanceShell}
+    microsoft.powershell      Container            {Name=microsoft.powershell}
+    microsoft.powershell32    Container            {Name=microsoft.powershell32}
+  description: ""
+  summary: |+
+    This example shows how to register the **MaintenanceShell** configuration.
+    `Register-PSSessionConfiguration` returns a **WSManConfigContainerElement** object stored in the
+    `$s` variable. `Format-List` displays all the properties of the returned object. The **PSPath**
+    property shows that the object is stored in a directory of the WSMan: drive. `Get-ChildItem` (alias
+    `dir`) displays the items in the `WSMan:\LocalHost\PlugIn` path. These include the new
+    **MaintenanceShell** configuration and the two default configurations that come with PowerShell.
+
+- title: 'Example 5: Register a session configuration with a startup script'
+  code: |-
+    Register-PSSessionConfiguration -Name WithProfile -StartupScript Add-Profile.ps1
+  description: |-
+    The script contains a single command that uses dot sourcing to run the user's
+    **CurrentUserAllHosts** profile in the current scope of the session.
+
+    For more information about profiles, see [about_Profiles](./About/about_Profiles.md). For more
+    information about dot sourcing, see [about_Scopes](./About/about_Scopes.md).
+  summary: |+
+    In this example we create and register the **WithProfile** session configuration. The
+    **StartupScript** parameter directs PowerShell to run the specified script for any session that uses
+    the session configuration.
+
+parameters:
+- type: <xref href="System.Management.Automation.Runspaces.PSSessionConfigurationAccessMode" data-throw-if-not-resolved="False" />
+  name: AccessMode
+  description: |+
+    Enables and disables the session configuration and determines whether it can be used for remote or
+    local sessions on the computer. The acceptable values for this parameter are:
+
+    - Disabled. Disables the session configuration. It cannot be used for remote or local access to the
+      computer.
+    - Local. Allows users of the local computer to use the session configuration to create a local
+      loopback session on the same computer, but denies access to remote users.
+    - Remote. Allows local and remote users to use the session configuration to create sessions and run
+      commands on this computer.
+
+    The default value is Remote.
+
+    Other cmdlets can override the value of this parameter later. For example, the `Enable-PSRemoting`
+    cmdlet allows for remote access to all session configurations, the `Enable-PSSessionConfiguration`
+    cmdlet enables session configurations, and the `Disable-PSRemoting` cmdlet prevents remote access to
+    all session configurations.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Disabled, Local, Remote
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ApplicationBase
+  description: |+
+    Specifies the path of the assembly file (\*.dll) that is specified in the value of the
+    **AssemblyName** parameter. Use this parameter when the value of the **AssemblyName** parameter does
+    not include a path. The default is the current directory.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: AssemblyName
+  isRequired: true
+  description: |+
+    Specifies the name of an assembly file (\*.dll) in which the configuration type is defined. You can
+    specify the path of the .dll in this parameter or in the value of the **ApplicationBase** parameter.
+
+    This parameter is required when you specify the **ConfigurationTypeName** parameter.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ConfigurationTypeName
+  isRequired: true
+  description: |+
+    Specifies the fully qualified name of the Microsoft .NET Framework type that is used for this
+    configuration. The type that you specify must implement the
+    **System.Management.Automation.Remoting.PSSessionConfiguration** class.
+
+    To specify the assembly file (\*.dll) that implements the configuration type, specify the
+    **AssemblyName** and **ApplicationBase** parameters.
+
+    Creating a type lets you control more aspects of the session configuration, such as exposing or
+    hiding certain parameters of cmdlets, or setting data size and object size limits that users cannot
+    override.
+
+    If you omit this parameter, the **DefaultRemotePowerShellConfiguration** class is used for the
+    session configuration.
+
+  defaultValue: None
+  position: "2"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Suppresses all user prompts and restarts the **WinRM** service without prompting. Restarting the
+    service makes the configuration change effective.
+
+    To prevent a restart and suppress the restart prompt, specify the **NoServiceRestart** parameter.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Nullable`1" data-throw-if-not-resolved="False" /><span>[</span><xref href="System.Double" data-throw-if-not-resolved="False" /><span>]</span>
+  name: MaximumReceivedDataSizePerCommandMB
+  description: |+
+    Specifies a limit for the amount of data that can be sent to this computer in any single remote
+    command. Enter the data size in megabytes (MB). The default is 50 MB.
+
+    If a data size limit is defined in the configuration type that is specified in the
+    **ConfigurationTypeName** parameter, the limit in the configuration type is used and the value of
+    this parameter is ignored.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Nullable`1" data-throw-if-not-resolved="False" /><span>[</span><xref href="System.Double" data-throw-if-not-resolved="False" /><span>]</span>
+  name: MaximumReceivedObjectSizeMB
+  description: |+
+    Specifies a limit for the amount of data that can be sent to this computer in any single object.
+    Enter the data size in megabytes. The default is 10 MB.
+
+    If an object size limit is defined in the configuration type that is specified in the
+    **ConfigurationTypeName** parameter, the limit in the configuration type is used and the value of
+    this parameter is ignored.
+
+  defaultValue: "10"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ModulesToImport
+  description: |+
+    Specifies the modules that are automatically imported into sessions that use the session
+    configuration.
+
+    By default, only **Microsoft.PowerShell.Core** is imported into sessions. Unless the cmdlets are
+    excluded, you can use `Import-Module` to add modules to the session.
+
+    The modules specified in this parameter value are imported in additions to modules that are
+    specified by the **SessionType** parameter and those listed in the **ModulesToImport** key in the
+    session configuration file (`New-PSSessionConfigurationFile`). However, settings in the session
+    configuration file can hide the commands exported by modules or prevent users from using them.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies a name for the session configuration. This parameter is required.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NoServiceRestart
+  description: |+
+    Does not restart the **WinRM** service, and suppresses the prompt to restart the service.
+
+    By default, when you run a `Register-PSSessionConfiguration` command, you are prompted to restart
+    the **WinRM** service to make the new session configuration effective. Until the **WinRM** service
+    is restarted, the new session configuration is not effective.
+
+    To restart the **WinRM** service without prompting, specify the **Force** parameter. To restart the
+    **WinRM** service manually, use the `Restart-Service` cmdlet.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path and filename of a session configuration file (.pssc), such as one created by
+    `New-PSSessionConfigurationFile`. If you omit the path, the default is the current directory.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ProcessorArchitecture
+  description: |+
+    Determines whether a 32-bit or 64-bit version of the PowerShell process is started in sessions that
+    use this session configuration. The acceptable values for this parameter are: x86 (32-bit) and AMD64
+    (64-bit). The default value is determined by the processor architecture of the computer that hosts
+    the session configuration.
+
+    You can use this parameter to create a 32-bit session on a 64-bit computer. Attempts to create a
+    64-bit process on a 32-bit computer fail.
+
+  defaultValue: None
+  position: Named
+  aliases: PA
+  parameterValueGroup: x86, amd64
+- type: <xref href="System.Version" data-throw-if-not-resolved="False" />
+  name: PSVersion
+  description: |+
+    Specifies the version of PowerShell in sessions that use this session configuration.
+
+    The value of this parameter takes precedence over the value of the **PowerShellVersion** key in the
+    session configuration file.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: PowerShellVersion
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: RunAsCredential
+  description: |+
+    Specifies credentials for commands in the session. By default, commands run with the permissions of
+    the current user.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: SecurityDescriptorSddl
+  description: |+
+    Specifies a Security Descriptor Definition Language (SDDL) string for the configuration.
+
+    This string determines the permissions that are required to use the new session configuration. To
+    use a session configuration in a session, users must have at least Execute (Invoke) permission for
+    the configuration.
+
+    If the security descriptor is complex, consider using the **ShowSecurityDescriptorUI** parameter
+    instead of this parameter. You cannot use both parameters in the same command.
+
+    If you omit this parameter, the root SDDL for the **WinRM** service is used for this configuration.
+    To view or change the root SDDL, use the WSMan provider. For example
+    `Get-Item wsman:\localhost\service\rootSDDL`. For more information about the WSMan provider, type
+    `Get-Help wsman`.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSSessionTypeOption" data-throw-if-not-resolved="False" />
+  name: SessionTypeOption
+  description: |+
+    Specifies type-specific options for the session configuration. Enter a session type options object,
+    such as the **PSWorkflowExecutionOption** object that the `New-PSWorkflowExecutionOption` cmdlet
+    returns.
+
+    The options of sessions that use the session configuration are determined by the values of session
+    options and the session configuration options. Unless specified, options set in the session, such as
+    by using the `New-PSSessionOption` cmdlet, take precedence over options set in the session
+    configuration. However, session option values cannot exceed maximum values set in the session
+    configuration.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ShowSecurityDescriptorUI
+  description: |+
+    Indicates that this cmdlet displays a property sheet that helps you create the SDDL for the session
+    configuration. The property sheet appears after you enter the `Register-PSSessionConfiguration`
+    command and then restart the **WinRM** service.
+
+    When setting the permissions for the configuration, remember that users must have at least Execute
+    (Invoke) permission to use the session configuration in a session.
+
+    You cannot use the **SecurityDescriptorSDDL** parameter and this parameter in the same command.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: StartupScript
+  description: |+
+    Specifies the fully qualified path of a PowerShell script. The specified script runs in the new
+    session that uses the session configuration.
+
+    You can use the script to additionally configure the session. If the script generates an error, even
+    a non-terminating error, the session is not created and the `New-PSSession` command fails.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Threading.ApartmentState" data-throw-if-not-resolved="False" />
+  name: ThreadApartmentState
+  description: |+
+    Specifies the apartment state of the threading module to be used. Acceptable values are:
+
+    - Unknown
+    - MTA
+    - STA
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.Runspaces.PSThreadOptions" data-throw-if-not-resolved="False" />
+  name: ThreadOptions
+  description: |+
+    Specifies how threads are created and used when a command runs in the session. The acceptable values
+    for this parameter are:
+
+    - Default
+    - ReuseThread
+    - UseCurrentThread
+    - UseNewThread
+
+    The default value is **UseCurrentThread**.
+
+    For more information, see [PSThreadOptions Enumeration](/dotnet/api/system.management.automation.runspaces.psthreadoptions?view=powershellsdk-1.1.0).
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Default, UseNewThread, ReuseThread, UseCurrentThread
+- type: <xref href="System.Management.Automation.PSTransportOption" data-throw-if-not-resolved="False" />
+  name: TransportOption
+  description: |+
+    Specifies the transport option.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: UseSharedProcess
+  description: |+
+    Use only one process to host all sessions that are started by the same user and use the same session
+    configuration. By default, each session is hosted in its own process.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Core.Register-PSSessionConfiguration
+name: Register-PSSessionConfiguration
+description: |-
+  The `Register-PSSessionConfiguration` cmdlet creates and registers a new session configuration on
+  the local computer. This is an advanced cmdlet that you can use to create custom sessions for remote
+  users.
+
+  Every PowerShell session (**PSSession**) uses a session configuration, also known as an endpoint.
+  When users create a session that connects to the computer, they can select a session configuration
+  or use the default session configuration that is registered when you enable PowerShell remoting.
+  Users can also set the $PSSessionConfigurationName preference variable, which specifies a default
+  configuration for remote sessions created in the current session.
+
+  The session configuration defines the environment for the remote session. The configuration can
+  determine which commands and language elements are available in the session, and it can include
+  settings that protect the computer, such as those that limit the amount of data that the session can
+  receive remotely in a single object or command. The security descriptor of the session configuration
+  determines which users have permission to use the session configuration.
+
+  You can define the elements of configuration by using an assembly that implements a new
+  configuration class and by using a script that runs in the session. Beginning in PowerShell
+  3.0, you can also use a session configuration file to define the session configuration.
+
+  For information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
+  For information about session configuration files, see [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
+metadata:
+  external help file: System.Management.Automation.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 03/28/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Register-PSSessionConfiguration

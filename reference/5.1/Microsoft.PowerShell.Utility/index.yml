@@ -1,0 +1,127 @@
+### YamlMime:PowershellModule
+children:
+- title: Microsoft.PowerShell.Utility
+  cmdlets:
+  - Microsoft.PowerShell.Utility.Add-Member
+  - Microsoft.PowerShell.Utility.Add-Type
+  - Microsoft.PowerShell.Utility.Clear-Variable
+  - Microsoft.PowerShell.Utility.Compare-Object
+  - Microsoft.PowerShell.Utility.Convert-String
+  - Microsoft.PowerShell.Utility.ConvertFrom-Csv
+  - Microsoft.PowerShell.Utility.ConvertFrom-Json
+  - Microsoft.PowerShell.Utility.ConvertFrom-SddlString
+  - Microsoft.PowerShell.Utility.ConvertFrom-String
+  - Microsoft.PowerShell.Utility.ConvertFrom-StringData
+  - Microsoft.PowerShell.Utility.ConvertTo-Csv
+  - Microsoft.PowerShell.Utility.ConvertTo-Html
+  - Microsoft.PowerShell.Utility.ConvertTo-Json
+  - Microsoft.PowerShell.Utility.ConvertTo-Xml
+  - Microsoft.PowerShell.Utility.Debug-Runspace
+  - Microsoft.PowerShell.Utility.Disable-PSBreakpoint
+  - Microsoft.PowerShell.Utility.Disable-RunspaceDebug
+  - Microsoft.PowerShell.Utility.Enable-PSBreakpoint
+  - Microsoft.PowerShell.Utility.Enable-RunspaceDebug
+  - Microsoft.PowerShell.Utility.Export-Alias
+  - Microsoft.PowerShell.Utility.Export-Clixml
+  - Microsoft.PowerShell.Utility.Export-Csv
+  - Microsoft.PowerShell.Utility.Export-FormatData
+  - Microsoft.PowerShell.Utility.Export-PSSession
+  - Microsoft.PowerShell.Utility.Format-Custom
+  - Microsoft.PowerShell.Utility.Format-Hex
+  - Microsoft.PowerShell.Utility.Format-List
+  - Microsoft.PowerShell.Utility.Format-Table
+  - Microsoft.PowerShell.Utility.Format-Wide
+  - Microsoft.PowerShell.Utility.Get-Alias
+  - Microsoft.PowerShell.Utility.Get-Culture
+  - Microsoft.PowerShell.Utility.Get-Date
+  - Microsoft.PowerShell.Utility.Get-Event
+  - Microsoft.PowerShell.Utility.Get-EventSubscriber
+  - Microsoft.PowerShell.Utility.Get-FileHash
+  - Microsoft.PowerShell.Utility.Get-FormatData
+  - Microsoft.PowerShell.Utility.Get-Host
+  - Microsoft.PowerShell.Utility.Get-Member
+  - Microsoft.PowerShell.Utility.Get-PSBreakpoint
+  - Microsoft.PowerShell.Utility.Get-PSCallStack
+  - Microsoft.PowerShell.Utility.Get-Random
+  - Microsoft.PowerShell.Utility.Get-Runspace
+  - Microsoft.PowerShell.Utility.Get-RunspaceDebug
+  - Microsoft.PowerShell.Utility.Get-TraceSource
+  - Microsoft.PowerShell.Utility.Get-TypeData
+  - Microsoft.PowerShell.Utility.Get-UICulture
+  - Microsoft.PowerShell.Utility.Get-Unique
+  - Microsoft.PowerShell.Utility.Get-Variable
+  - Microsoft.PowerShell.Utility.Group-Object
+  - Microsoft.PowerShell.Utility.Import-Alias
+  - Microsoft.PowerShell.Utility.Import-Clixml
+  - Microsoft.PowerShell.Utility.Import-Csv
+  - Microsoft.PowerShell.Utility.Import-LocalizedData
+  - Microsoft.PowerShell.Utility.Import-PowerShellDataFile
+  - Microsoft.PowerShell.Utility.Import-PSSession
+  - Microsoft.PowerShell.Utility.Invoke-Expression
+  - Microsoft.PowerShell.Utility.Invoke-RestMethod
+  - Microsoft.PowerShell.Utility.Invoke-WebRequest
+  - Microsoft.PowerShell.Utility.Measure-Command
+  - Microsoft.PowerShell.Utility.Measure-Object
+  - Microsoft.PowerShell.Utility.New-Alias
+  - Microsoft.PowerShell.Utility.New-Event
+  - Microsoft.PowerShell.Utility.New-Guid
+  - Microsoft.PowerShell.Utility.New-Object
+  - Microsoft.PowerShell.Utility.New-TemporaryFile
+  - Microsoft.PowerShell.Utility.New-TimeSpan
+  - Microsoft.PowerShell.Utility.New-Variable
+  - Microsoft.PowerShell.Utility.Out-File
+  - Microsoft.PowerShell.Utility.Out-GridView
+  - Microsoft.PowerShell.Utility.Out-Printer
+  - Microsoft.PowerShell.Utility.Out-String
+  - Microsoft.PowerShell.Utility.Read-Host
+  - Microsoft.PowerShell.Utility.Register-EngineEvent
+  - Microsoft.PowerShell.Utility.Register-ObjectEvent
+  - Microsoft.PowerShell.Utility.Remove-Event
+  - Microsoft.PowerShell.Utility.Remove-PSBreakpoint
+  - Microsoft.PowerShell.Utility.Remove-TypeData
+  - Microsoft.PowerShell.Utility.Remove-Variable
+  - Microsoft.PowerShell.Utility.Select-Object
+  - Microsoft.PowerShell.Utility.Select-String
+  - Microsoft.PowerShell.Utility.Select-Xml
+  - Microsoft.PowerShell.Utility.Send-MailMessage
+  - Microsoft.PowerShell.Utility.Set-Alias
+  - Microsoft.PowerShell.Utility.Set-Date
+  - Microsoft.PowerShell.Utility.Set-PSBreakpoint
+  - Microsoft.PowerShell.Utility.Set-TraceSource
+  - Microsoft.PowerShell.Utility.Set-Variable
+  - Microsoft.PowerShell.Utility.Show-Command
+  - Microsoft.PowerShell.Utility.Sort-Object
+  - Microsoft.PowerShell.Utility.Start-Sleep
+  - Microsoft.PowerShell.Utility.Tee-Object
+  - Microsoft.PowerShell.Utility.Trace-Command
+  - Microsoft.PowerShell.Utility.Unblock-File
+  - Microsoft.PowerShell.Utility.Unregister-Event
+  - Microsoft.PowerShell.Utility.Update-FormatData
+  - Microsoft.PowerShell.Utility.Update-List
+  - Microsoft.PowerShell.Utility.Update-TypeData
+  - Microsoft.PowerShell.Utility.Wait-Debugger
+  - Microsoft.PowerShell.Utility.Wait-Event
+  - Microsoft.PowerShell.Utility.Write-Debug
+  - Microsoft.PowerShell.Utility.Write-Error
+  - Microsoft.PowerShell.Utility.Write-Host
+  - Microsoft.PowerShell.Utility.Write-Information
+  - Microsoft.PowerShell.Utility.Write-Output
+  - Microsoft.PowerShell.Utility.Write-Progress
+  - Microsoft.PowerShell.Utility.Write-Verbose
+  - Microsoft.PowerShell.Utility.Write-Warning
+uid: Microsoft.PowerShell.Utility
+name: Microsoft.PowerShell.Utility
+description: |-
+  This section contains the help topics for the cmdlets that are installed with the
+  Microsoft.PowerShell.Utility module. This module contains cmdlets that manage the basic features of
+  PowerShell.
+metadata:
+  Download Help Link: https://go.microsoft.com/fwlink/?linkid=390787
+  Help Version: 5.2.0.0
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 06/09/2017
+  schema: 2.0.0
+  title: Microsoft.PowerShell.Utility

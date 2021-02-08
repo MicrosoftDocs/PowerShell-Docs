@@ -1,0 +1,145 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Clears all entries from specified event logs on the local or remote computers.
+module: Microsoft.PowerShell.Management
+notes: |-
+  - To use `Clear-EventLog` on Windows Vista and later versions of Windows, start Windows PowerShell with the "Run as administrator" option.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe objects to `Clear-EventLog`.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+links:
+- text: Get-EventLog
+  href: Get-EventLog.yml
+- text: Limit-EventLog
+  href: Limit-EventLog.yml
+- text: New-EventLog
+  href: New-EventLog.yml
+- text: Remove-EventLog
+  href: Remove-EventLog.yml
+- text: Show-EventLog
+  href: Show-EventLog.yml
+- text: Write-EventLog
+  href: Write-EventLog.yml
+syntaxes:
+- Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Clear specific event log types from the local computer'
+  code: |-
+    Clear-EventLog "Windows PowerShell"
+  description: |-
+    This command clears the entries from the Windows PowerShell event log on the local computer.
+  summary: ""
+- title: 'Example 2: Clear specific multiple log types from the local and remote computers'
+  code: |-
+    Clear-EventLog -LogName ODiag, OSession -ComputerName localhost, Server02
+  description: |-
+    This command clears all of the entries in the Microsoft Office Diagnostics (ODiag) and Microsoft Office Sessions (OSession) logs on the local computer and the Server02 remote computer.
+  summary: ""
+- title: 'Example 3: Clear all logs on the specified computers then display the event log list'
+  code: |-
+    Clear-EventLog -LogName application, system -confirm
+  description: |-
+    This command prompts you for confirmation before deleting the entries in the specified event logs.
+  summary: ""
+- title: 'Example 4: Clear all logs on the specified computers then display the event log list'
+  code: |-
+    function clear-all-event-logs ($computerName="localhost")
+    {
+       $logs = Get-EventLog -ComputerName $computername -List | ForEach-Object {$_.Log}
+       $logs | ForEach-Object {Clear-EventLog -ComputerName $computername -LogName $_ }
+       Get-EventLog -ComputerName $computername -list
+    }
+
+    clear-all-event-logs -ComputerName Server01
+
+    Max(K) Retain OverflowAction        Entries Log
+    ------ ------ --------------        ------- ---
+    15,168      0 OverwriteAsNeeded           0 Application
+    15,168      0 OverwriteAsNeeded           0 DFS Replication
+    512         7 OverwriteOlder              0 DxStudio
+    20,480      0 OverwriteAsNeeded           0 Hardware Events
+    512         7 OverwriteOlder              0 Internet Explorer
+    20,480      0 OverwriteAsNeeded           0 Key Management Service
+    16,384      0 OverwriteAsNeeded           0 Microsoft Office Diagnostics
+    16,384      0 OverwriteAsNeeded           0 Microsoft Office Sessions
+    30,016      0 OverwriteAsNeeded           1 Security
+    15,168      0 OverwriteAsNeeded           2 System
+    15,360      0 OverwriteAsNeeded           0 Windows PowerShell
+  description: |-
+    This function clears all event logs on the specified computers and then displays the resulting event log list.
+
+    Notice that a few entries were added to the System and Security logs after the logs were cleared but before they were displayed.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ComputerName
+  description: |+
+    Specifies a remote computer.
+    The default is the local computer.
+
+    Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of a remote computer.
+    To specify the local computer, type the computer name, a dot (.), or "localhost".
+
+    This parameter does not rely on Windows PowerShell remoting.
+    You can use the **ComputerName** parameter of `Get-EventLog` even if your computer is not configured to run remote commands.
+
+  defaultValue: Local computer
+  pipelineInput: true
+  position: "1"
+  aliases: Cn
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: LogName
+  isRequired: true
+  description: |+
+    Specifies the event logs.
+    Enter the log name (the value of the Log property; not the LogDisplayName) of one or more event logs, separated by commas.
+    Wildcard characters are not permitted.
+    This parameter is required.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: LN
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Clear-EventLog
+name: Clear-EventLog
+description: |-
+  The `Clear-EventLog` cmdlet deletes all of the entries from the specified event logs on the local computer or on remote computers.
+  To use `Clear-EventLog`, you must be a member of the Administrators group on the affected computer.
+
+  The cmdlets that contain the **EventLog** noun (the EventLog cmdlets) work only on classic event logs.
+  To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use the Get-WinEvent cmdlet.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Clear-EventLog

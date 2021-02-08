@@ -1,0 +1,127 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Waits until a particular event is raised before continuing to run.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  Events, event subscriptions, and the event queue exist only in the current session. If you close the
+  current session, the event queue is discarded and the event subscription is canceled.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Management.Automation.PSEventArgs" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Get-Event
+  href: Get-Event.yml
+- text: Get-EventSubscriber
+  href: Get-EventSubscriber.yml
+- text: New-Event
+  href: New-Event.yml
+- text: Register-EngineEvent
+  href: Register-EngineEvent.yml
+- text: Register-ObjectEvent
+  href: Register-ObjectEvent.yml
+- text: Remove-Event
+  href: Remove-Event.yml
+- text: Unregister-Event
+  href: Unregister-Event.yml
+- text: Wait-Event
+  href: Wait-Event.yml
+syntaxes:
+- Wait-Event [[-SourceIdentifier] <String>] [-Timeout <Int32>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Wait for the next event'
+  code: |-
+    Wait-Event
+  description: ""
+  summary: |+
+    This example waits for the next event that is raised.
+
+- title: 'Example 2: Wait for an event with a specified source identifier'
+  code: |-
+    Wait-Event -SourceIdentifier "ProcessStarted"
+  description: ""
+  summary: |+
+    This example waits for the next event that is raised and that has a source identifier of ProcessStarted.
+
+- title: 'Example 3: Wait for a timer elapsed event'
+  code: |-
+    $Timer = New-Object Timers.Timer
+    $objectEventArgs = @{
+        InputObject = $Timer
+        EventName = 'Elapsed'
+        SourceIdentifier = 'Timer.Elapsed'
+    }
+    Register-ObjectEvent @objectEventArgs
+    $Timer.Interval = 2000
+    $Timer.Autoreset = $False
+    $Timer.Enabled = $True
+    Wait-Event Timer.Elapsed
+
+    ComputerName     :
+    RunspaceId       : bb560b14-ff43-48d4-b801-5adc31bbc6fb
+    EventIdentifier  : 1
+    Sender           : System.Timers.Timer
+    SourceEventArgs  : System.Timers.ElapsedEventArgs
+    SourceArgs       : {System.Timers.Timer, System.Timers.ElapsedEventArgs}
+    SourceIdentifier : Timer.Elapsed
+    TimeGenerated    : 4/23/2020 2:30:37 PM
+    MessageData      :
+  description: ""
+  summary: |+
+    This example uses the `Wait-Event` cmdlet to wait for a timer event on a timer that is set for 2000 milliseconds.
+
+- title: 'Example 4: Wait for an event after a specified timeout'
+  code: |-
+    Wait-Event -SourceIdentifier "ProcessStarted" -Timeout 90
+  description: ""
+  summary: |+
+    This example waits up to 90 seconds for the next event that is raised and that has a source
+    identifier of **ProcessStarted**. If the specified time expires, the wait ends.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: SourceIdentifier
+  description: |+
+    Specifies the source identifier that this cmdlet waits for events.
+    By default, `Wait-Event` waits for any event.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: Timeout
+  description: |+
+    Specifies the maximum time, in seconds, that `Wait-Event` waits for the event to occur. The default,
+    -1, waits indefinitely. The timing starts when you submit the `Wait-Event` command.
+
+    If the specified time is exceeded, the wait ends and the command prompt returns, even if the event
+    has not been raised. No error message is displayed.
+
+  defaultValue: "-1"
+  position: Named
+  aliases: TimeoutSec
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Wait-Event
+name: Wait-Event
+description: |-
+  The `Wait-Event` cmdlet suspends execution of a script or function until a particular event is
+  raised. Execution resumes when the event is detected. To cancel the wait, press
+  <kbd>CTRL</kbd>+<kbd>C</kbd>.
+
+  This feature provides an alternative to polling for an event. It also allows you to determine the
+  response to an event in two different ways:
+
+  - using the **Action** parameter of the event subscription
+  - waiting for an event to return and then respond with an action
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 04/23/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/wait-event?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Wait-Event

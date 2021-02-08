@@ -1,0 +1,250 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Displays a progress bar within a PowerShell command window.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  If the progress bar does not appear, check the value of the `$ProgressPreference` variable. If the
+  value is set to SilentlyContinue, the progress bar is not displayed. For more information about
+  PowerShell preferences, see
+  [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+
+  The parameters of the cmdlet correspond to the properties of the
+  **System.Management.Automation.ProgressRecord** class. For more information, see
+  [ProgressRecord Class](/dotnet/api/system.management.automation.progressrecord).
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe input to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    `Write-Progress` does not generate any output.
+links:
+- text: Write-Debug
+  href: Write-Debug.yml
+- text: Write-Error
+  href: Write-Error.yml
+- text: Write-Host
+  href: Write-Host.yml
+- text: Write-Output
+  href: Write-Output.yml
+- text: Write-Progress
+  href: Write-Progress.yml
+- text: Write-Verbose
+  href: Write-Verbose.yml
+- text: Write-Warning
+  href: Write-Warning.yml
+syntaxes:
+- >-
+  Write-Progress [-Activity] <String> [[-Status] <String>] [[-Id] <Int32>] [-PercentComplete <Int32>]
+
+   [-SecondsRemaining <Int32>] [-CurrentOperation <String>] [-ParentId <Int32>] [-Completed] [-SourceId <Int32>]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Display the progress of a For loop'
+  code: |-
+    for ($i = 1; $i -le 100; $i++ )
+    {
+        Write-Progress -Activity "Search in Progress" -Status "$i% Complete:" -PercentComplete $i;
+    }
+  description: |-
+    This command displays the progress of a For loop that counts from 1 to 100.
+
+    The `Write-Progress` cmdlet includes a status bar heading `Activity`, a status line, and the
+    variable `$i` (the counter in the For loop), which indicates the relative completeness of the task.
+  summary: ""
+- title: 'Example 2: Display the progress of nested For loops'
+  code: |-
+    for($I = 1; $I -lt 101; $I++ )
+    {
+        Write-Progress -Activity Updating -Status 'Progress->' -PercentComplete $I -CurrentOperation OuterLoop
+        for($j = 1; $j -lt 101; $j++ )
+        {
+            Write-Progress -Id 1 -Activity Updating -Status 'Progress' -PercentComplete $j -CurrentOperation InnerLoop
+        }
+    }
+
+    Updating
+    Progress ->
+     [ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]
+    OuterLoop
+    Updating
+    Progress
+     [oooooooooooooooooo                                                   ]
+    InnerLoop
+  description: |-
+    This example displays the progress of two nested For loops, each of which is represented by a
+    progress bar.
+
+    The `Write-Progress` command for the second progress bar includes the **Id** parameter that
+    distinguishes it from the first progress bar.
+
+    Without the **Id** parameter, the progress bars would be superimposed on each other instead of being
+    displayed one below the other.
+  summary: ""
+- title: 'Example 3: Display the progress while searching for a string'
+  code: |-
+    # Use Get-EventLog to get the events in the System log and store them in the $Events variable.
+    $Events = Get-EventLog -LogName system
+    # Pipe the events to the ForEach-Object cmdlet.
+    $Events | ForEach-Object -Begin {
+        # In the Begin block, use Clear-Host to clear the screen.
+        Clear-Host
+        # Set the $i counter variable to zero.
+        $i = 0
+        # Set the $out variable to a empty string.
+        $out = ""
+    } -Process {
+        # In the Process script block search the message property of each incoming object for "bios".
+        if($_.message -like "*bios*")
+        {
+            # Append the matching message to the out variable.
+            $out=$out + $_.Message
+        }
+        # Increment the $i counter variable which is used to create the progress bar.
+        $i = $i+1
+        # Use Write-Progress to output a progress bar.
+        # The Activity and Status parameters create the first and second lines of the progress bar heading, respectively.
+        Write-Progress -Activity "Searching Events" -Status "Progress:" -PercentComplete ($i/$Events.count*100)
+    } -End {
+        # Display the matching messages using the out variable.
+        $out
+    }
+  description: |-
+    This command displays the progress of a command to find the string "bios" in the System event log.
+
+    The **PercentComplete** parameter value is calculated by dividing the number of events that have
+    been processed `$I` by the total number of events retrieved `$Events.count` and then multiplying
+    that result by 100.
+  summary: ""
+- title: 'Example 4: Display progress for each level of a nested process'
+  code: |-
+    foreach ( $i in 1..10 ) {
+      Write-Progress -Id 0 "Step $i"
+      foreach ( $j in 1..10 ) {
+        Write-Progress -Id 1 -ParentId 0 "Step $i - Substep $j"
+        foreach ( $k in 1..10 ) {
+          Write-Progress -Id 2  -ParentId 1 "Step $i - Substep $j - iteration $k"; start-sleep -m 150
+        }
+      }
+    }
+
+    Step 1
+         Processing
+        Step 1 - Substep 2
+             Processing
+            Step 1 - Substep 2 - Iteration 3
+                 Processing
+  description: |-
+    In this example you can use the **ParentId** parameter to have indented output to show parent/child
+    relationships in the progress of each step.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Activity
+  isRequired: true
+  description: |+
+    Specifies the first line of text in the heading above the status bar.
+    This text describes the activity whose progress is being reported.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Completed
+  description: |+
+    Indicates whether the progress bar is visible.
+    If this parameter is omitted, `Write-Progress` displays progress information.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: CurrentOperation
+  description: |+
+    Specifies the line of text below the progress bar.
+    This text describes the operation that is currently taking place.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: Id
+  description: |+
+    Specifies an ID that distinguishes each progress bar from the others. Use this parameter when you
+    are creating more than one progress bar in a single command. If the progress bars do not have
+    different IDs, they are superimposed instead of being displayed in a series.
+
+  defaultValue: None
+  position: "2"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: ParentId
+  description: |+
+    Specifies the parent activity of the current activity.
+    Use the value -1 if the current activity has no parent activity.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: PercentComplete
+  description: |+
+    Specifies the percentage of the activity that is completed.
+    Use the value -1 if the percentage complete is unknown or not applicable.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: SecondsRemaining
+  description: |+
+    Specifies the projected number of seconds remaining until the activity is completed.
+    Use the value -1 if the number of seconds remaining is unknown or not applicable.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: SourceId
+  description: |+
+    Specifies the source of the record. You can use this in place of **Id** but cannot be used with
+    other parameters like **ParentId**.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Status
+  description: |+
+    Specifies the second line of text in the heading above the status bar.
+    This text describes current state of the activity.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Write-Progress
+name: Write-Progress
+description: |-
+  The `Write-Progress` cmdlet displays a progress bar in a PowerShell command window that depicts the
+  status of a running command or script. You can select the indicators that the bar reflects and the
+  text that appears above and below the progress bar.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 10/14/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Write-Progress

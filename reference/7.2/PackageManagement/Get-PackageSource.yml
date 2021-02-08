@@ -1,0 +1,206 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets a list of package sources that are registered for a package provider.
+module: PackageManagement
+notes: |-
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+outputs:
+- name: <xref href="PackageSource" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: |-
+    Specifies one or more package sources.
+links:
+- text: about_PackageManagement
+  href: ../Microsoft.PowerShell.Core/About/about_PackageManagement.md
+- text: Find-Package
+  href: Find-Package.yml
+- text: Get-Package
+  href: Get-Package.yml
+- text: Get-PackageProvider
+  href: Get-PackageProvider.yml
+- text: Register-PackageSource
+  href: Register-PackageSource.yml
+- text: Set-PackageSource
+  href: Set-PackageSource.yml
+- text: Unregister-PackageSource
+  href: Unregister-PackageSource.yml
+syntaxes:
+- >-
+  Get-PackageSource [[-Name] <String>] [-Location <String>] [-Force] [-ForceBootstrap]
+
+   [-ProviderName <String[]>] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
+- >-
+  Get-PackageSource [[-Name] <String>] [-Location <String>] [-Force] [-ForceBootstrap]
+
+   [-ProviderName <String[]>] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+
+   [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get all package sources'
+  code: |-
+    Get-PackageSource
+
+    Name                 ProviderName     IsTrusted  Location
+    ----                 ------------     ---------  --------
+    LocalPackages        NuGet            False      C:\LocalPkg\
+    MyNuget              NuGet            False      https://www.nuget.org/api/v2
+    PSGallery            PowerShellGet    False      https://www.powershellgallery.com/api/v2
+  description: ""
+  summary: |+
+    The `Get-PackageSource` cmdlet gets all package sources that are registered with
+    **PackageManagement** on the local computer.
+
+- title: 'Example 2: Get all package sources for a specific provider'
+  code: |-
+    Get-PackageSource -ProviderName NuGet
+
+    Name                 ProviderName     IsTrusted  Location
+    ----                 ------------     ---------  --------
+    LocalPackages        NuGet            False      C:\LocalPkg\
+    MyNuget              NuGet            False      https://www.nuget.org/api/v2
+  description: |-
+    `Get-PackageSource` uses the **ProviderName** parameter to get package sources that are registered
+    for the **NuGet** provider.
+  summary: |+
+    This command gets package sources that are registered for a specific provider.
+
+- title: 'Example 3: Get sources from a package provider'
+  code: |-
+    Get-PackageProvider -Name NuGet | Get-PackageSource
+
+    Name                 ProviderName     IsTrusted  Location
+    ----                 ------------     ---------  --------
+    LocalPackages        NuGet            False      C:\LocalPkg\
+    MyNuget              NuGet            False      https://www.nuget.org/api/v2
+  description: |-
+    `Get-PackageProvider` uses the **Name** parameter specify the provider name, **NuGet**. The object
+    is sent down the pipeline to `Get-PackageSource`.
+  summary: |+
+    This command uses a package provider to get package sources.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ConfigFile
+  description: |+
+    Specifies a configuration file.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the command to run without asking for user confirmation.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ForceBootstrap
+  description: |+
+    Indicates that this cmdlet forces **PackageManagement** to automatically install a package provider.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Location
+  description: |+
+    Specifies the location of a package management source or repository.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  description: |+
+    Specifies the name of a package management source.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: PackageManagementProvider
+  description: |+
+    Specifies a package management provider.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ProviderName
+  description: |+
+    Specifies one or more package provider names. Separate multiple package provider names with commas.
+    Use `Get-PackageProvider` to get a list of available package providers.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: Provider
+  parameterValueGroup: Bootstrap, NuGet, PowerShellGet
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: PublishLocation
+  description: |+
+    Specifies the publish location for the package source.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ScriptPublishLocation
+  description: |+
+    Specifies the script publish location.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ScriptSourceLocation
+  description: |+
+    Specifies the script source location.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: SkipValidate
+  description: |+
+    Switch that skips validating the credentials of a package source.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: PackageManagement.Get-PackageSource
+name: Get-PackageSource
+description: |-
+  The `Get-PackageSource` cmdlet gets a list of package sources that are registered with
+  **PackageManagement** on the local computer. If you specify a package provider, `Get-PackageSource`
+  gets only those sources that are associated with the specified provider. Otherwise, the command
+  returns all package sources that are registered with **PackageManagement**.
+metadata:
+  external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+  Locale: en-US
+  Module Name: PackageManagement
+  ms.date: 03/29/2019
+  online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-packagesource?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-PackageSource

@@ -1,0 +1,139 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets information about the Authenticode signature for a file.
+module: Microsoft.PowerShell.Security
+notes: |-
+  For information about Authenticode signatures in PowerShell, see
+  [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md).
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains a file path to `Get-AuthenticodeSignature`.
+outputs:
+- name: <xref href="System.Management.Automation.Signature" data-throw-if-not-resolved="False" />
+  description: |-
+    `Get-AuthenticodeSignature` returns a signature object for each signature that it gets.
+links:
+- text: Get-ExecutionPolicy
+  href: Get-ExecutionPolicy.yml
+- text: Set-AuthenticodeSignature
+  href: Set-AuthenticodeSignature.yml
+- text: Set-ExecutionPolicy
+  href: Set-ExecutionPolicy.yml
+- text: about_Execution_Policies
+  href: ../Microsoft.PowerShell.Core/About/about_Execution_Policies.md
+- text: about_Signing
+  href: ../Microsoft.PowerShell.Core/About/about_Signing.md
+syntaxes:
+- Get-AuthenticodeSignature [-FilePath] <String[]> [<CommonParameters>]
+- Get-AuthenticodeSignature -LiteralPath <String[]> [<CommonParameters>]
+- Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<CommonParameters>]
+examples:
+- title: 'Example 1: Get the Authenticode signature for a file'
+  code: |-
+    Get-AuthenticodeSignature -FilePath "C:\Test\NewScript.ps1"
+  description: |-
+    This command gets information about the Authenticode signature in the NewScript.ps1 file. It uses
+    the **FilePath** parameter to specify the file.
+  summary: ""
+- title: 'Example 2: Get the Authenticode signature for multiple files'
+  code: |-
+    Get-AuthenticodeSignature test.ps1, test1.ps1, sign-file.ps1, makexml.ps1
+  description: |-
+    This command gets information about the Authenticode signature for the four files listed at the
+    command line. In this example, the name of the **FilePath** parameter, which is optional, is omitted.
+  summary: ""
+- title: 'Example 3: Get only valid Authenticode signatures for multiple files'
+  code: |-
+    Get-ChildItem $PSHOME\*.* | ForEach-object {Get-AuthenticodeSignature $_} | Where-Object {$_.status -eq "Valid"}
+  description: |-
+    This command lists all of the files in the `$PSHOME` directory that have a valid Authenticode
+    signature. The `$PSHOME` automatic variable contains the path to the PowerShell installation
+    directory.
+
+    The command uses the `Get-ChildItem` cmdlet to get the files in the `$PSHOME` directory. It uses a
+    pattern of *.* to exclude directories (although it also excludes files without a dot in the
+    filename).
+
+    The command uses a pipeline operator (`|`) to send the files in `$PSHOME` to the `ForEach-Object`
+    cmdlet, where `Get-AuthenticodeSignature` is called for each file.
+
+    The results of the `Get-AuthenticodeSignature` command are sent to a `Where-Object` command that
+    selects only the signature objects with a status of Valid.
+  summary: ""
+- title: 'Example 4: Get the Authenticode signature for a file content specified as byte array'
+  code: |-
+    Get-AuthenticodeSignature -Content (Get-Content foo.ps1 -AsByteStream) -SourcePathorExtension ps1
+  description: |-
+    This command gets information about the Authenticode signature for the content of a file. In this
+    example, the file extension is specified along with the content of the file.
+  summary: ""
+parameters:
+- type: <xref href="System.Byte" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Content
+  isRequired: true
+  description: |+
+    Contents of a file as a byte array for which the Authenticode signature is retrieved. This parameter
+    must be used with **SourcePathOrExtension** parameter. The contents of the file must be in Unicode
+    (UTF-16LE) format.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: FilePath
+  isRequired: true
+  description: |+
+    Specifies the path to the file to examine. Wildcards are permitted, but they must lead to a single
+    file. It is not necessary to type **FilePath** at the command line when you specify a value for this
+    parameter.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies the path to the file being examined. Unlike **FilePath**, the value of the **LiteralPath**
+    parameter is used exactly as it is typed. No characters are interpreted as wildcards. If the path
+    includes an escape character, enclose it in single quotation marks. Single quotation marks tell
+    PowerShell not to interpret any characters as escape characters.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: SourcePathOrExtension
+  isRequired: true
+  description: |+
+    Path to the file or file type of the content for which the Authenticode signature is retrieved. This
+    parameter is used with **Content** where file content is passed as a byte array.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Security.Get-AuthenticodeSignature
+name: Get-AuthenticodeSignature
+description: |-
+  The `Get-AuthenticodeSignature` cmdlet gets information about the Authenticode signature for a
+  file or file content as a byte array. If the file is not signed, the information is retrieved, but
+  the fields are blank.
+metadata:
+  external help file: Microsoft.PowerShell.Security.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Security
+  ms.date: 04/10/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-AuthenticodeSignature

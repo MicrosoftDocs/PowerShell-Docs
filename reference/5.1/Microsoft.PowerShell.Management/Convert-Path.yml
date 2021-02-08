@@ -1,0 +1,118 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Converts a path from a PowerShell path to a PowerShell provider path.
+module: Microsoft.PowerShell.Management
+notes: |-
+  The cmdlets that contain the Path noun manipulate path names and return the names in a concise
+  format that all PowerShell providers can interpret. They are designed for use in programs and
+  scripts where you want to display all or part of a path name in a particular format. Use them like
+  you would use **Dirname**, **Normpath**, **Realpath**, **Join**, or other path manipulators.
+
+  You can use the path cmdlets with several providers, including the FileSystem, Registry, and
+  Certificate providers.
+
+  This cmdlet is designed to work with the data exposed by any provider. To list the providers
+  available in your session, type `Get-PSProvider`. For more information, see
+  [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+
+  `Convert-Path` only converts existing paths. It cannot be used to convert a location that does not
+  exist yet.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a path, but not a literal path, to this cmdlet.
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a string that contains the converted path.
+links:
+- text: Join-Path
+  href: Join-Path.yml
+- text: Resolve-Path
+  href: Resolve-Path.yml
+- text: Split-Path
+  href: Split-Path.yml
+- text: Test-Path
+  href: Test-Path.yml
+- text: Get-PSProvider
+  href: Get-PSProvider.yml
+syntaxes:
+- Convert-Path [-Path] <String[]> [-UseTransaction] [<CommonParameters>]
+- Convert-Path -LiteralPath <String[]> [-UseTransaction] [<CommonParameters>]
+examples:
+- title: 'Example 1: Convert the working directory to a standard file system path'
+  code: |-
+    PS C:\> Convert-Path .
+    C:\
+  description: ""
+  summary: |+
+    This example converts the current working directory, which is represented by a dot (`.`), to a
+    standard FileSystem path.
+
+- title: 'Example 2: Convert a provider path to a standard registry path'
+  code: |-
+    PS C:\> Convert-Path HKLM:\Software\Microsoft
+    HKEY_LOCAL_MACHINE\Software\Microsoft
+  description: ""
+  summary: |+
+    This example converts the PowerShell provider path to a standard registry path.
+
+- title: 'Example 3: Convert a path to a string'
+  code: |-
+    PS C:\> Convert-Path ~
+    C:\Users\User01
+  description: ""
+  summary: |+
+    This example converts the path to the home directory of the current provider, which is the
+    FileSystem provider, to a string.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies, as a string array, the path to be converted. The value of the **LiteralPath** parameter
+    is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes
+    escape characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not
+    to interpret any characters as escape sequences.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the PowerShell path to be converted.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: UseTransaction
+  description: |+
+    Includes the command in the active transaction.
+    This parameter is valid only when a transaction is in progress.
+    For more information, see about_transactions.
+
+  defaultValue: "False"
+  position: Named
+  aliases: usetx
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Convert-Path
+name: Convert-Path
+description: |-
+  The `Convert-Path` cmdlet converts a path from a PowerShell path to a PowerShell provider path.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 03/12/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/convert-path?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Convert-Path

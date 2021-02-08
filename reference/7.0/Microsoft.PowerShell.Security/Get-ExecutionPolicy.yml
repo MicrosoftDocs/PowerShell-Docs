@@ -1,0 +1,193 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets the execution policies for the current session.
+module: Microsoft.PowerShell.Security
+notes: |-
+  An execution policy is part of the PowerShell security strategy. Execution policies determine
+  whether you can load configuration files, such as your PowerShell profile, or run scripts. And,
+  whether scripts must be digitally signed before they are run.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    `Get-ExecutionPolicy` doesn't accept input from the pipeline.
+outputs:
+- name: <xref href="Microsoft.PowerShell.ExecutionPolicy" data-throw-if-not-resolved="False" />
+  description: |-
+    The cmdlet always returns **Unrestricted** on Linux and macOS platforms.
+links:
+- text: about_Execution_Policies
+  href: ../Microsoft.PowerShell.Core/about/about_Execution_Policies.md
+- text: about_Group_Policy_Settings
+  href: ../Microsoft.PowerShell.Core/About/about_Group_Policy_Settings.md
+- text: Get-AuthenticodeSignature
+  href: Get-AuthenticodeSignature.yml
+- text: Set-AuthenticodeSignature
+  href: Set-AuthenticodeSignature.yml
+- text: Set-ExecutionPolicy
+  href: Set-ExecutionPolicy.yml
+syntaxes:
+- Get-ExecutionPolicy [[-Scope] <ExecutionPolicyScope>] [-List] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get all execution policies'
+  code: |-
+    Get-ExecutionPolicy -List
+
+    Scope          ExecutionPolicy
+    -----          ---------------
+    MachinePolicy  Undefined
+    UserPolicy     Undefined
+    Process        Undefined
+    CurrentUser    AllSigned
+    LocalMachine   Undefined
+  description: |-
+    The `Get-ExecutionPolicy` cmdlet uses the **List** parameter to display each scope's execution
+    policy.
+  summary: |+
+    This command displays the execution policies for each scope in the order of precedence.
+
+- title: 'Example 2: Set an execution policy'
+  code: |-
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+    Get-ExecutionPolicy -List
+
+    Scope ExecutionPolicy
+            ----- ---------------
+    MachinePolicy       Undefined
+       UserPolicy       Undefined
+          Process       Undefined
+      CurrentUser       AllSigned
+     LocalMachine    RemoteSigned
+  description: |-
+    The `Set-ExecutionPolicy` cmdlet uses the **ExecutionPolicy** parameter to specify the
+    **RemoteSigned** policy. The **Scope** parameter specifies the default scope value,
+    **LocalMachine**. To view the execution policy settings, use the `Get-ExecutionPolicy` cmdlet with
+    the **List** parameter.
+  summary: |+
+    This example shows how to set an execution policy for the local computer.
+
+- title: 'Example 3: Get the effective execution policy'
+  code: |-
+    PS> Get-ExecutionPolicy -List
+
+            Scope ExecutionPolicy
+            ----- ---------------
+    MachinePolicy       Undefined
+       UserPolicy       Undefined
+          Process       Undefined
+      CurrentUser       AllSigned
+     LocalMachine    RemoteSigned
+
+    PS> Get-ExecutionPolicy
+
+    AllSigned
+  description: |-
+    The `Get-ExecutionPolicy` cmdlet uses the **List** parameter to display each scope's execution
+    policy. The `Get-ExecutionPolicy` cmdlet is run without a parameter to display the effective
+    execution policy, **AllSigned**.
+  summary: |+
+    This example shows how to display the effective execution policy for a PowerShell session.
+
+- title: 'Example 4: Unblock a script to run it without changing the execution policy'
+  code: |-
+    PS> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+
+    PS> Get-ExecutionPolicy
+
+    RemoteSigned
+
+    PS> .\Start-ActivityTracker.ps1
+
+    .\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded.
+    The file .\Start-ActivityTracker.ps1 is not digitally signed.
+    The script will not execute on the system.
+    For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
+    At line:1 char:1
+    + .\Start-ActivityTracker.ps1
+    + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+
+    PS> Unblock-File -Path .\Start-ActivityTracker.ps1
+
+    PS> Get-ExecutionPolicy
+
+    RemoteSigned
+
+    PS> .\Start-ActivityTracker.ps1
+
+    Task 1:
+  description: |-
+    The `Set-ExecutionPolicy` uses the **ExecutionPolicy** parameter to specify the **RemoteSigned**
+    policy. The policy is set for the default scope, **LocalMachine**.
+
+    The `Get-ExecutionPolicy` cmdlet shows that **RemoteSigned** is the effective execution policy for
+    the current PowerShell session.
+
+    The **Start-ActivityTracker.ps1** script is executed from the current directory. The script is
+    blocked by **RemoteSigned** because the script isn't digitally signed.
+
+    For this example, the script's code was reviewed and verified as safe to run. The `Unblock-File`
+    cmdlet uses the **Path** parameter to unblock the script.
+
+    To verify that `Unblock-File` didn't change the execution policy, `Get-ExecutionPolicy` displays the
+    effective execution policy, **RemoteSigned**.
+
+    The script, **Start-ActivityTracker.ps1** is executed from the current directory. The script begins
+    to run because it was unblocked by the `Unblock-File` cmdlet.
+  summary: |+
+    This example shows how the **RemoteSigned** execution policy prevents you from running unsigned
+    scripts.
+
+    A best practice is to read the script's code and verify it's safe **before** using the
+    `Unblock-File` cmdlet. The `Unblock-File` cmdlet unblocks scripts so they can run, but doesn't
+    change the execution policy.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: List
+  description: |+
+    Gets all execution policy values for the session listed in precedence order. By default,
+    `Get-ExecutionPolicy` gets only the effective execution policy.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.ExecutionPolicyScope" data-throw-if-not-resolved="False" />
+  name: Scope
+  description: |+
+    Specifies the scope that is affected by an execution policy.
+
+    The effective execution policy is determined by the order of precedence as follows:
+
+    - **MachinePolicy**. Set by a Group Policy for all users of the computer.
+    - **UserPolicy**. Set by a Group Policy for the current user of the computer.
+    - **Process**. Affects only the current PowerShell session.
+    - **CurrentUser**. Affects only the current user.
+    - **LocalMachine**. Default scope that affects all users of the computer.
+
+  defaultValue: Effective execution policy
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: CurrentUser, LocalMachine, MachinePolicy, Process, UserPolicy
+uid: Microsoft.PowerShell.Security.Get-ExecutionPolicy
+name: Get-ExecutionPolicy
+description: |-
+  To display the execution policies for each scope in the order of precedence, use
+  `Get-ExecutionPolicy -List`. To see the effective execution policy for your PowerShell session use
+  `Get-ExecutionPolicy` with no parameters.
+
+  The effective execution policy is determined by execution policies that are set by
+  `Set-ExecutionPolicy` and Group Policy settings.
+
+  For more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
+metadata:
+  external help file: Microsoft.PowerShell.Security.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Security
+  ms.date: 3/22/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-ExecutionPolicy

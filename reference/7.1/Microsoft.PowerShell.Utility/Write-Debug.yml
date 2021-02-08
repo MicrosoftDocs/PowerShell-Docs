@@ -1,0 +1,115 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Writes a debug message to the console.
+module: Microsoft.PowerShell.Utility
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains a debug message to `Write-Debug`.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    `Write-Debug` only writes to the debug stream. It does not write any objects to the pipeline.
+links:
+- text: about_Output_Streams
+  href: ../Microsoft.PowerShell.Core/About/about_Output_Streams.md
+- text: about_Redirection
+  href: ../Microsoft.PowerShell.Core/About/about_Redirection.md
+- text: Write-Error
+  href: Write-Error.yml
+- text: Write-Host
+  href: Write-Host.yml
+- text: Write-Output
+  href: Write-Output.yml
+- text: Write-Progress
+  href: Write-Progress.yml
+- text: Write-Verbose
+  href: Write-Verbose.yml
+- text: Write-Warning
+  href: Write-Warning.yml
+syntaxes:
+- Write-Debug [-Message] <String> [<CommonParameters>]
+examples:
+- title: 'Example 1: Understand $DebugPreference'
+  code: |-
+    Write-Debug "Cannot open file."
+  description: |-
+    The default value of `$DebugPreference` is **SilentlyContinue**. Therefore, the message is not
+    displayed in the console.
+  summary: |+
+    This example writes a debug message.
+
+- title: 'Example 2: Change the value of $DebugPreference'
+  code: |-
+    PS> $DebugPreference
+    SilentlyContinue
+    PS> Write-Debug "Cannot open file."
+    PS>
+    PS> $DebugPreference = "Continue"
+    PS> Write-Debug "Cannot open file."
+    DEBUG: Cannot open file.
+  description: |-
+    For more information about `$DebugPreference`, see
+    [about_Preference_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Preference_Variables).
+  summary: |+
+    This example shows the effect of changing the value of the `$DebugPreference` variable. First, we
+    display the current value of `$DebugPreference` and attempt to write a debug message. Then we change
+    the value of `$DebugPreference` to **Continue**, which allows debug messages to be displayed.
+
+- title: 'Example 3: Use the Debug parameter to override $DebugPreference'
+  code: |-
+    function Test-Debug {
+        [CmdletBinding()]
+        param()
+        Write-Debug ('$DebugPreference is ' + $DebugPreference)
+        Write-Host ('$DebugPreference is ' + $DebugPreference)
+    }
+
+    PS> Test-Debug
+    $DebugPreference is SilentlyContinue
+
+    PS> Test-Debug -Debug
+    DEBUG: $DebugPreference is Continue
+    $DebugPreference is Continue
+    PS> $DebugPreference
+    SilentlyContinue
+  description: |-
+    Notice that the value of `$DebugPreference` changes when you use the **Debug** parameter. This
+    change only affects the scope of the function. The value is not affected outside the function.
+
+    For more information about the **Debug** common parameter, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+  summary: |+
+    The `Test-Debug` function writes the value of the `$DebugPreference` variable to the PowerShell host
+    and to the Debug stream. In this example, we use the **Debug** parameter to override the
+    `$DebugPreference` value.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Message
+  isRequired: true
+  description: |+
+    Specifies the debug message to send to the console.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: Msg
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Write-Debug
+name: Write-Debug
+description: |-
+  The `Write-Debug` cmdlet writes debug messages to the host from a script or command.
+
+  By default, debug messages are not displayed in the console, but you can display them by using the
+  **Debug** parameter or the `$DebugPreference` variable.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 10/14/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Write-Debug

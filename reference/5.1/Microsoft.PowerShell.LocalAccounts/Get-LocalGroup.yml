@@ -1,0 +1,84 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets the local security groups.
+module: Microsoft.PowerShell.LocalAccounts
+notes: |-
+  * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
+
+  - Local
+  - Active Directory
+  - Azure Active Directory group
+  - Microsoft Account
+
+  **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
+inputs:
+- name: <xref href="System.String, System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string or a SID to this cmdlet.
+outputs:
+- name: <xref href="System.Management.Automation.SecurityAccountsManager.LocalGroup" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a local group.
+links:
+- text: New-LocalGroup
+  href: New-LocalGroup.yml
+- text: Remove-LocalGroup
+  href: Remove-LocalGroup.yml
+- text: Rename-LocalGroup
+  href: Rename-LocalGroup.yml
+- text: Set-LocalGroup
+  href: Set-LocalGroup.yml
+syntaxes:
+- Get-LocalGroup [[-Name] <String[]>] [<CommonParameters>]
+- Get-LocalGroup [[-SID] <SecurityIdentifier[]>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get the Administrators group'
+  code: |-
+    PS C:\> Get-LocalGroup -Name "Administrators"
+    Name           Description
+    ----           -----------
+    Administrators Administrators have complete and unrestricted access to the computer/domain
+  description: |-
+    This command gets the local Administrators group.
+    The command displays properties of the group in the console.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Specifies an array of names of security groups that this cmdlet gets.
+    You can use the wildcard character.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: SID
+  description: |+
+    Specifies an array of security IDs (SIDs) of security groups that this cmdlet gets.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.LocalAccounts.Get-LocalGroup
+name: Get-LocalGroup
+description: |-
+  The **Get-LocalGroup** cmdlet gets local security groups in Security Account Manager.
+  This cmdlet gets default built-in groups and local security groups that you create.
+
+  > [!NOTE]
+  > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+  > system.
+metadata:
+  external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.LocalAccounts
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/get-localgroup?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-LocalGroup

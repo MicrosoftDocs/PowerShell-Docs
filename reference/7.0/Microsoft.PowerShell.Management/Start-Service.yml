@@ -1,0 +1,226 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Starts one or more stopped services.
+module: Microsoft.PowerShell.Management
+notes: |-
+  This cmdlet is only available on Windows platforms.
+
+  - You can also refer to `Start-Service` by its built-in alias, `sasv`. For more information, see
+    [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+  - `Start-Service` can control services only if the current user has permission to do this. If a
+    command does not work correctly, you might not have the required permissions.
+  - To find the service names and display names of the services on your system, type `Get-Service`.
+    The service names appear in the **Name** column, and the display names appear in the
+    **DisplayName** column.
+  - You can start only the services that have a start type of Manual, Automatic, or Automatic (Delayed
+    Start). You cannot start the services that have a start type of Disabled. If a `Start-Service`
+    command fails with the message `Cannot start service \<service-name\> on computer`, use
+    `Get-CimInstance` to find the start type of the service and, if you have to, use the `Set-Service`
+    cmdlet to change the start type of the service.
+  - Some services, such as Performance Logs and Alerts (SysmonLog) stop automatically if they have no
+    work to do. When PowerShell starts a service that stops itself almost immediately, it displays the
+    following message: `Service \<display-name\> start failed.`
+inputs:
+- name: <xref href="System.ServiceProcess.ServiceController, System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe objects that represent the services or strings that contain the service names to this
+    cmdlet.
+outputs:
+- name: <xref href="None, System.ServiceProcess.ServiceController" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the
+    service, if you specify **PassThru**. Otherwise, this cmdlet does not generate any output.
+links:
+- text: Get-Service
+  href: Get-Service.yml
+- text: New-Service
+  href: New-Service.yml
+- text: Restart-Service
+  href: Restart-Service.yml
+- text: Resume-Service
+  href: Resume-Service.yml
+- text: Set-Service
+  href: Set-Service.yml
+- text: Stop-Service
+  href: Stop-Service.yml
+- text: Suspend-Service
+  href: Suspend-Service.yml
+- text: Remove-Service
+  href: Remove-Service.yml
+syntaxes:
+- >-
+  Start-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Start-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+- >-
+  Start-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
+
+   [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Start a service by using its name'
+  code: |-
+    Start-Service -Name "eventlog"
+  description: ""
+  summary: |+
+    This example starts the EventLog service on the local computer. The **Name** parameter identifies
+    the service by its service name.
+
+- title: 'Example 2: Display information without starting a service'
+  code: |-
+    Start-Service -DisplayName *remote* -WhatIf
+  description: |-
+    The **DisplayName** parameter identifies the services by their display name instead of their service
+    name. The **WhatIf** parameter causes the cmdlet to display what would happen when you run the
+    command but does not make changes.
+  summary: |+
+    This example shows what would occur if you started the services that have a display name that
+    includes "remote".
+
+- title: 'Example 3: Start a service and record the action in a text file'
+  code: |-
+    $s = Get-Service wmi
+    Start-Service -InputObject $s -PassThru | Format-List >> services.txt
+  description: |-
+    First we use `Get-Service` to get an object that represent the WMI service and store it in the `$s`
+    variable. Next, we start the service. Without the **PassThru** parameter, `Start-Service` does not
+    create any output. The pipeline operator (|) passes the object output by `Start-Service` to the
+    `Format-List` cmdlet to format the object as a list of its properties. The append redirection
+    operator (\>\>) redirects the output to the services.txt file. The output is added to the end of the
+    existing file.
+  summary: |+
+    This example starts the Windows Management Instrumentation (WMI) service on the computer and adds a
+    record of the action to the services.txt file.
+
+- title: 'Example 4: Start a disabled service'
+  code: |-
+    PS> Start-Service tlntsvr
+    Start-Service : Service 'Telnet (TlntSvr)' cannot be started due to the following error: Cannot start service TlntSvr on computer '.'.
+    At line:1 char:14
+    + Start-Service  <<<< tlntsvr
+
+    PS> Get-CimInstance win32_service | Where-Object Name -eq "tlntsvr"
+    ExitCode  : 0
+    Name      : TlntSvr
+    ProcessId : 0
+    StartMode : Disabled
+    State     : Stopped
+    Status    : OK
+
+    PS> Set-Service tlntsvr -StartupType manual
+    PS> Start-Service tlntsvr
+  description: |-
+    The first attempt to start the Telnet service (tlntsvr) fails. The `Get-CimInstance` command shows
+    that the **StartMode** property of the Tlntsvr service is **Disabled**. The `Set-Service` cmdlet
+    changes the start type to **Manual**. Now, we can resubmit the `Start-Service` command. This time,
+    the command succeeds. To verify that the command succeeded, run `Get-Service`.
+  summary: |+
+    This example shows how to start a service when the start type of the service is **Disabled**.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: DisplayName
+  isRequired: true
+  description: |+
+    Specifies the display names of the services to start. Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Exclude
+  description: |+
+    Specifies services that this cmdlet omits. The value of this parameter qualifies the **Name**
+    parameter. Enter a name element or pattern, such as `s*`. Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Include
+  description: |+
+    Specifies services that this cmdlet starts. The value of this parameter qualifies the **Name**
+    parameter. Enter a name element or pattern, such as `s*`. Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.ServiceProcess.ServiceController" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies **ServiceController** objects representing the services to be started. Enter a variable
+    that contains the objects, or type a command or expression that gets the objects.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the service names for the service to be started.
+
+    The parameter name is optional. You can use **Name** or its alias, **ServiceName**, or you can omit
+    the parameter name.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ServiceName
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object that represents the service. By default, this cmdlet does not generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Start-Service
+name: Start-Service
+description: |-
+  The `Start-Service` cmdlet sends a start message to the Windows Service Controller for each of the
+  specified services. If a service is already running, the message is ignored without error. You can
+  specify the services by their service names or display names, or you can use the **InputObject**
+  parameter to supply a service object that represents the services that you want to start.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Start-Service

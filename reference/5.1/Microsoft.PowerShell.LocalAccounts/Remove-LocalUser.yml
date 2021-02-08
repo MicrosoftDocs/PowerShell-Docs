@@ -1,0 +1,116 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Deletes local user accounts.
+module: Microsoft.PowerShell.LocalAccounts
+notes: |-
+  * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
+
+  - Local
+  - Active Directory
+  - Azure Active Directory group
+  - Microsoft Account
+
+  **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
+inputs:
+- name: <xref href="System.Management.Automation.SecurityAccountsManager.LocalUser, System.String, System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a local user, a string, or a SID to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+links:
+- text: Disable-LocalUser
+  href: Disable-LocalUser.yml
+- text: Enable-LocalUser
+  href: Enable-LocalUser.yml
+- text: Get-LocalUser
+  href: Get-LocalUser.yml
+- text: New-LocalUser
+  href: New-LocalUser.yml
+- text: Rename-LocalUser
+  href: Rename-LocalUser.yml
+- text: Set-LocalUser
+  href: Set-LocalUser.yml
+syntaxes:
+- Remove-LocalUser [-InputObject] <LocalUser[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+- Remove-LocalUser [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+- Remove-LocalUser [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Delete a user account'
+  code: |-
+    PS C:\> Remove-LocalUser -Name "AdminContoso02"
+  description: |-
+    This command deletes the user account named AdminContoso02.
+
+    > [!NOTE]
+    > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+    > system.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.Commands.LocalUser" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies an array of user accounts that this cmdlet deletes.
+    To obtain a user account, use the Get-LocalUser cmdlet.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies an array of names of the user accounts that this cmdlet deletes.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: SID
+  isRequired: true
+  description: |+
+    Specifies an array of security IDs (SIDs) of user accounts that this cmdlet deletes.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.LocalAccounts.Remove-LocalUser
+name: Remove-LocalUser
+description: |-
+  The **Remove-LocalUser** cmdlet deletes local user accounts.
+metadata:
+  external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.LocalAccounts
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/remove-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Remove-LocalUser

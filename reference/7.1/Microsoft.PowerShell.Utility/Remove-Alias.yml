@@ -1,0 +1,113 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Remove an alias from the current session.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  Changes only affect the current scope. To remove an alias from all sessions, add a **Remove-Alias**
+  command to your PowerShell profile.
+
+  For more information, see [about_Aliases](../microsoft.powershell.core/about/about_aliases.md).
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: |-
+    You can pipe an alias object to **Remove-Alias**.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet doesn't return any output.
+links:
+- text: about_Automatic_Variables
+  href: ../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md
+- text: Export-Alias
+  href: Export-Alias.yml
+- text: Get-Alias
+  href: Get-Alias.yml
+- text: Import-Alias
+  href: Import-Alias.yml
+- text: New-Alias
+  href: New-Alias.yml
+- text: Set-Alias
+  href: Set-Alias.yml
+- text: Where-Object
+  href: ../Microsoft.PowerShell.Core/Where-Object.yml
+syntaxes:
+- Remove-Alias [-Name] <String[]> [-Scope <String>] [-Force] [<CommonParameters>]
+examples:
+- title: Example 1 - Remove an alias
+  code: |-
+    Remove-Alias -Name del
+  description: ""
+  summary: |+
+    This example removes an alias named `del` that represents the `Remove-Item` cmdlet.
+
+- title: Example 2 - Remove all non-Constant aliases
+  code: |-
+    Get-Alias | Where-Object { $_.Options -NE "Constant" } | Remove-Alias -Force
+  description: |-
+    `Get-Alias` gets all the aliases in the PowerShell session and sends the objects down the pipeline.
+    `Where-Object` uses a script block, and the automatic variable (`$_`) and **Options** property
+    represent the current pipeline object. The parameter **NE** (not equal), selects objects that don't
+    have an **Options** value set to **Constant**. `Remove-Alias` uses the **Force** parameter to remove
+    aliases, including read-only aliases, from the PowerShell session.
+  summary: |+
+    This example removes all aliases from the current PowerShell session, except for aliases with the
+    **Options** property set to **Constant**. After the command is run, the aliases are available in
+    other PowerShell sessions or new PowerShell sessions.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Indicates that the cmdlet removes an alias, including aliases with the **Option** property set to
+    **ReadOnly**. The **Force** parameter can't remove an alias with an **Option** property set to
+    **Constant**.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the alias to remove.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Scope
+  description: |+
+    Affects only the aliases in the specified scope. The default scope is **Local**. For more
+    information, see [about_Scopes](../microsoft.powershell.core/about/about_scopes.md).
+
+    The acceptable values for this parameter are:
+
+    - Global
+    - Local
+    - Script
+    - A number relative to the current scope (0 through the number of scopes, where 0 is the current
+      scope and 1 is its parent)
+
+  defaultValue: Local
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Remove-Alias
+name: Remove-Alias
+description: |-
+  The `Remove-Alias` cmdlet removes an alias from the current PowerShell session. To remove an alias
+  with the **Option** property set to **ReadOnly**, use the **Force** parameter.
+
+  The `Remove-Alias` cmdlet was introduced in PowerShell 6.0.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 10/24/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-alias?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Remove-Alias

@@ -1,0 +1,135 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Waits for the processes to be stopped before accepting more input.
+module: Microsoft.PowerShell.Management
+notes: |-
+  The cmdlet is only supported on Windows platforms.
+
+  This cmdlet uses the **WaitForExit** method of the **System.Diagnostics.Process** class.
+inputs:
+- name: <xref href="System.Diagnostics.Process" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a process object to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+links:
+- text: Debug-Process
+  href: Debug-Process.yml
+- text: Get-Process
+  href: Get-Process.yml
+- text: Start-Process
+  href: Start-Process.yml
+- text: Stop-Process
+  href: Stop-Process.yml
+- text: Wait-Process
+  href: Wait-Process.yml
+syntaxes:
+- Wait-Process [-Name] <String[]> [[-Timeout] <Int32>] [<CommonParameters>]
+- Wait-Process [-Id] <Int32[]> [[-Timeout] <Int32>] [<CommonParameters>]
+- Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
+examples:
+- title: 'Example 1: Stop a process and wait'
+  code: |-
+    PS C:\> $nid = (Get-Process notepad).id
+    PS C:\> Stop-Process -Id $nid
+    PS C:\> Wait-Process -Id $nid
+  description: |-
+    This example stops the Notepad process and then waits for the process to be stopped before it continues with the next command.
+
+    The first command uses the **Get-Process** cmdlet to get the ID of the Notepad process.
+    It stores the ID in the $nid variable.
+
+    The second command uses the Stop-Process cmdlet to stop the process with the ID stored in $nid.
+
+    The third command uses **Wait-Process** to wait until the Notepad process is stopped.
+    It uses the *Id* parameter of **Wait-Process** to identify the process.
+  summary: ""
+- title: 'Example 2: Specifying a process'
+  code: |-
+    PS C:\> $p = Get-Process notepad
+    PS C:\> Wait-Process -Id $p.id
+    PS C:\> Wait-Process -Name "notepad"
+    PS C:\> Wait-Process -InputObject $p
+  description: |-
+    These commands show three different methods of specifying a process to **Wait-Process**.
+    The first command gets the Notepad process and stores it in the $p variable.
+
+    The second command uses the *Id* parameter, the third command uses the *Name* parameter, and the fourth command uses the *InputObject* parameter.
+
+    These commands have the same results and can be used interchangeably.
+  summary: ""
+- title: 'Example 3: Wait for processes for a specified time'
+  code: |-
+    PS C:\> Wait-Process -Name outlook, winword -Timeout 30
+  description: |-
+    This command waits 30 seconds for the Outlook and Winword processes to stop.
+    If both processes are not stopped, the cmdlet displays a non-terminating error and the command prompt.
+  summary: ""
+parameters:
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Id
+  isRequired: true
+  description: |+
+    Specifies the process IDs of the processes.
+    To specify multiple IDs, use commas to separate the IDs.
+    To find the PID of a process, type `Get-Process`.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: PID, ProcessId
+  parameterValueGroup: ""
+- type: <xref href="System.Diagnostics.Process" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies the processes by submitting process objects.
+    Enter a variable that contains the process objects, or type a command or expression that gets the process objects, such as the Get-Process cmdlet.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the process names of the processes.
+    To specify multiple names, use commas to separate the names.
+    Wildcard characters are not supported.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ProcessName
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: Timeout
+  description: |+
+    Specifies the maximum time, in seconds, that this cmdlet waits for the specified processes to stop.
+    When this interval expires, the command displays a non-terminating error that lists the processes that are still running, and ends the wait.
+    By default, there is no time-out.
+
+  defaultValue: None
+  position: "1"
+  aliases: TimeoutSec
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Wait-Process
+name: Wait-Process
+description: |-
+  The **Wait-Process** cmdlet waits for one or more running processes to be stopped before accepting input.
+  In the PowerShell console, this cmdlet suppresses the command prompt until the processes are stopped.
+  You can specify a process by process name or process ID (PID), or pipe a process object to **Wait-Process**.
+
+  **Wait-Process** works only on processes running on the local computer.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/wait-process?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Wait-Process

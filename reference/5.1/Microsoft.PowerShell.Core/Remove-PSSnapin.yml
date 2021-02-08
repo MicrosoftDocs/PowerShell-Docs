@@ -1,0 +1,107 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Removes Windows PowerShell snap-ins from the current session.
+module: Microsoft.PowerShell.Core
+notes: |-
+  * **Remove-PSSnapin** does not check the version of Windows PowerShell before removing a snap-in from the session. If a snap-in cannot be removed, a warning appears and the command fails.
+  * **Remove-PSSnapin** affects only the current session. If you have added an Add-PSSnapin command to your Windows PowerShell profile, you should delete the command to remove the snap-in from future sessions. For instructions, type `Get-Help about_Profiles`.
+inputs:
+- name: <xref href="System.Management.Automation.PSSnapInInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a snap-in object to this cmdlet.
+outputs:
+- name: <xref href="None, System.Management.Automation.PSSnapInInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet generates a **System.Management.Automation.PSSnapInInfo** object that represents the snap-in, if you specify the *PassThru* parameter.
+    By default, **Remove-PSSnapin** does not generate any output.
+links:
+- text: Add-PSSnapin
+  href: Add-PSSnapin.yml
+- text: Get-PSSnapin
+  href: Get-PSSnapin.yml
+syntaxes:
+- Remove-PSSnapin [-Name] <String[]> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Remove a snap-in'
+  code: |-
+    PS C:\> remove-pssnapin -Name Microsoft.Exchange
+  description: |-
+    This command removes the **Microsoft.Exchange** snap-in from the current session.
+    When the command is complete, the cmdlets and providers that the snap-in supported are not available in the session.
+  summary: ""
+- title: 'Example 2: Remove snap-ins by using names with the pipeline'
+  code: |-
+    PS C:\> Get-PSSnapIn smp* | Remove-PSSnapIn
+  description: |-
+    This command removes the Windows PowerShell snap-ins that have names that start with smp from the current session.
+
+    The command uses the **Get-PSSnapin** cmdlet to get objects that represent the snap-ins.
+    The pipeline operator (|) sends the results to the **Remove-PSSnapin** cmdlet, which removes them from the session.
+    The providers and cmdlets that this snap-in supports are no longer available in the session.
+
+    When you pipe objects to **Remove-PSSnapin**, the names of the objects are associated with the *Name* parameter, which accepts objects from the pipeline that have a **Name** property.
+  summary: ""
+- title: 'Example 3: Remove snap-ins by using names'
+  code: |-
+    PS C:\> Remove-PSSnapin -Name *event*
+  description: |-
+    This command removes all Windows PowerShell snap-ins that have names that include event.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the names of Windows PowerShell snap-ins to remove from the current session.
+    Wildcard characters (*) are permitted.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object that represents the snap-in.
+    By default, this cmdlet does not generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Core.Remove-PSSnapin
+name: Remove-PSSnapin
+description: |-
+  The **Remove-PSSnapin** cmdlet removes a Windows PowerShell snap-in from the current session.
+  You can use it to remove snap-ins that you have added to Windows PowerShell You cannot use this cmdlet to remove the snap-ins that are installed with Windows PowerShell.
+
+  After you remove a snap-in from the current session, the snap-in is still loaded, but the cmdlets and providers in the snap-in are no longer available in the session.
+metadata:
+  external help file: System.Management.Automation.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/remove-pssnapin?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Remove-PSSnapin

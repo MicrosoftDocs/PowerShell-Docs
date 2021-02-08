@@ -1,0 +1,71 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Removes a key binding.
+module: PSReadLine
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe objects to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Get-PSReadLineKeyHandler
+  href: Get-PSReadLineKeyHandler.yml
+- text: Get-PSReadLineOption
+  href: Get-PSReadLineOption.yml
+- text: Set-PSReadLineOption
+  href: Set-PSReadLineOption.yml
+- text: Set-PSReadLineKeyHandler
+  href: Set-PSReadLineKeyHandler.yml
+syntaxes:
+- Remove-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Remove a binding'
+  code: |-
+    Remove-PSReadLineKeyHandler -Chord Ctrl+B
+  description: |-
+    This command removes the binding from the key combination, or chord, `Ctrl+B`. The `Ctrl+B` chord is
+    created in the `Set-PSReadLineKeyHandler` article.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Chord
+  isRequired: true
+  description: |+
+    Specifies an array of keys or sequences of keys to be removed. A single binding is specified by
+    using a single string. If the binding is a sequence of keys, separate the keys by a comma, as in
+    the following example:
+
+    `Ctrl+x,Ctrl+l`
+
+    This parameter accepts an array of strings. Each string is a separate binding, not a sequence of
+    keys for a single binding.
+
+  defaultValue: None
+  position: "0"
+  aliases: Key
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.ViMode" data-throw-if-not-resolved="False" />
+  name: ViMode
+  description: |+
+    Specify which vi mode the binding applies to. Possible values are: Insert, Command.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Insert, Command
+uid: PSReadLine.Remove-PSReadLineKeyHandler
+name: Remove-PSReadLineKeyHandler
+description: |-
+  The `Remove-PSReadLineKeyHandler` cmdlet removes a specified key binding.
+metadata:
+  external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSReadLine
+  ms.date: 12/07/2018
+  online version: https://docs.microsoft.com/powershell/module/psreadline/remove-psreadlinekeyhandler?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Remove-PSReadLineKeyHandler

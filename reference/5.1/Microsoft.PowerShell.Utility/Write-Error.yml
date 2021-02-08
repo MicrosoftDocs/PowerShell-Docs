@@ -1,0 +1,269 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Writes an object to the error stream.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  `Write-Error` does not change the value of the `$?` automatic variable, therefore it does not signal
+  a terminating error condition. To signal a terminating error, use the
+  [$PSCmdlet.WriteError()](/dotnet/api/system.management.automation.cmdlet.writeerror) method.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains an error message to `Write-Error`.
+outputs:
+- name: <xref href="Error object" data-throw-if-not-resolved="False" />
+  description: |-
+    `Write-Error` writes only to the error stream. It does not return any objects.
+links:
+- text: about_Automatic_Variables
+  href: ../microsoft.powershell.core/about/about_automatic_variables.md
+- text: about_Output_Streams
+  href: ../Microsoft.PowerShell.Core/About/about_Output_Streams.md
+- text: about_Redirection
+  href: ../Microsoft.PowerShell.Core/About/about_Redirection.md
+- text: Write-Debug
+  href: Write-Debug.yml
+- text: Write-Host
+  href: Write-Host.yml
+- text: Write-Output
+  href: Write-Output.yml
+- text: Write-Progress
+  href: Write-Progress.yml
+- text: Write-Verbose
+  href: Write-Verbose.yml
+- text: Write-Warning
+  href: Write-Warning.yml
+syntaxes:
+- >-
+  Write-Error [-Message] <String> [-Category <ErrorCategory>] [-ErrorId <String>] [-TargetObject <Object>]
+
+   [-RecommendedAction <String>] [-CategoryActivity <String>] [-CategoryReason <String>]
+
+   [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
+- >-
+  Write-Error -Exception <Exception> [-Message <String>] [-Category <ErrorCategory>] [-ErrorId <String>]
+
+   [-TargetObject <Object>] [-RecommendedAction <String>] [-CategoryActivity <String>] [-CategoryReason <String>]
+
+   [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
+- >-
+  Write-Error -ErrorRecord <ErrorRecord> [-RecommendedAction <String>] [-CategoryActivity <String>]
+
+   [-CategoryReason <String>] [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Write an error for RegistryKey object'
+  code: |-
+    Get-ChildItem | ForEach-Object {
+        if ($_.GetType().ToString() -eq "Microsoft.Win32.RegistryKey")
+        {
+            Write-Error "Invalid object" -ErrorId B1 -TargetObject $_
+        }
+        else
+        {
+            $_
+        }
+    }
+  description: |-
+    This command declares a non-terminating error when the `Get-ChildItem` cmdlet returns a
+    `Microsoft.Win32.RegistryKey` object, such as the objects in the `HKLM:` or `HKCU:` drives of the
+    PowerShell Registry provider.
+  summary: ""
+- title: 'Example 2: Write an error message to the console'
+  code: |-
+    Write-Error "Access denied."
+  description: |-
+    This command declares a non-terminating error and writes an "Access denied" error. The command uses
+    the **Message** parameter to specify the message, but omits the optional **Message** parameter name.
+  summary: ""
+- title: 'Example 3: Write an error to the console and specify the category'
+  code: |-
+    Write-Error -Message "Error: Too many input values." -Category InvalidArgument
+  description: |-
+    This command declares a non-terminating error and specifies an error category.
+  summary: ""
+- title: 'Example 4: Write an error using an Exception object'
+  code: |-
+    $E = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="https://go.microsoft.com/fwlink/?LinkID=113425"}
+    Write-Error -Exception $E -Message "Files not found. The $Files location does not contain any XML files."
+  description: |-
+    This command uses an **Exception** object to declare a non-terminating error.
+
+    The first command uses a hash table to create the **System.Exception** object. It saves the
+    exception object in the `$E` variable. You can use a hash table to create any object of a type that
+    has a null constructor.
+
+    The second command uses the `Write-Error` cmdlet to declare a non-terminating error. The value of
+    the **Exception** parameter is the **Exception** object in the `$E` variable.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.ErrorCategory" data-throw-if-not-resolved="False" />
+  name: Category
+  description: |+
+    Specifies the category of the error. The default value is **NotSpecified**. The acceptable values
+    for this parameter are:
+
+    - NotSpecified
+    - OpenError
+    - CloseError
+    - DeviceError
+    - DeadlockDetected
+    - InvalidArgument
+    - InvalidData
+    - InvalidOperation
+    - InvalidResult
+    - InvalidType
+    - MetadataError
+    - NotImplemented
+    - NotInstalled
+    - ObjectNotFound
+    - OperationStopped
+    - OperationTimeout
+    - SyntaxError
+    - ParserError
+    - PermissionDenied
+    - ResourceBusy
+    - ResourceExists
+    - ResourceUnavailable
+    - ReadError
+    - WriteError
+    - FromStdErr
+    - SecurityError
+    - ProtocolError
+    - ConnectionError
+    - AuthenticationError
+    - LimitsExceeded
+    - QuotaExceeded
+    - NotEnabled
+
+    For information about the error categories, see [ErrorCategory Enumeration](https://go.microsoft.com/fwlink/?LinkId=143600).
+
+  defaultValue: NotSpecified
+  position: Named
+  aliases: ""
+  parameterValueGroup: NotSpecified, OpenError, CloseError, DeviceError, DeadlockDetected, InvalidArgument, InvalidData, InvalidOperation, InvalidResult, InvalidType, MetadataError, NotImplemented, NotInstalled, ObjectNotFound, OperationStopped, OperationTimeout, SyntaxError, ParserError, PermissionDenied, ResourceBusy, ResourceExists, ResourceUnavailable, ReadError, WriteError, FromStdErr, SecurityError, ProtocolError, ConnectionError, AuthenticationError, LimitsExceeded, QuotaExceeded, NotEnabled
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: CategoryActivity
+  description: |+
+    Specifies the action that caused the error.
+
+  defaultValue: None
+  position: Named
+  aliases: Activity
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: CategoryReason
+  description: |+
+    Specifies how or why the activity caused the error.
+
+  defaultValue: None
+  position: Named
+  aliases: Reason
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: CategoryTargetName
+  description: |+
+    Specifies the name of the object that was being processed when the error occurred.
+
+  defaultValue: None
+  position: Named
+  aliases: TargetName
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: CategoryTargetType
+  description: |+
+    Specifies the type of the object that was being processed when the error occurred.
+
+  defaultValue: None
+  position: Named
+  aliases: TargetType
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ErrorId
+  description: |+
+    Specifies an ID string to identify the error. The string should be unique to the error.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.ErrorRecord" data-throw-if-not-resolved="False" />
+  name: ErrorRecord
+  isRequired: true
+  description: |+
+    Specifies an error record object that represents the error. Use the properties of the object to
+    describe the error.
+
+    To create an error record object, use the `New-Object` cmdlet or get an error record object from the
+    array in the `$Error` automatic variable.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Exception" data-throw-if-not-resolved="False" />
+  name: Exception
+  isRequired: true
+  description: |+
+    Specifies an exception object that represents the error. Use the properties of the object to
+    describe the error.
+
+    To create an exception object, use a hash table or use the `New-Object` cmdlet.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Message
+  description: |+
+    Specifies the message text of the error. If the text includes spaces or special characters, enclose
+    it in quotation marks. You can also pipe a message string to `Write-Error`.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: Msg
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RecommendedAction
+  description: |+
+    Specifies the action that the user should take to resolve or prevent the error.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: TargetObject
+  description: |+
+    Specifies the object that was being processed when the error occurred. Enter the object, a variable
+    that contains the object, or a command that gets the object.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Write-Error
+name: Write-Error
+description: |-
+  The `Write-Error` cmdlet declares a non-terminating error. By default, errors are sent in the error
+  stream to the host program to be displayed, along with output.
+
+  To write a non-terminating error, enter an error message string, an **ErrorRecord** object, or an
+  **Exception** object. Use the other parameters of `Write-Error` to populate the error record.
+
+  Non-terminating errors write an error to the error stream, but they do not stop command processing.
+  If a non-terminating error is declared on one item in a collection of input items, the command
+  continues to process the other items in the collection.
+
+  To declare a terminating error, use the `Throw` keyword.
+  For more information, see [about_Throw](../Microsoft.PowerShell.Core/About/about_Throw.md).
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 10/14/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-error?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Write-Error

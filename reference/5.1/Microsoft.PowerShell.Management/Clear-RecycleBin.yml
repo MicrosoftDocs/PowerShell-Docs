@@ -1,0 +1,98 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Clears the contents of a recycle bin.
+module: Microsoft.PowerShell.Management
+notes: ""
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+syntaxes:
+- Clear-RecycleBin [[-DriveLetter] <String[]>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: '1: Clear all recycle bins'
+  code: |-
+    Clear-RecycleBin
+
+    Confirm
+    Are you sure you want to perform this action?
+    Performing the operation "Clear-RecycleBin" on target "All of the contents of the Recycle Bin".
+    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
+  description: |-
+    `Clear-RecycleBin` prompts the user for confirmation to clear all recycle bins on the local
+    computer.
+  summary: |+
+    In this example, all the local computer's recycle bins are cleared.
+
+- title: '2: Clear a specified recycle bin'
+  code: |-
+    Clear-RecycleBin -DriveLetter C
+  description: |-
+    `Clear-RecycleBin` uses the **DriveLetter** parameter to specify the recycle bin on the **C**
+    volume. The user is prompted for confirmation to run the command.
+  summary: |+
+    This example clears the recycle bin for a specified drive letter.
+
+- title: '3: Clear all recycle bins without confirmation'
+  code: |-
+    Clear-RecycleBin -Force
+  description: |-
+    `Clear-RecycleBin` uses the **Force** parameter and doesn't prompt the user for confirmation to
+    clear all recycle bins on the local computer.
+
+    An alternative is to replace `-Force` with `-Confirm:$false`.
+  summary: |+
+    This example doesn't prompt for confirmation to clear the local computer's recycle bins.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts for user confirmation before running the cmdlet. The user is prompted for confirmation even
+    if the **Confirm** parameter isn't specified.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: DriveLetter
+  description: |+
+    Specifies the recycle bin to clear for a single drive letter or an array of drive letters.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Specifies that the user isn't prompted for confirmation to clear a recycle bin. The **Force**
+    parameter also overrides the **WhatIf** and **Confirm** parameters.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if `Clear-RecycleBin` runs. The cmdlet isn't run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Clear-RecycleBin
+name: Clear-RecycleBin
+description: |-
+  The `Clear-RecycleBin` cmdlet deletes the content of a computer's recycle bin. This action is like
+  using Windows **Empty Recycle Bin**.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 01/29/2021
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-recyclebin?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Clear-RecycleBin

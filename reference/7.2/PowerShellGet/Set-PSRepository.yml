@@ -1,0 +1,167 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Sets values for a registered repository.
+module: PowerShellGet
+notes: |-
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Get-PSRepository
+  href: Get-PSRepository.yml
+- text: Register-PSRepository
+  href: Register-PSRepository.yml
+- text: Unregister-PSRepository
+  href: Unregister-PSRepository.yml
+syntaxes:
+- >-
+  Set-PSRepository [-Name] <String> [[-SourceLocation] <Uri>] [-PublishLocation <Uri>]
+
+   [-ScriptSourceLocation <Uri>] [-ScriptPublishLocation <Uri>] [-Credential <PSCredential>]
+
+   [-InstallationPolicy <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+
+   [-PackageManagementProvider <String>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Set the installation policy for a repository'
+  code: |-
+    Set-PSRepository -Name "myInternalSource" -InstallationPolicy Trusted
+  description: |-
+    This command sets the installation policy for the **myInternalSource** repository to **Trusted**, so
+    that you are not prompted before installing modules from that source.
+  summary: ""
+- title: 'Example 2: Set the source and publish locations for a repository'
+  code: |-
+    Set-PSRepository -Name "myInternalSource" -SourceLocation 'https://someNuGetUrl.com/api/v2' -PublishLocation 'https://someNuGetUrl.com/api/v2/packages'
+  description: |-
+    This command sets the source location and publish location for **myInternalSource** to the specified
+    URIs.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: ""
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: InstallationPolicy
+  description: |+
+    Specifies the installation policy. Valid values are: **Trusted**, **Untrusted**.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Trusted, Untrusted
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the repository.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: PackageManagementProvider
+  description: |+
+    Specifies the package management provider.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: Proxy
+  description: |+
+    Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: ProxyCredential
+  description: |+
+    Specifies a user account that has permission to use the proxy server that is specified by the
+    **Proxy** parameter.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: PublishLocation
+  description: |+
+    Specifies the URI of the publish location. For example, for NuGet-based repositories, the publish
+    location is similar to `https://someNuGetUrl.com/api/v2/Packages`.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: ScriptPublishLocation
+  description: |+
+    Specifies the script publish location.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: ScriptSourceLocation
+  description: |+
+    Specifies the script source location.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: SourceLocation
+  description: |+
+    Specifies the URI for discovering and installing modules from this repository. For example, for
+    NuGet-based repositories, the source location is similar to `https://someNuGetUrl.com/api/v2`.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+uid: PowerShellGet.Set-PSRepository
+name: Set-PSRepository
+description: |-
+  The `Set-PSRepository` cmdlet sets values for a registered module repository. The settings are
+  persistent for the current user and apply to all versions of PowerShell installed for that user.
+metadata:
+  external help file: PSModule-help.xml
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 04/22/2020
+  online version: https://docs.microsoft.com/powershell/module/powershellget/set-psrepository?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Set-PSRepository

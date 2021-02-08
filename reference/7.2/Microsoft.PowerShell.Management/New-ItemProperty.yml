@@ -1,0 +1,288 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates a new property for an item and sets its value.
+module: Microsoft.PowerShell.Management
+notes: |-
+  `New-ItemProperty` is designed to work with the data exposed by any provider. To list the providers
+  available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe input to this cmdlet.
+outputs:
+- name: <xref href="System.Management.Automation.PSCustomObject" data-throw-if-not-resolved="False" />
+  description: |-
+    `New-ItemProperty` returns a custom object that contains the new property.
+links:
+- text: Clear-ItemProperty
+  href: Clear-ItemProperty.yml
+- text: Copy-ItemProperty
+  href: Copy-ItemProperty.yml
+- text: Get-ItemProperty
+  href: Get-ItemProperty.yml
+- text: Move-ItemProperty
+  href: Move-ItemProperty.yml
+- text: Remove-ItemProperty
+  href: Remove-ItemProperty.yml
+- text: Rename-ItemProperty
+  href: Rename-ItemProperty.yml
+- text: Set-ItemProperty
+  href: Set-ItemProperty.yml
+- text: about_Providers
+  href: ../Microsoft.PowerShell.Core/About/about_Providers.md
+syntaxes:
+- >-
+  New-ItemProperty [-Path] <String[]> [-Name] <String> [-PropertyType <String>] [-Value <Object>] [-Force]
+
+   [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf]
+
+   [-Confirm] [<CommonParameters>]
+- >-
+  New-ItemProperty -LiteralPath <String[]> [-Name] <String> [-PropertyType <String>] [-Value <Object>] [-Force]
+
+   [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf]
+
+   [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Add a registry entry'
+  code: |-
+    New-ItemProperty -Path "HKLM:\Software\MyCompany" -Name "NoOfEmployees" -Value 822
+    Get-ItemProperty "HKLM:\Software\MyCompany"
+
+    PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\mycompany
+    PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software
+    PSChildName   : mycompany
+    PSDrive       : HKLM
+    PSProvider    : Microsoft.PowerShell.Core\Registry
+    NoOfLocations : 2
+    NoOfEmployees : 822
+  description: ""
+  summary: |+
+    This command adds a new registry entry, "NoOfEmployees", to the "MyCompany" key of the
+    "HKLM:\Software hive".
+
+    The first command uses the **Path** parameter to specify the path of the "MyCompany" registry key.
+    It uses the **Name** parameter to specify a name for the entry and the **Value** parameter to
+    specify its value.
+
+    The second command uses the `Get-ItemProperty` cmdlet to see the new registry entry.
+
+- title: 'Example 2: Add a registry entry to a key'
+  code: |-
+    Get-Item -Path "HKLM:\Software\MyCompany" | New-ItemProperty -Name NoOfLocations -Value 3
+  description: |-
+    This command works because the parameter-binding feature of PowerShell associates the path of the
+    `RegistryKey` object that `Get-Item` returns with the **LiteralPath** parameter of
+    `New-ItemProperty`. For more information, see [about_Pipelines](../Microsoft.PowerShell.Core/About/about_pipelines.md).
+  summary: |+
+    This command adds a new registry entry to a registry key.
+    To specify the key, it uses a pipeline operator (`|`) to send an object that represents the key to
+    `New-ItemProperty`.
+
+    The first part of the command uses the `Get-Item` cmdlet to get the "MyCompany" registry key.
+    The pipeline operator sends the results of the command to `New-ItemProperty`, which adds the new
+    registry entry ("NoOfLocations"), and its value (3), to the "MyCompany" key.
+
+- title: 'Example 3: Create a MultiString value in the registry using a Here-String'
+  code: |-
+    $newValue = New-ItemProperty -Path "HKLM:\SOFTWARE\ContosoCompany\" -Name 'HereString' -PropertyType MultiString -Value @"
+    This is text which contains newlines
+    It can also contain "quoted" strings
+    "@
+    $newValue.multistring
+
+    This is text which contains newlines
+    It can also contain "quoted" strings
+  description: ""
+  summary: |+
+    This example creates a MultiString value using a Here-String.
+
+- title: 'Example 4: Create a MultiString value in the registry using an array'
+  code: |-
+    $newValue = New-ItemProperty -Path "HKLM:\SOFTWARE\ContosoCompany\" -Name 'MultiString' -PropertyType MultiString -Value ('a','b','c')
+    $newValue.multistring[0]
+
+    a
+  description: ""
+  summary: |+
+    The example shows how to use an array of values to create the `MultiString` value.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    > [!NOTE]
+    > This parameter is not supported by any providers installed with PowerShell.
+    > To impersonate another user, or elevate your credentials when running this cmdlet,
+    > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.yml).
+
+  defaultValue: Current user
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Exclude
+  description: |+
+    Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+    of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+    `*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+    command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+    specifies the contents of the `C:\Windows` directory.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Filter
+  description: |+
+    Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+    provider is the only installed PowerShell provider that supports the use of filters. You can find
+    the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
+    Filters are more efficient than other parameters, because the provider applies them when the cmdlet
+    gets the objects rather than having PowerShell filter the objects after they are retrieved.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the cmdlet to create a property on an object that cannot otherwise be accessed by the user.
+    Implementation varies from provider to provider.
+    For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Include
+  description: |+
+    Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+    of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+    `"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+    command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+    specifies the contents of the `C:\Windows` directory.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+    typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
+    it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
+    as escape sequences.
+
+    For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath, LP
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies a name for the new property.
+    If the property is a registry entry, this parameter specifies the name of the entry.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: PSProperty
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path of the item.
+    Wildcard characters are permitted.
+    This parameter identifies the item to which this cmdlet adds the new property.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: PropertyType
+  description: |+
+    Specifies the type of property that this cmdlet adds.
+    The acceptable values for this parameter are:
+
+    - **String**: Specifies a null-terminated string. Equivalent to **REG_SZ**.
+    - **ExpandString**: Specifies a null-terminated string that contains unexpanded references to
+      environment variables that are expanded when the value is retrieved. Equivalent to
+      **REG_EXPAND_SZ**.
+    - **Binary**: Specifies binary data in any form. Equivalent to **REG_BINARY**.
+    - **DWord**: Specifies a 32-bit binary number. Equivalent to **REG_DWORD**.
+    - **MultiString**: Specifies an array of null-terminated strings terminated by two null characters.
+      Equivalent to **REG_MULTI_SZ**.
+    - **Qword**: Specifies a 64-bit binary number. Equivalent to **REG_QWORD**.
+    - **Unknown**: Indicates an unsupported registry data type, such as **REG_RESOURCE_LIST**.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: Type
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: Value
+  description: |+
+    Specifies the property value.
+    If the property is a registry entry, this parameter specifies the value of the entry.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.New-ItemProperty
+name: New-ItemProperty
+description: |-
+  The `New-ItemProperty` cmdlet creates a new property for a specified item and sets its value.
+  Typically, this cmdlet is used to create new registry values, because registry values are properties
+  of a registry key item.
+
+  This cmdlet does not add properties to an object.
+
+  - To add a property to an instance of an object, use the `Add-Member` cmdlet.
+  - To add a property to all objects of a particular type, modify the Types.ps1xml file.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 05/14/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-itemproperty?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: New-ItemProperty

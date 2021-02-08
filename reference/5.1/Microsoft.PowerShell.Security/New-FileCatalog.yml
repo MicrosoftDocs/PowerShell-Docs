@@ -1,0 +1,108 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  `New-FileCatalog` creates a catalog file of file hashes that can be used to validate the
+  authenticity of a file.
+module: Microsoft.PowerShell.Security
+notes: |-
+  This cmdlet is only available on Windows platforms.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    The pipeline takes a string that is used as the catalog filename.
+outputs:
+- name: <xref href="System.IO.FileInfo" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Test-FileCatalog
+  href: Test-FileCatalog.yml
+- text: PowerShellGet
+  href: /powerShell/module/powershellget
+syntaxes:
+- >-
+  New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <String[]>] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Create a file catalog for `Microsoft.PowerShell.Utility`'
+  code: |-
+    New-FileCatalog -Path $PSHOME\Modules\Microsoft.PowerShell.Utility -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -CatalogVersion 2.0
+
+    Mode                LastWriteTime         Length Name
+    ----                -------------         ------ ----
+    -a----         11/2/2018 11:58 AM            950 Microsoft.PowerShell.Utility.cat
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: CatalogFilePath
+  isRequired: true
+  description: |+
+    A path to a file or folder where the catalog file (.cat) should be placed. If a folder path is
+    specified, the default filename `catalog.cat` will be used.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: CatalogVersion
+  description: |+
+    Accepts `1.0` or `2.0` as possible values for specifying the catalog version. `1.0` should be used
+    avoided whenever possible, as it uses the insecure SHA-1 hash algorithm, while `2.0` uses the secure
+    SHA-256 algorithm However, `1.0` is the only supported algorithm on Windows 7 and Server 2008R2.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Path
+  description: |+
+    Accepts a path or array of paths to files or folders that should be included in the catalog file. If
+    a folder is specified, all the files in the folder will be included as well.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Security.New-FileCatalog
+name: New-FileCatalog
+description: |-
+  `New-FileCatalog` creates a [Windows catalog file](/windows-hardware/drivers/install/catalog-files)
+  for a set of folders and files. This catalog file contains hashes for all files in the provided
+  paths. Users can then distribute the catalog with their files so that users can validate whether any
+  changes have been made to the folders since catalog creation time.
+
+  Catalog versions 1 and 2 are supported. Version 1 uses the (deprecated) SHA1 hashing algorithm to
+  create file hashes, and version 2 uses SHA256. Catalog version 2 is not supported on Windows Server
+  2008 R2 or Windows 7. You should use catalog version 2 on Windows 8, Windows Server 2012, and later
+  operating systems.
+metadata:
+  external help file: Microsoft.PowerShell.Security.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Security
+  ms.date: 11/02/2018
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: New-FileCatalog

@@ -1,0 +1,234 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Sets the colors and styles used for rendering Markdown content in the console.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  The string values used to define the color and style must match the regular expression
+  `^\[*[0-9;]*?m{1}`.
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="Microsoft.PowerShell.MarkdownRender.PSMarkdownOptionInfo" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Get-MarkdownOption
+  href: Get-MarkdownOption.yml
+- text: ConvertFrom-Markdown
+  href: ConvertFrom-Markdown.yml
+- text: Show-Markdown
+  href: Show-Markdown.yml
+- text: ANSI_escape_code
+  href: https://en.wikipedia.org/wiki/ANSI_escape_code
+- text: CommonMark
+  href: https://commonmark.org/
+syntaxes:
+- >-
+  Set-MarkdownOption [-Header1Color <String>] [-Header2Color <String>] [-Header3Color <String>]
+
+   [-Header4Color <String>] [-Header5Color <String>] [-Header6Color <String>] [-Code <String>]
+
+   [-ImageAltTextForegroundColor <String>] [-LinkForegroundColor <String>]
+
+   [-ItalicsForegroundColor <String>] [-BoldForegroundColor <String>] [-PassThru]
+
+   [<CommonParameters>]
+- Set-MarkdownOption [-PassThru] -Theme <String> [<CommonParameters>]
+- Set-MarkdownOption [-PassThru] [-InputObject] <PSObject> [<CommonParameters>]
+examples:
+- title: Example 1 - Switch to the Light Theme
+  code: |-
+    Set-MarkdownOption -Theme Light -PassThru
+
+    Header1         : [7m
+    Header2         : [4;33m
+    Header3         : [4;34m
+    Header4         : [4;35m
+    Header5         : [4;36m
+    Header6         : [4;30m
+    Code            : [48;2;155;155;155;38;2;30;30;30m
+    Link            : [4;38;5;117m
+    Image           : [33m
+    EmphasisBold    : [1m
+    EmphasisItalics : [36m
+  description: ""
+  summary: |+
+    This example selects the **Light** theme and displays the new configuration using the **PassThru**
+    parameter.
+
+- title: Example 2 - Customize the color and style settings
+  code: |-
+    $mdOptions = Get-MarkdownOption
+    $mdOptions.Header2 = '[93m'
+    $mdOptions.Header3 = '[94m'
+    $mdOptions.Header4 = '[95m'
+    $mdOptions.Header5 = '[96m'
+    $mdOptions.Header6 = '[97m'
+    Set-MarkdownOption -InputObject $mdOptions -PassThru
+
+    Header1         : [7m
+    Header2         : [93m
+    Header3         : [94m
+    Header4         : [95m
+    Header5         : [96m
+    Header6         : [97m
+    Code            : [48;2;155;155;155;38;2;30;30;31m
+    Link            : [4;38;5;117m
+    Image           : [33m
+    EmphasisBold    : [1m
+    EmphasisItalics : [36m
+  description: ""
+  summary: |+
+    This example changes the escape code for the Markdown headers. The default configuration for headers
+    renders them as underlined text of various colors. This change removes the underline style.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: BoldForegroundColor
+  description: |+
+    Sets the foreground color for rendering bold Markdown text.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Code
+  description: |+
+    Sets the color for rendering code blocks and spans in Markdown text.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Header1Color
+  description: |+
+    Sets the color for rendering Header1 blocks in Markdown text.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Header2Color
+  description: |+
+    Sets the color for rendering Header2 blocks in Markdown text.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Header3Color
+  description: |+
+    Sets the color for rendering Header3 blocks in Markdown text.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Header4Color
+  description: |+
+    Sets the color for rendering Header4 blocks in Markdown text.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Header5Color
+  description: |+
+    Sets the color for rendering Header5 blocks in Markdown text.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Header6Color
+  description: |+
+    Sets the color for rendering Header6 blocks in Markdown text.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ImageAltTextForegroundColor
+  description: |+
+    Sets the foreground color for rendering the alternate text of an image element in Markdown text.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  name: InputObject
+  isRequired: true
+  description: |+
+    A **PSMarkdownOptionInfo** object containing the configuration to be set.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ItalicsForegroundColor
+  description: |+
+    Sets the foreground color for rendering the italics in Markdown text.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LinkForegroundColor
+  description: |+
+    Sets the foreground color for rendering hyperlinks in Markdown text.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Causes the cmdlet to output a **PSMarkdownOptionInfo** object containing the new configuration.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Theme
+  isRequired: true
+  description: |+
+    Selects a theme containing predefined color settings. The possible values are **Dark** and
+    **Light**.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Dark, Light
+uid: Microsoft.PowerShell.Utility.Set-MarkdownOption
+name: Set-MarkdownOption
+description: |-
+  Sets the colors and styles used for rendering Markdown content in the console. These styles are
+  defined using ANSI escape codes that change the color and style of the Markdown text being rendered.
+
+  For more information about Markdown, see the [CommonMark](https://commonmark.org/) website.
+
+  > [!NOTE]
+  > The string values used in the settings are the characters that follow the **Escape** character
+  > (`[char]0x1B`) for the ANSI escape sequence. Do not include the **Escape** character in the
+  > string. For more information about ANSI escape codes work, see
+  > [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Module Name: Microsoft.PowerShell.Utility
+  online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption?view=powershell-7.x.0&WT.mc_id=ps-gethelp
+  ms.date: 01/30/2020
+  schema: 2.0.0

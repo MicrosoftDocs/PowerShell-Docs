@@ -1,0 +1,146 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Deletes temporary PowerShell drives and disconnects mapped network drives.
+module: Microsoft.PowerShell.Management
+notes: |-
+  - The `Remove-PSDrive` cmdlet is designed to work with the data exposed by any PowerShell provider. To list the providers in your session, use the `Get-PSProvider` cmdlet. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+inputs:
+- name: <xref href="System.Management.Automation.PSDriveInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a drive object, such as one from the `Get-PSDrive` cmdlet, to the `Remove-PSDrive` cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not return any output.
+links:
+- text: Get-PSDrive
+  href: Get-PSDrive.yml
+- text: New-PSDrive
+  href: New-PSDrive.yml
+- text: about_Providers
+  href: ../Microsoft.PowerShell.Core/About/about_Providers.md
+syntaxes:
+- >-
+  Remove-PSDrive [-Name] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-Force]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Remove-PSDrive [-LiteralName] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-Force]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Remove a file system drive'
+  code: |-
+    Remove-PSDrive -Name smp
+  description: ""
+  summary: |+
+    This command removes a temporary file system drive named "smp".
+
+- title: 'Example 2: Remove mapped network drives'
+  code: |-
+    Get-PSDrive X, S | Remove-PSDrive
+  description: ""
+  summary: |+
+    This command uses `Remove-PSDrive` to disconnect the X: and S: mapped network drives.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Removes the current PowerShell drive.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: LiteralName
+  isRequired: true
+  description: |+
+    Specifies the name of the drive.
+
+    The value of **LiteralName** is used exactly as typed.
+    No characters are interpreted as wildcards.
+    If the name includes escape characters, enclose it in single quotation marks (').
+    Single quotation marks instruct PowerShell not to interpret any characters as escape sequences.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the names of the drives to remove.
+    Do not type a colon (:) after the drive name.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: PSProvider
+  description: |+
+    Specifies an array of **PSProvider** objects.
+    This cmdlet removes and disconnects all of the drives associated with the specified PowerShell provider.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Scope
+  description: |+
+    Specifies a scope for the drive.
+    The acceptable values for this parameter are: Global, Local, and Script, or a number relative to the current scope. Scopes number 0 through the number of scopes. The current scope number is 0 and its parent is 1.
+    For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
+
+  defaultValue: Local
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Remove-PSDrive
+name: Remove-PSDrive
+description: |-
+  The `Remove-PSDrive` cmdlet deletes temporary PowerShell drives that were created by using the `New-PSDrive` cmdlet.
+
+  Beginning in Windows PowerShell 3.0, `Remove-PSDrive` also disconnects mapped network drives, including, but not limited to, drives created by using the `Persist` parameter of `New-PSDrive`.
+
+  `Remove-PSDrive` cannot delete Windows physical or logical drives.
+
+  Beginning in Windows PowerShell 3.0, when an external drive is connected to the computer, PowerShell automatically adds a PSDrive to the file system that represents the new drive.
+  You do not need to restart PowerShell.
+  Similarly, when an external drive is disconnected from the computer, PowerShell automatically deletes the PSDrive that represents the removed drive.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-psdrive?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Remove-PSDrive

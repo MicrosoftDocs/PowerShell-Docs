@@ -1,0 +1,99 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Disables debugging on one or more runspaces, and releases any pending debugger stop.
+module: Microsoft.PowerShell.Utility
+notes: ""
+links:
+- text: Enable-RunspaceDebug
+  href: Enable-RunspaceDebug.yml
+- text: Get-RunspaceDebug
+  href: Get-RunspaceDebug.yml
+syntaxes:
+- Disable-RunspaceDebug [[-RunspaceName] <String[]>] [<CommonParameters>]
+- Disable-RunspaceDebug [-Runspace] <Runspace[]> [<CommonParameters>]
+- Disable-RunspaceDebug [-RunspaceId] <Int32[]> [<CommonParameters>]
+- Disable-RunspaceDebug [-RunspaceInstanceId] <Guid[]> [<CommonParameters>]
+- Disable-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>] [<CommonParameters>]
+examples:
+- title: '1: Disable the default runspace debugger'
+  code: |-
+    Disable-RunspaceDebug
+    Get-RunspaceDebug
+
+    Id Name                 Enabled    BreakAll
+     -- ----                 -------    --------
+      1 Runspace1            False      False
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: AppDomainName
+  description: |+
+    The name of the application domain that hosts the PowerShell runspace.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ProcessName
+  description: |+
+    The name of the process that hosts the PowerShell runspace.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.Runspaces.Runspace" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Runspace
+  isRequired: true
+  description: |+
+    One or more **Runspace** objects to be disabled.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: RunspaceId
+  isRequired: true
+  description: |+
+    One or more **Runspace** Id numbers to be disabled.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Guid" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: RunspaceInstanceId
+  isRequired: true
+  description: |+
+    One or more **Runspace** GUIDs to be disabled.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: RunspaceName
+  description: |+
+    One or more **Runspace** names to be disabled.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Disable-RunspaceDebug
+name: Disable-RunspaceDebug
+description: |-
+  The `Disable-RunspaceDebug` cmdlet disables debugging on one or more runspaces, and releases any
+  pending debugger stop.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 03/19/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/disable-runspacedebug?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Disable-RunspaceDebug

@@ -1,0 +1,183 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Exports the names of snap-ins in the current session to a console file.
+module: Microsoft.PowerShell.Core
+notes: |-
+  * When a console file (.psc1) is used to start the session, the name of the console file is automatically stored in the $ConsoleFileName automatic variable. The value of $ConsoleFileName is updated when you use the *Path* parameter of **Export-Console** to specify a new console file. When no console file is used, $ConsoleFileName has no value ($Null).
+
+    To use a Windows PowerShell console file in a new session, use the following syntax to start Windows PowerShell:
+
+    `powershell.exe -PsConsoleFile \<ConsoleFile\>.psc1`
+
+    You can also save Windows PowerShell snap-ins for future sessions by adding an Add-PSSnapin command to your Windows PowerShell profile.
+  For more information, see about_Profiles.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a path string to this cmdlet.
+outputs:
+- name: <xref href="System.IO.FileInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet creates a file that contains the exported aliases.
+links:
+- text: Add-PSSnapin
+  href: Add-PSSnapin.yml
+- text: Get-PSSnapin
+  href: Get-PSSnapin.yml
+- text: Remove-PSSnapin
+  href: Remove-PSSnapin.yml
+syntaxes:
+- Export-Console [[-Path] <String>] [-Force] [-NoClobber] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Export the names of snap-ins in the current session'
+  code: |-
+    PS C:\> Export-Console -Path $pshome\Consoles\ConsoleS1.psc1
+  description: |-
+    This command exports the names of Windows PowerShell snap-ins in the current session to the ConsoleS1.psc1 file in the Consoles folder of the Windows PowerShell installation folder, $pshome.
+  summary: ""
+- title: 'Example 2: Export the names of snap-ins to the most recent console file'
+  code: |-
+    PS C:\> Export-Console
+  description: |-
+    This command exports the names of Windows PowerShell snap-ins from current session to the Windows PowerShell console file that was most recently used in the current session.
+    It overwrites the previous file contents.
+
+    If you have not exported a console file during the current session, you are prompted for permission to continue and then prompted for a file name.
+  summary: ""
+- title: 'Example 3: Add a snap-in and export the names of snap-ins'
+  code: |-
+    PS C:\> Add-PSSnapin NewPSSnapin
+    PS C:\> Export-Console -path NewPSSnapinConsole.psc1
+    PS C:\> powershell.exe -PsConsoleFile NewPsSnapinConsole.psc1
+  description: |-
+    These commands add the NewPSSnapin Windows PowerShell snap-in to the current session, export the names of Windows PowerShell snap-ins in the current session to a console file, and then start a Windows PowerShell session with the console file.
+
+    The first command uses the **Add-PSSnapin** cmdlet to add the NewPSSnapin snap-in to the current session.
+    You can only add Windows PowerShell snap-ins that are registered on your system.
+
+    The second command exports the Windows PowerShell snap-in names to the NewPSSnapinConsole.psc1 file.
+
+    The third command starts Windows PowerShell with the NewPSSnapinConsole.psc1 file.
+    Because the console file includes the Windows PowerShell snap-in name, the cmdlets and providers in the snap-in are available in the current session.
+  summary: ""
+- title: 'Example 4: Export names of snap-ins to a specified location'
+  code: |-
+    PS C:\> export-console -path Console01
+    PS C:\> notepad console01.psc1
+    <?xml version="1.0" encoding="utf-8"?>
+    <PSConsoleFile ConsoleSchemaVersion="1.0">
+      <PSVersion>2.0</PSVersion>
+      <PSSnapIns>
+         <PSSnapIn Name="NewPSSnapin" />
+      </PSSnapIns>
+    </PSConsoleFile>
+  description: |-
+    This command exports the names of the Windows PowerShell snap-ins in the current session to the Console01.psc1 file in the current directory.
+
+    The second command displays the contents of the Console01.psc1 file in Notepad.
+  summary: ""
+- title: 'Example 5: Determine the console file to update'
+  code: |-
+    PS C:\> powershell.exe -PSConsoleFile Console01.psc1
+    PS C:\> Add-PSSnapin MySnapin
+    PS C:\> Export-Console NewConsole.psc1
+    PS C:\> $ConsoleFileName
+    PS C:\> Add-PSSnapin SnapIn03
+    PS C:\> Export-Console
+  description: |-
+    This example shows how to use the $ConsoleFileName automatic variable to determine the console file that will be updated if you use **Export-Console** without a *Path* parameter value.
+
+    The first command uses the *PSConsoleFile* parameter of PowerShell.exe to open Windows PowerShell with the Console01.psc1 file.
+
+    The second command uses the **Add-PSSnapin** cmdlet to add the MySnapin Windows PowerShell snap-in to the current session.
+
+    The third command uses the **Export-Console** cmdlet to export the names of all the Windows PowerShell snap-ins in the session to the NewConsole.psc1 file.
+
+    The fourth command displays the $ConsoleFileName variable.
+    It contains the most recently used console file.
+    The sample output shows that NewConsole.ps1 is the most recently used file.
+
+    The fifth command adds SnapIn03 to the current console.
+
+    The sixth command uses the **Export-Console** cmdlet without a *Path* parameter.
+    This command exports the names of all the Windows PowerShell snap-ins in the current session to the most recently used file, NewConsole.psc1.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Indicates that this cmdlet overwrites the data in a console file without warning, even if the file has the read-only attribute.
+    The read-only attribute is changed and is not reset when the command finishes.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NoClobber
+  description: |+
+    Indicates that this cmdlet does not overwrite  an existing console file.
+    By default, if a file occurs in the specified path, **Export-Console** overwrites the file without warning.
+
+  defaultValue: None
+  position: Named
+  aliases: NoOverwrite
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  description: |+
+    Specifies a path and file name for the console file (*.psc1).
+    Enter an optional path and name.
+    Wildcard characters are not permitted.
+
+    If you specify only a file name, **Export-Console** creates a file that has that name and the .psc1 file name extension in the current directory.
+
+    This parameter is required unless you have opened Windows PowerShell with the *PSConsoleFile* parameter or exported a console file during the current session.
+    It is also required when you use the *NoClobber* parameter to prevent the current console file from being overwritten.
+
+    If you omit this parameter, **Export-Console** overwrites the console file that was used most recently in this session.
+    The path of the most recently used console file is stored in the value of the $ConsoleFileName automatic variable.
+    For more information, see about_Automatic_Variables.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: PSPath
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Core.Export-Console
+name: Export-Console
+description: |-
+  The **Export-Console** cmdlet exports the names of the Windows PowerShell snap-ins in the current session to a Windows PowerShell console file (.psc1).
+  You can use this cmdlet to save the snap-ins for use in future sessions.
+
+  To add the snap-ins in the .psc1 console file to a session, start Windows PowerShell (Powershell.exe) at the command line by using Cmd.exe or another Windows PowerShell session, and then use the *PSConsoleFile* parameter of Powershell.exe to specify the console file.
+
+  For more information about Windows PowerShell snap-ins, see about_PSSnapins.
+metadata:
+  external help file: System.Management.Automation.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/export-console?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Export-Console

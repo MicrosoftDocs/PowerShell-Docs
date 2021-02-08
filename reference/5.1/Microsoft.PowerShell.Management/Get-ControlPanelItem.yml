@@ -1,0 +1,150 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets control panel items.
+module: Microsoft.PowerShell.Management
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a name or name pattern to this cmdlet.
+outputs:
+- name: <xref href="Microsoft.PowerShell.Commands.ControlPanelItem" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet gets control panel items on the local computer.
+links:
+- text: Show-ControlPanelItem
+  href: Show-ControlPanelItem.yml
+syntaxes:
+- Get-ControlPanelItem [[-Name] <String[]>] [-Category <String[]>] [<CommonParameters>]
+- Get-ControlPanelItem -CanonicalName <String[]> [-Category <String[]>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get all control panel items'
+  code: |-
+    Get-ControlPanelItem
+
+    Name                          CanonicalName                 Category                      Description
+    ----                          -------------                 --------                      -----------
+    Action Center                 Microsoft.ActionCenter        {System and Security}         Review recent messages and...
+    Administrative Tools          Microsoft.AdministrativeTools {System and Security}         Configure administrative s...
+    AutoPlay                      Microsoft.AutoPlay            {Hardware}                    Change default settings fo...
+    BitLocker Drive Encryption    Microsoft.BitLockerDriveEn... {System and Security}         Protect your computer usin...
+    Color Management              Microsoft.ColorManagement     {All Control Panel Items}     Change advanced color mana...
+    Credential Manager            Microsoft.CredentialManager   {User Accounts}               Manage your Windows Creden...
+    Date and Time                 Microsoft.DateAndTime         {Clock, Language, and Region} Set the date, time, and ti...
+    ...
+  description: ""
+  summary: |+
+    This command gets all control panel items on the local computer.
+
+- title: 'Example 2: Get control panel items by name'
+  code: |-
+    Get-ControlPanelItem -Name "*Program*", "*App*"
+  description: ""
+  summary: |+
+    This example gets control panel items that have Program or App in their names.
+
+- title: 'Example 3: Get control panel items by category'
+  code: |-
+    Get-ControlPanelItem -Category "*Security*"
+  description: ""
+  summary: |+
+    This command gets all control panel items in categories that have Security in their names.
+
+- title: 'Example 4: Open a control panel item'
+  code: |-
+    Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
+  description: |-
+    The `Get-ControlPanelItem` cmdlet gets the control panel item. The `Show-ControlPanelItem` cmdlet
+    opens it.
+  summary: |+
+    This example opens the Windows Firewall control panel item on the local computer.
+
+- title: 'Example 5: Get control panel items on a remote computer'
+  code: |-
+    Invoke-Command -ComputerName "Server01" {Get-ControlPanelItem -Name "BitLocker*" }
+  description: ""
+  summary: |+
+    This example gets the BitLocker Drive Encryption control panel item on the Server01 remote computer.
+    The `Invoke-Command` cmdlet runs the `Get-ControlPanelItem` cmdlet remotely.
+
+- title: 'Example 6: Search the descriptions of control panel items'
+  code: |-
+    Get-ControlPanelItem | Where-Object {$_.Description -like "*Device*"}
+
+    Name                    CanonicalName                 Category    Description
+    ----                    -------------                 --------    -----------
+    AutoPlay                Microsoft.AutoPlay            {Hardware}  Change default settings fo...
+    Devices and Printers    Microsoft.DevicesAndPrinters  {Hardware}  View and manage devices, p...
+    Sound                   Microsoft.Sound               {Hardware}  Configure your audio devic...
+  description: |-
+    The `Get-ControlPanelItem` cmdlet gets all control panel items. The `Where-Object` cmdlet filters
+    the items by the value of the **Description** property.
+  summary: |+
+    This example searches the **Description** property of the control panel items to get only those that
+    contain the name **Device**.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: CanonicalName
+  isRequired: true
+  description: |+
+    Specifies, as a string array, the control panel items by their canonical names or name patterns that
+    this cmdlet gets. Wildcards are permitted. If you enter multiple names, this cmdlet gets control
+    panel items that match any of the names, as though the items in the name list were separated by an
+    "or" operator.
+
+    By default, this cmdlet gets all control panel items in the system.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Category
+  description: |+
+    Specifies, as a string array, the categories of the control panel items in the specified categories
+    that this cmdlet gets. Enter a category name or name pattern. Wildcards are permitted. If you enter
+    multiple names, this cmdlet gets control panel items that match any of the names, as though the
+    items in the name list were separated by an "or" operator. By default, this cmdlet gets all control
+    panel items in the system.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Specifies, as a string array, the names or name patterns of the control panel that this cmdlet gets.
+    Wildcards are permitted. You can also pipe a name or name pattern to this cmdlet.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Get-ControlPanelItem
+name: Get-ControlPanelItem
+description: |-
+  The `Get-ControlPanelItem` cmdlet gets control panel items on the local computer. You can use it
+  to find control panel items by name, category, or description, even on systems that do not have a
+  user interface.
+
+  This cmdlet gets only the control panel items that can be opened on the system. On computers that do
+  not have Control Panel or File Explorer, this cmdlet gets only control panel items that can open
+  without these components.
+
+  This cmdlet was introduced in Windows PowerShell 3.0. It works only on Windows 8 and Windows Server
+  2012 and newer.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 09/11/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-controlpanelitem?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-ControlPanelItem

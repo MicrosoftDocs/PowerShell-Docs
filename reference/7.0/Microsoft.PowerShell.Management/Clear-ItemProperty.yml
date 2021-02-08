@@ -1,0 +1,207 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Clears the value of a property but does not delete the property.
+module: Microsoft.PowerShell.Management
+notes: |-
+  - You can use `Clear-ItemProperty` to delete the data in registry values without deleting the value.
+    If the data type of the value is Binary or DWORD, clearing the data sets the value to zero.
+    Otherwise, the value is empty.
+  - The `Clear-ItemProperty` cmdlet is designed to work with the data exposed by any provider. To list
+    the providers available in your session, type `Get-PSProvider`. For more information, see
+    [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a path string to this cmdlet.
+outputs:
+- name: <xref href="None or System.Management.Automation.PSCustomObject" data-throw-if-not-resolved="False" />
+  description: |-
+    When you use the **PassThru** parameter, `Clear-ItemProperty` generates a **PSCustomObject** object
+    that represents the cleared item property. Otherwise, this cmdlet does not generate any output.
+links:
+- text: Copy-ItemProperty
+  href: Copy-ItemProperty.yml
+- text: Get-ItemProperty
+  href: Get-ItemProperty.yml
+- text: Move-ItemProperty
+  href: Move-ItemProperty.yml
+- text: New-ItemProperty
+  href: New-ItemProperty.yml
+- text: Rename-ItemProperty
+  href: Rename-ItemProperty.yml
+- text: about_Providers
+  href: ../Microsoft.PowerShell.Core/About/about_Providers.md
+syntaxes:
+- >-
+  Clear-ItemProperty [-Path] <String[]> [-Name] <String> [-PassThru] [-Force] [-Filter <String>]
+
+   [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Clear-ItemProperty -LiteralPath <String[]> [-Name] <String> [-PassThru] [-Force] [-Filter <String>]
+
+   [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Clear the value of registry key'
+  code: |-
+    Clear-ItemProperty -Path "HKLM:\Software\MyCompany\MyApp" -Name "Options"
+  description: ""
+  summary: |+
+    This command clears the data in the "Options" registry value in the "MyApp" subkey of
+    `HKEY_LOCAL_MACHINE\Software\MyCompany`.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    > [!NOTE]
+    > This parameter is not supported by any providers installed with PowerShell.
+    > To impersonate another user, or elevate your credentials when running this cmdlet,
+    > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.yml).
+
+  defaultValue: Current user
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Exclude
+  description: |+
+    Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+    of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+    `*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+    command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+    specifies the contents of the `C:\Windows` directory.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Filter
+  description: |+
+    Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+    provider is the only installed PowerShell provider that supports the use of filters. You can find
+    the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
+    Filters are more efficient than other parameters, because the provider applies them when the cmdlet
+    gets the objects rather than having PowerShell filter the objects after they are retrieved.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Indicates that this cmdlet deletes properties from items that cannot otherwise be accessed by the
+    user. Implementation varies from provider to provider.
+    For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Include
+  description: |+
+    Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+    of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+    `"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+    command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+    specifies the contents of the `C:\Windows` directory.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+    typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
+    it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
+    as escape sequences.
+
+    For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath, LP
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the property to be cleared, such as the name of a registry value.
+    Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object representing the item with which you are working.
+    By default, this cmdlet does not generate any output.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path to the property being cleared.
+    Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Clear-ItemProperty
+name: Clear-ItemProperty
+description: |-
+  The `Clear-ItemProperty` cmdlet clears the value of a property, but it does not delete the property.
+  You can use this cmdlet to delete the data from a registry value.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 5/14/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-itemproperty?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Clear-ItemProperty

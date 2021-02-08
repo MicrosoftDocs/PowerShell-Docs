@@ -1,0 +1,35 @@
+### YamlMime:PowershellModule
+children:
+- title: PSScheduledJob
+  cmdlets:
+  - PSScheduledJob.Add-JobTrigger
+  - PSScheduledJob.Disable-JobTrigger
+  - PSScheduledJob.Disable-ScheduledJob
+  - PSScheduledJob.Enable-JobTrigger
+  - PSScheduledJob.Enable-ScheduledJob
+  - PSScheduledJob.Get-JobTrigger
+  - PSScheduledJob.Get-ScheduledJob
+  - PSScheduledJob.Get-ScheduledJobOption
+  - PSScheduledJob.New-JobTrigger
+  - PSScheduledJob.New-ScheduledJobOption
+  - PSScheduledJob.Register-ScheduledJob
+  - PSScheduledJob.Remove-JobTrigger
+  - PSScheduledJob.Set-JobTrigger
+  - PSScheduledJob.Set-ScheduledJob
+  - PSScheduledJob.Set-ScheduledJobOption
+  - PSScheduledJob.Unregister-ScheduledJob
+uid: PSScheduledJob
+name: PSScheduledJob
+description: |-
+  The PSScheduledJob module contains cmdlets and providers that manage scheduled jobs in Windows
+  PowerShell.
+metadata:
+  Download Help Link: https://go.microsoft.com/fwlink/?linkid=390816
+  Help Version: 5.2.0.0
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Guid: 50cdb55f-5ab7-489f-9e94-4ec21ff51e59
+  Module Name: PSScheduledJob
+  ms.date: 06/09/2017
+  schema: 2.0.0
+  title: PSScheduledJob

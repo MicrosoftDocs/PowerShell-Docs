@@ -1,0 +1,99 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Retrieves data about completed configuration runs.
+module: PSDesiredStateConfiguration
+notes: ""
+links:
+- text: Windows PowerShell Desired State Configuration Overview
+  href: /powershell/scripting/dsc/overview/dscforengineers
+- text: Get-DscConfiguration
+  href: Get-DscConfiguration.yml
+- text: Get-DscLocalConfigurationManager
+  href: Get-DscLocalConfigurationManager.yml
+- text: Restore-DscConfiguration
+  href: Restore-DscConfiguration.yml
+- text: Start-DscConfiguration
+  href: Start-DscConfiguration.yml
+- text: Test-DscConfiguration
+  href: Test-DscConfiguration.yml
+syntaxes:
+- >-
+  Get-DscConfigurationStatus [-All] [-CimSession <CimSession[]>] [-ThrottleLimit <Int32>] [-AsJob]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Get information on the last configuration run'
+  code: |-
+    PS C:\> Get-DscConfigurationStatus
+  description: |-
+    This command gets information on the last configuration run.
+  summary: ""
+- title: 'Example 2: Get information on all configurations'
+  code: |-
+    PS C:\> Get-DscConfigurationStatus -All
+  description: |-
+    This command gets information about all the configurations that were run on the system, including the Windows PowerShell Desired State Configuration (DSC) consistency check.
+  summary: ""
+- title: 'Example 3: Get information on the configuration run on a remote computer'
+  code: |-
+    PS C:\> Get-DscConfigurationStatus -CimSession "Server01"
+  description: |-
+    This command gets the configuration run details of the remote computer named Server01.
+    This uses the WSMan transport to connect to the remote computer and requires that the connecting user be an administrator on the remote computer.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: All
+  description: |+
+    Indicates that this cmdlet retrieves information about all the configuration runs on the computer, including the configuration application and the consistency check.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AsJob
+  description: |+
+    Indicates that this cmdlet runs the command as a background job.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.Management.Infrastructure.CimSession" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: CimSession
+  description: |+
+    Runs the cmdlet in a remote session or on a remote computer.
+    Enter a computer name or a session object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet.
+    The default is the current session on the local computer.
+
+  defaultValue: None
+  position: Named
+  aliases: Session
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: ThrottleLimit
+  description: |+
+    Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
+    If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
+    The throttle limit applies only to the current cmdlet, not to the session or to the computer.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: PSDesiredStateConfiguration.Get-DscConfigurationStatus
+name: Get-DscConfigurationStatus
+description: |-
+  The **Get-DscConfigurationStatus** cmdlet retrieves detailed information about completed configuration runs on the system.
+  By default, it returns the information about the last configuration run.
+  This cmdlet is useful for finding historical information about configuration runs, such as when the configurations were run, the status of the runs, the number of resources in the configurations, and which resources succeeded or failed.
+metadata:
+  external help file: Get-DscConfigurationStatus.cdxml-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSDesiredStateConfiguration
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/get-dscconfigurationstatus?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-DscConfigurationStatus

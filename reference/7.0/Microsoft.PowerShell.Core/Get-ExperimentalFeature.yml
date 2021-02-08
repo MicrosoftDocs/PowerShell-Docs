@@ -1,0 +1,58 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets experimental features.
+module: Microsoft.PowerShell.Core
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: |-
+    Name or names of experimental features to return.
+outputs:
+- name: <xref href="ExperimentalFeature" data-throw-if-not-resolved="False" />
+  description: |-
+    Returns instances that match the requested names or all experimental features if no name is
+    specified.
+links:
+- text: Disable-ExperimentalFeature
+  href: Disable-ExperimentalFeature.yml
+- text: Enable-ExperimentalFeature
+  href: Enable-ExperimentalFeature.yml
+syntaxes:
+- Get-ExperimentalFeature [[-Name] <String[]>] [<CommonParameters>]
+examples:
+- title: Example 1
+  code: |-
+    Get-ExperimentalFeature
+
+    Name                         Enabled Source      Description
+    ----                         ------- ------      -----------
+    PSImplicitRemotingBatching   False PSEngine      Batch implicit remoting proxy commands to improve performance
+  description: ""
+  summary: |+
+    Gets the list of currently registered experimental features and their current state.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Name or names of specific experimental features to return.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Core.Get-ExperimentalFeature
+name: Get-ExperimentalFeature
+description: |-
+  The `Get-ExperimentalFeature` cmdlet returns all experimental features discovered by PowerShell.
+  Experimental features can come from modules or the PowerShell engine. Experimental features allow
+  users to safely test new features and provide feedback (typically via GitHub) before the design is
+  considered complete and any changes can become a breaking change.
+metadata:
+  external help file: System.Management.Automation.dll-Help.xml
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 03/01/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-experimentalfeature?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-ExperimentalFeature

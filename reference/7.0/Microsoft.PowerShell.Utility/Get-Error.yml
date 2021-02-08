@@ -1,0 +1,133 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets and displays the most recent error messages from the current session.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  `Get-Error` accepts pipeline input. For example, `$Error | Get-Error`.
+inputs:
+- name: <xref href="PSObject" data-throw-if-not-resolved="False" />
+  description: |-
+    Supports input from any **PSObject**, but results vary unless either an **ErrorRecord** or
+    **Exception** object are supplied.
+outputs:
+- name: <xref href="System.Management.Automation.ErrorRecord#PSExtendedError" data-throw-if-not-resolved="False" />
+  description: |-
+    Output in a **PSExtendedError** object.
+links:
+- text: about_Try_Catch_Finally
+  href: ../Microsoft.PowerShell.Core/About/about_Try_Catch_Finally.md
+syntaxes:
+- Get-Error [[-Newest] <Int32>] [<CommonParameters>]
+- Get-Error [-InputObject <PSObject>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get the most recent error details'
+  code: |-
+    Get-Childitem -path /NoRealDirectory
+    Get-Error
+
+    Get-ChildItem: Cannot find path 'C:\NoRealDirectory' because it does not exist.
+
+    Exception             :
+        ErrorRecord          :
+            Exception             :
+                Message : Cannot find path 'C:\NoRealDirectory' because it does not exist.
+                HResult : -2146233087
+            TargetObject          : C:\NoRealDirectory
+            CategoryInfo          : ObjectNotFound: (C:\NoRealDirectory:String) [], ParentContainsErrorRecordException
+            FullyQualifiedErrorId : PathNotFound
+        ItemName             : C:\NoRealDirectory
+        SessionStateCategory : Drive
+        TargetSite           :
+            Name          : GetChildItems
+            DeclaringType : System.Management.Automation.SessionStateInternal
+            MemberType    : Method
+            Module        : System.Management.Automation.dll
+        StackTrace           :
+       at System.Management.Automation.SessionStateInternal.GetChildItems(String path, Boolean recurse, UInt32 depth,
+    CmdletProviderContext context)
+       at System.Management.Automation.ChildItemCmdletProviderIntrinsics.Get(String path, Boolean recurse, UInt32
+    depth, CmdletProviderContext context)
+       at Microsoft.PowerShell.Commands.GetChildItemCommand.ProcessRecord()
+        Message              : Cannot find path 'C:\NoRealDirectory' because it does not exist.
+        Source               : System.Management.Automation
+        HResult              : -2146233087
+    TargetObject          : C:\NoRealDirectory
+    CategoryInfo          : ObjectNotFound: (C:\NoRealDirectory:String) [Get-ChildItem], ItemNotFoundException
+    FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+    InvocationInfo        :
+        MyCommand        : Get-ChildItem
+        ScriptLineNumber : 1
+        OffsetInLine     : 1
+        HistoryId        : 57
+        Line             : Get-Childitem -path c:\NoRealDirectory
+        PositionMessage  : At line:1 char:1
+                           + Get-Childitem -path c:\NoRealDirectory
+                           + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        InvocationName   : Get-Childitem
+        CommandOrigin    : Internal
+    ScriptStackTrace      : at <ScriptBlock>, <No file>: line 1
+    PipelineIterationInfo :
+  description: ""
+  summary: |+
+    In this example, `Get-Error` displays the details of the most recent error that occurred in the
+    current session.
+
+- title: 'Example 2: Get the specified number of error messages that occurred in the current session'
+  code: |-
+    Get-Error -Newest 3
+  description: ""
+  summary: |+
+    This example shows how to use `Get-Error` with the **Newest** parameter. In this example, **Newest**
+    returns the details of the 3 newest errors that occurred in this session.
+
+- title: 'Example 3: Send a collection of errors to receive detailed messages'
+  code: |-
+    $Error | Get-Error
+  description: ""
+  summary: |+
+    The `$Error` automatic variable contains an array of error objects in the current session. The
+    array of objects can be piped to `Get-Error` to receive detailed error messages.
+
+    In this example, `$Error` is piped to the `Get-Error` cmdlet. the result is list of detailed error
+    messages, similar to the result of Example 1.
+
+parameters:
+- type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  name: InputObject
+  description: |+
+    This parameter is used for pipeline input.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: Newest
+  description: |+
+    Specifies the number of errors to display that have occurred in the current session.
+
+  defaultValue: None
+  position: "0"
+  aliases: Last
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Get-Error
+name: Get-Error
+description: |-
+  The `Get-Error` cmdlet gets a **PSExtendedError** object that represents the current error details
+  from the last error that occurred in the session.
+
+  You can use `Get-Error` to display a specified number of errors that have occurred in the current
+  session using the **Newest** parameter.
+
+  The `Get-Error` cmdlet also receives error objects from a collection, such as `$Error`, to display
+  multiple errors from the current session.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 11/12/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-Error

@@ -1,0 +1,239 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates a local user account.
+module: Microsoft.PowerShell.LocalAccounts
+notes: |-
+  - A user name cannot be identical to any other user name or group name on the computer. A user name
+    cannot consist only of periods `.` or spaces. A user name can contain up to 20 uppercase
+    characters or lowercase characters. A user name cannot contain the following characters:
+
+  `"`, `/`, `\`, `[`, `]`, `:`, `;`, `|`, `=`, `,`, `+`, `*`, `?`, `<`, `>`, `@`
+
+  - A password can contain up to 127 characters.
+  - The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+    **LocalPrincipal** objects that describes the source of the object. The possible sources are as
+    follows:
+
+    - Local
+    - Active Directory
+    - Azure Active Directory group
+    - Microsoft Account
+
+  > [!NOTE]
+  > **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
+  > Windows operating system. For earlier versions, the property is blank.
+inputs:
+- name: <xref href="System.String, System.DateTime, System.Boolean, System.Security.SecureString" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string, a **DateTime** object, a boolean value, or a secure string to this cmdlet.
+outputs:
+- name: <xref href="System.Management.Automation.SecurityAccountsManager.LocalUser" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a **LocalUser** object.
+    This object provides information about the user account.
+links:
+- text: Disable-LocalUser
+  href: Disable-LocalUser.yml
+- text: Enable-LocalUser
+  href: Enable-LocalUser.yml
+- text: Get-LocalUser
+  href: Get-LocalUser.yml
+- text: Remove-LocalUser
+  href: Remove-LocalUser.yml
+- text: Rename-LocalUser
+  href: Rename-LocalUser.yml
+- text: Set-LocalUser
+  href: Set-LocalUser.yml
+syntaxes:
+- >-
+  New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description <String>] [-Disabled]
+
+   [-FullName <String>] [-Name] <String> -Password <SecureString> [-PasswordNeverExpires]
+
+   [-UserMayNotChangePassword] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description <String>] [-Disabled]
+
+   [-FullName <String>] [-Name] <String> [-NoPassword] [-UserMayNotChangePassword] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Create a user account'
+  code: |-
+    PS C:\> New-LocalUser -Name "User02" -Description "Description of this account." -NoPassword
+    Name    Enabled  Description
+    ----    -------  -----------
+    User02  True     Description of this account.
+  description: |-
+    This command creates a local user account and does not specify the **AccountExpires** or **Password**
+    parameters. Therefore, the account doesn't expire or have a password by default.
+  summary: ""
+- title: 'Example 2: Create a user account that has a password'
+  code: |-
+    PS C:\> $Password = Read-Host -AsSecureString
+    PS C:\> New-LocalUser "User03" -Password $Password -FullName "Third User" -Description "Description of this account."
+    Name    Enabled  Description
+    ----    -------  -----------
+    User03  True     Description of this account.
+  description: |-
+    The first command prompts you for a password by using the `Read-Host` cmdlet. The command stores the
+    password as a secure string in the `$Password` variable.
+
+    The second command creates a local user account by using the password stored in `$Password`. The
+    command specifies a user name, full name, and description for the user account.
+  summary: ""
+parameters:
+- type: <xref href="System.DateTime" data-throw-if-not-resolved="False" />
+  name: AccountExpires
+  description: |+
+    Specifies when the user account expires. To obtain a **DateTime** object, use the `Get-Date` cmdlet.
+    If you do not specify this parameter, the account does not expire.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AccountNeverExpires
+  description: |+
+    Indicates that the account does not expire.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Description
+  description: |+
+    Specifies a comment for the user account.
+    The maximum length is 48 characters.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Disabled
+  description: |+
+    Indicates that this cmdlet creates the user account as disabled.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: FullName
+  description: |+
+    Specifies the full name for the user account. The full name differs from the user name of the user
+    account.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the user name for the user account.
+
+    If you create a local user account for the local system, the user name can contain up to 20
+    uppercase characters or lowercase characters. A user name cannot contain the following characters:
+
+    `"`, `/`, `\`, `[`, `]`, `:`, `;`, `|`, `=`, `,`, `+`, `*`, `?`, `<`, `>`, `@`
+
+    A user name cannot consist only of periods `.` or spaces.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NoPassword
+  isRequired: true
+  description: |+
+    Indicates that the user account does not have a password.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Security.SecureString" data-throw-if-not-resolved="False" />
+  name: Password
+  isRequired: true
+  description: |+
+    Specifies a password for the user account. You can use `Read-Host -GetCredential`, `Get-Credential`,
+    or `ConvertTo-SecureString` to create a **SecureString** object for the password.
+
+    If you omit the **Password** and **NoPassword** parameters, `New-LocalUser` prompts you for the new
+    user's password.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PasswordNeverExpires
+  description: |+
+    Indicates whether the password expires.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: UserMayNotChangePassword
+  description: |+
+    Indicates that the user cannot change the password on the user account.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.LocalAccounts.New-LocalUser
+name: New-LocalUser
+description: |-
+  The `New-LocalUser` cmdlet creates a local user account. This cmdlet creates a local user account
+  or a local user account that is connected to a Microsoft account.
+
+  > [!NOTE]
+  > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+  > system.
+metadata:
+  external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.LocalAccounts
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/new-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: New-LocalUser

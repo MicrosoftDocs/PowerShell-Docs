@@ -1,0 +1,161 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Writes an event to an event log.
+module: Microsoft.PowerShell.Management
+notes: |-
+  For some Windows event logs, writing events requires administrator rights. You must start
+  PowerShell using the **Run as Administrator** option.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe input to this cmdlet.
+outputs:
+- name: <xref href="System.Diagnostics.EventLogEntry" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns objects that represents the events in the logs.
+links:
+- text: Clear-EventLog
+  href: Clear-EventLog.yml
+- text: Get-EventLog
+  href: Get-EventLog.yml
+- text: Limit-EventLog
+  href: Limit-EventLog.yml
+- text: New-EventLog
+  href: New-EventLog.yml
+- text: Remove-EventLog
+  href: Remove-EventLog.yml
+- text: Show-EventLog
+  href: Show-EventLog.yml
+- text: Write-EventLog
+  href: Write-EventLog.yml
+syntaxes:
+- >-
+  Write-EventLog [-LogName] <String> [-Source] <String> [[-EntryType] <EventLogEntryType>] [-Category <Int16>]
+
+   [-EventId] <Int32> [-Message] <String> [-RawData <Byte[]>] [-ComputerName <String>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Write an event to the Application event log'
+  code: |-
+    PS C:\> Write-EventLog -LogName "Application" -Source "MyApp" -EventID 3001 -EntryType Information -Message "MyApp added a user-requested feature to the display." -Category 1 -RawData 10,20
+  description: |-
+    This command writes an event from the MyApp source to the Application event log.
+  summary: ""
+- title: 'Example 2: Write an event to the Application event log of a remote computer'
+  code: |-
+    PS C:\> Write-EventLog -ComputerName "Server01" -LogName Application -Source "MyApp" -EventID 3001 -Message "MyApp added a user-requested feature to the display."
+  description: |-
+    This command writes an event from the MyApp source to the Application event log on the Server01
+    remote computer.
+  summary: ""
+parameters:
+- type: <xref href="System.Int16" data-throw-if-not-resolved="False" />
+  name: Category
+  description: |+
+    Specifies a task category for the event. Enter an integer that is associated with the strings in the
+    category message file for the event log.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ComputerName
+  description: |+
+    Specifies a remote computer. The default is the local computer.
+
+    Type the NetBIOS name, an IP address, or a fully qualified domain name of a remote computer.
+
+    This parameter does not rely on Windows PowerShell remoting. You can use the **ComputerName**
+    parameter of the `Get-EventLog` cmdlet even if your computer is not configured to run remote
+    commands.
+
+  defaultValue: None
+  position: Named
+  aliases: CN
+  parameterValueGroup: ""
+- type: <xref href="System.Diagnostics.EventLogEntryType" data-throw-if-not-resolved="False" />
+  name: EntryType
+  description: |+
+    Specifies the entry type of the event. The acceptable values for this parameter are: Error, Warning,
+    Information, SuccessAudit, and FailureAudit. The default value is Information.
+
+    For a description of the values, see
+    [EventLogEntryType Enumeration](/dotnet/api/system.diagnostics.eventlogentrytype).
+
+  defaultValue: None
+  position: "3"
+  aliases: ET
+  parameterValueGroup: Error, Information, FailureAudit, SuccessAudit, Warning
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: EventId
+  isRequired: true
+  description: |+
+    Specifies the event identifier. This parameter is required. The maximum value for the **EventId**
+    parameter is 65535.
+
+  defaultValue: None
+  position: "2"
+  aliases: ID, EID
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LogName
+  isRequired: true
+  description: |+
+    Specifies the name of the log to which the event is written. Enter the log name. The log name is the
+    value of the **Log** property, not the **LogDisplayName**. Wildcard characters are not permitted.
+    This parameter is required.
+
+  defaultValue: None
+  position: "0"
+  aliases: LN
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Message
+  isRequired: true
+  description: |+
+    Specifies the event message. This parameter is required.
+
+  defaultValue: None
+  position: "4"
+  aliases: MSG
+  parameterValueGroup: ""
+- type: <xref href="System.Byte" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: RawData
+  description: |+
+    Specifies the binary data that is associated with the event, in bytes.
+
+  defaultValue: None
+  position: Named
+  aliases: RD
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Source
+  isRequired: true
+  description: |+
+    Specifies the event source, which is typically the name of the application that is writing the event
+    to the log.
+
+  defaultValue: None
+  position: "1"
+  aliases: SRC
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Write-EventLog
+name: Write-EventLog
+description: |-
+  The `Write-EventLog` cmdlet writes an event to an event log.
+
+  To write an event to an event log, the event log must exist on the computer and the source must be
+  registered for the event log.
+
+  The cmdlets that contain the **EventLog** noun (the **EventLog** cmdlets) work only on classic event
+  logs. To get events from logs that use the Windows Event Log technology in Windows Vista and later
+  versions of the Windows operating system, use the `Get-WinEvent` cmdlet.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/write-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Write-EventLog

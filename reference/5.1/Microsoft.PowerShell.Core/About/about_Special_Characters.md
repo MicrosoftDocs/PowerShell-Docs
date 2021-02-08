@@ -1,5 +1,5 @@
 ---
-description:  Describes the special character sequences that control how PowerShell interprets the next characters in the sequence. 
+description:  Describes the special character sequences that control how PowerShell interprets the next characters in the sequence.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/04/2020
@@ -146,16 +146,32 @@ Column1         Column2         Column3
 
 ## Vertical tab (`v)
 
-The horizontal tab (`` `v ``) character advances to the next vertical tab stop
-and writes the remaining output at that point. This has no effect in the
-default Windows console.
+The horizontal tabs (```v``) effect is device and terminal dependant. Here
+are _some_ examples from different terminals:
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
 ```
 
-The following example shows the output you would get on a printer or in a
-different console host.
+The following example shows the output of a default terminal in Windows. The
+terminal interprets ```v`` as the `♂` character with no extra spacing added.
+
+```Output
+There is a vertical tab♂between the words.
+```
+
+The following example shows the output of [Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701).
+The ```v`` character acts as a carriage return character and the rest of the
+output is printed on the following line.
+
+```Output
+There is a vertical tab
+between the words.
+```
+
+The following example shows the output you would get on a printer or in a unix
+based console host. The vertical tab (```v``) character advances to the next
+vertical tab stop and writes the remaining output at that point.
 
 ```Output
 There is a vertical tab

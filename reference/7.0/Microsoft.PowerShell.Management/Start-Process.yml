@@ -1,0 +1,376 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Starts one or more processes on the local computer.
+module: Microsoft.PowerShell.Management
+notes: |-
+  - This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process**
+    class. For more information about this method, see
+    [Process.Start Method](/dotnet/api/system.diagnostics.process.start#overloads).
+
+  - On Windows, when you use **UseNewEnvironment**, the new process starts only containing the default
+    environment variables defined for the **Machine** scope. This has the side affect that the
+    `$env:USERNAME` is set to **SYSTEM**. None of the variables from the **User** scope are included.
+
+  - On Windows, the most common use case for `Start-Process` is to use the **Wait** parameter to block
+    progress until the new process exits. On non-Windows system, this is rarely needed since the
+    default behavior for command-line applications is equivalent to `Start-Process -Wait`.
+
+  - When using `Start-Process` on non-Windows systems, you never get a new terminal window.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe input to this cmdlet.
+outputs:
+- name: <xref href="None, System.Diagnostics.Process" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet generates a **System.Diagnostics.Process** object, if you specify the **PassThru**
+    parameter. Otherwise, this cmdlet does not return any output.
+links:
+- text: about_Quoting_Rules
+  href: ../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md
+- text: Debug-Process
+  href: Debug-Process.yml
+- text: Get-Process
+  href: Get-Process.yml
+- text: Start-Service
+  href: Start-Service.yml
+- text: Stop-Process
+  href: Stop-Process.yml
+- text: Wait-Process
+  href: Wait-Process.yml
+syntaxes:
+- >-
+  Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-Credential <PSCredential>]
+
+   [-WorkingDirectory <String>] [-LoadUserProfile] [-NoNewWindow] [-PassThru]
+
+   [-RedirectStandardError <String>] [-RedirectStandardInput <String>]
+
+   [-RedirectStandardOutput <String>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [-UseNewEnvironment]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-WorkingDirectory <String>]
+
+   [-PassThru] [-Verb <String>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Start a process that uses default values'
+  code: |-
+    Start-Process -FilePath "sort.exe"
+  description: ""
+  summary: |+
+    This example starts a process that uses the `Sort.exe` file in the current folder. The command uses
+    all of the default values, including the default window style, working folder, and credentials.
+
+- title: 'Example 2: Print a text file'
+  code: |-
+    Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test" -Verb Print
+  description: ""
+  summary: |+
+    This example starts a process that prints the `C:\PS-Test\MyFile.txt` file.
+
+- title: 'Example 3: Start a process to sort items to a new file'
+  code: |-
+    Start-Process -FilePath "Sort.exe" -RedirectStandardInput "Testsort.txt" -RedirectStandardOutput "Sorted.txt" -RedirectStandardError "SortError.txt" -UseNewEnvironment
+  description: |-
+    The **UseNewEnvironment** parameter specifies that the process runs with its own environment
+    variables.
+  summary: |+
+    This example starts a process that sorts items in the `Testsort.txt` file and returns the sorted
+    items in the `Sorted.txt` files. Any errors are written to the `SortError.txt` file.
+
+- title: 'Example 4: Start a process in a maximized window'
+  code: |-
+    Start-Process -FilePath "notepad" -Wait -WindowStyle Maximized
+  description: ""
+  summary: |+
+    This example starts the `Notepad.exe` process. It maximizes the window and retains the window until
+    the process completes.
+
+- title: 'Example 5: Start PowerShell as an administrator'
+  code: |-
+    Start-Process -FilePath "powershell" -Verb RunAs
+  description: ""
+  summary: |+
+    This example starts PowerShell by using the **Run as administrator** option.
+
+- title: 'Example 6: Using different verbs to start a process'
+  code: |-
+    $startExe = New-Object System.Diagnostics.ProcessStartInfo -Args PowerShell.exe
+    $startExe.verbs
+
+    open
+    runas
+    runasuser
+  description: |-
+    The example uses `New-Object` to create a **System.Diagnostics.ProcessStartInfo** object for
+    **PowerShell.exe**, the file that runs in the PowerShell process. The **Verbs** property of the
+    **ProcessStartInfo** object shows that you can use the **Open** and **RunAs** verbs with
+    `PowerShell.exe`, or with any process that runs a `.exe` file.
+  summary: |+
+    This example shows how to find the verbs that can be used when starting a process. The available
+    verbs are determined by the filename extension of the file that runs in the process.
+
+- title: 'Example 7: Specifying arguments to the process'
+  code: |-
+    Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
+    Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
+  description: ""
+  summary: |+
+    Both commands start the Windows command interpreter, issuing a `dir` command on the `Program Files`
+    folder. Because this foldername contains a space, the value needs surrounded with escaped quotes.
+    Note that the first command specifies a string as **ArgumentList**. The second command is a string
+    array.
+
+- title: 'Example 8: Create a detached process on Linux'
+  code: |-
+    # Runs for 2 minutes and appends output to ./nohup.out
+    Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'
+  description: |-
+    In this example, `Start-Process` is running the Linux `nohup` command, which launches `pwsh` as a
+    detached process. For more information, see the man page for
+    [nohup](https://linux.die.net/man/1/nohup).
+  summary: |+
+    On Windows, `Start-Process` creates an independent process that remains running independently of the
+    launching shell. On non-Windows platforms, the newly started process is attached to the shell that
+    launched. If the launching shell is closed, the child process is terminated.
+
+    To avoid terminating the child process on Unix-like platforms, you can combine `Start-Process` with
+    `nohup`. The following example launches a background instance of PowerShell on Linux that stays
+    alive even after you close the launching session. The `nohup` command collects output in file
+    `nohup.out` in the current directory.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ArgumentList
+  description: |+
+    Specifies parameters or parameter values to use when this cmdlet starts the process. Arguments can
+    be accepted as a single string with the arguments separated by spaces, or as an array of strings
+    separated by commas.
+
+    If parameters or parameter values contain a space, they need to be surrounded with escaped double
+    quotes. For more information, see [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
+
+  defaultValue: None
+  position: "1"
+  aliases: Args
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: None
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user account that has permission to perform this action. By default, the cmdlet uses the
+    credentials of the current user.
+
+    Type a user name, such as **User01** or **Domain01\User01**, or enter a **PSCredential** object
+    generated by the `Get-Credential` cmdlet. If you type a user name, you're prompted to enter the
+    password.
+
+    Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential)
+    object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).
+
+    > [!NOTE]
+    > For more information about **SecureString** data protection, see
+    > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+
+  defaultValue: Current user
+  position: Named
+  aliases: RunAs
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: FilePath
+  isRequired: true
+  description: |+
+    Specifies the optional path and filename of the program that runs in the process. Enter the name of
+    an executable file or of a document, such as a `.txt` or `.doc` file, that is associated with a
+    program on the computer. This parameter is required.
+
+    If you specify only a filename, use the **WorkingDirectory** parameter to specify the path.
+
+  defaultValue: None
+  position: "0"
+  aliases: PSPath, Path
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: LoadUserProfile
+  description: |+
+    Indicates that this cmdlet loads the Windows user profile stored in the `HKEY_USERS` registry key
+    for the current user. The parameter does not apply for non-Windows systems.
+
+    This parameter does not affect the PowerShell profiles. For more information, see
+    [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
+
+  defaultValue: None
+  position: Named
+  aliases: Lup
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NoNewWindow
+  description: |+
+    Start the new process in the current console window. By default on Windows, PowerShell opens a new
+    window. On non-Windows systems, you never get a new terminal window.
+
+    You cannot use the **NoNewWindow** and **WindowStyle** parameters in the same command.
+
+    The parameter does not apply for non-Windows systems.
+
+  defaultValue: None
+  position: Named
+  aliases: nnw
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns a process object for each process that the cmdlet started. By default, this cmdlet does not
+    generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RedirectStandardError
+  description: |+
+    Specifies a file. This cmdlet sends any errors generated by the process to a file that you specify.
+    Enter the path and filename. By default, the errors are displayed in the console.
+
+  defaultValue: None
+  position: Named
+  aliases: RSE
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RedirectStandardInput
+  description: |+
+    Specifies a file. This cmdlet reads input from the specified file. Enter the path and filename of
+    the input file. By default, the process gets its input from the keyboard.
+
+  defaultValue: None
+  position: Named
+  aliases: RSI
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RedirectStandardOutput
+  description: |+
+    Specifies a file. This cmdlet sends the output generated by the process to a file that you specify.
+    Enter the path and filename. By default, the output is displayed in the console.
+
+  defaultValue: None
+  position: Named
+  aliases: RSO
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: UseNewEnvironment
+  description: |+
+    Indicates that this cmdlet uses new environment variables specified for the process. By default, the
+    started process runs with the environment variables inherited from the parent process.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Verb
+  description: |+
+    Specifies a verb to use when this cmdlet starts the process. The verbs that are available are
+    determined by the filename extension of the file that runs in the process.
+
+    The following table shows the verbs for some common process file types.
+
+    | File type |                Verbs                |
+    | --------- | ----------------------------------- |
+    | .cmd      | Edit, Open, Print, RunAs, RunAsUser |
+    | .exe      | Open, RunAs, RunAsUser              |
+    | .txt      | Open, Print, PrintTo                |
+    | .wav      | Open, Play                          |
+
+    To find the verbs that can be used with the file that runs in a process, use the `New-Object` cmdlet
+    to create a **System.Diagnostics.ProcessStartInfo** object for the file. The available verbs are in
+    the **Verbs** property of the **ProcessStartInfo** object. For details, see the examples.
+
+    The parameter does not apply for non-Windows systems.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Wait
+  description: |+
+    Indicates that this cmdlet waits for the specified process and its descendants to complete before
+    accepting more input. This parameter suppresses the command prompt or retains the window until the
+    processes finish.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+    This parameter was introduced in PowerShell 6.0.
+
+  defaultValue: None
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+- type: <xref href="System.Diagnostics.ProcessWindowStyle" data-throw-if-not-resolved="False" />
+  name: WindowStyle
+  description: |+
+    Specifies the state of the window that is used for the new process. The acceptable values for this
+    parameter are: **Normal**, **Hidden**, **Minimized**, and **Maximized**. The default value is
+    **Normal**.
+
+    You cannot use the **WindowStyle** and **NoNewWindow** parameters in the same command.
+
+    The parameter does not apply for non-Windows systems.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Normal, Hidden, Minimized, Maximized
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: WorkingDirectory
+  description: |+
+    Specifies the location that the new process should start in. The default is the location of the
+    executable file or document being started. Wildcards are not supported. The path name must not
+    contain characters that would be interpreted as wildcards.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Start-Process
+name: Start-Process
+description: |-
+  The `Start-Process` cmdlet starts one or more processes on the local computer. By default,
+  `Start-Process` creates a new process that inherits all the environment variables that are defined
+  in the current process.
+
+  To specify the program that runs in the process, enter an executable file or script file, or a file
+  that can be opened by using a program on the computer. If you specify a non-executable file,
+  `Start-Process` starts the program that is associated with the file, similar to the `Invoke-Item`
+  cmdlet.
+
+  You can use the parameters of `Start-Process` to specify options, such as loading a user profile,
+  starting the process in a new window, or using alternate credentials.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 11/11/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Start-Process

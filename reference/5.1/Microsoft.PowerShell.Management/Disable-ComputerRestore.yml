@@ -1,0 +1,105 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Disables the System Restore feature on the specified file system drive.
+module: Microsoft.PowerShell.Management
+notes: |-
+  * To run this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with the Run as administrator option.
+
+    To find the file system drives that are eligible for system restore, in System in Control Panel, see the System Protection tab.
+  To open this tab in Windows PowerShell, type `SystemPropertiesProtection`.
+
+    This cmdlet uses the Windows Management Instrumentation (WMI) **SystemRestore** class.
+
+  *
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe input to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+links:
+- text: Checkpoint-Computer
+  href: Checkpoint-Computer.yml
+- text: Enable-ComputerRestore
+  href: Enable-ComputerRestore.yml
+- text: Get-ComputerRestorePoint
+  href: Get-ComputerRestorePoint.yml
+- text: Restart-Computer
+  href: Restart-Computer.yml
+- text: Restore-Computer
+  href: Restore-Computer.yml
+syntaxes:
+- Disable-ComputerRestore [-Drive] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Disable System Restore on the specified drive'
+  code: |-
+    PS C:\> Disable-ComputerRestore -Drive "C:\"
+  description: |-
+    This command disables System Restore on the C: drive.
+  summary: ""
+- title: 'Example 2: Disable System Restore on multiple drives'
+  code: |-
+    PS C:\> Disable-ComputerRestore "C:\", "D:\"
+  description: |-
+    This command disables System Restore on the C: and D: drives.
+    The command uses the *Drive* parameter, but it omits the Drive parameter name.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Drive
+  isRequired: true
+  description: |+
+    Specifies the file system drives.
+    Enter one or more file system drive letters, each followed by a colon and a backslash and enclosed in quotation marks, such as C:\ or D:\.
+    This parameter is required.
+
+    You cannot use this cmdlet to disable System Restore on a remote network drive, even if the drive is mapped to the local computer, and you cannot disable System Restore on drives that are not eligible for System Restore, such as external drives.
+
+    To disable System Restore on any drive, System Restore must be disabled on the system drive, either before or concurrently.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Disable-ComputerRestore
+name: Disable-ComputerRestore
+description: |-
+  The **Disable-ComputerRestore** cmdlet turns off the System Restore feature on one or more file system drives.
+  As a result, attempts to restore the computer do not affect the specified drive.
+
+  To disable System Restore on any drive, it must be disabled on the system drive, either first or concurrently.
+
+  To re-enable System Restore, use the Enable-ComputerRestore cmdlet.
+  To find the state of System Restore for each drive, use Rstrui.exe.
+
+  System restore points and the ComputerRestore cmdlets are supported only on client operating systems, such as Windows 7, Windows Vista, and Windows XP.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/disable-computerrestore?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Disable-ComputerRestore

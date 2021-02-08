@@ -1,0 +1,81 @@
+### YamlMime:PowershellModule
+children:
+- title: Microsoft.PowerShell.Core
+  cmdlets:
+  - Microsoft.PowerShell.Core.Add-History
+  - Microsoft.PowerShell.Core.Clear-History
+  - Microsoft.PowerShell.Core.Clear-Host
+  - Microsoft.PowerShell.Core.Connect-PSSession
+  - Microsoft.PowerShell.Core.Debug-Job
+  - Microsoft.PowerShell.Core.Disable-ExperimentalFeature
+  - Microsoft.PowerShell.Core.Disable-PSRemoting
+  - Microsoft.PowerShell.Core.Disable-PSSessionConfiguration
+  - Microsoft.PowerShell.Core.Disconnect-PSSession
+  - Microsoft.PowerShell.Core.Enable-ExperimentalFeature
+  - Microsoft.PowerShell.Core.Enable-PSRemoting
+  - Microsoft.PowerShell.Core.Enable-PSSessionConfiguration
+  - Microsoft.PowerShell.Core.Enter-PSHostProcess
+  - Microsoft.PowerShell.Core.Enter-PSSession
+  - Microsoft.PowerShell.Core.Exit-PSHostProcess
+  - Microsoft.PowerShell.Core.Exit-PSSession
+  - Microsoft.PowerShell.Core.Export-ModuleMember
+  - Microsoft.PowerShell.Core.ForEach-Object
+  - Microsoft.PowerShell.Core.Get-Command
+  - Microsoft.PowerShell.Core.Get-ExperimentalFeature
+  - Microsoft.PowerShell.Core.Get-Help
+  - Microsoft.PowerShell.Core.Get-History
+  - Microsoft.PowerShell.Core.Get-Job
+  - Microsoft.PowerShell.Core.Get-Module
+  - Microsoft.PowerShell.Core.Get-PSHostProcessInfo
+  - Microsoft.PowerShell.Core.Get-PSSession
+  - Microsoft.PowerShell.Core.Get-PSSessionCapability
+  - Microsoft.PowerShell.Core.Get-PSSessionConfiguration
+  - Microsoft.PowerShell.Core.Get-PSSubsystem
+  - Microsoft.PowerShell.Core.Import-Module
+  - Microsoft.PowerShell.Core.Invoke-Command
+  - Microsoft.PowerShell.Core.Invoke-History
+  - Microsoft.PowerShell.Core.New-Module
+  - Microsoft.PowerShell.Core.New-ModuleManifest
+  - Microsoft.PowerShell.Core.New-PSRoleCapabilityFile
+  - Microsoft.PowerShell.Core.New-PSSession
+  - Microsoft.PowerShell.Core.New-PSSessionConfigurationFile
+  - Microsoft.PowerShell.Core.New-PSSessionOption
+  - Microsoft.PowerShell.Core.New-PSTransportOption
+  - Microsoft.PowerShell.Core.Out-Default
+  - Microsoft.PowerShell.Core.Out-Host
+  - Microsoft.PowerShell.Core.Out-Null
+  - Microsoft.PowerShell.Core.Receive-Job
+  - Microsoft.PowerShell.Core.Receive-PSSession
+  - Microsoft.PowerShell.Core.Register-ArgumentCompleter
+  - Microsoft.PowerShell.Core.Register-PSSessionConfiguration
+  - Microsoft.PowerShell.Core.Remove-Job
+  - Microsoft.PowerShell.Core.Remove-Module
+  - Microsoft.PowerShell.Core.Remove-PSSession
+  - Microsoft.PowerShell.Core.Save-Help
+  - Microsoft.PowerShell.Core.Set-PSDebug
+  - Microsoft.PowerShell.Core.Set-PSSessionConfiguration
+  - Microsoft.PowerShell.Core.Set-StrictMode
+  - Microsoft.PowerShell.Core.Start-Job
+  - Microsoft.PowerShell.Core.Stop-Job
+  - Microsoft.PowerShell.Core.Test-ModuleManifest
+  - Microsoft.PowerShell.Core.Test-PSSessionConfigurationFile
+  - Microsoft.PowerShell.Core.Unregister-PSSessionConfiguration
+  - Microsoft.PowerShell.Core.Update-Help
+  - Microsoft.PowerShell.Core.Wait-Job
+  - Microsoft.PowerShell.Core.Where-Object
+uid: Microsoft.PowerShell.Core
+name: Microsoft.PowerShell.Core
+description: |-
+  This section contains the help topics for the cmdlets that are installed with PowerShell
+  Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the
+  basic features of PowerShell.
+metadata:
+  Download Help Link: https://aka.ms/powershell71-help
+  Help Version: 7.1.0.0
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Guid: 00000000-0000-0000-0000-000000000000
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 02/28/2019
+  schema: 2.0.0
+  title: Microsoft.PowerShell.Core

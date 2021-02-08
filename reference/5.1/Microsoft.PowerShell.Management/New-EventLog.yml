@@ -1,0 +1,168 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates a new event log and a new event source on a local or remote computer.
+module: Microsoft.PowerShell.Management
+notes: |-
+  To use `New-EventLog` on Windows Vista and later versions of Windows, open PowerShell with
+  the "Run as administrator" option.
+
+  To create an event source in Windows Vista, Windows XP Professional, or Windows Server 2003, you
+  must be a member of the Administrators group on the computer.
+
+  When you create a new event log and a new event source, the system registers the new source for the
+  new log, but the log is not created until the first entry is written to it.
+
+  The operating system stores event logs as files.
+
+  When you create a new event log, the associated file is stored in the
+  `$env:SystemRoot\System32\Config` directory on the specified computer.
+
+  The file name is the first eight characters of the **Log** property with an .evt file name
+  extension.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe input to this cmdlet.
+outputs:
+- name: <xref href="System.Diagnostics.EventLogEntry" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Clear-EventLog
+  href: Clear-EventLog.yml
+- text: Get-EventLog
+  href: Get-EventLog.yml
+- text: Get-WinEvent
+  href: ../Microsoft.PowerShell.Diagnostics/Get-WinEvent.yml
+- text: Limit-EventLog
+  href: Limit-EventLog.yml
+- text: New-EventLog
+  href: New-EventLog.yml
+- text: Remove-EventLog
+  href: Remove-EventLog.yml
+- text: Show-EventLog
+  href: Show-EventLog.yml
+- text: Write-EventLog
+  href: Write-EventLog.yml
+syntaxes:
+- >-
+  New-EventLog [-LogName] <string> [-Source] <string[]> [[-ComputerName] <string[]>]
+
+    [-CategoryResourceFile <string>] [-MessageResourceFile <string>] [-ParameterResourceFile <string>]
+
+    [<CommonParameters>]
+examples:
+- title: Example 1 - create a new event log
+  code: |-
+    New-EventLog -source TestApp -LogName TestLog -MessageResourceFile C:\Test\TestApp.dll
+  description: ""
+  summary: |+
+    This command creates the TestLog event log on the local computer and registers a new source for it.
+
+- title: Example 2 - add a new event source to an existing log
+  code: |-
+    $file = "C:\Program Files\TestApps\NewTestApp.dll"
+    New-EventLog -ComputerName Server01 -Source NewTestApp -LogName Application -MessageResourceFile $file -CategoryResourceFile $file
+  description: |-
+    The command requires that the NewTestApp.dll file is located on the Server01 computer.
+  summary: |+
+    This command adds a new event source, NewTestApp, to the Application log on the Server01 remote
+    computer.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: CategoryResourceFile
+  description: |+
+    Specifies the path to the file that contains category strings for the source events. This file is
+    also known as the Category Message File.
+
+    The file must be present on the computer on which the event log is being created. This parameter
+    does not create or move files.
+
+  defaultValue: None
+  position: Named
+  aliases: CRF
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ComputerName
+  description: |+
+    Creates the new event logs on the specified computers. The default is the local computer.
+
+    The NetBIOS name, IP address, or fully qualified domain name of a remote computer.
+    To specify the local computer, type the computer name, a dot (.), or "localhost".
+
+    This parameter does not rely on PowerShell remoting. You can use the **ComputerName**
+    parameter of `Get-EventLog` even if your computer is not configured to run remote commands.
+
+  defaultValue: Local computer
+  position: "3"
+  aliases: CN
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LogName
+  isRequired: true
+  description: |+
+    Specifies the name of the event log.
+
+    If the log does not exist, `New-EventLog` creates the log and uses this value for the **Log** and
+    **LogDisplayName** properties of the new event log. If the log exists, `New-EventLog` registers a new
+    source for the event log.
+
+  defaultValue: None
+  position: "1"
+  aliases: LN
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MessageResourceFile
+  description: |+
+    Specifies the path to the file that contains message formatting strings for the source events.
+    This file is also known as the Event Message File.
+
+    The file must be present on the computer on which the event log is being created.
+    This parameter does not create or move files.
+
+  defaultValue: None
+  position: Named
+  aliases: MRF
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ParameterResourceFile
+  description: |+
+    Specifies the path to the file that contains strings used for parameter substitutions in event
+    descriptions. This file is also known as the Parameter Message File.
+
+    The file must be present on the computer on which the event log is being created.
+    This parameter does not create or move files.
+
+  defaultValue: None
+  position: Named
+  aliases: PRF
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Source
+  isRequired: true
+  description: |+
+    Specifies the names of the event log sources, such as application programs that write to the event
+    log. This parameter is required.
+
+  defaultValue: None
+  position: "2"
+  aliases: SRC
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.New-EventLog
+name: New-EventLog
+description: |-
+  This cmdlet creates a new classic event log on a local or remote computer. It can also register an
+  event source that writes to the new log or to an existing log.
+
+  The cmdlets that contain the EventLog noun (the Event log cmdlets) work only on classic event logs.
+  To get events from logs that use the Windows Event Log technology in Windows Vista and later
+  versions of Windows, use `Get-WinEvent`.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 01/22/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: New-EventLog

@@ -1,0 +1,485 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Saves packages to the local computer without installing them.
+module: PackageManagement
+notes: |-
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+inputs:
+- name: <xref href="`Save-Package` accepts objects from the pipeline." data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="This cmdlet does not generate any output." data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: about_PackageManagement
+  href: ../Microsoft.PowerShell.Core/About/about_PackageManagement.md
+- text: Get-Package
+  href: Get-Package.yml
+- text: Install-Package
+  href: Install-Package.yml
+- text: Save-Package
+  href: Save-Package.yml
+- text: Uninstall-Package
+  href: Uninstall-Package.yml
+syntaxes:
+- >-
+  Save-Package [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
+
+   [-MaximumVersion <String>] [-Source <String[]>] [-Path <String>] [-LiteralPath <String>]
+
+   [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
+
+   [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <String[]>] [<CommonParameters>]
+- >-
+  Save-Package [-Path <String>] [-LiteralPath <String>] -InputObject <SoftwareIdentity>
+
+   [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
+
+   [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
+
+   [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+
+   [-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>]
+
+   [-Contains <String>] [-AllowPrereleaseVersions] [<CommonParameters>]
+- >-
+  Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
+
+   [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+
+   [-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>]
+
+   [-Contains <String>] [-AllowPrereleaseVersions] [<CommonParameters>]
+- >-
+  Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
+
+   [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+
+   [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+
+   [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>]
+
+   [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
+
+   [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
+- >-
+  Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
+
+   [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+
+   [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+
+   [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>]
+
+   [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
+
+   [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
+examples:
+- title: 'Example 1: Save a package to the local computer'
+  code: |-
+    PS> Save-Package -Name NuGet.Core -ProviderName NuGet -Path C:\LocalPkg
+
+    Name                    Version    Source    Summary
+    ----                    -------    ------    -------
+    Microsoft.Web.Xdt       3.0.0      Nuget     Microsoft Xml Document Transformation (XDT) enables...
+    NuGet.Core              2.14.0     Nuget     NuGet.Core is the core framework assembly for NuGet...
+  description: |-
+    `Save-Package` uses the **Name** parameter to specify the package. The package is downloaded from
+    the repository specified by the **ProviderName** parameter. The **Path** parameter determines where
+    the package is saved.
+  summary: |+
+    This example saves the newest version of the package to a directory on the local computer. The
+    package's dependencies are download with the package.
+
+- title: 'Example 2: Save a specific package version'
+  code: |-
+    PS> Save-Package -Name NuGet.Core -RequiredVersion 2.9.0 -ProviderName NuGet -Path C:\LocalPkg
+
+    Name                    Version    Source    Summary
+    ----                    -------    ------    -------
+    Microsoft.Web.Xdt       3.0.0      Nuget     Microsoft Xml Document Transformation (XDT) enables...
+    NuGet.Core              2.9.0      Nuget     NuGet.Core is the core framework assembly for NuGet...
+  description: |-
+    `Save-Package` uses the **Name** parameter to specify the package. **RequiredVersion** indicates a
+    specific package version. The package is downloaded from the repository specified by the
+    **ProviderName** parameter. The **Path** parameter determines where the package is saved.
+  summary: |+
+    This example specifies the package version and saves it to a directory on the local computer.
+
+- title: 'Example 3: Use Find-Package to save a package'
+  code: |-
+    PS> Find-Package -Name NuGet.Core -ProviderName NuGet | Save-Package -Path C:\LocalPkg
+  description: |-
+    `Find-Package` uses the **Name** parameter to specify the package. The package is downloaded from
+    the repository specified by the **ProviderName** parameter. The object is sent down the pipeline to
+    `Save-Package`. The **Path** parameter determines where the package is saved.
+  summary: |+
+    This command uses `Find-Package` to locate the newest version of the package and sends the object to
+    `Save-Package`.
+
+- title: 'Example 4: Save and install the package'
+  code: |-
+    PS> Save-Package -Name NuGet.Core -ProviderName NuGet -Path C:\LocalPkg
+    PS> Install-Package C:\LocalPkg\NuGet.Core.2.14.0.nupkg
+  description: |-
+    `Save-Package` downloads the package file and its dependencies to the local computer.
+    `Install-Package` installs the package and dependencies from the specified directory.
+  summary: |+
+    The newest version of the package and its dependencies are downloaded and installed on the local
+    computer.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AcceptLicense
+  description: |+
+    Automatically accept the license agreement during installation if the package requires it.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowPrereleaseVersions
+  description: |+
+    Allows packages marked as Prerelease to be saved.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllVersions
+  description: |+
+    Indicates that this cmdlet saves all available versions of the package.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Command
+  description: |+
+    Specifies one or more commands included in the package.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ConfigFile
+  description: |+
+    Specifies a configuration File.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Contains
+  description: |+
+    `Save-Package` gets objects if any item in the object's property values are an exact match for the
+    specified value.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user account that has permission to save a package from a specified package provider or
+    source.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: DscResource
+  description: |+
+    Specifies one or more Desired State Configuration (DSC) resources for the package.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Filter
+  description: |+
+    Specifies a filter for the package.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: FilterOnTag
+  description: |+
+    Specifies the tag that filters the results. Results that don't contain the specified tag are excluded.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the command to run without asking for user confirmation.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ForceBootstrap
+  description: |+
+    Indicates that `Save-Package` forces **PackageManagement** to automatically install the package
+    provider for the specified package.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Headers
+  description: |+
+    Specifies the headers for the package.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Includes
+  description: |+
+    Indicates the resources that the package includes.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: DscResource, Cmdlet, Function, Workflow, RoleCapability
+- type: <xref href="Microsoft.PackageManagement.Packaging.SoftwareIdentity" data-throw-if-not-resolved="False" />
+  name: InputObject
+  isRequired: true
+  description: |+
+    A software ID object that represents the package that you want to save. Software IDs are part of the
+    results of the `Find-Package` cmdlet.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LiteralPath
+  description: |+
+    Specifies the literal path to which you want to save the package. You cannot add both this parameter
+    and the **Path** parameter to the same command.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MaximumVersion
+  description: |+
+    Specifies the maximum version of the package that you want to save.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MinimumVersion
+  description: |+
+    Specifies the minimum version of the package that you want to find.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies one or more package names.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: PackageManagementProvider
+  description: |+
+    Specifies a package management provider.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  description: |+
+    Specifies the location on the local computer to store the package.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ProviderName
+  description: |+
+    Specifies one or more provider names.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: Provider
+  parameterValueGroup: Bootstrap, NuGet, PowerShellGet
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: Proxy
+  description: |+
+    Specifies a proxy server for the request, rather than a direct connection to the internet resource.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: ProxyCredential
+  description: |+
+    Specifies a user account that has permission to use the proxy server that is specified by the
+    **Proxy** parameter.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: PublishLocation
+  description: |+
+    Specifies the publish location.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RequiredVersion
+  description: |+
+    Specifies the exact version of the package to save.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: RoleCapability
+  description: |+
+    Specifies an array of role capabilities.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ScriptPublishLocation
+  description: |+
+    Specifies the script publish location.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ScriptSourceLocation
+  description: |+
+    Specifies the script source location.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: SkipValidate
+  description: |+
+    Switch that skips validating the credentials of a package.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Source
+  description: |+
+    Specifies one or more package sources.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Tag
+  description: |+
+    Specifies a tag to search for within the package metadata.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Type
+  description: |+
+    Specifies whether to search for packages with a module, a script, or either.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Module, Script, All
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: PackageManagement.Save-Package
+name: Save-Package
+description: |-
+  The `Save-Package` cmdlet saves packages to the local computer but doesn't install the packages.
+  This cmdlet saves the newest version of a package unless you specify a **RequiredVerion**. The
+  **Path** and **LiteralPath** parameters are mutually exclusive, and cannot be added to the same
+  command.
+metadata:
+  external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+  Locale: en-US
+  Module Name: PackageManagement
+  ms.date: 04/03/2019
+  online version: https://docs.microsoft.com/powershell/module/packagemanagement/save-package?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Save-Package

@@ -1,0 +1,155 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Applies Local Configuration Manager (LCM) settings to nodes.
+module: PSDesiredStateConfiguration
+notes: ""
+links:
+- text: Windows PowerShell Desired State Configuration Overview
+  href: /powershell/scripting/dsc/overview/overview
+- text: Get-DscLocalConfigurationManager
+  href: Get-DscLocalConfigurationManager.yml
+syntaxes:
+- >-
+  Set-DscLocalConfigurationManager [-Path] <String> [-Force] [[-ComputerName] <String[]>]
+
+   [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Set-DscLocalConfigurationManager [-Path] <String> [-Force] [-ThrottleLimit <Int32>] -CimSession <CimSession[]>
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Apply LCM settings'
+  code: |-
+    Set-DscLocalConfigurationManager -Path "C:\DSC\Configurations\"
+  description: |-
+    This command applies the LCM settings from `C:\DSC\Configurations\` to the targeted nodes. After
+    receiving the settings, LCM processes them.
+
+    > [!WARNING]
+    > If there are multiple meta mofs for the same computer stored in the specified folder, only the
+    > first meta mof will be applied.
+  summary: ""
+- title: 'Example 2: Apply LCM settings by using a CIM session'
+  code: |-
+    $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
+    Set-DscLocalConfigurationManager -Path "C:\DSC\Configurations\" -CimSession $Session
+  description: |-
+    This example applies LCM settings to a computer and applies the settings. The example creates a CIM
+    session for a computer named Server01 for use with the cmdlet. Alternatively, create an array of CIM
+    sessions to apply the cmdlet to multiple specified computers.
+
+    The first command creates a CIM session by using the `New-CimSession` cmdlet, and then stores the
+    **CimSession** object in the `$Session` variable. The command prompts you for a password. For more
+    information, type `Get-Help New-CimSession`.
+
+    The second command applies LCM settings for the targeted node from `C:\DSC\Configurations\` to the
+    computer identified by the **CimSession** objects stored in the `$Session` variable. In this example,
+    the `$Session` variable contains a CIM session only for the computer named Server01. The command
+    applies the settings. After receiving the settings, LCM processes them.
+  summary: ""
+parameters:
+- type: <xref href="Microsoft.Management.Infrastructure.CimSession" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: CimSession
+  isRequired: true
+  description: |+
+    Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session
+    object, such as the output of a [New-CimSession](/powershell/module/CimCmdlets/New-CimSession)
+    or [Get-CimSession](/powershell/module/CimCmdlets/Get-CimSession) cmdlet.
+    The default is the current session on the local computer.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ComputerName
+  description: |+
+    Specifies an array of computer names. This parameter restricts the computers that have
+    meta-configuration documents in the **Path** parameter to those specified in the array.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: CN, ServerName
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user name and password, as a **PSCredential** object, for the target computer. To obtain
+    a **PSCredential** object, use the Get-Credential cmdlet. For more information, type
+    `Get-Help Get-Credential`.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the command to run without asking for user confirmation.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies a file path of a folder that contains configuration settings files. The cmdlet publishes
+    and applies these LCM settings to computers that have settings files in the specified path. Each
+    target node must have a settings file of the following format: `NetBIOS Name.meta.mof`.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: ThrottleLimit
+  description: |+
+    Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If
+    this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an
+    optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the
+    computer. The throttle limit applies only to the current cmdlet, not to the session or to the
+    computer.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: PSDesiredStateConfiguration.Set-DscLocalConfigurationManager
+name: Set-DscLocalConfigurationManager
+description: |-
+  The `Set-DscLocalConfigurationManager` cmdlet applies LCM settings,
+  or meta-configuration, to nodes. Specify computers by specifying computer names or by using Common
+  Information Model (CIM) sessions. If you do not specify a target computer, the cmdlet applies
+  settings to the local computer.
+metadata:
+  external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSDesiredStateConfiguration
+  ms.date: 04/29/2020
+  online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/set-dsclocalconfigurationmanager?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Set-DscLocalConfigurationManager

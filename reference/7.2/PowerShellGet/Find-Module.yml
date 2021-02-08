@@ -1,0 +1,403 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Finds modules in a repository that match specified criteria.
+module: PowerShellGet
+notes: |-
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="PSRepositoryItemInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    `Find-Module` creates **PSRepositoryItemInfo** objects that can be sent down the pipeline to cmdlets
+    such as `Install-Module`.
+links:
+- text: Get-PSRepository
+  href: Get-PSRepository.yml
+- text: Install-Module
+  href: Install-Module.yml
+- text: Publish-Module
+  href: Publish-Module.yml
+- text: Save-Module
+  href: Save-Module.yml
+- text: Uninstall-Module
+  href: Uninstall-Module.yml
+- text: Update-Module
+  href: Update-Module.yml
+- text: Register-PSRepository
+  href: Register-PSRepository.yml
+syntaxes:
+- >-
+  Find-Module [[-Name] <string[]>] [-MinimumVersion <string>] [-MaximumVersion <string>]
+
+   [-RequiredVersion <string>] [-AllVersions] [-IncludeDependencies] [-Filter <string>]
+
+   [-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>] [-RoleCapability <string[]>]
+
+   [-Command <string[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>] [-Repository <string[]>]
+
+   [-Credential <pscredential>] [-AllowPrerelease] [<CommonParameters>]
+examples:
+- title: 'Example 1: Find a module by name'
+  code: |-
+    Find-Module -Name PowerShellGet
+
+    Version   Name              Repository           Description
+    -------   ----              ----------           -----------
+    2.1.0     PowerShellGet     PSGallery            PowerShell module with commands for discovering...
+  description: |-
+    The `Find-Module` cmdlet uses the **Name** parameter to specify the **PowerShellGet** module.
+  summary: |+
+    This example finds a module in the default repository.
+
+- title: 'Example 2: Find modules with similar names'
+  code: |-
+    Find-Module -Name PowerShell*
+
+    Version   Name                            Repository    Description
+    -------   ----                            ----------    -----------
+    0.4.0     powershell-yaml                 PSGallery     Powershell module for serializing and...
+    2.1.0     PowerShellGet                   PSGallery     PowerShell module with commands for...
+    1.9       Powershell.Helper.Extension     PSGallery     # Powershell.Helper.Extension...
+    3.1       PowerShellHumanizer             PSGallery     PowerShell Humanizer wraps Humanizer...
+    4.0       PowerShellISEModule             PSGallery     a module that adds capability to the ISE
+  description: |-
+    The `Find-Module` cmdlet uses the **Name** parameter with the asterisk (`*`) wildcard to find all
+    modules that contain **PowerShell**.
+  summary: |+
+    This example uses the asterisk (`*`) wildcard to find modules with similar names.
+
+- title: 'Example 3: Find a module by minimum version'
+  code: |-
+    Find-Module -Name PowerShellGet -MinimumVersion 1.6.5
+
+    Version   Name             Repository     Description
+    -------   ----             ----------     -----------
+    2.1.0     PowerShellGet    PSGallery      PowerShell module with commands for discovering...
+  description: |-
+    The `Find-Module` cmdlet uses the **Name** parameter to specify the **PowerShellGet** module. The
+    **MinimumVersion** specifies version **1.6.5**. `Find-Module` returns PowerShellGet version
+    **2.1.0** because it exceeds the minimum version and is the most current version.
+  summary: |+
+    This example searches for a module's minimum version. If the repository contains a newer version of
+    the module, the newer version is returned.
+
+- title: 'Example 4: Find a module by specific version'
+  code: |-
+    Find-Module -Name PowerShellGet -RequiredVersion 1.6.5
+
+    Version   Name             Repository     Description
+    -------   ----             ----------     -----------
+    1.6.5     PowerShellGet    PSGallery      PowerShell module with commands for discovering...
+  description: |-
+    The `Find-Module` cmdlet uses the **Name** parameter to specify the **PowerShellGet** module. The
+    **RequiredVersion** parameter specifies version **1.6.5**.
+  summary: |+
+    This example returns an object that represents a module's specific version. If the specified version
+    is not found, an error is returned.
+
+- title: 'Example 5: Find a module in a specific repository'
+  code: |-
+    Find-Module -Name PowerShellGet -Repository PSGallery
+
+    Version   Name             Repository     Description
+    -------   ----             ----------     -----------
+    2.1.0     PowerShellGet    PSGallery      PowerShell module with commands for discovering...
+  description: |-
+    The `Find-Module` cmdlet uses the **Name** parameter to specify the **PowerShellGet** module. The
+    **Repository** parameter specifies to search the **PSGallery** repository.
+  summary: |+
+    This example uses the **Repository** parameter to find a module in a specific repository.
+
+- title: 'Example 6: Find a module in multiple repositories'
+  code: |-
+    Register-PSRepository -Name MySource -SourceLocation https://www.myget.org/F/powershellgetdemo/
+    Find-Module -Name Contoso* -Repository PSGallery, MySource
+
+    Repository    Version   Name             Description
+    ----------    -------   ----             -----------
+    PSGallery     2.0.0.0   ContosoServer    Cmdlets and DSC resources for managing Contoso Server...
+    MySource      1.2.0.0   ContosoClient    Cmdlets and DSC resources for managing Contoso Client...
+  description: |-
+    The `Register-PSRepository` cmdlet registers a new repository. The **Name** parameter assigns the
+    name **MySource**. The **SourceLocation** parameter specifies the repository's address.
+
+    The `Find-Module` cmdlet uses the **Name** parameter with the asterisk (`*`) wildcard to specify the
+    **Contoso** module. The **Repository** parameter specifies to search two repositories, **PSGallery**
+    and **MySource**.
+  summary: |+
+    This example uses the `Register-PSRepository` to specify a repository. `Find-Module` uses the
+    repository to search for a module.
+
+- title: 'Example 7: Find a module that contains a DSC resource'
+  code: |-
+    Find-Module -Repository PSGallery -Includes DscResource
+
+    Version     Name                            Repository    Description
+    -------     ----                            ----------    -----------
+    2.7.0       Carbon                          PSGallery     Carbon is a PowerShell module...
+    8.5.0.0     xPSDesiredStateConfiguration    PSGallery     The xPSDesiredStateConfiguration module...
+    1.3.1       PackageManagement               PSGallery     PackageManagement (a.k.a. OneGet) is...
+    2.7.0.0     xWindowsUpdate                  PSGallery     Module with DSC Resources...
+    3.2.0.0     xCertificate                    PSGallery     This module includes DSC resources...
+    3.1.0.0     xPowerShellExecutionPolicy      PSGallery     This DSC resource can change the user...
+  description: |-
+    The `Find-Module` cmdlet uses the **Repository** parameter to search the repository, **PSGallery**.
+    The **Includes** parameter specifies **DscResource**, which is a functionality that the parameter
+    can search for in the repository.
+  summary: |+
+    This command returns modules that contain DSC resources. The **Includes** parameter has four
+    predefined functionalities that are used to search the repository. Use tab-complete to display the
+    four functionalities supported by the **Includes** parameter.
+
+- title: 'Example 8: Find a module with a filter'
+  code: |-
+    Find-Module -Filter AppDomain
+
+    Version    Name              Repository           Description
+    -------    ----              ----------           -----------
+    1.0.0.0  AppDomainConfig     PSGallery            Manipulate AppDomain configuration...
+    1.1.0    ClassExplorer       PSGallery            Quickly search the AppDomain for classes...
+  description: |-
+    The `Find-Module` cmdlet uses the **Filter** parameter to search the repository for **AppDomain**.
+  summary: |+
+    In this example, to find modules, a filter is used to search the repository.
+
+    For a NuGet-based repository, the **Filter** parameter searches through the name, description, and
+    tags for the argument.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowPrerelease
+  description: |+
+    Includes in the results modules marked as a pre-release.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllVersions
+  description: |+
+    Specifies to include all versions of a module in the results. You cannot use the **AllVersions**
+    parameter with the **MinimumVersion**, **MaximumVersion**, or **RequiredVersion** parameters.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Command
+  description: |+
+    Specifies an array of commands to find in modules. A command can be a function or workflow.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user account that has rights to install a module for a specified package provider or
+    source.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: DscResource
+  description: |+
+    Specifies the name, or part of the name, of modules that contain DSC resources. Per PowerShell
+    conventions, performs an **OR** search when you provide multiple arguments.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Filter
+  description: |+
+    Specifies a filter based on the **PackageManagement** provider-specific search syntax. For NuGet
+    modules, this parameter is the equivalent of searching by using the Search bar on the [PowerShell Gallery](https://www.powershellgallery.com/)
+    website.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: IncludeDependencies
+  description: |+
+    Indicates that this operation includes all modules that are dependent upon the module specified in
+    the **Name** parameter.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Includes
+  description: |+
+    Returns only those modules that include specific kinds of PowerShell functionality. For example, you
+    might only want to find modules that include **DSCResource**. The acceptable values for this
+    parameter are as follows:
+
+    - Cmdlet
+    - DscResource
+    - Function
+    - RoleCapability
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: DscResource, Cmdlet, Function, RoleCapability
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MaximumVersion
+  description: |+
+    Specifies the maximum, or latest, version of the module to include in the search results.
+    **MaximumVersion** and **RequiredVersion** cannot be used in the same command.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MinimumVersion
+  description: |+
+    Specifies the minimum version of the module to include in results. **MinimumVersion** and
+    **RequiredVersion** cannot be used in the same command.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Specifies the names of modules to search for in the repository. A comma-separated list of module
+    names is accepted. Wildcards are accepted.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: Proxy
+  description: |+
+    Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: ProxyCredential
+  description: |+
+    Specifies a user account that has permission to use the proxy server that is specified by the
+    **Proxy** parameter.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Repository
+  description: |+
+    Use the **Repository** parameter to specify which repository to search for a module. Used when
+    multiple repositories are registered. Accepts a comma-separated list of repositories. To register a
+    repository, use `Register-PSRepository`. To display registered repositories, use `Get-PSRepository`.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RequiredVersion
+  description: |+
+    Specifies the exact version number of the module to include in the results. **RequiredVersion**
+    cannot be used in the same command as **MinimumVersion** or **MaximumVersion**.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: RoleCapability
+  description: |+
+    Specifies an array of role capabilities.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Tag
+  description: |+
+    Specifies an array of tags. Example tags include **DesiredStateConfiguration**, **DSC**,
+    **DSCResourceKit**, or **PSModule**.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: PowerShellGet.Find-Module
+name: Find-Module
+description: |-
+  The `Find-Module` cmdlet finds modules in a repository that match the specified criteria.
+  `Find-Module` returns a **PSRepositoryItemInfo** object for each module it finds. The objects can be
+  sent down the pipeline to cmdlets such as `Install-Module`.
+
+  The first time `Find-Module` attempts to use a repository, you might be prompted to install updates.
+  If the repository source is not registered with `Register-PSRepository` cmdlet, an error is
+  returned.
+
+  `Find-Module` returns the newest version of a module if no parameters are used that limit the
+  version. To get a repository's list of a module's versions, use the parameter **AllVersions**.
+
+  If the **MinimumVersion** parameter is specified, `Find-Module` returns the module's version that is
+  equal to or greater than the minimum. If there is a newer version available in the repository, the
+  newer version is returned.
+
+  If the **MaximumVersion** parameter is specified, `Find-Module` returns the newest version of the
+  module that does not exceed the version specified.
+
+  If the **RequiredVersion** parameter is specified, `Find-Module` only returns the module version
+  that is an exact match to the specified version. `Find-Module` searches through all available
+  modules, because name conflicts between sources can occur.
+
+  The following examples use the [PowerShell Gallery](https://www.powershellgallery.com/) as the only
+  registered repository. `Get-PSRepository` displays the registered repositories. If you have multiple
+  registered repositories, use the `-Repository` parameter to specify the repository's name.
+metadata:
+  external help file: PSModule-help.xml
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 03/11/2019
+  online version: https://docs.microsoft.com/powershell/module/powershellget/find-module?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Find-Module

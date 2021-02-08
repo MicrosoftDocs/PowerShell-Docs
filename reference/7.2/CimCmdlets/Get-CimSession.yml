@@ -1,0 +1,180 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets the CIM session objects from the current session.
+module: CimCmdlets
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="Microsoft.Management.Infrastructure.CimSession" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Format-Table
+  href: ../microsoft.powershell.utility/format-table.yml
+- text: New-CimSession
+  href: New-CimSession.yml
+- text: Remove-CimSession
+  href: remove-cimsession.yml
+- text: about_CimSession
+  href: ../Microsoft.PowerShell.Core/About/about_CimSession.md
+syntaxes:
+- Get-CimSession [[-ComputerName] <String[]>] [<CommonParameters>]
+- Get-CimSession [-Id] <UInt32[]> [<CommonParameters>]
+- Get-CimSession -InstanceId <Guid[]> [<CommonParameters>]
+- Get-CimSession -Name <String[]> [<CommonParameters>]
+examples:
+- title: 'Example 1: Get CIM sessions from the current PowerShell session'
+  code: |-
+    New-CimSession -ComputerName Server01,Server02
+    Get-CimSession
+
+    Id           : 1
+    Name         : CimSession1
+    InstanceId   : d1413bc3-162a-4cb8-9aec-4d2c61253d59
+    ComputerName : Server01
+    Protocol     : WSMAN
+
+    Id           : 2
+    Name         : CimSession2
+    InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
+    ComputerName : Server02
+    Protocol     : WSMAN
+  description: ""
+  summary: |+
+    This example creates CIM sessions using [New-CimSession](New-CimSession.yml), and then gets the CIM
+    sessions using `Get-CimSession`.
+
+- title: 'Example 2: Get the CIM sessions to a specific computer'
+  code: |-
+    Get-CimSession -ComputerName Server02
+
+    Id           : 2
+    Name         : CimSession2
+    InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
+    ComputerName : Server02
+    Protocol     : WSMAN
+  description: ""
+  summary: |+
+    This example gets the CIM sessions that are connected to the computer named **Server02**.
+
+- title: 'Example 3: Get a list of CIM sessions and then format the list'
+  code: |-
+    Get-CimSession | Format-Table -Property ComputerName,InstanceId
+
+    ComputerName InstanceId
+    ------------ ----------
+    Server01     d1413bc3-162a-4cb8-9aec-4d2c61253d59
+    Server02     c0095981-52c5-4e7f-a5bb-c4c680541710
+  description: ""
+  summary: |+
+    This example gets all CIM sessions in the current PowerShell session and displays a table containing
+    only the **ComputerName** and **InstanceID** properties.
+
+- title: 'Example 4: Get all the CIM sessions that have specific names'
+  code: |-
+    Get-CimSession -ComputerName Serv*
+
+    Id           : 1
+    Name         : CimSession1
+    InstanceId   : d1413bc-162a-4cb8-9aec-4d2c61253d59
+    ComputerName : Server01
+    Protocol     : WSMAN
+
+    Id           : 2
+    Name         : CimSession2
+    InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
+    ComputerName : Server02
+    Protocol     : WSMAN
+  description: ""
+  summary: |+
+    This example gets all CIM sessions that have names that begin with **serv**.
+
+- title: 'Example 5: Get a specific CIM session'
+  code: |-
+    Get-CimSession -ID 2
+
+    Id           : 2
+    Name         : CimSession2
+    InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
+    ComputerName : Server02
+    Protocol     : WSMAN
+  description: ""
+  summary: |+
+    This example gets the CIM session that has an **Id** of 2.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ComputerName
+  description: |+
+    Specifies the name of the computer to get CIM sessions connected to. Wildcard characters are
+    permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: CN, ServerName
+  parameterValueGroup: ""
+- type: <xref href="System.UInt32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Id
+  isRequired: true
+  description: |+
+    Specifies the identifier of the CIM session to get. For multiple IDs, use commas to separate the IDs
+    or use the range operator (`..`) to specify a range of IDs. An **Id** is an integer that uniquely
+    identifies the CIM session within the current PowerShell session.
+
+    For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Guid" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InstanceId
+  isRequired: true
+  description: |+
+    Specifies the instance IDs of the CIM session to get.
+
+    **InstanceId** is a globally-unique identifier (GUID) that uniquely identifies a CIM session. The
+    **InstanceId** is unique, even when you have multiple sessions running in PowerShell.
+
+    The **InstanceId** is stored in the **InstanceId** property of the object that represents a CIM
+    session.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Gets one or more CIM sessions which contain the specified friendly names. Wildcard characters are
+    permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: CimCmdlets.Get-CimSession
+name: Get-CimSession
+description: |-
+  By default, the cmdlet gets all of the CIM sessions created in the current PowerShell session. You
+  can use the parameters of `Get-CimSession` to get the sessions that are for particular computers, or
+  you can identify sessions by their names or other identifiers. `Get-CimSession` does not get CIM
+  sessions that were created in other PowerShell sessions or that were created on other computers.
+
+  For more information about CIM sessions, see [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
+metadata:
+  external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+  Locale: en-US
+  Module Name: CimCmdlets
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-CimSession

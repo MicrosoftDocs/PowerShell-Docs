@@ -1,0 +1,84 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Sets the contents of the clipboard.
+module: Microsoft.PowerShell.Management
+notes: |-
+  In rare cases when using `Set-Clipboard` with a high number of values in rapid succession, like in a
+  loop, you might sporadically get a blank value from the clipboard. This can be fixed by using
+  `Start-Sleep -Milliseconds 1` in the loop.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+links:
+- text: Get-Clipboard
+  href: Get-Clipboard.yml
+syntaxes:
+- Set-Clipboard -Value <String[]> [-Append] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Copy text to the clipboard'
+  code: |-
+    Set-Clipboard -Value "This is a test string"
+  description: ""
+  summary: ""
+- title: 'Example 2: Copy the contents of a file to the clipboard'
+  code: |-
+    Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
+  description: ""
+  summary: |+
+    This example pipes the contents of a file to the clipboard. In this example, we are getting a public
+    ssh key so that it can be pasted into another application, like GitHub.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Append
+  description: |+
+    Indicates that the cmdlet does not clear the clipboard and appends content to it.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Value
+  isRequired: true
+  description: |+
+    The string values to be added to the clipboard.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Set-Clipboard
+name: Set-Clipboard
+description: |-
+  The `Set-Clipboard` cmdlet sets the contents of the clipboard.
+
+  > [!NOTE]
+  > On Linux, this cmdlet requires the `xclip` utility to be in the path.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 12/03/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Set-Clipboard

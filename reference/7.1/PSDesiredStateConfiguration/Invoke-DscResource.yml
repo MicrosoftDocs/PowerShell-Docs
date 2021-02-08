@@ -1,0 +1,124 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Runs a method of a specified PowerShell Desired State Configuration (DSC) resource.
+module: PSDesiredStateConfiguration
+notes: |-
+  - Previously, Windows PowerShell 5.1 resources ran under System context unless specified with user
+  context using the key **PsDscRunAsCredential**. In PowerShell 7.0, Resources run in the user's
+  context, and **PsDscRunAsCredential** is no longer supported. Previous configurations using this key
+  will throw an exception.
+
+  - As of PowerShell 7, `Invoke-DscResource` no longer supports invoking WMI DSC resources. This
+    includes the **File** and **Log** resources in **PSDesiredStateConfiguration**.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="Microsoft.PowerShell.Commands.ModuleSpecification" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Windows PowerShell Desired State Configuration Overview
+  href: /powershell/scripting/dsc/overview/dscforengineers
+- text: Get-DscResource
+  href: Get-DscResource.yml
+syntaxes:
+- >-
+  Invoke-DscResource [-Name] <String> [[-ModuleName] <ModuleSpecification>] [-Method] <String>
+
+   [-Property] <Hashtable> [<CommonParameters>]
+examples:
+- title: 'Example 1: Invoke the Set method of a resource by specifying its mandatory properties'
+  code: |-
+    Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+      Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+      Arguments = ''
+    }
+  description: ""
+  summary: |+
+    This example invokes the **Set** method of a resource named **WindowsProcess** and provides the
+    mandatory **Path** and **Arguments** properties to start the specified Windows process.
+
+- title: 'Example 2: Invoke the Test method of a resource for a specified module'
+  code: |-
+    $SplatParam = @{
+      Name = 'WindowsProcess'
+      ModuleName = 'PSDesiredStateConfiguration'
+      Property = @{Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'; Arguments = ''}
+      Method = Test
+    }
+
+    Invoke-DscResource @SplatParam
+  description: ""
+  summary: |+
+    This example invokes the **Test** method of a resource named **WindowsProcess**, which is in the
+    module named **PSDesiredStateConfiguration**.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Method
+  isRequired: true
+  description: |+
+    Specifies the method of the resource that this cmdlet invokes. The acceptable values for this
+    parameter are: **Get**, **Set**, and **Test**.
+
+  defaultValue: None
+  position: "2"
+  aliases: ""
+  parameterValueGroup: Get, Set, Test
+- type: <xref href="Microsoft.PowerShell.Commands.ModuleSpecification" data-throw-if-not-resolved="False" />
+  name: ModuleName
+  description: |+
+    Specifies the name of the module from which this cmdlet invokes the specified resource.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the DSC resource to start.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Collections.Hashtable" data-throw-if-not-resolved="False" />
+  name: Property
+  isRequired: true
+  description: |+
+    Specifies the resource property name and its value in a hash table as key and value, respectively.
+
+  defaultValue: None
+  position: "3"
+  aliases: ""
+  parameterValueGroup: ""
+uid: PSDesiredStateConfiguration.Invoke-DscResource
+name: Invoke-DscResource
+description: |-
+  The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired State Configuration
+  (DSC) resource.
+
+  This cmdlet invokes a DSC resource directly, without creating a configuration document. Using this
+  cmdlet, configuration management products can manage windows or Linux by using DSC resources. This
+  cmdlet also enables debugging of resources when the DSC engine is running with debugging enabled.
+
+  > [!NOTE]
+  > `Invoke-DscResource` is an experimental feature in PowerShell 7. To use the cmdlet, you must
+  > enable it using the following command.
+  >
+  > `Enable-ExperimentalFeature PSDesiredStateConfiguration.InvokeDscResource`
+metadata:
+  external help file: PSDesiredStateConfiguration-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSDesiredStateConfiguration
+  ms.date: 08/11/2020
+  online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Invoke-DscResource

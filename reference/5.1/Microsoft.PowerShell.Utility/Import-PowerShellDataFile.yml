@@ -1,0 +1,84 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Imports values from a `.PSD1` file without invoking its contents.
+module: Microsoft.PowerShell.Utility
+notes: ""
+outputs:
+- name: <xref href="System.Collections.Hashtable" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Invoke-Expression
+  href: Invoke-Expression.yml
+- text: Import-LocalizedData
+  href: Import-LocalizedData.yml
+syntaxes:
+- Import-PowerShellDataFile [[-Path] <String[]>] [<CommonParameters>]
+- Import-PowerShellDataFile [-LiteralPath <String[]>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Retrieve values from PSD1'
+  code: |-
+    Get-Content .\Configuration.psd1
+    $config = Import-PowerShellDataFile .\Configuration.psd1
+    $config.AllNodes
+
+    @{
+        AllNodes = @(
+            @{
+                NodeName = 'DSC-01'
+            }
+            @{
+                NodeName = 'DSC-02'
+            }
+        )
+    }
+
+    Name                           Value
+    ----                           -----
+    NodeName                       DSC-01
+    NodeName                       DSC-02
+  description: ""
+  summary: |+
+    This example retrieves the key-value pairs stored in the hashtable kept inside the
+    `Configuration.psd1` file. `Get-Content` is used to show the contents of the `Configuration.psd1`
+    file.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: LiteralPath
+  description: |+
+    The path to the file being imported. All characters in the path are treated as literal values.
+    Wildcard characters are not processed.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Path
+  description: |+
+    The path to the file being imported. Wildcards are allowed but only the first matching file is
+    imported.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Import-PowerShellDataFile
+name: Import-PowerShellDataFile
+description: |-
+  The `Import-PowerShellDataFile` cmdlet safely imports key-value pairs from hashtables defined in a
+  `.PSD1` file. The values could be imported using `Invoke-Expression` on the contents of the file.
+  However, `Invoke-Expression` runs any code contained in the file. This could produce unwanted
+  results or execute unsafe code. `Import-PowerShellDataFile` imports the data without invoking the
+  code.
+metadata:
+  external help file: Microsoft.PowerShell.Utility-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 10/25/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-powershelldatafile?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Import-PowerShellDataFile

@@ -1,0 +1,232 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Generates a module that contains cmdlets to manage an OData endpoint.
+module: Microsoft.PowerShell.ODataUtils
+notes: ""
+links:
+- text: OData Library
+  href: /previous-versions/dotnet/wcf-data-services/hh525392(v=vs.103)
+- text: What is the OData Protocol?
+  href: https://www.odata.org/
+- text: Invoke-RestMethod
+  href: ../Microsoft.PowerShell.Utility/Invoke-RestMethod.yml
+syntaxes:
+- >-
+  Export-ODataEndpointProxy [-Uri] <String> [-OutputModule] <String> [[-MetadataUri] <String>]
+
+   [[-Credential] <PSCredential>] [[-CreateRequestMethod] <String>] [[-UpdateRequestMethod] <String>]
+
+   [[-CmdletAdapter] <String>] [[-ResourceNameMapping] <Hashtable>] [-Force] [[-CustomData] <Hashtable>]
+
+   [-AllowClobber] [-AllowUnsecureConnection] [[-Headers] <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Generate a module to manage a retail web service endpoint'
+  code: |-
+    PS C:\> Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc' -MetadataUri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc/$metadata' -AllowUnsecureConnection -OutputModule 'C:\Users\user\GeneratedScript.psm1' -ResourceNameMapping @{Products = 'Merchandise'}
+  description: |-
+    This command generates a module to manage a retail service endpoint. The command specifies the URI
+    of the endpoint and the URI of the endpoint metadata. The command also provides an output path and
+    script module name as the value of the **OutputModule** parameter. For the value of the
+    **ResourceNameMapping** parameter, the command provides a hashtable that maps the resource
+    collection name to the desired noun for the cmdlet set. In this example, Products is the resource
+    collection name and **Merchandise** is the noun. To allow connections to non-SSL sites, HTTP, as
+    opposed to HTTPS, add the **AllowUnsecureConnection** parameter.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowClobber
+  description: |+
+    Indicates that this cmdlet replaces an existing module.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "10"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowUnsecureConnection
+  description: |+
+    Indicates that this module can connect to URIs that are not SSL-secured. The module can manage HTTP
+    sites in addition to HTTPS sites.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "11"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: CmdletAdapter
+  description: |+
+    Specifies the cmdlet adapter. The acceptable values for this parameter are: ODataAdapter and
+    NetworkControllerAdapter.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "6"
+  aliases: ""
+  parameterValueGroup: ODataAdapter, NetworkControllerAdapter, ODataV4Adapter
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: CreateRequestMethod
+  description: |+
+    Specifies the request method. The acceptable values for this parameter are: PUT, POST, and PATCH.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "4"
+  aliases: ""
+  parameterValueGroup: Put, Post, Patch
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user account that has access to the OData endpoint. The default value is the current
+    user. If a remote computer runs Windows Vista or a later release of the Windows operating system,
+    the cmdlet prompts you for credentials.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "3"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Collections.Hashtable" data-throw-if-not-resolved="False" />
+  name: CustomData
+  description: |+
+    Specifies a hash table of custom data.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "9"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Indicates that this cmdlet overwrites an existing generated module of the same name in an existing
+    `Modules` folder.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "8"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Collections.Hashtable" data-throw-if-not-resolved="False" />
+  name: Headers
+  description: |+
+    Specifies the headers of the web request. Enter a hash table or dictionary.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "12"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MetadataUri
+  description: |+
+    Specifies the URI of the metadata of the endpoint.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "2"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: OutputModule
+  isRequired: true
+  description: |+
+    Specifies the path and module name to which this cmdlet saves the generated module of proxy
+    commands.
+
+    This cmdlet copies a binary module, module manifest, and formatting file, if applicable, to the
+    specified folder. If you specify only the name of the module, `Export-ODataEndpointProxy` saves the
+    module in the `$home\Documents\WindowsPowerShell\Modules` folder. If you specify a path, the cmdlet
+    creates the module folder in that path.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Collections.Hashtable" data-throw-if-not-resolved="False" />
+  name: ResourceNameMapping
+  description: |+
+    Specifies a hashtable that contains mappings that let you customize the generated cmdlets. In this
+    hashtable, the resource collection name is the key. The desired cmdlet noun is the value.
+
+    For example, in the hash table `@{Products = 'Merchandise'}`, **Products** is the resource
+    collection name that serves as the key. **Merchandise** is the resulting cmdlet noun. The generated
+    cmdlet names might not align to Windows PowerShell cmdlet naming guidelines. You can modify the
+    resource CDXML file to change the cmdlet names after this cmdlet creates the module. For more
+    information, see
+    [Strongly Encouraged Development Guidelines](/powershell/scripting/developer/cmdlet/strongly-encouraged-development-guidelines).
+
+  defaultValue: None
+  pipelineInput: true
+  position: "7"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: UpdateRequestMethod
+  description: |+
+    Specifies the update request method. The acceptable values for this parameter are: PUT, POST, and
+    PATCH.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "5"
+  aliases: ""
+  parameterValueGroup: Put, Post, Patch
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Uri
+  isRequired: true
+  description: |+
+    Specifies the URI of the endpoint.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.ODataUtils.Export-ODataEndpointProxy
+name: Export-ODataEndpointProxy
+description: |-
+  The `Export-ODataEndpointProxy` cmdlet uses the metadata of an OData endpoint to generate a module
+  that contains cmdlets you can use to manage that OData endpoint. The module is based on CDXML. After
+  this cmdlet generates the module, it saves that module to the path and file name specified by the
+  **OutputModule** parameter.
+
+  `Export-ODataEndpointProxy` generates cmdlets for create, read, update, and delete (CRUD)
+  operations, non-CRUD actions, and association manipulation.
+
+  `Export-ODataEndpointProxy` generates one CDXML file per endpoint resource. You can edit these CDXML
+  files after the module is generated. For example, if you want to change the noun or verb names of
+  the cmdlets to align with Windows PowerShell cmdlet naming guidelines, you can modify the file.
+
+  Every cmdlet in a generated module must include a **ConnectionURI** parameter in order to connect to
+  the endpoint that the module manages.
+metadata:
+  external help file: Microsoft.PowerShell.ODataUtils-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.ODataUtils
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.odatautils/export-odataendpointproxy?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Export-ODataEndpointProxy

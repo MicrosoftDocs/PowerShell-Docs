@@ -1,0 +1,115 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets Desired State Configuration (DSC) resources present on the computer.
+module: PSDesiredStateConfiguration
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="Microsoft.PowerShell.DesiredStateConfiguration.DscResourceInfo" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+- name: <xref href="string" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+links:
+- text: PowerShell Desired State Configuration Overview
+  href: /powershell/scripting/dsc/overview/overview
+- text: Invoke-DscResource
+  href: /powershell/module/PSDesiredStateConfiguration/Invoke-DscResource
+syntaxes:
+- Get-DscResource [[-Name] <String[]>] [[-Module] <Object>] [-Syntax] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get all resources on the local computer'
+  code: |-
+    Get-DscResource
+  description: |-
+    This command gets all the resources on the local computer.
+  summary: ""
+- title: 'Example 2: Get a resource by specifying the name'
+  code: |-
+    Get-DscResource -Name "WindowsFeature"
+  description: |-
+    This command gets the WindowsFeature resource.
+  summary: ""
+- title: 'Example 3: Get all the resources from a module'
+  code: |-
+    Get-DscResource -Module "xHyper-V"
+  description: |-
+    This command gets all the resources from the xHyper-V module.
+  summary: ""
+- title: 'Example 4: Get a resource by using wildcard characters'
+  code: |-
+    Get-DscResource -Name P*,r*
+  description: |-
+    This command gets all resources that match the wildcard pattern specified by the **Name** parameter.
+  summary: ""
+- title: 'Example 5: Get a resource syntax'
+  code: |-
+    Get-DscResource -Name "WindowsFeature" -Syntax
+  description: |-
+    This command gets the WindowsFeature resource, and shows the syntax for the resource.
+  summary: ""
+- title: 'Example 6: Get all the properties for a resource'
+  code: |-
+    Get-DscResource -Name "User" | Select-Object -ExpandProperty Properties
+  description: |-
+    This command gets the User resource, and then uses the pipeline operator to return all the
+    properties for the User resource.
+  summary: ""
+- title: 'Example 7: Get all the resources from a specified module with a specified version'
+  code: |-
+    Get-DscResource -Module @{ModuleName='xHyper-V';RequiredVersion='3.0.0.0'}
+  description: |-
+    This command gets all the resources from xHyper-V module with version 3.0.0.0.
+  summary: ""
+parameters:
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: Module
+  description: |+
+    Specifies the name or fully qualified name of the module for which to view the DSC resource.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Specifies an array of names of the DSC resource to view.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Syntax
+  description: |+
+    Indicates that the cmdlet returns the syntax view of the specified DSC resources. The returned
+    syntax shows how to use the resources in a PowerShell script.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: PSDesiredStateConfiguration.Get-DscResource
+name: Get-DscResource
+description: |-
+  The `Get-DscResource` cmdlet retrieves the PowerShell DSC resources present on the computer. This
+  cmdlet discovers only the resources installed in the PSModulePath. It shows the details about
+  built-in and custom providers, which are created by the user. This cmdlet also shows details about
+  composite resources, which are other configurations that are packaged as module or created at run
+  time in the session.
+metadata:
+  external help file: PSDesiredStateConfiguration-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSDesiredStateConfiguration
+  ms.date: 07/23/2020
+  online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/get-dscresource?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-DscResource

@@ -1,0 +1,76 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Changes the properties of a Windows event log.
+module: PSDiagnostics
+notes: |-
+  You must run this cmdlet from an elevated PowerShell session.
+inputs:
+- name: <xref href="Microsoft.PowerShell.Diagnostics.LogDetails" data-throw-if-not-resolved="False" />
+  description: |-
+    You must pass a fully configured **LogDetails** object to the `Set-LogProperties` cmdlet.
+    Therefore, to change one setting, you should use `Get-LogProperties` to retrieve the current
+    configuration.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Get-LogProperties
+  href: Get-LogProperties.yml
+- text: Enable-PSTrace
+  href: Enable-PSTrace.yml
+- text: Disable-PSTrace
+  href: Disable-PSTrace.yml
+syntaxes:
+- Set-LogProperties [-LogDetails] <LogDetails> [-Force] [<CommonParameters>]
+examples:
+- title: 'Example 1: Change the retention setting of the Windows PowerShell event log'
+  code: |-
+    $logDetails = Get-LogProperties 'Windows PowerShell'
+    $logDetails.Retention = $True
+    Set-LogProperties -LogDetails $logDetails
+    Get-LogProperties 'Windows PowerShell'
+
+    Name       : Windows PowerShell
+    Enabled    : True
+    Type       : Admin
+    Retention  : True
+    AutoBackup : False
+    MaxLogSize : 15728640
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Used to force the change without prompting.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.Diagnostics.LogDetails" data-throw-if-not-resolved="False" />
+  name: LogDetails
+  isRequired: true
+  description: |+
+    The updated configuration settings to be assigned to the event log.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: PSDiagnostics.Set-LogProperties
+name: Set-LogProperties
+description: |-
+  This cmdlet changes the configuration settings of a Windows event log. This cmdlet is used by the
+  `Enable-PSTrace` and `Disable-PSTrace` cmdlets.
+
+  You must run this cmdlet from an elevated PowerShell session.
+metadata:
+  external help file: PSDiagnostics-help.xml
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 11/27/2018
+  online version: https://docs.microsoft.com/powershell/module/psdiagnostics/set-logproperties?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Set-LogProperties

@@ -1,0 +1,314 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates or changes an alias for a cmdlet or other command in the current PowerShell session.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  PowerShell includes built-in aliases that are available in each PowerShell session. The `Get-Alias`
+  cmdlet displays the aliases available in a PowerShell session.
+
+  To create an alias, use the cmdlets `Set-Alias` or `New-Alias`. In PowerShell 6, to delete an alias,
+  use the `Remove-Alias` cmdlet. `Remove-Item` is accepted for backwards compatibility such as for
+  scripts created with prior versions of PowerShell. Use a command such as
+  `Remove-Item -Path Alias:aliasname`.
+
+  To create an alias that is available in each PowerShell session, add it to your PowerShell profile.
+  For more information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
+
+  An alias can be saved and reused in another PowerShell session by doing an export and import. To
+  save an alias to a file, use `Export-Alias`. To add a saved alias to a new PowerShell session, use
+  `Import-Alias`.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    `Set-Alias` does not accept input from the pipeline.
+outputs:
+- name: <xref href="None or System.Management.Automation.AliasInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    When you use the **PassThru** parameter, `Set-Alias` generates a
+    **System.Management.Automation.AliasInfo** object representing the alias. Otherwise, `Set-Alias`
+    does not generate any output.
+links:
+- text: about_Aliases
+  href: ../Microsoft.PowerShell.Core/About/about_Aliases.md
+- text: about_Functions
+  href: ../Microsoft.PowerShell.Core/about/about_Functions.md
+- text: about_Profiles
+  href: ../Microsoft.PowerShell.Core/About/about_Profiles.md
+- text: about_Scopes
+  href: ../Microsoft.PowerShell.Core/About/about_Scopes.md
+- text: Export-Alias
+  href: Export-Alias.yml
+- text: Get-Alias
+  href: Get-Alias.yml
+- text: Import-Alias
+  href: Import-Alias.yml
+- text: New-Alias
+  href: New-Alias.yml
+- text: Remove-Alias
+  href: Remove-Alias.yml
+- text: Remove-Item
+  href: ../Microsoft.PowerShell.Management/Remove-Item.yml
+syntaxes:
+- >-
+  Set-Alias [-Name] <string> [-Value] <string> [-Description <string>] [-Option <ScopedItemOptions>]
+
+   [-PassThru] [-Scope <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Create an alias for a cmdlet'
+  code: |-
+    PS> Set-Alias -Name list -Value Get-ChildItem
+
+    PS> Get-Alias -Name list
+
+    CommandType     Name
+    -----------     ----
+    Alias           list -> Get-ChildItem
+  description: |-
+    The `Set-Alias` cmdlet creates an alias in the current PowerShell session. The **Name** parameter
+    specifies the alias's name, `list`. The **Value** parameter specifies the cmdlet that the alias
+    runs.
+
+    To run the alias, type `list` on the PowerShell command line.
+  summary: |+
+    This command creates an alias to a cmdlet in the current PowerShell session.
+
+- title: 'Example 2: Reassign an existing alias to a different cmdlet'
+  code: |-
+    PS> Get-Alias -Name list
+
+    CommandType     Name
+    -----------     ----
+    Alias           list -> Get-ChildItem
+
+    PS> Set-Alias -Name list -Value Get-Location
+
+    PS> Get-Alias -Name list
+
+    CommandType     Name
+    -----------     ----
+    Alias           list -> Get-Location
+  description: |-
+    The `Get-Alias` cmdlet uses the **Name** parameter to display the `list` alias. The `list` alias is
+    associated with the `Get-ChildItem` cmdlet. When the `list` alias is run, the items in the current
+    directory are displayed.
+
+    The `Set-Alias` cmdlet uses the **Name** parameter to specify the `list` alias. The **Value**
+    parameter associates the alias to the `Get-Location` cmdlet.
+
+    The `Get-Alias` cmdlet uses the **Name** parameter to display the `list` alias. The `list` alias is
+    associated with the `Get-Location` cmdlet. When the `list` alias is run, the current directory's
+    location is displayed.
+  summary: |+
+    This command reassigns an existing alias to run a different cmdlet.
+
+- title: 'Example 3: Create and change a read-only alias'
+  code: |-
+    PS> Set-Alias -Name loc -Value Get-Location -Option ReadOnly -PassThru | Format-List -Property *
+
+    DisplayName         : loc -> Get-Location
+    Definition          : Get-Location
+    Options             : ReadOnly
+    Description         :
+    Name                : loc
+    CommandType         : Alias
+
+    PS> Set-Alias -Name loc -Value Get-Location -Option ReadOnly -Description 'Displays the current directory' -Force -PassThru | Format-List -Property *
+
+    DisplayName         : loc -> Get-Location
+    Definition          : Get-Location
+    Options             : ReadOnly
+    Description         : Displays the current directory
+    Name                : loc
+    CommandType         : Alias
+  description: |-
+    The `Set-Alias` cmdlet creates an alias in the current PowerShell session. The **Name** parameter
+    specifies the alias's name, `loc`. The **Value** parameter specifies the `Get-Location` cmdlet that
+    the alias runs. The **Option** parameter specifies the **ReadOnly** value. The **PassThru**
+    parameter represents the alias object and sends the object down the pipeline to the `Format-List`
+    cmdlet. `Format-List` uses the **Property** parameter with an asterisk (`*`) so that all of the
+    properties are displayed. The example output shows a partial list of those properties.
+
+    The `loc` alias is changed with the addition of two parameters. **Description** adds text to explain
+    the alias's purpose. The **Force** parameter is needed because the `loc` alias is read-only. If the
+    **Force** parameter is not used, the change fails.
+  summary: |+
+    This command creates a read-only alias. The read-only option prevents unintended changes to an
+    alias. To change or delete a read-only alias, use the **Force** parameter.
+
+- title: 'Example 4: Create an alias to an executable file'
+  code: |-
+    PS> Set-Alias -Name np -Value C:\Windows\notepad.exe
+
+    PS> Get-Alias -Name np
+
+    CommandType     Name
+    -----------     ----
+    Alias           np -> notepad.exe
+  description: |-
+    The `Set-Alias` cmdlet creates an alias in the current PowerShell session. The **Name** parameter
+    specifies the alias's name, `np`. The **Value** parameter specifies the path and application name
+    **C:\Windows\notepad.exe**. The `Get-Alias` cmdlet uses the **Name** parameter to show that the `np`
+    alias is associated with **notepad.exe**.
+
+    To run the alias, type `np` on the PowerShell command line to open **notepad.exe**.
+  summary: |+
+    This example creates an alias to an executable file on the local computer.
+
+- title: 'Example 5: Create an alias for a command with parameters'
+  code: |-
+    PS> Function CD32 {Set-Location -Path C:\Windows\System32}
+
+    PS> Set-Alias -Name Go -Value CD32
+  description: |-
+    A function named `CD32` is created. The function uses the `Set-Location` cmdlet with the **Path**
+    parameter to specify the directory, **C:\Windows\System32**.
+
+    The `Set-Alias` cmdlet creates an alias to the function in the current PowerShell session. The
+    **Name** parameter specifies the alias's name, `Go`. The **Value** parameter specifies the
+    function's name, `CD32`.
+
+    To run the alias, type `Go` on the PowerShell command line. The `CD32` function runs and changes to
+    the directory **C:\Windows\System32**.
+  summary: |+
+    This example shows how to assign an alias to a command with parameters.
+
+    You can create an alias for a cmdlet, such as `Set-Location`. You cannot create an alias for a
+    command with parameters and values, such as `Set-Location -Path C:\Windows\System32`. To create an
+    alias for a command, create a function that includes the command, and then create an alias to the
+    function. For more information, see [about_Functions](../Microsoft.PowerShell.Core/about/about_Functions.md).
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Description
+  description: |+
+    Specifies a description of the alias. You can type any string. If the description includes spaces,
+    enclose it single quotation marks.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Use the **Force** parameter to change or delete an alias that has the **Option** parameter set to
+    **ReadOnly**.
+
+    The **Force** parameter cannot change or delete an alias with the **Option** parameter set to
+    **Constant**.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of a new alias. An alias name can contain alphanumeric characters and hyphens. Alias names
+    cannot be numeric, such as 123.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.ScopedItemOptions" data-throw-if-not-resolved="False" />
+  name: Option
+  description: |+
+    Sets the **Option** property value of the alias. Values such as **ReadOnly** and **Constant**
+    protect an alias from unintended changes. To see the **Option** property of all aliases in the
+    session, type `Get-Alias | Format-Table -Property Name, Options -Autosize`.
+
+    The acceptable values for this parameter are as follows:
+
+    - **AllScope** The alias is copied to any new scopes that are created.
+    - **Constant** Cannot be changed or deleted.
+    - **None** Sets no options and is the default.
+    - **Private** The alias is available only in the current scope.
+    - **ReadOnly** Cannot be changed or deleted unless the **Force** parameter is used.
+    - **Unspecified**
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: AllScope, Constant, None, Private, ReadOnly, Unspecified
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object that represents the alias. Use a format cmdlet such as `Format-List` to display
+    the object. By default, `Set-Alias` does not generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Scope
+  description: |+
+    Specifies the scope in which this alias is valid. The default value is **Local**. For more
+    information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
+
+    The acceptable values are as follows:
+
+    - Global
+    - Local
+    - Private
+    - Numbered scopes
+    - Script
+
+  defaultValue: Local
+  position: Named
+  aliases: ""
+  parameterValueGroup: Global, Local, Private, Numbered scopes, Script
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Value
+  isRequired: true
+  description: |+
+    Specifies the name of the cmdlet or command that the alias runs. The **Value** parameter is the
+    alias's **Definition** property.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Set-Alias
+name: Set-Alias
+description: |-
+  The `Set-Alias` cmdlet creates or changes an alias for a cmdlet or a command, such as a function,
+  script, file, or other executable. An alias is an alternate name that refers to a cmdlet or command.
+  For example, `sal` is the alias for the `Set-Alias` cmdlet. For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+
+  A cmdlet can have multiple aliases, but an alias can only be associated with one cmdlet. You can use
+  `Set-Alias` to reassign an existing alias to another cmdlet, or change an alias's properties, such
+  as the description.
+
+  An alias that is created or changed by `Set-Alias` is not permanent and is only available during the
+  current PowerShell session. When the PowerShell session is closed, the alias is removed.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 02/28/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Set-Alias

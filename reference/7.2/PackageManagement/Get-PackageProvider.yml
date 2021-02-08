@@ -1,0 +1,108 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Returns a list of package providers that are connected to Package Management.
+module: PackageManagement
+notes: |-
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+outputs:
+- name: <xref href="PackageProvider" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+links:
+- text: about_PackageManagement
+  href: ../Microsoft.PowerShell.Core/About/about_PackageManagement.md
+- text: Get-PackageSource
+  href: Get-PackageSource.yml
+- text: Register-PackageSource
+  href: Register-PackageSource.yml
+- text: Unregister-PackageSource
+  href: Unregister-PackageSource.yml
+syntaxes:
+- Get-PackageProvider [[-Name] <String[]>] [-ListAvailable] [-Force] [-ForceBootstrap] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get all currently loaded package providers'
+  code: |-
+    PS C:\> Get-PackageProvider
+  description: |-
+    This command gets a list of all the package providers that are currently loaded on the local computer.
+  summary: ""
+- title: 'Example 2: Get all available package providers'
+  code: |-
+    PS C:\> Get-PackageProvider -ListAvailable
+  description: |-
+    This command gets a list of all package providers that are available on the local computer.
+  summary: ""
+- title: 'Example 3: Dynamically get a package provider'
+  code: |-
+    PS C:\> Get-PackageProvider -Name "Chocolatey" -ForceBootstrap
+  description: |-
+    This command automatically installs the Chocolatey provider if your computer does not have the Chocolatey provider installed.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Indicates that this cmdlet forces all other actions with this cmdlet that can be forced.
+    In **Get-PackageProvider**, this means the *Force* parameter acts the same as the *ForceBootstrap* parameter.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ForceBootstrap
+  description: |+
+    Indicates that this cmdlet forces Package Management to automatically install the package provider.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ListAvailable
+  description: |+
+    Gets all installed providers.
+    **Get-PackageProvider** gets provider in paths listed in the **PSModulePath** environment variable as well as the package provider assembly folders:
+
+    **$env:ProgramFiles\PackageManagement\ProviderAssemblies****$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies**
+
+    Without this parameter, **Get-PackageProvider** gets only the providers loaded in the current session.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Specifies one or more provider names, or partial provider names.
+    Separate multiple provider names with commas.
+    Valid values for this parameter include names of providers that you have installed with packages; PackageManagement ships with a set of default providers, including the **PSModule** and **MSI** providers.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: PackageManagement.Get-PackageProvider
+name: Get-PackageProvider
+description: |-
+  The **Get-PackageProvider** cmdlet returns a list of package providers that are connected to Package Management.
+  Examples of these providers include PSModule, NuGet, and Chocolatey.
+  You can filter the results based on all or part of one or more provider names.
+metadata:
+  external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+  Locale: en-US
+  Module Name: PackageManagement
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-packageprovider?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-PackageProvider

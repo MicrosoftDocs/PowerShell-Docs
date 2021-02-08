@@ -1,0 +1,285 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Replaces a package source for a specified package provider.
+module: PackageManagement
+notes: |-
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+inputs:
+- name: <xref href="`Set-PackageSource` doesn't accept pipeline input." data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="This cmdlet does not generate any output." data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: about_PackageManagement
+  href: ../Microsoft.PowerShell.Core/About/about_PackageManagement.md
+- text: Get-PackageSource
+  href: Get-PackageSource.yml
+- text: Register-PackageSource
+  href: Register-PackageSource.yml
+- text: Unregister-PackageSource
+  href: Unregister-PackageSource.yml
+syntaxes:
+- >-
+  Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>]
+
+   [[-Name] <String>] [-Location <String>] [-NewLocation <String>] [-NewName <String>] [-Trusted]
+
+   [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <String>] [<CommonParameters>]
+- >-
+  Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>]
+
+   [-NewLocation <String>] [-NewName <String>] [-Trusted] -InputObject <PackageSource> [-Force]
+
+   [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>]
+
+   [-NewLocation <String>] [-NewName <String>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
+
+   [-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
+- >-
+  Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>]
+
+   [-NewLocation <String>] [-NewName <String>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
+
+   [-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
+- >-
+  Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>]
+
+   [-NewLocation <String>] [-NewName <String>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
+
+   [-Confirm] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+
+   [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
+- >-
+  Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>]
+
+   [-NewLocation <String>] [-NewName <String>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
+
+   [-Confirm] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+
+   [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Change a package source'
+  code: |-
+    PS C:\> Set-PackageSource -Name MyNuget -NewName NewNuGet -Trusted -ProviderName NuGet
+  description: ""
+  summary: |+
+    This command changes the existing name of a package source. The source is set to **Trusted**, which
+    eliminates prompts to verify the source when packages are installed.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ConfigFile
+  description: |+
+    Specifies a configuration file.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user account that has permission to install package providers.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the command to run without asking for user confirmation.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ForceBootstrap
+  description: |+
+    Indicates that `Set-PackageSource` forces **PackageManagement** to automatically install the package
+    provider.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PackageManagement.Packaging.PackageSource" data-throw-if-not-resolved="False" />
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies a package source ID object that represents the package that you want to change. Package
+    source IDs are part of the results of the `Get-PackageSource` cmdlet.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Location
+  description: |+
+    Specifies the current package source location. The value can be a URI, a file path, or any other
+    destination format supported by the package provider.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  description: |+
+    Specifies a package source's name.
+
+  defaultValue: None
+  position: "0"
+  aliases: SourceName
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: NewLocation
+  description: |+
+    Specifies the new location for a package source. The value can be a URI, a file path, or any other
+    destination format supported by the package provider.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: NewName
+  description: |+
+    Specifies the new name you assign to a package source.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: PackageManagementProvider
+  description: |+
+    Specifies a package management provider.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ProviderName
+  description: |+
+    Specifies a provider name.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: Provider
+  parameterValueGroup: Bootstrap, NuGet, PowerShellGet
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: Proxy
+  description: |+
+    Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: ProxyCredential
+  description: |+
+    Specifies a user account that has permission to use the proxy server that is specified by the
+    **Proxy** parameter.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: PublishLocation
+  description: |+
+    Specifies the publish location.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ScriptPublishLocation
+  description: |+
+    Specifies the script publish location.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ScriptSourceLocation
+  description: |+
+    Specifies the script source location.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: SkipValidate
+  description: |+
+    Switch that skips validating the credentials of a package source.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Trusted
+  description: |+
+    Indicates that the source is a trusted package provider. Trusted sources don't prompt for
+    verification to install packages.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: PackageManagement.Set-PackageSource
+name: Set-PackageSource
+description: |-
+  The `Set-PackageSource` replaces a package source for a specified package provider. Package sources
+  are always managed by a package provider.
+metadata:
+  external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PackageManagement
+  ms.date: 04/03/2019
+  online version: https://docs.microsoft.com/powershell/module/packagemanagement/set-packagesource?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Set-PackageSource

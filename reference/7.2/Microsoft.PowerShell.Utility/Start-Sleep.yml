@@ -1,0 +1,72 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Suspends the activity in a script or session for the specified period of time.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  - You can also refer to `Start-Sleep` by its built-in alias, `sleep`. For more information, see
+    [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+  - `Ctrl+C` breaks out of `Start-Sleep`.
+    - `Ctrl+C` does not break out of `[Threading.Thread]::Sleep`. For more information, see
+      [Thread.Sleep Method](/dotnet/api/system.threading.thread.sleep).
+inputs:
+- name: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe the number of seconds to `Start-Sleep`.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not return any output.
+syntaxes:
+- Start-Sleep [-Seconds] <Double> [<CommonParameters>]
+- Start-Sleep -Milliseconds <Int32> [<CommonParameters>]
+examples:
+- title: 'Example 1: Sleep all commands for 15 seconds'
+  code: |-
+    Start-Sleep -s 15
+  description: ""
+  summary: ""
+- title: 'Example 2: Sleep all commands for 1.5 seconds'
+  code: |-
+    Start-Sleep -Seconds 1.5
+  description: ""
+  summary: |+
+    This example makes all the commands in the session sleep for one and one-half of a seconds.
+
+parameters:
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: Milliseconds
+  isRequired: true
+  description: |+
+    Specifies how long the resource sleeps in milliseconds. The parameter can be abbreviated as **m**.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ms
+  parameterValueGroup: ""
+- type: <xref href="System.Double" data-throw-if-not-resolved="False" />
+  name: Seconds
+  isRequired: true
+  description: |+
+    Specifies how long the resource sleeps in seconds. You can omit the parameter name or you can
+    abbreviate it as **s**. Beginning in PowerShell 6.2.0, this parameter now accepts fractional values.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Start-Sleep
+name: Start-Sleep
+description: |-
+  The `Start-Sleep` cmdlet suspends the activity in a script or session for the specified period of
+  time. You can use it for many tasks, such as waiting for an operation to complete or pausing before
+  repeating an operation.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 04/10/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Start-Sleep

@@ -1,0 +1,414 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Exports commands from another session and saves them in a PowerShell module.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  `Export-PSSession` relies on the PowerShell remoting infrastructure. To use this cmdlet, the
+  computer must be configured for remoting. For more information, see
+  [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
+
+  You cannot use `Export-PSSession` to export a PowerShell provider.
+
+  Exported commands run implicitly in the PSSession from which they were exported. The details of
+  running the commands remotely are handled entirely by PowerShell. You can run the exported commands
+  just as you would run local commands.
+
+  `Export-ModuleMember` captures and saves information about the PSSession in the module that it
+  exports. If the PSSession from which the commands were exported is closed when you import the
+  module, and there are no active PSSessions to the same computer, the commands in the module attempt
+  to recreate the PSSession. If attempts to recreate the PSSession fail, the exported commands will
+  not run.
+
+  The session information that `Export-ModuleMember` captures and saves in the module does not
+  include session options, such as those that you specify in the `$PSSessionOption` preference
+  variable or by using the **SessionOption** parameter of the `New-PSSession`, `Enter-PSSession`, or
+  `Invoke-Command` cmdlets. If the original PSSession is closed when you import the module, the
+  module will use another PSSession to the same computer, if one is available. To enable the imported
+  commands to run in a correctly configured session, create a PSSession with the options that you
+  want before you import the module.
+
+  To find the commands to export, `Export-PSSession` uses the `Invoke-Command` cmdlet to run a
+  `Get-Command` command in the PSSession. To get and save formatting data for the commands, it uses
+  the `Get-FormatData` and `Export-FormatData` cmdlets. You might see error messages from
+  `Invoke-Command`, `Get-Command`, `Get-FormatData`, and `Export-FormatData` when you run an
+  `Export-PSSession` command. Also, `Export-PSSession` cannot export commands from a session that
+  does not include the `Get-Command`, `Get-FormatData`, `Select-Object`, and `Get-Help` cmdlets.
+
+  `Export-PSSession` uses the `Write-Progress` cmdlet to display the progress of the command. You
+  might see the progress bar while the command is running.
+
+  Exported commands have the same limitations as other remote commands, including the inability to
+  start a program with a user interface, such as Notepad.
+
+  Because PowerShell profiles are not run in PSSessions, the commands that a profile adds to a
+  session are not available to `Export-PSSession`. To export commands from a profile, use an
+  `Invoke-Command` command to run the profile in the PSSession manually before exporting commands.
+
+  The module that `Export-PSSession` creates might include a formatting file, even if the command
+  does not import formatting data. If the command does not import formatting data, any formatting
+  files that are created will not contain formatting data.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe objects to `Export-PSSession`.
+outputs:
+- name: <xref href="System.IO.FileInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    `Export-PSSession` returns a list of files that comprise the module that it created.
+links:
+- text: about_Command_Precedence
+  href: ../Microsoft.PowerShell.Core/About/about_Command_Precedence.md
+- text: about_PSSessions
+  href: ../Microsoft.PowerShell.Core/About/about_PSSessions.md
+- text: about_PSSnapins
+  href: ../Microsoft.PowerShell.Core/About/about_PSSnapins.md
+- text: about_Remote_Requirements
+  href: ../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md
+- text: Import-Module
+  href: ../Microsoft.PowerShell.Core/Import-Module.yml
+- text: Import-PSSession
+  href: Import-PSSession.yml
+- text: Invoke-Command
+  href: ../Microsoft.PowerShell.Core/Invoke-Command.yml
+- text: New-PSSession
+  href: ../Microsoft.PowerShell.Core/New-PSSession.yml
+- text: New-PSSessionOption
+  href: ../Microsoft.PowerShell.Core/New-PSSessionOption.yml
+- text: Remove-PSSession
+  href: ../Microsoft.PowerShell.Core/Remove-PSSession.yml
+syntaxes:
+- >-
+  Export-PSSession [-Session] <PSSession> [-OutputModule] <string> [[-CommandName] <string[]>]
+
+   [[-FormatTypeName] <string[]>] [-Force] [-Encoding <string>] [-AllowClobber]
+
+   [-ArgumentList <Object[]>] [-CommandType <CommandTypes>] [-Module <string[]>]
+
+   [-FullyQualifiedModule <ModuleSpecification[]>] [-Certificate <X509Certificate2>]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Export commands from a PSSession'
+  code: |-
+    $S = New-PSSession -ComputerName Server01
+    Export-PSSession -Session $S -OutputModule Server01
+  description: |-
+    The `New-PSSession` command creates a PSSession on the Server01 computer. The PSSession is stored
+    in the `$S` variable. The `Export-PSSession` command exports the `$S` variable's commands and
+    formatting data into the Server01 module.
+  summary: |+
+    This example creates a new PSSession from the local computer to the Server01 computer. All of the
+    commands, except those that exist in the current session, are exported to the module named Server01
+    on the local computer. The export includes the formatting data for the commands.
+
+- title: 'Example 2: Export the Get and Set commands'
+  code: |-
+    $S = New-PSSession -ConnectionUri https://exchange.microsoft.com/mailbox -Credential exchangeadmin01@hotmail.com -Authentication Negotiate
+    Export-PSSession -Session $S -Module exch* -CommandName Get-*, Set-* -FormatTypeName * -OutputModule $PSHOME\Modules\Exchange -Encoding ASCII
+  description: |-
+    These commands export the `Get` and `Set` commands from a Microsoft Exchange Server snap-in on a
+    remote computer to an Exchange module in the `$PSHOME\Modules` directory on the local computer.
+    Placing the module in the `$PSHOME\Modules` directory makes it accessible to all users of the
+    computer.
+  summary: |+
+    This example exports all of the `Get` and `Set` commands from a server.
+
+- title: 'Example 3: Export commands from a remote computer'
+  code: |-
+    $S = New-PSSession -ComputerName Server01 -Credential Server01\User01
+    Export-PSSession -Session $S -OutputModule TestCmdlets -Type Cmdlet -CommandName *test* -FormatTypeName *
+    Remove-PSSession $S
+    Import-Module TestCmdlets
+    Get-Help Test*
+    Test-Files
+  description: |-
+    The `New-PSSession` command creates a PSSession on the Server01 computer and saves it in the `$S`
+    variable. The `Export-PSSession` command exports the cmdlets whose names begin with Test from the
+    PSSession in `$S` to the TestCmdlets module on the local computer.
+
+    The `Remove-PSSession` cmdlet deletes the PSSession in `$S` from the current session. This command
+    shows that the PSSession need not be active to use the commands that were imported from the
+    session. The `Import-Module` cmdlet adds the cmdlets in the TestCmdlets module to the current
+    session. The command can be run in any session at any time.
+
+    The `Get-Help` cmdlet gets help for cmdlets whose names begin with Test. After the commands in a
+    module are added to the current session, you can use the `Get-Help` and `Get-Command` cmdlets to
+    learn about the imported commands. The `Test-Files` cmdlet was exported from the Server01 computer
+    and added to the session. The `Test-Files` cmdlet runs in a remote session on the computer from
+    which the command was imported. PowerShell creates a session from information that is stored in the
+    TestCmdlets module.
+  summary: |+
+    This example exports cmdlets from a PSSession on a remote computer and saves them in a module on
+    the local computer. The cmdlets from the module are added to the current session so that they can
+    be used.
+
+- title: 'Example 4: Export and clobber commands in the current session'
+  code: |-
+    Export-PSSession -Session $S -AllowClobber -OutputModule AllCommands
+  description: |-
+    This `Export-PSSession` command exports all commands and all formatting data from the PSSession in
+    the `$S` variable into the current session. The **AllowClobber** parameter includes commands with
+    the same names as commands in the current session.
+  summary: |+
+    This example exports commands that are stored in a variable into the current session.
+
+- title: 'Example 5: Export commands from a closed PSSession'
+  code: |-
+    $Options = New-PSSessionOption -NoMachineProfile
+    $S = New-PSSession -ComputerName Server01 -SessionOption $Options
+    Export-PSSession -Session $S -OutputModule Server01
+    Remove-PSSession $S
+    New-PSSession -ComputerName Server01 -SessionOption $Options
+    Import-Module Server01
+  description: |-
+    The `New-PSSessionOption` cmdlet creates a **PSSessionOption** object, and it saves the object in
+    the `$Options` variable. The `New-PSSession` command creates a PSSession on the Server01 computer.
+    The **SessionOption** parameter uses the object stored in `$Options`. The session is stored in the
+    `$S` variable.
+
+    The `Export-PSSession` cmdlet exports commands from the PSSession in `$S` to the Server01 module.
+    The `Remove-PSSession` cmdlet deletes the PSSession in the `$S` variable.
+
+    The `New-PSSession` cmdlet creates a new PSSession that connects to the Server01 computer. The
+    **SessionOption** parameter uses the object stored in `$Options`. The `Import-Module` cmdlet
+    imports the commands from the Server01 module. The commands in the module are run in the PSSession
+    on the Server01 computer.
+  summary: |+
+    This example shows how to run the exported commands with special options when the PSSession that
+    created the exported commands is closed.
+
+    If the original remote session is closed when a module is imported, the module will use any open
+    remote session that connects to the originating computer. If there is no current session to the
+    originating computer, the module will reestablish a session.
+
+    To run exported commands with special options in a remote session, you must create a remote session
+    with those options before you import the module. Use the `New-PSSession` cmdlet with the
+    **SessionOption** parameter
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowClobber
+  description: |+
+    Exports the specified commands, even if they have the same names as commands in the current
+    session.
+
+    If you export a command with the same name as a command in the current session, the exported
+    command hides or replaces the original commands. For more information, see
+    [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md).
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ArgumentList
+  description: |+
+    Exports the variant of the command that results from using the specified arguments (parameter
+    values).
+
+    For example, to export the variant of the `Get-Item` command in the certificate (Cert:) drive in
+    the PSSession in `$S`, type `Export-PSSession -Session $S -Command Get-Item -ArgumentList cert:`.
+
+  defaultValue: None
+  position: Named
+  aliases: Args
+  parameterValueGroup: ""
+- type: <xref href="System.Security.Cryptography.X509Certificates.X509Certificate2" data-throw-if-not-resolved="False" />
+  name: Certificate
+  description: |+
+    Specifies the client certificate that is used to sign the format files (*.Format.ps1xml) or script
+    module files (.psm1) in the module that `Export-PSSession` creates. Enter a variable that contains
+    a certificate or a command or expression that gets the certificate.
+
+    To find a certificate, use the `Get-PfxCertificate` cmdlet or use the `Get-ChildItem` cmdlet in the
+    Certificate (Cert:) drive. If the certificate is not valid or does not have sufficient authority,
+    the command fails.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: CommandName
+  description: |+
+    Exports only the commands with the specified names or name patterns. Wildcards are permitted. Use
+    **CommandName** or its alias, **Name**.
+
+    By default, `Export-PSSession` exports all commands from the PSSession except for commands that
+    have the same names as commands in the current session. This prevents commands from being hidden or
+    replaced by commands in the current session. To export all commands, even those that hide or
+    replace other commands, use the **AllowClobber** parameter.
+
+    If you use the **CommandName** parameter, the formatting files for the commands are not exported
+    unless you use the **FormatTypeName** parameter. Similarly, if you use the **FormatTypeName**
+    parameter, no commands are exported unless you use the **CommandName** parameter.
+
+  defaultValue: All commands in the session.
+  acceptWildcardCharacters: true
+  position: "2"
+  aliases: Name
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.CommandTypes" data-throw-if-not-resolved="False" />
+  name: CommandType
+  description: |+
+    Exports only the specified types of command objects. Use **CommandType** or its alias, **Type**.
+
+    The acceptable values for this parameter are as follows:
+
+    - Alias. All PowerShell aliases in the current session.
+    - All. All command types. It is the equivalent of `Get-Command -Name *`.
+    - Application. All files other than PowerShell files in paths listed in the Path environment
+      variable (`$env:path`), including .txt, .exe, and .dll files.
+    - Cmdlet. The cmdlets in the current session. Cmdlet is the default.
+    - Configuration. A PowerShell configuration. For more information, see
+      [about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md).
+    - ExternalScript. All .ps1 files in the paths listed in the Path environment variable
+      (`$env:path`).
+    - Filter and Function. All PowerShell functions.
+    - Script. Script blocks in the current session.
+    - Workflow. A PowerShell workflow. For more information, see [about_Workflows](../PSWorkflow/About/about_Workflows.md).
+
+  defaultValue: All commands in the session.
+  position: Named
+  aliases: Type
+  parameterValueGroup: Alias, All, Application, Cmdlet, Configuration, ExternalScript, Filter, Function, Script, Workflow
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Encoding
+  description: |+
+    Specifies the type of encoding for the target file. The default value is `UTF8`.
+
+    The acceptable values for this parameter are as follows:
+
+    - `ASCII` Uses ASCII (7-bit) character set.
+    - `BigEndianUnicode` Uses UTF-16 with the big-endian byte order.
+    - `Default` Uses the encoding that corresponds to the system's active code page.
+    - `OEM` Uses the encoding that corresponds to the system's current OEM code page.
+    - `Unicode` Uses UTF-16 with the little-endian byte order.
+    - `UTF7` Uses UTF-7.
+    - `UTF8` Uses UTF-8.
+    - `UTF32` Uses UTF-32 with the little-endian byte order.
+
+  defaultValue: UTF8
+  position: Named
+  aliases: ""
+  parameterValueGroup: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Overwrites one or more existing output files, even if the file has the read-only attribute.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: FormatTypeName
+  description: |+
+    Exports formatting instructions only for the specified Microsoft .NET Framework types. Enter the
+    type names. By default, `Export-PSSession` exports formatting instructions for all .NET Framework
+    types that are not in the **System.Management.Automation** namespace.
+
+    The value of this parameter must be the name of a type that is returned by a `Get-FormatData`
+    command in the session from which the commands are being imported. To get all of the formatting
+    data in the remote session, type `*`.
+
+    If you use the **FormatTypeName** parameter, no commands are exported unless you use the
+    **CommandName** parameter.
+
+    If you use the **CommandName** parameter, the formatting files for the commands are not exported
+    unless you use the **FormatTypeName** parameter.
+
+  defaultValue: None
+  position: "3"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.Commands.ModuleSpecification" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: FullyQualifiedModule
+  description: |+
+    Specifies modules with names that are specified in the form of **ModuleSpecification** objects. See
+    the Remarks section of
+    [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+
+    For example, the **FullyQualifiedModule** parameter accepts a module name that is specified in
+    either of these formats:
+
+    - `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+    - `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
+
+    **ModuleName** and **ModuleVersion** are required, but **Guid** is optional. You cannot specify the
+    **FullyQualifiedModule** parameter in the same command as a **Module** parameter. the two
+    parameters are mutually exclusive.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Module
+  description: |+
+    Exports only the commands in the specified PowerShell snap-ins and modules. Enter the snap-in and
+    module names. Wildcards are not permitted.
+
+    For more information, see `Import-Module` and
+    [about_PSSnapins](../Microsoft.PowerShell.Core/About/about_PSSnapins.md).
+
+  defaultValue: All commands in the session.
+  position: Named
+  aliases: PSSnapin
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: OutputModule
+  isRequired: true
+  description: |+
+    Specifies an optional path and name for the module created by `Export-PSSession`. The default path
+    is `$home\Documents\WindowsPowerShell\Modules`. This parameter is required.
+
+    If the module subdirectory or any of the files that `Export-PSSession` creates already exist, the
+    command fails. To overwrite existing files, use the **Force** parameter.
+
+  defaultValue: $home\Documents\WindowsPowerShell\Modules
+  position: "1"
+  aliases: PSPath, ModuleName
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.Runspaces.PSSession" data-throw-if-not-resolved="False" />
+  name: Session
+  isRequired: true
+  description: |+
+    Specifies the PSSession from which the commands are exported. Enter a variable that contains a
+    session object or a command that gets a session object, such as a `Get-PSSession` command. This
+    parameter is required.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Export-PSSession
+name: Export-PSSession
+description: |-
+  The `Export-PSSession` cmdlet gets cmdlets, functions, aliases, and other command types from
+  another PowerShell session (PSSession) on a local or remote computer and saves them in a PowerShell
+  module. To add the commands from the module to the current session, use the `Import-Module` cmdlet.
+
+  Unlike `Import-PSSession`, which imports commands from another PSSession into the current session,
+  `Export-PSSession` saves the commands in a module. The commands are not imported into the current
+  session.
+
+  To export commands, use the `New-PSSession` cmdlet to create a PSSession that has the commands that
+  you want to export. Then use the `Export-PSSession` cmdlet to export the commands.
+
+  To prevent command name conflicts, the default for `Export-PSSession` is to export all commands,
+  except for commands that exist in the current session. You can use the **CommandName** parameter to
+  specify the commands to export.
+
+  The `Export-PSSession` cmdlet uses the implicit remoting feature of PowerShell. When you import
+  commands into the current session, they run implicitly in the original session or in a similar
+  session on the originating computer.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 04/08/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Export-PSSession

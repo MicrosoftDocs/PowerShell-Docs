@@ -1,0 +1,104 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Reads a line of input from the console.
+module: Microsoft.PowerShell.Utility
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe input to this cmdlet.
+outputs:
+- name: <xref href="System.String or System.Security.SecureString" data-throw-if-not-resolved="False" />
+  description: |-
+    If the **AsSecureString** parameter is used, `Read-Host` returns a **SecureString**. Otherwise, it
+    returns a string.
+links:
+- text: Clear-Host
+  href: ../microsoft.powershell.core/clear-host.yml
+- text: Get-Host
+  href: Get-Host.yml
+- text: Write-Host
+  href: Write-Host.yml
+- text: ConvertFrom-SecureString
+  href: ../Microsoft.PowerShell.Security/ConvertFrom-SecureString.yml
+syntaxes:
+- Read-Host [[-Prompt] <Object>] [-MaskInput] [<CommonParameters>]
+- Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
+examples:
+- title: 'Example 1: Save console input to a variable'
+  code: |-
+    $Age = Read-Host "Please enter your age"
+  description: ""
+  summary: |+
+    This example displays the string "Please enter your age:" as a prompt. When a value is entered and
+    the Enter key is pressed, the value is stored in the `$Age` variable.
+
+- title: 'Example 2: Save console input as a secure string'
+  code: |-
+    $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
+  description: ""
+  summary: |+
+    This example displays the string "Enter a Password:" as a prompt. As a value is being entered,
+    asterisks (`*`) appear on the console in place of the input. When the Enter key is pressed, the
+    value is stored as a **SecureString** object in the `$pwd_secure_string` variable.
+
+- title: 'Example 3: Mask input and as a plaintext string'
+  code: |-
+    $pwd_string = Read-Host "Enter a Password" -MaskInput
+  description: ""
+  summary: |+
+    This example displays the string "Enter a Password:" as a prompt. As a value is being entered,
+    asterisks (`*`) appear on the console in place of the input. When the Enter key is pressed, the
+    value is stored as a plaintext **String** object in the `$pwd_string` variable.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AsSecureString
+  description: |+
+    Indicates that the cmdlet displays asterisks (`*`) in place of the characters that the user types as
+    input. When you use this parameter, the output of the `Read-Host` cmdlet is a **SecureString**
+    object (**System.Security.SecureString**).
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: MaskInput
+  description: |+
+    Indicates that the cmdlet displays asterisks (`*`) in place of the characters that the user types as
+    input. When you use this parameter, the output of the `Read-Host` cmdlet is a **String** object.
+    This allows you to safely prompt for a password that is returned as plaintext instead of
+    **SecureString**.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: Prompt
+  description: |+
+    Specifies the text of the prompt.
+    Type a string.
+    If the string includes spaces, enclose it in quotation marks.
+    PowerShell appends a colon (`:`) to the text that you enter.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Read-Host
+name: Read-Host
+description: |-
+  The `Read-Host` cmdlet reads a line of input from the console. You can use it to prompt a user for
+  input. Because you can save the input as a secure string, you can use this cmdlet to prompt users
+  for secure data, such as passwords, as well as shared data.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 06/04/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Read-Host

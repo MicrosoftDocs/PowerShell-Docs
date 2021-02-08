@@ -1,0 +1,75 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets Operation Validation Framework tests.
+module: Microsoft.PowerShell.Operation.Validation
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe any input to this cmdlet.
+outputs:
+- name: <xref href="PSCustomObject" data-throw-if-not-resolved="False" />
+  description: |-
+    The **PSCustomObject** describes the validation.
+links:
+- text: Invoke-OperationValidation
+  href: Invoke-OperationValidation.yml
+syntaxes:
+- Get-OperationValidation [[-ModuleName] <String[]>] [-TestType <String[]>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get Operation Validation tests'
+  code: |-
+    PS C:\> Get-OperationValidation -ModuleName "C:\temp\modules\AddNumbers"
+        Type:     Simple
+        File:     addnum.tests.ps1
+        FilePath: C:\temp\modules\AddNumbers\Diagnostics\Simple\addnum.tests.ps1
+        Name:
+            Add-Em
+            Subtract em
+            Add-Numbers
+        Type:     Comprehensive
+        File:     Comp.Adding.Tests.ps1
+        FilePath: C:\temp\modules\AddNumbers\Diagnostics\Comprehensive\Comp.Adding.Tests.ps1
+        Name:
+            Comprehensive Adding Tests
+            Comprehensive Subtracting Tests
+            Comprehensive Examples
+  description: |-
+    This command gets validation tests from the module named AddNumbers in the C:\temp\modules folder.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ModuleName
+  description: |+
+    Specifies an array of names of modules.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: TestType
+  description: |+
+    Specifies an array of test types.
+    Valid values are Simple, Comprehensive, or both.
+    The default is "Simple,Comprehensive".
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Simple, Comprehensive
+uid: Microsoft.PowerShell.Operation.Validation.Get-OperationValidation
+name: Get-OperationValidation
+description: |-
+  The **Get-OperationValidation** cmdlet gets Operation Validation Framework tests for installed modules.
+
+  Modules that include a Diagnostics folder are inspected for Pester tests in the Simple or Comprehensive subfolder, or both.
+metadata:
+  external help file: Microsoft.PowerShell.Operation.Validation-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Operation.Validation
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.operation.validation/get-operationvalidation?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-OperationValidation

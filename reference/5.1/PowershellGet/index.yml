@@ -1,0 +1,56 @@
+### YamlMime:PowershellModule
+children:
+- title: PowerShellGet
+  cmdlets:
+  - PowerShellGet.Find-Command
+  - PowerShellGet.Find-DscResource
+  - PowerShellGet.Find-Module
+  - PowerShellGet.Find-RoleCapability
+  - PowerShellGet.Find-Script
+  - PowerShellGet.Get-InstalledModule
+  - PowerShellGet.Get-InstalledScript
+  - PowerShellGet.Get-PSRepository
+  - PowerShellGet.Install-Module
+  - PowerShellGet.Install-Script
+  - PowerShellGet.New-ScriptFileInfo
+  - PowerShellGet.Publish-Module
+  - PowerShellGet.Publish-Script
+  - PowerShellGet.Register-PSRepository
+  - PowerShellGet.Save-Module
+  - PowerShellGet.Save-Script
+  - PowerShellGet.Set-PSRepository
+  - PowerShellGet.Test-ScriptFileInfo
+  - PowerShellGet.Uninstall-Module
+  - PowerShellGet.Uninstall-Script
+  - PowerShellGet.Unregister-PSRepository
+  - PowerShellGet.Update-Module
+  - PowerShellGet.Update-ModuleManifest
+  - PowerShellGet.Update-Script
+  - PowerShellGet.Update-ScriptFileInfo
+uid: PowerShellGet
+name: PowerShellGet
+description: |-
+  PowerShellGet is a module with commands for discovering, installing, updating and publishing
+  PowerShell artifacts like Modules, DSC Resources, Role Capabilities, and Scripts.
+
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+metadata:
+  Download Help Link: https://go.microsoft.com/fwlink/?LinkId=393271
+  Help Version: 5.2.0.0
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Guid: 1d73a601-4a6c-43c5-ba3f-619b18bbb404
+  Module Name: PowerShellGet
+  ms.date: 06/09/2017
+  schema: 2.0.0
+  title: PowerShellGet

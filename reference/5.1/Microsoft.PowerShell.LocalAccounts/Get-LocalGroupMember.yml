@@ -1,0 +1,109 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets members from a local group.
+module: Microsoft.PowerShell.LocalAccounts
+notes: |-
+  * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
+
+  - Local
+  - Active Directory
+  - Azure Active Directory group
+  - Microsoft Account
+
+  **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
+inputs:
+- name: <xref href="System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a local group, a string, or a SID to this cmdlet.
+outputs:
+- name: <xref href="Microsoft.SecurityAccountsManager.LocalPrincipal" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns local principals.
+links:
+- text: Add-LocalGroupMember
+  href: Add-LocalGroupMember.yml
+- text: New-LocalGroup
+  href: New-LocalGroup.yml
+- text: Remove-LocalGroupMember
+  href: Remove-LocalGroupMember.yml
+syntaxes:
+- Get-LocalGroupMember [[-Member] <String>] [-Name] <String> [<CommonParameters>]
+- Get-LocalGroupMember [-Group] <LocalGroup> [[-Member] <String>] [<CommonParameters>]
+- Get-LocalGroupMember [[-Member] <String>] [-SID] <SecurityIdentifier> [<CommonParameters>]
+examples:
+- title: 'Example 1: Get all members of the Administrators group'
+  code: |-
+    PS C:\> Get-LocalGroupMember -Group "Administrators"
+    ObjectClass Name                    PrincipalSource
+    ----------- ----                    ---------------
+    User        CONTOSOPC\Administrator Local
+    User        CONTOSOPC\LocalAdmin    Local
+  description: |-
+    This command gets all the members of the local Administrators group.
+  summary: ""
+parameters:
+- type: <xref href="Microsoft.PowerShell.Commands.LocalGroup" data-throw-if-not-resolved="False" />
+  name: Group
+  isRequired: true
+  description: |+
+    Specifies the security group from which this cmdlet gets members.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Member
+  description: |+
+    Specifies a user or group that this cmdlet gets from a security group.
+    You can specify users or groups by name or security ID (SID).
+    Specify SID strings in S-R-I-S-S .
+    . .
+    format.
+    You can use wildcard characters.
+    If you do not specify this parameter, the cmdlet gets all members of the group.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the security group from which this cmdlet gets members.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+  name: SID
+  isRequired: true
+  description: |+
+    Specifies the security ID of the security group from which this cmdlet gets members.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.LocalAccounts.Get-LocalGroupMember
+name: Get-LocalGroupMember
+description: |-
+  The **Get-LocalGroupMember** cmdlet gets members from a local group.
+
+  > [!NOTE]
+  > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+  > system.
+metadata:
+  external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.LocalAccounts
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/get-localgroupmember?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-LocalGroupMember

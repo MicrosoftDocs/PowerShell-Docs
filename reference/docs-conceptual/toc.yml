@@ -1,7 +1,7 @@
+items:
 - name: How to use this documentation
   href: how-to-use-docs.md
 - name: Overview
-  expanded: true
   items:
   - name: What is PowerShell?
     href: overview.md
@@ -118,7 +118,6 @@
   - name: Glossary
     href: learn/glossary.md
 - name: What's New
-  expanded: true
   items:
   - name: What's new in PowerShell 7.x
     items:
@@ -225,7 +224,6 @@
       - name: Uninstall WMF 5.0
         href: windows-powershell/wmf/setup/uninstall.md
     - name: What's New
-      expanded: true
       items:
       - name: WMF 5.x Release Notes
         href: windows-powershell/wmf/whats-new/release-notes.md
@@ -292,7 +290,6 @@
     - name: Get started with Azure Policy's Guest Configuration
       href: /azure/governance/policy/concepts/guest-configuration
   - name: Quickstarts
-    expanded: true
     items:
     - name: Create a Configuration from Group Policy
       href: dsc/quickstarts/gpo-quickstart.md
@@ -1669,28 +1666,28 @@
         items:
         - name: Writing Help for PowerShell Cmdlets
           items:
-            - name: Overview
-              href: developer/help/writing-help-for-windows-powershell-cmdlets.md
-            - name: How to Create the Cmdlet Help File
-              href: developer/help/how-to-create-the-cmdlet-help-file.md
-            - name: How to Add the Cmdlet Name and Synopsis to a Cmdlet Help Topic
-              href: developer/help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
-            - name: How to Add a Cmdlet Description
-              href: developer/help/how-to-add-a-cmdlet-description.md
-            - name: How to Add Syntax to a Cmdlet Help Topic
-              href: developer/help/how-to-add-syntax-to-a-cmdlet-help-topic.md
-            - name: How to Add Parameter Information
-              href: developer/help/how-to-add-parameter-information.md
-            - name: How to Add Input Types to a Cmdlet Help Topic
-              href: developer/help/how-to-add-input-types-to-a-cmdlet-help-topic.md
-            - name: How to Add Return Values to a Cmdlet Help Topic
-              href: developer/help/how-to-add-return-values-to-a-cmdlet-help-topic.md
-            - name: How to Add Notes to a Cmdlet Help Topic
-              href: developer/help/how-to-add-notes-to-a-cmdlet-help-topic.md
-            - name: How to Add Examples to a Cmdlet Help Topic
-              href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
-            - name: How to Add Related Links to a Cmdlet Help Topic
-              href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
+          - name: Overview
+            href: developer/help/writing-help-for-windows-powershell-cmdlets.md
+          - name: How to Create the Cmdlet Help File
+            href: developer/help/how-to-create-the-cmdlet-help-file.md
+          - name: How to Add the Cmdlet Name and Synopsis to a Cmdlet Help Topic
+            href: developer/help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
+          - name: How to Add a Cmdlet Description
+            href: developer/help/how-to-add-a-cmdlet-description.md
+          - name: How to Add Syntax to a Cmdlet Help Topic
+            href: developer/help/how-to-add-syntax-to-a-cmdlet-help-topic.md
+          - name: How to Add Parameter Information
+            href: developer/help/how-to-add-parameter-information.md
+          - name: How to Add Input Types to a Cmdlet Help Topic
+            href: developer/help/how-to-add-input-types-to-a-cmdlet-help-topic.md
+          - name: How to Add Return Values to a Cmdlet Help Topic
+            href: developer/help/how-to-add-return-values-to-a-cmdlet-help-topic.md
+          - name: How to Add Notes to a Cmdlet Help Topic
+            href: developer/help/how-to-add-notes-to-a-cmdlet-help-topic.md
+          - name: How to Add Examples to a Cmdlet Help Topic
+            href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
+          - name: How to Add Related Links to a Cmdlet Help Topic
+            href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
         - name: Writing Help for PowerShell Modules
           items:
           - name: Overview
@@ -1702,7 +1699,7 @@
             items:
             - name: Updatable Help Overview
               href: developer/help/updatable-help-overview.md
-            - name: "Updatable Help Authoring: Step-by-Step"
+            - name: 'Updatable Help Authoring: Step-by-Step'
               href: developer/help/updatable-help-authoring-step-by-step.md
             - name: How Updatable Help Works
               href: developer/help/how-updatable-help-works.md
@@ -1880,3 +1877,5 @@
           href: developer/prog-guide/runspace09-code-sample.md
         - name: RunSpace10 Code Sample
           href: developer/prog-guide/runspace10-code-sample.md
+metadata:
+  universal_ref_toc: /powershell/module/psdocs/toc.json

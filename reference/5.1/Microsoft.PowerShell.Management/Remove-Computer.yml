@@ -1,0 +1,228 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Removes the local computer from its domain.
+module: Microsoft.PowerShell.Management
+notes: |-
+  This cmdlet does not remove computers from workgroups.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe computer names to thiscmdlet.
+outputs:
+- name: <xref href="Microsoft.PowerShell.Commands.ComputerChangeInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    When you use the **PassThru** parameter, `Remove-Computer` returns a **ComputerChangeInfo** object.
+    Otherwise, this cmdlet does not generate any output.
+links:
+- text: Add-Computer
+  href: Add-Computer.yml
+- text: Checkpoint-Computer
+  href: Checkpoint-Computer.yml
+- text: Remove-Computer
+  href: Remove-Computer.yml
+- text: Rename-Computer
+  href: Rename-Computer.yml
+- text: Restart-Computer
+  href: Restart-Computer.yml
+- text: Restore-Computer
+  href: Restore-Computer.yml
+- text: Stop-Computer
+  href: Stop-Computer.yml
+- text: Test-Connection
+  href: Test-Connection.yml
+syntaxes:
+- >-
+  Remove-Computer [[-UnjoinDomainCredential] <PSCredential>] [-Restart] [-Force] [-PassThru]
+
+   [-WorkgroupName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Remove-Computer -UnjoinDomainCredential <PSCredential> [-LocalCredential <PSCredential>] [-Restart]
+
+   [-ComputerName <String[]>] [-Force] [-PassThru] [-WorkgroupName <String>] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Remove the local computer from its domain'
+  code: |-
+    Remove-Computer -UnjoinDomaincredential Domain01\Admin01 -PassThru -Verbose -Restart
+  description: |-
+    The **UnjoinDomainCredential** parameter provides the credentials of a domain administrator. The
+    **PassThru** and the **Verbose** common parameters display information about the success or failure
+    of the command. The **Restart** parameter restarts the computer to complete the remove operation.
+
+    When no workgroup name is specified, the computer is moved to the workgroup named after it is
+    removed from its domain.
+  summary: |+
+    This example removes the local computer from the domain to which it is joined.
+
+- title: 'Example 2: Move several computers to a legacy workgroup'
+  code: |-
+    Remove-Computer -ComputerName (Get-Content OldServers.txt) -LocalCredential Domain01\Admin01 -UnJoinDomainCredential Domain01\Admin01 -WorkgroupName "Legacy" -Force -Restart
+  description: |-
+    The **LocalCredential** parameter provides the credentials of a user who has permission to connect
+    to remote computers. The **UnjoinDomainCredential** parameter provides the credentials of a user who
+    has permission to remove the computers from their domains. The **Force** parameter suppresses the
+    confirmation prompts for each computer. The **Restart** parameter restarts each of the computers
+    after it is removed from its domain.
+  summary: |+
+    This example removes all the computers listed in the `OldServers.txt` file from their
+    domains and moves them into the **Legacy** workgroup.
+
+- title: 'Example 3: Remove computers from a workgroup without confirmation'
+  code: |-
+    Remove-Computer -ComputerName "Server01", "localhost" -UnjoinDomainCredential Domain01\Admin01 -WorkgroupName "Local" -Restart -Force
+  description: |-
+    The **Force** parameter suppresses the confirmation prompt for each computer. The **Restart**
+    parameter restarts the computers to make the change effective.
+  summary: |+
+    This example removes the remote computer, Server01, and the local computer from their domains and
+    adds them to the **Local** workgroup.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ComputerName
+  description: |+
+    Specifies the computers to be removed from their domains. The default is the local computer.
+
+    Type the NetBIOS name, an IP address, or a fully qualified domain name (FQDN) of the remote
+    computers. To specify the local computer, type the computer name, a dot (.), or localhost.
+
+    This parameter does not rely on PowerShell remoting. You can use the **ComputerName**
+    parameter of `Remove-Computer` even if your computer is not configured to run remote commands.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Suppresses the user prompt. By default, `Remove-Computer` prompts you for confirmation before
+    removing each computer.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: LocalCredential
+  description: |+
+    Specifies a user account that has permission to connect to the computers that the **ComputerName**
+    parameter specifies. The default is the current user.
+
+    Type a user name, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object, such as
+    one generated by the `Get-Credential` cmdlet. If you type a user name, the cmdlet prompts you for a
+    password. To specify a user account that has permission to remove the computer from its current
+    domain, use the **UnjoinDomainCredential** parameter.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns the results of the command. Otherwise, this cmdlet does not generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Restart
+  description: |+
+    Indicates that this cmdlet restarts the computers that are being removed. A restart is often
+    required to make the change effective.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: UnjoinDomainCredential
+  description: |+
+    Specifies a user account that has permission to remove the computers from their current domains.
+    Explicit credentials, as provided by this parameter, are required to remove remote computers from a
+    domain, even when the value is the credentials of the current user.
+
+    Type a user name, such as User01 or Domain01\User01, or enter a **PSCredential** object, such as one
+    generated by `Get-Credential`. If you type a user name, this cmdlet prompts you for a password.
+
+    To specify a user account that has permission to connect to the remote computers, use the
+    **LocalCredential** parameter.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  position: "0"
+  aliases: Credential
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: WorkgroupName
+  description: |+
+    Specifies the name of a workgroup to which the computers are added when they are removed from their
+    domains. The default value is **WORKGROUP**. When you remove a computer from a domain, you must add
+    it to a workgroup.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Remove-Computer
+name: Remove-Computer
+description: |-
+  The `Remove-Computer` cmdlet removes the local computer and remote computers from their current
+  domains.
+
+  When you remove a computer from a domain, `Remove-Computer` also disables the domain account of the
+  computer. You must provide explicit credentials to unjoin the computer from its domain, even when
+  they are the credentials of the current user. You must restart the computer to make the change
+  effective. Also, when you remove a computer from a domain, you must move it to a workgroup. Use the
+  **WorkgroupName** parameter to specify the workgroup.
+
+  To move a computer from a workgroup to a domain, from one workgroup to another, or from one domain
+  to another, use the `Add-Computer` cmdlet.
+
+  To get the results of the command, use the **Verbose** and **PassThru** parameters. To suppress the
+  user prompt, use the **Force** parameter.
+
+  `Remove-Computer` removes the local computer and remote computers from domains. It includes
+  credential parameters that specify alternate credentials for connecting to remote computers, and
+  unjoining from a domain, a **Restart** parameter for restarting the affected computers, and a
+  **WorkgroupName** parameter for specifying the name of the workgroup to which computers are added.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 04/04/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Remove-Computer

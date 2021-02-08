@@ -1,0 +1,81 @@
+### YamlMime:PowershellModule
+children:
+- title: Microsoft.PowerShell.Management
+  cmdlets:
+  - Microsoft.PowerShell.Management.Add-Content
+  - Microsoft.PowerShell.Management.Clear-Content
+  - Microsoft.PowerShell.Management.Clear-Item
+  - Microsoft.PowerShell.Management.Clear-ItemProperty
+  - Microsoft.PowerShell.Management.Clear-RecycleBin
+  - Microsoft.PowerShell.Management.Convert-Path
+  - Microsoft.PowerShell.Management.Copy-Item
+  - Microsoft.PowerShell.Management.Copy-ItemProperty
+  - Microsoft.PowerShell.Management.Debug-Process
+  - Microsoft.PowerShell.Management.Get-ChildItem
+  - Microsoft.PowerShell.Management.Get-Clipboard
+  - Microsoft.PowerShell.Management.Get-ComputerInfo
+  - Microsoft.PowerShell.Management.Get-Content
+  - Microsoft.PowerShell.Management.Get-HotFix
+  - Microsoft.PowerShell.Management.Get-Item
+  - Microsoft.PowerShell.Management.Get-ItemProperty
+  - Microsoft.PowerShell.Management.Get-ItemPropertyValue
+  - Microsoft.PowerShell.Management.Get-Location
+  - Microsoft.PowerShell.Management.Get-Process
+  - Microsoft.PowerShell.Management.Get-PSDrive
+  - Microsoft.PowerShell.Management.Get-PSProvider
+  - Microsoft.PowerShell.Management.Get-Service
+  - Microsoft.PowerShell.Management.Get-TimeZone
+  - Microsoft.PowerShell.Management.Invoke-Item
+  - Microsoft.PowerShell.Management.Join-Path
+  - Microsoft.PowerShell.Management.Move-Item
+  - Microsoft.PowerShell.Management.Move-ItemProperty
+  - Microsoft.PowerShell.Management.New-Item
+  - Microsoft.PowerShell.Management.New-ItemProperty
+  - Microsoft.PowerShell.Management.New-PSDrive
+  - Microsoft.PowerShell.Management.New-Service
+  - Microsoft.PowerShell.Management.Pop-Location
+  - Microsoft.PowerShell.Management.Push-Location
+  - Microsoft.PowerShell.Management.Remove-Item
+  - Microsoft.PowerShell.Management.Remove-ItemProperty
+  - Microsoft.PowerShell.Management.Remove-PSDrive
+  - Microsoft.PowerShell.Management.Remove-Service
+  - Microsoft.PowerShell.Management.Rename-Computer
+  - Microsoft.PowerShell.Management.Rename-Item
+  - Microsoft.PowerShell.Management.Rename-ItemProperty
+  - Microsoft.PowerShell.Management.Resolve-Path
+  - Microsoft.PowerShell.Management.Restart-Computer
+  - Microsoft.PowerShell.Management.Restart-Service
+  - Microsoft.PowerShell.Management.Resume-Service
+  - Microsoft.PowerShell.Management.Set-Clipboard
+  - Microsoft.PowerShell.Management.Set-Content
+  - Microsoft.PowerShell.Management.Set-Item
+  - Microsoft.PowerShell.Management.Set-ItemProperty
+  - Microsoft.PowerShell.Management.Set-Location
+  - Microsoft.PowerShell.Management.Set-Service
+  - Microsoft.PowerShell.Management.Set-TimeZone
+  - Microsoft.PowerShell.Management.Split-Path
+  - Microsoft.PowerShell.Management.Start-Process
+  - Microsoft.PowerShell.Management.Start-Service
+  - Microsoft.PowerShell.Management.Stop-Computer
+  - Microsoft.PowerShell.Management.Stop-Process
+  - Microsoft.PowerShell.Management.Stop-Service
+  - Microsoft.PowerShell.Management.Suspend-Service
+  - Microsoft.PowerShell.Management.Test-Connection
+  - Microsoft.PowerShell.Management.Test-Path
+  - Microsoft.PowerShell.Management.Wait-Process
+uid: Microsoft.PowerShell.Management
+name: Microsoft.PowerShell.Management
+description: |-
+  This section contains the help topics for the cmdlets that are installed with PowerShell
+  Microsoft.PowerShell.Management module. The Management module contains cmdlets that help you manage
+  Windows in PowerShell.
+metadata:
+  Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113632
+  Help Version: 7.0.1.0
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Guid: eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 03/01/2019
+  schema: 2.0.0
+  title: Microsoft.PowerShell.Management

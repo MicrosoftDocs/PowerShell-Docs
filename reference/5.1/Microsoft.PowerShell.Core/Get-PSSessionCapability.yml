@@ -1,0 +1,84 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets the capabilities of a specific user on a constrained session configuration.
+module: Microsoft.PowerShell.Core
+notes: ""
+outputs:
+- name: <xref href="System.Management.Automation.AliasInfo" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="System.Management.Automation.FunctionInfo" data-throw-if-not-resolved="False" />
+  description: ""
+- name: <xref href="System.Management.Automation.Runspaces.InitialSessionState" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: New-PSRoleCapabilityFile
+  href: New-PSRoleCapabilityFile.yml
+syntaxes:
+- Get-PSSessionCapability [-ConfigurationName] <String> [-Username] <String> [-Full] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get commands available for a user'
+  code: |-
+    PS C:\> Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User'
+  description: |-
+    This example returns the commands available to the user CONTOSO\User when connecting to the Endpoint1 constrained endpoint on the local computer.
+  summary: ""
+- title: 'Example 2: Get details about a runspace for a user'
+  code: |-
+    PS C:\> Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User' -Full
+  description: |-
+    This example returns details about the runspace the user CONTOSO\User would interact with when connecting to the Endpoint1 constrained endpoint.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ConfigurationName
+  isRequired: true
+  description: |+
+    Specifies the constrained session configuration (endpoint) that you are inspecting.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Full
+  description: |+
+    Indicates that this cmdlet returns the entire initial session state for the specified user at the specified constrained endpoint.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Username
+  isRequired: true
+  description: |+
+    Specifies the user whose capabilities you are inspecting.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Core.Get-PSSessionCapability
+name: Get-PSSessionCapability
+description: |-
+  The **Get-PSSessionCapability** cmdlet gets the capabilities of a specific user on a constrained session configuration.
+  Use this cmdlet to audit customized session configurations for users.
+
+  Starting in Windows PowerShell 5.0, you can use the **RoleDefinitions** property in a session configuration (.pssc) file.
+  Using this property lets you grant users different capabilities on a single constrained endpoint based on group membership.
+  The **Get-PSSessionCapability** cmdlet reduces complexity when auditing these endpoints by letting you determine the exact capabilities granted to a user.
+
+  By default, the **Get-PSSessionCapability** cmdlet returns a list of commands the specified user can run in the specified endpoint.
+  This is equivalent to the user running **Get-Command** in the specified endpoint.
+  When run with the *Full* parameter, this cmdlet returns an **InitialSessionState** object.
+  This object contains details about the Windows PowerShell runspace the specified user would interact with for the specified endpoint.
+  It includes information such as Language Mode, Execution Policy, and Environmental Variables.
+metadata:
+  external help file: System.Management.Automation.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-pssessioncapability?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-PSSessionCapability

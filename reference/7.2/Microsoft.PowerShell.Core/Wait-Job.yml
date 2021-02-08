@@ -1,0 +1,390 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Waits until one or all of the PowerShell jobs running in the session are in a terminating state.
+module: Microsoft.PowerShell.Core
+notes: |-
+  By default, `Wait-Job` returns, or ends the wait, when jobs are in one of the following states:
+
+  - Completed
+  - Failed
+  - Stopped
+  - Suspended
+  - Disconnected To direct `Wait-Job` to continue to wait for Suspended and Disconnected jobs, use the
+    **Force** parameter.
+inputs:
+- name: <xref href="System.Management.Automation.RemotingJob" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a job object to this cmdlet.
+outputs:
+- name: <xref href="System.Management.Automation.PSRemotingJob" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns job objects that represent the jobs in a terminating state. If the wait ends
+    because the value of the **Timeout** parameter is exceeded, `Wait-Job` does not return any objects.
+links:
+- text: Get-Job
+  href: Get-Job.yml
+- text: Invoke-Command
+  href: Invoke-Command.yml
+- text: Receive-Job
+  href: Receive-Job.yml
+- text: Remove-Job
+  href: Remove-Job.yml
+- text: Start-Job
+  href: Start-Job.yml
+- text: Stop-Job
+  href: Stop-Job.yml
+syntaxes:
+- Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Id] <Int32[]> [<CommonParameters>]
+- Wait-Job [-Job] <Job[]> [-Any] [-Timeout <Int32>] [-Force] [<CommonParameters>]
+- Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Name] <String[]> [<CommonParameters>]
+- Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-InstanceId] <Guid[]> [<CommonParameters>]
+- Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-State] <JobState> [<CommonParameters>]
+- Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Filter] <Hashtable> [<CommonParameters>]
+examples:
+- title: 'Example 1: Wait for all jobs'
+  code: |-
+    Get-Job | Wait-Job
+  description: |-
+    This command waits for all of the jobs running in the session to finish.
+  summary: ""
+- title: 'Example 2: Wait for jobs started on remote computers by using Start-Job'
+  code: |-
+    $s = New-PSSession Server01, Server02, Server03
+    Invoke-Command -Session $s -ScriptBlock {Start-Job -Name Date1 -ScriptBlock {Get-Date}}
+    $done = Invoke-Command -Session $s -Command {Wait-Job -Name Date1}
+    $done.Count
+
+    3
+  description: |-
+    This example shows how to use the `Wait-Job` cmdlet with jobs started on remote computers by using
+    the `Start-Job` cmdlet. Both `Start-Job` and `Wait-Job` commands are submitted to the remote
+    computer by using the `Invoke-Command` cmdlet.
+
+    This example uses `Wait-Job` to determine whether a `Get-Date` command running as a job
+    on three different computers is finished.
+
+    The first command creates a Windows PowerShell session (**PSSession**) on each of the three remote
+    computers and stores them in the `$s` variable.
+
+    The second command uses `Invoke-Command` to run `Start-Job` in each of the three sessions in `$s`.
+    All of the jobs are named Date1.
+
+    The third command uses `Invoke-Command` to run `Wait-Job`. This command waits for the `Date1` jobs
+    on each computer to finish. It stores the resulting collection (**array**) of **job** objects in the
+    `$done` variable.
+
+    The fourth command uses the **Count** property of the array of job objects in the `$done` variable
+    to determine how many of the jobs are finished.
+  summary: ""
+- title: 'Example 3: Determine when the first job finishes'
+  code: |-
+    $s = New-PSSession (Get-Content Machines.txt)
+    $c = 'Get-EventLog -LogName System | where {$_.EntryType -eq "error" --and $_.Source -eq "LSASRV"} | Out-File Errors.txt'
+    Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {$Using:c}
+    Invoke-Command -Session $s -ScriptBlock {Wait-Job -Any}
+  description: |-
+    This example uses the **Any** parameter of `Wait-Job` to determine when the first of many jobs
+    running in the current session are in a terminating state. It also shows how to use the `Wait-Job`
+    cmdlet to wait for remote jobs to finish.
+
+    The first command creates a **PSSession** on each of the computers listed in the Machines.txt file
+    and stores the **PSSession** objects in the `$s` variable. The command uses the `Get-Content` cmdlet
+    to get the contents of the file. The `Get-Content` command is enclosed in parentheses to make sure
+    that it runs before the `New-PSSession` command.
+
+    The second command stores a `Get-EventLog` command string, in quotation marks, in the `$c` variable.
+
+    The third command uses `Invoke-Command` cmdlet to run `Start-Job` in each of the sessions in `$s`.
+    The `Start-Job` command starts a job that runs the `Get-EventLog` command in the `$c`
+    variable.
+
+    The command uses the **Using** scope modifier to indicate that the `$c` variable was defined on the
+    local computer. The **Using** scope modifier is introduced in Windows PowerShell 3.0. For more
+    information about the **Using** scope modifier, see
+    [about_Remote_Variables](./about/about_Remote_Variables.md).
+
+    The fourth command uses `Invoke-Command` to run a `Wait-Job` command in the sessions. It uses the
+    **Any** parameter to wait until the first job on the remote computers is terminating state.
+  summary: ""
+- title: 'Example 4: Set a wait time for jobs on remote computers'
+  code: |-
+    PS> $s = New-PSSession Server01, Server02, Server03
+    PS> $jobs = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Date}}
+    PS> $done = Invoke-Command -Session $s -ScriptBlock {Wait-Job -Timeout 30}
+    PS>
+  description: |-
+    This example shows how to use the **Timeout** parameter of `Wait-Job` to set a maximum wait time for
+    the jobs running on remote computers.
+
+    The first command creates a **PSSession** on each of three remote computers (Server01, Server02, and
+    Server03), and then stores the **PSSession** objects in the `$s` variable.
+
+    The second command uses `Invoke-Command` to run `Start-Job` in each of the **PSSession** objects in
+    `$s`. It stores the resulting job objects in the `$jobs` variable.
+
+    The third command uses `Invoke-Command` to run `Wait-Job` in each of the sessions in `$s`. The
+    `Wait-Job` command determines whether all of the commands have completed within 30 seconds. It uses
+    the **Timeout** parameter with a value of 30 to establish the maximum wait time, and then stores the
+    results of the command in the `$done` variable.
+
+    In this case, after 30 seconds, only the command on the Server02 computer has completed. `Wait-Job`
+    ends the wait, returns the object that represents the job that was
+    completed, and displays the command prompt.
+
+    The `$done` variable contains a job object that represents the job that ran on Server02.
+  summary: ""
+- title: 'Example 5: Wait until one of several jobs finishes'
+  code: |-
+    Wait-Job -id 1,2,5 -Any
+  description: |-
+    This command identifies three jobs by their IDs and waits until any one of them are in a terminating
+    state. Execution continues when the first job finishes.
+  summary: ""
+- title: 'Example 6: Wait for a period, then allow job to continue in background'
+  code: |-
+    Wait-Job -Name "DailyLog" -Timeout 120
+  description: |-
+    This command waits 120 seconds (two minutes) for the DailyLog job to finish. If the job does not
+    finish in the next two minutes, execution continues, and the job continues to run in
+    the background.
+  summary: ""
+- title: 'Example 7: Wait for a job by name'
+  code: |-
+    Wait-Job -Name "Job3"
+  description: |-
+    This command uses the job name to identify the job for which to wait.
+  summary: ""
+- title: 'Example 8: Wait for jobs on local computer started with Start-Job'
+  code: |-
+    $j = Start-Job -ScriptBlock {Get-ChildItem *.ps1| where {$_.lastwritetime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
+    $j | Wait-Job
+  description: |-
+    This example shows how to use the `Wait-Job` cmdlet with jobs started on the local computer by using
+    `Start-Job`.
+
+    These commands start a job that gets the Windows PowerShell script files that were added or updated
+    in the last week.
+
+    The first command uses `Start-Job` to start a job on the local computer. The job runs a
+    `Get-ChildItem` command that gets all of the files that have a .ps1 file name extension that were
+    added or updated in the last week.
+
+    The third command uses `Wait-Job` to wait until the job is in a terminating state. When the job
+    finishes, the command displays the job object, which contains information about the job.
+  summary: ""
+- title: 'Example 9: Wait for jobs started on remote computers by using Invoke-Command'
+  code: |-
+    $s = New-PSSession Server01, Server02, Server03
+    $j = Invoke-Command -Session $s -ScriptBlock {Get-Process} -AsJob
+    $j | Wait-Job
+  description: |-
+    This example shows how to use `Wait-Job` with jobs started on remote computers by using the
+    **AsJob** parameter of `Invoke-Command`. When using **AsJob**, the job is created on the local
+    computer and the results are automatically returned to the local computer, even though the job runs
+    on the remote computers.
+
+    This example uses `Wait-Job` to determine whether a `Get-Process` command running in the sessions on
+    three remote computers is in a terminating state.
+
+    The first command creates **PSSession** objects on three computers and stores them in the `$s`
+    variable.
+
+    The second command uses `Invoke-Command` to run `Get-Process` in each of the three sessions in `$s`.
+    The command uses the **AsJob** parameter to run the command asynchronously as a job. The command
+    returns a job object, just like the jobs started by using `Start-Job`, and the job object is stored
+    in the `$j` variable.
+
+    The third command uses a pipeline operator (`|`) to send the job object in `$j` to the `Wait-Job`
+    cmdlet. An `Invoke-Command` command is not required in this case, because the job resides on the
+    local computer.
+  summary: ""
+- title: 'Example 10: Wait for a job that has an ID'
+  code: |-
+    Get-Job
+
+    Id   Name     State      HasMoreData     Location             Command
+    --   ----     -----      -----------     --------             -------
+    1    Job1     Completed  True            localhost,Server01.. get-service
+    4    Job4     Completed  True            localhost            dir | where
+
+    Wait-Job -Id 1
+  description: |-
+    This command waits for the job with an ID value of 1.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Any
+  description: |+
+    Indicates that this cmdlet returns the job object and continues execution when any job finishes. By
+    default, `Wait-Job` waits until all of the specified jobs are complete before it displays the
+    prompt.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Collections.Hashtable" data-throw-if-not-resolved="False" />
+  name: Filter
+  isRequired: true
+  description: |+
+    Specifies a hash table of conditions. This cmdlet waits for jobs that satisfy all of the conditions
+    in the hash table. Enter a hash table where the keys are job properties and the values are job
+    property values.
+
+    This parameter works only on custom job types, such as workflow jobs and scheduled jobs. It does not
+    work on standard jobs, such as those created by using the `Start-Job` cmdlet. For information about
+    support for this parameter, see the help topic for the job type.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Indicates that this cmdlet continues to wait for jobs in the Suspended or Disconnected state. By
+    default, `Wait-Job` returns, or ends the wait, when jobs are in one of the following states:
+
+    - Completed
+    - Failed
+    - Stopped
+    - Suspended
+    - Disconnected
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Id
+  isRequired: true
+  description: |+
+    Specifies an array of IDs of jobs for which this cmdlet waits.
+
+    The ID is an integer that uniquely identifies the job in the current session. It is easier to
+    remember and type than the instance ID, but it is unique only in the current session. You can type
+    one or more IDs, separated by commas. To find the ID of a job, type `Get-Job`.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Guid" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InstanceId
+  isRequired: true
+  description: |+
+    Specifies an array of instance IDs of jobs for which this cmdlet waits. The default is all jobs.
+
+    An instance ID is a GUID that uniquely identifies the job on the computer. To find the instance ID
+    of a job, use `Get-Job`.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.Job" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Job
+  isRequired: true
+  description: |+
+    Specifies the jobs for which this cmdlet waits. Enter a variable that contains the job objects or a
+    command that gets the job objects. You can also use a pipeline operator to send job objects to the
+    `Wait-Job` cmdlet. By default, `Wait-Job` waits for all jobs created in the current session.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies friendly names of jobs for which this cmdlet waits.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.JobState" data-throw-if-not-resolved="False" />
+  name: State
+  isRequired: true
+  description: |+
+    Specifies a job state. This cmdlet waits only for jobs in the specified state. The acceptable values
+    for this parameter are:
+
+    - NotStarted
+    - Running
+    - Completed
+    - Failed
+    - Stopped
+    - Blocked
+    - Suspended
+    - Disconnected
+    - Suspending
+    - Stopping
+
+    For more information about job states, see
+    [JobState Enumeration](/dotnet/api/system.management.automation.jobstate).
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: Timeout
+  description: |+
+    Specifies the maximum wait time for each job, in seconds. The default value, -1, indicates that the
+    cmdlet waits until the job finishes. The timing starts when you submit the `Wait-Job` command, not
+    the `Start-Job` command.
+
+    If this time is exceeded, the wait ends and execution continues, even if the job is still running.
+    The command does not display any error message.
+
+  defaultValue: None
+  position: Named
+  aliases: TimeoutSec
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Core.Wait-Job
+name: Wait-Job
+description: |-
+  The `Wait-Job` cmdlet waits for a job to be in a terminating state before continuing execution.
+  The terminating states are:
+
+  - Completed
+  - Failed
+  - Stopped
+  - Suspended
+  - Disconnected
+
+  You can wait until a specified job, or all jobs are in a terminating state. You can also set a
+  maximum wait time for the job using the **Timeout** parameter, or use the **Force** parameter to
+  wait for a job in the `Suspended` or `Disconnected` states.
+
+  When the commands in the job are complete, `Wait-Job` returns a job object and continues execution.
+
+  You can use the `Wait-Job` cmdlet to wait for jobs started by using the `Start-Job` cmdlet or the
+  **AsJob** parameter of the `Invoke-Command` cmdlet. For more information about jobs, see [about_Jobs](./about/about_Jobs.md).
+
+  Starting in Windows PowerShell 3.0, the `Wait-Job` cmdlet also waits for custom job types, such as
+  workflow jobs and instances of scheduled jobs. To enable `Wait-Job` to wait for jobs of a particular
+  type, import the module that supports the custom job type into the session before you run the
+  `Get-Job` cmdlet, either by using the `Import-Module` cmdlet or by using or getting a cmdlet in the
+  module. For information about a particular custom job type, see the documentation of the custom job
+  type feature.
+metadata:
+  external help file: System.Management.Automation.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 01/28/2021
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/wait-job?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Wait-Job

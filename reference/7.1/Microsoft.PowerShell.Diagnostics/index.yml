@@ -1,0 +1,22 @@
+### YamlMime:PowershellModule
+children:
+- title: Microsoft.PowerShell.Diagnostics
+  cmdlets:
+  - Microsoft.PowerShell.Diagnostics.Get-Counter
+  - Microsoft.PowerShell.Diagnostics.Get-WinEvent
+  - Microsoft.PowerShell.Diagnostics.New-WinEvent
+uid: Microsoft.PowerShell.Diagnostics
+name: Microsoft.PowerShell.Diagnostics
+description: |-
+  This section contains the help topics for the cmdlets that are installed with the PowerShell
+  Microsoft.PowerShell.Diagnostics module, which contains cmdlets that manage data from event logs.
+metadata:
+  Download Help Link: https://aka.ms/powershell71-help
+  Help Version: 7.1.0.0
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Guid: ca046f10-ca64-4740-8ff9-2565dba61a4f
+  Module Name: Microsoft.PowerShell.Diagnostics
+  ms.date: 06/09/2017
+  schema: 2.0.0
+  title: Microsoft.PowerShell.Diagnostics

@@ -1,0 +1,92 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Enable an experimental feature on startup of new instance of PowerShell.
+module: Microsoft.PowerShell.Core
+notes: |-
+  Changes to state of an experimental feature only take effect on restart of PowerShell.
+inputs:
+- name: <xref href="ExperimentalFeature" data-throw-if-not-resolved="False" />
+  description: |-
+    Pipe instances of ExperimentalFeature from `Get-ExperimentalFeature` cmdlet to enable.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not return any output.
+links:
+- text: Disable-ExperimentalFeature
+  href: Disable-ExperimentalFeature.yml
+- text: Get-ExperimentalFeature
+  href: Get-ExperimentalFeature.yml
+syntaxes:
+- Enable-ExperimentalFeature [-Name] <String[]> [-Scope <ConfigScope>] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Enable an experimental feature'
+  code: |-
+    Enable-ExperimentalFeature PSImplicitRemotingBatching
+
+    WARNING: Enabling and disabling experimental features do not take effect until next start of PowerShell.
+  description: ""
+  summary: |+
+    In this example, if this experimental feature was previously disabled, then the `powershell.config.json`
+    file is updated for the user to enable that feature once PowerShell is restarted.
+    Upon success nothing is output to the pipeline and only a warning message is displayed.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: None
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    The name or names of the experimental features to enable.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.Configuration.ConfigScope" data-throw-if-not-resolved="False" />
+  name: Scope
+  description: |+
+    Determines which `powershell.config.json` to update whether it affects all users or
+    just the current user.
+
+  defaultValue: CurrentUser
+  position: Named
+  aliases: ""
+  parameterValueGroup: AllUsers, CurrentUser
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: None
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Core.Enable-ExperimentalFeature
+name: Enable-ExperimentalFeature
+description: |-
+  The `Enable-ExperimentalFeature` cmdlet enables experimental features by adding the named
+  experimental features to the `powershell.config.json` settings file read on PowerShell startup.
+
+  This cmdlet was introduced in PowerShell 6.2.
+
+  > [!NOTE]
+  > Any changes to experimental feature state only takes effect on restart of PowerShell
+metadata:
+  external help file: System.Management.Automation.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 03/06/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-experimentalfeature?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Enable-ExperimentalFeature

@@ -1,0 +1,108 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Removes a Windows service.
+module: Microsoft.PowerShell.Management
+notes: |-
+  This cmdlet is only available on Windows platforms.
+
+  To run this cmdlet, start PowerShell by using the **Run as administrator** option.
+inputs:
+- name: <xref href="System.ServiceProcess.ServiceController, System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a service object or a string that contains the name of a service to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not return any output.
+links:
+- text: Get-Service
+  href: Get-Service.yml
+- text: Restart-Service
+  href: Restart-Service.yml
+- text: Resume-Service
+  href: Resume-Service.yml
+- text: Set-Service
+  href: Set-Service.yml
+- text: Start-Service
+  href: Start-Service.yml
+- text: Stop-Service
+  href: Stop-Service.yml
+- text: Suspend-Service
+  href: Suspend-Service.yml
+syntaxes:
+- Remove-Service [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+- Remove-Service [-InputObject <ServiceController>] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Remove a service'
+  code: |-
+    Remove-Service -Name "TestService"
+  description: ""
+  summary: |+
+    This removes a service named TestService.
+
+- title: 'Example 2: Remove a service using the display name'
+  code: |-
+    Get-Service -DisplayName "Test Service" | Remove-Service
+  description: ""
+  summary: |+
+    This example removes a service named TestService. The command uses `Get-Service` to get an object
+    that represents the TestService service using the display name. The pipeline operator (`|`) pipes
+    the object to `Remove-Service`, which removes the service.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.ServiceProcess.ServiceController" data-throw-if-not-resolved="False" />
+  name: InputObject
+  description: |+
+    Specifies **ServiceController** objects that represent the services to remove. Enter a variable that
+    contains the objects, or type a command or expression that gets the objects.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the service names of the services to remove. Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ServiceName, SN
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Remove-Service
+name: Remove-Service
+description: |-
+  The `Remove-Service` cmdlet removes a Windows service in the registry and in the service database.
+
+  The `Remove-Service` cmdlet was introduced in PowerShell 6.0.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-service?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Remove-Service

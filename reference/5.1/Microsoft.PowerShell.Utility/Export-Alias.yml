@@ -1,0 +1,250 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Exports information about currently defined aliases to a file.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  * You can only Export-Aliases to a file.
+inputs:
+- name: <xref href="None." data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe objects to this cmdlet.
+outputs:
+- name: <xref href="None or System.Management.Automation.AliasInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    When you use the **Passthru** parameter, `Export-Alias` returns a **System.Management.Automation.AliasInfo** object that represents the alias.
+    Otherwise, this cmdlet does not generate any output.
+links:
+- text: Get-Alias
+  href: Get-Alias.yml
+- text: Import-Alias
+  href: Import-Alias.yml
+- text: New-Alias
+  href: New-Alias.yml
+- text: Set-Alias
+  href: Set-Alias.yml
+syntaxes:
+- >-
+  Export-Alias [-Path] <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>] [-Append] [-Force]
+
+   [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Export-Alias -LiteralPath <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>] [-Append]
+
+   [-Force] [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Export an alias'
+  code: |-
+    Export-Alias -Path "alias.csv"
+  description: |-
+    This command exports current alias information to a file named Alias.csv in the current directory.
+  summary: ""
+- title: 'Example 2: Export an alias unless the export file already exists'
+  code: |-
+    Export-Alias -Path "alias.csv" -NoClobber
+  description: |-
+    This command exports the aliases in the current session to an Alias.csv file.
+
+    Because the **NoClobber** parameter is specified, the command will fail if an Alias.csv file already exists in the current directory.
+  summary: ""
+- title: 'Example 3: Append aliases to a file'
+  code: |-
+    Export-Alias -Path "alias.csv" -Append -Description "Appended Aliases" -Force
+  description: |-
+    This command appends the aliases in the current session to the Alias.csv file.
+
+    The command uses the **Description** parameter to add a description to the comments at the top of the file.
+
+    The command also uses the **Force** parameter to overwrite any existing Alias.csv files, even if they have the read-only attribute.
+  summary: ""
+- title: 'Example 4: Export aliases as a script'
+  code: |-
+    Export-Alias -Path "alias.ps1" -As Script
+    Add-Content -Path $Profile -Value (Get-Content alias.ps1)
+    $S = New-PSSession -ComputerName Server01
+    Invoke-Command -Session $S -FilePath .\alias.ps1
+  description: |-
+    This example shows how to use the script file format that `Export-Alias` generates.
+
+    The first command exports the aliases in the session to the Alias.ps1 file.
+    It uses the **As** parameter with a value of Script to generate a file that contains a Set-Alias command for each alias.
+
+    The second command adds the aliases in the Alias.ps1 file to the CurrentUser-CurrentHost profile.
+    The path to the profile is saved in the `$Profile` variable.
+    The command uses the `Get-Content` cmdlet to get the aliases from the Alias.ps1 file and the `Add-Content` cmdlet to add them to the profile.
+    For more information, see about_Profiles.
+
+    The third and fourth commands add the aliases in the Alias.ps1 file to a remote session on the Server01 computer.
+    The third command uses the `New-PSSession` cmdlet to create the session.
+    The fourth command uses the **FilePath** parameter of the `Invoke-Command` cmdlet to run the Alias.ps1 file in the new session.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Append
+  description: |+
+    Indicates that this cmdlet appends the output to the specified file, rather than overwriting the existing contents of that file.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.Commands.ExportAliasFormat" data-throw-if-not-resolved="False" />
+  name: As
+  description: |+
+    Specifies the output format.
+    CSV is the default.
+    The acceptable values for this parameter are:
+
+    - CSV.
+    Comma-separated value (CSV) format.
+    - Script.
+    Creates a `Set-Alias` command for each exported alias.
+    If you name the output file with a .ps1 file name extension, you can run it as a script to add the aliases to any session.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Csv, Script
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Description
+  description: |+
+    Specifies the description of the exported file.
+    The description appears as a comment at the top of the file, following the header information.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the command to run without asking for user confirmation.
+
+    Overwrites the output file, even if the read-only attribute is set on the file.
+
+    By default, `Export-Alias` overwrites files without warning, unless the read-only or hidden attribute is set or the **NoClobber** parameter is used in the command.
+    The **NoClobber** parameter takes precedence over the **Force** parameter when both are used in a command.
+
+    The **Force** parameter cannot force `Export-Alias` to overwrite files with the hidden attribute.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies the path to the output file.
+    Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
+    No characters are interpreted as wildcards.
+    If the path includes escape characters, enclose it in single quotation marks.
+    Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Specifies the names as an array of the aliases to export.
+    Wildcards are permitted.
+
+    By default, `Export-Alias` exports all aliases in the session or scope.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NoClobber
+  description: |+
+    Indicates that this cmdlet prevents `Export-Alias` from overwriting any files, even if the **Force** parameter is used in the command.
+
+    If the **NoClobber** parameter is omitted, `Export-Alias` will overwrite an existing file without warning, unless the read-only attribute is set on the file.
+    *NoClobber* takes precedence over the **Force** parameter, which permits `Export-Alias` to overwrite a file with the read-only attribute.
+
+    *NoClobber* does not prevent the **Append** parameter from adding content to an existing file.
+
+  defaultValue: None
+  position: Named
+  aliases: NoOverwrite
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object representing the item with which you are working.
+    By default, this cmdlet does not generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path to the output file.
+    Wildcards are permitted, but the resulting path value must resolve to a single file name.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Scope
+  description: |+
+    Specifies the scope from which the aliases should be exported.
+    The acceptable values for this parameter are:
+
+    - Global
+    - Local
+    - Script
+    - A number relative to the current scope (0 through the number of scopes where 0 is the current scope and 1 is its parent)
+
+    The default value is Local.
+    For more information, see about_Scopes.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Export-Alias
+name: Export-Alias
+description: |-
+  The `Export-Alias` cmdlet exports the aliases in the current session to a file.
+  If the output file does not exist, the cmdlet will create it.
+
+  `Export-Alias` can export the aliases in a particular scope or all scopes, it can generate the data in CSV format or as a series of Set-Alias commands that you can add to a session or to a PowerShell profile.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-alias?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Export-Alias

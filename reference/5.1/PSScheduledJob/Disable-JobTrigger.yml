@@ -1,0 +1,159 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Disables the job triggers of scheduled jobs.
+module: PSScheduledJob
+notes: |-
+  * **Disable-JobTrigger** does not generate errors or warnings if you disable a job trigger that is already disabled.
+inputs:
+- name: <xref href="Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe job triggers to **Disable-JobTrigger**.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+links:
+- text: Add-JobTrigger
+  href: Add-JobTrigger.yml
+- text: Disable-JobTrigger
+  href: Disable-JobTrigger.yml
+- text: Disable-ScheduledJob
+  href: Disable-ScheduledJob.yml
+- text: Enable-JobTrigger
+  href: Enable-JobTrigger.yml
+- text: Enable-ScheduledJob
+  href: Enable-ScheduledJob.yml
+- text: Get-JobTrigger
+  href: Get-JobTrigger.yml
+- text: Get-ScheduledJob
+  href: Get-ScheduledJob.yml
+- text: Get-ScheduledJobOption
+  href: Get-ScheduledJobOption.yml
+- text: New-JobTrigger
+  href: New-JobTrigger.yml
+- text: New-ScheduledJobOption
+  href: New-ScheduledJobOption.yml
+- text: Register-ScheduledJob
+  href: Register-ScheduledJob.yml
+- text: Remove-JobTrigger
+  href: Remove-JobTrigger.yml
+- text: Set-JobTrigger
+  href: Set-JobTrigger.yml
+- text: Set-ScheduledJob
+  href: Set-ScheduledJob.yml
+- text: Set-ScheduledJobOption
+  href: Set-ScheduledJobOption.yml
+- text: Unregister-ScheduledJob
+  href: Unregister-ScheduledJob.yml
+syntaxes:
+- Disable-JobTrigger [-InputObject] <ScheduledJobTrigger[]> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Disable a job trigger'
+  code: |-
+    PS C:\> Get-JobTrigger -Name "Backup-Archives" -TriggerID 1 | Disable-JobTrigger
+  description: |-
+    This command disables the first trigger (ID=1) of the Backup-Archives scheduled job on the local computer.
+
+    The command uses the Get-JobTrigger cmdlet to get the job trigger.
+    A pipeline operator sends the job trigger to the **Disable-JobTrigger** cmdlet, which disables it.
+  summary: ""
+- title: 'Example 2: Disable all job triggers'
+  code: |-
+    The first command uses the Get-ScheduledJob cmdlet to get the Backup-Archives and Inventory scheduled jobs. A pipeline operator (|) sends the scheduled jobs to the Get-JobTrigger cmdlet, which gets all job triggers of the scheduled jobs. Another pipeline operator sends the job triggers to the **Disable-JobTrigger** cmdlet, which disables them.The first command uses the **Get-ScheduledJob** cmdlet to get the jobs, because its *Name* parameter takes multiple names.
+    PS C:\> Get-ScheduledJob -Name "Backup-Archives,Inventory" | Get-JobTrigger | Disable-JobTrigger
+
+    The second command displays the results. The command repeats the **Get-ScheduledJob** and **Get-JobTrigger** command. A pipeline operator sends the job triggers to the Format-Table cmdlet, which displays the job triggers in a table. The **Format-Table** command adds a JobName property that displays the value of the Name property of the scheduled job in the JobDefinition property of the job trigger object.
+    PS C:\> Get-ScheduledJob -Name "Backup-Archives,Inventory" | Get-JobTrigger | Format-Table -Property ID, Frequency, At, DaysOfWeek, Enabled, @{Label="JobName";Expression={$_.JobDefinition.Name}} -AutoSize
+    Id Frequency At                     DaysOfWeek Enabled JobName
+    -- --------- --                     ---------- ------- -------
+    1  Weekly    9/28/2011 3:00:00 AM   {Monday}   False   Backup-Archive
+    2  Daily     9/29/2011 1:00:00 AM              False   Backup-Archive
+    1  Weekly    10/20/2011 11:00:00 PM {Friday}   False   Inventory
+    1  Weekly    11/2/2011 2:00:00 PM   {Monday}   False   Inventory
+  description: |-
+    These commands disable all job triggers on two scheduled jobs and display the results.
+  summary: ""
+- title: 'Example 3: Disable job trigger of a scheduled job on a remote computer'
+  code: |-
+    PS C:\> Invoke-Command -ComputerName Server01 {Get-JobTrigger -Name DeployPackage | Where-Object {$_.Frequency -eq "Daily"} | Disable-JobTrigger}
+  description: |-
+    This command disables the daily job triggers on the DeployPackage scheduled job on the Server01 remote computer.
+
+    The command uses the Invoke-Command cmdlet to run the commands on the Server01 computer.
+    The remote command uses the Get-JobTrigger cmdlet to get the job triggers of the DeployPackage scheduled job.
+    A pipeline operator sends the job triggers to the Where-Object cmdlet, which returns only daily job triggers.
+    A pipeline operator sends the daily job triggers to the **Disable-JobTrigger** cmdlet, which disables them.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InputObject
+  isRequired: true
+  description: |+
+    Specifies the job trigger to be disabled.
+    Enter a variable that contains  **ScheduledJobTrigger** objects or type a command or expression that gets **ScheduledJobTrigger** objects, such as a Get-JobTrigger command.
+    You can also pipe a **ScheduledJobTrigger** object to **Disable-JobTrigger**.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object representing the item with which you are working.
+    By default, this cmdlet does not generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: PSScheduledJob.Disable-JobTrigger
+name: Disable-JobTrigger
+description: |-
+  The **Disable-JobTrigger** cmdlet temporarily disables the job triggers of scheduled jobs.
+  Disabling preserves all job trigger properties, but it prevents the job trigger from starting the scheduled job.
+
+  To use this cmdlet, use the Get-JobTrigger cmdlet to get the job triggers.
+  Then pipe the job triggers to **Disable-JobTrigger** or use its *InputObject* parameter.
+
+  To disable a job trigger, the **Disable-JobTrigger** cmdlet sets the Enabled property of the job trigger to $False.
+  To re-enable the job trigger, use the Enable-JobTrigger cmdlet, which sets the **Enabled** property of the job trigger to $True.
+  Disabling a job trigger does not disable the scheduled job, such as is done by the Disable-ScheduledJob cmdlet, but if you disable all job triggers, the effect is the same as disabling the scheduled job.
+
+  If you disable a scheduled job or disable all job triggers of a scheduled job, you can still start the job by using the Start-Job cmdlet or use the disabled scheduled job as a template.
+
+  **Disable-ScheduledJob** is one of a collection of job scheduling cmdlets in the **PSScheduledJob** module that is included in Windows PowerShell.
+
+  For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module.
+  Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see about_Scheduled_Jobs.
+
+  This cmdlet was introduced in Windows PowerShell 3.0.
+metadata:
+  external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSScheduledJob
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/psscheduledjob/disable-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Disable-JobTrigger

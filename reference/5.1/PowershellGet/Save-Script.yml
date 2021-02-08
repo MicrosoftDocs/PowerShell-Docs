@@ -1,0 +1,257 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Saves a script.
+module: PowerShellGet
+notes: |-
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+links:
+- text: Find-Script
+  href: Find-Script.yml
+- text: Install-Script
+  href: Install-Script.yml
+- text: Publish-Script
+  href: Publish-Script.yml
+- text: Test-ScriptFileInfo
+  href: Test-ScriptFileInfo.yml
+- text: Uninstall-Script
+  href: Uninstall-Script.yml
+- text: Update-Script
+  href: Update-Script.yml
+syntaxes:
+- >-
+  Save-Script [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
+
+   [-RequiredVersion <String>] [-Repository <String[]>] [-Path] <String> [-Proxy <Uri>]
+
+   [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AllowPrerelease]
+
+   [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Save-Script [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
+
+   [-RequiredVersion <String>] [-Repository <String[]>] -LiteralPath <String> [-Proxy <Uri>]
+
+   [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AllowPrerelease]
+
+   [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Save-Script [-InputObject] <PSObject[]> -LiteralPath <String> [-Proxy <Uri>]
+
+   [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AcceptLicense] [-WhatIf]
+
+   [-Confirm] [<CommonParameters>]
+- >-
+  Save-Script [-InputObject] <PSObject[]> [-Path] <String> [-Proxy <Uri>]
+
+   [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AcceptLicense] [-WhatIf]
+
+   [-Confirm] [<CommonParameters>]
+examples:
+- title: "Example 1: Save a script and validate the script's metadata"
+  code: |-
+    Save-Script -Name Install-VSCode -Repository PSGallery -Path C:\Test\Scripts
+    Test-ScriptFileInfo -Path C:\Test\Scripts\Install-VSCode.ps1
+
+    Version   Name              Author      Description
+    -------   ----              ------      -----------
+    1.3       Install-VSCode    Microsoft   This script can be used to easily install Visual Studio Code
+  description: |-
+    `Save-Script` uses the **Name** parameter to specify the script's name. The **Repository** parameter
+    specifies where to find the script. The script is saved in the location specified by the **Path**
+    parameter. `Test-ScriptFileInfo` specifies the **Path** and validates the script's metadata.
+  summary: |+
+    In this example, a script from a repository is saved to the local computer and the script's metadata
+    is validated.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AcceptLicense
+  description: |+
+    Automatically accept the license agreement if the script requires it.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowPrerelease
+  description: |+
+    Allows you to save a script marked as a prerelease.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running `Save-Script`.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user account that has permission to save a script.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces `Save-Script` to run without asking for user confirmation.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InputObject
+  isRequired: true
+  description: |+
+    Accepts a **PSRepositoryItemInfo** object. For example, output `Find-Script` to a variable and use
+    that variable as the **InputObject** argument.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies a path to one or more locations. The value of the **LiteralPath** parameter is used
+    exactly as entered. No characters are interpreted as wildcards. If the path includes escape
+    characters, enclose the path within single quotation marks. PowerShell doesn't interpret any
+    characters enclosed in single quotation marks as escape sequences.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MaximumVersion
+  description: |+
+    Specifies the maximum, or newest version of the script to save. The **MaximumVersion** and
+    **RequiredVersion** parameters can't be used in the same command.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MinimumVersion
+  description: |+
+    Specifies the minimum version of a script to save. The **MinimumVersion** and **RequiredVersion**
+    parameters can't be used in the same command.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies an array of script names to save.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the location on the local computer to store a saved module. Accepts wildcard characters.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: Proxy
+  description: |+
+    Specifies a proxy server for the request, rather than connecting directly to an internet resource.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: ProxyCredential
+  description: |+
+    Specifies a user account that has permission to use the proxy server specified by the **Proxy**
+    parameter.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Repository
+  description: |+
+    Specifies the friendly name of a repository that has been registered by running
+    `Register-PSRepository`. Use `Get-PSRepository` to display registered repositories.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RequiredVersion
+  description: |+
+    Specifies the exact version number of the script to save.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if `Save-Script` runs. The cmdlet isn't run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: PowerShellGet.Save-Script
+name: Save-Script
+description: |-
+  The `Save-Script` cmdlet saves the specified script.
+metadata:
+  external help file: PSModule-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 07/02/2019
+  online version: https://docs.microsoft.com/powershell/module/powershellget/save-script?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Save-Script

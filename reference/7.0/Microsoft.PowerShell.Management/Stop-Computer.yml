@@ -1,0 +1,204 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Stops (shuts down) local and remote computers.
+module: Microsoft.PowerShell.Management
+notes: |-
+  This cmdlet is only available on Windows platforms.
+
+  This cmdlet only works on Windows and uses the **Win32Shutdown** method of the
+  **Win32_OperatingSystem** WMI class. This method requires the **SeShutdownPrivilege** privilege be
+  enabled for the user account used to restart the machine.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe input to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Rename-Computer
+  href: Rename-Computer.yml
+- text: Restart-Computer
+  href: Restart-Computer.yml
+- text: Test-Connection
+  href: Test-Connection.yml
+syntaxes:
+- >-
+  Stop-Computer [-WsmanAuthentication <String>] [[-ComputerName] <String[]>]
+
+   [[-Credential] <PSCredential>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Shut down the local computer'
+  code: |-
+    Stop-Computer -ComputerName localhost
+  description: ""
+  summary: |+
+    This example shuts down the local computer.
+
+- title: 'Example 2: Shut down two remote computers and the local computer'
+  code: |-
+    Stop-Computer -ComputerName "Server01", "Server02", "localhost"
+  description: |-
+    `Stop-Computer` uses the **ComputerName** parameter to specify two remote computers and the local
+    computer. Each computer is shut down.
+  summary: |+
+    This example stops two remote computers and the local computer.
+
+- title: 'Example 3: Shut down remote computers as a background job'
+  code: |-
+    $j = Stop-Computer -ComputerName "Server01", "Server02" &
+    $results = $j | Receive-Job
+    $results
+  description: |-
+    `Stop-Computer` uses the **ComputerName** parameter to specify two remote computers. The `&`
+    background operator runs the command as a background job. The job objects are stored in the `$j`
+    variable.
+
+    The job objects in the `$j` variable are sent down the pipeline to `Receive-Job`, which gets the job
+    results. The objects are stored in the `$results` variable. The `$results` variable displays the job
+    information in the PowerShell console.
+  summary: |+
+    In this example, `Stop-Computer` runs as a background job on two remote computers.
+
+    The background operator `&` runs the `Stop-Computer` command as a background job. For more
+    information, see
+    [about_Operators](../microsoft.powershell.core/about/about_operators.md#background-operator-).
+
+- title: 'Example 4: Shut down a remote computer'
+  code: |-
+    Stop-Computer -ComputerName "Server01" -WsmanAuthentication Kerberos
+  description: |-
+    `Stop-Computer` uses the **ComputerName** parameter to specify the remote computer. The
+    **WsmanAuthentication** parameter specifies to use Kerberos to establish a remote connection.
+  summary: |+
+    This example shuts down a remote computer using specified authentication.
+
+- title: 'Example 5: Shut down computers in a domain'
+  code: |-
+    $s = Get-Content -Path ./Domain01.txt
+    $c = Get-Credential -Credential Domain01\Admin01
+    Stop-Computer -ComputerName $s -Force -Credential $c
+  description: |-
+    `Get-Content` uses the **Path** parameter to get a file in the current directory with the list of
+    domain computers. The objects are stored in the `$s` variable.
+
+    `Get-Credential` uses the **Credential** parameter to specify the credentials of a domain
+    administrator. The credentials are stored in the `$c` variable.
+
+    `Stop-Computer` shuts down the computers specified with the **ComputerName** parameter's list of
+    computers in the `$s` variable. The **Force** parameter forces an immediate shutdown. The
+    **Credential** parameter submits the credentials saved in the `$c` variable.
+  summary: |+
+    In this example, the commands force an immediate shut down of all computers in a specified domain.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ComputerName
+  description: |+
+    Specifies the computers to stop. The default is the local computer.
+
+    Type the NETBIOS name, IP address, or fully qualified domain name of one or more computers in a
+    comma-separated list. To specify the local computer, type the computer name or localhost.
+
+    This parameter doesn't rely on PowerShell remoting. You can use the **ComputerName** parameter even
+    if your computer isn't configured to run remote commands.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: CN, __SERVER, Server, IPAddress
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user account that has permission to do this action. The default is the current user.
+
+    Type a user name, such as **User01** or **Domain01\User01**, or enter a **PSCredential** object
+    generated by the `Get-Credential` cmdlet. If you type a user name, you're prompted to enter the
+    password.
+
+    Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential)
+    object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).
+
+    > [!NOTE]
+    > For more information about **SecureString** data protection, see
+    > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+
+  defaultValue: Current user
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces an immediate shut down of the computer.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet isn't run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: WsmanAuthentication
+  description: |+
+    Specifies the mechanism that is used to authenticate the user credentials when this cmdlet uses the
+    WSMan protocol. The default value is **Default**.
+
+    The acceptable values for this parameter are:
+
+    - Basic
+    - CredSSP
+    - Default
+    - Digest
+    - Kerberos
+    - Negotiate.
+
+    For more information about the values of this parameter, see
+    [AuthenticationMechanism](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
+
+    > [!CAUTION]
+    > Credential Security Service Provider (CredSSP) authentication, in which the user credentials are
+    > passed to a remote computer to be authenticated, is designed for commands that require
+    > authentication on more than one resource, such as accessing a remote network share. This mechanism
+    > increases the security risk of the remote operation. If the remote computer is compromised, the
+    > credentials that are passed to it can be used to control the network session.
+
+    This parameter was introduced in PowerShell 3.0.
+
+  defaultValue: Default
+  position: Named
+  aliases: ""
+  parameterValueGroup: Default, Basic, Negotiate, CredSSP, Digest, Kerberos
+uid: Microsoft.PowerShell.Management.Stop-Computer
+name: Stop-Computer
+description: |-
+  The `Stop-Computer` cmdlet shuts down the local computer and remote computers.
+
+  You can use the parameters of `Stop-Computer` to specify the authentication levels and alternate
+  credentials, and to force an immediate shut down.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 12/11/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-computer?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Stop-Computer

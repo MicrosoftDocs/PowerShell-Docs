@@ -1,0 +1,250 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Finds PowerShell commands in modules.
+module: PowerShellGet
+notes: |-
+  > [!IMPORTANT]
+  > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
+  > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+  > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
+  > 1.2:
+  >
+  > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+  >
+  > For more information, see the
+  > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
+  > PowerShell blog.
+outputs:
+- name: <xref href="PSGetCommandInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    `Find-Command` outputs a **PSGetCommandInfo** object.
+links:
+- text: Get-InstalledModule
+  href: Get-InstalledModule.yml
+- text: Install-Module
+  href: Install-Module.yml
+- text: Save-Module
+  href: Save-Module.yml
+- text: Select-Object
+  href: ../Microsoft.PowerShell.Utility/Select-Object.yml
+- text: Uninstall-Module
+  href: Uninstall-Module.yml
+syntaxes:
+- >-
+  Find-Command [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <String>]
+
+   [-MaximumVersion <String>] [-RequiredVersion <String>] [-AllVersions] [-AllowPrerelease]
+
+   [-Tag <String[]>] [-Filter <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+
+   [-Repository <String[]>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Find all commands in a specified repository'
+  code: |-
+    Find-Command -Repository PSGallery | Select-Object -First 10
+
+    Name                                Version    ModuleName          Repository
+    ----                                -------    ----------          ----------
+    Disable-AzureRmDataCollection       5.8.3      AzureRM.profile     PSGallery
+    Disable-AzureRmContextAutosave      5.8.3      AzureRM.profile     PSGallery
+    Enable-AzureRmDataCollection        5.8.3      AzureRM.profile     PSGallery
+    Enable-AzureRmContextAutosave       5.8.3      AzureRM.profile     PSGallery
+    Remove-AzureRmEnvironment           5.8.3      AzureRM.profile     PSGallery
+    Get-AzureRmEnvironment              5.8.3      AzureRM.profile     PSGallery
+    Set-AzureRmEnvironment              5.8.3      AzureRM.profile     PSGallery
+    Add-AzureRmEnvironment              5.8.3      AzureRM.profile     PSGallery
+    Get-AzureRmSubscription             5.8.3      AzureRM.profile     PSGallery
+    Connect-AzureRmAccount              5.8.3      AzureRM.profile     PSGallery
+  description: |-
+    `Find-Command` uses the **Repository** parameter to specify a registered repository's name. The
+    objects are sent down the pipeline. `Select-Object` receives the objects and uses the **First**
+    parameter to display the first 10 results.
+  summary: |+
+    The `Find-Command` cmdlet searches a registered repository for modules.
+
+- title: 'Example 2: Find a command by name'
+  code: |-
+    Find-Command -Repository PSGallery -Name Get-TargetResource
+
+    Name                  Version    ModuleName                      Repository
+    ----                  -------    ----------                      ----------
+    Get-TargetResource    3.1.0.0    xPowerShellExecutionPolicy      PSGallery
+    Get-TargetResource    1.0.0      xInternetExplorerHomePage       PSGallery
+    Get-TargetResource    1.2.0.0    SystemLocaleDsc                 PSGallery
+  description: |-
+    `Find-Command` uses the **Repository** parameter to search the **PSGallery**. The **Name** parameter
+    specifies the command **Get-TargetResource**.
+  summary: |+
+    `Find-Command` can use the name of a command to locate the module in a repository. It's possible
+    that a command name exists in multiple **ModuleNames**.
+
+- title: 'Example 3: Find commands by name and install the module'
+  code: |-
+    PS> Find-Command -Name Get-TargetResource -Repository PSGallery -ModuleName SystemLocaleDsc |
+        Install-Module
+
+    PS> Get-InstalledModule
+
+    Version   Name               Repository   Description
+    -------   ----               ----------   -----------
+    1.2.0.0   SystemLocaleDsc    PSGallery    This DSC Resource allows configuration of the Windows...
+  description: |-
+    `Find-Command` uses the **Name** parameter to specify the command **Get-TargetResource**. The
+    **Repository** parameter searches the **PSGallery**. The **ModuleName** parameter specifies the
+    module you want to install, **SystemLocaleDsc**. The object is sent down the pipeline to
+    `Install-Module` and the module is installed. After the installation finishes, you can use
+    `Get-InstalledModule` to display the results.
+  summary: |+
+    `Find-Command` can locate the command and module, then send the object to `Install-Module`. If a
+    command is included in multiple modules, use the `Find-Command` cmdlets **Module-Name** parameter.
+    Otherwise, modules might be installed that you didn't want to install.
+
+- title: 'Example 4: Find a command and save its module'
+  code: |-
+    PS> Find-Command -Name Invoke-ScriptAnalyzer -Repository PSGallery | Save-Module -Path C:\Test\Modules -Verbose
+
+    VERBOSE: Downloading 'https://www.powershellgallery.com/api/v2/package/PSScriptAnalyzer/1.18.0'.
+    VERBOSE: Completed downloading 'https://www.powershellgallery.com/api/v2/package/PSScriptAnalyzer/1.18.0'.
+    VERBOSE: Completed downloading 'PSScriptAnalyzer'.
+    VERBOSE: Module 'PSScriptAnalyzer' was saved successfully to path 'C:\Test\Modules\PSScriptAnalyzer\1.18.0'.
+  description: |-
+    `Find-Command` uses the **Name** and **Repository** parameters to search for the command
+    **Invoke-ScriptAnalyzer** in the **PSGallery** repository. The object is sent down the pipeline to
+    `Save-Module`. The **Path** parameter determines the location to save the module. **Verbose** is an
+    optional parameter, but displays status output in the PowerShell console. The verbose output is
+    beneficial for troubleshooting.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowPrerelease
+  description: |+
+    Includes modules marked as a prerelease in the results.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllVersions
+  description: |+
+    Indicates that this cmdlet gets all versions of a module.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Filter
+  description: |+
+    Finds modules based on the **PackageManagement** provider's search syntax. For example, specify
+    words to search for within the **ModuleName** and **Description** properties.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MaximumVersion
+  description: |+
+    Specifies the maximum version of the module to include in results. The **MaximumVersion** and the
+    **RequiredVersion** parameters can't be used in the same command.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MinimumVersion
+  description: |+
+    Specifies the minimum version of the module to include in results. The **MinimumVersion** and the
+    **RequiredVersion** parameters can't be used in the same command.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: ModuleName
+  description: |+
+    Specifies the name of a module to search for commands. The default is all modules.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Specifies the command name to search for in a repository. Use commas to separate an array of command
+    names.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+  name: Proxy
+  description: |+
+    Specifies a proxy server for the request, rather than a direct connection to the internet resource.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: ProxyCredential
+  description: |+
+    Specifies a user account that has permission to use the proxy server that is specified by the
+    **Proxy** parameter.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Repository
+  description: |+
+    Specifies the repository to search for commands. Use commas to separate an array of repository
+    names. The default is all repositories.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RequiredVersion
+  description: |+
+    Specifies the version of the module to include in the results.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Tag
+  description: |+
+    Specifies tags that categorize modules in a repository. Use commas to separate an array of tags.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: PowerShellGet.Find-Command
+name: Find-Command
+description: |-
+  The `Find-Command` cmdlet finds PowerShell commands such as cmdlets, aliases, functions, and
+  workflows. `Find-Command` searches modules in registered repositories.
+
+  For each command found by `Find-Command`, a **PSGetCommandInfo** object is returned. The
+  **PSGetCommandInfo** object can be sent down the pipeline to the `Install-Module` cmdlet.
+  `Install-Module` installs the module that contains the command.
+metadata:
+  external help file: PSModule-help.xml
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 06/03/2019
+  online version: https://docs.microsoft.com/powershell/module/powershellget/find-command?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Find-Command

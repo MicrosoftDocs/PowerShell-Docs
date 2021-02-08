@@ -1,0 +1,1006 @@
+items:
+- name: Reference
+  items:
+  - name: CimCmdlets
+    uid: CimCmdlets
+    items:
+    - name: Get-CimAssociatedInstance
+      uid: CimCmdlets.Get-CimAssociatedInstance
+    - name: Get-CimClass
+      uid: CimCmdlets.Get-CimClass
+    - name: Get-CimInstance
+      uid: CimCmdlets.Get-CimInstance
+    - name: Get-CimSession
+      uid: CimCmdlets.Get-CimSession
+    - name: Import-BinaryMiLog
+      uid: CimCmdlets.Import-BinaryMiLog
+    - name: Invoke-CimMethod
+      uid: CimCmdlets.Invoke-CimMethod
+    - name: New-CimInstance
+      uid: CimCmdlets.New-CimInstance
+    - name: New-CimSession
+      uid: CimCmdlets.New-CimSession
+    - name: New-CimSessionOption
+      uid: CimCmdlets.New-CimSessionOption
+    - name: Register-CimIndicationEvent
+      uid: CimCmdlets.Register-CimIndicationEvent
+    - name: Remove-CimInstance
+      uid: CimCmdlets.Remove-CimInstance
+    - name: Remove-CimSession
+      uid: CimCmdlets.Remove-CimSession
+    - name: Set-CimInstance
+      uid: CimCmdlets.Set-CimInstance
+  - name: Microsoft.PowerShell.Archive
+    uid: Microsoft.PowerShell.Archive
+    items:
+    - name: Compress-Archive
+      uid: Microsoft.PowerShell.Archive.Compress-Archive
+    - name: Expand-Archive
+      uid: Microsoft.PowerShell.Archive.Expand-Archive
+  - name: Microsoft.PowerShell.Core
+    uid: Microsoft.PowerShell.Core
+    items:
+    - name: About
+      items:
+      - name: About
+        href: Microsoft.PowerShell.Core/About/About.md
+      - name: about_Aliases
+        href: Microsoft.PowerShell.Core/About/about_Aliases.md
+      - name: about_Alias_Provider
+        href: Microsoft.PowerShell.Core/About/about_Alias_Provider.md
+      - name: about_Arithmetic_Operators
+        href: Microsoft.PowerShell.Core/About/about_Arithmetic_Operators.md
+      - name: about_Arrays
+        href: Microsoft.PowerShell.Core/About/about_Arrays.md
+      - name: about_Assignment_Operators
+        href: Microsoft.PowerShell.Core/About/about_Assignment_Operators.md
+      - name: about_Automatic_Variables
+        href: Microsoft.PowerShell.Core/About/about_Automatic_Variables.md
+      - name: about_Break
+        href: Microsoft.PowerShell.Core/About/about_Break.md
+      - name: about_Calculated_Properties
+        href: Microsoft.PowerShell.Core/About/about_Calculated_Properties.md
+      - name: about_Character_Encoding
+        href: Microsoft.PowerShell.Core/About/about_Character_Encoding.md
+      - name: about_CimSession
+        href: Microsoft.PowerShell.Core/About/about_CimSession.md
+      - name: about_Classes
+        href: Microsoft.PowerShell.Core/About/about_Classes.md
+      - name: about_Command_Precedence
+        href: Microsoft.PowerShell.Core/About/about_Command_Precedence.md
+      - name: about_Command_Syntax
+        href: Microsoft.PowerShell.Core/About/about_Command_Syntax.md
+      - name: about_Comment_Based_Help
+        href: Microsoft.PowerShell.Core/About/about_Comment_Based_Help.md
+      - name: about_CommonParameters
+        href: Microsoft.PowerShell.Core/About/about_CommonParameters.md
+      - name: about_Comparison_Operators
+        href: Microsoft.PowerShell.Core/About/about_Comparison_Operators.md
+      - name: about_Continue
+        href: Microsoft.PowerShell.Core/About/about_Continue.md
+      - name: about_Core_Commands
+        href: Microsoft.PowerShell.Core/About/about_Core_Commands.md
+      - name: about_Data_Sections
+        href: Microsoft.PowerShell.Core/About/about_Data_Sections.md
+      - name: about_Debuggers
+        href: Microsoft.PowerShell.Core/About/about_Debuggers.md
+      - name: about_Do
+        href: Microsoft.PowerShell.Core/About/about_Do.md
+      - name: about_Enum
+        href: Microsoft.PowerShell.Core/About/about_Enum.md
+      - name: about_Environment_Provider
+        href: Microsoft.PowerShell.Core/About/about_Environment_Provider.md
+      - name: about_Environment_Variables
+        href: Microsoft.PowerShell.Core/About/about_Environment_Variables.md
+      - name: about_Execution_Policies
+        href: Microsoft.PowerShell.Core/About/about_Execution_Policies.md
+      - name: about_Experimental_Features
+        href: Microsoft.PowerShell.Core/About/about_Experimental_Features.md
+      - name: about_FileSystem_Provider
+        href: Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md
+      - name: about_For
+        href: Microsoft.PowerShell.Core/About/about_For.md
+      - name: about_Foreach
+        href: Microsoft.PowerShell.Core/About/about_Foreach.md
+      - name: about_Format.ps1xml
+        href: Microsoft.PowerShell.Core/About/about_Format.ps1xml.md
+      - name: about_Functions
+        href: Microsoft.PowerShell.Core/About/about_Functions.md
+      - name: about_Functions_Advanced
+        href: Microsoft.PowerShell.Core/About/about_Functions_Advanced.md
+      - name: about_Functions_Advanced_Methods
+        href: Microsoft.PowerShell.Core/About/about_Functions_Advanced_Methods.md
+      - name: about_Functions_Advanced_Parameters
+        href: Microsoft.PowerShell.Core/About/about_Functions_Advanced_Parameters.md
+      - name: about_Functions_CmdletBindingAttribute
+        href: Microsoft.PowerShell.Core/About/about_Functions_CmdletBindingAttribute.md
+      - name: about_Functions_OutputTypeAttribute
+        href: Microsoft.PowerShell.Core/About/about_Functions_OutputTypeAttribute.md
+      - name: about_Function_Provider
+        href: Microsoft.PowerShell.Core/About/about_Function_Provider.md
+      - name: about_Group_Policy_Settings
+        href: Microsoft.PowerShell.Core/About/about_Group_Policy_Settings.md
+      - name: about_Hash_Tables
+        href: Microsoft.PowerShell.Core/About/about_Hash_Tables.md
+      - name: about_Hidden
+        href: Microsoft.PowerShell.Core/About/about_Hidden.md
+      - name: about_History
+        href: Microsoft.PowerShell.Core/About/about_History.md
+      - name: about_If
+        href: Microsoft.PowerShell.Core/About/about_If.md
+      - name: about_Jobs
+        href: Microsoft.PowerShell.Core/About/about_Jobs.md
+      - name: about_Job_Details
+        href: Microsoft.PowerShell.Core/About/about_Job_Details.md
+      - name: about_Join
+        href: Microsoft.PowerShell.Core/About/about_Join.md
+      - name: about_Language_Keywords
+        href: Microsoft.PowerShell.Core/About/about_Language_Keywords.md
+      - name: about_Language_Modes
+        href: Microsoft.PowerShell.Core/About/about_Language_Modes.md
+      - name: about_Line_Editing
+        href: Microsoft.PowerShell.Core/About/about_Line_Editing.md
+      - name: about_Locations
+        href: Microsoft.PowerShell.Core/About/about_Locations.md
+      - name: about_Logging_Non-Windows
+        href: Microsoft.PowerShell.Core/About/about_Logging_Non-Windows.md
+      - name: about_Logging_Windows
+        href: Microsoft.PowerShell.Core/About/about_Logging_Windows.md
+      - name: about_Logical_Operators
+        href: Microsoft.PowerShell.Core/About/about_Logical_Operators.md
+      - name: about_Methods
+        href: Microsoft.PowerShell.Core/About/about_Methods.md
+      - name: about_Modules
+        href: Microsoft.PowerShell.Core/About/about_Modules.md
+      - name: about_Numeric_Literals
+        href: Microsoft.PowerShell.Core/About/about_Numeric_Literals.md
+      - name: about_Objects
+        href: Microsoft.PowerShell.Core/About/about_Objects.md
+      - name: about_Object_Creation
+        href: Microsoft.PowerShell.Core/About/about_Object_Creation.md
+      - name: about_Operators
+        href: Microsoft.PowerShell.Core/About/about_Operators.md
+      - name: about_Operator_Precedence
+        href: Microsoft.PowerShell.Core/About/about_Operator_Precedence.md
+      - name: about_Output_Streams
+        href: Microsoft.PowerShell.Core/About/about_Output_Streams.md
+      - name: about_PackageManagement
+        href: Microsoft.PowerShell.Core/About/about_PackageManagement.md
+      - name: about_Parameters
+        href: Microsoft.PowerShell.Core/About/about_Parameters.md
+      - name: about_Parameters_Default_Values
+        href: Microsoft.PowerShell.Core/About/about_Parameters_Default_Values.md
+      - name: about_Parameter_Sets
+        href: Microsoft.PowerShell.Core/About/about_Parameter_Sets.md
+      - name: about_Parsing
+        href: Microsoft.PowerShell.Core/About/about_Parsing.md
+      - name: about_Path_Syntax
+        href: Microsoft.PowerShell.Core/About/about_Path_Syntax.md
+      - name: about_Pipelines
+        href: Microsoft.PowerShell.Core/About/about_Pipelines.md
+      - name: about_Pipeline_Chain_Operators
+        href: Microsoft.PowerShell.Core/About/about_Pipeline_Chain_Operators.md
+      - name: about_PowerShell_Config
+        href: Microsoft.PowerShell.Core/About/about_PowerShell_Config.md
+      - name: about_PowerShell_Editions
+        href: Microsoft.PowerShell.Core/About/about_PowerShell_Editions.md
+      - name: about_Preference_Variables
+        href: Microsoft.PowerShell.Core/About/about_Preference_Variables.md
+      - name: about_Profiles
+        href: Microsoft.PowerShell.Core/About/about_Profiles.md
+      - name: about_Prompts
+        href: Microsoft.PowerShell.Core/About/about_Prompts.md
+      - name: about_Properties
+        href: Microsoft.PowerShell.Core/About/about_Properties.md
+      - name: about_Providers
+        href: Microsoft.PowerShell.Core/About/about_Providers.md
+      - name: about_PSConsoleHostReadLine
+        href: Microsoft.PowerShell.Core/About/about_PSConsoleHostReadLine.md
+      - name: about_PSModulePath
+        href: Microsoft.PowerShell.Core/About/about_PSModulePath.md
+      - name: about_PSSessions
+        href: Microsoft.PowerShell.Core/About/about_PSSessions.md
+      - name: about_PSSession_Details
+        href: Microsoft.PowerShell.Core/About/about_PSSession_Details.md
+      - name: about_Pwsh
+        href: Microsoft.PowerShell.Core/About/about_Pwsh.md
+      - name: about_Quoting_Rules
+        href: Microsoft.PowerShell.Core/About/about_Quoting_Rules.md
+      - name: about_Redirection
+        href: Microsoft.PowerShell.Core/About/about_Redirection.md
+      - name: about_Ref
+        href: Microsoft.PowerShell.Core/About/about_Ref.md
+      - name: about_Registry_Provider
+        href: Microsoft.PowerShell.Core/About/about_Registry_Provider.md
+      - name: about_Regular_Expressions
+        href: Microsoft.PowerShell.Core/About/about_Regular_Expressions.md
+      - name: about_Remote
+        href: Microsoft.PowerShell.Core/About/about_Remote.md
+      - name: about_Remote_Disconnected_Sessions
+        href: Microsoft.PowerShell.Core/About/about_Remote_Disconnected_Sessions.md
+      - name: about_Remote_FAQ
+        href: Microsoft.PowerShell.Core/About/about_Remote_FAQ.md
+      - name: about_Remote_Jobs
+        href: Microsoft.PowerShell.Core/About/about_Remote_Jobs.md
+      - name: about_Remote_Output
+        href: Microsoft.PowerShell.Core/About/about_Remote_Output.md
+      - name: about_Remote_Requirements
+        href: Microsoft.PowerShell.Core/About/about_Remote_Requirements.md
+      - name: about_Remote_Troubleshooting
+        href: Microsoft.PowerShell.Core/About/about_Remote_Troubleshooting.md
+      - name: about_Remote_Variables
+        href: Microsoft.PowerShell.Core/About/about_Remote_Variables.md
+      - name: about_Requires
+        href: Microsoft.PowerShell.Core/About/about_Requires.md
+      - name: about_Reserved_Words
+        href: Microsoft.PowerShell.Core/About/about_Reserved_Words.md
+      - name: about_Return
+        href: Microsoft.PowerShell.Core/About/about_Return.md
+      - name: about_Run_With_PowerShell
+        href: Microsoft.PowerShell.Core/About/about_Run_With_PowerShell.md
+      - name: about_Scopes
+        href: Microsoft.PowerShell.Core/About/about_Scopes.md
+      - name: about_Scripts
+        href: Microsoft.PowerShell.Core/About/about_Scripts.md
+      - name: about_Script_Blocks
+        href: Microsoft.PowerShell.Core/About/about_Script_Blocks.md
+      - name: about_Script_Internationalization
+        href: Microsoft.PowerShell.Core/About/about_Script_Internationalization.md
+      - name: about_Session_Configurations
+        href: Microsoft.PowerShell.Core/About/about_Session_Configurations.md
+      - name: about_Session_Configuration_Files
+        href: Microsoft.PowerShell.Core/About/about_Session_Configuration_Files.md
+      - name: about_Signing
+        href: Microsoft.PowerShell.Core/About/about_Signing.md
+      - name: about_Simplified_Syntax
+        href: Microsoft.PowerShell.Core/About/about_Simplified_Syntax.md
+      - name: about_Special_Characters
+        href: Microsoft.PowerShell.Core/About/about_Special_Characters.md
+      - name: about_Splatting
+        href: Microsoft.PowerShell.Core/About/about_Splatting.md
+      - name: about_Split
+        href: Microsoft.PowerShell.Core/About/about_Split.md
+      - name: about_Switch
+        href: Microsoft.PowerShell.Core/About/about_Switch.md
+      - name: about_Telemetry
+        href: Microsoft.PowerShell.Core/About/about_Telemetry.md
+      - name: about_Thread_Jobs
+        href: Microsoft.PowerShell.Core/About/about_Thread_Jobs.md
+      - name: about_Throw
+        href: Microsoft.PowerShell.Core/About/about_Throw.md
+      - name: about_Trap
+        href: Microsoft.PowerShell.Core/About/about_Trap.md
+      - name: about_Try_Catch_Finally
+        href: Microsoft.PowerShell.Core/About/about_Try_Catch_Finally.md
+      - name: about_Types.ps1xml
+        href: Microsoft.PowerShell.Core/About/about_Types.ps1xml.md
+      - name: about_Type_Accelerators
+        href: Microsoft.PowerShell.Core/About/about_Type_Accelerators.md
+      - name: about_Type_Operators
+        href: Microsoft.PowerShell.Core/About/about_Type_Operators.md
+      - name: about_Updatable_Help
+        href: Microsoft.PowerShell.Core/About/about_Updatable_Help.md
+      - name: about_Update_Notifications
+        href: Microsoft.PowerShell.Core/About/about_Update_Notifications.md
+      - name: about_Using
+        href: Microsoft.PowerShell.Core/About/about_Using.md
+      - name: about_Variables
+        href: Microsoft.PowerShell.Core/About/about_Variables.md
+      - name: about_Variable_Provider
+        href: Microsoft.PowerShell.Core/About/about_Variable_Provider.md
+      - name: about_While
+        href: Microsoft.PowerShell.Core/About/about_While.md
+      - name: about_Wildcards
+        href: Microsoft.PowerShell.Core/About/about_Wildcards.md
+      - name: about_Windows_PowerShell_Compatibility
+        href: Microsoft.PowerShell.Core/About/about_Windows_PowerShell_Compatibility.md
+    - name: Add-History
+      uid: Microsoft.PowerShell.Core.Add-History
+    - name: Clear-History
+      uid: Microsoft.PowerShell.Core.Clear-History
+    - name: Clear-Host
+      uid: Microsoft.PowerShell.Core.Clear-Host
+    - name: Connect-PSSession
+      uid: Microsoft.PowerShell.Core.Connect-PSSession
+    - name: Debug-Job
+      uid: Microsoft.PowerShell.Core.Debug-Job
+    - name: Disable-ExperimentalFeature
+      uid: Microsoft.PowerShell.Core.Disable-ExperimentalFeature
+    - name: Disable-PSRemoting
+      uid: Microsoft.PowerShell.Core.Disable-PSRemoting
+    - name: Disable-PSSessionConfiguration
+      uid: Microsoft.PowerShell.Core.Disable-PSSessionConfiguration
+    - name: Disconnect-PSSession
+      uid: Microsoft.PowerShell.Core.Disconnect-PSSession
+    - name: Enable-ExperimentalFeature
+      uid: Microsoft.PowerShell.Core.Enable-ExperimentalFeature
+    - name: Enable-PSRemoting
+      uid: Microsoft.PowerShell.Core.Enable-PSRemoting
+    - name: Enable-PSSessionConfiguration
+      uid: Microsoft.PowerShell.Core.Enable-PSSessionConfiguration
+    - name: Enter-PSHostProcess
+      uid: Microsoft.PowerShell.Core.Enter-PSHostProcess
+    - name: Enter-PSSession
+      uid: Microsoft.PowerShell.Core.Enter-PSSession
+    - name: Exit-PSHostProcess
+      uid: Microsoft.PowerShell.Core.Exit-PSHostProcess
+    - name: Exit-PSSession
+      uid: Microsoft.PowerShell.Core.Exit-PSSession
+    - name: Export-ModuleMember
+      uid: Microsoft.PowerShell.Core.Export-ModuleMember
+    - name: ForEach-Object
+      uid: Microsoft.PowerShell.Core.ForEach-Object
+    - name: Get-Command
+      uid: Microsoft.PowerShell.Core.Get-Command
+    - name: Get-ExperimentalFeature
+      uid: Microsoft.PowerShell.Core.Get-ExperimentalFeature
+    - name: Get-Help
+      uid: Microsoft.PowerShell.Core.Get-Help
+    - name: Get-History
+      uid: Microsoft.PowerShell.Core.Get-History
+    - name: Get-Job
+      uid: Microsoft.PowerShell.Core.Get-Job
+    - name: Get-Module
+      uid: Microsoft.PowerShell.Core.Get-Module
+    - name: Get-PSHostProcessInfo
+      uid: Microsoft.PowerShell.Core.Get-PSHostProcessInfo
+    - name: Get-PSSession
+      uid: Microsoft.PowerShell.Core.Get-PSSession
+    - name: Get-PSSessionCapability
+      uid: Microsoft.PowerShell.Core.Get-PSSessionCapability
+    - name: Get-PSSessionConfiguration
+      uid: Microsoft.PowerShell.Core.Get-PSSessionConfiguration
+    - name: Import-Module
+      uid: Microsoft.PowerShell.Core.Import-Module
+    - name: Invoke-Command
+      uid: Microsoft.PowerShell.Core.Invoke-Command
+    - name: Invoke-History
+      uid: Microsoft.PowerShell.Core.Invoke-History
+    - name: New-Module
+      uid: Microsoft.PowerShell.Core.New-Module
+    - name: New-ModuleManifest
+      uid: Microsoft.PowerShell.Core.New-ModuleManifest
+    - name: New-PSRoleCapabilityFile
+      uid: Microsoft.PowerShell.Core.New-PSRoleCapabilityFile
+    - name: New-PSSession
+      uid: Microsoft.PowerShell.Core.New-PSSession
+    - name: New-PSSessionConfigurationFile
+      uid: Microsoft.PowerShell.Core.New-PSSessionConfigurationFile
+    - name: New-PSSessionOption
+      uid: Microsoft.PowerShell.Core.New-PSSessionOption
+    - name: New-PSTransportOption
+      uid: Microsoft.PowerShell.Core.New-PSTransportOption
+    - name: Out-Default
+      uid: Microsoft.PowerShell.Core.Out-Default
+    - name: Out-Host
+      uid: Microsoft.PowerShell.Core.Out-Host
+    - name: Out-Null
+      uid: Microsoft.PowerShell.Core.Out-Null
+    - name: Receive-Job
+      uid: Microsoft.PowerShell.Core.Receive-Job
+    - name: Receive-PSSession
+      uid: Microsoft.PowerShell.Core.Receive-PSSession
+    - name: Register-ArgumentCompleter
+      uid: Microsoft.PowerShell.Core.Register-ArgumentCompleter
+    - name: Register-PSSessionConfiguration
+      uid: Microsoft.PowerShell.Core.Register-PSSessionConfiguration
+    - name: Remove-Job
+      uid: Microsoft.PowerShell.Core.Remove-Job
+    - name: Remove-Module
+      uid: Microsoft.PowerShell.Core.Remove-Module
+    - name: Remove-PSSession
+      uid: Microsoft.PowerShell.Core.Remove-PSSession
+    - name: Save-Help
+      uid: Microsoft.PowerShell.Core.Save-Help
+    - name: Set-PSDebug
+      uid: Microsoft.PowerShell.Core.Set-PSDebug
+    - name: Set-PSSessionConfiguration
+      uid: Microsoft.PowerShell.Core.Set-PSSessionConfiguration
+    - name: Set-StrictMode
+      uid: Microsoft.PowerShell.Core.Set-StrictMode
+    - name: Start-Job
+      uid: Microsoft.PowerShell.Core.Start-Job
+    - name: Stop-Job
+      uid: Microsoft.PowerShell.Core.Stop-Job
+    - name: Test-ModuleManifest
+      uid: Microsoft.PowerShell.Core.Test-ModuleManifest
+    - name: Test-PSSessionConfigurationFile
+      uid: Microsoft.PowerShell.Core.Test-PSSessionConfigurationFile
+    - name: Unregister-PSSessionConfiguration
+      uid: Microsoft.PowerShell.Core.Unregister-PSSessionConfiguration
+    - name: Update-Help
+      uid: Microsoft.PowerShell.Core.Update-Help
+    - name: Wait-Job
+      uid: Microsoft.PowerShell.Core.Wait-Job
+    - name: Where-Object
+      uid: Microsoft.PowerShell.Core.Where-Object
+  - name: Microsoft.PowerShell.Diagnostics
+    uid: Microsoft.PowerShell.Diagnostics
+    items:
+    - name: Get-Counter
+      uid: Microsoft.PowerShell.Diagnostics.Get-Counter
+    - name: Get-WinEvent
+      uid: Microsoft.PowerShell.Diagnostics.Get-WinEvent
+    - name: New-WinEvent
+      uid: Microsoft.PowerShell.Diagnostics.New-WinEvent
+  - name: Microsoft.PowerShell.Host
+    uid: Microsoft.PowerShell.Host
+    items:
+    - name: Start-Transcript
+      uid: Microsoft.PowerShell.Host.Start-Transcript
+    - name: Stop-Transcript
+      uid: Microsoft.PowerShell.Host.Stop-Transcript
+  - name: Microsoft.PowerShell.Management
+    uid: Microsoft.PowerShell.Management
+    items:
+    - name: Add-Content
+      uid: Microsoft.PowerShell.Management.Add-Content
+    - name: Clear-Content
+      uid: Microsoft.PowerShell.Management.Clear-Content
+    - name: Clear-Item
+      uid: Microsoft.PowerShell.Management.Clear-Item
+    - name: Clear-ItemProperty
+      uid: Microsoft.PowerShell.Management.Clear-ItemProperty
+    - name: Clear-RecycleBin
+      uid: Microsoft.PowerShell.Management.Clear-RecycleBin
+    - name: Convert-Path
+      uid: Microsoft.PowerShell.Management.Convert-Path
+    - name: Copy-Item
+      uid: Microsoft.PowerShell.Management.Copy-Item
+    - name: Copy-ItemProperty
+      uid: Microsoft.PowerShell.Management.Copy-ItemProperty
+    - name: Debug-Process
+      uid: Microsoft.PowerShell.Management.Debug-Process
+    - name: Get-ChildItem
+      uid: Microsoft.PowerShell.Management.Get-ChildItem
+    - name: Get-Clipboard
+      uid: Microsoft.PowerShell.Management.Get-Clipboard
+    - name: Get-ComputerInfo
+      uid: Microsoft.PowerShell.Management.Get-ComputerInfo
+    - name: Get-Content
+      uid: Microsoft.PowerShell.Management.Get-Content
+    - name: Get-HotFix
+      uid: Microsoft.PowerShell.Management.Get-HotFix
+    - name: Get-Item
+      uid: Microsoft.PowerShell.Management.Get-Item
+    - name: Get-ItemProperty
+      uid: Microsoft.PowerShell.Management.Get-ItemProperty
+    - name: Get-ItemPropertyValue
+      uid: Microsoft.PowerShell.Management.Get-ItemPropertyValue
+    - name: Get-Location
+      uid: Microsoft.PowerShell.Management.Get-Location
+    - name: Get-Process
+      uid: Microsoft.PowerShell.Management.Get-Process
+    - name: Get-PSDrive
+      uid: Microsoft.PowerShell.Management.Get-PSDrive
+    - name: Get-PSProvider
+      uid: Microsoft.PowerShell.Management.Get-PSProvider
+    - name: Get-Service
+      uid: Microsoft.PowerShell.Management.Get-Service
+    - name: Get-TimeZone
+      uid: Microsoft.PowerShell.Management.Get-TimeZone
+    - name: Invoke-Item
+      uid: Microsoft.PowerShell.Management.Invoke-Item
+    - name: Join-Path
+      uid: Microsoft.PowerShell.Management.Join-Path
+    - name: Move-Item
+      uid: Microsoft.PowerShell.Management.Move-Item
+    - name: Move-ItemProperty
+      uid: Microsoft.PowerShell.Management.Move-ItemProperty
+    - name: New-Item
+      uid: Microsoft.PowerShell.Management.New-Item
+    - name: New-ItemProperty
+      uid: Microsoft.PowerShell.Management.New-ItemProperty
+    - name: New-PSDrive
+      uid: Microsoft.PowerShell.Management.New-PSDrive
+    - name: New-Service
+      uid: Microsoft.PowerShell.Management.New-Service
+    - name: Pop-Location
+      uid: Microsoft.PowerShell.Management.Pop-Location
+    - name: Push-Location
+      uid: Microsoft.PowerShell.Management.Push-Location
+    - name: Remove-Item
+      uid: Microsoft.PowerShell.Management.Remove-Item
+    - name: Remove-ItemProperty
+      uid: Microsoft.PowerShell.Management.Remove-ItemProperty
+    - name: Remove-PSDrive
+      uid: Microsoft.PowerShell.Management.Remove-PSDrive
+    - name: Remove-Service
+      uid: Microsoft.PowerShell.Management.Remove-Service
+    - name: Rename-Computer
+      uid: Microsoft.PowerShell.Management.Rename-Computer
+    - name: Rename-Item
+      uid: Microsoft.PowerShell.Management.Rename-Item
+    - name: Rename-ItemProperty
+      uid: Microsoft.PowerShell.Management.Rename-ItemProperty
+    - name: Resolve-Path
+      uid: Microsoft.PowerShell.Management.Resolve-Path
+    - name: Restart-Computer
+      uid: Microsoft.PowerShell.Management.Restart-Computer
+    - name: Restart-Service
+      uid: Microsoft.PowerShell.Management.Restart-Service
+    - name: Resume-Service
+      uid: Microsoft.PowerShell.Management.Resume-Service
+    - name: Set-Clipboard
+      uid: Microsoft.PowerShell.Management.Set-Clipboard
+    - name: Set-Content
+      uid: Microsoft.PowerShell.Management.Set-Content
+    - name: Set-Item
+      uid: Microsoft.PowerShell.Management.Set-Item
+    - name: Set-ItemProperty
+      uid: Microsoft.PowerShell.Management.Set-ItemProperty
+    - name: Set-Location
+      uid: Microsoft.PowerShell.Management.Set-Location
+    - name: Set-Service
+      uid: Microsoft.PowerShell.Management.Set-Service
+    - name: Set-TimeZone
+      uid: Microsoft.PowerShell.Management.Set-TimeZone
+    - name: Split-Path
+      uid: Microsoft.PowerShell.Management.Split-Path
+    - name: Start-Process
+      uid: Microsoft.PowerShell.Management.Start-Process
+    - name: Start-Service
+      uid: Microsoft.PowerShell.Management.Start-Service
+    - name: Stop-Computer
+      uid: Microsoft.PowerShell.Management.Stop-Computer
+    - name: Stop-Process
+      uid: Microsoft.PowerShell.Management.Stop-Process
+    - name: Stop-Service
+      uid: Microsoft.PowerShell.Management.Stop-Service
+    - name: Suspend-Service
+      uid: Microsoft.PowerShell.Management.Suspend-Service
+    - name: Test-Connection
+      uid: Microsoft.PowerShell.Management.Test-Connection
+    - name: Test-Path
+      uid: Microsoft.PowerShell.Management.Test-Path
+    - name: Wait-Process
+      uid: Microsoft.PowerShell.Management.Wait-Process
+  - name: Microsoft.PowerShell.Security
+    uid: Microsoft.PowerShell.Security
+    items:
+    - name: About
+      items:
+      - name: about_Certificate_Provider
+        href: Microsoft.PowerShell.Security/About/about_Certificate_Provider.md
+    - name: ConvertFrom-SecureString
+      uid: Microsoft.PowerShell.Security.ConvertFrom-SecureString
+    - name: ConvertTo-SecureString
+      uid: Microsoft.PowerShell.Security.ConvertTo-SecureString
+    - name: Get-Acl
+      uid: Microsoft.PowerShell.Security.Get-Acl
+    - name: Get-AuthenticodeSignature
+      uid: Microsoft.PowerShell.Security.Get-AuthenticodeSignature
+    - name: Get-CmsMessage
+      uid: Microsoft.PowerShell.Security.Get-CmsMessage
+    - name: Get-Credential
+      uid: Microsoft.PowerShell.Security.Get-Credential
+    - name: Get-ExecutionPolicy
+      uid: Microsoft.PowerShell.Security.Get-ExecutionPolicy
+    - name: Get-PfxCertificate
+      uid: Microsoft.PowerShell.Security.Get-PfxCertificate
+    - name: New-FileCatalog
+      uid: Microsoft.PowerShell.Security.New-FileCatalog
+    - name: Protect-CmsMessage
+      uid: Microsoft.PowerShell.Security.Protect-CmsMessage
+    - name: Set-Acl
+      uid: Microsoft.PowerShell.Security.Set-Acl
+    - name: Set-AuthenticodeSignature
+      uid: Microsoft.PowerShell.Security.Set-AuthenticodeSignature
+    - name: Set-ExecutionPolicy
+      uid: Microsoft.PowerShell.Security.Set-ExecutionPolicy
+    - name: Test-FileCatalog
+      uid: Microsoft.PowerShell.Security.Test-FileCatalog
+    - name: Unprotect-CmsMessage
+      uid: Microsoft.PowerShell.Security.Unprotect-CmsMessage
+  - name: Microsoft.PowerShell.Utility
+    uid: Microsoft.PowerShell.Utility
+    items:
+    - name: Add-Member
+      uid: Microsoft.PowerShell.Utility.Add-Member
+    - name: Add-Type
+      uid: Microsoft.PowerShell.Utility.Add-Type
+    - name: Clear-Variable
+      uid: Microsoft.PowerShell.Utility.Clear-Variable
+    - name: Compare-Object
+      uid: Microsoft.PowerShell.Utility.Compare-Object
+    - name: ConvertFrom-Csv
+      uid: Microsoft.PowerShell.Utility.ConvertFrom-Csv
+    - name: ConvertFrom-Json
+      uid: Microsoft.PowerShell.Utility.ConvertFrom-Json
+    - name: ConvertFrom-Markdown
+      uid: Microsoft.PowerShell.Utility.ConvertFrom-Markdown
+    - name: ConvertFrom-SddlString
+      uid: Microsoft.PowerShell.Utility.ConvertFrom-SddlString
+    - name: ConvertFrom-StringData
+      uid: Microsoft.PowerShell.Utility.ConvertFrom-StringData
+    - name: ConvertTo-Csv
+      uid: Microsoft.PowerShell.Utility.ConvertTo-Csv
+    - name: ConvertTo-Html
+      uid: Microsoft.PowerShell.Utility.ConvertTo-Html
+    - name: ConvertTo-Json
+      uid: Microsoft.PowerShell.Utility.ConvertTo-Json
+    - name: ConvertTo-Xml
+      uid: Microsoft.PowerShell.Utility.ConvertTo-Xml
+    - name: Debug-Runspace
+      uid: Microsoft.PowerShell.Utility.Debug-Runspace
+    - name: Disable-PSBreakpoint
+      uid: Microsoft.PowerShell.Utility.Disable-PSBreakpoint
+    - name: Disable-RunspaceDebug
+      uid: Microsoft.PowerShell.Utility.Disable-RunspaceDebug
+    - name: Enable-PSBreakpoint
+      uid: Microsoft.PowerShell.Utility.Enable-PSBreakpoint
+    - name: Enable-RunspaceDebug
+      uid: Microsoft.PowerShell.Utility.Enable-RunspaceDebug
+    - name: Export-Alias
+      uid: Microsoft.PowerShell.Utility.Export-Alias
+    - name: Export-Clixml
+      uid: Microsoft.PowerShell.Utility.Export-Clixml
+    - name: Export-Csv
+      uid: Microsoft.PowerShell.Utility.Export-Csv
+    - name: Export-FormatData
+      uid: Microsoft.PowerShell.Utility.Export-FormatData
+    - name: Export-PSSession
+      uid: Microsoft.PowerShell.Utility.Export-PSSession
+    - name: Format-Custom
+      uid: Microsoft.PowerShell.Utility.Format-Custom
+    - name: Format-Hex
+      uid: Microsoft.PowerShell.Utility.Format-Hex
+    - name: Format-List
+      uid: Microsoft.PowerShell.Utility.Format-List
+    - name: Format-Table
+      uid: Microsoft.PowerShell.Utility.Format-Table
+    - name: Format-Wide
+      uid: Microsoft.PowerShell.Utility.Format-Wide
+    - name: Get-Alias
+      uid: Microsoft.PowerShell.Utility.Get-Alias
+    - name: Get-Culture
+      uid: Microsoft.PowerShell.Utility.Get-Culture
+    - name: Get-Date
+      uid: Microsoft.PowerShell.Utility.Get-Date
+    - name: Get-Error
+      uid: Microsoft.PowerShell.Utility.Get-Error
+    - name: Get-Event
+      uid: Microsoft.PowerShell.Utility.Get-Event
+    - name: Get-EventSubscriber
+      uid: Microsoft.PowerShell.Utility.Get-EventSubscriber
+    - name: Get-FileHash
+      uid: Microsoft.PowerShell.Utility.Get-FileHash
+    - name: Get-FormatData
+      uid: Microsoft.PowerShell.Utility.Get-FormatData
+    - name: Get-Host
+      uid: Microsoft.PowerShell.Utility.Get-Host
+    - name: Get-MarkdownOption
+      uid: Microsoft.PowerShell.Utility.Get-MarkdownOption
+    - name: Get-Member
+      uid: Microsoft.PowerShell.Utility.Get-Member
+    - name: Get-PSBreakpoint
+      uid: Microsoft.PowerShell.Utility.Get-PSBreakpoint
+    - name: Get-PSCallStack
+      uid: Microsoft.PowerShell.Utility.Get-PSCallStack
+    - name: Get-Random
+      uid: Microsoft.PowerShell.Utility.Get-Random
+    - name: Get-Runspace
+      uid: Microsoft.PowerShell.Utility.Get-Runspace
+    - name: Get-RunspaceDebug
+      uid: Microsoft.PowerShell.Utility.Get-RunspaceDebug
+    - name: Get-TraceSource
+      uid: Microsoft.PowerShell.Utility.Get-TraceSource
+    - name: Get-TypeData
+      uid: Microsoft.PowerShell.Utility.Get-TypeData
+    - name: Get-UICulture
+      uid: Microsoft.PowerShell.Utility.Get-UICulture
+    - name: Get-Unique
+      uid: Microsoft.PowerShell.Utility.Get-Unique
+    - name: Get-Uptime
+      uid: Microsoft.PowerShell.Utility.Get-Uptime
+    - name: Get-Variable
+      uid: Microsoft.PowerShell.Utility.Get-Variable
+    - name: Get-Verb
+      uid: Microsoft.PowerShell.Utility.Get-Verb
+    - name: Group-Object
+      uid: Microsoft.PowerShell.Utility.Group-Object
+    - name: Import-Alias
+      uid: Microsoft.PowerShell.Utility.Import-Alias
+    - name: Import-Clixml
+      uid: Microsoft.PowerShell.Utility.Import-Clixml
+    - name: Import-Csv
+      uid: Microsoft.PowerShell.Utility.Import-Csv
+    - name: Import-LocalizedData
+      uid: Microsoft.PowerShell.Utility.Import-LocalizedData
+    - name: Import-PowerShellDataFile
+      uid: Microsoft.PowerShell.Utility.Import-PowerShellDataFile
+    - name: Import-PSSession
+      uid: Microsoft.PowerShell.Utility.Import-PSSession
+    - name: Invoke-Expression
+      uid: Microsoft.PowerShell.Utility.Invoke-Expression
+    - name: Invoke-RestMethod
+      uid: Microsoft.PowerShell.Utility.Invoke-RestMethod
+    - name: Invoke-WebRequest
+      uid: Microsoft.PowerShell.Utility.Invoke-WebRequest
+    - name: Join-String
+      uid: Microsoft.PowerShell.Utility.Join-String
+    - name: Measure-Command
+      uid: Microsoft.PowerShell.Utility.Measure-Command
+    - name: Measure-Object
+      uid: Microsoft.PowerShell.Utility.Measure-Object
+    - name: New-Alias
+      uid: Microsoft.PowerShell.Utility.New-Alias
+    - name: New-Event
+      uid: Microsoft.PowerShell.Utility.New-Event
+    - name: New-Guid
+      uid: Microsoft.PowerShell.Utility.New-Guid
+    - name: New-Object
+      uid: Microsoft.PowerShell.Utility.New-Object
+    - name: New-TemporaryFile
+      uid: Microsoft.PowerShell.Utility.New-TemporaryFile
+    - name: New-TimeSpan
+      uid: Microsoft.PowerShell.Utility.New-TimeSpan
+    - name: New-Variable
+      uid: Microsoft.PowerShell.Utility.New-Variable
+    - name: Out-File
+      uid: Microsoft.PowerShell.Utility.Out-File
+    - name: Out-GridView
+      uid: Microsoft.PowerShell.Utility.Out-GridView
+    - name: Out-Printer
+      uid: Microsoft.PowerShell.Utility.Out-Printer
+    - name: Out-String
+      uid: Microsoft.PowerShell.Utility.Out-String
+    - name: Read-Host
+      uid: Microsoft.PowerShell.Utility.Read-Host
+    - name: Register-EngineEvent
+      uid: Microsoft.PowerShell.Utility.Register-EngineEvent
+    - name: Register-ObjectEvent
+      uid: Microsoft.PowerShell.Utility.Register-ObjectEvent
+    - name: Remove-Alias
+      uid: Microsoft.PowerShell.Utility.Remove-Alias
+    - name: Remove-Event
+      uid: Microsoft.PowerShell.Utility.Remove-Event
+    - name: Remove-PSBreakpoint
+      uid: Microsoft.PowerShell.Utility.Remove-PSBreakpoint
+    - name: Remove-TypeData
+      uid: Microsoft.PowerShell.Utility.Remove-TypeData
+    - name: Remove-Variable
+      uid: Microsoft.PowerShell.Utility.Remove-Variable
+    - name: Select-Object
+      uid: Microsoft.PowerShell.Utility.Select-Object
+    - name: Select-String
+      uid: Microsoft.PowerShell.Utility.Select-String
+    - name: Select-Xml
+      uid: Microsoft.PowerShell.Utility.Select-Xml
+    - name: Send-MailMessage
+      uid: Microsoft.PowerShell.Utility.Send-MailMessage
+    - name: Set-Alias
+      uid: Microsoft.PowerShell.Utility.Set-Alias
+    - name: Set-Date
+      uid: Microsoft.PowerShell.Utility.Set-Date
+    - name: Set-MarkdownOption
+      uid: Microsoft.PowerShell.Utility.Set-MarkdownOption
+    - name: Set-PSBreakpoint
+      uid: Microsoft.PowerShell.Utility.Set-PSBreakpoint
+    - name: Set-TraceSource
+      uid: Microsoft.PowerShell.Utility.Set-TraceSource
+    - name: Set-Variable
+      uid: Microsoft.PowerShell.Utility.Set-Variable
+    - name: Show-Command
+      uid: Microsoft.PowerShell.Utility.Show-Command
+    - name: Show-Markdown
+      uid: Microsoft.PowerShell.Utility.Show-Markdown
+    - name: Sort-Object
+      uid: Microsoft.PowerShell.Utility.Sort-Object
+    - name: Start-Sleep
+      uid: Microsoft.PowerShell.Utility.Start-Sleep
+    - name: Tee-Object
+      uid: Microsoft.PowerShell.Utility.Tee-Object
+    - name: Test-Json
+      uid: Microsoft.PowerShell.Utility.Test-Json
+    - name: Trace-Command
+      uid: Microsoft.PowerShell.Utility.Trace-Command
+    - name: Unblock-File
+      uid: Microsoft.PowerShell.Utility.Unblock-File
+    - name: Unregister-Event
+      uid: Microsoft.PowerShell.Utility.Unregister-Event
+    - name: Update-FormatData
+      uid: Microsoft.PowerShell.Utility.Update-FormatData
+    - name: Update-List
+      uid: Microsoft.PowerShell.Utility.Update-List
+    - name: Update-TypeData
+      uid: Microsoft.PowerShell.Utility.Update-TypeData
+    - name: Wait-Debugger
+      uid: Microsoft.PowerShell.Utility.Wait-Debugger
+    - name: Wait-Event
+      uid: Microsoft.PowerShell.Utility.Wait-Event
+    - name: Write-Debug
+      uid: Microsoft.PowerShell.Utility.Write-Debug
+    - name: Write-Error
+      uid: Microsoft.PowerShell.Utility.Write-Error
+    - name: Write-Host
+      uid: Microsoft.PowerShell.Utility.Write-Host
+    - name: Write-Information
+      uid: Microsoft.PowerShell.Utility.Write-Information
+    - name: Write-Output
+      uid: Microsoft.PowerShell.Utility.Write-Output
+    - name: Write-Progress
+      uid: Microsoft.PowerShell.Utility.Write-Progress
+    - name: Write-Verbose
+      uid: Microsoft.PowerShell.Utility.Write-Verbose
+    - name: Write-Warning
+      uid: Microsoft.PowerShell.Utility.Write-Warning
+  - name: Microsoft.WSMan.Management
+    uid: Microsoft.WSMan.Management
+    items:
+    - name: About
+      items:
+      - name: about_WS-Management_Cmdlets
+        href: Microsoft.WSMan.Management/About/about_WS-Management_Cmdlets.md
+      - name: about_WSMan_Provider
+        href: Microsoft.WSMan.Management/About/about_WSMan_Provider.md
+    - name: Connect-WSMan
+      uid: Microsoft.WSMan.Management.Connect-WSMan
+    - name: Disable-WSManCredSSP
+      uid: Microsoft.WSMan.Management.Disable-WSManCredSSP
+    - name: Disconnect-WSMan
+      uid: Microsoft.WSMan.Management.Disconnect-WSMan
+    - name: Enable-WSManCredSSP
+      uid: Microsoft.WSMan.Management.Enable-WSManCredSSP
+    - name: Get-WSManCredSSP
+      uid: Microsoft.WSMan.Management.Get-WSManCredSSP
+    - name: Get-WSManInstance
+      uid: Microsoft.WSMan.Management.Get-WSManInstance
+    - name: Invoke-WSManAction
+      uid: Microsoft.WSMan.Management.Invoke-WSManAction
+    - name: New-WSManInstance
+      uid: Microsoft.WSMan.Management.New-WSManInstance
+    - name: New-WSManSessionOption
+      uid: Microsoft.WSMan.Management.New-WSManSessionOption
+    - name: Remove-WSManInstance
+      uid: Microsoft.WSMan.Management.Remove-WSManInstance
+    - name: Set-WSManInstance
+      uid: Microsoft.WSMan.Management.Set-WSManInstance
+    - name: Set-WSManQuickConfig
+      uid: Microsoft.WSMan.Management.Set-WSManQuickConfig
+    - name: Test-WSMan
+      uid: Microsoft.WSMan.Management.Test-WSMan
+  - name: PackageManagement
+    uid: PackageManagement
+    items:
+    - name: Find-Package
+      uid: PackageManagement.Find-Package
+    - name: Find-PackageProvider
+      uid: PackageManagement.Find-PackageProvider
+    - name: Get-Package
+      uid: PackageManagement.Get-Package
+    - name: Get-PackageProvider
+      uid: PackageManagement.Get-PackageProvider
+    - name: Get-PackageSource
+      uid: PackageManagement.Get-PackageSource
+    - name: Import-PackageProvider
+      uid: PackageManagement.Import-PackageProvider
+    - name: Install-Package
+      uid: PackageManagement.Install-Package
+    - name: Install-PackageProvider
+      uid: PackageManagement.Install-PackageProvider
+    - name: Register-PackageSource
+      uid: PackageManagement.Register-PackageSource
+    - name: Save-Package
+      uid: PackageManagement.Save-Package
+    - name: Set-PackageSource
+      uid: PackageManagement.Set-PackageSource
+    - name: Uninstall-Package
+      uid: PackageManagement.Uninstall-Package
+    - name: Unregister-PackageSource
+      uid: PackageManagement.Unregister-PackageSource
+  - name: PowerShellGet
+    uid: PowerShellGet
+    items:
+    - name: Find-Command
+      uid: PowerShellGet.Find-Command
+    - name: Find-DscResource
+      uid: PowerShellGet.Find-DscResource
+    - name: Find-Module
+      uid: PowerShellGet.Find-Module
+    - name: Find-RoleCapability
+      uid: PowerShellGet.Find-RoleCapability
+    - name: Find-Script
+      uid: PowerShellGet.Find-Script
+    - name: Get-InstalledModule
+      uid: PowerShellGet.Get-InstalledModule
+    - name: Get-InstalledScript
+      uid: PowerShellGet.Get-InstalledScript
+    - name: Get-PSRepository
+      uid: PowerShellGet.Get-PSRepository
+    - name: Install-Module
+      uid: PowerShellGet.Install-Module
+    - name: Install-Script
+      uid: PowerShellGet.Install-Script
+    - name: New-ScriptFileInfo
+      uid: PowerShellGet.New-ScriptFileInfo
+    - name: Publish-Module
+      uid: PowerShellGet.Publish-Module
+    - name: Publish-Script
+      uid: PowerShellGet.Publish-Script
+    - name: Register-PSRepository
+      uid: PowerShellGet.Register-PSRepository
+    - name: Save-Module
+      uid: PowerShellGet.Save-Module
+    - name: Save-Script
+      uid: PowerShellGet.Save-Script
+    - name: Set-PSRepository
+      uid: PowerShellGet.Set-PSRepository
+    - name: Test-ScriptFileInfo
+      uid: PowerShellGet.Test-ScriptFileInfo
+    - name: Uninstall-Module
+      uid: PowerShellGet.Uninstall-Module
+    - name: Uninstall-Script
+      uid: PowerShellGet.Uninstall-Script
+    - name: Unregister-PSRepository
+      uid: PowerShellGet.Unregister-PSRepository
+    - name: Update-Module
+      uid: PowerShellGet.Update-Module
+    - name: Update-ModuleManifest
+      uid: PowerShellGet.Update-ModuleManifest
+    - name: Update-Script
+      uid: PowerShellGet.Update-Script
+    - name: Update-ScriptFileInfo
+      uid: PowerShellGet.Update-ScriptFileInfo
+  - name: PSDesiredStateConfiguration
+    uid: PSDesiredStateConfiguration
+    items:
+    - name: About
+      items:
+      - name: about_Classes_and_DSC
+        href: PSDesiredStateConfiguration/About/about_Classes_and_DSC.md
+    - name: Get-DscResource
+      uid: PSDesiredStateConfiguration.Get-DscResource
+    - name: Invoke-DscResource
+      uid: PSDesiredStateConfiguration.Invoke-DscResource
+    - name: New-DscChecksum
+      uid: PSDesiredStateConfiguration.New-DscChecksum
+  - name: PSDiagnostics
+    uid: PSDiagnostics
+    items:
+    - name: Disable-PSTrace
+      uid: PSDiagnostics.Disable-PSTrace
+    - name: Disable-PSWSManCombinedTrace
+      uid: PSDiagnostics.Disable-PSWSManCombinedTrace
+    - name: Disable-WSManTrace
+      uid: PSDiagnostics.Disable-WSManTrace
+    - name: Enable-PSTrace
+      uid: PSDiagnostics.Enable-PSTrace
+    - name: Enable-PSWSManCombinedTrace
+      uid: PSDiagnostics.Enable-PSWSManCombinedTrace
+    - name: Enable-WSManTrace
+      uid: PSDiagnostics.Enable-WSManTrace
+    - name: Get-LogProperties
+      uid: PSDiagnostics.Get-LogProperties
+    - name: Set-LogProperties
+      uid: PSDiagnostics.Set-LogProperties
+    - name: Start-Trace
+      uid: PSDiagnostics.Start-Trace
+    - name: Stop-Trace
+      uid: PSDiagnostics.Stop-Trace
+  - name: PSReadLine
+    uid: PSReadLine
+    items:
+    - name: About
+      items:
+      - name: about_PSReadLine
+        href: PSReadLine/About/about_PSReadLine.md
+    - name: Get-PSReadLineKeyHandler
+      uid: PSReadLine.Get-PSReadLineKeyHandler
+    - name: Get-PSReadLineOption
+      uid: PSReadLine.Get-PSReadLineOption
+    - name: PSConsoleHostReadLine
+      uid: PSReadLine.PSConsoleHostReadLine
+    - name: Remove-PSReadLineKeyHandler
+      uid: PSReadLine.Remove-PSReadLineKeyHandler
+    - name: Set-PSReadLineKeyHandler
+      uid: PSReadLine.Set-PSReadLineKeyHandler
+    - name: Set-PSReadLineOption
+      uid: PSReadLine.Set-PSReadLineOption
+  - name: ThreadJob
+    uid: ThreadJob
+    items:
+    - name: Start-ThreadJob
+      uid: ThreadJob.Start-ThreadJob
+metadata:
+  universal_conceptual_toc: /powershell/scripting/toc.json

@@ -1,0 +1,138 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Extracts files from a specified archive (zipped) file.
+module: Microsoft.PowerShell.Archive
+notes: |-
+  The [ZIP file specification](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) does not
+  specify a standard way of encoding filenames that contain non-ASCII characters. The
+  `Compress-Archive` cmdlet uses UTF-8 encoding. Other ZIP archive tools may use a different encoding
+  scheme. When extracting files with filenames not stored using UTF-8 encoding, `Expand-Archive` uses
+  the raw value found in the archive. This can result in a filename that is different than the source
+  filename stored in the archive.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains a path to an existing archive file.
+outputs:
+- name: <xref href="System.IO.FileSystemInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    When the `-PassThru` parameter is used, the cmdlet outputs a list of files that were expanded from
+    the archive.
+links:
+- text: Compress-Archive
+  href: compress-archive.yml
+syntaxes:
+- >-
+  Expand-Archive [-Path] <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf]
+
+   [-Confirm] [<CommonParameters>]
+- >-
+  Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf]
+
+   [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Extract the contents of an archive'
+  code: |-
+    Expand-Archive -LiteralPath 'C:\Archives\Draft[v1].Zip' -DestinationPath C:\Reference
+  description: |-
+    In this example, the **LiteralPath** parameter is used because the filename contains characters that
+    could be interpreted as wildcards.
+  summary: |+
+    This example extracts the contents of an existing archive file into the folder specified by the
+    **DestinationPath** parameter.
+
+- title: 'Example 2: Extract the contents of an archive in the current folder'
+  code: |-
+    Expand-Archive -Path Draftv2.Zip -DestinationPath C:\Reference
+  description: ""
+  summary: |+
+    This example extracts the contents of an existing archive file in the current folder into the folder
+    specified by the **DestinationPath** parameter.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: DestinationPath
+  description: |+
+    By default, `Expand-Archive` creates a folder in the current location that is the same name as the
+    ZIP file. The parameter allows you to specify the path to a different folder. The target folder is
+    created if it does not exist.
+
+  defaultValue: A folder in the current location
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the command to run without asking for user confirmation.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies the path to an archive file. Unlike the **Path** parameter, the value of **LiteralPath**
+    is used exactly as it is typed. Wildcard characters are not supported. If the path includes escape
+    characters, enclose each escape character in single quotation marks, to instruct PowerShell not to
+    interpret any characters as escape sequences.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Causes the cmdlet to output a list of the files expanded from the archive.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path to the archive file.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Archive.Expand-Archive
+name: Expand-Archive
+description: |-
+  The `Expand-Archive` cmdlet extracts files from a specified zipped archive file to a specified
+  destination folder. An archive file allows multiple files to be packaged, and optionally compressed,
+  into a single zipped file for easier distribution and storage.
+metadata:
+  external help file: Microsoft.PowerShell.Archive-help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Archive
+  ms.date: 07/17/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Expand-Archive

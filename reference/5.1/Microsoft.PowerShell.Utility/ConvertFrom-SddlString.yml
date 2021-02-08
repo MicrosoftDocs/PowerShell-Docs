@@ -1,0 +1,128 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Converts a SDDL string to a custom object.
+module: Microsoft.PowerShell.Utility
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a SDDL string to `ConvertFrom-SddlString`.
+links:
+- text: Security Descriptor Definition Language
+  href: /windows/win32/secauthz/security-descriptor-definition-language
+syntaxes:
+- ConvertFrom-SddlString [-Sddl] <String> [-Type <Object>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Convert file system access rights SDDL to a PSCustomObject'
+  code: |-
+    $acl = Get-Acl -Path C:\Windows
+    ConvertFrom-SddlString -Sddl $acl.Sddl
+  description: |-
+    The first command uses the `Get-Acl` cmdlet to get the security descriptor for the C:\Windows folder
+    and saves it in the variable.
+
+    The second command uses the `ConvertFrom-SddlString` cmdlet to get the text representation of the
+    SDDL string, contained in the Sddl property of the object representing the security descriptor.
+  summary: ""
+- title: 'Example 2: Convert registry access rights SDDL to a PSCustomObject'
+  code: |-
+    $acl = Get-Acl HKLM:\SOFTWARE\Microsoft\
+    ConvertFrom-SddlString -Sddl $acl.Sddl -Type RegistryRights
+  description: |-
+    The first command uses the `Get-Acl` cmdlet to get the security descriptor for the
+    HKLM:\SOFTWARE\Microsoft\ key and saves it in the variable.
+
+    The second command uses the `ConvertFrom-SddlString` cmdlet to get the text representation of the
+    SDDL string, contained in the Sddl property of the object representing the security descriptor.
+
+    It uses the `-Type` parameter to specify that SDDL string represents a registry security descriptor.
+  summary: ""
+- title: 'Example 3: Convert registry access rights SDDL to a PSCustomObject by using ConvertFrom-SddlString with and without the `-Type` parameter'
+  code: |-
+    $acl = Get-Acl -Path HKLM:\SOFTWARE\Microsoft\
+
+    ConvertFrom-SddlString -Sddl $acl.Sddl | Foreach-Object {$_.DiscretionaryAcl[0]}
+
+    BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateDirectories, Delete, ExecuteKey, FullControl, GenericExecute, GenericWrite, ListDirectory, ReadExtendedAttributes, ReadPermissions, TakeOwnership, Traverse, WriteData, WriteExtendedAttributes, WriteKey)
+
+    ConvertFrom-SddlString -Sddl $acl.Sddl -Type RegistryRights | Foreach-Object {$_.DiscretionaryAcl[0]}
+
+    BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateLink, CreateSubKey, Delete, EnumerateSubKeys, ExecuteKey, FullControl, GenericExecute, GenericWrite, Notify, QueryValues, ReadPermissions, SetValue, TakeOwnership, WriteKey)
+  description: |-
+    The first command uses the `Get-Acl` cmdlet to get the security descriptor for the
+    HKLM:\SOFTWARE\Microsoft\ key and saves it in the variable.
+
+    The second command uses the `ConvertFrom-SddlString` cmdlet to get the text representation of the
+    SDDL string, contained in the Sddl property of the object representing the security descriptor.
+
+    It doesn't use the `-Type` parameter, so the access rights shown are for file system.
+
+    The third command uses the `ConvertFrom-SddlString` cmdlet with the `-Type` parameter, so the access
+    rights returned are for registry.
+  summary: ""
+- title: 'Example 4: Convert Active Directory access rights SDDL to a PSCustomObject'
+  code: |-
+    $user = [ADSI]"LDAP://CN=username,CN=Users,DC=domain,DC=com"
+    ConvertFrom-SddlString $user.psbase.ObjectSecurity.Sddl -Type ActiveDirectoryRights
+  description: |-
+    The first command uses Active Directory Service Interfaces (ADSI) to get the user object and saves it in the variable.
+
+    The second command uses the `ConvertFrom-SddlString` cmdlet to get text representation of the SDDL string, contained in the Sddl property of the object representing the security descriptor.
+
+    It uses the `-Type` parameter to specify that SDDL string represents an Active Directory security descriptor.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Sddl
+  isRequired: true
+  description: |+
+    Specifies the string representing the security descriptor in SDDL syntax.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  name: Type
+  description: |+
+    Specifies the type of rights that SDDL string represents.
+
+    The acceptable values for this parameter are:
+
+    - FileSystemRights
+    - RegistryRights
+    - ActiveDirectoryRights
+    - MutexRights
+    - SemaphoreRights
+    - CryptoKeyRights
+    - EventWaitHandleRights
+
+    By default cmdlet uses file system rights.
+
+    CryptoKeyRights and ActiveDirectoryRights are not supported in PowerShell Core.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: FileSystemRights, RegistryRights, ActiveDirectoryRights, MutexRights, SemaphoreRights, CryptoKeyRights, EventWaitHandleRights
+uid: Microsoft.PowerShell.Utility.ConvertFrom-SddlString
+name: ConvertFrom-SddlString
+description: |-
+  The `ConvertFrom-SddlString` cmdlet converts a Security Descriptor Definition Language string to a
+  custom **PSCustomObject** object with the following properties: Owner, Group, DiscretionaryAcl,
+  SystemAcl and RawDescriptor.
+
+  Owner, Group, DiscretionaryAcl and SystemAcl properties contain a readable text representation of
+  the access rights specified in a SDDL string.
+
+  This cmdlet was introduced in PowerShell 5.0.
+metadata:
+  external help file: Microsoft.PowerShell.Utility-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-sddlstring?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: ConvertFrom-SddlString

@@ -1,0 +1,67 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Enables the Microsoft-Windows-PowerShell event provider logs.
+module: PSDiagnostics
+notes: |-
+  This cmdlet uses the `Get-LogProperties` and `Set-LogProperties` cmdlets.
+
+  You must run this cmdlet from an elevated PowerShell session.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Get-LogProperties
+  href: Get-LogProperties.yml
+- text: Set-LogProperties
+  href: Set-LogProperties.yml
+- text: Disable-PSTrace
+  href: Disable-PSTrace.yml
+syntaxes:
+- Enable-PSTrace [-Force] [-AnalyticOnly] [<CommonParameters>]
+examples:
+- title: 'Example 1: Enable the Analytic event log for PowerShell'
+  code: |-
+    Enable-PSTrace -AnalyticOnly
+  description: ""
+  summary: |+
+    The following example enables only the Analytic event log of the Microsoft-Windows-PowerShell
+    provider.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AnalyticOnly
+  description: |+
+    When this parameter is used, the cmdlet enables the Analytic event log of the
+    Microsoft-Windows-PowerShell provider. The Operational event log is not changed.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Used to force the change without prompting.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: PSDiagnostics.Enable-PSTrace
+name: Enable-PSTrace
+description: |-
+  This cmdlet enables the Operational and Analytic event logs of the Microsoft-Windows-PowerShell
+  event provider.
+
+  You must run this cmdlet from an elevated PowerShell session.
+metadata:
+  external help file: PSDiagnostics-help.xml
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 11/27/2018
+  online version: https://docs.microsoft.com/powershell/module/psdiagnostics/enable-pstrace?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Enable-PSTrace

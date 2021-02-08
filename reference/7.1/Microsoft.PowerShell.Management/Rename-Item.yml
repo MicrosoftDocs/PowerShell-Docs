@@ -1,0 +1,232 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Renames an item in a PowerShell provider namespace.
+module: Microsoft.PowerShell.Management
+notes: |-
+  `Rename-Item` is designed to work with the data exposed by any provider. To list the providers
+  available in your session, type `Get-PsProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains a path to this cmdlet.
+outputs:
+- name: <xref href="None or an object that represents the renamed item." data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet generates an object that represents the renamed item, if you specify the **PassThru**
+    parameter. Otherwise, this cmdlet does not generate any output.
+links:
+- text: Clear-Item
+  href: Clear-Item.yml
+- text: Copy-Item
+  href: Copy-Item.yml
+- text: Get-ChildItem
+  href: Get-ChildItem.yml
+- text: Get-Item
+  href: Get-Item.yml
+- text: Invoke-Item
+  href: Invoke-Item.yml
+- text: Move-Item
+  href: Move-Item.yml
+- text: New-Item
+  href: New-Item.yml
+- text: Remove-Item
+  href: Remove-Item.yml
+- text: Rename-ItemProperty
+  href: Rename-ItemProperty.yml
+- text: Set-Item
+  href: Set-Item.yml
+- text: about_Providers
+  href: ../Microsoft.PowerShell.Core/About/about_Providers.md
+syntaxes:
+- >-
+  Rename-Item [-Path] <String> [-NewName] <String> [-Force] [-PassThru] [-Credential <PSCredential>]
+
+   [-WhatIf] [-Confirm]  [<CommonParameters>]
+- >-
+  Rename-Item -LiteralPath <String> [-NewName] <String> [-Force] [-PassThru]
+
+   [-Credential <PSCredential>] [-WhatIf] [-Confirm]  [<CommonParameters>]
+examples:
+- title: 'Example 1: Rename a file'
+  code: |-
+    Rename-Item -Path "c:\logfiles\daily_file.txt" -NewName "monday_file.txt"
+  description: ""
+  summary: |+
+    This command renames the file `daily_file.txt` to `monday_file.txt`.
+
+- title: 'Example 2: Rename and move an item'
+  code: |-
+    Rename-Item -Path "project.txt" -NewName "d:\archive\old-project.txt"
+
+    Rename-Item : can't rename because the target specified represents a path or device name.
+    At line:1 char:12
+    + Rename-Item <<<<  -path project.txt -NewName d:\archive\old-project.txt
+    + CategoryInfo          : InvalidArgument: (:) [Rename-Item], PS>  Move-Item -Path "project.txt" -De
+    stination "d:\archive\old-project.txt"
+  description: ""
+  summary: |+
+    You can't use `Rename-Item` to both rename and move an item. Specifically, you can't supply a path
+    for the value of the **NewName** parameter, unless the path is identical to the path specified in
+    the **Path** parameter. Otherwise, only a new name is permitted.
+
+    This example attempts to rename the `project.txt` file in the current directory to `old-project.txt`
+    in the `D:\Archive` directory. The result is the error shown in the output.
+
+- title: 'Example 3: Rename a registry key'
+  code: |-
+    Rename-Item -Path "HKLM:\Software\MyCompany\Advertising" -NewName "Marketing"
+  description: ""
+  summary: |+
+    This example renames a registry key from **Advertising** to **Marketing**. When the command is complete,
+    the key is renamed, but the registry entries in the key are unchanged.
+
+- title: 'Example 4: Rename multiple files'
+  code: |-
+    Get-ChildItem *.txt
+
+    Directory: C:\temp\files
+
+    Mode                LastWriteTime         Length Name
+    ----                -------------         ------ ----
+    -a----        10/3/2019   7:47 AM           2918 Friday.TXT
+    -a----        10/3/2019   7:46 AM           2918 Monday.Txt
+    -a----        10/3/2019   7:47 AM           2918 Wednesday.txt
+
+    Get-ChildItem *.txt | Rename-Item -NewName { $_.Name -replace '.txt','.log' }
+    Get-ChildItem *.log
+
+    Directory: C:\temp\files
+
+    Mode                LastWriteTime         Length Name
+    ----                -------------         ------ ----
+    -a----        10/3/2019   7:47 AM           2918 Friday.log
+    -a----        10/3/2019   7:46 AM           2918 Monday.log
+    -a----        10/3/2019   7:47 AM           2918 Wednesday.log
+  description: |-
+    The `Get-ChildItem` cmdlet gets all the files in the current folder that have a `.txt` file
+    extension then pipes them to `Rename-Item`. The value of **NewName** is a script block that runs
+    before the value is submitted to the **NewName** parameter.
+
+    In the script block, the `$_` automatic variable represents each file object as it comes to the
+    command through the pipeline. The script block uses the `-replace` operator to replace the file
+    extension of each file with `.log`. Notice that matching using the `-replace` operator is not case
+    sensitive.
+  summary: |+
+    This example renames all the `*.txt` files in the current directory to `*.log`.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    > [!NOTE]
+    > This parameter is not supported by any providers installed with PowerShell. To impersonate another
+    > user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.yml).
+
+  defaultValue: Current user
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the cmdlet to rename items that can't otherwise be changed, such as hidden or read-only files
+    or read-only aliases or variables. The cmdlet can't change constant aliases or variables.
+    Implementation varies from provider to provider. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+
+    Even using the **Force** parameter, the cmdlet can't override security restrictions.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+    typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
+    it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
+    as escape sequences.
+
+    For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath, LP
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: NewName
+  isRequired: true
+  description: |+
+    Specifies the new name of the item. Enter only a name, not a path and name. If you enter a path that
+    differs from the path that is specified in the **Path** parameter, `Rename-Item` generates an error.
+    To rename and move an item, use `Move-Item`.
+
+    You can't use wildcard characters in the value of the **NewName** parameter. To specify a name for
+    multiple files, use the **Replace** operator in a regular expression. For more information about the
+    Replace operator, see [about_Comparison_Operators](../Microsoft.PowerShell.Core/About/about_Comparison_Operators.md).
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object that represents the item to the pipeline. By default, this cmdlet does not
+    generate any output.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path of the item to rename.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Rename-Item
+name: Rename-Item
+description: |-
+  The `Rename-Item` cmdlet changes the name of a specified item. This cmdlet does not affect the
+  content of the item being renamed.
+
+  You can't use `Rename-Item` to move an item, such as by specifying a path together with the new
+  name. To move and rename an item, use the `Move-Item` cmdlet.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 10/03/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-item?view=powershell-7.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Rename-Item

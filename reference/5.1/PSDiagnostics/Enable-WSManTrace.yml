@@ -1,0 +1,54 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Start a logging session with the WSMan providers enabled.
+module: PSDiagnostics
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Event Tracing
+  href: /windows/desktop/ETW/event-tracing-portal
+- text: Start-Trace
+  href: start-trace.yml
+- text: Disable-WSManTrace
+  href: Disable-WSManTrace.yml
+syntaxes:
+- Enable-WSManTrace [<CommonParameters>]
+examples:
+- title: 'Example 1: Start a WSMan logging session.'
+  code: |-
+    Enable-WSManTrace
+  description: ""
+  summary: ""
+uid: PSDiagnostics.Enable-WSManTrace
+name: Enable-WSManTrace
+description: |-
+  This cmdlet starts a logging session with the WSMan providers enabled. The following event providers are enabled:
+
+  - Event Forwarding
+  - IpmiDrv
+  - IPMIPrv
+  - WinRM
+  - WinrsCmd
+  - WinrsExe
+  - WinrsMgr
+  - WSManProvHost
+
+  The session is named 'wsmlog'.
+
+  This cmdlet uses the `Start-Trace` cmdlet.
+
+  You must run this cmdlet from an elevated PowerShell session.
+metadata:
+  external help file: PSDiagnostics-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 11/29/2018
+  online version: https://docs.microsoft.com/powershell/module/psdiagnostics/enable-wsmantrace?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Enable-WSManTrace

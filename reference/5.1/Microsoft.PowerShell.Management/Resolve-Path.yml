@@ -1,0 +1,173 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Resolves the wildcard characters in a path, and displays the path contents.
+module: Microsoft.PowerShell.Management
+notes: |-
+  The `*-Path` cmdlets work with the FileSystem, Registry, and Certificate providers.
+
+  `Resolve-Path` is designed to work with any provider. To list the providers available in your
+  session, type `Get-PSProvider`. For more information, see
+  [about_providers](../microsoft.powershell.core/about/about_providers.md).
+
+  `Resolve-Path` only resolves existing paths. It cannot be used to resolve a location that does not
+  exist yet.
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains a path to this cmdlet.
+outputs:
+- name: <xref href="System.Management.Automation.PathInfo, System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    Returns a **PathInfo** object. Returns a string value for the resolved path if you specify the
+    **Relative** parameter.
+links:
+- text: Convert-Path
+  href: Convert-Path.yml
+- text: Join-Path
+  href: Join-Path.yml
+- text: Split-Path
+  href: Split-Path.yml
+- text: Test-Path
+  href: Test-Path.yml
+syntaxes:
+- Resolve-Path [-Path] <String[]> [-Relative] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
+- >-
+  Resolve-Path -LiteralPath <String[]> [-Relative] [-Credential <PSCredential>] [-UseTransaction]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Resolve the home folder path'
+  code: |-
+    PS C:\> Resolve-Path ~
+
+    Path
+    ----
+    C:\Users\User01
+  description: ""
+  summary: |+
+    The tilde character (~) is shorthand notation for the current user's home folder. This example
+    shows `Resolve-Path` returning the fully qualified path value.
+
+- title: 'Example 2: Resolve the path of the Windows folder'
+  code: |-
+    PS C:\> Resolve-Path -Path "windows"
+
+    Path
+    ----
+    C:\Windows
+  description: |-
+    When run from the root of the C: drive, this command returns the path of the Windows folder in the
+    C: drive.
+  summary: ""
+- title: 'Example 3: Get all paths in the Windows folder'
+  code: |-
+    PS C:\> "C:\windows\*" | Resolve-Path
+  description: |-
+    This command returns all of the folders in the C:\Windows folder. The command uses a pipeline
+    operator (|) to send a path string to `Resolve-Path`.
+  summary: ""
+- title: 'Example 4: Resolve a UNC path'
+  code: |-
+    PS C:\> Resolve-Path -Path "\\Server01\public"
+  description: |-
+    This command resolves a Universal Naming Convention (UNC) path and returns the shares in the path.
+  summary: ""
+- title: 'Example 5: Get relative paths'
+  code: |-
+    PS C:\> Resolve-Path -Path "c:\prog*" -Relative
+
+    .\Program Files
+    .\Program Files (x86)
+    .\programs.txt
+  description: |-
+    This command returns relative paths for the directories at the root of the C: drive.
+  summary: ""
+- title: 'Example 6: Resolve a path containing brackets'
+  code: |-
+    PS C:\> Resolve-Path -LiteralPath 'test[xml]'
+  description: ""
+  summary: |+
+    This example uses the **LiteralPath** parameter to resolve the path of the Test\[xml\] subfolder.
+    Using **LiteralPath** causes the brackets to be treated as normal characters rather than a regular
+    expression.
+
+parameters:
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user account that has permission to perform this action. The default is the current
+    user.
+
+    Type a user name, such as User01 or Domain01\User01, or pass a **PSCredential** object. You can
+    create a **PSCredential** object using the `Get-Credential` cmdlet. If you type a user name, this
+    cmdlet prompts you for a password.
+
+    This parameter is not supported by any providers installed with PowerShell.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies the path to be resolved. The value of the **LiteralPath** parameter is used exactly as
+    typed. No characters are interpreted as wildcard characters. If the path includes escape characters,
+    enclose it in single quotation marks. Single quotation marks tell PowerShell not to interpret any
+    characters as escape sequences.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the PowerShell path to resolve. This parameter is required. You can also pipe a path
+    string to `Resolve-Path`. Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Relative
+  description: |+
+    Indicates that this cmdlet returns a relative path.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: UseTransaction
+  description: |+
+    Includes the command in the active transaction.
+    This parameter is valid only when a transaction is in progress.
+    For more information, see about_transactions.
+
+  defaultValue: "False"
+  position: Named
+  aliases: usetx
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Resolve-Path
+name: Resolve-Path
+description: |-
+  The `Resolve-Path` cmdlet displays the items and containers that match the wildcard pattern at the
+  location specified. The match can include files, folders, registry keys, or any other object
+  accessible from a PSDrive provider.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 03/12/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Resolve-Path

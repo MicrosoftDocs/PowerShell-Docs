@@ -1,0 +1,167 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Saves command output in a file or variable and also sends it down the pipeline.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  You can also use the `Out-File` cmdlet or the redirection operator, both of which save the output in
+  a file but do not send it down the pipeline.
+
+  Beginning in PowerShell 6, `Tee-Object` uses BOM-less UTF-8 encoding when it writes to files. If you
+  need a different encoding, use the `Out-File` cmdlet with the **Encoding** parameter.
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe objects to `Tee-Object`.
+outputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  description: |-
+    `Tee-Object` returns the object that it redirects.
+links:
+- text: Compare-Object
+  href: Compare-Object.yml
+- text: ForEach-Object
+  href: ../Microsoft.PowerShell.Core/ForEach-Object.yml
+- text: Group-Object
+  href: Group-Object.yml
+- text: Measure-Object
+  href: Measure-Object.yml
+- text: New-Object
+  href: New-Object.yml
+- text: Select-Object
+  href: Select-Object.yml
+- text: Sort-Object
+  href: Sort-Object.yml
+- text: Where-Object
+  href: ../Microsoft.PowerShell.Core/Where-Object.yml
+- text: about_Redirection
+  href: ../Microsoft.PowerShell.Core/About/about_Redirection.md
+syntaxes:
+- Tee-Object [-InputObject <PSObject>] [-FilePath] <String> [-Append] [<CommonParameters>]
+- Tee-Object [-InputObject <PSObject>] -LiteralPath <String> [<CommonParameters>]
+- Tee-Object [-InputObject <PSObject>] -Variable <String> [<CommonParameters>]
+examples:
+- title: 'Example 1: Output processes to a file and to the console'
+  code: |-
+    Get-Process | Tee-Object -FilePath "C:\Test1\testfile2.txt"
+
+    Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)    Id ProcessName
+    -------  ------    -----      ----- -----   ------    -- -----------
+    83       4     2300       4520    39     0.30    4032 00THotkey
+    272      6     1400       3944    34     0.06    3088 alg
+    81       3      804       3284    21     2.45     148 ApntEx
+    81       4     2008       5808    38     0.75    3684 Apoint
+    ...
+  description: ""
+  summary: |+
+    This example gets a list of the processes running on the computer and sends the result to a file.
+    Because a second path is not specified, the processes are also displayed in the console.
+
+- title: 'Example 2: Output processes to a variable and `Select-Object`'
+  code: |-
+    Get-Process notepad | Tee-Object -Variable proc | Select-Object processname,handles
+
+    ProcessName                              Handles
+    -----------                              -------
+    notepad                                  43
+    notepad                                  37
+    notepad                                  38
+    notepad                                  38
+  description: |-
+    The `Select-Object` cmdlet selects the **ProcessName** and **Handles** properties. Note that the
+    `$proc` variable includes the default information returned by `Get-Process`.
+  summary: |+
+    This example gets a list of the processes running on the computer, saves them to the `$proc`
+    variable, and pipes them to `Select-Object`.
+
+- title: 'Example 3: Output system files to two log files'
+  code: |-
+    Get-ChildItem -Path D: -File -System -Recurse |
+      Tee-Object -FilePath "c:\test\AllSystemFiles.txt" -Append |
+        Out-File c:\test\NewSystemFiles.txt
+  description: |-
+    The command uses the `Get-ChildItem` cmdlet to do a recursive search for system files on the D:
+    drive. A pipeline operator (|) sends the list to `Tee-Object`, which appends the list to the
+    AllSystemFiles.txt file and passes the list down the pipeline to the `Out-File` cmdlet, which saves
+    the list in the NewSystemFiles.txt file.
+  summary: |+
+    This example saves a list of system files in a two log files, a cumulative file and a current file.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Append
+  description: |+
+    Indicates that the cmdlet appends the output to the specified file. Without this parameter, the new
+    content replaces any existing content in the file without warning.
+
+    This parameter was introduced in Windows PowerShell 3.0.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: FilePath
+  isRequired: true
+  description: |+
+    Specifies a file that this cmdlet saves the object to Wildcard characters are permitted, but must
+    resolve to a single file.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: "0"
+  aliases: Path
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  name: InputObject
+  description: |+
+    Specifies the object to be saved and displayed. Enter a variable that contains the objects or type a
+    command or expression that gets the objects. You can also pipe an object to `Tee-Object`.
+
+    When you use the **InputObject** parameter with `Tee-Object`, instead of piping command results to
+    `Tee-Object`, the **InputObject** value is treated as a single object even if the value is a
+    collection.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies a file that this cmdlet saves the object to. Unlike **FilePath**, the value of the
+    **LiteralPath** parameter is used exactly as it is typed. No characters are interpreted as
+    wildcards. If the path includes escape characters, enclose it in single quotation marks. Single
+    quotation marks tell PowerShell not to interpret any characters as escape sequences.
+
+  defaultValue: None
+  position: Named
+  aliases: PSPath, LP
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Variable
+  isRequired: true
+  description: |+
+    Specifies a variable that the cmdlet saves the object to. Enter a variable name without the
+    preceding dollar sign (`$`).
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Tee-Object
+name: Tee-Object
+description: |-
+  The `Tee-Object` cmdlet redirects output, that is, it sends the output of a command in two
+  directions (like the letter T). It stores the output in a file or variable and also sends it down
+  the pipeline. If `Tee-Object` is the last command in the pipeline, the command output is displayed
+  at the prompt.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/tee-object?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Tee-Object

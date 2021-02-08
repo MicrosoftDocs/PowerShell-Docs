@@ -1,0 +1,113 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Starts debugging of all DSC resources.
+module: PSDesiredStateConfiguration
+notes: ""
+links:
+- text: Windows PowerShell Desired State Configuration Overview
+  href: /powershell/scripting/dsc/overview/dscforengineers
+- text: Disable-DscDebug
+  href: Disable-DscDebug.yml
+- text: Get-DscConfiguration
+  href: Get-DscConfiguration.yml
+- text: Get-DscConfigurationStatus
+  href: Get-DscConfigurationStatus.yml
+- text: Restore-DscConfiguration
+  href: Restore-DscConfiguration.yml
+- text: Start-DscConfiguration
+  href: Start-DscConfiguration.yml
+- text: Test-DscConfiguration
+  href: Test-DscConfiguration.yml
+syntaxes:
+- >-
+  Enable-DscDebug [-BreakAll] [-CimSession <CimSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Start debugging'
+  code: |-
+    PS C:\> Enable-DscDebug -BreakAll
+  description: |-
+    This command indicates to the DSC engine or LCM to start resource debugging.
+    The next time the configuration is run, the process enters the debugger.
+  summary: ""
+- title: 'Example 2: Start remote debugging'
+  code: |-
+    PS C:\> Enable-DscDebug -BreakAll -CimSession DeploymentServer
+  description: |-
+    This command indicates to the DSC engine of the remote computer to start resource debugging.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AsJob
+  description: |+
+    Indicates that this cmdlet runs the command as a background job.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: BreakAll
+  description: |+
+    Indicates that all resources enter the debugger when a configuration runs.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.Management.Infrastructure.CimSession" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: CimSession
+  description: |+
+    Runs the cmdlet in a remote session or on a remote computer.
+    Enter a computer name or a session object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet.
+    The default is the current session on the local computer.
+
+  defaultValue: None
+  position: Named
+  aliases: Session
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: ThrottleLimit
+  description: |+
+    Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
+    If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
+    The throttle limit applies only to the current cmdlet, not to the session or to the computer.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: PSDesiredStateConfiguration.Enable-DscDebug
+name: Enable-DscDebug
+description: |-
+  The **Enable-DscDebug** cmdlet enables Windows PowerShell Desired State Configuration (DSC) resource debugging by the DSC engine, which is also known as the Local Configuration Manager (LCM).
+  By default, all resource instances break into the debugger.
+metadata:
+  external help file: Enable-DscDebug.cdxml-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSDesiredStateConfiguration
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/enable-dscdebug?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Enable-DscDebug

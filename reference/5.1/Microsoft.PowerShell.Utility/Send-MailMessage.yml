@@ -1,0 +1,285 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Sends an email message.
+module: Microsoft.PowerShell.Utility
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe the path and file names of attachments to `Send-MailMessage`.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+links:
+- text: about_Preference_Variables
+  href: ../Microsoft.PowerShell.Core/About/about_Preference_Variables.md
+- text: Get-Credential
+  href: ../Microsoft.PowerShell.Security/Get-Credential.yml
+syntaxes:
+- >-
+  Send-MailMessage [-To] <string[]> [-Subject] <string> [[-Body] <string>] [[-SmtpServer] <string>]
+
+   -From <string> [-Attachments <string[]>] [-Bcc <string[]>] [-BodyAsHtml] [-Encoding <Encoding>]
+
+   [-Cc <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
+
+   [-Priority <MailPriority>] [-Credential <pscredential>] [-UseSsl] [-Port <int>]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Send an email from one person to another person'
+  code: |-
+    Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>' -Subject 'Test mail'
+  description: |-
+    The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
+    **To** parameter specifies the message's recipient. The **Subject** parameter uses the text string
+    **Test mail** as the message because the optional **Body** parameter is not included.
+  summary: |+
+    This example sends an email message from one person to another person.
+
+    The **From**, **To**, and **Subject** parameters are required by `Send-MailMessage`. This example
+    uses the default `$PSEmailServer` variable for the SMTP server, so the **SmtpServer** parameter is
+    not needed.
+
+- title: 'Example 2: Send an attachment'
+  code: |-
+    Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>', 'User03 <user03@fabrikam.com>' -Subject 'Sending the Attachment' -Body "Forgot to send the attachment. Sending now." -Attachments .\data.csv -Priority High -DeliveryNotificationOption OnSuccess, OnFailure -SmtpServer 'smtp.fabrikam.com'
+  description: |-
+    The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
+    **To** parameter specifies the message's recipients. The **Subject** parameter describes the content
+    of the message. The **Body** parameter is the content of the message.
+
+    The **Attachments** parameter specifies the file in the current directory that is attached to the
+    email message. The **Priority** parameter sets the message to **High** priority. The
+    **-DeliveryNotificationOption** parameter specifies two values, **OnSuccess** and **OnFailure**. The
+    sender will receive email notifications to confirm the success or failure of the message delivery.
+    The **SmtpServer** parameter sets the SMTP server to **smtp.fabrikam.com**.
+  summary: |+
+    This example sends an email message with an attachment.
+
+- title: 'Example 3: Send email to a mailing list'
+  code: |-
+    Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'ITGroup <itdept@fabrikam.com>' -Cc 'User02 <user02@fabrikam.com>' -Bcc 'ITMgr <itmgr@fabrikam.com>' -Subject "Don't forget today's meeting!" -Credential domain01\admin01 -UseSsl
+  description: |-
+    The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
+    **To** parameter specifies the message's recipients. The **Cc** parameter sends a copy of the
+    message to the specified recipient. The **Bcc** parameter sends a blind copy of the message. A blind
+    copy is an email address that is hidden from the other recipients. The **Subject** parameter is the
+    message because the optional **Body** parameter is not included.
+
+    The **Credential** parameter specifies a domain administrator's credentials are used to send the
+    message. The **UseSsl** parameter specifies that Secure Socket Layer (SSL) creates a secure
+    connection.
+  summary: |+
+    This example sends an email message to a mailing list.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Attachments
+  description: |+
+    Specifies the path and file names of files to be attached to the email message. You can use this
+    parameter or pipe the paths and file names to `Send-MailMessage`.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PsPath
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Bcc
+  description: |+
+    Specifies the email addresses that receive a copy of the mail but are not listed as recipients of
+    the message. Enter names (optional) and the email address, such as `Name <someone@fabrikam.com>`.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Body
+  description: |+
+    Specifies the content of the email message.
+
+  defaultValue: None
+  position: "2"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: BodyAsHtml
+  description: |+
+    Specifies that the value of the **Body** parameter contains HTML.
+
+  defaultValue: None
+  position: Named
+  aliases: BAH
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Cc
+  description: |+
+    Specifies the email addresses to which a carbon copy (CC) of the email message is sent. Enter names
+    (optional) and the email address, such as `Name <someone@fabrikam.com>`.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    Specifies a user account that has permission to perform this action. The default is the current
+    user.
+
+    Type a user name, such as **User01** or **Domain01\User01**. Or, enter a **PSCredential** object,
+    such as one from the `Get-Credential` cmdlet.
+
+    Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential)
+    object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).
+
+    > [!NOTE]
+    > For more information about **SecureString** data protection, see
+    > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+
+  defaultValue: Current user
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Net.Mail.DeliveryNotificationOptions" data-throw-if-not-resolved="False" />
+  name: DeliveryNotificationOption
+  description: |+
+    Specifies the delivery notification options for the email message. You can specify multiple values.
+    None is the default value. The alias for this parameter is **DNO**.
+
+    The delivery notifications are sent to the address in the **From** parameter.
+
+    The acceptable values for this parameter are as follows:
+
+    - `None`: No notification.
+    - `OnSuccess`: Notify if the delivery is successful.
+    - `OnFailure`: Notify if the delivery is unsuccessful.
+    - `Delay`: Notify if the delivery is delayed.
+    - `Never`: Never notify.
+
+  defaultValue: None
+  position: Named
+  aliases: DNO
+  parameterValueGroup: None, OnSuccess, OnFailure, Delay, Never
+- type: <xref href="System.Text.Encoding" data-throw-if-not-resolved="False" />
+  name: Encoding
+  description: |+
+    Specifies the type of encoding for the target file. The default value is `Default`.
+
+    The acceptable values for this parameter are as follows:
+
+    - `ASCII` Uses ASCII (7-bit) character set.
+    - `BigEndianUnicode` Uses UTF-16 with the big-endian byte order.
+    - `Default` Uses the encoding that corresponds to the system's active code page (usually ANSI).
+    - `OEM` Uses the encoding that corresponds to the system's current OEM code page.
+    - `Unicode` Uses UTF-16 with the little-endian byte order.
+    - `UTF7` Uses UTF-7.
+    - `UTF8` Uses UTF-8.
+    - `UTF32` Uses UTF-32 with the little-endian byte order.
+
+  defaultValue: Default
+  position: Named
+  aliases: BE
+  parameterValueGroup: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: From
+  isRequired: true
+  description: |+
+    The **From** parameter is required. This parameter specifies the sender's email address. Enter a
+    name (optional) and email address, such as `Name <someone@fabrikam.com>`.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: Port
+  description: |+
+    Specifies an alternate port on the SMTP server. The default value is 25, which is the default SMTP
+    port.
+
+  defaultValue: "25"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Net.Mail.MailPriority" data-throw-if-not-resolved="False" />
+  name: Priority
+  description: |+
+    Specifies the priority of the email message. Normal is the default. The acceptable values for this
+    parameter are Normal, High, and Low.
+
+  defaultValue: Normal
+  position: Named
+  aliases: ""
+  parameterValueGroup: Normal, High, Low
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: SmtpServer
+  description: |+
+    Specifies the name of the SMTP server that sends the email message.
+
+    The default value is the value of the `$PSEmailServer` preference variable. If the preference
+    variable is not set and this parameter is not used, the `Send-MailMessage` command fails.
+
+  defaultValue: $PSEmailServer
+  position: "3"
+  aliases: ComputerName
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Subject
+  isRequired: true
+  description: |+
+    The **Subject** parameter is required. This parameter specifies the subject of the email message.
+
+  defaultValue: None
+  position: "1"
+  aliases: sub
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: To
+  isRequired: true
+  description: |+
+    The **To** parameter is required. This parameter specifies the recipient's email address. If there
+    are multiple recipients, separate their addresses with a comma (`,`). Enter names (optional) and the
+    email address, such as `Name <someone@fabrikam.com>`.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: UseSsl
+  description: |+
+    The Secure Sockets Layer (SSL) protocol is used to establish a secure connection to the remote
+    computer to send mail. By default, SSL is not used.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Send-MailMessage
+name: Send-MailMessage
+description: |-
+  The `Send-MailMessage` cmdlet sends an email message from within PowerShell.
+
+  You must specify a Simple Mail Transfer Protocol (SMTP) server or the `Send-MailMessage` command
+  fails. Use the **SmtpServer** parameter or set the `$PSEmailServer` variable to a valid SMTP server.
+  The value assigned to `$PSEmailServer` is the default SMTP setting for PowerShell. For more
+  information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+
+  > [!WARNING]
+  > The `Send-MailMessage` cmdlet is obsolete. This cmdlet does not guarantee secure connections to
+  > SMTP servers. While there is no immediate replacement available in PowerShell, we recommend you do
+  > not use `Send-MailMessage`. For more information, see
+  > [Platform Compatibility note DE0005](https://aka.ms/SendMailMessage).
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 05/11/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Send-MailMessage

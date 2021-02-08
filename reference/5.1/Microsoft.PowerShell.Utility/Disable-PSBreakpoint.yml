@@ -1,0 +1,150 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Disables the breakpoints in the current console.
+module: Microsoft.PowerShell.Utility
+notes: ""
+inputs:
+- name: <xref href="System.Management.Automation.Breakpoint" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a breakpoint object to **Disable-PSBreakpoint**.
+outputs:
+- name: <xref href="None or System.Management.Automation.Breakpoint" data-throw-if-not-resolved="False" />
+  description: |-
+    When you use the *PassThru* parameter, **Disable-PSBreakpoint** returns an object that represents the disabled breakpoint.
+    Otherwise, this cmdlet does not generate any output.
+links:
+- text: Enable-PSBreakpoint
+  href: Enable-PSBreakpoint.yml
+- text: Get-PSBreakpoint
+  href: Get-PSBreakpoint.yml
+- text: Get-PSCallStack
+  href: Get-PSCallStack.yml
+- text: Remove-PSBreakpoint
+  href: Remove-PSBreakpoint.yml
+- text: Set-PSBreakpoint
+  href: Set-PSBreakpoint.yml
+syntaxes:
+- Disable-PSBreakpoint [-PassThru] [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+- Disable-PSBreakpoint [-PassThru] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Set a breakpoint and disable it'
+  code: |-
+    PS C:\> $B = Set-PSBreakpoint -Script "sample.ps1" -Variable "name"
+    PS C:\> $B | Disable-PSBreakpoint
+  description: |-
+    These commands disable a newly-created breakpoint.
+
+    The first command uses the Set-PSBreakpoint cmdlet to create a breakpoint on the *Name* variable in the Sample.ps1 script.
+    Then, it saves the breakpoint object in the $B variable.
+
+    The second command uses the **Disable-PSBreakpoint** cmdlet to disable the new breakpoint.
+    It uses a pipeline operator (|) to send the breakpoint object in $B to the **Disable-PSBreakpoint** cmdlet.
+
+    As a result of this command, the value of the Enabled property of the breakpoint object in $B is False.
+  summary: ""
+- title: 'Example 2: Disable a breakpoint'
+  code: |-
+    PS C:\> Disable-PSBreakpoint -Id 0
+  description: |-
+    This command disables the breakpoint with breakpoint ID 0.
+  summary: ""
+- title: 'Example 3: Create a disabled breakpoint'
+  code: |-
+    PS C:\> Disable-PSBreakpoint -Breakpoint ($B = Set-PSBreakpoint -Script "sample.ps1" -Line 5)
+    PS C:\> $B
+  description: |-
+    This command creates a new breakpoint that is disabled until you enable it.
+
+    It uses the **Disable-PSBreakpoint** cmdlet to disable the breakpoint.
+    The value of the *Breakpoint* parameter is a Set-PSBreakpoint command that sets a new breakpoint, generates a breakpoint object, and saves the object in the $B variable.
+
+    Cmdlet parameters that take objects as their values can accept a variable that contains the object or a command that gets or generates the object.
+    In this case, because **Set-PSBreakpoint** generates a breakpoint object, it can be used as the value of the *Breakpoint* parameter.
+
+    The second command displays the breakpoint object in the value of the $B variable.
+  summary: ""
+- title: 'Example 4: Disable all breakpoints in the current console'
+  code: |-
+    PS C:\> Get-PSBreakpoint | Disable-PSBreakpoint
+  description: |-
+    This command disables all breakpoints in the current console.
+    You can abbreviate this command as: "gbp | dbp".
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.Breakpoint" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Breakpoint
+  isRequired: true
+  description: |+
+    Specifies the breakpoints to disable.
+    Enter a variable that contains breakpoint objects or a command that gets breakpoint objects, such as a Get-PSBreakpoint command.
+    You can also pipe breakpoint objects to the **Disable-PSBreakpoint** cmdlet.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Id
+  isRequired: true
+  description: |+
+    Disables the breakpoints with the specified breakpoint IDs.
+    Enter the IDs or a variable that contains the IDs.
+    You cannot pipe IDs to **Disable-PSBreakpoint**.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object representing the enabled breakpoints.
+    By default, this cmdlet does not generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Disable-PSBreakpoint
+name: Disable-PSBreakpoint
+description: |-
+  The **Disable-PSBreakpoint** cmdlet disables breakpoints, which assures that they are not hit when the script runs.
+  You can use it to disable all breakpoints, or you can specify breakpoints by submitting breakpoint objects or breakpoint IDs.
+
+  Technically, this cmdlet changes the value of the Enabled property of a breakpoint object to False.
+  To re-enable a breakpoint, use the Enable-PSBreakpoint cmdlet.
+  Breakpoints are enabled by default when you create them by using the Set-PSBreakpoint cmdlet.
+
+  A breakpoint is a point in a script where execution stops temporarily so that you can examine the instructions in the script.
+  **Disable-PSBreakpoint** is one of several cmdlets designed for debugging Windows PowerShell scripts.
+  For more information about the Windows PowerShell debugger, see about_Debuggers.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/disable-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Disable-PSBreakpoint

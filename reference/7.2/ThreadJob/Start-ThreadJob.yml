@@ -1,0 +1,233 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates background jobs similar to the `Start-Job` cmdlet.
+module: ThreadJob
+notes: ""
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="ThreadJob.ThreadJob" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Start-Job
+  href: ../Microsoft.PowerShell.Core/Start-Job.yml
+- text: Stop-Job
+  href: ../Microsoft.PowerShell.Core/Stop-Job.yml
+- text: Receive-Job
+  href: ../Microsoft.PowerShell.Core/Receive-Job.yml
+syntaxes:
+- >-
+  Start-ThreadJob [-ScriptBlock] <ScriptBlock> [-Name <String>] [-InitializationScript <ScriptBlock>]
+
+   [-InputObject <PSObject>] [-ArgumentList <Object[]>] [-ThrottleLimit <Int32>]
+
+   [-StreamingHost <PSHost>] [<CommonParameters>]
+- >-
+  Start-ThreadJob [-FilePath] <String> [-Name <String>] [-InitializationScript <ScriptBlock>]
+
+   [-InputObject <PSObject>] [-ArgumentList <Object[]>] [-ThrottleLimit <Int32>]
+
+   [-StreamingHost <PSHost>] [<CommonParameters>]
+examples:
+- title: Example 1 - Create background jobs with a thread limit of 2
+  code: |-
+    Start-ThreadJob -ScriptBlock { 1..100 | % { sleep 1; "Output $_" } } -ThrottleLimit 2
+    Start-ThreadJob -ScriptBlock { 1..100 | % { sleep 1; "Output $_" } }
+    Start-ThreadJob -ScriptBlock { 1..100 | % { sleep 1; "Output $_" } }
+    Get-Job
+
+    Id   Name   PSJobTypeName   State        HasMoreData   Location     Command
+    --   ----   -------------   -----        -----------   --------     -------
+    1    Job1   ThreadJob       Running      True          PowerShell   1..100 | % { sleep 1;...
+    2    Job2   ThreadJob       Running      True          PowerShell   1..100 | % { sleep 1;...
+    3    Job3   ThreadJob       NotStarted   False         PowerShell   1..100 | % { sleep 1;...
+  description: ""
+  summary: ""
+- title: Example 2 - Compare the performance of Start-Job and Start-ThreadJob
+  code: |-
+    # start five background jobs each running 1 second
+    Measure-Command {1..5 | % {Start-Job {Start-Sleep 1}} | Wait-Job} | Select-Object TotalSeconds
+    Measure-Command {1..5 | % {Start-ThreadJob {Start-Sleep 1}} | Wait-Job} | Select-Object TotalSeconds
+
+    TotalSeconds
+    ------------
+       5.7665849
+       1.5735008
+  description: |-
+    After subtracting 1 second for execution time, you can see that `Start-Job` takes about 4.8 seconds
+    to create five jobs. `Start-ThreadJob` is 8 times faster, taking about 0.6 seconds to create five
+    jobs. The results may vary in your environment but the relative improvement should be the same.
+  summary: |+
+    This example shows the difference between `Start-Job` and `Start-ThreadJob`. The jobs run the
+    `Start-Sleep` cmdlet for 1 second. Since the jobs run in parallel, the total execution time
+    is about 1 second, plus any time required to create the jobs.
+
+- title: Example 3 - Create jobs using InputObject
+  code: |-
+    $j = Start-ThreadJob -InputObject (Get-Process pwsh) -ScriptBlock { $input | Out-String }
+    $j | Wait-Job | Receive-Job
+
+    NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+     ------    -----      -----     ------      --  -- -----------
+         94   145.80     159.02      18.31   18276   1 pwsh
+        101   163.30     222.05      29.00   35928   1 pwsh
+
+    $j = Get-Process pwsh | Start-ThreadJob -ScriptBlock { $input | Out-String }
+    $j | Wait-Job | Receive-Job
+
+    NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+     ------    -----      -----     ------      --  -- -----------
+         94   145.80     159.02      18.31   18276   1 pwsh
+        101   163.30     222.05      29.00   35928   1 pwsh
+  description: ""
+  summary: |+
+    In this example, the script block uses the `$input` variable to receive input from the
+    **InputObject** parameter. This can also be done by piping objects to `Start-ThreadJob`.
+
+- title: Example 4 - Stream job output to parent host
+  code: |-
+    PS> Start-ThreadJob -ScriptBlock { Read-Host 'Say hello'; Write-Warning 'Warning output' } -StreamingHost $Host
+
+    Id   Name   PSJobTypeName   State         HasMoreData     Location      Command
+    --   ----   -------------   -----         -----------     --------      -------
+    7    Job7   ThreadJob       NotStarted    False           PowerShell    Read-Host 'Say hello'; �
+
+    PS> Say hello: Hello
+    WARNING: Warning output
+    PS> Receive-Job -Id 7
+    Hello
+    WARNING: Warning output
+    PS>
+  description: |-
+    Notice that the prompt from `Read-Host` is displayed and you are able to type input. Then, the
+    message from `Write-Warning` is displayed. The `Receive-Job` cmdlet returns all the output from the
+    job.
+  summary: |+
+    Using the **StreamingHost** parameter you can tell a job to direct all host output to a specific
+    host. Without this parameter the output goes to the job data stream collection and doesn't appear in
+    a host console until you receive the output from the job.
+
+    For this example, the current host is passed to `Start-ThreadJob` using the `$Host` automatic
+    variable.
+
+parameters:
+- type: <xref href="System.Object" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ArgumentList
+  description: |+
+    Specifies an array of arguments, or parameter values, for the script that is specified by the
+    **FilePath** or **ScriptBlock** parameters.
+
+    **ArgumentList** must be the last parameter on the command line. All the values that follow the
+    parameter name are interpreted values in the argument list.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: FilePath
+  isRequired: true
+  description: |+
+    Specifies a script file to run as a background job. Enter the path and filename of the script. The
+    script must be on the local computer or in a folder that the local computer can access.
+
+    When you use this parameter, PowerShell converts the contents of the specified script file to a
+    script block and runs the script block as a background job.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.ScriptBlock" data-throw-if-not-resolved="False" />
+  name: InitializationScript
+  description: |+
+    Specifies commands that run before the job starts. Enclose the commands in braces (`{}`) to create
+    a script block.
+
+    Use this parameter to prepare the session in which the job runs. For example, you can use it to add
+    functions and modules to the session.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  name: InputObject
+  description: |+
+    Specifies the objects used as input to the script block. It also allows for pipeline input. Use the
+    `$input` automatic variable in the script block to access the input objects.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  description: |+
+    Specifies a friendly name for the new job. You can use the name to identify the job to other job
+    cmdlets, such as the `Stop-Job` cmdlet.
+
+    The default friendly name is "Job#", where "#" is an ordinal number that is incremented for each
+    job.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.ScriptBlock" data-throw-if-not-resolved="False" />
+  name: ScriptBlock
+  isRequired: true
+  description: |+
+    Specifies the commands to run in the background job. Enclose the commands in braces (`{}`) to create
+    a script block. Use the `$Input` automatic variable to access the value of the **InputObject**
+    parameter. This parameter is required.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.Host.PSHost" data-throw-if-not-resolved="False" />
+  name: StreamingHost
+  description: |+
+    This parameter provides a thread safe way to allow `Write-Host` output to go directly to the passed
+    in **PSHost** object. Without it, `Write-Host` output goes to the job information data stream
+    collection and doesn't appear in a host console until after the jobs finish running.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: ThrottleLimit
+  description: |+
+    This parameter limits the number of jobs running at one time. As jobs are started, they are queued
+    and wait until a thread is available in the thread pool to run the job. The default limit is 5
+    threads.
+
+    The thread pool size is global to the PowerShell session. Specifying a **ThrottleLimit** in one
+    call sets the limit for subsequent calls in the same session.
+
+  defaultValue: "5"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: ThreadJob.Start-ThreadJob
+name: Start-ThreadJob
+description: |-
+  `Start-ThreadJob` creates background jobs similar to the `Start-Job` cmdlet. The main difference is
+  that the jobs which are created run in separate threads within the local process. By default, the
+  jobs use the current working directory of the caller that started the job.
+
+  The cmdlet also supports a **ThrottleLimit** parameter to limit the number of jobs running at one
+  time. As more jobs are started, they are queued and wait until the current number of jobs drops
+  below the throttle limit.
+metadata:
+  external help file: Microsoft.PowerShell.ThreadJob.dll-Help.xml
+  Locale: en-US
+  Module Name: ThreadJob
+  ms.date: 12/05/2020
+  online version: https://docs.microsoft.com/powershell/module/threadjob/start-threadjob?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Start-ThreadJob

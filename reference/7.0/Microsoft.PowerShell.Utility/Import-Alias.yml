@@ -1,0 +1,142 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Imports an alias list from a file.
+module: Microsoft.PowerShell.Utility
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains a path to `Import-Alias`.
+outputs:
+- name: <xref href="None or System.Management.Automation.AliasInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    When you use the **Passthru** parameter, `Import-Alias` returns a **System.Management.Automation.AliasInfo** object that represents the alias.
+    Otherwise, this cmdlet does not generate any output.
+links:
+- text: Export-Alias
+  href: Export-Alias.yml
+- text: Get-Alias
+  href: Get-Alias.yml
+- text: New-Alias
+  href: New-Alias.yml
+- text: Set-Alias
+  href: Set-Alias.yml
+syntaxes:
+- Import-Alias [-Path] <String> [-Scope <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Import-Alias -LiteralPath <String> [-Scope <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Import aliases from a file'
+  code: |-
+    Import-Alias test.txt
+  description: |-
+    This command imports alias information from a file named test.txt.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Allows the cmdlet to import an alias that is already defined or is read only.
+    You can use the following command to display information about the currently-defined aliases:
+
+    `Get-Alias | Select-Object Name, Options`
+
+    If the corresponding alias is read-only, it will be displayed in the value of the **Options** property.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies the path to a file that includes exported alias information.
+    Unlike the **Path** parameter, the value of the **LiteralPath** parameter is used exactly as it is typed.
+    No characters are interpreted as wildcards.
+    If the path includes escape characters, enclose it in single quotation marks.
+    Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath, LP
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: PassThru
+  description: |+
+    Returns an object representing the item with which you are working.
+    By default, this cmdlet does not generate any output.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies the path to a file that includes exported alias information.
+    Wildcards are allowed but they must resolve to a single name.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Scope
+  description: |+
+    Specifies the scope into which the aliases are imported.
+    The acceptable values for this parameter are:
+
+    - Global
+    - Local
+    - Script
+    - A number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent)
+
+    The default is Local.
+    For more information, see about_Scopes.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Import-Alias
+name: Import-Alias
+description: |-
+  The `Import-Alias` cmdlet imports an alias list from a file.
+
+  Beginning in Windows PowerShell 3.0, as a security feature, `Import-Alias` does not overwrite existing aliases by default.
+  To overwrite an existing alias, after assuring that the contents of the alias file is safe, use the **Force** parameter.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-alias?view=powershell-7&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Import-Alias

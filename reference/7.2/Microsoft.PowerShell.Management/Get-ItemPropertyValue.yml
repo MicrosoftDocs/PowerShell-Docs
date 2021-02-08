@@ -1,0 +1,209 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets the value for one or more properties of a specified item.
+module: Microsoft.PowerShell.Management
+notes: |-
+  This cmdlet is designed to work with the data exposed by any provider. To list the providers
+  available in your session, run the `Get-PSProvider` cmdlet. For more information, see
+  [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains a path to this cmdlet.
+outputs:
+- name: <xref href="System.Boolean, System.String, System.DateTime" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns an object for each item property value that it gets.
+    The object type depends on the property value that is retrieved.
+    For example, in a file system drive, the cmdlet might return a file or folder.
+links:
+- text: Get-ItemProperty
+  href: Get-ItemProperty.yml
+- text: Clear-ItemProperty
+  href: Clear-ItemProperty.yml
+- text: Copy-ItemProperty
+  href: Copy-ItemProperty.yml
+- text: Get-PSProvider
+  href: Get-PSProvider.yml
+- text: Move-ItemProperty
+  href: Move-ItemProperty.yml
+- text: New-ItemProperty
+  href: New-ItemProperty.yml
+- text: Remove-ItemProperty
+  href: Remove-ItemProperty.yml
+- text: Rename-ItemProperty
+  href: Rename-ItemProperty.yml
+- text: Set-ItemProperty
+  href: Set-ItemProperty.yml
+- text: about_Providers
+  href: ../Microsoft.PowerShell.Core/About/about_Providers.md
+syntaxes:
+- >-
+  Get-ItemPropertyValue [[-Path] <String[]>] [-Name] <String[]> [-Filter <String>] [-Include <String[]>]
+
+   [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
+- >-
+  Get-ItemPropertyValue -LiteralPath <String[]> [-Name] <String[]> [-Filter <String>] [-Include <String[]>]
+
+   [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get the value of the ProductID property'
+  code: |-
+    Get-ItemPropertyValue 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' -Name ProductID
+
+    94253-50000-11141-AA785
+  description: ""
+  summary: |+
+    This command gets the value of the **ProductID** property of the "\SOFTWARE\Microsoft\Windows
+    NT\CurrentVersion" object in the Windows Registry provider.
+
+- title: 'Example 2: Get the last write time of a file or folder'
+  code: |-
+    Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime
+
+    Wednesday, September 3, 2014 2:53:22 PM
+  description: ""
+  summary: |+
+    This command gets the value of the **LastWriteTime** property, or the last time a file or folder was
+    changed, from the "C:\Users\Test\Documents\ModuleToAssembly" folder, working in the FileSystem
+    provider.
+
+- title: 'Example 3: Get multiple property values of a file or folder'
+  code: |-
+    Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime,CreationTime,Root
+
+    Wednesday, September 3, 2014 2:53:22 PM
+    Wednesday, September 3, 2014 2:53:10 PM
+
+    Name              : C:\
+    Parent            :
+    Exists            : True
+    Root              : C:\
+    FullName          : C:\
+    Extension         :
+    CreationTime      : 9/1/2014 4:59:45 AM
+    CreationTimeUtc   : 9/1/2014 11:59:45 AM
+    LastAccessTime    : 9/27/2014 5:22:02 PM
+    LastAccessTimeUtc : 9/28/2014 12:22:02 AM
+    LastWriteTime     : 9/27/2014 5:22:02 PM
+    LastWriteTimeUtc  : 9/28/2014 12:22:02 AM
+    Attributes        : Hidden, System, Directory
+    BaseName          : C:\
+    Target            :
+    LinkType          :
+    Mode              : d--hs-
+  description: ""
+  summary: |+
+    This command gets the values of the **LastWriteTime**, **CreationTime**, and **Root** properties of
+    a folder. The property values are returned in the order in which you specified the property names.
+
+parameters:
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: Credential
+  description: |+
+    > [!NOTE]
+    > This parameter is not supported by any providers installed with PowerShell.
+    > To impersonate another user, or elevate your credentials when running this cmdlet,
+    > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.yml).
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Exclude
+  description: |+
+    Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+    of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+    `*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+    command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+    specifies the contents of the `C:\Windows` directory.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Filter
+  description: |+
+    Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+    provider is the only installed PowerShell provider that supports the use of filters. You can find
+    the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
+    Filters are more efficient than other parameters, because the provider applies them when the cmdlet
+    gets the objects rather than having PowerShell filter the objects after they are retrieved.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Include
+  description: |+
+    Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+    of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+    `"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+    command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+    specifies the contents of the `C:\Windows` directory.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: LiteralPath
+  isRequired: true
+  description: |+
+    Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+    typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
+    it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
+    as escape sequences.
+
+    For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: PSPath, LP
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the property or properties to retrieve.
+    Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: "1"
+  aliases: PSProperty
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Path
+  description: |+
+    Specifies the path to the item or items.
+    Wildcard characters are permitted.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Get-ItemPropertyValue
+name: Get-ItemPropertyValue
+description: |-
+  The `Get-ItemPropertyValue` gets the current value for a property that you specify when you use the
+  *Name* parameter, located in a path that you specify with either the *Path* or *LiteralPath*
+  parameters.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 05/14/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-itempropertyvalue?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-ItemPropertyValue

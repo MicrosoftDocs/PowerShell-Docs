@@ -1,0 +1,114 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Opens control panel items.
+module: Microsoft.PowerShell.Management
+notes: ""
+inputs:
+- name: <xref href="System.String, Microsoft.PowerShell.Commands.ControlPanelItem" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a name or control panel item object to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not return any output.
+links:
+- text: Get-ControlPanelItem
+  href: Get-ControlPanelItem.yml
+syntaxes:
+- Show-ControlPanelItem [-Name] <String[]> [<CommonParameters>]
+- Show-ControlPanelItem -CanonicalName <String[]> [<CommonParameters>]
+- Show-ControlPanelItem [[-InputObject] <ControlPanelItem[]>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Show a control panel item'
+  code: |-
+    Show-ControlPanelItem -Name "AutoPlay"
+  description: ""
+  summary: |+
+    This example launches the **AutoPlay** control panel item.
+
+- title: 'Example 2: Pipe a control panel item to this cmdlet'
+  code: |-
+    Get-ControlPanelItem -Name "*Firewall" | Show-ControlPanelItem
+  description: |-
+    `Get-ControlPanelItem` gets the control panel item and the `Show-ControlPanelItem` cmdlet opens
+    it.
+  summary: |+
+    This example opens the **Windows Defender Firewall** control panel item on the local computer.
+    The name of the Windows Firewall control panel item has changed over the versions of Windows. This
+    example uses a wildcard pattern to find the control panel item.
+
+- title: 'Example 3: Use a file name to open a control panel item'
+  code: |-
+    appwiz.cpl
+  description: |-
+    This method is an alternative to using a `Show-ControlPanelItem` command.
+
+    > [!NOTE]
+    > In PowerShell, you can omit the .cpl file extension for control panel files because it's included
+    > in the value of the `$env:PathExt` environment variable.
+  summary: |+
+    This example opens the **Programs and Features** control panel item by using its application name.
+
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: CanonicalName
+  isRequired: true
+  description: |+
+    Specifies control panel items by using the specified canonical names or name patterns. Wildcard
+    characters are permitted. If you enter multiple names, this cmdlet opens control panel items that
+    match any of the names, as if the items in the name list were separated by an **OR** operator.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.Commands.ControlPanelItem" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InputObject
+  description: |+
+    Specifies control panel items to open by submitting control panel item objects. Enter a variable
+    that contains control panel item objects, or type a command or expression that gets control panel
+    item objects, such as `Get-ControlPanelItem`.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies names of control panel items. Wildcard characters are permitted. If you enter multiple
+    names, this cmdlet opens control panel items that match any of the names, as if the items in the
+    name list were separated by an **OR** operator.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Management.Show-ControlPanelItem
+name: Show-ControlPanelItem
+description: |-
+  The `Show-ControlPanelItem` cmdlet opens control panel items on the local computer. You can use it
+  to open control panel items by name, category, or description, even on systems that do not have a
+  user interface. You can pipe control panel items from the `Get-ControlPanelItem` cmdlet to
+  `Show-ControlPanelItem`.
+
+  `Show-ControlPanelItem` searches only control panel items that can be opened on the system. On
+  computers that do not have **Control Panel** or **File Explorer**, `Show-ControlPanelItem` searches
+  only control panel items that can open without these components.
+
+  This cmdlet was introduced in Windows PowerShell 3.0 and works on Windows 8, Windows Server 2012,
+  and higher versions.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 04/22/2019
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/show-controlpanelitem?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Show-ControlPanelItem

@@ -1,0 +1,120 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets a list of modules on the computer that were installed by PowerShellGet.
+module: PowerShellGet
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Management.Automation.PSCustomObject" data-throw-if-not-resolved="False" />
+  description: ""
+syntaxes:
+- >-
+  Get-InstalledModule [[-Name] <String[]>] [-MinimumVersion <String>] [-RequiredVersion <String>]
+
+   [-MaximumVersion <String>] [-AllVersions] [-AllowPrerelease] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get all installed modules'
+  code: |-
+    Get-InstalledModule
+
+    Version    Name                                Type       Repository     Description
+    -------    ----                                ----       ----------     -----------
+    2.0.0      PSGTEST-UploadMultipleVersionOfP... Module     GalleryINT     Module for DAC functionality
+    1.3.5      AzureAutomationDebug                Module     PSGallery      Module for debugging Azure Automation runbooks, emulating AA native cmdlets
+    1.0.1      AzureRM.Automation                  Module     PSGallery      Microsoft Azure PowerShell - Automation service cmdlets for Azure Resource Manager
+  description: |-
+    This command gets all installed modules.
+  summary: ""
+- title: 'Example 2: Get specific versions of a module'
+  code: |-
+    Get-InstalledModule -Name "AzureRM.Automation" -MinimumVersion 1.0 -MaximumVersion 2.0
+
+    Version    Name                                Type       Repository     Description
+    -------    ----                                ----       ----------     -----------
+    1.0.1      AzureRM.Automation                  Module     PSGallery      Microsoft Azure PowerShell - Automation service cmdlets for Azure Resource Manager
+  description: |-
+    This command gets versions of the AzureRM.Automation module from version 1.0 through version 2.0.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowPrerelease
+  description: |+
+    Includes in the results modules marked as a prerelease.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllVersions
+  description: |+
+    Indicates that you want to get all available versions of a module.
+    You cannot use the **AllVersions** parameter with the **MinimumVersion**, **MaximumVersion**, or
+    **RequiredVersion** parameters.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MaximumVersion
+  description: |+
+    Specifies the maximum, or newest, version of a module to get. The **MaximumVersion** and
+    **RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same
+    command.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MinimumVersion
+  description: |+
+    Specifies the minimum version of a single module to get. The **MinimumVersion** and
+    **RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same
+    command.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Specifies an array of names of modules to get.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RequiredVersion
+  description: |+
+    Specifies the exact version of a module to get.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: PowerShellGet.Get-InstalledModule
+name: Get-InstalledModule
+description: |-
+  The `Get-InstalledModule` cmdlet gets PowerShell modules that are installed on a computer using
+  PowerShellGet. To see all modules installed on the system, use the `Get-Module -ListAvailable`
+  command.
+metadata:
+  external help file: PSModule-help.xml
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 02/27/2020
+  online version: https://docs.microsoft.com/powershell/module/powershellget/get-installedmodule?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-InstalledModule

@@ -1,0 +1,32 @@
+### YamlMime:PowershellModule
+children:
+- title: CimCmdlets
+  cmdlets:
+  - CimCmdlets.Get-CimAssociatedInstance
+  - CimCmdlets.Get-CimClass
+  - CimCmdlets.Get-CimInstance
+  - CimCmdlets.Get-CimSession
+  - CimCmdlets.Import-BinaryMiLog
+  - CimCmdlets.Invoke-CimMethod
+  - CimCmdlets.New-CimInstance
+  - CimCmdlets.New-CimSession
+  - CimCmdlets.New-CimSessionOption
+  - CimCmdlets.Register-CimIndicationEvent
+  - CimCmdlets.Remove-CimInstance
+  - CimCmdlets.Remove-CimSession
+  - CimCmdlets.Set-CimInstance
+uid: CimCmdlets
+name: CimCmdlets
+description: |-
+  Contains cmdlets that interact with Common Information Model (CIM) Servers like the Windows
+  Management Instrumentation (WMI) service.
+metadata:
+  Download Help Link: https://aka.ms/powershell71-help
+  Help Version: 7.1.0.0
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Guid: fb6cc51d-c096-4b38-b78d-0fed6277096a
+  Module Name: CimCmdlets
+  ms.date: 02/20/2019
+  schema: 2.0.0
+  title: CimCmdlets Module

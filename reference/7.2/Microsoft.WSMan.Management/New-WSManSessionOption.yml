@@ -1,0 +1,206 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates session option hash table to use as input parameters for WS-Management cmdlets.
+module: Microsoft.WSMan.Management
+notes: ""
+outputs:
+- name: <xref href="SessionOption" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Connect-WSMan
+  href: Connect-WSMan.yml
+- text: Disable-WSManCredSSP
+  href: Disable-WSManCredSSP.yml
+- text: Disconnect-WSMan
+  href: Disconnect-WSMan.yml
+- text: Enable-WSManCredSSP
+  href: Enable-WSManCredSSP.yml
+- text: Get-WSManCredSSP
+  href: Get-WSManCredSSP.yml
+- text: Get-WSManInstance
+  href: Get-WSManInstance.yml
+- text: Invoke-WSManAction
+  href: Invoke-WSManAction.yml
+- text: New-WSManInstance
+  href: New-WSManInstance.yml
+- text: Remove-WSManInstance
+  href: Remove-WSManInstance.yml
+- text: Set-WSManInstance
+  href: Set-WSManInstance.yml
+- text: Set-WSManQuickConfig
+  href: Set-WSManQuickConfig.yml
+- text: Test-WSMan
+  href: Test-WSMan.yml
+syntaxes:
+- >-
+  New-WSManSessionOption [-ProxyAccessType <ProxyAccessType>] [-ProxyAuthentication <ProxyAuthentication>]
+
+   [-ProxyCredential <PSCredential>] [-SkipCACheck] [-SkipCNCheck] [-SkipRevocationCheck] [-SPNPort <Int32>]
+
+   [-OperationTimeout <Int32>] [-NoEncryption] [-UseUTF16] [<CommonParameters>]
+examples:
+- title: 'Example 1: Create a connection that uses connection options'
+  code: |-
+    PS C:\> $a = New-WSManSessionOption -OperationTimeout 30000
+    PS C:\> Connect-WSMan -ComputerName "server01" -SessionOption $a
+    PS C:\> cd wsman:
+    PS WSMan:\>
+    PS WSMan:\> dir
+    WSManConfig: Microsoft.WSMan.Management\WSMan::WSMan
+    ComputerName                                  Type
+    ------------                                  ----
+    localhost                                     Container
+    server01                                      Container
+  description: |-
+    This example creates a connection to the remote server01 computer by using the connection options that are defined by **New-WSManSessionOption**.
+
+    The first command uses **New-WSManSessionOption** to store a set of connection setting options in the $a variable.
+    In this case, the session options set a connection time out of 30 seconds (30,000 milliseconds).
+
+    The second command uses the *SessionOption* parameter to pass the credentials that are stored in the $a variable to **Connect-WSMan**.
+    Then, **Connect-WSMan** connects to the remote server01 computer by using the specified session options.
+
+    **Connect-WSMan** is generally used in the context of the WSMan provider to connect to a remote computer, in this case the server01 computer.
+    However, you can use the cmdlet to establish connections to remote computers before you change to the WSMan provider.
+    Those connections appear in the **ComputerName** list.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NoEncryption
+  description: |+
+    Indicates that the connection does not use encryption for remote operations over HTTP.
+
+    By default, unencrypted traffic is not enabled.
+    It must be enabled in the local configuration.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: OperationTimeout
+  description: |+
+    Specifies the time-out, in milliseconds, for the WS-Management operation.
+
+  defaultValue: None
+  position: Named
+  aliases: OperationTimeoutMSec
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.WSMan.Management.ProxyAccessType" data-throw-if-not-resolved="False" />
+  name: ProxyAccessType
+  description: |+
+    Specifies the mechanism by which the proxy server is located.
+    The acceptable values for this parameter are:
+
+    - ProxyIEConfig.
+    Use the Internet Explorer proxy configuration for the current user.
+    - ProxyWinHttpConfig.
+    The WSMan client uses the proxy settings configured for WinHTTP, using the ProxyCfg.exe utility.
+    - ProxyAutoDetect.
+    Force auto-detection of a proxy server.
+    - ProxyNoProxyServer.
+    Do not use a proxy server.
+    Resolve all host names locally.
+
+    The default value is ProxyIEConfig.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ProxyIEConfig, ProxyWinHttpConfig, ProxyAutoDetect, ProxyNoProxyServer
+- type: <xref href="Microsoft.WSMan.Management.ProxyAuthentication" data-throw-if-not-resolved="False" />
+  name: ProxyAuthentication
+  description: |+
+    Specifies the authentication method to use at the proxy.
+    The acceptable values for this parameter are:
+
+    - Basic.
+    Basic is a scheme in which the user name and password are sent in clear-text to the server or proxy.
+    - Digest.
+    Digest is a challenge-response scheme that uses a server-specified data string for the challenge.
+    - Negotiate.
+    Negotiate is a challenge-response scheme that negotiates with the server or proxy to determine which scheme to use for authentication.
+    Examples are the Kerberos protocol and NTLM.
+
+    The default value is Negotiate.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Negotiate, Basic, Digest
+- type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+  name: ProxyCredential
+  description: |+
+    Specifies a user account that has permission to gain access through an intermediate Web proxy.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: SkipCACheck
+  description: |+
+    Specifies that, when it connects over HTTPS, the client does not validate that the server certificate is signed by a trusted certification authority (CA).
+    Use this option only when the remote computer is trusted by another method, for example, if the remote computer is part of a network that is physically secure and isolated or the remote computer is listed as a trusted host in the WS-Management configuration.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: SkipCNCheck
+  description: |+
+    Specifies that the certificate common name (CN) of the server does not have to match the host name of the server.
+    This is used only in remote operations using HTTPS.
+    This option should only be used for trusted computers.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: SkipRevocationCheck
+  description: |+
+    Indicates that the connection does not validate the revocation status on the server certificate.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: SPNPort
+  description: |+
+    Specifies a port number to append to the connection Service Principal Name (SPN) of the remote server.
+    An SPN is used when the authentication mechanism is Kerberos or Negotiate.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: UseUTF16
+  description: |+
+    Indicates that the connection encodes the request in UTF16 format instead of UTF8 format.
+    The default is UTF8 encoding.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.WSMan.Management.New-WSManSessionOption
+name: New-WSManSessionOption
+description: |-
+  The **New-WSManSessionOption** cmdlet creates a WSMan Session option hash table which can be passed to WSMan cmdlets:
+
+  - Get-WSManInstance
+  - Set-WSManInstance
+  - Invoke-WSManAction
+  - Connect-WSMan
+metadata:
+  external help file: Microsoft.WSMan.Management.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.WSMan.Management
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/new-wsmansessionoption?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: New-WSManSessionOption

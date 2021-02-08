@@ -1,0 +1,139 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Adds members to a local group.
+module: Microsoft.PowerShell.LocalAccounts
+notes: |-
+  The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+  system.
+
+  The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
+  follows:
+
+  - Local
+  - Active Directory
+  - Azure Active Directory group
+  - Microsoft Account
+
+  **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
+  Windows operating system. For earlier versions, the property is blank.
+inputs:
+- name: <xref href="System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a local principal, a string, or a SID to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+links:
+- text: Get-LocalGroupMember
+  href: Get-LocalGroupMember.yml
+- text: New-LocalGroup
+  href: New-LocalGroup.yml
+- text: Remove-LocalGroupMember
+  href: Remove-LocalGroupMember.yml
+syntaxes:
+- >-
+  Add-LocalGroupMember [-Group] <LocalGroup> [-Member] <LocalPrincipal[]> [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+- Add-LocalGroupMember [-Member] <LocalPrincipal[]> [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Add-LocalGroupMember [-Member] <LocalPrincipal[]> [-SID] <SecurityIdentifier> [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Add members to the Administrators group'
+  code: |-
+    Add-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
+  description: ""
+  summary: |+
+    This command adds several members to the local Administrators group. The new members include a local
+    user account, a Microsoft account, an Azure Active Directory account, and a domain group. This
+    example uses a placeholder value for the user name of an account at Outlook.com.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.Commands.LocalGroup" data-throw-if-not-resolved="False" />
+  name: Group
+  isRequired: true
+  description: |+
+    Specifies the security group to which this cmdlet adds members.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.Commands.LocalPrincipal" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Member
+  isRequired: true
+  description: |+
+    Specifies an array of users or groups that this cmdlet adds to a security group. You can specify
+    users or groups by name, security ID (SID), or **LocalPrincipal** objects.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the security group to which this cmdlet adds members.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+  name: SID
+  isRequired: true
+  description: |+
+    Specifies the security ID of the security group to which this cmdlet adds members.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.LocalAccounts.Add-LocalGroupMember
+name: Add-LocalGroupMember
+description: |-
+  The `Add-LocalGroupMember` cmdlet adds users or groups to a local security group. All the rights and
+  permissions that are assigned to a group are assigned to all members of that group.
+
+  Members of the Administrators group on a local computer have Full Control permissions on that
+  computer. Limit the number of users in the Administrators group.
+
+  If the computer is joined to a domain, you can add user accounts, computer accounts, and group
+  accounts from that domain and from trusted domains to a local group.
+
+  > [!NOTE]
+  > If the computer is joined to a domain and you try to add a local user that has the same name as a
+  > member of the domain it adds the domain member.
+metadata:
+  external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.LocalAccounts
+  ms.date: 04/09/2020
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/add-localgroupmember?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Add-LocalGroupMember

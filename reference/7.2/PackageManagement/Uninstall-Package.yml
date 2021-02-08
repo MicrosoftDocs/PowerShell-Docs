@@ -1,0 +1,325 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Uninstalls one or more software packages.
+module: PackageManagement
+notes: |-
+  Including a package provider in a command can make dynamic parameters available to a cmdlet. Dynamic
+  parameters are specific to a package provider. The `Get-Help` cmdlet lists a cmdlet's parameter sets
+  and includes the provider's parameter set. For example, `Uninstall-Package` has the
+  **PowerShellGet** parameter set that includes `-NoPathUpdate`, `AllowClobber`, and
+  `SkipPublisherCheck`.
+inputs:
+- name: <xref href="`Uninstall-Package` accepts **SoftwareIdentity** objects from the pipeline as input." data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="`Uninstall-Package` doesn't generate any output." data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: about_PackageManagement
+  href: ../Microsoft.PowerShell.Core/About/about_PackageManagement.md
+- text: Find-Package
+  href: Find-Package.yml
+- text: Get-Package
+  href: Get-Package.yml
+- text: Install-Package
+  href: Install-Package.yml
+- text: Save-Package
+  href: Save-Package.yml
+syntaxes:
+- >-
+  Uninstall-Package [-InputObject] <SoftwareIdentity[]> [-AllVersions] [-Force] [-ForceBootstrap]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Uninstall-Package [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
+
+   [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+
+   [-ProviderName <String[]>] [<CommonParameters>]
+- >-
+  Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+
+   [-Destination <String>] [-ExcludeVersion] [-Scope <String>] [-SkipDependencies]
+
+   [<CommonParameters>]
+- >-
+  Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+
+   [-Destination <String>] [-ExcludeVersion] [-Scope <String>] [-SkipDependencies]
+
+   [<CommonParameters>]
+- >-
+  Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Scope <String>]
+
+   [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber] [-SkipPublisherCheck]
+
+   [-InstallUpdate] [-NoPathUpdate] [-AllowPrereleaseVersions] [<CommonParameters>]
+- >-
+  Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Scope <String>]
+
+   [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber] [-SkipPublisherCheck]
+
+   [-InstallUpdate] [-NoPathUpdate] [-AllowPrereleaseVersions] [<CommonParameters>]
+examples:
+- title: 'Example 1: Uninstall a package'
+  code: |-
+    PS> Uninstall-Package -Name NuGet.Core
+  description: ""
+  summary: |+
+    The `Uninstall-Package` cmdlet uninstalls packages. The **Name** parameter specifies the package to
+    uninstall. If multiple versions of a package are installed, the newest version is uninstalled.
+
+- title: 'Example 2: Use the pipeline to uninstall a package'
+  code: |-
+    PS> Get-Package -Name NuGet.Core -RequiredVersion 2.14.0 | Uninstall-Package
+  description: |-
+    The `Get-Package` cmdlet uses the **Name** and **RequiredVersion** parameters to specify a package.
+    A **SoftwareIdentity** object is sent down the pipeline. The `Uninstall-Package` cmdlet receives the
+    object as an **InputObject** and removes the package.
+
+    As an alternative, the `Uninstall-Package` cmdlet can specify a value for the **InputObject**
+    parameter:
+
+    `Uninstall-Package -InputObject ( Get-Package -Name NuGet.Core -RequiredVersion 2.14.0 )`
+  summary: |+
+    `Get-Package` locates a specific package and sends the **SoftwareIdentity** object down the pipeline
+    to the `Uninsall-Package` cmdlet.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowClobber
+  description: |+
+    Overrides warning messages about conflicts with existing commands. Overwrites existing commands that
+    have the same name as commands being installed.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllowPrereleaseVersions
+  description: |+
+    Allows packages marked as prerelease to be uninstalled.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AllVersions
+  description: |+
+    Indicates that this cmdlet uninstalls all versions of the package.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Destination
+  description: |+
+    Specifies a string of the path to the input object.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ExcludeVersion
+  description: |+
+    Switch to exclude the version number in the folder path.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the command to run without asking for user confirmation.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ForceBootstrap
+  description: |+
+    Forces **PackageManagement** to automatically install the package provider for the specified
+    package.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PackageManagement.Packaging.SoftwareIdentity" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: InputObject
+  isRequired: true
+  description: |+
+    Accepts pipeline input that specifies the package's **SoftwareIdentity** object from the
+    `Get-Package` cmdlet. **InputObject** accepts the **SoftwareIdentity** object as a `Get-Package`
+    value or a variable that contains the object.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: InstallUpdate
+  description: |+
+    Indicates that `Uninstall-Package` uninstalls updates.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MaximumVersion
+  description: |+
+    Specifies the maximum allowed package version that you want to uninstall. If you don't specify this
+    parameter, `Uninstall-Package` uninstalls the package's newest version.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: MinimumVersion
+  description: |+
+    Specifies the minimum allowed package version that you want to uninstall. If you don't add this
+    parameter, `Uninstall-Package` uninstalls the package's newest version that satisfies any version
+    specified by the **MaximumVersion** parameter.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies one or more package names. Multiple package names must be separated by commas.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: NoPathUpdate
+  description: |+
+    **NoPathUpdate** only applies to the `Install-Script` cmdlet. **NoPathUpdate** is a dynamic
+    parameter added by the provider and isn't supported by `Uninstall-Package`.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: PackageManagementProvider
+  description: |+
+    Specifies the **PackageManagement** provider.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: ProviderName
+  description: |+
+    Specifies one or more package provider names to search for packages. You can get package provider
+    names by running the `Get-PackageProvider` cmdlet.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: Provider
+  parameterValueGroup: Bootstrap, NuGet, PowerShellGet
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: RequiredVersion
+  description: |+
+    Specifies the exact allowed version of the package that you want to uninstall. If you don't add this
+    parameter, `Uninstall-Package` uninstalls the package's newest version that satisfies any version
+    specified by the **MaximumVersion** parameter.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Scope
+  description: |+
+    Specifies the scope for which to uninstall the package. The acceptable values for this parameter are
+    as follows:
+
+    - CurrentUser
+    - AllUsers
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: CurrentUser, AllUsers
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: SkipDependencies
+  description: |+
+    Skips the uninstallation of software dependencies.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: SkipPublisherCheck
+  description: |+
+    Allows you to get a package version that is newer than your installed version. For example, an
+    installed package that is digitally signed by a trusted publisher but a new version isn't digitally
+    signed.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Type
+  description: |+
+    Specifies whether to search for packages with a module, a script, or both. The acceptable values for
+    this parameter are as follows:
+
+    - Module
+    - Script
+    - All
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: Module, Script, All
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if `Uninstall-Package` cmdlet is run. The cmdlet isn't run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: PackageManagement.Uninstall-Package
+name: Uninstall-Package
+description: |-
+  The `Uninstall-Package` cmdlet uninstalls one or more software packages from the local computer. To
+  find installed packages, use the `Get-Package` cmdlet.
+metadata:
+  external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+  Locale: en-US
+  Module Name: PackageManagement
+  ms.date: 05/24/2019
+  online version: https://docs.microsoft.com/powershell/module/packagemanagement/uninstall-package?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Uninstall-Package

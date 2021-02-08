@@ -1,0 +1,129 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Removes members from a local group.
+module: Microsoft.PowerShell.LocalAccounts
+notes: |-
+  * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
+
+  - Local
+  - Active Directory
+  - Azure Active Directory group
+  - Microsoft Account
+
+  **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
+inputs:
+- name: <xref href="System.Management.Automation.SecurityAccountsManager.LocalPrincipal, System.String, System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a local principal, a string, or a SID to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+links:
+- text: Add-LocalGroupMember
+  href: Add-LocalGroupMember.yml
+- text: Get-LocalGroupMember
+  href: Get-LocalGroupMember.yml
+- text: New-LocalGroup
+  href: New-LocalGroup.yml
+syntaxes:
+- >-
+  Remove-LocalGroupMember [-Group] <LocalGroup> [-Member] <LocalPrincipal[]> [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+- Remove-LocalGroupMember [-Member] <LocalPrincipal[]> [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+- >-
+  Remove-LocalGroupMember [-Member] <LocalPrincipal[]> [-SID] <SecurityIdentifier> [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+examples:
+- title: 'Example 1: Remove members from the Administrators group'
+  code: |-
+    PS C:\> Remove-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
+  description: |-
+    This command removes several members from the local Administrators group.
+    The members that this cmdlet removes include a local user account, a Microsoft account, an Azure Active Directory account, and a domain group.
+    This example uses a placeholder value for the user name of an account at Outlook.com.
+  summary: ""
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.Commands.LocalGroup" data-throw-if-not-resolved="False" />
+  name: Group
+  isRequired: true
+  description: |+
+    Specifies the security group from which this cmdlet removes members.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.PowerShell.Commands.LocalPrincipal" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Member
+  isRequired: true
+  description: |+
+    Specifies an array of users or groups that this cmdlet removes from a security group.
+    You can specify users or groups by name, security ID (SID), or **LocalPrincipal** objects.
+    Specify SID strings in S-R-I-S-S .
+    . .
+    format.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    Specifies the name of the security group from which this cmdlet removes members.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+  name: SID
+  isRequired: true
+  description: |+
+    Specifies the security ID of the security group from which this cmdlet removes members.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs.
+    The cmdlet is not run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.LocalAccounts.Remove-LocalGroupMember
+name: Remove-LocalGroupMember
+description: |-
+  The **Remove-LocalGroupMember** cmdlet removes users or groups from a local group.
+
+  > [!NOTE]
+  > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+  > system.
+metadata:
+  external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.LocalAccounts
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/remove-localgroupmember?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Remove-LocalGroupMember

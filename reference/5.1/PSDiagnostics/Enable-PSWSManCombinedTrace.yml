@@ -1,0 +1,59 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Start a logging session with the WSMan and PowerShell providers enabled.
+module: PSDiagnostics
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Event Tracing
+  href: /windows/desktop/ETW/event-tracing-portal
+- text: Start-Trace
+  href: start-trace.yml
+- text: Disable-PSWSManCombinedTrace
+  href: Disable-PSWSManCombinedTrace.yml
+syntaxes:
+- Enable-PSWSManCombinedTrace [-DoNotOverwriteExistingTrace] [<CommonParameters>]
+examples:
+- title: 'Example 1: Start a combined logging session'
+  code: |-
+    Enable-PSWSManCombinedTrace
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+  name: DoNotOverwriteExistingTrace
+  description: |+
+    By default, the events are written to "$pshome\Traces\PSTrace.etl". When this parameter is used,
+    the cmdlet creates a unique filename: "$pshome\Traces\PSTrace_{guid}.etl"
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: PSDiagnostics.Enable-PSWSManCombinedTrace
+name: Enable-PSWSManCombinedTrace
+description: |-
+  This cmdlet starts a logging session with the following PowerShell providers enabled:
+
+  - Microsoft-Windows-PowerShell
+  - Microsoft-Windows-WinRM
+
+  The session is named 'PSTrace'.
+
+  This cmdlet uses the `Start-Trace` cmdlet.
+
+  You must run this cmdlet from an elevated PowerShell session.
+metadata:
+  external help file: PSDiagnostics-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 11/29/2018
+  online version: https://docs.microsoft.com/powershell/module/psdiagnostics/enable-pswsmancombinedtrace?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Enable-PSWSManCombinedTrace

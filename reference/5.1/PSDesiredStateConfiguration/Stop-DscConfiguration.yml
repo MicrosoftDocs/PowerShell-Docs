@@ -1,0 +1,142 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Stops a configuration job that is running.
+module: PSDesiredStateConfiguration
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Get-CimSession
+  href: ../CimCmdlets/Get-CimSession.yml
+- text: Get-DscConfiguration
+  href: Get-DscConfiguration.yml
+- text: Get-DscConfigurationStatus
+  href: Get-DscConfigurationStatus.yml
+- text: New-CimSession
+  href: ../CimCmdlets/New-CimSession.yml
+- text: Restore-DscConfiguration
+  href: Restore-DscConfiguration.yml
+- text: Start-DscConfiguration
+  href: Start-DscConfiguration.yml
+- text: Test-DscConfiguration
+  href: Test-DscConfiguration.yml
+- text: Update-DscConfiguration
+  href: Update-DscConfiguration.yml
+- text: Windows PowerShell Desired State Configuration Overview
+  href: /powershell/scripting/dsc/overview/overview
+syntaxes:
+- >-
+  Stop-DscConfiguration [-Force] [-CimSession <CimSession[]>] [-ThrottleLimit <Int32>] [-AsJob]
+
+   [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Stop a configuration job'
+  code: |-
+    $Session = New-CimSession -ComputerName Server01 -Credential ACCOUNTS\User01
+    Stop-DscConfiguration -CimSession $Session
+  description: |-
+    `New-CimSession` uses the **ComputerName** parameter to specify the Server01 computer. The
+    **Credential** parameter specifies the user account. The **CimSession** object is stored in the
+    `$Session` variable. When the command is run, you're prompted for the user account's password.
+
+    `Stop-DscConfiguration` uses the **CimSession** parameter and the object stored in `$Session` to
+    stop the configuration job.
+  summary: |+
+    In this example, a CIM session is created using the `New-CimSession` cmdlet. The **CimSession**
+    object is used to stop a running configuration job.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: AsJob
+  description: |+
+    Indicates that this cmdlet runs the command as a background job. For more information about
+    PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and
+    [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
+
+    To use the **AsJob** parameter, the local and remote computers must be configured for remoting. On
+    Windows Vista and later versions of the Windows operating system, you must open PowerShell with the
+    **Run as administrator** option. For more information, see
+    [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="Microsoft.Management.Infrastructure.CimSession" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: CimSession
+  description: |+
+    Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session
+    object, such as the output from `New-CimSession` or `Get-CimSession`.
+
+  defaultValue: None
+  position: Named
+  aliases: Session
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    `Stop-DscConfiguration` doesn't support the **Confirm** parameter. If the **Confirm** parameter is
+    used, an error is displayed.
+
+    For PowerShell cmdlets that support **Confirm**, using the parameter prompts you for verification
+    before a command is run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Forces the command to run without asking for user confirmation.
+
+  defaultValue: "False"
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: ThrottleLimit
+  description: |+
+    Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
+
+    If this parameter is omitted or a value of `0` is entered, PowerShell calculates an optimum throttle
+    limit based on the number of CIM cmdlets that are running on the computer. The throttle limit
+    applies only to the current cmdlet, not to the session or to the computer.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet isn't run.
+
+  defaultValue: "False"
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: PSDesiredStateConfiguration.Stop-DscConfiguration
+name: Stop-DscConfiguration
+description: |-
+  The `Stop-DscConfiguration` cmdlet stops a configuration job that is running. Specify which
+  computers this cmdlet applies to by using Common Information Model (CIM) sessions. If there's no
+  configuration job running, this cmdlet returns a warning message.
+
+  `Stop-DscConfiguration` is only available as part of the
+  [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850)
+  from the Microsoft Support library. Before you use this cmdlet, review the information in
+  [What's New in Windows PowerShell 5.0](/powershell/scripting/whats-new/What-s-New-in-Windows-PowerShell-50)
+metadata:
+  external help file: Stop-DscConfiguration.cdxml-help.xml
+  keywords: powershell,cmdlet
+  Locale: en-US
+  Module Name: PSDesiredStateConfiguration
+  ms.date: 08/19/2019
+  online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/stop-dscconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Stop-DscConfiguration

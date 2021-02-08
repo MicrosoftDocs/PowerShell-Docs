@@ -1,0 +1,76 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets PowerShell repositories.
+module: PowerShellGet
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Register-PSRepository
+  href: Register-PSRepository.yml
+- text: Set-PSRepository
+  href: Set-PSRepository.yml
+- text: Unregister-PSRepository
+  href: Unregister-PSRepository.yml
+syntaxes:
+- Get-PSRepository [[-Name] <String[]>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Get all module repositories'
+  code: |-
+    PS C:\> Get-PSRepository
+    Name                                     SourceLocation                                     OneGetProvider       InstallationPolicy
+    ----                                     --------------                                     --------------       ------------------
+    PSGallery                                http://go.micro...                                 NuGet                Untrusted
+    myNuGetSource                            https://myget.c...                                 NuGet                Trusted
+  description: |-
+    This command gets all module repositories registered for the current user.
+  summary: ""
+- title: 'Example 2: Get module repositories by name'
+  code: |-
+    PS C:\> Get-PSRepository -Name "*NuGet*"
+  description: |-
+    This command gets all module repositories that include NuGet in their names.
+  summary: ""
+- title: 'Example 3: Get a module repository and format the output'
+  code: |-
+    PS C:\> Get-PSRepository -Name "Local01" | Format-List * -Force
+    Name                      : local01
+    SourceLocation            : http://manikb-dev:8765/api/v2/
+    Trusted                   : True
+    Registered                : True
+    InstallationPolicy        : Trusted
+    PackageManagementProvider : NuGet
+    PublishLocation           : http://pattif-dev:8765/api/v2/package/
+    ScriptSourceLocation      : http://pattif-dev:8765/api/v2/artifacts/psscript
+    ScriptPublishLocation     : http://pattif-dev:8765/api/v2/package/
+    ProviderOptions           : {}
+  description: |-
+    This command gets the repository named Local01 and uses the pipeline operator to pass that object to the Format-List cmdlet.
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Name
+  description: |+
+    Specifies the names of the repositories to get.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: PowerShellGet.Get-PSRepository
+name: Get-PSRepository
+description: |-
+  The **Get-PSRepository** cmdlet gets PowerShell module repositories that are registered for the current user.
+metadata:
+  external help file: PSModule-help.xml
+  Locale: en-US
+  Module Name: PowerShellGet
+  ms.date: 06/09/2017
+  online version: https://docs.microsoft.com/powershell/module/powershellget/get-psrepository?view=powershell-7.2&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-PSRepository
