@@ -98,8 +98,6 @@ This cmdlet does not return any output.
 
 * This cmdlet takes only the common parameters.
 
-*
-
 ## RELATED LINKS
 
 [Connect-PSSession](Connect-PSSession.md)
@@ -117,4 +115,3 @@ This cmdlet does not return any output.
 [Receive-PSSession](Receive-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
-
