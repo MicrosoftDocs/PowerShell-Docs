@@ -39,6 +39,7 @@ This article describes the experimental features that are available and how to u
 | PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
 | PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiProgress                                             |         |         |         | &check; |
 | PSAnsiRendering                                            |         |         |         | &check; |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
@@ -131,6 +132,26 @@ formatting system is updated to respect `$PSStyle.OutputRendering`.
 - `string ToString()` method stays the same and returns the plaintext version of the string.
 - `string ToString(bool Ansi)` method returns the raw ANSI embedded string if the `Ansi` parameter
   is true. Otherwise, a plaintext version with ANSI escape sequences removed is returned.
+
+## PSAnsiProgress
+
+This experiment was added in PowerShell 7.2. The feature adds the `$PSStyle.Progress` member and
+allows you to control progress view bar rendering.
+
+- `$PSStyle.Progress.Style` - An ANSI string setting the rendering style.
+- `$PSStyle.Progress.MaxWidth` - Sets the max width of the view. Set to `0` for console width.
+  Defaults to `120`
+- `$PSStyle.Progress.View` - An enum with values, `Minimal` and `Classic`. `Classic` is the existing
+  rendering with no changes. `Minimal` is a single line minimal rendering. `Minimal` is the default.
+
+The following example updates the rendering style to a minimal progress bar.
+
+```powershell
+$PSStyle.Progress.View.Minimal
+```
+
+> [!NOTE]
+> You must have the **PSAnsiRendering** experimental feature enabled to use this feature.
 
 ## PSCommandNotFoundSuggestion
 
