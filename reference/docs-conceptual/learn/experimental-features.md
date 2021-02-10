@@ -150,6 +150,9 @@ The following example updates the rendering style to a minimal progress bar.
 $PSStyle.Progress.View.Minimal
 ```
 
+> [!NOTE]
+> You must have the **PSAnsiRendering** experimental feature enabled to use this feature.
+
 ## PSCommandNotFoundSuggestion
 
 Recommends potential commands based on fuzzy matching search after a **CommandNotFoundException**.
