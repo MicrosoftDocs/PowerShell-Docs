@@ -984,6 +984,26 @@ Display the list of possible completions.
 - Vi insert mode: `<Ctrl+Spacebar>`
 - Vi command mode: `<Ctrl+Spacebar>`
 
+### ShowParameterHelp
+
+Provides dynamic help for parameters by showing it below the current command
+line like `MenuComplete`.
+
+- Cmd: `<Alt+H>`
+- Emacs: `<Alt+H>`
+- Vi insert mode: `<Alt+H>`
+- Vi command mode: `<Alt+H>`
+
+### ShowCommandHelp
+
+Provides a view of full cmdlet help on alternate screen buffer using a Pager
+from Microsoft.PowerShell.Pager.
+
+- Cmd: `<F1>`
+- Emacs: `<F1>`
+- Vi insert mode: `<F1>`
+- Vi command mode: `<F1>`
+
 ### TabCompleteNext
 
 Attempt to complete the text surrounding the cursor with the next available
