@@ -989,10 +989,10 @@ Display the list of possible completions.
 Provides dynamic help for parameters by showing it below the current command
 line like `MenuComplete`.
 
-- Cmd: `<Alt+H>`
-- Emacs: `<Alt+H>`
-- Vi insert mode: `<Alt+H>`
-- Vi command mode: `<Alt+H>`
+- Cmd: `<Alt+h>`
+- Emacs: `<Alt+h>`
+- Vi insert mode: `<Alt+h>`
+- Vi command mode: `<Alt+h>`
 
 ### ShowCommandHelp
 
