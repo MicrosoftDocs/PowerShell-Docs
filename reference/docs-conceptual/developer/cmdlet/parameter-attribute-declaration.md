@@ -39,7 +39,7 @@ Optional named parameter. `True` indicates that the cmdlet parameter accepts all
 Optional named parameter. Specifies a short description of the parameter. Windows PowerShell displays this message when a cmdlet is run and a mandatory parameter is not specified.
 
 `HelpMessageBaseName`
-Optional named parameter.Specifies the location where resource identifiers reside. For example, this parameter could specify a resource assembly that contains Help messages that you want to localize.
+Optional named parameter. Specifies the location where resource identifiers reside. For example, this parameter could specify a resource assembly that contains Help messages that you want to localize.
 
 `HelpMessageResourceId`
 Optional named parameter.Specifies the resource identifier for a Help message.
