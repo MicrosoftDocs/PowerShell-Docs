@@ -62,7 +62,7 @@ Optional named parameter.Specifies the resource identifier for a Help message.
 
   - No parameter set should contain more than one positional parameter with the same position.
 
-  - Only one parameter in a parameter set should declare `ValueFromPipeline = true`. Multiple parameters can define `ValueFromPipelineByPropertyName = true`.
+  - Only one parameter in a parameter set should declare `ValueFromPipeline = true`.
 
   - Multiple parameters can define `ValueFromPipelineByPropertyName = true`.
 
