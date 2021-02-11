@@ -997,7 +997,7 @@ line like `MenuComplete`.
 ### ShowCommandHelp
 
 Provides a view of full cmdlet help on alternate screen buffer using a Pager
-from Microsoft.PowerShell.Pager.
+from **Microsoft.PowerShell.Pager**.
 
 - Cmd: `<F1>`
 - Emacs: `<F1>`
