@@ -467,7 +467,7 @@ In the following example, the `-replace` operator accepts a username in the form
 of `DomainName\Username` and converts to the `Username@DomainName` format:
 
 ```powershell
-$SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
+$SearchExp = '^(?<DomainName>[\w-.]+)\\(?<Username>[\w-.]+)$'
 $ReplaceExp = '${Username}@${DomainName}'
 
 'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
@@ -484,8 +484,8 @@ John.Doe@Contoso.local
 > - In PowerShell, between double quotation marks, it designates variables and
 >   acts as a subexpression operator.
 > - In Regex search strings, it denotes end of the line
-> - In Regex substitution strings, it denotes captured groups As such, be sure
->   to to either put your regular expressions between single quotation marks or
+> - In Regex substitution strings, it denotes captured groups.Be sure
+>   to either put your regular expressions between single quotation marks or
 >   insert a backtick (`` ` ``) character before them.
 
 For example:
@@ -501,7 +501,7 @@ $1 = 'Goodbye'
 ```
 
 `$$` in Regex denotes a literal `$`. This `$$` in the substitution string to
-include a a literal `$` in the resulting replacement. For example:
+include a literal `$` in the resulting replacement. For example:
 
 ```powershell
 '5.72' -replace '(.+)', '$ $1' # Output: $ 5.72
