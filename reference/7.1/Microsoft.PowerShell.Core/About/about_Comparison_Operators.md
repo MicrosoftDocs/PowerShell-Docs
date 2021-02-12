@@ -484,7 +484,7 @@ John.Doe@Contoso.local
 > - In PowerShell, between double quotation marks, it designates variables and
 >   acts as a subexpression operator.
 > - In Regex search strings, it denotes end of the line
-> - In Regex substitution strings, it denotes captured groups as such, be sure
+> - In Regex substitution strings, it denotes captured groups.Be sure
 >   to either put your regular expressions between single quotation marks or
 >   insert a backtick (`` ` ``) character before them.
 
