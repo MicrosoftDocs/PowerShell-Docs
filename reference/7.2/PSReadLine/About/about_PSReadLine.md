@@ -984,26 +984,6 @@ Display the list of possible completions.
 - Vi insert mode: `<Ctrl+Spacebar>`
 - Vi command mode: `<Ctrl+Spacebar>`
 
-### ShowParameterHelp
-
-Provides dynamic help for parameters by showing it below the current command
-line like `MenuComplete`.
-
-- Cmd: `<Alt+h>`
-- Emacs: `<Alt+h>`
-- Vi insert mode: `<Alt+h>`
-- Vi command mode: `<Alt+h>`
-
-### ShowCommandHelp
-
-Provides a view of full cmdlet help on alternate screen buffer using a Pager
-from **Microsoft.PowerShell.Pager**.
-
-- Cmd: `<F1>`
-- Emacs: `<F1>`
-- Vi insert mode: `<F1>`
-- Vi command mode: `<F1>`
-
 ### TabCompleteNext
 
 Attempt to complete the text surrounding the cursor with the next available
@@ -1032,19 +1012,39 @@ Ends the current edit group, if needed, and invokes TabCompletePrevious.
 
 - Vi insert mode: `<Shift+Tab>`
 
-## Miscellaneous functions
+## Prediction functions
 
 ### AcceptNextSuggestionWord
 
-Accept the next word of the inline or selected suggestion.
+When using `InlineView` as the view style for prediction, accept the next word of the inline suggestion.
 
 - Function is unbound.
 
 ### AcceptSuggestion
 
-Accept the current inline or selected suggestion.
+When using `InlineView` as the view style for prediction, accept the current inline suggestion.
 
 - Function is unbound.
+
+### NextSuggestion
+
+When using `ListView` as the view style for prediction, navigate to the next suggestion in the list.
+
+- Function is unbound.
+
+### PreviousSuggestion
+
+When using `ListView` as the view style for prediction, navigate to the previous suggestion in the list.
+
+- Function is unbound.
+
+### SwitchPredictionView
+
+Switch the view style for prediction between `InlineView` and `ListView`.
+
+- Cmd: `<F2>`
+
+## Miscellaneous functions
 
 ### CaptureScreen
 
@@ -1127,6 +1127,16 @@ Insert the key.
 
 - Function is unbound.
 
+### ShowCommandHelp
+
+Provides a view of full cmdlet help on alternate screen buffer using a Pager
+from **Microsoft.PowerShell.Pager**.
+
+- Cmd: `<F1>`
+- Emacs: `<F1>`
+- Vi insert mode: `<F1>`
+- Vi command mode: `<F1>`
+
 ### ShowKeyBindings
 
 Show all bound keys.
@@ -1134,6 +1144,16 @@ Show all bound keys.
 - Cmd: `<Ctrl+Alt+?>`
 - Emacs: `<Ctrl+Alt+?>`
 - Vi insert mode: `<Ctrl+Alt+?>`
+
+### ShowParameterHelp
+
+Provides dynamic help for parameters by showing it below the current command
+line like `MenuComplete`.
+
+- Cmd: `<Alt+h>`
+- Emacs: `<Alt+h>`
+- Vi insert mode: `<Alt+h>`
+- Vi command mode: `<Alt+h>`
 
 ### ViCommandMode
 
