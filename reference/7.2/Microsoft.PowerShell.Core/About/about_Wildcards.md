@@ -1,7 +1,7 @@
 ---
 description: Describes how to use wildcard characters in PowerShell.
 Locale: en-US
-ms.date: 03/28/2019
+ms.date: 02/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Wildcards
@@ -16,8 +16,11 @@ Describes how to use wildcard characters in PowerShell.
 ## LONG DESCRIPTION
 
 Wildcard characters represent one or many characters. You can use them to
-create word patterns in commands. For example, to get all the files in the
-`C:\Techdocs` directory with a `.ppt` file name extension, type:
+create word patterns in commands. Wildcard expressions are used with the
+`-like` operator or with any parameter that accepts wildcards.
+
+For example, to match all the files in the `C:\Techdocs` directory with a
+`.ppt` file name extension, type:
 
 ```powershell
 Get-ChildItem C:\Techdocs\*.ppt
@@ -25,6 +28,9 @@ Get-ChildItem C:\Techdocs\*.ppt
 
 In this case, the asterisk (`*`) wildcard character represents any characters
 that appear before the `.ppt` file name extension.
+
+Wildcard expressions are simpler than regular expressions. For more
+information, see [about_Regular_Expressions](./about_Regular_Expressions.md).
 
 PowerShell supports the following wildcard characters:
 
