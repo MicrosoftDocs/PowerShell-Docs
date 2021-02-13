@@ -16,10 +16,8 @@ Describes how to use wildcard characters in PowerShell.
 ## LONG DESCRIPTION
 
 Wildcard characters represent one or many characters. You can use them to
-create word patterns in commands. Wildcard expressions are used with any
-parameter that accepts wildcards or with the `-like` operator. Wildcard
-expressions are simpler than regular expressions. For more information, see
-[about_Regular_Expressions](./about_Regular_Expressions.md)
+create word patterns in commands. Wildcard expressions are used with the
+`-like` operator or with any parameter that accepts wildcards.
 
 For example, to match all the files in the `C:\Techdocs` directory with a
 `.ppt` file name extension, type:
@@ -30,6 +28,9 @@ Get-ChildItem C:\Techdocs\*.ppt
 
 In this case, the asterisk (`*`) wildcard character represents any characters
 that appear before the `.ppt` file name extension.
+
+Wildcard expressions are simpler than regular expressions. For more
+information, see [about_Regular_Expressions](./about_Regular_Expressions.md).
 
 PowerShell supports the following wildcard characters:
 
