@@ -73,7 +73,7 @@ the `Out-File` cmdlet to send the HTML code to the `aliases.htm` file.
 ### Example 3: Create a web page to display PowerShell events
 
 ```powershell
-`Get-EventLog` -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
+Get-EventLog -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
 ```
 
 This command creates an HTML page called `pslog.htm` that displays the events in the Windows
