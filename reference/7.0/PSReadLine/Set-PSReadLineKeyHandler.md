@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 12/07/2018
+ms.date: 02/16/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
@@ -85,6 +85,10 @@ specify a single binding. If the binding is a sequence of keys, separate the key
 the following example:
 
 `Ctrl+X,Ctrl+L`
+
+> [!NOTE]
+> As of PSReadLine 2.0.0, the **Chord** parameter is **case-sensitive**. Meaning, `Ctrl+X` and
+> `Ctrl+x` will create different bindings.
 
 This parameter accepts an array of strings. Each string is a separate binding, not a sequence of
 keys for a single binding.
