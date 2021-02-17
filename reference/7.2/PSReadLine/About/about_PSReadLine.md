@@ -1232,6 +1232,13 @@ Adjust the current selection to include the previous word.
 - Cmd: `<Shift+Ctrl+LeftArrow>`
 - Emacs: `<Alt+B>`
 
+### SelectCommandArgument
+
+Make visual selection of the command arguments.
+
+- Cmd: `<Alt+a>`
+- Emacs: `<Alt+a>`
+
 ### SelectForwardChar
 
 Adjust the current selection to include the next character.
