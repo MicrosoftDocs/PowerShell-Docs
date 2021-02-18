@@ -36,7 +36,10 @@ Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<
 ## DESCRIPTION
 
 The `Get-AuthenticodeSignature` cmdlet gets information about the Authenticode signature for a
-file or file content as a byte array. If the file is not signed, the information is retrieved, but
+file or file content as a byte array.
+If the file is both embedded signed and Windows catalog signed,
+the Windows catalog signature is used.
+If the file is not signed, the information is retrieved, but
 the fields are blank.
 
 ## EXAMPLES
