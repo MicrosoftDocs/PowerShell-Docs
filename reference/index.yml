@@ -167,22 +167,23 @@ additionalContent:
       summary: Communicate with the PowerShell team # < 160 chars (optional)
       items:
         # Card 1
-        - title: Official PowerShell Blog
+        - title: PowerShell Team Blog
           summary: Official news and announcements
           url: https://devblogs.microsoft.com/powershell/
         # Card 2
+        - title: PowerShell Community Blog
+          summary: A place for the community to learn PowerShell and share insights
+          url: https://devblogs.microsoft.com/powershell-community/
+        # Card 3
         - title: PowerShell Team on Twitter
           summary: PowerShell news 280 characters at a time
           url: https://twitter.com/PowerShell_Team
-        # Card 3
-        - title: PowerShell UserVoice
-          summary: The place for bugs in Windows PowerShell
-          url: https://windowsserver.uservoice.com/forums/301869-powershell
         # Card 4
         - title: GitHub Issues
           summary: The place for bugs in the current release
           url: https://github.com/powershell/powershell/issues
         # Card 5
-        - title: Hey, Scripting Guy! Blog
-          summary: A place to learn about PowerShell and share stories of automation
-          url: https://devblogs.microsoft.com/scripting/
+        - title: PowerShell UserVoice
+          summary: The place for bugs in Windows PowerShell
+          url: https://windowsserver.uservoice.com/forums/301869-powershell
+
