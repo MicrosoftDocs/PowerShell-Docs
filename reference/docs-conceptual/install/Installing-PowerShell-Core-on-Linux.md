@@ -29,33 +29,28 @@ the OS in separate steps.
 
 Officially supported platform releases for PowerShell 7.1
 
-- Ubuntu 16.04/18.04/20.04 (including ARM64)
-- Ubuntu 19.10 (via Snap package)
-- Debian 9/10
-- CentOS and RHEL 7/8
-- Fedora 30
-- Alpine 3.11+ (including ARM64)
+- Ubuntu `20.04`/`18.04`/`16.04` (including ARM64)
+- Ubuntu `19.10` (via Snap package)
+- Debian `10`/`9`
+- CentOS `7`/`8`
+- RHEL `7`/`8`
+- Fedora `30`
+- Alpine `3.11`+ (including ARM64)
 
 Officially supported platform releases for PowerShell 7.0
 
-- Ubuntu 16.04
-- Ubuntu 18.04 and 20.04
-- Debian 8
-- Debian 9
-- Debian 10
-- Alpine 3.9 and 3.10
-- CentOS 7
-- Red Hat Enterprise Linux (RHEL) 7
-- Fedora 28
-- Fedora 29
-- Fedora 30
-- openSUSE 42.3
-- openSUSE Leap 15
+- Ubuntu `20.04`/`18.04`/`16.04`
+- Debian `10`/`9`/`8`
+- Alpine `3.10`/`3.9`
+- CentOS `7`
+- Red Hat Enterprise Linux (RHEL) `7`
+- Fedora `30`/`29`/`28`
+- openSUSE `42.3`
+- openSUSE Leap `15`
 
 Community supported releases
 
-- Ubuntu 18.10
-- Ubuntu 19.10 and 20.10
+- Ubuntu `20.10`/`19.10`/`18.10`
 - Arch Linux
 - Kali
 - Raspbian (experimental)
@@ -66,9 +61,9 @@ Alternate install methods
 - Binary Archives
 - .NET Global tool
 
-## Ubuntu 16.04
+## Ubuntu 20.04
 
-### Installation via Package Repository - Ubuntu 16.04
+### Installation via Package Repository - Ubuntu 20.04
 
 PowerShell for Linux is published to package repositories for easy installation and updates.
 
@@ -80,11 +75,13 @@ sudo apt-get update
 # Install pre-requisite packages.
 sudo apt-get install -y wget apt-transport-https software-properties-common
 # Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
-# Update the list of packages after we added packages.microsoft.com
+# Update the list of products
 sudo apt-get update
+# Enable the "universe" repositories
+sudo add-apt-repository universe
 # Install PowerShell
 sudo apt-get install -y powershell
 # Start PowerShell
@@ -94,15 +91,15 @@ pwsh
 As superuser, register the Microsoft repository once. After registration, you can update
 PowerShell with `sudo apt-get install powershell`.
 
-### Installation via Direct Download - Ubuntu 16.04
+### Installation via Direct Download - Ubuntu 20.04
 
-Download the Debian package `powershell_7.1.2-1.ubuntu.16.04_amd64.deb` from the [releases][] page
+Download the Debian package `powershell_7.1.2-1.ubuntu.20.04_amd64.deb` from the [releases][] page
 onto the Ubuntu machine.
 
 Then, in the terminal, execute the following commands:
 
 ```sh
-sudo dpkg -i powershell_7.1.2-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_7.1.2-1.ubuntu.20.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -110,7 +107,7 @@ sudo apt-get install -f
 > The `dpkg -i` command fails with unmet dependencies. The next command, `apt-get install -f`
 > resolves these issues then finishes configuring the PowerShell package.
 
-### Uninstallation - Ubuntu 16.04
+### Uninstallation - Ubuntu 20.04
 
 ```sh
 sudo apt-get remove powershell
@@ -168,9 +165,9 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## Ubuntu 20.04
+## Ubuntu 16.04
 
-### Installation via Package Repository - Ubuntu 20.04
+### Installation via Package Repository - Ubuntu 16.04
 
 PowerShell for Linux is published to package repositories for easy installation and updates.
 
@@ -182,13 +179,11 @@ sudo apt-get update
 # Install pre-requisite packages.
 sudo apt-get install -y wget apt-transport-https software-properties-common
 # Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
-# Update the list of products
+# Update the list of packages after we added packages.microsoft.com
 sudo apt-get update
-# Enable the "universe" repositories
-sudo add-apt-repository universe
 # Install PowerShell
 sudo apt-get install -y powershell
 # Start PowerShell
@@ -198,15 +193,15 @@ pwsh
 As superuser, register the Microsoft repository once. After registration, you can update
 PowerShell with `sudo apt-get install powershell`.
 
-### Installation via Direct Download - Ubuntu 20.04
+### Installation via Direct Download - Ubuntu 16.04
 
-Download the Debian package `powershell_7.1.2-1.ubuntu.20.04_amd64.deb` from the [releases][] page
+Download the Debian package `powershell_7.1.2-1.ubuntu.16.04_amd64.deb` from the [releases][] page
 onto the Ubuntu machine.
 
 Then, in the terminal, execute the following commands:
 
 ```sh
-sudo dpkg -i powershell_7.1.2-1.ubuntu.20.04_amd64.deb
+sudo dpkg -i powershell_7.1.2-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -214,11 +209,30 @@ sudo apt-get install -f
 > The `dpkg -i` command fails with unmet dependencies. The next command, `apt-get install -f`
 > resolves these issues then finishes configuring the PowerShell package.
 
-### Uninstallation - Ubuntu 20.04
+### Uninstallation - Ubuntu 16.04
 
 ```sh
 sudo apt-get remove powershell
 ```
+
+As superuser, register the Microsoft repository once. After registration, you can update PowerShell
+with `sudo apt-get install powershell`.
+
+## Ubuntu 20.10
+
+Installation is supported via `snapd`. For instructions, see [Snap Package][snap].
+
+> [!NOTE]
+> Ubuntu 20.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's
+> [community supported](../powershell-support-lifecycle.md).
+
+## Ubuntu 19.10
+
+Installation is supported via `snapd`. For instructions, see [Snap Package][snap].
+
+> [!NOTE]
+> Ubuntu 19.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's
+> [community supported](../powershell-support-lifecycle.md).
 
 ## Ubuntu 18.10
 
@@ -227,96 +241,6 @@ Installation is supported via `snapd`. For instructions, see [Snap Package][snap
 > [!NOTE]
 > Ubuntu 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's
 > [community supported](../powershell-support-lifecycle.md).
-
-## Ubuntu 19.10 and 20.10
-
-Installation is supported via `snapd`. For instructions, see [Snap Package][snap].
-
-> [!NOTE]
-> Ubuntu 19.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's
-> [community supported](../powershell-support-lifecycle.md).
-
-## Debian 8
-
-### Installation via Package Repository - Debian 8
-
-PowerShell for Linux is published to package repositories for easy installation and updates.
-
-The preferred method is as follows:
-
-```sh
-# Install system components
-sudo apt-get update
-sudo apt-get install -y curl apt-transport-https
-
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-# Register the Microsoft Product feed
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-jessie-prod jessie main" > /etc/apt/sources.list.d/microsoft.list'
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-As superuser, register the Microsoft repository once. After registration, you can update PowerShell
-with `sudo apt-get install powershell`.
-
-## Debian 9
-
-### Installation via Package Repository - Debian 9
-
-PowerShell for Linux is published to package repositories for easy installation and updates.
-
-The preferred method is as follows:
-
-```sh
-# Install system components
-sudo apt-get update
-sudo apt-get install -y curl gnupg apt-transport-https
-
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-# Register the Microsoft Product feed
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/microsoft.list'
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-As superuser, register the Microsoft repository once. After registration, you can update PowerShell
-with `sudo apt-get install powershell`.
-
-### Installation via Direct Download - Debian 9
-
-Download the Debian package `powershell_7.1.2-1.debian.9_amd64.deb` from the [releases][] page
-onto the Debian machine.
-
-Then, in the terminal, execute the following commands:
-
-```sh
-sudo dpkg -i powershell_7.1.2-1.debian.9_amd64.deb
-sudo apt-get install -f
-```
-
-### Uninstallation - Debian 9
-
-```sh
-sudo apt-get remove powershell
-```
 
 ## Debian 10
 
@@ -384,6 +308,85 @@ sudo chmod +x /opt/microsoft/powershell/7/pwsh
 
 # Create the symbolic link that points to pwsh
 sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
+
+# Start PowerShell
+pwsh
+```
+
+## Debian 9
+
+### Installation via Package Repository - Debian 9
+
+PowerShell for Linux is published to package repositories for easy installation and updates.
+
+The preferred method is as follows:
+
+```sh
+# Install system components
+sudo apt-get update
+sudo apt-get install -y curl gnupg apt-transport-https
+
+# Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+# Register the Microsoft Product feed
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/microsoft.list'
+
+# Update the list of products
+sudo apt-get update
+
+# Install PowerShell
+sudo apt-get install -y powershell
+
+# Start PowerShell
+pwsh
+```
+
+As superuser, register the Microsoft repository once. After registration, you can update PowerShell
+with `sudo apt-get install powershell`.
+
+### Installation via Direct Download - Debian 9
+
+Download the Debian package `powershell_7.1.2-1.debian.9_amd64.deb` from the [releases][] page
+onto the Debian machine.
+
+Then, in the terminal, execute the following commands:
+
+```sh
+sudo dpkg -i powershell_7.1.2-1.debian.9_amd64.deb
+sudo apt-get install -f
+```
+
+### Uninstallation - Debian 9
+
+```sh
+sudo apt-get remove powershell
+```
+
+## Debian 8
+
+### Installation via Package Repository - Debian 8
+
+PowerShell for Linux is published to package repositories for easy installation and updates.
+
+The preferred method is as follows:
+
+```sh
+# Install system components
+sudo apt-get update
+sudo apt-get install -y curl apt-transport-https
+
+# Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+# Register the Microsoft Product feed
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-jessie-prod jessie main" > /etc/apt/sources.list.d/microsoft.list'
+
+# Update the list of products
+sudo apt-get update
+
+# Install PowerShell
+sudo apt-get install -y powershell
 
 # Start PowerShell
 pwsh
