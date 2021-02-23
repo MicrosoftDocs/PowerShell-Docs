@@ -80,7 +80,7 @@ function, script, or script block. When you create a function, you can declare
 the parameters by using the `param` keyword or by adding a comma-separated list
 of parameters in parentheses after the function name.
 
-In an event action, the `$Args` variable contains objects that represent the
+In an event action, the `$args` variable contains objects that represent the
 event arguments of the event that is being processed. This variable is
 populated only within the `Action` block of an event registration command.
 The value of this variable can also be found in the **SourceArgs** property of

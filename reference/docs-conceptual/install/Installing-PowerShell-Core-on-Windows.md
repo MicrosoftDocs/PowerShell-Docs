@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on Windows
 description: Information about installing PowerShell on Windows
-ms.date: 11/11/2020
+ms.date: 02/02/2021
 ---
 # Installing PowerShell on Windows
 
@@ -21,17 +21,16 @@ To enable PowerShell remoting over WSMan, the following prerequisites need to be
 
 ## Download the installer package
 
-To install PowerShell on Windows, download the [latest][] install package from GitHub. You can
-also find the latest preview version on the [releases][] page. Scroll down to the **Assets**
-section of the Release page. The **Assets** section may be collapsed, so you may need to click
-to expand it.
+To install PowerShell on Windows, download the [latest][] install package from GitHub. You can also
+find the latest [preview][] version. Scroll down to the **Assets** section of the Release page. The
+**Assets** section may be collapsed, so you may need to click to expand it.
 
 ## <a id="msi" />Installing the MSI package
 
 The MSI file looks like `PowerShell-<version>-win-<os-arch>.msi`. For example:
 
-- `PowerShell-7.1.0-win-x64.msi`
-- `PowerShell-7.1.0-win-x86.msi`
+- `PowerShell-7.1.2-win-x64.msi`
+- `PowerShell-7.1.2-win-x86.msi`
 
 Once downloaded, double-click the installer and follow the prompts.
 
@@ -69,7 +68,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
@@ -98,10 +97,10 @@ values are changed for each major release.
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
 the following ZIP archives from the [releases][releases] page.
 
-- PowerShell-7.1.0-win-x64.zip
-- PowerShell-7.1.0-win-x86.zip
-- PowerShell-7.1.0-win-arm64.zip
-- PowerShell-7.1.0-win-arm32.zip
+- PowerShell-7.1.2-win-x64.zip
+- PowerShell-7.1.2-win-x86.zip
+- PowerShell-7.1.2-win-arm64.zip
+- PowerShell-7.1.2-win-arm32.zip
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -262,8 +261,8 @@ The following commands can be used to install PowerShell using the published `wi
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.1.0
-   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
+   PowerShell         Microsoft.PowerShell         7.1.2
+   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.2-preview.5
    ```
 
 1. Install a version of PowerShell using the `--exact` parameter
@@ -340,8 +339,8 @@ support those methods.
 
 <!-- link references -->
 
-[releases]: https://github.com/PowerShell/PowerShell/releases
-[latest]: https://github.com/PowerShell/PowerShell/releases/latest
+[preview]: https://aka.ms/powershell-release?tag=preview
+[latest]: https://aka.ms/powershell-release?tag=stable
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell

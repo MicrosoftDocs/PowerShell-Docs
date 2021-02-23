@@ -607,9 +607,9 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%t` | Horizontal tab character                                                |                          |
 | `%T` | Time in 24-hour format                                                  | 17:45:52                 |
 | `%U` | Same as 'W'                                                             |                          |
-| `%u` | Day of the week - number                                                | Sunday = 0               |
+| `%u` | Numeric day of the week (1-7)                                           | Monday = 1, Sunday = 7   |
 | `%V` | Week of the year                                                        | 01-53                    |
-| `%w` | Same as 'u'                                                             |                          |
+| `%w` | Numeric day of the week (0-6)                                           | Sunday = 0, Saturday = 6 |
 | `%W` | Week of the year                                                        | 00-52                    |
 | `%X` | Same as 'T'                                                             |                          |
 | `%x` | Date in standard format for locale                                      | 06/27/19 for English-US  |

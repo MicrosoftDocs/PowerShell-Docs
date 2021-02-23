@@ -1,8 +1,8 @@
 ---
-description:  Describes the parameters that can be used with any cmdlet. 
+description:  Describes the parameters that can be used with any cmdlet.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 11/26/2019
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_CommonParameters
@@ -370,6 +370,13 @@ $out
 
 **PipelineVariable** stores the value of the current pipeline element as a
 variable, for any named command as it flows through the pipeline.
+
+>[!NOTE]
+> Advanced functions can have up to three script blocks: `begin`, `process`,
+> and `end`. When using the **PipelineVariable** parameter with advanced
+> functions, only values from the first defined script block are assigned to the
+> variable as the function runs. For more information, see [Advanced functions](./about_functions_advanced.md).
+> PowerShell 7.2 corrects this behavior.
 
 ```yaml
 Type: String

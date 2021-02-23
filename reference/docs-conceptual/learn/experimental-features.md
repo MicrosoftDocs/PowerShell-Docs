@@ -39,6 +39,7 @@ This article describes the experimental features that are available and how to u
 | PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
 | PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiProgress                                             |         |         |         | &check; |
 | PSAnsiRendering                                            |         |         |         | &check; |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
@@ -80,27 +81,37 @@ This experiment was added in PowerShell 7.2. The feature enables changes how the
 outputs text and add the `$PSStyle` automatic variable to control ANSI rendering of string output.
 
 ```powershell
-PS> $PSStyle
+PS> $PSStyle | Get-Member
 
-Name            MemberType Definition
-----            ---------- ----------
-Reset           Property   string AttributesOff {get;set;}
-Background      Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;set;}
-Blink           Property   string Blink {get;set;}
-BlinkOff        Property   string BlinkOff {get;set;}
-Bold            Property   string Bold {get;set;}
-BoldOff         Property   string BoldOff {get;set;}
-Foreground      Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;set;}
-Formatting      Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;set;}
-Hidden          Property   string Hidden {get;set;}
-HiddenOff       Property   string HiddenOff {get;set;}
-OutputRendering Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
-Reverse         Property   string Reverse {get;set;}
-ReverseOff      Property   string ReverseOff {get;set;}
-Italic          Property   string Standout {get;set;}
-ItalicOff       Property   string StandoutOff {get;set;}
-Underline       Property   string Underlined {get;set;}
-Underline Off   Property   string UnderlinedOff {get;set;}
+   TypeName: System.Management.Automation.PSStyle
+
+Name             MemberType Definition
+----             ---------- ----------
+Equals           Method     bool Equals(System.Object obj)
+FormatHyperlink  Method     string FormatHyperlink(string text, uri link)
+GetHashCode      Method     int GetHashCode()
+GetType          Method     type GetType()
+ToString         Method     string ToString()
+Background       Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;}
+Blink            Property   string Blink {get;}
+BlinkOff         Property   string BlinkOff {get;}
+Bold             Property   string Bold {get;}
+BoldOff          Property   string BoldOff {get;}
+Foreground       Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;}
+Formatting       Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;}
+Hidden           Property   string Hidden {get;}
+HiddenOff        Property   string HiddenOff {get;}
+Italic           Property   string Italic {get;}
+ItalicOff        Property   string ItalicOff {get;}
+OutputRendering  Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
+Progress         Property   System.Management.Automation.PSStyle+ProgressConfiguration Progress {get;}
+Reset            Property   string Reset {get;}
+Reverse          Property   string Reverse {get;}
+ReverseOff       Property   string ReverseOff {get;}
+Strikethrough    Property   string Strikethrough {get;}
+StrikethroughOff Property   string StrikethroughOff {get;}
+Underline        Property   string Underline {get;}
+UnderlineOff     Property   string UnderlineOff {get;}
 ```
 
 The base members return strings of ANSI escape sequences mapped to their names. The values are
@@ -131,6 +142,31 @@ formatting system is updated to respect `$PSStyle.OutputRendering`.
 - `string ToString()` method stays the same and returns the plaintext version of the string.
 - `string ToString(bool Ansi)` method returns the raw ANSI embedded string if the `Ansi` parameter
   is true. Otherwise, a plaintext version with ANSI escape sequences removed is returned.
+
+The `FormatHyperlink(string text, uri link)` returns a string containing ANSI escape sequence used
+to decorate hyperlinks. Some terminal hosts, like the
+[Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701), support this markup,
+which makes the rendered text clickable in the terminal.
+
+## PSAnsiProgress
+
+This experiment was added in PowerShell 7.2. The feature adds the `$PSStyle.Progress` member and
+allows you to control progress view bar rendering.
+
+- `$PSStyle.Progress.Style` - An ANSI string setting the rendering style.
+- `$PSStyle.Progress.MaxWidth` - Sets the max width of the view. Set to `0` for console width.
+  Defaults to `120`
+- `$PSStyle.Progress.View` - An enum with values, `Minimal` and `Classic`. `Classic` is the existing
+  rendering with no changes. `Minimal` is a single line minimal rendering. `Minimal` is the default.
+
+The following example updates the rendering style to a minimal progress bar.
+
+```powershell
+$PSStyle.Progress.View.Minimal
+```
+
+> [!NOTE]
+> You must have the **PSAnsiRendering** experimental feature enabled to use this feature.
 
 ## PSCommandNotFoundSuggestion
 

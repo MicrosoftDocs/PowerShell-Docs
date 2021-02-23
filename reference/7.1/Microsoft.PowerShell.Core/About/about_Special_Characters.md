@@ -2,7 +2,7 @@
 description:  Describes the special character sequences that control how PowerShell interprets the next characters in the sequence. 
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/04/2020
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Special_Characters
@@ -188,16 +188,35 @@ This example outputs the **up down arrow** (&#x2195;) symbol.
 
 ## Vertical tab (`v)
 
-The horizontal tab (`` `v ``) character advances to the next vertical tab stop
-and writes the remaining output at that point. This has no effect in the
-default Windows console.
+The vertical tab (`` `v ``) character advances to the next vertical tab stop
+and writes the remaining output at that point. The rendering of the the
+vertical tab is device and terminal dependent.
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
 ```
 
-The following example shows the output you would get on a printer or in a
-different console host.
+The following examples show the rendered output of the vertical tab in some
+common environments.
+
+The Windows Console host application interprets (`` `v ``) as a special
+character with no extra spacing added.
+
+```Output
+There is a vertical tab♂between the words.
+```
+
+The [Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)
+renders the vertical tab character as a carriage return and line feed. The rest
+of the output is printed at the beginning of the next line.
+
+```Output
+There is a vertical tab
+between the words.
+```
+
+On printers or in a unix-based consoles, the vertical tab character advances to
+the next line and writes the remaining output at that point.
 
 ```Output
 There is a vertical tab
