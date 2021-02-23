@@ -88,7 +88,7 @@ At line:1 char:1
 #### Write-Error -ErrorAction Stop
 
 I mentioned that `Write-Error` doesn't throw a terminating error by default. If you specify
-`-ErrorAction Stop`, `Write-Error`generates a terminating error that can be handled with a
+`-ErrorAction Stop`, `Write-Error` generates a terminating error that can be handled with a
 `catch`.
 
 ```powershell
