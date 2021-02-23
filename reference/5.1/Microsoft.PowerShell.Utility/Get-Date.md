@@ -503,7 +503,7 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%H` | Hour in 24-hour format                                                  | 17                       |
 | `%h` | Same as 'b'                                                             |                          |
 | `%I` | Hour in 12-hour format                                                  | 05                       |
-| `%j` | Day of the year                                                         | 1-366                    |
+| `%j` | Day of the year (does not include leading `0` - Fixed in PowerShell 6+) | 1-366                    |
 | `%k` | Same as 'H'                                                             |                          |
 | `%l` | Same as 'I' (Upper-case I)                                              | 05                       |
 | `%M` | Minutes                                                                 | 35                       |

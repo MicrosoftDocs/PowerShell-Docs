@@ -39,7 +39,7 @@ Optional named parameter. `True` indicates that the cmdlet parameter accepts all
 Optional named parameter. Specifies a short description of the parameter. Windows PowerShell displays this message when a cmdlet is run and a mandatory parameter is not specified.
 
 `HelpMessageBaseName`
-Optional named parameter.Specifies the location where resource identifiers reside. For example, this parameter could specify a resource assembly that contains Help messages that you want to localize.
+Optional named parameter. Specifies the location where resource identifiers reside. For example, this parameter could specify a resource assembly that contains Help messages that you want to localize.
 
 `HelpMessageResourceId`
 Optional named parameter.Specifies the resource identifier for a Help message.
@@ -62,7 +62,7 @@ Optional named parameter.Specifies the resource identifier for a Help message.
 
   - No parameter set should contain more than one positional parameter with the same position.
 
-  - Only one parameter in a parameter set should declare `ValueFromPipeline = true`. Multiple parameters can define `ValueFromPipelineByPropertyName = true`.
+  - Only one parameter in a parameter set should declare `ValueFromPipeline = true`.
 
   - Multiple parameters can define `ValueFromPipelineByPropertyName = true`.
 

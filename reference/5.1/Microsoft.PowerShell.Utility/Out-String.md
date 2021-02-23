@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/29/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
@@ -11,10 +11,10 @@ title: Out-String
 
 # Out-String
 
-## SYNOPSIS
+## Synopsis
 Outputs input objects as a strings.
 
-## SYNTAX
+## Syntax
 
 ### All
 
@@ -22,7 +22,7 @@ Outputs input objects as a strings.
 Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Out-String` cmdlet converts input objects into strings. By default, `Out-String`
 accumulates the strings and returns them as a single string, but you can use the **Stream**
@@ -30,7 +30,7 @@ parameter to direct `Out-String` to return one line at a time or create and arra
 cmdlet lets you search and manipulate string output as you would in traditional shells when object
 manipulation is less convenient.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the current culture and convert the data to strings
 
@@ -146,8 +146,10 @@ Accept wildcard characters: False
 
 ### -Stream
 
-Indicates that the cmdlet sends a separate string for each line of an input object. By default, the
-strings for each object are accumulated and sent as a single string.
+By default, `Out-String` outputs a single string formatted as you would see it in the console
+including any blank headers or trailing newlines. The **Stream** parameter enables `Out-String` to
+output each line one by one. The only exception to this are multiline strings. In that case,
+`Out-String` will still output the string as a single, multiline string.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

@@ -1,7 +1,7 @@
 ---
 description: Allows you to indicate which namespaces are used in the session.
 Locale: en-US
-ms.date: 11/18/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
@@ -17,7 +17,10 @@ The `using` statement allows you to specify which namespaces are used in the
 session. Adding namespaces simplifies usage of .NET classes and member and
 allows you to import classes from script modules and assemblies.
 
-The `using` statements must come before any other statements in a script.
+The `using` statements must come before any other statements in a script or
+module. No uncommented statement can precede it, including parameters.
+
+The `using` statement must not contain any variables.
 
 The `using` statement should not be confused with the `using:` scope modifier
 for variables. For more information, see
@@ -65,6 +68,23 @@ A module specification is a hash table that has the following keys.
   - `ModuleVersion` - Specifies a minimum acceptable version of the module.
   - `RequiredVersion` - Specifies an exact, required version of the module.
   - `MaximumVersion` - Specifies the maximum acceptable version of the module.
+
+The `using module` statement imports classes from the root module
+(`ModuleToProcess`) of a script module or binary module. It does not
+consistently import classes defined in nested modules or classes defined in
+scripts that are dot-sourced into the module. Classes that you want to be
+available to users outside of the module should be defined in the root module.
+
+During development of a script module, it is common to make changes to the code
+then load the new version of the module using `Import-Module` with the
+**Force** parameter. This works for changes to functions in the root module
+only. `Import-Module` does not reload any nested modules. Also, there is no way
+to load any updated classes.
+
+To ensure that you are running the latest version, you must unload the module
+using the `Remove-Module` cmdlet. `Remove-Module` removes the root module, all
+nested modules, and any classes defined in the modules. Then you can reload the
+module and the classes using `Import-Module` and the `using module` statement.
 
 ## Assembly syntax
 
