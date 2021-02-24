@@ -133,14 +133,21 @@ Delete the character before the cursor.
 - Vi insert mode: `<Backspace>`
 - Vi command mode: `<X>`, `<d,h>`
 
+### BackwardDeleteInput
+
+Like BackwardKillInput - deletes text from the point to the start of the input,
+but does not put the deleted text in the kill-ring.
+
+- Cmd: `<Ctrl+Home>`
+- Vi insert mode: `<Ctrl+u>`, `<Ctrl+Home>`
+- Vi command mode: `<Ctrl+u>`, `<Ctrl+Home>`
+
 ### BackwardDeleteLine
 
 Like BackwardKillLine - deletes text from the point to the start of the line,
 but does not put the deleted text in the kill-ring.
 
-- Cmd: `<Ctrl+Home>`
-- Vi insert mode: `<Ctrl+u>`, `<Ctrl+Home>`
-- Vi command mode: `<Ctrl+u>`, `<Ctrl+Home>`, `<d,0>`
+- Vi command mode: `<d,0>`
 
 ### BackwardDeleteWord
 
@@ -148,12 +155,19 @@ Deletes the previous word.
 
 - Vi command mode: `<Ctrl+w>`, `<d,b>`
 
-### BackwardKillLine
+### BackwardKillInput
 
-Clear the input from the start of the input to the cursor. The cleared text is
+Clear the text from the start of the input to the cursor. The cleared text is
 placed in the kill-ring.
 
 - Emacs: `<Ctrl+u>`, `<Ctrl+x,Backspace>`
+
+### BackwardKillLine
+
+Clear the text from the start of the current logical line to the cursor. The cleared text is
+placed in the kill-ring.
+
+- Function is unbound.
 
 ### BackwardKillWord
 
@@ -271,14 +285,21 @@ Delete the next word.
 
 - Vi command mode: `<d,w>`
 
-### ForwardDeleteLine
+### ForwardDeleteInput
 
-Like ForwardKillLine - deletes text from the point to the end of the line, but
+Like KillLine - deletes text from the point to the end of the input, but
 does not put the deleted text in the kill-ring.
 
 - Cmd: `<Ctrl+End>`
 - Vi insert mode: `<Ctrl+End>`
 - Vi command mode: `<Ctrl+End>`
+
+### ForwardDeleteLine
+
+Deletes text from the point to the end of the current logical line, but
+does not put the deleted text in the kill-ring.
+
+- Function is unbound
 
 ### InsertLineAbove
 
