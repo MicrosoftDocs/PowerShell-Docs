@@ -1255,7 +1255,14 @@ Adjust the current selection to include the previous word.
 
 ### SelectCommandArgument
 
-Make visual selection of the command arguments.
+Make visual selection of the command arguments. Selection of arguments is scoped
+within a script block. Based on the cursor position, it searches from the innermost
+script block to the outmost script block, and stops when it finds any arguments
+in a script block scope.
+
+This function honors DigitArgument. It treats the positive or negative argument
+values as the forward or backward offsets from the currently selected argument,
+or from the current cursor position when no argument is selected.
 
 - Cmd: `<Alt+a>`
 - Emacs: `<Alt+a>`
