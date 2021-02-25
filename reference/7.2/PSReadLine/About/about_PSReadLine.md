@@ -1150,8 +1150,15 @@ Insert the key.
 
 ### ShowCommandHelp
 
-Provides a view of full cmdlet help on alternate screen buffer using a Pager
-from **Microsoft.PowerShell.Pager**.
+Provides a view of full cmdlet help. When the cursor is at the end of a
+fully-expanded parameter, hitting the `<F1>` key positions the display of help
+at the location of that parameter.
+
+The help is displayed on an alternate screen buffer using a Pager from
+**Microsoft.PowerShell.Pager**. When you exit the pager you are returned to the
+original cursor position on the original screen. This pager only works in
+modern terminal applications such as
+[Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701).
 
 - Cmd: `<F1>`
 - Emacs: `<F1>`
@@ -1169,7 +1176,8 @@ Show all bound keys.
 ### ShowParameterHelp
 
 Provides dynamic help for parameters by showing it below the current command
-line like `MenuComplete`.
+line like `MenuComplete`. The cursor must be at the end of the fully-expanded
+parameter name when you press the `<Alt+h>` key.
 
 - Cmd: `<Alt+h>`
 - Emacs: `<Alt+h>`
