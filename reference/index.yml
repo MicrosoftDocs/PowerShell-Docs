@@ -156,6 +156,10 @@ tools:
       imageSrc: ./media/index/discord.svg
       url: https://aka.ms/psdiscord
     # Card 9
+    - title: Spiceworks
+      imageSrc: ./media/index/Spiceworks_48px_color.png
+      url: https://community.spiceworks.com/programming/powershell
+    # Card 10
     - title: Digital Art
       imageSrc: /media/hubs/powershell/i_digital-art.svg
       url: /powershell/scripting/community/digital-art
