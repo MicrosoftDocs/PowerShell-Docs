@@ -212,7 +212,7 @@ you are using the **AllSigned** execution policy, you must sign the
 `Add-Signature.ps1` script before you run it.
 
 > [!IMPORTANT]
-> The script must be saved using ASCII or UTF8NoBOM encoding.You can sign a
+> The script must be saved using ASCII or UTF8NoBOM encoding. You can sign a
 > script file that uses a different encoding. But the script fails to run or the
 > module containing the script fails to import.
 
