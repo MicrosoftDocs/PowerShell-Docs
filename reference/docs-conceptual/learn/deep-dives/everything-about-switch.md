@@ -1,7 +1,7 @@
 ---
 title: Everything you ever wanted to know about the switch statement
 description: The switch statement in PowerShell offers features that aren't found in other languages.
-ms.date: 05/23/2020
+ms.date: 03/01/2021
 ms.custom: contributor-KevinMarquette
 ---
 # Everything you ever wanted to know about the switch statement
@@ -180,7 +180,7 @@ in the next section where this variable is used.
 
 ## Parameters
 
-A unique feature of the PowerShell `switch` is that it has a number of [switch parameters][] that
+A unique feature of the PowerShell `switch` is that it has a number of switch parameters that
 change how it performs.
 
 ### -CaseSensitive
@@ -790,6 +790,5 @@ you learned something that you had not realized before.
 [powershellexplained.com]: https://powershellexplained.com/
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [switch]: /powershell/module/microsoft.powershell.core/about/about_switch
-[switch parameters]: https://www.powershellmagazine.com/2013/12/20/using-powershell-switch-vs-boolean-parameters-in-sma-runbooks/
 [The many ways to use regex]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression
 [hashtables]: everything-about-hashtable.md
