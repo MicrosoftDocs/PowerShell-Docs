@@ -1,5 +1,5 @@
 ---
-ms.date: 09/07/2018
+ms.date: 03/01/2021
 ms.topic: reference
 title: Approved Verbs for PowerShell Commands
 description: Approved Verbs for PowerShell Commands
@@ -71,7 +71,7 @@ extract information contained within.
 ### Invoke vs. Start
 
 Use the `Invoke` verb to perform synchronous operations, such as
-running a command and waiting for it to end. Use the `Start` verb is used to begin asynchronous
+running a command and waiting for it to end. Use the `Start` verb to begin asynchronous
 operations, such as starting an autonomous process.
 
 ### Ping vs. Test
