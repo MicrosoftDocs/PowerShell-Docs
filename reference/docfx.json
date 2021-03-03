@@ -82,6 +82,10 @@
               "**/**.md": "https://docs.microsoft.com/media/logos/logo-powershell-social.png",
               "**/**.yml": "https://docs.microsoft.com/media/logos/logo-powershell-social.png"
             },
+            "products": {
+              "**/**.md": ["https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"],
+              "**/**.yml": ["https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"]
+            },
             "ms.prod": {
               "**/**.md": "powershell",
               "**/**.yml": "powershell"
