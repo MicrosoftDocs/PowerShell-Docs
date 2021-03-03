@@ -446,7 +446,7 @@ Output: 5
 
 `Output: 3` is never written because the parallel scriptblock for that iteration was terminated.
 
-### Example 16: Passing variables in nested parallel script ScriptBlockSet
+### Example 17: Passing variables in nested parallel script ScriptBlockSet
 
 You can create a variable outside a `Foreach-Object -Parallel` scoped scriptblock and use
 it inside the scriptblock with the `$using` keyword.
@@ -463,10 +463,9 @@ TestA
 TestA
 ```
 
-You _cannot_ create a variable _inside_ a scoped scriptblock to be used in a nested foreach parallel
-scriptblock.
-
 ```powershell
+# You CANNOT create a variable inside a scoped scriptblock
+# to be used in a nested foreach parallel scriptblock.
 $test1 = 'TestA'
 1..2 | Foreach-Object -Parallel {
     $using:test1
