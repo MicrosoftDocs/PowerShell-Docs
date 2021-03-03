@@ -449,7 +449,7 @@ Output: 5
 
 `Output: 3` is never written because the parallel scriptblock for that iteration was terminated.
 
-### Example 16: Passing variables in nested parallel script ScriptBlockSet
+### Example 17: Passing variables in nested parallel script ScriptBlockSet
 
 You can create a variable outside a `Foreach-Object -Parallel` scoped scriptblock and use
 it inside the scriptblock with the `$using` keyword.
@@ -466,10 +466,9 @@ TestA
 TestA
 ```
 
-You _cannot_ create a variable _inside_ a scoped scriptblock to be used in a nested foreach parallel
-scriptblock.
-
 ```powershell
+# You CANNOT create a variable inside a scoped scriptblock
+# to be used in a nested foreach parallel scriptblock.
 $test1 = 'TestA'
 1..2 | Foreach-Object -Parallel {
     $using:test1
@@ -726,7 +725,7 @@ state and retrieve data.
 This parameter was introduced in PowerShell 7.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ParallelParameterSet
 Aliases:
 
@@ -742,7 +741,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -758,7 +757,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
