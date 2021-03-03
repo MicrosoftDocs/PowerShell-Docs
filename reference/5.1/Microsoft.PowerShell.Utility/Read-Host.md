@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
@@ -24,6 +24,9 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 The `Read-Host` cmdlet reads a line of input from the console. You can use it to prompt a user for
 input. Because you can save the input as a secure string, you can use this cmdlet to prompt users
 for secure data, such as passwords, as well as shared data.
+
+> [!NOTE]
+> `Read-Host` has a limit of 8190 characters it can accept as input from a user.
 
 ## EXAMPLES
 
@@ -68,10 +71,8 @@ Accept wildcard characters: False
 
 ### -Prompt
 
-Specifies the text of the prompt.
-Type a string.
-If the string includes spaces, enclose it in quotation marks.
-PowerShell appends a colon (`:`) to the text that you enter.
+Specifies the text of the prompt. Type a string. If the string includes spaces, enclose it in
+quotation marks. PowerShell appends a colon (`:`) to the text that you enter.
 
 ```yaml
 Type: System.Object

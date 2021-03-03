@@ -4,7 +4,7 @@ description: List of changes to the PowerShell documentation for Q4 of 2020
 ms.date: 01/05/2021
 ---
 
-# What's new in PowerShell Docs for 2020-Q4
+# What's new in PowerShell Docs for 2020
 
 This article lists some of the major changes to docs during this previous month and celebrates the
 contributions from the community.
@@ -16,7 +16,7 @@ to get started.
 [contrib]: contributing/overview.md
 <!-- --------------- -->
 
-## 2020-December Highlights
+## 2020-December
 
 - Updated contributor guide
   - documented the `&preserve_view=true` query parameter for hyperlinks
@@ -47,7 +47,7 @@ issues. Thank you!
 | Cwilson-dataselfcom |            |       5       |
 | bobbybatatina       |            |       2       |
 
-## 2020-November Highlights
+## 2020-November
 
 - PowerShell 7.1 GA Release
   - What's New in PowerShell 7.1
@@ -95,7 +95,7 @@ issues. Thank you!
 | stephenrgentry  |            |       2       |
 | Vixb1122        |            |       2       |
 
-## 2020-October Highlights
+## 2020-October
 
 - New articles
   - [about_Character_Encoding](/powershell/module/microsoft.powershell.core/about/about_character_encoding)
@@ -129,7 +129,7 @@ issues. Thank you!
 | mklement0    |            |       3       |
 | Abdullah0820 |            |       2       |
 
-## 2020-September Highlights
+## 2020-September
 
 - Documentation maintenance
   - Updates for 7.1-preview content
@@ -161,7 +161,7 @@ issues. Thank you!
 | mklement0        |            |      13       |
 | setpeetrike      |            |       2       |
 
-## 2020-August Highlights
+## 2020-August
 
 - New PowerShell documentation
   - [About_Calculated_Properties](/powershell/module/microsoft.powershell.core/about/about_calculated_properties)
@@ -192,7 +192,7 @@ issues. Thank you!
 | joshSi           |     1      |               |
 | kmoad            |     1      |               |
 
-## 2020-July Highlights
+## 2020-July
 
 - New PowerShell documentation
   - Resurrected old [ETS docs](/powershell/scripting/developer/ets/overview) - 7 articles added
@@ -230,7 +230,7 @@ issues. Thank you!
 | sharpninja     |            |       2       |
 | XuHeng1021     |            |       2       |
 
-## 2020-June Highlights
+## 2020-June
 
 - New PowerShell documentation
   - Published new [PowerShell 101](../learn/ps101/00-introduction.md) content contributed by Mike F.
@@ -274,7 +274,7 @@ issues. Thank you!
 | mklement0     |            |       2       |
 | Sagatboy33    |            |       4       |
 
-## 2020-May Highlights
+## 2020-May
 
 - New PowerShell documentation
   - Created a new [Deep dives](../learn/deep-dives/overview.md) section containing content from
@@ -331,7 +331,7 @@ issues. Thank you!
 | JustinGrote    |            |       2       |
 | peetrike       |            |       2       |
 
-## 2020-April Highlights
+## 2020-April
 
 - New documents
   - PowerShell documentation
@@ -380,7 +380,7 @@ issues. Thank you!
 
 ## 2020-March
 
-### Highlights
+###
 
 - New documents
   - The PowerShell Docs community pages
@@ -421,7 +421,7 @@ issues. Thank you!
 
 ## 2020-February
 
-### Highlights
+###
 
 - New documents
   - [about_Parameter_Sets](/powershell/module/microsoft.powershell.core/about/about_parameter_sets)
@@ -448,7 +448,7 @@ issues. Thank you!
 
 ## 2020-January
 
-### Highlights
+###
 
 - New documents
   - [about_Windows_PowerShell_Compatibility](/powershell/module/microsoft.powershell.core/about/about_Windows_PowerShell_Compatibility)
