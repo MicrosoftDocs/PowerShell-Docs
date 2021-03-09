@@ -1,16 +1,19 @@
 ---
-ms.date: 09/13/2016
+ms.date: 03/09/2021
 ms.topic: reference
 title: How to Support Jobs
 description: How to Support Jobs
 ---
 # How to Support Jobs
 
-This example shows how to support jobs when you write cmdlets. If you want users to run your cmdlet as a background job, you must include the code described in the following procedure. For more information about background jobs, see [Background Jobs](./background-jobs.md).
+This example shows how to support jobs when you write cmdlets. If you want users to run your cmdlet
+as a background job, you must include the code described in the following procedure. For more
+information about background jobs, see [Background Jobs](./background-jobs.md).
 
 ## To support jobs
 
-1. Define an `AsJob` switch parameter so that the user can decide whether to run the cmdlet as a job.
+1. Define an `AsJob` switch parameter so that the user can decide whether to run the cmdlet as a
+   job.
 
     The following example shows an AsJob parameter declaration.
 
@@ -26,7 +29,10 @@ This example shows how to support jobs when you write cmdlets. If you want users
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06AsJobParam](msh_samplesGetProc06#GetProc06AsJobParam)]  -->
 
-2. Create an object that derives from the [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) class. This object can be a custom job object or one of the job objects provided by Windows PowerShell, such a [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) object.
+1. Create an object that derives from the [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job)
+   class. This object can be a custom job object or one of the job objects provided by Windows
+   PowerShell, such a [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob)
+   object.
 
     The following example shows a custom job object.
 
@@ -36,7 +42,9 @@ This example shows how to support jobs when you write cmdlets. If you want users
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. In a record processing method, add an `if` statement to detect whether the cmdlet should run as a job. The following code uses the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.
+1. In a record processing method, add an `if` statement to detect whether the cmdlet should run as a
+   job. The following code uses the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
+   method.
 
     ```csharp
     protected override void ProcessRecord()
@@ -63,7 +71,7 @@ This example shows how to support jobs when you write cmdlets. If you want users
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06ProcessRecord](msh_samplesGetProc06#GetProc06ProcessRecord)]  -->
 
-4. For custom job objects, implement the job class.
+1. For custom job objects, implement the job class.
 
     ```csharp
     private class SampleJob : Job
@@ -120,7 +128,9 @@ This example shows how to support jobs when you write cmdlets. If you want users
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline. If the work is performed as a job, add child job to the job.
+1. If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)
+   method to return a process object to the pipeline. If the work is performed as a job, add child
+   job to the job.
 
     ```csharp
     void DoProcessLogic(bool asJob)
@@ -145,7 +155,8 @@ This example shows how to support jobs when you write cmdlets. If you want users
 
 ## Example
 
-The following sample code shows the code for a **Get-Proc** cmdlet that can retrieve processes internally or by using a background job.
+The following sample code shows the code for a **Get-Proc** cmdlet that can retrieve processes
+internally or by using a background job.
 
 ```csharp
 using System;
@@ -203,6 +214,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// Specify the AsJob parameter. This parameter indicates
     /// whether the cmdlet should retrieve the processes internally
     /// or return a Job object that retrieves the processes.
+    /// </summary>
     [Parameter()]
     public SwitchParameter AsJob
     {
