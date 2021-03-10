@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 01/20/2021
+ms.date: 02/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
@@ -175,7 +175,7 @@ $null -ne $a
 ```
 
 ```output
-False
+True
 ```
 
 The following, however, filers out all null elements from `$a`:

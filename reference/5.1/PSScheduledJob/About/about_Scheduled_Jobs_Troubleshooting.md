@@ -396,7 +396,7 @@ Use the `Get-ScheduledJobOption` cmdlet to examine the job options and their
 values.
 
 ```powershell
-Get-ScheduledJob -Name ProcessJob
+Get-ScheduledJobOption -Name ProcessJob
 ```
 
 ```Output

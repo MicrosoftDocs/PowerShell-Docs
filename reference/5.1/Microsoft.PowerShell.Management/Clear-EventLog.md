@@ -21,11 +21,13 @@ Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-WhatIf] [-Co
 
 ## DESCRIPTION
 
-The `Clear-EventLog` cmdlet deletes all of the entries from the specified event logs on the local computer or on remote computers.
-To use `Clear-EventLog`, you must be a member of the Administrators group on the affected computer.
+The `Clear-EventLog` cmdlet deletes all of the entries from the specified event logs on the local
+computer or on remote computers. To use `Clear-EventLog`, you must be a member of the Administrators
+group on the affected computer.
 
-The cmdlets that contain the **EventLog** noun (the EventLog cmdlets) work only on classic event logs.
-To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use the Get-WinEvent cmdlet.
+The cmdlets that contain the **EventLog** noun (the EventLog cmdlets) work only on classic event
+logs. To get events from logs that use the Windows Event Log technology in Windows Vista and later
+versions of Windows, use the Get-WinEvent cmdlet.
 
 ## EXAMPLES
 
@@ -43,7 +45,8 @@ This command clears the entries from the Windows PowerShell event log on the loc
 Clear-EventLog -LogName ODiag, OSession -ComputerName localhost, Server02
 ```
 
-This command clears all of the entries in the Microsoft Office Diagnostics (ODiag) and Microsoft Office Sessions (OSession) logs on the local computer and the Server02 remote computer.
+This command clears all of the entries in the Microsoft Office Diagnostics (ODiag) and Microsoft
+Office Sessions (OSession) logs on the local computer and the Server02 remote computer.
 
 ### Example 3: Clear all logs on the specified computers then display the event log list
 
@@ -82,22 +85,23 @@ Max(K) Retain OverflowAction        Entries Log
 15,360      0 OverwriteAsNeeded           0 Windows PowerShell
 ```
 
-This function clears all event logs on the specified computers and then displays the resulting event log list.
+This function clears all event logs on the specified computers and then displays the resulting event
+log list.
 
-Notice that a few entries were added to the System and Security logs after the logs were cleared but before they were displayed.
+Notice that a few entries were added to the System and Security logs after the logs were cleared but
+before they were displayed.
 
 ## PARAMETERS
 
 ### -ComputerName
 
-Specifies a remote computer.
-The default is the local computer.
+Specifies a remote computer. The default is the local computer.
 
-Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of a remote computer.
-To specify the local computer, type the computer name, a dot (.), or "localhost".
+Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of a
+remote computer. To specify the local computer, type the computer name, a dot (.), or "localhost".
 
-This parameter does not rely on Windows PowerShell remoting.
-You can use the **ComputerName** parameter of `Get-EventLog` even if your computer is not configured to run remote commands.
+This parameter does not rely on Windows PowerShell remoting. You can use the **ComputerName**
+parameter of `Get-EventLog` even if your computer is not configured to run remote commands.
 
 ```yaml
 Type: System.String[]
@@ -113,10 +117,13 @@ Accept wildcard characters: False
 
 ### -LogName
 
-Specifies the event logs.
-Enter the log name (the value of the Log property; not the LogDisplayName) of one or more event logs, separated by commas.
-Wildcard characters are not permitted.
-This parameter is required.
+Specifies the event logs. Enter the log name (the value of the **Log** property not the
+**LogDisplayName**) of one or more event logs, separated by commas. Wildcard characters are not
+permitted. This parameter is required.
+
+> [!IMPORTANT]
+> This parameter is supposed to accept values from the pipeline by property name. However, there is
+> a bug that prevents this from working. You must pass a value using the parameter directly.
 
 ```yaml
 Type: System.String[]
@@ -165,7 +172,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -181,7 +191,8 @@ This cmdlet does not generate any output.
 
 ## NOTES
 
-- To use `Clear-EventLog` on Windows Vista and later versions of Windows, start Windows PowerShell with the "Run as administrator" option.
+- To use `Clear-EventLog` on Windows Vista and later versions of Windows, start Windows PowerShell
+  with the "Run as administrator" option.
 
 ## RELATED LINKS
 

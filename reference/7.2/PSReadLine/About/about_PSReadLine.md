@@ -133,14 +133,21 @@ Delete the character before the cursor.
 - Vi insert mode: `<Backspace>`
 - Vi command mode: `<X>`, `<d,h>`
 
+### BackwardDeleteInput
+
+Like BackwardKillInput - deletes text from the point to the start of the input,
+but does not put the deleted text in the kill-ring.
+
+- Cmd: `<Ctrl+Home>`
+- Vi insert mode: `<Ctrl+u>`, `<Ctrl+Home>`
+- Vi command mode: `<Ctrl+u>`, `<Ctrl+Home>`
+
 ### BackwardDeleteLine
 
 Like BackwardKillLine - deletes text from the point to the start of the line,
 but does not put the deleted text in the kill-ring.
 
-- Cmd: `<Ctrl+Home>`
-- Vi insert mode: `<Ctrl+u>`, `<Ctrl+Home>`
-- Vi command mode: `<Ctrl+u>`, `<Ctrl+Home>`, `<d,0>`
+- Vi command mode: `<d,0>`
 
 ### BackwardDeleteWord
 
@@ -148,12 +155,19 @@ Deletes the previous word.
 
 - Vi command mode: `<Ctrl+w>`, `<d,b>`
 
-### BackwardKillLine
+### BackwardKillInput
 
-Clear the input from the start of the input to the cursor. The cleared text is
+Clear the text from the start of the input to the cursor. The cleared text is
 placed in the kill-ring.
 
 - Emacs: `<Ctrl+u>`, `<Ctrl+x,Backspace>`
+
+### BackwardKillLine
+
+Clear the text from the start of the current logical line to the cursor. The cleared text is
+placed in the kill-ring.
+
+- Function is unbound.
 
 ### BackwardKillWord
 
@@ -271,14 +285,21 @@ Delete the next word.
 
 - Vi command mode: `<d,w>`
 
-### ForwardDeleteLine
+### ForwardDeleteInput
 
-Like ForwardKillLine - deletes text from the point to the end of the line, but
+Like KillLine - deletes text from the point to the end of the input, but
 does not put the deleted text in the kill-ring.
 
 - Cmd: `<Ctrl+End>`
 - Vi insert mode: `<Ctrl+End>`
 - Vi command mode: `<Ctrl+End>`
+
+### ForwardDeleteLine
+
+Deletes text from the point to the end of the current logical line, but
+does not put the deleted text in the kill-ring.
+
+- Function is unbound
 
 ### InsertLineAbove
 
@@ -1129,8 +1150,15 @@ Insert the key.
 
 ### ShowCommandHelp
 
-Provides a view of full cmdlet help on alternate screen buffer using a Pager
-from **Microsoft.PowerShell.Pager**.
+Provides a view of full cmdlet help. When the cursor is at the end of a
+fully-expanded parameter, hitting the `<F1>` key positions the display of help
+at the location of that parameter.
+
+The help is displayed on an alternate screen buffer using a Pager from
+**Microsoft.PowerShell.Pager**. When you exit the pager you are returned to the
+original cursor position on the original screen. This pager only works in
+modern terminal applications such as
+[Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701).
 
 - Cmd: `<F1>`
 - Emacs: `<F1>`
@@ -1148,7 +1176,8 @@ Show all bound keys.
 ### ShowParameterHelp
 
 Provides dynamic help for parameters by showing it below the current command
-line like `MenuComplete`.
+line like `MenuComplete`. The cursor must be at the end of the fully-expanded
+parameter name when you press the `<Alt+h>` key.
 
 - Cmd: `<Alt+h>`
 - Emacs: `<Alt+h>`
@@ -1234,7 +1263,14 @@ Adjust the current selection to include the previous word.
 
 ### SelectCommandArgument
 
-Make visual selection of the command arguments.
+Make visual selection of the command arguments. Selection of arguments is scoped
+within a script block. Based on the cursor position, it searches from the innermost
+script block to the outmost script block, and stops when it finds any arguments
+in a script block scope.
+
+This function honors DigitArgument. It treats the positive or negative argument
+values as the forward or backward offsets from the currently selected argument,
+or from the current cursor position when no argument is selected.
 
 - Cmd: `<Alt+a>`
 - Emacs: `<Alt+a>`

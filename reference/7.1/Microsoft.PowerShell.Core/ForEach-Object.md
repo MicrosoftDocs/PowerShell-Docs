@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/08/2020
+ms.date: 02/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -449,6 +449,45 @@ Output: 5
 
 `Output: 3` is never written because the parallel scriptblock for that iteration was terminated.
 
+### Example 17: Passing variables in nested parallel script ScriptBlockSet
+
+You can create a variable outside a `Foreach-Object -Parallel` scoped scriptblock and use
+it inside the scriptblock with the `$using` keyword.
+
+```powershell
+$test1 = 'TestA'
+1..2 | Foreach-Object -Parallel {
+    $using:test1
+}
+```
+
+```Output
+TestA
+TestA
+```
+
+```powershell
+# You CANNOT create a variable inside a scoped scriptblock
+# to be used in a nested foreach parallel scriptblock.
+$test1 = 'TestA'
+1..2 | Foreach-Object -Parallel {
+    $using:test1
+    $test2 = 'TestB'
+    1..2 | Foreach-Object -Parallel {
+        $using:test2
+    }
+}
+```
+
+```Output
+Line |
+   2 |  1..2 | Foreach-Object -Parallel {
+     |         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | The value of the using variable '$using:test2' cannot be retrieved because it has not been set in the local session.
+```
+
+The nested scriptblock can't access the `$test2` variable and an error is thrown.
+
 ## Parameters
 
 ### -ArgumentList
@@ -686,7 +725,7 @@ state and retrieve data.
 This parameter was introduced in PowerShell 7.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ParallelParameterSet
 Aliases:
 
@@ -702,7 +741,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -718,7 +757,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
