@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/09/2020
+ms.date: 03/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
@@ -251,6 +251,9 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not return any output.
 
 ## NOTES
+
+While `Set-StrictMode` **Version** parameter will accept values greater than `3.0`, currently there
+are no additional rules defined for anything higher than `3.0`.
 
 `Set-StrictMode` is effective only in the scope in which it is set and in its child scopes. For
 more information about scopes in PowerShell, see [about_Scopes](about/about_Scopes.md).
