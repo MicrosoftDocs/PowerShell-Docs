@@ -159,11 +159,16 @@ For more information, see the [about_Windows_Compatibility][] article and the
 PowerShell follows the [Microsoft Security Servicing Criteria for Windows][].
 The table below outlines the features that meet the servicing criteria and those that do not.
 
-| Feature                          | Type             |
-|----------------------------------|------------------|
-| Execution Policy                 | Defense in Depth |
-| System Lockdown - with AppLocker | Defense in Depth |
-| System Lockdown - with WDAC      | Security Feature |
+|                  Feature                   |       Type       |
+| ------------------------------------------ | ---------------- |
+| Execution Policy                           | Defense in Depth |
+| System Lockdown - with AppLocker           | Defense in Depth |
+| Constrained language mode - with AppLocker | Defense in Depth |
+| System Lockdown - with WDAC                | Security Feature |
+| Constrained language mode - with WDAC      | Security Feature |
+
+For more information about AppLocker and Windows Defender Application Control (WDAC), see
+[Application Controls for Windows](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control).
 
 ## Release history
 
