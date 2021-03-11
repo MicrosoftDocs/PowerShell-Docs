@@ -1,6 +1,6 @@
 ---
-description: Describes how to create and use a PowerShell profile. 
-keywords: powershell,cmdlet
+description: Describes how to create and use a PowerShell profile.
+Locale: en-US
 ms.date: 11/30/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0

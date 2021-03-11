@@ -1,5 +1,6 @@
 ---
 description: Describes how to use operators to assign values to variables.
+Locale: en-US
 ms.date: 04/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_assignment_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
