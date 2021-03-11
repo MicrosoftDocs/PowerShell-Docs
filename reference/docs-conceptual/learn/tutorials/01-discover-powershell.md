@@ -133,7 +133,7 @@ Apart from using parameters to filter, you can also use commands to help you wit
    Alias           Add-AdlStoreFirewallRule                           1.3.0      Az.DataLakeStore
    ```
 
-   It's worth looking into to this command further as it can do a lot more [docs Select-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.1)
+   It's worth looking into to this command further as it can do a lot more [docs Select-Object](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.1&preserve-view=true&WT.mc_id=academic-0000-chnoring)
 
 - **Where-Object**. The where object helps you select objects from a collection based on the values of properties. The command takes an expression in which you are able to express what column/s you want to match against what values. To find all process object where the `ProcessName` starts with `p`, you could use `Where-Object` like so:
 
@@ -281,3 +281,7 @@ In this exercise your goal is to learn more about a command. In doing so you'll 
 
 In this first part, you learned what PowerShell is and what areas in can be used. You where then taught about cmdlets and in particular the so called _core cmdlets_. Knowing the core cmdlets is important as it teaches you how to learn. Out of the the three core cmdlets, you were taught to use `Get-Command` and `Get-Member`. In the next part, you'll learn how to use the powerful help system.
 
+### Additional resources
+
+- [reference doc, Get-Command](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.1&WT.mc_id=academic-0000-chnoring)
+- [reference doc, Get-Member](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-member?view=powershell-7.1&preserve-view=true&WT.mc_id=academic-0000-chnoring)
