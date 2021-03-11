@@ -3,7 +3,7 @@ title: Introduction
 ms.date: 02/19/2021
 ms.custom: chnoring
 ms.reviewer: sewhee
-description: This is the introduction to the tutorial series PowerBytes, learn to conquer your problems, one PowerByte at a time. 
+description: This is the introduction to the tutorial series PowerBytes. Learn to conquer your problems, one PowerByte at a time. 
 ---
 
 # Introduction
