@@ -3,41 +3,42 @@ title: Discover PowerShell
 ms.date: 02/19/2021
 ms.custom: chnoring
 ms.reviewer: sewhee
-description: This is the introduction to the tutorial series PowerBytes, learn to conquer your problems, one PowerByte at a time. 
+description: Learn what PowerShell is and the three commands used to discover the other commands are already available,  get full help, and inspect output, allowing for more effective use. 
 ---
 
 # Discover PowerShell
 
 PowerShell is a command-line shell and a scripting language in one. PowerShell started out on Windows. It was meant to help with task automation for administration tasks but has now grown to be cross platform and can be used for a variety of tasks.
 
-A thing that makes PowerShell unique, is that accepts and returns .NET objects over text. This fact makes it easier to connect different commands in series, in a so called pipeline.
+The thing that makes PowerShell unique is that accepts and returns .NET objects, rather than text. This fact makes it easier to connect different commands in series, in a _pipeline_.
 
 > [!NOTE]
-> Pipelines will be covered more in detail in a future post in this tutorial series.
+> Pipelines will be covered more in detail in this tutorial series.
 
 Even then, you might need to _massage_ the results a little.
 
-## What can you use it for
+## What can PowerShell  be used for?
 
-PowerShell has grown its usage areas from the days when it was Windows-only. It's still used for task automation in general, but the areas where it can be used has grown. Today, you can use for a variety of tasks like:
+Usage of PowerShell has grown since the days when it was Windows-only. It's still used for Windows task automation, but, today, you can use for a variety of tasks like:
 
-- **Cloud management**. PowerShell can be used to manage cloud resources. You can for example read information on your cloud resources as well as deploy your resources and much more.
-- **CI/CD**. It can also be used as part of a CI/CD pipeline.
-- **Automate tasks is active directory and exchange**. You can use it to automate almost any task on a Windows machine like active directory and exchange.
+- **Cloud management**. PowerShell can be used to manage cloud resources. For example, you can retrieve information about cloud resources, as well as update or deploy new resources.
+- **CI/CD**. It can also be used as part of a Continuous Integration/Continuous Deployment pipeline.
+- **Automate tasks for Active Directory and Exchange**. You can use it to automate almost any task on Windows like creating users in Active Directory and mailboxes in Exchange.
 
 There are many more areas of usage but the above is to give you a hint that PowerShell has come a long way.
 
-## Who uses PowerShell
+## Who uses PowerShell?
 
-PowerShell is very powerful and a lot of people working in  multitude of roles can benefit from using it. Traditionally, PowerShell has been used by people with the SysOps role but is now being used by people calling themselves DevOps, Cloud Ops and even Developers, to mention some.
+PowerShell is very powerful and a lot of people working in  multitude of roles can benefit from using it. Traditionally, PowerShell has been used by the System Administrator role but is now being used by people calling themselves DevOps, Cloud Ops, and even Developers.
 
-## Cmdlets, compiled commands
+## PowerShell cmdlets
 
-Upon install, you get a lot of commands installed. Commands, in PowerShell, are called cmdlets, it's pronounced as "command-let".
+PowerShell comes with hundreds of preinstalled commands. PowerShell command are called cmdlets; pronounced as "command-lets".
 
-Every cmdlet is built up of a verb and a noun. This convention makes it easier to understand what it does. Additionally, that fact also make it easier to find the command your looking for, as you can filter on verb and noun, when looking for a specific cmdlet to use. A typical cmdlet therefore has the following naming convention "Verb-Noun", with an example being `Get-Process`.
+The name of each cmdlet consists of a "Verb-Noun" pair;  for example `Get-Process`. This naming convention makes
+it easier to understand what the cmdlet does. It also make it easier to find the command your looking for. When looking for a cmdlet to use, you can filter on the verb or noun. 
 
-### Core cmdlets
+### Using cmdlets to explore PowerShell
 
 When you first pick up PowerShell, it might feel intimidating as there seems to be so much to learn. However, PowerShell is designed to help you learn a little at a time, as you need it. 
 
@@ -48,7 +49,7 @@ commands available, what they do, and what types they operate on.
 - `Get-Help`. Invoking this command with the name of a command as an argument displays a help page describing various parts of a command.
 - `Get-Member`. It operates on object based output and is able to discover what object, properties and methods are available for a command.
 
-Given these three commands, you can gradually find out what commands you have at your disposal and what they do.
+Using these three commands, you can discover almost anything you need to know about PowerShell.
 
 ## Find commands with Get-Command
 
