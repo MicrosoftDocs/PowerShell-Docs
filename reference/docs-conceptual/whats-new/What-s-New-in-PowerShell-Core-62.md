@@ -140,7 +140,7 @@ PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 
 ## Known Issues
 
-- Remoting on Windows IOT ARM platforms has an issue loading modules. See (#8053)
+- Remoting on Windows IOT Arm-based platforms has an issue loading modules. See (#8053)
 
 ## General Updates and Fixes
 

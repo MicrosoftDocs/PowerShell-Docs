@@ -740,6 +740,19 @@ pwsh
 apt -y remove powershell
 ```
 
+## Support for Arm processors
+
+PowerShell can be installed on some Linux distributions. PowerShell is dependent on .NET support of
+Arm. PowerShell is supported on the following distributions:
+
+- Alpine Linux v3.11+ - .NET supports Arm64 but there is no installable package for PowerShell at
+  this time
+- Raspbian - see the installation instructions below
+- Debian v9+ - supports Arm32 and Arm64 using the [Binary Archive](#binary-archives) installation
+  method
+- Ubuntu 20.10, 20.04, 18.04, 16.04 - supports Arm32 and Arm64 using the
+  [Binary Archive](#binary-archives) installation method
+
 ## Raspbian
 
 > [!NOTE]
@@ -865,6 +878,13 @@ Linux `tar.gz` archive.
 
 ### Installation - Binary Archives
 
+The following example shows the steps for installing the x64 binary archive. You must choose the
+correct binary archive that matches the processor type for your platform.
+
+- powershell-7.1.2-linux-arm32.tar.gz
+- powershell-7.1.2-linux-arm64.tar.gz
+- powershell-7.1.2-linux-x64.tar.gz
+
 #### Linux
 
 ```sh
@@ -893,12 +913,12 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## Paths
 
 - `$PSHOME` is `/opt/microsoft/powershell/7/`
-- User profiles will be read from `~/.config/powershell/profile.ps1`
-- Default profiles will be read from `$PSHOME/profile.ps1`
-- User modules will be read from `~/.local/share/powershell/Modules`
-- Shared modules will be read from `/usr/local/share/powershell/Modules`
-- Default modules will be read from `$PSHOME/Modules`
-- PSReadLine history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- User profiles are read from `~/.config/powershell/profile.ps1`
+- Default profiles are read from `$PSHOME/profile.ps1`
+- User modules are read from `~/.local/share/powershell/Modules`
+- Shared modules are read from `/usr/local/share/powershell/Modules`
+- Default modules are read from `$PSHOME/Modules`
+- PSReadLine history is recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 The profiles respect PowerShell's per-host configuration, so the default host-specific profiles
 exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
