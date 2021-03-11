@@ -142,8 +142,10 @@ Get-Process -ParameterType Process # shows all commands operating on that type
 
 ## Exercise 
 
-Select a command we want to know more about
-Inspect command and find type
-Find related commands
+
+1. Select a command we want to know more about
+2. Inspect command and find type
+3. Find related commands
+
 
 ## Summary
