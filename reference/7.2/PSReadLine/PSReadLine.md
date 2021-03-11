@@ -14,8 +14,7 @@ title: PSReadLine
 ## Description
 
 The PSReadLine module contains cmdlets that let you customize the command-line editing environment
-in PowerShell. These articles documents PSReadLine v2.0. This version ships in PowerShell v6 and
-the Windows 10 October 2018 Update (Build 1809).
+in PowerShell. These articles document the current beta version of PSReadLine v2.2.0.
 
 > [!NOTE]
 > Beginning with PowerShell 7.0, PowerShell skips auto-loading PSReadLine on
