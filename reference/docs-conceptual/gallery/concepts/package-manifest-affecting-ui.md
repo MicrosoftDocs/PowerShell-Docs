@@ -95,7 +95,7 @@ Preferred Tag, as that will result in less noise, and better search results for 
 | --- | --- |
 | Azure |  |
 | DSC | DesiredStateConfiguration is less desirable, it's too long |
-| ResourceManager | ARM is used to describe group of processors, and should not be used for Azure Resource Manager |
+| ResourceManager | "Arm" is used to describe group of processors, and should not be used for Azure Resource Manager |
 | DSCResourceKit |  |
 | SQL |  |
 | AWS |  |

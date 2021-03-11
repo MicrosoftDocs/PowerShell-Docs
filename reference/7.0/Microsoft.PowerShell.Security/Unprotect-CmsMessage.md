@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 02/03/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unprotect-CmsMessage
 ---
