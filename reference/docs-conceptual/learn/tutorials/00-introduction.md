@@ -6,7 +6,7 @@ ms.reviewer: sewhee
 description: This is the introduction to the tutorial series PowerBytes. Learn to conquer your problems, one PowerByte at a time. 
 ---
 
-# Introduction
+# Introduction to PowerShell
 
 Have you heard about PowerShell and are considering to use to solve some problems you have? Good, then you're in the right place. This is the start of a new series, PowerBytes - from Zero to Hero.
 
