@@ -45,7 +45,7 @@ PowerShell includes cmdlets that help you discover PowerShell. Using these three
 commands available, what they do, and what types they operate on.
 
 - `Get-Command`. This command retrieves a list of all commands installed on your machine.
-- `Get-Help`. By invoking this command, with the name of a command as an argument, you'll be shown a help page describing various parts of a command.
+- `Get-Help`. Invoking this command with the name of a command as an argument displays a help page describing various parts of a command.
 - `Get-Member`. It operates on object based output and is able to discover what object, properties and methods are available for a command.
 
 Given these three commands, you can gradually find out what commands you have at your disposal and what they do.
