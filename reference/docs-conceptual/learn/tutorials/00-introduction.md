@@ -8,7 +8,7 @@ description: This is the introduction to the tutorial series PowerBytes. Learn t
 
 # Introduction
 
-Have you heard about PowerShell and is considering to use to solve some problems you have? Good, then you're in the right place. This is the start of a new series PowerBytes - from Zero to Hero.
+Have you heard about PowerShell and are considering to use to solve some problems you have? Good, then you're in the right place. This is the start of a new series, PowerBytes - from Zero to Hero.
 
 This whole series is task centric. It aims to bring up problems that you will most likely encounter. The tutorials will help you solve these problems while teaching just the PowerShell syntax you need to understand what's going on.
 
