@@ -125,7 +125,7 @@ Apart from using parameters to filter, you can also use commands to help you wit
 
    The result from the above is the three first commands, counted from the top. The result looks like so:
 
-   ```outline
+   ```output
    CommandType     Name                                               Version    Source
    -----------     ----                                               -------    ------
    Alias           Add-AdlAnalyticsDataSource                         1.0.2      Az.DataLakeAnalytics
