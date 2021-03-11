@@ -39,7 +39,7 @@ Every cmdlet is built up of a verb and a noun. This convention makes it easier t
 
 ### Core cmdlets
 
-When you first pick up PowerShell, it might feel intimidating as there seem to be so much to learn. However, PowerShell is meant to be learned little at a time. Having that mindset going forward, lets you take one problem at a time.
+When you first pick up PowerShell, it might feel intimidating as there seems to be so much to learn. However, PowerShell is designed to help you learn a little at a time, as you need it. 
 
 Something that will help you on your journey, are the so called _core cmdlets_, commands that helps you discover PowerShell. Using the mentioned _core cmdlets_ you can discover what commands there are, what they do, and what types they operate on. Let's list the core cmdlets below:
 
