@@ -41,7 +41,8 @@ Every cmdlet is built up of a verb and a noun. This convention makes it easier t
 
 When you first pick up PowerShell, it might feel intimidating as there seems to be so much to learn. However, PowerShell is designed to help you learn a little at a time, as you need it. 
 
-Something that will help you on your journey, are the so called _core cmdlets_, commands that helps you discover PowerShell. Using the mentioned _core cmdlets_ you can discover what commands there are, what they do, and what types they operate on. Let's list the core cmdlets below:
+PowerShell includes cmdlets that help you discover PowerShell. Using these three cmdlets, you can discover what
+commands available, what they do, and what types they operate on.
 
 - `Get-Command`. This command retrieves a list of all commands installed on your machine.
 - `Get-Help`. By invoking this command, with the name of a command as an argument, you'll be shown a help page describing various parts of a command.
