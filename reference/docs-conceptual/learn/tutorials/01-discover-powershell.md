@@ -39,16 +39,13 @@ Every cmdlet is built up of a verb and a noun. This convention makes it easier t
 
 ### Core cmdlets
 
-When you first pick up PowerShell, it might feel intimidating as there seem to be so much to learn. However, PowerShell is meant to be learned little at a time. Having that mindset going forward, lets you take one problem at a time.
+When you first pick up PowerShell, it might feel intimidating as there seems to be so much to learn. However, PowerShell is designed to help you learn a little at a time, as you need it. 
 
-Something that will help you on your journey, are the so called _core cmdlets_, commands that helps you discover PowerShell. Using the mentioned _core cmdlets_ you can discover what commands there are, what they do, and what types they operate on. Let's list the core cmdlets below:
+PowerShell includes cmdlets that help you discover PowerShell. Using these three cmdlets, you can discover what
+commands available, what they do, and what types they operate on.
 
 - `Get-Command`. This command retrieves a list of all commands installed on your machine.
-- `Get-Help`. By invoking this command, with the name of a command as an argument, you'll be shown a help page describing various parts of a command.
-
-   > [!NOTE]
-   > `Get-Help` will covered in the next part in this series
-
+- `Get-Help`. Invoking this command with the name of a command as an argument displays a help page describing various parts of a command.
 - `Get-Member`. It operates on object based output and is able to discover what object, properties and methods are available for a command.
 
 Given these three commands, you can gradually find out what commands you have at your disposal and what they do.
@@ -59,7 +56,7 @@ By using cmdlet `Get-Command`, you will return a list of all available commands,
 
 There are couple of ways to manage the response you get back calling `Get-Command`:
 
-- **limit number of records**. When calling `Get-Command`, the response is huge. To make this practical, to find the command/s you're looking for, you can limit the size that comes back. You can filter the response based on a property, you can also limit the number of records coming back. You can filter using either parameters or by using helper commandlets.
+- **limit number of records**. When calling `Get-Command`, the response is huge. To make this practical, to find the command/s you're looking for, you can limit the size that comes back. You can filter the response based on a property, you can also limit the number of records coming back. You can filter using either parameters or by using helper cmdlets.
 
 - **grouping and ordering**. It's possible to sort the result either in an ascending or a descending way. You can also group the results.
 
@@ -282,3 +279,4 @@ In this exercise your goal is to learn more about a command. In doing so you'll 
 ## Summary
 
 In this first part, you learned what PowerShell is and what areas in can be used. You where then taught about cmdlets and in particular the so called _core cmdlets_. Knowing the core cmdlets is important as it teaches you how to learn. Out of the the three core cmdlets, you were taught to use `Get-Command` and `Get-Member`. In the next part, you'll learn how to use the powerful help system. 
+
