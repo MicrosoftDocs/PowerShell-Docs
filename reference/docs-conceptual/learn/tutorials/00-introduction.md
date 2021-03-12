@@ -18,4 +18,4 @@ Happy reading.
 
 - [Discover PowerShell using core cmdlets](./01-discover-powershell.md)
 
-   In this first installment, you'll learn what PowerShell is and we show you three commands used to discover the other commands are already available,  get full help, and inspect output, allowing for more effective use.  
+   In this first installment, you'll learn what PowerShell is and we show you two commands used to discover the other commands already available, and inspect output, allowing for more effective use.  

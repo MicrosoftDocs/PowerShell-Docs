@@ -1,9 +1,9 @@
 ---
 title: Discover PowerShell
-ms.date: 02/19/2021
+ms.date: 03/12/2021
 ms.custom: chnoring
 ms.reviewer: sewhee
-description: Learn what PowerShell is and the three commands used to discover the other commands are already available, get full help, and inspect output, allowing for more effective use.
+description: Learn what PowerShell is and some essential commands used to discover the other commands are already available and inspect and filter the output, allowing for more effective use.
 ---
 
 # Discover PowerShell
@@ -31,7 +31,8 @@ task automation, but, today, you can use for a variety of tasks like:
 - **Automate tasks for Active Directory and Exchange**. You can use it to automate almost any task
   on Windows like creating users in Active Directory and mailboxes in Exchange.
 
-There are many more areas of usage but the above is to give you a hint that PowerShell has come a long way.
+There are many more areas of usage but the above is to give you a hint that PowerShell has come a
+long way.
 
 ## Who uses PowerShell?
 
@@ -56,50 +57,24 @@ However, PowerShell is designed to help you learn a little at a time, as you nee
 PowerShell includes cmdlets that help you discover PowerShell. Using these three cmdlets, you can
 discover what commands available, what they do, and what types they operate on.
 
-- `Get-Verb`
+- `Get-Verb`. Running this command returns a list of verbs that most commands adhere to.
+  Additionally, the response describes what these verbs does. As most commands follow this naming,
+  it sets expectations on what a command does, which helps you select the appropriate command but
+  also what to name a command, should you be creating one.
 - `Get-Command`. This command retrieves a list of all commands installed on your machine.
 - `Get-Member`. It operates on object based output and is able to discover what object, properties
   and methods are available for a command.
 - `Get-Help`. Invoking this command with the name of a command as an argument displays a help page
   describing various parts of a command.
 
-Using these three commands, you can discover almost anything you need to know about PowerShell.
+Using these commands, you can discover almost anything you need to know about PowerShell.
 
-## Find commands with Get-Command
+### Verb
 
-The `Get-Command` cmdlet returns a list of all available commands that are installed on your system.
-That list you get back, is quite large though. To make finding commands easier you can limit the
-amount of information that comes back. You can filter the response using either parameters or by
-using helper cmdlets.
-
-### Filter on parameters
-
-You can filter the output of `Get-Command`, using different parameters. Filtering this way, is about
-querying a specific property on the command. The idea is that you specify what property you want to
-filter against, and then you provide a string that you want to match against. You'll therefore get a
-comparison that looks like this:
-
-```powershell
-Get-Command -Parameter '<value of parameter>'
-```
-
-At this point, the filtering is trying to do an exact matching against the provided string argument.
-If you want to have more flexibility, in the comparison, you can use a wildcard `*`, that does
-pattern matching. The following code would look for all commands, who's name ends with process:
-
-```powershell
-Get-Command -Name '*Process'
-```
-
-Above, the parameter the `-Name` is used to filter. Apart from `-Name`, you can also filter on
-`-ParameterName` and `-Type`, for example.
-
-### Verb and noun
-
-Verb and Noun are two important concepts in PowerShell. It's a naming standard that most cmdlets
-follow. It's also a naming standard you're expected to follow, once you write your own commands. The
-idea is that the _verb_ says what you're trying to do, read data or maybe change it. To get a full
-list of all possible verbs, you can run `Get-Verb` like so:
+Verb is an important concepts in PowerShell. It's a naming standard that most cmdlets follow. It's
+also a naming standard you're expected to follow, once you write your own commands. The idea is that
+the _verb_ says what you're trying to do, read data or maybe change it. To get a full list of all
+possible verbs, you can run `Get-Verb` like so:
 
 ```powershell
 Get-Verb
@@ -114,27 +89,75 @@ Verb        AliasPrefix Group          Description
 Add         a           Common         Adds a resource to a container, or attaches an item to ano…
 ```
 
-The noun on the other hand, is context specific. Know that the noun should be at the end of a
-commands name, like with the command `Get-Process`, for example. The noun is `Process`.
+## Find commands with Get-Command
 
-Nouns and verbs can be used as parameters, when you call `Get-Command`. Thereby, they can be used to
-filter a response. Here's an example where `-Noun` is used:
+The `Get-Command` cmdlet returns a list of all available commands that are installed on your system.
+That list you get back, is quite large though. To make finding commands easier you can limit the
+amount of information that comes back. You can filter the response using either parameters or by
+using helper cmdlets.
+
+### Filter on name
+
+You can filter the output of `Get-Command`, using different parameters. Filtering this way, is about
+querying a specific property on the command. The idea is that you specify what property you want to
+filter against, and then you provide a string that you want to match against. You'll therefore get a
+comparison that looks like this:
 
 ```powershell
-Get-Command -Noun Process
+Get-Command -Name '*Process'
 ```
 
-with a resulting list, only containing commands whose noun part equals `Process`:
+At this point, the filtering is trying to do an exact matching against the provided string argument.
+If you want to have more flexibility, in the comparison, you can use a wildcard `*`, that does
+pattern matching. The following code would look for all commands, who's name ends with process:
+
+Above, the parameter the `-Name` is used to filter. Apart from `-Name`, you can also filter on
+`-ParameterName` and `-Type`, for example.
+
+### Filtering on Noun and Verb
+
+You've seen how you can filter on `-Name`, and that there are other parameters you can filter on as
+well. Verb and noun is something you can filter on as well. Such filtering targets part of a
+command's name.
+
+- **Filter on verb**. The verb part of a command's name is the leftmost part. In the command
+  `Get-Process`, the verb part is `Get`. To filter on th verb part, specify `-Verb` as a parameter
+  like so:
+
+   ```powershell
+   Get-Command -Verb 'Get'
+   ```
+
+   The above command would list all the commands where the verb part is `Get`.
+
+- **Filter on noun**. The rightmost part of a command is the noun part. Where verb should be among
+  the verbs returned from invoking `Get-Verb`, a noun can be anything. In the command `Get-Process`,
+  the noun part is `Process`. To filter on noun, specify `-Noun` as a parameter and a string
+  argument, like so:
+
+   ```powershell
+   Get-Command -Noun U*
+   ```
+
+Only using the verb, or the noun, to filter on, might lead to a big result still. To narrow down
+your search, it's good to combine the two parameters like the below example:
+
+```powershell
+Get-Command -Verb Get -Noun U*
+```
+
+The result of the above looks like so:
 
 ```output
-CommandType     Name                                               Version    Source
------------     ----                                               -------    ------
-Cmdlet          Debug-Process                                      7.0.0.0    Microsoft.PowerShell.Management
-Cmdlet          Get-Process                                        7.0.0.0    Microsoft.PowerShell.Management
-Cmdlet          Start-Process                                      7.0.0.0    Microsoft.PowerShell.Management
-Cmdlet          Stop-Process                                       7.0.0.0    Microsoft.PowerShell.Management
-Cmdlet          Wait-Process                                       7.0.0.0    Microsoft.PowerShell.Management
+CommandType     Name                         Version    Source
+-----------     ----                         -------    ------
+Cmdlet          Get-UICulture                7.0.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Get-Unique                   7.0.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Get-Uptime                   7.0.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Get-UsageAggregates          2.0.0      Az.Billing
 ```
+
+Thereby, you narrowed down the output quite bit by knowing the verb and what it's called.
 
 ### Helper cmdlets, that helps with filtering
 
@@ -200,7 +223,7 @@ properties and methods of the result. Additionally it also show the type of the 
 Get-Process | Get-Member
 ```
 
-The result will first display the returned type as `TypeName` and then all the properties and
+The result displays the returned type as `TypeName` and then all the properties and
 methods of the object. Here's an excerpt of such a result:
 
 ```output
@@ -340,9 +363,9 @@ like what type it operates on and what other similar commands operate on that sa
 ## Summary
 
 In this first part, you learned what PowerShell is and what areas in can be used. You where then
-taught about cmdlets and in particular the so called _core cmdlets_. Knowing the core cmdlets is
-important as it teaches you how to learn. Out of the the three core cmdlets, you were taught to use
-`Get-Command` and `Get-Member`. In the next part, you'll learn how to use the powerful help system.
+taught about cmdlets and in particular `Get-Command`, `Get-Verb` and `Get-Member`. Knowing theses
+cmdlets is important as it teaches you how to learn. In the next part, you'll learn how to use the
+powerful help system.
 
 ### Additional resources
 
