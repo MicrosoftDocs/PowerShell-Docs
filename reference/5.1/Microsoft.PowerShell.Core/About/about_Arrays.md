@@ -390,7 +390,8 @@ $a[2] length: 348
 Process $a[2][1]: AcroRd32
 ```
 
-Multidimensional arrays are stored in row-major order. The following example
+Multidimensional arrays are stored in
+[row-major order](https://wikipedia.org/wiki/Row-_and_column-major_order). The following example
 shows how to create a truly multidimensional array.
 
 ```powershell
