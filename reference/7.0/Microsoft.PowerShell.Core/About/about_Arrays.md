@@ -1,6 +1,5 @@
 ---
-description: Describes arrays, which are data structures designed to store collections of items. 
-keywords: powershell,cmdlet
+description: Describes arrays, which are data structures designed to store collections of items.
 Locale: en-US
 ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7&WT.mc_id=ps-gethelp
@@ -364,7 +363,7 @@ $a.Length
 
 Returns the number of dimensions in the array. Most arrays in PowerShell have
 one dimension, only. Even when you think you are building a multidimensional
-array; like the following example:
+array like the following example:
 
 ```powershell
 $a = @(
@@ -373,24 +372,82 @@ $a = @(
   @(Get-Process)
 )
 
-[int]$r = $a.Rank
-"`$a rank: $r"
+"`$a rank: $($a.Rank)"
+"`$a length: $($a.Length)"
+"`$a length: $($a.Length)"
+"Process `$a[2][1]: $($a[2][1].ProcessName)"
 ```
+
+In this example, you are creating a single-dimensional array that contains
+other arrays. This is also known as a _jagged array_. The **Rank** property
+proved that this is single-dimensional. To access items in a jagged array, the
+indexes must be in separate brackets (`[]`).
 
 ```Output
 $a rank: 1
+$a length: 3
+$a[2] length: 348
+Process $a[2][1]: AcroRd32
 ```
 
-The following example shows how to create a truly multidimensional array using
-the .Net Framework.
+Multidimensional arrays are stored in
+[row-major order](https://wikipedia.org/wiki/Row-_and_column-major_order). The following example
+shows how to create a truly multidimensional array.
 
 ```powershell
-[int[,]]$rank2 = [int[,]]::new(5,5)
+[string[,]]$rank2 = [string[,]]::New(3,2)
 $rank2.rank
+$rank2.Length
+$rank2[0,0] = 'a'
+$rank2[0,1] = 'b'
+$rank2[1,0] = 'c'
+$rank2[1,1] = 'd'
+$rank2[2,0] = 'e'
+$rank2[2,1] = 'f'
+$rank2[1,1]
 ```
 
 ```Output
 2
+6
+d
+```
+
+To access items in a multidimensional array, separate the indexes using a comma
+(`,`) within a single set of brackets (`[]`).
+
+Some operations on a multidimensional array, such as replication and
+concatenation, require that array to be flattened. Flattening turns the array
+into a 1-dimensional array of unconstrained type. The resulting array takes on
+all the elements in row-major order. Consider the following example:
+
+```powershell
+$a = "red",$true
+$b = (New-Object 'int[,]' 2,2)
+$b[0,0] = 10
+$b[0,1] = 20
+$b[1,0] = 30
+$b[1,1] = 40
+$c = $a + $b
+$a.GetType().Name
+$b.GetType().Name
+$c.GetType().Name
+$c
+```
+
+The output shows that `$c` is a 1-dimensional array containing the items from
+`$a` and `$b` in row-major order.
+
+```output
+Object[]
+Int32[,]
+Object[]
+red
+True
+10
+20
+30
+40
 ```
 
 ## Methods of arrays
