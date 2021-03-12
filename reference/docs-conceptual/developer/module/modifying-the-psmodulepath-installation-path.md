@@ -1,5 +1,5 @@
 ---
-ms.date: 09/13/2016
+ms.date: 03/12/2021
 ms.topic: reference
 title: Modifying the PSModulePath Installation Path
 description: Modifying the PSModulePath Installation Path
@@ -40,16 +40,18 @@ To add paths to this variable, use one of the following methods:
 - To add a persistent value that is available whenever a session is opened, add the above command to
   a PowerShell profile file (`$PROFILE`)>
 
-  For more information about profiles, see [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
+  For more information about profiles, see
+  [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
 
 - To add a persistent variable to the registry, create a new user environment variable called
   `PSModulePath` using the Environment Variables Editor in the **System Properties** dialog box.
 
-- To add a persistent variable by using a script, use the .Net method [SetEnvironmentVariable](/dotnet/api/system.environment.setenvironmentvariable)
-  on the [System.Environment](/dotnet/api/system.environment) class. For
-  example, the following script adds the `C:\Program Files\Fabrikam\Module` path to the value of the
-  `PSModulePath` environment variable for the computer. To add the path to the user `PSModulePath`
-  environment variable, set the target to "User".
+- To add a persistent variable by using a script, use the .Net method
+  [SetEnvironmentVariable](/dotnet/api/system.environment.setenvironmentvariable) on the
+  [System.Environment](/dotnet/api/system.environment) class. For example, the following script adds
+  the `C:\Program Files\Fabrikam\Module` path to the value of the `PSModulePath` environment
+  variable for the computer. To add the path to the user `PSModulePath` environment variable, set
+  the target to "User".
 
   ```powershell
   $CurrentValue = [Environment]::GetEnvironmentVariable("PSModulePath", "Machine")
@@ -57,9 +59,14 @@ To add paths to this variable, use one of the following methods:
 
   ```
 
+You may also set the `PSModulePath` values in the `powershell.config.json` configuration file. For
+more information, see
+[about_PowerShell_Config](/powershell/module/microsoft.powershell.core/about/about_powershell_config#psmodulepath).
+
 ## To remove locations from the PSModulePath
 
-You can remove paths from the variable using similar methods: for example, `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"`
+You can remove paths from the variable using similar methods: for example,
+`$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"`
 will remove the **c:\ModulePath** path from the current session.
 
 ## See Also
