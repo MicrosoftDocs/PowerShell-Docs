@@ -265,10 +265,11 @@ The following commands can be used to install PowerShell using the published `wi
    ```
 
    ```Output
-   Name               Id                           Version
-   ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.1.3
-   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.3-preview.5
+   Name                      Id                                Version
+   ---------------------------------------------------------------------------
+   PowerShell                Microsoft.PowerShell              7.1.3
+   PowerShell Preview (MSIX) Microsoft.PowerShell-Preview-MSIX 7.0.2
+   PowerShell-Preview        Microsoft.PowerShell-Preview      7.2.0-preview.3
    ```
 
 1. Install a version of PowerShell using the `--exact` parameter
