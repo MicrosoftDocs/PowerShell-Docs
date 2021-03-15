@@ -29,8 +29,8 @@ find the latest [preview][] version. Scroll down to the **Assets** section of th
 
 The MSI file looks like `PowerShell-<version>-win-<os-arch>.msi`. For example:
 
-- `PowerShell-7.1.2-win-x64.msi`
-- `PowerShell-7.1.2-win-x86.msi`
+- `PowerShell-7.1.3-win-x64.msi`
+- `PowerShell-7.1.3-win-x86.msi`
 
 Once downloaded, double-click the installer and follow the prompts.
 
@@ -68,7 +68,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
@@ -97,10 +97,10 @@ values are changed for each major release.
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
 the following ZIP archives from the [releases][releases] page.
 
-- PowerShell-7.1.2-win-x64.zip
-- PowerShell-7.1.2-win-x86.zip
-- PowerShell-7.1.2-win-arm64.zip
-- PowerShell-7.1.2-win-arm32.zip
+- PowerShell-7.1.3-win-x64.zip
+- PowerShell-7.1.3-win-x86.zip
+- PowerShell-7.1.3-win-arm64.zip
+- PowerShell-7.1.3-win-arm32.zip
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -110,6 +110,12 @@ remoting over WSMan to work properly, ensure that you've met the [prerequisites]
 Use this method to install the ARM-based version of PowerShell on computers like the Microsoft
 Surface Pro X. For best results, install PowerShell to the to `$env:ProgramFiles\PowerShell\7`
 folder.
+
+> [!NOTE]
+> You can use this method to install any version of PowerShell including the latest:
+> - Stable release: [https://aka.ms/powershell-release?tag=stable](https://aka.ms/powershell-release?tag=stable)
+> - Preview release: [https://aka.ms/powershell-release?tag=preview](https://aka.ms/powershell-release?tag=preview)
+> - LTS release: [https://aka.ms/powershell-release?tag=lts](https://aka.ms/powershell-release?tag=lts)
 
 ## Deploying on Windows 10 IoT Enterprise
 
@@ -261,8 +267,8 @@ The following commands can be used to install PowerShell using the published `wi
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.1.2
-   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.2-preview.5
+   PowerShell         Microsoft.PowerShell         7.1.3
+   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.3-preview.5
    ```
 
 1. Install a version of PowerShell using the `--exact` parameter
