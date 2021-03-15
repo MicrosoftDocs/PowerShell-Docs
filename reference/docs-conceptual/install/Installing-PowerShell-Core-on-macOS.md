@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on macOS
 description: Information about installing PowerShell on macOS
-ms.date: 02/02/2021
+ms.date: 03/15/2021
 ---
 
 # Installing PowerShell on macOS
@@ -154,6 +154,12 @@ dependencies.
 
 Install [OpenSSL](#installing-dependencies). OpenSSL is needed for PowerShell remoting and CIM
 operations.
+
+> [!NOTE]
+> Use this method to install an older version of PowerShell to run side-by-side with the latest
+> version. For example, if you want to install the latest version of PowerShell and the LTS version,
+> you can install the latest version of PowerShell with the normal `brew` method and install the LTS
+> version using the binary archives.
 
 ### Installing binary archives on macOS
 
