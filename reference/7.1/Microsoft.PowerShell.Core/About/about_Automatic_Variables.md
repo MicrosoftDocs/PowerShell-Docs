@@ -1,7 +1,7 @@
 ---
 description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 12/14/2020
+ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
@@ -540,7 +540,13 @@ following items:
 
 ### $PWD
 
-Contains a path object that represents the full path of the current directory.
+Contains a path object that represents the full path of the current directory
+location for the current PowerShell runspace.
+
+> [!NOTE]
+> PowerShell supports multiple runspaces per process. Each runspace has its own
+> _current directory_. This is not the same as the current directory of the
+> process: `[System.Environment]::CurrentDirectory`.
 
 ### $Sender
 
