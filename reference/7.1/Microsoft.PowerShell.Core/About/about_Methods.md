@@ -1,6 +1,5 @@
 ---
 description: Describes how to use methods to perform actions on objects in PowerShell.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.1&WT.mc_id=ps-gethelp
@@ -92,7 +91,7 @@ results in an object (like a string in quotes).
 Starting in PowerShell 4.0, method invocation by using dynamic method names is
 supported.
 
-### Learning about methods
+## Learning about methods
 
 To find definitions of the methods of an object, go to help topic for the
 object type and look for its methods page. For example, the following page
@@ -141,7 +140,7 @@ file to the `C:\Bin` directory, and to overwrite existing files.
 (Get-ChildItem c:\final.txt).CopyTo("c:\bin\final.txt", $true)
 ```
 
-### Methods of Scalar objects and Collections
+## Methods of Scalar objects and Collections
 
 The methods of one ("scalar") object of a particular type are often different
 from the methods of a collection of objects of the same type.
@@ -212,13 +211,13 @@ $p | ForEach-Object {$_.Kill()}
 
 ### ForEach and Where methods
 
-Beginning in PowerShell 4.0, collection filtering by using a method syntax is
+Beginning in PowerShell 4.0, collection filtering using a method syntax is
 supported. This allows use of two new methods when dealing with collections
 `ForEach` and `Where`.
 
 You can read more about these methods in [about_arrays](about_arrays.md)
 
-### Calling a specific method when multiple overloads exist
+## Calling a specific method when multiple overloads exist
 
 Consider the following scenario when calling .NET methods. If a method takes an
 object but has an overload via an interface taking a more specific type,
@@ -269,6 +268,18 @@ specific overload of the **Bar** method.
 int: 1
 ```
 
+## Using .NET methods that take filesystem paths
+
+PowerShell supports multiple runspaces per process. Each runspace has its own
+_current directory_. This is not the same as the working directory of the
+current process: `[System.Environment]::CurrentDirectory`.
+
+.NET methods use the process working directory. PowerShell cmdlets use the
+Runspace location. Also, .NET methods only work with native filesystem paths,
+not PowerShell Path objects. To use PowerShell paths with .NET methods, you
+must resolve the path to a filesystem-native path before passing it to the .NET
+method.
+
 ## See Also
 
 [about_Objects](about_Objects.md)
@@ -276,4 +287,3 @@ int: 1
 [about_Properties](about_Properties.md)
 
 [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
-
