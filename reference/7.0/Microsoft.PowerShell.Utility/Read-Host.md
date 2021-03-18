@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/02/2021
+ms.date: 03/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
@@ -21,9 +20,9 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Read-Host` cmdlet reads a line of input from the console. You can use it to prompt a user for
-input. Because you can save the input as a secure string, you can use this cmdlet to prompt users
-for secure data, such as passwords, as well as shared data.
+The `Read-Host` cmdlet reads a line of input from the console (stdin). You can use it to prompt a
+user for input. Because you can save the input as a secure string, you can use this cmdlet to prompt
+users for secure data, such as passwords.
 
 > [!NOTE]
 > `Read-Host` has a limit of 1022 characters it can accept as input from a user.
@@ -97,7 +96,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+This cmdlet does not accept input from the PowerShell pipeline.
 
 ## OUTPUTS
 
@@ -107,6 +106,9 @@ If the **AsSecureString** parameter is used, `Read-Host` returns a **SecureStrin
 returns a string.
 
 ## NOTES
+
+This cmdlet only reads from the stdin stream of the host process. Usually, the stdin stream is
+connected to the keyboard of the host console.
 
 ## RELATED LINKS
 

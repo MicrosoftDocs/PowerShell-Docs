@@ -1,7 +1,7 @@
 ---
 description: Explains how to redirect output from PowerShell to text files.
 Locale: en-US
-ms.date: 10/14/2020
+ms.date: 03/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
@@ -14,7 +14,7 @@ Explains how to redirect output from PowerShell to text files.
 ## Long description
 
 By default, PowerShell sends output to the PowerShell host. Usually this is the
-console application. However, you can direct the output to a text file, and you
+console application. However, you can redirect the output to a text file and you
 can redirect error output to the regular output stream.
 
 You can use the following methods to redirect output:
@@ -47,9 +47,13 @@ PowerShell supports redirection of the following output streams.
 | 6        | **Information** Stream | PowerShell 5.0 | `Write-Information` |
 | *        | All Streams            | PowerShell 3.0 |                     |
 
-> [!NOTE]
-> There is also a **Progress** stream in PowerShell, but it does not support
-> redirection.
+There is also a **Progress** stream in PowerShell, but it does not support
+redirection.
+
+> [!IMPORTANT]
+> The **Success** and **Error** streams are similar to the stdin and stderr
+> streams of other shells. However, stdin is not connected to the PowerShell
+> pipeline for input.
 
 ### PowerShell redirection operators
 
@@ -219,8 +223,8 @@ formatted correctly. To write to files with a different encoding, use the
 ### Potential confusion with comparison operators
 
 The `>` operator is not to be confused with the
-[Greater-than](about_Comparison_Operators.md#-gt--ge--lt-and--le) comparison operator (often
-denoted as `>` in other programming languages).
+[Greater-than](about_Comparison_Operators.md#-gt--ge--lt-and--le) comparison
+operator (often denoted as `>` in other programming languages).
 
 Depending on the objects being compared, the output using `>` can appear to be
 correct (because 36 is not greater than 42).
@@ -248,12 +252,11 @@ Attempting to use the reverse comparison `<` (less than), yields a system error:
 
 ```powershell
 PS> if (36 < 42) { "true" } else { "false" }
-At line:1 char:8
-+ if (36 < 42) { "true" } else { "false" }
-+        ~
-The '<' operator is reserved for future use.
-    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-    + FullyQualifiedErrorId : RedirectionNotSupported
+ParserError:
+Line |
+   1 |  if (36 < 42) { "true" } else { "false" }
+     |         ~
+     | The '<' operator is reserved for future use.
 ```
 
 If numeric comparison is the required operation, `-lt` and `-gt` should be
