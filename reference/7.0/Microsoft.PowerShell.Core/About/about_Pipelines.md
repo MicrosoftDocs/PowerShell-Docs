@@ -1,8 +1,7 @@
 ---
-description:  Combining commands into pipelines in the PowerShell 
-keywords: powershell,cmdlet
+description: Combining commands into pipelines in the PowerShell
 Locale: en-US
-ms.date: 09/27/2019
+ms.date: 03/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pipelines
@@ -139,6 +138,23 @@ properties for a process object.
 ```powershell
 Get-Process winlogon | Format-List -Property *
 ```
+
+You can also pipe the output of native commands to PowerShell cmdlets. For
+example:
+
+```powershell
+PS> ipconfig.exe | Select-String -Pattern 'IPv4'
+
+   IPv4 Address. . . . . . . . . . . : 172.24.80.1
+   IPv4 Address. . . . . . . . . . . : 192.168.1.45
+   IPv4 Address. . . . . . . . . . . : 100.64.108.37
+```
+
+> [!IMPORTANT]
+> The **Success** and **Error** streams are similar to the stdin and stderr
+> streams of other shells. However, stdin is not connected to the PowerShell
+> pipeline for input. For more information, see
+> [about_Redirection](about_Redirection.md).
 
 With a bit of practice, you'll find that combining simple commands into
 pipelines saves time and typing, and makes your scripting more efficient.
