@@ -1,223 +1,226 @@
 {
-    "build": {
-        "dest": "pscore-reference",
-        "markdownEngineName": "markdig",
-        "overwrite": [],
-        "externalReference": [],
-        "groups": {
-            "powershell-5.1": { "moniker_range": "powershell-5.1" },
-            "powershell-7": { "moniker_range": "powershell-7" },
-            "powershell-7.1": { "moniker_range": "powershell-7.1" },
-            "powershell-7.2": { "moniker_range": "powershell-7.2" },
-            "conceptual": { "moniker_range": ">=powershell-5.1" }
-        },
-        "content": [
-            {
-              "files": ["index.yml", "module/index.md"],
-              "exclude": ["**/obj/**", "**/includes/**", "**/_themes/**", "README.md", "**/README.md"],
-              "dest": ""
-            },
+  "build": {
+    "content": [{ 
+        "dest": "", 
+        "exclude": [ "**/obj/**", "**/includes/**", "**/_themes/**", "README.md", "**/README.md" ], 
+        "files": [ "index.yml", 
+        "module/index.md" 
+      ]},
+      
+      { "dest": "scripting", "files": [ "bread/toc.yml" ] },
+      { "dest": "scripting", "files": [ "**/*.md", "**/**.yml" ], "group": "conceptual", "src": "docs-conceptual" },
 
-            { "files": ["bread/toc.yml"], "dest": "scripting" },
-            { "files": ["**/*.md", "**/**.yml"], "group": "conceptual", "src": "docs-conceptual", "dest": "scripting"},
-
-            { "files": ["toc.yml"], "src": "5.1", "group": "powershell-5.1", "dest": "module/psdocs" },
-            { "files": ["**/*.yml", "**/About/*.md"], "src": "5.1", "group": "powershell-5.1", "exclude": ["docs-conceptual/**"], "dest": "module" },
-
-            { "files": ["toc.yml"], "src": "7.0", "group": "powershell-7", "dest": "module/psdocs" },
-            { "files": ["**/*.yml", "**/About/*.md"], "src": "7.0", "group": "powershell-7", "exclude": ["docs-conceptual/**"], "dest": "module" },
-
-            { "files": ["toc.yml"], "src": "7.1", "group": "powershell-7.1", "dest": "module/psdocs" },
-            { "files": ["**/*.yml", "**/About/*.md"], "src": "7.1", "group": "powershell-7.1", "exclude": ["docs-conceptual/**"], "dest": "module" },
-
-            { "files": ["toc.yml"], "src": "7.2", "group": "powershell-7.2", "dest": "module/psdocs" },
-            { "files": ["**/*.yml", "**/About/*.md"], "src": "7.2", "group": "powershell-7.2", "exclude": ["docs-conceptual/**"], "dest": "module" },
-
-            { "files": ["**/*.md"], "src": "virtual-directory", "dest": "scripting" },
-            { "files": ["**/*.md"], "src": "virtual-directory-module", "dest": "module" }
+      { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-5.1", "src": "5.1" },
+      { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-5.1", "src": "5.1" },
+      
+      { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7", "src": "7.0" },
+      { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7", "src": "7.0" },
+      
+      { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.1", "src": "7.1" },
+      { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.1", "src": "7.1" },
+      
+      { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.2", "src": "7.2" },
+      { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.2", "src": "7.2" },
+      
+      { "dest": "scripting", "files": [ "**/*.md" ], "src": "virtual-directory" },
+      { "dest": "module", "files": [ "**/*.md" ], "src": "virtual-directory-module" }
+    ],
+    "dest": "pscore-reference",
+    "externalReference": [],
+    "fileMetadata": {
+      "author": {
+        "**/CimCmdlets/**.yml": "SteveL-MSFT",
+        "**/ISE/**.yml": "SteveL-MSFT",
+        "**/Microsoft.PowerShell.Archive/**.yml": "anmenaga",
+        "**/Microsoft.PowerShell.Core/**.md": "SteveL-MSFT",
+        "**/Microsoft.PowerShell.Core/**.yml": "SteveL-MSFT",
+        "**/Microsoft.PowerShell.Diagnostics/**.yml": "SteveL-MSFT",
+        "**/Microsoft.PowerShell.Host/**.yml": "SteveL-MSFT",
+        "**/Microsoft.PowerShell.LocalAccounts/**.yml": "SteveL-MSFT",
+        "**/Microsoft.PowerShell.Management/**.yml": "daxian-dbw",
+        "**/Microsoft.PowerShell.ODataUtils/**.yml": "anmenaga",
+        "**/Microsoft.PowerShell.Operation.Validation/**.yml": "JamesWTruher",
+        "**/Microsoft.PowerShell.Security/**.md": "TravisEz13",
+        "**/Microsoft.PowerShell.Security/**.yml": "TravisEz13",
+        "**/Microsoft.PowerShell.Utility/**.yml": "JamesWTruher",
+        "**/Microsoft.WSMan.Management/**.md": "PaulHigin",
+        "**/Microsoft.WSMan.Management/**.yml": "PaulHigin",
+        "**/PSDesiredStateConfiguration/**.md": "nitinbps",
+        "**/PSDesiredStateConfiguration/**.yml": "nitinbps",
+        "**/PSDiagnostics/**.md": "SteveL-MSFT",
+        "**/PSDiagnostics/**.yml": "SteveL-MSFT",
+        "**/PSReadline/**.md": "SteveL-MSFT",
+        "**/PSReadline/**.yml": "SteveL-MSFT",
+        "**/PSScheduledJob/**.md": "SteveL-MSFT",
+        "**/PSScheduledJob/**.yml": "SteveL-MSFT",
+        "**/PSWorkflow/**.md": "SteveL-MSFT",
+        "**/PSWorkflow/**.yml": "SteveL-MSFT",
+        "**/PSWorkflowUtility/**.yml": "SteveL-MSFT",
+        "**/PackageManagement/**.yml": "edyoung",
+        "**/PowerShellGet/**.yml": "edyoung",
+        "**/ThreadJob/**.yml": "PaulHigin",
+        "docs-conceptual/**.md": "joeyaiello",
+        "docs-conceptual/community/**.md": "sdwheeler",
+        "docs-conceptual/dev-cross-plat/**/**.md": "sdwheeler",
+        "docs-conceptual/developer/**/**.md": "joeyaiello",
+        "docs-conceptual/dsc/**/**.md": "mgreenegit",
+        "docs-conceptual/gallery/**/**.md": "SydneyhSmith",
+        "docs-conceptual/install/**.md": "joeyaiello",
+        "docs-conceptual/learn/**.md": "sdwheeler",
+        "docs-conceptual/learn/deep-dives/**.md": "sdwheeler",
+        "docs-conceptual/learn/ps101/**.md": "mikefrobbins",
+        "docs-conceptual/learn/remoting/**.md": "joeyaiello",
+        "docs-conceptual/learn/remoting/jea/**.md": "rpsqrd",
+        "docs-conceptual/samples/**.md": "joeyaiello",
+        "docs-conceptual/whats-new/**.md": "joeyaiello",
+        "docs-conceptual/windows-powershell/**.md": "joeyaiello"
+      },
+      "feedback_product_url": {
+        "docs-conceptual/dsc/**/**.md": "https://windowsserver.uservoice.com/forums/301869-powershell",
+        "docs-conceptual/gallery/**/**.md": "https://github.com/powershell/powershellgallery/issues/new",
+        "docs-conceptual/learn/remoting/jea/**.md": "https://github.com/powershell/jea/issues/new",
+        "docs-conceptual/windows-powershell/wmf/**/**.md": "https://windowsserver.uservoice.com/forums/301869-powershell"
+      },
+      "manager": {
+        "**/**": "sewhee"
+      },
+      "ms.author": {
+        "**/CimCmdlets/**.yml": "slee",
+        "**/ISE/**.yml": "slee",
+        "**/Microsoft.PowerShell.Archive/**.yml": "anmenaga",
+        "**/Microsoft.PowerShell.Core/**.md": "slee",
+        "**/Microsoft.PowerShell.Core/**.yml": "slee",
+        "**/Microsoft.PowerShell.Diagnostics/**.yml": "slee",
+        "**/Microsoft.PowerShell.Host/**.yml": "slee",
+        "**/Microsoft.PowerShell.LocalAccounts/**.yml": "slee",
+        "**/Microsoft.PowerShell.Management/**.yml": "dongbow",
+        "**/Microsoft.PowerShell.ODataUtils/**.yml": "anmenaga",
+        "**/Microsoft.PowerShell.Operation.Validation/**.yml": "jimtru",
+        "**/Microsoft.PowerShell.Security/**.md": "tplunk",
+        "**/Microsoft.PowerShell.Security/**.yml": "tplunk",
+        "**/Microsoft.PowerShell.Utility/**.yml": "jimtru",
+        "**/Microsoft.WSMan.Management/**.md": "paulhi",
+        "**/Microsoft.WSMan.Management/**.yml": "paulhi",
+        "**/PSDesiredStateConfiguration/**.md": "nitingup",
+        "**/PSDesiredStateConfiguration/**.yml": "nitingup",
+        "**/PSDiagnostics/**.yml": "slee",
+        "**/PSReadline/**.md": "slee",
+        "**/PSReadline/**.yml": "slee",
+        "**/PSScheduledJob/**.md": "slee",
+        "**/PSScheduledJob/**.yml": "slee",
+        "**/PSWorkflow/**.md": "slee",
+        "**/PSWorkflow/**.yml": "slee",
+        "**/PSWorkflowUtility/**.yml": "slee",
+        "**/PackageManagement/**.yml": "edyoung",
+        "**/PowerShellGet/**.yml": "edyoung",
+        "**/ThreadJob/**.yml": "paulhi",
+        "docs-conceptual/**.md": "jaiello",
+        "docs-conceptual/community/**.md": "sewhee",
+        "docs-conceptual/dev-cross-plat/**/**.md": "sewhee",
+        "docs-conceptual/developer/**/**.md": "jaiello",
+        "docs-conceptual/dsc/**/**.md": "migreene",
+        "docs-conceptual/gallery/**/**.md": "sysmith",
+        "docs-conceptual/install/**.md": "jaiello",
+        "docs-conceptual/learn/**.md": "sewhee",
+        "docs-conceptual/learn/deep-dive/**.md": "sewhee",
+        "docs-conceptual/learn/ps101/**.md": "mirobb",
+        "docs-conceptual/learn/remoting/**.md": "jaiello",
+        "docs-conceptual/learn/remoting/jea/**.md": "ryanpu",
+        "docs-conceptual/samples/**.md": "jaiello",
+        "docs-conceptual/whats-new/**.md": "jaiello",
+        "docs-conceptual/windows-powershell/**.md": "jaiello"
+      },
+      "ms.prod": {
+        "**/**.md": "powershell",
+        "**/**.yml": "powershell"
+      },
+      "ms.technology": {
+        "5.1/**.md": "powershell-conceptual",
+        "5.1/**.yml": "powershell-cmdlets",
+        "7.0/**.md": "powershell-conceptual",
+        "7.0/**.yml": "powershell-cmdlets",
+        "7.1/**.md": "powershell-conceptual",
+        "7.1/**.yml": "powershell-cmdlets",
+        "7.2/**.md": "powershell-conceptual",
+        "7.2/**.yml": "powershell-cmdlets",
+        "docs-conceptual/**/**.md": "powershell-conceptual"
+      },
+      "ms.tgt_pltfr": {
+        "**/**": "windows, macos, linux"
+      },
+      "ms.topic": {
+        "5.1/**.md": "managed-reference",
+        "5.1/**.yml": "managed-reference",
+        "7.0/**.md": "managed-reference",
+        "7.0/**.yml": "managed-reference",
+        "7.1/**.md": "managed-reference",
+        "7.1/**.yml": "managed-reference",
+        "7.2/**.md": "managed-reference",
+        "7.2/**.yml": "managed-reference",
+        "docs-conceptual/**/**.md": "conceptual",
+        "docs-conceptual/dev-cross-plat/**/**.md": "reference",
+        "docs-conceptual/developer/**/**.md": "reference",
+        "docs-conceptual/learn/**.md": "tutorial",
+        "docs-conceptual/learn/deep-dives/**.md": "tutorial",
+        "docs-conceptual/learn/ps101/**.md": "guide",
+        "docs-conceptual/learn/remoting/**.md": "tutorial",
+        "docs-conceptual/samples/**/**.md": "sample"
+      },
+      "products": {
+        "**/**.md": [ "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3" ],
+        "**/**.yml": [ "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3" ]
+      },
+      "social_image_url": {
+        "**/**.md": "https://docs.microsoft.com/media/logos/logo-powershell-social.png",
+        "**/**.yml": "https://docs.microsoft.com/media/logos/logo-powershell-social.png"
+      }
+    },
+    "globalMetadata": {
+      "ROBOTS": "INDEX, FOLLOW",
+      "_op_documentIdPathDepotMapping": {
+        "reference/docs-conceptual/developer/": { "folder_relative_path_in_docset": "developer/" },
+        "reference/docs-conceptual/dsc/": { "folder_relative_path_in_docset": "dsc/" },
+        "reference/docs-conceptual/gallery/": { "folder_relative_path_in_docset": "gallery/" },
+        "reference/docs-conceptual/wmf/": { "folder_relative_path_in_docset": "wmf/" }
+      },
+      "apiPlatform": "powershell",
+      "archive_url": "https://docs.microsoft.com/previous-versions/powershell/scripting/overview",
+      "breadcrumb_path": "/powershell/scripting/bread/toc.json",
+      "feedback_github_repo": "MicrosoftDocs/PowerShell-Docs",
+      "feedback_product_url": "https://github.com/PowerShell/PowerShell/issues/new/choose",
+      "feedback_system": "GitHub",
+      "hideScope": false,
+      "ms.devlang": "powershell",
+      "searchScope": [
+        "PowerShell"
+      ],
+      "titleSuffix": "PowerShell",
+      "toc_preview": true,
+      "uhfHeaderId": "MSDocsHeader-Powershell"
+    },
+    "groups": {
+      "conceptual": { "moniker_range": ">=powershell-5.1" },
+      "powershell-5.1": { "moniker_range": "powershell-5.1" },
+      "powershell-7": { "moniker_range": "powershell-7" },
+      "powershell-7.1": { "moniker_range": "powershell-7.1" },
+      "powershell-7.2": { "moniker_range": "powershell-7.2" }
+    },
+    "markdownEngineName": "markdig",
+    "overwrite": [],
+    "resource": [
+      {
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
         ],
-        "resource": [
-            {
-              "files": ["**/media/**/*.png", "**/media/**/*.gif", "**/media/**/*.jpeg", "**/media/**/*.jpg", "**/media/**/*.svg"],
-              "exclude": ["**/obj/**", "**/includes/**"]
-            }
-        ],
-        "globalMetadata": {
-            "toc_preview": true,
-            "archive_url": "https://docs.microsoft.com/previous-versions/powershell/scripting/overview",
-            "searchScope": ["PowerShell"],
-            "hideScope": false,
-            "breadcrumb_path": "/powershell/scripting/bread/toc.json",
-            "uhfHeaderId": "MSDocsHeader-Powershell",
-            "apiPlatform": "powershell",
-            "ms.devlang": "powershell",
-            "titleSuffix": "PowerShell",
-            "ROBOTS": "INDEX, FOLLOW",
-            "feedback_system": "GitHub",
-            "feedback_github_repo": "MicrosoftDocs/PowerShell-Docs",
-            "feedback_product_url": "https://github.com/PowerShell/PowerShell/issues/new/choose",
-            "_op_documentIdPathDepotMapping": {
-              "reference/docs-conceptual/wmf/": {
-                "folder_relative_path_in_docset": "wmf/"
-              },
-              "reference/docs-conceptual/dsc/": {
-                "folder_relative_path_in_docset": "dsc/"
-              },
-              "reference/docs-conceptual/developer/": {
-                "folder_relative_path_in_docset": "developer/"
-              },
-              "reference/docs-conceptual/gallery/": {
-                "folder_relative_path_in_docset": "gallery/"
-              }
-            }
-        },
-        "fileMetadata": {
-            "feedback_product_url": {
-              "docs-conceptual/dsc/**/**.md": "https://windowsserver.uservoice.com/forums/301869-powershell",
-              "docs-conceptual/gallery/**/**.md": "https://github.com/powershell/powershellgallery/issues/new",
-              "docs-conceptual/learn/remoting/jea/**.md": "https://github.com/powershell/jea/issues/new",
-              "docs-conceptual/windows-powershell/wmf/**/**.md": "https://windowsserver.uservoice.com/forums/301869-powershell"
-            },
-            "social_image_url": {
-              "**/**.md": "https://docs.microsoft.com/media/logos/logo-powershell-social.png",
-              "**/**.yml": "https://docs.microsoft.com/media/logos/logo-powershell-social.png"
-            },
-            "products": {
-              "**/**.md": ["https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"],
-              "**/**.yml": ["https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"]
-            },
-            "ms.prod": {
-              "**/**.md": "powershell",
-              "**/**.yml": "powershell"
-            },
-            "ms.technology": {
-              "5.1/**.yml": "powershell-cmdlets",
-              "5.1/**.md": "powershell-conceptual",
-              "7.0/**.yml": "powershell-cmdlets",
-              "7.0/**.md": "powershell-conceptual",
-              "7.1/**.yml": "powershell-cmdlets",
-              "7.1/**.md": "powershell-conceptual",
-              "7.2/**.yml": "powershell-cmdlets",
-              "7.2/**.md": "powershell-conceptual",
-              "docs-conceptual/**/**.md": "powershell-conceptual"
-            },
-            "ms.topic": {
-              "5.1/**.yml": "managed-reference",
-              "5.1/**.md": "managed-reference",
-              "7.0/**.yml": "managed-reference",
-              "7.0/**.md": "managed-reference",
-              "7.1/**.yml": "managed-reference",
-              "7.1/**.md": "managed-reference",
-              "7.2/**.yml": "managed-reference",
-              "7.2/**.md": "managed-reference",
-              "docs-conceptual/dev-cross-plat/**/**.md": "reference",
-              "docs-conceptual/developer/**/**.md": "reference",
-              "docs-conceptual/learn/**.md": "tutorial",
-              "docs-conceptual/learn/deep-dives/**.md": "tutorial",
-              "docs-conceptual/learn/ps101/**.md": "guide",
-              "docs-conceptual/learn/remoting/**.md": "tutorial",
-              "docs-conceptual/samples/**/**.md": "sample",
-              "docs-conceptual/**/**.md": "conceptual"
-            },
-            "manager": {
-              "**/**": "sewhee"
-            },
-            "ms.tgt_pltfr": {
-              "**/**": "windows, macos, linux"
-            },
-            "author": {
-              "**/CimCmdlets/**.yml": "SteveL-MSFT",
-              "**/ISE/**.yml": "SteveL-MSFT",
-              "**/Microsoft.PowerShell.Archive/**.yml": "anmenaga",
-              "**/Microsoft.PowerShell.Core/**.yml": "SteveL-MSFT",
-              "**/Microsoft.PowerShell.Core/**.md": "SteveL-MSFT",
-              "**/Microsoft.PowerShell.Diagnostics/**.yml": "SteveL-MSFT",
-              "**/Microsoft.PowerShell.Host/**.yml": "SteveL-MSFT",
-              "**/Microsoft.PowerShell.LocalAccounts/**.yml": "SteveL-MSFT",
-              "**/Microsoft.PowerShell.Management/**.yml": "daxian-dbw",
-              "**/Microsoft.PowerShell.ODataUtils/**.yml": "anmenaga",
-              "**/Microsoft.PowerShell.Operation.Validation/**.yml": "JamesWTruher",
-              "**/Microsoft.PowerShell.Security/**.yml": "TravisEz13",
-              "**/Microsoft.PowerShell.Security/**.md": "TravisEz13",
-              "**/Microsoft.PowerShell.Utility/**.yml": "JamesWTruher",
-              "**/Microsoft.WSMan.Management/**.yml": "PaulHigin",
-              "**/Microsoft.WSMan.Management/**.md": "PaulHigin",
-              "**/PackageManagement/**.yml": "edyoung",
-              "**/PowerShellGet/**.yml": "edyoung",
-              "**/PSDesiredStateConfiguration/**.yml": "nitinbps",
-              "**/PSDesiredStateConfiguration/**.md": "nitinbps",
-              "**/PSDiagnostics/**.yml": "SteveL-MSFT",
-              "**/PSDiagnostics/**.md": "SteveL-MSFT",
-              "**/PSReadline/**.yml": "SteveL-MSFT",
-              "**/PSReadline/**.md": "SteveL-MSFT",
-              "**/PSScheduledJob/**.yml": "SteveL-MSFT",
-              "**/PSScheduledJob/**.md": "SteveL-MSFT",
-              "**/PSWorkflow/**.yml": "SteveL-MSFT",
-              "**/PSWorkflow/**.md": "SteveL-MSFT",
-              "**/PSWorkflowUtility/**.yml": "SteveL-MSFT",
-              "**/ThreadJob/**.yml": "PaulHigin",
-              "docs-conceptual/community/**.md": "sdwheeler",
-              "docs-conceptual/dev-cross-plat/**/**.md": "sdwheeler",
-              "docs-conceptual/developer/**/**.md": "joeyaiello",
-              "docs-conceptual/dsc/**/**.md": "mgreenegit",
-              "docs-conceptual/gallery/**/**.md": "SydneyhSmith",
-              "docs-conceptual/install/**.md": "joeyaiello",
-              "docs-conceptual/learn/**.md": "sdwheeler",
-              "docs-conceptual/learn/deep-dives/**.md": "sdwheeler",
-              "docs-conceptual/learn/ps101/**.md": "mikefrobbins",
-              "docs-conceptual/learn/remoting/**.md": "joeyaiello",
-              "docs-conceptual/learn/remoting/jea/**.md": "rpsqrd",
-              "docs-conceptual/samples/**.md": "joeyaiello",
-              "docs-conceptual/whats-new/**.md": "joeyaiello",
-              "docs-conceptual/windows-powershell/**.md": "joeyaiello",
-              "docs-conceptual/**.md": "joeyaiello"
-            },
-            "ms.author": {
-              "**/CimCmdlets/**.yml": "slee",
-              "**/ISE/**.yml": "slee",
-              "**/Microsoft.PowerShell.Archive/**.yml": "anmenaga",
-              "**/Microsoft.PowerShell.Core/**.yml": "slee",
-              "**/Microsoft.PowerShell.Core/**.md": "slee",
-              "**/Microsoft.PowerShell.Diagnostics/**.yml": "slee",
-              "**/Microsoft.PowerShell.Host/**.yml": "slee",
-              "**/Microsoft.PowerShell.LocalAccounts/**.yml": "slee",
-              "**/Microsoft.PowerShell.Management/**.yml": "dongbow",
-              "**/Microsoft.PowerShell.ODataUtils/**.yml": "anmenaga",
-              "**/Microsoft.PowerShell.Operation.Validation/**.yml": "jimtru",
-              "**/Microsoft.PowerShell.Security/**.yml": "tplunk",
-              "**/Microsoft.PowerShell.Security/**.md": "tplunk",
-              "**/Microsoft.PowerShell.Utility/**.yml": "jimtru",
-              "**/Microsoft.WSMan.Management/**.yml": "paulhi",
-              "**/Microsoft.WSMan.Management/**.md": "paulhi",
-              "**/PackageManagement/**.yml": "edyoung",
-              "**/PowerShellGet/**.yml": "edyoung",
-              "**/PSDesiredStateConfiguration/**.yml": "nitingup",
-              "**/PSDesiredStateConfiguration/**.md": "nitingup",
-              "**/PSDiagnostics/**.yml": "slee",
-              "**/PSReadline/**.yml": "slee",
-              "**/PSReadline/**.md": "slee",
-              "**/PSScheduledJob/**.yml": "slee",
-              "**/PSScheduledJob/**.md": "slee",
-              "**/PSWorkflow/**.yml": "slee",
-              "**/PSWorkflow/**.md": "slee",
-              "**/PSWorkflowUtility/**.yml": "slee",
-              "**/ThreadJob/**.yml": "paulhi",
-              "docs-conceptual/community/**.md": "sewhee",
-              "docs-conceptual/dev-cross-plat/**/**.md": "sewhee",
-              "docs-conceptual/developer/**/**.md": "jaiello",
-              "docs-conceptual/dsc/**/**.md": "migreene",
-              "docs-conceptual/gallery/**/**.md": "sysmith",
-              "docs-conceptual/install/**.md": "jaiello",
-              "docs-conceptual/learn/**.md": "sewhee",
-              "docs-conceptual/learn/deep-dive/**.md": "sewhee",
-              "docs-conceptual/learn/ps101/**.md": "mirobb",
-              "docs-conceptual/learn/remoting/**.md": "jaiello",
-              "docs-conceptual/learn/remoting/jea/**.md": "ryanpu",
-              "docs-conceptual/samples/**.md": "jaiello",
-              "docs-conceptual/whats-new/**.md": "jaiello",
-              "docs-conceptual/windows-powershell/**.md": "jaiello",
-              "docs-conceptual/**.md": "jaiello"
-            }
-        }
-    }
+        "files": [
+          "**/media/**/*.png",
+          "**/media/**/*.gif",
+          "**/media/**/*.jpeg",
+          "**/media/**/*.jpg",
+          "**/media/**/*.svg"
+        ]
+      }
+    ]
+  }
 }
