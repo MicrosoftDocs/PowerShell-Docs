@@ -1,71 +1,77 @@
 {
-    "build_entry_point": "docs",
-    "dependent_packages": [{
-        "id": "Microsoft.DocAsCode.MAML2Yaml",
-        "nuget_feed": "https://www.myget.org/F/op/api/v2",
-        "path_to_root": "_dependentPackages/MAML2Yaml",
-        "target_framework": "net45",
-        "version": "latest"
-    }],
-    "dependent_repositories": [{
-            "branch": "master",
-            "branch_mapping": {},
-            "path_to_root": "_themes",
-            "url": "https://github.com/Microsoft/templates.docs.msft"
-        },
-        {
-            "branch": "master",
-            "branch_mapping": {},
-            "path_to_root": "powershell-sdk-samples",
-            "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples"
-        },
-        {
-            "path_to_root": "_themes.pdf",
-            "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
-            "branch": "master"
-        }
-    ],
-    "docsets_to_publish": [{
-        "build_entry_point": "docs",
-        "build_output_subfolder": "reference",
-        "build_source_folder": "reference",
-        "customized_tasks": {
-            "docset_prebuild": [
-                "_dependentPackages/MAML2Yaml/tools/Run.ps1"
-            ]
-        },
-        "docset_name": "PowerShell_PowerShell-docs_reference",
-        "locale": "en-us",
-        "monikerPath": [
-            "mapping/monikerMapping.json"
-        ],
-        "moniker_ranges": [">=powershell-5.1"],
-        "monikers": [],
-        "open_to_public_contributors": true,
-        "template_folder": "_themes",
-        "type_mapping": {
-            "PowershellModule": "Content",
-            "PowershellCmdlet": "Content",
-            "Conceptual": "Content"
-        },
-        "xref_query_tags": ["/dotnet", "/uwp/api"],
-        "version": 0
-    }],
-
-    "git_repository_branch_open_to_public_contributors": "staging",
-    "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/PowerShell-Docs",
-    "need_preview_pull_request": true,
-
-    "notification_subscribers": [],
-    "sync_notification_subscribers": [],
-
-    "contribution_branch_mappings": {},
-    "skip_source_output_uploading": false,
-
-    "need_generate_pdf_url_template": false,
-    "branch_target_mapping": {},
-    "targets": {},
-    "docs_build_engine": {
-        "name": "docfx_v3"
+  "branch_target_mapping": {},
+  "build_entry_point": "docs",
+  "contribution_branch_mappings": {},
+  "dependent_packages": [
+    {
+      "id": "Microsoft.DocAsCode.MAML2Yaml",
+      "nuget_feed": "https://www.myget.org/F/op/api/v2",
+      "path_to_root": "_dependentPackages/MAML2Yaml",
+      "target_framework": "net45",
+      "version": "latest"
     }
+  ],
+  "dependent_repositories": [
+    {
+      "branch": "master",
+      "branch_mapping": {},
+      "path_to_root": "_themes",
+      "url": "https://github.com/Microsoft/templates.docs.msft"
+    },
+    {
+      "branch": "master",
+      "branch_mapping": {},
+      "path_to_root": "powershell-sdk-samples",
+      "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples"
+    },
+    {
+      "branch": "master",
+      "path_to_root": "_themes.pdf",
+      "url": "https://github.com/Microsoft/templates.docs.msft.pdf"
+    }
+  ],
+  "docs_build_engine": {
+    "name": "docfx_v3"
+  },
+  "docsets_to_publish": [
+    {
+      "build_entry_point": "docs",
+      "build_output_subfolder": "reference",
+      "build_source_folder": "reference",
+      "customized_tasks": {
+        "docset_prebuild": [
+          "_dependentPackages/MAML2Yaml/tools/Run.ps1"
+        ]
+      },
+      "docset_name": "PowerShell_PowerShell-docs_reference",
+      "locale": "en-us",
+      "monikerPath": [
+        "mapping/monikerMapping.json"
+      ],
+      "moniker_ranges": [
+        ">=powershell-5.1"
+      ],
+      "monikers": [],
+      "open_to_public_contributors": true,
+      "template_folder": "_themes",
+      "type_mapping": {
+        "Conceptual": "Content",
+        "PowershellCmdlet": "Content",
+        "PowershellModule": "Content"
+      },
+      "version": 0,
+      "xref_query_tags": [
+        "/dotnet",
+        "/uwp/api"
+      ]
+    }
+  ],
+  "git_repository_branch_open_to_public_contributors": "staging",
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/PowerShell-Docs",
+  "need_generate_pdf_url_template": false,
+  "need_preview_pull_request": true,
+  "notification_subscribers": [],
+  "skip_source_output_uploading": false,
+  "sync_notification_subscribers": [],
+  "targets": {}
 }
