@@ -352,7 +352,7 @@ In PowerShell 6.2, an alternate view was added to get hard link information.
 Get-ChildItem -Path C:\PathContainingHardLink | Format-Table -View childrenWithHardLink
 ```
 
-### Example 9: Output for experimental feature PSUnixFileStat
+### Example 10: Output for experimental feature PSUnixFileStat
 
 In PowerShell 7 on Unix systems, the experimental feature **PSUnixFileStat** provides Unix-like output:
 
