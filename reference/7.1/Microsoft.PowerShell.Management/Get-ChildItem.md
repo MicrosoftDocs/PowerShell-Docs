@@ -352,7 +352,7 @@ In PowerShell 6.2, an alternate view was added to get hard link information.
 Get-ChildItem -Path C:\PathContainingHardLink | Format-Table -View childrenWithHardLink
 ```
 
-### Example 9: Output for Non-Windows Operating Systems
+### Example 10: Output for Non-Windows Operating Systems
 
 In PowerShell 7.1 on Unix systems, the `Get-ChildItem` provides Unix-like output:
 
