@@ -202,7 +202,7 @@ some commands that can act as filters:
   filter. The expression itself uses the `-Like` operator and string argument that is a wildcard
   expression.
 
-## Explore a objects with Get-Member
+## Explore objects with Get-Member
 
 Once you've been able to locate the cmdlet you want, you want to know more about what it produces,
 the output. The output is interesting for several reasons like:
