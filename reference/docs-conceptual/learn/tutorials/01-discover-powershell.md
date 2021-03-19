@@ -3,7 +3,7 @@ title: Discover PowerShell
 ms.date: 03/12/2021
 ms.custom: chnoring
 ms.reviewer: sewhee
-description: Learn what PowerShell is and some essential commands used to discover the other commands are already available and inspect and filter the output, allowing for more effective use.
+description: Learn what PowerShell is and some essential commands used to discover more about PowerShell.
 ---
 
 # Discover PowerShell
@@ -23,7 +23,7 @@ Even then, you might need to _massage_ the results a little.
 ## What can PowerShell  be used for?
 
 Usage of PowerShell has grown since the days when it was Windows-only. It's still used for Windows
-task automation, but, today, you can use for a variety of tasks like:
+task automation, but today, you can use for a variety of tasks like:
 
 - **Cloud management**. PowerShell can be used to manage cloud resources. For example, you can
   retrieve information about cloud resources, as well as update or deploy new resources.
@@ -31,14 +31,14 @@ task automation, but, today, you can use for a variety of tasks like:
 - **Automate tasks for Active Directory and Exchange**. You can use it to automate almost any task
   on Windows like creating users in Active Directory and mailboxes in Exchange.
 
-There are many more areas of usage but the above is to give you a hint that PowerShell has come a
+There are many more areas of usage but the list above gives you a hint that PowerShell has come a
 long way.
 
 ## Who uses PowerShell?
 
-PowerShell is very powerful and a lot of people working in multitude of roles can benefit from using
-it. Traditionally, PowerShell has been used by the System Administrator role but is now being used
-by people calling themselves DevOps, Cloud Ops, and even Developers.
+PowerShell is very powerful and a lot of people, working in multitude of roles, can benefit from
+using it. Traditionally, PowerShell has been used by the System Administrator role but is now being
+used by people calling themselves DevOps, Cloud Ops, and even Developers.
 
 ## PowerShell cmdlets
 
@@ -73,8 +73,8 @@ Using these commands, you can discover almost anything you need to know about Po
 
 Verb is an important concepts in PowerShell. It's a naming standard that most cmdlets follow. It's
 also a naming standard you're expected to follow, once you write your own commands. The idea is that
-the _verb_ says what you're trying to do, read data or maybe change it. To get a full list of all
-possible verbs, you can run `Get-Verb` like so:
+the _verb_ says what you're trying to do, read data or maybe change it. PowerShell has a
+standardized list of verbs. To get a full list of all possible verbs, use the `Get-Verb` cmdlet:
 
 ```powershell
 Get-Verb
@@ -159,7 +159,7 @@ Cmdlet          Get-UsageAggregates          2.0.0      Az.Billing
 
 Thereby, you narrowed down the output quite bit by knowing the verb and what it's called.
 
-### Helper cmdlets, that helps with filtering
+### Use helper cmdlets to filter results
 
 Apart from using parameters to filter, you can also use commands to help you with this task. Here's
 some commands that can act as filters:
@@ -186,45 +186,44 @@ some commands that can act as filters:
    It's worth looking into to this command further as it can do a lot more
    [docs Select-Object](/powershell/module/microsoft.powershell.utility/select-object)
 
-- **Where-Object**. The where object helps you select objects from a collection based on the values
+- `Where-Object`. The where object helps you select objects from a collection based on the values
   of properties. The command takes an expression in which you are able to express what column/s you
   want to match against what values. To find all process object where the `ProcessName` starts with
   `p`, you could use `Where-Object` like so:
 
   ```powershell
-  Get-Process | Where-Object {$_.ProcessName -Match "^p.*"}
+  Get-Process | Where-Object {$_.ProcessName -Like "p*"}
   ```
 
-  Above, the `Get-Process` command produces a collection of process objects. To filter down the
+  Above, the `Get-Process` cmdlet produces a collection of process objects. To filter down the
   response, you _pipe_ the command `Where-Object`. Piping means that two or more commands are
   connected via a pipe `|` character. The idea is that the output from one command serves as the
   input for the next command, as read from left to right. The `Where-Object` uses an expression to
-  filter. As can be seen by the use of curly brackets **{}**. The expression itself uses the
-  `-Match` operator and string argument that is a regular expression.
+  filter. The expression itself uses the `-Like` operator and string argument that is a wildcard
+  expression.
 
-## Explore a command with Get-Member
+## Explore a objects with Get-Member
 
-Once you've been able to locate the command you want, you want to know more about what it produces,
+Once you've been able to locate the cmdlet you want, you want to know more about what it produces,
 the output. The output is interesting for several reasons like:
 
-- **Standalone**. You might run just one command and you want to for example display the output in
-  some sort of report. The question to ask yourself is wether the command produces an output that
-  works for you, or if you need to change it.
+- **Standalone**. You might run just one cmdlet and you want to display the output in some sort of
+  report. The question to ask yourself is whether the command produces an output that works for you,
+  or if you need to change it.
 - **When used in a pipeline**. It's common in PowerShell to connect several commands in a pipeline,
   to fetch data, filter and finally to transform it. For a command to fit into a pipeline, you have
   to look at what input and output it produces. The idea is that the output of a command is used as
   the input of another command.
 
-To discover the output of a command, you can use the cmdlet `Get-Member`. The command displays the
-properties and methods of the result. Additionally it also show the type of the object. To use
-`Get-Member` you need to _pipe_ it with the command you want to know more about, like so:
+The `Get-Member` cmdlet displays the properties and methods of the result. Additionally it also show
+the type of the object. Pipe the output you want to inspect to `Get-Member`.
 
 ```powershell
 Get-Process | Get-Member
 ```
 
-The result displays the returned type as `TypeName` and then all the properties and
-methods of the object. Here's an excerpt of such a result:
+The result displays the returned type as `TypeName` and then all the properties and methods of the
+object. Here's an excerpt of such a result:
 
 ```output
 TypeName: System.Diagnostics.Process
@@ -356,9 +355,9 @@ like what type it operates on and what other similar commands operate on that sa
     Cmdlet          Wait-Process                7.0.0.0    Microsoft.PowerShell.Managem…
    ```
 
-   Congrats, you've managed to find other commands that operates on the same type `Process`. Using
-   `Get-Member`, is a good starting point to understand what other commands you should check out
-   next.
+   Congratulations, you've managed to find other commands that operates on the same type `Process`.
+   Using `Get-Member` is a good starting point to understand what other commands you should check
+   out next.
 
 ## Summary
 
@@ -369,5 +368,5 @@ powerful help system.
 
 ### Additional resources
 
-- [reference doc, Get-Command](xref:Microsoft.PowerShell.Core/Get-Command)
-- [reference doc, Get-Member](xref:Microsoft.PowerShell.Utility/Get-Member)
+- [Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
+- [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
