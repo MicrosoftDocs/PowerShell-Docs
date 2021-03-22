@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Host
@@ -34,7 +33,8 @@ features of the host program user interface, such as the text and background col
 ### Example 1: Get information about the PowerShell console host
 
 ```
-PS C:\> Get-Host
+Get-Host
+
 Name             : ConsoleHost
 Version          : 2.0
 InstanceId       : e4e0ab54-cc5e-4261-9117-4081f20ce7a2
@@ -46,29 +46,31 @@ IsRunspacePushed : False
 Runspace         : System.Management.Automation.Runspaces.LocalRunspace
 ```
 
-This command displays information about the Windows PowerShell console, which is the current host
-program for Windows PowerShell in this example. It includes the name of the host, the version of
-Windows PowerShell that is running in the host, and current culture and UI culture.
+This command displays information about the PowerShell console, which is the current host program
+for PowerShell in this example. It includes the name of the host, the version of PowerShell that is
+running in the host, and current culture and UI culture.
 
-The Version, UI, CurrentCulture, CurrentUICulture, PrivateData, and Runspace properties each contain
-an object with very useful properties. Later examples examine these properties.
+The **Version**, **UI**, **CurrentCulture**, **CurrentUICulture**, **PrivateData**, and **Runspace**
+properties each contain an object with other useful properties. Later examples examine these
+properties.
 
 ### Example 2: Resize the PowerShell window
 
 ```powershell
-PS C:\> $H = Get-Host
-PS C:\> $Win = $H.UI.RawUI.WindowSize
-PS C:\> $Win.Height = 10
-PS C:\> $Win.Width  = 10
-PS C:\> $H.UI.RawUI.Set_WindowSize($Win)
+$H = Get-Host
+$Win = $H.UI.RawUI.WindowSize
+$Win.Height = 10
+$Win.Width  = 10
+$H.UI.RawUI.Set_WindowSize($Win)
 ```
 
-This command resizes the Windows PowerShell window to 10 pixels by 10 pixels.
+This command resizes the Windows PowerShell window to 10 lines by 10 characters.
 
 ### Example 3: Get the PowerShell version for the host
 
 ```powershell
-PS C:\> (Get-Host).Version | Format-List -Property *
+(Get-Host).Version | Format-List -Property *
+
 Major         : 2
 Minor         : 0
 Build         : -1
@@ -81,14 +83,15 @@ This command gets detailed information about the version of Windows PowerShell r
 You can view, but not change, these values.
 
 The Version property of `Get-Host` contains a **System.Version** object. This command uses a
-pipeline operator (|) to send the version object to the `Format-List` cmdlet. The `Format-List`
-command uses the *Property* parameter with a value of all (*) to display all of the properties and
-property values of the version object.
+pipeline operator (`|`) to send the version object to the `Format-List` cmdlet. The `Format-List`
+command uses the **Property** parameter with a value of all (`*`) to display all of the properties
+and property values of the version object.
 
 ### Example 4: Get the current culture for the host
 
 ```powershell
-PS C:\> (Get-Host).CurrentCulture | Format-List -Property *
+(Get-Host).CurrentCulture | Format-List -Property *
+
 Parent                         : en
 LCID                           : 1033
 KeyboardLayoutId               : 1033
@@ -118,14 +121,15 @@ in the host. This is the same information that is returned by the `Get-Culture` 
 Similarly, the **CurrentUICulture** property returns the same object that `Get-UICulture` returns.
 
 The **CurrentCulture** property of the host object contains a **System.Globalization.CultureInfo**
-object. This command uses a pipeline operator (|) to send the **CultureInfo** object to the
-`Format-List` cmdlet. The `Format-List` command uses the *Property* parameter with a value of all
-(*) to display all of the properties and property values of the **CultureInfo** object.
+object. This command uses a pipeline operator (`|`) to send the **CultureInfo** object to the
+`Format-List` cmdlet. The `Format-List` command uses the **Property** parameter with a value of all
+(`*`) to display all of the properties and property values of the **CultureInfo** object.
 
 ### Example 5: Get the DateTimeFormat for the current culture
 
 ```powershell
-PS C:\> (Get-Host).CurrentCulture.DateTimeFormat | Format-List -Property *
+(Get-Host).CurrentCulture.DateTimeFormat | Format-List -Property *
+
 AMDesignator                     : AM
 Calendar                         : System.Globalization.GregorianCalendar
 DateSeparator                    : /
@@ -167,7 +171,8 @@ display the property values of the object, use the `Format-List` cmdlet.
 ### Example 6: Get the RawUI property for the host
 
 ```
-PS C:\> (Get-Host).UI.RawUI | Format-List -Property *
+(Get-Host).UI.RawUI | Format-List -Property *
+
 ForegroundColor       : DarkYellow
 BackgroundColor       : DarkBlue
 CursorPosition        : 0,390
@@ -187,8 +192,8 @@ values, you can change the appearance of the host program.
 ### Example 7: Set the background color for the PowerShell console
 
 ```powershell
-PS C:\> (Get-Host).UI.RawUI.BackgroundColor = "Black"
-PS C:\> cls
+(Get-Host).UI.RawUI.BackgroundColor = "Black"
+cls
 ```
 
 These commands change the background color of the Windows PowerShell console to black. The **cls**
@@ -196,12 +201,12 @@ command is an alias for the `Clear-Host` function, which clears the screen and c
 screen to the new color.
 
 This change is effective only in the current session. To change the background color of the console
-for all sessions, add the command to your Windows PowerShell profile.
+for all sessions, add the command to your PowerShell profile.
 
 ### Example 8: Set the background color for error messages
 
-```
-PS C:\> $Host.PrivateData.ErrorBackgroundColor = "white"
+```powershell
+$Host.PrivateData.ErrorBackgroundColor = "white"
 ```
 
 This command changes the background color of error messages to white.
@@ -212,7 +217,7 @@ interchangeably.
 
 This command uses the **PrivateData** property of `$Host` as its ErrorBackgroundColor property. To
 see all of the properties of the object in the `$Host`.PrivateData property, type
-`$host.privatedata | format-list *`.
+`$host.PrivateData | format-list *`.
 
 ## PARAMETERS
 
@@ -226,6 +231,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
