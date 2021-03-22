@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 03/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-job?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-Job
@@ -190,11 +190,12 @@ Running AppMgmt     Application Management             Server02
 # Use the New-PSSession cmdlet to create three user-managed PSSessions on three servers, and save the sessions in the $s variable.
 $s = New-PSSession -ComputerName Server01, Server02, Server03
 # Use Invoke-Command run a Start-Job command in each of the PSSessions in the $s variable.
-# The job outputs the ComputerName of each server.
+# The creates a new job with a custom name to each server
+# The job outputs the datetime from each server
 # Save the job objects in the $j variable.
-$j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {$env:COMPUTERNAME}}
+$j = Invoke-Command -Session $s -ScriptBlock {​Start-Job -Name $('MyJob-' +$env:COMPUTERNAME) -ScriptBlock {(Get-Date).ToString()​}​}
 # To confirm that these job objects are from the remote machines, run Get-Job to show no local jobs running.
-Get-Job
+Get-Job​​
 ```
 
 ```Output
@@ -208,34 +209,29 @@ $j
 ```
 
 ```Output
-Id   Name     State      HasMoreData   Location   Command
---   ----     -----      -----------   --------   -------
-1    Job1     Completed  True          Localhost  $env:COMPUTERNAME
-2    Job2     Completed  True          Localhost  $env:COMPUTERNAME
-3    Job3     Completed  True          Localhost  $env:COMPUTERNAME
+Id   Name               State      HasMoreData   Location   Command
+--   ----               -----      -----------   --------   -------
+1    MyJob-Server01     Completed  True          Localhost  (Get-Date).ToString()
+2    MyJob-Server02     Completed  True          Localhost  (Get-Date).ToString()
+3    MyJob-Server03     Completed  True          Localhost  (Get-Date).ToString()
 ```
 
 ```powershell
-# Use Invoke-Command to run a Receive-Job command in each of the sessions in the $s variable and save the results in the $Results variable.
+# Use Invoke-Command to run a Receive-Job command in each of the sessions in the $s variable and save the results in the $results variable.
 # The Receive-Job command must be run in each session because the jobs were run locally on each server.
-$results = Invoke-Command -Session $s -ScriptBlock {Receive-Job -Job $Using:j}
+$results = Invoke-Command -Session $s -ScriptBlock {​Receive-Job -Name $('MyJob-' +$env:COMPUTERNAME)}
 ```
 
 ```Output
-Server01
-Server02
-Server03
+3/22/2021 7:41:47 PM
+3/22/2021 7:41:47 PM
+3/22/2021 9:41:47 PM
 ```
 
 This example shows how to get the results of background jobs run on three remote computers.
 Unlike the previous example, using `Invoke-Command` to run the `Start-Job` command actually
 started three independent jobs on each of the three computers. As a result, the command returned
 three job objects representing three jobs run locally on three different computers.
-
-> [!NOTE]
-> In the last command, because `$j` is a local variable, the script block uses the **Using** scope
-> modifier to identify the `$j` variable. For more information about the **Using** scope modifier,
-> see [about_Remote_Variables](./About/about_Remote_Variables.md).
 
 ### Example 5: Access child jobs
 
