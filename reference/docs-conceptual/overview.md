@@ -12,21 +12,21 @@ language, and a configuration management framework. PowerShell runs on Windows, 
 
 ## Shell
 
-PowerShell is modern command shell that includes all of the best features of other popular shells.
-Unlike most shells that only accept and return text, PowerShell accepts and returns .NET Objects.
-
-Features
+PowerShell is modern command shell that includes the best features of other popular shells. Unlike
+most shells that only accept and return text, PowerShell accepts and returns .NET Objects. The shell
+includes the following features:
 
 - Robust command-line [history][]
 - Tab completion and command prediction (See [about_PSReadLine][])
 - Supports command and parameter [aliases][]
 - [Pipeline][] for chaining commands
-- In console [help][] system similar to Unix `man` pages
+- In-console [help][] system, similar to Unix `man` pages
 
 ## Scripting language
 
 PowerShell is built on the .NET Common Language Runtime (CLR). All inputs and outputs are .NET
-objects. No need to parse text output to extract information from output.
+objects. No need to parse text output to extract information from output. The PowerShell scripting
+language includes the following features:
 
 - Extensible through [functions][], [classes][], [scripts][], and [modules][]
 - Extensible [formatting system][formatting] for easy output
@@ -36,12 +36,30 @@ objects. No need to parse text output to extract information from output.
 ## Configuration management
 
 PowerShell Desired State Configuration ([DSC][]) is a management framework in PowerShell that
-enables you to manage your enterprise infrastructure with configuration as code.
+enables you to manage your enterprise infrastructure with configuration as code. With DSC, you can:
 
 - Create declarative [configurations][] and custom scripts for repeatable deployments
-- Enforce setting and report on configuration drift
-- Deploy configuration using a [push or pull][push-pull] models
+- Enforce configuration settings and report on configuration drift
+- Deploy configuration using [push or pull][push-pull] models
 
+## Next steps
+
+### Getting started
+
+Are you new to PowerShell and don't know where to start? Take a look at these resources.
+
+- [Installing PowerShell][install]
+- [PowerShell 101][PS101]
+- [PowerShell Bits tutorials][tutorials]
+- [PowerShell Learn modules][learn]
+
+### PowerShell in action
+
+Take a look at how PowerShell is being used in different scenarios and on different platforms.
+
+- [Getting started with Azure PowerShell][azure]
+- [Building a CI/CD pipeline with DSC][devops]
+- [Managing Microsoft Exchange][exchange]
 
 <!-- link references -->
 
@@ -62,3 +80,10 @@ enables you to manage your enterprise infrastructure with configuration as code.
 [configurations]: /powershell/scripting/dsc/configurations/configurations
 [DSC]: /powershell/scripting/dsc/overview/dscforengineers
 [push-pull]: /powershell/scripting/dsc/pull-server/enactingconfigurations
+[install]: /powershell/scripting/install/installing-powershell
+[PS101]: /powershell/scripting/learn/ps101/00-introduction
+[tutorials]: /powershell/scripting/learn/tutorials/00-introduction
+[learn]: /learn/browse/?terms=PowerShell
+[azure]: /powershell/azure/get-started-azureps
+[devops]: /azure/devops/pipelines/release/dsc-cicd
+[exchange]: /powershell/exchange/exchange-management-shell
