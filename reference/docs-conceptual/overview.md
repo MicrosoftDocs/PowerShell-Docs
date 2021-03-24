@@ -24,9 +24,11 @@ includes the following features:
 
 ## Scripting language
 
-PowerShell is built on the .NET Common Language Runtime (CLR). All inputs and outputs are .NET
-objects. No need to parse text output to extract information from output. The PowerShell scripting
-language includes the following features:
+As a scripting language, PowerShell is commonly used for automating the management of systems. It is
+also used to build, test, and deploy solutions, often in CI/CD environments. PowerShell is built on
+the .NET Common Language Runtime (CLR). All inputs and outputs are .NET objects. No need to parse
+text output to extract information from output. The PowerShell scripting language includes the
+following features:
 
 - Extensible through [functions][], [classes][], [scripts][], and [modules][]
 - Extensible [formatting system][formatting] for easy output
@@ -57,6 +59,7 @@ Are you new to PowerShell and don't know where to start? Take a look at these re
 
 Take a look at how PowerShell is being used in different scenarios and on different platforms.
 
+- [PowerShell remoting over SSH][remoting]
 - [Getting started with Azure PowerShell][azure]
 - [Building a CI/CD pipeline with DSC][devops]
 - [Managing Microsoft Exchange][exchange]
@@ -87,3 +90,4 @@ Take a look at how PowerShell is being used in different scenarios and on differ
 [azure]: /powershell/azure/get-started-azureps
 [devops]: /azure/devops/pipelines/release/dsc-cicd
 [exchange]: /powershell/exchange/exchange-management-shell
+[remoting]: /powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core
