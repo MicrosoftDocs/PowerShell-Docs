@@ -23,7 +23,7 @@ jobs types provided by PowerShell to support concurrency.
   machine.
 - `PSTaskJob` or `ThreadJob` - Commands and scripts run in a separate thread
   within the same process on the local machine. For more information, see
-  [about_Thread_Jobs](about_Thread_Jobs).
+  [about_Thread_Jobs](about_Thread_Jobs.md).
 
 Running scripts remotely, on a separate machine or in a separate process,
 provides great isolation. Any errors that occur in the remote job do not affect
