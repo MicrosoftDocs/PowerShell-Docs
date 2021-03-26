@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 02/18/2021
+ms.date: 03/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -785,6 +785,9 @@ This cmdlet returns objects that are determined by the input.
   Using the **Parallel** parameter can cause scripts to run much slower than normal. Especially if
   the parallel scripts are trivial. Experiment with **Parallel** to discover where it can be
   beneficial.
+
+- [PipelineVariable](About/about_CommonParameters.md) common parameter variables are _not_ supported
+  in `Foreach-Object -Parallel` scenarios even with the `$using:` keyword.
 
   > [!IMPORTANT]
   > The `ForEach-Object -Parallel` parameter set runs script blocks in parallel on separate process
