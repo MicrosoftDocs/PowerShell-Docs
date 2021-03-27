@@ -48,20 +48,19 @@ This example gets all extended type data in the current session.
 Get-TypeData
 ```
 
-### Example 2: Get types by name
+### Example 2: Get type data by name
 
-This example gets all types in the current session that have names that contain Eventing.
+This example gets all type data in the current session whose name is qualified with "System.IO".
 
- ```powershell
-"*Eventing*" | Get-TypeData
+```powershell
+Get-TypeData -TypeName System.IO.*
 ```
 
 ```Output
-TypeName                                                  Members
---------                                                  -------
-System.Diagnostics.Eventing.Reader.EventLogConfiguration  {}System.Diagnostics.Eventing.Reader.EventLogRecord
-                                                          {}System.Diagnostics.Eventing.Reader.ProviderMetadata
-                                                          {[ProviderName, System.Management.Automation.Runspaces.AliasProper...
+TypeName                Members
+--------                -------
+System.IO.DirectoryInfo {[Mode, System.Management.Automation.Runspaces.CodePropert…
+System.IO.FileInfo      {[Mode, System.Management.Automation.Runspaces.CodePropert…
 ```
 
 ### Example 3: Get the script block that creates a property value
