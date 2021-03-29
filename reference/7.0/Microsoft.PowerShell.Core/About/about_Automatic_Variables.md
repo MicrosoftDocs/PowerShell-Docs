@@ -1,7 +1,7 @@
 ---
 description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 03/15/2021
+ms.date: 03/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
@@ -240,6 +240,10 @@ when you use regular expressions with the `-match` operator.
 For more information about the `-match` operator, see
 [about_Comparison_Operators](about_comparison_operators.md). For more
 information on regular expressions, see [about_Regular_Expressions](about_Regular_Expressions.md).
+
+The `$Matches` variable also works in a `switch` statement with the `-Regex`
+parameter. It's populated the same way as the `-match` and `-notmatch` operators.
+For more information about the `switch` statement, see [about_Switch](about_Switch.md).
 
 ### $MyInvocation
 
