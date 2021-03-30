@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on Windows
 description: Information about installing PowerShell on Windows
-ms.date: 02/02/2021
+ms.date: 03/30/2021
 ---
 # Installing PowerShell on Windows
 
@@ -241,7 +241,7 @@ as a [.NET Global tool](/dotnet/core/tools/global-tools).
 dotnet tool install --global PowerShell
 ```
 
-The dotnet tool installer adds `$env:USERPROFILE\dotnet\tools` to your `$env:PATH` environment
+The dotnet tool installer adds `$env:USERPROFILE\.dotnet\tools` to your `$env:PATH` environment
 variable. However, the currently running shell doesn't have the updated `$env:PATH`. You can start
 PowerShell from a new shell by typing `pwsh`.
 
