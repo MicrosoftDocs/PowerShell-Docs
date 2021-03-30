@@ -143,7 +143,7 @@ c
 ```
 
 `<Max-substrings>` does not specify the maximum number of objects that are
-returned. If you use In the following example, `<Max-substrings>` is set to 3.
+returned. In the following example, `<Max-substrings>` is set to 3.
 This results in three substring values, but a total of five strings
 in the resulting output. The delimiter is included after the splits, until the
 maximum of three substrings is reached. Additional delimiters in the final
@@ -492,4 +492,3 @@ LastName, FirstName
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Join](about_Join.md)
-
