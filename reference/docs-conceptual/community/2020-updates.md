@@ -1,6 +1,6 @@
 ---
-title: What's New in PowerShell Docs for 2020-Q4
-description: List of changes to the PowerShell documentation for Q4 of 2020
+title: What's New in PowerShell Docs for 2020
+description: List of changes to the PowerShell documentation for 2020
 ms.date: 01/05/2021
 ---
 

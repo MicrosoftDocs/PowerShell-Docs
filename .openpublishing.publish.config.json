@@ -62,6 +62,7 @@
       "version": 0,
       "xref_query_tags": [
         "/dotnet",
+        "/powershell",
         "/uwp/api"
       ]
     }

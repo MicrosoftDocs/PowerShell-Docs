@@ -1,7 +1,7 @@
 ---
 description: Describes how to use operators to assign values to variables.
 Locale: en-US
-ms.date: 04/26/2020
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_assignment_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Assignment_Operators
@@ -797,9 +797,11 @@ Tuesday, May 31, 2005 12:00:00 AM
 In PowerShell, you can assign values to multiple variables by using a single
 command. The first element of the assignment value is assigned to the first
 variable, the second element is assigned to the second variable, the third
-element to the third variable, and so on. For example, the following command
-assigns the value 1 to the `$a` variable, the value 2 to the `$b` variable, and
-the value 3 to the `$c` variable:
+element to the third variable, and so on. This is known as _multiple
+assignment_.
+
+For example, the following command assigns the value 1 to the `$a` variable,
+the value 2 to the `$b` variable, and the value 3 to the `$c` variable:
 
 ```powershell
 $a, $b, $c = 1, 2, 3
@@ -825,8 +827,8 @@ $d, $e, $f = $c
 This command assigns the value 3 to the `$d` variable, the value 4 to the `$e`
 variable, and the value 5 to the `$f` variable.
 
-If the assignment value contains less elements than variables, all the
-remaining variables at the end are not assigned any values. For example, the
+If the assignment value contains fewer elements than variables, the
+remaining variables are assigned the value `$null`. For example, the
 following command contains three variables and two values:
 
 ```powershell
@@ -834,7 +836,7 @@ $a, $b, $c = 1, 2
 ```
 
 Therefore, PowerShell assigns the value 1 to the `$a` variable and the value 2
-to the `$b` variable. It will not assign any value to the `$c` variable.
+to the `$b` variable. The `$c` variable is `$null`.
 
 You can also assign a single value to multiple variables by chaining the
 variables. For example, the following command assigns a value of "three" to all

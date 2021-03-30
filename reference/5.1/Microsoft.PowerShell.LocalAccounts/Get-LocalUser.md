@@ -69,7 +69,7 @@ Name                                    Enabled  Description
 MicrosoftAccount\username@outlook.com  True     Description of this account.
 ```
 
-### Example 3: Get an account that is connected to a Microsoft account
+### Example 3: Get an account that has the specified SID
 
 This example gets a local user account that has the specified SID.
 
