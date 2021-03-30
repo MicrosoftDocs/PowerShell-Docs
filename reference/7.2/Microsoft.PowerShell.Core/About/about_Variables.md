@@ -1,7 +1,7 @@
 ---
 description: Describes how variables store values that can be used in PowerShell.
 Locale: en-US
-ms.date: 11/09/2020
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Variables
@@ -152,6 +152,23 @@ Remove-Variable -Name MyVariable
 ```powershell
 Remove-Item -Path Variable:\MyVariable
 ```
+
+It is also possible to values to multiple variables with one statement. The
+following examples assigns the same value to multiple variables:
+
+```powershell
+$a = $b = $c = 0
+```
+
+The next example assigns multiple values to multiple variables.
+
+```powershell
+$i,$j,$k = 10, "red", $true    # $i is 10, $j is "red", $k is True
+$i,$j = 10, "red", $true       # $i is 10, $j is [object[]], Length 2
+```
+
+For more detailed information, see the **Assigning multiple variables** section
+of [about_Assignment_Operators](about_assignment_operators.md#assigning-multiple-variables).
 
 ## Types of variables
 
@@ -502,4 +519,3 @@ Get-Help <cmdlet-name>
 [about_Scopes](about_Scopes.md)
 
 [about_Remote_Variables](about_Remote_Variables.md)
-
