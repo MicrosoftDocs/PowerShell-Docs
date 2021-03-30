@@ -109,7 +109,7 @@ Address
 Specifies the maximum number of substrings returned by the split operation. The
 default is all substrings split by the delimiter. If there are more
 substrings, they are concatenated to the final substring. If there are fewer
-substrings, all the substrings are returned. A value of 0 returns all the
+substrings, all substrings are returned. A value of 0 returns all the
 substrings.
 
 Example:
@@ -145,7 +145,7 @@ c
 `<Max-substrings>` does not specify the maximum number of objects that are
 returned. In the following example, `<Max-substrings>` is set to 3.
 This results in three substring values, but a total of five strings
-in the resulting output. The delimiter is included after the splits, until the
+in the resulting output. The delimiter is included after the splits until the
 maximum of three substrings is reached. Additional delimiters in the final
 substring become part of the substring.
 
