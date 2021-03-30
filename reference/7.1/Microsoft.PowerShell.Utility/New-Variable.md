@@ -200,7 +200,7 @@ Accept wildcard characters: False
 
 ### -Option
 
-Specifies the value of the **Options** property of the variable.The acceptable values for this
+Specifies the value of the **Options** property of the variable. The acceptable values for this
 parameter are:
 
 - `None` - Sets no options. `None` is the default.
@@ -386,4 +386,3 @@ cmdlet does not generate any output.
 [Remove-Variable](Remove-Variable.md)
 
 [Set-Variable](Set-Variable.md)
-
