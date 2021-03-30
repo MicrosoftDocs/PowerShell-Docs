@@ -1170,7 +1170,7 @@ TypeName: System.String
 ...
 ```
 
-To prevent that unwrap of the array, you can use `Write-Object -NoEnumerate`.
+To prevent that unwrap of the array, you can use `Write-Output -NoEnumerate`.
 
 ```powershell
 PS> Write-Output -NoEnumerate $data | Get-Member
