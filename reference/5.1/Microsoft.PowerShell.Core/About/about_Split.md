@@ -107,7 +107,7 @@ Address
 ### `<Max-substrings>`
 
 Specifies the maximum number of substrings returned by the split operation. The
-default is all the substrings split by the delimiter. If there are more
+default is all substrings split by the delimiter. If there are more
 substrings, they are concatenated to the final substring. If there are fewer
 substrings, all the substrings are returned. A value of 0 returns all the
 substrings.
