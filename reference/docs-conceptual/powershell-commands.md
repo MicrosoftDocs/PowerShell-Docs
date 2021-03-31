@@ -5,8 +5,8 @@ ms.date: 03/31/2021
 ---
 # PowerShell commands
 
-PowerShell allows you to run any command available on your system and includes PowerShell-specific
-command known as cmdlets (pronounced command-lets).
+PowerShell allows you to run any command available on your system including PowerShell-specific
+commands known as cmdlets (pronounced command-lets).
 
 ## What is a cmdlet?
 
