@@ -11,8 +11,8 @@ command known as cmdlets (pronounced command-lets).
 ## What is a cmdlet?
 
 A cmdlet is a single command that participates in the pipeline semantics of PowerShell and typically
-returns a .NET object. Cmdlets are native PowerShell commands. They are not stand-alone executables,
-but collected into PowerShell modules that can be loaded on demand. Cmdlets can be written in any
+returns a .NET object. Cmdlets are native PowerShell commands, not stand-alone executables. Cmdlets
+are collected into PowerShell modules that can be loaded on demand. Cmdlets can be written in any
 compiled .NET language or in the PowerShell scripting language itself.
 
 ## Cmdlet names
