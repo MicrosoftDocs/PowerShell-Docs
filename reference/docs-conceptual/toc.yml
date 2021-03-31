@@ -5,6 +5,8 @@
   items:
   - name: What is PowerShell?
     href: overview.md
+  - name: What is a PowerShell command?
+    href: powershell-commands.md
   - name: PowerShell support lifecycle
     href: powershell-support-lifecycle.md
 - name: Install
