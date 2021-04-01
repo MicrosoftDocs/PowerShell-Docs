@@ -11,10 +11,10 @@ title: Set-Alias
 
 # Set-Alias
 
-## SYNOPSIS
+## Synopsis
 Creates or changes an alias for a cmdlet or other command in the current PowerShell session.
 
-## SYNTAX
+## Syntax
 
 ### Default (Default)
 
@@ -23,7 +23,7 @@ Set-Alias [-Name] <string> [-Value] <string> [-Description <string>] [-Option <S
  [-PassThru] [-Scope <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-Alias` cmdlet creates or changes an alias for a cmdlet or a command, such as a function,
 script, file, or other executable. An alias is an alternate name that refers to a cmdlet or command.
@@ -36,7 +36,7 @@ as the description.
 An alias that is created or changed by `Set-Alias` is not permanent and is only available during the
 current PowerShell session. When the PowerShell session is closed, the alias is removed.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create an alias for a cmdlet
 
@@ -171,7 +171,7 @@ function's name, `CD32`.
 To run the alias, type `Go` on the PowerShell command line. The `CD32` function runs and changes to
 the directory **C:\Windows\System32**.
 
-## PARAMETERS
+## Parameters
 
 ### -Description
 
