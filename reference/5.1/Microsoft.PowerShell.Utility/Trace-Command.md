@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/09/2020
+ms.date: 04/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/trace-command?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Trace-Command
@@ -11,10 +11,10 @@ title: Trace-Command
 
 # Trace-Command
 
-## SYNOPSIS
+## Synopsis
 Configures and starts a trace of the specified expression or command.
 
-## SYNTAX
+## Syntax
 
 ### expressionSet (Default)
 
@@ -32,11 +32,12 @@ Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSo
  [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
+
 The `Trace-Command` cmdlet configures and starts a trace of the specified expression or command.
 It works like Set-TraceSource, except that it applies only to the specified command.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Trace metadata processing, parameter binding, and an expression
 
@@ -56,8 +57,8 @@ specify any tracing options or listener options, the command uses the defaults:
 
 ### Example 2: Trace the actions of ParameterBinding operations
 
-This example traces the actions of the **ParameterBinding** operations of PowerShell while it processes
-a `Get-Alias` expression that takes input from the pipeline.
+This example traces the actions of the **ParameterBinding** operations of PowerShell while it
+processes a `Get-Alias` expression that takes input from the pipeline.
 
 ```powershell
 $A = "i*"
@@ -76,7 +77,7 @@ the **InputObject** parameter. The **InputObject** parameter passes the variable
 expression. In effect, the command being processed during the trace is
 `Get-Alias -InputObject $A" or "$A | Get-Alias`.
 
-## PARAMETERS
+## Parameters
 
 ### -ArgumentList
 
@@ -205,18 +206,21 @@ Accept wildcard characters: False
 Specifies optional data to the prefix of each trace message in the output. The acceptable values for
 this parameter are:
 
-- None
-- LogicalOperationStack
-- DateTime
-- Timestamp
-- ProcessId
-- ThreadId
-- Callstack
+- `None`
+- `LogicalOperationStack`
+- `DateTime`
+- `Timestamp`
+- `ProcessId`
+- `ThreadId`
+- `Callstack`
 
-**None** is the default.
+`None` is the default.
 
-To specify multiple options, separate them with commas, but with no spaces, and enclose them in
-quotation marks, such as "ProcessID,ThreadID".
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **ListenerOption**
+parameter as an array of values or as a comma-separated string of those values. The cmdlet will
+combine the values using a binary-OR operation. Passing values as an array is the simplest option
+and also allows you to use tab-completion on the values.
 
 ```yaml
 Type: System.Diagnostics.TraceOptions
@@ -253,37 +257,40 @@ Accept wildcard characters: False
 
 Determines the type of events that are traced. The acceptable values for this parameter are:
 
-- None
-- Constructor
-- Dispose
-- Finalizer
-- Method
-- Property
-- Delegates
-- Events
-- Exception
-- Lock
-- Error
-- Errors
-- Warning
-- Verbose
-- WriteLine
-- Data
-- Scope
-- ExecutionFlow
-- Assert
-- All
+- `None`
+- `Constructor`
+- `Dispose`
+- `Finalizer`
+- `Method`
+- `Property`
+- `Delegates`
+- `Events`
+- `Exception`
+- `Lock`
+- `Error`
+- `Errors`
+- `Warning`
+- `Verbose`
+- `WriteLine`
+- `Data`
+- `Scope`
+- `ExecutionFlow`
+- `Assert`
+- `All`
 
-All is the default.
+`All` is the default.
 
 The following values are combinations of other values:
 
-- ExecutionFlow: (Constructor, Dispose, Finalizer, Method, Delegates, Events, and Scope)
-- Data: (Constructor, Dispose, Finalizer, Property, Verbose, and WriteLine)
-- Errors: (Error and Exception).
+- `ExecutionFlow`: `Constructor`, `Dispose`, `Finalizer`, `Method`, `Delegates`, `Events`, `Scope`
+- `Data`: `Constructor`, `Dispose`, `Finalizer`, `Property`, `Verbose`, `WriteLine`
+- `Errors`: `Error`, `Exception`
 
-To specify multiple options, separate them with commas, but with no spaces, and enclose them in
-quotation marks, such as "Constructor,Dispose".
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **Option** parameter as an
+array of values or as a comma-separated string of those values. The cmdlet will combine the values
+using a binary-OR operation. Passing values as an array is the simplest option and also allows you
+to use tab-completion on the values.
 
 ```yaml
 Type: System.Management.Automation.PSTraceSourceOptions
@@ -322,19 +329,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe objects that represent input to the expression to `Trace-Command`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSObject
 
 Returns the command trace in the debug stream.
 
-## NOTES
+## Notes
 
 - Tracing is a method that developers use to debug and refine programs. When tracing, the program
   generates detailed messages about each step in its internal processing.
@@ -359,7 +366,7 @@ Returns the command trace in the debug stream.
   **Expression**, **Option** or **Name**, **Command**, **Option**. If you include the parameter
   names, the parameters can appear in any order.
 
-## RELATED LINKS
+## Related Links
 
 [Get-TraceSource](Get-TraceSource.md)
 
