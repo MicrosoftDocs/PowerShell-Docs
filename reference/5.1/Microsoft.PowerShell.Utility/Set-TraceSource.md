@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-tracesource?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-TraceSource
@@ -44,7 +44,7 @@ can use it to specify which components will be traced and where the tracing outp
 ### Example 1: Trace the ParameterBinding component
 
 ```
-PS C:\> Set-TraceSource -Name "ParameterBinding" -Option ExecutionFlow -PSHost -ListenerOption "ProcessId,TimeStamp"
+Set-TraceSource -Name "ParameterBinding" -Option ExecutionFlow -PSHost -ListenerOption "ProcessId,TimeStamp"
 ```
 
 This command starts tracing for the ParameterBinding component of PowerShell. It uses the **Name**
@@ -132,7 +132,11 @@ this parameter are:
 
 `None` is the default.
 
-To specify multiple options, separate them with commas, but with no spaces, and enclose them in quotation marks, such as "ProcessID,ThreadID".
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **ListenerOption**
+parameter as an array of values or as a comma-separated string of those values. The cmdlet will
+combine the values using a binary-OR operation. Passing values as an array is the simplest option
+and also allows you to use tab-completion on the values.
 
 ```yaml
 Type: System.Diagnostics.TraceOptions
@@ -193,11 +197,15 @@ Specifies the type of events that are traced. The acceptable values for this par
 
 The following values are combinations of other values:
 
-- ExecutionFlow: `Constructor`, `Dispose`, Finalizer, Method, Delegates, Events, and Scope)
-- Data: (Constructor, Dispose, Finalizer, Property, Verbose, and WriteLine)
-- Errors: (Error and Exception).
+- `ExecutionFlow`: `Constructor`, `Dispose`, `Finalizer`, `Method`, `Delegates`, `Events`, `Scope`
+- `Data`: `Constructor`, `Dispose`, `Finalizer`, `Property`, `Verbose`, `WriteLine`
+- `Errors`: `Error`, `Exception`
 
-To specify multiple options, separate them with commas, but with no spaces, and enclose them in quotation marks, such as "Constructor,Dispose".
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **Option** parameter as an
+array of values or as a comma-separated string of those values. The cmdlet will combine the values
+using a binary-OR operation. Passing values as an array is the simplest option and also allows you
+to use tab-completion on the values.
 
 ```yaml
 Type: System.Management.Automation.PSTraceSourceOptions
@@ -214,8 +222,8 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Returns an object representing the item with which you are working.
-By default, this cmdlet does not generate any output.
+Returns an object representing the item with which you are working. By default, this cmdlet does not
+generate any output.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -231,8 +239,8 @@ Accept wildcard characters: False
 
 ### -PSHost
 
-ndicates that this cmdlet sends the trace output to the PowerShell host.
-This parameter also selects the PSHost trace listener.
+Indicates that this cmdlet sends the trace output to the PowerShell host. This parameter also
+selects the PSHost trace listener.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -248,8 +256,8 @@ Accept wildcard characters: False
 
 ### -RemoveFileListener
 
-Stops the trace by removing the file trace listener associated with the specified file.
-Enter the path and file name of the trace output file.
+Stops the trace by removing the file trace listener associated with the specified file. Enter the
+path and file name of the trace output file.
 
 ```yaml
 Type: System.String[]
@@ -267,13 +275,13 @@ Accept wildcard characters: False
 
 Stops the trace by removing the trace listener.
 
-Use the following values with *RemoveListener*:
+Use the following values with **RemoveListener**:
 
 - To remove PSHost (console), type `Host`.
 - To remove Debugger, type `Debug`.
 - To remove all trace listeners, type `*`.
 
-To remove the file trace listener, use the *RemoveFileListener* parameter.
+To remove the file trace listener, use the **RemoveFileListener** parameter.
 
 ```yaml
 Type: System.String[]
@@ -301,26 +309,38 @@ You can pipe a string that contains a name to `Set-TraceSource`.
 
 ### None or System.Management.Automation.PSTraceSource
 
-When you use the *PassThru* parameter, `Set-TraceSource` generates a **System.Management.Automation.PSTraceSource** object representing the trace session.
-Otherwise, this cmdlet does not generate any output.
+When you use the **PassThru** parameter, `Set-TraceSource` generates a
+**System.Management.Automation.PSTraceSource** object representing the trace session. Otherwise,
+this cmdlet does not generate any output.
 
 ## Notes
 
-* Tracing is a method that developers use to debug and refine programs. When tracing, the program generates detailed messages about each step in its internal processing.
+- Tracing is a method that developers use to debug and refine programs. When tracing, the program
+  generates detailed messages about each step in its internal processing.
 
-  The PowerShell tracing cmdlets are designed to help PowerShell developers, but they are available to all users.
-They let you monitor nearly every aspect of the functionality of PowerShell.
+  The PowerShell tracing cmdlets are designed to help PowerShell developers, but they are available
+  to all users. They let you monitor nearly every aspect of the functionality of PowerShell.
 
-  A trace source is the part of each PowerShell component that manages tracing and generates trace messages for the component.
-To trace a component, you identify its trace source.
+  A trace source is the part of each PowerShell component that manages tracing and generates trace
+  messages for the component. To trace a component, you identify its trace source.
 
-  A trace listener receives the output of the trace and displays it to the user.
-You can elect to send the trace data to a user-mode or kernel-mode debugger, to the console, to a file, or to a custom listener derived from the **System.Diagnostics.TraceListener** class.
+  A trace listener receives the output of the trace and displays it to the user. You can elect to
+  send the trace data to a user-mode or kernel-mode debugger, to the console, to a file, or to a
+  custom listener derived from the **System.Diagnostics.TraceListener** class.
 
-* To start a trace, use the *Name* parameter to specify a trace source and the *FilePath*, *Debugger*, or *PSHost* parameters to specify a listener (a destination for the output). Use the *Options* parameter to determine the types of events that are traced and the *ListenerOption* parameter to configure the trace output.
-* To change the configuration of a trace, enter a `Set-TraceSource` command as you would to start a trace. PowerShell recognizes that the trace source is already being traced. It stops the trace, adds the new configuration, and starts or restarts the trace.
-* To stop a trace, use the *RemoveListener* parameter. To stop a trace that uses the file listener (a trace started by using the *FilePath* parameter), use the *RemoveFileListener* parameter. When you remove the listener, the trace stops.
-* To determine which components can be traced, use Get-TraceSource. The trace sources for each module are loaded automatically when the component is in use, and they appear in the output of `Get-TraceSource`.
+- To start a trace, use the **Name** parameter to specify a trace source and the **FilePath**,
+  **Debugger**, or **PSHost** parameters to specify a listener (a destination for the output). Use
+  the **Options** parameter to determine the types of events that are traced and the
+  **ListenerOption** parameter to configure the trace output.
+- To change the configuration of a trace, enter a `Set-TraceSource` command as you would to start a
+  trace. PowerShell recognizes that the trace source is already being traced. It stops the trace,
+  adds the new configuration, and starts or restarts the trace.
+- To stop a trace, use the **RemoveListener** parameter. To stop a trace that uses the file listener
+  (a trace started by using the **FilePath** parameter), use the **RemoveFileListener** parameter.
+  When you remove the listener, the trace stops.
+- To determine which components can be traced, use Get-TraceSource. The trace sources for each
+  module are loaded automatically when the component is in use, and they appear in the output of
+  `Get-TraceSource`.
 
 ## Related Links
 
