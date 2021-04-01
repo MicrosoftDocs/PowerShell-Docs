@@ -281,9 +281,9 @@ Determines the type of events that are traced. The acceptable values for this pa
 
 The following values are combinations of other values:
 
-- ExecutionFlow: `Constructor`, `Dispose`, `Finalizer`, `Method`, `Delegates`, `Events`, `Scope`
-- Data: `Constructor`, `Dispose`, `Finalizer`, `Property`, `Verbose`, `WriteLine`
-- Errors: `Error`, `Exception`
+- `ExecutionFlow`: `Constructor`, `Dispose`, `Finalizer`, `Method`, `Delegates`, `Events`, `Scope`
+- `Data`: `Constructor`, `Dispose`, `Finalizer`, `Property`, `Verbose`, `WriteLine`
+- `Errors`: `Error`, `Exception`
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to
 set multiple flags using this parameter. The values can be passed to the **Option** parameter as an
