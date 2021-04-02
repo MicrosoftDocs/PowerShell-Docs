@@ -3,36 +3,37 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Alias
 ---
+
 # New-Alias
 
-## SYNOPSIS
+## Synopsis
 Creates a new alias.
 
-## SYNTAX
+## Syntax
 
 ```
 New-Alias [-Name] <String> [-Value] <String> [-Description <String>] [-Option <ScopedItemOptions>] [-PassThru]
  [-Scope <String>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
-The **New-Alias** cmdlet creates a new alias in the current PowerShell session.
-Aliases created by using **New-Alias** are not saved after you exit the session or close PowerShell.
-You can use the Export-Alias cmdlet to save your alias information to a file.
-You can later use **Import-Alias** to retrieve that saved alias information.
+The `New-Alias` cmdlet creates a new alias in the current PowerShell session. Aliases
+created by using `New-Alias` are not saved after you exit the session or close PowerShell.
+You can use the `Export-Alias` cmdlet to save your alias information to a file. You can later use
+`Import-Alias` to retrieve that saved alias information.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create an alias for a cmdlet
 
 ```
-PS C:\> New-Alias -Name "List" Get-ChildItem
+New-Alias -Name "List" Get-ChildItem
 ```
 
 This command creates an alias named List to represent the Get-ChildItem cmdlet.
@@ -40,21 +41,21 @@ This command creates an alias named List to represent the Get-ChildItem cmdlet.
 ### Example 2: Create a read-only alias for a cmdlet
 
 ```
-PS C:\> New-Alias -Name "W" -Value Get-WmiObject -Description "quick wmi alias" -Option ReadOnly
-PS C:\> Get-Alias -Name "W" | Format-List *
+New-Alias -Name "C" -Value Get-ChildItem -Description "quick gci alias" -Option ReadOnly
+Get-Alias -Name "C" | Format-List *
 ```
 
-This command creates an alias named W to represent the Get-WmiObject cmdlet.
-It creates a description, quick wmi alias, for the alias and makes it read-only.
-The last line of the command uses Get-Alias to get the new alias and pipes it to Format-List to display all of the information about it.
+This command creates an alias named `C` to represent the `Get-ChildItem` cmdlet. It creates a
+description, quick wmi alias, for the alias and makes it read-only. The last line of the command
+uses `Get-Alias` to get the new alias and pipes it to Format-List to display all of the information
+about it.
 
-## PARAMETERS
+## Parameters
 
 ### -Description
 
-Specifies a description of the alias.
-You can type any string.
-If the description includes spaces, enclose it in quotation marks.
+Specifies a description of the alias. You can type any string. If the description includes spaces,
+enclose it in quotation marks.
 
 ```yaml
 Type: System.String
@@ -70,7 +71,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Indicates that the cmdlet acts like Set-Alias if the alias named already exists.
+Indicates that the cmdlet acts like `Set-Alias` if the alias named already exists.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -86,8 +87,8 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies the new alias.
-You can use any alphanumeric characters in an alias, but the first character cannot be a number.
+Specifies the new alias. You can use any alphanumeric characters in an alias, but the first
+character cannot be a number.
 
 ```yaml
 Type: System.String
@@ -106,14 +107,21 @@ Accept wildcard characters: False
 Specifies the value of the **Options** property of the alias.
 Valid values are:
 
-- None: The alias has no constraints (default value)
-- ReadOnly: The alias can be deleted but cannot be changed except by using the **Force** parameter
-- Constant: The alias cannot be deleted or changed
-- Private: The alias is available only in the current scope
-- AllScope: The alias is copied to any new scopes that are created
-- Unspecified: The option is not specified
+- `None`: The alias has no constraints (default value)
+- `ReadOnly`: The alias can be deleted but cannot be changed except by using the **Force** parameter
+- `Constant`: The alias cannot be deleted or changed
+- `Private`: The alias is available only in the current scope
+- `AllScope`: The alias is copied to any new scopes that are created
+- `Unspecified`: The option is not specified
 
-To see the **Options** property of all aliases in the session, type `Get-Alias | Format-Table -Property Name, Options -AutoSize`.
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **Option** parameter as an
+array of values or as a comma-separated string of those values. The cmdlet will combine the values
+using a binary-OR operation. Passing values as an array is the simplest option and also allows you
+to use tab-completion on the values.
+
+To see the **Options** property of all aliases in the session, type
+`Get-Alias | Format-Table -Property Name, Options -AutoSize`.
 
 ```yaml
 Type: System.Management.Automation.ScopedItemOptions
@@ -130,8 +138,8 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Returns an object representing the item with which you are working.
-By default, this cmdlet does not generate any output.
+Returns an object representing the item with which you are working. By default, this cmdlet does not
+generate any output.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,16 +155,15 @@ Accept wildcard characters: False
 
 ### -Scope
 
-Specifies the scope of the new alias.
-The acceptable values for this parameter are:
+Specifies the scope of the new alias. The acceptable values for this parameter are:
 
-- Global
-- Local
-- Script
-- A number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
+- `Global`
+- `Local`
+- `Script`
+- A number relative to the current scope (0 through the number of scopes, where `0` is the current
+  scope and `1` is its parent).
 
-Local is the default.
-For more information, see about_Scopes.
+`Local` is the default. For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
 Type: System.String
@@ -204,8 +211,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -223,24 +229,26 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None or System.Management.Automation.AliasInfo
 
-When you use the *Passthru* parameter, **New-Alias** generates a **System.Management.Automation.AliasInfo** object representing the new alias.
-Otherwise, this cmdlet does not generate any output.
+When you use the **Passthru** parameter, `New-Alias` generates a
+**System.Management.Automation.AliasInfo** object representing the new alias. Otherwise, this cmdlet
+does not generate any output.
 
-## NOTES
+## Notes
 
-* To create a new alias, use `Set-Alias` or `New-Alias`. To change an alias, use `Set-Alias`. To delete an alias, use `Remove-Item`.
+- To create a new alias, use `Set-Alias` or `New-Alias`. To change an alias, use `Set-Alias`. To delete
+an alias, use `Remove-Item`.
 
-## RELATED LINKS
+## Related Links
 
 [Export-Alias](Export-Alias.md)
 
@@ -249,4 +257,3 @@ Otherwise, this cmdlet does not generate any output.
 [Import-Alias](Import-Alias.md)
 
 [Set-Alias](Set-Alias.md)
-

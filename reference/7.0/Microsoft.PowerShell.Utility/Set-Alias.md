@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 2/28/2019
+ms.date: 04/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Alias
@@ -11,10 +11,10 @@ title: Set-Alias
 
 # Set-Alias
 
-## SYNOPSIS
+## Synopsis
 Creates or changes an alias for a cmdlet or other command in the current PowerShell session.
 
-## SYNTAX
+## Syntax
 
 ### Default (Default)
 
@@ -23,7 +23,7 @@ Set-Alias [-Name] <string> [-Value] <string> [-Description <string>] [-Option <S
  [-PassThru] [-Scope <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-Alias` cmdlet creates or changes an alias for a cmdlet or a command, such as a function,
 script, file, or other executable. An alias is an alternate name that refers to a cmdlet or command.
@@ -36,7 +36,7 @@ as the description.
 An alias that is created or changed by `Set-Alias` is not permanent and is only available during the
 current PowerShell session. When the PowerShell session is closed, the alias is removed.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create an alias for a cmdlet
 
@@ -156,22 +156,35 @@ alias for a command, create a function that includes the command, and then creat
 function. For more information, see [about_Functions](../Microsoft.PowerShell.Core/about/about_Functions.md).
 
 ```
-PS> Function CD32 {Set-Location -Path C:\Windows\System32}
+Function CD32 {Set-Location -Path C:\Windows\System32}
 
-PS> Set-Alias -Name Go -Value CD32
+Set-Alias -Name Go -Value CD32
 ```
 
 A function named `CD32` is created. The function uses the `Set-Location` cmdlet with the **Path**
-parameter to specify the directory, **C:\Windows\System32**.
+parameter to specify the directory, `C:\Windows\System32`.
 
 The `Set-Alias` cmdlet creates an alias to the function in the current PowerShell session. The
 **Name** parameter specifies the alias's name, `Go`. The **Value** parameter specifies the
 function's name, `CD32`.
 
 To run the alias, type `Go` on the PowerShell command line. The `CD32` function runs and changes to
-the directory **C:\Windows\System32**.
+the directory `C:\Windows\System32`.
 
-## PARAMETERS
+### Example 6: Update options for an existing alias
+
+This example shows how to assign multiple options using the **Option** parameter.
+
+Using the example above we will set the alias `Go` as `ReadOnly` and `Private`.
+
+```powershell
+Set-Alias -Name Go -Option ReadOnly, Private
+```
+
+The alias `Go` should already exist. After running the command above, the alias is not be able to
+be changed without using the **Force** parameter and is only available in the current scope.
+
+## Parameters
 
 ### -Description
 
@@ -229,18 +242,24 @@ Accept wildcard characters: False
 
 ### -Option
 
-Sets the **Option** property value of the alias. Values such as **ReadOnly** and **Constant**
+Sets the **Option** property value of the alias. Values such as `ReadOnly` and `Constant`
 protect an alias from unintended changes. To see the **Option** property of all aliases in the
 session, type `Get-Alias | Format-Table -Property Name, Options -Autosize`.
 
 The acceptable values for this parameter are as follows:
 
-- **AllScope** The alias is copied to any new scopes that are created.
-- **Constant** Cannot be changed or deleted.
-- **None** Sets no options and is the default.
-- **Private** The alias is available only in the current scope.
-- **ReadOnly** Cannot be changed or deleted unless the **Force** parameter is used.
-- **Unspecified**
+- `AllScope` - The alias is copied to any new scopes that are created.
+- `Constant` - Cannot be changed or deleted.
+- `None` - Sets no options and is the default.
+- `Private` - The alias is available only in the current scope.
+- `ReadOnly` - Cannot be changed or deleted unless the **Force** parameter is used.
+- `Unspecified`
+
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **Option** parameter as an
+array of values or as a comma-separated string of those values. The cmdlet will combine the values
+using a binary-OR operation. Passing values as an array is the simplest option and also allows you
+to use tab-completion on the values.
 
 ```yaml
 Type: System.Management.Automation.ScopedItemOptions
@@ -353,13 +372,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 `Set-Alias` does not accept input from the pipeline.
 
-## OUTPUTS
+## Outputs
 
 ### None or System.Management.Automation.AliasInfo
 

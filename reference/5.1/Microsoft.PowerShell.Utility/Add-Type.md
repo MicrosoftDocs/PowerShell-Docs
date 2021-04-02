@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/26/2019
+ms.date: 04/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Type
@@ -12,7 +11,7 @@ title: Add-Type
 # Add-Type
 
 ## SYNOPSIS
-Adds a Microsoft .NET Framework class to a PowerShell session.
+Adds a Microsoft .NET class to a PowerShell session.
 
 ## SYNTAX
 

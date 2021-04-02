@@ -4,7 +4,7 @@ Help Version: 7.2.0.0
 Locale: en-US
 Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/02/2021
 schema: 2.0.0
 title: Microsoft.PowerShell.Utility
 ---
@@ -22,7 +22,7 @@ PowerShell.
 Adds custom properties and methods to an instance of a PowerShell object.
 
 ### [Add-Type](Add-Type.md)
-Adds a Microsoft .NET Core class to a PowerShell session.
+Adds a Microsoft .NET class to a PowerShell session.
 
 ### [Clear-Variable](Clear-Variable.md)
 Deletes the value of a variable.
