@@ -40,11 +40,11 @@ This command creates an alias named List to represent the Get-ChildItem cmdlet.
 ### Example 2: Create a read-only alias for a cmdlet
 
 ```
-New-Alias -Name "W" -Value Get-WmiObject -Description "quick wmi alias" -Option ReadOnly
-Get-Alias -Name "W" | Format-List *
+New-Alias -Name "C" -Value Get-ChildItem -Description "quick gci alias" -Option ReadOnly
+Get-Alias -Name "C" | Format-List *
 ```
 
-This command creates an alias named `$W` to represent the `Get-WmiObject` cmdlet. It creates a
+This command creates an alias named `C` to represent the `Get-ChildItem` cmdlet. It creates a
 description, quick wmi alias, for the alias and makes it read-only. The last line of the command
 uses `Get-Alias` to get the new alias and pipes it to Format-List to display all of the information
 about it.
