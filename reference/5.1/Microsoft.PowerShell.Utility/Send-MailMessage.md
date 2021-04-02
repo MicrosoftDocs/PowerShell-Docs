@@ -3,17 +3,17 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/11/2020
+ms.date: 04/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Send-MailMessage
 ---
 # Send-MailMessage
 
-## SYNOPSIS
+## Synopsis
 Sends an email message.
 
-## SYNTAX
+## Syntax
 
 ### All
 
@@ -25,7 +25,7 @@ Send-MailMessage [-To] <string[]> [-Subject] <string> [[-Body] <string>] [[-Smtp
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Send-MailMessage` cmdlet sends an email message from within PowerShell.
 
@@ -40,7 +40,7 @@ information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About
 > not use `Send-MailMessage`. For more information, see
 > [Platform Compatibility note DE0005](https://aka.ms/SendMailMessage).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Send an email from one person to another person
 
@@ -94,7 +94,7 @@ The **Credential** parameter specifies a domain administrator's credentials are 
 message. The **UseSsl** parameter specifies that Secure Socket Layer (SSL) creates a secure
 connection.
 
-## PARAMETERS
+## Parameters
 
 ### -Attachments
 
@@ -220,6 +220,12 @@ The acceptable values for this parameter are as follows:
 - `OnFailure`: Notify if the delivery is unsuccessful.
 - `Delay`: Notify if the delivery is delayed.
 - `Never`: Never notify.
+
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **DeliveryNotification**
+parameter as an array of values or as a comma-separated string of those values. The cmdlet will
+combine the values using a binary-OR operation. Passing values as an array is the simplest option
+and also allows you to use tab-completion on the values.
 
 ```yaml
 Type: System.Net.Mail.DeliveryNotificationOptions
@@ -390,21 +396,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe the path and file names of attachments to `Send-MailMessage`.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related Links
 
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
 
