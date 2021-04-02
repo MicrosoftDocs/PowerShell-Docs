@@ -1,6 +1,5 @@
 ---
-ms.date:  08/09/2018
-keywords:  install, windows, linux, macOS, ARM, raspbian
+ms.date: 04/02/2021
 title:  Installing PowerShell
 description: Where to find instruction for installing PowerShell for each of the supported platforms.
 ---
@@ -8,7 +7,7 @@ description: Where to find instruction for installing PowerShell for each of the
 
 Over the years, there have been many releases of PowerShell. Initially, Windows PowerShell was built
 on the .NET Framework and only worked on Windows systems. With the current release, PowerShell uses
-.NET Core 5.0 as its runtime. PowerShell runs on Windows, macOS, and Linux platforms.
+.NET 5.0 as its runtime. PowerShell runs on Windows, macOS, and Linux platforms.
 
 ## PowerShell
 
