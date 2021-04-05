@@ -2,17 +2,17 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/26/2021
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
 ---
 # Invoke-WebRequest
 
-## SYNOPSIS
+## Synopsis
 Gets content from a web page on the Internet.
 
-## SYNTAX
+## Syntax
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>] [-SessionVariable <String>]
@@ -23,7 +23,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Invoke-WebRequest` cmdlet sends HTTP, HTTPS, FTP, and FILE requests to a web page or web service.
 It parses the response and returns collections of forms, links, images, and other significant HTML elements.
@@ -31,11 +31,10 @@ It parses the response and returns collections of forms, links, images, and othe
 This cmdlet was introduced in Windows PowerShell 3.0.
 
 > [!NOTE]
-> By default,
-> script code in the web page may be run when the page is being parsed to populate the `ParsedHtml` property.
-> Use the `-UseBasicParsing` switch to suppress this.
+> By default, script code in the web page may be run when the page is being parsed to populate the
+> `ParsedHtml` property. Use the `-UseBasicParsing` switch to suppress this.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Send a web request
 
@@ -144,7 +143,7 @@ $StatusCode
 The terminating error is caught by the `catch` block, which retrieves the **StatusCode** from the
 **Exception** object.
 
-## PARAMETERS
+## Parameters
 
 ### -Body
 
@@ -349,16 +348,16 @@ Accept wildcard characters: False
 
 Specifies the method used for the web request. The acceptable values for this parameter are:
 
-- Default
-- Delete
-- Get
-- Head
-- Merge
-- Options
-- Patch
-- Post
-- Put
-- Trace
+- `Default`
+- `Delete`
+- `Get`
+- `Head`
+- `Merge`
+- `Options`
+- `Patch`
+- `Post`
+- `Put`
+- `Trace`
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebRequestMethod
@@ -531,11 +530,11 @@ Accept wildcard characters: False
 Specifies a value for the transfer-encoding HTTP response header. The acceptable values for this
 parameter are:
 
-- Chunked
-- Compress
-- Deflate
-- GZip
-- Identity
+- `Chunked`
+- `Compress`
+- `Deflate`
+- `GZip`
+- `Identity`
 
 ```yaml
 Type: System.String
@@ -589,7 +588,7 @@ Accept wildcard characters: False
 
 ### -UseDefaultCredentials
 
-Indicates that the cmdet uses the credentials of the current user to send the web request.
+Indicates that the cmdlet uses the credentials of the current user to send the web request.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -664,19 +663,19 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Object
 
 You can pipe the body of a web request to `Invoke-WebRequest`.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.HtmlWebResponseObject
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related Links
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
 
