@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/26/2021
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -10,10 +10,10 @@ title: Invoke-WebRequest
 
 # Invoke-WebRequest
 
-## SYNOPSIS
+## Synopsis
 Gets content from a web page on the internet.
 
-## SYNTAX
+## Syntax
 
 ### StandardMethod (Default)
 
@@ -77,7 +77,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Invoke-WebRequest` cmdlet sends HTTP and HTTPS requests to a web page or web service. It parses
 the response and returns collections of links, images, and other significant HTML elements.
@@ -87,7 +87,7 @@ This cmdlet was introduced in PowerShell 3.0.
 Beginning in PowerShell 7.0, `Invoke-WebRequest` supports proxy configuration defined by environment
 variables. See the [Notes](#notes) section of this article.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Send a web request
 
@@ -265,7 +265,7 @@ $StatusCode
 The terminating error is caught by the `catch` block, which retrieves the **StatusCode** from the
 **Exception** object.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowUnencryptedAuthentication
 
@@ -300,13 +300,13 @@ Specifies the explicit authentication type to use for the request. The default i
 
 Available Authentication Options:
 
-- **None**: This is the default option when **Authentication** isn't supplied; no explicit
+- `None`: This is the default option when **Authentication** isn't supplied; no explicit
   authentication is used.
-- **Basic**: Requires **Credential**. The credentials are sent in an RFC 7617 Basic Authentication
+- `Basic`: Requires **Credential**. The credentials are sent in an RFC 7617 Basic Authentication
   header in the format of `base64(user:password)`.
-- **Bearer**: Requires **Token**. Sends an RFC 6750 `Authorization: Bearer` header with the supplied
+- `Bearer`: Requires **Token**. Sends an RFC 6750 `Authorization: Bearer` header with the supplied
   token. This is an alias for **OAuth**
-- **OAuth**: Requires **Token**. Sends an RFC 6750 `Authorization: Bearer` header with the supplied
+- `OAuth`: Requires **Token**. Sends an RFC 6750 `Authorization: Bearer` header with the supplied
   token. This is an alias for **Bearer**
 
 Supplying **Authentication** overrides any `Authorization` headers supplied to **Headers** or
@@ -626,16 +626,16 @@ Accept wildcard characters: False
 
 Specifies the method used for the web request. The acceptable values for this parameter are:
 
-- Default
-- Delete
-- Get
-- Head
-- Merge
-- Options
-- Patch
-- Post
-- Put
-- Trace
+- `Default`
+- `Delete`
+- `Get`
+- `Head`
+- `Merge`
+- `Options`
+- `Patch`
+- `Post`
+- `Put`
+- `Trace`
 
 The **CustomMethod** parameter can be used for Request Methods not listed above.
 
@@ -954,9 +954,12 @@ Sets the SSL/TLS protocols that are permissible for the web request. By default 
 protocols supported by the system are allowed. **SslProtocol** allows for limiting to specific
 protocols for compliance purposes.
 
-**SslProtocol** uses the **WebSslProtocol** Flag Enum. It is possible to supply more than one
-protocol using flag notation or combining multiple **WebSslProtocol** options with **bor**, however
-supplying multiple protocols is not supported on all platforms.
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **SslProtocol** parameter
+as an array of values or as a comma-separated string of those values. The cmdlet will combine the
+values using a binary-OR operation. Passing values as an array is the simplest option and also
+allows you to use tab-completion on the values. You may not be able to define multiple options on
+all platforms.
 
 > [!NOTE]
 > On non-Windows platforms it may not be possible to supply `Tls` or `Tls12` as an option. Support
@@ -1172,17 +1175,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Object
 
 You can pipe the body of a web request to `Invoke-WebRequest`.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.BasicHtmlWebResponseObject
 
-## NOTES
+## Notes
 
 Beginning with PowerShell 6.0.0 `Invoke-WebRequest` supports basic parsing only.
 
@@ -1205,13 +1208,13 @@ The value of this property is determined by your platform:
 The environment variables used for `DefaultProxy` initialization on Windows and Unix-based platforms
 are:
 
-- ` HTTP_PROXY`: the hostname or IP address of the proxy server used on HTTP requests.
+- `HTTP_PROXY`: the hostname or IP address of the proxy server used on HTTP requests.
 - `HTTPS_PROXY`: the hostname or IP address of the proxy server used on HTTPS requests.
 - `ALL_PROXY`: the hostname or IP address of the proxy server used on HTTP and HTTPS requests in
   case `HTTP_PROXY` or `HTTPS_PROXY` are not defined.
 - `NO_PROXY`: a comma-separated list of hostnames that should be excluded from proxying.
 
-## RELATED LINKS
+## Related Links
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
 
