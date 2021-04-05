@@ -519,7 +519,7 @@ and module names. Wildcards are not permitted.
 
 `Import-PSSession` cannot import providers from a snap-in.
 
-For more information, see [about_PSSnapins](../Microsoft.PowerShell.Core/About/about_PSSnapins.md)
+For more information, see [about_PSSnapins](/powershell/module/Microsoft.PowerShell.Core/About/about_PSSnapins)
 and [about_Modules](../Microsoft.PowerShell.Core/About/about_Modules.md).
 
 ```yaml
