@@ -184,16 +184,14 @@ At line:1 char:11
 
 ### Example 8: Test a path with whitespace as the value
 
-When a whitespace or empty string is provided for the the `-Path` parameter, it returns **False**.
-The following example show whitespace and empty string.
+When a whitespace is provided for the the `-Path` parameter, it returns **False**.
+The following example show whitespace.
 
 ```powershell
 Test-Path ' '
-Test-Path ''
 ```
 
 ```Output
-False
 False
 ```
 
