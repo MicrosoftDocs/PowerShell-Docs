@@ -3,17 +3,17 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/06/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Variable
 ---
 # Set-Variable
 
-## SYNOPSIS
+## Synopsis
 Sets the value of a variable. Creates the variable if one with the requested name does not exist.
 
-## SYNTAX
+## Syntax
 
 ```
 Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Exclude <String[]>]
@@ -21,12 +21,12 @@ Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Excl
  [-PassThru] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-Variable` cmdlet assigns a value to a specified variable or changes the current value. If
 the variable does not exist, the cmdlet creates it.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Set a variable and get its value
 
@@ -103,7 +103,7 @@ This command shows how to change the visibility of a variable to Private. This v
 can be read and changed by scripts with the required permissions, but it is not visible
 to the user.
 
-## PARAMETERS
+## Parameters
 
 ### -Description
 
@@ -199,12 +199,18 @@ Specifies the value of the **Options** property of the variable.
 
 Valid values are:
 
-- `None`: Sets no options. ("None" is the default.)
+- `None`: Sets no options. (`None` is the default.)
 - `ReadOnly`: Can be deleted. Cannot be changed, except by using the Force parameter.
 - `Constant`: Cannot be deleted or changed. `Constant` is valid only when you are creating a
   variable. You cannot change the options of an existing variable to `Constant`.
 - `Private`: The variable is available only in the current scope.
 - `AllScope`: The variable is copied to any new scopes that are created.
+
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **Option** parameter as an
+array of values or as a comma-separated string of those values. The cmdlet will combine the values
+using a binary-OR operation. Passing values as an array is the simplest option and also allows you
+to use tab-completion on the values.
 
 ```yaml
 Type: System.Management.Automation.ScopedItemOptions
@@ -240,14 +246,14 @@ Accept wildcard characters: False
 
 Specifies the scope of the variable.The acceptable values for this parameter are:
 
-- Global
-- Local
-- Script
-- Private
+- `Global`
+- `Local`
+- `Script`
+- `Private`
 - A number relative to the current scope (0 through the number of scopes, where 0 is the current
   scope and 1 is its parent).
 
-Local is the default.
+`Local` is the default.
 
 For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_scopes.md).
 
@@ -286,8 +292,8 @@ parameter is designed for use in scripts and commands that will be delivered to 
 
 Valid values are:
 
-- Public:  The variable is visible. ("Public" is the default.)
-- Private: The variable is not visible.
+- `Public`:  The variable is visible. (`Public` is the default.)
+- `Private`: The variable is not visible.
 
 When a variable is private, it does not appear in lists of variables, such as those returned by
 `Get-Variable`, or in displays of the **Variable:** drive. Commands to read or change the value of a
@@ -346,13 +352,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Object
 
 You can pipe an object that represents the value of the variable to `Set-Variable`.
 
-## OUTPUTS
+## Outputs
 
 ### None or System.Management.Automation.PSVariable
 
@@ -360,9 +366,9 @@ When you use the **PassThru** parameter, `Set-Variable` generates a
 **System.Management.Automation.PSVariable** object representing the new or changed variable.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related Links
 
 [Clear-Variable](Clear-Variable.md)
 
