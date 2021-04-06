@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/25/2020
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -11,10 +11,10 @@ title: Invoke-RestMethod
 
 # Invoke-RestMethod
 
-## SYNOPSIS
+## Synopsis
 Sends an HTTP or HTTPS request to a RESTful web service.
 
-## SYNTAX
+## Syntax
 
 ### StandardMethod (Default)
 
@@ -96,7 +96,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 Beginning in PowerShell 7.0, `Invoke-RestMethod` supports proxy configuration defined by environment
 variables. See the [Notes](#notes) section of this article.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the PowerShell RSS feed
 
@@ -245,13 +245,13 @@ Specifies the explicit authentication type to use for the request. The default i
 
 Available Authentication Options:
 
-- **None**: This is the default option when **Authentication** is not supplied. No explicit
+- `None`: This is the default option when **Authentication** is not supplied. No explicit
   authentication will be used.
-- **Basic**: Requires **Credential**. The credentials will be used to send an RFC 7617 Basic
+- `Basic`: Requires **Credential**. The credentials will be used to send an RFC 7617 Basic
   Authentication `Authorization: Basic` header in the format of `base64(user:password)`.
-- **Bearer**: Requires **Token**. Will send and RFC 6750 `Authorization: Bearer` header with the
+- `Bearer`: Requires **Token**. Will send and RFC 6750 `Authorization: Bearer` header with the
   supplied token. This is an alias for **OAuth**
-- **OAuth**: Requires **Token**. Will send an RFC 6750 `Authorization: Bearer` header with the
+- `OAuth`: Requires **Token**. Will send an RFC 6750 `Authorization: Bearer` header with the
   supplied token. This is an alias for **Bearer**
 
 Supplying **Authentication** will override any `Authorization` headers supplied to **Headers** or
@@ -624,16 +624,16 @@ Accept wildcard characters: False
 
 Specifies the method used for the web request. The acceptable values for this parameter are:
 
-- Default
-- Delete
-- Get
-- Head
-- Merge
-- Options
-- Patch
-- Post
-- Put
-- Trace
+- `Default`
+- `Delete`
+- `Get`
+- `Head`
+- `Merge`
+- `Options`
+- `Patch`
+- `Post`
+- `Put`
+- `Trace`
 
 The **CustomMethod** parameter can be used for Request Methods not listed above.
 
@@ -976,9 +976,12 @@ Sets the SSL/TLS protocols that are permissible for the web request. By default 
 protocols supported by the system are allowed. **SslProtocol** allows for limiting to specific
 protocols for compliance purposes.
 
-**SslProtocol** uses the `WebSslProtocol` Flag Enum. It is possible to supply more than one protocol
-using flag notation or combining multiple `WebSslProtocol` options with `-bor`, however supplying
-multiple protocols is not supported on all platforms.
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **SslProtocol** parameter
+as an array of values or as a comma-separated string of those values. The cmdlet will combine the
+values using a binary-OR operation. Passing values as an array is the simplest option and also
+allows you to use tab-completion on the values. You may not be able to supply multiple values on all
+platforms.
 
 > [!NOTE]
 > On non-Windows platforms it may not be possible to supply `'Tls, Tls12'` as an option.
@@ -1208,13 +1211,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Object
 
 You can pipe the body of a web request to `Invoke-RestMethod`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Int64, System.String, System.Xml.XmlDocument
 
@@ -1225,7 +1228,7 @@ The output of the cmdlet depends upon the format of the content that is retrieve
 If the request returns JSON strings, `Invoke-RestMethod` returns a **PSObject** that represents the
 strings.
 
-## NOTES
+## Notes
 
 Some features may not be available on all platforms.
 
@@ -1245,13 +1248,13 @@ The value of this property is determined by your platform:
 The environment variables used for `DefaultProxy` initialization on Windows and Unix-based platforms
 are:
 
-- ` HTTP_PROXY`: the hostname or IP address of the proxy server used on HTTP requests.
+- `HTTP_PROXY`: the hostname or IP address of the proxy server used on HTTP requests.
 - `HTTPS_PROXY`: the hostname or IP address of the proxy server used on HTTPS requests.
 - `ALL_PROXY`: the hostname or IP address of the proxy server used on HTTP and HTTPS requests in
   case `HTTP_PROXY` or `HTTPS_PROXY` are not defined.
 - `NO_PROXY`: a comma-separated list of hostnames that should be excluded from proxying.
 
-## RELATED LINKS
+## Related Links
 
 [ConvertTo-Json](ConvertTo-Json.md)
 
