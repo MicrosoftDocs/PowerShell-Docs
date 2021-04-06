@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/08/2020
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
@@ -11,11 +11,11 @@ title: Export-PSSession
 
 # Export-PSSession
 
-## SYNOPSIS
+## Synopsis
 
 Exports commands from another session and saves them in a PowerShell module.
 
-## SYNTAX
+## Syntax
 
 ```
 Export-PSSession [-Session] <PSSession> [-OutputModule] <string> [[-CommandName] <string[]>]
@@ -25,7 +25,7 @@ Export-PSSession [-Session] <PSSession> [-OutputModule] <string> [[-CommandName]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Export-PSSession` cmdlet gets cmdlets, functions, aliases, and other command types from
 another PowerShell session (PSSession) on a local or remote computer and saves them in a PowerShell
@@ -46,7 +46,7 @@ The `Export-PSSession` cmdlet uses the implicit remoting feature of PowerShell. 
 commands into the current session, they run implicitly in the original session or in a similar
 session on the originating computer.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Export commands from a PSSession
 
@@ -155,7 +155,7 @@ The `New-PSSession` cmdlet creates a new PSSession that connects to the Server01
 imports the commands from the Server01 module. The commands in the module are run in the PSSession
 on the Server01 computer.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowClobber
 
@@ -252,18 +252,24 @@ Exports only the specified types of command objects. Use **CommandType** or its 
 
 The acceptable values for this parameter are as follows:
 
-- Alias. All PowerShell aliases in the current session.
-- All. All command types. It is the equivalent of `Get-Command -Name *`.
-- Application. All files other than PowerShell files in paths listed in the Path environment
+- `Alias`: All PowerShell aliases in the current session.
+- `All`: All command types. It is the equivalent of `Get-Command -Name *`.
+- `Application`: All files other than PowerShell files in paths listed in the Path environment
   variable (`$env:path`), including .txt, .exe, and .dll files.
-- Cmdlet. The cmdlets in the current session. Cmdlet is the default.
-- Configuration. A PowerShell configuration. For more information, see
+- `Cmdlet`: The cmdlets in the current session. Cmdlet is the default.
+- `Configuration`: A PowerShell configuration. For more information, see
   [about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md).
-- ExternalScript. All .ps1 files in the paths listed in the Path environment variable
+- `ExternalScript`: All .ps1 files in the paths listed in the Path environment variable
   (`$env:path`).
-- Filter and Function. All PowerShell functions.
-- Script. Script blocks in the current session.
-- Workflow. A PowerShell workflow. For more information, see [about_Workflows](../PSWorkflow/About/about_Workflows.md).
+- `Filter` and `Function`: All PowerShell functions.
+- `Script` Script blocks in the current session.
+- `Workflow` A PowerShell workflow. For more information, see [about_Workflows](../PSWorkflow/About/about_Workflows.md).
+
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **CommandType** parameter
+as an array of values or as a comma-separated string of those values. The cmdlet will combine the
+values using a binary-OR operation. Passing values as an array is the simplest option and also
+allows you to use tab-completion on the values.
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -284,14 +290,14 @@ Specifies the type of encoding for the target file. The default value is `UTF8`.
 
 The acceptable values for this parameter are as follows:
 
-- `ASCII` Uses ASCII (7-bit) character set.
-- `BigEndianUnicode` Uses UTF-16 with the big-endian byte order.
-- `Default` Uses the encoding that corresponds to the system's active code page.
-- `OEM` Uses the encoding that corresponds to the system's current OEM code page.
-- `Unicode` Uses UTF-16 with the little-endian byte order.
-- `UTF7` Uses UTF-7.
-- `UTF8` Uses UTF-8.
-- `UTF32` Uses UTF-32 with the little-endian byte order.
+- `ASCII`: Uses ASCII (7-bit) character set.
+- `BigEndianUnicode`: Uses UTF-16 with the big-endian byte order.
+- `Default`; Uses the encoding that corresponds to the system's active code page.
+- `OEM`: Uses the encoding that corresponds to the system's current OEM code page.
+- `Unicode`: Uses UTF-16 with the little-endian byte order.
+- `UTF7`: Uses UTF-7.
+- `UTF8`: Uses UTF-8.
+- `UTF32`: Uses UTF-32 with the little-endian byte order.
 
 ```yaml
 Type: System.String
@@ -443,19 +449,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe objects to `Export-PSSession`.
 
-## OUTPUTS
+## Outputs
 
 ### System.IO.FileInfo
 
 `Export-PSSession` returns a list of files that comprise the module that it created.
 
-## NOTES
+## Notes
 
 `Export-PSSession` relies on the PowerShell remoting infrastructure. To use this cmdlet, the
 computer must be configured for remoting. For more information, see
@@ -502,7 +508,7 @@ The module that `Export-PSSession` creates might include a formatting file, even
 does not import formatting data. If the command does not import formatting data, any formatting
 files that are created will not contain formatting data.
 
-## RELATED LINKS
+## Related Links
 
 [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)
 
