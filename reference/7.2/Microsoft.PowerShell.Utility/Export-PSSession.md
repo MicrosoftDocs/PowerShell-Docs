@@ -264,7 +264,7 @@ The acceptable values for this parameter are as follows:
   (`$env:path`).
 - `Filter` and `Function`: All PowerShell functions.
 - `Script` Script blocks in the current session.
-- `Workflow` A PowerShell workflow. For more information, see [about_Workflows](../PSWorkflow/About/about_Workflows.md).
+- `Workflow` A PowerShell workflow. For more information, see [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to
 set multiple flags using this parameter. The values can be passed to the **CommandType** parameter
