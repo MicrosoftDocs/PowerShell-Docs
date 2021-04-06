@@ -3,24 +3,24 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/06/2020
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-member?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Member
 ---
 # Get-Member
 
-## SYNOPSIS
+## Synopsis
 Gets the properties and methods of objects.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-Member [-InputObject <PSObject>] [[-Name] <String[]>] [-MemberType <PSMemberTypes>]
  [-View <PSMemberViewTypes>] [-Static] [-Force] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Member` cmdlet gets the members, the properties and methods, of objects.
 
@@ -29,7 +29,7 @@ information about static members, the members of the class, not of the instance,
 parameter. To get only certain types of members, such as **NoteProperties**, use the **MemberType**
 parameter.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the members of process objects
 
@@ -266,20 +266,20 @@ LastWriteTimeUtc
 Attributes
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 
 Adds the intrinsic members and the compiler-generated **get_** and **set_** methods to the display.
 The following list describes the properties that are added when you use the **Force** parameter:
 
-- **PSBase**: The original properties of the .NET object without extension or adaptation. These are
+- `PSBase`: The original properties of the .NET object without extension or adaptation. These are
   the properties defined for the object class.
-- **PSAdapted**. The properties and methods defined in the PowerShell extended type system.
-- **PSExtended**. The properties and methods that were added in the `Types.ps1xml` files or by using
+- `PSAdapted`: The properties and methods defined in the PowerShell extended type system.
+- `PSExtended`: The properties and methods that were added in the `Types.ps1xml` files or by using
   the `Add-Member` cmdlet.
-- **PSObject**. The adapter that converts the base object to a PowerShell **PSObject** object.
-- **PSTypeNames**. A list of object types that describe the object, in order of specificity. When
+- `PSObject`: The adapter that converts the base object to a PowerShell **PSObject** object.
+- `PSTypeNames`: A list of object types that describe the object, in order of specificity. When
   formatting the object, PowerShell searches for the types in the `Format.ps1xml` files in the
   PowerShell installation directory (`$PSHOME`). It uses the formatting definition for the first
   type that it finds.
@@ -326,36 +326,40 @@ Accept wildcard characters: False
 
 ### -MemberType
 
-Specifies the member type that this cmdlet gets. The default is **All**.
+Specifies the member type that this cmdlet gets. The default is `All`.
 
 The acceptable values for this parameter are:
 
-- AliasProperty
-- CodeProperty
-- Property
-- NoteProperty
-- ScriptProperty
-- Properties
-- PropertySet
-- Method
-- CodeMethod
-- ScriptMethod
-- Methods
-- ParameterizedProperty
-- MemberSet
-- Event
-- Dynamic
-- All
+- `AliasProperty`
+- `CodeProperty`
+- `Property`
+- `NoteProperty`
+- `ScriptProperty`
+- `Properties`
+- `PropertySet`
+- `Method`
+- `CodeMethod`
+- `ScriptMethod`
+- `Methods`
+- `ParameterizedProperty`
+- `MemberSet`
+- `Event`
+- `Dynamic`
+- `All`
+
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **MemberType** parameter as
+an array of values or as a comma-separated string of those values. The cmdlet will combine the
+values using a binary-OR operation. Passing values as an array is the simplest option and also
+allows you to use tab-completion on the values.
 
 For information about these values, see
 [PSMemberTypes Enumeration](/dotnet/api/system.management.automation.psmembertypes).
 
 Not all objects have every type of member. If you specify a member type that the object does not
-have, PowerShell returns a null value.
-
-To get related types of members, such as all extended members, use the **View** parameter. If you
-use the **MemberType** parameter with the **Static** or **View** parameters, `Get-Member` gets the
-members that belong to both sets.
+have, PowerShell returns a null value. To get related types of members, such as all extended
+members, use the **View** parameter. If you use the **MemberType** parameter with the **Static** or
+**View** parameters, `Get-Member` gets the members that belong to both sets.
 
 ```yaml
 Type: System.Management.Automation.PSMemberTypes
@@ -455,19 +459,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to `Get-Member`.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.MemberDefinition
 
 `Get-Member` returns an object for each property or method that its gets.
 
-## NOTES
+## Notes
 
 You can get information about a collection object either by using the **InputObject** parameter or
 by piping the object, preceded by a comma, to `Get-Member`.
@@ -482,7 +486,6 @@ return information about the `[System.RuntimeType]` type. However, when you use 
 parameter, `Get-Member` returns the static members of the specific type represented by the
 `System.RuntimeType` instance.
 
-## RELATED LINKS
+## Related Links
 
 [Add-Member](Add-Member.md)
-

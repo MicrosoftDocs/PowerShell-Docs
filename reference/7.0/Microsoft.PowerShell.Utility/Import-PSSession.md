@@ -3,17 +3,17 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-PSSession
 ---
 # Import-PSSession
 
-## SYNOPSIS
+## Synopsis
 Imports commands from another session into the current session.
 
-## SYNTAX
+## Syntax
 
 ```
 Import-PSSession [-Prefix <String>] [-DisableNameChecking] [[-CommandName] <String[]>] [-AllowClobber]
@@ -22,7 +22,7 @@ Import-PSSession [-Prefix <String>] [-DisableNameChecking] [[-CommandName] <Stri
  [-Certificate <X509Certificate2>] [-Session] <PSSession> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Import-PSSession` cmdlet imports commands , such as cmdlets, functions, and aliases, from a
 PSSession on a local or remote computer into the current session. You can import any command that
@@ -60,13 +60,13 @@ Beginning in Windows PowerShell 3.0, you can use the `Import-Module` cmdlet to i
 remote session into the current session. This feature uses implicit remoting. It is equivalent to
 using `Import-PSSession` to import selected modules from a remote session into the current session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Import all commands from a PSSession
 
 ```
-PS C:\> $S = New-PSSession -ComputerName Server01
-PS C:\> Import-PSSession -Session $S
+$S = New-PSSession -ComputerName Server01
+Import-PSSession -Session $S
 ```
 
 This command imports all commands from a PSSession on the Server01 computer into the current
@@ -78,10 +78,10 @@ formatting data required for the imported commands.
 ### Example 2: Import commands that end with a specific string
 
 ```
-PS C:\> $S = New-PSSession https://ps.testlabs.com/powershell
-PS C:\> Import-PSSession -Session $S -CommandName *-test -FormatTypeName *
-PS C:\> New-Test -Name Test1
-PS C:\> Get-Test test1 | Run-Test
+$S = New-PSSession https://ps.testlabs.com/powershell
+Import-PSSession -Session $S -CommandName *-test -FormatTypeName *
+New-Test -Name Test1
+Get-Test test1 | Run-Test
 ```
 
 These commands import the commands with names that end in "-test" from a PSSession into the local
@@ -101,11 +101,11 @@ need to use the `Invoke-Command` cmdlet to run an imported command.
 ### Example 3: Import cmdlets from a PSSession
 
 ```
-PS C:\> $S1 = New-PSSession -ComputerName s1
-PS C:\> $S2 = New-PSSession -ComputerName s2
-PS C:\> Import-PSSession -Session s1 -Type cmdlet -Name New-Test, Get-Test -FormatTypeName *
-PS C:\> Import-PSSession -Session s2 -Type Cmdlet -Name Set-Test -FormatTypeName *
-PS C:\> New-Test Test1 | Set-Test -RunType Full
+$S1 = New-PSSession -ComputerName s1
+$S2 = New-PSSession -ComputerName s2
+Import-PSSession -Session s1 -Type cmdlet -Name New-Test, Get-Test -FormatTypeName *
+Import-PSSession -Session s2 -Type Cmdlet -Name Set-Test -FormatTypeName *
+New-Test Test1 | Set-Test -RunType Full
 ```
 
 This example shows that you can use imported cmdlets just as you would use local cmdlets.
@@ -119,10 +119,10 @@ cmdlet to another without error.
 ### Example 4: Run an imported command as a background job
 
 ```
-PS C:\> $S = New-PSSession -ComputerName Server01
-PS C:\> Import-PSSession -Session $S -CommandName *-test* -FormatTypeName *
-PS C:\> $batch = New-Test -Name Batch -AsJob
-PS C:\> Receive-Job $batch
+$S = New-PSSession -ComputerName Server01
+Import-PSSession -Session $S -CommandName *-test* -FormatTypeName *
+$batch = New-Test -Name Batch -AsJob
+Receive-Job $batch
 ```
 
 This example shows how to run an imported command as a background job.
@@ -147,9 +147,9 @@ variable.
 ### Example 5: Import cmdlets and functions from a Windows PowerShell module
 
 ```
-PS C:\> $S = New-PSSession -ComputerName Server01
-PS C:\> Invoke-Command -Session $S {Import-Module TestManagement}
-PS C:\> Import-PSSession -Session $S -Module TestManagement
+$S = New-PSSession -ComputerName Server01
+Invoke-Command -Session $S {Import-Module TestManagement}
+Import-PSSession -Session $S -Module TestManagement
 ```
 
 This example shows how to import the cmdlets and functions from a Windows PowerShell module on a
@@ -296,7 +296,7 @@ which returns the module name.
 
 The `Get-Command` command is the equivalent of `Get-Command $M.Name`".
 
-## PARAMETERS
+## Parameters
 
 ### -AllowClobber
 
@@ -395,16 +395,22 @@ Accept wildcard characters: False
 Specifies the type of command objects. The default value is Cmdlet. Use **CommandType** or its
 alias, **Type**. The acceptable values for this parameter are:
 
-- Alias. The Windows PowerShell aliases in the remote session.
-- All. The cmdlets and functions in the remote session.
-- Application. All the files other than Windows-PowerShell files in the paths that are listed in the
-  Path environment variable (`$env:path`) in the remote session, including .txt, .exe, and .dll
+- `Alias`: The Windows PowerShell aliases in the remote session.
+- `All`: The cmdlets and functions in the remote session.
+- `Application`: All the files other than Windows-PowerShell files in the paths that are listed in
+  the Path environment variable (`$env:path`) in the remote session, including .txt, .exe, and .dll
   files.
-- Cmdlet. The cmdlets in the remote session. "Cmdlet" is the default.
-- ExternalScript. The .ps1 files in the paths listed in the Path environment variable (`$env:path`)
-  in the remote session.
-- Filter and Function. The Windows PowerShell functions in the remote session.
-- Script. The script blocks in the remote session.
+- `Cmdlet`: The cmdlets in the remote session. "Cmdlet" is the default.
+- `ExternalScript`: The .ps1 files in the paths listed in the Path environment variable
+  (`$env:path`) in the remote session.
+- `Filter` and `Function`: The Windows PowerShell functions in the remote session.
+- `Script`: The script blocks in the remote session.
+
+These values are defined as a flag-based enumeration. You can combine multiple values together to
+set multiple flags using this parameter. The values can be passed to the **CommandType** parameter
+as an array of values or as a comma-separated string of those values. The cmdlet will combine the
+values using a binary-OR operation. Passing values as an array is the simplest option and also
+allows you to use tab-completion on the values.
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -577,13 +583,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSModuleInfo
 
@@ -591,7 +597,7 @@ You cannot pipe objects to this cmdlet.
 However, the imported module is temporary and exists only in the current session. To create a
 permanent module on disk, use the `Export-PSSession` cmdlet.
 
-## NOTES
+## Notes
 
 - `Import-PSSession` relies on the  PowerShell remoting infrastructure. To use this cmdlet,
   the computer must be configured for WS-Management remoting. For more information, see
@@ -635,6 +641,6 @@ permanent module on disk, use the `Export-PSSession` cmdlet.
   include the prefix that you assign by using the **Prefix** parameter. To get help for an imported
   command in Windows PowerShell 2.0, use the original (non-prefixed) command name.
 
-## RELATED LINKS
+## Related Links
 
 [Export-PSSession](Export-PSSession.md)
