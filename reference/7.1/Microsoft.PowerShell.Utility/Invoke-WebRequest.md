@@ -1118,7 +1118,6 @@ the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.ps
 such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
 For example, the following command uses the user agent string for Internet Explorer:
-
 `Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`
 
 ```yaml
