@@ -117,7 +117,7 @@ UnderlineOff     Property   string UnderlineOff {get;}
 The base members return strings of ANSI escape sequences mapped to their names. The values are
 settable to allow customization.
 
-For more information, see [about_Automatic_Variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+For more information, see [about_Automatic_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 
 > [!NOTE]
 > For C# developers, you can access `PSStyle` as a singleton. Usage will look like this:
