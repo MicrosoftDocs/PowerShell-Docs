@@ -9,7 +9,7 @@ The PowerShell Community is a vibrant and collaborative group. We greatly apprec
 and support we get from the community. Learn how you can contribute by reading the
 [Contributor's Guide][contrib].
 
-As of the end of May 2020, these GitHub users are the All-Time Top Community Contributors.
+As of the end of March 2021, these GitHub users are the All-Time Top Community Contributors.
 
 ## Pull Requests opened
 
