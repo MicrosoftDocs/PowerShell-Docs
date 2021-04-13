@@ -219,7 +219,7 @@ remote computer where it terminates the remote command.
   configurations, security issues, and other frequently asked questions, see
   [about_Remote_FAQ](about_Remote_FAQ.md).
 
-- For help in resolving remoting errors, see about_Remote_Troubleshooting.
+- For help in resolving remoting errors, see [about_Remote_Troubleshooting](about_Remote_Troubleshooting.md).
 
 - For information about PSSessions and persistent connections, see
   [about_PSSessions](about_PSSessions.md).
