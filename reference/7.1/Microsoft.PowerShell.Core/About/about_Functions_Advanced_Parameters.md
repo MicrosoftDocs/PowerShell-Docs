@@ -752,7 +752,7 @@ Param(
 )
 ```
 
-> [NOTE!]
+> [!NOTE]
 > The `IValidateSetValuesGenerator` class was introduced in PowerShell 6.0
 
 ### ValidateNotNull validation attribute
