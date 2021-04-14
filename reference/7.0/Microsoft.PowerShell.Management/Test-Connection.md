@@ -404,8 +404,8 @@ Specifies the names of the computers where the ping originates. Enter a comma-se
 computer names. The default is the local computer.
 
 > [!NOTE]
-> This parameter is not supported in PowerShell versions 6 and up. Supplying this parameter will
-> cause an error.
+> This parameter is not supported in PowerShell versions 6 and up. Supplying this parameter
+> causes an error.
 
 ```yaml
 Type: System.String
