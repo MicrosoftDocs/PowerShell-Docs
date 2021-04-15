@@ -159,6 +159,10 @@ allows you to control progress view bar rendering.
 - `$PSStyle.Progress.View` - An enum with values, `Minimal` and `Classic`. `Classic` is the existing
   rendering with no changes. `Minimal` is a single line minimal rendering. `Minimal` is the default.
 
+> [!NOTE]
+> If the host doesn't support Virtual Terminal, `$PSStyle.Progress.View` is automatically set to
+> `Classic`.
+
 The following example updates the rendering style to a minimal progress bar.
 
 ```powershell
