@@ -168,7 +168,7 @@ The table below outlines the features that meet the servicing criteria and those
 | Execution Policy                           | Defense in Depth |
 
 > [!NOTE]
-> There was a corner-case scenario in AppLocker where you only have **Deny** rules and constrained
+> There is a corner-case scenario in AppLocker where you only have **Deny** rules and constrained
 > language mode is not used to enforce the policy that allowed you to bypass the execution policy.
 > Beginning in PowerShell 7.2, a change was made to ensure that AppLocker rules would take
 > precedence over a `Set-ExecutionPolicy -ExecutionPolicy Bypass` command.
