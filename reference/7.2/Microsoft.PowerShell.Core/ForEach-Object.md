@@ -667,7 +667,7 @@ runspaces from the runspace pool.
 
 This parameter was introduced in PowerShell 7.1
 
-```yml
+```yaml
 Type: SwitchParameter
 Parameter Sets: ParallelParameterSet
 Aliases:

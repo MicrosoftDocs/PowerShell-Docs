@@ -403,8 +403,9 @@ Accept wildcard characters: False
 Specifies the names of the computers where the ping originates. Enter a comma-separated list of
 computer names. The default is the local computer.
 
-**NOTE:** This parameter is not functional in PowerShell versions 6 and up.
-Supplying this parameter will have no effect on the command.
+> [!NOTE]
+> This parameter is not supported in PowerShell versions 6 and up. Supplying this parameter
+> causes an error.
 
 ```yaml
 Type: System.String

@@ -106,7 +106,7 @@ ConvertFrom-SecureString -SecureString $secureString -AsPlainText # 'Example'
 When set, `ConvertFrom-SecureString` will convert secure strings to the decrypted plaintext string
 as output.
 
-This paramater was added in PowerShell 7.0.
+This parameter was added in PowerShell 7.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
