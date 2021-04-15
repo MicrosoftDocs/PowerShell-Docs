@@ -157,7 +157,7 @@ The following values of `$env:TERM` change the behavior as follows:
 - `xterm-mono` - set `$PSStyle.OutputRendering = PlainText`
 - `xtermm` - set `$PSStyle.OutputRendering = PlainText`
 
-If `$env:NO_COLOR` exists, then set `$PSStyle.OutputRendering = PlainText`. For more information,
+If `$env:NO_COLOR` exists, then sets `$PSStyle.OutputRendering = PlainText`. For more information,
 see [https://no-color.org/](https://no-color.org/).
 
 ## PSAnsiProgress
