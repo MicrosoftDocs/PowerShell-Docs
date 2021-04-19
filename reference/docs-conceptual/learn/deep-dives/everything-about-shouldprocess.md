@@ -31,6 +31,14 @@ done instead of making changes. it's a good way to test out the impact of a comm
 before you do something destructive.
 
 ```powershell
+PS C:\temp> Get-ChildItem
+    Directory: C:\temp
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         4/19/2021   8:59 AM              0 importantfile.txt
+-a----         4/19/2021   8:58 AM              0 myfile1.txt
+-a----         4/19/2021   8:59 AM              0 myfile2.txt
+
 PS C:\temp> Remove-Item -Path .\myfile1.txt -WhatIf
 What if: Performing the operation "Remove File" on target "C:\Temp\myfile1.txt".
 ```
