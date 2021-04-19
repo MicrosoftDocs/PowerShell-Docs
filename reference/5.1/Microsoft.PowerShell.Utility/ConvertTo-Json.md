@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
@@ -22,9 +21,9 @@ ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
 
 ## DESCRIPTION
 
-The `ConvertTo-Json` cmdlet converts any .NET object to a string in JavaScript Object Notation (JSON)
-format. The properties are converted to field names, the field values are converted to property
-values, and the methods are removed.
+The `ConvertTo-Json` cmdlet converts any .NET object to a string in JavaScript Object Notation
+(JSON) format. The properties are converted to field names, the field values are converted to
+property values, and the methods are removed.
 
 You can then use the `ConvertFrom-Json` cmdlet to convert a JSON-formatted string to a JSON
 object, which is easily managed in PowerShell.
@@ -164,8 +163,9 @@ Accept wildcard characters: False
 
 ### -Depth
 
-Specifies how many levels of contained objects are included in the JSON representation. The default
-value is 2.
+Specifies how many levels of contained objects are included in the JSON representation. The value
+can be any number from `1` to `[Int]::MaxValue`. The default value is `2`. `ConvertTo-Json` emits a
+warning if the number of levels in an input object exceeds this number.
 
 ```yaml
 Type: System.Int32
