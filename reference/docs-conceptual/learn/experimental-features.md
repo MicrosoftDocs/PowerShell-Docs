@@ -409,9 +409,10 @@ select the behavior at runtime. The valid values are `Legacy` and `Standard`. `L
 historic behavior. The default when the experimental feature is enabled is the new `Standard`
 behavior.
 
-The new behavior _is a breaking change_ from current behavior. This may break scripts and
-automation that work-around the various issues when invoking native applications. Historically,
-quotes must be escaped and it is not possible to provide empty arguments to a native application.
+> [!CAUTION]
+> The new behavior is a **breaking change** from current behavior. This may break scripts and
+> automation that work-around the various issues when invoking native applications. Historically,
+> quotes must be escaped and it is not possible to provide empty arguments to a native application.
 
 New behaviors made available by this change
 
