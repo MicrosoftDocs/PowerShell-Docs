@@ -416,7 +416,7 @@ behavior.
 
 New behaviors made available by this change:
 
-- Literal or expandable strings with embedded quotes the quotes are now preserved
+- Literal or expandable strings with embedded quotes the quotes are now preserved:
 
   ```powershell
   PS > $a = 'a" "b'
