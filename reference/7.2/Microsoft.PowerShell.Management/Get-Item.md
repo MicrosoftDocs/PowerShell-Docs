@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/18/2020
+ms.date: 04/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
@@ -83,7 +83,7 @@ This example gets the current directory of the `C:` drive. The object that is re
 only the directory, not its contents.
 
 ```powershell
-Get-Item C:\
+Get-Item C:
 ```
 
 ### Example 4: Get items in the specified drive
@@ -388,4 +388,3 @@ available in your session, type `Get-PsProvider`. For more information, see
 [Get-PSProvider](Get-PSProvider.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
