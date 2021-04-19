@@ -1,5 +1,5 @@
 ---
-ms.date: 03/12/2021
+ms.date: 04/19/2021
 ms.topic: reference
 title: Modifying the PSModulePath Installation Path
 description: Modifying the PSModulePath Installation Path
@@ -46,7 +46,7 @@ To add paths to this variable, use one of the following methods:
 - To add a persistent variable to the registry, create a new user environment variable called
   `PSModulePath` using the Environment Variables Editor in the **System Properties** dialog box.
 
-- To add a persistent variable by using a script, use the .Net method
+- To add a persistent variable using a script, use the .NET method
   [SetEnvironmentVariable](/dotnet/api/system.environment.setenvironmentvariable) on the
   [System.Environment](/dotnet/api/system.environment) class. For example, the following script adds
   the `C:\Program Files\Fabrikam\Module` path to the value of the `PSModulePath` environment
@@ -56,7 +56,6 @@ To add paths to this variable, use one of the following methods:
   ```powershell
   $CurrentValue = [Environment]::GetEnvironmentVariable("PSModulePath", "Machine")
   [Environment]::SetEnvironmentVariable("PSModulePath", $CurrentValue + [System.IO.Path]::PathSeparator + "C:\Program Files\Fabrikam\Modules", "Machine")
-
   ```
 
 You may also set the `PSModulePath` values in the `powershell.config.json` configuration file. For
@@ -65,9 +64,19 @@ more information, see
 
 ## To remove locations from the PSModulePath
 
-You can remove paths from the variable using similar methods: for example,
-`$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"`
-will remove the **c:\ModulePath** path from the current session.
+You can remove paths from the variable using similar methods. The following example removes the
+`C:\ModulePath` path from the current session.
+
+```powershell
+$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"`
+```
+
+To make this change persistent for all PowerShell sessions, use the .NET method as explained
+previously.
+
+```powershell
+[Environment]::SetEnvironmentVariable("PSModulePath", $env:PSModulePath, "Machine")
+```
 
 ## See Also
 
