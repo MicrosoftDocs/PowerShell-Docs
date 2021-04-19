@@ -414,7 +414,7 @@ behavior.
 > automation that work-around the various issues when invoking native applications. Historically,
 > quotes must be escaped and it is not possible to provide empty arguments to a native application.
 
-New behaviors made available by this change
+New behaviors made available by this change:
 
 - Literal or expandable strings with embedded quotes the quotes are now preserved
 
