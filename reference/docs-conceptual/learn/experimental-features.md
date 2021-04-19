@@ -148,6 +148,18 @@ to decorate hyperlinks. Some terminal hosts, like the
 [Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701), support this markup,
 which makes the rendered text clickable in the terminal.
 
+Support for ANSI escape sequences can be turned off using the **TERM** or **NO_COLOR** environment
+variables.
+
+The following values of `$env:TERM` change the behavior as follows:
+
+- `dumb` - set `$Host.UI.SupportsVirtualTerminal = $false`
+- `xterm-mono` - set `$PSStyle.OutputRendering = PlainText`
+- `xtermm` - set `$PSStyle.OutputRendering = PlainText`
+
+If `$env:NO_COLOR` exists, then sets `$PSStyle.OutputRendering = PlainText`. For more information,
+see [https://no-color.org/](https://no-color.org/).
+
 ## PSAnsiProgress
 
 This experiment was added in PowerShell 7.2. The feature adds the `$PSStyle.Progress` member and
@@ -158,6 +170,10 @@ allows you to control progress view bar rendering.
   Defaults to `120`
 - `$PSStyle.Progress.View` - An enum with values, `Minimal` and `Classic`. `Classic` is the existing
   rendering with no changes. `Minimal` is a single line minimal rendering. `Minimal` is the default.
+
+> [!NOTE]
+> If the host doesn't support Virtual Terminal, `$PSStyle.Progress.View` is automatically set to
+> `Classic`.
 
 The following example updates the rendering style to a minimal progress bar.
 
