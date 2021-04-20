@@ -93,7 +93,7 @@ deserializes, the content into `[PSCustomObject]` objects.
 > [!NOTE]
 > When the REST endpoint returns multiple objects, the objects are received as an array. If you pipe
 > the output from `Invoke-RestMethod` to another command, it is sent as a single `[Object[]]`
-> object. The contents of that array is not enumerated for the next command on the pipeline.
+> object. The contents of that array are not enumerated for the next command on the pipeline.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
