@@ -9,10 +9,10 @@ title: New-PSSession
 ---
 # New-PSSession
 
-## SYNOPSIS
+## Synopsis
 Creates a persistent connection to a local or remote computer.
 
-## SYNTAX
+## Syntax
 
 ### ComputerName (Default)
 
@@ -69,8 +69,8 @@ New-PSSession [-Name <String[]>] [-UseWindowsPowerShell] [<CommonParameters>]
 ### SSHHost
 
 ```
-New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserName <String>]
- [-KeyFilePath <String>] [-SSHTransport] [-Subsystem <String>] [<CommonParameters>]
+New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserName <String>] [-KeyFilePath <String>]
+[-SSHTransport] [-Subsystem <String>] [-ConnectingTimeout <int>] [<CommonParameters>]
 ```
 
 ### SSHHostHashParam
@@ -79,7 +79,7 @@ New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserNa
 New-PSSession [-Name <String[]>] -SSHConnection <Hashtable[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `New-PSSession` cmdlet creates a PowerShell session (**PSSession**) on a local or remote
 computer. When you create a **PSSession**, PowerShell establishes a persistent connection to the
@@ -110,7 +110,7 @@ connection information. For more information about how to set up PowerShell SSH 
 > this if you are in an environment where you can be certain of the server certificate and the
 > network connection to the target system.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a session on the local computer
 
@@ -306,7 +306,7 @@ This example shows how to create multiple sessions using Secure Shell (SSH) and 
 contain connection information for each session. Note that this example requires that the target
 remote computers have SSH configured to support key based user authentication.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowRedirection
 
@@ -478,6 +478,25 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ConnectingTimeout
+
+Specifies the amount of time in milliseconds allowed for the initial SSH connection to complete. If
+the connection doesn't complete within the specified time, an error is returned.
+
+This parameter was introduced in PowerShell 7.2
+
+```yaml
+Type: System.Int32
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: unlimited
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -969,17 +988,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
 (https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String, System.URI, System.Management.Automation.Runspaces.PSSession
 
 You can pipe a string, URI, or session object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.Runspaces.PSSession
 
-## NOTES
+## Notes
 
 - This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local
   computer and any remote computers must be configured for PowerShell remoting. For more
@@ -998,7 +1017,7 @@ You can pipe a string, URI, or session object to this cmdlet.
   more information about how to set up PowerShell SSH remoting, see
   [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
-## RELATED LINKS
+## Related Links
 
 [Connect-PSSession](Connect-PSSession.md)
 
@@ -1015,4 +1034,3 @@ You can pipe a string, URI, or session object to this cmdlet.
 [Receive-PSSession](Receive-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
-

@@ -9,10 +9,10 @@ title: Enter-PSSession
 ---
 # Enter-PSSession
 
-## SYNOPSIS
+## Synopsis
 Starts an interactive session with a remote computer.
 
-## SYNTAX
+## Syntax
 
 ### ComputerName (Default)
 
@@ -27,7 +27,7 @@ Enter-PSSession [-ComputerName] <String> [-EnableNetworkAccess] [[-Credential] <
 
 ```
 Enter-PSSession [-HostName] <String> [-Port <Int32>] [-UserName <String>] [-KeyFilePath <String>]
- [-SSHTransport] [<CommonParameters>]
+ [-SSHTransport] [-ConnectingTimeout <int>] [<CommonParameters>]
 ```
 
 ### Session
@@ -82,7 +82,7 @@ Enter-PSSession [-ContainerId] <String> [-ConfigurationName <String>] [-RunAsAdm
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Enter-PSSession` cmdlet starts an interactive session with a single remote computer.
 During the session, the commands that you type run on the remote computer, just as if you were
@@ -104,7 +104,7 @@ information about how to set up PowerShell SSH remoting, see
 To end the interactive session and disconnect from the remote computer, use the `Exit-PSSession`
 cmdlet, or type `exit`.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Start an interactive session
 
@@ -201,7 +201,7 @@ This example shows how to start an interactive session using SSH. It uses the **
 specify the port to use and the **KeyFilePath** parameter to specify an RSA key used to authenticate
 the user on the remote computer.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowRedirection
 
@@ -375,6 +375,25 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ConnectingTimeout
+
+Specifies the amount of time in milliseconds allowed for the initial SSH connection to complete. If
+the connection doesn't complete within the specified time, an error is returned.
+
+This parameter was introduced in PowerShell 7.2
+
+```yaml
+Type: System.Int32
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: unlimited
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -853,19 +872,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String, System.Management.Automation.Runspaces.PSSession
 
 You can pipe a computer name, as a string, or a session object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 The cmdlet does not return any output.
 
-## NOTES
+## Notes
 
 To connect to a remote computer, you must be a member of the Administrators group on the remote
 computer. To start an interactive session on the local computer, you must start PowerShell with the
@@ -904,7 +923,7 @@ Prior to PowerShell 7.1, remoting over SSH did not support second-hop remote ses
 capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSSession` and
 `Enter-PSHostProcess` to work from within any interactive remote session.
 
-## RELATED LINKS
+## Related Links
 
 [Exit-PSSession](Exit-PSSession.md)
 
