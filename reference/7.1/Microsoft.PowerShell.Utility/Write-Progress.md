@@ -174,6 +174,8 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+> [!NOTE]
+> If backward compatibility to PowerShell version 2 is required, the `-Completed` parameter also requires the `-Status <String>` parameter.
 
 ### -CurrentOperation
 
