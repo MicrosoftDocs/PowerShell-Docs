@@ -381,7 +381,7 @@ Accept wildcard characters: False
 ### -ConnectingTimeout
 
 Specifies the amount of time in milliseconds allowed for the initial SSH connection to complete. If
-the connection doesn't complete within the specified time, and error is returned.
+the connection doesn't complete within the specified time, an error is returned.
 
 This parameter was introduced in PowerShell 7.2
 
