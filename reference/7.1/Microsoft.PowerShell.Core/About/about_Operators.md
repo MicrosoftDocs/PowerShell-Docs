@@ -102,7 +102,7 @@ For more information, see [about_Type_Operators](about_Type_Operators.md).
 
 Use unary operators to increment or decrement variables or object properties
 and to set integers to positive or negative numbers. For example, to increment
-the variable `$a` from `9` to `10`, you type `$a++`.
+the variable `$a` from `9` to `10`, you type `$a++`. To decrement the variable, you tpe `$a--`.
 
 ### Special Operators
 
