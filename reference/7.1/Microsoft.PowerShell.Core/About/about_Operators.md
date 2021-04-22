@@ -2,7 +2,7 @@
 description: Describes the operators that are supported by PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/28/2020
+ms.date: 04/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
@@ -100,9 +100,9 @@ For more information, see [about_Type_Operators](about_Type_Operators.md).
 
 ### Unary Operators
 
-Use unary operators to increment or decrement variables or object properties
-and to set integers to positive or negative numbers. For example, to increment
-the variable `$a` from `9` to `10`, you type `$a++`.
+Use unary (`++`,`--`) operators to increment or decrement variables or object
+properties. For example, to increment the variable `$a` from `9` to `10`, you
+type `$a++`.
 
 ### Special Operators
 
