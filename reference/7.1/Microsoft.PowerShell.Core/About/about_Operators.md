@@ -100,9 +100,11 @@ For more information, see [about_Type_Operators](about_Type_Operators.md).
 
 ### Unary Operators
 
-Use unary (`++`,`--`) operators to increment or decrement variables or object
-properties. For example, to increment the variable `$a` from `9` to `10`, you
-type `$a++`.
+Use the unary `++`  and `--` operators to increment or decrement values and
+`-` for negation. For example, to increment the variable `$a` from `9` to 
+`10`, you type `$a++`.
+
+For more information, see [about_Arithmetic_Operators](about_Arithmetic_Operators.md).
 
 ### Special Operators
 
