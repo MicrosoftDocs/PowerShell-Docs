@@ -55,8 +55,8 @@ The following buttons are located on the toolbar.
 | **Show Script Pane Top**       | Moves the Script Pane to the top in the display.                                                                                                                                 |
 | **Show Script Pane Right**     | Moves the Script Pane to the right in the display.                                                                                                                               |
 | **Show Script Pane Maximized** | Maximizes the Script Pane.                                                                                                                                                       |
-| **Show Command Window** | Shows the Commands Pane for installed Modules, as a separate Window. 
-| **Show Command Add-on** | Shows the Commands Pane for installed Modules, as a sidebar Add-on. 
+| **Show Command Window** | Shows the Commands Pane for installed Modules, as a separate Window. |
+| **Show Command Add-on** | Shows the Commands Pane for installed Modules, as a sidebar Add-on. |
 
 
 ## Script Tab
