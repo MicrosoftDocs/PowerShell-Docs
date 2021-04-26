@@ -262,7 +262,7 @@ support those methods.
 - [Homebrew Github Repository][GitHub]
 - [Homebrew-Cask][cask]
 
-[brew]: http://brew.sh/
+[brew]: https://docs.brew.sh/Installation
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
