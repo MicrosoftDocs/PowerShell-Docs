@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on macOS
 description: Information about installing PowerShell on macOS
-ms.date: 03/15/2021
+ms.date: 04/26/2021
 ---
 
 # Installing PowerShell on macOS
@@ -217,7 +217,7 @@ if needed.
 If you installed PowerShell with Homebrew, use the following command to uninstall:
 
 ```sh
-brew cask uninstall powershell
+brew --cask uninstall powershell
 ```
 
 If you installed PowerShell via direct download, PowerShell must be removed manually:
