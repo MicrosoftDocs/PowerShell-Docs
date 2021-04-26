@@ -30,7 +30,8 @@ needed for PowerShell remoting and CIM operations.
 
 If the `brew` command is not found, you need to install Homebrew following
 [their instructions][brew].
-```
+
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
