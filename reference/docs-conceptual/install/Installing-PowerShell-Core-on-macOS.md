@@ -19,7 +19,7 @@ PowerShell 7.0 or higher require macOS 10.13 and higher. All packages are availa
 
 There are several ways to install PowerShell on macOS. Choose one of the following methods:
 
-- Install using Homebrew. Homebrew is the preferred package manager for macOS.
+- Install using [Homebrew][brew]. Homebrew is the preferred package manager for macOS.
 - Install PowerShell via [Direct Download](#installation-via-direct-download)
 - Install from [binary archives](#binary-archives).
 
@@ -30,6 +30,10 @@ needed for PowerShell remoting and CIM operations.
 
 If the `brew` command is not found, you need to install Homebrew following
 [their instructions][brew].
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 Now, you can install PowerShell:
 
@@ -259,7 +263,7 @@ support those methods.
 - [Homebrew Github Repository][GitHub]
 - [Homebrew-Cask][cask]
 
-[brew]: http://brew.sh/
+[brew]: https://docs.brew.sh/Installation
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
