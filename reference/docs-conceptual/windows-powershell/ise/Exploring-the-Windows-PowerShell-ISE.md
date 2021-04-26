@@ -44,17 +44,20 @@ The following buttons are located on the toolbar.
 | **Cut**                        | Cuts the selected text and copies it to the clipboard.                                                                                                                           |
 | **Copy**                       | Copies the selected text to the clipboard.                                                                                                                                       |
 | **Paste**                      | Pastes the contents of the clipboard at the cursor location.                                                                                                                     |
-| **Clear Output Pane**          | Clears all content in the Output Pane.                                                                                                                                           |
+| **Clear Console Pane**          | Clears all content in the Console Pane.                                                                                                                                           |
 | **Undo**                       | Reverses the action that was just performed.                                                                                                                                     |
 | **Redo**                       | Performs the action that was just undone.                                                                                                                                        |
 | **Run Script**                 | Runs a script.                                                                                                                                                                   |
 | **Run Selection**              | Runs a selected portion of a script.                                                                                                                                             |
-| **Stop Execution**             | Stops a script that is running.                                                                                                                                                  |
+| **Stop Operation**             | Stops a script that is running.                                                                                                                                                  |
 | **New Remote PowerShell Tab**  | Creates a new PowerShell Tab that establishes a session on a remote computer. A dialog box appears and prompts you to enter details required to establish the remote connection. |
 | **Start PowerShell.exe**       | Opens a PowerShell Console.                                                                                                                                                      |
 | **Show Script Pane Top**       | Moves the Script Pane to the top in the display.                                                                                                                                 |
 | **Show Script Pane Right**     | Moves the Script Pane to the right in the display.                                                                                                                               |
 | **Show Script Pane Maximized** | Maximizes the Script Pane.                                                                                                                                                       |
+| **Show Command Window** | Shows the Commands Pane for installed Modules, as a separate Window. |
+| **Show Command Add-on** | Shows the Commands Pane for installed Modules, as a sidebar Add-on. |
+
 
 ## Script Tab
 
