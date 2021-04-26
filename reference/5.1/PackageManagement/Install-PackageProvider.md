@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 06/09/2017
+ms.date: 04/26/2021
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-packageprovider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-PackageProvider
@@ -53,7 +52,7 @@ them to your target computer. Use the following steps to do this:
 1. Run `Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force` to install the
    provider from a computer with an internet connection.
 1. After the install, you can find the provider installed in
-   `$env:ProgramFiles\PackageManagement\ReferenceAssemblies\<ProviderName>\<ProviderVersion>` or
+   `$env:ProgramFiles\PackageManagement\ProviderAssemblies\<ProviderName>\<ProviderVersion>` or
    `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\<ProviderName>\<ProviderVersion>`.
 1. Place the `<ProviderName>` folder, which in this case is the NuGet folder, in the corresponding
    location on your target computer. If your target computer is a Nano server, you need to run
