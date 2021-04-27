@@ -12,7 +12,7 @@ language, and a configuration management framework. PowerShell runs on Windows, 
 
 ## Shell
 
-PowerShell is modern command shell that includes the best features of other popular shells. Unlike
+PowerShell is a modern command shell that includes the best features of other popular shells. Unlike
 most shells that only accept and return text, PowerShell accepts and returns .NET objects. The shell
 includes the following features:
 
