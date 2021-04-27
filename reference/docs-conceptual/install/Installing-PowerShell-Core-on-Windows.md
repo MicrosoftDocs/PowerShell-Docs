@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on Windows
 description: Information about installing PowerShell on Windows
-ms.date: 03/30/2021
+ms.date: 04/27/2021
 ---
 # Installing PowerShell on Windows
 
@@ -245,16 +245,16 @@ The dotnet tool installer adds `$env:USERPROFILE\.dotnet\tools` to your `$env:PA
 variable. However, the currently running shell doesn't have the updated `$env:PATH`. You can start
 PowerShell from a new shell by typing `pwsh`.
 
-## Install PowerShell via Winget
+## Install PowerShell via the Windows Package Manager
 
 The `winget` command-line tool enables developers to discover, install, upgrade, remove, and
 configure applications on Windows 10 computers. This tool is the client interface to the Windows
 Package Manager service.
 
 > [!NOTE]
-> The `winget` tool is currently a preview. Not all planned functionality is available at this time.
-> You should not use this method in a production deployment scenario. See the [winget] documentation
-> for a list of system requirements and install instructions.
+> Windows Package Manager and the `winget` tool are in public preview and may be substantially
+> modified before they are generally available. See the [documentation][winget] for a list of system
+> requirements and install instructions.
 
 The following commands can be used to install PowerShell using the published `winget` packages:
 
@@ -269,7 +269,7 @@ The following commands can be used to install PowerShell using the published `wi
    ---------------------------------------------------------------------------
    PowerShell                Microsoft.PowerShell              7.1.3
    PowerShell Preview (MSIX) Microsoft.PowerShell-Preview-MSIX 7.0.2
-   PowerShell-Preview        Microsoft.PowerShell-Preview      7.2.0-preview.3
+   PowerShell-Preview        Microsoft.PowerShell-Preview      7.2.0-preview.5
    ```
 
 1. Install a version of PowerShell using the `--exact` parameter
