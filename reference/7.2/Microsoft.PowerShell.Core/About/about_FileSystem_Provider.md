@@ -33,7 +33,7 @@ The **FileSystem** drives are a hierarchical namespace containing the
 directories and files on your computer. A **FileSystem** drive can be a logical
 or physical drive, directory, or mapped network share.
 
-Beginning in PowerShell Version 7.0, a drive called `TEMP:` is be mapped to the
+Beginning in PowerShell Version 7.0, a drive called `TEMP:` is mapped to the
 user's temporary directory path. PowerShell uses the .NET
 [GetTempPath()](/dotnet/api/system.io.path.gettemppath) method to determine the
 location of the temporary folder. On Windows, the location is the same as
