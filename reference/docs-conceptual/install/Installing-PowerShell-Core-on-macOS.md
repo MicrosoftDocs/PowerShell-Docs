@@ -217,7 +217,7 @@ if needed.
 If you installed PowerShell with Homebrew, use the following command to uninstall:
 
 ```sh
-brew --cask uninstall powershell
+brew uninstall --cask powershell
 ```
 
 If you installed PowerShell via direct download, PowerShell must be removed manually:
