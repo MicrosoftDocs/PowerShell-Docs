@@ -60,8 +60,8 @@ directory (`$PSHOME`).
 
 There are three sources of extended type data in PowerShell sessions.
 
-- The type data defined by PowerShell and is loaded automatically into every
-  PowerShell session.
+- Extended type data is defined by PowerShell and loaded automatically into 
+  every PowerShell session.
 
 - The `Types.ps1xml` files that modules export are loaded when the module
   is imported into the current session.
