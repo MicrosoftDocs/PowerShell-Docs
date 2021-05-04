@@ -1,7 +1,7 @@
 ---
 description: Explains how to redirect output from PowerShell to text files.
 Locale: en-US
-ms.date: 03/18/2021
+ms.date: 05/04/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
@@ -51,7 +51,7 @@ There is also a **Progress** stream in PowerShell, but it does not support
 redirection.
 
 > [!IMPORTANT]
-> The **Success** and **Error** streams are similar to the stdin and stderr
+> The **Success** and **Error** streams are similar to the stdout and stderr
 > streams of other shells. However, stdin is not connected to the PowerShell
 > pipeline for input.
 
