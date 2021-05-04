@@ -794,6 +794,12 @@
       href: dev-cross-plat/vscode/understanding-file-encoding.md
     - name: Using VS Code to debug compiled cmdlets
       href: dev-cross-plat/vscode/using-vscode-for-debugging-compiled-cmdlets.md
+  - name: Performance considerations
+    items:
+    - name: Scripting performance considerations
+      href: dev-cross-plat/performance/script-authoring-considerations.md
+    - name: Module performance considerations
+      href: dev-cross-plat/performance/module-authoring-considerations.md
   - name: Writing portable modules
     href: dev-cross-plat/writing-portable-modules.md
   - name: Creating module help using PlatyPS
