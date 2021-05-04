@@ -71,9 +71,9 @@ Using these commands, you can discover almost anything you need to know about Po
 
 ### Verb
 
-Verb is an important concepts in PowerShell. It's a naming standard that most cmdlets follow. It's
-also a naming standard you're expected to follow, once you write your own commands. The idea is that
-the _verb_ says what you're trying to do, read data or maybe change it. PowerShell has a
+_Verb_ is an important concept in PowerShell. It's a naming standard that most cmdlets follow. It's
+also a naming standard you're expected to follow when you write your own commands. The idea is that
+the _Verb_ says what you're trying to do, like read or maybe change data. PowerShell has a
 standardized list of verbs. To get a full list of all possible verbs, use the `Get-Verb` cmdlet:
 
 ```powershell

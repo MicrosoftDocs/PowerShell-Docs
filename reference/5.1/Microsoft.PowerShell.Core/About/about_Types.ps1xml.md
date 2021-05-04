@@ -1,8 +1,8 @@
 ---
-description: Explains how to use `Types.ps1xml` files to extend the types of objects that are used in PowerShell. 
+description: Explains how to use `Types.ps1xml` files to extend the types of objects that are used in PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/27/2020
+ms.date: 04/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_types.ps1xml?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Types.ps1xml
@@ -60,9 +60,8 @@ directory (`$PSHOME`).
 
 There are three sources of extended type data in PowerShell sessions.
 
-- The defined by PowerShell and is loaded automatically into every PowerShell
-  session. Beginning with PowerShell 6, this information is compiled into
-  PowerShell and is no longer shipped in a `Types.ps1xml` file.
+- Extended type data is defined by PowerShell and loaded automatically into 
+  every PowerShell session.
 
 - The `Types.ps1xml` files that modules export are loaded when the module
   is imported into the current session.
@@ -254,7 +253,9 @@ defined for the .NET type.
 
 Any of the following member tags can be inside the `<Members>` tag.
 
-`<AliasProperty>`: Defines a new name for an existing property.
+### AliasProperty
+
+Defines a new name for an existing property.
 
 The `<AliasProperty>` tag must have a `<Name>` tag that specifies the name of
 the new property and a `<ReferencedMemberName>` tag that specifies the existing
@@ -275,33 +276,35 @@ property of array objects.
 </Type>
 ```
 
-`<CodeMethod>`:  References a static method of a .NET class.
+### CodeMethod
+
+References a static method of a .NET class.
 
 The `<CodeMethod>` tag must have a `<Name>` tag that specifies the name of the
-new method and a `<GetCodeReference>` tag that specifies the code in which the
+new method and a `<CodeReference>` tag that specifies the code in which the
 method is defined.
 
-For example, the **Mode** property of `System.IO.DirectoryInfo` objects is a
-code property defined in the PowerShell FileSystem provider.
+For example, the **ToString** method is the name of the
+**Microsoft.PowerShell.ToStringCodeMethods** code definition.
 
 ```xml
-<Type>
-  <Name>System.IO.DirectoryInfo</Name>
-  <Members>
-    <CodeProperty>
-      <Name>Mode</Name>
-      <GetCodeReference>
-        <TypeName>
-          Microsoft.PowerShell.Commands.FileSystemProvider
-        </TypeName>
-        <MethodName>Mode</MethodName>
-      </GetCodeReference>
-    </CodeProperty>
-  </Members>
-</Type>
+  <Type>
+    <Name>System.Xml.XmlNode</Name>
+    <Members>
+      <CodeMethod>
+        <Name>ToString</Name>
+        <CodeReference>
+          <TypeName>Microsoft.PowerShell.ToStringCodeMethods</TypeName>
+          <MethodName>XmlNode</MethodName>
+        </CodeReference>
+      </CodeMethod>
+    </Members>
+  </Type>
 ```
 
-`<CodeProperty>`: References a static method of a .NET class.
+### CodeProperty
+
+References a static method of a .NET class.
 
 The `<CodeProperty>` tag must have a `<Name>` tag that specifies the name of
 the new property and a `<GetCodeReference>` tag that specifies the code in
@@ -327,7 +330,9 @@ code property defined in the PowerShell FileSystem provider.
 </Type>
 ```
 
-`<MemberSet>`: Defines a collection of members (properties and methods).
+### MemberSet
+
+Defines a collection of members (properties and methods).
 
 The `<MemberSet>` tags appear within the primary `<Members>` tags. The tags
 must enclose a `<Name>` tag surrounding the name of the member set and
@@ -381,7 +386,9 @@ consists of a default property set with the **Status**, **Name**, and
 
 `<Methods>`: A collection of the methods of the object.
 
-`<NoteProperty>`: Defines a property with a static value.
+### NoteProperty
+
+Defines a property with a static value.
 
 The `<NoteProperty>` tag must have a `<Name>` tag that specifies the name of
 the new property and a `<Value>` tag that specifies the value of the property.
@@ -402,8 +409,9 @@ always **Success**.
 </Type>
 ```
 
-`<ParameterizedProperty>`: Properties that take arguments and return a
-value.
+### PropertySet
+
+Properties that take arguments and return a value.
 
 `<Properties>`: A collection of the properties of the object.
 
@@ -419,9 +427,8 @@ In `Types.ps1xml`, `<PropertySet>` tags are used to define sets of properties
 for the default display of an object. You can identify the default displays by
 the value **PsStandardMembers** in the `<Name>` tag of a `<MemberSet>` tag.
 
-For example, the following XML creates a **Status** property for the
-`System.IO.DirectoryInfo` object. The value of the **Status** property is
-always **Success**.
+For example, the following XML creates a **PropertySet** named
+**DefaultDisplayPropertySet** with three **ReferencedProperties**.
 
 ```xml
 <Type>
@@ -444,7 +451,9 @@ always **Success**.
 </Type>
 ```
 
-`<ScriptMethod>`: Defines a method whose value is the output of a script.
+### ScriptMethod
+
+Defines a method whose value is the output of a script.
 
 The `<ScriptMethod>` tag must have a `<Name>` tag that specifies the
 name of the new method and a `<Script>` tag that encloses the script
@@ -475,7 +484,9 @@ methods that use the `ToDateTime` and `ToDmtfDateTime` static methods of the
 </Type>
 ```
 
-`<ScriptProperty>`: Defines a property whose value is the output of a script.
+### ScriptProperty
+
+Defines a property whose value is the output of a script.
 
 The `<ScriptProperty>` tag must have a `<Name>` tag that specifies the
 name of the new property and a `<GetScriptBlock>` tag that encloses the
