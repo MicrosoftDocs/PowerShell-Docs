@@ -594,14 +594,12 @@
       href: community/contributing/pull-requests.md
     - name: PowerShell-Docs style guide
       href: community/contributing/powershell-style-guide.md
-    - name: Additional resources
-      items:
-      - name: Editorial checklist
-        href: community/contributing/editorial-checklist.md
-      - name: How we manage issues
-        href: community/contributing/managing-issues.md
-      - name: How we manage pull requests
-        href: community/contributing/managing-pull-requests.md
+    - name: Editorial checklist
+      href: community/contributing/editorial-checklist.md
+    - name: How we manage issues
+      href: community/contributing/managing-issues.md
+    - name: How we manage pull requests
+      href: community/contributing/managing-pull-requests.md
   - name: Digital art
     href: community/digital-art.md
 - name: Sample scripts
