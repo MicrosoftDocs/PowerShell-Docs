@@ -409,7 +409,7 @@ a collection of objects. `Compare-Object` examines adjacent objects when it does
 in the same position in a collection. The default value is `[Int32]::MaxValue`, which means that
 `Compare-Object` examines the entire object collection.
 
-When working with large collections, the default value might not be efficient but is very accurate.
+When working with large collections, the default value might not be efficient but is accurate.
 Specifying a smaller value for **SyncWindow** can increase performance but could have lower
 accuracy.
 
