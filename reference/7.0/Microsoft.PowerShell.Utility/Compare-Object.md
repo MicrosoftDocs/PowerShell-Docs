@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 05/06/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compare-Object
@@ -408,6 +408,10 @@ Specifies the number of adjacent objects that `Compare-Object` inspects while lo
 a collection of objects. `Compare-Object` examines adjacent objects when it doesn't find the object
 in the same position in a collection. The default value is `[Int32]::MaxValue`, which means that
 `Compare-Object` examines the entire object collection.
+
+When working with large collections, the default value might not be efficient but is very accurate.
+Specifying a smaller value for **SyncWindow** can increase performance but could have lower
+accuracy.
 
 ```yaml
 Type: System.Int32
