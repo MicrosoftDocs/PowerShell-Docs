@@ -253,7 +253,7 @@ Accept wildcard characters: False
 
 ### -SourcePathOrExtension
 
-This parameter is appears in the syntax listing because it is defined in the base class that
+This parameter appears in the syntax listing because it is defined in the base class that
 `Set-AuthenticodeSignature` is derived from. However, support for this parameter is not implemented
 in `Set-AuthenticodeSignature`.
 
@@ -271,7 +271,7 @@ Accept wildcard characters: False
 
 ### -Content
 
-This parameter is appears in the syntax listing because it is defined in the base class that
+This parameter appears in the syntax listing because it is defined in the base class that
 `Set-AuthenticodeSignature` is derived from. However, support for this parameter is not implemented
 in `Set-AuthenticodeSignature`.
 
