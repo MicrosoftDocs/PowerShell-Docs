@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 04/10/2020
+ms.date: 05/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-AuthenticodeSignature
@@ -254,8 +253,9 @@ Accept wildcard characters: False
 
 ### -SourcePathOrExtension
 
-Path to the file or file type of the content for which the digital signature is added. This
-parameter is used with **Content** where file content is passed as a byte array.
+This parameter appears in the syntax listing because it is defined in the base class that
+`Set-AuthenticodeSignature` is derived from. However, support for this parameter is not implemented
+in `Set-AuthenticodeSignature`.
 
 ```yaml
 Type: System.String[]
@@ -271,9 +271,9 @@ Accept wildcard characters: False
 
 ### -Content
 
-Contents of a file as a byte array for which the digital signature is added. This parameter must be
-used with **SourcePathOrExtension** parameter. The contents of the file must be in Unicode
-(UTF-16LE) format.
+This parameter appears in the syntax listing because it is defined in the base class that
+`Set-AuthenticodeSignature` is derived from. However, support for this parameter is not implemented
+in `Set-AuthenticodeSignature`.
 
 ```yaml
 Type: System.Byte[]
