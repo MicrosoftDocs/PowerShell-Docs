@@ -35,6 +35,8 @@ landingContent:
             url: ./using-static-classes-and-methods.md
           - text: Getting WMI objects - Get-CimInstance
             url: ./getting-wmi-objects--get-ciminstance-.md
+          - text: Manipulating items directly
+            url: ./manipulating-items-directly.md
   - title: Managing computers
     linkLists:
       - linkListType: how-to-guide
