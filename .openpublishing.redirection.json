@@ -1,6 +1,21 @@
 {
   "redirections": [
     {
+      "source_path": "reference/docs-conceptual/samples/Appendix-1---Compatibility-Aliases.md",
+      "redirect_url": "/powershell/scripting/learn/Compatibility-Aliases",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "reference/docs-conceptual/samples/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md",
+      "redirect_url": "/powershell/scripting/windows-powershell/install/Creating-a-Custom-PowerShell-Shortcut",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "reference/docs-conceptual/samples/Other-Useful-Scripting-Objects.md",
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/Other-Useful-Scripting-Objects",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "reference/docs-conceptual/dsc/tutorials/dscCiCd.md",
       "redirect_url": "/azure/devops/pipelines/get-started/dsc-cicd",
       "redirect_document_id": false
