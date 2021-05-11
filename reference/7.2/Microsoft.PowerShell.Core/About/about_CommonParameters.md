@@ -1,7 +1,7 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 11/26/2019
+ms.date: 05/11/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_CommonParameters
@@ -51,12 +51,12 @@ The **Action** parameters are **ActionPreference** type values.
 
 | Name             | Value |
 |------------------|-------|
-| Suspend          | 5     |
-| Ignore           | 4     |
-| Inquire          | 3     |
-| Continue         | 2     |
-| Stop             | 1     |
-| SilentlyContinue | 0     |
+| `Suspend`          | 5     |
+| `Ignore`           | 4     |
+| `Inquire`          | 3     |
+| `Continue`         | 2     |
+| `Stop`             | 1     |
+| `SilentlyContinue` | 0     |
 
 You may use the name or the value with the parameter.
 
@@ -622,16 +622,16 @@ Performing operation "Remove File" on Target " C:\ps-test\tmp1.txt
 
 The Confirm response options are as follows:
 
-|Response       |Result                                                     |
-|---------------|-----------------------------------------------------------|
-|Yes (Y)        |Perform the action.                                        |
-|Yes to All (A) |Perform all actions and suppress subsequent Confirm queries|
-|               |for this command.                                          |
-|No (N):        |Do not perform the action.                                 |
-|No to All (L): |Do not perform any actions and suppress subsequent Confirm |
-|               |queries for this command.                                  |
-|Suspend (S):   |Pause the command and create a temporary session.          |
-|Help (?)       |Display help for these options.                            |
+|      Response      |                           Result                            |
+| ------------------ | ----------------------------------------------------------- |
+| `Yes` (`Y`)        | Perform the action.                                         |
+| `Yes to All` (`A`) | Perform all actions and suppress subsequent Confirm queries |
+|                    | for this command.                                           |
+| `No` (`N`):        | Do not perform the action.                                  |
+| `No to All` (`L`): | Do not perform any actions and suppress subsequent Confirm  |
+|                    | queries for this command.                                   |
+| `Suspend` (`S`):   | Pause the command and create a temporary session.           |
+| `Help` (`?`)       | Display help for these options.                             |
 
 The **Suspend** option places the command on hold and creates a temporary
 nested session in which you can work until you're ready to choose a **Confirm**
