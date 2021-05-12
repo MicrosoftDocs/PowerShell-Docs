@@ -3,23 +3,23 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/26/2019
+ms.date: 05/12/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/out-default?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Default
 ---
 # Out-Default
 
-## SYNOPSIS
+## Synopsis
 Sends the output to the default formatter and to the default output cmdlet.
 
-## SYNTAX
+## Syntax
 
 ```
 Out-Default [-Transcript] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 PowerShell automatically adds `Out-Default` to the end of every pipeline. `Out-Default` decides how
 to format and output the object stream. If the object stream is a stream of strings, `Out-Default`
@@ -36,7 +36,11 @@ a **table** view, `Out-Default` streams the objects to `Format-Table | Out-Host`
 transforms the objects into a stream of Formatting records (driven by the data in the view
 definition) and `Out-Host` transforms the formatting records into calls on the Host interface.
 
-## EXAMPLES
+This cmdlet isn't intended to be used by the end user. Other cmdlets are recommended for controlling
+output like [Out-Host](Out-Host.md) or using `Format-*` cmdlets and the [Format.ps1xml](About/about_format.ps1xml.md)
+file to control formatting.
+
+## Examples
 
 ### Example 1
 
@@ -56,7 +60,10 @@ Get-Process | Select-Object -First 5 | Out-Default
       9     1.99       5.07       0.19   19320  13 AppVShNotify
 ```
 
-## PARAMETERS
+No error is thrown when using `Out-Default` but the output isn't changed if it's not explicitly
+called.
+
+## Parameters
 
 ### -InputObject
 
@@ -96,13 +103,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related Links
 
 [Format-Custom](../Microsoft.PowerShell.Utility/Format-Custom.md)
 
