@@ -178,7 +178,7 @@ The results show that only process objects and service objects have a **MachineN
 
 ### Example 6: Get members for an array
 
-This example demonstrates how to find the members of an array of objects. When you pipe and array of
+This example demonstrates how to find the members of an array of objects. When you pipe an array of
 objects to `Get-Member`, the cmdlet returns a member list for each unique object type in the array.
 If you pass the array using the **InputObject** parameter, the array is treated as a single object.
 
