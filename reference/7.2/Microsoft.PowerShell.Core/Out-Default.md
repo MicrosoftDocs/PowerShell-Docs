@@ -9,16 +9,16 @@ title: Out-Default
 ---
 # Out-Default
 
-## SYNOPSIS
+## Synopsis
 Sends the output to the default formatter and to the default output cmdlet.
 
-## SYNTAX
+## Syntax
 
 ```
 Out-Default [-Transcript] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 PowerShell automatically adds `Out-Default` to the end of every pipeline. `Out-Default` decides how
 to format and output the object stream. If the object stream is a stream of strings, `Out-Default`
@@ -39,7 +39,7 @@ This cmdlet isn't intended to be used by the end user. Other cmdlets are recomme
 output like [Out-Host](Out-Host.md) or using `Format-*` cmdlets and the [Format.ps1xml](About/about_format.ps1xml.md)
 file to control formatting.
 
-## EXAMPLES
+## Examples
 
 ### Example 1
 
@@ -62,7 +62,7 @@ Get-Process | Select-Object -First 5 | Out-Default
 No error is thrown when using `Out-Default` but the output isn't changed if it's not explicitly
 called.
 
-## PARAMETERS
+## Parameters
 
 ### -InputObject
 
@@ -102,13 +102,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related Links
 
 [Format-Custom](../Microsoft.PowerShell.Utility/Format-Custom.md)
 
