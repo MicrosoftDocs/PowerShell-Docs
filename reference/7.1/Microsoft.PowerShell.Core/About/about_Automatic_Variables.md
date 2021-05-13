@@ -1,7 +1,7 @@
 ---
 description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 03/29/2021
+ms.date: 05/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
@@ -226,7 +226,7 @@ system. Otherwise contains `$FALSE`.
 
 ### $LastExitCode
 
-Contains the exit code of the last Windows-based program that was run.
+Contains the exit code of the last native program that was run.
 
 ### $Matches
 
