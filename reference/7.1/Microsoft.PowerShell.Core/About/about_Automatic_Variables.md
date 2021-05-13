@@ -226,7 +226,7 @@ system. Otherwise contains `$FALSE`.
 
 ### $LastExitCode
 
-Contains the exit code of the last Windows-based program that was run.
+Contains the exit code of the last native program that was run or `$null` if no native program has been run.
 
 ### $Matches
 
