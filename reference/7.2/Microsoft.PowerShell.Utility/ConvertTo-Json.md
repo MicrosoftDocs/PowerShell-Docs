@@ -208,7 +208,7 @@ Accept wildcard characters: False
 ### -Depth
 
 Specifies how many levels of contained objects are included in the JSON representation. The value
-can be any number from `1` to `100`. The default value is `2`. `ConvertTo-Json` emits a
+can be any number from `0` to `100`. The default value is `2`. `ConvertTo-Json` emits a
 warning if the number of levels in an input object exceeds this number.
 
 ```yaml
