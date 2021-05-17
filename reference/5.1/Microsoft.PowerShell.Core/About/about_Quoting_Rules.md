@@ -168,7 +168,7 @@ PS> 'Use a quotation mark (`") to begin a string.'
 Use a quotation mark (`") to begin a string.
 ```
 
-Because the contents of single-quoted strings are interpreted literally, you
+Because the contents of single-quoted strings are interpreted literally, 
 the backtick character is treated as a literal character and displayed in the
 output.
 

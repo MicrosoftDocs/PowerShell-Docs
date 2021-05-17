@@ -2,7 +2,7 @@
 description:  Explains how to add parameters to advanced functions.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/27/2020
+ms.date: 04/14/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -751,6 +751,9 @@ Param(
     [String]$Sound
 )
 ```
+
+> [!NOTE]
+> The `IValidateSetValuesGenerator` class was introduced in PowerShell 6.0
 
 ### ValidateNotNull validation attribute
 

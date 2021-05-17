@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell Docs for 2021
 description: List of changes to the PowerShell documentation for 2021
-ms.date: 04/01/2021
+ms.date: 05/03/2021
 ---
 
 # What's new in PowerShell Docs for 2021
@@ -11,6 +11,36 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2021-April
+
+New Content
+
+- Published new Learn content [Write your first PowerShell code](https://docs.microsoft.com/learn/modules/powershell-write-first/)
+- Updated docs for PowerShell 7.2-preview.5
+- Updated metadata on ~3300 articles in the Windows module documentation
+  - Preparing for Windows Server 2022 release and fixing updateable help
+  - This is still a work in progress
+
+### Top Community Contributors
+
+GitHub stats
+
+- 45 PRs merged (5 from Community)
+- 42 issues opened (33 from Community)
+- 55 issues closed (32 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| ealmonte32      |     1      |               |
+| hananyajacobson |     1      |               |
+| MarcChasse      |     1      |               |
+| Melvin-Abraham  |     1      |               |
+| robertkruk      |     1      |               |
+| MikeMM70        |            |       2       |
 
 ## 2021-March
 

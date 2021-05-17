@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 05/04/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
@@ -32,7 +32,7 @@ object, which is easily managed in PowerShell.
 Many web sites use JSON instead of XML to serialize data for communication between servers and
 web-based apps.
 
-As of PowerShell 7.2, `ConvertTo-Json` emits a warning if the depth of the input object exceeds
+As of PowerShell 7.1, `ConvertTo-Json` emits a warning if the depth of the input object exceeds
 the depth specified for the command. This prevents unwanted data loss when converting objects.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
@@ -207,9 +207,9 @@ Accept wildcard characters: False
 
 ### -Depth
 
-Specifies how many levels of contained objects are included in the JSON representation. The default
-value is 2. As of PowerShell 7.2, `ConvertTo-Json` emits a warning if the number of levels in an
-input object exceeds this number.
+Specifies how many levels of contained objects are included in the JSON representation. The value
+can be any number from `1` to `100`. The default value is `2`. `ConvertTo-Json` emits a
+warning if the number of levels in an input object exceeds this number.
 
 ```yaml
 Type: System.Int32

@@ -1,7 +1,7 @@
 ---
 title: Community contributor Hall of Fame
 description: List of the GitHub users that have the most contributions to the PowerShell-Doc project.
-ms.date: 04/01/2021
+ms.date: 05/03/2021
 ---
 # Community Contributor Hall of Fame
 
@@ -9,7 +9,7 @@ The PowerShell Community is a vibrant and collaborative group. We greatly apprec
 and support we get from the community. Learn how you can contribute by reading the
 [Contributor's Guide][contrib].
 
-As of the end of May 2020, these GitHub users are the All-Time Top Community Contributors.
+As of the end of March 2021, these GitHub users are the All-Time Top Community Contributors.
 
 ## Pull Requests opened
 
@@ -17,7 +17,7 @@ Pull Requests help us fix those issues and make the documentation better for eve
 
 | Docs PRs Merged | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | Grand Total |
 | --------------- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community       |    3 |  194 |  446 |  467 |  321 |  162 |   31 |        1624 |
+| Community       |    3 |  194 |  446 |  467 |  321 |  162 |   36 |        1629 |
 | matt9ucci       |      |      |  157 |   80 |   30 |    1 |    2 |         270 |
 | nschonni        |      |      |      |   14 |  138 |   10 |      |         162 |
 | kiazhi          |      |   25 |   78 |   12 |      |      |      |         115 |
@@ -28,7 +28,6 @@ Pull Requests help us fix those issues and make the documentation better for eve
 | Dan1el42        |      |   20 |      |      |      |      |      |          20 |
 | NReilingh       |      |    2 |      |   13 |    3 |      |      |          18 |
 | it-praktyk      |      |      |      |   16 |    1 |      |      |          17 |
-| vors            |      |   15 |    1 |      |      |      |      |          16 |
 | markekraus      |      |      |   11 |    5 |      |      |      |          16 |
 | kvprasoon       |      |    2 |    1 |    7 |    2 |    2 |      |          14 |
 | purdo17         |      |      |      |   13 |      |      |      |          13 |
@@ -43,15 +42,16 @@ GitHub issues help us identify errors and gaps in our documentation.
 
 | Docs Issues Opened | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | Grand Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community          |    3 |   54 |   95 |  213 |  575 |  584 |  110 |        1634 |
-| mklement0          |      |      |   19 |   60 |   56 |   61 |   12 |         208 |
+| Community          |    3 |   54 |   95 |  213 |  575 |  584 |  145 |        1669 |
+| mklement0          |      |      |   19 |   60 |   56 |   61 |   13 |         209 |
+| iSazonov           |      |      |    1 |    4 |   10 |    8 |    1 |          24 |
 | jszabo98           |      |      |      |    2 |   15 |    6 |      |          23 |
-| iSazonov           |      |      |    1 |    4 |   10 |    8 |      |          23 |
 | juvtib             |      |      |      |      |      |   15 |    6 |          21 |
 | doctordns          |      |      |    5 |    3 |    5 |    7 |      |          20 |
 | KirkMunro          |      |      |      |    7 |    7 |    1 |      |          15 |
 | alexandair         |      |    9 |    4 |    2 |      |      |      |          15 |
 | vexx32             |      |      |      |    3 |   11 |      |      |          14 |
+| vors               |    1 |    6 |    2 |    1 |      |      |      |          10 |
 | JustinGrote        |      |      |      |    1 |    3 |    6 |      |          10 |
 
 <!-- Link references -->

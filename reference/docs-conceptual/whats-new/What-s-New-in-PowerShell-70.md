@@ -328,7 +328,7 @@ that line. If the terminal doesn't support ANSI color escape sequences (VT100), 
 
 ![Error display from a script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-The default view in PowerShell 7 is **ConciseView**. The previous default view was **NormalView** and you can select thisby setting the preference variable `$ErrorView`.
+The default view in PowerShell 7 is **ConciseView**. The previous default view was **NormalView** and you can select this by setting the preference variable `$ErrorView`.
 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView

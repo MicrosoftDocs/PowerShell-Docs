@@ -11,7 +11,7 @@ title: Out-String
 # Out-String
 
 ## Synopsis
-Outputs input objects as a strings.
+Outputs input objects as a string.
 
 ## Syntax
 
@@ -31,7 +31,7 @@ Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParamete
 
 The `Out-String` cmdlet converts input objects into strings. By default, `Out-String`
 accumulates the strings and returns them as a single string, but you can use the **Stream**
-parameter to direct `Out-String` to return one line at a time or create and array of strings. This
+parameter to direct `Out-String` to return one line at a time or create an array of strings. This
 cmdlet lets you search and manipulate string output as you would in traditional shells when object
 manipulation is less convenient.
 
@@ -101,9 +101,9 @@ Alias           gcm -> Get-Command
 
 `Get-Alias` gets the **System.Management.Automation.AliasInfo** objects, one for each alias, and
 sends the objects down the pipeline. `Out-String` uses the **Stream** parameter to convert each
-object to a string rather concatenating all the objects into a single string. The **System.String**
-objects are sent down the pipeline and `Select-String` uses the **Pattern** parameter to find
-matches for the text **gcm**.
+object to a string rather than concatenating all the objects into a single string.
+The **System.String** objects are sent down the pipeline and `Select-String` uses the **Pattern**
+parameter to find matches for the text **gcm**.
 
 > [!NOTE]
 > If you omit the **Stream** parameter, the command displays all the aliases because `Select-String`

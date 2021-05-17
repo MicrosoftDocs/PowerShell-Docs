@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/14/2020
+ms.date: 04/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Progress
@@ -34,7 +33,8 @@ text that appears above and below the progress bar.
 ```powershell
 for ($i = 1; $i -le 100; $i++ )
 {
-    Write-Progress -Activity "Search in Progress" -Status "$i% Complete:" -PercentComplete $i;
+    Write-Progress -Activity "Search in Progress" -Status "$i% Complete:" -PercentComplete $i
+    Start-Sleep -Milliseconds 250
 }
 ```
 

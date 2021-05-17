@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/05/2021
+ms.date: 04/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -88,7 +88,12 @@ The `Invoke-RestMethod` cmdlet sends HTTP and HTTPS requests to Representational
 
 PowerShell formats the response based to the data type. For an RSS or ATOM feed, PowerShell returns
 the Item or Entry XML nodes. For JavaScript Object Notation (JSON) or XML, PowerShell converts, or
-deserializes, the content into objects.
+deserializes, the content into `[PSCustomObject]` objects.
+
+> [!NOTE]
+> When the REST endpoint returns multiple objects, the objects are received as an array. If you pipe
+> the output from `Invoke-RestMethod` to another command, it is sent as a single `[Object[]]`
+> object. The contents of that array are not enumerated for the next command on the pipeline.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
@@ -207,6 +212,33 @@ $headers = @{
     'token' = 'TokenValue'
 }
 Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body
+```
+
+### Example 6: Enumerate returned items on the pipeline
+
+GitHub returns multiple objects an array. If you pipe the output to another command, it is sent as a
+single `[Object[]]`object.
+
+To enumerate the objects into the pipeline, pipe the results to `Write-Output` or wrap the cmdlet in
+parentheses. The following example counts the number of objects returned by GitHub. Then counts the
+number of objects enumerated to the pipeline.
+
+```powershell
+$uri = 'https://api.github.com/repos/microsoftdocs/powershell-docs/issues'
+$x = 0
+Invoke-RestMethod -Uri $uri | ForEach-Object { $x++ }
+$x
+1
+
+$x = 0
+(Invoke-RestMethod -Uri $uri) | ForEach-Object { $x++ }
+$x
+30
+
+$x = 0
+Invoke-RestMethod -Uri $uri | Write-Output | ForEach-Object { $x++ }
+$x
+30
 ```
 
 ## Parameters

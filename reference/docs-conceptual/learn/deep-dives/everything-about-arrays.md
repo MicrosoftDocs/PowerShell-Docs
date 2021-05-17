@@ -204,7 +204,7 @@ If your variable is `$null` and you try to index it like an array, you get a
 
 ```powershell
 PS> $empty = $null
-SP> $empty[0]
+PS> $empty[0]
 Error: Cannot index into a null array.
 ```
 

@@ -1,8 +1,7 @@
 ---
 description: FileSystem
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 11/13/2020
+ms.date: 04/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem Provider
@@ -15,7 +14,7 @@ FileSystem
 
 ## Drives
 
-`C:`, `D:` ...
+`C:`, `D:`, `Temp:` ...
 
 ## Capabilities
 
@@ -34,12 +33,12 @@ The **FileSystem** drives are a hierarchical namespace containing the
 directories and files on your computer. A **FileSystem** drive can be a logical
 or physical drive, directory, or mapped network share.
 
-A drive called `TEMP:` will be mapped to the user's temporary directory path.
-
->[!NOTE]
-> Contents in the TEMP: drive are not automatically removed by PowerShell and
-> is up to the user or operating system to manage. This Feature was moved out
-> of experimental features in PowerShell Version 7.0
+Beginning in PowerShell Version 7.0, a drive called `TEMP:` is mapped to the
+user's temporary directory path. PowerShell uses the .NET
+[GetTempPath()](/dotnet/api/system.io.path.gettemppath) method to determine the
+location of the temporary folder. On Windows, the location is the same as
+`$env:TEMP`. On non-Windows systems, the location is the same as `$env:TMPDIR`
+or `/tmp` if the environment variable is not defined.
 
 The **FileSystem** provider supports the following cmdlets, which are covered
 in this article.
@@ -87,9 +86,11 @@ name (`C:`, `D:`, ...) in the path.
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem),
-> `cd` is an alias for [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location). and `pwd` is
-> an alias for [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location).
+> [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem), `cd` is
+> an alias for
+> [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location). and `pwd`
+> is an alias for
+> [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location).
 
 ## Getting files and directories
 
@@ -101,7 +102,8 @@ in parameters to filter and control the recursion depth.
 Get-ChildItem
 ```
 
-To read more about cmdlet usage, see [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem).
+To read more about cmdlet usage, see
+[Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem).
 
 ## Copying files and directories
 
@@ -133,7 +135,8 @@ directory, the command will fail unless you specify the Force parameter.
 Copy-Item -Path C:\a\* -Destination C:\c -Recurse
 ```
 
-For more information, see [Copy-Item](xref:Microsoft.PowerShell.Management.Copy-Item).
+For more information, see
+[Copy-Item](xref:Microsoft.PowerShell.Management.Copy-Item).
 
 ## Moving files and directories
 
@@ -184,8 +187,9 @@ Get-Content -Path Test.txt | ConvertTo-Html
 ```
 
 You can also retrieve the content of a file by prefixing its provider path with
-the dollar sign (`$`). The path must be enclosed in curly braces due to variable
-naming restrictions. For more information, see [about_Variables](about_Variables.md).
+the dollar sign (`$`). The path must be enclosed in curly braces due to
+variable naming restrictions. For more information, see
+[about_Variables](about_Variables.md).
 
 ```powershell
 ${C:\Windows\System32\Drivers\etc\hosts}
@@ -403,18 +407,19 @@ provider-enabled drive.
 
 Specifies the file encoding. The default is ASCII.
 
-- **ASCII**:  Uses the encoding for the ASCII (7-bit) character set.
-- **BigEndianUnicode**:  Encodes in UTF-16 format using the big-endian byte order.
-- **String**:  Uses the encoding type for a string.
-- **Unicode**:  Encodes in UTF-16 format using the little-endian byte order.
-- **UTF7**:   Encodes in UTF-7 format.
-- **UTF8**:  Encodes in UTF-8 format.
+- **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
+- **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte
+  order.
+- **String**: Uses the encoding type for a string.
+- **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
+- **UTF7**: Encodes in UTF-7 format.
+- **UTF8**: Encodes in UTF-8 format.
 - **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
 - **UF8NOBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
-- **UTF32**:  Encodes in UTF-32 format.
+- **UTF32**: Encodes in UTF-32 format.
 - **Default**: Encodes in the default installed code page.
 - **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **Unknown**:  The encoding type is unknown or invalid. The data can be treated
+- **Unknown**: The encoding type is unknown or invalid. The data can be treated
   as binary.
 
 #### Cmdlets supported
@@ -446,10 +451,11 @@ section.
 
 > [!NOTE]
 > Currently, when the value of the `-Delimiter` parameter is an empty string,
-> [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) does not return anything.
-> This is a known issue. To force [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) to return the entire
-> file as a single, undelimited string, enter a value that does not exist in
-> the file.
+> [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) does not
+> return anything. This is a known issue. To force
+> [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) to return the
+> entire file as a single, undelimited string, enter a value that does not
+> exist in the file.
 
 #### Cmdlets supported
 
@@ -539,7 +545,9 @@ parameter. To exclude files, use the `-Directory` parameter and omit the
 
 ### Hidden \<System.Management.Automation.SwitchParameter\>
 
-Gets only hidden files and directories (folders). By default, [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem) gets only non-hidden items.
+Gets only hidden files and directories (folders). By default,
+[Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem) gets only
+non-hidden items.
 
 The `-Hidden` parameter was introduced in Windows PowerShell 3.0.
 
@@ -612,8 +620,9 @@ cmdlet returns, or a string that can be converted to a
 ### Stream \<System.String\>
 
 Manages alternate data streams. Enter the stream name. Wildcards are permitted
-only in [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item) for and [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item) commands
-in a file system drive.
+only in [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item) for and
+[Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item) commands in a
+file system drive.
 
 #### Cmdlets supported
 
@@ -636,7 +645,8 @@ Ignores newline characters. Returns contents as a single item.
 
 This parameter allows you to specify the tye of item to create with `New-Item`
 
-The available values of this parameter depend on the current provider you are using.
+The available values of this parameter depend on the current provider you are
+using.
 
 In a `FileSystem` drive, the following values are allowed:
 
@@ -663,8 +673,10 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) command in a file system drive or use the `-Path`
-parameter of [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) to specify a file system drive.
+[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) command in a file system
+drive or use the `-Path` parameter of
+[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) to specify a file system
+drive.
 
 ```powershell
 Get-Help Get-ChildItem

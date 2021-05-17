@@ -161,11 +161,17 @@ The table below outlines the features that meet the servicing criteria and those
 
 |                  Feature                   |       Type       |
 | ------------------------------------------ | ---------------- |
-| Execution Policy                           | Defense in Depth |
-| System Lockdown - with AppLocker           | Defense in Depth |
-| Constrained language mode - with AppLocker | Defense in Depth |
 | System Lockdown - with WDAC                | Security Feature |
 | Constrained language mode - with WDAC      | Security Feature |
+| System Lockdown - with AppLocker           | Defense in Depth |
+| Constrained language mode - with AppLocker | Defense in Depth |
+| Execution Policy                           | Defense in Depth |
+
+> [!NOTE]
+> There is a corner-case scenario in AppLocker where you only have **Deny** rules and constrained
+> language mode is not used to enforce the policy that allowed you to bypass the execution policy.
+> Beginning in PowerShell 7.2, a change was made to ensure that AppLocker rules would take
+> precedence over a `Set-ExecutionPolicy -ExecutionPolicy Bypass` command.
 
 For more information about AppLocker and Windows Defender Application Control (WDAC), see
 [Application Controls for Windows](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control).
@@ -177,7 +183,7 @@ for historical reference. It is not intended for use to determine the support li
 
 |         Version          | Release Date |                                                                     Note                                                                      |
 | ------------------------ | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| PowerShell 7.1 (current) |   Nov-2020   | Built on .NET Core 5.0 (current).                                                                                                             |
+| PowerShell 7.1 (current) |   Nov-2020   | Built on .NET 5.0 (current).                                                                                                                  |
 | PowerShell 7.0 (LTS)     |   Mar-2020   | Built on .NET Core 3.1 (LTS).                                                                                                                 |
 | PowerShell 6.2           |   Mar-2019   |                                                                                                                                               |
 | PowerShell 6.1           |   Sep-2018   | Built on .NET Core 2.1.                                                                                                                       |

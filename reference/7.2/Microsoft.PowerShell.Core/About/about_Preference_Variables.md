@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 04/22/2020
+ms.date: 04/12/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Preference_Variables
@@ -484,11 +484,12 @@ Determines the display format of error messages in PowerShell.
 The valid values are as follows:
 
 - **ConciseView**: (Default) Provides a concise error message and a refactored
-  view for advanced module builders. If the error is from command line it's a
-  single line error message. Otherwise, you receive a multiline error message
-  that contains the error and a pointer to the error showing where it occurs in
-  that line. If the terminal supports Virtual Terminal, then ANSI color codes
-  are used to provide color accent. The Accent color can be changed at
+  view for advanced module builders. As of PowerShell 7.2, if the error is from
+  the command line or a script module the output is a single line error
+  message. Otherwise, you receive a multiline error message that contains the
+  error and a pointer to the error showing where it occurs in that line. If the
+  terminal supports Virtual Terminal, then ANSI color codes are used to provide
+  color accent. The Accent color can be changed at
   `$Host.PrivateData.ErrorAccentColor`. Use `Get-Error` cmdlet for a
   comprehensive detailed view of the fully qualified error, including inner
   exceptions.

@@ -1,19 +1,18 @@
 ---
 title: What is a PowerShell command?
-description: PowerShell allows you to run any command available on your system and includes PowerShell-specific command known as cmdlets.
+description: Commands for PowerShell are known as cmdlets (pronounced command-lets)
 ms.date: 03/31/2021
 ---
-# PowerShell commands
+# What is a PowerShell command (cmdlet)?
 
-PowerShell allows you to run any command available on your system including PowerShell-specific
-commands known as cmdlets (pronounced command-lets).
+Commands for PowerShell are known as cmdlets (pronounced command-lets). In addition to cmdlets,
+PowerShell allows you to run any command available on your system.
 
 ## What is a cmdlet?
 
-A cmdlet is a single command that participates in the pipeline semantics of PowerShell and typically
-returns a .NET object. Cmdlets are native PowerShell commands, not stand-alone executables. Cmdlets
-are collected into PowerShell modules that can be loaded on demand. Cmdlets can be written in any
-compiled .NET language or in the PowerShell scripting language itself.
+Cmdlets are native PowerShell commands, not stand-alone executables. Cmdlets are collected into
+PowerShell modules that can be loaded on demand. Cmdlets can be written in any compiled .NET
+language or in the PowerShell scripting language itself.
 
 ## Cmdlet names
 

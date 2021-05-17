@@ -1,5 +1,5 @@
 ---
-ms.date: 12/14/2020
+ms.date: 04/19/2021
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -41,6 +41,7 @@ This article describes the experimental features that are available and how to u
 | PSSubsystemPluginModel                                     |         |         | &check; | &check; |
 | PSAnsiProgress                                             |         |         |         | &check; |
 | PSAnsiRendering                                            |         |         |         | &check; |
+| PSNativeCommandArgumentPassing                             |         |         |         | &check; |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -117,7 +118,7 @@ UnderlineOff     Property   string UnderlineOff {get;}
 The base members return strings of ANSI escape sequences mapped to their names. The values are
 settable to allow customization.
 
-For more information, see [about_Automatic_Variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+For more information, see [about_Automatic_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 
 > [!NOTE]
 > For C# developers, you can access `PSStyle` as a singleton. Usage will look like this:
@@ -148,6 +149,18 @@ to decorate hyperlinks. Some terminal hosts, like the
 [Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701), support this markup,
 which makes the rendered text clickable in the terminal.
 
+Support for ANSI escape sequences can be turned off using the **TERM** or **NO_COLOR** environment
+variables.
+
+The following values of `$env:TERM` change the behavior as follows:
+
+- `dumb` - set `$Host.UI.SupportsVirtualTerminal = $false`
+- `xterm-mono` - set `$PSStyle.OutputRendering = PlainText`
+- `xtermm` - set `$PSStyle.OutputRendering = PlainText`
+
+If `$env:NO_COLOR` exists, then sets `$PSStyle.OutputRendering = PlainText`. For more information,
+see [https://no-color.org/](https://no-color.org/).
+
 ## PSAnsiProgress
 
 This experiment was added in PowerShell 7.2. The feature adds the `$PSStyle.Progress` member and
@@ -158,6 +171,10 @@ allows you to control progress view bar rendering.
   Defaults to `120`
 - `$PSStyle.Progress.View` - An enum with values, `Minimal` and `Classic`. `Classic` is the existing
   rendering with no changes. `Minimal` is a single line minimal rendering. `Minimal` is the default.
+
+> [!NOTE]
+> If the host doesn't support Virtual Terminal, `$PSStyle.Progress.View` is automatically set to
+> `Classic`.
 
 The following example updates the rendering style to a minimal progress bar.
 
@@ -380,3 +397,90 @@ The experimental feature includes a new cmdlet,
 [Get-PSSubsystem](xref:Microsoft.PowerShell.Core.Get-PSSubsystem). This cmdlet is only available
 when the feature is enabled. This cmdlet returns information about the subsystems that are available
 on the system.
+
+## PSNativeCommandArgumentPassing
+
+When this experimental feature is enabled PowerShell uses the `ArgumentList` property of the
+`StartProcessInfo` object rather than our current mechanism of reconstructing a string when invoking
+a native executable.
+
+This feature adds a new automatic variable `$PSNativeCommandArgumentPassing` that allows you to
+select the behavior at runtime. The valid values are `Legacy` and `Standard`. `Legacy` is the
+historic behavior. The default when the experimental feature is enabled is the new `Standard`
+behavior.
+
+> [!CAUTION]
+> The new behavior is a **breaking change** from current behavior. This may break scripts and
+> automation that work-around the various issues when invoking native applications. Historically,
+> quotes must be escaped and it is not possible to provide empty arguments to a native application.
+
+New behaviors made available by this change:
+
+- Literal or expandable strings with embedded quotes the quotes are now preserved:
+
+  ```powershell
+  PS > $a = 'a" "b'
+  PS > $PSNativeCommandArgumentPassing = "Legacy"
+  PS > testexe -echoargs $a 'a" "b' a" "b
+  Arg 0 is <a b>
+  Arg 1 is <a b>
+  Arg 2 is <a b>
+  PS > $PSNativeCommandArgumentPassing = "Standard"
+  PS > testexe -echoargs $a 'a" "b' a" "b
+  Arg 0 is <a" "b>
+  Arg 1 is <a" "b>
+  Arg 2 is <a b>
+  ```
+
+- Empty strings as arguments are now preserved:
+
+  ```powershell
+  PS>  $PSNativeCommandArgumentPassing = "Legacy"
+  PS> testexe -echoargs '' a b ''
+  Arg 0 is <a>
+  Arg 1 is <b>
+  PS> $PSNativeCommandArgumentPassing = "Standard"
+  PS> testexe -echoargs '' a b ''
+  Arg 0 is <>
+  Arg 1 is <a>
+  Arg 2 is <b>
+  Arg 3 is <>
+  ```
+
+The new behavior does not change invocations that look like this:
+
+```powershell
+PS> $PSNativeCommandArgumentPassing = "Legacy"
+PS> testexe -echoargs -k com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect
+Arg 0 is <-k>
+Arg 1 is <com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect>
+PS> $PSNativeCommandArgumentPassing = "Standard"
+PS> testexe -echoargs -k com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect
+Arg 0 is <-k>
+Arg 1 is <com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect>
+```
+
+Additionally, parameter tracing is now provided so `Trace-Command` will provide useful information
+for debugging.
+
+```powershell
+PS> $PSNativeCommandArgumentPassing = "Legacy"
+PS> trace-command -PSHOST -Name ParameterBinding { testexe -echoargs $a 'a" "b' a" "b }
+DEBUG: 2021-02-01 17:19:53.6438 ParameterBinding Information: 0 : BIND NAMED native application line args [/Users/james/src/github/forks/jameswtruher/PowerShell-1/test/tools/TestExe/bin/testexe]
+DEBUG: 2021-02-01 17:19:53.6440 ParameterBinding Information: 0 :     BIND argument [-echoargs a" "b a" "b "a b"]
+DEBUG: 2021-02-01 17:19:53.6522 ParameterBinding Information: 0 : CALLING BeginProcessing
+Arg 0 is <a b>
+Arg 1 is <a b>
+Arg 2 is <a b>
+PS> $PSNativeCommandArgumentPassing = "Standard"
+PS> trace-command -PSHOST -Name ParameterBinding { testexe -echoargs $a 'a" "b' a" "b }
+DEBUG: 2021-02-01 17:20:01.9829 ParameterBinding Information: 0 : BIND NAMED native application line args [/Users/james/src/github/forks/jameswtruher/PowerShell-1/test/tools/TestExe/bin/testexe]
+DEBUG: 2021-02-01 17:20:01.9829 ParameterBinding Information: 0 :     BIND cmd line arg [-echoargs] to position [0]
+DEBUG: 2021-02-01 17:20:01.9830 ParameterBinding Information: 0 :     BIND cmd line arg [a" "b] to position [1]
+DEBUG: 2021-02-01 17:20:01.9830 ParameterBinding Information: 0 :     BIND cmd line arg [a" "b] to position [2]
+DEBUG: 2021-02-01 17:20:01.9831 ParameterBinding Information: 0 :     BIND cmd line arg [a b] to position [3]
+DEBUG: 2021-02-01 17:20:01.9908 ParameterBinding Information: 0 : CALLING BeginProcessing
+Arg 0 is <a" "b>
+Arg 1 is <a" "b>
+Arg 2 is <a b>
+```
