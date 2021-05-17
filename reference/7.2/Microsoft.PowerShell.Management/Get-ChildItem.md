@@ -484,7 +484,7 @@ the **Directory** property. You can use the **Recurse** parameter with **Directo
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases: ad, d
+Aliases: ad
 
 Required: False
 Position: Named
