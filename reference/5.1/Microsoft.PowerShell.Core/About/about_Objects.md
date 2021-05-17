@@ -1,5 +1,5 @@
 ---
-description:  Provides essential information about objects in Windows PowerShell. 
+description:  Provides essential information about objects in Windows PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/30/2017
@@ -37,6 +37,11 @@ and time that the file was most recently accessed.
 
 When working with objects, you can use their methods and properties
 in commands to take action and manage data.
+
+To find out what methods and properties and object has, you can use [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
+or the `.psobject` attribute of an object. Both of these options might have
+slightly different results and are worth exploring to get the full scope of an
+object's capabilities.
 
 ## Objects in Pipelines
 

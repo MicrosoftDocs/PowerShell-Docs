@@ -1,5 +1,5 @@
 ---
-description: Describes how to use object properties in PowerShell. 
+description: Describes how to use object properties in PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 12/01/2017
@@ -81,6 +81,12 @@ Name              Property   System.String Name {get;}
 ```
 
 After you find the properties, you can use them in your PowerShell commands.
+
+> [!NOTE]
+> You can also use the `.psobject` attribute to discover properties of an
+> object. `Get-Member` and `.psobject` might have similar but slightly
+> different results so it's worth exploring both methods to see see on objects
+> full capabilities.
 
 ## Property values
 
