@@ -198,7 +198,7 @@ Accept wildcard characters: False
 
 ### -Password
 
-Specifies a password for the user account. You can use `Read-Host -GetCredential`, `Get-Credential`,
+Specifies a password for the user account. You can use `Read-Host -AsSecureString`, `Get-Credential`,
 or `ConvertTo-SecureString` to create a **SecureString** object for the password.
 
 If you omit the **Password** and **NoPassword** parameters, `New-LocalUser` prompts you for the new
