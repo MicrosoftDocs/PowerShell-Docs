@@ -483,9 +483,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### SoftwareIdentity
+
 `Uninstall-Package` accepts **SoftwareIdentity** objects from the pipeline as input.
 
 ## OUTPUTS
+
+### SoftwareIdentity
 
 `Uninstall-Package` returns a **SoftwareIdentity** object for each package uninstalled.
 
