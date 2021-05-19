@@ -160,12 +160,6 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    > The default location of the PowerShell executable is `/usr/bin/pwsh`. The location can vary
    > depending on how you installed PowerShell.
 
-   Optionally, enable key authentication:
-
-   ```
-   PubkeyAuthentication yes
-   ```
-
 1. Restart the **ssh** service.
 
    ```bash
