@@ -5,8 +5,11 @@ title: Appendix A - Grammar
 ---
 # Grammar
 
-This appendix contains summaries of the lexical and syntactic grammars
-found in the main document.
+This appendix contains summaries of the lexical and syntactic grammars found in the main document.
+
+> [!TIP]
+> The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in
+> the syntax.
 
 ## Lexical grammar
 
