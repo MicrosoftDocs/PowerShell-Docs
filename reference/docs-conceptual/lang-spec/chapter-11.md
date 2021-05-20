@@ -142,8 +142,9 @@ statement, and the arithmetic and comparison operators. (Assignments, function d
 are not permitted.) A manifest also has read access to environment variables and it can contain
 calls to the cmdlet `Join-Path`, so paths can be constructed.
 
-> [!NOTE] Editor's Note: The original document contains a list of keys allowed in a module manifest
-> file. That list is outdated and incomplete. For a complete list of keys in a module manifest, see
+> [!NOTE]
+> Editor's Note: The original document contains a list of keys allowed in a module manifest file.
+> That list is outdated and incomplete. For a complete list of keys in a module manifest, see
 > [New-ModuleManifest](/powershell/module/microsoft.powershell.core/new-modulemanifest).
 
 The only key that is required is **ModuleVersion**.
