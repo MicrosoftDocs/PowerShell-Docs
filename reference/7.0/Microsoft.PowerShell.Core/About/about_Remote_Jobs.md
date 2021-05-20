@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_jobs?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Remote_Jobs
+title: about Remote Jobs
 ---
-# About Remote Jobs
+# about_Remote_Jobs
 
 ## Short Description
 Describes how to run jobs on remote computers.

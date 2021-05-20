@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 11/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_scopes
+title: about Scopes
 ---
-# About Scopes
+# about_Scopes
 
 ## Short description
 Explains the concept of scope in PowerShell and shows how to set and change

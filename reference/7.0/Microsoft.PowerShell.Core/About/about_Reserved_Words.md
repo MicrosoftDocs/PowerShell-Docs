@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_reserved_words?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Reserved_Words
+title: about Reserved Words
 ---
-# About Reserved Words
+# about_Reserved_Words
 
 ## SHORT DESCRIPTION
 Lists the reserved words that cannot be used as identifiers because they

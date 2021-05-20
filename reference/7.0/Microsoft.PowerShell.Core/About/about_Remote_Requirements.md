@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Remote_Requirements
+title: about Remote Requirements
 ---
-# About Remote Requirements
+# about_Remote_Requirements
 
 ## SHORT DESCRIPTION
 Describes the system requirements and configuration requirements for running

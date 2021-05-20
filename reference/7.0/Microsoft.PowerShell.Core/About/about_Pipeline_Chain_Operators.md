@@ -4,10 +4,10 @@ ms.date:  09/30/2019
 schema:  2.0.0
 Locale: en-US
 keywords:  powershell,cmdlet
-title:  about_Pipeline_Chain_Operators
+title: about Pipeline Chain Operators
 ---
 
-# About Pipeline Chain Operators
+# about_Pipeline_Chain_Operators
 
 ## Short description
 

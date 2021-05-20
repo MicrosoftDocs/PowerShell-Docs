@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Split
+title: about Split
 ---
-# About Split
+# about_Split
 
 ## SHORT DESCRIPTION
 Explains how to use the Split operator to split one or more strings into

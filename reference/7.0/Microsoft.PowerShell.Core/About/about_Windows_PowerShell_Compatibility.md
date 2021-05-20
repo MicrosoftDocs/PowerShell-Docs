@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 04/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Windows_PowerShell_Compatibility
+title: about Windows PowerShell Compatibility
 ---
-# About Windows PowerShell compatibility
+# about_Windows_PowerShell_Compatibility
 
 ## SHORT DESCRIPTION
 

@@ -1,10 +1,10 @@
 ---
 description: Describes how to define and use parameter sets in advanced functions.
-title: about_Parameter_Sets
+title: about Parameter Sets
 Locale: en-US
 ms.date: 01/05/2021
 ---
-# About parameter sets
+# about_Parameter_Sets
 
 ## SHORT DESCRIPTION
 Describes how to define and use parameter sets in advanced functions.

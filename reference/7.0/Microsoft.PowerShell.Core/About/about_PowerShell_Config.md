@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 03/12/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_PowerShell_Config
+title: about PowerShell Config
 ---
-# About PowerShell Config
+# about_PowerShell_Config
 
 ## SHORT DESCRIPTION
 Configuration files for PowerShell Core, replacing Registry configuration.

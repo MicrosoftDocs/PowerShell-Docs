@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 2/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_foreach?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Foreach
+title: about Foreach
 ---
-# About ForEach
+# about_Foreach
 
 ## Short description
 Describes a language command you can use to traverse all the items in a

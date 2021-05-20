@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_editions?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_PowerShell_Editions
+title: about PowerShell Editions
 ---
-# About PowerShell Editions
+# about_PowerShell_Editions
 
 ## Short Description
 Different editions of PowerShell run on different underlying runtimes.

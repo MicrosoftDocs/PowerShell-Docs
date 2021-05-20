@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Providers
+title: about Providers
 ---
-# About Providers
+# about_Providers
 
 ## Short description
 Describes how PowerShell providers provide access to data and

@@ -5,10 +5,10 @@ Locale: en-US
 ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Execution_Policies
+title: about Execution Policies
 ---
 
-# About Execution Policies
+# about_Execution_Policies
 
 ## Short Description
 Describes the PowerShell execution policies and explains how to manage them.
