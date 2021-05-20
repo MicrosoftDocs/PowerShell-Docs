@@ -1,6 +1,6 @@
 ---
 title: PowerShell Remoting Over SSH
-ms.date: 10/19/2020
+ms.date: 05/20/2021
 description: Explains how to set up the SSH protocol for PowerShell remoting.
 ---
 
@@ -126,7 +126,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 
 1. Install the latest version of PowerShell, see
    [Installing PowerShell Core on Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604).
-1. Install [Ubuntu OpenSSH Server](https://help.ubuntu.com/lts/serverguide/openssh-server.html).
+1. Install [Ubuntu OpenSSH Server](https://ubuntu.com/server/docs/service-openssh).
 
    ```bash
    sudo apt install openssh-client
@@ -385,4 +385,4 @@ GitCommitId                    v6.0.0-alpha.17
 
 [Managing OpenSSH Keys](/windows-server/administration/openssh/openssh_keymanagement)
 
-[Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
+[Ubuntu SSH](https://ubuntu.com/server/docs/service-openssh)
