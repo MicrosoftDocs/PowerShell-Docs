@@ -26,6 +26,10 @@ automatic and preference variables.
 
 Syntax:
 
+> [!TIP]
+> The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in
+> the syntax.
+
 ```Syntax
 input:
     input-elements~opt~   signature-block~opt~

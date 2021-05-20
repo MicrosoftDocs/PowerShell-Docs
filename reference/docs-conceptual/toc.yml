@@ -808,37 +808,37 @@
     href: dev-cross-plat/resolving-dependency-conflicts.md
   - name: PowerShell Language Specification 3.0
     items:
-    - name: Introduction
+    - name: 1. Introduction
       href: lang-spec/chapter-01.md
-    - name: Lexical Structure
+    - name: 2. Lexical Structure
       href: lang-spec/chapter-02.md
-    - name: Basic concepts
+    - name: 3. Basic concepts
       href: lang-spec/chapter-03.md
-    - name: Types
+    - name: 4. Types
       href: lang-spec/chapter-04.md
-    - name: Variables
+    - name: 5. Variables
       href: lang-spec/chapter-05.md
-    - name: Conversions
+    - name: 6. Conversions
       href: lang-spec/chapter-06.md
-    - name: Expressions
+    - name: 7. Expressions
       href: lang-spec/chapter-07.md
-    - name: Statements
+    - name: 8. Statements
       href: lang-spec/chapter-08.md
-    - name: Arrays
+    - name: 9. Arrays
       href: lang-spec/chapter-09.md
-    - name: Hashtables
+    - name: 10. Hashtables
       href: lang-spec/chapter-10.md
-    - name: Modules
+    - name: 11. Modules
       href: lang-spec/chapter-11.md
-    - name: Attributes
+    - name: 12. Attributes
       href: lang-spec/chapter-12.md
-    - name: Cmdlets
+    - name: 13. Cmdlets
       href: lang-spec/chapter-13.md
-    - name: Comment-Based Help
+    - name: 14. Comment-Based Help
       href: lang-spec/chapter-14.md
-    - name: Grammar
+    - name: A. Grammar
       href: lang-spec/chapter-15.md
-    - name: References
+    - name: B. References
       href: lang-spec/chapter-16.md
   - name: Legacy PowerShell SDK
     items:

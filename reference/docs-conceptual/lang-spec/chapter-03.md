@@ -211,6 +211,10 @@ Path names are divided into one of two types: fully qualified and relative. A *f
 name* consists of all elements that make up a path. The following syntax shows the elements in a
 fully qualified path name:
 
+> [!TIP]
+> The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in
+> the syntax.
+
 ```Syntax
 path:
     provider~opt~   drive~opt~   containers~opt~   item

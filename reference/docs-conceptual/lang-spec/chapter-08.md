@@ -9,6 +9,10 @@ title: Statements
 
 Syntax:
 
+> [!TIP]
+> The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in
+> the syntax.
+
 ```Syntax
 statement-block:
     new-lines~opt~ { statement-list~opt~ new-lines~opt~ }

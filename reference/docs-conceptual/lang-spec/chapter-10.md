@@ -7,23 +7,29 @@ title: Hashtables
 
 Syntax:
 
+> [!TIP]
+> The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in
+> the syntax.
+
+```Syntax
 hash-literal-expression:
-*@{* new-lines~opt~ hash-literal-body~opt~ new-lines~opt~ *}*
+    @{ new-lines~opt~ hash-literal-body~opt~ new-lines~opt~ }
 
 hash-literal-body:
-hash-entry
-hash-literal-body statement-terminators hash-entry
+    hash-entry
+    hash-literal-body statement-terminators hash-entry
 
 hash-entry:
-key-expression = new-lines~opt~ statement
+    key-expression = new-lines~opt~ statement
 
 key-expression:
-simple-name
-unary-expression
+    simple-name
+    unary-expression
 
 statement-terminator:
-*;*
-new-line-character
+    ;
+    new-line-character
+```
 
 ## Introduction
 
