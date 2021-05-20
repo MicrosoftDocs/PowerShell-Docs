@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 10/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Character_Encoding
+title: about Character Encoding
 ---
 # about_Character_Encoding
 

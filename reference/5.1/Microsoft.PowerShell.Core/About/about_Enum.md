@@ -5,10 +5,10 @@ Locale: en-US
 ms.date: 11/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_enum?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Enum
+title: about Enum
 ---
 
-# About Enum
+# about_Enum
 
 ## SHORT DESCRIPTION
 

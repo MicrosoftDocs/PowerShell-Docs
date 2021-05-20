@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 11/28/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Hash_Tables
+title: about Hash Tables
 ---
-# About Hash Tables
+# about_Hash_Tables
 
 ## SHORT DESCRIPTION
 Describes how to create, use, and sort hash tables in PowerShell.

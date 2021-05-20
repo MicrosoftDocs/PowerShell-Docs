@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Methods
+title: about Methods
 ---
-# About methods
+# about_Methods
 
 ## Short description
 Describes how to use methods to perform actions on objects in PowerShell.

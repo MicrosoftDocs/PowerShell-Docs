@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 05/04/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Redirection
+title: about Redirection
 ---
-# About Redirection
+# about_Redirection
 
 ## Short description
 Explains how to redirect output from PowerShell to text files.
