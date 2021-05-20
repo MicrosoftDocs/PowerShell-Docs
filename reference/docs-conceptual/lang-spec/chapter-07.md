@@ -83,6 +83,10 @@ value:
 
 Syntax:
 
+> [!TIP]
+> The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in
+> the syntax.
+
 ```Syntax
 parenthesized-expression:
     ( new-lines~opt~ pipeline new-lines~opt~ )
