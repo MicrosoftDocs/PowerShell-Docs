@@ -806,6 +806,40 @@
     href: dev-cross-plat/choosing-the-right-nuget-package.md
   - name: Resolving module assembly dependency conflicts
     href: dev-cross-plat/resolving-dependency-conflicts.md
+  - name: PowerShell Language Specification 3.0
+    items:
+    - name: Introduction
+      href: lang-spec/chapter-01.md
+    - name: Lexical Structure
+      href: lang-spec/chapter-02.md
+    - name: Basic concepts
+      href: lang-spec/chapter-03.md
+    - name: Types
+      href: lang-spec/chapter-04.md
+    - name: Variables
+      href: lang-spec/chapter-05.md
+    - name: Conversions
+      href: lang-spec/chapter-06.md
+    - name: Expressions
+      href: lang-spec/chapter-07.md
+    - name: Statements
+      href: lang-spec/chapter-08.md
+    - name: Arrays
+      href: lang-spec/chapter-09.md
+    - name: Hashtables
+      href: lang-spec/chapter-10.md
+    - name: Modules
+      href: lang-spec/chapter-11.md
+    - name: Attributes
+      href: lang-spec/chapter-12.md
+    - name: Cmdlets
+      href: lang-spec/chapter-13.md
+    - name: Comment-Based Help
+      href: lang-spec/chapter-14.md
+    - name: Grammar
+      href: lang-spec/chapter-15.md
+    - name: References
+      href: lang-spec/chapter-16.md
   - name: Legacy PowerShell SDK
     items:
     - name: Overview
