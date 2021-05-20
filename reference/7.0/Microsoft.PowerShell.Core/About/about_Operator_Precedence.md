@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Operator_Precedence
+title: about Operator Precedence
 ---
-# About Operator Precedence
+# about_Operator_Precedence
 
 ## SHORT DESCRIPTION
 Lists the PowerShell operators in precedence order.

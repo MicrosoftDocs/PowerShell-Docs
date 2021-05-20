@@ -3,10 +3,10 @@ description: Describes chaining pipelines with the `&&` and `||` operators in Po
 Locale: en-US
 ms.date: 09/30/2019
 schema: 2.0.0
-title: about_Pipeline_Chain_Operators
+title: about Pipeline Chain Operators
 ---
 
-# About Pipeline Chain Operators
+# about_Pipeline_Chain_Operators
 
 ## Short description
 

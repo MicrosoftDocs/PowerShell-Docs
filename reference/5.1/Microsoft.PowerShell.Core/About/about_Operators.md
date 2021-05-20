@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 04/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Operators
+title: about Operators
 ---
-# About Operators
+# about_Operators
 
 ## Short description
 Describes the operators that are supported by PowerShell.

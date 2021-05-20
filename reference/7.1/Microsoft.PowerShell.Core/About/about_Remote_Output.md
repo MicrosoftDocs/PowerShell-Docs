@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 12/01/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_output?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Remote_Output
+title: about Remote Output
 ---
-# About Remote Output
+# about_Remote_Output
 
 ## SHORT DESCRIPTION
 Describes how to interpret and format the output of remote commands.

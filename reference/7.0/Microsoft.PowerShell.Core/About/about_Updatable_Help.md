@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 08/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_updatable_help?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Updatable_Help
+title: about Updatable Help
 ---
-# About Updatable Help
+# about_Updatable_Help
 
 ## Short description
 Describes the updatable help system in PowerShell.

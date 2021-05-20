@@ -5,7 +5,7 @@ Locale: en-US
 ms.date: 01/04/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hidden?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Hidden
+title: about Hidden
 ---
 # about_Hidden
 

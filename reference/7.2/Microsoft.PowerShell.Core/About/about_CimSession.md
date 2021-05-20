@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 05/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_cimsession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_CimSession
+title: about CimSession
 ---
-# About CimSession
+# about_CimSession
 
 ## Short description
 Describes a **CimSession** object and the difference between CIM sessions and

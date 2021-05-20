@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 03/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_internationalization?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Script_Internationalization
+title: about Script Internationalization
 ---
-# About Script Internationalization
+# about_Script_Internationalization
 
 ## Short Description
 Describes the script internationalization features that make it easy for

@@ -5,10 +5,10 @@ Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_checkpoint-workflow?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Checkpoint Workflow
+title: about Checkpoint-Workflow
 ---
 
-# About Checkpoint-Workflow
+# about_Checkpoint-Workflow
 
 ## SHORT DESCRIPTION
 Describes the Checkpoint-Workflow activity, which takes a checkpoint in a workflow.

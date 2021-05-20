@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Data_Sections
+title: about Data Sections
 ---
-# About Data Sections
+# about_Data_Sections
 
 ## Short Description
 Explains Data sections, which isolate text strings and other read-only

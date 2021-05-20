@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 11/30/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Profiles
+title: about Profiles
 ---
-# About Profiles
+# about_Profiles
 
 ## Short Description
 Describes how to create and use a PowerShell profile.

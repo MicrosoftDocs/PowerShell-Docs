@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 10/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_output_streams?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Output_Streams
+title: about Output Streams
 ---
-# About output streams
+# about_Output_Streams
 
 ## Short description
 Explains the availability and purpose of output streams in PowerShell.
