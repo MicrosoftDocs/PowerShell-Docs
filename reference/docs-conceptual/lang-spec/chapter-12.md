@@ -20,6 +20,10 @@ Multiple attributes can be applied to the same target element.
 > The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in
 > the syntax.
 
+> [!TIP]
+> The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in
+> the syntax.
+
 ```Syntax
 attribute-list:
     attribute
