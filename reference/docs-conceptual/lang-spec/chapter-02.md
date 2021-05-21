@@ -3,7 +3,7 @@ description: This specification shows the syntax of the PowerShell language usin
 ms.date: 05/19/2021
 title: Lexical structure
 ---
-# Lexical Structure
+# 2. Lexical Structure
 
 ## Grammars
 
@@ -268,14 +268,14 @@ Syntax:
 
 ```Syntax
 keyword: one of
-    begin          break          catch      class
-    continue       data           define     do
-    dynamicparam   else           elseif     end
-    exit           filter         finally    for
-    foreach        from           function   if
-    in             inlinescript   parallel   param
-    process        return         switch     throw
-    trap           try            until      using
+    begin          break          catch       class
+    continue       data           define      do
+    dynamicparam   else           elseif      end
+    exit           filter         finally     for
+    foreach        from           function    if
+    in             inlinescript   parallel    param
+    process        return         switch      throw
+    trap           try            until       using
     var            while          workflow
 ```
 
@@ -474,14 +474,14 @@ generic-token-part:
     generic-token-char
 
 generic-token-char:
-    *Any Unicode character except
-    { } ( ) ; , | & $
-    ` (The backtick character U+0060)
-    * double-quote-character
-    single-quote-character
-    whitespace
-    new-line-character
-    escaped-character
+    Any Unicode character except
+        {   }   (   )   ;   ,   |   &   $
+        ` (The backtick character U+0060)
+        double-quote-character
+        single-quote-character
+        whitespace
+        new-line-character
+        escaped-character
 
 generic-token-with-subexpr-start:
     generic-token-parts $(
@@ -493,8 +493,9 @@ Syntax:
 
 ```Syntax
 command-parameter:
-    dash first-parameter-char parameter-chars
-    colon~opt~ first-parameter-char:
+    dash first-parameter-char parameter-chars colon~opt~
+
+first-parameter-char:
     A Unicode character of classes Lu, Ll, Lt, Lm, or Lo
     _ (The underscore character U+005F)
     ?
@@ -525,8 +526,7 @@ verbatim-command-argument-part:
         new-line-character
 
 non-ampersand-character:
-    Any Unicode character except
-        &
+    Any Unicode character except &
 
 verbatim-command-string:
     double-quote-character non-double-quote-chars
@@ -618,15 +618,14 @@ integer-literal:
     hexadecimal-integer-literal
 
 decimal-integer-literal:
-    decimal-digits numeric-type-suffix~opt~
-    numeric-multiplier~opt~
+    decimal-digits numeric-type-suffix~opt~ numeric-multiplier~opt~
 
 decimal-digits:
     decimal-digit
     decimal-digit decimal-digits
 
 decimal-digit: one of
-    0 1 2 3 4 5 6 7 8 9
+    0  1  2  3  4  5  6  7  8  9
 
 numeric-type-suffix:
     long-type-suffix
@@ -641,7 +640,7 @@ hexadecimal-digits:
     hexadecimal-digit decimal-digits
 
 hexadecimal-digit: one of
-0 1 2 3 4 5 6 7 8 9 a b c d e f
+    0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 
 long-type-suffix:
     l
@@ -686,12 +685,9 @@ Syntax:
 
 ```Syntax
 real-literal:
-    decimal-digits *.* decimal-digits exponent-part~opt~
-    decimal-type-suffix~opt~  numeric-multiplier~opt~
-    *.* decimal-digits exponent-part~opt~  decimal-type-suffix~opt~
-    numeric-multiplier~opt~
-    decimal-digits exponent-part decimal-type-suffix~opt~
-    numeric-multiplier~opt~
+    decimal-digits . decimal-digits exponent-part~opt~ decimal-type-suffix~opt~ numeric-multiplier~opt~
+    . decimal-digits exponent-part~opt~ decimal-type-suffix~opt~ numeric-multiplier~opt~
+    decimal-digits exponent-part decimal-type-suffix~opt~ numeric-multiplier~opt~
 
 exponent-part:
     e sign~opt~  decimal-digits
@@ -824,7 +820,8 @@ dollars:
     dollars $
 
 expandable-here-string-literal:
-    @  double-quote-character  whitespace~opt~  new-line-character  expandable-here-string-characters~opt~  new-line-character  double-quote-character  @
+    @  double-quote-character  whitespace~opt~  new-line-character
+        expandable-here-string-characters~opt~  new-line-character  double-quote-character  @
 
 expandable-here-string-characters:
     expandable-here-string-part
@@ -837,7 +834,7 @@ expandable-here-string-part:
     braced-variable
     $ Any Unicode character except
         (
-        *new-line-character
+        new-line-character
     $ new-line-character  Any Unicode character except double-quote-char
     $ new-line-character double-quote-char  Any Unicode character except @
     new-line-character  Any Unicode character except double-quote-char

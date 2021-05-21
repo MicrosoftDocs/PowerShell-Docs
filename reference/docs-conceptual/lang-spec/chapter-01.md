@@ -19,7 +19,7 @@ and minor errors have been corrected.
 > version. There is no plan to update this documentation to reflect the current state. This
 > documentation is presented here for historical reference.
 
-## Introduction
+## 1. Introduction
 
 PowerShell is a command-line *shell* and scripting language, designed especially for system
 administrators.

@@ -3,7 +3,7 @@ description: A type conversion is performed when a value of one type is used in 
 ms.date: 05/19/2021
 title: Conversions
 ---
-# Conversions
+# 6. Conversions
 
 A *type conversion* is performed when a value of one type is used in a context that requires a
 different type. If such a conversion happens automatically it is known as *implicit conversion*. (A

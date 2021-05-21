@@ -3,7 +3,7 @@ description: PowerShell providers allow access to data and components from the c
 ms.date: 05/19/2021
 title: Basic concepts
 ---
-# Basic concepts
+# 3. Basic concepts
 
 ## Providers and drives
 

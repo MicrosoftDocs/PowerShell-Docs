@@ -3,14 +3,16 @@ description: An expression is a sequence of operators and operands that designat
 ms.date: 05/19/2021
 title: Expressions
 ---
-# Expressions
+# 7. Expressions
 
 Syntax:
 
 ```Syntax
 expression:
-    logical-expressionDescription:
+    logical-expression
 ```
+
+Description:
 
 An *expression* is a sequence of operators and operands that designates a method, a function, a
 writable location, or a value; specifies the computation of a value; produces one or more side

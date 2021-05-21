@@ -3,7 +3,7 @@ description: A module is a self-contained reusable unit of PowerShell code. A mo
 ms.date: 05/19/2021
 title: Modules
 ---
-# Modules
+# 11. Modules
 
 ## Introduction
 
