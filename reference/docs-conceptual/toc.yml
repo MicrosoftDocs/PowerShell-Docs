@@ -834,11 +834,11 @@
       href: lang-spec/chapter-12.md
     - name: 13. Cmdlets
       href: lang-spec/chapter-13.md
-    - name: 14. Comment-Based Help
+    - name: A. Comment-Based Help
       href: lang-spec/chapter-14.md
-    - name: A. Grammar
+    - name: B. Grammar
       href: lang-spec/chapter-15.md
-    - name: B. References
+    - name: References
       href: lang-spec/chapter-16.md
   - name: Legacy PowerShell SDK
     items:

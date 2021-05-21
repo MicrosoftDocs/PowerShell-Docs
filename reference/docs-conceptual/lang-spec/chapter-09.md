@@ -3,7 +3,7 @@ description: PowerShell supports arrays of one or more dimensions with each dime
 ms.date: 05/19/2021
 title: Arrays
 ---
-# Arrays
+# 9. Arrays
 
 ## Introduction
 

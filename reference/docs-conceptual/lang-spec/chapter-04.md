@@ -3,7 +3,7 @@ description: In PowerShell, each value has a type, and types fall into one of tw
 ms.date: 05/19/2021
 title: Types
 ---
-# Types
+# 4. Types
 
 In PowerShell, each value has a type, and types fall into one of two main categories: *value types*
 and *reference types*. Consider the type `int`, which is typical of value types. A value of type
