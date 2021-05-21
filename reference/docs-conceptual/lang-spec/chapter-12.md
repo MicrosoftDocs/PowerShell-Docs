@@ -3,7 +3,7 @@ description: An attribute object associates predefined system information with a
 ms.date: 05/19/2021
 title: Attributes
 ---
-# Attributes
+# 12. Attributes
 
 An *attribute* object associates predefined system information with a *target element*, which can be
 a param block or a parameter (§8.10). Each attribute object has an *attribute type*.
@@ -14,11 +14,7 @@ external tools to control how the command itself is processed or maintained.
 
 Multiple attributes can be applied to the same target element.
 
-## 12. Attribute specification
-
-> [!TIP]
-> The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in
-> the syntax.
+## Attribute specification
 
 > [!TIP]
 > The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in
