@@ -5,7 +5,7 @@ title: Modules
 ---
 # 11. Modules
 
-## Introduction
+## 11.1 Introduction
 
 As stated in §3.14, a module is a self-contained reusable unit that allows PowerShell code to be
 partitioned, organized, and abstracted. A module can contain one or more *module members*, which are
@@ -38,7 +38,7 @@ The following cmdlets deal with modules:
 - `Remove-Module`: Removes one or more modules from the current session (see §11.5, §13.41)
 - `New-Module`: Creates a dynamic module (see §11.7, §13.35)
 
-## Writing a script module
+## 11.2 Writing a script module
 
 A script module is a script file. Consider the following script module:
 
@@ -64,7 +64,7 @@ export anything, then only those things exported explicitly will be exported. A 
 and items can be exported in one call or a number of calls to this cmdlet; such calls are cumulative
 for the current session.
 
-## Installing a script module
+## 11.3 Installing a script module
 
 A script module is defined in a script file, and modules can be stored in any directory. The
 environment variable PSModulePath points to a set of directories to be searched when module-related
@@ -77,7 +77,7 @@ Any additional paths added affect the current session only.
 
 Alternatively, a fully qualified path can be specified when a module is imported (§13.28).
 
-## Importing a script module
+## 11.4 Importing a script module
 
 Before the resources in a module can be used, that module must be imported into the current session,
 using the cmdlet `Import-Module` (§13.28). `Import-Module` can restrict the resources that it
@@ -113,7 +113,7 @@ same name, by default it runs the most recently added command.
 
 See §3.5.6 for a discussion of scope as it relates to modules.
 
-## Removing a script module
+## 11.5 Removing a script module
 
 One or more modules can be removed from a session via the cmdlet `Remove-Module` (§13.41).
 
@@ -124,7 +124,7 @@ removal, as follows:
 
 `$MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = { *on-removal-code* }`
 
-## Module manifests
+## 11.6 Module manifests
 
 As stated in §11.1, a manifest module is a file that contains information about a module, and
 controls certain aspects of that module's use.
@@ -164,7 +164,7 @@ The key **GUID** has a `string` value. This specifies a Globally Unique IDentifi
 module. The **GUID** can be used to distinguish among modules having the same name. To create a new
 GUID, call the method `[guid]::NewGuid()`.
 
-## Dynamic modules
+## 11.7 Dynamic modules
 
 A *dynamic module* is a module that is created in memory at runtime by the cmdlet `New-Module`
 (§13.35); it is not loaded from disk. Consider the following example:
@@ -209,7 +209,7 @@ or pipe the module object that `New-Module` returns, to `Import-Module`. This ac
 dynamic module to the `Get-Module` list, but it does not save the module to disk or make it
 persistent.
 
-## Closures
+## 11.8 Closures
 
 A dynamic module can be used to create a *closure*, a function with attached data. Consider the
 following example:

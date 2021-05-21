@@ -31,7 +31,7 @@ case-sensitive.
 > information about cmdlet, consult the **Reference** section of the
 > [PowerShell documentation](/powershell/scripting/overview).
 
-## Common parameters
+## 13.1 Common parameters
 
 The *common parameters* are a set of cmdlet parameters that can be used with any cmdlet. They are
 implemented by the PowerShell runtime environment itself, not by the cmdlet developer, and they are

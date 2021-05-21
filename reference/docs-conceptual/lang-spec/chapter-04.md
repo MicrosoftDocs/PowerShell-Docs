@@ -52,35 +52,35 @@ Many collection classes are defined as part of the **System.Collections** or
 `ICollection`, `IComparer`, `IEnumerable`, `IList`, `IDictionary`, and `IDictionaryEnumerator` and
 their generic equivalents.
 
-## Special types
+## 4.1 Special types
 
-### The void type
+### 4.1.1 The void type
 
 This type cannot be instantiated. It provides a means to discard a value explicitly using the cast
 operator (§7.2.9).
 
-### The null type
+### 4.1.2 The null type
 
 The *null type* has one instance, the automatic variable $null (§2.3.2.2), also known as the null
 value. This value provides a means for expressing "nothingness" in reference contexts. The
 characteristics of this type are unspecified.
 
-### The object type
+### 4.1.3 The object type
 
 Every type in PowerShell except the null type (§4.1.2) is derived directly or indirectly from the
 type object, so object is the ultimate base type of all non-null types. A variable constrained
 (§5.3) to type object is really not constrained at all, as it can contain a value of any type.
 
-## Value types
+## 4.2 Value types
 
-### Boolean
+### 4.2.1 Boolean
 
 The Boolean type is `bool`. There are only two values of this type, Fal****se and **True**,
 represented by the automatic variables `$false `and `$true`, respectively (§2.3.2.2).
 
 In PowerShell, `bool` maps to `System.Boolean`.
 
-### Character
+### 4.2.2 Character
 
 A character value has type char, which is capable of storing any UTF-16-encoded 16-bit Unicode code
 point.
@@ -104,7 +104,7 @@ The type char has the following accessible members:
 
 Windows PowerShell: char maps to System.Char.
 
-### Integer
+### 4.2.3 Integer
 
 There are two signed integer types, both of use two's-complement
 representation for negative values:
@@ -141,9 +141,9 @@ Type `byte` has the following accessible members:
 In PowerShell, `byte`, `int`, and `long` map to `System.Byte`, `System.Int32`, and `System.Int64`,
 respectively.
 
-### Real number
+### 4.2.4 Real number
 
-#### float and double
+#### 4.2.4.1 float and double
 
 There are two real (or floating-point) types:
 
@@ -178,7 +178,7 @@ Type double has the following accessible members:
 
 In PowerShell, `float` and `double` map to `System.Single` and `System.Double`, respectively.
 
-#### decimal
+#### 4.2.4.2 decimal
 
 Type decimal uses a 128-bit representation. At a minimum it must support a scale *s* such that 0 <=
 *s* <= at least 28, and a value range -79228162514264337593543950335 to
@@ -215,14 +215,14 @@ In PowerShell, `decimal` maps to `System.Decimal`. The representation of decimal
     - bits 24‑30 are zero
     - bit 31 is the sign (0 for positive, 1 for negative)
 
-### The switch type
+### 4.2.5 The switch type
 
 This type is used to constrain the type of a parameter in a command (§8.10.5). If an argument having
 the corresponding parameter name is present the parameter tests $true; otherwise, it tests `$false`.
 
 In PowerShell, `switch` maps to `System.Management.Automation.SwitchParameter`.
 
-### Enumeration types
+### 4.2.6 Enumeration types
 
 An enumeration type is one that defines a set of named constants representing all the possible
 values that can be assigned to an object of that enumeration type. In some cases, the set of values
@@ -233,7 +233,7 @@ the same object.
 The PowerShell environment provides a number of enumeration types, as described in the following
 sections.
 
-#### Action-Preference type
+#### 4.2.6.1 Action-Preference type
 
 This implementation-defined type has the following mutually
 exclusive-valued accessible members:
@@ -247,7 +247,7 @@ exclusive-valued accessible members:
 
 In PowerShell, this type is `System.Management.Automation.ActionPreference`.
 
-#### Confirm-Impact type
+#### 4.2.6.2 Confirm-Impact type
 
 This implementation-defined type has the following mutually exclusive-valued accessible members:
 
@@ -260,7 +260,7 @@ This implementation-defined type has the following mutually exclusive-valued acc
 
 In PowerShell, this type is `System.Management.Automation.ConfirmImpact`.
 
-#### File-Attributes type
+#### 4.2.6.3 File-Attributes type
 
 This implementation-defined type has the following accessible members, which can be combined:
 
@@ -285,7 +285,7 @@ This implementation-defined type has the following accessible members, which can
 In PowerShell, this type is System.IO.FileAttributes with attribute
 FlagsAttribute.
 
-#### Regular-Expression-Option type
+#### 4.2.6.4 Regular-Expression-Option type
 
 This implementation-defined type has the following accessible members, which can be combined:
 
@@ -301,9 +301,9 @@ In PowerShell, this type is `System.Text.RegularExpressions.RegexOptions` with a
 `ECMAScript`, `ExplicitCapture`, `IgnorePatternWhitespace`, `Multiline`, `RightToLeft`,
 `Singleline`.
 
-## Reference types
+## 4.3 Reference types
 
-### Strings
+### 4.3.7 Strings
 
 A string value has type string and is an immutable sequence of zero or more characters of type char
 each containing a UTF-16-encoded 16-bit Unicode code point.
@@ -318,7 +318,7 @@ Type string has the following accessible members:
 
 In PowerShell, `string` maps to `System.String`.
 
-### Arrays
+### 4.3.8 Arrays
 
 All array types are derived from the type `Array`. This type has the following accessible members:
 
@@ -368,7 +368,7 @@ For more details on arrays, see §9.
 
 In PowerShell, `Array` maps to `System.Array`.
 
-### Hashtables
+### 4.3.9 Hashtables
 
 Type Hashtable has the following accessible members:
 
@@ -385,7 +385,7 @@ In PowerShell, `Hashtable` maps to `System.Collections.Hashtable`. `Hashtable` e
 in an object of type `DictionaryEntry`, and the collections returned by Keys and Values have type
 `ICollection`.
 
-### The xml type
+### 4.3.10 The xml type
 
 Type xml implements the W3C Document Object Model (DOM) Level 1 Core and the Core DOM Level 2. The
 DOM is an in-memory (cache) tree representation of an XML document and enables the navigation and
@@ -393,7 +393,7 @@ editing of this document. This type supports the subscript operator [] (§7.1.4.
 
 In PowerShell, `xml` maps to `System.Xml.XmlDocument`.
 
-### The regex type
+### 4.3.11 The regex type
 
 Type `regex` provides machinery for supporting regular expression processing. It is used to
 constrain the type of a parameter (§5.3) whose corresponding argument might contain a regular
@@ -401,7 +401,7 @@ expression.
 
 In PowerShell, `regex` maps to `System.Text.RegularExpressions.Regex`.
 
-### The ref type
+### 4.3.12 The ref type
 
 Ordinarily, arguments are passed to commands by value. In the case of an argument having some value
 type a copy of the value is passed. In the case of an argument having some reference type a copy of
@@ -439,7 +439,7 @@ As shown, both the argument and its corresponding parameter must be declared `re
 
 In PowerShell, `ref` maps to `System.Management.Automation.PSReference`.
 
-### The scriptblock type
+### 4.3.13 The scriptblock type
 
 Type `scriptblock` represents a precompiled block of script text (§7.1.8) that can be used as a
 single unit. It has the following accessible members:
@@ -504,7 +504,7 @@ single unit. It has the following accessible members:
 In PowerShell, `scriptblock` maps to `System.Management.Automation.ScriptBlock`. `Invoke` returns a
 collection of `PsObject`.
 
-### The math type
+### 4.3.14 The math type
 
 Type `math` provides access to some constants and methods useful in mathematical computations. It
 has the following accessible members:
@@ -659,15 +659,15 @@ has the following accessible members:
 
 In PowerShell, `Math` maps to `System.Math`.
 
-### The ordered type
+### 4.3.15 The ordered type
 
 Type `ordered` is a pseudo type used only for conversions.
 
-### The pscustomobject type
+### 4.3.16 The pscustomobject type
 
 Type `pscustomobject` is a pseudo type used only for conversions.
 
-## Generic types
+## 4.4 Generic types
 
 A number of programming languages and environments provide types that can be *specialized*. Many of
 these types are referred to as *container types*, as instances of them are able to contain objects
@@ -692,7 +692,7 @@ The complete name for the type `Stack[string]` suggested above is
 `System.Collections.Generic.Stack[string]`. The complete name for the type `Dictionary[int,string]`
 suggested above is `System.Collections.Generic.Dictionary[int,string]`.
 
-## Anonymous types
+## 4.5 Anonymous types
 
 In some circumstances, an implementation of PowerShell creates objects of some type, and those
 objects have members accessible to script. However, the actual name of those types need not be
@@ -700,7 +700,7 @@ specified, so long as the accessible members are specified sufficiently for them
 is, scripts can save objects of those types and access their members without actually knowing those
 types' names. The following subsections specify these types.
 
-### Provider description type
+### 4.5.1 Provider description type
 
 This type encapsulates the state of a provider. It has the following accessible members:
 
@@ -711,7 +711,7 @@ This type encapsulates the state of a provider. It has the following accessible 
 
 In PowerShell, this type is `System.Management.Automation.ProviderInfo`.
 
-### Drive description type
+### 4.5.2 Drive description type
 
 This type encapsulates the state of a drive. It has the following accessible members:
 
@@ -724,7 +724,7 @@ This type encapsulates the state of a drive. It has the following accessible mem
 
 In PowerShell, this type is `System.Management.Automation.PSDriveInfo`.
 
-### Variable description type
+### 4.5.3 Variable description type
 
 This type encapsulates the state of a variable. It has the following accessible members:
 
@@ -743,7 +743,7 @@ In PowerShell, this type is `System.Management.Automation.PSVariable`.
 Windows PowerShell: The type of the attribute collection is
 System.Management.Automation.PSVariableAttributeCollection.
 
-### Alias description type
+### 4.5.4 Alias description type
 
 This type encapsulates the state of an alias. It has the following accessible members:
 
@@ -764,7 +764,7 @@ This type encapsulates the state of an alias. It has the following accessible me
 
 In PowerShell, this type is `System.Management.Automation.AliasInfo`.
 
-### Working location description type
+### 4.5.5 Working location description type
 
 This type encapsulates the state of a working location. It has the following accessible members:
 
@@ -781,7 +781,7 @@ In PowerShell, a current working location is represented by an object of type
 `System.Management.Automation.PathInfo`. A stack of working locations is represented by an object of
 type `System.Management.Automation.PathInfoStack`, which is a collection of `PathInfo` objects.
 
-### Environment variable description type
+### 4.5.6 Environment variable description type
 
 This type encapsulates the state of an environment variable. It has the following accessible
 members:
@@ -795,7 +795,7 @@ In PowerShell, this type is `System.Collections.DictionaryEntry`. The name of th
 dictionary key. The value of the environment variable is the dictionary value. **Name** is an
 `AliasProperty` that equates to **Key**.
 
-### Application description type
+### 4.5.7 Application description type
 
 This type encapsulates the state of an application. It has the following accessible members:
 
@@ -814,7 +814,7 @@ This type encapsulates the state of an application. It has the following accessi
 
 In PowerShell, this type is `System.Management.Automation.ApplicationInfo`.
 
-### Cmdlet description type
+### 4.5.8 Cmdlet description type
 
 This type encapsulates the state of a cmdlet. It has the following accessible members:
 
@@ -837,7 +837,7 @@ This type encapsulates the state of a cmdlet. It has the following accessible me
 
 In PowerShell, this type is `System.Management.Automation.CmdletInfo`.
 
-### External script description type
+### 4.5.9 External script description type
 
 This type encapsulates the state of an external script (one that is directly executable by
 PowerShell, but is not built in). It has the following accessible members:
@@ -859,7 +859,7 @@ PowerShell, but is not built in). It has the following accessible members:
 
 In PowerShell, this type is `System.Management.Automation.ExternalScriptInfo`.
 
-### Function description type
+### 4.5.10 Function description type
 
 This type encapsulates the state of a function. It has the following accessible members:
 
@@ -892,7 +892,7 @@ In PowerShell, this type is `System.Management.Automation.FunctionInfo`.
 - Visibility has type `System.Management.Automation.SessionStateEntryVisibility`.
 - PowerShell also has a property called **Visibility**.
 
-### Filter description type
+### 4.5.11 Filter description type
 
 This type encapsulates the state of a filter. It has the same set of accessible members as the
 function description type (§4.5.10).
@@ -900,7 +900,7 @@ function description type (§4.5.10).
 In PowerShell, this type is `System.Management.Automation.FilterInfo`. It has the same set of
 properties as `System.Management.Automation.FunctionInfo` (§4.5.11).
 
-### Module description type
+### 4.5.12 Module description type
 
 This type encapsulates the state of a module. It has the following accessible members:
 
@@ -914,14 +914,14 @@ This type encapsulates the state of a module. It has the following accessible me
 In PowerShell, this type is `System.Management.Automation.PSModuleInfo`. The type of `ModuleType` is
 `System.Management.Automation.ModuleType`.
 
-### Custom object description type
+### 4.5.13 Custom object description type
 
 This type encapsulates the state of a custom object. It has no accessible members.
 
 In PowerShell, this type is `System.Management.Automation.PSCustomObject`. The cmdlets
 `Import-Module` and `New-Object` can generate an object of this type.
 
-### Command description type
+### 4.5.14 Command description type
 
 The automatic variable `$PsCmdlet` is an object that represents the cmdlet or function being
 executed. The type of this object is implementation defined; it has the following accessible
@@ -962,7 +962,7 @@ members:
 
 In PowerShell, this type is System.Management.Automation.PSScriptCmdlet.
 
-### Error record description type
+### 4.5.15 Error record description type
 
 The automatic variable `$Error` contains a collection of error records that represent recent errors
 (§3.12). Although the type of this collection is unspecified, it does support subscripting to get
@@ -980,7 +980,7 @@ following public properties:
 - PipelineIterationInfo - Gets the status of the pipeline when this error record was created
 - TargetObject - Gets the object that was being processed when the error occurred.
 
-### Enumerator description type
+### 4.5.16 Enumerator description type
 
 A number of variables are enumerators for collections (§4). The automatic variable `$foreach` is the
 enumerator created for any `foreach` statement. The automatic variable `$input` is the enumerator
@@ -1002,7 +1002,7 @@ collection, an exception of type `InvalidOperationException` is raised. For `$fo
 `System.Collections.ArrayList+ArrayListEnumeratorSimple`. For `$switch`, this type is
 `System.Array+SZArrayEnumerator`.
 
-### Directory description type
+### 4.5.17 Directory description type
 
 The cmdlet `New-Item` (§13.34) can create items of various kinds including FileSystem directories.
 The type of a directory description object is implementation defined; it has the following
@@ -1020,7 +1020,7 @@ accessible members:
 In PowerShell, this type is `System.IO.DirectoryInfo`. The type of the **Attributes** property is
 `System.IO.FileAttributes`.
 
-### File description type
+### 4.5.18 File description type
 
 The cmdlet `New-Item` (§13.34) can create items of various kinds including FileSystem files. The
 type of a file description object is implementation defined; it has the following accessible
@@ -1040,7 +1040,7 @@ members:
 
 In PowerShell, this type is `System.IO.FileInfo`.
 
-### Date-Time description type
+### 4.5.19 Date-Time description type
 
 The type of a date-time description object is implementation defined; it has the following
 accessible members:
@@ -1058,7 +1058,7 @@ An object of this type can be created by cmdlet `Get-Date` (§13.18).
 
 In PowerShell, this type is `System.DateTime`.
 
-### Group-Info description type
+### 4.5.20 Group-Info description type
 
 The type of a **group-info** description object is implementation defined; it has the following
 accessible members:
@@ -1074,7 +1074,7 @@ An object of this type can be created by cmdlet `Group-Object` (§13.27).
 
 In PowerShell, this type is `Microsoft.PowerShell.Commands.GroupInfo`.
 
-### Generic-Measure-Info description type
+### 4.5.21 Generic-Measure-Info description type
 
 The type of a **generic-measure-info** description object is implementation defined; it has the
 following accessible members:
@@ -1092,7 +1092,7 @@ An object of this type can be created by cmdlet `Measure-Object` (§13.31).
 
 In PowerShell, this type is `Microsoft.PowerShell.Commands.GenericMeasureInfo`.
 
-### Text-Measure-Info description type
+### 4.5.22 Text-Measure-Info description type
 
 The type of a **text-info** description object is implementation defined; it has the following
 accessible members:
@@ -1108,7 +1108,7 @@ An object of this type can be created by cmdlet `Measure-Object` (§13.31).
 
 In PowerShell, this type is `Microsoft.PowerShell.Commands.TextMeasureInfo`.
 
-### Credential type
+### 4.5.23 Credential type
 
 A credential object can then be used in various security operations. The type of a credential object
 is implementation defined; it has the following accessible members:
@@ -1122,7 +1122,7 @@ An object of this type can be created by cmdlet `Get-Credential` (§13.17).
 
 In PowerShell, this type is `System.Management.Automation.PSCredential`.
 
-### Method designator type
+### 4.5.24 Method designator type
 
 The type of a method designator is implementation defined; it has the
 following accessible members:
@@ -1135,7 +1135,7 @@ An object of this type can be created by an *invocation-expression* (§7.1.3).
 
 In PowerShell, this type is System.Management.Automation.PSMethod.
 
-### Member definition type
+### 4.5.25 Member definition type
 
 This type encapsulates the definition of a member. It has the following accessible members:
 
@@ -1148,7 +1148,7 @@ This type encapsulates the definition of a member. It has the following accessib
 
 In PowerShell, this type is `Microsoft.PowerShell.Commands.MemberDefinition`.
 
-## Type extension and adaptation
+## 4.6 Type extension and adaptation
 
 A PowerShell implementation includes a family of core types (which are documented in this chapter)
 that each contain their own set of *base members*. Those members can be methods or properties, and
