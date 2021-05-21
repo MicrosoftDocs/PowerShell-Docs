@@ -14,7 +14,7 @@ external tools to control how the command itself is processed or maintained.
 
 Multiple attributes can be applied to the same target element.
 
-## Attribute specification
+## 12.1 Attribute specification
 
 > [!TIP]
 > The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in
@@ -51,7 +51,7 @@ expression is omitted, the value `$true` is assumed.
 The *attribute-name* is a reserved attribute type (§12.3) or some implementation-defined attribute
 type.
 
-## Attribute instances
+## 12.2 Attribute instances
 
 An attribute instance is an object of an attribute type. The instance represents an attribute at
 run-time.
@@ -65,12 +65,12 @@ parameters (§8.14), just like functions and cmdlets. For example,
 shows an instance of type *A* being created using a positional parameter whose argument value is 10,
 and a named parameter, **IgnoreCase**, whose argument value is `$true`.
 
-## Reserved attributes
+## 12.3 Reserved attributes
 
 The attributes described in the following sections can be used to augment or modify the behavior of
 PowerShell functions, filters, scripts, and cmdlets.
 
-### The Alias attribute
+### 12.3.1 The Alias attribute
 
 This attribute is used in a *script-parameter* to specify an alternate name for a parameter. A
 parameter may have multiple aliases, and each alias name must be unique within a *parameter-list*.
@@ -113,7 +113,7 @@ Get-ChildItem "E:\*.txt" | Test2
 Cmdlet `Get-ChildItem` (alias `Dir`) adds to the object it returns a new **NoteProperty** of type
 `string`, called **PSPath**.
 
-### The AllowEmptyCollection attribute
+### 12.3.2 The AllowEmptyCollection attribute
 
 This attribute is used in a *script-parameter* to allow an empty collection as the argument of a
 mandatory parameter.
@@ -132,7 +132,7 @@ Test "Red" # $computerName has Length 1
 Test -comp @() # $computerName has Length 0
 ```
 
-### The AllowEmptyString attribute
+### 12.3.3 The AllowEmptyString attribute
 
 This attribute is used in a *script-parameter* to allow an empty string as the argument of a
 mandatory parameter.
@@ -151,7 +151,7 @@ Test "" # empty string is permitted
 Test -comp "" # empty string is permitted
 ```
 
-### The AllowNull attribute
+### 12.3.4 The AllowNull attribute
 
 This attribute is used in a *script-parameter* to allow $null as the argument of a mandatory
 parameter for which no implicit conversion is available.
@@ -173,7 +173,7 @@ Test -val $null     # $values has value $null
 Note that the second case above does not need this attribute; there is already an implicit
 conversion from `$null` to int.
 
-### The CmdletBinding attribute
+### 12.3.5 The CmdletBinding attribute
 
 This attribute is used in the *attribute-list* of *param-block* of a function to indicate that
 function acts similar to a cmdlet. Specifically, it allows functions to access a number of methods
@@ -234,7 +234,7 @@ Get-process { ... }
 end { ... }
 ```
 
-### The OutputType attribute
+### 12.3.6 The OutputType attribute
 
 This attribute is used in the *attribute-list* of *param-block* to specify the types returned. The
 following arguments are used to define the characteristics of the parameter:
@@ -269,7 +269,7 @@ Here are several examples of this attribute's use:
 ```
 
 
-### The Parameter attribute
+### 12.3.7 The Parameter attribute
 
 This attribute is used in a *script-parameter*. The following named arguments are used to define the
 characteristics of the parameter:
@@ -405,7 +405,7 @@ The following attributes are provided as well:
   localized.
 - **HelpMessageResourceId**: Specifies the resource identifier for a Help message.
 
-### The PSDefaultValue attribute
+### 12.3.8 The PSDefaultValue attribute
 
 This attribute is used in a *script-parameter* to provide additional information about the
 parameter. The attribute is used in an implementation defined manner. The following arguments are
@@ -434,7 +434,7 @@ used to define the characteristics of the parameter:
 </tbody>
 </table>
 
-### The SupportsWildcards attribute
+### 12.3.9 The SupportsWildcards attribute
 
 This attribute is used in a *script-parameter* to provide additional information about the
 parameter. The attribute is used in an implementation defined manner.
@@ -442,7 +442,7 @@ parameter. The attribute is used in an implementation defined manner.
 This attribute is used as part of the description of the parameter for the help topic displayed by
 the `Get-Help` (§13.19) cmdlet.
 
-### The ValidateCount attribute
+### 12.3.10 The ValidateCount attribute
 
 This attribute is used in a *script-parameter* to specify the minimum and maximum number of argument
 values that the parameter can accept. The following arguments are used to define the characteristics
@@ -489,7 +489,7 @@ $Array = 10                     # too few argument values
 $Array = 1..100                 # too many argument values
 ```
 
-### The ValidateLength attribute
+### 12.3.11 The ValidateLength attribute
 
 This attribute is used in a *script-parameter* or *variable* to specify the minimum and maximum
 length of the parameter's argument, which must have type string. The following arguments are used to
@@ -530,7 +530,7 @@ Test "Io","Mars"       # "Io" is too short
 Test "Thor","Jupiter"  # "Jupiter" is too long
 ```
 
-### The ValidateNotNull attribute
+### 12.3.12 The ValidateNotNull attribute
 
 This attribute is used in a *script-parameter* or *variable* to specify that the argument of the
 parameter cannot be `$null` or be a collection containing a null-valued element.
@@ -551,7 +551,7 @@ Test $null              # null array not allowed
 $Name = $null           # null value not allowed
 ```
 
-### The ValidateNotNullOrEmpty attribute
+### 12.3.13 The ValidateNotNullOrEmpty attribute
 
 This attribute is used in a *script-parameter* or *variable* to specify that the argument if the
 parameter cannot be $null, an empty string, or an empty array, or be a collection containing a
@@ -576,7 +576,7 @@ $Name = ""             # empty string not allowed
 $Name = $null          # null value not allowed
 ```
 
-### The ValidatePattern attribute
+### 12.3.14 The ValidatePattern attribute
 
 This attribute is used in a *script-parameter* or *variable* to specify a regular expression for
 matching the pattern of the parameter's argument. The following arguments are used to define the
@@ -634,7 +634,7 @@ Test -m -12 # matches pattern, but is too long
 $ident = "123" # does not match pattern
 ```
 
-### The ValidateRange attribute
+### 12.3.15 The ValidateRange attribute
 
 This attribute is used in a *script-parameter* or *variable* to specify the minimum and maximum
 values of the parameter's argument. The following arguments are used to define the characteristics
@@ -709,7 +709,7 @@ Test3 "0.005"   # value is too large
 $teenager = 20  # value is too large
 ```
 
-### The ValidateScript attribute
+### 12.3.16 The ValidateScript attribute
 
 This attribute is used in a *script-parameter* or *variable* to specify a script that is to be used
 to validate the parameter's argument.
@@ -734,7 +734,7 @@ Test 0 # invalid value
 $password = "abc123" # invalid value
 ```
 
-### The ValidateSet attribute
+### 12.3.17 The ValidateSet attribute
 
 This attribute is used in a *script-parameter* or *variable* to specify a set of valid values for
 the argument of the parameter. The following arguments are used to define the characteristics of the

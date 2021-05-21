@@ -11,7 +11,7 @@ This appendix contains summaries of the lexical and syntactic grammars found in 
 > The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in
 > the syntax.
 
-## Lexical grammar
+## B.1 Lexical grammar
 
 ```Syntax
 input:
@@ -39,7 +39,7 @@ signature-end:
     new-line-character # SIG # End signature block new-line-character
 ```
 
-### Line terminators
+### B.1.1 Line terminators
 
 ```Syntax
 new-line-character:
@@ -52,7 +52,7 @@ new-lines:
     new-lines new-line-character
 ```
 
-### Comments
+### B.1.2 Comments
 
 ```Syntax
 comment:
@@ -101,7 +101,7 @@ not-greater-than-or-hash:
     Any Unicode character except > or #
 ```
 
-### White space
+### B.1.3 White space
 
 ```Syntax
 whitespace:
@@ -112,7 +112,7 @@ whitespace:
     ` (The backtick character U+0060) followed by new-line-character
 ```
 
-### Tokens
+### B.1.4 Tokens
 
 ```Syntax
 token:
@@ -128,7 +128,7 @@ token:
     operator-or-punctuator
 ```
 
-### Keywords
+### B.1.5 Keywords
 
 ```Syntax
 keyword: one of
@@ -143,7 +143,7 @@ keyword: one of
     var            while          workflow
 ```
 
-### Variables
+### B.1.6 Variables
 
 ```Syntax
 variable:
@@ -193,7 +193,7 @@ escaped-character:
     `   (The backtick character U+0060) followed by any Unicode character
 ```
 
-### Commands
+### B.1.7 Commands
 
 ```Syntax
 generic-token:
@@ -223,7 +223,7 @@ generic-token-with-subexpr-start:
     generic-token-parts $(
 ```
 
-### Parameters
+### B.1.8 Parameters
 
 ```Syntax
 command-parameter:
@@ -275,7 +275,7 @@ non-double-quote-char:
         double-quote-character
 ```
 
-### Literals
+### B.1.9 Literals
 
 ```Syntax
 literal:
@@ -284,7 +284,7 @@ literal:
     string-literal
 ```
 
-#### Integer Literals
+#### B.1.9.1 Integer Literals
 
 ```Syntax
 integer-literal:
@@ -323,7 +323,7 @@ numeric-multiplier: one of
     kb mb gb tb pb
 ```
 
-#### Real Literals
+#### B.1.9.2 Real Literals
 
 ```Syntax
 real-literal:
@@ -343,7 +343,7 @@ decimal-type-suffix:
     l
 ```
 
-#### String Literals
+#### B.1.9.3 String Literals
 
 ```Syntax
 string-literal:
@@ -451,7 +451,7 @@ verbatim-here-string-part:
     new-line-character  single-quote-character  Any Unicode character except @
 ```
 
-### Simple Names
+### B.1.10 Simple Names
 
 ```Syntax
 simple-name:
@@ -470,7 +470,7 @@ simple-name-char:
     _ (The underscore character U+005F)
 ```
 
-### Type Names
+### B.1.11 Type Names
 
 ```Syntax
 type-name:
@@ -495,7 +495,7 @@ generic-type-name:
     type-name [
 ```
 
-### Operators and punctuators
+### B.1.12 Operators and punctuators
 
 ```Syntax
 operator-or-punctuator: one of
@@ -545,9 +545,9 @@ format-operator:
     dash f
 ```
 
-## Syntactic grammar
+## B.2 Syntactic grammar
 
-### Basic concepts
+### B.2.1 Basic concepts
 
 ```Syntax
 script-file:
@@ -563,7 +563,7 @@ data-file:
     statement-list
 ```
 
-### Statements
+### B.2.2 Statements
 
 ```Syntax
 script-block:
@@ -855,7 +855,7 @@ redirected-file-name:
     primary-expression
 ```
 
-### Expressions
+### B.2.3 Expressions
 
 ```Syntax
 expression:
@@ -1090,7 +1090,7 @@ generic-type-arguments:
     generic-type-arguments , new-lines~opt~ type-spec
 ```
 
-### Attributes
+### B.2.4 Attributes
 
 ```Syntax
 attribute-list:

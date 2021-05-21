@@ -10,7 +10,7 @@ PowerShell provides a mechanism for programmers to document their scripts using 
 directives. Comments using such syntax are called *help comments*. The cmdlet `Get-Help` (§13.19)
 generates documentation from these directives.
 
-## Introduction
+## A.1 Introduction
 
 A help comment contains a *help directive* of the form .*name* followed on one or more subsequent
 lines by the help content text. The help comment can be made up of a series of
@@ -63,9 +63,9 @@ When documenting a script file, help topics may appear in one of two locations:
   be interpreted as applying to the function instead of the script file.
 - At the end of the script file.
 
-## Help directives
+## A.2 Help directives
 
-### .DESCRIPTION
+### A.2.1 .DESCRIPTION
 
 Syntax:
 
@@ -89,7 +89,7 @@ powers only.
 #>
 ```
 
-### .EXAMPLE
+### A.2.2 .EXAMPLE
 
 Syntax:
 
@@ -118,7 +118,7 @@ Get-Power -Base 3 -Exponent 4
 #>
 ```
 
-### .EXTERNALHELP
+### A.2.3 .EXTERNALHELP
 
 Syntax:
 
@@ -142,7 +142,7 @@ Examples:
 #>
 ```
 
-### .FORWARDHELPCATEGORY
+### A.2.4 .FORWARDHELPCATEGORY
 
 Syntax:
 
@@ -161,7 +161,7 @@ Examples:
 
 See §A.2.5.
 
-### .FORWARDHELPTARGETNAME
+### A.2.5 .FORWARDHELPTARGETNAME
 
 Syntax:
 
@@ -187,7 +187,7 @@ function Help {
 
 The command `Get-Help help` is treated as if it were `Get-Help Get-Help` instead.
 
-### .INPUTS
+### A.2.6 .INPUTS
 
 Syntax:
 
@@ -225,7 +225,7 @@ function Process-Thing {
 }
 ```
 
-### .LINK
+### A.2.7 .LINK
 
 Syntax:
 
@@ -257,7 +257,7 @@ Set-ProcedureName
 ```
 
 
-### .NOTES
+### A.2.8 .NOTES
 
 Syntax:
 
@@ -279,7 +279,7 @@ Examples:
 #>
 ```
 
-### .OUTPUTS
+### A.2.9 .OUTPUTS
 
 Syntax:
 
@@ -306,7 +306,7 @@ None unless the -PassThru switch parameter is used.
 #>
 ```
 
-### .PARAMETER
+### A.2.10 .PARAMETER
 
 Syntax:
 
@@ -354,7 +354,7 @@ function Get-Power {
 }
 ```
 
-### .SYNOPSIS
+### A.2.11 .SYNOPSIS
 
 Syntax:
 

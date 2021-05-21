@@ -5,7 +5,7 @@ title: Basic concepts
 ---
 # 3. Basic concepts
 
-## Providers and drives
+## 3.1 Providers and drives
 
 A *provider* allows access to data and components that would not otherwise be easily accessible at
 the command line. The data is presented in a consistent format that resembles a file system drive.
@@ -40,7 +40,7 @@ The following cmdlets deal with providers and drives:
 The type of an object that represents a provider is described in §4.5.1. The type of an object that
 represents a drive is described in §4.5.2.
 
-### Aliases
+### 3.1.1 Aliases
 
 An *alias* is an alternate name for a command. A command can have multiple aliases, and the original
 name and all of its aliases can be used interchangeably. An alias can be reassigned. An alias is an
@@ -74,7 +74,7 @@ The type of an object that represents an alias is described in §4.5.4.
 
 Alias objects are stored on the drive Alias: (§3.1).
 
-### Environment variables
+### 3.1.2 Environment variables
 
 The PowerShell environment provider allows operating system environment variables to be retrieved,
 added, changed, cleared, and deleted.
@@ -92,7 +92,7 @@ The type of an object that represents an environment variable is described in §
 
 Environment variable objects are stored on the drive Env: (§3.1).
 
-### File system
+### 3.1.3 File system
 
 The PowerShell file system provider allows directories and files to be created, opened, changed, and
 deleted.
@@ -105,7 +105,7 @@ accessed using path notation (§3.4).
 
 A directory or file is an item (§3.3).
 
-### Functions
+### 3.1.4 Functions
 
 The PowerShell function provider allows functions (§8.10) and filters (§8.10.1) to be retrieved,
 added, changed, cleared, and deleted.
@@ -122,7 +122,7 @@ represents a filter is described in §4.5.11.
 
 Function objects are stored on drive Function: (§3.1).
 
-### Variables
+### 3.1.5 Variables
 
 Variables can be defined and manipulated directly in the PowerShell language.
 
@@ -143,7 +143,7 @@ The type of an object that represents a variable is described in §4.5.3.
 
 Variable objects are stored on drive Variable: (§3.1).
 
-## Working locations
+## 3.2 Working locations
 
 The *current working location* is the default location to which commands point. This is the location
 used if an explicit path (§3.4) is not supplied when a command is invoked. This location includes
@@ -173,7 +173,7 @@ The following cmdlets deal with locations:
 The object types that represents a working location and a stack of working locations are described
 in §4.5.5.
 
-## Items
+## 3.3 Items
 
 An *item* is an alias (§3.1.1), a variable (§3.1.5), a function (§3.1.4), an environment variable
 (§3.1.2), or a file or directory in a file system (§3.1.3).
@@ -201,7 +201,7 @@ The following cmdlets deal with the content of items:
 The type of an object that represents a directory is described in §4.5.17. The type of an object
 that represents a file is described in §4.5.18.
 
-## Path names
+## 3.4 Path names
 
 All items in a data store accessible through a PowerShell provider can be identified uniquely by
 their path names. A *path name* is a combination of the item name, the container and subcontainers
@@ -282,9 +282,9 @@ filter* is a mechanism for specifying the criteria for selecting from a set of p
 The object type that represents a resolved path is described in §4.5.5. Paths are often manipulated
 as strings.
 
-## Scopes
+## 3.5 Scopes
 
-### Introduction
+### 3.5.1 Introduction
 
 A name can denote a variable, a function, an alias, an environment variable, or a drive. The same
 name may denote different items at different places in a script. For each different item that a name
@@ -374,7 +374,7 @@ function F3 {       # start of function scope
 # end of script scope
 ```
 
-### Scope names and numbers
+### 3.5.2 Scope names and numbers
 
 PowerShell supports the following scopes:
 
@@ -399,7 +399,7 @@ another. Scope 0 denotes the local scope, scope 1 denotes a 1-generation ancesto
 denotes a 2-generation ancestor scope, and so on. (Scope numbers are used by cmdlets that manipulate
 variables.)
 
-### Variable name scope
+### 3.5.3 Variable name scope
 
 As shown by the following production, a variable name can be specified with any one of six different
 scopes:
@@ -449,12 +449,12 @@ foo # returns "Hello"
 The scope workflow is used with a *parallel-statement* or *sequence-statement* to access a variable
 defined in the workflow.
 
-### Function name scope
+### 3.5.4 Function name scope
 
 A function name may also have one of the four different scopes, and the visibility of that name is
 the same as for variables (§3.5.3).
 
-### Dot source notation
+### 3.5.5 Dot source notation
 
 When a script file, script block, or function is executed from within another script file, script
 block, or function, the executed script file creates a new nested scope. For example,
@@ -477,14 +477,14 @@ instead. For example,
 . FunctionA
 ```
 
-### Modules
+### 3.5.6 Modules
 
 Just like a top-level script file is at the root of a hierarchical nested scope tree, so too is each
 module (§3.14). However, by default, only those names exported by a module are available by name
 from within the importing context. The Global parameter of the cmdlet `Import-Module` (§13.28) allows
 exported names to have increased visibility.
 
-## ReadOnly and Constant Properties
+## 3.6 ReadOnly and Constant Properties
 
 Variables and aliases are described by objects that contain a number of properties. These properties
 are set and manipulated by two families of cmdlets (§3.1.5, §3.1.1). One such property is Options,
@@ -492,9 +492,9 @@ which can be set to ReadOnly or Constant (using the Option parameter). A variabl
 ReadOnly can be removed, and its properties can changed provided the Force parameter is specified.
 However, a variable or alias marked Constant cannot be removed nor have its properties changed.
 
-## Method overloads and call resolution
+## 3.7 Method overloads and call resolution
 
-### Introduction
+### 3.7.1 Introduction
 
 As stated in §1, an external procedure made available by the execution environment (and written in
 some language other than PowerShell) is called a *method*.
@@ -552,7 +552,7 @@ exactly, PowerShell does not itself provide a way to define overloaded methods.
 > Editor's Note: PowerShell 5.0 added the ability to define script-based classes. These classes can
 > contain overloaded methods.
 
-### Method overload resolution
+### 3.7.2 Method overload resolution
 
 Given a method call (§7.1.3) having a list of argument expressions, and a set of *candidate method*s
 (i.e., those methods that could be called), the mechanism for selecting the *best method* is called
@@ -570,7 +570,7 @@ script cannot call a method that is private or protected.
 The best method for a call to a static method must be a static method, and the best method for a
 call to an instance method must be an instance method.
 
-### Applicable method
+### 3.7.3 Applicable method
 
 A method is said to be *applicable* with respect to an argument list A when one of the following is
 true:
@@ -611,7 +611,7 @@ each unmatched argument in A. Each additional parameter type is the element type
 for the last parameter in the original method. The above rules for an applicable method are applied
 to this new method and argument list A.
 
-### Better method
+### 3.7.4 Better method
 
 Given an argument list A with a set of argument expressions `{ E~1~, E~2~, ..., E~N~ }` and two
 application methods `M~P~` and `M~Q~` with parameter types `{ P~1~, P~2~, ..., P~N~ }` and
@@ -640,7 +640,7 @@ have the same value, then the following tie breaking rules are used, applied in 
 - If one method uses the expanded form and the other uses normal form, the method using normal form
   is the better method.
 
-### Better conversion
+### 3.7.5 Better conversion
 
 The text below marked like this is specific to Windows PowerShell.
 
@@ -718,12 +718,12 @@ conversion applies, if there is a conversion from `T~1~` to `T~2~`, the rank of 
 worse than the conversion from `T~1~` to `T~2~`, but better than any conversion ranked less than the
 conversion from `T~1~` to `T~2~`
 
-## Name lookup
+## 3.8 Name lookup
 
 It is possible to have commands of different kinds all having the same name. The order in which name
 lookup is performed in such a case is alias, function, cmdlet, and external command.
 
-## Type name lookup
+## 3.9 Type name lookup
 
 §7.1.10 contains the statement, "A *type-literal* is represented in an implementation by some
 unspecified *underlying type*. As a result, a type name is a synonym for its underlying type."
@@ -737,13 +737,13 @@ the type. Otherwise, the type name is in error. This algorithm is applied for ea
 generic types. However, there is no need to specify the arity (the number of arguments or operands
 taken by a function or operator).
 
-## Automatic memory management
+## 3.10 Automatic memory management
 
 Various operators and cmdlets result in the allocation of memory for reference-type objects, such as
 strings and arrays. The allocation and freeing of this memory is managed by the PowerShell runtime
 system. That is, PowerShell provides automatic *garbage collection*.
 
-## Execution order
+## 3.11 Execution order
 
 A *side effect* is a change in the state of a command's execution environment. A change to the
 value of a variable (via the assignment operators or the pre- and post-increment and decrement
@@ -758,7 +758,7 @@ An expression that invokes a command involves the expression that designates the
 or more expressions that designate the arguments whose values are to be passed to that command. The
 order in which these expressions are evaluated relative to each other is unspecified.
 
-## Error handling
+## 3.12 Error handling
 
 When a command fails, this is considered an *error*, and information about that error is recorded in
 an *error record*, whose type is unspecified (§4.5.15); however, this type supports subscripting.
@@ -782,7 +782,7 @@ the number of records that can be stored.
 the errors from a specific command, use the common parameter ErrorVariable (§13.56), which allows a
 user-defined variable to be specified to hold the collection.
 
-## Pipelines
+## 3.13 Pipelines
 
 A *pipeline* is a series of one or more commands each separated by the pipe operator `|` (U+007C).
 Each command receives input from its predecessor and writes output to its successor. Unless the
@@ -817,7 +817,7 @@ become available, not when the entire collection has been produced.
 When processing a collection, a command can be written such that it can do special processing before
 the initial element and after the final element.
 
-## Modules
+## 3.14 Modules
 
 A *module* is a self-contained reusable unit that allows PowerShell code to be partitioned,
 organized, and abstracted. A module can contain commands (such as cmdlets and functions) and items
@@ -832,7 +832,7 @@ The type of an object that represents a module is described in §4.5.12.
 
 Modules are discussed in detail in §11.
 
-## Wildcard expressions
+## 3.15 Wildcard expressions
 
 A wildcard expression may contain zero or more of the following elements:
 
@@ -870,7 +870,7 @@ A wildcard expression may contain zero or more of the following elements:
 > [The Open Group Base Specifications: Pattern Matching", IEEE Std 1003.1, 2004 Edition.](http://www.opengroup.org/onlinepubs/000095399/utilities/xcu_chap02.html#tag_02_13_01).
 > However, in PowerShell, the escape character is backtick, not backslash.
 
-## Regular expressions
+## 3.16 Regular expressions
 
 A regular expression may contain zero or more of the following elements:
 

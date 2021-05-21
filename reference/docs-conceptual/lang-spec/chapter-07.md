@@ -57,7 +57,7 @@ the third case, the expression is a direct call to a cmdlet, so the result is no
 If an operation is not defined by PowerShell, the type of the value designated by the left operand
 is inspected to see if it has a corresponding `op_<operation>` method.
 
-## Primary expressions
+## 7.1 Primary expressions
 
 Syntax:
 
@@ -81,7 +81,7 @@ value:
     variable
 ```
 
-### Grouping parentheses
+### 7.1.1 Grouping parentheses
 
 Syntax:
 
@@ -198,7 +198,7 @@ Consider the following example that has two side effects, neither of which is at
 
 The result is written to the pipeline, as the top-level expression has no side effects.
 
-### Member access
+### 7.1.2 Member access
 
 Syntax:
 
@@ -262,7 +262,7 @@ $a = @{ID = 1 }, @{ID = 2 }, @{ID = 3 }
 $a.ID                        # get ID from each element in the array
 ```
 
-### Invocation expressions
+### 7.1.3 Invocation expressions
 
 Syntax:
 
@@ -310,7 +310,7 @@ $a = [char]::ToLower         # get method descriptor for ToLower
 $a.Invoke("X")               # call ToLower via the descriptor
 ```
 
-### Element access
+### 7.1.4 Element access
 
 Syntax:
 
@@ -323,7 +323,7 @@ Description:
 
 There must not be any white space between *primary-expression* and the left square bracket (`[`).
 
-#### Subscripting an array
+#### 7.1.4.1 Subscripting an array
 
 Description:
 
@@ -381,7 +381,7 @@ $a[1][4] # returns string "n" from string in $a[1]
 
 If a write access to a non-existing element is attempted, an **IndexOutOfRange** exception is raised.
 
-#### Subscripting a string
+#### 7.1.4.2 Subscripting a string
 
 Description:
 
@@ -399,7 +399,7 @@ $c = $s[20]    # no such position, returns $null
 $c = $s[-1]    # returns "o", i.e., $s[$s.Length-1]
 ```
 
-#### Subscripting a Hashtable
+#### 7.1.4.3 Subscripting a Hashtable
 
 Description:
 
@@ -428,7 +428,7 @@ $h1[$true]           # returns value 123 using key $true
 When *expression* is a single key name, if `$null` is used as the only value to subscript a
 Hashtable, a **NullArrayIndex** exception is raised.
 
-#### Subscripting an XML document
+#### 7.1.4.4 Subscripting an XML document
 
 Description:
 
@@ -456,7 +456,7 @@ $x['FirstName']           # No such child element at the top level, result is `$
 
 The type of the result is `System.Xml.XmlElement` or `System.String`.
 
-#### Generating array slices
+#### 7.1.4.5 Generating array slices
 
 When *primary-expression* designates an object of a type that is enumerable (§4) or a Hashtable, and
 *expression* is a 1-dimensional array, the result is an array slice (§9.9) containing the elements
@@ -490,7 +490,7 @@ $h1[$null,'IDNum']        # returns [object[]], Length 1 (123)
 Windows PowerShell: When *expression* is a collection of two or more key names, if `$null` is used
 as any key name that key is ignored and has no corresponding element in the resulting array.
 
-### Postfix increment and decrement operators
+### 7.1.5 Postfix increment and decrement operators
 
 Syntax:
 
@@ -551,7 +551,7 @@ $x = $null            # target is unconstrained, $null goes to [int]0
 $x++                  # value treated as int, 0->1
 ```
 
-### $(...) operator
+### 7.1.6 $(...) operator
 
 Syntax:
 
@@ -584,7 +584,7 @@ $(2,4,6) # pipeline gets [object[]](2,4,6)
 ```
 
 
-### @(...) operator
+### 7.1.7 @(...) operator
 
 Syntax:
 
@@ -617,7 +617,7 @@ $a = @(2,4,6)          # result is array of 3
 @(@($a))               # result is the same array of 3
 ```
 
-### Script block expression
+### 7.1.8 Script block expression
 
 Syntax:
 
@@ -652,7 +652,7 @@ If *param-block* is omitted, any arguments passed to the script block are availa
 During parameter binding, a script block can be passed either as a script block object or as the
 result after the script block has been evaluated. See §6.17 for further information.
 
-### Hash literal expression
+### 7.1.9 Hash literal expression
 
 Syntax:
 
@@ -704,7 +704,7 @@ $h4 = @{ 10 = "James"; 20.5 = "Anderson"; $true = 123 }
 which creates two Hashtables, `$h1` and `$h2`, each containing three key/value pairs, and a third,
 `$h3`, that is empty. Hashtable `$h4` has keys of various types.
 
-### Type literal expression
+### 7.1.10 Type literal expression
 
 Syntax:
 
@@ -755,7 +755,7 @@ The type of a *type-literal* is `System.Type`. The complete name for the type `S
 suggested above is `System.Collections.Generic.Stack[int]`. The complete name for the type
 `Dictionary[int,string]` suggested above is `System.Collections.Generic.Dictionary[int,string]`.
 
-## Unary operators
+## 7.2 Unary operators
 
 Syntax:
 
@@ -796,7 +796,7 @@ dashdash:
     dash dash
 ```
 
-### Unary comma operator
+### 7.2.1 Unary comma operator
 
 Description:
 
@@ -821,7 +821,7 @@ $a = ,,10        # create an unconstrained array of 1 element, which is
                  # $a[0][0] is the int. Contrast this with @(@(10))
 ```
 
-### Logical NOT
+### 7.2.2 Logical NOT
 
 Description:
 
@@ -841,7 +841,7 @@ Examples:
 !"xyz"             # False
 ```
 
-### Bitwise NOT
+### 7.2.3 Bitwise NOT
 
 Description:
 
@@ -862,7 +862,7 @@ Examples:
 -bnot "0xabc"       # int with value 0xFFFFF543
 ```
 
-### Unary plus
+### 7.2.4 Unary plus
 
 Description:
 
@@ -880,7 +880,7 @@ Examples:
 ```
 
 
-### Unary minus
+### 7.2.5 Unary minus
 
 Description:
 
@@ -895,7 +895,7 @@ Examples:
 -123L # type long, value -123
 -0.12340D # type decimal, value -0.12340
 
-### Prefix increment and decrement operators
+### 7.2.6 Prefix increment and decrement operators
 
 Description:
 
@@ -943,7 +943,7 @@ $x = $null            # target is unconstrained, $null goes to [int]0
 $--x                  # value treated as int, 0->-1
 ```
 
-### The unary -join operator
+### 7.2.7 The unary -join operator
 
 Description:
 
@@ -962,7 +962,7 @@ Examples:
 -join $null                    # result is ""
 ```
 
-### The unary -split operator
+### 7.2.8 The unary -split operator
 
 Description:
 
@@ -986,7 +986,7 @@ Examples:
 -split " " # 1 (empty) string
 ```
 
-### Cast operator
+### 7.2.9 Cast operator
 
 Description:
 
@@ -1010,7 +1010,7 @@ Examples:
 [char[]]"Hello"  # an array of 5 char with values H, e, l, l, and o.
 ```
 
-## Binary comma operator
+## 7.3 Binary comma operator
 
 Syntax:
 
@@ -1037,7 +1037,7 @@ Examples:
 The addition of grouping parentheses to certain binary comma expressions does not document the
 default precedence; instead, it changes the result.
 
-## Range operator
+## 7.4 Range operator
 
 Syntax:
 
@@ -1080,7 +1080,7 @@ $true..3     # ascending range 1..3
 "0xf".."0xa" # descending range 15..10
 ```
 
-## Format operator
+## 7.5 Format operator
 
 Syntax:
 
@@ -1142,7 +1142,7 @@ $format -f 123455                       # >0001e23f<
 
 In a format specification if *N* refers to a non-existent position, a **FormatError** is raised.
 
-## Multiplicative operators
+## 7.6 Multiplicative operators
 
 Syntax:
 
@@ -1154,7 +1154,7 @@ multiplicative-expression:
     multiplicative-expression % new-lines~opt~ format-expression
 ```
 
-### Multiplication
+### 7.6.1 Multiplication
 
 Description:
 
@@ -1172,7 +1172,7 @@ Examples:
 12 * "0xabc"   # int result 32976
 ```
 
-### String replication
+### 7.6.2 String replication
 
 Description:
 
@@ -1192,7 +1192,7 @@ Examples:
 "red" * 2.7       # string replicated 3 times
 ```
 
-### Array replication
+### 7.6.3 Array replication
 
 Description:
 
@@ -1216,7 +1216,7 @@ $a * 2.7                         # [object[]], Length 2*3
 (New-Object 'float[,]' 2,3) * 2  # [object[]], Length 2*2
 ```
 
-### Division
+### 7.6.4 Division
 
 Description:
 
@@ -1242,7 +1242,7 @@ Examples:
 If an attempt is made to perform integer or decimal division by zero, a **RuntimeException**
 exception is raised.
 
-### Remainder
+### 7.6.5 Remainder
 
 Description:
 
@@ -1264,7 +1264,7 @@ Examples:
 If an attempt is made to perform integer or decimal division by zero, a **RuntimeException**
 exception is raised.
 
-## Additive operators
+## 7.7 Additive operators
 
 Syntax:
 
@@ -1275,7 +1275,7 @@ additive-expression:
     additive-expression dash new-lines~opt~ multiplicative-expression
 ```
 
-### Addition
+### 7.7.1 Addition
 
 Description:
 
@@ -1293,7 +1293,7 @@ Examples:
 12 + "0xabc"    # int result 2760
 ```
 
-### String concatentaion
+### 7.7.2 String concatentaion
 
 Description:
 
@@ -1313,7 +1313,7 @@ Examples:
 "red" + (20,30,40)  # "red20 30 40"
 ```
 
-### Array concatenation
+### 7.7.3 Array concatenation
 
 Description:
 
@@ -1334,7 +1334,7 @@ $a + (New-Object 'float[,]' 2,3)  # [object[]], Length 8
 (New-Object 'float[,]' 2,3) + $a  # [object[]], Length 8
 ```
 
-### Hashtable concatenation
+### 7.7.4 Hashtable concatenation
 
 Description:
 
@@ -1356,7 +1356,7 @@ $h3 = $h1 + $h2      # new Hashtable, Count = 3
 
 If the Hashtables contain the same key, an exception of type **BadOperatorArgument** is raised.
 
-### Subtraction
+### 7.7.5 Subtraction
 
 Description:
 
@@ -1375,7 +1375,7 @@ Examples:
 12 - "0xabc"   # int result -2736
 ```
 
-## Comparison operators
+## 7.8 Comparison operators
 
 Syntax:
 
@@ -1418,7 +1418,7 @@ two variants behave the same.
 
 These operators are left associative.
 
-### Equality and relational operators
+### 7.8.1 Equality and relational operators
 
 Description:
 
@@ -1450,7 +1450,7 @@ Examples:
 0,"00" -eq "0"         # 0 (int), Length 1
 ```
 
-### Containment operators
+### 7.8.2 Containment operators
 
 Description:
 
@@ -1477,7 +1477,7 @@ Examples:
 "Red",20,30 -ccontains "RED"    # False
 ```
 
-### Type testing and conversion operators
+### 7.8.3 Type testing and conversion operators
 
 Description:
 
@@ -1516,9 +1516,9 @@ foreach ($t in [int],$x,[decimal],"string") {
 }                             # decimal 21.20, and string "10.6010.60"
 ```
 
-### Pattern matching and text manipulation operators
+### 7.8.4 Pattern matching and text manipulation operators
 
-#### The -like and -notlike operators
+#### 7.8.4.1 The -like and -notlike operators
 
 Description:
 
@@ -1546,7 +1546,7 @@ Examples:
 "abc" and "abcgh"
 ```
 
-#### The -match and -notmatch operators
+#### 7.8.4.2 The -match and -notmatch operators
 
 Description:
 
@@ -1575,7 +1575,7 @@ Examples:
 "abc","abbcde","abcgh" -match "abc.*"  # Length is 2, values "abc", "abcgh"
 ```
 
-#### The -replace operator
+#### 7.8.4.3 The -replace operator
 
 Description:
 
@@ -1602,7 +1602,7 @@ Examples:
 "Analogous" -replace "[aeiou]",'$&$&'        # "AAnaaloogoouus"
 ```
 
-#### The binary -join operator
+#### 7.8.4.4 The binary -join operator
 
 Description:
 
@@ -1621,7 +1621,7 @@ Examples:
 ($null,$null) -join "<->"  # result is "<->", two zero-length values
 ```
 
-#### The binary -split operator
+#### 7.8.4.5 The binary -split operator
 
 Description:
 
@@ -1692,7 +1692,7 @@ Examples:
                                           # 4 strings: "" "n" "l" "gous"
 ```
 
-####  Submatches
+#### 7.8.4.6 Submatches
 
 The pattern being matched by `-match`, `-notmatch`, and `-replace` may contain subparts (called
 *submatches*) delimited by parentheses. Consider the following example:
@@ -1732,7 +1732,7 @@ Instead of having keys in `$matches` be zero-based indexes, submatches can be na
 `?<*name*>`. For example, `"((r)e)(d)"` can be written with three named submatches, m1, m2, and m3,
 as follows: `"(?<m1>(?<m2>r)e)(?<m3>d)"`.
 
-### Shift operators
+### 7.8.5 Shift operators
 
 Description:
 
@@ -1761,7 +1761,7 @@ Examples:
 0x100000000 -shr 0xfff81  # long with value 0x80000000
 ```
 
-## Bitwise operators
+## 7.9 Bitwise operators
 
 Syntax:
 
@@ -1803,7 +1803,7 @@ Examples:
 0x0F0F -bxor 14.6    # long with value 0xF00
 ```
 
-## Logical operators
+## 7.10 Logical operators
 
 Syntax:
 
@@ -1853,7 +1853,7 @@ $k = 20
 ($j -gt 10) -xor (++$k -le 25)  # True -xor True -> False
 ```
 
-## Assignment operators
+## 7.11 Assignment operators
 
 Syntax:
 
@@ -1879,7 +1879,7 @@ been applied.
 
 This operator is right associative.
 
-### Simple assignment
+### 7.11.1 Simple assignment
 
 Description:
 
@@ -1933,7 +1933,7 @@ $Alias:A = "Demo"                  # create alias for function Demo
 A                                  # invoke function Demo via the alias
 ```
 
-### Compound assignment
+### 7.11.2 Compound assignment
 
 Description:
 
@@ -1967,7 +1967,7 @@ ${E:output.txt} += "b"    # append text to the file giving ab
 ${E:output.txt} *= 4      # replicate ab 4 times giving abababab
 ```
 
-## Redirection operators
+## 7.12 Redirection operators
 
 Syntax:
 

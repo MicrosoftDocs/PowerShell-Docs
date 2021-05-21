@@ -28,14 +28,14 @@ $i = 2147483647   # $i holds a value of type int
 Any use of a variable that has not been created results in the value $null. To see if a variable has
 been defined, use the `Test-Path` cmdlet (§13.54).
 
-## Writable location
+## 5.1 Writable location
 
 A *writable location* is an expression that designates a resource to which a command has both read
 and write access. A writable location may be a variable (§5), an array element (§9), an associated
 value in a Hashtable accessed via a subscript (§10), a property (§7.1.2), or storage managed by a
 provider (§3.1).
 
-## Variable categories
+## 5.2 Variable categories
 
 PowerShell defines the following categories of variables: static variables, instance variables,
 array elements, Hashtable key/value pairs, parameters, ordinary variables, and variables on provider
@@ -76,7 +76,7 @@ function F ($p1, $p2) {
   provider drives.
 - `$Variable:v` is actually an ordinary variable written with its fully qualified provider drive.
 
-### Static variables
+### 5.2.1 Static variables
 
 A data member of an object that belongs to the object's type rather than to that particular instance
 of the type is called a *static variable*. See §4.2.3, §4.2.4.1, and §4.3.8 for some examples.
@@ -91,7 +91,7 @@ See §7.1.2 for information about accessing a static variable.
 
 A static data member can be a field or a property.
 
-### Instance variables
+### 5.2.2 Instance variables
 
 A data member of an object that belongs to a particular instance of the object's type rather than to
 the type itself is called an *instance variable*. See §4.3.1, §4.3.2, and §4.3.3 for some examples.
@@ -106,7 +106,7 @@ See §7.1.2 for information about accessing an instance variable.
 
 An instance data member can be a field or a property.
 
-### Array elements
+### 5.2.3 Array elements
 
 An array can be created via a unary comma operator (§7.2.1), *sub-expression* (§7.1.6),
 *array-expression* (§7.1.7), binary comma operator (§7.3), range operator (§7.4), or `New-Object`
@@ -117,7 +117,7 @@ collection system.
 
 Arrays and array elements are discussed in §9.
 
-### Hashtable key/value pairs
+### 5.2.4 Hashtable key/value pairs
 
 A Hashtable is created via a hash literal (§2.3.5.6) or the `New-Object` cmdlet (§13.36). A new
 key/value pair can be added via the `[]` operator (§7.1.4.3).
@@ -127,7 +127,7 @@ collection system.
 
 Hashtables are discussed in §10.
 
-### Parameters
+### 5.2.5 Parameters
 
 A parameter is created when its parent command is invoked, and it is initialized with the value of
 the argument provided in the invocation or by the host environment. A parameter ceases to exist when
@@ -135,7 +135,7 @@ its parent command terminates.
 
 Parameters are discussed in §8.10.
 
-### Ordinary variables
+### 5.2.6 Ordinary variables
 
 An *ordinary variable* is defined by an *assignment-expression* (§7.11) or a *foreach-statement*
 (§8.4.4). Some ordinary variables are predefined by the host environment while others are transient,
@@ -151,7 +151,7 @@ variable.
 
 An ordinary variable can be named explicitly with a **Variable:** namespace prefix (§5.2.7).
 
-### Variables on provider drives
+### 5.2.7 Variables on provider drives
 
 The concept of providers and drives is introduced in §3.1, with each provider being able to provide
 its own namespace drive(s). This allows resources on those drives to be accessed as though they were
@@ -161,7 +161,7 @@ name.
 
 Some namespace variable types are constrained implicitly (§5.3).
 
-## Constrained variables
+## 5.3 Constrained variables
 
 By default, a variable may designate a value of any type. However, a variable may be *constrained*
 to designating values of a given type by specifying that type as a type literal before its name in
