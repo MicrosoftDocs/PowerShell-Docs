@@ -3,7 +3,7 @@ description: A cmdlet is a single-feature command that manipulates objects in Po
 ms.date: 05/19/2021
 title: Cmdlets
 ---
-# 12. Cmdlets
+# 13. Cmdlets
 
 A cmdlet is a single-feature command that manipulates objects in PowerShell. Cmdlets can be
 recognized by their name format, a verb and noun separated by a dash (`-`), such as `Get-Help`,
