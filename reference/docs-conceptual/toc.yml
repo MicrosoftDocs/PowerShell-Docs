@@ -838,7 +838,7 @@
       href: lang-spec/chapter-14.md
     - name: B. Grammar
       href: lang-spec/chapter-15.md
-    - name: References
+    - name: C. References
       href: lang-spec/chapter-16.md
   - name: Legacy PowerShell SDK
     items:

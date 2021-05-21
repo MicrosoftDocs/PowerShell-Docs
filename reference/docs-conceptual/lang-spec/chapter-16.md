@@ -3,7 +3,7 @@ description: This appendix contains a list of references to computing standards 
 ms.date: 05/19/2021
 title: Appendix B - References
 ---
-# References
+# C. References
 
 ANSI/IEEE 754−2008, *Binary floating-point arithmetic for microprocessor systems*.
 
