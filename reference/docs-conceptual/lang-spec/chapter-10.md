@@ -31,7 +31,7 @@ statement-terminator:
     new-line-character
 ```
 
-## Introduction
+## 10.1 Introduction
 
 The type Hashtable represents a collection of *key/value pair* objects that supports efficient
 retrieval of a value when indexed by the key. Each key/value pair is an *element*, which is stored
@@ -63,12 +63,12 @@ $h1.Keys # gets the collection of keys
 `Hashtable` elements are stored in an object of type **DictionaryEntry**, and the collections
 returned by Keys and Values have type **ICollection**.
 
-## Hashtable creation
+## 10.2 Hashtable creation
 
 A `Hashtable` is created via a hash literal (§7.1.9) or the `New-Object` cmdlet (§13.36). It can be
 created with zero or more elements. The Count property returns the current element count.
 
-## Adding and removing Hashtable elements
+## 10.3 Adding and removing Hashtable elements
 
 An element can be added to a `Hashtable` by assigning (§7.11.1) a value to a non-existent key name or
 to a subscript (§7.1.4.3) that uses a non-existent key name. Removal of an element requires the use
@@ -81,12 +81,12 @@ $h1["Salaried"] = $false # adds element Salaried
 $h1.Remove("Salaried") # removes element Salaried
 ```
 
-## Hashtable concatenation
+## 10.4 Hashtable concatenation
 
 Hashtables can be concatenated via the `+` and `+=` operators, both of which result in the creation
 of a new `Hashtable`. The existing Hashtables are unchanged. See §7.7.4 for more information.
 
-## Hashtables as reference types
+## 10.5 Hashtables as reference types
 
 As `Hashtable` is a reference type, assignment of a `Hashtable` involves a shallow copy; that is,
 the variable assigned to refers to the same `Hashtable`; no copy of the `Hashtable` is made. For
@@ -99,7 +99,7 @@ $h1.FirstName = "John" # change key's value in $h1
 $h2.FirstName # change is reflected in $h2
 ```
 
-## Enumerating over a Hashtable
+## 10.6 Enumerating over a Hashtable
 
 To process every pair in a `Hashtable`, use the **Keys** property to retrieve the list of keys as an
 array, and then enumerate over the elements of that array getting the associated value via the

@@ -5,7 +5,7 @@ title: Statements
 ---
 # 8. Statements
 
-## Statement blocks and lists
+## 8.1 Statement blocks and lists
 
 Syntax:
 
@@ -46,7 +46,7 @@ within this clause, statements are executed in lexical order.
 
 A *statement-block* allows a set of statements to be grouped into a single syntactic unit.
 
-### Labeled statements
+### 8.1.1 Labeled statements
 
 Syntax:
 
@@ -86,7 +86,7 @@ for ($i = 1; $i -le 5; ++$i) {
 }
 ```
 
-### Statement values
+### 8.1.2 Statement values
 
 The value of a statement is the cumulative set of values that it writes to the pipeline. If the
 statement writes a single scalar value, that is the value of the statement. If the statement writes
@@ -144,7 +144,7 @@ $v = while ($i -le 5) {
 # $v is object[], Length 8, value 1,"odd",2,3,"odd",4,5,"odd"
 ```
 
-## Pipeline statements
+## 8.2 Pipeline statements
 
 Syntax:
 
@@ -291,7 +291,7 @@ dir e:\PowerShell\Scripts\*statement*.ps1 | Foreach-Object {$_.Length}
 dir e:\PowerShell\Scripts\*.ps1 | Select-String -List "catch" | Format-Table path,linenumber -AutoSize
 ```
 
-## The if statement
+## 8.3 The if statement
 
 Syntax:
 
@@ -332,9 +332,9 @@ elseif ($grade -ge 60) { "Grade D" }
 else { "Grade F" }
 ```
 
-## Iteration statements
+## 8.4 Iteration statements
 
-### The while statement
+### 8.4.1 The while statement
 
 Syntax:
 
@@ -363,7 +363,7 @@ while ($i -le 5) {                     # loop 5 times
 }
 ```
 
-### The do statement
+### 8.4.2 The do statement
 
 Syntax:
 
@@ -400,7 +400,7 @@ do {
 until (++$i -gt 5)                 # loop 5 times
 ```
 
-### The for statement
+### 8.4.3 The for statement
 
 Syntax:
 
@@ -462,7 +462,7 @@ for (; $i -ge 1; ) { # equivalent behavior
 }
 ```
 
-### The foreach statement
+### 8.4.4 The foreach statement
 
 Syntax:
 
@@ -523,7 +523,7 @@ foreach ($e in $h1.Keys) {
 }
 ```
 
-## Flow control statements
+## 8.5 Flow control statements
 
 Syntax:
 
@@ -544,7 +544,7 @@ Description:
 
 A flow-control statement causes an unconditional transfer of control to some other location.
 
-### The break statement
+### 8.5.1 The break statement
 
 Description:
 
@@ -601,7 +601,7 @@ for ($i = 1; $i -le 2; $i++) {
 }
 ```
 
-### The continue statement
+### 8.5.2 The continue statement
 
 Description:
 
@@ -663,7 +663,7 @@ for ($i = 1; $i -le 2; $i++) {
 }
 ```
 
-### The throw statement
+### 8.5.3 The throw statement
 
 Description:
 
@@ -710,7 +710,7 @@ Example 3: `throw 10,20` results in an exception of type **RuntimeException**. F
 block, `$_.TargetObject` contains the object wrapped inside, in this case, a `System.Object[]`, an
 unconstrained array of two elements with the `System`.Int32` values 10 and 20.
 
-### The return statement
+### 8.5.4 The return statement
 
 Description:
 
@@ -754,7 +754,7 @@ function Test {
 
 The caller to `Test` gets back an unconstrained 1-dimensional array of three elements.
 
-### The exit statement
+### 8.5.5 The exit statement
 
 Description:
 
@@ -769,7 +769,7 @@ Examples:
 exit $count # terminate the script with some accumulated count
 ```
 
-## The switch statement
+## 8.6 The switch statement
 
 Syntax:
 
@@ -916,7 +916,7 @@ switch (0, 1, 19, 20, 21) {
 }
 ```
 
-## The try/finally statement
+## 8.7 The try/finally statement
 
 Syntax:
 
@@ -1036,7 +1036,7 @@ Each exception thrown is raised as a `System.Management.Automation.RuntimeExcept
 type-specific *catch-clause*s in the `try` block, the **InnerException** property of the exception
 is inspected to try and find a match, such as with the type `System.IndexOutOfRangeException` above.
 
-## The trap statement
+## 8.8 The trap statement
 
 Syntax:
 
@@ -1126,7 +1126,7 @@ After the exception is caught and handled, execution resumes with writing 2 (not
 trap{} &{throw '\...'; 1}; 2
 ```
 
-## The data statement
+## 8.9 The data statement
 
 Syntax:
 
@@ -1227,7 +1227,7 @@ If *dataname* is present, it names the variable (without using a leading `$`) in
 of the data statement is to be stored. Specifically, `$name = data { ... }` is equivalent to
 `data name { ... }`.
 
-## Function definitions
+## 8.10 Function definitions
 
 Syntax:
 
@@ -1290,7 +1290,7 @@ achieve that function's purpose.
 
 Each function is an instance of the class `System.Management.Automation.FunctionInfo`.
 
-### Filter functions
+### 8.10.1 Filter functions
 
 Whereas an ordinary function runs once in a pipeline and accesses the input collection via `$input`,
 a *filter* is a special kind of function that executes once for each object in the input collection.
@@ -1312,13 +1312,13 @@ filter Get-Square2 { # make the function a filter
 
 Each filter is an instance of the class `System.Management.Automation.FilterInfo` (§4.5.11).
 
-### Workflow functions
+### 8.10.2 Workflow functions
 
 A workflow function is like an ordinary function with implementation defined semantics. A workflow
 function is translated to a sequence of Windows Workflow Foundation activities and executed in the
 Windows Workflow Foundation engine.
 
-### Argument processing
+### 8.10.3 Argument processing
 
 Consider the following definition for a function called `Get-Power`:
 
@@ -1361,7 +1361,7 @@ F 2 3 4 5 -c 7 -a 1   # $a is 1, $b is 2, $c is 7, $d is 3, $args Length 2
 
 For more information about parameter binding see §8.14.
 
-### Parameter initializers
+### 8.10.4 Parameter initializers
 
 The declaration of a parameter *p* may contain an initializer, in which case, that initializer's
 value is used to initialize *p* provided *p* is not bound to any arguments in the call.
@@ -1375,7 +1375,7 @@ Find-Str "abcabc" # 2nd argument omitted, 0 used for $start_pos
 Find-Str "abcabc" 2 # 2nd argument present, so it is used for $start_pos
 ```
 
-### The [switch] type constraint
+### 8.10.5 The [switch] type constraint
 
 When a switch parameter is passed, the corresponding parameter in the command must be constrained by
 the type switch. Type switch has two values, True and False.
@@ -1393,7 +1393,7 @@ Process 10 20 -trace:$true   # $trace is True, $p1 is 10, $p2 is 20
 ```
 
 
-### Pipelines and functions
+### 8.10.6 Pipelines and functions
 
 When a script, function, or filter is used in a pipeline, a collection of values is delivered to
 that script or function. The script, function, or filter gets access to that collection via the
@@ -1413,7 +1413,7 @@ function Get-Square1 {
 6, 10, -3 | Get-Square1        # collection has 3 elements
 ```
 
-### Named blocks
+### 8.10.7 Named blocks
 
 The statements within a *script-block* can belong to one large unnamed block, or they can be
 distributed into one or more named blocks. Named blocks allow custom processing of collections
@@ -1432,7 +1432,7 @@ as there is no current collection object.
 The statements in an *end block* (i.e.; one marked with the keyword end) are executed once, after
 the last pipeline object has been delivered.
 
-### dynamicParam block
+### 8.10.8 dynamicParam block
 
 The subsections of §8.10 thus far deal with *static parameters*, which are defined as part of the
 source code. It is also possible to define *dynamic parameters* via a *dynamicParam block*, another
@@ -1485,7 +1485,7 @@ The type used to create an object to represent the attributes of the parameter i
 The implementation-defined attributes of the parameter include **Mandatory**, **Position**, and
 **ValueFromPipeline**.
 
-### param block
+### 8.10.9 param block
 
 A *param-block* provides an alternate way of declaring parameters. For example, the following sets
 of parameter declarations are equivalent:
@@ -1515,7 +1515,7 @@ pipeline.
 
 See §12.3.7 for a discussion of the **Parameter** attribute and for more examples.
 
-## The parallel statement
+## 8.11 The parallel statement
 
 Syntax:
 
@@ -1529,7 +1529,7 @@ defined manner.
 
 A parallel statement is only allowed in a workflow (§8.10.2).
 
-## The sequence statement
+## 8.12 The sequence statement
 
 Syntax:
 
@@ -1543,7 +1543,7 @@ defined manner.
 
 A sequence statement is only allowed in a workflow (§8.10.2).
 
-## The inlinescript statement
+## 8.13 The inlinescript statement
 
 Syntax:
 
@@ -1557,7 +1557,7 @@ defined manner.
 
 A inlinescript statement is only allowed in a workflow (§8.10.2).
 
-## Parameter binding
+## 8.14 Parameter binding
 
 When a script, function, filter, or cmdlet is invoked, each argument can be bound to the
 corresponding parameter by position, with the first parameter having position zero.

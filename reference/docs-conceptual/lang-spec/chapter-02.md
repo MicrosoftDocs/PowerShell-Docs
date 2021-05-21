@@ -5,7 +5,7 @@ title: Lexical structure
 ---
 # 2. Lexical Structure
 
-## Grammars
+## 2.1 Grammars
 
 This specification shows the syntax of the PowerShell language using two grammars. The *lexical
 grammar* (§B.1) shows how Unicode characters are combined to form line terminators, comments, white
@@ -20,9 +20,9 @@ letter case in variables, aliases, function names, keywords, statements, and ope
 However, throughout this specification, such names are written in lowercase, except for some
 automatic and preference variables.
 
-## Lexical analysis
+## 2.2 Lexical analysis
 
-### Scripts
+### 2.2.1 Scripts
 
 Syntax:
 
@@ -70,7 +70,7 @@ A script may optionally contain a digital signature. A host environment is not r
 any text that follows a signature or anything that looks like a signature. The creation and use of
 digital signatures are not covered by this specification.
 
-### Line terminators
+### 2.2.2 Line terminators
 
 Syntax:
 
@@ -92,7 +92,7 @@ used for such things as error reporting and the detection of the end of a single
 
 A line terminator can be treated as white space (§2.2.4).
 
-### Comments
+### 2.2.3 Comments
 
 Syntax:
 
@@ -195,7 +195,7 @@ There are four other forms of a *requires-comment*:
 #requires --ShellId ShellId
 ```
 
-### White space
+### 2.2.4 White space
 
 Syntax:
 
@@ -238,7 +238,7 @@ $number # writes $number's value to the pipeline
 -20
 ```
 
-## Tokens
+## 2.3 Tokens
 
 Syntax:
 
@@ -262,7 +262,7 @@ A *token* is the smallest lexical element within the PowerShell language.
 
 Tokens can be separated by *new-lines*, comments, white space, or any combination thereof.
 
-### Keywords
+### 2.3.1 Keywords
 
 Syntax:
 
@@ -288,7 +288,7 @@ context, is a *command-name* or a *command-argument*.)
 
 The keywords `class`, `define`, `from`, `using`, and `var` are reserved for future use.
 
-### Variables
+### 2.3.2 Variables
 
 Syntax:
 
@@ -427,14 +427,14 @@ interchangeable.
 As well as being defined in the language, variables can also be defined by the cmdlet `New-Variable`
 (§13.37).
 
-#### User-defined variables
+#### 2.3.2.1 User-defined variables
 
 Any variable name allowed by the grammar but not used by automatic or preference variables is
 available for user-defined variables.
 
 User-defined variables are created and managed by user-defined script.
 
-#### Automatic variables
+#### 2.3.2.2 Automatic variables
 
 Automatic variables store state information about the PowerShell environment. Their values can be
 read in user-written script but not written.
@@ -444,7 +444,7 @@ read in user-written script but not written.
 > of automatic variables, see
 > [about_Automatic_Variables](/powershell/module/microsoft.powershell.core/about/about_automatic_variables).
 
-#### Preference variables
+#### 2.3.2.3 Preference variables
 
 Preference variables store user preferences for the session. They are created and initialized by the
 PowerShell runtime environment. Their values can be read and written in user-written script.
@@ -455,7 +455,7 @@ PowerShell runtime environment. Their values can be read and written in user-wri
 > [about_Preference_Variables](/powershell/module/microsoft.powershell.core/about/about_preference_variables).
 
 
-### Commands
+### 2.3.3 Commands
 
 Syntax:
 
@@ -487,7 +487,7 @@ generic-token-with-subexpr-start:
     generic-token-parts $(
 ```
 
-### Parameters
+### 2.3.4 Parameters
 
 Syntax:
 
@@ -592,7 +592,7 @@ parameters accepted by the same command.
 
 For information about parameter binding see §8.14.
 
-### Literals
+### 2.3.5 Literals
 
 Syntax:
 
@@ -603,7 +603,7 @@ literal:
     string-literal
 ```
 
-#### Numeric literals
+#### 2.3.5.1 Numeric literals
 
 There are two kinds of numeric literals: integer (§2.3.5.1.1) and real (§2.3.5.1.2). Both can have
 multiplier suffixes (§2.3.5.1.3).
@@ -775,7 +775,7 @@ upper- or lowercase letters.
 | tb             | terabyte (1024 x 1024 x 1024 x 1024)        | 1.4e23tb ≡ 1.5393162788864E+35 |
 | pb             | petabyte (1024 x 1024 x 1024 x 1024 x 1024) | 0x12Lpb ≡ 20266198323167232    |
 
-#### String literals
+#### 2.3.5.2 String literals
 
 Syntax:
 
@@ -1140,26 +1140,26 @@ body. The resulting literal is equivalent to:
 For both *verbatim-here-string-literal*s and *expandable-here-string-literal*s, each line terminator
 within the body is represented exactly as it was provided.
 
-#### Null literal
+#### 2.3.5.3 Null literal
 
 See the automatic variable `$null` (§2.3.2.2).
 
-#### Boolean literals
+#### 2.3.5.4 Boolean literals
 
 See the automatic variables `$false` and `$true` (§2.3.2.2).
 
-#### Array literals
+#### 2.3.5.5 Array literals
 
 PowerShell allows expressions of array type (§9) to be written using the unary comma operator
 (§7.2.1), *array-expression* (§7.1.7), the binary comma operator (§7.3), and the range operator
 (§7.4).
 
-#### Hash literals
+#### 2.3.5.6 Hash literals
 
 PowerShell allows expressions of type Hashtable (§10) to be written using a
 *hash-literal-expression* (§7.1.9)
 
-#### Type names
+#### 2.3.5.7 Type names
 
 Syntax:
 
@@ -1186,7 +1186,7 @@ generic-type-name:
     type-name [
 ```
 
-### Operators and punctuators
+### 2.3.6 Operators and punctuators
 
 Syntax:
 
@@ -1246,7 +1246,7 @@ The name following *dash* in an operator is reserved for that purpose only in an
 An operator that begins with *dash* must not have any white space between that *dash* and the token
 that follows it.
 
-### Escaped characters
+### 2.3.7 Escaped characters
 
 Syntax:
 

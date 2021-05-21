@@ -22,11 +22,11 @@ representation.
 The rules for handing conversion when the value of an expression is being bound to a parameter are
 covered in §6.17.
 
-## Conversion to void
+## 6.1 Conversion to void
 
 A value of any type can be discarded explicitly by casting it to type void. There is no result.
 
-## Conversion to bool
+## 6.2 Conversion to bool
 
 The rules for converting any value to type bool are as follows:
 
@@ -46,7 +46,7 @@ If the type implements IList:
 - Otherwise, if the first element's Count >= 1, the value is converted to True.
 - Otherwise, the value is converted to False.
 
-## Conversion to char
+## 6.3 Conversion to char
 
 The rules for converting any value to type char are as follows:
 
@@ -61,7 +61,7 @@ The rules for converting any value to type char are as follows:
 - For other reference type values, if the reference type supports such a conversion, that conversion
   is used; otherwise, the conversion is in error.
 
-## Conversion to integer
+## 6.4 Conversion to integer
 
 The rules for converting any value to type byte, int, or long are as
 follows:
@@ -79,7 +79,7 @@ follows:
 - For other reference type values, if the reference type supports such a conversion, that conversion
   is used; otherwise, the conversion is in error.
 
-## Conversion to float and double
+## 6.5 Conversion to float and double
 
 The rules for converting any value to type float or double are as
 follows:
@@ -95,7 +95,7 @@ follows:
 - For other reference type values, if the reference type supports such a conversion, that conversion
   is used; otherwise, the conversion is in error.
 
-## Conversion to decimal
+## 6.6 Conversion to decimal
 
 The rules for converting any value to type decimal are as follows:
 
@@ -111,12 +111,12 @@ The rules for converting any value to type decimal are as follows:
 - The scale of the result of a successful conversion is such that the fractional part has no
   trailing zeros.
 
-## Conversion to object
+## 6.7 Conversion to object
 
 The value of any type except the null type (4.1.2) can be converted to type object. The value
 retains its type and representation.
 
-## Conversion to string
+## 6.8 Conversion to string
 
 The rules for converting any value to type string are as follows:
 
@@ -145,7 +145,7 @@ The string used to represent the value of an element that is an array has the fo
 `System.type[,]`, and so on. For other reference types, the method `ToString` is called. For other
 enumerable types, the source value is treated like a 1-dimensional array.
 
-## Conversion to array
+## 6.9 Conversion to array
 
 The rules for converting any value to an array type are as follows:
 
@@ -164,22 +164,22 @@ For other enumerable types, a new 1-element array is created whose value is the 
 element after conversion to the target element type, if such a conversion exists. Otherwise, the
 conversion is in error.
 
-## Conversion to xml
+## 6.10 Conversion to xml
 
 The object is converted to type string and then into an XML Document object of type `xml`.
 
-## Conversion to regex
+## 6.11 Conversion to regex
 
 An expression that designates a value of type string may be converted to type `regex`.
 
-## Conversion to scriptblock
+## 6.12 Conversion to scriptblock
 
 The rules for converting any value to type `scriptblock` are as follows:
 
 - A string value is treated as the name of a command optionally following by arguments to a call to
   that command.
 
-## Conversion to enumeration types
+## 6.13 Conversion to enumeration types
 
 The rules for converting any value to an enumeration type are as
 follows:
@@ -189,7 +189,7 @@ follows:
 - A value of type string that contains a comma-separated list of named values (with regard for case)
   for an enumeration type is converted to the bitwise-OR of all those named values.
 
-## Conversion to other reference types
+## 6.14 Conversion to other reference types
 
 The rules for converting any value to a reference type other than an array type or string are as
 follows:
@@ -202,7 +202,7 @@ argument constructors or default constructors if the value is a hashtable, impli
 conversion operators, and Parse methods for the target type; the use of Convert.ConvertTo; and the
 ETS conversion mechanism.
 
-## Usual arithmetic conversions
+## 6.15 Usual arithmetic conversions
 
 If neither operand designates a value having numeric type, then
 
@@ -234,7 +234,7 @@ Numeric conversions:
   result has the first in the sequence int, long, double that can represent its value without
   truncation.
 
-## Conversion from string to numeric type
+## 6.16 Conversion from string to numeric type
 
 Depending on its contents, a string can be converted explicitly or
 implicitly to a numeric value. Specifically,
@@ -249,7 +249,7 @@ implicitly to a numeric value. Specifically,
 - The case-distinct strings "-Infinity", "Infinity", and "NaN" are recognized as the values -∞, +∞,
   and NaN, respectively.
 
-## Conversion during parameter binding
+## 6.17 Conversion during parameter binding
 
 For information about parameter binding see §8.14.
 
@@ -279,7 +279,7 @@ considerations, as described below:
 - If the steps above and the conversions specified earlier in this chapter do not suffice, the rules
   in §6.18 are applied. If those fail, the parameter binding fails.
 
-## .NET Conversion
+## 6.18 .NET Conversion
 
 For an implicit conversion, PowerShell's built-in conversions are tried first. If they cannot
 resolve the conversion, the .NET custom converters below are tried, in order, from top to bottom. If
@@ -314,7 +314,7 @@ a conversion is found, but it throws an exception, the conversion has failed.
 
 - **IConvertable**:` System.Convert.ChangeType` is called to perform the conversion.
 
-## Conversion to ordered
+## 6.19 Conversion to ordered
 
 The rules for converting any value to the pseudo-type ordered are as
 follows:
@@ -327,7 +327,7 @@ follows:
 Only hash literals (§2.3.5.6) can be converted to ordered. The result is an instance of
 `System.Collections.Specialized.OrderedDictionary`.
 
-## Conversion to pscustomobject
+## 6.20 Conversion to pscustomobject
 
 The rules for converting any value to the pseudo-type pscustomobject are
 as follows:

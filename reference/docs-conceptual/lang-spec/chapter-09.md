@@ -5,7 +5,7 @@ title: Arrays
 ---
 # 9. Arrays
 
-## Introduction
+## 9.1 Introduction
 
 PowerShell supports arrays of one or more dimensions with each dimension having zero or more
 *elements*. Within a dimension, elements are numbered in ascending integer order starting at zero.
@@ -46,7 +46,7 @@ constrained type for a constrained array (§9.4).
 
 All array types are derived from the type Array (§4.3.2).
 
-## Array creation
+## 9.2 Array creation
 
 An array is created via an *array creation expression*, which has the following forms: unary comma
 operator (§7.2.1) ,*array-expression* (§7.1.7), binary comma operator (§7.3), range operator (§7.4),
@@ -90,14 +90,14 @@ red
 The default initial value of any element not explicitly initialized is the default value for that
 element's type (that is, `$false`, zero, or `$null`).
 
-## Array concatenation
+## 9.3 Array concatenation
 
 Arrays of arbitrary type and length can be concatenated via the `+` and `+=` operators, both of
 which result in the creation of a new unconstrained 1-dimensional array. The existing arrays are
 unchanged. See §7.7.3 for more information, and §9.4 for a discussion of adding to an array of
 constrained type.
 
-## Constraining element types
+## 9.4 Constraining element types
 
 A 1-dimensional array can be created so that it is type-constrained by prefixing the array-creation
 expression with an array type cast. For example,
@@ -123,7 +123,7 @@ $c = $a + $b           # constraint not preserved
 $c = [int[]]($a + $b)  # result explicitly constrained to int
 ```
 
-## Arrays as reference types
+## 9.5 Arrays as reference types
 
 As array types are reference types, a variable designating an array can be made to refer to any
 array of any rank, length, and element type. For example,
@@ -166,7 +166,7 @@ The following is written to the pipeline:
 ```
 
 
-## Arrays as array elements
+## 9.6 Arrays as array elements
 
 Any element of an array can itself be an array. For example,
 
@@ -209,20 +209,20 @@ $a[1,0] = $y               # element is an array of 3 objects
 $a[1,1] = [int[]](92,93)   # element is an array of 2 ints
 ```
 
-## Negative subscripting
+## 9.7 Negative subscripting
 
 This is discussed in §7.1.4.1.
 
-## Bounds checking
+## 9.8 Bounds checking
 
 This is discussed in §7.1.4.1.
 
-## Array slices
+## 9.9 Array slices
 
 An *array slice* is an unconstrained 1-dimensional array whose elements are copies of zero or more
 elements from a collection. An array slice is created via the subscript operator `[]` (§7.1.4.5).
 
-## Copying an array
+## 9.10 Copying an array
 
 A contiguous set of elements can be copied from one array to another using the method
 `[Array]::Copy`. For example,
@@ -236,7 +236,7 @@ $a[1]->$b[1]
 $a[2]->$b[4]
 ```
 
-##  Enumerating over an array
+## 9.11 Enumerating over an array
 
 Although it is possible to loop through an array accessing each of its elements via the subscript
 operator, we can enumerate over that array's elements using the foreach statement. For a
@@ -258,7 +258,7 @@ foreach ($elem in $a) {
 }
 ```
 
-## Multidimensional array flattening
+## 9.12 Multidimensional array flattening
 
 Some operations on a multidimensional array (such as replication (§7.6.3) and concatenation
 (§7.7.3)) require that array to be *flattened*; that is, to be turned into a 1-dimensional array of

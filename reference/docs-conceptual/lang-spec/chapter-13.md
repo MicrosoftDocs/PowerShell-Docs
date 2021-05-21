@@ -3,7 +3,7 @@ description: A cmdlet is a single-feature command that manipulates objects in Po
 ms.date: 05/19/2021
 title: Cmdlets
 ---
-# 12. Cmdlets
+# 13. Cmdlets
 
 A cmdlet is a single-feature command that manipulates objects in PowerShell. Cmdlets can be
 recognized by their name format, a verb and noun separated by a dash (`-`), such as `Get-Help`,
@@ -31,7 +31,7 @@ case-sensitive.
 > information about cmdlet, consult the **Reference** section of the
 > [PowerShell documentation](/powershell/scripting/overview).
 
-## Common parameters
+## 13.1 Common parameters
 
 The *common parameters* are a set of cmdlet parameters that can be used with any cmdlet. They are
 implemented by the PowerShell runtime environment itself, not by the cmdlet developer, and they are
