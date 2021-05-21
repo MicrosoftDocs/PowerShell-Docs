@@ -3,7 +3,7 @@ description: A Hashtable represents a collection of key/value pair objects that 
 ms.date: 05/19/2021
 title: Hashtables
 ---
-# Hashtables
+# 10. Hashtables
 
 Syntax:
 

@@ -3,7 +3,7 @@ description: A variable represents a storage location for a value, and that valu
 ms.date: 05/19/2021
 title: Variables
 ---
-# Variables
+# 5. Variables
 
 A variable represents a storage location for a value, and that value has a type. Traditional
 procedural programming languages are statically typed; that is, the runtime type of a variable is

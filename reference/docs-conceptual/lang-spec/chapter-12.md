@@ -14,7 +14,7 @@ external tools to control how the command itself is processed or maintained.
 
 Multiple attributes can be applied to the same target element.
 
-## Attribute specification
+## 12. Attribute specification
 
 > [!TIP]
 > The `~opt~` notation in the syntax definitions indicates that the lexical entity is optional in

@@ -4,7 +4,7 @@ ms.date: 05/19/2021
 title: Comment-Based Help
 ---
 
-# Comment-Based Help
+# A. Comment-Based Help
 
 PowerShell provides a mechanism for programmers to document their scripts using special comment
 directives. Comments using such syntax are called *help comments*. The cmdlet `Get-Help` (§13.19)
