@@ -7,14 +7,14 @@ title: Comment-Based Help
 # A. Comment-Based Help
 
 PowerShell provides a mechanism for programmers to document their scripts using special comment
-directives. Comments using such syntax are called *help comments*. The cmdlet `Get-Help` (§13.19)
-generates documentation from these directives.
+directives. Comments using such syntax are called *help comments*. The cmdlet `Get-Help`
+([§13.19][]) generates documentation from these directives.
 
 ## A.1 Introduction
 
 A help comment contains a *help directive* of the form .*name* followed on one or more subsequent
 lines by the help content text. The help comment can be made up of a series of
-*single-line-comment*s or a *delimited-comment* (§2.2.3). The set of comments comprising the
+*single-line-comment*s or a *delimited-comment* ([§2.2.3][]). The set of comments comprising the
 documentation for a single entity is called a *help topic*.
 
 For example,
@@ -76,8 +76,8 @@ Syntax:
 Description:
 
 This directive allows for a detailed description of the function or script. (The `.SYNOPSIS`
-directive (§A.2.11) is intended for a brief description.) This directive can be used only once in
-each topic.
+directive ([§A.2.11][]) is intended for a brief description.) This directive can be used only once
+in each topic.
 
 Examples:
 
@@ -152,14 +152,14 @@ Syntax:
 
 Description:
 
-Specifies the help category of the item in **ForwardHelpTargetName** (§A.2.5). Valid values are
+Specifies the help category of the item in **ForwardHelpTargetName** ([§A.2.5][]). Valid values are
 **Alias**, **All**, **Cmdlet**, **ExternalScript**, **FAQ**, **Filter**, **Function**, **General**,
 **Glossary**, **HelpFile**, **Provider**, and **ScriptCommand**. Use this directive to avoid
 conflicts when there are commands with the same name.
 
 Examples:
 
-See §A.2.5.
+See [§A.2.5][].
 
 ### A.2.5 .FORWARDHELPTARGETNAME
 
@@ -255,7 +255,6 @@ Online version: http://www.acmecorp.com/widget.html
 Set-ProcedureName
 #>
 ```
-
 
 ### A.2.8 .NOTES
 
@@ -365,8 +364,8 @@ Syntax:
 Description:
 
 This directive allows for a brief description of the function or script. (The `.DESCRIPTION`
-directive (§A.2.1) is intended for a detailed description.) This directive can be used only once in
-each topic.
+directive ([§A.2.1][]) is intended for a detailed description.) This directive can be used only once
+in each topic.
 
 Examples:
 
@@ -376,3 +375,9 @@ Examples:
 Computes Base to the power Exponent.
 #>
 ```
+
+<!-- reference links -->
+[§2.2.3]: chapter-02.md#223-comments
+[§A.2.1]: chapter-14.md#a21-description
+[§A.2.11]: chapter-14.md#a211-synopsis
+[§A.2.5]: chapter-14.md#a25-forwardhelptargetname

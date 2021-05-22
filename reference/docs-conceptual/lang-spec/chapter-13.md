@@ -35,18 +35,23 @@ case-sensitive.
 
 The *common parameters* are a set of cmdlet parameters that can be used with any cmdlet. They are
 implemented by the PowerShell runtime environment itself, not by the cmdlet developer, and they are
-automatically available to any cmdlet or function that uses the **Parameter** attribute (§12.3.7) or
-**CmdletBinding** attribute (§12.3.5).
+automatically available to any cmdlet or function that uses the **Parameter** attribute
+([§12.3.7][]) or **CmdletBinding** attribute ([§12.3.5][]).
 
 Although the common parameters are accepted by any cmdlet, they might not have any semantics for
 that cmdlet. For example, if a cmdlet does not generate any verbose output, using the **Verbose**
 common parameter has no effect.
 
 Several common parameters override system defaults or preferences that can be set via preference
-variables (§2.3.2.3). Unlike the preference variables, the common parameters affect only the
+variables ([§2.3.2.3][]). Unlike the preference variables, the common parameters affect only the
 commands in which they are used.
 
 > [!NOTE]
 > Editor's note: The original document contains a list of the Common Parameters. This information is
 > incomplete and out dated. For current information see
 > [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
+
+<!-- reference links -->
+[§12.3.5]: chapter-12.md#1235-the-cmdletbinding-attribute
+[§12.3.7]: chapter-12.md#1237-the-parameter-attribute
+[§2.3.2.3]: chapter-02.md#2323-preference-variables

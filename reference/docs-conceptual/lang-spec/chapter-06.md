@@ -11,16 +11,16 @@ common example of this is with some operators that need to convert one or more o
 designated by their operands.) Implicit conversion is permitted provided the sense of the source
 value is preserved, such as no loss of precision of a number when it is converted.
 
-The cast operator (§7.2.9) allows for *explicit conversion*.
+The cast operator ([§7.2.9][]) allows for *explicit conversion*.
 
 Conversions are discussed below, with supplementary information being provided as necessary in the
-description of each operator in §6.19.
+description of each operator in [§6.19][].
 
 Explicit conversion of a value to the type it already has causes no change to that value or its
 representation.
 
 The rules for handing conversion when the value of an expression is being bound to a parameter are
-covered in §6.17.
+covered in [§6.17][].
 
 ## 6.1 Conversion to void
 
@@ -34,8 +34,8 @@ The rules for converting any value to type bool are as follows:
   converted to True.
 - A value of null type is converted to False.
 - A string of length 0 is converted to False; a string of length > 0 is converted to True.
-- A switch parameter with value `$true` is converted to True, and one with value `$false` is converted
-  to False.
+- A switch parameter with value `$true` is converted to True, and one with value `$false` is
+  converted to False.
 - All other non-null reference type values are converted to True.
 
 If the type implements IList:
@@ -72,10 +72,10 @@ follows:
 - A numeric type value whose value after rounding of any fractional part can be represented in the
   destination type has that rounded value; otherwise, the conversion is in error.
 - A value of null type is converted to zero.
-- A string that represents a number is converted as described in §6.16. If after truncation of the
-  fractional part the result can be represented in the destination type the string is well formed
-  and it has the destination type; otherwise, the conversion is in error. If the string does not
-  represent a number, the conversion is in error.
+- A string that represents a number is converted as described in [§6.16][]. If after truncation of
+  the fractional part the result can be represented in the destination type the string is well
+  formed and it has the destination type; otherwise, the conversion is in error. If the string does
+  not represent a number, the conversion is in error.
 - For other reference type values, if the reference type supports such a conversion, that conversion
   is used; otherwise, the conversion is in error.
 
@@ -90,8 +90,8 @@ follows:
   conversions to float, and for long and decimal conversions to double, some of the least
   significant bits of the integer value may be lost.
 - A value of null type is converted to zero.
-- A string that represents a number is converted as described in §6.16; otherwise, the conversion is
-  in error.
+- A string that represents a number is converted as described in [§6.16][]; otherwise, the
+  conversion is in error.
 - For other reference type values, if the reference type supports such a conversion, that conversion
   is used; otherwise, the conversion is in error.
 
@@ -104,8 +104,8 @@ The rules for converting any value to type decimal are as follows:
 - A numeric type value is represented exactly; however, if that value is too large or too small to
   fit in the destination type, the conversion is in error.
 - A value of null type is converted to zero.
-- A string that represents a number is converted as described in §6.16; otherwise, the conversion is
-  in error.
+- A string that represents a number is converted as described in [§6.16][]; otherwise, the
+  conversion is in error.
 - For other reference type values, if the reference type supports such a conversion, that conversion
   is used; otherwise, the conversion is in error.
 - The scale of the result of a successful conversion is such that the fractional part has no
@@ -129,10 +129,10 @@ The rules for converting any value to type string are as follows:
 - A value of null type is converted to the empty string.
 - For a 1-dimensional array, the result is a string containing the value of each element in that
   array, from start to end, converted to string, with elements being separated by the current Output
-  Field Separator (§2.3.2.2). For an array having elements that are themselves arrays, only the
+  Field Separator ([§2.3.2.2][]). For an array having elements that are themselves arrays, only the
   top-level elements are converted. The string used to represent the value of an element that is an
-  array, is implementation defined. For a multi-dimensional array, it is flattened (§9.12) and then
-  treated as a 1‑dimensional array.
+  array, is implementation defined. For a multi-dimensional array, it is flattened ([§9.12][]) and
+  then treated as a 1‑dimensional array.
 - A value of null type is converted to the empty string.
 - A scriptblock type value is converted to a string containing the text of that block without the
   delimiting { and } characters.
@@ -155,8 +155,8 @@ The rules for converting any value to an array type are as follows:
   created whose value is the scalar after conversion to the target element type.
 - For a 1-dimensional array value, a new array of the target type is created, and each element is
   copied with conversion from the source array to the corresponding element in the target array.
-- For a multi-dimensional array value, that array is first flattened (§9.12), and then treated as a
-  1-dimensional array value.
+- For a multi-dimensional array value, that array is first flattened ([§9.12][]), and then treated
+  as a 1-dimensional array value.
 - A string value is converted to an array of char having the same length with successive characters
   from the string occupying corresponding positions in the array.
 
@@ -212,11 +212,11 @@ If neither operand designates a value having numeric type, then
 - Otherwise, if the left operand designates a value of type char and the right operand designates a
   value of type bool, the conversion is in error.
 - Otherwise, if the left operand designates a value of type string but does not represent a number
-  (§6.16), the conversion is in error.
+  ([§6.16][]), the conversion is in error.
 - Otherwise, if the right operand designates a value of type string but does not represent a number
-  (§6.16), the conversion is in error.
-- Otherwise, all operands designating values of type string are converted to numbers (§6.16), and
-  the process continues with the numeric conversions listed below.
+  ([§6.16][]), the conversion is in error.
+- Otherwise, all operands designating values of type string are converted to numbers ([§6.16][]),
+  and the process continues with the numeric conversions listed below.
 - Otherwise, the conversion is in error.
 
 Numeric conversions:
@@ -251,14 +251,14 @@ implicitly to a numeric value. Specifically,
 
 ## 6.17 Conversion during parameter binding
 
-For information about parameter binding see §8.14.
+For information about parameter binding see [§8.14][].
 
 When the value of an expression is being bound to a parameter, there are extra conversion
 considerations, as described below:
 
-- If the parameter type is bool or switch (§4.2.5, §8.10.5) and the parameter has no argument, the
-  value of the parameter in the called command is set to `$true`. If the parameter type is other
-  than bool or switch, a parameter having no argument is in error.
+- If the parameter type is bool or switch ([§4.2.5][], [§8.10.5][]) and the parameter has no
+  argument, the value of the parameter in the called command is set to `$true`. If the parameter
+  type is other than bool or switch, a parameter having no argument is in error.
 - If the parameter type is switch and the argument value is `$null`, the parameter value is set to
   `$false`.
 - If the parameter type is object or is the same as the type of the argument, the argument's value
@@ -277,7 +277,7 @@ considerations, as described below:
   argument collection. If necessary, the argument collection element values are converted to type T2
   using the conversion rules of this section.
 - If the steps above and the conversions specified earlier in this chapter do not suffice, the rules
-  in §6.18 are applied. If those fail, the parameter binding fails.
+  in [§6.18][] are applied. If those fail, the parameter binding fails.
 
 ## 6.18 .NET Conversion
 
@@ -312,19 +312,19 @@ a conversion is found, but it throws an exception, the conversion has failed.
   an explicit cast operator that converts from the source type, that operator is called to perform
   the conversion.
 
-- **IConvertable**:` System.Convert.ChangeType` is called to perform the conversion.
+- **IConvertable**: `System.Convert.ChangeType` is called to perform the conversion.
 
 ## 6.19 Conversion to ordered
 
 The rules for converting any value to the pseudo-type ordered are as
 follows:
 
-- If the value is a hash literal (§2.3.5.6), the result is an object with an implementation defined
-  type that behaves like a hashtable and the order of the keys matches the order specified in the
-  hash literal.
+- If the value is a hash literal ([§2.3.5.6][]), the result is an object with an implementation
+  defined type that behaves like a hashtable and the order of the keys matches the order specified
+  in the hash literal.
 - Otherwise, the behavior is implementation defined.
 
-Only hash literals (§2.3.5.6) can be converted to ordered. The result is an instance of
+Only hash literals ([§2.3.5.6][]) can be converted to ordered. The result is an instance of
 `System.Collections.Specialized.OrderedDictionary`.
 
 ## 6.20 Conversion to pscustomobject
@@ -337,3 +337,16 @@ as follows:
 - Otherwise, the behavior is implementation defined.
 
 The conversion is always allowed but does not change the type of the value.
+
+<!-- reference links -->
+[§2.3.2.2]: chapter-02.md#2322-automatic-variables
+[§2.3.5.6]: chapter-02.md#2356-hash-literals
+[§4.2.5]: chapter-04.md#425-the-switch-type
+[§6.16]: chapter-06.md#616-conversion-from-string-to-numeric-type
+[§6.17]: chapter-06.md#617-conversion-during-parameter-binding
+[§6.18]: chapter-06.md#618-net-conversion
+[§6.19]: chapter-06.md#619-conversion-to-ordered
+[§7.2.9]: chapter-07.md#729-cast-operator
+[§8.10.5]: chapter-08.md#8105-the-switch-type-constraint
+[§8.14]: chapter-08.md#814-parameter-binding
+[§9.12]: chapter-09.md#912-multidimensional-array-flattening

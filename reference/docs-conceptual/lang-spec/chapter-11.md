@@ -7,7 +7,7 @@ title: Modules
 
 ## 11.1 Introduction
 
-As stated in §3.14, a module is a self-contained reusable unit that allows PowerShell code to be
+As stated in [§3.14][], a module is a self-contained reusable unit that allows PowerShell code to be
 partitioned, organized, and abstracted. A module can contain one or more *module members*, which are
 commands (such as cmdlets and functions) and items (such as variables and aliases). The names of
 these members can be kept private to the module or they may be *exported* to the session into which
@@ -32,11 +32,11 @@ variable **PSModulePath**.
 
 The following cmdlets deal with modules:
 
-- `Get-Module`: Identifies the modules that have been, or that can be, imported (see §13.23)
-- `Import-Modul`e: Adds one or more modules to the current session (see §11.4, §13.28)
-- `Export-ModuleMember`: Identifies the module members that are to be exported (see §13.11)
-- `Remove-Module`: Removes one or more modules from the current session (see §11.5, §13.41)
-- `New-Module`: Creates a dynamic module (see §11.7, §13.35)
+- `Get-Module`: Identifies the modules that have been, or that can be, imported (see [§13.23][])
+- `Import-Module`: Adds one or more modules to the current session (see [§11.4][], [§13.28][])
+- `Export-ModuleMember`: Identifies the module members that are to be exported (see [§13.11][])
+- `Remove-Module`: Removes one or more modules from the current session (see [§11.5][], [§13.41][])
+- `New-Module`: Creates a dynamic module (see [§11.7][], [§13.35][])
 
 ## 11.2 Writing a script module
 
@@ -75,19 +75,19 @@ can be provided; for example,
 
 Any additional paths added affect the current session only.
 
-Alternatively, a fully qualified path can be specified when a module is imported (§13.28).
+Alternatively, a fully qualified path can be specified when a module is imported ([§13.28][]).
 
 ## 11.4 Importing a script module
 
 Before the resources in a module can be used, that module must be imported into the current session,
-using the cmdlet `Import-Module` (§13.28). `Import-Module` can restrict the resources that it
+using the cmdlet `Import-Module` ([§13.28][]). `Import-Module` can restrict the resources that it
 actually imports.
 
 When a module is imported, its script file is executed. That process can be configured by defining
 one or more parameters in the script file, and passing in corresponding arguments via the
 ArgumentList parameter of `Import-Module`.
 
-Consider the following script that uses these functions and aliases defined in §11.2:
+Consider the following script that uses these functions and aliases defined in [§11.2][]:
 
 `Import-Module` "E:\Scripts\Modules\PSTest\_Temperature" -Verbose
 
@@ -111,11 +111,11 @@ the argument 100.
 When the session includes commands of the same kind with the same name, such as two cmdlets with the
 same name, by default it runs the most recently added command.
 
-See §3.5.6 for a discussion of scope as it relates to modules.
+See [§3.5.6][] for a discussion of scope as it relates to modules.
 
 ## 11.5 Removing a script module
 
-One or more modules can be removed from a session via the cmdlet `Remove-Module` (§13.41).
+One or more modules can be removed from a session via the cmdlet `Remove-Module` ([§13.41][]).
 
 Removing a module does not uninstall the module.
 
@@ -126,7 +126,7 @@ removal, as follows:
 
 ## 11.6 Module manifests
 
-As stated in §11.1, a manifest module is a file that contains information about a module, and
+As stated in [§11.1][], a manifest module is a file that contains information about a module, and
 controls certain aspects of that module's use.
 
 A module need not have a corresponding manifest, but if it does, that manifest has the same name as
@@ -167,7 +167,7 @@ GUID, call the method `[guid]::NewGuid()`.
 ## 11.7 Dynamic modules
 
 A *dynamic module* is a module that is created in memory at runtime by the cmdlet `New-Module`
-(§13.35); it is not loaded from disk. Consider the following example:
+([§13.35][]); it is not loaded from disk. Consider the following example:
 
 ```powershell
 $sb = {
@@ -234,7 +234,7 @@ $v2 = Get-NextID 100  # get a scriptblock with $startValue of 100
 The intent here is that `Get-NextID` return the next ID in a sequence whose start value can be
 specified. However, multiple sequences must be supported, each with its own `$startValue` and
 `$nextID` context. This is achieved by the call to the method `[scriptblock]::GetNewClosure`
-(§4.3.7).
+([§4.3.7][]).
 
 Each time a new closure is created by `GetNewClosure`, a new dynamic module is created, and the
 variables in the caller's scope (in this case, the script block containing the increment) are copied
@@ -255,3 +255,13 @@ $v3 = & {      # get a scriptblock with $startValue of 200
 & $v3          # invoke script getting back 200
 & $v3          # invoke script getting back 201
 ```
+
+<!-- reference links -->
+[§11.1]: chapter-11.md#111-introduction
+[§11.2]: chapter-11.md#112-writing-a-script-module
+[§11.4]: chapter-11.md#114-importing-a-script-module
+[§11.5]: chapter-11.md#115-removing-a-script-module
+[§11.7]: chapter-11.md#117-dynamic-modules
+[§3.14]: chapter-03.md#314-modules
+[§3.5.6]: chapter-03.md#356-modules
+[§4.3.7]: chapter-04.md#437-the-scriptblock-type
