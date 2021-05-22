@@ -15,8 +15,8 @@ when they are first assigned a value. And while a variable may be constrained ([
 a value of a given type, type information in an assignment cannot always be verified statically.
 
 At different times, a variable may be associated with values of different types either through
-assignment ([§7.11][]) or the use of the `++` and `‑‑` operators ([§7.1.5][], 7.2.6). When the value
-associated with a variable is changed, that value's type may change. For example,
+assignment ([§7.11][]) or the use of the `++` and `‑‑` operators ([§7.1.5][], [§7.2.6][]). When the
+value associated with a variable is changed, that value's type may change. For example,
 
 ```powershell
 $i = "abc"        # $i holds a value of type string
@@ -203,6 +203,7 @@ namespace **Function:** ([§2.3.2][], [§3.1][]) is constrained implicitly to th
 [§7.1.7]: chapter-07.md#717--operator
 [§7.11]: chapter-07.md#711-assignment-operators
 [§7.2.1]: chapter-07.md#721-unary-comma-operator
+[§7.2.6]: chapter-07.md#726-prefix-increment-and-decrement-operators
 [§7.3]: chapter-07.md#73-binary-comma-operator
 [§7.4]: chapter-07.md#74-range-operator
 [§8.10]: chapter-08.md#810-function-definitions
