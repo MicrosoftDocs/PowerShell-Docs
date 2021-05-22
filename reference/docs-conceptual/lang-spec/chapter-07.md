@@ -33,7 +33,7 @@ operations defined on them. All details of such types and operations are impleme
 
 A *top-level expression* is one that is not part of some larger expression. If a top-level
 expression contains a side-effect operator the value of that expression is not written to the
-pipeline; otherwise, it is. See §7.1.1 for a detailed discussion of this.
+pipeline; otherwise, it is. See [§7.1.1][] for a detailed discussion of this.
 
 Ordinarily, an expression that designates a collection (§4) is enumerated into its constituent
 elements when the value of that expression is used. However, this is not the case when the
@@ -155,7 +155,8 @@ expression in parentheses, as follows:
 
 As such, the grouping parentheses in this case are not redundant.
 
-In the following example, we have variable substitution (§2.3.5.2) taking place in a string literal:
+In the following example, we have variable substitution ([§2.3.5.2][]) taking place in a string
+literal:
 
 ```powershell
 ">$($a = -23)<"    # value not written to pipeline, get
@@ -287,7 +288,7 @@ unspecified.
 
 This operator is left associative.
 
-The type of the result of an *invocation-expression* is a *method designator* (§4.5.24).
+The type of the result of an *invocation-expression* is a *method designator* ([§4.5.24][]).
 
 Examples:
 
@@ -327,7 +328,8 @@ There must not be any white space between *primary-expression* and the left squa
 
 Description:
 
-Arrays are discussed in detail in §9. If *expression* is a 1-dimensional array, see §7.1.4.5.
+Arrays are discussed in detail in [§9.][] If *expression* is a 1-dimensional array, see
+[§7.1.4.5][].
 
 When *primary-expression* designates a 1-dimensional array *A*, the operator `[]` returns the
 element located at `A[0 + expression]` after the value of *expression* has been converted to `int`.
@@ -351,7 +353,7 @@ For a multidimensional-array subscript expression, the order of evaluation of th
 expressions is unspecified. For example, given a 3-dimensional array `$a`, the behavior of
 `$a[$i++,$i,++$i]` is unspecified.
 
-If *expression* is an array, see §7.1.4.5.
+If *expression* is an array, see [§7.1.4.5][].
 
 This operator is left associative.
 
@@ -379,7 +381,8 @@ $a = "red","green"
 $a[1][4] # returns string "n" from string in $a[1]
 ```
 
-If a write access to a non-existing element is attempted, an **IndexOutOfRange** exception is raised.
+If a write access to a non-existing element is attempted, an **IndexOutOfRange** exception is
+raised.
 
 #### 7.1.4.2 Subscripting a string
 
@@ -408,9 +411,9 @@ with the key(s) designated by *expression*. The type of *expression* is not rest
 
 When *expression* is a single key name, the result is the associated value and has that type, unless
 no such key exists, in which case, the result is `$null`. If `$null` is used as the key the behavior
-is implementation defined. If *expression* is an array of key names, see §7.1.4.5.
+is implementation defined. If *expression* is an array of key names, see [§7.1.4.5][].
 
-If *expression* is an array, see §7.1.4.5.
+If *expression* is an array, see [§7.1.4.5][].
 
 Examples:
 
@@ -459,8 +462,8 @@ The type of the result is `System.Xml.XmlElement` or `System.String`.
 #### 7.1.4.5 Generating array slices
 
 When *primary-expression* designates an object of a type that is enumerable (§4) or a Hashtable, and
-*expression* is a 1-dimensional array, the result is an array slice (§9.9) containing the elements
-of *primary-expression* designated by the elements of *expression*.
+*expression* is a 1-dimensional array, the result is an array slice ([§9.9][]) containing the
+elements of *primary-expression* designated by the elements of *expression*.
 
 In the case of a Hashtable, the array slice contains the associated values to the keys provided,
 unless no such key exists, in which case, the corresponding element is `$null`. If `$null` is used
@@ -510,18 +513,18 @@ Description:
 The *primary-expression* must designate a writable location having a value of numeric type (§4) or
 the value `$null`. If the value designated by the operand is `$null`, that value is converted to
 type int and value zero before the operator is evaluated. The type of the value designated by
-*primary-expression* may change when the result is stored. See §7.11 for a discussion of type change
-via assignment.
+*primary-expression* may change when the result is stored. See [§7.11][] for a discussion of type
+change via assignment.
 
 The result produced by the postfix `++` operator is the value designated by the operand. After that
 result is obtained, the value designated by the operand is incremented by 1 of the appropriate type.
 The type of the result of expression `E++` is the same as for the result of the expression `E + 1`
-(§7.7).
+([§7.7][]).
 
 The result produced by the postfix `--` operator is the value designated by the operand. After that
 result is obtained, the value designated by the operand is decremented by 1 of the appropriate type.
 The type of the result of expression `E--` is the same as for the result of the expression `E - 1`
-(§7.7).
+([§7.7][]).
 
 These operators are left associative.
 
@@ -555,7 +558,6 @@ $x++                  # value treated as int, 0->1
 
 Syntax:
 
-
 ```Syntax
 sub-expression:
     $( new-lines~opt~ statement-list~opt~ new-lines~opt~ )
@@ -582,7 +584,6 @@ $(($i = 10); (++$j)) # pipeline gets [object[]](10,22)
 $($i = 10; ++$j) # pipeline gets nothing
 $(2,4,6) # pipeline gets [object[]](2,4,6)
 ```
-
 
 ### 7.1.7 @(...) operator
 
@@ -635,7 +636,7 @@ script-block-body:
 
 Description:
 
-*param-block* is described in §8.10.9. *named-block-list* is described in §8.10.7.
+*param-block* is described in [§8.10.9][]. *named-block-list* is described in [§8.10.7][].
 
 A script block is an unnamed block of statements that can be used as a single unit. Script blocks
 can be used to invoke a block of code as if it was a single command, or they can be assigned to
@@ -644,13 +645,13 @@ variables that can be executed.
 The *named-block-list* or *statement-list* is executed and the type and value(s) of the result are
 the type and value(s) of the results of those statement sets.
 
-A *script-block-expression* has type scriptblock (§4.3.7).
+A *script-block-expression* has type scriptblock ([§4.3.7][]).
 
 If *param-block* is omitted, any arguments passed to the script block are available via `$args`
-(§8.10.1).
+([§8.10.1][]).
 
 During parameter binding, a script block can be passed either as a script block object or as the
-result after the script block has been evaluated. See §6.17 for further information.
+result after the script block has been evaluated. See [§6.17][] for further information.
 
 ### 7.1.9 Hash literal expression
 
@@ -739,14 +740,14 @@ result, a type name is a synonym for its underlying type.
 
 Type literals are used in a number of contexts:
 
-- Specifying an explicit conversion (§6, §7.2.9)
-- Creating a type-constrained array (§9.4)
-- Accessing the static members of an object (§7.1.2)
-- Specifying a type constraint on a variable (§5.3) or a function parameter (§8.10.2)
+- Specifying an explicit conversion (§6, [§7.2.9][])
+- Creating a type-constrained array ([§9.4][])
+- Accessing the static members of an object ([§7.1.2][])
+- Specifying a type constraint on a variable ([§5.3][]) or a function parameter ([§8.10.2][])
 
 Examples:
 
-Examples of type literals are `[int]`, `[object[]`, and `[int[,,]]`. A generic stack type (§4.4)
+Examples of type literals are `[int]`, `[object[]`, and `[int[,,]]`. A generic stack type ([§4.4][])
 that is specialized to hold strings might be written as `[Stack[string]]`, and a generic dictionary
 type that is specialized to hold `int` keys with associated string values might be written as
 `[Dictionary[int,string]]`.
@@ -825,7 +826,7 @@ $a = ,,10        # create an unconstrained array of 1 element, which is
 
 Description:
 
-The operator -not converts the value designated by *unary-expression* to type bool (§6.2), if
+The operator -not converts the value designated by *unary-expression* to type bool ([§6.2][]), if
 necessary, and produces a result of that type. If *unary-expression*'s value is True, the result is
 False, and vice versa. The operator ! is an alternate spelling for -not.
 
@@ -845,10 +846,11 @@ Examples:
 
 Description:
 
-The operator -bnot converts the value designated by *unary-expression* to an integer type (§6.4), if
-necessary. If the converted value can be represented in type int then that is the result type. Else,
-if the converted value can be represented in type long then that is the result type. Otherwise, the
-expression is ill formed. The resulting value is the ones-complement of the converted value.
+The operator -bnot converts the value designated by *unary-expression* to an integer type
+([§6.4][]), if necessary. If the converted value can be represented in type int then that is the
+result type. Else, if the converted value can be represented in type long then that is the result
+type. Otherwise, the expression is ill formed. The resulting value is the ones-complement of the
+converted value.
 
 This operator is right associative.
 
@@ -867,7 +869,7 @@ Examples:
 Description:
 
 An expression of the form +*unary-expression* is treated as if it were written as
-`0 + unary-expression` (§7.7). The integer literal 0 has type `int`.
+`0 + unary-expression` ([§7.7][]). The integer literal 0 has type `int`.
 
 This operator is right associative.
 
@@ -879,13 +881,12 @@ Examples:
 +"0xabc"      # type int, value 2748
 ```
 
-
 ### 7.2.5 Unary minus
 
 Description:
 
 An expression of the form -*unary-expression* is treated as if it were written as
-`0 - unary-expression` (§7.7). The integer literal 0 has type `int`.
+`0 - unary-expression` ([§7.7][]). The integer literal 0 has type `int`.
 
 This operator is right associative.
 
@@ -905,15 +906,15 @@ value is converted to type int and value zero before the operator is evaluated.
 
 > [!NOTE]
 > The type of the value designated by *unary-expression* may change when the result is stored. See
-> §7.11 for a discussion of type change via assignment.
+> [§7.11][] for a discussion of type change via assignment.
 
 For the prefix `++` operator, the value of *unary-expression* is incremented by 1 of the appropriate
 type. The result is the new value after incrementing has taken place. The expression `++E` is
-equivalent to `E += 1` (§7.11.2).
+equivalent to `E += 1` ([§7.11.2][]).
 
 For the prefix `--` operator, the value of *unary-expression* is decremented by 1 of the appropriate
 type. The result is the new value after decrementing has taken place. The expression `--E` is
-equivalent to `E -= 1` (§7.11.2).
+equivalent to `E -= 1` ([§7.11.2][]).
 
 These operators are right associative.
 
@@ -949,7 +950,7 @@ Description:
 
 The unary `-join` operator produces a string that is the concatenation of the value of one or more
 objects designated by *unary-expression*. (A separator can be inserted by using the binary version
-of this operator (§7.8.4.4).)
+of this operator ([§7.8.4.4][]).)
 
 *unary-expression* can be a scalar value or a collection.
 
@@ -969,8 +970,8 @@ Description:
 The unary `-split` operator splits one or more strings designated by *unary-expression*, returning
 their subparts in a constrained 1-dimensional array of string. It treats any contiguous group of
 white space characters as the delimiter between successive subparts. (An explicit delimiter string
-can be specified by using the binary version of this operator (§7.8.4.5).) This operator has two
-variants (§7.8).
+can be specified by using the binary version of this operator ([§7.8.4.5][]).) This operator has two
+variants ([§7.8][]).
 
 The delimiter text is not included in the resulting strings. Leading and trailing white space in the
 input string is ignored. An input string that is empty or contains white space only results in an
@@ -1052,9 +1053,9 @@ Description:
 
 A *range-expression* creates an unconstrained 1-dimensional array whose elements are the values of
 the int sequence specified by the range bounds. The values designated by the operands are converted
-to int, if necessary (§6.4). The operand designating the lower value after conversion is the *lower
-bound*, while the operand designating the higher value after conversion is the *upper bound*. Both
-bounds may be the same, in which case, the resulting array has length 1. If the left operand
+to int, if necessary ([§6.4][]). The operand designating the lower value after conversion is the
+*lower bound*, while the operand designating the higher value after conversion is the *upper bound*.
+Both bounds may be the same, in which case, the resulting array has length 1. If the left operand
 designates the lower bound, the sequence is in ascending order. If the left operand designates the
 upper bound, the sequence is in descending order.
 
@@ -1063,7 +1064,7 @@ example, the range `5..8` can also be generated using `5,6,7,8`. However, if an 
 descending sequence is needed without having an array, an implementation may avoid generating an
 actual array. For example, in `foreach ($i in 1..5) { ... }`, no array need be created.
 
-A *range-expression* can be used to specify an array slice (§9.9).
+A *range-expression* can be used to specify an array slice ([§9.9][]).
 
 Examples:
 
@@ -1115,10 +1116,10 @@ following form:
 display width, and *FormatString* indicates the (optional) format. If the width of a formatted value
 exceeds the specified width, the width is increased accordingly. Values whose positions are not
 referenced in *FormatString* are ignored after being evaluated for any side effects. If *N* refers
-to a non-existent position, the behavior is implementation defined. Value of type `$null` and void are
-formatted as empty strings. Arrays are formatted as for *sub-expression* (§7.1.6). To include the
-characters "{" and "}" in a format specification without their being interpreted as format
-delimiters, write them as "{{" and "}}", respectively.
+to a non-existent position, the behavior is implementation defined. Value of type `$null` and void
+are formatted as empty strings. Arrays are formatted as for *sub-expression* ([§7.1.6][]). To
+include the characters "{" and "}" in a format specification without their being interpreted as
+format delimiters, write them as "{{" and "}}", respectively.
 
 For a complete definition of format specifications, see the type `System.IFormattable` in Ecma
 Technical Report TR/84.
@@ -1159,7 +1160,7 @@ multiplicative-expression:
 Description:
 
 The result of the multiplication operator `*` is the product of the values designated by the two
-operands after the usual arithmetic conversions (§6.15) have been applied.
+operands after the usual arithmetic conversions ([§6.15][]) have been applied.
 
 This operator is left associative.
 
@@ -1178,7 +1179,7 @@ Description:
 
 When the left operand designates a string the binary `*` operator creates a new string that contains
 the one designated by the left operand replicated the number of times designated by the value of the
-right operand as converted to integer type (§6.4).
+right operand as converted to integer type ([§6.4][]).
 
 This operator is left associative.
 
@@ -1198,9 +1199,9 @@ Description:
 
 When the left operand designates an array the binary `*` operator creates a new unconstrained
 1‑dimensional array that contains the value designated by the left operand replicated the number of
-times designated by the value of the right operand as converted to integer type (§6.4). A
+times designated by the value of the right operand as converted to integer type ([§6.4][]). A
 replication count of zero results in an array of length 1. If the left operand designates a
-multidimensional array, it is flattened (§9.12) before being used.
+multidimensional array, it is flattened ([§9.12][]) before being used.
 
 This operator is left associative.
 
@@ -1222,7 +1223,7 @@ Description:
 
 The result of the division operator `/` is the quotient when the value designated by the left
 operand is divided by the value designated by the right operand after the usual arithmetic
-conversions (§6.15) have been applied.
+conversions ([§6.15][]) have been applied.
 
 If an attempt is made to perform integer or decimal division by zero, an implementation-defined
 terminating error is raised.
@@ -1248,7 +1249,7 @@ Description:
 
 The result of the remainder operator `%` is the remainder when the value designated by the left
 operand is divided by the value designated by the right operand after the usual arithmetic
-conversions (§6.15) have been applied.
+conversions ([§6.15][]) have been applied.
 
 If an attempt is made to perform integer or decimal division by zero, an implementation-defined
 terminating error is raised.
@@ -1280,7 +1281,7 @@ additive-expression:
 Description:
 
 The result of the addition operator `+` is the sum of the values designated by the two operands
-after the usual arithmetic conversions (§6.15) have been applied.
+after the usual arithmetic conversions ([§6.15][]) have been applied.
 
 This operator is left associative.
 
@@ -1299,7 +1300,7 @@ Description:
 
 When the left operand designates a string the binary `+` operator creates a new string that contains
 the value designated by the left operand followed immediately by the value(s) designated by the
-right operand as converted to type string (§6.8).
+right operand as converted to type string ([§6.8][]).
 
 This operator is left associative.
 
@@ -1320,7 +1321,7 @@ Description:
 When the left operand designates an array the binary `+` operator creates a new unconstrained
 1‑dimensional array that contains the elements designated by the left operand followed immediately
 by the value(s) designated by the right operand. Multidimensional arrays present in either operand
-are flattened (§9.12) before being used.
+are flattened ([§9.12][]) before being used.
 
 This operator is left associative.
 
@@ -1362,7 +1363,7 @@ Description:
 
 The result of the subtraction operator `-` is the difference when the value designated by the right
 operand is subtracted from the value designated by the left operand after the usual arithmetic
-conversions (§6.15) have been applied.
+conversions ([§6.15][]) have been applied.
 
 This operator is left associative.
 
@@ -1424,7 +1425,7 @@ Description:
 
 There are two *equality* *operators*: equality (`-eq`) and inequality (`-ne`); and four *relational
 operators*: less-than (`-lt`), less-than-or-equal-to (`-le`), greater-than (`-gt`), and
-greater-than-or-equal-to (`-ge`). Each of these has two variants (§7.8).
+greater-than-or-equal-to (`-ge`). Each of these has two variants ([§7.8][]).
 
 For two strings to compare equal, they must have the same length and contents, and letter case, if
 appropriate.
@@ -1454,14 +1455,14 @@ Examples:
 
 Description:
 
-There are four *containment* *operators*: contains (`-contains`), does-not-contain (`‑notcontains`), in
-(`-in`) and not-in (`-notin`). Each of these has two variants (§7.8).
+There are four *containment* *operators*: contains (`-contains`), does-not-contain (`‑notcontains`),
+in (`-in`) and not-in (`-notin`). Each of these has two variants ([§7.8][]).
 
 The containment operators return a result of type bool that indicates whether a value occurs (or
 does not occur) at least once in the elements of an array. With `-contains` and `‑notcontains`, the
 value is designated by the right operand and the array is designated by the left operand. With -in
-and `-notin`, the operands are reversed. The value is designated by the left operand and the array is
-designated by the right operand.
+and `-notin`, the operands are reversed. The value is designated by the left operand and the array
+is designated by the right operand.
 
 For the purposes of these operators, if the array operand has a scalar value, the scalar value is
 treated as an array of one element.
@@ -1525,8 +1526,8 @@ Description:
 If the left operand does not designate a collection, the result has type `bool`. Otherwise, the
 result is a possibly empty unconstrained 1-dimensional array containing the elements of the
 collection that test True when compared to the value designated by the right operand. The right
-operand may designate a string that contains wildcard expressions (§3.15). These operators have two
-variants (§7.8).
+operand may designate a string that contains wildcard expressions ([§3.15][]). These operators have
+two variants ([§7.8][]).
 
 Examples:
 
@@ -1555,10 +1556,10 @@ is `$true`, the elements of the Hashtable `$matches` are set to the strings that
 do-not-match) the value designated by the right operand. Otherwise, the result is a possibly empty
 unconstrained 1-dimensional array containing the elements of the collection that test True when
 compared to the value designated by the right operand, and `$matches` is not set. The right operand
-may designate a string that contains regular expressions (§3.16), in which case, it is referred to
-as a *pattern*. These operators have two variants (§7.8).
+may designate a string that contains regular expressions ([§3.16][]), in which case, it is referred
+to as a *pattern*. These operators have two variants ([§7.8][]).
 
-These operators support submatches (§7.8.4.6).
+These operators support submatches ([§7.8.4.6][]).
 
 Examples:
 
@@ -1580,10 +1581,10 @@ Examples:
 Description:
 
 The `-replace` operator allows text replacement in one or more strings designated by the left
-operand using the values designated by the right operand. This operator has two variants (§7.8). The
-right operand has one of the following forms:
+operand using the values designated by the right operand. This operator has two variants
+([§7.8][]). The right operand has one of the following forms:
 
-- The string to be located, which may contain regular expressions (§3.16). In this case, the
+- The string to be located, which may contain regular expressions ([§3.16][]). In this case, the
   replacement string is implicitly "".
 - An array of 2 objects containing the string to be located, followed by the replacement string.
 
@@ -1591,7 +1592,7 @@ If the left operand designates a string, the result has type string. If the left
 a 1‑dimensional array of string, the result is an unconstrained 1-dimensional array, whose length is
 the same as for left operand's array, containing the input strings after replacement has completed.
 
-This operator supports submatches (§7.8.4.6).
+This operator supports submatches ([§7.8.4.6][]).
 
 Examples:
 
@@ -1607,9 +1608,9 @@ Examples:
 Description:
 
 The binary `-join` operator produces a string that is the concatenation of the value of one or more
-objects designated by the left operand after having been converted to string (§6.7), if necessary.
-The string designated by the right operand is used to separate the (possibly empty) values in the
-resulting string.
+objects designated by the left operand after having been converted to string ([§6.7][]), if
+necessary. The string designated by the right operand is used to separate the (possibly empty)
+values in the resulting string.
 
 The left operand can be a scalar value or a collection.
 
@@ -1627,8 +1628,8 @@ Description:
 
 The binary `-split` operator splits one or more strings designated by the left operand, returning
 their subparts in a constrained 1-dimensional array of string. This operator has two variants
-(§7.8). The left operand can designate a scalar value or an array of strings. The right operand has
-one of the following forms:
+([§7.8][]). The left operand can designate a scalar value or an array of strings. The right operand
+has one of the following forms:
 
 - A *delimiter string*
 - An array of 2 objects containing a delimiter string followed by a numeric *split count*
@@ -1637,8 +1638,8 @@ one of the following forms:
 - A script block
 - An array of 2 objects containing a script block followed by a numeric split count
 
-The delimiter string may contain regular expressions (§3.16). It is used to locate subparts with the
-input strings. The delimiter is not included in the resulting strings. If the left operand
+The delimiter string may contain regular expressions ([§3.16][]). It is used to locate subparts with
+the input strings. The delimiter is not included in the resulting strings. If the left operand
 designates an empty string, that results in an empty string element. If the delimiter string is an
 empty string, it is found at every character position in the input strings.
 
@@ -1671,8 +1672,8 @@ Here is the set of option names:
 | SimpleMatch             | Use simple string comparison when evaluating the delimiter.                                          |
 | Singleline              | This mode recognizes only the start and end of strings. It is the default mode.                      |
 
-The script block (§7.1.8) specifies the rules for determining the delimiter, and must evaluate to
-type bool.
+The script block ([§7.1.8][]) specifies the rules for determining the delimiter, and must evaluate
+to type bool.
 
 Examples:
 
@@ -1719,8 +1720,8 @@ Again, key 0 contains "red". Key 1 contains "re", key 2 contains "r", and key 3 
 key/value pairs are in matching order from left-to-right in the pattern, with longer string matches
 preceding shorter ones.
 
-In the case of `-replace`, the replacement text can access the submatches via names of the form `$n`,
-where the first match is `$1`, the second is `$3`, and so on. For example,
+In the case of `-replace`, the replacement text can access the submatches via names of the form
+`$n`, where the first match is `$1`, the second is `$3`, and so on. For example,
 
 ```powershell
 "Monday morning" -replace '(Monday|Tuesday) (morning|afternoon|evening)','the $2 of $1'
@@ -1738,7 +1739,7 @@ Description:
 
 The shift left (`-shl`) operator and shift right (`-shr`) operator convert the value designed by the
 left operand to an integer type and the value designated by the right operand to int, if necessary,
-using the usual arithmetic conversions (§6.15).
+using the usual arithmetic conversions ([§6.15][]).
 
 The shift left operator shifts the left operand left by a number of bits computed as described
 below. The low-order empty bit positions are set to zero.
@@ -1777,11 +1778,11 @@ Description:
 
 The bitwise AND operator `-band`, the bitwise OR operator `-bor`, and the bitwise XOR operator -bxor
 convert the values designated by their operands to integer types, if necessary, using the usual
-arithmetic conversions (§6.15). After conversion, if both values have type int that is the type of
-the result. Otherwise, if both values have type long, that is the type of the result. If one value
-has type int and the other has type long, the type of the result is long. Otherwise, the expression
-is ill formed. The result is the bitwise AND, bitwise OR, or bitwise XOR, respectively, of the
-possibly converted operand values.
+arithmetic conversions ([§6.15][]). After conversion, if both values have type int that is the type
+of the result. Otherwise, if both values have type long, that is the type of the result. If one
+value has type int and the other has type long, the type of the result is long. Otherwise, the
+expression is ill formed. The result is the bitwise AND, bitwise OR, or bitwise XOR, respectively,
+of the possibly converted operand values.
 
 These operators are left associative. They are commutative if neither operand contains a side
 effect.
@@ -1818,15 +1819,16 @@ logical-expression:
 Description:
 
 The logical AND operator `-and` converts the values designated by its operands to `bool`, if
-necessary (§6.2). The result is the logical AND of the possibly converted operand values, and has
-type `bool`. If the left operand evaluates to False the right operand is not evaluated.
+necessary ([§6.2][]). The result is the logical AND of the possibly converted operand values, and
+has type `bool`. If the left operand evaluates to False the right operand is not evaluated.
 
 The logical OR operator `-or` converts the values designated by its operands to `bool`, if necessary
-(§6.2). The result is the logical OR of the possibly converted operand values, and has type `bool`.
-If the left operand evaluates to True the right operand is not evaluated.
+([§6.2][]). The result is the logical OR of the possibly converted operand values, and has type
+`bool`. If the left operand evaluates to True the right operand is not evaluated.
 
-The logical XOR operator `-xor` converts the values designated by its operands to `bool` (§6.2). The
-result is the logical XOR of the possibly converted operand values, and has type `bool`.
+The logical XOR operator `-xor` converts the values designated by its operands to `bool`
+([§6.2][]). The result is the logical XOR of the possibly converted operand values, and has type
+`bool`.
 
 These operators are left associative.
 
@@ -1868,14 +1870,14 @@ assignment-operator: *one of
 Description:
 
 An assignment operator stores a value in the writable location designated by *expression*. For a
-discussion of *assignment-operator* `=` see §7.11.1. For a discussion of all other
-*assignment-operator*s see §7.11.2.
+discussion of *assignment-operator* `=` see [§7.11.1][]. For a discussion of all other
+*assignment-operator*s see [§7.11.2][].
 
 An assignment expression has the value designated by *expression* after the assignment has taken
 place; however, that assignment expression does not itself designate a writable location. If
-*expression* is type-constrained (§5.3), the type used in that constraint is the type of the result;
-otherwise, the type of the result is the type after the usual arithmetic conversions (§6.15) have
-been applied.
+*expression* is type-constrained ([§5.3][]), the type used in that constraint is the type of the
+result; otherwise, the type of the result is the type after the usual arithmetic conversions
+([§6.15][]) have been applied.
 
 This operator is right associative.
 
@@ -1894,12 +1896,12 @@ values. The commas in either operand list are part of the multiple-assignment sy
 represent the binary comma operator. Values are taken from the list designated by *statement*, in
 lexical order, and stored in the corresponding writable location designated by *expression*. If the
 list designated by *statement* has fewer values than there are *expression* writable locations, the
-excess locations take on the value `$null`. If the list designated by *statement* has more values than
-there are *expression* writable locations, all but the right-most *expression* location take on the
-corresponding *statement* value and the right-most *expression* location becomes an unconstrained
-1-dimensional array with all the remaining *statement* values as elements.
+excess locations take on the value `$null`. If the list designated by *statement* has more values
+than there are *expression* writable locations, all but the right-most *expression* location take on
+the corresponding *statement* value and the right-most *expression* location becomes an
+unconstrained 1-dimensional array with all the remaining *statement* values as elements.
 
-For statements that have values (§8.1.2), *statement* can be a statement.
+For statements that have values ([§8.1.2][]), *statement* can be a statement.
 
 Examples:
 
@@ -1939,10 +1941,10 @@ Description:
 
 A *compound assignment* has the form `E1 op= E2`, and is equivalent to the simple assignment
 expression `E1 = E1 op (E2)` except that in the compound assignment case the expression *E1* is
-evaluated only once. If *expression* is type-constrained (§5.3), the type used in that constraint is
-the type of the result; otherwise, the type of the result is determined by *op*. (For `*=`, see
-§7.6.1, §7.6.2, §7.6.3; for `/=`, see §7.6.4; for `%=`, see §7.6.5; for `+=`, see §7.7.1, §7.7.2, §7.7.3;
-for `-=`, see §7.7.5.)
+evaluated only once. If *expression* is type-constrained ([§5.3][]), the type used in that
+constraint is the type of the result; otherwise, the type of the result is determined by *op*. For
+`*=`, see [§7.6.1][], [§7.6.2][], [§7.6.3][]; for `/=`, see [§7.6.4][]; for `%=`, see [§7.6.5][];
+for `+=`, see [§7.7.1][], [§7.7.2][], [§7.7.3][]; for `-=`, see [§7.7.5][].
 
 > [!NOTE]
 > An operand designating an unconstrained value of numeric type may have its type changed by an
@@ -2055,3 +2057,50 @@ dir -Verbose -Debug -WarningAction Continue *> output2.txt
 # to the same location as error output
 dir -Verbose 4>&2 2> error2.txt
 ```
+
+<!-- reference links -->
+[§2.3.5.2]: chapter-02.md#2352-string-literals
+[§3.15]: chapter-03.md#315-wildcard-expressions
+[§3.16]: chapter-03.md#316-regular-expressions
+[§4.3.7]: chapter-04.md#437-the-scriptblock-type
+[§4.4]: chapter-04.md#44-generic-types
+[§4.5.24]: chapter-04.md#4524-method-designator-type
+[§5.3]: chapter-05.md#53-constrained-variables
+[§6.15]: chapter-06.md#615-usual-arithmetic-conversions
+[§6.17]: chapter-06.md#617-conversion-during-parameter-binding
+[§6.2]: chapter-06.md#62-conversion-to-bool
+[§6.4]: chapter-06.md#64-conversion-to-integer
+[§6.7]: chapter-06.md#67-conversion-to-object
+[§6.8]: chapter-06.md#68-conversion-to-string
+[§7.1.1]: chapter-07.md#711-grouping-parentheses
+[§7.1.2]: chapter-07.md#712-member-access
+[§7.1.4.5]: chapter-07.md#7145-generating-array-slices
+[§7.1.6]: chapter-07.md#716--operator
+[§7.1.8]: chapter-07.md#718-script-block-expression
+[§7.11.1]: chapter-07.md#7111-simple-assignment
+[§7.11.2]: chapter-07.md#7112-compound-assignment
+[§7.11]: chapter-07.md#711-assignment-operators
+[§7.2.9]: chapter-07.md#729-cast-operator
+[§7.6.1]: chapter-07.md#761-multiplication
+[§7.6.2]: chapter-07.md#762-string-replication
+[§7.6.3]: chapter-07.md#763-array-replication
+[§7.6.4]: chapter-07.md#764-division
+[§7.6.5]: chapter-07.md#765-remainder
+[§7.7.1]: chapter-07.md#771-addition
+[§7.7.2]: chapter-07.md#772-string-concatentaion
+[§7.7.3]: chapter-07.md#773-array-concatenation
+[§7.7.5]: chapter-07.md#775-subtraction
+[§7.7]: chapter-07.md#77-additive-operators
+[§7.8.4.4]: chapter-07.md#7844-the-binary--join-operator
+[§7.8.4.5]: chapter-07.md#7845-the-binary--split-operator
+[§7.8.4.6]: chapter-07.md#7846-submatches
+[§7.8]: chapter-07.md#78-comparison-operators
+[§8.1.2]: chapter-08.md#812-statement-values
+[§8.10.1]: chapter-08.md#8101-filter-functions
+[§8.10.2]: chapter-08.md#8102-workflow-functions
+[§8.10.7]: chapter-08.md#8107-named-blocks
+[§8.10.9]: chapter-08.md#8109-param-block
+[§9.]: chapter-09.md#9-arrays
+[§9.12]: chapter-09.md#912-multidimensional-array-flattening
+[§9.4]: chapter-09.md#94-constraining-element-types
+[§9.9]: chapter-09.md#99-array-slices

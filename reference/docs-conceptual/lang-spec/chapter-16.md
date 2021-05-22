@@ -30,3 +30,5 @@ ISO/IEC 10646-1/AMD1:1996, Amendment 1 to ISO/IEC 10646-1:1993, *Transformation 
 
 *The Unicode Standard*, Edition 5.2. The Unicode Consortium,
 [http://www.unicode.org/standard/standard.html](http://www.unicode.org/standard/standard.html).
+
+<!-- reference links -->

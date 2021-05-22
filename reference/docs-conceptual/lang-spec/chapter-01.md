@@ -42,7 +42,7 @@ another.)
 
 PowerShell includes a very rich scripting language that supports constructs for looping, conditions,
 flow-control, and variable assignment. This language has syntax features and keywords similar to
-those used in the C# programming language (§C. References).
+those used in the C# programming language ([§C.][] References).
 
 There are four kinds of commands in PowerShell: scripts, functions and methods, cmdlets, and native
 commands.
@@ -69,3 +69,6 @@ the pipeline.
 Unlike most shells, which accept and return text, Windows PowerShell is built on top of the .NET
 Framework common language runtime (CLR) and the .NET Framework, and accepts and returns .NET
 Framework objects.
+
+<!-- reference links -->
+[§C.]: chapter-16.md#c-references
