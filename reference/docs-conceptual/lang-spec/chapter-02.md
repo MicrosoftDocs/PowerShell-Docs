@@ -1127,10 +1127,11 @@ line terminators; however, the terminator for the second line of the body is *no
 body. The resulting literal is equivalent to:
 `"abc<implementation-defined character sequence>xyz"`.
 
-> [!NOTE] To aid readability of source, long string literals can be broken across multiple source
-> lines without line terminators being inserted. This is done by writing each part as a separate
-> literal and concatenating the parts with the + operator ([§7.7.2][]). This operator allows its
-> operands to designate any of the four kinds of string literal.
+> [!NOTE]
+> To aid readability of source, long string literals can be broken across multiple source lines
+> without line terminators being inserted. This is done by writing each part as a separate literal
+> and concatenating the parts with the + operator ([§7.7.2][]). This operator allows its operands to
+> designate any of the four kinds of string literal.
 
 > [!NOTE]
 > Although there is no such thing as a character literal per se, the same effect can be achieved by
