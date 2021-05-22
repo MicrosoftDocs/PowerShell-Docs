@@ -50,7 +50,7 @@ All array types are derived from the type Array ([§4.3.2][]).
 
 An array is created via an *array creation expression*, which has the following forms: unary comma
 operator ([§7.2.1][]) ,*array-expression* ([§7.1.7][]), binary comma operator ([§7.3][]), range
-operator ([§7.4][]), or New-Object cmdlet ([§13.36][]).
+operator ([§7.4][]), or [New-Object](xref:Microsoft.PowerShell.Utility.New-Object) cmdlet.
 
 Here are some examples of array creation and usage:
 
@@ -108,10 +108,9 @@ $a[1] = "abc"           # implementation-defined behavior
 $a += 1.23              # new array is unconstrained
 ```
 
-The syntax for creating a multidimensional array requires the specification of a type ([§13.36][]),
-and that type becomes the constraint type for that array. However, by specifying type `object[]`,
-there really is no constraint as a value of any type can be assigned to an element of an array of
-that type.
+The syntax for creating a multidimensional array requires the specification of a type, and that type
+becomes the constraint type for that array. However, by specifying type `object[]`, there really is
+no constraint as a value of any type can be assigned to an element of an array of that type.
 
 Concatenating two arrays ([§7.7.3][]) always results in a new array that is unconstrained even if
 both arrays are constrained by the same type. For example,

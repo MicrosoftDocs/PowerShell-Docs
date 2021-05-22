@@ -495,8 +495,8 @@ Every foreach statement has its own enumerator, `$foreach` ([§2.3.2.2][], [§4.
 only while that loop is executing.
 
 The objects produced by *pipeline* are collected before *statement-block* begins to execute.
-However, with the `ForEach-Object` cmdlet ([§13.12][]), *statement-block* is executed on each object
-as it is produced.
+However, with the [ForEach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object) cmdlet,
+*statement-block* is executed on each object as it is produced.
 
 Examples:
 
@@ -1170,7 +1170,8 @@ only:
 - Pipelines
 - Statements separated by semicolons (`;`)
 - Literals
-- Calls to the `ConvertFrom-StringData` cmdlet ([§13.7][])
+- Calls to the [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
+  cmdlet
 - Any other cmdlets identified via the **supportedcommand** parameter
 
 If the `ConvertFrom-StringData` cmdlet is used, the key/value pairs can be expressed using any form
@@ -1446,10 +1447,10 @@ Dynamic parameters are parameters of a cmdlet, function, filter, or script that 
 certain conditions only. One such case is the **Encoding** parameter of the `Set-Item` cmdlet.
 
 In the *statement-block*, use an if statement to specify the conditions under which the parameter is
-available in the function. Use the `New-Object` cmdlet ([§13.35][]) to create an object of an
-implementation-defined type to represent the parameter, and specify its name. Also, use `New-Object`
-to create an object of a different implementation-defined type to represent the
-implementation-defined attributes of the parameter.
+available in the function. Use the [New-Object](xref:Microsoft.PowerShell.Utility.New-Object) cmdlet
+to create an object of an implementation-defined type to represent the parameter, and specify its
+name. Also, use `New-Object` to create an object of a different implementation-defined type to
+represent the implementation-defined attributes of the parameter.
 
 The following example shows a function with standard parameters called Name and Path, and an
 optional dynamic parameter named **DP1**. The **DP1** parameter is in the PSet1 parameter set and
@@ -1587,7 +1588,7 @@ parameter by name. This is done by using a *parameter with argument*, which is a
 the parameter's name with a leading dash (-), followed by the associated value for that argument.
 The parameter name used can have any case-insensitive spelling and can use any prefix that uniquely
 designates the corresponding parameter. When choosing parameter names, avoid using the names of the
-common parameters ([§13.56][]).
+[common parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
 Consider the following calls to function `Get-Power`:
 
