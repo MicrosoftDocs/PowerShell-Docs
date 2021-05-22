@@ -32,11 +32,11 @@ variable **PSModulePath**.
 
 The following cmdlets deal with modules:
 
-- `Get-Module`: Identifies the modules that have been, or that can be, imported (see [§13.23][])
-- `Import-Module`: Adds one or more modules to the current session (see [§11.4][], [§13.28][])
-- `Export-ModuleMember`: Identifies the module members that are to be exported (see [§13.11][])
-- `Remove-Module`: Removes one or more modules from the current session (see [§11.5][], [§13.41][])
-- `New-Module`: Creates a dynamic module (see [§11.7][], [§13.35][])
+- [Get-Module](xref:Microsoft.PowerShell.Core.Get-Module): Identifies the modules that have been, or that can be, imported
+- [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module): Adds one or more modules to the current session (see [§11.4][])
+- [Export-ModuleMember](xref:Microsoft.PowerShell.Core.Export-ModuleMember): Identifies the module members that are to be exported
+- [Remove-Module](xref:Microsoft.PowerShell.Core.Remove-Module): Removes one or more modules from the current session (see [§11.5][])
+- [New-Module](xref:Microsoft.PowerShell.Core.New-Module): Creates a dynamic module (see [§11.7][])
 
 ## 11.2 Writing a script module
 
@@ -75,13 +75,13 @@ can be provided; for example,
 
 Any additional paths added affect the current session only.
 
-Alternatively, a fully qualified path can be specified when a module is imported ([§13.28][]).
+Alternatively, a fully qualified path can be specified when a module is imported.
 
 ## 11.4 Importing a script module
 
 Before the resources in a module can be used, that module must be imported into the current session,
-using the cmdlet `Import-Module` ([§13.28][]). `Import-Module` can restrict the resources that it
-actually imports.
+using the cmdlet `Import-Module`. `Import-Module` can restrict the resources that it actually
+imports.
 
 When a module is imported, its script file is executed. That process can be configured by defining
 one or more parameters in the script file, and passing in corresponding arguments via the
@@ -115,7 +115,7 @@ See [§3.5.6][] for a discussion of scope as it relates to modules.
 
 ## 11.5 Removing a script module
 
-One or more modules can be removed from a session via the cmdlet `Remove-Module` ([§13.41][]).
+One or more modules can be removed from a session via the cmdlet `Remove-Module`.
 
 Removing a module does not uninstall the module.
 
@@ -166,8 +166,8 @@ GUID, call the method `[guid]::NewGuid()`.
 
 ## 11.7 Dynamic modules
 
-A *dynamic module* is a module that is created in memory at runtime by the cmdlet `New-Module`
-([§13.35][]); it is not loaded from disk. Consider the following example:
+A *dynamic module* is a module that is created in memory at runtime by the cmdlet `New-Module`; it
+is not loaded from disk. Consider the following example:
 
 ```powershell
 $sb = {

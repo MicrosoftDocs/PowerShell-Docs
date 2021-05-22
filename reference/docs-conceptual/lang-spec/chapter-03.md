@@ -34,8 +34,9 @@ Windows PowerShell:
 
 The following cmdlets deal with providers and drives:
 
-- `Get-PSProvider`: Gets information about one or more providers (see [§13.25][])
-- `Get-PSDrive`: Gets information about one or more drives (see [§13.24][])
+- [Get-PSProvider](xref:Microsoft.PowerShell.Management.Get-PSProvider): Gets information about one
+  or more providers
+- [Get-PSDrive](xref:Microsoft.PowerShell.Management.Get-PSDrive): Gets information about one or more drives
 
 The type of an object that represents a provider is described in [§4.5.1][]. The type of an object
 that represents a drive is described in [§4.5.2][].
@@ -52,15 +53,16 @@ command.
 The provider Alias is a flat namespace that contains only objects that represent the aliases. The
 variables have no child items.
 
-Some aliases are built in to PowerShell. (For those built-in cmdlets having aliases, those aliases
-follow their cmdlets name in the section heading of [§13.][])
+Some aliases are built in to PowerShell.
 
 The following cmdlets deal with aliases:
 
-- `New-Alias`: Creates an alias (see [§13.33][])
-- `Set-Alias`: Creates or changes one or more aliases (see [§13.46][])
-- `Get-Alias`: Gets information about one or more aliases (see [§13.13][])
-- `Export-Alias`: Exports one or more aliases to a file (see [§13.10][])
+- [New-Alias](xref:Microsoft.PowerShell.Utility.New-Alias): Creates an alias
+- [Set-Alias](xref:Microsoft.PowerShell.Utility.Set-Alias): Creates or changes one or more aliases
+- [Get-Alias](xref:Microsoft.PowerShell.Utility.Get-Alias): Gets information about one or more
+  aliases
+- [Export-Alias](xref:Microsoft.PowerShell.Utility.Export-Alias): Exports one or more aliases to a
+  file
 
 When an alias is created for a command using `New-Alias`, parameters to that command cannot be
 included in that alias. However, direct assignment to a variable in the Alias: namespace does permit
@@ -131,11 +133,15 @@ The variables have no child items.
 
 The following cmdlets also deal with variables:
 
-- `New-Variable`: Creates a variable (see [§13.37][])
-- `Set-Variable`: Creates or changes the characteristics of one or more variables (see [§13.50][])
-- `Get-Variable`: Gets information about one or more variables (see [§13.26][])
-- `Clear-Variable`: Deletes the value of one or more variables (see [§13.5][])
-- `Remove-Variable`: Deletes one or more variables (see [§13.42][])
+- [New-Variable](xref:Microsoft.PowerShell.Utility.New-Variable): Creates a variable
+- [Set-Variable](xref:Microsoft.PowerShell.Utility.Set-Variable): Creates or changes the
+  characteristics of one or more variables
+- [Get-Variable](xref:Microsoft.PowerShell.Utility.Get-Variable): Gets information about one or more
+  variables
+- [Clear-Variable](xref:Microsoft.PowerShell.Utility.Clear-Variable): Deletes the value of one or
+  more variables
+- [Remove-Variable](xref:Microsoft.PowerShell.Utility.Remove-Variable): Deletes one or more
+  variables
 
 As a variable is an item ([§3.3][]), it can be manipulated by most Item-related cmdlets.
 
@@ -162,13 +168,14 @@ working location stack.
 
 The following cmdlets deal with locations:
 
-- `Set-Location`: Establishes the current working location (see [§13.49][])
-- `Get-Location`: Determines the current working location for the specified drive(s), or the working
-  locations for the specified stack(s) (see [§13.21][])
-- `Push-Location`: Saves the current working location on the top of a specified stack of locations
-  (see [§13.39][])
-- `Pop-Location`: Restores the current working location from the top of a specified stack of
-  locations (see [§13.38][])
+- [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location): Establishes the current working
+  location
+- [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location): Determines the current working
+  location for the specified drive(s), or the working locations for the specified stack(s)
+- [Push-Location](xref:Microsoft.PowerShell.Management.Push-Location): Saves the current working
+  location on the top of a specified stack of locations
+- [Pop-Location](xref:Microsoft.PowerShell.Management.Pop-Location): Restores the current working
+  location from the top of a specified stack of locations
 
 The object types that represents a working location and a stack of working locations are described
 in [§4.5.5][].
@@ -180,24 +187,32 @@ variable ([§3.1.2][]), or a file or directory in a file system ([§3.1.3][]).
 
 The following cmdlets deal with items:
 
-- `New-Item`: Creates a new item (see [§13.34][])
-- `Set-Item`: Changes the value of one or more items (see [§13.48][])
-- `Get-Item`: Gets the items at the specified location (see [§13.17][])
-- `Get-ChildItem`: Gets the items and child items at the specified location (see [§13.14][])
-- `Copy-Item`: Copies one or more items from one location to another (see [§13.9][])
-- `Move-Item`: Moves one or more items from one location to another (see [§13.32][])
-- `Rename-Item`: Renames an item (see [§13.43][])
-- `Invoke-Item`: Performs the default action on one or more items (see [§13.29][])
-- `Clear-Item`: Deletes the contents of one or more items, but does not delete the items (see
-  [§13.4][])
-- `Remove-Item`: Deletes the specified items (see [§13.40][])
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item): Creates a new item
+- [Set-Item](xref:Microsoft.PowerShell.Management.Set-Item): Changes the value of one or more items
+- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item): Gets the items at the specified
+  location
+- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem): Gets the items and child
+  items at the specified location
+- [Copy-Item](xref:Microsoft.PowerShell.Management.Copy-Item): Copies one or more items from one
+  location to another
+- [Move-Item](xref:Microsoft.PowerShell.Management.Move-Item): Moves one or more items from one
+  location to another
+- [Rename-Item](xref:Microsoft.PowerShell.Management.Rename-Item): Renames an item
+- [Invoke-Item](xref:Microsoft.PowerShell.Management.Invoke-Item): Performs the default action on
+  one or more items
+- [Clear-Item](xref:Microsoft.PowerShell.Management.Clear-Item): Deletes the contents of one or more
+  items, but does not delete the items (see
+- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item): Deletes the specified items
 
 The following cmdlets deal with the content of items:
 
-- `Get-Content`: Gets the content of the item (see [§13.16][])
-- `Add-Content`: Adds content to the specified items (see [§13.1][])
-- `Set-Content`: Writes or replaces the content in an item (see [§13.47][])
-- `Clear-Content`: Deletes the contents of an item (see [§13.3][])
+- [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content): Gets the content of the item
+- [Add-Content](xref:Microsoft.PowerShell.Management.Add-Content): Adds content to the specified
+  items
+- [Set-Content](xref:Microsoft.PowerShell.Management.Set-Content): Writes or replaces the content in
+  an item
+- [Clear-Content](xref:Microsoft.PowerShell.Management.Clear-Content): Deletes the contents of an
+  item
 
 The type of an object that represents a directory is described in [§4.5.17][]. The type of an object
 that represents a file is described in [§4.5.18][].
@@ -270,16 +285,20 @@ relative path name.
 
 The following cmdlets deal with paths:
 
-- `Convert-Path`: Converts a path from a PowerShell path to a PowerShell provider path (see
-  [§13.8][])
-- `Join-Path`: Combines a path and a child path into a single path (see [§13.30][])
-- `Resolve-Path`: Resolves the wildcard characters in a path (see [§13.44][])
-- `Split-Path`: Returns the specified part of a path (see [§13.52][])
-- `Test-Path`: Determines whether the elements of a path exist or if a path is well formed (see
-  [§13.54][])
+- [Convert-Path](xref:Microsoft.PowerShell.Management.Convert-Path): Converts a path from a
+  PowerShell path to a PowerShell provider path
+- [Join-Path](xref:Microsoft.PowerShell.Management.Join-Path): Combines a path and a child path into
+  a single path
+- [Resolve-Path](xref:Microsoft.PowerShell.Management.Resolve-Path): Resolves the wildcard
+  characters in a path
+- [Split-Path](xref:Microsoft.PowerShell.Management.Split-Path): Returns the specified part of a
+  path
+- [Test-Path](xref:Microsoft.PowerShell.Management.Test-Path): Determines whether the elements of a
+  path exist or if a path is well formed
 
-Some cmdlets (such as `Add-Content` ([§13.1][]) and `Copy-Item` ([§13.9][])) use file filters. A
-*file filter* is a mechanism for specifying the criteria for selecting from a set of paths.
+Some cmdlets (such as [Add-Content](xref:Microsoft.PowerShell.Management.Add-Content) and
+`Copy-Item` use file filters. A *file filter* is a mechanism for specifying the criteria for
+selecting from a set of paths.
 
 The object type that represents a resolved path is described in [§4.5.5][]. Paths are often
 manipulated as strings.
@@ -483,8 +502,9 @@ instead. For example,
 
 Just like a top-level script file is at the root of a hierarchical nested scope tree, so too is each
 module ([§3.14][]). However, by default, only those names exported by a module are available by name
-from within the importing context. The Global parameter of the cmdlet `Import-Module` ([§13.28][])
-allows exported names to have increased visibility.
+from within the importing context. The Global parameter of the cmdlet
+[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module) allows exported names to have
+increased visibility.
 
 ## 3.6 ReadOnly and Constant Properties
 
@@ -786,7 +806,7 @@ records are discarded as new ones are added. The automatic variable `$MaximumErr
 the number of records that can be stored.
 
 `$Error` contains all of the errors from all commands mixed in together in one collection. To
-collect the errors from a specific command, use the common parameter ErrorVariable ([§13.56][]),
+collect the errors from a specific command, use the common parameter [ErrorVariable][],
 which allows a user-defined variable to be specified to hold the collection.
 
 ## 3.13 Pipelines
@@ -832,8 +852,8 @@ organized, and abstracted. A module can contain commands (such as cmdlets and fu
 
 Once a module has been created, it must be *imported* into a session before the commands and items
 within it can be used. Once imported, commands and items behave as if they were defined locally. A
-module is imported explicitly with the `Import-Module` ([§13.28][]) command. A module may also be
-imported automatically as determined in an implementation defined manner.
+module is imported explicitly with the `Import-Module` command. A module may also be imported
+automatically as determined in an implementation defined manner.
 
 The type of an object that represents a module is described in [§4.5.12][].
 
@@ -995,3 +1015,4 @@ Quantifiers available in Microsoft .NET Framework regular expressions are suppor
 [§7.12]: chapter-07.md#712-redirection-operators
 [§8.10.1]: chapter-08.md#8101-filter-functions
 [§8.10]: chapter-08.md#810-function-definitions
+[ErrorVariable]: /powershell/module/microsoft.powershell.core/about/about_commonparameters

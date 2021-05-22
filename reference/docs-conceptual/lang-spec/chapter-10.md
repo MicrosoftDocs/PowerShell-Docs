@@ -65,8 +65,9 @@ returned by Keys and Values have type **ICollection**.
 
 ## 10.2 Hashtable creation
 
-A `Hashtable` is created via a hash literal ([§7.1.9][]) or the `New-Object` cmdlet ([§13.36][]). It
-can be created with zero or more elements. The Count property returns the current element count.
+A `Hashtable` is created via a hash literal ([§7.1.9][]) or the
+[New-Object](xref:Microsoft.PowerShell.Utility.New-Object) cmdlet. It can be created with zero or
+more elements. The Count property returns the current element count.
 
 ## 10.3 Adding and removing Hashtable elements
 
