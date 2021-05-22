@@ -2091,8 +2091,8 @@ dir -Verbose 4>&2 2> error2.txt
 [§7.7.3]: chapter-07.md#773-array-concatenation
 [§7.7.5]: chapter-07.md#775-subtraction
 [§7.7]: chapter-07.md#77-additive-operators
-[§7.8.4.4]: chapter-07.md#7844-the-binary-join-operator
-[§7.8.4.5]: chapter-07.md#7845-the-binary-split-operator
+[§7.8.4.4]: chapter-07.md#7844-the-binary--join-operator
+[§7.8.4.5]: chapter-07.md#7845-the-binary--split-operator
 [§7.8.4.6]: chapter-07.md#7846-submatches
 [§7.8]: chapter-07.md#78-comparison-operators
 [§8.1.2]: chapter-08.md#812-statement-values

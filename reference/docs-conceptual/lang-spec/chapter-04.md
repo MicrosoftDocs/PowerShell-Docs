@@ -1216,7 +1216,7 @@ There are three ways create a custom object having a new member M:
 [§4.2.2]: chapter-04.md#422-character
 [§4.2.3]: chapter-04.md#423-integer
 [§4.2.4]: chapter-04.md#424-real-number
-[§4.2.6.3]: chapter-04.md#4263-fileattributes-type
+[§4.2.6.3]: chapter-04.md#4263-file-attributes-type
 [§4.3.1]: chapter-04.md#431-strings
 [§4.3.6]: chapter-04.md#436-the-ref-type
 [§4.5.1]: chapter-04.md#451-provider-description-type
@@ -1224,7 +1224,7 @@ There are three ways create a custom object having a new member M:
 [§4.5.11]: chapter-04.md#4511-filter-description-type
 [§4.5.12]: chapter-04.md#4512-module-description-type
 [§4.5.16]: chapter-04.md#4516-enumerator-description-type
-[§4.5.19]: chapter-04.md#4519-datetime-description-type
+[§4.5.19]: chapter-04.md#4519-date-time-description-type
 [§4.5.2]: chapter-04.md#452-drive-description-type
 [§5.3]: chapter-05.md#53-constrained-variables
 [§7.1.10]: chapter-07.md#7110-type-literal-expression

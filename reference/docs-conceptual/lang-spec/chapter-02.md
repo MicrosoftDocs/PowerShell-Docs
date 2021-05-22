@@ -1282,7 +1282,7 @@ written as ``Test` Data.txt`` (as well as `'Test Data.txt'` or `"Test Data.txt"`
 <!-- reference links -->
 [§2.2.2]: chapter-02.md#222-line-terminators
 [§2.2.4]: chapter-02.md#224-white-space
-[§2.3.2.1]: chapter-02.md#2321-userdefined-variables
+[§2.3.2.1]: chapter-02.md#2321-user-defined-variables
 [§2.3.2.2]: chapter-02.md#2322-automatic-variables
 [§2.3.2.3]: chapter-02.md#2323-preference-variables
 [§2.3.5.1.1]: chapter-02.md#23511-integer-literals
