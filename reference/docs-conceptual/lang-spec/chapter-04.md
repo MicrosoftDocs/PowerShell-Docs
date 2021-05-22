@@ -37,8 +37,9 @@ integer, and integers of other sizes).
 A *collection* is a group of one or more related items, which need not have the same type. Examples
 of collection types are arrays, stacks, queues, lists, and hash tables. A program can *enumerate*
 (or *iterate*) over the elements in a collection, getting access to each element one at a time.
-Common ways to do this are with the foreach statement ([§8.4.4][]) and the `ForEach-Object` cmdlet
-([§13.12][]). The type of an object that represents an enumerator is described in [§4.5.16][].
+Common ways to do this are with the foreach statement ([§8.4.4][]) and the
+[ForEach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object) cmdlet. The type of an object that
+represents an enumerator is described in [§4.5.16][].
 
 In this chapter, there are tables that list the accessible members for a given type. For methods,
 the **Type** is written with the following form: *returnType*/*argumentTypeList*. If the argument
@@ -729,15 +730,15 @@ In PowerShell, this type is `System.Management.Automation.PSDriveInfo`.
 
 This type encapsulates the state of a variable. It has the following accessible members:
 
-| **Member**  |        **Member Kind**         |               **Type**               |                                                                          **Purpose**                                                                           |
-| ----------- | ------------------------------ | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Attributes  | Instance property (read-only)  | Implementation defined               | A collection of attributes                                                                                                                                     |
-| Description | Instance property (read-write) | string                               | The description assigned to the variable via the New-Variable ([§13.37][]) or Set-Variable ([§13.50][]) cmdlets.                                               |
-| Module      | Instance property (read-only)  | Implementation defined ([§4.5.12][]) | The module from which this variable was exported                                                                                                               |
-| ModuleName  | Instance property (read-only)  | string                               | The module in which this variable was defined                                                                                                                  |
-| Name        | Instance property (read-only)  | string                               | The name assigned to the variable when it was created in the PowerShell language or via the New-Variable ([§13.37][]) and Set-Variable ([§13.50][]) cmdlets.   |
-| Options     | Instance property (read-write) | string                               | The options assigned to the variable via the New-Variable ([§13.37][]) or Set-Variable ([§13.50][]) cmdlets.                                                   |
-| Value       | Instance property (read-write) | object                               | The value assigned to the variable when it was assigned in the PowerShell language or via the New-Variable ([§13.37][]) and Set-Variable ([§13.50][]) cmdlets. |
+| **Member**  |        **Member Kind**         |               **Type**               |                                                                                        **Purpose**                                                                                         |
+| ----------- | ------------------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Attributes  | Instance property (read-only)  | Implementation defined               | A collection of attributes                                                                                                                                                                 |
+| Description | Instance property (read-write) | string                               | The description assigned to the variable via the [New-Variable](xref:Microsoft.PowerShell.Utility.New-Variable) or [Set-Variable](xref:Microsoft.PowerShell.Utility.Set-Variable) cmdlets. |
+| Module      | Instance property (read-only)  | Implementation defined ([§4.5.12][]) | The module from which this variable was exported                                                                                                                                           |
+| ModuleName  | Instance property (read-only)  | string                               | The module in which this variable was defined                                                                                                                                              |
+| Name        | Instance property (read-only)  | string                               | The name assigned to the variable when it was created in the PowerShell language or via the `New-Variable` and `Set-Variable` cmdlets.                                                     |
+| Options     | Instance property (read-write) | string                               | The options assigned to the variable via the `New-Variable` and `Set-Variable` cmdlets.                                                                                                    |
+| Value       | Instance property (read-write) | object                               | The value assigned to the variable when it was assigned in the PowerShell language or via the `New-Variable` and `Set-Variable` cmdlets.                                                   |
 
 In PowerShell, this type is `System.Management.Automation.PSVariable`.
 
@@ -748,20 +749,20 @@ System.Management.Automation.PSVariableAttributeCollection.
 
 This type encapsulates the state of an alias. It has the following accessible members:
 
-|    **Member**     |        **Member Kind**         |               **Type**               |                                                      **Purpose**                                                       |
-| ----------------- | ------------------------------ | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| CommandType       | Instance property (read-only)  | Implementation defined               | Should compare equal with "Alias".                                                                                     |
-| Definition        | Instance property (read-only)  | string                               | The command or alias to which the alias was assigned via the New-Alias ([§13.33][]) or Set-Alias ([§13.46][]) cmdlets. |
-| Description       | Instance property (read-write) | string                               | The description assigned to the alias via the New-Alias ([§13.33][]) or Set-Alias ([§13.46][]) cmdlets.                |
-| Module            | Instance property (read-only)  | Implementation defined ([§4.5.12][]) | The module from which this alias was exported                                                                          |
-| ModuleName        | Instance property (read-only)  | string                               | The module in which this alias was defined                                                                             |
-| Name              | Instance property (read-only)  | string                               | The name assigned to the alias when it was created via the New-Alias ([§13.33][]) or Set-Alias ([§13.46][]) cmdlets.   |
-| Options           | Instance property (read-write) | string                               | The options assigned to the alias via the New-Alias ([§13.33][]) or Set-Alias ([§13.46][]) cmdlets.                    |
-| OutputType        | Instance property (read-only)  | Implementation defined collection    | Specifies the types of the values output by the command to which the alias refers.                                     |
-| Parameters        | Instance property (read-only)  | Implementation defined collection    | The parameters of the command.                                                                                         |
-| ParameterSets     | Instance property (read-only)  | Implementation defined collection    | Information about the parameter sets associated with the command.                                                      |
-| ReferencedCommand | Instance property (read-only)  | Implementation defined               | Information about the command that is immediately referenced by this alias.                                            |
-| ResolvedCommand   | Instance property (read-only)  | Implementation defined               | Information about the command to which the alias eventually resolves.                                                  |
+|    **Member**     |        **Member Kind**         |               **Type**               |                                                                                        **Purpose**                                                                                         |
+| ----------------- | ------------------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| CommandType       | Instance property (read-only)  | Implementation defined               | Should compare equal with "Alias".                                                                                                                                                         |
+| Definition        | Instance property (read-only)  | string                               | The command or alias to which the alias was assigned via the [New-Alias](xref:Microsoft.PowerShell.Utility.New-Alias) or [Set-Alias](xref:Microsoft.PowerShell.Utility.Set-Alias) cmdlets. |
+| Description       | Instance property (read-write) | string                               | The description assigned to the alias via the `New-Alias` or `Set-Alias` cmdlets.                                                                                                          |
+| Module            | Instance property (read-only)  | Implementation defined ([§4.5.12][]) | The module from which this alias was exported                                                                                                                                              |
+| ModuleName        | Instance property (read-only)  | string                               | The module in which this alias was defined                                                                                                                                                 |
+| Name              | Instance property (read-only)  | string                               | The name assigned to the alias when it was created via the `New-Alias` or `Set-Alias` cmdlets.                                                                                             |
+| Options           | Instance property (read-write) | string                               | The options assigned to the alias via the New-Alias `New-Alias` or `Set-Alias` cmdlets.                                                                                                    |
+| OutputType        | Instance property (read-only)  | Implementation defined collection    | Specifies the types of the values output by the command to which the alias refers.                                                                                                         |
+| Parameters        | Instance property (read-only)  | Implementation defined collection    | The parameters of the command.                                                                                                                                                             |
+| ParameterSets     | Instance property (read-only)  | Implementation defined collection    | Information about the parameter sets associated with the command.                                                                                                                          |
+| ReferencedCommand | Instance property (read-only)  | Implementation defined               | Information about the command that is immediately referenced by this alias.                                                                                                                |
+| ResolvedCommand   | Instance property (read-only)  | Implementation defined               | Information about the command to which the alias eventually resolves.                                                                                                                      |
 
 In PowerShell, this type is `System.Management.Automation.AliasInfo`.
 
@@ -864,21 +865,21 @@ In PowerShell, this type is `System.Management.Automation.ExternalScriptInfo`.
 
 This type encapsulates the state of a function. It has the following accessible members:
 
-|     **Member**      |        **Member Kind**         |               **Type**               |                                                                                                                                                                          **Purpose**                                                                                                                                                                           |
-| ------------------- | ------------------------------ | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CmdletBinding       | Instance property (read-only)  | bool                                 | Indicates whether the function uses the same parameter binding that compiled cmdlets use (see [§12.3.5][]).                                                                                                                                                                                                                                                    |
-| CommandType         | Instance property (read-only)  | Implementation defined               | Can be compared for equality with "Function" or "Filter" to see which of those this object represents.                                                                                                                                                                                                                                                         |
-| DefaultParameterSet | Instance property (read-only)  | string                               | Specifies the parameter set to use if that cannot be determined from the arguments (see [§12.3.5][]).                                                                                                                                                                                                                                                          |
-| Definition          | Instance property (read-only)  | string                               | A string version of ScriptBlock                                                                                                                                                                                                                                                                                                                                |
-| Description         | Instance property (read-write) | string                               | The description of the function.                                                                                                                                                                                                                                                                                                                               |
-| Module              | Instance property (read-only)  | Implementation defined ([§4.5.12][]) | The module from which this function was exported                                                                                                                                                                                                                                                                                                               |
-| ModuleName          | Instance property (read-only)  | string                               | The module in which this function was defined                                                                                                                                                                                                                                                                                                                  |
-| Name                | Instance property (read-only)  | string                               | The name of the function                                                                                                                                                                                                                                                                                                                                       |
-| Options             | Instance property (read-write) | Implementation defined               | The scope options for the function ([§3.5.4][]).                                                                                                                                                                                                                                                                                                               |
-| OutputType          | Instance property (read-only)  | Implementation defined collection    | Specifies the types of the values output, in order (see [§12.3.6][]).                                                                                                                                                                                                                                                                                          |
-| Parameters          | Instance property (read-only)  | Implementation defined collection    | Specifies the parameter names, in order. If the function acts like a cmdlet (see CmdletBinding above) the common parameters ([§13.56][]) are included at the end of the collection.                                                                                                                                                                            |
-| ParameterSets       | Instance property (read-only)  | Implementation defined collection    | Information about the parameter sets associated with the command. For each parameter, the result shows the parameter name and type, and indicates if the parameter is mandatory, by position or a switch parameter. If the function acts like a cmdlet (see CmdletBinding above) the common parameters ([§13.56][]) are included at the end of the collection. |
-| ScriptBlock         | Instance property (read-only)  | scriptblock ([§4.3.6][])             | The body of the function                                                                                                                                                                                                                                                                                                                                       |
+|     **Member**      |        **Member Kind**         |               **Type**               |                                                                                                                                                                      **Purpose**                                                                                                                                                                      |
+| ------------------- | ------------------------------ | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CmdletBinding       | Instance property (read-only)  | bool                                 | Indicates whether the function uses the same parameter binding that compiled cmdlets use (see [§12.3.5][]).                                                                                                                                                                                                                                           |
+| CommandType         | Instance property (read-only)  | Implementation defined               | Can be compared for equality with "Function" or "Filter" to see which of those this object represents.                                                                                                                                                                                                                                                |
+| DefaultParameterSet | Instance property (read-only)  | string                               | Specifies the parameter set to use if that cannot be determined from the arguments (see [§12.3.5][]).                                                                                                                                                                                                                                                 |
+| Definition          | Instance property (read-only)  | string                               | A string version of ScriptBlock                                                                                                                                                                                                                                                                                                                       |
+| Description         | Instance property (read-write) | string                               | The description of the function.                                                                                                                                                                                                                                                                                                                      |
+| Module              | Instance property (read-only)  | Implementation defined ([§4.5.12][]) | The module from which this function was exported                                                                                                                                                                                                                                                                                                      |
+| ModuleName          | Instance property (read-only)  | string                               | The module in which this function was defined                                                                                                                                                                                                                                                                                                         |
+| Name                | Instance property (read-only)  | string                               | The name of the function                                                                                                                                                                                                                                                                                                                              |
+| Options             | Instance property (read-write) | Implementation defined               | The scope options for the function ([§3.5.4][]).                                                                                                                                                                                                                                                                                                      |
+| OutputType          | Instance property (read-only)  | Implementation defined collection    | Specifies the types of the values output, in order (see [§12.3.6][]).                                                                                                                                                                                                                                                                                 |
+| Parameters          | Instance property (read-only)  | Implementation defined collection    | Specifies the parameter names, in order. If the function acts like a cmdlet (see CmdletBinding above) the [common parameters][] are included at the end of the collection.                                                                                                                                                                            |
+| ParameterSets       | Instance property (read-only)  | Implementation defined collection    | Information about the parameter sets associated with the command. For each parameter, the result shows the parameter name and type, and indicates if the parameter is mandatory, by position or a switch parameter. If the function acts like a cmdlet (see CmdletBinding above) the [common parameters][] are included at the end of the collection. |
+| ScriptBlock         | Instance property (read-only)  | scriptblock ([§4.3.6][])             | The body of the function                                                                                                                                                                                                                                                                                                                              |
 
 In PowerShell, this type is `System.Management.Automation.FunctionInfo`.
 
@@ -1005,9 +1006,9 @@ collection, an exception of type `InvalidOperationException` is raised. For `$fo
 
 ### 4.5.17 Directory description type
 
-The cmdlet `New-Item` ([§13.34][]) can create items of various kinds including FileSystem directories.
-The type of a directory description object is implementation defined; it has the following
-accessible members:
+The cmdlet [New-Item](xref:Microsoft.PowerShell.Management.New-Item) can create items of various
+kinds including FileSystem directories. The type of a directory description object is implementation
+defined; it has the following accessible members:
 
 |  **Member**   |        **Member Kind**         |               **Type**                |                             **Purpose**                             |
 | ------------- | ------------------------------ | ------------------------------------- | ------------------------------------------------------------------- |
@@ -1023,9 +1024,8 @@ In PowerShell, this type is `System.IO.DirectoryInfo`. The type of the **Attribu
 
 ### 4.5.18 File description type
 
-The cmdlet `New-Item` ([§13.34][]) can create items of various kinds including FileSystem files. The
-type of a file description object is implementation defined; it has the following accessible
-members:
+The cmdlet `New-Item` can create items of various kinds including FileSystem files. The type of a
+file description object is implementation defined; it has the following accessible members:
 
 |  **Member**   |        **Member Kind**         |               **Type**                |                                            **Purpose**                                             |
 | ------------- | ------------------------------ | ------------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -1055,7 +1055,7 @@ accessible members:
 | Second     | Instance property (read-only) | int      | Gets the seconds component of the date represented by this instance. |
 | Year       | Instance property (read-only) | int      | Gets the year component of the date represented by this instance.    |
 
-An object of this type can be created by cmdlet `Get-Date` ([§13.18][]).
+An object of this type can be created by cmdlet [Get-Date](xref:Microsoft.PowerShell.Utility.Get-Date).
 
 In PowerShell, this type is `System.DateTime`.
 
@@ -1071,7 +1071,7 @@ accessible members:
 | Name   | Instance property (read-only) | string                            | Gets the name of the group.                   |
 | Values | Instance property (read-only) | Implementation-defined collection | Gets the values of the elements of the group. |
 
-An object of this type can be created by cmdlet `Group-Object` ([§13.27][]).
+An object of this type can be created by cmdlet [Group-Object](xref:Microsoft.PowerShell.Utility.Group-Object).
 
 In PowerShell, this type is `Microsoft.PowerShell.Commands.GroupInfo`.
 
@@ -1089,7 +1089,7 @@ following accessible members:
 | Property   | Instance property (read-only) | string   | Gets the property to be measured.                                   |
 | Sum        | Instance property (read-only) | double   | Gets the sum of the values of the specified properties.             |
 
-An object of this type can be created by cmdlet `Measure-Object` ([§13.31][]).
+An object of this type can be created by cmdlet [Measure-Object](xref:Microsoft.PowerShell.Utility.Measure-Object).
 
 In PowerShell, this type is `Microsoft.PowerShell.Commands.GenericMeasureInfo`.
 
@@ -1105,7 +1105,7 @@ accessible members:
 | Property   | Instance property (read-only) | string   | Gets the property to be measured.                   |
 | Words      | Instance property (read-only) | int      | Gets the number of words in the target object.      |
 
-An object of this type can be created by cmdlet `Measure-Object` ([§13.31][]).
+An object of this type can be created by cmdlet `Measure-Object`.
 
 In PowerShell, this type is `Microsoft.PowerShell.Commands.TextMeasureInfo`.
 
@@ -1119,7 +1119,7 @@ is implementation defined; it has the following accessible members:
 | Password | Instance property (read-only) | Implementation defined | Gets the password. |
 | UserName | Instance property (read-only) | string                 | Gets the username. |
 
-An object of this type can be created by cmdlet `Get-Credential` ([§13.17][]).
+An object of this type can be created by cmdlet [Get-Credential](xref:Microsoft.PowerShell.Security.Get-Credential).
 
 In PowerShell, this type is `System.Management.Automation.PSCredential`.
 
@@ -1165,14 +1165,14 @@ unaffected.
 The base member set of a type can be augmented by the addition of the following kinds of members:
 
 - *adapted members*, via the *Extended Type System* (ETS), most details of which are unspecified.
-- *extended members*, via the cmdlet Add-Member ([§13.2][]).
+- *extended members*, via the cmdlet [Add-Member](xref:Microsoft.PowerShell.Utility.Add-Member).
 
 In PowerShell, extended members can also be added via `types.ps1xml` files. Adapted and extended
 members are collectively called *synthetic* *members*.
 
 The ETS adds the following members to all PowerShell objects: **psbase**, **psadapted**,
 **psextended**, and **pstypenames**. See the **Force** and **View** parameters in the cmdlet
-`Get-Member` ([§13.22][]) for more information on these members.
+[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) for more information on these members.
 
 An instance member may hide an extended and/or adapted member of the same name, and an extended
 member may hide an adapted member. In such cases, the member sets **psadapted** and **psextended**
@@ -1236,3 +1236,4 @@ There are three ways create a custom object having a new member M:
 [§8.10.5]: chapter-08.md#8105-the-switch-type-constraint
 [§8.4.4]: chapter-08.md#844-the-foreach-statement
 [§9.]: chapter-09.md#9-arrays
+[common parameters]: /powershell/module/microsoft.powershell.core/about/about_commonparameters

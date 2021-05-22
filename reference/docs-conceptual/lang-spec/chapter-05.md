@@ -26,7 +26,7 @@ $i = 2147483647   # $i holds a value of type int
 ```
 
 Any use of a variable that has not been created results in the value $null. To see if a variable has
-been defined, use the `Test-Path` cmdlet ([§13.54][]).
+been defined, use the [Test-Path](xref:Microsoft.PowerShell.Management.Test-Path) cmdlet.
 
 ## 5.1 Writable location
 
@@ -112,7 +112,7 @@ An instance data member can be a field or a property.
 
 An array can be created via a unary comma operator ([§7.2.1][]), *sub-expression* ([§7.1.6][]),
 *array-expression* ([§7.1.7][]), binary comma operator ([§7.3][]), range operator ([§7.4][]), or
-`New-Object` cmdlet ([§13.36][]).
+[New-Object](xref:Microsoft.PowerShell.Utility.New-Object) cmdlet.
 
 Memory for creating and deleting arrays is managed by the host environment and the garbage
 collection system.
@@ -121,8 +121,9 @@ Arrays and array elements are discussed in [§9.][]
 
 ### 5.2.4 Hashtable key/value pairs
 
-A Hashtable is created via a hash literal ([§2.3.5.6][]) or the `New-Object` cmdlet ([§13.36][]). A
-new key/value pair can be added via the `[]` operator ([§7.1.4.3][]).
+A Hashtable is created via a hash literal ([§2.3.5.6][]) or the
+[New-Object](xref:Microsoft.PowerShell.Utility.New-Object) cmdlet. A new key/value pair can be added
+via the `[]` operator ([§7.1.4.3][]).
 
 Memory for creating and deleting Hashtables is managed by the host environment and the garbage
 collection system.

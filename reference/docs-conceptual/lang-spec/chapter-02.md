@@ -425,8 +425,8 @@ Any use of a variable name with an explicit `Variable:` namespace is equivalent 
 same variable name without that qualification. For example, `$v` and `$Variable:v` are
 interchangeable.
 
-As well as being defined in the language, variables can also be defined by the cmdlet `New-Variable`
-([§13.37][]).
+As well as being defined in the language, variables can also be defined by the cmdlet
+[New-Variable](xref:Microsoft.PowerShell.Utility.New-Variable).
 
 #### 2.3.2.1 User-defined variables
 

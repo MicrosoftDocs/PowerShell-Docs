@@ -423,13 +423,13 @@ used to define the characteristics of the parameter:
 <td>Help (named)</td>
 <td><p>Type: string</p>
 <p>This argument specifies a message that is intended to contain a short description of the default value of a parameter. This message is used in an implementation-defined manner.</p>
-<p>Windows PowerShell: The message is used as part of the description of the parameter for the help topic displayed by the Get-Help ([§13.19][]) cmdlet.</p></td>
+<p>Windows PowerShell: The message is used as part of the description of the parameter for the help topic displayed by the [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) cmdlet.</p></td>
 </tr>
 <tr class="even">
 <td>Value (named)</td>
 <td><p>Type: object</p>
 <p>This argument specifies a value that is intended to be the default value of a parameter. The value is used in an implementation-defined manner.</p>
-<p>Windows PowerShell: The value is used as part of the description of the parameter for the help topic displayed by the Get-Help ([§13.19][]) cmdlet when the Help property is not specified.</p></td>
+<p>Windows PowerShell: The value is used as part of the description of the parameter for the help topic displayed by the [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)cmdlet when the Help property is not specified.</p></td>
 </tr>
 </tbody>
 </table>
@@ -440,7 +440,7 @@ This attribute is used in a *script-parameter* to provide additional information
 parameter. The attribute is used in an implementation defined manner.
 
 This attribute is used as part of the description of the parameter for the help topic displayed by
-the `Get-Help` ([§13.19][]) cmdlet.
+the [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) cmdlet.
 
 ### 12.3.10 The ValidateCount attribute
 
