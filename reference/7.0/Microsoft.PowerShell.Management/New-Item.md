@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/18/2020
+ms.date: 05/23/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Item
@@ -122,7 +121,7 @@ d-----        5/15/2019   6:45 AM        1   Three
 ```
 
 ```powershell
-New-Item -Path * -Name temp.txt -ItemType File | Select-Object FullName
+New-Item -Path C:\Temp\* -Name temp.txt -ItemType File | Select-Object FullName
 ```
 
 ```Output
