@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/23/2019
+ms.date: 05/23/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Item
@@ -106,7 +105,43 @@ you can use it to create multiple items.
 New-Item -ItemType "file" -Path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log"
 ```
 
-### Example 6: Use the -Force parameter to attempt to recreate folders
+### Example 6: Use wildcards to create files in multiple directories
+
+The `New-Item` cmdlet supports wildcards in the **Path** parameter. The following command creates a
+`temp.txt` file in all of the directories specified by the wildcards in the **Path** parameter.
+
+```powershell
+Get-ChildItem -Path C:\Temp\
+```
+
+```Output
+    Directory:  C:\Temp
+
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+d-----        5/15/2019   6:45 AM        1   One
+d-----        5/15/2019   6:45 AM        1   Two
+d-----        5/15/2019   6:45 AM        1   Three
+```
+
+```powershell
+New-Item -Path C:\Temp\* -Name temp.txt -ItemType File | Select-Object FullName
+```
+
+```Output
+FullName
+--------
+C:\Temp\One\temp.txt
+C:\Temp\Three\temp.txt
+C:\Temp\Two\temp.txt
+```
+
+The `Get-ChildItem` cmdlet shows three directories under the `C:\Temp` directory. Using wildcards
+the `New-Item` cmdlet creates a `temp.txt` file in all of the directories under the current
+directory. The `New-Item` cmdlet outputs the items you created, which is piped to `Select-Object`
+to verify the paths of the newly created files.
+
+### Example 7: Use the -Force parameter to attempt to recreate folders
 
 This example creates a folder with a file inside. Then, attempts to create the same folder using
 `-Force`. It will not overwrite the folder but simply return the existing folder object with the
@@ -131,7 +166,7 @@ Mode                LastWriteTime         Length Name
 -a----         5/1/2020   8:03 AM              0 TestFile.txt
 ```
 
-### Example 7: Use the -Force parameter to overwrite existing files
+### Example 8: Use the -Force parameter to overwrite existing files
 
 This example creates a file with a value and then recreates the file using `-Force`. This overwrites
 The existing file and it will lose it's content as you can see by the length property
