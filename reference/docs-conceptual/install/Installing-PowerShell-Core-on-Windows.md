@@ -95,7 +95,7 @@ values are changed for each major release.
 ## <a id="zip" />Installing the ZIP package
 
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
-the following ZIP archives from the [releases][releases] page.
+the following ZIP archives from the [releases][] page.
 
 - PowerShell-7.1.3-win-x64.zip
 - PowerShell-7.1.3-win-x86.zip
@@ -311,7 +311,7 @@ For more information, see
 > supported. The package is built for testing purposes during the preview period.
 
 To manually install the MSIX package on a Windows 10 client, download the MSIX package from our
-GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to
+GitHub [releases][] page. Scroll down to the **Assets** section of the Release you want to
 install. The Assets section may be collapsed, so you may need to click to expand it.
 
 The MSIX file looks like this - `PowerShell-<version>-win-<os-arch>.msix`
@@ -346,6 +346,7 @@ support those methods.
 
 <!-- link references -->
 
+[releases]: https://aka.ms/powershell-release?tag=stable
 [preview]: https://aka.ms/powershell-release?tag=preview
 [latest]: https://aka.ms/powershell-release?tag=stable
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md

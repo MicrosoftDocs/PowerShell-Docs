@@ -4,10 +4,10 @@ Locale: en-US
 ms.date: 05/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Automatic_Variables
+title: about Automatic Variables
 ---
 
-# About Automatic Variables
+# about_Automatic_Variables
 
 ## Short description
 

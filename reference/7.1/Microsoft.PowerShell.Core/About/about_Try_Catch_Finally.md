@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 04/01/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Try_Catch_Finally
+title: about Try Catch Finally
 ---
-# About Try Catch Finally
+# about_Try_Catch_Finally
 
 ## SHORT DESCRIPTION
 Describes how to use the `Try`, `Catch`, and `Finally` blocks to handle

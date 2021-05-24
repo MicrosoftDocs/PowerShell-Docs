@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 07/10/2019
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_foreach-parallel?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Foreach Parallel
+title: about Foreach-Parallel
 ---
-# About Foreach-Parallel
+# about_Foreach-Parallel
 
 ## SHORT DESCRIPTION
 Describes the `ForEach -Parallel` language construct in Windows PowerShell

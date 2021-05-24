@@ -4,10 +4,10 @@ Locale: en-US
 ms.date: 11/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Format.ps1xml
+title: about Format.ps1xml
 ---
 
-# About Format.ps1xml
+# about_Format.ps1xml
 
 ## Short description
 

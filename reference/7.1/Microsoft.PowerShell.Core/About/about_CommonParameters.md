@@ -5,9 +5,9 @@ ms.date: 05/17/2021
 no-loc: [Debug, Verbose, Confirm]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_CommonParameters
+title: about CommonParameters
 ---
-# About CommonParameters
+# about_CommonParameters
 
 ## Short description
 

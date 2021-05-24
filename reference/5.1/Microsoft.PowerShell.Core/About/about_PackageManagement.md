@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_packagemanagement?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_PackageManagement
+title: about PackageManagement
 ---
-# About PackageManagement
+# about_PackageManagement
 
 ## SHORT DESCRIPTION
 PackageManagement is an aggregator for software package managers.

@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 11/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Aliases
+title: about Aliases
 ---
-# About Aliases
+# about_Aliases
 
 ## SHORT DESCRIPTION
 Describes how to use alternate names for cmdlets and commands in

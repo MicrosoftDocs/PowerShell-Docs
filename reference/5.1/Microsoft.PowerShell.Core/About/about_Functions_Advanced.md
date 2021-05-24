@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 06/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Functions_Advanced
+title: about Functions Advanced
 ---
-# About Functions Advanced
+# about_Functions_Advanced
 
 ## SHORT DESCRIPTION
 Introduces advanced functions that are a way to create cmdlets using scripts.

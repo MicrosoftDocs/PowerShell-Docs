@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 04/15/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Prompts
+title: about Prompts
 ---
-# About Prompts
+# about_Prompts
 
 ## Short description
 Describes the `Prompt` function and demonstrates how to create a custom

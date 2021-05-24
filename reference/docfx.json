@@ -84,6 +84,7 @@
         "7.2/**.yml": "managed-reference",
         "docs-conceptual/**/**.md": "conceptual",
         "docs-conceptual/dev-cross-plat/**/**.md": "reference",
+        "docs-conceptual/lang-spec/**/**.md": "reference",
         "docs-conceptual/developer/**/**.md": "reference",
         "docs-conceptual/learn/**.md": "tutorial",
         "docs-conceptual/learn/deep-dives/**.md": "tutorial",

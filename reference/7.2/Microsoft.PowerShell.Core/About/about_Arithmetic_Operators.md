@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 10/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Arithmetic_Operators
+title: about Arithmetic Operators
 ---
-# About Arithmetic Operators
+# about_Arithmetic_Operators
 
 ## SHORT DESCRIPTION
 Describes the operators that perform arithmetic in PowerShell.

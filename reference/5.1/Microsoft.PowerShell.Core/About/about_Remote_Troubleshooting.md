@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 10/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Remote_Troubleshooting
+title: about Remote Troubleshooting
 ---
-# About Remote Troubleshooting
+# about_Remote_Troubleshooting
 
 ## Short description
 Describes how to troubleshoot remote operations in PowerShell.

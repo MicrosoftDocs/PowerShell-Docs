@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_trap?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Trap
+title: about Trap
 ---
-# About Trap
+# about_Trap
 
 ## Short description
 

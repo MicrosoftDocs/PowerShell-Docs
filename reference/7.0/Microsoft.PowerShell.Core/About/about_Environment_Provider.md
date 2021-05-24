@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_provider?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: Environment Provider
+title: about Environment Provider
 ---
-# Environment provider
+# about_Environment_Provider
 
 ## Provider name
 Environment

@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 06/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_syntax?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Command_Syntax
+title: about Command Syntax
 ---
-# About Command Syntax
+# about_Command_Syntax
 
 ## SHORT DESCRIPTION
 Describes the syntax diagrams that are used in PowerShell.
