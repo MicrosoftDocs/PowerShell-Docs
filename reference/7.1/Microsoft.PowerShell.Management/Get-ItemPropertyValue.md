@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 05/14/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-itempropertyvalue?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ItemPropertyValue
@@ -32,7 +32,7 @@ Get-ItemPropertyValue -LiteralPath <String[]> [-Name] <String[]> [-Filter <Strin
 ## DESCRIPTION
 
 The `Get-ItemPropertyValue` gets the current value for a property that you specify when you use the
-*Name* parameter, located in a path that you specify with either the *Path* or *LiteralPath*
+**Name** parameter, located in a path that you specify with either the **Path** or **LiteralPath**
 parameters.
 
 ## EXAMPLES
@@ -53,11 +53,11 @@ Get-ItemPropertyValue 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' -Name
 ### Example 2: Get the last write time of a file or folder
 
 This command gets the value of the **LastWriteTime** property, or the last time a file or folder was
-changed, from the "C:\Users\Test\Documents\ModuleToAssembly" folder, working in the FileSystem
+changed, from the `C:\Program Files\PowerShell` folder, working in the FileSystem
 provider.
 
 ```powershell
-Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime
+Get-ItemPropertyValue -Path 'C:\Program Files\PowerShell' -Name LastWriteTime
 ```
 
 ```output
@@ -70,7 +70,7 @@ This command gets the values of the **LastWriteTime**, **CreationTime**, and **R
 a folder. The property values are returned in the order in which you specified the property names.
 
 ```powershell
-Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime,CreationTime,Root
+Get-ItemPropertyValue -Path 'C:\Program Files\PowerShell' -Name LastWriteTime,CreationTime,Root
 ```
 
 ```output
