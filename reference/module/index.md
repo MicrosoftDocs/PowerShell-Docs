@@ -13,7 +13,7 @@ archive_url: ''
 layout: ApiBrowserPage
 apiPlatform: powershell
 quickFilterColumn1: powershell-7.1,windowsserver2019-ps
-quickFilterColumn2: azps-5.9.0,win-mdop2-ps
+quickFilterColumn2: azps-6.0.0,win-mdop2-ps
 quickFilterColumn3: sqlserver-ps,systemcenter-ps-2019
 ---
 
