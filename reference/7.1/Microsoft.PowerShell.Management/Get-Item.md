@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/19/2021
+ms.date: 05/24/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
@@ -134,8 +134,18 @@ In PowerShell 6.2, an alternate view was added to get hardlink information. To g
 information, pipe the output to `Format-Table -View childrenWithHardlink`
 
 ```powershell
-Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
+Get-Item C:\Windows\System32\ntoskrnl.exe | Format-Table -view childrenWithHardLink
 ```
+
+```Output
+    Directory: C:\Windows\System32
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---           5/12/2021  7:40 AM       10848576 ntoskrnl.exe
+```
+
+The `Mode` property identifies the hardlink by the `l` in `la---`
 
 ### Example 9: Output for Non-Windows Operating Systems
 
