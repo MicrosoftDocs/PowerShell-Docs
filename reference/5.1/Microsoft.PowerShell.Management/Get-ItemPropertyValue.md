@@ -77,24 +77,23 @@ Get-ItemPropertyValue -Path 'C:\Program Files\WindowsPowerShell' -Name LastWrite
 Tuesday, March 23, 2021 6:53:13 AM
 Monday, August 14, 2017 1:42:40 PM
 
-Parent              :
-Root                : C:\
-FullName            : C:\
-Extension           :
-Name                : C:\
-Exists              : True
-CreationTime        : 10/30/2015 1:28:30 AM
-CreationTimeUtc     : 10/30/2015 6:28:30 AM
-LastAccessTime      : 5/26/2021 9:25:18 AM
-LastAccessTimeUtc   : 5/26/2021 2:25:18 PM
-LastWriteTime       : 5/25/2021 7:25:08 AM
-LastWriteTimeUtc    : 5/25/2021 12:25:08 PM
-Attributes          : Hidden, System, Directory
-Mode                : d--hs
-ModeWithoutHardLink : d--hs
-BaseName            : C:\
-Target              :
-LinkType            :
+Name              : C:\
+FullName          : C:\
+Parent            :
+Exists            : True
+Root              : C:\
+Extension         :
+CreationTime      : 10/30/2015 1:28:30 AM
+CreationTimeUtc   : 10/30/2015 6:28:30 AM
+LastAccessTime    : 5/26/2021 9:24:31 AM
+LastAccessTimeUtc : 5/26/2021 2:24:31 PM
+LastWriteTime     : 5/25/2021 7:25:08 AM
+LastWriteTimeUtc  : 5/25/2021 12:25:08 PM
+Attributes        : Hidden, System, Directory
+Mode              : d--hs-
+BaseName          : C:\
+Target            : {}
+LinkType          :
 ```
 
 ## PARAMETERS
