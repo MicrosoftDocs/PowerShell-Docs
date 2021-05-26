@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 05/14/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-itempropertyvalue?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ItemPropertyValue
@@ -32,7 +32,7 @@ Get-ItemPropertyValue -LiteralPath <String[]> [-Name] <String[]> [-Filter <Strin
 ## DESCRIPTION
 
 The `Get-ItemPropertyValue` gets the current value for a property that you specify when you use the
-*Name* parameter, located in a path that you specify with either the *Path* or *LiteralPath*
+**Name** parameter, located in a path that you specify with either the **Path** or **LiteralPath**
 parameters.
 
 ## EXAMPLES
@@ -53,11 +53,11 @@ Get-ItemPropertyValue 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' -Name
 ### Example 2: Get the last write time of a file or folder
 
 This command gets the value of the **LastWriteTime** property, or the last time a file or folder was
-changed, from the "C:\Users\Test\Documents\ModuleToAssembly" folder, working in the FileSystem
+changed, from the `C:\Program Files\PowerShell` folder, working in the FileSystem
 provider.
 
 ```powershell
-Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime
+Get-ItemPropertyValue -Path 'C:\Program Files\PowerShell' -Name LastWriteTime
 ```
 
 ```output
@@ -70,30 +70,31 @@ This command gets the values of the **LastWriteTime**, **CreationTime**, and **R
 a folder. The property values are returned in the order in which you specified the property names.
 
 ```powershell
-Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime,CreationTime,Root
+Get-ItemPropertyValue -Path 'C:\Program Files\PowerShell' -Name LastWriteTime,CreationTime,Root
 ```
 
 ```output
-Wednesday, September 3, 2014 2:53:22 PM
-Wednesday, September 3, 2014 2:53:10 PM
+Tuesday, March 23, 2021 6:53:13 AM
+Monday, August 14, 2017 1:42:40 PM
 
-Name              : C:\
-Parent            :
-Exists            : True
-Root              : C:\
-FullName          : C:\
-Extension         :
-CreationTime      : 9/1/2014 4:59:45 AM
-CreationTimeUtc   : 9/1/2014 11:59:45 AM
-LastAccessTime    : 9/27/2014 5:22:02 PM
-LastAccessTimeUtc : 9/28/2014 12:22:02 AM
-LastWriteTime     : 9/27/2014 5:22:02 PM
-LastWriteTimeUtc  : 9/28/2014 12:22:02 AM
-Attributes        : Hidden, System, Directory
-BaseName          : C:\
-Target            :
-LinkType          :
-Mode              : d--hs-
+Parent              :
+Root                : C:\
+FullName            : C:\
+Extension           :
+Name                : C:\
+Exists              : True
+CreationTime        : 10/30/2015 1:28:30 AM
+CreationTimeUtc     : 10/30/2015 6:28:30 AM
+LastAccessTime      : 5/26/2021 9:24:04 AM
+LastAccessTimeUtc   : 5/26/2021 2:24:04 PM
+LastWriteTime       : 5/25/2021 7:25:08 AM
+LastWriteTimeUtc    : 5/25/2021 12:25:08 PM
+Attributes          : Hidden, System, Directory
+Mode                : d--hs
+ModeWithoutHardLink : d--hs
+BaseName            : C:\
+Target              :
+LinkType            :
 ```
 
 ## PARAMETERS
