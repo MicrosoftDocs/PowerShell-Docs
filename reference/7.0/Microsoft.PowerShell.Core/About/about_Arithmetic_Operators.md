@@ -1,6 +1,5 @@
 ---
 description: Describes the operators that perform arithmetic in PowerShell.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 10/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-7&WT.mc_id=ps-gethelp

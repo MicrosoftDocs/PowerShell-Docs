@@ -1,6 +1,5 @@
 ---
 description: Describes how to use alternate names for cmdlets and commands in PowerShell.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/27/2017
 no-loc: [Authenticode, Alias]

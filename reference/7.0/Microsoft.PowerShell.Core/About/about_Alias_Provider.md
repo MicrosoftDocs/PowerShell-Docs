@@ -1,6 +1,5 @@
 ---
 description: Alias
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 10/18/2018
 no-loc: [Alias, Definition, AllScope, Option, None, Constant, Private]
@@ -11,6 +10,7 @@ title: about Alias Provider
 # about_Alias_Provider
 
 ## Provider name
+
 Alias
 
 ## Drives
