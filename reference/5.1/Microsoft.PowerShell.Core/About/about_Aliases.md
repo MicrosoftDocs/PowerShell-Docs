@@ -142,9 +142,9 @@ Get-Alias -Definition Get-ChildItem
 
 ### Get-Alias output
 
-`Get-Alias` returns only one type of object, an AliasInfo object
-(System.Management.Automation.AliasInfo). The name of aliases that don't
-include a hyphen, such as "cd" are displayed in the following format:
+`Get-Alias` returns only one type of object, an **AliasInfo** object
+(**System.Management.Automation.AliasInfo**). The name of aliases that don't
+include a hyphen, such as `cd` are displayed in the following format:
 
 ```powershell
 Get-Alias ac
@@ -206,9 +206,9 @@ Get-Alias | Get-Member
 
 To view the values of the properties of a specific alias, such as the `dir`
 alias, get the alias. Then, pipe it to the `Format-List` cmdlet. For example,
-the following command gets the "dir" alias. Next, the command pipes the alias
+the following command gets the `dir` alias. Next, the command pipes the alias
 to the `Format-List` cmdlet. Then, the command uses the Property parameter of
-`Format-List` with a wildcard character (\*) to display all the properties of
+`Format-List` with a wildcard character (`*`) to display all the properties of
 the `dir` alias. The following command performs these tasks:
 
 ```powershell

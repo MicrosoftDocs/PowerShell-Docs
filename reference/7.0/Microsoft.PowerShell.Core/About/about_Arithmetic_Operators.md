@@ -344,8 +344,8 @@ System.Int64
 In this example, `Int64` can accommodate both types.
 
 The `System.Decimal` type is an exception. If either operand has the Decimal
-type, the result will be of the Decimal type. If the result is too large for
-the Decimal type, it will not be cast to Double. Instead, an error results.
+type, the result will be of the **Decimal** type. If the result is too large for
+the **Decimal** type, it will not be cast to **Double**. Instead, an error results.
 
 |Expression               |Result                                         |
 |-------------------------|-----------------------------------------------|

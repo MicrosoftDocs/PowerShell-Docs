@@ -583,7 +583,7 @@ following items:
 - **PSVersion** - The PowerShell version number
 - **PSEdition** This property has the value of 'Desktop' for PowerShell 4 and
   below as well as PowerShell 5.1 on full-featured Windows editions. This
-  property has the value of 'Core' for PowerShell 6 and above as well as
+  property has the value of `Core` for PowerShell 6 and above as well as
   PowerShell PowerShell 5.1 on reduced-footprint editions like Windows Nano
   Server or Windows IoT.
 - **GitCommitId** - The commit Id of the source files, in GitHub,
@@ -658,7 +658,7 @@ isn't considered best practice.
 - Within loops, flow control keywords [break](about_Break.md) and
   [continue](about_Continue.md) should be preferred.
 - Within functions that accept pipeline input, it's best practice to use
-  Parameters with the **ValueFromPipeline** or
+  parameters with the **ValueFromPipeline** or
   **ValueFromPipelineByPropertyName** attributes.
 
   For more information, see
@@ -668,7 +668,7 @@ isn't considered best practice.
 
 The [MoveNext](/dotnet/api/system.collections.ienumerator.movenext) method
 advances the enumerator to the next element of the collection. **MoveNext**
-returns **True** if the enumerator was successfully advanced, **False** if the
+returns `True` if the enumerator was successfully advanced, `False` if the
 enumerator has passed the end of the collection.
 
 > [!NOTE]
