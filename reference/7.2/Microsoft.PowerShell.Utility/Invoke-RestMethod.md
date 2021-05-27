@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/20/2021
+ms.date: 05/27/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -708,8 +708,7 @@ Saves the response body in the specified output file. Enter a path and file name
 path, the default is the current location. The name is treated as a literal path. Names that contain
 brackets (`[]`) must be enclosed in single quotes (`'`).
 
-By default, `Invoke-RestMethod` returns the results to the pipeline. To send the results to a file
-and to the pipeline, use the **Passthru** parameter.
+By default, `Invoke-RestMethod` returns the results to the pipeline.
 
 ```yaml
 Type: System.String
@@ -725,8 +724,13 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Returns the results, in addition to writing them to a file. This parameter is valid only when the
-**OutFile** parameter is also used in the command.
+This parameter is valid only when the **OutFile** parameter is also used in the command. The intent
+is to have the results written to the file and to the pipeline.
+
+> [!NOTE]
+> When you use the **PassThru** parameter, the output is written to the pipeline but the file is not
+> created. For more information, see
+> [PowerShell Issue #15409](https://github.com/PowerShell/PowerShell/issues/15409).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
