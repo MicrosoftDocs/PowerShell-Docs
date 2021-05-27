@@ -2,6 +2,7 @@
 description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
 ms.date: 05/13/2021
+no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Automatic Variables
@@ -189,8 +190,8 @@ blocks (which are unnamed functions).
   > End block in the same function or script block.
 
 Since `$input` is an enumerator, accessing any of it's properties causes
-`$input` to no longer be available. You can store `$input` in another variable
-to reuse the `$input` properties.
+`$input` to no longer be available. You can store `$input` in another variable to
+reuse the `$input` properties.
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
@@ -239,11 +240,13 @@ when you use regular expressions with the `-match` operator.
 
 For more information about the `-match` operator, see
 [about_Comparison_Operators](about_comparison_operators.md). For more
-information on regular expressions, see [about_Regular_Expressions](about_Regular_Expressions.md).
+information on regular expressions, see
+[about_Regular_Expressions](about_Regular_Expressions.md).
 
 The `$Matches` variable also works in a `switch` statement with the `-Regex`
-parameter. It's populated the same way as the `-match` and `-notmatch` operators.
-For more information about the `switch` statement, see [about_Switch](about_Switch.md).
+parameter. It's populated the same way as the `-match` and `-notmatch`
+operators. For more information about the `switch` statement, see
+[about_Switch](about_Switch.md).
 
 ### $MyInvocation
 
@@ -270,8 +273,8 @@ properties.
 
 Unlike the `$PSScriptRoot` and `$PSCommandPath` automatic variables, the
 **PSScriptRoot** and **PSCommandPath** properties of the `$MyInvocation`
-automatic variable contain information about the invoker or calling script,
-not the current script.
+automatic variable contain information about the invoker or calling script, not
+the current script.
 
 ### $NestedPromptLevel
 
@@ -578,9 +581,9 @@ PowerShell that is running in the current session. The table includes the
 following items:
 
 - **PSVersion** - The PowerShell version number
-- **PSEdition** - This property has the value of 'Desktop' for PowerShell 4 and
+- **PSEdition** This property has the value of 'Desktop' for PowerShell 4 and
   below as well as PowerShell 5.1 on full-featured Windows editions. This
-  property has the value of 'Core' for PowerShell 6 and above as well as
+  property has the value of `Core` for PowerShell 6 and above as well as
   PowerShell PowerShell 5.1 on reduced-footprint editions like Windows Nano
   Server or Windows IoT.
 - **GitCommitId** - The commit Id of the source files, in GitHub,
@@ -652,20 +655,21 @@ An enumerator contains properties and methods you can use to advance or reset
 iteration, or retrieve iteration values. Directly manipulating enumerators
 isn't considered best practice.
 
-- Within loops, flow control keywords [break](about_Break.md) and [continue](about_Continue.md)
-  should be preferred.
+- Within loops, flow control keywords [break](about_Break.md) and
+  [continue](about_Continue.md) should be preferred.
 - Within functions that accept pipeline input, it's best practice to use
-  Parameters with the **ValueFromPipeline** or
+  parameters with the **ValueFromPipeline** or
   **ValueFromPipelineByPropertyName** attributes.
 
-  For more information, see [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
+  For more information, see
+  [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
 
 ### MoveNext
 
 The [MoveNext](/dotnet/api/system.collections.ienumerator.movenext) method
 advances the enumerator to the next element of the collection. **MoveNext**
-returns **True** if the enumerator was successfully advanced, **False** if
-the enumerator has passed the end of the collection.
+returns `True` if the enumerator was successfully advanced, `False` if the
+enumerator has passed the end of the collection.
 
 > [!NOTE]
 > The **Boolean** value returned my **MoveNext** is sent to the output stream.
@@ -900,7 +904,7 @@ Num has not changed: two
 ```
 
 Using the **Reset** method resets the current element in the collection. The
-following example loops through the first two elements **twice** because the
+following example loops through the first two elements _twice_ because the
 **Reset** method is called. After the first two loops, the `if` statement
 fails and the loop iterates through all three elements normally.
 
@@ -1005,4 +1009,3 @@ Default (Current): End
 [about_Splatting](about_Splatting.md)
 
 [about_Variables](about_Variables.md)
-

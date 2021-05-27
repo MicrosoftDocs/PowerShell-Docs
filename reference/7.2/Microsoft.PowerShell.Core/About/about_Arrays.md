@@ -2,6 +2,7 @@
 description: Describes arrays, which are data structures designed to store collections of items.
 Locale: en-US
 ms.date: 08/26/2020
+no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Arrays
@@ -74,10 +75,10 @@ and 4000), type:
 
 As a result, the `$ia` array can contain only integers.
 
-You can create arrays that are cast to any supported type in the Microsoft
-.NET Framework. For example, the objects that `Get-Process` retrieves to
-represent processes are of the **System.Diagnostics.Process** type. To create a
-strongly typed array of process objects, enter the following command:
+You can create arrays that are cast to any supported type in the .NET. For
+example, the objects that `Get-Process` retrieves to represent processes are of
+the **System.Diagnostics.Process** type. To create a strongly typed array of
+process objects, enter the following command:
 
 ```powershell
 [Diagnostics.Process[]]$zz = Get-Process
@@ -274,9 +275,9 @@ $a[+0..2+4..6+8]
 
 ### Iterations over array elements
 
-You can also use looping constructs, such as ForEach, For, and While loops, to
-refer to the elements in an array. For example, to use a ForEach loop to
-display the elements in the `$a` array, type:
+You can also use looping constructs, such as `ForEach`, `For`, and `While`
+loops, to refer to the elements in an array. For example, to use a `ForEach`
+loop to display the elements in the `$a` array, type:
 
 ```powershell
 $a = 0..9
@@ -298,11 +299,11 @@ foreach ($element in $a) {
 9
 ```
 
-The Foreach loop iterates through the array and returns each value in the
+The `Foreach` loop iterates through the array and returns each value in the
 array until reaching the end of the array.
 
-The For loop is useful when you are incrementing counters while examining the
-elements in an array. For example, to use a For loop to return every other
+The `For` loop is useful when you are incrementing counters while examining the
+elements in an array. For example, to use a `For` loop to return every other
 value in an array, type:
 
 ```powershell
@@ -320,7 +321,7 @@ for ($i = 0; $i -le ($a.length - 1); $i += 2) {
 8
 ```
 
-You can use a While loop to display the elements in an array until a defined
+You can use a `While` loop to display the elements in an array until a defined
 condition is no longer true. For example, to display the elements in the `$a`
 array while the array index is less than 4, type:
 
@@ -344,8 +345,8 @@ while($i -lt 4) {
 
 ### Count or Length or LongLength
 
-To determine how many items are in an array, use the `Length` property or its
-`Count` alias. `Longlength` is useful if the array contains more than
+To determine how many items are in an array, use the **Length** property or its
+**Count** alias. **Longlength** is useful if the array contains more than
 2,147,483,647 elements.
 
 ```powershell
@@ -455,7 +456,7 @@ True
 ### Clear
 
 Sets all element values to the _default value_ of the array's element type.
-The Clear() method does not reset the size of the array.
+The `Clear()` method does not reset the size of the array.
 
 In the following example `$a` is an array of objects.
 
@@ -490,7 +491,7 @@ $intA
 Allows to iterate over all elements in the array and perform a given operation
 for each element of the array.
 
-The ForEach method has several overloads that perform different operations.
+The `ForEach` method has several overloads that perform different operations.
 
 ```
 ForEach(scriptblock expression)
@@ -513,7 +514,7 @@ This method was added in PowerShell v4.
 > the scriptblock is the only parameter. Also, there must not be a space
 > between the method and the opening parenthesis or brace.
 
-The following example shows how use the foreach method. In this case the
+The following example shows how use the `ForEach` method. In this case the
 intent is to generate the square value of the elements in the array.
 
 ```powershell
@@ -587,14 +588,14 @@ TWO
 THREE
 ```
 
-Just like the `-ArgumentList` parameter of `ForEach-Object`, the `arguments`
-parameter allows the passing of an array of arguments to a script block
-configured to accept them.
+Just like the `-ArgumentList` parameter of `ForEach-Object`, the `Arguments`
+parameter allows the passing of an array of values to a script block configured
+to accept them.
 
 > [!NOTE]
 > Starting in Windows PowerShell 3.0 retrieving properties and executing
 > methods for each item in a collection can also be accomplished using "Methods
-> of scalar objects and collections" You can read more about that here
+> of scalar objects and collections". You can read more about that here
 > [about_methods](about_methods.md).
 
 ### Where
@@ -954,4 +955,3 @@ For more information, see [System.Tuple](/dotnet/api/system.tuple).
 - [about_For](about_For.md)
 - [about_Foreach](about_Foreach.md)
 - [about_While](about_While.md)
-

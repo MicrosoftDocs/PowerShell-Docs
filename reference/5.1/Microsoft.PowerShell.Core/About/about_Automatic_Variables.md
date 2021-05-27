@@ -1,7 +1,8 @@
 ---
 description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 03/29/2021
+ms.date: 05/13/2021
+no-loc: [Reset, Current]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Automatic Variables
@@ -241,20 +242,17 @@ is particularly useful for finding the name of the current script.
 Beginning in PowerShell 3.0, `MyInvocation` has the following new
 properties.
 
-| Property      | Description                                         |
-| ------------- | --------------------------------------------------- |
-| **PSScriptRoot**  | Contains the full path to the script that invoked   |
-|               | the current command. The value of this property is  |
-|               | populated only when the caller is a script.         |
-| **PSCommandPath** | Contains the full path and file name of the script  |
-|               | that invoked the current command. The value of this |
-|               | property is populated only when the caller is a     |
-|               | script.                                             |
+- **PSScriptRoot** - Contains the full path to the script that invoked the
+  current command. The value of this property is populated only when the caller
+  is a script.
+- **PSCommandPath** - Contains the full path and file name of the script that
+  invoked the current command. The value of this property is populated only
+  when the caller is a script.
 
 Unlike the `$PSScriptRoot` and `$PSCommandPath` automatic variables, the
 **PSScriptRoot** and **PSCommandPath** properties of the `$MyInvocation`
-automatic variable contain information about the invoker or calling script,
-not the current script.
+automatic variable contain information about the invoker or calling script, not
+the current script.
 
 ### $NestedPromptLevel
 
@@ -499,20 +497,17 @@ following items:
 | Property                  | Description                                   |
 | ------------------------- | --------------------------------------------- |
 | **BuildVersion**          | The build number of the current version       |
-| **CLRVersion**            | The version of the common language runtime    |
-|                           | (CLR)                                         |
-| **PSCompatibleVersions**  | Versions of PowerShell that are compatible    |
-|                           | with the current version                      |
-| **PSEdition**             | This property has the value of 'Desktop', for |
-|                           | Windows Server and Windows client versions.   |
-|                           | This property has the value of 'Core' for     |
-|                           | PowerShell running under Nano Server or       |
-|                           | Windows IOT.                                  |
-| **PSRemotingProtocolVersion** | The version of the PowerShell remote      |
-|                           | management protocol.                          |
-| **PSVersion**             | The PowerShell version number                 |
-| **SerializationVersion**  | The version of the serialization method       |
-| **WSManStackVersion**     | The version number of the WS-Management stack |
+- **CLRVersion** - The version of the common language runtime (CLR)
+- **PSCompatibleVersions** - Versions of PowerShell that are compatible with
+  the current version
+- **PSEdition** - This property has the value of 'Desktop', for Windows Server
+  and Windows client versions. This property has the value of 'Core' for
+  PowerShell running under Nano Server or Windows IOT.
+- **PSRemotingProtocolVersion** - The version of the PowerShell remote
+  management protocol.
+- **PSVersion** - The PowerShell version number
+- **SerializationVersion** - The version of the serialization method
+- **WSManStackVersion** - The version number of the WS-Management stack
 
 ### $PWD
 
@@ -572,20 +567,21 @@ An enumerator contains properties and methods you can use to advance or reset
 iteration, or retrieve iteration values. Directly manipulating enumerators
 isn't considered best practice.
 
-- Within loops, flow control keywords [break](about_Break.md) and [continue](about_Continue.md)
-  should be preferred.
+- Within loops, flow control keywords [break](about_Break.md) and
+  [continue](about_Continue.md) should be preferred.
 - Within functions that accept pipeline input, it's best practice to use
-  Parameters with the **ValueFromPipeline** or
+  parameters with the **ValueFromPipeline** or
   **ValueFromPipelineByPropertyName** attributes.
 
-  For more information, see [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
+  For more information, see
+  [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
 
 ### MoveNext
 
 The [MoveNext](/dotnet/api/system.collections.ienumerator.movenext) method
 advances the enumerator to the next element of the collection. **MoveNext**
-returns **True** if the enumerator was successfully advanced, **False** if
-the enumerator has passed the end of the collection.
+returns `True` if the enumerator was successfully advanced, `False` if the
+enumerator has passed the end of the collection.
 
 > [!NOTE]
 > The **Boolean** value returned my **MoveNext** is sent to the output stream.
@@ -820,7 +816,7 @@ Num has not changed: two
 ```
 
 Using the **Reset** method resets the current element in the collection. The
-following example loops through the first two elements **twice** because the
+following example loops through the first two elements _twice_ because the
 **Reset** method is called. After the first two loops, the `if` statement
 fails and the loop iterates through all three elements normally.
 
