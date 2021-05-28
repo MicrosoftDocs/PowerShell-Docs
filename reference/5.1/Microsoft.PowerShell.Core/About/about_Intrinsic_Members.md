@@ -16,8 +16,10 @@ all PowerShell objects.
 
 ## Detailed Description
 
-When PowerShell objects are created, some properties and methods are built into the
-object regardless of type. These are called intrinsic members.
+When PowerShell objects are created, some properties and methods are built into
+the object called intrinsic members. Some of these members provide different
+views of the object and some are hidden methods you can't see at all but are
+accessible nonetheless.
 
 ## About PSAdapted
 
