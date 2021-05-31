@@ -133,6 +133,26 @@ provider `Alias:`. The `Get-Location` cmdlet displays the complete path for `Ali
 **C:\TestDir\AliasNames.txt**. The `Get-Content` cmdlet uses the **Path** parameter and displays the
 file's content in the PowerShell console.
 
+### Example 5: Set file output width for entire script
+
+This example uses `$PSDefaultParameterValues` to set the `Width` parameter for all invocations of
+`Out-File` and the redirection operartors (`>` and `>>`) to 2000.  This is an easy way to ensure
+that everywhere in a script you output table formatted data to file, PowerShell will use a line
+width of 2000 instead of a line width determined by the PowerShell host's console width.
+
+```powershell
+param()
+$PSDefaultParameterValues['out-file:width'] = 2000
+
+$logFile = [System.IO.Path]::ChangeExtension($PSCommandPath, ".log")
+
+Get-ChildItem Env:\ > $logFile
+
+Get-Service -ErrorAction Ignore | Format-Table -AutoSize | Out-File $logFile -Append
+
+Get-Process | Format-Table Id,SI,Name,Path,MainWindowTitle >> $logFile
+```
+
 ## PARAMETERS
 
 ### -Append
@@ -299,7 +319,9 @@ Accept wildcard characters: False
 
 Specifies the number of characters in each line of output. Any additional characters are truncated,
 not wrapped. If this parameter is not used, the width is determined by the characteristics of the
-host. The default for the PowerShell console is 80 characters.
+host. The default for the PowerShell console is 80 characters. If you want to control the width for
+all invocations of `Out-File` as well as the redirection operators (`>` and `>>`), set
+`$PSDefaultParameterValues['out-file:width'] = 2000` before using `Out-File`.
 
 ```yaml
 Type: System.Int32
