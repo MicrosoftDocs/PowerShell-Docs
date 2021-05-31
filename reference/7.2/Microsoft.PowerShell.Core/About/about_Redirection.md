@@ -227,7 +227,7 @@ operators, PowerShell formats table output to the file based on the width of
 the console it is running within. For instance, when logging table output
 to file using a command like e.g. `Get-ChildItem Env:\Path > path.log` on a
 system where the console width is set to 80, the output in the file is
-clipped to 80 characters:
+truncated to 80 characters:
 
 ```text
 Name                         Value
