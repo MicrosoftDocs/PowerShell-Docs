@@ -56,7 +56,7 @@ The first command saves the path to the `Types.ps1xml` file in the `$Path` varia
 The second command saves the XML path to the **AliasProperty** node in the `$XPath` variable.
 
 The `Select-Xml` cmdlet gets the **AliasProperty** nodes that are identified by
-the XPath statement from the `Types.ps1xml` file. The command uses a pipeline operator to send the
+the XPath statement from the `Types.ps1xml` file. The command uses a pipeline operator (`|`) to send the
 **AliasProperty** nodes to the `Select-Object` cmdlet. The **ExpandProperty** parameter expands the
 **Node** object and returns its **Name** and **ReferencedMemberName** properties.
 
