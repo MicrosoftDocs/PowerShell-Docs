@@ -16,45 +16,51 @@ all PowerShell objects.
 
 ## Detailed description
 
-When PowerShell objects are created, some properties and methods are built into
-the object called intrinsic members. Some of these members provide different
-views of the object and some are hidden methods you can't see at all but are
-accessible nonetheless.
+When objects are created, PowerShell adds some "hidden" properties and methods
+to each object. These properties and methods are known as _intrinsic members_.
+These intrinsic members are normally hidden from view. Some of these members
+can be seen using the `Get-Member -Force` command.
 
 ## Object views
 
-PowerShell objects are built incrementally and as it's built or even after, the
-object can be adjusted. Each object provides a set of members to represent the
-object. You can find the available member sets using the `Get-Member -Force`
-cmdlet on any PowerShell object. Below are the available member sets.
+The intrinsic members include a set of **MemberSet** properties that represent
+a view of the object. You can find the **MemberSet** properties using the
+`Get-Member -Force` command on any PowerShell object. Every PowerShell object
+includes the following **MemberSet** properties.
 
-### PSBase
+### psbase
 
-The members of an object without extension or adaptation.
+This **psbase** contains the members the base object without extension or
+adaptation.
 
-### PSAdapted
+### psadapted
 
-The PSAdapted view shows the base object but includes adapted members if present.
-Adapted members are formatting changes made by the Extended Type System (ETS).
+The **psadapted** view shows the base object plus the adapted members, if
+present. Adapted members are added by the Extended Type System (ETS).
 
-### PSExtended
+### psextended
 
-The PSExtended view shows _only_ the members added by the [Types.ps1xml](about_Types.ps1xml.md)
-files and the [Add-Member](../../Microsoft.PowerShell.Utility/Add-Member.md) cmdlet.
+The **psextended** view _only_ shows the members added by the
+[Types.ps1xml](about_Types.ps1xml.md) files and the
+[Add-Member](xref:Microsoft.PowerShell.Utility.Add-Member) cmdlet. Any object
+can be extended at runtime using the `Add-Member` cmdlet.
 
-### PSObject
+### psobject
 
-PSObject is the base type of all PowerShell objects. However, when an object
-gets created, PowerShell also wraps the object with a PSObject instance. The
-`.psobject` member allows access to the PSObject wrapper instance. It includes
-methods, properties, and more about the object. Using the `.psobject` member is
-comparable to using [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
-but might have some differences as it is only accessing the wrapper instance.
+The base type of all PowerShell objects is `[PSObject]`. However, when an
+object gets created, PowerShell also wraps the object with a `[PSObject]`
+instance. The **psobject** member allows access to the `[PSObject]` wrapper
+instance. The wrapper includes methods, properties, and other information about
+the object. Using the **psobject** member is comparable to using
+[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member), but there are some
+differences since it is only accessing the wrapper instance.
 
-### PSTypeNames
+## Type information
 
-A list of object types that describe the object in order of specificity. For
-example:
+### pstypenames
+
+**PSTypeNames** is a **CodeProperty** member that lists the object type
+hierarchy in order of inheritance. For example:
 
 ```powershell
 $file = Get-Item C:\temp\test.txt
@@ -68,15 +74,17 @@ System.MarshalByRefObject
 System.Object
 ```
 
-As you can see it starts with the most specific object type in
-`System.IO.FileInfo` all the way down to the most generic, `System.Object`.
+As shown above, it starts with the most specific object type,
+`System.IO.FileInfo`, and continues down to the most generic type,
+`System.Object`.
 
 ## Methods
 
-There are several hidden methods available to all PowerShell objects.
+PowerShell adds two hidden methods to all PowerShell objects. These methods are
+not visible using the `Get-Member -Force` command or tab completion.
 
 ### ForEach() and Where()
 
-The `.ForEach()` and `.Where()` methods are available to all PowerShell
+The `ForEach()` and `Where()` methods are available to all PowerShell
 objects. However, they are most useful when working with collections. For more
 information on how to use these methods, see [about_Arrays](about_Arrays.md).
