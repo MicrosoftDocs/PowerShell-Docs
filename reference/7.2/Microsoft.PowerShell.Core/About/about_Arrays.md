@@ -785,6 +785,10 @@ Stopped  AppIDSvc           Application Identity
 ...
 ```
 
+> [!NOTE]
+> Both `foreach` and `where` methods are intrinsic members. For more information
+> about intrinsic members, see [about_Instrinsic_Members](about_Intrinsic_Members.md)
+
 ## Get the members of an array
 
 To get the properties and methods of an array, such as the Length property and
