@@ -1,27 +1,27 @@
 ---
 description: Describes automatic members in all PowerShell objects
 Locale: en-US
-ms.date: 05/18/2021
+ms.date: 06/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Inrinsic_Members?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Intrinsic_Members
 ---
 
-# About Intrinsic members
+# About intrinsic members
 
-## Short Description
+## Short description
 
 Provides information about PowerShell's intrinsic members that are available to
 all PowerShell objects.
 
-## Detailed Description
+## Detailed description
 
 When PowerShell objects are created, some properties and methods are built into
 the object called intrinsic members. Some of these members provide different
 views of the object and some are hidden methods you can't see at all but are
 accessible nonetheless.
 
-## Object Views
+## Object views
 
 PowerShell objects are built incrementally and as it's built or even after, the
 object can be adjusted. Each object provides a set of members to represent the
