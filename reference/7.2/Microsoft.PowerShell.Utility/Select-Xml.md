@@ -206,7 +206,7 @@ Pl.Book1.com
 
 This example shows how to use the `Select-Xml` cmdlet with XML documents that use the default xmlns
 namespace. The example gets the titles of Windows PowerShell ISE user-created snippet files. For
-information about snippets, see New-IseSnippet.
+information about snippets, see [New-IseSnippet](xref:ISE.New-IseSnippet).
 
 The `$SnippetNamespace` variable contains a hash table for the default namespace that snippet XML
 files use. The hash table value is the XMLNS schema URI in the snippet XML. The hash table key name,
