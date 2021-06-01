@@ -54,8 +54,7 @@ issues. Thank you!
 
 New Content
 
-- Published new Learn content
-  [Write your first PowerShell code](https://docs.microsoft.com/learn/modules/powershell-write-first/)
+- Published new Learn content   [Write your first PowerShell code](/learn/modules/powershell-write-first/)
 - Updated docs for PowerShell 7.2-preview.5
 - Updated metadata on ~3300 articles in the Windows module documentation
   - Preparing for Windows Server 2022 release and fixing updateable help
