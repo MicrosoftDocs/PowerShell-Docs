@@ -1,7 +1,7 @@
 ---
-title: What's New in PowerShell Docs for 2021
+title: What's New in PowerShell-Docs for 2021
 description: List of changes to the PowerShell documentation for 2021
-ms.date: 05/03/2021
+ms.date: 06/01/2021
 ---
 
 # What's new in PowerShell Docs for 2021
@@ -12,11 +12,49 @@ contributions from the community.
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
 
+## 2021-May
+
+New Content
+
+- Migrated two articles from the Windows Server content to the PowerShell docset
+  - [PowerShell scripting performance considerations](/powershell/scripting/dev-cross-plat/performance/script-authoring-considerations)
+  - [PowerShell module authoring considerations](/powershell/scripting/dev-cross-plat/performance/module-auth)
+- Added [PowerShell Language Specification 3.0](/powershell/scripting/lang-spec/chapter-01)
+  - The specification document is available from the Microsoft Download
+    Center as a [Microsoft Word document](https://www.microsoft.com/download/details.aspx?id=36389).
+- Updated content for PowerShell 7.2-Preview6 release
+- Moved Samples under the Learn node in the Table of Contents
+
+### Top Community Contributors
+
+GitHub stats
+
+- 53 PRs merged (6 from Community)
+- 37 issues opened (35 from Community)
+- 39 issues closed (36 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|    GitHub Id     | PRs merged | Issues opened |
+| ---------------- | :--------: | :-----------: |
+| kvprasoon        |     2      |               |
+| jErprog          |     1      |               |
+| aamnah           |     1      |               |
+| BetaLyte         |     1      |               |
+| TheNCuber        |     1      |               |
+| trollyanov       |            |       6       |
+| Tarjei-stavanger |            |       3       |
+| aungminko93750   |            |       3       |
+| SetTrend         |            |       2       |
+| cdichter         |            |       2       |
+| reuvygroovy      |            |       2       |
+
 ## 2021-April
 
 New Content
 
-- Published new Learn content [Write your first PowerShell code](https://docs.microsoft.com/learn/modules/powershell-write-first/)
+- Published new Learn content   [Write your first PowerShell code](/learn/modules/powershell-write-first/)
 - Updated docs for PowerShell 7.2-preview.5
 - Updated metadata on ~3300 articles in the Windows module documentation
   - Preparing for Windows Server 2022 release and fixing updateable help

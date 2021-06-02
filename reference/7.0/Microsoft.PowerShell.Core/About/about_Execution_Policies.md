@@ -1,14 +1,14 @@
 ---
-description: Describes the PowerShell execution policies and explains how to manage them. 
-keywords: powershell,cmdlet
+description: Describes the PowerShell execution policies and explains how to manage them.
 Locale: en-US
 ms.date: 08/10/2020
+no-loc: [Bypass, Default, Restricted, Undefined, Process, Scope]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Execution_Policies
+title: about Execution Policies
 ---
 
-# About Execution Policies
+# about_Execution_Policies
 
 ## Short Description
 Describes the PowerShell execution policies and explains how to manage them.
@@ -265,13 +265,13 @@ If no execution policy is set in any scope, the effective execution policy is
 
 ### Set a different policy for one session
 
-You can use the **ExecutionPolicy** parameter of **pwsh.exe** to set an
-execution policy for a new PowerShell session. The policy affects only the
-current session and child sessions.
+You can use the **ExecutionPolicy** parameter of `pwsh.exe` to set an execution
+policy for a new PowerShell session. The policy affects only the current
+session and child sessions.
 
 To set the execution policy for a new session, start PowerShell at the command
-line, such as **cmd.exe** or from PowerShell, and then use the
-**ExecutionPolicy** parameter of **pwsh.exe** to set the execution policy.
+line, such as `cmd.exe` or from PowerShell, and then use the
+**ExecutionPolicy** parameter of `pwsh.exe` to set the execution policy.
 
 For example:
 
@@ -318,12 +318,11 @@ Configuration nodes in Group Policy Editor in the following paths.
 
 For Windows XP and Windows Server 2003:
 
-Administrative Templates\Windows Components\Windows PowerShell
+`Administrative Templates\Windows Components\Windows PowerShell`
 
 For Windows Vista and later versions of Windows:
 
-Administrative Templates\Classic Administrative Templates\
-Windows Components\Windows PowerShell
+`Administrative Templates\Classic Administrative Templates\Windows Components\Windows PowerShell`
 
 Policies set in the Computer Configuration node take precedence over policies
 set in the User Configuration node.
@@ -335,11 +334,13 @@ For more information, see [about_Group_Policy_Settings](about_Group_Policy_Setti
 When determining the effective execution policy for a session, PowerShell
 evaluates the execution policies in the following precedence order:
 
-- Group Policy: MachinePolicy
-- Group Policy: UserPolicy
-- Execution Policy: Process (or `pwsh.exe -ExecutionPolicy`)
-- Execution Policy: CurrentUser
-- Execution Policy: LocalMachine
+```
+Group Policy: MachinePolicy
+Group Policy: UserPolicy
+Execution Policy: Process (or pwsh.exe -ExecutionPolicy)
+Execution Policy: CurrentUser
+Execution Policy: LocalMachine
+```
 
 ## Manage signed and unsigned scripts
 
@@ -357,8 +358,9 @@ Beginning in PowerShell 3.0, you can use the **Stream** parameter of the
 from the internet. Use the `Unblock-File` cmdlet to unblock the scripts so that
 you can run them in PowerShell.
 
-For more information, see [about_Signing](about_Signing.md), [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item),
-and [Unblock-File](xref:Microsoft.PowerShell.Utility.Unblock-File).
+For more information, see [about_Signing](about_Signing.md),
+[Get-Item](xref:Microsoft.PowerShell.Management.Get-Item), and
+[Unblock-File](xref:Microsoft.PowerShell.Utility.Unblock-File).
 
 > [!NOTE]
 > Other methods of downloading files may not mark the files as coming from the
@@ -406,7 +408,7 @@ Zone check which avoids the problem.
 
 [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
 
-[Pwsh Console Help](about_pwsh.md)
+[about_Pwsh](about_pwsh.md)
 
 [Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
 

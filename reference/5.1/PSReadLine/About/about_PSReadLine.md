@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 11/16/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: About PSReadLine
+title: about PSReadLine
 ---
-# PSReadLine
+# about_PSReadLine
 
 ## about_PSReadLine
 

@@ -661,7 +661,7 @@ True
 
 When you have a single value that you would like to verify matches one of several values, you can
 use the `-in` operator. The value would be on the left and the array on the right-hand side of the
-operation.
+operator.
 
 ```powershell
 PS> $data = @('red','green','blue')

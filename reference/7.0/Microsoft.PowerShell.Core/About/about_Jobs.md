@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 03/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Jobs
+title: about Jobs
 ---
-# About Jobs
+# about_Jobs
 
 ## Short description
 Provides information about how PowerShell background jobs run a command or

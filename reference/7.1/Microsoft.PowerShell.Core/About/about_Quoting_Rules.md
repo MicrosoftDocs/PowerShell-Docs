@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Quoting_Rules
+title: about Quoting Rules
 ---
-# About Quoting Rules
+# about_Quoting_Rules
 
 ## Short description
 Describes rules for using single and double quotation marks in PowerShell.

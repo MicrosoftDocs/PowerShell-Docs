@@ -4,10 +4,10 @@ Locale: en-US
 ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Requires
+title: about Requires
 ---
 
-# About Requires
+# about_Requires
 
 ## Short description
 Prevents a script from running without the required elements.

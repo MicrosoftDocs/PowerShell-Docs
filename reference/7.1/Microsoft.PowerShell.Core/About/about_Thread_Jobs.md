@@ -3,10 +3,10 @@ description: Provides information about PowerShell thread-based jobs. A thread j
 Locale: en-US
 ms.date: 11/11/2020
 schema: 2.0.0
-title: about_Thread_Jobs
+title: about Thread Jobs
 ---
 
-# About Thread Jobs
+# about_Thread_Jobs
 
 ## Short description
 

@@ -12,7 +12,7 @@ ms.prod: powershell
 > 1.2:
 >
 > ```powershell
-> [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+> [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 > ```
 >
 > For more information, see the

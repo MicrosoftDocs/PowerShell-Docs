@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 1/11/2019
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Classes_and_DSC
+title: about Classes and DSC
 ---
-# About Classes and Desired State Configuration
+# about_Classes_and_DSC
 
 ## Short description
 

@@ -4,10 +4,10 @@ Locale: en-US
 ms.date: 02/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Wildcards
+title: about Wildcards
 ---
 
-# About Wildcards
+# about_Wildcards
 
 ## SHORT DESCRIPTION
 

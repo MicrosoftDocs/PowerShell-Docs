@@ -1,26 +1,25 @@
 ---
 description: Describes how to use alternate names for cmdlets and commands in PowerShell.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/27/2017
+no-loc: [Authenticode, Alias]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Aliases
+title: about Aliases
 ---
-# About Aliases
+# about_Aliases
 
-## SHORT DESCRIPTION
-Describes how to use alternate names for cmdlets and commands in
-PowerShell.
+## Short description
+Describes how to use alternate names for cmdlets and commands in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 An alias is an alternate name or nickname for a cmdlet or for a command
 element, such as a function, script, file, or executable file. You can use the
 alias instead of the command name in any PowerShell commands.
 
-To create an alias, use the New-Alias cmdlet. For example, the following
-command creates the "gas" alias for the `Get-AuthenticodeSignature` cmdlet:
+To create an alias, use the `New-Alias` cmdlet. For example, the following
+command creates the `gas` alias for the `Get-AuthenticodeSignature` cmdlet:
 
 ```powershell
 New-Alias -Name gas -Value Get-AuthenticodeSignature
@@ -28,7 +27,7 @@ New-Alias -Name gas -Value Get-AuthenticodeSignature
 
 After you create the alias for the cmdlet name, you can use the alias instead
 of the cmdlet name. For example, to get the Authenticode signature for the
-SqlScript.ps1 file, type:
+`SqlScript.ps1` file, type:
 
 ```powershell
 Get-AuthenticodeSignature SqlScript.ps1
@@ -40,17 +39,17 @@ Or, type:
 gas SqlScript.ps1
 ```
 
-If you create "word" as the alias for Microsoft Office Word, you can type
+If you create `word` as the alias for Microsoft Office Word, you can type
 "word" instead of the following:
 
 ```powershell
 "C:\Program Files\Microsoft Office\Office11\Winword.exe"
 ```
 
-## BUILT-IN ALIASES
+## Built in aliases
 
-PowerShell includes a set of built-in aliases, including "cd" and "chdir" for
-the Set-Location cmdlet, and "ls" and "dir" for the Get-ChildItem cmdlet.
+PowerShell includes a set of built-in aliases, including `cd` and `chdir` for
+the `Set-Location` cmdlet, and `ls` and `dir` for the `Get-ChildItem` cmdlet.
 
 To get all the aliases on the computer, including the built-in aliases, type:
 
@@ -58,7 +57,7 @@ To get all the aliases on the computer, including the built-in aliases, type:
 Get-Alias
 ```
 
-## ALIAS CMDLETS
+## Alias cmdlets
 
 PowerShell includes the following cmdlets, which are designed for working with
 aliases:
@@ -81,10 +80,10 @@ For example, type:
 Get-Help Export-Alias -Detailed
 ```
 
-## CREATING AN ALIAS
+## Creating an alias
 
-To create a new alias, use the New-Alias cmdlet. For example, to create the
-"gh" alias for Get-Help, type:
+To create a new alias, use the `New-Alias` cmdlet. For example, to create the
+`gh` alias for `Get-Help`, type:
 
 ```powershell
 New-Alias -Name gh -Value Get-Help
@@ -93,23 +92,23 @@ New-Alias -Name gh -Value Get-Help
 You can use the alias in commands, just as you would use the full cmdlet name,
 and you can use the alias with parameters.
 
-For example, to get detailed Help for the Get-WmiObject cmdlet, type:
+For example, to get detailed Help for the `Get-CimInstance` cmdlet, type:
 
 ```powershell
-Get-Help Get-WmiObject -Detailed
+Get-Help Get-CimInstance -Detailed
 ```
 
 Or, type:
 
 ```powershell
-gh Get-WmiObject -Detailed
+gh Get-CimInstance -Detailed
 ```
 
-## SAVING ALIASES
+## Saving aliases
 
 The aliases that you create are saved only in the current session. To use the
 aliases in a different session, add the alias to your PowerShell profile. Or,
-use the Export-Alias cmdlet to save the aliases to a file.
+use the `Export-Alias` cmdlet to save the aliases to a file.
 
 For more information, type:
 
@@ -117,7 +116,7 @@ For more information, type:
 Get-Help about_Profiles
 ```
 
-## GETTING ALIASES
+## Getting aliases
 
 To get all the aliases in the current session, including the built-in aliases,
 the aliases in your PowerShell profiles, and the aliases that you have created
@@ -127,7 +126,7 @@ in the current session, type:
 Get-Alias
 ```
 
-To get particular aliases, use the Name parameter of the Get-Alias cmdlet. For
+To get particular aliases, use the Name parameter of the `Get-Alias` cmdlet. For
 example, to get aliases that begin with "p", type:
 
 ```powershell
@@ -135,17 +134,17 @@ Get-Alias -Name p*
 ```
 
 To get the aliases for a particular item, use the Definition parameter. For
-example, to get the aliases for the Get-ChildItem cmdlet type:
+example, to get the aliases for the `Get-ChildItem` cmdlet type:
 
 ```powershell
 Get-Alias -Definition Get-ChildItem
 ```
 
-### GET-ALIAS OUTPUT
+### Get-Alias output
 
-Get-Alias returns only one type of object, an AliasInfo object
-(System.Management.Automation.AliasInfo). The name of aliases that don't
-include a hyphen, such as "cd" are displayed in the following format:
+`Get-Alias` returns only one type of object, an **AliasInfo** object
+(**System.Management.Automation.AliasInfo**). The name of aliases that don't
+include a hyphen, such as `cd` are displayed in the following format:
 
 ```powershell
 Get-Alias ac
@@ -164,7 +163,7 @@ hyphen. These are likely to be preferred substitute names for cmdlets and
 functions, instead of typical abbreviations or nicknames, and the author might
 not want them to be as evident.
 
-## ALTERNATE NAMES FOR COMMANDS WITH PARAMETERS
+## Alternate names for commands with parameters
 
 You can assign an alias to a cmdlet, script, function, or executable file. You
 cannot assign an alias to a command and its parameters. For example, you can
@@ -192,31 +191,31 @@ For more information about functions, type:
 Get-Help about_Functions
 ```
 
-## ALIAS OBJECTS
+## Alias objects
 
 PowerShell aliases are represented by objects that are instances of the
 System.Management.Automation.AliasInfo class. For more information about this
 type of object, see [AliasInfo Class][aliasinfo] in the PowerShell SDK.
 
 To view the properties and methods of the alias objects, get the aliases.
-Then, pipe them to the Get-Member cmdlet. For example:
+Then, pipe them to the `Get-Member` cmdlet. For example:
 
 ```powershell
 Get-Alias | Get-Member
 ```
 
 To view the values of the properties of a specific alias, such as the `dir`
-alias, get the alias. Then, pipe it to the Format-List cmdlet. For example,
-the following command gets the "dir" alias. Next, the command pipes the alias
-to the Format-List cmdlet. Then, the command uses the Property parameter of
-Format-List with a wildcard character (\*) to display all the properties of
+alias, get the alias. Then, pipe it to the `Format-List` cmdlet. For example,
+the following command gets the `dir` alias. Next, the command pipes the alias
+to the `Format-List` cmdlet. Then, the command uses the Property parameter of
+`Format-List` with a wildcard character (`*`) to display all the properties of
 the `dir` alias. The following command performs these tasks:
 
 ```powershell
 Get-Alias -Name dir | Format-List -Property *
 ```
 
-## PowerShell ALIAS PROVIDER
+## PowerShell Alias provider
 
 PowerShell includes the Alias provider. The Alias provider lets you view the
 aliases in PowerShell as though they were on a file system drive.
@@ -255,7 +254,7 @@ For more information about the PowerShell Alias provider, type:
 Get-Help Alias
 ```
 
-## SEE ALSO
+## See also
 
 - [New-Alias](xref:Microsoft.PowerShell.Utility.New-Alias)
 - [Get-Alias](xref:Microsoft.PowerShell.Utility.Get-Alias)

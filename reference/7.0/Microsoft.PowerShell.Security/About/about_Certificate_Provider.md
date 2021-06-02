@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/about/about_certificate_provider?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: Certificate Provider
+title: about Certificate Provider
 ---
-# Certificate Provider
+# about_Certificate_Provider
 
 ## Provider name
 

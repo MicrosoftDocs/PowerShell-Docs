@@ -15,15 +15,16 @@ Select the area of the Table of Contents containing the documents being changed.
 - [ ] Learning PowerShell
   - [ ] PowerShell 101
   - [ ] Deep dives
+  - [ ] Sample scripts
   - [ ] Remoting
 - [ ] Release notes (What's New)
 - [ ] Windows PowerShell
   - WMF, ISE, release notes, etc.
 - [ ] DSC articles
 - [ ] Community resources
-- [ ] Sample scripts
 - [ ] Gallery articles
 - [ ] Scripting and development
+  - [ ] Language Spec
   - [ ] Legacy SDK
 
 **Cmdlet reference & about_ topics**

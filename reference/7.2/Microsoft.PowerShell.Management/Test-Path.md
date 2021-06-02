@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/22/2019
+ms.date: 05/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Path
@@ -153,7 +153,7 @@ on the computer is newer than "July 13, 2009".
 The NewerThan parameter works only in file system drives.
 
 ```powershell
-Test-Path $pshome\PowerShell.exe -NewerThan "July 13, 2009"
+Test-Path $pshome\pwsh.exe -NewerThan "July 13, 2009"
 ```
 
 ```Output

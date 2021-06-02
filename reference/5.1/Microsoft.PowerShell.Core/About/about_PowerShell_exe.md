@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_PowerShell_exe
+title: about PowerShell exe
 ---
-# About PowerShell.exe
+# about_PowerShell_exe
 
 ## Short Description
 Explains how to use the `powershell.exe` command-line interface. Displays the

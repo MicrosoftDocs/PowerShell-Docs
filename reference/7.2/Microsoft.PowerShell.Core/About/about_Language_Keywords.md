@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 10/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_keywords?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Language_Keywords
+title: about Language Keywords
 ---
-# About Language Keywords
+# about_Language_Keywords
 
 ## SHORT DESCRIPTION
 Describes the keywords in the PowerShell scripting language.

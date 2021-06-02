@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Functions_OutputTypeAttribute
+title: about Functions OutputTypeAttribute
 ---
-# About Functions OutputTypeAttribute
+# about_Functions_OutputTypeAttribute
 
 ## SHORT DESCRIPTION
 Describes an attribute that reports the type of object that the function

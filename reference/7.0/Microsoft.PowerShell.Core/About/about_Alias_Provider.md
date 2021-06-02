@@ -1,15 +1,16 @@
 ---
-description: Alias 
-keywords: powershell,cmdlet
+description: Alias
 Locale: en-US
 ms.date: 10/18/2018
+no-loc: [Alias, Definition, AllScope, Option, None, Constant, Private]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_alias_provider?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: Alias Provider
+title: about Alias Provider
 ---
-# Alias provider
+# about_Alias_Provider
 
 ## Provider name
+
 Alias
 
 ## Drives
@@ -60,7 +61,8 @@ cmdlets.
 ## Types exposed by this provider
 
 Each alias is an instance of the
-[System.Management.Automation.AliasInfo](/dotnet/api/system.management.automation.aliasinfo) class.
+[System.Management.Automation.AliasInfo](/dotnet/api/system.management.automation.aliasinfo)
+class.
 
 ## Navigating the Alias drive
 
@@ -85,9 +87,11 @@ path.
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem),
-> `cd` is an alias for [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location). and `pwd` is
-> an alias for [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location).
+> [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem), `cd` is
+> an alias for
+> [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location). and `pwd`
+> is an alias for
+> [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location).
 
 ### Displaying the Contents of the Alias: drive
 
@@ -132,8 +136,8 @@ $Alias:ls
 ### Get all aliases for a specific cmdlet
 
 This command gets a list of the aliases that are associated with the
-`Get-ChildItem` cmdlet. It uses the **Definition** property, which stores
-the cmdlet name.
+`Get-ChildItem` cmdlet. It uses the **Definition** property, which stores the
+cmdlet name.
 
 ```powershell
 Get-Item -Path Alias:* | Where-Object {$_.Definition -eq "Get-ChildItem"}
@@ -144,13 +148,12 @@ Get-Item -Path Alias:* | Where-Object {$_.Definition -eq "Get-ChildItem"}
 ### Create an alias from the Alias: drive
 
 This command creates the `serv` alias for the `Get-Service` cmdlet. Because the
-current location is in the `Alias:` drive, the `-Path` parameter is not
-needed.
+current location is in the `Alias:` drive, the `-Path` parameter is not needed.
 
 This command also uses the `-Options` dynamic parameter to set the **AllScope**
-option on the alias. The `-Options` parameter is available in
-the `New-Item` cmdlet only when you are in the `Alias:` drive. The dot (`.`)
-indicates the current directory, which is the alias drive.
+option on the alias. The `-Options` parameter is available in the `New-Item`
+cmdlet only when you are in the `Alias:` drive. The dot (`.`) indicates the
+current directory, which is the alias drive.
 
 ```
 PS Alias:\> New-Item -Path . -Name serv -Value Get-Service -Options "AllScope"
@@ -250,8 +253,8 @@ You can use this command in any PowerShell drive.
 Remove-Item -Path Alias:serv
 ```
 
-This command deletes aliases that begin with "s".
-It does not delete read-only aliases.
+This command deletes aliases that begin with "s". It does not delete read-only
+aliases.
 
 ```powershell
 Clear-Item -Path Alias:s*
@@ -260,9 +263,9 @@ Clear-Item -Path Alias:s*
 ### Delete read-only aliases
 
 This command deletes all aliases from the current session, except those with a
-value of `Constant` for their **Options** property. The `-Force`
-parameter allows the command to delete aliases whose **Options** property has a
-value of `ReadOnly`.
+value of `Constant` for their **Options** property. The `-Force` parameter
+allows the command to delete aliases whose **Options** property has a value of
+`ReadOnly`.
 
 ```powershell
 Remove-Item Alias:* -Force
@@ -279,13 +282,13 @@ provider-enabled drive.
 Determines the value of the **Options** property of an alias.
 
 - **None**: No options. This value is the default.
-- **Constant**:The alias cannot be deleted and its properties cannot be changed.
-  **Constant** is available only when you create an alias. You cannot change the
-  option of an existing alias to **Constant**.
+- **Constant**:The alias cannot be deleted and its properties cannot be
+  changed. **Constant** is available only when you create an alias. You cannot
+  change the option of an existing alias to **Constant**.
 - **Private**:The alias is visible only in the current scope, not in the child
-   scopes.
-- **ReadOnly**:The properties of the alias cannot be changed except by using the
-  `-Force` parameter. You can use `Remove-Item` to delete the alias.
+  scopes.
+- **ReadOnly**:The properties of the alias cannot be changed except by using
+  the `-Force` parameter. You can use `Remove-Item` to delete the alias.
 - **AllScope**:The alias is copied to any new scopes that are created.
 
 #### Cmdlets supported
@@ -306,8 +309,10 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) command in a file system drive or use the `-Path`
-parameter of [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) to specify a file system drive.
+[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) command in a file system
+drive or use the `-Path` parameter of
+[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) to specify a file system
+drive.
 
 ```powershell
 Get-Help Get-ChildItem

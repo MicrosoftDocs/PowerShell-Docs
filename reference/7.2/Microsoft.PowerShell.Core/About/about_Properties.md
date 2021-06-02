@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 12/01/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_properties?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Properties
+title: about Properties
 ---
-# About Properties
+# about_Properties
 
 ## Short description
 Describes how to use object properties in PowerShell.

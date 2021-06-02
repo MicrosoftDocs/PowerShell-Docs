@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_assignment_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Assignment_Operators
+title: about Assignment Operators
 ---
-# About Assignment Operators
+# about_Assignment_Operators
 
 ## Short description
 Describes how to use operators to assign values to variables.
@@ -630,7 +630,7 @@ $d
 7
 ```
 
-## Microsoft .NET Framework types
+## Microsoft .NET types
 
 By default, when a variable has only one value, the value that is assigned to
 the variable determines the data type of the variable. For example, the
@@ -641,9 +641,9 @@ type:
 $a = 6
 ```
 
-To find the .NET Framework type of a variable, use the **GetType** method and
-its **FullName** property, as follows. Be sure to include the parentheses after
-the **GetType** method name, even though the method call has no arguments:
+To find the .NET type of a variable, use the **GetType** method and its
+**FullName** property, as follows. Be sure to include the parentheses after the
+**GetType** method name, even though the method call has no arguments:
 
 ```powershell
 $a = 6
@@ -695,11 +695,11 @@ $a
 9
 ```
 
-You can cast a new scalar variable as any .NET Framework type by placing the
-type name in brackets that precede either the variable name or the first
-assignment value. When you cast a variable, you can determine the types of data
-that can be stored in the variable. And, you can determine how the variable
-behaves when you manipulate it.
+You can cast a new scalar variable as any .NET type by placing the type name in
+brackets that precede either the variable name or the first assignment value.
+When you cast a variable, you can determine the types of data that can be
+stored in the variable. And, you can determine how the variable behaves when
+you manipulate it.
 
 For example, the following command casts the variable as a string type:
 
@@ -776,10 +776,9 @@ example, the following command casts the variable as a `string []` array type:
 [string []] $a = "one", "two", "three"
 ```
 
-PowerShell variables can be any .NET Framework data type. In addition, you can
-assign any fully qualified .NET Framework data type that is available in the
-current process. For example, the following command specifies a
-`System.DateTime` data type:
+PowerShell variables can be any .NET data type. In addition, you can assign any
+fully qualified .NET data type that is available in the current process. For
+example, the following command specifies a `System.DateTime` data type:
 
 ```powershell
 [System.DateTime]$a = "5/31/2005"

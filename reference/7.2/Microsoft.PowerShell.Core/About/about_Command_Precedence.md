@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 02/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Command_Precedence
+title: about Command Precedence
 ---
-# About Command Precedence
+# about_Command_Precedence
 
 ## Short description
 Describes how PowerShell determines which command to run.

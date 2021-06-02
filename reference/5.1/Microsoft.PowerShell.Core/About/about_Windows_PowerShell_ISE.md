@@ -5,10 +5,10 @@ Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Windows_PowerShell_ISE
+title: about Windows PowerShell ISE
 ---
 
-# About Windows PowerShell ISE
+# about_Windows_PowerShell_ISE
 
 ## SHORT DESCRIPTION
 
