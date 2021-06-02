@@ -4,10 +4,10 @@ Locale: en-US
 ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Logging_Non-Windows
+title: about Logging Non-Windows
 ---
 
-# About Logging Non-Windows
+# about_Logging_Non-Windows
 
 ## Short description
 PowerShell logs internal operations from the engine, providers, and cmdlets.

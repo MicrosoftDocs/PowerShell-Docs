@@ -333,6 +333,10 @@ an empty result inside an array then it's not counted as an item. The count is `
 
 If you treat the empty `$null` like a collection, then it's empty.
 
+If you pass in an empty value to a function parameter that isn't strongly typed, PowerShell coerces
+the nothing value into a `$null` value by default. This means inside the function, the value will be
+treated as `$null` instead of the **System.Management.Automation.Internal.AutomationNull** type.
+
 ### Pipeline
 
 The primary place you see the difference is when using the pipeline. You can pipe a `$null`

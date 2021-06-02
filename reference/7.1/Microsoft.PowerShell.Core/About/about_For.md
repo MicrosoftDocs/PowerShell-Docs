@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 3/4/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_for?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_For
+title: about For
 ---
-# About For
+# about_For
 
 ## Short description
 Describes a language command you can use to run statements based on a

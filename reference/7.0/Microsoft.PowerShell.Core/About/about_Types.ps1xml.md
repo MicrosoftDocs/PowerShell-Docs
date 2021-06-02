@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 04/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_`Types.ps1xml`?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Types.ps1xml
+title: about Types.ps1xml
 ---
-# About Types.ps1xml
+# about_Types.ps1xml
 
 ## Short description
 Explains how to use `Types.ps1xml` files to extend the types of objects that

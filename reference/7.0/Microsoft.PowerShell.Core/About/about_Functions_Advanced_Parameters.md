@@ -5,10 +5,10 @@ Locale: en-US
 ms.date: 04/14/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Functions_Advanced_Parameters
+title: about Functions Advanced Parameters
 ---
 
-# About Functions Advanced Parameters
+# about_Functions_Advanced_Parameters
 
 ## Short description
 

@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 10/15/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_type_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Type_Operators
+title: about Type Operators
 ---
-# About Type Operators
+# about_Type_Operators
 
 ## SHORT DESCRIPTION
 Describes the operators that work with Microsoft .NET types.

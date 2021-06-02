@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Comparison_Operators
+title: about Comparison Operators
 ---
-# About Comparison Operators
+# about_Comparison_Operators
 
 ## Short description
 

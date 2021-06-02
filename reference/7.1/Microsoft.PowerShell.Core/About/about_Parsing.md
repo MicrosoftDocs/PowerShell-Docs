@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 09/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Parsing
+title: about Parsing
 ---
-# About Parsing
+# about_Parsing
 
 ## SHORT DESCRIPTION
 Describes how PowerShell parses commands.

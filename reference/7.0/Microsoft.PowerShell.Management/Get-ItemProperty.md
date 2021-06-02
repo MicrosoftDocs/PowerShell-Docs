@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 05/25/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-itemproperty?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ItemProperty
@@ -31,9 +31,9 @@ Get-ItemProperty -LiteralPath <String[]> [[-Name] <String[]>] [-Filter <String>]
 
 ## DESCRIPTION
 
-The `Get-ItemProperty` cmdlet gets the properties of the specified items.
-For example, you can use this cmdlet to get the value of the LastAccessTime property of a file
-object. You can also use this cmdlet to view registry entries and their values.
+The `Get-ItemProperty` cmdlet gets the properties of the specified items. For example, you can use
+this cmdlet to get the value of the LastAccessTime property of a file object. You can also use this
+cmdlet to view registry entries and their values.
 
 ## EXAMPLES
 
@@ -47,46 +47,36 @@ Get-ItemProperty C:\Windows
 
 ### Example 2: Get the properties of a specific file
 
-This command gets the properties of the `C:\Test\Weather.xls` file.
-The result is piped to the `Format-List` cmdlet to display the output as a list.
+This command gets the properties of the `C:\Test\Weather.xls` file. The result is piped to the
+`Format-List` cmdlet to display the output as a list.
 
 ```powershell
 Get-ItemProperty C:\Test\Weather.xls | Format-List
 ```
 
-### Example 3: Display the value name and data of registry entries in a registry subkey
+### Example 3: Get the value name and data of a registry entry in a registry subkey
 
-This command displays the value name and data of each of the registry entries contained in the
-"CurrentVersion" registry subkey.
-
-```powershell
-Get-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion
-```
-
-> [!NOTE]
-> This command requires that there is a PowerShell drive named `HKLM:` that is mapped to the
-> "HKEY_LOCAL_MACHINE" hive of the registry.
->
-> A drive with that name and mapping is available in PowerShell by default.
-> Alternatively, the path to this registry subkey can be specified by using the following alternative
-> path that begins with the provider name followed by two colons:
->
-> `Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.
-
-### Example 4: Get the value name and data of a registry entry in a registry subkey
-
-This command gets the value name and data of the "ProgramFilesDir" registry entry in the
-"CurrentVersion" registry subkey.
-The **Path** specifies the subkey and the **Name** parameter specifies the
-value name of the entry.
+This command gets the value name and data of the `ProgramFilesDir` registry entry in the
+`CurrentVersion` registry subkey. The **Path** specifies the subkey and the **Name** parameter
+specifies the value name of the entry.
 
 ```powershell
 Get-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name "ProgramFilesDir"
 ```
 
-### Example 5: Get the value names and data of registry entries in a registry key
+> [!NOTE]
+> This command requires that there is a PowerShell drive named `HKLM:` that is mapped to the
+> `HKEY_LOCAL_MACHINE` hive of the registry.
+>
+> A drive with that name and mapping is available in PowerShell by default. Alternatively, the path
+> to this registry subkey can be specified by using the following alternative path that begins with
+> the provider name followed by two colons:
+>
+> `Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.
 
-This command gets the value names and data of the registry entries in the "PowerShellEngine"
+### Example 4: Get the value names and data of registry entries in a registry key
+
+This command gets the value names and data of the registry entries in the `PowerShellEngine`
 registry key. The results are shown in the following sample output.
 
 ```powershell
@@ -107,9 +97,8 @@ PSCompatibleVersion     : 1.0,2.0
 ### -Credential
 
 > [!NOTE]
-> This parameter is not supported by any providers installed with PowerShell.
-> To impersonate another user, or elevate your credentials when running this cmdlet,
-> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
+> This parameter is not supported by any providers installed with PowerShell. To impersonate another
+> user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -206,8 +195,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies the name of the property or properties to retrieve.
-Wildcard characters are permitted.
+Specifies the name of the property or properties to retrieve. Wildcard characters are permitted.
 
 ```yaml
 Type: System.String[]
@@ -223,8 +211,7 @@ Accept wildcard characters: True
 
 ### -Path
 
-Specifies the path to the item or items.
-Wildcard characters are permitted.
+Specifies the path to the item or items. Wildcard characters are permitted.
 
 ```yaml
 Type: System.String[]

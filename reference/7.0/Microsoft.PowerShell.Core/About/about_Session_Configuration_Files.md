@@ -5,9 +5,9 @@ Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Session_Configuration_Files
+title: about Session Configuration Files
 ---
-# About Session Configuration Files
+# about_Session_Configuration_Files
 
 ## SHORT DESCRIPTION
 Describes session configuration files, which are used in a session

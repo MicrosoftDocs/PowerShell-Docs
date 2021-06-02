@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 05/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-psprovider?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSProvider
@@ -20,11 +20,12 @@ Get-PSProvider [[-PSProvider] <String[]>] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Get-PSProvider` cmdlet gets the PowerShell providers in the current session.
-You can get a particular drive or all drives in the session.
+The `Get-PSProvider` cmdlet gets the PowerShell providers in the current session. You can get a
+particular drive or all drives in the session.
 
 PowerShell providers let you access a variety of data stores as though they were file system drives.
-For information about PowerShell providers, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+For information about PowerShell providers, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## EXAMPLES
 
@@ -42,31 +43,30 @@ This command displays a list of all available PowerShell providers.
 Get-PSProvider f*, r* | Format-List
 ```
 
-This command displays a list of all PowerShell providers with names that begin with the letter f or
-r.
+This command displays a list of all PowerShell providers with names that begin with the letter `f`
+or `r`.
 
 ### Example 3: Find snap-ins or module that added providers to your session
 
 ```powershell
-Get-PSProvider | Format-Table name, module, pssnapin -auto
+Get-PSProvider | Format-Table Name, Module, PSSnapIn -AutoSize
 ```
 
 ```Output
-Name        Module       PSSnapIn
-----        ------       --------
-Test        TestModule
-WSMan                    Microsoft.WSMan.Management
-Alias                    Microsoft.PowerShell.Core
-Environment              Microsoft.PowerShell.Core
-FileSystem               Microsoft.PowerShell.Core
-Function                 Microsoft.PowerShell.Core
-Registry                 Microsoft.PowerShell.Core
-Variable                 Microsoft.PowerShell.Core
-Certificate              Microsoft.PowerShell.Security
+Name        Module                        PSSnapIn
+----        ------                        --------
+Registry                                  Microsoft.PowerShell.Core
+Alias                                     Microsoft.PowerShell.Core
+Environment                               Microsoft.PowerShell.Core
+FileSystem                                Microsoft.PowerShell.Core
+Function                                  Microsoft.PowerShell.Core
+Variable                                  Microsoft.PowerShell.Core
+Certificate Microsoft.PowerShell.Security
+WSMan       Microsoft.WSMan.Management
 ```
 
 ```powershell
-Get-PSProvider | Where {$_.pssnapin -eq "Microsoft.PowerShell.Security"}
+Get-PSProvider | Where {$_.ModuleName -eq "Microsoft.PowerShell.Security"}
 ```
 
 ```Output
@@ -79,8 +79,8 @@ These commands find the PowerShell snap-ins or modules that added providers to y
 All PowerShell elements, including providers, originate in a snap-in or in a module.
 
 These commands use the PSSnapin and Module properties of the **ProviderInfo** object that
-`Get-PSProvider` returns.
-The values of these properties contain the name of the snap-in or module that adds the provider.
+`Get-PSProvider` returns. The values of these properties contain the name of the snap-in or module
+that adds the provider.
 
 The first command gets all of the providers in the session and formats them in a table with the
 values of their Name, Module, and PSSnapin properties.
@@ -109,9 +109,8 @@ C:\Users\User01
 ```
 
 This example shows that the tilde symbol (~) represents the value of the **Home** property of the
-FileSystem provider.
-The **Home** property value is optional, but for the **FileSystem** provider, it is defined as
-`$env:homedrive\$env:homepath` or `$home`.
+FileSystem provider. The **Home** property value is optional, but for the **FileSystem** provider,
+it is defined as `$env:homedrive\$env:homepath` or `$home`.
 
 ## PARAMETERS
 
@@ -135,7 +134,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -152,4 +152,3 @@ This cmdlet returns objects that represent the PowerShell providers in the sessi
 ## NOTES
 
 ## RELATED LINKS
-

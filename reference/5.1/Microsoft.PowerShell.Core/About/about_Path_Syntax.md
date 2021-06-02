@@ -5,10 +5,10 @@ Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_path_syntax?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Path_Syntax
+title: about Path Syntax
 ---
 
-# About Path Syntax
+# about_Path_Syntax
 
 ## SHORT DESCRIPTION
 

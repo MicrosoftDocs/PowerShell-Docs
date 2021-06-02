@@ -4,9 +4,9 @@ Locale: en-US
 ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Pwsh
+title: about Pwsh
 ---
-# About pwsh
+# about_Pwsh
 
 ## Short Description
 Explains how to use the `pwsh` command-line interface. Displays the
