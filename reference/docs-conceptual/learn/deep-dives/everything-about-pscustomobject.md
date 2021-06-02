@@ -109,7 +109,7 @@ $myObject.psobject.properties.remove('ID')
 ```
 
 The `.psobject` is an intrinsic member that gives you access to base object metadata. For more
-information about intrinsic members, see [about_Inrinsic_Members](powershell/module/microsoft.powershell.core/about/about_intrinsic_members).
+information about intrinsic members, see [about_Inrinsic_Members](/powershell/module/microsoft.powershell.core/about/about_intrinsic_members).
 +
 
 ### Enumerating property names
