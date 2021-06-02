@@ -1,8 +1,8 @@
 ---
-description:  Provides essential information about objects in Windows PowerShell. 
+description:  Provides essential information about objects in Windows PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 11/30/2017
+ms.date: 06/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_objects?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Objects
@@ -25,18 +25,21 @@ objects type, its methods, and its properties.
 ## Types, Methods, and Properties
 
 The object type tells what kind of object it is. For example, an object
-that represents a file is a FileInfo object.
+that represents a file is a **FileInfo** object.
 
 The object methods are actions that you can perform on the object.
-For example, FileInfo objects have a CopyTo method that you can use
+For example, **FileInfo** objects have a CopyTo method that you can use
 to copy the file.
 
 Object properties store information about the object. For example,
-FileInfo objects have a LastWriteTime property that stores the date
+**FileInfo** objects have a **LastWriteTime** property that stores the date
 and time that the file was most recently accessed.
 
 When working with objects, you can use their methods and properties
 in commands to take action and manage data.
+
+You can discover an objects properties and methods using [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
+or the `psobject` [intrinsic member](about_Intrinsic_Members.md).
 
 ## Objects in Pipelines
 
@@ -59,10 +62,10 @@ for each item in the root directory of the file system. The file and
 directory objects are passed down the pipeline to the second command.
 
 The second command `where { $_.PsIsContainer -eq $false }` uses the
-PsIsContainer property of all file system objects to select only
-files, which have a value of False (\$false) in their PsIsContainer
+**PsIsContainer** property of all file system objects to select only
+files, which have a value of False (`$false`) in their **PsIsContainer**
 property. Folders, which are containers and, thus, have a value of
-True (\$true) in their PsIsContainer property, are not selected.
+True (`$true`) in their **PsIsContainer** property, are not selected.
 
 The second command passes only the file objects to the third command
 `Format-List`, which displays the file objects in a list.
