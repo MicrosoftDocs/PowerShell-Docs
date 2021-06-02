@@ -35,8 +35,9 @@ and time that the file was most recently accessed.
 When working with objects, you can use their methods and properties
 in commands to take action and manage data.
 
-You can discover an objects properties and methods using [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
-or the `psobject` [intrinsic member](about_Intrinsic_Members.md).
+You can discover an objects properties and methods using
+[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) or the `psobject`
+ [intrinsic member](about_Intrinsic_Members.md).
 
 ## Objects in Pipelines
 
