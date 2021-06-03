@@ -225,11 +225,11 @@ formatted correctly. To write to files with a different encoding, use the
 When you are writing to a file using either `Out-File` or the redirection
 operators, PowerShell formats table output to the file based on the width of
 the console it is running within. For instance, when logging table output
-to file using a command like e.g. `Get-ChildItem Env:\Path > path.log` on a
-system where the console width is set to 80, the output in the file is
+to file using a command like `Get-ChildItem Env:\Path > path.log` on a system
+where the console width is set to 80 columns, the output in the file is
 truncated to 80 characters:
 
-```text
+```Output
 Name                         Value
 ----                         -----
 Path                         C:\Program Files\PowerShell\7-preview;C:\WINDOWS…
@@ -239,8 +239,8 @@ Considering that the console width may be set arbitrarily on systems where
 your script is run, you may prefer that PowerShell format table output to
 files based on a width that you specify instead.
 
-The `Out-File` cmdlet provides a `Width` parameter that allows you to set the
-width you would like for table output. Rather than having to add
+The `Out-File` cmdlet provides a **Width** parameter that allows you to set
+the width you would like for table output. Rather than having to add
 `-Width 2000` everywhere you invoke `Out-File`, you can use the
 `$PSDefaultParameterValues` variable to set this value for all usages of the
 `Out-File` cmdlet in a script. And since the redirection operators (`>` and

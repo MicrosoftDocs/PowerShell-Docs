@@ -141,16 +141,24 @@ that everywhere in a script you output table formatted data to file, PowerShell 
 width of 2000 instead of a line width determined by the PowerShell host's console width.
 
 ```powershell
-param()
-$PSDefaultParameterValues['out-file:width'] = 2000
+function DemoDefaultOutFileWidth() {
+    try {
+        $PSDefaultParameterValues['out-file:width'] = 2000
 
-$logFile = [System.IO.Path]::ChangeExtension($PSCommandPath, ".log")
+        $logFile = "$pwd\logfile.txt"
 
-Get-ChildItem Env:\ > $logFile
+        Get-ChildItem Env:\ > $logFile
 
-Get-Service -ErrorAction Ignore | Format-Table -AutoSize | Out-File $logFile -Append
+        Get-Service -ErrorAction Ignore | Format-Table -AutoSize | Out-File $logFile -Append
 
-Get-Process | Format-Table Id,SI,Name,Path,MainWindowTitle >> $logFile
+        Get-Process | Format-Table Id,SI,Name,Path,MainWindowTitle >> $logFile
+    }
+    finally {
+        $PSDefaultParameterValues.Remove('out-file:width')
+    }
+}
+
+DemoDefaultOutFileWidth
 ```
 
 ## PARAMETERS
