@@ -161,6 +161,9 @@ function DemoDefaultOutFileWidth() {
 DemoDefaultOutFileWidth
 ```
 
+For more information about `$PSDefaultParameterValues`, see
+[about_Preference_Variables](../Microsoft.Powershell.Core/About/about_preference_variables#psdefaultparametervalues)
+
 ## PARAMETERS
 
 ### -Append

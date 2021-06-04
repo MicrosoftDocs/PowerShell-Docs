@@ -266,6 +266,9 @@ $PSDefaultParameterValues['out-file:width'] = 2000
 Get-Service | Format-Table -AutoSize > services.log
 ```
 
+For more information about `$PSDefaultParameterValues`, see
+[about_Preference_Variables](about_preference_variables.md#psdefaultparametervalues)
+
 ### Potential confusion with comparison operators
 
 The `>` operator is not to be confused with the
