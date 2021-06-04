@@ -1,5 +1,5 @@
 ---
-ms.date:  01/07/2021
+ms.date:  06/04/2021
 keywords:  dsc,powershell,configuration,setup
 title:  Get started with Desired State Configuration (DSC) for Linux
 description: This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Linux.
@@ -14,12 +14,12 @@ For general information about DSC, see
 
 The following Linux operating system versions are supported by DSC for Linux.
 
-- CentOS 5, 6, and 7 (x86/x64)
-- Debian GNU/Linux 6, 7 and 8 (x86/x64)
-- Oracle Linux 5, 6 and 7 (x86/x64)
-- Red Hat Enterprise Linux Server 5, 6 and 7 (x86/x64)
-- SUSE Linux Enterprise Server 10, 11 and 12 (x86/x64)
-- Ubuntu Server 12.04 LTS, 14.04 LTS, 16.04 LTS, 18.04 (x86/x64)
+- CentOS 6, 7, and 8 (x64)
+- Debian GNU/Linux 8, 9, and 10 (x64)
+- Oracle Linux 6 and 7 (x64)
+- Red Hat Enterprise Linux Server 6, 7, and 8 (x64)
+- SUSE Linux Enterprise Server 12 and 15 (x64)
+- Ubuntu Server 14.04 LTS, 16.04 LTS, 18.04 LTS, and 20.04 LTS (x64)
 
 ## Installing DSC for Linux
 
@@ -49,7 +49,7 @@ Run the following command to install OMI on a CentOS 7 x64 system.
 ### Installing DSC
 
 DSC for Linux is available for download from the
-[PowerShell-DSC-for-Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-926)
+[PowerShell-DSC-for-Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.2.1-0)
 repository in the repository.
 
 To install DSC, install the package that is appropriate for your Linux system (.rpm or .deb) and
