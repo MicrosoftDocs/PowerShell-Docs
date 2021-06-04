@@ -97,7 +97,9 @@ Get-Service | Get-Member -Force
 The `Get-Member` command uses the **Force** parameter to add the intrinsic members and
 compiler-generated members of the objects to the display. You can use these properties and methods
 in the same way that you would use an adapted method of the object. The second command shows how to
-display the value of the PSBase property of the Schedule service.
+display the value of the **PSBase** property of the Schedule service. For more information on
+intrinsic members, see
+[about_Intrinsic_Members](../Microsoft.PowerShell.Core/About/about_Intrinsic_Members.md)
 
 ### Example 3: Get extended members of service objects
 
