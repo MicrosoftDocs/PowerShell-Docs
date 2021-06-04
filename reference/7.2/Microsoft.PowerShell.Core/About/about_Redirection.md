@@ -267,7 +267,7 @@ Get-Service | Format-Table -AutoSize > services.log
 ```
 
 For more information about `$PSDefaultParameterValues`, see
-[about_Preference_Variables](about_preference_variables.md#psdefaultparametervalues)
+[about_Preference_Variables](about_preference_variables.md#psdefaultparametervalues).
 
 ### Potential confusion with comparison operators
 
