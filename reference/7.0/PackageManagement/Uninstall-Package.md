@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 05/18/2021
+ms.date: 06/04/2021
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/uninstall-package?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Uninstall-Package
@@ -10,10 +10,10 @@ title: Uninstall-Package
 
 # Uninstall-Package
 
-## SYNOPSIS
+## Synopsis
 Uninstalls one or more software packages.
 
-## SYNTAX
+## Syntax
 
 ### PackageByInputObject
 
@@ -62,12 +62,12 @@ Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
  [-InstallUpdate] [-NoPathUpdate] [-AllowPrereleaseVersions] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Uninstall-Package` cmdlet uninstalls one or more software packages from the local computer. To
 find installed packages, use the `Get-Package` cmdlet.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Uninstall a package
 
@@ -81,7 +81,7 @@ PS> Uninstall-Package -Name NuGet.Core
 ### Example 2: Use the pipeline to uninstall a package
 
 `Get-Package` locates a specific package and sends the **SoftwareIdentity** object down the pipeline
-to the `Uninsall-Package` cmdlet.
+to the `Uninstall-Package` cmdlet.
 
 ```
 PS> Get-Package -Name NuGet.Core -RequiredVersion 2.14.0 | Uninstall-Package
@@ -96,7 +96,7 @@ parameter:
 
 `Uninstall-Package -InputObject ( Get-Package -Name NuGet.Core -RequiredVersion 2.14.0 )`
 
-## PARAMETERS
+## Parameters
 
 ### -AllowClobber
 
@@ -481,19 +481,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### SoftwareIdentity
 
 `Uninstall-Package` accepts **SoftwareIdentity** objects from the pipeline as input.
 
-## OUTPUTS
+## Outputs
 
 ### SoftwareIdentity
 
 `Uninstall-Package` returns a **SoftwareIdentity** object for each package uninstalled.
 
-## NOTES
+## Notes
 
 Including a package provider in a command can make dynamic parameters available to a cmdlet. Dynamic
 parameters are specific to a package provider. The `Get-Help` cmdlet lists a cmdlet's parameter sets
@@ -501,7 +501,7 @@ and includes the provider's parameter set. For example, `Uninstall-Package` has 
 **PowerShellGet** parameter set that includes `-NoPathUpdate`, `AllowClobber`, and
 `SkipPublisherCheck`.
 
-## RELATED LINKS
+## Related Links
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
