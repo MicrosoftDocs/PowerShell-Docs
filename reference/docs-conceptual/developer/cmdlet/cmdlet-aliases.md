@@ -46,7 +46,7 @@ Follow these guidelines when you create built-in aliases for your cmdlets:
   [Cmdlet("Get", "SomeObject")]
   [Alias('gso')]
   public class GetSomeObjectCommand : Cmdlet
-  ``
+  ```
 
 ## See Also
 
