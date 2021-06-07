@@ -44,7 +44,7 @@ Follow these guidelines when you create built-in aliases for your cmdlets:
 
   ```csharp
   [Cmdlet("Get", "SomeObject")]
-  [Alias('gso')]
+  [Alias("gso")]
   public class GetSomeObjectCommand : Cmdlet
   ```
 
