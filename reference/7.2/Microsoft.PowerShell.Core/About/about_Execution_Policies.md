@@ -1,8 +1,8 @@
 ---
 description: Describes the PowerShell execution policies and explains how to manage them.
 Locale: en-US
-ms.date: 08/10/2020
-no-loc: [Bypass, Default, Restricted, Undefined, Process, Scope]
+ms.date: 06/07/2021
+no-loc: [Bypass, Default, Restricted, Undefined, Unrestricted, Process, Scope, MachinePolicy, about_Group_Policy_Settings]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Execution Policies
