@@ -1,8 +1,7 @@
 ---
-description: Explains how to sign scripts so that they comply with the PowerShell execution policies. 
-keywords: powershell,cmdlet
+description: Explains how to sign scripts so that they comply with the PowerShell execution policies.
 Locale: en-US
-ms.date: 07/31/2020
+ms.date: 06/07/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Signing
@@ -72,9 +71,9 @@ To run an unsigned script, use the Unblock-File cmdlet or use the following
 procedure.
 
 1. Save the script file on your computer.
-2. Click Start, click My Computer, and locate the saved script file.
-3. Right-click the script file, and then click Properties.
-4. Click Unblock.
+1. Click Start, click My Computer, and locate the saved script file.
+1. Right-click the script file, and then click Properties.
+1. Click Unblock.
 
 If a script that was downloaded from the internet is digitally signed, but you
 have not yet chosen to trust its publisher, PowerShell displays the following
@@ -140,42 +139,54 @@ topic.
 
 ## Create a self-signed certificate
 
-To create a self-signed certificate, use the `New-SelfSignedCertificate`
-cmdlet in the PKI module. This module is introduced in PowerShell 3.0 and is
-included in Windows 8 and Windows Server 2012. For more information, see the
-help topic for the `New-SelfSignedCertificate` cmdlet.
+To create a self-signed certificate, use the
+[New-SelfSignedCertificate](xref:pki.New-SelfSignedCertificate) cmdlet in the
+PKI module. This module is introduced in PowerShell 3.0 and is included in
+Windows 8 and Windows Server 2012. For more information, see the help topic for
+the `New-SelfSignedCertificate` cmdlet.
+
+```powershell
+$params = @{
+    Subject = 'CN=PowerShell Code Signing Cert'
+    Type = 'CodeSigning'
+    CertStoreLocation = 'Cert:\CurrentUser\My'
+    HashAlgorithm = 'sha256'
+}
+$cert = New-SelfSignedCertificate @params
+```
+
+### Using Makecert.exe
 
 To create a self-signed certificate in earlier versions of Windows, use the
 Certificate Creation tool `MakeCert.exe`. This tool is included in the
 Microsoft .NET SDK (versions 1.1 and later) and in the Microsoft Windows SDK.
 
 For more information about the syntax and the parameter descriptions of the
-MakeCert.exe tool, see
+`MakeCert.exe` tool, see
 [Certificate Creation Tool (MakeCert.exe)](/previous-versions/dotnet/netframework-2.0/bfsktky3(v=vs.80)).
 
-To use the MakeCert.exe tool to create a certificate, run the following
+To use the `MakeCert.exe` tool to create a certificate, run the following
 commands in an SDK Command Prompt window.
 
-Note: The first command creates a local certification authority for your
-computer. The second command generates a personal certificate from the
-certification authority.
-
-Note: You can copy or type the commands exactly as they appear. No
-substitutions are necessary, although you can change the certificate name.
+> [!NOTE]
+> The first command creates a local certification authority for your computer.
+> The second command generates a personal certificate from the certification
+> authority. You can copy or type the commands exactly as they appear. No
+> substitutions are necessary, although you can change the certificate name.
 
 ```powershell
-makecert -n "CN=PowerShell Local Certificate Root" -a sha1 `
+makecert -n "CN=PowerShell Local Certificate Root" -a sha256 `
 -eku 1.3.6.1.5.5.7.3.3 -r -sv root.pvk root.cer `
 -ss Root -sr localMachine
 
-makecert -pe -n "CN=PowerShell User" -ss MY -a sha1 `
+makecert -pe -n "CN=PowerShell User" -ss MY -a sha256 `
 -eku 1.3.6.1.5.5.7.3.3 -iv root.pvk -ic root.cer
 ```
 
-The MakeCert.exe tool will prompt you for a private key password. The password
-ensures that no one can use or access the certificate without your consent.
-Create and enter a password that you can remember. You will use this password
-later to retrieve the certificate.
+The `MakeCert.exe` tool will prompt you for a private key password. The
+password ensures that no one can use or access the certificate without your
+consent. Create and enter a password that you can remember. You will use this
+password later to retrieve the certificate.
 
 To verify that the certificate was generated correctly, use the following
 command to get the certificate in the certificate store on the computer. You
