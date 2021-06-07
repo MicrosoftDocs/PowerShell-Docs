@@ -2,17 +2,17 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/14/2019
+ms.date: 06/07/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-itempropertyvalue?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ItemPropertyValue
 ---
 # Get-ItemPropertyValue
 
-## SYNOPSIS
+## Synopsis
 Gets the value for one or more properties of a specified item.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -28,13 +28,13 @@ Get-ItemPropertyValue -LiteralPath <String[]> [-Name] <String[]> [-Filter <Strin
  [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-ItemPropertyValue` gets the current value for a property that you specify when you use the
 **Name** parameter, located in a path that you specify with either the **Path** or **LiteralPath**
 parameters.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the value of the ProductID property
 
@@ -96,7 +96,7 @@ Target              :
 LinkType            :
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -201,7 +201,6 @@ Accept wildcard characters: False
 ### -Name
 
 Specifies the name of the property or properties to retrieve.
-Wildcard characters are permitted.
 
 ```yaml
 Type: System.String[]
@@ -212,7 +211,7 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -Path
@@ -239,13 +238,13 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Boolean, System.String, System.DateTime
 
@@ -253,13 +252,13 @@ This cmdlet returns an object for each item property value that it gets.
 The object type depends on the property value that is retrieved.
 For example, in a file system drive, the cmdlet might return a file or folder.
 
-## NOTES
+## Notes
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, run the `Get-PSProvider` cmdlet. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related Links
 
 [Get-ItemProperty](Get-ItemProperty.md)
 
