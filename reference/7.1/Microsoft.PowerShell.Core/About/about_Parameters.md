@@ -1,8 +1,7 @@
 ---
-description: Describes how to work with command parameters in PowerShell. 
-keywords: powershell,cmdlet
+description: Describes how to work with command parameters in PowerShell.
 Locale: en-US
-ms.date: 02/12/2019
+ms.date: 06/07/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameters?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Parameters
@@ -109,13 +108,13 @@ prompts you for a value for the parameter.
 
 #### Parameter Position
 
-If the `Position` setting is set to a positive integer, the parameter name is
-not required. This type of parameter is referred to as a positional parameter,
-and the number indicates the position in which the parameter must appear in
-relation to other positional parameters. A named parameter can be listed in any
-position after the cmdlet name. If you include the parameter name for a
-positional parameter, the parameter can be listed in any position after the
-cmdlet name.
+If the `Position` setting is set to a non-negative integer, the parameter name
+is not required. This type of parameter is referred to as a positional
+parameter, and the number indicates the position in which the parameter must
+appear in relation to other positional parameters. A named parameter can be
+listed in any position after the cmdlet name. If you include the parameter name
+for a positional parameter, the parameter can be listed in any position after
+the cmdlet name.
 
 For example, the `Get-ChildItem` cmdlet has Path and Exclude parameters. The
 `Position` setting for **Path** is **0**, which means that it is a positional
@@ -244,4 +243,3 @@ information about common parameters, see [about_CommonParameters](about_CommonPa
 [about_Pipelines](about_Pipelines.md)
 
 [about_Wildcards](about_Wildcards.md)
-
