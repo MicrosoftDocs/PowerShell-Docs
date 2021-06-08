@@ -33,7 +33,7 @@ variable **PSModulePath**.
 The following cmdlets deal with modules:
 
 - [Get-Module](xref:Microsoft.PowerShell.Core.Get-Module): Identifies the modules that have been, or
-  that can be, imported
+can be imported
 - [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module): Adds one or more modules to the
   current session (see [§11.4][])
 - [Export-ModuleMember](xref:Microsoft.PowerShell.Core.Export-ModuleMember): Identifies the module
