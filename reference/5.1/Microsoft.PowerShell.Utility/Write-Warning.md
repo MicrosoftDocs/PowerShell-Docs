@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/14/2020
+ms.date: 06/07/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-warning?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Warning
@@ -11,22 +11,22 @@ title: Write-Warning
 
 # Write-Warning
 
-## SYNOPSIS
+## Synopsis
 Writes a warning message.
 
-## SYNTAX
+## Syntax
 
 ```
 Write-Warning [-Message] <String> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Write-Warning` cmdlet writes a warning message to the PowerShell host. The response to the
 warning depends on the value of the user's `$WarningPreference` variable and the use of the
 **WarningAction** common parameter.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Write a warning message
 
@@ -61,10 +61,10 @@ PS> $WarningPreference = "SilentlyContinue"
 PS> Write-Warning "This is only a test warning."
 PS> $WarningPreference = "Stop"
 PS> Write-Warning "This is only a test warning."
-WARNING: This is only a test message.
+WARNING: This is only a test warning.
 Write-Warning : Command execution stopped because the shell variable "WarningPreference" is set to Stop.
 At line:1 char:14
-     + Write-Warning <<<<  "This is only a test message."
+     + Write-Warning <<<<  "This is only a test warning."
 ```
 
 The first command displays the default value of the `$WarningPreference` variable, which is
@@ -100,9 +100,10 @@ warning.
 For more information about the **WarningAction** common parameter, see
 [about_CommonParameters](../Microsoft.Powershell.Core/About/about_CommonParameters.md).
 
-## PARAMETERS
+## Parameters
 
 ### -Message
+
 Specifies the warning message.
 
 ```yaml
@@ -124,26 +125,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains the warning to `Write-Warning`.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 `Write-Warning` writes only to the warning stream. It does not generate any other output.
 
-## NOTES
+## Notes
 
 The default value for the `$WarningPreference` variable is `Continue`, which displays the warning
 and then continues executing the command. To determine valid values for a preference variable such
 as `$WarningPreference`, set it to a string of random characters, such as "abc". The resulting error
 message lists the valid values.
 
-## RELATED LINKS
+## Related Links
 
 [about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 
