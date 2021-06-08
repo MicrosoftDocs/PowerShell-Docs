@@ -32,10 +32,14 @@ variable **PSModulePath**.
 
 The following cmdlets deal with modules:
 
-- [Get-Module](xref:Microsoft.PowerShell.Core.Get-Module): Identifies the modules that have been, or that can be, imported
-- [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module): Adds one or more modules to the current session (see [§11.4][])
-- [Export-ModuleMember](xref:Microsoft.PowerShell.Core.Export-ModuleMember): Identifies the module members that are to be exported
-- [Remove-Module](xref:Microsoft.PowerShell.Core.Remove-Module): Removes one or more modules from the current session (see [§11.5][])
+- [Get-Module](xref:Microsoft.PowerShell.Core.Get-Module): Identifies the modules that have been, or
+  that can be, imported
+- [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module): Adds one or more modules to the
+  current session (see [§11.4][])
+- [Export-ModuleMember](xref:Microsoft.PowerShell.Core.Export-ModuleMember): Identifies the module
+  members that are to be exported
+- [Remove-Module](xref:Microsoft.PowerShell.Core.Remove-Module): Removes one or more modules from
+  the current session (see [§11.5][])
 - [New-Module](xref:Microsoft.PowerShell.Core.New-Module): Creates a dynamic module (see [§11.7][])
 
 ## 11.2 Writing a script module
