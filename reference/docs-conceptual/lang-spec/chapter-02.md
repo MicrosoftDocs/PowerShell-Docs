@@ -288,6 +288,11 @@ context, is a *command-name* or a *command-argument*.)
 
 The keywords `class`, `define`, `from`, `using`, and `var` are reserved for future use.
 
+> [!NOTE]
+> Editor's Note: The `class` and `using` keywords were introduced in PowerShell 5.0. See
+> [about_Classes](/powershell/module/microsoft.powershell.core/about/about_classes) and
+> [about_Using](/powershell/module/microsoft.powershell.core/about/about_using).
+
 ### 2.3.2 Variables
 
 Syntax:
@@ -574,7 +579,7 @@ There are three kinds of argument:
   Get-Power -exponent 3 -base 5
   ```
 
-- Positional argument ([§8.10.2][]) -- Arguments and their corresponding parameters inside commands
+- Positional argument ([§8.10.2][]) - Arguments and their corresponding parameters inside commands
   have positions with the first having position zero. The argument in position 0 is bound to the
   parameter in position 0; the argument in position 1 is bound to the parameter in position 1; and
   so on. For example, given a command `Get-Power`, that has parameters `$base` and `$exponent` in
@@ -1240,6 +1245,10 @@ format-operator:
 Description:
 
 `&&` and `||` are reserved for future use.
+
+> [!NOTE]
+> Editor's Note: The pipeline chain operators `&&` and `||` were introduced in PowerShell 7. See
+> [about_Pipeline_Chain_Operators](/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators).
 
 The name following *dash* in an operator is reserved for that purpose only in an operator context.
 
