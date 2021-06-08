@@ -24,7 +24,7 @@ Follow these guidelines when you create built-in aliases for your cmdlets:
 
 - Include an alias prefix that references the verb of the cmdlet name and an alias suffix that
   references the noun of the cmdlet name. For example, the alias for the `Import-Module` cmdlet is
-  "ipmo". For a list of all the verbs and their aliases, see
+  `ipmo`. For a list of all the verbs and their aliases, see
   [Cmdlet Verbs](./approved-verbs-for-windows-powershell-commands.md).
 
 - For cmdlets that have the same verb, include the same alias prefix. For example, the aliases for
