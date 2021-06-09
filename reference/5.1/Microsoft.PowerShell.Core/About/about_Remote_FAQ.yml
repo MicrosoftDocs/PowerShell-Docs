@@ -113,7 +113,7 @@ sections:
           ```PowerShell
           Get-Help Get-Process -Parameter ComputerName
           ```
-          For all other commands, use the 'Invoke-Command' cmdlet.
+          For all other commands, use the `Invoke-Command` cmdlet.
 
       - question: |
           How do I run a command on a remote computer?
