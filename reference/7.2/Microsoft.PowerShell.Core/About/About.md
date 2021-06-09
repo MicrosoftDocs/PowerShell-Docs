@@ -257,7 +257,7 @@ Describes how to run remote commands in PowerShell.
 ### [about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
 Explains how to disconnect from and reconnect to a PSSession.
 
-### [about_Remote_FAQ](about_Remote_FAQ.md)
+### [about_Remote_FAQ](about_Remote_FAQ.yml)
 Contains questions and answers about running remote commands in PowerShell.
 
 ### [about_Remote_Jobs](about_Remote_Jobs.md)

@@ -217,7 +217,7 @@ remote computer where it terminates the remote command.
 
 - For information about how remoting works, how to manage remote data, special
   configurations, security issues, and other frequently asked questions, see
-  [about_Remote_FAQ](about_Remote_FAQ.md).
+  [about_Remote_FAQ](about_Remote_FAQ.yml).
 
 - For help in resolving remoting errors, see [about_Remote_Troubleshooting](about_Remote_Troubleshooting.md).
 
@@ -238,7 +238,7 @@ about_Remoting
 
 [about_Remote_Requirements](about_Remote_Requirements.md)
 
-[about_Remote_FAQ](about_Remote_FAQ.md)
+[about_Remote_FAQ](about_remote_faq.yml)
 
 [about_Remote_TroubleShooting](about_Remote_TroubleShooting.md)
 
