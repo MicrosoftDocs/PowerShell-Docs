@@ -99,6 +99,22 @@ sections:
           
           ```powershell
           Get-Help * -Parameter ComputerName
+          # or
+          Get-Command -ParameterName ComputerName
+          ```
+
+          To determine whether the **ComputerName** parameter of a particular cmdlet requires PowerShell remoting, see the parameter description. To display the parameter description, type:
+
+          ```PowerShell
+          Get-Help <cmdlet-name> -Parameter ComputerName
+          ```
+          For example:
+
+          ```PowerShell
+          Get-Help Get-Process -Parameter ComputerName
+          ```
+          For all other commands, use the 'Invoke-Command' cmdlet.
+
       - question: |
           How do I run a command on a remote computer?
         answer: |
@@ -116,6 +132,15 @@ sections:
           
           ```powershell
           Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-Process}
+
+          #  - OR -
+
+          Invoke-Command -Session $s -ScriptBlock {Get-Process}
+          ```
+          
+         To interrupt a remote command, type <kbd>CTRL</kbd>+<kbd>C</kbd>. The interruption request is passed to the remote computer, where it terminates the remote command.
+
+         For more information about remote commands, see about_Remote and the Help topics for the cmdlets that support remoting.
           
       - question: |
           Can I just telnet into a remote computer?
