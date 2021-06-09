@@ -138,9 +138,9 @@ sections:
           Invoke-Command -Session $s -ScriptBlock {Get-Process}
           ```
           
-         To interrupt a remote command, type <kbd>CTRL</kbd>+<kbd>C</kbd>. The interruption request is passed to the remote computer, where it terminates the remote command.
+          To interrupt a remote command, type <kbd>CTRL</kbd>+<kbd>C</kbd>. The interruption request is passed to the remote computer, where it terminates the remote command.
 
-         For more information about remote commands, see about_Remote and the Help topics for the cmdlets that support remoting.
+          For more information about remote commands, see about_Remote and the Help topics for the cmdlets that support remoting.
           
       - question: |
           Can I just telnet into a remote computer?
