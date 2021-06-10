@@ -12,7 +12,7 @@ Starts a consistency check by using the Task Scheduler.
 
 ```mof
 uint32 PerformRequiredConfigurationChecks(
-  [in] uint32 Flags
+  [in] uint32 Flags
 );
 ```
 

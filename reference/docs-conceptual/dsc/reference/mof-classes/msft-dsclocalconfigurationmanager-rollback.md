@@ -12,7 +12,7 @@ Rolls back the configuration to a previous version.
 
 ```mof
 uint32 RollBack(
-  [in] uint8 configurationNumber
+  [in] uint8 configurationNumber
 );
 ```
 

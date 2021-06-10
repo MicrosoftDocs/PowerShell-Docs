@@ -12,7 +12,7 @@ Stops the configuration change that is in progress.
 
 ```mof
 uint32 StopConfiguration(
-  [in] boolean force
+  [in] boolean force
 );
 ```
 
