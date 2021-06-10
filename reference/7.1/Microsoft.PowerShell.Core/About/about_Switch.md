@@ -1,8 +1,7 @@
 ---
-description: Explains how to use a switch to handle multiple `If` statements. 
-keywords: powershell,cmdlet
+description: Explains how to use a switch to handle multiple `If` statements.
 Locale: en-US
-ms.date: 05/22/2020
+ms.date: 06/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Switch
@@ -288,12 +287,12 @@ switch -Regex ($target)
 https://bing.com is a web address that uses https
 ```
 
-A Switch statement condition may be either:
+A `Switch` statement condition may be either:
 
 - An expression whose value is compared to the input value
 - A script block which should return `$true` if a condition is met.
 
-The `$_` automatic variable contains the value passed to the switch statement
+The `$_` automatic variable contains the value passed to the `switch` statement
 and is available for evaluation and use within the scope of the condition
 statements.
 

@@ -601,8 +601,9 @@ to accept them.
 ### Where
 
 Allows to filter or select the elements of the array. The script must evaluate
-to anything different than: zero (0), empty string, `$false` or `$null` for
-the element to show after the `Where`
+to anything different than: zero (0), empty string, `$false` or `$null` for the
+element to show after the `Where`. For more information about boolean
+evaluation, see [about_Booleans](about_Booleans.md).
 
 There is one definition for the `Where` method.
 
