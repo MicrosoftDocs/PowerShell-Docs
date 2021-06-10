@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 03/15/2021
+ms.date: 06/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comparison Operators
@@ -672,6 +672,7 @@ $a -isnot $b.GetType() # Output: True
 - [Compare-Object](xref:Microsoft.PowerShell.Utility.Compare-Object)
 - [Foreach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
 - [Where-Object](xref:Microsoft.PowerShell.Core.Where-Object)
+- [about_Booleans](about_Booleans.md)
 
 [1]: /dotnet/api/system.icomparable
 [2]: /dotnet/api/system.iequatable-1

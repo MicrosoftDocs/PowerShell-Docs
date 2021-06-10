@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/19/2020
+ms.date: 06/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Where-Object
@@ -283,6 +283,8 @@ The previous example is functionally equivalent to:
 - `('hi', '', 'there') | Where-Object Length -GT 0`
 - `('hi', '', 'there') | Where-Object {$_.Length -gt 0}`
 
+For more information about how booleans are evaluated, see [about_Booleans](about_Booleans.md).
+
 ## EXAMPLES
 
 ### Example 1: Get stopped services
@@ -343,21 +345,24 @@ for the command.
 
 ```powershell
 # Use Where-Object to get commands that have any value for the OutputType property of the command.
-# This omits commands that do not have an OutputType property and those that have an OutputType property, but no property value.
+# This omits commands that do not have an OutputType property and those that have an OutputType
+# property, but no property value.
 Get-Command | where OutputType
 Get-Command | where {$_.OutputType}
 ```
 
 ```powershell
 # Use Where-Object to get objects that are containers.
-# This gets objects that have the **PSIsContainer** property with a value of $True and excludes all others.
+# This gets objects that have the **PSIsContainer** property with a value of $True and excludes all
+# others.
 Get-ChildItem | where PSIsContainer
 Get-ChildItem | where {$_.PSIsContainer}
 ```
 
 ```powershell
 # Finally, use the Not operator (!) to get objects that are not containers.
-# This gets objects that do have the **PSIsContainer** property and those that have a value of $False for the **PSIsContainer** property.
+# This gets objects that do have the **PSIsContainer** property and those that have a value of
+# $False for the **PSIsContainer** property.
 Get-ChildItem | where {!$_.PSIsContainer}
 # You cannot use the Not operator (!) in the comparison statement format of the command.
 Get-ChildItem | where PSIsContainer -eq $False
@@ -382,8 +387,10 @@ The example uses the script block command format. Logical operators, such as **A
 valid only in script blocks. You cannot use them in the comparison statement format of a
 `Where-Object` command.
 
-- For more information about PowerShell logical operators, see [about_Logical_Operators](./About/about_logical_operators.md).
-- For more information about the Updatable Help feature, see [about_Updatable_Help](./About/about_Updatable_Help.md).
+- For more information about PowerShell logical operators, see
+  [about_Logical_Operators](./About/about_logical_operators.md).
+- For more information about the Updatable Help feature, see
+  [about_Updatable_Help](./About/about_Updatable_Help.md).
 
 ## PARAMETERS
 
@@ -1158,7 +1165,8 @@ This cmdlet returns selected items from the input object set.
 
 ## NOTES
 
-Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections.
+Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with
+collections.
 
 You can read more about these new methods here [about_arrays](./About/about_Arrays.md)
 
@@ -1180,3 +1188,4 @@ You can read more about these new methods here [about_arrays](./About/about_Arra
 
 [Tee-Object](../Microsoft.PowerShell.Utility/Tee-Object.md)
 
+[about_Booleans](about_Booleans.md)

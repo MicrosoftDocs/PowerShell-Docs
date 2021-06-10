@@ -1,9 +1,8 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/19/2020
+ms.date: 06/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/where-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Where-Object
@@ -18,7 +17,8 @@ Selects objects from a collection based on their property values.
 ### EqualSet (Default)
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-EQ] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-EQ]
+ [<CommonParameters>]
 ```
 
 ### ScriptBlockSet
@@ -255,6 +255,8 @@ The previous example is functionally equivalent to:
 
 - `('hi', '', 'there') | Where-Object Length -GT 0`
 - `('hi', '', 'there') | Where-Object {$_.Length -gt 0}`
+
+For more information about how booleans are evaluated, see [about_Booleans](about_Booleans.md).
 
 ## EXAMPLES
 
@@ -1131,3 +1133,5 @@ You can read more about these new methods here [about_arrays](./About/about_Arra
 [Sort-Object](../Microsoft.PowerShell.Utility/Sort-Object.md)
 
 [Tee-Object](../Microsoft.PowerShell.Utility/Tee-Object.md)
+
+[about_Booleans](about_Booleans.md)
