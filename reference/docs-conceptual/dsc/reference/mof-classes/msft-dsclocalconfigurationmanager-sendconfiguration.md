@@ -12,8 +12,8 @@ Sends the configuration document to the managed node and saves it as a pending c
 
 ```mof
 uint32 SendConfiguration(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force
+  [in] uint8   ConfigurationData[],
+  [in] boolean force
 );
 ```
 
