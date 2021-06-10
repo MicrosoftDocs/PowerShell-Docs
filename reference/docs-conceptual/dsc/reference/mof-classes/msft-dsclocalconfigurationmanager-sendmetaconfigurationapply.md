@@ -12,8 +12,8 @@ Sets the Local Configuration Manager settings that are used to control the Confi
 
 ```mof
 uint32 SendMetaConfigurationApply(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force
+  [in] uint8   ConfigurationData[],
+  [in] boolean force
 );
 ```
 

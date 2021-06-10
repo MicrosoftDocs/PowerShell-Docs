@@ -14,7 +14,7 @@ If there is no configuration pending, this method reapplies the current configur
 
 ```mof
 uint32 ApplyConfiguration(
-  [in] boolean force
+  [in] boolean force
 );
 ```
 
