@@ -5,9 +5,9 @@ metadata:
   ms.date: 06/10/2021
   online version: https
   schema: 2.0.0
-  title: about Remote FAQ
+  title: PowerShell Remoting FAQ
 
-title: about_Remote_FAQ
+title: PowerShell Remoting FAQ
 summary: |
 
   When you work remotely, you type commands in PowerShell on one computer (known as the "local
