@@ -1,7 +1,7 @@
 ---
 title: Everything you wanted to know about the if statement
 description: Like many other languages, PowerShell has statements for conditionally executing code in your scripts.
-ms.date: 05/23/2020
+ms.date: 06/09/2021
 ms.custom: contributor-KevinMarquette
 ---
 # Everything you wanted to know about the `if` statement
@@ -448,7 +448,7 @@ if ( $null -eq $value )
 There are quite a few nuances when dealing with `$null` values in PowerShell. If you're interested
 in diving deeper, I have an article about [everything you wanted to know about $null][].
 
-### Variable assignment
+### Variable assignment within the condition
 
 I almost forgot to add this one until [Prasoon Karunan V][] reminded me of it.
 
@@ -481,6 +481,30 @@ If `$process` gets assigned a value, then the statement is `$true` and `$process
 
 Make sure you don't confuse this with `-eq` because this isn't an equality check. This is a more
 obscure feature that most people don't realize works this way.
+
+## Variable assignment from the scriptblock
+
+You can also use the `if` statement scriptblock to assign a value to a variable.
+
+```powershell
+$discount = if ( $age -ge 55 )
+{
+    Get-SeniorDiscount
+}
+elseif ( $age -le 13 )
+{
+    Get-ChildDiscount
+}
+else
+{
+    0.00
+}
+```
+
+Each script block is writing the results of the commands, or the value, as output. We can assign the
+result of the `if` statement to the `$discount` variable. That example could have just as easily
+assigned those values to the `$discount` variable directly in each scriptblock. I can't say that I
+use this with the `if` statement often, but I do have an example where I used this recently.
 
 ## Alternate execution path
 
@@ -584,32 +608,6 @@ switch ( $itemType )
 There three possible values that can match the `$itemType`. In this case, it matches with `Role`. I
 used a simple example just to give you some exposure to the `switch` operator. I talk more
 about [everything you ever wanted to know about the switch statement][] in another article.
-
-## Pipeline
-
-The pipeline is a unique and important feature of PowerShell. Any value that isn't suppressed
-or assigned to a variable gets placed in the pipeline. The `if` provides us a way to take advantage
-of the pipeline in a way that isn't always obvious.
-
-```powershell
-$discount = if ( $age -ge 55 )
-{
-    Get-SeniorDiscount
-}
-elseif ( $age -le 13 )
-{
-    Get-ChildDiscount
-}
-else
-{
-    0.00
-}
-```
-
-Each script block is placing the results the commands or the value into the pipeline. Then we assign
-the result of the `if` statement to the `$discount` variable. That example could have just as easily
-assigned those values to the `$discount` variable directly in each scriptblock. I can't say that I
-use this with the `if` statement often, but I do have an example where I used this recently.
 
 ### Array inline
 
