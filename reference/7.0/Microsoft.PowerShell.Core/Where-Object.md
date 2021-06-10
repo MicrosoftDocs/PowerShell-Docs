@@ -283,7 +283,7 @@ The previous example is functionally equivalent to:
 - `('hi', '', 'there') | Where-Object Length -GT 0`
 - `('hi', '', 'there') | Where-Object {$_.Length -gt 0}`
 
-For more information about how booleans are evaluated, see [about_Booleans](about_Booleans.md).
+For more information about how booleans are evaluated, see [about_Booleans](about/about_Booleans.md).
 
 ## EXAMPLES
 
@@ -1188,4 +1188,4 @@ You can read more about these new methods here [about_arrays](./About/about_Arra
 
 [Tee-Object](../Microsoft.PowerShell.Utility/Tee-Object.md)
 
-[about_Booleans](about_Booleans.md)
+[about_Booleans](about/about_Booleans.md)
