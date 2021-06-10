@@ -17,7 +17,8 @@ summary: |
 
   > [!NOTE]
   > To use PowerShell remoting, the remote computer must be configured for remoting. For more
-  > information, see [about_Remote_Requirements](about_Remote_Requirements.md).
+  > information, see
+  > [about_Remote_Requirements](/powershell/module/microsoft.powershell.core/about/about_Remote_Requirements).
 
 
 sections:

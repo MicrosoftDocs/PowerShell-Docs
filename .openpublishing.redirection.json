@@ -3,12 +3,12 @@
     {
       "source_path": "reference/5.1/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md",
       "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq.yml",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/7.0/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md",
       "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq.yml",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/7.1/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md",
@@ -18,7 +18,7 @@
     {
       "source_path": "reference/7.2/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md",
       "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq.yml",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/samples/Appendix-1---Compatibility-Aliases.md",
