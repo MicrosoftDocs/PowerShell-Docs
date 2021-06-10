@@ -18,7 +18,7 @@ A scalar type is an atomic quantity that can hold only one value at a time. The
 following types evaluate to `$false`:
 
 - Empty strings like `''` or `""`
-- Null values like`$null`
+- Null values like `$null`
 - Any numeric type with the value of `0`
 
 Examples:
@@ -50,7 +50,7 @@ True
 # non-empty strings
 PS> if ('hello') { $true } else { $false }
 True
-PS> [bool] 'False'
+PS> [bool]'False'
 True
 ```
 
