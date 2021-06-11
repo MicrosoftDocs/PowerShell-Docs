@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 06/11/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/wait-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Process
@@ -182,7 +181,11 @@ This cmdlet does not generate any output.
 
 ## NOTES
 
-This cmdlet uses the **WaitForExit** method of the **System.Diagnostics.Process** class.
+- This cmdlet uses the **WaitForExit** method of the **System.Diagnostics.Process** class.
+
+- Unlike `Start-Process -Wait`, `Wait-Process` only waits for the processes identified.
+  `Start-Process -Wait` waits for the process tree (the process and all its descendants) to exit
+  before returning returning control.
 
 ## RELATED LINKS
 
