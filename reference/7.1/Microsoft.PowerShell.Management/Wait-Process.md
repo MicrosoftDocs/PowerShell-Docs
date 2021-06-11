@@ -183,7 +183,7 @@ This cmdlet does not generate any output.
 
 - Unlike `Start-Process -Wait`, `Wait-Process` only waits for the processes identified.
   `Start-Process -Wait` waits for the process tree (the process and all its descendants) to exit
-  before returning returning control.
+  before returning control.
 
 ## RELATED LINKS
 

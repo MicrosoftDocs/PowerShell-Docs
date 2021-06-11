@@ -433,8 +433,8 @@ parameter. Otherwise, this cmdlet does not return any output.
 ## NOTES
 
 - When using the **Wait** parameter, `Start-Process` waits for the process tree (the process and all
-  its descendants) to exit before returning returning control. This is different than the behavior
-  of the `Wait-Process` cmdlet, which only waits for the specified processes to exit.
+  its descendants) to exit before returning control. This is different than the behavior of the 
+  `Wait-Process` cmdlet, which only waits for the specified processes to exit.
 
 - This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process**
   class. For more information about this method, see
