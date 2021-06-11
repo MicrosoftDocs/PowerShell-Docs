@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/11/2020
+ms.date: 06/11/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -153,10 +153,13 @@ detached process. For more information, see the man page for
 
 Specifies parameters or parameter values to use when this cmdlet starts the process. Arguments can
 be accepted as a single string with the arguments separated by spaces, or as an array of strings
-separated by commas.
+separated by commas. The cmdlet joins the array into a single string with each element of the array
+separated by a single space.
 
-If parameters or parameter values contain a space, they need to be surrounded with escaped double
-quotes. For more information, see [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
+The outer quotes of the PowerShell strings are not included when the **ArgumentList** values are
+passed to the new process. If parameters or parameter values contain a space or quotes, they need to
+be surrounded with escaped double quotes. For more information, see
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -490,6 +493,10 @@ This cmdlet generates a **System.Diagnostics.Process** object, if you specify th
 parameter. Otherwise, this cmdlet does not return any output.
 
 ## NOTES
+
+- When using the **Wait** parameter, `Start-Process` waits for the process tree (the process and all
+  its descendants) to exit before returning control. This is different than the behavior of the 
+  `Wait-Process` cmdlet, which only waits for the specified processes to exit.
 
 - This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process**
   class. For more information about this method, see
