@@ -47,6 +47,16 @@ The following sections explain how to create and run DSC configurations on Windo
 The Windows PowerShell `Configuration` keyword is used to create a configuration.
 The following steps describe the creation of a configuration document using Windows PowerShell.
 
+#### Install a module containing DSC resources
+
+Windows PowerShell Desired State Configuration includes built-in modules containing DSC resources.
+You can also load modules from external sources such as the PowerShell Gallery, using the
+PowerShellGet cmdlets.
+
+```PowerShell
+Install-Module 'PSDscResources' -Verbose
+```
+
 #### Define a configuration and generate the configuration document:
 
 ```powershell
@@ -69,17 +79,7 @@ Configuration EnvironmentVariable_Path
     }
 }
 
-EnvironmentVariable_Path -OutputPath:"C:\EnvironmentVariable_Path"
-```
-
-#### Install a module containing DSC resources
-
-Windows PowerShell Desired State Configuration includes built-in modules containing DSC resources.
-You can also load modules from external sources such as the PowerShell Gallery, using the
-PowerShellGet cmdlets.
-
-```PowerShell
-Install-Module 'PSDscResources' -Verbose
+EnvironmentVariable_Path -OutputPath:"./EnvironmentVariable_Path"
 ```
 
 #### Apply the configuration to the machine
