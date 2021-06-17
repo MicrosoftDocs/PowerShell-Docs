@@ -270,8 +270,7 @@ Specifies the objects to convert to JSON format. Enter a variable that contains 
 a command or expression that gets the objects. You can also pipe an object to `ConvertTo-Json`.
 
 The **InputObject** parameter is required, but its value can be null (`$null`) or an empty string.
-When the input object is `$null`, `ConvertTo-Json` does not generate any output. When the input
-object is an empty string, `ConvertTo-Json` returns an empty string.
+When the input object is `$null` or an empty string, `ConvertTo-Json` outputs the string `null`.
 
 ```yaml
 Type: System.Object
