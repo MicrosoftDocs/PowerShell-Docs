@@ -107,8 +107,8 @@ last index in the returned array of 25 retrieved lines.
 
 ### Example 4: Get the last line of a text file
 
-This command gets the first line and last line of content from a file. This example uses the
-`LineNumbers.txt` file that was created in Example 1.
+This command gets the last line of content from a file. This example uses the `LineNumbers.txt` file
+that was created in Example 1.
 
 ```powershell
 Get-Item -Path .\LineNumbers.txt | Get-Content -Tail 1
