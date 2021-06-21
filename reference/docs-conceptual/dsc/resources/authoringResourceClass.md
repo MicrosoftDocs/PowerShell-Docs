@@ -47,7 +47,7 @@ use the `DscResource()` attribute. The name of the class is the name of the DSC 
 
 ```powershell
 [DscResource()]
-class FileResource {
+class File {
 }
 ```
 
@@ -58,16 +58,16 @@ follows.
 
 ```powershell
 [DscProperty(Key)]
-[string]$Path
+[string] $path
 
 [DscProperty(Mandatory)]
-[Ensure] $Ensure
+[ensure] $ensure
 
-[DscProperty(Mandatory)]
-[string] $SourcePath
+[DscProperty()]
+[string] $content
 
 [DscProperty(NotConfigurable)]
-[Nullable[datetime]] $CreationTime
+[Reason[]] $Reasons
 ```
 
 Notice that the properties are modified by attributes. The meaning of the attributes is as follows:
@@ -91,142 +91,187 @@ enum Ensure
 }
 ```
 
+### Embedding classes
+
+If you would like to include a new type with defined properties that you can
+use within your resource, just create a class with property types as described
+above.
+
+```powershell
+class Reason {
+    [DscProperty()]
+    [string] $Code
+
+    [DscProperty()]
+    [string] $Phrase
+}
+```
+
+### Public and Private functions
+
+You can create PowerShell functions within the same module file and use them
+inside the methods of your DSC class resource. The functions must be delcared
+as public, however the script blocks within those public functions can call
+functions that are private. The only difference is whether they are listed in
+the `FunctionsToExport` property of the module manifest.
+
+```powershell
+<#
+   Public Functions
+#>
+
+function Get-File {
+    param(
+        [ensure]$ensure,
+        
+        [parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]$path,
+
+        [String]$content
+    )
+    $fileContent        = [reason]::new()
+    $fileContent.code   = 'file:file:content'
+
+    $filePresent        = [reason]::new()
+    $filePresent.code   = 'file:file:path'
+
+    $ensureReturn = 'Absent'
+
+    $fileExists = Test-path $path -ErrorAction SilentlyContinue
+
+    if ($true -eq $fileExists) {
+        $filePresent.phrase     = "The file was expected to be: $ensure`nThe file exists at path: $path"
+        
+        $existingFileContent    = Get-Content $path -Raw
+        if ([string]::IsNullOrEmpty($existingFileContent)) {
+            $existingFileContent = ''
+        }
+
+        if ($false -eq ([string]::IsNullOrEmpty($content))) {
+            $content = $content | ConvertTo-SpecialChars
+        }
+
+        $fileContent.phrase     = "The file was expected to contain: $content`nThe file contained: $existingFileContent"
+
+        if ($content -eq $existingFileContent) {
+            $ensureReturn = 'Present'
+        }
+    }
+    else {
+        $filePresent.phrase     = "The file was expected to be: $ensure`nThe file does not exist at path: $path"
+        $path = 'file not found'
+    }
+
+    return @{
+        ensure  = $ensureReturn
+        path    = $path
+        content = $existingFileContent
+        Reasons = @($filePresent,$fileContent)
+    }
+}
+
+function Set-File {
+    param(
+        [ensure]$ensure = "Present",
+        
+        [parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]$path,
+
+        [String]$content
+    )
+    Remove-Item $path -Force -ErrorAction SilentlyContinue
+    if ($ensure -eq "Present") {
+        New-Item $path -ItemType File -Force
+        if ([ValidateNotNullOrEmpty()]$content) {
+            $content | ConvertTo-SpecialChars | Set-Content $path -NoNewline -Force
+        }
+    }
+}
+
+function Test-File {
+    param(
+        [ensure]$ensure = "Present",
+        
+        [parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]$path,
+
+        [String]$content
+    )
+    $test = $false
+    $get = Get-File @PSBoundParameters
+    
+    if ($get.ensure -eq $ensure) {
+        $test = $true
+    }
+    return $test
+}
+
+<#
+   Private Functions
+#>
+
+function ConvertTo-SpecialChars {
+    param(
+        [parameter(Mandatory = $true,ValueFromPipeline)]
+        [ValidateNotNullOrEmpty()]
+        [string]$string
+    )
+    $specialChars = @{
+        '`n' = "`n"
+        '\\n' = "`n"
+        '`r' = "`r"
+        '\\r' = "`r"
+        '`t' = "`t"
+        '\\t' = "`t"
+    }
+    foreach ($char in $specialChars.Keys) {
+        $string = $string -replace ($char,$specialChars[$char])
+    }
+    return $string
+}
+```
+
 ### Implementing the methods
 
 The `Get()`, `Set()`, and `Test()` methods are analogous to the `Get-TargetResource`,
 `Set-TargetResource`, and `Test-TargetResource` functions in a script resource.
 
-This code also includes the `CopyFile()` function, a helper function that copies the file from
-`$SourcePath` to `$Path`.
+As a best practice, minimize the amount of code within the class implementation. Instead,
+move the majority of your code our to public functions in the module, which can then
+be independently tested.
 
 ```powershell
-    <#
-        This method is equivalent of the Set-TargetResource script function.
-        It sets the resource to the desired state.
-    #>
-    [void] Set()
-    {
-        $fileExists = $this.TestFilePath($this.Path)
+<#
+    This method is equivalent of the Get-TargetResource script function.
+    The implementation should use the keys to find appropriate
+    resources. This method returns an instance of this class with the
+    updated key properties.
+#>
+[File] Get() {
+    $get = Get-File -ensure $this.ensure -path $this.path -content $this.content
+    return $get
+}
 
-        if ($this.ensure -eq [Ensure]::Present)
-        {
-            if(-not $fileExists)
-            {
-                $this.CopyFile()
-            }
-        }
-        else
-        {
-            if ($fileExists)
-            {
-                Write-Verbose -Message "Deleting the file $($this.Path)"
-                Remove-Item -LiteralPath $this.Path -Force
-            }
-        }
-    }
+<#
+    This method is equivalent of the Set-TargetResource script function.
+    It sets the resource to the desired state.
+#>
+[void] Set() {
+    $set = Set-File -ensure $this.ensure -path $this.path -content $this.content
+}
 
-    <#
-        This method is equivalent of the Test-TargetResource script function.
-        It should return True or False, showing whether the resource
-        is in a desired state.
-    #>
-    [bool] Test()
-    {
-        $present = $this.TestFilePath($this.Path)
-
-        if ($this.Ensure -eq [Ensure]::Present)
-        {
-            return $present
-        }
-        else
-        {
-            return -not $present
-        }
-    }
-
-    <#
-        This method is equivalent of the Get-TargetResource script function.
-        The implementation should use the keys to find appropriate resources.
-        This method returns an instance of this class with the updated key
-         properties.
-    #>
-    [FileResource] Get()
-    {
-        $present = $this.TestFilePath($this.Path)
-
-        if ($present)
-        {
-            $file = Get-ChildItem -LiteralPath $this.Path
-            $this.CreationTime = $file.CreationTime
-            $this.Ensure = [Ensure]::Present
-        }
-        else
-        {
-            $this.CreationTime = $null
-            $this.Ensure = [Ensure]::Absent
-        }
-
-        return $this
-    }
-
-    <#
-        Helper method to check if the file exists and it is file
-    #>
-    [bool] TestFilePath([string] $location)
-    {
-        $present = $true
-
-        $item = Get-ChildItem -LiteralPath $location -ErrorAction Ignore
-
-        if ($item -eq $null)
-        {
-            $present = $false
-        }
-        elseif ($item.PSProvider.Name -ne "FileSystem")
-        {
-            throw "Path $($location) is not a file path."
-        }
-        elseif ($item.PSIsContainer)
-        {
-            throw "Path $($location) is a directory path."
-        }
-
-        return $present
-    }
-
-    <#
-        Helper method to copy file from source to path
-    #>
-    [void] CopyFile()
-    {
-        if (-not $this.TestFilePath($this.SourcePath))
-        {
-            throw "SourcePath $($this.SourcePath) is not found."
-        }
-
-        [System.IO.FileInfo] $destFileInfo = New-Object -TypeName System.IO.FileInfo($this.Path)
-
-        if (-not $destFileInfo.Directory.Exists)
-        {
-            Write-Verbose -Message "Creating directory $($destFileInfo.Directory.FullName)"
-
-            <#
-                Use CreateDirectory instead of New-Item to avoid code
-                to handle the non-terminating error
-            #>
-            [System.IO.Directory]::CreateDirectory($destFileInfo.Directory.FullName)
-        }
-
-        if (Test-Path -LiteralPath $this.Path -PathType Container)
-        {
-            throw "Path $($this.Path) is a directory path"
-        }
-
-        Write-Verbose -Message "Copying $($this.SourcePath) to $($this.Path)"
-
-        # DSC engine catches and reports any error that occurs
-        Copy-Item -LiteralPath $this.SourcePath -Destination $this.Path -Force
-    }
+<#
+    This method is equivalent of the Test-TargetResource script
+    function. It should return True or False, showing whether the
+    resource is in a desired state.
+#>
+[bool] Test() {
+    $test = Test-File -ensure $this.ensure -path $this.path -content $this.content
+    return $test
+}
 ```
 
 ### The complete file
@@ -234,33 +279,161 @@ This code also includes the `CopyFile()` function, a helper function that copies
 The complete class file follows.
 
 ```powershell
-enum Ensure
-{
+enum ensure {
     Absent
     Present
 }
 
 <#
-   This resource manages the file in a specific path.
-   [DscResource()] indicates the class is a DSC resource
+    This class is used within the DSC Resource to standardize how data
+    is returned about the compliance details of the machine.
+#>
+class Reason {
+    [DscProperty()]
+    [string] $Code
+
+    [DscProperty()]
+    [string] $Phrase
+}
+
+<#
+   Public Functions
+#>
+
+function Get-File {
+    param(
+        [ensure]$ensure,
+        
+        [parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]$path,
+
+        [String]$content
+    )
+    $fileContent        = [reason]::new()
+    $fileContent.code   = 'file:file:content'
+
+    $filePresent        = [reason]::new()
+    $filePresent.code   = 'file:file:path'
+
+    $ensureReturn = 'Absent'
+
+    $fileExists = Test-path $path -ErrorAction SilentlyContinue
+
+    if ($true -eq $fileExists) {
+        $filePresent.phrase     = "The file was expected to be: $ensure`nThe file exists at path: $path"
+        
+        $existingFileContent    = Get-Content $path -Raw
+        if ([string]::IsNullOrEmpty($existingFileContent)) {
+            $existingFileContent = ''
+        }
+
+        if ($false -eq ([string]::IsNullOrEmpty($content))) {
+            $content = $content | ConvertTo-SpecialChars
+        }
+
+        $fileContent.phrase     = "The file was expected to contain: $content`nThe file contained: $existingFileContent"
+
+        if ($content -eq $existingFileContent) {
+            $ensureReturn = 'Present'
+        }
+    }
+    else {
+        $filePresent.phrase     = "The file was expected to be: $ensure`nThe file does not exist at path: $path"
+        $path = 'file not found'
+    }
+
+    return @{
+        ensure  = $ensureReturn
+        path    = $path
+        content = $existingFileContent
+        Reasons = @($filePresent,$fileContent)
+    }
+}
+
+function Set-File {
+    param(
+        [ensure]$ensure = "Present",
+        
+        [parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]$path,
+
+        [String]$content
+    )
+    Remove-Item $path -Force -ErrorAction SilentlyContinue
+    if ($ensure -eq "Present") {
+        New-Item $path -ItemType File -Force
+        if ([ValidateNotNullOrEmpty()]$content) {
+            $content | ConvertTo-SpecialChars | Set-Content $path -NoNewline -Force
+        }
+    }
+}
+
+function Test-File {
+    param(
+        [ensure]$ensure = "Present",
+        
+        [parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]$path,
+
+        [String]$content
+    )
+    $test = $false
+    $get = Get-File @PSBoundParameters
+    
+    if ($get.ensure -eq $ensure) {
+        $test = $true
+    }
+    return $test
+}
+
+<#
+   Private Functions
+#>
+
+function ConvertTo-SpecialChars {
+    param(
+        [parameter(Mandatory = $true,ValueFromPipeline)]
+        [ValidateNotNullOrEmpty()]
+        [string]$string
+    )
+    $specialChars = @{
+        '`n' = "`n"
+        '\\n' = "`n"
+        '`r' = "`r"
+        '\\r' = "`r"
+        '`t' = "`t"
+        '\\t' = "`t"
+    }
+    foreach ($char in $specialChars.Keys) {
+        $string = $string -replace ($char,$specialChars[$char])
+    }
+    return $string
+}
+
+<#
+    This resource manages the file in a specific path.
+    [DscResource()] indicates the class is a DSC resource
 #>
 
 [DscResource()]
-class FileResource
-{
+class File {
+    
     <#
-       This property is the fully qualified path to the file that is
-       expected to be present or absent.
+        This property is the fully qualified path to the file that is
+        expected to be present or absent.
 
-       The [DscProperty(Key)] attribute indicates the property is a
-       key and its value uniquely identifies a resource instance.
-       Defining this attribute also means the property is required
-       and DSC will ensure a value is set before calling the resource.
+        The [DscProperty(Key)] attribute indicates the property is a
+        key and its value uniquely identifies a resource instance.
+        Defining this attribute also means the property is required
+        and DSC will ensure a value is set before calling the resource.
 
-       A DSC resource must define at least one key property.
+        A DSC resource must define at least one key property.
     #>
     [DscProperty(Key)]
-    [string]$Path
+    [string] $path
 
     <#
         This property indicates if the settings should be present or absent
@@ -276,156 +449,55 @@ class FileResource
         calls the resource.  This is appropriate for optional properties.
     #>
     [DscProperty(Mandatory)]
-    [Ensure] $Ensure
+    [ensure] $ensure
 
     <#
-       This property defines the fully qualified path to a file that will
-       be placed on the system if $Ensure = Present and $Path does not
-        exist.
-
-       NOTE: This property is required because [DscProperty(Mandatory)] is
-        set.
+        This property is optional. When provided, the content of the file
+        will be overwridden by this value.
     #>
-    [DscProperty(Mandatory)]
-    [string] $SourcePath
+    [DscProperty()]
+    [string] $content
 
     <#
-       This property reports the file's create timestamp.
+        This property reports the reasons the machine is or is not compliant.
 
-       [DscProperty(NotConfigurable)] attribute indicates the property is
-       not configurable in DSC configuration.  Properties marked this way
-       are populated by the Get() method to report additional details
-       about the resource when it is present.
-
+        [DscProperty(NotConfigurable)] attribute indicates the property is
+        not configurable in DSC configuration.  Properties marked this way
+        are populated by the Get() method to report additional details
+        about the resource when it is present.
     #>
     [DscProperty(NotConfigurable)]
-    [Nullable[datetime]] $CreationTime
+    [Reason[]] $Reasons
 
+    <#
+        This method is equivalent of the Get-TargetResource script function.
+        The implementation should use the keys to find appropriate
+        resources. This method returns an instance of this class with the
+        updated key properties.
+    #>
+    [File] Get() {
+        $get = Get-File -ensure $this.ensure -path $this.path -content $this.content
+        return $get
+    }
+    
     <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
     #>
-    [void] Set()
-    {
-        $fileExists = $this.TestFilePath($this.Path)
-        if ($this.ensure -eq [Ensure]::Present)
-        {
-            if (-not $fileExists)
-            {
-                $this.CopyFile()
-            }
-        }
-        else
-        {
-            if ($fileExists)
-            {
-                Write-Verbose -Message "Deleting the file $($this.Path)"
-                Remove-Item -LiteralPath $this.Path -Force
-            }
-        }
+    [void] Set() {
+        $set = Set-File -ensure $this.ensure -path $this.path -content $this.content
     }
-
+    
     <#
-        This method is equivalent of the Test-TargetResource script function.
-        It should return True or False, showing whether the resource
-        is in a desired state.
+        This method is equivalent of the Test-TargetResource script
+        function. It should return True or False, showing whether the
+        resource is in a desired state.
     #>
-    [bool] Test()
-    {
-        $present = $this.TestFilePath($this.Path)
-
-        if ($this.Ensure -eq [Ensure]::Present)
-        {
-            return $present
-        }
-        else
-        {
-            return -not $present
-        }
+    [bool] Test() {
+        $test = Test-File -ensure $this.ensure -path $this.path -content $this.content
+        return $test
     }
-
-    <#
-        This method is equivalent of the Get-TargetResource script function.
-        The implementation should use the keys to find appropriate resources.
-        This method returns an instance of this class with the updated key
-         properties.
-    #>
-    [FileResource] Get()
-    {
-        $present = $this.TestFilePath($this.Path)
-
-        if ($present)
-        {
-            $file = Get-ChildItem -LiteralPath $this.Path
-            $this.CreationTime = $file.CreationTime
-            $this.Ensure = [Ensure]::Present
-        }
-        else
-        {
-            $this.CreationTime = $null
-            $this.Ensure = [Ensure]::Absent
-        }
-
-        return $this
-    }
-
-    <#
-        Helper method to check if the file exists and it is file
-    #>
-    [bool] TestFilePath([string] $location)
-    {
-        $present = $true
-
-        $item = Get-ChildItem -LiteralPath $location -ea Ignore
-        if ($item -eq $null)
-        {
-            $present = $false
-        }
-        elseif ($item.PSProvider.Name -ne "FileSystem")
-        {
-            throw "Path $($location) is not a file path."
-        }
-        elseif ($item.PSIsContainer)
-        {
-            throw "Path $($location) is a directory path."
-        }
-
-        return $present
-    }
-
-    <#
-        Helper method to copy file from source to path
-    #>
-    [void] CopyFile()
-    {
-        if (-not $this.TestFilePath($this.SourcePath))
-        {
-            throw "SourcePath $($this.SourcePath) is not found."
-        }
-
-        [System.IO.FileInfo] $destFileInfo = new-object System.IO.FileInfo($this.Path)
-        if (-not $destFileInfo.Directory.Exists)
-        {
-            Write-Verbose -Message "Creating directory $($destFileInfo.Directory.FullName)"
-
-            <#
-                Use CreateDirectory instead of New-Item to avoid code
-                 to handle the non-terminating error
-            #>
-            [System.IO.Directory]::CreateDirectory($destFileInfo.Directory.FullName)
-        }
-
-        if (Test-Path -LiteralPath $this.Path -PathType Container)
-        {
-            throw "Path $($this.Path) is a directory path"
-        }
-
-        Write-Verbose -Message "Copying $($this.SourcePath) to $($this.Path)"
-
-        # DSC engine catches and reports any error that occurs
-        Copy-Item -LiteralPath $this.SourcePath -Destination $this.Path -Force
-    }
-} # This module defines a class for a DSC "FileResource" provider.
+}
 ```
 
 ## Create a manifest
@@ -437,34 +509,59 @@ resource. Our manifest looks like this:
 ```powershell
 @{
 
-# Script module or binary module file associated with this manifest.
-RootModule = 'MyDscResource.psm1'
-
-DscResourcesToExport = 'FileResource'
-
-# Version number of this module.
-ModuleVersion = '1.0'
-
-# ID used to uniquely identify this module
-GUID = '81624038-5e71-40f8-8905-b1a87afe22d7'
-
-# Author of this module
-Author = 'Microsoft Corporation'
-
-# Company or vendor of this module
-CompanyName = 'Microsoft Corporation'
-
-# Copyright statement for this module
-Copyright = '(c) 2014 Microsoft. All rights reserved.'
-
-# Description of the functionality provided by this module
-# Description = ''
-
-# Minimum version of the Windows PowerShell engine required by this module
-PowerShellVersion = '5.0'
-
-# Name of the Windows PowerShell host required by this module
-# PowerShellHostName = ''
+    # Script module or binary module file associated with this manifest.
+    RootModule = 'File.psm1'
+    
+    # Version number of this module.
+    ModuleVersion = '1.0.0.0'
+    
+    # ID used to uniquely identify this module
+    GUID = 'fad0d04e-65d9-4e87-aa17-39de1d008ee4'
+    
+    # Author of this module
+    Author = 'Microsoft Corporation'
+    
+    # Company or vendor of this module
+    CompanyName = 'Microsoft Corporation'
+    
+    # Copyright statement for this module
+    Copyright = ''
+    
+    # Description of the functionality provided by this module
+    Description = 'Create and set content of a file'
+    
+    # Minimum version of the Windows PowerShell engine required by this module
+    PowerShellVersion = '5.0'
+    
+    # Functions to export from this module
+    FunctionsToExport = @('Get-File','Set-File','Test-File')
+    
+    # DSC resources to export from this module
+    DscResourcesToExport = @('File')
+    
+    # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
+    PrivateData = @{
+    
+        PSData = @{
+    
+            # Tags applied to this module. These help with module discovery in online galleries.
+            # Tags = @(Power Plan, Energy, Battery)
+    
+            # A URL to the license for this module.
+            # LicenseUri = ''
+    
+            # A URL to the main website for this project.
+            # ProjectUri = ''
+    
+            # A URL to an icon representing this module.
+            # IconUri = ''
+    
+            # ReleaseNotes of this module
+            # ReleaseNotes = ''
+    
+        } # End of PSData hashtable
+    
+    } 
 }
 ```
 
@@ -473,23 +570,21 @@ PowerShellVersion = '5.0'
 After saving the class and manifest files in the folder structure as described earlier, you can
 create a configuration that uses the new resource. For information about how to run a DSC
 configuration, see [Enacting configurations](../pull-server/enactingConfigurations.md). The
-following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if
-not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the
-configuration).
+following configuration will check to see whether the file at `/tmp/test.txt` exists and if the contents
+match the string provided by the property 'Content'. If not, the entire file is written.
 
 ```powershell
 Configuration Test
 {
-    Import-DSCResource -module MyDscResource
-    FileResource file
+    Import-DSCResource -module File
+    File testFile
     {
-        Path = "C:\test\test.txt"
-        SourcePath = "c:\test.txt"
+        Path = "/tmp/test.txt"
+        Content = "DSC Rocks!"
         Ensure = "Present"
     }
 }
 Test
-Start-DscConfiguration -Wait -Force Test
 ```
 
 ## Supporting PsDscRunAsCredential
