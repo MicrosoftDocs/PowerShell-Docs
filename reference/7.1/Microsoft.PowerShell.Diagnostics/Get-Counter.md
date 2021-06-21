@@ -46,7 +46,7 @@ This cmdlet was reintroduced in PowerShell 7.
 
 > [!NOTE]
 > Performance counter names are localized. The examples shown here use the English names of the
-> performance objects, counters and instances. The names will be different on a system that uses
+> performance objects, counters, and instances. The names will be different on a system that uses
 > another language. Use the `Get-Counter -ListSet` command to see the localized names.
 
 ## EXAMPLES
