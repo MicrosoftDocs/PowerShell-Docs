@@ -3,7 +3,7 @@ external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 06/09/2017
+ms.date: 06/21/2021
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimassociatedinstance?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-CimAssociatedInstance
@@ -171,6 +171,9 @@ Accept wildcard characters: False
 
 Specifies the input to this cmdlet. You can use this parameter, or you can pipe the input to this
 cmdlet.
+
+The **InputObject** parameter doesn't enumerate over collections. If a collection is passed, an
+error is thrown. When working with collections, pipe the input to enumerate the values.
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimInstance
