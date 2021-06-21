@@ -3,7 +3,7 @@ external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 5/15/2019
+ms.date: 06/21/2021
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/set-ciminstance?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-CimInstance
@@ -194,6 +194,9 @@ Accept wildcard characters: False
 ### -InputObject
 
 Specifies a CIM instance object to use as input.
+
+The **InputObject** parameter doesn't enumerate over collections. If a collection is passed, an
+error is thrown. When working with collections, pipe the input to enumerate the values.
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimInstance
