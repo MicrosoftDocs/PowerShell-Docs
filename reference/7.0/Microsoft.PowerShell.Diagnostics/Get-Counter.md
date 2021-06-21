@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 11/06/2019
+ms.date: 06/21/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Counter
@@ -44,6 +43,11 @@ Many counter sets are protected by access control lists (ACL). To see all counte
 PowerShell with the **Run as administrator** option.
 
 This cmdlet was reintroduced in PowerShell 7.
+
+> [!NOTE]
+> Performance counter names are localized. The examples shown here use the English names of the
+> performance objects, counters and instances. The names will be different on a system that uses
+> another language. Use the `Get-Counter -ListSet` command to see the localized names.
 
 ## EXAMPLES
 
