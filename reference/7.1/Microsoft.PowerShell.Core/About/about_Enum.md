@@ -112,7 +112,7 @@ m4v
 
 **Note**: GetEnumNames() and GetEnumValues() seem to return the same results.
 However, internally, PowerShell is changing values into labels. Read the list
-carefully and you'll notice that `oga` and `mogg` are mentioned under the 'Get
+carefully and you'll notice that `ogg` and `mogg` are mentioned under the 'Get
 Names' results, but not under the 'Get Values' similar output for `jpg`,
 `jpeg`, and `mpg`, `mpeg`.
 
