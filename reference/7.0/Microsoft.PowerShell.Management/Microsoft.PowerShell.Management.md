@@ -1,7 +1,6 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113632
+Download Help Link: https://aka.ms/powershell70-help
 Help Version: 7.0.1.0
-keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
 Module Name: Microsoft.PowerShell.Management
