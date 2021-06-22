@@ -1,7 +1,6 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=285754
+Download Help Link: https://aka.ms/powershell51-help
 Help Version: 5.2.0.0
-keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: ca046f10-ca64-4740-8ff9-2565dba61a4f
 Module Name: Microsoft.PowerShell.Diagnostics

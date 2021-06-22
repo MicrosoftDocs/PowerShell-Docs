@@ -1,7 +1,6 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?LinkID=393254
+Download Help Link: https://aka.ms/powershell51-help
 Help Version: 5.2.0.0
-keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: eb74e8da-9ae2-482a-a648-e96550fb8733
 Module Name: Microsoft.PowerShell.Archive

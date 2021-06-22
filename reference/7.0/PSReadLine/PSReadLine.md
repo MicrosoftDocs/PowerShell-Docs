@@ -1,7 +1,6 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113630
+Download Help Link: https://aka.ms/powershell70-help
 Help Version: 7.0.1.0
-keywords: powershell
 Locale: en-US
 Module Guid: 5714753b-2afd-4492-a5fd-01d9e2cff8b5
 Module Name: PSReadLine

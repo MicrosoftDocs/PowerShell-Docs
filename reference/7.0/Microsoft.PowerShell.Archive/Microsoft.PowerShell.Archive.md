@@ -1,7 +1,6 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113631
+Download Help Link: https://aka.ms/powershell70-help
 Help Version: 7.0.1.0
-keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: eb74e8da-9ae2-482a-a648-e96550fb8733
 Module Name: Microsoft.PowerShell.Archive

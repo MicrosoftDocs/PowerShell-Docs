@@ -1,7 +1,7 @@
 ---
 description: The `enum` statement is used to declare an enumeration. An enumeration is a distinct type that consists of a set of named labels called the enumerator list.
 Locale: en-US
-ms.date: 11/27/2017
+ms.date: 06/21/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_enum?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Enum
@@ -69,6 +69,9 @@ The `GetEnumNames()` method returns the list of the labels for the enumeration.
 
 ```powershell
 [MediaTypes].GetEnumNames()
+```
+
+```Output
 unknown
 music
 mp3
@@ -91,6 +94,9 @@ The `GetEnumValues()` method returns the list of the values for the enumeration.
 
 ```powershell
 [MediaTypes].GetEnumValues()
+```
+
+```Output
 unknown
 music
 mp3
@@ -109,19 +115,32 @@ avi
 m4v
 ```
 
-**Note**: GetEnumNames() and GetEnumValues() seem to return the same results.
-However, internally, PowerShell is changing values into labels. Read the list
-carefully and you'll notice that `oga` and `mogg` are mentioned under the 'Get
-Names' results, but not under the 'Get Values' similar output for `jpg`,
-`jpeg`, and `mpg`, `mpeg`.
+> [!NOTE]
+> `GetEnumNames()` and `GetEnumValues()` seem to return the same results; a
+> list of named values. However, internally, `GetEnumValues()` enumerates the
+> values, then maps values into names. Read the list carefully and you'll
+> notice that `ogg`, `oga`, and `mogg` appear in the output of
+> `GetEnumNames()`, but the output of `GetEnumValues()` only shows `oga`. The
+> same thing happens for `jpg`, `jpeg`, and `mpg`, `mpeg`.
+
+The `GetEnumName()` method can be used to get a name associated with a specific
+value. If there are multiple names associated with a value, the method returns
+the alphabetically-first name.
 
 ```powershell
 [MediaTypes].GetEnumName(15)
 oga
+```
 
+The following example shows how to map each name to its value.
+
+```powershell
 [MediaTypes].GetEnumNames() | ForEach-Object {
   "{0,-10} {1}" -f $_,[int]([MediaTypes]::$_)
 }
+```
+
+```Output
 unknown    0
 music      10
 mp3        11
@@ -184,7 +203,7 @@ In the following example the *FileAttributes* enumeration is created.
 "file2 attributes are: $file2"
 ```
 
-```output
+```Output
 file1 attributes are: Archive, Compressed, Device
 file2 attributes are: Device, Directory, Encrypted
 ```
@@ -193,11 +212,10 @@ To test that a specific is set, you can use the binary comparison operator
 `-band`. In this example, we test for the **Device** and the **Archive**
 attributes in the value of `$file2`.
 
-```
+```powershell
 PS > ($file2 -band [FileAttributes]::Device) -eq [FileAttributes]::Device
 True
 
 PS > ($file2 -band [FileAttributes]::Archive) -eq [FileAttributes]::Archive
 False
 ```
-
