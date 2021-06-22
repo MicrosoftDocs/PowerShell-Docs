@@ -1,7 +1,6 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?LinkId=509916
+Download Help Link: https://aka.ms/powershell51-help
 Help Version: 5.2.0.0
-keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: fa1606d1-94cb-4264-bfb6-def714420084
 Module Name: Microsoft.PowerShell.ODataUtils
