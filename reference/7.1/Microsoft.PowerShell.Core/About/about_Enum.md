@@ -117,8 +117,8 @@ m4v
 
 > [!NOTE]
 > `GetEnumNames()` and `GetEnumValues()` seem to return the same results; a
-> list of named values. However, internally, `GetEnumValues()` enumerating the
-> values, then mapping values into names. Read the list carefully and you'll
+> list of named values. However, internally, `GetEnumValues()` enumerates the
+> values, then maps values into names. Read the list carefully and you'll
 > notice that `ogg`, `oga`, and `mogg` appear in the output of
 > `GetEnumNames()`, but the output of `GetEnumValues()` only shows `oga`. The
 > same thing happens for `jpg`, `jpeg`, and `mpg`, `mpeg`.
