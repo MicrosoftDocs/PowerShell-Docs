@@ -1,23 +1,48 @@
 {
   "redirections": [
     {
+      "source_path": "reference/7.2/PSDesiredStateConfiguration/About/about_Classes_and_DSC.md",
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/about_classes_and_dsc?view=ps-modules",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "reference/7.2/PSDesiredStateConfiguration/Get-DscResource.md",
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/Get-DscResource?view=ps-modules",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "reference/7.2/PSDesiredStateConfiguration/Invoke-DscResource.md",
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/Invoke-DscResource?view=ps-modules",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "reference/7.2/PSDesiredStateConfiguration/New-DSCCheckSum.md",
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/New-DSCCheckSum?view=ps-modules",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "reference/7.2/PSDesiredStateConfiguration/PSDesiredStateConfiguration.md",
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/PSDesiredStateConfiguration?view=ps-modules",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "reference/5.1/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md",
-      "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq.yml",
+      "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq",
       "redirect_document_id": false
     },
     {
       "source_path": "reference/7.0/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md",
-      "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq.yml",
+      "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq",
       "redirect_document_id": false
     },
     {
       "source_path": "reference/7.1/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md",
-      "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq.yml",
+      "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq",
       "redirect_document_id": true
     },
     {
       "source_path": "reference/7.2/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md",
-      "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq.yml",
+      "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq",
       "redirect_document_id": false
     },
     {
