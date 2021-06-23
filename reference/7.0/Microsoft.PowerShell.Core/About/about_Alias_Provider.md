@@ -86,7 +86,7 @@ path.
 
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
-> paths. Commands such as `dir` and `ls` are now aliases for
+> paths. Commands such as `dir` and `ls` are now aliases on Windows and `dir` on Linux and macOS for
 > [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem), `cd` is
 > an alias for
 > [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location). and `pwd`

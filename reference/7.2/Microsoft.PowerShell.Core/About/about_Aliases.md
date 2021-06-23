@@ -49,7 +49,7 @@ If you create `word` as the alias for Microsoft Office Word, you can type
 ## Built in aliases
 
 PowerShell includes a set of built-in aliases, including `cd` and `chdir` for
-the `Set-Location` cmdlet, and `ls` and `dir` for the `Get-ChildItem` cmdlet.
+the `Set-Location` cmdlet, `ls` and `dir` on Windows and `dir` on Linux and macOS for the `Get-ChildItem` cmdlet.
 
 To get all the aliases on the computer, including the built-in aliases, type:
 
