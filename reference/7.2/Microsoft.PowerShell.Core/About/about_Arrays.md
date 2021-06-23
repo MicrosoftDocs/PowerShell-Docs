@@ -329,7 +329,7 @@ array while the array index is less than 4, type:
 $a = 0..9
 $i=0
 while($i -lt 4) {
-  $a[$i];
+  $a[$i]
   $i++
 }
 ```
@@ -375,7 +375,7 @@ $a = @(
 
 "`$a rank: $($a.Rank)"
 "`$a length: $($a.Length)"
-"`$a length: $($a.Length)"
+"`$a[2] length: $($a[2].Length)"
 "Process `$a[2][1]: $($a[2][1].ProcessName)"
 ```
 
