@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 06/21/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Service
@@ -59,6 +59,9 @@ Get-Service -DisplayName "Test Service" | Remove-Service
 
 Specifies **ServiceController** objects that represent the services to remove. Enter a variable that
 contains the objects, or type a command or expression that gets the objects.
+
+The **InputObject** parameter doesn't enumerate collections. If a collection is passed, an error is
+thrown. When working with collections, pipe the input to enumerate the values.
 
 ```yaml
 Type: System.ServiceProcess.ServiceController
