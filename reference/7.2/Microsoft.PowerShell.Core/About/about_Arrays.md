@@ -962,9 +962,9 @@ looks for that member on each item. This applies to both property and method
 members.
 
 The following example creates two new files and stores the resulting objects in
-an array. The `$files` variable is an array. Since the array object does not
-have the **LastWriteTime** member, the value of **LastWriteTime** is returned
-for each item in the array.
+the array variable `$files`. Since the array object does not have the
+**LastWriteTime** member, the value of **LastWriteTime** is returned for each
+item in the array.
 
 ```powershell
 $files = (New-Item -Type File -Force '/temp/t1.txt'),
@@ -1002,8 +1002,8 @@ Thursday, June 24, 2021 1:23:30 PM
 ```
 
 The `set_LastWriteTime()` method is a _hidden_ member of the **FileInfo**
-object. The following example show how to find members that have a `set`
-method.
+object. The following example shows how to find members that have a _hidden_
+`set` method.
 
 ```powershell
 $files | Get-Member | Where-Object Definition -like '*set;*'
@@ -1025,8 +1025,8 @@ LastWriteTimeUtc  Property   datetime LastWriteTimeUtc {get;set;}
 ```
 
 > [!CAUTION]
-> Care should be taken when calling methods using member enumeration, since the
-> method is executed for each item in the collection.
+> Since the method is executed for each item in the collection, care should be
+> taken when calling methods using member enumeration.
 
 ## See also
 
