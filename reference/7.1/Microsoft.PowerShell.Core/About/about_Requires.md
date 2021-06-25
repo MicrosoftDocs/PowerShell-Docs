@@ -36,7 +36,7 @@ For more information about the syntax, see
 ### Rules for use
 
 A script can include more than one `#Requires` statement. The `#Requires`
-statements can appear on any line in a script.
+statements can appear on any line in a script. `#Requires` statement is not supported in Azure Automation cloud as well as hybrid jobs.
 
 Placing a `#Requires` statement inside a function does NOT limit its scope. All
 `#Requires` statements are always applied globally, and must be met, before the
