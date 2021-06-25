@@ -56,12 +56,12 @@ about topic for the keyword and the information that follows the table.
 
 The following keywords are used by PowerShell workflows:
 
-|   Keyword    |                                            Reference                                             |
-| ------------ | ------------------------------------------------------------------------------------------------ |
-| InlineScript | [about_InlineScript](/powershell/module/psworkflow/about/about_inlinescript?view=powershell-5.1) |
-| Parallel     | [about_Parallel](/powershell/module/psworkflow/about/about_Parallel?view=powershell-5.1)         |
-| Sequence     | [about_Sequence](/powershell/module/psworkflow/about/about_sequence?view=powershell-5.1)         |
-| Workflow     | [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1)       |
+|   Keyword    |                                  Reference                                   |
+| ------------ | ---------------------------------------------------------------------------- |
+| InlineScript | [about_InlineScript](/powershell/module/psworkflow/about/about_inlinescript) |
+| Parallel     | [about_Parallel](/powershell/module/psworkflow/about/about_Parallel)         |
+| Sequence     | [about_Sequence](/powershell/module/psworkflow/about/about_sequence)         |
+| Workflow     | [about_Workflows](/powershell/module/psworkflow/about/about_workflows)       |
 
 For more information about workflows, see
 [Running PowerShell Commands in a Workflow](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574197(v=ws.11)).
