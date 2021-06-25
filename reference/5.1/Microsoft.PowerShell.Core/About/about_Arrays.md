@@ -928,30 +928,6 @@ $a[-1]
 4
 ```
 
-## Indexing support for System.Tuple objects
-
-PowerShell 6.1 added the support for indexed access of **Tuple** objects, similar to arrays.
-For example:
-
-```powershell
-PS> $tuple = [Tuple]::Create(1, 'test')
-PS> $tuple[0]
-1
-PS> $tuple[1]
-test
-PS> $tuple[0..1]
-1
-test
-PS> $tuple[-1]
-test
-```
-
-Unlike arrays and other collection objects, **Tuple** objects are treated as a
-single object when passed through the pipeline or by parameters that support
-arrays of objects.
-
-For more information, see [System.Tuple](/dotnet/api/system.tuple).
-
 ## Member enumeration
 
 You can use member enumeration to get property values from all members of a
