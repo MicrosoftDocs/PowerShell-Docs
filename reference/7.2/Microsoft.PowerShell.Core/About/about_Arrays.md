@@ -957,8 +957,9 @@ For more information, see [System.Tuple](/dotnet/api/system.tuple).
 You can use member enumeration to get property values from all members of a
 collection. When you use the member access operator (`.`) with a member name on
 a collection object, such as an array, if the collection object does not have a
-member of that name, the items of the collection are enumerated and the look
-for that member. This applies to both property and method members.
+member of that name, the items of the collection are enumerated and PowerShell
+looks for that member on each item. This applies to both property and method
+members.
 
 The following example creates two new files and stores the resulting objects in
 an array. The `$files` variable is an array. Since the array object does not
