@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/19/2020
+ms.date: 06/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-hex?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Hex
@@ -199,8 +199,10 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Used for pipeline input. Pipeline input supports only certain scalar types and `[system.io.fileinfo]`
-instances for piping from `Get-ChildItem`.
+Specifies the objects to be formatted. Enter a variable that contains the objects or type a command
+or expression that gets the objects.
+
+Only certain scalar types and `[system.io.fileinfo]` are supported.
 
 The supported scalar types are:
 

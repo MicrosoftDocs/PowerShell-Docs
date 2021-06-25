@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 02/21/2019
+ms.date: 06/21/2021
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/get-ciminstance?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-CimInstance
@@ -296,6 +296,9 @@ instance object in order to get the latest snapshot from the CIM server. When yo
 instance object as an input, `Get-CimInstance` returns the object from server using a get CIM
 operation, instead of an enumerate or query operation. Using a get CIM operation is more efficient
 than retrieving all instances and then filtering them.
+
+The **InputObject** parameter doesn't enumerate over collections. If a collection is passed, an
+error is thrown. When working with collections, pipe the input to enumerate the values.
 
 If the CIM class does not implement the get operation, then specifying the **InputObject** parameter
 returns an error.
