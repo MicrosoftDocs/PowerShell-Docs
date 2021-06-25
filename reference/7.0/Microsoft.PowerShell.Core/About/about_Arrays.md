@@ -1,7 +1,7 @@
 ---
 description: Describes arrays, which are data structures designed to store collections of items.
 Locale: en-US
-ms.date: 08/26/2020
+ms.date: 06/25/2021
 no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -10,8 +10,8 @@ title: about Arrays
 # about_Arrays
 
 ## Short Description
-Describes arrays, which are data structures designed to store
-collections of items.
+Describes arrays, which are data structures designed to store collections of
+items.
 
 ## Long Description
 
@@ -951,6 +951,82 @@ single object when passed through the pipeline or by parameters that support
 arrays of objects.
 
 For more information, see [System.Tuple](/dotnet/api/system.tuple).
+
+## Member enumeration
+
+You can use member enumeration to get property values from all members of a
+collection. When you use the member access operator (`.`) with a member name on
+a collection object, such as an array, if the collection object does not have a
+member of that name, the items of the collection are enumerated and PowerShell
+looks for that member on each item. This applies to both property and method
+members.
+
+The following example creates two new files and stores the resulting objects in
+the array variable `$files`. Since the array object does not have the
+**LastWriteTime** member, the value of **LastWriteTime** is returned for each
+item in the array.
+
+```powershell
+$files = (New-Item -Type File -Force '/temp/t1.txt'),
+         (New-Item -Force -Type File '/temp/t2.txt')
+$files.LastWriteTime
+```
+
+```Output
+Friday, June 25, 2021 1:21:17 PM
+Friday, June 25, 2021 1:21:17 PM
+```
+
+Member enumeration can be used to _get_ values from items in a collection, but
+it cannot be used to _set_ values on items in a collection. For example:
+
+```powershell
+$files.LastWriteTime = (Get-Date).AddDays(-1)
+```
+
+```Output
+InvalidOperation: The property 'LastWriteTime' cannot be found on this object.
+Verify that the property exists and can be set.
+```
+
+To set the values you must use a method.
+
+```powershell
+$files.set_LastWriteTime((Get-Date).AddDays(-1))
+$files.LastWriteTime
+```
+
+```Output
+Thursday, June 24, 2021 1:23:30 PM
+Thursday, June 24, 2021 1:23:30 PM
+```
+
+The `set_LastWriteTime()` method is a _hidden_ member of the **FileInfo**
+object. The following example shows how to find members that have a _hidden_
+`set` method.
+
+```powershell
+$files | Get-Member | Where-Object Definition -like '*set;*'
+```
+
+```Output
+   TypeName: System.IO.FileInfo
+
+Name              MemberType Definition
+----              ---------- ----------
+Attributes        Property   System.IO.FileAttributes Attributes {get;set;}
+CreationTime      Property   datetime CreationTime {get;set;}
+CreationTimeUtc   Property   datetime CreationTimeUtc {get;set;}
+IsReadOnly        Property   bool IsReadOnly {get;set;}
+LastAccessTime    Property   datetime LastAccessTime {get;set;}
+LastAccessTimeUtc Property   datetime LastAccessTimeUtc {get;set;}
+LastWriteTime     Property   datetime LastWriteTime {get;set;}
+LastWriteTimeUtc  Property   datetime LastWriteTimeUtc {get;set;}
+```
+
+> [!CAUTION]
+> Since the method is executed for each item in the collection, care should be
+> taken when calling methods using member enumeration.
 
 ## See also
 
