@@ -12,8 +12,8 @@ Sends the configuration document to the managed node and uses the Configuration 
 
 ```mof
 uint32 SendConfigurationApply(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force
+  [in] uint8   ConfigurationData[],
+  [in] boolean force
 );
 ```
 

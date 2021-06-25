@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on Windows
 description: Information about installing PowerShell on Windows
-ms.date: 04/27/2021
+ms.date: 06/24/2021
 ---
 # Installing PowerShell on Windows
 
@@ -24,6 +24,11 @@ To enable PowerShell remoting over WSMan, the following prerequisites need to be
 To install PowerShell on Windows, download the [latest][] install package from GitHub. You can also
 find the latest [preview][] version. Scroll down to the **Assets** section of the Release page. The
 **Assets** section may be collapsed, so you may need to click to expand it.
+
+> [!NOTE]
+> The installation commands in this article are for the latest releases of PowerShell. To install a
+> different version of PowerShell, adjust the command to match the version you need. To see all
+> PowerShell releases, visit the [releases][] page in the PowerShell repository on GitHub.
 
 ## <a id="msi" />Installing the MSI package
 

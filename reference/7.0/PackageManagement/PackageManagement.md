@@ -1,7 +1,6 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113634
+Download Help Link: https://aka.ms/powershell70-help
 Help Version: 7.0.1.0
-keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: 4ae9fd46-338a-459c-8186-07f910774cb8
 Module Name: PackageManagement

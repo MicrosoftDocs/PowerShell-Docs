@@ -1,5 +1,5 @@
 ---
-ms.date: 04/19/2021
+ms.date: 06/22/2021
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -232,6 +232,11 @@ PS> 1.2 -replace ','
 
 Enables compilation to MOF on non-Windows systems and enables the use of `Invoke-DSCResource`
 without an LCM.
+
+In earlier previews of PowerShell 7.2, this feature was enabled by default. Beginning with
+PowerShell 7.2-preview7, the **PSDesiredStateConfiguration** module was removed and this feature is
+disabled by default. To enable this feature you must install the **PSDesiredStateConfiguration**
+v2.0.5 module from the PowerShell Gallery and enable the feature using `Enable-ExperimentalFeature`.
 
 ## PSImplicitRemotingBatching
 

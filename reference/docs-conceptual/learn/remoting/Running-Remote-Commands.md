@@ -157,16 +157,16 @@ or in the Windows PowerShell console, type `Get-Help wsman`.
 
 For more information, see:
 
-- [About Remote FAQ](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
+- [PowerShell Remoting FAQ](powershell-remoting-faq.yml)
 - [Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
 - [Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
 
-For help with remoting errors, see [about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting).
+For help with remoting errors, see
+[about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting).
 
 ## See Also
 
 - [about_Remote](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
-- [about_Remote_FAQ](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
 - [about_Remote_Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
 - [about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting)
 - [about_PSSessions](/powershell/module/microsoft.powershell.core/about/about_PSSessions)

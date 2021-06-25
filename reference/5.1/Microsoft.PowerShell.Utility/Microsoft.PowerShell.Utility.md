@@ -1,5 +1,5 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=390787
+Download Help Link: https://aka.ms/powershell51-help
 Help Version: 5.2.0.0
 Locale: en-US
 Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59

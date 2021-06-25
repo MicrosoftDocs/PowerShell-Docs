@@ -12,7 +12,7 @@ Enables DSC resource debugging.
 
 ```mof
 uint32 EnableDebugConfiguration(
-  [in] boolean BreakAll
+  [in] boolean BreakAll
 );
 ```
 
