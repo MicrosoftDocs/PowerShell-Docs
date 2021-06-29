@@ -1,8 +1,7 @@
 ---
 description: Lists the PowerShell operators in precedence order.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 11/09/2020
+ms.date: 06/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operator Precedence
@@ -62,7 +61,7 @@ and explicitly case-insensitive variants have the same precedence.
 | `-split` (binary)         | [about_Split][]                |
 | `-join` (binary)          | [about_Join][]                 |
 | `-is -isnot -as`          | [about_Type_Operators][]       |
-| `-eq -ne -gt -gt -lt -le` | [about_Comparison_Operators][] |
+| `-eq -ne -gt -ge -lt -le` | [about_Comparison_Operators][] |
 | `-like -notlike`          | [about_Comparison_Operators][] |
 | `-match -notmatch`        | [about_Comparison_Operators][] |
 | `-in -notIn`              | [about_Comparison_Operators][] |
