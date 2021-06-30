@@ -175,7 +175,7 @@ For non-Windows platforms, PowerShell includes the following modules:
 However, some cmdlets have been removed from PowerShell, and others are not available or may work
 differently on non-Windows platforms. For a comprehensive list of cmdlets removed from PowerShell,
 see
-[Cmdlets removed from PowerShell](differences-from-windows-powershell.md#cmdlets-removed-from-power-shell).
+[Cmdlets removed from PowerShell](differences-from-windows-powershell.md#cmdlets-removed-from-powershell).
 
 ### Microsoft.PowerShell.Core
 
