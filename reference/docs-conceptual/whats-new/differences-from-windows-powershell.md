@@ -712,11 +712,6 @@ This change removed support for `RunspaceConfiguration` and only supports `Initi
 
 An incorrect position of a parameter resulted in the args passed as input instead of as args.
 
-### Rename `$IsOSX` to `$IsMacOS`
-
-The naming in PowerShell should be consistent with our naming and conform to Apple's use of macOS
-instead of OSX. However, for readability and consistently we are staying with Pascal casing.
-
 ### Remove `ClrVersion` and `BuildVersion` properties from `$PSVersionTable`
 
 The `ClrVersion` property of `$PSVersionTable` is not useful with CoreCLR. End users should not be

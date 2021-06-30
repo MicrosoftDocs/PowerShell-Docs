@@ -88,6 +88,9 @@ On macOS, PowerShell uses the native `os_log` APIs to log to Apple's
 [unified logging system][os_log]. On Linux, PowerShell uses [Syslog][], a ubiquitous logging
 solution.
 
+[os_log]: https://developer.apple.com/documentation/os/logging
+[Syslog]: https://en.wikipedia.org/wiki/Syslog
+
 ## Job Control
 
 There is no Unix-style job-control support in PowerShell on Linux or macOS. The `fg` and `bg`
@@ -171,7 +174,8 @@ For non-Windows platforms, PowerShell includes the following modules:
 
 However, some cmdlets have been removed from PowerShell, and others are not available or may work
 differently on non-Windows platforms. For a comprehensive list of cmdlets removed from PowerShell,
-see [TO DO]().
+see
+[Cmdlets removed from PowerShell](differences-from-windows-powershell.md#cmdlets-removed-from-power-shell).
 
 ### Microsoft.PowerShell.Core
 
