@@ -14,8 +14,6 @@ items:
   items:
   - name: Overview
     href: install/installing-powershell.md
-  - name: Migrating from Windows PowerShell 5.1 to PowerShell 7
-    href: install/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
   - name: Installing PowerShell on Windows
     href: install/installing-powershell-core-on-windows.md
   - name: Installing PowerShell on Linux
@@ -215,6 +213,8 @@ items:
       href: whats-new/what-s-new-in-powershell-71.md
     - name: What's new in PowerShell 7.0
       href: whats-new/what-s-new-in-powershell-70.md
+  - name: Migrating from Windows PowerShell 5.1 to PowerShell 7
+    href: whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
   - name: Differences between Windows PowerShell 5.1 and PowerShell (core) 7.x
     href: whats-new/differences-from-windows-powershell.md
   - name: PowerShell differences on non-Windows platforms

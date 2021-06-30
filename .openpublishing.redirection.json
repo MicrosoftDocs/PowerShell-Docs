@@ -236,8 +236,8 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "reference/docs-conceptual/whats-new/migrating-from-windows-powershell-51-to-powershell-7.md",
-      "redirect_url": "/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7",
+      "source_path": "reference/docs-conceptual/install/migrating-from-windows-powershell-51-to-powershell-7.md",
+      "redirect_url": "/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7",
       "redirect_document_id": true
     },
     {
