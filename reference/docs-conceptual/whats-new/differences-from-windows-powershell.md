@@ -568,8 +568,7 @@ being dependent on previous behavior is low.
 
 ### Standard deviation in `Measure-Object`
 
-Thanks to [@CloudyDino](https://github.com/CloudyDino), we've added a `StandardDeviation` property
-to `Measure-Object`:
+The output from `Measure-Object` now includes a `StandardDeviation` property.
 
 ```powershell
 Get-Process | Measure-Object -Property CPU -AllStats
@@ -635,8 +634,8 @@ defaults to saving help to a user-scoped folder.
 
 ### `Where-Object -Not`
 
-Thanks to @SimonWahlin, we've added the `-Not` parameter to `Where-Object`. Now you can filter an
-object at the pipeline for the non-existence of a property, or a null/empty property value.
+With the addition of `-Not` parameter to `Where-Object`, can filter an object at the pipeline for
+the non-existence of a property, or a null/empty property value.
 
 For example, this command returns all services that don't have any dependent services defined:
 
