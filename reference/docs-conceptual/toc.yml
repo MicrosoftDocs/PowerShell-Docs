@@ -215,18 +215,10 @@ items:
       href: whats-new/what-s-new-in-powershell-71.md
     - name: What's new in PowerShell 7.0
       href: whats-new/what-s-new-in-powershell-70.md
-  - name: PowerShell Core 6.x Release Notes
-    items:
-    - name: What's new in PowerShell Core 6.2
-      href: whats-new/what-s-new-in-powershell-core-62.md
-    - name: What's new in PowerShell Core 6.1
-      href: whats-new/what-s-new-in-powershell-core-61.md
-    - name: What's new in PowerShell Core 6.0
-      href: whats-new/what-s-new-in-powershell-core-60.md
-    - name: Breaking changes in PowerShell Core 6.0
-      href: whats-new/breaking-changes-ps6.md
-    - name: Known issues in PowerShell Core 6.0
-      href: whats-new/known-issues-ps6.md
+  - name: Differences between Windows PowerShell 5.1 and PowerShell (core) 7.x
+    href: whats-new/differences-from-windows-powershell.md
+  - name: PowerShell differences on non-Windows platforms
+    href: whats-new/unix-support.md
   - name: Module and cmdlet release history
     href: whats-new/cmdlet-versions.md
   - name: Module compatibility list

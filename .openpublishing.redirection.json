@@ -1,6 +1,31 @@
 {
   "redirections": [
     {
+      "source_path": "reference/docs-conceptual/whats-new/What-s-New-in-PowerShell-Core-60.md",
+      "redirect_url": "/powershell/scripting/whats-new/differences-from-windows-powershell",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "reference/docs-conceptual/whats-new/What-s-New-in-PowerShell-Core-61.md",
+      "redirect_url": "/powershell/scripting/whats-new/differences-from-windows-powershell",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "reference/docs-conceptual/whats-new/What-s-New-in-PowerShell-Core-62.md",
+      "redirect_url": "/powershell/scripting/whats-new/differences-from-windows-powershell",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "reference/docs-conceptual/whats-new/breaking-changes-ps6.md",
+      "redirect_url": "/powershell/scripting/whats-new/differences-from-windows-powershell",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "reference/docs-conceptual/whats-new/known-issues-ps6.md",
+      "redirect_url": "/powershell/scripting/whats-new/differences-from-windows-powershell",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "reference/7.2/PSDesiredStateConfiguration/About/about_Classes_and_DSC.md",
       "redirect_url": "/powershell/module/psdesiredstateconfiguration/about_classes_and_dsc?view=ps-modules",
       "redirect_document_id": false
