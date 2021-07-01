@@ -18,5 +18,5 @@ version.
 - **Windows PowerShell** - PowerShell built on .NET Framework. Windows PowerShell ships only on
   Windows and requires the complete Framework. It is possible to run both PowerShell (core) and
   Windows PowerShell on the same Windows computer.
-- **PowerShell (core)** - PowerShell built on .NET Core. Usage of the term *Core* is limited to
+- **PowerShell (core)** - PowerShell built on .NET Core. Usage of the term _core_ is limited to
   cases where it's necessary to differentiate it from Windows PowerShell.
