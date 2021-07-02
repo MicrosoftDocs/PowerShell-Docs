@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell-Docs for 2021
 description: List of changes to the PowerShell documentation for 2021
-ms.date: 06/01/2021
+ms.date: 07/02/2021
 ---
 
 # What's new in PowerShell Docs for 2021
@@ -11,6 +11,48 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2021-June
+
+New content
+
+- [about_Intrinsic_Members](/powershell/module/microsoft.powershell.core/about/about_intrinsic_members)
+- [about_Booleans](/powershell/module/microsoft.powershell.core/about/about_booleans)
+
+Content updates
+
+- Converted [about_remote_faq](/powershell/scripting/learn/remoting/powershell-remoting-faq) to new
+  Yaml format and moved to conceptual TOC
+- Moved **PSDesiredStateConfiguration** out of 7.2 docs and into PowerShell-Docs-Modules
+  - DSC is being removed from PowerShell to become an optional module that is loaded from the
+    PowerShell Gallery
+  - Long-term plan is to move all DSC documentation out of PowerShell-Docs into a new repository for
+    DSC content
+- Totally rewrote the PowerShell release notes to summarize the current state, making it easier for
+  users to find the information without having to read every release note.
+  - [Differences between Windows PowerShell 5.1 and PowerShell (core) 7.x](/powershell/scripting/whats-new/differences-from-windows-powershell)
+  - [PowerShell differences on non-Windows platforms](/powershell/scripting/whats-new/unix-support)
+- PowerShell 7.2-preview.7 documentation updates
+
+### Top Community Contributors
+
+GitHub stats
+
+- 43 PRs merged (1 from Community)
+- 36 issues opened (32 from Community)
+- 49 issues closed (41 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|       GitHub Id        | PRs merged | Issues opened |
+| ---------------------- | :--------: | :-----------: |
+| rkeithhill             |     1      |               |
+| frenchiveruti          |            |       2       |
+| paulaustin-automutatio |            |       2       |
+| ringerc                |            |       2       |
+| trollyanov             |            |       2       |
+| UberKluger             |            |       2       |
 
 ## 2021-May
 
