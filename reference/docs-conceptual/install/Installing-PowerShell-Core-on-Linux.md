@@ -624,7 +624,7 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### Installation via Direct Download - Fedora 28, 29, and 30
+### Installation via Direct Download - Fedora 30, 31, and 32
 
 Download the RPM package `powershell-7.1.3-1.rhel.7.x86_64.rpm` from the [releases][] page onto the
 Fedora machine.
@@ -643,7 +643,7 @@ sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-1.rhel.7.x86_64.rpm
 ```
 
-### Uninstallation - Fedora 28, 29, and 30
+### Uninstallation - Fedora 30, 31, and 32
 
 ```sh
 sudo dnf remove powershell
