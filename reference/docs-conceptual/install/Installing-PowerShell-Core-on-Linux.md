@@ -599,7 +599,7 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 > [!NOTE]
 > Fedora 29 and 30 are only supported in PowerShell 7.0 and newer.
 
-### Installation via Package Repository (preferred) - Fedora 28, 29, and 30
+### Installation via Package Repository (preferred) - Fedora 30 , 31 and 32
 
 PowerShell for Linux is published to official Microsoft repositories for easy installation and
 updates.
