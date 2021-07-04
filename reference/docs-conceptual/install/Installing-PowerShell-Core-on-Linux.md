@@ -599,7 +599,7 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 > [!NOTE]
 > Fedora 29 and 30 are only supported in PowerShell 7.0 and newer.
 
-### Installation via Package Repository (preferred) - Fedora 28, 29, and 30
+### Installation via Package Repository (preferred) - Fedora 32, 33, and 34
 
 PowerShell for Linux is published to official Microsoft repositories for easy installation and
 updates.
@@ -624,7 +624,7 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### Installation via Direct Download - Fedora 28, 29, and 30
+### Installation via Direct Download - Fedora 32, 33, and 34
 
 Download the RPM package `powershell-7.1.3-1.rhel.7.x86_64.rpm` from the [releases][] page onto the
 Fedora machine.
@@ -643,7 +643,7 @@ sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-1.rhel.7.x86_64.rpm
 ```
 
-### Uninstallation - Fedora 28, 29, and 30
+### Uninstallation - Fedora 32, 33, and 34
 
 ```sh
 sudo dnf remove powershell
