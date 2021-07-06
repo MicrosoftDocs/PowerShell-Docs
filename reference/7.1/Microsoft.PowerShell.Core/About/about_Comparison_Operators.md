@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 06/21/2021
+ms.date: 07/06/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comparison Operators
@@ -415,7 +415,8 @@ User name:
 jsmith
 ```
 
-For details, see [about_Regular_Expressions](about_Regular_Expressions.md).
+For details, see [about_Regular_Expressions](about_Regular_Expressions.md) and
+[about_Automatic_Variables](about_Automatic_Variables.md).
 
 ## Replacement operator
 
