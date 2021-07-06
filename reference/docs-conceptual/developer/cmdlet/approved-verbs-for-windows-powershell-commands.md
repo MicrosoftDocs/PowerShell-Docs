@@ -65,7 +65,7 @@ resource in a container.
 ### Get vs. Read
 
 Use the `Get` verb to obtain information about a resource (such as a file) or to obtain an object
-with which you can access the resource in future. Use the `Read` verb to open a resource and either
+with which you can access the resource in future. Use the `Read` verb to open a resource and
 extract information contained within.
 
 ### Invoke vs. Start

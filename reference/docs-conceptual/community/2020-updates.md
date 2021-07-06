@@ -380,8 +380,6 @@ issues. Thank you!
 
 ## 2020-March
 
-###
-
 - New documents
   - The PowerShell Docs community pages
     - [Community resources](/powershell/scripting/community/community-support) page
@@ -421,8 +419,6 @@ issues. Thank you!
 
 ## 2020-February
 
-###
-
 - New documents
   - [about_Parameter_Sets](/powershell/module/microsoft.powershell.core/about/about_parameter_sets)
   - [Release history of modules and cmdlets](/powershell/scripting/whats-new/cmdlet-versions)
@@ -447,8 +443,6 @@ issues. Thank you!
 - metablaster - 2 issues
 
 ## 2020-January
-
-###
 
 - New documents
   - [about_Windows_PowerShell_Compatibility](/powershell/module/microsoft.powershell.core/about/about_Windows_PowerShell_Compatibility)

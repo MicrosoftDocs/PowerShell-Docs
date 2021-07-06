@@ -345,10 +345,10 @@ extension for Visual Studio Code:
 - [Debugging Visual Studio Code Guidance][psdbgblog]
 - [Debugging PowerShell in Visual Studio Code][psdbg-gh]
 - [Get started with PowerShell development in Visual Studio Code][getting-started]
-- [Visual Studio Code editing features for PowerShell development – Part 1][editing-part1]
-- [Visual Studio Code editing features for PowerShell development – Part 2][editing-part2]
-- [Debugging PowerShell script in Visual Studio Code – Part 1][debugging-part1]
-- [Debugging PowerShell script in Visual Studio Code – Part 2][debugging-part2]
+- [Visual Studio Code editing features for PowerShell development - Part 1][editing-part1]
+- [Visual Studio Code editing features for PowerShell development - Part 2][editing-part2]
+- [Debugging PowerShell script in Visual Studio Code - Part 1][debugging-part1]
+- [Debugging PowerShell script in Visual Studio Code - Part 2][debugging-part2]
 
 ## PowerShell extension project source code
 
@@ -375,7 +375,7 @@ If you're interested in contributing, Pull Requests are greatly appreciated. Fol
 [getting-started]:        https://devblogs.microsoft.com/scripting/get-started-with-powershell-development-in-visual-studio-code/
 [psdbgblog]:              https://johnpapa.net/debugging-with-visual-studio-code/
 [psdbg-gh]:               https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[pscdn]:                  https://docs.microsoft.com/archive/blogs/cdndevs/visual-studio-code-powershell-extension
+[pscdn]:                  /archive/blogs/cdndevs/visual-studio-code-powershell-extension
 
 <!-- issues -->
 [GitHub issues]:          https://github.com/PowerShell/vscode-powershell/issues

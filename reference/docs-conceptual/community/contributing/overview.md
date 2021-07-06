@@ -10,8 +10,8 @@ Thank you for your support of PowerShell!
 
 The Contributor's Guide is a collection of articles that describe the tools and processes we use to
 create documentation at Microsoft. Some of these guides cover information that is common to any
-documentation set published to [docs.microsoft.com][docs]. Some of the guides are specific to how we
-write documentation for PowerShell.
+documentation set published to `docs.microsoft.com`. Some of the guides are specific to how we write
+documentation for PowerShell.
 
 The common articles are available in our centralized [Contributor's Guide][contribute]. The
 PowerShell-specific guides are available here.
@@ -91,7 +91,6 @@ Additional resources
 <!--link refs-->
 [cla]: https://cla.microsoft.com/
 [contribute]: /contribute/
-[docs]: https://docs.microsoft.com/
 [file-an-issue]: file-an-issue.md
 [posh-git]: https://www.powershellgallery.com/packages/posh-git
 [psdocs]: /powershell
