@@ -226,8 +226,8 @@ For more information about the `switch` statement, see [about_Switch](about_Swit
 > [!NOTE]
 > When `$Matches` is populated in a session, it retains the matched value until
 > it's overwritten by another match. If `-match` is used again and no match is
-> found, it won't reset `$Matches` to `$null`. The originally matched value is
-> held in the automatic variable.
+> found, it doesn't reset `$Matches` to `$null`; the originally matched value is
+> kept in `$Matches` until another match is found.
 
 ### $MyInvocation
 
