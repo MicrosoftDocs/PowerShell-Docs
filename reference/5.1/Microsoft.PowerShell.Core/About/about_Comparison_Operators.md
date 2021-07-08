@@ -580,15 +580,15 @@ $a, "ghi" -contains $a           # Output: True
 
 ### -in and -notin
 
-The `-in` and -`notin` operators were introduced in PowerShell 3 as the
-syntactic reverse of the of `contains` and `-notcontain` operators. `-in`
+The `-in` and `-notin` operators were introduced in PowerShell 3 as the
+syntactic reverse of the of `-contains` and `-notcontains` operators. `-in`
 returns **True** when the left-hand side `<test-object>` matches one of the
 elements in the set. `-notin` returns **False** instead. When the test object
 is a set, these operators use reference equality to check whether one of the
 set's elements is the same instance of the test object.
 
-The following examples do the same thing that the examples for `-contain`
-and `-notcontain` do, but they are written with `-in` and `-notin` instead.
+The following examples do the same thing that the examples for `-contains`
+and `-notcontains` do, but they are written with `-in` and `-notin` instead.
 
 ```powershell
 "def" -in "abc", "def"                  # Output: True
