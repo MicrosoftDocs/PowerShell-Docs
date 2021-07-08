@@ -378,13 +378,13 @@ Collection examples:
 ```
 
 `-match` and `-notmatch` support regex capture groups. Each time they run on
-scalar input, and the `-match` result is True, or the `-notmatch` result is False,
-they overwrite the `$Matches` automatic variable. Otherwise, the `$Matches`
-automatic variable is not overwritten, and it will contain the previously set
-value, or `$null` if the variable has not been set. Therefore, when referencing
-`$Matches` after invoking one of these operators, consider verifying that the
-variable has been set by the current operator invocation by using a condition
-statement.
+scalar input, and the `-match` result is **True**, or the `-notmatch` result is
+**False**, they overwrite the `$Matches` automatic variable. Otherwise, the
+`$Matches` automatic variable is not overwritten, and it will contain the
+previously set value, or `$null` if the variable has not been set. Therefore,
+when referencing `$Matches` after invoking one of these operators, consider
+verifying that the variable has been set by the current operator invocation by
+using a condition statement.
 
 Examples:
 
