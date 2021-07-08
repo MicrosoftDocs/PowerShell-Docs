@@ -23,7 +23,7 @@ New-ScriptFileInfo [[-Path] <String>] [-Version <String>] [-Author <String>] -De
  [-Guid <Guid>] [-CompanyName <String>] [-Copyright <String>] [-RequiredModules <Object[]>]
  [-ExternalModuleDependencies <String[]>] [-RequiredScripts <String[]>]
  [-ExternalScriptDependencies <String[]>] [-Tags <String[]>] [-ProjectUri <Uri>] [-LicenseUri <Uri>]
- [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PrivateData <String>] [-PassThru] [-Force]
+ [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PassThru] [-Force]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -80,8 +80,6 @@ Get-Content -Path C:\Test\Temp-Scriptfile.ps1
 .EXTERNALSCRIPTDEPENDENCIES
 
 .RELEASENOTES
-
-.PRIVATEDATA
 
 #>
 
@@ -196,8 +194,6 @@ Feature 3
 Feature 4
 Feature 5
 
-.PRIVATEDATA
-
 #>
 
 #Requires -Module 1
@@ -284,7 +280,7 @@ Accept wildcard characters: False
 
 ### -Description
 
-Specifies a description for the script.
+Specifies a description for the script. This parameter is ignored. As shown in the sample output above, no ".DESCRIPTION" attribute is generated.
 
 ```yaml
 Type: System.String
@@ -425,22 +421,6 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -PrivateData
-
-Specifies private data for the script.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
