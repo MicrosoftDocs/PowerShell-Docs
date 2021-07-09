@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 06/21/2021
+ms.date: 07/06/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comparison Operators
@@ -77,7 +77,7 @@ There are a few exceptions:
 When the left-hand side is scalar, `-eq` returns **True** if the right-hand
 side is an exact match, otherwise, `-eq` returns **False**. `-ne` does the
 opposite; it returns **False** when both sides match; otherwise, `-ne` returns
-True.
+**True**.
 
 Example:
 
@@ -136,7 +136,7 @@ equality test result is **False** because they are different objects. To create
 comparable classes, you need to implement [System.IEquatable\<T>][2] in your
 class. The following example demonstrates the partial implementation of a
 **MyFileInfoSet** class that implements [System.IEquatable\<T>][2] and has two
-properties, **File** and **Size**. The `Equals()` method returns True if the
+properties, **File** and **Size**. The `Equals()` method returns **True** if the
 File and Size properties of two **MyFileInfoSet** objects are the same.
 
 ```powershell
@@ -203,7 +203,7 @@ they return **True** or **False** depending on how the two sides compare:
 | -lt      | The left-hand side is smaller          |
 | -le      | The left-hand side is smaller or equal |
 
-In the following examples, all statements return True.
+In the following examples, all statements return **True**.
 
 ```powershell
 8 -gt 6  # Output: True
@@ -415,7 +415,8 @@ User name:
 jsmith
 ```
 
-For details, see [about_Regular_Expressions](about_Regular_Expressions.md).
+For details, see [about_Regular_Expressions](about_Regular_Expressions.md) and
+[about_Automatic_Variables](about_Automatic_Variables.md).
 
 ## Replacement operator
 
@@ -574,7 +575,7 @@ Syntax:
 ### -contains and -notcontains
 
 These operators tell whether a set includes a certain element. `-contains`
-returns True when the right-hand side (test object) matches one of the elements
+returns **True** when the right-hand side (test object) matches one of the elements
 in the set. `-notcontains` returns False instead. When the test object is a
 collection, these operators use reference equality, i.e. they check whether one
 of the set's elements is the same instance of the test object.
