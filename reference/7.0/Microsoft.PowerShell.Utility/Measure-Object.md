@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 07/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Object
@@ -57,7 +57,7 @@ This command displays the **Minimum**, **Maximum**, and **Sum** of the sizes of 
 current directory, and the average size of a file in the directory.
 
 ```powershell
-Get-ChildItem | Measure-Object -Property length -Minimum -Maximum -Average
+Get-ChildItem | Measure-Object -Property length -Minimum -Maximum -Sum -Average
 ```
 
 ### Example 3: Measure text in a text file
