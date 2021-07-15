@@ -149,7 +149,7 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+Specifies a path to the item. The value of **LiteralPath** is used exactly as it is
 typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
@@ -219,7 +219,7 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path of the item to rename.
+Specifies a path to the item.
 Wildcard characters are permitted.
 
 ```yaml
