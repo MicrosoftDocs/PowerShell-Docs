@@ -282,7 +282,6 @@ This implementation-defined type has the following accessible members, which can
 | SparseFile        | Enumeration constant | The file is a sparse file. Sparse files are typically large files whose data are mostly zeros.                                                                                                                                                |
 | System            | Enumeration constant | The file is a system file. The file is part of the operating system or is used exclusively by the operating system.                                                                                                                           |
 | Temporary         | Enumeration constant | The file is temporary. File systems attempt to keep all of the data in memory for quicker access rather than flushing the data back to mass storage. A temporary file should be deleted by the application as soon as it is no longer needed. |
-| ReparsePoint      | Enumeration constant | The file contains a reparse point, which is a block of user-defined data associated with a file or a directory.                                                                                                                               |
 
 In PowerShell, this type is System.IO.FileAttributes with attribute
 FlagsAttribute.
