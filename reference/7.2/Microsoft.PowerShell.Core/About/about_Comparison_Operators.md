@@ -40,13 +40,12 @@ specified patterns. PowerShell includes the following comparison operators:
 
 ## Common features
 
-By default, almost all comparison operators are case-insensitive.
-Case-sensitive operators only work for string comparisons and since `-is` and
-`-isnot` are used to compare types, there is no case-sensitive option. To make
-a comparison operator case-sensitive, add a `c` after the `-`. For example,
-`-ceq` is the case-sensitive version of `-eq`. To make the case-insensitivity
-explicit, add an `i` after `-`. For example, `-ieq` is the explicitly
-case-insensitive version of `-eq`.
+By default, string comparisons are case-insensitive. The equality operators have
+explicit case-sensitive and case-insensitive forms. To make a comparison
+operator case-sensitive, add a `c` after the `-`. For example, `-ceq` is the
+case-sensitive version of `-eq`. To make the case-insensitivity explicit, add
+an `i` after `-`. For example, `-ieq` is the explicitly case-insensitive
+version of `-eq`.
 
 When the input of an operator is a scalar value, the operator returns a
 **Boolean** value. When the input is a collection, the operator returns the
