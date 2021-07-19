@@ -1,7 +1,7 @@
 ---
 title: Everything you wanted to know about arrays
 description: Arrays are a fundamental language feature of most programming languages.
-ms.date: 10/08/2020
+ms.date: 07/19/2021
 ms.custom: contributor-KevinMarquette
 ---
 # Everything you wanted to know about arrays
@@ -376,7 +376,9 @@ for ( $index = 0; $index -lt $data.count; $index++)
 
 The first thing we do is initialize an `$index` to `0`. Then we add the condition that `$index` must
 be less than `$data.count`. Finally, we specify that every time we loop that me must increase the
-index by `1`. In this case `$index++` is short for `$index = $index + 1`.
+index by `1`. In this case `$index++` is short for `$index = $index + 1`. The
+[format operator](/powershell/module/microsoft.powershell.core/about/about_operators#format-operator--f)
+(`-f`) is used to insert the value of `$data[$index]` in the output string.
 
 Whenever you're using a `for` loop, pay special attention to the condition. I used
 `$index -lt $data.count` here. It's easy to get the condition slightly wrong to get an off-by-one
