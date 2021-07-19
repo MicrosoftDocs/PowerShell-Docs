@@ -150,7 +150,7 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Specifies a path of the item property.
+Specifies a path to the item.
 Unlike the **Path** parameter, the value of **LiteralPath** is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
@@ -219,7 +219,7 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path of the item to rename.
+Specifies a path to the item.
 
 ```yaml
 Type: System.String

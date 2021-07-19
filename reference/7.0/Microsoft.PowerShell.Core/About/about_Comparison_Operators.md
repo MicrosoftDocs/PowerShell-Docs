@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 07/06/2021
+ms.date: 07/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comparison Operators
@@ -40,10 +40,11 @@ specified patterns. PowerShell includes the following comparison operators:
 
 ## Common features
 
-By default, all comparison operators are case-insensitive. To make a comparison
+By default, string comparisons are case-insensitive. The equality operators have
+explicit case-sensitive and case-insensitive forms. To make a comparison
 operator case-sensitive, add a `c` after the `-`. For example, `-ceq` is the
-case-sensitive version of `-eq`. To make the case-insensitivity explicit,
-add an `i` after `-`. For example, `-ieq` is the explicitly case-insensitive
+case-sensitive version of `-eq`. To make the case-insensitivity explicit, add
+an `i` after `-`. For example, `-ieq` is the explicitly case-insensitive
 version of `-eq`.
 
 When the input of an operator is a scalar value, the operator returns a
@@ -359,7 +360,7 @@ Scalar examples:
 ```
 
 If the input is a collection, the operators return the matching members of that
-collection and the `$Matches` automatic variable is `$null`.
+collection.
 
 Collection examples:
 
@@ -377,12 +378,12 @@ Collection examples:
 #Output: Bag, Beg
 ```
 
-`-match` and `-notmatch` support regex capture groups. Each time they run, they
-overwrite the `$Matches` automatic variable. When `<input>` is a collection the
-`$Matches` variable is `$null`. `$Matches` is a **Hashtable** that always has a
-key named '0', which stores the entire match. If the regular expression
-contains capture groups, the `$Matches` contains additional keys for each
-group.
+`-match` and `-notmatch` support regex capture groups. Each time they run on
+scalar input, and the `-match` result is **True**, or the `-notmatch` result is
+**False**, they overwrite the `$Matches` automatic variable. `$Matches` is a
+**Hashtable** that always has a key named '0', which stores the entire match.
+If the regular expression contains capture groups, the `$Matches` contains
+additional keys for each group.
 
 Example:
 
@@ -413,6 +414,21 @@ CONTOSO
 
 User name:
 jsmith
+```
+
+When the `-match` result is **False**, or the `-notmatch` result is **True**,
+or when the input is a collection, the `$Matches` automatic variable is not
+overwritten. Consequently, it will contain the previously set value, or `$null`
+if the variable has not been set. When referencing `$Matches` after invoking
+one of these operators, consider verifying that the variable was set by the
+current operator invocation by using a condition statement.
+
+Example:
+
+```powershell
+if ("<version>1.0.0</version>" -match '<version>(.*?)</version>') {
+    $Matches
+}
 ```
 
 For details, see [about_Regular_Expressions](about_Regular_Expressions.md) and
