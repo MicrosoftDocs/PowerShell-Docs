@@ -88,3 +88,11 @@ not visible using the `Get-Member -Force` command or tab completion.
 The `ForEach()` and `Where()` methods are available to all PowerShell
 objects. However, they are most useful when working with collections. For more
 information on how to use these methods, see [about_Arrays](about_Arrays.md).
+
+## Properties
+
+### Count and Length
+
+The **Count** and **Length** properties are available to all PowerShell
+objects. These are similar to each other but may work differently depending on
+the data type. For more information about these properties, see [about_Properties](about_Properties.md).

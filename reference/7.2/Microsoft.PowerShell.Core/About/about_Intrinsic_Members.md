@@ -1,7 +1,7 @@
 ---
 description: Describes automatic members in all PowerShell objects
 Locale: en-US
-ms.date: 06/01/2021
+ms.date: 07/14/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Inrinsic_Members?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Intrinsic_Members
@@ -88,3 +88,11 @@ not visible using the `Get-Member -Force` command or tab completion.
 The `ForEach()` and `Where()` methods are available to all PowerShell
 objects. However, they are most useful when working with collections. For more
 information on how to use these methods, see [about_Arrays](about_Arrays.md).
+
+## Properties
+
+### Count and Length
+
+The **Count** and **Length** properties are available to all PowerShell
+objects. These are similar to each other but may work differently depending on
+the data type. For more information about these properties, see [about_Properties](about_Properties.md).
