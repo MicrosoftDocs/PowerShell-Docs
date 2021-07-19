@@ -1096,14 +1096,15 @@ function Test-ArgumentCompleter {
 
 The **ArgumentCompletions** attribute allows you to add tab completion values
 to a specific parameter. An **ArgumentCompletions** attribute must be defined
-for each parameter that needs tab completion. Similar to **ArgumentCompleter**,
-the specified values are available when the user presses <kbd>Tab</kbd> after
-the parameter name.
+for each parameter that needs tab completion. The **ArgumentCompletions**
+attribute is similar to **ValidateSet**. Both attributes take a list of values
+to be presented when the user presses <kbd>Tab</kbd> after the parameter name.
+However, unlike **ValidateSet**, the values are not validated. Therefore the
+user can supply any value, not just the values in the list. 
 
-Unlike the **ArgumentCompleter** attribute which needs a scriptblock to define
-the options, the **ArgumentCompletions** attribute is similar to
-**ValidateSet** and only needs a list of string options to enable tab
-completion.
+The **ArgumentCompletions** attribute should not be confused with the
+**ArgumentCompleter** attribute, which needs a scriptblock to define the
+options. the specified values are available 
 
 The syntax is as follows:
 
