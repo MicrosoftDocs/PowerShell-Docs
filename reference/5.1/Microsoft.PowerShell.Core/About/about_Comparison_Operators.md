@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 07/06/2021
+ms.date: 07/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comparison Operators
@@ -40,10 +40,11 @@ specified patterns. PowerShell includes the following comparison operators:
 
 ## Common features
 
-By default, all comparison operators are case-insensitive. To make a comparison
+By default, string comparisons are case-insensitive. The equality operators have
+explicit case-sensitive and case-insensitive forms. To make a comparison
 operator case-sensitive, add a `c` after the `-`. For example, `-ceq` is the
-case-sensitive version of `-eq`. To make the case-insensitivity explicit,
-add an `i` after `-`. For example, `-ieq` is the explicitly case-insensitive
+case-sensitive version of `-eq`. To make the case-insensitivity explicit, add
+an `i` after `-`. For example, `-ieq` is the explicitly case-insensitive
 version of `-eq`.
 
 When the input of an operator is a scalar value, the operator returns a

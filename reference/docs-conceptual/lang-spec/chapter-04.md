@@ -76,7 +76,7 @@ the type object, so object is the ultimate base type of all non-null types. A va
 
 ### 4.2.1 Boolean
 
-The Boolean type is `bool`. There are only two values of this type, Fal****se and **True**,
+The Boolean type is `bool`. There are only two values of this type, **False** and **True**,
 represented by the automatic variables `$false` and `$true`, respectively ([§2.3.2.2][]).
 
 In PowerShell, `bool` maps to `System.Boolean`.
