@@ -24,7 +24,7 @@ PowerShell. For a detailed discussion of changes between versions and the additi
 see the **What's New** articles for each version.
 
 - [What's new in PowerShell 7.x](What-s-New-in-PowerShell-71.md)
-- [What's new in PowerShell 6.x](/previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-core-62?view=powershell-6&preserve_view=true)
+- [What's new in PowerShell 6.x](/previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-core-62?view=powershell-6&preserve-view=true)
 
 ## .NET Framework vs .NET Core
 
