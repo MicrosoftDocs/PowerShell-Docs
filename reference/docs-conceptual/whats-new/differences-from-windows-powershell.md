@@ -11,10 +11,10 @@ Windows PowerShell 5.1 is built on top of the .NET Framework v4.5. With the rele
 from the .NET Framework to .NET Core allowed PowerShell to become a cross-platform solution.
 PowerShell runs on Windows, macOS, and Linux.
 
-There is little difference in the PowerShell language between Windows PowerShell and PowerShell
-(core). The differences are seen in the availability and behavior of PowerShell cmdlets between
-Windows and non-Windows platforms and the changes that stem from the differences between the .NET
-Framework and .NET Core.
+There are few difference in the PowerShell language between Windows PowerShell and PowerShell. The
+differences are morst notable in the availability and behavior of PowerShell cmdlets between Windows
+and non-Windows platforms and the changes that stem from the differences between the .NET Framework
+and .NET Core.
 
 This article summarizes the significant differences and breaking changes between Windows PowerShell
 and the current version of PowerShell. This summary does not include new features or cmdlets that
@@ -22,6 +22,9 @@ have been added. Nor does this article discuss what changed between versions. Th
 article is to present the current state of PowerShell and how that is different from Windows
 PowerShell. For a detailed discussion of changes between versions and the addition of new features,
 see the **What's New** articles for each version.
+
+- [What's new in PowerShell 7.x](What-s-New-in-PowerShell-71.md)
+- [What's new in PowerShell 6.x](/previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-core-62?view=powershell-6&preserve_view=true)
 
 ## .NET Framework vs .NET Core
 
