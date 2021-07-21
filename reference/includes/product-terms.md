@@ -14,9 +14,8 @@ general, the concepts apply to all versions of PowerShell, unless the article ca
 version.
 
 - **PowerShell** - This is the default name we use for the product. When we use this name in the
-  documentation we are talking about the product in general, or the specifically identified version.
+  documentation we are talking about the current version of PowerShell. Differences between
+  PowerShell and Windows PowerShell are noted by noting the specific version.
 - **Windows PowerShell** - PowerShell built on .NET Framework. Windows PowerShell ships only on
-  Windows and requires the complete Framework. It is possible to run both PowerShell (core) and
-  Windows PowerShell on the same Windows computer.
-- **PowerShell (core)** - PowerShell built on .NET Core. Usage of the term _core_ is limited to
-  cases where it's necessary to differentiate it from Windows PowerShell.
+  Windows and requires the complete Framework. It is possible to run both PowerShell and Windows
+  PowerShell on the same Windows computer.
