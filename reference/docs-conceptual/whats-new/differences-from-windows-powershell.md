@@ -1,9 +1,9 @@
 ---
 ms.date: 02/03/2020
-title: Differences between Windows PowerShell 5.1 and PowerShell (core) 7.x
+title: Differences between Windows PowerShell 5.1 and PowerShell 7.x
 description: This article summarizes the differences and breaking changes from Windows PowerShell 5.1 and the current version of PowerShell that is based on .NET Core.
 ---
-# Differences between Windows PowerShell 5.1 and PowerShell (core) 7.x
+# Differences between Windows PowerShell 5.1 and PowerShell 7.x
 
 Windows PowerShell 5.1 is built on top of the .NET Framework v4.5. With the release of PowerShell
 6.0, PowerShell became an open source project built on .NET Core 2.0. PowerShell 7.0 is built on
@@ -11,10 +11,10 @@ Windows PowerShell 5.1 is built on top of the .NET Framework v4.5. With the rele
 from the .NET Framework to .NET Core allowed PowerShell to become a cross-platform solution.
 PowerShell runs on Windows, macOS, and Linux.
 
-There is little difference in the PowerShell language between Windows PowerShell and PowerShell
-(core). The differences are seen in the availability and behavior of PowerShell cmdlets between
-Windows and non-Windows platforms and the changes that stem from the differences between the .NET
-Framework and .NET Core.
+There are few differences in the PowerShell language between Windows PowerShell and PowerShell. The
+differences are most notable in the availability and behavior of PowerShell cmdlets between Windows
+and non-Windows platforms and the changes that stem from the differences between the .NET Framework
+and .NET Core.
 
 This article summarizes the significant differences and breaking changes between Windows PowerShell
 and the current version of PowerShell. This summary does not include new features or cmdlets that
@@ -22,6 +22,9 @@ have been added. Nor does this article discuss what changed between versions. Th
 article is to present the current state of PowerShell and how that is different from Windows
 PowerShell. For a detailed discussion of changes between versions and the addition of new features,
 see the **What's New** articles for each version.
+
+- [What's new in PowerShell 7.x](What-s-New-in-PowerShell-71.md)
+- [What's new in PowerShell 6.x](/previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-core-62?view=powershell-6&preserve_view=true)
 
 ## .NET Framework vs .NET Core
 
@@ -45,7 +48,7 @@ For more information see:
 
 [!INCLUDE [Product terminology](../../includes/product-terms.md)]
 
-## Modules not shipped for PowerShell (core)
+## Modules no longer shipped with PowerShell
 
 For various compatibility reasons, the following modules are no longer included in PowerShell.
 
@@ -63,8 +66,8 @@ For various compatibility reasons, the following modules are no longer included 
 [Windows Workflow Foundation (WF)][workflow-foundation] that enables the creation of robust runbooks
 for long-running or parallelized tasks.
 
-Due to the lack of support for Windows Workflow Foundation in .NET Core, we are not supporting
-PowerShell Workflow in PowerShell (core).
+Due to the lack of support for Windows Workflow Foundation in .NET Core, we removed PowerShell
+Workflow from PowerShell.
 
 In the future, we would like to enable native parallelism/concurrency in the PowerShell language
 without the need for PowerShell Workflow.
@@ -78,8 +81,8 @@ its own state (like persisting it to a file).
 
 ## Cmdlets removed from PowerShell
 
-For the modules that are included in PowerShell (core), the following cmdlets were removed from
-PowerShell for various compatibility reasons or the use of unsupported APIs.
+For the modules that are included in PowerShell, the following cmdlets were removed from PowerShell
+for various compatibility reasons or the use of unsupported APIs.
 
 CimCmdlets
 
@@ -154,7 +157,7 @@ PSDesiredStateConfiguration
 
 ### WMI v1 cmdlets
 
-The following WMI v1 cmdlets were removed from PowerShell (core):
+The following WMI v1 cmdlets were removed from PowerShell:
 
 - `Register-WmiEvent`
 - `Set-WmiInstance`
@@ -182,9 +185,8 @@ These cmdlets had very limited usage. The decision was made to discontinue suppo
 
 ### `*-EventLog` cmdlets
 
-Due to the use of unsupported APIs, the `*-EventLog` has been removed from PowerShell (core). until
-a better solution is found. `Get-WinEvent` and `New-WinEvent` are available to get and create events
-on Windows.
+Due to the use of unsupported APIs, the `*-EventLog` cmdlets have been removed from PowerShell.
+`Get-WinEvent` and `New-WinEvent` are available to get and create events on Windows.
 
 ### Cmdlets that use the Windows Presentation Framework (WPF)
 
@@ -208,10 +210,9 @@ in the PowerShell Team blog.
 
 ### Renamed `powershell.exe` to `pwsh.exe`
 
-The binary name for PowerShell (core) has been changed from `powershell(.exe)` to `pwsh(.exe)`. This
-change provides a deterministic way for users to run PowerShell (core) on machines to support
-side-by-side Windows PowerShell and PowerShell (core) installations. `pwsh` is also much shorter and
-easier to type.
+The binary name for PowerShell has been changed from `powershell(.exe)` to `pwsh(.exe)`. This
+change provides a deterministic way for users to run PowerShell on machines and support
+side-by-side installations of Windows PowerShell and PowerShell.
 
 Additional changes to `pwsh(.exe)` from `powershell.exe`:
 
@@ -220,7 +221,7 @@ Additional changes to `pwsh(.exe)` from `powershell.exe`:
   on non-Windows platforms. It also means that you can run commands like `pwsh foo.ps1` or
   `pwsh fooScript` without specifying `-File`. However, this change requires that you explicitly
   specify `-c` or `-Command` when trying to run commands like `pwsh.exe -Command Get-Command`.
-- PowerShell (core) accepts the `-i` (or `-Interactive`) switch to indicate an interactive shell.
+- `pwsh` accepts the `-i` (or `-Interactive`) switch to indicate an interactive shell.
   This allows PowerShell to be used as a default shell on Unix platforms.
 - Removed parameters `-ImportSystemModules` and `-PSConsoleFile` from `pwsh.exe`.
 - Changed `pwsh -version` and built-in help for `pwsh.exe` to align with other native tools.
@@ -250,7 +251,7 @@ as short hand to match `-inputformat`, which now needs to be `-in`.
 adoption in the PowerShell community.
 
 Due to the complexity of supporting snap-ins and their lack of usage in the community, we no longer
-support custom snap-ins in PowerShell (core).
+support custom snap-ins in PowerShell.
 
 [snapin]: /powershell/module/microsoft.powershell.core/about/about_pssnapins
 
@@ -448,7 +449,7 @@ class M {
 ### Check `system32` for compatible built-in modules on Windows
 
 In the Windows 10 1809 update and Windows Server 2019, we updated a number of built-in PowerShell
-modules to mark them as compatible with PowerShell (core).
+modules to mark them as compatible with PowerShell.
 
 When PowerShell starts up, it automatically includes `$windir\System32` as part of the
 `PSModulePath` environment variable. However, it only exposes modules to `Get-Module` and
@@ -761,11 +762,11 @@ PowerShell Remoting (PSRP) using WinRM on Unix platforms requires NTLM/Negotiate
 HTTPS. PSRP on macOS only supports Basic Auth over HTTPS. Kerberos-based authentication is not
 supported for non-Windows platforms.
 
-PowerShell (core) also supports PowerShell Remoting (PSRP) over SSH on all platforms (Windows, macOS,
-and Linux). For more information, see
+PowerShell also supports PowerShell Remoting (PSRP) over SSH on all platforms (Windows, macOS, and
+Linux). For more information, see
 [SSH remoting in PowerShell](/powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core).
 
-### PowerShell Direct for Containers tries to use PowerShell (core) first
+### PowerShell Direct for Containers tries to use `pwsh` first
 
 [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) is a feature of
 PowerShell and Hyper-V that allows you to connect to a Hyper-V VM or Container without network
@@ -844,9 +845,9 @@ string:
 
 ## Telemetry can only be disabled with an environment variable
 
-PowerShell (core) sends basic telemetry data to Microsoft when it is launched. The data includes the
-OS name, OS version, and PowerShell version. This data allows us to better understand the
-environments where PowerShell is used and enables us to prioritize new features and fixes.
+PowerShell sends basic telemetry data to Microsoft when it is launched. The data includes the OS
+name, OS version, and PowerShell version. This data allows us to better understand the environments
+where PowerShell is used and enables us to prioritize new features and fixes.
 
 To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY_OPTOUT` to `true`,
 `yes`, or `1`. We no longer support deletion of the file

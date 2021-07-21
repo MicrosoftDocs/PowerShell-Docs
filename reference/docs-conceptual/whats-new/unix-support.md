@@ -1,7 +1,7 @@
 ---
 ms.date: 02/03/2020
 title: PowerShell differences on non-Windows platforms
-description: This article summarizes the differences between PowerShell (core) on Windows and PowerShell on non-Windows platforms.
+description: This article summarizes the differences between PowerShell on Windows and PowerShell on non-Windows platforms.
 ---
 # PowerShell differences on non-Windows platforms
 
@@ -110,8 +110,8 @@ PowerShell Remoting (PSRP) using WinRM on Unix platforms requires NTLM/Negotiate
 HTTPS. PSRP on macOS only supports Basic Auth over HTTPS. Kerberos-based authentication is not
 supported.
 
-PowerShell (core) also supports PowerShell Remoting (PSRP) over SSH on all platforms (Windows, macOS,
-and Linux). For more information, see
+PowerShell supports PowerShell Remoting (PSRP) over SSH on all platforms (Windows, macOS, and
+Linux). For more information, see
 [SSH remoting in PowerShell](/powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core).
 
 ## Just-Enough-Administration (JEA) Support
@@ -137,7 +137,7 @@ ones over time.
 For a comprehensive list of modules and cmdlets and the platforms they support, see
 [Release history of modules and cmdlets](cmdlet-versions.md).
 
-## Modules not shipped for PowerShell (core)
+## Modules no longer shipped with PowerShell
 
 For various compatibility reasons, the following modules are no longer included in PowerShell.
 
