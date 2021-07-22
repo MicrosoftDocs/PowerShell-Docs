@@ -1,8 +1,8 @@
 ---
-description:  Variables that customize the behavior of PowerShell. 
+description:  Variables that customize the behavior of PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/22/2020
+ms.date: 07/17/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Preference Variables
@@ -25,34 +25,34 @@ that you can use to override the preference behavior for a specific command.
 
 The following table lists the preference variables and their default values.
 
-|             Variable             |       Default Value       |
-| -------------------------------- | ------------------------- |
-| `$ConfirmPreference`             | High                      |
-| `$DebugPreference`               | SilentlyContinue          |
-| `$ErrorActionPreference`         | Continue                  |
-| `$ErrorView`                     | ConciseView               |
-| `$FormatEnumerationLimit`        | 4                         |
-| `$InformationPreference`         | SilentlyContinue          |
-| `$LogCommandHealthEvent`         | False (not logged)        |
-| `$LogCommandLifecycleEvent`      | False (not logged)        |
-| `$LogEngineHealthEvent`          | True (logged)             |
-| `$LogEngineLifecycleEvent`       | True (logged)             |
-| `$LogProviderLifecycleEvent`     | True (logged)             |
-| `$LogProviderHealthEvent`        | True (logged)             |
-| `$MaximumHistoryCount`           | 4096                      |
-| `$OFS`                           | (Space character (`" "`)) |
-| `$OutputEncoding`                | UTF8Encoding object       |
-| `$ProgressPreference`            | Continue                  |
-| `$PSDefaultParameterValues`      | (None - empty hash table) |
-| `$PSEmailServer`                 | (None)                    |
-| `$PSModuleAutoLoadingPreference` | All                       |
-| `$PSSessionApplicationName`      | wsman                     |
-| `$PSSessionConfigurationName`    | `http://schemas.microsoft.com/powershell/Microsoft.PowerShell` |
-| `$PSSessionOption`               | See [$PSSessionOption](#pssessionoption) |
-| `$Transcript`                    | (none)                    |
-| `$VerbosePreference`             | SilentlyContinue          |
-| `$WarningPreference`             | Continue                  |
-| `$WhatIfPreference`              | False                     |
+| Variable | Default Value |
+| - | - |
+| [`$ConfirmPreference`](#confirmpreference) | [`High`](/dotnet/api/system.management.automation.confirmimpact) |
+| [`$DebugPreference`](#debugpreference) | [`SilentlyContinue`](/dotnet/api/system.management.automation.actionpreference) |
+| [`$ErrorActionPreference`](#erroractionpreference) | [`Continue`](/dotnet/api/system.management.automation.actionpreference) |
+| [`$ErrorView`](#errorview) | [`ConciseView`](/dotnet/api/system.management.automation.errorview) |
+| [`$FormatEnumerationLimit`](#formatenumerationlimit) | `4` |
+| [`$InformationPreference`](#informationpreference) | [`SilentlyContinue`](/dotnet/api/system.management.automation.actionpreference) |
+| [`$LogCommandHealthEvent`](#logevent) | `$False` (not logged) |
+| [`$LogCommandLifecycleEvent`](#logevent) | `$False` (not logged) |
+| [`$LogEngineHealthEvent`](#logevent) | `$True` (logged) |
+| [`$LogEngineLifecycleEvent`](#logevent) | `$True` (logged) |
+| [`$LogProviderLifecycleEvent`](#logevent) | `$True` (logged) |
+| [`$LogProviderHealthEvent`](#logevent) | `$True` (logged) |
+| [`$MaximumHistoryCount`](#maximumhistorycount) | `4096` |
+| [`$OFS`](#ofs) | Space character (`" "`) |
+| [`$OutputEncoding`](#outputencoding) | [`UTF8Encoding`](/dotnet/api/system.text.utf8encoding) object |
+| [`$ProgressPreference`](#progresspreference) | [`Continue`](/dotnet/api/system.management.automation.actionpreference) |
+| [`$PSDefaultParameterValues`](#psdefaultparametervalues) | `@{}` (empty hash table) |
+| [`$PSEmailServer`](#psemailserver) | `$Null` (none) |
+| [`$PSModuleAutoLoadingPreference`](#psmoduleautoloadingpreference) | `All` |
+| [`$PSSessionApplicationName`](#pssessionapplicationname) | `'wsman'` |
+| [`$PSSessionConfigurationName`](#pssessionconfigurationname) | `'http://schemas.microsoft.com/powershell/Microsoft.PowerShell'` |
+| [`$PSSessionOption`](#pssessionoption) | [`PSSessionOption`](/dotnet/api/system.management.automation.remoting.pssessionoption) object |
+| [`$Transcript`](#transcript) | `$Null` (none) |
+| [`$VerbosePreference`](#verbosepreference) | [`SilentlyContinue`](/dotnet/api/system.management.automation.actionpreference) |
+| [`$WarningPreference`](#warningpreference) | [`Continue`](/dotnet/api/system.management.automation.actionpreference) |
+| [`$WhatIfPreference`](#whatifpreference) | `$False` |
 
 PowerShell includes the following environment variables that store user
 preferences. For more information about these environment variables, see
@@ -110,8 +110,11 @@ For more information about remote commands, see [about_Remote](about_Remote.md).
 Determines whether PowerShell automatically prompts you for confirmation before
 running a cmdlet or function.
 
-The `$ConfirmPreference` variable's valid values are **High**, **Medium**, or
-**Low**. Cmdlets and functions are assigned a risk of **High**, **Medium**, or
+The `$ConfirmPreference` variable takes one of the
+[`ConfirmImpact`](/dotnet/api/system.management.automation.confirmimpact)
+enumeration values: **High**, **Medium**, **Low**, or **None**.
+
+Cmdlets and functions are assigned a risk of **High**, **Medium**, or
 **Low**. When the value of the `$ConfirmPreference` variable is less than or
 equal to the risk assigned to a cmdlet or function, PowerShell automatically
 prompts you for confirmation before running the cmdlet or function.
@@ -229,6 +232,11 @@ Remove-Item -Path C:\temp3.txt -Confirm:$false
 
 Determines how PowerShell responds to debugging messages generated by a script,
 cmdlet or provider, or by a `Write-Debug` command at the command line.
+
+The `$DebugPreference` variable takes one of the
+[`ActionPreference`](/dotnet/api/system.management.automation.actionpreference)
+enumeration values: **SilentlyContinue**, **Stop**, **Continue**, **Inquire**,
+**Ignore**, **Suspend**, or **Break**.
 
 Some cmdlets display debugging messages, which are typically technical messages
 designed for programmers and technical support professionals. By default,
@@ -360,6 +368,11 @@ doesn't stop the cmdlet processing. For example, at the command line or in a
 script, cmdlet, or provider, such as the errors generated by the `Write-Error`
 cmdlet.
 
+The `$ErrorActionPreference` variable takes one of the
+[`ActionPreference`](/dotnet/api/system.management.automation.actionpreference)
+enumeration values: **SilentlyContinue**, **Stop**, **Continue**, **Inquire**,
+**Ignore**, **Suspend**, or **Break**.
+
 You can use a cmdlet's **ErrorAction** common parameter to override the
 preference for a specific command.
 
@@ -481,6 +494,10 @@ Write-Error: Test Error
 ### \$ErrorView
 
 Determines the display format of error messages in PowerShell.
+
+The `$ErrorView` variable takes one of the
+[`ErrorView`](/dotnet/api/system.management.automation.errorview) enumeration values:
+**NormalView**, **CategoryView**, or **ConciseView**.
 
 The valid values are as follows:
 
@@ -703,10 +720,16 @@ Count  Name       Group
 
 The `$InformationPreference` variable lets you set information stream
 preferences that you want displayed to users. Specifically, informational
-messages that you added to commands or scripts by adding the [Write-Information](xref:Microsoft.PowerShell.Utility.Write-Information)
+messages that you added to commands or scripts by adding the
+[Write-Information](xref:Microsoft.PowerShell.Utility.Write-Information)
 cmdlet. If the **InformationAction** parameter is used, its value overrides the
 value of the `$InformationPreference` variable. `Write-Information` was
 introduced in PowerShell 5.0.
+
+The `$InformationPreference` variable takes one of the
+[`ActionPreference`](/dotnet/api/system.management.automation.actionpreference)
+enumeration values: **SilentlyContinue**, **Stop**, **Continue**, **Inquire**,
+**Ignore**, **Suspend**, or **Break**.
 
 The valid values are as follows:
 
@@ -850,10 +873,13 @@ need to change the value to **UnicodeEncoding** to send the characters
 correctly.
 
 The valid values are as follows: Objects derived from an Encoding class, such
-as **ASCIIEncoding**, **SBCSCodePageEncoding**, **UTF7Encoding**,
-**UTF8Encoding**, **UTF32Encoding**, and **UnicodeEncoding**.
+as [**ASCIIEncoding**](/dotnet/api/system.text.asciiencoding),
+[**UTF7Encoding**](/dotnet/api/system.text.utf7encoding),
+[**UTF8Encoding**](/dotnet/api/system.text.utf8encoding),
+[**UTF32Encoding**](/dotnet/api/system.text.utf32encoding), and
+[**UnicodeEncoding**](/dotnet/api/system.text.unicodeencoding).
 
-**Default**: UTF8Encoding object (System.Text.UTF8Encoding)
+**Default**: [UTF8Encoding](/dotnet/api/system.text.utf8encoding) object.
 
 #### Examples
 
@@ -912,6 +938,11 @@ cmdlet, or provider, such as the progress bars generated by the
 [Write-Progress](xref:Microsoft.PowerShell.Utility.Write-Progress) cmdlet.
 The `Write-Progress` cmdlet creates progress bars that show a command's status.
 
+The `$ProgressPreference` variable takes one of the
+[`ActionPreference`](/dotnet/api/system.management.automation.actionpreference)
+enumeration values: **SilentlyContinue**, **Stop**, **Continue**, **Inquire**,
+**Ignore**, **Suspend**, or **Break**.
+
 The valid values are as follows:
 
 - **Stop**: Doesn't display the progress bar. Instead, it displays an error
@@ -922,13 +953,6 @@ The valid values are as follows:
   execution.
 - **SilentlyContinue**: Executes the command, but doesn't display the progress
   bar.
-
-### \$PSEmailServer
-
-Specifies the default e-mail server that is used to send email messages. This
-preference variable is used by cmdlets that send email, such as the
-[Send-MailMessage](xref:Microsoft.PowerShell.Utility.Send-MailMessage)
-cmdlet.
 
 ### \$PSDefaultParameterValues
 
@@ -942,11 +966,23 @@ a custom default value that you specify.
 For more information about this preference variable, see
 [about_Parameters_Default_Values](about_Parameters_Default_Values.md).
 
+### \$PSEmailServer
+
+Specifies the default e-mail server that is used to send email messages. This
+preference variable is used by cmdlets that send email, such as the
+[Send-MailMessage](xref:Microsoft.PowerShell.Utility.Send-MailMessage)
+cmdlet.
+
 ### \$PSModuleAutoloadingPreference
 
 Enables and disables automatic importing of modules in the session. **All** is
 the default. Regardless of the variable's value, you can use
 [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module) to import a module.
+
+The `$PSModuleAutoloadingPreference` variable takes one of the
+[`PSModuleAutoLoadingPreference`](/dotnet/api/system.management.automation.psmoduleautoloadingpreference)
+enumeration values:
+**None**, **ModuleQualified**, or **All**.
 
 Valid values are:
 
@@ -1114,9 +1150,10 @@ Verbose messages describe the actions performed to execute a command.
 By default, verbose messages aren't displayed, but you can change this behavior
 by changing the value of `$VerbosePreference`.
 
-You can use the **Verbose** common parameter of a cmdlet to display or hide the
-verbose messages for a specific command. For more information, see
-[about_CommonParameters](about_CommonParameters.md).
+The `$VerbosePreference` variable takes one of the
+[`ActionPreference`](/dotnet/api/system.management.automation.actionpreference)
+enumeration values: **SilentlyContinue**, **Stop**, **Continue**, **Inquire**,
+**Ignore**, **Suspend**, or **Break**.
 
 The valid values are as follows:
 
@@ -1127,6 +1164,10 @@ The valid values are as follows:
 - **Continue**: Displays the verbose message and then continues with execution.
 - **SilentlyContinue**: (Default) Doesn't display the verbose message. Continues
   executing.
+
+You can use the **Verbose** common parameter of a cmdlet to display or hide the
+verbose messages for a specific command. For more information, see
+[about_CommonParameters](about_CommonParameters.md).
 
 #### Examples
 
@@ -1229,9 +1270,10 @@ cmdlet, or provider, such as the messages generated by the
 By default, warning messages are displayed and execution continues, but you can
 change this behavior by changing the value of `$WarningPreference`.
 
-You can use the **WarningAction** common parameter of a cmdlet to determine how
-PowerShell responds to warnings from a particular command. For more
-information, see [about_CommonParameters](about_CommonParameters.md).
+The `$WarningPreference` variable takes one of the
+[`ActionPreference`](/dotnet/api/system.management.automation.actionpreference)
+enumeration values: **SilentlyContinue**, **Stop**, **Continue**, **Inquire**,
+**Ignore**, **Suspend**, or **Break**.
 
 The valid values are as follows:
 
@@ -1243,6 +1285,10 @@ The valid values are as follows:
   executing.
 - **SilentlyContinue**: Doesn't display the warning message. Continues
   executing.
+
+You can use the **WarningAction** common parameter of a cmdlet to determine how
+PowerShell responds to warnings from a particular command. For more
+information, see [about_CommonParameters](about_CommonParameters.md).
 
 #### Examples
 
@@ -1550,4 +1596,3 @@ At line:1 char:1
 [about_Scopes](about_Scopes.md)
 
 [about_Variables](about_Variables.md)
-
