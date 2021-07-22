@@ -98,6 +98,7 @@ Blink            Property   string Blink {get;}
 BlinkOff         Property   string BlinkOff {get;}
 Bold             Property   string Bold {get;}
 BoldOff          Property   string BoldOff {get;}
+FileInfo         Property   System.Management.Automation.PSStyle+FileInfoFormatting {get;}
 Foreground       Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;}
 Formatting       Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;}
 Hidden           Property   string Hidden {get;}
