@@ -76,7 +76,7 @@ the type object, so object is the ultimate base type of all non-null types. A va
 
 ### 4.2.1 Boolean
 
-The Boolean type is `bool`. There are only two values of this type, Fal****se and **True**,
+The Boolean type is `bool`. There are only two values of this type, **False** and **True**,
 represented by the automatic variables `$false` and `$true`, respectively ([§2.3.2.2][]).
 
 In PowerShell, `bool` maps to `System.Boolean`.
@@ -282,7 +282,6 @@ This implementation-defined type has the following accessible members, which can
 | SparseFile        | Enumeration constant | The file is a sparse file. Sparse files are typically large files whose data are mostly zeros.                                                                                                                                                |
 | System            | Enumeration constant | The file is a system file. The file is part of the operating system or is used exclusively by the operating system.                                                                                                                           |
 | Temporary         | Enumeration constant | The file is temporary. File systems attempt to keep all of the data in memory for quicker access rather than flushing the data back to mass storage. A temporary file should be deleted by the application as soon as it is no longer needed. |
-| ReparsePoint      | Enumeration constant | The file contains a reparse point, which is a block of user-defined data associated with a file or a directory.                                                                                                                               |
 
 In PowerShell, this type is System.IO.FileAttributes with attribute
 FlagsAttribute.

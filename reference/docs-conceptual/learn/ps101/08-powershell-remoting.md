@@ -304,9 +304,9 @@ Invoke-Command -ComputerName dc01, sql02, web01 {Get-Service -Name W32time} -Cre
 ```Output
 Status   Name        DisplayName       PSComputerName
 ------   ----        -----------       --------------
-Running  W32time     Windows Time      web01
-Start... W32time     Windows Time      dc01
-Running  W32time     Windows Time      sql02
+Stopped  W32time     Windows Time      web01
+Stopped  W32time     Windows Time      dc01
+Stopped  W32time     Windows Time      sql02
 ```
 
 As mentioned in a previous chapter, if a cmdlet exists for accomplishing a task, I recommend using

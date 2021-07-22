@@ -215,7 +215,7 @@ items:
       href: whats-new/what-s-new-in-powershell-70.md
   - name: Migrating from Windows PowerShell 5.1 to PowerShell 7
     href: whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
-  - name: Differences between Windows PowerShell 5.1 and PowerShell (core) 7.x
+  - name: Differences between Windows PowerShell 5.1 and PowerShell 7.x
     href: whats-new/differences-from-windows-powershell.md
   - name: PowerShell differences on non-Windows platforms
     href: whats-new/unix-support.md

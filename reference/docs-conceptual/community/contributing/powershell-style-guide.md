@@ -268,8 +268,8 @@ Warning block
     location
 
   If you need to link to a specific version of a document, then you need to add the
-  `&preserve_view=true` parameter to the query string. For example:
-  `?view=powershell-5.1&preserve_view=true`
+  `&preserve-view=true` parameter to the query string. For example:
+  `?view=powershell-5.1&preserve-view=true`
 
 - A **file link** is used to link from one reference article to another, or from one conceptual
   article to another. If you need to link to a reference article for a specific version of
