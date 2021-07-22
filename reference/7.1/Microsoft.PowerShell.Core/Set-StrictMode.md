@@ -1,9 +1,8 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/10/2021
+ms.date: 07/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
@@ -192,7 +191,9 @@ Accept wildcard characters: False
 ### -Version
 
 Specifies the conditions that cause an error in strict mode. This parameter accepts any valid
-PowerShell version number. Any number higher than 3 is treated as **Latest**.
+PowerShell version number. Any number higher than 3 is treated as **Latest**. The value supplied
+must be the string "Latest" or a string that can be converted to a `[System.Version]` type. The
+version must match a valid release version of PowerShell.
 
 The effective values for this parameter are:
 
