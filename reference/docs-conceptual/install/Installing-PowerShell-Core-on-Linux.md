@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on Linux
 description: Information about installing PowerShell on various Linux distributions
-ms.date: 02/02/2021
+ms.date: 07/28/2021
 ---
 # Installing PowerShell on Linux
 
@@ -10,7 +10,7 @@ All packages are available on our GitHub [releases][releases] page. After the pa
 [Preview release](#installing-preview-releases).
 
 > [!NOTE]
-> PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
+> PowerShell 7.2 is an in-place upgrade that removes PowerShell Core 7.0.
 >
 > The `/usr/local/microsoft/powershell/6` folder is replaced by `/usr/local/microsoft/powershell/7`.
 >
@@ -24,8 +24,6 @@ the OS in separate steps.
 
 [snap]: #snap-package
 [tar]: #binary-archives
-
-<!-- TODO: Update for supported releases v7.0 & v7.1 -->
 
 Officially supported platform releases for PowerShell 7.1
 
