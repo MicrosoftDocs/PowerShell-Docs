@@ -1,5 +1,5 @@
 ---
-ms.date: 06/22/2021
+ms.date: 07/22/2021
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -98,6 +98,7 @@ Blink            Property   string Blink {get;}
 BlinkOff         Property   string BlinkOff {get;}
 Bold             Property   string Bold {get;}
 BoldOff          Property   string BoldOff {get;}
+FileInfo         Property   System.Management.Automation.PSStyle+FileInfoFormatting {get;}
 Foreground       Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;}
 Formatting       Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;}
 Hidden           Property   string Hidden {get;}
@@ -160,6 +161,22 @@ The following values of `$env:TERM` change the behavior as follows:
 
 If `$env:NO_COLOR` exists, then sets `$PSStyle.OutputRendering = PlainText`. For more information,
 see [https://no-color.org/](https://no-color.org/).
+
+## PSAnsiRenderingFileInfo
+
+This experiment was added in PowerShell 7.2. This feature adds the $PSStyle.FileInfo member and
+enables coloring of specific file types.
+
+- `$PSStyle.FileInfo.Directory` - Built-in member to specify color for directories
+- `$PSStyle.FileInfo.SymbolicLink` - Built-in member to specify color for symbolic links
+- `$PSStyle.FileInfo.Executable` - Built-in member to specify color for executables.
+- `$PSStyle.FileInfo.Extension` - Use this member to define colors for different file extensions.
+  The **Extension** member pre-includes extensions for archive and PowerShell files.
+
+For more information, see [about_Automatic_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+
+> [!NOTE]
+> You must have the **PSAnsiRendering** experimental feature enabled to use this feature.
 
 ## PSAnsiProgress
 
