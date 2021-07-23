@@ -341,8 +341,8 @@ Usage from PowerShell would then be:
 function Add{
     param(
        [NumberCompletions(0, 100, 5)]
-       [int] $X
-      ,
+       [int] $X,
+
        [NumberCompletions(0, 100, 5)]
        [int] $Y
     )
