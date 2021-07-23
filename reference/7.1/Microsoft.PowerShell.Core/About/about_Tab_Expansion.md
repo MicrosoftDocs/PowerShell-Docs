@@ -181,6 +181,6 @@ EXAMPLE                FORWARDHELPTARGETNAME  LINK                   PARAMETER  
 
 ## See also
 
-- [about_Functions_Advanced_Argument_Completions](about_Functions_Advanced_Argument_Completions.md)
+- [about_Functions_Advanced_Argument_Completion](about_Functions_Advanced_Argument_Completion.md)
 - [about_Requires](about_Requires.md)
 - [about_Comment_Based_Help](about_Comment_Based_Help.md)
