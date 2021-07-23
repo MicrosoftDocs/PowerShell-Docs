@@ -1,7 +1,7 @@
 ---
 description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 07/06/2021
+ms.date: 07/22/2021
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -519,6 +519,7 @@ following properties:
 - **BlinkOff** - Turns Blink off
 - **Bold** - Turns Bold on
 - **BoldOff** - Turns Bold off
+- **FileInfo** - Controls coloring of **FileInfo** objects.
 - **Foreground** - Nested object to control foreground coloring
 - **Formatting** - Controls default formatting for output streams
 - **Hidden** - Turns Hidden on
@@ -544,6 +545,16 @@ The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
 contain the ANSI escape sequences for the 16 standard console colors as well as
 an `Rgb()` method to specify 24-bit color. The values are settable and can
 contain any number of ANSI escape sequences.
+
+`$PSStyle.FileInfo` is a nested object to control the coloring of **FileInfo**
+objects.
+
+- **Directory** - Built-in member to specify color for directories
+- **SymbolicLink** - Built-in member to specify color for symbolic links
+- **Executable** - Built-in member to specify color for executables.
+- **Extension** - Use this member to define colors for different file
+  extensions. The **Extension** member pre-includes extensions for archive and
+  PowerShell files.
 
 `$PSStyle.Formatting` is a nested object to control default formatting of
 debug, error, verbose, and warning messages. You can also control attributes
