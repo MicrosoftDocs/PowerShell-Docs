@@ -42,7 +42,7 @@ PackageManagement [string] #ResourceName
 |Property |Description |
 |---|---|
 |Name |Specifies the name of the Package to be installed or uninstalled. |
-|AdditionalParameters |Provider specific hashtable of parameters that would be passed to `Get-Package -AdditionalArguments`. For example, for NuGet provider you can pass additional parameters like DestinationPath. |
+|AdditionalParameters |Provider specific hashtable of parameters that would be passed to `Get-Package -AdditionalArguments`. For example, for NuGet provider you can pass additional parameters like **Destination**. |
 |MaximumVersion |Specifies the maximum allowed version of the package that you want to find. If you do not add this parameter, the resource finds the highest available version of the package. |
 |MinimumVersion |Specifies the minimum allowed version of the package that you want to find. If you do not add this parameter, the resource finds the highest available version of the package that also satisfies any maximum specified version specified by the **MaximumVersion** parameter. |
 |ProviderName |Specifies a package provider name to which to scope your package search. You can get package provider names by running the `Get-PackageProvider` cmdlet. |
@@ -56,7 +56,7 @@ The following table lists options for the AdditionalParameters property.
 
 |Parameter |Description |
 |---|---|
-|DestinationPath |Used by providers such as the built-in Nuget Provider. Specifies a file location where you want the package to be installed. |
+|Destination |Used by providers such as the built-in Nuget Provider. Specifies a file location where you want the package to be installed. |
 |InstallationPolicy |Used by providers such as the built-in Nuget Provider. Determines whether you trust the package's source. One of: **Untrusted** or **Trusted**. |
 
 ## Common properties
