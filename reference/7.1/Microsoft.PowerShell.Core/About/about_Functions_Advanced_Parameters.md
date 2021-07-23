@@ -122,6 +122,128 @@ Param(
 )
 ```
 
+## Switch parameters
+
+Switch parameters are parameters with no parameter value. They're effective
+only when they're used and have only one effect.
+
+For example, the **NoProfile** parameter of **powershell.exe** is a switch
+parameter.
+
+To create a switch parameter in a function, specify the `Switch` type in the
+parameter definition.
+
+For example:
+
+```powershell
+Param([Switch]<ParameterName>)
+```
+
+Or, you can use an another method:
+
+```powershell
+Param(
+    [Parameter(Mandatory=$false)]
+    [Switch]
+    $<ParameterName>
+)
+```
+
+Switch parameters are easy to use and are preferred over Boolean parameters,
+which have a more difficult syntax.
+
+For example, to use a switch parameter, the user types the parameter in the
+command.
+
+`-IncludeAll`
+
+To use a Boolean parameter, the user types the parameter and a Boolean value.
+
+`-IncludeAll:$true`
+
+When creating switch parameters, choose the parameter name carefully. Be sure
+that the parameter name communicates the effect of the parameter to the user.
+Avoid ambiguous terms, such as **Filter** or **Maximum** that might imply a
+value is required.
+
+## Dynamic parameters
+
+Dynamic parameters are parameters of a cmdlet, function, or script that are
+available only under certain conditions.
+
+For example, several provider cmdlets have parameters that are available only
+when the cmdlet is used in the provider drive, or in a particular path of the
+provider drive. For example, the **Encoding** parameter is available on the
+`Add-Content`, `Get-Content`, and `Set-Content` cmdlets only when it's used in
+a file system drive.
+
+You can also create a parameter that appears only when another parameter is
+used in the function command or when another parameter has a certain value.
+
+Dynamic parameters can be useful, but use them only when necessary, because
+they can be difficult for users to discover. To find a dynamic parameter, the
+user must be in the provider path, use the **ArgumentList** parameter of the
+`Get-Command` cmdlet, or use the **Path** parameter of `Get-Help`.
+
+To create a dynamic parameter for a function or script, use the `DynamicParam`
+keyword.
+
+The syntax is as follows:
+
+`DynamicParam {<statement-list>}`
+
+In the statement list, use an `If` statement to specify the conditions under
+which the parameter is available in the function.
+
+Use the `New-Object` cmdlet to create a
+**System.Management.Automation.RuntimeDefinedParameter** object to represent
+the parameter and specify its name.
+
+You can use a `New-Object` command to create a
+**System.Management.Automation.ParameterAttribute** object to represent
+attributes of the parameter, such as **Mandatory**, **Position**, or
+**ValueFromPipeline** or its parameter set.
+
+The following example shows a sample function with standard parameters named
+**Name** and **Path**, and an optional dynamic parameter named **DP1**. The
+**DP1** parameter is in the `PSet1` parameter set and has a type of `Int32`.
+The **DP1** parameter is available in the `Get-Sample` function only when the
+value of the **Path** parameter starts with `HKLM:`, indicating that it's being
+used in the `HKEY_LOCAL_MACHINE` registry drive.
+
+```powershell
+function Get-Sample {
+  [CmdletBinding()]
+  Param([String]$Name, [String]$Path)
+
+  DynamicParam
+  {
+    if ($Path.StartsWith("HKLM:"))
+    {
+      $attributes = New-Object -Type `
+        System.Management.Automation.ParameterAttribute
+      $attributes.ParameterSetName = "PSet1"
+      $attributes.Mandatory = $false
+      $attributeCollection = New-Object `
+        -Type System.Collections.ObjectModel.Collection[System.Attribute]
+      $attributeCollection.Add($attributes)
+
+      $dynParam1 = New-Object -Type `
+        System.Management.Automation.RuntimeDefinedParameter("DP1", [Int32],
+          $attributeCollection)
+
+      $paramDictionary = New-Object `
+        -Type System.Management.Automation.RuntimeDefinedParameterDictionary
+      $paramDictionary.Add("DP1", $dynParam1)
+      return $paramDictionary
+    }
+  }
+}
+```
+
+For more information, see
+[RuntimeDefinedParameter](/dotnet/api/system.management.automation.runtimedefinedparameter).
+
 ## Attributes of parameters
 
 This section describes the attributes that you can add to function parameters.
@@ -469,7 +591,34 @@ developer must implement the code to handle the wildcard input. The wildcards
 supported can vary according to the underlying API or PowerShell provider. For
 more information, see [about_Wildcards](about_Wildcards.md).
 
-### Parameter and variable validation attributes
+## Argument completion attributes
+
+### ArgumentCompleter attribute
+
+The **ArgumentCompleter** attribute allows you to add tab completion values to
+a specific parameter. An **ArgumentCompleter** attribute must be defined for
+each parameter that needs tab completion. Similar to **DynamicParameters**, the
+available values are calculated at runtime when the user presses <kbd>Tab</kbd>
+after the parameter name.
+
+For more information, see
+[about_Functions_Advanced_Argument_Completion](about_Functions_Advanced_Argument_Completion.md#argumentcompleter-attribute).
+
+### ArgumentCompletions attribute
+
+The **ArgumentCompletions** attribute allows you to add tab completion values
+to a specific parameter. An **ArgumentCompletions** attribute must be defined
+for each parameter that needs tab completion. The **ArgumentCompletions**
+attribute is similar to **ValidateSet**. Both attributes take a list of values
+to be presented when the user presses <kbd>Tab</kbd> after the parameter name.
+However, unlike **ValidateSet**, the values are not validated.
+
+This attribute was introduced in PowerShell Core 6.0
+
+For more information, see
+[about_Functions_Advanced_Argument_Completion](about_Functions_Advanced_Argument_Completion.md#argumentcompletions-attribute).
+
+## Parameter and variable validation attributes
 
 Validation attributes direct PowerShell to test the parameter values that users
 submit when they call the advanced function. If the parameter values fail the
@@ -477,13 +626,18 @@ test, an error is generated and the function isn't called. Parameter validation
 is only applied to the input provided and any other values like default values
 are not validated.
 
-You can also use the validation attributes to restrict the values that
-users can specify for variables. When you use a type converter along with a
-validation attribute, the type converter has to be defined before the attribute.
+You can also use the validation attributes to restrict the values that users
+can specify for variables. When you use a type converter along with a
+validation attribute, the type converter has to be defined before the
+attribute.
 
 ```powershell
 [int32][AllowNull()] $number = 7
 ```
+
+> [!NOTE]
+> Validation attributes can be applied to any variable, not just parameters.
+> You can define validation for any variable within a script.
 
 ### AllowNull validation attribute
 
@@ -720,7 +874,10 @@ Param(
 $Message = "bye"
 ```
 
-#### Dynamic validateSet values
+Using `ValidateSet` also enable tab expansion of values for that parameter. For
+more information, see [about_Tab_Expansion](about_Tab_Expansion.md).
+
+#### Dynamic ValidateSet values using classes
 
 You can use a **Class** to dynamically generate the values for **ValidateSet**
 at runtime. In the following example, the valid values for the variable
@@ -871,266 +1028,6 @@ This attribute was added in PowerShell 6.1.1.
 
 At this time, the attribute is used internally by PowerShell itself and is not
 intended for external usage.
-
-## Dynamic parameters
-
-Dynamic parameters are parameters of a cmdlet, function, or script that are
-available only under certain conditions.
-
-For example, several provider cmdlets have parameters that are available only
-when the cmdlet is used in the provider drive, or in a particular path of the
-provider drive. For example, the **Encoding** parameter is available on the
-`Add-Content`, `Get-Content`, and `Set-Content` cmdlets only when it's used in
-a file system drive.
-
-You can also create a parameter that appears only when another parameter is
-used in the function command or when another parameter has a certain value.
-
-Dynamic parameters can be useful, but use them only when necessary, because
-they can be difficult for users to discover. To find a dynamic parameter, the
-user must be in the provider path, use the **ArgumentList** parameter of the
-`Get-Command` cmdlet, or use the **Path** parameter of `Get-Help`.
-
-To create a dynamic parameter for a function or script, use the `DynamicParam`
-keyword.
-
-The syntax is as follows:
-
-`DynamicParam {<statement-list>}`
-
-In the statement list, use an `If` statement to specify the conditions under
-which the parameter is available in the function.
-
-Use the `New-Object` cmdlet to create a
-**System.Management.Automation.RuntimeDefinedParameter** object to represent
-the parameter and specify its name.
-
-You can use a `New-Object` command to create a
-**System.Management.Automation.ParameterAttribute** object to represent
-attributes of the parameter, such as **Mandatory**, **Position**, or
-**ValueFromPipeline** or its parameter set.
-
-The following example shows a sample function with standard parameters named
-**Name** and **Path**, and an optional dynamic parameter named **DP1**. The
-**DP1** parameter is in the `PSet1` parameter set and has a type of `Int32`.
-The **DP1** parameter is available in the `Get-Sample` function only when the
-value of the **Path** parameter starts with `HKLM:`, indicating that it's being
-used in the `HKEY_LOCAL_MACHINE` registry drive.
-
-```powershell
-function Get-Sample {
-  [CmdletBinding()]
-  Param([String]$Name, [String]$Path)
-
-  DynamicParam
-  {
-    if ($Path.StartsWith("HKLM:"))
-    {
-      $attributes = New-Object -Type `
-        System.Management.Automation.ParameterAttribute
-      $attributes.ParameterSetName = "PSet1"
-      $attributes.Mandatory = $false
-      $attributeCollection = New-Object `
-        -Type System.Collections.ObjectModel.Collection[System.Attribute]
-      $attributeCollection.Add($attributes)
-
-      $dynParam1 = New-Object -Type `
-        System.Management.Automation.RuntimeDefinedParameter("DP1", [Int32],
-          $attributeCollection)
-
-      $paramDictionary = New-Object `
-        -Type System.Management.Automation.RuntimeDefinedParameterDictionary
-      $paramDictionary.Add("DP1", $dynParam1)
-      return $paramDictionary
-    }
-  }
-}
-```
-
-For more information, see
-[RuntimeDefinedParameter](/dotnet/api/system.management.automation.runtimedefinedparameter).
-
-## Switch parameters
-
-Switch parameters are parameters with no parameter value. They're effective
-only when they're used and have only one effect.
-
-For example, the **NoProfile** parameter of **powershell.exe** is a switch
-parameter.
-
-To create a switch parameter in a function, specify the `Switch` type in the
-parameter definition.
-
-For example:
-
-```powershell
-Param([Switch]<ParameterName>)
-```
-
-Or, you can use an another method:
-
-```powershell
-Param(
-    [Parameter(Mandatory=$false)]
-    [Switch]
-    $<ParameterName>
-)
-```
-
-Switch parameters are easy to use and are preferred over Boolean parameters,
-which have a more difficult syntax.
-
-For example, to use a switch parameter, the user types the parameter in the
-command.
-
-`-IncludeAll`
-
-To use a Boolean parameter, the user types the parameter and a Boolean value.
-
-`-IncludeAll:$true`
-
-When creating switch parameters, choose the parameter name carefully. Be sure
-that the parameter name communicates the effect of the parameter to the user.
-Avoid ambiguous terms, such as **Filter** or **Maximum** that might imply a
-value is required.
-
-## ArgumentCompleter attribute
-
-The **ArgumentCompleter** attribute allows you to add tab completion values to
-a specific parameter. An **ArgumentCompleter** attribute must be defined for
-each parameter that needs tab completion. Similar to **DynamicParameters**, the
-available values are calculated at runtime when the user presses <kbd>Tab</kbd>
-after the parameter name.
-
-To add an **ArgumentCompleter** attribute, you need to define a script block
-that determines the values. The script block must take the following
-parameters in the order specified below. The parameter's names don't matter as
-the values are provided positionally.
-
-The syntax is as follows:
-
-```powershell
-Param(
-    [Parameter(Mandatory)]
-    [ArgumentCompleter({
-        param ( $commandName,
-                $parameterName,
-                $wordToComplete,
-                $commandAst,
-                $fakeBoundParameters )
-        # Perform calculation of tab completed values here.
-    })]
-)
-```
-
-### ArgumentCompleter script block
-
-The script block parameters are set to the following values:
-
-- `$commandName` (Position 0) - This parameter is set to the name of the
-  command for which the script block is providing tab completion.
-- `$parameterName` (Position 1) - This parameter is set to the parameter whose
-  value requires tab completion.
-- `$wordToComplete` (Position 2) - This parameter is set to value the user has
-  provided before they pressed <kbd>Tab</kbd>. Your script block should use
-  this value to determine tab completion values.
-- `$commandAst` (Position 3) - This parameter is set to the Abstract Syntax
-  Tree (AST) for the current input line. For more information, see
-  [Ast Class](/dotnet/api/system.management.automation.language.ast).
-- `$fakeBoundParameters` (Position 4) - This parameter is set to a hashtable
-  containing the `$PSBoundParameters` for the cmdlet, before the user pressed
-  <kbd>Tab</kbd>. For more information, see
-  [about_Automatic_Variables](about_Automatic_Variables.md).
-
-The **ArgumentCompleter** script block must unroll the values using the
-pipeline, such as `ForEach-Object`, `Where-Object`, or another suitable method.
-Returning an array of values causes PowerShell to treat the entire array as
-**one** tab completion value.
-
-The following example adds tab completion to the **Value** parameter. If only
-the **Value** parameter is specified, all possible values, or arguments, for
-**Value** are displayed. When the **Type** parameter is specified, the
-**Value** parameter only displays the possible values for that type.
-
-In addition, the `-like` operator ensures that if the user types the following
-command and uses <kbd>Tab</kbd> completion, only **Apple** is returned.
-
-`Test-ArgumentCompleter -Type Fruits -Value A`
-
-```powershell
-function Test-ArgumentCompleter {
-[CmdletBinding()]
- param (
-        [Parameter(Mandatory=$true)]
-        [ValidateSet('Fruits', 'Vegetables')]
-        $Type,
-        [Parameter(Mandatory=$true)]
-        [ArgumentCompleter( {
-            param ( $commandName,
-                    $parameterName,
-                    $wordToComplete,
-                    $commandAst,
-                    $fakeBoundParameters )
-
-            $possibleValues = @{
-                Fruits = @('Apple', 'Orange', 'Banana')
-                Vegetables = @('Tomato', 'Squash', 'Corn')
-            }
-            if ($fakeBoundParameters.ContainsKey('Type'))
-            {
-                $possibleValues[$fakeBoundParameters.Type] | Where-Object {
-                    $_ -like "$wordToComplete*"
-                }
-            }
-            else
-            {
-                $possibleValues.Values | ForEach-Object {$_}
-            }
-        } )]
-        $Value
-      )
-}
-```
-
-## ArgumentCompletions attribute
-
-The **ArgumentCompletions** attribute allows you to add tab completion values
-to a specific parameter. An **ArgumentCompletions** attribute must be defined
-for each parameter that needs tab completion. The **ArgumentCompletions**
-attribute is similar to **ValidateSet**. Both attributes take a list of values
-to be presented when the user presses <kbd>Tab</kbd> after the parameter name.
-However, unlike **ValidateSet**, the values are not validated. Therefore the
-user can supply any value, not just the values in the list. 
-
-The **ArgumentCompletions** attribute should not be confused with the
-**ArgumentCompleter** attribute, which needs a scriptblock to define the
-options. the specified values are available 
-
-The syntax is as follows:
-
-```powershell
-function Test-ArgumentCompletions {
-    [CmdletBinding()]
-    param (
-        [Parameter(Mandatory=$true)]
-        [ArgumentCompletions('Fruits', 'Vegetables')]
-        $Type,
-
-        [Parameter()]
-        [ArgumentCompletions('Apple', 'Banana', 'Orange')]
-        $Fruit,
-
-        [Parameter()]
-        [ArgumentCompletions('Tomato', 'Corn', 'Squash')]
-        $Vegetable
-    )
-}
-```
-
-Each of the parameters is provided a list of options to the
-**ArgumentCompletions** attribute to enable tab completion.
-
-This attribute was introduced in PowerShell Core 6.0
 
 ## See also
 
