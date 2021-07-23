@@ -220,20 +220,15 @@ function Get-Sample {
   {
     if ($Path.StartsWith("HKLM:"))
     {
-      $attributes = New-Object -Type `
-        System.Management.Automation.ParameterAttribute
+      $attributes = [System.Management.Automation.ParameterAttribute]::new()
       $attributes.ParameterSetName = "PSet1"
       $attributes.Mandatory = $false
-      $attributeCollection = New-Object `
-        -Type System.Collections.ObjectModel.Collection[System.Attribute]
+      $attributeCollection = [System.Collections.ObjectModel.Collection[System.Attribute]]::new()
       $attributeCollection.Add($attributes)
 
-      $dynParam1 = New-Object -Type `
-        System.Management.Automation.RuntimeDefinedParameter("DP1", [Int32],
-          $attributeCollection)
+      $dynParam1 = [System.Management.Automation.RuntimeDefinedParameter]::new("DP1", [Int32], $attributeCollection)
 
-      $paramDictionary = New-Object `
-        -Type System.Management.Automation.RuntimeDefinedParameterDictionary
+      $paramDictionary = [System.Management.Automation.RuntimeDefinedParameterDictionary]::new()
       $paramDictionary.Add("DP1", $dynParam1)
       return $paramDictionary
     }

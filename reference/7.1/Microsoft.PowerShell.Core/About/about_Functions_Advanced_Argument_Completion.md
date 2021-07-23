@@ -78,7 +78,7 @@ $flavor = <tab>
 When you hit the <kbd>Tab</kbd> key, you would get the following result:
 
 ```
-[ValidateSet('Chocolate', 'Strawberry', 'Vanilla')][String]$flavor = 'Strawberry'
+$flavor = 'Chocolate'
 ```
 
 For more information about tab expansion, see
@@ -136,18 +136,20 @@ the values are provided positionally.
 The syntax is as follows:
 
 ```powershell
-Param(
-    [Parameter(Mandatory)]
-    [ArgumentCompleter( {
-        param ( $commandName,
-                $parameterName,
-                $wordToComplete,
-                $commandAst,
-                $fakeBoundParameters )
-        # Perform calculation of tab completed values here.
-    } )]
-    $ParamName
-)
+function MyArgumentCompleter {
+    Param(
+        [Parameter(Mandatory)]
+        [ArgumentCompleter( {
+            param ( $commandName,
+                    $parameterName,
+                    $wordToComplete,
+                    $commandAst,
+                    $fakeBoundParameters )
+            # Perform calculation of tab completed values here.
+        } )]
+        $ParamName
+    )
+}
 ```
 
 ### ArgumentCompleter script block
@@ -185,35 +187,36 @@ command and uses <kbd>Tab</kbd> completion, only **Apple** is returned.
 `Test-ArgumentCompleter -Type Fruits -Value A`
 
 ```powershell
+function MyArgumentCompleter{
+    param ( $commaName,
+            $parameterName,
+            $wordToComplete,
+            $commandAst,
+            $fakeBoundParameters )
+
+    $possibleValues = @{
+        Fruits = @('Apple', 'Orange', 'Banana')
+        Vegetables = @('Tomato', 'Squash', 'Corn')
+    }
+
+    if ($fakeBoundParameters.ContainsKey('Type')) {
+        $possibleValues[$fakeBoundParameters.Type] | Where-Object {
+            $_ -like "$wordToComplete*"
+        }
+    } else {
+        $possibleValues.Values | ForEach-Object {$_}
+    }
+}
+
 function Test-ArgumentCompleter {
 [CmdletBinding()]
  param (
         [Parameter(Mandatory=$true)]
         [ValidateSet('Fruits', 'Vegetables')]
         $Type,
-        [Parameter(Mandatory=$true)]
-        [ArgumentCompleter( {
-            param ( $commandName,
-                    $parameterName,
-                    $wordToComplete,
-                    $commandAst,
-                    $fakeBoundParameters )
 
-            $possibleValues = @{
-                Fruits = @('Apple', 'Orange', 'Banana')
-                Vegetables = @('Tomato', 'Squash', 'Corn')
-            }
-            if ($fakeBoundParameters.ContainsKey('Type'))
-            {
-                $possibleValues[$fakeBoundParameters.Type] | Where-Object {
-                    $_ -like "$wordToComplete*"
-                }
-            }
-            else
-            {
-                $possibleValues.Values | ForEach-Object {$_}
-            }
-        } )]
+        [Parameter(Mandatory=$true)]
+        [ArgumentCompleter({ MyArgumentCompleter @args })]
         $Value
       )
 }
@@ -262,10 +265,10 @@ This attribute was introduced in PowerShell Core 6.0
 ## Class-based argument completers
 
 Beginning in PowerShell 7.2, a new feature was added that allows you to define
-more generic implementations of parameterized `ArgumentCompleters`.
+more generic implementations of parameterized argument completers.
 
 By deriving from `ArgumentCompleterAttribute`, it's possible to create generic
-completers that can be reused like:
+completers that can be reused, for example:
 
 ```powershell
 [DirectoryCompleter(ContainingFile="pswh.exe", Depth=2)]
@@ -279,11 +282,10 @@ The derived attributes must implement the `IArgumentCompleterFactory` interface
 and use property values to create a specialized completer.
 
 ```powershell
-using namespace System.Management.Automation
-using namespace System.Management.Automation.Language
 using namespace System.Collections
 using namespace System.Collections.Generic
-
+using namespace System.Management.Automation
+using namespace System.Management.Automation.Language
 
 class NumberCompleter : IArgumentCompleter {
 
@@ -318,12 +320,12 @@ class NumberCompleter : IArgumentCompleter {
     }
 }
 
-class NumberCompletionAttribute : ArgumentCompleterAttribute, IArgumentCompleterFactory {
+class NumberCompletionsAttribute : ArgumentCompleterAttribute, IArgumentCompleterFactory {
     [int] $From
     [int] $To
     [int] $Step
 
-    NumberCompletionAttribute([int] $from, [int] $to, [int] $step) {
+    NumberCompletionsAttribute([int] $from, [int] $to, [int] $step) {
         $this.From = $from
         $this.To = $to
         $this.Step = $step
