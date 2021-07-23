@@ -127,7 +127,7 @@ Param(
 Switch parameters are parameters with no parameter value. They're effective
 only when they're used and have only one effect.
 
-For example, the **NoProfile** parameter of **powershell.exe** is a switch
+For example, the **NoProfile** parameter of **pwsh.exe** is a switch
 parameter.
 
 To create a switch parameter in a function, specify the `Switch` type in the
@@ -159,7 +159,7 @@ command.
 
 To use a Boolean parameter, the user types the parameter and a Boolean value.
 
-`-IncludeAll:$true`
+`-IncludeAll $true`
 
 When creating switch parameters, choose the parameter name carefully. Be sure
 that the parameter name communicates the effect of the parameter to the user.

@@ -67,11 +67,12 @@ $Message = 'bye'
 ```
 
 Beginning in PowerShell 7.0, tab expansion was added for the values of
-`ValidateSet`. For example, if you were typing the following variable
+`ValidateSet` when assigning to a variable. For example, if you were typing the following variable
 definition:
 
 ```
-[ValidateSet('Chocolate', 'Strawberry', 'Vanilla')][String]$flavor = 'S<Tab>
+[ValidateSet('Chocolate', 'Strawberry', 'Vanilla')][String]$flavor = 'Strawberry'
+$flavor = <tab>
 ```
 
 When you hit the <kbd>Tab</kbd> key, you would get the following result:
@@ -225,7 +226,7 @@ to a specific parameter. An **ArgumentCompletions** attribute must be defined
 for each parameter that needs tab completion. The **ArgumentCompletions**
 attribute is similar to **ValidateSet**. Both attributes take a list of values
 to be presented when the user presses <kbd>Tab</kbd> after the parameter name.
-However, unlike **ValidateSet**, the values are not validated. Therefore the
+However, unlike **ValidateSet**, the values are not validated and more like suggestions. Therefore the
 user can supply any value, not just the values in the list.
 
 The **ArgumentCompletions** attribute should not be confused with the
@@ -264,7 +265,7 @@ Beginning in PowerShell 7.2, a new feature was added that allows you to define
 more generic implementations of parameterized `ArgumentCompleters`.
 
 By deriving from `ArgumentCompleterAttribute`, it's possible to create generic
-completers like:
+completers that can be reused like:
 
 ```powershell
 [DirectoryCompleter(ContainingFile="pswh.exe", Depth=2)]
