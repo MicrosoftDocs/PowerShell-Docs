@@ -1,5 +1,5 @@
 ---
-ms.date:  12/12/2018
+ms.date: 07/24/2021
 keywords:  dsc,powershell,configuration,setup
 title:  Using Import-DSCResource
 description: Import-DSCResource is a dynamic keyword that can only be used inside a Configuration script block. It is used to import the resource modules needed in your Configuration.
@@ -19,11 +19,17 @@ requirement to list each on a new line.
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>] [-ModuleVersion <ModuleVersion>]
 ```
 
-|    Parameter     |                                                                                                                      Description                                                                                                                      |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-Name`          | The DSC resource name(s) that you must import. If the module name is specified, the command searches for these DSC resources within this module; otherwise the command searches the DSC resources in all DSC resource paths. Wildcards are supported. |
-| `-ModuleName`    | The module name, or module specification.  If you specify resources to import from a module, the command will try to import only those resources. If you specify the module only, the command imports all the DSC resources in the module.            |
-| `-ModuleVersion` | Beginning in PowerShell 5.0, you can specify which version of a module a configuration should use. For more information, see [Import a specific version of an installed resource](sxsresource.md).                                                    |
+Parameters
+
+- `-Name` - The DSC resource name(s) that you must import. If the module name is specified, the
+  command searches for these DSC resources within this module; otherwise the command searches the
+  DSC resources in all DSC resource paths. Wildcards are supported.
+- `-ModuleName` - The module name, or module specification. If you specify resources to import from
+  a module, the command will try to import only those resources. If you specify the module only, the
+  command imports all the DSC resources in the module.
+- `-ModuleVersion` - Beginning in PowerShell 5.0, you can specify which version of a module a
+  configuration should use. For more information, see
+  [Import a specific version of an installed resource](sxsresource.md).
 
 ```powershell
 Import-DscResource -ModuleName xActiveDirectory
