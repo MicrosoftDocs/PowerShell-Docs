@@ -129,26 +129,16 @@ Instead, they convey a Boolean true-or-false value through their presence or abs
 so that when a switch parameter is present it has a true value
 and when absent it has a false value.
 
-For example, the **NoProfile** parameter of **pwsh.exe** is a switch
+For example, the **Recurse** parameter of `Get-ChildItem` is a switch
 parameter.
 
 To create a switch parameter in a function, specify the `switch` type in the
 parameter definition.
 
-For example:
+For example, your function may have an option to output data as a byte array:
 
 ```powershell
-Param([switch]<ParameterName>)
-```
-
-Or, you can use an another method:
-
-```powershell
-Param(
-    [Parameter(Mandatory=$false)]
-    [Switch]
-    $<ParameterName>
-)
+Param([switch]$AsByteArray)
 ```
 
 Switch parameters are easy to use and are preferred over Boolean parameters,
@@ -167,6 +157,30 @@ When creating switch parameters, choose the parameter name carefully. Be sure
 that the parameter name communicates the effect of the parameter to the user.
 Avoid ambiguous terms, such as **Filter** or **Maximum** that might imply a
 value is required.
+
+### Switch parameter design considerations
+
+- Switch parameters should not be given default values. They should always
+  default to false.
+- Switch parameters should be designed so that setting them moves a command
+  from its default functionality to a less common or more complicated mode. The
+  simplest behavior of a command should be the default behavior that does not
+  require the use of switch parameters.
+- Switch parameters should not be mandatory, since that defeats the purpose of
+  a switch; a mandatory switch can only take one value. The only case where is
+  is necessary to make a switch parameter mandatory is when it is needed to
+  differentiate a parameter set. In this case, the switch parameter must be
+  mandatory.
+- Explicitly setting a switch from a boolean can be done with
+  `-MySwitch:$boolValue` and in splatting with
+  `$params = @{ MySwitch = $boolValue }`.
+- Switch parameters are of type `SwitchParameter` but implicitly convert to
+  Boolean. The parameter variable can be used directly in a conditional
+  expression. For example:
+
+  `if ($MySwitch) { ... }`
+
+  There's no need to write `if ($MySwitch.IsPresent) { ... }`
 
 ## Dynamic parameters
 
@@ -192,26 +206,17 @@ keyword.
 
 The syntax is as follows:
 
-`DynamicParam {<statement-list>}`
+`dynamicparam {<statement-list>}`
 
-In the statement list, use an `If` statement to specify the conditions under
+In the statement list, use an `if` statement to specify the conditions under
 which the parameter is available in the function.
 
-Use the `New-Object` cmdlet to create a
-**System.Management.Automation.RuntimeDefinedParameter** object to represent
-the parameter and specify its name.
-
-You can use a `New-Object` command to create a
-**System.Management.Automation.ParameterAttribute** object to represent
-attributes of the parameter, such as **Mandatory**, **Position**, or
-**ValueFromPipeline** or its parameter set.
-
-The following example shows a function with standard parameters named
-**Name** and **Path**, and an optional dynamic parameter named **DP1**. The
-**DP1** parameter is in the `PSet1` parameter set and has a type of `Int32`.
-The **DP1** parameter is available in the `Get-Sample` function only when the
-value of the **Path** parameter starts with `HKLM:`, indicating that it's being
-used in the `HKEY_LOCAL_MACHINE` registry drive.
+The following example shows a function with standard parameters named **Name**
+and **Path**, and an optional dynamic parameter named **KeyCount**. The
+**KeyCount** parameter is in the `ByRegistryPath` parameter set and has a type
+of `Int32`. The **KeyCount** parameter is available in the `Get-Sample`
+function only when the value of the **Path** parameter starts with `HKLM:`,
+indicating that it's being used in the `HKEY_LOCAL_MACHINE` registry drive.
 
 ```powershell
 function Get-Sample {
@@ -223,24 +228,28 @@ function Get-Sample {
     if ($Path.StartsWith("HKLM:"))
     {
       $parameterAttribute = [System.Management.Automation.ParameterAttribute]@{
-          ParameterSetName = "PSet1"
+          ParameterSetName = "ByRegistryPath"
           Mandatory = $false
       }
-      $attributeCollection = [System.Collections.ObjectModel.Collection[System.Attribute]]::new()
-      $attributeCollection.Add($attributes)
 
-      $dynParam1 = [System.Management.Automation.RuntimeDefinedParameter]::new("DP1", [Int32], $attributeCollection)
+      $attributeCollection = [System.Collections.ObjectModel.Collection[System.Attribute]]::new()
+      $attributeCollection.Add($parameterAttribute)
+
+      $dynParam1 = [System.Management.Automation.RuntimeDefinedParameter]::new(
+        'KeyCount', [Int32], $attributeCollection
+      )
 
       $paramDictionary = [System.Management.Automation.RuntimeDefinedParameterDictionary]::new()
-      $paramDictionary.Add("DP1", $dynParam1)
+      $paramDictionary.Add('KeyCount', $dynParam1)
       return $paramDictionary
     }
   }
 }
 ```
 
-For more information, see
-[RuntimeDefinedParameter](/dotnet/api/system.management.automation.runtimedefinedparameter).
+For more information, see the documentation for the
+[RuntimeDefinedParameter](/dotnet/api/system.management.automation.runtimedefinedparameter)
+type.
 
 ## Attributes of parameters
 
@@ -402,7 +411,7 @@ Param(
     $UserName,
 
     [Parameter(Mandatory=$false)]
-    [Switch]
+    [switch]
     $Summary
 )
 ```
@@ -430,7 +439,7 @@ Param(
 
     [Parameter(Mandatory=$false, ParameterSetName="Computer")]
     [Parameter(Mandatory=$true, ParameterSetName="User")]
-    [Switch]
+    [switch]
     $Summary
 )
 ```
@@ -591,17 +600,6 @@ more information, see [about_Wildcards](about_Wildcards.md).
 
 ## Argument completion attributes
 
-### ArgumentCompleter attribute
-
-The **ArgumentCompleter** attribute allows you to add tab completion values to
-a specific parameter. An **ArgumentCompleter** attribute must be defined for
-each parameter that needs tab completion. Similar to **DynamicParameters**, the
-available values are calculated at runtime when the user presses <kbd>Tab</kbd>
-after the parameter name.
-
-For more information, see
-[about_Functions_Advanced_Argument_Completion](about_Functions_Advanced_Argument_Completion.md#argumentcompleter-attribute).
-
 ### ArgumentCompletions attribute
 
 The **ArgumentCompletions** attribute allows you to add tab completion values
@@ -614,7 +612,18 @@ However, unlike **ValidateSet**, the values are not validated.
 This attribute was introduced in PowerShell Core 6.0
 
 For more information, see
-[about_Functions_Advanced_Argument_Completion](about_Functions_Advanced_Argument_Completion.md#argumentcompletions-attribute).
+[about_Functions_Argument_Completion](about_Functions_Argument_Completion.md#argumentcompletions-attribute).
+
+### ArgumentCompleter attribute
+
+The **ArgumentCompleter** attribute allows you to add tab completion values to
+a specific parameter. An **ArgumentCompleter** attribute must be defined for
+each parameter that needs tab completion. Similar to **DynamicParameters**, the
+available values are calculated at runtime when the user presses <kbd>Tab</kbd>
+after the parameter name.
+
+For more information, see
+[about_Functions_Argument_Completion](about_Functions_Argument_Completion.md#argumentcompleter-attribute).
 
 ## Parameter and variable validation attributes
 

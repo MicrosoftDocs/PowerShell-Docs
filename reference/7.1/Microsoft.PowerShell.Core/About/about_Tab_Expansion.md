@@ -9,14 +9,21 @@ title: About tab expansion
 # about_Tab_Expansion
 
 ## Short description
-PowerShell provides completions on input to provide hints, enable discovery and speed up input entry.
-Command names, parameter names, argument values and file paths can all be completed by pressing the <kbd>Tab</kbd> key.
+PowerShell provides completions on input to provide hints, enable discovery and
+speed up input entry. Command names, parameter names, argument values and file
+paths can all be completed by pressing the <kbd>Tab</kbd> key.
 
 ## Long description
 
 Tab expansion is controlled by the internal function **TabExpansion** or
 **TabExpansion2**. Since this function can be modified or overridden, this
 discussion is a guide to the behavior of the default PowerShell configuration.
+
+The <kbd>Tab</kbd> key is the default key binding on Windows. This keybinding
+can be changed by the PSReadLine module or the application that is hosting
+PowerShell. The keybinding is different on non-Windows platforms. For more
+information, see
+[about_PSReadLine](/powershell/module/psreadline/about/about_psreadline#completion-functions).
 
 > [!NOTE]
 > One limitation of the tab expansion process is that tabs are always
@@ -45,7 +52,7 @@ cmdlet name, `Get-Content`.
 > As of PowerShell 7.0, <kbd>Tab</kbd> will also expand abbreviated cmdlets and
 > functions. For example, `i-psdf<tab>` returns `Import-PowerShellDataFile`.
 
-Tab completion also works to resolve PowerShell keywords and native executables.
+Tab completion also works to resolve PowerShell alias and native executables.
 
 You can use tab expansion repeatedly on the same line. For example, you can use
 tab expansion on the name of the `Get-Content` cmdlet by entering:
@@ -75,22 +82,22 @@ When you press the <kbd>Tab</kbd> key, the command expands to:
 PS> Get-Content C:\windows\actsetup.log
 ```
 
-PowerShell also has a menu completion feature that is triggered using
-<kbd>Ctrl</kbd>-<kbd>Space</kbd>.
+PSReadLine also has a menu completion feature. The default key binding on
+Windows is <kbd>Ctrl</kbd>-<kbd>Space</kbd>.
 
 ```
 PS> fore<Ctrl-Space>
 ```
 
-When you press <kbd>Ctrl</kbd>-<kbd>Space</kbd>, PowerShell present the full
-list of matching value as a menu:
+When you press <kbd>Ctrl</kbd>-<kbd>Space</kbd>, PowerShell presents the full
+list of matching values as a menu:
 
 ```
 PS> foreach
 foreach         ForEach-Object  foreach.cmd
 ```
 
-In this example the string 'fore' is matched to `foreach` (PowerShell keyword),
+In this example the string 'fore' is matched to `foreach` (PowerShell alias),
 `ForEach-Object` (cmdlet), and `foreach.cmd` (native command). Use the arrow
 keys to select the value you want.
 
@@ -101,7 +108,7 @@ to use the <kbd>Tab</kbd> key to cycle through a list of possible values that
 are valid for some parameter.
 
 For more information see,
-[about_Functions_Advanced_Argument_Completion](about_Functions_Advanced_Argument_Completion.md).
+[about_Functions_Argument_Completion](about_Functions_Argument_Completion.md).
 
 ## Enumerated value completion
 
@@ -142,6 +149,21 @@ with the letter "S". The end result is:
 [System.IO.FileAttributes]$attr = 'System'
 ```
 
+Beginning in PowerShell 7.0, tab expansion was added for the values of
+`ValidateSet` when assigning to a variable. For example, if you were typing the
+following variable definition:
+
+```
+[ValidateSet('Chocolate', 'Strawberry', 'Vanilla')][String]$flavor = 'Strawberry'
+$flavor = <tab>
+```
+
+When you hit the <kbd>Tab</kbd> key, you would get the following result:
+
+```
+$flavor = 'Chocolate'
+```
+
 ## Tab completions for comment-based keywords
 
 Beginning in PowerShell 7.2, support was added for tab completion of the
@@ -171,7 +193,7 @@ Menu expansion shows the following keyword options:
 
 ```
  <#
-  .COMPONENT
+    .COMPONENT
 COMPONENT              EXTERNALHELP           FUNCTIONALITY          NOTES                  REMOTEHELPRUNSPACE
 DESCRIPTION            FORWARDHELPCATEGORY    INPUTS                 OUTPUTS                ROLE
 EXAMPLE                FORWARDHELPTARGETNAME  LINK                   PARAMETER              SYNOPSIS
@@ -179,6 +201,6 @@ EXAMPLE                FORWARDHELPTARGETNAME  LINK                   PARAMETER  
 
 ## See also
 
-- [about_Functions_Advanced_Argument_Completion](about_Functions_Advanced_Argument_Completion.md)
+- [about_Functions_Argument_Completion](about_Functions_Argument_Completion.md)
 - [about_Requires](about_Requires.md)
 - [about_Comment_Based_Help](about_Comment_Based_Help.md)

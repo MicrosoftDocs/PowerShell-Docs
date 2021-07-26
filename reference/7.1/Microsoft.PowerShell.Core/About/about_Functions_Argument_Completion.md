@@ -1,47 +1,46 @@
 ---
 ms.date: 07/22/2021
-description: Explains the various argument completion options available with advanced functions.
+description: Explains the various argument completion options available for function parameters.
 Locale: en-US
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_argument_completion?view=powershell-7.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Functions_Argument_Completion?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: About functions advanced argument completion
+title: About functions argument completion
 ---
-# about_Functions_Advanced_Argument_Completion
+# about_Functions_Argument_Completion
 
 ## Short description
-Argument completion allows you to add tab expansion values to parameters of
-advanced functions. The available values are calculated at runtime when the
-user presses the <kbd>Tab</kbd> key after the parameter name. There are several
-ways to define an argument completer for a parameter.
+Argument completion is a feature of PowerShell that provide hints, enables
+discovery and speed up input entry of argument values.
 
 ## Long description
 
-Advanced functions allow you create function parameters with special
-attributes. These attributes can be used to validate the user's input or
-provide argument completion. This article describe the different ways you can
-implement argument completion for advanced functions.
+This article describe the different ways you can implement argument completers
+for PowerShell functions. Argument completers provide the possible values for a
+parameter. The available values are calculated at runtime when the user presses
+the <kbd>Tab</kbd> key after the parameter name. There are several ways to
+define an argument completer for a parameter.
 
-Advanced functions use the `CmdletBinding` attribute to identify them as
-functions that act like cmdlets. For more information about this attribute, see
-[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
-
-For more information about the other parameter attributes, see
-[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
+> [!NOTE]
+> <kbd>Tab</kbd> is the default key binding on Windows. This keybinding can be
+> changed by the PSReadLine module or the application that is hosting
+> PowerShell. The keybinding is different on non-Windows platforms. For more
+> information, see
+> [about_PSReadLine](/powershell/module/psreadline/about/about_psreadline#completion-functions).
 
 ## ValidateSet attribute
 
 The **ValidateSet** attribute specifies a set of valid values for a parameter
 or variable and enables tab completion. PowerShell generates an error if a
 parameter or variable value doesn't match a value in the set. In the following
-example, the value of the **Detail** parameter can only be Low, Average, or
-High.
+example, the value of the **Fruit** parameter can only be **Apple**,
+**Banana**, or **Pear**.
 
 ```powershell
 Param(
     [Parameter(Mandatory=$true)]
-    [ValidateSet('Low', 'Average', 'High')]
-    [String[]]
-    $Detail
+    [ValidateSet('Apple', 'Banana', 'Pear')]
+    [string[]]
+    $Fruit
 )
 ```
 
@@ -51,34 +50,26 @@ be used on any variable, not just parameters.
 
 ```powershell
 [ValidateSet('Chocolate', 'Strawberry', 'Vanilla')]
-[String]$flavor = 'Strawberry'
+[string]$flavor = 'Strawberry'
 ```
 
 The validation occurs whenever that variable is assigned even within the
-script. For example, the following results in an error at runtime:
+script.
 
 ```powershell
 Param(
     [ValidateSet('hello', 'world')]
-    [String]$Message
+    [string]$Message
 )
 
 $Message = 'bye'
 ```
 
-Beginning in PowerShell 7.0, tab expansion was added for the values of
-`ValidateSet` when assigning to a variable. For example, if you were typing the following variable
-definition:
+This example returns the following error at runtime:
 
 ```
-[ValidateSet('Chocolate', 'Strawberry', 'Vanilla')][String]$flavor = 'Strawberry'
-$flavor = <tab>
-```
-
-When you hit the <kbd>Tab</kbd> key, you would get the following result:
-
-```
-$flavor = 'Chocolate'
+MetadataError: The attribute cannot be added because variable Message with
+value bye would no longer be valid.
 ```
 
 For more information about tab expansion, see
@@ -93,7 +84,7 @@ filesystem paths for available sound files:
 
 ```powershell
 Class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
-    [String[]] GetValidValues() {
+    [string[]] GetValidValues() {
         $SoundPaths = '/System/Library/Sounds/',
                       '/Library/Sounds',
                       '~/Library/Sounds'
@@ -102,7 +93,7 @@ Class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
                 (Get-ChildItem $SoundPath).BaseName
             }
         }
-        return [String[]] $SoundNames
+        return [string[]] $SoundNames
     }
 }
 ```
@@ -113,20 +104,59 @@ as follows:
 ```powershell
 Param(
     [ValidateSet([SoundNames])]
-    [String]$Sound
+    [string]$Sound
 )
 ```
 
 > [!NOTE]
 > The `IValidateSetValuesGenerator` class was introduced in PowerShell 6.0.
 
+## ArgumentCompletions attribute
+
+The **ArgumentCompletions** attribute allows you to add tab completion values
+to a specific parameter. An **ArgumentCompletions** attribute must be defined
+for each parameter that needs tab completion. The **ArgumentCompletions**
+attribute is similar to **ValidateSet**. Both attributes take a list of values
+to be presented when the user presses <kbd>Tab</kbd> after the parameter name.
+However, unlike **ValidateSet**, the values are not validated and more like
+suggestions. Therefore the user can supply any value, not just the values in
+the list.
+
+The **ArgumentCompletions** attribute should not be confused with the
+**ArgumentCompleter** attribute, which needs a scriptblock to define the
+options. the specified values are available
+
+The syntax is as follows:
+
+```powershell
+function Test-ArgumentCompletions {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory=$true)]
+        [ArgumentCompletions('Fruits', 'Vegetables')]
+        $Type,
+
+        [Parameter()]
+        [ArgumentCompletions('Apple', 'Banana', 'Orange')]
+        $Fruit,
+
+        [Parameter()]
+        [ArgumentCompletions('Tomato', 'Corn', 'Squash')]
+        $Vegetable
+    )
+}
+```
+
+Each of the parameters is provided a list of options to the
+**ArgumentCompletions** attribute to enable tab completion.
+
+This attribute was introduced in PowerShell Core 6.0
+
 ## ArgumentCompleter attribute
 
 The **ArgumentCompleter** attribute allows you to add tab completion values to
 a specific parameter. An **ArgumentCompleter** attribute must be defined for
-each parameter that needs tab completion. Similar to **DynamicParameters**, the
-available values are calculated at runtime when the user presses <kbd>Tab</kbd>
-after the parameter name.
+each parameter that needs tab completion.
 
 To add an **ArgumentCompleter** attribute, you need to define a script block
 that determines the values. The script block must take the following
@@ -164,8 +194,9 @@ The script block parameters are set to the following values:
   provided before they pressed <kbd>Tab</kbd>. Your script block should use
   this value to determine tab completion values.
 - `$commandAst` (Position 3) - This parameter is set to the Abstract Syntax
-  Tree (AST) for the current input line. For more information, see
-  [Ast Class](/dotnet/api/system.management.automation.language.ast).
+  Tree (AST) for the current input line. For more information, see the
+  [AST](/dotnet/api/system.management.automation.language.ast) type
+  documentation.
 - `$fakeBoundParameters` (Position 4) - This parameter is set to a hashtable
   containing the `$PSBoundParameters` for the cmdlet, before the user pressed
   <kbd>Tab</kbd>. For more information, see
@@ -221,46 +252,6 @@ function Test-ArgumentCompleter {
       )
 }
 ```
-
-## ArgumentCompletions attribute
-
-The **ArgumentCompletions** attribute allows you to add tab completion values
-to a specific parameter. An **ArgumentCompletions** attribute must be defined
-for each parameter that needs tab completion. The **ArgumentCompletions**
-attribute is similar to **ValidateSet**. Both attributes take a list of values
-to be presented when the user presses <kbd>Tab</kbd> after the parameter name.
-However, unlike **ValidateSet**, the values are not validated and more like suggestions. Therefore the
-user can supply any value, not just the values in the list.
-
-The **ArgumentCompletions** attribute should not be confused with the
-**ArgumentCompleter** attribute, which needs a scriptblock to define the
-options. the specified values are available
-
-The syntax is as follows:
-
-```powershell
-function Test-ArgumentCompletions {
-    [CmdletBinding()]
-    param (
-        [Parameter(Mandatory=$true)]
-        [ArgumentCompletions('Fruits', 'Vegetables')]
-        $Type,
-
-        [Parameter()]
-        [ArgumentCompletions('Apple', 'Banana', 'Orange')]
-        $Fruit,
-
-        [Parameter()]
-        [ArgumentCompletions('Tomato', 'Corn', 'Squash')]
-        $Vegetable
-    )
-}
-```
-
-Each of the parameters is provided a list of options to the
-**ArgumentCompletions** attribute to enable tab completion.
-
-This attribute was introduced in PowerShell Core 6.0
 
 ## Class-based argument completers
 
@@ -361,7 +352,6 @@ For more information, see
 
 ## See also
 
-- [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
 - [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
 - [Register-ArgumentCompleter](xref:Microsoft.PowerShell.Core.Register-ArgumentCompleter)
 - [about_Tab_Expansion](about_Tab_Expansion.md)
