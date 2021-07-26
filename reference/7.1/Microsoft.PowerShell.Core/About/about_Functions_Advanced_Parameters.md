@@ -222,9 +222,10 @@ function Get-Sample {
   {
     if ($Path.StartsWith("HKLM:"))
     {
-      $attributes = [System.Management.Automation.ParameterAttribute]::new()
-      $attributes.ParameterSetName = "PSet1"
-      $attributes.Mandatory = $false
+      $parameterAttribute = [System.Management.Automation.ParameterAttribute]@{
+          ParameterSetName = "PSet1"
+          Mandatory = $false
+      }
       $attributeCollection = [System.Collections.ObjectModel.Collection[System.Attribute]]::new()
       $attributeCollection.Add($attributes)
 
