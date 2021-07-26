@@ -9,10 +9,8 @@ title: About tab expansion
 # about_Tab_Expansion
 
 ## Short description
-Command-line shells often provide a way to complete the names of long files or
-commands automatically, speeding up command entry and providing hints.
-PowerShell allows you to fill in filenames and cmdlet names by pressing the
-<kbd>Tab</kbd> key.
+PowerShell provides completions on input to provide hints, enable discovery and speed up input entry.
+Command names, parameter names, argument values and file paths can all be completed by pressing the <kbd>Tab</kbd> key.
 
 ## Long description
 

@@ -124,19 +124,21 @@ Param(
 
 ## Switch parameters
 
-Switch parameters are parameters with no parameter value. They're effective
-only when they're used and have only one effect.
+Switch parameters are parameters that take no parameter value.
+Instead, they convey a Boolean true-or-false value through their presence or absence,
+so that when a switch parameter is present it has a true value
+and when absent it has a false value.
 
 For example, the **NoProfile** parameter of **pwsh.exe** is a switch
 parameter.
 
-To create a switch parameter in a function, specify the `Switch` type in the
+To create a switch parameter in a function, specify the `switch` type in the
 parameter definition.
 
 For example:
 
 ```powershell
-Param([Switch]<ParameterName>)
+Param([switch]<ParameterName>)
 ```
 
 Or, you can use an another method:
@@ -150,7 +152,7 @@ Param(
 ```
 
 Switch parameters are easy to use and are preferred over Boolean parameters,
-which have a more difficult syntax.
+which have a less natural syntax for PowerShell.
 
 For example, to use a switch parameter, the user types the parameter in the
 command.
@@ -204,7 +206,7 @@ You can use a `New-Object` command to create a
 attributes of the parameter, such as **Mandatory**, **Position**, or
 **ValueFromPipeline** or its parameter set.
 
-The following example shows a sample function with standard parameters named
+The following example shows a function with standard parameters named
 **Name** and **Path**, and an optional dynamic parameter named **DP1**. The
 **DP1** parameter is in the `PSet1` parameter set and has a type of `Int32`.
 The **DP1** parameter is available in the `Get-Sample` function only when the
