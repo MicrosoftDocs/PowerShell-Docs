@@ -126,8 +126,8 @@ Param(
 
 Switch parameters are parameters that take no parameter value.
 Instead, they convey a Boolean true-or-false value through their presence or absence,
-so that when a switch parameter is present it has a true value
-and when absent it has a false value.
+so that when a switch parameter is present it has a **true** value
+and when absent it has a **false** value.
 
 For example, the **Recurse** parameter of `Get-ChildItem` is a switch
 parameter.

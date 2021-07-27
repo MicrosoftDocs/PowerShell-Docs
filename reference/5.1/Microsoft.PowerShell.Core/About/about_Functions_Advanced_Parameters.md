@@ -131,8 +131,8 @@ Param(
 
 Switch parameters are parameters that take no parameter value.
 Instead, they convey a Boolean true-or-false value through their presence or absence,
-so that when a switch parameter is present it has a true value
-and when absent it has a false value.
+so that when a switch parameter is present it has a **true** value
+and when absent it has a **false** value.
 
 For example, the **Recurse** parameter of `Get-ChildItem` is a switch
 parameter.
@@ -201,7 +201,7 @@ a file system drive.
 You can also create a parameter that appears only when another parameter is
 used in the function command or when another parameter has a certain value.
 
-Dynamic parameters can be useful, but use them only when necessary, because
+Dynamic parameters can be useful, but use them only when necessary because
 they can be difficult for users to discover. To find a dynamic parameter, the
 user must be in the provider path, use the **ArgumentList** parameter of the
 `Get-Command` cmdlet, or use the **Path** parameter of `Get-Help`.
