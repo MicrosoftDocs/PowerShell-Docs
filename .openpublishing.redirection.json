@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "reference/docs-conceptual/lear/Using-Tab-Expansion.md",
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_Tab_Expansion",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "reference/docs-conceptual/whats-new/What-s-New-in-PowerShell-Core-60.md",
       "redirect_url": "/powershell/scripting/whats-new/differences-from-windows-powershell",
       "redirect_document_id": false

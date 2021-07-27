@@ -196,8 +196,6 @@ items:
       href: learn/remoting/powershell-remoting-faq.yml
   - name: Using Experimental Features
     href: learn/experimental-features.md
-  - name: Using tab expansion
-    href: learn/using-tab-expansion.md
   - name: Compatibility aliases
     href: learn/compatibility-aliases.md
   - name: Additional resources
