@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/20/2019
+ms.date: 07/27/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
@@ -63,14 +63,15 @@ New-PSSession [-Name <String[]>] [-ConfigurationName <String>] -ContainerId <Str
 ### UseWindowsPowerShellParameterSet
 
 ```
-New-PSSession [-Name <String[]>] [-UseWindowsPowerShell] [<CommonParameters>]
+New-PSSession -UseWindowsPowerShell [-Name <string[]>] [<CommonParameters>]
 ```
 
 ### SSHHost
 
 ```
-New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserName <String>] [-KeyFilePath <String>]
-[-SSHTransport] [-Subsystem <String>] [-ConnectingTimeout <int>] [<CommonParameters>]
+New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserName <String>]
+ [-KeyFilePath <String>] [-SSHTransport] [-Subsystem <String>] [-ConnectingTimeout <int>]
+ [<CommonParameters>]
 ```
 
 ### SSHHostHashParam
@@ -967,7 +968,7 @@ Accept wildcard characters: False
 
 ### -UseWindowsPowerShell
 
-{{ Fill UseWindowsPowerShell Description }}
+Creates a remote connection to a new Windows PowerShell runspace on the local system.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

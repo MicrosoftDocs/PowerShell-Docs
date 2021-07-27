@@ -51,15 +51,18 @@ command on one or more remote computers. You can establish persistent connection
 sessions, and run scripts on remote computers.
 
 To use Windows PowerShell remoting, the remote computer must be configured for remote management.
-For more information, including instructions, see [About Remote Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements).
+For more information, including instructions, see
+[About Remote Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements).
 
 Once you have configured Windows PowerShell remoting, many remoting strategies are available to you.
-This article lists just a few of them. For more information, see [About Remote](/powershell/module/microsoft.powershell.core/about/about_remote).
+This article lists just a few of them. For more information, see
+[About Remote](/powershell/module/microsoft.powershell.core/about/about_remote).
 
 ### Start an Interactive Session
 
-To start an interactive session with a single remote computer, use the [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession)
-cmdlet. For example, to start an interactive session with the Server01 remote computer, type:
+To start an interactive session with a single remote computer, use the
+[Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet. For example,
+to start an interactive session with the Server01 remote computer, type:
 
 ```powershell
 Enter-PSSession Server01
@@ -81,9 +84,10 @@ For more information about the Enter-PSSession and Exit-PSSession cmdlets, see:
 
 ### Run a Remote Command
 
-To run a command on one or more computers, use the [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command)
-cmdlet. For example, to run a [Get-UICulture](/powershell/module/microsoft.powershell.utility/get-uiculture)
-command on the Server01 and Server02 remote computers, type:
+To run a command on one or more computers, use the
+[Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) cmdlet. For example,
+to run a [Get-UICulture](/powershell/module/microsoft.powershell.utility/get-uiculture) command on
+the Server01 and Server02 remote computers, type:
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
@@ -136,7 +140,7 @@ Now you can use the data in the `$h` variable with other commands in the same se
 are displayed on the local computer. For example:
 
 ```powershell
-Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
+Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NT AUTHORITY\SYSTEM"}}
 ```
 
 ### Advanced Remoting

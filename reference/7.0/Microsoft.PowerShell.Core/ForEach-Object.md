@@ -1,9 +1,8 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/26/2021
+ms.date: 07/27/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -208,6 +207,8 @@ property value type.
 ### Example 7: Split module names into component names
 
 This example shows three ways to split two dot-separated module names into their component names.
+The commands call the **Split** method of strings. The three commands use different syntax, but they
+are equivalent and interchangeable. The output is the same for all three cases.
 
 ```powershell
 "Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object {$_.Split(".")}
@@ -224,15 +225,12 @@ PowerShell
 Host
 ```
 
-The commands call the **Split** method of strings. The three commands use different syntax, but they
-are equivalent and interchangeable.
-
 The first command uses the traditional syntax, which includes a script block and the current object
 operator `$_`. It uses the dot syntax to specify the method and parentheses to enclose the delimiter
 argument.
 
 The second command uses the **MemberName** parameter to specify the **Split** method and the
-**ArgumentName** parameter to identify the dot (".") as the split delimiter.
+**ArgumentList** parameter to identify the dot (`.`) as the split delimiter.
 
 The third command uses the **Foreach** alias of the `ForEach-Object` cmdlet and omits the names of
 the **MemberName** and **ArgumentList** parameters, which are optional.

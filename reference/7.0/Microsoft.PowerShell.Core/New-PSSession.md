@@ -1,9 +1,8 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/20/2019
+ms.date: 07/27/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
@@ -64,7 +63,7 @@ New-PSSession [-Name <String[]>] [-ConfigurationName <String>] -ContainerId <Str
 ### UseWindowsPowerShellParameterSet
 
 ```
-New-PSSession [-Name <String[]>] -UseWindowsPowerShell [<CommonParameters>]
+New-PSSession -UseWindowsPowerShell [-Name <string[]>] [<CommonParameters>]
 ```
 
 ### SSHHost
@@ -80,7 +79,7 @@ New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserNa
 New-PSSession [-Name <String[]>] -SSHConnection <Hashtable[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `New-PSSession` cmdlet creates a PowerShell session (**PSSession**) on a local or remote
 computer. When you create a **PSSession**, PowerShell establishes a persistent connection to the
@@ -111,7 +110,7 @@ connection information. For more information about how to set up PowerShell SSH 
 > this if you are in an environment where you can be certain of the server certificate and the
 > network connection to the target system.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a session on the local computer
 
@@ -307,7 +306,7 @@ This example shows how to create multiple sessions using Secure Shell (SSH) and 
 contain connection information for each session. Note that this example requires that the target
 remote computers have SSH configured to support key based user authentication.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowRedirection
 
@@ -1077,6 +1076,22 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -UseWindowsPowerShell
+
+Creates a remote connection to a new Windows PowerShell runspace on the local system.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UseWindowsPowerShellParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
@@ -1084,17 +1099,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
 (https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String, System.URI, System.Management.Automation.Runspaces.PSSession
 
 You can pipe a string, URI, or session object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.Runspaces.PSSession
 
-## NOTES
+## Notes
 
 - This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local
   computer and any remote computers must be configured for PowerShell remoting. For more
@@ -1113,7 +1128,7 @@ You can pipe a string, URI, or session object to this cmdlet.
   more information about how to set up PowerShell SSH remoting, see
   [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
-## RELATED LINKS
+## Related Links
 
 [Connect-PSSession](Connect-PSSession.md)
 
