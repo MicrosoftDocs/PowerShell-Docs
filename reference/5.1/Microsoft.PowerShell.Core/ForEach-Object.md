@@ -1,9 +1,8 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/08/2020
+ms.date: 07/27/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -171,7 +170,9 @@ the property value type.
 
 ### Example 7: Split module names into component names
 
-This examples shows three ways to split two dot-separated module names into their component names.
+This example shows three ways to split two dot-separated module names into their component names.
+The commands call the **Split** method of strings. The three commands use different syntax, but they
+are equivalent and interchangeable. The output is the same for all three cases.
 
 ```powershell
 "Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object {$_.Split(".")}
@@ -188,22 +189,19 @@ PowerShell
 Host
 ```
 
-The commands call the **Split** method of strings. The three commands use different syntax, but they
-are equivalent and interchangeable.
-
 The first command uses the traditional syntax, which includes a script block and the current object
 operator `$_`. It uses the dot syntax to specify the method and parentheses to enclose the delimiter
 argument.
 
 The second command uses the **MemberName** parameter to specify the **Split** method and the
-**ArgumentName** parameter to identify the dot (".") as the split delimiter.
+**ArgumentList** parameter to identify the dot (".") as the split delimiter.
 
 The third command uses the **Foreach** alias of the `ForEach-Object` cmdlet and omits the names of
 the **MemberName** and **ArgumentList** parameters, which are optional.
 
 ### Example 8: Using ForEach-Object with two script blocks
 
-In this example we pass two script blocks positionally. All the script blocks bind to the
+In this example, we pass two script blocks positionally. All the script blocks bind to the
 **Process** parameter. However, they are treated as if they had been passed to the **Begin** and
 **Process** parameters.
 
@@ -219,7 +217,7 @@ process
 
 ### Example 9: Using ForEach-Object with more than two script blocks
 
-In this example we pass two script blocks positionally. All the script blocks bind to the
+In this example, we pass two script blocks positionally. All the script blocks bind to the
 **Process** parameter. However, they are treated as if they had been passed to the **Begin**,
 **Process**, and **End** parameters.
 
@@ -347,9 +345,8 @@ Accept wildcard characters: False
 Specifies the property to get or the method to call.
 
 Wildcard characters are permitted, but work only if the resulting string resolves to a unique value.
-If, for example, you run `Get-Process | ForEach -MemberName *Name`, and more than one member exists
-with a name that contains the string Name, such as the **ProcessName** and **Name** properties, the
-command fails.
+For example, if you run `Get-Process | ForEach -MemberName *Name`, the wildcard pattern matches more
+than one member causing the command to fail.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
