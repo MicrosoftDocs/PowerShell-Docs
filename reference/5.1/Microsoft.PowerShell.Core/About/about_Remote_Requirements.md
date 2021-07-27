@@ -1,8 +1,8 @@
 ---
-description:  Describes the system requirements and configuration requirements for running remote commands in PowerShell. 
+description:  Describes the system requirements and configuration requirements for running remote commands in PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 01/03/2018
+ms.date: 07/27/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Remote Requirements
@@ -10,29 +10,29 @@ title: about Remote Requirements
 
 # about_Remote_Requirements
 
-## SHORT DESCRIPTION
-
+## Short description
 Describes the system requirements and configuration requirements for running
 remote commands in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 This topic describes the system requirements, user requirements, and resource
 requirements for establishing remote connections and running remote commands
 in PowerShell. It also provides instructions for configuring remote
 operations.
 
-Note: Many cmdlets (including the Get-Service, Get-Process, Get-WMIObject,
-Get-EventLog, and Get-WinEvent cmdlets) get objects from remote computers by
-using Microsoft .NET Framework methods to retrieve the objects. They do not
-use the PowerShell remoting infrastructure. The requirements in this
-document do not apply to these cmdlets.
+> [!NOTE]
+> Many cmdlets (including the `Get-Service`, `Get-Process`, `Get-WMIObject`,
+> `Get-EventLog`, and `Get-WinEvent` cmdlets) get objects from remote computers
+> by using Microsoft .NET Framework methods to retrieve the objects. They do
+> not use the PowerShell remoting infrastructure. The requirements in this
+> document do not apply to these cmdlets.
 
-To find the cmdlets that have a ComputerName parameter but do not use Windows
-PowerShell remoting, read the description of the ComputerName parameter of the
-cmdlets.
+To find the cmdlets that have a **ComputerName** parameter but do not use
+Windows PowerShell remoting, read the description of the **ComputerName**
+parameter of the cmdlets.
 
-## SYSTEM REQUIREMENTS
+## System requirements
 
 To run remote sessions on Windows PowerShell 3.0, the local and remote computers
 must have the following:
@@ -54,7 +54,7 @@ PowerShell 3.0, such as the ability to disconnect and reconnect to sessions,
 are available only when both computers are running Windows PowerShell 3.0.
 
 To find the version number of an installed version of PowerShell,
-use the $PSVersionTable automatic variable.
+use the `$PSVersionTable` automatic variable.
 
 Windows Remote Management (WinRM) 3.0 and Microsoft .NET Framework 4 are
 included in Windows 8, Windows Server 2012, and newer releases of the Windows
@@ -62,23 +62,23 @@ operating system. WinRM 3.0 is included in Windows Management Framework 3.0
 for older operating systems. If the computer does not have the required
 version of WinRM or the Microsoft .NET Framework, the installation fails.
 
-## USER PERMISSIONS
+## User permissions
 
 To create remote sessions and run remote commands, by default, the current
-user must be a member of the Administrators group on the remote computer or
+user must be a member of the **Administrators** group on the remote computer or
 provide the credentials of an administrator. Otherwise, the command fails.
 
 The permissions required to create sessions and run commands on a remote
 computer (or in a remote session on the local computer) are established by the
-session configuration (also known as an "endpoint") on the remote computer to
+session configuration (also known as an **endpoint**) on the remote computer to
 which the session connects. Specifically, the security descriptor on the
 session configuration determines who has access to the session configuration
 and who can use it to connect.
 
 The security descriptors on the default session configurations,
-Microsoft.PowerShell, Microsoft.PowerShell32, and
-Microsoft.PowerShell.Workflow, allow access only to members of the
-Administrators group.
+**Microsoft.PowerShell**, **Microsoft.PowerShell32**, and
+**Microsoft.PowerShell.Workflow**, allow access only to members of the
+**Administrators** group.
 
 If the current user doesn't have permission to use the session configuration,
 the command to run a command (which uses a temporary session) or create a
@@ -86,7 +86,7 @@ persistent session on the remote computer fails. The user can use the
 ConfigurationName parameter of cmdlets that create sessions to select a
 different session configuration, if one is available.
 
-Members of the Administrators group on a computer can determine who has
+Members of the **Administrators** group on a computer can determine who has
 permission to connect to the computer remotely by changing the security
 descriptors on the default session configurations and by creating new session
 configurations with different security descriptors.
@@ -94,46 +94,52 @@ configurations with different security descriptors.
 For more information about session configurations, see
 [about_Session_Configurations](about_Session_Configurations.md).
 
-## WINDOWS NETWORK LOCATIONS
+## Windows network locations
 
-Beginning in Windows PowerShell 3.0, the Enable-PSRemoting cmdlet can enable
+Beginning in Windows PowerShell 3.0, the `Enable-PSRemoting` cmdlet can enable
 remoting on client and server versions of Windows on private, domain, and
 public networks.
 
 On server versions of Windows with private and domain networks, the
-Enable-PSRemoting cmdlet creates firewall rules that allow unrestricted remote
+`Enable-PSRemoting` cmdlet creates firewall rules that allow unrestricted remote
 access. It also creates a firewall rule for public networks that allows remote
 access only from computers in the same local subnet. This local subnet
 firewall rule is enabled by default on server versions of Windows on public
-networks, but Enable-PSRemoting reapplies the rule in case it was changed or
+networks, but `Enable-PSRemoting` reapplies the rule in case it was changed or
 deleted.
 
 On client versions of Windows with private and domain networks, by default,
-the Enable-PSRemoting cmdlet creates firewall rules that allow unrestricted
+the `Enable-PSRemoting` cmdlet creates firewall rules that allow unrestricted
 remote access.
 
 To enable remoting on client versions of Windows with public networks, use the
-SkipNetworkProfileCheck parameter of the Enable-PSRemoting cmdlet. It creates
+**SkipNetworkProfileCheck** parameter of the `Enable-PSRemoting` cmdlet. It creates
 a firewall rule that allows remote access only from computers in the same
 local subnet.
 
 To remove the local subnet restriction on public networks and allow remote
 access from all locations on client and server versions of Windows, use the
-Set-NetFirewallRule cmdlet in the NetSecurity module. Run the following
+`Set-NetFirewallRule` cmdlet in the **NetSecurity** module. Run the following
 command:
 
 ```powershell
 Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 ```
 
-In Windows PowerShell 2.0, on server versions of Windows, Enable-PSRemoting
+> [!NOTE]
+> The name of the firewall rule can be different for different versions of
+> Windows. Use `Get-NetFirewallRule` to see a list of rules. Before enabling the
+> firewall rule, view the security settings in the rule to verify that the
+> configuration is appropriate for your environment.
+
+In Windows PowerShell 2.0, on server versions of Windows, `Enable-PSRemoting`
 creates firewall rules that permit remote access on all networks.
 
-In Windows PowerShell 2.0, on client versions of Windows, Enable-PSRemoting
+In Windows PowerShell 2.0, on client versions of Windows, `Enable-PSRemoting`
 creates firewall rules only on private and domain networks. If the network
-location is public, Enable-PSRemoting fails.
+location is public, `Enable-PSRemoting` fails.
 
-## RUN AS ADMINISTRATOR
+## Run as administrator
 
 Administrator privileges are required for the following remoting operations:
 
@@ -146,30 +152,30 @@ Administrator privileges are required for the following remoting operations:
   the settings in the LocalHost node of the WSMAN: drive.
 
 To perform these tasks, you must start PowerShell with the "Run as
-administrator" option even if you are a member of the Administrators group on
+administrator" option even if you are a member of the **Administrators** group on
 the local computer.
 
 In Windows 7 and in Windows Server 2008 R2, to start Windows PowerShell with
-the "Run as administrator" option:
+the **Run as administrator** option:
 
 1. Click Start, click All Programs, click Accessories, and then click
    the Windows PowerShell folder.
-2. Right-click Windows PowerShell, and then click "Run as administrator".
+1. Right-click Windows PowerShell, and then click **Run as administrator**.
 
-To start Windows PowerShell with the "Run as administrator" option:
+To start Windows PowerShell with the **Run as administrator** option:
 
 1. Click Start, click All Programs, and then click the Windows PowerShell
    folder.
-2. Right-click Windows PowerShell, and then click "Run as administrator".
+1. Right-click Windows PowerShell, and then click **Run as administrator**.
 
-The "Run as administrator" option is also available in other Windows Explorer
+The **Run as administrator** option is also available in other Windows Explorer
 entries for Windows PowerShell, including shortcuts. Just right-click the
-item, and then click "Run as administrator".
+item, and then click **Run as administrator**.
 
 When you start Windows PowerShell from another program such as Cmd.exe, use
-the "Run as administrator" option to start the program.
+the **Run as administrator** option to start the program.
 
-## HOW TO CONFIGURE YOUR COMPUTER FOR REMOTING
+## How to configure your computer for remoting
 
 Computers running all supported versions of Windows can establish remote
 connections to and run remote commands in PowerShell without any
@@ -180,10 +186,10 @@ remoting on the computer.
 
 Windows Server 2012 and newer releases of Windows Server are enabled for
 PowerShell remoting by default. If the settings are changed, you can
-restore the default settings by running the Enable-PSRemoting cmdlet.
+restore the default settings by running the `Enable-PSRemoting` cmdlet.
 
 On all other supported versions of Windows, you need to run the
-Enable-PSRemoting cmdlet to enable PowerShell remoting.
+`Enable-PSRemoting` cmdlet to enable PowerShell remoting.
 
 The remoting features of PowerShell are supported by the WinRM
 service, which is the Microsoft implementation of the Web Services for
@@ -193,8 +199,8 @@ configuration that allow users to connect to WS-Management.
 
 To configure PowerShell to receive remote commands:
 
-1. Start PowerShell with the "Run as administrator" option.
-2. At the command prompt, type: `Enable-PSRemoting`
+1. Start PowerShell with the **Run as administrator** option.
+1. At the command prompt, type: `Enable-PSRemoting`
 
 To verify that remoting is configured correctly, run a test command such as
 the following command, which creates a remote session on the local computer.
@@ -207,7 +213,7 @@ If remoting is configured correctly, the command will create a session on the
 local computer and return an object that represents the session. The output
 should resemble the following sample output:
 
-```output
+```Output
 Id Name        ComputerName    State    ConfigurationName
 -- ----        ------------    -----    -----
 1  Session1    localhost       Opened   Microsoft.PowerShell
@@ -216,7 +222,7 @@ Id Name        ComputerName    State    ConfigurationName
 If the command fails, for assistance, see
 [about_Remote_Troubleshooting](about_Remote_Troubleshooting.md).
 
-## UNDERSTAND POLICIES
+## Understand policies
 
 When you work remotely, you use two instances of PowerShell, one on
 the local computer and one on the remote computer. As a result, your work is
@@ -227,7 +233,7 @@ In general, before you connect and as you are establishing the connection, the
 policies on the local computer are in effect. When you are using the
 connection, the policies on the remote computer are in effect.
 
-## SEE ALSO
+## See also
 
 [about_Remote](about_Remote.md)
 
