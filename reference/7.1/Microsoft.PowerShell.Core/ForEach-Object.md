@@ -233,7 +233,7 @@ operator `$_`. It uses the dot syntax to specify the method and parentheses to e
 argument.
 
 The second command uses the **MemberName** parameter to specify the **Split** method and the
-**ArgumentList** parameter to identify the dot (".") as the split delimiter.
+**ArgumentList** parameter to identify the dot (`.`) as the split delimiter.
 
 The third command uses the **Foreach** alias of the `ForEach-Object` cmdlet and omits the names of
 the **MemberName** and **ArgumentList** parameters, which are optional.
