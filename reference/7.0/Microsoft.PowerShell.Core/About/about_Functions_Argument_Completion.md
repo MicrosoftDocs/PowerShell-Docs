@@ -10,7 +10,7 @@ title: About functions argument completion
 
 ## Short description
 Argument completion is a feature of PowerShell that provide hints, enables
-discovery and speed up input entry of argument values.
+discovery, and speeds up input entry of argument values.
 
 ## Long description
 
