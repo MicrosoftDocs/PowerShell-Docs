@@ -1,8 +1,7 @@
 ---
-ms.date:  12/23/2019
-keywords:  powershell,cmdlet
-title:  Performing Networking Tasks
 description: This article shows how to use WMI classes in PowerShell to manage network configuration setting in Windows.
+ms.date: 07/28/2021
+title:  Performing Networking Tasks
 ---
 # Performing Networking Tasks
 
@@ -15,11 +14,12 @@ tasks.
 To get all IP addresses in use on the local computer, use the following command:
 
 ```powershell
- Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
-  Select-Object -ExpandProperty IPAddress
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
+    Select-Object -ExpandProperty IPAddress
 ```
 
-The output of this command differs from most property lists, because values are enclosed in braces:
+Since the **IPAddress** property of a **Win32_NetworkAdapterConfiguration** object is an array, you
+must use the **ExpandProperty** parameter of `Select-Object` to see the entire list of addresses.
 
 ```Output
 10.0.0.1
@@ -35,16 +35,16 @@ fe80::60ea:29a7:a233:7cb7
 2601:600:a27f:a470::2ec1
 ```
 
-To understand why the braces appear, use the `Get-Member` cmdlet to examine the **IPAddress**
-property:
+Using the `Get-Member` cmdlet, you can see that the **IPAddress** property is an array:
 
 ```powershell
- Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
-  Get-Member -Name IPAddress
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
+    Get-Member -Name IPAddress
 ```
 
 ```Output
    TypeName: Microsoft.Management.Infrastructure.CimInstance#root/cimv2/Win32_NetworkAdapterConfiguration
+
 Name      MemberType Definition
 ----      ---------- ----------
 IPAddress Property   string[] IPAddress {get;}
@@ -72,7 +72,7 @@ In modern TCP/IP networks you are probably not interested in IPX or WINS propert
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
-  Select-Object -ExcludeProperty IPX*,WINS*
+    Select-Object -ExcludeProperty IPX*,WINS*
 ```
 
 This command returns detailed information about DHCP, DNS, routing, and other minor IP configuration
@@ -108,7 +108,7 @@ You can use an array to ping multiple computers with a single command. Because t
 one address, use the `ForEach-Object` to ping each address separately:
 
 ```powershell
-'127.0.0.1','localhost','research.microsoft.com' |
+'127.0.0.1','localhost','bing.com' |
   ForEach-Object -Process {
     Get-CimInstance -Class Win32_PingStatus -Filter ("Address='$_'") |
       Select-Object -Property Address,ResponseTime,StatusCode
@@ -120,13 +120,13 @@ network that uses network number 192.168.1.0 and a standard Class C subnet mask 
 Only addresses in the range of 192.168.1.1 through 192.168.1.254 are legitimate local addresses (0
 is always reserved for the network number and 255 is a subnet broadcast address).
 
-To represent an array of the numbers from 1 through 254 in PowerShell, use the statement **1..254.**
-A complete subnet ping can be performed by generating the array and then adding the values onto a
-partial address in the ping statement:
+To represent an array of the numbers from 1 through 254 in PowerShell, use the expression `1..254`.
+A complete subnet ping can be performed by adding each value in the range to a partial address in
+the ping statement:
 
 ```powershell
 1..254| ForEach-Object -Process {
-  Get-CimInstance -Class Win32_PingStatus -Filter ("Address='192.168.1.$_ '") } |
+  Get-CimInstance -Class Win32_PingStatus -Filter ("Address='192.168.1.$_'") } |
     Select-Object -Property Address,ResponseTime,StatusCode
 ```
 
@@ -151,34 +151,25 @@ Get-CimInstance -Class Win32_NetworkAdapter -ComputerName .
 ## Assigning the DNS Domain for a Network Adapter
 
 To assign the DNS domain for automatic name resolution, use the **SetDNSDomain** method of the
-**Win32_NetworkAdapterConfiguration**. Because you assign the DNS domain for each network adapter
-configuration independently, you need to use a `ForEach-Object` statement to assign the domain to
-each adapter:
+**Win32_NetworkAdapterConfiguration**. The **Query** parameter of `Invoke-CimMethod` takes a WQL
+query string. The cmdlet calls the method specified on each instance returned by the query.
 
 ```powershell
-Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
-  ForEach-Object -Process { $_.SetDNSDomain('fabrikam.com') }
+$wql = 'SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled=True'
+$args = @{ DnsDomain = 'fabrikam.com'}
+Invoke-CimMethod -MethodName SetDNSDomain -Arguments $args -Query $wql
 ```
 
-The filtering statement `IPEnabled=$true` is necessary, because even on a network that uses only
-TCP/IP, several of the network adapter configurations on a computer are not true TCP/IP adapters;
-they are general software elements supporting RAS, PPTP, QoS, and other services for all adapters
-and thus do not have an address of their own.
-
-You can filter the command by using the `Where-Object` cmdlet, instead of using the
-`Get-CimInstance` filter.
-
-```powershell
-Get-CimInstance -Class Win32_NetworkAdapterConfiguration |
-  Where-Object {$_.IPEnabled} |
-    ForEach-Object -Process {$_.SetDNSDomain('fabrikam.com')}
-```
+Filtering on `IPEnabled=True` is necessary, because even on a network that uses only TCP/IP, several
+of the network adapter configurations on a computer are not true TCP/IP adapters. They are general
+software elements supporting RAS, VPN, QoS, and other services for all adapters and thus do not have
+an address of their own.
 
 ## Performing DHCP Configuration Tasks
 
 Modifying DHCP details involves working with a set of network adapters, just as the DNS
-configuration does. There are several distinct actions you can perform by using WMI, and we will
-step through a few of the common ones.
+configuration does. There are several distinct actions you can perform using WMI, and we will step
+through a few of the common ones.
 
 ### Determining DHCP-Enabled Adapters
 
@@ -200,7 +191,7 @@ Because DHCP-related properties for an adapter generally begin with `DHCP`, you 
 parameter of `Format-Table` to display only those properties:
 
 ```powershell
-Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" |
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter  "IPEnabled=$true and DHCPEnabled=$true" |
   Format-Table -Property DHCP*
 ```
 
@@ -209,35 +200,33 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$t
 To enable DHCP on all adapters, use the following command:
 
 ```powershell
-Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
-  ForEach-Object -Process {$_.EnableDHCP()}
+$wql = 'SELECT * from Win32_NetworkAdapterConfiguration WHERE IPEnabled=True and DHCPEnabled=False'
+Invoke-CimMethod -MethodName ReleaseDHCPLease -Query $wql
 ```
 
-You can use the **Filter** statement `IPEnabled=$true and DHCPEnabled=$false` to avoid enabling DHCP
-where it is already enabled, but omitting this step will not cause errors.
+Using the filter statement `IPEnabled=True and DHCPEnabled=False` avoids enabling DHCP where it's
+already enabled.
 
 ### Releasing and Renewing DHCP Leases on Specific Adapters
 
-The **Win32_NetworkAdapterConfiguration** class has **ReleaseDHCPLease** and **RenewDHCPLease**
-methods. Both are used in the same way. In general, use these methods if you only need to release or
-renew addresses for an adapter on a specific subnet. The easiest way to filter adapters on a subnet
-is to choose only the adapter configurations that use the gateway for that subnet. For example, the
-following command releases all DHCP leases on adapters on the local computer that are obtaining DHCP
-leases from 192.168.1.254:
+Instances of the **Win32_NetworkAdapterConfiguration** class has `ReleaseDHCPLease` and
+`RenewDHCPLease` methods. Both are used in the same way. In general, use these methods if you only
+need to release or renew addresses for an adapter on a specific subnet. The easiest way to filter
+adapters on a subnet is to choose only the adapter configurations that use the gateway for that
+subnet. For example, the following command releases all DHCP leases on adapters on the local
+computer that are obtaining DHCP leases from 192.168.1.254:
 
 ```powershell
-Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" |
-  Where-Object {$_.DHCPServer -contains '192.168.1.254'} |
-    ForEach-Object -Process {$_.ReleaseDHCPLease()}
+$wql = 'SELECT * from Win32_NetworkAdapterConfiguration WHERE DHCPServer="192.168.1.1"'
+Invoke-CimMethod -MethodName ReleaseDHCPLease -Query $wql
 ```
 
-The only change for renewing a DHCP lease is to use the **RenewDHCPLease** method instead of the
-**ReleaseDHCPLease** method:
+The only change for renewing a DHCP lease is to use the `RenewDHCPLease` method instead of the
+`ReleaseDHCPLease` method:
 
 ```powershell
-Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" |
-  Where-Object {$_.DHCPServer -contains '192.168.1.254'} |
-    ForEach-Object -Process {$_.ReleaseDHCPLease()}
+$wql = 'SELECT * from Win32_NetworkAdapterConfiguration WHERE DHCPServer="192.168.1.1"'
+Invoke-CimMethod -MethodName RenewDHCPLease -Query $wql
 ```
 
 > [!NOTE]
@@ -247,85 +236,109 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$tru
 ### Releasing and Renewing DHCP Leases on All Adapters
 
 You can perform global DHCP address releases or renewals on all adapters by using the
-**Win32_NetworkAdapterConfiguration** methods, **ReleaseDHCPLeaseAll** and **RenewDHCPLeaseAll**.
+**Win32_NetworkAdapterConfiguration** methods, `ReleaseDHCPLeaseAll` and `RenewDHCPLeaseAll`.
 However, the command must apply to the WMI class, rather than a particular adapter, because
 releasing and renewing leases globally is performed on the class, not on a specific adapter.
-
-You can get a reference to a WMI class, instead of class instances, by listing all WMI classes and
-then selecting only the desired class by name. For example, the following command returns the
-**Win32_NetworkAdapterConfiguration** class:
+The `Invoke-CimMethod` cmdlet can call the methods of a class.
 
 ```powershell
-Get-CimInstance -List | Where-Object {$_.Name -eq 'Win32_NetworkAdapterConfiguration'}
-```
-
-You can treat the entire command as the class and then invoke the **ReleaseDHCPAdapterLease** method
-on it. In the following command, the parentheses surrounding the `Get-CimInstance` and
-`Where-Object` pipeline elements direct PowerShell to evaluate them first:
-
-```powershell
-(Get-CimInstance -List |
-  Where-Object {$_.Name -eq 'Win32_NetworkAdapterConfiguration'}).ReleaseDHCPLeaseAll()
+Invoke-CimMethod -ClassName Win32_NetworkAdapterConfiguration -MethodName ReleaseDHCPLeaseAll
 ```
 
 You can use the same command format to invoke the **RenewDHCPLeaseAll** method:
 
 ```powershell
-(Get-CimInstance -List |
-  Where-Object {$_.Name -eq 'Win32_NetworkAdapterConfiguration'}).RenewDHCPLeaseAll()
+Invoke-CimMethod -ClassName Win32_NetworkAdapterConfiguration -MethodName RenewDHCPLeaseAll
 ```
 
 ## Creating a Network Share
 
-To create a network share, use the **Create** method of **Win32_Share**:
+To create a network share, use the `Create` method of **Win32_Share**:
 
 ```powershell
-(Get-CimInstance -List |
-  Where-Object {$_.Name -eq 'Win32_Share'}).Create(
-    'C:\temp','TempShare',0,25,'test share of the temp folder'
-  )
+Invoke-CimMethod -ClassName Win32_Share -MethodName Create -Arguments @{
+    Path = 'C:\temp'
+    Name = 'TempShare'
+    Type = [uint32]0 #Disk Drive
+    MaximumAllowed = [uint32]25
+    Description = 'test share of the temp folder'
+}
 ```
 
-You can also create the share by using `net share` in PowerShell on Windows:
+This is equivalent to the following `net share` command on Windows:
 
 ```powershell
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 ```
 
-## Removing a Network Share
-
-You can remove a network share with **Win32_Share**, but the process is slightly different from
-creating a share, because you need to retrieve the specific share to be removed, rather than the
-**Win32_Share** class. The following statement deletes the share **TempShare**:
+To call a method of a WMI class that takes parameters you must know what parameters are available
+and the types of those parameters. For example, you can list the methods of the **Win32_Class** with
+the following commands:
 
 ```powershell
-(Get-CimInstance -Class Win32_Share -Filter "Name='TempShare'").Delete()
-```
-
-In Windows, `net share` works as well:
-
-```powershell
-net share tempshare /delete
+(Get-CimClass -ClassName Win32_Share).CimClassMethods
 ```
 
 ```Output
-tempshare was deleted successfully.
+Name          ReturnType Parameters                                   Qualifiers
+----          ---------- ----------                                   ----------
+Create            UInt32 {Access, Description, MaximumAllowed, Name…} {Constructor, Implemented, MappingStrings, Stati…
+SetShareInfo      UInt32 {Access, Description, MaximumAllowed}        {Implemented, MappingStrings}
+GetAccessMask     UInt32 {}                                           {Implemented, MappingStrings}
+Delete            UInt32 {}                                           {Destructor, Implemented, MappingStrings}
+```
+
+Use the following command to list the parameters of the `Create` method.
+
+```powershell
+(Get-CimClass -ClassName Win32_Share).CimClassMethods['Create'].Parameters
+```
+
+```Output
+Name            CimType Qualifiers                                  ReferenceClassName
+----            ------- ----------                                  ------------------
+Access         Instance {EmbeddedInstance, ID, In, MappingStrings…}
+Description      String {ID, In, MappingStrings, Optional}
+MaximumAllowed   UInt32 {ID, In, MappingStrings, Optional}
+Name             String {ID, In, MappingStrings}
+Password         String {ID, In, MappingStrings, Optional}
+Path             String {ID, In, MappingStrings}
+Type             UInt32 {ID, In, MappingStrings}
+```
+
+You can also read the documentation for
+[Create](/windows/win32/cimwin32prov/create-method-in-class-win32-share) method of the
+**Win32_Share** class.
+
+## Removing a Network Share
+
+You can remove a network share with **Win32_Share**, but the process is slightly different from
+creating a share, because you need to retrieve the specific instance to be removed, rather than the
+**Win32_Share** class. The following example deletes the share **TempShare**:
+
+```powershell
+$wql = 'SELECT * from Win32_Share WHERE Name="TempShare"'
+Invoke-CimMethod -MethodName Delete -Query $wql
 ```
 
 ## Connecting a Windows Accessible Network Drive
 
-The `New-PSDrive` cmdlets creates a PowerShell drive, but drives created this way are available only
-to PowerShell. To create a new networked drive, you can use the **WScript.Network** COM object. The
-following command maps the share `\\FPS01\users` to local drive `B:`,
+The `New-PSDrive` cmdlet can create a PowerShell drive that is mapped to a network share.
 
 ```powershell
-(New-Object -ComObject WScript.Network).MapNetworkDrive('B:', '\\FPS01\users')
+New-PSDrive -Name "X" -PSProvider "FileSystem" -Root "\\Server01\Public"
 ```
 
-On Windows, the `net use` command works as well:
+However, drives created this way are only available to PowerShell session where they are created. To
+map a drive that is available outside of PowerShell (or to other PowerShell sessions), you must use
+the **Persist** parameter.
 
 ```powershell
-net use B: \\FPS01\users
+New-PSDrive -Persist -Name "X" -PSProvider "FileSystem" -Root "\\Server01\Public"
 ```
 
-Drives mapped with either **WScript.Network** or `net use` are immediately available to PowerShell.
+> [!NOTE]
+> Persistently mapped drives may not be available when running in an elevated context. This is the
+> default behavior of Windows UAC. For more information, see the following article:
+>
+>- [Mapped drives are not available from an elevated prompt when UAC is configured to Prompt for credentials](/troubleshoot/windows-client/networking/mapped-drives-not-available-from-elevated-command)
