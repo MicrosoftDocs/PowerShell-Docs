@@ -1,5 +1,5 @@
 ---
-ms.date:  12/23/2019
+ms.date: 07/28/2021
 keywords:  powershell,cmdlet
 title:  Working with Software Installations
 description: This article shows how to use WMI to manage software installed in Windows.
@@ -160,47 +160,8 @@ command:
 $UninstallableApplications | ForEach-Object -Process { $_.GetValue('DisplayName') }
 ```
 
-There is no guarantee that these values are unique. In the following example, two installed items
-appear as "Windows Media Encoder 9 Series":
-
-```powershell
-$UninstallableApplications | Where-Object -FilterScript {
-  $_.GetValue("DisplayName") -eq "Microsoft Silverlight"
-}
-```
-
-```Output
-    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
-
-Name                           Property
-----                           --------
-{89F4137D-6C26-4A84-BDB8-2E5A4 AuthorizedCDFPrefix :
-BB71E00}                       Comments            :
-                               Contact             :
-                               DisplayVersion      : 5.1.50918.0
-                               HelpLink            : https://go.microsoft.com/fwlink/?LinkID=91955
-                               HelpTelephone       :
-                               InstallDate         : 20190115
-                               InstallLocation     : C:\Program Files\Microsoft Silverlight\
-                               InstallSource       : c:\ef64c54526db9c34cd477c103e68a254\
-                               ModifyPath          : MsiExec.exe /X{89F4137D-6C26-4A84-BDB8-2E5A4BB71E00}
-                               NoModify            : 1
-                               NoRepair            : 1
-                               Publisher           : Microsoft Corporation
-                               Readme              :
-                               Size                :
-                               EstimatedSize       : 236432
-                               UninstallString     : MsiExec.exe /X{89F4137D-6C26-4A84-BDB8-2E5A4BB71E00}
-                               URLInfoAbout        :
-                               URLUpdateInfo       :
-                               VersionMajor        : 5
-                               VersionMinor        : 1
-                               WindowsInstaller    : 1
-                               Version             : 84002534
-                               Language            : 1033
-                               DisplayName         : Microsoft Silverlight
-                               sEstimatedSize2     : 79214
-```
+> [!NOTE]
+> There is no guarantee that the **DisplayName** values are unique.
 
 ## Installing Applications
 
