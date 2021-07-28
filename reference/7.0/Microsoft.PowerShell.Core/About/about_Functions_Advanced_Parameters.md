@@ -1,8 +1,7 @@
 ---
 description:  Explains how to add parameters to advanced functions.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 07/27/2021
+ms.date: 07/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Parameters
@@ -166,11 +165,9 @@ value is required.
   from its default functionality to a less common or more complicated mode. The
   simplest behavior of a command should be the default behavior that does not
   require the use of switch parameters.
-- Switch parameters should not be mandatory, since that defeats the purpose of
-  a switch; a mandatory switch can only take one value. The only case where is
-  is necessary to make a switch parameter mandatory is when it is needed to
-  differentiate a parameter set. In this case, the switch parameter must be
-  mandatory.
+- Switch parameters should not be mandatory since a switch, when used, can only
+  be `$true`. The only case where it is necessary to make a switch parameter
+  mandatory is when it is needed to differentiate a parameter set.
 - Explicitly setting a switch from a boolean can be done with
   `-MySwitch:$boolValue` and in splatting with
   `$params = @{ MySwitch = $boolValue }`.
