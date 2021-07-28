@@ -165,11 +165,9 @@ value is required.
   from its default functionality to a less common or more complicated mode. The
   simplest behavior of a command should be the default behavior that does not
   require the use of switch parameters.
-- Switch parameters should not be mandatory, since that defeats the purpose of
-  a switch; a mandatory switch can only take one value. The only case where is
-  is necessary to make a switch parameter mandatory is when it is needed to
-  differentiate a parameter set. In this case, the switch parameter must be
-  mandatory.
+- Switch parameters should not be mandatory since a switch, when used, can only
+  be `$true`. The only case where it is necessary to make a switch parameter
+  mandatory is when it is needed to differentiate a parameter set.
 - Explicitly setting a switch from a boolean can be done with
   `-MySwitch:$boolValue` and in splatting with
   `$params = @{ MySwitch = $boolValue }`.
