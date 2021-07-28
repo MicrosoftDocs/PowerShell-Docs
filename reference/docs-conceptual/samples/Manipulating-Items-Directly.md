@@ -1,5 +1,5 @@
 ---
-ms.date:  06/05/2017
+ms.date: 07/28/2021
 keywords:  powershell,cmdlet
 title:  Manipulating Items Directly
 description: PowerShell provides several cmdlets that help manage items on local and remote computers. Items are objects exposed by PowerShell providers like the file system, registry, certificates, and others.
@@ -215,7 +215,7 @@ when you enter its commands. For example, if you try to remove the `New.Director
 will be prompted to confirm the command, because the folder contains files:
 
 ```powershell
-Remove-Item C:\New.Directory
+Remove-Item C:\temp\New.Directory
 ```
 
 ```Output
