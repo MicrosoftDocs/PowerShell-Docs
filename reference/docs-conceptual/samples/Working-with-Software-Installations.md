@@ -161,7 +161,7 @@ $UninstallableApplications | ForEach-Object -Process { $_.GetValue('DisplayName'
 ```
 
 > [!NOTE]
->There is no guarantee that these values are unique
+> There is no guarantee that the **DisplayName** values are unique.
 
 ## Installing Applications
 
