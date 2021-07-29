@@ -14,7 +14,8 @@ pasting the files with Windows Explorer onto a single remote computer; however, 
 you may wish to use a more sophisticated installation process. Regardless of how you get your module
 onto the system, PowerShell can use a number of techniques that will let users find and use your
 modules. Therefore, the main issue for installation is ensuring that PowerShell will be able to find
-your module. For more information, see [Importing a PowerShell Module](./importing-a-powershell-module.md).
+your module. For more information, see
+[Importing a PowerShell Module](./importing-a-powershell-module.md).
 
 ## Rules for Installing Modules
 
@@ -26,21 +27,21 @@ use, modules that you get from other parties, and modules that you distribute to
 Whenever possible, install all modules in a path that is listed in the **PSModulePath** environment
 variable or add the module path to the **PSModulePath** environment variable value.
 
-The **PSModulePath** environment variable ($Env:PSModulePath) contains the locations of Windows
+The **PSModulePath** environment variable (`$Env:PSModulePath`) contains the locations of Windows
 PowerShell modules. Cmdlets rely on the value of this environment variable to find modules.
 
 By default, the **PSModulePath** environment variable value contains the following system and user
 module directories, but you can add to and edit the value.
 
-- `$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
+- `$PSHome\Modules` (`%Windir%\System32\WindowsPowerShell\v1.0\Modules`)
 
   > [!WARNING]
   > This location is reserved for modules that ship with Windows. Do not install modules to this
   > location.
 
-- `$Home\Documents\WindowsPowerShell\Modules` (%UserProfile%\Documents\WindowsPowerShell\Modules)
+- `$Home\Documents\WindowsPowerShell\Modules` (`%UserProfile%\Documents\WindowsPowerShell\Modules`)
 
-- `$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)
+- `$Env:ProgramFiles\WindowsPowerShell\Modules` (`%ProgramFiles%\WindowsPowerShell\Modules`)
 
   To get the value of the **PSModulePath** environment variable, use either of the following
   commands.
@@ -64,7 +65,6 @@ module directories, but you can add to and edit the value.
 
   #Add the paths in $p to the PSModulePath value.
   [Environment]::SetEnvironmentVariable("PSModulePath",$p)
-
   ```
 
   > [!IMPORTANT]
@@ -96,7 +96,6 @@ C:\Program Files
         Fabrikam
           Fabrikam.psd1 (module manifest)
           Fabrikam.dll (module assembly)
-
 ```
 
 ### Effect of Incorrect Installation
@@ -107,8 +106,9 @@ following, do not work.
 
 - The Module Auto-Loading feature cannot import the module automatically.
 
-- The `ListAvailable` parameter of the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module)
-  cmdlet cannot find the module.
+- The `ListAvailable` parameter of the
+  [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet cannot find the
+  module.
 
 - The [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet cannot find
   the module. To import the module, you must provide the full path to the root module file or module
@@ -121,8 +121,9 @@ following, do not work.
 - The [Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet cannot find
   commands in the module.
 
-- The [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) and [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)
-  cmdlets cannot update or save help for the module.
+- The [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) and
+  [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) cmdlets cannot update or save
+  help for the module.
 
 - The [Show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) cmdlet cannot
   find and display the commands in the module.
@@ -177,7 +178,6 @@ C:\Program Files
         Fabrikam
           Fabrikam.psd1 (module manifest)
           Fabrikam.dll (module assembly)
-
 ```
 
 To enable the Windows PowerShell module discovery features to find the Fabrikam module, the Fabrikam
@@ -228,15 +228,15 @@ To install multiple versions of the same module, use the following procedure.
 
 1. Create a directory for each version of the module. Include the version number in the directory
    name.
-2. Create a module manifest for each version of the module. In the value of the **ModuleVersion**
+1. Create a module manifest for each version of the module. In the value of the **ModuleVersion**
    key in the manifest, enter the module version number. Save the manifest file (.psd1) in the
    version-specific directory for the module.
-3. Add the module root folder path to the value of the **PSModulePath** environment variable, as
+1. Add the module root folder path to the value of the **PSModulePath** environment variable, as
    shown in the following examples.
 
 To import a particular version of the module, the end-user can use the `MinimumVersion` or
-`RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
-cmdlet.
+`RequiredVersion` parameters of the
+[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
 
 For example, if the Fabrikam module is available in versions 8.0 and 9.0, the Fabrikam module
 directory structure might resemble the following.
@@ -294,6 +294,20 @@ manifest to specify a noun prefix for all commands exported from the module.
 Users can use the **Prefix** parameter of the `Import-Module` cmdlet to use an alternate prefix. The
 value of the **Prefix** parameter takes precedence over the value of the **DefaultCommandPrefix**
 key.
+
+## Supporting paths on non-Windows systems
+
+Non-Windows platforms use the colon (`:`) character as a path separator and a forward-slash (`/`)
+character as a directory separator. The `[System.IO.Path]` class has static members that can be
+used to make your code work on any platform:
+
+- `[System.IO.Path]::PathSeparator` - returns the character used to separate paths in a PATH
+  environment variable for the host platform
+- `[System.IO.Path]::DirectorySeparatorChar` - returns the character used to separate directory
+  names with a path for the host platform
+
+Use these static properties to in place of the `;` and `\` characters when you are constructing path
+strings.
 
 ## See Also
 
