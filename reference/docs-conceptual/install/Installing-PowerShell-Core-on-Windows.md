@@ -21,14 +21,14 @@ To enable PowerShell remoting over WSMan, the following prerequisites need to be
 
 ## Download the installer package
 
-To install PowerShell on Windows, download the [latest][] install package from GitHub. You can also
-find the latest [preview][] version. Scroll down to the **Assets** section of the Release page. The
-**Assets** section may be collapsed, so you may need to click to expand it.
+To install PowerShell on Windows, download the [latest][latest] install package from GitHub. You can
+also find the latest [preview][preview] version. Scroll down to the **Assets** section of the
+Release page. The **Assets** section may be collapsed, so you may need to click to expand it.
 
 > [!NOTE]
 > The installation commands in this article are for the latest releases of PowerShell. To install a
 > different version of PowerShell, adjust the command to match the version you need. To see all
-> PowerShell releases, visit the [releases][] page in the PowerShell repository on GitHub.
+> PowerShell releases, visit the [releases][releases] page in the PowerShell repository on GitHub.
 
 ## <a id="msi" />Installing the MSI package
 
@@ -100,7 +100,7 @@ values are changed for each major release.
 ## <a id="zip" />Installing the ZIP package
 
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
-the following ZIP archives from the [releases][] page.
+the following ZIP archives from the [releases][releases] page.
 
 - PowerShell-7.1.3-win-x64.zip
 - PowerShell-7.1.3-win-x86.zip
@@ -174,8 +174,9 @@ Windows 10 IoT Core adds Windows PowerShell when you include _IOT_POWERSHELL_ fe
 use to deploy PowerShell 7. The steps defined above for Windows 10 IoT Enterprise can be followed
 for IoT Core as well.
 
-For adding the latest PowerShell in the shipping image, use [Import-PSCoreRelease][] command to
-include the package in the workarea and add _OPENSRC_POWERSHELL_ feature to your image.
+For adding the latest PowerShell in the shipping image, use
+[Import-PSCoreRelease][Import-PSCoreRelease] command to include the package in the workarea and add
+_OPENSRC_POWERSHELL_ feature to your image.
 
 > [!NOTE]
 > For ARM64 architecture, Windows PowerShell is not added when you include _IOT_POWERSHELL_. So the
@@ -203,7 +204,8 @@ In both cases, you need the Windows 10 x64 ZIP release package. Run the commands
    image.
 1. Unmount the image and boot it.
 1. Connect to the built-in instance of Windows PowerShell.
-1. Follow the instructions to create a remoting endpoint using the ["another instance technique"][].
+1. Follow the instructions to create a remoting endpoint using the
+   ["another instance technique"][instance].
 
 ### Online Deployment of PowerShell
 
@@ -235,7 +237,7 @@ Deploy PowerShell to Nano Server using the following steps.
   ```
 
 - If you want WSMan-based remoting, follow the instructions to create a remoting endpoint using the
-  ["another instance technique"][].
+  ["another instance technique"][instance].
 
 ## Install as a .NET Global tool
 
@@ -316,7 +318,7 @@ For more information, see
 > supported. The package is built for testing purposes during the preview period.
 
 To manually install the MSIX package on a Windows 10 client, download the MSIX package from our
-GitHub [releases][] page. Scroll down to the **Assets** section of the Release you want to
+GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to
 install. The Assets section may be collapsed, so you may need to click to expand it.
 
 The MSIX file looks like this - `PowerShell-<version>-win-<os-arch>.msix`
@@ -358,5 +360,5 @@ support those methods.
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
 [winget]: /windows/package-manager/winget
-["another instance technique"]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register
+[instance]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register
 [Import-PSCoreRelease]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease

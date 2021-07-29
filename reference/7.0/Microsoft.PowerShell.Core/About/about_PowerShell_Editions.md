@@ -1,5 +1,5 @@
 ---
-description: Different editions of PowerShell run on different underlying runtimes. 
+description: Different editions of PowerShell run on different underlying runtimes.
 Locale: en-US
 ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_editions?view=powershell-7&WT.mc_id=ps-gethelp
@@ -210,7 +210,7 @@ there are things you can do to ensure cross-edition compatibility.
 
 The only true way to confirm and continually validate compatibility however is to write tests for
 your script or module and run them on all versions and editions of PowerShell you need compatibility
-with. A recommended testing framework for this is [Pester][].
+with. A recommended testing framework for this is [Pester][Pester].
 
 ### PowerShell script
 
@@ -220,14 +220,14 @@ you use that are affected by edition compatibility.
 Generally, scripts that work in PowerShell 6.1 and above will work with Windows PowerShell 5.1,
 but there are some exceptions.
 
-Version 1.18.0 [PSScriptAnalyzer][] module has rules like [`PSUseCompatibleCommands`][] and
-[`PSUseCompatibleTypes`][] that are able to detect possibly incompatible usage of commands
+Version 1.18.0 [PSScriptAnalyzer][pssa] module has rules like [PSUseCompatibleCommands][psucc] and
+[PSUseCompatibleTypes][psuct] that are able to detect possibly incompatible usage of commands
 and .NET APIs in PowerShell scripts.
 
 ### .NET assemblies
 
 If you are writing a binary module or a module that incorporates .NET assemblies (DLLs) generated
-from source code, you should compile against [.NET Standard][] and [PowerShell Standard][]
+from source code, you should compile against [.NET Standard][netstd] and [PowerShell Standard][psstd]
 for compile-time compatibility validation of .NET and PowerShell API compatibility.
 
 Although these libraries are able to check some compatibility at compile time, they won't be able
@@ -241,8 +241,8 @@ to catch possible behavioral differences between editions. For this you must sti
 - [Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support)
 
 [Pester]: https://github.com/pester/Pester/wiki/Pester
-[PSScriptAnalyzer]: https://github.com/PowerShell/PSScriptAnalyzer
-[`PSUseCompatibleCommands`]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleCommands.md
-[`PSUseCompatibleTypes`]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleTypes.md
-[.NET Standard]: /dotnet/standard/net-standard
-[PowerShell Standard]: https://devblogs.microsoft.com/powershell/powershell-standard-library-build-single-module-that-works-across-windows-powershell-and-powershell-core/
+[pssa]: https://github.com/PowerShell/PSScriptAnalyzer
+[psucc]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleCommands.md
+[psuct]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleTypes.md
+[netstd]: /dotnet/standard/net-standard
+[psstd]: https://devblogs.microsoft.com/powershell/powershell-standard-library-build-single-module-that-works-across-windows-powershell-and-powershell-core/

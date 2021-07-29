@@ -299,7 +299,7 @@ foreach ($n in $number) {
 
 Notice that in the previous example, return outputs the first result and then exists out of the
 loop. A more thorough explanation of the result statement can be found in one of my blog articles:
-["The PowerShell return keyword"][].
+["The PowerShell return keyword"]["The PowerShell return keyword"].
 
 ## Summary
 
@@ -313,14 +313,14 @@ In this chapter, you've learned about the different types of loops that exist in
 
 ## Recommended Reading
 
-- [ForEach-Object][]
-- [about_ForEach][]
-- [about_For][]
-- [about_Do][]
-- [about_While][]
-- [about_Break][]
-- [about_Continue][]
-- [about_Return][]
+- [ForEach-Object][ForEach-Object]
+- [about_ForEach][about_ForEach]
+- [about_For][about_For]
+- [about_Do][about_Do]
+- [about_While][about_While]
+- [about_Break][about_Break]
+- [about_Continue][about_Continue]
+- [about_Return][about_Return]
 
 <!-- link references -->
 [ForEach-Object]: /powershell/module/microsoft.powershell.core/foreach-object

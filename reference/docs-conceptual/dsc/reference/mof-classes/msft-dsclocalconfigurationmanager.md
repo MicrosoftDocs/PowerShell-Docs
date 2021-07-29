@@ -25,7 +25,7 @@ class MSFT_DSCLocalConfigurationManager
 
 The **MSFT_DSCLocalConfigurationManager** class has the following members:
 
-- [Methods][]
+- Methods
 
 ### Methods
 

@@ -44,9 +44,9 @@ Given a key/value pair object, the key and associated value can be obtained by u
 properties Key and Value, respectively.
 
 Given one or more keys, the corresponding value(s) can be accessed via the Hashtable subscript
-operator `[]` ([§7.1.4.3][]).
+operator `[]` ([§7.1.4.3][§7.1.4.3]).
 
-All Hashtables have type `Hashtable` ([§4.3.3][]).
+All Hashtables have type `Hashtable` ([§4.3.3][§4.3.3]).
 
 The order of the keys in the collection returned by Keys is unspecified; however, it is the same
 order as the associated values in the collection returned by Values.
@@ -65,14 +65,14 @@ returned by Keys and Values have type **ICollection**.
 
 ## 10.2 Hashtable creation
 
-A `Hashtable` is created via a hash literal ([§7.1.9][]) or the
+A `Hashtable` is created via a hash literal ([§7.1.9][§7.1.9]) or the
 [New-Object](xref:Microsoft.PowerShell.Utility.New-Object) cmdlet. It can be created with zero or
 more elements. The Count property returns the current element count.
 
 ## 10.3 Adding and removing Hashtable elements
 
-An element can be added to a `Hashtable` by assigning ([§7.11.1][]) a value to a non-existent key
-name or to a subscript ([§7.1.4.3][]) that uses a non-existent key name. Removal of an element
+An element can be added to a `Hashtable` by assigning ([§7.11.1][§7.11.1]) a value to a non-existent key
+name or to a subscript ([§7.1.4.3][§7.1.4.3]) that uses a non-existent key name. Removal of an element
 requires the use of the Remove method. For example,
 
 ```powershell
@@ -85,7 +85,7 @@ $h1.Remove("Salaried") # removes element Salaried
 ## 10.4 Hashtable concatenation
 
 Hashtables can be concatenated via the `+` and `+=` operators, both of which result in the creation
-of a new `Hashtable`. The existing Hashtables are unchanged. See [§7.7.4][] for more information.
+of a new `Hashtable`. The existing Hashtables are unchanged. See [§7.7.4][§7.7.4] for more information.
 
 ## 10.5 Hashtables as reference types
 

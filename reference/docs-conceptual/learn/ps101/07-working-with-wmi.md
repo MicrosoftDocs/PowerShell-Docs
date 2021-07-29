@@ -364,7 +364,7 @@ PSComputerName    : sql03
 I've written numerous blog articles about the WMI and CIM cmdlets. One of the most useful ones is
 about a function that I created to automatically determine if WSMan or DCOM should be used and set
 up the CIM session automatically without having to figure out which one manually. That blog article
-is titled [PowerShell Function to Create CimSessions to Remote Computers with Fallback to Dcom][].
+is titled [PowerShell Function to Create CimSessions to Remote Computers with Fallback to Dcom][PowerShell Function to Create CimSessions to Remote Computers with Fallback to Dcom].
 
 When you're finished with the CIM sessions, you should remove them with the `Remove-CimSession`
 cmdlet. To remove all CIM sessions, simply pipe `Get-CimSession` to `Remove-CimSession`.
@@ -391,11 +391,11 @@ the WSMan or DCOM protocol.
 
 ## Recommended Reading
 
-- [about_WMI][]
-- [about_WMI_Cmdlets][]
-- [about_WQL][]
-- [CimCmdlets Module][]
-- [Video: Using CIM Cmdlets and CIM Sessions][]
+- [about_WMI][about_WMI]
+- [about_WMI_Cmdlets][about_WMI_Cmdlets]
+- [about_WQL][about_WQL]
+- [CimCmdlets Module][CimCmdlets Module]
+- [Video: Using CIM Cmdlets and CIM Sessions][Video: Using CIM Cmdlets and CIM Sessions]
 
 <!-- link references -->
 [about_WMI]: /powershell/module/microsoft.powershell.core/about/about_wmi

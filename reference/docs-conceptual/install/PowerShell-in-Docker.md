@@ -44,7 +44,7 @@ docker rmi mcr.microsoft.com/powershell
 
 ## Legal and Licensing
 
-PowerShell is licensed under the [MIT license][].
+PowerShell is licensed under the [MIT license][mit].
 
 ### Windows Docker File and Image Licenses
 
@@ -66,7 +66,7 @@ PowerShell from the installed location. The telemetry we collect falls under the
 [install]: https://docs.docker.com/engine/installation/
 [docker-release]: https://hub.docker.com/r/microsoft/powershell/
 [appinsights]: https://azure.microsoft.com/services/application-insights/
-[MIT license]: https://github.com/PowerShell/PowerShell/tree/master/LICENSE.txt
+[mit]: https://github.com/PowerShell/PowerShell/tree/master/LICENSE.txt
 [PowerShell-Docker]: https://github.com/PowerShell/PowerShell-Docker
 [Window Server Core]: https://hub.docker.com/r/microsoft/windowsservercore/
 [Nano Server]: https://hub.docker.com/r/microsoft/nanoserver/

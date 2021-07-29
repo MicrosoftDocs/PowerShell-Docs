@@ -14,7 +14,7 @@ directives. Comments using such syntax are called *help comments*. The cmdlet
 
 A help comment contains a *help directive* of the form .*name* followed on one or more subsequent
 lines by the help content text. The help comment can be made up of a series of
-*single-line-comment*s or a *delimited-comment* ([§2.2.3][]). The set of comments comprising the
+*single-line-comment*s or a *delimited-comment* ([§2.2.3][§2.2.3]). The set of comments comprising the
 documentation for a single entity is called a *help topic*.
 
 For example,
@@ -76,7 +76,7 @@ Syntax:
 Description:
 
 This directive allows for a detailed description of the function or script. (The `.SYNOPSIS`
-directive ([§A.2.11][]) is intended for a brief description.) This directive can be used only once
+directive ([§A.2.11][§A.2.11]) is intended for a brief description.) This directive can be used only once
 in each topic.
 
 Examples:
@@ -152,14 +152,14 @@ Syntax:
 
 Description:
 
-Specifies the help category of the item in **ForwardHelpTargetName** ([§A.2.5][]). Valid values are
+Specifies the help category of the item in **ForwardHelpTargetName** ([§A.2.5][§A.2.5]). Valid values are
 **Alias**, **All**, **Cmdlet**, **ExternalScript**, **FAQ**, **Filter**, **Function**, **General**,
 **Glossary**, **HelpFile**, **Provider**, and **ScriptCommand**. Use this directive to avoid
 conflicts when there are commands with the same name.
 
 Examples:
 
-See [§A.2.5][].
+See [§A.2.5][§A.2.5].
 
 ### A.2.5 .FORWARDHELPTARGETNAME
 
@@ -364,7 +364,7 @@ Syntax:
 Description:
 
 This directive allows for a brief description of the function or script. (The `.DESCRIPTION`
-directive ([§A.2.1][]) is intended for a detailed description.) This directive can be used only once
+directive ([§A.2.1][§A.2.1]) is intended for a detailed description.) This directive can be used only once
 in each topic.
 
 Examples:

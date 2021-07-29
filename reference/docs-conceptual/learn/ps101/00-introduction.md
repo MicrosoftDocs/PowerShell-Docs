@@ -44,8 +44,8 @@ covered in that chapter.
 
 Mike F Robbins is a former Microsoft MVP, co-author of _Windows PowerShell TFM 4th Edition_, and a
 contributing author in the _PowerShell Deep Dives_ book. Mike has been a strong supporter of the
-PowerShell community and is now the lead writer for [Azure PowerShell][] at Microsoft. He blogs at
-[mikefrobbins.com][] and can be found on twitter [@mikefrobbins][].
+PowerShell community and is now the lead writer for [Azure PowerShell][Azure PowerShell] at Microsoft. He blogs at
+[mikefrobbins.com][mikefrobbins.com] and can be found on twitter [@mikefrobbins][@mikefrobbins].
 
 ## Lab environment
 

@@ -367,10 +367,10 @@ manifest for your script module.
 
 ## Recommended Reading
 
-- [How to Create PowerShell Script Modules and Module Manifests][]
-- [about_Modules][]
-- [New-ModuleManifest][]
-- [Export-ModuleMember][]
+- [How to Create PowerShell Script Modules and Module Manifests][How to Create PowerShell Script Modules and Module Manifests]
+- [about_Modules][about_Modules]
+- [New-ModuleManifest][New-ModuleManifest]
+- [Export-ModuleMember][Export-ModuleMember]
 
 <!-- link references -->
 [How to Create PowerShell Script Modules and Module Manifests]: https://mikefrobbins.com/2013/07/04/how-to-create-powershell-script-modules-and-module-manifests/

@@ -376,12 +376,12 @@ multiple commands against the same remote computer.
 
 ## Recommended Reading
 
-- [about_Remote][]
-- [about_Remote_Output][]
-- [about_Remote_Requirements][]
-- [about_Remote_Troubleshooting][]
-- [about_Remote_Variables][]
-- [PowerShell Remoting FAQ][]
+- [about_Remote][about_Remote]
+- [about_Remote_Output][about_Remote_Output]
+- [about_Remote_Requirements][about_Remote_Requirements]
+- [about_Remote_Troubleshooting][about_Remote_Troubleshooting]
+- [about_Remote_Variables][about_Remote_Variables]
+- [PowerShell Remoting FAQ][PowerShell Remoting FAQ]
 
 <!-- link references -->
 [PowerShell Remoting FAQ]: ../remoting/powershell-remoting-faq.yml

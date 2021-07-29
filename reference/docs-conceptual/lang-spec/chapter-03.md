@@ -18,11 +18,11 @@ stores:
 
 | **Provider** | **Drive Name**  | **Description**                     | **Ref.** |
 |--------------|-----------------|-------------------------------------|----------|
-| Alias        | Alias:          | PowerShell aliases                  | [§3.1.1][]   |
-| Environment  | Env:            | Environment variables               | [§3.1.2][]   |
-| FileSystem   | A:, B:, C:, ... | Disk drives, directories, and files | [§3.1.3][]   |
-| Function     | Function:       | PowerShell functions                | [§3.1.4][]   |
-| Variable     | Variable:       | PowerShell variables                | [§3.1.5][]   |
+| Alias        | Alias:          | PowerShell aliases                  | [§3.1.1][§3.1.1]   |
+| Environment  | Env:            | Environment variables               | [§3.1.2][§3.1.2]   |
+| FileSystem   | A:, B:, C:, ... | Disk drives, directories, and files | [§3.1.3][§3.1.3]   |
+| Function     | Function:       | PowerShell functions                | [§3.1.4][§3.1.4]   |
+| Variable     | Variable:       | PowerShell variables                | [§3.1.5][§3.1.5]   |
 
 Windows PowerShell:
 
@@ -38,14 +38,14 @@ The following cmdlets deal with providers and drives:
   or more providers
 - [Get-PSDrive](xref:Microsoft.PowerShell.Management.Get-PSDrive): Gets information about one or more drives
 
-The type of an object that represents a provider is described in [§4.5.1][]. The type of an object
-that represents a drive is described in [§4.5.2][].
+The type of an object that represents a provider is described in [§4.5.1][§4.5.1]. The type of an object
+that represents a drive is described in [§4.5.2][§4.5.2].
 
 ### 3.1.1 Aliases
 
 An *alias* is an alternate name for a command. A command can have multiple aliases, and the original
 name and all of its aliases can be used interchangeably. An alias can be reassigned. An alias is an
-item ([§3.3][]).
+item ([§3.3][§3.3]).
 
 An alias can be assigned to another alias; however, the new alias is not an alias of the original
 command.
@@ -72,9 +72,9 @@ parameters to be included.
 > It is a simple matter, however, to create a function that does nothing more than contain the
 > invocation of that command with all desired parameters, and to assign an alias to that function.
 
-The type of an object that represents an alias is described in [§4.5.4][].
+The type of an object that represents an alias is described in [§4.5.4][§4.5.4].
 
-Alias objects are stored on the drive Alias: ([§3.1][]).
+Alias objects are stored on the drive Alias: ([§3.1][§3.1]).
 
 ### 3.1.2 Environment variables
 
@@ -88,11 +88,11 @@ An environment variable's name cannot include the equal sign (`=`).
 
 Changes to the environment variables affect the current session only.
 
-An environment variable is an item ([§3.3][]).
+An environment variable is an item ([§3.3][§3.3]).
 
-The type of an object that represents an environment variable is described in [§4.5.6][].
+The type of an object that represents an environment variable is described in [§4.5.6][§4.5.6].
 
-Environment variable objects are stored on the drive Env: ([§3.1][]).
+Environment variable objects are stored on the drive Env: ([§3.1][§3.1]).
 
 ### 3.1.3 File system
 
@@ -102,14 +102,14 @@ deleted.
 The file system provider is a hierarchical namespace that contains objects that represent the
 underlying file system.
 
-Files are stored on drives with names like A:, B:, C:, and so on ([§3.1][]). Directories and files
-are accessed using path notation ([§3.4][]).
+Files are stored on drives with names like A:, B:, C:, and so on ([§3.1][§3.1]). Directories and files
+are accessed using path notation ([§3.4][§3.4]).
 
-A directory or file is an item ([§3.3][]).
+A directory or file is an item ([§3.3][§3.3]).
 
 ### 3.1.4 Functions
 
-The PowerShell function provider allows functions ([§8.10][]) and filters ([§8.10][].1) to be
+The PowerShell function provider allows functions ([§8.10][§8.10]) and filters ([§8.10][§8.10].1) to be
 retrieved, added, changed, cleared, and deleted.
 
 The provider Function is a flat namespace that contains only the function and filter objects.
@@ -117,12 +117,12 @@ Neither functions nor filters have child items.
 
 Changes to the functions affect the current session only.
 
-A function is an item ([§3.3][]).
+A function is an item ([§3.3][§3.3]).
 
-The type of an object that represents a function is described in [§4.5.10][]. The type of an object
-that represents a filter is described in [§4.5.11][].
+The type of an object that represents a function is described in [§4.5.10][§4.5.10]. The type of an object
+that represents a filter is described in [§4.5.11][§4.5.11].
 
-Function objects are stored on drive Function: ([§3.1][]).
+Function objects are stored on drive Function: ([§3.1][§3.1]).
 
 ### 3.1.5 Variables
 
@@ -143,16 +143,16 @@ The following cmdlets also deal with variables:
 - [Remove-Variable](xref:Microsoft.PowerShell.Utility.Remove-Variable): Deletes one or more
   variables
 
-As a variable is an item ([§3.3][]), it can be manipulated by most Item-related cmdlets.
+As a variable is an item ([§3.3][§3.3]), it can be manipulated by most Item-related cmdlets.
 
-The type of an object that represents a variable is described in [§4.5.3][].
+The type of an object that represents a variable is described in [§4.5.3][§4.5.3].
 
-Variable objects are stored on drive Variable: ([§3.1][]).
+Variable objects are stored on drive Variable: ([§3.1][§3.1]).
 
 ## 3.2 Working locations
 
 The *current working location* is the default location to which commands point. This is the location
-used if an explicit path ([§3.4][]) is not supplied when a command is invoked. This location
+used if an explicit path ([§3.4][§3.4]) is not supplied when a command is invoked. This location
 includes the *current drive*.
 
 A PowerShell host may have multiple drives, in which case, each drive has its own current location.
@@ -178,12 +178,12 @@ The following cmdlets deal with locations:
   location from the top of a specified stack of locations
 
 The object types that represents a working location and a stack of working locations are described
-in [§4.5.5][].
+in [§4.5.5][§4.5.5].
 
 ## 3.3 Items
 
-An *item* is an alias ([§3.1.1][]), a variable ([§3.1.5][]), a function ([§3.1.4][]), an environment
-variable ([§3.1.2][]), or a file or directory in a file system ([§3.1.3][]).
+An *item* is an alias ([§3.1.1][§3.1.1]), a variable ([§3.1.5][§3.1.5]), a function ([§3.1.4][§3.1.4]), an environment
+variable ([§3.1.2][§3.1.2]), or a file or directory in a file system ([§3.1.3][§3.1.3]).
 
 The following cmdlets deal with items:
 
@@ -214,8 +214,8 @@ The following cmdlets deal with the content of items:
 - [Clear-Content](xref:Microsoft.PowerShell.Management.Clear-Content): Deletes the contents of an
   item
 
-The type of an object that represents a directory is described in [§4.5.17][]. The type of an object
-that represents a file is described in [§4.5.18][].
+The type of an object that represents a directory is described in [§4.5.17][§4.5.17]. The type of an object
+that represents a file is described in [§4.5.18][§4.5.18].
 
 ## 3.4 Path names
 
@@ -300,7 +300,7 @@ Some cmdlets (such as [Add-Content](xref:Microsoft.PowerShell.Management.Add-Con
 `Copy-Item` use file filters. A *file filter* is a mechanism for specifying the criteria for
 selecting from a set of paths.
 
-The object type that represents a resolved path is described in [§4.5.5][]. Paths are often
+The object type that represents a resolved path is described in [§4.5.5][§4.5.5]. Paths are often
 manipulated as strings.
 
 ## 3.5 Scopes
@@ -317,7 +317,7 @@ scopes are *child scopes* of that parent. The scope of a name is the scope in wh
 and all child scopes, unless it is made private. Within a child scope, a name defined there hides
 any items defined with the same name in parent scopes.
 
-Unless dot source notation ([§3.5.5][]) is used, each of the following creates a new scope:
+Unless dot source notation ([§3.5.5][§3.5.5]) is used, each of the following creates a new scope:
 
 - A script file
 - A script block
@@ -450,7 +450,7 @@ also shows the scope when no scope is specified explicitly:
 | none               | Global/Script/Local scope                                                                  | Local scope                                                                                | Local scope                                                                                |
 
 Variable scope information can also be specified when using the family of cmdlets listed in
-([§3.1.5][]). In particular, refer to the parameter `Scope`, and the parameters `Option Private` and
+([§3.1.5][§3.1.5]). In particular, refer to the parameter `Scope`, and the parameters `Option Private` and
 `Option AllScope` for more information.
 
 The scope `using` is used to access variables defined in another scope while running scripts via
@@ -473,7 +473,7 @@ defined in the workflow.
 ### 3.5.4 Function name scope
 
 A function name may also have one of the four different scopes, and the visibility of that name is
-the same as for variables ([§3.5.3][]).
+the same as for variables ([§3.5.3][§3.5.3]).
 
 ### 3.5.5 Dot source notation
 
@@ -501,7 +501,7 @@ instead. For example,
 ### 3.5.6 Modules
 
 Just like a top-level script file is at the root of a hierarchical nested scope tree, so too is each
-module ([§3.14][]). However, by default, only those names exported by a module are available by name
+module ([§3.14][§3.14]). However, by default, only those names exported by a module are available by name
 from within the importing context. The Global parameter of the cmdlet
 [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module) allows exported names to have
 increased visibility.
@@ -509,7 +509,7 @@ increased visibility.
 ## 3.6 ReadOnly and Constant Properties
 
 Variables and aliases are described by objects that contain a number of properties. These properties
-are set and manipulated by two families of cmdlets ([§3.1.5][], [§3.1.1][]). One such property is
+are set and manipulated by two families of cmdlets ([§3.1.5][§3.1.5], [§3.1.1][§3.1.1]). One such property is
 Options, which can be set to ReadOnly or Constant (using the Option parameter). A variable or alias
 marked ReadOnly can be removed, and its properties can changed provided the Force parameter is
 specified. However, a variable or alias marked Constant cannot be removed nor have its properties
@@ -526,7 +526,7 @@ The name of a method along with the number and types of its parameters are colle
 method's *signature*. (Note that the signature does not include the method's return type.) The
 execution environment may allow a type to have multiple methods with the same name provided each has
 a different signature. When multiple versions of some method are defined, that method is said to be
-*overloaded*. For example, the type Math ([§4.3.8][]) contains a set of methods called `Abs`, which
+*overloaded*. For example, the type Math ([§4.3.8][§4.3.8]) contains a set of methods called `Abs`, which
 computes the absolute value of a specified number, where the specified number can have one of a
 number of types. The methods in that set have the following signatures:
 
@@ -543,7 +543,7 @@ Abs(Int16)
 In this case, all of the methods have the same number of arguments; their signatures differ by
 argument type only.
 
-Another example involves the type Array ([§4.3.2][]), which contains a set of methods called Copy
+Another example involves the type Array ([§4.3.2][§4.3.2]), which contains a set of methods called Copy
 that copies a range of elements from one array to another, starting at the beginning of each array
 (by default) or at some designated element. The methods in that set have the following signatures:
 
@@ -577,14 +577,14 @@ exactly, PowerShell does not itself provide a way to define overloaded methods.
 
 ### 3.7.2 Method overload resolution
 
-Given a method call ([§7.1.3][]) having a list of argument expressions, and a set of *candidate
+Given a method call ([§7.1.3][§7.1.3]) having a list of argument expressions, and a set of *candidate
 method*s (i.e., those methods that could be called), the mechanism for selecting the *best method*
 is called *overload resolution*.
 
-Given the set of applicable candidate methods ([§3.7.3][]), the best method in that set is selected.
+Given the set of applicable candidate methods ([§3.7.3][§3.7.3]), the best method in that set is selected.
 If the set contains only one method, then that method is the best method. Otherwise, the best method
 is the one method that is better than all other methods with respect to the given argument list
-using the rules shown in [§3.7.4][]. If there is not exactly one method that is better than all
+using the rules shown in [§3.7.4][§3.7.4]. If there is not exactly one method that is better than all
 other methods, then the method invocation is ambiguous and an error is reported.
 
 The best method must be accessible in the context in which it is called. For example, a PowerShell
@@ -608,7 +608,7 @@ In addition to having an appropriate number of arguments, each argument in A mus
 parameter-passing mode of the argument, and the argument type must match the parameter type, or
 there must be a conversion from the argument type to the parameter type.
 
-If the argument type is ref ([§4.3.6][]), the corresponding parameter must also be ref, and the
+If the argument type is ref ([§4.3.6][§4.3.6]), the corresponding parameter must also be ref, and the
 argument type for conversion purposes is the type of the property Value from the ref argument.
 
 If the argument type is `ref`, the corresponding parameter could be `out` instead of `ref`.
@@ -750,7 +750,7 @@ lookup is performed in such a case is alias, function, cmdlet, and external comm
 
 ## 3.9 Type name lookup
 
-[§7.1.10][] contains the statement, "A *type-literal* is represented in an implementation by some
+[§7.1.10][§7.1.10] contains the statement, "A *type-literal* is represented in an implementation by some
 unspecified *underlying type*. As a result, a type name is a synonym for its underlying type."
 Example of types are `int`, `double`, `long[]`, and `Hashtable`.
 
@@ -786,7 +786,7 @@ order in which these expressions are evaluated relative to each other is unspeci
 ## 3.12 Error handling
 
 When a command fails, this is considered an *error*, and information about that error is recorded in
-an *error record*, whose type is unspecified ([§4.5.15][]); however, this type supports
+an *error record*, whose type is unspecified ([§4.5.15][§4.5.15]); however, this type supports
 subscripting.
 
 An error falls into one of two categories. Either it terminates the operation (a *terminating
@@ -797,7 +797,7 @@ continues.
 Non-terminating errors are written to the error stream. Although that information can be redirected
 to a file, the error objects are first converted to strings and important information in those
 objects would not be captured making diagnosis difficult if not impossible. Instead, the error text
-can be redirected ([§7.12][]) and the error object saved in a variable, as in
+can be redirected ([§7.12][§7.12]) and the error object saved in a variable, as in
 `$Error1 = command 2>&1`.
 
 The automatic variable `$Error` contains a collection of error records that represent recent errors,
@@ -806,7 +806,7 @@ records are discarded as new ones are added. The automatic variable `$MaximumErr
 the number of records that can be stored.
 
 `$Error` contains all of the errors from all commands mixed in together in one collection. To
-collect the errors from a specific command, use the common parameter [ErrorVariable][],
+collect the errors from a specific command, use the common parameter [ErrorVariable][ErrorVariable],
 which allows a user-defined variable to be specified to hold the collection.
 
 ## 3.13 Pipelines
@@ -855,9 +855,9 @@ within it can be used. Once imported, commands and items behave as if they were 
 module is imported explicitly with the `Import-Module` command. A module may also be imported
 automatically as determined in an implementation defined manner.
 
-The type of an object that represents a module is described in [§4.5.12][].
+The type of an object that represents a module is described in [§4.5.12][§4.5.12].
 
-Modules are discussed in detail in [§11.][]
+Modules are discussed in detail in [§11.][§11.]
 
 ## 3.15 Wildcard expressions
 

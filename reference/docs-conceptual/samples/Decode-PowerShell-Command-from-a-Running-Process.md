@@ -9,10 +9,10 @@ description: This article shows how to decode a script block that a PowerShell p
 # Decode a PowerShell command from a running process
 
 At times, you may have a PowerShell process running that is taking up a large amount of resources.
-This process could be running in the context of a [Task Scheduler][] job or a [SQL Server Agent][]
-job. Where there are multiple PowerShell processes running, it can be difficult to know
-which process represents the problem. This article shows how to decode a script block that a
-PowerShell process is currently running.
+This process could be running in the context of a [Task Scheduler][task] job or a
+[SQL Server Agent][sqlagent] job. Where there are multiple PowerShell processes running, it can be
+difficult to know which process represents the problem. This article shows how to decode a script
+block that a PowerShell process is currently running.
 
 ## Create a long running process
 
@@ -33,10 +33,10 @@ powershell.exe -Command {
 
 ## View the process
 
-The body of the command which PowerShell is executing is stored in the **CommandLine** property
-of the [Win32_Process][] class. If the command is an encoded command, the **CommandLine**
-property contains the string "EncodedCommand". Using this information, the encoded command can
-be de-obfuscated via the following process.
+The body of the command which PowerShell is executing is stored in the **CommandLine** property of
+the [Win32_Process][Win32_Process] class. If the command is an encoded command, the **CommandLine**
+property contains the string "EncodedCommand". Using this information, the encoded command can be
+de-obfuscated via the following process.
 
 Start PowerShell as Administrator. It is vital that PowerShell is running as administrator,
 otherwise no results are returned when querying the running processes.
@@ -112,6 +112,6 @@ DecodedCommand :
                      }
 ```
 
-[Task Scheduler]: /windows/desktop/TaskSchd/task-scheduler-start-page
-[SQL Server Agent]: /sql/ssms/agent/sql-server-agent
+[task]: /windows/desktop/TaskSchd/task-scheduler-start-page
+[sqlagent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process

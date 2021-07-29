@@ -15,13 +15,13 @@ description: This article describes how to install WMF 5.1 and its prerequisites
 
 Download the WMF 5.1 package for the operating system and architecture you wish to install it on:
 
-| Operating System       | Prerequisites           | Package Links                          |
-|------------------------|-------------------------|----------------------------------------|
-| Windows Server 2012 R2 |                         | [Win8.1AndW2K12R2-KB3191564-x64.msu][] |
-| Windows Server 2012    |                         | [W2K12-KB3191565-x64.msu][]            |
-| Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64.ZIP][]    |
-| Windows 8.1            |                         | **x64:** [Win8.1AndW2K12R2-KB3191564-x64.msu][]</br>**x86:** [Win8.1-KB3191564-x86.msu][] |
-| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:** [Win7-KB3191566-x86.ZIP][] |
+|    Operating System    |                Prerequisites                 |                                                                    Package Links                                                                    |
+| ---------------------- | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Windows Server 2012 R2 |                                              | [Win8.1AndW2K12R2-KB3191564-x64.msu][Win8.1AndW2K12R2-KB3191564-x64.msu]                                                                            |
+| Windows Server 2012    |                                              | [W2K12-KB3191565-x64.msu][W2K12-KB3191565-x64.msu]                                                                                                  |
+| Windows Server 2008 R2 | [.NET Framework 4.5.2][.NET Framework 4.5.2] | [Win7AndW2K8R2-KB3191566-x64.ZIP][Win7AndW2K8R2-KB3191566-x64.ZIP]                                                                                  |
+| Windows 8.1            |                                              | **x64:** [Win8.1AndW2K12R2-KB3191564-x64.msu][Win8.1AndW2K12R2-KB3191564-x64.msu]</br>**x86:** [Win8.1-KB3191564-x86.msu][Win8.1-KB3191564-x86.msu] |
+| Windows 7 SP1          | [.NET Framework 4.5.2][.NET Framework 4.5.2] | **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP][Win7AndW2K8R2-KB3191566-x64.ZIP]</br>**x86:** [Win7-KB3191566-x86.ZIP][Win7-KB3191566-x86.ZIP]           |
 
 [.NET Framework 4.5.2]: https://www.microsoft.com/download/details.aspx?id=42642
 [W2K12-KB3191565-x64.msu]: https://go.microsoft.com/fwlink/?linkid=839513

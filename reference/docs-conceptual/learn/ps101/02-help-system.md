@@ -126,7 +126,7 @@ All of the cryptic syntax such as square and angle brackets in the syntax sectio
 but will be covered in Appendix A of this book. While important, learning the cryptic syntax is
 often difficult to retain for someone who is new to PowerShell and may not use it everyday.
 
-For more information to better understand the cryptic syntax, see [Appendix A][].
+For more information to better understand the cryptic syntax, see [Appendix A][Appendix A].
 
 For beginners, there's an easier way to figure out the same information except in plain language.
 
@@ -571,7 +571,7 @@ A better option is to use either the **Verb** or **Noun** parameter or both of t
 PowerShell commands have both verbs and nouns.
 
 Found something wrong with a help topic? The good news is the help topics for PowerShell have been
-open-sourced and available in the [PowerShell-Docs][] repository on GitHub. Pay it forward by not
+open-sourced and available in the [PowerShell-Docs][PowerShell-Docs] repository on GitHub. Pay it forward by not
 only fixing the incorrect information for yourself, but everyone else as well. Simply fork the
 PowerShell documentation repository on GitHub, update the help topic, and submit a pull request.
 Once the pull request is accepted, the corrected documentation is available for everyone.
@@ -646,12 +646,12 @@ Get-Command | Get-Random | Get-Help -Full
 If you want to know more information about the topics covered in this chapter, I recommend
 reading the following PowerShell help topics.
 
-- [Get-Help][]
-- [Get-Command][]
-- [Update-Help][]
-- [Save-Help][]
-- [about_Updatable_Help][]
-- [about_Command_Syntax][]
+- [Get-Help][Get-Help]
+- [Get-Command][Get-Command]
+- [Update-Help][Update-Help]
+- [Save-Help][Save-Help]
+- [about_Updatable_Help][about_Updatable_Help]
+- [about_Command_Syntax][about_Command_Syntax]
 
 In the next chapter, you'll learn about the `Get-Member` cmdlet as well as objects, properties, and
 methods.

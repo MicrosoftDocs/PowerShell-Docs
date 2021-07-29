@@ -7,7 +7,7 @@ ms.date: 04/26/2021
 # Installing PowerShell on macOS
 
 PowerShell 7.0 or higher require macOS 10.13 and higher. All packages are available on our GitHub
-[releases][] page. After the package is installed, run `pwsh` from a terminal.
+[releases][releases] page. After the package is installed, run `pwsh` from a terminal.
 
 > [!NOTE]
 > PowerShell 7.1 is an in-place upgrade that removes PowerShell Core 6.x and 7.0.
@@ -122,7 +122,7 @@ brew upgrade powershell
 
 ## Installation via Direct Download
 
-Download the PKG package `powershell-7.1.3-osx-x64.pkg` from the [releases][] page onto your
+Download the PKG package `powershell-7.1.3-osx-x64.pkg` from the [releases][releases] page onto your
 macOS machine.
 
 You can double-click the file and follow the prompts, or install it from the terminal:

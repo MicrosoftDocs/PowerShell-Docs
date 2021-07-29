@@ -11,11 +11,11 @@ that with which it was declared at compile time. Object-oriented languages add t
 inheritance, which allows the runtime type of a variable to be that with which it was declared at
 compile time or some type derived from that type. Being a dynamically typed language, PowerShell's
 variables do not have types, per se. In fact, variables are not defined; they simply come into being
-when they are first assigned a value. And while a variable may be constrained ([§5.3][]) to holding
+when they are first assigned a value. And while a variable may be constrained ([§5.3][§5.3]) to holding
 a value of a given type, type information in an assignment cannot always be verified statically.
 
 At different times, a variable may be associated with values of different types either through
-assignment ([§7.11][]) or the use of the `++` and `‑‑` operators ([§7.1.5][], [§7.2.6][]). When the
+assignment ([§7.11][§7.11]) or the use of the `++` and `‑‑` operators ([§7.1.5][§7.1.5], [§7.2.6][§7.2.6]). When the
 value associated with a variable is changed, that value's type may change. For example,
 
 ```powershell
@@ -32,8 +32,8 @@ been defined, use the [Test-Path](xref:Microsoft.PowerShell.Management.Test-Path
 
 A *writable location* is an expression that designates a resource to which a command has both read
 and write access. A writable location may be a variable (§5), an array element (§9), an associated
-value in a Hashtable accessed via a subscript (§10), a property ([§7.1.2][]), or storage managed by
-a provider ([§3.1][]).
+value in a Hashtable accessed via a subscript (§10), a property ([§7.1.2][§7.1.2]), or storage managed by
+a provider ([§3.1][§3.1]).
 
 ## 5.2 Variable categories
 
@@ -79,7 +79,7 @@ function F ($p1, $p2) {
 ### 5.2.1 Static variables
 
 A data member of an object that belongs to the object's type rather than to that particular instance
-of the type is called a *static variable*. See [§4.2.3][], [§4.2.4.1][], and [§4.3.8][] for some
+of the type is called a *static variable*. See [§4.2.3][§4.2.3], [§4.2.4.1][§4.2.4.1], and [§4.3.8][§4.3.8] for some
 examples.
 
 PowerShell provides no way to create new types that contain static variables; however, objects of
@@ -88,14 +88,14 @@ such types may be provided by the host environment.
 Memory for creating and deleting objects containing static variables is managed by the host
 environment and the garbage collection system.
 
-See [§7.1.2][] for information about accessing a static variable.
+See [§7.1.2][§7.1.2] for information about accessing a static variable.
 
 A static data member can be a field or a property.
 
 ### 5.2.2 Instance variables
 
 A data member of an object that belongs to a particular instance of the object's type rather than to
-the type itself is called an *instance variable*. See [§4.3.1][], [§4.3.2][], and [§4.3.3][] for
+the type itself is called an *instance variable*. See [§4.3.1][§4.3.1], [§4.3.2][§4.3.2], and [§4.3.3][§4.3.3] for
 some examples.
 
 A PowerShell host environment might provide a way to create new types that contain instance
@@ -104,26 +104,26 @@ variables or to add new instance variables to existing types.
 Memory for creating and deleting objects containing static variables is managed by the host
 environment and the garbage collection system.
 
-See [§7.1.2][] for information about accessing an instance variable.
+See [§7.1.2][§7.1.2] for information about accessing an instance variable.
 
 An instance data member can be a field or a property.
 
 ### 5.2.3 Array elements
 
-An array can be created via a unary comma operator ([§7.2.1][]), *sub-expression* ([§7.1.6][]),
-*array-expression* ([§7.1.7][]), binary comma operator ([§7.3][]), range operator ([§7.4][]), or
+An array can be created via a unary comma operator ([§7.2.1][§7.2.1]), *sub-expression* ([§7.1.6][§7.1.6]),
+*array-expression* ([§7.1.7][§7.1.7]), binary comma operator ([§7.3][§7.3]), range operator ([§7.4][§7.4]), or
 [New-Object](xref:Microsoft.PowerShell.Utility.New-Object) cmdlet.
 
 Memory for creating and deleting arrays is managed by the host environment and the garbage
 collection system.
 
-Arrays and array elements are discussed in [§9.][]
+Arrays and array elements are discussed in [§9.][§9.]
 
 ### 5.2.4 Hashtable key/value pairs
 
-A Hashtable is created via a hash literal ([§2.3.5.6][]) or the
+A Hashtable is created via a hash literal ([§2.3.5.6][§2.3.5.6]) or the
 [New-Object](xref:Microsoft.PowerShell.Utility.New-Object) cmdlet. A new key/value pair can be added
-via the `[]` operator ([§7.1.4.3][]).
+via the `[]` operator ([§7.1.4.3][§7.1.4.3]).
 
 Memory for creating and deleting Hashtables is managed by the host environment and the garbage
 collection system.
@@ -136,12 +136,12 @@ A parameter is created when its parent command is invoked, and it is initialized
 the argument provided in the invocation or by the host environment. A parameter ceases to exist when
 its parent command terminates.
 
-Parameters are discussed in [§8.10][].
+Parameters are discussed in [§8.10][§8.10].
 
 ### 5.2.6 Ordinary variables
 
-An *ordinary variable* is defined by an *assignment-expression* ([§7.11][]) or a *foreach-statement*
-([§8.4.4][]). Some ordinary variables are predefined by the host environment while others are
+An *ordinary variable* is defined by an *assignment-expression* ([§7.11][§7.11]) or a *foreach-statement*
+([§8.4.4][§8.4.4]). Some ordinary variables are predefined by the host environment while others are
 transient, coming and going as needed at runtime.
 
 The lifetime of an ordinary variable is that part of program execution during which storage is
@@ -152,17 +152,17 @@ entered recursively or iteratively, a new instance of the local variable is crea
 The storage referred to by an ordinary variable is reclaimed independently of the lifetime of that
 variable.
 
-An ordinary variable can be named explicitly with a **Variable:** namespace prefix ([§5.2.7][]).
+An ordinary variable can be named explicitly with a **Variable:** namespace prefix ([§5.2.7][§5.2.7]).
 
 ### 5.2.7 Variables on provider drives
 
-The concept of providers and drives is introduced in [§3.1][], with each provider being able to
+The concept of providers and drives is introduced in [§3.1][§3.1], with each provider being able to
 provide its own namespace drive(s). This allows resources on those drives to be accessed as though
-they were ordinary variables ([§5.2.6][]). In fact, an ordinary variable is stored on the file
-system provider drive Variable: ([§3.1.5][]) and can be accessed by its ordinary name or its fully
+they were ordinary variables ([§5.2.6][§5.2.6]). In fact, an ordinary variable is stored on the file
+system provider drive Variable: ([§3.1.5][§3.1.5]) and can be accessed by its ordinary name or its fully
 qualified namespace name.
 
-Some namespace variable types are constrained implicitly ([§5.3][]).
+Some namespace variable types are constrained implicitly ([§5.3][§5.3]).
 
 ## 5.3 Constrained variables
 
@@ -180,8 +180,8 @@ function F ([int]$p1, [switch]$p2, [regex]$p3) { ... }
 ```
 
 Any variable belonging to the namespace **Env:**, **Alias:**, or to the file system namespace
-([§2.3.2][], [§3.1][]) is constrained implicitly to the type `string`. Any variable belonging to the
-namespace **Function:** ([§2.3.2][], [§3.1][]) is constrained implicitly to the type `scriptblock`.
+([§2.3.2][§2.3.2], [§3.1][§3.1]) is constrained implicitly to the type `string`. Any variable belonging to the
+namespace **Function:** ([§2.3.2][§2.3.2], [§3.1][§3.1]) is constrained implicitly to the type `scriptblock`.
 
 <!-- reference links -->
 [§2.3.2]: chapter-02.md#232-variables

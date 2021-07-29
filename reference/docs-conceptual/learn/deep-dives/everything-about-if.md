@@ -7,13 +7,13 @@ ms.custom: contributor-KevinMarquette
 # Everything you wanted to know about the `if` statement
 
 Like many other languages, PowerShell has statements for conditionally executing code in your
-scripts. One of those statements is the [If][] statement. Today we will take a deep dive into one of
+scripts. One of those statements is the [If][If] statement. Today we will take a deep dive into one of
 the most fundamental commands in PowerShell.
 
 > [!NOTE]
-> The [original version][] of this article appeared on the blog written by [@KevinMarquette][]. The
+> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
 > PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][].
+> [PowerShellExplained.com][PowerShellExplained.com].
 
 ## Conditional execution
 
@@ -195,7 +195,7 @@ if ( $value -match 'SQL')
 ```
 
 Regex is a complex language of its own and worth looking into. I talk more about `-match` and
-[the many ways to use regex][] in another article.
+[the many ways to use regex][the many ways to use regex] in another article.
 
 **Variations:**
 
@@ -397,7 +397,7 @@ why I would ever use it.
 ## Bitwise operators
 
 Bitwise operators perform calculations on the bits within the values and produce a new value as the
-result. Teaching [bitwise operators][] is beyond the scope of this article, but here is the list the
+result. Teaching [bitwise operators][bitwise operators] is beyond the scope of this article, but here is the list the
 them.
 
 - `-band` binary AND
@@ -446,11 +446,11 @@ if ( $null -eq $value )
 ```
 
 There are quite a few nuances when dealing with `$null` values in PowerShell. If you're interested
-in diving deeper, I have an article about [everything you wanted to know about $null][].
+in diving deeper, I have an article about [everything you wanted to know about $null][everything you wanted to know about $null].
 
 ### Variable assignment within the condition
 
-I almost forgot to add this one until [Prasoon Karunan V][] reminded me of it.
+I almost forgot to add this one until [Prasoon Karunan V][Prasoon Karunan V] reminded me of it.
 
 ```powershell
 if ($process=Get-Process notepad -ErrorAction ignore) {$process} else {$false}
@@ -607,11 +607,11 @@ switch ( $itemType )
 
 There three possible values that can match the `$itemType`. In this case, it matches with `Role`. I
 used a simple example just to give you some exposure to the `switch` operator. I talk more
-about [everything you ever wanted to know about the switch statement][] in another article.
+about [everything you ever wanted to know about the switch statement][everything you ever wanted to know about the switch statement] in another article.
 
 ### Array inline
 
-I have a function called [Invoke-SnowSql][] that launches an executable with several command-line
+I have a function called [Invoke-SnowSql][Invoke-SnowSql] that launches an executable with several command-line
 arguments. Here is a clip from that function where I build the array of arguments.
 
 ```powershell
@@ -781,7 +781,7 @@ I like to say that if you expect an exception to happen, then it's not really an
 your values and validate your conditions where you can.
 
 If you want to dive a little more into actual exception handling, I have an article on
-[everything you ever wanted to know about exceptions][].
+[everything you ever wanted to know about exceptions][everything you ever wanted to know about exceptions].
 
 ## Final words
 

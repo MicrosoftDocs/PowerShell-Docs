@@ -610,7 +610,7 @@ SQL Sat - Baton Rouge
 
 Be careful when using methods to transform data because you can run into unforeseen problems, such
 as failing the _Turkey Test_. For an example, see the blog article titled
-[Using Pester to Test PowerShell Code with Other Cultures][]. My recommendation is to use an
+[Using Pester to Test PowerShell Code with Other Cultures][Using Pester to Test PowerShell Code with Other Cultures]. My recommendation is to use an
 operator instead of a method whenever possible to avoid these types of problems.
 
 While the comparison operators can be used as shown in the previous examples, I normally find myself
@@ -631,13 +631,13 @@ Providers, and Comparison Operators.
 
 ## Recommended Reading
 
-- [Format-Table][]
-- [Format-List][]
-- [Format-Wide][]
-- [about_Aliases][]
-- [about_Providers][]
-- [about_Comparison_Operators][]
-- [about_Arrays][]
+- [Format-Table][Format-Table]
+- [Format-List][Format-List]
+- [Format-Wide][Format-Wide]
+- [about_Aliases][about_Aliases]
+- [about_Providers][about_Providers]
+- [about_Comparison_Operators][about_Comparison_Operators]
+- [about_Arrays][about_Arrays]
 
 <!-- link references -->
 [SMSS]: /sql/ssms/download-sql-server-management-studio-ssms

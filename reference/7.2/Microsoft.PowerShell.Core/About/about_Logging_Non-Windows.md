@@ -161,7 +161,7 @@ You can get help for `log` by running `log show --help` for additional details.
 > predicate string.
 
 You may also want to consider saving the event logs to a more secure location
-such as a central event log collector, or [SIEM][] aggregator. You can set up
+such as a central event log collector, or [SIEM][SIEM] aggregator. You can set up
 SIEM in Azure. For more information, see
 [Generic SIEM integration](/cloud-app-security/siem).
 

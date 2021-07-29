@@ -257,9 +257,9 @@ support custom snap-ins in PowerShell.
 
 ### Experimental feature flags
 
-We enabled support for [Experimental Features][]. This allows PowerShell developers to deliver new
-features and get feedback before the design is complete. This way we avoid making breaking changes
-as the design evolves.
+We enabled support for [Experimental Features][exp]. This allows PowerShell developers to deliver
+new features and get feedback before the design is complete. This way we avoid making breaking
+changes as the design evolves.
 
 Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable or
 disable these features with `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature`.
@@ -267,7 +267,7 @@ disable these features with `Enable-ExperimentalFeature` and `Disable-Experiment
 You can learn more about this feature in
 [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
 
-[Experimental Features]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
+[exp]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
 
 ### Load assembly from module base path before trying to load from the GAC
 
