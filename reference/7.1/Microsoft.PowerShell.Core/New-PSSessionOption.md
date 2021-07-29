@@ -3,17 +3,17 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 02/07/2019
+ms.date: 07/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionoption?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionOption
 ---
 # New-PSSessionOption
 
-## SYNOPSIS
+## Synopsis
 Creates an object that contains advanced options for a PSSession.
 
-## SYNTAX
+## Syntax
 
 ```
 New-PSSessionOption [-MaximumRedirection <Int32>] [-NoCompression] [-NoMachineProfile] [-Culture <CultureInfo>]
@@ -25,7 +25,7 @@ New-PSSessionOption [-MaximumRedirection <Int32>] [-NoCompression] [-NoMachinePr
  [-OperationTimeout <Int32>] [-NoEncryption] [-UseUTF16] [-IncludePortInSPN] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `New-PSSessionOption` cmdlet creates an object that contains advanced options for a
 user-managed session (**PSSession**). You can use the object as the value of the **SessionOption**
@@ -49,7 +49,7 @@ in the session configuration. However, they do not take precedence over maximum 
 limits set in the session configuration. For more information about session configurations, see
 [about_Session_Configurations](About/about_Session_Configurations.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a default session option
 
@@ -261,7 +261,7 @@ commands in the remote session. The data appears in the **ApplicationArguments**
 
 The final `Invoke-Command` shows how the data might be used.
 
-## PARAMETERS
+## Parameters
 
 ### -ApplicationArguments
 
@@ -552,11 +552,13 @@ Accept wildcard characters: False
 
 ### -OperationTimeout
 
-Determines the maximum time that any operation in the session can run. When the interval expires,
-the operation fails. Enter a value in milliseconds.
+Determines the maximum time **WinRM** waits for positive connection tests from a live connection
+before initiating a connection time-out. For more information on WinRM, see the [Windows Remote Management Documentation](/windows/win32/winrm/portal)
 
-The default value is 180000 (3 minutes). A value of 0 (zero) means no time-out; the operation
-continues indefinitely.
+**OperationTimeout** does _not_ impose a time limit on commands or processes running in a remote
+session and does _not_ affect other remoting protocols like SSH.
+
+The default value is 180000 (3 minutes). A value of 0 (zero) means no time-out.
 
 ```yaml
 Type: System.Int32
@@ -776,17 +778,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.Remoting.PSSessionOption
 
-## NOTES
+## Notes
 
 If the **SessionOption** parameter is not used in a command to create a **PSSession**, the session
 options are determined by the property values of the `$PSSessionOption` preference variable, if it
@@ -797,7 +799,7 @@ The properties of a session configuration object vary with the options set for t
 configuration and the values of those options. Also, session configurations that use a session
 configuration file have additional properties.
 
-## RELATED LINKS
+## Related links
 
 [Enter-PSSession](Enter-PSSession.md)
 
