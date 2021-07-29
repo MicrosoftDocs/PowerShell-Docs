@@ -298,7 +298,7 @@ key.
 ## Supporting paths on non-Windows systems
 
 Non-Windows platforms use the colon (`:`) character as a path separator and a forward-slash (`/`)
-character as a directory separator. .The `[System.IO.Path]` class has static members that can be
+character as a directory separator. The `[System.IO.Path]` class has static members that can be
 used to make your code work on any platform:
 
 - `[System.IO.Path]::PathSeparator` - returns the character used to separate paths in a PATH
