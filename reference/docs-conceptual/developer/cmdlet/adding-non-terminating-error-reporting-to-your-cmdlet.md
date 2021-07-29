@@ -7,16 +7,16 @@ description: Adding Non-Terminating Error Reporting to Your Cmdlet
 # Adding Non-Terminating Error Reporting to Your Cmdlet
 
 Cmdlets can report nonterminating errors by calling the
-[System.Management.Automation.Cmdlet.WriteError][] method and still continue to operate on the
-current input object or on further incoming pipeline objects. This section explains how to create a
-cmdlet that reports nonterminating errors from its input processing methods.
+[System.Management.Automation.Cmdlet.WriteError][WriteError] method and still continue to operate on
+the current input object or on further incoming pipeline objects. This section explains how to
+create a cmdlet that reports nonterminating errors from its input processing methods.
 
 For nonterminating errors (as well as terminating errors), the cmdlet must pass an
-[System.Management.Automation.ErrorRecord][] object identifying the error. Each error record is
-identified by a unique string called the "error identifier". In addition to the identifier, the
-category of each error is specified by constants defined by a
-[System.Management.Automation.ErrorCategory][] enumeration. The user can view errors based on their
-category by setting the `$ErrorView` variable to "CategoryView".
+[System.Management.Automation.ErrorRecord][ErrorRecord] object identifying the error. Each error
+record is identified by a unique string called the "error identifier". In addition to the
+identifier, the category of each error is specified by constants defined by a
+[System.Management.Automation.ErrorCategory][ErrorCategory] enumeration. The user can view errors
+based on their category by setting the `$ErrorView` variable to "CategoryView".
 
 For more information about error records, see
 [Windows PowerShell Error Records](./windows-powershell-error-records.md).
@@ -84,24 +84,25 @@ End Property
 ## Overriding Input Processing Methods
 
 All cmdlets must override at least one of the input processing methods provided by the
-[System.Management.Automation.Cmdlet][] class. These methods are discussed in
+[System.Management.Automation.Cmdlet][Cmdlet] class. These methods are discussed in
 [Creating Your First Cmdlet](creating-a-cmdlet-without-parameters.md).
 
 > [!NOTE]
 > Your cmdlet should handle each record as independently as possible.
 
-This Get-Proc cmdlet overrides the [System.Management.Automation.Cmdlet.ProcessRecord][] method to
-handle the **Name** parameter for input provided by the user or a script. This method will get the
-processes for each requested process name or all processes if no name is provided. Details of this
-override are given in [Creating Your First Cmdlet](creating-a-cmdlet-without-parameters.md).
+This Get-Proc cmdlet overrides the
+[System.Management.Automation.Cmdlet.ProcessRecord][ProcessRecord] method to handle the **Name**
+parameter for input provided by the user or a script. This method will get the processes for each
+requested process name or all processes if no name is provided. Details of this override are given
+in [Creating Your First Cmdlet](creating-a-cmdlet-without-parameters.md).
 
 ### Things to Remember When Reporting Errors
 
-The [System.Management.Automation.ErrorRecord][] object that the cmdlet passes when writing an error
-requires an exception at its core. Follow the .NET guidelines when determining the exception to use.
-Basically, if the error is semantically the same as an existing exception, the cmdlet should use or
-derive from that exception. Otherwise, it should derive a new exception or exception hierarchy
-directly from the [System.Exception][] class.
+The [System.Management.Automation.ErrorRecord][ErrorRecord] object that the cmdlet passes when
+writing an error requires an exception at its core. Follow the .NET guidelines when determining the
+exception to use. Basically, if the error is semantically the same as an existing exception, the
+cmdlet should use or derive from that exception. Otherwise, it should derive a new exception or
+exception hierarchy directly from the [System.Exception][Exception] class.
 
 When creating error identifiers (accessed through the FullyQualifiedErrorId property of the
 ErrorRecord class) keep the following in mind.
@@ -142,12 +143,12 @@ Unhandled exceptions are not caught by PowerShell in the following conditions:
 ## Reporting Nonterminating Errors
 
 Any one of the input processing methods can report a nonterminating error to the output stream using
-the [System.Management.Automation.Cmdlet.WriteError][] method.
+the [System.Management.Automation.Cmdlet.WriteError][WriteError] method.
 
 Here is a code example from this Get-Proc cmdlet that illustrates the call to
-[System.Management.Automation.Cmdlet.WriteError][] from within the override of the
-[System.Management.Automation.Cmdlet.ProcessRecord][] method. In this case, the call is made if the
-cmdlet cannot find a process for a specified process identifier.
+[System.Management.Automation.Cmdlet.WriteError][WriteError] from within the override of the
+[System.Management.Automation.Cmdlet.ProcessRecord][ProcessRecord] method. In this case, the call is
+made if the cmdlet cannot find a process for a specified process identifier.
 
 ```csharp
 protected override void ProcessRecord()
@@ -194,8 +195,9 @@ input object.
 
 A cmdlet frequently needs to modify the PowerShell action produced by a nonterminating error. It can
 do this by defining the `ErrorAction` and `ErrorVariable` parameters. If defining the `ErrorAction`
-parameter, the cmdlet presents the user options [System.Management.Automation.ActionPreference][],
-you can also directly influence the action by setting the `$ErrorActionPreference` variable.
+parameter, the cmdlet presents the user options
+[System.Management.Automation.ActionPreference][ActionPreference], you can also directly influence
+the action by setting the `$ErrorActionPreference` variable.
 
 The cmdlet can save nonterminating errors to a variable using the `ErrorVariable` parameter, which
 is not affected by the setting of `ErrorAction`. Failures can be appended to an existing error
@@ -253,10 +255,10 @@ line. Let's test the sample Get-Proc cmdlet to see whether it reports an error:
 
 [Cmdlet Samples](./cmdlet-samples.md)
 
-[System.Exception]: /dotnet/api/System.Exception
-[System.Management.Automation.ActionPreference]: /dotnet/api/System.Management.Automation.ActionPreference
-[System.Management.Automation.Cmdlet.ProcessRecord]: /dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord
-[System.Management.Automation.Cmdlet.WriteError]: /dotnet/api/System.Management.Automation.Cmdlet.WriteError
-[System.Management.Automation.Cmdlet]: /dotnet/api/System.Management.Automation.Cmdlet
-[System.Management.Automation.ErrorCategory]: /dotnet/api/System.Management.Automation.ErrorCategory
-[System.Management.Automation.ErrorRecord]: /dotnet/api/System.Management.Automation.ErrorRecord
+[Exception]: /dotnet/api/System.Exception
+[ActionPreference]: /dotnet/api/System.Management.Automation.ActionPreference
+[ProcessRecord]: /dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord
+[WriteError]: /dotnet/api/System.Management.Automation.Cmdlet.WriteError
+[Cmdlet]: /dotnet/api/System.Management.Automation.Cmdlet
+[ErrorCategory]: /dotnet/api/System.Management.Automation.ErrorCategory
+[ErrorRecord]: /dotnet/api/System.Management.Automation.ErrorRecord

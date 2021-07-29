@@ -5,7 +5,7 @@ ms.date: 02/02/2021
 ---
 # Installing PowerShell on Linux
 
-All packages are available on our GitHub [releases][] page. After the package is installed, run
+All packages are available on our GitHub [releases][releases] page. After the package is installed, run
 `pwsh` from a terminal. Run `pwsh-preview` if you installed a
 [Preview release](#installing-preview-releases).
 
@@ -96,8 +96,8 @@ PowerShell with `sudo apt-get install powershell`.
 
 ### Installation via Direct Download - Ubuntu 16.04
 
-Download the Debian package `powershell_7.1.3-1.ubuntu.16.04_amd64.deb` from the [releases][] page
-onto the Ubuntu machine.
+Download the Debian package `powershell_7.1.3-1.ubuntu.16.04_amd64.deb` from the
+[releases][releases] page onto the Ubuntu machine.
 
 Then, in the terminal, execute the following commands:
 
@@ -148,7 +148,7 @@ PowerShell with `sudo apt-get install powershell`.
 
 ### Installation via Direct Download - Ubuntu 18.04
 
-Download the Debian package `powershell_7.1.3-1.ubuntu.18.04_amd64.deb` from the [releases][] page
+Download the Debian package `powershell_7.1.3-1.ubuntu.18.04_amd64.deb` from the [releases][releases] page
 onto the Ubuntu machine.
 
 Then, in the terminal, execute the following commands:
@@ -200,7 +200,7 @@ PowerShell with `sudo apt-get install powershell`.
 
 ### Installation via Direct Download - Ubuntu 20.04
 
-Download the Debian package `powershell_7.1.3-1.ubuntu.20.04_amd64.deb` from the [releases][] page
+Download the Debian package `powershell_7.1.3-1.ubuntu.20.04_amd64.deb` from the [releases][releases] page
 onto the Ubuntu machine.
 
 Then, in the terminal, execute the following commands:
@@ -302,7 +302,7 @@ with `sudo apt-get install powershell`.
 
 ### Installation via Direct Download - Debian 9
 
-Download the Debian package `powershell_7.1.3-1.debian.9_amd64.deb` from the [releases][] page
+Download the Debian package `powershell_7.1.3-1.debian.9_amd64.deb` from the [releases][releases] page
 onto the Debian machine.
 
 Then, in the terminal, execute the following commands:
@@ -348,7 +348,7 @@ pwsh
 
 ### Installation via Direct Download - Debian 10
 
-Download the tar.gz package `powershell-7.1.3-linux-x64.tar.gz` from the [releases][] page
+Download the tar.gz package `powershell-7.1.3-linux-x64.tar.gz` from the [releases][releases] page
 onto the Debian machine.
 
 Then, in the terminal, execute the following commands:
@@ -396,7 +396,7 @@ pwsh
 
 ### Installation via Direct Download - Alpine 3.9 and 3.10
 
-Download the tar.gz package `powershell-7.1.3-linux-alpine-x64.tar.gz` from the [releases][] page onto
+Download the tar.gz package `powershell-7.1.3-linux-alpine-x64.tar.gz` from the [releases][releases] page onto
 the Alpine machine.
 
 Then, in the terminal, execute the following commands:
@@ -466,8 +466,8 @@ with `sudo yum update powershell`.
 
 ### Installation via Direct Download - CentOS 7
 
-Using [CentOS 7][], download the RPM package `powershell-7.1.3-1.rhel.7.x86_64.rpm` from the [releases][]
-page onto the CentOS machine.
+Using [CentOS 7][centos7], download the RPM package `powershell-7.1.3-1.rhel.7.x86_64.rpm` from the
+[releases][releases] page onto the CentOS machine.
 
 Then, in the terminal, execute the following commands:
 
@@ -487,7 +487,7 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1
 sudo yum remove powershell
 ```
 
-[CentOS 7]: https://www.centos.org/download/
+[centos7]: https://www.centos.org/download/
 
 ## Red Hat Enterprise Linux (RHEL) 7
 
@@ -512,7 +512,7 @@ with `sudo yum update powershell`.
 
 ### Installation via Direct Download - Red Hat Enterprise Linux (RHEL) 7
 
-Download the RPM package `powershell-7.1.3-1.rhel.7.x86_64.rpm` from the [releases][] page onto
+Download the RPM package `powershell-7.1.3-1.rhel.7.x86_64.rpm` from the [releases][releases] page onto
 the Red Hat Enterprise Linux machine.
 
 Then, in the terminal, execute the following commands:
@@ -626,8 +626,8 @@ pwsh
 
 ### Installation via Direct Download - Fedora 28, 29, and 30
 
-Download the RPM package `powershell-7.1.3-1.rhel.7.x86_64.rpm` from the [releases][] page onto the
-Fedora machine.
+Download the RPM package `powershell-7.1.3-1.rhel.7.x86_64.rpm` from the [releases][releases] page
+onto the Fedora machine.
 
 Then, in the terminal, execute the following commands:
 
@@ -654,7 +654,7 @@ sudo dnf remove powershell
 > [!NOTE]
 > Arch support is not officially supported by Microsoft and is maintained by the community.
 
-PowerShell is available from the [Arch Linux][] User Repository (AUR).
+PowerShell is available from the [Arch Linux][arch] User Repository (AUR).
 
 - It can be compiled with the [latest tagged release][arch-release]
 - It can be compiled from the [latest commit to master][arch-git]
@@ -666,7 +666,7 @@ For more information on installing packages from the AUR, see the
 [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or
 [Using PowerShell in Docker](powershell-in-docker.md).
 
-[Arch Linux]: https://www.archlinux.org/download/
+[arch]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
@@ -941,4 +941,3 @@ support those methods.
 [releases]: https://aka.ms/PowerShell-Release?tag=stable
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 [distros]: https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md#linux
-[Distribution Support Request]: https://github.com/PowerShell/PowerShell/issues/new?assignees=&labels=Distribution-Request&template=Distribution_Request.md&title=Distribution+Support+Request

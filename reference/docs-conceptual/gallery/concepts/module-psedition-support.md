@@ -15,7 +15,8 @@ feature sets and platform compatibility.
   Windows PowerShell 5.1 on reduced footprint Windows Editions such as Windows IoT and Windows
   Nanoserver.
 
-For more information on PowerShell editions, see [about_PowerShell_Editions][].
+For more information on PowerShell editions, see
+[about_PowerShell_Editions][about_PowerShell_Editions].
 
 ## Declaring compatible editions
 
@@ -236,6 +237,6 @@ Module contents
 
 [Update module manifest](/powershell/module/powershellget/update-modulemanifest)
 
-[about_PowerShell_Editions][]
+[about_PowerShell_Editions][about_PowerShell_Editions]
 
 [about_PowerShell_Editions]: /powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_Editions

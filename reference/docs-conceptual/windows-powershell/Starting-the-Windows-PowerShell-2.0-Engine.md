@@ -24,22 +24,22 @@ instructions are included for the rare situations in which you need to start the
 ## Deprecation and security concerns
 
 Windows PowerShell 2.0 was deprecated in August, 2017. For more information, see the
-[announcement][] on the PowerShell blog.
+[announcement][announcement] on the PowerShell blog.
 
 Windows PowerShell 2.0 is missing a significant amount of the hardening and security features added
 in versions 3, 4, and 5. We highly, highly recommend that users not use it if they can help it. For
-more information, see [A Comparison of Shell and Scripting Language Security][] and
+more information, see [A Comparison of Shell and Scripting Language Security][security] and
 [PowerShell ♥ the Blue Team][blueteam].
 
 ## Installing and Enabling Required Programs
 
 Before starting the Windows PowerShell 2.0 Engine, enable the Windows PowerShell 2.0 Engine and
 Microsoft .NET Framework 3.5 with Service Pack 1. For instructions, see
-[Installing Windows PowerShell][].
+[Installing Windows PowerShell][pssetup].
 
 Systems on which Windows Management Framework 3.0 or higher is installed have all of the required
 components. No further configuration is necessary. For information about installing Windows
-Management Framework, see [Install and configure WMF][].
+Management Framework, see [Install and configure WMF][wmfsetup].
 
 ## How to start the Windows PowerShell 2.0 Engine
 
@@ -60,16 +60,19 @@ create sessions that use the Windows PowerShell 2.0 Engine.
 
 This is an advanced task that is typically performed by a system administrator.
 
-The following procedure uses the **PSVersion** parameter of the [Register-PSSessionConfiguration][]
-cmdlet to create a session configuration that uses the Windows PowerShell 2.0 Engine. You can also
-use the **PowerShellVersion** parameter of the [New-PSSessionConfigurationFile][] cmdlet to create a
-session configuration file for a session that loads the Windows PowerShell 2.0 Engine and you can
-use the **PSVersion** parameter of the [Set-PSSessionConfiguration][] parameter to change a session
-configuration to use the Windows PowerShell 2.0 Engine.
+The following procedure uses the **PSVersion** parameter of the
+[Register-PSSessionConfiguration][Register-PSSessionConfiguration] cmdlet to create a session
+configuration that uses the Windows PowerShell 2.0 Engine. You can also use the
+**PowerShellVersion** parameter of the
+[New-PSSessionConfigurationFile][New-PSSessionConfigurationFile] cmdlet to create a session
+configuration file for a session that loads the Windows PowerShell 2.0 Engine and you can use the
+**PSVersion** parameter of the [Set-PSSessionConfiguration][Set-PSSessionConfiguration] parameter to
+change a session configuration to use the Windows PowerShell 2.0 Engine.
 
-For more information about session configuration files, see [about_Session_Configuration_Files][].
-For information about session configurations, including setup and security, see
-[about_Session_Configurations][].
+For more information about session configuration files, see
+[about_Session_Configuration_Files][about_Session_Configuration_Files]. For information about
+session configurations, including setup and security, see
+[about_Session_Configurations][about_Session_Configurations].
 
 ### To start a remote Windows PowerShell 2.0 session
 
@@ -101,7 +104,7 @@ For information about session configurations, including setup and security, see
 ## How to start a background job with the Windows PowerShell 2.0 Engine
 
 To start a background job with the Windows PowerShell 2.0 Engine, use the **PSVersion** parameter of
-the [Start-Job][] cmdlet.
+the [Start-Job][Start-Job] cmdlet.
 
 The following command starts a background job with the Windows PowerShell 2.0 Engine
 
@@ -109,14 +112,14 @@ The following command starts a background job with the Windows PowerShell 2.0 En
 Start-Job {Get-Process} -PSVersion 2.0
 ```
 
-For more information about background jobs, see [about_Jobs][].
+For more information about background jobs, see [about_Jobs][about_Jobs].
 
 <!-- link references -->
 [announcement]: https://devblogs.microsoft.com/powershell/windows-powershell-2-0-deprecation/
-[A Comparison of Shell and Scripting Language Security]: https://devblogs.microsoft.com/powershell/a-comparison-of-shell-and-scripting-language-security/
+[security]: https://devblogs.microsoft.com/powershell/a-comparison-of-shell-and-scripting-language-security/
 [blueteam]: https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
-[Installing Windows PowerShell]: install/Installing-Windows-PowerShell.md
-[Install and configure WMF]: wmf/setup/install-configure.md
+[pssetup]: install/Installing-Windows-PowerShell.md
+[wmfsetup]: wmf/setup/install-configure.md
 [Register-PSSessionConfiguration]: /powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration
 [New-PSSessionConfigurationFile]: /powershell/module/Microsoft.PowerShell.Core/New-PSSessionConfigurationFile
 [Set-PSSessionConfiguration]: /powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration

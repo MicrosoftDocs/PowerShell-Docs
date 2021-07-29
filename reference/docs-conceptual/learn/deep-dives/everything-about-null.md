@@ -10,9 +10,9 @@ The PowerShell `$null` often appears to be simple but it has a lot of nuances. L
 look at `$null` so you know what happens when you unexpectedly run into a `$null` value.
 
 > [!NOTE]
-> The [original version][] of this article appeared on the blog written by [@KevinMarquette][]. The
+> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
 > PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][].
+> [PowerShellExplained.com][PowerShellExplained.com].
 
 ## What is NULL?
 
@@ -187,11 +187,11 @@ everything that doesn't match `$null` and in this case there are no results (Thi
 
 Not only can we create a value that makes both of them evaluate to `$false`, it's possible to
 create a value where they both evaluate to `$true`. Mathias Jessen (@IISResetMe) has a
-[good post][] that dives into that scenario.
+[good post][good post] that dives into that scenario.
 
 ### PSScriptAnalyzer and VSCode
 
-The [PSScriptAnalyzer][] module has a rule that checks for this issue called
+The [PSScriptAnalyzer][PSScriptAnalyzer] module has a rule that checks for this issue called
 `PSPossibleIncorrectComparisonWithNull`.
 
 ```powershell
@@ -300,7 +300,7 @@ if ( $value.count -eq 1 )
 ## Empty null
 
 There is one special type of `$null` that acts differently than the others. I am going to call it
-the empty `$null` but it's really a [System.Management.Automation.Internal.AutomationNull][]. This
+the empty `$null` but it's really a [System.Management.Automation.Internal.AutomationNull][System.Management.Automation.Internal.AutomationNull]. This
 empty `$null` is the one you get as the result of a function or script block that returns nothing (a
 void result).
 

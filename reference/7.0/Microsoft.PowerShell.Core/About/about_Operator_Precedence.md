@@ -35,61 +35,61 @@ The Operator column lists the operators. The Reference column lists the
 PowerShell Help topic in which the operator is described. To display the topic,
 type `get-help <topic-name>`.
 
-|         OPERATOR         |           REFERENCE            |
-| ------------------------ | ------------------------------ |
-| `$() @() () @{}`         | [about_Operators][]            |
-| `. ?.` (member access)   | [about_Operators][]            |
-| `::` (static)            | [about_Operators][]            |
-| `[0] ?[0]` (index operator) | [about_Operators][]         |
-| `[int]` (cast operators) | [about_Operators][]            |
-| `-split` (unary)         | [about_Split][]                |
-| `-join` (unary)          | [about_Join][]                 |
-| `,` (comma operator)     | [about_Operators][]            |
-| `++ --`                  | [about_Assignment_Operators][] |
-| `! -not`                 | [about_Logical_Operators][]    |
-| `..` (range operator)    | [about_Operators][]            |
-| `-f` (format operator)   | [about_Operators][]            |
-| `-` (unary/negative)     | [about_Arithmetic_Operators][] |
-| `* / %`                  | [about_Arithmetic_Operators][] |
-| `+ -`                    | [about_Arithmetic_Operators][] |
+|          OPERATOR           |              REFERENCE               |
+| --------------------------- | ------------------------------------ |
+| `$() @() () @{}`            | [about_Operators][ops]               |
+| `. ?.` (member access)      | [about_Operators][ops]               |
+| `::` (static)               | [about_Operators][ops]               |
+| `[0] ?[0]` (index operator) | [about_Operators][ops]               |
+| `[int]` (cast operators)    | [about_Operators][ops]               |
+| `-split` (unary)            | [about_Split][split]                 |
+| `-join` (unary)             | [about_Join][join]                   |
+| `,` (comma operator)        | [about_Operators][ops]               |
+| `++ --`                     | [about_Assignment_Operators][assign] |
+| `! -not`                    | [about_Logical_Operators][logic]     |
+| `..` (range operator)       | [about_Operators][ops]               |
+| `-f` (format operator)      | [about_Operators][ops]               |
+| `-` (unary/negative)        | [about_Arithmetic_Operators][math]   |
+| `* / %`                     | [about_Arithmetic_Operators][math]   |
+| `+ -`                       | [about_Arithmetic_Operators][math]   |
 
 The following group of operators have equal precedence. Their case-sensitive
 and explicitly case-insensitive variants have the same precedence.
 
-|         OPERATOR          |           REFERENCE            |
-| ------------------------- | ------------------------------ |
-| `-split` (binary)         | [about_Split][]                |
-| `-join` (binary)          | [about_Join][]                 |
-| `-is -isnot -as`          | [about_Type_Operators][]       |
-| `-eq -ne -gt -ge -lt -le` | [about_Comparison_Operators][] |
-| `-like -notlike`          | [about_Comparison_Operators][] |
-| `-match -notmatch`        | [about_Comparison_Operators][] |
-| `-in -notIn`              | [about_Comparison_Operators][] |
-| `-contains -notContains`  | [about_Comparison_Operators][] |
-| `-replace`                | [about_Comparison_Operators][] |
+|         OPERATOR          |               REFERENCE               |
+| ------------------------- | ------------------------------------- |
+| `-split` (binary)         | [about_Split][split]                  |
+| `-join` (binary)          | [about_Join][join]                    |
+| `-is -isnot -as`          | [about_Type_Operators][type]          |
+| `-eq -ne -gt -ge -lt -le` | [about_Comparison_Operators][compare] |
+| `-like -notlike`          | [about_Comparison_Operators][compare] |
+| `-match -notmatch`        | [about_Comparison_Operators][compare] |
+| `-in -notIn`              | [about_Comparison_Operators][compare] |
+| `-contains -notContains`  | [about_Comparison_Operators][compare] |
+| `-replace`                | [about_Comparison_Operators][compare] |
 
 The list resumes here with the following operators in precedence
 order:
 
-|                OPERATOR                 |           REFERENCE            |
-| --------------------------------------- | ------------------------------ |
-| `-band -bnot -bor -bxor -shr -shl`      | [about_Arithmetic_Operators][] |
-| `-and -or -xor`                         | [about_Logical_Operators][]    |
+|              OPERATOR              |             REFERENCE              |
+| ---------------------------------- | ---------------------------------- |
+| `-band -bnot -bor -bxor -shr -shl` | [about_Arithmetic_Operators][math] |
+| `-and -or -xor`                    | [about_Logical_Operators][logic]   |
 
 The following items are not true operators. They are part of PowerShell's
 command syntax, not expression syntax. Assignment is always the last action
 that happens.
 
-|                SYNTAX                   |           REFERENCE            |
-| --------------------------------------- | ------------------------------ |
-| `.` (dot-source)                        | [about_Operators][]            |
-| `&` (call)                              | [about_Operators][]            |
-| `? <if-true> : <if-false>` (Ternary operator) | [about_Operators][]      |
-| `??` (null-coalese operator)            | [about_Operators][]            |
-| <code>&#124;</code> (pipeline operator) | [about_Operators][]            |
-| `> >> 2> 2>> 2>&1`                      | [about_Redirection][]          |
-| <code>&& &#124;&#124;</code> (pipeline chain operators) | [about_Operators][] |
-| `= += -= *= /= %= ??=`                  | [about_Assignment_Operators][] |
+|                         SYNTAX                          |              REFERENCE               |
+| ------------------------------------------------------- | ------------------------------------ |
+| `.` (dot-source)                                        | [about_Operators][ops]               |
+| `&` (call)                                              | [about_Operators][ops]               |
+| `? <if-true> : <if-false>` (Ternary operator)           | [about_Operators][ops]               |
+| `??` (null-coalese operator)                            | [about_Operators][ops]               |
+| <code>&#124;</code> (pipeline operator)                 | [about_Operators][ops]               |
+| `> >> 2> 2>> 2>&1`                                      | [about_Redirection][redir]           |
+| <code>&& &#124;&#124;</code> (pipeline chain operators) | [about_Operators][ops]               |
+| `= += -= *= /= %= ??=`                                  | [about_Assignment_Operators][assign] |
 
 ## EXAMPLES
 
@@ -177,32 +177,32 @@ are reading and maintaining your scripts.
 
 ## SEE ALSO
 
-[about_Operators][]
+[about_Operators][ops]
 
-[about_Assignment_Operators][]
+[about_Assignment_Operators][assign]
 
-[about_Comparison_Operators][]
+[about_Comparison_Operators][compare]
 
-[about_Arithmetic_Operators][]
+[about_Arithmetic_Operators][math]
 
-[about_Join][]
+[about_Join][join]
 
-[about_Redirection][]
+[about_Redirection][redir]
 
-[about_Scopes][]
+[about_Scopes][scopes]
 
-[about_Split][]
+[about_Split][split]
 
-[about_Type_Operators][]
+[about_Type_Operators][type]
 
 <!-- reference links -->
-[about_Arithmetic_Operators]: about_Arithmetic_Operators.md
-[about_Assignment_Operators]: about_Assignment_Operators.md
-[about_Comparison_Operators]: about_Comparison_Operators.md
-[about_Join]: about_Join.md
-[about_Logical_Operators]: about_logical_operators.md
-[about_Operators]: about_Operators.md
-[about_Redirection]: about_Redirection.md
-[about_Scopes]: about_Scopes.md
-[about_Split]: about_Split.md
-[about_Type_Operators]: about_Type_Operators.md
+[math]: about_Arithmetic_Operators.md
+[assign]: about_Assignment_Operators.md
+[compare]: about_Comparison_Operators.md
+[join]: about_Join.md
+[logic]: about_logical_operators.md
+[ops]: about_Operators.md
+[redir]: about_Redirection.md
+[scopes]: about_Scopes.md
+[split]: about_Split.md
+[type]: about_Type_Operators.md

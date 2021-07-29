@@ -7,14 +7,14 @@ ms.custom: contributor-KevinMarquette
 # Everything you ever wanted to know about the switch statement
 
 Like many other languages, PowerShell has commands for controlling the flow of execution within your
-scripts. One of those statements is the [switch][] statement and in PowerShell, it offers features
+scripts. One of those statements is the [switch][switch] statement and in PowerShell, it offers features
 that aren't found in other languages. Today, we take a deep dive into working with the PowerShell
 `switch`.
 
 > [!NOTE]
-> The [original version][] of this article appeared on the blog written by [@KevinMarquette][]. The
+> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
 > PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][].
+> [PowerShellExplained.com][PowerShellExplained.com].
 
 ## The `if` statement
 
@@ -241,7 +241,7 @@ switch -Regex ( $message )
 }
 ```
 
-I have more examples of using regex in another article I wrote: [The many ways to use regex][].
+I have more examples of using regex in another article I wrote: [The many ways to use regex][The many ways to use regex].
 
 ### -File
 
@@ -561,7 +561,7 @@ It still executes the same way and gives a better visual break when quickly look
 
 We need to revisit regex to touch on something that isn't immediately obvious. The use of regex
 populates the `$matches` variable. I do go into the use of `$matches` more when I talk about
-[The many ways to use regex][]. Here is a quick sample to show it in action with named matches.
+[The many ways to use regex][The many ways to use regex]. Here is a quick sample to show it in action with named matches.
 
 ``` powershell
 $message = 'my ssn is 123-23-3456 and credit card: 1234-5678-1234-5678'
@@ -726,7 +726,7 @@ access that value directly. I would call it madness.
 
 ### Hashtables
 
-One of my most popular posts is the one I did on [hashtables][]. One of the use cases for a
+One of my most popular posts is the one I did on [hashtables][hashtables]. One of the use cases for a
 `hashtable` is to be a lookup table. That is an alternate approach to a common pattern that a
 `switch` statement is often addressing.
 

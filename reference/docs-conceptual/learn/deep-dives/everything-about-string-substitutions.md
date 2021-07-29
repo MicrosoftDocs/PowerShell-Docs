@@ -11,9 +11,9 @@ referring to any time you want to format a string to include values from variabl
 something that I often find myself explaining to new scripters.
 
 > [!NOTE]
-> The [original version][] of this article appeared on the blog written by [@KevinMarquette][]. The
+> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
 > PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][].
+> [PowerShellExplained.com][PowerShellExplained.com].
 
 ## Concatenation
 
@@ -129,7 +129,7 @@ This is not splatting because I'm passing the whole array in, but the idea is si
 ## Advanced formatting
 
 I intentionally called these out as coming from .NET because there are lots of formatting options
-already well [documented][] on it. There are built in ways to format various data types.
+already well [documented][documented] on it. There are built in ways to format various data types.
 
 ```powershell
 "{0:yyyyMMdd}" -f (Get-Date)
@@ -177,7 +177,7 @@ The great thing about this is it works out the backslashes correctly when it put
 together. This is especially important if you are taking values from users or config files.
 
 This also goes well with `Split-Path` and `Test-Path`. I also cover these in my post about
-[reading and saving to files][].
+[reading and saving to files][reading and saving to files].
 
 ## Strings are arrays
 
@@ -229,7 +229,7 @@ $tester = "Better"
 Write-Host "$test $tester ${test}ter"
 ```
 
-Thank you [/u/real_parbold][] for that one.
+Thank you [/u/real_parbold][/u/real_parbold] for that one.
 
 Here is an alternate to this approach:
 
@@ -307,7 +307,7 @@ foreach($name in $nameList){
 ```
 
 To keep going on this idea; you could be importing a large email template from a text file to do
-this. I have to thank [Mark Kraus][] for this [suggestion][].
+this. I have to thank [Mark Kraus][Mark Kraus] for this [suggestion][suggestion].
 
 ## Whatever works the best for you
 

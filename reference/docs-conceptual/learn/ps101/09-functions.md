@@ -25,7 +25,7 @@ way when writing any PowerShell code.
 
 ## Naming
 
-When naming your functions in PowerShell, use a [Pascal case][] name with an approved verb and a
+When naming your functions in PowerShell, use a [Pascal case][Pascal case] name with an approved verb and a
 singular noun. I also recommend prefixing the noun. For example:
 `<ApprovedVerb>-<Prefix><SingularNoun>`.
 
@@ -312,7 +312,7 @@ I also recommend using the same case for your parameter names as the default cmd
 cmdlets. People who are already familiar with PowerShell will feel right at home.
 
 The `param` statement allows you to define one or more parameters. The parameter definitions are
-separated by a comma (`,`). For more information, see [about_Functions_Advanced_Parameters][].
+separated by a comma (`,`). For more information, see [about_Functions_Advanced_Parameters][about_Functions_Advanced_Parameters].
 
 ## Advanced Functions
 
@@ -864,14 +864,14 @@ input, error handling, and comment based help.
 
 ## Recommended Reading
 
-- [about_Functions][]
-- [about_Functions_Advanced_Parameters][]
-- [about_CommonParameters][]
-- [about_Functions_CmdletBindingAttribute][]
-- [about_Functions_Advanced][]
-- [about_Try_Catch_Finally][]
-- [about_Comment_Based_Help][]
-- [Video: PowerShell Toolmaking with Advanced Functions and Script Modules][]
+- [about_Functions][about_Functions]
+- [about_Functions_Advanced_Parameters][about_Functions_Advanced_Parameters]
+- [about_CommonParameters][about_CommonParameters]
+- [about_Functions_CmdletBindingAttribute][about_Functions_CmdletBindingAttribute]
+- [about_Functions_Advanced][about_Functions_Advanced]
+- [about_Try_Catch_Finally][about_Try_Catch_Finally]
+- [about_Comment_Based_Help][about_Comment_Based_Help]
+- [Video: PowerShell Toolmaking with Advanced Functions and Script Modules][Video: PowerShell Toolmaking with Advanced Functions and Script Modules]
 
 <!-- link references -->
 [about_Functions]: /powershell/module/microsoft.powershell.core/about/about_functions

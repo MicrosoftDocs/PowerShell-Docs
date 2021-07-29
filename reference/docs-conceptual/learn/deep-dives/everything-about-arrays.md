@@ -6,14 +6,14 @@ ms.custom: contributor-KevinMarquette
 ---
 # Everything you wanted to know about arrays
 
-[Arrays][] are a fundamental language feature of most programming languages. They're a collection of
+[Arrays][Arrays] are a fundamental language feature of most programming languages. They're a collection of
 values or objects that are difficult to avoid. Let's take a close look at arrays and everything they
 have to offer.
 
 > [!NOTE]
-> The [original version][] of this article appeared on the blog written by [@KevinMarquette][]. The
+> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
 > PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][].
+> [PowerShellExplained.com][PowerShellExplained.com].
 
 ## What is an array?
 
@@ -388,7 +388,7 @@ classic off-by-one error.
 
 #### Switch loop
 
-This is one that is easy to overlook. If you provide an array to a [switch statement][], it
+This is one that is easy to overlook. If you provide an array to a [switch statement][switch statement], it
 checks each item in the array.
 
 ```powershell
@@ -746,7 +746,7 @@ $servers | Select-String SQL
 ```
 
 I take a closer look at `Select-String`,`-match` and the `$matches` variable in another post called
-[The many ways to use regex][].
+[The many ways to use regex][The many ways to use regex].
 
 ### $null or empty
 
@@ -823,8 +823,8 @@ if ( $null -ne $array -and @($array).count -gt 0 )
 
 ### All -eq
 
-I recently saw someone ask [how to verify that every value in an array matches a given value][].
-Reddit user **/u/bis** had this clever [solution][] that checks for any incorrect values and then
+I recently saw someone ask [how to verify that every value in an array matches a given value][how to verify that every value in an array matches a given value].
+Reddit user **/u/bis** had this clever [solution][solution] that checks for any incorrect values and then
 flips the result.
 
 ```powershell
@@ -953,7 +953,7 @@ The reason I'm using `[void]` at the beginning of the line is to suppress the re
 .NET calls do this and can create unexpected output.
 
 If the only data that you have in your array is strings, then also take a look at using
-[StringBuilder][]. It's almost the same thing but has some methods that are just for dealing with
+[StringBuilder][StringBuilder]. It's almost the same thing but has some methods that are just for dealing with
 strings. The `StringBuilder` is specially designed for performance.
 
 It's common to see people move to `ArrayList` from arrays. But it comes from a time where C# didn't
@@ -1204,7 +1204,7 @@ every time you read it and that it turns out to be a good reference for you for 
 come. If you found this to be helpful, please share it with others you think may get value out
 of it.
 
-From here, I would recommend you check out a similar post that I wrote about [hashtables][].
+From here, I would recommend you check out a similar post that I wrote about [hashtables][hashtables].
 
 <!-- link references -->
 [original version]: https://powershellexplained.com/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/

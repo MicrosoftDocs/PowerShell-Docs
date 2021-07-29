@@ -15,8 +15,9 @@ These cmdlets enable the following scenarios:
 - Deliver PowerShell scripts and modules only available to your organization
 
 This article describes how to set up a local PowerShell repository. The article also covers the
-[OfflinePowerShellGetDeploy][] module available from the PowerShell Gallery. This module contains
-cmdlets to install the latest version of PowerShellGet into your local repository.
+[OfflinePowerShellGetDeploy][OfflinePowerShellGetDeploy] module available from the PowerShell
+Gallery. This module contains cmdlets to install the latest version of PowerShellGet into your local
+repository.
 
 ## Local repository types
 
@@ -52,7 +53,7 @@ servers or file shares.
 
 The following article lists the steps for setting up your own NuGet Server.
 
-- [NuGet.Server][]
+- [NuGet.Server][nugetsrv]
 
 Follow the steps up to the point of adding packages. The steps for
 [publishing a package](#publishing-to-a-local-repository) are covered later in this article.
@@ -149,7 +150,7 @@ Save-Package -Name 'PackageName' -Provider NuGet -Source https://www.powershellg
 
 If your local PSRepository is web-based, it requires an additional step that uses nuget.exe to publish.
 
-See the documentation for using [nuget.exe][].
+See the documentation for using [nuget.exe][nuget].
 
 ## Installing PowerShellGet on a disconnected system
 
@@ -221,5 +222,5 @@ repository. For more information and instructions, see the [Azure Artifacts docu
 
 <!-- external links -->
 [OfflinePowerShellGetDeploy]: https://www.powershellgallery.com/packages/OfflinePowerShellGetDeploy/0.1.1
-[Nuget.Server]: /nuget/hosting-packages/nuget-server
-[nuget.exe]: /nuget/tools/nuget-exe-cli-reference
+[nugetsrv]: /nuget/hosting-packages/nuget-server
+[nuget]: /nuget/tools/nuget-exe-cli-reference

@@ -12,12 +12,12 @@ using Visual Studio Code (VS Code) and the C# extension.
 Some familiarity with the Visual Studio Code debugger is assumed.
 
 - For a general introduction to the VS Code debugger, see
-  [Debugging in Visual Studio Code][].
+  [Debugging in Visual Studio Code][vsdebug].
 
 - For examples of debugging PowerShell script files and modules, see
-  [Using Visual Studio Code for remote editing and debugging][].
+  [Using Visual Studio Code for remote editing and debugging][using-vscode].
 
-This guide assumes you have read and followed the instructions in the [Writing Portable Modules][]
+This guide assumes you have read and followed the instructions in the [Writing Portable Modules][writing]
 guide.
 
 ## Creating a build task
@@ -96,7 +96,7 @@ your source code.
 
 ### Configuring launch.json for PowerShell Core
 
-1. Install the [C# for Visual Studio Code][] extension
+1. Install the [C# for Visual Studio Code][csext] extension
 
 1. In the Debug pane, add a debug configuration
 
@@ -134,9 +134,9 @@ your source code.
 The `program` field is used to launch `pwsh` so that the cmdlet being debugged can be run. The
 `-NoExit` argument prevents the PowerShell session from exiting as soon as the module is imported.
 The path in the `Import-Module` argument is the default build output path when you've followed the
-[Writing Portable Modules][] guide. If you've created a module manifest (`.psd1` file), you should
-use the path to that instead. The `/` path separator works on Windows, Linux, and macOS. You must
-use the integrated terminal to run the PowerShell commands you want to debug.
+[Writing Portable Modules][writing] guide. If you've created a module manifest (`.psd1` file), you
+should use the path to that instead. The `/` path separator works on Windows, Linux, and macOS. You
+must use the integrated terminal to run the PowerShell commands you want to debug.
 
 > [!NOTE]
 > If the debugger doesn't stop at any breakpoints, look in the Visual Studio Code Debug Console for a line that says:
@@ -208,7 +208,7 @@ To end debugging, click **Stop** in the debug toolbar or press <kbd>Shift</kbd>-
 shell used for debugging exits and releases the lock on the compiled DLL file.
 
 <!-- reference links -->
-[Debugging in Visual Studio Code]: https://code.visualstudio.com/docs/editor/debugging
-[Using Visual Studio Code for remote editing and debugging]: using-vscode-for-remote-editing-and-debugging.md
-[Writing Portable Modules]: ../writing-portable-modules.md
-[C# for Visual Studio Code]: https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
+[vsdebug]: https://code.visualstudio.com/docs/editor/debugging
+[using-vscode]: using-vscode-for-remote-editing-and-debugging.md
+[writing]: ../writing-portable-modules.md
+[csext]: https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp

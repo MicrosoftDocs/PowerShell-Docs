@@ -6,7 +6,7 @@ title: Attributes
 # 12. Attributes
 
 An *attribute* object associates predefined system information with a *target element*, which can be
-a param block or a parameter ([§8.10][]). Each attribute object has an *attribute type*.
+a param block or a parameter ([§8.10][§8.10]). Each attribute object has an *attribute type*.
 
 Information provided by an attribute is also known as *metadata*. Metadata can be examined by the
 command or the execution environment to control how the command processes data or before run time by
@@ -48,7 +48,7 @@ The positional arguments (if any) precede the named arguments. A named argument 
 *simple-name*, optionally followed by an equal sign and followed by an *expression*. If the
 expression is omitted, the value `$true` is assumed.
 
-The *attribute-name* is a reserved attribute type ([§12.3][]) or some implementation-defined
+The *attribute-name* is a reserved attribute type ([§12.3][§12.3]) or some implementation-defined
 attribute type.
 
 ## 12.2 Attribute instances
@@ -58,7 +58,7 @@ run-time.
 
 To create an object of some attribute type *A*, use the notation `A()`. An attribute is declared by
 enclosing its instance inside `[]`, as in `[A()]`. Some attribute types have positional and named
-parameters ([§8.14][]), just like functions and cmdlets. For example,
+parameters ([§8.14][§8.14]), just like functions and cmdlets. For example,
 
 `[A(10,IgnoreCase=$true)]`
 
@@ -178,7 +178,7 @@ conversion from `$null` to int.
 This attribute is used in the *attribute-list* of *param-block* of a function to indicate that
 function acts similar to a cmdlet. Specifically, it allows functions to access a number of methods
 and properties through the $PsCmdlet variable by using begin, process, and end named blocks
-([§8.10.7][]).
+([§8.10.7][§8.10.7]).
 
 When this attribute is present, positional arguments that have no matching positional parameters
 cause parameter binding to fail and $args is not defined. (Without this attribute $args would take
@@ -213,12 +213,12 @@ The following arguments are used to define the characteristics of the parameter:
 <tr class="odd">
 <td>DefaultParameterSetName (named)</td>
 <td><p>Type: string; Default value: "__AllParameterSets"</p>
-<p>Specifies the parameter set to use if that cannot be determined from the arguments. See the named argument ParameterSetName in the attribute Parameter ([§12.3.7][]).</p></td>
+<p>Specifies the parameter set to use if that cannot be determined from the arguments. See the named argument ParameterSetName in the attribute Parameter ([§12.3.7][§12.3.7]).</p></td>
 </tr>
 <tr class="even">
 <td>PositionalBinding (named)</td>
 <td><p>Type: bool; Default value: $true</p>
-<p>Specifies whether positional binding is supported or not. The value of this argument is ignored if any parameters specify non-default values for either the named argument Position or the named argument ParameterSetName in the attribute Parameter ([§12.3.7][]). Otherwise, if the argument is $false then no parameters are positional, otherwise parameters are assigned a position based on the order the parameters are specified.</p></td>
+<p>Specifies whether positional binding is supported or not. The value of this argument is ignored if any parameters specify non-default values for either the named argument Position or the named argument ParameterSetName in the attribute Parameter ([§12.3.7][§12.3.7]). Otherwise, if the argument is $false then no parameters are positional, otherwise parameters are assigned a position based on the order the parameters are specified.</p></td>
 </tr>
 </tbody>
 </table>
@@ -308,7 +308,7 @@ HelpMessage = "An array of computer names.")]<br />
 <p>For parameters that belong to multiple parameter sets, add a Parameter attribute for each parameter set. This allows the parameter to be defined differently for each parameter set.</p>
 <p>A parameter set that contains multiple positional parameters must define unique positions for each parameter. No two positional parameters can specify the same position.</p>
 <p>If no parameter set is specified for a parameter, the parameter belongs to all parameter sets.</p>
-<p>When multiple parameter sets are defined, the named argument DefaultParameterSetName of the attribute CmdletBinding ([§12.3.5][]) is used to specify the default parameter set. The runtime uses the default parameter set if it cannot determine the parameter set to use based on the information provided by the command, or raises an exception if no default parameter set has been specified.</p>
+<p>When multiple parameter sets are defined, the named argument DefaultParameterSetName of the attribute CmdletBinding ([§12.3.5][§12.3.5]) is used to specify the default parameter set. The runtime uses the default parameter set if it cannot determine the parameter set to use based on the information provided by the command, or raises an exception if no default parameter set has been specified.</p>
 <p>The following example shows a function Test with a parameter declaration of two parameters that belong to two different parameter sets, and a third parameter that belongs to both sets:</p>
 <p>param ( [Parameter(Mandatory = $true,<br />
 ParameterSetName = "Computer")]<br />
@@ -352,7 +352,7 @@ Test -UserName "Mary","Jack" -SharedParam 20</p></td>
 <p>param ( [Parameter(Mandatory = $true,<br />
 ValueFromPipeline=$true)]<br />
 [string[]] $ComputerName )</p>
-<p>For an example of using this parameter in conjunction with the Alias attribute see [§12.3.1][]. </p></td>
+<p>For an example of using this parameter in conjunction with the Alias attribute see [§12.3.1][§12.3.1]. </p></td>
 </tr>
 <tr class="even">
 <td>ValueFromPipelineByPropertyName (named)</td>
@@ -598,7 +598,7 @@ characteristics of the parameter:
 <tr class="even">
 <td>Options (named)</td>
 <td><p>Type: Regular-Expression-Option</p>
-<p>See [§4.2.6.4][] for the allowed values.</p></td>
+<p>See [§4.2.6.4][§4.2.6.4] for the allowed values.</p></td>
 </tr>
 </tbody>
 </table>

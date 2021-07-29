@@ -9,16 +9,16 @@ PowerShell is a distinct set of tools and components that is shipped, installed,
 separately from Windows PowerShell. PowerShell isn't included in the Windows
 licensing agreements.
 
-PowerShell is supported under traditional Microsoft support agreements, including [paid support][],
-[Microsoft Enterprise Agreements][enterprise-agreement], and
-[Microsoft Software Assurance][assurance]. You can also pay for [assisted support][] for PowerShell
-by filing a support request for your problem.
+PowerShell is supported under traditional Microsoft support agreements, including
+[paid support][paid], [Microsoft Enterprise Agreements][enterprise-agreement], and
+[Microsoft Software Assurance][assurance]. You can also pay for [assisted support][assisted] for
+PowerShell by filing a support request for your problem.
 
 ## Community Support
 
-We also offer [community support][] on GitHub where you can file an issue, bug, or feature request.
-Also, you may find help from other members of the community in the Microsoft
-[PowerShell Tech Community][] or any of the forums listed in the community section of
+We also offer [community support][community] on GitHub where you can file an issue, bug, or feature
+request. Also, you may find help from other members of the community in the Microsoft
+[PowerShell Tech Community][pscommunity] or any of the forums listed in the community section of
 [PowerShell][pshub] hub page. We offer no guarantee there that the community will address or resolve
 your issue in a timely manner. If you have a problem that requires immediate attention, you should
 use the traditional, paid support options.
@@ -54,31 +54,29 @@ supported. These packages are marked as `Community` in the table.
 Platforms listed as `Experimental` aren't officially supported, but are available for
 experimentation and feedback.
 
-<!-- TODO: update OS list -->
-
-|                     Platform                      |      7.0      |      7.1      |
-| ------------------------------------------------- | :-----------: | :-----------: |
-| Windows 8.1, and 10                               |   Supported   |   Supported   |
-| Windows Server 2012 R2, 2016, 2019                |   Supported   |   Supported   |
-| [Windows Server Semi-Annual Channel][semi-annual] |   Supported   |   Supported   |
-| Ubuntu 16.04, 18.04                               |   Supported   |   Supported   |
-| Ubuntu 20.04                                      | Not Supported |   Supported   |
-| Ubuntu 19.10, 20.10 (via Snap Package)            |   Community   |   Supported   |
-| Debian 9                                          |   Supported   |   Supported   |
-| Debian 10                                         |   Supported   |   Supported   |
-| CentOS 7                                          |   Supported   |   Supported   |
-| CentOS 8                                          |   Supported   |   Supported   |
-| Red Hat Enterprise Linux 7                        |   Supported   |   Supported   |
-| Red Hat Enterprise Linux 8                        |   Supported   |   Supported   |
-| Fedora 31+                                        |   Supported   | Not Supported |
-| Alpine 3.10                                       |   See Note 1  | Not Supported |
-| Alpine 3.11+                                      |   See Note 1  |   See Note 1  |
-| macOS 10.13+                                      |   Supported   |   Supported   |
-| Arch                                              |   Community   |   Community   |
-| Raspbian                                          |   Community   |   Community   |
-| Kali                                              |   Community   |   Community   |
-| AppImage (works on multiple Linux platforms)      |   Community   |   Community   |
-| [Snap Package](https://snapcraft.io/powershell)   |   See note 2  |   See note    |
+|                     Platform                      |      7.0      |      7.1      |      7.2      |
+| ------------------------------------------------- | :-----------: | :-----------: | :-----------: |
+| Windows 8.1, and 10                               |   Supported   |   Supported   |   Supported   |
+| Windows Server 2012 R2, 2016, 2019, 2022          |   Supported   |   Supported   |   Supported   |
+| [Windows Server Semi-Annual Channel][semi-annual] |   Supported   |   Supported   |   Supported   |
+| Ubuntu 16.04 LTS, 18.04 LTS                       |   Supported   |   Supported   |   Supported   |
+| Ubuntu 20.04 LTS                                  | Not Supported |   Supported   |   Supported   |
+| Ubuntu 21.04                                      | Not Supported | Not Supported |   Supported   |
+| Debian 9                                          |   Supported   |   Supported   |   Supported   |
+| Debian 10                                         |   Supported   |   Supported   |   Supported   |
+| CentOS 7                                          |   Supported   |   Supported   |   Supported   |
+| CentOS 8                                          |   Supported   |   Supported   |   Supported   |
+| Red Hat Enterprise Linux 7                        |   Supported   |   Supported   |   Supported   |
+| Red Hat Enterprise Linux 8                        |   Supported   |   Supported   |   Supported   |
+| Fedora 31+                                        |   Supported   | Not Supported | Not Supported |
+| Alpine 3.10                                       |  See Note 1   | Not Supported | Not Supported |
+| Alpine 3.11+                                      |  See Note 1   |  See Note 1   |  See Note 1   |
+| macOS 10.13+                                      |   Supported   |   Supported   |   Supported   |
+| Arch                                              |   Community   |   Community   |   Community   |
+| Raspbian                                          |   Community   |   Community   |   Community   |
+| Kali                                              |   Community   |   Community   |   Community   |
+| AppImage (works on multiple Linux platforms)      |   Community   |   Community   |   Community   |
+| [Snap Package](https://snapcraft.io/powershell)   |  See note 2   |   See note    |   See note    |
 
 > [!NOTE]
 > - 1 - CIM, PowerShell Remoting, and DSC are not supported on Alpine.
@@ -110,8 +108,6 @@ customers needing access but formal support and updates of any kind will no long
 
 So, the distribution owners ended support for the following versions and aren't supported.
 
-<!-- TODO: Update this table Jason-->
-
 |    Platform    | Version |                                                         End of Life                                                          |
 | -------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
 | Debian         |    8    | [June 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                            |
@@ -127,36 +123,39 @@ So, the distribution owners ended support for the following versions and aren't 
 | Ubuntu         |  16.10  | [July 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)                                         |
 | Ubuntu         |  17.04  | [January 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)                                           |
 | Ubuntu         |  17.10  | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)                                         |
+| Ubuntu         |  18.10  | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2019-July/000246.html)                                         |
+| Ubuntu         |  19.10  | [July 2020](https://lists.ubuntu.com/archives/ubuntu-announce/2020-July/000258.html)                                         |
+| Ubuntu         |  20.10  | [July 2021](https://lists.ubuntu.com/archives/ubuntu-announce/2021-July/000270.html)                                         |
 | Windows        |    7    | [January 2020](https://support.microsoft.com/help/4057281/windows-7-support-ended-on-january-14-2020)                        |
 | Windows Server | 2008 R2 | [January 2020](https://support.microsoft.com/help/4456235/end-of-support-for-windows-server-2008-and-windows-server-2008-r2) |
 
 ## Notes on licensing
 
-PowerShell Core is released under the [MIT license][]. Under this license, and without a paid
-support agreement, users are limited to [community support][]. With community support, Microsoft
-makes no guarantees of responsiveness or fixes.
+PowerShell Core is released under the [MIT license][mit]. Under this license, and without a paid
+support agreement, users are limited to [community support][community]. With community support,
+Microsoft makes no guarantees of responsiveness or fixes.
 
 ## Windows PowerShell Compatibility
 
 The support lifecycle for PowerShell doesn't cover modules that ship outside of the PowerShell 7
 release package. For example, using the `ActiveDirectory` module that ships as part of Windows
-Server is supported under the [Windows Support Lifecycle][].
+Server is supported under the [Windows Support Lifecycle][lifecycle].
 
 PowerShell 7 improves compatibility with existing PowerShell modules written for Windows PowerShell.
-For more information, see the [about_Windows_Compatibility][] article and the
-[module compatibility list][].
+For more information, see the [about_Windows_Compatibility][about_Windows_Compatibility] article and
+the [module compatibility list][compatlist].
 
 > [!NOTE]
-> The [**WindowsPSModulePath**](https://www.powershellgallery.com/packages/WindowsPSModulePath)
-> module is no longer necessary in PowerShell 7 and is not supported.
+> The [WindowsPSModulePath][WindowsPSModulePath] module is no longer necessary in PowerShell 7 and
+> is not supported.
 
 ## Experimental features
 
-[Experimental features][] are limited to [community support](#community-support).
+[Experimental features][exp] are limited to [community support](#community-support).
 
 ## Security Servicing Criteria
 
-PowerShell follows the [Microsoft Security Servicing Criteria for Windows][].
+PowerShell follows the [Microsoft Security Servicing Criteria for Windows][mssec].
 The table below outlines the features that meet the servicing criteria and those that do not.
 
 |                  Feature                   |       Type       |
@@ -174,7 +173,7 @@ The table below outlines the features that meet the servicing criteria and those
 > precedence over a `Set-ExecutionPolicy -ExecutionPolicy Bypass` command.
 
 For more information about AppLocker and Windows Defender Application Control (WDAC), see
-[Application Controls for Windows](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control).
+[Application Controls for Windows][WDAC].
 
 ## Release history
 
@@ -196,21 +195,23 @@ for historical reference. It is not intended for use to determine the support li
 | PowerShell 1.0           |   Nov-2006   | Installable on Windows XP SP2, Windows Server 2003 SP1 and Windows Vista. Optional component of Windows Server 2008.                          |
 
 <!-- hyperlink references -->
-[paid support]: https://support.microsoft.com/hub/4343728/support-for-business
+
+[paid]: https://support.microsoft.com/hub/4343728/support-for-business
 [enterprise-agreement]: https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx
-[community support]: /powershell/scripting/community/community-support
+[community]: /powershell/scripting/community/community-support
 [pshub]: /powershell
-[PowerShell Tech Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
-[assisted support]: https://support.microsoft.com/assistedsupportproducts
+[pscommunity]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[assisted]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [Long-Term]: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: /windows-server/get-started/semi-annual-channel-overview
-[MIT license]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
+[mit]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [about_Windows_Compatibility]: /powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility
-[Windows Support Lifecycle]: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet
-[module compatibility list]: /powershell/scripting/whats-new/module-compatibility
+[lifecycle]: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet
+[compatlist]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
-[Experimental features]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
+[exp]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
 [Microsoft Security Servicing Criteria for Windows]: https://www.microsoft.com/msrc/windows-security-servicing-criteria
+[WDAC]: /windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control

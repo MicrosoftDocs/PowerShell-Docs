@@ -18,7 +18,7 @@ It supports the following PowerShell versions:
 - Windows PowerShell 5.1 (Windows-only)
 
 > [!NOTE]
-> Visual Studio Code is not the same as [Visual Studio][].
+> Visual Studio Code is not the same as [Visual Studio][vsent].
 
 ## Getting started
 
@@ -90,7 +90,7 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 
 You're prompted with **Do you want to run software from this untrusted publisher?** Type `A` to run
 the file. Then, open Visual Studio Code and check that the PowerShell extension is functioning
-properly. If you still have problems getting started, let us know on [GitHub issues][].
+properly. If you still have problems getting started, let us know on [GitHub issues][ghi].
 
 > [!NOTE]
 > The PowerShell extension for Visual Studio Code does not support running in constrained language
@@ -378,12 +378,12 @@ If you're interested in contributing, Pull Requests are greatly appreciated. Fol
 [pscdn]:                  /archive/blogs/cdndevs/visual-studio-code-powershell-extension
 
 <!-- issues -->
-[GitHub issues]:          https://github.com/PowerShell/vscode-powershell/issues
+[ghi]:                    https://github.com/PowerShell/vscode-powershell/issues
 [i1310]:                  https://github.com/PowerShell/vscode-powershell/issues/1310
 [i606]:                   https://github.com/PowerShell/vscode-powershell/issues/606
 
 <!-- product links -->
-[Visual Studio]:          https://visualstudio.microsoft.com/
+[vsent]:                  https://visualstudio.microsoft.com/
 [vscode]:                 https://code.visualstudio.com/
 [psext]:                  https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell
 [vsc-settings]:           https://code.visualstudio.com/docs/getstarted/settings

@@ -12,9 +12,9 @@ have a simple way to create structured data. Take a look at the first example an
 better idea of what that means.
 
 > [!NOTE]
-> The [original version][] of this article appeared on the blog written by [@KevinMarquette][]. The
+> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
 > PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][].
+> [PowerShellExplained.com][PowerShellExplained.com].
 
 ## Creating a PSCustomObject
 
@@ -86,7 +86,7 @@ $myObject = Get-Content -Path $Path | ConvertFrom-Json
 ```
 
 I cover more ways to save objects to a file in my article on
-[The many ways to read and write to files][].
+[The many ways to read and write to files][The many ways to read and write to files].
 
 ## Working with properties
 
@@ -263,8 +263,8 @@ people do it:
 $myObject.PSObject.TypeNames.Insert(0,"My.Object")
 ```
 
-I recently discovered another way to do this from this [post by /u/markekraus][]. I did a little
-digging and more posts about the idea from [Adam Bertram][] and [Mike Shepard][] where they talk
+I recently discovered another way to do this from this [post by /u/markekraus][post by /u/markekraus]. I did a little
+digging and more posts about the idea from [Adam Bertram][Adam Bertram] and [Mike Shepard][Mike Shepard] where they talk
 about this approach that allows you to define it inline.
 
 ```powershell
@@ -286,7 +286,7 @@ name, we can do some more things.
 ## Using DefaultPropertySet (the long way)
 
 PowerShell decides for us what properties to display by default. A lot of the native commands have a
-`.ps1xml` [formatting file][] that does all the heavy lifting. From this [post by Boe Prox][],
+`.ps1xml` [formatting file][formatting file] that does all the heavy lifting. From this [post by Boe Prox][post by Boe Prox],
 there's another way for us to do this on our custom object using just PowerShell. We can give it a
 `MemberSet` for it to use.
 
@@ -303,7 +303,7 @@ Now when my object just falls to the shell, it will only show those properties b
 
 This is nice but I recently saw a better way when watching
 [PowerShell unplugged 2016 with Jeffrey Snover & Don Jones][psunplugged]. Jeffrey was using
-[Update-TypeData][] to specify the default properties.
+[Update-TypeData][Update-TypeData] to specify the default properties.
 
 ```powershell
 $TypeData = @{
@@ -375,7 +375,7 @@ code or compared to the actual function output.
 The main reason you would use an output type is so that meta information about your function
 reflects your intentions. Things like `Get-Command` and `Get-Help` that your development environment
 can take advantage of. If you want more information, then take a look at the help for it:
-[about_Functions_OutputTypeAttribute][].
+[about_Functions_OutputTypeAttribute][about_Functions_OutputTypeAttribute].
 
 With that said, if you're using Pester to unit test your functions then it would be a good idea
 to validate the output objects match your **OutputType**. This could catch variables that just fall

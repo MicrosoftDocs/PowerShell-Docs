@@ -87,19 +87,19 @@ indicate a UTF-8/Windows-1252 encoding problem.
 The PowerShell extension interacts with scripts in a number of ways:
 
 1. When scripts are edited in VS Code, the contents are sent by VS Code to the extension. The
-   [Language Server Protocol][] mandates that this content is transferred in UTF-8. Therefore, it is
-   not possible for the extension to get the wrong encoding.
+   [Language Server Protocol][lsp] mandates that this content is transferred in UTF-8. Therefore, it
+   is not possible for the extension to get the wrong encoding.
 1. When scripts are executed directly in the Integrated Console, they're read from the file by
    PowerShell directly. If PowerShell's encoding differs from VS Code's, something can go wrong
    here.
 1. When a script that is open in VS Code references another script that is not open in VS Code, the
    extension falls back to loading that script's content from the file system. The PowerShell
-   extension defaults to UTF-8 encoding, but uses [byte-order mark][], or BOM, detection to select
-   the correct encoding.
+   extension defaults to UTF-8 encoding, but uses [byte-order mark][bom], or BOM, detection to
+   select the correct encoding.
 
-The problem occurs when assuming the encoding of BOM-less formats (like [UTF-8][] with no BOM and
-[Windows-1252][]). The PowerShell extension defaults to UTF-8. The extension cannot change VS Code's
-encoding settings. For more information, see
+The problem occurs when assuming the encoding of BOM-less formats (like [UTF-8][utf8] with no BOM
+and [Windows-1252][win1252]). The PowerShell extension defaults to UTF-8. The extension cannot
+change VS Code's encoding settings. For more information, see
 [issue #824](https://github.com/Microsoft/VSCode/issues/824).
 
 ## Choosing the right encoding
@@ -107,7 +107,7 @@ encoding settings. For more information, see
 Different systems and applications can use different encodings:
 
 - In .NET Standard, on the web, and in the Linux world, UTF-8 is now the dominant encoding.
-- Many .NET Framework applications use [UTF-16][]. For historical reasons, this is sometimes called
+- Many .NET Framework applications use [UTF-16][utf16]. For historical reasons, this is sometimes called
   "Unicode", a term that now refers to a broad [standard](https://en.wikipedia.org/wiki/Unicode)
   that includes both UTF-8 and UTF-16.
 - On Windows, many native applications that predate Unicode continue to use Windows-1252 by default.
@@ -139,8 +139,8 @@ leading to artifacts in text manipulated with those applications.
 
 VS Code's default encoding is UTF-8 without BOM.
 
-To set [VS Code's encoding][], go to the VS Code settings (<kbd>Ctrl</kbd>+<kbd>,</kbd>) and set the
-`"files.encoding"` setting:
+To set [VS Code's encoding][vsencode], go to the VS Code settings (<kbd>Ctrl</kbd>+<kbd>,</kbd>) and
+set the `"files.encoding"` setting:
 
 ```json
 "files.encoding": "utf8bom"
@@ -173,17 +173,17 @@ field. For example:
 }
 ```
 
-You may also want to consider installing the [Gremlins tracker][] for Visual Studio Code. This
-extension reveals certain Unicode characters that easily corrupted because they are invisible or
-look like other normal characters.
+You may also want to consider installing the [Gremlins tracker][gremlins] for Visual Studio Code.
+This extension reveals certain Unicode characters that easily corrupted because they are invisible
+or look like other normal characters.
 
 ## Configuring PowerShell
 
 PowerShell's default encoding varies depending on version:
 
 - In PowerShell 6+, the default encoding is UTF-8 without BOM on all platforms.
-- In Windows PowerShell, the default encoding is usually Windows-1252, an extension of [latin-1][],
-  also known as ISO 8859-1.
+- In Windows PowerShell, the default encoding is usually Windows-1252, an extension of
+  [latin-1][latin1], also known as ISO 8859-1.
 
 In PowerShell 5+ you can find your default encoding with this:
 
@@ -247,8 +247,8 @@ save scripts in a Unicode format with a BOM.
 
 Scripts already on the file system may need to be re-encoded to your new chosen encoding. In the
 bottom bar of VS Code, you'll see the label UTF-8. Click it to open the action bar and select **Save
-with encoding**. You can now pick a new encoding for that file. See [VS Code's encoding][] for full
-instructions.
+with encoding**. You can now pick a new encoding for that file. See [VS Code's encoding][vsencode]
+for full instructions.
 
 If you need to re-encode multiple files, you can use the following script:
 
@@ -330,11 +330,11 @@ read:
 
 [@mklement0]: https://github.com/mklement0
 [@rkeithhill]: https://github.com/rkeithhill
-[Windows-1252]: https://wikipedia.org/wiki/Windows-1252
-[latin-1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
-[UTF-8]: https://wikipedia.org/wiki/UTF-8
-[byte-order mark]: https://wikipedia.org/wiki/Byte_order_mark
-[UTF-16]: https://wikipedia.org/wiki/UTF-16
-[Language Server Protocol]: https://microsoft.github.io/language-server-protocol/
-[VS Code's encoding]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
-[Gremlins tracker]: https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins
+[win1252]: https://wikipedia.org/wiki/Windows-1252
+[latin1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
+[utf8]: https://wikipedia.org/wiki/UTF-8
+[bom]: https://wikipedia.org/wiki/Byte_order_mark
+[utf16]: https://wikipedia.org/wiki/UTF-16
+[lsp]: https://microsoft.github.io/language-server-protocol/
+[vsencode]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[gremlins]: https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins

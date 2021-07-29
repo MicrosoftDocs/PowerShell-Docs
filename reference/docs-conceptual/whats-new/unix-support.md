@@ -85,7 +85,7 @@ specifying a path.
 ## Logging
 
 On macOS, PowerShell uses the native `os_log` APIs to log to Apple's
-[unified logging system][os_log]. On Linux, PowerShell uses [Syslog][], a ubiquitous logging
+[unified logging system][os_log]. On Linux, PowerShell uses [Syslog][Syslog], a ubiquitous logging
 solution.
 
 [os_log]: https://developer.apple.com/documentation/os/logging

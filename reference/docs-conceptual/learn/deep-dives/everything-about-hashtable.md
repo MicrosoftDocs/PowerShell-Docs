@@ -6,15 +6,15 @@ ms.custom: contributor-KevinMarquette
 ---
 # Everything you wanted to know about hashtables
 
-I want to take a step back and talk about [hashtables][]. I use them all the time now. I was
+I want to take a step back and talk about [hashtables][hashtables]. I use them all the time now. I was
 teaching someone about them after our user group meeting last night and I realized I had the same
 confusion about them as he had. Hashtables are really important in PowerShell so it's good to have a
 solid understanding of them.
 
 > [!NOTE]
-> The [original version][] of this article appeared on the blog written by [@KevinMarquette][]. The
+> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
 > PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][].
+> [PowerShellExplained.com][PowerShellExplained.com].
 
 ## Hashtable as a collection of things
 
@@ -24,7 +24,7 @@ for more advanced stuff later. Skipping this understanding is often a source of 
 
 ## What is an array?
 
-Before I jump into what a **Hashtable** is, I need to mention [arrays][] first. For the purpose of
+Before I jump into what a **Hashtable** is, I need to mention [arrays][arrays] first. For the purpose of
 this discussion, an array is a list or collection of values or objects.
 
 ```powershell
@@ -140,7 +140,7 @@ using this approach when you need to cross reference something. I think we would
 if PowerShell wasn't so good at filtering on the pipe with `Where-Object`. If you're ever in a
 situation where performance matters, this approach needs to be considered.
 
-I won't say that it's faster, but it does fit into the rule of [If performance matters, test it][].
+I won't say that it's faster, but it does fit into the rule of [If performance matters, test it][If performance matters, test it].
 
 #### Multiselection
 
@@ -467,7 +467,7 @@ Here is an example of creating a DHCP scope the normal way.
 Add-DhcpServerv4Scope -Name 'TestNetwork' -StartRange'10.0.0.2' -EndRange '10.0.0.254' -SubnetMask '255.255.255.0' -Description 'Network for testlab A' -LeaseDuration (New-TimeSpan -Days 8) -Type "Both"
 ```
 
-Without using [splatting][], all those things need to be defined on a single line. It either scrolls
+Without using [splatting][splatting], all those things need to be defined on a single line. It either scrolls
 off the screen or will wrap where ever it feels like. Now compare that to a command that uses
 splatting.
 
@@ -724,7 +724,7 @@ name  age
 Kevin  36
 ```
 
-I already have detailed write-up for [pscustomobject][] that you should go read after this one. It
+I already have detailed write-up for [pscustomobject][pscustomobject] that you should go read after this one. It
 builds on a lot of the things learned here.
 
 ## Reading and writing hashtables to file
@@ -740,7 +740,7 @@ if you start with a `pscustomobject` so the column order is preserved. But you c
 $person | ForEach-Object{ [pscustomobject]$_ } | Export-CSV -Path $path
 ```
 
-Again, check out my write-up on using a [pscustomobject][].
+Again, check out my write-up on using a [pscustomobject][pscustomobject].
 
 ### Saving a nested hashtable to file
 
@@ -794,7 +794,7 @@ If you need it to be a `[hashtable]` on import, then you need to use the `Export
 ### Converting JSON to Hashtable
 
 If you need to convert JSON to a `[hashtable]`, there's one way that I know of to do it with the
-[JavaScriptSerializer][] in .NET.
+[JavaScriptSerializer][JavaScriptSerializer] in .NET.
 
 ```powershell
 [Reflection.Assembly]::LoadWithPartialName("System.Web.Script.Serialization")
@@ -884,14 +884,14 @@ used with member access (`.`) notation. Or, you can use array index (`[]`) notat
 
 ### $PSBoundParameters
 
-[$PSBoundParameters][] is an automatic variable that only exists inside the context of a function.
+[$PSBoundParameters][$PSBoundParameters] is an automatic variable that only exists inside the context of a function.
 It contains all the parameters that the function was called with. This isn't exactly a hashtable but
 close enough that you can treat it like one.
 
 That includes removing keys and splatting it to other functions. If you find yourself writing proxy
 functions, take a closer look at this one.
 
-See [about_Automatic_Variables][] for more details.
+See [about_Automatic_Variables][about_Automatic_Variables] for more details.
 
 ### PSBoundParameters gotcha
 
@@ -925,8 +925,8 @@ $PSDefaultParameterValues[ "Get-*:Verbose" ] = $true
 $PSDefaultParameterValues[ "*:Credential" ] = Get-Credential
 ```
 
-For a more in-depth breakdown, see this great article on [Automatic Defaults][] by
-[Michael Sorens][].
+For a more in-depth breakdown, see this great article on [Automatic Defaults][Automatic Defaults] by
+[Michael Sorens][Michael Sorens].
 
 ## Regex $Matches
 
