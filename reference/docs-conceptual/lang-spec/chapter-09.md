@@ -9,7 +9,7 @@ title: Arrays
 
 PowerShell supports arrays of one or more dimensions with each dimension having zero or more
 *elements*. Within a dimension, elements are numbered in ascending integer order starting at zero.
-Any individual element can be accessed via the array subscript operator `[]` ([§7.1.4][]). The
+Any individual element can be accessed via the array subscript operator `[]` ([§7.1.4][§7.1.4]). The
 number of dimensions in an array is called its *rank*.
 
 An element can contain a value of any type including an array type. An array having one or more
@@ -42,15 +42,15 @@ $a[1,1] = $null
 
 A 1-dimensional array has type `type[]`, a 2-dimensional array has type `type[,]`, a 3-dimensional
 array has type `type[,,]`, and so on, where *type* is object for an unconstrained type array, or the
-constrained type for a constrained array ([§9.4][]).
+constrained type for a constrained array ([§9.4][§9.4]).
 
-All array types are derived from the type Array ([§4.3.2][]).
+All array types are derived from the type Array ([§4.3.2][§4.3.2]).
 
 ## 9.2 Array creation
 
 An array is created via an *array creation expression*, which has the following forms: unary comma
-operator ([§7.2.1][]) ,*array-expression* ([§7.1.7][]), binary comma operator ([§7.3][]), range
-operator ([§7.4][]), or [New-Object](xref:Microsoft.PowerShell.Utility.New-Object) cmdlet.
+operator ([§7.2.1][§7.2.1]) ,*array-expression* ([§7.1.7][§7.1.7]), binary comma operator ([§7.3][§7.3]), range
+operator ([§7.4][§7.4]), or [New-Object](xref:Microsoft.PowerShell.Utility.New-Object) cmdlet.
 
 Here are some examples of array creation and usage:
 
@@ -94,7 +94,7 @@ element's type (that is, `$false`, zero, or `$null`).
 
 Arrays of arbitrary type and length can be concatenated via the `+` and `+=` operators, both of
 which result in the creation of a new unconstrained 1-dimensional array. The existing arrays are
-unchanged. See [§7.7.3][] for more information, and [§9.4][] for a discussion of adding to an array
+unchanged. See [§7.7.3][§7.7.3] for more information, and [§9.4][§9.4] for a discussion of adding to an array
 of constrained type.
 
 ## 9.4 Constraining element types
@@ -112,7 +112,7 @@ The syntax for creating a multidimensional array requires the specification of a
 becomes the constraint type for that array. However, by specifying type `object[]`, there really is
 no constraint as a value of any type can be assigned to an element of an array of that type.
 
-Concatenating two arrays ([§7.7.3][]) always results in a new array that is unconstrained even if
+Concatenating two arrays ([§7.7.3][§7.7.3]) always results in a new array that is unconstrained even if
 both arrays are constrained by the same type. For example,
 
 ```powershell
@@ -209,17 +209,17 @@ $a[1,1] = [int[]](92,93)   # element is an array of 2 ints
 
 ## 9.7 Negative subscripting
 
-This is discussed in [§7.1.4.1][].
+This is discussed in [§7.1.4.1][§7.1.4.1].
 
 ## 9.8 Bounds checking
 
-This is discussed in [§7.1.4.1][].
+This is discussed in [§7.1.4.1][§7.1.4.1].
 
 ## 9.9 Array slices
 
 An *array slice* is an unconstrained 1-dimensional array whose elements are copies of zero or more
 elements from a collection. An array slice is created via the subscript operator `[]`
-([§7.1.4.5][]).
+([§7.1.4.5][§7.1.4.5]).
 
 ## 9.10 Copying an array
 
@@ -259,8 +259,8 @@ foreach ($elem in $a) {
 
 ## 9.12 Multidimensional array flattening
 
-Some operations on a multidimensional array (such as replication ([§7.6.3][]) and concatenation
-([§7.7.3][])) require that array to be *flattened*; that is, to be turned into a 1-dimensional array
+Some operations on a multidimensional array (such as replication ([§7.6.3][§7.6.3]) and concatenation
+([§7.7.3][§7.7.3])) require that array to be *flattened*; that is, to be turned into a 1-dimensional array
 of unconstrained type. The resulting array takes on all the elements in row-major order.
 
 Consider the following example:

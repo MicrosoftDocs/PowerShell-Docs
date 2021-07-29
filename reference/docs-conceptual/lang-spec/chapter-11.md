@@ -7,7 +7,7 @@ title: Modules
 
 ## 11.1 Introduction
 
-As stated in [§3.14][], a module is a self-contained reusable unit that allows PowerShell code to be
+As stated in [§3.14][§3.14], a module is a self-contained reusable unit that allows PowerShell code to be
 partitioned, organized, and abstracted. A module can contain one or more *module members*, which are
 commands (such as cmdlets and functions) and items (such as variables and aliases). The names of
 these members can be kept private to the module or they may be *exported* to the session into which
@@ -35,12 +35,12 @@ The following cmdlets deal with modules:
 - [Get-Module](xref:Microsoft.PowerShell.Core.Get-Module): Identifies the modules that have been, or
 can be imported
 - [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module): Adds one or more modules to the
-  current session (see [§11.4][])
+  current session (see [§11.4][§11.4])
 - [Export-ModuleMember](xref:Microsoft.PowerShell.Core.Export-ModuleMember): Identifies the module
   members that are to be exported
 - [Remove-Module](xref:Microsoft.PowerShell.Core.Remove-Module): Removes one or more modules from
-  the current session (see [§11.5][])
-- [New-Module](xref:Microsoft.PowerShell.Core.New-Module): Creates a dynamic module (see [§11.7][])
+  the current session (see [§11.5][§11.5])
+- [New-Module](xref:Microsoft.PowerShell.Core.New-Module): Creates a dynamic module (see [§11.7][§11.7])
 
 ## 11.2 Writing a script module
 
@@ -91,7 +91,7 @@ When a module is imported, its script file is executed. That process can be conf
 one or more parameters in the script file, and passing in corresponding arguments via the
 ArgumentList parameter of `Import-Module`.
 
-Consider the following script that uses these functions and aliases defined in [§11.2][]:
+Consider the following script that uses these functions and aliases defined in [§11.2][§11.2]:
 
 `Import-Module` "E:\Scripts\Modules\PSTest\_Temperature" -Verbose
 
@@ -115,7 +115,7 @@ the argument 100.
 When the session includes commands of the same kind with the same name, such as two cmdlets with the
 same name, by default it runs the most recently added command.
 
-See [§3.5.6][] for a discussion of scope as it relates to modules.
+See [§3.5.6][§3.5.6] for a discussion of scope as it relates to modules.
 
 ## 11.5 Removing a script module
 
@@ -130,7 +130,7 @@ removal, as follows:
 
 ## 11.6 Module manifests
 
-As stated in [§11.1][], a manifest module is a file that contains information about a module, and
+As stated in [§11.1][§11.1], a manifest module is a file that contains information about a module, and
 controls certain aspects of that module's use.
 
 A module need not have a corresponding manifest, but if it does, that manifest has the same name as
@@ -238,7 +238,7 @@ $v2 = Get-NextID 100  # get a scriptblock with $startValue of 100
 The intent here is that `Get-NextID` return the next ID in a sequence whose start value can be
 specified. However, multiple sequences must be supported, each with its own `$startValue` and
 `$nextID` context. This is achieved by the call to the method `[scriptblock]::GetNewClosure`
-([§4.3.7][]).
+([§4.3.7][§4.3.7]).
 
 Each time a new closure is created by `GetNewClosure`, a new dynamic module is created, and the
 variables in the caller's scope (in this case, the script block containing the increment) are copied

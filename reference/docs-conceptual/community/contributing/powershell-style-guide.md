@@ -37,9 +37,9 @@ Related products
 
 ## Markdown specifics
 
-The Microsoft Open Publishing System (OPS) that builds our documentation uses [markdig][] to process
-the Markdown documents. Markdig parses the documents based on the rules of the latest [CommonMark][]
-specification.
+The Microsoft Open Publishing System (OPS) that builds our documentation uses [markdig][markdig] to
+process the Markdown documents. Markdig parses the documents based on the rules of the latest
+[CommonMark][CommonMark] specification.
 
 The new CommonMark spec is much stricter about the construction of some Markdown elements. Pay close
 attention to the details provided in this document.
@@ -526,7 +526,7 @@ GameConfigStore        GameDVR_Enabled                       : 1
 ### Don't use aliases in examples
 
 Use the full name of all cmdlets and parameters unless you're specifically documenting the alias.
-Cmdlet and parameter names must use the proper [Pascal-cased][] names.
+Cmdlet and parameter names must use the proper [Pascal-cased][Pascal-cased] names.
 
 ### Using parameters in examples
 
@@ -535,13 +535,14 @@ example, even if the parameter is positional. This reduces the chance of confusi
 
 ## Formatting cmdlet reference articles
 
-Cmdlet reference articles have a specific structure. This structure is defined by [PlatyPS][].
-PlatyPS generates the cmdlet help for PowerShell modules in Markdown. After editing the Markdown
-files, PlatyPS is used create the MAML help files used by the `Get-Help` cmdlet.
+Cmdlet reference articles have a specific structure. This structure is defined by
+[PlatyPS][PlatyPS]. PlatyPS generates the cmdlet help for PowerShell modules in Markdown. After
+editing the Markdown files, PlatyPS is used create the MAML help files used by the `Get-Help`
+cmdlet.
 
 PlatyPS has a hard-coded schema for cmdlet reference that is written into the code. The
-[platyPS.schema.md][] document attempts to describe this structure. Schema violations cause build
-errors that must be fixed before we can accept your contribution.
+[platyPS.schema.md][platyPS.schema.md] document attempts to describe this structure. Schema
+violations cause build errors that must be fixed before we can accept your contribution.
 
 - Don't remove any of the ATX header structures. PlatyPS expects a specific set of headers.
 - The **Input type** and **Output type** headers must have a type. If the cmdlet doesn't take input
@@ -584,9 +585,9 @@ Get-Command -ListImported
 
 ## Formatting About_ files
 
-`About_*` files are written in Markdown but are shipped as plain text files. We use [Pandoc][] to
-convert the Markdown to plain text. `About_*` files are formatted for the best compatibility across
-all versions of PowerShell and with the publishing tools.
+`About_*` files are written in Markdown but are shipped as plain text files. We use
+[Pandoc][Pandoc] to convert the Markdown to plain text. `About_*` files are formatted for the best
+compatibility across all versions of PowerShell and with the publishing tools.
 
 Basic formatting guidelines:
 

@@ -16,11 +16,11 @@ PowerShell is a modern command shell that includes the best features of other po
 most shells that only accept and return text, PowerShell accepts and returns .NET objects. The shell
 includes the following features:
 
-- Robust command-line [history][]
-- Tab completion and command prediction (See [about_PSReadLine][])
-- Supports command and parameter [aliases][]
-- [Pipeline][] for chaining commands
-- In-console [help][] system, similar to Unix `man` pages
+- Robust command-line [history][history]
+- Tab completion and command prediction (See [about_PSReadLine][about_PSReadLine])
+- Supports command and parameter [aliases][aliases]
+- [Pipeline][Pipeline] for chaining commands
+- In-console [help][help] system, similar to Unix `man` pages
 
 ## Scripting language
 
@@ -30,17 +30,17 @@ the .NET Common Language Runtime (CLR). All inputs and outputs are .NET objects.
 text output to extract information from output. The PowerShell scripting language includes the
 following features:
 
-- Extensible through [functions][], [classes][], [scripts][], and [modules][]
+- Extensible through [functions][functions], [classes][classes], [scripts][scripts], and [modules][modules]
 - Extensible [formatting system][formatting] for easy output
 - Extensible [type system][types] for creating dynamic types
-- Built-in support for common data formats like [CSV][], [JSON][], and [XML][]
+- Built-in support for common data formats like [CSV][CSV], [JSON][JSON], and [XML][XML]
 
 ## Configuration management
 
-PowerShell Desired State Configuration ([DSC][]) is a management framework in PowerShell that
+PowerShell Desired State Configuration ([DSC][DSC]) is a management framework in PowerShell that
 enables you to manage your enterprise infrastructure with configuration as code. With DSC, you can:
 
-- Create declarative [configurations][] and custom scripts for repeatable deployments
+- Create declarative [configurations][configurations] and custom scripts for repeatable deployments
 - Enforce configuration settings and report on configuration drift
 - Deploy configuration using [push or pull][push-pull] models
 

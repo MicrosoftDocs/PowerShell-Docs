@@ -42,7 +42,7 @@ another.)
 
 PowerShell includes a very rich scripting language that supports constructs for looping, conditions,
 flow-control, and variable assignment. This language has syntax features and keywords similar to
-those used in the C# programming language ([§C.][]).
+those used in the C# programming language ([§C.][§C.]).
 
 There are four kinds of commands in PowerShell: scripts, functions and methods, cmdlets, and native
 commands.

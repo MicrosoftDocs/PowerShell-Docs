@@ -7,9 +7,9 @@ ms.custom: contributor-JoshDuffney
 # Add Credential support to PowerShell functions
 
 > [!NOTE]
-> The [original version][] of this article appeared on the blog written by [@joshduffney][]. This
+> The [original version][original version] of this article appeared on the blog written by [@joshduffney][@joshduffney]. This
 > article has been edited for inclusion on this site. The PowerShell team thanks Josh for sharing
-> this content with us. Please check out his blog at [duffney.io][].
+> this content with us. Please check out his blog at [duffney.io][duffney.io].
 
 This article shows you how to add credential parameters to PowerShell functions and why you'd want
 to. A credential parameter is to allow you to run the function or cmdlet as a different user. The
@@ -21,7 +21,7 @@ PowerShell session doesn't have that access already.
 
 ## Creating credential object
 
-The [PSCredential][] object represents a set of security credentials such as a user name and
+The [PSCredential][PSCredential] object represents a set of security credentials such as a user name and
 password. The object can be passed as a parameter to a function that runs as the user account in
 that credential object. There are a few ways that you can create a credential object. The first way
 to create a credential object is to use the PowerShell cmdlet `Get-Credential`. When you run without
@@ -106,7 +106,7 @@ things you can add to make it more robust.
 ## Using credential parameters
 
 The following example demonstrates how to use credential parameters. This example shows a function
-called `Set-RemoteRegistryValue`, which is out of [The Pester Book][]. This function defines the
+called `Set-RemoteRegistryValue`, which is out of [The Pester Book][The Pester Book]. This function defines the
 credential parameter using the techniques describe in the previous section. The function calls
 `Invoke-Command` using the `$Credential` variable created by the function. This allows you to change
 the user who's running `Invoke-Command`. Because the default value of `$Credential` is an empty
@@ -138,7 +138,7 @@ Using `Get-Credential` in parentheses `()` at run time causes the `Get-credentia
 are prompted for a username and password. You could use the **Credential** or **UserName**
 parameters of `Get-credential` to pre-populate the username and domain. The following example uses a
 technique called splatting to pass parameters to the `Set-RemoteRegistryValue` function. For more
-information about splatting, check out the [about_Splatting][] article.
+information about splatting, check out the [about_Splatting][about_Splatting] article.
 
 ```powershell
 $remoteKeyParams = @{
@@ -181,7 +181,7 @@ You can also populate a credential variable ahead of time and pass it to the **C
 parameter of `Set-RemoteRegistryValue` function. Use this method with Continuous Integration /
 Continuous Deployment (CI/CD) tools such as Jenkins, TeamCity, and Octopus Deploy. For an example
 using Jenkins, check out Hodge's blog post
-[Automating with Jenkins and PowerShell on Windows - Part 2][].
+[Automating with Jenkins and PowerShell on Windows - Part 2][Automating with Jenkins and PowerShell on Windows - Part 2].
 
 This example uses the .NET method to create the credential object and a secure string to pass in the
 password.
@@ -262,7 +262,7 @@ function Set-RemoteRegistryValue {
 This example uses parameter splatting to call the legacy cmdlet. The `$Credential` object is
 conditionally added to the hash table for splatting and avoids the need to repeat the
 `Invoke-Command` script block. To learn more about splatting inside functions, see the
-[Splatting Parameters Inside Advanced Functions][] blog post.
+[Splatting Parameters Inside Advanced Functions][Splatting Parameters Inside Advanced Functions] blog post.
 
 ```powershell
 function Set-RemoteRegistryValue {
@@ -346,10 +346,10 @@ Get-AllSQLDatabases -SQLServer SQL01 -Credential $Credential
 Creating and storing credential objects securely can be difficult. The following resources can help
 you maintain PowerShell credentials.
 
-- [BetterCredentials][]
-- [Azure Key Vault][]
-- [Vault Project][]
-- [SecretManagement module][]
+- [BetterCredentials][BetterCredentials]
+- [Azure Key Vault][Azure Key Vault]
+- [Vault Project][Vault Project]
+- [SecretManagement module][SecretManagement module]
 
 <!-- link references -->
 [original version]: https://duffney.io/addcredentialstopowershellfunctions/

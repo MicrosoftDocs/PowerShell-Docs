@@ -569,7 +569,7 @@ and updating PowerShell modules (and other artifacts) to or from a NuGet reposit
 ships with PowerShell version 5.0 and higher. It is available as a separate download for PowerShell
 version 3.0 and higher.
 
-Microsoft hosts an online NuGet repository called the [PowerShell Gallery][]. Although this
+Microsoft hosts an online NuGet repository called the [PowerShell Gallery][PowerShell Gallery]. Although this
 repository is hosted by Microsoft, the majority of the modules contained within the repository
 aren't written by Microsoft. Any code obtain from the PowerShell Gallery should be thoroughly
 reviewed in an isolated test environment before being considered suitable for use in a production
@@ -659,9 +659,9 @@ one-liner. You've also learned about filtering left, the pipeline, and PowerShel
 
 ## Recommended Reading
 
-- [about_Pipelines][]
-- [about_Command_Syntax][]
-- [about_Parameters][]
+- [about_Pipelines][about_Pipelines]
+- [about_Command_Syntax][about_Command_Syntax]
+- [about_Parameters][about_Parameters]
 - [PowerShellGet: The BIG EASY way to discover, install, and update PowerShell modules][psget]
 
 <!-- link references-->

@@ -61,9 +61,9 @@ labeled-statement:
 
 Description:
 
-An iteration statement ([§8.4][]) or a switch statement ([§8.6][]) may optionally be preceded
+An iteration statement ([§8.4][§8.4]) or a switch statement ([§8.6][§8.6]) may optionally be preceded
 immediately by one statement label, *label*. A statement label is used as the optional target of a
-break ([§8.5.1][]) or continue ([§8.5.2][]) statement. However, a label does not alter the flow of
+break ([§8.5.1][§8.5.1]) or continue ([§8.5.2][§8.5.2]) statement. However, a label does not alter the flow of
 control.
 
 White space is not permitted between the colon (`:`) and the token that follows it.
@@ -201,9 +201,9 @@ verbatim-command-argument:
 
 Description:
 
-*redirections* is discussed in [§7.12][]; *assignment-expression* is discussed in [§7.11][]; and the
-*command-invocation-operator* dot (`.`) is discussed in [§3.5.5][]. For a discussion of
-argument-to-parameter mapping in command invocations, see [§8.14][].
+*redirections* is discussed in [§7.12][§7.12]; *assignment-expression* is discussed in [§7.11][§7.11]; and the
+*command-invocation-operator* dot (`.`) is discussed in [§3.5.5][§3.5.5]. For a discussion of
+argument-to-parameter mapping in command invocations, see [§8.14][§8.14].
 
 The first command in a *pipeline* is an expression or a command invocation. Typically, a command
 invocation begins with a *command-name*, which is usually a bare identifier. *command-elements*
@@ -216,7 +216,7 @@ governing arguments are as follows:
 - An argument that is not an expression, but which contains arbitrary text without unescaped white
   space, is treated as though it were double quoted. Letter case is preserved.
 
-- Variable substitution and sub-expression expansion ([§2.3.5.2][]) takes place inside
+- Variable substitution and sub-expression expansion ([§2.3.5.2][§2.3.5.2]) takes place inside
   *expandable-string-literal*s and *expandable-here-string-literal*s.
 
 - Text inside quotes allows leading, trailing, and embedded white space to be included in the
@@ -226,11 +226,11 @@ governing arguments are as follows:
 - Putting parentheses around an argument causes that expression to be evaluated with the result
   being passed instead of the text of the original expression.
 
-- To pass an argument that looks like a switch parameter ([§2.3.4][]) but is not intended as such,
+- To pass an argument that looks like a switch parameter ([§2.3.4][§2.3.4]) but is not intended as such,
   enclose that argument in quotes.
 
 - When specifying an argument that matches a parameter having the `[switch]` type constraint
-  ([§8.10.5][]), the presence of the argument name on its own causes that parameter to be set to
+  ([§8.10.5][§8.10.5]), the presence of the argument name on its own causes that parameter to be set to
   `$true`. However, the parameter's value can be set explicitly by appending a suffix to the
   argument. For example, given a type constrained parameter *p*, an argument of `-p:$true` sets p to
   True, while `-p:$false` sets p to False.
@@ -255,14 +255,14 @@ echoargs.exe --% "%path%" # %path% is replaced with the value $env:path
 
 The order of evaluation of arguments is unspecified.
 
-For information about parameter binding see [§8.14][]. For information about name lookup see
-[§3.8][].
+For information about parameter binding see [§8.14][§8.14]. For information about name lookup see
+[§3.8][§3.8].
 
 Once argument processing has been completed, the command is invoked. If the invoked command
-terminates normally ([§8.5.4][]), control reverts to the point in the script or function immediately
+terminates normally ([§8.5.4][§8.5.4]), control reverts to the point in the script or function immediately
 following the command invocation. For a description of the behavior on abnormal termination see
-`break` ([§8.5.1][]), `continue` ([§8.5.2][]), `throw` ([§8.5.3][]), `exit` ([§8.5.5][]), `try`
-([§8.7][]), and `trap` ([§8.8][]).
+`break` ([§8.5.1][§8.5.1]), `continue` ([§8.5.2][§8.5.2]), `throw` ([§8.5.3][§8.5.3]), `exit` ([§8.5.5][§8.5.5]), `try`
+([§8.7][§8.7]), and `trap` ([§8.8][§8.8]).
 
 Ordinarily, a command is invoked by using its name followed by any arguments. However, the
 command-invocation operator, &, can be used. If the command name contains unescaped white space, it
@@ -492,9 +492,9 @@ value `$null`, *pipeline* is treated as a collection of zero elements.
 
 If the *foreach-parameter* `-parallel` is specified, the behavior is implementation defined.
 
-The *foreach-parameter* `‑parallel` is only allowed in a workflow ([§8.10.2][]).
+The *foreach-parameter* `‑parallel` is only allowed in a workflow ([§8.10.2][§8.10.2]).
 
-Every foreach statement has its own enumerator, `$foreach` ([§2.3.2.2][], [§4.5.16][]), which exists
+Every foreach statement has its own enumerator, `$foreach` ([§2.3.2.2][§2.3.2.2], [§4.5.16][§4.5.16]), which exists
 only while that loop is executing.
 
 The objects produced by *pipeline* are collected before *statement-block* begins to execute.
@@ -557,12 +557,12 @@ A break statement with a *label-expression* is referred to as a *labeled break s
 statement without a *label-expression* is referred to as an *unlabeled break statement*.
 
 Outside a trap statement, an unlabeled break statement directly within an iteration statement
-([§8.4][]) terminates execution of that smallest enclosing iteration statement. An unlabeled break
-statement directly within a switch statement ([§8.6][]) terminates pattern matching for the current
-switch's *switch-condition*. See ([§8.8][]) for details of using break from within a trap statement.
+([§8.4][§8.4]) terminates execution of that smallest enclosing iteration statement. An unlabeled break
+statement directly within a switch statement ([§8.6][§8.6]) terminates pattern matching for the current
+switch's *switch-condition*. See ([§8.8][§8.8]) for details of using break from within a trap statement.
 
 An iteration statement or a switch statement may optionally be preceded immediately by one statement
-label ([§8.1.1][]).Such a statement label may be used as the target of a labeled break statement, in
+label ([§8.1.1][§8.1.1]).Such a statement label may be used as the target of a labeled break statement, in
 which case, that statement terminates execution of the targeted enclosing iteration statement.
 
 A labeled break need not be resolved in any local scope; the search for a matching label may
@@ -613,15 +613,15 @@ Description:
 A `continue` statement with a *label-expression* is referred to as a *labeled continue statement*. A
 continue statement without a *label-expression* is referred to as an *unlabeled continue statement*.
 
-The use of `continue` from within a trap statement is discussed in [§8.8][].
+The use of `continue` from within a trap statement is discussed in [§8.8][§8.8].
 
 An unlabeled `continue` statement within a loop terminates execution of the current loop and
-transfers control to the closing brace of the smallest enclosing iteration statement ([§8.4][]). An
+transfers control to the closing brace of the smallest enclosing iteration statement ([§8.4][§8.4]). An
 unlabeled `continue` statement within a switch terminates execution of the current `switch`
-iteration and transfers control to the smallest enclosing `switch`'s *switch-condition* ([§8.6][]).
+iteration and transfers control to the smallest enclosing `switch`'s *switch-condition* ([§8.6][§8.6]).
 
-An iteration statement or a `switch` statement ([§8.6][]) may optionally be preceded immediately by
-one statement label ([§8.1.1][]). Such a statement label may be used as the target of an enclosed
+An iteration statement or a `switch` statement ([§8.6][§8.6]) may optionally be preceded immediately by
+one statement label ([§8.1.1][§8.1.1]). Such a statement label may be used as the target of an enclosed
 labeled `continue` statement, in which case, that statement terminates execution of the current loop
 or `switch` iteration, and transfers control to the targeted enclosing iteration or `switch`
 statement label.
@@ -673,7 +673,7 @@ for ($i = 1; $i -le 2; $i++) {
 Description:
 
 An exception is a way of handling a system- or application-level error condition. The throw
-statement raises an exception. (See [§8.7][] for a discussion of exception handling.)
+statement raises an exception. (See [§8.7][§8.7] for a discussion of exception handling.)
 
 If *pipeline* is omitted and the throw statement is not in a *catch-clause*, the behavior is
 implementation defined. If *pipeline* is present and the throw statement is in a *catch-clause*, the
@@ -684,7 +684,7 @@ If *pipeline* is present, the type of the exception thrown is implementation def
 
 When an exception is thrown, control is transferred to the first catch clause in an enclosing try
 statement that can handle the exception. The location at which the exception is thrown initially is
-called the *throw point*. Once an exception is thrown the steps described in [§8.7][] are followed
+called the *throw point*. Once an exception is thrown the steps described in [§8.7][§8.7] are followed
 repeatedly until a catch clause that matches the exception is found or none can be found.
 
 Examples:
@@ -832,7 +832,7 @@ patterns with different types.
 If the value of *switch-condition* matches a pattern value, that pattern's *statement-block* is
 executed. If multiple pattern values match the value of *switch-condition*, each matching pattern's
 *statement-block* is executed, in lexical order, unless any of those *statement-block*s contains a
-`break` statement ([§8.5.1][]).
+`break` statement ([§8.5.1][§8.5.1]).
 
 If the value of *switch-condition* does not match any pattern value, if a `default` switch clause
 exists, its *statement-block* is executed; otherwise, pattern matching for that *switch-condition*
@@ -845,16 +845,16 @@ On entry to each *statement-block*, `$_` is automatically assigned the value of 
 *switch-condition* that caused control to go to that *statement-block*. `$_` is also available in
 that *statement-block*'s *switch-clause-condition*.
 
-Matching of non-strings is done by testing for equality ([§7.8.1][]).
+Matching of non-strings is done by testing for equality ([§7.8.1][§7.8.1]).
 
 If the matching involves strings, by default, the comparison is case-insensitive. The presence of
 the *switch-parameter* `-casesensitive` makes the comparison case-sensitive.
 
-A pattern may contain wildcard characters ([§3.15][]), in which case, wildcard string comparisons
+A pattern may contain wildcard characters ([§3.15][§3.15]), in which case, wildcard string comparisons
 are performed, but only if the *switch-parameter* -wildcard is present. By default, the comparison
 is case-insensitive.
 
-A pattern may contain a regular expression ([§3.16][]), in which case, regular expression string
+A pattern may contain a regular expression ([§3.16][§3.16]), in which case, regular expression string
 comparisons are performed, but only if the *switch-parameter* `-regex` is present. By default, the
 comparison is case-insensitive. If `-regex` is present and a pattern is matched, `$matches` is
 defined in the *switch-clause* *statement-block* for that pattern.
@@ -867,7 +867,7 @@ If conflicting *switch-parameter*s are specified, the lexically final one prevai
 
 If the *switch-parameter* `‑parallel` is specified, the behavior is implementation defined.
 
-The *switch-parameter* `‑parallel` is only allowed in a workflow ([§8.10.2][]).
+The *switch-parameter* `‑parallel` is only allowed in a workflow ([§8.10.2][§8.10.2]).
 
 If a pattern is a *script-block-expression*, that block is evaluated and the result is converted to
 bool, if necessary. If the result has the value `$true`, the corresponding *statement-block* is
@@ -875,11 +875,11 @@ executed; otherwise, it is not.
 
 If *switch-condition* designates multiple values, the switch is applied to each value in lexical
 order using the rules described above for a *switch-condition* that designates a single value. Every
-switch statement has its own enumerator, `$switch` ([§2.3.2.2][], [§4.5.16][]), which exists only
+switch statement has its own enumerator, `$switch` ([§2.3.2.2][§2.3.2.2], [§4.5.16][§4.5.16]), which exists only
 while that switch is executing.
 
-A switch statement may have a label, and it may contain labeled and unlabeled break ([§8.5.1][]) and
-continue ([§8.5.2][]) statements.
+A switch statement may have a label, and it may contain labeled and unlabeled break ([§8.5.1][§8.5.1]) and
+continue ([§8.5.2][§8.5.2]) statements.
 
 If *switch-condition* is `-file` *switch-filename*, instead of iterating over the values in an
 expression, the switch iterates over the values in the file designated by *switch-filename*.The file
@@ -952,7 +952,7 @@ Description:
 The try statement provides a mechanism for catching exceptions that occur during execution of a
 block. The try statement also provides the ability to specify a block of code that is always
 executed when control leaves the try statement. The process of raising an exception via the throw
-statement is described in [§8.5.3][].
+statement is described in [§8.5.3][§8.5.3].
 
 A *try block* is the *statement-block* associated with the try statement. A *catch block* is the
 *statement-block* associated with a *catch-clause*. A *finally block* is the *statement-block*
@@ -1007,7 +1007,7 @@ next enclosing `try` statement. If another exception was in the process of being
 exception is lost. The process of generating an exception is further discussed in the description of
 the `throw` statement.
 
-`try` statements can co-exist with `trap` statements; see [§8.8][] for details.
+`try` statements can co-exist with `trap` statements; see [§8.8][§8.8] for details.
 
 Examples:
 
@@ -1052,7 +1052,7 @@ trap-statement:
 
 Description:
 
-A `trap` statement with and without *type-literal* is analogous to a `catch` block ([§8.7][]) with
+A `trap` statement with and without *type-literal* is analogous to a `catch` block ([§8.7][§8.7]) with
 and without *catch-type-list*, respectively, except that a `trap` statement can trap only one type
 at a time.
 
@@ -1077,10 +1077,10 @@ stream, the exception is considered handled, and execution continues with the st
 following the one in the scope containing the `trap` statement that made the exception visible. The
 cause of the exception might be in a command called by the command containing the `trap` statement.
 
-If the final statement executed in a `trap`'s *statement-body* is continue ([§8.5.2][]), the writing
+If the final statement executed in a `trap`'s *statement-body* is continue ([§8.5.2][§8.5.2]), the writing
 of the error object to the error stream is suppressed, and execution continues with the statement
 immediately following the one in the scope containing the trap statement that made the exception
-visible. If the final statement executed in a `trap`'s *statement-body* is break ([§8.5.1][]), the
+visible. If the final statement executed in a `trap`'s *statement-body* is break ([§8.5.1][§8.5.1]), the
 writing of the error object to the error stream is suppressed, and the exception is re-thrown.
 
 Within a `trap` statement the variable `$_` contains a description of the current error.
@@ -1303,7 +1303,7 @@ Whereas an ordinary function runs once in a pipeline and accesses the input coll
 a *filter* is a special kind of function that executes once for each object in the input collection.
 The object currently being processed is available via the variable `$_`.
 
-A filter with no named blocks ([§8.10.7][]) is equivalent to a function with a process block, but
+A filter with no named blocks ([§8.10.7][§8.10.7]) is equivalent to a function with a process block, but
 without any begin block or end block.
 
 Consider the following filter function definition and calls:
@@ -1317,7 +1317,7 @@ filter Get-Square2 { # make the function a filter
 6, 10, -3 | Get-Square2 # collection has 3 elements
 ```
 
-Each filter is an instance of the class `System.Management.Automation.FilterInfo` ([§4.5.11][]).
+Each filter is an instance of the class `System.Management.Automation.FilterInfo` ([§4.5.11][§4.5.11]).
 
 ### 8.10.2 Workflow functions
 
@@ -1345,7 +1345,7 @@ that, for non-negative exponent values, computes `$base^$exponent^` and returns 
 
 When a script, function, or filter begins execution, each parameter is initialized to its
 corresponding argument's value. If there is no corresponding argument and a default value
-([§8.10.4][]) is supplied, that value is used; otherwise, the value `$null` is used. As such, each
+([§8.10.4][§8.10.4]) is supplied, that value is used; otherwise, the value `$null` is used. As such, each
 parameter is a new variable just as if it was initialized by assignment at the start of the
 *script-block*.
 
@@ -1367,7 +1367,7 @@ F -a 2 -d 3 4 5       # $a is 2, $b is 4, $c is 5, $d is 3, $args Length 0
 F 2 3 4 5 -c 7 -a 1   # $a is 1, $b is 2, $c is 7, $d is 3, $args Length 2
 ```
 
-For more information about parameter binding see [§8.14][].
+For more information about parameter binding see [§8.14][§8.14].
 
 ### 8.10.4 Parameter initializers
 
@@ -1404,7 +1404,7 @@ Process 10 20 -trace:$true   # $trace is True, $p1 is 10, $p2 is 20
 
 When a script, function, or filter is used in a pipeline, a collection of values is delivered to
 that script or function. The script, function, or filter gets access to that collection via the
-enumerator $input ([§2.3.2.2][], [§4.5.16][]), which is defined on entry to that script, function,
+enumerator $input ([§2.3.2.2][§2.3.2.2], [§4.5.16][§4.5.16]), which is defined on entry to that script, function,
 or filter.
 
 Consider the following function definition and calls:
@@ -1441,9 +1441,9 @@ the last pipeline object has been delivered.
 
 ### 8.10.8 dynamicParam block
 
-The subsections of [§8.10][] thus far deal with *static parameters*, which are defined as part of
+The subsections of [§8.10][§8.10] thus far deal with *static parameters*, which are defined as part of
 the source code. It is also possible to define *dynamic parameters* via a *dynamicParam block*,
-another form of named block ([§8.10.7][]), which is marked with the keyword `dynamicParam`. Much of
+another form of named block ([§8.10.7][§8.10.7]), which is marked with the keyword `dynamicParam`. Much of
 this machinery is implementation defined.
 
 Dynamic parameters are parameters of a cmdlet, function, filter, or script that are available under
@@ -1520,7 +1520,7 @@ param ( [Parameter(Mandatory = $true, ValueFromPipeline=$true)]
 The one parameter, `$ComputerName`, has type `string[]`, it is required, and it takes input from the
 pipeline.
 
-See [§12.3.7][] for a discussion of the **Parameter** attribute and for more examples.
+See [§12.3.7][§12.3.7] for a discussion of the **Parameter** attribute and for more examples.
 
 ## 8.11 The parallel statement
 
@@ -1534,7 +1534,7 @@ parallel-statement:
 The parallel statement contains zero or more statements that are executed in an implementation
 defined manner.
 
-A parallel statement is only allowed in a workflow ([§8.10.2][]).
+A parallel statement is only allowed in a workflow ([§8.10.2][§8.10.2]).
 
 ## 8.12 The sequence statement
 
@@ -1548,7 +1548,7 @@ sequence-statement:
 The sequence statement contains zero or more statements that are executed in an implementation
 defined manner.
 
-A sequence statement is only allowed in a workflow ([§8.10.2][]).
+A sequence statement is only allowed in a workflow ([§8.10.2][§8.10.2]).
 
 ## 8.13 The inlinescript statement
 
@@ -1562,7 +1562,7 @@ inlinescript-statement:
 The inlinescript statement contains zero or more statements that are executed in an implementation
 defined manner.
 
-A inlinescript statement is only allowed in a workflow ([§8.10.2][]).
+A inlinescript statement is only allowed in a workflow ([§8.10.2][§8.10.2]).
 
 ## 8.14 Parameter binding
 
@@ -1620,19 +1620,19 @@ The same parameter name cannot be used multiple times with or without different 
 values.
 
 Parameters can have attributes (§12). For information about the individual attributes see the
-sections within [§12.3][]. For information about parameter sets see [§12.3][].7.
+sections within [§12.3][§12.3]. For information about parameter sets see [§12.3][§12.3].7.
 
 A script, function, filter, or cmdlet can receive arguments via the invocation command line, from
 the pipeline, or from both. Here are the steps, in order, for resolving parameter binding:
 
 1. Bind all named parameters, then
 1. Bind positional parameters, then
-1. Bind from the pipeline by value ([§12.3.7][]) with exact match, then
-1. Bind from the pipeline by value ([§12.3.7][]) with conversion, then
-1. Bind from the pipeline by name ([§12.3.7][]) with exact match, then
-1. Bind from the pipeline by name ([§12.3.7][]) with conversion
+1. Bind from the pipeline by value ([§12.3.7][§12.3.7]) with exact match, then
+1. Bind from the pipeline by value ([§12.3.7][§12.3.7]) with conversion, then
+1. Bind from the pipeline by name ([§12.3.7][§12.3.7]) with exact match, then
+1. Bind from the pipeline by name ([§12.3.7][§12.3.7]) with conversion
 
-Several of these steps involve conversion, as described in [§6.][] However, the set of conversions
+Several of these steps involve conversion, as described in [§6.][§6.] However, the set of conversions
 used in binding is not exactly the same as that used in language conversions. Specifically,
 
 - Although the value `$null` can be cast to bool, `$null` cannot be bound to `bool`.

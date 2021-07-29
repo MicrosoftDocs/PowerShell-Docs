@@ -30,16 +30,16 @@ making a copy of the object as well.
 
 A *numeric* type is one that allows representation of integer or fractional values, and that
 supports arithmetic operations on those values. The set of numerical types includes the integer
-([§4.2.3][]) and real number ([§4.2.4][]) types, but does not include bool ([§4.2.1][]) or char
-([§4.2.2][]). An implementation may provide other numeric types (such as signed byte, unsigned
+([§4.2.3][§4.2.3]) and real number ([§4.2.4][§4.2.4]) types, but does not include bool ([§4.2.1][§4.2.1]) or char
+([§4.2.2][§4.2.2]). An implementation may provide other numeric types (such as signed byte, unsigned
 integer, and integers of other sizes).
 
 A *collection* is a group of one or more related items, which need not have the same type. Examples
 of collection types are arrays, stacks, queues, lists, and hash tables. A program can *enumerate*
 (or *iterate*) over the elements in a collection, getting access to each element one at a time.
-Common ways to do this are with the foreach statement ([§8.4.4][]) and the
+Common ways to do this are with the foreach statement ([§8.4.4][§8.4.4]) and the
 [ForEach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object) cmdlet. The type of an object that
-represents an enumerator is described in [§4.5.16][].
+represents an enumerator is described in [§4.5.16][§4.5.16].
 
 In this chapter, there are tables that list the accessible members for a given type. For methods,
 the **Type** is written with the following form: *returnType*/*argumentTypeList*. If the argument
@@ -58,26 +58,26 @@ their generic equivalents.
 ### 4.1.1 The void type
 
 This type cannot be instantiated. It provides a means to discard a value explicitly using the cast
-operator ([§7.2.9][]).
+operator ([§7.2.9][§7.2.9]).
 
 ### 4.1.2 The null type
 
-The *null type* has one instance, the automatic variable $null ([§2.3.2.2][]), also known as the
+The *null type* has one instance, the automatic variable $null ([§2.3.2.2][§2.3.2.2]), also known as the
 null value. This value provides a means for expressing "nothingness" in reference contexts. The
 characteristics of this type are unspecified.
 
 ### 4.1.3 The object type
 
-Every type in PowerShell except the null type ([§4.1.2][]) is derived directly or indirectly from
+Every type in PowerShell except the null type ([§4.1.2][§4.1.2]) is derived directly or indirectly from
 the type object, so object is the ultimate base type of all non-null types. A variable constrained
-([§5.3][]) to type object is really not constrained at all, as it can contain a value of any type.
+([§5.3][§5.3]) to type object is really not constrained at all, as it can contain a value of any type.
 
 ## 4.2 Value types
 
 ### 4.2.1 Boolean
 
 The Boolean type is `bool`. There are only two values of this type, **False** and **True**,
-represented by the automatic variables `$false` and `$true`, respectively ([§2.3.2.2][]).
+represented by the automatic variables `$false` and `$true`, respectively ([§2.3.2.2][§2.3.2.2]).
 
 In PowerShell, `bool` maps to `System.Boolean`.
 
@@ -218,7 +218,7 @@ In PowerShell, `decimal` maps to `System.Decimal`. The representation of decimal
 
 ### 4.2.5 The switch type
 
-This type is used to constrain the type of a parameter in a command ([§8.10.5][]). If an argument
+This type is used to constrain the type of a parameter in a command ([§8.10.5][§8.10.5]). If an argument
 having the corresponding parameter name is present the parameter tests $true; otherwise, it tests
 `$false`.
 
@@ -229,7 +229,7 @@ In PowerShell, `switch` maps to `System.Management.Automation.SwitchParameter`.
 An enumeration type is one that defines a set of named constants representing all the possible
 values that can be assigned to an object of that enumeration type. In some cases, the set of values
 are such that only one value can be represented at a time. In other cases, the set of values are
-distinct powers of two, and by using the -bor operator ([§7.8.5][]), multiple values can be encoded
+distinct powers of two, and by using the -bor operator ([§7.8.5][§7.8.5]), multiple values can be encoded
 in the same object.
 
 The PowerShell environment provides a number of enumeration types, as described in the following
@@ -365,7 +365,7 @@ Copy(<em>source</em>, <em>sourceIndex</em>, <em>destination</em>, <em>destinatio
 </tbody>
 </table>
 
-For more details on arrays, see [§9.][]
+For more details on arrays, see [§9.][§9.]
 
 In PowerShell, `Array` maps to `System.Array`.
 
@@ -390,14 +390,14 @@ in an object of type `DictionaryEntry`, and the collections returned by Keys and
 
 Type xml implements the W3C Document Object Model (DOM) Level 1 Core and the Core DOM Level 2. The
 DOM is an in-memory (cache) tree representation of an XML document and enables the navigation and
-editing of this document. This type supports the subscript operator [] ([§7.1.4.4][]).
+editing of this document. This type supports the subscript operator [] ([§7.1.4.4][§7.1.4.4]).
 
 In PowerShell, `xml` maps to `System.Xml.XmlDocument`.
 
 ### 4.3.5 The regex type
 
 Type `regex` provides machinery for supporting regular expression processing. It is used to
-constrain the type of a parameter ([§5.3][]) whose corresponding argument might contain a regular
+constrain the type of a parameter ([§5.3][§5.3]) whose corresponding argument might contain a regular
 expression.
 
 In PowerShell, `regex` maps to `System.Text.RegularExpressions.Regex`.
@@ -442,7 +442,7 @@ In PowerShell, `ref` maps to `System.Management.Automation.PSReference`.
 
 ### 4.3.7 The scriptblock type
 
-Type `scriptblock` represents a precompiled block of script text ([§7.1.8][]) that can be used as a
+Type `scriptblock` represents a precompiled block of script text ([§7.1.8][§7.1.8]) that can be used as a
 single unit. It has the following accessible members:
 
 <table>
@@ -470,7 +470,7 @@ single unit. It has the following accessible members:
 <tr class="odd">
 <td>Module</td>
 <td>Instance property (read-only)</td>
-<td>implementation defined ([§4.5.12][])</td>
+<td>implementation defined ([§4.5.12][§4.5.12])</td>
 <td>Gets information about the module in which the script block is defined.</td>
 </tr>
 <tr class="even">
@@ -687,7 +687,7 @@ handling some subset of types when it is used. For example,
 - A stack of stack of strings might be written as `Stack[Stack[string]]`.
 
 Although PowerShell does not define any built-in generic types, it can use such types if they are
-provided by the host environment. See the syntax in [§7.1.10][].
+provided by the host environment. See the syntax in [§7.1.10][§7.1.10].
 
 The complete name for the type `Stack[string]` suggested above is
 `System.Collections.Generic.Stack[string]`. The complete name for the type `Dictionary[int,string]`
@@ -707,7 +707,7 @@ This type encapsulates the state of a provider. It has the following accessible 
 
 | **Member** |        **Member Kind**        |              **Type**               |                **Purpose**                |
 | ---------- | ----------------------------- | ----------------------------------- | ----------------------------------------- |
-| Drives     | Instance property (read-only) | Implementation defined ([§4.5.2][]) | A collection of drive description objects |
+| Drives     | Instance property (read-only) | Implementation defined ([§4.5.2][§4.5.2]) | A collection of drive description objects |
 | Name       | Instance property (read-only) | string                              | The name of the provider                  |
 
 In PowerShell, this type is `System.Management.Automation.ProviderInfo`.
@@ -718,7 +718,7 @@ This type encapsulates the state of a drive. It has the following accessible mem
 
 |   **Member**    |        **Member Kind**         | **Type** |                      **Purpose**                       |
 | --------------- | ------------------------------ | -------- | ------------------------------------------------------ |
-| CurrentLocation | Instance property (read-write) | string   | The current working location ([§3.1.4][]) of the drive |
+| CurrentLocation | Instance property (read-write) | string   | The current working location ([§3.1.4][§3.1.4]) of the drive |
 | Description     | Instance property (read-write) | string   | The description of the drive                           |
 | Name            | Instance property (read-only)  | string   | The name of the drive                                  |
 | Root            | Instance property (read-only)  | string   | The name of the drive                                  |
@@ -733,7 +733,7 @@ This type encapsulates the state of a variable. It has the following accessible 
 | ----------- | ------------------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Attributes  | Instance property (read-only)  | Implementation defined               | A collection of attributes                                                                                                                                                                 |
 | Description | Instance property (read-write) | string                               | The description assigned to the variable via the [New-Variable](xref:Microsoft.PowerShell.Utility.New-Variable) or [Set-Variable](xref:Microsoft.PowerShell.Utility.Set-Variable) cmdlets. |
-| Module      | Instance property (read-only)  | Implementation defined ([§4.5.12][]) | The module from which this variable was exported                                                                                                                                           |
+| Module      | Instance property (read-only)  | Implementation defined ([§4.5.12][§4.5.12]) | The module from which this variable was exported                                                                                                                                           |
 | ModuleName  | Instance property (read-only)  | string                               | The module in which this variable was defined                                                                                                                                              |
 | Name        | Instance property (read-only)  | string                               | The name assigned to the variable when it was created in the PowerShell language or via the `New-Variable` and `Set-Variable` cmdlets.                                                     |
 | Options     | Instance property (read-write) | string                               | The options assigned to the variable via the `New-Variable` and `Set-Variable` cmdlets.                                                                                                    |
@@ -753,7 +753,7 @@ This type encapsulates the state of an alias. It has the following accessible me
 | CommandType       | Instance property (read-only)  | Implementation defined               | Should compare equal with "Alias".                                                                                                                                                         |
 | Definition        | Instance property (read-only)  | string                               | The command or alias to which the alias was assigned via the [New-Alias](xref:Microsoft.PowerShell.Utility.New-Alias) or [Set-Alias](xref:Microsoft.PowerShell.Utility.Set-Alias) cmdlets. |
 | Description       | Instance property (read-write) | string                               | The description assigned to the alias via the `New-Alias` or `Set-Alias` cmdlets.                                                                                                          |
-| Module            | Instance property (read-only)  | Implementation defined ([§4.5.12][]) | The module from which this alias was exported                                                                                                                                              |
+| Module            | Instance property (read-only)  | Implementation defined ([§4.5.12][§4.5.12]) | The module from which this alias was exported                                                                                                                                              |
 | ModuleName        | Instance property (read-only)  | string                               | The module in which this alias was defined                                                                                                                                                 |
 | Name              | Instance property (read-only)  | string                               | The name assigned to the alias when it was created via the `New-Alias` or `Set-Alias` cmdlets.                                                                                             |
 | Options           | Instance property (read-write) | string                               | The options assigned to the alias via the New-Alias `New-Alias` or `Set-Alias` cmdlets.                                                                                                    |
@@ -771,9 +771,9 @@ This type encapsulates the state of a working location. It has the following acc
 
 |  **Member**  |        **Member Kind**        |              **Type**               |           **Purpose**            |
 | ------------ | ----------------------------- | ----------------------------------- | -------------------------------- |
-| Drive        | Instance property (read-only) | Implementation defined ([§4.5.2][]) | A drive description object       |
+| Drive        | Instance property (read-only) | Implementation defined ([§4.5.2][§4.5.2]) | A drive description object       |
 | Path         | Instance property (read-only) | string                              | The working location             |
-| Provider     | Instance property (read-only) | Implementation defined ([§4.5.1][]) | The provider                     |
+| Provider     | Instance property (read-only) | Implementation defined ([§4.5.1][§4.5.1]) | The provider                     |
 | ProviderPath | Instance property (read-only) | string                              | The current path of the provider |
 
 A stack of working locations is a collection of working location objects, as described above.
@@ -805,7 +805,7 @@ This type encapsulates the state of an application. It has the following accessi
 | CommandType   | Instance property (read-only)  | Implementation defined               | Should compare equal with "Application".                          |
 | Definition    | Instance property (read-only)  | string                               | A description of the application.                                 |
 | Extension     | Instance property (read-write) | string                               | The extension of the application file.                            |
-| Module        | Instance property (read-only)  | Implementation defined ([§4.5.12][]) | The module that defines this command.                             |
+| Module        | Instance property (read-only)  | Implementation defined ([§4.5.12][§4.5.12]) | The module that defines this command.                             |
 | ModuleName    | Instance property (read-only)  | string                               | The name of the module that defines the command.                  |
 | Name          | Instance property (read-only)  | string                               | The name of the command.                                          |
 | OutputType    | Instance property (read-only)  | Implementation defined collection    | Specifies the types of the values output by the command.          |
@@ -826,7 +826,7 @@ This type encapsulates the state of a cmdlet. It has the following accessible me
 | Definition          | Instance property (read-only)  | string                               | A description of the cmdlet.                                                                                                      |
 | HelpFile            | Instance property (read-write) | string                               | The path to the Help file for the cmdlet.                                                                                         |
 | ImplementingType    | Instance property (read-write) | Implementation defined               | The type that implements the cmdlet.                                                                                              |
-| Module              | Instance property (read-only)  | Implementation defined ([§4.5.12][]) | The module that defines this cmdlet.                                                                                              |
+| Module              | Instance property (read-only)  | Implementation defined ([§4.5.12][§4.5.12]) | The module that defines this cmdlet.                                                                                              |
 | ModuleName          | Instance property (read-only)  | string                               | The name of the module that defines the cmdlet.                                                                                   |
 | Name                | Instance property (read-only)  | string                               | The name of the cmdlet.                                                                                                           |
 | Noun                | Instance property (read-only)  | string                               | The noun name of the cmdlet.                                                                                                      |
@@ -847,7 +847,7 @@ PowerShell, but is not built in). It has the following accessible members:
 | ---------------- | ----------------------------- | ------------------------------------ | ---------------------------------------------------------------------------- |
 | CommandType      | Instance property (read-only) | Implementation defined               | Should compare equal with "ExternalScript".                                  |
 | Definition       | Instance property (read-only) | string                               | A definition of the script.                                                  |
-| Module           | Instance property (read-only) | Implementation defined ([§4.5.12][]) | The module that defines this script.                                         |
+| Module           | Instance property (read-only) | Implementation defined ([§4.5.12][§4.5.12]) | The module that defines this script.                                         |
 | ModuleName       | Instance property (read-only) | string                               | The name of the module that defines the script.                              |
 | Name             | Instance property (read-only) | string                               | The name of the script.                                                      |
 | OriginalEncoding | Instance property (read-only) | Implementation defined               | The original encoding used to convert the characters of the script to bytes. |
@@ -866,19 +866,19 @@ This type encapsulates the state of a function. It has the following accessible 
 
 |     **Member**      |        **Member Kind**         |               **Type**               |                                                                                                                                                                      **Purpose**                                                                                                                                                                      |
 | ------------------- | ------------------------------ | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CmdletBinding       | Instance property (read-only)  | bool                                 | Indicates whether the function uses the same parameter binding that compiled cmdlets use (see [§12.3.5][]).                                                                                                                                                                                                                                           |
+| CmdletBinding       | Instance property (read-only)  | bool                                 | Indicates whether the function uses the same parameter binding that compiled cmdlets use (see [§12.3.5][§12.3.5]).                                                                                                                                                                                                                                           |
 | CommandType         | Instance property (read-only)  | Implementation defined               | Can be compared for equality with "Function" or "Filter" to see which of those this object represents.                                                                                                                                                                                                                                                |
-| DefaultParameterSet | Instance property (read-only)  | string                               | Specifies the parameter set to use if that cannot be determined from the arguments (see [§12.3.5][]).                                                                                                                                                                                                                                                 |
+| DefaultParameterSet | Instance property (read-only)  | string                               | Specifies the parameter set to use if that cannot be determined from the arguments (see [§12.3.5][§12.3.5]).                                                                                                                                                                                                                                                 |
 | Definition          | Instance property (read-only)  | string                               | A string version of ScriptBlock                                                                                                                                                                                                                                                                                                                       |
 | Description         | Instance property (read-write) | string                               | The description of the function.                                                                                                                                                                                                                                                                                                                      |
-| Module              | Instance property (read-only)  | Implementation defined ([§4.5.12][]) | The module from which this function was exported                                                                                                                                                                                                                                                                                                      |
+| Module              | Instance property (read-only)  | Implementation defined ([§4.5.12][§4.5.12]) | The module from which this function was exported                                                                                                                                                                                                                                                                                                      |
 | ModuleName          | Instance property (read-only)  | string                               | The module in which this function was defined                                                                                                                                                                                                                                                                                                         |
 | Name                | Instance property (read-only)  | string                               | The name of the function                                                                                                                                                                                                                                                                                                                              |
-| Options             | Instance property (read-write) | Implementation defined               | The scope options for the function ([§3.5.4][]).                                                                                                                                                                                                                                                                                                      |
-| OutputType          | Instance property (read-only)  | Implementation defined collection    | Specifies the types of the values output, in order (see [§12.3.6][]).                                                                                                                                                                                                                                                                                 |
-| Parameters          | Instance property (read-only)  | Implementation defined collection    | Specifies the parameter names, in order. If the function acts like a cmdlet (see CmdletBinding above) the [common parameters][] are included at the end of the collection.                                                                                                                                                                            |
-| ParameterSets       | Instance property (read-only)  | Implementation defined collection    | Information about the parameter sets associated with the command. For each parameter, the result shows the parameter name and type, and indicates if the parameter is mandatory, by position or a switch parameter. If the function acts like a cmdlet (see CmdletBinding above) the [common parameters][] are included at the end of the collection. |
-| ScriptBlock         | Instance property (read-only)  | scriptblock ([§4.3.6][])             | The body of the function                                                                                                                                                                                                                                                                                                                              |
+| Options             | Instance property (read-write) | Implementation defined               | The scope options for the function ([§3.5.4][§3.5.4]).                                                                                                                                                                                                                                                                                                      |
+| OutputType          | Instance property (read-only)  | Implementation defined collection    | Specifies the types of the values output, in order (see [§12.3.6][§12.3.6]).                                                                                                                                                                                                                                                                                 |
+| Parameters          | Instance property (read-only)  | Implementation defined collection    | Specifies the parameter names, in order. If the function acts like a cmdlet (see CmdletBinding above) the [common parameters][common parameters] are included at the end of the collection.                                                                                                                                                                            |
+| ParameterSets       | Instance property (read-only)  | Implementation defined collection    | Information about the parameter sets associated with the command. For each parameter, the result shows the parameter name and type, and indicates if the parameter is mandatory, by position or a switch parameter. If the function acts like a cmdlet (see CmdletBinding above) the [common parameters][common parameters] are included at the end of the collection. |
+| ScriptBlock         | Instance property (read-only)  | scriptblock ([§4.3.6][§4.3.6])             | The body of the function                                                                                                                                                                                                                                                                                                                              |
 
 In PowerShell, this type is `System.Management.Automation.FunctionInfo`.
 
@@ -896,10 +896,10 @@ In PowerShell, this type is `System.Management.Automation.FunctionInfo`.
 ### 4.5.11 Filter description type
 
 This type encapsulates the state of a filter. It has the same set of accessible members as the
-function description type ([§4.5.10][]).
+function description type ([§4.5.10][§4.5.10]).
 
 In PowerShell, this type is `System.Management.Automation.FilterInfo`. It has the same set of
-properties as `System.Management.Automation.FunctionInfo` ([§4.5.11][]).
+properties as `System.Management.Automation.FunctionInfo` ([§4.5.11][§4.5.11]).
 
 ### 4.5.12 Module description type
 
@@ -966,7 +966,7 @@ In PowerShell, this type is System.Management.Automation.PSScriptCmdlet.
 ### 4.5.15 Error record description type
 
 The automatic variable `$Error` contains a collection of error records that represent recent errors
-([§3.12][]). Although the type of this collection is unspecified, it does support subscripting to get
+([§3.12][§3.12]). Although the type of this collection is unspecified, it does support subscripting to get
 access to individual error records.
 
 In PowerShell, the collection type is `System.Collections.ArrayList`. The type of an individual
@@ -1011,11 +1011,11 @@ defined; it has the following accessible members:
 
 |  **Member**   |        **Member Kind**         |               **Type**                |                             **Purpose**                             |
 | ------------- | ------------------------------ | ------------------------------------- | ------------------------------------------------------------------- |
-| Attributes    | Instance property (read-write) | Implementation defined ([§4.2.6.3][]) | Gets or sets one or more of the attributes of the directory object. |
-| CreationTime  | Instance property (read-write) | Implementation defined ([§4.5.19][])  | Gets and sets the creation time of the directory object.            |
+| Attributes    | Instance property (read-write) | Implementation defined ([§4.2.6.3][§4.2.6.3]) | Gets or sets one or more of the attributes of the directory object. |
+| CreationTime  | Instance property (read-write) | Implementation defined ([§4.5.19][§4.5.19])  | Gets and sets the creation time of the directory object.            |
 | Extension     | Instance property (read- only) | string                                | Gets the extension part of the directory name.                      |
 | FullName      | Instance property (read-only)  | string                                | Gets the full path of the directory.                                |
-| LastWriteTime | Instance property (read-write) | Implementation defined ([§4.5.19][])  | Gets and sets the time when the directory was last written to.      |
+| LastWriteTime | Instance property (read-write) | Implementation defined ([§4.5.19][§4.5.19])  | Gets and sets the time when the directory was last written to.      |
 | Name          | Instance property (read- only) | string                                | Gets the name of the directory.                                     |
 
 In PowerShell, this type is `System.IO.DirectoryInfo`. The type of the **Attributes** property is
@@ -1028,12 +1028,12 @@ file description object is implementation defined; it has the following accessib
 
 |  **Member**   |        **Member Kind**         |               **Type**                |                                            **Purpose**                                             |
 | ------------- | ------------------------------ | ------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Attributes    | Instance property (read-write) | Implementation defined ([§4.2.6.3][]) | Gets or sets one or more of the attributes of the file object.                                     |
+| Attributes    | Instance property (read-write) | Implementation defined ([§4.2.6.3][§4.2.6.3]) | Gets or sets one or more of the attributes of the file object.                                     |
 | BaseName      | Instance property (read- only) | string                                | Gets the name of the file excluding the extension.                                                 |
-| CreationTime  | Instance property (read-write) | Implementation defined ([§4.5.19][])  | Gets and sets the creation time of the file object.                                                |
+| CreationTime  | Instance property (read-write) | Implementation defined ([§4.5.19][§4.5.19])  | Gets and sets the creation time of the file object.                                                |
 | Extension     | Instance property (read- only) | string                                | Gets the extension part of the file name.                                                          |
 | FullName      | Instance property (read-only)  | string                                | Gets the full path of the file.                                                                    |
-| LastWriteTime | Instance property (read-write) | Implementation defined ([§4.5.19][])  | Gets and sets the time when the file was last written to.                                          |
+| LastWriteTime | Instance property (read-write) | Implementation defined ([§4.5.19][§4.5.19])  | Gets and sets the time when the file was last written to.                                          |
 | Length        | Instance property (read- only) | long                                  | Gets the size of the file, in bytes.                                                               |
 | Name          | Instance property (read- only) | string                                | Gets the name of the file.                                                                         |
 | VersionInfo   | Instance property (read- only) | Implementation defined                | Windows PowerShell: This ScriptProperty returns a System.Diagnostics.FileVersionInfo for the file. |
@@ -1131,7 +1131,7 @@ following accessible members:
 | ---------- | --------------- | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Invoke     | Instance method | object/variable number and type | Takes a variable number of arguments, and indirectly calls the method referred to by the parent method designator, passing in the arguments. |
 
-An object of this type can be created by an *invocation-expression* ([§7.1.3][]).
+An object of this type can be created by an *invocation-expression* ([§7.1.3][§7.1.3]).
 
 In PowerShell, this type is System.Management.Automation.PSMethod.
 
@@ -1153,7 +1153,7 @@ In PowerShell, this type is `Microsoft.PowerShell.Commands.MemberDefinition`.
 A PowerShell implementation includes a family of core types (which are documented in this chapter)
 that each contain their own set of *base members*. Those members can be methods or properties, and
 they can be instance or static members. For example, the base members of the type string
-([§4.3.1][]) are the instance property Length and the instance methods ToLower and ToUpper.
+([§4.3.1][§4.3.1]) are the instance property Length and the instance methods ToLower and ToUpper.
 
 When an object is created, it contains all the instance properties of that object's type, and the
 instance methods of that type can be called on that object. An object may be customized via the

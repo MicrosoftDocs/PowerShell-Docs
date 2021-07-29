@@ -26,8 +26,8 @@ The Active Directory PowerShell module is required by some of the examples shown
 The module is part of the Remote Server Administration Tools (RSAT) for Windows. For the 1809 (or
 higher) build of Windows, the RSAT tools are installed as a Windows feature.
 
-- For information about installing the RSAT tools, see [Windows Management modules][].
-- For older versions of Windows, see [RSAT for Windows][].
+- For information about installing the RSAT tools, see [Windows Management modules][Windows Management modules].
+- For older versions of Windows, see [RSAT for Windows][RSAT for Windows].
 
 ## Get-Member
 
@@ -758,11 +758,11 @@ that limit the properties that are returned by default.
 
 ## Recommended Reading
 
-- [Get-Member][]
-- [Viewing Object Structure (Get-Member)][]
-- [about_Objects][]
-- [about_Properties][]
-- [about_Methods][]
+- [Get-Member][Get-Member]
+- [Viewing Object Structure (Get-Member)][Viewing Object Structure (Get-Member)]
+- [about_Objects][about_Objects]
+- [about_Properties][about_Properties]
+- [about_Methods][about_Methods]
 - [No PowerShell Cmdlet to Start or Stop Something? Don't Forget to Check for Methods on the Get Cmdlets][use-methods]
 
 <!-- link references -->

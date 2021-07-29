@@ -11,9 +11,9 @@ One important feature that is often overlooked is `-WhatIf` and `-Confirm` suppo
 add to your functions. In this article, we dive deep into how to implement this feature.
 
 > [!NOTE]
-> The [original version][] of this article appeared on the blog written by [@KevinMarquette][]. The
+> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
 > PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][].
+> [PowerShellExplained.com][PowerShellExplained.com].
 
 This is a simple feature you can enable in your functions to provide a safety net for the users that
 need it. There's nothing scarier than running a command that you know can be dangerous for the
@@ -21,7 +21,7 @@ first time. The option to run it with `-WhatIf` can make a big difference.
 
 ## CommonParameters
 
-Before we look at implementing these [common parameters][], I want to take a quick look at how
+Before we look at implementing these [common parameters][common parameters], I want to take a quick look at how
 they're used.
 
 ## Using -WhatIf
@@ -114,7 +114,7 @@ Remove-Item @RemoveSplat
 ```
 
 If you're new to hashtables or splatting, I have another article on that covers
-[everything you wanted to know about hashtables][].
+[everything you wanted to know about hashtables][everything you wanted to know about hashtables].
 
 ## SupportsShouldProcess
 

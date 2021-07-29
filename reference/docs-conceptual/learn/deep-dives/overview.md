@@ -10,13 +10,13 @@ articles don't replace the reference articles, but provide diverse examples, ill
 cases, and warn about pitfalls and common mistakes.
 
 This collection is also a showcase for community contributions. The inaugural set of articles come
-from [@KevinMarquette][] and were originally published at [PowerShellExplained.com][].
+from [@KevinMarquette][@KevinMarquette] and were originally published at [PowerShellExplained.com][PowerShellExplained.com].
 
 ## How to contribute content
 
 If you're interested in contributing content to this collection, please read the
-[Contributor Guide][]. When you are ready to propose a contribution, submit an issue in the GitHub
-repository using the [Document Idea template][] and include a link to the existing content you want
+[Contributor Guide][Contributor Guide]. When you are ready to propose a contribution, submit an issue in the GitHub
+repository using the [Document Idea template][Document Idea template] and include a link to the existing content you want
 to share.
 
 <!-- link references -->

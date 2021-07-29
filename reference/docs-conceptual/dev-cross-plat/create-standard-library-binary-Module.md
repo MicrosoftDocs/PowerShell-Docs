@@ -7,14 +7,15 @@ ms.custom: contributor-KevinMarquette
 # How to create a Standard Library binary module
 
 I recently had an idea for module that I wanted to implement as a binary module. I have yet to
-create one using the [PowerShell Standard Library][] so this felt like a good opportunity. I used
-the [Creating a cross-platform binary module][] guide to create this module without any roadblocks.
-We're going to walk that same process and I'll add a little extra commentary along the way.
+create one using the [PowerShell Standard Library][psstd] so this felt like a good opportunity. I
+used the [Creating a cross-platform binary module][xplat] guide to create this module without any
+roadblocks. We're going to walk that same process and I'll add a little extra commentary along the
+way.
 
 > [!NOTE]
-> The [original version][] of this article appeared on the blog written by [@KevinMarquette][]. The
-> PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][].
+> The [original version][article] of this article appeared on the blog written by
+> [@KevinMarquette][KM]. The PowerShell team thanks Kevin for sharing this content with us. Please
+> check out his blog at [PowerShellExplained.com][kmblog].
 
 ## What is the PowerShell Standard Library?
 
@@ -66,11 +67,11 @@ New-Item -Path $module -Type Directory
 ### Binary module setup
 
 This article os focused on the binary module so that is where we'll start. This section pulls
-examples from the [Creating a cross-platform binary module][] guide. Review that guide if you
+examples from the [Creating a cross-platform binary module][xplat] guide. Review that guide if you
 need more details or have any issues.
 
-First thing we want to do is check the version of the [dotnet core SDK][] that we installed. I'm
-using 2.1.4, but you should have 2.0.0 or newer before continuing.
+First thing we want to do is check the version of the [dotnet core SDK][netsdk] that we installed.
+I'm using 2.1.4, but you should have 2.0.0 or newer before continuing.
 
 ```powershell
 PS> dotnet --version
@@ -104,9 +105,9 @@ Use 2.0.0 if you're using the 2.0 SDK.
 dotnet new globaljson --sdk-version 2.1.0
 ```
 
-Add the PowerShell Standard Library [NuGet package][] to the project. Make sure you use the most
-recent version available for the level of compatibility that you need. I would default to the latest
-version but I don't think this module leverages any features newer than PowerShell 3.0.
+Add the PowerShell Standard Library [NuGet package][nuget] to the project. Make sure you use the
+most recent version available for the level of compatibility that you need. I would default to the
+latest version but I don't think this module leverages any features newer than PowerShell 3.0.
 
 ```powershell
 dotnet add package PowerShellStandard.Library --version 7.0.0-preview.1
@@ -189,7 +190,7 @@ Cmdlet      Resolve-MyCmdlet        1.0.0.0 MyModule
 ```
 
 If the import fails on your system, try updating .NET to 4.7.1 or newer. The
-[Creating a cross-platform binary module][] guide goes into more details on .NET support and
+[Creating a cross-platform binary module][xplat] guide goes into more details on .NET support and
 compatibility for older versions of .NET.
 
 ### Module manifest
@@ -293,8 +294,8 @@ that loaded the DLL.
 
 ### VS Code reload window action
 
-I do most of my PowerShell dev work in [VS Code][]. When I'm working on a binary module (or a module
-with classes), I've gotten into the habit of reloading VS Code every time I build.
+I do most of my PowerShell dev work in [VS Code][vscode]. When I'm working on a binary module (or a
+module with classes), I've gotten into the habit of reloading VS Code every time I build.
 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> pops the command window and `Reload Window` is always
 at the top of my list.
 
@@ -312,7 +313,7 @@ PSGallery because module versioning places the new one in a different folder.
 You can set up a local PSGallery and publish to that as part of your build. Then do your local
 install from that PSGallery. This sounds like a lot of work, but this can be as simple as starting a
 docker container. I cover a way to do that in my post on
-[Using a NuGet server for a PSRepository][].
+[Using a NuGet server for a PSRepository][psrepo].
 
 ## Why binary modules?
 
@@ -349,18 +350,18 @@ was able to find lots of things to add to it.
 
 ## Final thoughts
 
-Binary modules are easy to create. I didn't touch on the C# syntax for creating a Cmdlet, but
-there is plenty of documentation on it in the [Windows PowerShell SDK][]. It is definitely something
+Binary modules are easy to create. I didn't touch on the C# syntax for creating a Cmdlet, but there
+is plenty of documentation on it in the [Windows PowerShell SDK][pssdk]. It is definitely something
 worth experimenting with as a stepping stone into more serious C#.
 
 <!-- link references -->
-[original version]: https://powershellexplained.com/2018-08-04-Powershell-Standard-Library-Binary-Module/
-[powershellexplained.com]: https://powershellexplained.com/
-[@KevinMarquette]: https://twitter.com/KevinMarquette
-[PowerShell Standard Library]: https://github.com/PowerShell/PowerShellStandard
-[Creating a cross-platform binary module]: https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md
-[dotnet core SDK]: https://www.microsoft.com/net/download/core
-[Using a NuGet server for a PSRepository]: https://powershellexplained.com/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/
-[Windows PowerShell SDK]: /powershell/scripting/developer/windows-powershell-reference
-[VS Code]: https://code.visualstudio.com
-[nuget package]: https://www.nuget.org/packages/PowerShellStandard.Library/
+[article]: https://powershellexplained.com/2018-08-04-Powershell-Standard-Library-Binary-Module/
+[kmblog]: https://powershellexplained.com/
+[KM]: https://twitter.com/KevinMarquette
+[psstd]: https://github.com/PowerShell/PowerShellStandard
+[xplat]: https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md
+[netsdk]: https://www.microsoft.com/net/download/core
+[psrepo]: https://powershellexplained.com/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/
+[pssdk]: /powershell/scripting/developer/windows-powershell-reference
+[vscode]: https://code.visualstudio.com
+[nuget]: https://www.nuget.org/packages/PowerShellStandard.Library/

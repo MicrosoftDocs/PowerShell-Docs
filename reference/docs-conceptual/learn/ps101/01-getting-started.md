@@ -19,8 +19,8 @@ walk through the examples shown in this chapter on your Windows 10 lab environme
 
 All modern versions of Windows operating systems ship with PowerShell installed. If you're running a version older than 5.1, you should install the latest version.
 
-- To upgrade to Windows PowerShell 5.1, see [Upgrading existing Windows PowerShell][]
-- To install the latest version of PowerShell, see [Installing PowerShell][]
+- To upgrade to Windows PowerShell 5.1, see [Upgrading existing Windows PowerShell][Upgrading existing Windows PowerShell]
+- To install the latest version of PowerShell, see [Installing PowerShell][Installing PowerShell]
 
 ## Where do I find PowerShell?
 
@@ -39,7 +39,7 @@ to run the 64-bit version of PowerShell unless you have a specific reason for ru
 version.
 
 For information about starting PowerShell on other versions of Windows, see
-[Starting Windows PowerShell][].
+[Starting Windows PowerShell][Starting Windows PowerShell].
 
 ## How do I launch PowerShell?
 
@@ -147,7 +147,7 @@ SerializationVersion           1.1.0.1
 
 Newer versions of Windows PowerShell are distributed as part of the Windows Management Framework
 (WMF). A specific version of the .NET Framework is required depending on the WMF version. To upgrade
-to Windows PowerShell 5.1, see [Upgrading existing Windows PowerShell][].
+to Windows PowerShell 5.1, see [Upgrading existing Windows PowerShell][Upgrading existing Windows PowerShell].
 
 ## Execution Policy
 
@@ -225,7 +225,7 @@ at http://go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the exec
 ```
 
 Be sure to read the warning that's displayed when changing the execution policy. I also recommend
-taking a look at the [about_Execution_Policies][] help topic to make sure you understand the
+taking a look at the [about_Execution_Policies][about_Execution_Policies] help topic to make sure you understand the
 security implications of changing the execution policy.
 
 Now that the execution policy has been set to **RemoteSigned**, the `Stop-TimeService.ps1` script
@@ -268,9 +268,9 @@ how to change it.
 For those who want to know more information about the topics covered in this chapter, I recommend
 reading the following PowerShell help topics.
 
-- [about_Automatic_Variables][]
-- [about_Hash_Tables][]
-- [about_Execution_Policies][]
+- [about_Automatic_Variables][about_Automatic_Variables]
+- [about_Hash_Tables][about_Hash_Tables]
+- [about_Execution_Policies][about_Execution_Policies]
 
 In the next chapter, you'll learn about the discoverability of commands in PowerShell. One of the
 things that will be covered is how to update PowerShell so those help topics can be viewed right

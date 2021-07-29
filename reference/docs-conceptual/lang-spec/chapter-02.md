@@ -8,8 +8,8 @@ title: Lexical structure
 ## 2.1 Grammars
 
 This specification shows the syntax of the PowerShell language using two grammars. The *lexical
-grammar* ([§B.1][]) shows how Unicode characters are combined to form line terminators, comments,
-white space, and tokens. The *syntactic grammar* ([§B.2][]) shows how the tokens resulting from the
+grammar* ([§B.1][§B.1]) shows how Unicode characters are combined to form line terminators, comments,
+white space, and tokens. The *syntactic grammar* ([§B.2][§B.2]) shows how the tokens resulting from the
 lexical grammar are combined to form PowerShell scripts.
 
 For convenience, fragments of these grammars are replicated in appropriate places throughout this
@@ -90,7 +90,7 @@ Description:
 The presence of *new-line-character*s in the input source stream divides it into lines that can be
 used for such things as error reporting and the detection of the end of a single-line comment.
 
-A line terminator can be treated as white space ([§2.2.4][]).
+A line terminator can be treated as white space ([§2.2.4][§2.2.4]).
 
 ### 2.2.3 Comments
 
@@ -214,7 +214,7 @@ Description:
 
 Except for the fact that white space may act as a separator for tokens, it is ignored.
 
-Unlike some popular languages, PowerShell does not consider line-terminator characters ([§2.2.2][])
+Unlike some popular languages, PowerShell does not consider line-terminator characters ([§2.2.2][§2.2.2])
 to be white space. However, a line terminator can be treated as white space by preceding it
 immediately by a backtick character, `` ` `` (U+0060). This is necessary when the contents of a line
 are complete syntactically, yet the following line contains tokens intended to be associated with
@@ -347,8 +347,8 @@ escaped-character:
 
 Description:
 
-Variables are discussed in detail in (§5). The variable $? is discussed in [§2.3.2.2][]. Scopes are
-discussed in [§3.5][].
+Variables are discussed in detail in (§5). The variable $? is discussed in [§2.3.2.2][§2.3.2.2]. Scopes are
+discussed in [§3.5][§3.5].
 
 The variables `$$` and `$^` are reserved for use in an interactive environment, which is outside the
 scope of this specification.
@@ -375,8 +375,8 @@ ${E:\\File.txt}
 There is no limit on the length of a variable name, all characters in a variable name are
 significant, and letter case is *not* distinct.
 
-There are several different kinds of variables: user-defined ([§2.3.2.1][]), automatic
-([§2.3.2.2][]), and preference ([§2.3.2.3][]). They can all coexist in the same scope ([§3.5][]).
+There are several different kinds of variables: user-defined ([§2.3.2.1][§2.3.2.1]), automatic
+([§2.3.2.2][§2.3.2.2]), and preference ([§2.3.2.3][§2.3.2.3]). They can all coexist in the same scope ([§3.5][§3.5]).
 
 Consider the following function definition and calls:
 
@@ -409,7 +409,7 @@ This is achieved by using `@` instead of `$` as the first character of the varia
 This notation can only be used in an argument to a command.
 
 Names are partitioned into various namespaces each of which is stored on a virtual drive
-([§3.1][]). For example, variables are stored on `Variable:`, environment variables are stored on
+([§3.1][§3.1]). For example, variables are stored on `Variable:`, environment variables are stored on
 `Env:`, functions are stored on `Function:`, and aliases are stored on `Alias:`. All of these names
 can be accessed as variables using the *variable-namespace* production within *variable-scope*. For
 example,
@@ -554,7 +554,7 @@ matching parameters to arguments is called *parameter binding*.
 
 There are three kinds of argument:
 
-- Switch parameter ([§8.10.5][]) -- This has the form *command-parameter* where
+- Switch parameter ([§8.10.5][§8.10.5]) -- This has the form *command-parameter* where
   *first-parameter-char* and *parameter-chars* together make up the switch name, which corresponds
   to the name of a parameter (without its leading `-`) in the command being invoked. If the trailing
   colon is omitted, the presence of this argument indicates that the corresponding parameter be set
@@ -567,7 +567,7 @@ There are three kinds of argument:
   Set-MyProcess -Strict: $true
   ```
 
-- Parameter with argument ([§8.10.2][]) -- This has the form *command-parameter* where
+- Parameter with argument ([§8.10.2][§8.10.2]) -- This has the form *command-parameter* where
   *first-parameter-char* and *parameter-chars* together make up the parameter name, which
   corresponds to the name of a parameter (without its leading -) in the command being invoked. There
   must be no trailing colon. The argument immediately following designates an associated value. For
@@ -579,7 +579,7 @@ There are three kinds of argument:
   Get-Power -exponent 3 -base 5
   ```
 
-- Positional argument ([§8.10.2][]) - Arguments and their corresponding parameters inside commands
+- Positional argument ([§8.10.2][§8.10.2]) - Arguments and their corresponding parameters inside commands
   have positions with the first having position zero. The argument in position 0 is bound to the
   parameter in position 0; the argument in position 1 is bound to the parameter in position 1; and
   so on. For example, given a command `Get-Power`, that has parameters `$base` and `$exponent` in
@@ -589,13 +589,13 @@ There are three kinds of argument:
   Get-Power 5 3
   ```
 
-See [§8.2][] for details of the special parameters `--` and `--%`.
+See [§8.2][§8.2] for details of the special parameters `--` and `--%`.
 
 When a command is invoked, a parameter name may be abbreviated; any distinct leading part of the
 full name may be used, provided that is unambiguous with respect to the names of the other
 parameters accepted by the same command.
 
-For information about parameter binding see [§8.14][].
+For information about parameter binding see [§8.14][§8.14].
 
 ### 2.3.5 Literals
 
@@ -610,8 +610,8 @@ literal:
 
 #### 2.3.5.1 Numeric literals
 
-There are two kinds of numeric literals: integer ([§2.3.5.1.1][]) and real ([§2.3.5.1.2][]). Both
-can have multiplier suffixes ([§2.3.5.1.3][]).
+There are two kinds of numeric literals: integer ([§2.3.5.1.1][§2.3.5.1.1]) and real ([§2.3.5.1.2][§2.3.5.1.2]). Both
+can have multiplier suffixes ([§2.3.5.1.3][§2.3.5.1.3]).
 
 ##### 2.3.5.1.1 Integer literals
 
@@ -657,18 +657,18 @@ numeric-multiplier: one of
 Description:
 
 The type of an integer literal is determined by its value, the presence or absence of
-*long-type-suffix*, and the presence of a *numeric-multiplier* ([§2.3.5.1.3][]).
+*long-type-suffix*, and the presence of a *numeric-multiplier* ([§2.3.5.1.3][§2.3.5.1.3]).
 
 For an integer literal with no *long-type-suffix*
 
-- If its value can be represented by type int ([§4.2.3][]), that is its type;
-- Otherwise, if its value can be represented by type long ([§4.2.3][]), that is its type.
-- Otherwise, if its value can be represented by type decimal ([§2.3.5.1.2][]), that is its type.
-- Otherwise, it is represented by type double ([§2.3.5.1.2][]).
+- If its value can be represented by type int ([§4.2.3][§4.2.3]), that is its type;
+- Otherwise, if its value can be represented by type long ([§4.2.3][§4.2.3]), that is its type.
+- Otherwise, if its value can be represented by type decimal ([§2.3.5.1.2][§2.3.5.1.2]), that is its type.
+- Otherwise, it is represented by type double ([§2.3.5.1.2][§2.3.5.1.2]).
 
 For an integer literal with *long-type-suffix*
 
-- If its value can be represented by type long ([§4.2.3][]), that is its type;
+- If its value can be represented by type long ([§4.2.3][§4.2.3]), that is its type;
 - Otherwise, that literal is ill formed.
 
 In the twos-complement representation of integer values, there is one more negative value than there
@@ -717,14 +717,14 @@ dash:
 
 Description:
 
-A real literal may contain a *numeric-multiplier* ([§2.3.5.1.3][]).
+A real literal may contain a *numeric-multiplier* ([§2.3.5.1.3][§2.3.5.1.3]).
 
 There are two kinds of real literal: *double* and *decimal*. These are indicated by the absence or
 presence, respectively, of *decimal-type-suffix*. (There is no such thing as a *float real
 literal*.)
 
-A double real literal has type double ([§4.2.4.1][]). A decimal real literal has type decimal
-([§4.2.4.2][]). Trailing zeros in the fraction part of a decimal real literal are significant.
+A double real literal has type double ([§4.2.4.1][§4.2.4.1]). A decimal real literal has type decimal
+([§4.2.4.2][§4.2.4.2]). Trailing zeros in the fraction part of a decimal real literal are significant.
 
 If the value of *exponent-part*'s *decimal-digits* in a double real literal is less than the
 minimum supported, the value of that double real literal is 0. If the value of *exponent-part*'s
@@ -746,7 +746,7 @@ Some examples of decimal real literals are 1d (which has scale 0), 1.20d (which 
 > [!NOTE]
 > Although PowerShell does not provide literals for infinities and NaNs, double real literal-like
 > equivalents can be obtained from the static read-only properties PositiveInfinity,
-> NegativeInfinity, and NaN of the types float and double ([§4.2.4.1][]).
+> NegativeInfinity, and NaN of the types float and double ([§4.2.4.1][§4.2.4.1]).
 
 The grammar permits what starts out as a double real literal to have an `l` or `L` type suffix. Such
 a token is really an integer literal whose value is represented by type long.
@@ -944,7 +944,7 @@ start of the first source line following the opening delimiter, and ends at the 
 source line preceding the closing delimiter. The body may be empty. The line terminator on the last
 source line preceding the closing delimiter is not part of that literal's body.
 
-A literal of any of these kinds has type string ([§4.3.1][]).
+A literal of any of these kinds has type string ([§4.3.1][§4.3.1]).
 
 The character used to delimit a *verbatim-string-literal* or *expandable-string-literal* can be
 contained in such a string literal by writing that character twice, in succession. For example,
@@ -953,7 +953,7 @@ special meaning inside an *expandable-string-literal*, and a *double-quote-chara
 meaning inside a *verbatim-string-literal*.
 
 An *expandable-string-literal* and an *expandable-here-string-literal* may contain
-*escaped-character*s ([§2.3.7][]). For example, when the following string literal is written to the
+*escaped-character*s ([§2.3.7][§2.3.7]). For example, when the following string literal is written to the
 pipeline, the result is as shown below:
 
 ```powershell
@@ -967,7 +967,7 @@ second line, "Hello", `Q5!
 
 If an *expandable-string-literal* or *expandable-here-string-literal* contains the name of a
 variable, unless that name is preceded immediately by an escape character, it is replaced by the
-string representation of that variable's value ([§6.7][]). This is known as *variable substitution*.
+string representation of that variable's value ([§6.7][§6.7]). This is known as *variable substitution*.
 
 > [!NOTE]
 > If the variable name is part of some larger expression, only the variable name is replaced. For
@@ -1002,8 +1002,8 @@ $a[0] is red blue[0], $a[0] is red
 
 *expandable-string-literal*s and *expandable-here-string-literal*s also support a kind of
 substitution called *sub-expression expansion*, by treating text of the form `$( ... )` as a
-*sub-expression* ([§7.1.6][]). Such text is replaced by the string representation of that
-expression's value ([§6.8][]). Any white space used to separate tokens within *sub-expression*'s
+*sub-expression* ([§7.1.6][§7.1.6]). Such text is replaced by the string representation of that
+expression's value ([§6.8][§6.8]). Any white space used to separate tokens within *sub-expression*'s
 *statement-list* is ignored as far as the result string's construction is concerned.
 
 The examples,
@@ -1135,7 +1135,7 @@ body. The resulting literal is equivalent to:
 > [!NOTE]
 > To aid readability of source, long string literals can be broken across multiple source lines
 > without line terminators being inserted. This is done by writing each part as a separate literal
-> and concatenating the parts with the + operator ([§7.7.2][]). This operator allows its operands to
+> and concatenating the parts with the + operator ([§7.7.2][§7.7.2]). This operator allows its operands to
 > designate any of the four kinds of string literal.
 
 > [!NOTE]
@@ -1147,22 +1147,22 @@ within the body is represented exactly as it was provided.
 
 #### 2.3.5.3 Null literal
 
-See the automatic variable `$null` ([§2.3.2.2][]).
+See the automatic variable `$null` ([§2.3.2.2][§2.3.2.2]).
 
 #### 2.3.5.4 Boolean literals
 
-See the automatic variables `$false` and `$true` ([§2.3.2.2][]).
+See the automatic variables `$false` and `$true` ([§2.3.2.2][§2.3.2.2]).
 
 #### 2.3.5.5 Array literals
 
 PowerShell allows expressions of array type (§9) to be written using the unary comma operator
-([§7.2.1][]), *array-expression* ([§7.1.7][]), the binary comma operator ([§7.3][]), and the range
-operator ([§7.4][]).
+([§7.2.1][§7.2.1]), *array-expression* ([§7.1.7][§7.1.7]), the binary comma operator ([§7.3][§7.3]), and the range
+operator ([§7.4][§7.4]).
 
 #### 2.3.5.6 Hash literals
 
 PowerShell allows expressions of type Hashtable (§10) to be written using a
-*hash-literal-expression* ([§7.1.9][])
+*hash-literal-expression* ([§7.1.9][§7.1.9])
 
 #### 2.3.5.7 Type names
 

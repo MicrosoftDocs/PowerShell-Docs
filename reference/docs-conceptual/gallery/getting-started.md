@@ -20,8 +20,9 @@ Gallery. You do not need to sign in to download items from the PowerShell Galler
 You can find packages in the PowerShell Gallery by using the **Search** control on the PowerShell
 Gallery's [home page](https://www.powershellgallery.com), or by browsing through the Modules and
 Scripts from the [Packages page](https://www.powershellgallery.com/packages). You can also find
-packages from the PowerShell Gallery by running the [Find-Module][], [Find-DscResource], and
-[Find-Script][] cmdlets, depending on the package type, with `-Repository PSGallery`.
+packages from the PowerShell Gallery by running the [Find-Module][Find-Module],
+[Find-DscResource][Find-DscResource], and [Find-Script][Find-Script] cmdlets, depending on the
+package type, with `-Repository PSGallery`.
 
 You can filter results from the Gallery by using the following parameters:
 
@@ -37,9 +38,9 @@ You can filter results from the Gallery by using the following parameters:
 - Filter
 
 If you're only interested in discovering specific DSC resources in the Gallery, you can run the
-[Find-DscResource][] cmdlet. Find-DscResource returns data on DSC resources contained in the
-Gallery. Because DSC resources are always delivered as part of a module, you still need to run
-[Install-Module][] to install those DSC resources.
+[Find-DscResource][Find-DscResource] cmdlet. Find-DscResource returns data on DSC resources
+contained in the Gallery. Because DSC resources are always delivered as part of a module, you still
+need to run [Install-Module][Install-Module] to install those DSC resources.
 
 ## Learning about packages in the PowerShell Gallery
 
@@ -52,8 +53,8 @@ account used to publish the package, and is more trustworthy than the Author fie
 If you discover a package that you feel is not published in good faith, click **Report Abuse** on
 that package's page.
 
-If you're running [Find-Module][] or [Find-Script][], you can view this data in the returned
-PSGetModuleInfo object. For example, running
+If you're running [Find-Module][Find-Module] or [Find-Script][Find-Script], you can view this data
+in the returned PSGetModuleInfo object. For example, running
 `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` returns data on the PSReadLine
 module in the Gallery.
 
@@ -63,10 +64,10 @@ We encourage the following process when downloading packages from the PowerShell
 
 ### Inspect
 
-To download a package from the Gallery for inspection, run either the [Save-Module][] or
-[Save-Script][] cmdlet, depending on the package type. This lets you save the package locally
-without installing it, and inspect the package contents. Remember to delete the saved package
-manually.
+To download a package from the Gallery for inspection, run either the [Save-Module][Save-Module] or
+[Save-Script][Save-Script] cmdlet, depending on the package type. This lets you save the package
+locally without installing it, and inspect the package contents. Remember to delete the saved
+package manually.
 
 Some of these packages are authored by Microsoft, and others are authored by the PowerShell
 community. Microsoft recommends that you review the contents and code of packages on this gallery
@@ -77,19 +78,22 @@ that package's page.
 
 ### Install
 
-To install a package from the Gallery for use, run either the [Install-Module][] or
-[Install-Script][] cmdlet, depending on the package type.
+To install a package from the Gallery for use, run either the [Install-Module][Install-Module] or
+[Install-Script][Install-Script] cmdlet, depending on the package type.
 
-[Install-Module][] installs the module to `$env:ProgramFiles\WindowsPowerShell\Modules` by default.
-This requires an administrator account. If you add the `-Scope CurrentUser` parameter, the module is
-installed to `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
+[Install-Module][Install-Module] installs the module to
+`$env:ProgramFiles\WindowsPowerShell\Modules` by default. This requires an administrator account. If
+you add the `-Scope CurrentUser` parameter, the module is installed to
+`$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
 
-[Install-Script][] installs the script to `$env:ProgramFiles\WindowsPowerShell\Scripts` by default.
-This requires an administrator account. If you add the `-Scope CurrentUser` parameter, the script is
-installed to `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
+[Install-Script][Install-Script] installs the script to
+`$env:ProgramFiles\WindowsPowerShell\Scripts` by default. This requires an administrator account. If
+you add the `-Scope CurrentUser` parameter, the script is installed to
+`$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
 
-By default, [Install-Module][] and [Install-Script][] installs the most current version of a
-package. To install an older version of the package, add the `-RequiredVersion` parameter.
+By default, [Install-Module][Install-Module] and [Install-Script][Install-Script] installs the most
+current version of a package. To install an older version of the package, add the `-RequiredVersion`
+parameter.
 
 ### Deploy
 
@@ -104,24 +108,24 @@ To learn more about Azure Automation, see the [Azure Automation](/azure/automati
 
 ## Updating packages from the PowerShell Gallery
 
-To update packages installed from the PowerShell Gallery, run either the [Update-Module][] or
-[Update-Script][] cmdlet. When run without any additional parameters, [Update-Module][] attempts to
-update all modules installed by running [Install-Module][]. To selectively update modules, add the
-`-Name` parameter.
+To update packages installed from the PowerShell Gallery, run either the
+[Update-Module][Update-Module] or [Update-Script][Update-Script] cmdlet. When run without any
+additional parameters, [Update-Module][Update-Module] attempts to update all modules installed by
+running [Install-Module][Install-Module]. To selectively update modules, add the `-Name` parameter.
 
-Similarly, when run without any additional parameters, [Update-Script][] also attempts to update all
-scripts installed by running [Install-Script][]. To selectively update scripts, add the `-Name`
-parameter.
+Similarly, when run without any additional parameters, [Update-Script][Update-Script] also attempts
+to update all scripts installed by running [Install-Script][Install-Script]. To selectively update
+scripts, add the `-Name` parameter.
 
 ## List packages that you have installed from the PowerShell Gallery
 
 To find out which modules you have installed from the PowerShell Gallery, run the
-[Get-InstalledModule][] cmdlet. This command lists all of the modules you have on your system that
-were installed directly from the PowerShell Gallery.
+[Get-InstalledModule][Get-InstalledModule] cmdlet. This command lists all of the modules you have on
+your system that were installed directly from the PowerShell Gallery.
 
 Similarly, to find out which scripts you have installed from the PowerShell Gallery, run the
-[Get-InstalledScript][] cmdlet. This command lists all the scripts you have on your system that were
-installed directly from the PowerShell Gallery.
+[Get-InstalledScript][Get-InstalledScript] cmdlet. This command lists all the scripts you have on
+your system that were installed directly from the PowerShell Gallery.
 
 ## Network access to the PowerShell Gallery
 

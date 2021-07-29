@@ -105,7 +105,7 @@ ISE Mode makes the following changes to VS Code settings.
   There are a number of ISE themes available for VS Code to make the editor look much more like the
   ISE.
 
-  In the [Command Palette][] type `theme` to get `Preferences: Color Theme` and press
+  In the [Command Palette][cmdpal] type `theme` to get `Preferences: Color Theme` and press
   <kbd>Enter</kbd>. In the drop-down list, select `PowerShell ISE`.
 
   You can set this theme in the settings with:
@@ -119,11 +119,11 @@ ISE Mode makes the following changes to VS Code settings.
   Thanks to the work of [@corbob](https://github.com/corbob), the PowerShell extension has the
   beginnings of its own command explorer.
 
-  In the [Command Palette][], enter `PowerShell Command Explorer` and press <kbd>Enter</kbd>.
+  In the [Command Palette][cmdpal], enter `PowerShell Command Explorer` and press <kbd>Enter</kbd>.
 
 - Open in the ISE
 
-  If you want to open a file in the Windows PowerShell ISE anyway, open the [Command Palette][],
+  If you want to open a file in the Windows PowerShell ISE anyway, open the [Command Palette][cmdpal],
   search for "open in ise", then select **PowerShell: Open Current File in PowerShell ISE**.
 
 ## Other resources
@@ -152,14 +152,14 @@ ISE Mode makes the following changes to VS Code settings.
 
 If you know of more ways to make VS Code feel more familiar for ISE users, contribute to this doc. If
 there's a compatibility configuration you're looking for, but you can't find any way to enable it,
-[open an issue][] and ask away!
+[open an issue][ghi] and ask away!
 
 We're always happy to accept PRs and contributions as well!
 
 <!-- link references -->
 [vsc-docs]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
-[Command Palette]: #vs-code-tips
-[open an issue]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
+[cmdpal]: #vs-code-tips
+[ghi]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
 
 [4sysops]: https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/
 [mikefrobbins]: https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/
