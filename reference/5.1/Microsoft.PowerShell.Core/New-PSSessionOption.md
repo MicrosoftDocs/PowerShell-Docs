@@ -552,11 +552,11 @@ Accept wildcard characters: False
 
 ### -OperationTimeout
 
-Determines the maximum time **WinRM** will wait for positive connection tests from a live connection
+Determines the maximum time **WinRM** waits for positive connection tests from a live connection
 before initiating a connection time-out. For more information on WinRM, see the [Windows Remote Management Documentation](/windows/win32/winrm/portal)
 
 **OperationTimeout** does _not_ impose a time limit on commands or processes running in a remote
-session and does _not_ affect other remoting protocols like SSH.
+session.
 
 The default value is 180000 (3 minutes). A value of 0 (zero) means no time-out.
 
