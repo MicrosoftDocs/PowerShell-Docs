@@ -484,7 +484,7 @@ objects in a pipeline.
 
 ### $PSScriptRoot
 
-Contains the directory from which a script is being run.
+Contains the full path of the executing script's directory.
 
 In PowerShell 2.0, this variable is valid only in script modules (`.psm1`).
 Beginning in PowerShell 3.0, it's valid in all scripts.
