@@ -10,7 +10,7 @@ description: This chapter introduces the concepts of output formatting, command 
 ## Requirements
 
 The SQL Server PowerShell module is required by some of the examples shown in this chapter. The
-module installs as part of [SQL Server Management Studio (SMSS)][SMSS]. It's also used in
+module installs as part of [SQL Server Management Studio (SSMS)][SSMS]. It's also used in
 subsequent chapters. Download and install it on your Windows 10 lab environment computer.
 
 ## Format Right
@@ -640,7 +640,7 @@ Providers, and Comparison Operators.
 - [about_Arrays][about_Arrays]
 
 <!-- link references -->
-[SMSS]: /sql/ssms/download-sql-server-management-studio-ssms
+[SSMS]: /sql/ssms/download-sql-server-management-studio-ssms
 [Format-Table]: /powershell/module/microsoft.powershell.utility/format-table
 [Format-List]: /powershell/module/microsoft.powershell.utility/format-list
 [Format-Wide]: /powershell/module/microsoft.powershell.utility/format-wide
