@@ -535,11 +535,11 @@ sudo yum remove powershell
 
 ## openSUSE
 
-### Installation - openSUSE 42.3
+### Installation - openSUSE Leap 15.3
 
 ```sh
 # Install dependencies
-zypper update && zypper --non-interactive install curl tar libicu52_1
+zypper update && zypper --non-interactive install curl tar libicu60_2
 
 # Download the powershell '.tar.gz' archive
 curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-linux-x64.tar.gz -o /tmp/powershell.tar.gz
@@ -560,7 +560,31 @@ ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### Installation - openSUSE Leap 15
+### Installation - openSUSE Leap 15.2
+
+```sh
+# Install dependencies
+zypper update && zypper --non-interactive install curl tar gzip libopenssl1_0_0 libicu60_2
+
+# Download the powershell '.tar.gz' archive
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+
+# Create the target folder where powershell will be placed
+mkdir -p /opt/microsoft/powershell/7
+
+# Expand powershell to the target folder
+tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
+
+# Set execute permissions
+chmod +x /opt/microsoft/powershell/7/pwsh
+
+# Create the symbolic link that points to pwsh
+ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
+
+# Start PowerShell
+pwsh
+```
+### Installation - openSUSE Tumbleweed
 
 ```sh
 # Install dependencies
@@ -585,7 +609,7 @@ ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### Uninstallation - openSUSE 42.3, openSUSE Leap 15
+### Uninstallation - openSUSE Leap 15.3, openSUSE Leap 15.2, openSUSE Tumbleweed
 
 ```sh
 rm -rf /usr/bin/pwsh /opt/microsoft/powershell
