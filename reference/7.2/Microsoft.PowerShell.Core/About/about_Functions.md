@@ -51,7 +51,7 @@ see [about_Functions_Advanced](about_Functions_Advanced.md).
 
 The following are the syntax for a function:
 
-```syntax
+```Syntax
 function [<scope:>]<name> [([type]$parameter1[,[type]$parameter2])]
 {
   begin {<statement list>}
@@ -60,7 +60,7 @@ function [<scope:>]<name> [([type]$parameter1[,[type]$parameter2])]
 }
 ```
 
-```syntax
+```Syntax
 function [<scope:>]<name>
 {
   param([type]$parameter1 [,[type]$parameter2])
@@ -88,7 +88,7 @@ functions, see
 Functions do not have to be complicated to be useful. The simplest functions
 have the following format:
 
-```syntax
+```Syntax
 function <function-name> {statements}
 ```
 
@@ -149,12 +149,12 @@ about dynamic parameters in functions, see
 You can define any number of named parameters. You can include a default value
 for named parameters, as described later in this topic.
 
-You can define parameters inside the braces using the `Param` keyword, as
+You can define parameters inside the braces using the `param` keyword, as
 shown in the following sample syntax:
 
-```syntax
+```Syntax
 function <name> {
-  param ([[type]$parameter1,[type]$parameter2])
+  param ([type]$parameter1 [,[type]$parameter2])
   <statement list>
 }
 ```
@@ -162,7 +162,7 @@ function <name> {
 You can also define parameters outside the braces without the `Param` keyword,
 as shown in the following sample syntax:
 
-```syntax
+```Syntax
 function <name> [([type]$parameter1[,[type]$parameter2])] {
   <statement list>
 }
@@ -171,7 +171,7 @@ function <name> [([type]$parameter1[,[type]$parameter2])] {
 Below is an example of this alternative syntax.
 
 ```powershell
-Function Add-Numbers([int]$one, [int]$two) {
+function Add-Numbers([int]$one, [int]$two) {
     $one + $two
 }
 ```
@@ -371,7 +371,7 @@ Any function can take input from the pipeline. You can control how a function
 processes input from the pipeline using `Begin`, `Process`, and `End`
 keywords. The following sample syntax shows the three keywords:
 
-```syntax
+```Syntax
 function <name> {
   begin {<statement list>}
   process {<statement list>}
