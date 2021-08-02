@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/05/2021
+ms.date: 08/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -86,6 +86,12 @@ This cmdlet was introduced in PowerShell 3.0.
 
 Beginning in PowerShell 7.0, `Invoke-WebRequest` supports proxy configuration defined by environment
 variables. See the [Notes](#notes) section of this article.
+
+> [!IMPORTANT]
+> The examples in this article reference host in the `constoso.com` domain. This is a fictitious
+> domain used by Microsoft for examples. The examples are designed to show how to use the cmdlets.
+> However, since the `contoso.com` sites do not exist, the examples do not work. Adapt the examples
+> to hosts in your environment.
 
 ## Examples
 
