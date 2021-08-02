@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell-Docs for 2021
 description: List of changes to the PowerShell documentation for 2021
-ms.date: 07/02/2021
+ms.date: 08/02/2021
 ---
 
 # What's new in PowerShell Docs for 2021
@@ -11,6 +11,42 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2021-July
+
+New content
+
+- [about_Functions_Argument_Completion](/powershell/module/microsoft.powershell.core/about/about_functions_argument_completion)
+- [about_Tab_Expansion](/powershell/module/microsoft.powershell.core/about/about_Tab_Expansion)
+
+Content updates
+
+- [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters) - major updates and links to new articles
+- PowerShell 7.2-preview.8 documentation updates
+
+### Top Community Contributors
+
+GitHub stats
+
+- 51 PRs merged (9 from Community)
+- 56 issues opened (50 from Community)
+- 59 issues closed (52 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|   GitHub Id   | PRs merged | Issues opened |
+| ------------- | :--------: | :-----------: |
+| rkeithhill    |     2      |               |
+| juvtib        |     2      |               |
+| SetTrend      |     1      |               |
+| Rob-S         |     1      |               |
+| xtqqczze      |     1      |               |
+| akashdabhi03  |     1      |               |
+| kurtmckee     |     1      |               |
+| clamb123      |            |      13       |
+| mklement0     |            |       2       |
+| jerryKahnPerl |            |       2       |
 
 ## 2021-June
 
