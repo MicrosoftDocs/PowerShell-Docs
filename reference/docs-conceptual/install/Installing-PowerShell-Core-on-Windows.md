@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on Windows
 description: Information about installing PowerShell on Windows
-ms.date: 06/24/2021
+ms.date: 08/02/2021
 ---
 # Installing PowerShell on Windows
 
@@ -94,7 +94,7 @@ location and version of PowerShell. These values are located in
 | 7.1.x Preview |     x64      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\39243d76-adaf-42b1-94fb-16ecf83237c8` |
 
 This can be used by administrators and developers to find the path to PowerShell. The `<GUID>`
-values will be the same for all preview and minor version releases. The `<GUID>`
+values are the same for all preview and minor version releases. The `<GUID>`
 values are changed for each major release.
 
 ## <a id="zip" />Installing the ZIP package
@@ -154,17 +154,17 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
 
    ```powershell
    Set-Location .\PowerShell-<version>-win-<os-arch>
-   # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
+   # Be sure to use the -PowerShellHome parameter otherwise it tries to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
-   # You'll get an error message and will be disconnected from the device because
+   # You get an error message and are disconnected from the device because
    # it has to restart WinRM
    ```
 
 1. Connect to PowerShell 7 endpoint on device
 
    ```powershell
-   # Be sure to use the -Configuration parameter. If you omit it, you will connect to Windows PowerShell 5.1
+   # Be sure to use the -Configuration parameter. If you omit it, you connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
@@ -180,7 +180,7 @@ _OPENSRC_POWERSHELL_ feature to your image.
 
 > [!NOTE]
 > For ARM64 architecture, Windows PowerShell is not added when you include _IOT_POWERSHELL_. So the
-> zip based install will not work. You will need to use `Import-PSCoreRelease` command to add it in
+> zip based install does not work. You need to use `Import-PSCoreRelease` command to add it in
 > the image.
 
 ## Deploying on Nano Server
@@ -259,9 +259,7 @@ configure applications on Windows 10 computers. This tool is the client interfac
 Package Manager service.
 
 > [!NOTE]
-> Windows Package Manager and the `winget` tool are in public preview and may be substantially
-> modified before they are generally available. See the [documentation][winget] for a list of system
-> requirements and install instructions.
+> See the [winget documentation][winget] for a list of system requirements and install instructions.
 
 The following commands can be used to install PowerShell using the published `winget` packages:
 
@@ -275,7 +273,6 @@ The following commands can be used to install PowerShell using the published `wi
    Name                      Id                                Version
    ---------------------------------------------------------------------------
    PowerShell                Microsoft.PowerShell              7.1.3
-   PowerShell Preview (MSIX) Microsoft.PowerShell-Preview-MSIX 7.0.2
    PowerShell-Preview        Microsoft.PowerShell-Preview      7.2.0-preview.5
    ```
 
@@ -286,7 +283,7 @@ The following commands can be used to install PowerShell using the published `wi
    winget install --name PowerShell-Preview --exact
    ```
 
-## <a id="msix" />Installing from the Microsoft Store
+## Installing from the Microsoft Store
 
 PowerShell 7.1 has been published to the Microsoft Store. You can find the PowerShell release on the
 [Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) website or in the
@@ -299,8 +296,8 @@ Benefits of the Microsoft Store package:
 
 Limitations:
 
-MSIX packages run in an application sandbox that virtualizes access to some filesystem and registry
-locations.
+Windows Store packages run in an application sandbox that virtualizes access to some filesystem and
+registry locations.
 
 - All registry changes under HKEY_CURRENT_USER are copied on write to a private, per-user, per-app
   location. Therefore, those values are not available to other applications.
@@ -310,24 +307,6 @@ locations.
 
 For more information, see
 [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes).
-
-### Using the MSIX package
-
-> [!NOTE]
-> The preview builds of PowerShell include an MSIX package. The MSIX package is not officially
-> supported. The package is built for testing purposes during the preview period.
-
-To manually install the MSIX package on a Windows 10 client, download the MSIX package from our
-GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to
-install. The Assets section may be collapsed, so you may need to click to expand it.
-
-The MSIX file looks like this - `PowerShell-<version>-win-<os-arch>.msix`
-
-To install the package, you must use the `Add-AppxPackage` cmdlet.
-
-```powershell
-Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
-```
 
 ## How to create a remoting endpoint
 
@@ -347,9 +326,9 @@ information in this article. If you installed via the MSI package, that informat
 
 ## Installation support
 
-Microsoft supports the installation methods in this document. There may be other methods of
-installation available from other sources. While those tools and methods may work, Microsoft cannot
-support those methods.
+Microsoft supports the installation methods in this document. There may be other third-party methods
+of installation available from other sources. While those tools and methods may work, Microsoft
+cannot support those methods.
 
 <!-- link references -->
 

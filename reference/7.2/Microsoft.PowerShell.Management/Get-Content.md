@@ -575,7 +575,7 @@ pages (like `-Encoding 1251`) or string names of registered code pages (like
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 > [!NOTE]
-> **UTF-7*** is no longer recommended to use. In PowerShell 7.1, a warning is written if you
+> **UTF-7*** is no longer recommended to use. As of PowerShell 7.1, a warning is written if you
 > specify `utf7` for the **Encoding** parameter.
 
 ```yaml
