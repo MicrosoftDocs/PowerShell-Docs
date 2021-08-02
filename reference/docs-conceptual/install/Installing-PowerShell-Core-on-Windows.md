@@ -94,7 +94,7 @@ location and version of PowerShell. These values are located in
 | 7.1.x Preview |     x64      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\39243d76-adaf-42b1-94fb-16ecf83237c8` |
 
 This can be used by administrators and developers to find the path to PowerShell. The `<GUID>`
-values will be the same for all preview and minor version releases. The `<GUID>`
+values are the same for all preview and minor version releases. The `<GUID>`
 values are changed for each major release.
 
 ## <a id="zip" />Installing the ZIP package
@@ -157,14 +157,14 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
-   # You'll get an error message and will be disconnected from the device because
+   # You get an error message and are disconnected from the device because
    # it has to restart WinRM
    ```
 
 1. Connect to PowerShell 7 endpoint on device
 
    ```powershell
-   # Be sure to use the -Configuration parameter. If you omit it, you will connect to Windows PowerShell 5.1
+   # Be sure to use the -Configuration parameter. If you omit it, you connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
@@ -180,7 +180,7 @@ _OPENSRC_POWERSHELL_ feature to your image.
 
 > [!NOTE]
 > For ARM64 architecture, Windows PowerShell is not added when you include _IOT_POWERSHELL_. So the
-> zip based install will not work. You will need to use `Import-PSCoreRelease` command to add it in
+> zip based install does not work. You need to use `Import-PSCoreRelease` command to add it in
 > the image.
 
 ## Deploying on Nano Server
