@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 08/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/tee-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Tee-Object
@@ -17,13 +17,13 @@ Saves command output in a file or variable and also sends it down the pipeline.
 ### File (Default)
 
 ```
-Tee-Object [-InputObject <PSObject>] [-FilePath] <String> [-Append] [<CommonParameters>]
+Tee-Object [-InputObject <PSObject>] [-FilePath] <String> [-Append] [[-Encoding] <Encoding>] [<CommonParameters>]
 ```
 
 ### LiteralFile
 
 ```
-Tee-Object [-InputObject <PSObject>] -LiteralPath <String> [<CommonParameters>]
+Tee-Object [-InputObject <PSObject>] -LiteralPath <String> [[-Encoding] <Encoding>] [<CommonParameters>]
 ```
 
 ### Variable
@@ -132,6 +132,46 @@ Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
+```
+
+### -Encoding
+
+Specifies the type of encoding for the target file. The default value is `utf8NoBOM`.
+
+The acceptable values for this parameter are as follows:
+
+- `ascii`: Uses the encoding for the ASCII (7-bit) character set.
+- `bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.
+- `oem`: Uses the default encoding for MS-DOS and console programs.
+- `unicode`: Encodes in UTF-16 format using the little-endian byte order.
+- `utf7`: Encodes in UTF-7 format.
+- `utf8`: Encodes in UTF-8 format.
+- `utf8BOM`: Encodes in UTF-8 format with Byte Order Mark (BOM)
+- `utf8NoBOM`: Encodes in UTF-8 format without Byte Order Mark (BOM)
+- `utf32`: Encodes in UTF-32 format.
+
+Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
+pages (like `-Encoding 1251`) or string names of registered code pages (like
+`-Encoding "windows-1251"`). For more information, see the .NET documentation for
+[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+
+This parameter was introduced in PowerShell 7.2.
+
+> [!NOTE]
+> **UTF-7*** is no longer recommended to use. As of PowerShell 7.1, a warning is written if you
+> specify `utf7` for the **Encoding** parameter.
+
+```yaml
+Type: System.Text.Encoding
+Parameter Sets: (All)
+Aliases:
+Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
+
+Required: False
+Position: 1
+Default value: UTF8NoBOM
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -InputObject
