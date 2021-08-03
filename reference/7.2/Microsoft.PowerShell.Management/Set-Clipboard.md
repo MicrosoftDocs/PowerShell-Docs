@@ -2,30 +2,30 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/03/2020
+ms.date: 08/03/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
 ---
 # Set-Clipboard
 
-## SYNOPSIS
+## Synopsis
 Sets the contents of the clipboard.
 
-## SYNTAX
+## Syntax
 
 ```
-Set-Clipboard -Value <String[]> [-Append] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Clipboard -Value <String[]> [-Append] [-WhatIf] [-Confirm] [-PassThru] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-Clipboard` cmdlet sets the contents of the clipboard.
 
 > [!NOTE]
 > On Linux, this cmdlet requires the `xclip` utility to be in the path.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Copy text to the clipboard
 
@@ -42,7 +42,7 @@ ssh key so that it can be pasted into another application, like GitHub.
 Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Append
 
@@ -68,6 +68,23 @@ Prompts you for confirmation before running the cmdlet.
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+
+Returns an object representing the item with which you're working. By default, this cmdlet does not
+generate any output.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -114,18 +131,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String[]
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
 In rare cases when using `Set-Clipboard` with a high number of values in rapid succession, like in a
 loop, you might sporadically get a blank value from the clipboard. This can be fixed by using
 `Start-Sleep -Milliseconds 1` in the loop.
 
-## RELATED LINKS
+## Related links
 
 [Get-Clipboard](Get-Clipboard.md)
