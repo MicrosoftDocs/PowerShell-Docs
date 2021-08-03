@@ -26,7 +26,7 @@ Write-Error [-Message] <String> [-Category <ErrorCategory>] [-ErrorId <String>] 
 ### WithException
 
 ```
-Write-Error -Exception <Exception> [[-Message] <String>] [-Category <ErrorCategory>] [-ErrorId <String>]
+Write-Error [-Exception] <Exception> [[-Message] <String>] [-Category <ErrorCategory>] [-ErrorId <String>]
  [-TargetObject <Object>] [-RecommendedAction <String>] [-CategoryActivity <String>] [-CategoryReason <String>]
  [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
 ```
@@ -34,7 +34,7 @@ Write-Error -Exception <Exception> [[-Message] <String>] [-Category <ErrorCatego
 ### ErrorRecord
 
 ```
-Write-Error -ErrorRecord <ErrorRecord> [-RecommendedAction <String>] [-CategoryActivity <String>]
+Write-Error [-ErrorRecord] <ErrorRecord> [-RecommendedAction <String>] [-CategoryActivity <String>]
  [-CategoryReason <String>] [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
 ```
 
