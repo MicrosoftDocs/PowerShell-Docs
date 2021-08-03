@@ -119,7 +119,7 @@ UnderlineOff     Property   string UnderlineOff {get;}
 The base members return strings of ANSI escape sequences mapped to their names. The values are
 settable to allow customization.
 
-For more information, see [about_Automatic_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+For more information, see [about_Automatic_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables)
 
 > [!NOTE]
 > For C# developers, you can access `PSStyle` as a singleton. Usage will look like this:
@@ -173,7 +173,7 @@ enables coloring of specific file types.
 - `$PSStyle.FileInfo.Extension` - Use this member to define colors for different file extensions.
   The **Extension** member pre-includes extensions for archive and PowerShell files.
 
-For more information, see [about_Automatic_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+For more information, see [about_Automatic_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables)
 
 > [!NOTE]
 > You must have the **PSAnsiRendering** experimental feature enabled to use this feature.
