@@ -40,12 +40,6 @@ you to control progress view bar rendering.
 > If the host doesn't support Virtual Terminal, `$PSStyle.Progress.View` is automatically set to
 > `Classic`.
 
-The following example sets the rendering style to a minimal progress bar.
-
-```powershell
-$PSStyle.Progress.View = 'Minimal'
-```
-
 ## EXAMPLES
 
 ### Example 1: Display the progress of a For loop
