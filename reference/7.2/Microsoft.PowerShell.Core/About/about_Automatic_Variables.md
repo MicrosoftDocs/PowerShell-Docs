@@ -1,7 +1,7 @@
 ---
 description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 07/22/2021
+ms.date: 08/04/2021
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -106,6 +106,24 @@ most recent error is the first error object in the array `$Error[0]`.
 To prevent an error from being added to the `$Error` array, use the
 **ErrorAction** common parameter with a value of **Ignore**. For more
 information, see [about_CommonParameters](about_CommonParameters.md).
+
+### $ErrorView
+
+Contains the value controlling the view in which errors are displayed. The
+`$ErrorView` variable accepts strings or **ErrorView** objects and has a
+default value of `ConciseView`. If a string other than an accepted value is
+defined, an error is thrown.
+
+Accepted values:
+
+- `CategoryView` - Only displays the error category information.
+- `ConciseView` - Only displays the error message. If the error is a parser
+  error or comes from a script, a location pointer is included. This view was
+  added in PowerShell 7.0
+- `DetailedView` - Displays a verbose error message including all error
+  information. This view was added in PowerShell 7.2
+- `NormalView` - Provides a standard PowerShell error view containing the error
+  message, location, category info and more.
 
 ### $Event
 
