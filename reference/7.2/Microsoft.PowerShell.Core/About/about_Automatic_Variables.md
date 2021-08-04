@@ -514,10 +514,11 @@ When this experimental feature is enabled PowerShell uses the `ArgumentList`
 property of the `StartProcessInfo` object rather than our current mechanism of
 reconstructing a string when invoking a native executable.
 
-> [!CAUTION] The new behavior is a **breaking change** from current behavior.
-> This may break scripts and automation that work-around the various issues
-> when invoking native applications. Historically, quotes must be escaped and
-> it is not possible to provide empty arguments to a native application.
+> [!CAUTION]
+> The new behavior is a **breaking change** from current behavior. This may
+> break scripts and automation that work-around the various issues when
+> invoking native applications. Historically, quotes must be escaped and it is
+> not possible to provide empty arguments to a native application.
 
 This feature adds a new automatic variable `$PSNativeCommandArgumentPassing`
 that allows you to select the behavior at runtime. The valid values are

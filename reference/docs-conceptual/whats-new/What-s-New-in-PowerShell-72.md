@@ -11,7 +11,6 @@ long-term-servicing (LTS) release is built on .NET 6.0.
 
 PowerShell 7.2 includes the following features, updates, and breaking changes.
 
-- PowerShellGet 3.0 and CompatPowerShellGet
 - PSReadLine 2.2 with just-in-time help and command predictions
 - Improved DSC support in PowerShell 7
   - Removed PSDesiredStateConfiguration - must install from the PowerShell Gallery
@@ -20,20 +19,10 @@ PowerShell 7.2 includes the following features, updates, and breaking changes.
 - 3 new experimental features
   - Improved native command support
   - Improved ANSI color support
-- {X} experimental features promoted to mainstream?
+- 7 experimental features promoted to mainstream and 1 removed
 - Several breaking changes to improve usability
 
 For a complete list of changes, see the [CHANGELOG][] in the GitHub repository.
-
-## PowerShellGet 3.0 and CompatPowerShellGet
-
-PowerShellGet 3.0 is a complete rewrite of the older PowerShellGet and PackageManagement modules.
-This release removes the dependency on the PackageManagement, which we are no longer supporting.
-This simplifies the code base making it more maintainable, easier to debug, and easier to extend.
-Built around NuGet 3.0, PowerShellGet 3.0 supports NuGet v2 and v3 endpoints for PSRepositories.
-
-CompatPowerShellGet is a compatibility module that allows use of PowerShellGet 2.x (and below)
-cmdlet syntax with PowerShellGet 3.0 functionality.
 
 ## Improved DSC support in PowerShell 7
 
@@ -111,14 +100,16 @@ For more information about the Experimental Features, see [Using Experimental Fe
 
 The following experimental features are now mainstream features in this release:
 
-{TO DO - mainstream features}
+- `Microsoft.PowerShell.Utility.PSImportPSDataFileSkipLimitCheck`
+- `Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace`
+- `PSAnsiRendering` - see [about_ANSI_Terminals][]
+- `PSAnsiProgress` - see [about_ANSI_Terminals][]
+- `PSCultureInvariantReplaceOperator`
+- `PSNotApplyErrorActionToStderr`
+- `PSUnixFileStat`
 
 The following experimental features were added in this release:
 
-- [PSAnsiRendering][] - enables changes how the PowerShell engine outputs text and add the
-  `$PSStyle` automatic variable to control ANSI rendering of string output.
-- [PSAnsiProgress][] - adds the `$PSStyle.Progress`
-  member and allows you to control progress view bar rendering.
 - [PSNativeCommandArgumentPassing][] - When this experimental feature is enabled PowerShell uses the
   **ArgumentList** property of the **StartProcessInfo** object rather than our current mechanism of
   reconstructing a string when invoking a native executable. This feature adds a new automatic
@@ -164,8 +155,6 @@ improve usability.
 <!-- reference links -->
 
 [Using Experimental Features]: ../learn/experimental-features.md
-[PSAnsiRendering]: ../learn/experimental-features.md#psansirendering
-[PSAnsiProgress]: ../learn/experimental-features.md#psansiprogress
 [PSNativeCommandArgumentPassing]: ../learn/experimental-features.md#psnativecommandargumentpassing
 [announced]: https://devblogs.microsoft.com/powershell/announcing-powershell-7-2/
 [CHANGELOG]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.2.md
@@ -176,3 +165,4 @@ improve usability.
 [Microsoft Store package]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [PowerShell Remoting over SSH]: /powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core
 [PowerShell Support Lifecycle]: /powershell/scripting/powershell-support-lifecycle
+[about_ANSI_Terminals]: /powershell/module/microsoft.powershell.core/about/about_ansi_terminals
