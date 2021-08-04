@@ -207,6 +207,8 @@ items:
   items:
   - name: What's new in PowerShell 7.x
     items:
+    - name: What's new in PowerShell 7.2
+      href: whats-new/what-s-new-in-powershell-72.md
     - name: What's new in PowerShell 7.1
       href: whats-new/what-s-new-in-powershell-71.md
     - name: What's new in PowerShell 7.0
