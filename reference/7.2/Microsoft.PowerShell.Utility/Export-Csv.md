@@ -9,11 +9,11 @@ title: Export-Csv
 ---
 # Export-Csv
 
-## SYNOPSIS
+## Synopsis
 Converts objects into a series of comma-separated value (CSV) strings and saves the strings to a
 file.
 
-## SYNTAX
+## Syntax
 
 ### Delimiter (Default)
 
@@ -32,7 +32,7 @@ Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-
  [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Export-CSV` cmdlet creates a CSV file of the objects that you submit. Each object is a row
 that includes a comma-separated list of the object's property values. You can use the `Export-CSV`
@@ -42,7 +42,7 @@ Do not format objects before sending them to the `Export-CSV` cmdlet. If `Export
 formatted objects the CSV file contains the format properties rather than the object properties. To
 export only selected properties of an object, use the `Select-Object` cmdlet.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Export process properties to a CSV file
 
@@ -377,7 +377,60 @@ DisplayHint,DateTime,Date,Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minute,M
 DateTime,"Thursday, August 22, 2019 11:31:00 AM",8/22/2019 12:00:00 AM,22,Thursday,234,11,Local,713,31,8,0,637020702607132640,11:31:00.7132640,2019
 ```
 
-## PARAMETERS
+### Example 12: Convert hashtables to CSV
+
+In PowerShell 7.2 and above, when you export hashtables to CSV, the keys of the first hashtable are
+serialized and used as headers in the csv file output.
+
+```powershell
+$person1 = @{
+    Name = 'John Smith'
+    Number = 1
+}
+
+$person2 = @{
+    Name = 'Jane Smith'
+    Number = 1
+}
+
+$allPeople = $person1, $person2
+$allPeople | Export-Csv -Path .\People.csv
+
+Get-Content -Path .\People.csv
+```
+
+```Output
+"Name","Number"
+"John Smith","1"
+"Jane Smith","2"
+```
+
+### Example 13: Converting hashtables to CSV with additional properties
+
+In PowerShell 7.2 and above, when you export a hashtable that has additional properties added with
+`Add-Member` or `Select-Object` the additional properties are also added as a header in the CSV
+file.
+
+```powershell
+$allPeople | Add-Member -Name ExtraProp -Value 42
+$allPeople | ConvertTo-Csv
+
+Get-Content -Path .\People.csv
+```
+
+```Output
+"Name","Number","ExtraProp"
+"John Smith","1","42"
+"Jane Smith","2","42"
+```
+
+Each hashtable has a property named `ExtraProp` added by `Add-Member` and then exported to CSV. You
+can see `ExtraProp` is now a header in the CSV file output.
+
+If an added property has the _same_ name as a key from the hashtable, the key takes precedence and
+only the key is exported to CSV.
+
+## Parameters
 
 ### -Append
 
@@ -675,19 +728,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object with an Extended Type System (ETS) adapter to `Export-CSV`.
 
-## OUTPUTS
+## Outputs
 
 ### System.String
 
 The CSV list is sent to the file designated in the Path parameter.
 
-## NOTES
+## Notes
 
 The `Export-CSV` cmdlet converts the objects that you submit into a series of CSV strings and saves
 them in the specified text file. You can use `Export-CSV -IncludeTypeInformation` to save objects
@@ -726,7 +779,7 @@ The `ConvertTo-Csv` and `ConvertFrom-Csv` cmdlets convert objects to CSV strings
 strings. `Export-CSV` is the same as `ConvertTo-CSV`, except that it saves the CSV strings in a
 file.
 
-## RELATED LINKS
+## Related links
 
 [ConvertFrom-Csv](ConvertFrom-Csv.md)
 

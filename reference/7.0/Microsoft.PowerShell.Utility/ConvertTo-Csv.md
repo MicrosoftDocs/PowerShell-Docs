@@ -118,7 +118,7 @@ DisplayHint,"DateTime","Date",Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minu
 DateTime,"Thursday, August 22, 2019 11:27:34 AM","8/22/2019 12:00:00 AM",22,Thursday,234,11,Local,569,27,8,34,637020700545699784,11:27:34.5699784,2019
 ```
 
-### Example 4: Convert to CSV with quotes only when needed
+### Example 5: Convert to CSV with quotes only when needed
 
 This example converts a **DateTime** object to a CSV string.
 
