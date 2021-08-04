@@ -10,10 +10,10 @@ title: ConvertTo-Csv
 
 # ConvertTo-Csv
 
-## SYNOPSIS
+## Synopsis
 Converts .NET objects into a series of comma-separated value (CSV) strings.
 
-## SYNTAX
+## Syntax
 
 ### Delimiter (Default)
 
@@ -28,7 +28,7 @@ ConvertTo-Csv [-InputObject] <psobject> [[-Delimiter] <char>] [-NoTypeInformatio
 ConvertTo-Csv [-InputObject] <psobject> [-UseCulture] [-NoTypeInformation] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `ConvertTo-CSV` cmdlet returns a series of comma-separated value (CSV) strings that represent
 the objects that you submit. You can then use the `ConvertFrom-Csv` cmdlet to recreate objects from
@@ -41,7 +41,7 @@ You can use the `Export-Csv` cmdlet to convert objects to CSV strings. `Export-C
 The `ConvertTo-CSV` cmdlet has parameters to specify a delimiter other than a comma or use the
 current culture as the delimiter.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Convert an object to CSV
 
@@ -104,7 +104,7 @@ objects to a series of CSV strings. The **UseCulture** parameter uses the curren
 list separator as the delimiter. The **NoTypeInformation** parameter removes the **#TYPE**
 information header from the CSV output.
 
-## PARAMETERS
+## Parameters
 
 ### -Delimiter
 
@@ -183,19 +183,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object that has an Extended Type System (ETS) adapter to `ConvertTo-CSV`.
 
-## OUTPUTS
+## Outputs
 
 ### System.String
 
 The CSV output is returned as a collection of strings.
 
-## NOTES
+## Notes
 
 In CSV format, each object is represented by a comma-separated list of its property value. The
 property values are converted to strings using the object's **ToString()** method. The strings are
@@ -214,7 +214,7 @@ the properties of the first object that you submit. If the remaining objects do 
 specified properties, the property value of that object is Null, as represented by two consecutive
 commas. If the remaining objects have additional properties, those property values are ignored.
 
-## RELATED LINKS
+## Related links
 
 [ConvertFrom-Csv](ConvertFrom-Csv.md)
 
