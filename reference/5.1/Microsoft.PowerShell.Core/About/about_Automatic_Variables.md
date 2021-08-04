@@ -1,7 +1,7 @@
 ---
 description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 07/06/2021
+ms.date: 08/04/2021
 no-loc: [Reset, Current]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -107,6 +107,18 @@ To prevent an error from being added to the `$Error` array, use the
 **ErrorAction** common parameter with a value of **Ignore**. For more
 information, see [about_CommonParameters](about_CommonParameters.md).
 
+### $ErrorView
+
+Contains the value controlling the view in which errors are displayed. The
+`$ErrorView` variable accepts strings and has a default value of `NormalView`.
+If a string other than an accepted value is defined, the default is used.
+
+Accepted values:
+
+- `CategoryView` - Only displays the error category information.
+- `NormalView` - Provides a standard PowerShell error view containing the
+  error, line number, category info and more.
+
 ### $Event
 
 Contains a **PSEventArgs** object that represents the event that is being
@@ -187,7 +199,7 @@ are unnamed functions).
   > You cannot use the `$input` variable inside both the Process block and the
   > End block in the same function or script block.
 
-Since `$input` is an enumerator, accessing any of it's properties causes
+Since `$input` is an enumerator, accessing any of its properties causes
 `$input` to no longer be available. You can store `$input` in another variable
 to reuse the `$input` properties.
 
