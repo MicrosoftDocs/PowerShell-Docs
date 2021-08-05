@@ -76,7 +76,7 @@ The following members control how or when ANSI formatting is used:
   - **ANSI**: ANSI is always passed through as-is
   - **PlainText**: ANSI escape sequences are always stripped so that it is only
     plain text
-  - **HostOnly**: This would be the macOS behavior where the ANSI escape
+  - **Host**: This would be the macOS behavior where the ANSI escape
     sequences are removed in redirected or piped output.
 
 - The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
@@ -168,14 +168,11 @@ The following members control how or when ANSI formatting is used:
 
 ## Cmdlets that support ANSI output
 
-- `Write-Progress` - ANSI output is managed using `$PSStyle.Progress`, as
-  described above. For more information, see
-  [Write-Progress](xref:Microsoft.PowerShell.Utility.Write-Progress)
 - The markdown cmdlets - the
-  [Show-Markdown](xref:Microsoft.PowerShell.Utility.Show-Markdown) cmdlet is
-  use to display the contents of a file containing markdown text. the output is
-  rendered in the terminal using ANSI sequences to represent different styles.
-  The definitions of the ANSI sequences can be managed using the
+  [Show-Markdown](xref:Microsoft.PowerShell.Utility.Show-Markdown) cmdlet
+  displays the contents of a file containing markdown text. The output is
+  rendered using ANSI sequences to represent different styles. You can manage
+  the definitions of the styles using the
   [Get-MarkdownOption](xref:Microsoft.PowerShell.Utility.Get-MarkdownOption)
   and
   [Set-MarkdownOption](xref:Microsoft.PowerShell.Utility.Get-MarkdownOption)
@@ -187,6 +184,12 @@ The following members control how or when ANSI formatting is used:
 - `Get-Error` - the [Get-Error](xref:Microsoft.PowerShell.Utility.Get-Error)
   cmdlet provide a detailed view of an **Error** object, formatted to make it
   easier to read.
+- `Select-String` - Beginning with PowerShell 7.0,
+  [Select-String](xref:Microsoft.PowerShell.Utility.Select-String) uses ANSI
+  sequences to highlight the matching patterns in the output.
+- `Write-Progress` - ANSI output is managed using `$PSStyle.Progress`, as
+  described above. For more information, see
+  [Write-Progress](xref:Microsoft.PowerShell.Utility.Write-Progress)
 
 ## Disabling ANSI output
 
@@ -213,26 +216,26 @@ string output = $"{PSStyle.Instance.Foreground.Red}{PSStyle.Instance.Bold}Hello{
 
 `PSStyle` exists in the System.Management.Automation namespace.
 
-Along with access to `$PSStyle`, this introduces changes to the PowerShell
-engine. The PowerShell formatting system is updated to respect
-`$PSStyle.OutputRendering`.
+The PowerShell engine includes the following changes:
 
-- `StringDecorated` type is added to handle ANSI escaped strings.
-- `string IsDecorated` boolean property is added to return if the string
-  contains ANSI escape sequences based on if the string contains ESC or C1 CSI.
-- The `Length` property returns _only_ the length for the text without the ANSI
-  escape sequences.
-- `StringDecorated Substring(int contentLength)` method returns a substring
+- The PowerShell formatting system is updated to respect
+  `$PSStyle.OutputRendering`.
+- The `StringDecorated` type is added to handle ANSI escaped strings.
+- The `string IsDecorated` boolean property was added to return **true** when
+  the string contains `ESC` or `C1 CSI` character sequences.
+- The `Length` property of a string returns the length for the text without the
+  ANSI escape sequences.
+- The `StringDecorated Substring(int contentLength)` method returns a substring
   starting at index 0 up to the content length that is not a part of ANSI
   escape sequences. This is needed for table formatting to truncate strings and
   preserve ANSI escape sequences that don't take up printable character space.
-- `string ToString()` method stays the same and returns the plaintext version
-  of the string.
-- `string ToString(bool Ansi)` method returns the raw ANSI embedded string if
-  the `Ansi` parameter is true. Otherwise, a plaintext version with ANSI escape
-  sequences removed is returned.
-
-The `FormatHyperlink(string text, uri link)` returns a string containing ANSI
-escape sequence used to decorate hyperlinks. Some terminal hosts, like the
-[Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701),
-support this markup, which makes the rendered text clickable in the terminal.
+- The `string ToString()` method stays the same and returns the plaintext
+  version of the string.
+- The `string ToString(bool Ansi)` method returns the raw ANSI embedded string
+  if the `Ansi` parameter is **true**. Otherwise, a plaintext version with ANSI
+  escape sequences removed is returned.
+- The `FormatHyperlink(string text, uri link)` method returns a string
+  containing ANSI escape sequences used to decorate hyperlinks. Some terminal
+  hosts, like the
+  [Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701),
+  support this markup, which makes the rendered text clickable in the terminal.
