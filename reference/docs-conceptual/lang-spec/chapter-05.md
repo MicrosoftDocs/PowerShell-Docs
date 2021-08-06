@@ -31,8 +31,8 @@ been defined, use the [Test-Path](xref:Microsoft.PowerShell.Management.Test-Path
 ## 5.1 Writable location
 
 A *writable location* is an expression that designates a resource to which a command has both read
-and write access. A writable location may be a variable (§5), an array element (§9), an associated
-value in a Hashtable accessed via a subscript (§10), a property ([§7.1.2][§7.1.2]), or storage managed by
+and write access. A writable location may be a variable ([§5][§5]), an array element ([§9][§9]), an associated
+value in a Hashtable accessed via a subscript ([§10][§10]), a property ([§7.1.2][§7.1.2]), or storage managed by
 a provider ([§3.1][§3.1]).
 
 ## 5.2 Variable categories
@@ -117,7 +117,7 @@ An array can be created via a unary comma operator ([§7.2.1][§7.2.1]), *sub-ex
 Memory for creating and deleting arrays is managed by the host environment and the garbage
 collection system.
 
-Arrays and array elements are discussed in [§9.][§9.]
+Arrays and array elements are discussed in [§9][§9].
 
 ### 5.2.4 Hashtable key/value pairs
 
@@ -128,7 +128,7 @@ via the `[]` operator ([§7.1.4.3][§7.1.4.3]).
 Memory for creating and deleting Hashtables is managed by the host environment and the garbage
 collection system.
 
-Hashtables are discussed in §10.
+Hashtables are discussed in [§10][§10].
 
 ### 5.2.5 Parameters
 
@@ -194,6 +194,7 @@ namespace **Function:** ([§2.3.2][§2.3.2], [§3.1][§3.1]) is constrained impl
 [§4.3.2]: chapter-04.md#432-arrays
 [§4.3.3]: chapter-04.md#433-hashtables
 [§4.3.8]: chapter-04.md#438-the-math-type
+[§5]: chapter-05.md#5-variables
 [§5.2.6]: chapter-05.md#526-ordinary-variables
 [§5.2.7]: chapter-05.md#527-variables-on-provider-drives
 [§5.3]: chapter-05.md#53-constrained-variables
@@ -209,4 +210,5 @@ namespace **Function:** ([§2.3.2][§2.3.2], [§3.1][§3.1]) is constrained impl
 [§7.4]: chapter-07.md#74-range-operator
 [§8.10]: chapter-08.md#810-function-definitions
 [§8.4.4]: chapter-08.md#844-the-foreach-statement
-[§9.]: chapter-09.md#9-arrays
+[§9]: chapter-09.md#9-arrays
+[§10]: chapter-10.md#10-hashtables
