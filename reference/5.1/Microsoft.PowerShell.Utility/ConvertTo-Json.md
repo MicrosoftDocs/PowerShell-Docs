@@ -9,17 +9,17 @@ title: ConvertTo-Json
 ---
 # ConvertTo-Json
 
-## SYNOPSIS
+## Synopsis
 Converts an object to a JSON-formatted string.
 
-## SYNTAX
+## Syntax
 
 ```
 ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `ConvertTo-Json` cmdlet converts any .NET object to a string in JavaScript Object Notation
 (JSON) format. The properties are converted to field names, the field values are converted to
@@ -33,7 +33,7 @@ web-based apps.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1
 
@@ -143,7 +143,7 @@ Year        : 2018
 This example shows how to use the `ConvertTo-Json` and `ConvertFrom-Json` cmdlets to convert an
 object to a JSON string and a JSON object.
 
-## PARAMETERS
+## Parameters
 
 ### -Compress
 
@@ -207,22 +207,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.Object
 
 You can pipe any object to `ConvertTo-Json`.
 
-## OUTPUTS
+## Outputs
 
 ### System.String
 
-## NOTES
+## Notes
 
 The `ConvertTo-Json` cmdlet is implemented using the
 [JavaScriptSerializer class](/dotnet/api/system.web.script.serialization.javascriptserializer).
 
-## RELATED LINKS
+## Related links
 
 [An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](/previous-versions/dotnet/articles/bb299886(v=msdn.10))
 

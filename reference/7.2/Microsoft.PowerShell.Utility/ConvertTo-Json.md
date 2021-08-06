@@ -2,17 +2,17 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/04/2021
+ms.date: 08/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
 ---
 # ConvertTo-Json
 
-## SYNOPSIS
+## Synopsis
 Converts an object to a JSON-formatted string.
 
-## SYNTAX
+## Syntax
 
 ```
 ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
@@ -20,11 +20,16 @@ ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
 [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `ConvertTo-Json` cmdlet converts any .NET object to a string in JavaScript Object Notation
 (JSON) format. The properties are converted to field names, the field values are converted to
 property values, and the methods are removed.
+
+> [!NOTE]
+> As of PowerShell 7.2, Extended Type System properties of **DateTime** and
+> **String** objects are no longer serialized and only the simple object is
+> converted to JSON format
 
 You can then use the `ConvertFrom-Json` cmdlet to convert a JSON-formatted string to a JSON
 object, which is easily managed in PowerShell.
@@ -37,7 +42,7 @@ the depth specified for the command. This prevents unwanted data loss when conve
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1
 
@@ -69,17 +74,9 @@ Get-Date | ConvertTo-Json; Get-Date | ConvertTo-Json -AsArray
 ```
 
 ```Output
-{
-  "value": "2018-10-12T23:07:18.8450248-05:00",
-  "DisplayHint": 2,
-  "DateTime": "October 12, 2018 11:07:18 PM"
-}
+"2021-08-05T16:13:05.6394416-07:00"
 [
-  {
-    "value": "2018-10-12T23:07:18.8480668-05:00",
-    "DisplayHint": 2,
-    "DateTime": "October 12, 2018 11:07:18 PM"
-  }
+  "2021-08-05T16:13:05.6421709-07:00"
 ]
 ```
 
@@ -171,7 +168,7 @@ Year        : 2018
 This example shows how to use the `ConvertTo-Json` and `ConvertFrom-Json` cmdlets to convert an
 object to a JSON string and a JSON object.
 
-## PARAMETERS
+## Parameters
 
 ### -AsArray
 
@@ -293,22 +290,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.Object
 
 You can pipe any object to `ConvertTo-Json`.
 
-## OUTPUTS
+## Outputs
 
 ### System.String
 
-## NOTES
+## Notes
 
 The `ConvertTo-Json` cmdlet is implemented using
 [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
 
-## RELATED LINKS
+## Related links
 
 [An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](/previous-versions/dotnet/articles/bb299886(v=msdn.10))
 
