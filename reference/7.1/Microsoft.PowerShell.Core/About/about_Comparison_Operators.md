@@ -556,7 +556,7 @@ Syntax:
 
 Within the script block, use the `$_` automatic variable to access the input
 text being replaced and other useful information. This variable's class type is
-[System.Text.RegularExpressions.Match][2].
+[System.Text.RegularExpressions.Match][3].
 
 The following example replaces each sequence of three digits with the character
 equivalents. The script block runs for each set of three digits that needs to be
