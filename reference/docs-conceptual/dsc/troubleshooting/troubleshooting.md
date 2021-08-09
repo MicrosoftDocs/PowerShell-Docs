@@ -1,5 +1,5 @@
 ---
-ms.date:  10/30/2018
+ms.date: 08/09/2021
 keywords:  dsc,powershell,configuration,setup
 title:  Troubleshooting DSC
 description: This article provides troubleshooting instruction for common errors.
@@ -109,19 +109,26 @@ TimeCreated                     Id LevelDisplayName Message
 
 As shown above, DSC's primary log name is **Microsoft->Windows->DSC** (other log names under Windows
 are not shown here for brevity). The primary name is appended to the channel name to create the
-complete log name. The DSC engine writes mainly into three types of logs:
-[Operational, Analytic, and Debug logs](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)).
+complete log name. The DSC engine writes mainly into three types of logs: [Operational, Analytic, and Debug logs](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)).
 Since the analytic and debug logs are turned off by default, you should enable them in Event Viewer.
-To do this, open Event Viewer by typing Show-EventLog in Windows PowerShell; or, click the **Start**
-button, click **Control Panel**, click **Administrative Tools**, and then click **Event Viewer**. On
-the **View** menu in Event viewer, click **Show Analytic and Debug Logs**. The log name for the
-analytic channel is **Microsoft-Windows-Dsc/Analytic**, and the debug channel is
-**Microsoft-Windows-Dsc/Debug**. You could also use the
-[wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11))
+To do this, open Event Viewer by typing `Show-EventLog` in Windows PowerShell; or, click the
+**Start** button, click **Control Panel**, click **Administrative Tools**, and then click **Event
+Viewer**. On the **View** menu in Event viewer, click **Show Analytic and Debug Logs**. The log name
+for the analytic channel is **Microsoft-Windows-Dsc/Analytic**, and the debug channel is
+**Microsoft-Windows-Dsc/Debug**. You can also use the [wevtutil](/windows-server/administration/windows-commands/wevtutil)
 utility to enable the logs, as shown in the following example.
 
 ```powershell
 wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
+```
+
+Or, use PowerShell and .NET to enable the logs as shown in the following example:
+
+```powershell
+$logName = 'Microsoft-Windows-Dsc/Analytic'
+$log = New-Object System.Diagnostics.Eventing.Reader.EventLogConfiguration $logName
+$log.IsEnabled = $true
+$log.SaveChanges()
 ```
 
 ## What do DSC logs contain?
