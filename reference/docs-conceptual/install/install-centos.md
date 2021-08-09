@@ -1,19 +1,18 @@
 ---
 title: Installing PowerShell on CentOS
-description: Information about installing PowerShell on various Linux distributions
+description: Information about installing PowerShell on CentOS
 ms.date: 08/06/2021
 ---
 # Installing PowerShell on CentOS
 
 All packages are available on our GitHub [releases][releases] page. After the package is installed,
-run `pwsh` from a terminal. Run `pwsh-preview` if you installed a
-[Preview release](#installing-preview-releases).
+run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release.
 
 > [!NOTE]
 > PowerShell 7.2 is an in-place upgrade that removes previous versions of PowerShell.
 >
 > If you need to run PowerShell 7.2 side-by-side with a previous version, reinstall PowerShell 6
-> using the [binary archive](#binary-archives) method.
+> using the [binary archive](install-other-linux.md#binary-archives) method.
 
 CentOS 7 uses Yum as a package manager and CentOS 8 uses DNF.
 
@@ -21,7 +20,7 @@ CentOS 7 uses Yum as a package manager and CentOS 8 uses DNF.
 
 ## Installation via Package Repository (preferred)
 
-PowerShell for CentOS/RHEL is published to official Microsoft repositories for easy installation and
+PowerShell for CentOS is published to official Microsoft repositories for easy installation and
 updates. The URL to the package depends on the version of CentOS you are using
 
 - CentOS 8 - `https://packages.microsoft.com/config/rhel/8/prod.repo`

@@ -17,5 +17,5 @@ openSUSE they are supported on. These versions remain supported until either the
 | &#x274c; 15.1         |     &#x2b55;     |     &#x2b55;     |     &#x2b55;      |
 | &#x274c; 42.3         |     &#x2b55;     |     &#x2b55;     |     &#x274c;      |
 
-[lifecycle]: ../PowerShell-Support-Lifecycle.md
+[lifecycle]: /powershell/scripting/powershell-support-lifecycle
 [eol-suse]: https://en.opensuse.org/Lifetime

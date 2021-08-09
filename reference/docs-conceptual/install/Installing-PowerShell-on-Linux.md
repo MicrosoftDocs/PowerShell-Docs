@@ -5,12 +5,6 @@ ms.date: 08/05/2021
 ---
 # Install .NET on Linux
 
-> [!div class="op_single_selector"]
->
-> - [Install on Windows](Installing-PowerShell-on-windows.md)
-> - [Install on macOS](Installing-PowerShell-on-macOS.md)
-> - [Install on Linux](Installing-on-linux-overview.md)
-
 PowerShell can be installed on different Linux distributions. Most Linux platforms and distributions
 have a major release each year, and most provide a package manager that is used to install
 PowerShell. This article describes what is currently supported and which package manager is used.
@@ -57,7 +51,7 @@ openSUSE uses zypper as the package manager.
 
 [!INCLUDE [openSUSE support](../../includes/opensuse-support.md)]
 
-For more information, see [Install PowerShell on openSUSE](linux-opensuse.md).
+For more information, see [Install PowerShell on openSUSE](install-opensuse.md).
 
 ## Red Hat Enterprise Linux (RHEL)
 
@@ -65,7 +59,7 @@ RHEL 7 uses yum and RHEL 8 uses the dnf package manager.
 
 [!INCLUDE [RHEL support](../../includes/rhel-support.md)]
 
-For more information, see [Install PowerShell on RHEL](linux-rhel.md).
+For more information, see [Install PowerShell on RHEL](install-rhel.md).
 
 ## Ubuntu
 
@@ -73,7 +67,7 @@ Ubuntu uses APT (Advanced Package Tool) as a package manager.
 
 [!INCLUDE [Ubuntu support](../../includes/ubuntu-support.md)]
 
-For more information, see [Install PowerShell on Ubuntu](linux-ubuntu.md).
+For more information, see [Install PowerShell on Ubuntu](install-ubuntu.md).
 
 ## Arch Linux
 

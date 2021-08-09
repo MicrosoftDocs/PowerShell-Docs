@@ -24,5 +24,5 @@ they're supported on. These versions remain supported until either the version o
 | &#x274c; 31         |     &#x2b55;     |     &#x2b55;     |     &#x274c;      |
 | &#x274c; 30         |     &#x2b55;     |     &#x2b55;     |     &#x274c;      |
 
-[lifecycle]: ../PowerShell-Support-Lifecycle.md
+[lifecycle]: /powershell/scripting/powershell-support-lifecycle
 [eol-fedora]: https://fedoraproject.org/wiki/End_of_life

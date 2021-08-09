@@ -22,5 +22,5 @@ they're supported on. These versions remain supported until either the version o
 | &#x2714;&#xfe0f; 9  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x274c;      |
 | &#x274c; 8          |     &#x2b55;     |     &#x274c;     |     &#x274c;      |
 
-[lifecycle]: ../PowerShell-Support-Lifecycle.md
+[lifecycle]: /powershell/scripting/powershell-support-lifecycle
 [eol-debian]: https://wiki.debian.org/DebianReleases

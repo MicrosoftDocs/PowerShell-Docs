@@ -24,5 +24,5 @@ they're supported on. These versions remain supported until either the version o
 | &#x274c; 3.10         |     &#x2b55;     |     &#x2b55;     |     &#x274c;      |
 | &#x274c; 3.9          |     &#x2b55;     |     &#x2b55;     |     &#x274c;      |
 
-[lifecycle]: ../PowerShell-Support-Lifecycle.md
+[lifecycle]: /powershell/scripting/powershell-support-lifecycle
 [eol-alpine]: https://alpinelinux.org/releases/

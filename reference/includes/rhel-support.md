@@ -21,5 +21,5 @@ they are supported on. These versions remain supported until either the version 
 | &#x2714;&#xfe0f; 8 | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f;  |
 | &#x2714;&#xfe0f; 7 | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f;  |
 
-[lifecycle]: ../PowerShell-Support-Lifecycle.md
+[lifecycle]: /powershell/scripting/powershell-support-lifecycle
 [eol-rhel]: https://access.redhat.com/support/policy/updates/errata/

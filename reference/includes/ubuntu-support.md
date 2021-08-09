@@ -21,5 +21,5 @@ Ubuntu they are supported on. These versions remain supported until either the v
 | &#x2714;&#xfe0f; 18.04 (LTS) | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f;  |
 | &#x2714;&#xfe0f; 16.04 (LTS) | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f;  |
 
-[lifecycle]: ../PowerShell-Support-Lifecycle.md
+[lifecycle]: /powershell/scripting/powershell-support-lifecycle
 [eol-ubuntu]: https://ubuntu.com/about/release-cycle

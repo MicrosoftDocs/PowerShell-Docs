@@ -1,19 +1,18 @@
 ---
 title: Installing PowerShell on Debian Linux
-description: Information about installing PowerShell on various Linux distributions
+description: Information about installing PowerShell on Debian Linux
 ms.date: 08/06/2021
 ---
 # Installing PowerShell on Debian Linux
 
 All packages are available on our GitHub [releases][releases] page. After the package is installed,
-run `pwsh` from a terminal. Run `pwsh-preview` if you installed a
-[Preview release](#installing-preview-releases).
+run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release.
 
 > [!NOTE]
 > PowerShell 7.2 is an in-place upgrade that removes previous versions of PowerShell.
 >
 > If you need to run PowerShell 7.2 side-by-side with a previous version, reinstall PowerShell 6
-> using the [binary archive](#binary-archives) method.
+> using the [binary archive](install-other-linux.md#binary-archives) method.
 
 Debian uses APT (Advanced Package Tool) as a package manager.
 
