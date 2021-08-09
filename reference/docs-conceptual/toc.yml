@@ -15,13 +15,33 @@ items:
   - name: Overview
     href: install/installing-powershell.md
   - name: Installing PowerShell on Windows
-    href: install/installing-powershell-core-on-windows.md
+    href: install/installing-powershell-on-windows.md
   - name: Installing PowerShell on Linux
-    href: install/installing-powershell-core-on-linux.md
-  - name: Installing PowerShell on macOS
-    href: install/installing-powershell-core-on-macos.md
-  - name: Installing PowerShell on Arm
-    href: install/powershell-core-on-arm.md
+    items:
+    - name: Overview
+      href: install/installing-powershell-on-linux.md
+    - name: Alpine
+      href: install/install-alpine.md
+    - name: CentOS
+      href: install/install-centos.md
+    - name: Debian
+      href: install/install-debian.md
+    - name: Fedora
+      href: install/install-fedora.md
+    - name: openSUSE
+      href: install/install-opensuse.md
+    - name: Raspberry Pi OS
+      href: install/install-raspbian.md
+    - name: Red Hat Enterprise Linux (RHEL)
+      href: install/install-rhel.md
+    - name: Ubuntu
+      href: install/install-ubuntu.md
+    - name: Alternate ways to install on Linux
+      href: install/install-other-linux.md
+  - name: macOS
+    href: install/installing-powershell-on-macos.md
+  - name: Support for Arm processors
+    href: install/powershell-on-arm.md
   - name: Using PowerShell in Docker
     href: install/PowerShell-in-Docker.md
 - name: Learning PowerShell

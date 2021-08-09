@@ -15,10 +15,10 @@ PowerShell is an Open Source project on [GitHub](https://github.com/powershell/p
 the following articles for more information on installing PowerShell on various supported and
 experimental platforms.
 
-- [Installing PowerShell on Windows](Installing-PowerShell-Core-on-Windows.md)
-- [Installing PowerShell on Linux](Installing-PowerShell-Core-on-Linux.md)
-- [Installing PowerShell on macOS](Installing-PowerShell-Core-on-macOS.md)
-- [Installing PowerShell on ARM](PowerShell-Core-on-ARM.md)
+- [Installing PowerShell on Windows](Installing-PowerShell-on-Windows.md)
+- [Installing PowerShell on Linux](Installing-PowerShell-on-Linux.md)
+- [Installing PowerShell on macOS](Installing-PowerShell-on-macOS.md)
+- [Installing PowerShell on ARM](PowerShell-on-ARM.md)
 
 ## Windows PowerShell
 
