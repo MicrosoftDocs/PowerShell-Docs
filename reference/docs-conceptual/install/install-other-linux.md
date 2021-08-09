@@ -6,8 +6,7 @@ ms.date: 08/09/2021
 # Alternate ways to install PowerShell on Linux
 
 All packages are available on our GitHub [releases][releases] page. After the package is installed,
-run `pwsh` from a terminal. Run `pwsh-preview` if you installed a
-[Preview release](#installing-preview-releases).
+run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release.
 
 There are three other ways to install PowerShell on a Linux distribution:
 
