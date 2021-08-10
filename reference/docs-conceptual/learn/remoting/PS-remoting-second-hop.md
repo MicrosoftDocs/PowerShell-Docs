@@ -258,7 +258,7 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 
 ## Kerberos delegation (unconstrained)
 
-You can also used Kerberos unconstrained delegation to make the second hop. Like all Kerberos
+You can also use Kerberos unconstrained delegation to make the second hop. Like all Kerberos
 scenarios, credentials are not stored. This method does not support the second hop for WinRM.
 
 > [!WARNING]
