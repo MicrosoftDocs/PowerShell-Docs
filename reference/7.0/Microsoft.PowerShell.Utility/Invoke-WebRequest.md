@@ -88,7 +88,7 @@ Beginning in PowerShell 7.0, `Invoke-WebRequest` supports proxy configuration de
 variables. See the [Notes](#notes) section of this article.
 
 > [!IMPORTANT]
-> The examples in this article reference hosts in the `constoso.com` domain. This is a fictitious
+> The examples in this article reference hosts in the `contoso.com` domain. This is a fictitious
 > domain used by Microsoft for examples. The examples are designed to show how to use the cmdlets.
 > However, since the `contoso.com` sites do not exist, the examples do not work. Adapt the examples
 > to hosts in your environment.

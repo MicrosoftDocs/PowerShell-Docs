@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/14/2020
+ms.date: 08/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Output
@@ -11,8 +10,8 @@ title: Write-Output
 # Write-Output
 
 ## SYNOPSIS
-Sends the specified objects to the next command in the pipeline. If the command is the last command
-in the pipeline, the objects are displayed in the console.
+Writes the specified objects to the pipeline. If `Write-Output` is the last command in the pipeline,
+the objects are displayed in the console.
 
 ## SYNTAX
 
@@ -22,46 +21,47 @@ Write-Output [-InputObject] <PSObject[]> [-NoEnumerate] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Write-Output` cmdlet sends the specified object down the pipeline to the next command.
-If the command is the last command in the pipeline, the object is displayed in the console.
+Writes the specified objects to the pipeline. If `Write-Output` is the last command in the pipeline,
+the objects are displayed in the console.
 
-`Write-Output` sends objects down the primary pipeline, also known as the "output stream" or the
-"success pipeline." To send error objects down the error pipeline, use Write-Error.
+`Write-Output` sends objects to the primary pipeline, also known as the "output stream" or the
+"success pipeline." To send error objects to the error pipeline, use `Write-Error`.
 
 This cmdlet is typically used in scripts to display strings and other objects on the console. One of
-the built-in aliases for `Write-Output` is `echo` and similar to other shells that use `echo`, the
+the built-in aliases for `Write-Output` is `echo` and similar to other shells that use `echo`. The
 default behavior is to display the output at the end of a pipeline. In PowerShell, it is generally
 not necessary to use the cmdlet in instances where the output is displayed by default. For example,
 `Get-Process | Write-Output` is equivalent to `Get-Process`. Or, `echo "Home directory: $HOME"` can
 be written, `"Home directory: $HOME"`.
 
-By default, `Write-Output` enumerates through collections provided to the cmdlet. However,
-`Write-Output` can also be used to pass collections down the pipeline as a single object with the
-**NoEnumerate** parameter.
+By default, `Write-Output` enumerates through collection objects. However, `Write-Output` can also
+be used to pass collections down the pipeline as a single object with the **NoEnumerate** parameter.
 
 ## EXAMPLES
 
 ### Example 1: Get objects and write them to the console
+
+In this example, the results of the `Get-Process` cmdlet are stored in the `$P` variable. The
+`Write-Output` cmdlet displays the process objects in `$P` to the console.
 
 ```powershell
 $P = Get-Process
 Write-Output $P
 ```
 
-The first command gets processes running on the computer and stores them in the `$P` variable.
-
-The second and third commands display the process objects in `$P` on the console.
-
 ### Example 2: Pass output to another cmdlet
+
+This command pipes the "test output" string to the `Get-Member` cmdlet, which displays the members
+of the **System.String** class, demonstrating that the string was passed along the pipeline.
 
 ```powershell
 Write-Output "test output" | Get-Member
 ```
 
-This command pipes the "test output" string to the `Get-Member` cmdlet, which displays the members
-of the **System.String** class, demonstrating that the string was passed along the pipeline.
-
 ### Example 3: Suppress enumeration in output
+
+This command adds the **NoEnumerate** parameter to treat a collection or array as a single object
+through the pipeline.
 
 ```powershell
 Write-Output 1,2,3 | Measure-Object
@@ -80,9 +80,6 @@ Write-Output 1,2,3 -NoEnumerate | Measure-Object
 Count    : 1
 ...
 ```
-
-This command adds the **NoEnumerate** parameter to treat a collection or array as a single object
-through the pipeline.
 
 ## PARAMETERS
 
@@ -110,9 +107,11 @@ suppresses the default behavior, and prevents `Write-Output` from enumerating ou
 **NoEnumerate** parameter has no effect if the command is wrapped in parentheses, because the
 parentheses force enumeration. For example, `(Write-Output 1,2,3)` still enumerates the array.
 
-> [!NOTE]
-> This switch only works correctly with PowerShell Core 6.2 and newer. On older versions of
-> PowerShell Core, the collection is still enumerated even with use of this switch.
+The **NoEnumerate** parameter is only useful within a pipeline. Trying to see the effects of
+**NoEnumerate** in the console is problematic because PowerShell adds `Out-Default` to the end of
+every command line, which results in enumeration. But if you pipe `Write-Output -NoEnumerate` to
+another cmdlet, the downstream cmdlet receives the collection object, not the enumerated items of
+the collection.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
