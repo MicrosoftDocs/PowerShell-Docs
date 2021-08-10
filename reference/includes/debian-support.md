@@ -12,15 +12,15 @@ they're supported on. These versions remain supported until either the version o
 
 - A &#x2705; indicates that the version of the OS or PowerShell is still supported
 - A &#x274c; indicates that the version of the OS or PowerShell isn't supported
-- A &#x2b55; indicates the version of PowerShell is no longer supported on that version of the OS
-- When both the version of the OS and the version of PowerShell have &#x2705;, that
-  combination is supported
+- A &#x1f7e1; indicates the version of PowerShell is no longer supported on that version of the OS
+- When both the version of the OS and the version of PowerShell have &#x2705;, that combination is
+  supported
 
-|   Debian    | 7.0 (LTS) | 7.1 (Current) | 7.2 (LTS-preview) |
+|   Debian    | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-preview) |
 | ----------- | :-------: | :-----------: | :---------------: |
 | &#x2705; 10 | &#x2705;  |   &#x2705;    |     &#x2705;      |
 | &#x2705; 9  | &#x2705;  |   &#x2705;    |     &#x274c;      |
-| &#x274c; 8  | &#x2b55;  |   &#x274c;    |     &#x274c;      |
+| &#x274c; 8  | &#x1f7e1; |   &#x274c;    |     &#x274c;      |
 
 [lifecycle]: /powershell/scripting/powershell-support-lifecycle
 [eol-debian]: https://wiki.debian.org/DebianReleases
