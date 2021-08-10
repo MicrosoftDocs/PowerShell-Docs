@@ -228,8 +228,9 @@ Set-ADComputer -Identity $ServerC `
     -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
 ```
 
-If you want to make the second hop across domains, add fully-qualified domain name (FQDN) of the
-domain controller of the domain to which _ServerB_ belongs:
+If you want to make the second hop across domains, use the **Server** parameter to specify
+fully-qualified domain name (FQDN) of the domain controller of the domain
+to which _ServerB_ belongs:
 
 ```powershell
 # For ServerC in Contoso domain and ServerB in other domain
