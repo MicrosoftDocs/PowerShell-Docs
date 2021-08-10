@@ -6,9 +6,9 @@ description: This article lists the status of PowerShell 7 with Powershell modul
 
 # PowerShell 7 module compatibility
 
-This article contains a list of PowerShell modules published by Microsoft. This modules provide
-management and support for various Microsoft products and services. These modules have been update
-to work natively with PowerShell 7 or tested for compatibility with PowerShell 7. This list will be
+This article contains a list of PowerShell modules published by Microsoft. These modules provide
+management and support for various Microsoft products and services. They have been updated
+to work natively with PowerShell 7, or tested for compatibility with PowerShell 7. This list will be
 updated with new information as more modules are identified and tested.
 
 If you have information to share or issues with specific modules, please file an issue in the
@@ -16,7 +16,7 @@ If you have information to share or issues with specific modules, please file an
 
 ## Windows management modules
 
-The Windows management module are installed in different ways dependent on the Edition of Windows
+The Windows management modules are installed in different ways, dependent on the Edition of Windows,
 and how the module was packaged for that Edition.
 
 On Windows Server, use the feature name with the [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature)
@@ -200,7 +200,7 @@ administrator**.
 
 ### ServerManager module
 
-The module has some minor compatibility issues with formatted output in PowerShell 7. For example, the
+This module has some minor compatibility issues with formatted output in PowerShell 7. For example, the
 `Get-WindowsFeature` cmdlet returns the proper object with all properties, but the default display
 formatting makes some properties appear to be empty. The actual values are available in the object
 properties using `Select-Object` or by direct member access.
