@@ -62,3 +62,4 @@ Raspbery Pi
 [Debian-lifecycle]: https://wiki.debian.org/DebianReleases
 [Ubuntu-lifecycle]: https://wiki.ubuntu.com/Releases
 [macOS-lifecycle]: https://support.apple.com/macos
+[RHEL-lifecycle]: https://access.redhat.com/support/policy/updates/errata/

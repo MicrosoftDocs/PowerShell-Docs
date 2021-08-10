@@ -131,7 +131,7 @@ the PowerShell Snap Package. You can also try deploying PowerShell binaries dire
 [eol-fedora]: https://fedoraproject.org/wiki/End_of_life
 [eol-suse]: https://en.opensuse.org/Lifetime
 [eol-rhel]: https://access.redhat.com/support/policy/updates/errata/
-[eol-ubuntu]: https://ubuntu.com/about/release-cycle
+[eol-ubuntu]: https://wiki.ubuntu.com/Releases
 [arch]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
