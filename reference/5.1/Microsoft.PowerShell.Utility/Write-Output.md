@@ -42,7 +42,7 @@ be used to pass collections down the pipeline as a single object with the **NoEn
 ### Example 1: Get objects and write them to the console
 
 In this example, the results of the `Get-Process` cmdlet are stored in the `$P` variable. The
-`Write-Output` displays the process objects in `$P` in the console.
+`Write-Output` cmdlet displays the process objects in `$P` to the console.
 
 ```powershell
 $P = Get-Process
