@@ -10,16 +10,16 @@ Ubuntu they are supported on. These versions remain supported until either the v
 [PowerShell reaches end-of-support][lifecycle] or the version of
 [openSUSE reaches end-of-support][eol-suse].
 
-|            Ubuntu            |    7.0 (LTS)     |  7.1 (Current)   | 7.2 (LTS-preview) |
-| ---------------------------- | :--------------: | :--------------: | :---------------: |
-| &#x2714;&#xfe0f; 21.04       | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f;  |
-| &#x274c; 20.10               |     &#x2b55;     |     &#x2b55;     |     &#x274c;      |
-| &#x2714;&#xfe0f; 20.04 (LTS) | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f;  |
-| &#x274c; 19.10               |     &#x2b55;     |     &#x2b55;     |     &#x274c;      |
-| &#x274c; 19.04               |     &#x2b55;     |     &#x2b55;     |     &#x274c;      |
-| &#x274c; 18.10               |     &#x2b55;     |     &#x274c;     |     &#x274c;      |
-| &#x2714;&#xfe0f; 18.04 (LTS) | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f;  |
-| &#x2714;&#xfe0f; 16.04 (LTS) | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f;  |
+|        Ubuntu        | 7.0 (LTS) | 7.1 (Current) | 7.2 (LTS-preview) |
+| -------------------- | :-------: | :-----------: | :---------------: |
+| &#x2705; 21.04       | &#x2705;  |   &#x2705;    |     &#x2705;      |
+| &#x274c; 20.10       | &#x2b55;  |   &#x2b55;    |     &#x274c;      |
+| &#x2705; 20.04 (LTS) | &#x2705;  |   &#x2705;    |     &#x2705;      |
+| &#x274c; 19.10       | &#x2b55;  |   &#x2b55;    |     &#x274c;      |
+| &#x274c; 19.04       | &#x2b55;  |   &#x2b55;    |     &#x274c;      |
+| &#x274c; 18.10       | &#x2b55;  |   &#x274c;    |     &#x274c;      |
+| &#x2705; 18.04 (LTS) | &#x2705;  |   &#x2705;    |     &#x2705;      |
+| &#x2705; 16.04 (LTS) | &#x2705;  |   &#x2705;    |     &#x2705;      |
 
 [lifecycle]: /powershell/scripting/powershell-support-lifecycle
 [eol-ubuntu]: https://ubuntu.com/about/release-cycle
