@@ -100,7 +100,7 @@ with <kbd>Ctrl</kbd>-<kbd>C</kbd> the exit code is `0`.
 > [!NOTE]
 > As of PowerShell 7.2, the **Files** parameter only accepts `.ps1` files on
 > Windows. If another file type is provided an error is thrown. This behavior
-> is Windows specific. On other platforms, PowerShell will attempt to run other
+> is Windows specific. On other platforms, PowerShell attempts to run other
 > file types.
 
 ### -Command | -c
