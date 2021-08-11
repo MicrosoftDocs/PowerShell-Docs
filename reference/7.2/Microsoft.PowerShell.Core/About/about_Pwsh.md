@@ -98,7 +98,7 @@ set to `1`. However, unlike with `-Command`, when the execution is interrupted
 with <kbd>Ctrl</kbd>-<kbd>C</kbd> the exit code is `0`.
 
 > [!NOTE]
-> As of PowerShell 7.2, the **Files** parameter only accepts `.ps1` files on
+> As of PowerShell 7.2, the **File** parameter only accepts `.ps1` files on
 > Windows. If another file type is provided an error is thrown. This behavior
 > is Windows specific. On other platforms, PowerShell attempts to run other
 > file types.
