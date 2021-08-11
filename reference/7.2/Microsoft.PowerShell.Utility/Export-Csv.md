@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/08/2020
+ms.date: 08/11/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
@@ -705,7 +705,8 @@ Specifies when quotes are used in the CSV files. Possible values are:
 
 - Never - don't quote anything
 - Always - quote everything (default behavior)
-- AsNeeded - only quote fields that contain a delimiter character
+- AsNeeded - only quote fields that contain a delimiter character, double-quote, or newline
+  character
 
 This parameter was added in PowerShell 7.0.
 

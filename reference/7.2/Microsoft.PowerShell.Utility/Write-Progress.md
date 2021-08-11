@@ -26,6 +26,20 @@ The `Write-Progress` cmdlet displays a progress bar in a PowerShell command wind
 status of a running command or script. You can select the indicators that the bar reflects and the
 text that appears above and below the progress bar.
 
+PowerShell 7.2 added the `$PSStyle` automatic variable that is used to control how PowerShell
+displays certain information using ANSI escape sequences. The `$PSStyle.Progress` member allows
+you to control progress view bar rendering.
+
+- `$PSStyle.Progress.Style` - An ANSI string setting the rendering style.
+- `$PSStyle.Progress.MaxWidth` - Sets the max width of the view. Set to `0` for console width.
+  Defaults to `120`
+- `$PSStyle.Progress.View` - An enum with values, `Minimal` and `Classic`. `Classic` is the existing
+  rendering with no changes. `Minimal` is a single line minimal rendering. `Minimal` is the default.
+
+> [!NOTE]
+> If the host doesn't support Virtual Terminal, `$PSStyle.Progress.View` is automatically set to
+> `Classic`.
+
 ## EXAMPLES
 
 ### Example 1: Display the progress of a For loop

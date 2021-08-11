@@ -164,12 +164,13 @@ non-zero integer.
 
 ### $foreach
 
-Contains the enumerator (not the resulting values) of a [ForEach](about_ForEach.md)
-loop. The `$ForEach` variable exists only while the `ForEach` loop is running;
-it's deleted after the loop is completed.
+Contains the enumerator (not the resulting values) of a
+[ForEach](about_ForEach.md) loop. The `$ForEach` variable exists only while the
+`ForEach` loop is running; it's deleted after the loop is completed.
 
 Enumerators contain properties and methods you can use to retrieve loop values
-and change the current loop iteration. For more information, see [Using Enumerators](#using-enumerators).
+and change the current loop iteration. For more information, see
+[Using Enumerators](#using-enumerators).
 
 ### $HOME
 
@@ -500,6 +501,118 @@ Same as `$_`. Contains the current object in the pipeline object. You can use
 this variable in commands that perform an action on every object or on selected
 objects in a pipeline.
 
+### $PSNativeCommandArgumentPassing
+
+> [!NOTE]
+> `$PSNativeCommandArgumentPassing` is only available when the
+> `PSNativeCommandArgumentPassing` experimental feature ia enabled. For more
+> information, see
+> [about_Experimental_Features](about_Experimental_Features.md) and
+> [Using experimental features](/powershell/scripting/learn/experimental-features).
+
+When this experimental feature is enabled PowerShell uses the `ArgumentList`
+property of the `StartProcessInfo` object rather than our current mechanism of
+reconstructing a string when invoking a native executable.
+
+> [!CAUTION]
+> The new behavior is a **breaking change** from current behavior. This may
+> break scripts and automation that work around the various issues when
+> invoking native applications. Historically, quotes must be escaped and it is
+> not possible to provide empty arguments to a native application.
+
+This feature adds a new automatic variable `$PSNativeCommandArgumentPassing`
+that allows you to select the behavior at runtime. The valid values are
+`Legacy`, `Standard`, and `Windows`. `Legacy` is the historic behavior. The
+default when the experimental feature is enabled is the new `Standard`
+behavior.
+
+When the preference variable is set to `Windows` invocations of the following
+files automatically use the `Legacy` style argument passing.
+
+- `cmd.exe`
+- `cscript.exe`
+- `wscript.exe`
+- ending with `.bat`
+- ending with `.cmd`
+- ending with `.vbs`
+
+If the `$PSNativeArgumentPassing` is set to either `Legacy` or `Standard`, the
+check for these files do not occur. The default behavior is platform specific.
+On Windows platforms, the default setting is `Windows` and non-Windows
+platforms is `Standard`.
+
+New behaviors made available by this change:
+
+- Literal or expandable strings with embedded quotes the quotes are now
+  preserved:
+
+  ```powershell
+  PS > $a = 'a" "b'
+  PS > $PSNativeCommandArgumentPassing = "Legacy"
+  PS > testexe -echoargs $a 'a" "b' a" "b
+  Arg 0 is <a b>
+  Arg 1 is <a b>
+  Arg 2 is <a b>
+  PS > $PSNativeCommandArgumentPassing = "Standard"
+  PS > testexe -echoargs $a 'a" "b' a" "b
+  Arg 0 is <a" "b>
+  Arg 1 is <a" "b>
+  Arg 2 is <a b>
+  ```
+
+- Empty strings as arguments are now preserved:
+
+  ```powershell
+  PS>  $PSNativeCommandArgumentPassing = "Legacy"
+  PS> testexe -echoargs '' a b ''
+  Arg 0 is <a>
+  Arg 1 is <b>
+  PS> $PSNativeCommandArgumentPassing = "Standard"
+  PS> testexe -echoargs '' a b ''
+  Arg 0 is <>
+  Arg 1 is <a>
+  Arg 2 is <b>
+  Arg 3 is <>
+  ```
+
+The new behavior does not change invocations that look like this:
+
+```powershell
+PS> $PSNativeCommandArgumentPassing = "Legacy"
+PS> testexe -echoargs -k com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect
+Arg 0 is <-k>
+Arg 1 is <com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect>
+PS> $PSNativeCommandArgumentPassing = "Standard"
+PS> testexe -echoargs -k com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect
+Arg 0 is <-k>
+Arg 1 is <com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect>
+```
+
+Additionally, parameter tracing is now provided so `Trace-Command` provides
+useful information for debugging.
+
+```powershell
+PS> $PSNativeCommandArgumentPassing = "Legacy"
+PS> trace-command -PSHOST -Name ParameterBinding { testexe -echoargs $a 'a" "b' a" "b }
+DEBUG: 2021-02-01 17:19:53.6438 ParameterBinding Information: 0 : BIND NAMED native application line args [/Users/james/src/github/forks/jameswtruher/PowerShell-1/test/tools/TestExe/bin/testexe]
+DEBUG: 2021-02-01 17:19:53.6440 ParameterBinding Information: 0 :     BIND argument [-echoargs a" "b a" "b "a b"]
+DEBUG: 2021-02-01 17:19:53.6522 ParameterBinding Information: 0 : CALLING BeginProcessing
+Arg 0 is <a b>
+Arg 1 is <a b>
+Arg 2 is <a b>
+PS> $PSNativeCommandArgumentPassing = "Standard"
+PS> trace-command -PSHOST -Name ParameterBinding { testexe -echoargs $a 'a" "b' a" "b }
+DEBUG: 2021-02-01 17:20:01.9829 ParameterBinding Information: 0 : BIND NAMED native application line args [/Users/james/src/github/forks/jameswtruher/PowerShell-1/test/tools/TestExe/bin/testexe]
+DEBUG: 2021-02-01 17:20:01.9829 ParameterBinding Information: 0 :     BIND cmd line arg [-echoargs] to position [0]
+DEBUG: 2021-02-01 17:20:01.9830 ParameterBinding Information: 0 :     BIND cmd line arg [a" "b] to position [1]
+DEBUG: 2021-02-01 17:20:01.9830 ParameterBinding Information: 0 :     BIND cmd line arg [a" "b] to position [2]
+DEBUG: 2021-02-01 17:20:01.9831 ParameterBinding Information: 0 :     BIND cmd line arg [a b] to position [3]
+DEBUG: 2021-02-01 17:20:01.9908 ParameterBinding Information: 0 : CALLING BeginProcessing
+Arg 0 is <a" "b>
+Arg 1 is <a" "b>
+Arg 2 is <a b>
+```
+
 ### $PSScriptRoot
 
 Contains the full path of the executing script's parent directory.
@@ -521,34 +634,31 @@ property, use the **ApplicationArguments** parameter of the
 
 ### $PSStyle
 
-> [!NOTE]
-> This variable is only available when the `PSAnsiRendering` experimental
-> feature ia enabled. For more information, see
-> [about_Experimental_Features](about_Experimental_Features.md) and
-> [Using experimental features](/powershell/scripting/learn/experimental-features).
-
 As of PowerShell 7.2 you can now access the `$PSStyle` automatic variable to
 view and change the rendering of ANSI string output. The variable contains the
 following properties:
 
 - **Reset** - Turns off all decorations
-- **Background** - Nested object to control background coloring
 - **Blink** - Turns Blink on
 - **BlinkOff** - Turns Blink off
 - **Bold** - Turns Bold on
 - **BoldOff** - Turns Bold off
-- **FileInfo** - Controls coloring of **FileInfo** objects.
-- **Foreground** - Nested object to control foreground coloring
-- **Formatting** - Controls default formatting for output streams
 - **Hidden** - Turns Hidden on
 - **HiddenOff** - Turns Hidden off
-- **OutputRendering** - Control when output rendering is used
 - **Reverse** - Turns Reverse on
 - **ReverseOff** - Turns Reverse off
 - **Italic** - Turns Italic on
 - **ItalicOff** - Turns Italic off
 - **Underline** - Turns underlining on
 - **UnderlineOff** - Turns underlining off
+- **OutputRendering** - Control when output rendering is used
+- **Background** - Nested object to control background coloring
+- **Foreground** - Nested object to control foreground coloring
+- **Formatting** - Nested object that controls default formatting for output
+  streams
+- **Progress** - Nested object that controls the rendering of progress bars
+- **FileInfo** - (experimental) Nested object to control the coloring of
+  **FileInfo** objects.
 
 The base members return strings of ANSI escape sequences mapped to their names.
 The values are settable to allow customization. For example, you could change
@@ -559,10 +669,81 @@ decorated strings using tab completion:
 "$($PSStyle.Background.LightCyan)Power$($PSStyle.Underline)$($PSStyle.Bold)Shell$($PSStyle.Reset)"
 ```
 
-The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
-contain the ANSI escape sequences for the 16 standard console colors as well as
-an `Rgb()` method to specify 24-bit color. The values are settable and can
-contain any number of ANSI escape sequences.
+The following members control how or when ANSI formatting is used:
+
+- `$PSStyle.OutputRendering` is a
+  `System.Management.Automation.OutputRendering` enum with the values:
+
+  - **Automatic**: This is the default. If the host supports VirtualTerminal,
+    then ANSI is always passed as-is, otherwise plaintext
+  - **ANSI**: ANSI is always passed through as-is
+  - **PlainText**: ANSI escape sequences are always stripped so that it is only
+    plain text
+  - **HostOnly**: This would be the macOS behavior where the ANSI escape
+    sequences are removed in redirected or piped output.
+
+- The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
+  contain the ANSI escape sequences for the 16 standard console colors.
+
+  - Black
+  - White
+  - DarkGray
+  - LightGray
+  - Red
+  - LightRed
+  - Magenta
+  - LightMagenta
+  - Blue
+  - LightBlue
+  - Cyan
+  - LightCyan
+  - Green
+  - LightGreen
+  - Yellow
+  - LightYellow
+
+  The values are settable and can contain any number of ANSI escape sequences.
+  There is also an `FromRgb()` method to specify 24-bit color. There are two
+  ways to call the `FromRgb()` method.
+
+  - string FromRgb(byte red, byte green, byte blue)
+  - string FromRgb(int rgb)
+
+  Either of the following examples set the background color the 24-bit color
+  **Beige**.
+
+  ```powershell
+  $PSStyle.Background.FromRgb(245, 245, 220)
+  $PSStyle.Background.FromRgb(0xf5f5dc)
+  ```
+
+- `$PSStyle.Formatting` is a nested object to control default formatting of
+  debug, error, verbose, and warning messages. You can also control attributes
+  like bolding and underlining. It replaces `$Host.PrivateData` as the way to
+  manage colors for formatting rendering. `$Host.PrivateData` continues to
+  exist for backwards compatibility but is not connected to
+  `$PSStyle.Formatting`.
+
+- `$PSStyle.Progress` allows you to control progress view bar rendering.
+
+  - **Style** - An ANSI string setting the rendering style.
+  - **MaxWidth**` - Sets the max width of the view. Set to `0` for console
+    width. Defaults to `120`
+  - **View** - An enum with values, `Minimal` and `Classic`. `Classic` is the
+    existing rendering with no changes. `Minimal` is a single line minimal
+    rendering. `Minimal` is the default.
+  - **UseOSCIndicator** - Defaults to `$false`. Set this to `$true` for
+    terminals that support OSC indicators.
+
+  > [!NOTE]
+  > If the host doesn't support Virtual Terminal, `$PSStyle.Progress.View` is
+  > automatically set to `Classic`.
+
+  The following example sets the rendering style to a minimal progress bar.
+
+  ```powershell
+  $PSStyle.Progress.View = Minimal
+  ```
 
 `$PSStyle.FileInfo` is a nested object to control the coloring of **FileInfo**
 objects.
@@ -574,22 +755,11 @@ objects.
   extensions. The **Extension** member pre-includes extensions for archive and
   PowerShell files.
 
-`$PSStyle.Formatting` is a nested object to control default formatting of
-debug, error, verbose, and warning messages. You can also control attributes
-like bolding and underlining. It replaces `$Host.PrivateData` as the way to
-manage colors for formatting rendering. `$Host.PrivateData` continues to exist
-for backwards compatibility but is not connected to `$PSStyle.Formatting`.
-
-`$PSStyle.OutputRendering` is a `System.Management.Automation.OutputRendering`
-enum with the values:
-
-- **Automatic**: This is the default. If the host supports VirtualTerminal,
-  then ANSI is always passed as-is, otherwise plaintext
-- **ANSI**: ANSI is always passed through as-is
-- **PlainText**: ANSI escape sequences are always stripped so that it is only
-  plain text
-- **HostOnly**: This would be the macOS behavior where the ANSI escape
-  sequences are removed in redirected or piped output.
+> [!NOTE]
+> `$PSStyle.FileInfo` is only available when the `PSAnsiRenderingFileInfo`
+> experimental feature is enabled. For more information, see
+> [about_Experimental_Features](about_Experimental_Features.md) and
+> [Using experimental features](/powershell/scripting/learn/experimental-features).
 
 ### $PSUICulture
 
@@ -656,7 +826,8 @@ deleted when the `switch` statement completes execution. For more information,
 see [about_Switch](about_Switch.md).
 
 Enumerators contain properties and methods you can use to retrieve loop values
-and change the current loop iteration. For more information, see [Using Enumerators](#using-enumerators).
+and change the current loop iteration. For more information, see
+[Using Enumerators](#using-enumerators).
 
 ### $this
 
@@ -680,8 +851,8 @@ An enumerator contains properties and methods you can use to advance or reset
 iteration, or retrieve iteration values. Directly manipulating enumerators
 isn't considered best practice.
 
-- Within loops, flow control keywords [break](about_Break.md) and [continue](about_Continue.md)
-  should be preferred.
+- Within loops, flow control keywords [break](about_Break.md) and
+  [continue](about_Continue.md) should be preferred.
 - Within functions that accept pipeline input, it's best practice to use
   parameters with the **ValueFromPipeline** or
   **ValueFromPipelineByPropertyName** attributes.
