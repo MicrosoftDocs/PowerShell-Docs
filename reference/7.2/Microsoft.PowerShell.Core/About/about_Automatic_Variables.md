@@ -516,7 +516,7 @@ reconstructing a string when invoking a native executable.
 
 > [!CAUTION]
 > The new behavior is a **breaking change** from current behavior. This may
-> break scripts and automation that work-around the various issues when
+> break scripts and automation that work around the various issues when
 > invoking native applications. Historically, quotes must be escaped and it is
 > not possible to provide empty arguments to a native application.
 
@@ -588,7 +588,7 @@ Arg 0 is <-k>
 Arg 1 is <com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect>
 ```
 
-Additionally, parameter tracing is now provided so `Trace-Command` will provide
+Additionally, parameter tracing is now provided so `Trace-Command` provides
 useful information for debugging.
 
 ```powershell
@@ -669,7 +669,7 @@ decorated strings using tab completion:
 "$($PSStyle.Background.LightCyan)Power$($PSStyle.Underline)$($PSStyle.Bold)Shell$($PSStyle.Reset)"
 ```
 
-The following member control how or when ANSI formatting is used:
+The following members control how or when ANSI formatting is used:
 
 - `$PSStyle.OutputRendering` is a
   `System.Management.Automation.OutputRendering` enum with the values:
@@ -757,7 +757,7 @@ objects.
 
 > [!NOTE]
 > `$PSStyle.FileInfo` is only available when the `PSAnsiRenderingFileInfo`
-> experimental feature ia enabled. For more information, see
+> experimental feature is enabled. For more information, see
 > [about_Experimental_Features](about_Experimental_Features.md) and
 > [Using experimental features](/powershell/scripting/learn/experimental-features).
 

@@ -206,7 +206,7 @@ a native executable.
 
 > [!CAUTION]
 > The new behavior is a **breaking change** from current behavior. This may break scripts and
-> automation that work-around the various issues when invoking native applications. Historically,
+> automation that work around the various issues when invoking native applications. Historically,
 > quotes must be escaped and it is not possible to provide empty arguments to a native application.
 
 This feature adds a new automatic variable `$PSNativeCommandArgumentPassing` that allows you to
@@ -214,7 +214,7 @@ select the behavior at runtime. The valid values are `Legacy`, `Standard`, and `
 is the historic behavior. The default when the experimental feature is enabled is the new `Standard`
 behavior.
 
-When the preference variable is set to `Windows` invocations of the following files automatically
+When the preference variable is set to `Windows`, invocations of the following files automatically
 use the `Legacy` style argument passing.
 
 - `cmd.exe`
@@ -274,7 +274,7 @@ Arg 0 is <-k>
 Arg 1 is <com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect>
 ```
 
-Additionally, parameter tracing is now provided so `Trace-Command` will provide useful information
+Additionally, parameter tracing is now provided so `Trace-Command` provides useful information
 for debugging.
 
 ```powershell
