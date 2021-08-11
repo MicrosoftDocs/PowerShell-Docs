@@ -2,17 +2,17 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/19/2020
+ms.date: 08/11/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Csv
 ---
 # Import-Csv
 
-## SYNOPSIS
+## Synopsis
 Creates table-like custom objects from the items in a comma-separated value (CSV) file.
 
-## SYNTAX
+## Syntax
 
 ### DelimiterPath (Default)
 
@@ -42,7 +42,7 @@ Import-Csv -LiteralPath <String[]> -UseCulture [-Header <String[]>] [-Encoding <
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Import-Csv` cmdlet creates table-like custom objects from the items in CSV files. Each column
 in the CSV file becomes a property of the custom object and the items in rows become the property
@@ -62,7 +62,7 @@ header row name and displays a warning message.
 
 Starting with PowerShell 6.0, `Import-Csv` now supports the W3C Extended Log File Format.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Import process objects
 
@@ -306,15 +306,16 @@ The `Get-Content` cmdlet displays the Projects.csv file. The header row is missi
 displays a warning message because **H1** is a default header name. The `(Import-Csv -Path
 .\Projects.csv).H1` command gets the **H1** property values and displays a warning.
 
-## PARAMETERS
+## Parameters
 
 ### -Delimiter
 
-Specifies the delimiter that separates the property values in the CSV file.
-The default is a comma (,).
+Specifies the delimiter that separates the property values in the CSV file. The default is a comma
+(`,`).
 
-Enter a character, such as a colon (:).
-To specify a semicolon (;) enclose it in single quotation marks.
+Enter a character, such as a colon (`:`). To specify a semicolon (`;`) enclose it in single
+quotation marks. To specify escaped special characters such as tab (`` `t ``), enclose it in double
+quotation marks.
 
 If you specify a character other than the actual string delimiter in the file, `Import-Csv` cannot
 create the objects from the CSV strings and will return the CSV strings.
@@ -457,19 +458,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path to `Import-Csv`.
 
-## OUTPUTS
+## Outputs
 
 ### Object
 
 This cmdlet returns the objects described by the content in the CSV file.
 
-## NOTES
+## Notes
 
 Because the imported objects are CSV versions of the object type, they are not recognized and
 formatted by the PowerShell type formatting entries that format the non-CSV versions of the object
@@ -498,7 +499,7 @@ comments and ignored unless the comment starts with `#Fields:` and contains deli
 column names. In that case, the cmdlet uses those column names. This is the standard format for
 Windows IIS and other web server logs. For more information, see [Extended Log File Format](https://www.w3.org/TR/WD-logfile.html).
 
-## RELATED LINKS
+## Related links
 
 [ConvertFrom-Csv](ConvertFrom-Csv.md)
 
