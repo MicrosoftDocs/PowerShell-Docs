@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 10/05/2020
+ms.date: 08/11/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Pwsh
@@ -96,6 +96,12 @@ termination, the exit code is always `0`.
 Similar to `-Command`, when a script-terminating error occurs, the exit code is
 set to `1`. However, unlike with `-Command`, when the execution is interrupted
 with <kbd>Ctrl</kbd>-<kbd>C</kbd> the exit code is `0`.
+
+> [!NOTE]
+> As of PowerShell 7.2, the **File** parameter only accepts `.ps1` files on
+> Windows. If another file type is provided an error is thrown. This behavior
+> is Windows specific. On other platforms, PowerShell attempts to run other
+> file types.
 
 ### -Command | -c
 
