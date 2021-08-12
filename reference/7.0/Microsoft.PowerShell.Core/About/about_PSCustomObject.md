@@ -69,7 +69,7 @@ one two
   1   2
 ```
 
-Since PowerShell 4.0, casting a **Hashtable** to `[pscustomobject]` achieves
+Since PowerShell 3.0, casting a **Hashtable** to `[pscustomobject]` achieves
 the same result.
 
 ```powershell
