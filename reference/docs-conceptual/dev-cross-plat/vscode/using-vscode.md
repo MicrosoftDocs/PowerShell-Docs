@@ -195,7 +195,7 @@ text displayed in the session menu (also known as the `versionName`):
 ```
 
 After you've configured this setting, restart VS Code or to reload the current VS Code window from
-the **Command Palette**, type **Developer: Reload Window**.
+the **Command Palette**, type `Developer: Reload Window`.
 
 If you open the session menu, you now see your additional PowerShell versions!
 
