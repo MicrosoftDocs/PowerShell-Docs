@@ -1,5 +1,5 @@
 ---
-ms.date: 07/12/2021
+ms.date: 08/13/2021
 title:  Compatibility Aliases
 description: PowerShell has several aliases that allow UNIX and cmd.exe users to use familiar commands.
 ---
@@ -25,7 +25,12 @@ table:
 | **ren**                               | **mv**       | `Rename-Item`     | `rni`, `ren`                              |
 | **type**                              | **cat**      | `Get-Content`     | `gc`, `cat`, `type`                       |
 
-To find all PowerShell aliases, use the [Get-Alias](xref:Microsoft.PowerShell.Utility.Get-Alias)
+> [!NOTE]
+> The aliases in this table are Windows-specific. _Some_ of the aliases are not available on other
+> platforms. This is to allow the native command to work in a PowerShell session. For example, `ls`
+> is not a PowerShell alias on macOS but uses the native command to display directory contents.
+
+To find all PowerShell aliases available in your environment, use the [Get-Alias](xref:Microsoft.PowerShell.Utility.Get-Alias)
 cmdlet. To display a cmdlet's aliases, use the **Definition** parameter and specify the cmdlet name.
 Or, to find an alias's cmdlet name, use the **Name** parameter and specify the alias.
 
@@ -50,7 +55,6 @@ CommandType     Name
 -----------     ----
 Alias           gci -> Get-ChildItem
 ```
-
 
 ## See Also
 
