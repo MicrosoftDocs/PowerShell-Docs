@@ -1024,6 +1024,7 @@ New-PSDrive -Name 'User' -PSProvider FileSystem -Root $env:HOMEPATH
 Name           Used (GB)     Free (GB) Provider      Root
 ----           ---------     --------- --------      ----
 User               75.76         24.24 FileSystem    C:\Users\ExampleUser
+```
 
 ```powershell
 Test-UserDrivePath -Path 'User:\A_folder_that_does_not_exist'
