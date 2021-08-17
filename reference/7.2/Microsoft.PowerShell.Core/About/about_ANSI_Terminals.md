@@ -71,13 +71,13 @@ The following members control how or when ANSI formatting is used:
 - `$PSStyle.OutputRendering` is a
   `System.Management.Automation.OutputRendering` enum with the values:
 
-  - **Automatic**: This is the default. If the host supports VirtualTerminal,
-    then ANSI is always passed as-is, otherwise plaintext
+  - **Automatic**: If the host supports VirtualTerminal, then ANSI is always
+    passed as-is, otherwise plaintext
   - **ANSI**: ANSI is always passed through as-is
   - **PlainText**: ANSI escape sequences are always stripped so that it is only
     plain text
-  - **Host**: This would be the macOS behavior where the ANSI escape
-    sequences are removed in redirected or piped output.
+  - **Host**: This is the default behavior. The ANSI escape sequences are
+    removed in redirected or piped output.
 
 - The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
   contain the ANSI escape sequences for the 16 standard console colors.
