@@ -96,13 +96,13 @@ PowerShell with `sudo apt-get install powershell`.
 
 ### Installation via Direct Download - Ubuntu 16.04
 
-Download the Debian package `powershell_7.1.3-1.ubuntu.16.04_amd64.deb` from the
+Download the Debian package `powershell_7.1.4-1.ubuntu.16.04_amd64.deb` from the
 [releases][releases] page onto the Ubuntu machine.
 
 Then, in the terminal, execute the following commands:
 
 ```sh
-sudo dpkg -i powershell_7.1.3-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_7.1.4-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
