@@ -512,7 +512,7 @@ resource. Our manifest looks like this:
     RootModule = 'File.psm1'
     
     # Version number of this module.
-    ModuleVersion = '1.0.0.0'
+    ModuleVersion = '1.0.0'
     
     # ID used to uniquely identify this module
     GUID = 'fad0d04e-65d9-4e87-aa17-39de1d008ee4'
@@ -573,7 +573,7 @@ following configuration will check to see whether the file at `/tmp/test.txt` ex
 match the string provided by the property 'Content'. If not, the entire file is written.
 
 ```powershell
-Configuration Test
+Configuration MyConfig
 {
     Import-DSCResource -module File
     File testFile
@@ -583,7 +583,7 @@ Configuration Test
         Ensure = "Present"
     }
 }
-Test
+MyConfig
 ```
 
 ## Supporting PsDscRunAsCredential
