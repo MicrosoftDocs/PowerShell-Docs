@@ -1,18 +1,17 @@
 ---
-description: Describes how to access Windows environment variables in PowerShell. 
-keywords: powershell,cmdlet
+description: Describes how to access Windows environment variables in PowerShell.
 Locale: en-US
-ms.date: 09/22/2020
+ms.date: 08/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Environment Variables
 ---
 # about_Environment_Variables
 
-## SHORT DESCRIPTION
+## Short description
 Describes how to access Windows environment variables in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 Environment variables store information about the operating system
 environment. This information includes details such as the operating system
@@ -107,112 +106,6 @@ Set-Item -Path Env:Path -Value ($Env:Path + ";C:\Temp")
 
 In this command, the value is enclosed in parentheses so that it is
 interpreted as a unit.
-
-## Environment variables that store preferences
-
-PowerShell features can use environment variables to store user preferences.
-These variables work like preference variables, but they are inherited by child
-sessions of the sessions in which they are created. For more information about
-preference variables, see [about_preference_variables](about_Preference_Variables.md).
-
-The environment variables that store preferences include:
-
-- PSExecutionPolicyPreference
-
-  Stores the execution policy set for the current session. This environment
-  variable exists only when you set an execution policy for a single session.
-  You can do this in two different ways.
-
-  - Start a session from the command line using the **ExecutionPolicy**
-    parameter to set the execution policy for the session.
-
-  - Use the `Set-ExecutionPolicy` cmdlet. Use the Scope parameter with
-    a value of "Process".
-
-    For more information, see [about_Execution_Policies](about_Execution_Policies.md).
-
-- PSModuleAnalysisCachePath
-
-  PowerShell provides control over the file that is used to cache data about
-  modules and their cmdlets. The cache is read at startup while searching for a
-  command and is written on a background thread sometime after a module is
-  imported.
-
-  Default location of the cache is:
-
-  - Windows PowerShell 5.1: `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell`
-  - PowerShell 6.0 and higher: `$env:LOCALAPPDATA\Microsoft\PowerShell`
-  - Non-Windows default: `~/.cache/powershell`
-
-  The default filename for the cache is `ModuleAnalysisCache`. When you have
-  multiple instances of PowerShell installed, the filename includes a
-  hexadecimal suffix so that there is a a unique filename per installation.
-
-  > [!NOTE]
-  > If command discovery isn't working correctly, for example Intellisense
-  > shows commands that don't exist, you can delete the cache file. The cache
-  > is recreated the next time you start PowerShell.
-
-  To change the default location of the cache, set the environment variable
-  before starting PowerShell. Changes to this environment variable only affect
-  child processes. The value should name a full path (including filename)
-  that PowerShell has permission to create and write files.
-
-  To disable the file cache, set this value to an invalid location, for
-  example:
-
-  ```powershell
-  # `NUL` here is a special device on Windows that cannot be written to,
-  # on non-Windows you would use `/dev/null`
-  $env:PSModuleAnalysisCachePath = 'NUL'
-  ```
-
-  This sets the path to the **NUL** device. PowerShell can't write to the
-  path but no error is returned. You can see the errors reported using a
-  tracer:
-
-  ```powershell
-  Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
-  ```
-
-- PSDisableModuleAnalysisCacheCleanup
-
-  When writing out the module analysis cache, PowerShell checks for modules
-  that no longer exist to avoid an unnecessarily large cache. Sometimes these
-  checks are not desirable, in which case you can turn them off by setting this
-  environment variable value to `1`.
-
-  Setting this environment variable takes effect immediately in the current
-  process.
-
-- PSModulePath
-
-  The `$env:PSModulePath` environment variable contains a list of folder
-  locations that are searched to find modules and resources.
-
-  By default, the effective locations assigned to `$env:PSModulePath` are:
-
-  - System-wide locations: These folders contain modules that ship with
-    PowerShell. The modules are store in the `$PSHOME\Modules` location. Also,
-    This is the location where the Windows management modules are installed.
-
-  - User-installed modules: These are modules installed by the user.
-    `Install-Module` has a **Scope** parameter that allows you to specify
-    whether the module is installed for the current user or for all users. For
-    more information, see [Install-Module](xref:PowerShellGet.Install-Module).
-
-    - On Windows, the location of the user-specific **CurrentUser** scope is
-      the `$HOME\Documents\PowerShell\Modules` folder. The location of the
-      **AllUsers** scope is `$env:ProgramFiles\PowerShell\Modules`.
-    - On non-Windows systems, the location of the user-specific **CurrentUser**
-      scope is the `$HOME/.local/share/powershell/Modules` folder. The location
-      of the **AllUsers** scope is `/usr/local/share/powershell/Modules`.
-
-  In addition, setup programs that install modules in other directories, such
-  as the Program Files directory, can append their locations to the value of
-  `$env:PSModulePath`.
-
-  For more information, see [about_PSModulePath](about_PSModulePath.md).
 
 ## Managing environment variables
 
@@ -340,8 +233,144 @@ $newpath = $path + ';C:\Program Files\Fabrikam\Modules'
 For more information about the methods of the **System.Environment** class, see
 [Environment Methods](/dotnet/api/system.environment).
 
-## SEE ALSO
+## PowerShell's environment variables
+
+PowerShell features can use environment variables to store user preferences.
+These variables work like preference variables, but they are inherited by child
+sessions of the sessions in which they are created. For more information about
+preference variables, see [about_Preference_Variables](about_preference_variables.md).
+
+The environment variables that store preferences include:
+
+- **PSExecutionPolicyPreference**
+
+  Stores the execution policy set for the current session. This environment
+  variable exists only when you set an execution policy for a single session.
+  You can do this in two different ways.
+
+  - Start a session from the command line using the **ExecutionPolicy**
+    parameter to set the execution policy for the session.
+
+  - Use the `Set-ExecutionPolicy` cmdlet. Use the Scope parameter with
+    a value of "Process".
+
+    For more information, see [about_Execution_Policies](about_Execution_Policies.md).
+
+- **PSModuleAnalysisCachePath**
+
+  PowerShell provides control over the file that is used to cache data about
+  modules and their cmdlets. The cache is read at startup while searching for a
+  command and is written on a background thread sometime after a module is
+  imported.
+
+  Default location of the cache is:
+
+  - Windows PowerShell 5.1: `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell`
+  - PowerShell 6.0 and higher: `$env:LOCALAPPDATA\Microsoft\PowerShell`
+  - Non-Windows default: `~/.cache/powershell`
+
+  The default filename for the cache is `ModuleAnalysisCache`. When you have
+  multiple instances of PowerShell installed, the filename includes a
+  hexadecimal suffix so that there is a a unique filename per installation.
+
+  > [!NOTE]
+  > If command discovery isn't working correctly, for example Intellisense
+  > shows commands that don't exist, you can delete the cache file. The cache
+  > is recreated the next time you start PowerShell.
+
+  To change the default location of the cache, set the environment variable
+  before starting PowerShell. Changes to this environment variable only affect
+  child processes. The value should name a full path (including filename)
+  that PowerShell has permission to create and write files.
+
+  To disable the file cache, set this value to an invalid location, for
+  example:
+
+  ```powershell
+  # `NUL` here is a special device on Windows that cannot be written to,
+  # on non-Windows you would use `/dev/null`
+  $env:PSModuleAnalysisCachePath = 'NUL'
+  ```
+
+  This sets the path to the **NUL** device. PowerShell can't write to the
+  path but no error is returned. You can see the errors reported using a
+  tracer:
+
+  ```powershell
+  Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
+  ```
+
+- **PSDisableModuleAnalysisCacheCleanup**
+
+  When writing out the module analysis cache, PowerShell checks for modules
+  that no longer exist to avoid an unnecessarily large cache. Sometimes these
+  checks are not desirable, in which case you can turn them off by setting this
+  environment variable value to `1`.
+
+  Setting this environment variable takes effect immediately in the current
+  process.
+
+- **PSModulePath**
+
+  The `$env:PSModulePath` environment variable contains a list of folder
+  locations that are searched to find modules and resources.
+
+  By default, the effective locations assigned to `$env:PSModulePath` are:
+
+  - System-wide locations: These folders contain modules that ship with
+    PowerShell. The modules are store in the `$PSHOME\Modules` location. Also,
+    This is the location where the Windows management modules are installed.
+
+  - User-installed modules: These are modules installed by the user.
+    `Install-Module` has a **Scope** parameter that allows you to specify
+    whether the module is installed for the current user or for all users. For
+    more information, see [Install-Module](xref:PowerShellGet.Install-Module).
+
+    - On Windows, the location of the user-specific **CurrentUser** scope is
+      the `$HOME\Documents\PowerShell\Modules` folder. The location of the
+      **AllUsers** scope is `$env:ProgramFiles\PowerShell\Modules`.
+    - On non-Windows systems, the location of the user-specific **CurrentUser**
+      scope is the `$HOME/.local/share/powershell/Modules` folder. The location
+      of the **AllUsers** scope is `/usr/local/share/powershell/Modules`.
+
+  In addition, setup programs that install modules in other directories, such
+  as the Program Files directory, can append their locations to the value of
+  `$env:PSModulePath`.
+
+  For more information, see [about_PSModulePath](about_PSModulePath.md).
+
+- **POWERSHELL_UPDATECHECK**
+
+  The update notification behavior can be changed using the
+  `POWERSHELL_UPDATECHECK` environment variable. The following values are
+  supported:
+
+  - `Off` turns off the update notification feature
+  - `Default` is the same as not defining `POWERSHELL_UPDATECHECK`:
+    - GA releases notify of updates to GA releases
+    - Preview/RC releases notify of updates to GA and preview releases
+  - `LTS` only notifies of updates to long-term-servicing (LTS) GA releases
+
+  For more information, see [about_Update_Notifications](about_Update_Notifications.md).
+
+- **POWERSHELL_TELEMETRY_OPTOUT**
+
+  To opt-out of telemetry, set the environment variable to `true`, `yes`, or `1`.
+
+  For more information, see [about_Telemetry](about_Telemetry.md).
+
+## Third-party environment variables
+
+On non-Windows platforms, PowerShell uses the following XDG environment
+variables as defined by the [XDG Base Directory Specification][xdg-bds].
+
+- **XDG_CONFIG_HOME**
+- **XDG_DATA_HOME**
+- **XDG_CACHE_HOME**
+
+## See also
 
 - [Environment (provider)](../About/about_Environment_Provider.md)
 - [about_Modules](about_Modules.md)
 
+[xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
