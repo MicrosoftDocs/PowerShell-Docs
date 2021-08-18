@@ -9,19 +9,19 @@ description: PropertyCountForTable Element (Format)
 Optional element. Specifies the minimum number of properties that an object must have to display the
 object in a table view.
 
-ConfigurationSettings Element (Format)
-PropertyCountForTable Element (Format)
+- DefaultSettings Element (Format)
+- PropertyCountForTable Element (Format)
 
 ## Syntax
 
 ```xml
-<PropertyCountForTable/>
+<PropertyCountForTable>NumberOfProperties</PropertyCountFortable>
 ```
 
 ## Attributes and Elements
 
 The following sections describe attributes, child elements, and the parent element of the
-`PropertyCountForTable` element.
+`PropertyCountForTable` element. The default value for this element is `4`.
 
 ### Attributes
 
