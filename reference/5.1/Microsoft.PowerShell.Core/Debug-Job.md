@@ -1,9 +1,8 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 08/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/debug-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Debug-Job
@@ -11,7 +10,7 @@ title: Debug-Job
 
 # Debug-Job
 
-## SYNOPSIS
+## Synopsis
 Debugs a running background, remote, or Windows PowerShell Workflow job.
 
 ## SYNTAX
@@ -40,19 +39,25 @@ Debug-Job [-Id] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>]
 Debug-Job [-InstanceId] <Guid> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
-The **Debug-Job** cmdlet lets you debug scripts that are running within jobs.
-The cmdlet is designed to debug Windows PowerShell Workflow jobs, background jobs, and jobs running in remote sessions.
-**Debug-Job** accepts a running job object, name, ID, or instance ID as input, and starts a debugging session on the script it is running.
-The debugger **quit** command stops the job and running script.
-Starting in Windows PowerShell 5.0, the **exit** command detaches the debugger, and allows the job to continue to run.
+## Description
 
-## EXAMPLES
+The `Debug-Job` cmdlet lets you debug scripts that are running within jobs. The cmdlet is designed
+to debug PowerShell Workflow jobs, background jobs, and jobs running in remote sessions. `Debug-Job`
+accepts a running job object, name, ID, or instance ID as input, and starts a debugging session on
+the script it is running. The debugger `quit` command stops the job and running script. The `exit`
+command detaches the debugger, and allows the job to continue to run.
+
+## Examples
 
 ### Example 1: Debug a job by job ID
 
+This command breaks into a running job with an ID of 3.
+
+```powershell
+Debug-Job -ID 3
 ```
-PS C:\> Debug-Job -ID 3
+
+```Output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 3      Job3            RemoteJob       Running       True            PowerShellIx         TestWFDemo1.ps1
@@ -83,13 +88,11 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
              18:  SampleWorkflowTest -MyOutput "Hello"
 ```
 
-This command breaks into a running job with an ID of 3.
-
-## PARAMETERS
+## Parameters
 
 ### -Id
-Specifies the ID number of a running job.
-To get the ID number of a job, run the Get-Job cmdlet.
+
+Specifies the ID number of a running job. To get the ID number of a job, run the `Get-Job` cmdlet.
 
 ```yaml
 Type: System.Int32
@@ -104,10 +107,8 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-Specifies the instance ID GUID of a running job.
-To get the *InstanceId* of a job, run the **Get-Job** cmdlet, piping the results into a **Format-*** cmdlet, as shown in the following example:
 
-`Get-Job | Format-List -Property Id,Name,InstanceId,State`
+Specifies the instance ID GUID of a running job.
 
 ```yaml
 Type: System.Guid
@@ -122,8 +123,10 @@ Accept wildcard characters: False
 ```
 
 ### -Job
-Specifies a running job object.
-The simplest way to use this parameter is to save the results of a **Get-Job** command that returns the running job that you want to debug in a variable, and then specify the variable as the value of this parameter.
+
+Specifies a running job object. The simplest way to use this parameter is to save the results of a
+`Get-Job` command that returns the running job that you want to debug in a variable, and then
+specify the variable as the value of this parameter.
 
 ```yaml
 Type: System.Management.Automation.Job
@@ -138,8 +141,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies a job by the friendly name of the job.
-When you start a job, you can specify a job name by adding the *JobName* parameter, in cmdlets such as Invoke-Command and Start-Job.
+
+Specifies a job by the friendly name of the job. When you start a job, you can specify a job name by
+adding the **JobName** parameter, in cmdlets such as `Invoke-Command` and `Start-Job`.
 
 ```yaml
 Type: System.String
@@ -154,6 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -169,8 +174,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -185,17 +190,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+## Inputs
 
 ### System.Management.Automation.RemotingJob
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Get-Job](Get-Job.md)
 
