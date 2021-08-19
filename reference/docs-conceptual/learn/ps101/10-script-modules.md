@@ -354,7 +354,7 @@ It's not necessary to use both `Export-ModuleMember` in the `.PSM1` file and the
 ## Summary
 
 In this chapter you've learned how to turn your functions into a script module in PowerShell. You've
-also leaned some of the best practices for creating script modules such as creating a module
+also learned some of the best practices for creating script modules such as creating a module
 manifest for your script module.
 
 ## Review
