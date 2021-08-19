@@ -47,6 +47,10 @@ Deploying the MSI package requires Administrator permission. The ZIP package can
 user. The ZIP package is the easiest way to install PowerShell 7 for testing, before committing to a
 full installation.
 
+You may also install PowerShell 7 via the Windows Store or `winget`. For more information about both
+of these methods, see the detailed instructions in
+[Installing PowerShell on Windows](../install/installing-powershell-core-on-windows.md#install-powershell-via-the-windows-package-manager).
+
 ## Using PowerShell 7 side-by-side with Windows PowerShell 5.1
 
 PowerShell 7 is designed to coexist with Windows PowerShell 5.1. The following features ensure that

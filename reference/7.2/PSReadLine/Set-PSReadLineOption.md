@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 11/23/2020
+ms.date: 08/18/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
 ---
-
 # Set-PSReadLineOption
 
 ## Synopsis
@@ -445,13 +444,12 @@ If you don't use this parameter, the default path is as follows:
 
 **Windows**
 
-`$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($host.Name)_history.txt`
+- `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($host.Name)_history.txt`
 
 **non-Windows**
 
-`$env:XDG_DATA_HOME/powershell/PSReadLine\$($host.Name)_history.txt`
-
-`$env:HOME/.local/share/powershell/PSReadLine\$($host.Name)_history.txt`
+- `$env:XDG_DATA_HOME/powershell/PSReadLine/$($host.Name)_history.txt`
+- `$env:HOME/.local/share/powershell/PSReadLine/$($host.Name)_history.txt`
 
 ```yaml
 Type: System.String
@@ -744,7 +742,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

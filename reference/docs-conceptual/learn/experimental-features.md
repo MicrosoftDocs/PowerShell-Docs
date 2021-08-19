@@ -50,6 +50,9 @@ Legend
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.2.
+
 In PowerShell 7.0, the experiment enables the **BreakAll** parameter on the `Debug-Runspace` and
 `Debug-Job` cmdlets to allow users to decide if they want PowerShell to break immediately in the
 current location when they attach a debugger.
@@ -153,6 +156,9 @@ v2.0.5 module from the PowerShell Gallery and enable the feature using `Enable-E
 
 ## PSImplicitRemotingBatching
 
+> [!NOTE]
+> This experimental feature was removed in PowerShell 7.2 and is no longer supported.
+
 This feature examines the command typed in the shell, and if all the commands are implicit remoting
 proxy commands that form a simple pipeline, then the commands are batched together and invoked as a
 single remote pipeline.
@@ -190,9 +196,6 @@ As seen above, with the batching feature enabled, all three implicit remoting pr
 the pipeline is the only data returned to the client. This decreases the amount of data sent back
 and forth between client and remote session, and also reduces the amount of object serialization and
 de-serialization.
-
-> [!NOTE]
-> This experimental feature was removed in PowerShell 7.2 and is no longer supported.
 
 ## PSLoadAssemblyFromNativeCode
 

@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 08/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-psbreakpoint?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-PSBreakpoint
@@ -11,10 +10,10 @@ title: Remove-PSBreakpoint
 
 # Remove-PSBreakpoint
 
-## SYNOPSIS
+## Synopsis
 Deletes breakpoints from the current console.
 
-## SYNTAX
+## Syntax
 
 ### Breakpoint (Default)
 
@@ -28,72 +27,71 @@ Remove-PSBreakpoint [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm] [<CommonPa
 Remove-PSBreakpoint [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
-The **Remove-PSBreakpoint** cmdlet deletes a breakpoint.
-Enter a breakpoint object or a breakpoint ID.
+## Description
 
-When you remove a breakpoint, the breakpoint object is no longer available or functional.
-If you have saved a breakpoint object in a variable, the reference still exists, but the breakpoint does not function.
+The `Remove-PSBreakpoint` cmdlet deletes a breakpoint. Enter a breakpoint object or a breakpoint ID.
 
-**Remove-PSBreakpoint** is one of several cmdlets designed for debugging PowerShell scripts.
-For more information about the PowerShell debugger, see about_Debuggers.
+When you remove a breakpoint, the breakpoint object is no longer available or functional. If you
+have saved a breakpoint object in a variable, the reference still exists, but the breakpoint does
+not function.
 
-## EXAMPLES
+`Remove-PSBreakpoint` is one of several cmdlets designed for debugging PowerShell scripts. For more
+information about the PowerShell debugger, see
+[about_Debuggers](../microsoft.powershell.core/about/about_debuggers.md).
+
+## Examples
 
 ### Example 1: Remove all breakpoints
 
-```
-PS C:\> Get-PSBreakpoint | Remove-PSBreakpoint
-```
-
 This command deletes all of the breakpoints in the current console.
+
+```powershell
+Get-PSBreakpoint | Remove-PSBreakpoint
+```
 
 ### Example 2: Remove a specified breakpoint
 
-```
-PS C:\> $B = Set-PSBreakpoint -Script "sample.ps1" -Variable "Name"
-PS C:\> $B | Remove-PSBreakpoint
-```
-
 This command deletes a breakpoint.
 
-The first command uses the Set-PSBreakpoint cmdlet to create a breakpoint on the Name variable in the Sample.ps1 script.
-Then, it saves the breakpoint object in the $B variable.
+```powershell
+$B = Set-PSBreakpoint -Script "sample.ps1" -Variable "Name"
+$B | Remove-PSBreakpoint
+```
 
-The second command uses the **Remove-PSBreakpoint** cmdlet to delete the new breakpoint.
-It uses a pipeline operator (|) to send the breakpoint object in the $B variable to the **Remove-PSBreakpoint** cmdlet.
+The `Set-PSBreakpoint` cmdlet creates a breakpoint on the `$Name` variable in the `Sample.ps1`
+script and saves the breakpoint object in the `$B` variable. The `Remove-PSBreakpoint` cmdlet
+deletes the new breakpoint. It uses a pipeline operator (`|`) to send the breakpoint object in the
+`$B` variable to the `Remove-PSBreakpoint` cmdlet.
 
-As a result of this command, if you run the script, it runs to completion without stopping.
-Also, the **Get-PSBreakpoint** cmdlet does not return this breakpoint.
+As a result of this command, if you run the script, it runs to completion without stopping. Also,
+the `Get-PSBreakpoint` cmdlet does not return this breakpoint.
 
 ### Example 3: Remove a breakpoint by ID
 
-```
-PS C:\> Remove-PSBreakpoint -Id 2
-```
-
 This command deletes the breakpoint with breakpoint ID 2.
+
+```powershell
+Remove-PSBreakpoint -Id 2
+```
 
 ### Example 4: Use a function to remove all breakpoints
 
-```
-PS C:\> function del-psb { get-psbreakpoint | remove-psbreakpoint }
-```
-
 This simple function deletes all of the breakpoints in the current console.
-It uses the Get-PSBreakpoint cmdlet to get the breakpoints.
-Then, it uses a pipeline operator (|) to send the breakpoints to the **Remove-PSBreakpoint** cmdlet, which deletes them.
 
-As a result, you can type `del-psb` instead of the longer command.
+```powershell
+function del-psb { Get-PSBreakpoint | Remove-PSBreakpoint }
+```
 
-To save the function, add it to your PowerShell profile.
+It uses the `Get-PSBreakpoint` cmdlet to get the breakpoints. Then, it uses a pipeline operator
+(`|`) to send the breakpoints to the `Remove-PSBreakpoint` cmdlet, which deletes them.
 
-## PARAMETERS
+## Parameters
 
 ### -Breakpoint
-Specifies the breakpoints to delete.
-Enter a variable that contains breakpoint objects or a command that gets breakpoint objects, such as a **Get-PSBreakpoint** command.
-You can also pipe breakpoint objects to **Remove-PSBreakpoint**.
+
+Specifies the breakpoints to delete. Enter a variable that contains breakpoint objects or a command
+that gets breakpoint objects, such as a `Get-PSBreakpoint` command. You can also pipe breakpoint
+objects to `Remove-PSBreakpoint`.
 
 ```yaml
 Type: System.Management.Automation.Breakpoint[]
@@ -108,6 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies breakpoint IDs for which this cmdlet deletes breakpoints.
 
 ```yaml
@@ -154,21 +153,31 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-### System.Management.Automation.Breakpoint
-You can pipe breakpoint objects to **Remove-PSBreakpoint**.
+## Inputs
 
-## OUTPUTS
+### System.Management.Automation.Breakpoint[]
+
+You can pipe breakpoint objects to `Remove-PSBreakpoint`.
+
+### System.Int32[]
+
+### System.Management.Automation.Runspaces.Runspace
+
+## Outputs
 
 ### None
+
 The cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Disable-PSBreakpoint](Disable-PSBreakpoint.md)
 
