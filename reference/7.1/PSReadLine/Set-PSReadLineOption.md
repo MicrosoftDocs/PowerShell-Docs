@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 06/30/2020
+ms.date: 08/18/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -438,13 +437,12 @@ If you don't use this parameter, the default path is as follows:
 
 **Windows**
 
-`$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($host.Name)_history.txt`
+- `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($host.Name)_history.txt`
 
 **non-Windows**
 
-`$env:XDG_DATA_HOME/powershell/PSReadLine\$($host.Name)_history.txt`
-
-`$env:HOME/.local/share/powershell/PSReadLine\$($host.Name)_history.txt`
+- `$env:XDG_DATA_HOME/powershell/PSReadLine/$($host.Name)_history.txt`
+- `$env:HOME/.local/share/powershell/PSReadLine/$($host.Name)_history.txt`
 
 ```yaml
 Type: System.String

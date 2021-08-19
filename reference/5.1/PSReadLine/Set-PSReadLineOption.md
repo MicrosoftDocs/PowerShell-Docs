@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSReadline
 ms.date: 06/30/2020
@@ -432,17 +431,9 @@ Specifies the path to the file where history is saved. Computers running Windows
 platforms store the file in different locations. The filename is stored in a variable
 `$($host.Name)_history.txt`, for example `ConsoleHost_history.txt`.
 
-If you don't use this parameter, the default path is as follows:
-
-**Windows**
+If you don't use this parameter, the default path is:
 
 `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($host.Name)_history.txt`
-
-**non-Windows**
-
-`$env:XDG_DATA_HOME/powershell/PSReadLine\$($host.Name)_history.txt`
-
-`$env:HOME/.local/share/powershell/PSReadLine\$($host.Name)_history.txt`
 
 ```yaml
 Type: System.String
