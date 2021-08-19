@@ -49,7 +49,7 @@ full installation.
 
 You may also install PowerShell 7 via the Windows Store or `winget`. For more information about both
 of these methods, see the detailed instructions in
-[Installing PowerShell on Windows](../install/installing-powershell-core-on-windows#install-powershell-via-the-windows-package-manager.md).
+[Installing PowerShell on Windows](../install/installing-powershell-core-on-windows.md#install-powershell-via-the-windows-package-manager).
 
 ## Using PowerShell 7 side-by-side with Windows PowerShell 5.1
 
