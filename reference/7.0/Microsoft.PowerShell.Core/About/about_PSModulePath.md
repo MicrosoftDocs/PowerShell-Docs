@@ -1,8 +1,7 @@
 ---
 description: The PSModulePath environment variable contains a list of folder locations that are searched to find modules and resources.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 11/11/2020
+ms.date: 08/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSModulePath
@@ -168,16 +167,6 @@ PowerShell.
 
 The PowerShell 7 startup continues as-is with the addition of inheriting paths
 that Windows PowerShell added. Since the PS7-specific paths are prefixed, there
-is no functional issue.
-
-### Starting PowerShell 6 from PowerShell 7
-
-PowerShell Core 6 overwrites `$env:PSModulePath`. No changes are made.
-
-### Starting PowerShell 7 from PowerShell 6
-
-The PowerShell 7 startup continues as-is with the addition of inheriting paths
-that PowerShell Core 6 added. Since the PS7-specific paths are prefixed, there
 is no functional issue.
 
 ## Module search behavior
