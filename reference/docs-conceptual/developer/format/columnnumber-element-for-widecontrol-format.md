@@ -1,18 +1,20 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/20/2021
 ms.topic: reference
-title: ColumnNumber Element for WideControl (Format)
-description: ColumnNumber Element for WideControl (Format)
+title: ColumnNumber Element for WideControl
+description: ColumnNumber Element for WideControl
 ---
-# ColumnNumber Element for WideControl (Format)
+# ColumnNumber Element for WideControl
 
 Specifies the number of columns displayed in the wide view.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-WideControl Element (Format)
-ColumnNumber Element for WideControl (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- WideControl Element
+- ColumnNumber Element
 
 ## Syntax
 
@@ -22,7 +24,8 @@ ColumnNumber Element for WideControl (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `ColumnNumber` element.
+The following sections describe attributes, child elements, and the parent element of the
+`ColumnNumber` element.
 
 ### Attributes
 
@@ -36,7 +39,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[WideControl Element (Format)](./widecontrol-element-format.md)|Defines a wide (single value) list format for the view.|
+|[WideControl Element](./widecontrol-element-format.md)|Defines a wide (single value) list format for the view.|
 
 ## Text Value
 
@@ -44,7 +47,8 @@ Specify a positive integer value.
 
 ## Remarks
 
-When defining a wide view, you can add the `AutoSize` element or the `ColumnNumber` element, but you cannot add both.
+When defining a wide view, you can add the `AutoSize` element or the `ColumnNumber` element, but you
+cannot add both.
 
 For more information about the components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
 
@@ -52,7 +56,7 @@ For an example of a wide view, see [Wide View (Basic)](./wide-view-basic.md).
 
 ## See Also
 
-[Autosize Element for WideControl (Format)](./autosize-element-for-widecontrol-format.md)
+[Autosize Element for WideControl](./autosize-element-for-widecontrol-format.md)
 
 [Creating a Wide View](./creating-a-wide-view.md)
 

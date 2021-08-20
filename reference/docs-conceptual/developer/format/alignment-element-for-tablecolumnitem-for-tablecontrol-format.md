@@ -1,22 +1,24 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/20/2021
 ms.topic: reference
-title: Alignment Element for TableColumnItem for TableControl (Format)
-description: Alignment Element for TableColumnItem for TableControl (Format)
+title: Alignment Element for TableColumnItem
+description: Alignment Element for TableColumnItem
 ---
-# Alignment Element for TableColumnItem for TableControl (Format)
+# Alignment Element for TableColumnItem
 
 Defines how the data in a column of the row is displayed.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-TableControl Element (Format)
-TableRowEntries Element (Format)
-TableRowEntry Element (Format)
-TableColumnItems Element (Format)
-TableColumnItem Element (Format)
-Alignment Element for TableColumnItem (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- TableControl Element
+- TableRowEntries Element
+- TableRowEntry Element
+- TableColumnItems Element
+- TableColumnItem Element
+- Alignment Element
 
 ## Syntax
 
@@ -26,7 +28,8 @@ Alignment Element for TableColumnItem (Format)
 
 ## Attributes and Elements
 
-The following sections describe the attributes, child elements, and parent element of the `Alignment` element.
+The following sections describe the attributes, child elements, and parent element of the
+`Alignment` element.
 
 ### Attributes
 
@@ -40,20 +43,16 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[TableColumnItem Element (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Defines a label, the width, and the alignment of the data for a column of the table.|
+|[TableColumnItem Element](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Defines a label, the width, and the alignment of the data for a column of the table.|
 
 ## Text Value
 
 Specify one of the following values. (These values are not case-sensitive.)
 
-Left
-Shifts the data displayed in the column to the left. (This is the default if this element is not specified.)
-
-Right
-Shifts the data displayed in the column to the right.
-
-Center
-Centers the data displayed in the column.
+- Left - Shifts the data displayed in the column to the left. (This is the default if this element
+  is not specified.)
+- Right - Shifts the data displayed in the column to the right.
+- Center - Centers the data displayed in the column.
 
 ## Remarks
 
@@ -63,4 +62,4 @@ For more information about the components of a table view, see [Table View](./cr
 
 [Table View](./creating-a-table-view.md)
 
-[TableColumnItem Element (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
+[TableColumnItem Element](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
