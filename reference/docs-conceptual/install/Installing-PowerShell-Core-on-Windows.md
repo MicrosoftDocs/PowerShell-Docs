@@ -34,8 +34,8 @@ Release page. The **Assets** section may be collapsed, so you may need to click 
 
 The MSI file looks like `PowerShell-<version>-win-<os-arch>.msi`. For example:
 
-- `PowerShell-7.1.3-win-x64.msi`
-- `PowerShell-7.1.3-win-x86.msi`
+- `PowerShell-7.1.4-win-x64.msi`
+- `PowerShell-7.1.4-win-x86.msi`
 
 Once downloaded, double-click the installer and follow the prompts.
 
@@ -73,7 +73,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.4-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
@@ -102,10 +102,10 @@ values are changed for each major release.
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
 the following ZIP archives from the [releases][releases] page.
 
-- PowerShell-7.1.3-win-x64.zip
-- PowerShell-7.1.3-win-x86.zip
-- PowerShell-7.1.3-win-arm64.zip
-- PowerShell-7.1.3-win-arm32.zip
+- PowerShell-7.1.4-win-x64.zip
+- PowerShell-7.1.4-win-x86.zip
+- PowerShell-7.1.4-win-arm64.zip
+- PowerShell-7.1.4-win-arm32.zip
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -272,7 +272,7 @@ The following commands can be used to install PowerShell using the published `wi
    ```Output
    Name                      Id                                Version
    ---------------------------------------------------------------------------
-   PowerShell                Microsoft.PowerShell              7.1.3
+   PowerShell                Microsoft.PowerShell              7.1.4
    PowerShell-Preview        Microsoft.PowerShell-Preview      7.2.0-preview.5
    ```
 
