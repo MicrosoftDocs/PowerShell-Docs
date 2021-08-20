@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use a PowerShell profile.
 Locale: en-US
-ms.date: 11/30/2017
+ms.date: 08/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Profiles
@@ -64,6 +64,12 @@ supports the following host-specific profiles.
 
 In PowerShell Help, the "CurrentUser, Current Host" profile is the profile
 most often referred to as "your PowerShell profile".
+
+> [!NOTE]
+> In Windows, the location of the Documents folder can be changed by folder
+> redirection or OneDrive. We don’t recommend redirecting the Documents folder
+> to a network share or including it in OneDrive. Redirecting the folder can
+> cause your profile scripts to fail and modules fail to load.
 
 ## The $PROFILE variable
 
