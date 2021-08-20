@@ -70,8 +70,8 @@ in the Windows Command Shell and the `Setenv` command in UNIX-based
 environments. To change values in the Machine or User scopes, you must use the
 methods of the **System.Environment** class.
 
-To make changes to Machine-scoped variables, must also have permission. If you
-try to change a value without sufficient permission, the command fails and
+To make changes to Machine-scoped variables, you must also have permission. If
+you try to change a value without sufficient permission, the command fails and
 PowerShell displays an error.
 
 You can change the values of variables without using a cmdlet using the
