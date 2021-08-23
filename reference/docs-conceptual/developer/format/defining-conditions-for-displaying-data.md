@@ -6,13 +6,19 @@ description: Defining Conditions for Displaying Data
 ---
 # Defining Conditions for Displaying Data
 
-When defining what data is displayed by a view or a control, you can specify a condition that must exist for the data to be displayed. The condition can be triggered by a specific property, or when a script or property value evaluates to `true`. When the selection condition is met, the definition of the view or control is used.
+When defining what data is displayed by a view or a control, you can specify a condition that must
+exist for the data to be displayed. The condition can be triggered by a specific property, or when a
+script or property value evaluates to `true`. When the selection condition is met, the definition of
+the view or control is used.
 
 ## Specifying a Selection Condition for a Definition
 
-When creating a definition for a view or control, the `EntrySelectedBy` element is used to specify which objects will use the definition or what condition must exist for the definition to be used. The condition is specified by the `SelectionCondition` element.
+When creating a definition for a view or control, the `EntrySelectedBy` element is used to specify
+which objects will use the definition or what condition must exist for the definition to be used.
+The condition is specified by the `SelectionCondition` element.
 
-In the following example, a selection condition is specified for a definition of a table view. In this example, the definition is used only when the specified script is evaluated to `true`.
+In the following example, a selection condition is specified for a definition of a table view. In
+this example, the definition is used only when the specified script is evaluated to `true`.
 
 ```xml
 <TableRowEntry>
@@ -27,15 +33,21 @@ In the following example, a selection condition is specified for a definition of
 
 ```
 
-There is no limit to the number of selection conditions that you can specify for a definition of a view or control. The only requirements are the following:
+There is no limit to the number of selection conditions that you can specify for a definition of a
+view or control. The only requirements are the following:
 
-- The selection condition must specify one property name or script to trigger the condition, but cannot specify both.
+- The selection condition must specify one property name or script to trigger the condition, but
+  cannot specify both.
 
-- The selection condition can specify any number of .NET types or selection sets, but cannot specify both.
+- The selection condition can specify any number of .NET types or selection sets, but cannot specify
+  both.
 
 ## Specifying a Selection Condition for an Item
 
-You can also specify when an item of a list view or control is used by including the `ItemSelectionCondition` element in the item definition. In the following example, a selection condition is specified for an item of a list view. In this example, the item is used only when the script is evaluated to `true`.
+You can also specify when an item of a list view or control is used by including the
+`ItemSelectionCondition` element in the item definition. In the following example, a selection
+condition is specified for an item of a list view. In this example, the item is used only when the
+script is evaluated to `true`.
 
 ```xml
 <ListItem>
@@ -46,7 +58,8 @@ You can also specify when an item of a list view or control is used by including
 
 ```
 
-You can specify only one selection condition for an item. And the condition must specify one property name or script to trigger the condition, but cannot specify both.
+You can specify only one selection condition for an item. And the condition must specify one
+property name or script to trigger the condition, but cannot specify both.
 
 ## XML Elements
 

@@ -1,23 +1,26 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/23/2021
 ms.topic: reference
-title: EnumerateCollection Element for ExpressionBinding for GroupBy (Format)
-description: EnumerateCollection Element for ExpressionBinding for GroupBy (Format)
+title: EnumerateCollection Element for ExpressionBinding for GroupBy
+description: EnumerateCollection Element for ExpressionBinding for GroupBy
 ---
-# EnumerateCollection Element for ExpressionBinding for GroupBy (Format)
+# EnumerateCollection Element for ExpressionBinding for GroupBy
 
-Specifies that the elements of collections are displayed. This element is used when defining how a new group of objects is displayed.
+Specifies that the elements of collections are displayed. This element is used when defining how a
+new group of objects is displayed.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-GroupBy Element for View (Format)
-CustomControl Element for GroupBy (Format)
-CustomEntries Element for CustomControl for GroupBy (Format)
-CustomEntry Element for CustomControl for GroupBy (Format)
-CustomItem Element for CustomEntry for GroupBy (Format)
-ExpressionBinding Element for CustomItem for GroupBy (Format)
-EnumerateCollection Element for ExpressionBinding for GroupBy (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- GroupBy Element
+- CustomControl Element
+- CustomEntries Element
+- CustomEntry Element
+- CustomItem Element
+- ExpressionBinding Element
+- EnumerateCollection Element
 
 ## Syntax
 
@@ -27,7 +30,8 @@ EnumerateCollection Element for ExpressionBinding for GroupBy (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `EnumerateCollection` element.
+The following sections describe attributes, child elements, and the parent element of the
+`EnumerateCollection` element.
 
 ### Attributes
 
@@ -41,12 +45,12 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)|Defines the data that is displayed by the control.|
+|[ExpressionBinding Element for CustomItem for GroupBy](./expressionbinding-element-for-customitem-for-groupby-format.md)|Defines the data that is displayed by the control.|
 
 ## Remarks
 
 ## See Also
 
-[ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)
+[ExpressionBinding Element for CustomItem for GroupBy](./expressionbinding-element-for-customitem-for-groupby-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

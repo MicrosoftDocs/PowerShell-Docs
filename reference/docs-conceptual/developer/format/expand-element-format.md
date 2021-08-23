@@ -1,18 +1,20 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/23/2021
 ms.topic: reference
-title: Expand Element (Format)
-description: Expand Element (Format)
+title: Expand Element
+description: Expand Element
 ---
-# Expand Element (Format)
+# Expand Element
 
 Specifies how the collection object is expanded for this definition.
 
-Configuration Element (Format)
-DefaultSettings Element (Format)
-EnumerableExpansions Element (Format)
-EnumerableExpansion Element (Format)
-Expand Element (Format)
+## Schema
+
+- Configuration Element
+- DefaultSettings Element
+- EnumerableExpansions Element
+- EnumerableExpansion Element
+- Expand Element
 
 ## Syntax
 
@@ -22,7 +24,8 @@ Expand Element (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `Expand` element.
+The following sections describe attributes, child elements, and the parent element of the `Expand`
+element.
 
 ### Attributes
 
@@ -36,7 +39,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)|Defines how specific .NET collection objects are expanded when they are displayed in a view.|
+|[EnumerableExpansion Element](./enumerableexpansion-element-format.md)|Defines how specific .NET collection objects are expanded when they are displayed in a view.|
 
 ## Text Value
 
@@ -46,11 +49,14 @@ Specify one of the following values:
 
 - CoreOnly: Displays only the properties of the collection object.
 
-- Both: Displays the properties of the objects in the collection and the properties of the collection object.
+- Both: Displays the properties of the objects in the collection and the properties of the
+  collection object.
 
 ## Remarks
 
-This element is used to define how collection objects and the objects in the collection are displayed. In this case, a collection object refers to any object that supports the  **System.Collections.ICollection** interface.
+This element is used to define how collection objects and the objects in the collection are
+displayed. In this case, a collection object refers to any object that supports the
+**System.Collections.ICollection** interface.
 
 The default behavior is to display only the properties of the objects in the collection.
 
