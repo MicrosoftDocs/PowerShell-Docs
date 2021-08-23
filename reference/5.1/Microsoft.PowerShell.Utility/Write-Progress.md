@@ -9,10 +9,10 @@ title: Write-Progress
 ---
 # Write-Progress
 
-## SYNOPSIS
+## Synopsis
 Displays a progress bar within a PowerShell command window.
 
-## SYNTAX
+## Syntax
 
 ```
 Write-Progress [-Activity] <String> [[-Status] <String>] [[-Id] <Int32>] [-PercentComplete <Int32>]
@@ -20,13 +20,13 @@ Write-Progress [-Activity] <String> [[-Status] <String>] [[-Id] <Int32>] [-Perce
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Write-Progress` cmdlet displays a progress bar in a PowerShell command window that depicts the
 status of a running command or script. You can select the indicators that the bar reflects and the
 text that appears above and below the progress bar.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Display the progress of a For loop
 
@@ -139,7 +139,7 @@ Step 1
 In this example you can use the **ParentId** parameter to have indented output to show parent/child
 relationships in the progress of each step.
 
-## PARAMETERS
+## Parameters
 
 ### -Activity
 
@@ -302,19 +302,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 `Write-Progress` does not generate any output.
 
-## NOTES
+## Notes
 
 If the progress bar does not appear, check the value of the `$ProgressPreference` variable. If the
 value is set to SilentlyContinue, the progress bar is not displayed. For more information about
@@ -325,7 +325,7 @@ The parameters of the cmdlet correspond to the properties of the
 **System.Management.Automation.ProgressRecord** class. For more information, see
 [ProgressRecord Class](/dotnet/api/system.management.automation.progressrecord).
 
-## RELATED LINKS
+## Related links
 
 [Write-Debug](Write-Debug.md)
 
