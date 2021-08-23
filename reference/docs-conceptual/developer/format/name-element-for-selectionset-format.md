@@ -1,17 +1,19 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/23/2021
 ms.topic: reference
-title: Name Element for SelectionSet (Format)
-description: Name Element for SelectionSet (Format)
+title: Name Element for SelectionSet
+description: Name Element for SelectionSet
 ---
-# Name Element for SelectionSet (Format)
+# Name Element for SelectionSet
 
 Specifies the name used to reference the selection set.
 
-Configuration Element (Format)
-SelectionSets Element (Format)
-SelectionSet Element (Format)
-Name Element of SelectionSet (Format)
+## Schema
+
+- Configuration Element
+- SelectionSets Element
+- SelectionSet Element
+- Name Element
 
 ## Syntax
 
@@ -21,7 +23,8 @@ Name Element of SelectionSet (Format)
 
 ## Attributes and Elements
 
-The following sections describe the attributes, child elements, and parent element of the `Name` Element.
+The following sections describe the attributes, child elements, and parent element of the `Name`
+Element.
 
 ### Attributes
 
@@ -35,19 +38,23 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[SelectionSet Element (Format)](./selectionset-element-format.md)|Defines a single set of .NET objects that can be referenced by the name of the set.|
+|[SelectionSet Element](./selectionset-element-format.md)|Defines a single set of .NET objects that can be referenced by the name of the set.|
 
 ## Text Value
 
-Specify the name to reference the selection set. There are no restrictions as to what characters can be used.
+Specify the name to reference the selection set. There are no restrictions as to what characters can
+be used.
 
 ## Remarks
 
-The name specified here is used in the `SelectionSetName` element. The selection set that can be used by a view, by a definition of a view (views can have multiple definitions), or when specifying a selection condition. For more information about selection sets, see [Defining Sets of Objects](./defining-selection-sets.md).
+The name specified here is used in the `SelectionSetName` element. The selection set that can be
+used by a view, by a definition of a view (views can have multiple definitions), or when specifying
+a selection condition. For more information about selection sets, see [Defining Sets of Objects](./defining-selection-sets.md).
 
 ## Example
 
-This example shows a `SelectionSet` element that defines four .NET types. The name of the selection set is "FileSystemTypes".
+This example shows a `SelectionSet` element that defines four .NET types. The name of the selection
+set is "FileSystemTypes".
 
 ```xml
 <SelectionSets>
@@ -67,6 +74,6 @@ This example shows a `SelectionSet` element that defines four .NET types. The na
 
 [Defining Selection Sets](./defining-selection-sets.md)
 
-[SelectionSet Element (Format)](./selectionset-element-format.md)
+[SelectionSet Element](./selectionset-element-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
