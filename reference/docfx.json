@@ -141,12 +141,6 @@
     },
     "globalMetadata": {
       "ROBOTS": "INDEX, FOLLOW",
-      "_op_documentIdPathDepotMapping": {
-        "reference/docs-conceptual/developer/": { "folder_relative_path_in_docset": "developer/" },
-        "reference/docs-conceptual/dsc/": { "folder_relative_path_in_docset": "dsc/" },
-        "reference/docs-conceptual/gallery/": { "folder_relative_path_in_docset": "gallery/" },
-        "reference/docs-conceptual/wmf/": { "folder_relative_path_in_docset": "wmf/" }
-      },
       "apiPlatform": "powershell",
       "archive_url": "https://docs.microsoft.com/previous-versions/powershell/scripting/overview",
       "breadcrumb_path": "/powershell/scripting/bread/toc.json",
