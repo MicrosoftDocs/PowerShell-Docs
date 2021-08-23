@@ -1,15 +1,18 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/23/2021
 ms.topic: reference
-title: DefaultSettings Element (Format)
-description: DefaultSettings Element (Format)
+title: DefaultSettings Element
+description: DefaultSettings Element
 ---
-# DefaultSettings Element (Format)
+# DefaultSettings Element
 
-Defines common settings that apply to all the views of the formatting file. Common settings include displaying errors, wrapping text in tables, defining how collections are expanded, and more.
+Defines common settings that apply to all the views of the formatting file. Common settings include
+displaying errors, wrapping text in tables, defining how collections are expanded, and more.
 
-Configuration Element (Format)
-DefaultSettings Element (Format)
+## Schema
+
+- Configuration Element
+- DefaultSettings Element
 
 ## Syntax
 
@@ -25,7 +28,8 @@ DefaultSettings Element (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `DefaultSettings` element.
+The following sections describe attributes, child elements, and the parent element of the
+`DefaultSettings` element.
 
 ### Attributes
 
@@ -35,11 +39,11 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[DisplayError Element (Format)](./displayerror-element-format.md)|Optional element.<br /><br /> Specifies that the string #ERR is displayed when an error occurs while displaying a piece of data.|
-|[EnumerableExpansions Element (Format)](./enumerableexpansions-element-format.md)|Optional element.<br /><br /> Defines the different ways that .NET objects are expanded when they are displayed in a view.|
-|[PropertyCountForTable (Format)](./propertycountfortable-element-format.md)|Optional element.<br /><br /> Specifies the minimum number of properties that an object must have to display the object in a table view.|
-|[ShowError Element (Format)](./showerror-element-format.md)|Optional element.<br /><br /> Specifies that the full error record is displayed when an error occurs while displaying a piece of data.|
-|[WrapTables Element (Format)](./wraptables-element-format.md)|Optional element.<br /><br /> Specifies that data in a table is moved to the next line if it does not fit into the width of the column.|
+|[DisplayError Element](./displayerror-element-format.md)|Optional element.<br /><br /> Specifies that the string #ERR is displayed when an error occurs while displaying a piece of data.|
+|[EnumerableExpansions Element](./enumerableexpansions-element-format.md)|Optional element.<br /><br /> Defines the different ways that .NET objects are expanded when they are displayed in a view.|
+|[PropertyCountForTable](./propertycountfortable-element-format.md)|Optional element.<br /><br /> Specifies the minimum number of properties that an object must have to display the object in a table view.|
+|[ShowError Element](./showerror-element-format.md)|Optional element.<br /><br /> Specifies that the full error record is displayed when an error occurs while displaying a piece of data.|
+|[WrapTables Element](./wraptables-element-format.md)|Optional element.<br /><br /> Specifies that data in a table is moved to the next line if it does not fit into the width of the column.|
 
 ### Parent Elements
 
@@ -53,14 +57,14 @@ None.
 
 [Configuration Element](./configuration-element-format.md)
 
-[DisplayError Element (Format)](./displayerror-element-format.md)
+[DisplayError Element](./displayerror-element-format.md)
 
-[EnumerableExpansions Element (Format)](./enumerableexpansions-element-format.md)
+[EnumerableExpansions Element](./enumerableexpansions-element-format.md)
 
-[PropertyCountForTable (Format)](./propertycountfortable-element-format.md)
+[PropertyCountForTable](./propertycountfortable-element-format.md)
 
-[ShowError Element (Format)](./showerror-element-format.md)
+[ShowError Element](./showerror-element-format.md)
 
-[WrapTables Element (Format)](./wraptables-element-format.md)
+[WrapTables Element](./wraptables-element-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
