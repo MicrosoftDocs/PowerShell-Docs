@@ -1,21 +1,24 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/23/2021
 ms.topic: reference
-title: NewLine Element for CustomItem for Controls for Configuration (Format)
-description: NewLine Element for CustomItem for Controls for Configuration (Format)
+title: NewLine Element for CustomItem for Controls for Configuration
+description: NewLine Element for CustomItem for Controls for Configuration
 ---
-# NewLine Element for CustomItem for Controls for Configuration (Format)
+# NewLine Element for CustomItem for Controls for Configuration
 
-Adds a blank line to the display of the control. This element is used when defining a common control that can be used by all the views in the formatting file.
+Adds a blank line to the display of the control. This element is used when defining a common control
+that can be used by all the views in the formatting file.
 
-Configuration Element (Format)
-Controls Element of Configuration (Format)
-Control Element for Controls for Configuration (Format)
-CustomControl Element for Control for Configuration (Format)
-CustomEntries Element for CustomControl for Configuration (Format)
-CustomEntry Element for CustomControl for Controls for Configuration (Format)
-CustomItem Element for CustomEntry for Controls for Configuration
-NewLine Element for CustomItem for Controls for Configuration (Format)
+## Schema
+
+- Configuration Element
+- Controls Element
+- Control Element
+- CustomControl Element
+- CustomEntries Element
+- CustomEntry Element
+- CustomItem Element
+- NewLine Element
 
 ## Syntax
 
@@ -25,7 +28,8 @@ NewLine Element for CustomItem for Controls for Configuration (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `NewLine` element.
+The following sections describe attributes, child elements, and the parent element of the `NewLine`
+element.
 
 ### Attributes
 
