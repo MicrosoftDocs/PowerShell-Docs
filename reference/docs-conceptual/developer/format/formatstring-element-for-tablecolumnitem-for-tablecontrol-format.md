@@ -1,22 +1,24 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/23/2021
 ms.topic: reference
-title: FormatString Element for TableColumnItem for TableControl (Format)
-description: FormatString Element for TableColumnItem for TableControl (Format)
+title: FormatString Element for TableColumnItem for TableControl
+description: FormatString Element for TableColumnItem for TableControl
 ---
-# FormatString Element for TableColumnItem for TableControl (Format)
+# FormatString Element for TableColumnItem for TableControl
 
 Specifies a format pattern that defines how the property or script value of the table is displayed.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-TableControl Element (Format)
-TableRowEntries Element (Format)
-TableRowEntry Element (Format)
-TableColumnItems Element (Format)
-TableColumnItem Element (Format)
-FormatString Element for TableColumnItem (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- TableControl Element
+- TableRowEntries Element
+- TableRowEntry Element
+- TableColumnItems Element
+- TableColumnItem Element
+- FormatString Element
 
 ## Syntax
 
@@ -26,7 +28,8 @@ FormatString Element for TableColumnItem (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `FormatString` element.
+The following sections describe attributes, child elements, and the parent element of the
+`FormatString` element.
 
 ### Attributes
 
@@ -40,21 +43,25 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[TableColumnItem Element (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Defines the property or script whose value is displayed in the column of the row.|
+|[TableColumnItem Element](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Defines the property or script whose value is displayed in the column of the row.|
 
 ## Text Value
 
-Specify the pattern that is used to format the data. For example, this pattern can be used to format the value of any property that is of type [System.Timespan](/dotnet/api/System.TimeSpan): {0:MMM}{0:dd}{0:HH}:{0:mm}.
+Specify the pattern that is used to format the data. For example, this pattern can be used to format
+the value of any property that is of type [System.Timespan](/dotnet/api/System.TimeSpan):
+{0:MMM}{0:dd}{0:HH}:{0:mm}.
 
 ## Remarks
 
-Format strings can be used when creating table views, list views, wide views, or custom views. For more information about formatting a value displayed in a view, see [Formatting Displayed Data](./formatting-displayed-data.md).
+Format strings can be used when creating table views, list views, wide views, or custom views. For
+more information about formatting a value displayed in a view, see [Formatting Displayed Data](./formatting-displayed-data.md).
 
 For more information about the components of a table view, see [Table View](./creating-a-table-view.md).
 
 ## Example
 
-The following example shows how to define a formatting string for the value of the `StartTime` property.
+The following example shows how to define a formatting string for the value of the `StartTime`
+property.
 
 ```xml
 <TableColumnItem>
@@ -69,6 +76,6 @@ The following example shows how to define a formatting string for the value of t
 
 [Formatting Displayed Data](./formatting-displayed-data.md)
 
-[TableColumnItem Element (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
+[TableColumnItem Element](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
