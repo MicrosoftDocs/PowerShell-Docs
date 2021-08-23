@@ -1,23 +1,26 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/23/2021
 ms.topic: reference
-title: FirstLineIndent Element for Frame for GroupBy (Format)
-description: FirstLineIndent Element for Frame for GroupBy (Format)
+title: FirstLineIndent Element for Frame for GroupBy
+description: FirstLineIndent Element for Frame for GroupBy
 ---
-# FirstLineIndent Element for Frame for GroupBy (Format)
+# FirstLineIndent Element for Frame for GroupBy
 
-Specifies how many characters the first line of data is shifted to the right. This element is used when defining how a new group of objects is displayed.
+Specifies how many characters the first line of data is shifted to the right. This element is used
+when defining how a new group of objects is displayed.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-GroupBy Element for View (Format)
-CustomControl Element for GroupBy (Format)
-CustomEntries Element for CustomControl for GroupBy (Format)
-CustomEntry Element for CustomControl for GroupBy (Format)
-CustomItem Element for CustomEntry for GroupBy (Format)
-Frame Element for CustomItem for GroupBy (Format)
-FirstLineIndent Element for Frame for GroupBy (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- GroupBy Element for View
+- CustomControl Element
+- CustomEntries Element
+- CustomEntry Element
+- CustomItem Element
+- Frame Element
+- FirstLineIndent Element
 
 ## Syntax
 
@@ -27,7 +30,8 @@ FirstLineIndent Element for Frame for GroupBy (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and parent element of the `FirstLineIndent` element.
+The following sections describe attributes, child elements, and parent element of the
+`FirstLineIndent` element.
 
 ### Attributes
 
@@ -41,7 +45,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[Frame Element for CustomItem for GroupBy (Format)](./frame-element-for-customitem-for-groupby-format.md)|Defines how the data is displayed, such as shifting the data to the left or right.|
+|[Frame Element for CustomItem for GroupBy](./frame-element-for-customitem-for-groupby-format.md)|Defines how the data is displayed, such as shifting the data to the left or right.|
 
 ## Text Value
 
@@ -53,8 +57,8 @@ If this element is specified, you cannot specify the [FirstLineHanging](./firstl
 
 ## See Also
 
-[FirstLineHanging Element for Frame for GroupBy (Format)](./firstlinehanging-element-for-frame-for-groupby-format.md)
+[FirstLineHanging Element for Frame for GroupBy](./firstlinehanging-element-for-frame-for-groupby-format.md)
 
-[Frame Element for CustomItem for GroupBy (Format)](./frame-element-for-customitem-for-groupby-format.md)
+[Frame Element for CustomItem for GroupBy](./frame-element-for-customitem-for-groupby-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
