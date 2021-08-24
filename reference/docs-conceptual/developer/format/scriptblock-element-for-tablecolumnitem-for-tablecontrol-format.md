@@ -1,22 +1,24 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/24/2021
 ms.topic: reference
-title: ScriptBlock Element for TableColumnItem for TableControl (Format)
-description: ScriptBlock Element for TableColumnItem for TableControl (Format)
+title: ScriptBlock Element for TableColumnItem for TableControl
+description: ScriptBlock Element for TableColumnItem for TableControl
 ---
-# ScriptBlock Element for TableColumnItem for TableControl (Format)
+# ScriptBlock Element for TableColumnItem for TableControl
 
 Specifies the script whose value is displayed in the column of the row.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-TableControl Element (Format)
-TableRowEntries Element (Format)
-TableRowEntry Element (Format)
-TableColumnItems Element (Format)
-TableColumnItem Element (Format)
-ScriptBlock Element for TableColumnItem (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- TableControl Element
+- TableRowEntries Element
+- TableRowEntry Element
+- TableColumnItems Element
+- TableColumnItem Element
+- ScriptBlock Element
 
 ## Syntax
 
@@ -26,7 +28,8 @@ ScriptBlock Element for TableColumnItem (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `ScriptBlock` element.
+The following sections describe attributes, child elements, and the parent element of the
+`ScriptBlock` element.
 
 ### Attributes
 
@@ -40,7 +43,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[TableColumnItem Element (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Defines the property or script whose value is displayed in the column of the row.|
+|[TableColumnItem Element](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Defines the property or script whose value is displayed in the column of the row.|
 
 ## Text Value
 
@@ -54,6 +57,6 @@ For more information about the components of a table view, see [Creating a Table
 
 [Creating a Table View](./creating-a-table-view.md)
 
-[TableColumnItem Element (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
+[TableColumnItem Element](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

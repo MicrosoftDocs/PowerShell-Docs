@@ -1,22 +1,25 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/24/2021
 ms.topic: reference
-title: ScriptBlock Element for ExpressionBinding for CustomControl for View (Format)
-description: ScriptBlock Element for ExpressionBinding for CustomControl for View (Format)
+title: ScriptBlock Element for ExpressionBinding for CustomControl for View
+description: ScriptBlock Element for ExpressionBinding for CustomControl for View
 ---
-# ScriptBlock Element for ExpressionBinding for CustomControl for View (Format)
+# ScriptBlock Element for ExpressionBinding for CustomControl for View
 
-Specifies the script whose value is displayed by the control. This element is used when defining a custom control view.
+Specifies the script whose value is displayed by the control. This element is used when defining a
+custom control view.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-CustomControl Element for View (Format)
-CustomEntries Element for CustomControl for View (Format)
-CustomEntry Element for CustomEntries for CustomControl for View (Format)
-CustomItem Element for CustomEntry for CustomControl for View (Format)
-ExpressionBinding Element for CustomItem for CustomControl for View (Format)
-ScriptBlock Element for ExpressionBinding for CustomCustomControl for View (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- CustomControl Element
+- CustomEntries Element
+- CustomEntry Element
+- CustomItem Element
+- ExpressionBinding Element
+- ScriptBlock Element
 
 ## Syntax
 
@@ -26,7 +29,8 @@ ScriptBlock Element for ExpressionBinding for CustomCustomControl for View (Form
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `ScriptBlock` element.
+The following sections describe attributes, child elements, and the parent element of the
+`ScriptBlock` element.
 
 ### Attributes
 
@@ -40,7 +44,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[ExpressionBinding Element for CustomItem for CustomControl for View (Format)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|Defines the data that is displayed by the control.|
+|[ExpressionBinding Element for CustomItem for CustomControl for View](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|Defines the data that is displayed by the control.|
 
 ## Text Value
 
@@ -50,6 +54,6 @@ Specify the script whose value is displayed by the control.
 
 ## See Also
 
-[ExpressionBinding Element for CustomItem for CustomControl for View (Format)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
+[ExpressionBinding Element for CustomItem for CustomControl for View](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
