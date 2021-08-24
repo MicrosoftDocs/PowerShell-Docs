@@ -54,7 +54,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 ```
 
 > [!NOTE]
-> The remoting registration script restarts WinRM. All existing PSRP sessions are terminate
+> The remoting registration script restarts WinRM. All existing PSRP sessions are terminated
 > immediately after the script is run. If run during a remote session, the script terminates the
 > connection.
 
