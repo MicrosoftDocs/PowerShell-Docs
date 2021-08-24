@@ -1,7 +1,7 @@
 ---
 description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 08/04/2021
+ms.date: 08/24/2021
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -81,7 +81,7 @@ function, script, or script block. When you create a function, you can declare
 the parameters by using the `param` keyword or by adding a comma-separated list
 of parameters in parentheses after the function name.
 
-In an event action, the `$Args` variable contains objects that represent the
+In an event action, the `$args` variable contains objects that represent the
 event arguments of the event that is being processed. This variable is
 populated only within the `Action` block of an event registration command. The
 value of this variable can also be found in the **SourceArgs** property of the
@@ -211,7 +211,8 @@ Since `$input` is an enumerator, accessing any of its properties causes
 to reuse the `$input` properties.
 
 Enumerators contain properties and methods you can use to retrieve loop values
-and change the current loop iteration. For more information, see [Using Enumerators](#using-enumerators).
+and change the current loop iteration. For more information, see
+[Using Enumerators](#using-enumerators).
 
 The `$input` variable is also available to the command specified by the
 `-Command` parameter of `pwsh` when invoked from the command line. The
@@ -256,11 +257,13 @@ regular expressions with the `-match` operator.
 
 For more information about the `-match` operator, see
 [about_Comparison_Operators](about_comparison_operators.md). For more
-information on regular expressions, see [about_Regular_Expressions](about_Regular_Expressions.md).
+information on regular expressions, see
+[about_Regular_Expressions](about_Regular_Expressions.md).
 
 The `$Matches` variable also works in a `switch` statement with the `-Regex`
-parameter. It's populated the same way as the `-match` and `-notmatch` operators.
-For more information about the `switch` statement, see [about_Switch](about_Switch.md).
+parameter. It's populated the same way as the `-match` and `-notmatch`
+operators. For more information about the `switch` statement, see
+[about_Switch](about_Switch.md).
 
 > [!NOTE]
 > When `$Matches` is populated in a session, it retains the matched value until
@@ -455,7 +458,8 @@ property contains the name of the parameter set that's being used, and the
 **ShouldProcess** method adds the **WhatIf** and **Confirm** parameters to the
 cmdlet dynamically.
 
-For more information about the `$PSCmdlet` automatic variable, see [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
+For more information about the `$PSCmdlet` automatic variable, see
+[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
 and [about_Functions_Advanced](about_Functions_Advanced.md).
 
 ### $PSCommandPath
@@ -868,7 +872,7 @@ returns `True` if the enumerator was successfully advanced, `False` if the
 enumerator has passed the end of the collection.
 
 > [!NOTE]
-> The **Boolean** value returned my **MoveNext** is sent to the output stream.
+> The **Boolean** value returned by **MoveNext** is sent to the output stream.
 > You can suppress the output by typecasting it to `[void]` or piping it to
 > [Out-Null](xref:Microsoft.PowerShell.Core.Out-Null).
 >
