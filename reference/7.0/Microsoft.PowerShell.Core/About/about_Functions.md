@@ -53,7 +53,7 @@ see [about_Functions_Advanced](about_Functions_Advanced.md).
 The following are the syntax for a function:
 
 ```Syntax
-function [<scope:>]<name> [([type]$parameter1[,[type]$parameter2])]
+function [<scope:>]<name> [([type]$parameter1,[type]$parameter2)]
 {
   begin {<statement list>}
   process {<statement list>}
@@ -64,7 +64,7 @@ function [<scope:>]<name> [([type]$parameter1[,[type]$parameter2])]
 ```Syntax
 function [<scope:>]<name>
 {
-  param([type]$parameter1 [,[type]$parameter2])
+  param([type]$parameter1 ,[type]$parameter2)
   dynamicparam {<statement list>}
   begin {<statement list>}
   process {<statement list>}
@@ -155,7 +155,7 @@ shown in the following sample syntax:
 
 ```Syntax
 function <name> {
-  param ([type]$parameter1 [,[type]$parameter2])
+  param ([type]$parameter1 ,[type]$parameter2)
   <statement list>
 }
 ```
@@ -164,7 +164,7 @@ You can also define parameters outside the braces without the `Param` keyword,
 as shown in the following sample syntax:
 
 ```Syntax
-function <name> [([type]$parameter1[,[type]$parameter2])] {
+function <name> [([type]$parameter1,[type]$parameter2)] {
   <statement list>
 }
 ```
