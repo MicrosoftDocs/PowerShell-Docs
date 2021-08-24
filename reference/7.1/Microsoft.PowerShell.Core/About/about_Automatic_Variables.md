@@ -623,7 +623,7 @@ returns `True` if the enumerator was successfully advanced, `False` if the
 enumerator has passed the end of the collection.
 
 > [!NOTE]
-> The **Boolean** value returned my **MoveNext** is sent to the output stream.
+> The **Boolean** value returned by **MoveNext** is sent to the output stream.
 > You can suppress the output by typecasting it to `[void]` or piping it to
 > [Out-Null](xref:Microsoft.PowerShell.Core.Out-Null).
 >
