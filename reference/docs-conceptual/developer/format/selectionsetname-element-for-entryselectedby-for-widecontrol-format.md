@@ -1,21 +1,24 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: SelectionSetName Element for EntrySelectedBy for WideControl (Format)
-description: SelectionSetName Element for EntrySelectedBy for WideControl (Format)
+title: SelectionSetName Element for EntrySelectedBy for WideControl
+description: SelectionSetName Element for EntrySelectedBy for WideControl
 ---
-# SelectionSetName Element for EntrySelectedBy for WideControl (Format)
+# SelectionSetName Element for EntrySelectedBy for WideControl
 
-Specifies a set of .NET objects for the definition. The definition is used whenever one of these objects is displayed.
+Specifies a set of .NET objects for the definition. The definition is used whenever one of these
+objects is displayed.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-WideControl Element (Format)
-WideEntries Element (Format)
-WideEntry Element (Format)
-EntrySelectedBy Element for WideEntry (Format)
-SelectionSetName Element for EntrySelectedBy for WideEntry (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- WideControl Element
+- WideEntries Element
+- WideEntry Element
+- EntrySelectedBy Element
+- SelectionSetName Element
 
 ## Syntax
 
@@ -26,7 +29,8 @@ SelectionSetName Element for EntrySelectedBy for WideEntry (Format)
 
 ## Attributes and Elements
 
-The following sections describe the attributes, child elements, and the parent element of the `SelectionSetName` element.
+The following sections describe the attributes, child elements, and the parent element of the
+`SelectionSetName` element.
 
 ### Attributes
 
@@ -40,7 +44,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)|Defines the .NET types that use this wide entry or the condition that must exist for this entry to be used.|
+|[EntrySelectedBy Element for WideEntry](./entryselectedby-element-for-wideentry-format.md)|Defines the .NET types that use this wide entry or the condition that must exist for this entry to be used.|
 
 ## Text Value
 
@@ -50,7 +54,9 @@ Specify the name of the selection set.
 
 Each definition must specify one type name, selection set, or selection condition.
 
-Selection sets are typically used when you want to define a group of objects that are used in multiple views. For example, you might want to create a table view and a list view for the same set of objects. For more information about defining selection sets, see [Defining Sets of Objects for a View](./defining-selection-sets.md).
+Selection sets are typically used when you want to define a group of objects that are used in
+multiple views. For example, you might want to create a table view and a list view for the same set
+of objects. For more information about defining selection sets, see [Defining Sets of Objects for a View](./defining-selection-sets.md).
 
 For more information about other components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
 
@@ -60,6 +66,6 @@ For more information about other components of a wide view, see [Creating a Wide
 
 [Defining Selection Sets](./defining-selection-sets.md)
 
-[EntrySelectedBy Element for WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)
+[EntrySelectedBy Element for WideEntry](./entryselectedby-element-for-wideentry-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

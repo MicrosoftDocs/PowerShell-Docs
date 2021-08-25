@@ -1,21 +1,24 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: SelectionSetName Element for EntrySelectedBy for CustomControl for View (Format)
-description: SelectionSetName Element for EntrySelectedBy for CustomControl for View (Format)
+title: SelectionSetName Element for EntrySelectedBy for CustomControl for View
+description: SelectionSetName Element for EntrySelectedBy for CustomControl for View
 ---
-# SelectionSetName Element for EntrySelectedBy for CustomControl for View (Format)
+# SelectionSetName Element for EntrySelectedBy for CustomControl for View
 
-Specifies a set of .NET objects for the list entry. There is no limit to the number of selection sets that can be specified for an entry.
+Specifies a set of .NET objects for the list entry. There is no limit to the number of selection
+sets that can be specified for an entry.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-CustomControl Element (Format)
-CustomEntries Element for CustomControl for View (Format)
-CustomEntry Element for CustomEntries for View (Format)
-EntrySelectedBy Element for CustomEntry for View (Format)
-SelectionSetName Element for EntrySelectedBy for CustomEntry (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- CustomControl Element
+- CustomEntries Element
+- CustomEntry Element
+- EntrySelectedBy Element
+- SelectionSetName Element
 
 ## Syntax
 
@@ -25,7 +28,8 @@ SelectionSetName Element for EntrySelectedBy for CustomEntry (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `SelectionSetName` element.
+The following sections describe attributes, child elements, and the parent element of the
+`SelectionSetName` element.
 
 ### Attributes
 
@@ -39,7 +43,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Defines the .NET types that use this custom entry or the condition that must exist for this entry to be used.|
+|[EntrySelectedBy Element for CustomEntry for View](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Defines the .NET types that use this custom entry or the condition that must exist for this entry to be used.|
 
 ## Text Value
 
@@ -47,15 +51,18 @@ Specify the name of the selection set.
 
 ## Remarks
 
-Each custom control entry must have at least one type name, selection set, or selection condition defined.
+Each custom control entry must have at least one type name, selection set, or selection condition
+defined.
 
-Selection sets are typically used when you want to define a group of objects that are used in multiple views. For example, you might want to create a table view and a list view for the same set of objects. For more information about defining selection sets, see [Defining Selection Sets](./defining-selection-sets.md).
+Selection sets are typically used when you want to define a group of objects that are used in
+multiple views. For example, you might want to create a table view and a list view for the same set
+of objects. For more information about defining selection sets, see [Defining Selection Sets](./defining-selection-sets.md).
 
 For more information about the components of a custom control view, see [Creating Custom Controls](./creating-custom-controls.md).
 
 ## See Also
 
-[EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
+[EntrySelectedBy Element for CustomEntry for View](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
 
 [Custom Control View](./creating-custom-controls.md)
 
