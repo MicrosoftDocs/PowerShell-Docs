@@ -1,23 +1,26 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/24/2021
 ms.topic: reference
-title: ScriptBlock Element for ItemSelectionCondition for ListControl (Format)
-description: ScriptBlock Element for ItemSelectionCondition for ListControl (Format)
+title: ScriptBlock Element for ItemSelectionCondition for ListControl
+description: ScriptBlock Element for ItemSelectionCondition for ListControl
 ---
-# ScriptBlock Element for ItemSelectionCondition for ListControl (Format)
+# ScriptBlock Element for ItemSelectionCondition for ListControl
 
-Specifies the script that triggers the condition. When this script is evaluated to `true`, the condition is met, and the list item is used. This element is used when defining a list view.
+Specifies the script that triggers the condition. When this script is evaluated to `true`, the
+condition is met, and the list item is used. This element is used when defining a list view.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-ListControl Element (Format)
-ListEntries Element for ListControl (Format)
-ListEntry Element for ListEntries for ListControl (Format)
-ListItems Element for ListEntry for ListControl (Format)
-ListItem Element for ListItems for List Control (Format)
-ItemSelectionCondition Element for ListItem for ListControl (Format)
-ScriptBlock Element for ItemSelectionCondition for ListControl  (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- ListControl Element
+- ListEntries Element for ListControl
+- ListEntry Element for ListEntries for ListControl
+- ListItems Element for ListEntry for ListControl
+- ListItem Element for ListItems for List Control
+- ItemSelectionCondition Element for ListItem for ListControl
+- ScriptBlock Element for ItemSelectionCondition for ListControl
 
 ## Syntax
 
@@ -27,7 +30,8 @@ ScriptBlock Element for ItemSelectionCondition for ListControl  (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent elements of the `ScriptBlock` element.
+The following sections describe attributes, child elements, and the parent elements of the
+`ScriptBlock` element.
 
 ### Attributes
 
@@ -41,7 +45,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[ItemSelectionCondition Element for ListItem for ListControl (Format)](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)|Defines the condition that must exist for this list item to be used.|
+|[ItemSelectionCondition Element for ListItem for ListControl](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)|Defines the condition that must exist for this list item to be used.|
 
 ## Text Value
 
@@ -49,7 +53,8 @@ Specify the script that is evaluated.
 
 ## Remarks
 
-If this element is used, you cannot specify the `PropertyName` element when defining the selection condition.
+If this element is used, you cannot specify the `PropertyName` element when defining the selection
+condition.
 
 ## See Also
 
