@@ -1,21 +1,23 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/24/2021
 ms.topic: reference
-title: ScriptBlock Element for WideItem for WideControl (Format)
-description: ScriptBlock Element for WideItem for WideControl (Format)
+title: ScriptBlock Element for WideItem for WideControl
+description: ScriptBlock Element for WideItem for WideControl
 ---
-# ScriptBlock Element for WideItem for WideControl (Format)
+# ScriptBlock Element for WideItem for WideControl
 
 Specifies the script whose value is displayed in the wide view.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-WideControl Element (Format)
-WideEntries Element (Format)
-WideEntry Element (Format)
-WideItem Element (Format)
-ScriptBlock Element for WideItem (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- WideControl Element
+- WideEntries Element
+- WideEntry Element
+- WideItem Element
+- ScriptBlock Element
 
 ## Syntax
 
@@ -25,7 +27,8 @@ ScriptBlock Element for WideItem (Format)
 
 ## Attributes and Elements
 
-The following sections describe the attributes, child elements, and parent element of the `ScriptBlock` element.
+The following sections describe the attributes, child elements, and parent element of the
+`ScriptBlock` element.
 
 ### Attributes
 
@@ -39,7 +42,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[WideItem Element (Format)](./wideitem-element-for-widecontrol-format.md)|Defines the property or script block whose value is displayed in the wide view.|
+|[WideItem Element](./wideitem-element-for-widecontrol-format.md)|Defines the property or script block whose value is displayed in the wide view.|
 
 ## Text Value
 
@@ -61,7 +64,7 @@ This example shows a `WideItem` element that defines a script whose value is dis
 
 ## See Also
 
-[WideItem Element (Format)](./wideitem-element-for-widecontrol-format.md)
+[WideItem Element](./wideitem-element-for-widecontrol-format.md)
 
 [Creating a Wide View](./creating-a-wide-view.md)
 
