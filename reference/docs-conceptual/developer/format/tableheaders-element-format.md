@@ -1,17 +1,19 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: TableHeaders Element (Format)
-description: TableHeaders Element (Format)
+title: TableHeaders Element
+description: TableHeaders Element
 ---
-# TableHeaders Element (Format)
+# TableHeaders Element
 
 Defines the headers for the columns of a table.
 
-ViewDefinitions Element (Format)
-View Element (Format)
-TableControl Element (Format)
-TableHeaders Element for TableControl (Format)
+## Schema
+
+- ViewDefinitions Element
+- View Element
+- TableControl Element
+- TableHeaders Element for TableControl
 
 ## Syntax
 
@@ -24,7 +26,10 @@ TableHeaders Element for TableControl (Format)
 
 ## Attributes and Elements
 
-The following sections describe the attributes, child elements, and parent elements of the `TableHeaders` element. There must be a child element for each property of the object that is to be displayed. The column header information is displayed in the order that the child elements are specified.
+The following sections describe the attributes, child elements, and parent elements of the
+`TableHeaders` element. There must be a child element for each property of the object that is to be
+displayed. The column header information is displayed in the order that the child elements are
+specified.
 
 ### Attributes
 
@@ -34,13 +39,13 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[TableColumnHeader Element (Format)](./tablecolumnheader-element-format.md)|Optional element.<br /><br /> Defines the label, the width, and the alignment of the data for a column of a table view.|
+|[TableColumnHeader Element](./tablecolumnheader-element-format.md)|Optional element.<br /><br /> Defines the label, the width, and the alignment of the data for a column of a table view.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[TableControl Element (Format)](./tablecontrol-element-format.md)|Defines a table format for a view.|
+|[TableControl Element](./tablecontrol-element-format.md)|Defines a table format for a view.|
 
 ## Remarks
 
@@ -69,8 +74,8 @@ This example shows a `TableHeaders` element that defines two column headers.
 
 [Creating a Table View](./creating-a-table-view.md)
 
-[TableColumnHeader Element (Format)](./tablecolumnheader-element-format.md)
+[TableColumnHeader Element](./tablecolumnheader-element-format.md)
 
-[TableControl Element (Format)](./tablecontrol-element-format.md)
+[TableControl Element](./tablecontrol-element-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

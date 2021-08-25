@@ -1,22 +1,24 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
-description: TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
+title: TypeName Element for SelectionCondition for EntrySelectedBy for ListControl
+description: TypeName Element for SelectionCondition for EntrySelectedBy for ListControl
 ---
-# TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
+# TypeName Element for SelectionCondition for EntrySelectedBy for ListControl
 
 Specifies a .NET type that triggers the condition. When this type is present, the list entry is used.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-ListControl Element (Format)
-ListEntries Element for ListControl (Format)
-ListEntry Element for ListEntries for ListControl (Format)
-EntrySelectedBy Element for ListEntry for ListControl (Format)
-SelectionCondition Element for EntrySelectedBy for ListControl (Format)
-TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- ListControl Element
+- ListEntries Element
+- ListEntry Element
+- EntrySelectedBy Element
+- SelectionCondition Element
+- TypeName Element
 
 ## Syntax
 
@@ -26,7 +28,8 @@ TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (For
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `TypeName` element.
+The following sections describe attributes, child elements, and the parent element of the `TypeName`
+element.
 
 ### Attributes
 
@@ -40,7 +43,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[SelectionCondition Element for EntrySelectedBy for ListControl (Format)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Defines the condition that must exist for this list entry to be used.|
+|[SelectionCondition Element for EntrySelectedBy for ListControl](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Defines the condition that must exist for this list entry to be used.|
 
 ## Text Value
 
@@ -48,7 +51,8 @@ Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryI
 
 ## Remarks
 
-The selection condition can specify any number of .NET types or selection sets, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
+The selection condition can specify any number of .NET types or selection sets, but cannot specify
+both. For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
 
 For more information about other the components of a list view, see [Creating a List View](./creating-a-list-view.md).
 
@@ -58,6 +62,6 @@ For more information about other the components of a list view, see [Creating a 
 
 [Defining Conditions for When Data Is Displayed](./defining-conditions-for-displaying-data.md)
 
-[SelectionCondition Element for EntrySelectedBy for ListControl (Format)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionCondition Element for EntrySelectedBy for ListControl](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

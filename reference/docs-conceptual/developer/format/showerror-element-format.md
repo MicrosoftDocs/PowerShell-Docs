@@ -1,16 +1,19 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: ShowError Element (Format)
-description: ShowError Element (Format)
+title: ShowError Element
+description: ShowError Element
 ---
-# ShowError Element (Format)
+# ShowError Element
 
-Specifies that the full error record is displayed when an error occurs while displaying a piece of data.
+Specifies that the full error record is displayed when an error occurs while displaying a piece of
+data.
 
-Configuration Element (Format)
-DefaultSettings Element (Format)
-ShowError Element (Format)
+## Schema
+
+- Configuration Element
+- DefaultSettings Element
+- ShowError Element
 
 ## Syntax
 
@@ -20,7 +23,8 @@ ShowError Element (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `ShowError` element. The default value for this element is `false`.
+The following sections describe attributes, child elements, and the parent element of the
+`ShowError` element. The default value for this element is `false`.
 
 ### Attributes
 
@@ -34,7 +38,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[DefaultSettings Element (Format)](./defaultsettings-element-format.md)|Defines common settings that apply to all the views of the formatting file.|
+|[DefaultSettings Element](./defaultsettings-element-format.md)|Defines common settings that apply to all the views of the formatting file.|
 
 ## Remarks
 

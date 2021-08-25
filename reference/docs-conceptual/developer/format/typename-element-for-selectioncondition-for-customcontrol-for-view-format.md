@@ -1,22 +1,25 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: TypeName Element for SelectionCondition for CustomControl for View  (Format)
-description: TypeName Element for SelectionCondition for CustomControl for View  (Format)
+title: TypeName Element for SelectionCondition for CustomControl for View
+description: TypeName Element for SelectionCondition for CustomControl for View
 ---
-# TypeName Element for SelectionCondition for CustomControl for View  (Format)
+# TypeName Element for SelectionCondition for CustomControl for View
 
-Specifies a .NET type that triggers the condition. This element is used when defining a custom control view.
+Specifies a .NET type that triggers the condition. This element is used when defining a custom
+control view.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-CustomControl Element for View (Format)
-CustomEntries Element for CustomControl for View (Format)
-CustomEntry Element for CustomEntries for CustomControl for View (Format)
-CustomItem Element for CustomEntry for CustomControl for View (Format)
-SelectionCondition Element for EntrySelectedBy for CustomControl for View (Format)
-TypeName Element for SelectionCondition for CustomControl for View  (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- CustomControl Element
+- CustomEntries Element
+- CustomEntry Element
+- CustomItem Element
+- SelectionCondition Element
+- TypeName Element
 
 ## Syntax
 
@@ -27,7 +30,8 @@ TypeName Element for SelectionCondition for CustomControl for View  (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `TypeName` Element.
+The following sections describe attributes, child elements, and the parent element of the `TypeName`
+Element.
 
 ### Attributes
 
@@ -41,7 +45,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[SelectionCondition Element for EntrySelectedBy for CustomControl for View (Format)](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|Defines a condition that must exist for the control definition to be used.|
+|[SelectionCondition Element for EntrySelectedBy for CustomControl for View](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|Defines a condition that must exist for the control definition to be used.|
 
 ## Text Value
 
@@ -51,6 +55,6 @@ Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryI
 
 ## See Also
 
-[SelectionCondition Element for EntrySelectedBy for CustomControl for View (Format)](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
+[SelectionCondition Element for EntrySelectedBy for CustomControl for View](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

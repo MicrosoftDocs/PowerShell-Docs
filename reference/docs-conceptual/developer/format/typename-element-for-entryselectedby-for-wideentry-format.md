@@ -1,21 +1,23 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: TypeName Element for EntrySelectedBy for WideEntry (Format)
-description: TypeName Element for EntrySelectedBy for WideEntry (Format)
+title: TypeName Element for EntrySelectedBy for WideEntry
+description: TypeName Element for EntrySelectedBy for WideEntry
 ---
-# TypeName Element for EntrySelectedBy for WideEntry (Format)
+# TypeName Element for EntrySelectedBy for WideEntry
 
 Specifies a .NET type for the definition. The definition is used whenever this object is displayed.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-WideControl Element (Format)
-WideEntries Element (Format)
-WideEntry Element (Format)
-EntrySelectedBy Element for WideEntry (Format)
-TypeName Element for WideEntry (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- WideControl Element
+- WideEntries Element
+- WideEntry Element
+- EntrySelectedBy Element
+- TypeName Element
 
 ## Syntax
 
@@ -25,7 +27,8 @@ TypeName Element for WideEntry (Format)
 
 ## Attributes and Elements
 
-The following sections describe the attributes, child elements, and the parent element of the `TypeName` element.
+The following sections describe the attributes, child elements, and the parent element of the
+`TypeName` element.
 
 ### Attributes
 
@@ -39,7 +42,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)|Defines the .NET types that use this wide entry or the condition that must exist for this entry to be used.|
+|[EntrySelectedBy Element for WideEntry](./entryselectedby-element-for-wideentry-format.md)|Defines the .NET types that use this wide entry or the condition that must exist for this entry to be used.|
 
 ## Text Value
 
@@ -47,7 +50,8 @@ Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryI
 
 ## Remarks
 
-Each wide entry must specify one or more .NET types, a selection set, or the selection condition that must exist for the definition to be used.
+Each wide entry must specify one or more .NET types, a selection set, or the selection condition
+that must exist for the definition to be used.
 
 For more information about other components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
 
@@ -55,6 +59,6 @@ For more information about other components of a wide view, see [Creating a Wide
 
 [Creating a Wide View](./creating-a-wide-view.md)
 
-[EntrySelectedBy Element for WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)
+[EntrySelectedBy Element for WideEntry](./entryselectedby-element-for-wideentry-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

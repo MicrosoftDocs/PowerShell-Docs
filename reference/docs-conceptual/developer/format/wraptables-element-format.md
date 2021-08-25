@@ -1,16 +1,19 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: WrapTables Element (Format)
-description: WrapTables Element (Format)
+title: WrapTables Element
+description: WrapTables Element
 ---
-# WrapTables Element (Format)
+# WrapTables Element
 
-Specifies that data in a table cell is moved to the next line if the data is longer than the width of the column.
+Specifies that data in a table cell is moved to the next line if the data is longer than the width
+of the column.
 
-Configuration Element (Format)
-DefaultSettings Element (Format)
-WrapTables Element (Format)
+## Schema
+
+- Configuration Element
+- DefaultSettings Element
+- WrapTables Element
 
 ## Syntax
 
@@ -20,7 +23,8 @@ WrapTables Element (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `WrapTables` element.
+The following sections describe attributes, child elements, and the parent element of the
+`WrapTables` element.
 
 ### Attributes
 
@@ -34,7 +38,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[DefaultSettings Element (Format)](./defaultsettings-element-format.md)|Defines common settings that apply to all the views of the formatting file.|
+|[DefaultSettings Element](./defaultsettings-element-format.md)|Defines common settings that apply to all the views of the formatting file.|
 
 ## Remarks
 

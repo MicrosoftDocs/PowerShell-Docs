@@ -1,21 +1,24 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: TypeName Element for EntrySelectedBy for ListControl (Format)
-description: TypeName Element for EntrySelectedBy for ListControl (Format)
+title: TypeName Element for EntrySelectedBy for ListControl
+description: TypeName Element for EntrySelectedBy for ListControl
 ---
-# TypeName Element for EntrySelectedBy for ListControl (Format)
+# TypeName Element for EntrySelectedBy for ListControl
 
-Specifies a .NET type that uses this entry of the list view. There is no limit to the number of types that can be specified for a list entry.
+Specifies a .NET type that uses this entry of the list view. There is no limit to the number of
+types that can be specified for a list entry.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-ListControl Element (Format)
-ListEntries Element (Format)
-ListEntry Element (Format)
-EntrySelectedBy Element for ListEntry (Format)
-TypeName Element for EntrySelectedBy for ListControl (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- ListControl Element
+- ListEntries Element
+- ListEntry Element
+- EntrySelectedBy
+- TypeName Element
 
 ## Syntax
 
@@ -25,7 +28,8 @@ TypeName Element for EntrySelectedBy for ListControl (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `TypeName` element.
+The following sections describe attributes, child elements, and the parent element of the `TypeName`
+element.
 
 ### Attributes
 
@@ -39,7 +43,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|Defines the .NET types that use this list entry or the condition that must exist for this entry to be used.|
+|[EntrySelectedBy Element for ListEntry](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|Defines the .NET types that use this list entry or the condition that must exist for this entry to be used.|
 
 ## Text Value
 
@@ -68,8 +72,8 @@ The following example shows how to specify a selection set for an entry of a lis
 
 [Creating a List View](./creating-a-list-view.md)
 
-[EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
+[EntrySelectedBy Element for ListEntry](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
 
-[SelectionSetName Element for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionSetName Element for EntrySelectedBy for ListEntry](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
