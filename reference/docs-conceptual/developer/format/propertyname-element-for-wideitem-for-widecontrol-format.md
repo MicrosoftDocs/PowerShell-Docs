@@ -1,21 +1,21 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/24/2021
 ms.topic: reference
-title: PropertyName Element for WideItem for WideControl (Format)
-description: PropertyName Element for WideItem for WideControl (Format)
+title: PropertyName Element for WideItem for WideControl
+description: PropertyName Element for WideItem for WideControl
 ---
-# PropertyName Element for WideItem for WideControl (Format)
+# PropertyName Element for WideItem for WideControl
 
 Specifies the property of the object whose value is displayed in the wide view.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-WideControl Element (Format)
-WideEntries Element (Format)
-WideEntry Element (Format)
-WideItem Element (Format)
-PropertyName Element for WideItem (Format)
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- WideControl Element
+- WideEntries Element
+- WideEntry Element
+- WideItem Element
+- PropertyName Element
 
 ## Syntax
 
@@ -25,7 +25,8 @@ PropertyName Element for WideItem (Format)
 
 ## Attributes and Elements
 
-The following sections describe the attributes, child elements, and parent element of the `PropertyName` element.
+The following sections describe the attributes, child elements, and parent element of the
+`PropertyName` element.
 
 ### Attributes
 
@@ -39,7 +40,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[WideItem Element (Format)](./wideitem-element-for-widecontrol-format.md)|Defines the property or script whose value is displayed in the wide view.|
+|[WideItem Element](./wideitem-element-for-widecontrol-format.md)|Defines the property or script whose value is displayed in the wide view.|
 
 ## Text Value
 
@@ -51,7 +52,8 @@ For more information about the components of a wide view, see [Creating a Wide V
 
 ## Example
 
-This example shows a wide view that displays the value of the ProcessName property of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.
+This example shows a wide view that displays the value of the ProcessName property of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)
+object.
 
 ```xml
 View>
@@ -74,7 +76,7 @@ View>
 
 ## See Also
 
-[WideItem Element (Format)](./wideitem-element-for-widecontrol-format.md)
+[WideItem Element](./wideitem-element-for-widecontrol-format.md)
 
 [Creating a Wide View](./creating-a-wide-view.md)
 

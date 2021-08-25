@@ -1,16 +1,18 @@
 ---
-ms.date: 08/17/2021
+ms.date: 08/24/2021
 ms.topic: reference
-title: PropertyCountForTable Element (Format)
-description: PropertyCountForTable Element (Format)
+title: PropertyCountForTable Element
+description: PropertyCountForTable Element
 ---
-# PropertyCountForTable Element (Format)
+# PropertyCountForTable Element
 
 Optional element. Specifies the minimum number of properties that an object must have to display the
 object in a table view.
 
-- DefaultSettings Element (Format)
-- PropertyCountForTable Element (Format)
+## Schema
+
+- DefaultSettings Element
+- PropertyCountForTable Element
 
 ## Syntax
 
@@ -35,7 +37,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[DefaultSettings Element (Format)](./defaultsettings-element-format.md)|Defines common settings that apply to all the views of the formatting file.|
+|[DefaultSettings Element](./defaultsettings-element-format.md)|Defines common settings that apply to all the views of the formatting file.|
 
 ## Remarks
 
