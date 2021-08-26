@@ -448,11 +448,12 @@ By default, `Start-Process` launches a process _asynchronously_. Control is inst
 PowerShell even if the new process is still running.
 
 - On the local system, the launched process lives on independent from the calling process.
-- On a remote system, the new process is terminated when the remote session ends. Therefore, cannot
-  use `Start-Process` in a remote session expecting the launched process to outlive the session.
+- On a remote system, the new process is terminated when the remote session ends, immediately
+  following the `Start-Process` command. Therefore, cannot use `Start-Process` in a remote session
+  expecting the launched process to outlive the session.
 
-If you do need to use `Start-Process` in a remote session, invoke it with the **Wait**. Or you could
-use other methods to create a new process on the remote system.
+If you do need to use `Start-Process` in a remote session, invoke it with the **Wait** parameter. Or
+you could use other methods to create a new process on the remote system.
 
 When using the **Wait** parameter, `Start-Process` waits for the process tree (the process and all
 its descendants) to exit before returning control. This is different than the behavior of the
