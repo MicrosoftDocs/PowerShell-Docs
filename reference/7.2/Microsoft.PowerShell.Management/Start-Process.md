@@ -515,7 +515,7 @@ PowerShell even if the new process is still running.
 
 - On the local system, the launched process lives on independent from the calling process.
 - On a remote system, the new process is terminated when the remote session ends, immediately
-  following the `Start-Process` command. Therefore, cannot use `Start-Process` in a remote session
+  following the `Start-Process` command. Therefore, you cannot use `Start-Process` in a remote session
   expecting the launched process to outlive the session.
 
 If you do need to use `Start-Process` in a remote session, invoke it with the **Wait** parameter. Or
