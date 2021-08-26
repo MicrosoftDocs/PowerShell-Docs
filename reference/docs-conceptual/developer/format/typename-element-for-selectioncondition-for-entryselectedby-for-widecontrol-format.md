@@ -1,22 +1,25 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
-description: TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
+title: TypeName Element for SelectionCondition for EntrySelectedBy for WideControl
+description: TypeName Element for SelectionCondition for EntrySelectedBy for WideControl
 ---
-# TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
+# TypeName Element for SelectionCondition for EntrySelectedBy for WideControl
 
-Specifies a .NET type that triggers the condition. When this type is present, the definition is used.
+Specifies a .NET type that triggers the condition. When this type is present, the definition is
+used.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-WideControl Element (Format)
-WideEntries Element (Format)
-WideEntry Element (Format)
-EntrySelectedBy Element for WideEntry (Format)
-SelectionCondition Element for EntrySelectedBy for WideEntry (Format)
-TypeName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- WideControl Element
+- WideEntries Element
+- WideEntry Element
+- EntrySelectedBy Element
+- SelectionCondition Element
+- TypeName Element
 
 ## Syntax
 
@@ -26,7 +29,8 @@ TypeName Element for SelectionCondition for EntrySelectedBy for WideEntry (Forma
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `TypeName` element.
+The following sections describe attributes, child elements, and the parent element of the `TypeName`
+element.
 
 ### Attributes
 
@@ -40,7 +44,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[SelectionCondition Element for EntrySelectedBy for WideEntry (Format)](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|Defines the condition that must exist for this wide entry to be used.|
+|[SelectionCondition Element for EntrySelectedBy for WideEntry](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|Defines the condition that must exist for this wide entry to be used.|
 
 ## Text Value
 
@@ -48,7 +52,8 @@ Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryI
 
 ## Remarks
 
-The selection condition can specify a .NET type or a selection set, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
+The selection condition can specify a .NET type or a selection set, but cannot specify both. For
+more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
 
 For more information about other components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
 
@@ -58,8 +63,8 @@ For more information about other components of a wide view, see [Creating a Wide
 
 [Defining Conditions for When Data Is Displayed](./defining-conditions-for-displaying-data.md)
 
-[SelectionCondition Element for EntrySelectedBy for WideEntry (Format)](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)
+[SelectionCondition Element for EntrySelectedBy for WideEntry](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)
 
-[SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
+[SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

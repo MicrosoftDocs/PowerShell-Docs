@@ -1,22 +1,26 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: Text Element for CustomItem for GroupBy (Format)
-description: Text Element for CustomItem for GroupBy (Format)
+title: Text Element for CustomItem for GroupBy
+description: Text Element for CustomItem for GroupBy
 ---
-# Text Element for CustomItem for GroupBy (Format)
+# Text Element for CustomItem for GroupBy
 
-Specifies text that is added to the data that is displayed by the control, such as a label, brackets to enclose the data, and spaces to indent the data. This element is used when defining how a new group of objects is displayed.
+Specifies text that is added to the data that is displayed by the control, such as a label, brackets
+to enclose the data, and spaces to indent the data. This element is used when defining how a new
+group of objects is displayed.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-GroupBy Element for View (Format)
-CustomControl Element for GroupBy (Format)
-CustomEntries Element for CustomControl for GroupBy (Format)
-CustomEntry Element for CustomControl for GroupBy (Format)
-CustomItem Element for CustomEntry for GroupBy (Format)
-Text Element for CustomItem for GroupBy (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- GroupBy Element
+- CustomControl Element
+- CustomEntries Element
+- CustomEntry Element
+- CustomItem Element
+- Text Element
 
 ## Syntax
 
@@ -26,7 +30,8 @@ Text Element for CustomItem for GroupBy (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `Text` element.
+The following sections describe attributes, child elements, and the parent element of the `Text`
+element.
 
 ### Attributes
 
@@ -40,7 +45,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)|Defines a control for the custom control view.|
+|[CustomItem Element for CustomEntry for GroupBy](./customitem-element-for-customentry-for-groupby-format.md)|Defines a control for the custom control view.|
 
 ## Text Value
 
@@ -50,6 +55,6 @@ Specify the text of a control for data that you want to display.
 
 ## See Also
 
-[CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)
+[CustomItem Element for CustomEntry for GroupBy](./customitem-element-for-customentry-for-groupby-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

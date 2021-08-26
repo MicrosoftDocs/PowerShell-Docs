@@ -1,17 +1,19 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: Types Element for SelectionSet (Format)
-description: Types Element for SelectionSet (Format)
+title: Types Element for SelectionSet
+description: Types Element for SelectionSet
 ---
-# Types Element for SelectionSet (Format)
+# Types Element for SelectionSet
 
 Defines the .NET objects that are in the selection set.
 
-Configuration Element (Format)
-SelectionSets Element (Format)
-SelectionSet Element (Format)
-Types Element (Format)
+## Schema
+
+- Configuration Element
+- SelectionSets Element
+- SelectionSet Element
+- Types Element
 
 ## Syntax
 
@@ -24,7 +26,9 @@ Types Element (Format)
 
 ## Attributes and Elements
 
-The following sections describe the attributes, child elements, and the parent element of the `Types` element. There must be at least one child element, but there is no maximum limit to the number of child elements that can be added.
+The following sections describe the attributes, child elements, and the parent element of the
+`Types` element. There must be at least one child element, but there is no maximum limit to the
+number of child elements that can be added.
 
 ### Attributes
 
@@ -34,17 +38,19 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[TypeName Element of Types (Format)](./typename-element-for-types-format.md)|Required element.<br /><br /> Specifies the .NET object that belongs to the selection set.|
+|[TypeName Element of Types](./typename-element-for-types-format.md)|Required element.<br /><br /> Specifies the .NET object that belongs to the selection set.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[SelectionSet Element (Format)](./selectionset-element-format.md)|Defines a set of .NET objects that can be referenced by the name of the set.|
+|[SelectionSet Element](./selectionset-element-format.md)|Defines a set of .NET objects that can be referenced by the name of the set.|
 
 ## Remarks
 
-The objects defined by this element make up a selection set that can be used by a view, by a definition of a view (views can have multiple definitions), or when specifying a selection condition.  For more information about selection sets, see [Defining Sets of Objects](./defining-selection-sets.md).
+The objects defined by this element make up a selection set that can be used by a view, by a
+definition of a view (views can have multiple definitions), or when specifying a selection
+condition. For more information about selection sets, see [Defining Sets of Objects](./defining-selection-sets.md).
 
 ## Example
 
@@ -68,8 +74,8 @@ This example shows a `SelectionSet` element that defines four .NET types.
 
 [Defining Sets of Objects](./defining-selection-sets.md)
 
-[SelectionSet Element (Format)](./selectionset-element-format.md)
+[SelectionSet Element](./selectionset-element-format.md)
 
-[TypeName Element of Types (Format)](./typename-element-for-types-format.md)
+[TypeName Element of Types](./typename-element-for-types-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

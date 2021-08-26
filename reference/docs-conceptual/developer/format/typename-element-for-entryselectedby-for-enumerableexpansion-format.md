@@ -1,19 +1,22 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)
-description: TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)
+title: TypeName Element for EntrySelectedBy for EnumerableExpansion
+description: TypeName Element for EntrySelectedBy for EnumerableExpansion
 ---
-# TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)
+# TypeName Element for EntrySelectedBy for EnumerableExpansion
 
-Specifies a .NET type that is expanded by this definition. This element is used when defining a default settings.
+Specifies a .NET type that is expanded by this definition. This element is used when defining a
+default settings.
 
-Configuration Element (Format)
-DefaultSettings Element (Format)
-EnumerableExpansions Element (Format)
-EnumerableExpansion Element (Format)
-EntrySelectedBy Element for EnumerableExpansion (Format)
-TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)
+## Schema
+
+- Configuration Element
+- DefaultSettings Element
+- EnumerableExpansions Element
+- EnumerableExpansion Element
+- EntrySelectedBy Element
+- TypeName Element
 
 ## Syntax
 
@@ -24,7 +27,8 @@ TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `TypeName` element.
+The following sections describe attributes, child elements, and the parent element of the `TypeName`
+element.
 
 ### Attributes
 
@@ -38,7 +42,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Defines the .NET types that use this definition or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for EnumerableExpansion](./entryselectedby-element-for-enumerableexpansion-format.md)|Defines the .NET types that use this definition or the condition that must exist for this definition to be used.|
 
 ## Text Value
 
@@ -48,6 +52,6 @@ Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryI
 
 ## See Also
 
-[EntrySelectedBy Element for EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)
+[EntrySelectedBy Element for EnumerableExpansion](./entryselectedby-element-for-enumerableexpansion-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

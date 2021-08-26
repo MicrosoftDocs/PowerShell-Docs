@@ -1,18 +1,20 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: TypeName Element for ViewSelectedBy (Format)
-description: TypeName Element for ViewSelectedBy (Format)
+title: TypeName Element for ViewSelectedBy
+description: TypeName Element for ViewSelectedBy
 ---
-# TypeName Element for ViewSelectedBy (Format)
+# TypeName Element for ViewSelectedBy
 
 Specifies a .NET object that is displayed by the view.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-ViewSelectedBy Element (Format)
-TypeName Element for ViewSelectedBy (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- ViewSelectedBy Element
+- TypeName Element
 
 ## Syntax
 
@@ -22,7 +24,8 @@ TypeName Element for ViewSelectedBy (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent elements of the `TypeName` element.
+The following sections describe attributes, child elements, and the parent elements of the
+`TypeName` element.
 
 ### Attributes
 
@@ -36,7 +39,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[ViewSelectedBy Element (Format)](./viewselectedby-element-format.md)|Defines the .NET objects that are displayed by the view.|
+|[ViewSelectedBy Element](./viewselectedby-element-format.md)|Defines the .NET objects that are displayed by the view.|
 
 ## Text Value
 
@@ -44,11 +47,14 @@ Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryI
 
 ## Remarks
 
-For more information about how this element is used in different views, see [Creating a Table View](./creating-a-table-view.md), [Creating a List View](./creating-a-list-view.md), [Creating a Wide View](./creating-a-wide-view.md), and [Custom View Components](./creating-custom-controls.md).
+For more information about how this element is used in different views, see [Creating a Table View](./creating-a-table-view.md),
+[Creating a List View](./creating-a-list-view.md), [Creating a Wide View](./creating-a-wide-view.md),
+and [Custom View Components](./creating-custom-controls.md).
 
 ## Example
 
-The following example shows how to specify the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object for a list view. The same schema is used for table, wide, and custom views.
+The following example shows how to specify the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)
+object for a list view. The same schema is used for table, wide, and custom views.
 
 ```xml
 <View>
@@ -70,6 +76,6 @@ The following example shows how to specify the [System.Serviceprocess.Servicecon
 
 [Creating Custom Controls](./creating-custom-controls.md)
 
-[ViewSelectedBy Element (Format)](./viewselectedby-element-format.md)
+[ViewSelectedBy Element](./viewselectedby-element-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
