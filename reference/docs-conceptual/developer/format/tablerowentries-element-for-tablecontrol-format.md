@@ -1,18 +1,20 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: TableRowEntries Element for TableControl (Format)
-description: TableRowEntries Element for TableControl (Format)
+title: TableRowEntries Element
+description: TableRowEntries Element
 ---
-# TableRowEntries Element for TableControl (Format)
+# TableRowEntries Element
 
 Defines the rows of the table.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-TableControl Element (Format)
-TableRowEntries Element for TableControl (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- TableControl Element
+- TableRowEntries Element
 
 ## Syntax
 
@@ -24,7 +26,8 @@ TableRowEntries Element for TableControl (Format)
 
 ## Attributes and Elements
 
-The following sections describe the attributes, child elements, and parent element of the `TableRowEntries` element.
+The following sections describe the attributes, child elements, and parent element of the
+`TableRowEntries` element.
 
 ### Attributes
 
@@ -34,23 +37,26 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[TableRowEntry Element for TableRowEntries for TableControl (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Required element.<br /><br /> Defines the data that is displayed in a row of the table.|
+|[TableRowEntry Element for TableRowEntries for TableControl](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Required element.<br /><br /> Defines the data that is displayed in a row of the table.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[TableControl Element (Format)](./tablecontrol-element-format.md)|Defines a table format for a view.|
+|[TableControl Element](./tablecontrol-element-format.md)|Defines a table format for a view.|
 
 ## Remarks
 
-You must specify one or more `TableRowEntry` elements for the table view. There is no maximum limit to the number of `TableRowEntry` elements that can be added nor is their order significant.
+You must specify one or more `TableRowEntry` elements for the table view. There is no maximum limit
+to the number of `TableRowEntry` elements that can be added nor is their order significant.
 
 For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
 ## Example
 
-The following example shows a `TableRowEntries` element that defines a row that displays the values of two properties of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.
+The following example shows a `TableRowEntries` element that defines a row that displays the values
+of two properties of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)
+object.
 
 ```xml
 <TableRowEntries>
@@ -75,8 +81,8 @@ The following example shows a `TableRowEntries` element that defines a row that 
 
 [Creating a Table View](./creating-a-table-view.md)
 
-[TableControl Element (Format)](./tablecontrol-element-format.md)
+[TableControl Element](./tablecontrol-element-format.md)
 
-[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
+[TableRowEntry Element](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

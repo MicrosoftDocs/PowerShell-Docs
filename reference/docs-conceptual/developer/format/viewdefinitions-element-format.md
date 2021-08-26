@@ -1,15 +1,18 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: ViewDefinitions Element (Format)
-description: ViewDefinitions Element (Format)
+title: ViewDefinitions Element
+description: ViewDefinitions Element
 ---
-# ViewDefinitions Element (Format)
+# ViewDefinitions Element
 
-Defines the views used to display .NET objects. These views can display the properties and script values of an object  in a table format, list format, wide format, and custom control format.
+Defines the views used to display .NET objects. These views can display the properties and script
+values of an object in a table format, list format, wide format, and custom control format.
 
-Configuration Element (Format)
-ViewDefinitions (Format XML) Element
+## Schema
+
+- Configuration Element
+- ViewDefinitions
 
 ## Syntax
 
@@ -22,7 +25,9 @@ ViewDefinitions (Format XML) Element
 
 ## Attributes and Elements
 
-The following sections describe the attributes, child elements, and parent element of the `ViewDefinitions` element. There is no limit to the number of views that can be defined in a formatting file, and they can be added in any order.
+The following sections describe the attributes, child elements, and parent element of the
+`ViewDefinitions` element. There is no limit to the number of views that can be defined in a
+formatting file, and they can be added in any order.
 
 ### Attributes
 
@@ -32,13 +37,13 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[View Element (Format)](./view-element-format.md)|Defines a view that is used to display one or more .NET objects.|
+|[View Element](./view-element-format.md)|Defines a view that is used to display one or more .NET objects.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[Configuration Element (Format)](./configuration-element-format.md)|Represents the top-level element of a formatting file.|
+|[Configuration Element](./configuration-element-format.md)|Represents the top-level element of a formatting file.|
 
 ## Remarks
 
@@ -54,7 +59,8 @@ For more information about the components of the different types of views, see t
 
 ## Example
 
-This example shows a `ViewDefinitions` element that contains the parent elements for a table view and a list view.
+This example shows a `ViewDefinitions` element that contains the parent elements for a table view
+and a list view.
 
 ```xml
 <Configuration>
@@ -71,9 +77,9 @@ This example shows a `ViewDefinitions` element that contains the parent elements
 
 ## See Also
 
-[Configuration Element (Format)](./configuration-element-format.md)
+[Configuration Element](./configuration-element-format.md)
 
-[View Element (Format)](./view-element-format.md)
+[View Element](./view-element-format.md)
 
 [Creating a Table View](./creating-a-table-view.md)
 

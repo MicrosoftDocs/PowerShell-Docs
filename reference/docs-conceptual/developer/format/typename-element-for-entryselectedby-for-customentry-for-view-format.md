@@ -1,21 +1,24 @@
 ---
-ms.date: 09/13/2016
+ms.date: 08/25/2021
 ms.topic: reference
-title: TypeName Element for EntrySelectedBy for CustomEntry for View (Format)
-description: TypeName Element for EntrySelectedBy for CustomEntry for View (Format)
+title: TypeName Element for EntrySelectedBy for CustomEntry for View
+description: TypeName Element for EntrySelectedBy for CustomEntry for View
 ---
-# TypeName Element for EntrySelectedBy for CustomEntry for View (Format)
+# TypeName Element for EntrySelectedBy for CustomEntry for View
 
-Specifies a .NET type that uses this definition of the custom control view. There is no limit to the number of types that can be specified for a definition.
+Specifies a .NET type that uses this definition of the custom control view. There is no limit to the
+number of types that can be specified for a definition.
 
-Configuration Element (Format)
-ViewDefinitions Element (Format)
-View Element (Format)
-CustomControl Element (Format)
-CustomEntries Element for CustomControl for View (Format)
-CustomEntry Element for CustomEntries for View (Format)
-EntrySelectedBy Element for CustomEntry for View (Format)
-TypeName Element for EntrySelectedBy for CustomEntry for View (Format)
+## Schema
+
+- Configuration Element
+- ViewDefinitions Element
+- View Element
+- CustomControl Element
+- CustomEntries Element
+- CustomEntry Element
+- EntrySelectedBy Element
+- TypeName Element
 
 ## Syntax
 
@@ -25,7 +28,8 @@ TypeName Element for EntrySelectedBy for CustomEntry for View (Format)
 
 ## Attributes and Elements
 
-The following sections describe attributes, child elements, and the parent element of the `TypeName` element.
+The following sections describe attributes, child elements, and the parent element of the `TypeName`
+element.
 
 ### Attributes
 
@@ -39,7 +43,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Defines the .NET types that use this custom control view definition or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for CustomEntry for View](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Defines the .NET types that use this custom control view definition or the condition that must exist for this definition to be used.|
 
 ## Text Value
 
@@ -47,7 +51,8 @@ Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryI
 
 ## Remarks
 
-Each custom control view definition must have at least one type name, selection set, or selection condition defined.
+Each custom control view definition must have at least one type name, selection set, or selection
+condition defined.
 
 For more information about the components of a custom control view, see [Creating Custom Controls](./creating-custom-controls.md).
 
@@ -55,6 +60,6 @@ For more information about the components of a custom control view, see [Creatin
 
 [Creating Custom Controls](./creating-custom-controls.md)
 
-[EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
+[EntrySelectedBy Element for CustomEntry for View](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
