@@ -20,6 +20,7 @@ can be defined in a formatting file.
 ```xml
 <View>
   <Name>Friendly name of view.</Name>
+  <OutOfBand />
   <ViewSelectedBy>...</ViewSelectedBy>
   <Controls>...</Controls>
   <GroupBy>...</GroupBy>
@@ -46,10 +47,11 @@ None.
 |Element|Description|
 |-------------|-----------------|
 |[Controls Element for View](./controls-element-for-view-format.md)|Optional element.<br /><br /> Defines a set of controls that can be referenced by their name from within the view.|
-|[CustomControl Element](./customcontrol-element-for-groupby-format.md)|Optional element.<br /><br /> Defines a custom control format for the view.|
+|[CustomControl Element](./customcontrol-element-for-view-format.md)|Optional element.<br /><br /> Defines a custom control format for the view.|
 |[GroupBy Element for View](./groupby-element-for-view-format.md)|Optional element.<br /><br /> Defines how the members of the .NET objects are grouped.|
 |[ListControl Element](./listcontrol-element-format.md)|Optional element.<br /><br /> Defines a list format for the view.|
 |[Name Element for View](./name-element-for-view-format.md)|Required element.<br /><br /> Specifies the name used to reference the view.|
+|[OutOfBand](./outofband-element-for-view-format.md)|Optional element<br /><br />When OutOfBand is true, the view applies regardless of previous objects that may have selected a different view.|
 |[TableControl Element](./tablecontrol-element-format.md)|Optional element.<br /><br /> Defines a table format for the view.|
 |[ViewSelectedBy Element for View](./viewselectedby-element-format.md)|Required element.<br /><br /> Defines the .NET objects that this view displays.|
 |[WideControl Element](./widecontrol-element-format.md)|Optional element.<br /><br /> Defines a wide (single value) list format for the view.|
