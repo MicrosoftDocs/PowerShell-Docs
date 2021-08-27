@@ -1263,7 +1263,7 @@ items:
           href: developer/format/list-view-groupby.md
       - name: Format Schema XML Reference
         href: developer/format/format-schema-xml-reference.md
-                items:
+        items:
         - name: Configuration Element
           href: developer/format/configuration-element-format.md
           items:
