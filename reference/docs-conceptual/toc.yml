@@ -1452,6 +1452,8 @@ items:
           href: developer/format/newline-element-for-customitem-for-customcontrol-for-view-format.md
         - name: NewLine Element for CustomItem for GroupBy (Format)
           href: developer/format/newline-element-for-customitem-for-groupby-format.md
+        - name: OutOfBand Element for View (Format)
+          href: developer/format/outofband-element-for-view-format.md
         - name: PropertyCountForTable Element (Format)
           href: developer/format/propertycountfortable-element-format.md
         - name: PropertyName Element for ExpressionBinding for Controls for Configuration (Format)
