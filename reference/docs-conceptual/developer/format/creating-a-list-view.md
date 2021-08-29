@@ -268,7 +268,7 @@ In the following example, the `ToString` method is called to format the value of
 ```xml
 <ListItem>
   <ScriptBlock>
-    [String}::Format("(0,10) (1,8)", .LastWriteTime.ToString("d"),
+    [String]::Format("(0,10) (1,8)", .LastWriteTime.ToString("d"),
     $_.LastWriteTime.Totring("t"))
   </ScriptBlock>
 </ListItem>
