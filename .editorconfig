@@ -5,6 +5,23 @@ root = true
 [*]
 charset = utf-8
 indent_style = space
-indent_size = 2
+indent_size = 4
 trim_trailing_whitespace = true
-insert_final_newline = false
+insert_final_newline = true
+
+# Markdown
+[*.md]
+indent_size = 2
+
+# Source code
+[*.{cs,ps1,psd1,psm1}]
+indent_size = 4
+
+# Xml project files
+[*.{xml,ps1xml}]
+indent_size = 2
+
+# Data serialization
+[*.{json,yaml,yml}]
+indent_size = 2
+
