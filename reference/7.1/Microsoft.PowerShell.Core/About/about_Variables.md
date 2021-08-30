@@ -1,7 +1,7 @@
 ---
 description: Describes how variables store values that can be used in PowerShell.
 Locale: en-US
-ms.date: 03/30/2021
+ms.date: 08/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Variables
@@ -153,8 +153,8 @@ Remove-Variable -Name MyVariable
 Remove-Item -Path Variable:\MyVariable
 ```
 
-It is also possible to values to multiple variables with one statement. The
-following examples assigns the same value to multiple variables:
+It is also possible to assign values to multiple variables with one statement.
+The following examples assigns the same value to multiple variables:
 
 ```powershell
 $a = $b = $c = 0
