@@ -1297,7 +1297,7 @@ items:
                         - name: PropertyName Element for ItemSelectionCondition for Controls for Configuration
                           href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
                         - name: ScriptBlock Element for ItemSelectionCondition for Controls for Configuration
-                          href: developer/format/scriptblock-element-for-itemSelectioncondition-for-controls-for-configuration-format.md
+                          href: developer/format/scriptblock-element-for-itemSeclectioncondition-for-controls-for-configuration-format.md
                       - name: PropertyName Element for ExpressionBinding for Controls for Configuration
                         href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
                       - name: ScriptBlock Element for ExpressionBinding for Controls for Configuration
