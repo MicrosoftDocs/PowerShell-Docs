@@ -1271,72 +1271,70 @@ items:
           items:
           - name: Control Element for Controls for Configuration
             href: developer/format/control-element-for-controls-for-configuration-format.md
+          - name: CustomControl Element for Control for Controls for Configuration
+            href: developer/format/customcontrol-element-for-control-for-controls-for-configuration-format.md
             items:
-            - name: CustomControl Element for Control for Controls for Configuration
-              href: developer/format/customcontrol-element-for-control-for-controls-for-configuration-format.md
+            - name: CustomEntries Element for CustomControl for Controls for Configuration
+              href: developer/format/customentries-element-for-customcontrol-for-controls-for-configuration-format.md
+            - name: CustomEntry Element for CustomControl for Controls for Configuration
+              href: developer/format/customentry-element-for-customcontrol-for-controls-for-configuration-format.md
               items:
-              - name: CustomEntries Element for CustomControl for Controls for Configuration
-                href: developer/format/customentries-element-for-customcontrol-for-controls-for-configuration-format.md
+              - name: CustomItem Element for CustomEntry for Controls for Configuration
+                href: developer/format/customitem-element-for-customentry-for-controls-for-configuration-format.md
                 items:
-                - name: CustomEntry Element for CustomControl for Controls for Configuration
-                  href: developer/format/customentry-element-for-customcontrol-for-controls-for-configuration-format.md
+                - name: ExpressionBinding Element for CustomItem for Controls for Configuration
+                  href: developer/format/expressionbinding-element-for-customitem-for-controls-for-configuration-format.md
                   items:
-                  - name: CustomItem Element for CustomEntry for Controls for Configuration
-                    href: developer/format/customitem-element-for-customentry-for-controls-for-configuration-format.md
+                  - name: CustomControlName Element for ExpressionBinding for Controls for Configuration
+                    href: developer/format/customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md
+                  - name: EnumerateCollection Element for ExpressionBinding for Controls for Configuration
+                    href: developer/format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
+                  - name: ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration
+                    href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
                     items:
-                    - name: ExpressionBinding Element for CustomItem for Controls for Configuration
-                      href: developer/format/expressionbinding-element-for-customitem-for-controls-for-configuration-format.md
-                      items:
-                      - name: CustomControlName Element for ExpressionBinding for Controls for Configuration
-                        href: developer/format/customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md
-                      - name: EnumerateCollection Element for ExpressionBinding for Controls for Configuration
-                        href: developer/format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
-                      - name: ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration
-                        href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
-                        items:
-                        - name: PropertyName Element for ItemSelectionCondition for Controls for Configuration
-                          href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
-                        - name: ScriptBlock Element for ItemSelectionCondition for Controls for Configuration
-                          href: developer/format/scriptblock-element-for-itemSeclectioncondition-for-controls-for-configuration-format.md
-                      - name: PropertyName Element for ExpressionBinding for Controls for Configuration
-                        href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
-                      - name: ScriptBlock Element for ExpressionBinding for Controls for Configuration
-                        href: developer/format/scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md
-                    - name: Frame Element for CustomItem for Controls for Configuration
-                      href: developer/format/frame-element-for-customitem-for-controls-for-configuration-format.md
-                      items:
-                      - name: FirstLineHanging Element for Frame for Controls for Configuration
-                        href: developer/format/firstlinehanging-element-for-frame-for-controls-for-configuration-format.md
-                      - name: FirstLineIndent Element for Frame for Controls for Configuration
-                        href: developer/format/firstlineindent-element-for-frame-for-controls-for-configuration-format.md
-                      - name: LeftIndent Element for Frame for Controls for Configuration
-                        href: developer/format/leftindent-element-for-frame-for-controls-for-configuration-format.md
-                      - name: RightIndent Element for Frame for Controls for Configuration
-                        href: developer/format/rightindent-element-for-frame-for-controls-for-configuration-format.md
-                    - name: NewLine Element for CustomItem for Controls for Configuration
-                      href: developer/format/newline-element-for-customitem-for-controls-for-configuration-format.md
-                    - name: Text Element for CustomItem for Controls for Configuration
-                      href: developer/format/text-element-for-customitem-for-controls-for-configuration-format.md
-                  - name: EntrySelectedBy Element for CustomEntry for Controls for Configuration
-                    href: developer/format/entryselectedby-element-for-customentry-for-controls-for-configuration-format.md
-                    items:
-                    - name: SelectionCondition Element for EntrySelectedBy for Controls for Configuration
-                      href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
-                      items:
-                      - name: PropertyName Element for SelectionCondition for Controls for Configuration
-                        href: developer/format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
-                      - name: ScriptBlock Element for SelectionCondition for Controls for Configuration
-                        href: developer/format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
-                      - name: SelectionSetName Element for SelectionCondition for Controls for Configuration
-                        href: developer/format/selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md
-                      - name: TypeName Element for SelectionCondition for Controls for Configuration
-                        href: developer/format/typename-element-for-selectioncondition-for-controls-for-configuration-format.md
-                    - name: SelectionSetName Element for EntrySelectedBy for Controls for Configuration
-                      href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
-                    - name: TypeName Element for EntrySelectedBy for Controls for Configuration
-                      href: developer/format/typename-element-for-entryselectedby-for-controls-for-configuration-format.md
-            - name: Name Element for Control for Controls for Configuration
-              href: developer/format/name-element-for-control-for-controls-for-configuration-format.md
+                    - name: PropertyName Element for ItemSelectionCondition for Controls for Configuration
+                      href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
+                    - name: ScriptBlock Element for ItemSelectionCondition for Controls for Configuration
+                      href: developer/format/scriptblock-element-for-itemSelectioncondition-for-controls-for-configuration-format.md
+                  - name: PropertyName Element for ExpressionBinding for Controls for Configuration
+                    href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
+                  - name: ScriptBlock Element for ExpressionBinding for Controls for Configuration
+                    href: developer/format/scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md
+                - name: Frame Element for CustomItem for Controls for Configuration
+                  href: developer/format/frame-element-for-customitem-for-controls-for-configuration-format.md
+                  items:
+                  - name: FirstLineHanging Element for Frame for Controls for Configuration
+                    href: developer/format/firstlinehanging-element-for-frame-for-controls-for-configuration-format.md
+                  - name: FirstLineIndent Element for Frame for Controls for Configuration
+                    href: developer/format/firstlineindent-element-for-frame-for-controls-for-configuration-format.md
+                  - name: LeftIndent Element for Frame for Controls for Configuration
+                    href: developer/format/leftindent-element-for-frame-for-controls-for-configuration-format.md
+                  - name: RightIndent Element for Frame for Controls for Configuration
+                    href: developer/format/rightindent-element-for-frame-for-controls-for-configuration-format.md
+                - name: NewLine Element for CustomItem for Controls for Configuration
+                  href: developer/format/newline-element-for-customitem-for-controls-for-configuration-format.md
+                - name: Text Element for CustomItem for Controls for Configuration
+                  href: developer/format/text-element-for-customitem-for-controls-for-configuration-format.md
+              - name: EntrySelectedBy Element for CustomEntry for Controls for Configuration
+                href: developer/format/entryselectedby-element-for-customentry-for-controls-for-configuration-format.md
+                items:
+                - name: SelectionCondition Element for EntrySelectedBy for Controls for Configuration
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
+                  items:
+                  - name: PropertyName Element for SelectionCondition for Controls for Configuration
+                    href: developer/format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
+                  - name: ScriptBlock Element for SelectionCondition for Controls for Configuration
+                    href: developer/format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
+                  - name: SelectionSetName Element for SelectionCondition for Controls for Configuration
+                    href: developer/format/selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md
+                  - name: TypeName Element for SelectionCondition for Controls for Configuration
+                    href: developer/format/typename-element-for-selectioncondition-for-controls-for-configuration-format.md
+                - name: SelectionSetName Element for EntrySelectedBy for Controls for Configuration
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
+                - name: TypeName Element for EntrySelectedBy for Controls for Configuration
+                  href: developer/format/typename-element-for-entryselectedby-for-controls-for-configuration-format.md
+          - name: Name Element for Control for Controls for Configuration
+            href: developer/format/name-element-for-control-for-controls-for-configuration-format.md
         - name: DefaultSettings Element
           href: developer/format/defaultsettings-element-format.md
           items:
@@ -1347,27 +1345,26 @@ items:
             items:
             - name: EnumerableExpansion Element
               href: developer/format/enumerableexpansion-element-format.md
+            - name: EntrySelectedBy Element for EnumerableExpansion
+              href: developer/format/entryselectedby-element-for-enumerableexpansion-format.md
               items:
-              - name: EntrySelectedBy Element for EnumerableExpansion
-                href: developer/format/entryselectedby-element-for-enumerableexpansion-format.md
+              - name: SelectionCondition Element for EntrySelectedBy for EnumerableExpansion
+                href: developer/format/selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md
                 items:
-                - name: SelectionCondition Element for EntrySelectedBy for EnumerableExpansion
-                  href: developer/format/selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md
-                  items:
-                  - name: PropertyName Element for SelectionCondition for Controls for View
-                    href: developer/format/propertyname-element-for-selectioncondition-for-controls-for-view-format.md
-                  - name: ScriptBlock Element for SelectionCondition for Controls for View
-                    href: developer/format/scriptblock-element-for-selectioncondition-for-controls-for-view-format.md
-                  - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
-                    href: developer/format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
-                  - name: TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
-                    href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-                - name: SelectionSetName Element for EntrySelectedBy for EnumerableExpansion
-                  href: developer/format/selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md
-                - name: TypeName Element for EntrySelectedBy for EnumerableExpansion
-                  href: developer/format/typename-element-for-entryselectedby-for-enumerableexpansion-format.md
-              - name: Expand Element
-                href: developer/format/expand-element-format.md
+                - name: PropertyName Element for SelectionCondition for Controls for View
+                  href: developer/format/propertyname-element-for-selectioncondition-for-controls-for-view-format.md
+                - name: ScriptBlock Element for SelectionCondition for Controls for View
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-controls-for-view-format.md
+                - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
+                - name: TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+              - name: SelectionSetName Element for EntrySelectedBy for EnumerableExpansion
+                href: developer/format/selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md
+              - name: TypeName Element for EntrySelectedBy for EnumerableExpansion
+                href: developer/format/typename-element-for-entryselectedby-for-enumerableexpansion-format.md
+            - name: Expand Element for EnumerableExpansion
+              href: developer/format/expand-element-format.md
           - name: PropertyCountForTable Element
             href: developer/format/propertycountfortable-element-format.md
           - name: ShowError Element
@@ -1392,372 +1389,363 @@ items:
           - name: View Element
             href: developer/format/view-element-format.md
             items:
-            - name: Controls Element for View
-              href: developer/format/controls-element-for-view-format.md
+          - name: Controls Element for View
+            href: developer/format/controls-element-for-view-format.md
+            items:
+            - name: Control Element for Controls for View
+              href: developer/format/control-element-for-controls-for-view-format.md
+            - name: CustomControl Element for Control for Controls for View
+              href: developer/format/customcontrol-element-for-control-for-controls-for-view-format.md
               items:
-              - name: Control Element for Controls for View
-                href: developer/format/control-element-for-controls-for-view-format.md
+              - name: CustomEntries Element for CustomControl for Controls for View
+                href: developer/format/customentries-element-for-customcontrol-for-controls-for-view-format.md
+              - name: CustomEntry Element for CustomEntries for Controls for View
+                href: developer/format/customentry-element-for-customentries-for-controls-for-view-format.md
                 items:
-                - name: CustomControl Element for Control for Controls for View
-                  href: developer/format/customcontrol-element-for-control-for-controls-for-view-format.md
+                - name: CustomItem Element for CustomEntry for Controls for View
+                  href: developer/format/customitem-element-for-customentry-for-controls-for-view-format.md
                   items:
-                  - name: CustomEntries Element for CustomControl for Controls for View
-                    href: developer/format/customentries-element-for-customcontrol-for-controls-for-view-format.md
+                  - name: ExpressionBinding Element for CustomItem for Controls for View
+                    href: developer/format/expressionbinding-element-for-customitem-for-controls-for-view-format.md
                     items:
-                    - name: CustomEntry Element for CustomEntries for Controls for View
-                      href: developer/format/customentry-element-for-customentries-for-controls-for-view-format.md
+                    - name: CustomControlName Element for ExpressionBinding for Controls for View
+                      href: developer/format/customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md
+                    - name: EnumerateCollection Element for ExpressionBinding for Controls for View
+                      href: developer/format/enumeratecollection-element-for-expressionbinding-for-controls-for-view-format.md
+                    - name: ItemSelectionCondition Element for ExpressionBinding for Controls for View
+                      href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
                       items:
-                      - name: CustomItem Element for CustomEntry for Controls for View
-                        href: developer/format/customitem-element-for-customentry-for-controls-for-view-format.md
-                        items:
-                        - name: ExpressionBinding Element for CustomItem for Controls for View
-                          href: developer/format/expressionbinding-element-for-customitem-for-controls-for-view-format.md
-                          items:
-                          - name: CustomControlName Element for ExpressionBinding for Controls for View
-                            href: developer/format/customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md
-                          - name: EnumerateCollection Element for ExpressionBinding for Controls for View
-                            href: developer/format/enumeratecollection-element-for-expressionbinding-for-controls-for-view-format.md
-                          - name: ItemSelectionCondition Element for ExpressionBinding for Controls for View
-                            href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
-                            items:
-                            - name: PropertyName Element for ItemSelectionCondition for Controls for View
-                              href: developer/format/propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md
-                            - name: ScriptBlock Element for ItemSelectionCondition for Controls for View
-                              href: developer/format/scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md
-                          - name: PropertyName Element for ExpressionBinding for Controls for View
-                            href: developer/format/propertyname-element-for-expressionbinding-for-controls-for-view-format.md
-                          - name: ScriptBlock Element for ExpressionBinding for Controls for View
-                            href: developer/format/scriptblock-element-for-expressionbinding-for-controls-for-view-format.md
-                        - name: Frame Element for CustomItem for Controls for View
-                          href: developer/format/frame-element-for-customitem-for-controls-for-view-format.md
-                          items:
-                          - name: FirstLineHanging Element for Frame for Controls for View
-                            href: developer/format/firstlinehanging-element-for-frame-for-controls-for-view-format.md
-                          - name: FirstLineIndent Element for Frame for Controls for View
-                            href: developer/format/firstlineindent-element-for-frame-for-controls-for-view-format.md
-                          - name: LeftIndent Element for Frame for Controls for View
-                            href: developer/format/leftindent-element-for-frame-for-controls-for-view-format.md
-                          - name: RightIndent Element for Frame for Controls for View
-                            href: developer/format/rightindent-element-for-frame-for-controls-for-view-format.md
-                        - name: NewLine Element for CustomItem for Controls for View
-                          href: developer/format/newline-element-for-customitem-for-controls-for-view-format.md
-                        - name: Text Element for CustomItem for Controls for View
-                          href: developer/format/text-element-for-customitem-for-controls-for-view-format.md
-                      - name: EntrySelectedBy Element for CustomEntry for Controls for View
-                        href: developer/format/entryselectedby-element-for-customentry-for-controls-for-view-format.md
-                        items:
-                        - name: SelectionCondition Element for EntrySelectedBy for Controls for View
-                          href: developer/format/selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md
-                          items:
-                          - name: PropertyName Element for SelectionCondition for CustomControl for View
-                            href: developer/format/propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md
-                          - name: ScriptBlock Element for SelectionCondition for CustomControl for View
-                            href: developer/format/scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md
-                          - name: SelectionSetName Element for SelectionCondition for Controls for View
-                            href: developer/format/selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md
-                          - name: TypeName Element for SelectionCondition for Controls for View
-                            href: developer/format/typename-element-for-selectioncondition-for-controls-for-view-format.md
-                        - name: SelectionSetName Element for EntrySelectedBy for Controls for View
-                          href: developer/format/selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md
-                        - name: TypeName Element for EntrySelectedBy for Controls for View
-                          href: developer/format/typename-element-for-entryselectedby-for-controls-for-view-format.md
-                - name: Name Element for Control for Controls for View
-                  href: developer/format/name-element-for-control-for-controls-for-view-format.md
-            - name: CustomControl Element for View
-              href: developer/format/customcontrol-element-for-view-format.md
+                      - name: PropertyName Element for ItemSelectionCondition for Controls for View
+                        href: developer/format/propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md
+                      - name: ScriptBlock Element for ItemSelectionCondition for Controls for View
+                        href: developer/format/scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md
+                    - name: PropertyName Element for ExpressionBinding for Controls for View
+                      href: developer/format/propertyname-element-for-expressionbinding-for-controls-for-view-format.md
+                    - name: ScriptBlock Element for ExpressionBinding for Controls for View
+                      href: developer/format/scriptblock-element-for-expressionbinding-for-controls-for-view-format.md
+                  - name: Frame Element for CustomItem for Controls for View
+                    href: developer/format/frame-element-for-customitem-for-controls-for-view-format.md
+                    items:
+                    - name: FirstLineHanging Element for Frame for Controls for View
+                      href: developer/format/firstlinehanging-element-for-frame-for-controls-for-view-format.md
+                    - name: FirstLineIndent Element for Frame for Controls for View
+                      href: developer/format/firstlineindent-element-for-frame-for-controls-for-view-format.md
+                    - name: LeftIndent Element for Frame for Controls for View
+                      href: developer/format/leftindent-element-for-frame-for-controls-for-view-format.md
+                    - name: RightIndent Element for Frame for Controls for View
+                      href: developer/format/rightindent-element-for-frame-for-controls-for-view-format.md
+                  - name: NewLine Element for CustomItem for Controls for View
+                    href: developer/format/newline-element-for-customitem-for-controls-for-view-format.md
+                  - name: Text Element for CustomItem for Controls for View
+                    href: developer/format/text-element-for-customitem-for-controls-for-view-format.md
+                - name: EntrySelectedBy Element for CustomEntry for Controls for View
+                  href: developer/format/entryselectedby-element-for-customentry-for-controls-for-view-format.md
+                  items:
+                  - name: SelectionCondition Element for EntrySelectedBy for Controls for View
+                    href: developer/format/selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md
+                    items:
+                    - name: PropertyName Element for SelectionCondition for CustomControl for View
+                      href: developer/format/propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md
+                    - name: ScriptBlock Element for SelectionCondition for CustomControl for View
+                      href: developer/format/scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md
+                    - name: SelectionSetName Element for SelectionCondition for Controls for View
+                      href: developer/format/selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md
+                    - name: TypeName Element for SelectionCondition for Controls for View
+                      href: developer/format/typename-element-for-selectioncondition-for-controls-for-view-format.md
+                  - name: SelectionSetName Element for EntrySelectedBy for Controls for View
+                    href: developer/format/selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md
+                  - name: TypeName Element for EntrySelectedBy for Controls for View
+                    href: developer/format/typename-element-for-entryselectedby-for-controls-for-view-format.md
+            - name: Name Element for Control for Controls for View
+              href: developer/format/name-element-for-control-for-controls-for-view-format.md
+          - name: CustomControl Element for View
+            href: developer/format/customcontrol-element-for-view-format.md
+            items:
+            - name: CustomEntries Element for CustomControl for View
+              href: developer/format/customentries-element-for-customcontrol-for-view-format.md
+            - name: CustomEntry Element for CustomEntries for CustomControl for View
+              href: developer/format/customentry-element-for-customentries-for-customcontrol-for-view-format.md
               items:
-              - name: CustomEntries Element for CustomControl for View
-                href: developer/format/customentries-element-for-customcontrol-for-view-format.md
+              - name: CustomItem Element for CustomEntry for CustomControl for View
+                href: developer/format/customitem-element-for-customentry-for-customcontrol-for-view-format.md
                 items:
-                - name: CustomEntry Element for CustomEntries for CustomControl for View
-                  href: developer/format/customentry-element-for-customentries-for-customcontrol-for-view-format.md
+                - name: ExpressionBinding Element for CustomItem for CustomControl for View
+                  href: developer/format/expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md
                   items:
-                  - name: CustomItem Element for CustomEntry for CustomControl for View
-                    href: developer/format/customitem-element-for-customentry-for-customcontrol-for-view-format.md
+                  - name: CustomControlName Element for ExpressionBinding for CustomControl for View
+                    href: developer/format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
+                  - name: EnumerateCollection Element for ExpressionBinding for CustomControl for View
+                    href: developer/format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
+                  - name: ItemSelectionCondition Element for ExpressionBinding for CustomControl
+                    href: developer/format/itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md
                     items:
-                    - name: ExpressionBinding Element for CustomItem for CustomControl for View
-                      href: developer/format/expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md
-                      items:
-                      - name: CustomControlName Element for ExpressionBinding for CustomControl for View
-                        href: developer/format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
-                      - name: EnumerateCollection Element for ExpressionBinding for CustomControl for View
-                        href: developer/format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
-                      - name: ItemSelectionCondition Element for ExpressionBinding for CustomControl
-                        href: developer/format/itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md
-                        items:
-                        - name: PropertyName Element for ItemSelectionCondition for CustomControl for View
-                          href: developer/format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
-                        - name: ScriptBlock Element for ItemSelectionCondition for CustomControl for View
-                          href: developer/format/scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
-                      - name: PropertyName Element for ExpressionBinding for CustomControl for View
-                        href: developer/format/propertyname-element-for-expressionbinding-for-customcontrol-for-view-format.md
-                      - name: ScriptBlock Element for ExpressionBinding for CustomControl for View
-                        href: developer/format/scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format.md
-                    - name: Frame Element for CustomItem for CustomControl for View
-                      href: developer/format/frame-element-for-customitem-for-customcontrol-for-view-format.md
-                      items:
-                      - name: FirstLineHanging Element for Frame for CustomControl for View
-                        href: developer/format/firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md
-                      - name: FirstLineIndent Element for Frame for CustomControl for View
-                        href: developer/format/firstlineindent-element-for-frame-for-customcontrol-for-view-format.md
-                      - name: LeftIndent Element for Frame for CustomControl for View
-                        href: developer/format/leftindent-element-for-frame-for-customcontrol-for-view-format.md
-                      - name: RightIndent Element for Frame for CustomControl for View
-                        href: developer/format/rightindent-element-for-frame-for-customcontrol-for-view-format.md
-                    - name: NewLine Element for CustomItem for CustomControl for View
-                      href: developer/format/newline-element-for-customitem-for-customcontrol-for-view-format.md
-                    - name: Text Element for CustomItem for CustomView for View
-                      href: developer/format/text-element-for-customitem-for-customview-for-view-format.md
-                  - name: EntrySelectedBy Element for CustomEntry for CustomControl for View
-                    href: developer/format/entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md
-                    items:
-                    - name: SelectionCondition Element for EntrySelectedBy for CustomControl
-                      href: developer/format/selectioncondition-element-for-entryselectedby-for-customcontrol-format.md
-                      items:
-                      - name: PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
-                        href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
-                      - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
-                        href: developer/format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
-                      - name: SelectionSetName Element for SelectionCondition for CustomControl for View
-                        href: developer/format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
-                      - name: TypeName Element for SelectionCondition for CustomControl for View
-                        href: developer/format/typename-element-for-selectioncondition-for-customcontrol-for-view-format.md
-                    - name: SelectionSetName Element for EntrySelectedBy for CustomControl for View
-                      href: developer/format/selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md
-                    - name: TypeName Element for EntrySelectedBy for CustomEntry for View
-                      href: developer/format/typename-element-for-entryselectedby-for-customentry-for-view-format.md
-            - name: GroupBy Element for View
-              href: developer/format/groupby-element-for-view-format.md
+                    - name: PropertyName Element for ItemSelectionCondition for CustomControl for View
+                      href: developer/format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
+                    - name: ScriptBlock Element for ItemSelectionCondition for CustomControl for View
+                      href: developer/format/scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
+                  - name: PropertyName Element for ExpressionBinding for CustomControl for View
+                    href: developer/format/propertyname-element-for-expressionbinding-for-customcontrol-for-view-format.md
+                  - name: ScriptBlock Element for ExpressionBinding for CustomControl for View
+                    href: developer/format/scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format.md
+                - name: Frame Element for CustomItem for CustomControl for View
+                  href: developer/format/frame-element-for-customitem-for-customcontrol-for-view-format.md
+                  items:
+                  - name: FirstLineHanging Element for Frame for CustomControl for View
+                    href: developer/format/firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md
+                  - name: FirstLineIndent Element for Frame for CustomControl for View
+                    href: developer/format/firstlineindent-element-for-frame-for-customcontrol-for-view-format.md
+                  - name: LeftIndent Element for Frame for CustomControl for View
+                    href: developer/format/leftindent-element-for-frame-for-customcontrol-for-view-format.md
+                  - name: RightIndent Element for Frame for CustomControl for View
+                    href: developer/format/rightindent-element-for-frame-for-customcontrol-for-view-format.md
+                - name: NewLine Element for CustomItem for CustomControl for View
+                  href: developer/format/newline-element-for-customitem-for-customcontrol-for-view-format.md
+                - name: Text Element for CustomItem for CustomView for View
+                  href: developer/format/text-element-for-customitem-for-customview-for-view-format.md
+              - name: EntrySelectedBy Element for CustomEntry for CustomControl for View
+                href: developer/format/entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md
+                items:
+                - name: SelectionCondition Element for EntrySelectedBy for CustomControl
+                  href: developer/format/selectioncondition-element-for-entryselectedby-for-customcontrol-format.md
+                  items:
+                  - name: PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
+                    href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
+                  - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
+                    href: developer/format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
+                  - name: SelectionSetName Element for SelectionCondition for CustomControl for View
+                    href: developer/format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
+                  - name: TypeName Element for SelectionCondition for CustomControl for View
+                    href: developer/format/typename-element-for-selectioncondition-for-customcontrol-for-view-format.md
+                - name: SelectionSetName Element for EntrySelectedBy for CustomControl for View
+                  href: developer/format/selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md
+                - name: TypeName Element for EntrySelectedBy for CustomEntry for View
+                  href: developer/format/typename-element-for-entryselectedby-for-customentry-for-view-format.md
+          - name: GroupBy Element for View
+            href: developer/format/groupby-element-for-view-format.md
+            items:
+            - name: CustomControl Element for GroupBy
+              href: developer/format/customcontrol-element-for-groupby-format.md
               items:
-              - name: CustomControl Element for GroupBy
-                href: developer/format/customcontrol-element-for-groupby-format.md
+              - name: CustomEntries Element for CustomControl for GroupBy
+                href: developer/format/customentries-element-for-customcontrol-for-groupby-format.md
+              - name: CustomEntry Element for CustomControl for GroupBy
+                href: developer/format/customentry-element-for-customcontrol-for-groupby-format.md
                 items:
-                - name: CustomEntries Element for CustomControl for GroupBy
-                  href: developer/format/customentries-element-for-customcontrol-for-groupby-format.md
+                - name: CustomItem Element for CustomEntry for GroupBy
+                  href: developer/format/customitem-element-for-customentry-for-groupby-format.md
                   items:
-                  - name: CustomEntry Element for CustomControl for GroupBy
-                    href: developer/format/customentry-element-for-customcontrol-for-groupby-format.md
+                  - name: ExpressionBinding Element for CustomItem for GroupBy
+                    href: developer/format/expressionbinding-element-for-customitem-for-groupby-format.md
                     items:
-                    - name: CustomItem Element for CustomEntry for GroupBy
-                      href: developer/format/customitem-element-for-customentry-for-groupby-format.md
+                    - name: CustomControlName Element for ExpressionBinding for GroupBy
+                      href: developer/format/customcontrolname-element-for-expressionbinding-for-groupby-format.md
+                    - name: EnumerateCollection Element for ExpressionBinding for GroupBy
+                      href: developer/format/enumeratecollection-element-for-expressionbinding-for-groupby-format.md
+                    - name: ItemSelectionCondition Element for ExpressionBinding for GroupBy
+                      href: developer/format/itemselectioncondition-element-for-expressionbinding-for-groupby-format.md
                       items:
-                      - name: ExpressionBinding Element for CustomItem for GroupBy
-                        href: developer/format/expressionbinding-element-for-customitem-for-groupby-format.md
-                        items:
-                        - name: CustomControlName Element for ExpressionBinding for GroupBy
-                          href: developer/format/customcontrolname-element-for-expressionbinding-for-groupby-format.md
-                        - name: EnumerateCollection Element for ExpressionBinding for GroupBy
-                          href: developer/format/enumeratecollection-element-for-expressionbinding-for-groupby-format.md
-                        - name: ItemSelectionCondition Element for ExpressionBinding for GroupBy
-                          href: developer/format/itemselectioncondition-element-for-expressionbinding-for-groupby-format.md
-                          items:
-                          - name: PropertyName Element for ItemSelectionCondition for GroupBy
-                            href: developer/format/propertyname-element-for-itemselectioncondition-for-groupby-format.md
-                          - name: ScriptBlock Element for ItemSelectionCondition for GroupBy
-                            href: developer/format/scriptblock-element-for-itemselectioncondition-for-groupby-format.md
-                        - name: PropertyName Element for ExpressionBinding for GroupBy
-                          href: developer/format/propertyname-element-for-expressionbinding-for-groupby-format.md
-                        - name: ScriptBlock Element for ExpressionBinding for GroupBy
-                          href: developer/format/scriptblock-element-for-expressionbinding-for-groupby-format.md
-                      - name: Frame Element for CustomItem for GroupBy
-                        href: developer/format/frame-element-for-customitem-for-groupby-format.md
-                        items:
-                        - name: FirstLineHanging Element for Frame for GroupBy
-                          href: developer/format/firstlinehanging-element-for-frame-for-groupby-format.md
-                        - name: FirstLineIndent Element for Frame for GroupBy
-                          href: developer/format/firstlineindent-element-for-frame-for-groupby-format.md
-                        - name: LeftIndent Element for Frame for GroupBy
-                          href: developer/format/leftindent-element-for-frame-for-groupby-format.md
-                        - name: RightIndent Element for Frame for GroupBy
-                          href: developer/format/rightindent-element-for-frame-for-groupby-format.md
-                      - name: NewLine Element for CustomItem for GroupBy
-                        href: developer/format/newline-element-for-customitem-for-groupby-format.md
-                      - name: Text Element for CustomItem for GroupBy
-                        href: developer/format/text-element-for-customitem-for-groupby-format.md
-                    - name: EntrySelectedBy Element for CustomEntry for GroupBy
-                      href: developer/format/entryselectedby-element-for-customentry-for-groupby-format.md
-                      items:
-                      - name: SelectionCondition Element for EntrySelectedBy for GroupBy
-                        href: developer/format/selectioncondition-element-for-entryselectedby-for-groupby-format.md
-                        items:
-                        - name: PropertyName Element for SelectionCondition for GroupBy
-                          href: developer/format/propertyname-element-for-selectioncondition-for-groupby-format.md
-                        - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for GroupBy
-                          href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
-                        - name: SelectionSetName Element for SelectionCondition for GroupBy
-                          href: developer/format/selectionsetname-element-for-selectioncondition-for-groupby-format.md
-                        - name: TypeName Element for SelectionCondition for GroupBy
-                          href: developer/format/typename-element-for-selectioncondition-for-groupby-format.md
-                      - name: SelectionSetName Element for EntrySelectedBy for GroupBy
-                        href: developer/format/selectionsetname-element-for-entryselectedby-for-groupby-format.md
-                      - name: TypeName Element for EntrySelectedBy for GroupBy
-                        href: developer/format/typename-element-for-entryselectedby-for-groupby-format.md
-              - name: CustomControlName Element for GroupBy
-                href: developer/format/customcontrolname-element-for-groupby-format.md
-              - name: Label Element for GroupBy
-                href: developer/format/label-element-for-groupby-format.md
-              - name: PropertyName Element for GroupBy
-                href: developer/format/propertyname-element-for-groupby-format.md
-              - name: ScriptBlock Element for GroupBy
-                href: developer/format/scriptblock-element-for-groupby-format.md
-            - name: ListControl Element
-              href: developer/format/listcontrol-element-format.md
+                      - name: PropertyName Element for ItemSelectionCondition for GroupBy
+                        href: developer/format/propertyname-element-for-itemselectioncondition-for-groupby-format.md
+                      - name: ScriptBlock Element for ItemSelectionCondition for GroupBy
+                        href: developer/format/scriptblock-element-for-itemselectioncondition-for-groupby-format.md
+                    - name: PropertyName Element for ExpressionBinding for GroupBy
+                      href: developer/format/propertyname-element-for-expressionbinding-for-groupby-format.md
+                    - name: ScriptBlock Element for ExpressionBinding for GroupBy
+                      href: developer/format/scriptblock-element-for-expressionbinding-for-groupby-format.md
+                  - name: Frame Element for CustomItem for GroupBy
+                    href: developer/format/frame-element-for-customitem-for-groupby-format.md
+                    items:
+                    - name: FirstLineHanging Element for Frame for GroupBy
+                      href: developer/format/firstlinehanging-element-for-frame-for-groupby-format.md
+                    - name: FirstLineIndent Element for Frame for GroupBy
+                      href: developer/format/firstlineindent-element-for-frame-for-groupby-format.md
+                    - name: LeftIndent Element for Frame for GroupBy
+                      href: developer/format/leftindent-element-for-frame-for-groupby-format.md
+                    - name: RightIndent Element for Frame for GroupBy
+                      href: developer/format/rightindent-element-for-frame-for-groupby-format.md
+                  - name: NewLine Element for CustomItem for GroupBy
+                    href: developer/format/newline-element-for-customitem-for-groupby-format.md
+                  - name: Text Element for CustomItem for GroupBy
+                    href: developer/format/text-element-for-customitem-for-groupby-format.md
+                - name: EntrySelectedBy Element for CustomEntry for GroupBy
+                  href: developer/format/entryselectedby-element-for-customentry-for-groupby-format.md
+                  items:
+                  - name: SelectionCondition Element for EntrySelectedBy for GroupBy
+                    href: developer/format/selectioncondition-element-for-entryselectedby-for-groupby-format.md
+                    items:
+                    - name: PropertyName Element for SelectionCondition for GroupBy
+                      href: developer/format/propertyname-element-for-selectioncondition-for-groupby-format.md
+                    - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for GroupBy
+                      href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
+                    - name: SelectionSetName Element for SelectionCondition for GroupBy
+                      href: developer/format/selectionsetname-element-for-selectioncondition-for-groupby-format.md
+                    - name: TypeName Element for SelectionCondition for GroupBy
+                      href: developer/format/typename-element-for-selectioncondition-for-groupby-format.md
+                  - name: SelectionSetName Element for EntrySelectedBy for GroupBy
+                    href: developer/format/selectionsetname-element-for-entryselectedby-for-groupby-format.md
+                  - name: TypeName Element for EntrySelectedBy for GroupBy
+                    href: developer/format/typename-element-for-entryselectedby-for-groupby-format.md
+            - name: CustomControlName Element for GroupBy
+              href: developer/format/customcontrolname-element-for-groupby-format.md
+            - name: Label Element for GroupBy
+              href: developer/format/label-element-for-groupby-format.md
+            - name: PropertyName Element for GroupBy
+              href: developer/format/propertyname-element-for-groupby-format.md
+            - name: ScriptBlock Element for GroupBy
+              href: developer/format/scriptblock-element-for-groupby-format.md
+          - name: ListControl Element
+            href: developer/format/listcontrol-element-format.md
+            items:
+            - name: ListEntries Element for ListControl
+              href: developer/format/listentries-element-for-listcontrol-format.md
+            - name: ListEntry Element for ListControl
+              href: developer/format/listentry-element-for-listcontrol-format.md
               items:
-              - name: ListEntries Element for ListControl
-                href: developer/format/listentries-element-for-listcontrol-format.md
+              - name: EntrySelectedBy Element for ListEntry for ListControl
+                href: developer/format/entryselectedby-element-for-listentry-for-listcontrol-format.md
                 items:
-                - name: ListEntry Element for ListControl
-                  href: developer/format/listentry-element-for-listcontrol-format.md
+                - name: SelectionCondition Element for EntrySelectedBy for ListControl
+                  href: developer/format/selectioncondition-element-for-entryselectedby-for-listcontrol-format.md
                   items:
-                  - name: EntrySelectedBy Element for ListEntry for ListControl
-                    href: developer/format/entryselectedby-element-for-listentry-for-listcontrol-format.md
-                    items:
-                    - name: SelectionCondition Element for EntrySelectedBy for ListControl
-                      href: developer/format/selectioncondition-element-for-entryselectedby-for-listcontrol-format.md
-                      items:
-                      - name: PropertyName Element for SelectionCondition for EntrySelectedBy for ListControl
-                        href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
-                      - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListControl
-                        href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
-                      - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry
-                        href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-                      - name: TypeName Element for SelectionCondition for EntrySelectedBy for ListControl
-                        href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-                    - name: SelectionSetName Element for EntrySelectedBy for ListControl
-                      href: developer/format/selectionsetname-element-for-entryselectedby-for-listcontrol-format.md
-                    - name: TypeName Element for EntrySelectedBy for ListControl
-                      href: developer/format/typename-element-for-entryselectedby-for-listcontrol-format.md
-                  - name: ListItems Element for ListEntry for ListControl
-                    href: developer/format/listitems-element-for-listentry-for-listcontrol-format.md
-                    items:
-                    - name: FormatString Element for ListItem for ListControl
-                      href: developer/format/formatstring-element-for-listitem-for-listcontrol-format.md
-                    - name: ItemSelectionCondition Element for ListItem for ListControl
-                      href: developer/format/itemselectioncondition-element-for-listitem-for-listcontrol-format.md
-                      items:
-                      - name: PropertyName Element for ItemSelectionCondition for ListControl
-                        href: developer/format/propertyname-element-for-itemselectioncondition-for-listcontrol-format.md
-                      - name: ScriptBlock Element for ItemSelectionCondition for ListControl
-                        href: developer/format/scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md
-                    - name: Label Element for ListItem for ListControl
-                      href: developer/format/label-element-for-listitem-for-listcontrol-format.md
-                    - name: ListItem Element for ListItems for ListControl
-                      href: developer/format/listitem-element-for-listitems-for-listcontrol-format.md
-                      items:
-                      - name: PropertyName Element for ListItem for ListControl
-                        href: developer/format/propertyname-element-for-listitem-for-listcontrol-format.md
-                      - name: ScriptBlock Element for ListItem for ListControl
-                        href: developer/format/scriptblock-element-for-listitem-for-listcontrol-format.md
-            - name: Name Element for View
-              href: developer/format/name-element-for-view-format.md
-            - name: OutOfBand Element for View
-              href: developer/format/outofband-element-for-view-format.md
-            - name: TableControl Element
-              href: developer/format/tablecontrol-element-format.md
+                  - name: PropertyName Element for SelectionCondition for EntrySelectedBy for ListControl
+                    href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
+                  - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListControl
+                    href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
+                  - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry
+                    href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+                  - name: TypeName Element for SelectionCondition for EntrySelectedBy for ListControl
+                    href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+                - name: SelectionSetName Element for EntrySelectedBy for ListControl
+                  href: developer/format/selectionsetname-element-for-entryselectedby-for-listcontrol-format.md
+                - name: TypeName Element for EntrySelectedBy for ListControl
+                  href: developer/format/typename-element-for-entryselectedby-for-listcontrol-format.md
+              - name: ListItems Element for ListEntry for ListControl
+                href: developer/format/listitems-element-for-listentry-for-listcontrol-format.md
+                items:
+                - name: FormatString Element for ListItem for ListControl
+                  href: developer/format/formatstring-element-for-listitem-for-listcontrol-format.md
+                - name: ItemSelectionCondition Element for ListItem for ListControl
+                  href: developer/format/itemselectioncondition-element-for-listitem-for-listcontrol-format.md
+                  items:
+                  - name: PropertyName Element for ItemSelectionCondition for ListControl
+                    href: developer/format/propertyname-element-for-itemselectioncondition-for-listcontrol-format.md
+                  - name: ScriptBlock Element for ItemSelectionCondition for ListControl
+                    href: developer/format/scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md
+                - name: Label Element for ListItem for ListControl
+                  href: developer/format/label-element-for-listitem-for-listcontrol-format.md
+                - name: ListItem Element for ListItems for ListControl
+                  href: developer/format/listitem-element-for-listitems-for-listcontrol-format.md
+                  items:
+                  - name: PropertyName Element for ListItem for ListControl
+                    href: developer/format/propertyname-element-for-listitem-for-listcontrol-format.md
+                  - name: ScriptBlock Element for ListItem for ListControl
+                    href: developer/format/scriptblock-element-for-listitem-for-listcontrol-format.md
+          - name: Name Element for View
+            href: developer/format/name-element-for-view-format.md
+          - name: OutOfBand Element for View
+            href: developer/format/outofband-element-for-view-format.md
+          - name: TableControl Element
+            href: developer/format/tablecontrol-element-format.md
+            items:
+            - name: AutoSize Element for TableControl
+              href: developer/format/autosize-element-for-tablecontrol-format.md
+            - name: HideTableHeaders Element
+              href: developer/format/hidetableheaders-element-format.md
+            - name: TableHeaders Element
+              href: developer/format/tableheaders-element-format.md
               items:
-              - name: AutoSize Element for TableControl
-                href: developer/format/autosize-element-for-tablecontrol-format.md
-              - name: HideTableHeaders Element
-                href: developer/format/hidetableheaders-element-format.md
-              - name: TableHeaders Element
-                href: developer/format/tableheaders-element-format.md
-                items:
-                - name: TableColumnHeader Element
-                  href: developer/format/tablecolumnheader-element-format.md
-                  items:
-                  - name: Alignment Element for TableColumnHeader for TableControl
-                    href: developer/format/alignment-element-for-tablecolumnheader-for-tablecontrol-format.md
-                  - name: Label Element for TableColumnHeader for TableControl
-                    href: developer/format/label-element-for-tablecolumnheader-for-tablecontrol-format.md
-                  - name: Width Element for TableColumnHeader for TableControl
-                    href: developer/format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
-              - name: TableRowEntries Element for TableControl
-                href: developer/format/tablerowentries-element-for-tablecontrol-format.md
-                items:
-                - name: TableColumnItems Element for TableRowEntry for TableControl
-                  href: developer/format/tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md
-                  items:
-                  - name: TableColumnItem Element for TableColumnItems for TableControl
-                    href: developer/format/tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md
-                    items:
-                    - name: Alignment Element for TableColumnItem for TableControl
-                      href: developer/format/alignment-element-for-tablecolumnitem-for-tablecontrol-format.md
-                    - name: FormatString Element for TableColumnItem for TableControl
-                      href: developer/format/formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md
-                    - name: PropertyName Element for TableColumnItem for TableControl
-                      href: developer/format/propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md
-                    - name: ScriptBlock Element for TableColumnItem for TableControl
-                      href: developer/format/scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md
-                - name: TableRowEntry Element for TableRowEntries for TableControl
-                  href: developer/format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md
-                  items:
-                  - name: EntrySelectedBy Element for TableRowEntry for TableControl
-                    href: developer/format/entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md
-                    items:
-                    - name: SelectionCondition Element for EntrySelectedBy for TableControl
-                      href: developer/format/selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md
-                      items:
-                      - name: PropertyName Element for SelectionCondition for EntrySelectedBy for TableRowEntry
-                        href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md
-                      - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for TableControl
-                        href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
-                      - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl
-                        href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-                      - name: TypeName Element for SelectionCondition for EntrySelectedBy for TableControl
-                        href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-                    - name: SelectionSetName Element for EntrySelectedBy for TableControl
-                      href: developer/format/selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md
-                    - name: TypeName Element for EntrySelectedBy for TableControl
-                      href: developer/format/typename-element-for-entryselectedby-for-tablecontrol-format.md
-                - name: Wrap Element for TableRowEntry for TableControl
-                  href: developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
-            - name: ViewSelectedBy Element
-              href: developer/format/viewselectedby-element-format.md
+              - name: TableColumnHeader Element
+                href: developer/format/tablecolumnheader-element-format.md
+              - name: Alignment Element for TableColumnHeader for TableControl
+                href: developer/format/alignment-element-for-tablecolumnheader-for-tablecontrol-format.md
+              - name: Label Element for TableColumnHeader for TableControl
+                href: developer/format/label-element-for-tablecolumnheader-for-tablecontrol-format.md
+              - name: Width Element for TableColumnHeader for TableControl
+                href: developer/format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
+            - name: TableRowEntries Element for TableControl
+              href: developer/format/tablerowentries-element-for-tablecontrol-format.md
               items:
-              - name: SelectionSetName Element for ViewSelectedBy
-                href: developer/format/selectionsetname-element-for-viewselectedby-format.md
-              - name: TypeName Element for ViewSelectedBy
-                href: developer/format/typename-element-for-viewselectedby-format.md
-            - name: WideControl Element
-              href: developer/format/widecontrol-element-format.md
-              items:
-              - name: AutoSize Element for WideControl
-                href: developer/format/autosize-element-for-widecontrol-format.md
-              - name: ColumnNumber Element for WideControl
-                href: developer/format/columnnumber-element-for-widecontrol-format.md
-              - name: WideEntries Element for WideControl
-                href: developer/format/wideentries-element-for-widecontrol-format.md
+              - name: TableColumnItems Element for TableRowEntry for TableControl
+                href: developer/format/tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md
                 items:
-                - name: WideEntry Element for WideControl
-                  href: developer/format/wideentry-element-for-widecontrol-format.md
+                - name: TableColumnItem Element for TableColumnItems for TableControl
+                  href: developer/format/tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md
+                - name: Alignment Element for TableColumnItem for TableControl
+                  href: developer/format/alignment-element-for-tablecolumnitem-for-tablecontrol-format.md
+                - name: FormatString Element for TableColumnItem for TableControl
+                  href: developer/format/formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md
+                - name: PropertyName Element for TableColumnItem for TableControl
+                  href: developer/format/propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md
+                - name: ScriptBlock Element for TableColumnItem for TableControl
+                  href: developer/format/scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md
+              - name: TableRowEntry Element for TableRowEntries for TableControl
+                href: developer/format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md
+                items:
+                - name: EntrySelectedBy Element for TableRowEntry for TableControl
+                  href: developer/format/entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md
+                - name: SelectionCondition Element for EntrySelectedBy for TableControl
+                  href: developer/format/selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md
                   items:
-                  - name: EntrySelectedBy Element for WideEntry
-                    href: developer/format/entryselectedby-element-for-wideentry-format.md
-                    items:
-                    - name: SelectionCondition Element for EntrySelectedBy for WideControl
-                      href: developer/format/selectioncondition-element-for-entryselectedby-for-widecontrol-format.md
-                      items:
-                      - name: PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry
-                        href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md
-                      - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for WideControl
-                        href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
-                      - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry
-                        href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-                      - name: TypeName Element for SelectionCondition for EntrySelectedBy for WideControl
-                        href: developer/format/typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
-                    - name: TypeName Element for EntrySelectedBy for WideEntry
-                      href: developer/format/typename-element-for-entryselectedby-for-wideentry-format.md
-                    - name: SelectionSetName Element for EntrySelectedBy for WideControl
-                      href: developer/format/selectionsetname-element-for-entryselectedby-for-widecontrol-format.md
-                  - name: WideItem Element for WideControl
-                    href: developer/format/wideitem-element-for-widecontrol-format.md
-                    items:
-                    - name: FormatString Element for WideItem for WideControl
-                      href: developer/format/formatstring-element-for-wideitem-for-widecontrol-format.md
-                    - name: PropertyName Element for WideItem for WideControl
-                      href: developer/format/propertyname-element-for-wideitem-for-widecontrol-format.md
-                    - name: ScriptBlock Element for WideItem for WideControl
-                      href: developer/format/scriptblock-element-for-wideitem-for-widecontrol-format.md
+                  - name: PropertyName Element for SelectionCondition for EntrySelectedBy for TableRowEntry
+                    href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md
+                  - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for TableControl
+                    href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
+                  - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl
+                    href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+                  - name: TypeName Element for SelectionCondition for EntrySelectedBy for TableControl
+                    href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+                - name: SelectionSetName Element for EntrySelectedBy for TableControl
+                  href: developer/format/selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md
+                - name: TypeName Element for EntrySelectedBy for TableControl
+                  href: developer/format/typename-element-for-entryselectedby-for-tablecontrol-format.md
+              - name: Wrap Element for TableRowEntry for TableControl
+                href: developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
+          - name: ViewSelectedBy Element
+            href: developer/format/viewselectedby-element-format.md
+            items:
+            - name: SelectionSetName Element for ViewSelectedBy
+              href: developer/format/selectionsetname-element-for-viewselectedby-format.md
+            - name: TypeName Element for ViewSelectedBy
+              href: developer/format/typename-element-for-viewselectedby-format.md
+          - name: WideControl Element
+            href: developer/format/widecontrol-element-format.md
+            items:
+            - name: AutoSize Element for WideControl
+              href: developer/format/autosize-element-for-widecontrol-format.md
+            - name: ColumnNumber Element for WideControl
+              href: developer/format/columnnumber-element-for-widecontrol-format.md
+            - name: WideEntries Element for WideControl
+              href: developer/format/wideentries-element-for-widecontrol-format.md
+              items:
+              - name: WideEntry Element for WideControl
+                href: developer/format/wideentry-element-for-widecontrol-format.md
+              - name: EntrySelectedBy Element for WideEntry
+                href: developer/format/entryselectedby-element-for-wideentry-format.md
+                items:
+                - name: SelectionCondition Element for EntrySelectedBy for WideControl
+                  href: developer/format/selectioncondition-element-for-entryselectedby-for-widecontrol-format.md
+                  items:
+                  - name: PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry
+                    href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md
+                  - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for WideControl
+                    href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
+                  - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry
+                    href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+                  - name: TypeName Element for SelectionCondition for EntrySelectedBy for WideControl
+                    href: developer/format/typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
+                - name: TypeName Element for EntrySelectedBy for WideEntry
+                  href: developer/format/typename-element-for-entryselectedby-for-wideentry-format.md
+                - name: SelectionSetName Element for EntrySelectedBy for WideControl
+                  href: developer/format/selectionsetname-element-for-entryselectedby-for-widecontrol-format.md
+              - name: WideItem Element for WideControl
+                href: developer/format/wideitem-element-for-widecontrol-format.md
+                items:
+                - name: FormatString Element for WideItem for WideControl
+                  href: developer/format/formatstring-element-for-wideitem-for-widecontrol-format.md
+                - name: PropertyName Element for WideItem for WideControl
+                  href: developer/format/propertyname-element-for-wideitem-for-widecontrol-format.md
+                - name: ScriptBlock Element for WideItem for WideControl
+                  href: developer/format/scriptblock-element-for-wideitem-for-widecontrol-format.md
     - name: Writing Help for PowerShell
       items:
       - name: Overview
