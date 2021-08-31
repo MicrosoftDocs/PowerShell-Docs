@@ -54,12 +54,12 @@ Specify the script that is evaluated.
 
 ## Remarks
 
-If this element is used, you cannot specify the [PropertyName](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
+If this element is used, you cannot specify the [PropertyName](./propertyname-element-for-itemselectioncondition-for-controls-for-configuration-format.md)
 element when defining the selection condition.
 
 ## See Also
 
-[PropertyName Element for ItemSelectionCondition for Controls for Configuration](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
+[PropertyName Element for ItemSelectionCondition for Controls for Configuration](./propertyname-element-for-itemselectioncondition-for-controls-for-configuration-format.md)
 
 [ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)
 

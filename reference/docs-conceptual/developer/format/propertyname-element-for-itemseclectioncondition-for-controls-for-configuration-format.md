@@ -1,10 +1,10 @@
 ---
 ms.date: 08/24/2021
 ms.topic: reference
-title: PropertyName Element for ItemSeclectionCondition for Controls for Configuration
-description: PropertyName Element for ItemSeclectionCondition for Controls for Configuration
+title: PropertyName Element for ItemSelectionCondition for Controls for Configuration
+description: PropertyName Element for ItemSelectionCondition for Controls for Configuration
 ---
-# PropertyName Element for ItemSeclectionCondition for Controls for Configuration
+# PropertyName Element for ItemSelectionCondition for Controls for Configuration
 
 Specifies the .NET property that triggers the condition. When this property is present or when it
 evaluates to `true`, the condition is met, and the control is used. This element is used when
@@ -54,12 +54,12 @@ Specify the name of the .NET property that triggers the condition.
 
 ## Remarks
 
-If this element is used, you cannot specify the [ScriptBlock](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
+If this element is used, you cannot specify the [ScriptBlock](./scriptblock-element-for-itemselectioncondition-for-controls-for-configuration-format.md)
 element when defining the selection condition.
 
 ## See Also
 
-[ScriptBlock Element for ItemSeclectionCondition for Controls for Configuration](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
+[ScriptBlock Element for ItemSelectionCondition for Controls for Configuration](./scriptblock-element-for-itemselectioncondition-for-controls-for-configuration-format.md)
 
 [ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)
 
