@@ -1,6 +1,5 @@
 ---
-description:  Certificate 
-keywords: powershell,cmdlet
+description: Information about the Certificate provider.
 Locale: en-US
 ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/about/about_certificate_provider?view=powershell-7&WT.mc_id=ps-gethelp
@@ -340,7 +339,7 @@ $expired | Remove-Item -DeleteKey
 ## Creating Certificates
 
 The `New-Item` cmdlet does not create new certificates in the **Certificate**
-provider. Use the [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate)
+provider. Use the [New-SelfSignedCertificate](/powershell/module/pki/new-selfsignedcertificate)
 cmdlet to create a certificate for testing purposes.
 
 ## Creating Certificate Stores
@@ -449,7 +448,7 @@ This parameter deletes the associated private key when it deletes the certificat
 > using the **CredSSP** parameter. You should consider any security risks
 > before using `Remove-Item` with `Invoke-Command` and credential delegation.
 
-This parameter was introduced in Windows PowerShell 3.0.
+This parameter was introduced in PowerShell 3.0.
 
 ### ItemType \<String\>
 
@@ -499,7 +498,7 @@ cmdlet references provided throughout this article.
 
 ## Getting help
 
-Beginning in Windows PowerShell 3.0, you can get customized help topics for
+Beginning in PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a

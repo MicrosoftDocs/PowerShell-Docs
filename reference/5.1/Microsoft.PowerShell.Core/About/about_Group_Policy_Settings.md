@@ -1,6 +1,5 @@
 ---
-description: Describes the Group Policy settings for Windows PowerShell 
-keywords: powershell,cmdlet
+description: Describes the Group Policy settings for PowerShell
 Locale: en-US
 ms.date: 03/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_group_policy_settings?view=powershell-5.1&WT.mc_id=ps-gethelp

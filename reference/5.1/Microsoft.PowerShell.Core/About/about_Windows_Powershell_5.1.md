@@ -1,5 +1,5 @@
 ---
-description:  Describes new features that are included in Windows PowerShell 5.1. 
+description:  Describes new features that are included in Windows PowerShell 5.1.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/17/2018
@@ -181,8 +181,7 @@ from 3.3.5 to 3.4.0, with the addition of GitHub [PR# 484](https://github.com/pe
 which enables better behavior for Pester on Nano Server.
 
 You can review the changes in versions 3.3.5 to 3.4.0 by inspecting the
-ChangeLog.md file at:
-https://github.com/pester/Pester/blob/master/CHANGELOG.md
+[CHANGELOG](https://github.com/pester/Pester/blob/main/docs/CHANGELOG.md) in the GitHub repository.
 
 ## KEYWORDS
 

@@ -51,8 +51,9 @@ Server include:
 - All data is encrypted in transit and at rest
 - Client certificates are created and managed automatically
 - Secrets store for centrally managing
-  [passwords/credentials](/azure/automation/automation-credentials), or
-  [variables](/azure/automation/automation-variables) such as server names or connection strings
+  [passwords/credentials](/azure/automation/shared-resources/credentials), or
+  [variables](/azure/automation/shared-resources/variables) such as server names or connection
+  strings
 - Centrally manage node [LCM configuration](../managing-nodes/metaConfig.md#basic-settings)
 - Centrally assign configurations to client nodes
 - Release configuration changes to "canary groups" for testing before reaching production
