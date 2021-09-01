@@ -1,14 +1,14 @@
 ---
 ms.date: 08/24/2021
 ms.topic: reference
-title: PropertyName Element for ItemSeclectionCondition for Controls for Configuration
-description: PropertyName Element for ItemSeclectionCondition for Controls for Configuration
+title: ScriptBlock Element for ItemSelectionCondition for Controls for Configuration
+description: ScriptBlock Element for ItemSelectionCondition for Controls for Configuration
 ---
-# PropertyName Element for ItemSeclectionCondition for Controls for Configuration
+# ScriptBlock Element for ItemSelectionCondition for Controls for Configuration
 
-Specifies the .NET property that triggers the condition. When this property is present or when it
-evaluates to `true`, the condition is met, and the control is used. This element is used when
-defining a common control that can be used by all the views in the formatting file.
+Specifies the script that triggers the condition. When this script is evaluated to `true`, the
+condition is met, and the control is used. This element is used when defining a common control that
+can be used by all the views in the formatting file.
 
 ## Schema
 
@@ -21,18 +21,18 @@ defining a common control that can be used by all the views in the formatting fi
 - CustomItem Element
 - ExpressionBinding Element
 - ItemSelectionCondition Element
-- PropertyName Element
+- ScriptBlock Element
 
 ## Syntax
 
 ```xml
-<PropertyName>.NetTypeProperty</PropertyName>
+<ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
 ## Attributes and Elements
 
 The following sections describe attributes, child elements, and the parent element of the
-`PropertyName` element.
+`ScriptBlock` element.
 
 ### Attributes
 
@@ -50,16 +50,16 @@ None.
 
 ## Text Value
 
-Specify the name of the .NET property that triggers the condition.
+Specify the script that is evaluated.
 
 ## Remarks
 
-If this element is used, you cannot specify the [ScriptBlock](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
+If this element is used, you cannot specify the [PropertyName](./propertyname-element-for-itemselectioncondition-for-controls-for-configuration-format.md)
 element when defining the selection condition.
 
 ## See Also
 
-[ScriptBlock Element for ItemSeclectionCondition for Controls for Configuration](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
+[PropertyName Element for ItemSelectionCondition for Controls for Configuration](./propertyname-element-for-itemselectioncondition-for-controls-for-configuration-format.md)
 
 [ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)
 

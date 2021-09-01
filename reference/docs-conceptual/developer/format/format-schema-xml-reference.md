@@ -366,7 +366,7 @@ defining how a new group of objects is displayed.
 [PropertyName Element for GroupBy (Format)](./propertyname-element-for-groupby-format.md)
 Specifies the .NET property that starts a new group whenever its value changes.
 
-[PropertyName Element for ItemSeclectionCondition for Controls for Configuration (Format)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
+[PropertyName Element for ItemSelectionCondition for Controls for Configuration (Format)](./propertyname-element-for-itemselectioncondition-for-controls-for-configuration-format.md)
 Specifies the .NET property that triggers the condition. When this property is present or when it
 evaluates to `true`, the condition is met, and the control is used. This element is used when
 defining a common control that can be used by all the views in the formatting file.
@@ -471,7 +471,7 @@ a new group of objects is displayed.
 [ScriptBlock Element for GroupBy (Format)](./scriptblock-element-for-groupby-format.md)
 Specifies the script that starts a new group whenever its value changes.
 
-[ScriptBlock Element for ItemSelectionCondition for Controls for Configuration (Format)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
+[ScriptBlock Element for ItemSelectionCondition for Controls for Configuration (Format)](./scriptblock-element-for-itemselectioncondition-for-controls-for-configuration-format.md)
 Specifies the script that triggers the condition. When this script is evaluated to `true`, the
 condition is met, and the control is used. This element is used when defining a common control that
 can be used by all the views in the formatting file.
