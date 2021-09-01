@@ -43,8 +43,8 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[PropertyName Element for ItemSelectionCondition for Controls for Configuration](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies the .NET property that triggers the condition.|
-|[ScriptBlock Element for ItemSelectionCondition for Controls for Configuration](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies the script that triggers the condition.|
+|[PropertyName Element for ItemSelectionCondition for Controls for Configuration](./propertyname-element-for-itemselectioncondition-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies the .NET property that triggers the condition.|
+|[ScriptBlock Element for ItemSelectionCondition for Controls for Configuration](./scriptblock-element-for-itemselectioncondition-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies the script that triggers the condition.|
 
 ### Parent Elements
 
@@ -58,9 +58,9 @@ You can specify one property name or a script for this condition but cannot spec
 
 ## See Also
 
-[PropertyName Element for ItemSelectionCondition for Controls for Configuration](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
+[PropertyName Element for ItemSelectionCondition for Controls for Configuration](./propertyname-element-for-itemselectioncondition-for-controls-for-configuration-format.md)
 
-[ScriptBlock Element for ItemSelectionCondition for Controls for Configuration](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
+[ScriptBlock Element for ItemSelectionCondition for Controls for Configuration](./scriptblock-element-for-itemselectioncondition-for-controls-for-configuration-format.md)
 
 [ExpressionBinding Element for CustomItem for Controls for Configuration](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
