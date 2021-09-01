@@ -1,5 +1,5 @@
 ---
-description: Describes how to run remote commands in PowerShell. 
+description: Describes how to run remote commands in PowerShell.
 Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote?view=powershell-7.1&WT.mc_id=ps-gethelp
@@ -216,7 +216,7 @@ remote computer where it terminates the remote command.
 
 - For information about how remoting works, how to manage remote data, special
   configurations, security issues, and other frequently asked questions, see
-  [PowerShell Remoting FAQ](/powershell/scripting/learn/remoting/powershell-remoting-faq.yml).
+  [PowerShell Remoting FAQ](/powershell/scripting/learn/remoting/powershell-remoting-faq).
 
 - For help in resolving remoting errors, see about_Remote_Troubleshooting.
 

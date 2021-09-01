@@ -243,8 +243,6 @@ about_GroupPolicy
 
 ## See also
 
-[PowerShell Core Policy RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/4-Experimental-Accepted/RFC0041-Policy.md)
-
 [about_Execution_Policies](about_Execution_Policies.md)
 
 [about_Modules](about_Modules.md)
@@ -263,4 +261,3 @@ about_GroupPolicy
 
 <!-- link references -->
 [gpstore]: https://support.microsoft.com/help/3087759
-

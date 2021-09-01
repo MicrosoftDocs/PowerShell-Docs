@@ -8,11 +8,6 @@ description: Host Application Samples
 
 This section includes sample code that is provided in the Windows PowerShell 2.0 SDK.
 
- You can copy the full sample code from the topics in this section, or use the source files
- installed with the SDK. The
- [Windows PowerShell 2.0 Software Development Kit (SDK)](https://www.microsoft.com/download/details.aspx?id=2560)
- provides ReadMe files, source files, and Visual Studio project files for each sample.
-
 ## In This Section
 
  [PowerShell API Samples](./windows-powershell-api-samples.md) This section includes sample code
