@@ -60,18 +60,10 @@ meets weekly to discuss issues that need triage or remain unresolved.
 
 - Enter a comment redirecting the customer to the correct feedback channel.
 - Optional: Copy the issue to the appropriate product feedback location, add a link to the copied
-  item, and close the issue. DO NOT copy issues to UserVoice.
+  item, and close the issue.
 
   The default location for PowerShell issues is
   [https://github.com/PowerShell/PowerShell/issues/new/choose](https://github.com/PowerShell/PowerShell/issues/new/choose).
-
-  The following subject areas have different locations for issues:
-
-  | Subjects |                                                     Product Feedback URL                                                     |
-  | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
-  | dsc      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
-  | gallery  | [https://github.com/powershell/powershellgallery/issues/new](https://github.com/powershell/powershellgallery/issues/new)     |
-  | wmf      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
 
 ### Support requests
 

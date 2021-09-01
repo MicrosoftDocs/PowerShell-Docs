@@ -186,8 +186,4 @@ additionalContent:
         - title: GitHub Issues
           summary: The place for bugs in the current release
           url: https://github.com/powershell/powershell/issues
-        # Card 5
-        - title: PowerShell UserVoice
-          summary: The place for bugs in Windows PowerShell
-          url: https://windowsserver.uservoice.com/forums/301869-powershell
 

@@ -1,6 +1,5 @@
 ---
-description:  Certificate 
-keywords: powershell,cmdlet
+description: Information about the Certificate provider.
 Locale: en-US
 ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/about/about_certificate_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -340,7 +339,7 @@ $expired | Remove-Item -DeleteKey
 ## Creating Certificates
 
 The `New-Item` cmdlet does not create new certificates in the **Certificate**
-provider. Use the [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate)
+provider. Use the [New-SelfSignedCertificate](/powershell/module/pki/new-selfsignedcertificate)
 cmdlet to create a certificate for testing purposes.
 
 ## Creating Certificate Stores

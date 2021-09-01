@@ -96,7 +96,7 @@ New Content
 
 - Migrated two articles from the Windows Server content to the PowerShell docset
   - [PowerShell scripting performance considerations](/powershell/scripting/dev-cross-plat/performance/script-authoring-considerations)
-  - [PowerShell module authoring considerations](/powershell/scripting/dev-cross-plat/performance/module-auth)
+  - [PowerShell module authoring considerations](/powershell/scripting/dev-cross-plat/performance/module-authoring-considerations)
 - Added [PowerShell Language Specification 3.0](/powershell/scripting/lang-spec/chapter-01)
   - The specification document is available from the Microsoft Download
     Center as a [Microsoft Word document](https://www.microsoft.com/download/details.aspx?id=36389).

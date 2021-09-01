@@ -303,7 +303,7 @@ sections:
           formatting.
 
           For information about interpreting and formatting remote output, see
-          [about_Remote_Output](/powershell/module/microsoft.powershell.com/about/about_remote_output).
+          [about_Remote_Output](/powershell/module/microsoft.powershell.core/about/about_remote_output).
 
       - question: |
           Can I run background jobs remotely?
@@ -322,8 +322,8 @@ sections:
           `Invoke-Command` to run a `Start-Job` command remotely.
 
           For more information about background jobs in PowerShell , see
-          [about_Jobs](/powershell/module/microsoft.powershell.com/about/about_jobs) and
-          [about_Remote_Jobs](/powershell/module/microsoft.powershell.com/about/about_remote_jobs).
+          [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs) and
+          [about_Remote_Jobs](/powershell/module/microsoft.powershell.core/about/about_remote_jobs).
 
       - question: |
           Can I run windows programs on a remote computer?
@@ -506,15 +506,15 @@ additionalContent: |
 
   ## See also
 
-  [about_Remote](/powershell/module/microsoft.powershell.com/about/about_remote)
+  [about_Remote](/powershell/module/microsoft.powershell.core/about/about_remote)
 
-  [about_Profiles](/powershell/module/microsoft.powershell.com/about/about_profiles)
+  [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)
 
-  [about_PSSessions](/powershell/module/microsoft.powershell.com/about/about_pssessions)
+  [about_PSSessions](/powershell/module/microsoft.powershell.core/about/about_pssessions)
 
-  [about_Remote_Jobs](/powershell/module/microsoft.powershell.com/about/about_remote_jobs)
+  [about_Remote_Jobs](/powershell/module/microsoft.powershell.core/about/about_remote_jobs)
 
-  [about_Remote_Variables](/powershell/module/microsoft.powershell.com/about/about_remote_variables)
+  [about_Remote_Variables](/powershell/module/microsoft.powershell.core/about/about_remote_variables)
 
   [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 

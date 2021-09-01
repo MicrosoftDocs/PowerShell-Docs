@@ -264,9 +264,6 @@ changes as the design evolves.
 Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable or
 disable these features with `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature`.
 
-You can learn more about this feature in
-[PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
-
 [exp]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
 
 ### Load assembly from module base path before trying to load from the GAC

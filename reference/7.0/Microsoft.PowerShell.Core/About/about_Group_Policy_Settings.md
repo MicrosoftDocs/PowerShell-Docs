@@ -1,6 +1,5 @@
 ---
-description: Describes the Group Policy settings for PowerShell 
-keywords: powershell,cmdlet
+description: Describes the Group Policy settings for PowerShell
 Locale: en-US
 ms.date: 03/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_group_policy_settings?view=powershell-7&WT.mc_id=ps-gethelp
@@ -243,8 +242,6 @@ about_Group_Policies
 about_GroupPolicy
 
 ## See also
-
-[PowerShell Core Policy RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/4-Experimental-Accepted/RFC0041-Policy.md)
 
 [about_Execution_Policies](about_Execution_Policies.md)
 
