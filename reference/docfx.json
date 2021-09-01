@@ -38,10 +38,8 @@
         "docs-conceptual/learn/remoting/jea/**.md": "rpsqrd"
       },
       "feedback_product_url": {
-        "docs-conceptual/dsc/**/**.md": "https://windowsserver.uservoice.com/forums/301869-powershell",
         "docs-conceptual/gallery/**/**.md": "https://github.com/powershell/powershellgallery/issues/new",
         "docs-conceptual/learn/remoting/jea/**.md": "https://github.com/powershell/jea/issues/new",
-        "docs-conceptual/windows-powershell/wmf/**/**.md": "https://windowsserver.uservoice.com/forums/301869-powershell"
       },
       "manager": {
         "**/**": "mamccrea"
