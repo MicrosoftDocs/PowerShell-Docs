@@ -1,5 +1,5 @@
 ---
-ms.date: 08/04/2021
+ms.date: 09/02/2021
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -225,7 +225,9 @@ use the `Legacy` style argument passing.
 - `wscript.exe`
 - ending with `.bat`
 - ending with `.cmd`
+- ending with `.js`
 - ending with `.vbs`
+- ending with `.wsf`
 
 If the `$PSNativeArgumentPassing` is set to either `Legacy` or `Standard`, the check for these files
 do not occur. The default behavior is platform specific. On Windows platforms, the default setting
