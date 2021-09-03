@@ -1,7 +1,7 @@
 ---
 description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 12/14/2020
+ms.date: 09/07/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Quoting Rules
@@ -27,7 +27,7 @@ command that are run on the remote computer. In a remote session, quotation
 marks also determine whether the variables in a command are interpreted first
 on the local computer or on the remote computer.
 
-## Single and double-quoted strings
+## Double-quoted strings
 
 A string enclosed in double quotation marks is an _expandable_ string. Variable
 names preceded by a dollar sign (`$`) are replaced with the variable's value
@@ -59,6 +59,45 @@ The output of this command is:
 The value of 5 is 5.
 ```
 
+Only simple variable references can be directly embedded in an expandable
+string. Variables references using array indexing or member access must be
+enclosed in a subexpression. For example:
+
+```powershell
+"PS version: $($PSVersionTable.PSVersion)"
+```
+
+```Output
+PS version: 7.1.4
+```
+
+To disambiguate a variable name from subsequent characters in the string,
+enclose it in braces (`{}`). This is especially important if the variable name
+is followed by a colon (`:`). PowerShell considers everything between the `$`
+and the `:` a scope specifier, typically causing the interpretation to fail.
+For example, `"$HOME: where the heart is."` throws an error, but
+`"${HOME}: where the heart is."` works as intended.
+
+To prevent the substitution of a variable value in a double-quoted string, use
+the backtick character (`` ` ``), which is the PowerShell escape character.
+
+In the following example, the backtick character that precedes the first `$i`
+variable prevents PowerShell from replacing the variable name with its value.
+For example:
+
+```powershell
+$i = 5
+"The value of `$i is $i."
+```
+
+The output of this command is:
+
+```Output
+The value $i is 5.
+```
+
+## Single-quoted strings
+
 A string enclosed in single-quotation marks is a _verbatim_ string. The string
 is passed to the command exactly as you type it. No substitution is performed.
 For example:
@@ -87,24 +126,7 @@ The output of this command is:
 The value of $(2+3) is 5.
 ```
 
-To prevent the substitution of a variable value in a double-quoted string, use
-the backtick character (`` ` ``)(ASCII 96), which is the PowerShell escape
-character.
-
-In the following example, the backtick character that precedes the first `$i`
-variable prevents PowerShell from replacing the variable name with its value.
-For example:
-
-```powershell
-$i = 5
-"The value of `$i is $i."
-```
-
-The output of this command is:
-
-```Output
-The value $i is 5.
-```
+## Including quote characters in a string
 
 To make double-quotation marks appear in a string, enclose the entire string
 in single quotation marks. For example:
@@ -162,15 +184,18 @@ backtick character. This prevents PowerShell from interpreting the quotation
 mark as a string delimiter. For example:
 
 ```powershell
-PS> "Use a quotation mark (`") to begin a string."
-Use a quotation mark (") to begin a string.
-PS> 'Use a quotation mark (`") to begin a string.'
-Use a quotation mark (`") to begin a string.
+"Use a quotation mark (`") to begin a string."
+'Use a quotation mark (`") to begin a string.'
 ```
 
-Because the contents of single-quoted strings are interpreted literally, 
-the backtick character is treated as a literal character and displayed in the
+Because the contents of single-quoted strings are interpreted literally, the
+backtick character is treated as a literal character and displayed in the
 output.
+
+```Output
+Use a quotation mark (") to begin a string.
+Use a quotation mark (`") to begin a string.
+```
 
 ## Here-strings
 
@@ -307,6 +332,43 @@ xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
 Here-strings are also a convenient format for input to the
 `ConvertFrom-StringData` cmdlet, which converts here-strings to hash tables.
 For more information, see `ConvertFrom-StringData`.
+
+## Interpretation of expandable strings
+
+Expanded strings don't necessarily look the same as the default output that you
+see in the console.
+
+Collections, including arrays, are converted to strings by placing a single
+space between the string representations of the elements. A different separator
+can be specified by setting preference variable `$OFS`. For more information,
+see the [`$OFS` preference variable](about_preference_variables.md#ofs).
+
+Instances of any other type are converted to strings by calling the
+`ToString()` method which may not give a meaningful representation. For
+example:
+
+```powershell
+"hashtable: $(@{ key = 'value' })"
+```
+
+```Output
+hashtable: System.Collections.Hashtable
+```
+
+To get the same output as in the console, use a subexpression in which you pipe
+to `Out-String`. Apply the `Trim()` method if you want to remove any leading
+and trailing empty lines.
+
+```powershell
+"hashtable:`n$((@{ key = 'value' } | Out-String).Trim())"
+```
+
+```Output
+hashtable:
+Name                           Value
+----                           -----
+key                            value
+```
 
 ## See also
 
