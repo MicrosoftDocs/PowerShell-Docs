@@ -1,8 +1,8 @@
----
-title: What's New in PowerShell-Docs for 2021
-description: List of changes to the PowerShell documentation for 2021
-ms.date: 08/02/2021
----
+------------  ----------  ---  -------  ---------------  ---  ----------  -------------  ---  ----
+title:        What's      New  in       PowerShell-Docs  for  2021
+description:  List        of   changes  to               the  PowerShell  documentation  for  2021
+ms.date:      08/02/2021
+------------  ----------  ---  -------  ---------------  ---  ----------  -------------  ---  ----
 
 # What's new in PowerShell Docs for 2021
 
@@ -11,6 +11,46 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2021-August
+
+New content
+
+- [about_ANSI_Terminals](/powershell/module/microsoft.powershell.core/about/about_ansi_terminals?view=powershell-7.2&preserve-view=true)
+- [about_PSCustomObject](/powershell/module/microsoft.powershell.core/about/about_pscustomobject)
+
+Content updates
+
+- PowerShell 7.2-preview.9 documentation updates
+
+### Top Community Contributors
+
+GitHub stats
+
+- 66 PRs merged (14 from Community)
+- 42 issues opened (30 from Community)
+- 53 issues closed (38 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| AvrumFeldman    |     1      |               |
+| benmccallum     |     1      |               |
+| bitdeft         |            |       2       |
+| BraINstinct0    |     1      |               |
+| diddledani      |     1      |               |
+| doctordns       |     1      |               |
+| gravitional     |     1      |               |
+| homotechsual    |     1      |               |
+| imba-tjd        |     1      |               |
+| juvtib          |     1      |               |
+| kozhemyak       |     1      |               |
+| omarys          |     1      |               |
+| ryandasilva2992 |     1      |               |
+| sethvs          |     1      |               |
+| sneakernuts     |     1      |               |
 
 ## 2021-July
 
