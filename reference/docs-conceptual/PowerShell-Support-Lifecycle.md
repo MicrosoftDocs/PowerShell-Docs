@@ -89,7 +89,7 @@ the dates when various releases will no longer be supported.
 
 | Version |          End-of-life           |
 | :-----: | ------------------------------ |
-|   7.1   | mid-February 2022  (projected) |
+|   7.1   | May, 2022                      |
 |   7.0   | December 3, 2022               |
 |   6.2   | September 4, 2020              |
 |   6.1   | September 28, 2019             |
