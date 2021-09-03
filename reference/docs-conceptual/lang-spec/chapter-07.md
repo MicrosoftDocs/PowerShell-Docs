@@ -204,7 +204,7 @@ The result is written to the pipeline, as the top-level expression has no side e
 Syntax:
 
 ```Syntax
-member-access: Note no whitespace is allowed after
+member-access: Note no whitespace is allowed after primary-expression. 
     primary-expression . member-name
     primary-expression :: member-name
 ```
@@ -268,7 +268,7 @@ $a.ID                        # get ID from each element in the array
 Syntax:
 
 ```Syntax
-invocation-expression: Note no whitespace is allowed after
+invocation-expression: Note no whitespace is allowed after primary-expression. 
     primary-expression . member-name argument-list
     primary-expression :: member-name argument-list
 
