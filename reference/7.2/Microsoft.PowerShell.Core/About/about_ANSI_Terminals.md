@@ -71,8 +71,6 @@ The following members control how or when ANSI formatting is used:
 - `$PSStyle.OutputRendering` is a
   `System.Management.Automation.OutputRendering` enum with the values:
 
-  - **Automatic**: If the host supports VirtualTerminal, then ANSI is always
-    passed as-is, otherwise plaintext
   - **ANSI**: ANSI is always passed through as-is
   - **PlainText**: ANSI escape sequences are always stripped so that it is only
     plain text
