@@ -71,7 +71,7 @@ enclosed in a subexpression. For example:
 PS version: 7.1.4
 ```
 
-To disambiguate a variable name from subsequent characters in the string,
+To separate a variable name from subsequent characters in the string,
 enclose it in braces (`{}`). This is especially important if the variable name
 is followed by a colon (`:`). PowerShell considers everything between the `$`
 and the `:` a scope specifier, typically causing the interpretation to fail.
