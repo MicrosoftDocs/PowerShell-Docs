@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell parses commands.
 Locale: en-US
-ms.date: 09/02/2021
+ms.date: 09/07/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Parsing
@@ -106,15 +106,15 @@ uses one of the following syntaxes:
 
 - Quotation marks (`'` and `"`) begin strings
 
-- Braces (`{}`) demarcate new script blocks
+- Braces (`{}`) begin a new script blocks
 
 - Commas (`,`) introduce lists passed as arrays, except when the command to be
   called is a native application, in which case they are interpreted as part of
   the expandable string. Initial, consecutive or trailing commas are not
   supported.
 
-- Parentheses (`()`) demarcate new expressions
-- Subexpression operator (`$()`) demarcates embedded expressions
+- Parentheses (`()`) begin a new expression
+- Subexpression operator (`$()`) begins an embedded expression
 - Initial at sign (`@`) begins expression syntaxes such as splatting (`@args`),
   arrays (`@(1,2,3)`), and hash table literals (`@{a=1;b=2}`).
 - `()`, `$()`, and `@()` at the start of a token create a new parsing context
