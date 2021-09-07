@@ -678,8 +678,6 @@ The following members control how or when ANSI formatting is used:
 - `$PSStyle.OutputRendering` is a
   `System.Management.Automation.OutputRendering` enum with the values:
 
-  - **Automatic**: If the host supports VirtualTerminal, then ANSI is always
-    passed as-is, otherwise plaintext
   - **ANSI**: ANSI is always passed through as-is
   - **PlainText**: ANSI escape sequences are always stripped so that it is only
     plain text
@@ -731,7 +729,7 @@ The following members control how or when ANSI formatting is used:
 - `$PSStyle.Progress` allows you to control progress view bar rendering.
 
   - **Style** - An ANSI string setting the rendering style.
-  - **MaxWidth**` - Sets the max width of the view. Set to `0` for console
+  - **MaxWidth** - Sets the max width of the view. Set to `0` for console
     width. Defaults to `120`
   - **View** - An enum with values, `Minimal` and `Classic`. `Classic` is the
     existing rendering with no changes. `Minimal` is a single line minimal

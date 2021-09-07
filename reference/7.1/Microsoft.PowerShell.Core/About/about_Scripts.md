@@ -375,7 +375,7 @@ PowerShell has many useful features that you can use in scripts.
 
 - `#Requires` - You can use a `#Requires` statement to prevent a script from
   running without specified modules or snap-ins and a specified version of
-  PowerShell. For more information, see about_Requires.
+  PowerShell. For more information, see [about_Requires](about_Requires.md).
 
 - `$PSCommandPath` - Contains the full path and name of the script that is
   being run. This parameter is valid in all scripts. This automatic variable is
