@@ -71,7 +71,7 @@ methods.
 
 You can start an interactive session with a remote computer and then start a
 job during the interactive session. For more information about interactive
-sessions, see about_Remote, and see `Enter-PSSession`.
+sessions, see [about_Remote](..\about_Remote.md), and see `Enter-PSSession`.
 
 The procedure for starting a job in an interactive session is almost identical
 to the procedure for starting a background job on the local computer. However,

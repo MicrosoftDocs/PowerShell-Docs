@@ -29,7 +29,7 @@ If you start one or more independent transactions (by using the Independent para
 When all active transactions have either been rolled back or committed, this cmdlet shows the transaction that was most recently active in the session.
 
 This cmdlet is one of a set of cmdlets that support the transactions feature in Windows PowerShell.
-For more information, see about_Transactions.
+For more information, see [about_Transactions](..\..\Microsoft.PowerShell.Core\About\about_Transactions.md).
 
 ## EXAMPLES
 

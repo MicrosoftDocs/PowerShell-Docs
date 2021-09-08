@@ -175,7 +175,7 @@ This cmdlet returns a PSSnapInInfo object that represents the snap-in if you spe
   [How to Create a Windows PowerShell Snap-in](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in).
 - `Add-PSSnapin` adds the snap-in only to the current session. To add the snap-in to all Windows
   PowerShell sessions, add it to your Windows PowerShell profile. For more information, see
-  about_Profiles.
+  [about_Profiles](..\About\about_Profiles.md).
 - You can add any snap-in that has been registered using the Microsoft .NET Framework install
   utility. For more information, see
   [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).

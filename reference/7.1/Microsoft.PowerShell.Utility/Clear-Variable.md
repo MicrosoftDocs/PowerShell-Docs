@@ -164,7 +164,7 @@ The acceptable values for this parameter are:
 
 You can also use a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 Local is the default.
-For more information, see about_Scopes.
+For more information, see [about_Scopes](..\..\Microsoft.PowerShell.Core\About\about_Scopes.md).
 
 ```yaml
 Type: System.String
@@ -238,7 +238,7 @@ Otherwise, this cmdlet does not generate any output.
 It does not create a variable with a null value.
 
   You can also refer to **Clear-Variable** by its built-in alias, clv.
-For more information, see about_Aliases.
+For more information, see [about_Aliases](..\..\Microsoft.PowerShell.Core\About\about_Aliases.md).
 
 *
 

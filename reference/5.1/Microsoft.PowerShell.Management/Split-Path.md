@@ -305,7 +305,7 @@ Accept wildcard characters: False
 
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see about_Transactions.
+For more information, see [about_Transactions](..\..\Microsoft.PowerShell.Core\About\about_Transactions.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -351,7 +351,7 @@ These include the FileSystem, Registry, and Certificate providers.
 
   **Split-Path** is designed to work with the data exposed by any provider.
 To list the providers available in your session, type `Get-PSProvider`.
-For more information, see about_Providers.
+For more information, see [about_Providers](..\..\Microsoft.PowerShell.Core\About\about_Providers.md).
 
 ## RELATED LINKS
 

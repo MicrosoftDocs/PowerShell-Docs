@@ -349,7 +349,7 @@ C:\PS> $profileName
 Microsoft.PowerShellISE_profile.ps1
 ```
 
-For more information about scope, see about_Scopes.
+For more information about scope, see [about_Scopes](..\about_Scopes.md).
 
 ## Scripts in modules
 

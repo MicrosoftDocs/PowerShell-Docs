@@ -229,7 +229,7 @@ is created, but an error message appears when Windows PowerShell tries to add th
 snippet to the session. To use the new snippet (and other unsigned user-created snippets), change
 the execution policy, and then restart Windows PowerShell ISE.
 
-For more information about Windows PowerShell execution policies, see about_Execution_Policies.
+For more information about Windows PowerShell execution policies, see [about_Execution_Policies](..\..\Microsoft.PowerShell.Core\About\about_Execution_Policies.md).
 
 - To change a snippet, edit the snippet file. You can edit snippet files in the Script pane of
   Windows PowerShell ISE.
