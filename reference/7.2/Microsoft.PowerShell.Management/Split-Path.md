@@ -401,7 +401,7 @@ When you specify the **IsAbsolute** parameter, `Split-Path` returns a **Boolean*
   Registry, and Certificate providers.
 
 - `Split-Path` is designed to work with the data exposed by any provider. To list the providers
-  available in your session, type `Get-PSProvider`. For more information, see about_Providers.
+  available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

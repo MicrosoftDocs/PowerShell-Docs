@@ -99,7 +99,7 @@ The command uses the `$PID` automatic variable, which contains the process ID of
 PowerShell process. Then, it uses a pipeline operator (`|`) to send the process ID to the
 `Debug-Process` cmdlet.
 
-For more information about the `$PID` automatic variable, see about_Automatic_Variables.
+For more information about the `$PID` automatic variable, see [about_Automatic_Variables](../../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 ### Example 7: Attach a debugger to a process that uses the InputObject parameter
 

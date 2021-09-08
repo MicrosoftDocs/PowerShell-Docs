@@ -60,7 +60,7 @@ The *Trigger* parameter is optional, so you can add triggers when you create the
 **Set-ScheduledJob** is one of a collection of job scheduling cmdlets in the PSScheduledJob module that is included in Windows PowerShell.
 
 For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module.
-Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see about_Scheduled_Jobs.
+Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](../About/about_Scheduled_Jobs.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -100,7 +100,7 @@ The command uses the Get-ScheduledJob cmdlet to get the BackupArchive scheduled 
 A pipeline operator (|) sends the job to the **Set-ScheduledJob** cmdlet to change it.
 The **Set-ScheduledJob** cmdlet uses the *ClearExecutionHistory* parameter to delete the execution history and saved results.
 
-For more information about the execution history and saved job results of scheduled jobs, see about_Scheduled_Jobs.
+For more information about the execution history and saved job results of scheduled jobs, see [about_Scheduled_Jobs](../About/about_Scheduled_Jobs.md).
 
 ### Example 3: Change scheduled jobs on a remote computer
 

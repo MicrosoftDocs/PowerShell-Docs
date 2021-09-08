@@ -28,7 +28,7 @@ The script block can contain only transaction-enabled .NET Framework objects, su
 The *UseTransaction* parameter, which is optional for most cmdlets, is required when you use this cmdlet.
 
 **Use-Transaction** is one of a set of cmdlets that support the transactions feature in Windows PowerShell.
-For more information, see about_Transactions.
+For more information, see [about_Transactions](../../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ## EXAMPLES
 
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see about_transactions.
+For more information, see [about_transactions](../../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

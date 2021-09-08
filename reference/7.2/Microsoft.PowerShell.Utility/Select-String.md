@@ -168,7 +168,7 @@ PS> Search-Help
 
 C:\Program Files\PowerShell\6\en-US\default.help.txt:67:    The titles of conceptual topics begin with "About_".
 C:\Program Files\PowerShell\6\en-US\default.help.txt:70:    Get-Help About_<topic-name>
-C:\Program Files\PowerShell\6\en-US\default.help.txt:93:    Get-Help About_Modules : Displays help about PowerShell modules.
+C:\Program Files\PowerShell\6\en-US\default.help.txt:93:    Get-Help [About_Modules](../../Microsoft.PowerShell.Core/About/about_Modules.md) : Displays help about PowerShell modules.
 C:\Program Files\PowerShell\6\en-US\default.help.txt:97:    about_Updatable_Help
 ```
 

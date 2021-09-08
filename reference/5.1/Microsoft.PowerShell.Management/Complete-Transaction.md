@@ -27,7 +27,7 @@ When you commit a transaction, the commands in the transaction are finalized and
 If the transaction includes multiple subscribers, to commit the transaction, you must enter one **Complete-Transaction** command for every Start-Transaction command.
 
 The **Complete-Transaction** cmdlet is one of a set of cmdlets that support the transactions feature in Windows PowerShell.
-For more information, see about_Transactions.
+For more information, see [about_Transactions](../../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ## EXAMPLES
 
