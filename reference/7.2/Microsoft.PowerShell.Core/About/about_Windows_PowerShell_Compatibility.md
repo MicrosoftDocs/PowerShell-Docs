@@ -145,10 +145,6 @@ The Windows PowerShell Compatibility functionality:
 1. All modules imported into the Windows PowerShell remoting session share the
    same runspace.
 
-## Keywords
-
-about_Windows_PowerShell_Compatibility
-
 ## See also
 
 [about_Modules](about_Modules.md)

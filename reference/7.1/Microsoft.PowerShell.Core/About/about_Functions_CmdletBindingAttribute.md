@@ -1,5 +1,5 @@
 ---
-description: Describes the attribute that makes a function work like a compiled cmdlet. 
+description: Describes the attribute that makes a function work like a compiled cmdlet.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/11/2020
@@ -176,10 +176,6 @@ to specify a position value for a parameter. For more information about the
 ## Notes
 
 The **SupportsTransactions** argument is not supported in advanced functions.
-
-## Keywords
-
-about_Functions_CmdletBinding_Attribute
 
 ## See also
 

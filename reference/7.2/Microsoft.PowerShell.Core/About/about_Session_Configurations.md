@@ -325,11 +325,6 @@ the default session configuration on the computer. For more information about
 the $PSSessionConfigurationName preference variable, see
 about_Preference_Variables.
 
-## KEYWORDS
-
-about_Endpoints
-about_SessionConfigurations
-
 ## SEE ALSO
 
 [about_Preference_Variables](about_Preference_Variables.md)

@@ -1,5 +1,5 @@
 ---
-description:  Describes the Windows PowerShell Compatibility functionality for PowerShell 7. 
+description:  Describes the Windows PowerShell Compatibility functionality for PowerShell 7.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/22/2020
@@ -145,10 +145,6 @@ The Windows PowerShell Compatibility functionality:
    objects
 1. All modules imported into the Windows PowerShell remoting session share the
    same runspace.
-
-## Keywords
-
-about_Windows_PowerShell_Compatibility
 
 ## See also
 

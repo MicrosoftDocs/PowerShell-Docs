@@ -212,7 +212,3 @@ information, see [about_EventLogs](about_EventLogs.md).
 [about_Profiles](about_Profiles.md)
 
 [about_Modules](about_Modules.md)
-
-## KEYWORDS
-
-about_Snapins, about_Snap_ins, about_Snap-ins

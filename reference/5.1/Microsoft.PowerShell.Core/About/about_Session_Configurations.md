@@ -1,5 +1,5 @@
 ---
-description: Describes session configurations, which determine the users who can connect to the computer remotely and the commands they can run. 
+description: Describes session configurations, which determine the users who can connect to the computer remotely and the commands they can run.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 12/09/2017
@@ -322,11 +322,6 @@ You can also use the $PSSessionConfigurationName preference variable to change
 the default session configuration on the computer. For more information about
 the $PSSessionConfigurationName preference variable, see
 about_Preference_Variables.
-
-## KEYWORDS
-
-about_Endpoints
-about_SessionConfigurations
 
 ## SEE ALSO
 

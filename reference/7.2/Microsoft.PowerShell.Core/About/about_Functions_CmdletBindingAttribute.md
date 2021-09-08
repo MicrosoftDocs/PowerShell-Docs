@@ -176,10 +176,6 @@ to specify a position value for a parameter. For more information about the
 
 The **SupportsTransactions** argument is not supported in advanced functions.
 
-## Keywords
-
-about_Functions_CmdletBinding_Attribute
-
 ## See also
 
 [about_Functions](about_Functions.md)

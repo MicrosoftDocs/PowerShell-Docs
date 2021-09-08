@@ -700,10 +700,6 @@ Mode                LastWriteTime     Length Name
 -a---         8/27/2010   2:41 PM          0 test.txt
 ```
 
-## Keywords
-
-about_Common_Parameters
-
 ## See also
 
 [about_Preference_Variables](about_Preference_Variables.md)

@@ -225,10 +225,6 @@ remote computer where it terminates the remote command.
 
 - For information about PowerShell background jobs, see [about_Jobs](about_Jobs.md).
 
-## KEYWORDS
-
-about_Remoting
-
 ## SEE ALSO
 
 [about_PSSessions](about_PSSessions.md)

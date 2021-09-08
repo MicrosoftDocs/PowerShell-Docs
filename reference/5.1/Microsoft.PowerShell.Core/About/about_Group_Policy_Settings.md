@@ -186,11 +186,6 @@ download help from the Internet or from any file system location.
 
 For more information, see [about_Updatable_Help](about_Updatable_Help.md).
 
-## Keywords
-
-about_Group_Policies
-about_GroupPolicy
-
 ## See also
 
 [about_Execution_Policies](about_Execution_Policies.md)

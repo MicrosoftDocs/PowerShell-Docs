@@ -182,7 +182,3 @@ which enables better behavior for Pester on Nano Server.
 
 You can review the changes in versions 3.3.5 to 3.4.0 by inspecting the
 [CHANGELOG](https://github.com/pester/Pester/blob/main/docs/CHANGELOG.md) in the GitHub repository.
-
-## KEYWORDS
-
-What's New in Windows PowerShell 5.1
