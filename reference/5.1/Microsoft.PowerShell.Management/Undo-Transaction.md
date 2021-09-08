@@ -30,7 +30,7 @@ By default, transactions are rolled back automatically if any command in the tra
 However, transactions can be started by using a different rollback preference and you can use this cmdlet to roll back the active transaction at any time.
 
 The **Undo-Transaction** cmdlet is one of a set of cmdlets that support the transactions feature in Windows PowerShell.
-For more information, see about_Transactions.
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ## EXAMPLES
 

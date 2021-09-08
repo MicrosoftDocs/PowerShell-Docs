@@ -93,7 +93,7 @@ For example, if the object's properties also contain objects, to save an XML rep
 properties of the contained objects, you must specify a depth of 2.
 
 The default value can be overridden for the object type in the Types.ps1xml files. For more
-information, see about_Types.ps1xml.
+information, see [about_Types](../Microsoft.PowerShell.Core/About/about_Aliases.md).ps1xml.
 
 ```yaml
 Type: System.Int32

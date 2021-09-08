@@ -270,7 +270,7 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-* You can also refer to **Stop-Process** by its built-in aliases, **kill** and **spps**. For more information, see about_Aliases.
+* You can also refer to **Stop-Process** by its built-in aliases, **kill** and **spps**. For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
   You can also use the properties and methods of the Windows Management Instrumentation (WMI) **Win32_Process** object in Windows PowerShell.
 For more information, see `Get-CimInstance` and the WMI SDK.
