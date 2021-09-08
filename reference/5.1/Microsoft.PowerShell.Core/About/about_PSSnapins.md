@@ -108,7 +108,7 @@ your session, you can use the export file only when you need the snap-ins.
 
 To add the Add-PsSnapin command to your Windows PowerShell profile, open your
 profile, paste or type the command, and then save the profile. For more
-information, see [about_Profiles](..\about_Profiles.md).
+information, see about_Profiles.
 
 To save the snap-ins from a session in console file (.psc1), use the
 Export-Console cmdlet. For example, to save the snap-ins in the current
@@ -215,6 +215,4 @@ information, see [about_EventLogs](about_EventLogs.md).
 
 ## KEYWORDS
 
-about_Snapins
-about_Snap_ins
-about_Snap-ins
+about_Snapins, about_Snap_ins, about_Snap-ins

@@ -54,7 +54,7 @@ PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Reset-ComputerMach
 
 This command uses the Invoke-Command cmdlet to run a **Reset-ComputerMachinePassword** command on the Server01 remote computer.
 
-For more information about remote commands in Windows PowerShell, see [about_Remote](..\..\Microsoft.PowerShell.Core\About\about_Remote.md) and **Invoke-Command**.
+For more information about remote commands in Windows PowerShell, see about_Remote and **Invoke-Command**.
 
 ## PARAMETERS
 

@@ -32,7 +32,7 @@ unique to activities.
 
 For information about the workflow common parameters, see
 about_WorkflowCommonParameters. For information about the Windows PowerShell
-common parameters, see [about_CommonParameters](..\..\..\Microsoft.PowerShell.Core\About\about_CommonParameters.md).
+common parameters, see about_CommonParameters.
 
 ### LIST OF ACTIVITY COMMON PARAMETERS
 

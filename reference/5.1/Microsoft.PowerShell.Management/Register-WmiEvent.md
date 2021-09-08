@@ -100,7 +100,7 @@ When you use the **Action** parameter, `Register-WmiEvent` returns a background 
 the event action. You can use the **Job** cmdlets, such as `Get-Job` and `Receive-Job`, to manage
 the event job.
 
-For more information, see [about_Jobs](..\..\Microsoft.PowerShell.Core\About\about_Jobs.md).
+For more information, see about_Jobs.
 
 ### Example 4: Register for events on a remote computer
 
@@ -124,7 +124,7 @@ event is raised instead of sending the event to the event queue. Enclose the com
 
 The value of **Action** can include the `$Event`, `$EventSubscriber`, `$Sender`, `$EventArgs`, and
 `$Args` automatic variables, which provide information about the event to the **Action** script
-block. For more information, see [about_Automatic_Variables](..\..\Microsoft.PowerShell.Core\About\about_Automatic_Variables.md).
+block. For more information, see about_Automatic_Variables.
 
 When you specify an action, `Register-WmiEvent` returns an event job object that represents that
 action. You can use the cmdlets that contain the **Job** noun (the **Job** cmdlets) to manage the

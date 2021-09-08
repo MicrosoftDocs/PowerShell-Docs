@@ -196,7 +196,7 @@ The second command uses a pipeline operator to send the job in the `$j` variable
 command uses the **PassThru** parameter to direct `Stop-Job` to return a job object. The job object
 display confirms that the state of the job is Stopped.
 
-For more information about remote background jobs, see [about_Remote_Jobs](..\About\about_Remote_Jobs.md).
+For more information about remote background jobs, see about_Remote_Jobs.
 
 ## PARAMETERS
 

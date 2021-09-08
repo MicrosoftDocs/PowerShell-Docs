@@ -39,7 +39,7 @@ Windows PowerShell ISE introduces two new features in Windows PowerShell 4.0.
 
 - Windows PowerShell ISE now supports both Windows PowerShell Workflow
   debugging and remote script debugging. For more Information, see
-  [about_Debuggers](..\about_Debuggers.md).
+  about_Debuggers.
 
 - IntelliSense support has been added for Windows PowerShell Desired State
   Configuration providers and configurations.
@@ -185,7 +185,7 @@ are in any Windows PowerShell host program. However, the items in your Windows
 PowerShell console profiles are not available in Windows PowerShell ISE.
 
 Instructions for moving and reconfiguring your profiles are available in
-Windows PowerShell ISE Help and in [about_Profiles](..\about_Profiles.md).
+Windows PowerShell ISE Help and in about_Profiles.
 
 ## NOTES
 

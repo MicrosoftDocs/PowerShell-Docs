@@ -222,7 +222,7 @@ Accept wildcard characters: True
 
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see [about_Transactions](..\..\Microsoft.PowerShell.Core\About\about_Transactions.md).
+For more information, see about_Transactions.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -290,7 +290,7 @@ Otherwise, this cmdlet does not generate any output.
 
 You can use `Clear-ItemProperty` to delete the data in registry values without deleting the value. If the data type of the value is Binary or DWORD, clearing the data sets the value to zero. Otherwise, the value is empty.
 
-The `Clear-ItemProperty` cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see [about_Providers](..\..\Microsoft.PowerShell.Core\About\about_Providers.md).
+The `Clear-ItemProperty` cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see about_Providers.
 
 ## RELATED LINKS
 
