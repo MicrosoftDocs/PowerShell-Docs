@@ -22,7 +22,7 @@ stopping the engine and providers, and executing PowerShell commands.
 > Windows PowerShell versions 3.0, 4.0, 5.0, and 5.1 include **EventLog**
 > cmdlets for the Windows event logs. In those versions, to display the list of
 > **EventLog** cmdlets type: `Get-Command -Noun EventLog`. For more
-> information, see the cmdlet documentation and [about_EventLogs](About/about_Remote_Jobs.md) for your
+> information, see the cmdlet documentation and about_EventLogs for your
 > version of Windows PowerShell.
 
 ## Viewing the PowerShell event log entries on Windows

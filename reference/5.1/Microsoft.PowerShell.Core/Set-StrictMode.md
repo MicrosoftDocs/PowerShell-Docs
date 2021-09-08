@@ -109,7 +109,7 @@ add(3,4)
 
 ```Output
 The function or command was called like a method. Parameters should be separated by spaces,
-as described in 'Get-Help [about_Parameter](About/about_Profiles.md).'
+as described in 'Get-Help about_Parameter.'
 At line:1 char:4
 + add <<<< (3,4)
 + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
