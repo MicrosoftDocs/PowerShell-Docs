@@ -237,7 +237,7 @@ about_Remoting
 
 [about_Remote_Requirements](about_Remote_Requirements.md)
 
-[PowerShell Remoting FAQ](/powershell/scripting/learn/remoting/powershell-remoting-faq.yml)
+[PowerShell Remoting FAQ](/powershell/scripting/learn/remoting/powershell-remoting-faq)
 
 [about_Remote_TroubleShooting](about_Remote_TroubleShooting.md)
 
