@@ -41,7 +41,7 @@ Only one transaction can be active at a time.
 If you start a new, independent transaction while a transaction is in progress, the new transaction becomes the active transaction, and you must commit or roll back the new transaction before you make any changes to the original transaction.
 
 **Start-Transaction** cmdlet is one of a set of cmdlets that support the transactions feature in Windows PowerShell.
-For more information, see about_Transactions.
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ## EXAMPLES
 

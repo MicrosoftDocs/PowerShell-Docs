@@ -133,7 +133,7 @@ The acceptable values for this parameter are:
 - A number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent)
 
 The default is Local.
-For more information, see about_Scopes.
+For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
 Type: System.String

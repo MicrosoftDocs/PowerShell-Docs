@@ -49,7 +49,7 @@ workflow Test-Workflow
 
 Running commands in parallel is very efficient and reduces the time it takes to complete a workflow significantly.
 
-To run selected commands in a Parallel script block in sequential order, use the Sequence keyword. For more information, see about_Sequence.
+To run selected commands in a Parallel script block in sequential order, use the Sequence keyword. For more information, see [about_Sequence](about_Sequence.md).
 
 To run a Parallel script block on items in a collection, use the ForEach or ForEach -Parallel keywords.
 

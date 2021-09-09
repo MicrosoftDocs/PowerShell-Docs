@@ -79,7 +79,7 @@ whether the syntax of the path is correct. In this case, the path is `$False`, b
 correct `$True`. These commands use `$profile`, the automatic variable that points to the location
 for the profile, even if the profile does not exist.
 
-For more information about automatic variables, see about_Automatic_Variables.
+For more information about automatic variables, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 ### Example 3: Check whether there are any files besides a specified type
 

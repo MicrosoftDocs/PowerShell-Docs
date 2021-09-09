@@ -71,7 +71,7 @@ VERBOSE: "The secure channel between 'SERVER01' and 'net.fabrikam.com' is alive 
 ```
 
 This command uses the *Verbose* common parameter to request detailed messages about the operation.
-For more information about *Verbose*, see about_CommonParameters.
+For more information about *Verbose*, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ### Example 5: Test a connection before you run a script
 
