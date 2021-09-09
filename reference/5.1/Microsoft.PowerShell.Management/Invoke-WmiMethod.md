@@ -236,9 +236,9 @@ use the Receive-Job cmdlet.
 
 To use this parameter with remote computers, the local and remote computers must be configured for
 remoting. Additionally, you must start Windows PowerShell by using the Run as administrator option
-in Windows Vista and later versions of Windows. For more information, see about_Remote_Requirements.
+in Windows Vista and later versions of Windows. For more information, see [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
 
-For more information about Windows PowerShell background jobs, see about_Jobs and about_Remote_Jobs.
+For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and about_Remote_Jobs.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

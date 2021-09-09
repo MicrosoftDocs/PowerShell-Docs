@@ -85,7 +85,7 @@ It uses the **As** parameter with a value of Script to generate a file that cont
 The second command adds the aliases in the Alias.ps1 file to the CurrentUser-CurrentHost profile.
 The path to the profile is saved in the `$Profile` variable.
 The command uses the `Get-Content` cmdlet to get the aliases from the Alias.ps1 file and the `Add-Content` cmdlet to add them to the profile.
-For more information, see about_Profiles.
+For more information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
 The third and fourth commands add the aliases in the Alias.ps1 file to a remote session on the Server01 computer.
 The third command uses the `New-PSSession` cmdlet to create the session.
@@ -279,7 +279,7 @@ The acceptable values for this parameter are:
 - A number relative to the current scope (0 through the number of scopes where 0 is the current scope and 1 is its parent)
 
 The default value is Local.
-For more information, see about_Scopes.
+For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
 Type: System.String

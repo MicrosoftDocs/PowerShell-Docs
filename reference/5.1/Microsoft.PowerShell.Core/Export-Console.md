@@ -26,7 +26,7 @@ You can use this cmdlet to save the snap-ins for use in future sessions.
 
 To add the snap-ins in the .psc1 console file to a session, start Windows PowerShell (Powershell.exe) at the command line by using Cmd.exe or another Windows PowerShell session, and then use the *PSConsoleFile* parameter of Powershell.exe to specify the console file.
 
-For more information about Windows PowerShell snap-ins, see about_PSSnapins.
+For more information about Windows PowerShell snap-ins, see [about_PSSnapins](About/about_PSSnapins.md).
 
 ## EXAMPLES
 
@@ -159,7 +159,7 @@ It is also required when you use the *NoClobber* parameter to prevent the curren
 
 If you omit this parameter, **Export-Console** overwrites the console file that was used most recently in this session.
 The path of the most recently used console file is stored in the value of the $ConsoleFileName automatic variable.
-For more information, see about_Automatic_Variables.
+For more information, see [about_Automatic_Variables](About/about_Automatic_Variables.md).
 
 ```yaml
 Type: System.String
@@ -226,7 +226,7 @@ This cmdlet creates a file that contains the exported aliases.
   `powershell.exe -PsConsoleFile \<ConsoleFile\>.psc1`
 
   You can also save Windows PowerShell snap-ins for future sessions by adding an Add-PSSnapin command to your Windows PowerShell profile.
-For more information, see about_Profiles.
+For more information, see [about_Profiles](About/about_Profiles.md).
 
 
 ## RELATED LINKS

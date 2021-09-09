@@ -48,7 +48,7 @@ You can identify the scheduled jobs by their names or identification numbers, or
 **Get-JobTrigger** is one of a collection of job scheduling cmdlets in the PSScheduledJob module that is included in Windows PowerShell.
 
 For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module.
-Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see about_Scheduled_Jobs.
+Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
