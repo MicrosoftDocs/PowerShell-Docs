@@ -76,9 +76,10 @@ workflow Test-Workflow
 ```
 
 In this version of the workflow, the `Get-Process` and `Get-Service` commands
-are run in parallel. The workflow function proceeds to the `ForEach -Parallel`
+are run in parallel. The workflow function continues to the `ForEach -Parallel`
 loop where the commands are run sequentially, but they run on the disks in
-parallel.
+parallel. The parallel commands and the `ForEach -Parallel` loop run
+concurrently.
 
 ```powershell
 workflow Test-Workflow
