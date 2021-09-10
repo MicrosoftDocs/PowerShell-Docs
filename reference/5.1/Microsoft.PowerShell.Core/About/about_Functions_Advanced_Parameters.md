@@ -166,17 +166,20 @@ value is required.
 
 - Switch parameters should not be given default values. They should always
   default to false.
+- Switch parameters are excluded from positional parameters by default. 
+  Even when other parameters are implicitly positional, switch parameters are not. 
+  You _can_ override that in the Parameter attribute, but it will confuse users.
 - Switch parameters should be designed so that setting them moves a command
   from its default functionality to a less common or more complicated mode. The
   simplest behavior of a command should be the default behavior that does not
   require the use of switch parameters.
-- Switch parameters should not be mandatory since a switch, when used, can only
-  be `$true`. The only case where it is necessary to make a switch parameter
+- Switch parameters should not be mandatory.
+  The only case where it is necessary to make a switch parameter
   mandatory is when it is needed to differentiate a parameter set.
 - Explicitly setting a switch from a boolean can be done with
   `-MySwitch:$boolValue` and in splatting with
   `$params = @{ MySwitch = $boolValue }`.
-- Switch parameters are of type `SwitchParameter` but implicitly convert to
+- Switch parameters are of type `SwitchParameter`, which implicitly converts to
   Boolean. The parameter variable can be used directly in a conditional
   expression. For example:
 
