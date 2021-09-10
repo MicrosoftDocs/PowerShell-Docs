@@ -196,7 +196,8 @@ Accept wildcard characters: False
 
 Specifies an ID that distinguishes each progress bar from the others. Use this parameter when you
 are creating more than one progress bar in a single command. If the progress bars do not have
-different IDs, they are superimposed instead of being displayed in a series.
+different IDs, they are superimposed instead of being displayed in a series. Negative values are 
+not allowed.
 
 ```yaml
 Type: System.Int32
