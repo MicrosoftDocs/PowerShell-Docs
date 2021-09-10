@@ -1,8 +1,8 @@
 ---
-description: Describes the `ForEach -Parallel` language construct in Windows PowerShell Workflow. 
+description: Describes the `ForEach -Parallel` language construct in Windows PowerShell Workflow.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 07/10/2019
+ms.date: 09/10/2021
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_foreach-parallel?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Foreach-Parallel
@@ -73,7 +73,14 @@ workflow Test-Workflow
         Set-Disk -Path $DiskPath
     }
 }
+```
 
+In this version of the workflow, the `Get-Process` and `Get-Service` commands
+are run in parallel. The workflow function proceeds to the `ForEach -Parallel`
+loop where the commands are run sequentially, but they run on the disks in
+parallel.
+
+```powershell
 workflow Test-Workflow
 {
     #Run commands in parallel.
