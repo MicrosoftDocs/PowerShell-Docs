@@ -196,7 +196,7 @@ a file system drive.
 You can also create a parameter that appears only when another parameter is
 used in the function command or when another parameter has a certain value.
 
-Dynamic parameters can be useful, but use them only when necessary, because
+Dynamic parameters can be useful, but use them only when necessary because
 they can be difficult for users to discover. To find a dynamic parameter, the
 user must be in the provider path, use the **ArgumentList** parameter of the
 `Get-Command` cmdlet, or use the **Path** parameter of `Get-Help`.
