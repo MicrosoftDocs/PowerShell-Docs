@@ -156,6 +156,24 @@ data, and the adjacent object is also numeric, it will group them into a single 
 
 ## PARAMETERS
 
+### -Count
+
+This represents the number of bytes to include in the hex output.
+
+This parameter was introduced in PowerShell 6.2.
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Int64.MaxValue
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Encoding
 
 Specifies the encoding of the input strings. This only applies to `[string]` input. The parameter
@@ -244,6 +262,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Offset
+
+This represents the number of bytes to skip from being part of the hex output.
+
+This parameter was introduced in PowerShell 6.2.
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Path
 
 Specifies the path to files. Use a dot (`.`) to specify the current location. The wildcard character
@@ -275,42 +311,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Offset
-
-This represents the number of bytes to skip from being part of the hex output.
-
-This parameter was introduced in PowerShell 6.2.
-
-```yaml
-Type: System.Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: 0
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Count
-
-This represents the number of bytes to include in the hex output.
-
-This parameter was introduced in PowerShell 6.2.
-
-```yaml
-Type: System.Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: Int64.MaxValue
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
