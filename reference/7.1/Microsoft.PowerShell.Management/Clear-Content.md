@@ -88,38 +88,6 @@ PS C:\>
 
 ## PARAMETERS
 
-### -Stream
-
-> [!NOTE]
-> This Parameter is only available on Windows.
-
-Specifies an alternative data stream for content. If the stream does not exist, this cmdlet creates
-it. Wildcard characters are not supported.
-
-**Stream** is a dynamic parameter that the FileSystem provider adds to `Clear-Content`. This
-parameter works only in file system drives, and will clear the content of alternative data streams
-on both files and directories.
-
-You can use the `Clear-Content` cmdlet to change the content of amy alternate data stream, such as
-`Zone.Identifier`. However, we do not recommend this as a way to eliminate security checks that
-block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use
-the `Unblock-File` cmdlet.
-
-This parameter was introduced in PowerShell 3.0. As of PowerShell 7.2, `Clear-Content` can clear the
-content of alternative data streams from directories as well as files.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Credential
 
 > [!NOTE]
@@ -244,6 +212,38 @@ Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
+```
+
+### -Stream
+
+> [!NOTE]
+> This Parameter is only available on Windows.
+
+Specifies an alternative data stream for content. If the stream does not exist, this cmdlet creates
+it. Wildcard characters are not supported.
+
+**Stream** is a dynamic parameter that the FileSystem provider adds to `Clear-Content`. This
+parameter works only in file system drives, and will clear the content of alternative data streams
+on both files and directories.
+
+You can use the `Clear-Content` cmdlet to change the content of amy alternate data stream, such as
+`Zone.Identifier`. However, we do not recommend this as a way to eliminate security checks that
+block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use
+the `Unblock-File` cmdlet.
+
+This parameter was introduced in PowerShell 3.0. As of PowerShell 7.2, `Clear-Content` can clear the
+content of alternative data streams from directories as well as files.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Confirm

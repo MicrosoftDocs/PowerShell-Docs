@@ -168,22 +168,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-Prompts you for confirmation before running `Update-ModuleManifest`.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Copyright
 
 Specifies a copyright statement for the module.
@@ -673,22 +657,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RequireLicenseAcceptance
-
-Specifies that a license acceptance is required for the module.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RequiredAssemblies
 
 Specifies the assembly (`.dll`) files that the module requires. Enter the assembly file names.
@@ -720,6 +688,22 @@ global session state, PowerShell imports them. If the required modules aren't av
 
 ```yaml
 Type: System.Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RequireLicenseAcceptance
+
+Specifies that a license acceptance is required for the module.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -830,6 +814,22 @@ Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
+```
+
+### -Confirm
+
+Prompts you for confirmation before running `Update-ModuleManifest`.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -WhatIf

@@ -61,6 +61,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Value
+
+The string values to be added to the clipboard.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
 ### -Confirm
 
 Prompts you for confirmation before running the cmdlet.
@@ -90,22 +106,6 @@ Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Value
-
-The string values to be added to the clipboard.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 

@@ -176,29 +176,6 @@ The new properties that are now part of the output are:
 
 ## PARAMETERS
 
-### -Stream
-
-> [!NOTE]
-> This Parameter is only available on Windows.
-
-Gets the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are
-supported. To get all streams, use an asterisk (`*`). This parameter isn't valid on folders.
-
-**Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Item` cmdlet.
-This parameter works only in file system drives.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: No alternate file streams
-Accept pipeline input: False
-Accept wildcard characters: True
-```
-
 ### -Credential
 
 > [!NOTE]
@@ -335,6 +312,29 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: True
+```
+
+### -Stream
+
+> [!NOTE]
+> This Parameter is only available on Windows.
+
+Gets the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are
+supported. To get all streams, use an asterisk (`*`). This parameter isn't valid on folders.
+
+**Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Item` cmdlet.
+This parameter works only in file system drives.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: No alternate file streams
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
