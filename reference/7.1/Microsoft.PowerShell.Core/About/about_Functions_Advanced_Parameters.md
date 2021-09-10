@@ -174,7 +174,7 @@ value is required.
 - Explicitly setting a switch from a boolean can be done with
   `-MySwitch:$boolValue` and in splatting with
   `$params = @{ MySwitch = $boolValue }`.
-- Switch parameters are of type `SwitchParameter` which implicitly converts to
+- Switch parameters are of type `SwitchParameter`, which implicitly converts to
   Boolean. The parameter variable can be used directly in a conditional
   expression. For example:
 
