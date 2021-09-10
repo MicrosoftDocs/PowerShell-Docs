@@ -165,22 +165,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SPNPort
-Specifies a port number to append to the connection Service Principal Name (SPN) of the remote server.
-An SPN is used when the authentication mechanism is Kerberos or Negotiate.
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SkipCACheck
 Specifies that, when it connects over HTTPS, the client does not validate that the server certificate is signed by a trusted certification authority (CA).
 Use this option only when the remote computer is trusted by another method, for example, if the remote computer is part of a network that is physically secure and isolated or the remote computer is listed as a trusted host in the WS-Management configuration.
@@ -219,6 +203,22 @@ Indicates that the connection does not validate the revocation status on the ser
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SPNPort
+Specifies a port number to append to the connection Service Principal Name (SPN) of the remote server.
+An SPN is used when the authentication mechanism is Kerberos or Negotiate.
+
+```yaml
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 

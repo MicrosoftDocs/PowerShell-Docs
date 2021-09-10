@@ -126,6 +126,22 @@ parameter:
 
 ## Parameters
 
+### -AdditionalArguments
+
+Specifies additional arguments.
+
+```yaml
+Type: System.String[]
+Parameter Sets: msi:PackageByInputObject, msi:PackageBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AllowClobber
 
 Overrides warning messages about conflicts with existing commands. Overwrites existing commands that
@@ -231,6 +247,38 @@ package.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeSystemComponent
+
+Specifies that this cmdlet uninstalls system components.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Programs:PackageByInputObject, Programs:PackageBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeWindowsInstaller
+
+Indicates that this cmdlet uninstalls the package through Windows Installer.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Programs:PackageByInputObject, Programs:PackageBySearch
 Aliases:
 
 Required: False
@@ -499,54 +547,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AdditionalArguments
-
-Specifies additional arguments.
-
-```yaml
-Type: System.String[]
-Parameter Sets: msi:PackageByInputObject, msi:PackageBySearch
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeSystemComponent
-
-Specifies that this cmdlet uninstalls system components.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: Programs:PackageByInputObject, Programs:PackageBySearch
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeWindowsInstaller
-
-Indicates that this cmdlet uninstalls the package through Windows Installer.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: Programs:PackageByInputObject, Programs:PackageBySearch
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

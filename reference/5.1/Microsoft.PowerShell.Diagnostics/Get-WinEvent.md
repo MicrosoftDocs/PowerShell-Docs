@@ -651,25 +651,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FilterXPath
-
-Specifies an XPath query that this cmdlet select events from one or more logs.
-
-For more information about the XPath language, see [XPath Reference](/previous-versions/dotnet/netframework-4.0/ms256115(v=vs.100))
-and the Selection Filters section of [Event Selection](/previous-versions/aa385231(v=vs.85)).
-
-```yaml
-Type: System.String
-Parameter Sets: GetLogSet, GetProviderSet, FileSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -FilterXml
 
 Specifies a structured XML query that this cmdlet selects events from one or more event logs.
@@ -692,6 +673,25 @@ Aliases:
 
 Required: True
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FilterXPath
+
+Specifies an XPath query that this cmdlet select events from one or more logs.
+
+For more information about the XPath language, see [XPath Reference](/previous-versions/dotnet/netframework-4.0/ms256115(v=vs.100))
+and the Selection Filters section of [Event Selection](/previous-versions/aa385231(v=vs.85)).
+
+```yaml
+Type: System.String
+Parameter Sets: GetLogSet, GetProviderSet, FileSet
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
