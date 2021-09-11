@@ -120,22 +120,6 @@ $Error | Get-Error
 
 ## PARAMETERS
 
-### -Newest
-
-Specifies the number of errors to display that have occurred in the current session.
-
-```yaml
-Type: System.Int32
-Parameter Sets: Newest
-Aliases: Last
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 
 This parameter is used for pipeline input.
@@ -149,6 +133,22 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Newest
+
+Specifies the number of errors to display that have occurred in the current session.
+
+```yaml
+Type: System.Int32
+Parameter Sets: Newest
+Aliases: Last
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

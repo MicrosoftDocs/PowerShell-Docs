@@ -567,6 +567,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ThreadApartmentState
+
+Specifies the apartment state of the threading module to be used. Acceptable values are:
+
+- Unknown
+- MTA
+- STA
+
+```yaml
+Type: System.Threading.ApartmentState
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ThreadOptions
 
 Specifies the thread options setting in the configuration. This setting defines how threads are
@@ -668,26 +688,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ThreadApartmentState
-
-Specifies the apartment state of the threading module to be used. Acceptable values are:
-
-- Unknown
-- MTA
-- STA
-
-```yaml
-Type: System.Threading.ApartmentState
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
