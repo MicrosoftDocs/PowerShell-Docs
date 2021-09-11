@@ -1124,26 +1124,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Variable
-
-Specifies an array of variables that this cmdlet imports from the module into the current session.
-Enter a list of variables. Wildcard characters are permitted.
-
-Some modules automatically export selected variables into your session when you import the module.
-This parameter lets you select from among the exported variables.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: True
-```
-
 ### -SkipEditionCheck
 
 Skips the check on the `CompatiblePSEditions` field.
@@ -1190,6 +1170,26 @@ Position: Named
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
+```
+
+### -Variable
+
+Specifies an array of variables that this cmdlet imports from the module into the current session.
+Enter a list of variables. Wildcard characters are permitted.
+
+Some modules automatically export selected variables into your session when you import the module.
+This parameter lets you select from among the exported variables.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters

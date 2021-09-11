@@ -832,6 +832,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Subsystem
+
+Specifies the SSH subsystem used for the new **PSSession**.
+
+This specifies the subsystem to use on the target as defined in sshd_config.
+The subsystem starts a specific version of PowerShell with predefined parameters.
+If the specified subsystem does not exist on the remote computer, the command fails.
+
+If this parameter is not used, the default is the 'powershell' subsystem.
+
+```yaml
+Type: System.String
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: powershell
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -ThrottleLimit
 
 Specifies the maximum number of concurrent connections that can be established to run this command.
@@ -906,6 +928,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -UseWindowsPowerShell
+
+Creates a remote connection to a new Windows PowerShell runspace on the local system.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UseWindowsPowerShellParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -VMId
 
 Specifies an array of ID of virtual machines. This cmdlet starts an interactive session with each of
@@ -941,44 +979,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Subsystem
-
-Specifies the SSH subsystem used for the new **PSSession**.
-
-This specifies the subsystem to use on the target as defined in sshd_config.
-The subsystem starts a specific version of PowerShell with predefined parameters.
-If the specified subsystem does not exist on the remote computer, the command fails.
-
-If this parameter is not used, the default is the 'powershell' subsystem.
-
-```yaml
-Type: System.String
-Parameter Sets: SSHHost
-Aliases:
-
-Required: False
-Position: Named
-Default value: powershell
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -UseWindowsPowerShell
-
-Creates a remote connection to a new Windows PowerShell runspace on the local system.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UseWindowsPowerShellParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

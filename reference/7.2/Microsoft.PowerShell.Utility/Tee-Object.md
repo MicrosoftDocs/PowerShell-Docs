@@ -117,23 +117,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FilePath
-
-Specifies a file that this cmdlet saves the object to Wildcard characters are permitted, but must
-resolve to a single file.
-
-```yaml
-Type: System.String
-Parameter Sets: File
-Aliases: Path
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: True
-```
-
 ### -Encoding
 
 Specifies the type of encoding for the target file. The default value is `utf8NoBOM`.
@@ -172,6 +155,23 @@ Position: 1
 Default value: UTF8NoBOM
 Accept pipeline input: False
 Accept wildcard characters: False
+```
+
+### -FilePath
+
+Specifies a file that this cmdlet saves the object to Wildcard characters are permitted, but must
+resolve to a single file.
+
+```yaml
+Type: System.String
+Parameter Sets: File
+Aliases: Path
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
 ```
 
 ### -InputObject

@@ -549,6 +549,24 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
+### -Stable
+
+The sorted objects are delivered in the order they were received when the sort criteria are equal.
+
+This parameter was added in PowerShell v6.2.0.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Default
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Top
 
 Specifies the number of objects to get from the start of a sorted object array. This results in a
@@ -584,24 +602,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: All
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Stable
-
-The sorted objects are delivered in the order they were received when the sort criteria are equal.
-
-This parameter was added in PowerShell v6.2.0.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: Default
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

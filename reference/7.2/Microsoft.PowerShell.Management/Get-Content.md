@@ -271,171 +271,13 @@ PowerShell as `[System.Object[]]`.
 
 ## PARAMETERS
 
-### -Path
+### -AsByteStream
 
-Specifies the path to an item where `Get-Content` gets the content. Wildcard characters are
-permitted. The paths must be paths to items, not to containers. For example, you must specify a path
-to one or more files, not a path to a directory.
+Specifies that the content should be read as a stream of bytes. The **AsByteStream** parameter was
+introduced in Windows PowerShell 6.0.
 
-```yaml
-Type: System.String[]
-Parameter Sets: Path
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: True
-```
-
-### -LiteralPath
-
-Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
-typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
-it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
-as escape sequences.
-
-For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
-
-```yaml
-Type: System.String[]
-Parameter Sets: LiteralPath
-Aliases: PSPath, LP
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ReadCount
-
-Specifies how many lines of content are sent through the pipeline at a time. The default value is 1.
-A value of 0 (zero) sends all of the content at one time.
-
-This parameter does not change the content displayed, but it does affect the time it takes to
-display the content. As the value of **ReadCount** increases, the time it takes to return the first
-line increases, but the total time for the operation decreases. This can make a perceptible
-difference in large items.
-
-```yaml
-Type: System.Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: 1
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -TotalCount
-
-Specifies the number of lines from the beginning of a file or other item. The default is -1 (all
-lines).
-
-You can use the **TotalCount** parameter name or its aliases, **First** or **Head**.
-
-```yaml
-Type: System.Int64
-Parameter Sets: (All)
-Aliases: First, Head
-
-Required: False
-Position: Named
-Default value: -1
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Tail
-
-Specifies the number of lines from the end of a file or other item. You can use the **Tail**
-parameter name or its alias, **Last**. This parameter was introduced in PowerShell 3.0.
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases: Last
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Filter
-
-Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
-provider is the only installed PowerShell provider that supports the use of filters. You can find
-the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-Filters are more efficient than other parameters, because the provider applies them when the cmdlet
-gets the objects rather than having PowerShell filter the objects after they are retrieved.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: True
-```
-
-### -Include
-
-Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
-of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
-`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
-command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
-specifies the contents of the `C:\Windows` directory.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: True
-```
-
-### -Exclude
-
-Specifies, as a string array, an item or items that this cmdlet excludes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-
-Enter a path element or pattern, such as `*.txt`.
-Wildcard characters are permitted.
-
-The **Exclude** parameter is effective only when the command includes the contents of an item,
-such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: True
-```
-
-### -Force
-
-**Force** will override a read-only attribute or create directories to complete a file path. The
-**Force** parameter does not attempt to change file permissions or override security restrictions.
+A warning occurs when you use the **AsByteStream** parameter with the **Encoding** parameter. The
+**AsByteStream** parameter ignores any encoding and the output is returned as a stream of bytes.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -444,7 +286,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -500,49 +342,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Wait
-
-Keeps the file open after all existing lines have been output. While waiting, `Get-Content` checks
-the file once each second and outputs new lines if present. You can interrupt **Wait** by pressing
-**CTRL+C**. Waiting also ends if the file gets deleted, in which case a non-terminating error is
-reported.
-
-**Wait** is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet. This
-parameter works only in file system drives. **Wait** cannot be combined with **Raw**.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Raw
-
-Ignores newline characters and returns the entire contents of a file in one string with the newlines
-preserved. By default, newline characters in a file are used as delimiters to separate the input
-into an array of strings. This parameter was introduced in PowerShell 3.0.
-
-**Raw** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Content` cmdlet
-This parameter works only in file system drives.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Encoding
 
 Specifies the type of encoding for the target file. The default value is `utf8NoBOM`.
@@ -591,6 +390,169 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Exclude
+
+Specifies, as a string array, an item or items that this cmdlet excludes in the operation.
+The value of this parameter qualifies the **Path** parameter.
+
+Enter a path element or pattern, such as `*.txt`.
+Wildcard characters are permitted.
+
+The **Exclude** parameter is effective only when the command includes the contents of an item,
+such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
+directory.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### -Filter
+
+Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
+Filters are more efficient than other parameters, because the provider applies them when the cmdlet
+gets the objects rather than having PowerShell filter the objects after they are retrieved.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### -Force
+
+**Force** will override a read-only attribute or create directories to complete a file path. The
+**Force** parameter does not attempt to change file permissions or override security restrictions.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Include
+
+Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### -LiteralPath
+
+Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
+it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
+as escape sequences.
+
+For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+
+```yaml
+Type: System.String[]
+Parameter Sets: LiteralPath
+Aliases: PSPath, LP
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Path
+
+Specifies the path to an item where `Get-Content` gets the content. Wildcard characters are
+permitted. The paths must be paths to items, not to containers. For example, you must specify a path
+to one or more files, not a path to a directory.
+
+```yaml
+Type: System.String[]
+Parameter Sets: Path
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: True
+```
+
+### -Raw
+
+Ignores newline characters and returns the entire contents of a file in one string with the newlines
+preserved. By default, newline characters in a file are used as delimiters to separate the input
+into an array of strings. This parameter was introduced in PowerShell 3.0.
+
+**Raw** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Content` cmdlet
+This parameter works only in file system drives.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ReadCount
+
+Specifies how many lines of content are sent through the pipeline at a time. The default value is 1.
+A value of 0 (zero) sends all of the content at one time.
+
+This parameter does not change the content displayed, but it does affect the time it takes to
+display the content. As the value of **ReadCount** increases, the time it takes to return the first
+line increases, but the total time for the operation decreases. This can make a perceptible
+difference in large items.
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 1
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -Stream
 
 > [!NOTE]
@@ -617,13 +579,51 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AsByteStream
+### -Tail
 
-Specifies that the content should be read as a stream of bytes. The **AsByteStream** parameter was
-introduced in Windows PowerShell 6.0.
+Specifies the number of lines from the end of a file or other item. You can use the **Tail**
+parameter name or its alias, **Last**. This parameter was introduced in PowerShell 3.0.
 
-A warning occurs when you use the **AsByteStream** parameter with the **Encoding** parameter. The
-**AsByteStream** parameter ignores any encoding and the output is returned as a stream of bytes.
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: Last
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -TotalCount
+
+Specifies the number of lines from the beginning of a file or other item. The default is -1 (all
+lines).
+
+You can use the **TotalCount** parameter name or its aliases, **First** or **Head**.
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases: First, Head
+
+Required: False
+Position: Named
+Default value: -1
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Wait
+
+Keeps the file open after all existing lines have been output. While waiting, `Get-Content` checks
+the file once each second and outputs new lines if present. You can interrupt **Wait** by pressing
+**CTRL+C**. Waiting also ends if the file gets deleted, in which case a non-terminating error is
+reported.
+
+**Wait** is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet. This
+parameter works only in file system drives. **Wait** cannot be combined with **Raw**.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -632,7 +632,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

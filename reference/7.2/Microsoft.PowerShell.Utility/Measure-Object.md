@@ -306,6 +306,22 @@ Property          : PeakPagedMemorySize
 
 ## PARAMETERS
 
+### -AllStats
+
+Indicates that the cmdlet displays all the statistics of the specified properties.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: GenericMeasure
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Average
 
 Indicates that the cmdlet displays the average value of the specified properties.
@@ -474,22 +490,6 @@ Accept wildcard characters: False
 ### -Sum
 
 Indicates that the cmdlet displays the sum of the values of the specified properties.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: GenericMeasure
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AllStats
-
-Indicates that the cmdlet displays all the statistics of the specified properties.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
