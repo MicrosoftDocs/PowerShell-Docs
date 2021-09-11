@@ -126,23 +126,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UseMinimalHeader
-
-Prepend a short header to the transcript, instead of the detailed header included by default. This
-parameter was added in PowerShell 6.2.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -LiteralPath
 
 Specifies a location to the transcript file. Unlike the **Path** parameter, the value of the
@@ -214,6 +197,23 @@ Aliases:
 
 Required: False
 Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseMinimalHeader
+
+Prepend a short header to the transcript, instead of the detailed header included by default. This
+parameter was added in PowerShell 6.2.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

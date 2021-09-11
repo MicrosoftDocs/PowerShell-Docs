@@ -406,6 +406,37 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
+### -OutputBufferingMode
+
+Determines how command output is managed in the disconnected session when the output buffer is
+full. The default value is **Block**.
+
+If the command in the disconnected session is returning output and the output buffer fills, the
+value of this parameter effectively determines whether the command continues to run while the
+session is disconnected. A value of **Block** suspends the command until the session is
+reconnected. A value of **Drop** allows the command to complete, although data might be lost. When
+using the **Drop** value, redirect the command output to a file on disk.
+
+Valid values are:
+
+- **Block**: When the output buffer is full, execution is suspended until the buffer is clear.
+- **Drop**: When the output buffer is full, execution continues. As new output is saved, the oldest
+  output is discarded.
+- **None**: No output buffering mode is specified. The value of the **OutputBufferingMode** property
+  of the session configuration is used for the disconnected session.
+
+```yaml
+Type: System.Management.Automation.Runspaces.OutputBufferingMode
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Block
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Session
 
 Disconnects from the specified PSSessions. Enter PSSession objects, such as those that the
@@ -446,37 +477,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: 32
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutputBufferingMode
-
-Determines how command output is managed in the disconnected session when the output buffer is
-full. The default value is **Block**.
-
-If the command in the disconnected session is returning output and the output buffer fills, the
-value of this parameter effectively determines whether the command continues to run while the
-session is disconnected. A value of **Block** suspends the command until the session is
-reconnected. A value of **Drop** allows the command to complete, although data might be lost. When
-using the **Drop** value, redirect the command output to a file on disk.
-
-Valid values are:
-
-- **Block**: When the output buffer is full, execution is suspended until the buffer is clear.
-- **Drop**: When the output buffer is full, execution continues. As new output is saved, the oldest
-  output is discarded.
-- **None**: No output buffering mode is specified. The value of the **OutputBufferingMode** property
-  of the session configuration is used for the disconnected session.
-
-```yaml
-Type: System.Management.Automation.Runspaces.OutputBufferingMode
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: Block
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
