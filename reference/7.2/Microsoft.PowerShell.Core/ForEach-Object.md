@@ -472,6 +472,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AsJob
+
+Causes the parallel invocation to run as a PowerShell job. A single job object is returned instead
+of output from the running script blocks. The job object contains child jobs for each parallel
+script block that runs. The job object can be used by all PowerShell job cmdlets, to monitor running
+state and retrieve data.
+
+This parameter was introduced in PowerShell 7.0.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ParallelParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Begin
 
 Specifies a script block that runs before this cmdlet processes any input objects. This script block
@@ -556,6 +577,25 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
+### -Parallel
+
+Specifies the script block to be used for parallel processing of input objects. Enter a script block
+that describes the operation.
+
+This parameter was introduced in PowerShell 7.0.
+
+```yaml
+Type: System.Management.Automation.ScriptBlock
+Parameter Sets: ParallelParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Process
 
 Specifies the operation that is performed on each input object. This script block is run for every
@@ -592,25 +632,6 @@ Parameter Sets: ScriptBlockSet
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Parallel
-
-Specifies the script block to be used for parallel processing of input objects. Enter a script block
-that describes the operation.
-
-This parameter was introduced in PowerShell 7.0.
-
-```yaml
-Type: System.Management.Automation.ScriptBlock
-Parameter Sets: ParallelParameterSet
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -674,27 +695,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AsJob
-
-Causes the parallel invocation to run as a PowerShell job. A single job object is returned instead
-of output from the running script blocks. The job object contains child jobs for each parallel
-script block that runs. The job object can be used by all PowerShell job cmdlets, to monitor running
-state and retrieve data.
-
-This parameter was introduced in PowerShell 7.0.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: ParallelParameterSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

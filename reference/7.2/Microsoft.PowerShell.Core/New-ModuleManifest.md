@@ -357,6 +357,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ClrVersion
+
+Specifies the minimum version of the Common Language Runtime (CLR) of the Microsoft .NET Framework
+that the module requires.
+
+```yaml
+Type: System.Version
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CmdletsToExport
 
 Specifies the cmdlets that the module exports. Wildcards are permitted.
@@ -1126,23 +1143,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ClrVersion
-
-Specifies the minimum version of the Common Language Runtime (CLR) of the Microsoft .NET Framework
-that the module requires.
-
-```yaml
-Type: System.Version
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
