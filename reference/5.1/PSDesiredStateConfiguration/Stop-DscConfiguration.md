@@ -95,26 +95,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-`Stop-DscConfiguration` doesn't support the **Confirm** parameter. If the **Confirm** parameter is
-used, an error is displayed.
-
-For PowerShell cmdlets that support **Confirm**, using the parameter prompts you for verification
-before a command is run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Force
 
 Forces the command to run without asking for user confirmation.
@@ -147,6 +127,26 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+`Stop-DscConfiguration` doesn't support the **Confirm** parameter. If the **Confirm** parameter is
+used, an error is displayed.
+
+For PowerShell cmdlets that support **Confirm**, using the parameter prompts you for verification
+before a command is run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

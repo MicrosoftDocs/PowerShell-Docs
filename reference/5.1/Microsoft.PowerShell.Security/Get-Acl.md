@@ -112,6 +112,28 @@ Get-Acl -InputObject (Get-StorageSubSystem -Name S087)
 
 ## PARAMETERS
 
+### -AllCentralAccessPolicies
+
+Gets information about all central access policies that are enabled on the computer.
+
+Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set
+central access policies for users and groups. For more information, see
+[Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
+
+This parameter is introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Audit
 
 Gets the audit data for the security descriptor from the system access control list (SACL).
@@ -181,48 +203,6 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### -Path
-
-Specifies the path to a resource. `Get-Acl` gets the security descriptor of the resource indicated
-by the path. Wildcards are permitted. If you omit the **Path** parameter, `Get-Acl` gets the
-security descriptor of the current directory.
-
-The parameter name ("Path") is optional.
-
-```yaml
-Type: System.String[]
-Parameter Sets: ByPath
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: True
-```
-
-### -AllCentralAccessPolicies
-
-Gets information about all central access policies that are enabled on the computer.
-
-Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set
-central access policies for users and groups. For more information, see
-[Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
-
-This parameter is introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 
 Gets the security descriptor for the specified object. Enter a variable that contains the object or
@@ -264,6 +244,26 @@ Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
+```
+
+### -Path
+
+Specifies the path to a resource. `Get-Acl` gets the security descriptor of the resource indicated
+by the path. Wildcards are permitted. If you omit the **Path** parameter, `Get-Acl` gets the
+security descriptor of the current directory.
+
+The parameter name ("Path") is optional.
+
+```yaml
+Type: System.String[]
+Parameter Sets: ByPath
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: True
 ```
 
 ### -UseTransaction
