@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
+ms.date: 09/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
@@ -11,10 +11,10 @@ title: Invoke-Command
 
 # Invoke-Command
 
-## SYNOPSIS
+## Synopsis
 Runs commands on local and remote computers.
 
-## SYNTAX
+## Syntax
 
 ### InProcess (Default)
 
@@ -163,7 +163,7 @@ Invoke-Command [-AsJob] [-HideComputerName] -FilePath <String> -SSHConnection <H
  [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Invoke-Command` cmdlet runs commands on a local or remote computer and returns all output from
 the commands, including errors. Using a single `Invoke-Command` command, you can run commands on
@@ -191,7 +191,7 @@ connection information. For more information about how to set up PowerShell SSH 
 
 Some code samples use splatting to reduce the line length. For more information, see [about_Splatting](./About/about_Splatting.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Run a script on a server
 
@@ -464,6 +464,10 @@ az.pdf
 `$param2`. `Get-ChildItem` uses the named parameters, **Name** and **Include** with the variable
 names. The **ArgumentList** passes the values to the variables.
 
+> [!NOTE]
+> **Switch** parameters are not able to be called positionally in PowerShell. Instead of defining a
+> **switch**, use **boolean** value parameters in `Param` sections of a scriptblock.
+
 ### Example 12: Use the $args automatic variable in a script block
 
 The `$args` automatic variable and the **ArgumentList** parameter are used to pass array values to
@@ -691,7 +695,7 @@ $sshConnections =
 $results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -SSHConnection $sshConnections
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -AllowRedirection
 
@@ -1578,14 +1582,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.ScriptBlock
 
 You can pipe a command in a script block to `Invoke-Command`. Use the `$Input` automatic variable to
 represent the input objects in the command.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSRemotingJob, System.Management.Automation.Runspaces.PSSession, or the output of the invoked command
 
@@ -1593,7 +1597,7 @@ This cmdlet returns a job object, if you use the **AsJob** parameter. If you spe
 **InDisconnectedSession** parameter, `Invoke-Command` returns a **PSSession** object. Otherwise, it
 returns the output of the invoked command, which is the value of the **ScriptBlock** parameter.
 
-## NOTES
+## Notes
 
 On Windows Vista, and later versions of the Windows operating system, to use the **ComputerName**
 parameter of `Invoke-Command` to run a command on the local computer, you must run PowerShell using
@@ -1640,7 +1644,7 @@ disconnect/reconnect features are currently not supported. For more information 
 PowerShell SSH remoting, see
 [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
-## RELATED LINKS
+## Related links
 
 [about_PSSessions](./About/about_PSSessions.md)
 

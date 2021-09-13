@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
+ms.date: 09/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
@@ -462,6 +462,10 @@ az.pdf
 `Invoke-Command` uses the **ScriptBlock** parameter that defines two variables, `$param1` and
 `$param2`. `Get-ChildItem` uses the named parameters, **Name** and **Include** with the variable
 names. The **ArgumentList** passes the values to the variables.
+
+> [!NOTE]
+> **Switch** parameters are not able to be called positionally in PowerShell. Instead of defining a
+> **switch**, use **boolean** value parameters in `Param` sections of a scriptblock.
 
 ### Example 12: Use the $args automatic variable in a script block
 
@@ -1658,7 +1662,7 @@ disconnect/reconnect features are currently not supported. For more information 
 PowerShell SSH remoting, see
 [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
-## Related Links
+## Related links
 
 [about_PSSessions](./About/about_PSSessions.md)
 
