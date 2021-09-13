@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/07/2018
+ms.date: 09/11/2021
 Module Name: Microsoft.PowerShell.Core
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/functions/get-verb?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -10,22 +10,21 @@ title: Get-Verb
 ---
 # Get-Verb
 
-## SYNOPSIS
+## Synopsis
 Gets approved PowerShell verbs.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-Verb [[-verb] <String[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Verb` function gets verbs that are approved for use in PowerShell commands.
 
-PowerShell recommends cmdlet and function names have the Verb-Noun format and include an
-approved verb. This practice makes command names more consistent, predictable, and easier to
-use.
+PowerShell recommends cmdlet and function names have the Verb-Noun format and include an approved
+verb. This practice makes command names more consistent, predictable, and easier to use.
 
 Commands that use unapproved verbs run in PowerShell. However, when you import a module that
 includes a command with an unapproved verb in its name, the `Import-Module` command displays a
@@ -37,7 +36,7 @@ warning message.
 > [Approved Verbs](../../docs-conceptual/developer/cmdlet/approved-verbs-for-windows-powershell-commands.md) in
 > the Microsoft Docs.
 
-## EXAMPLES
+## Examples
 
 ### Example 1 - Get a list of all verbs
 
@@ -93,13 +92,11 @@ Cmdlet          Sort-Object     3.1.0.0    Microsoft.PowerShell.Utility
 Cmdlet          Tee-Object      3.1.0.0    Microsoft.PowerShell.Utility
 ```
 
-## PARAMETERS
+## Parameters
 
-### -verb
+### -Verb
 
-Gets only the specified verbs.
-Enter the name of a verb or a name pattern.
-Wildcards are allowed.
+Gets only the specified verbs. Enter the name of a verb or a name pattern. Wildcards are allowed.
 
 ```yaml
 Type: System.String[]
@@ -113,15 +110,19 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
 ```
 
-## INPUTS
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+## Inputs
 
 ### None
 
-## OUTPUTS
+## Outputs
 
 ### Selected.Microsoft.PowerShell.Commands.MemberDefinition
 
-## NOTES
+## Notes
 
 `Get-Verb` returns a modified version of a Microsoft.PowerShell.Commands.MemberDefinition object.
 The object does not have the standard properties of a MemberDefinition object. Instead it has Verb
@@ -135,8 +136,8 @@ for any type of command.
 Each PowerShell verb is assigned to one of the following groups.
 
 - Common: Define generic actions that can apply to almost any cmdlet, such as Add.
-- Communications:  Define actions that apply to communications, such as Connect.
-- Data:  Define actions that apply to data handling, such as Backup.
+- Communications: Define actions that apply to communications, such as Connect.
+- Data: Define actions that apply to data handling, such as Backup.
 - Diagnostic: Define actions that apply to diagnostics, such as Debug.
 - Lifecycle: Define actions that apply to the lifecycle of a cmdlet, such as Complete.
 - Security: Define actions that apply to security, such as Revoke.
@@ -146,6 +147,6 @@ Some of the cmdlets that are installed with PowerShell, such as `Tee-Object` and
 unapproved verbs. These cmdlets are historic exceptions and their verbs are classified as
 **reserved**.
 
-## RELATED LINKS
+## Related Links
 
 [Import-Module](import-module.md)

@@ -573,6 +573,54 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PredictionSource
+
+Specifies the source for PSReadLine to get predictive suggestions.
+
+Valid values are:
+
+- **None** - disable the predictive IntelliSense feature (default).
+-`**History** - enable the predictive IntelliSense feature and use the PSReadLine history as the
+  only source.
+- **Plugin** - enable the predictive IntelliSense feature and use the plugins (`CommandPrediction`)
+  as the only source. This value was added in PSReadLine 2.2.0
+- **HistoryAndPlugin** - enable the predictive IntelliSense feature and use both history and plugin
+  as the sources. This value was added in PSReadLine 2.2.0
+
+```yaml
+Type: Microsoft.PowerShell.PredictionSource
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PredictionViewStyle
+
+Sets the style for the display of the predictive text. The default is **InlineView**.
+
+- **InlineView** - the style as existing today, similar as in fish shell and zsh. (default)
+- **ListView** - suggestions are rendered in a drop down list, and users can select using
+  <kbd>UpArrow</kbd> and <kbd>DownArrow</kbd>.
+
+This parameter was added in PSReadLine 2.2.0
+
+```yaml
+Type: Microsoft.PowerShell.PredictionViewStyle
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: InlineView
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PromptText
 
 When there's a parse error, **PSReadLine** changes a part of the prompt red. **PSReadLine** analyzes
@@ -685,54 +733,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: ;:,.[]{}()/\|^&*-=+'"---
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PredictionSource
-
-Specifies the source for PSReadLine to get predictive suggestions.
-
-Valid values are:
-
-- **None** - disable the predictive IntelliSense feature (default).
--`**History** - enable the predictive IntelliSense feature and use the PSReadLine history as the
-  only source.
-- **Plugin** - enable the predictive IntelliSense feature and use the plugins (`CommandPrediction`)
-  as the only source. This value was added in PSReadLine 2.2.0
-- **HistoryAndPlugin** - enable the predictive IntelliSense feature and use both history and plugin
-  as the sources. This value was added in PSReadLine 2.2.0
-
-```yaml
-Type: Microsoft.PowerShell.PredictionSource
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PredictionViewStyle
-
-Sets the style for the display of the predictive text. The default is **InlineView**.
-
-- **InlineView** - the style as existing today, similar as in fish shell and zsh. (default)
-- **ListView** - suggestions are rendered in a drop down list, and users can select using
-  <kbd>UpArrow</kbd> and <kbd>DownArrow</kbd>.
-
-This parameter was added in PSReadLine 2.2.0
-
-```yaml
-Type: Microsoft.PowerShell.PredictionViewStyle
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: InlineView
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

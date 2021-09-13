@@ -155,6 +155,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CustomPipeName
+
+Gets or sets the custom named pipe name to connect to. This is usually used in conjunction with
+`pwsh -CustomPipeName`.
+
+This parameter was introduced in PowerShell 6.2.
+
+```yaml
+Type: System.String
+Parameter Sets: PipeNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -HostProcessInfo
 
 Specifies a **PSHostProcessInfo** object that can be connected to with PowerShell. Use
@@ -220,25 +239,6 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -CustomPipeName
-
-Gets or sets the custom named pipe name to connect to. This is usually used in conjunction with
-`pwsh -CustomPipeName`.
-
-This parameter was introduced in PowerShell 6.2.
-
-```yaml
-Type: System.String
-Parameter Sets: PipeNameParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

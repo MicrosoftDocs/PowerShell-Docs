@@ -579,6 +579,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -QuoteFields
+
+Specifies the names of the columns that should be quoted. When this parameter is used, only the
+specified columns are quoted. This parameter was added in PowerShell 7.0.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: QF
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UseCulture
 
 Uses the list separator for the current culture as the item delimiter. To find the list separator
@@ -592,6 +609,28 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseQuotes
+
+Specifies when quotes are used in the CSV files. Possible values are:
+
+- Never - don't quote anything
+- Always - quote everything (default behavior)
+- AsNeeded - only quote fields that contain a delimiter character
+
+This parameter was added in PowerShell 7.0.
+
+```yaml
+Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
+Parameter Sets: (All)
+Aliases: UQ
+
+Required: False
+Position: Named
+Default value: Always
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -625,45 +664,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -QuoteFields
-
-Specifies the names of the columns that should be quoted. When this parameter is used, only the
-specified columns are quoted. This parameter was added in PowerShell 7.0.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: QF
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseQuotes
-
-Specifies when quotes are used in the CSV files. Possible values are:
-
-- Never - don't quote anything
-- Always - quote everything (default behavior)
-- AsNeeded - only quote fields that contain a delimiter character
-
-This parameter was added in PowerShell 7.0.
-
-```yaml
-Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
-Parameter Sets: (All)
-Aliases: UQ
-
-Required: False
-Position: Named
-Default value: Always
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -125,7 +125,7 @@ PS> Start-ThreadJob -ScriptBlock { Read-Host 'Say hello'; Write-Warning 'Warning
 
 Id   Name   PSJobTypeName   State         HasMoreData     Location      Command
 --   ----   -------------   -----         -----------     --------      -------
-7    Job7   ThreadJob       NotStarted    False           PowerShell    Read-Host 'Say hello'; …
+7    Job7   ThreadJob       NotStarted    False           PowerShell    Read-Host 'Say hello'; ...
 
 PS> Say hello: Hello
 WARNING: Warning output

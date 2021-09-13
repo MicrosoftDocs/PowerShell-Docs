@@ -214,6 +214,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SecurityDescriptorSddl
+
+Specifies the **SecurityDescriptor** for the service in **Sddl** format.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: sd
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -StartupType
 
 Sets the startup type of the service. The acceptable values for this parameter are:
@@ -238,22 +254,6 @@ Accepted values: Automatic, Manual, Disabled, AutomaticDelayedStart, InvalidValu
 Required: False
 Position: Named
 Default value: Automatic
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SecurityDescriptorSddl
-
-Specifies the **SecurityDescriptor** for the service in **Sddl** format.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: sd
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

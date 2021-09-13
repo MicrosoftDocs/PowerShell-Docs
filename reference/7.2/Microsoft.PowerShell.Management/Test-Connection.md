@@ -223,23 +223,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Repeat
-
-Causes the cmdlet to send ping requests continuously. This parameter can't be used with the
-**Count** parameter.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: RepeatPing
-Aliases: Continuous
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Count
 
 Specifies the number of echo requests to send. The default value is 4.
@@ -339,6 +322,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MtuSize
+
+This parameter is used to discover the Path MTU size. The cmdlet returns a **PingReply#MTUSize**
+object that contains the Path MTU size to the target. For more information about Path MTU, see the
+[Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: MtuSizeDetect
+Aliases: MtuSizeDetect
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Ping
 
 Causes the cmdlet to do a ping test. This is the default mode for the `Test-Connection` cmdlet.
@@ -375,6 +376,23 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Repeat
+
+Causes the cmdlet to send ping requests continuously. This parameter can't be used with the
+**Count** parameter.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: RepeatPing
+Aliases: Continuous
+
+Required: True
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -435,6 +453,27 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
+### -TcpPort
+
+Specifies the TCP port number on the target to be used in the TCP connection test. The cmdlet will
+attempt to make a TCP connection to the specified port on the target.
+
+If a connection can be made, `$True` will be returned.
+
+If a connection cannot be made, `$False` will be returned.
+
+```yaml
+Type: System.Int32
+Parameter Sets: TcpPort
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TimeoutSeconds
 
 Sets the timeout value for the test. The test fails if a response isn't received before the timeout
@@ -467,45 +506,6 @@ Aliases:
 Required: True
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MtuSize
-
-This parameter is used to discover the Path MTU size. The cmdlet returns a **PingReply#MTUSize**
-object that contains the Path MTU size to the target. For more information about Path MTU, see the
-[Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: MtuSizeDetect
-Aliases: MtuSizeDetect
-
-Required: True
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TcpPort
-
-Specifies the TCP port number on the target to be used in the TCP connection test. The cmdlet will
-attempt to make a TCP connection to the specified port on the target.
-
-If a connection can be made, `$True` will be returned.
-
-If a connection cannot be made, `$False` will be returned.
-
-```yaml
-Type: System.Int32
-Parameter Sets: TcpPort
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

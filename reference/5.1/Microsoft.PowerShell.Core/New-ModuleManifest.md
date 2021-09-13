@@ -406,22 +406,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -CompatiblePSEditions
 
 Specifies the module's compatible PSEditions. For information about PSEdition, see
@@ -456,6 +440,29 @@ Aliases:
 Required: False
 Position: Named
 Default value: (c) <year> <username>. All rights reserved.
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultCommandPrefix
+
+Specifies a prefix that is prepended to the nouns of all commands in the module when they're
+imported into a session. Enter a prefix string. Prefixes prevent command name conflicts in a user's
+session.
+
+Module users can override this prefix by specifying the **Prefix** parameter of the `Import-Module`
+cmdlet.
+
+This parameter was introduced in PowerShell 3.0.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -940,6 +947,37 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RootModule
+
+Specifies the primary or root file of the module. Enter the file name of a script (`.ps1`), a script
+module (`.psm1`), a module manifest(`.psd1`), an assembly (`.dll`), a cmdlet definition XML file
+(`.cdxml`), or a workflow (`.xaml`). When the module is imported, the members that are exported from
+the root module file are imported into the caller's session state.
+
+If a module has a manifest file and no root file was designated in the **RootModule** key, the
+manifest becomes the primary file for the module, and the module becomes a manifest module
+(ModuleType = Manifest).
+
+To export members from `.psm1` or `.dll` files in a module that has a manifest, the names of those
+files must be specified in the values of the **RootModule** or **NestedModules** keys in the
+manifest. Otherwise, their members aren't exported.
+
+> [!NOTE]
+> In PowerShell 2.0, this key was called **ModuleToProcess**. You can use the **RootModule**
+> parameter name or its **ModuleToProcess** alias.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: ModuleToProcess
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ScriptsToProcess
 
 Specifies script (`.ps1`) files that run in the caller's session state when the module is imported.
@@ -1016,56 +1054,18 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### -DefaultCommandPrefix
+### -Confirm
 
-Specifies a prefix that is prepended to the nouns of all commands in the module when they're
-imported into a session. Enter a prefix string. Prefixes prevent command name conflicts in a user's
-session.
-
-Module users can override this prefix by specifying the **Prefix** parameter of the `Import-Module`
-cmdlet.
-
-This parameter was introduced in PowerShell 3.0.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
 Required: False
 Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RootModule
-
-Specifies the primary or root file of the module. Enter the file name of a script (`.ps1`), a script
-module (`.psm1`), a module manifest(`.psd1`), an assembly (`.dll`), a cmdlet definition XML file
-(`.cdxml`), or a workflow (`.xaml`). When the module is imported, the members that are exported from
-the root module file are imported into the caller's session state.
-
-If a module has a manifest file and no root file was designated in the **RootModule** key, the
-manifest becomes the primary file for the module, and the module becomes a manifest module
-(ModuleType = Manifest).
-
-To export members from `.psm1` or `.dll` files in a module that has a manifest, the names of those
-files must be specified in the values of the **RootModule** or **NestedModules** keys in the
-manifest. Otherwise, their members aren't exported.
-
-> [!NOTE]
-> In PowerShell 2.0, this key was called **ModuleToProcess**. You can use the **RootModule**
-> parameter name or its **ModuleToProcess** alias.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: ModuleToProcess
-
-Required: False
-Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

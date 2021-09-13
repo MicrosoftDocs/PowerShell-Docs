@@ -489,6 +489,20 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SkipIndex
+
+```yaml
+Type: System.Int32[]
+Parameter Sets: SkipIndexParameter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SkipLast
 
 Skips (does not select) the specified number of items from the end of the list or array. Works in
@@ -540,20 +554,6 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: DefaultParameter, IndexParameter
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkipIndex
-
-```yaml
-Type: System.Int32[]
-Parameter Sets: SkipIndexParameter
 Aliases:
 
 Required: False

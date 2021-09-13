@@ -181,26 +181,6 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### -Path
-
-Specifies the path to a resource. `Get-Acl` gets the security descriptor of the resource indicated
-by the path. Wildcards are permitted. If you omit the **Path** parameter, `Get-Acl` gets the
-security descriptor of the current directory.
-
-The parameter name ("Path") is optional.
-
-```yaml
-Type: System.String[]
-Parameter Sets: ByPath
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: True
-```
-
 ### -InputObject
 
 Gets the security descriptor for the specified object. Enter a variable that contains the object or
@@ -242,6 +222,26 @@ Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
+```
+
+### -Path
+
+Specifies the path to a resource. `Get-Acl` gets the security descriptor of the resource indicated
+by the path. Wildcards are permitted. If you omit the **Path** parameter, `Get-Acl` gets the
+security descriptor of the current directory.
+
+The parameter name ("Path") is optional.
+
+```yaml
+Type: System.String[]
+Parameter Sets: ByPath
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: True
 ```
 
 ### CommonParameters

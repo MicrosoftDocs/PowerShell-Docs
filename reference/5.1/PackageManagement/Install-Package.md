@@ -172,6 +172,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AdditionalArguments
+
+Specifies one or more additional arguments for installation.
+
+```yaml
+Type: System.String[]
+Parameter Sets: msi:PackageBySearch, msi:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AllowClobber
 
 Overrides warning messages about conflicts with existing commands. Overwrites existing commands that
@@ -438,6 +454,38 @@ Type: System.String[]
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 Accepted values: Cmdlet, DscResource, Function, RoleCapability, Workflow
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeSystemComponent
+
+Indicates that this cmdlet includes system components in the results.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Programs:PackageBySearch, Programs:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeWindowsInstaller
+
+Indicates that this cmdlet includes the Windows installer in the results.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Programs:PackageBySearch, Programs:PackageByInputObject
+Aliases:
 
 Required: False
 Position: Named
@@ -850,54 +898,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AdditionalArguments
-
-Specifies one or more additional arguments for installation.
-
-```yaml
-Type: System.String[]
-Parameter Sets: msi:PackageBySearch, msi:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeSystemComponent
-
-Indicates that this cmdlet includes system components in the results.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: Programs:PackageBySearch, Programs:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeWindowsInstaller
-
-Indicates that this cmdlet includes the Windows installer in the results.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: Programs:PackageBySearch, Programs:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

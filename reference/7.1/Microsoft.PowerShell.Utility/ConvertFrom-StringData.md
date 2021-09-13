@@ -238,6 +238,23 @@ Message                        Look in c:\Windows\System32
 
 ## PARAMETERS
 
+### -Delimiter
+
+The character used to separate the **key** from the **value** data in the string being converted.
+The default delimiter is the equals sign (`=`) character. This parameter was added in PowerShell 7.
+
+```yaml
+Type: System.Char
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 0
+Default value: '='
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -StringData
 
 Specifies the string to be converted. You can use this parameter or pipe a string to
@@ -265,23 +282,6 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Delimiter
-
-The character used to separate the **key** from the **value** data in the string being converted.
-The default delimiter is the equals sign (`=`) character. This parameter was added in PowerShell 7.
-
-```yaml
-Type: System.Char
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 0
-Default value: '='
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

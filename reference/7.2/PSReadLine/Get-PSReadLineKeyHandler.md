@@ -145,22 +145,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Unbound
-
-Indicates that this cmdlet returns functions that are unbound.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: FullListing
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Chord
 
 Return only functions bound to specific keys or sequences.
@@ -173,6 +157,22 @@ Aliases: Key
 Required: True
 Position: 0
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Unbound
+
+Indicates that this cmdlet returns functions that are unbound.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: FullListing
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

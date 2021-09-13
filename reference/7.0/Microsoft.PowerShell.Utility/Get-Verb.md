@@ -94,23 +94,6 @@ Cmdlet          Tee-Object      3.1.0.0    Microsoft.PowerShell.Utility
 
 ## PARAMETERS
 
-### -Verb
-
-Gets only the specified verbs. Enter the name of a verb or a name pattern. Wildcards are allowed.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-Accepted values: Common, Communications, Data, Diagnostic, Lifecycle, Other, Security
-
-Required: False
-Position: 1
-Default value: All groups
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: True
-```
-
 ### -Group
 
 Gets only the specified groups. Enter the name of a group. Wildcards are not allowed.
@@ -127,6 +110,23 @@ Position: 0
 Default value: All verbs
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
+```
+
+### -Verb
+
+Gets only the specified verbs. Enter the name of a verb or a name pattern. Wildcards are allowed.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+Accepted values: Common, Communications, Data, Diagnostic, Lifecycle, Other, Security
+
+Required: False
+Position: 1
+Default value: All groups
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: True
 ```
 
 ### CommonParameters

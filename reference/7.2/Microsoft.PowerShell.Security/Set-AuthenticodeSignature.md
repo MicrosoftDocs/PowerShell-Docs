@@ -132,6 +132,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Content
+
+This parameter appears in the syntax listing because it is defined in the base class that
+`Set-AuthenticodeSignature` is derived from. However, support for this parameter is not implemented
+in `Set-AuthenticodeSignature`.
+
+```yaml
+Type: System.Byte[]
+Parameter Sets: ByContent
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -FilePath
 
 Specifies the path to a file that is being signed.
@@ -211,27 +229,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TimestampServer
-
-Uses the specified time stamp server to add a time stamp to the signature. Type the URL of the time
-stamp server as a string.
-
-The time stamp represents the exact time that the certificate was added to the file. A time stamp
-prevents the script from failing if the certificate expires because users and programs can verify
-that the certificate was valid at the time of signing.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -LiteralPath
 
 Specifies the path to a file that is being signed. Unlike **FilePath**, the value of the
@@ -269,21 +266,24 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -Content
+### -TimestampServer
 
-This parameter appears in the syntax listing because it is defined in the base class that
-`Set-AuthenticodeSignature` is derived from. However, support for this parameter is not implemented
-in `Set-AuthenticodeSignature`.
+Uses the specified time stamp server to add a time stamp to the signature. Type the URL of the time
+stamp server as a string.
+
+The time stamp represents the exact time that the certificate was added to the file. A time stamp
+prevents the script from failing if the certificate expires because users and programs can verify
+that the certificate was valid at the time of signing.
 
 ```yaml
-Type: System.Byte[]
-Parameter Sets: ByContent
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

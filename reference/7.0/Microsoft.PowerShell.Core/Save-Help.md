@@ -372,6 +372,22 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
+### -Scope
+
+This paramater does nothing in this cmdlet.
+
+```yaml
+Type: Microsoft.PowerShell.Commands.UpdateHelpScope
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -UICulture
 
 Specifies UI culture values for which this cmdlet gets updated help files. Enter one or more
@@ -413,22 +429,6 @@ Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Scope
-
-This paramater does nothing in this cmdlet.
-
-```yaml
-Type: Microsoft.PowerShell.Commands.UpdateHelpScope
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

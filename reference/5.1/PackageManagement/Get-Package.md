@@ -139,6 +139,22 @@ pipeline to the `Uninstall-Package` cmdlet. `Uninstall-Package` removes the pack
 
 ## PARAMETERS
 
+### -AdditionalArguments
+
+Specifies additional arguments.
+
+```yaml
+Type: System.String[]
+Parameter Sets: msi
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AllowClobber
 
 Overrides warning messages about conflicts with existing commands. Overwrites existing commands that
@@ -245,6 +261,38 @@ provider.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeSystemComponent
+
+Indicates that this cmdlet includes system components in the results.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Programs
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeWindowsInstaller
+
+Indicates that this cmdlet includes the Windows Installer in the results.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Programs
 Aliases:
 
 Required: False
@@ -447,54 +495,6 @@ Type: System.String
 Parameter Sets: PowerShellGet
 Aliases:
 Accepted values: Module, Script, All
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AdditionalArguments
-
-Specifies additional arguments.
-
-```yaml
-Type: System.String[]
-Parameter Sets: msi
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeSystemComponent
-
-Indicates that this cmdlet includes system components in the results.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: Programs
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeWindowsInstaller
-
-Indicates that this cmdlet includes the Windows Installer in the results.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: Programs
-Aliases:
 
 Required: False
 Position: Named

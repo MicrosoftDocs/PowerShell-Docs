@@ -426,24 +426,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Value
-
-Specifies the initial value of the added member.
-If you add an **AliasProperty**, **CodeProperty**, **ScriptProperty** or **CodeMethod** member, you
-can supply optional, additional information by using the **SecondValue** parameter.
-
-```yaml
-Type: System.Object
-Parameter Sets: MemberSet
-Aliases:
-
-Required: False
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TypeName
 
 Specifies a name for the type.
@@ -461,6 +443,24 @@ Aliases:
 
 Required: True (TypeNameSet), False (NotePropertyMultiMemberSet, NotePropertySingleMemberSet, MemberSet)
 Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Value
+
+Specifies the initial value of the added member.
+If you add an **AliasProperty**, **CodeProperty**, **ScriptProperty** or **CodeMethod** member, you
+can supply optional, additional information by using the **SecondValue** parameter.
+
+```yaml
+Type: System.Object
+Parameter Sets: MemberSet
+Aliases:
+
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
