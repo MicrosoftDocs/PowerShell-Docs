@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
+ms.date: 09/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
@@ -11,10 +11,10 @@ title: Invoke-Command
 
 # Invoke-Command
 
-## SYNOPSIS
+## Synopsis
 Runs commands on local and remote computers.
 
-## SYNTAX
+## Syntax
 
 ### InProcess (Default)
 
@@ -129,7 +129,7 @@ Invoke-Command [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob] [
  [-ArgumentList <Object[]>] -ContainerId <String[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Invoke-Command` cmdlet runs commands on a local or remote computer and returns all output from
 the commands, including errors. Using a single `Invoke-Command` command, you can run commands on
@@ -142,14 +142,14 @@ persistent connection) on the remote computer, and then use the **Session** para
 session, use the **InDisconnectedSession** parameter. To run a command in a background job, use the
 **AsJob** parameter.
 
-You can also use `Invoke-Command` on a local computer to a script block as a command. PowerShell
+You can also use `Invoke-Command` on a local computer to a run script block as a command. PowerShell
 runs the script block immediately in a child scope of the current scope.
 
 Before using `Invoke-Command` to run commands on a remote computer, read [about_Remote](./About/about_Remote.md).
 
 Some code samples use splatting to reduce the line length. For more information, see [about_Splatting](./About/about_Splatting.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Run a script on a server
 
@@ -232,10 +232,10 @@ session in the `$s` variable. The `Invoke-Command` lines that follow use the **S
 to run both of the commands in the same session. Since both commands run in the same session, the
 `$p` value remains active.
 
-### Example 5: Enter a command stored in a local variable
+### Example 5: Invoke a command with a script block stored in a variable
 
-This example shows how to create a command that is stored as a script block in a local variable.
-When the script block is saved in a local variable, you can specify the variable as the value of the
+This example shows how to run a command that is stored as a script block in a variable. When the
+script block is saved in a variable, you can specify the variable as the value of the
 **ScriptBlock** parameter.
 
 ```powershell
@@ -615,7 +615,7 @@ and the **IdleTimeout** value is set to **43200000** milliseconds (12 hours).
 To get the results of commands and scripts that run in disconnected sessions, use the
 `Receive-PSSession` cmdlet.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowRedirection
 
@@ -669,22 +669,9 @@ Accept wildcard characters: False
 
 ### -ArgumentList
 
-Supplies the values of local variables in the command. The variables in the command are replaced by
-these values before the command is run on the remote computer. Enter the values in a comma-separated
-list. Values are associated with variables in the order that they're listed. The alias for
-**ArgumentList** is Args.
-
-The values in the **ArgumentList** parameter can be actual values, such as 1024, or they can be
-references to local variables, such as `$max`.
-
-To use local variables in a command, use the following command format:
-
-`{param($<name1>[, $<name2>]...) <command-with-local-variables>} -ArgumentList <value>`
--or- `<local-variable>`
-
-The **param** keyword lists the local variables that are used in the command. **ArgumentList**
-supplies the values of the variables, in the order that they're listed. For more information about
-the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
+Supplies the values of parameters for the scriptblock. The parameters in the script block are passed
+by position from the array value supplied to **ArgumentList**. This is known as array splatting. For
+more information about the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: System.Object[]
@@ -1166,11 +1153,14 @@ Accept wildcard characters: False
 
 ### -ScriptBlock
 
-Specifies the commands to run. Enclose the commands in curly braces `{ }` to create a script block.
-This parameter is required.
+Specifies the commands to run. Enclose the commands in braces (`{ }`) to create a script block. When
+using `Invoke-Command` to run a command remotely, any variables in the command are evaluated on the
+remote computer.
 
-By default, any variables in the command are evaluated on the remote computer. To include local
-variables in the command, use **ArgumentList**.
+> [!NOTE]
+> Parameters for the scriptblock can only be passed in from **ArgumentList** by position. Switch
+> parameters cannot be passed by position. If you need a parameter that behaves like a
+> **SwitchParameter** type, use a **Boolean** type instead.
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -1337,14 +1327,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.ScriptBlock
 
 You can pipe a command in a script block to `Invoke-Command`. Use the `$Input` automatic variable to
 represent the input objects in the command.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSRemotingJob, System.Management.Automation.Runspaces.PSSession, or the output of the invoked command
 
@@ -1352,7 +1342,7 @@ This cmdlet returns a job object, if you use the **AsJob** parameter. If you spe
 **InDisconnectedSession** parameter, `Invoke-Command` returns a **PSSession** object. Otherwise, it
 returns the output of the invoked command, which is the value of the **ScriptBlock** parameter.
 
-## NOTES
+## Notes
 
 On Windows Vista, and later versions of the Windows operating system, to use the **ComputerName**
 parameter of `Invoke-Command` to run a command on the local computer, you must run PowerShell using
@@ -1389,7 +1379,7 @@ session. For more information about the values of the **State** property of sess
 information about the values of the **Availability** property of sessions, see
 [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
-## RELATED LINKS
+## Related links
 
 [about_PSSessions](./About/about_PSSessions.md)
 
