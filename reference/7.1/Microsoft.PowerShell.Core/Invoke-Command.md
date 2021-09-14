@@ -176,7 +176,7 @@ persistent connection) on the remote computer, and then use the **Session** para
 session, use the **InDisconnectedSession** parameter. To run a command in a background job, use the
 **AsJob** parameter.
 
-You can also use `Invoke-Command` on a local computer to a script block as a command. PowerShell
+You can also use `Invoke-Command` on a local computer to a run script block as a command. PowerShell
 runs the script block immediately in a child scope of the current scope.
 
 Before using `Invoke-Command` to run commands on a remote computer, read [about_Remote](./About/about_Remote.md).
@@ -274,10 +274,10 @@ session in the `$s` variable. The `Invoke-Command` lines that follow use the **S
 to run both of the commands in the same session. Since both commands run in the same session, the
 `$p` value remains active.
 
-### Example 5: Enter a command stored in a local variable
+### Example 5: Invoke a command with a script block stored in a variable
 
-This example shows how to create a command that is stored as a script block in a local variable.
-When the script block is saved in a local variable, you can specify the variable as the value of the
+This example shows how to run a command that is stored as a script block in a variable. When the
+script block is saved in a variable, you can specify the variable as the value of the
 **ScriptBlock** parameter.
 
 ```powershell
