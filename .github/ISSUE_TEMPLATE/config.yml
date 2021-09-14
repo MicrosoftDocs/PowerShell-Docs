@@ -3,9 +3,6 @@ contact_links:
   - name: PowerShell Product Feedback
     url: https://github.com/PowerShell/PowerShell/issues/new/choose
     about: Please open feature requests for current PowerShell here.
-  - name: Windows PowerShell
-    url: https://windowsserver.uservoice.com/forums/301869-powershell
-    about: Windows PowerShell issues or suggestions.
   - name: Support
     url: https://docs.microsoft.com/powershell/scripting/community/community-support
     about: PowerShell Support Questions/Help
