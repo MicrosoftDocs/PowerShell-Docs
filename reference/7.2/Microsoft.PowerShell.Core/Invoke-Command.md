@@ -463,10 +463,6 @@ az.pdf
 `$param2`. `Get-ChildItem` uses the named parameters, **Name** and **Include** with the variable
 names. The **ArgumentList** passes the values to the variables.
 
-> [!NOTE]
-> **Switch** parameters are not able to be called positionally in PowerShell. Instead of defining a
-> **switch**, use **boolean** value parameters in `Param` sections of a scriptblock.
-
 ### Example 12: Use the $args automatic variable in a script block
 
 The `$args` automatic variable and the **ArgumentList** parameter are used to pass array values to
@@ -748,22 +744,9 @@ Accept wildcard characters: False
 
 ### -ArgumentList
 
-Supplies the values of local variables in the command. The variables in the command are replaced by
-these values before the command is run on the remote computer. Enter the values in a comma-separated
-list. Values are associated with variables in the order that they're listed. The alias for
-**ArgumentList** is Args.
-
-The values in the **ArgumentList** parameter can be actual values, such as 1024, or they can be
-references to local variables, such as `$max`.
-
-To use local variables in a command, use the following command format:
-
-`{param($<name1>[, $<name2>]...) <command-with-local-variables>} -ArgumentList <value>`
--or- `<local-variable>`
-
-The **param** keyword lists the local variables that are used in the command. **ArgumentList**
-supplies the values of the variables, in the order that they're listed. For more information about
-the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
+Supplies the values of parameters for the scriptblock. The parameters in the script block are passed
+by position from the array value supplied to **ArgumentList**. This is known as array splatting. For
+more information about the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: System.Object[]
@@ -1325,11 +1308,14 @@ Accept wildcard characters: False
 
 ### -ScriptBlock
 
-Specifies the commands to run. Enclose the commands in curly braces `{ }` to create a script block.
-This parameter is required.
+Specifies the commands to run. Enclose the commands in braces (`{ }`) to create a script block. When
+using `Invoke-Command` to run a command remotely, any variables in the command are evaluated on the
+remote computer.
 
-By default, any variables in the command are evaluated on the remote computer. To include local
-variables in the command, use **ArgumentList**.
+> [!NOTE]
+> Parameters for the scriptblock can only be passed in from **ArgumentList** by position. Switch
+> parameters cannot be passed by position. If you need a parameter that behaves like a
+> **SwitchParameter** type, use a **Boolean** type instead.
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
