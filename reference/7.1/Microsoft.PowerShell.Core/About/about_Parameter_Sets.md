@@ -35,7 +35,7 @@ The following requirements apply to all parameter sets.
 - If no parameter set is specified for a parameter, the parameter belongs to
   all parameter sets.
 
-- Function with parameter sets specified must be called with parameters from a single subset.
+- Function with parameter sets specified must be called with parameters from a single parameter set.
 
 > [!NOTE]
 > There is a limit of 32 parameter sets.
