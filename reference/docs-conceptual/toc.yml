@@ -928,6 +928,8 @@ items:
                         href: developer/cmdlet/validatepattern-attribute-declaration.md
                       - name: ValidateRange Attribute Declaration
                         href: developer/cmdlet/validaterange-attribute-declaration.md
+                      - name: ValidateScript Attribute Declaration
+                        href: developer/cmdlet/validatescript-attribute-declaration.md
                       - name: ValidateSet Attribute Declaration
                         href: developer/cmdlet/validateset-attribute-declaration.md
                   - name: Cmdlet Aliases
@@ -994,6 +996,8 @@ items:
                   - name: How to Validate Parameter Input
                     href: developer/cmdlet/how-to-validate-parameter-input.md
                     items:
+                      - name: How to Validate an Argument using a script
+                        href: developer/cmdlet/how-to-validate-an-argument-using-script.md
                       - name: How to Validate an Argument Set
                         href: developer/cmdlet/how-to-validate-an-argument-set.md
                       - name: How to Validate an Argument Range
