@@ -3,6 +3,9 @@ contact_links:
   - name: PowerShell Product Feedback
     url: https://github.com/PowerShell/PowerShell/issues/new/choose
     about: Please open feature requests for current PowerShell here.
+  - name: Windows PowerShell product feedback
+    url: https://support.microsoft.com/windows/send-feedback-to-microsoft-with-the-feedback-hub-app-f59187f8-8739-22d6-ba93-f66612949332
+    about: Report issues using the Feedback Hub app, by choosing "Apps > PowerShell" in category.
   - name: Support
     url: https://docs.microsoft.com/powershell/scripting/community/community-support
     about: PowerShell Support Questions/Help
