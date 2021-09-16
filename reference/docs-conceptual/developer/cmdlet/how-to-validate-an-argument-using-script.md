@@ -1,10 +1,10 @@
 ---
 ms.date: 09/16/2021
 ms.topic: reference
-title: How to Validate an Argument Set
-description: How to Validate an Argument Set
+title: How to validate an argument using a script
+description: How to validate an argument using a script
 ---
-# How to Validate an Argument Set
+# How to validate an argument using a script
 
 This example shows how to specify a validation rule that uses a script to check the parameter
 argument before the cmdlet is run. The value of the parameter is piped to the script. The script
