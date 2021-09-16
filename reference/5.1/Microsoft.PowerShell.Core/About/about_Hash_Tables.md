@@ -111,11 +111,10 @@ with the following error message.
 [ordered]$hash = @{}
 At line:1 char:1
 + [ordered]$hash = @{}
-+ [!INCLUDE[]()]
++ ~~~~~~~~~~~~~~
 The ordered attribute can be specified only on a hash literal node.
-+ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordExc
-eption
-+ FullyQualifiedErrorId : OrderedAttributeOnlyOnHashLiteralNode
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : OrderedAttributeOnlyOnHashLiteralNode
 ```
 
 To correct the expression, move the [ordered] attribute.

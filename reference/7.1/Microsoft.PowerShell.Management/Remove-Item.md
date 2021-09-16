@@ -177,13 +177,6 @@ Get-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 
 ```Output
 Get-Item : Could not open alternate data stream 'Zone.Identifier' of file 'C:\Test\Copy-Script.ps1'.
-At line:1 char:1
-+ Get-Item 'C:\Test\Copy-Script.ps1' -Stream Zone.Identifier
-+ [!INCLUDE[]()][!INCLUDE[]()][!INCLUDE[]()][!INCLUDE[]()][!INCLUDE[]()]~~
-    + CategoryInfo          : ObjectNotFound: (C:\Test\Copy-Script.ps1:String) [Get-Item], FileNotFoundE
-   xception
-    + FullyQualifiedErrorId : AlternateDataStreamNotFound,Microsoft.PowerShell.Commands.GetItemCommand
-
 ```
 
 The **Stream** parameter `Get-Item` gets the `Zone.Identifier` stream of the `Copy-Script.ps1`
@@ -300,7 +293,8 @@ typed. No characters are interpreted as wildcards. If the path includes escape c
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
 
-For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
