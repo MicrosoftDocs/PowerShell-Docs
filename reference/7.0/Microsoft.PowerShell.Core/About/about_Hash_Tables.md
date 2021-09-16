@@ -109,13 +109,11 @@ with the following error message.
 
 ```powershell
 [ordered]$hash = @{}
-At line:1 char:1
-+ [ordered]$hash = @{}
-+ [!INCLUDE[]()]
-The ordered attribute can be specified only on a hash literal node.
-+ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordExc
-eption
-+ FullyQualifiedErrorId : OrderedAttributeOnlyOnHashLiteralNode
+ParserError:
+Line |
+   1 |  [ordered]$hash = @{}
+     |  ~~~~~~~~~~~~~~
+     | The ordered attribute can be specified only on a hash literal node.
 ```
 
 To correct the expression, move the [ordered] attribute.
