@@ -1087,8 +1087,6 @@ items:
                 href: developer/module/how-to-write-a-powershell-module-manifest.md
               - name: Installing a PowerShell Module
                 href: developer/module/installing-a-powershell-module.md
-              - name: Modifying the PSModulePath Installation Path
-                href: developer/module/modifying-the-psmodulepath-installation-path.md
               - name: Registering Cmdlets
                 items:
                   - name: Overview

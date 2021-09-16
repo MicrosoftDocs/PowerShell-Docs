@@ -33,7 +33,7 @@ directories specified in the `PSModulePath` variable. When the specified directo
 PowerShell searches for files in the following order: module manifest files (.psd1), script module
 files (.psm1), binary module files (.dll). For more information about adding directories to the
 search, see
-[Modifying the PSModulePath Installation Path](./modifying-the-psmodulepath-installation-path.md).
+[about_PSModulePath](/powershell/module/microsoft.powershell.core/about/about_psmodulepath).
 The following code describes how to import a module:
 
 ```powershell
