@@ -86,7 +86,7 @@ with the **FullyQualifiedName** parameter. For more information, see
 
 ## Modifying PSModulePath
 
-For most situations, you should be installing modules in the default module locations. However, you may have a need to change the value of the `PSModulePath` environment variable. 
+For most situations, you should be installing modules in the default module locations. However, you may have a need to change the value of the `PSModulePath` environment variable.
 
 For example, to temporarily add the `C:\Program Files\Fabrikam\Modules` directory to `$env:PSModulePath` for the current session, type:
 
