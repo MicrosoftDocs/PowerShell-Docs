@@ -1,5 +1,5 @@
 ---
-ms.date: 09/13/2016
+ms.date: 09/16/2021
 ms.topic: reference
 title: How to Validate Parameter Input
 description: How to Validate Parameter Input
@@ -10,6 +10,9 @@ This section contains examples that show how to validate parameter input by usin
 to implement validation rules.
 
 ## In This Section
+
+[How to Validate an Argument with a Script](./how-to-validate-an-argument-using-script.md)
+Describes how to validate an argument set by using the ArgumentSet attribute.
 
 [How to Validate an Argument Set](./how-to-validate-an-argument-set.md)
 Describes how to validate an argument set by using the ArgumentSet attribute.
@@ -26,7 +29,8 @@ Describes how to validate the length of an argument by using the ArgumentLength 
 [How to Validate an Argument Count](./how-to-validate-an-argument-count.md)
 Describes how to validate an argument count by using the ArgumentCount attribute.
 
-The way a parameter is declared can affect validation. For more information, see [How to Declare Cmdlet Parameters](./how-to-declare-cmdlet-parameters.md).
+The way a parameter is declared can affect validation. For more information, see
+[How to Declare Cmdlet Parameters](./how-to-declare-cmdlet-parameters.md).
 
 ## Reference
 
