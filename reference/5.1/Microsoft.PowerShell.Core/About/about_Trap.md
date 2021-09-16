@@ -1,8 +1,8 @@
 ---
-description:  Describes a keyword that handles a terminating error. 
+description:  Describes a keyword that handles a terminating error.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 06/04/2020
+ms.date: 09/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_trap?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Trap
@@ -21,12 +21,18 @@ function or script in the current pipeline. In other languages, such as C#,
 terminating errors are known as exceptions.
 
 The `trap` keyword specifies a list of statements to run when a terminating
-error occurs. `trap` statements handle the terminating errors in the following
-ways:
+error occurs. `trap` statements can handle the terminating errors in the
+following ways:
 
 - Display the error after processing the `trap` statement block and continuing
   execution of the script or function containing the `trap`. This is the
   default behavior.
+
+  > [!NOTE]
+  > When the terminating error occurs in a subordinate script block, such as
+  > an `if` statement or `foreach` loop, the statements in the `trap` block are
+  > run and execution continues at the next statement outside the subordinate
+  > script block.
 
 - Display the error and abort execution of the script or function containing
   the `trap` using `break` in the `trap` statement.
@@ -217,6 +223,48 @@ At C:\temp\traptest.ps1:4 char:1
 The attempt to divide by zero does not create a **CommandNotFoundException**
 error. Instead, that error is trapped by the other `trap` statement, which traps
 any terminating error.
+
+### Trapping errors in a script block
+
+By default, when a terminating error is thrown, execution transfers to the trap
+statement. After the `trap` block is run, control returns to the next statement
+block after the location of the error.
+
+For example, when a terminating error occurs in an `foreach` statement, the `trap`
+statement is run and execution continues at the next statement after the `foreach` block,
+not within the `foreach` block.
+
+```powershell
+trap { 'An error occurred!'}
+foreach ($x in 3..0) {
+   1/$x
+   'after division'
+}
+'after loop'
+```
+
+```Output
+0.333333333333333
+after division
+0.5
+after division
+1
+after division
+An error occurred!
+Attempted to divide by zero.
+At line:3 char:4
++    1/$x
++    ~~~~
+    + CategoryInfo          : NotSpecified: (:) [], RuntimeException
+    + FullyQualifiedErrorId : RuntimeException
+
+after loop
+```
+
+In the output above, you can see the loops continue until the last iteration.
+When the script tries to divide 1 by 0 a terminating error is thrown. The rest
+of the `foreach` scriptblock is skipped, the `try` statement is run, and the
+script continues after the `foreach` scriptblock.
 
 ### Trapping errors and scope
 

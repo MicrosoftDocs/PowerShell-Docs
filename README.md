@@ -1,6 +1,6 @@
 # Microsoft Open Source Code of Conduct
 
-> Updated: 11/02/2020
+> Updated: 09/06/2021
 
 This project has adopted the
 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more
@@ -39,6 +39,7 @@ The following list describes the main folders in this repository.
   - `bread` - contains the TOC used for breadcrumb navigation
   - `docs-conceptual` - contains the conceptual articles that are published to the Docs site. In
     general, the folder structure mirrors the Table of Contents (TOC).
+  - `includes` - contains markdown include files
   - `mapping` - contains the version mapping configuration used by the build system
   - `media` - contains image files used in documentation. There are media folders throughout the
     `docs-conceptual` content. See the Contributor Guide for information on using images in
@@ -47,15 +48,13 @@ The following list describes the main folders in this repository.
 - `tests` - contains the Pester tests used by the build system
 - `tools` - contains other tools used by the build system
 
-> NOTE: The reference content (in the numbered folders) is used to create the
-> webpages on the Docs site as well as the updateable help used by PowerShell.
-> The articles in the `docs-conceptual` folder are only published to the Docs
-> website.
+> NOTE: The reference content (in the numbered folders) is used to create the webpages on the Docs
+> site as well as the updateable help used by PowerShell. The articles in the `docs-conceptual`
+> folder are only published to the Docs website.
 
 ## Contributing
 
-We welcome public contributions into this repository via
-[pull requests](https://help.github.com/articles/using-pull-requests/) into the _staging_ branch.
+We welcome public contributions into this repository via pull requests into the _staging_ branch.
 Please note that before we can accept your pull request you must sign our
 [Contribution License Agreement](https://cla.microsoft.com/). This is a one-time requirement.
 

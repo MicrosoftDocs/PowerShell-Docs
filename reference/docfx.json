@@ -31,15 +31,17 @@
       "author": {
         "**/**.md": "sdwheeler",
         "**/**.yml": "sdwheeler",
-        "docs-conceptual/developer/**/**.md": "joeyaiello",
+        "docs-conceptual/developer/**/**.md": "SteveL-MSFT",
         "docs-conceptual/dsc/**/**.md": "mgreenegit",
         "docs-conceptual/gallery/**/**.md": "SydneyhSmith",
         "docs-conceptual/learn/ps101/**.md": "mikefrobbins",
         "docs-conceptual/learn/remoting/jea/**.md": "rpsqrd"
       },
       "feedback_product_url": {
+        "docs-conceptual/dsc/**/**.md": "https://support.microsoft.com/windows/send-feedback-to-microsoft-with-the-feedback-hub-app-f59187f8-8739-22d6-ba93-f66612949332",
         "docs-conceptual/gallery/**/**.md": "https://github.com/powershell/powershellgallery/issues/new",
         "docs-conceptual/learn/remoting/jea/**.md": "https://github.com/powershell/jea/issues/new",
+        "docs-conceptual/windows-powershell/wmf/**/**.md": "https://support.microsoft.com/windows/send-feedback-to-microsoft-with-the-feedback-hub-app-f59187f8-8739-22d6-ba93-f66612949332"
       },
       "manager": {
         "**/**": "mamccrea"
@@ -47,7 +49,7 @@
       "ms.author": {
         "**/**.md": "sewhee",
         "**/**.yml": "sewhee",
-        "docs-conceptual/developer/**/**.md": "jaiello",
+        "docs-conceptual/developer/**/**.md": "slee",
         "docs-conceptual/dsc/**/**.md": "migreene",
         "docs-conceptual/gallery/**/**.md": "sysmith",
         "docs-conceptual/learn/ps101/**.md": "mirobb",
