@@ -100,8 +100,6 @@ items:
                 href: samples/removing-objects-from-the-pipeline--where-object-.md
               - name: Sorting objects
                 href: samples/sorting-objects.md
-              - name: Repeating a task for multiple objects - ForEach-Object
-                href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
               - name: Creating .NET and COM objects - New-Object
                 href: samples/creating-.net-and-com-objects--new-object-.md
               - name: Using static classes and methods
@@ -510,7 +508,7 @@ items:
       - name: Tutorials
         items:
           - name: Build a CI/CD pipeline with DSC, Pester, and Visual Studio Team Services
-            href: dsc/tutorials/dscCiCd.md
+            href: /azure/devops/pipelines/release/dsc-cicd
           - name: Configure a virtual machine at initial boot-up by using DSC
             href: dsc/tutorials/bootstrapDsc.md
           - name: Configure the DSCAutomationHostEnabled registry key
@@ -1334,7 +1332,7 @@ items:
                                       - name: TypeName Element for SelectionCondition for Controls for Configuration
                                         href: developer/format/typename-element-for-selectioncondition-for-controls-for-configuration-format.md
                                   - name: SelectionSetName Element for EntrySelectedBy for Controls for Configuration
-                                    href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
+                                    href: developer/format/selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format.md
                                   - name: TypeName Element for EntrySelectedBy for Controls for Configuration
                                     href: developer/format/typename-element-for-entryselectedby-for-controls-for-configuration-format.md
                       - name: Name Element for Control for Controls for Configuration
