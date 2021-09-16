@@ -1,7 +1,7 @@
 ---
 description: The PSModulePath environment variable contains a list of folder locations that are searched to find modules and resources.
 Locale: en-US
-ms.date: 08/20/2021
+ms.date: 09/16/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSModulePath
@@ -44,48 +44,6 @@ as the Program Files directory, can append their locations to the value of
 > folder using the following command:
 > `[Environment]::GetFolderPath('MyDocuments')`.
 
-## Modifying PSModulePath
-
-To change the default module directories for the current session, use the
-following command format to change the value of the `PSModulePath`
-environment variable.
-
-For example, to add the `C:\Program Files\Fabrikam\Modules` directory to
-the value of the PSModulePath environment variable, type:
-
-```powershell
-$Env:PSModulePath = $Env:PSModulePath+";C:\Program Files\Fabrikam\Modules"
-```
-
-The semi-colon (`;`) in the command separates the new path from the path that
-precedes it in the list. On non-Windows platforms, the colon (`:`) separates
-the path locations in the environment variable.
-
-To change the value of `PSModulePath` in every session, add the previous
-command to your PowerShell profile or use the **SetEnvironmentVariable**
-method of the **Environment** class.
-
-The following command uses the **GetEnvironmentVariable** method to get the
-machine setting of `PSModulePath` and the **SetEnvironmentVariable** method
-to add the `C:\Program Files\Fabrikam\Modules` path to the value.
-
-```powershell
-$path = [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine')
-$newpath = $path + ';C:\Program Files\Fabrikam\Modules'
-[Environment]::SetEnvironmentVariable('PSModulePath', $newpath, 'Machine')
-```
-
-To add a path to the user setting, change the target value to **User**.
-
-```powershell
-$path = [Environment]::GetEnvironmentVariable('PSModulePath', 'User')
-$newpath = $path + ';C:\Program Files\Fabrikam\Modules'
-[Environment]::SetEnvironmentVariable('PSModulePath', $newpath, 'User')
-```
-
-For more information about the methods of the **System.Environment** class, see
-[Environment Methods](/dotnet/api/system.environment).
-
 ## PowerShell PSModulePath construction
 
 The value of `$env:PSModulePath` is constructed each time PowerShell starts.
@@ -108,14 +66,6 @@ startup:
 The **CurrentUser** module path is prefixed only if User scope
 `$env:PSModulePath` doesn't exist. Otherwise, the User scope
 `$env:PSModulePath` is used as defined.
-
-### PowerShell Core 6 startup
-
-PowerShell Core 6 doesn't use contents of `$env:PSModulePath` if it detects it
-was started from PowerShell. It overwrites it with:
-
-- **CurrentUser** modules path + **AllUsers** modules path + `$PSHOME` modules
-  path + Windows PowerShell `$PSHOME` modules path.
 
 ### PowerShell 7 startup
 
@@ -188,6 +138,58 @@ By default, PowerShell loads the highest version number of a module when
 multiple versions are found. To load a specific version, use `Import-Module`
 with the **FullyQualifiedName** parameter. For more information, see
 [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module).
+
+## Modifying PSModulePath
+
+To change the default module directories for the current session, use the
+following command format to change the value of the `PSModulePath` environment
+variable.
+
+For example, to add the `C:\Program Files\Fabrikam\Modules` directory to
+the value of the PSModulePath environment variable, type:
+
+```powershell
+$Env:PSModulePath = $Env:PSModulePath+";C:\Program Files\Fabrikam\Modules"
+```
+
+The semi-colon (`;`) in the command separates the new path from the path that
+precedes it in the list. On non-Windows platforms, the colon (`:`) separates
+the path locations in the environment variable.
+
+### Modifying PSModulePath in non-Windows
+
+To change the value of `PSModulePath` for every session in a non-Windows
+environment, add the previous command to your PowerShell profile.
+
+### Modifying PSModulePath in Windows
+
+To change the value of `PSModulePath` for every session in a Windows
+environment, edit the registry key storing the `PSModulePath` values. The
+`PSModulePath` values are stored in the registry as **un-expanded** strings. To
+avoid permanently saving the `PSModulePath` values as **expanded** strings, use
+the **GetValue** method on the sub-key and edit the value directly.
+
+The following example adds the `C:\Program Files\Fabrikam\Modules` path to the
+value of the `PSModulePath` environment variable without expanding the
+un-expanded strings.
+
+```powershell
+$key = (Get-Item 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager').OpenSubKey('Environment', $true)
+$path = $key.GetValue('PSModulePath','','DoNotExpandEnvironmentNames')
+$path += ';C:\Program Files\Fabrikam\Modules' # or '%ProgramFiles%\Fabrikam\Modules'
+$key.SetValue('PSModulePath',$path,[Microsoft.Win32.RegistryValueKind]::ExpandString)
+```
+
+To add a path to the user setting, change the registry provider from `HKLM:\`
+to `HKCU:\`.
+
+```powershell
+$key = (Get-Item 'HKCU:\SYSTEM\CurrentControlSet\Control\Session Manager').OpenSubKey('Environment', $true)
+$path = $key.GetValue('PSModulePath','','DoNotExpandEnvironmentNames')
+$path += ';C:\Program Files\Fabrikam\Modules' # or '%ProgramFiles%\Fabrikam\Modules'
+$key.SetValue('PSModulePath',$path,[Microsoft.Win32.RegistryValueKind]::ExpandString))
+```
+
 
 ## See also
 
