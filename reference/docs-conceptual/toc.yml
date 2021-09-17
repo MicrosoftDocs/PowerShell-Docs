@@ -1235,8 +1235,6 @@ items:
                     href: developer/format/creating-custom-controls.md
                   - name: Loading and Exporting Formatting Data
                     href: developer/format/loading-and-exporting-formatting-data.md
-                  - name: Defining Common Configuration Features
-                    href: developer/format/defining-common-configuration-features.md
                   - name: Defining Selection Sets
                     href: developer/format/defining-selection-sets.md
                   - name: Defining Conditions for Displaying Data

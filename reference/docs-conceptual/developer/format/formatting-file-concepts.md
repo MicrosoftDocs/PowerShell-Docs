@@ -24,8 +24,6 @@ Provides an example of a displayed wide view and the XML elements used to define
 [Creating Custom Controls](./creating-custom-controls.md)
 Provides an example of a custom control.
 
-[Defining Common Configuration Features](./defining-common-configuration-features.md)
-
 [Defining Selection Sets](./defining-selection-sets.md)
 Provides information, an example, and describes the XML elements used to create a selection set.
 
