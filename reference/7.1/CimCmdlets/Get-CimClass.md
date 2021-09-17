@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/09/2017
@@ -33,6 +32,8 @@ Get-CimClass [[-ClassName] <String>] [[-Namespace] <String>] [-OperationTimeoutS
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Get-CimClass` cmdlet retrieves a list of CIM classes in a specific namespace. If there is no
 class name supplied, then the cmdlet returns all the classes in the namespace. Unlike a CIM
@@ -291,4 +292,3 @@ This cmdlet returns a CIM class object.
 ## RELATED LINKS
 
 [New-CimSession](New-CimSession.md)
-

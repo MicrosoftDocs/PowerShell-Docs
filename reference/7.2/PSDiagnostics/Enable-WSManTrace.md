@@ -19,6 +19,9 @@ Enable-WSManTrace [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
+
 This cmdlet starts a logging session with the WSMan providers enabled. The following event providers are enabled:
 
 - Event Forwarding

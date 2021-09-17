@@ -23,6 +23,8 @@ Clear-RecycleBin [[-DriveLetter] <String[]>] [-Force] [-WhatIf] [-Confirm] [<Com
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Clear-RecycleBin` cmdlet deletes the content of a computer's recycle bin. This action is like
 using Windows **Empty Recycle Bin**.
 

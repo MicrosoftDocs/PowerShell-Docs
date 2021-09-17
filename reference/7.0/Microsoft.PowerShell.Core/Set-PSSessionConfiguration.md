@@ -52,6 +52,8 @@ Set-PSSessionConfiguration [-Name] <String> [-RunAsCredential <PSCredential>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Set-PSSessionConfiguration` cmdlet changes the properties of the session configurations on the
 local computer.
 

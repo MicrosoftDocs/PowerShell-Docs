@@ -20,6 +20,8 @@ Enable-PSWSManCombinedTrace [-DoNotOverwriteExistingTrace] [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 This cmdlet starts a logging session with the following PowerShell providers enabled:
 
 - Microsoft-Windows-PowerShell

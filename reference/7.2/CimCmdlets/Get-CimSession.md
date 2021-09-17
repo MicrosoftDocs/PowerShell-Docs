@@ -41,6 +41,8 @@ Get-CimSession -Name <String[]> [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 By default, the cmdlet gets all of the CIM sessions created in the current PowerShell session. You
 can use the parameters of `Get-CimSession` to get the sessions that are for particular computers, or
 you can identify sessions by their names or other identifiers. `Get-CimSession` does not get CIM

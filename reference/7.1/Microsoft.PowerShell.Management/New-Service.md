@@ -23,6 +23,8 @@ New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] 
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `New-Service` cmdlet creates a new entry for a Windows service in the registry and in the
 service database. A new service requires an executable file that runs during the service.
 

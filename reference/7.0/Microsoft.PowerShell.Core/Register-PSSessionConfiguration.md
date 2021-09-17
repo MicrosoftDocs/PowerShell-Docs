@@ -53,6 +53,8 @@ Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <Strin
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Register-PSSessionConfiguration` cmdlet creates and registers a new session configuration on
 the local computer. This is an advanced cmdlet that you can use to create custom sessions for remote
 users.

@@ -37,6 +37,8 @@ Resume-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclu
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Resume-Service` cmdlet sends a resume message to the Windows Service Controller for each of the
 specified services. If a service is suspended, it resumes. If it is currently running, the message
 is ignored. You can specify the services by their service names or display names, or you can use the

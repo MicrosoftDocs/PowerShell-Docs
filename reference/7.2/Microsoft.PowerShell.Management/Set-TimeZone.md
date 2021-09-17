@@ -34,6 +34,8 @@ Set-TimeZone [-InputObject] <TimeZoneInfo> [-PassThru] [-WhatIf] [-Confirm] [<Co
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Set-TimeZone` cmdlet sets the system time zone to a specified time zone.
 
 ## EXAMPLES

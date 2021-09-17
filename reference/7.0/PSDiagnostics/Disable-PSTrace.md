@@ -20,6 +20,8 @@ Disable-PSTrace [-AnalyticOnly] [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 This cmdlet disables the Operational and Analytic event logs of the Microsoft-Windows-PowerShell
 event provider.
 

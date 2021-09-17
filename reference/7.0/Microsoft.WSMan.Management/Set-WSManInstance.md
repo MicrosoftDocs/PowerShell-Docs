@@ -36,6 +36,8 @@ Set-WSManInstance [-ConnectionURI <Uri>] [-Dialect <Uri>] [-FilePath <String>] [
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The Set-WSManInstance cmdlet modifies the management information that is related to a resource.
 
 This cmdlet uses the WinRM connection/transport layer to modify the information.

@@ -38,6 +38,8 @@ Start-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclud
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Start-Service` cmdlet sends a start message to the Windows Service Controller for each of the
 specified services. If a service is already running, the message is ignored without error. You can
 specify the services by their service names or display names, or you can use the **InputObject**

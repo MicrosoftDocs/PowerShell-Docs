@@ -38,6 +38,8 @@ Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <S
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Stop-Service` cmdlet sends a stop message to the Windows Service Controller for each of the
 specified services. You can specify the services by their service names or display names, or you can
 use the **InputObject** parameter to pass a service object that represents the service that you want

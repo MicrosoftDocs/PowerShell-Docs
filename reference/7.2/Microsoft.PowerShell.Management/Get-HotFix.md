@@ -31,6 +31,8 @@ Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PS
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Get-Hotfix` cmdlet gets hotfixes, or updates, that are installed on the local computer or
 specified remote computers. The updates can be installed by Windows Update, Microsoft Update,
 Windows Server Update Services, or manually installed.

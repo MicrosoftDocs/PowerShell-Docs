@@ -34,6 +34,8 @@ Remove-WSManInstance [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-ResourceU
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The **Remove-WSManInstance** cmdlet deletes an instance of a management resource that is specified in the *ResourceURI* and *SelectorSet* parameters.
 
 This cmdlet uses the WinRM connection/transport layer to delete the management resource instance.

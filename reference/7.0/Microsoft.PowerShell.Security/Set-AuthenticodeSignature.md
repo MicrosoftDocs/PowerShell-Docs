@@ -41,6 +41,8 @@ Set-AuthenticodeSignature [-Certificate] <X509Certificate2> [-IncludeChain <Stri
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Set-AuthenticodeSignature` cmdlet adds an Authenticode signature to any file that supports
 Subject Interface Package (SIP).
 

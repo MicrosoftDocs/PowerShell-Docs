@@ -36,6 +36,8 @@ Out-GridView [-InputObject <PSObject>] [-Title <String>] [-OutputMode <OutputMod
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Out-GridView` cmdlet sends the output from a command to a grid view window where the output is
 displayed in an interactive table.
 

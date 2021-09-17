@@ -34,6 +34,8 @@ New-CimSession [-CertificateThumbprint <String>] [[-ComputerName] <String[]>] [-
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `New-CimSession` cmdlet creates a CIM session. A CIM session is a client-side object
 representing a connection to a local computer or a remote computer. The CIM session contains
 information about the connection, such as **ComputerName**, the protocol used, or various

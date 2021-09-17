@@ -34,6 +34,9 @@ Invoke-WSManAction [-Action] <String> [-ApplicationName <String>] [-ComputerName
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
+
 The **Invoke-WSManAction** runs an action on the object that is specified by RESOURCE_URI, where parameters are specified by key value pairs.
 
 This cmdlet uses the WSMan connection/transport layer to run the action.

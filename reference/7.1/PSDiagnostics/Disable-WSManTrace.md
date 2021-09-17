@@ -20,6 +20,9 @@ Disable-WSManTrace [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
+
 This cmdlet stops the WSMan logging session started by Enable-WSManTrace.
 
 This cmdlet uses the `Stop-Trace` cmdlet.

@@ -38,6 +38,8 @@ Get-Acl [-LiteralPath <String[]>] [-Audit] [-Filter <String>] [-Include <String[
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Get-Acl` cmdlet gets objects that represent the security descriptor of a file or resource. The
 security descriptor contains the access control lists (ACLs) of the resource. The ACL specifies the
 permissions that users and user groups have to access the resource.

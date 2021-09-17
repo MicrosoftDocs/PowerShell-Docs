@@ -53,6 +53,8 @@ Register-CimIndicationEvent [-Namespace <String>] [-Query] <String> [-QueryDiale
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Register-CimIndicationEvent` cmdlet subscribes to indications using an indication class name or
 a query expression. Use the **SourceIdentifier** parameter give a name to the subscription.
 

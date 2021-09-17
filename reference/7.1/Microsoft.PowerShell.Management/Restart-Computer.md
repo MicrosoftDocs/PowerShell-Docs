@@ -26,6 +26,8 @@ Restart-Computer [-WsmanAuthentication <String>] [[-ComputerName] <String[]>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Restart-Computer` cmdlet restarts the operating system on the local and remote computers.
 
 You can use the parameters of `Restart-Computer` to run the restart operations, to specify the

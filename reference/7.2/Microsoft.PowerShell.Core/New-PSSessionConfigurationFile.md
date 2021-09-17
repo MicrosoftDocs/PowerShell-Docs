@@ -31,6 +31,8 @@ New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Gui
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `New-PSSessionConfigurationFile` cmdlet creates a file of settings that define a session
 configuration and the environment of sessions that are created by using the session configuration.
 To use the file in a session configuration, use the **Path** parameter of the

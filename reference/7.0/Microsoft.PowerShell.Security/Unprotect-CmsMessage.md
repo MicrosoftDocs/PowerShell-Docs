@@ -43,6 +43,8 @@ Unprotect-CmsMessage [-LiteralPath] <String> [-IncludeContext] [[-To] <CmsMessag
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Unprotect-CmsMessage` cmdlet decrypts content that has been encrypted by using the
 Cryptographic Message Syntax (CMS) format.
 

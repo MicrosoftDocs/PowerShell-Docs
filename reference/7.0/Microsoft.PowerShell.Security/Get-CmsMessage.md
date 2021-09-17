@@ -35,6 +35,8 @@ Get-CmsMessage [-LiteralPath] <String> [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Get-CmsMessage` cmdlet gets content that has been encrypted using the Cryptographic Message
 Syntax (CMS) format.
 

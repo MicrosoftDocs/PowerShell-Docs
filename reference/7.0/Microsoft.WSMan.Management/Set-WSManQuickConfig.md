@@ -24,6 +24,8 @@ Set-WSManQuickConfig [-UseSSL] [-Force] [-SkipNetworkProfileCheck] [<CommonParam
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Set-WSManQuickConfig` cmdlet configures the computer to receive PowerShell remote commands that
 are sent by using the Web Services for Management (WS-Management) technology.
 

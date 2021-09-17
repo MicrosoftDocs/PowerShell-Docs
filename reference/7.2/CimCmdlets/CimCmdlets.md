@@ -15,6 +15,8 @@ title: CimCmdlets Module
 Contains cmdlets that interact with Common Information Model (CIM) Servers like the Windows
 Management Instrumentation (WMI) service.
 
+This module is only available on the Windows platform.
+
 ## CimCmdlets Cmdlets
 
 ### [Export-BinaryMiLog](Export-BinaryMiLog.md)
@@ -58,4 +60,3 @@ Removes one or more CIM sessions.
 
 ### [Set-CimInstance](Set-CimInstance.md)
 Modifies a CIM instance on a CIM server by calling the **ModifyInstance** method of the CIM class.
-
