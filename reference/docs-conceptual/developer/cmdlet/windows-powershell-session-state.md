@@ -1,8 +1,8 @@
 ---
+description: Windows PowerShell Session State
 ms.date: 09/13/2016
 ms.topic: reference
 title: Windows PowerShell Session State
-description: Windows PowerShell Session State
 ---
 # Windows PowerShell Session State
 

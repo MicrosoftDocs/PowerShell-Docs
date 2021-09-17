@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title:  Filtering search results
 description: This article describes the user interface used to filter content in the PowerShell Gallery.
+ms.date: 06/12/2017
+title: Filtering search results
 ---
 # Filtering search results
 

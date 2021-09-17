@@ -1,8 +1,7 @@
 ---
-ms.date: 08/11/2020
-keywords:  dsc,powershell,configuration,setup
-title:  Calling DSC resource methods directly
 description: The Invoke-DscResource cmdlet can be used to call the functions or methods of a DSC resource. This can be used by third-parties that want to use DSC resources or as a helpful tool while developing resources.
+ms.date: 08/11/2020
+title: Calling DSC resource methods directly
 ---
 
 # Calling DSC resource methods directly

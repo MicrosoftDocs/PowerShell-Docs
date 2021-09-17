@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title:  WMF 5.x Release Notes
-description:  WMF 5.x Release Notes
+description: WMF 5.x Release Notes
+ms.date: 06/12/2017
+title: WMF 5.x Release Notes
 ---
 
 # Windows Management Framework (WMF) 5.x Release Notes

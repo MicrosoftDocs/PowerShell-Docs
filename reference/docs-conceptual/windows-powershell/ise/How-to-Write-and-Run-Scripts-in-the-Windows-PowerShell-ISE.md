@@ -1,7 +1,7 @@
 ---
-ms.date:  01/02/2020
-title:  How to Write and Run Scripts in the Windows PowerShell ISE
 description: This article describes how to create, edit, run, and save scripts in the Script Pane.
+ms.date: 01/02/2020
+title: How to Write and Run Scripts in the Windows PowerShell ISE
 ---
 
 # How to Write and Run Scripts in the Windows PowerShell ISE

@@ -1,8 +1,8 @@
 ---
+description: SendMetaConfigurationApply method
 ms.date: 07/17/2020
 ms.topic: reference
 title: SendMetaConfigurationApply method
-description: SendMetaConfigurationApply method
 ---
 # SendMetaConfigurationApply method
 

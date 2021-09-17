@@ -1,8 +1,8 @@
 ---
+description: Examples of Comment-Based Help
 ms.date: 01/11/2021
 ms.topic: reference
 title: Examples of Comment-Based Help
-description: Examples of Comment-Based Help
 ---
 
 # Examples of Comment-Based Help

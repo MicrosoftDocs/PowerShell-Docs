@@ -1,8 +1,8 @@
 ---
+description: Writing a Windows PowerShell Module
 ms.date: 09/16/2021
 ms.topic: reference
 title: Writing a Windows PowerShell Module
-description: Writing a Windows PowerShell Module
 ---
 # Writing a Windows PowerShell Module
 

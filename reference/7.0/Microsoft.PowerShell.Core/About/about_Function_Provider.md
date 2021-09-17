@@ -1,6 +1,5 @@
 ---
-description: Function 
-keywords: powershell,cmdlet
+description: Function
 Locale: en-US
 ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_function_provider?view=powershell-7&WT.mc_id=ps-gethelp

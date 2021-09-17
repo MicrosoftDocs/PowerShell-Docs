@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title:  Script with compatible PowerShell editions
 description: This article explains how the PowerShellGet cmdlets support the Desktop and Core editions of PowerShell scripts.
+ms.date: 06/12/2017
+title: Script with compatible PowerShell editions
 ---
 # Script with compatible PowerShell editions
 

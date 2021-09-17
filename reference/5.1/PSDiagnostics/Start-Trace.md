@@ -1,6 +1,5 @@
 ---
 external help file: PSDiagnostics-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSDiagnostics
 ms.date: 11/27/2018

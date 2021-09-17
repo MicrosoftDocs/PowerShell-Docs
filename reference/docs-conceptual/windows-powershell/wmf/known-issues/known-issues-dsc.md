@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title: Desired State Configuration (DSC) Known Issues and Limitations
 description: Known Issues and Limitations of DSC in Windows PowerShell 5.x
+ms.date: 06/12/2017
+title: Desired State Configuration (DSC) Known Issues and Limitations
 ---
 
 # Desired State Configuration (DSC) Known Issues and Limitations

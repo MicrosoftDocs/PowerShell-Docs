@@ -1,8 +1,8 @@
 ---
+description: CustomControl Element for View
 ms.date: 08/20/2021
 ms.topic: reference
 title: CustomControl Element for View
-description: CustomControl Element for View
 ---
 # CustomControl Element for View
 

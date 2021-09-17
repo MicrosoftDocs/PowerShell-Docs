@@ -1,8 +1,8 @@
 ---
+description: How to Write a PowerShell Module Manifest
 ms.date: 01/04/2021
 ms.topic: reference
 title: How to Write a PowerShell Module Manifest
-description: How to Write a PowerShell Module Manifest
 ---
 
 # How to write a PowerShell module manifest

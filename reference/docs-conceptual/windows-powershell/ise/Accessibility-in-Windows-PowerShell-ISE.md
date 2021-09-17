@@ -1,7 +1,7 @@
 ---
+description: This topic describes the accessibility features of Windows PowerShell Integrated Scripting Environment (ISE) that you might find helpful.
 ms.date: 12/19/2019
 title: Accessibility in Windows PowerShell ISE
-description: This topic describes the accessibility features of Windows PowerShell Integrated Scripting Environment (ISE) that you might find helpful.
 ---
 
 # Accessibility in Windows PowerShell ISE

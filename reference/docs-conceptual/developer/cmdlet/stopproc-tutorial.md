@@ -1,8 +1,8 @@
 ---
+description: StopProc Tutorial
 ms.date: 09/13/2016
 ms.topic: reference
 title: StopProc Tutorial
-description: StopProc Tutorial
 ---
 # StopProc Tutorial
 

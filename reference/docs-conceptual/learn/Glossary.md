@@ -1,8 +1,7 @@
 ---
-ms.date: 06/11/2020
-keywords:  powershell,cmdlet
-title:  PowerShell Glossary
 description: A glossary of PowerShell-related terminology.
+ms.date: 06/11/2020
+title: PowerShell Glossary
 ---
 
 # PowerShell Glossary

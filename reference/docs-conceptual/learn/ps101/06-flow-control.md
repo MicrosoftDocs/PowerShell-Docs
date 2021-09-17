@@ -1,9 +1,9 @@
 ---
-title: Flow control
 description: PowerShell provides methods to create loops, make decisions, and logically control the flow of code in scripts.
-ms.date: 06/02/2020
 ms.custom: Contributor-mikefrobbins
+ms.date: 06/02/2020
 ms.reviewer: mirobb
+title: Flow control
 ---
 # Chapter 6 - Flow control
 

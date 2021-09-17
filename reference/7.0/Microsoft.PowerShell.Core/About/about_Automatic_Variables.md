@@ -1,5 +1,5 @@
 ---
-description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
+description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
 ms.date: 08/24/2021
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]

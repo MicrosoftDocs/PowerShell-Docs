@@ -1,8 +1,8 @@
 ---
+description: CustomEntries Element for CustomControl for Controls for Configuration
 ms.date: 08/20/2021
 ms.topic: reference
 title: CustomEntries Element for CustomControl for Controls for Configuration
-description: CustomEntries Element for CustomControl for Controls for Configuration
 ---
 # CustomEntries Element for CustomControl for Controls for Configuration
 

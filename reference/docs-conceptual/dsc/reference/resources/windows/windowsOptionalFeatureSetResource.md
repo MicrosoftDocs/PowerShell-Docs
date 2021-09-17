@@ -1,8 +1,8 @@
 ---
+description: DSC WindowsOptionalFeatureSet Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC WindowsOptionalFeatureSet Resource
-description: DSC WindowsOptionalFeatureSet Resource
 ---
 # DSC WindowsOptionalFeatureSet Resource
 

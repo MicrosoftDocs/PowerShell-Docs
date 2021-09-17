@@ -1,8 +1,8 @@
 ---
+description: DSC WindowsFeature Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC WindowsFeature Resource
-description: DSC WindowsFeature Resource
 ---
 # DSC WindowsFeature Resource
 

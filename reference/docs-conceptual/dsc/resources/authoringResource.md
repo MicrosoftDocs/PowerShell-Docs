@@ -1,8 +1,7 @@
 ---
+description: This article provides an overview of developing resources and links to articles with specific information and examples.
 ms.date: 07/08/2020
-keywords:  dsc,powershell,configuration,setup
-title:  Build Custom Windows PowerShell Desired State Configuration Resources
-description:  This article provides an overview of developing resources and links to articles with specific information and examples.
+title: Build Custom Windows PowerShell Desired State Configuration Resources
 ---
 
 # Build Custom Windows PowerShell Desired State Configuration Resources

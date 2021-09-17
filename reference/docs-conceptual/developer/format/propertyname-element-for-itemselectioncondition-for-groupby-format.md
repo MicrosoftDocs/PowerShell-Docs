@@ -1,8 +1,8 @@
 ---
+description: PropertyName Element for ItemSelectionCondition for GroupBy
 ms.date: 08/24/2021
 ms.topic: reference
 title: PropertyName Element for ItemSelectionCondition for GroupBy
-description: PropertyName Element for ItemSelectionCondition for GroupBy
 ---
 # PropertyName Element for ItemSelectionCondition for GroupBy
 

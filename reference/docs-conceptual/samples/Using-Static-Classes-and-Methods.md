@@ -1,8 +1,7 @@
 ---
-ms.date:  06/05/2017
-keywords:  powershell,cmdlet
-title:  Using Static Classes and Methods
 description: This article explains how to identify and use the properties and methods of .NET static classes.
+ms.date: 06/05/2017
+title: Using Static Classes and Methods
 ---
 # Using Static Classes and Methods
 

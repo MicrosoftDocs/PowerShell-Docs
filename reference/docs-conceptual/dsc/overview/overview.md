@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Windows PowerShell Desired State Configuration Overview
 description: DSC is a management platform in PowerShell that enables you to manage your IT and development infrastructure with configuration as code.
+ms.date: 06/12/2017
+title: Windows PowerShell Desired State Configuration Overview
 ---
 
 # Windows PowerShell Desired State Configuration Overview

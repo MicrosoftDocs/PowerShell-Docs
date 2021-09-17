@@ -1,8 +1,8 @@
 ---
-title: How we manage issues
 description: This article explains how the PowerShell-Docs team manages issues.
 ms.date: 12/09/2020
 ms.topic: conceptual
+title: How we manage issues
 ---
 # How we manage issues
 

@@ -1,8 +1,8 @@
 ---
+description: DisableDebugConfiguration method
 ms.date: 07/14/2020
 ms.topic: reference
 title: DisableDebugConfiguration method
-description: DisableDebugConfiguration method
 ---
 # DisableDebugConfiguration method
 

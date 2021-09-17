@@ -1,8 +1,8 @@
 ---
+description: SelectionSetName Element for SelectionCondition for GroupBy
 ms.date: 08/25/2021
 ms.topic: reference
 title: SelectionSetName Element for SelectionCondition for GroupBy
-description: SelectionSetName Element for SelectionCondition for GroupBy
 ---
 # SelectionSetName Element for SelectionCondition for GroupBy
 

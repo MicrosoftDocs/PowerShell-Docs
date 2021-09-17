@@ -1,8 +1,7 @@
 ---
-ms.date:  12/23/2019
-keywords:  powershell,cmdlet
-title:  Collecting Information About Computers
 description: This article shows how to collection information about computer configuration use WMI and CIM cmdlets.
+ms.date: 12/23/2019
+title: Collecting Information About Computers
 ---
 # Collecting Information About Computers
 

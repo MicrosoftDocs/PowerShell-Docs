@@ -1,8 +1,8 @@
 ---
+description: Cmdlet Parameter Sets
 ms.date: 09/13/2016
 ms.topic: reference
 title: Cmdlet Parameter Sets
-description: Cmdlet Parameter Sets
 ---
 
 # Cmdlet parameter sets

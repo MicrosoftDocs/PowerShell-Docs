@@ -1,8 +1,8 @@
 ---
+description: File Types Permitted in an Updatable Help CAB File
 ms.date: 03/22/2012
 ms.topic: reference
 title: File Types Permitted in an Updatable Help CAB File
-description: File Types Permitted in an Updatable Help CAB File
 ---
 # File Types Permitted in an Updatable Help CAB File
 

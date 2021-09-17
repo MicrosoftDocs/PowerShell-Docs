@@ -1,8 +1,8 @@
 ---
+description: RightIndent Element for Frame for CustomControl for View
 ms.date: 08/24/2021
 ms.topic: reference
 title: RightIndent Element for Frame for CustomControl for View
-description: RightIndent Element for Frame for CustomControl for View
 ---
 # RightIndent Element for Frame for CustomControl for View
 

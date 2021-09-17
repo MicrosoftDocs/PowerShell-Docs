@@ -1,8 +1,8 @@
 ---
+description: DSC User Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC User Resource
-description: DSC User Resource
 ---
 # DSC User Resource
 

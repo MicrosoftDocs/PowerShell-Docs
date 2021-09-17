@@ -1,8 +1,7 @@
 ---
-ms.date:  01/08/2020
-keywords:  dsc,powershell,configuration,setup
-title:  DSC Pull Service
 description: Local Configuration Manager (LCM) can be centrally managed by a Pull Service solution. When using this approach, the node that is being managed is registered with a service and assigned a configuration in LCM settings.
+ms.date: 01/08/2020
+title: DSC Pull Service
 ---
 
 # Desired State Configuration Pull Service

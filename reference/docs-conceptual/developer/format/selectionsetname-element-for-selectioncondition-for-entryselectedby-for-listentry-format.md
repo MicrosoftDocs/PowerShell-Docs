@@ -1,8 +1,8 @@
 ---
+description: SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry
 ms.date: 08/25/2021
 ms.topic: reference
 title: SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry
-description: SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry
 ---
 # SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry
 

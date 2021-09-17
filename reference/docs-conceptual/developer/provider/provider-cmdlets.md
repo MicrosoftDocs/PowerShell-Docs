@@ -1,8 +1,8 @@
 ---
+description: Provider cmdlets
 ms.date: 09/12/2016
 ms.topic: reference
 title: Provider cmdlets
-description: Provider cmdlets
 ---
 # Provider cmdlets
 

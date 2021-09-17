@@ -1,8 +1,8 @@
 ---
-title: Editorial checklist
 description: This is a summarized list of rules for editing PowerShell documentation.
 ms.date: 03/05/2020
 ms.topic: conceptual
+title: Editorial checklist
 ---
 # Editor's checklist
 

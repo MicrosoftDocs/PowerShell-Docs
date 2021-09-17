@@ -1,8 +1,8 @@
 ---
+description: SelectionSetName Element for EntrySelectedBy for ListControl
 ms.date: 08/25/2021
 ms.topic: reference
 title: SelectionSetName Element for EntrySelectedBy for ListControl
-description: SelectionSetName Element for EntrySelectedBy for ListControl
 ---
 # SelectionSetName Element for EntrySelectedBy for ListControl
 

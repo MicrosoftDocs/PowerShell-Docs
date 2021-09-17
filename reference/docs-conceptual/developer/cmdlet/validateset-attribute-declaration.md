@@ -1,8 +1,8 @@
 ---
+description: ValidateSet Attribute Declaration
 ms.date: 09/13/2016
 ms.topic: reference
 title: ValidateSet Attribute Declaration
-description: ValidateSet Attribute Declaration
 ---
 # ValidateSet Attribute Declaration
 

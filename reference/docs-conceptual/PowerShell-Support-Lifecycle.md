@@ -1,7 +1,7 @@
 ---
-title: PowerShell Core Support Lifecycle
 description: Details the policies governing support for PowerShell
 ms.date: 11/11/2020
+title: PowerShell Core Support Lifecycle
 ---
 # PowerShell Support Lifecycle
 

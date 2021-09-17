@@ -1,8 +1,8 @@
 ---
+description: NewLine Element for CustomItem for Controls for Configuration
 ms.date: 08/23/2021
 ms.topic: reference
 title: NewLine Element for CustomItem for Controls for Configuration
-description: NewLine Element for CustomItem for Controls for Configuration
 ---
 # NewLine Element for CustomItem for Controls for Configuration
 

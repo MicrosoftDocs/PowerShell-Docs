@@ -1,7 +1,7 @@
 ---
-ms.date: 06/22/2021
-title:  Writing a custom DSC resource with PowerShell classes
 description: This article shows how to create a simple resource that manages a file in a specified path.
+ms.date: 06/22/2021
+title: Writing a custom DSC resource with PowerShell classes
 ---
 
 # Writing a custom DSC resource with PowerShell classes

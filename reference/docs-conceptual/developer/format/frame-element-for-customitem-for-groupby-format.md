@@ -1,8 +1,8 @@
 ---
+description: Frame Element for CustomItem for GroupBy
 ms.date: 08/23/2021
 ms.topic: reference
 title: Frame Element for CustomItem for GroupBy
-description: Frame Element for CustomItem for GroupBy
 ---
 # Frame Element for CustomItem for GroupBy
 

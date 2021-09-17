@@ -1,9 +1,9 @@
 ---
-title: One-liners and the pipeline
 description: A PowerShell one-liner is one continuous pipeline, containing multiple commands, to accomplish a single task.
-ms.date: 06/02/2020
 ms.custom: Contributor-mikefrobbins
+ms.date: 06/02/2020
 ms.reviewer: mirobb
+title: One-liners and the pipeline
 ---
 # Chapter 4 - One-liners and the pipeline
 

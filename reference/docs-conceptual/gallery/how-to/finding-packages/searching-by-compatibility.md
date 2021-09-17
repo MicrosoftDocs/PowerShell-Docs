@@ -1,7 +1,7 @@
 ---
-ms.date:  12/11/2018
-title:  Packages with compatible PowerShell Editions or Operating System
 description: This article describes how to search the PowerShell Gallery by compatibility with a specific platform or edition.
+ms.date: 12/11/2018
+title: Packages with compatible PowerShell Editions or Operating System
 ---
 # Packages with compatible PowerShell Editions or Operating Systems
 

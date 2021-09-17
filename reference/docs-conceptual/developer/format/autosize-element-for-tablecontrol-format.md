@@ -1,8 +1,8 @@
 ---
+description: AutoSize Element for TableControl
 ms.date: 08/20/2021
 ms.topic: reference
 title: AutoSize Element for TableControl
-description: AutoSize Element for TableControl
 ---
 # AutoSize Element for TableControl
 

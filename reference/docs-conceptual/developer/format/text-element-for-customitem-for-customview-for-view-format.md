@@ -1,8 +1,8 @@
 ---
+description: Text Element for CustomItem for CustomView for View
 ms.date: 08/25/2021
 ms.topic: reference
 title: Text Element for CustomItem for CustomView for View
-description: Text Element for CustomItem for CustomView for View
 ---
 # Text Element for CustomItem for CustomView for View
 

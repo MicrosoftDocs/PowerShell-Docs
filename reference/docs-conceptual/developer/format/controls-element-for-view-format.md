@@ -1,8 +1,8 @@
 ---
+description: Controls Element for View
 ms.date: 08/20/2021
 ms.topic: reference
 title: Controls Element for View
-description: Controls Element for View
 ---
 # Controls Element for View
 

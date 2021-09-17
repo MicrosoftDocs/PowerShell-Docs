@@ -1,7 +1,7 @@
 ---
-ms.date:  12/31/2019
-title:  The ISEMenuItem Object
 description: An ISEMenuItem object is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItem class. All menu objects on the **Add-ons** menu are instances of the ISEMenuItem class.
+ms.date: 12/31/2019
+title: The ISEMenuItem Object
 ---
 
 # The ISEMenuItem Object

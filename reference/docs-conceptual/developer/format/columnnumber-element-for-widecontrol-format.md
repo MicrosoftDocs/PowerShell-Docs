@@ -1,8 +1,8 @@
 ---
+description: ColumnNumber Element for WideControl
 ms.date: 08/20/2021
 ms.topic: reference
 title: ColumnNumber Element for WideControl
-description: ColumnNumber Element for WideControl
 ---
 # ColumnNumber Element for WideControl
 

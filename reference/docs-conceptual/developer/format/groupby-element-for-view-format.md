@@ -1,8 +1,8 @@
 ---
+description: GroupBy Element
 ms.date: 08/23/2021
 ms.topic: reference
 title: GroupBy Element
-description: GroupBy Element
 ---
 # GroupBy Element for View
 

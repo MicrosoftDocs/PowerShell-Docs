@@ -1,8 +1,8 @@
 ---
+description: List View (GroupBy)
 ms.date: 08/23/2021
 ms.topic: reference
 title: List View (GroupBy)
-description: List View (GroupBy)
 ---
 # List View (GroupBy)
 

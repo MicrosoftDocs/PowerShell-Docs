@@ -1,9 +1,8 @@
 ---
-description:  Describes chaining pipelines with the `&&` and `||` operators in PowerShell. 
-ms.date:  09/30/2019
-schema:  2.0.0
+description: Describes chaining pipelines with the `&&` and `||` operators in PowerShell.
 Locale: en-US
-keywords:  powershell,cmdlet
+ms.date: 09/30/2019
+schema: 2.0.0
 title: about Pipeline Chain Operators
 ---
 

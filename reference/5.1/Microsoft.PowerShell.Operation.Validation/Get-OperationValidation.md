@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Operation.Validation-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Operation.Validation
 ms.date: 06/09/2017

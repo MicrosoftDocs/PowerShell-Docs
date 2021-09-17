@@ -1,7 +1,7 @@
 ---
-ms.date:  12/31/2019
-title:  The ISEOptions Object
 description: The ISEOptions object represents various settings for Windows PowerShell ISE.
+ms.date: 12/31/2019
+title: The ISEOptions Object
 ---
 
 # The ISEOptions Object

@@ -1,8 +1,7 @@
 ---
-ms.date:  12/12/2018
-keywords:  dsc,powershell,configuration,setup
-title:  Configuring the Local Configuration Manager
 description: The Local Configuration Manager (LCM) is the engine of DSC that is responsible for parsing and applying configurations that are sent to the node.
+ms.date: 12/12/2018
+title: Configuring the Local Configuration Manager
 ---
 # Configuring the Local Configuration Manager
 

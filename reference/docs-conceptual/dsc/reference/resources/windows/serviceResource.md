@@ -1,8 +1,8 @@
 ---
+description: DSC Service Resource
 ms.date: 01/06/2021
 ms.topic: reference
 title: DSC Service Resource
-description: DSC Service Resource
 ---
 # DSC Service Resource
 

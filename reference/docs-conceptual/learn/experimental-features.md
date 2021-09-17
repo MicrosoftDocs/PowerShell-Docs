@@ -1,7 +1,7 @@
 ---
+description: Lists the currently available experimental features and how to use them.
 ms.date: 09/02/2021
 title: Using Experimental Features in PowerShell
-description: Lists the currently available experimental features and how to use them.
 ---
 # Using Experimental Features in PowerShell
 

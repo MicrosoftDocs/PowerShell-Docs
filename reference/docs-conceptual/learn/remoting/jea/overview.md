@@ -1,8 +1,7 @@
 ---
-ms.date:  07/10/2019
-keywords:  jea,powershell,security
-title:  Overview of Just Enough Administration (JEA)
 description: JEA is a security technology that enables delegated administration for anything managed by PowerShell.
+ms.date: 07/10/2019
+title: Overview of Just Enough Administration (JEA)
 ---
 
 # Just Enough Administration

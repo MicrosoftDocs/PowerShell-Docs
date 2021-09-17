@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 10/25/2019

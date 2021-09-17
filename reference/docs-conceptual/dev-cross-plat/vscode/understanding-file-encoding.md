@@ -1,7 +1,7 @@
 ---
-title: Understanding file encoding in VS Code and PowerShell
 description: Configure file encoding in VS Code and PowerShell
 ms.date: 02/28/2019
+title: Understanding file encoding in VS Code and PowerShell
 ---
 # Understanding file encoding in VS Code and PowerShell
 

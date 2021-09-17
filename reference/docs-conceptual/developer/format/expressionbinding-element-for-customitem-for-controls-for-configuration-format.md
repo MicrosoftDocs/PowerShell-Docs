@@ -1,8 +1,8 @@
 ---
+description: ExpressionBinding Element for CustomItem for Controls for Configuration
 ms.date: 08/23/2021
 ms.topic: reference
 title: ExpressionBinding Element for CustomItem for Controls for Configuration
-description: ExpressionBinding Element for CustomItem for Controls for Configuration
 ---
 # ExpressionBinding Element for CustomItem for Controls for Configuration
 

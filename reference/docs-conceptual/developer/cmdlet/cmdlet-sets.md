@@ -1,8 +1,8 @@
 ---
+description: Cmdlet Sets
 ms.date: 09/13/2016
 ms.topic: reference
 title: Cmdlet Sets
-description: Cmdlet Sets
 ---
 # Cmdlet Sets
 

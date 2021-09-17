@@ -1,8 +1,8 @@
 ---
+description: Parameter Aliases
 ms.date: 09/13/2016
 ms.topic: reference
 title: Parameter Aliases
-description: Parameter Aliases
 ---
 # Parameter Aliases
 

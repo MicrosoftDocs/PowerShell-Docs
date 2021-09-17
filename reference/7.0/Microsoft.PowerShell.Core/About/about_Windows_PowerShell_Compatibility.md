@@ -1,6 +1,5 @@
 ---
-description:  Describes the Windows PowerShell Compatibility functionality for PowerShell 7. 
-keywords: powershell,cmdlet
+description: Describes the Windows PowerShell Compatibility functionality for PowerShell 7.
 Locale: en-US
 ms.date: 04/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility?view=powershell-7&WT.mc_id=ps-gethelp

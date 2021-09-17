@@ -1,8 +1,7 @@
 ---
-ms.date:  12/12/2018
-keywords:  dsc,powershell,configuration,setup
-title:  Publish to a Pull Server using Configuration IDs (v4/v5)
 description: This article shows you how to upload resources so they're available to be downloaded, and configure clients to automatically download resources.
+ms.date: 12/12/2018
+title: Publish to a Pull Server using Configuration IDs (v4/v5)
 ---
 
 # Publish to a Pull Server using Configuration IDs (v4/v5)

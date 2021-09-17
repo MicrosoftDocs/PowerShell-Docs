@@ -1,6 +1,5 @@
 ---
 external help file: Stop-DscConfiguration.cdxml-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSDesiredStateConfiguration
 ms.date: 08/19/2019

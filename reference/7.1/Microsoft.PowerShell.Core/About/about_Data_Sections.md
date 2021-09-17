@@ -1,6 +1,5 @@
 ---
-description: Explains Data sections, which isolate text strings and other read-only data from script logic. 
-keywords: powershell,cmdlet
+description: Explains Data sections, which isolate text strings and other read-only data from script logic.
 Locale: en-US
 ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-7.1&WT.mc_id=ps-gethelp

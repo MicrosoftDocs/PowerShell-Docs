@@ -1,7 +1,7 @@
 ---
-ms.date:  12/31/2019
-title:  The ISE Object Model Hierarchy
 description: This article shows the hierarchy of objects that are part of Windows PowerShell ISE.
+ms.date: 12/31/2019
+title: The ISE Object Model Hierarchy
 ---
 
 # The ISE Object Model Hierarchy

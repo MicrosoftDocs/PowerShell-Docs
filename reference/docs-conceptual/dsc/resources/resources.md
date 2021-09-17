@@ -1,8 +1,7 @@
 ---
-ms.date: 07/23/2020
-keywords:  dsc,powershell,configuration,setup
-title:  DSC Resources
 description: DSC resources provide the building blocks for a DSC configuration. A resource exposes properties that can be configured (schema) and contains the PowerShell script functions used by the LCM to apply the configuration.
+ms.date: 07/23/2020
+title: DSC Resources
 ---
 
 # DSC Resources

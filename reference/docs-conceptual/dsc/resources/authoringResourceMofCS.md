@@ -1,8 +1,7 @@
 ---
-ms.date: 07/08/2020
-keywords:  dsc,powershell,configuration,setup
-title:  Authoring a DSC resource in C#
 description: This article demonstrates how to create a DSC resource as a cmdlet written in C#.
+ms.date: 07/08/2020
+title: Authoring a DSC resource in C#
 ---
 
 # Authoring a DSC resource in C\#

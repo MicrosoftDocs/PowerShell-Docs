@@ -1,8 +1,8 @@
 ---
+description: Wrap Element for TableRowEntry
 ms.date: 08/25/2021
 ms.topic: reference
 title: Wrap Element for TableRowEntry
-description: Wrap Element for TableRowEntry
 ---
 # Wrap Element for TableRowEntry
 

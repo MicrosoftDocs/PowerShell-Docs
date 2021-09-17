@@ -1,8 +1,8 @@
 ---
+description: Host03 Sample
 ms.date: 09/13/2016
 ms.topic: reference
 title: Host03 Sample
-description: Host03 Sample
 ---
 # Host03 Sample
 

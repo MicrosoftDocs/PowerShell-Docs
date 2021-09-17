@@ -1,7 +1,7 @@
 ---
-title: Migrating from Windows PowerShell 5.1 to PowerShell 7
 description: Update from PowerShell 5.1 to PowerShell 7 for your Windows platforms.
 ms.date: 03/25/2020
+title: Migrating from Windows PowerShell 5.1 to PowerShell 7
 ---
 
 # Migrating from Windows PowerShell 5.1 to PowerShell 7

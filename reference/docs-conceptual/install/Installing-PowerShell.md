@@ -1,7 +1,7 @@
 ---
-ms.date: 04/02/2021
-title:  Installing PowerShell
 description: Where to find instruction for installing PowerShell for each of the supported platforms.
+ms.date: 04/02/2021
+title: Installing PowerShell
 ---
 # Installing various versions of PowerShell
 

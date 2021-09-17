@@ -1,8 +1,8 @@
 ---
+description: AccessDBProviderSample05
 ms.date: 09/13/2016
 ms.topic: reference
 title: AccessDBProviderSample05
-description: AccessDBProviderSample05
 ---
 # AccessDBProviderSample05
 

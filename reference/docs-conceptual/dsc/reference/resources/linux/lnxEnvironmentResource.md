@@ -1,8 +1,8 @@
 ---
+description: DSC for Linux nxEnvironment Resource
 ms.date: 07/17/2020
 ms.topic: reference
 title: DSC for Linux nxEnvironment Resource
-description: DSC for Linux nxEnvironment Resource
 ---
 # DSC for Linux nxEnvironment Resource
 

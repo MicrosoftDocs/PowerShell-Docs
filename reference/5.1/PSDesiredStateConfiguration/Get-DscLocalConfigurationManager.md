@@ -1,6 +1,5 @@
 ---
 external help file: Get-DSCLocalConfigurationManager.cdxml-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSDesiredStateConfiguration
 ms.date: 12/12/2019

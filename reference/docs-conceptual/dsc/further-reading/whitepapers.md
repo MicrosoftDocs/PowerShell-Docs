@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Whitepapers
 description: This document explains the components of a Release Pipeline for configuration as code, the value to operations, and solutions that are used when designing a new Release Pipeline architecture.
+ms.date: 06/12/2017
+title: Whitepapers
 ---
 
 # Whitepapers

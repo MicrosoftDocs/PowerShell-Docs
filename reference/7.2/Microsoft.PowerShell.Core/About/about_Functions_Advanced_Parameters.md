@@ -1,5 +1,5 @@
 ---
-description:  Explains how to add parameters to advanced functions.
+description: Explains how to add parameters to advanced functions.
 Locale: en-US
 ms.date: 07/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.2&WT.mc_id=ps-gethelp

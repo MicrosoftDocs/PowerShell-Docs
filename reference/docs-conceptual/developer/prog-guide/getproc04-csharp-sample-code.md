@@ -1,8 +1,8 @@
 ---
+description: GetProc04 (C#) Sample Code
 ms.date: 09/13/2016
 ms.topic: reference
 title: GetProc04 (C#) Sample Code
-description: GetProc04 (C#) Sample Code
 ---
 # GetProc04 (C#) Sample Code
 

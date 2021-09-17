@@ -1,8 +1,7 @@
 ---
-ms.date:  12/23/2019
-keywords:  powershell,cmdlet
-title:  Working with Registry Keys
 description: This article discusses how to deal with registry keys using PowerShell.
+ms.date: 12/23/2019
+title: Working with Registry Keys
 ---
 # Working with Registry Keys
 

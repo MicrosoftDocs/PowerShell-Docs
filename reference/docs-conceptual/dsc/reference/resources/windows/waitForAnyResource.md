@@ -1,8 +1,8 @@
 ---
+description: DSC WaitForAny Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC WaitForAny Resource
-description: DSC WaitForAny Resource
 ---
 # DSC WaitForAny Resource
 

@@ -1,7 +1,7 @@
 ---
-ms.date:  06/05/2017
-title:  The ISEAddOnTool Object
 description: An ISEAddonTool object represents an installed add-on tool that provides additional functionality to Windows PowerShell ISE.
+ms.date: 06/05/2017
+title: The ISEAddOnTool Object
 ---
 
 # The ISEAddOnTool Object

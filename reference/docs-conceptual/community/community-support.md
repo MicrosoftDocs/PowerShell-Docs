@@ -1,7 +1,7 @@
 ---
-title: PowerShell community support resources
 description: List of resources created for and by PowerShell users
 ms.date: 04/29/2020
+title: PowerShell community support resources
 ---
 # Getting support from the community
 

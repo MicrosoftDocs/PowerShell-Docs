@@ -1,20 +1,20 @@
 ---
-title: PowerShell Module Browser
-description: Search all PowerShell modules and cmdlets from Microsoft
-author: sdwheeler
-ms.author: sewhee
-manager: sewhee
-ms.product: powershell
-ms.devlang: powershell
-ms.topic: landing-page
-ms.manager: sewhee
-ms.date: 03/17/2021
-archive_url: ''
-layout: ApiBrowserPage
 apiPlatform: powershell
+archive_url: ''
+author: sdwheeler
+description: Search all PowerShell modules and cmdlets from Microsoft
+layout: ApiBrowserPage
+manager: sewhee
+ms.author: sewhee
+ms.date: 03/17/2021
+ms.devlang: powershell
+ms.manager: sewhee
+ms.product: powershell
+ms.topic: landing-page
 quickFilterColumn1: powershell-7.1,windowsserver2019-ps
 quickFilterColumn2: azps-6.4.0,win-mdop2-ps
 quickFilterColumn3: sqlserver-ps,systemcenter-ps-2019
+title: PowerShell Module Browser
 ---
 
 # PowerShell Module Browser

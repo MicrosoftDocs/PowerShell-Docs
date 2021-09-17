@@ -1,7 +1,7 @@
 ---
-title: How to replicate the ISE experience in Visual Studio Code
 description: How to replicate the ISE experience in Visual Studio Code
 ms.date: 08/06/2018
+title: How to replicate the ISE experience in Visual Studio Code
 ---
 
 # How to replicate the ISE experience in Visual Studio Code

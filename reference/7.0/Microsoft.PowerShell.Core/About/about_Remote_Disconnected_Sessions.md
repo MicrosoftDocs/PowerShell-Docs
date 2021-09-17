@@ -1,6 +1,5 @@
 ---
-description:  Explains how to disconnect and reconnect to a PowerShell Session (PSSession). 
-keywords: powershell,cmdlet
+description: Explains how to disconnect and reconnect to a PowerShell Session (PSSession).
 Locale: en-US
 ms.date: 12/01/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_disconnected_sessions?view=powershell-7&WT.mc_id=ps-gethelp

@@ -1,8 +1,8 @@
 ---
+description: TableColumnItem Element
 ms.date: 08/25/2021
 ms.topic: reference
 title: TableColumnItem Element
-description: TableColumnItem Element
 ---
 # TableColumnItem Element
 

@@ -1,8 +1,8 @@
 ---
+description: Windows PowerShell Sample Code
 ms.date: 09/13/2016
 ms.topic: reference
 title: Windows PowerShell Sample Code
-description: Windows PowerShell Sample Code
 ---
 # Windows PowerShell Sample Code
 

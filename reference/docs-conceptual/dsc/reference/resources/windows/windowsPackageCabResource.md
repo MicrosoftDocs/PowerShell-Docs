@@ -1,8 +1,8 @@
 ---
+description: DSC WindowsPackageCab Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC WindowsPackageCab Resource
-description: DSC WindowsPackageCab Resource
 ---
 # DSC WindowsPackageCab Resource
 

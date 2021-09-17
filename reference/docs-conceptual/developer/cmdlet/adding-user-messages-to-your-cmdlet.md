@@ -1,8 +1,8 @@
 ---
+description: Adding User Messages to Your Cmdlet
 ms.date: 09/13/2016
 ms.topic: reference
 title: Adding User Messages to Your Cmdlet
-description: Adding User Messages to Your Cmdlet
 ---
 # Adding User Messages to Your Cmdlet
 

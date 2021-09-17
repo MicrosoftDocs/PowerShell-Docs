@@ -1,8 +1,8 @@
 ---
+description: How to Write a PowerShell Binary Module
 ms.date: 09/13/2016
 ms.topic: reference
 title: How to Write a PowerShell Binary Module
-description: How to Write a PowerShell Binary Module
 ---
 # How to Write a PowerShell Binary Module
 

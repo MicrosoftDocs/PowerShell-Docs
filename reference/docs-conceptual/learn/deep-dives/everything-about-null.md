@@ -1,8 +1,8 @@
 ---
-title: Everything you wanted to know about $null
 description: The PowerShell $null often appears to be simple but it has a lot of nuances. Let's take a close look at $null so you know what happens when you unexpectedly run into a null value.
-ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
+ms.date: 05/23/2020
+title: Everything you wanted to know about $null
 ---
 # Everything you wanted to know about $null
 

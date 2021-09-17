@@ -1,8 +1,8 @@
 ---
+description: TypeName Element for EntrySelectedBy for GroupBy
 ms.date: 08/25/2021
 ms.topic: reference
 title: TypeName Element for EntrySelectedBy for GroupBy
-description: TypeName Element for EntrySelectedBy for GroupBy
 ---
 # TypeName Element for EntrySelectedBy for GroupBy
 

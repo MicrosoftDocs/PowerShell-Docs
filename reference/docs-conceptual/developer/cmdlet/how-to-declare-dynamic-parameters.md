@@ -1,8 +1,8 @@
 ---
+description: How to Declare Dynamic Parameters
 ms.date: 09/13/2016
 ms.topic: reference
 title: How to Declare Dynamic Parameters
-description: How to Declare Dynamic Parameters
 ---
 # How to Declare Dynamic Parameters
 

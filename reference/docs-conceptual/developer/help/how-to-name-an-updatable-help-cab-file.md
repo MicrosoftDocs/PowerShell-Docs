@@ -1,8 +1,8 @@
 ---
+description: How to Name an Updatable Help CAB File
 ms.date: 09/12/2016
 ms.topic: reference
 title: How to Name an Updatable Help CAB File
-description: How to Name an Updatable Help CAB File
 ---
 # How to Name an Updatable Help CAB File
 

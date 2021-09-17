@@ -1,8 +1,7 @@
 ---
-ms.date:  12/12/2018
-keywords:  dsc,powershell,configuration,setup
-title:  Configuring the LCM in PowerShell 4.0
 description: The Local Configuration Manager (LCM) runs on every target node and is responsible for parsing and applying configurations that are sent to the node.
+ms.date: 12/12/2018
+title: Configuring the LCM in PowerShell 4.0
 ---
 # Configuring the LCM in PowerShell 4.0
 

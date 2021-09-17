@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Using configuration data
 description: This topic describes the structure of the ConfigurationData hashtable. This allows you to create a single configuration that can be used for multiple nodes or for different environments.
+ms.date: 06/12/2017
+title: Using configuration data
 ---
 
 # Using configuration data in DSC

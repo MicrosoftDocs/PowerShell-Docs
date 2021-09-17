@@ -1,8 +1,8 @@
 ---
+description: Cmdlet Aliases
 ms.date: 06/07/2021
 ms.topic: reference
 title: Cmdlet Aliases
-description: Cmdlet Aliases
 ---
 # Cmdlet Aliases
 

@@ -1,8 +1,8 @@
 ---
+description: HelpInfo XML Schema
 ms.date: 09/12/2016
 ms.topic: reference
 title: HelpInfo XML Schema
-description: HelpInfo XML Schema
 ---
 # HelpInfo XML Schema
 

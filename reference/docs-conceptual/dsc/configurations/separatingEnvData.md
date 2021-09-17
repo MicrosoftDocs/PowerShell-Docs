@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Separating configuration and environment data
 description: It can be useful to separate the data used in a DSC configuration from the configuration itself by using configuration data. By doing this, you can use a single configuration for multiple environments.
+ms.date: 06/12/2017
+title: Separating configuration and environment data
 ---
 
 # Separating configuration and environment data

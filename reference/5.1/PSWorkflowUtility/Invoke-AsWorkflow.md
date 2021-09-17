@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Workflow.ServiceCore.dll-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSWorkflowUtility
 ms.date: 06/09/2017

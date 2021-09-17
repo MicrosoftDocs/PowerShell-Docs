@@ -1,8 +1,8 @@
 ---
+description: PropertyName Element for WideItem for WideControl
 ms.date: 08/24/2021
 ms.topic: reference
 title: PropertyName Element for WideItem for WideControl
-description: PropertyName Element for WideItem for WideControl
 ---
 # PropertyName Element for WideItem for WideControl
 

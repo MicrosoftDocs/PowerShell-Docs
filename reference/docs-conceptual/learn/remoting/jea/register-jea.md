@@ -1,8 +1,7 @@
 ---
-ms.date:  07/10/2019
-keywords:  jea,powershell,security
-title:  Registering JEA Configurations
 description: Registering the JEA endpoint with the system makes the endpoint available for use by users and automation engines.
+ms.date: 07/10/2019
+title: Registering JEA Configurations
 ---
 # Registering JEA Configurations
 

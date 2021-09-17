@@ -1,8 +1,8 @@
 ---
+description: SelectionCondition Element for EntrySelectedBy for WideControl
 ms.date: 08/25/2021
 ms.topic: reference
 title: SelectionCondition Element for EntrySelectedBy for WideControl
-description: SelectionCondition Element for EntrySelectedBy for WideControl
 ---
 # SelectionCondition Element for EntrySelectedBy for WideControl
 

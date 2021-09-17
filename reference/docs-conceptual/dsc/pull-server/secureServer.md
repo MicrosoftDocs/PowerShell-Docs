@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
 description: This document provide best practices to assist engineers that are deploying the DSC Pull Server.
-keywords:  dsc,powershell,configuration,setup
-title:  Pull server best practices
+ms.date: 06/12/2017
+title: Pull server best practices
 ---
 # Pull server best practices
 

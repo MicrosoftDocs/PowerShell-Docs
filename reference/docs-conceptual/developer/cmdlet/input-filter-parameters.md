@@ -1,8 +1,8 @@
 ---
+description: Input Filter Parameters
 ms.date: 09/13/2016
 ms.topic: reference
 title: Input Filter Parameters
-description: Input Filter Parameters
 ---
 # Input Filter Parameters
 

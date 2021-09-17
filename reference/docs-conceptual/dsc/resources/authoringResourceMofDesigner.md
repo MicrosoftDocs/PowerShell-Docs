@@ -1,8 +1,7 @@
 ---
-ms.date: 07/08/2020
-keywords:  dsc,powershell,configuration,setup
-title:  Using the Resource Designer tool
 description: The Resource Designer tool is a set of cmdlets exposed by the xDscResourceDesigner module that make creating PowerShell DSC resources easier.
+ms.date: 07/08/2020
+title: Using the Resource Designer tool
 ---
 
 # Using the Resource Designer tool

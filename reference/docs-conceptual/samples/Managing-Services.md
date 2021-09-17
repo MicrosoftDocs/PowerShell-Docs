@@ -1,8 +1,7 @@
 ---
-ms.date:  06/05/2017
-keywords:  powershell,cmdlet
-title:  Managing Services
 description: PowerShell provides several cmdlets that help manage services on local and remote computers.
+ms.date: 06/05/2017
+title: Managing Services
 ---
 # Managing Services
 

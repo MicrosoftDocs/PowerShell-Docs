@@ -1,8 +1,8 @@
 ---
+description: Supporting Wildcard Characters in Cmdlet Parameters
 ms.date: 08/26/2019
 ms.topic: reference
 title: Supporting Wildcard Characters in Cmdlet Parameters
-description: Supporting Wildcard Characters in Cmdlet Parameters
 ---
 # Supporting Wildcard Characters in Cmdlet Parameters
 

@@ -1,6 +1,5 @@
 ---
 description: Provides details about background jobs on local and remote computers.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 10/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_job_details?view=powershell-5.1&WT.mc_id=ps-gethelp

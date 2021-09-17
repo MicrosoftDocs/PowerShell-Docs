@@ -1,6 +1,5 @@
 ---
-description: Describes the Hidden keyword, which hides class members from default Get-Member results. 
-keywords: powershell,cmdlet
+description: Describes the Hidden keyword, which hides class members from default Get-Member results.
 Locale: en-US
 ms.date: 01/04/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hidden?view=powershell-5.1&WT.mc_id=ps-gethelp

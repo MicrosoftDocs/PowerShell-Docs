@@ -1,8 +1,8 @@
 ---
+description: Creating a List View
 ms.date: 09/13/2016
 ms.topic: reference
 title: Creating a List View
-description: Creating a List View
 ---
 # Creating a List View
 

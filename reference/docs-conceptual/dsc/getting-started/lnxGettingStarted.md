@@ -1,8 +1,7 @@
 ---
-ms.date:  06/04/2021
-keywords:  dsc,powershell,configuration,setup
-title:  Get started with Desired State Configuration (DSC) for Linux
 description: This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Linux.
+ms.date: 06/04/2021
+title: Get started with Desired State Configuration (DSC) for Linux
 ---
 # Get started with Desired State Configuration (DSC) for Linux
 

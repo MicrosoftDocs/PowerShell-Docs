@@ -1,8 +1,7 @@
 ---
-ms.date: 07/08/2020
-keywords:  dsc,powershell,configuration,setup
-title: Composite resources - Using a DSC configuration as a resource
 description: This article describes how to create and use a composite resource.
+ms.date: 07/08/2020
+title: Composite resources - Using a DSC configuration as a resource
 ---
 
 # Composite resources: Using a DSC configuration as a resource

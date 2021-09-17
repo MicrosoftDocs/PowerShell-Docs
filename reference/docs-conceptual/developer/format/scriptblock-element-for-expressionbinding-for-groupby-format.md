@@ -1,8 +1,8 @@
 ---
+description: ScriptBlock Element for ExpressionBinding for GroupBy
 ms.date: 08/24/2021
 ms.topic: reference
 title: ScriptBlock Element for ExpressionBinding for GroupBy
-description: ScriptBlock Element for ExpressionBinding for GroupBy
 ---
 # ScriptBlock Element for ExpressionBinding for GroupBy
 

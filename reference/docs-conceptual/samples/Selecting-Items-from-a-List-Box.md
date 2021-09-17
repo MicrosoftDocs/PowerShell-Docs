@@ -1,8 +1,7 @@
 ---
-ms.date:  06/05/2017
-keywords:  powershell,cmdlet
-title:  Selecting Items from a List Box
 description: This article shows how to create a list box control using the .NET Framework form-building features in Windows PowerShell.
+ms.date: 06/05/2017
+title: Selecting Items from a List Box
 ---
 # Selecting Items from a List Box
 

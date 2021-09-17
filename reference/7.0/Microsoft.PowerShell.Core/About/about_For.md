@@ -1,6 +1,5 @@
 ---
-description: Describes a language command you can use to run statements based on a conditional test. 
-keywords: powershell,cmdlet
+description: Describes a language command you can use to run statements based on a conditional test.
 Locale: en-US
 ms.date: 07/21/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_for?view=powershell-7&WT.mc_id=ps-gethelp

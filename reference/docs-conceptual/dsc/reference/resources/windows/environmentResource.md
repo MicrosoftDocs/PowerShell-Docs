@@ -1,8 +1,8 @@
 ---
+description: DSC Environment Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC Environment Resource
-description: DSC Environment Resource
 ---
 # DSC Environment Resource
 

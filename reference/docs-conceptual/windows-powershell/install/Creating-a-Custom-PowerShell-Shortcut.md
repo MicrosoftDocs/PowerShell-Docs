@@ -1,7 +1,7 @@
 ---
-ms.date:  06/05/2017
-title: Creating a Custom PowerShell Shortcut
 description: The following procedure describes how to create a shortcut to Windows PowerShell that has several convenient options customized.
+ms.date: 06/05/2017
+title: Creating a Custom PowerShell Shortcut
 ---
 # Creating a Custom PowerShell Shortcut
 

@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title:  How to report abuse in the PowerShell Gallery
-description:  How to report abuse in the PowerShell Gallery
+description: How to report abuse in the PowerShell Gallery
+ms.date: 06/12/2017
+title: How to report abuse in the PowerShell Gallery
 ---
 # Report abuse
 

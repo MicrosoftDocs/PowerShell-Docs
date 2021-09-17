@@ -1,8 +1,7 @@
 ---
-ms.date:  06/05/2017
-keywords:  powershell,cmdlet
-title:  Viewing Object Structure Get Member
 description: Get-Member is a powerful tool that allows to see the type and structure of objects in PowerShell.
+ms.date: 06/05/2017
+title: Viewing Object Structure Get Member
 ---
 # Viewing Object Structure (Get-Member)
 

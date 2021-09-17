@@ -1,9 +1,9 @@
 ---
-title: Appendix A - Help Syntax
 description: This article explains how to read and understand the syntax of a cmdlet as presented by Get-Help.
-ms.date: 06/02/2020
 ms.custom: Contributor-mikefrobbins
+ms.date: 06/02/2020
 ms.reviewer: mirobb
+title: Appendix A - Help Syntax
 ---
 # Appendix A - Help Syntax
 

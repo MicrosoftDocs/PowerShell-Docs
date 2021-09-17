@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Debugging DSC resources
 description: This article shows you how to enable debugging for DSC configurations.
+ms.date: 06/12/2017
+title: Debugging DSC resources
 ---
 
 # Debugging DSC resources

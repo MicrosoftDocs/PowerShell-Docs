@@ -1,8 +1,8 @@
 ---
+description: How to Validate an Argument Pattern
 ms.date: 09/13/2016
 ms.topic: reference
 title: How to Validate an Argument Pattern
-description: How to Validate an Argument Pattern
 ---
 # How to Validate an Argument Pattern
 

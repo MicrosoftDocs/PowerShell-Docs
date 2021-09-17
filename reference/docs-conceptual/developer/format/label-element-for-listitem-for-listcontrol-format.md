@@ -1,8 +1,8 @@
 ---
+description: Label Element for ListItem for ListControl
 ms.date: 08/23/2021
 ms.topic: reference
 title: Label Element for ListItem for ListControl
-description: Label Element for ListItem for ListControl
 ---
 # Label Element for ListItem for ListControl
 

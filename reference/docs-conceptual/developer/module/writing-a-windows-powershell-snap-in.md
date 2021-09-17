@@ -1,8 +1,8 @@
 ---
+description: Writing a Windows PowerShell Snap-in
 ms.date: 09/13/2016
 ms.topic: reference
 title: Writing a Windows PowerShell Snap-in
-description: Writing a Windows PowerShell Snap-in
 ---
 # Writing a Windows PowerShell Snap-in
 

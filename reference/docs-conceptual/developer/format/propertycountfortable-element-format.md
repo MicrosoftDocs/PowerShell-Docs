@@ -1,8 +1,8 @@
 ---
+description: PropertyCountForTable Element
 ms.date: 08/24/2021
 ms.topic: reference
 title: PropertyCountForTable Element
-description: PropertyCountForTable Element
 ---
 # PropertyCountForTable Element
 

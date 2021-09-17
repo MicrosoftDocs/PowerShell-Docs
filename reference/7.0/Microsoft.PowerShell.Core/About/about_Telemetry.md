@@ -1,6 +1,5 @@
 ---
-description:  Describes the telemetry collected in PowerShell and how to opt-out. 
-keywords: powershell
+description: Describes the telemetry collected in PowerShell and how to opt-out.
 Locale: en-US
 ms.date: 08/09/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_telemetry?view=powershell-7&WT.mc_id=ps-gethelp

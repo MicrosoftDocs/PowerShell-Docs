@@ -1,8 +1,8 @@
 ---
+description: CustomControlName Element for ExpressionBinding for GroupBy
 ms.date: 08/20/2021
 ms.topic: reference
 title: CustomControlName Element for ExpressionBinding for GroupBy
-description: CustomControlName Element for ExpressionBinding for GroupBy
 ---
 # CustomControlName Element for ExpressionBinding for GroupBy
 

@@ -1,8 +1,8 @@
 ---
+description: GetConfigurationStatus method
 ms.date: 07/17/2020
 ms.topic: reference
 title: GetConfigurationStatus method
-description: GetConfigurationStatus method
 ---
 # GetConfigurationStatus method
 

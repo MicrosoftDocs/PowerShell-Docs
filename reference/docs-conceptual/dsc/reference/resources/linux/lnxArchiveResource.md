@@ -1,8 +1,8 @@
 ---
+description: DSC for Linux nxArchive Resource
 ms.date: 07/17/2020
 ms.topic: reference
 title: DSC for Linux nxArchive Resource
-description: DSC for Linux nxArchive Resource
 ---
 # DSC for Linux nxArchive Resource
 

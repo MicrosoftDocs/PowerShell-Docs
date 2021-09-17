@@ -1,6 +1,5 @@
 ---
-description: Describes the Type accelerators available for .NET framework classes 
-keywords: powershell,cmdlet
+description: Describes the Type accelerators available for .NET framework classes
 Locale: en-US
 ms.date: 05/01/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_type_accelerators?view=powershell-7.1&WT.mc_id=ps-gethelp

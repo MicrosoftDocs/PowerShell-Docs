@@ -1,8 +1,8 @@
 ---
+description: CustomEntries Element for CustomControl for GroupBy
 ms.date: 08/20/2021
 ms.topic: reference
 title: CustomEntries Element for CustomControl for GroupBy
-description: CustomEntries Element for CustomControl for GroupBy
 ---
 # CustomEntries Element for CustomControl for GroupBy
 

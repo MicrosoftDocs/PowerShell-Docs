@@ -1,6 +1,5 @@
 ---
-description: Describes how to get and run commands in the command history. 
-keywords: powershell,cmdlet
+description: Describes how to get and run commands in the command history.
 Locale: en-US
 ms.date: 05/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_history?view=powershell-7.1&WT.mc_id=ps-gethelp

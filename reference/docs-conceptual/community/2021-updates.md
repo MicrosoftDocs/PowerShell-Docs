@@ -1,7 +1,7 @@
 ---
-title: What's New in PowerShell-Docs for 2021
 description: List of changes to the PowerShell documentation for 2021
 ms.date: 08/02/2021
+title: What's New in PowerShell-Docs for 2021
 ---
 # What's new in PowerShell Docs for 2021
 

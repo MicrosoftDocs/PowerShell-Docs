@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Setting up a DSC pull client
 description: This article is an overview of the information available for setting up the DSC pull client.
+ms.date: 06/12/2017
+title: Setting up a DSC pull client
 ---
 # Setting up a DSC pull client
 

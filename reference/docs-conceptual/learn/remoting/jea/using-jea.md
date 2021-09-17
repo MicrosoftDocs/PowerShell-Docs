@@ -1,8 +1,7 @@
 ---
-ms.date:  07/10/2019
-keywords:  jea,powershell,security
-title:  Using JEA
 description: This article describes the various ways you can connect to and use a JEA endpoint.
+ms.date: 07/10/2019
+title: Using JEA
 ---
 
 # Using JEA

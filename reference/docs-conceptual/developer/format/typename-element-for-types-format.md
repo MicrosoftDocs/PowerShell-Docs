@@ -1,8 +1,8 @@
 ---
+description: TypeName Element for Types
 ms.date: 08/25/2021
 ms.topic: reference
 title: TypeName Element for Types
-description: TypeName Element for Types
 ---
 # TypeName Element for Types
 

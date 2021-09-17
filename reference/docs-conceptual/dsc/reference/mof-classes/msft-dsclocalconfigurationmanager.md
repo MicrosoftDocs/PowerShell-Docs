@@ -1,8 +1,8 @@
 ---
+description: MSFT_DSCLocalConfigurationManager class
 ms.date: 07/14/2020
 ms.topic: reference
 title: MSFT_DSCLocalConfigurationManager class
-description: MSFT_DSCLocalConfigurationManager class
 ---
 # MSFT_DSCLocalConfigurationManager class
 

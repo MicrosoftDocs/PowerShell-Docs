@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title:  PowerShell Engine Improvements in WMF 5.1
 description: This article lists the performance improvements in Windows PowerShell 5.1
+ms.date: 06/12/2017
+title: PowerShell Engine Improvements in WMF 5.1
 ---
 # PowerShell Engine Improvements
 

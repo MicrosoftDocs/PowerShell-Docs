@@ -1,8 +1,8 @@
 ---
+description: FirstLineIndent Element for Frame for Controls for View
 ms.date: 08/23/2021
 ms.topic: reference
 title: FirstLineIndent Element for Frame for Controls for View
-description: FirstLineIndent Element for Frame for Controls for View
 ---
 # FirstLineIndent Element for Frame for Controls for View
 

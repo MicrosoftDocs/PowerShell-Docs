@@ -1,8 +1,7 @@
 ---
-ms.date:  12/12/2018
-keywords:  dsc,powershell,configuration,setup
-title:  Set up a Pull Client using Configuration IDs in PowerShell 4.0
-description:  This article explains how to set up a Pull Client using Configuration IDs in PowerShell 4.0
+description: This article explains how to set up a Pull Client using Configuration IDs in PowerShell 4.0
+ms.date: 12/12/2018
+title: Set up a Pull Client using Configuration IDs in PowerShell 4.0
 ---
 
 # Set up a Pull Client using Configuration IDs in PowerShell 4.0

@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
 ms.date: 01/26/2021

@@ -1,7 +1,7 @@
 ---
-ms.date:  12/31/2019
-title:  The ISEAddOnToolCollection Object
 description: The ISEAddOnToolCollection object is a collection of **ISEAddOnTool** objects.
+ms.date: 12/31/2019
+title: The ISEAddOnToolCollection Object
 ---
 
 # The ISEAddOnToolCollection Object
