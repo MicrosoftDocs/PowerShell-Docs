@@ -1,8 +1,8 @@
 ---
+description: OutOfBand Element
 ms.date: 08/27/2021
 ms.topic: reference
 title: OutOfBand Element
-description: OutOfBand Element
 ---
 # OutOfBand Element
 

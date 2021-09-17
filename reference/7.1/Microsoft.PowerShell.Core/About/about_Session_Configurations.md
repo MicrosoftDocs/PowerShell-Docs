@@ -1,6 +1,5 @@
 ---
-description: Describes session configurations, which determine the users who can connect to the computer remotely and the commands they can run. 
-keywords: powershell,cmdlet
+description: Describes session configurations, which determine the users who can connect to the computer remotely and the commands they can run.
 Locale: en-US
 ms.date: 12/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-7.1&WT.mc_id=ps-gethelp

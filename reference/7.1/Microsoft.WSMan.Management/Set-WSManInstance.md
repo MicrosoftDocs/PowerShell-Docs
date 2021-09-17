@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
 ms.date: 06/09/2017
@@ -35,6 +34,8 @@ Set-WSManInstance [-ConnectionURI <Uri>] [-Dialect <Uri>] [-FilePath <String>] [
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The Set-WSManInstance cmdlet modifies the management information that is related to a resource.
 

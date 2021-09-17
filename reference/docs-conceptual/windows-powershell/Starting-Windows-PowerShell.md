@@ -1,8 +1,7 @@
 ---
-ms.date:  12/05/2019
-keywords:  powershell,cmdlet
-title:  Starting Windows PowerShell
 description: This article explains the ways of starting various versions of PowerShell.
+ms.date: 12/05/2019
+title: Starting Windows PowerShell
 ---
 
 # Starting Windows PowerShell

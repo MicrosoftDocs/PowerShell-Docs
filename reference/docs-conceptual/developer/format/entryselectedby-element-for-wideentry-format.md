@@ -1,8 +1,8 @@
 ---
+description: EntrySelectedBy Element for WideEntry
 ms.date: 08/23/2021
 ms.topic: reference
 title: EntrySelectedBy Element for WideEntry
-description: EntrySelectedBy Element for WideEntry
 ---
 # EntrySelectedBy Element for WideEntry
 

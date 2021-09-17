@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
 ms.date: 06/09/2017
@@ -21,6 +20,9 @@ Disable-WSManCredSSP [-Role] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
+
 The **Disable-WSManCredSSP** cmdlet disables Credential Security Support Provider (CredSSP) authentication on a client or on a server computer.
 When CredSSP authentication is used, the user credentials are passed to a remote computer to be authenticated.
 

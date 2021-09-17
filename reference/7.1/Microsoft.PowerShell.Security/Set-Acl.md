@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 06/09/2017
@@ -37,6 +36,8 @@ Set-Acl -LiteralPath <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Set-Acl` cmdlet changes the security descriptor of a specified item, such as a file or a
 registry key, to match the values in a security descriptor that you supply.

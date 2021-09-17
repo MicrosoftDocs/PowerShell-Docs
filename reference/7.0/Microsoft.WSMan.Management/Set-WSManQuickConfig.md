@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
 ms.date: 10/02/2019
@@ -23,6 +22,8 @@ Set-WSManQuickConfig [-UseSSL] [-Force] [-SkipNetworkProfileCheck] [<CommonParam
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Set-WSManQuickConfig` cmdlet configures the computer to receive PowerShell remote commands that
 are sent by using the Web Services for Management (WS-Management) technology.

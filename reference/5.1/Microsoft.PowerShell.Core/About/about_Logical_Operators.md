@@ -1,6 +1,5 @@
 ---
-description:  Describes the operators that connect statements in PowerShell. 
-keywords: powershell,cmdlet
+description: Describes the operators that connect statements in PowerShell.
 Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logical_operators?view=powershell-5.1&WT.mc_id=ps-gethelp

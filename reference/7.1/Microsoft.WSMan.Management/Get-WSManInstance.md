@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
 ms.date: 06/09/2017
@@ -36,6 +35,9 @@ Get-WSManInstance [-ApplicationName <String>] [-BasePropertiesOnly] [-ComputerNa
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
+
 The **Get-WSManInstance** cmdlet retrieves an instance of a management resource that is specified by a resource Uniform Resource Identifier (URI).
 The information that is retrieved can be a complex XML information set, which is an object, or a simple value.
 This cmdlet is the equivalent to the standard Web Services for Management (WS-Management) **Get** command.

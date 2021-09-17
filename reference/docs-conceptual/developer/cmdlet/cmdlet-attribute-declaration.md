@@ -1,8 +1,8 @@
 ---
+description: Cmdlet Attribute Declaration
 ms.date: 09/13/2016
 ms.topic: reference
 title: Cmdlet Attribute Declaration
-description: Cmdlet Attribute Declaration
 ---
 # Cmdlet Attribute Declaration
 

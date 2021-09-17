@@ -1,8 +1,8 @@
 ---
+description: GetProc05 (C#) Sample Code
 ms.date: 09/13/2016
 ms.topic: reference
 title: GetProc05 (C#) Sample Code
-description: GetProc05 (C#) Sample Code
 ---
 # GetProc05 (C#) Sample Code
 

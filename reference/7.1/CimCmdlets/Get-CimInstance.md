@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/21/2021
@@ -79,6 +78,8 @@ Get-CimInstance [-ResourceUri <Uri>] [-ComputerName <String[]>] [-Namespace <Str
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Get-CimInstance` cmdlet gets the CIM instances of a class from a CIM server. You can specify
 either the class name or a query for this cmdlet. This cmdlet returns one or more CIM instance

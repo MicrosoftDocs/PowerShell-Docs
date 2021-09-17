@@ -1,8 +1,8 @@
 ---
+description: TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
 ms.date: 08/25/2021
 ms.topic: reference
 title: TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
-description: TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
 ---
 # TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
 

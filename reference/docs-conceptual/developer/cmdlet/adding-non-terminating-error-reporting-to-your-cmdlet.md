@@ -1,8 +1,8 @@
 ---
+description: Adding Non-Terminating Error Reporting to Your Cmdlet
 ms.date: 09/13/2016
 ms.topic: reference
 title: Adding Non-Terminating Error Reporting to Your Cmdlet
-description: Adding Non-Terminating Error Reporting to Your Cmdlet
 ---
 # Adding Non-Terminating Error Reporting to Your Cmdlet
 

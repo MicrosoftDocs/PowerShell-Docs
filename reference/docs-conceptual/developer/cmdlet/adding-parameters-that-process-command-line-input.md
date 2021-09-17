@@ -1,8 +1,8 @@
 ---
+description: Adding Parameters That Process Command-Line Input
 ms.date: 09/13/2016
 ms.topic: reference
 title: Adding Parameters That Process Command-Line Input
-description: Adding Parameters That Process Command-Line Input
 ---
 # Adding Parameters That Process Command-Line Input
 

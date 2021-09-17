@@ -1,8 +1,8 @@
 ---
+description: How to Create a Console Shell
 ms.date: 09/13/2016
 ms.topic: reference
 title: How to Create a Console Shell
-description: How to Create a Console Shell
 ---
 # How to Create a Console Shell
 

@@ -1,8 +1,8 @@
 ---
+description: ScriptBlock Element for ItemSelectionCondition for GroupBy
 ms.date: 08/24/2021
 ms.topic: reference
 title: ScriptBlock Element for ItemSelectionCondition for GroupBy
-description: ScriptBlock Element for ItemSelectionCondition for GroupBy
 ---
 # ScriptBlock Element for ItemSelectionCondition for GroupBy
 

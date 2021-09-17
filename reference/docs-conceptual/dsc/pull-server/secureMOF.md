@@ -1,7 +1,7 @@
 ---
-ms.date: 06/07/2021
-title:  Securing the MOF File
 description: This article describes how to ensure the target node has encrypted the MOF file.
+ms.date: 06/07/2021
+title: Securing the MOF File
 ---
 # Securing the MOF File
 

@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 03/25/2020
@@ -37,6 +36,8 @@ Get-Acl [-LiteralPath <String[]>] [-Audit] [-Filter <String>] [-Include <String[
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Get-Acl` cmdlet gets objects that represent the security descriptor of a file or resource. The
 security descriptor contains the access control lists (ACLs) of the resource. The ACL specifies the

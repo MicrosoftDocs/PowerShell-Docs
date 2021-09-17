@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/29/2019
@@ -22,6 +21,8 @@ Show-Command [[-Name] <String>] [-Height <Double>] [-Width <Double>] [-NoCommonP
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Show-Command` cmdlet lets you create a PowerShell command in a command window. You can use the
 features of the command window to run the command or have it return the command to you.

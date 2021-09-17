@@ -1,9 +1,9 @@
 ---
-title: Discover PowerShell
-ms.date: 03/12/2021
-ms.custom: chnoring
-ms.reviewer: sewhee
 description: Learn what PowerShell is and some essential commands used to discover more about PowerShell.
+ms.custom: chnoring
+ms.date: 03/12/2021
+ms.reviewer: sewhee
+title: Discover PowerShell
 ---
 
 # Discover PowerShell

@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title:  Dispute resolution
 description: This article outlines the process for resolving disputes between community members and other PowerShell Gallery publishers.
+ms.date: 06/12/2017
+title: Dispute resolution
 ---
 # Dispute resolution
 

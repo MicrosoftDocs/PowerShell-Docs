@@ -1,8 +1,7 @@
 ---
-ms.date: 07/08/2020
-keywords:  dsc,powershell,configuration,setup
-title:  Writing a single-instance DSC resource (best practice)
 description: This article describes a best practice for defining a DSC resource that allows only a single instance in a configuration.
+ms.date: 07/08/2020
+title: Writing a single-instance DSC resource (best practice)
 ---
 
 # Writing a single-instance DSC resource (best practice)

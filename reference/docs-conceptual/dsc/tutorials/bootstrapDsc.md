@@ -1,8 +1,7 @@
 ---
-ms.date: 11/09/2020
-keywords:  dsc,powershell,configuration,setup
-title:  Configure a virtual machines at initial boot-up by using DSC
 description: This article explains how to configure a virtual machine at initial boot-up using DSC
+ms.date: 11/09/2020
+title: Configure a virtual machines at initial boot-up by using DSC
 ---
 # Configure a virtual machines at initial boot-up by using DSC
 

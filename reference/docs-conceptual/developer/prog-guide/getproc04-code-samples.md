@@ -1,8 +1,8 @@
 ---
+description: GetProc04 Code Samples
 ms.date: 09/13/2016
 ms.topic: reference
 title: GetProc04 Code Samples
-description: GetProc04 Code Samples
 ---
 # GetProc04 Code Samples
 

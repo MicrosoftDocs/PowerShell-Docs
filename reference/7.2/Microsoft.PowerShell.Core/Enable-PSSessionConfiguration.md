@@ -21,6 +21,8 @@ Enable-PSSessionConfiguration [[-Name] <String[]>] [-Force] [-SecurityDescriptor
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Enable-PSSessionConfiguration` cmdlet enables registered session configurations that have been
 disabled, such as by using the `Disable-PSSessionConfiguration` or `Disable-PSRemoting` cmdlets, or
 the **AccessMode** parameter of `Register-PSSessionConfiguration`. This is an advanced cmdlet that

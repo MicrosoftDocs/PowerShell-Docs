@@ -1,8 +1,8 @@
 ---
+description: RunSpace06 Code Sample
 ms.date: 09/13/2016
 ms.topic: reference
 title: RunSpace06 Code Sample
-description: RunSpace06 Code Sample
 ---
 # RunSpace06 Code Sample
 

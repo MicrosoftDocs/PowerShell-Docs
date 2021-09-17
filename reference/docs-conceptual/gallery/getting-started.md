@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title:  Get Started with the PowerShell Gallery
 description: This article explains how to get started using the PowerShell Gallery and the PowerShellGet cmdlets
+ms.date: 06/12/2017
+title: Get Started with the PowerShell Gallery
 ---
 # Getting Started with the PowerShell Gallery
 

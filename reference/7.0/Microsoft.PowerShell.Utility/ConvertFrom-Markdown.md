@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet,markdown
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 11/02/2018

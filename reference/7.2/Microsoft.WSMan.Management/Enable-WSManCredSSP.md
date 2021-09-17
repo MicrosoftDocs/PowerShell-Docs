@@ -23,6 +23,8 @@ Enable-WSManCredSSP [[-DelegateComputer] <String[]>] [-Force] [-Role] <String> [
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Enable-WSManCredSSP` cmdlet enables CredSSP authentication on a client or on a server computer.
 When CredSSP authentication is used, the user credentials are passed to a remote computer to be
 authenticated. This type of authentication is designed for commands that create a remote session

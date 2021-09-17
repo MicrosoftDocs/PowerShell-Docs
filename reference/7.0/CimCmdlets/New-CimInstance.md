@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/09/2017
@@ -63,6 +62,8 @@ New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTi
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `New-CimInstance` cmdlet creates an instance of a CIM class based on the class definition on
 either the local computer or a remote computer. By default, the `New-CimInstance` cmdlet creates an

@@ -20,6 +20,8 @@ Get-ComputerInfo [[-Property] <String[]>] [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Get-ComputerInfo` cmdlet gets a consolidated object of system and operating system properties.
 This cmdlet was introduced in Windows PowerShell 5.1.
 

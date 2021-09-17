@@ -1,8 +1,8 @@
 ---
+description: StopProcessSample04 (VB.NET) Sample Code
 ms.date: 09/13/2016
 ms.topic: reference
 title: StopProcessSample04 (VB.NET) Sample Code
-description: StopProcessSample04 (VB.NET) Sample Code
 ---
 # StopProcessSample04 (VB.NET) Sample Code
 

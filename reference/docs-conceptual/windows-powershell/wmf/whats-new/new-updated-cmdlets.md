@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title: New and updated cmdlets
 description: Windows PowerShell 5.1 includes many new or updated cmdlets.
+ms.date: 06/12/2017
+title: New and updated cmdlets
 ---
 # New and updated cmdlets
 

@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Use Credentials with DSC Resources
 description: DSC allows you to provide credentials to a configuration so that configuration settings can be applied the in the context of a specific user account rather than the Local System account.
+ms.date: 06/12/2017
+title: Use Credentials with DSC Resources
 ---
 # Use Credentials with DSC Resources
 

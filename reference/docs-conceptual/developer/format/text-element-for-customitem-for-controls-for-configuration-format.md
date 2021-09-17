@@ -1,8 +1,8 @@
 ---
+description: Text Element for CustomItem for Controls for Configuration
 ms.date: 08/25/2021
 ms.topic: reference
 title: Text Element for CustomItem for Controls for Configuration
-description: Text Element for CustomItem for Controls for Configuration
 ---
 # Text Element for CustomItem for Controls for Configuration
 

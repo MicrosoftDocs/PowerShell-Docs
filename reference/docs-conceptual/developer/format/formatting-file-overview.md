@@ -1,8 +1,8 @@
 ---
+description: Formatting File Overview
 ms.date: 08/23/2021
 ms.topic: reference
 title: Formatting File Overview
-description: Formatting File Overview
 ---
 # Formatting File Overview
 
@@ -35,13 +35,16 @@ defined by the file:
 
 - Default configuration setting, such as whether the data displayed in the rows of tables will be
   displayed on the next line if the data is longer than the width of the column. For more
-  information about these settings, see [Defining Common Configuration Settings](./defining-common-configuration-features.md).
+  information about these settings, see
+  [Wrap Element for TableRowEntry](./wrap-element-for-tablerowentry-for-tablecontrol-format.md).
 
 - Sets of objects that can be displayed by any of the views of the formatting file. For more
-  information about these sets (referred to as **selection sets**), see [Defining Sets of Objects](./defining-selection-sets.md).
+  information about these sets (referred to as **selection sets**), see
+  [Defining Sets of Objects](./defining-selection-sets.md).
 
 - Common controls that can be used by all the views of the formatting file. Controls give you finer
-  control on how data is displayed. For more information about controls, see [Defining Custom Controls](./creating-custom-controls.md).
+  control on how data is displayed. For more information about controls, see
+  [Defining Custom Controls](./creating-custom-controls.md).
 
 ## Formatting Views
 

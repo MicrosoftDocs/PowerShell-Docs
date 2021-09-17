@@ -1,8 +1,8 @@
 ---
+description: Users Requesting Confirmation
 ms.date: 09/13/2016
 ms.topic: reference
 title: Users Requesting Confirmation
-description: Users Requesting Confirmation
 ---
 # Users Requesting Confirmation
 

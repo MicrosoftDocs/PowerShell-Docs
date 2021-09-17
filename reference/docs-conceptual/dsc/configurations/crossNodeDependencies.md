@@ -1,8 +1,7 @@
 ---
-ms.date:  12/12/2018
-keywords:  dsc,powershell,configuration,setup
-title:  Specifying cross-node dependencies
 description: DSC provides special resources that are used in configurations to specify dependencies on configurations on other nodes.
+ms.date: 12/12/2018
+title: Specifying cross-node dependencies
 ---
 
 # Specifying cross-node dependencies

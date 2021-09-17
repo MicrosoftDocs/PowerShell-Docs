@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  wmf,powershell,setup
-title: Improvements in PowerShell Script Debugging
 description: WMF 5.0 adds new debugging features to Windows PoowerShell.
+ms.date: 06/12/2017
+title: Improvements in PowerShell Script Debugging
 ---
 
 # Improvements in PowerShell Script Debugging

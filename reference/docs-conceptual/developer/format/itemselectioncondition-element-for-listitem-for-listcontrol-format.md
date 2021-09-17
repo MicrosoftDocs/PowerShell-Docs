@@ -1,8 +1,8 @@
 ---
+description: ItemSelectionCondition Element for ListItem for ListControl
 ms.date: 08/23/2021
 ms.topic: reference
 title: ItemSelectionCondition Element for ListItem for ListControl
-description: ItemSelectionCondition Element for ListItem for ListControl
 ---
 # ItemSelectionCondition Element for ListItem for ListControl
 

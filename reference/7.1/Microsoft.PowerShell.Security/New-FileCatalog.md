@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 11/02/2018
@@ -22,6 +21,8 @@ New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 `New-FileCatalog` creates a [Windows catalog file](/windows-hardware/drivers/install/catalog-files)
 for a set of folders and files. This catalog file contains hashes for all files in the provided

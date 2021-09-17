@@ -28,6 +28,8 @@ Unblock-File -LiteralPath <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet only works on the Windows and macOS platforms.**
+
 The `Unblock-File` cmdlet lets you open files that were downloaded from the Internet. It unblocks
 PowerShell script files that were downloaded from the Internet so you can run them, even when the
 PowerShell execution policy is **RemoteSigned**. By default, these files are blocked to protect the

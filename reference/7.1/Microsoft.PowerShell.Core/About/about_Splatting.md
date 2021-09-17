@@ -1,6 +1,5 @@
 ---
-description:  Describes how to use splatting to pass parameters to commands in PowerShell. 
-keywords: powershell,cmdlet
+description: Describes how to use splatting to pass parameters to commands in PowerShell.
 Locale: en-US
 ms.date: 08/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-7.1&WT.mc_id=ps-gethelp

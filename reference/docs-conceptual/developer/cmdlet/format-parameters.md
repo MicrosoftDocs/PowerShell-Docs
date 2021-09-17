@@ -1,8 +1,8 @@
 ---
+description: Format Parameters
 ms.date: 09/13/2016
 ms.topic: reference
 title: Format Parameters
-description: Format Parameters
 ---
 # Format Parameters
 

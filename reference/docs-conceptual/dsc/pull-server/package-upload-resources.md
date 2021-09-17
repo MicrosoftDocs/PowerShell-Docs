@@ -1,8 +1,7 @@
 ---
-ms.date:  12/12/2018
-keywords:  dsc,powershell,configuration,setup
-title:  Package and Upload Resources to a Pull Server
 description: This article shows how to upload resources to a Pull Server so that they can be downloaded by configurations on the nodes managed by DSC.
+ms.date: 12/12/2018
+title: Package and Upload Resources to a Pull Server
 ---
 
 # Package and Upload Resources to a Pull Server

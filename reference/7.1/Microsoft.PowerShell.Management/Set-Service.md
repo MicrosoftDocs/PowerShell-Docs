@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 10/25/2019
@@ -33,6 +32,8 @@ Set-Service [-InputObject] <ServiceController> [-DisplayName <String>] [-Credent
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Set-Service` cmdlet changes the properties of a service such as the **Status**,
 **Description**, **DisplayName**, and **StartupType**. `Set-Service` can start, stop, suspend, or

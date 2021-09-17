@@ -1,8 +1,7 @@
 ---
-ms.date:  04/19/2019
-keywords:  wmf,powershell,setup
-title:  Windows Management Framework (WMF)
 description: WMF is a prerequisite for Windows PowerShell. This articles shows the history of WMF versions and provides information about how to find and install WMF.
+ms.date: 04/19/2019
+title: Windows Management Framework (WMF)
 ---
 
 # Windows Management Framework

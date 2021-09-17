@@ -1,8 +1,8 @@
 ---
+description: Extending Properties for Objects
 ms.date: 08/21/2019
 ms.topic: reference
 title: Extending Properties for Objects
-description: Extending Properties for Objects
 ---
 
 # Extending Properties for Objects

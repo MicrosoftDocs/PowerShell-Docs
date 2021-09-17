@@ -1,8 +1,7 @@
 ---
-ms.date: 06/11/2020
-keywords: powershell,cmdlet
-title: Security considerations for PowerShell Remoting using WinRM
 description: This document covers security concerns, recommendations, and best practices when using PowerShell Remoting.
+ms.date: 06/11/2020
+title: Security considerations for PowerShell Remoting using WinRM
 ---
 
 # Security Considerations for PowerShell Remoting using WinRM

@@ -1,6 +1,5 @@
 ---
-description:  Describes the parameters that Windows PowerShell Workflow adds to activities.
-keywords: powershell,cmdlet
+description: Describes the parameters that Windows PowerShell Workflow adds to activities.
 Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_activitycommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp

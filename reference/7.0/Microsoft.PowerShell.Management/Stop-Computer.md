@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 12/11/2019
@@ -260,8 +259,6 @@ You can't pipe input to this cmdlet.
 ### None
 
 ## NOTES
-
-This cmdlet is only available on Windows platforms.
 
 This cmdlet only works on Windows and uses the **Win32Shutdown** method of the
 **Win32_OperatingSystem** WMI class. This method requires the **SeShutdownPrivilege** privilege be

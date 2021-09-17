@@ -1,8 +1,7 @@
 ---
-ms.date: 03/22/2021
-keywords:  powershell,cmdlet
-title:  What is PowerShell?
 description: This article is an introduction to the PowerShell scripting environment and its features.
+ms.date: 03/22/2021
+title: What is PowerShell?
 ---
 
 # What is PowerShell?

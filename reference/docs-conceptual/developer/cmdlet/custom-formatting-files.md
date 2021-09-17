@@ -1,8 +1,8 @@
 ---
+description: Custom Formatting Files
 ms.date: 09/13/2016
 ms.topic: reference
 title: Custom Formatting Files
-description: Custom Formatting Files
 ---
 # Custom Formatting Files
 

@@ -1,7 +1,7 @@
 ---
-title: Create XML-based help using PlatyPS
 description: Using PlatyPS is the fast and efficient way to create XML-based help.
 ms.date: 07/21/2020
+title: Create XML-based help using PlatyPS
 ---
 # Create XML-based help using PlatyPS
 

@@ -1,8 +1,8 @@
 ---
-title: Everything you wanted to know about exceptions
 description: Error handling is just part of life when it comes to writing code.
-ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
+ms.date: 05/23/2020
+title: Everything you wanted to know about exceptions
 ---
 # Everything you wanted to know about exceptions
 

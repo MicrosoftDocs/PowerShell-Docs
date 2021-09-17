@@ -1,8 +1,8 @@
 ---
+description: FirstLineHanging Element for Frame for Controls for Configuration
 ms.date: 08/23/2021
 ms.topic: reference
 title: FirstLineHanging Element for Frame for Controls for Configuration
-description: FirstLineHanging Element for Frame for Controls for Configuration
 ---
 # FirstLineHanging Element for Frame for Controls for Configuration
 

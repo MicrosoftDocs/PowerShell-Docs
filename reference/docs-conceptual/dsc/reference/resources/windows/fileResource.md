@@ -1,8 +1,8 @@
 ---
+description: DSC File Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC File Resource
-description: DSC File Resource
 ---
 # DSC File Resource
 

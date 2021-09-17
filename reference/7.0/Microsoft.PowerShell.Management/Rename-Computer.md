@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/1/2019
+ms.date: 05/01/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-computer?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-Computer
@@ -22,6 +21,8 @@ Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCrede
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Rename-Computer` cmdlet renames the local computer or a remote computer.
 It renames one computer in each command.

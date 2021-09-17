@@ -1,6 +1,5 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/28/2019
@@ -21,6 +20,8 @@ Unregister-PSSessionConfiguration [-Name] <String> [-Force] [-NoServiceRestart] 
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Unregister-PSSessionConfiguration` cmdlet deletes registered session configurations from the
 computer. This cmdlet is designed for system administrators to manage customized session

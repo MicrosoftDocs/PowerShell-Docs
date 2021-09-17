@@ -21,6 +21,8 @@ Unregister-PSSessionConfiguration [-Name] <String> [-Force] [-NoServiceRestart] 
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Unregister-PSSessionConfiguration` cmdlet deletes registered session configurations from the
 computer. This cmdlet is designed for system administrators to manage customized session
 configurations for users.

@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/09/2017
@@ -33,6 +32,8 @@ New-CimSession [-CertificateThumbprint <String>] [[-ComputerName] <String[]>] [-
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `New-CimSession` cmdlet creates a CIM session. A CIM session is a client-side object
 representing a connection to a local computer or a remote computer. The CIM session contains

@@ -1,8 +1,8 @@
 ---
+description: EnumerateCollection Element for ExpressionBinding for Controls for Configuration
 ms.date: 08/23/2021
 ms.topic: reference
 title: EnumerateCollection Element for ExpressionBinding for Controls for Configuration
-description: EnumerateCollection Element for ExpressionBinding for Controls for Configuration
 ---
 # EnumerateCollection Element for ExpressionBinding for Controls for Configuration
 

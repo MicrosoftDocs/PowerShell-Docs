@@ -1,8 +1,8 @@
 ---
+description: Alignment Element for TableColumnHeader
 ms.date: 08/20/2021
 ms.topic: reference
 title: Alignment Element for TableColumnHeader
-description: Alignment Element for TableColumnHeader
 ---
 # Alignment Element for TableColumnHeader
 

@@ -38,6 +38,8 @@ Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>] [-Exc
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Get-Service` cmdlet gets objects that represent the services on a computer, including running
 and stopped services. By default, when `Get-Service` is run without parameters, all the local
 computer's services are returned.

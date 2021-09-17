@@ -1,6 +1,5 @@
 ---
-description:  Explains how to use the PowerShell_Ise.exe command-line tool. 
-keywords: powershell,cmdlet
+description: Explains how to use the PowerShell_Ise.exe command-line tool.
 Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe?view=powershell-5.1&WT.mc_id=ps-gethelp

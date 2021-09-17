@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
@@ -37,6 +36,8 @@ Start-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclud
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Start-Service` cmdlet sends a start message to the Windows Service Controller for each of the
 specified services. If a service is already running, the message is ignored without error. You can

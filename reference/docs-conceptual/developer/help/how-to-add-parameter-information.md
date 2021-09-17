@@ -1,8 +1,8 @@
 ---
+description: How to Add Parameter Information
 ms.date: 09/12/2016
 ms.topic: reference
 title: How to Add Parameter Information
-description: How to Add Parameter Information
 ---
 # How to Add Parameter Information
 

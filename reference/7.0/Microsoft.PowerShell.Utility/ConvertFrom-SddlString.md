@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Utility-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
@@ -22,6 +21,8 @@ ConvertFrom-SddlString [-Sddl] <String> [-Type <AccessRightTypeNames>] [<CommonP
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `ConvertFrom-SddlString` cmdlet converts a Security Descriptor Definition Language string to a
 custom **PSCustomObject** object with the following properties: Owner, Group, DiscretionaryAcl,

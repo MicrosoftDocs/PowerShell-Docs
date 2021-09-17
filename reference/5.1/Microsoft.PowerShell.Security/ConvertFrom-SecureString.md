@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 04/27/2019

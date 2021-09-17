@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 05/20/2019
@@ -19,18 +18,18 @@ Gets the hotfixes that are installed on local or remote computers.
 ### Default (Default)
 
 ```
-Get-HotFix [[-Id] <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
-[<CommonParameters>]
+Get-HotFix [[-Id] <string[]>] [-ComputerName <string[]>] [-Credential <pscredential>]
 ```
 
 ### Description
 
 ```
-Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
-[<CommonParameters>]
+Get-HotFix [-Description <string[]>] [-ComputerName <string[]>] [-Credential <pscredential>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Get-Hotfix` cmdlet gets hotfixes, or updates, that are installed on the local computer or
 specified remote computers. The updates can be installed by Windows Update, Microsoft Update,

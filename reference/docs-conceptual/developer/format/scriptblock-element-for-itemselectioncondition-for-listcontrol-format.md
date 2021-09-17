@@ -1,8 +1,8 @@
 ---
+description: ScriptBlock Element for ItemSelectionCondition for ListControl
 ms.date: 08/24/2021
 ms.topic: reference
 title: ScriptBlock Element for ItemSelectionCondition for ListControl
-description: ScriptBlock Element for ItemSelectionCondition for ListControl
 ---
 # ScriptBlock Element for ItemSelectionCondition for ListControl
 

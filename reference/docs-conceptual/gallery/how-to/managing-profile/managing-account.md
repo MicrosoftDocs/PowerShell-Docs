@@ -1,7 +1,7 @@
 ---
-ms.date:  09/05/2018
-title:  PowerShell Gallery Account Settings
-description:  This article describes the settings of your account profile in the PowerShell Gallery
+description: This article describes the settings of your account profile in the PowerShell Gallery
+ms.date: 09/05/2018
+title: PowerShell Gallery Account Settings
 ---
 # PowerShell Gallery Account Settings
 

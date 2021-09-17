@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PackageManagement
 ms.date: 05/23/2019

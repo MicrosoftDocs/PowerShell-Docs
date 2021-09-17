@@ -1,6 +1,5 @@
 ---
 external help file: PSReadLine-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSReadLine
 ms.date: 12/07/2018

@@ -1,8 +1,7 @@
 ---
-ms.date: 07/08/2020
-keywords:  dsc,powershell,configuration,setup
-title:  Get-Test-Set
 description: This article illustrates how to implement the Get, Test, and Set methods in a DSC Configuration.
+ms.date: 07/08/2020
+title: Get-Test-Set
 ---
 
 # Get-Test-Set

@@ -1,8 +1,8 @@
 ---
+description: HelpInfo XML Sample File
 ms.date: 09/12/2016
 ms.topic: reference
 title: HelpInfo XML Sample File
-description: HelpInfo XML Sample File
 ---
 # HelpInfo XML Sample File
 

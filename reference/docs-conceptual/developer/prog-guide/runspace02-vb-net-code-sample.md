@@ -1,8 +1,8 @@
 ---
+description: Runspace02 (VB.NET) Code Sample
 ms.date: 09/13/2016
 ms.topic: reference
 title: Runspace02 (VB.NET) Code Sample
-description: Runspace02 (VB.NET) Code Sample
 ---
 # Runspace02 (VB.NET) Code Sample
 

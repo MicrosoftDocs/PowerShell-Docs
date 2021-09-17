@@ -1,7 +1,7 @@
 ---
-ms.date: 07/27/2021
 description: Explains how to use the Tab Expansion feature in PowerShell.
 Locale: en-US
+ms.date: 07/27/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_tab_expansion?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: About tab expansion

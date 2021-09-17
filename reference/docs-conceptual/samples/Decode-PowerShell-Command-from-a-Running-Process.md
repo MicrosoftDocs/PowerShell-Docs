@@ -1,9 +1,8 @@
 ---
-ms.date:  11/13/2018
-keywords:  powershell,cmdlet
-title:  Decode a PowerShell command from a running process
 author: randomnote1
 description: This article shows how to decode a script block that a PowerShell process is currently running.
+ms.date: 11/13/2018
+title: Decode a PowerShell command from a running process
 ---
 
 # Decode a PowerShell command from a running process

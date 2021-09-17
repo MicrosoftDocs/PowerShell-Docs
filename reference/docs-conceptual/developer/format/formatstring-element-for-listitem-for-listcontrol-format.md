@@ -1,8 +1,8 @@
 ---
+description: FormatString Element for ListItem for ListControl
 ms.date: 08/23/2021
 ms.topic: reference
 title: FormatString Element for ListItem for ListControl
-description: FormatString Element for ListItem for ListControl
 ---
 # FormatString Element for ListItem for ListControl
 

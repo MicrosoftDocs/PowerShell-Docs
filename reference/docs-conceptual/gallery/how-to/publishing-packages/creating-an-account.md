@@ -1,7 +1,7 @@
 ---
-ms.date:  09/11/2018
-title:  Creating a PowerShell Gallery account
 description: This article describe the user account requirements for the PowerShell Gallery
+ms.date: 09/11/2018
+title: Creating a PowerShell Gallery account
 ---
 
 # Creating a PowerShell Gallery account

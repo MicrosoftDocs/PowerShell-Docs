@@ -1,7 +1,7 @@
 ---
-title: Installing PowerShell Core on Arm
 description: Installing PowerShell Core on Arm-based systems
 ms.date: 11/11/2020
+title: Installing PowerShell Core on Arm
 ---
 
 # PowerShell Core on Arm

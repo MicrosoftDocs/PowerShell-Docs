@@ -20,6 +20,8 @@ Disable-PSWSManCombinedTrace [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 This cmdlet stops the logging session started by `Enable-PSWSManCombinedTrace`.
 
 This cmdlet uses the `Stop-Trace` cmdlet.

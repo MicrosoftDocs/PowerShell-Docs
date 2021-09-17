@@ -1,8 +1,8 @@
 ---
+description: Date and Time Parameters
 ms.date: 09/13/2016
 ms.topic: reference
 title: Date and Time Parameters
-description: Date and Time Parameters
 ---
 # Date and Time Parameters
 

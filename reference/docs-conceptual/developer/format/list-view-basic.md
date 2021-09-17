@@ -1,8 +1,8 @@
 ---
+description: List View (Basic)
 ms.date: 08/23/2021
 ms.topic: reference
 title: List View (Basic)
-description: List View (Basic)
 ---
 # List View (Basic)
 

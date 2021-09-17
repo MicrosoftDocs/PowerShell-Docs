@@ -1,7 +1,7 @@
 ---
-title: Installing PowerShell on macOS
 description: Information about installing PowerShell on macOS
 ms.date: 04/26/2021
+title: Installing PowerShell on macOS
 ---
 
 # Installing PowerShell on macOS

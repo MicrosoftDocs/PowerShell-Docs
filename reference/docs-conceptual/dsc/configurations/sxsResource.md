@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Import a specific version of an installed resource
 description: This article shows how to install and import specific versions of resource modules into your configurations.
+ms.date: 06/12/2017
+title: Import a specific version of an installed resource
 ---
 
 # Import a specific version of an installed resource

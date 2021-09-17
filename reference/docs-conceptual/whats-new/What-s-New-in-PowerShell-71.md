@@ -1,7 +1,7 @@
 ---
-title: What's New in PowerShell 7.1
 description: New features and changes released in PowerShell 7.1
 ms.date: 12/15/2020
+title: What's New in PowerShell 7.1
 ---
 
 # What's New in PowerShell 7.1

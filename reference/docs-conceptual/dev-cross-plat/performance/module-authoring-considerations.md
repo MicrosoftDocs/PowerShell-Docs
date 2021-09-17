@@ -1,7 +1,7 @@
 ---
-title: PowerShell module authoring considerations
 description: PowerShell module authoring considerations
 ms.date: 10/16/2017
+title: PowerShell module authoring considerations
 ---
 
 # PowerShell module authoring considerations

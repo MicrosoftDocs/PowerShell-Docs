@@ -1,8 +1,8 @@
 ---
+description: Windows PowerShell Cmdlet Concepts
 ms.date: 09/13/2016
 ms.topic: reference
 title: Windows PowerShell Cmdlet Concepts
-description: Windows PowerShell Cmdlet Concepts
 ---
 # Windows PowerShell Cmdlet Concepts
 

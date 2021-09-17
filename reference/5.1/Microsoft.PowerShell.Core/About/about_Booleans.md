@@ -2,7 +2,6 @@
 description: Describes how boolean expressions are evaluated.
 Locale: en-US
 ms.date: 06/10/2021
-no-loc:
 schema: 2.0.0
 title: about Booleans
 ---

@@ -1,7 +1,7 @@
 ---
-ms.date:  11/06/2018
-title:  Working with local PSRepositories
 description: The PowerShellGet module support repositories other than the PowerShell Gallery. This article describes how to set up a local PowerShell repository.
+ms.date: 11/06/2018
+title: Working with local PSRepositories
 ---
 
 # Working with Private PowerShellGet Repositories

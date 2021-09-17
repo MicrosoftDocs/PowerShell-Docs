@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Using DSC on Nano Server
 description: DSC is an optional package that can be installed when you create a VHD for a Windows Nano Server.
+ms.date: 06/12/2017
+title: Using DSC on Nano Server
 ---
 
 # Using DSC on Nano Server

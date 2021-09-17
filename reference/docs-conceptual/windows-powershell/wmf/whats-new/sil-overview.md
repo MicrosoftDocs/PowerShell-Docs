@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title: Software Inventory Logging (SIL)
 description: WMF 5.x add Software Inventory Logging features that allow you to collect information about installed software in a central location for easier management and auditing.
+ms.date: 06/12/2017
+title: Software Inventory Logging (SIL)
 ---
 
 # Software Inventory Logging (SIL)

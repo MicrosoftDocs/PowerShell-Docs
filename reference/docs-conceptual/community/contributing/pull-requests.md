@@ -1,8 +1,8 @@
 ---
-title: How to submit pull requests
 description: This article explains how to submit pull requests to the PowerShell-Docs repository.
 ms.date: 12/09/2020
 ms.topic: conceptual
+title: How to submit pull requests
 ---
 # How to submit pull requests
 

@@ -1,8 +1,8 @@
 ---
+description: ScriptBlock Element for ListItem for ListControl
 ms.date: 08/24/2021
 ms.topic: reference
 title: ScriptBlock Element for ListItem for ListControl
-description: ScriptBlock Element for ListItem for ListControl
 ---
 # ScriptBlock Element for ListItem for ListControl
 

@@ -1,8 +1,7 @@
 ---
-ms.date:  12/12/2018
-keywords:  dsc,powershell,configuration,setup
-title:  Conditional statements and loops in Configurations
 description: This article shows you how you can use conditional statements and loops to make your Configuration more dynamic. Combining conditional statements and loops with parameters and Configuration Data allows you more flexibility and control when compiling your Configuration.
+ms.date: 12/12/2018
+title: Conditional statements and loops in Configurations
 ---
 
 # Conditional statements and loops in a Configuration

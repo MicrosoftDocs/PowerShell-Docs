@@ -1,8 +1,8 @@
 ---
+description: LeftIndent Element for Frame for Controls for View
 ms.date: 08/23/2021
 ms.topic: reference
 title: LeftIndent Element for Frame for Controls for View
-description: LeftIndent Element for Frame for Controls for View
 ---
 # LeftIndent Element for Frame for Controls for View
 

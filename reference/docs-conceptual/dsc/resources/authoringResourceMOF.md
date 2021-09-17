@@ -1,8 +1,7 @@
 ---
-ms.date: 07/08/2020
-keywords:  dsc,powershell,configuration,setup
-title:  Writing a custom DSC resource with MOF
 description: This article defines the schema for a DSC custom resource in a MOF file and implements the resource in a PowerShell script file.
+ms.date: 07/08/2020
+title: Writing a custom DSC resource with MOF
 ---
 
 # Writing a custom DSC resource with MOF

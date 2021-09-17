@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 09/21/2020
@@ -21,12 +20,13 @@ Get-Clipboard [-Raw] [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is not supported on macOS.**
+
 The `Get-Clipboard` cmdlet gets the contents of the clipboard as text. Multiple lines of text are
 returned as an array of strings similar to `Get-Content`.
 
 > [!NOTE]
-> On Linux, this cmdlet requires the `xclip` utility to be in the path. This cmdlet is not supported
-> on macOS.
+> On Linux, this cmdlet requires the `xclip` utility to be in the path.
 
 ## EXAMPLES
 

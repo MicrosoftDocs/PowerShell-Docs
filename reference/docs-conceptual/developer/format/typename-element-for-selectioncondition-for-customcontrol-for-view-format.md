@@ -1,8 +1,8 @@
 ---
+description: TypeName Element for SelectionCondition for CustomControl for View
 ms.date: 08/25/2021
 ms.topic: reference
 title: TypeName Element for SelectionCondition for CustomControl for View
-description: TypeName Element for SelectionCondition for CustomControl for View
 ---
 # TypeName Element for SelectionCondition for CustomControl for View
 

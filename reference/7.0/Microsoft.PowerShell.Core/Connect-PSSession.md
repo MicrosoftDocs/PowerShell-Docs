@@ -1,6 +1,5 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 11/06/2020
@@ -75,6 +74,8 @@ Connect-PSSession [-ThrottleLimit <Int32>] [-Id] <Int32[]> [-WhatIf] [-Confirm] 
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Connect-PSSession` cmdlet reconnects to user-managed PowerShell sessions (**PSSessions**) that
 were disconnected. It works on sessions that are disconnected intentionally, such as by using the

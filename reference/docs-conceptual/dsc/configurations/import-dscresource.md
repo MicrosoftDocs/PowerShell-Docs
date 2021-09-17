@@ -1,8 +1,7 @@
 ---
-ms.date: 07/24/2021
-keywords:  dsc,powershell,configuration,setup
-title:  Using Import-DSCResource
 description: Import-DSCResource is a dynamic keyword that can only be used inside a Configuration script block. It is used to import the resource modules needed in your Configuration.
+ms.date: 09/16/2021
+title: Using Import-DSCResource
 ---
 
 # Using Import-DSCResource
@@ -175,9 +174,8 @@ Copy the contents of your desired module version to the top level of the module 
 ### Resource location
 
 When authoring and compiling Configurations, your resources can be stored in any directory specified
-by your
-[PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path).
-In PowerShell 4.0, the LCM requires all DSC resource modules to be stored under "Program
+by your [PSModulePath](/powershell/module/microsoft.powershell.core/about/about_psmodulepath). In
+PowerShell 4.0, the LCM requires all DSC resource modules to be stored under "Program
 Files\WindowsPowerShell\Modules" or `$pshome\Modules`. Beginning in PowerShell 5.0, this requirement
 was removed, and resource modules can be stored in any directory specified by `PSModulePath`.
 

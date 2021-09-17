@@ -1,8 +1,8 @@
 ---
+description: SelectionCondition Element for EntrySelectedBy for Controls for Configuration
 ms.date: 08/25/2021
 ms.topic: reference
 title: SelectionCondition Element for EntrySelectedBy for Controls for Configuration
-description: SelectionCondition Element for EntrySelectedBy for Controls for Configuration
 ---
 # SelectionCondition Element for EntrySelectedBy for Controls for Configuration
 

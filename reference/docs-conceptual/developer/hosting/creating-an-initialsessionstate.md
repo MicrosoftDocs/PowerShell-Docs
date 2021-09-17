@@ -1,8 +1,8 @@
 ---
+description: Creating an InitialSessionState
 ms.date: 09/13/2016
 ms.topic: reference
 title: Creating an InitialSessionState
-description: Creating an InitialSessionState
 ---
 # Creating an InitialSessionState
 

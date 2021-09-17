@@ -1,7 +1,7 @@
 ---
-ms.date: 06/10/2020
-title:  Install and configure WMF 5.1
 description: This article describes how to install WMF 5.1 and its prerequisites.
+ms.date: 06/10/2020
+title: Install and configure WMF 5.1
 ---
 
 # Install and Configure WMF 5.1

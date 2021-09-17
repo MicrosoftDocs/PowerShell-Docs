@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
@@ -37,6 +36,8 @@ Restart-Service [-Force] [-PassThru] -DisplayName <String[]> [-Include <String[]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Restart-Service` cmdlet sends a stop message and then a start message to the Windows Service
 Controller for a specified service. If a service was already stopped, it is started without

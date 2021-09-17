@@ -1,7 +1,5 @@
 ---
-
 external help file: PSDiagnostics-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSDiagnostics
 ms.date: 11/27/2018
@@ -21,6 +19,8 @@ Stop-Trace [-SessionName] <Object> [-ETS] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 This cmdlet stops a Windows Event Trace logging session.
 

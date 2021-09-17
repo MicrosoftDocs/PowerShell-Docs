@@ -1,8 +1,8 @@
 ---
+description: How to Test Updatable Help
 ms.date: 09/12/2016
 ms.topic: reference
 title: How to Test Updatable Help
-description: How to Test Updatable Help
 ---
 # How to Test Updatable Help
 

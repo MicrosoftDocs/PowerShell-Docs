@@ -1,7 +1,7 @@
 ---
+description: Windows PowerShell 5.1 includes updated Package Management cmdlets.
 ms.date: 06/12/2017
 title: Improvements to Package Management in WMF 5.1
-description: Windows PowerShell 5.1 includes updated Package Management cmdlets.
 ---
 # Improvements to Package Management in WMF 5.1
 

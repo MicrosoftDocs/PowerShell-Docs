@@ -1,6 +1,5 @@
 ---
-description:  Describes how to edit commands at the PowerShell command prompt. 
-keywords: powershell,cmdlet
+description: Describes how to edit commands at the PowerShell command prompt.
 Locale: en-US
 ms.date: 07/10/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_line_editing?view=powershell-7.1&WT.mc_id=ps-gethelp

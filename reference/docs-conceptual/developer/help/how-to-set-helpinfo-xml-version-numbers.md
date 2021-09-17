@@ -1,8 +1,8 @@
 ---
+description: How to Set HelpInfo XML Version Numbers
 ms.date: 09/12/2016
 ms.topic: reference
 title: How to Set HelpInfo XML Version Numbers
-description: How to Set HelpInfo XML Version Numbers
 ---
 # How to Set HelpInfo XML Version Numbers
 

@@ -1,8 +1,7 @@
 ---
-ms.date:  06/05/2017
-keywords:  powershell,cmdlet
-title:  Installing the Windows PowerShell 2.0 Engine
 description: The Windows PowerShell 2.0 Engine is an optional feature of Windows. This article explains how to install the feature and the necessary requirements.
+ms.date: 06/05/2017
+title: Installing the Windows PowerShell 2.0 Engine
 ---
 
 # Installing the Windows PowerShell 2.0 Engine

@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
 ms.date: 03/31/2020
@@ -34,6 +33,8 @@ New-WSManInstance [-ConnectionURI <Uri>] [-FilePath <String>] [-OptionSet <Hasht
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `New-WSManInstance` cmdlet creates a new instance of a management resource. It uses a resource
 URI and a value set or input file to create the new instance of the management resource.

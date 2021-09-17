@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  DSCAutomationHostEnabled registry key
 description: This article defines the values that can be set in the DSCAutomationHostEnabled registry key
+ms.date: 06/12/2017
+title: DSCAutomationHostEnabled registry key
 ---
 # DSCAutomationHostEnabled registry key
 

@@ -15,6 +15,8 @@ title: CimCmdlets Module
 Contains cmdlets that interact with Common Information Model (CIM) Servers like the Windows
 Management Instrumentation (WMI) service.
 
+This module is only available on the Windows platform.
+
 ## CimCmdlets Cmdlets
 
 ### [Export-BinaryMiLog](Export-BinaryMiLog.md)

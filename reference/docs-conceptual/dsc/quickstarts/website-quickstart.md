@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Quickstart - Create a website with DSC
 description: This Quickstart shows how to create new website using a DSC configuration.
+ms.date: 06/12/2017
+title: Quickstart - Create a website with DSC
 ---
 
 # Quickstart - Create a website with Desired State Configuration (DSC)

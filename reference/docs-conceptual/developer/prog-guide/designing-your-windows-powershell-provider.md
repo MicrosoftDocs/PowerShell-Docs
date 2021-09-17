@@ -1,8 +1,8 @@
 ---
+description: Designing Your Windows PowerShell Provider
 ms.date: 09/13/2016
 ms.topic: reference
 title: Designing Your Windows PowerShell Provider
-description: Designing Your Windows PowerShell Provider
 ---
 # Designing Your Windows PowerShell Provider
 

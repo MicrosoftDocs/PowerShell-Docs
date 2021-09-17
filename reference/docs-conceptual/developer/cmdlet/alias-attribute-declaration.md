@@ -1,8 +1,8 @@
 ---
+description: Alias Attribute Declaration
 ms.date: 06/07/2021
 ms.topic: reference
 title: Alias Attribute Declaration
-description: Alias Attribute Declaration
 ---
 # Alias Attribute Declaration
 

@@ -1,8 +1,8 @@
 ---
+description: CustomEntries Element for CustomControl for View
 ms.date: 08/20/2021
 ms.topic: reference
 title: CustomEntries Element for CustomControl for View
-description: CustomEntries Element for CustomControl for View
 ---
 # CustomEntries Element for CustomControl for View
 

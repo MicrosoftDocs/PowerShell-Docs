@@ -1,7 +1,7 @@
 ---
-title: Deep dives
-ms.date: 05/23/2020
 description: The Deep Dives section of the documentation contains articles the provide more details and examples than the cmdlet reference.
+ms.date: 05/23/2020
+title: Deep dives
 ---
 # Deep dive articles
 

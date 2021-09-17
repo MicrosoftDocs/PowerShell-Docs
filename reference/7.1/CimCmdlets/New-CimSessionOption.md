@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/09/2017
@@ -41,6 +40,8 @@ New-CimSessionOption [-Impersonation <ImpersonationType>] [-PacketIntegrity] [-P
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `New-CimSessionOption` cmdlet creates an instance of a CIM session options object. You use a CIM
 session options object as input to the `New-CimSession` cmdlet to specify the options for a CIM

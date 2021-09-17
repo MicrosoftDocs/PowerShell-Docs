@@ -1,8 +1,8 @@
 ---
+description: TypeName Element for EntrySelectedBy for WideEntry
 ms.date: 08/25/2021
 ms.topic: reference
 title: TypeName Element for EntrySelectedBy for WideEntry
-description: TypeName Element for EntrySelectedBy for WideEntry
 ---
 # TypeName Element for EntrySelectedBy for WideEntry
 

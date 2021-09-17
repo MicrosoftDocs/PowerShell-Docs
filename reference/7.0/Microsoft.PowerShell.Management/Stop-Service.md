@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
@@ -37,6 +36,8 @@ Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <S
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Stop-Service` cmdlet sends a stop message to the Windows Service Controller for each of the
 specified services. You can specify the services by their service names or display names, or you can

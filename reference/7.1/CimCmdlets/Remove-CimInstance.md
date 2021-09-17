@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/21/2021
@@ -46,6 +45,8 @@ Remove-CimInstance [-ComputerName <String[]>] [[-Namespace] <String>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 This cmdlet removes a CIM instance from a CIM server. You can specify the CIM instance to remove by
 using either a CIM instance object retrieved by the `Get-CimInstance` cmdlet, or by specifying a

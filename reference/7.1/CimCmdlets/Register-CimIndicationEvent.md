@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 02/20/2019
@@ -52,6 +51,8 @@ Register-CimIndicationEvent [-Namespace <String>] [-Query] <String> [-QueryDiale
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Register-CimIndicationEvent` cmdlet subscribes to indications using an indication class name or
 a query expression. Use the **SourceIdentifier** parameter give a name to the subscription.

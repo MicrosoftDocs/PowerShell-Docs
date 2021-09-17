@@ -1,8 +1,8 @@
 ---
+description: DSC GroupSet Resource
 ms.date: 09/20/2019
 ms.topic: reference
 title: DSC GroupSet Resource
-description: DSC GroupSet Resource
 ---
 # DSC GroupSet Resource
 

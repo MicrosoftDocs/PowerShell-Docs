@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
 ms.date: 08/20/2019
@@ -23,6 +22,8 @@ Enable-WSManCredSSP [-Role] <String> [[-DelegateComputer] <String[]>] [-Force] [
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Enable-WSManCredSSP` cmdlet enables CredSSP authentication on a client or on a server computer.
 When CredSSP authentication is used, the user credentials are passed to a remote computer to be

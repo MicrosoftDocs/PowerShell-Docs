@@ -1,6 +1,5 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/28/2019
@@ -21,6 +20,8 @@ Disable-PSSessionConfiguration [[-Name] <String[]>] [-Force] [-NoServiceRestart]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Disable-PSSessionConfiguration` cmdlet disables session configurations on the local computer,
 which prevents all users from using the session configurations to create a user-managed sessions

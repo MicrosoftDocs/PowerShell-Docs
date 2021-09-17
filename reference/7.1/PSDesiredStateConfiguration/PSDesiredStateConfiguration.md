@@ -1,7 +1,6 @@
 ---
 Download Help Link: https://aka.ms/powershell71-help
 Help Version: 7.1.0.0
-keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: 779e0998-8c72-4567-89b5-49313fc15351
 Module Name: PSDesiredStateConfiguration

@@ -1,8 +1,8 @@
 ---
+description: FormatString Element for WideItem
 ms.date: 08/23/2021
 ms.topic: reference
 title: FormatString Element for WideItem
-description: FormatString Element for WideItem
 ---
 # FormatString Element for WideItem
 

@@ -1,8 +1,8 @@
 ---
+description: ApplyConfiguration method
 ms.date: 07/14/2020
 ms.topic: reference
 title: ApplyConfiguration method
-description: ApplyConfiguration method
 ---
 # ApplyConfiguration method
 

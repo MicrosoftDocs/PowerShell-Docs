@@ -1,8 +1,8 @@
 ---
+description: How to Write a PowerShell Script Module
 ms.date: 11/21/2019
 ms.topic: reference
 title: How to Write a PowerShell Script Module
-description: How to Write a PowerShell Script Module
 ---
 
 # How to Write a PowerShell Script Module
@@ -54,7 +54,7 @@ The following steps describe how to create a PowerShell module.
    }
    ```
 
-2. To control user access to certain functions or variables, call
+1. To control user access to certain functions or variables, call
    [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) at the
    end of your script.
 
@@ -72,7 +72,7 @@ The following steps describe how to create a PowerShell module.
    [Importing a PowerShell Module](./importing-a-powershell-module.md) and
    [How to Write a PowerShell Module Manifest](./how-to-write-a-powershell-module-manifest.md).
 
-3. If you have modules that your own module needs to load, you can use `Import-Module`, at the top
+1. If you have modules that your own module needs to load, you can use `Import-Module`, at the top
    of your module.
 
    The `Import-Module` cmdlet imports a targeted module onto a system, and can be used at a later
@@ -84,7 +84,7 @@ The following steps describe how to create a PowerShell module.
    Import-Module GenericModule
    ```
 
-4. To describe your module to the PowerShell Help system, you can either use standard help comments
+1. To describe your module to the PowerShell Help system, you can either use standard help comments
    inside the file, or create an additional Help file.
 
    The code sample at the bottom of this article includes the help information in the comments. You
@@ -92,7 +92,7 @@ The following steps describe how to create a PowerShell module.
    see
    [Writing Help for Windows PowerShell Modules](./writing-help-for-windows-powershell-modules.md).
 
-5. If you have additional modules, XML files, or other content you want to package with your module,
+1. If you have additional modules, XML files, or other content you want to package with your module,
    you can use a module manifest.
 
    A module manifest is a file that contains the names of other modules, directory layouts,
@@ -100,7 +100,7 @@ The following steps describe how to create a PowerShell module.
    manifest file to organize and deploy your solution. For more information, see
    [How to write a PowerShell module manifest](./how-to-write-a-powershell-module-manifest.md).
 
-6. To install and run your module, save the module to one of the appropriate PowerShell paths, and
+1. To install and run your module, save the module to one of the appropriate PowerShell paths, and
    use `Import-Module`.
 
    The paths where you can install your module are located in the `$env:PSModulePath` global
@@ -115,9 +115,9 @@ The following steps describe how to create a PowerShell module.
    you don't need to explicitly import it. Your module is automatically loaded when a user calls
    your function. For more information about the module path, see
    [Importing a PowerShell Module](./importing-a-powershell-module.md) and
-   [Modifying the PSModulePath Installation Path](./modifying-the-psmodulepath-installation-path.md).
+   [about_PSModulePath](/powershell/module/microsoft.powershell.core/about/about_psmodulepath).
 
-7. To remove a module from active service in the current PowerShell session, use
+1. To remove a module from active service in the current PowerShell session, use
    [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module).
 
    > [!NOTE]

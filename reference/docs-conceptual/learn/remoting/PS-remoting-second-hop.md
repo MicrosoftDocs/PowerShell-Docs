@@ -1,8 +1,7 @@
 ---
-ms.date: 05/14/2020
-keywords:  powershell,cmdlet
-title:  Making the second hop in PowerShell Remoting
 description: This article explains the various methods for configuring second-hop authentication for PowerShell remoting, including the security implications and recommendations.
+ms.date: 05/14/2020
+title: Making the second hop in PowerShell Remoting
 ---
 
 # Making the second hop in PowerShell Remoting

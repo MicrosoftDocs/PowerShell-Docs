@@ -1,8 +1,8 @@
 ---
+description: SendConfigurationApplyAsync method
 ms.date: 07/17/2020
 ms.topic: reference
 title: SendConfigurationApplyAsync method
-description: SendConfigurationApplyAsync method
 ---
 # SendConfigurationApplyAsync method
 

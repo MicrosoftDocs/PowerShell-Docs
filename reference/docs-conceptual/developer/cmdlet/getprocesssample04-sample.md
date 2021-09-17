@@ -1,8 +1,8 @@
 ---
+description: GetProcessSample04 Sample
 ms.date: 09/13/2016
 ms.topic: reference
 title: GetProcessSample04 Sample
-description: GetProcessSample04 Sample
 ---
 # GetProcessSample04 Sample
 

@@ -1,8 +1,8 @@
 ---
+description: Name Element for Control for Controls for Configuration
 ms.date: 08/23/2021
 ms.topic: reference
 title: Name Element for Control for Controls for Configuration
-description: Name Element for Control for Controls for Configuration
 ---
 # Name Element for Control for Controls for Configuration
 

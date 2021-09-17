@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/09/2017
@@ -41,6 +40,8 @@ Get-CimSession -Name <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 By default, the cmdlet gets all of the CIM sessions created in the current PowerShell session. You
 can use the parameters of `Get-CimSession` to get the sessions that are for particular computers, or

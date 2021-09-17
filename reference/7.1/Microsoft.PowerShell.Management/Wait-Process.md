@@ -34,6 +34,8 @@ Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet does not work on Linux or macOS.**
+
 The `Wait-Process` cmdlet waits for one or more running processes to be stopped before accepting
 input. In the PowerShell console, this cmdlet suppresses the command prompt until the processes are
 stopped. You can specify a process by process name or process ID (PID), or pipe a process object to
@@ -176,8 +178,6 @@ You can pipe a process object to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
-
-- The cmdlet is only supported on Windows platforms.
 
 - This cmdlet uses the **WaitForExit** method of the **System.Diagnostics.Process** class.
 

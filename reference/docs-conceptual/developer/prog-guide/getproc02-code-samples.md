@@ -1,8 +1,8 @@
 ---
+description: GetProc02 Code Samples
 ms.date: 09/13/2016
 ms.topic: reference
 title: GetProc02 Code Samples
-description: GetProc02 Code Samples
 ---
 # GetProc02 Code Samples
 

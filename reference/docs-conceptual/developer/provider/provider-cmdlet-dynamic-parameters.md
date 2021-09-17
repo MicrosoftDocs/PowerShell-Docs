@@ -1,8 +1,8 @@
 ---
+description: Provider cmdlet dynamic parameters
 ms.date: 09/13/2016
 ms.topic: reference
 title: Provider cmdlet dynamic parameters
-description: Provider cmdlet dynamic parameters
 ---
 # Provider cmdlet dynamic parameters
 

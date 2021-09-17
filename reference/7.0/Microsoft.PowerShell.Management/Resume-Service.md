@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
@@ -37,6 +36,8 @@ Resume-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclu
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Resume-Service` cmdlet sends a resume message to the Windows Service Controller for each of the
 specified services. If a service is suspended, it resumes. If it is currently running, the message

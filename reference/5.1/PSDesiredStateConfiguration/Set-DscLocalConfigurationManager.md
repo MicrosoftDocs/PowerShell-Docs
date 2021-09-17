@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSDesiredStateConfiguration
 ms.date: 04/29/2020

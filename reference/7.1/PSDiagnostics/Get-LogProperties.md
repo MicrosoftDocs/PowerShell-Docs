@@ -1,7 +1,7 @@
 ---
 external help file: PSDiagnostics-help.xml
-Module Name: PSDiagnostics
 Locale: en-US
+Module Name: PSDiagnostics
 ms.date: 11/27/2018
 online version: https://docs.microsoft.com/powershell/module/psdiagnostics/get-logproperties?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -19,6 +19,8 @@ Get-LogProperties [-Name] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 This cmdlet gets the configuration settings of a Windows event log. This cmdlet is used by the
 `Enable-PSTrace` and `Disable-PSTrace` cmdlets.

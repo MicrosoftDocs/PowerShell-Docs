@@ -1,8 +1,7 @@
 ---
-ms.date:  12/12/2018
-keywords:  dsc,powershell,configuration,setup
-title:  Apply, Get, and Test Configurations on a Node
 description: This guide will show you how to work with Configurations on a target Node.
+ms.date: 12/12/2018
+title: Apply, Get, and Test Configurations on a Node
 ---
 
 # Apply, Get, and Test Configurations on a Node

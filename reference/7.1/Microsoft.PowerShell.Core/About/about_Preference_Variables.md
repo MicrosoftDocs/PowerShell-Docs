@@ -1,6 +1,5 @@
 ---
-description:  Variables that customize the behavior of PowerShell.
-keywords: powershell,cmdlet
+description: Variables that customize the behavior of PowerShell.
 Locale: en-US
 ms.date: 07/17/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.1&WT.mc_id=ps-gethelp

@@ -1,6 +1,5 @@
 ---
 external help file: PSDiagnostics-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSDiagnostics
 ms.date: 11/29/2018
@@ -20,6 +19,8 @@ Disable-PSWSManCombinedTrace [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 This cmdlet stops the logging session started by `Enable-PSWSManCombinedTrace`.
 

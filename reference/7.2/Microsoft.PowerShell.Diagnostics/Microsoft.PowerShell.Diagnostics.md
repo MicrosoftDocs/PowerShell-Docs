@@ -15,6 +15,8 @@ title: Microsoft.PowerShell.Diagnostics
 This section contains the help topics for the cmdlets that are installed with the PowerShell
 Microsoft.PowerShell.Diagnostics module, which contains cmdlets that manage data from event logs.
 
+This module is only available on the Windows platform.
+
 ## Microsoft.PowerShell.Diagnostics Cmdlets
 
 ### [Get-Counter](Get-Counter.md)

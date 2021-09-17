@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Set up a Pull Client using Configuration Names in PowerShell 5.0 and later
 description: The article explains how to set up a Pull Client using Configuration Names in PowerShell 5.0 and later
+ms.date: 06/12/2017
+title: Set up a Pull Client using Configuration Names in PowerShell 5.0 and later
 ---
 # Set up a Pull Client using Configuration Names in PowerShell 5.0 and later
 

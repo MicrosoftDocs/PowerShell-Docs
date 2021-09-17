@@ -1,8 +1,8 @@
 ---
+description: EntrySelectedBy Element for TableRowEntry
 ms.date: 08/23/2021
 ms.topic: reference
 title: EntrySelectedBy Element for TableRowEntry
-description: EntrySelectedBy Element for TableRowEntry
 ---
 # EntrySelectedBy Element for TableRowEntry
 

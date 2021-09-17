@@ -1,6 +1,5 @@
 ---
-description:  Provides essential information about objects in Windows PowerShell.
-keywords: powershell,cmdlet
+description: Provides essential information about objects in Windows PowerShell.
 Locale: en-US
 ms.date: 06/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_objects?view=powershell-5.1&WT.mc_id=ps-gethelp

@@ -1,7 +1,7 @@
 ---
-title: Community contributor Hall of Fame
 description: List of the GitHub users that have the most contributions to the PowerShell-Doc project.
 ms.date: 08/02/2021
+title: Community contributor Hall of Fame
 ---
 # Community Contributor Hall of Fame
 

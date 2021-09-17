@@ -1,7 +1,7 @@
 ---
-ms.date:  06/05/2017
-title:  The PowerShellTab Object
 description: The PowerShellTab object represents a Windows PowerShell runtime environment.
+ms.date: 06/05/2017
+title: The PowerShellTab Object
 ---
 
 # The PowerShellTab Object

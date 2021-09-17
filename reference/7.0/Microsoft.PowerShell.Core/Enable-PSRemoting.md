@@ -1,6 +1,5 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 07/16/2020
@@ -20,6 +19,8 @@ Enable-PSRemoting [-Force] [-SkipNetworkProfileCheck] [-WhatIf] [-Confirm] [<Com
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Enable-PSRemoting` cmdlet configures the computer to receive PowerShell remote commands that
 are sent by using the WS-Management technology. WS-Management based PowerShell remoting is currently

@@ -1,6 +1,5 @@
 ---
-description:  Explains how to use the "Run with PowerShell" feature to run a script from a file system drive. 
-keywords: powershell,cmdlet
+description: Explains how to use the Run with PowerShell feature to run a script from a file system drive.
 Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_run_with_powershell?view=powershell-5.1&WT.mc_id=ps-gethelp

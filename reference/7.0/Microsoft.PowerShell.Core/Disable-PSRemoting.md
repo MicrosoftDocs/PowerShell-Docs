@@ -1,6 +1,5 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 01/10/2020
@@ -20,6 +19,8 @@ Disable-PSRemoting [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Disable-PSRemoting` cmdlet blocks remote access to all PowerShell version 6 and greater session
 endpoint configurations on the local computer. It does not affect Windows PowerShell endpoint

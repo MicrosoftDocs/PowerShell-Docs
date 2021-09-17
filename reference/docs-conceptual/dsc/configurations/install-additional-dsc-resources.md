@@ -1,8 +1,7 @@
 ---
-ms.date:  12/12/2018
-keywords:  dsc,powershell,resource,gallery,setup
-title:  Install Additional DSC Resources
 description: This article lists the DSC resources that are included in the PSDesiredStateConfiguration module. It also covers how to find and install resources from the PowerShell Gallery.
+ms.date: 12/12/2018
+title: Install Additional DSC Resources
 ---
 
 # Install Additional DSC Resources

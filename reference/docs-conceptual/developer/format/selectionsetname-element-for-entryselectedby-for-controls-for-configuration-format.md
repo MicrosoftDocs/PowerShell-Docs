@@ -1,8 +1,8 @@
 ---
+description: SelectionSetName Element for EntrySelectedBy for Controls for Configuration
 ms.date: 08/25/2021
 ms.topic: reference
 title: SelectionSetName Element for EntrySelectedBy for Controls for Configuration
-description: SelectionSetName Element for EntrySelectedBy for Controls for Configuration
 ---
 # SelectionSetName Element for EntrySelectedBy for Controls for Configuration
 

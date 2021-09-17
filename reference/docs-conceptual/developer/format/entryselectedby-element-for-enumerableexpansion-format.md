@@ -1,8 +1,8 @@
 ---
+description: EntrySelectedBy Element for EnumerableExpansion
 ms.date: 08/23/2021
 ms.topic: reference
 title: EntrySelectedBy Element for EnumerableExpansion
-description: EntrySelectedBy Element for EnumerableExpansion
 ---
 # EntrySelectedBy Element for EnumerableExpansion
 

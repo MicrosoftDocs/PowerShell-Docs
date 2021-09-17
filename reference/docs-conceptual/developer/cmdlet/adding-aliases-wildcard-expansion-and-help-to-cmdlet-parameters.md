@@ -1,8 +1,8 @@
 ---
+description: Adding Aliases, Wildcard Expansion, and Help to Cmdlet Parameters
 ms.date: 09/13/2016
 ms.topic: reference
 title: Adding Aliases, Wildcard Expansion, and Help to Cmdlet Parameters
-description: Adding Aliases, Wildcard Expansion, and Help to Cmdlet Parameters
 ---
 # Adding Aliases, Wildcard Expansion, and Help to Cmdlet Parameters
 

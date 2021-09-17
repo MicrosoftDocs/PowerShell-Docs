@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 11/02/2018
@@ -24,6 +23,8 @@ Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <Strin
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 `Test-FileCatalog` validates the authenticity of files by comparing the file hashes of a catalog
 file (.cat) with the hashes of actual files on disk. If it detects any mismatches, it returns the

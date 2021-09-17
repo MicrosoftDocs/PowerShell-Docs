@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title:  Gallery Search Syntax
 description: This article describes the user interface used to search for content in the PowerShell Gallery.
+ms.date: 06/12/2017
+title: Gallery Search Syntax
 ---
 # Gallery Search Syntax
 

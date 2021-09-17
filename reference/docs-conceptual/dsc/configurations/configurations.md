@@ -1,8 +1,7 @@
 ---
-ms.date:  12/12/2018
-keywords:  dsc,powershell,configuration,setup
-title:  DSC Configurations
 description: DSC configurations are PowerShell scripts that define a special type of function.
+ms.date: 12/12/2018
+title: DSC Configurations
 ---
 # DSC Configurations
 

@@ -1,8 +1,8 @@
 ---
+description: ItemSelectionCondition Element for ExpressionBinding for Controls for View
 ms.date: 08/23/2021
 ms.topic: reference
 title: ItemSelectionCondition Element for ExpressionBinding for Controls for View
-description: ItemSelectionCondition Element for ExpressionBinding for Controls for View
 ---
 # ItemSelectionCondition Element for ExpressionBinding for Controls for View
 

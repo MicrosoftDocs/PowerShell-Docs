@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
 ms.date: 04/09/2020

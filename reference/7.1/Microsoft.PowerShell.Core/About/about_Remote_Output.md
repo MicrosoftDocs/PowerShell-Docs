@@ -1,6 +1,5 @@
 ---
-description: Describes how to interpret and format the output of remote commands. 
-keywords: powershell,cmdlet
+description: Describes how to interpret and format the output of remote commands.
 Locale: en-US
 ms.date: 12/01/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_output?view=powershell-7.1&WT.mc_id=ps-gethelp

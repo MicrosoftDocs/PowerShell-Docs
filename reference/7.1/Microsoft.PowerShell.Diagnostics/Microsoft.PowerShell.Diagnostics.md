@@ -1,7 +1,6 @@
 ---
 Download Help Link: https://aka.ms/powershell71-help
 Help Version: 7.1.0.0
-keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: ca046f10-ca64-4740-8ff9-2565dba61a4f
 Module Name: Microsoft.PowerShell.Diagnostics
@@ -15,6 +14,8 @@ title: Microsoft.PowerShell.Diagnostics
 
 This section contains the help topics for the cmdlets that are installed with the PowerShell
 Microsoft.PowerShell.Diagnostics module, which contains cmdlets that manage data from event logs.
+
+This module is only available on the Windows platform.
 
 ## Microsoft.PowerShell.Diagnostics Cmdlets
 

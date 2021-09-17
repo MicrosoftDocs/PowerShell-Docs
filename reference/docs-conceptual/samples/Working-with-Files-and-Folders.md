@@ -1,8 +1,7 @@
 ---
-ms.date:  06/05/2017
-keywords:  powershell,cmdlet
-title:  Working with Files and Folders
 description: This article discusses how to deal with specific file and folder manipulation tasks using PowerShell.
+ms.date: 06/05/2017
+title: Working with Files and Folders
 ---
 # Working with Files and Folders
 

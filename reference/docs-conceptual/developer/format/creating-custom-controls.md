@@ -1,8 +1,8 @@
 ---
+description: Creating Custom Controls
 ms.date: 09/13/2016
 ms.topic: reference
 title: Creating Custom Controls
-description: Creating Custom Controls
 ---
 # Creating Custom Controls
 

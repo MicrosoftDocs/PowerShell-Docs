@@ -2,8 +2,8 @@
 author: sdwheeler
 ms.author: sewhee
 ms.date: 06/29/2021
-ms.topic: include
 ms.prod: powershell
+ms.topic: include
 ---
 ## Product terminology used in the documentation
 

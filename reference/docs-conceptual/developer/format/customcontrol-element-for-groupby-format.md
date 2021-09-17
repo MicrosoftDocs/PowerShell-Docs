@@ -1,8 +1,8 @@
 ---
+description: CustomControl Element for GroupBy
 ms.date: 08/20/2021
 ms.topic: reference
 title: CustomControl Element for GroupBy
-description: CustomControl Element for GroupBy
 ---
 # CustomControl Element for GroupBy
 

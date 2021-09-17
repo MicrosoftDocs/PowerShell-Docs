@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 10/30/2019
@@ -38,6 +37,8 @@ Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>] [-Exc
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Get-Service` cmdlet gets objects that represent the services on a computer, including running
 and stopped services. By default, when `Get-Service` is run without parameters, all the local

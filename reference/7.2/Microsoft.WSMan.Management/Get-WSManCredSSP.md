@@ -20,6 +20,9 @@ Get-WSManCredSSP [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
+
 The **Get-WSManCredSSP** cmdlet gets the Credential Security Support Provider-related configuration of the client and the server.
 The output indicates whether Credential Security Support Provider (CredSSP) authentication is enabled or disabled.
 This cmdlet also displays configuration information for the **AllowFreshCredentials** policy of CredSSP.

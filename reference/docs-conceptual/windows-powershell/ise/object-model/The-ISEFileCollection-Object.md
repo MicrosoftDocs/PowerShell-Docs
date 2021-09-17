@@ -1,7 +1,7 @@
 ---
-ms.date:  12/31/2019
-title:  The ISEFileCollection Object
 description: The ISEFileCollection object is a collection of ISEFile objects.
+ms.date: 12/31/2019
+title: The ISEFileCollection Object
 ---
 
 # The ISEFileCollection Object

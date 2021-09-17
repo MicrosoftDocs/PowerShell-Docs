@@ -1,8 +1,7 @@
 ---
-ms.date:  06/05/2017
-keywords:  powershell,cmdlet
-title:  Sorting Objects
 description: The Sort-Object cmdlet allows you to sort a collection of objects on one or more properties.
+ms.date: 06/05/2017
+title: Sorting Objects
 ---
 # Sorting Objects
 

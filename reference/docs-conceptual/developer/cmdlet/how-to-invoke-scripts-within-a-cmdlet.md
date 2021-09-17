@@ -1,8 +1,8 @@
 ---
+description: How to Invoke Scripts Within a Cmdlet
 ms.date: 09/13/2016
 ms.topic: reference
 title: How to Invoke Scripts Within a Cmdlet
-description: How to Invoke Scripts Within a Cmdlet
 ---
 # How to Invoke Scripts Within a Cmdlet
 

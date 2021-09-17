@@ -1,7 +1,7 @@
 ---
-ms.date:  01/02/2020
-title:  How to Use Profiles in Windows PowerShell ISE
 description: This article explains how to use Profiles in Windows PowerShell ISE.
+ms.date: 01/02/2020
+title: How to Use Profiles in Windows PowerShell ISE
 ---
 
 # How to Use Profiles in Windows PowerShell ISE

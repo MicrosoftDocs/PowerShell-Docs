@@ -1,8 +1,8 @@
 ---
+description: PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry
 ms.date: 08/24/2021
 ms.topic: reference
 title: PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry
-description: PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry
 ---
 # PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry
 

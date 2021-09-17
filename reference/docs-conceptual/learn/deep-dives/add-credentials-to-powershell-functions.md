@@ -1,8 +1,8 @@
 ---
-title: Add Credential support to PowerShell functions
 description: How to add credential parameters to your PowerShell scripts, functions, and cmdlets.
-ms.date: 10/29/2020
 ms.custom: contributor-JoshDuffney
+ms.date: 10/29/2020
+title: Add Credential support to PowerShell functions
 ---
 # Add Credential support to PowerShell functions
 
@@ -335,8 +335,7 @@ $credSplat = @{
     TypeName = 'System.Management.Automation.PSCredential'
     ArgumentList = 'duffney',('P@ssw0rd' | ConvertTo-SecureString -AsPlainText -Force)
 }
-$Credential= New-Object @credSplat
-ConvertTo-SecureString -AsPlainText -Force)
+$Credential = New-Object @credSplat
 
 Get-AllSQLDatabases -SQLServer SQL01 -Credential $Credential
 ```

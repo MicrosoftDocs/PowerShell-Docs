@@ -1,7 +1,7 @@
 ---
-ms.date:  09/11/2018
-title:  Manual Package Download
 description: Describes how to manually download a package from the PowerShell Gallery.
+ms.date: 09/11/2018
+title: Manual Package Download
 ---
 
 # Manual Package Download

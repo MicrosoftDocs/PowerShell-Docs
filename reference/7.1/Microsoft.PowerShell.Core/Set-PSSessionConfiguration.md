@@ -1,6 +1,5 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/26/2019
@@ -50,6 +49,8 @@ Set-PSSessionConfiguration [-Name] <String> [-RunAsCredential <PSCredential>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Set-PSSessionConfiguration` cmdlet changes the properties of the session configurations on the
 local computer.

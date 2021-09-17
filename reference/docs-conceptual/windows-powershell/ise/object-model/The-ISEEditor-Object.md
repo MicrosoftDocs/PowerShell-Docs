@@ -1,7 +1,7 @@
 ---
-ms.date:  12/31/2019
-title:  The ISEEditor Object
 description: An ISEEditor object is an instance of the Microsoft.PowerShell.Host.ISE.ISEEditor class. The Console pane is an ISEEditor object.
+ms.date: 12/31/2019
+title: The ISEEditor Object
 ---
 
 # The ISEEditor Object

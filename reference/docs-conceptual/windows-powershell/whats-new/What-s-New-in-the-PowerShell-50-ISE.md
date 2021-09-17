@@ -1,8 +1,7 @@
 ---
-ms.date:  09/06/2019
-keywords:  powershell,cmdlet
-title:  What's New in the PowerShell 5.0 ISE
 description: This article explains the new and updated features that have been introduced in version 5.0 of the Windows PowerShell Integrated Scripting Environment (ISE).
+ms.date: 09/06/2019
+title: What's New in the PowerShell 5.0 ISE
 ---
 
 # What's New in the Windows PowerShell 5.0 ISE

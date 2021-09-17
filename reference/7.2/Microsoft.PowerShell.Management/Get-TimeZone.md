@@ -34,6 +34,8 @@ Get-TimeZone [-ListAvailable] [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The **Get-TimeZone** cmdlet gets the current time zone or a list of available time zones.
 
 ## EXAMPLES

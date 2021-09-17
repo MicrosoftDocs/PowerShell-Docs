@@ -1,8 +1,7 @@
 ---
-ms.date:  10/11/2019
-keywords:  dsc,powershell,configuration,setup
-title:  Desired State Configuration Overview for Decision Makers
 description: This document describes the business benefits of using PowerShell Desired State Configuration (DSC), and isn't a technical guide.
+ms.date: 10/11/2019
+title: Desired State Configuration Overview for Decision Makers
 ---
 
 # Desired State Configuration overview for decision makers

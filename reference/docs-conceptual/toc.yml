@@ -926,6 +926,8 @@ items:
                         href: developer/cmdlet/validatepattern-attribute-declaration.md
                       - name: ValidateRange Attribute Declaration
                         href: developer/cmdlet/validaterange-attribute-declaration.md
+                      - name: ValidateScript Attribute Declaration
+                        href: developer/cmdlet/validatescript-attribute-declaration.md
                       - name: ValidateSet Attribute Declaration
                         href: developer/cmdlet/validateset-attribute-declaration.md
                   - name: Cmdlet Aliases
@@ -992,6 +994,8 @@ items:
                   - name: How to Validate Parameter Input
                     href: developer/cmdlet/how-to-validate-parameter-input.md
                     items:
+                      - name: How to Validate an Argument using a script
+                        href: developer/cmdlet/how-to-validate-an-argument-using-script.md
                       - name: How to Validate an Argument Set
                         href: developer/cmdlet/how-to-validate-an-argument-set.md
                       - name: How to Validate an Argument Range
@@ -1083,8 +1087,6 @@ items:
                 href: developer/module/how-to-write-a-powershell-module-manifest.md
               - name: Installing a PowerShell Module
                 href: developer/module/installing-a-powershell-module.md
-              - name: Modifying the PSModulePath Installation Path
-                href: developer/module/modifying-the-psmodulepath-installation-path.md
               - name: Registering Cmdlets
                 items:
                   - name: Overview
@@ -1233,8 +1235,6 @@ items:
                     href: developer/format/creating-custom-controls.md
                   - name: Loading and Exporting Formatting Data
                     href: developer/format/loading-and-exporting-formatting-data.md
-                  - name: Defining Common Configuration Features
-                    href: developer/format/defining-common-configuration-features.md
                   - name: Defining Selection Sets
                     href: developer/format/defining-selection-sets.md
                   - name: Defining Conditions for Displaying Data

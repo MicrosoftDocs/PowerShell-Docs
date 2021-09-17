@@ -1,8 +1,8 @@
 ---
+description: TypeName Element for EntrySelectedBy for TableControl
 ms.date: 08/25/2021
 ms.topic: reference
 title: TypeName Element for EntrySelectedBy for TableControl
-description: TypeName Element for EntrySelectedBy for TableControl
 ---
 # TypeName Element for EntrySelectedBy for TableControl
 

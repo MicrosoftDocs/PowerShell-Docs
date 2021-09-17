@@ -1,8 +1,7 @@
 ---
-ms.date:  12/23/2019
-keywords:  powershell,cmdlet
-title:  Working with Printers
 description: This articles shows how to manage printers in Windows using WMI objects and COM interfaces.
+ms.date: 12/23/2019
+title: Working with Printers
 ---
 # Working with Printers in Windows
 

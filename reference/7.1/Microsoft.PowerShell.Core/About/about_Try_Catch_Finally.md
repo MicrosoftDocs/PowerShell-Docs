@@ -1,6 +1,5 @@
 ---
-description: Describes how to use the `Try`, `Catch`, and `Finally` blocks to handle terminating errors. 
-keywords: powershell,cmdlet
+description: Describes how to use the `Try`, `Catch`, and `Finally` blocks to handle terminating errors.
 Locale: en-US
 ms.date: 04/01/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.1&WT.mc_id=ps-gethelp

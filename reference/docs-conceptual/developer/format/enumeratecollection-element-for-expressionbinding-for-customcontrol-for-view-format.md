@@ -1,8 +1,8 @@
 ---
+description: EnumerateCollection Element for ExpressionBinding for CustomControl for View
 ms.date: 08/23/2021
 ms.topic: reference
 title: EnumerateCollection Element for ExpressionBinding for CustomControl for View
-description: EnumerateCollection Element for ExpressionBinding for CustomControl for View
 ---
 # EnumerateCollection Element for ExpressionBinding for CustomControl for View
 

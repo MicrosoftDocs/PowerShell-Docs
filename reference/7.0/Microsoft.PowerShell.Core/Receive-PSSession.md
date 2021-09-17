@@ -1,6 +1,5 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 12/11/2019
@@ -82,6 +81,8 @@ Receive-PSSession -Name <String> [-OutTarget <OutTarget>] [-JobName <String>] [-
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Receive-PSSession` cmdlet gets the results of commands running in PowerShell sessions
 (**PSSession**) that were disconnected. If the session is currently connected, `Receive-PSSession`

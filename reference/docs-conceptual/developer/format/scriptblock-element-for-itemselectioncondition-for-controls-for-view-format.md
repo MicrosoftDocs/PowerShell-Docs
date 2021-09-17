@@ -1,8 +1,8 @@
 ---
+description: ScriptBlock Element for ItemSelectionCondition for Controls for View
 ms.date: 08/24/2021
 ms.topic: reference
 title: ScriptBlock Element for ItemSelectionCondition for Controls for View
-description: ScriptBlock Element for ItemSelectionCondition for Controls for View
 ---
 # ScriptBlock Element for ItemSelectionCondition for Controls for View
 

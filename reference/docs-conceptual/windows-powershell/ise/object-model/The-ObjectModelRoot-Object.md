@@ -1,7 +1,7 @@
 ---
-ms.date:  08/25/2017
-title:  The ObjectModelRoot Object
 description: The $psISE object, which is the principal root object in PowerShell ISE is an instance of the Microsoft.PowerShell.Host.ISE.ObjectModelRoot class. This topic describes the properties of the ObjectModelRoot object.
+ms.date: 08/25/2017
+title: The ObjectModelRoot Object
 ---
 
 # The ObjectModelRoot Object
