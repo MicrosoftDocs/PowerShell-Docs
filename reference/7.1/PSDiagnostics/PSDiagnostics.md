@@ -16,6 +16,8 @@ title: PSDiagnostics Module
 The PowerShell Diagnostics Module contains a set of cmdlets that enables the use of ETW
 tracing in PowerShell on Windows.
 
+This module is only available on the Windows platform.
+
 ## PSDiagnostics Cmdlets
 
 ### [Disable-PSTrace](Disable-PSTrace.md)

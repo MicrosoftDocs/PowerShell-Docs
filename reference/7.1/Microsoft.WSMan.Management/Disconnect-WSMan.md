@@ -21,6 +21,9 @@ Disconnect-WSMan [[-ComputerName] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
+
 The **Disconnect-WSMan** cmdlet disconnects the client from the WinRM service on a remote computer.
 If you saved the WS-Management session in a variable, the session object remains in the variable, but the state of the WS-Management session is Closed.
 You can use this cmdlet within the context of the WSMan provider to disconnect the client from the WinRM service on a remote computer.

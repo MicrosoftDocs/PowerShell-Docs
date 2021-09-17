@@ -30,6 +30,8 @@ Get-Counter [-ListSet] <String[]> [-ComputerName <String[]>] [<CommonParameters>
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Get-Counter` cmdlet gets performance counter data directly from the performance monitoring
 instrumentation in the Windows family of operating systems. `Get-Counter` gets performance data from
 a local computer or remote computers.

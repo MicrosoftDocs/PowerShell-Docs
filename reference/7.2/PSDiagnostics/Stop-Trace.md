@@ -20,6 +20,8 @@ Stop-Trace [-SessionName] <Object> [-ETS] [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 This cmdlet stops a Windows Event Trace logging session.
 
 This cmdlet is used by the following cmdlets:

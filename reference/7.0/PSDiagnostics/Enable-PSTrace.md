@@ -20,6 +20,8 @@ Enable-PSTrace [-Force] [-AnalyticOnly] [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 This cmdlet enables the Operational and Analytic event logs of the Microsoft-Windows-PowerShell
 event provider.
 

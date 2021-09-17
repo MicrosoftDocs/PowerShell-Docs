@@ -38,6 +38,8 @@ Suspend-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Excl
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Suspend-Service` cmdlet sends a suspend message to the Windows Service Controller for each of
 the specified services. While suspended, the service is still running, but its action is stopped
 until resumed, such as by usingthe `Resume-Service` cmdlet. You can specify the services by their

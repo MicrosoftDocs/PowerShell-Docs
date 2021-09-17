@@ -34,6 +34,8 @@ Get-CimAssociatedInstance [[-Association] <String>] [-ResultClassName <String>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Get-CimAssociatedInstance` cmdlet retrieves the CIM instances connected to a specific CIM
 instance, called the source instance, by an association.
 
@@ -332,4 +334,3 @@ This cmdlet returns an object.
 [Get-CimClass](get-cimclass.md)
 
 [Get-CimInstance](get-ciminstance.md)
-

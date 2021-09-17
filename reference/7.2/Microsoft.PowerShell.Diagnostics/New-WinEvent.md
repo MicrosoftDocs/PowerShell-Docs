@@ -21,6 +21,8 @@ New-WinEvent [-ProviderName] <String> [-Id] <Int32> [-Version <Byte>] [[-Payload
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The **New-WinEvent** cmdlet creates an Event Tracing for Windows (ETW) event for an event provider.
 You can use this cmdlet to add events to ETW channels from PowerShell.
 

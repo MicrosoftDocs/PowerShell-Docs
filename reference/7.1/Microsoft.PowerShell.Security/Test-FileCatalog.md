@@ -25,6 +25,8 @@ Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <Strin
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 `Test-FileCatalog` validates the authenticity of files by comparing the file hashes of a catalog
 file (.cat) with the hashes of actual files on disk. If it detects any mismatches, it returns the
 status as ValidationFailed. Users can retrieve all this information by using the -Detailed

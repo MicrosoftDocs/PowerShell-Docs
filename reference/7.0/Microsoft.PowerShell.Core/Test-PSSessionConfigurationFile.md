@@ -21,6 +21,8 @@ Test-PSSessionConfigurationFile [-Path] <String> [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 This cmdlet verifies that a session configuration file contains valid keys and the values are of the
 correct type. For enumerated values, the cmdlet verifies that the specified values are valid.
 

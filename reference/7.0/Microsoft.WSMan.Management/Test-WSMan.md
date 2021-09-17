@@ -23,6 +23,8 @@ Test-WSMan [[-ComputerName] <String>] [-Authentication <AuthenticationMechanism>
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The **Test-WSMan** cmdlet submits an identification request that determines whether the WinRM service is running on a local or remote computer.
 If the tested computer is running the service, the cmdlet displays the WS-Management identity schema, the protocol version, the product vendor, and the product version of the tested service.
 

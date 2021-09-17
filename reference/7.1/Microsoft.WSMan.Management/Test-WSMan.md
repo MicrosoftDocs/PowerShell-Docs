@@ -23,6 +23,8 @@ Test-WSMan [[-ComputerName] <String>] [-Authentication <AuthenticationMechanism>
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The **Test-WSMan** cmdlet submits an identification request that determines whether the WinRM service is running on a local or remote computer.
 If the tested computer is running the service, the cmdlet displays the WS-Management identity schema, the protocol version, the product vendor, and the product version of the tested service.
 
@@ -287,8 +289,6 @@ This cmdlet does not generate any output object.
 
 * By default, the **Test-WSMan** cmdlet queries the WinRM service without using authentication, and it returns no information that is specific to the operating-system version. Instead, it displays null values for the operating system version and service pack level (OS: 0.0.0 SP: 0.0).
 
-*
-
 ## RELATED LINKS
 
 [Connect-WSMan](Connect-WSMan.md)
@@ -314,4 +314,3 @@ This cmdlet does not generate any output object.
 [Set-WSManInstance](Set-WSManInstance.md)
 
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
-

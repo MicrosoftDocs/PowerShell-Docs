@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/09/2017
@@ -47,6 +46,8 @@ Remove-CimSession -Name <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 The `Remove-CimSession` cmdlet removes one or more CIM session objects from the local PowerShell
 session.

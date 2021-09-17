@@ -38,6 +38,8 @@ Restart-Service [-Force] [-PassThru] -DisplayName <String[]> [-Include <String[]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Restart-Service` cmdlet sends a stop message and then a start message to the Windows Service
 Controller for a specified service. If a service was already stopped, it is started without
 notifying you of an error. You can specify the services by their service names or display names, or

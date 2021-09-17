@@ -95,6 +95,8 @@ Invoke-CimMethod -Query <String> [-QueryDialect <String>] -CimSession <CimSessio
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Invoke-CimMethod` cmdlet invokes a method of a CIM class or CIM instance using the name-value
 pairs specified by the **Arguments** parameter.
 

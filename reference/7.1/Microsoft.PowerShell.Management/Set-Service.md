@@ -34,6 +34,8 @@ Set-Service [-InputObject] <ServiceController> [-DisplayName <String>] [-Credent
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Set-Service` cmdlet changes the properties of a service such as the **Status**,
 **Description**, **DisplayName**, and **StartupType**. `Set-Service` can start, stop, suspend, or
 pause a service. To identify a service, enter its service name or submit a service object. Or, send

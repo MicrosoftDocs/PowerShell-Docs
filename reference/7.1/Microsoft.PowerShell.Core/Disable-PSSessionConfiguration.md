@@ -22,6 +22,8 @@ Disable-PSSessionConfiguration [[-Name] <String[]>] [-Force] [-NoServiceRestart]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Disable-PSSessionConfiguration` cmdlet disables session configurations on the local computer,
 which prevents all users from using the session configurations to create a user-managed sessions
 (**PSSessions**) on the local computer. This is an advanced cmdlet that is designed to be used by

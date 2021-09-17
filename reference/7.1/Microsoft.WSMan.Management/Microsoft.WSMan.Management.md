@@ -17,6 +17,8 @@ This section contains the help topics for the cmdlets that are installed with Po
 Microsoft.WSMan.Management module. The WSMan module contains cmdlets and providers that manage the
 WS-Management protocol in PowerShell.
 
+This module is only available on the Windows platform.
+
 ## Microsoft.WSMan.Management Cmdlets
 
 ### [Connect-WSMan](Connect-WSMan.md)

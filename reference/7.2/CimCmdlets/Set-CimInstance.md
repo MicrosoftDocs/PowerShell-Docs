@@ -48,6 +48,8 @@ Set-CimInstance [-ComputerName <String[]>] [-Namespace <String>] [-OperationTime
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 This cmdlet modifies a CIM instance on a CIM server.
 
 If the **InputObject** parameter is not specified, the cmdlet works in one of the following ways:

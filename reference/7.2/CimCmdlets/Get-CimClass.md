@@ -33,6 +33,8 @@ Get-CimClass [[-ClassName] <String>] [[-Namespace] <String>] [-OperationTimeoutS
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Get-CimClass` cmdlet retrieves a list of CIM classes in a specific namespace. If there is no
 class name supplied, then the cmdlet returns all the classes in the namespace. Unlike a CIM
 instance, CIM classes do not contain the CIM session or computer name from which they are retrieved.
@@ -290,4 +292,3 @@ This cmdlet returns a CIM class object.
 ## RELATED LINKS
 
 [New-CimSession](New-CimSession.md)
-

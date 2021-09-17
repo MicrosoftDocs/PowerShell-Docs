@@ -21,6 +21,8 @@ Import-BinaryMiLog [-Path] <String> [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 Use this cmdlet to re-create saved objects based on the contents of an export file created by
 `Export-BinaryMILog`. This cmdlet is similar to `Import-Clixml`, except that `Export-BinaryMILog`
 stores the resulting object in a binary encoded file.

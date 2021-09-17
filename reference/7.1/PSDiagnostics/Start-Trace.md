@@ -23,6 +23,9 @@ Start-Trace [-SessionName] <String> [[-OutputFilePath] <String>] [[-ProviderFile
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
+
 This cmdlet starts a Windows Event Trace logging session.
 
 This cmdlet is used by the following cmdlets:

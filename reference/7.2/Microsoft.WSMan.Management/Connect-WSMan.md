@@ -32,6 +32,9 @@ Connect-WSMan [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-Port <Int32>] [-
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
+
 The **Connect-WSMan** cmdlet connects to the WinRM service on a remote computer, and it establishes a persistent connection to the remote computer.
 You can use this cmdlet in the context of the WSMan provider to connect to the WinRM service on a remote computer.
 However, you can also use this cmdlet to connect to the WinRM service on a remote computer before you change to the WSMan provider.

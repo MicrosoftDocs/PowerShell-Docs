@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/21/2021
@@ -48,6 +47,8 @@ Set-CimInstance [-ComputerName <String[]>] [-Namespace <String>] [-OperationTime
 ```
 
 ## DESCRIPTION
+
+> **This cmdlet is only available on the Windows platform.**
 
 This cmdlet modifies a CIM instance on a CIM server.
 

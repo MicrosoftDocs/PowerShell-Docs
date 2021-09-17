@@ -22,6 +22,8 @@ Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCrede
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Rename-Computer` cmdlet renames the local computer or a remote computer.
 It renames one computer in each command.
 

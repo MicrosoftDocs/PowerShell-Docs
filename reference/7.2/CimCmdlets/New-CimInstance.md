@@ -63,6 +63,8 @@ New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTi
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `New-CimInstance` cmdlet creates an instance of a CIM class based on the class definition on
 either the local computer or a remote computer. By default, the `New-CimInstance` cmdlet creates an
 instance on the local computer.

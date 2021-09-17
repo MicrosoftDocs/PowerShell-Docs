@@ -20,6 +20,8 @@ Set-LogProperties [-LogDetails] <LogDetails> [-Force] [<CommonParameters>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 This cmdlet changes the configuration settings of a Windows event log. This cmdlet is used by the
 `Enable-PSTrace` and `Disable-PSTrace` cmdlets.
 

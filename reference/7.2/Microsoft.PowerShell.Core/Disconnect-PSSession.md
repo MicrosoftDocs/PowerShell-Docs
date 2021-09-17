@@ -46,6 +46,8 @@ Disconnect-PSSession [-IdleTimeoutSec <Int32>] [-OutputBufferingMode <OutputBuff
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Disconnect-PSSession` cmdlet disconnects a PowerShell session ("PSSession"), such as
 one started by using the `New-PSSession` cmdlet, from the current session. As a result, the PSSession
 is in a disconnected state. You can connect to the disconnected PSSession from the current session
