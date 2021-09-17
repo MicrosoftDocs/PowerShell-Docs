@@ -335,8 +335,7 @@ $credSplat = @{
     TypeName = 'System.Management.Automation.PSCredential'
     ArgumentList = 'duffney',('P@ssw0rd' | ConvertTo-SecureString -AsPlainText -Force)
 }
-$Credential= New-Object @credSplat
-ConvertTo-SecureString -AsPlainText -Force)
+$Credential = New-Object @credSplat
 
 Get-AllSQLDatabases -SQLServer SQL01 -Credential $Credential
 ```
