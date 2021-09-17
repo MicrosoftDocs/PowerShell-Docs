@@ -1,6 +1,5 @@
 ---
-description: Describes the full and relative path name formats in  PowerShell. 
-keywords: powershell,cmdlet
+description: Describes the full and relative path name formats in  PowerShell.
 Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_path_syntax?view=powershell-7.1&WT.mc_id=ps-gethelp

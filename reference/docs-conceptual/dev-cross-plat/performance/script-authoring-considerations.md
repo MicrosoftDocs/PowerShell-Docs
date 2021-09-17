@@ -1,7 +1,7 @@
 ---
-title: PowerShell scripting performance considerations
 description: Scripting for Performance in PowerShell
 ms.date: 10/16/2017
+title: PowerShell scripting performance considerations
 ---
 
 # PowerShell scripting performance considerations

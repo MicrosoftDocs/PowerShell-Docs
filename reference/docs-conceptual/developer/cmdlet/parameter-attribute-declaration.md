@@ -1,8 +1,8 @@
 ---
+description: Parameter Attribute Declaration
 ms.date: 09/13/2016
 ms.topic: reference
 title: Parameter Attribute Declaration
-description: Parameter Attribute Declaration
 ---
 # Parameter Attribute Declaration
 

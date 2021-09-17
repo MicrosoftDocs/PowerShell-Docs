@@ -1,8 +1,8 @@
 ---
+description: PropertyName Element for ListItem for ListControl
 ms.date: 08/24/2021
 ms.topic: reference
 title: PropertyName Element for ListItem for ListControl
-description: PropertyName Element for ListItem for ListControl
 ---
 # PropertyName Element for ListItem for ListControl
 

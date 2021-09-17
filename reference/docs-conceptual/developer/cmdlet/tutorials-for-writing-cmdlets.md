@@ -1,8 +1,8 @@
 ---
+description: Tutorials for Writing Cmdlets
 ms.date: 09/13/2016
 ms.topic: reference
 title: Tutorials for Writing Cmdlets
-description: Tutorials for Writing Cmdlets
 ---
 # Tutorials for Writing Cmdlets
 

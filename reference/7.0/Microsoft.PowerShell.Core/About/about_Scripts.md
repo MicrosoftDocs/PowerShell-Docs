@@ -1,6 +1,5 @@
 ---
-description: Describes how to run and write scripts in PowerShell. 
-keywords: powershell,cmdlet
+description: Describes how to run and write scripts in PowerShell.
 Locale: en-US
 ms.date: 10/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7&WT.mc_id=ps-gethelp

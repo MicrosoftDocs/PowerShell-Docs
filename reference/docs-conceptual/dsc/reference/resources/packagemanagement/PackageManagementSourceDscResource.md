@@ -1,8 +1,8 @@
 ---
+description: DSC PackageManagementSource Resource
 ms.date: 07/15/2020
 ms.topic: reference
 title: DSC PackageManagementSource Resource
-description: DSC PackageManagementSource Resource
 ---
 # DSC PackageManagementSource Resource
 

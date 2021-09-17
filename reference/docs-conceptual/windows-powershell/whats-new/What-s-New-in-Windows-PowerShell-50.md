@@ -1,8 +1,7 @@
 ---
-ms.date:  06/05/2017
-keywords:  powershell,cmdlet
-title:  What's New in Windows PowerShell 5.0
 description: These release notes describe the new features and changes in Windows PowerShell 5.x.
+ms.date: 06/05/2017
+title: What's New in Windows PowerShell 5.0
 ---
 
 # What's New in Windows PowerShell 5.0

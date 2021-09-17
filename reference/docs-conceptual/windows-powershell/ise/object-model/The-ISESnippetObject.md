@@ -1,7 +1,7 @@
 ---
-ms.date:  06/05/2017
-title:  The ISESnippetObject
 description: An ISESnippet object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class.
+ms.date: 06/05/2017
+title: The ISESnippetObject
 ---
 
 # The ISESnippetObject

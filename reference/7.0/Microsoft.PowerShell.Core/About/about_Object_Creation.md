@@ -1,6 +1,5 @@
 ---
-description:  Explains how to create objects in PowerShell. 
-keywords: powershell,cmdlet
+description: Explains how to create objects in PowerShell.
 Locale: en-US
 ms.date: 09/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_object_creation?view=powershell-7&WT.mc_id=ps-gethelp

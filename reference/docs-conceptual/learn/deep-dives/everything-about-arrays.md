@@ -1,8 +1,8 @@
 ---
-title: Everything you wanted to know about arrays
 description: Arrays are a fundamental language feature of most programming languages.
-ms.date: 07/19/2021
 ms.custom: contributor-KevinMarquette
+ms.date: 07/19/2021
+title: Everything you wanted to know about arrays
 ---
 # Everything you wanted to know about arrays
 

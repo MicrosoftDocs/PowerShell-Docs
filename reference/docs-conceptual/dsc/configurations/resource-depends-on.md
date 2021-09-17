@@ -1,8 +1,7 @@
 ---
-ms.date:  12/12/2018
-keywords:  dsc,powershell,configuration,setup
-title:  Resource dependencies using DependsOn
 description: As your Configuration grows larger and more complex, you can use the `DependsOn` key to change the applied order of your resources by specifying that a resource depends on another resource.
+ms.date: 12/12/2018
+title: Resource dependencies using DependsOn
 ---
 
 # Resource dependencies using DependsOn

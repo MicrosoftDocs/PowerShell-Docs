@@ -1,8 +1,8 @@
 ---
+description: Windows PowerShell API Samples
 ms.date: 09/13/2016
 ms.topic: reference
 title: Windows PowerShell API Samples
-description: Windows PowerShell API Samples
 ---
 # Windows PowerShell API Samples
 

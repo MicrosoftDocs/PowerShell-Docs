@@ -1,8 +1,8 @@
 ---
+description: Name Element for SelectionSet
 ms.date: 08/23/2021
 ms.topic: reference
 title: Name Element for SelectionSet
-description: Name Element for SelectionSet
 ---
 # Name Element for SelectionSet
 

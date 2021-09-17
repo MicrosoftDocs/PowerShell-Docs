@@ -1,8 +1,8 @@
 ---
+description: Provider types
 ms.date: 08/21/2019
 ms.topic: reference
 title: Provider types
-description: Provider types
 ---
 
 # Provider types

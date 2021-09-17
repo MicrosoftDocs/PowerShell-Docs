@@ -1,8 +1,8 @@
 ---
-title: How to file a PowerShell-Docs issue
 description: This article explains how to give feedback about the PowerShell documentation.
 ms.date: 12/09/2020
 ms.topic: conceptual
+title: How to file a PowerShell-Docs issue
 ---
 # How to file a PowerShell-Docs issue
 

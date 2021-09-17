@@ -1,7 +1,7 @@
 ---
-ms.date: 08/13/2021
-title:  Compatibility Aliases
 description: PowerShell has several aliases that allow UNIX and cmd.exe users to use familiar commands.
+ms.date: 08/13/2021
+title: Compatibility Aliases
 ---
 # Compatibility Aliases
 

@@ -2,8 +2,8 @@
 author: sdwheeler
 ms.author: sewhee
 ms.date: 11/18/2020
-ms.topic: include
 ms.prod: powershell
+ms.topic: include
 ---
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)

@@ -1,8 +1,7 @@
 ---
-ms.date:  06/05/2017
-keywords:  powershell,cmdlet
-title:  Creating a Graphical Date Picker
 description: This article shows how to create a custom calendar-style control by using the .NET Framework form-building features in Windows PowerShell.
+ms.date: 06/05/2017
+title: Creating a Graphical Date Picker
 ---
 # Creating a Graphical Date Picker
 

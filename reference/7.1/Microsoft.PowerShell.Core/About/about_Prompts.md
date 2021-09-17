@@ -1,6 +1,5 @@
 ---
-description: Describes the `Prompt` function and demonstrates how to create a custom `Prompt` function. 
-keywords: powershell,cmdlet
+description: Describes the `Prompt` function and demonstrates how to create a custom `Prompt` function.
 Locale: en-US
 ms.date: 04/15/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-7.1&WT.mc_id=ps-gethelp

@@ -1,8 +1,7 @@
 ---
-ms.date:  06/05/2017
-keywords:  powershell,cmdlet
-title:  Creating a Custom Input Box
 description: This article shows how to create a custom input box by using the .NET Framework form-building features in Windows PowerShell.
+ms.date: 06/05/2017
+title: Creating a Custom Input Box
 ---
 # Creating a Custom Input Box
 

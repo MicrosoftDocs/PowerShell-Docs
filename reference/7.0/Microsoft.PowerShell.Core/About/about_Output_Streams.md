@@ -1,6 +1,5 @@
 ---
 description: Explains the availability and purpose of output streams in PowerShell.
-keywords: PowerShell,cmdlet
 Locale: en-US
 ms.date: 10/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_output_streams?view=powershell-7&WT.mc_id=ps-gethelp

@@ -1,8 +1,8 @@
 ---
+description: Extended Type System member sets
 ms.date: 07/09/2020
 ms.topic: reference
 title: Extended Type System member sets
-description: Extended Type System member sets
 ---
 # ETS member sets
 

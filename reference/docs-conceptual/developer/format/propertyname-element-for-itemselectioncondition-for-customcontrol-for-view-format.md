@@ -1,8 +1,8 @@
 ---
+description: PropertyName Element for ItemSelectionCondition for CustomControl for View
 ms.date: 08/24/2021
 ms.topic: reference
 title: PropertyName Element for ItemSelectionCondition for CustomControl for View
-description: PropertyName Element for ItemSelectionCondition for CustomControl for View
 ---
 # PropertyName Element for ItemSelectionCondition for CustomControl for View
 

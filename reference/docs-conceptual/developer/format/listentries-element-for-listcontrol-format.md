@@ -1,8 +1,8 @@
 ---
+description: ListEntries Element
 ms.date: 08/23/2021
 ms.topic: reference
 title: ListEntries Element
-description: ListEntries Element
 ---
 # ListEntries Element
 

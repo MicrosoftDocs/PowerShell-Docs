@@ -1,7 +1,7 @@
 ---
-ms.date:  06/09/2017
-title:  Package manifest values that impact the PowerShell Gallery UI
 description: This article documents the values in the module manifest that are used by the PowerShell Gallery.
+ms.date: 06/09/2017
+title: Package manifest values that impact the PowerShell Gallery UI
 ---
 # Package manifest values that impact the PowerShell Gallery UI
 

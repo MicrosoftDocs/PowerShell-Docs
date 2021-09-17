@@ -1,6 +1,5 @@
 ---
-description: Describes how to use object properties in PowerShell. 
-keywords: powershell,cmdlet
+description: Describes how to use object properties in PowerShell.
 Locale: en-US
 ms.date: 12/01/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_properties?view=powershell-5.1&WT.mc_id=ps-gethelp

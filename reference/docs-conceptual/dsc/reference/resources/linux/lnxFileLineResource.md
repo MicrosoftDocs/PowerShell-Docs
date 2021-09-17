@@ -1,8 +1,8 @@
 ---
+description: DSC for Linux nxFileLine Resource
 ms.date: 07/17/2020
 ms.topic: reference
 title: DSC for Linux nxFileLine Resource
-description: DSC for Linux nxFileLine Resource
 ---
 # DSC for Linux nxFileLine Resource
 

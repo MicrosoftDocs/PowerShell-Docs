@@ -1,8 +1,8 @@
 ---
+description: TypeName Element for ViewSelectedBy
 ms.date: 08/25/2021
 ms.topic: reference
 title: TypeName Element for ViewSelectedBy
-description: TypeName Element for ViewSelectedBy
 ---
 # TypeName Element for ViewSelectedBy
 

@@ -1,8 +1,8 @@
 ---
+description: Writing Help for PowerShell Scripts and Functions
 ms.date: 09/13/2016
 ms.topic: reference
 title: Writing Help for PowerShell Scripts and Functions
-description: Writing Help for PowerShell Scripts and Functions
 ---
 # Writing Help for PowerShell Scripts and Functions
 

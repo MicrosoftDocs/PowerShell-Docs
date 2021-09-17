@@ -1,6 +1,5 @@
 ---
-description:  Describes the features and system requirements of Windows PowerShell Integrated Scripting Environment (ISE).
-keywords: powershell,cmdlet
+description: Describes the features and system requirements of Windows PowerShell Integrated Scripting Environment (ISE).
 Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise?view=powershell-5.1&WT.mc_id=ps-gethelp

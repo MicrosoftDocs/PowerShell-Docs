@@ -1,8 +1,8 @@
 ---
+description: WrapTables Element
 ms.date: 08/25/2021
 ms.topic: reference
 title: WrapTables Element
-description: WrapTables Element
 ---
 # WrapTables Element
 

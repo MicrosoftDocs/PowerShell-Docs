@@ -1,6 +1,5 @@
 ---
-description:  Registry 
-keywords: powershell,cmdlet
+description: Registry
 Locale: en-US
 ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_registry_provider?view=powershell-5.1&WT.mc_id=ps-gethelp

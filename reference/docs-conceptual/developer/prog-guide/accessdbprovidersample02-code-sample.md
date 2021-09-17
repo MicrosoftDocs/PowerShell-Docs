@@ -1,8 +1,8 @@
 ---
+description: AccessDbProviderSample02 Code Sample
 ms.date: 09/13/2016
 ms.topic: reference
 title: AccessDbProviderSample02 Code Sample
-description: AccessDbProviderSample02 Code Sample
 ---
 # AccessDbProviderSample02 Code Sample
 

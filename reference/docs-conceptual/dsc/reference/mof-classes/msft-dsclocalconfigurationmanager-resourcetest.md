@@ -1,8 +1,8 @@
 ---
+description: ResourceTest method
 ms.date: 07/17/2020
 ms.topic: reference
 title: ResourceTest method
-description: ResourceTest method
 ---
 # ResourceTest method
 

@@ -1,9 +1,9 @@
 ---
-title: Discovering objects, properties, and methods
 description: You don't have to be a developer to understand and use objects, properties, and methods.
-ms.date: 06/02/2020
 ms.custom: Contributor-mikefrobbins
+ms.date: 06/02/2020
 ms.reviewer: mirobb
+title: Discovering objects, properties, and methods
 ---
 # Chapter 3 - Discovering objects, properties, and methods
 

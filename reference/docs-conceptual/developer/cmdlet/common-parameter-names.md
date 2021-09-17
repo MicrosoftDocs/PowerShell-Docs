@@ -1,8 +1,8 @@
 ---
+description: Common Parameter Names
 ms.date: 09/13/2016
 ms.topic: reference
 title: Common Parameter Names
-description: Common Parameter Names
 ---
 # Common Parameter Names
 

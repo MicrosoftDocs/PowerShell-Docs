@@ -1,8 +1,8 @@
 ---
+description: SelectionCondition Element for EntrySelectedBy for GroupBy
 ms.date: 08/25/2021
 ms.topic: reference
 title: SelectionCondition Element for EntrySelectedBy for GroupBy
-description: SelectionCondition Element for EntrySelectedBy for GroupBy
 ---
 # SelectionCondition Element for EntrySelectedBy for GroupBy
 

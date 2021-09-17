@@ -1,6 +1,5 @@
 ---
 external help file: PSDesiredStateConfiguration-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSDesiredStateConfiguration
 ms.date: 07/23/2020

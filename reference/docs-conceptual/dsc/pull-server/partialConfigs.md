@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  PowerShell Desired State Configuration partial configurations
 description: DSC allows configurations to be delivered in fragments and from multiple sources. The LCM on the target node puts the fragments together before applying them as a single configuration.
+ms.date: 06/12/2017
+title: PowerShell Desired State Configuration partial configurations
 ---
 # PowerShell Desired State Configuration partial configurations
 

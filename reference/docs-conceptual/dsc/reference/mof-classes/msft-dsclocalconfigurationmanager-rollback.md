@@ -1,8 +1,8 @@
 ---
+description: RollBack method
 ms.date: 07/17/2020
 ms.topic: reference
 title: RollBack method
-description: RollBack method
 ---
 # RollBack method
 

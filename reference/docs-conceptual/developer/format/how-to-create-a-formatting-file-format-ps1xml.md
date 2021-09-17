@@ -1,8 +1,8 @@
 ---
+description: How to Create a Formatting File (.format.ps1xml)
 ms.date: 08/23/2021
 ms.topic: reference
 title: How to Create a Formatting File (.format.ps1xml)
-description: How to Create a Formatting File (.format.ps1xml)
 ---
 # How to Create a Formatting File (.format.ps1xml)
 

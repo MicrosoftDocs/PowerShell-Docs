@@ -1,8 +1,8 @@
 ---
+description: How to Create and Upload CAB Files
 ms.date: 09/13/2016
 ms.topic: reference
 title: How to Create and Upload CAB Files
-description: How to Create and Upload CAB Files
 ---
 # How to Create and Upload CAB Files
 

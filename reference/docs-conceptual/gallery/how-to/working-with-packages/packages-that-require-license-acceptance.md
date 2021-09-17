@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title:  Require license acceptance
 description: How to view the package license on the item details page
+ms.date: 06/12/2017
+title: Require license acceptance
 ---
 # Require license acceptance
 

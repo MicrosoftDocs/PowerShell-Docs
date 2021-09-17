@@ -1,8 +1,8 @@
 ---
+description: Creating a Basic Windows PowerShell Provider
 ms.date: 09/13/2016
 ms.topic: reference
 title: Creating a Basic Windows PowerShell Provider
-description: Creating a Basic Windows PowerShell Provider
 ---
 # Creating a Basic Windows PowerShell Provider
 

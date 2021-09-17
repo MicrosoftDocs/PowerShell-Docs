@@ -1,8 +1,8 @@
 ---
+description: Importing a PowerShell Module
 ms.date: 08/23/2021
 ms.topic: reference
 title: Importing a PowerShell Module
-description: Importing a PowerShell Module
 ---
 # Importing a PowerShell Module
 

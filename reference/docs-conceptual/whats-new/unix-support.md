@@ -1,7 +1,7 @@
 ---
+description: This article summarizes the differences between PowerShell on Windows and PowerShell on non-Windows platforms.
 ms.date: 02/03/2020
 title: PowerShell differences on non-Windows platforms
-description: This article summarizes the differences between PowerShell on Windows and PowerShell on non-Windows platforms.
 ---
 # PowerShell differences on non-Windows platforms
 

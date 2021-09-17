@@ -1,8 +1,8 @@
 ---
+description: Extending Output Objects
 ms.date: 09/13/2016
 ms.topic: reference
 title: Extending Output Objects
-description: Extending Output Objects
 ---
 # Extending Output Objects
 

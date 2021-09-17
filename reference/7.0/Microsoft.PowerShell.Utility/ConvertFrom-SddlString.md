@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Utility-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017

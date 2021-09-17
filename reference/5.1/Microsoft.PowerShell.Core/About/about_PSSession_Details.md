@@ -1,6 +1,5 @@
 ---
-description:  Provides detailed information about Windows PowerShell sessions and the role they play in remote commands. 
-keywords: powershell,cmdlet
+description: Provides detailed information about Windows PowerShell sessions and the role they play in remote commands.
 Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssession_details?view=powershell-5.1&WT.mc_id=ps-gethelp

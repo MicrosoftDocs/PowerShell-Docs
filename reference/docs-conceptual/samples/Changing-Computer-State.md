@@ -1,8 +1,7 @@
 ---
-ms.date:  12/23/2019
-keywords:  powershell,cmdlet
-title:  Changing Computer State
 description: This example shows how you can use external commands from PowerShell to manage the configuration of a computer.
+ms.date: 12/23/2019
+title: Changing Computer State
 ---
 # Changing Computer State
 

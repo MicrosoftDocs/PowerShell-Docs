@@ -1,8 +1,8 @@
 ---
+description: DSC ProcessSet Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC ProcessSet Resource
-description: DSC ProcessSet Resource
 ---
 # DSC ProcessSet Resource
 

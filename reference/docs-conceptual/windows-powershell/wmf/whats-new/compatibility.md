@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title: Product Compatibility Status
 description: This article lists software that is compatible with WMF 5.1.
+ms.date: 06/12/2017
+title: Product Compatibility Status
 ---
 
 # Product Compatibility Status

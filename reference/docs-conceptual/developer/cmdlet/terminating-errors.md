@@ -1,8 +1,8 @@
 ---
+description: Terminating Errors
 ms.date: 09/13/2016
 ms.topic: reference
 title: Terminating Errors
-description: Terminating Errors
 ---
 # Terminating Errors
 

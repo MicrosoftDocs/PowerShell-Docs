@@ -1,8 +1,8 @@
 ---
+description: Types Element for SelectionSet
 ms.date: 08/25/2021
 ms.topic: reference
 title: Types Element for SelectionSet
-description: Types Element for SelectionSet
 ---
 # Types Element for SelectionSet
 

@@ -1,7 +1,6 @@
 ---
 Download Help Link: https://aka.ms/powershell71-help
 Help Version: 7.1.0.0
-keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: c61d6278-02a3-4618-ae37-a524d40a7f44
 Module Name: PSDiagnostics

@@ -1,8 +1,8 @@
 ---
+description: ResourceSet method
 ms.date: 07/17/2020
 ms.topic: reference
 title: ResourceSet method
-description: ResourceSet method
 ---
 # ResourceSet method
 

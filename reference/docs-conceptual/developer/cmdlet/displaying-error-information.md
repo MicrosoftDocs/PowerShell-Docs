@@ -1,8 +1,8 @@
 ---
+description: Displaying Error Information
 ms.date: 09/13/2016
 ms.topic: reference
 title: Displaying Error Information
-description: Displaying Error Information
 ---
 # Displaying Error Information
 

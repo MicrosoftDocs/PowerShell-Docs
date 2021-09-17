@@ -1,8 +1,8 @@
 ---
+description: TableControl Element
 ms.date: 08/25/2021
 ms.topic: reference
 title: TableControl Element
-description: TableControl Element
 ---
 # TableControl Element
 

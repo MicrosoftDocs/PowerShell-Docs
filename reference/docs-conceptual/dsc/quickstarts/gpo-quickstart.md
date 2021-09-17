@@ -1,8 +1,7 @@
 ---
-ms.date:  07/09/2019
-keywords:  dsc,gpo,powershell,configuration,setup
-title:  Quickstart - Convert Group Policy into DSC
 description: This Quickstart shows the steps requires to convert a Windows Group Policy to a DSC configuration.
+ms.date: 07/09/2019
+title: Quickstart - Convert Group Policy into DSC
 ---
 # Quickstart: Convert Group Policy into DSC
 

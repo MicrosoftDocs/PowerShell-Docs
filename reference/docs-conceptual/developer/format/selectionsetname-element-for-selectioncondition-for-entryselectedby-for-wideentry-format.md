@@ -1,8 +1,8 @@
 ---
+description: SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry
 ms.date: 08/25/2021
 ms.topic: reference
 title: SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry
-description: SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry
 ---
 # SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry
 

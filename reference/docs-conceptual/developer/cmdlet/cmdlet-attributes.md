@@ -1,8 +1,8 @@
 ---
+description: Cmdlet Attributes
 ms.date: 09/16/2021
 ms.topic: reference
 title: Cmdlet Attributes
-description: Cmdlet Attributes
 ---
 # Cmdlet Attributes
 

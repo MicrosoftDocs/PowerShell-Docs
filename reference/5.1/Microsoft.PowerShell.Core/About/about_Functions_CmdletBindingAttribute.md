@@ -1,6 +1,5 @@
 ---
-description: Describes the attribute that makes a function work like a compiled cmdlet. 
-keywords: powershell,cmdlet
+description: Describes the attribute that makes a function work like a compiled cmdlet.
 Locale: en-US
 ms.date: 06/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute?view=powershell-5.1&WT.mc_id=ps-gethelp

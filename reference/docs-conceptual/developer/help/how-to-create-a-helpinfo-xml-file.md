@@ -1,8 +1,8 @@
 ---
+description: How to Create a HelpInfo XML File
 ms.date: 09/13/2016
 ms.topic: reference
 title: How to Create a HelpInfo XML File
-description: How to Create a HelpInfo XML File
 ---
 # How to Create a HelpInfo XML File
 

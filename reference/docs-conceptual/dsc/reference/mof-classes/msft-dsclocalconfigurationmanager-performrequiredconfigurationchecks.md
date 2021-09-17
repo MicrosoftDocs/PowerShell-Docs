@@ -1,8 +1,8 @@
 ---
+description: PerformRequiredConfigurationChecks method
 ms.date: 07/17/2020
 ms.topic: reference
 title: PerformRequiredConfigurationChecks method
-description: PerformRequiredConfigurationChecks method
 ---
 # PerformRequiredConfigurationChecks method
 

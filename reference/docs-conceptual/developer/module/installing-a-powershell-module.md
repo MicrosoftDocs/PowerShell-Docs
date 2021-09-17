@@ -1,8 +1,8 @@
 ---
+description: Installing a PowerShell Module
 ms.date: 09/13/2016
 ms.topic: reference
 title: Installing a PowerShell Module
-description: Installing a PowerShell Module
 ---
 # Installing a PowerShell Module
 

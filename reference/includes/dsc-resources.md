@@ -2,8 +2,8 @@
 author: sdwheeler
 ms.author: sewhee
 ms.date: 10/30/2020
-ms.topic: include
 ms.prod: powershell
+ms.topic: include
 ---
 > [!NOTE]
 > This documentation of this DSC resource covers the version that is included with PowerShell. The

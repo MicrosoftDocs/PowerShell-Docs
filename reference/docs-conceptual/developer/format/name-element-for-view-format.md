@@ -1,8 +1,8 @@
 ---
+description: Name Element for View
 ms.date: 08/23/2021
 ms.topic: reference
 title: Name Element for View
-description: Name Element for View
 ---
 # Name Element for View
 

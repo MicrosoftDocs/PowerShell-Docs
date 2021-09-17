@@ -1,8 +1,8 @@
 ---
+description: SelectionCondition Element for EntrySelectedBy for EnumerableExpansion
 ms.date: 08/25/2021
 ms.topic: reference
 title: SelectionCondition Element for EntrySelectedBy for EnumerableExpansion
-description: SelectionCondition Element for EntrySelectedBy for EnumerableExpansion
 ---
 # SelectionCondition Element for EntrySelectedBy for EnumerableExpansion
 

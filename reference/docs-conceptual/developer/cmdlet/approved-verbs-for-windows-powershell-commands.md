@@ -1,8 +1,8 @@
 ---
+description: Approved Verbs for PowerShell Commands
 ms.date: 03/01/2021
 ms.topic: reference
 title: Approved Verbs for PowerShell Commands
-description: Approved Verbs for PowerShell Commands
 ---
 # Approved Verbs for PowerShell Commands
 

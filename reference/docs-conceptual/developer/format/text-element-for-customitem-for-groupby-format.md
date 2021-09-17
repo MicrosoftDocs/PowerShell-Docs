@@ -1,8 +1,8 @@
 ---
+description: Text Element for CustomItem for GroupBy
 ms.date: 08/25/2021
 ms.topic: reference
 title: Text Element for CustomItem for GroupBy
-description: Text Element for CustomItem for GroupBy
 ---
 # Text Element for CustomItem for GroupBy
 

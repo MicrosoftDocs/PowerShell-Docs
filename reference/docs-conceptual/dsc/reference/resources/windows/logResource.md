@@ -1,8 +1,8 @@
 ---
+description: DSC Log Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC Log Resource
-description: DSC Log Resource
 ---
 # DSC Log Resource
 

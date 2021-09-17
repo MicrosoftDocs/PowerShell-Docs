@@ -1,8 +1,7 @@
 ---
-ms.date:  10/13/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Desired State Configuration Overview for Engineers
 description: This document is intended for developer and operations teams to understand the benefits of PowerShell Desired State Configuration (DSC).
+ms.date: 10/13/2017
+title: Desired State Configuration Overview for Engineers
 ---
 # Desired State Configuration Overview for Engineers
 

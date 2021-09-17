@@ -1,8 +1,8 @@
 ---
+description: How to Prepare Updatable Help CAB Files
 ms.date: 09/03/2012
 ms.topic: reference
 title: How to Prepare Updatable Help CAB Files
-description: How to Prepare Updatable Help CAB Files
 ---
 # How to Prepare Updatable Help CAB Files
 

@@ -1,6 +1,5 @@
 ---
 description: Describes the `ForEach -Parallel` language construct in Windows PowerShell Workflow.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 09/10/2021
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_foreach-parallel?view=powershell-5.1&WT.mc_id=ps-gethelp

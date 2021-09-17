@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title:  ScriptAnalyzer rule profile for Gallery
 description: Explains how the PowerShell ScriptAnalyzer is integrated with the PowerShell Gallery.
+ms.date: 06/12/2017
+title: ScriptAnalyzer rule profile for Gallery
 ---
 # ScriptAnalyzer rule profile for Gallery
 

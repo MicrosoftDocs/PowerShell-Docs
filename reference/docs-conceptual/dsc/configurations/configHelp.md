@@ -1,8 +1,7 @@
 ---
-ms.date:  12/12/2018
-keywords:  dsc,powershell,configuration,setup
-title:  Writing help for DSC configurations
 description: You can use comment-based help in DSC configurations. Users can access the help by calling the Configuration with `-?` parameter or by using the Get-Help cmdlet.
+ms.date: 12/12/2018
+title: Writing help for DSC configurations
 ---
 
 # Writing help for DSC configurations

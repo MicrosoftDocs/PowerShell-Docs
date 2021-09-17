@@ -1,8 +1,8 @@
 ---
+description: Extended Type System properties
 ms.date: 07/09/2020
 ms.topic: reference
 title: Extended Type System properties
-description: Extended Type System properties
 ---
 # ETS properties
 

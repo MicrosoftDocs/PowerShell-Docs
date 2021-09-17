@@ -1,8 +1,8 @@
 ---
+description: EnableDebugConfiguration method
 ms.date: 07/17/2020
 ms.topic: reference
 title: EnableDebugConfiguration method
-description: EnableDebugConfiguration method
 ---
 # EnableDebugConfiguration method
 

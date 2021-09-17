@@ -1,8 +1,8 @@
 ---
+description: Width Element for TableColumnHeader
 ms.date: 08/25/2021
 ms.topic: reference
 title: Width Element for TableColumnHeader
-description: Width Element for TableColumnHeader
 ---
 # Width Element for TableColumnHeader
 

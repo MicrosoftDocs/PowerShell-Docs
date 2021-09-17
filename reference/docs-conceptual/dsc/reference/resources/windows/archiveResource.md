@@ -1,8 +1,8 @@
 ---
+description: DSC Archive Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC Archive Resource
-description: DSC Archive Resource
 ---
 # DSC Archive Resource
 

@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.Archive-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
 ms.date: 07/17/2020

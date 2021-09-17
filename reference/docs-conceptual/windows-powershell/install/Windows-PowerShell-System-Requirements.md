@@ -1,8 +1,7 @@
 ---
-ms.date:  12/06/2019
-keywords:  powershell,cmdlet
-title:  Windows PowerShell System Requirements
 description: This article lists the system requirements for Windows PowerShell 3.0, Windows PowerShell 4.0, Windows PowerShell 5.0, and Windows PowerShell 5.1.
+ms.date: 12/06/2019
+title: Windows PowerShell System Requirements
 ---
 
 # Windows PowerShell System Requirements

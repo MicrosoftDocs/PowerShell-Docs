@@ -1,7 +1,7 @@
 ---
+description: This article how to use the FilterHashtable of Get-WinEvent to query the Windows Event logs.
 ms.date: 07/02/2021
 title: Creating Get-WinEvent queries with FilterHashtable
-description: This article how to use the FilterHashtable of Get-WinEvent to query the Windows Event logs.
 ---
 
 # Creating Get-WinEvent queries with FilterHashtable

@@ -1,8 +1,8 @@
 ---
+description: Adding Parameters that Process Pipeline Input
 ms.date: 09/13/2016
 ms.topic: reference
 title: Adding Parameters that Process Pipeline Input
-description: Adding Parameters that Process Pipeline Input
 ---
 # Adding Parameters that Process Pipeline Input
 

@@ -1,7 +1,7 @@
 ---
-ms.date: 07/29/2020
-title:  New language features in PowerShell 5.0
 description: PowerShell 5.0 added the ability to define classes and other user-defined types using formal syntax and semantics like other object-oriented programming languages.
+ms.date: 07/29/2020
+title: New language features in PowerShell 5.0
 ---
 # New language features in PowerShell 5.0
 

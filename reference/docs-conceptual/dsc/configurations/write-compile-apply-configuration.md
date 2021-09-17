@@ -1,8 +1,7 @@
 ---
-ms.date: 06/22/2020
-keywords:  dsc,powershell,configuration,service,setup
-title:  Write, Compile, and Apply a Configuration
 description: This exercise walks through creating and applying a DSC configuration from start to finish. In the following example, you will learn how to write and apply a very simple Configuration
+ms.date: 06/22/2020
+title: Write, Compile, and Apply a Configuration
 ---
 # Write, Compile, and Apply a Configuration
 

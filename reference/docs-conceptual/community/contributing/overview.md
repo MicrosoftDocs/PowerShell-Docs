@@ -1,8 +1,8 @@
 ---
-title: Contributing to PowerShell documentation
 description: This article outlines the steps required to contribute to the PowerShell documentation.
 ms.date: 12/09/2020
 ms.topic: conceptual
+title: Contributing to PowerShell documentation
 ---
 # Contributing to PowerShell documentation
 

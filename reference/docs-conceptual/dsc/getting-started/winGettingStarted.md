@@ -1,8 +1,7 @@
 ---
-ms.date:  08/15/2019
-keywords:  dsc,powershell,configuration,setup
-title:  Get started with Desired State Configuration (DSC) for Windows
 description: This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Windows.
+ms.date: 08/15/2019
+title: Get started with Desired State Configuration (DSC) for Windows
 ---
 
 # Get started with Desired State Configuration (DSC) for Windows

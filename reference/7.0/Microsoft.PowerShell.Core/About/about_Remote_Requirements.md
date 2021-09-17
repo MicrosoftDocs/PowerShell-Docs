@@ -1,6 +1,5 @@
 ---
 description: Describes the system requirements and configuration requirements for running remote commands in PowerShell.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 07/27/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-7&WT.mc_id=ps-gethelp

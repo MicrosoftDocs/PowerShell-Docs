@@ -1,9 +1,9 @@
 ---
-title: PowerShell remoting
 description: There are many different ways to run commands against remote computers in PowerShell.
-ms.date: 06/02/2020
 ms.custom: Contributor-mikefrobbins
+ms.date: 06/02/2020
 ms.reviewer: mirobb
+title: PowerShell remoting
 ---
 # Chapter 8 - PowerShell remoting
 

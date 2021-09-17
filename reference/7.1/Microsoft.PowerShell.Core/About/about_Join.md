@@ -1,6 +1,5 @@
 ---
-description: Describes how the join operator (-join) combines multiple strings into a single string. 
-keywords: powershell,cmdlet
+description: Describes how the join operator (-join) combines multiple strings into a single string.
 Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_join?view=powershell-7.1&WT.mc_id=ps-gethelp

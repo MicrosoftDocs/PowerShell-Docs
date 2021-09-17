@@ -1,8 +1,8 @@
 ---
+description: Runspace Samples
 ms.date: 09/13/2016
 ms.topic: reference
 title: Runspace Samples
-description: Runspace Samples
 ---
 # Runspace Samples
 

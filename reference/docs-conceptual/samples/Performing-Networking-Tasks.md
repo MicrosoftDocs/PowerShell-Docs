@@ -1,7 +1,7 @@
 ---
 description: This article shows how to use WMI classes in PowerShell to manage network configuration setting in Windows.
 ms.date: 07/28/2021
-title:  Performing Networking Tasks
+title: Performing Networking Tasks
 ---
 # Performing Networking Tasks
 

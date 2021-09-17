@@ -1,8 +1,8 @@
 ---
+description: PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
 ms.date: 08/24/2021
 ms.topic: reference
 title: PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
-description: PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
 ---
 # PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
 

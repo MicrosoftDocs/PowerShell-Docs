@@ -1,8 +1,8 @@
 ---
+description: DSC WindowsProcess Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC WindowsProcess Resource
-description: DSC WindowsProcess Resource
 ---
 # DSC WindowsProcess Resource
 

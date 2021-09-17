@@ -1,8 +1,8 @@
 ---
-title: Choosing the right PowerShell NuGet package for your .NET project
 description: Alongside the executable packages published with each PowerShell release, the PowerShell team also maintains several packages available on NuGet. These packages allow targeting PowerShell as an API platform in .NET.
-ms.date: 06/25/2020
 ms.custom: rjmholt
+ms.date: 06/25/2020
+title: Choosing the right PowerShell NuGet package for your .NET project
 ---
 # Choosing the right PowerShell NuGet package for your .NET project
 

@@ -1,8 +1,8 @@
 ---
+description: Quantity Parameters
 ms.date: 09/13/2016
 ms.topic: reference
 title: Quantity Parameters
-description: Quantity Parameters
 ---
 # Quantity Parameters
 

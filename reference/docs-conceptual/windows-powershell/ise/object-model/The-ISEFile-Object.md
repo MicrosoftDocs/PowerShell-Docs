@@ -1,7 +1,7 @@
 ---
-ms.date:  12/31/2019
-title:  The ISEFile Object
 description: An ISEFile object represents a file in Windows PowerShell ISE.
+ms.date: 12/31/2019
+title: The ISEFile Object
 ---
 
 # The ISEFile Object

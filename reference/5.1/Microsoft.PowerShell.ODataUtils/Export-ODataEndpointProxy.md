@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.PowerShell.ODataUtils-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.ODataUtils
 ms.date: 06/09/2017

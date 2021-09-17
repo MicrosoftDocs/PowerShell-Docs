@@ -1,8 +1,8 @@
 ---
+description: CustomControlName Element for ExpressionBinding for Controls for Configuration
 ms.date: 08/20/2021
 ms.topic: reference
 title: CustomControlName Element for ExpressionBinding for Controls for Configuration
-description: CustomControlName Element for ExpressionBinding for Controls for Configuration
 ---
 # CustomControlName Element for ExpressionBinding for Controls for Configuration
 

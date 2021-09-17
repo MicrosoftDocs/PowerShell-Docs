@@ -1,8 +1,8 @@
 ---
+description: Defining Default Methods for Objects
 ms.date: 09/13/2016
 ms.topic: reference
 title: Defining Default Methods for Objects
-description: Defining Default Methods for Objects
 ---
 
 # Defining Default Methods for Objects

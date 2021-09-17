@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
 ms.date: 03/31/2020

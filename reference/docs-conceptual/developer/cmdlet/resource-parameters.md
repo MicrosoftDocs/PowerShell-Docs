@@ -1,8 +1,8 @@
 ---
+description: Resource Parameters
 ms.date: 09/13/2016
 ms.topic: reference
 title: Resource Parameters
-description: Resource Parameters
 ---
 # Resource Parameters
 

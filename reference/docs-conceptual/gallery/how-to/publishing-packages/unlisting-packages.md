@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title:  Unlisting packages
 description: The PowerShell Gallery does not support users permanently deleting their packages. This enables others to take dependencies on your packages without worrying about possible breaks in the future.
+ms.date: 06/12/2017
+title: Unlisting packages
 ---
 # Unlisting Packages
 

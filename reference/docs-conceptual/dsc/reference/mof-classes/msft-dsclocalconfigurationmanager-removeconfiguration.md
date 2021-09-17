@@ -1,8 +1,8 @@
 ---
+description: RemoveConfiguration method
 ms.date: 07/17/2020
 ms.topic: reference
 title: RemoveConfiguration method
-description: RemoveConfiguration method
 ---
 # RemoveConfiguration method
 

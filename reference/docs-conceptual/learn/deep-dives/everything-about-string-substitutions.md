@@ -1,8 +1,8 @@
 ---
-title: Everything you wanted to know about variable substitution in strings
 description: There are many ways to use variables in strings to create formatted text.
-ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
+ms.date: 05/23/2020
+title: Everything you wanted to know about variable substitution in strings
 ---
 # Everything you wanted to know about variable substitution in strings
 

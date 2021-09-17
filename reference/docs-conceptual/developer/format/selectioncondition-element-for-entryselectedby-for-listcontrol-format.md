@@ -1,8 +1,8 @@
 ---
+description: SelectionCondition Element for EntrySelectedBy for ListControl
 ms.date: 08/25/2021
 ms.topic: reference
 title: SelectionCondition Element for EntrySelectedBy for ListControl
-description: SelectionCondition Element for EntrySelectedBy for ListControl
 ---
 # SelectionCondition Element for EntrySelectedBy for ListControl
 

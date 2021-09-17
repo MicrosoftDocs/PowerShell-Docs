@@ -1,6 +1,5 @@
 ---
-description: Describes regular expressions in PowerShell. 
-keywords: powershell,cmdlet
+description: Describes regular expressions in PowerShell.
 Locale: en-US
 ms.date: 03/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1&WT.mc_id=ps-gethelp

@@ -1,6 +1,5 @@
 ---
-description: Describes how PowerShell providers provide access to data and components that wouldn't otherwise be easily accessible at the command line. The data is presented in a consistent format that resembles a file system drive. 
-keywords: powershell,cmdlet
+description: Describes how PowerShell providers provide access to data and components that wouldn't otherwise be easily accessible at the command line. The data is presented in a consistent format that resembles a file system drive.
 Locale: en-US
 ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7&WT.mc_id=ps-gethelp

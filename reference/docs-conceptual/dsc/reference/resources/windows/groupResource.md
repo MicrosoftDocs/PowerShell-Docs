@@ -1,8 +1,8 @@
 ---
+description: DSC Group Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC Group Resource
-description: DSC Group Resource
 ---
 # DSC Group Resource
 

@@ -1,8 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Nesting configurations
 description: DSC allows you to create composite configurations by nesting a configuration inside of another configuration.
+ms.date: 06/12/2017
+title: Nesting configurations
 ---
 
 # Nesting DSC configurations

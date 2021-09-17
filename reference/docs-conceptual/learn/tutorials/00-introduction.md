@@ -1,9 +1,9 @@
 ---
-title: PowerShell Bits Tutorials
-ms.date: 02/19/2021
-ms.custom: chnoring
-ms.reviewer: sewhee
 description: This is the introduction to the tutorial series PowerShell Bit. Learn PowerShell, a little bit a time.
+ms.custom: chnoring
+ms.date: 02/19/2021
+ms.reviewer: sewhee
+title: PowerShell Bits Tutorials
 ---
 
 # Introduction to PowerShell

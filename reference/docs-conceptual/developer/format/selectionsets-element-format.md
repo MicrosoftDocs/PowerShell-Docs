@@ -1,8 +1,8 @@
 ---
+description: SelectionSets Element
 ms.date: 08/25/2021
 ms.topic: reference
 title: SelectionSets Element
-description: SelectionSets Element
 ---
 # SelectionSets Element
 

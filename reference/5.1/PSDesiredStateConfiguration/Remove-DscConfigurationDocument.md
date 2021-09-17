@@ -1,6 +1,5 @@
 ---
 external help file: Remove-DscConfigurationDocument.cdxml-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017

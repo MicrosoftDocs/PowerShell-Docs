@@ -1,6 +1,5 @@
 ---
-description:  Exits the current scope, which can be a function, script, or script block. 
-keywords: powershell,cmdlet
+description: Exits the current scope, which can be a function, script, or script block.
 Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return?view=powershell-7.1&WT.mc_id=ps-gethelp

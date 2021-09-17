@@ -1,8 +1,8 @@
 ---
+description: How to Declare Cmdlet Parameters
 ms.date: 09/13/2016
 ms.topic: reference
 title: How to Declare Cmdlet Parameters
-description: How to Declare Cmdlet Parameters
 ---
 # How to Declare Cmdlet Parameters
 

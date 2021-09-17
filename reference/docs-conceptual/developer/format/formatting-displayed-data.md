@@ -1,8 +1,8 @@
 ---
+description: Formatting Displayed Data
 ms.date: 08/23/2021
 ms.topic: reference
 title: Formatting Displayed Data
-description: Formatting Displayed Data
 ---
 # Formatting Displayed Data
 

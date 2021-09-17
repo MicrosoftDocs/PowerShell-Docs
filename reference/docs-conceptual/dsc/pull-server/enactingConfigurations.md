@@ -1,8 +1,7 @@
 ---
-ms.date:  10/16/2017
-keywords:  dsc,powershell,configuration,setup
-title:  Enacting configurations
 description: There are two ways to enact PowerShell DSC configurations - push mode and pull mode.
+ms.date: 10/16/2017
+title: Enacting configurations
 ---
 
 # Enacting configurations

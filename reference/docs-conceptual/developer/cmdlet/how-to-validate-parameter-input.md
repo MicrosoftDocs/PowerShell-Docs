@@ -1,8 +1,8 @@
 ---
+description: How to Validate Parameter Input
 ms.date: 09/16/2021
 ms.topic: reference
 title: How to Validate Parameter Input
-description: How to Validate Parameter Input
 ---
 # How to Validate Parameter Input
 

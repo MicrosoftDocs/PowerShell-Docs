@@ -1,7 +1,7 @@
 ---
+description: JEA is a new feature in WMF 5.0 that enables role-based administration through PowerShell remoting. It extends the existing constrained endpoint infrastructure by allowing non-administrators to run specific commands, scripts, and executables as an administrator.
 ms.date: 06/12/2017
 title: Improvements to Just Enough Administration (JEA)
-description: JEA is a new feature in WMF 5.0 that enables role-based administration through PowerShell remoting. It extends the existing constrained endpoint infrastructure by allowing non-administrators to run specific commands, scripts, and executables as an administrator.
 ---
 # Improvements to Just Enough Administration (JEA)
 

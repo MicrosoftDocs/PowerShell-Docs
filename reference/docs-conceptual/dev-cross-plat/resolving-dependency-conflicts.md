@@ -1,8 +1,8 @@
 ---
-title: Resolving PowerShell module assembly dependency conflicts
 description: When writing a binary PowerShell module in C#, it's natural to take dependencies on other packages or libraries to provide functionality.
-ms.date: 06/25/2020
 ms.custom: rjmholt
+ms.date: 06/25/2020
+title: Resolving PowerShell module assembly dependency conflicts
 ---
 # Resolving PowerShell module assembly dependency conflicts
 

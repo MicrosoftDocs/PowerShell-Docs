@@ -1,8 +1,8 @@
 ---
+description: NewLine Element for CustomItem for Controls for View
 ms.date: 08/23/2021
 ms.topic: reference
 title: NewLine Element for CustomItem for Controls for View
-description: NewLine Element for CustomItem for Controls for View
 ---
 # NewLine Element for CustomItem for Controls for View
 

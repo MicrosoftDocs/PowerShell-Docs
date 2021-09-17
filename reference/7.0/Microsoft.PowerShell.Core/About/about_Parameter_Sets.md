@@ -1,9 +1,9 @@
 ---
 description: Describes how to define and use parameter sets in advanced functions.
-title: about Parameter Sets
 Locale: en-US
 ms.date: 01/05/2021
 schema: 2.0.0
+title: about Parameter Sets
 ---
 # about_Parameter_Sets
 

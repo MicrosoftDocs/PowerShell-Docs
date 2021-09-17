@@ -1,8 +1,7 @@
 ---
-ms.date:  06/05/2017
-keywords:  powershell,cmdlet
-title:  Managing Processes with Process Cmdlets
 description: PowerShell provides several cmdlets that help manage processes on local and remote computers.
+ms.date: 06/05/2017
+title: Managing Processes with Process Cmdlets
 ---
 # Managing Processes with Process Cmdlets
 

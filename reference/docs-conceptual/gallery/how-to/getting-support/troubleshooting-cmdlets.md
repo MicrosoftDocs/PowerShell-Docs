@@ -1,7 +1,7 @@
 ---
-ms.date: 01/25/2021
-title:  Troubleshooting cmdlets
 description: This article provide information and steps for troubleshooting errors using the PowerShell Gallery
+ms.date: 01/25/2021
+title: Troubleshooting cmdlets
 ---
 # Troubleshooting cmdlets
 

@@ -1,8 +1,7 @@
 ---
-ms.date:  06/05/2017
-keywords:  powershell,cmdlet
-title:  Other Useful Scripting Objects
 description: This article describes objects that provide additional scripting functionality in the Windows PowerShell ISE.
+ms.date: 06/05/2017
+title: Other Useful Scripting Objects
 ---
 # Other Useful Scripting Objects
 

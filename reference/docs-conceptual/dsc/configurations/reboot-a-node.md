@@ -1,8 +1,7 @@
 ---
-ms.date:  01/17/2019
-keywords:  dsc,powershell,configuration,setup
-title:  Reboot a Node
 description: Many configuration settings can require the computer to be rebooted for the configuration change to be complete. This article explains how to manage reboots in a configuration.
+ms.date: 01/17/2019
+title: Reboot a Node
 ---
 # Reboot a Node
 

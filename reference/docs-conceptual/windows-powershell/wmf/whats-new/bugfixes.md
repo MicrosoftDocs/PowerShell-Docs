@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title:  Bug Fixes in WMF 5.1
 description: This article lists the bugs that were fixed in the release of WMF 5.1.
+ms.date: 06/12/2017
+title: Bug Fixes in WMF 5.1
 ---
 # Bug Fixes in WMF 5.1
 

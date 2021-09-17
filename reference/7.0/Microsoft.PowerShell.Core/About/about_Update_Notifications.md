@@ -1,6 +1,5 @@
 ---
-description:  Notifies users on startup of PowerShell that a new version of PowerShell has been released. 
-keywords: powershell,cmdlet
+description: Notifies users on startup of PowerShell that a new version of PowerShell has been released.
 Locale: en-US
 ms.date: 01/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7&WT.mc_id=ps-gethelp

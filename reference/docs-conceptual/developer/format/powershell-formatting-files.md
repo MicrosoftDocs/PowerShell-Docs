@@ -1,8 +1,8 @@
 ---
+description: Windows PowerShell Formatting Files
 ms.date: 08/24/2021
 ms.topic: reference
 title: Windows PowerShell Formatting Files
-description: Windows PowerShell Formatting Files
 ---
 # Windows PowerShell Formatting Files
 

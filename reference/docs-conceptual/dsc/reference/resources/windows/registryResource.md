@@ -1,8 +1,8 @@
 ---
+description: DSC Registry Resource
 ms.date: 07/16/2020
 ms.topic: reference
 title: DSC Registry Resource
-description: DSC Registry Resource
 ---
 # DSC Registry Resource
 

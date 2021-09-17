@@ -1,8 +1,7 @@
 ---
-ms.date: 08/24/2021
-keywords:  powershell,core
-title:  Release history of modules and cmdlets
 description: This article lists the modules and cmdlets that are included in various versions of PowerShell.
+ms.date: 08/24/2021
+title: Release history of modules and cmdlets
 ---
 # Release history of modules and cmdlets
 

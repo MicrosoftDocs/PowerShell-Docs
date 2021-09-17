@@ -1,8 +1,8 @@
 ---
+description: Controls Element for Configuration
 ms.date: 08/20/2021
 ms.topic: reference
 title: Controls Element for Configuration
-description: Controls Element for Configuration
 ---
 # Controls Element for Configuration
 

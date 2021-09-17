@@ -1,8 +1,7 @@
 ---
-ms.date: 08/09/2021
-keywords:  dsc,powershell,configuration,setup
-title:  Troubleshooting DSC
 description: This article provides troubleshooting instruction for common errors.
+ms.date: 08/09/2021
+title: Troubleshooting DSC
 ---
 # Troubleshooting DSC
 

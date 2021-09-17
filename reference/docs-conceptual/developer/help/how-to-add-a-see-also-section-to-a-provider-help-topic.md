@@ -1,8 +1,8 @@
 ---
+description: How to Add a See Also Section to a Provider Help Topic
 ms.date: 09/12/2016
 ms.topic: reference
 title: How to Add a See Also Section to a Provider Help Topic
-description: How to Add a See Also Section to a Provider Help Topic
 ---
 # How to Add a See Also Section to a Provider Help Topic
 

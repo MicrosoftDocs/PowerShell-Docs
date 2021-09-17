@@ -1,6 +1,5 @@
 ---
-description:  Describes  Windows PowerShell snap-ins and shows how to use and manage them.
-keywords: powershell,cmdlet
+description: Describes  Windows PowerShell snap-ins and shows how to use and manage them.
 Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins?view=powershell-5.1&WT.mc_id=ps-gethelp

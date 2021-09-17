@@ -1,6 +1,5 @@
 ---
 description: Describes how to create and use functions in PowerShell.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 07/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-5.1&WT.mc_id=ps-gethelp

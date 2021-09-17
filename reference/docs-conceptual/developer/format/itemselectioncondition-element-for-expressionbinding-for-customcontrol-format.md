@@ -1,8 +1,8 @@
 ---
+description: ItemSelectionCondition Element for ExpressionBinding for CustomControl
 ms.date: 08/23/2021
 ms.topic: reference
 title: ItemSelectionCondition Element for ExpressionBinding for CustomControl
-description: ItemSelectionCondition Element for ExpressionBinding for CustomControl
 ---
 # ItemSelectionCondition Element for ExpressionBinding for CustomControl
 

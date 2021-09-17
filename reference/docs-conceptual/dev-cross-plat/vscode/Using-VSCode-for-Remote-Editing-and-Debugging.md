@@ -1,7 +1,7 @@
 ---
-title: Using Visual Studio Code for remote editing and debugging
 description: Using Visual Studio Code for remote editing and debugging
 ms.date: 06/13/2019
+title: Using Visual Studio Code for remote editing and debugging
 ---
 # Using Visual Studio Code for remote editing and debugging
 

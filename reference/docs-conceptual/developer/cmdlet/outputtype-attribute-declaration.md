@@ -1,8 +1,8 @@
 ---
+description: OutputType Attribute Declaration
 ms.date: 09/13/2016
 ms.topic: reference
 title: OutputType Attribute Declaration
-description: OutputType Attribute Declaration
 ---
 # OutputType Attribute Declaration
 

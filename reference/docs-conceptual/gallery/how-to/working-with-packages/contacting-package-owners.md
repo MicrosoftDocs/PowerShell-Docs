@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-title: How to contact package owners
 description: How to contact package owners
+ms.date: 06/12/2017
+title: How to contact package owners
 ---
 # Contacting package owners
 

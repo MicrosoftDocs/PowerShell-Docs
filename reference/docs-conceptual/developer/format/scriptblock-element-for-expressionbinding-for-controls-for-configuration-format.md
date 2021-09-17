@@ -1,8 +1,8 @@
 ---
+description: ScriptBlock Element for ExpressionBinding for Controls for Configuration
 ms.date: 08/24/2021
 ms.topic: reference
 title: ScriptBlock Element for ExpressionBinding for Controls for Configuration
-description: ScriptBlock Element for ExpressionBinding for Controls for Configuration
 ---
 # ScriptBlock Element for ExpressionBinding for Controls for Configuration
 

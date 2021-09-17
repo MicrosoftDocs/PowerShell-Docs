@@ -1,8 +1,8 @@
 ---
+description: Alignment Element for TableColumnItem
 ms.date: 08/20/2021
 ms.topic: reference
 title: Alignment Element for TableColumnItem
-description: Alignment Element for TableColumnItem
 ---
 # Alignment Element for TableColumnItem
 
