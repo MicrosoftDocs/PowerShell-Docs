@@ -40,6 +40,7 @@ Officially supported platform releases for PowerShell 7.0
 
 - Ubuntu 16.04
 - Ubuntu 18.04 and 20.04
+- Ubuntu 21.04
 - Debian 8
 - Debian 9
 - Debian 10
@@ -56,6 +57,7 @@ Community supported releases
 
 - Ubuntu 18.10
 - Ubuntu 19.10 and 20.10
+- Ubuntu 21.04
 - Arch Linux
 - Kali
 - Raspbian (experimental)
@@ -219,6 +221,36 @@ sudo apt-get install -f
 ```sh
 sudo apt-get remove powershell
 ```
+
+## Ubuntu 21.04
+
+### Installation via Package Repository - Ubuntu 21.04
+
+PowerShell for Linux is published to package repositories for easy installation and updates.
+
+The preferred method is as follows:
+
+```sh
+# Update the list of packages
+sudo apt-get update
+# Install pre-requisite packages.
+sudo apt-get install -y wget apt-transport-https software-properties-common
+# Download the Microsoft repository GPG keys
+wget -q https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb
+# Register the Microsoft repository GPG keys
+sudo dpkg -i packages-microsoft-prod.deb
+# Update the list of products
+sudo apt-get update
+# Enable the "universe" repositories
+sudo add-apt-repository universe
+# Install PowerShell
+sudo apt-get install -y powershell
+# Start PowerShell
+pwsh
+```
+
+As superuser, register the Microsoft repository once. After registration, you can update
+PowerShell with `sudo apt-get install powershell`.
 
 ## Ubuntu 18.10
 
