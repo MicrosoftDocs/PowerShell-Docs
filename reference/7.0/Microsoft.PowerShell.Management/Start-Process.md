@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/26/2021
+ms.date: 09/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -79,7 +79,7 @@ $processOptions = @{
     RedirectStandardError = "SortError.txt"
     UseNewEnvironment = $true
 }
-Start-Process @$processOptions
+Start-Process @processOptions
 ```
 
 This example uses splatting to pass parameters to the cmdlet. For more information, see
