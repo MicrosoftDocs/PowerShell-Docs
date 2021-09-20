@@ -88,7 +88,7 @@ EnvironmentVariable_Path -OutputPath:"./EnvironmentVariable_Path"
 > even when you're running a `localhost` configuration. To easily configure your environment
 > correctly, just run `Set-WsManQuickConfig -Force` in an elevated PowerShell Terminal.
 
-Configuration documents (MOF files) can be applied to the machineusing the
+Configuration documents (MOF files) can be applied to the machine using the
 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
 cmdlet.
 
