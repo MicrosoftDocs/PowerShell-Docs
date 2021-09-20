@@ -200,7 +200,7 @@ C:\temp\test\test.ps1          3     3         79
 C:\temp\test\test[1].txt      31   562       2059
 ```
 
-### Using multiple parameters sets
+### Error using parameters from multiple sets
 
 In this example, unique parameters from different parameter sets are used.
 
@@ -209,7 +209,9 @@ Get-ChildItem -Path $PSHOME -LiteralPath $PSHOME
 ```
 
 ```Output
-Get-ChildItem: Parameter set cannot be resolved using the specified named parameters. One or more parameters issued cannot be used together or an insufficient number of parameters were provided.
+Get-ChildItem: Parameter set cannot be resolved using the specified named
+parameters. One or more parameters issued cannot be used together or an
+insufficient number of parameters were provided.
 ```
 
 The **Path** and **LiteralPath** parameters are unique to different parameter

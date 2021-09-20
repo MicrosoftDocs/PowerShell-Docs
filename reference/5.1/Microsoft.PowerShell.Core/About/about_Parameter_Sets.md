@@ -200,7 +200,7 @@ C:\temp\test\test.ps1          3     3         79
 C:\temp\test\test[1].txt      31   562       2059
 ```
 
-### Using multiple parameters sets
+### Error using parameters from multiple sets
 
 In this example, unique parameters from different parameter sets are used.
 
