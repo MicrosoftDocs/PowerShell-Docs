@@ -1,16 +1,16 @@
 ---
 description: Describes how to define and use parameter sets in advanced functions.
 Locale: en-US
-ms.date: 01/05/2021
+ms.date: 09/20/2021
 schema: 2.0.0
 title: about Parameter Sets
 ---
 # about_Parameter_Sets
 
-## SHORT DESCRIPTION
+## Short description
 Describes how to define and use parameter sets in advanced functions.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell uses parameter sets to enable you to write a single function that
 can do different actions for different scenarios. Parameter sets enable you to
@@ -200,3 +200,19 @@ C:\temp\test\test.ps1          3     3         79
 C:\temp\test\test[1].txt      31   562       2059
 ```
 
+### Using multiple parameters sets
+
+In this example, unique parameters from different parameter sets are used.
+
+```powershell
+Get-ChildItem -Path $PSHOME -LiteralPath $PSHOME
+```
+
+```Output
+Get-ChildItem: Parameter set cannot be resolved using the specified named parameters. One or more parameters issued cannot be used together or an insufficient number of parameters were provided.
+```
+
+The **Path** and **LiteralPath** parameters are unique to different parameter
+sets of the `Get-ChildItem` cmdlet. When the parameters are run together in the
+same cmdlet, an error is thrown. Only one parameter set can be used per cmdlet
+call at a time.
