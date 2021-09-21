@@ -130,7 +130,7 @@ Server is supported under the [Windows Support Lifecycle][lifecycle].
 
 ## Experimental features
 
-[Experimental features][exp] are limited to [community support](#community-support).
+[Experimental features][exp] are limited to community support.
 
 ## Security Servicing Criteria
 

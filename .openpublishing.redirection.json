@@ -11,7 +11,7 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "reference/docs-conceptual/install/Installing-PowerShell-Core-on-Linux.md",
+      "source_path": "reference/docs-conceptual/install/Installing-PowerShell-Core-on-macOS.md",
       "redirect_url": "/powershell/scripting/install/installing-powershell-on-macos",
       "redirect_document_id": true
     },
@@ -21,13 +21,8 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "reference/docs-conceptual/PowerShell-Support-Lifecycle.md",
-      "redirect_url": "/powershell/scripting/install/PowerShell-Support-Lifecycle",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "reference/docs-conceptual/install/Installing-PowerShell-Core-on-Arm.md",
-      "redirect_url": "/powershell/scripting/install/installing-powershell-on-arm",
+      "source_path": "reference/docs-conceptual/install/PowerShell-Core-on-Arm.md",
+      "redirect_url": "/powershell/scripting/install/powershell-on-arm",
       "redirect_document_id": true
     },
     {
