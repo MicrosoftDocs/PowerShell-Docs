@@ -538,7 +538,9 @@ files automatically use the `Legacy` style argument passing.
 - `wscript.exe`
 - ending with `.bat`
 - ending with `.cmd`
+- ending with `.js`
 - ending with `.vbs`
+- ending with `.wsf`
 
 If the `$PSNativeArgumentPassing` is set to either `Legacy` or `Standard`, the
 check for these files do not occur. The default behavior is platform specific.

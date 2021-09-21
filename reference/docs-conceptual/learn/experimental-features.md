@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 09/02/2021
+ms.date: 09/21/2021
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -333,8 +333,8 @@ When a native command has a non-zero exit code, `$?` is set to `$false`. If the 
 ## PSNullConditionalOperators
 
 Introduces new operators for Null conditional member access operators - `?.` and `?[]`. Null member
-access operators can be used on scalar types and array types. Return the value of the accessed member
-if the variable is not null. If the value of the variable is null, then return null.
+access operators can be used on scalar types and array types. Return the value of the accessed
+member if the variable is not null. If the value of the variable is null, then return null.
 
 ```powershell
 $x = $null
@@ -363,10 +363,9 @@ variables must use `{}` around the variable name like: `${x?}?.propertyName` or 
 
 ## PSUnixFileStat
 
-This feature provides new behavior to include data from the Unix **stat** API in the output of the
-file system provider to facilitate a more Unix-like file listing. It adds a new note property in the
-filesystem provider named **UnixStat** that includes a common expression of the `stat(2)` API from
-the underlying Unix type system.
+This feature provides more Unix-like file listings by including data from the Unix **stat** API. It
+adds a new note property in the filesystem provider named **UnixStat** that includes a rendering of
+information from the Unix `stat(2)` API.
 
 The output from `Get-ChildItem` should look something like this:
 

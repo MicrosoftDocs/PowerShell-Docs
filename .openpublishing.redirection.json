@@ -1,6 +1,31 @@
 {
   "redirections": [
     {
+      "source_path": "reference/docs-conceptual/install/Installing-PowerShell-Core-on-Linux.md",
+      "redirect_url": "/powershell/scripting/install/installing-powershell-on-linux",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "reference/docs-conceptual/install/Installing-PowerShell-Core-on-Windows.md",
+      "redirect_url": "/powershell/scripting/install/installing-powershell-on-windows",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "reference/docs-conceptual/install/Installing-PowerShell-Core-on-macOS.md",
+      "redirect_url": "/powershell/scripting/install/installing-powershell-on-macos",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "reference/docs-conceptual/PowerShell-Support-Lifecycle.md",
+      "redirect_url": "/powershell/scripting/install/PowerShell-Support-Lifecycle",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "reference/docs-conceptual/install/PowerShell-Core-on-Arm.md",
+      "redirect_url": "/powershell/scripting/install/powershell-on-arm",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "reference/docs-conceptual/developer/module/modifying-the-psmodulepath-installation-path.md",
       "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_psmodulepath",
       "redirect_document_id": false

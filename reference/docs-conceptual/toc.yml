@@ -8,22 +8,22 @@ items:
         href: overview.md
       - name: What is a PowerShell command?
         href: powershell-commands.md
-      - name: PowerShell support lifecycle
-        href: powershell-support-lifecycle.md
   - name: Install
     items:
       - name: Overview
-        href: install/installing-powershell.md
+        href: install/installing-powershell.yml
       - name: Installing PowerShell on Windows
-        href: install/installing-powershell-core-on-windows.md
+        href: install/installing-powershell-on-windows.md
       - name: Installing PowerShell on Linux
-        href: install/installing-powershell-core-on-linux.md
+        href: install/installing-powershell-on-linux.md
       - name: Installing PowerShell on macOS
-        href: install/installing-powershell-core-on-macos.md
+        href: install/installing-powershell-on-macos.md
       - name: Installing PowerShell on Arm
-        href: install/powershell-core-on-arm.md
+        href: install/powershell-on-arm.md
       - name: Using PowerShell in Docker
         href: install/PowerShell-in-Docker.md
+      - name: PowerShell support lifecycle
+        href: install/powershell-support-lifecycle.md
   - name: Learning PowerShell
     items:
       - name: PowerShell 101

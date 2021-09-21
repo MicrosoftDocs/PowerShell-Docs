@@ -24,9 +24,9 @@ It supports the following PowerShell versions:
 Before you begin, make sure PowerShell exists on your system. For modern workloads on Windows,
 macOS, and Linux, see the following links:
 
-- [Installing PowerShell on Linux][install-pscore-linux]
-- [Installing PowerShell on macOS][install-pscore-macos]
-- [Installing PowerShell on Windows][install-pscore-windows]
+- [Installing PowerShell on Linux][install-linux]
+- [Installing PowerShell on macOS][install-macos]
+- [Installing PowerShell on Windows][install-windows]
 
 For traditional Windows PowerShell workloads, see [Installing Windows PowerShell][install-winps].
 
@@ -317,9 +317,9 @@ If you're interested in contributing, Pull Requests are greatly appreciated. Fol
 
 <!-- related articles -->
 [ise]:                    ../../windows-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md
-[install-pscore-linux]:   ../../install/Installing-PowerShell-Core-on-Linux.md
-[install-pscore-macos]:   ../../install/Installing-PowerShell-Core-on-macOS.md
-[install-pscore-windows]: ../../install/Installing-PowerShell-Core-on-Windows.md
+[install-linux]:          ../../install/Installing-PowerShell-on-Linux.md
+[install-macos]:          ../../install/Installing-PowerShell-on-macOS.md
+[install-windows]:        ../../install/Installing-PowerShell-on-Windows.md
 [install-winps]:          ../../install/Installing-Windows-PowerShell.md
 [file-encoding]:          understanding-file-encoding.md
 [vsc-ise]:                How-To-Replicate-the-ISE-Experience-In-VSCode.md
