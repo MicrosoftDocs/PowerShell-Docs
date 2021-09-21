@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on various Linux distributions
-ms.date: 02/02/2021
+ms.date: 09/21/2021
 title: Installing PowerShell on Linux
 ---
 # Installing PowerShell on Linux

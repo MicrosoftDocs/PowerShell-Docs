@@ -1,0 +1,54 @@
+### YamlMime:Landing
+
+title: Install PowerShell on Windows, Linux, and macOS
+summary: Learn about installing PowerShell on Windows, Linux, and macOS.
+
+metadata:
+  title: Install PowerShell on Windows, Linux, and macOS
+  description: Learn about installing PowerShell on Windows, Linux, and macOS.
+  ms.topic: landing-page
+  ms.date: 09/21/2021
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+
+  # Card
+  - title: Windows
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Install PowerShell on Windows
+            url: Installing-PowerShell-on-Windows.md
+          - text: Install Windows PowerShell 5.1
+            url: ../windows-powershell/install/installing-windows-powershell.md
+
+  # Card
+  - title: macOS
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Install on macOS
+            url: Installing-PowerShell-on-macOS.md
+          - text: Supported macOS releases
+            url: Installing-PowerShell-on-macOS.md#supported-versions-of-macos
+
+  # Card
+  - title: Linux
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Install on Linux
+            url: Installing-PowerShell-on-Linux.md
+
+# Card
+  - title: "Q&A"
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Using PowerShell in Docker
+            url: PowerShell-in-Docker.md
+          - text: Arm Processor support
+            url: PowerShell-on-ARM.md
+          - text: PowerShell Support Lifecycle
+            url: PowerShell-Support-Lifecycle.md
