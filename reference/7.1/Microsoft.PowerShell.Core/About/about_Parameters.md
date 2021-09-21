@@ -164,7 +164,7 @@ as the value of the parameter in the command, or save a comma-separated list
 (an array) in a variable, and then specify the variable as the parameter
 value.
 
-For example, the ServiceName parameter of the `Get-Service` cmdlet accepts
+For example, the **Name** parameter of the `Get-Service` cmdlet accepts
 multiple values. The following commands are both valid:
 
 ```powershell
