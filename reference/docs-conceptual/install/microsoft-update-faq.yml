@@ -1,0 +1,59 @@
+### YamlMime:FAQ
+metadata:
+  ms.date: 08/17/2021
+  title:  Microsoft Update for PowerShell FAQ
+  description: Frequently asked questions about the using Microsoft Update to update PowerShell
+
+title: Microsoft Update for PowerShell FAQ
+summary: |
+  Beginning with PowerShell 7.2, when you install using the MSI package you have the option of
+  enabling Microsoft Update support for PowerShell.
+
+sections:
+  - name: General Information
+    questions:
+      - question: What version of Windows is required to support the Microsoft Update feature?
+        answer: |
+          You must have Windows 10 RS3 (10.0.16299) or newer installed.
+
+      - question: How soon after release are updates advertised by Microsoft Update?
+        answer: |
+          When a new version of PowerShell is released, it can take two weeks for that version to
+          become available through Microsoft Update.
+
+      - question: Do I need to check both boxes in the setup dialog?
+        answer: |
+          While the two options on the dialog are independent, in most cases, it doesn't make sense
+          to uncheck the opt-in to Microsoft Update and still check that you want PowerShell
+          updates. The only special case for this is if updates are being delivered to Windows
+          update through a WSUS server or SCCM.
+
+  - name: Group Policy considerations
+    questions:
+      - question: |
+          Manage when quality updates are received" in Manage updates offered by from Windows
+          Update
+        answer: |
+          This policy defers updates for a period of time defined by the policy. PowerShell updates
+          will almost always be released as a quality update even if there is a security issue
+          addressed. Only when the issue has to determined to be serious enough, would we change an
+          update to be a security update.
+
+      - question: Use GP to make sure user get Updates
+        answer: |
+          When deploying updates from WSUS, also deploy a registry value. This will opt the
+          computers into to receiving PowerShell 7 updates.
+          `HKLM:\SOFTWARE\Microsoft\PowerShellCore\UseMU` as a DWord with the value 1
+
+      - question: Not able to use MU
+        answer: |
+          Another issue when you have GP enabling WSUS, is there is a possibility that the domain
+          admin may or may not let you use WU or MU. This policy is under Manage updates offered
+          from Windows Server Update Service (see image 3). The policy is called Do not connect to
+          any Windows Update internet locations
+
+      - question: GP on MU/WU.
+        answer: |
+          Group policy can be configured in a way to force you into Microsoft Update or not let you
+          use it. The policy is under Manage End User Experience (see image 2) and the policy is
+          Configure Automatic Updates
