@@ -16,8 +16,8 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "reference/docs-conceptual/install/Installing-PowerShell.md",
-      "redirect_url": "/powershell/scripting/install/installing-powershell",
+      "source_path": "reference/docs-conceptual/PowerShell-Support-Lifecycle.md",
+      "redirect_url": "/powershell/scripting/install/PowerShell-Support-Lifecycle",
       "redirect_document_id": true
     },
     {
