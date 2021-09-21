@@ -1,7 +1,7 @@
 ---
 description: Describes how to work with command parameters in PowerShell.
 Locale: en-US
-ms.date: 06/07/2021
+ms.date: 09/21/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameters?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Parameters
@@ -13,19 +13,20 @@ Describes how to work with command parameters in PowerShell.
 
 ## Long description
 
-Most PowerShell commands, such as cmdlets, functions, and scripts,
-rely on parameters to allow users to select options or provide input. The
-parameters follow the command name and have the following form:
+Most PowerShell commands, such as cmdlets, functions, and scripts, rely on
+parameters to allow users to select options or provide input. The parameters
+follow the command name and have the following form:
 
 ```
 -<parameter_name> <parameter_value>
 -<parameter_name>:<parameter_value>
 ```
 
-The name of the parameter is preceded by a hyphen (-), which signals to PowerShell that the word
-following the hyphen is a parameter name. The parameter name and value can be separated by a space
-or a colon character. Some parameters do not require or accept a parameter value. Other parameters
-require a value, but do not require the parameter name in the command.
+The name of the parameter is preceded by a hyphen (`-`), which signals to
+PowerShell that the word following the hyphen is a parameter name. The
+parameter name and value can be separated by a space or a colon character. Some
+parameters do not require or accept a parameter value. Other parameters require
+a value, but do not require the parameter name in the command.
 
 The type of parameters and the requirements for those parameters vary. To find
 information about the parameters of a command, use the `Get-Help` cmdlet. For
@@ -84,7 +85,7 @@ For example, the help topic for the `Get-ChildItem` cmdlet includes the
 following details about its Path parameter:
 
 ```
--path <string[]>
+-Path <string[]>
     Specifies a path of one or more locations. Wildcard characters are
     permitted. The default location is the current directory (.).
 
@@ -143,9 +144,9 @@ parameter name, that parameter must be placed in the order specified by the
 
 This setting specifies the Microsoft .NET Framework type of the parameter
 value. For example, if the type is **Int32**, the parameter value must be an
-integer. If the type is string, the parameter value must be a character
-string. If the string contains spaces, the value must be enclosed in quotation
-marks, or the spaces must be preceded by the escape character ( ` ).
+integer. If the type is string, the parameter value must be a character string.
+If the string contains spaces, the value must be enclosed in quotation marks,
+or the spaces must be preceded by the escape character ( ` ).
 
 #### Default Value
 
@@ -167,12 +168,12 @@ For example, the ServiceName parameter of the `Get-Service` cmdlet accepts
 multiple values. The following commands are both valid:
 
 ```powershell
-Get-Service -servicename winrm, netlogon
+Get-Service -Name winrm, netlogon
 ```
 
 ```powershell
 $s = "winrm", "netlogon"
-Get-Service -servicename $s
+Get-Service -Name $s
 ```
 
 #### Accepts Pipeline Input
@@ -209,7 +210,8 @@ has a property called **Name**.
 
 > [!NOTE]
 > A typed parameter that accepts pipeline input (`by Value`) or
-> (`by PropertyName`) enables use of **delay-bind** script blocks on the parameter.
+> (`by PropertyName`) enables use of **delay-bind** script blocks on the
+> parameter.
 >
 > The **delay-bind** script block is run automatically during
 > **ParameterBinding**. The result is bound to the parameter. Delay binding
@@ -217,7 +219,8 @@ has a property called **Name**.
 > `System.Object`, the script block is passed through
 > **without** being invoked.
 >
-> You can read about **delay-bind** script blocks here [about_Script_Blocks.md](about_Script_Blocks.md)
+> You can read about **delay-bind** script blocks here
+> [about_Script_Blocks.md](about_Script_Blocks.md)
 
 #### Accepts Wildcard Characters
 
@@ -228,7 +231,8 @@ existing item in the target container.
 #### Common Parameters
 
 Common parameters are parameters that you can use with any cmdlet. For more
-information about common parameters, see [about_CommonParameters](about_CommonParameters.md).
+information about common parameters, see
+[about_CommonParameters](about_CommonParameters.md).
 
 ## See also
 
