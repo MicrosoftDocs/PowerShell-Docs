@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on various Linux distributions
-ms.date: 02/02/2021
+ms.date: 09/21/2021
 title: Installing PowerShell on Linux
 ---
 # Installing PowerShell on Linux
@@ -226,7 +226,7 @@ Installation is supported via `snapd`. For instructions, see [Snap Package][snap
 
 > [!NOTE]
 > Ubuntu 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's
-> [community supported](../powershell-support-lifecycle.md).
+> [community supported](powershell-support-lifecycle.md).
 
 ## Ubuntu 19.10 and 20.10
 
@@ -234,7 +234,7 @@ Installation is supported via `snapd`. For instructions, see [Snap Package][snap
 
 > [!NOTE]
 > Ubuntu 19.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's
-> [community supported](../powershell-support-lifecycle.md).
+> [community supported](powershell-support-lifecycle.md).
 
 ## Debian 8
 
