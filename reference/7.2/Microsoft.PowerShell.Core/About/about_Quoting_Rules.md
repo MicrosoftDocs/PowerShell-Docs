@@ -1,7 +1,7 @@
 ---
 description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 09/07/2021
+ms.date: 09/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Quoting Rules
@@ -370,7 +370,19 @@ Name                           Value
 key                            value
 ```
 
+## Passing quoted strings to external commands
+
+Some native commands expect arguments that contain quote characters. PowerShell
+interprets the quoted string before passing it to the external command. This
+interpretation removes the outer quote characters.
+
+For more information about this behavior, see the
+[about_Parsing](about_Parsing.md#passing-arguments-that-contain-quote-characters)
+article.
+
 ## See also
+
+[about_Parsing](about_Parsing.md)
 
 [about_Special_Characters](about_Special_Characters.md)
 
