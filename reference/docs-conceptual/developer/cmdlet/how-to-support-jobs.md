@@ -1,6 +1,6 @@
 ---
 description: How to Support Jobs
-ms.date: 03/09/2021
+ms.date: 09/22/2021
 ms.topic: reference
 title: How to Support Jobs
 ---
@@ -27,11 +27,10 @@ information about background jobs, see [Background Jobs](./background-jobs.md).
     private bool asjob;
     ```
 
-    <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06AsJobParam](msh_samplesGetProc06#GetProc06AsJobParam)]  -->
-
-1. Create an object that derives from the [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job)
-   class. This object can be a custom job object or one of the job objects provided by Windows
-   PowerShell, such a [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob)
+1. Create an object that derives from the
+   [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) class. This
+   object can be a custom job object or one of the job objects provided by Windows PowerShell, such
+   a [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob)
    object.
 
     The following example shows a custom job object.
@@ -40,10 +39,9 @@ information about background jobs, see [Background Jobs](./background-jobs.md).
     private SampleJob job = new SampleJob("Get-ProcAsJob");
     ```
 
-    <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
-
 1. In a record processing method, add an `if` statement to detect whether the cmdlet should run as a
-   job. The following code uses the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
+   job. The following code uses the
+   [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
    method.
 
     ```csharp
@@ -68,8 +66,6 @@ information about background jobs, see [Background Jobs](./background-jobs.md).
       }
     }
     ```
-
-    <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06ProcessRecord](msh_samplesGetProc06#GetProc06ProcessRecord)]  -->
 
 1. For custom job objects, implement the job class.
 
@@ -119,16 +115,15 @@ information about background jobs, see [Background Jobs](./background-jobs.md).
 
         foreach (Process pl in p)
         {
-          Output.Add(PSObject.AsPSObject(pl));
+          Output.Add(new PSObject(pl));
         }
         Output.Complete();
       } // End DoProcessLogic.
     } // End SampleJob class.
     ```
 
-    <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
-
-1. If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)
+1. If the cmdlet performs the work, call the
+   [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)
    method to return a process object to the pipeline. If the work is performed as a job, add child
    job to the job.
 
@@ -151,11 +146,9 @@ information about background jobs, see [Background Jobs](./background-jobs.md).
     } // End DoProcessLogic.
     ```
 
-    <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06Output](msh_samplesGetProc06#GetProc06Output)]  -->
-
 ## Example
 
-The following sample code shows the code for a **Get-Proc** cmdlet that can retrieve processes
+The following sample code shows the code for a `Get-Proc` cmdlet that can retrieve processes
 internally or by using a background job.
 
 ```csharp
@@ -303,7 +296,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
         foreach (Process pl in p)
         {
-          Output.Add(PSObject.AsPSObject(pl));
+          Output.Add(new PSObject(pl));
         }
         Output.Complete();
       } // End DoProcessLogic.
@@ -336,5 +329,3 @@ namespace Microsoft.Samples.PowerShell.Commands
   } //End GetProcCommand
 }
 ```
-
-<!-- TODO!!!: review snippet reference  [!CODE [msh_samplesGetProc06#GetProc06All](msh_samplesGetProc06#GetProc06All)]  -->
