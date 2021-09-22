@@ -86,6 +86,26 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "reference/7.0/microsoft.powershell.utility/get-verb.md",
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-verb?view=powershell-7",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "reference/7.1/microsoft.powershell.utility/get-verb.md",
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-verb?view=powershell-7.1",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "reference/7.2/microsoft.powershell.utility/get-verb.md",
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-verb?view=powershell-7.2",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "reference/5.1/microsoft.powershell.core/functions/get-verb.md",
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-verb?view=powershell-5.1",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "reference/5.1/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md",
       "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq",
       "redirect_document_id": false
