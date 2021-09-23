@@ -1,14 +1,12 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 11/23/2020
+ms.date: 09/23/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
 ---
 # about_PSReadLine
-
-## about_PSReadLine
 
 ## Short Description
 
@@ -17,7 +15,7 @@ PowerShell console.
 
 ## Long Description
 
-PSReadLine 2.2 provides a powerful command-line editing experience for the
+PSReadLine 2.1 provides a powerful command-line editing experience for the
 PowerShell console. It provides:
 
 - Syntax coloring of the command line
@@ -28,10 +26,19 @@ PowerShell console. It provides:
 - Many configuration options
 - Bash style completion (optional in Cmd mode, default in Emacs mode)
 - Emacs yank/kill-ring
-- PowerShell token based "word" movement and kill
+- PowerShell token based "word" movement and deletion
 - Predictive IntelliSense
 
-PSReadLine 2.2.0 added two new predictive IntelliSense features:
+PSReadLine requires PowerShell 3.0, or newer. PSReadLine works with default
+console host, Visual Studio Code, and Window Terminal. It does not work in
+PowerShell ISE.
+
+PSReadLine 2.1.0 ships with PowerShell 7.2 and is supported in all supported
+versions of PowerShell. It is available to install from the PowerShell Gallery.
+To install PSReadLine 2.1.0 in a supported version of PowerShell run the
+following command.
+
+PSReadLine 2.2.0 (beta) added two new predictive IntelliSense features:
 
 - Added the **PredictionViewStyle** parameter to allow for the selection of the
   new `ListView`.
@@ -39,14 +46,6 @@ PSReadLine 2.2.0 added two new predictive IntelliSense features:
   allow a user can import a predictor module that can render the suggestions
   from a custom source.
 
-PSReadLine requires PowerShell 3.0, or newer. PSReadLine works with default
-console host, Visual Studio Code, and Window Terminal. It does not work in
-PowerShell ISE.
-
-PSReadLine 2.2.0 ships with PowerShell 7.2 and is supported in all supported
-versions of PowerShell. It is available to install from the PowerShell Gallery.
-To install PSReadLine 2.2.0 in a supported version of PowerShell run the
-following command.
 
 ```powershell
 Install-Module -Name PSReadLine -AllowPrerelease
@@ -91,7 +90,7 @@ The following functions are available in the class
 
 ### Abort
 
-Abort current action, e.g. incremental history search.
+Abort current action, for example: incremental history search.
 
 - Emacs: `<Ctrl+g>`
 
@@ -105,7 +104,7 @@ then recall the next item from history the next time ReadLine is called.
 ### AcceptLine
 
 Attempt to execute the current input. If the current input is incomplete (for
-example there is a missing closing parenthesis, bracket, or quote, then the
+example there is a missing closing parenthesis, bracket, or quote) then the
 continuation prompt is displayed on the next line and PSReadLine waits for
 keys to edit the current input.
 
@@ -400,7 +399,7 @@ Repeat the last text modification.
 
 ### RevertLine
 
-Reverts all of the input to the current input.
+Reverts all input to the current input.
 
 - Cmd: `<Escape>`
 - Emacs: `<Alt+r>`, `<Escape,r>`
@@ -455,7 +454,7 @@ word to the cursor. The cleared text is placed in the kill-ring.
 ### ValidateAndAcceptLine
 
 Attempt to execute the current input. If the current input is incomplete (for
-example there is a missing closing parenthesis, bracket, or quote, then the
+example there is a missing closing parenthesis, bracket, or quote) then the
 continuation prompt is displayed on the next line and PSReadLine waits for
 keys to edit the current input.
 
@@ -483,14 +482,14 @@ A new line is inserted below the current line.
 
 ### ViBackwardDeleteGlob
 
-Deletes the previous word, using only white space as the word delimiter.
+Deletes the previous word, using only whitespace as the word delimiter.
 
 - Vi command mode: `<d,B>`
 
 ### ViBackwardGlob
 
-Moves the cursor back to the beginning of the previous word, using only white
-space as delimiters.
+Moves the cursor back to the beginning of the previous word, using only
+whitespace as delimiters.
 
 - Vi command mode: `<B>`
 
@@ -509,7 +508,7 @@ Delete to the end of the word.
 
 ### ViDeleteGlob
 
-Delete the next glob (white space delimited word).
+Delete the next glob (whitespace delimited word).
 
 - Vi command mode: `<d,W>`
 
@@ -873,13 +872,13 @@ the cursor to the next line of multi-line input.
 
 ### ViEndOfGlob
 
-Moves the cursor to the end of the word, using only white space as delimiters.
+Moves the cursor to the end of the word, using only whitespace as delimiters.
 
 - Vi command mode: `<E>`
 
 ### ViEndOfPreviousGlob
 
-Moves to the end of the previous word, using only white space as a word
+Moves to the end of the previous word, using only whitespace as a word
 delimiter.
 
 - Function is unbound.
@@ -892,7 +891,7 @@ Similar to GotoBrace, but is character based instead of token based.
 
 ### ViNextGlob
 
-Moves to the next word, using only white space as a word delimiter.
+Moves to the next word, using only whitespace as a word delimiter.
 
 - Vi command mode: `<W>`
 
@@ -1070,7 +1069,7 @@ Switch the view style for prediction between `InlineView` and `ListView`.
 ### CaptureScreen
 
 Start interactive screen capture - up/down arrows select lines, enter copies
-selected text to clipboard as text and html.
+selected text to clipboard as text and HTML.
 
 - Function is unbound.
 
@@ -1097,8 +1096,8 @@ Start a new digit argument to pass to other functions.
 ### InvokePrompt
 
 Erases the current prompt and calls the prompt function to redisplay the
-prompt. Useful for custom key handlers that change state, e.g. change the
-current directory.
+prompt. Useful for custom key handlers that change state. For example, change
+the current directory.
 
 - Function is unbound.
 
@@ -1444,7 +1443,7 @@ You can bind a ScriptBlock to a key. The ScriptBlock can do pretty much
 anything you want. Some useful examples include
 
 - edit the command line
-- opening a new window (e.g. help)
+- opening a new window (for example, help)
 - change directories without changing the command line
 
 The ScriptBlock receives two arguments:
@@ -1553,7 +1552,7 @@ a custom key binding.
 void GetSelectionState([ref] int start, [ref] int length)
 ```
 
-If there is no selection on the command line, -1 will be returned in both
+If there is no selection on the command line, the function returns -1 in both
 start and length. If there is a selection on the command line, the start and
 length of the selection are returned.
 

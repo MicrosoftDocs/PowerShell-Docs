@@ -192,6 +192,8 @@ items:
             href: learn/remoting/ps-remoting-second-hop.md
           - name: PowerShell Remoting FAQ
             href: learn/remoting/powershell-remoting-faq.yml
+      - name: PowerShell security features
+        href: learn/security-features.md
       - name: Using Experimental Features
         href: learn/experimental-features.md
       - name: Compatibility aliases
