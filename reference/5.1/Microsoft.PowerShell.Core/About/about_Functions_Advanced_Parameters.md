@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 07/28/2021
+ms.date: 09/23/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Parameters
@@ -166,8 +166,8 @@ value is required.
 
 - Switch parameters should not be given default values. They should always
   default to false.
-- Switch parameters are excluded from positional parameters by default. 
-  Even when other parameters are implicitly positional, switch parameters are not. 
+- Switch parameters are excluded from positional parameters by default.
+  Even when other parameters are implicitly positional, switch parameters are not.
   You _can_ override that in the Parameter attribute, but it will confuse users.
 - Switch parameters should be designed so that setting them moves a command
   from its default functionality to a less common or more complicated mode. The
@@ -340,7 +340,7 @@ The following example declares the **ComputerName** parameter. It uses the
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [string[]]
     $ComputerName
 )
@@ -405,17 +405,17 @@ parameter set, a **UserName** parameter in the `User` parameter set, and a
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true,
+    [Parameter(Mandatory,
     ParameterSetName="Computer")]
     [string[]]
     $ComputerName,
 
-    [Parameter(Mandatory=$true,
+    [Parameter(Mandatory,
     ParameterSetName="User")]
     [string[]]
     $UserName,
 
-    [Parameter(Mandatory=$false)]
+    [Parameter()]
     [switch]
     $Summary
 )
@@ -432,18 +432,18 @@ the `Computer` parameter set and mandatory in the `User` parameter set.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true,
+    [Parameter(Mandatory,
     ParameterSetName="Computer")]
     [string[]]
     $ComputerName,
 
-    [Parameter(Mandatory=$true,
+    [Parameter(Mandatory,
     ParameterSetName="User")]
     [string[]]
     $UserName,
 
-    [Parameter(Mandatory=$false, ParameterSetName="Computer")]
-    [Parameter(Mandatory=$true, ParameterSetName="User")]
+    [Parameter(ParameterSetName="Computer")]
+    [Parameter(Mandatory, ParameterSetName="User")]
     [switch]
     $Summary
 )
@@ -462,8 +462,8 @@ and accepts an object that's passed to the function from the pipeline.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true,
-    ValueFromPipeline=$true)]
+    [Parameter(Mandatory,
+    ValueFromPipeline)]
     [string[]]
     $ComputerName
 )
@@ -485,8 +485,8 @@ the function through the pipeline.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true,
-    ValueFromPipelineByPropertyName=$true)]
+    [Parameter(Mandatory,
+    ValueFromPipelineByPropertyName)]
     [string[]]
     $ComputerName
 )
@@ -523,7 +523,7 @@ function Test-Remainder
 {
      param(
          [string]
-         [Parameter(Mandatory = $true, Position=0)]
+         [Parameter(Mandatory, Position=0)]
          $Value,
          [string[]]
          [Parameter(Position=1, ValueFromRemainingArguments)]
@@ -561,7 +561,7 @@ for the function (for example, `.SYNOPSIS`) then this message also shows up in
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true,
+    [Parameter(Mandatory,
     HelpMessage="Enter one or more computer names separated by commas.")]
     [string[]]
     $ComputerName
@@ -578,7 +578,7 @@ The following example shows a parameter declaration that adds the **CN** and
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [Alias("CN","MachineName")]
     [string[]]
     $ComputerName
@@ -593,7 +593,7 @@ for a mandatory **Path** parameter that supports wildcard values.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [SupportsWildcards()]
     [string[]]
     $Path
@@ -645,7 +645,7 @@ that can have a **null** value.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [AllowNull()]
     [hashtable]
     $ComputerInfo
@@ -665,7 +665,7 @@ parameter that can have an empty string value.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [AllowEmptyString()]
     [string]
     $ComputerName
@@ -680,7 +680,7 @@ parameter to be an empty collection `@()`. The following example declares a
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [AllowEmptyCollection()]
     [string[]]
     $ComputerName
@@ -699,7 +699,7 @@ takes one to five parameter values.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [ValidateCount(1,5)]
     [string[]]
     $ComputerName
@@ -717,7 +717,7 @@ In the following example, each computer name must have one to ten characters.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [ValidateLength(1,10)]
     [string[]]
     $ComputerName
@@ -747,7 +747,7 @@ and each digit must be a number zero to nine.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [ValidatePattern("[0-9][0-9][0-9][0-9]")]
     [string[]]
     $ComputerName
@@ -765,14 +765,14 @@ four-digit number, and each digit must be a number zero to nine.
 
 The **ValidateRange** attribute specifies a numeric range for each parameter or
 variable value. PowerShell generates an error if any value is outside that
-range. 
+range.
 
 In the following example, the value of the **Attempts** parameter must be
 between zero and ten.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [ValidateRange(0,10)]
     [Int]
     $Attempts
@@ -802,7 +802,7 @@ greater than or equal to the current date.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [ValidateScript({$_ -ge (Get-Date)})]
     [DateTime]
     $EventDate
@@ -831,7 +831,7 @@ High.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [ValidateSet("Low", "Average", "High")]
     [string[]]
     $Detail
@@ -925,7 +925,7 @@ In the following example, the value of the **ID** parameter can't be `$null`.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$false)]
+    [Parameter()]
     [ValidateNotNull()]
     $ID
 )
@@ -940,7 +940,7 @@ empty string (`""`), or an empty array `@()`.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [ValidateNotNullOrEmpty()]
     [string[]]
     $UserName
@@ -976,7 +976,7 @@ If you use relative path, the current drive must be `User`.
 function Test-UserDrivePath{
     [OutputType([bool])]
     Param(
-      [Parameter(Mandatory=, Position=0)][ValidateUserDrive()][string]$Path
+      [Parameter(Mandatory, Position=0)][ValidateUserDrive()][string]$Path
       )
     $True
 }
