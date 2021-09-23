@@ -15,7 +15,27 @@ items:
       - name: Installing PowerShell on Windows
         href: install/installing-powershell-on-windows.md
       - name: Installing PowerShell on Linux
-        href: install/installing-powershell-on-linux.md
+        items:
+          - name: Overview
+            href: install/installing-powershell-on-linux.md
+          - name: Installing PowerShell on Alpine Linux
+            href: install/install-alpine.md
+          - name: Installing PowerShell on CentOS
+            href: install/install-centos.md
+          - name: Installing PowerShell on Debian Linux
+            href: install/install-debian.md
+          - name: Installing PowerShell on Fedora Linux
+            href: install/install-fedora.md
+          - name: Installing PowerShell on Raspberry Pi OS
+            href: install/install-raspbian.md
+          - name: Installing PowerShell on Red Hat Enterprise Linux (RHEL)
+            href: install/install-rhel.md
+          - name: Installing PowerShell on Ubuntu
+            href: install/install-ubuntu.md
+          - name: Community support for PowerShell on Linux
+            href: install/community-support.md
+          - name: Alternate ways to install PowerShell on Linux
+            href: install/install-other-linux.md
       - name: Installing PowerShell on macOS
         href: install/installing-powershell-on-macos.md
       - name: Installing PowerShell on Arm
