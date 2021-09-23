@@ -115,7 +115,7 @@ information about background jobs, see [Background Jobs](./background-jobs.md).
 
         foreach (Process pl in p)
         {
-          Output.Add(new PSObject(pl));
+          Output.Add(PSObject.AsPSObject(pl));
         }
         Output.Complete();
       } // End DoProcessLogic.
@@ -140,7 +140,7 @@ information about background jobs, see [Background Jobs](./background-jobs.md).
         }
         else
         {
-          job.ChildJobs[0].Output.Add(new PSObject(pl));
+          job.ChildJobs[0].Output.Add(PSObject.AsPSObject(pl));
         }
       }
     } // End DoProcessLogic.
@@ -296,7 +296,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
         foreach (Process pl in p)
         {
-          Output.Add(new PSObject(pl));
+          Output.Add(PSObject.AsPSObject(pl));
         }
         Output.Complete();
       } // End DoProcessLogic.
@@ -322,7 +322,7 @@ namespace Microsoft.Samples.PowerShell.Commands
         }
         else
         {
-          job.ChildJobs[0].Output.Add(new PSObject(pl));
+          job.ChildJobs[0].Output.Add(PSObject.AsPSObject(pl));
         }
       }
     } // End DoProcessLogic.
