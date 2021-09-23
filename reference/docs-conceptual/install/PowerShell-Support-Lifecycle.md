@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell
-ms.date: 09/21/2021
+ms.date: 09/23/2021
 title: PowerShell Support Lifecycle
 ---
 # PowerShell Support Lifecycle
@@ -85,7 +85,6 @@ longer be supported.
 | 6.1               | September 28, 2019        |
 | 6.0               | February 13, 2019         |
 
-
 Support for PowerShell on a specific platforms is based on the support policy of the version of .NET
 used.
 
@@ -97,7 +96,7 @@ used.
 
 When a platform version reaches end-of-life as defined by the platform owner, PowerShell also ceases
 to support that platform version. Previously released packages remain available for customers
-needing access but formal support and updates are no longer be provided.
+needing access but formal support and updates are no longer provided.
 
 So, the distribution owners ended support for the following versions and aren't supported.
 
@@ -131,28 +130,6 @@ Server is supported under the [Windows Support Lifecycle][lifecycle].
 ## Experimental features
 
 [Experimental features][exp] are limited to community support.
-
-## Security Servicing Criteria
-
-PowerShell follows the [Microsoft Security Servicing Criteria for Windows][mssec].
-The table below outlines the features that meet the servicing criteria and those that do not.
-
-|                  Feature                   |       Type       |
-| ------------------------------------------ | ---------------- |
-| System Lockdown - with WDAC                | Security Feature |
-| Constrained language mode - with WDAC      | Security Feature |
-| System Lockdown - with AppLocker           | Defense in Depth |
-| Constrained language mode - with AppLocker | Defense in Depth |
-| Execution Policy                           | Defense in Depth |
-
-> [!NOTE]
-> There is a corner-case scenario in AppLocker where you only have **Deny** rules and constrained
-> language mode is not used to enforce the policy that allowed you to bypass the execution policy.
-> Beginning in PowerShell 7.2, a change was made to ensure that AppLocker rules would take
-> precedence over a `Set-ExecutionPolicy -ExecutionPolicy Bypass` command.
-
-For more information about AppLocker and Windows Defender Application Control (WDAC), see
-[Application Controls for Windows][WDAC].
 
 ## Notes on licensing
 
@@ -211,7 +188,6 @@ for historical reference. It is not intended for use to determine the support li
 [Long-Term]: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
 [mit]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [modern]: /lifecycle/policies/modern
-[mssec]: https://www.microsoft.com/msrc/windows-security-servicing-criteria
 [net31os]: https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md
 [net50os]: https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md
 [net60os]: https://github.com/dotnet/core/blob/main/release-notes/6.0/supported-os.md
@@ -219,4 +195,3 @@ for historical reference. It is not intended for use to determine the support li
 [pscommunity]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [pshub]: /powershell/scripting/community/community-support
 [semi-annual]: /windows-server/get-started-19/servicing-channels-19
-[WDAC]: /windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control
