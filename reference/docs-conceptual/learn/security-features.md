@@ -18,11 +18,11 @@ For more information see [about_Execution_Policies][exe-policy].
 
 ## Module and script block logging
 
-Module Logging allows you to enable logging for selected PowerShell modules. The setting is
-effective in all sessions on the computer. The pipeline execution events for the specified modules
+Module Logging allows you to enable logging for selected PowerShell modules. This setting is
+effective in all sessions on the computer. Pipeline execution events for the specified modules
 are recorded in the Windows PowerShell log in Event Viewer.
 
-Script Block Logging allows you to enable logging for the processing of commands, script blocks,
+Script Block Logging enables logging for the processing of commands, script blocks,
 functions, and scripts - whether invoked interactively, or through automation. This information is
 logged to the **Microsoft-Windows-PowerShell/Operational** event log.
 
@@ -34,7 +34,7 @@ For more information, see the following articles:
 
 ## Constrained language mode
 
-**ConstrainedLanguage** mode protects you system by the cmdlets and the .NET types that can be used
+**ConstrainedLanguage** mode protects your system by limiting the cmdlets and .NET types that can be used
 in a PowerShell session. For a full description, see [about_Language_Modes][lang-modes].
 
 ## Application Control
@@ -55,7 +55,7 @@ applications are allowed to run on their Windows 10 devices. WDAC is designed as
 under the servicing criteria defined by the Microsoft Security Response Center (MSRC).
 
 **AppLocker** builds on the application control features of Software Restriction Policies.
-AppLocker contains new capabilities and extensions that allow you to create rules to allow or deny
+AppLocker contains new capabilities and extensions that enable you to create rules to allow or deny
 apps from running based on unique identities of files and to specify which users or groups can run
 those apps.
 
@@ -74,9 +74,9 @@ The table below outlines the features that meet the servicing criteria and those
 
 > [!NOTE]
 > There is a corner-case scenario in AppLocker where you only have **Deny** rules and constrained
-> language mode is not used to enforce the policy that allowed you to bypass the execution policy.
-> Beginning in PowerShell 7.2, a change was made to ensure that AppLocker rules would take
-> precedence over a `Set-ExecutionPolicy -ExecutionPolicy Bypass` command.
+> language mode is not used to enforce the policy that allows you to bypass the execution policy.
+> Beginning in PowerShell 7.2, a change was made to ensure AppLocker rules take precedence
+> over a `Set-ExecutionPolicy -ExecutionPolicy Bypass` command.
 
 For more information about AppLocker and Windows Defender Application Control (WDAC), see
 [Application Controls for Windows][WDAC] and
