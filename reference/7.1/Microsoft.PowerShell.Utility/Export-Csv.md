@@ -179,7 +179,7 @@ $AppService = (Get-Service -DisplayName *Application* | Select-Object -Property 
 $AppService | Export-Csv -Path .\Services.Csv -NoTypeInformation
 Get-Content -Path .\Services.Csv
 $WinService = (Get-Service -DisplayName *Windows* | Select-Object -Property DisplayName, Status)
-$WinService | Export-Csv -Path ./Services.csv -NoTypeInformation -Append
+$WinService | Export-Csv -Path .\Services.csv -NoTypeInformation -Append
 Get-Content -Path .\Services.Csv
 ```
 
