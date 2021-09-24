@@ -300,7 +300,7 @@ parameter are limited to the cmdlets in the **Microsoft.PowerShell.Core** and
 exited under the control of PowerShell. The event is not fired when the host application or terminal
 window is closed.
 
-The engine is consider to be idle if it is not running a pipeline. The **OnIdle** event is fired
+The engine is considered to be idle if it is not running a pipeline. The **OnIdle** event is fired
 when PowerShell has been idle for 400 milliseconds (ms).
 
 ## RELATED LINKS
