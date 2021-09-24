@@ -2,6 +2,7 @@
 description: Provides information about PowerShell thread-based jobs. A thread job is a type of background job that runs a command or expression in a separate thread within the current session process.
 Locale: en-US
 ms.date: 11/11/2020
+online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_thread_jobs?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Thread Jobs
 ---
