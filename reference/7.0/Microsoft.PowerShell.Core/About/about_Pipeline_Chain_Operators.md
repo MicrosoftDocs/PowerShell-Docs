@@ -2,6 +2,7 @@
 description: Describes chaining pipelines with the `&&` and `||` operators in PowerShell.
 Locale: en-US
 ms.date: 09/30/2019
+online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_pipeline_chain_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Pipeline Chain Operators
 ---
