@@ -2,6 +2,7 @@
 description: Describes how boolean expressions are evaluated.
 Locale: en-US
 ms.date: 06/10/2021
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_booleans?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Booleans
 ---

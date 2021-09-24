@@ -1,8 +1,9 @@
 ---
 description: Describes how to define and use parameter sets in advanced functions.
-title: about Parameter Sets
 Locale: en-US
 ms.date: 09/20/2021
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-5.1&WT.mc_id=ps-gethelp
+title: about Parameter Sets
 ---
 # about_Parameter_Sets
 

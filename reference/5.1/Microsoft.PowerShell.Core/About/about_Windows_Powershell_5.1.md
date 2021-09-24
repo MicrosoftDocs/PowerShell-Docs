@@ -2,7 +2,7 @@
 description: Describes new features that are included in Windows PowerShell 5.1.
 Locale: en-US
 ms.date: 01/17/2018
-online version: https://docs.microsoft.com/powershell/module/?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/about_windows_powershell_5.1?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Windows Powershell 5.1
 ---
