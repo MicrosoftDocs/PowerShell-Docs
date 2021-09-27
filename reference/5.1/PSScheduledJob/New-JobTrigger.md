@@ -10,10 +10,10 @@ title: New-JobTrigger
 
 # New-JobTrigger
 
-## SYNOPSIS
+## Synopsis
 Creates a job trigger for a scheduled job.
 
-## SYNTAX
+## Syntax
 
 ### Once (Default)
 
@@ -47,7 +47,7 @@ New-JobTrigger [-RandomDelay <TimeSpan>] [-AtStartup] [<CommonParameters>]
 New-JobTrigger [-RandomDelay <TimeSpan>] [-User <String>] [-AtLogOn] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **New-JobTrigger** cmdlet creates a job trigger that starts a scheduled job on a one-time or recurring schedule, or when an event occurs.
 
 You can use the **ScheduledJobTrigger** object that **New-JobTrigger** returns to set a job trigger for a new or existing scheduled job.
@@ -63,7 +63,7 @@ Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or s
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Once Schedule
 
@@ -178,7 +178,7 @@ PS C:\> New-JobTrigger -Once -At "9/21/2012 0am" -RepetitionInterval (New-TimeSp
 The following command creates a job trigger that runs a scheduled job once every 12 hours for an indefinite period of time.
 The schedule begins tomorrow (9/21/2012) at midnight (0:00 AM).
 
-## PARAMETERS
+## Parameters
 
 ### -At
 Starts the job at the specified date and time.
@@ -438,16 +438,16 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
 
-## NOTES
+## Notes
 
 * Job triggers are not saved to disk. However, scheduled jobs are saved to disk, and you can use the Get-JobTrigger to get the job trigger of any scheduled job.
 * **New-JobTrigger** does not prevent you from creating a job trigger that will not run a scheduled job, such as one-time trigger for a date in the past.
@@ -462,7 +462,7 @@ You cannot pipe input to this cmdlet.
 `User="Domain1\User01` (or any valid user; used only with the *AtLogon* frequency value)
 }
 
-## RELATED LINKS
+## Related links
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

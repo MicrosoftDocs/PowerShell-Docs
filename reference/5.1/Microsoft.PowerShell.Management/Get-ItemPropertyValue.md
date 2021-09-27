@@ -270,7 +270,7 @@ This cmdlet is designed to work with the data exposed by any provider. To list t
 available in your session, run the `Get-PSProvider` cmdlet. For more information, see
 about_Providers.
 
-## Related Links
+## Related links
 
 [Get-ItemProperty](Get-ItemProperty.md)
 

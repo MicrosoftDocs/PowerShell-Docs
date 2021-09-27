@@ -8,12 +8,12 @@ title: about Calculated Properties
 ---
 # about_Calculated_Properties
 
-## Short Description
+## Short description
 
 PowerShell provides the ability to dynamically add new properties and alter
 the formatting of objects output to the pipeline.
 
-## Long Description
+## Long description
 
 A number of PowerShell cmdlets transform, aggregate, or process input objects
 into output objects using parameters that allow the addition of new properties
@@ -493,7 +493,7 @@ Date       Salesperson UnitsSold
   For `Sort-Object`, statement-terminating and script-terminating errors are
   _output_ but they do not terminate the statement.
 
-## See Also
+## See also
 
 [about_Hash_Tables](about_hash_tables.md)
 

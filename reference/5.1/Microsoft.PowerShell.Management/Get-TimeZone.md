@@ -9,10 +9,10 @@ title: Get-TimeZone
 ---
 # Get-TimeZone
 
-## SYNOPSIS
+## Synopsis
 Gets the current time zone or a list of available time zones.
 
-## SYNTAX
+## Syntax
 
 ### Name (Default)
 
@@ -32,11 +32,11 @@ Get-TimeZone -Id <String[]> [<CommonParameters>]
 Get-TimeZone [-ListAvailable] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Get-TimeZone** cmdlet gets the current time zone or a list of available time zones.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the current time zone
 
@@ -76,7 +76,7 @@ PS C:\> Get-TimeZone -ListAvailable
 
 This command gets all available time zones.
 
-## PARAMETERS
+## Parameters
 
 ### -Id
 
@@ -133,16 +133,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String[]
 
-## OUTPUTS
+## Outputs
 
 ### System.TimeZoneInfo[]
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Set-TimeZone](Set-TimeZone.md)

@@ -9,10 +9,10 @@ title: ConvertTo-SecureString
 ---
 # ConvertTo-SecureString
 
-## SYNOPSIS
+## Synopsis
 Converts plain text or encrypted strings to secure strings.
 
-## SYNTAX
+## Syntax
 
 ### Secure (Default)
 
@@ -32,7 +32,7 @@ ConvertTo-SecureString [-String] <String> [-AsPlainText] [-Force] [<CommonParame
 ConvertTo-SecureString [-String] <String> [-Key <Byte[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `ConvertTo-SecureString` cmdlet converts encrypted standard strings into secure strings. It can
 also convert plain text to secure strings. It is used with `ConvertFrom-SecureString` and
@@ -45,7 +45,7 @@ If the standard string being converted was encrypted with `ConvertFrom-SecureStr
 specified key, that same key must be provided as the value of the **Key** or **SecureKey** parameter
 of the `ConvertTo-SecureString` cmdlet.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Convert a secure string to an encrypted string
 
@@ -126,7 +126,7 @@ $Secure_String_Pwd = ConvertTo-SecureString "P@ssW0rD!" -AsPlainText -Force
 > You should avoid using plain text strings in script or from the command line. The plain text can
 > show up in event logs and command history logs.
 
-## PARAMETERS
+## Parameters
 
 ### -AsPlainText
 
@@ -223,25 +223,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a standard encrypted string to `ConvertTo-SecureString`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Security.SecureString
 
 `ConvertTo-SecureString` returns a **SecureString** object.
 
-## NOTES
+## Notes
 
 Some characters, such as emoticons, correspond to several code points in the string that contains
 them. Avoid using these characters because they may cause problems and misunderstandings when used
 in a password.
 
-## RELATED LINKS
+## Related links
 
 [ConvertFrom-SecureString](ConvertFrom-SecureString.md)
 

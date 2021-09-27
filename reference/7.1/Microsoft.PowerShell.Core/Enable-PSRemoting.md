@@ -9,16 +9,16 @@ title: Enable-PSRemoting
 ---
 # Enable-PSRemoting
 
-## SYNOPSIS
+## Synopsis
 Configures the computer to receive remote commands.
 
-## SYNTAX
+## Syntax
 
 ```
 Enable-PSRemoting [-Force] [-SkipNetworkProfileCheck] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -80,7 +80,7 @@ option. This cmdlet is not available on Linux or MacOS versions of PowerShell.
 > disable PowerShell remoting endpoints that are hosted by Windows PowerShell, run the
 > `Enable-PSRemoting` cmdlet from within a Windows PowerShell session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Configure a computer to receive remote commands
 
@@ -210,7 +210,7 @@ OS                             Microsoft Windows 10.0.18363
 > The name of the firewall rule can be different depending on the version of Windows. Use the
 > `Get-NetFirewallRule` cmdlet to list the names of the rules on your system.
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 
@@ -294,19 +294,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.String
 
 This cmdlet returns strings that describe its results.
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
@@ -330,7 +330,7 @@ property of all session configurations to `$True`.
 `Enable-PSRemoting` removes the **Deny_All** and **Network_Deny_All** settings. This provides remote
 access to session configurations that were reserved for local use.
 
-## RELATED LINKS
+## Related links
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 

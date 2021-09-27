@@ -9,21 +9,21 @@ title: Get-ComputerInfo
 ---
 # Get-ComputerInfo
 
-## SYNOPSIS
+## Synopsis
 Gets a consolidated object of system and operating system properties.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-ComputerInfo [[-Property] <String[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-ComputerInfo` cmdlet gets a consolidated object of system and operating system properties.
 This cmdlet was introduced in Windows PowerShell 5.1.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all computer properties
 
@@ -59,7 +59,7 @@ OsServicePackMajorVersion          : 0
 OsServicePackMinorVersion          : 0
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Property
 
@@ -84,14 +84,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String[]
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Management.ComputerInfo
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links

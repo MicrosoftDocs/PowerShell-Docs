@@ -9,10 +9,10 @@ title: Set-WSManInstance
 ---
 # Set-WSManInstance
 
-## SYNOPSIS
+## Synopsis
 Modifies the management information that is related to a resource.
 
-## SYNTAX
+## Syntax
 
 ### ComputerName (Default)
 
@@ -33,7 +33,7 @@ Set-WSManInstance [-ConnectionURI <Uri>] [-Dialect <Uri>] [-FilePath <String>] [
  [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -41,7 +41,7 @@ The Set-WSManInstance cmdlet modifies the management information that is related
 
 This cmdlet uses the WinRM connection/transport layer to modify the information.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Disable a listener on the local computer
 
@@ -131,7 +131,7 @@ This fails:     -ValueSet @{enabled="False"}
 
 This succeeds:  -ValueSet @{Enabled="False"}
 
-## PARAMETERS
+## Parameters
 
 ### -ApplicationName
 
@@ -491,21 +491,21 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### None
 
 This cmdlet does not accept any input.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Connect-WSMan](Connect-WSMan.md)
 

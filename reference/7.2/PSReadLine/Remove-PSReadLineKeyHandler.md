@@ -10,20 +10,20 @@ title: Remove-PSReadLineKeyHandler
 
 # Remove-PSReadLineKeyHandler
 
-## SYNOPSIS
+## Synopsis
 Removes a key binding.
 
-## SYNTAX
+## Syntax
 
 ```
 Remove-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Remove-PSReadLineKeyHandler` cmdlet removes a specified key binding.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Remove a binding
 
@@ -34,7 +34,7 @@ Remove-PSReadLineKeyHandler -Chord Ctrl+B
 This command removes the binding from the key combination, or chord, `Ctrl+B`. The `Ctrl+B` chord is
 created in the `Set-PSReadLineKeyHandler` article.
 
-## PARAMETERS
+## Parameters
 
 ### -Chord
 
@@ -83,19 +83,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
 

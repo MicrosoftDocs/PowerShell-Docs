@@ -10,16 +10,16 @@ title: Enable-JobTrigger
 
 # Enable-JobTrigger
 
-## SYNOPSIS
+## Synopsis
 Enables the job triggers of scheduled jobs.
 
-## SYNTAX
+## Syntax
 
 ```
 Enable-JobTrigger [-InputObject] <ScheduledJobTrigger[]> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Enable-JobTrigger** cmdlet re-enables job triggers of scheduled jobs, such as those that were disabled by using the Disable-JobTrigger cmdlet.
 Enabled and re-enabled job triggers can start scheduled jobs immediately; there is no need to restart Windows or Windows PowerShell.
 
@@ -35,7 +35,7 @@ Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or s
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Enable a job trigger
 
@@ -93,7 +93,7 @@ Another pipeline operator sends the job triggers to the Where-Object cmdlet, whi
 Another pipeline operator sends the disabled job triggers to the Format-Table cmdlet, which displays the selected properties of the job triggers in a table.
 The properties include a new JobName property that displays the name of the scheduled job in the JobDefinition property of the job trigger.
 
-## PARAMETERS
+## Parameters
 
 ### -InputObject
 Specifies the job trigger to enable.
@@ -162,21 +162,21 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
 You can pipe job triggers to **Enable-JobTrigger**.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * **Enable-JobTrigger** does not generate errors or warnings if you enable a job trigger that is already enabled.
 
-## RELATED LINKS
+## Related links
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

@@ -8,11 +8,11 @@ title: about Pwsh
 ---
 # about_Pwsh
 
-## Short Description
+## Short description
 Explains how to use the `pwsh` command-line interface. Displays the
 command-line parameters and describes the syntax.
 
-## Long Description
+## Long description
 
 ## Syntax
 

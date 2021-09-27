@@ -10,10 +10,10 @@ title: Group-Object
 
 # Group-Object
 
-## SYNOPSIS
+## Synopsis
 Groups objects that contain the same value for specified properties.
 
-## SYNTAX
+## Syntax
 
 ### HashTable
 
@@ -22,7 +22,7 @@ Group-Object [-NoElement] [-AsHashTable] [-AsString] [-InputObject <PSObject>]
  [[-Property] <Object[]>] [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Group-Object` cmdlet displays objects in groups based on the value of a specified property.
 `Group-Object` returns a table with one row for each property value and a column that displays the
@@ -31,7 +31,7 @@ number of items with that value.
 If you specify more than one property, `Group-Object` first groups them by the values of the first
 property, and then, within each property group, it groups by the value of the next property.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Group files by extension
 
@@ -203,7 +203,7 @@ Cmdlet          Get-AppLockerPolicy                2.0.0.0    AppLocker
 ...
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -AsHashTable
 
@@ -349,20 +349,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to `Group-Object`.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.GroupInfo or System.Collections.Hashtable
 
 When you use the **AsHashTable** parameter, `Group-Object` returns a **Hashtable** object.
 Otherwise, it returns a **GroupInfo** object.
 
-## NOTES
+## Notes
 
 You can use the **GroupBy** parameter of the formatting cmdlets, such as `Format-Table` and
 `Format-List`, to group objects. Unlike `Group-Object`, which creates a single table with a row for
@@ -392,7 +392,7 @@ following rules:
   Objects that don't have a specified property can't be grouped. Objects that aren't grouped appear
   in the final **GroupInfo** object output in a group named `AutomationNull.Value`.
 
-## RELATED LINKS
+## Related links
 
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 

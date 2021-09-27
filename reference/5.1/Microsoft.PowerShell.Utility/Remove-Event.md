@@ -10,10 +10,10 @@ title: Remove-Event
 
 # Remove-Event
 
-## SYNOPSIS
+## Synopsis
 Deletes events from the event queue.
 
-## SYNTAX
+## Syntax
 
 ### BySource (Default)
 
@@ -27,14 +27,14 @@ Remove-Event [-SourceIdentifier] <String> [-WhatIf] [-Confirm] [<CommonParameter
 Remove-Event [-EventIdentifier] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Remove-Event` cmdlet deletes events from the event queue in the current session.
 
 This cmdlet deletes only the events currently in the queue. To cancel event registrations or
 unsubscribe, use the `Unregister-Event` cmdlet.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Remove an event by source identifier
 
@@ -60,7 +60,7 @@ PS C:\> Get-Event | Remove-Event
 
 This command deletes all events from the event queue.
 
-## PARAMETERS
+## Parameters
 
 ### -EventIdentifier
 
@@ -135,24 +135,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSEventArgs
 
 You can pipe events from `Get-Event` to `Remove-Event`.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 The cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 Events, event subscriptions, and the event queue exist only in the current session. If you close the
 current session, the event queue is discarded and the event subscription is canceled.
 
-## RELATED LINKS
+## Related links
 
 [Get-Event](Get-Event.md)
 

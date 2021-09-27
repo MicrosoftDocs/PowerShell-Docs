@@ -9,10 +9,10 @@ title: Set-Acl
 ---
 # Set-Acl
 
-## SYNOPSIS
+## Synopsis
 Changes the security descriptor of a specified item, such as a file or a registry key.
 
-## SYNTAX
+## Syntax
 
 ### ByPath (Default)
 
@@ -35,7 +35,7 @@ Set-Acl -LiteralPath <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -48,7 +48,7 @@ supply a security descriptor that has the values you want to apply. `Set-Acl` ap
 descriptor that is supplied. It uses the value of the **AclObject** parameter as a model and changes
 the values in the item's security descriptor to match the values in the **AclObject** parameter.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Copy a security descriptor from one file to another
 
@@ -176,7 +176,7 @@ is an argument list is to be passed when making the new **FileSystemAccessRule**
 The last command uses `Set-Acl` to apply the security descriptor of to Dog.txt. When the command
 completes, the **BUILTIN\Administrators** group will have full control of the Dog.txt.
 
-## PARAMETERS
+## Parameters
 
 ### -AclObject
 
@@ -394,27 +394,27 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Security.AccessControl.ObjectSecurity, System.Security.AccessControl.CommonSecurityDescriptor
 
 You can pipe an ACL object or a security descriptor to `Set-Acl`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Security.AccessControl.FileSecurity
 
 By default, `Set-Acl` does not generate any output. However, if you use the **Passthru** parameter,
 it generates a security object. The type of the security object depends on the type of the item.
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
 The `Set-Acl` cmdlet is supported by the PowerShell file system and registry providers. As such, you
 can use it to change the security descriptors of files, directories, and registry keys.
 
-## RELATED LINKS
+## Related links
 
 [Get-Acl](Get-Acl.md)
 

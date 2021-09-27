@@ -10,10 +10,10 @@ title: Set-ScheduledJobOption
 
 # Set-ScheduledJobOption
 
-## SYNOPSIS
+## Synopsis
 Changes the job options of a scheduled job.
 
-## SYNTAX
+## Syntax
 
 ```
 Set-ScheduledJobOption [-InputObject] <ScheduledJobOptions> [-PassThru] [-RunElevated] [-HideInTaskScheduler]
@@ -22,7 +22,7 @@ Set-ScheduledJobOption [-InputObject] <ScheduledJobOptions> [-PassThru] [-RunEle
  [-IdleTimeout <TimeSpan>] [-IdleDuration <TimeSpan>] [-StartIfIdle] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Set-ScheduledJobOptions** cmdlet changes the job options of scheduled jobs.
 
 To change the options of a scheduled job, begin by using the Get-ScheduledJobOption cmdlet to get the job options of a scheduled job.
@@ -45,7 +45,7 @@ Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or s
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Change job options
 
@@ -106,7 +106,7 @@ Each job options object contains a JobDefinition property that contains the sche
 
 The job triggers are piped to the **Set-ScheduledJobOption** cmdlet, which changes the value of the *IdleTimeout* option to two hours (2:00:00).
 
-## PARAMETERS
+## Parameters
 
 ### -ContinueIfGoingOnBattery
 Do not stop the scheduled job if the computer switches to battery power (disconnects from AC power) while the job is running.
@@ -411,20 +411,20 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 You can pipe a scheduled job options object to **Set-ScheduledJobOption**.
 
-## OUTPUTS
+## Outputs
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 When you use the *Passthru* parameter, **Set-ScheduledJobOption** returns the job options that were changed.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

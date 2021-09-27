@@ -10,10 +10,10 @@ title: Remove-LocalGroupMember
 
 # Remove-LocalGroupMember
 
-## SYNOPSIS
+## Synopsis
 Removes members from a local group.
 
-## SYNTAX
+## Syntax
 
 ### Group
 
@@ -35,14 +35,14 @@ Remove-LocalGroupMember [-Member] <LocalPrincipal[]> [-SID] <SecurityIdentifier>
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Remove-LocalGroupMember** cmdlet removes users or groups from a local group.
 
 > [!NOTE]
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Remove members from the Administrators group
 
@@ -54,7 +54,7 @@ This command removes several members from the local Administrators group.
 The members that this cmdlet removes include a local user account, a Microsoft account, an Azure Active Directory account, and a domain group.
 This example uses a placeholder value for the user name of an account at Outlook.com.
 
-## PARAMETERS
+## Parameters
 
 ### -Group
 Specifies the security group from which this cmdlet removes members.
@@ -154,17 +154,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalPrincipal, System.String, System.Security.Principal.SecurityIdentifier
 You can pipe a local principal, a string, or a SID to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
@@ -175,7 +175,7 @@ This cmdlet does not generate any output.
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
 
-## RELATED LINKS
+## Related links
 
 [Add-LocalGroupMember](Add-LocalGroupMember.md)
 

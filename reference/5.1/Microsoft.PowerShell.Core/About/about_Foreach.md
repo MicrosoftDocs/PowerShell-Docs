@@ -226,7 +226,7 @@ function Get-FunctionPosition {
 }
 ```
 
-## SEE ALSO
+## See also
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
 

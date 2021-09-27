@@ -10,24 +10,24 @@ title: Remove-DscConfigurationDocument
 
 # Remove-DscConfigurationDocument
 
-## SYNOPSIS
+## Synopsis
 Removes a configuration document from the DSC configuration store.
 
-## SYNTAX
+## Syntax
 
 ```
 Remove-DscConfigurationDocument -Stage <Stage> [-Force] [-CimSession <CimSession[]>] [-ThrottleLimit <Int32>]
  [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The `Remove-DscConfigurationDocument` cmdlet removes a configuration document (.mof file) from the Windows PowerShell Desired State Configuration (DSC) configuration store.
 During configuration, the `Start-DscConfiguration` cmdlet copies a .mof file to a folder on the target computer.
 This cmdlet removes that configuration document and does additional cleanup.
 
 This cmdlet is available only as part of the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850) from the Microsoft Support library.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Remove the current configuration document
 
@@ -42,7 +42,7 @@ For more information, type `Get-Help New-CimSession`.
 
 The second command removes the current configuration document for the computer specified in the **CimSession** stored in $Session.
 
-## PARAMETERS
+## Parameters
 
 ### -AsJob
 Indicates that this cmdlet runs the command as a background job.
@@ -178,17 +178,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
-## OUTPUTS
+## Outputs
 
 ### None
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/dscforengineers)
 

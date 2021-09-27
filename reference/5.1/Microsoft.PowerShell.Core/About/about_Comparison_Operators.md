@@ -654,7 +654,7 @@ $b -isnot [int]        # Output: True
 $a -isnot $b.GetType() # Output: True
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Operators](about_Operators.md)
 - [about_Regular_Expressions](about_Regular_Expressions.md)

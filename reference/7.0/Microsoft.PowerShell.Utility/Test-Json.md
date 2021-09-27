@@ -10,16 +10,16 @@ title: Test-Json
 
 # Test-Json
 
-## SYNOPSIS
+## Synopsis
 Tests whether a string is a valid JSON document
 
-## SYNTAX
+## Syntax
 
 ```
 Test-Json [-Json] <string> [[-Schema] <string>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Test-Json` cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document
 and can optionally verify that JSON document against a provided schema.
@@ -33,7 +33,7 @@ web-based apps.
 
 This cmdlet was introduced in PowerShell 6.1
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Test if an object is valid JSON
 
@@ -104,7 +104,7 @@ input we tested uses a string value instead.
 
 For more information, see [JSON Schema](https://json-schema.org/).
 
-## PARAMETERS
+## Parameters
 
 ### -Json
 
@@ -152,17 +152,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a JSON string to `Test-Json`.
 
-## OUTPUTS
+## Outputs
 
 ### Boolean
 
-## NOTES
+## Notes
 
 The `Test-Json` cmdlet is implemented by using the
 [NJsonSchema Class](https://github.com/RSuter/NJsonSchema).
@@ -172,7 +172,7 @@ Newtonsoft's implementation includes several extensions to the JSON standard, su
 comments and use of single quotes. For a full list of features, see the Newtonsoft documentation at
 [https://www.newtonsoft.com/json](https://www.newtonsoft.com/json).
 
-## RELATED LINKS
+## Related links
 
 [An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](/previous-versions/dotnet/articles/bb299886(v=msdn.10))
 

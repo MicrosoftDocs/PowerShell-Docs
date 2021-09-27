@@ -9,12 +9,12 @@ title: about WQL
 
 # about_WQL
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes WMI Query Language (WQL), which can be used to get WMI objects in
 Windows PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 WQL is the Windows Management Instrumentation (WMI) query language, which is
 the language used to get information from WMI.
@@ -731,7 +731,7 @@ $q = "Select * from Win32_UserAccount where Caption = 'Fabrikam\\TimO'"
 Get-CimInstance -Query $q
 ```
 
-## SEE ALSO
+## See also
 
 [about_Special_Characters](about_Special_Characters.md)
 

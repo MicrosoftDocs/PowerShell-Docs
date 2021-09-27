@@ -280,7 +280,7 @@ not PowerShell Path objects. To use PowerShell paths with .NET methods, you
 must resolve the path to a filesystem-native path before passing it to the .NET
 method.
 
-## See Also
+## See also
 
 [about_Objects](about_Objects.md)
 

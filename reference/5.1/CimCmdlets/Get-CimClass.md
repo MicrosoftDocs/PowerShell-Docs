@@ -10,10 +10,10 @@ title: Get-CimClass
 
 # Get-CimClass
 
-## SYNOPSIS
+## Synopsis
 Gets a list of CIM classes in a specific namespace.
 
-## SYNTAX
+## Syntax
 
 ### ComputerSet (Default)
 
@@ -31,13 +31,13 @@ Get-CimClass [[-ClassName] <String>] [[-Namespace] <String>] [-OperationTimeoutS
  [-QualifierName <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-CimClass` cmdlet retrieves a list of CIM classes in a specific namespace. If there is no
 class name supplied, then the cmdlet returns all the classes in the namespace. Unlike a CIM
 instance, CIM classes do not contain the CIM session or computer name from which they are retrieved.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all the class definitions
 
@@ -110,7 +110,7 @@ Get-CimClass -ClassName *disk* -CimSession $s
 This set of commands creates a session with multiple computers and stores it into a variable `$s`
 using the `New-CimSession` cmdlet, and then gets the classes using the `Get-CimClass` cmdlet.
 
-## PARAMETERS
+## Parameters
 
 ### -CimSession
 
@@ -273,20 +273,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 This cmdlet accepts no input objects.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.Management.Infrastructure.CimClass
 
 This cmdlet returns a CIM class object.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [New-CimSession](New-CimSession.md)

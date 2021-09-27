@@ -9,10 +9,10 @@ title: Get-Credential
 ---
 # Get-Credential
 
-## SYNOPSIS
+## Synopsis
 Gets a credential object based on a user name and password.
 
-## SYNTAX
+## Syntax
 
 ### CredentialSet (Default)
 
@@ -26,7 +26,7 @@ Get-Credential [[-Credential] <PSCredential>] [<CommonParameters>]
 Get-Credential [-Message <String>] [[-UserName] <String>] [-Title <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Credential` cmdlet creates a credential object for a specified user name and password. You
 can use the credential object in security operations.
@@ -34,7 +34,7 @@ can use the credential object in security operations.
 The `Get-Credential` cmdlet prompts the user for a password or a user name and password. You can use
 the **Message** parameter to specify a customized message in the command line prompt.
 
-## EXAMPLES
+## Examples
 
 ### Example 1
 
@@ -146,7 +146,7 @@ This command gets a credential from the Server01 remote computer. The command us
 `Invoke-Command` cmdlet to run a `Get-Credential` command on the remote computer. The output shows
 the remote security message that `Get-Credential` includes in the authentication prompt.
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -242,19 +242,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSCredential
 
 `Get-Credential` returns a credential object.
 
-## NOTES
+## Notes
 
 You can use the **PSCredential** object that `Get-Credential` creates in cmdlets that request user
 authentication, such as those with a **Credential** parameter.
@@ -263,6 +263,6 @@ The **Credential** parameter is not supported by all providers that are installe
 Beginning in PowerShell 3.0, it is supported on select cmdlets, such as the `Get-Content`
 and `New-PSDrive` cmdlets.
 
-## RELATED LINKS
+## Related links
 
 [PromptForCredential](/dotnet/api/system.management.automation.host.pshostuserinterface.promptforcredential)

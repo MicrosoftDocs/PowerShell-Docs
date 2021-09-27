@@ -10,10 +10,10 @@ title: Get-Help
 
 # Get-Help
 
-## SYNOPSIS
+## Synopsis
 Displays information about PowerShell commands and concepts.
 
-## SYNTAX
+## Syntax
 
 ### AllUsersView (Default)
 
@@ -57,7 +57,7 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Functionality <String[]>] [-Role <String[]>] [-ShowWindow] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Help` cmdlet displays information about PowerShell concepts and commands, including
 cmdlets, functions, Common Information Model (CIM) commands, workflows, providers, aliases, and
@@ -109,7 +109,7 @@ For information about parameter attributes, such as **Required** and **Position*
 > in a module, import the module, either by using the `Import-Module` cmdlet or by running a cmdlet
 > that's included in the module.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Display basic help information about a cmdlet
 
@@ -317,7 +317,7 @@ your functions and scripts, see [about_Comment_Based_Help](./About/about_Comment
 Get-Help -Name C:\PS-Test\MyScript.ps1
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Category
 
@@ -602,13 +602,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You can't send objects down the pipeline to `Get-Help`.
 
-## OUTPUTS
+## Outputs
 
 ### ExtendedCmdletHelpInfo
 
@@ -623,7 +623,7 @@ If you get a conceptual help article, `Get-Help` returns it as a string.
 
 If you get a command that has a help file, `Get-Help` returns a **MamlCommandHelpInfo** object.
 
-## NOTES
+## Notes
 
 PowerShell 3.0 doesn't include help files. To download and install the help files that `Get-Help`
 reads, use the `Update-Help` cmdlet. You can use the `Update-Help` cmdlet to download and install
@@ -665,7 +665,7 @@ following fields:
 - **Accepts wildcard characters**. Indicates whether the value of a parameter can include wildcard
   characters, such as an asterisk (`*`) or question mark (`?`).
 
-## RELATED LINKS
+## Related links
 
 [about_Command_Syntax](About/about_Command_Syntax.md)
 

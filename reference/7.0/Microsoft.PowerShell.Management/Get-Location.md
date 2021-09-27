@@ -9,10 +9,10 @@ title: Get-Location
 ---
 # Get-Location
 
-## SYNOPSIS
+## Synopsis
 Gets information about the current working location or a location stack.
 
-## SYNTAX
+## Syntax
 
 ### Location (Default)
 
@@ -26,7 +26,7 @@ Get-Location [-PSProvider <String[]>] [-PSDrive <String[]>] [<CommonParameters>]
 Get-Location [-Stack] [-StackName <String[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Location` cmdlet gets an object that represents the current directory, much like the print
 working directory (pwd) command.
@@ -40,7 +40,7 @@ scripts, such as in a function that displays the current directory in the PowerS
 You can also use this cmdlet to display the locations in a location stack. For more information, see
 the Notes and the descriptions of the **Stack** and **StackName** parameters.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Display your current drive location
 
@@ -135,7 +135,7 @@ change the prompt in your console by creating a new function named `prompt`.
 
 To see the current prompt function, type the following command: `Get-Content Function:\prompt`
 
-## PARAMETERS
+## Parameters
 
 ### -PSDrive
 
@@ -226,20 +226,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PathInfo or System.Management.Automation.PathInfoStack
 
 If you use the **Stack** or **StackName** parameters, this cmdlet returns a **PathInfoStack**
 object. Otherwise, it returns a **PathInfo** object.
 
-## NOTES
+## Notes
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
 This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
@@ -286,7 +286,7 @@ cmdlet to display the locations in the unnamed stack. To make the unnamed stack 
 use the **StackName** parameter of the `Set-Location` cmdlet with a value of `$null` or an empty
 string (`""`).
 
-## RELATED LINKS
+## Related links
 
 [Pop-Location](Pop-Location.md)
 

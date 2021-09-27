@@ -10,10 +10,10 @@ title: Get-JobTrigger
 
 # Get-JobTrigger
 
-## SYNOPSIS
+## Synopsis
 Gets the job triggers of scheduled jobs.
 
-## SYNTAX
+## Syntax
 
 ### JobDefinition (Default)
 
@@ -33,7 +33,7 @@ Get-JobTrigger [[-TriggerId] <Int32[]>] [-Id] <Int32> [<CommonParameters>]
 Get-JobTrigger [[-TriggerId] <Int32[]>] [-Name] <String> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Get-JobTrigger** cmdlet gets the job triggers of scheduled jobs.
 You can use this command to examine the job triggers or to pipe the job triggers to other cmdlets.
 
@@ -51,7 +51,7 @@ Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or s
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get a job trigger by scheduled job name
 
@@ -155,7 +155,7 @@ RandomDelay                                                 SideIndicator
 
 This example shows how to compare the job triggers of two scheduled jobs.
 
-## PARAMETERS
+## Parameters
 
 ### -Id
 Specifies the identification number of a scheduled job.
@@ -231,18 +231,18 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 You can pipe a scheduled job from Get-ScheduledJob to **Get-JobTrigger**.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

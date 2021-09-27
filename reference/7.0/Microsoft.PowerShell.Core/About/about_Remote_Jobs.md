@@ -8,7 +8,7 @@ title: about Remote Jobs
 ---
 # about_Remote_Jobs
 
-## Short Description
+## Short description
 Describes how to run jobs on remote computers.
 
 ## Detailed Description

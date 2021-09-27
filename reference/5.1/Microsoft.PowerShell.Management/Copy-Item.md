@@ -10,10 +10,10 @@ title: Copy-Item
 
 # Copy-Item
 
-## SYNOPSIS
+## Synopsis
 Copies an item from one location to another.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -33,7 +33,7 @@ Copy-Item -LiteralPath <String[]> [[-Destination] <String>] [-Container] [-Force
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Copy-Item` cmdlet copies an item from one location to another location in the same namespace.
 For instance, it can copy a file to a folder, but it can't copy a file to a certificate drive.
@@ -46,7 +46,7 @@ This cmdlet can copy and rename items in the same command. To rename an item, en
 the value of the **Destination** parameter. To rename an item and not copy it, use the `Rename-Item`
 cmdlet.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Copy a file to the specified directory
 
@@ -249,7 +249,7 @@ The `Copy-Item` cmdlet has the **Container** parameter set to `$false`. This cau
 the source folder to be copied but does not preserve the folder structure. Notice that files with
 the same name are overwritten in the destination folder.
 
-## PARAMETERS
+## Parameters
 
 ### -Container
 
@@ -543,25 +543,25 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None or an object representing the copied item
 
 When you use the **PassThru** parameter, this cmdlet returns an object that represents the copied
 item. Otherwise, this cmdlet doesn't generate any output.
 
-## NOTES
+## Notes
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

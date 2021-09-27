@@ -10,17 +10,17 @@ title: Export-Counter
 
 # Export-Counter
 
-## SYNOPSIS
+## Synopsis
 Exports performance counter data to log files.
 
-## SYNTAX
+## Syntax
 
 ```
 Export-Counter [-Path] <String> [-FileFormat <String>] [-MaxSize <UInt32>]
  -InputObject <PerformanceCounterSampleSet[]> [-Force] [-Circular] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Export-Counter` cmdlet exports performance counter data (PerformanceCounterSampleSet objects)
 to log files in binary performance log (.blg), comma-separated value (.csv), or tab-separated value
@@ -31,7 +31,7 @@ The `Export-Counter` cmdlet is designed to export data that is returned by the `
 
 This cmdlet runs only on Windows 7, Windows Server 2008 R2, and later versions of Windows.
 
-## EXAMPLES
+## Examples
 
 ### EXAMPLE 1: Export counter data to a file
 
@@ -106,7 +106,7 @@ $LowSpace = $All | Where-Object {$_.CounterSamples.CookedValue -lt 15}
 $LowSpace | Export-Counter -Path LowDiskSpace.blg
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Circular
 
@@ -231,17 +231,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet
 
 You can pipe performance counter data from `Get-Counter` or `Import-Counter` to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
-## NOTES
+## Notes
 
 The log file generator expects that all input objects have the same counter path and that the
 objects are arranged in ascending time order.
@@ -259,7 +259,7 @@ The `Import-Counter` cmdlet does not have a **ComputerName** parameter. However,
 configured for remote Windows PowerShell Windows PowerShell, you can use the `Invoke-Command` cmdlet
 to run an `Import-Counter` command on a remote computer.
 
-## RELATED LINKS
+## Related links
 
 [Get-Counter](Get-Counter.md)
 

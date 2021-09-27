@@ -10,11 +10,11 @@ title: Receive-PSSession
 
 # Receive-PSSession
 
-## SYNOPSIS
+## Synopsis
 
 Gets results of commands in disconnected sessions
 
-## SYNTAX
+## Syntax
 
 ### Session (Default)
 
@@ -80,7 +80,7 @@ Receive-PSSession -Name <String> [-OutTarget <OutTarget>] [-JobName <String>] [-
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -109,7 +109,7 @@ For more information about the Disconnected Sessions feature, see
 Some examples use splatting to reduce the line length and improve readability. For more information,
 see [about_Splatting](./About/about_Splatting.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Connect to a PSSession
 
@@ -381,7 +381,7 @@ the command is run in the same session, `Receive-PSSession` returns the results 
 and reuses the same job object. The command saves the job in the `$j2` variable. The `Receive-Job`
 cmdlet gets the results of the job in the `$j` variable.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowRedirection
 
@@ -864,7 +864,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.Runspaces.PSSession
 
@@ -882,7 +882,7 @@ You can pipe the instance Ids of sessions this cmdlet.
 
 You can pipe session names to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.Job or PSObject
 
@@ -890,7 +890,7 @@ This cmdlet returns the results of commands that ran in the disconnected session
 value or default value of the **OutTarget** parameter is Job, `Receive-PSSession` returns a job
 object. Otherwise, it returns objects that represent that command results.
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
@@ -967,7 +967,7 @@ When you disconnect a **PSSession**, the session state is Disconnected and the a
 - For more information about the values of the **Availability** property of sessions, see
   [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
-## RELATED LINKS
+## Related links
 
 [about_PSSessions](./About/about_PSSessions.md)
 

@@ -10,10 +10,10 @@ title: New-WSManSessionOption
 
 # New-WSManSessionOption
 
-## SYNOPSIS
+## Synopsis
 Creates session option hash table to use as input parameters for WS-Management cmdlets.
 
-## SYNTAX
+## Syntax
 
 ```
 New-WSManSessionOption [-ProxyAccessType <ProxyAccessType>] [-ProxyAuthentication <ProxyAuthentication>]
@@ -21,7 +21,7 @@ New-WSManSessionOption [-ProxyAccessType <ProxyAccessType>] [-ProxyAuthenticatio
  [-OperationTimeout <Int32>] [-NoEncryption] [-UseUTF16] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **New-WSManSessionOption** cmdlet creates a WSMan Session option hash table which can be passed to WSMan cmdlets:
 
 - Get-WSManInstance
@@ -29,7 +29,7 @@ The **New-WSManSessionOption** cmdlet creates a WSMan Session option hash table 
 - Invoke-WSManAction
 - Connect-WSMan
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a connection that uses connection options
 
@@ -58,7 +58,7 @@ Then, **Connect-WSMan** connects to the remote server01 computer by using the sp
 However, you can use the cmdlet to establish connections to remote computers before you change to the WSMan provider.
 Those connections appear in the **ComputerName** list.
 
-## PARAMETERS
+## Parameters
 
 ### -NoEncryption
 Indicates that the connection does not use encryption for remote operations over HTTP.
@@ -247,15 +247,15 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
 ### SessionOption
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Connect-WSMan](Connect-WSMan.md)
 

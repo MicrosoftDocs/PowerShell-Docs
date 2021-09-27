@@ -10,16 +10,16 @@ title: Add-History
 
 # Add-History
 
-## SYNOPSIS
+## Synopsis
 Appends entries to the session history.
 
-## SYNTAX
+## Syntax
 
 ```
 Add-History [[-InputObject] <PSObject[]>] [-Passthru] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Add-History` cmdlet adds entries to the end of the session history, that is, the list of
 commands entered during the current session.
@@ -38,7 +38,7 @@ export the commands to a CSV or XML file, then import the commands, and pass the
 `Add-History`. You can use this cmdlet to add specific commands to the history or to create a single
 history file that includes commands from more than one session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Add commands to the history of a different session
 
@@ -118,7 +118,7 @@ The **InputObject** parameter passes the results of the command in parentheses t
 cmdlet. The command in parentheses, which is executed first, imports the `history.xml` file into
 PowerShell. The `Add-History` cmdlet then adds the commands in the file to the session history.
 
-## PARAMETERS
+## Parameters
 
 ### -InputObject
 
@@ -162,20 +162,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Microsoft.PowerShell.Commands.HistoryInfo
 
 You can pipe a **HistoryInfo** object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None or Microsoft.PowerShell.Commands.HistoryInfo
 
 This cmdlet returns a **HistoryInfo** object if you specify the **PassThru** parameter. Otherwise,
 this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 The session history is a list of the commands entered during the session together with the ID. The
 session history represents the order of execution, the status, and the start and end times of the
@@ -201,7 +201,7 @@ the file.
 To modify the session history, export the session to a CSV or XML file, modify the file, import the
 file, and use `Add-History` to append it to the current session history.
 
-## RELATED LINKS
+## Related links
 
 [Clear-History](Clear-History.md)
 

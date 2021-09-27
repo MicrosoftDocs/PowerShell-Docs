@@ -62,7 +62,7 @@ CIM Connections to 15. This limit can be overridden by CDXML cmdlets that
 implement the **ThrottleLimit**. See the individual cmdlet documentation to
 understand the **ThrottleLimit**.
 
-## SEE ALSO
+## See also
 
 [New-CimSession](xref:CimCmdlets.New-CimSession)
 

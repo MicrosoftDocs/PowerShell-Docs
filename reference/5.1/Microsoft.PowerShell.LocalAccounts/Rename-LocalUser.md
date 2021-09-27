@@ -10,10 +10,10 @@ title: Rename-LocalUser
 
 # Rename-LocalUser
 
-## SYNOPSIS
+## Synopsis
 Renames a local user account.
 
-## SYNTAX
+## Syntax
 
 ### InputObject
 
@@ -33,14 +33,14 @@ Rename-LocalUser [-Name] <String> [-NewName] <String> [-WhatIf] [-Confirm] [<Com
 Rename-LocalUser [-NewName] <String> [-SID] <SecurityIdentifier> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Rename-LocalUser** cmdlet renames a local user account.
 
 > [!NOTE]
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Rename a user account
 
@@ -50,7 +50,7 @@ PS C:\> Rename-LocalUser -Name "Admin02" -NewName "AdminContoso02"
 
 This command renames the user account named Admin02.
 
-## PARAMETERS
+## Parameters
 
 ### -InputObject
 Specifies the user account that this cmdlet renames.
@@ -147,17 +147,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser, System.String, System.Security.Principal.SecurityIdentifier
 You can pipe a local user, a string, or a SID to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
@@ -168,7 +168,7 @@ This cmdlet does not generate any output.
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
 
-## RELATED LINKS
+## Related links
 
 [Disable-LocalUser](Disable-LocalUser.md)
 

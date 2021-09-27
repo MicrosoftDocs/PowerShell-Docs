@@ -653,7 +653,7 @@ Represents workflows.
   `$PSModuleAutoLoadingPreference` preference variable. For more information, see
   [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
-## Related Links
+## Related links
 
 [Export-PSSession](../Microsoft.PowerShell.Utility/Export-PSSession.md)
 

@@ -10,10 +10,10 @@ title: Save-Script
 
 # Save-Script
 
-## SYNOPSIS
+## Synopsis
 Saves a script.
 
-## SYNTAX
+## Syntax
 
 ### NameAndPathParameterSet (Default)
 
@@ -49,11 +49,11 @@ Save-Script [-InputObject] <PSObject[]> [-Path] <String> [-Proxy <Uri>]
  [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Save-Script` cmdlet saves the specified script.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Save a script and validate the script's metadata
 
@@ -75,7 +75,7 @@ Version   Name              Author      Description
 specifies where to find the script. The script is saved in the location specified by the **Path**
 parameter. `Test-ScriptFileInfo` specifies the **Path** and validates the script's metadata.
 
-## PARAMETERS
+## Parameters
 
 ### -AcceptLicense
 
@@ -347,11 +347,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -365,7 +365,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## RELATED LINKS
+## Related links
 
 [Find-Script](Find-Script.md)
 

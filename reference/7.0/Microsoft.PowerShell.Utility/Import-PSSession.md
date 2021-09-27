@@ -640,6 +640,6 @@ permanent module on disk, use the `Export-PSSession` cmdlet.
   include the prefix that you assign by using the **Prefix** parameter. To get help for an imported
   command in Windows PowerShell 2.0, use the original (non-prefixed) command name.
 
-## Related Links
+## Related links
 
 [Export-PSSession](Export-PSSession.md)

@@ -10,16 +10,16 @@ title: Use-Transaction
 
 # Use-Transaction
 
-## SYNOPSIS
+## Synopsis
 Adds the script block to the active transaction.
 
-## SYNTAX
+## Syntax
 
 ```
 Use-Transaction [-TransactedScript] <ScriptBlock> [-UseTransaction] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Use-Transaction** cmdlet adds a script block to an active transaction.
 This enables you to do transacted scripting by using transaction-enabled Microsoft .NET Framework objects.
 The script block can contain only transaction-enabled .NET Framework objects, such as instances of the Microsoft.PowerShell.Commands.Management.TransactedString class.
@@ -29,7 +29,7 @@ The *UseTransaction* parameter, which is optional for most cmdlets, is required 
 **Use-Transaction** is one of a set of cmdlets that support the transactions feature in Windows PowerShell.
 For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Script by using a transaction-enabled object
 
@@ -112,7 +112,7 @@ As a result, all commands performed in the transaction are reversed.
 The final command uses the **ToString** method to display the resulting value of $TransactedString as a string.
 The results show that only the changes that were made outside the transaction were applied to the object.
 
-## PARAMETERS
+## Parameters
 
 ### -TransactedScript
 Specifies the script block that is run in the transaction.
@@ -151,23 +151,23 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### PSObject
 This cmdlet returns the result of the transaction.
 
-## NOTES
+## Notes
 
 * The *UseTransaction* parameter includes the command in the active transaction. Because the **Use-Transaction** cmdlet is always used in transactions, this parameter is required to make any **Use-Transaction** command effective.
 
 *
 
-## RELATED LINKS
+## Related links
 
 [Complete-Transaction](Complete-Transaction.md)
 

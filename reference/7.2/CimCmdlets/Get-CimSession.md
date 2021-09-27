@@ -10,10 +10,10 @@ title: Get-CimSession
 
 # Get-CimSession
 
-## SYNOPSIS
+## Synopsis
 Gets the CIM session objects from the current session.
 
-## SYNTAX
+## Syntax
 
 ### ComputerNameSet (Default)
 
@@ -39,7 +39,7 @@ Get-CimSession -InstanceId <Guid[]> [<CommonParameters>]
 Get-CimSession -Name <String[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -50,7 +50,7 @@ sessions that were created in other PowerShell sessions or that were created on 
 
 For more information about CIM sessions, see [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get CIM sessions from the current PowerShell session
 
@@ -146,7 +146,7 @@ ComputerName : Server02
 Protocol     : WSMAN
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 
@@ -230,17 +230,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.Management.Infrastructure.CimSession
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Format-Table](../microsoft.powershell.utility/format-table.md)
 

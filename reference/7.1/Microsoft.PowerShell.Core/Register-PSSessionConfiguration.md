@@ -9,10 +9,10 @@ title: Register-PSSessionConfiguration
 ---
 # Register-PSSessionConfiguration
 
-## SYNOPSIS
+## Synopsis
 Creates and registers a new session configuration.
 
-## SYNTAX
+## Syntax
 
 ### NameParameterSet (Default)
 
@@ -50,7 +50,7 @@ Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <Strin
  [-TransportOption <PSTransportOption>] -Path <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -77,7 +77,7 @@ configuration class and by using a script that runs in the session. Beginning in
 For information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 For information about session configuration files, see [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Register a NewShell session configuration
 
@@ -182,7 +182,7 @@ The script contains a single command that uses dot sourcing to run the user's
 For more information about profiles, see [about_Profiles](./About/about_Profiles.md). For more
 information about dot sourcing, see [about_Scopes](./About/about_Scopes.md).
 
-## PARAMETERS
+## Parameters
 
 ### -AccessMode
 
@@ -711,17 +711,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.WSMan.Management.WSManConfigContainerElement
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
@@ -735,7 +735,7 @@ The properties of a session configuration object vary with the options set for t
 configuration and the values of those options. Also, session configurations that use a session
 configuration file have additional properties.
 
-## RELATED LINKS
+## Related links
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 

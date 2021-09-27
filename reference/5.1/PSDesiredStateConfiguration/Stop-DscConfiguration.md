@@ -10,10 +10,10 @@ title: Stop-DscConfiguration
 
 # Stop-DscConfiguration
 
-## SYNOPSIS
+## Synopsis
 Stops a configuration job that is running.
 
-## SYNTAX
+## Syntax
 
 ### All
 
@@ -22,7 +22,7 @@ Stop-DscConfiguration [-Force] [-CimSession <CimSession[]>] [-ThrottleLimit <Int
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Stop-DscConfiguration` cmdlet stops a configuration job that is running. Specify which
 computers this cmdlet applies to by using Common Information Model (CIM) sessions. If there's no
@@ -33,7 +33,7 @@ configuration job running, this cmdlet returns a warning message.
 from the Microsoft Support library. Before you use this cmdlet, review the information in
 [What's New in Windows PowerShell 5.0](/powershell/scripting/whats-new/What-s-New-in-Windows-PowerShell-50)
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Stop a configuration job
 
@@ -52,7 +52,7 @@ Stop-DscConfiguration -CimSession $Session
 `Stop-DscConfiguration` uses the **CimSession** parameter and the object stored in `$Session` to
 stop the configuration job.
 
-## PARAMETERS
+## Parameters
 
 ### -AsJob
 
@@ -172,17 +172,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
-## OUTPUTS
+## Outputs
 
 ### None
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Get-CimSession](../CimCmdlets/Get-CimSession.md)
 

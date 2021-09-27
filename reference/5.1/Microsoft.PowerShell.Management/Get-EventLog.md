@@ -10,11 +10,11 @@ title: Get-EventLog
 
 # Get-EventLog
 
-## SYNOPSIS
+## Synopsis
 Gets the events in an event log, or a list of the event logs, on the local computer or remote
 computers.
 
-## SYNTAX
+## Syntax
 
 ### LogName (Default)
 
@@ -31,7 +31,7 @@ Get-EventLog [-LogName] <String> [-ComputerName <String[]>] [-Newest <Int32>] [-
 Get-EventLog [-ComputerName <String[]>] [-List] [-AsString] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-EventLog` cmdlet gets events and event logs from local and remote computers. By default,
 `Get-EventLog` gets logs from the local computer. To get logs from remote computers, use the
@@ -48,7 +48,7 @@ Vista and later Windows versions, use `Get-WinEvent`.
 > `Get-EventLog` uses a Win32 API that is deprecated. The results may not be accurate. Use the 
 > `Get-WinEvent` cmdlet instead.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get event logs on the local computer
 
@@ -302,7 +302,7 @@ objects are stored in the `$Begin` and `$End` variables. The `Get-EventLog` cmdl
 event type. The date and time range is set by the **After** parameter and `$Begin` variable and the
 **Before** parameter and `$End` variable.
 
-## PARAMETERS
+## Parameters
 
 ### -After
 
@@ -567,13 +567,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to `Get-EventLog`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Diagnostics.EventLogEntry. System.Diagnostics.EventLog. System.String
 
@@ -586,12 +586,12 @@ If only the **List** parameter is specified, the output is a collection of
 If both the **List** and **AsString** parameters are specified, the output is a collection of
 **System.String** objects.
 
-## NOTES
+## Notes
 
 The cmdlets `Get-EventLog` and `Get-WinEvent` are not supported in the Windows Preinstallation
 Environment (Windows PE).
 
-## RELATED LINKS
+## Related links
 
 [Clear-EventLog](Clear-EventLog.md)
 

@@ -9,20 +9,20 @@ title: Test-FileCatalog
 ---
 # Test-FileCatalog
 
-## SYNOPSIS
+## Synopsis
 `Test-FileCatalog` validates whether the hashes contained in a catalog file (.cat) matches the
 hashes of the actual files in order to validate their authenticity.
 
 This cmdlet is only supported on Windows.
 
-## SYNTAX
+## Syntax
 
 ```
 Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <String> [[-Path] <String[]>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -35,7 +35,7 @@ validation by using the -FilesToSkip parameter.
 
 This cmdlet is only supported on Windows.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create and validate a file catalog
 
@@ -67,7 +67,7 @@ PathItems     : {[Microsoft.PowerShell.Utility.psd1,
 Signature     : System.Management.Automation.Signature
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -CatalogFilePath
 
@@ -172,14 +172,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and
 -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.IO.DirectoryInfo[], System.String[]
 
 The pipeline accepts an array of strings or `DirectoryInfo` objects that represent paths to the
 files that need to be validated.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.CatalogValidationStatus
 
@@ -191,11 +191,11 @@ A more detailed object returned when using `-Detailed` which can be used to anal
 that may or may not have passed validation, which hashes were expected vs. found, and the algorithm
 used in the catalog.
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
-## RELATED LINKS
+## Related links
 
 [New-FileCatalog](New-FileCatalog.md)
 

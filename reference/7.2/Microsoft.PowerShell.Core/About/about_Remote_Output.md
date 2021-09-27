@@ -8,10 +8,10 @@ title: about Remote Output
 ---
 # about_Remote_Output
 
-## SHORT DESCRIPTION
+## Short description
 Describes how to interpret and format the output of remote commands.
 
-## LONG DESCRIPTION
+## Long description
 
 The output of a command that was run on a remote computer might look
 like output of the same command run on a local computer, but there are
@@ -200,7 +200,7 @@ sort on the PSComputerName or MachineName property. You can also sort on
 another property of the object so that the results from different
 computers are interspersed.
 
-## SEE ALSO
+## See also
 
 [about_Remote](about_Remote.md)
 

@@ -9,10 +9,10 @@ title: Remove-ItemProperty
 ---
 # Remove-ItemProperty
 
-## SYNOPSIS
+## Synopsis
 Deletes the property and its value from an item.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -29,12 +29,12 @@ Remove-ItemProperty -LiteralPath <String[]> [-Name] <String[]> [-Force] [-Filter
  [-UseTransaction] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Remove-ItemProperty` cmdlet deletes a property and its value from an item.
 You can use it to delete registry values and the data that they store.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Delete a registry value
 
@@ -76,7 +76,7 @@ Then, it uses the **Name** parameter of `Remove-ItemProperty` to specify the nam
 Get-Item -Path HKLM:\Software\MyCompany | Remove-ItemProperty -Name NoOfEmployees
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -282,25 +282,25 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path, but not a literal path, to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not return any output.
 
-## NOTES
+## Notes
 
 In the PowerShell Registry provider, registry values are considered to be properties of a registry key or subkey. You can use the **ItemProperty** cmdlets to manage these values.
 
 `Remove-ItemProperty` is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Get-Item](Get-Item.md)
 

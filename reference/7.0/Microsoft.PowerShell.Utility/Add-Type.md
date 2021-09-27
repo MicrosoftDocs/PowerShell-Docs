@@ -10,10 +10,10 @@ title: Add-Type
 
 # Add-Type
 
-## SYNOPSIS
+## Synopsis
 Adds a Microsoft .NET class to a PowerShell session.
 
-## SYNTAX
+## Syntax
 
 ### FromSource (Default)
 
@@ -54,7 +54,7 @@ Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>] [-OutputAsse
 Add-Type -AssemblyName <String[]> [-PassThru] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Add-Type` cmdlet lets you define a Microsoft .NET Core class in your PowerShell session. You
 can then instantiate objects, by using the `New-Object` cmdlet, and use the objects just as you
@@ -76,7 +76,7 @@ Beginning in PowerShell 7, `Add-Type` does not compile a type if a type with the
 exists. Also, `Add-Type` looks for assemblies in a `ref` folder under the folder that contains
 `pwsh.dll`.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Add a .NET type to a session
 
@@ -250,7 +250,7 @@ represents the `SW_RESTORE` value.
 
 To maximize the window, use the value of `3` that represents `SW_MAXIMIZE`.
 
-## PARAMETERS
+## Parameters
 
 ### -AssemblyName
 
@@ -575,20 +575,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You can't send objects down the pipeline to `Add-Type`.
 
-## OUTPUTS
+## Outputs
 
 ### None or System.Type
 
 When you use the **PassThru** parameter, `Add-Type` returns a **System.Type** object that represents
 the new type. Otherwise, this cmdlet doesn't generate any output.
 
-## NOTES
+## Notes
 
 The types that you add exist only in the current session. To use the types in all sessions, add them
 to your PowerShell profile. For more information about the profile, see
@@ -608,7 +608,7 @@ any version of PowerShell.
 Assemblies in the GAC can be loaded by type name, rather than by path. Loading assemblies from an
 arbitrary path requires `Add-Type`, since those assemblies cannot not be loaded automatically.
 
-## RELATED LINKS
+## Related links
 
 [about_Profiles](../Microsoft.PowerShell.Core/About/about_profiles.md)
 

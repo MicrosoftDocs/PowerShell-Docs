@@ -10,16 +10,16 @@ title: Disable-ComputerRestore
 
 # Disable-ComputerRestore
 
-## SYNOPSIS
+## Synopsis
 Disables the System Restore feature on the specified file system drive.
 
-## SYNTAX
+## Syntax
 
 ```
 Disable-ComputerRestore [-Drive] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Disable-ComputerRestore** cmdlet turns off the System Restore feature on one or more file system drives.
 As a result, attempts to restore the computer do not affect the specified drive.
 
@@ -30,7 +30,7 @@ To find the state of System Restore for each drive, use Rstrui.exe.
 
 System restore points and the ComputerRestore cmdlets are supported only on client operating systems, such as Windows 7, Windows Vista, and Windows XP.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Disable System Restore on the specified drive
 
@@ -49,7 +49,7 @@ PS C:\> Disable-ComputerRestore "C:\", "D:\"
 This command disables System Restore on the C: and D: drives.
 The command uses the *Drive* parameter, but it omits the Drive parameter name.
 
-## PARAMETERS
+## Parameters
 
 ### -Drive
 Specifies the file system drives.
@@ -106,17 +106,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * To run this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with the Run as administrator option.
 
@@ -127,7 +127,7 @@ To open this tab in Windows PowerShell, type `SystemPropertiesProtection`.
 
 *
 
-## RELATED LINKS
+## Related links
 
 [Checkpoint-Computer](Checkpoint-Computer.md)
 

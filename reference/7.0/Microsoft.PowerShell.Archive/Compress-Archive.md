@@ -10,10 +10,10 @@ title: Compress-Archive
 
 # Compress-Archive
 
-## SYNOPSIS
+## Synopsis
 Creates a compressed archive, or zipped file, from specified files and directories.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -57,7 +57,7 @@ Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-Compressi
  [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Compress-Archive` cmdlet creates a compressed, or zipped, archive file from one or more
 specified files or directories. An archive packages multiple files, with optional compression, into
@@ -71,7 +71,7 @@ The maximum file size is 2 GB because there's a limitation of the underlying API
 Some examples use splatting to reduce the line length of the code samples. For more information, see
 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Compress files to create an archive file
 
@@ -231,7 +231,7 @@ The command updates `Draft.Zip` with newer versions of existing files in the `C:
 directory and its subdirectories. And, new files that were added to `C:\Reference` or its
 subdirectories are included in the updated `Draft.Zip` archive.
 
-## PARAMETERS
+## Parameters
 
 ### -CompressionLevel
 
@@ -423,19 +423,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path to one or more files.
 
-## OUTPUTS
+## Outputs
 
 ### System.IO.FileInfo
 
 The cmdlet only returns a **FileInfo** object when you use the **PassThru** parameter.
 
-## NOTES
+## Notes
 
 Using recursion and sending objects down the pipeline can duplicate files in your archive. For
 example, if you use `Get-ChildItem` with the **Recurse** parameter, each **FileInfo** and
@@ -448,7 +448,7 @@ scheme. When extracting files with filenames not stored using UTF-8 encoding, `E
 the raw value found in the archive. This can result in a filename that is different than the source
 filename stored in the archive.
 
-## RELATED LINKS
+## Related links
 
 [Expand-Archive](Expand-Archive.md)
 

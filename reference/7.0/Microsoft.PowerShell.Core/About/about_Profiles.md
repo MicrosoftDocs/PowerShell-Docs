@@ -8,10 +8,10 @@ title: about Profiles
 ---
 # about_Profiles
 
-## Short Description
+## Short description
 Describes how to create and use a PowerShell profile.
 
-## Long Description
+## Long description
 
 You can create a PowerShell profile to customize your environment and to add
 session-specific elements to every PowerShell session that you start.
@@ -321,7 +321,7 @@ Invoke-Command -Session $s -ScriptBlock {
 After running this command, the commands that the profile adds to the session
 are available in `$s`.
 
-## See Also
+## See also
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
 

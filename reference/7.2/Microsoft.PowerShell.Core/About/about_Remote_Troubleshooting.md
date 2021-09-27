@@ -856,7 +856,7 @@ Please see the
 [OMI authentication](https://github.com/PowerShell/psl-omi-provider#connecting-from-linux-to-windows)
 instructions.
 
-## SEE ALSO
+## See also
 
 [Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
 

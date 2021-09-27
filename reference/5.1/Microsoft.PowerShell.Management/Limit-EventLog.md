@@ -10,24 +10,24 @@ title: Limit-EventLog
 
 # Limit-EventLog
 
-## SYNOPSIS
+## Synopsis
 Sets the event log properties that limit the size of the event log and the age of its entries.
 
-## SYNTAX
+## Syntax
 
 ```
 Limit-EventLog [-LogName] <String[]> [-ComputerName <String[]>] [-RetentionDays <Int32>]
  [-OverflowAction <OverflowAction>] [-MaximumSize <Int64>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Limit-EventLog** cmdlet sets the maximum size of a classic event log, how long each event must be retained, and what happens when the log reaches its maximum size.
 You can use it to limit the event logs on local or remote computers.
 
 The cmdlets that contain the EventLog noun (the EventLog cmdlets) work only on classic event logs.
 To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use Get-WinEvent.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Increase the size of an event log
 
@@ -72,7 +72,7 @@ The first command gets the log names of all of the logs on the local computer.
 The second command sets the overflow action.
 The third command displays the results.
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 Specifies remote computers.
@@ -208,17 +208,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * To use this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with the Run as administrator option.
 
@@ -227,7 +227,7 @@ To see the current settings of the event log properties, type `Get-EventLog -Lis
 
 *
 
-## RELATED LINKS
+## Related links
 
 [Clear-EventLog](Clear-EventLog.md)
 

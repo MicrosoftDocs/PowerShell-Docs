@@ -10,10 +10,10 @@ title: Get-Date
 
 # Get-Date
 
-## SYNOPSIS
+## Synopsis
 Gets the current date and time.
 
-## SYNTAX
+## Syntax
 
 ### net (Default)
 
@@ -31,7 +31,7 @@ Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-
  [-UFormat <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Date` cmdlet gets a **DateTime** object that represents the current date or a date that you
 specify. `Get-Date` can format the date and time in several .NET and UNIX formats. You can use
@@ -41,7 +41,7 @@ programs.
 `Get-Date` uses the computer's culture settings to determine how the output is formatted. To view
 your computer's settings, use `(Get-Culture).DateTimeFormat`.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the current date and time
 
@@ -214,7 +214,7 @@ replaced by periods.
 includes the `$timestamp` variable as the directory name. The **Type** parameter specifies that a
 directory is created.
 
-## PARAMETERS
+## Parameters
 
 ### -Date
 
@@ -453,13 +453,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Pipeline input
 
 `Get-Date` accepts pipeline input. For example, `Get-ChildItem | Get-Date`.
 
-## OUTPUTS
+## Outputs
 
 ### System.DateTime or System.String
 
@@ -474,7 +474,7 @@ The method `(Get-Date).ToString()` converts a **DateTime** object a **String** o
 To display an object's properties and methods, send the object down the pipeline to `Get-Member`.
 For example, `Get-Date | Get-Member`.
 
-## NOTES
+## Notes
 
 **DateTime** objects are in long-date and long-time formats for the system locale.
 
@@ -521,7 +521,7 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%y` | Year in 2-digit format                                                  | 19                       |
 | `%Z` | Time zone offset from Universal Time Coordinate (UTC)                   | -07                      |
 
-## RELATED LINKS
+## Related links
 
 [ForEach-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
 

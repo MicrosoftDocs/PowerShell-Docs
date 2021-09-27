@@ -10,10 +10,10 @@ title: New-CimSessionOption
 
 # New-CimSessionOption
 
-## SYNOPSIS
+## Synopsis
 Specifies advanced options for the New-CimSession cmdlet.
 
-## SYNTAX
+## Syntax
 
 ### ProtocolTypeSet (Default)
 
@@ -39,7 +39,7 @@ New-CimSessionOption [-Impersonation <ImpersonationType>] [-PacketIntegrity] [-P
  [-UICulture <CultureInfo>] [-Culture <CultureInfo>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -51,7 +51,7 @@ This cmdlet has two parameter sets, one for WsMan options and one for Distribute
 Model (DCOM) options. Depending on which parameters you use, the cmdlet returns either an instance
 of DCOM session options or returns WsMan session options.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a CIM session options object for DCOM
 
@@ -86,7 +86,7 @@ This example specifies the culture that is used for the CIM session. By default,
 client is used when performing operations. However, the default culture can be overridden using the
 **Culture** parameter.
 
-## PARAMETERS
+## Parameters
 
 ### -Culture
 
@@ -465,21 +465,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 This cmdlet accepts no input objects.
 
-## OUTPUTS
+## Outputs
 
 ### CIMSessionOption
 
 This cmdlet returns an object that contains CIM session options information.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Get-ChildItem](../microsoft.powershell.management/get-childitem.md)
 

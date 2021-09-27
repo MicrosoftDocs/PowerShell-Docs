@@ -9,12 +9,12 @@ title: about Windows PowerShell ISE
 
 # about_Windows_PowerShell_ISE
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the features and system requirements of Windows PowerShell
 Integrated Scripting Environment (ISE).
 
-## LONG DESCRIPTION
+## Long description
 
 Windows PowerShell ISE is a graphical host application for Windows PowerShell.
 In Windows PowerShell ISE, you can run commands and write, test, and debug
@@ -186,7 +186,7 @@ PowerShell console profiles are not available in Windows PowerShell ISE.
 Instructions for moving and reconfiguring your profiles are available in
 Windows PowerShell ISE Help and in [about_Profiles](about_Profiles.md).
 
-## NOTES
+## Notes
 
 Windows PowerShell ISE is an optional Windows Feature that is turned on by
 default on client and server versions of Windows. To enable and disable
@@ -207,7 +207,7 @@ WPF Hardware acceleration" graphics rendering settings on your system. For more
 information, see
 [Graphics Rendering Registry Settings](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings).
 
-## SEE ALSO
+## See also
 
 [about_Debuggers](about_Debuggers.md)
 

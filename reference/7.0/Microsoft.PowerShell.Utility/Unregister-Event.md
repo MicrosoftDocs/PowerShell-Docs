@@ -10,10 +10,10 @@ title: Unregister-Event
 
 # Unregister-Event
 
-## SYNOPSIS
+## Synopsis
 Cancels an event subscription.
 
-## SYNTAX
+## Syntax
 
 ### BySource (Default)
 
@@ -27,7 +27,7 @@ Unregister-Event [-SourceIdentifier] <String> [-Force] [-WhatIf] [-Confirm] [<Co
 Unregister-Event [-SubscriptionId] <Int32> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Unregister-Event` cmdlet cancels an event subscription that was created by using the
 `Register-EngineEvent`, `Register-ObjectEvent`, or `Register-WmiEvent` cmdlet.
@@ -39,7 +39,7 @@ created by using the `New-Event` cmdlet, the new event is also deleted from the 
 `Unregister-Event` does not delete events from the event queue. To delete events, use the
 `Remove-Event` cmdlet.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Cancel an event subscription by source identifier
 
@@ -78,7 +78,7 @@ It uses a pipeline operator (`|`) to send the subscriber objects to `Unregister-
 deletes them from the session. To complete the task, the **Force** parameter is also required on
 `Unregister-Event`.
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 
@@ -173,19 +173,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSEventSubscriber
 
 You can pipe the output from `Get-EventSubscriber` to `Unregister-Event`.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not return any output.
 
-## NOTES
+## Notes
 
 No event sources available on the Linux or macOS platforms.
 
@@ -196,7 +196,7 @@ current session, the event queue is discarded and the event subscription is canc
 subscribed to the event by using the `Register-EngineEvent` cmdlet. To delete a custom event from
 the session, you must remove it programmatically or close the session.
 
-## RELATED LINKS
+## Related links
 
 [Get-Event](Get-Event.md)
 

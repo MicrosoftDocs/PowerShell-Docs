@@ -9,10 +9,10 @@ title: Format-Wide
 ---
 # Format-Wide
 
-## SYNOPSIS
+## Synopsis
 Formats objects as a wide table that displays only one property of each object.
 
-## SYNTAX
+## Syntax
 
 ```
 Format-Wide [[-Property] <Object>] [-AutoSize] [-Column <int>] [-GroupBy <Object>] [-View <string>]
@@ -20,12 +20,12 @@ Format-Wide [[-Property] <Object>] [-AutoSize] [-Column <int>] [-GroupBy <Object
   [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Format-Wide` cmdlet formats objects as a wide table that displays only one property of each
 object. You can use the **Property** parameter to determine which property is displayed.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Format names of files in the current directory
 
@@ -73,7 +73,7 @@ Failed to evaluate expression " $_ / $null ".
 + FullyQualifiedErrorId : PSPropertyExpressionError
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -AutoSize
 
@@ -289,19 +289,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to `Format-Wide`.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.Internal.Format
 
 `Format-Wide` returns format objects that represent the table.
 
-## NOTES
+## Notes
 
 You can also refer to `Format-Wide` by its built-in alias, `fw`. For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
@@ -316,7 +316,7 @@ The alternate view for the **View** parameter must use table format; if it does 
 fails. If the alternate view is a list, use `Format-List`. If the alternate view is neither a list
 nor a table, use Format-Custom.
 
-## RELATED LINKS
+## Related links
 
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 

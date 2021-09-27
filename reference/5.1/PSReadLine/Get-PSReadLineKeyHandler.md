@@ -10,20 +10,20 @@ title: Get-PSReadLineKeyHandler
 
 # Get-PSReadLineKeyHandler
 
-## SYNOPSIS
+## Synopsis
 Gets the key bindings for the PSReadLine module.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-PSReadLineKeyHandler [-Bound] [-Unbound] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Get-PSReadLineKeyHandler** cmdlet returns the currently bound key bindings.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all key mappings
 
@@ -101,7 +101,7 @@ Tab                   TabCompleteNext         Complete the input using the next 
 ...
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Bound
 
@@ -142,19 +142,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.KeyHandler
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Remove-PSReadLineKeyHandler](Remove-PSReadLineKeyHandler.md)
 

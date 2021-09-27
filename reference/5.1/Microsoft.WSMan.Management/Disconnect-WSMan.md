@@ -10,16 +10,16 @@ title: Disconnect-WSMan
 
 # Disconnect-WSMan
 
-## SYNOPSIS
+## Synopsis
 Disconnects the client from the WinRM service on a remote computer.
 
-## SYNTAX
+## Syntax
 
 ```
 Disconnect-WSMan [[-ComputerName] <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Disconnect-WSMan** cmdlet disconnects the client from the WinRM service on a remote computer.
 If you saved the WS-Management session in a variable, the session object remains in the variable, but the state of the WS-Management session is Closed.
 You can use this cmdlet within the context of the WSMan provider to disconnect the client from the WinRM service on a remote computer.
@@ -27,7 +27,7 @@ However, you can also use this cmdlet to disconnect from the WinRM service on re
 
 For more information about how to connect to the WinRM service on a remote computer, see Connect-WSMan.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Delete a connection to a remote computer
 
@@ -48,7 +48,7 @@ This cmdlet is generally used within the context of the WSMan provider to discon
 However, you can also use **Disconnect-WSMan** to remove connections to remote computers before you change to the WSMan provider.
 Those connections do not appear in the ComputerName list.
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 Specifies the computer against which to run the management operation.
@@ -77,19 +77,19 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 This cmdlet does not accept any input.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Connect-WSMan](Connect-WSMan.md)
 

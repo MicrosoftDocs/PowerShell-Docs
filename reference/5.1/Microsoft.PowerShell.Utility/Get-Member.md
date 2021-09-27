@@ -483,6 +483,6 @@ return information about the `[System.RuntimeType]` type. However, when you use 
 parameter, `Get-Member` returns the static members of the specific type represented by the
 `System.RuntimeType` instance.
 
-## Related Links
+## Related links
 
 [Add-Member](Add-Member.md)

@@ -538,7 +538,7 @@ Command-1 |
 The leading spaces on the subsequent lines are not significant. The indentation
 enhances readability.
 
-## See Also
+## See also
 
 [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)
 

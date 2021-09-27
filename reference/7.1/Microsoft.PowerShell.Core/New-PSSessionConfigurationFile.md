@@ -9,10 +9,10 @@ title: New-PSSessionConfigurationFile
 ---
 # New-PSSessionConfigurationFile
 
-## SYNOPSIS
+## Synopsis
 Creates a file that defines a session configuration.
 
-## SYNTAX
+## Syntax
 
 ```
 New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Guid <Guid>]
@@ -29,7 +29,7 @@ New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Gui
  [-FormatsToProcess <String[]>] [-AssembliesToLoad <String[]>] [-Full] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -62,7 +62,7 @@ For more information about session configurations and session configuration file
 
 This cmdlet was introduced in PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Creating and using a NoLanguage session
 
@@ -317,7 +317,7 @@ AssembliesToLoad = 'System.Web.Services', 'FSharp.Compiler.CodeDom.dll'
 }
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -AliasDefinitions
 
@@ -1055,19 +1055,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe any objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
@@ -1090,7 +1090,7 @@ This cmdlet is only available on Windows platforms.
   Before using an edited session configuration file, use the `Test-PSSessionConfigurationFile`
   cmdlet to verify that the configuration file entries are valid.
 
-## RELATED LINKS
+## Related links
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 

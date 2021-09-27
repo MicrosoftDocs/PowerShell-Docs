@@ -563,7 +563,7 @@ Get-Process | Where-Object CPU | Where-Object Path
 > does not end with a pipeline character, PowerShell considers the input to be
 > complete and executes that line as entered.
 
-## See Also
+## See also
 
 [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)
 

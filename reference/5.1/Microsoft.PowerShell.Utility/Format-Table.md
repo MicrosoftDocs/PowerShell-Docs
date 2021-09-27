@@ -10,10 +10,10 @@ title: Format-Table
 
 # Format-Table
 
-## SYNOPSIS
+## Synopsis
 Formats the output as a table.
 
-## SYNTAX
+## Syntax
 
 ### All
 
@@ -23,7 +23,7 @@ Format-Table [-AutoSize] [-RepeatHeader] [-HideTableHeaders] [-Wrap] [[-Property
  [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Format-Table` cmdlet formats the output of a command as a table with the selected properties of
 the object in each column. The object type determines the default layout and properties that are
@@ -40,7 +40,7 @@ specify the column headings in the table. To add a calculated property, use the 
 **GroupBy** parameter. For more information about hash tables, see
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Format PowerShell host
 
@@ -228,7 +228,7 @@ Failed to evaluate expression " $_ / $null ".
     + FullyQualifiedErrorId : mshExpressionError
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -AutoSize
 
@@ -495,21 +495,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can send any object down the pipeline to `Format-Table`.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.Internal.Format
 
 `Format-Table` returns format objects that represent the table.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 

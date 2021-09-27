@@ -9,23 +9,23 @@ title: Get-Variable
 ---
 # Get-Variable
 
-## SYNOPSIS
+## Synopsis
 Gets the variables in the current console.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-Variable [[-Name] <String[]>] [-ValueOnly] [-Include <String[]>] [-Exclude <String[]>] [-Scope <String>]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Variable` cmdlet gets the PowerShell variables in the current console.
 You can retrieve just the values of the variables by specifying the **ValueOnly** parameter, and you
 can filter the variables returned by name.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get variables by letter
 
@@ -66,7 +66,7 @@ Get-Variable -Scope 0
 Compare-Object (Get-Variable -Scope 0) (Get-Variable -Scope 1)
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Exclude
 
@@ -167,13 +167,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains the variable name to `Get-Variable`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSVariable
 
@@ -187,12 +187,12 @@ When you specify the **ValueOnly** parameter, if the specified variable's value 
 processing the variable's values one at a time. A workaround to force collection enumeration is to
 enclose the `Get-Variable` command in parenthesis.
 
-## NOTES
+## Notes
 
 - This cmdlet does not manage environment variables. To manage environment variables, you can use
 the environment variable provider.
 
-## RELATED LINKS
+## Related links
 
 [Clear-Variable](Clear-Variable.md)
 

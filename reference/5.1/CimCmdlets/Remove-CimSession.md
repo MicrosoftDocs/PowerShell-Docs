@@ -10,10 +10,10 @@ title: Remove-CimSession
 
 # Remove-CimSession
 
-## SYNOPSIS
+## Synopsis
 Removes one or more CIM sessions.
 
-## SYNTAX
+## Syntax
 
 ### CimSessionSet (Default)
 
@@ -45,12 +45,12 @@ Remove-CimSession -InstanceId <Guid[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 Remove-CimSession -Name <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Remove-CimSession` cmdlet removes one or more CIM session objects from the local PowerShell
 session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Remove all the CIM sessions
 
@@ -78,7 +78,7 @@ but only output what would happen if it were done.
 Remove-CimSession -Name a* -WhatIf
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -CimSession
 
@@ -214,21 +214,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 This cmdlet accepts no input objects.
 
-## OUTPUTS
+## Outputs
 
 ### System.Object
 
 This cmdlet returns an object that contains CIM session information.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Get-CimSession](Get-CimSession.md)
 

@@ -9,10 +9,10 @@ title: Select-Xml
 ---
 # Select-Xml
 
-## SYNOPSIS
+## Synopsis
 Finds text in an XML string or document.
 
-## SYNTAX
+## Syntax
 
 ### Xml (Default)
 
@@ -38,13 +38,13 @@ Select-Xml [-XPath] <string> -LiteralPath <string[]> [-Namespace <hashtable>] [<
 Select-Xml [-XPath] <string> -Content <string[]> [-Namespace <hashtable>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Select-Xml` cmdlet lets you use XPath queries to search for text in XML strings and documents.
 Enter an XPath query, and use the **Content**, **Path**, or **Xml** parameter to specify the XML to
 be searched.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Select AliasProperty nodes
 
@@ -225,7 +225,7 @@ Select-Xml -Path $Home\Documents\WindowsPowerShell\Snippets -Namespace $SnippetN
     ForEach-Object {$_.Node.Innerxml}
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Content
 
@@ -341,23 +341,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String or System.Xml.XmlNode
 
 You can pipe a path or XML node to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.SelectXmlInfo
 
-## NOTES
+## Notes
 
 XPath is a standard language that is designed to identify parts of an XML document. For more
 information about the XPath language, see
 [XPath Reference](/dotnet/standard/data/xml/select-nodes-using-xpath-navigation) and the Selection
 Filters section of [Event Selection](/previous-versions//aa385231(v=vs.85)).
 
-## RELATED LINKS
+## Related links
 
 [ConvertTo-Xml](ConvertTo-Xml.md)

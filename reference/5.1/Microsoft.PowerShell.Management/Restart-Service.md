@@ -9,10 +9,10 @@ title: Restart-Service
 ---
 # Restart-Service
 
-## SYNOPSIS
+## Synopsis
 Stops and then starts one or more services.
 
-## SYNTAX
+## Syntax
 
 ### InputObject (Default)
 
@@ -35,7 +35,7 @@ Restart-Service [-Force] [-PassThru] -DisplayName <String[]> [-Include <String[]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Restart-Service` cmdlet sends a stop message and then a start message to the Windows Service
 Controller for a specified service. If a service was already stopped, it is started without
@@ -43,7 +43,7 @@ notifying you of an error. You can specify the services by their service names o
 you can use the **InputObject** parameter to pass an object that represents each service that you
 want to restart.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Restart a service on the local computer
 
@@ -79,7 +79,7 @@ sends the selected services to `Restart-Service`.
 In practice, you would use the **WhatIf** parameter to determine the effect of the command before
 you run it.
 
-## PARAMETERS
+## Parameters
 
 ### -DisplayName
 
@@ -235,13 +235,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.ServiceProcess.ServiceController, System.String
 
 You can pipe a service object or a string that contains a service name to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None, System.ServiceProcess.ServiceController
 
@@ -249,7 +249,7 @@ This cmdlet generates a **System.ServiceProcess.ServiceController** object that 
 restarted service, if you specify the **PassThru** parameter. Otherwise, this cmdlet does not
 generate any output.
 
-## NOTES
+## Notes
 
 
 - `Restart-Service` can control services only when the current user has permission to do this. If a
@@ -258,7 +258,7 @@ generate any output.
   The service names appear in the **Name** column, and the display names appear in the
   **DisplayName** column.
 
-## RELATED LINKS
+## Related links
 
 [Get-Service](Get-Service.md)
 

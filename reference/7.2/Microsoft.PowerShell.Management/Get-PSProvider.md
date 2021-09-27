@@ -9,16 +9,16 @@ title: Get-PSProvider
 ---
 # Get-PSProvider
 
-## SYNOPSIS
+## Synopsis
 Gets information about the specified PowerShell provider.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-PSProvider [[-PSProvider] <String[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-PSProvider` cmdlet gets the PowerShell providers in the current session. You can get a
 particular drive or all drives in the session.
@@ -27,7 +27,7 @@ PowerShell providers let you access a variety of data stores as though they were
 For information about PowerShell providers, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Display a list of all available providers
 
@@ -112,7 +112,7 @@ This example shows that the tilde symbol (~) represents the value of the **Home*
 FileSystem provider. The **Home** property value is optional, but for the **FileSystem** provider,
 it is defined as `$env:homedrive\$env:homepath` or `$home`.
 
-## PARAMETERS
+## Parameters
 
 ### -PSProvider
 
@@ -137,18 +137,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### String[]
 
 You can pipe one or more provider name strings to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.ProviderInfo
 
 This cmdlet returns objects that represent the PowerShell providers in the session.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links

@@ -385,7 +385,7 @@ When you use the **PassThru** parameter, `Set-Alias` generates a
 **System.Management.Automation.AliasInfo** object representing the alias. Otherwise, `Set-Alias`
 does not generate any output.
 
-## NOTES
+## Notes
 
 PowerShell includes built-in aliases that are available in each PowerShell session. The `Get-Alias`
 cmdlet displays the aliases available in a PowerShell session.
@@ -400,7 +400,7 @@ An alias can be saved and reused in another PowerShell session by doing an expor
 save an alias to a file, use `Export-Alias`. To add a saved alias to a new PowerShell session, use
 `Import-Alias`.
 
-## RELATED LINKS
+## Related links
 
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
 

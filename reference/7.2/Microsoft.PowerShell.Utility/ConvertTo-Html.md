@@ -9,10 +9,10 @@ title: ConvertTo-Html
 ---
 # ConvertTo-Html
 
-## SYNOPSIS
+## Synopsis
 Converts .NET objects into HTML that can be displayed in a Web browser.
 
-## SYNTAX
+## Syntax
 
 ### Page (Default)
 
@@ -30,7 +30,7 @@ ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [-As <String>]
  [-PostContent <String[]>] [-PreContent <String[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `ConvertTo-Html` cmdlet converts .NET objects into HTML that can be displayed in a
 Web browser. You can use this cmdlet to display the output of a command in a Web page.
@@ -44,7 +44,7 @@ on the properties of the first object that you submit. If the remaining objects 
 the specified properties, the property value of that object is an empty cell. If the remaining
 objects have additional properties, those property values are not included in the file.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a web page to display the date
 
@@ -225,7 +225,7 @@ Get-Service | ConvertTo-HTML -Transitional
 
 This command sets the DOCTYPE of the returned HTML to XHTML Transitional DTD
 
-## PARAMETERS
+## Parameters
 
 ### -As
 
@@ -480,19 +480,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any .NET object to `ConvertTo-Html`.
 
-## OUTPUTS
+## Outputs
 
 ### System.String or System.Xml.XmlDocument
 
 `ConvertTo-Html` returns series of strings that comprise valid HTML.
 
-## NOTES
+## Notes
 
 To use this cmdlet, pipe one or more objects to the cmdlet or use the **InputObject** parameter to
 specify the object. When the input consists of multiple objects, the output of these two methods is
@@ -513,7 +513,7 @@ quite different.
 
    `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"\>`
 
-## RELATED LINKS
+## Related links
 
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 

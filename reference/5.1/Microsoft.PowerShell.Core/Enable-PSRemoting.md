@@ -9,16 +9,16 @@ title: Enable-PSRemoting
 ---
 # Enable-PSRemoting
 
-## SYNOPSIS
+## Synopsis
 Configures the computer to receive remote commands.
 
-## SYNTAX
+## Syntax
 
 ```
 Enable-PSRemoting [-Force] [-SkipNetworkProfileCheck] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Enable-PSRemoting` cmdlet configures the computer to receive PowerShell remote commands that
 are sent by using the WS-Management technology.
@@ -60,7 +60,7 @@ option. This does not apply to Linux or MacOS versions of PowerShell.
 > might appear to succeed, but the remoting is not configured correctly. Remote commands and later
 > attempts to enable and disable remoting, are likely to fail.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Configure a computer to receive remote commands
 
@@ -120,7 +120,7 @@ subnets.
 > The name of the firewall rule can be different depending on the version of Windows. Use the
 > `Get-NetFirewallRule` cmdlet to list the names of the rules on your system.
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 
@@ -205,19 +205,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.String
 
 This cmdlet returns strings that describe its results.
 
-## NOTES
+## Notes
 
 In PowerShell 3.0, `Enable-PSRemoting` creates the following firewall exceptions for
 WS-Management communications.
@@ -256,7 +256,7 @@ descriptor of session configurations. In PowerShell 3.0, `Enable-PSRemoting` rem
 **Deny_All** and **Network_Deny_All** settings. This provides remote access to session
 configurations that were reserved for local use.
 
-## RELATED LINKS
+## Related links
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 

@@ -10,17 +10,17 @@ title: Test-ComputerSecureChannel
 
 # Test-ComputerSecureChannel
 
-## SYNOPSIS
+## Synopsis
 Tests and repairs the secure channel between the local computer and its domain.
 
-## SYNTAX
+## Syntax
 
 ```
 Test-ComputerSecureChannel [-Repair] [-Server <String>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Test-ComputerSecureChannel** cmdlet verifies that the channel between the local computer and its domain is working correctly by checking the status of its trust relationships.
 If a connection fails, you can use the *Repair* parameter to try to restore it.
 
@@ -31,7 +31,7 @@ To get more detailed test results, use the *Verbose* parameter.
 This cmdlet works much like NetDom.exe.
 Both NetDom and **Test-ComputerSecureChannel** use the **NetLogon** service to perform the actions.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Test a channel between the local computer and its domain
 
@@ -88,7 +88,7 @@ This saves space and prevents typing errors.
 
 The **If** statement checks the value that **Test-ComputerSecureChannel** returns before it runs a script.
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 Specifies a user account that has permission to perform this action.
@@ -177,22 +177,22 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Boolean
 This cmdlet returns $True if the connection is working correctly and $False if it is not.
 
-## NOTES
+## Notes
 
 * To run a **Test-ComputerSecureChannel** command on Windows Vista and later versions of the Windows operating system, open Windows PowerShell by using the Run as administrator option.
 * **Test-ComputerSecureChannel** is implemented by using the **I_NetLogonControl2** function, which controls various aspects of the Netlogon service.
 
-## RELATED LINKS
+## Related links
 
 [Checkpoint-Computer](Checkpoint-Computer.md)
 

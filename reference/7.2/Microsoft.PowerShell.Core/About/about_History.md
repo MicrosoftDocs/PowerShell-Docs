@@ -8,10 +8,10 @@ title: about History
 ---
 # about_History
 
-## Short Description
+## Short description
 Describes how to get and run commands in the command history.
 
-## Long Description
+## Long description
 
 When you enter a command at the command prompt, PowerShell saves the command in
 the command history. You can use the commands in the history as a record of
@@ -103,7 +103,7 @@ commands are executing in a nested prompt, the commands might appear to be out
 of order in the history. Commands that are executing in a nested prompt are
 completed only when you exit the prompt level.
 
-## See Also
+## See also
 
 - [about_Line_Editing](about_Line_Editing.md)
 - [about_Preference_Variables](about_Preference_Variables.md)

@@ -10,10 +10,10 @@ title: Update-Script
 
 # Update-Script
 
-## SYNOPSIS
+## Synopsis
 Updates a script.
 
-## SYNTAX
+## Syntax
 
 ### All
 
@@ -23,12 +23,12 @@ Update-Script [[-Name] <String[]>] [-RequiredVersion <String>] [-MaximumVersion 
  [-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Update-Script` cmdlet updates a script that is installed on the local computer. The updated
 script is downloaded from the same repository as the installed version.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Update the specified script
 
@@ -49,7 +49,7 @@ Version   Name                       Repository   Description
 parameter specifies the script version. `Get-InstalledScript` displays the updated version of the
 script.
 
-## PARAMETERS
+## Parameters
 
 ### -AcceptLicense
 
@@ -250,7 +250,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String[]
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSCredential
 
-## OUTPUTS
+## Outputs
 
 ### System.Object
 
-## NOTES
+## Notes
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -278,7 +278,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## RELATED LINKS
+## Related links
 
 [Find-Script](Find-Script.md)
 

@@ -9,10 +9,10 @@ title: Get-Acl
 ---
 # Get-Acl
 
-## SYNOPSIS
+## Synopsis
 Gets the security descriptor for a resource, such as a file or registry key.
 
-## SYNTAX
+## Syntax
 
 ### ByPath (Default)
 
@@ -35,7 +35,7 @@ Get-Acl [-LiteralPath <String[]>] [-Audit] [-AllCentralAccessPolicies] [-Filter 
  [-Exclude <String[]>] [-UseTransaction] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Acl` cmdlet gets objects that represent the security descriptor of a file or resource. The
 security descriptor contains the access control lists (ACLs) of the resource. The ACL specifies the
@@ -44,7 +44,7 @@ permissions that users and user groups have to access the resource.
 Beginning in Windows PowerShell 3.0, you can use the **InputObject** parameter of `Get-Acl` to get
 the security descriptor of objects that do not have a path.
 
-## EXAMPLES
+## Examples
 
 ### Example 1- Get an ACL for a folder
 
@@ -109,7 +109,7 @@ storage subsystem object.
 Get-Acl -InputObject (Get-StorageSubSystem -Name S087)
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -AllCentralAccessPolicies
 
@@ -290,20 +290,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path to `Get-Acl`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Security.AccessControl.FileSecurity, System.Security.AccessControl.DirectorySecurity, System.Security.AccessControl.RegistrySecurity
 
 `Get-Acl` returns an object that represents the ACLs that it gets. The object type depends upon the
 ACL type.
 
-## NOTES
+## Notes
 
 By default, `Get-Acl` displays the PowerShell path to the resource (`<provider>::<resource-path>`),
 the owner of the resource, and "Access", a list (array) of the access control entries in the
@@ -324,6 +324,6 @@ Because `Get-Acl` is supported by the file system and registry providers, you ca
 view the ACL of file system objects, such as files and directories, and registry objects, such as
 registry keys and entries.
 
-## RELATED LINKS
+## Related links
 
 [Set-Acl](Set-Acl.md)

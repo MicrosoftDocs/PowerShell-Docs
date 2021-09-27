@@ -9,10 +9,10 @@ title: Rename-ItemProperty
 ---
 # Rename-ItemProperty
 
-## SYNOPSIS
+## Synopsis
 Renames a property of an item.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -30,13 +30,13 @@ Rename-ItemProperty -LiteralPath <String> [-Name] <String> [-NewName] <String> [
  [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Rename-ItemProperty` cmdlet changes the name of a specified item property.
 The value of the property is not changed.
 For example, you can use `Rename-ItemProperty` to change the name of a registry entry.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Rename a registry entry
 
@@ -46,7 +46,7 @@ This command renames the config registry entry that is contained in the "HKEY_LO
 Rename-ItemProperty -Path HKLM:\Software\SmpApplication -Name config -NewName oldconfig
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -287,24 +287,24 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path, but not a literal path, to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None, System.Management.Automation.PSCustomObject
 
 This cmdlet generates a **PSCustomObject** that represents the renamed item property, if you specify the *PassThru* parameter.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 `Remove-ItemProperty` is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Clear-ItemProperty](Clear-ItemProperty.md)
 

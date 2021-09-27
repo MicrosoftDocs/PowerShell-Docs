@@ -10,10 +10,10 @@ title: Remove-WmiObject
 
 # Remove-WmiObject
 
-## SYNOPSIS
+## Synopsis
 Deletes an instance of an existing Windows Management Instrumentation (WMI) class.
 
-## SYNTAX
+## Syntax
 
 ### class (Default)
 
@@ -67,10 +67,10 @@ Remove-WmiObject [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Remove-WmiObject** cmdlet deletes an instance of an existing Windows Management Instrumentation (WMI)class.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Close all instances of a Win32 process
 
@@ -101,7 +101,7 @@ The first command uses **Get-WMIObject** to query for the C:\Test folder, and th
 
 The second command pipes the $a variable to **Remove-WMIObject**, which deletes the folder.
 
-## PARAMETERS
+## Parameters
 
 ### -AsJob
 Indicates that this cmdlet run as a background job.
@@ -398,20 +398,20 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.ManagementObject
 You can pipe a management object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None, System.Management.Automation.RemotingJob
 This cmdlet returns a job object, if you specify the *AsJob* parameter.
 Otherwise, it does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Get-WmiObject](Get-WmiObject.md)
 

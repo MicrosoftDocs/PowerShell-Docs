@@ -9,10 +9,10 @@ title: ConvertFrom-String
 ---
 # ConvertFrom-String
 
-## SYNOPSIS
+## Synopsis
 Extracts and parses structured properties from string content.
 
-## SYNTAX
+## Syntax
 
 ### ByDelimiter (Default)
 
@@ -28,7 +28,7 @@ ConvertFrom-String [-TemplateFile <String[]>] [-TemplateContent <String[]>] [-In
  [-InputObject] <String> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **ConvertFrom-String** cmdlet extracts and parses structured properties from string content.
 This cmdlet generates an object by parsing text from a traditional text stream.
@@ -55,7 +55,7 @@ You can customize the delimiter by piping the `ConvertFrom-String` results into 
 The cmdlet also supports automatically-generated, example-driven parsing based on the
 [FlashExtract, research work by Microsoft Research](https://www.microsoft.com/research/publication/flashextract-framework-data-extraction-examples/).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Generate an object with default property names
 
@@ -244,7 +244,7 @@ phone       NoteProperty string phone=425-123-6789
 
 The `Get-Member` cmdlet is used to show that the **age** property is an integer.
 
-## PARAMETERS
+## Parameters
 
 ### -Delimiter
 
@@ -393,15 +393,15 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [ConvertFrom-String: Example-based text parsing](https://devblogs.microsoft.com/powershell/convertfrom-string-example-based-text-parsing/)
 

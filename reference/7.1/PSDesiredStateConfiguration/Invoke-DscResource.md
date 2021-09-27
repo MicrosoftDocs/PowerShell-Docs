@@ -10,17 +10,17 @@ title: Invoke-DscResource
 
 # Invoke-DscResource
 
-## SYNOPSIS
+## Synopsis
 Runs a method of a specified PowerShell Desired State Configuration (DSC) resource.
 
-## SYNTAX
+## Syntax
 
 ```
 Invoke-DscResource [-Name] <String> [[-ModuleName] <ModuleSpecification>] [-Method] <String>
  [-Property] <Hashtable> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired State Configuration
 (DSC) resource.
@@ -35,7 +35,7 @@ cmdlet also enables debugging of resources when the DSC engine is running with d
 >
 > `Enable-ExperimentalFeature PSDesiredStateConfiguration.InvokeDscResource`
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Invoke the Set method of a resource by specifying its mandatory properties
 
@@ -65,7 +65,7 @@ $SplatParam = @{
 Invoke-DscResource @SplatParam
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Method
 
@@ -140,17 +140,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 ### Microsoft.PowerShell.Commands.ModuleSpecification
 
-## OUTPUTS
+## Outputs
 
 ### System.Object
 
-## NOTES
+## Notes
 
 - Previously, Windows PowerShell 5.1 resources ran under System context unless specified with user
 context using the key **PsDscRunAsCredential**. In PowerShell 7.0, Resources run in the user's
@@ -160,7 +160,7 @@ will throw an exception.
 - As of PowerShell 7, `Invoke-DscResource` no longer supports invoking WMI DSC resources. This
   includes the **File** and **Log** resources in **PSDesiredStateConfiguration**.
 
-## RELATED LINKS
+## Related links
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/dscforengineers)
 

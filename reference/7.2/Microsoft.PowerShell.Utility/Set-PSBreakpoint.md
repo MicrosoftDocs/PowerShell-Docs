@@ -401,7 +401,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### None
 You cannot pipe input to `Set-PSBreakpoint`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.CommandBreakpoint
 

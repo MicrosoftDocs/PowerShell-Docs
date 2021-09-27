@@ -8,10 +8,10 @@ title: about Remote
 ---
 # about_Remote
 
-## SHORT DESCRIPTION
+## Short description
 Describes how to run remote commands in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 You can run remote commands on a single computer or on multiple computers by
 using a temporary or persistent connection. You can also start an interactive
@@ -229,7 +229,7 @@ remote computer where it terminates the remote command.
 
 about_Remoting
 
-## SEE ALSO
+## See also
 
 [about_PSSessions](about_PSSessions.md)
 

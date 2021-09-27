@@ -10,16 +10,16 @@ title: Export-Console
 
 # Export-Console
 
-## SYNOPSIS
+## Synopsis
 Exports the names of snap-ins in the current session to a console file.
 
-## SYNTAX
+## Syntax
 
 ```
 Export-Console [[-Path] <String>] [-Force] [-NoClobber] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Export-Console** cmdlet exports the names of the Windows PowerShell snap-ins in the current session to a Windows PowerShell console file (.psc1).
 You can use this cmdlet to save the snap-ins for use in future sessions.
 
@@ -27,7 +27,7 @@ To add the snap-ins in the .psc1 console file to a session, start Windows PowerS
 
 For more information about Windows PowerShell snap-ins, see [about_PSSnapins](About/about_PSSnapins.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Export the names of snap-ins in the current session
 
@@ -112,7 +112,7 @@ The fifth command adds SnapIn03 to the current console.
 The sixth command uses the **Export-Console** cmdlet without a *Path* parameter.
 This command exports the names of all the Windows PowerShell snap-ins in the current session to the most recently used file, NewConsole.psc1.
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 Indicates that this cmdlet overwrites the data in a console file without warning, even if the file has the read-only attribute.
@@ -206,17 +206,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 You can pipe a path string to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.IO.FileInfo
 This cmdlet creates a file that contains the exported aliases.
 
-## NOTES
+## Notes
 
 * When a console file (.psc1) is used to start the session, the name of the console file is automatically stored in the $ConsoleFileName automatic variable. The value of $ConsoleFileName is updated when you use the *Path* parameter of **Export-Console** to specify a new console file. When no console file is used, $ConsoleFileName has no value ($Null).
 
@@ -228,7 +228,7 @@ This cmdlet creates a file that contains the exported aliases.
 For more information, see [about_Profiles](About/about_Profiles.md).
 
 
-## RELATED LINKS
+## Related links
 
 [Add-PSSnapin](Add-PSSnapin.md)
 

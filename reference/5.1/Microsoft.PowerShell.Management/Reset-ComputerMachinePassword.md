@@ -10,21 +10,21 @@ title: Reset-ComputerMachinePassword
 
 # Reset-ComputerMachinePassword
 
-## SYNOPSIS
+## Synopsis
 Resets the machine account password for the computer.
 
-## SYNTAX
+## Syntax
 
 ```
 Reset-ComputerMachinePassword [-Server <String>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Reset-ComputerMachinePassword** cmdlet changes the computer account password that the computers use to authenticate to the domain controllers in the domain.
 You can use it to reset the password of the local computer.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Reset the password for the local computer
 
@@ -55,7 +55,7 @@ This command uses the Invoke-Command cmdlet to run a **Reset-ComputerMachinePass
 
 For more information about remote commands in Windows PowerShell, see [about_Remote](../Microsoft.PowerShell.Core/About/about_Remote.md) and **Invoke-Command**.
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 Specifies a user account that has permission to perform this action.
@@ -130,18 +130,18 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
-## RELATED LINKS
+## Related links

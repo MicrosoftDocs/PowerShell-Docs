@@ -9,10 +9,10 @@ title: Import-Counter
 ---
 # Import-Counter
 
-## SYNOPSIS
+## Synopsis
 Imports performance counter log files and creates the objects that represent each counter sample in the log.
 
-## SYNTAX
+## Syntax
 
 ### GetCounterSet (Default)
 
@@ -33,7 +33,7 @@ Import-Counter [-Path] <String[]> -ListSet <String[]> [<CommonParameters>]
 Import-Counter [-Path] <String[]> [-Summary] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Import-Counter** cmdlet imports performance counter data from performance counter log files and creates objects for each counter sample in the file.
 The **PerformanceCounterSampleSet** objects that it creates are identical to the objects that **Get-Counter** returns when it collects performance counter data.
@@ -44,7 +44,7 @@ You can use the parameters of **Import-Counter** to filter the data that you imp
 
 Along with the Get-Counter and Export-Counter cmdlets, this feature lets you collect, export, import, combine, filter, manipulate, and re-export performance counter data within Windows PowerShell.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Import all counter data from a file
 
@@ -204,7 +204,7 @@ The command uses a pipeline operator to send the performance log paths to Import
 
 Notice that each path is enclosed in quotation marks and that the paths are separated from each other by a comma.
 
-## PARAMETERS
+## Parameters
 
 ### -Counter
 
@@ -351,13 +351,13 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe performance counter log paths to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet, Microsoft.PowerShell.Commands.GetCounter.CounterSet, Microsoft.PowerShell.Commands.GetCounter.CounterFileInfo
 
@@ -365,11 +365,11 @@ This cmdlet returns a **Microsoft.PowerShell.Commands.GetCounter.PerformanceCoun
 If you use the *ListSet* parameter, this cmdlet returns a **Microsoft.PowerShell.Commands.GetCounter.CounterSet** object.
 If you use the *Summary* parameter, this cmdlet returns a **Microsoft.PowerShell.Commands.GetCounter.CounterFileInfo** object.
 
-## NOTES
+## Notes
 
 * This cmdlet does not have a *ComputerName* parameter. However, if the computer is configured for Windows PowerShell remoting, you can use the Invoke-Command cmdlet to run an **Import-Counter** command on a remote computer.
 
-## RELATED LINKS
+## Related links
 
 [Export-Counter](Export-Counter.md)
 

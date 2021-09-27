@@ -10,11 +10,11 @@ title: Invoke-OperationValidation
 
 # Invoke-OperationValidation
 
-## SYNOPSIS
+## Synopsis
 
 Invokes Operation Validation Framework tests.
 
-## SYNTAX
+## Syntax
 
 ### FileAndTest (Default)
 
@@ -37,11 +37,11 @@ Invoke-OperationValidation [-ModuleName <String[]>] [-TestType <String[]>] [-Inc
  [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Invoke-OperationValidation** cmdlet invokes Operation Validation Framework tests for a specified module.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Invoke an Operation Validation test
 
@@ -82,7 +82,7 @@ Passed  Scenario targeted tests:The Firewall Rules:A rule for UDP port 3389 is e
 
 This command gets the module named OperationValidation, and uses the pipeline operator to pass it to the **Invoke-OperationValidation** cmdlet, which runs the test.
 
-## PARAMETERS
+## Parameters
 
 ### -IncludePesterOutput
 
@@ -204,20 +204,20 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### PSCustomObject
 
 You can pipe the output of **Get-OperationValidation** to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### PSCustomObject
 
 The **PSCustomObject** describes whether the validation was successful.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Get-OperationValidation](Get-OperationValidation.md)

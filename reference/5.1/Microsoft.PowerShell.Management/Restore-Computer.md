@@ -10,16 +10,16 @@ title: Restore-Computer
 
 # Restore-Computer
 
-## SYNOPSIS
+## Synopsis
 Starts a system restore on the local computer.
 
-## SYNTAX
+## Syntax
 
 ```
 Restore-Computer [-RestorePoint] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Restore-Computer** cmdlet restores the local computer to the specified system restore point.
 
 **Restore-Computer** restarts the computer.
@@ -27,7 +27,7 @@ The restore is completed during the restart operation.
 
 System restore points and **Restore-Computer** are supported only on client operating systems, such as Windows 7, Windows Vista, and Windows XP.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Restore the local computer
 
@@ -67,7 +67,7 @@ The second command restores the computer to the restore point with sequence numb
 The third command uses the *LastStatus* parameter of *Get-ComputerRestorePoint* cmdlet to check the status of the restore operation.
 Because **Restore-Computer** forces a restart, this command would be entered after the computer restarts.
 
-## PARAMETERS
+## Parameters
 
 ### -RestorePoint
 Specifies the sequence number of the restore point.
@@ -120,22 +120,22 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * To run a Restore-Computer command on Windows Vista and later versions of the Windows operating system, open Windows PowerShell by using the Run as administrator option.
 * This cmdlet uses the Windows Management Instrumentation (WMI) **SystemRestore** class.
 
-## RELATED LINKS
+## Related links
 
 [Checkpoint-Computer](Checkpoint-Computer.md)
 

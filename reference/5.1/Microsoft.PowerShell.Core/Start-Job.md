@@ -10,10 +10,10 @@ title: Start-Job
 
 # Start-Job
 
-## SYNOPSIS
+## Synopsis
 Starts a PowerShell background job.
 
-## SYNTAX
+## Syntax
 
 ### ComputerName (Default)
 
@@ -46,7 +46,7 @@ Start-Job [-Name <String>] [-Credential <PSCredential>] -LiteralPath <String>
  [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Start-Job` cmdlet starts a PowerShell background job on the local computer.
 
@@ -70,7 +70,7 @@ The default working directory for jobs is hardcoded. The Windows default is `$HO
 Linux or macOS the default is `$HOME`. The script code running in the background job needs to manage
 the working directory as needed.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Start a background job
 
@@ -234,7 +234,7 @@ running on the local computer.
 
 To view the job's output, use the `Receive-Job` cmdlet. For example, `Receive-Job -Id 1`.
 
-## PARAMETERS
+## Parameters
 
 ### -ArgumentList
 
@@ -563,26 +563,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can use the pipeline to send an object with the **Name** property to the **Name** parameter. For
 example, you can pipeline a **FileInfo** object from `Get-ChildItem` to `Start-Job`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSRemotingJob
 
 `Start-Job` returns a **PSRemotingJob** object that represents the job that it started.
 
-## NOTES
+## Notes
 
 To run in the background, `Start-Job` runs in its own session in the current session. When you use
 the `Invoke-Command` cmdlet to run a `Start-Job` command in a session on a remote computer,
 `Start-Job` runs in a session in the remote session.
 
-## RELATED LINKS
+## Related links
 
 [about_Arrays](./about/about_arrays.md)
 

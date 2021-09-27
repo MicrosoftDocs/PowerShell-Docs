@@ -10,10 +10,10 @@ title: Test-DscConfiguration
 
 # Test-DscConfiguration
 
-## SYNOPSIS
+## Synopsis
 Tests whether the actual configuration on the nodes matches the desired configuration.
 
-## SYNTAX
+## Syntax
 
 ### ComputerNameSet (Default)
 
@@ -57,7 +57,7 @@ Test-DscConfiguration [-ThrottleLimit <Int32>] -CimSession <CimSession[]> [-AsJo
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Test-DscConfiguration** cmdlet tests whether the actual configuration on the nodes matches the desired configuration.
 Specify which computers for which you want to test configurations by using computer names or Common Information Model (CIM) sessions.
 If you do not specify a target computer, the cmdlet tests configuration of the local computer.
@@ -65,7 +65,7 @@ If you do not specify a target computer, the cmdlet tests configuration of the l
 If the desired and actual configurations match, the cmdlet returns a string value of 'True'.
 Otherwise, it returns a string value of 'False'.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Test configuration for the local computer
 
@@ -117,7 +117,7 @@ PS C:\> Test-DscConfiguration -ReferenceConfiguration "C:\Dsc\Configurations\Web
 
 This command tests a configuration defined in a file against a set of computers specified by the *ComputerName* parameter.
 
-## PARAMETERS
+## Parameters
 
 ### -AsJob
 Indicates that this cmdlet runs the command as a background job.
@@ -263,13 +263,13 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/dscforengineers)
 

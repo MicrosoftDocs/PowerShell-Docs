@@ -9,11 +9,11 @@ title: about Windows RT
 
 # about_Windows_RT
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains limitations of  Windows PowerShell 4.0 on Windows RT 8.1.
 
-## LONG DESCRIPTION
+## Long description
 
 The Windows RT 8.1 operating system is installed on computers and devices
 (such as Microsoft Surface 2, on which it is the operating system that ships
@@ -63,7 +63,7 @@ devices. The following list explains the differences.
 For more information about ConstrainedLanguage language mode, see
 [about_Language_Modes](about_Language_Modes.md).
 
-## SEE ALSO
+## See also
 
 [about_Language_Modes](about_Language_Modes.md)
 

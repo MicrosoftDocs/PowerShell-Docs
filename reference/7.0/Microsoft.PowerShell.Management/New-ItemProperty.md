@@ -9,10 +9,10 @@ title: New-ItemProperty
 ---
 # New-ItemProperty
 
-## SYNOPSIS
+## Synopsis
 Creates a new property for an item and sets its value.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -30,7 +30,7 @@ New-ItemProperty -LiteralPath <String[]> [-Name] <String> [-PropertyType <String
  [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `New-ItemProperty` cmdlet creates a new property for a specified item and sets its value.
 Typically, this cmdlet is used to create new registry values, because registry values are properties
@@ -41,7 +41,7 @@ This cmdlet does not add properties to an object.
 - To add a property to an instance of an object, use the `Add-Member` cmdlet.
 - To add a property to all objects of a particular type, modify the Types.ps1xml file.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Add a registry entry
 
@@ -117,7 +117,7 @@ $newValue.multistring[0]
 a
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -357,24 +357,24 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSCustomObject
 
 `New-ItemProperty` returns a custom object that contains the new property.
 
-## NOTES
+## Notes
 
 `New-ItemProperty` is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Clear-ItemProperty](Clear-ItemProperty.md)
 

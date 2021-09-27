@@ -10,11 +10,11 @@ title: Register-ArgumentCompleter
 
 # Register-ArgumentCompleter
 
-## SYNOPSIS
+## Synopsis
 
 Registers a custom argument completer.
 
-## SYNTAX
+## Syntax
 
 ### NativeSet
 
@@ -30,13 +30,13 @@ Register-ArgumentCompleter [-CommandName <String[]>] -ParameterName <String>
  -ScriptBlock <ScriptBlock> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Register-ArgumentCompleter` cmdlet registers a custom argument completer. An argument
 completer allows you to provide dynamic tab completion, at run time for any command that you
 specify.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Register a custom argument completer
 
@@ -140,7 +140,7 @@ The results are piped to the `ForEach-Object` cmdlet which use the **new** stati
 [System.Management.Automation.CompletionResult](/dotnet/api/system.management.automation.completionresult) class
 to create a new **CompletionResult** object for each value.
 
-## PARAMETERS
+## Parameters
 
 ### -CommandName
 
@@ -252,18 +252,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet returns no output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links

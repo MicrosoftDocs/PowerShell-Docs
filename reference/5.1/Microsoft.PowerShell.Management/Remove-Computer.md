@@ -9,10 +9,10 @@ title: Remove-Computer
 ---
 # Remove-Computer
 
-## SYNOPSIS
+## Synopsis
 Removes the local computer from its domain.
 
-## SYNTAX
+## Syntax
 
 ### Local (Default)
 
@@ -29,7 +29,7 @@ Remove-Computer -UnjoinDomainCredential <PSCredential> [-LocalCredential <PSCred
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Remove-Computer` cmdlet removes the local computer and remote computers from their current
 domains.
@@ -51,7 +51,7 @@ credential parameters that specify alternate credentials for connecting to remot
 unjoining from a domain, a **Restart** parameter for restarting the affected computers, and a
 **WorkgroupName** parameter for specifying the name of the workgroup to which computers are added.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Remove the local computer from its domain
 
@@ -95,7 +95,7 @@ Remove-Computer -ComputerName "Server01", "localhost" -UnjoinDomainCredential Do
 The **Force** parameter suppresses the confirmation prompt for each computer. The **Restart**
 parameter restarts the computers to make the change effective.
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 
@@ -281,24 +281,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe computer names to thiscmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.ComputerChangeInfo
 
 When you use the **PassThru** parameter, `Remove-Computer` returns a **ComputerChangeInfo** object.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 This cmdlet does not remove computers from workgroups.
 
-## RELATED LINKS
+## Related links
 
 [Add-Computer](Add-Computer.md)
 

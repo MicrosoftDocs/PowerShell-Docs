@@ -9,10 +9,10 @@ title: Get-ItemProperty
 ---
 # Get-ItemProperty
 
-## SYNOPSIS
+## Synopsis
 Gets the properties of a specified item.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -28,13 +28,13 @@ Get-ItemProperty -LiteralPath <String[]> [[-Name] <String[]>] [-Filter <String>]
  [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-ItemProperty` cmdlet gets the properties of the specified items. For example, you can use
 this cmdlet to get the value of the LastAccessTime property of a file object. You can also use this
 cmdlet to view registry entries and their values.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get information about a specific directory
 
@@ -91,7 +91,7 @@ CTPVersion              : 5
 PSCompatibleVersion     : 1.0,2.0
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -231,26 +231,26 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path to `Get-ItemProperty`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Boolean, System.String, System.DateTime
 
 `Get-ItemProperty` returns an object for each item property that it gets. The object type depends on
 the object that is retrieved. For example, in a file system drive, it might return a file or folder.
 
-## NOTES
+## Notes
 
 The `Get-ItemProperty` cmdlet is designed to work with the data exposed by any provider. To list the
 providers available in your session, type `Get-PSProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Clear-ItemProperty](Clear-ItemProperty.md)
 

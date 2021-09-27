@@ -10,10 +10,10 @@ title: Remove-LocalUser
 
 # Remove-LocalUser
 
-## SYNOPSIS
+## Synopsis
 Deletes local user accounts.
 
-## SYNTAX
+## Syntax
 
 ### InputObject
 
@@ -33,10 +33,10 @@ Remove-LocalUser [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 Remove-LocalUser [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Remove-LocalUser** cmdlet deletes local user accounts.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Delete a user account
 
@@ -50,7 +50,7 @@ This command deletes the user account named AdminContoso02.
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## PARAMETERS
+## Parameters
 
 ### -InputObject
 Specifies an array of user accounts that this cmdlet deletes.
@@ -132,17 +132,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser, System.String, System.Security.Principal.SecurityIdentifier
 You can pipe a local user, a string, or a SID to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
@@ -153,7 +153,7 @@ This cmdlet does not generate any output.
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
 
-## RELATED LINKS
+## Related links
 
 [Disable-LocalUser](Disable-LocalUser.md)
 
