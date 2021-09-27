@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/14/2020
+ms.date: 09/27/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-information?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Information
@@ -82,6 +82,10 @@ Display Name                                            Name                    
     [X] Windows PowerShell ISE                          PowerShell-ISE                 Installed
 Got your features!
 ```
+
+> [!NOTE]
+> When running this example on Windows 10, you must install the **ServerManager** module and target
+> the desired server.
 
 ### Example 2: Write information and tag it
 

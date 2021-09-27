@@ -83,6 +83,10 @@ Display Name                                            Name                    
 Got your features!
 ```
 
+> [!NOTE]
+> When running this example on Windows 10, you must install the **ServerManager** module and target
+> the desired server.
+
 ### Example 2: Write information and tag it
 
 In this example, you use `Write-Information` to let users know they'll need to run another command
