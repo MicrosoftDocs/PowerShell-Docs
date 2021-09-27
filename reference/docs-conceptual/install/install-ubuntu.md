@@ -56,8 +56,8 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Do
 package from the [releases][releases] page onto the Ubuntu machine. The link to the current
 version is:
 
-- PowerShell 7.2-preview.9 (universal package) for any support version of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.9/powershell-preview_7.2.0-preview.9-1.deb_amd64.deb`
+- PowerShell 7.2-preview.10 (universal package) for any support version of Ubuntu
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-preview_7.2.0-preview.10-1.deb_amd64.deb`
 - PowerShell 7.1.4
   - Ubuntu 20.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell_7.1.4-1.ubuntu.20.04_amd64.deb`
   - Ubuntu 18.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell_7.1.4-1.ubuntu.18.04_amd64.deb`
@@ -70,7 +70,7 @@ the version you downloaded.
 
 ```sh
 # Install the downloaded package
-sudo dpkg -i powershell-preview_7.2.0-preview.9-1.deb_amd64.deb
+sudo dpkg -i powershell-preview_7.2.0-preview.10-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f

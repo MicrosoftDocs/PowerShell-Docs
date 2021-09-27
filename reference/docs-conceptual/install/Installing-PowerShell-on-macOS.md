@@ -129,9 +129,9 @@ brew upgrade powershell
 PowerShell 7.2 addes support for the Apple M1 processor. Download the install package from the
 [releases][releases] page onto your computer. The links to the current versions are:
 
-- PowerShell 7.2-preview.9
-  - x64 processors - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.9/powershell-7.2.0-preview.9-osx-x64.pkg`
-  - M1 processors - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.9/powershell-7.2.0-preview.9-osx-arm64.pkg`
+- PowerShell 7.2-preview.10
+  - x64 processors - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-7.2.0-preview.10-osx-x64.pkg`
+  - M1 processors - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-7.2.0-preview.10-osx-arm64.pkg`
 - PowerShell 7.1.4 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell-7.1.4-osx-x64.pkg`
 - PowerShell 7.0.7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.7/powershell-7.0.7-osx-x64.pkg`
 
@@ -181,9 +181,9 @@ operations.
 Download the install package from the [releases][releases] page onto your computer. The links to the
 current versions are:
 
-- PowerShell 7.2-preview.9
-  - x64 processors - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.9/powershell-7.2.0-preview.9-osx-x64.tar.gz`
-  - M1 processors - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.9/powershell-7.2.0-preview.9-osx-arm64.tar.gz`
+- PowerShell 7.2-preview.10
+  - x64 processors - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-7.2.0-preview.10-osx-x64.tar.gz`
+  - M1 processors - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-7.2.0-preview.10-osx-arm64.tar.gz`
 - PowerShell 7.1.4 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell-7.1.4-osx-x64.tar.gz`
 - PowerShell 7.0.7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.7/powershell-7.0.7-osx-x64.tar.gz`
 

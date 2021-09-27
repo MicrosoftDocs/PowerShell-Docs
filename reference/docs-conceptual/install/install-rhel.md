@@ -60,7 +60,7 @@ with `sudo dnf upgrade powershell`.
 PowerShell 7.2 is distributed as a universal RPM package. Previous versions of PowerShell had
 separate package for each OS. Download the RPM package you need onto your CentOS machine.
 
-- PowerShell 7.2-preview.9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.9/powershell-preview-7.2.0_preview.9-1.rh.x86_64.rpm`
+- PowerShell 7.2-preview.10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-preview-7.2.0_preview.10-1.rh.x86_64.rpm`
 - PowerShell 7.1.4
   - CentOS 7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell-7.1.4-1.rhel.7.x86_64.rpm`
   - CentOS 8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell-7.1.4-1.centos.8.x86_64.rpm`
@@ -74,13 +74,13 @@ URL in the following shell commands to match the version you need.
 On RHEL 7:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.9/powershell-preview-7.2.0_preview.9-1.rh.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-preview-7.2.0_preview.10-1.rh.x86_64.rpm
 ```
 
 On RHEL 8:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.9/powershell-preview-7.2.0_preview.9-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-preview-7.2.0_preview.10-1.rh.x86_64.rpm
 ```
 
 ## Uninstallation - Red Hat Enterprise Linux (RHEL) 7

@@ -49,14 +49,14 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Th
 contains the dependencies needed by the package. Download the RPM package from the
 [releases][releases] page onto your openSUSE computer. The links to the current versions are:
 
-- PowerShell 7.2-preview.9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.9/powershell-preview-7.2.0_preview.9-1.rh.x86_64.rpm`
+- PowerShell 7.2-preview.10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-preview-7.2.0_preview.10-1.rh.x86_64.rpm`
 - PowerShell 7.1.4 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell-7.1.4-1.rhel.7.x86_64.rpm`
 - PowerShell 7.0.7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.7/powershell-7.0.7-1.rhel.7.x86_64.rpm`
 
-The following shell command installs PowerShell 7.2-preview.9:
+The following shell command installs PowerShell 7.2-preview.10:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.9/powershell-preview-7.2.0_preview.9-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-preview-7.2.0_preview.10-1.rh.x86_64.rpm
 ```
 
 Use the following shell commands to download and install the package. Change the URL to match the

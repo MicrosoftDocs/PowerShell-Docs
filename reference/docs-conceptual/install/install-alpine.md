@@ -21,11 +21,11 @@ run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview releas
 Installation on Alpine is based on downloading tar.gz package from the [releases][releases] page. The
 URL to the package depends on the version of PowerShell you want to install.
 
-- PowerShell 7.2-preview.9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.9/powershell-7.2.0-preview.9-linux-alpine-x64.tar.gz`
+- PowerShell 7.2-preview.10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-7.2.0-preview.10-linux-alpine-x64.tar.gz`
 - PowerShell 7.1 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell-7.1.4-linux-alpine-x64.tar.gz`
 - PowerShell 7.0 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.7/powershell-7.0.7-linux-alpine-x64.tar.gz`
 
-Then, in the terminal, execute the following shell commands to install PowerShell 7.2-preview.9:
+Then, in the terminal, execute the following shell commands to install PowerShell 7.2-preview.10:
 
 ```sh
 # install the requirements
@@ -48,7 +48,7 @@ sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.9/powershell-7.2.0-preview.9-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-7.2.0-preview.10-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
