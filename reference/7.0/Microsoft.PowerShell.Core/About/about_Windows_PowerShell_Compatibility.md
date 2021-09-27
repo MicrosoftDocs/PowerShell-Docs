@@ -8,11 +8,11 @@ title: about Windows PowerShell Compatibility
 ---
 # about_Windows_PowerShell_Compatibility
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the Windows PowerShell Compatibility functionality for PowerShell 7.
 
-## LONG DESCRIPTION
+## Long description
 
 Unless the module manifest indicates that module is compatible with PowerShell
 Core, modules in the `%windir%\system32\WindowsPowerShell\v1.0\Modules` folder

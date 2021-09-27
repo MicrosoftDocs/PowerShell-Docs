@@ -10,10 +10,10 @@ title: Set-PSDebug
 
 # Set-PSDebug
 
-## SYNOPSIS
+## Synopsis
 Turns script debugging features on and off, sets the trace level, and toggles strict mode.
 
-## SYNTAX
+## Syntax
 
 ### on
 
@@ -27,7 +27,7 @@ Set-PSDebug [-Trace <Int32>] [-Step] [-Strict] [<CommonParameters>]
 Set-PSDebug [-Off] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-PSDebug` cmdlet turns script debugging features on and off, sets the trace level, and
 toggles strict mode. By default, the PowerShell debug features are off.
@@ -36,7 +36,7 @@ When the **Trace** parameter has a value of `1`, each line of script is traced a
 parameter has a value of `2`, variable assignments, function calls, and script calls are also
 traced. If the **Step** parameter is specified, you're prompted before each line of the script runs.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Set the trace level
 
@@ -114,7 +114,7 @@ Set-PSDebug -Off; foreach ($i in 1..3) {$i}
 3
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Off
 
@@ -197,21 +197,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You can't pipeline input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet doesn't return any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [about_Debuggers](./About/about_Debuggers.md)
 

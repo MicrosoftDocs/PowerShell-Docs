@@ -9,18 +9,18 @@ title: New-FileCatalog
 ---
 # New-FileCatalog
 
-## SYNOPSIS
+## Synopsis
 `New-FileCatalog` creates a catalog file of file hashes that can be used to validate the
 authenticity of a file.
 
-## SYNTAX
+## Syntax
 
 ```
 New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <String[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 `New-FileCatalog` creates a [Windows catalog file](/windows-hardware/drivers/install/catalog-files)
 for a set of folders and files. This catalog file contains hashes for all files in the provided
@@ -32,7 +32,7 @@ create file hashes, and version 2 uses SHA256. Catalog version 2 is not supporte
 2008 R2 or Windows 7. You should use catalog version 2 on Windows 8, Windows Server 2012, and later
 operating systems.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a file catalog for `Microsoft.PowerShell.Utility`
 
@@ -46,7 +46,7 @@ Mode                LastWriteTime         Length Name
 -a----         11/2/2018 11:58 AM            950 Microsoft.PowerShell.Utility.cat
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -CatalogFilePath
 
@@ -139,21 +139,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 The pipeline takes a string that is used as the catalog filename.
 
-## OUTPUTS
+## Outputs
 
 ### System.IO.FileInfo
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
-## RELATED LINKS
+## Related links
 
 [Test-FileCatalog](Test-FileCatalog.md)
 

@@ -10,10 +10,10 @@ title: Find-Command
 
 # Find-Command
 
-## SYNOPSIS
+## Synopsis
 Finds PowerShell commands in modules.
 
-## SYNTAX
+## Syntax
 
 ### All
 
@@ -24,7 +24,7 @@ Find-Command [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <Strin
  [-Repository <String[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Find-Command` cmdlet finds PowerShell commands such as cmdlets, aliases, functions, and
 workflows. `Find-Command` searches modules in registered repositories.
@@ -33,7 +33,7 @@ For each command found by `Find-Command`, a **PSGetCommandInfo** object is retur
 **PSGetCommandInfo** object can be sent down the pipeline to the `Install-Module` cmdlet.
 `Install-Module` installs the module that contains the command.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Find all commands in a specified repository
 
@@ -122,7 +122,7 @@ VERBOSE: Module 'PSScriptAnalyzer' was saved successfully to path 'C:\Test\Modul
 optional parameter, but displays status output in the PowerShell console. The verbose output is
 beneficial for troubleshooting.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowPrerelease
 
@@ -328,15 +328,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
 ### PSGetCommandInfo
 
 `Find-Command` outputs a **PSGetCommandInfo** object.
 
-## NOTES
+## Notes
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -350,7 +350,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## RELATED LINKS
+## Related links
 
 [Get-InstalledModule](Get-InstalledModule.md)
 

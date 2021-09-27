@@ -8,11 +8,11 @@ title: about PSSessions
 ---
 # about_PSSessions
 
-## Short Description
+## Short description
 Describes PowerShell sessions (PSSessions) and explains how to
 establish a persistent connection to a remote computer.
 
-## Long Description
+## Long description
 
 To run PowerShell commands on a remote computer, you can use the
 **ComputerName** parameter of a cmdlet, or you can create a PowerShell
@@ -261,7 +261,7 @@ Get-Help *-PSSession
 
 For more information about PSSessions, see [about_PSSession_Details](about_PSSession_Details.md).
 
-## See Also
+## See also
 
 [about_Remote](about_Remote.md)
 

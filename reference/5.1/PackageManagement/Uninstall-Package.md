@@ -577,7 +577,7 @@ and includes the provider's parameter set. For example, `Uninstall-Package` has 
 **PowerShellGet** parameter set that includes `-NoPathUpdate`, `AllowClobber`, and
 `SkipPublisherCheck`.
 
-## Related Links
+## Related links
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

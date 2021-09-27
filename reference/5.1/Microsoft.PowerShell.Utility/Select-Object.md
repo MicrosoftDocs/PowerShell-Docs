@@ -9,10 +9,10 @@ title: Select-Object
 ---
 # Select-Object
 
-## SYNOPSIS
+## Synopsis
 Selects objects or object properties.
 
-## SYNTAX
+## Syntax
 
 ### DefaultParameter (Default)
 
@@ -35,7 +35,7 @@ Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProper
 Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Select-Object` cmdlet selects specified properties of an object or set of objects. It can also
 select unique objects, a specified number of objects, or objects in a specified position in an
@@ -54,7 +54,7 @@ objects is generated, even when the command that generates the objects appears b
 `Select-Object` command in the pipeline. To turn off this optimizing behavior, use the **Wait**
 parameter.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Select objects by property
 
@@ -307,7 +307,7 @@ Diagnostics.Format.ps1xml   4.955078125     223
 DotNetTypes.format.ps1xml   134.9833984375  223
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -ExcludeProperty
 
@@ -548,17 +548,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to `Select-Object`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSObject
 
-## NOTES
+## Notes
 
 - You can also refer to the `Select-Object` cmdlet by its built-in alias, `select`. For more
   information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -569,7 +569,7 @@ You can pipe any object to `Select-Object`.
   information, see _Write Single Records to the Pipeline_ in
   [Strongly Encouraged Development Guidelines](/powershell/scripting/developer/windows-powershell).
 
-## RELATED LINKS
+## Related links
 
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 

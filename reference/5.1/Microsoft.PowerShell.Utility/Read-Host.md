@@ -9,16 +9,16 @@ title: Read-Host
 ---
 # Read-Host
 
-## SYNOPSIS
+## Synopsis
 Reads a line of input from the console.
 
-## SYNTAX
+## Syntax
 
 ```
 Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Read-Host` cmdlet reads a line of input from the console (stdin). You can use it to prompt a
 user for input. Because you can save the input as a secure string, you can use this cmdlet to prompt
@@ -27,7 +27,7 @@ users for secure data, such as passwords.
 > [!NOTE]
 > `Read-Host` has a limit of 8190 characters it can accept as input from a user.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Save console input to a variable
 
@@ -48,7 +48,7 @@ value is stored as a **SecureString** object in the `$pwd_secure_string` variabl
 $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -AsSecureString
 
@@ -92,25 +92,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 This cmdlet does not accept input from the PowerShell pipeline.
 
-## OUTPUTS
+## Outputs
 
 ### System.String or System.Security.SecureString
 
 If the **AsSecureString** parameter is used, `Read-Host` returns a **SecureString**. Otherwise, it
 returns a string.
 
-## NOTES
+## Notes
 
 This cmdlet only reads from the stdin stream of the host process. Usually, the stdin stream is
 connected to the keyboard of the host console.
 
-## RELATED LINKS
+## Related links
 
 [Clear-Host](../microsoft.powershell.core/clear-host.md)
 

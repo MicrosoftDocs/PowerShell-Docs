@@ -10,10 +10,10 @@ title: Uninstall-Module
 
 # Uninstall-Module
 
-## SYNOPSIS
+## Synopsis
 Uninstalls a module.
 
-## SYNTAX
+## Syntax
 
 ### NameParameterSet (Default)
 
@@ -29,12 +29,12 @@ Uninstall-Module [-Name] <String[]> [-MinimumVersion <String>] [-RequiredVersion
 Uninstall-Module [-InputObject] <PSObject[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Uninstall-Module` cmdlet uninstalls a specified module from the local computer. You can't
 uninstall a module if it has other modules as dependencies.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Uninstall a module
 
@@ -58,7 +58,7 @@ Get-InstalledModule -Name SpeculationControl | Uninstall-Module
 `Get-InstalledModule` uses the **Name** parameter to specify the module. The object is sent down the
 pipeline to `Uninstall-Module` and is uninstalled.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowPrerelease
 
@@ -231,17 +231,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### PSRepositoryItemInfo
 
 `Uninstall-Module` accepts **PSRepositoryItemInfo** objects from the pipeline.
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Find-Module](Find-Module.md)
 

@@ -9,17 +9,17 @@ title: Format-List
 ---
 # Format-List
 
-## SYNOPSIS
+## Synopsis
 Formats the output as a list of properties in which each property appears on a new line.
 
-## SYNTAX
+## Syntax
 
 ```
 Format-List [[-Property] <Object[]>] [-GroupBy <Object>] [-View <string>] [-ShowError]
 [-DisplayError] [-Force] [-Expand <string>] [-InputObject <psobject>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Format-List` cmdlet formats the output of a command as a list of properties in which each
 property is displayed on a separate line. You can use `Format-List` to format and display all or
@@ -28,7 +28,7 @@ selected properties of an object as a list (format-list *).
 Because more space is available for each item in a list than in a table, PowerShell displays more
 properties of the object in the list, and the property values are less likely to be truncated.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Format computer services
 
@@ -106,7 +106,7 @@ Failed to evaluate expression " $_ / $null ".
 + FullyQualifiedErrorId : PSPropertyExpressionError
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -DisplayError
 
@@ -285,19 +285,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -Verbose, -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to `Format-List`.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.Internal.Format
 
 `Format-List` returns the format objects that represent the list.
 
-## NOTES
+## Notes
 
 You can also refer to Format-List by its built-in alias, FL. For more information, see
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -320,7 +320,7 @@ The alternate view for the **View** parameter must use the list format, otherwis
 fails. If the alternate view is a table, use `Format-Table`. If the alternate view is not a list or
 a table, use `Format-Custom`.
 
-## RELATED LINKS
+## Related links
 
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 

@@ -434,7 +434,7 @@ This cmdlet does not generate any output.
 
 ## Notes
 
-## Related Links
+## Related links
 
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
 

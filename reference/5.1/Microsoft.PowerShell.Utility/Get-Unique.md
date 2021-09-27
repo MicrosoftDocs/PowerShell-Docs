@@ -9,10 +9,10 @@ title: Get-Unique
 ---
 # Get-Unique
 
-## SYNOPSIS
+## Synopsis
 Returns unique items from a sorted list.
 
-## SYNTAX
+## Syntax
 
 ### AsString (Default)
 
@@ -26,7 +26,7 @@ Get-Unique [-InputObject <PSObject>] [-AsString] [<CommonParameters>]
 Get-Unique [-InputObject <PSObject>] [-OnType] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Unique` cmdlet compares each item in a sorted list to the next item, eliminates duplicates,
 and returns only one instance of each item. The list must be sorted for the cmdlet to work properly.
@@ -34,7 +34,7 @@ and returns only one instance of each item. The list must be sorted for the cmdl
 `Get-Unique` is case-sensitive. As a result, strings that differ only in character casing are
 considered to be unique.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get unique words in a text file
 
@@ -109,7 +109,7 @@ The **AsString** parameter tells `Get-Unique` to treat the **ProcessName** value
 Without this parameter, `Get-Unique` treats the **ProcessName** values as objects and returns only
 one instance of the object, that is, the first process name in the list.
 
-## PARAMETERS
+## Parameters
 
 ### -AsString
 
@@ -173,26 +173,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any type of object to `Get-Unique`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSObject
 
 The type of object that `Get-Unique` returns is determined by the input.
 
-## NOTES
+## Notes
 
 You can also refer to `Get-Unique` by its built-in alias, `gu`. For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 To sort a list, use Sort-Object. You can also use the **Unique** parameter of `Sort-Object` to find
 the unique items in a list.
 
-## RELATED LINKS
+## Related links
 
 [Select-Object](Select-Object.md)
 

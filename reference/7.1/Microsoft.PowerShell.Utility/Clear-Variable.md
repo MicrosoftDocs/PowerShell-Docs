@@ -9,23 +9,23 @@ title: Clear-Variable
 ---
 # Clear-Variable
 
-## SYNOPSIS
+## Synopsis
 Deletes the value of a variable.
 
-## SYNTAX
+## Syntax
 
 ```
 Clear-Variable [-Name] <String[]> [-Include <String[]>] [-Exclude <String[]>] [-Force] [-PassThru]
  [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Clear-Variable** cmdlet deletes the data stored in a variable, but it does not delete the variable.
 As a result, the value of the variable is NULL (empty).
 If the variable has a specified data or object type, this cmdlet preserves the type of the object stored in the variable.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Remove the value of global variables that begin with a search string
 
@@ -59,7 +59,7 @@ PS C:\> Clear-Variable -Name "Processes"
 This command deletes the value of the variable named Processes.
 After the cmdlet completes the operation, the variable named Processes still exists, but the value is null.
 
-## PARAMETERS
+## Parameters
 
 ### -Exclude
 
@@ -214,20 +214,20 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None or System.Management.Automation.PSVariable
 
 When you use the *PassThru* parameter, this cmdlet generates a **System.Management.Automation.PSVariable** object representing the cleared variable.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * To delete a variable, along with its value, use Remove-Variable or Remove-Item.
 
@@ -241,7 +241,7 @@ For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/abo
 
 *
 
-## RELATED LINKS
+## Related links
 
 [Get-Variable](Get-Variable.md)
 

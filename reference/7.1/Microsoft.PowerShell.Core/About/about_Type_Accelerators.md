@@ -11,7 +11,7 @@ title: about Type Accelerators
 ## SHORT DESRIPTION
 Describes the Type accelerators available for .NET framework classes
 
-## LONG DESCRIPTION
+## Long description
 
 Type accelerators are aliases for .NET framework classes. They allow you to
 access specific .NET framework classes without having to explicitly type the

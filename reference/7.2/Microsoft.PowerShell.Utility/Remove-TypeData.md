@@ -33,7 +33,7 @@ Remove-TypeData [-TypeName] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 Remove-TypeData -Path <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Remove-TypeData` cmdlet deletes extended type data from the current session. This cmdlet
 affects only the current session and sessions that are created in the current session.

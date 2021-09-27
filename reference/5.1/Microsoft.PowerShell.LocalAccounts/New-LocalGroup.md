@@ -10,23 +10,23 @@ title: New-LocalGroup
 
 # New-LocalGroup
 
-## SYNOPSIS
+## Synopsis
 Creates a local security group.
 
-## SYNTAX
+## Syntax
 
 ```
 New-LocalGroup [-Description <String>] [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **New-LocalGroup** cmdlet creates a local security group in the Security Account Manager.
 
 > [!NOTE]
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a security group
 
@@ -36,7 +36,7 @@ PS C:\> New-LocalGroup -Name "SecurityGroup04"
 
 This command creates a group named SecurityGroup04.
 
-## PARAMETERS
+## Parameters
 
 ### -Description
 Specifies a comment for the group.
@@ -104,17 +104,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 You can pipe a string to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup
 This cmdlet returns a security group.
 
-## NOTES
+## Notes
 
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
@@ -125,7 +125,7 @@ This cmdlet returns a security group.
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
 
-## RELATED LINKS
+## Related links
 
 [Get-LocalGroup](Get-LocalGroup.md)
 

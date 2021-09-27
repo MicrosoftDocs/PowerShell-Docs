@@ -9,10 +9,10 @@ title: Register-PSRepository
 ---
 # Register-PSRepository
 
-## SYNOPSIS
+## Synopsis
 Registers a PowerShell repository.
 
-## SYNTAX
+## Syntax
 
 ### NameParameterSet (Default)
 
@@ -30,7 +30,7 @@ Register-PSRepository [-Default] [-InstallationPolicy <String>] [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Register-PSRepository` cmdlet registers the default repository for PowerShell modules. After a
 repository is registered, you can reference it from the `Find-Module`, `Install-Module`, and
@@ -45,7 +45,7 @@ specific type of repository. For example, the NuGet provider is designed to inte
 NuGet-based repositories. If a OneGet provider is not specified during registration, PowerShellGet
 attempts to find a OneGet provider that can handle the specified source location.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Register a repository
 
@@ -75,7 +75,7 @@ PowerShellGet polls available package providers and associates it with the NuGet
 
 The second command gets registered repositories and displays the results.
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -275,17 +275,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSCredential
 
 ### System.Uri
 
-## OUTPUTS
+## Outputs
 
 ### System.Object
 
-## NOTES
+## Notes
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -299,7 +299,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## RELATED LINKS
+## Related links
 
 [Get-PSRepository](Get-PSRepository.md)
 

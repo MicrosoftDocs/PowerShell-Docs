@@ -9,11 +9,11 @@ title: Set-AuthenticodeSignature
 ---
 # Set-AuthenticodeSignature
 
-## SYNOPSIS
+## Synopsis
 Adds an [Authenticode](/windows-hardware/drivers/install/authenticode) signature to a PowerShell
 script or other file.
 
-## SYNTAX
+## Syntax
 
 ### ByPath (Default)
 
@@ -39,7 +39,7 @@ Set-AuthenticodeSignature [-Certificate] <X509Certificate2> [-IncludeChain <Stri
  -Content <Byte[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -50,7 +50,7 @@ In a PowerShell script file, the signature takes the form of a block of text tha
 of the instructions that are executed in the script. If there is a signature in the file when this
 cmdlet runs, that signature is removed.
 
-## EXAMPLES
+## Examples
 
 ### Example 1 - Sign a script using a certificate from the local certificate store
 
@@ -111,7 +111,7 @@ the **IncludeChain** parameter to include all of the signatures in the trust cha
 root authority. It also uses the **TimeStampServer** parameter to add a timestamp to the signature.
 This prevents the script from failing when the certificate expires.
 
-## PARAMETERS
+## Parameters
 
 ### -Certificate
 
@@ -328,21 +328,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains the file path to `Set-AuthenticodeSignature`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.Signature
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
-## RELATED LINKS
+## Related links
 
 [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 

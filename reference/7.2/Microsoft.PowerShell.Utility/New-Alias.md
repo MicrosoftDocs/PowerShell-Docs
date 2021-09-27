@@ -247,7 +247,7 @@ does not generate any output.
 - To create a new alias, use `Set-Alias` or `New-Alias`. To change an alias, use `Set-Alias`. To delete
 an alias, use `Remove-Item`.
 
-## Related Links
+## Related links
 
 [Export-Alias](Export-Alias.md)
 

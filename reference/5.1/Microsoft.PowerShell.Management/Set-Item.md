@@ -9,10 +9,10 @@ title: Set-Item
 ---
 # Set-Item
 
-## SYNOPSIS
+## Synopsis
 Changes the value of an item to the value specified in the command.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -29,12 +29,12 @@ Set-Item -LiteralPath <String[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filt
  [-UseTransaction] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-Item` cmdlet changes the value of an item, such as a variable or registry key, to the value
 specified in the command.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create an alias
 
@@ -71,7 +71,7 @@ The **Options** parameter is available in `Set-Item` only when you use it with t
 Set-Item -Path function:prompt -Options "AllScope,ReadOnly"
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -301,20 +301,20 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.Object
 
 You can pipe an object that represents the new value of the item to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None or an object representing the new or changed item.
 
 This cmdlet generates an object that represent the item, if you specify the *PassThru* parameter.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 - `Set-Item` is not supported by the PowerShell FileSystem provider. To change the values of items in
   the file system, use the `Set-Content` cmdlet.
@@ -327,7 +327,7 @@ Otherwise, this cmdlet does not generate any output.
   To list the providers available in your session, type `Get-PsProvider`.
   For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Clear-Item](Clear-Item.md)
 

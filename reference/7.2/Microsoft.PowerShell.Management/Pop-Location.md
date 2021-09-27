@@ -9,22 +9,22 @@ title: Pop-Location
 ---
 # Pop-Location
 
-## SYNOPSIS
+## Synopsis
 Changes the current location to the location most recently pushed onto the stack.
 
-## SYNTAX
+## Syntax
 
 ```
 Pop-Location [-PassThru] [-StackName <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Pop-Location` cmdlet changes the current location to the location most recently pushed onto the
 stack by using the `Push-Location` cmdlet. You can pop a location from the default stack or from a
 stack that you create by using a `Push-Location` command.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Change to most recent location
 
@@ -67,7 +67,7 @@ the PowerShell certificate provider.
 The last two commands pop those locations off the stack. The first `popd` command returns to the
 Registry drive, and the second command returns to the file system drive.
 
-## PARAMETERS
+## Parameters
 
 ### -PassThru
 
@@ -117,13 +117,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None, System.Management.Automation.PathInfo
 
@@ -131,7 +131,7 @@ This cmdlet generates a **System.Management.Automation.PathInfo** object that re
 location, if you specify the **PassThru** parameter. Otherwise, this cmdlet does not generate any
 output.
 
-## NOTES
+## Notes
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
 This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
@@ -182,7 +182,7 @@ You can also refer to `Pop-Location` by its built-in alias, `popd`. For more inf
 providers available in your session, type `Get-PSProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Get-Location](Get-Location.md)
 

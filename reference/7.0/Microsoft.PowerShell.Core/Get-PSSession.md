@@ -9,10 +9,10 @@ title: Get-PSSession
 ---
 # Get-PSSession
 
-## SYNOPSIS
+## Synopsis
 Gets the PowerShell sessions on local and remote computers.
 
-## SYNTAX
+## Syntax
 
 ### Name (Default)
 
@@ -108,7 +108,7 @@ Get-PSSession [-InstanceId <Guid[]>] [<CommonParameters>]
 Get-PSSession [-Id] <Int32[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-PSSession` cmdlet gets the user-managed PowerShell sessions (**PSSessions**) on local and
 remote computers.
@@ -133,7 +133,7 @@ the current session and connect to the specified computer.
 
 For more information about PowerShell sessions, see [about_PSSessions](about/about_PSSessions.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get sessions created in the current session
 
@@ -273,7 +273,7 @@ Get-PSSession -Id 2
 This command gets the **PSSession** with ID 2. Because the value of the **ID** property is unique
 only in the current session, the **Id** parameter is valid only for local commands.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowRedirection
 
@@ -789,17 +789,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.Runspaces.PSSession
 
-## NOTES
+## Notes
 
 - This cmdlet gets user-managed sessions **PSSession** objects" such as those that are created by
   using the New-PSSession, `Enter-PSSession`, and Invoke-Command cmdlets. It does not get the
@@ -830,7 +830,7 @@ For more information about the values of the **State** property of sessions, see
 For more information about the values of the **Availability** property of sessions, see
 [RunspaceAvailability Enumeration](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
-## RELATED LINKS
+## Related links
 
 [Connect-PSSession](Connect-PSSession.md)
 

@@ -10,11 +10,11 @@ title: Format-Hex
 
 # Format-Hex
 
-## SYNOPSIS
+## Synopsis
 
 Displays a file or other input as hexadecimal.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -34,7 +34,7 @@ Format-Hex -LiteralPath <string[]> [<CommonParameters>]
 Format-Hex -InputObject <Object> [-Encoding <string>] [-Raw] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Format-Hex` cmdlet displays a file or other input as hexadecimal values. To determine the
 offset of a character from the output, add the number at the leftmost of the row to the number at
@@ -47,7 +47,7 @@ to get file information.
 When using `Format-Hex` on a file, the cmdlet ignores newline characters and returns the entire
 contents of a file in one string with the newline characters preserved.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the hexadecimal representation of a string
 
@@ -119,7 +119,7 @@ PS> 1,2,3,1000 | Format-Hex -Raw
 Notice the difference in output. The **Raw** parameter displays the numbers as 4-byte values, true
 to their **Int32** types.
 
-## PARAMETERS
+## Parameters
 
 ### -Encoding
 
@@ -239,13 +239,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.ByteCollection
 
@@ -254,7 +254,7 @@ methods that convert the collection of bytes to a string formatted like each lin
 by `Format-Hex`. If you specify the **Path** or **LiteralPath** parameter, the object also contains
 the path of the file that contains each byte.
 
-## NOTES
+## Notes
 
 The right-most column of output tries to render the bytes as characters:
 
@@ -264,7 +264,7 @@ Generally, each byte is interpreted as a Unicode code point, which means that:
 - Multi-byte UTF-8 characters never render correctly
 - UTF-16 characters render correctly only if their high-order byte happens be `NUL`.
 
-## RELATED LINKS
+## Related links
 
 [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md)
 

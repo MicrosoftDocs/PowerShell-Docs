@@ -10,10 +10,10 @@ title: New-EventLog
 
 # New-EventLog
 
-## SYNOPSIS
+## Synopsis
 Creates a new event log and a new event source on a local or remote computer.
 
-## SYNTAX
+## Syntax
 
 ```
 New-EventLog [-LogName] <string> [-Source] <string[]> [[-ComputerName] <string[]>]
@@ -21,7 +21,7 @@ New-EventLog [-LogName] <string> [-Source] <string[]> [[-ComputerName] <string[]
   [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 This cmdlet creates a new classic event log on a local or remote computer. It can also register an
 event source that writes to the new log or to an existing log.
@@ -30,7 +30,7 @@ The cmdlets that contain the EventLog noun (the Event log cmdlets) work only on 
 To get events from logs that use the Windows Event Log technology in Windows Vista and later
 versions of Windows, use `Get-WinEvent`.
 
-## EXAMPLES
+## Examples
 
 ### Example 1 - create a new event log
 
@@ -52,7 +52,7 @@ New-EventLog -ComputerName Server01 -Source NewTestApp -LogName Application -Mes
 
 The command requires that the NewTestApp.dll file is located on the Server01 computer.
 
-## PARAMETERS
+## Parameters
 
 ### -CategoryResourceFile
 
@@ -180,17 +180,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Diagnostics.EventLogEntry
 
-## NOTES
+## Notes
 
 To use `New-EventLog` on Windows Vista and later versions of Windows, open PowerShell with
 the "Run as administrator" option.
@@ -209,7 +209,7 @@ When you create a new event log, the associated file is stored in the
 The file name is the first eight characters of the **Log** property with an .evt file name
 extension.
 
-## RELATED LINKS
+## Related links
 
 [Clear-EventLog](Clear-EventLog.md)
 

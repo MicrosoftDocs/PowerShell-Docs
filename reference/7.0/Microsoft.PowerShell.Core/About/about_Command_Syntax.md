@@ -8,10 +8,10 @@ title: about Command Syntax
 ---
 # about_Command_Syntax
 
-## SHORT DESCRIPTION
+## Short description
 Describes the syntax diagrams that are used in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 The [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) and
 [Get-Command](xref:Microsoft.PowerShell.Core.Get-Command) cmdlets display
@@ -310,7 +310,7 @@ In syntax examples, brackets are also used in naming and casting to .NET
 Framework types. In this context, brackets do not indicate an element is
 optional.
 
-## SEE ALSO
+## See also
 
 - [about_Parameters](about_Parameters.md)
 - [Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)

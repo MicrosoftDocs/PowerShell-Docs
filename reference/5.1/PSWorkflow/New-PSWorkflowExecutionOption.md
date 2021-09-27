@@ -9,11 +9,11 @@ title: New-PSWorkflowExecutionOption
 ---
 # New-PSWorkflowExecutionOption
 
-## SYNOPSIS
+## Synopsis
 
 Creates an object that contains session configuration options for workflow sessions.
 
-## SYNTAX
+## Syntax
 
 ```
 New-PSWorkflowExecutionOption [-PersistencePath <String>] [-MaxPersistenceStoreSizeGB <Int64>]
@@ -25,7 +25,7 @@ New-PSWorkflowExecutionOption [-PersistencePath <String>] [-MaxPersistenceStoreS
  [-WorkflowShutdownTimeoutMSec <Int32>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `New-PSWorkflowExecutionOption` cmdlet creates an object that contains advanced options for
 workflow session configurations, that is session configurations designed to run Windows PowerShell
@@ -47,7 +47,7 @@ common parameters, see [about_WorkflowCommonParameters](About/about_WorkflowComm
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a Workflow Options Object
 
@@ -155,7 +155,7 @@ list.The output shows that the workflow options in the session configuration. Sp
 session configuration has a **MaxSessionsPerWorkflow** property with a value of 10 and a
 **MaxDisconnectedSessions** property with a value of 200.
 
-## PARAMETERS
+## Parameters
 
 ### -ActivityProcessIdleTimeoutSec
 
@@ -457,17 +457,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.PSWorkflowExecutionOption
 
-## NOTES
+## Notes
 
 When the maximum value set by an option is exceeded, the command to create another instance in the
 session fails, unless noted in the parameter description. For example, if the value of
@@ -484,7 +484,7 @@ session configuration includes a **PSWorkflowExecutionOptions** object that sets
 for the **SessionThrottleLimit** property, the session configuration has a **SessionThrottleLimit**
 property. Otherwise, it does not.
 
-## RELATED LINKS
+## Related links
 
 [New-PSWorkflowSession](New-PSWorkflowSession.md)
 

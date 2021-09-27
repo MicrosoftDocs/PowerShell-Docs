@@ -9,10 +9,10 @@ title: Resolve-Path
 ---
 # Resolve-Path
 
-## SYNOPSIS
+## Synopsis
 Resolves the wildcard characters in a path, and displays the path contents.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -26,13 +26,13 @@ Resolve-Path [-Path] <String[]> [-Relative] [-Credential <PSCredential>] [<Commo
 Resolve-Path -LiteralPath <String[]> [-Relative] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Resolve-Path` cmdlet displays the items and containers that match the wildcard pattern at the
 location specified. The match can include files, folders, registry keys, or any other object
 accessible from a PSDrive provider.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Resolve the home folder path
 
@@ -105,7 +105,7 @@ expression.
 PS C:\> Resolve-Path -LiteralPath 'test[xml]'
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -189,20 +189,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PathInfo, System.String
 
 Returns a **PathInfo** object. Returns a string value for the resolved path if you specify the
 **Relative** parameter.
 
-## NOTES
+## Notes
 
 The `*-Path` cmdlets work with the FileSystem, Registry, and Certificate providers.
 
@@ -213,7 +213,7 @@ session, type `Get-PSProvider`. For more information, see
 `Resolve-Path` only resolves existing paths. It cannot be used to resolve a location that does not
 exist yet.
 
-## RELATED LINKS
+## Related links
 
 [Convert-Path](Convert-Path.md)
 

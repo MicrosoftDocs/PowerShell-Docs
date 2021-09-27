@@ -9,7 +9,7 @@ title: about Eventlogs
 
 # about_Eventlogs
 
-## Short Description
+## Short description
 
 Windows PowerShell creates a Windows event log that is named "Windows
 PowerShell" to record Windows PowerShell events. You can view this log in
@@ -19,7 +19,7 @@ in the event log, but you can use the event log preference variables to
 customize the event log. For example, you can add events about Windows
 PowerShell commands.
 
-## Long Description
+## Long description
 
 The Windows PowerShell event log records details of Windows PowerShell
 operations, such as starting and stopping the program engine and starting and
@@ -226,7 +226,7 @@ Authors of module authors can add logging features to their modules. For more
 information, see
 [Writing a Windows PowerShell Module](/powershell/scripting/developer/module/writing-a-windows-powershell-module).
 
-## See Also
+## See also
 
 [Get-EventLog](xref:Microsoft.PowerShell.Management.Get-EventLog)
 

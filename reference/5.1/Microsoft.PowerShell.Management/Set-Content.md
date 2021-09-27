@@ -9,10 +9,10 @@ title: Set-Content
 ---
 # Set-Content
 
-## SYNOPSIS
+## Synopsis
 Writes new content or replaces existing content in a file.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -32,7 +32,7 @@ Set-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <st
  [-Stream <string>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 `Set-Content` is a string-processing cmdlet that writes new content or replaces the content in a
 file. `Set-Content` replaces the existing content and differs from the `Add-Content` cmdlet that
@@ -41,7 +41,7 @@ the command line or send content through the pipeline.
 
 If you need to create files or directories for the following examples, see [New-Item](New-Item.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Replace the contents of multiple files in a directory
 
@@ -144,7 +144,7 @@ directory to the **Value** empty.
 Set-Content -Path C:\Temp\* -Filter *.txt -Value "Empty"
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -451,20 +451,20 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`.
 For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.Object
 
 You can pipe an object that contains the new value for the item to `Set-Content`.
 
-## OUTPUTS
+## Outputs
 
 ### None or System.String
 
 When you use the **PassThru** parameter, `Set-Content` generates a **System.String** object that
 represents the content. Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 - You can also refer to `Set-Content` by its built-in alias, `sc`.
   For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -474,7 +474,7 @@ represents the content. Otherwise, this cmdlet does not generate any output.
   providers available in your session, type `Get-PsProvider`. For more information, see
   [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
 

@@ -10,10 +10,10 @@ title: Remove-Job
 
 # Remove-Job
 
-## SYNOPSIS
+## Synopsis
 Deletes a PowerShell background job.
 
-## SYNTAX
+## Syntax
 
 ### SessionIdParameterSet (Default)
 
@@ -57,7 +57,7 @@ Remove-Job [-State] <JobState> [-WhatIf] [-Confirm] [<CommonParameters>]
 Remove-Job [-Command <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Remove-Job` cmdlet deletes PowerShell background jobs that were started by the `Start-Job`
 cmdlet or by cmdlets such as `Invoke-Command` that support the **AsJob** parameter.
@@ -77,7 +77,7 @@ job. Or, use `Remove-Job` with the **Force** parameter to delete a running job.
 Jobs remain in the global job cache until you delete the background job or close the PowerShell
 session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Delete a job by using its name
 
@@ -208,7 +208,7 @@ asterisk (`*`) to specify that all the object's properties are displayed in a li
 
 `Remove-Job` uses the **InstanceId** parameter to specify the job to delete.
 
-## PARAMETERS
+## Parameters
 
 ### -Command
 
@@ -412,26 +412,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.Job
 
 You can send a job object down the pipeline to `Remove-Job`.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 `Remove-Job` doesn't generate any output.
 
-## NOTES
+## Notes
 
 A PowerShell job creates a new process. When the job completes, the process exits. When `Remove-Job`
 is run, the job's state is removed.
 
 If a job stops before completion and its process hasn't exited, the process is forcibly terminated.
 
-## RELATED LINKS
+## Related links
 
 [about_Jobs](./About/about_Jobs.md)
 

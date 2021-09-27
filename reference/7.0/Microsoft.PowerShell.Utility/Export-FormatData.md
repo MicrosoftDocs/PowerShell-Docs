@@ -9,10 +9,10 @@ title: Export-FormatData
 ---
 # Export-FormatData
 
-## SYNOPSIS
+## Synopsis
 Saves formatting data from the current session in a formatting file.
 
-## SYNTAX
+## Syntax
 
 ### ByPath (Default)
 
@@ -28,7 +28,7 @@ Export-FormatData -InputObject <ExtendedTypeDefinition[]> -LiteralPath <String> 
  [-IncludeScriptBlock] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Export-FormatData` cmdlet creates PowerShell formatting files (format.ps1xml) from
 the formatting objects in the current session. It takes the **ExtendedTypeDefinition** objects that
@@ -40,7 +40,7 @@ use the Update-FormatData cmdlet to add the formatting data to a session.
 
 For more information about formatting files in PowerShell, see [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Export session format data
 
@@ -110,7 +110,7 @@ The third command shows the effects of this change. The command uses the `Get-Pr
 get processes that have names that begin with P. The output shows that property values that are
 calculated by using script blocks are missing from the display.
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 
@@ -233,26 +233,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.ExtendedTypeDefinition
 
 You can pipe **ExtendedTypeDefinition** objects from `Get-FormatData` to `Export-FormatData`.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 `Export-FormatData` does not return any objects.
 It generates a file and saves it in the specified path.
 
-## NOTES
+## Notes
 
 - To use any formatting file, including an exported formatting file, the execution policy for the
   session must allow scripts and configuration files to run. For more information, see
   [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
 
-## RELATED LINKS
+## Related links
 
 [Get-FormatData](Get-FormatData.md)
 

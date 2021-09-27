@@ -9,10 +9,10 @@ title: Get-Module
 ---
 # Get-Module
 
-## SYNOPSIS
+## Synopsis
 List the modules imported in the current session or that can be imported from the PSModulePath.
 
-## SYNTAX
+## Syntax
 
 ### Loaded (Default)
 
@@ -42,7 +42,7 @@ Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Module` cmdlet lists the PowerShell modules that have been imported, or that can be
 imported, into a PowerShell session. Without parameters, `Get-Module` gets modules that have been
@@ -85,7 +85,7 @@ Management Instrumentation (WMI) on the remote computer. Then use the **CIMSessi
 `Import-Module` cmdlet and then run the imported commands, the commands run implicitly on the remote
 computer. You can use this WMI and CIM strategy to manage the remote computer.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get modules imported into the current session
 
@@ -362,7 +362,7 @@ The fourth command runs the `Get-Disk` command. Although the command is typed in
 it runs implicitly on the remote computer from which it was imported. The command gets objects from
 the remote computer and returns them to the local session.
 
-## PARAMETERS
+## Parameters
 
 ### -All
 
@@ -641,13 +641,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe module names to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSModuleInfo
 
@@ -655,7 +655,7 @@ This cmdlet returns objects that represent modules.
 When you specify the **ListAvailable** parameter, `Get-Module` returns a **ModuleInfoGrouping**
 object, which is a type of **PSModuleInfo** object that has the same properties and methods.
 
-## NOTES
+## Notes
 
 - Beginning in Windows PowerShell 3.0, the core commands that are included in PowerShell are
   packaged in modules. The exception is **Microsoft.PowerShell.Core**, which is a snap-in
@@ -701,7 +701,7 @@ object, which is a type of **PSModuleInfo** object that has the same properties 
   remoting enabled. This includes the local computer. When you create a CIM session on the local
   computer, PowerShell uses DCOM, instead of WMI, to create the session.
 
-## RELATED LINKS
+## Related links
 
 [Get-CimSession](../CimCmdlets/Get-CimSession.md)
 

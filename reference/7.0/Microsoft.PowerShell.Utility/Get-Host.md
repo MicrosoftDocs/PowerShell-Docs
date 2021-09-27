@@ -9,16 +9,16 @@ title: Get-Host
 ---
 # Get-Host
 
-## SYNOPSIS
+## Synopsis
 Gets an object that represents the current host program.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-Host [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Host` cmdlet gets an object that represents the program that is hosting Windows PowerShell.
 
@@ -28,7 +28,7 @@ including detailed information about the version of Windows PowerShell that is c
 the current culture and UI culture of Windows PowerShell. You can also use this cmdlet to customize
 features of the host program user interface, such as the text and background colors.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get information about the PowerShell console host
 
@@ -219,7 +219,7 @@ This command uses the **PrivateData** property of `$Host` as its ErrorBackground
 see all of the properties of the object in the `$Host`.PrivateData property, type
 `$host.PrivateData | format-list *`.
 
-## PARAMETERS
+## Parameters
 
 ### CommonParameters
 
@@ -228,19 +228,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.Internal.Host.InternalHost
 
 `Get-Host` returns a **System.Management.Automation.Internal.Host.InternalHost** object.
 
-## NOTES
+## Notes
 
 The `$Host` automatic variable contains the same object that `Get-Host` returns, and you can use it
 in the same way. Similarly, the `$PSCulture` and `$PSUICulture` automatic variables contain the same
@@ -249,7 +249,7 @@ use these features interchangeably.
 
 For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
-## RELATED LINKS
+## Related links
 
 [Clear-Host](../Microsoft.PowerShell.Core/Clear-Host.md)
 

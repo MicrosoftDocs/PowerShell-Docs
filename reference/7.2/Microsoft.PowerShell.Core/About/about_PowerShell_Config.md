@@ -8,10 +8,10 @@ title: about PowerShell Config
 ---
 # about_PowerShell_Config
 
-## SHORT DESCRIPTION
+## Short description
 Configuration files for PowerShell Core, replacing Registry configuration.
 
-## LONG DESCRIPTION
+## Long description
 
 The `powershell.config.json` file contains configuration settings for
 PowerShell Core. PowerShell loads this configuration at startup. The settings

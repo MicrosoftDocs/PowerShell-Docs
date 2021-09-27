@@ -9,16 +9,16 @@ title: Enable-PSWSManCombinedTrace
 ---
 # Enable-PSWSManCombinedTrace
 
-## SYNOPSIS
+## Synopsis
 Start a logging session with the WSMan and PowerShell providers enabled.
 
-## SYNTAX
+## Syntax
 
 ```
 Enable-PSWSManCombinedTrace [-DoNotOverwriteExistingTrace] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 This cmdlet starts a logging session with the following PowerShell providers enabled:
 
@@ -31,7 +31,7 @@ This cmdlet uses the `Start-Trace` cmdlet.
 
 You must run this cmdlet from an elevated PowerShell session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Start a combined logging session
 
@@ -39,7 +39,7 @@ You must run this cmdlet from an elevated PowerShell session.
 Enable-PSWSManCombinedTrace
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -DoNotOverwriteExistingTrace
 
@@ -65,17 +65,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
-## OUTPUTS
+## Outputs
 
 ### System.Object
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Event Tracing](/windows/desktop/ETW/event-tracing-portal)
 

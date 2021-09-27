@@ -9,11 +9,11 @@ title: about PowerShell Ise exe
 
 # about_PowerShell_Ise_exe
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains how to use the PowerShell_Ise.exe command-line tool.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell_Ise.exe starts a Windows PowerShell Integrated
 Scripting Environment (ISE) session. You can run it in Cmd.exe
@@ -22,7 +22,7 @@ and in Windows PowerShell.
 To run PowerShell_ISE.exe, type PowerShell_ISE.exe, PowerShell_ISE,
 or ISE.
 
-## SYNTAX
+## Syntax
 
 ```
 PowerShell_Ise[.exe]
@@ -32,7 +32,7 @@ ISE[.exe]
 -Help | ? | -? | /? Displays the syntax and describes the command-line switches.
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -File
 
@@ -71,7 +71,7 @@ For more information, see [about_Profiles](about_Profiles.md).
 
 Displays help for PowerShell_ISE.exe.
 
-## EXAMPLES
+## Examples
 
 These commands start Windows PowerShell ISE. The commands are equivalent
 and can be used interchangeably.
@@ -112,7 +112,7 @@ This command gets help for PowerShell_ISE.exe.
 PS C:> ISE -help
 ```
 
-## SEE ALSO
+## See also
 
 [about_PowerShell.exe](about_PowerShell_exe.md)
 

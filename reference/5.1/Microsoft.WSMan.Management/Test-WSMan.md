@@ -10,10 +10,10 @@ title: Test-WSMan
 
 # Test-WSMan
 
-## SYNOPSIS
+## Synopsis
 Tests whether the WinRM service is running on a local or remote computer.
 
-## SYNTAX
+## Syntax
 
 ```
 Test-WSMan [[-ComputerName] <String>] [-Authentication <AuthenticationMechanism>] [-Port <Int32>] [-UseSSL]
@@ -21,11 +21,11 @@ Test-WSMan [[-ComputerName] <String>] [-Authentication <AuthenticationMechanism>
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Test-WSMan** cmdlet submits an identification request that determines whether the WinRM service is running on a local or remote computer.
 If the tested computer is running the service, the cmdlet displays the WS-Management identity schema, the protocol version, the product vendor, and the product version of the tested service.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Determine the status of the WinRM service
 
@@ -91,7 +91,7 @@ This command tests to see whether the WS-Management (WinRM) service is running o
 
 Using the authentication parameter enables **Test-WSMan** to return the operating system version.
 
-## PARAMETERS
+## Parameters
 
 ### -ApplicationName
 Specifies the application name in the connection.
@@ -262,23 +262,23 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 This cmdlet does not accept any input.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output object.
 
-## NOTES
+## Notes
 
 * By default, the **Test-WSMan** cmdlet queries the WinRM service without using authentication, and it returns no information that is specific to the operating-system version. Instead, it displays null values for the operating system version and service pack level (OS: 0.0.0 SP: 0.0).
 
 *
 
-## RELATED LINKS
+## Related links
 
 [Connect-WSMan](Connect-WSMan.md)
 

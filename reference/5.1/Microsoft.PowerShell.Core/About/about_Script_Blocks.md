@@ -186,7 +186,7 @@ Notes on **delay-bind** script blocks as parameters:
         Microsoft.PowerShell.Commands.RenameItemCommand
   ```
 
-## See Also
+## See also
 
 [about_Functions](about_Functions.md)
 

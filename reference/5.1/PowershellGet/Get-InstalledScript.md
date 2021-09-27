@@ -9,21 +9,21 @@ title: Get-InstalledScript
 ---
 # Get-InstalledScript
 
-## SYNOPSIS
+## Synopsis
 Gets an installed script.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-InstalledScript [[-Name] <String[]>] [-MinimumVersion <String>] [-RequiredVersion <String>]
  [-MaximumVersion <String>] [-AllowPrerelease] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Get-InstalledScript** cmdlet gets installed scripts for CurrentUser and AllUsers scopes.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all installed scripts
 
@@ -52,7 +52,7 @@ Version    Name                                Type       Repository           D
 
 This command gets scripts where the name begins with Required-Scri.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowPrerelease
 
@@ -141,13 +141,13 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Install-Script](Install-Script.md)
 

@@ -10,10 +10,10 @@ title: Get-WinEvent
 
 # Get-WinEvent
 
-## SYNOPSIS
+## Synopsis
 Gets events from event logs and event tracing log files on local and remote computers.
 
-## SYNTAX
+## Syntax
 
 ### GetLogSet (Default)
 
@@ -64,7 +64,7 @@ Get-WinEvent [-MaxEvents <Int64>] [-ComputerName <String>] [-Credential <PSCrede
  [-FilterXml] <XmlDocument> [-Oldest] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -83,7 +83,7 @@ table queries.
 If you're not running PowerShell as an Administrator, you might see error messages that you cannot
 retrieve information about a log.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all the logs from a local computer
 
@@ -577,7 +577,7 @@ Get-WinEvent -FilterHashtable $filter
 In this example, `Get-WinEvent` gets all events from the **Application** log for the last two days
 except those that have a **Level** of 4 (Information).
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 
@@ -888,14 +888,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String, System.Xml.XmlDocument, System.Collections.Hashtable
 
 You can pipeline a **LogName** (string), a **FilterXML** query, or a **FilterHashtable** query to
 `Get-WinEvent`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Diagnostics.Eventing.Reader.EventLogConfiguration, System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.Eventing.Reader.ProviderMetadata
 
@@ -908,7 +908,7 @@ With the **ListProvider** parameter, `Get-WinEvent` returns
 With all other parameters, `Get-WinEvent` returns
 **System.Diagnostics.Eventing.Reader.EventLogRecord** objects.
 
-## NOTES
+## Notes
 
 `Get-WinEvent` is designed to replace the `Get-EventLog` cmdlet on computers running Windows Vista
 and later versions of Windows. `Get-EventLog` gets events only in classic event logs. `Get-EventLog`
@@ -917,7 +917,7 @@ is retained for backward compatibility.
 The `Get-WinEvent` and `Get-EventLog` cmdlets are not supported in Windows Pre-installation
 Environment (Windows PE).
 
-## RELATED LINKS
+## Related links
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/about/about_automatic_variables.md)
 

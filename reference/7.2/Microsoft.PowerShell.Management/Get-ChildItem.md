@@ -9,11 +9,11 @@ title: Get-ChildItem
 ---
 # Get-ChildItem
 
-## SYNOPSIS
+## Synopsis
 
 Gets the items and child items in one or more specified locations.
 
-## SYNTAX
+## Syntax
 
 ### Items (Default)
 
@@ -32,7 +32,7 @@ Get-ChildItem [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>]
  [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-ChildItem` cmdlet gets the items in one or more specified locations. If the item is a
 container, it gets the items inside the container, known as child items. You can use the **Recurse**
@@ -45,7 +45,7 @@ of levels to recurse.
 Locations are exposed to `Get-ChildItem` by PowerShell providers. A location can be a file system
 directory, registry hive, or a certificate store. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get child items from a file system directory
 
@@ -747,13 +747,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path to `Get-ChildItem`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Object
 
@@ -764,7 +764,7 @@ path.
 
 If you use the **Name** parameter, `Get-ChildItem` returns the object names as strings.
 
-## NOTES
+## Notes
 
 - `Get-ChildItem` can be run using any of the built-in aliases, `ls`, `dir`, and `gci`. For more
   information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -774,7 +774,7 @@ If you use the **Name** parameter, `Get-ChildItem` returns the object names as s
   providers available in your session, type `Get-PSProvider`.
   For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md)
 

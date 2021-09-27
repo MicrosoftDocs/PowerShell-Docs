@@ -10,10 +10,10 @@ title: Out-Host
 
 # Out-Host
 
-## SYNOPSIS
+## Synopsis
 Sends output to the command line.
 
-## SYNTAX
+## Syntax
 
 ### All
 
@@ -21,7 +21,7 @@ Sends output to the command line.
 Out-Host [-Paging] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Out-Host` cmdlet sends output to the PowerShell host for display. The host displays the output
 at the command line. Because `Out-Host` is the default, you don't have to specify it unless you want
@@ -32,7 +32,7 @@ pipeline to the host executing the command. `Out-Host` ignores ANSI escape seque
 sequences are handled by the host. `Out-Host` passes ANSI escape sequences to the host without
 trying to interpret or change them.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Display output one page at a time
 
@@ -68,7 +68,7 @@ Out-Host -InputObject $io
 `Out-Host` uses the **InputObject** parameter to specify the `$io` variable and displays the
 history.
 
-## PARAMETERS
+## Parameters
 
 ### -InputObject
 
@@ -119,19 +119,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can send objects down the pipeline to `Out-Host`.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 `Out-Host` doesn't generate any output. It sends objects to the host for display.
 
-## NOTES
+## Notes
 
 The **Paging** parameter isn't supported by all PowerShell hosts. For example, if you use the
 **Paging** parameter in the PowerShell ISE, the following error is displayed:
@@ -148,7 +148,7 @@ variable and use the **InputObject** parameter to pass the data to the cmdlet.
 `Out-Host` sends data, but it doesn't produce any output objects. If you pipeline the output of
 `Out-Host` to the `Get-Member` cmdlet, `Get-Member` reports that no objects have been specified.
 
-## RELATED LINKS
+## Related links
 
 [Clear-Host](Clear-Host.md)
 

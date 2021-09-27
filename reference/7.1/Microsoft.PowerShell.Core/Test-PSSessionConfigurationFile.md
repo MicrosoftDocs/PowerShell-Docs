@@ -9,16 +9,16 @@ title: Test-PSSessionConfigurationFile
 ---
 # Test-PSSessionConfigurationFile
 
-## SYNOPSIS
+## Synopsis
 Verifies the keys and values in a session configuration file.
 
-## SYNTAX
+## Syntax
 
 ```
 Test-PSSessionConfigurationFile [-Path] <String> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -35,7 +35,7 @@ configuration files, see [about_Session_Configuration_Files](About/about_Session
 
 This cmdlet was introduced in PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Test a session configuration file
 
@@ -101,7 +101,7 @@ the **ConfigFilePath** property value. Then it uses the `Test-PSSessionConfigura
 test the file in the **ConfigFilePath** value. The **Verbose** parameter returns the file error when
 the file fails the test.
 
-## PARAMETERS
+## Parameters
 
 ### -Path
 
@@ -127,21 +127,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a session configuration file path to `Test-PSSessionConfigurationFile`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Boolean
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
-## RELATED LINKS
+## Related links
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 

@@ -9,10 +9,10 @@ title: Export-ODataEndpointProxy
 ---
 # Export-ODataEndpointProxy
 
-## SYNOPSIS
+## Synopsis
 Generates a module that contains cmdlets to manage an OData endpoint.
 
-## SYNTAX
+## Syntax
 
 ```
 Export-ODataEndpointProxy [-Uri] <String> [-OutputModule] <String> [[-MetadataUri] <String>]
@@ -21,7 +21,7 @@ Export-ODataEndpointProxy [-Uri] <String> [-OutputModule] <String> [[-MetadataUr
  [-AllowClobber] [-AllowUnsecureConnection] [[-Headers] <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Export-ODataEndpointProxy` cmdlet uses the metadata of an OData endpoint to generate a module
 that contains cmdlets you can use to manage that OData endpoint. The module is based on CDXML. After
@@ -38,7 +38,7 @@ the cmdlets to align with Windows PowerShell cmdlet naming guidelines, you can m
 Every cmdlet in a generated module must include a **ConnectionURI** parameter in order to connect to
 the endpoint that the module manages.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Generate a module to manage a retail web service endpoint
 
@@ -54,7 +54,7 @@ collection name to the desired noun for the cmdlet set. In this example, Product
 collection name and **Merchandise** is the noun. To allow connections to non-SSL sites, HTTP, as
 opposed to HTTPS, add the **AllowUnsecureConnection** parameter.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowClobber
 
@@ -327,13 +327,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [OData Library](/previous-versions/dotnet/wcf-data-services/hh525392(v=vs.103))
 

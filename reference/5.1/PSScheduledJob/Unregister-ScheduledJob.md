@@ -10,10 +10,10 @@ title: Unregister-ScheduledJob
 
 # Unregister-ScheduledJob
 
-## SYNOPSIS
+## Synopsis
 Deletes scheduled jobs on the local computer.
 
-## SYNTAX
+## Syntax
 
 ### Definition (Default)
 
@@ -34,7 +34,7 @@ Unregister-ScheduledJob [-Id] <Int32[]> [-Force] [-WhatIf] [-Confirm] [<CommonPa
 Unregister-ScheduledJob [-Name] <String[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Unregister-ScheduledJob** cmdlet deletes scheduled jobs from the local computer.
 
 When it deletes or unregisters a scheduled job, **Unregister-ScheduledJob** deletes the directory for the scheduled job (in the $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory), which contains the XML file that defines the scheduled job, the job execution history, and all job results.
@@ -52,7 +52,7 @@ Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or s
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Delete a scheduled job
 
@@ -87,7 +87,7 @@ PS C:\> Invoke-Command -ComputerName "Server01" { Unregister-ScheduledJob -Name 
 This command deletes scheduled jobs with names that begin with Test on the Server01 remote computer.
 The command uses the Invoke-Command cmdlet to run the **Unregister-ScheduledJob** command on the Server02 computer.
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 Deletes the scheduled job even if an instance of the job is running.
@@ -189,19 +189,19 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 You can pipe scheduled jobs to Unregister-ScheduledJob
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

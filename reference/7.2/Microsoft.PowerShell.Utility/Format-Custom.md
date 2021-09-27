@@ -9,10 +9,10 @@ title: Format-Custom
 ---
 # Format-Custom
 
-## SYNOPSIS
+## Synopsis
 Uses a customized view to format the output.
 
-## SYNTAX
+## Syntax
 
 ```
 Format-Custom [[-Property] <Object[]>] [-Depth <Int32>] [-GroupBy <Object>] [-View <String>]
@@ -20,14 +20,14 @@ Format-Custom [[-Property] <Object[]>] [-Depth <Int32>] [-GroupBy <Object>] [-Vi
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Format-Custom` cmdlet formats the output of a command as defined in an alternate view.
 `Format-Custom` is designed to display views that are not just tables or just lists. You can use the
 views defined in PowerShell, or you can create your own views in a new `format.ps1xml` file and use
 the `Update-FormatData` cmdlet to add them to PowerShell.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Format output with a custom view
 
@@ -78,7 +78,7 @@ Failed to evaluate expression " $_ / $null ".
 + FullyQualifiedErrorId : PSPropertyExpressionError
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Depth
 
@@ -274,19 +274,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to `Format-Custom`.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.Internal.Format
 
 `Format-Custom` returns the format objects that represent the display.
 
-## NOTES
+## Notes
 
 `Format-Custom` is designed to display views that are not just tables or just lists. To display an
 alternate table view, use `Format-Table`. To display an alternate list view, use `Format-List`.
@@ -297,7 +297,7 @@ You can also refer to `Format-Custom` by its built-in alias, `fc`. For more info
 The **GroupBy** parameter assumes that the objects are sorted. Before using `Format-Custom` to
 group the objects, use `Sort-Object` to sort them.
 
-## RELATED LINKS
+## Related links
 
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 

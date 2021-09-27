@@ -10,10 +10,10 @@ title: Remove-WSManInstance
 
 # Remove-WSManInstance
 
-## SYNOPSIS
+## Synopsis
 Deletes a management resource instance.
 
-## SYNTAX
+## Syntax
 
 ### ComputerName (Default)
 
@@ -32,12 +32,12 @@ Remove-WSManInstance [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-ResourceU
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Remove-WSManInstance** cmdlet deletes an instance of a management resource that is specified in the *ResourceURI* and *SelectorSet* parameters.
 
 This cmdlet uses the WinRM connection/transport layer to delete the management resource instance.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Delete a listener
 
@@ -47,7 +47,7 @@ PS C:\> Remove-WSManInstance -ResourceUri winrm/config/Listener -SelectorSet Add
 
 This command deletes the WS-Management HTTP listener on a computer.
 
-## PARAMETERS
+## Parameters
 
 ### -ApplicationName
 Specifies the application name in the connection.
@@ -322,23 +322,23 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 This cmdlet does not accept any input.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * The Remove-WmiObject cmdlet, a Windows Management Instrumentation (WMI) cmdlet, is similar. **Remove-WmiObject** uses the DCOM connection/transport layer to create or update WMI instances.
 
 *
 
-## RELATED LINKS
+## Related links
 
 [Connect-WSMan](Connect-WSMan.md)
 

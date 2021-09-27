@@ -275,6 +275,6 @@ To stop a transcript, use the `Stop-Transcript` cmdlet.
 To record an entire session, add the `Start-Transcript` command to your profile. For more
 information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
-## Related Links
+## Related links
 
 [Stop-Transcript](Stop-Transcript.md)

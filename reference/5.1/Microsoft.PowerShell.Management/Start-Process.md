@@ -9,10 +9,10 @@ title: Start-Process
 ---
 # Start-Process
 
-## SYNOPSIS
+## Synopsis
 Starts one or more processes on the local computer.
 
-## SYNTAX
+## Syntax
 
 ### Default (Default)
 
@@ -31,7 +31,7 @@ Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-WorkingDirecto
  [-PassThru] [-Verb <string>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Start-Process` cmdlet starts one or more processes on the local computer. By default,
 `Start-Process` creates a new process that inherits all the environment variables that are defined
@@ -45,7 +45,7 @@ cmdlet.
 You can use the parameters of `Start-Process` to specify options, such as loading a user profile,
 starting the process in a new window, or using alternate credentials.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Start a process that uses default values
 
@@ -134,7 +134,7 @@ Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\pro
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -ArgumentList
 
@@ -429,20 +429,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None, System.Diagnostics.Process
 
 This cmdlet generates a **System.Diagnostics.Process** object, if you specify the **PassThru**
 parameter. Otherwise, this cmdlet does not return any output.
 
-## NOTES
+## Notes
 
 By default, `Start-Process` launches a process _asynchronously_. Control is instantly returned to
 PowerShell even if the new process is still running.
@@ -467,7 +467,7 @@ This cmdlet is implemented by using the **Start** method of the **System.Diagnos
 class. For more information about this method, see
 [Process.Start Method](/dotnet/api/system.diagnostics.process.start#overloads).
 
-## RELATED LINKS
+## Related links
 
 [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md)
 

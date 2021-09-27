@@ -9,10 +9,10 @@ title: Set-ItemProperty
 ---
 # Set-ItemProperty
 
-## SYNOPSIS
+## Synopsis
 Creates or changes the value of a property of an item.
 
-## SYNTAX
+## Syntax
 
 ### propertyValuePathSet (Default)
 
@@ -46,7 +46,7 @@ Set-ItemProperty -LiteralPath <String[]> -InputObject <PSObject> [-PassThru] [-F
  [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-ItemProperty` cmdlet changes the value of the property of the specified item.
 You can use the cmdlet to establish or change the properties of items.
@@ -56,7 +56,7 @@ file object to `$True`.
 You also use `Set-ItemProperty` to create and change registry values and data.
 For example, you can add a new registry entry to a key and establish or change its value.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Set a property of a file
 
@@ -146,7 +146,7 @@ This command is equivalent to using the **InputObject** parameter to specify the
 Get-ChildItem weekly.txt | Set-ItemProperty -Name IsReadOnly -Value $True
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -420,13 +420,13 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None, System.Management.Automation.PSCustomObject
 
@@ -434,12 +434,12 @@ This cmdlet generates a **PSCustomObject** object that represents the item that 
 new property value, if you specify the **PassThru** parameter.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 `Set-ItemProperty` is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Clear-ItemProperty](Clear-ItemProperty.md)
 

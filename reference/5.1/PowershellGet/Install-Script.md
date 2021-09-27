@@ -10,10 +10,10 @@ title: Install-Script
 
 # Install-Script
 
-## SYNOPSIS
+## Synopsis
 Installs a script.
 
-## SYNTAX
+## Syntax
 
 ### NameParameterSet (Default)
 
@@ -33,7 +33,7 @@ Install-Script [-InputObject] <PSObject[]> [-Scope <String>] [-NoPathUpdate] [-P
  [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Install-Script` cmdlet acquires a script payload from a repository, verifies that the
 payload is a valid PowerShell script, and copies the script file to a specified installation
@@ -45,7 +45,7 @@ cmdlets. When operating against multiple repositories, `Install-Script` installs
 that matches the specified search criteria (**Name**, **MinimumVersion**, or **MaximumVersion**)
 from the first repository without any error.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Find a script and install it
 
@@ -208,7 +208,7 @@ repository.
 
 The final command gets installed scripts and displays the results.
 
-## PARAMETERS
+## Parameters
 
 ### -AcceptLicense
 
@@ -510,7 +510,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String[]
 
@@ -522,11 +522,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSCredential
 
-## OUTPUTS
+## Outputs
 
 ### System.Object
 
-## NOTES
+## Notes
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -540,7 +540,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## RELATED LINKS
+## Related links
 
 [Find-Script](Find-Script.md)
 

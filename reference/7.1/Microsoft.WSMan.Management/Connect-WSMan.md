@@ -10,10 +10,10 @@ title: Connect-WSMan
 
 # Connect-WSMan
 
-## SYNOPSIS
+## Synopsis
 Connects to the WinRM service on a remote computer.
 
-## SYNTAX
+## Syntax
 
 ### ComputerName (Default)
 
@@ -31,7 +31,7 @@ Connect-WSMan [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-Port <Int32>] [-
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -44,7 +44,7 @@ Explicit credentials are required when the client and server computers are in di
 
 For information about how to disconnect from the WinRM service on a remote computer, see the Disconnect-WSMan cmdlet.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Connect to a remote computer
 
@@ -130,7 +130,7 @@ In this case, the session options set a connection time out of 30 seconds (30,00
 The second command uses the *SessionOption* parameter to pass the credentials that are stored in the $a variable to **Connect-WSMan**.
 Then, **Connect-WSMan** connects to the remote server01 computer by using the specified session options.
 
-## PARAMETERS
+## Parameters
 
 ### -ApplicationName
 Specifies the application name in the connection.
@@ -361,23 +361,23 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 This cmdlet does not accept any input.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * You can run management commands or query management data on a remote computer without creating a WS-Management session. You can do this by using the *ComputerName* parameters of Invoke-WSManAction and Get-WSManInstance. When you use the *ComputerName* parameter, PowerShell creates a temporary connection that is used for the single command. After the command runs, the connection is closed.
 
 *
 
-## RELATED LINKS
+## Related links
 
 [Disable-WSManCredSSP](Disable-WSManCredSSP.md)
 

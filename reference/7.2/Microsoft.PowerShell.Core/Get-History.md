@@ -9,16 +9,16 @@ title: Get-History
 ---
 # Get-History
 
-## SYNOPSIS
+## Synopsis
 Gets a list of the commands entered during the current session.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-History [[-Id] <Int64[]>] [[-Count] <Int32>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-History` cmdlet gets the session history, that is, the list of commands entered during the
 current session.
@@ -33,7 +33,7 @@ The session history is managed separately from the history maintained by the **P
 Both histories are available in sessions where **PSReadLine** is loaded. This cmdlet only works with
 the session history. For more information see, [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the session history
 
@@ -87,7 +87,7 @@ command.
 Get-History | Format-List -Property *
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Count
 
@@ -135,19 +135,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Int64
 
 You can pipe a history ID to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.HistoryInfo
 
 This cmdlet returns a history object for each history item that it gets.
 
-## NOTES
+## Notes
 
 The session history is a list of the commands entered during the session. The session history
 represents the run order, the status, and the start and end times of the command. As you enter each
@@ -158,7 +158,7 @@ Starting in Windows PowerShell 3.0, the default value of the `$MaximumHistoryCou
 variable is `4096`. In Windows PowerShell 2.0, the default value is `64`. For more information about
 the `$MaximumHistoryCount` variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
-## RELATED LINKS
+## Related links
 
 [Add-History](Add-History.md)
 

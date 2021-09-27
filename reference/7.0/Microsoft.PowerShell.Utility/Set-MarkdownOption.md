@@ -9,10 +9,10 @@ title: Set-MarkdownOption
 ---
 # Set-MarkdownOption
 
-## SYNOPSIS
+## Synopsis
 Sets the colors and styles used for rendering Markdown content in the console.
 
-## SYNTAX
+## Syntax
 
 ### IndividualSetting (Default)
 
@@ -36,7 +36,7 @@ Set-MarkdownOption [-PassThru] -Theme <String> [<CommonParameters>]
 Set-MarkdownOption [-PassThru] [-InputObject] <PSObject> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 Sets the colors and styles used for rendering Markdown content in the console. These styles are
 defined using ANSI escape codes that change the color and style of the Markdown text being rendered.
@@ -49,7 +49,7 @@ For more information about Markdown, see the [CommonMark](https://commonmark.org
 > string. For more information about ANSI escape codes work, see
 > [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).
 
-## EXAMPLES
+## Examples
 
 ### Example 1 - Switch to the Light Theme
 
@@ -103,7 +103,7 @@ EmphasisBold    : [1m
 EmphasisItalics : [36m
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -BoldForegroundColor
 
@@ -338,20 +338,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.MarkdownRender.PSMarkdownOptionInfo
 
-## NOTES
+## Notes
 
 The string values used to define the color and style must match the regular expression
 `^\[*[0-9;]*?m{1}`.
 
-## RELATED LINKS
+## Related links
 
 [Get-MarkdownOption](Get-MarkdownOption.md)
 

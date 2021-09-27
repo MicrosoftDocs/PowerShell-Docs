@@ -8,10 +8,10 @@ title: about Debuggers
 ---
 # about_Debuggers
 
-## SHORT DESCRIPTION
+## Short description
 Describes the PowerShell debugger.
 
-## LONG DESCRIPTION
+## Long description
 
 Debugging is the process of examining a script while it is running to identify
 and correct errors in the script instructions. The PowerShell debugger can help
@@ -735,7 +735,7 @@ features that you can use to debug scripts and functions.
   the Write verb for this task, such as `Write-Host`, `Write-Debug`,
   `Write-Warning`, and `Write-Verbose`.
 
-## SEE ALSO
+## See also
 
 - [Disable-PsBreakpoint](xref:Microsoft.PowerShell.Utility.Disable-PSBreakpoint)
 - [Enable-PsBreakpoint](xref:Microsoft.PowerShell.Utility.Enable-PSBreakpoint)

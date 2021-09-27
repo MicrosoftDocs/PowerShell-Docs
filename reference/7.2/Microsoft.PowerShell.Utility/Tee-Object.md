@@ -9,10 +9,10 @@ title: Tee-Object
 ---
 # Tee-Object
 
-## SYNOPSIS
+## Synopsis
 Saves command output in a file or variable and also sends it down the pipeline.
 
-## SYNTAX
+## Syntax
 
 ### File (Default)
 
@@ -32,14 +32,14 @@ Tee-Object [-InputObject <PSObject>] -LiteralPath <String> [[-Encoding] <Encodin
 Tee-Object [-InputObject <PSObject>] -Variable <String> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Tee-Object` cmdlet redirects output, that is, it sends the output of a command in two
 directions (like the letter T). It stores the output in a file or variable and also sends it down
 the pipeline. If `Tee-Object` is the last command in the pipeline, the command output is displayed
 at the prompt.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Output processes to a file and to the console
 
@@ -96,7 +96,7 @@ drive. A pipeline operator (|) sends the list to `Tee-Object`, which appends the
 AllSystemFiles.txt file and passes the list down the pipeline to the `Out-File` cmdlet, which saves
 the list in the NewSystemFiles.txt file.
 
-## PARAMETERS
+## Parameters
 
 ### -Append
 
@@ -237,19 +237,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe objects to `Tee-Object`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSObject
 
 `Tee-Object` returns the object that it redirects.
 
-## NOTES
+## Notes
 
 You can also use the `Out-File` cmdlet or the redirection operator, both of which save the output in
 a file but do not send it down the pipeline.
@@ -257,7 +257,7 @@ a file but do not send it down the pipeline.
 Beginning in PowerShell 6, `Tee-Object` uses BOM-less UTF-8 encoding when it writes to files. If you
 need a different encoding, use the `Out-File` cmdlet with the **Encoding** parameter.
 
-## RELATED LINKS
+## Related links
 
 [Compare-Object](Compare-Object.md)
 

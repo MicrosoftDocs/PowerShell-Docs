@@ -140,7 +140,7 @@ and then continues executing the command. To determine valid values for a prefer
 as `$WarningPreference`, set it to a string of random characters, such as "abc". The resulting error
 message lists the valid values.
 
-## Related Links
+## Related links
 
 [about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 

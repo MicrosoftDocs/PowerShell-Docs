@@ -10,10 +10,10 @@ title: Get-Culture
 
 # Get-Culture
 
-## SYNOPSIS
+## Synopsis
 Gets the current culture set in the operating system.
 
-## SYNTAX
+## Syntax
 
 ### CurrentCulture (Default)
 
@@ -33,7 +33,7 @@ Get-Culture [-Name <String[]>] [-NoUserOverrides] [<CommonParameters>]
 Get-Culture [-ListAvailable] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Culture` cmdlet gets information about the current culture settings. This includes
 information about the current language settings on the system, such as the keyboard layout, and the
@@ -44,7 +44,7 @@ system, and the [Set-Culture](/powershell/module/international/set-culture) cmdl
 International module. The user-interface (UI) culture determines which text strings are used for
 user interface elements, such as menus and messages.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get culture settings
 
@@ -166,7 +166,7 @@ LCID             Name             DisplayName
 1036             fr-FR            French (France)
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -ListAvailable
 
@@ -229,25 +229,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Globalization.CultureInfo
 
 `Get-Culture` returns an object that represents the current culture.
 
-## NOTES
+## Notes
 
 You can also use the `$PsCulture` and `$PsUICulture` variables. The `$PsCulture` variable stores the
 name of the current culture and the `$PsUICulture` variable stores the name of the current UI
 culture.
 
-## RELATED LINKS
+## Related links
 
 [Set-Culture](/powershell/module/international/set-culture)
 

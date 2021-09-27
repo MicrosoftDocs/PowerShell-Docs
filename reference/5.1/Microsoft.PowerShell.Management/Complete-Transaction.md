@@ -10,16 +10,16 @@ title: Complete-Transaction
 
 # Complete-Transaction
 
-## SYNOPSIS
+## Synopsis
 Commits the active transaction.
 
-## SYNTAX
+## Syntax
 
 ```
 Complete-Transaction [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Complete-Transaction** cmdlet commits an active transaction.
 When you commit a transaction, the commands in the transaction are finalized and the data affected by the commands is changed.
 
@@ -28,7 +28,7 @@ If the transaction includes multiple subscribers, to commit the transaction, you
 The **Complete-Transaction** cmdlet is one of a set of cmdlets that support the transactions feature in Windows PowerShell.
 For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Commit a transaction
 
@@ -171,7 +171,7 @@ Because the new registry key is not added to the registry until the **Complete-T
 
 However, when you add the *UseTransaction* parameter to the dir command, the command becomes part of the transaction, and it gets the items in the transaction even if they are not yet added to the data.
 
-## PARAMETERS
+## Parameters
 
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
@@ -207,17 +207,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * You cannot roll back a transaction that has been committed, or commit a transaction that has been rolled back.
 
@@ -228,7 +228,7 @@ To roll back a different transaction, you must first commit or roll back the act
 
 *
 
-## RELATED LINKS
+## Related links
 
 [Get-Transaction](Get-Transaction.md)
 

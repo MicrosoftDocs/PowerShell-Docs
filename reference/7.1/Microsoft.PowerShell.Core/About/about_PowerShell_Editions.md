@@ -8,10 +8,10 @@ title: about PowerShell Editions
 ---
 # about_PowerShell_Editions
 
-## Short Description
+## Short description
 Different editions of PowerShell run on different underlying runtimes.
 
-## Long Description
+## Long description
 
 From PowerShell 5.1, there are multiple *editions* of PowerShell that each run on
 a different .NET runtime. As of PowerShell 6.2 there are two editions of PowerShell:

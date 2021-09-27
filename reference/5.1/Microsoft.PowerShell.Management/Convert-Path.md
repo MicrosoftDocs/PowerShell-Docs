@@ -9,10 +9,10 @@ title: Convert-Path
 ---
 # Convert-Path
 
-## SYNOPSIS
+## Synopsis
 Converts a path from a PowerShell path to a PowerShell provider path.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -26,11 +26,11 @@ Convert-Path [-Path] <String[]> [-UseTransaction] [<CommonParameters>]
 Convert-Path -LiteralPath <String[]> [-UseTransaction] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Convert-Path` cmdlet converts a path from a PowerShell path to a PowerShell provider path.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Convert the working directory to a standard file system path
 
@@ -61,7 +61,7 @@ PS C:\> Convert-Path ~
 C:\Users\User01
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -LiteralPath
 
@@ -122,19 +122,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a path, but not a literal path, to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.String
 
 This cmdlet returns a string that contains the converted path.
 
-## NOTES
+## Notes
 
 The cmdlets that contain the Path noun manipulate path names and return the names in a concise
 format that all PowerShell providers can interpret. They are designed for use in programs and
@@ -151,7 +151,7 @@ available in your session, type `Get-PSProvider`. For more information, see
 `Convert-Path` only converts existing paths. It cannot be used to convert a location that does not
 exist yet.
 
-## RELATED LINKS
+## Related links
 
 [Join-Path](Join-Path.md)
 

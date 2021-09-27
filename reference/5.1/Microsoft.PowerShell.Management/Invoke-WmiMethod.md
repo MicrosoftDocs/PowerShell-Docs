@@ -10,10 +10,10 @@ title: Invoke-WmiMethod
 
 # Invoke-WmiMethod
 
-## SYNOPSIS
+## Synopsis
 Calls WMI methods.
 
-## SYNTAX
+## Syntax
 
 ### class (Default)
 
@@ -67,7 +67,7 @@ Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Invoke-WmiMethod` cmdlet calls the methods of Windows Management Instrumentation (WMI)
 objects.
@@ -78,7 +78,7 @@ CIM standard, which enables the cmdlets to use the same techniques to manage Win
 those running other operating systems. Instead of using `Invoke-WmiMethod`, consider using
 [Invoke-CimMethod](../cimcmdlets/invoke-cimmethod.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: List the required order of WMI objects
 
@@ -193,7 +193,7 @@ $binSD = $acl.GetSecurityDescriptorBinaryForm()
 Invoke-WmiMethod -class Win32_SecurityDescriptorHelper -Name BinarySDToSDDL -ArgumentList $binSD, $null
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -ArgumentList
 
@@ -544,21 +544,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 This cmdlet does not accept any input.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Get-WSManInstance](../Microsoft.WsMan.Management/Get-WSManInstance.md)
 

@@ -9,11 +9,11 @@ title: Get-Alias
 ---
 # Get-Alias
 
-## SYNOPSIS
+## Synopsis
 
 Gets the aliases for the current session.
 
-## SYNTAX
+## Syntax
 
 ### Default (Default)
 
@@ -29,7 +29,7 @@ Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Get-Alias** cmdlet gets the aliases in the current session.
 This includes built-in aliases, aliases that you have set or imported, and aliases that you have added to your PowerShell profile.
@@ -39,7 +39,7 @@ When you use the *Definition* parameter, **Get-Alias** takes a command name and 
 
 Beginning in Windows PowerShell 3.0, **Get-Alias** displays non-hyphenated alias names in an `<alias> -> <definition>` format to make it even easier to find the information that you need.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all aliases in the current session
 
@@ -108,7 +108,7 @@ This example gets aliases for commands that have names that end in "-PSSession",
 The command uses the *Scope* parameter to apply the command in the global scope.
 This is useful in scripts when you want to get the aliases in the session.
 
-## PARAMETERS
+## Parameters
 
 ### -Definition
 
@@ -197,25 +197,25 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe alias names to **Get-Alias**.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.AliasInfo
 
 **Get-Alias** returns an object that represents each alias.
 **Get-Alias** returns the same object for every alias, but PowerShell uses an arrow-based format to display the names of non-hyphenated aliases.
 
-## NOTES
+## Notes
 
 - To create a new alias, use Set-Alias or New-Alias. To delete an alias, use Remove-Item.
 - The arrow-based alias name format is not used for aliases that include a hyphen. These are likely to be preferred substitute names for cmdlets and functions, instead of typical abbreviations or nicknames.
 
-## RELATED LINKS
+## Related links
 
 [Export-Alias](Export-Alias.md)
 

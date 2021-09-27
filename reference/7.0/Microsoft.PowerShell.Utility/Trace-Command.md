@@ -365,7 +365,7 @@ Returns the command trace in the debug stream.
   **Expression**, **Option** or **Name**, **Command**, **Option**. If you include the parameter
   names, the parameters can appear in any order.
 
-## Related Links
+## Related links
 
 [Get-TraceSource](Get-TraceSource.md)
 

@@ -10,10 +10,10 @@ title: Get-WSManInstance
 
 # Get-WSManInstance
 
-## SYNOPSIS
+## Synopsis
 Displays management information for a resource instance specified by a Resource URI.
 
-## SYNTAX
+## Syntax
 
 ### GetInstance (Default)
 
@@ -34,7 +34,7 @@ Get-WSManInstance [-ApplicationName <String>] [-BasePropertiesOnly] [-ComputerNa
  [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -44,7 +44,7 @@ This cmdlet is the equivalent to the standard Web Services for Management (WS-Ma
 
 This cmdlet uses the WS-Management connection/transport layer to retrieve information.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all information from WMI
 
@@ -364,7 +364,7 @@ Because the *Dialect* value is association and the *Associations* parameter is u
 
 You must enclose the filter in quotation marks, as shown in the example.
 
-## PARAMETERS
+## Parameters
 
 ### -ApplicationName
 Specifies the application name in the connection.
@@ -794,19 +794,19 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 This command does not accept any input.
 
-## OUTPUTS
+## Outputs
 
 ### System.Xml.XmlElement
 This cmdlet generates an **XMLElement** object.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Connect-WSMan](Connect-WSMan.md)
 

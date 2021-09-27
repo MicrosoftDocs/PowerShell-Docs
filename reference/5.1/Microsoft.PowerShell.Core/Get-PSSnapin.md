@@ -10,16 +10,16 @@ title: Get-PSSnapin
 
 # Get-PSSnapin
 
-## SYNOPSIS
+## Synopsis
 Gets the Windows PowerShell snap-ins on the computer.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-PSSnapin [[-Name] <String[]>] [-Registered] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-PSSnapin` cmdlet gets the Windows PowerShell snap-ins that have been added to the current
 session or that have been registered on the system. This cmdlet lists the snap-ins in the order in
@@ -34,7 +34,7 @@ packaged in modules. The exception is **Microsoft.PowerShell.Core**, which is a 
 By default, only the **Microsoft.PowerShell.Core** snap-in is added to the session. Modules are
 imported automatically on first use and you can use the `Import-Module` cmdlet to import them.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get snap-ins that are currently loaded
 
@@ -66,7 +66,7 @@ PS C:\> Get-PSSnapIn -Name smp*
 This command gets the Windows PowerShell snap-ins in the current session that have names that begin
 with smp.
 
-## PARAMETERS
+## Parameters
 
 ### -Name
 
@@ -114,18 +114,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSSnapInInfo
 
 `Get-PSSnapin` returns an object for each snap-in that it gets.
 
-## NOTES
+## Notes
 
 Starting in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are
 packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style
@@ -138,7 +138,7 @@ include core snap-ins.
  modules, see
  [CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2#System_Management_Automation_Runspaces_InitialSessionState_CreateDefault2).
 
-## RELATED LINKS
+## Related links
 
 [Add-PSSnapin](Add-PSSnapin.md)
 

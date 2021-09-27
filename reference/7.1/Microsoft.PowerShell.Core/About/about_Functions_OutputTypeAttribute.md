@@ -8,11 +8,11 @@ title: about Functions OutputTypeAttribute
 ---
 # about_Functions_OutputTypeAttribute
 
-## SHORT DESCRIPTION
+## Short description
 Describes an attribute that reports the type of object that the function
 returns.
 
-## LONG DESCRIPTION
+## Long description
 
 The OutputType attribute lists the .NET types of objects that the functions
 returns. You can use its optional ParameterSetName parameter to list different
@@ -29,7 +29,7 @@ The OutputType attribute value is only a documentation note. It is not derived
 from the function code or compared to the actual function output. As such, the
 value might be inaccurate.
 
-## SYNTAX
+## Syntax
 
 The OutputType attribute of functions has the following syntax:
 
@@ -100,7 +100,7 @@ function AdvancedFunction2
 }
 ```
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a function that has the OutputType of String
 
@@ -213,7 +213,7 @@ function Invoke-Notepad
 }
 ```
 
-## NOTES
+## Notes
 
 The value of the OutputType property of a **FunctionInfo** object is an array of
 **System.Management.Automation.PSTypeName** objects, each of which have Name and
@@ -230,7 +230,7 @@ The value of the OutputType property can be null. Use a null value when
 the output is a not a .NET type, such as a **WMI** object or a formatted view
 of an object.
 
-## SEE ALSO
+## See also
 
 [about_Functions](about_Functions.md)
 

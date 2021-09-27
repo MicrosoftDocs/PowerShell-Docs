@@ -10,16 +10,16 @@ title: Undo-Transaction
 
 # Undo-Transaction
 
-## SYNOPSIS
+## Synopsis
 Rolls back the active transaction.
 
-## SYNTAX
+## Syntax
 
 ```
 Undo-Transaction [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Undo-Transaction** cmdlet rolls back the active transaction.
 When you roll back a transaction, the changes that were made by the commands in the transaction are discarded and the data is restored to its original form.
 
@@ -31,7 +31,7 @@ However, transactions can be started by using a different rollback preference an
 The **Undo-Transaction** cmdlet is one of a set of cmdlets that support the transactions feature in Windows PowerShell.
 For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Roll back the current transaction
 
@@ -106,7 +106,7 @@ This command does not return any objects.
 The final command is a **Get-Transaction** command that gets the active, or in this case, the most recently active, transaction.
 The results show that the transaction is rolled back, and that the subscriber count is 0, showing that the transaction was rolled back for all subscribers.
 
-## PARAMETERS
+## Parameters
 
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
@@ -142,17 +142,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not return any output.
 
-## NOTES
+## Notes
 
 * You cannot roll back a transaction that has been committed.
 
@@ -162,7 +162,7 @@ To roll back a different, independent transaction, you must first commit or roll
   Rolling back the transaction ends the transaction.
 To use a transaction again, you must start a new transaction.
 
-## RELATED LINKS
+## Related links
 
 [Complete-Transaction](Complete-Transaction.md)
 

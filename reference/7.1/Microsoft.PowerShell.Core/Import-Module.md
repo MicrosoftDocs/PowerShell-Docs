@@ -10,10 +10,10 @@ title: Import-Module
 
 # Import-Module
 
-## SYNOPSIS
+## Synopsis
 Adds modules to the current session.
 
-## SYNTAX
+## Syntax
 
 ### Name (Default)
 
@@ -101,7 +101,7 @@ Import-Module [-Global] [-Prefix <String>] [-Function <String[]>] [-Cmdlet <Stri
  [-NoClobber] [-Scope <String>]  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Import-Module` cmdlet adds one or more modules to the current session. Starting in PowerShell
 3.0, installed modules are automatically imported to the session when you use any commands or
@@ -139,7 +139,7 @@ import CIM modules from the remote computer. The imported commands run implicitl
 computer. A **CIMSession** is a connection to Windows Management Instrumentation (WMI) on the remote
 computer.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Import the members of a module into the current session
 
@@ -570,7 +570,7 @@ Number Friendly Name           OperationalStatus  Total Size Partition Style
 0      Virtual HD ATA Device   Online                  40 GB MBR
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Alias
 
@@ -1199,13 +1199,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String, System.Management.Automation.PSModuleInfo, System.Reflection.Assembly
 
 You can pipe a module name, module object, or assembly object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None, System.Management.Automation.PSModuleInfo, or System.Management.Automation.PSCustomObject
 
@@ -1213,7 +1213,7 @@ By default, `Import-Module` does not generate any output. If you specify the **P
 the cmdlet generates a **System.Management.Automation.PSModuleInfo** object that represents the
 module. If you specify the **AsCustomObject** parameter, it generates a **PSCustomObject** object.
 
-## NOTES
+## Notes
 
 - Before you can import a module, the module must be installed on the local computer. That is, the
   module directory must be copied to a directory that is accessible to your local computer. For more
@@ -1291,7 +1291,7 @@ module. If you specify the **AsCustomObject** parameter, it generates a **PSCust
   statement at the beginning of your script. This imports the module, including the class and enum
   definitions. For more information, see [about_Using](About/about_Using.md).
 
-## RELATED LINKS
+## Related links
 
 [about_Modules](about/about_Modules.md)
 

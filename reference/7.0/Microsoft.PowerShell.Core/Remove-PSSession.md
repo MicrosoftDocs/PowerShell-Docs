@@ -9,10 +9,10 @@ title: Remove-PSSession
 ---
 # Remove-PSSession
 
-## SYNOPSIS
+## Synopsis
 Closes one or more PowerShell sessions (PSSessions).
 
-## SYNTAX
+## Syntax
 
 ### Id (Default)
 
@@ -62,7 +62,7 @@ Remove-PSSession -Name <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 Remove-PSSession [-ComputerName] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Remove-PSSession** cmdlet closes PowerShell sessions (**PSSessions**) in the current session.
 It stops any commands that are running in the **PSSessions**, ends the **PSSession**, and releases the resources that the **PSSession** was using.
@@ -72,7 +72,7 @@ To remove a **PSSession**, enter the *Name*, *ComputerName*, *ID*, or *InstanceI
 
 If you have saved the *PSSession* in a variable, the session object remains in the variable, but the state of the *PSSession* is Closed.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Remove sessions by using IDs
 
@@ -147,7 +147,7 @@ Function EndPSS { Get-PSSession | Remove-PSSession }
 This function deletes all of the **PSSessions** in the current session.
 After you add this function to your PowerShell profile, to delete all sessions, type `EndPSS`.
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 
@@ -346,25 +346,25 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.Runspaces.PSSession
 
 You can pipe a session object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not return any objects.
 
-## NOTES
+## Notes
 
 * The *Id* parameter is mandatory. To delete all the **PSSessions** in the current session, type `Get-PSSession | Remove-PSSession`.
 * A **PSSession** uses a persistent connection to a remote computer. Create a **PSSession** to run a series of commands that share data. For more information, type `Get-Help about_PSSessions`.
 * **PSSessions** are specific to the current session. When you end a session, the **PSSessions** that you created in that session are forcibly closed.
 
-## RELATED LINKS
+## Related links
 
 [Connect-PSSession](Connect-PSSession.md)
 

@@ -376,7 +376,7 @@ cmdlet does not generate any output.
 
 ## Notes
 
-## Related Links
+## Related links
 
 [Clear-Variable](Clear-Variable.md)
 

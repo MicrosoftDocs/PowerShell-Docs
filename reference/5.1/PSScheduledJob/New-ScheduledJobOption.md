@@ -10,10 +10,10 @@ title: New-ScheduledJobOption
 
 # New-ScheduledJobOption
 
-## SYNOPSIS
+## Synopsis
 Creates an object that contains advanced options for a scheduled job.
 
-## SYNTAX
+## Syntax
 
 ```
 New-ScheduledJobOption [-RunElevated] [-HideInTaskScheduler] [-RestartOnIdleResume]
@@ -22,7 +22,7 @@ New-ScheduledJobOption [-RunElevated] [-HideInTaskScheduler] [-RestartOnIdleResu
  [-IdleDuration <TimeSpan>] [-StartIfIdle] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **New-ScheduledJobOption** cmdlet creates an object that contains advanced options for a scheduled job.
 
 You can use the **ScheduledJobOptions** object that **New-ScheduledJobOption** returns to set job options for a new or existing scheduled job.
@@ -41,7 +41,7 @@ Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or s
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a scheduled job option object with default values
 
@@ -151,7 +151,7 @@ The command then pipes the property objects to the Sort-Object cmdlet, which sor
 
 This format makes it much easier to find the WakeToRun property of the **ScheduledJobOptions** object in $Options and to verify that its value was changed from $False to $True.
 
-## PARAMETERS
+## Parameters
 
 ### -ContinueIfGoingOnBattery
 Do not stop the scheduled job if the computer switches to battery power (disconnects from AC power) while the job is running.
@@ -423,22 +423,22 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 
-## NOTES
+## Notes
 
 * You can use the **ScheduledJobOptions** object that **New-ScheduledJobOption** creates as the value of the *ScheduledJobOption* parameter of the Register-ScheduledJob cmdlet. However, the *ScheduledJobOption* parameter can also take a hash table value that specifies the properties of the **ScheduledJobOptions** object and their values, such as:
 
   `@{ShowInTaskScheduler=$False; RunElevated=$True; IdleDuration="00:05"}`
 
-## RELATED LINKS
+## Related links
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

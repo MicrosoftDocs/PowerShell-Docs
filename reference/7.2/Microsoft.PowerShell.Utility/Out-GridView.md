@@ -9,10 +9,10 @@ title: Out-GridView
 ---
 # Out-GridView
 
-## SYNOPSIS
+## Synopsis
 Sends output to an interactive table in a separate window.
 
-## SYNTAX
+## Syntax
 
 ### PassThru (Default)
 
@@ -33,7 +33,7 @@ Out-GridView [-InputObject <PSObject>] [-Title <String>] [-OutputMode <OutputMod
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -59,7 +59,7 @@ For full instructions, see the [Notes](#notes) section of this article.
 > [GraphicalTools](https://www.powershellgallery.com/packages/Microsoft.PowerShell.GraphicalTools)
 > module in the PowerShell Gallery.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Output processes to a grid view
 
@@ -159,7 +159,7 @@ This command line can be used in a Windows shortcut. Without the **Wait** parame
 would exit as soon as the `Out-GridView` window opened, which would close the `Out-GridView` window
 almost immediately.
 
-## PARAMETERS
+## Parameters
 
 ### -InputObject
 
@@ -276,20 +276,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can send any object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 Normally, `Out-GridView` does not return any objects. When using the **PassThru** parameter, the
 objects representing the selected rows are returned to the pipeline.
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
@@ -419,7 +419,7 @@ The criteria only affects the display. It does not delete items from the table.
 - To delete selected criteria, click the red X beside each criterion.
 - To delete all criteria, click the **Clear All** button.
 
-## RELATED LINKS
+## Related links
 
 [Out-File](Out-File.md)
 

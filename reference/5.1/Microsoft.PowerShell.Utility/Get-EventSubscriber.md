@@ -10,10 +10,10 @@ title: Get-EventSubscriber
 
 # Get-EventSubscriber
 
-## SYNOPSIS
+## Synopsis
 Gets the event subscribers in the current session.
 
-## SYNTAX
+## Syntax
 
 ### BySource (Default)
 
@@ -27,13 +27,13 @@ Get-EventSubscriber [[-SourceIdentifier] <String>] [-Force] [<CommonParameters>]
 Get-EventSubscriber [-SubscriptionId] <Int32> [-Force] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Get-EventSubscriber** cmdlet gets the event subscribers in the current session.
 
 When you subscribe to an event by using a Register event cmdlet, an event subscriber is added to your Windows PowerShell session, and the events to which you subscribed are added to your event queue whenever they are raised.
 To cancel an event subscription, delete the event subscriber by using the Unregister-Event cmdlet.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the event subscriber for a timer event
 
@@ -139,7 +139,7 @@ In this case, the commands show the random number that is being generated when t
 
 For more information about modules, see [about_Modules](../Microsoft.PowerShell.Core/About/about_Modules.md).
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 Indicates that this cmdlet gets all event subscribers, including subscribers for events that are hidden by using the *SupportEvent* parameter of Register-ObjectEvent, Register-WmiEvent, and Register-EngineEvent.
@@ -193,17 +193,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSEventSubscriber
 **Get-EventSubscriber** returns an object that represents each event subscriber.
 
-## NOTES
+## Notes
 
 * The New-Event cmdlet, which creates a custom event, does not generate a subscriber. Therefore, the **Get-EventSubscriber** cmdlet will not find a subscriber object for these events. However, if you use the Register-EngineEvent cmdlet to subscribe to a custom event (in order to forward the event or to specify an action), **Get-EventSubscriber** will find the subscriber that **Register-EngineEvent** generates.
 
@@ -212,7 +212,7 @@ If you close the current session, the event queue is discarded and the event sub
 
 *
 
-## RELATED LINKS
+## Related links
 
 [Get-Event](Get-Event.md)
 

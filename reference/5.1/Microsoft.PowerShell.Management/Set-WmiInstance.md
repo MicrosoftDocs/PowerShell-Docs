@@ -10,10 +10,10 @@ title: Set-WmiInstance
 
 # Set-WmiInstance
 
-## SYNOPSIS
+## Synopsis
 Creates or updates an instance of an existing Windows Management Instrumentation (WMI) class.
 
-## SYNTAX
+## Syntax
 
 ### class (Default)
 
@@ -67,7 +67,7 @@ Set-WmiInstance [-PutType <PutType>] [-AsJob] [-Impersonation <ImpersonationLeve
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The `Set-WmiInstance` cmdlet creates or updates an instance of an existing Windows Management Instrumentation (WMI) class.
 The created or updated instance is written to the WMI repository.
 
@@ -76,7 +76,7 @@ The CIM cmdlets comply with WS-Management (WSMan) standards and with the Common 
 this enables cmdlets to use the same techniques to manage Windows-based computers and those running other operating systems.
 Instead of using `Set-WmiInstance`, consider using the [Set-CimInstance](/powershell/module/cimcmdlets/set-ciminstance) or [New-CimInstance](/powershell/module/cimcmdlets/new-ciminstance) cmdlets.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Set WMI logging level
 
@@ -205,7 +205,7 @@ The command passes the property to be set and the value, together considered a v
 The parameter takes a hash table that is defined by the @{property = value} construction.
 The returned class information reflects the new value.
 
-## PARAMETERS
+## Parameters
 
 ### -Arguments
 Specifies the name of the property to be changed and the new value for that property.
@@ -544,19 +544,19 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 This cmdlet does not accept input.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Get-WmiObject](Get-WmiObject.md)
 

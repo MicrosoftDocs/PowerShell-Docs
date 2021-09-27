@@ -10,10 +10,10 @@ title: about Execution Policies
 
 # about_Execution_Policies
 
-## Short Description
+## Short description
 Describes the PowerShell execution policies and explains how to manage them.
 
-## Long Description
+## Long description
 
 PowerShell's execution policy is a safety feature that controls the conditions
 under which PowerShell loads configuration files and runs scripts. This feature
@@ -387,7 +387,7 @@ resulting in failure.
 Using an execution policy of **ByPass** or **AllSigned** does not require a
 Zone check which avoids the problem.
 
-## See Also
+## See also
 
 [about_Environment_Variables](about_Environment_Variables.md)
 

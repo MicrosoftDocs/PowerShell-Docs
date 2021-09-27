@@ -9,10 +9,10 @@ title: Get-Event
 ---
 # Get-Event
 
-## SYNOPSIS
+## Synopsis
 Gets the events in the event queue.
 
-## SYNTAX
+## Syntax
 
 ### BySource (Default)
 
@@ -26,7 +26,7 @@ Get-Event [[-SourceIdentifier] <String>] [<CommonParameters>]
 Get-Event [-EventIdentifier] <Int32> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Event` cmdlet gets events in the PowerShell event queue for the current session. You can
 get all events or use the **EventIdentifier** or **SourceIdentifier** parameter to specify the
@@ -39,7 +39,7 @@ PowerShell exits. You can use `Get-Event` or `Wait-Event` to get the events.
 This cmdlet does not get events from the Event Viewer logs. To get those events, use `Get-WinEvent`
 or `Get-EventLog`.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all events
 
@@ -103,7 +103,7 @@ PS C:\> Get-Event -EventIdentifier 2
 
 This command gets the event with an event identifier of 2.
 
-## PARAMETERS
+## Parameters
 
 ### -EventIdentifier
 
@@ -145,20 +145,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSEventArgs
 
 `Get-Event` returns a **PSEventArgs** object for each event. To see a description of this object,
 type `Get-Help Get-Event -Full` and see the Notes section of the help topic.
 
-## NOTES
+## Notes
 
 No event sources available on the Linux or macOS platforms.
 
@@ -202,7 +202,7 @@ The `Get-Event` cmdlet returns a **PSEventArgs** object
   register an event. In the value of the **Action** parameter, the **MessageData** property of the
   `$Event` automatic variable contains this value.
 
-## RELATED LINKS
+## Related links
 
 [New-Event](New-Event.md)
 

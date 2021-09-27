@@ -10,17 +10,17 @@ title: Update-FormatData
 
 # Update-FormatData
 
-## SYNOPSIS
+## Synopsis
 Updates the formatting data in the current session.
 
-## SYNTAX
+## Syntax
 
 ```
 Update-FormatData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Update-FormatData` cmdlet reloads the formatting data from formatting files into the current
 session. This cmdlet lets you update the formatting data without restarting PowerShell.
@@ -38,7 +38,7 @@ added or changed a formatting file, but do not want to interrupt the session.
 
 For more information about formatting files in PowerShell, see [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Reload previously loaded formatting files
 
@@ -86,7 +86,7 @@ The second command uses the `Update-FormatData` cmdlet to reload the formatting 
 NewFiles.format.ps1xml file was previously loaded, `Update-FormatData` automatically reloads it
 without using parameters.
 
-## PARAMETERS
+## Parameters
 
 ### -AppendPath
 
@@ -175,26 +175,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains the append path to `Update-FormatData`.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 The cmdlet does not return any output.
 
-## NOTES
+## Notes
 
 - `Update-FormatData` also updates the formatting data for commands in the session that were
   imported from modules. If the formatting file for a module changes, you can run an
   `Update-FormatData` command to update the formatting data for imported commands. You do not need
   to import the module again.
 
-## RELATED LINKS
+## Related links
 
 [Get-FormatData](Get-FormatData.md)
 

@@ -10,16 +10,16 @@ title: Add-PSSnapin
 
 # Add-PSSnapin
 
-## SYNOPSIS
+## Synopsis
 Adds one or more Windows PowerShell snap-ins to the current session.
 
-## SYNTAX
+## Syntax
 
 ```
 Add-PSSnapin [-Name] <String[]> [-PassThru] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Add-PSSnapin` cmdlet adds registered Windows PowerShell snap-ins to the current session. After
 the snap-ins are added, you can use the cmdlets and providers that the snap-ins support in the
@@ -33,7 +33,7 @@ packaged in modules. The exception is **Microsoft.PowerShell.Core**, which is a 
 By default, only the **Microsoft.PowerShell.Core** snap-in is added to the session. Modules are
 imported automatically on first use and you can use the Import-Module cmdlet to import them.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Add snap-ins
 
@@ -100,7 +100,7 @@ This example demonstrates the process of registering a snap-in on your system an
 your session. It uses ManagementFeatures, a fictitious snap-in implemented in a file that is named
 ManagementCmdlets.dll.
 
-## PARAMETERS
+## Parameters
 
 ### -Name
 
@@ -145,19 +145,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None or System.Management.Automation.PSSnapInInfo
 
 This cmdlet returns a PSSnapInInfo object that represents the snap-in if you specify the
 **PassThru** parameter. Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 - Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell
   are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style
@@ -183,7 +183,7 @@ This cmdlet returns a PSSnapInInfo object that represents the snap-in if you spe
   compatible with the current version of Windows PowerShell. If the snap-in fails the version check,
   Windows PowerShell reports an error.
 
-## RELATED LINKS
+## Related links
 
 [Get-PSSnapin](Get-PSSnapin.md)
 

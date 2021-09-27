@@ -9,11 +9,11 @@ title: about Path Syntax
 
 # about_Path_Syntax
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the full and relative path name formats in  PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 All items in a data store accessible through a PowerShell provider can be
 uniquely identified by their path names. A path name is a combination of the
@@ -111,6 +111,6 @@ is in a directory named C:\\Techdocs\\Feb. The path name for the first file
 (C:\\Techdocs\\Feb\\Results.txt) allow you to clearly distinguish between the
 two files.
 
-## SEE ALSO
+## See also
 
 [about_Locations](about_Locations.md)

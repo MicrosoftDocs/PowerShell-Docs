@@ -10,10 +10,10 @@ title: Set-Service
 
 # Set-Service
 
-## SYNOPSIS
+## Synopsis
 Starts, stops, and suspends a service, and changes its properties.
 
-## SYNTAX
+## Syntax
 
 ### Name (Default)
 
@@ -31,14 +31,14 @@ Set-Service [-ComputerName <String[]>] [-DisplayName <String>] [-Description <St
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-Service` cmdlet changes the properties of a service such as the **Status**,
 **Description**, **DisplayName**, and **StartupType**. `Set-Service` can start, stop, suspend, or
 pause a service. To identify a service, enter its service name or submit a service object. Or, send
 a service name or service object down the pipeline to `Set-Service`.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Change a display name
 
@@ -151,7 +151,7 @@ Set-Service -InputObject $S -Status Stopped
 in the variable, `$S`. `Set-Service` uses the **InputObject** parameter and specifies the object
 stored `$S`. The **Status** parameter sets the service to **Stopped**.
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 
@@ -353,21 +353,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.ServiceProcess.ServiceController, System.String
 
 You can use the pipeline to send a service object or a string that contains a service name to
 `Set-Service`.
 
-## OUTPUTS
+## Outputs
 
 ### System.ServiceProcess.ServiceController
 
 By default, `Set-Service` doesn't return any objects. Use the **PassThru** parameter to output a
 **ServiceController** object.
 
-## NOTES
+## Notes
 
 `Set-Service` requires elevated permissions. Use the **Run as administrator** option.
 
@@ -377,7 +377,7 @@ a command doesn't work correctly, you might not have the required permissions.
 To find a service's service name or display name, use `Get-Service`. The service names are in the
 **Name** column and the display names are in the **DisplayName** column.
 
-## RELATED LINKS
+## Related links
 
 [Get-Service](Get-Service.md)
 

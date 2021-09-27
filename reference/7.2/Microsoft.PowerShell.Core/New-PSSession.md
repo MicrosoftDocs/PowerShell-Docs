@@ -1018,7 +1018,7 @@ You can pipe a string, URI, or session object to this cmdlet.
   more information about how to set up PowerShell SSH remoting, see
   [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
-## Related Links
+## Related links
 
 [Connect-PSSession](Connect-PSSession.md)
 

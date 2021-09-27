@@ -10,17 +10,17 @@ title: Start-Transaction
 
 # Start-Transaction
 
-## SYNOPSIS
+## Synopsis
 Starts a transaction.
 
-## SYNTAX
+## Syntax
 
 ```
 Start-Transaction [-Timeout <Int32>] [-Independent] [-RollbackPreference <RollbackSeverity>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Start-Transaction** cmdlet starts a transaction, which is a series of commands that are managed as a unit.
 A transaction can be completed, or committed.
 Alternatively, it can be completely undone, or rolled back, so that any data changed by the transaction is restored to its original state.
@@ -42,7 +42,7 @@ If you start a new, independent transaction while a transaction is in progress, 
 **Start-Transaction** cmdlet is one of a set of cmdlets that support the transactions feature in Windows PowerShell.
 For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Start and roll back a transaction
 
@@ -278,7 +278,7 @@ If the transaction is not finished when the time-out expires, it is rolled back 
 
 When the time-out expires, you are not notified, but the **Status** property of the transaction object is set to RolledBack and commands that use the *UseTransaction* parameter fail.
 
-## PARAMETERS
+## Parameters
 
 ### -Independent
 Indicates that this cmdlet starts a transaction that is independent of any transactions in progress.
@@ -385,19 +385,19 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Complete-Transaction](Complete-Transaction.md)
 

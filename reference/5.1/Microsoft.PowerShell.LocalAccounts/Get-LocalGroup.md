@@ -10,10 +10,10 @@ title: Get-LocalGroup
 
 # Get-LocalGroup
 
-## SYNOPSIS
+## Synopsis
 Gets the local security groups.
 
-## SYNTAX
+## Syntax
 
 ### Default (Default)
 
@@ -27,7 +27,7 @@ Get-LocalGroup [[-Name] <String[]>] [<CommonParameters>]
 Get-LocalGroup [[-SID] <SecurityIdentifier[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Get-LocalGroup** cmdlet gets local security groups in Security Account Manager.
 This cmdlet gets default built-in groups and local security groups that you create.
 
@@ -35,7 +35,7 @@ This cmdlet gets default built-in groups and local security groups that you crea
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the Administrators group
 
@@ -49,7 +49,7 @@ Administrators Administrators have complete and unrestricted access to the compu
 This command gets the local Administrators group.
 The command displays properties of the group in the console.
 
-## PARAMETERS
+## Parameters
 
 ### -Name
 Specifies an array of names of security groups that this cmdlet gets.
@@ -85,17 +85,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String, System.Security.Principal.SecurityIdentifier
 You can pipe a string or a SID to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup
 This cmdlet returns a local group.
 
-## NOTES
+## Notes
 
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
@@ -106,7 +106,7 @@ This cmdlet returns a local group.
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
 
-## RELATED LINKS
+## Related links
 
 [New-LocalGroup](New-LocalGroup.md)
 

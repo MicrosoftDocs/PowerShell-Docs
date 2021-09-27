@@ -10,10 +10,10 @@ title: Update-Help
 
 # Update-Help
 
-## SYNOPSIS
+## Synopsis
 Downloads and installs the newest help files on your computer.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -31,7 +31,7 @@ Update-Help [[-Module] <String[]>] [-FullyQualifiedModule <ModuleSpecification[]
  [-UseDefaultCredentials] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Update-Help` cmdlet downloads the newest help files for PowerShell modules and installs them on
 your computer. You need not restart PowerShell to make the change effective. You can use the
@@ -81,7 +81,7 @@ The `Update-Help` cmdlet was introduced in Windows PowerShell 3.0.
 > To update help for modules in the `$PSHOME` directory,
 > start Windows PowerShell ISE by using the Run as administrator option.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Update help files for all modules
 
@@ -273,7 +273,7 @@ ADDSDeployment                          en-US                                   
 ADFS                                    en-US                                   3.0.0.0
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -556,7 +556,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.IO.DirectoryInfo
 
@@ -566,13 +566,13 @@ You can pipe a directory path to `Update-Help`.
 
 You can pipe a module object from the `Get-Module` cmdlet to `Update-Help`.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 `Update-Help` doesn't generate any output.
 
-## NOTES
+## Notes
 
 To update help for the PowerShell Core modules, that contain the commands that are installed with
 PowerShell, or any module in the `$PSHOME\Modules` directory, start PowerShell with the option to
@@ -619,7 +619,7 @@ that you author, see [Supporting Updatable Help](/powershell/scripting/developer
 The `Update-Help` and `Save-Help` cmdlets are not supported on Windows Preinstallation Environment
 (Windows PE).
 
-## RELATED LINKS
+## Related links
 
 [Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
 

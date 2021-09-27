@@ -9,10 +9,10 @@ title: ConvertFrom-SddlString
 ---
 # ConvertFrom-SddlString
 
-## SYNOPSIS
+## Synopsis
 Converts a SDDL string to a custom object.
 
-## SYNTAX
+## Syntax
 
 ### All
 
@@ -20,7 +20,7 @@ Converts a SDDL string to a custom object.
 ConvertFrom-SddlString [-Sddl] <String> [-Type <AccessRightTypeNames>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -33,7 +33,7 @@ the access rights specified in a SDDL string.
 
 This cmdlet was introduced in PowerShell 5.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Convert file system access rights SDDL to a PSCustomObject
 
@@ -88,7 +88,7 @@ It doesn't use the `-Type` parameter, so the access rights shown are for file sy
 The third command uses the `ConvertFrom-SddlString` cmdlet with the `-Type` parameter, so the access
 rights returned are for registry.
 
-## PARAMETERS
+## Parameters
 
 ### -Sddl
 
@@ -144,18 +144,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a SDDL string to `ConvertFrom-SddlString`.
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
-## RELATED LINKS
+## Related links
 
 [Security Descriptor Definition Language](/windows/win32/secauthz/security-descriptor-definition-language)

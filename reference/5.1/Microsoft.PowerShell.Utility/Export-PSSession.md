@@ -507,7 +507,7 @@ The module that `Export-PSSession` creates might include a formatting file, even
 does not import formatting data. If the command does not import formatting data, any formatting
 files that are created will not contain formatting data.
 
-## Related Links
+## Related links
 
 [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)
 

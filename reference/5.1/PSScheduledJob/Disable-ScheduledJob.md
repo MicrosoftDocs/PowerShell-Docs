@@ -10,10 +10,10 @@ title: Disable-ScheduledJob
 
 # Disable-ScheduledJob
 
-## SYNOPSIS
+## Synopsis
 Disables a scheduled job.
 
-## SYNTAX
+## Syntax
 
 ### Definition (Default)
 
@@ -34,7 +34,7 @@ Disable-ScheduledJob [-Id] <Int32> [-PassThru] [-WhatIf] [-Confirm] [<CommonPara
 Disable-ScheduledJob [-Name] <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Disable-ScheduledJob** cmdlet temporarily disables scheduled jobs.
 Disabling preserves all job properties and does not disable the job triggers, but it prevents the scheduled jobs from starting automatically when triggered.
 You can start a disabled scheduled job by using the Start-Job cmdlet or use a disabled scheduled job as a template.
@@ -49,7 +49,7 @@ Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or s
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Disable a scheduled job
 
@@ -128,7 +128,7 @@ This examples shows how to disable a scheduled job by using its global identifie
 The value of the GlobalID property of a scheduled job is a unique identifier (GUID).
 Use the GlobalID value when precision is required, such as when you are disabling scheduled jobs on multiple computers.
 
-## PARAMETERS
+## Parameters
 
 ### -Id
 Disables the scheduled job with the specified identification number (ID).
@@ -230,22 +230,22 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 You can pipe a scheduled job to **Disable-ScheduledJob**.
 
-## OUTPUTS
+## Outputs
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 If you use the **Passthru** parameter, **Disable-ScheduledJob** returns the scheduled job that was disabled.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * **Disable-ScheduledJob** does not generate warnings or errors if you use it to disable a scheduled job that is already disabled.
 
-## RELATED LINKS
+## Related links
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

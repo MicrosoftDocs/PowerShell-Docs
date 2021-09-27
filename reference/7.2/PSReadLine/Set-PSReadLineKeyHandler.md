@@ -9,10 +9,10 @@ title: Set-PSReadLineKeyHandler
 ---
 # Set-PSReadLineKeyHandler
 
-## SYNOPSIS
+## Synopsis
 Binds keys to user-defined or PSReadLine key handler functions.
 
-## SYNTAX
+## Syntax
 
 ### ScriptBlock
 
@@ -28,13 +28,13 @@ Set-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [-Function] <Str
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-PSReadLineKeyHandler` cmdlet customizes the result when a key or sequence of keys is
 pressed. With user-defined key bindings, you can do almost anything that is possible from within a
 PowerShell script.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Bind the arrow key to a function
 
@@ -58,7 +58,7 @@ Set-PSReadLineKeyHandler -Chord Ctrl+B -ScriptBlock {
 }
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -BriefDescription
 
@@ -184,21 +184,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
 

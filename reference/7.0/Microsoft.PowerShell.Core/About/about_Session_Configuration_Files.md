@@ -8,12 +8,12 @@ title: about Session Configuration Files
 ---
 # about_Session_Configuration_Files
 
-## SHORT DESCRIPTION
+## Short description
 Describes session configuration files, which are used in a session
 configuration (also known as an "endpoint") to define the environment of
 sessions that use the session configuration.
 
-## LONG DESCRIPTION
+## Long description
 
 A "session configuration file" is a text file with a .pssc file name extension
 that contains a hash table of session configuration properties and values. You
@@ -366,7 +366,7 @@ use the Get-PSSessionCapability cmdlet. This cmdlet enables you to determine
 the commands and environment available to specific users in specific
 endpoints.
 
-## NOTES
+## Notes
 
 Session configurations also support a type of session known as an "empty"
 session. An Empty session type enables you to create custom sessions with
@@ -375,7 +375,7 @@ empty session, the session is limited to expressions and might not be of any
 practical use. The SessionType property tells you whether or not you are
 working with an empty session.
 
-## SEE ALSO
+## See also
 
 [about_Session_Configurations](about_Session_Configurations.md)
 

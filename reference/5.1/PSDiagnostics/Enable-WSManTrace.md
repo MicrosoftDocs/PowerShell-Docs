@@ -9,16 +9,16 @@ title: Enable-WSManTrace
 ---
 # Enable-WSManTrace
 
-## SYNOPSIS
+## Synopsis
 Start a logging session with the WSMan providers enabled.
 
-## SYNTAX
+## Syntax
 
 ```
 Enable-WSManTrace [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 This cmdlet starts a logging session with the WSMan providers enabled. The following event providers are enabled:
 
 - Event Forwarding
@@ -36,7 +36,7 @@ This cmdlet uses the `Start-Trace` cmdlet.
 
 You must run this cmdlet from an elevated PowerShell session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Start a WSMan logging session.
 
@@ -44,7 +44,7 @@ You must run this cmdlet from an elevated PowerShell session.
 Enable-WSManTrace
 ```
 
-## PARAMETERS
+## Parameters
 
 ### CommonParameters
 
@@ -53,17 +53,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
-## OUTPUTS
+## Outputs
 
 ### System.Object
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Event Tracing](/windows/desktop/ETW/event-tracing-portal)
 

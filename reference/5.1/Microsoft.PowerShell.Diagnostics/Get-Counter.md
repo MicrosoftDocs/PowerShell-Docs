@@ -10,10 +10,10 @@ title: Get-Counter
 
 # Get-Counter
 
-## SYNOPSIS
+## Synopsis
 Gets performance counter data from local and remote computers.
 
-## SYNTAX
+## Syntax
 
 ### GetCounterSet (Default)
 
@@ -28,7 +28,7 @@ Get-Counter [[-Counter] <String[]>] [-SampleInterval <Int32>] [-MaxSamples <Int6
 Get-Counter [-ListSet] <String[]> [-ComputerName <String[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Counter` cmdlet gets performance counter data directly from the performance monitoring
 instrumentation in the Windows family of operating systems. `Get-Counter` gets performance data from
@@ -47,7 +47,7 @@ PowerShell with the **Run as administrator** option.
 > performance objects, counters, and instances. The names will be different on a system that uses
 > another language. Use the `Get-Counter -ListSet` command to see the localized names.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the counter set list
 
@@ -447,7 +447,7 @@ objects down the pipeline. `Sort-Object` uses the **Property** parameter to sort
 the columns for the output. The **AutoSize** parameter adjusts the column widths to minimize
 truncation.
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 
@@ -601,13 +601,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String[]
 
 `Get-Counter` accepts pipeline input for counter paths and counter set names.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.GetCounter.CounterSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample
 
@@ -620,7 +620,7 @@ that are output are as follows:
 
 **CounterSamples** property: **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample**
 
-## NOTES
+## Notes
 
 If no parameters are specified, `Get-Counter` gets one sample for each specified performance
 counter. Use the **MaxSamples** and **Continuous** parameters to get more samples.
@@ -631,7 +631,7 @@ increase the interval.
 The **MaxSamples** and **SampleInterval** values apply to all the counters on each computer in the
 command. To set different values for different counters, enter separate `Get-Counter` commands.
 
-## RELATED LINKS
+## Related links
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 

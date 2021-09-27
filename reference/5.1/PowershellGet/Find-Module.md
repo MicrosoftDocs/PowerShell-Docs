@@ -10,10 +10,10 @@ title: Find-Module
 
 # Find-Module
 
-## SYNOPSIS
+## Synopsis
 Finds modules in a repository that match specified criteria.
 
-## SYNTAX
+## Syntax
 
 ### All
 
@@ -25,7 +25,7 @@ Find-Module [[-Name] <string[]>] [-MinimumVersion <string>] [-MaximumVersion <st
  [-Credential <pscredential>] [-AllowPrerelease] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Find-Module` cmdlet finds modules in a repository that match the specified criteria.
 `Find-Module` returns a **PSRepositoryItemInfo** object for each module it finds. The objects can be
@@ -53,7 +53,7 @@ The following examples use the [PowerShell Gallery](https://www.powershellgaller
 registered repository. `Get-PSRepository` displays the registered repositories. If you have multiple
 registered repositories, use the `-Repository` parameter to specify the repository's name.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Find a module by name
 
@@ -215,7 +215,7 @@ Version    Name              Repository           Description
 
 The `Find-Module` cmdlet uses the **Filter** parameter to search the repository for **AppDomain**.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowPrerelease
 
@@ -517,16 +517,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
 ### PSRepositoryItemInfo
 
 `Find-Module` creates **PSRepositoryItemInfo** objects that can be sent down the pipeline to cmdlets
 such as `Install-Module`.
 
-## NOTES
+## Notes
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -540,7 +540,7 @@ such as `Install-Module`.
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## RELATED LINKS
+## Related links
 
 [Get-PSRepository](Get-PSRepository.md)
 

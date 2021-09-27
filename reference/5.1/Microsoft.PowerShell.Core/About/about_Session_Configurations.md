@@ -8,11 +8,11 @@ title: about Session Configurations
 ---
 # about_Session_Configurations
 
-## SHORT DESCRIPTION
+## Short description
 Describes session configurations, which determine the users who can connect to
 the computer remotely and the commands they can run.
 
-## LONG DESCRIPTION
+## Long description
 
 A session configuration, also known as an "endpoint" is a group of settings on
 the local computer that define the environment for the PowerShell sessions that
@@ -327,7 +327,7 @@ about_Preference_Variables.
 about_Endpoints
 about_SessionConfigurations
 
-## SEE ALSO
+## See also
 
 [about_Preference_Variables](about_Preference_Variables.md)
 

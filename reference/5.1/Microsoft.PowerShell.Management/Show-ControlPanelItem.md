@@ -9,10 +9,10 @@ title: Show-ControlPanelItem
 ---
 # Show-ControlPanelItem
 
-## SYNOPSIS
+## Synopsis
 Opens control panel items.
 
-## SYNTAX
+## Syntax
 
 ### RegularName (Default)
 
@@ -32,7 +32,7 @@ Show-ControlPanelItem -CanonicalName <String[]> [<CommonParameters>]
 Show-ControlPanelItem [[-InputObject] <ControlPanelItem[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Show-ControlPanelItem` cmdlet opens control panel items on the local computer. You can use it
 to open control panel items by name, category, or description, even on systems that do not have a
@@ -46,7 +46,7 @@ only control panel items that can open without these components.
 This cmdlet was introduced in Windows PowerShell 3.0 and works on Windows 8, Windows Server 2012,
 and higher versions.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Show a control panel item
 
@@ -83,7 +83,7 @@ This method is an alternative to using a `Show-ControlPanelItem` command.
 > In PowerShell, you can omit the .cpl file extension for control panel files because it's included
 > in the value of the `$env:PathExt` environment variable.
 
-## PARAMETERS
+## Parameters
 
 ### -CanonicalName
 
@@ -145,20 +145,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String, Microsoft.PowerShell.Commands.ControlPanelItem
 
 You can pipe a name or control panel item object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not return any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Get-ControlPanelItem](Get-ControlPanelItem.md)

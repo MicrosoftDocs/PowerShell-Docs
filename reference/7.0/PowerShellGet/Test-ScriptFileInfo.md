@@ -9,10 +9,10 @@ title: Test-ScriptFileInfo
 ---
 # Test-ScriptFileInfo
 
-## SYNOPSIS
+## Synopsis
 Validates a comment block for a script.
 
-## SYNTAX
+## Syntax
 
 ### PathParameterSet (Default)
 
@@ -26,12 +26,12 @@ Test-ScriptFileInfo [-Path] <String> [<CommonParameters>]
 Test-ScriptFileInfo -LiteralPath <String> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Test-ScriptFileInfo** cmdlet validates the comment block at the beginning of a script that will be published with the Publish-Script cmdlet.
 If the comment block has an error, this cmdlet returns information about where the error is located or how to correct it.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Test a script file
 
@@ -90,7 +90,7 @@ At line:1 char:1
 
 This command tests the script file Hello-World.ps1, which has no metadata associated with it.
 
-## PARAMETERS
+## Parameters
 
 ### -LiteralPath
 
@@ -134,17 +134,17 @@ Accept wildcard characters: True
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
-## OUTPUTS
+## Outputs
 
 ### System.Object
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [New-ScriptFileInfo](New-ScriptFileInfo.md)
 

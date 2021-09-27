@@ -10,10 +10,10 @@ title: Get-ScheduledJob
 
 # Get-ScheduledJob
 
-## SYNOPSIS
+## Synopsis
 Gets scheduled jobs on the local computer.
 
-## SYNTAX
+## Syntax
 
 ### DefinitionId (Default)
 
@@ -27,7 +27,7 @@ Get-ScheduledJob [[-Id] <Int32[]>] [<CommonParameters>]
 Get-ScheduledJob [-Name] <String[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Get-ScheduledJob** cmdlet gets scheduled jobs on the local computer.
 **Get-ScheduledJob** gets only scheduled jobs that are created by the current user using the Register-ScheduledJob cmdlet.
 
@@ -44,7 +44,7 @@ Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or s
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all scheduled jobs
 
@@ -81,7 +81,7 @@ PS C:\> Get-ScheduledJob DailyBackup, WeeklyBackup | Get-JobTrigger
 This command gets the job triggers of the DailyBackup and WeeklyBackup scheduled jobs.
 It uses the **Get-ScheduledJob** cmdlet to get the scheduled jobs and the Get-JobTrigger cmdlet to get the job triggers of the scheduled jobs.
 
-## PARAMETERS
+## Parameters
 
 ### -Id
 Gets only the scheduled jobs with the specified identification number (ID).
@@ -121,22 +121,22 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to **Get-ScheduledJob**.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
-## NOTES
+## Notes
 
 * Each scheduled job is saved in a subdirectory of the $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory on the local computer. The subdirectory is named for the scheduled job and contains the XML file for the scheduled job and records of its execution history. For more information about scheduled jobs on disk, see [about_Scheduled_Jobs_Advanced](About/about_Scheduled_Jobs_Advanced.md).
 * Scheduled jobs that you create in Windows PowerShell appear in Task Scheduler in the Task Scheduler Library\Microsoft\Windows\PowerShell\ScheduledJobs folder. You can use Task Scheduler to view and edit the scheduled job.
 * You can use Task Scheduler, the SchTasks.exe command-line tool, and the Task Scheduler cmdlets to manage scheduled jobs that you create with the Scheduled Job cmdlets. However, you cannot use the Scheduled Job cmdlets to manage tasks that you create in Task Scheduler.
 
-## RELATED LINKS
+## Related links
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

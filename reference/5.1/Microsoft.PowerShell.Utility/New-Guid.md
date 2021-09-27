@@ -10,20 +10,20 @@ title: New-Guid
 
 # New-Guid
 
-## SYNOPSIS
+## Synopsis
 Creates a GUID.
 
-## SYNTAX
+## Syntax
 
 ```
 New-Guid [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **New-Guid** cmdlet creates a random globally unique identifier (GUID).
 If you need a unique ID in a script, you can create a GUID, as needed.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a GUID
 
@@ -37,18 +37,18 @@ Guid
 This command creates a random GUID.
 Alternatively, you could store the output of this cmdlet in a variable to use elsewhere in a script.
 
-## PARAMETERS
+## Parameters
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
 ### System.Guid
 This cmdlet returns a GUID.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links

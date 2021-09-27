@@ -9,10 +9,10 @@ title: Wait-Process
 ---
 # Wait-Process
 
-## SYNOPSIS
+## Synopsis
 Waits for the processes to be stopped before accepting more input.
 
-## SYNTAX
+## Syntax
 
 ### Name (Default)
 
@@ -32,7 +32,7 @@ Wait-Process [-Id] <Int32[]> [[-Timeout] <Int32>] [<CommonParameters>]
 Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Wait-Process` cmdlet waits for one or more running processes to be stopped before accepting
 input. In the PowerShell console, this cmdlet suppresses the command prompt until the processes are
@@ -41,7 +41,7 @@ stopped. You can specify a process by process name or process ID (PID), or pipe 
 
 `Wait-Process` works only on processes running on the local computer.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Stop a process and wait
 
@@ -88,7 +88,7 @@ PS C:\> Wait-Process -Name outlook, winword -Timeout 30
 This command waits 30 seconds for the Outlook and Winword processes to stop. If both processes are
 not stopped, the cmdlet displays a non-terminating error and the command prompt.
 
-## PARAMETERS
+## Parameters
 
 ### -Id
 
@@ -167,19 +167,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Diagnostics.Process
 
 You can pipe a process object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 - This cmdlet uses the **WaitForExit** method of the **System.Diagnostics.Process** class.
 
@@ -187,7 +187,7 @@ This cmdlet does not generate any output.
   `Start-Process -Wait` waits for the process tree (the process and all its descendants) to exit
   before returning control.
 
-## RELATED LINKS
+## Related links
 
 [Debug-Process](Debug-Process.md)
 

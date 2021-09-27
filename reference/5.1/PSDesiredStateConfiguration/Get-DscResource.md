@@ -9,16 +9,16 @@ title: Get-DscResource
 ---
 # Get-DscResource
 
-## SYNOPSIS
+## Synopsis
 Gets Desired State Configuration (DSC) resources present on the computer.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-DscResource [[-Name] <String[]>] [[-Module] <Object>] [-Syntax] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-DscResource` cmdlet retrieves the PowerShell DSC resources present on the computer. This
 cmdlet discovers only the resources installed in the PSModulePath. It shows the details about
@@ -26,7 +26,7 @@ built-in and custom providers, which are created by the user. This cmdlet also s
 composite resources, which are other configurations that are packaged as module or created at run
 time in the session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all resources on the local computer
 
@@ -85,7 +85,7 @@ Get-DscResource -Module @{ModuleName='xHyper-V';RequiredVersion='3.0.0.0'}
 
 This command gets all the resources from xHyper-V module with version 3.0.0.0.
 
-## PARAMETERS
+## Parameters
 
 ### -Module
 
@@ -143,23 +143,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String[]
 
 ### System.Object
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.DesiredStateConfiguration.DscResourceInfo[]
 
 ### string[]
 
-## NOTES
+## Notes
 
 - `Get-DscResource` does not find Class based DSC resources in PowerShell versions below 7.0.
 
-## RELATED LINKS
+## Related links
 
 [PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview)
 

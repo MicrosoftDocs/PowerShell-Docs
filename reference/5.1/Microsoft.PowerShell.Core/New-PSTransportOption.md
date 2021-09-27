@@ -10,11 +10,11 @@ title: New-PSTransportOption
 
 # New-PSTransportOption
 
-## SYNOPSIS
+## Synopsis
 
 Creates an object that contains advanced options for a session configuration.
 
-## SYNTAX
+## Syntax
 
 ```
 New-PSTransportOption [-MaxIdleTimeoutSec <Int32>] [-ProcessIdleTimeoutSec <Int32>] [-MaxSessions <Int32>]
@@ -23,7 +23,7 @@ New-PSTransportOption [-MaxIdleTimeoutSec <Int32>] [-ProcessIdleTimeoutSec <Int3
  [-OutputBufferingMode <OutputBufferingMode>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **New-PSTransportOption** cmdlet creates an object that contains transport options for session configurations.
 You can use the object as the value of the *TransportOption* parameter of cmdlets that create or change a session configuration, such as the Register-PSSessionConfiguration and Set-PSSessionConfiguration cmdlets.
@@ -45,7 +45,7 @@ For more information about session configurations, see [about_Session_Configurat
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Generate a default transport option
 
@@ -138,7 +138,7 @@ Runspace               : System.Management.Automation.RemoteRunspace
 
 This command shows the effect of setting a transport option in a session configuration on the sessions that use the session configuration.
 
-## PARAMETERS
+## Parameters
 
 ### -IdleTimeoutSec
 
@@ -360,21 +360,21 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.WSManConfigurationOption
 
-## NOTES
+## Notes
 
 - The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.
 
-## RELATED LINKS
+## Related links
 
 [New-PSSession](New-PSSession.md)
 

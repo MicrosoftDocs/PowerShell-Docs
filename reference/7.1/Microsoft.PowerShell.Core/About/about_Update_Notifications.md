@@ -9,12 +9,12 @@ title: about Update Notifications
 
 # about_Update_Notifications
 
-## SHORT DESCRIPTION
+## Short description
 
 Notifies users on startup of PowerShell that a new version of PowerShell has
 been released.
 
-## LONG DESCRIPTION
+## Long description
 
 Beginning with PowerShell 7.0, PowerShell uses update notifications to alert
 users to the existence of updates to PowerShell. Once per day, PowerShell

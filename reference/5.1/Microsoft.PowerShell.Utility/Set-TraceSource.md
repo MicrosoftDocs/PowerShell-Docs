@@ -341,7 +341,7 @@ this cmdlet does not generate any output.
   module are loaded automatically when the component is in use, and they appear in the output of
   `Get-TraceSource`.
 
-## Related Links
+## Related links
 
 [Get-TraceSource](Get-TraceSource.md)
 

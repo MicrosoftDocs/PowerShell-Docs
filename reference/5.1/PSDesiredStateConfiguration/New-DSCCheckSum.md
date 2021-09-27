@@ -10,22 +10,22 @@ title: New-DscChecksum
 
 # New-DscChecksum
 
-## SYNOPSIS
+## Synopsis
 Creates checksum files for DSC documents and DSC resources.
 
-## SYNTAX
+## Syntax
 
 ```
 New-DscChecksum [-Path] <String[]> [[-OutPath] <String>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **New-DSCCheckSum** cmdlet generates checksum files for Windows PowerShell Desired State Configuration (DSC) documents and compressed DSC resources.
 This cmdlet generates a checksum file for each configuration and resource to be used in pull mode.
 The DSC service uses the checksums to make sure that the correct configuration and resources exist on the target node.
 Place the checksums together with the associated DSC documents and compressed DSC resources in the DSC service store.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create checksum files for all configurations in a specific path
 
@@ -45,7 +45,7 @@ PS C:\> New-DscCheckSum -Path "C:\DSC\Configurations\" -Force
 This command creates new checksum files for all configurations in the path C:\DSC\Configurations.
 Specifying the *Force* parameter causes the command to overwrite any checksum files that already exist.
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 Indicates that the cmdlet overwrites the specified output file if it already exists.
@@ -126,12 +126,12 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/dscforengineers)

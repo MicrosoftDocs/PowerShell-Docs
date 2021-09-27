@@ -8,11 +8,11 @@ title: about Try Catch Finally
 ---
 # about_Try_Catch_Finally
 
-## SHORT DESCRIPTION
+## Short description
 Describes how to use the `Try`, `Catch`, and `Finally` blocks to handle
 terminating errors.
 
-## LONG DESCRIPTION
+## Long description
 
 Use `Try`, `Catch`, and `Finally` blocks to respond to or handle terminating
 errors in scripts. The `Trap` statement can also be used to handle terminating

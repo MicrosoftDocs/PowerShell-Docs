@@ -10,22 +10,22 @@ title: Remove-PSSnapin
 
 # Remove-PSSnapin
 
-## SYNOPSIS
+## Synopsis
 Removes Windows PowerShell snap-ins from the current session.
 
-## SYNTAX
+## Syntax
 
 ```
 Remove-PSSnapin [-Name] <String[]> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Remove-PSSnapin** cmdlet removes a Windows PowerShell snap-in from the current session.
 You can use it to remove snap-ins that you have added to Windows PowerShell You cannot use this cmdlet to remove the snap-ins that are installed with Windows PowerShell.
 
 After you remove a snap-in from the current session, the snap-in is still loaded, but the cmdlets and providers in the snap-in are no longer available in the session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Remove a snap-in
 
@@ -58,7 +58,7 @@ PS C:\> Remove-PSSnapin -Name *event*
 
 This command removes all Windows PowerShell snap-ins that have names that include event.
 
-## PARAMETERS
+## Parameters
 
 ### -Name
 Specifies the names of Windows PowerShell snap-ins to remove from the current session.
@@ -126,23 +126,23 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSSnapInInfo
 You can pipe a snap-in object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None, System.Management.Automation.PSSnapInInfo
 This cmdlet generates a **System.Management.Automation.PSSnapInInfo** object that represents the snap-in, if you specify the *PassThru* parameter.
 By default, **Remove-PSSnapin** does not generate any output.
 
-## NOTES
+## Notes
 
 * **Remove-PSSnapin** does not check the version of Windows PowerShell before removing a snap-in from the session. If a snap-in cannot be removed, a warning appears and the command fails.
 * **Remove-PSSnapin** affects only the current session. If you have added an Add-PSSnapin command to your Windows PowerShell profile, you should delete the command to remove the snap-in from future sessions. For instructions, type `Get-Help about_Profiles`.
 
-## RELATED LINKS
+## Related links
 
 [Add-PSSnapin](Add-PSSnapin.md)
 

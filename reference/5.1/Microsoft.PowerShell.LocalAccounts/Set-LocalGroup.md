@@ -10,10 +10,10 @@ title: Set-LocalGroup
 
 # Set-LocalGroup
 
-## SYNOPSIS
+## Synopsis
 Changes a local security group.
 
-## SYNTAX
+## Syntax
 
 ### InputObject
 
@@ -33,10 +33,10 @@ Set-LocalGroup -Description <String> [-Name] <String> [-WhatIf] [-Confirm] [<Com
 Set-LocalGroup -Description <String> [-SID] <SecurityIdentifier> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Set-LocalGroup** cmdlet changes a local security group.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Change a group description
 
@@ -50,7 +50,7 @@ This command changes the description of a local group.
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## PARAMETERS
+## Parameters
 
 ### -Description
 Specifies a comment for the group.
@@ -148,17 +148,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier
 You can pipe a security group, a string, or a SID to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
@@ -169,7 +169,7 @@ This cmdlet does not generate any output.
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
 
-## RELATED LINKS
+## Related links
 
 [Get-LocalGroup](Get-LocalGroup.md)
 

@@ -9,10 +9,10 @@ title: Stop-Job
 ---
 # Stop-Job
 
-## SYNOPSIS
+## Synopsis
 Stops a PowerShell background job.
 
-## SYNTAX
+## Syntax
 
 ### SessionIdParameterSet (Default)
 
@@ -50,7 +50,7 @@ Stop-Job [-PassThru] [-State] <JobState> [-WhatIf] [-Confirm] [<CommonParameters
 Stop-Job [-PassThru] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Stop-Job` cmdlet stops PowerShell background jobs that are in progress. You can use this cmdlet
 to stop all jobs or stop selected jobs based on their name, ID, instance ID, or state, or by passing
@@ -70,7 +70,7 @@ either by using the `Import-Module` cmdlet or by using or getting a cmdlet in th
 information about a particular custom job type, see the documentation of the custom job type
 feature.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Stop a job on a remote computer by using Invoke-Command
 
@@ -198,7 +198,7 @@ display confirms that the state of the job is Stopped.
 
 For more information about remote background jobs, see [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
-## PARAMETERS
+## Parameters
 
 ### -Filter
 
@@ -390,22 +390,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.RemotingJob
 
 You can pipe a job object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None, System.Management.Automation.PSRemotingJob
 
 This cmdlet returns a job object, if you specify the **PassThru** parameter. Otherwise, this cmdlet
 does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Get-Job](Get-Job.md)
 

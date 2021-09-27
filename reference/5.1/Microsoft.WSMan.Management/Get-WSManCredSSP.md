@@ -10,16 +10,16 @@ title: Get-WSManCredSSP
 
 # Get-WSManCredSSP
 
-## SYNOPSIS
+## Synopsis
 Gets the Credential Security Support Provider-related configuration for the client.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-WSManCredSSP [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Get-WSManCredSSP** cmdlet gets the Credential Security Support Provider-related configuration of the client and the server.
 The output indicates whether Credential Security Support Provider (CredSSP) authentication is enabled or disabled.
 This cmdlet also displays configuration information for the **AllowFreshCredentials** policy of CredSSP.
@@ -38,7 +38,7 @@ Caution: CredSSP authentication delegates the user credentials from the local co
 This practice increases the security risk of the remote operation.
 If the remote computer is compromised, when credentials are passed to it, the credentials can be used to control the network session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Display CredSSP configuration
 
@@ -58,26 +58,26 @@ If the computer is not configured for CredSSP, this is the output:
 
 `The machine is not configured to allow delegating fresh credentials.`
 
-## PARAMETERS
+## Parameters
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 This cmdlet does not accept any input.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * To disable CredSSP authentication, use the Disable-WSManCredSSP cmdlet. To enable CredSSP authentication, use the Enable-WSManCredSSP cmdlet.
 
-## RELATED LINKS
+## Related links
 
 [Connect-WSMan](Connect-WSMan.md)
 

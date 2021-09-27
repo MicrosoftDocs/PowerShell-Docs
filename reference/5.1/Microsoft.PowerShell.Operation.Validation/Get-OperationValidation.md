@@ -10,21 +10,21 @@ title: Get-OperationValidation
 
 # Get-OperationValidation
 
-## SYNOPSIS
+## Synopsis
 Gets Operation Validation Framework tests.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-OperationValidation [[-ModuleName] <String[]>] [-TestType <String[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Get-OperationValidation** cmdlet gets Operation Validation Framework tests for installed modules.
 
 Modules that include a Diagnostics folder are inspected for Pester tests in the Simple or Comprehensive subfolder, or both.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get Operation Validation tests
 
@@ -48,7 +48,7 @@ PS C:\> Get-OperationValidation -ModuleName "C:\temp\modules\AddNumbers"
 
 This command gets validation tests from the module named AddNumbers in the C:\temp\modules folder.
 
-## PARAMETERS
+## Parameters
 
 ### -ModuleName
 Specifies an array of names of modules.
@@ -86,18 +86,18 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe any input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### PSCustomObject
 The **PSCustomObject** describes the validation.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Invoke-OperationValidation](Invoke-OperationValidation.md)
