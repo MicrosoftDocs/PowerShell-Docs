@@ -2,17 +2,17 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/07/2020
+ms.date: 09/24/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
 ---
 # Remove-Item
 
-## SYNOPSIS
+## Synopsis
 Deletes the specified items.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -30,13 +30,13 @@ Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-E
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Remove-Item` cmdlet deletes one or more items. Because it is supported by many providers, it
 can delete many different types of items, including files, folders, registry keys, variables,
 aliases, and functions.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Delete files that have any file name extension
 
@@ -62,7 +62,7 @@ It uses the wildcard character (`*`) to specify the contents of the current fold
 
 ### Example 3: Delete hidden, read-only files
 
-This command deletes a file that is both *hidden* and *read-only*.
+This command deletes a file that is both _hidden_ and _read-only_.
 
 ```powershell
 Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
@@ -89,6 +89,9 @@ current folder. It uses **Include** to specify the CSV file type, and it uses **
 the retrieval recursive. If you try to specify the file type the path, such as `-Path *.csv`, the
 cmdlet interprets the subject of the search to be a file that has no child items, and **Recurse**
 fails.
+
+> [!NOTE]
+> This behavior was fixed in Windows versions 1909 and up.
 
 ### Example 5: Delete subkeys recursively
 
@@ -188,7 +191,7 @@ The **Stream** parameter `Get-Item` gets the `Zone.Identifier` stream of the `Co
 file. `Remove-Item` uses the **Stream** parameter to remove the `Zone.Identifier` stream of the
 file. Finally, the `Get-Item` cmdlet shows that the `Zone.Identifier` stream was deleted.
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -216,6 +219,10 @@ of this parameter qualifies the **Path** parameter. Enter a path element or patt
 `*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
 command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
 specifies the contents of the `C:\Windows` directory.
+
+When using **Recurse** with **Exclude**, **Exclude** only filters results of the current directory.
+If there are files that match the **Exclude** pattern in subfolders, those files are removed along
+with its parent directory.
 
 ```yaml
 Type: System.String[]
@@ -335,9 +342,10 @@ Accept wildcard characters: True
 Indicates that this cmdlet deletes the items in the specified locations and in all child items of
 the locations.
 
-When it is used with the **Include** parameter, the **Recurse** parameter might not delete all
-subfolders or all child items. This is a known issue. As a workaround, try piping results of the
-`Get-ChildItem -Recurse` command to `Remove-Item`, as described in "Example 4" in this topic.
+The **Recurse** parameter might not delete all subfolders or all child items. This is a known issue.
+
+> [!NOTE]
+> This behavior was fixed in Windows versions 1909 and newer.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -437,19 +445,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path, but not a literal path, to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not return any output.
 
-## NOTES
+## Notes
 
 The `Remove-Item` cmdlet is designed to work with the data exposed by any provider. To list the
 providers available in your session, type `Get-PsProvider`. For more information, see
@@ -459,7 +467,7 @@ When you try to delete a folder that contains items without using the **Recurse*
 cmdlet prompts for confirmation. Using `-Confirm:$false` does not suppress the prompt. This is by
 design.
 
-## RELATED LINKS
+## Related links
 
 [Clear-Item](Clear-Item.md)
 
