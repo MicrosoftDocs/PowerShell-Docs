@@ -1217,7 +1217,7 @@ are:
   case `HTTP_PROXY` or `HTTPS_PROXY` are not defined.
 - `NO_PROXY`: a comma-separated list of hostnames that should be excluded from proxying.
 
-## Related Links
+## Related links
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
 

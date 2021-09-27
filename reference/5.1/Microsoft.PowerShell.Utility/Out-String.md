@@ -124,7 +124,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -InputObject
 
@@ -190,24 +190,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can send objects down the pipeline to `Out-String`.
 
-## OUTPUTS
+## Outputs
 
 ### System.String
 
 `Out-String` returns the string that it creates from the input object.
 
-## NOTES
+## Notes
 
 The cmdlets that contain the `Out` verb don't format objects. The `Out` cmdlets send objects to the
 formatter for the specified display destination.
 
-## RELATED LINKS
+## Related links
 
 [about_Formatting](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md)
 

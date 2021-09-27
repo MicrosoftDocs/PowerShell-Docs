@@ -9,10 +9,10 @@ title: Where-Object
 ---
 # Where-Object
 
-## SYNOPSIS
+## Synopsis
 Selects objects from a collection based on their property values.
 
-## SYNTAX
+## Syntax
 
 ### EqualSet (Default)
 
@@ -236,7 +236,7 @@ Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] 
 Where-Object [-InputObject <PSObject>] [-Property] <String> -Not [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Where-Object` cmdlet selects objects that have particular property values from the collection
 of objects that are passed to it. For example, you can use the `Where-Object` cmdlet to select files
@@ -285,7 +285,7 @@ The previous example is functionally equivalent to:
 
 For more information about how booleans are evaluated, see [about_Booleans](about/about_Booleans.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get stopped services
 
@@ -392,7 +392,7 @@ valid only in script blocks. You cannot use them in the comparison statement for
 - For more information about the Updatable Help feature, see
   [about_Updatable_Help](./About/about_Updatable_Help.md).
 
-## PARAMETERS
+## Parameters
 
 ### -CContains
 
@@ -1151,26 +1151,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe the objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Object
 
 This cmdlet returns selected items from the input object set.
 
-## NOTES
+## Notes
 
 Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with
 collections.
 
 You can read more about these new methods here [about_arrays](./About/about_Arrays.md)
 
-## RELATED LINKS
+## Related links
 
 [Compare-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
 

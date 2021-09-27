@@ -10,10 +10,10 @@ title: Add-JobTrigger
 
 # Add-JobTrigger
 
-## SYNOPSIS
+## Synopsis
 Adds job triggers to scheduled jobs.
 
-## SYNTAX
+## Syntax
 
 ### JobDefinition (Default)
 
@@ -34,7 +34,7 @@ Add-JobTrigger [-Trigger] <ScheduledJobTrigger[]> [-Id] <Int32[]> [<CommonParame
 Add-JobTrigger [-Trigger] <ScheduledJobTrigger[]> [-Name] <String[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Add-JobTrigger** cmdlet adds job triggers to scheduled jobs.
 You can use it to add multiple triggers to multiple scheduled jobs.
 
@@ -52,7 +52,7 @@ Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or s
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Add a job trigger to a scheduled job
 
@@ -93,7 +93,7 @@ The command saves the trigger in the $t variable.
 
 The second command uses the **Add-JobTrigger** cmdlet to add the job trigger in $t to the TestBackup and BackupLogs scheduled jobs.
 
-## PARAMETERS
+## Parameters
 
 ### -Id
 Specifies the identification numbers of the scheduled jobs.
@@ -169,19 +169,19 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger, Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 You can pipe job triggers or scheduled jobs to **Add-JobTrigger**.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not return any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

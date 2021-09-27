@@ -9,10 +9,10 @@ title: Remove-PSDrive
 ---
 # Remove-PSDrive
 
-## SYNOPSIS
+## Synopsis
 Deletes temporary PowerShell drives and disconnects mapped network drives.
 
-## SYNTAX
+## Syntax
 
 ### Name (Default)
 
@@ -28,7 +28,7 @@ Remove-PSDrive [-LiteralName] <String[]> [-PSProvider <String[]>] [-Scope <Strin
  [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Remove-PSDrive` cmdlet deletes temporary PowerShell drives that were created by using the `New-PSDrive` cmdlet.
 
@@ -40,7 +40,7 @@ Beginning in Windows PowerShell 3.0, when an external drive is connected to the 
 You do not need to restart PowerShell.
 Similarly, when an external drive is disconnected from the computer, PowerShell automatically deletes the PSDrive that represents the removed drive.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Remove a file system drive
 
@@ -58,7 +58,7 @@ This command uses `Remove-PSDrive` to disconnect the X: and S: mapped network dr
 Get-PSDrive X, S | Remove-PSDrive
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 
@@ -204,23 +204,23 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSDriveInfo
 
 You can pipe a drive object, such as one from the `Get-PSDrive` cmdlet, to the `Remove-PSDrive` cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not return any output.
 
-## NOTES
+## Notes
 
 - The `Remove-PSDrive` cmdlet is designed to work with the data exposed by any PowerShell provider. To list the providers in your session, use the `Get-PSProvider` cmdlet. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Get-PSDrive](Get-PSDrive.md)
 

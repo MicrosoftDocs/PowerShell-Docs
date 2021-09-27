@@ -9,10 +9,10 @@ title: Clear-Item
 ---
 # Clear-Item
 
-## SYNOPSIS
+## Synopsis
 Clears the contents of an item, but does not delete the item.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -28,14 +28,14 @@ Clear-Item -LiteralPath <String[]> [-Force] [-Filter <String>] [-Include <String
  [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Clear-Item` cmdlet clears the content of an item, but it does not delete the item.
 For example, the `Clear-Item` cmdlet can delete the value of a variable, but it does not delete the
 variable. The value that used to represent a cleared item is defined by each PowerShell provider.
 This cmdlet is similar to `Clear-Content`, but it works on aliases and variables, instead of files.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Clear the value of a variable
 
@@ -67,7 +67,7 @@ You can use the **Include** and **Exclude** parameters to identify particular re
 Clear-Item HKLM:\Software\MyCompany\MyKey -Confirm
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -247,19 +247,19 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a path string to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 - The `Clear-Item` cmdlet is supported only by several PowerShell providers, including the **Alias**,
   **Environment**, **Function**, **Registry**, and **Variable** providers. As such, you can use
@@ -268,7 +268,7 @@ This cmdlet does not generate any output.
 - You cannot use `Clear-Item` to delete the contents of a file, because the PowerShell FileSystem
   provider does not support this cmdlet. To clear files, use the `Clear-Content`.
 
-## RELATED LINKS
+## Related links
 
 [Copy-Item](Copy-Item.md)
 

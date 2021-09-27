@@ -8,12 +8,12 @@ title: about Script Internationalization
 ---
 # about_Script_Internationalization
 
-## Short Description
+## Short description
 Describes the script internationalization features that make it easy for
 scripts to display messages and instructions to users in their user interface
 (UI) language.
 
-## Long Description
+## Long description
 
 The PowerShell script internationalization features allow you to better serve
 users throughout the world by displaying help and user messages in the user's

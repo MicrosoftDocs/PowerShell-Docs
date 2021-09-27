@@ -9,16 +9,16 @@ title: Get-PSSessionCapability
 ---
 # Get-PSSessionCapability
 
-## SYNOPSIS
+## Synopsis
 Gets the capabilities of a specific user on a constrained session configuration.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-PSSessionCapability [-ConfigurationName] <String> [-Username] <String> [-Full] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Get-PSSessionCapability** cmdlet gets the capabilities of a specific user on a constrained session configuration.
 Use this cmdlet to audit customized session configurations for users.
@@ -33,7 +33,7 @@ When run with the *Full* parameter, this cmdlet returns an **InitialSessionState
 This object contains details about the PowerShell runspace the specified user would interact with for the specified endpoint.
 It includes information such as Language Mode, Execution Policy, and Environmental Variables.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get commands available for a user
 
@@ -51,7 +51,7 @@ Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User' -F
 
 This example returns details about the runspace the user CONTOSO\User would interact with when connecting to the Endpoint1 constrained endpoint.
 
-## PARAMETERS
+## Parameters
 
 ### -ConfigurationName
 
@@ -105,9 +105,9 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.AliasInfo
 
@@ -115,8 +115,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.Runspaces.InitialSessionState
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [New-PSRoleCapabilityFile](New-PSRoleCapabilityFile.md)

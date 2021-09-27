@@ -9,10 +9,10 @@ title: Get-PfxCertificate
 ---
 # Get-PfxCertificate
 
-## SYNOPSIS
+## Synopsis
 Gets information about PFX certificate files on the computer.
 
-## SYNTAX
+## Syntax
 
 ### ByPath (Default)
 
@@ -28,12 +28,12 @@ Get-PfxCertificate -LiteralPath <String[]> [-Password <SecureString>] [-NoPrompt
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-PfxCertificate` cmdlet gets an object representing each specified PFX certificate file.
 A PFX file includes both the certificate and a private key.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get a PFX certificate
 
@@ -63,7 +63,7 @@ to run a `Get-PfxCertificate` command remotely.
 When the PFX certificate file is not password-protected, the value of the **Authentication**
 parameter of `Invoke-Command` must be CredSSP.
 
-## PARAMETERS
+## Parameters
 
 ### -FilePath
 
@@ -146,25 +146,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a file path to `Get-PfxCertificate`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Security.Cryptography.X509Certificates.X509Certificate2
 
 `Get-PfxCertificate` returns an object for each certificate that it gets.
 
-## NOTES
+## Notes
 
 When using the `Invoke-Command` cmdlet to run a `Get-PfxCertificate` command remotely, and the PFX
 certificate file is not password protected, the value of the **Authentication** parameter of
 `Invoke-Command` must be CredSSP.
 
-## RELATED LINKS
+## Related links
 
 [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 

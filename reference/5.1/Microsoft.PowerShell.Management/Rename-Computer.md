@@ -9,10 +9,10 @@ title: Rename-Computer
 ---
 # Rename-Computer
 
-## SYNOPSIS
+## Synopsis
 Renames a computer.
 
-## SYNTAX
+## Syntax
 
 ```
 Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCredential>]
@@ -20,14 +20,14 @@ Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCrede
  [-Protocol <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Rename-Computer` cmdlet renames the local computer or a remote computer.
 It renames one computer in each command.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Rename the local computer
 
@@ -51,7 +51,7 @@ The **Force** parameter suppresses the confirmation prompt.
 Rename-Computer -ComputerName "Srv01" -NewName "Server001" -DomainCredential Domain01\Admin01 -Force
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 
@@ -298,23 +298,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### None
 
 This cmdlet does not have parameters that take input by value. However, you can pipe the values of
 the **ComputerName** and **NewName** properties of objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.ComputerChangeInfo
 
 This cmdlet returns a **ComputerChangeInfo** object, if you specify the **PassThru** parameter.
 Otherwise, it does not return any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Add-Computer](Add-Computer.md)
 

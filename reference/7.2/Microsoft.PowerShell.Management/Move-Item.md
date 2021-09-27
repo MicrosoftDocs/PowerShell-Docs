@@ -9,10 +9,10 @@ title: Move-Item
 ---
 # Move-Item
 
-## SYNOPSIS
+## Synopsis
 Moves an item from one location to another.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -28,7 +28,7 @@ Move-Item -LiteralPath <String[]> [[-Destination] <String>] [-Force] [-Filter <S
  [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Move-Item` cmdlet moves an item, including its properties, contents, and child items, from one
 location to another location. The locations must be supported by the same provider.
@@ -36,7 +36,7 @@ For example, it can move a file or subdirectory from one directory to another or
 subkey from one key to another.
 When you move an item, it is added to the new location and deleted from its original location.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Move a file to another directory and rename it
 
@@ -130,7 +130,7 @@ misinterpreted.
 The **Destination** parameter does not require a literal path, because the Destination variable also
 must be enclosed in single quotation marks, because it includes brackets that can be misinterpreted.
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -345,20 +345,20 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None or an object representing the moved item
 
 When you use the *PassThru* parameter, this cmdlet generates an object representing the moved item.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 - This cmdlet will move files between drives that are supported by the same provider, but it will move
   directories only within the same drive.
@@ -368,7 +368,7 @@ Otherwise, this cmdlet does not generate any output.
   To list the providers available in your session, type `Get-PSProvider`.
   For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Clear-Item](Clear-Item.md)
 

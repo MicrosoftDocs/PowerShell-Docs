@@ -8,11 +8,11 @@ title: about Split
 ---
 # about_Split
 
-## SHORT DESCRIPTION
+## Short description
 Explains how to use the Split operator to split one or more strings into
 substrings.
 
-## LONG DESCRIPTION
+## Long description
 
 The Split operator splits one or more strings into substrings. You can
 change the following elements of the Split operation:
@@ -27,7 +27,7 @@ change the following elements of the Split operation:
 - Options that specify the conditions under which the delimiter is matched,
   such as SimpleMatch and Multiline.
 
-## SYNTAX
+## Syntax
 
 The following diagram shows the syntax for the -split operator.
 
@@ -47,7 +47,7 @@ statement (a Split statement that includes a delimiter or script block). The
 is case-sensitive, meaning that case is considered when the delimiter rules
 are applied.
 
-## PARAMETERS
+## Parameters
 
 ### \<String\> or \<String[]\>
 
@@ -293,7 +293,7 @@ a
 b
 ```
 
-## EXAMPLES
+## Examples
 
 The following statement splits the string at whitespace.
 
@@ -505,7 +505,7 @@ LastName, FirstName
  Address, City, State, Zip
 ```
 
-## SEE ALSO
+## See also
 
 [Split-Path](xref:Microsoft.PowerShell.Management.Split-Path)
 

@@ -9,10 +9,10 @@ title: New-Service
 ---
 # New-Service
 
-## SYNOPSIS
+## Synopsis
 Creates a new Windows service.
 
-## SYNTAX
+## Syntax
 
 ```
 New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] [-Description <String>]
@@ -20,7 +20,7 @@ New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] 
  [-DependsOn <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -30,7 +30,7 @@ service database. A new service requires an executable file that runs during the
 The parameters of this cmdlet let you set the display name, description, startup type, and
 dependencies of the service.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a service
 
@@ -95,7 +95,7 @@ New-Service @params
 The **SecurityDescriptor** is stored in the `$SDDLToSet` variable. The **SecurityDescriptorSddl**
 parameter uses `$SDDL` to set the **SecurityDescriptor** of the new service.
 
-## PARAMETERS
+## Parameters
 
 ### -BinaryPathName
 
@@ -299,25 +299,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.ServiceProcess.ServiceController
 
 This cmdlet returns an object that represents the new service.
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
 To run this cmdlet, start PowerShell by using the **Run as administrator** option.
 
-## RELATED LINKS
+## Related links
 
 [Get-Service](Get-Service.md)
 

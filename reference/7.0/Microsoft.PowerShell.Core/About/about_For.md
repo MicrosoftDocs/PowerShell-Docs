@@ -227,7 +227,7 @@ The `For` loop can also be written on one line as in the following example.
 for ($i = 0; $i -lt 10; $i++) { Write-Host $i }
 ```
 
-## SEE ALSO
+## See also
 
 [about_Comparison_Operators](about_Comparison_Operators.md)
 

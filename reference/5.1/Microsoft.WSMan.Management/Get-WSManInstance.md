@@ -10,10 +10,10 @@ title: Get-WSManInstance
 
 # Get-WSManInstance
 
-## SYNOPSIS
+## Synopsis
 Displays management information for a resource instance specified by a Resource URI.
 
-## SYNTAX
+## Syntax
 
 ### GetInstance (Default)
 
@@ -34,14 +34,14 @@ Get-WSManInstance [-ApplicationName <String>] [-BasePropertiesOnly] [-ComputerNa
  [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Get-WSManInstance** cmdlet retrieves an instance of a management resource that is specified by a resource Uniform Resource Identifier (URI).
 The information that is retrieved can be a complex XML information set, which is an object, or a simple value.
 This cmdlet is the equivalent to the standard Web Services for Management (WS-Management) **Get** command.
 
 This cmdlet uses the WS-Management connection/transport layer to retrieve information.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all information from WMI
 
@@ -361,7 +361,7 @@ Because the *Dialect* value is association and the *Associations* parameter is u
 
 You must enclose the filter in quotation marks, as shown in the example.
 
-## PARAMETERS
+## Parameters
 
 ### -ApplicationName
 Specifies the application name in the connection.
@@ -791,19 +791,19 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### None
 This command does not accept any input.
 
-## OUTPUTS
+## Outputs
 
 ### System.Xml.XmlElement
 This cmdlet generates an **XMLElement** object.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Connect-WSMan](Connect-WSMan.md)
 

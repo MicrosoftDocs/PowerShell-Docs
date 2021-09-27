@@ -9,10 +9,10 @@ title: Add-Computer
 ---
 # Add-Computer
 
-## SYNOPSIS
+## Synopsis
 Add the local computer to a domain or workgroup.
 
-## SYNTAX
+## Syntax
 
 ### Domain (Default)
 
@@ -31,7 +31,7 @@ Add-Computer [-ComputerName <String[]>] [-LocalCredential <PSCredential>] [-Cred
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Add-Computer` cmdlet adds the local computer or remote computers to a domain or workgroup, or
 moves them from one domain to another. It also creates a domain account if the computer is added to
@@ -42,7 +42,7 @@ controller or to perform an unsecure join.
 
 To get the results of the command, use the **Verbose** and **PassThru** parameters.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Add a local computer to a domain then restart the computer
 
@@ -154,7 +154,7 @@ the predefined name joins the domain using only the computer name and the tempor
 The predefined password is only used to support the join operation and is replaced as part of normal
 computer account procedures after the computer completes the join.
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 
@@ -514,26 +514,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe computer names and new names to the `Add-Computer` Cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.ComputerChangeInfo
 
 When you use the **PassThru** parameter, `Add-Computer` returns a **ComputerChangeInfo** object.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 - In Windows PowerShell 2.0, the **Server** parameter of `Add-Computer` fails even when the server
   is present. In Windows PowerShell 3.0, the implementation of the **Server** parameter is changed
   so that it works reliably.
 
-## RELATED LINKS
+## Related links
 
 [Checkpoint-Computer](Checkpoint-Computer.md)
 

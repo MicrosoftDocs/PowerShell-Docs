@@ -10,10 +10,10 @@ title: New-PSWorkflowSession
 
 # New-PSWorkflowSession
 
-## SYNOPSIS
+## Synopsis
 Creates a workflow session.
 
-## SYNTAX
+## Syntax
 
 ```
 New-PSWorkflowSession [[-ComputerName] <String[]>] [-Credential <Object>] [-Name <String[]>] [-Port <Int32>]
@@ -22,7 +22,7 @@ New-PSWorkflowSession [[-ComputerName] <String[]>] [-Credential <Object>] [-Name
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `New-PSWorkflowSession` cmdlet creates a user-managed session (**PSSession**) that is
 especially designed for running Windows PowerShell workflows. It uses the
@@ -36,7 +36,7 @@ common parameters, see [about_WorkflowCommonParameters](./about/about_WorkflowCo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a workflow session on a remote computer
 
@@ -68,7 +68,7 @@ The command uses the **ThrottleLimit** parameter to increase the per-command thr
 This value takes precedence over the default throttle limit of 100 that is set in the
 **Microsoft.PowerShell.Workflow** session configuration.
 
-## PARAMETERS
+## Parameters
 
 ### -ApplicationName
 
@@ -374,23 +374,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.Runspaces.PSSession[], System.String
 
 You can pipe a session or a computer name to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.Runspaces.PSSession
 
-## NOTES
+## Notes
 
 A `New-PSWorkflowSession` command is equivalent to the following command:
 
 `New-PSSession -ConfigurationName Microsoft.PowerShell.Workflow`
 
-## RELATED LINKS
+## Related links
 
 [Disconnect-PSSession](../Microsoft.PowerShell.Core/Disconnect-PSSession.md)
 

@@ -9,10 +9,10 @@ title: Get-FileHash
 ---
 # Get-FileHash
 
-## SYNOPSIS
+## Synopsis
 Computes the hash value for a file by using a specified hash algorithm.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -32,7 +32,7 @@ Get-FileHash -LiteralPath <String[]> [-Algorithm <String>] [<CommonParameters>]
 Get-FileHash -InputStream <Stream> [-Algorithm <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-FileHash` cmdlet computes the hash value for a file by using a specified hash algorithm.
 A hash value is a unique value that corresponds to the content of the file. Rather than identifying
@@ -53,7 +53,7 @@ are also identical.
 By default, the `Get-FileHash` cmdlet uses the SHA256 algorithm, although any hash algorithm that
 is supported by the target operating system can be used.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Compute the hash value for a file
 
@@ -126,7 +126,7 @@ Hash
 64EC88CA00B268E5BA1A35678A1B5316D212F4F366B2477232534A8AECA37F3C
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Algorithm
 
@@ -220,21 +220,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string to the `Get-FileHash` cmdlet that contains a path to one or more files.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.Powershell.Utility.FileHash
 
 `Get-FileHash` returns an object that represents the path to the specified file, the value of the
 computed hash, and the algorithm used to compute the hash.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Format-List](Format-List.md)

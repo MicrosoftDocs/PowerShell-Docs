@@ -9,10 +9,10 @@ title: ConvertFrom-SecureString
 ---
 # ConvertFrom-SecureString
 
-## SYNOPSIS
+## Synopsis
 Converts a secure string to an encrypted standard string.
 
-## SYNTAX
+## Syntax
 
 ### Secure (Default)
 
@@ -32,7 +32,7 @@ ConvertFrom-SecureString [-SecureString] <SecureString> [-AsPlainText] [<CommonP
 ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **ConvertFrom-SecureString** cmdlet converts a secure string (**System.Security.SecureString**)
 into an encrypted standard string (**System.String**). Unlike a secure string, an encrypted standard
@@ -49,7 +49,7 @@ representation.
 > Note that per [DotNet](/dotnet/api/system.security.securestring?view=netcore-2.1#remarks), the
 > contents of a SecureString are not encrypted on non-Windows systems.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a secure string
 
@@ -98,7 +98,7 @@ $secureString # 'System.Security.SecureString'
 ConvertFrom-SecureString -SecureString $secureString -AsPlainText # 'Example'
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -AsPlainText
 
@@ -175,19 +175,19 @@ This cmdlet supports the common parameters:
 `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`.
 For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Security.SecureString
 
 You can pipe a **SecureString** object to ConvertFrom-SecureString.
 
-## OUTPUTS
+## Outputs
 
 ### System.String
 
 ConvertFrom-SecureString returns a standard string object.
 
-## NOTES
+## Notes
 
 - To create a secure string from characters that are typed at the command prompt, use the
   **AsSecureString** parameter of the `Read-Host` cmdlet.
@@ -199,7 +199,7 @@ ConvertFrom-SecureString returns a standard string object.
   them. Avoid using these characters because they may cause problems and misunderstandings when used
   in a password.
 
-## RELATED LINKS
+## Related links
 
 [ConvertTo-SecureString](ConvertTo-SecureString.md)
 

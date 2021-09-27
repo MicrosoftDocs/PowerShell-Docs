@@ -66,7 +66,7 @@ checkpointing techniques, including the following:
 For more information about adding a checkpoint to a workflow, see "How to Add Checkpoints to a
 Workflow."
 
-## EXAMPLES
+## Examples
 
 The following workflow includes a call to the Checkpoint-Workflow activity after completing a
 long-running function and a script that share data.

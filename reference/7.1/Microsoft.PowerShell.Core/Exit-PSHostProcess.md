@@ -9,23 +9,23 @@ title: Exit-PSHostProcess
 ---
 # Exit-PSHostProcess
 
-## SYNOPSIS
+## Synopsis
 Closes an interactive session with a local process.
 
-## SYNTAX
+## Syntax
 
 ```
 Exit-PSHostProcess [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Exit-PSHostProcess` cmdlet closes an interactive session with a local process that you have
 opened by running the `Enter-PSHostProcess` cmdlet. You run the `Exit-PSHostProcess` cmdlet from
 within the process, when you are finished debugging or troubleshooting a script that is running
 within a process. Beginning in PowerShell 6.2, this cmdlet is supported on non-Windows platforms.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Exit a process
 
@@ -39,7 +39,7 @@ in the process, as described in `Enter-PSHostProcess`. After you type the `exit`
 debugger, run the `Exit-PSHostProcess` cmdlet to close your interactive session with the process.
 The cmdlet closes your session in the process, and returns you to the `PS C:\>` prompt.
 
-## PARAMETERS
+## Parameters
 
 ### CommonParameters
 
@@ -48,13 +48,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Enter-PSHostProcess](Enter-PSHostProcess.md)
 

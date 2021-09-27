@@ -10,17 +10,17 @@ title: Import-PackageProvider
 
 # Import-PackageProvider
 
-## SYNOPSIS
+## Synopsis
 Adds Package Management package providers to the current session.
 
-## SYNTAX
+## Syntax
 
 ```
 Import-PackageProvider [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
  [-MaximumVersion <String>] [-Force] [-ForceBootstrap] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Import-PackageProvider` cmdlet adds one or more package providers to the current session.
 The provider that you import must be installed on the local computer.
@@ -33,7 +33,7 @@ Due to security reasons, **PackageManagement** requires C#-based providers to co
 injected, see the `.csproj` project files on
 [https://github.com/oneget/oneget](https://github.com/oneget/oneget).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Import a package provider from the local computer
 
@@ -54,7 +54,7 @@ Import-PackageProvider -Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 
 This command finds, installs, and imports a specific version of the Nuget package provider.
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 
@@ -165,16 +165,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Microsoft.PackageManagement.Implementation.PackageProvider
 
 You can pipe a **PackageProvider** object returned by `Get-PackageProvider` into
 `Import-PackageProvider`.
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -188,7 +188,7 @@ You can pipe a **PackageProvider** object returned by `Get-PackageProvider` into
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## RELATED LINKS
+## Related links
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

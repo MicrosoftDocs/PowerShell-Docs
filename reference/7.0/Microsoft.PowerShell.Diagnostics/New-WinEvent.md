@@ -9,24 +9,24 @@ title: New-WinEvent
 ---
 # New-WinEvent
 
-## SYNOPSIS
+## Synopsis
 Creates a new Windows event for the specified event provider.
 
-## SYNTAX
+## Syntax
 
 ```
 New-WinEvent [-ProviderName] <String> [-Id] <Int32> [-Version <Byte>] [[-Payload] <Object[]>]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
 The **New-WinEvent** cmdlet creates an Event Tracing for Windows (ETW) event for an event provider.
 You can use this cmdlet to add events to ETW channels from PowerShell.
 
-## EXAMPLES
+## Examples
 
 ### Example 1
 
@@ -37,7 +37,7 @@ PS C:\> New-WinEvent -ProviderName Microsoft-Windows-PowerShell -Id 45090 -Paylo
 This command uses the **New-WinEvent** cmdlet to create event 45090 for the
 Microsoft-Windows-PowerShell provider.
 
-## PARAMETERS
+## Parameters
 
 ### -Id
 
@@ -117,23 +117,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 This cmdlet does not take input from the pipeline.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does to generate any output.
 
-## NOTES
+## Notes
 
 * After the provider writes the even to an eventlog, you can use the Get-WinEvent cmdlet to get the
   event from the event log.
 
-## RELATED LINKS
+## Related links
 
 [Get-WinEvent](Get-WinEvent.md)

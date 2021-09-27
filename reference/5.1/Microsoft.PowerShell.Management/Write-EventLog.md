@@ -10,17 +10,17 @@ title: Write-EventLog
 
 # Write-EventLog
 
-## SYNOPSIS
+## Synopsis
 Writes an event to an event log.
 
-## SYNTAX
+## Syntax
 
 ```
 Write-EventLog [-LogName] <String> [-Source] <String> [[-EntryType] <EventLogEntryType>] [-Category <Int16>]
  [-EventId] <Int32> [-Message] <String> [-RawData <Byte[]>] [-ComputerName <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Write-EventLog` cmdlet writes an event to an event log.
 
@@ -31,7 +31,7 @@ The cmdlets that contain the **EventLog** noun (the **EventLog** cmdlets) work o
 logs. To get events from logs that use the Windows Event Log technology in Windows Vista and later
 versions of the Windows operating system, use the `Get-WinEvent` cmdlet.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Write an event to the Application event log
 
@@ -50,7 +50,7 @@ PS C:\> Write-EventLog -ComputerName "Server01" -LogName Application -Source "My
 This command writes an event from the MyApp source to the Application event log on the Server01
 remote computer.
 
-## PARAMETERS
+## Parameters
 
 ### -Category
 
@@ -203,24 +203,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Diagnostics.EventLogEntry
 
 This cmdlet returns objects that represents the events in the logs.
 
-## NOTES
+## Notes
 
 For some Windows event logs, writing events requires administrator rights. You must start
 PowerShell using the **Run as Administrator** option.
 
-## RELATED LINKS
+## Related links
 
 [Clear-EventLog](Clear-EventLog.md)
 

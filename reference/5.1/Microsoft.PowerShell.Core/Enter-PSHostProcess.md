@@ -10,10 +10,10 @@ title: Enter-PSHostProcess
 
 # Enter-PSHostProcess
 
-## SYNOPSIS
+## Synopsis
 Connects to and enters into an interactive session with a local process.
 
-## SYNTAX
+## Syntax
 
 ### ProcessIdParameterSet (Default)
 
@@ -40,7 +40,7 @@ Enter-PSHostProcess [-HostProcessInfo] <PSHostProcessInfo> [[-AppDomainName] <St
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Enter-PSHostProcess` cmdlet connects to and enters into an interactive session with a local
 process.
@@ -69,7 +69,7 @@ To support attaching to processes on remote computers, the `Enter-PSHostProcess`
 in a specified remote computer, so that you can attach to a local process within a remote PowerShell
 session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Start debugging a runspace within the PowerShell ISE process
 
@@ -130,7 +130,7 @@ PS C:\> [Process:1520]: PS C:\>  Exit-PSHostProcess
 PS C:\>
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -AppDomainName
 
@@ -224,13 +224,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Diagnostics.Process
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
 `Enter-PSHostProcess` cannot enter the process of the PowerShell session in which you are running
 the command. You can, however, enter the process of another PowerShell session, or a PowerShell ISE
@@ -242,7 +242,7 @@ loaded the PowerShell engine.
 
 To exit a process from within the process, type **exit**, and then press <kbd>Enter</kbd>.
 
-## RELATED LINKS
+## Related links
 
 [Exit-PSHostProcess](Exit-PSHostProcess.md)
 

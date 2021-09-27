@@ -9,10 +9,10 @@ title: Set-StrictMode
 ---
 # Set-StrictMode
 
-## SYNOPSIS
+## Synopsis
 Establishes and enforces coding rules in expressions, scripts, and script blocks.
 
-## SYNTAX
+## Syntax
 
 ### Version (Default)
 
@@ -26,7 +26,7 @@ Set-StrictMode -Version <Version> [<CommonParameters>]
 Set-StrictMode [-Off] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-StrictMode` cmdlet configures strict mode for the current scope and all child scopes, and
 turns it on and off. When strict mode is on, PowerShell generates a terminating error when the
@@ -45,7 +45,7 @@ When `Set-StrictMode` is off, PowerShell has the following behaviors:
 - Results of improper function syntax vary with the error conditions
 - Attempting to retrieve a value using an invalid index in an array returns `$Null`
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Turn on strict mode as version 1.0
 
@@ -194,7 +194,7 @@ At line:1 char:1
 
 With strict mode set to version 3 or higher, invalid or out of bounds indexes result in errors.
 
-## PARAMETERS
+## Parameters
 
 ### -Off
 
@@ -264,19 +264,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not return any output.
 
-## NOTES
+## Notes
 
 While `Set-StrictMode` **Version** parameter will accept values greater than `3.0`, currently there
 are no additional rules defined for anything higher than `3.0`.
@@ -284,6 +284,6 @@ are no additional rules defined for anything higher than `3.0`.
 `Set-StrictMode` is effective only in the scope in which it is set and in its child scopes. For
 more information about scopes in PowerShell, see [about_Scopes](about/about_Scopes.md).
 
-## RELATED LINKS
+## Related links
 
 [Set-PSDebug](Set-PSDebug.md)

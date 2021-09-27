@@ -9,10 +9,10 @@ title: Get-PSSubsystem
 ---
 # Get-PSSubsystem
 
-## SYNOPSIS
+## Synopsis
 Retrieves information about the subsystems registered in PowerShell.
 
-## SYNTAX
+## Syntax
 
 ### GetAllSet (Default)
 
@@ -32,7 +32,7 @@ Get-PSSubsystem -Kind <SubsystemKind> [<CommonParameters>]
 Get-PSSubsystem -SubsystemType <Type> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 Retrieves information about the subsystems registered in PowerShell.
 
@@ -51,7 +51,7 @@ the PSReadLine module to provide custom prediction plugins. In future, **Job**,
 **CommandCompleter**, **Remoting** and other components could be separated into subsystem assemblies
 outside of `System.Management.Automation.dll`.
 
-## EXAMPLES
+## Examples
 
 ### Example 1 - Display all available subsystems
 
@@ -82,7 +82,7 @@ IsRegistered              : False
 Implementations           : {}
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Kind
 
@@ -125,19 +125,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.Subsystem.SubsystemKind
 
 ### System.Type
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.Subsystem.SubsystemInfo
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [about_experimental_features](about/about_experimental_features.md)
 

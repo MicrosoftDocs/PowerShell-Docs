@@ -9,10 +9,10 @@ title: Get-PSDrive
 ---
 # Get-PSDrive
 
-## SYNOPSIS
+## Synopsis
 Gets drives in the current session.
 
-## SYNTAX
+## Syntax
 
 ### Name (Default)
 
@@ -28,7 +28,7 @@ Get-PSDrive [-LiteralName] <String[]> [-Scope <String>] [-PSProvider <String[]>]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-PSDrive` cmdlet gets the drives in the current session. You can get a particular drive or
 all drives in the session.
@@ -52,7 +52,7 @@ You do not need to restart Windows PowerShell. Similarly, when an external drive
 from the computer, Windows PowerShell automatically deletes the PSDrive that represents the removed
 drive.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get drives in the current session
 
@@ -190,7 +190,7 @@ The last command uses the `Get-CimInstance` cmdlet to display the instances of t
 **Win32_NetworkConnection** class. Like **net use**, it returns only the persistent G: drive created
 by `New-PSDrive`.
 
-## PARAMETERS
+## Parameters
 
 ### -LiteralName
 
@@ -297,19 +297,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSDriveInfo
 
 This cmdlet returns objects that represent the drives in the session.
 
-## NOTES
+## Notes
 
 * This cmdlet is designed to work with the data exposed by any provider. To list the providers
   available in your session, use the `Get-PSProvider` cmdlet. For more information, see
@@ -320,7 +320,7 @@ This cmdlet returns objects that represent the drives in the session.
   sessions that are started without explicit credentials or with the credentials of the current
   user.
 
-## RELATED LINKS
+## Related links
 
 [New-PSDrive](New-PSDrive.md)
 

@@ -9,10 +9,10 @@ title: Test-Path
 ---
 # Test-Path
 
-## SYNOPSIS
+## Synopsis
 Determines whether all elements of a path exist.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -30,7 +30,7 @@ Test-Path -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exc
  [-OlderThan <DateTime>] [-NewerThan <DateTime>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Test-Path` cmdlet determines whether all elements of the path exist. It returns `$True` if all
 elements exist and `$False` if any are missing. It can also tell whether the path syntax is valid
@@ -38,7 +38,7 @@ and whether the path leads to a container or a terminal or leaf element. If the 
 an empty string, then `$False` is returned. If the `Path` is `$null`, array of `$null` or empty
 array, a non-terminating error is returned.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Test a path
 
@@ -196,7 +196,7 @@ False
 False
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -399,19 +399,19 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path, but not a literal path, to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Boolean
 
 The cmdlet returns a **Boolean** value.
 
-## NOTES
+## Notes
 
 The cmdlets that contain the **Path** noun (the **Path** cmdlets) work with path names and return
 the names in a concise format that all PowerShell providers can interpret. They are designed for use
@@ -422,7 +422,7 @@ manipulators.
 The `Test-Path` is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Convert-Path](Convert-Path.md)
 

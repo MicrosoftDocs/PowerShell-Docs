@@ -9,16 +9,16 @@ title: New-TemporaryFile
 ---
 # New-TemporaryFile
 
-## SYNOPSIS
+## Synopsis
 Creates a temporary file.
 
-## SYNTAX
+## Syntax
 
 ```
 New-TemporaryFile [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 This cmdlet creates temporary files that you can use in scripts.
 
@@ -39,7 +39,7 @@ order and uses the first path found:
 
 - On non-Windows platforms: Uses the path specified by the TMPDIR environment variable.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a temporary file
 
@@ -50,7 +50,7 @@ $TempFile = New-TemporaryFile
 This command generates a `.tmp` file in your temporary folder, and then stores a reference to the file
 in the `$TempFile` variable. You can use this file later in your script.
 
-## PARAMETERS
+## Parameters
 
 ### -Confirm
 
@@ -91,15 +91,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
 ### System.IO.FileInfo
 
 This cmdlet returns a **FileInfo** object that represents the temporary file.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 

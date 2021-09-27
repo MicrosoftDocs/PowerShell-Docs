@@ -146,6 +146,6 @@ Some of the cmdlets that are installed with PowerShell, such as `Tee-Object` and
 unapproved verbs. These cmdlets are historic exceptions and their verbs are classified as
 **reserved**.
 
-## Related Links
+## Related links
 
 [Import-Module](import-module.md)

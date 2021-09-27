@@ -8,11 +8,11 @@ title: about PSSession Details
 ---
 # about_PSSession_Details
 
-## Short Description
+## Short description
 Provides detailed information about PowerShell sessions and the
 role they play in remote commands.
 
-## Long Description
+## Long description
 
 A session is an environment in which PowerShell runs. A session is
 created for you whenever you start PowerShell. You can create
@@ -257,7 +257,7 @@ No. Developers can create custom sessions that include only selected
 providers and cmdlets. If a command works in one session but not in
 another, it might be because the session is restricted.
 
-## See Also
+## See also
 
 [about_Jobs](about_Jobs.md)
 

@@ -8,11 +8,11 @@ title: about If
 ---
 # about_If
 
-## SHORT DESCRIPTION
+## Short description
 Describes a language command you can use to run statement lists based on the
 results of one or more conditional tests.
 
-## LONG DESCRIPTION
+## Long description
 
 You can use the `If` statement to run code blocks if a specified conditional
 test evaluates to true. You can also specify one or more additional conditional
@@ -131,7 +131,7 @@ $service.Status -eq 'Running' ? (Stop-Service $service) : (Start-Service $servic
 In this example, if the service is running, it is stopped, and if its status is
 not **Running**, it is started.
 
-## SEE ALSO
+## See also
 
 - [about_Comparison_Operators](about_Comparison_Operators.md)
 - [about_Switch](about_Switch.md)

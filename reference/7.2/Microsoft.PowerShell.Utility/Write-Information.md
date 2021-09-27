@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/14/2020
+ms.date: 09/27/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-information?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Information
@@ -10,17 +10,17 @@ title: Write-Information
 
 # Write-Information
 
-## SYNOPSIS
+## Synopsis
 
 Specifies how PowerShell handles information stream data for a command.
 
-## SYNTAX
+## Syntax
 
 ```
 Write-Information [-MessageData] <Object> [[-Tags] <String[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Write-Information` cmdlet specifies how PowerShell handles information stream data for a
 command.
@@ -51,7 +51,7 @@ the `InformationAction` common parameter to your command. For more information, 
 
 `Write-Information` is also a supported workflow activity in PowerShell 5.x.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Write information for Get- results
 
@@ -63,24 +63,26 @@ message. The `InformationAction` value is Continue, which means that your messag
 script or command continues, if it is not yet finished.
 
 ```powershell
-Get-WindowsFeature -Name p*
-Write-Information -MessageData "Got your features!" -InformationAction Continue
+Write-Information -MessageData "Processes starting with 'P'" -InformationAction Continue
+Get-Process -Name p*
 ```
 
 ```Output
-Display Name                                            Name                       Install State
-------------                                            ----                       -------------
-[ ] Print and Document Services                         Print-Services                 Available
-    [ ] Print Server                                    Print-Server                   Available
-    [ ] Distributed Scan Server                         Print-Scan-Server              Available
-    [ ] Internet Printing                               Print-Internet                 Available
-    [ ] LPD Service                                     Print-LPD-Service              Available
-[ ] Peer Name Resolution Protocol                       PNRP                           Available
-[X] Windows PowerShell                                  PowerShellRoot                 Installed
-    [X] Windows PowerShell 5.0                          PowerShell                     Installed
-    [ ] Windows PowerShell 2.0 Engine                   PowerShell-V2                    Removed
-    [X] Windows PowerShell ISE                          PowerShell-ISE                 Installed
-Got your features!
+Processes starting with 'P'
+
+     18    19.76      15.16       0.00    6232   0 PFERemediation
+     20     8.92      25.15       0.00   24944   0 policyHost
+      9     1.77       7.64       0.00    1780   0 powercfg
+     10    26.67      32.18       0.00    7028   0 powercfg
+      8    26.55      31.59       0.00   13600   0 powercfg
+      9     1.66       7.55       0.00   22620   0 powercfg
+     21     6.17       4.54     202.20   12536   1 PowerMgr
+     42    84.26      12.71   2,488.84   20588   1 powershell
+     27    47.07      45.38       2.05   25988   1 powershell
+     27    24.45       5.31       0.00   12364   0 PresentationFontCache
+     92   112.04      13.36      82.30   13176   1 pwsh
+    106   163.73      93.21     302.25   14620   1 pwsh
+    227   764.01      92.16   1,757.22   25328   1 pwsh
 ```
 
 ### Example 2: Write information and tag it
@@ -92,23 +94,26 @@ tagged Instructions, the message specified here would be among the results.
 
 ```powershell
 $message = "To filter your results for PowerShell, pipe your results to the Where-Object cmdlet."
-Get-WindowsFeature -Name p*
+Get-Process -Name p*
 Write-Information -MessageData $message -Tags "Instructions" -InformationAction Continue
 ```
 
 ```Output
-Display Name                                            Name                       Install State
-------------                                            ----                       -------------
-[ ] Print and Document Services                         Print-Services                 Available
-    [ ] Print Server                                    Print-Server                   Available
-    [ ] Distributed Scan Server                         Print-Scan-Server              Available
-    [ ] Internet Printing                               Print-Internet                 Available
-    [ ] LPD Service                                     Print-LPD-Service              Available
-[ ] Peer Name Resolution Protocol                       PNRP                           Available
-[X] Windows PowerShell                                  PowerShellRoot                 Installed
-    [X] Windows PowerShell 5.0                          PowerShell                     Installed
-    [ ] Windows PowerShell 2.0 Engine                   PowerShell-V2                    Removed
-    [X] Windows PowerShell ISE                          PowerShell-ISE                 Installed
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+     18    19.76      15.16       0.00    6232   0 PFERemediation
+     20     8.92      25.15       0.00   24944   0 policyHost
+      9     1.77       7.64       0.00    1780   0 powercfg
+     10    26.67      32.18       0.00    7028   0 powercfg
+      8    26.55      31.59       0.00   13600   0 powercfg
+      9     1.66       7.55       0.00   22620   0 powercfg
+     21     6.17       4.54     202.20   12536   1 PowerMgr
+     42    84.26      12.71   2,488.84   20588   1 powershell
+     27    47.07      45.38       2.05   25988   1 powershell
+     27    24.45       5.31       0.00   12364   0 PresentationFontCache
+     92   112.04      13.36      82.30   13176   1 pwsh
+    106   163.73      93.21     302.25   14620   1 pwsh
+    227   764.01      92.16   1,757.22   25328   1 pwsh
 To filter your results for PowerShell, pipe your results to the Where-Object cmdlet.
 ```
 
@@ -151,7 +156,7 @@ Get-Process | Sort-Object CPU -Descending |
 @{Id=9044; ProcessName=explorer; CPU=2358.765625}
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -MessageData
 
@@ -195,19 +200,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Object
 
 `Write-Information` accepts piped objects to pass to the information stream.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.InformationRecord
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 

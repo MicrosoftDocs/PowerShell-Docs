@@ -8,10 +8,10 @@ title: about Operator Precedence
 ---
 # about_Operator_Precedence
 
-## SHORT DESCRIPTION
+## Short description
 Lists the PowerShell operators in precedence order.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell operators let you construct simple, but powerful expressions. This
 topic lists the operators in precedence order. Precedence order is the order in
@@ -91,7 +91,7 @@ that happens.
 | <code>&& &#124;&#124;</code> (pipeline chain operators) | [about_Operators][ops]               |
 | `= += -= *= /= %= ??=`                                  | [about_Assignment_Operators][assign] |
 
-## EXAMPLES
+## Examples
 
 The following two commands show the arithmetic operators and the effect of
 using parentheses to force PowerShell to evaluate the enclosed part of the
@@ -175,7 +175,7 @@ parentheses to force the evaluation order, even when it forces the default
 operator precedence. The parentheses make your intentions clear to people who
 are reading and maintaining your scripts.
 
-## SEE ALSO
+## See also
 
 [about_Operators][ops]
 

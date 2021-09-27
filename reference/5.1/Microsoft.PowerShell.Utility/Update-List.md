@@ -10,10 +10,10 @@ title: Update-List
 
 # Update-List
 
-## SYNOPSIS
+## Synopsis
 Adds items to and removes items from a property value that contains a collection of objects.
 
-## SYNTAX
+## Syntax
 
 ### AddRemoveSet (Default)
 
@@ -28,7 +28,7 @@ Update-List [-Add <Object[]>] [-Remove <Object[]>] [-InputObject <PSObject>] [[-
 Update-List -Replace <Object[]> [-InputObject <PSObject>] [[-Property] <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Update-List` cmdlet adds, removes, or replaces items in a property value of an object and
 returns the updated object. This cmdlet is designed for properties that contain collections of
@@ -48,7 +48,7 @@ interface.
 The core cmdlets that are installed with PowerShell do not support this interface. To
 determine whether a cmdlet supports `Update-List`, see the cmdlet Help topic.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Add items to a property value
 
@@ -170,7 +170,7 @@ Deck :  2♣ K♥ 4♠ 10♥ 8♠ 10♦ 9♠ 6♠ K♦ 7♣ 3♣ Q♣ A♥
         8♥
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Add
 
@@ -262,21 +262,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe the objects to be updated to `Update-List`.
 
-## OUTPUTS
+## Outputs
 
 ### Objects or System.Management.Automation.PSListModifier
 
 `Update-List` returns the updated object, or it returns an object that represents the update action.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Format-List](Format-List.md)
 

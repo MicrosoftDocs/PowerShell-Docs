@@ -8,11 +8,11 @@ title: about Run With PowerShell
 ---
 # about_Run_With_PowerShell
 
-## SHORT DESCRIPTION
+## Short description
 Explains how to use the "Run with PowerShell" feature to run a script from a
 file system drive.
 
-## LONG DESCRIPTION
+## Long description
 
 Beginning in Windows PowerShell 3.0, you can use the "Run with PowerShell"
 feature to run scripts from File Explorer in Windows 8 and Windows Server 2012
@@ -52,7 +52,7 @@ not affected by any other execution policy. For more information, see
 Troubleshooting Note: Run with PowerShell command might prompt you to confirm
 the execution policy change.
 
-## SEE ALSO
+## See also
 
 [about_Execution_Policies](about_Execution_Policies.md)
 

@@ -10,10 +10,10 @@ title: Suspend-Job
 
 # Suspend-Job
 
-## SYNOPSIS
+## Synopsis
 Temporarily stops workflow jobs.
 
-## SYNTAX
+## Syntax
 
 ### SessionIdParameterSet (Default)
 
@@ -51,7 +51,7 @@ Suspend-Job [-Force] [-Wait] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<Common
 Suspend-Job [-Force] [-Wait] [-State] <JobState> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Suspend-Job` cmdlet suspends workflow jobs. Suspend means to temporarily interrupt or pause a
 workflow job. This cmdlet allows users who are running workflows to suspend the workflow. It
@@ -83,7 +83,7 @@ using a cmdlet in the module.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Suspend a workflow job by name
 
@@ -187,7 +187,7 @@ PS C:\> Suspend-Job Maintenance -Force
 This command suspends the Maintenance workflow job forcibly. The Maintenance job does not have
 checkpoints. It cannot be suspended correctly and might not resume correctly.
 
-## PARAMETERS
+## Parameters
 
 ### -Filter
 
@@ -392,19 +392,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.Job
 
 You can pipe all types of jobs to this cmdlet. However, if `Suspend-Job` gets a job of an
 unsupported type, it returns a terminating error.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.Job
 This cmdlet returns the jobs that it suspended.
 
-## NOTES
+## Notes
 
 - The mechanism and location for saving a suspended job might vary depending on the job type. For
   example, suspended workflow jobs are saved in a flat file store by default, but can also be saved
@@ -421,7 +421,7 @@ This cmdlet returns the jobs that it suspended.
   If attempts to suspend the job fail, verify that the job options and properties allow for
   suspending.
 
-## RELATED LINKS
+## Related links
 
 [Get-Job](Get-Job.md)
 

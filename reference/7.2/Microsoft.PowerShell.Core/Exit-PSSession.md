@@ -13,7 +13,7 @@ title: Exit-PSSession
 ## Synopsis
 Ends an interactive session with a remote computer.
 
-## SYNTAX
+## Syntax
 
 ```
 Exit-PSSession [<CommonParameters>]
@@ -102,7 +102,7 @@ This cmdlet does not return any output.
 
 This cmdlet takes only the common parameters.
 
-## RELATED LINKS
+## Related links
 
 [Connect-PSSession](Connect-PSSession.md)
 

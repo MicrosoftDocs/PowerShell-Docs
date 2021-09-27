@@ -923,7 +923,7 @@ Prior to PowerShell 7.1, remoting over SSH did not support second-hop remote ses
 capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSSession` and
 `Enter-PSHostProcess` to work from within any interactive remote session.
 
-## Related Links
+## Related links
 
 [Exit-PSSession](Exit-PSSession.md)
 

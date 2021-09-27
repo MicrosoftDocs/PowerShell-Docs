@@ -9,11 +9,11 @@ title: about Arrays
 ---
 # about_Arrays
 
-## Short Description
+## Short description
 Describes arrays, which are data structures designed to store collections of
 items.
 
-## Long Description
+## Long description
 
 An array is a data structure that is designed to store a collection of items.
 The items can be the same type or different types.

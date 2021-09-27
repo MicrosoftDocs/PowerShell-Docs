@@ -9,11 +9,11 @@ title: Set-DscLocalConfigurationManager
 ---
 # Set-DscLocalConfigurationManager
 
-## SYNOPSIS
+## Synopsis
 
 Applies Local Configuration Manager (LCM) settings to nodes.
 
-## SYNTAX
+## Syntax
 
 ### ComputerNameSet (Default)
 
@@ -29,14 +29,14 @@ Set-DscLocalConfigurationManager [-Path] <String> [-Force] [-ThrottleLimit <Int3
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-DscLocalConfigurationManager` cmdlet applies LCM settings,
 or meta-configuration, to nodes. Specify computers by specifying computer names or by using Common
 Information Model (CIM) sessions. If you do not specify a target computer, the cmdlet applies
 settings to the local computer.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Apply LCM settings
 
@@ -71,7 +71,7 @@ computer identified by the **CimSession** objects stored in the `$Session` varia
 the `$Session` variable contains a CIM session only for the computer named Server01. The command
 applies the settings. After receiving the settings, LCM processes them.
 
-## PARAMETERS
+## Parameters
 
 ### -CimSession
 
@@ -220,13 +220,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview)
 

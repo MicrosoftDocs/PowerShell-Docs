@@ -9,10 +9,10 @@ title: ConvertFrom-SecureString
 ---
 # ConvertFrom-SecureString
 
-## SYNOPSIS
+## Synopsis
 Converts a secure string to an encrypted standard string.
 
-## SYNTAX
+## Syntax
 
 ### Secure (Default)
 
@@ -26,7 +26,7 @@ ConvertFrom-SecureString [-SecureString] <SecureString> [[-SecureKey] <SecureStr
 ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **ConvertFrom-SecureString** cmdlet converts a secure string (**System.Security.SecureString**)
 into an encrypted standard string (**System.String**). Unlike a secure string, an encrypted standard
@@ -39,7 +39,7 @@ Encryption Standard (AES) encryption algorithm is used. The specified key must h
 key is specified, the Windows Data Protection API (DPAPI) is used to encrypt the standard string
 representation.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a secure string
 
@@ -80,7 +80,7 @@ Because each decimal numeral represents a single byte (8 bits), the key has 24 d
 The second command uses the key in the `$Key` variable to convert the secure string to an encrypted
 standard string.
 
-## PARAMETERS
+## Parameters
 
 ### -Key
 
@@ -138,19 +138,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
 (https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Security.SecureString
 
 You can pipe a **SecureString** object to ConvertFrom-SecureString.
 
-## OUTPUTS
+## Outputs
 
 ### System.String
 
 ConvertFrom-SecureString returns a standard string object.
 
-## NOTES
+## Notes
 
 - To create a secure string from characters that are typed at the command prompt, use the
   **AsSecureString** parameter of the `Read-Host` cmdlet.
@@ -162,7 +162,7 @@ ConvertFrom-SecureString returns a standard string object.
   them. Avoid using these characters because they may cause problems and misunderstandings when used
   in a password.
 
-## RELATED LINKS
+## Related links
 
 [ConvertTo-SecureString](ConvertTo-SecureString.md)
 

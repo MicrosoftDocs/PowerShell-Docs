@@ -9,10 +9,10 @@ title: Copy-ItemProperty
 ---
 # Copy-ItemProperty
 
-## SYNOPSIS
+## Synopsis
 Copies a property and value from a specified location to another location.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -30,14 +30,14 @@ Copy-ItemProperty -LiteralPath <String[]> [-Name] <String> [-Destination] <Strin
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Copy-ItemProperty` cmdlet copies a property and value from a specified location to another
 location.
 For instance, you can use this cmdlet to copy one or more registry entries from one registry key to
 another registry key.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Copy a property from a registry key to another registry key
 
@@ -48,7 +48,7 @@ This command copies the property named "MyProperty" from the "MyApplication" reg
 Copy-ItemProperty -Path "MyApplication" -Destination "HKLM:\Software\MyApplicationRev2" -Name "MyProperty"
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -275,25 +275,25 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None or System.Management.Automation.PSCustomObject
 
 When you use the **Passthru** parameter, this cmdlet generates a **PsCustomObject** representing the
 copied item property. Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Clear-ItemProperty](Clear-ItemProperty.md)
 

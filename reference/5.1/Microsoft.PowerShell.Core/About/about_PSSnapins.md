@@ -8,11 +8,11 @@ title: about PSSnapins
 ---
 # about_PSSnapins
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes  Windows PowerShell snap-ins and shows how to use and manage them.
 
-## LONG DESCRIPTION
+## Long description
 
 A Windows PowerShell snap-in is a Microsoft .NET Framework assembly that
 contains Windows PowerShell providers and\/or cmdlets. Windows PowerShell
@@ -196,7 +196,7 @@ cmdlets in Windows PowerShell modules and snap-ins by setting the
 LogPipelineExecutionDetails property of modules and snap-ins to TRUE. For more
 information, see [about_EventLogs](about_EventLogs.md).
 
-## SEE ALSO
+## See also
 
 [Add-PsSnapin](xref:Microsoft.PowerShell.Core.Add-PSSnapin)
 

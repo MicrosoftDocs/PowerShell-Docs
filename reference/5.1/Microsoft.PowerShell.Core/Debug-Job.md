@@ -13,7 +13,7 @@ title: Debug-Job
 ## Synopsis
 Debugs a running background, remote, or Windows PowerShell Workflow job.
 
-## SYNTAX
+## Syntax
 
 ### JobParameterSet (Default)
 

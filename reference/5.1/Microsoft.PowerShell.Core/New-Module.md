@@ -9,10 +9,10 @@ title: New-Module
 ---
 # New-Module
 
-## SYNOPSIS
+## Synopsis
 Creates a new dynamic module that exists only in memory.
 
-## SYNTAX
+## Syntax
 
 ### ScriptBlock (Default)
 
@@ -28,7 +28,7 @@ New-Module [-Name] <String> [-ScriptBlock] <ScriptBlock> [-Function <String[]>] 
  [-ReturnResult] [-AsCustomObject] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `New-Module` cmdlet creates a dynamic module from a script block. The members of the dynamic
 module, such as functions and variables, are immediately available in the session and remain
@@ -50,7 +50,7 @@ To make a dynamic module available to `Get-Module`, pipe a `New-Module` command 
 pipe the module object that `New-Module` returns to `Import-Module`. This action adds the dynamic
 module to the `Get-Module` list, but it does not save the module to disk or make it persistent.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a dynamic module
 
@@ -250,7 +250,7 @@ New-Module -ScriptBlock {function SayHello {"Hello, World!"}; SayHello} -ReturnR
 Hello, World!
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -ArgumentList
 
@@ -389,13 +389,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a module name to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSModuleInfo, System.Management.Automation.PSCustomObject, or None
 
@@ -403,12 +403,12 @@ This cmdlet generates a **PSModuleInfo** object, by default. If you use the **As
 parameter, it generates a **PSCustomObject** object. If you use the **ReturnResult** parameter, it
 returns the result of evaluating the script block in the dynamic module.
 
-## NOTES
+## Notes
 
 You can also refer to `New-Module` by its alias, `nmo`. For more information, see
 [about_Aliases](About/about_Aliases.md).
 
-## RELATED LINKS
+## Related links
 
 [Export-ModuleMember](Export-ModuleMember.md)
 

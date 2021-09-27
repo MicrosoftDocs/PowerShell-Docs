@@ -10,10 +10,10 @@ title: Update-ScriptFileInfo
 
 # Update-ScriptFileInfo
 
-## SYNOPSIS
+## Synopsis
 Updates information for a script.
 
-## SYNTAX
+## Syntax
 
 ### PathParameterSet (Default)
 
@@ -37,12 +37,12 @@ Update-ScriptFileInfo [-LiteralPath] <String> [-Version <String>] [-Author <Stri
  [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Update-ScriptFileInfo` cmdlet updates a script's property values. For example, the values for
 version, author, or description.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Update the version of a script file
 
@@ -108,7 +108,7 @@ Param()
 **Description**. `Update-ScriptFileInfo` gets the parameter values from `@Parms` and updates the
 script. The **PassThru** parameter displays the script's contents in the PowerShell console.
 
-## PARAMETERS
+## Parameters
 
 ### -Author
 
@@ -475,16 +475,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
 Use the `Test-ScriptFileInfo` cmdlet to validate a script's metadata. Scripts must include values
 for version, GUID, description, and author.
 
-## RELATED LINKS
+## Related links
 
 [New-ScriptFileInfo](New-ScriptFileInfo.md)
 

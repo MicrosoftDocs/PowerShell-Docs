@@ -9,10 +9,10 @@ title: Import-Alias
 ---
 # Import-Alias
 
-## SYNOPSIS
+## Synopsis
 Imports an alias list from a file.
 
-## SYNTAX
+## Syntax
 
 ### ByPath (Default)
 
@@ -27,14 +27,14 @@ Import-Alias -LiteralPath <String> [-Scope <String>] [-PassThru] [-Force] [-What
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Import-Alias` cmdlet imports an alias list from a file.
 
 Beginning in Windows PowerShell 3.0, as a security feature, `Import-Alias` does not overwrite existing aliases by default.
 To overwrite an existing alias, after assuring that the contents of the alias file is safe, use the **Force** parameter.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Import aliases from a file
 
@@ -44,7 +44,7 @@ Import-Alias test.txt
 
 This command imports alias information from a file named test.txt.
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 
@@ -183,22 +183,22 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a path to `Import-Alias`.
 
-## OUTPUTS
+## Outputs
 
 ### None or System.Management.Automation.AliasInfo
 
 When you use the **Passthru** parameter, `Import-Alias` returns a **System.Management.Automation.AliasInfo** object that represents the alias.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Export-Alias](Export-Alias.md)
 

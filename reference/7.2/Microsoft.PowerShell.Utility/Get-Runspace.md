@@ -9,10 +9,10 @@ title: Get-Runspace
 ---
 # Get-Runspace
 
-## SYNOPSIS
+## Synopsis
 Gets active runspaces within a PowerShell host process.
 
-## SYNTAX
+## Syntax
 
 ### NameParameterSet (Default)
 
@@ -32,11 +32,11 @@ Get-Runspace [-Id] <Int32[]> [<CommonParameters>]
 Get-Runspace [-InstanceId] <Guid[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Runspace` cmdlet gets active runspaces in a PowerShell host process.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get runspaces
 
@@ -93,7 +93,7 @@ Id Name            ComputerName    Type          State         Availability
   1 Runspace1       localhost       Local         Opened        Busy
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Id
 
@@ -150,17 +150,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.Runspaces.Runspace
 
 You can pipe the results of a `Get-Runspace` command to `Debug-Runspace`.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Debug-Runspace](Debug-Runspace.md)
 

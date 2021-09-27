@@ -9,10 +9,10 @@ title: Suspend-Service
 ---
 # Suspend-Service
 
-## SYNOPSIS
+## Synopsis
 Suspends (pauses) one or more running services.
 
-## SYNTAX
+## Syntax
 
 ### InputObject (Default)
 
@@ -35,7 +35,7 @@ Suspend-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Excl
  [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Suspend-Service` cmdlet sends a suspend message to the Windows Service Controller for each of
 the specified services. While suspended, the service is still running, but its action is stopped
@@ -43,7 +43,7 @@ until resumed, such as by usingthe `Resume-Service` cmdlet. You can specify the 
 service names or display names, or you can use the **InputObject** parameter to pass a service
 object that represents the services that you want to suspend.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Suspend a service
 
@@ -85,7 +85,7 @@ of `$True` for the **CanPauseAndContinue** property. Another pipeline operator p
 `Suspend-Service`. The **Confirm** parameter prompts you for confirmation before suspending each of
 the services.
 
-## PARAMETERS
+## Parameters
 
 ### -DisplayName
 
@@ -231,13 +231,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.ServiceProcess.ServiceController, System.String
 
 You can pipe a service object or a string that contains a service name to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None, System.ServiceProcess.ServiceController
 
@@ -245,7 +245,7 @@ This cmdlet generates a **System.ServiceProcess.ServiceController** object that 
 service, if you specify the **PassThru** parameter. Otherwise, this cmdlet does not generate any
 output.
 
-## NOTES
+## Notes
 
 - `Suspend-Service` can control services only when the current user has permission to do this. If a
   command does not work correctly, you might not have the required permissions.
@@ -258,7 +258,7 @@ output.
   The service names appear in the **Name** column, and the display names appear in the
   **DisplayName** column.
 
-## RELATED LINKS
+## Related links
 
 [Get-Service](Get-Service.md)
 

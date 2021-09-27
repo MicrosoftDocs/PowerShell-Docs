@@ -9,12 +9,12 @@ title: about WMI Cmdlets
 
 # about_WMI_Cmdlets
 
-## SHORT DESCRIPTION
+## Short description
 
 Provides background information about Windows Management Instrumentation (WMI)
 and Windows PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 This topic provides information about WMI technology, the WMI cmdlets for
 Windows PowerShell, WMI-based remoting, WMI accelerators, and WMI
@@ -199,7 +199,7 @@ incoming WMI request, and you receive the following error message:
 Remote server machine does not exist or is unavailable
 ```
 
-## SEE ALSO
+## See also
 
 [About WMI](/windows/win32/wmisdk/about-wmi)
 

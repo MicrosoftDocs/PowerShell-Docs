@@ -9,10 +9,10 @@ title: Set-Date
 ---
 # Set-Date
 
-## SYNOPSIS
+## Synopsis
 Changes the system time on the computer to a time that you specify.
 
-## SYNTAX
+## Syntax
 
 ### Date (Default)
 
@@ -26,7 +26,7 @@ Set-Date [-Date] <DateTime> [-DisplayHint <DisplayHintType>] [-WhatIf] [-Confirm
 Set-Date [-Adjust] <TimeSpan> [-DisplayHint <DisplayHintType>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-Date` cmdlet changes the system date and time on the computer to a date and time that you
 specify.
@@ -34,7 +34,7 @@ You can specify a new date and/or time by typing a string or by passing a **Date
 **TimeSpan** object to `Set-Date`. To specify a new date or time, use the **Date** parameter.
 To specify a change interval, use the **Adjust** parameter.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Add three days to the system date
 
@@ -91,7 +91,7 @@ $90mins = New-TimeSpan -Minutes 90
 Set-Date -Adjust $90mins
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Adjust
 
@@ -196,19 +196,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.DateTime
 
 You can pipe a date to `Set-Date`.
 
-## OUTPUTS
+## Outputs
 
 ### System.DateTime
 
 `Set-Date` returns an object that represents the date that it set.
 
-## NOTES
+## Notes
 
 - Use this cmdlet cautiously when changing the date and time on the computer. The change might
   prevent the computer from receiving system-wide events and updates that are triggered by a date or
@@ -219,7 +219,7 @@ You can pipe a date to `Set-Date`.
 
   [TimeSpan Methods](/dotnet/api/system.timespan) in the .NET SDK.
 
-## RELATED LINKS
+## Related links
 
 [Get-Date](Get-Date.md)
 

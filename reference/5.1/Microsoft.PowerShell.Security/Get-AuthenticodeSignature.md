@@ -9,10 +9,10 @@ title: Get-AuthenticodeSignature
 ---
 # Get-AuthenticodeSignature
 
-## SYNOPSIS
+## Synopsis
 Gets information about the Authenticode signature for a file.
 
-## SYNTAX
+## Syntax
 
 ### ByPath (Default)
 
@@ -32,7 +32,7 @@ Get-AuthenticodeSignature -LiteralPath <String[]> [<CommonParameters>]
 Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-AuthenticodeSignature` cmdlet gets information about the Authenticode signature for a
 file or file content as a byte array.
@@ -41,7 +41,7 @@ the Windows catalog signature is used.
 If the file is not signed, the information is retrieved, but
 the fields are blank.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the Authenticode signature for a file
 
@@ -90,7 +90,7 @@ Get-AuthenticodeSignature -Content (Get-Content foo.ps1 -AsByteStream) -SourcePa
 This command gets information about the Authenticode signature for the content of a file. In this
 example, the file extension is specified along with the content of the file.
 
-## PARAMETERS
+## Parameters
 
 ### -Content
 
@@ -171,24 +171,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains a file path to `Get-AuthenticodeSignature`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.Signature
 
 `Get-AuthenticodeSignature` returns a signature object for each signature that it gets.
 
-## NOTES
+## Notes
 
 For information about Authenticode signatures in PowerShell, see
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md).
 
-## RELATED LINKS
+## Related links
 
 [Get-ExecutionPolicy](Get-ExecutionPolicy.md)
 

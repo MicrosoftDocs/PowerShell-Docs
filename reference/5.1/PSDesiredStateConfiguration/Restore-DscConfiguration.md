@@ -10,17 +10,17 @@ title: Restore-DscConfiguration
 
 # Restore-DscConfiguration
 
-## SYNOPSIS
+## Synopsis
 Reapplies the previous configuration for the node.
 
-## SYNTAX
+## Syntax
 
 ```
 Restore-DscConfiguration [-CimSession <CimSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Restore-DscConfiguration** cmdlet reapplies the previous configuration for the node, if a previous configuration exists.
 Specify computers by using Common Information Model (CIM) sessions.
 If you do not specify a target computer, the cmdlet restores the configuration of the local computer.
@@ -28,7 +28,7 @@ If there is no previous configuration for a particular node, this cmdlet returns
 
 This cmdlet does not support the **Confirm** parameter.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Restore the configuration for the local computer
 
@@ -55,7 +55,7 @@ For more information, type `Get-Help New-CimSession`.
 
 The second command restores the configuration for the computers identified by the **CimSession** objects stored in the $Session variable, in this case, the computer named Server01.
 
-## PARAMETERS
+## Parameters
 
 ### -AsJob
 Indicates that this cmdlet runs the command as a background job.
@@ -137,13 +137,13 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/dscforengineers)
 

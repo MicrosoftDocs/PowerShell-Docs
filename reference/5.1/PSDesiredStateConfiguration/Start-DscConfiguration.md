@@ -10,10 +10,10 @@ title: Start-DscConfiguration
 
 # Start-DscConfiguration
 
-## SYNOPSIS
+## Synopsis
 Applies configuration to nodes.
 
-## SYNTAX
+## Syntax
 
 ### ComputerNameAndPathSet (Default)
 
@@ -44,7 +44,7 @@ Start-DscConfiguration [-Wait] [-Force] -CimSession <CimSession[]> [-ThrottleLim
  [-JobName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Start-DscConfiguration** cmdlet applies configuration to nodes.
 When used with the *UseExisting* parameter, the existing configuration on the target computer is applied.
 Specify which computers that you want to apply configuration to by specifying computer names or by using Common Information Model (CIM) sessions.
@@ -55,7 +55,7 @@ To use this cmdlet interactively, specify the *Wait* parameter.
 
 Specify the *Verbose* parameter to see details of what the cmdlet does when it applies configuration settings.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Apply configuration settings
 
@@ -99,7 +99,7 @@ In this example, the $Session variable contains a CIM session only for the compu
 The command applies the configuration.
 The command creates **Job** objects for each configured computer.
 
-## PARAMETERS
+## Parameters
 
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
@@ -290,13 +290,13 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview)
 

@@ -10,10 +10,10 @@ title: New-PSDrive
 
 # New-PSDrive
 
-## SYNOPSIS
+## Synopsis
 Creates temporary and persistent mapped network drives.
 
-## SYNTAX
+## Syntax
 
 ### All
 
@@ -23,7 +23,7 @@ New-PSDrive [-Name] <String> [-PSProvider] <String> [-Root] <String> [-Descripti
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `New-PSDrive` cmdlet creates temporary and persistent drives that are mapped to or associated
 with a location in a data store, such as a network drive, a directory on the local computer, or a
@@ -67,7 +67,7 @@ specified in the value of the **Credential** parameter is used to create the **P
 Some code samples use splatting to reduce the line length and improve readability. For more
 information, see [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a temporary drive mapped to a network share
 
@@ -247,7 +247,7 @@ LocalName    RemoteName              ConnectionState          Status
 X:           \\products\public       Disconnected             Unavailable
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -477,17 +477,17 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You can't pipeline input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSDriveInfo
 
-## NOTES
+## Notes
 
 `New-PSDrive` is designed to work with the data exposed by any provider. To list the providers
 available in your session, use `Get-PSProvider`. For more information about providers, see
@@ -497,7 +497,7 @@ Mapped network drives are specific to a user account. Mapped drives created in e
 sessions using the credential of another user aren't visible in sessions started using different
 credentials.
 
-## RELATED LINKS
+## Related links
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

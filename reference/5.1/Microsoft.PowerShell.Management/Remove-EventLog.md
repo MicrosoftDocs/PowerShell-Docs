@@ -10,10 +10,10 @@ title: Remove-EventLog
 
 # Remove-EventLog
 
-## SYNOPSIS
+## Synopsis
 Deletes an event log or unregisters an event source.
 
-## SYNTAX
+## Syntax
 
 ### Default (Default)
 
@@ -27,7 +27,7 @@ Remove-EventLog [[-ComputerName] <String[]>] [-LogName] <String[]> [-WhatIf] [-C
 Remove-EventLog [[-ComputerName] <String[]>] [-Source <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Remove-EventLog** cmdlet deletes an event log file from a local or remote computer and unregisters all its event sources for the log.
 You can also use this cmdlet to unregister event sources without deleting any event logs.
 
@@ -36,7 +36,7 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 
 CAUTION: This cmdlet can delete operating system event logs, which might cause application failures and unexpected system behavior.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Remove an event log from the local computer
 
@@ -122,7 +122,7 @@ The second command uses the *Source* parameter of **Remove-EventLog** to delete 
 The third command is identical to the first.
 It shows that the MyApp event source was deleted.
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 Specifies a remote computer.
@@ -214,17 +214,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not return any output.
 
-## NOTES
+## Notes
 
 * To use **Remove-EventLog** on Windows Vista and later versions of the Windows operating system, start Windows PowerShell by using the Run as administrator option.
 
@@ -233,7 +233,7 @@ Applications that used the events sources to write entries to the original log w
 
 * When you unregister an event source for a particular log, the event source might be prevented from writing entries in other event logs.
 
-## RELATED LINKS
+## Related links
 
 [Clear-EventLog](Clear-EventLog.md)
 

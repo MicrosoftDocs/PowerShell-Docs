@@ -10,10 +10,10 @@ title: Set-WSManQuickConfig
 
 # Set-WSManQuickConfig
 
-## SYNOPSIS
+## Synopsis
 Configures the local computer for remote management.
 
-## SYNTAX
+## Syntax
 
 ### All
 
@@ -21,7 +21,7 @@ Configures the local computer for remote management.
 Set-WSManQuickConfig [-UseSSL] [-Force] [-SkipNetworkProfileCheck] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-WSManQuickConfig` cmdlet configures the computer to receive PowerShell remote commands that
 are sent by using the Web Services for Management (WS-Management) technology.
@@ -36,7 +36,7 @@ are sent by using the Web Services for Management (WS-Management) technology.
 
 To run `Set-WSManQuickConfig`, start PowerShell with the **Run as Administrator** option.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Enable remote management of the local computer over HTTP
 
@@ -60,7 +60,7 @@ Set-WSManQuickConfig -UseSSL
 > **HTTPS** requires manual configuration. For more information, see the **UseSSL** parameter's
 > description.
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 
@@ -136,21 +136,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 This cmdlet doesn't accept any input.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet doesn't generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Connect-WSMan](Connect-WSMan.md)
 

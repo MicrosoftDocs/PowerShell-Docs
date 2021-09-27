@@ -10,21 +10,21 @@ title: Get-DscConfiguration
 
 # Get-DscConfiguration
 
-## SYNOPSIS
+## Synopsis
 Gets the current configuration of the nodes.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-DscConfiguration [-CimSession <CimSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Get-DscConfiguration** cmdlet gets the current configuration of the nodes, if the configuration exists.
 Specify computers by using Common Information Model (CIM) sessions.
 If you do not specify a target computer, the cmdlet gets the configuration from the local computer.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the configuration for the local computer
 
@@ -51,7 +51,7 @@ For more information, type `Get-Help New-CimSession`.
 
 The second command gets the current configuration for the computers identified by the **CimSession** objects stored in the **$Session** variable, in this case, the computer named Server01.
 
-## PARAMETERS
+## Parameters
 
 ### -AsJob
 Indicates that this cmdlet runs the command as a background job.
@@ -105,13 +105,13 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/dscforengineers)
 

@@ -682,7 +682,7 @@ You can pipe the body of a web request to `Invoke-WebRequest`.
 
 ## Notes
 
-## Related Links
+## Related links
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
 

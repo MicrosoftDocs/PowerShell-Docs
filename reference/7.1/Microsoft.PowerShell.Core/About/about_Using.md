@@ -8,10 +8,10 @@ title: about Using
 ---
 # about_Using
 
-## SHORT DESCRIPTION
+## Short description
 Allows you to indicate which namespaces are used in the session.
 
-## LONG DESCRIPTION
+## Long description
 
 The `using` statement allows you to specify which namespaces are used in the
 session. Adding namespaces simplifies usage of .NET classes and member and

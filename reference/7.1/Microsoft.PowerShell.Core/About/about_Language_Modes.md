@@ -8,10 +8,10 @@ title: about Language Modes
 ---
 # about_Language_Modes
 
-## SHORT DESCRIPTION
+## Short description
 Explains language modes and their effect on PowerShell sessions.
 
-## LONG DESCRIPTION
+## Long description
 
 The language mode of a PowerShell session determines, in part, which elements
 of the PowerShell language can be used in the session.

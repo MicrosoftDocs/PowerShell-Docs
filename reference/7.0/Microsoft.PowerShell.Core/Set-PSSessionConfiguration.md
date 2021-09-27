@@ -9,10 +9,10 @@ title: Set-PSSessionConfiguration
 ---
 # Set-PSSessionConfiguration
 
-## SYNOPSIS
+## Synopsis
 Changes the properties of a registered session configuration.
 
-## SYNTAX
+## Syntax
 
 ### NameParameterSet (Default)
 
@@ -49,7 +49,7 @@ Set-PSSessionConfiguration [-Name] <String> [-RunAsCredential <PSCredential>]
  [-TransportOption <PSTransportOption>] -Path <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -79,7 +79,7 @@ to the local computer. For more information about session configurations, see [a
 To see the properties of a session configuration, use the `Get-PSSessionConfiguration` cmdlet or the
 WSMan Provider. For more information about the WSMan Provider, type `Get-Help WSMan`.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create and change a session configuration
 
@@ -179,7 +179,7 @@ PSVersion     2.0
 startupscript c:\ps-test\Maintenance.ps1
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -AccessMode
 
@@ -699,17 +699,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.WSMan.Management.WSManConfigLeafElement
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
@@ -735,7 +735,7 @@ properties that are introduced in PowerShell 3.0, such as **OutputBufferingMode*
 PowerShell 2.0 commands do not generate an error, but they are ineffective. To change properties
 introduced in PowerShell 3.0, use the WSMan: drive in PowerShell 3.0.
 
-## RELATED LINKS
+## Related links
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 

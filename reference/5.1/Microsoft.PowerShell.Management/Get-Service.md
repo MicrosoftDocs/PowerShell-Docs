@@ -9,10 +9,10 @@ title: Get-Service
 ---
 # Get-Service
 
-## SYNOPSIS
+## Synopsis
 Gets the services on a local or remote computer.
 
-## SYNTAX
+## Syntax
 
 ### Default (Default)
 
@@ -35,14 +35,14 @@ Get-Service [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] 
  [-Exclude <String[]>] [-InputObject <ServiceController[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Get-Service** cmdlet gets objects that represent the services on a local computer or on a remote computer, including running and stopped services.
 
 You can direct this cmdlet to get only particular services by specifying the service name or
 the display name of the services, or you can pipe service objects to this cmdlet.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all services on the computer
 
@@ -198,7 +198,7 @@ The command returns the value of the **ServicesDependedOn** property of the serv
 This command gets the WinRM service on the local computer.
 This example shows that you can pipe a service name string (enclosed in quotation marks) to **Get-Service**.
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 
@@ -356,19 +356,19 @@ Accept wildcard characters: True
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.ServiceProcess.ServiceController, System.String
 
 You can pipe a service object or a service name to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.ServiceProcess.ServiceController
 
 This cmdlet returns objects that represent the services on the computer.
 
-## NOTES
+## Notes
 
 You can also refer to **Get-Service** by its built-in alias, "gsv". For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
@@ -383,7 +383,7 @@ The Status property of a service is an enumerated value in which the names of th
 The sort is based on the integer value, not the name.
 "Running" appears before "Stopped" because "Stopped" has a value of "1", and "Running" has a value of "4".
 
-## RELATED LINKS
+## Related links
 
 [New-Service](New-Service.md)
 

@@ -10,10 +10,10 @@ title: Get-Service
 
 # Get-Service
 
-## SYNOPSIS
+## Synopsis
 Gets the services on the computer.
 
-## SYNTAX
+## Syntax
 
 ### Default (Default)
 
@@ -36,7 +36,7 @@ Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>] [-Exc
  [-InputObject <ServiceController[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -47,7 +47,7 @@ computer's services are returned.
 You can direct this cmdlet to get only particular services by specifying the service name or the
 display name of the services, or you can pipe service objects to this cmdlet.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get all services on the computer
 
@@ -182,7 +182,7 @@ quotation marks, is sent down the pipeline to `Get-Service`.
 "WinRM" | Get-Service
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -DependentServices
 
@@ -311,19 +311,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.ServiceProcess.ServiceController, System.String
 
 You can pipe a service object or a service name to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.ServiceProcess.ServiceController
 
 This cmdlet returns objects that represent the services on the computer.
 
-## NOTES
+## Notes
 
 This cmdlet is only available on Windows platforms.
 
@@ -347,7 +347,7 @@ appears before because Running because Stopped has a value of 1, and Running has
 more information, see
 [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
 
-## RELATED LINKS
+## Related links
 
 [New-Service](New-Service.md)
 

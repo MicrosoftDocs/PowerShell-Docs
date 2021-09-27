@@ -9,11 +9,11 @@ title: about Logical Operators
 
 # about_Logical_Operators
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the operators that connect statements in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 The PowerShell logical operators connect expressions and statements, allowing
 you to use a single expression to test for multiple conditions.
@@ -67,7 +67,7 @@ If the left operand in a statement that contains the or statement is TRUE, the
 right operand is not evaluated. As a result, you can use these statements in
 the same way that you would use the `If` statement.
 
-## SEE ALSO
+## See also
 
 [about_Operators](about_Operators.md)
 

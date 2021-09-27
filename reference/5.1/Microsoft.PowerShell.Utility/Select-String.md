@@ -10,10 +10,10 @@ title: Select-String
 
 # Select-String
 
-## SYNOPSIS
+## Synopsis
 Finds text in strings and files.
 
-## SYNTAX
+## Syntax
 
 ### File (Default)
 
@@ -39,7 +39,7 @@ Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-Cas
  [-Context <Int32[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Select-String` cmdlet searches for text and text patterns in input strings and files. You can
 use `Select-String` similar to **grep** in UNIX or **findstr.exe** in Windows.
@@ -60,7 +60,7 @@ You can also specify that `Select-String` should expect a particular character e
 when you're searching files of Unicode text. `Select-String` uses the byte-order-mark (BOM) to
 detect the encoding format of the file. If the file has no BOM, it assumes the encoding is UTF8.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Find a case-sensitive match
 
@@ -300,7 +300,7 @@ line. The objects stored in the `$A` and `$B` variables are identical.
 The `$B.Matches.Length` property increases because for each line, every occurrence of the pattern
 **PowerShell** is counted.
 
-## PARAMETERS
+## Parameters
 
 ### -AllMatches
 
@@ -611,20 +611,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object that has a **ToString** method to `Select-String`.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.Commands.MatchInfo or System.Boolean
 
 By default, the output is a set of **MatchInfo** objects with one for each match found. If you use
 the **Quiet** parameter, the output is a Boolean value indicating whether the pattern was found.
 
-## NOTES
+## Notes
 
 `Select-String` is similar to **grep** in UNIX or **findstr.exe** in Windows.
 
@@ -665,7 +665,7 @@ To find the properties of a **MatchInfo** object, type the following command:
 
 `Select-String -Path test.txt -Pattern 'test' | Get-Member | Format-List -Property *`
 
-## RELATED LINKS
+## Related links
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 

@@ -10,10 +10,10 @@ title: Disable-LocalUser
 
 # Disable-LocalUser
 
-## SYNOPSIS
+## Synopsis
 Disables a local user account.
 
-## SYNTAX
+## Syntax
 
 ### InputObject
 
@@ -33,7 +33,7 @@ Disable-LocalUser [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 Disable-LocalUser [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Disable-LocalUser** cmdlet disables local user accounts.
 When a user account is disabled, the user cannot log on.
 When a user account is enabled, the user can log on.
@@ -42,7 +42,7 @@ When a user account is enabled, the user can log on.
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Disable an account by specifying a name
 
@@ -61,7 +61,7 @@ PS C:\> Get-LocalUser Guest | Disable-LocalUser
 This command gets the built-in Guest account by using **Get-LocalUser**, and then passes it to the current cmdlet by using the pipeline operator.
 That cmdlet disables that account.
 
-## PARAMETERS
+## Parameters
 
 ### -InputObject
 Specifies an array of user accounts that this cmdlet disables.
@@ -143,17 +143,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser, System.String, System.Security.Principal.SecurityIdentifier
 You can pipe a local user, a string, or a SID to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
@@ -164,7 +164,7 @@ This cmdlet does not generate any output.
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
 
-## RELATED LINKS
+## Related links
 
 [Enable-LocalUser](Enable-LocalUser.md)
 

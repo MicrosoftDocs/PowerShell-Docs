@@ -9,17 +9,17 @@ title: ConvertTo-Xml
 ---
 # ConvertTo-Xml
 
-## SYNOPSIS
+## Synopsis
 Creates an XML-based representation of an object.
 
-## SYNTAX
+## Syntax
 
 ```
 ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation] [-As <String>]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `ConvertTo-Xml` cmdlet creates an [XML-based](/dotnet/api/system.xml.xmldocument) representation
 of one or more more .NET objects. To use this cmdlet, pipe one or more objects to the
@@ -35,7 +35,7 @@ file that can be reimported as objects with [Import-Clixml](./Import-Clixml.md).
 returns an in-memory representation of an XML document, so you can continue to process it in
 PowerShell. `ConvertTo-Xml` does not have an option to convert objects to CLI XML.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Convert a date to XML
 
@@ -54,7 +54,7 @@ PS C:\> ConvertTo-Xml -As "Document" -InputObject (Get-Process) -Depth 3
 This command converts the process objects that represent all of the processes on the computer into
 an XML document. The objects are expanded to a depth of three levels.
 
-## PARAMETERS
+## Parameters
 
 ### -As
 
@@ -145,21 +145,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to **ConvertTo-XML**.
 
-## OUTPUTS
+## Outputs
 
 ### System.String or System.Xml.XmlDocument
 
 The value of the *As* parameter determines the type of object that **ConvertTo-XML** returns.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [ConvertTo-Csv](ConvertTo-Csv.md)
 

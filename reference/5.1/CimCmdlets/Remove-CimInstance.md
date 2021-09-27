@@ -9,10 +9,10 @@ title: Remove-CimInstance
 ---
 # Remove-CimInstance
 
-## SYNOPSIS
+## Synopsis
 Removes a CIM instance from a computer.
 
-## SYNTAX
+## Syntax
 
 ### CimInstanceComputerSet (Default)
 
@@ -44,7 +44,7 @@ Remove-CimInstance [-ComputerName <String[]>] [[-Namespace] <String>]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 This cmdlet removes a CIM instance from a CIM server. You can specify the CIM instance to remove by
 using either a CIM instance object retrieved by the `Get-CimInstance` cmdlet, or by specifying a
@@ -59,7 +59,7 @@ If the **InputObject** parameter is not specified, the cmdlet works in one of th
   cmdlet works against the CIM server specified by either the **ComputerName** parameter or the
   **CimSession** parameter.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Remove the CIM instance
 
@@ -82,7 +82,7 @@ $var = Get-CimInstance -Query 'Select * from Win32_Process where name LIKE "note
 Remove-CimInstance -InputObject $var
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -CimSession
 
@@ -302,21 +302,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 This cmdlet accepts no input objects.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet produces no outputs.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [New-CimInstance](New-CimInstance.md)
 

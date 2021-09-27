@@ -9,10 +9,10 @@ title: Clear-Content
 ---
 # Clear-Content
 
-## SYNOPSIS
+## Synopsis
 Deletes the contents of an item, but does not delete the item.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -28,13 +28,13 @@ Clear-Content -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [
  [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Clear-Content` cmdlet deletes the contents of an item, such as deleting the text from a file, but it does not delete the item.
 As a result, the item exists, but it is empty.
 The `Clear-Content` is similar to `Clear-Item`, but it works on items with contents, instead of items with values.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Delete all content from a directory
 
@@ -86,7 +86,7 @@ Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -302,19 +302,19 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You cannot pipe objects to `Clear-Content`.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not return any objects.
 
-## NOTES
+## Notes
 
 You can use `Clear-Content` with the PowerShell FileSystem provider and with other providers that manipulate content.
 To clear items that are not considered to be content, such as items managed by the PowerShell Certificate or Registry providers, use `Clear-Item`.
@@ -323,7 +323,7 @@ The `Clear-Content` cmdlet is designed to work with the data exposed by any prov
 To list the providers available in your session, type `Get-PsProvider`.
 For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Add-Content](Add-Content.md)
 

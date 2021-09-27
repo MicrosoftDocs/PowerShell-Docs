@@ -10,10 +10,10 @@ title: Publish-DscConfiguration
 
 # Publish-DscConfiguration
 
-## SYNOPSIS
+## Synopsis
 Publishes a DSC configuration to a set of computers.
 
-## SYNTAX
+## Syntax
 
 ### ComputerNameSet (Default)
 
@@ -29,7 +29,7 @@ Publish-DscConfiguration [-Path] <String> [-Force] [-ThrottleLimit <Int32>] -Cim
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Publish-DscConfiguration** cmdlet publishes a Windows PowerShell Desired State Configuration (DSC) configuration document on set of computers.
 This cmdlet does not apply the configuration.
 Configurations are applied by either the Start-DscConfiguration cmdlet when it is used with the *UseExisting* parameter or when the DSC engine runs its consistency cycle.
@@ -38,7 +38,7 @@ The DSC engine is also known as the Local Configuration Manager (LCM).
 This cmdlet is especially useful when fragments of multiple configuration documents are delivered.
 When multiple configuration documents fragments are delivered, they overwrite the older configuration document fragments.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Publish a configuration to a remote computer
 
@@ -49,7 +49,7 @@ PS C:\> Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoW
 This command publishes a configuration to a remote computer.
 The user who runs the cmdlet should be administrator on the remote computer.
 
-## PARAMETERS
+## Parameters
 
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
@@ -181,13 +181,13 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/dscforengineers)
 

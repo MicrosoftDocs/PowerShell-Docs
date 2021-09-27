@@ -8,11 +8,11 @@ title: about PowerShell exe
 ---
 # about_PowerShell_exe
 
-## Short Description
+## Short description
 Explains how to use the `powershell.exe` command-line interface. Displays the
 command-line parameters and describes the syntax.
 
-## Long Description
+## Long description
 
 ### SYNTAX
 

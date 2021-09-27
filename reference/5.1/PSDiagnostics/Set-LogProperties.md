@@ -10,23 +10,23 @@ title: Set-LogProperties
 
 # Set-LogProperties
 
-## SYNOPSIS
+## Synopsis
 Changes the properties of a Windows event log.
 
-## SYNTAX
+## Syntax
 
 ```
 Set-LogProperties [-LogDetails] <LogDetails> [-Force] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 This cmdlet changes the configuration settings of a Windows event log. This cmdlet is used by the
 `Enable-PSTrace` and `Disable-PSTrace` cmdlets.
 
 You must run this cmdlet from an elevated PowerShell session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Change the retention setting of the Windows PowerShell event log
 
@@ -46,7 +46,7 @@ AutoBackup : False
 MaxLogSize : 15728640
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 
@@ -87,7 +87,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Microsoft.PowerShell.Diagnostics.LogDetails
 
@@ -95,15 +95,15 @@ You must pass a fully configured **LogDetails** object to the `Set-LogProperties
 Therefore, to change one setting, you should use `Get-LogProperties` to retrieve the current
 configuration.
 
-## OUTPUTS
+## Outputs
 
 ### System.Object
 
-## NOTES
+## Notes
 
 You must run this cmdlet from an elevated PowerShell session.
 
-## RELATED LINKS
+## Related links
 
 [Get-LogProperties](Get-LogProperties.md)
 

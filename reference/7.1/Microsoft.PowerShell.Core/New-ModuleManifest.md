@@ -10,10 +10,10 @@ title: New-ModuleManifest
 
 # New-ModuleManifest
 
-## SYNOPSIS
+## Synopsis
 Creates a new module manifest.
 
-## SYNTAX
+## Syntax
 
 ### All
 
@@ -33,7 +33,7 @@ New-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>] [
  [-DefaultCommandPrefix <String>] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `New-ModuleManifest` cmdlet creates a new module manifest (`.psd1`) file, populates its values,
 and saves the manifest file in the specified path.
@@ -61,7 +61,7 @@ values for certain properties. For more information, see
 [Required metadata for items published to the PowerShell Gallery](/powershell/scripting/gallery/how-to/publishing-packages/publishing-a-package#required-metadata-for-items-published-to-the-powershell-gallery)
 in the Gallery documentation.
 
-## EXAMPLES
+## Examples
 
 ### Example 1 - Create a new module manifest
 
@@ -314,7 +314,7 @@ ExportedFormatFiles         : {C:\Windows\system32\WindowsPowerShell\v1.0\Event.
 ExportedTypeFiles           : {C:\Windows\system32\WindowsPowerShell\v1.0\GetEvent.types.ps1xml}
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -AliasesToExport
 
@@ -1150,20 +1150,20 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You can't pipe input to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None or System.String
 
 By default, `New-ModuleManifest` doesn't generate any output. However, if you use the **PassThru**
 parameter, it generates a **System.String** object representing the module manifest.
 
-## NOTES
+## Notes
 
 `New-ModuleManifest` running on Windows and non-Windows platforms creates module manifest (`.psd1`)
 files encoded as **UTF8NoBOM**.
@@ -1193,7 +1193,7 @@ The caller's session state is the session state into which a module is imported.
 refers to the global session state, but when a module imports nested modules, the caller is the
 module and the caller's session state is the module's session state.
 
-## RELATED LINKS
+## Related links
 
 [Export-ModuleMember](Export-ModuleMember.md)
 

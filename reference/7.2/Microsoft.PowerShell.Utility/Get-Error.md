@@ -10,11 +10,11 @@ title: Get-Error
 
 # Get-Error
 
-## SYNOPSIS
+## Synopsis
 
 Gets and displays the most recent error messages from the current session.
 
-## SYNTAX
+## Syntax
 
 ### Newest (Default)
 
@@ -28,7 +28,7 @@ Get-Error [[-Newest] <Int32>] [<CommonParameters>]
 Get-Error [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Error` cmdlet gets a **PSExtendedError** object that represents the current error details
 from the last error that occurred in the session.
@@ -39,7 +39,7 @@ session using the **Newest** parameter.
 The `Get-Error` cmdlet also receives error objects from a collection, such as `$Error`, to display
 multiple errors from the current session.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the most recent error details
 
@@ -117,7 +117,7 @@ messages, similar to the result of Example 1.
 $Error | Get-Error
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -InputObject
 
@@ -157,23 +157,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### PSObject
 
 Supports input from any **PSObject**, but results vary unless either an **ErrorRecord** or
 **Exception** object are supplied.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.ErrorRecord#PSExtendedError
 
 Output in a **PSExtendedError** object.
 
-## NOTES
+## Notes
 
 `Get-Error` accepts pipeline input. For example, `$Error | Get-Error`.
 
-## RELATED LINKS
+## Related links
 
 [about_Try_Catch_Finally](../Microsoft.PowerShell.Core/About/about_Try_Catch_Finally.md)

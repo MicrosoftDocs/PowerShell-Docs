@@ -9,10 +9,10 @@ title: Save-Help
 ---
 # Save-Help
 
-## SYNOPSIS
+## Synopsis
 Downloads and saves the newest help files to a file system directory.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -30,7 +30,7 @@ Save-Help -LiteralPath <String[]> [[-Module] <PSModuleInfo[]>] [-FullyQualifiedM
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Save-Help` cmdlet downloads the newest help files for PowerShell modules and saves them to a
 directory that you specify. This feature lets you update the help files on computers that do not
@@ -75,7 +75,7 @@ group on the computer to download the help files for these modules.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Save the help for the DhcpServer module
 
@@ -201,7 +201,7 @@ The command uses the `Save-Help` cmdlet to download and save the help files to t
 The **Force** parameter is required when you have to run a `Save-Help` command more than one time
 each day.
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -420,19 +420,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSModuleInfo
 
 You can pipe a module object from the `Get-Module` cmdlet to the **Module** parameter of `Save-Help`.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 - To save help for modules in the $pshome\Modules folder, start PowerShell by using the Run as
   administrator option. Only members of the Administrators group on the computer can download help
@@ -459,7 +459,7 @@ This cmdlet does not generate any output.
 - The `Update-Help` and `Save-Help` cmdlets are not supported on Windows Preinstallation Environment
   (Windows PE).
 
-## RELATED LINKS
+## Related links
 
 [Get-Help](Get-Help.md)
 

@@ -9,10 +9,10 @@ title: Find-Script
 ---
 # Find-Script
 
-## SYNOPSIS
+## Synopsis
 Finds a script.
 
-## SYNTAX
+## Syntax
 
 ```
 Find-Script [[-Name] <String[]>] [-MinimumVersion <String>] [-MaximumVersion <String>]
@@ -21,11 +21,11 @@ Find-Script [[-Name] <String[]>] [-MinimumVersion <String>] [-MaximumVersion <St
  [-Repository <String[]>] [-Credential <PSCredential>] [-AllowPrerelease] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Find-Script** cmdlet finds a specified script in registered repositories.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Find all available scripts
 
@@ -181,7 +181,7 @@ Version    Name                                Type       Repository           D
 
 This command uses the wildcard character (*) to find scripts that begin with Required-Script.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowPrerelease
 
@@ -430,7 +430,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String[]
 
@@ -440,11 +440,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSCredential
 
-## OUTPUTS
+## Outputs
 
 ### PSRepositoryItemInfo
 
-## NOTES
+## Notes
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -458,7 +458,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## RELATED LINKS
+## Related links
 
 [Install-Script](Install-Script.md)
 

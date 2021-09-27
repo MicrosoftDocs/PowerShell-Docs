@@ -9,21 +9,21 @@ title: Out-Null
 ---
 # Out-Null
 
-## SYNOPSIS
+## Synopsis
 Hides the output instead of sending it down the pipeline or displaying it.
 
-## SYNTAX
+## Syntax
 
 ```
 Out-Null [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Out-Null** cmdlet sends its output to NULL, in effect, removing it from the pipeline and
 preventing the output to be displayed at the screen.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Delete output
 
@@ -35,7 +35,7 @@ This command gets items in the current location/directory, but its output is not
 the pipeline nor displayed at the command line.
 This is useful for hiding output that you do not need.
 
-## PARAMETERS
+## Parameters
 
 ### -InputObject
 
@@ -58,24 +58,24 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * The cmdlets that contain the **Out** verb (the **Out** cmdlets) do not have parameters for names or file paths. To send data to an **Out** cmdlet, use a pipeline operator (|) to send the output of a PowerShell command to the cmdlet. You can also store data in a variable and use the *InputObject* parameter to pass the data to the cmdlet. For more information, see the examples.
 * **Out-Null** does not return any output objects. If you pipe the output of **Out-Null** to the Get-Member cmdlet, **Get-Member** reports that no objects have been specified.
 
-## RELATED LINKS
+## Related links
 
 [Out-Default](Out-Default.md)
 

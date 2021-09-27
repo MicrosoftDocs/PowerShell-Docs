@@ -8,12 +8,12 @@ title: about Enum
 ---
 # about_Enum
 
-## SHORT DESCRIPTION
+## Short description
 The `enum` statement is used to declare an enumeration. An enumeration is a
 distinct type that consists of a set of named labels called the enumerator
 list.
 
-## LONG DESCRIPTION
+## Long description
 
 The `enum` statement allows you to create a strongly typed set of labels. That
 enumeration can be used in the code without having to parse or check for

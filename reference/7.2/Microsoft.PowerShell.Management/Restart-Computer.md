@@ -10,10 +10,10 @@ title: Restart-Computer
 
 # Restart-Computer
 
-## SYNOPSIS
+## Synopsis
 Restarts the operating system on local and remote computers.
 
-## SYNTAX
+## Syntax
 
 ### DefaultSet (Default)
 
@@ -23,7 +23,7 @@ Restart-Computer [-WsmanAuthentication <String>] [[-ComputerName] <String[]>]
  [-Delay <Int16>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -38,7 +38,7 @@ command. Specify a waiting time-out and query interval, and wait for particular 
 available on the restarted computer. This feature makes it practical to use `Restart-Computer` in
 scripts and functions.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Restart the local computer
 
@@ -117,7 +117,7 @@ Restart-Computer -ComputerName Server01 -WsmanAuthentication Kerberos
 `Restart-Computer` uses the **ComputerName** parameter to specify the remote computer, **Server01**.
 The **WsmanAuthentication** parameter specifies the authentication method as **Kerberos**.
 
-## PARAMETERS
+## Parameters
 
 ### -ComputerName
 
@@ -357,19 +357,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 `Restart-Computer` accepts computer names from the pipeline or variables.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 `Restart-Computer` doesn't generate any output.
 
-## NOTES
+## Notes
 
 - In Windows, `Restart-Computer` uses the [Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
   of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
@@ -377,7 +377,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
   used to restart the machine.
 - On Linux and Mac OS, `Restart-Computer` uses the `/sbin/shutdown` bash tool.
 
-## RELATED LINKS
+## Related links
 
 [About Windows Remote Management](/windows/desktop/WinRM/about-windows-remote-management)
 

@@ -706,7 +706,7 @@ strings.
 
 ## Notes
 
-## Related Links
+## Related links
 
 [ConvertTo-Json](ConvertTo-Json.md)
 

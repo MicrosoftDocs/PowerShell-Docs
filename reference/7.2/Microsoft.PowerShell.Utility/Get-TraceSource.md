@@ -9,16 +9,16 @@ title: Get-TraceSource
 ---
 # Get-TraceSource
 
-## SYNOPSIS
+## Synopsis
 Gets PowerShell components that are instrumented for tracing.
 
-## SYNTAX
+## Syntax
 
 ```
 Get-TraceSource [[-Name] <String[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Get-TraceSource** cmdlet gets the trace sources for PowerShell components that are currently in use.
 You can use the data to determine which PowerShell components you can trace.
@@ -27,7 +27,7 @@ Developers use the trace data to monitor data flow, program execution, and error
 
 The tracing cmdlets were designed for PowerShell developers, but they are available to all users.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get trace sources by name
 
@@ -45,7 +45,7 @@ PS C:\> Get-TraceSource
 
 This command gets all of the PowerShell components that can be traced.
 
-## PARAMETERS
+## Parameters
 
 ### -Name
 
@@ -69,21 +69,21 @@ Accept wildcard characters: True
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a string that contains the name of a trace source to **Get-TraceSource**.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSTraceSource
 
 **Get-TraceSource** returns objects that represent the trace sources.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Set-TraceSource](Set-TraceSource.md)
 

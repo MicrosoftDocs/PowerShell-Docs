@@ -10,17 +10,17 @@ title: Invoke-DscResource
 
 # Invoke-DscResource
 
-## SYNOPSIS
+## Synopsis
 Runs a method of a specified DSC resource.
 
-## SYNTAX
+## Syntax
 
 ```
 Invoke-DscResource [-Name] <String> [-Method] <String> -ModuleName <ModuleSpecification> -Property <Hashtable>
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Invoke-DscResource** cmdlet runs a method of a specified Windows PowerShell Desired State Configuration (DSC) resource.
 Before you run this cmdlet, set the refresh mode of the Local Configuration Manager (LCM) to Disabled.
 
@@ -28,7 +28,7 @@ This cmdlet invokes a DSC resource directly, without creating a configuration do
 Using this cmdlet, configuration management products can manage windows by using DSC resources.
 This cmdlet also enables debugging of resources when the DSC engine or LCM is running with debugging enabled.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Invoke the Set method of a resource by specifying its mandatory properties
 
@@ -46,7 +46,7 @@ PS C:\> Invoke-DscResource -Name WindowsProcess -Method Test -Property @{Path = 
 
 This command invokes the **Test** method of a resource named WindowsProcess, which is in the module named PSDesiredStateConfiguration.
 
-## PARAMETERS
+## Parameters
 
 ### -Method
 Specifies the method of the resource that this cmdlet invokes. The acceptable values for this parameter are: Get, Set, and Test.
@@ -112,15 +112,15 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.Management.Infrastructure.CimInstance, System.Boolean
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/dscforengineers)
 

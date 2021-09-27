@@ -9,10 +9,10 @@ title: Start-ThreadJob
 ---
 # Start-ThreadJob
 
-## SYNOPSIS
+## Synopsis
 Creates background jobs similar to the `Start-Job` cmdlet.
 
-## SYNTAX
+## Syntax
 
 ### ScriptBlock
 
@@ -30,7 +30,7 @@ Start-ThreadJob [-FilePath] <String> [-Name <String>] [-InitializationScript <Sc
  [-StreamingHost <PSHost>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 `Start-ThreadJob` creates background jobs similar to the `Start-Job` cmdlet. The main difference is
 that the jobs which are created run in separate threads within the local process. By default, the
@@ -40,7 +40,7 @@ The cmdlet also supports a **ThrottleLimit** parameter to limit the number of jo
 time. As more jobs are started, they are queued and wait until the current number of jobs drops
 below the throttle limit.
 
-## EXAMPLES
+## Examples
 
 ### Example 1 - Create background jobs with a thread limit of 2
 
@@ -139,7 +139,7 @@ Notice that the prompt from `Read-Host` is displayed and you are able to type in
 message from `Write-Warning` is displayed. The `Receive-Job` cmdlet returns all the output from the
 job.
 
-## PARAMETERS
+## Parameters
 
 ### -ArgumentList
 
@@ -302,17 +302,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
-## OUTPUTS
+## Outputs
 
 ### ThreadJob.ThreadJob
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Start-Job](../Microsoft.PowerShell.Core/Start-Job.md)
 

@@ -8,11 +8,11 @@ title: about PSConsoleHostReadLine
 ---
 # about_PSConsoleHostReadLine
 
-## SHORT DESCRIPTION
+## Short description
 Explains how to create a customize how PowerShell reads input at the console
 prompt.
 
-## LONG DESCRIPTION
+## Long description
 
 Starting in Windows PowerShell 3.0, you can write a function named
 PSConsoleHostReadLine that overrides the default way that console input is

@@ -9,12 +9,12 @@ title: about DesiredStateConfiguration
 
 # about_DesiredStateConfiguration
 
-## SHORT DESCRIPTION
+## Short description
 
 Provides a brief introduction to the PowerShell Desired State
 Configuration (DSC) feature.
 
-## LONG DESCRIPTION
+## Long description
 
 DSC is a management platform in PowerShell that enables deploying and managing
 configuration data for software services, and managing the environment in
@@ -168,7 +168,7 @@ that have been created by the PowerShell and DSC user community, and by
 Microsoft. Visit the [PowerShell Gallery](https://www.powershellgallery.com/)
 to browse and learn about available DSC resources.
 
-## SEE ALSO
+## See also
 
 [PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview)
 

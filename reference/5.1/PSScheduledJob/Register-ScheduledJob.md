@@ -10,10 +10,10 @@ title: Register-ScheduledJob
 
 # Register-ScheduledJob
 
-## SYNOPSIS
+## Synopsis
 Creates a scheduled job.
 
-## SYNTAX
+## Syntax
 
 ### ScriptBlock (Default)
 
@@ -35,7 +35,7 @@ Register-ScheduledJob [-FilePath] <String> [-Name] <String> [-Trigger <Scheduled
  [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Register-ScheduledJob` cmdlet creates scheduled jobs on the local computer.
 
@@ -76,7 +76,7 @@ Import the **PSScheduledJob** module and then type: `Get-Help about_Scheduled*` 
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Create a scheduled job
 
@@ -219,7 +219,7 @@ run scripts on the remote computers. And, the **Authentication** parameter speci
 
 The `Invoke-Command @params` runs the command with the parameters from the script block.
 
-## PARAMETERS
+## Parameters
 
 ### -ArgumentList
 
@@ -577,17 +577,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 You can't send input down the pipeline to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
-## NOTES
+## Notes
 
 Each scheduled job is saved in a subdirectory of the
 `$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on the local computer.
@@ -618,7 +618,7 @@ If a scheduled job doesn't run, use the following methods to find the reason:
 For more information, see
 [about_Scheduled_Jobs_Troubleshooting](./about/about_scheduled_jobs_troubleshooting.md).
 
-## RELATED LINKS
+## Related links
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

@@ -9,10 +9,10 @@ title: Set-PSRepository
 ---
 # Set-PSRepository
 
-## SYNOPSIS
+## Synopsis
 Sets values for a registered repository.
 
-## SYNTAX
+## Syntax
 
 ```
 Set-PSRepository [-Name] <String> [[-SourceLocation] <Uri>] [-PublishLocation <Uri>]
@@ -21,12 +21,12 @@ Set-PSRepository [-Name] <String> [[-SourceLocation] <Uri>] [-PublishLocation <U
  [-PackageManagementProvider <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-PSRepository` cmdlet sets values for a registered module repository. The settings are
 persistent for the current user and apply to all versions of PowerShell installed for that user.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Set the installation policy for a repository
 
@@ -46,7 +46,7 @@ Set-PSRepository -Name "myInternalSource" -SourceLocation 'https://someNuGetUrl.
 This command sets the source location and publish location for **myInternalSource** to the specified
 URIs.
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -217,7 +217,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Uri
 
-## OUTPUTS
+## Outputs
 
 ### System.Object
 
-## NOTES
+## Notes
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -243,7 +243,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## RELATED LINKS
+## Related links
 
 [Get-PSRepository](Get-PSRepository.md)
 

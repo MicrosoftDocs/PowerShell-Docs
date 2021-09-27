@@ -9,10 +9,10 @@ title: Get-Random
 ---
 # Get-Random
 
-## SYNOPSIS
+## Synopsis
 Gets a random number, or selects objects randomly from a collection.
 
-## SYNTAX
+## Syntax
 
 ### RandomNumberParameterSet (Default)
 
@@ -26,7 +26,7 @@ Get-Random [-SetSeed <Int32>] [[-Maximum] <Object>] [-Minimum <Object>] [<Common
 Get-Random [-SetSeed <Int32>] [-InputObject] <Object[]> [-Count <Int32>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Get-Random` cmdlet gets a randomly selected number. If you submit a collection of objects to
 `Get-Random`, it gets one or more randomly selected objects from the collection.
@@ -49,7 +49,7 @@ objects returned from a collection, or a seed number.
 > the current session until you use **SetSeed** again or close the session. You can't reset the seed
 > to its default value.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get a random integer
 
@@ -237,7 +237,7 @@ Name Count
 6      188
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Count
 
@@ -360,20 +360,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Object
 
 You can pipe one or more objects. `Get-Random` selects values randomly from the piped objects.
 
-## OUTPUTS
+## Outputs
 
 ### System.Int32, System.Int64, System.Double
 
 `Get-Random` returns an integer or floating-point number, or an object selected randomly from a
 submitted collection.
 
-## NOTES
+## Notes
 
 By default, `Get-Random` generates cryptographically secure randomness using the
 [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) class.
@@ -397,7 +397,7 @@ the output type for each of the numeric input types.
 Beginning in Windows PowerShell 3.0, `Get-Random` supports 64-bit integers. In Windows PowerShell
 2.0, all values are cast to **System.Int32**.
 
-## RELATED LINKS
+## Related links
 
 [System.Security.Cryptography.RandomNumberGenerator()](/dotnet/api/system.security.cryptography.randomnumbergenerator)
 

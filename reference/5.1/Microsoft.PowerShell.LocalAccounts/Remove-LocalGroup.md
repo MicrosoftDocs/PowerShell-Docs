@@ -10,10 +10,10 @@ title: Remove-LocalGroup
 
 # Remove-LocalGroup
 
-## SYNOPSIS
+## Synopsis
 Deletes local security groups.
 
-## SYNTAX
+## Syntax
 
 ### InputObject
 
@@ -33,7 +33,7 @@ Remove-LocalGroup [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 Remove-LocalGroup [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Remove-LocalGroup** cmdlet deletes local security groups.
 This cmdlet deletes only a local group.
 It does not delete the user accounts, computer accounts, or group accounts that belong to that group.
@@ -46,7 +46,7 @@ The new group does not inherit the permissions that were assigned to the group.
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Delete a security group
 
@@ -56,7 +56,7 @@ PS C:\> Remove-LocalGroup -Name "SecurityGroup04"
 
 This command deletes the group named SecurityGroup04.
 
-## PARAMETERS
+## Parameters
 
 ### -InputObject
 Specifies an array of security groups that this cmdlet deletes.
@@ -138,17 +138,17 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier
 You can pipe a security group, a string, or a SID to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 * This cmdlet cannot delete the following default groups:
 
@@ -179,7 +179,7 @@ This cmdlet does not generate any output.
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
 
-## RELATED LINKS
+## Related links
 
 [Get-LocalGroup](Get-LocalGroup.md)
 

@@ -10,11 +10,11 @@ title: ConvertFrom-Markdown
 
 # ConvertFrom-Markdown
 
-## SYNOPSIS
+## Synopsis
 Convert the contents of a string or a file to a **MarkdownInfo**
 object.
 
-## SYNTAX
+## Syntax
 
 ### PathParamSet (Default)
 
@@ -34,7 +34,7 @@ ConvertFrom-Markdown -LiteralPath <String[]> [-AsVT100EncodedString] [<CommonPar
 ConvertFrom-Markdown -InputObject <PSObject> [-AsVT100EncodedString] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 This cmdlet converts the specified content into a **MarkdownInfo**. When a file path is specified
 for the **Path** parameter, the contents on the file are converted. The output object has three
@@ -47,7 +47,7 @@ properties:
 
 This cmdlet was introduced in PowerShell 6.1.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Convert a file containing Markdown content to HTML
 
@@ -89,7 +89,7 @@ of the `README.md` file.
 The **MarkdownInfo** object is returned. The specified string `**Bold text**` is converted to a
 VT100-encoded string and available in **VT100EncodedString** property.
 
-## PARAMETERS
+## Parameters
 
 ### -AsVT100EncodedString
 
@@ -163,17 +163,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PowerShell.MarkdownRender.MarkdownInfo
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Markdown Parser](https://github.com/lunet-io/markdig)
 

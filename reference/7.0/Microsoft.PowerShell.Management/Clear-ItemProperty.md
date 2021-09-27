@@ -9,10 +9,10 @@ title: Clear-ItemProperty
 ---
 # Clear-ItemProperty
 
-## SYNOPSIS
+## Synopsis
 Clears the value of a property but does not delete the property.
 
-## SYNTAX
+## Syntax
 
 ### Path (Default)
 
@@ -30,12 +30,12 @@ Clear-ItemProperty -LiteralPath <String[]> [-Name] <String> [-PassThru] [-Force]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Clear-ItemProperty` cmdlet clears the value of a property, but it does not delete the property.
 You can use this cmdlet to delete the data from a registry value.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Clear the value of registry key
 
@@ -46,7 +46,7 @@ This command clears the data in the "Options" registry value in the "MyApp" subk
 Clear-ItemProperty -Path "HKLM:\Software\MyCompany\MyApp" -Name "Options"
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Credential
 
@@ -257,20 +257,20 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
 You can pipe a path string to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None or System.Management.Automation.PSCustomObject
 
 When you use the **PassThru** parameter, `Clear-ItemProperty` generates a **PSCustomObject** object
 that represents the cleared item property. Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 - You can use `Clear-ItemProperty` to delete the data in registry values without deleting the value.
   If the data type of the value is Binary or DWORD, clearing the data sets the value to zero.
@@ -279,7 +279,7 @@ that represents the cleared item property. Otherwise, this cmdlet does not gener
   the providers available in your session, type `Get-PSProvider`. For more information, see
   [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## RELATED LINKS
+## Related links
 
 [Copy-ItemProperty](Copy-ItemProperty.md)
 

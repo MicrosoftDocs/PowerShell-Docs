@@ -10,10 +10,10 @@ title: Restart-Computer
 
 # Restart-Computer
 
-## SYNOPSIS
+## Synopsis
 Restarts the operating system on local and remote computers.
 
-## SYNTAX
+## Syntax
 
 ### DefaultSet (Default)
 
@@ -32,7 +32,7 @@ Restart-Computer [-AsJob] [-DcomAuthentication <AuthenticationLevel>]
  [-Force] [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Restart-Computer` cmdlet restarts the operating system on the local and remote computers.
 
@@ -52,7 +52,7 @@ information, see [WS-Management Protocol](/windows/desktop/WinRM/ws-management-p
 This cmdlet requires Windows PowerShell remoting only when you use the **AsJob** parameter in a
 command.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Restart the local computer
 
@@ -151,7 +151,7 @@ Restart-Computer -ComputerName Server01 -Protocol WSMan -WsmanAuthentication Ker
 The **Protocol** parameter specifies to use the WSMan protocol. The **WsmanAuthentication**
 parameter specifies the authentication method as **Kerberos**.
 
-## PARAMETERS
+## Parameters
 
 ### -AsJob
 
@@ -515,7 +515,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.String
 
@@ -525,14 +525,14 @@ In Windows PowerShell 2.0, the **ComputerName** parameter takes input from the p
 property name. In Windows PowerShell 3.0, and later, the **ComputerName** parameter takes input from
 the pipeline by value.
 
-## OUTPUTS
+## Outputs
 
 ### None, System.Management.Automation.RemotingJob
 
 If you specify the **AsJob** parameter, `Restart-Computer` returns a job object. Otherwise, no
 output is generated.
 
-## NOTES
+## Notes
 
 - `Restart-Computer` only work on computers running Windows and requires WinRM and WMI to shutdown a
   system, including the local system.
@@ -545,7 +545,7 @@ In Windows PowerShell 2.0, the **AsJob** parameter doesn't work reliably when yo
 stopping remote computers. In Windows PowerShell 3.0, the implementation is changed to resolve this
 problem.
 
-## RELATED LINKS
+## Related links
 
 [About Windows Remote Management](/windows/desktop/WinRM/about-windows-remote-management)
 

@@ -10,10 +10,10 @@ title: Resume-Job
 
 # Resume-Job
 
-## SYNOPSIS
+## Synopsis
 Restarts a suspended job.
 
-## SYNTAX
+## Syntax
 
 ### SessionIdParameterSet (Default)
 
@@ -51,7 +51,7 @@ Resume-Job [-Wait] [-State] <JobState> [-WhatIf] [-Confirm] [<CommonParameters>]
 Resume-Job [-Wait] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Resume-Job` cmdlet resumes a workflow job that was suspended, such as by using the
 `Suspend-Job` cmdlet or the [about_Suspend-Workflow](../PSWorkflow/about/about_Suspend-Workflow.md)
@@ -79,7 +79,7 @@ either by using the `Import-Module` cmdlet or getting or using a cmdlet in the m
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Resume a job by ID
 
@@ -196,7 +196,7 @@ only in workflows.
 For information about the `Suspend-Workflow`, see
 about_Suspend-Workflow](../PSWorkflow/about/about_Suspend-Workflow.md).
 
-## PARAMETERS
+## Parameters
 
 ### -Filter
 
@@ -378,21 +378,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.Job
 
 You can pipe all types of jobs to this cmdlet. If `Resume-Job` gets a job of an unsupported type, it
 returns a terminating error.
 
-## OUTPUTS
+## Outputs
 
 ### None, System.Management.Automation.Job
 
 This cmdlet returns the jobs that it tries to resume, if you use the **PassThru** parameter.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
 - `Resume-Job` can only resume jobs that are suspended. If you submit a job in a different state,
   `Resume-Job` runs the resume operation on the job, but generates a warning to notify you that the
@@ -410,7 +410,7 @@ Otherwise, this cmdlet does not generate any output.
   If attempts to suspend the job fail, verify that the job options and properties allow for
   suspending.
 
-## RELATED LINKS
+## Related links
 
 [Get-Job](Get-Job.md)
 

@@ -9,10 +9,10 @@ title: Invoke-WSManAction
 ---
 # Invoke-WSManAction
 
-## SYNOPSIS
+## Synopsis
 Invokes an action on the object that is specified by the Resource URI and by the selectors.
 
-## SYNTAX
+## Syntax
 
 ### URI (Default)
 
@@ -32,13 +32,13 @@ Invoke-WSManAction [-Action] <String> [-ApplicationName <String>] [-ComputerName
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The Invoke-WSManAction runs an action on the object that is specified by RESOURCE_URI, where parameters are specified by key value pairs.
 
 This cmdlet uses the WSMan connection/transport layer to run the action.
 
-## EXAMPLES
+## Examples
 
 ### Example 1
 
@@ -123,7 +123,7 @@ The return value indicates whether the action was successful.
 In this case, a return value of 0 indicates success.
 A return value of 5 indicates that the service is already started.
 
-## PARAMETERS
+## Parameters
 
 ### -Action
 
@@ -462,21 +462,21 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
 This cmdlet does not accept any input.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Invoke-WmiMethod](../Microsoft.PowerShell.Management/Invoke-WmiMethod.md)
 

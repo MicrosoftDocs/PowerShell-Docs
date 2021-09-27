@@ -9,10 +9,10 @@ title: Get-PSBreakpoint
 ---
 # Get-PSBreakpoint
 
-## SYNOPSIS
+## Synopsis
 Gets the breakpoints that are set in the current session.
 
-## SYNTAX
+## Syntax
 
 ### Line (Default)
 

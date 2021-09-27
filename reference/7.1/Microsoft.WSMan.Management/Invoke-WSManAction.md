@@ -9,10 +9,10 @@ title: Invoke-WSManAction
 ---
 # Invoke-WSManAction
 
-## SYNOPSIS
+## Synopsis
 Invokes an action on the object that is specified by the Resource URI and by the selectors.
 
-## SYNTAX
+## Syntax
 
 ### URI (Default)
 
@@ -32,7 +32,7 @@ Invoke-WSManAction [-Action] <String> [-ApplicationName <String>] [-ComputerName
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -40,7 +40,7 @@ The **Invoke-WSManAction** runs an action on the object that is specified by RES
 
 This cmdlet uses the WSMan connection/transport layer to run the action.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Invoke a method
 
@@ -117,7 +117,7 @@ ReturnValue : 0
 This command calls the **StartService** method of the Win32_Service WMI class instance that corresponds to the Spooler service.
 Because the *ComputerName* parameter is specified, the command runs against the remote server01 computer.
 
-## PARAMETERS
+## Parameters
 
 ### -Action
 Specifies the method to run on the management object specified by the ResourceURI and selectors.
@@ -448,19 +448,19 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 This cmdlet does not accept any input.
 
-## OUTPUTS
+## Outputs
 
 ### None
 This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Connect-WSMan](Connect-WSMan.md)
 

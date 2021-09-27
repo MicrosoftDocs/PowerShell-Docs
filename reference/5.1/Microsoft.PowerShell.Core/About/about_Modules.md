@@ -8,10 +8,10 @@ title: about Modules
 ---
 # about_Modules
 
-## Short Description
+## Short description
 Explains how to install, import, and use PowerShell modules.
 
-## Long Description
+## Long description
 
 A module is a package that contains PowerShell members, such as cmdlets,
 providers, functions, workflows, variables, and aliases.
@@ -519,7 +519,7 @@ module logging in all PowerShell sessions. For more information, see
 [about_EventLogs](about_EventLogs.md) and
 [about_Group_Policy_Settings](about_Group_Policy_Settings.md).
 
-## See Also
+## See also
 
 [about_Command_Precedence](about_Command_Precedence.md)
 

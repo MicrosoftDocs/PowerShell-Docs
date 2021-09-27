@@ -9,11 +9,11 @@ title: about Throw
 
 # about_Throw
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the Throw keyword, which generates a terminating error.
 
-## LONG DESCRIPTION
+## Long description
 
 The Throw keyword causes a terminating error. You can use the Throw keyword to
 stop the processing of a command, function, or script.
@@ -26,7 +26,7 @@ declaration to make a function parameter mandatory.
 The Throw keyword can throw any object, such as a user message string or the
 object that caused the error.
 
-## SYNTAX
+## Syntax
 
 The syntax of the Throw keyword is as follows:
 
@@ -150,7 +150,7 @@ function Get-XMLFiles
 }
 ```
 
-## SEE ALSO
+## See also
 
 [about_Break](about_Break.md)
 

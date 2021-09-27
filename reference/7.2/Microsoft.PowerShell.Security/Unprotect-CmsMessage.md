@@ -9,10 +9,10 @@ title: Unprotect-CmsMessage
 ---
 # Unprotect-CmsMessage
 
-## SYNOPSIS
+## Synopsis
 Decrypts content that has been encrypted by using the Cryptographic Message Syntax format.
 
-## SYNTAX
+## Syntax
 
 ### ByWinEvent (Default)
 
@@ -40,7 +40,7 @@ Unprotect-CmsMessage [-LiteralPath] <String> [-IncludeContext] [[-To] <CmsMessag
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Unprotect-CmsMessage` cmdlet decrypts content that has been encrypted by using the
 Cryptographic Message Syntax (CMS) format.
@@ -63,7 +63,7 @@ content.
 
 Support for Linux and macOS was added in PowerShell 7.1.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Decrypt a message
 
@@ -84,7 +84,7 @@ Unprotect-CmsMessage -LiteralPath @parameters
 Try the new Break All command
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Content
 
@@ -196,21 +196,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Diagnostics.Eventing.Reader.EventLogRecord or System.String
 
 You can pipe an object containing encrypted content to `Unprotect-CmsMessage`.
 
-## OUTPUTS
+## Outputs
 
 ### System.String
 
 The unencrypted message.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

@@ -9,10 +9,10 @@ title: Find-PackageProvider
 ---
 # Find-PackageProvider
 
-## SYNOPSIS
+## Synopsis
 Returns a list of Package Management package providers available for installation.
 
-## SYNTAX
+## Syntax
 
 ```
 Find-PackageProvider [[-Name] <String[]>] [-AllVersions] [-Source <String[]>] [-IncludeDependencies]
@@ -20,7 +20,7 @@ Find-PackageProvider [[-Name] <String[]>] [-AllVersions] [-Source <String[]>] [-
  [-MinimumVersion <String>] [-MaximumVersion <String>] [-Force] [-ForceBootstrap] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The **Find-PackageProvider** cmdlet finds matching PackageManagement providers that are available in package sources registered with PowerShellGet.
 These are package providers available for installation with the Install-PackageProvider cmdlet.
@@ -29,7 +29,7 @@ By default, this includes modules available in the PowerShell Gallery with the *
 **Find-PackageProvider** also finds matching Package Management providers that are available in the Package Management Azure Blob store.
 Use the bootstrapper provider to find and install them.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Find all available package providers
 
@@ -56,7 +56,7 @@ PS C:\> Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 
 This command finds a package provider available by using a specified package source.
 
-## PARAMETERS
+## Parameters
 
 ### -AllVersions
 
@@ -261,16 +261,16 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
-## OUTPUTS
+## Outputs
 
 ### Microsoft.PackageManagement.Packaging.SoftwareIdentity
 
 This cmdlet returns a **SoftwareIdentity** object.
 A **SoftwareIdentity** object can be piped into **Install-PackageProvider** to install the results of **Find-PackageProvider**.
 
-## NOTES
+## Notes
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -284,7 +284,7 @@ A **SoftwareIdentity** object can be piped into **Install-PackageProvider** to i
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## RELATED LINKS
+## Related links
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

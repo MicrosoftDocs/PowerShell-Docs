@@ -10,10 +10,10 @@ title: Set-ScheduledJob
 
 # Set-ScheduledJob
 
-## SYNOPSIS
+## Synopsis
 Changes scheduled jobs.
 
-## SYNTAX
+## Syntax
 
 ### ScriptBlock (Default)
 
@@ -42,7 +42,7 @@ Set-ScheduledJob [-InputObject] <ScheduledJobDefinition> [-ClearExecutionHistory
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 The **Set-ScheduledJob** cmdlet changes the properties of scheduled jobs, such as the commands that the jobs run or the credentials required to run the job.
 You can also use it to clear the execution history of the scheduled job.
 
@@ -63,7 +63,7 @@ Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or s
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Change the script that a job runs
 
@@ -114,7 +114,7 @@ The command uses the Invoke-Command cmdlet to run a command on the Server01 and 
 The remote command begins with a Get-ScheduledJob command that gets all scheduled jobs on the computer.
 The scheduled jobs are piped to the **Set-ScheduledJob** cmdlet, which changes the initialization script to SetForRun.ps1.
 
-## PARAMETERS
+## Parameters
 
 ### -ArgumentList
 Specifies values for the parameters of the script that is specified by the *FilePath* parameter or for the command that is specified by the *ScriptBlock* parameter.
@@ -458,20 +458,20 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 You can pipe scheduled jobs to **Set-ScheduledJob**.
 
-## OUTPUTS
+## Outputs
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 If you use the *Passthru* parameter, **Set-ScheduledJob** returns the scheduled job that was changed.
 Otherwise, this cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

@@ -8,10 +8,10 @@ title: about Objects
 ---
 # about_Objects
 
-## Short Description
+## Short description
 Provides essential information about objects in PowerShell.
 
-## Long Description
+## Long description
 
 Every action you take in PowerShell occurs within the context of
 objects. As data moves from one command to the next, it moves as one or
@@ -68,7 +68,7 @@ True (`$true`) in their **PsIsContainer** property, are not selected.
 The second command passes only the file objects to the third command
 `Format-List`, which displays the file objects in a list.
 
-## See Also
+## See also
 
 [about_Methods](about_Methods.md)
 

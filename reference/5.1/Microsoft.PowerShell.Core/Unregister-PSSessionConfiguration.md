@@ -9,17 +9,17 @@ title: Unregister-PSSessionConfiguration
 ---
 # Unregister-PSSessionConfiguration
 
-## SYNOPSIS
+## Synopsis
 Deletes registered session configurations from the computer.
 
-## SYNTAX
+## Syntax
 
 ```
 Unregister-PSSessionConfiguration [-Name] <String> [-Force] [-NoServiceRestart] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Unregister-PSSessionConfiguration` cmdlet deletes registered session configurations from the
 computer. This cmdlet is designed for system administrators to manage customized session
@@ -32,7 +32,7 @@ If you accidentally delete the default **Microsoft.PowerShell** or **Microsoft.P
 session configurations, use the `Enable-PSRemoting` cmdlet to restore them. For more information,
 see [about_Session_Configurations](About/about_Session_Configurations.md).
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Delete a session configuration
 
@@ -107,7 +107,7 @@ Finally, the `New-PSSession` cmdlet tries to create a session that uses the **Ma
 configuration. This time, the session fails because the **MaintenanceShell** configuration was
 deleted when the WinRM service restarted.
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 
@@ -211,23 +211,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration
 
 You can pipe a session configuration object from `Get-PSSessionConfiguration` to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### None
 
 This cmdlet does not return any objects.
 
-## NOTES
+## Notes
 
 To run this cmdlet you must start PowerShell by using the **Run as administrator** option.
 
-## RELATED LINKS
+## Related links
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 
