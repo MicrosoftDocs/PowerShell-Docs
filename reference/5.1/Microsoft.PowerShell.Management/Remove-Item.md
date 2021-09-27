@@ -220,9 +220,9 @@ of this parameter qualifies the **Path** parameter. Enter a path element or patt
 command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
 specifies the contents of the `C:\Windows` directory.
 
-When using **Recurse** with **Exclude**, **Exclude** will only filter results of the current
-directory. If there are files that match the **Exclude** pattern in subfilders, those files are
-removed along with its parent directory.
+When using **Recurse** with **Exclude**, **Exclude** only filters results of the current directory.
+If there are files that match the **Exclude** pattern in subfolders, those files are removed along
+with its parent directory.
 
 ```yaml
 Type: System.String[]
@@ -345,7 +345,7 @@ the locations.
 The **Recurse** parameter might not delete all subfolders or all child items. This is a known issue.
 
 > [!NOTE]
-> This behavior was fixed in Windows versions 1909 and up.
+> This behavior was fixed in Windows versions 1909 and newer.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
