@@ -2,16 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 06/09/2017
+ms.date: 09/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/new-winevent?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-WinEvent
 ---
-
 # New-WinEvent
 
 ## Synopsis
-
 Creates a new Windows event for the specified event provider.
 
 ## Syntax
@@ -23,7 +21,7 @@ New-WinEvent [-ProviderName] <String> [-Id] <Int32> [-Version <Byte>] [[-Payload
 
 ## Description
 
-The **New-WinEvent** cmdlet creates an Event Tracing for Windows (ETW) event for an event provider.
+The `New-WinEvent` cmdlet creates an Event Tracing for Windows (ETW) event for an event provider.
 You can use this cmdlet to add events to ETW channels from Windows PowerShell.
 
 ## Examples
@@ -31,10 +29,10 @@ You can use this cmdlet to add events to ETW channels from Windows PowerShell.
 ### Example 1
 
 ```powershell
-PS C:\> New-WinEvent -ProviderName Microsoft-Windows-PowerShell -Id 45090 -Payload @("Workflow", "Running")
+New-WinEvent -ProviderName Microsoft-Windows-PowerShell -Id 45090 -Payload @("Workflow", "Running")
 ```
 
-This command uses the **New-WinEvent** cmdlet to create event 45090 for the
+This command uses the `New-WinEvent` cmdlet to create event 45090 for the
 Microsoft-Windows-PowerShell provider.
 
 ## Parameters
@@ -60,7 +58,8 @@ Accept wildcard characters: False
 Specifies the message for the event. When the event is written to an event log, the payload is
 stored in the **Message** property of the event object.
 
-When the specified payload does not match the payload in the event definition, Windows PowerShell generates a warning, but the command still succeeds.
+When the specified payload does not match the payload in the event definition, Windows PowerShell
+generates a warning, but the command still succeeds.
 
 ```yaml
 Type: System.Object[]
@@ -131,7 +130,7 @@ This cmdlet does to generate any output.
 
 ## Notes
 
-* After the provider writes the even to an eventlog, you can use the Get-WinEvent cmdlet to get the
+- After the provider writes the even to an eventlog, you can use the `Get-WinEvent` cmdlet to get the
   event from the event log.
 
 ## Related links

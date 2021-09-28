@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 06/09/2017
+ms.date: 09/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/remove-localgroup?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-LocalGroup
@@ -34,13 +34,14 @@ Remove-LocalGroup [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonPar
 ```
 
 ## Description
-The **Remove-LocalGroup** cmdlet deletes local security groups.
-This cmdlet deletes only a local group.
-It does not delete the user accounts, computer accounts, or group accounts that belong to that group.
-You cannot recover a deleted group.
 
-If you delete a group and then create another group that has the same group name, you must set new permissions for the new group.
-The new group does not inherit the permissions that were assigned to the group.
+The `Remove-LocalGroup` cmdlet deletes local security groups. This cmdlet deletes only a local
+group. It does not delete the user accounts, computer accounts, or group accounts that belong to
+that group. You cannot recover a deleted group.
+
+If you delete a group and then create another group that has the same group name, you must set new
+permissions for the new group. The new group does not inherit the permissions that were assigned to
+the group.
 
 > [!NOTE]
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
@@ -50,8 +51,8 @@ The new group does not inherit the permissions that were assigned to the group.
 
 ### Example 1: Delete a security group
 
-```
-PS C:\> Remove-LocalGroup -Name "SecurityGroup04"
+```powershell
+Remove-LocalGroup -Name "SecurityGroup04"
 ```
 
 This command deletes the group named SecurityGroup04.
@@ -59,8 +60,9 @@ This command deletes the group named SecurityGroup04.
 ## Parameters
 
 ### -InputObject
-Specifies an array of security groups that this cmdlet deletes.
-To obtain groups, use the Get-LocalGroup cmdlet.
+
+Specifies an array of security groups that this cmdlet deletes. To obtain groups, use the
+`Get-LocalGroup` cmdlet.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.LocalGroup[]
@@ -75,6 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of names of the security groups that this cmdlet deletes.
 
 ```yaml
@@ -90,6 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies an array of security IDs (SIDs) of security groups that this cmdlet deletes.
 
 ```yaml
@@ -105,6 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -120,8 +125,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -136,21 +141,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a security group, a string, or a SID to this cmdlet.
 
 ## Outputs
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## Notes
 
-* This cmdlet cannot delete the following default groups:
+- This cmdlet cannot delete the following default groups:
 
 - Administrators
 - Backup Operators
@@ -170,14 +180,17 @@ This cmdlet does not generate any output.
 - Users
 - WinRMRemoteWMIUsers__
 
-* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
+- The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
+  follows:
 
 - Local
 - Active Directory
 - Azure Active Directory group
 - Microsoft Account
 
-**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
+**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
+Windows operating system. For earlier versions, the property is blank.
 
 ## Related links
 

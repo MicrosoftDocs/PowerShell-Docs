@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 09/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/remove-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Module
@@ -34,12 +34,14 @@ Remove-Module [-ModuleInfo] <PSModuleInfo[]> [-Force] [-WhatIf] [-Confirm] [<Com
 
 ## Description
 
-The **Remove-Module** cmdlet removes the members of a module, such as cmdlets and functions, from the current session.
+The `Remove-Module` cmdlet removes the members of a module, such as cmdlets and functions, from the
+current session.
 
-If the module includes an assembly (.dll), all members that are implemented by the assembly are removed, but the assembly is not unloaded.
+If the module includes an assembly (`.dll`), all members that are implemented by the assembly are
+removed, but the assembly is not unloaded.
 
-This cmdlet does not uninstall the module or delete it from the computer.
-It affects only the current PowerShell session.
+This cmdlet does not uninstall the module or delete it from the computer. It affects only the
+current PowerShell session.
 
 ## Examples
 
@@ -49,7 +51,7 @@ It affects only the current PowerShell session.
 Remove-Module -Name "BitsTransfer"
 ```
 
-This command removes the BitsTransfer module from the current session.
+This command removes the **BitsTransfer** module from the current session.
 
 ### Example 2: Remove all modules
 
@@ -83,14 +85,14 @@ VERBOSE: Removing imported function 'Disable-PSTrace'.
 VERBOSE: Performing operation "Remove-Module" on Target "PSDiagnostics (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\psdiagnostics\PSDiagnostics.psm1')".
 ```
 
-This command removes the BitsTransfer and PSDiagnostics modules from the current session.
+This command removes the **BitsTransfer** and **PSDiagnostics** modules from the current session.
 
-The command uses a pipeline operator (|) to send the module names to **Remove-Module**.
-It uses the *Verbose* common parameter to get detailed information about the members that are removed.
+The command uses a pipeline operator (`|`) to send the module names to `Remove-Module`. It uses the
+**Verbose** common parameter to get detailed information about the members that are removed.
 
-The *Verbose* messages show the items that are removed.
-The messages differ because the BitsTransfer module includes an assembly that implements its cmdlets and a nested module with its own assembly.
-The PSDiagnostics module includes a module script file (.psm1) that exports functions.
+The **Verbose** messages show the items that are removed. The messages differ because the
+BitsTransfer module includes an assembly that implements its cmdlets and a nested module with its
+own assembly. The PSDiagnostics module includes a module script file (`.psm1`) that exports functions.
 
 ### Example 4: Remove a module by using ModuleInfo
 
@@ -99,14 +101,14 @@ $a = Get-Module BitsTransfer
 Remove-Module -ModuleInfo $a
 ```
 
-This command uses the *ModuleInfo* parameter to remove the BitsTransfer module.
+This command uses the **ModuleInfo** parameter to remove the BitsTransfer module.
 
 ## Parameters
 
 ### -Force
 
-Indicates that this cmdlet removes read-only modules.
-By default, **Remove-Module** removes only read-write modules.
+Indicates that this cmdlet removes read-only modules. By default, `Remove-Module` removes only
+read-write modules.
 
 The **ReadOnly** and **ReadWrite** values are stored in **AccessMode** property of a module.
 
@@ -140,9 +142,9 @@ Accept wildcard characters: False
 
 ### -ModuleInfo
 
-Specifies the module objects to remove.
-Enter a variable that contains a module object (**PSModuleInfo**) or a command that gets a module object, such as a Get-Module command.
-You can also pipe module objects to **Remove-Module**.
+Specifies the module objects to remove. Enter a variable that contains a module object
+(**PSModuleInfo**) or a command that gets a module object, such as a `Get-Module` command. You can
+also pipe module objects to `Remove-Module`.
 
 ```yaml
 Type: System.Management.Automation.PSModuleInfo[]
@@ -158,9 +160,8 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies the names of modules to remove.
-Wildcard characters are permitted.
-You can also pipe name strings to **Remove-Module**.
+Specifies the names of modules to remove. Wildcard characters are permitted. You can also pipe name
+strings to `Remove-Module`.
 
 ```yaml
 Type: System.String[]
@@ -192,8 +193,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -209,13 +209,15 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
 ### System.String, System.Management.Automation.PSModuleInfo
 
-You can pipe module names and module objects to **Remove-Module**.
+You can pipe module names and module objects to `Remove-Module`.
 
 ## Outputs
 
@@ -248,3 +250,4 @@ Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEv
 
 [Import-Module](Import-Module.md)
 
+[about_Modules](About/about_Modules.md)
