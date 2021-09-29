@@ -6,7 +6,7 @@ title: Install PowerShell on Linux
 # Install PowerShell on Linux
 
 PowerShell can be installed on different Linux distributions. Most Linux platforms and distributions
-have a major release each year, and most provide a package manager that is used to install
+have a major release each year, and provide a package manager that is used to install
 PowerShell. This article describes what is currently supported and which package manager is used.
 
 The rest of this article is a breakdown of each Linux distribution that PowerShell supports. All
