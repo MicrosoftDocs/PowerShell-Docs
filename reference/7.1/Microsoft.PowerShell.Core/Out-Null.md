@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 09/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/out-null?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Null
@@ -20,7 +20,7 @@ Out-Null [-InputObject <PSObject>] [<CommonParameters>]
 
 ## Description
 
-The **Out-Null** cmdlet sends its output to NULL, in effect, removing it from the pipeline and
+The `Out-Null` cmdlet sends its output to NULL, in effect, removing it from the pipeline and
 preventing the output to be displayed at the screen.
 
 ## Examples
@@ -31,16 +31,15 @@ preventing the output to be displayed at the screen.
 Get-ChildItem | Out-Null
 ```
 
-This command gets items in the current location/directory, but its output is not passed through
-the pipeline nor displayed at the command line.
-This is useful for hiding output that you do not need.
+This command gets items in the current location/directory, but its output is not passed through the
+pipeline nor displayed at the command line. This is useful for hiding output that you do not need.
 
 ## Parameters
 
 ### -InputObject
 
-Specifies the object to be sent to NULL (removed from pipeline).
-Enter a variable that contains the objects, or type a command or expression that gets the objects.
+Specifies the object to be sent to NULL (removed from pipeline). Enter a variable that contains the
+objects, or type a command or expression that gets the objects.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -56,7 +55,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -72,12 +73,15 @@ This cmdlet does not generate any output.
 
 ## Notes
 
-* The cmdlets that contain the **Out** verb (the **Out** cmdlets) do not have parameters for names or file paths. To send data to an **Out** cmdlet, use a pipeline operator (|) to send the output of a PowerShell command to the cmdlet. You can also store data in a variable and use the *InputObject* parameter to pass the data to the cmdlet. For more information, see the examples.
-* **Out-Null** does not return any output objects. If you pipe the output of **Out-Null** to the Get-Member cmdlet, **Get-Member** reports that no objects have been specified.
+- The cmdlets that contain the **Out** verb (the **Out** cmdlets) do not have parameters for names
+  or file paths. To send data to an **Out** cmdlet, use a pipeline operator (`|`) to send the output
+  of a PowerShell command to the cmdlet. You can also store data in a variable and use the
+  **InputObject** parameter to pass the data to the cmdlet. For more information, see the examples.
+- `Out-Null` does not return any output objects. If you pipe the output of `Out-Null` to the
+  Get-Member cmdlet, `Get-Member` reports that no objects have been specified.
 
 ## Related links
 
 [Out-Default](Out-Default.md)
 
 [Out-Host](Out-Host.md)
-
