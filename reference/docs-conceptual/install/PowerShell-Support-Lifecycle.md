@@ -43,33 +43,45 @@ When a platform version reaches end-of-life as defined by the platform owner, Po
 support on that platform version. Previously released packages remain available for customers
 needing access but formal support and updates of any kind are no longer be provided.
 
-|                     Platform                      |      7.0      |      7.1      |      7.2      |
-| ------------------------------------------------- | :-----------: | :-----------: | :-----------: |
-| Windows 8.1, and 10                               |   Supported   |   Supported   |   Supported   |
-| Windows Server 2012 R2, 2016, 2019, 2022          |   Supported   |   Supported   |   Supported   |
-| [Windows Server Semi-Annual Channel][semi-annual] |   Supported   |   Supported   |   Supported   |
-| Ubuntu 16.04 LTS, 18.04 LTS                       |   Supported   |   Supported   |   Supported   |
-| Ubuntu 20.04 LTS                                  | Not Supported |   Supported   |   Supported   |
-| Ubuntu 21.04                                      | Not Supported | Not Supported |   Supported   |
-| Debian 9                                          |   Supported   |   Supported   |   Supported   |
-| Debian 10                                         |   Supported   |   Supported   |   Supported   |
-| CentOS 7                                          |   Supported   |   Supported   |   Supported   |
-| CentOS 8                                          |   Supported   |   Supported   |   Supported   |
-| Red Hat Enterprise Linux 7                        |   Supported   |   Supported   |   Supported   |
-| Red Hat Enterprise Linux 8                        |   Supported   |   Supported   |   Supported   |
-| Fedora 31+                                        |   Supported   | Not Supported | Not Supported |
-| Alpine 3.10                                       |  See Note 1   | Not Supported | Not Supported |
-| Alpine 3.11+                                      |  See Note 1   |  See Note 1   |  See Note 1   |
-| macOS 10.13+                                      |   Supported   |   Supported   |   Supported   |
-| Arch                                              |   Community   |   Community   |   Community   |
-| Raspbian                                          |   Community   |   Community   |   Community   |
-| Kali                                              |   Community   |   Community   |   Community   |
-| AppImage (works on multiple Linux platforms)      |   Community   |   Community   |   Community   |
-| [Snap Package](https://snapcraft.io/powershell)   |  See note 2   |   See note    |   See note    |
+### Windows
 
-> [!NOTE]
-> - 1 - CIM, PowerShell Remoting, and DSC are not supported on Alpine.
-> - 2 - Snap packages are supported the same as the distribution you're running the package on.
+[!INCLUDE [Windows support](../../includes/windows-support.md)]
+
+### macOS
+
+[!INCLUDE [macOS support](../../includes/macos-support.md)]
+
+### Alpine Linux
+
+[!INCLUDE [Alpine support](../../includes/alpine-support.md)]
+
+### CentOS Linux
+
+[!INCLUDE [CentOS support](../../includes/centos-support.md)]
+
+### Debian Linux
+
+[!INCLUDE [Debian support](../../includes/debian-support.md)]
+
+### Fedora Linux
+
+[!INCLUDE [Fedora support](../../includes/fedora-support.md)]
+
+### Red Hat Enterprise Linux (RHEL)
+
+[!INCLUDE [RHEL support](../../includes/rhel-support.md)]
+
+### Ubuntu Linux
+
+[!INCLUDE [Ubuntu support](../../includes/ubuntu-support.md)]
+
+### Raspberry Pi OS
+
+[Raspberry Pi OS][raspbian] (formerly Raspbian) is a free operating system based on Debian.
+
+> [!IMPORTANT]
+> .NET is not supported on ARMv6 architecture devices, including Raspberry Pi Zero and Raspberry Pi
+> devices prior to Raspberry Pi 2.
 
 ## PowerShell End-of-support dates
 
@@ -91,35 +103,6 @@ used.
 - PowerShell 7.2 (LTS-preview) is based on the [.NET 6.0 Supported OS Lifecycle Policy][net60os]
 - PowerShell 7.1 (current) is based on the [.NET 5.0 Supported OS Lifecycle Policy][net50os]
 - PowerShell 7.0 (LTS) is based on the [.NET Core 3.1 Supported OS Lifecycle Policy][net31os]
-
-## Unsupported platforms
-
-When a platform version reaches end-of-life as defined by the platform owner, PowerShell also ceases
-to support that platform version. Previously released packages remain available for customers
-needing access but formal support and updates are no longer provided.
-
-So, the distribution owners ended support for the following versions and aren't supported.
-
-|    Platform    | Version |                                                         End of Life                                                          |
-| -------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
-| Debian         |    8    | [June 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                            |
-| Fedora         |   24    | [August 2017](https://fedoramagazine.org/fedora-24-eol/)                                                                     |
-| Fedora         |   25    | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                                                              |
-| Fedora         |   26    | [May 2018](https://fedoramagazine.org/fedora-26-end-life/)                                                                   |
-| Fedora         |   27    | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                                                           |
-| Fedora         |   28    | [May 2019](https://fedoramagazine.org/fedora-28-end-of-life/)                                                                |
-| openSUSE       |  42.1   | [May 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)                                      |
-| openSUSE       |  42.2   | [January 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html)                                  |
-| openSUSE       |  42.3   | [July 2019](https://lists.opensuse.org/opensuse-security-announce/2019-07/msg00000.html)                                     |
-| Ubuntu         |  14.04  | [April 2019](https://wiki.ubuntu.com/Releases)                                                                               |
-| Ubuntu         |  16.10  | [July 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)                                         |
-| Ubuntu         |  17.04  | [January 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)                                           |
-| Ubuntu         |  17.10  | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)                                         |
-| Ubuntu         |  18.10  | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2019-July/000246.html)                                         |
-| Ubuntu         |  19.10  | [July 2020](https://lists.ubuntu.com/archives/ubuntu-announce/2020-July/000258.html)                                         |
-| Ubuntu         |  20.10  | [July 2021](https://lists.ubuntu.com/archives/ubuntu-announce/2021-July/000270.html)                                         |
-| Windows        |    7    | [January 2020](https://support.microsoft.com/help/4057281/windows-7-support-ended-on-january-14-2020)                        |
-| Windows Server | 2008 R2 | [January 2020](https://support.microsoft.com/help/4456235/end-of-support-for-windows-server-2008-and-windows-server-2008-r2) |
 
 ## Windows PowerShell Compatibility
 
@@ -155,7 +138,6 @@ use the traditional, paid support options.
 > You must have the latest patch update installed to qualify for support. For example, if you're
 > running PowerShell 7.0 and 7.0.1 has been released, you must update to 7.0.1 to qualify for
 > support.
-
 
 ## Release history
 
