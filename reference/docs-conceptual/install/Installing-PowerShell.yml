@@ -50,8 +50,6 @@ landingContent:
             url: install-debian.md
           - text: Fedora
             url: install-fedora.md
-          - text: openSUSE
-            url: install-opensuse.md
           - text: Raspberry Pi OS
             url: install-raspbian.md
           - text: Red Hat Enterprise Linux
@@ -72,7 +70,5 @@ landingContent:
             url: PowerShell-in-Docker.md
           - text: Arm Processor support
             url: PowerShell-on-ARM.md
-          - text: Microsoft Update FAQ
-            url: microsoft-update-faq.yml
           - text: PowerShell Support Lifecycle
             url: PowerShell-Support-Lifecycle.md

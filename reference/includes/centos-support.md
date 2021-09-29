@@ -31,7 +31,7 @@ PowerShell is supported on CentOS for the following processor architectures.
 | ---------------------- | :-------: | :-----------: | :---------------: |
 | All supported versions |    x64    |      x64      |        x64        |
 
-[lifecycle]: /powershell/scripting/powershell-support-lifecycle
+[lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-centos]: https://www.centos.org/centos-linux-eol/
 [stream]: https://www.centos.org/cl-vs-cs/
-[community]: community-support.md
+[community]: /powershell/scripting/install/community-support

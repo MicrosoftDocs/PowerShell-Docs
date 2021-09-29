@@ -28,5 +28,5 @@ PowerShell is supported on Debian for the following processor architectures.
 | ---------- | :---------------: | :---------------: | :---------------: |
 | Version 9+ | x64, Arm32, Arm64 | x64, Arm32, Arm64 | x64, Arm32, Arm64 |
 
-[lifecycle]: /powershell/scripting/powershell-support-lifecycle
+[lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-debian]: https://wiki.debian.org/DebianReleases

@@ -32,7 +32,7 @@ PowerShell is supported on Ubuntu for the following processor architectures.
 | ---------------------- | :---------------: | :---------------: | :---------------: |
 | All supported versions | x64, Arm32, Arm64 | x64, Arm32, Arm64 | x64, Arm32, Arm64 |
 
-[lifecycle]: /powershell/scripting/powershell-support-lifecycle
 [eol-ubuntu]: https://wiki.ubuntu.com/Releases
 [interim]: https://ubuntu.com/about/release-cycle
-[community]: community-support.md
+[lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
+[community]: /powershell/scripting/install/community-support

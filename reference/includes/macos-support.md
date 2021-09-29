@@ -35,4 +35,4 @@ PowerShell is supported on macOS for the following processor architectures:
 | macOS Big Sur 11.5       |    x64    |      x64      |    x64, Arm64     |
 | macOS High Sierra 10.13+ |    x64    |      x64      |        x64        |
 
-[lifecycle]: /powershell/scripting/powershell-support-lifecycle
+[lifecycle]: /powershell/scripting/install/powershell-support-lifecycle

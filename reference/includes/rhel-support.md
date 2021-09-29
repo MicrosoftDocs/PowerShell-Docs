@@ -27,5 +27,5 @@ PowerShell is supported on RHEL for the following processor architectures.
 | ---------------------- | :-------: | :-----------: | :---------------: |
 | All supported versions |    x64    |      x64      |    x64, Arm64     |
 
-[lifecycle]: /powershell/scripting/powershell-support-lifecycle
+[lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-rhel]: https://access.redhat.com/support/policy/updates/errata/

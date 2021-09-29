@@ -36,5 +36,5 @@ PowerShell is supported on Alpine for the following processor architectures.
 
 PowerShell has not been tested on Alpine using Arm processors.
 
-[lifecycle]: /powershell/scripting/powershell-support-lifecycle
+[lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-alpine]: https://alpinelinux.org/releases/

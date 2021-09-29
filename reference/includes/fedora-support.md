@@ -30,5 +30,5 @@ PowerShell is supported on Fedora for the following processor architectures.
 | ---------------------- | :-------: | :-----------: | :---------------: |
 | All supported versions |    x64    |      x64      |        x64        |
 
-[lifecycle]: /powershell/scripting/powershell-support-lifecycle
+[lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-fedora]: https://fedoraproject.org/wiki/End_of_life
