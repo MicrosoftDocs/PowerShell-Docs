@@ -1,6 +1,6 @@
 ---
 description: Configure file encoding in VS Code and PowerShell
-ms.date: 02/28/2019
+ms.date: 09/29/2021
 title: Understanding file encoding in VS Code and PowerShell
 ---
 # Understanding file encoding in VS Code and PowerShell
@@ -54,12 +54,12 @@ Common reasons for encoding issues are:
 
 Often encoding errors present themselves as parse errors in scripts. If you find strange character
 sequences in your script, this can be the problem. In the example below, an en-dash (`–`) appears as
-the characters `â&euro;"`:
+the characters `â€“`:
 
 ```Output
 Send-MailMessage : A positional parameter cannot be found that accepts argument 'Testing FuseMail SMTP...'.
 At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtpRelay.ps1:6 char:1
-+ Send-MailMessage â&euro;"From $from â&euro;"To $recipient1 â&euro;"Subject $subject  ...
++ Send-MailMessage â€“From $from â€“To $recipient1 â€“Subject $subject  ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Send-MailMessage], ParameterBindingException
     + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SendMailMessage
@@ -67,16 +67,16 @@ At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtp
 
 This problem occurs because VS Code encodes the character `–` in UTF-8 as the bytes
 `0xE2 0x80 0x93`. When these bytes are decoded as Windows-1252, they are interpreted as the
-characters `â&euro;"`.
+characters `â€“`.
 
 Some strange character sequences that you might see include:
 
 <!-- markdownlint-disable MD038 -->
-- `â&euro;"` instead of `–`
-- `â&euro;"` instead of `—`
+- `â€“` instead of `–`
+- `â€“` instead of `—`
 - `Ã„2` instead of `Ä`
 - `Â` instead of ` `  (a non-breaking space)
-- `Ã&copy;` instead of `é`
+- `Ã©` instead of `é`
 <!-- markdownlint-enable MD038 -->
 
 This handy [reference](https://www.i18nqa.com/debug/utf8-debug.html) lists the common patterns that
