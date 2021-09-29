@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 06/09/2017
+ms.date: 09/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/enable-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-LocalUser
@@ -34,7 +34,8 @@ Enable-LocalUser [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonPara
 ```
 
 ## Description
-The **Enable-LocalUser** cmdlet enables local user accounts.
+
+The `Enable-LocalUser` cmdlet enables local user accounts.
 When a user account is disabled, the user cannot log on.
 When a user account is enabled, the user can log on.
 
@@ -46,26 +47,27 @@ When a user account is enabled, the user can log on.
 
 ### Example 1: Enable an account by specifying a name
 
-```
-PS C:\> Enable-LocalUser -Name "Admin02"
+```powershell
+Enable-LocalUser -Name "Admin02"
 ```
 
 This command enables the user account named Admin02.
 
 ### Example 2: Enable an account by using the pipeline
 
-```
-PS C:\> Get-LocalUser -Name "Administrator" | Enable-LocalUser
+```powershell
+Get-LocalUser -Name "Administrator" | Enable-LocalUser
 ```
 
-This command gets the built-in Administrator account by using **Get-LocalUser**, and then passes it to the current cmdlet by using the pipeline operator.
-That cmdlet enables that account.
+This command gets the built-in Administrator account by using `Get-LocalUser`, and then passes it to
+the current cmdlet by using the pipeline operator. That cmdlet enables that account.
 
 ## Parameters
 
 ### -InputObject
-Specifies an array of user accounts that this cmdlet enables.
-To obtain a user account, use the Get-LocalUser cmdlet.
+
+Specifies an array of user accounts that this cmdlet enables. To obtain a user account, use the
+`Get-LocalUser` cmdlet.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.LocalUser[]
@@ -80,6 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of names of the user accounts that this cmdlet enables.
 
 ```yaml
@@ -95,6 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies an array of user accounts that this cmdlet enables.
 
 ```yaml
@@ -110,6 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -125,8 +130,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -141,28 +146,36 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser, System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a local user, a string, or a SID to this cmdlet.
 
 ## Outputs
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## Notes
 
-* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
+- The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
+  follows:
 
 - Local
 - Active Directory
 - Azure Active Directory group
 - Microsoft Account
 
-**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
+**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
+Windows operating system. For earlier versions, the property is blank.
 
 ## Related links
 

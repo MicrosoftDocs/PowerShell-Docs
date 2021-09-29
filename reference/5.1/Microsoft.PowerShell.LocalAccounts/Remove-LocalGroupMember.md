@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 06/09/2017
+ms.date: 09/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/remove-localgroupmember?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-LocalGroupMember
@@ -36,7 +36,8 @@ Remove-LocalGroupMember [-Member] <LocalPrincipal[]> [-SID] <SecurityIdentifier>
 ```
 
 ## Description
-The **Remove-LocalGroupMember** cmdlet removes users or groups from a local group.
+
+The `Remove-LocalGroupMember` cmdlet removes users or groups from a local group.
 
 > [!NOTE]
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
@@ -46,17 +47,20 @@ The **Remove-LocalGroupMember** cmdlet removes users or groups from a local grou
 
 ### Example 1: Remove members from the Administrators group
 
-```
-PS C:\> Remove-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
+```powershell
+$members = "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
+Remove-LocalGroupMember -Group "Administrators" -Member $members
 ```
 
-This command removes several members from the local Administrators group.
-The members that this cmdlet removes include a local user account, a Microsoft account, an Azure Active Directory account, and a domain group.
-This example uses a placeholder value for the user name of an account at Outlook.com.
+This command removes several members from the local Administrators group. The members that this
+cmdlet removes include a local user account, a Microsoft account, an Azure Active Directory account,
+and a domain group. This example uses a placeholder value for the user name of an account at
+Outlook.com.
 
 ## Parameters
 
 ### -Group
+
 Specifies the security group from which this cmdlet removes members.
 
 ```yaml
@@ -72,11 +76,10 @@ Accept wildcard characters: False
 ```
 
 ### -Member
-Specifies an array of users or groups that this cmdlet removes from a security group.
-You can specify users or groups by name, security ID (SID), or **LocalPrincipal** objects.
-Specify SID strings in S-R-I-S-S .
-. .
-format.
+
+Specifies an array of users or groups that this cmdlet removes from a security group. You can
+specify users or groups by name, security ID (SID), or **LocalPrincipal** objects. Specify SID
+strings in S-R-I-S-S . . . format.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.LocalPrincipal[]
@@ -91,6 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the security group from which this cmdlet removes members.
 
 ```yaml
@@ -106,6 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies the security ID of the security group from which this cmdlet removes members.
 
 ```yaml
@@ -121,6 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -136,6 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -152,28 +159,36 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalPrincipal, System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a local principal, a string, or a SID to this cmdlet.
 
 ## Outputs
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## Notes
 
-* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
+- The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
+  follows:
 
 - Local
 - Active Directory
 - Azure Active Directory group
 - Microsoft Account
 
-**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
+**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
+Windows operating system. For earlier versions, the property is blank.
 
 ## Related links
 

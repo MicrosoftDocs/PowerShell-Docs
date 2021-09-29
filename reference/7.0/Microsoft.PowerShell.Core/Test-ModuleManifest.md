@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 09/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/test-modulemanifest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-ModuleManifest
@@ -20,24 +20,26 @@ Test-ModuleManifest [-Path] <String> [<CommonParameters>]
 
 ## Description
 
-The **Test-ModuleManifest** cmdlet verifies that the files that are listed in the module manifest (.psd1) file are actually in the specified paths.
+The `Test-ModuleManifest` cmdlet verifies that the files that are listed in the module manifest
+(`.psd1`) file are actually in the specified paths.
 
-This cmdlet is designed to help module authors test their manifest files.
-Module users can also use this cmdlet in scripts and commands to detect errors before they run scripts that depend on the module.
+This cmdlet is designed to help module authors test their manifest files. Module users can also use
+this cmdlet in scripts and commands to detect errors before they run scripts that depend on the
+module.
 
-**Test-ModuleManifest** returns an object that represents the module.
-This is the same type of object that Get-Module returns.
-If any files are not in the locations specified in the manifest, the cmdlet also generates an error for each missing file.
+`Test-ModuleManifest` returns an object that represents the module. This is the same type of object
+that `Get-Module` returns. If any files are not in the locations specified in the manifest, the
+cmdlet also generates an error for each missing file.
 
 ## Examples
 
 ### Example 1: Test a manifest
 
 ```powershell
-test-ModuleManifest -Path "$pshome\Modules\TestModule.psd1"
+Test-ModuleManifest -Path "$pshome\Modules\TestModule.psd1"
 ```
 
-This command tests the TestModule.psd1 module manifest.
+This command tests the `TestModule.psd1` module manifest.
 
 ### Example 2: Test a manifest by using the pipeline
 
@@ -69,9 +71,10 @@ ExportedVariables : {}
 NestedModules     : {}
 ```
 
-This command uses a pipeline operator (|) to send a path string to **Test-ModuleManifest**.
+This command uses a pipeline operator (`|`) to send a path string to `Test-ModuleManifest`.
 
-The command output shows that the test failed, because the TestTypes.ps1xml file, which was listed in the manifest, was not found.
+The command output shows that the test failed, because the TestTypes.ps1xml file, which was listed
+in the manifest, was not found.
 
 ### Example 3: Write a function to test a module manifest
 
@@ -83,32 +86,32 @@ function Test-ManifestBool ($path)
 {$a = dir $path | Test-ModuleManifest -ErrorAction SilentlyContinue; $?}
 ```
 
-This function is like **Test-ModuleManifest**, but it returns a Boolean value.
-The function returns $True if the manifest passed the test and $False otherwise.
+This function is like `Test-ModuleManifest`, but it returns a Boolean value. The function returns
+`$True` if the manifest passed the test and `$False` otherwise.
 
-The function uses the Get-ChildItem cmdlet, alias = dir, to get the module manifest specified by the $path variable.
-The command uses a pipeline operator (|) to pass the file object to **Test-ModuleManifest**.
+The function uses the Get-ChildItem cmdlet, alias = dir, to get the module manifest specified by the
+`$path` variable. The command uses a pipeline operator (`|`) to pass the file object to
+`Test-ModuleManifest`.
 
-**Test-ModuleManifest** uses the *ErrorAction* common parameter with a value of SilentlyContinue to suppress the display of any errors that the command generates.
-It also saves the **PSModuleInfo** object that **Test-ModuleManifest** returns in the $a variable.
-Therefore, the object is not displayed.
+`Test-ModuleManifest` uses the **ErrorAction** common parameter with a value of SilentlyContinue to
+suppress the display of any errors that the command generates. It also saves the **PSModuleInfo**
+object that `Test-ModuleManifest` returns in the $a variable. Therefore, the object is not
+displayed.
 
-Then, in a separate command, the function displays the value of the $?
-automatic variable.
-If the previous command generates no error, the command displays $True, and $False otherwise.
+Then, in a separate command, the function displays the value of the `$?` automatic variable. If the
+previous command generates no error, the command displays `$True`, and `$False` otherwise.
 
-You can use this function in conditional statements, such as those that might precede an **Import-Module** command or a command that uses the module.
+You can use this function in conditional statements, such as those that might precede an
+`Import-Module` command or a command that uses the module.
 
 ## Parameters
 
 ### -Path
 
-Specifies a path and file name for the manifest file.
-Enter an optional path and name of the module manifest file that has the .psd1 file name extension.
-The default location is the current directory.
-Wildcard characters are supported, but must resolve to a single module manifest file.
-This parameter is required.
-You can also pipe a path to **Test-ModuleManifest**.
+Specifies a path and file name for the manifest file. Enter an optional path and name of the module
+manifest file that has the `.psd1` file name extension. The default location is the current
+directory. Wildcard characters are supported, but must resolve to a single module manifest file.
+This parameter is required. You can also pipe a path to `Test-ModuleManifest`.
 
 ```yaml
 Type: System.String
@@ -124,7 +127,9 @@ Accept wildcard characters: True
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -136,8 +141,8 @@ You can pipe the path to a module manifest to this cmdlet.
 
 ### System.Management.Automation.PSModuleInfo
 
-This cmdlet returns a **PSModuleInfo** object that represents the module.
-It returns this object even if the manifest has errors.
+This cmdlet returns a **PSModuleInfo** object that represents the module. It returns this object
+even if the manifest has errors.
 
 ## Notes
 

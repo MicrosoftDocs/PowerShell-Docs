@@ -1,7 +1,7 @@
 ---
 description: Registry
 Locale: en-US
-ms.date: 10/18/2018
+ms.date: 09/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_registry_provider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Registry Provider
@@ -79,7 +79,7 @@ Set-Location C:
 
 You can also work with the **Registry** provider from any other PowerShell
 drive. To reference a registry key from another location, use the drive name
-(`HKLM:`, `HKCU:`) in the path. Use a backslash (\\) or a forward slash (/) to
+(`HKLM:`, `HKCU:`) in the path. Use a backslash (`\`) or a forward slash (`/`) to
 indicate a level of the **Registry** drive.
 
 ```powershell
@@ -120,10 +120,11 @@ In this example, the difference between `Get-Item` and `Get-ChildItem` is
 shown. When you use `Get-Item` on the "Spooler" registry key, you can view its
 properties.
 
+```powershell
+Get-Item -Path HKLM:\SYSTEM\CurrentControlSet\Services\Spooler
 ```
-PS C:\ > Get-Item -Path HKLM:\SYSTEM\CurrentControlSet\Services\Spooler
 
-
+```Output
     Hive: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
 
 
@@ -148,10 +149,11 @@ key, the subkeys are not displayed. The `Get-ChildItem` cmdlet will show you
 children items of the "Spooler" key, including each subkey's properties. The
 parent keys properties are not shown when using `Get-ChildItem`.
 
+```powershell
+Get-ChildItem -Path HKLM:\SYSTEM\CurrentControlSet\Services\Spooler
 ```
-PS C:\> Get-ChildItem -Path HKLM:\SYSTEM\CurrentControlSet\Services\Spooler
 
-
+```Output
     Hive: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Spooler
 
 
@@ -171,10 +173,12 @@ The `Get-Item` cmdlet can also be used on the current location. The following
 example navigates to the "Spooler" registry key and gets the item properties.
 The dot `.` is used to indicate the current location.
 
+```powershell
+cd HKLM:\System\CurrentControlSet\Services\Spooler
+Get-Item .
 ```
-PS C:\> cd HKLM:\System\CurrentControlSet\Services\Spooler
-PS HKLM:\SYSTEM\CurrentControlSet\Services\Spooler> Get-Item .
 
+```Output
     Hive: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
 
 Name             Property
@@ -215,9 +219,11 @@ Specifying a value for the `-Name` parameter selects the properties you
 specify and returns the **PSCustomObject**.  The following example shows
 the difference in output when you use the `-Name` parameter.
 
+```powershell
+Get-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Wbem
 ```
-PS C:\> Get-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Wbem
 
+```Output
 BUILD                      : 17134.1
 Installation Directory     : C:\WINDOWS\system32\WBEM
 MOF Self-Install Directory : C:\WINDOWS\system32\WBEM\MOF
@@ -226,9 +232,13 @@ PSParentPath               : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACH
 PSChildName                : Wbem
 PSDrive                    : HKLM
 PSProvider                 : Microsoft.PowerShell.Core\Registry
+```
 
-PS C:\> Get-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Wbem -Name BUILD
+```powershell
+Get-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Wbem -Name BUILD
+```
 
+```Output
 BUILD        : 17134.1
 PSPath       : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Wbem
 PSParentPath : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft
@@ -258,28 +268,36 @@ articles.
 
 The `Set-ItemProperty` cmdlet will set attributes for registry keys. The
 following example uses `Set-ItemProperty` to change the spooler service start
-type to manual. The example changes the **StartType** back to *Automatic*
+type to manual. The example changes the **StartType** back to _Automatic_
 using the `Set-Service` cmdlet.
 
+```powershell
+Get-Service spooler | Select-Object Name, StartMode
 ```
-PS C:\> Get-Service spooler | Select-Object Name, StartMode
 
+```Output
 Name    StartType
 ----    ---------
 spooler Automatic
+```
 
-PS C:\> $path = "HKLM:\SYSTEM\CurrentControlSet\Services\Spooler\"
-PS C:\> Set-ItemProperty -Path $path -Name Start -Value 3
-PS C:\> Get-Service spooler | Select-Object Name, StartMode
+```powershell
+$path = "HKLM:\SYSTEM\CurrentControlSet\Services\Spooler\"
+Set-ItemProperty -Path $path -Name Start -Value 3
+Get-Service spooler | Select-Object Name, StartMode
+```
 
+```Output
 Name    StartType
 ----    ---------
 spooler    Manual
-
-PS C:\> Set-Service -Name Spooler -StartupType Automatic
 ```
 
-Each registry key has a *default* value. You can change the *default* value
+```powershell
+Set-Service -Name Spooler -StartupType Automatic
+```
+
+Each registry key has a _default_ value. You can change the _default_ value
 for a registry key with either `Set-Item` or `Set-ItemProperty`.
 
 ```powershell
@@ -299,9 +317,11 @@ The `New-Item` cmdlet will create registry keys with a name that you provide.
 You can also use the `mkdir` function, which calls the `New-Item` cmdlet
 internally.
 
+```powershell
+mkdir ContosoCompany
 ```
-PS HKLM:\SOFTWARE\> mkdir ContosoCompany
 
+```Output
     Hive: HKEY_LOCAL_MACHINE\SOFTWARE
 
 Name                           Property
@@ -319,8 +339,8 @@ New-ItemProperty -Path  -Name Test -Type DWORD -Value 1
 ```
 
 > [!NOTE]
-> Review the dynamic parameters section in this article for other allowed
-> type values.
+> Review the dynamic parameters section in this article for other allowed type
+> values.
 
 For detailed cmdlet usage, see [New-ItemProperty](xref:Microsoft.PowerShell.Management.New-ItemProperty).
 
@@ -362,14 +382,14 @@ underneath the destination key. If the destination key does not exist, the
 source key is moved to the destination path.
 
 The following command moves the "Contoso" key to the path
-"HKLM:\SOFTWARE\Fabrikam".
+`HKLM:\SOFTWARE\Fabrikam`.
 
 ```powershell
 Move-Item -Path HKLM:\SOFTWARE\Contoso -Destination HKLM:\SOFTWARE\Fabrikam
 ```
 
-This command moves all of the properties from "HKLM:\SOFTWARE\ContosoCompany"
-to "HKLM:\SOFTWARE\Fabrikam".
+This command moves all of the properties from `HKLM:\SOFTWARE\ContosoCompany`
+to `HKLM:\SOFTWARE\Fabrikam`.
 
 ```powershell
 $source = "HKLM:\SOFTWARE\Contoso"
@@ -399,7 +419,7 @@ Rename-Item -Path $path -NewName Fabrikam
 
 You can restrict access to registry keys using the `Get-Acl` and `Set-Acl`
 cmdlets. The following example adds a new user with full control to the
-"HKLM:\SOFTWARE\Contoso" registry key.
+`HKLM:\SOFTWARE\Contoso` registry key.
 
 ```powershell
 $acl = Get-Acl -Path HKLM:\SOFTWARE\Contoso
@@ -416,21 +436,27 @@ For more examples and cmdlet usage details see the following articles.
 
 ## Removing and clearing registry keys and values
 
-You can remove contained items by using **Remove-Item**, but you will be
+You can remove contained items by using `Remove-Item`, but you will be
 prompted to confirm the removal if the item contains anything else. The
-following example attempts to delete a key "HKLM:\SOFTWARE\Contoso".
+following example attempts to delete a key `HKLM:\SOFTWARE\Contoso`.
 
+```powershell
+dir HKLM:\SOFTWARE\Contoso\
 ```
-PS C:\> dir HKLM:\SOFTWARE\Contoso\
 
+```Output
     Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Contoso
 
 Name                           Property
 ----                           --------
 ChildKey
+```
 
-PS C:\> Remove-Item -Path HKLM:\SOFTWARE\Contoso
+```powershell
+Remove-Item -Path HKLM:\SOFTWARE\Contoso
+```
 
+```Output
 Confirm
 The item at HKLM:\SOFTWARE\Contoso has children and the -Recurse
 parameter was not specified. If you continue, all children will be removed
@@ -445,8 +471,8 @@ To delete contained items without prompting, specify the `-Recurse` parameter.
 Remove-Item -Path HKLM:\SOFTWARE\Contoso -Recurse
 ```
 
-If you wanted to remove all items within "HKLM:\SOFTWARE\Contoso" but not
-"HKLM:\SOFTWARE\Contoso" itself, use a trailing backslash `\` followed by a
+If you wanted to remove all items within `HKLM:\SOFTWARE\Contoso` but not
+`HKLM:\SOFTWARE\Contoso` itself, use a trailing backslash `\` followed by a
 wildcard.
 
 ```powershell
@@ -454,19 +480,21 @@ Remove-Item -Path HKLM:\SOFTWARE\Contoso\* -Recurse
 ```
 
 This command deletes the "ContosoTest" registry value from the
-"HKLM:\SOFTWARE\Contoso" registry key.
+`HKLM:\SOFTWARE\Contoso` registry key.
 
 ```powershell
 Remove-ItemProperty -Path HKLM:\SOFTWARE\Contoso -Name ContosoTest
 ```
 
 `Clear-Item` clears all registry values for a key. The following example
-clears all values from the "HKLM:\SOFTWARE\Contoso" registry key. To clear
+clears all values from the `HKLM:\SOFTWARE\Contoso` registry key. To clear
 only a specific property, use `Clear-ItemProperty`.
 
+```powershell
+Get-Item .\Contoso\
 ```
-PS HKLM:\SOFTWARE\> Get-Item .\Contoso\
 
+```Output
     Hive: HKEY_LOCAL_MACHINE\SOFTWARE
 
 Name           Property
@@ -475,10 +503,14 @@ Contoso        Server     : {a, b, c}
                HereString : {This is text which contains
                newlines. It also contains "quoted" strings}
                (default)  : 1
+```
 
-PS HKLM:\SOFTWARE\> Clear-Item .\Contoso\
-PS HKLM:\SOFTWARE\> Get-Item .\Contoso\
+```powershell
+Clear-Item .\Contoso\
+Get-Item .\Contoso\
+```
 
+```Output
     Hive: HKEY_LOCAL_MACHINE\SOFTWARE
 
 Name                           Property
@@ -509,19 +541,19 @@ cmdlet. It is also available on the
 [Set-Item](xref:Microsoft.PowerShell.Management.Set-Item) cmdlet in the
 registry drives, but it has no effect.
 
-|Value | Description |
-| ---- | ----------- |
-| `String` | Specifies a null-terminated string. Equivalent to REG_SZ. |
-| `ExpandString` | Specifies a null-terminated string that contains unexpanded |
-|                | references to environment variables that are expanded when |
-|                | the value is retrieved. Equivalent to REG_EXPAND_SZ. |
-| `Binary` | Specifies binary data in any form. Equivalent to REG_BINARY. |
-| `DWord` | Specifies a 32-bit binary number. Equivalent to REG_DWORD. |
-| `MultiString` | Specifies an array of null-terminated strings terminated by |
-|               | two null characters. Equivalent to REG_MULTI_SZ. |
-| `QWord` | Specifies a 64-bit binary number. Equivalent to REG_QWORD. |
-| `Unknown` | Indicates an unsupported registry data type, such as |
-|           | REG_RESOURCE_LIST. |
+|     Value      |                         Description                          |
+| -------------- | ------------------------------------------------------------ |
+| `String`       | Specifies a null-terminated string. Equivalent to REG_SZ.    |
+| `ExpandString` | Specifies a null-terminated string that contains unexpanded  |
+|                | references to environment variables that are expanded when   |
+|                | the value is retrieved. Equivalent to REG_EXPAND_SZ.         |
+| `Binary`       | Specifies binary data in any form. Equivalent to REG_BINARY. |
+| `DWord`        | Specifies a 32-bit binary number. Equivalent to REG_DWORD.   |
+| `MultiString`  | Specifies an array of null-terminated strings terminated by  |
+|                | two null characters. Equivalent to REG_MULTI_SZ.             |
+| `QWord`        | Specifies a 64-bit binary number. Equivalent to REG_QWORD.   |
+| `Unknown`      | Indicates an unsupported registry data type, such as         |
+|                | REG_RESOURCE_LIST.                                           |
 
 #### Cmdlets supported
 
@@ -554,5 +586,4 @@ Get-Help Get-ChildItem -Path HKLM:
 
 ## See also
 
- [about_Providers](../About/about_Providers.md)
-
+[about_Providers](../About/about_Providers.md)

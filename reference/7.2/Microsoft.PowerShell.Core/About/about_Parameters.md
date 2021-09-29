@@ -1,7 +1,7 @@
 ---
 description: Describes how to work with command parameters in PowerShell.
 Locale: en-US
-ms.date: 09/21/2021
+ms.date: 09/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameters?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Parameters
@@ -146,7 +146,7 @@ This setting specifies the Microsoft .NET Framework type of the parameter
 value. For example, if the type is **Int32**, the parameter value must be an
 integer. If the type is string, the parameter value must be a character string.
 If the string contains spaces, the value must be enclosed in quotation marks,
-or the spaces must be preceded by the escape character ( ` ).
+or the spaces must be preceded by the escape character (`` ` ``).
 
 #### Default Value
 
@@ -178,8 +178,8 @@ Get-Service -Name $s
 
 #### Accepts Pipeline Input
 
-This setting indicates whether you can use the pipeline operator ( `|` ) to
-send a value to the parameter.
+This setting indicates whether you can use the pipeline operator (`|`) to send a
+value to the parameter.
 
 ```
 Value                    Description
