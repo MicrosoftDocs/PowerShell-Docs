@@ -11,7 +11,7 @@ PowerShell 7.2 is the next Long Term Servicing (LTS) release is built on .NET 6.
 PowerShell 7.2 includes the following features, updates, and breaking changes.
 
 - New universal installer packages for most supported Linux distributions
-- Microsoft Update support
+- Microsoft Update support on Windows
 - 3 new experimental features
   - Improved native command support
   - Improved ANSI color support

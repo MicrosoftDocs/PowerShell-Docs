@@ -30,7 +30,7 @@ There are several ways to install PowerShell on macOS. Choose one of the followi
 - Install from [binary archives](#binary-archives).
 
 After installing PowerShell, you should install [OpenSSL](#installing-dependencies). OpenSSL is
-needed for PowerShell remoting and CIM operations.
+needed for PowerShell WSMan remoting.
 
 If the `brew` command is not found, you need to install Homebrew following
 [their instructions][brew].
