@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 10/16/2017
+ms.date: 09/30/2021
 title: PowerShell scripting performance considerations
 ---
 
@@ -54,7 +54,6 @@ result to `$null` is a convenient technique for suppressing the output of a larg
 This technique performs roughly as well as piping to `Out-Null` and should be avoided in performance
 sensitive script. The extra overhead in this example comes from the creation of and invoking a
 script block that was previously inline script.
-
 
 ## Array Addition
 
@@ -137,3 +136,64 @@ guaranteed to work in all hosts.
 
 Instead of using `Write-Host`, consider using
 [Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output).
+
+### JIT compilation
+
+PowerShell compiles the script code to bytecode that is interpreted. Beginning in PowerShell 3, for
+code that is executed repeatedly in a loop, PowerShell can improve performance by Just-in-time (JIT)
+compiling the code into native code.
+
+Loops that have fewer than 300 instructions are eligible for JIT-compilation. Loops larger than that
+are too costly to compile. When the loop has executed 16 times, the script is JIT-compiled in the
+background. When the JIT-compilation completes, execution is transferred to the compiled code.
+
+## Avoid repeated calls to a function
+
+Calling a function can be an expensive operation. If you calling a function in a long running tight
+loop, consider moving the loop inside the function.
+
+Consider the following examples:
+
+```powershell
+$ranGen = New-Object System.Random
+$RepeatCount = 10000
+
+'Basic for-loop = {0}ms' -f (Measure-Command -Expression {
+    for ($i = 0; $i -lt $RepeatCount; $i++) {
+        $Null = $ranGen.Next()
+    }
+}).TotalMilliseconds
+
+'Wrapped in a function = {0}ms' -f (Measure-Command -Expression {
+    function Get-RandNum_Core {
+        param ($ranGen)
+        $ranGen.Next()
+    }
+
+    for ($i = 0; $i -lt $RepeatCount; $i++) {
+        $Null = Get-RandNum_Core $ranGen
+    }
+}).TotalMilliseconds
+
+'For-loop in a function = {0}ms' -f (Measure-Command -Expression {
+    function Get-RandNum_All {
+        param ($ranGen)
+        for ($i = 0; $i -lt $RepeatCount; $i++) {
+            $Null = $ranGen.Next()
+        }
+    }
+
+    Get-RandNum_All $ranGen
+}).TotalMilliseconds
+```
+
+The **Basic for-loop** example is the base line for performance. The second example wraps the random
+number generator in a function that is called in a tight loop. The third example moves the loop
+inside the function. The function is only called once but the code still generates 10000 random
+numbers. Notice the difference in execution times for each example.
+
+```Output
+Basic for-loop = 47.8668ms
+Wrapped in a function = 820.1396ms
+For-loop in a function = 23.3193ms
+```
