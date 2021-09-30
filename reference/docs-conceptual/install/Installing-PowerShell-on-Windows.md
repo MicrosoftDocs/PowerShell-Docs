@@ -53,22 +53,24 @@ The installer creates a shortcut in the Windows Start Menu.
 ### Support for Microsoft Update
 
 PowerShell 7.2 adds support for Microsoft Update. When you enable this feature, you'll get the
-latest PowerShell 7 updates in your traditional Windows Update (WU) management flow, whether that's
-with Windows Update for Business, WSUS, SCCM, or the interactive WU dialog in Settings.
+latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
+that's with Windows Update for Business, WSUS, SCCM, or the interactive MU dialog in Settings.
 
 The PowerShell 7.2 MSI package includes following command-line options:
 
 - `USE_MU` - This property has two possible values:
-  - `1` (default) - Opts into updating through Microsoft Update or WSUS
-  - `0` -  Do not opt into updating through Microsoft Update or WSUS
+  - `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
+  - `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
 - `ENABLE_MU`
-  - `1` (default) - Opts into using Microsoft Update the Automatic Updates or Windows Update
-  - `0` - Do not opt into using Microsoft Update the Automatic Updates or Windows Update
+  - `1` (default) - Opts into using Microsoft Update for Automatic Updates
+  - `0` - Do not opt into using Microsoft Update
 
 > [!NOTE]
 > Enabling updates may have been set in a previous installation or manual configuration. Using
-> `USE_MU=0` or `ENABLE_MU=0` does not remove those existing settings. Also, these settings can be
-> overruled by Group Policy settings controlled by your administrator.
+> `ENABLE_MU=0` does not remove the existing settings. Also, this setting can be overruled by Group
+> Policy settings controlled by your administrator.
+
+For more information, see the [PowerShell Microsoft Update FAQ](microsoft-update-faq.yml).
 
 ### Administrative install from the command line
 

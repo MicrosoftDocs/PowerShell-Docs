@@ -70,5 +70,7 @@ landingContent:
             url: PowerShell-in-Docker.md
           - text: Arm Processor support
             url: PowerShell-on-ARM.md
+          - text: Microsoft Update FAQ for PowerShell
+            url: microsoft-update-faq.yml
           - text: PowerShell Support Lifecycle
             url: PowerShell-Support-Lifecycle.md
