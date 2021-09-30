@@ -1,0 +1,72 @@
+### YamlMime:FAQ
+metadata:
+  ms.date: 09/30/2021
+  title:  Microsoft Update for PowerShell FAQ
+  description: Frequently asked questions about the using Microsoft Update to update PowerShell
+
+title: Microsoft Update for PowerShell FAQ
+summary: |
+  Beginning with PowerShell 7.2, when you install using the MSI package you have the option of
+  enabling Microsoft Update support for PowerShell.
+
+sections:
+  - name: General Information
+    questions:
+      - question: What version of Windows is required to support the Microsoft Update feature?
+        answer: |
+          You must have Windows 10 RS3 (10.0.16299) or newer installed.
+
+      - question: How soon after release are updates advertised by Microsoft Update?
+        answer: |
+          When a new version of PowerShell is released, it can take two weeks for that version to
+          become available through Microsoft Update. Updates are delivered as optional software
+          updates, even if the update contains a security fix.
+
+      - question: Do I need to check both boxes in the setup dialog?
+        answer: |
+          While the two options on the dialog are independent, in most cases, it's best to check both boxes.
+
+          ![PowerShell setup - Microsoft Update dialog](./media/microsoft-update-faq/ps-msupdate-msi.png)
+
+      - question: What does each checkbox do?
+        answer: |
+          The first checkbox enables updates for PowerShell. These update can be delivered by
+          Microsoft Update, a WSUS server, or SCCM. If this checkbox is unchecked, you cannot
+          receive updates through any of these channels.
+
+          The second checkbox enables Microsoft Update on your system. This allows you to receive
+          updates for any supported Microsoft software, not just Windows. If they box is unchecked,
+          you will not receive the update from Microsoft Update, but you can receive updates from
+          WSUS or SCCM.
+
+      - question: What if I want to opt-out later?
+        answer: |
+          If you want to opt-out of updates later, you can run the MSI install package and uncheck the first checkbox. Unchecking the second checkbox has no effect.
+
+      - question: Can I enable these update options from the command line or in a script?
+        answer: |
+          Yes. The MSI package includes two new MSI options for enabling the update features:
+
+          * `USE_MU` - This property has two possible values:
+          * `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
+          * `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
+          * `ENABLE_MU`
+            * `1` (default) - Opts into using Microsoft Update for Automatic Updates
+            * `0` - Do not opt into using Microsoft Update
+
+          > [!NOTE]
+          > Setting `ENABLE_MU=0` does not disable Microsoft Update.
+
+  - name: Troubleshooting
+    questions:
+      - question: I haven't received an update for the new release. Why not?
+        answer: |
+          There can be several reasons for not receiving the update:
+
+          * We may not have published the update yet. Our goal is to make the update available to
+            Microsoft Update within two weeks of release, but there is not guarantee for that
+            availability.
+          * Make sure you have checked both checkboxes. Do a repair install using the MSI to ensure
+            that both checkboxes are checked.
+          * There are group policy settings that control Microsoft Update. Your system administrator
+            may have policies set that prevent you from using Microsoft Update. The checkbox in the installer cannot override the Group Policy.

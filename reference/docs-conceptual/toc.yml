@@ -42,6 +42,8 @@ items:
         href: install/powershell-on-arm.md
       - name: Using PowerShell in Docker
         href: install/PowerShell-in-Docker.md
+      - name: Microsoft Update FAQ for PowerShell
+        href: install/microsoft-update-faq.yml
       - name: PowerShell support lifecycle
         href: install/powershell-support-lifecycle.md
   - name: Learning PowerShell
