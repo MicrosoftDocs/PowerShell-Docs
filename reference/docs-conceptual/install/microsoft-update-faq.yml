@@ -18,7 +18,7 @@ sections:
 
       - question: How soon after release are updates advertised by Microsoft Update?
         answer: |
-          When a new version of PowerShell is released, it can take two weeks for that version to
+          When a new version of PowerShell is released, it can take up to two weeks for that version to
           become available through Microsoft Update. Updates are delivered as optional software
           updates, even if the update contains a security fix.
 
@@ -30,12 +30,12 @@ sections:
 
       - question: What does each checkbox do?
         answer: |
-          The first checkbox enables updates for PowerShell. These update can be delivered by
+          The first checkbox enables updates for PowerShell. These updates can be delivered by
           Microsoft Update, a WSUS server, or SCCM. If this checkbox is unchecked, you cannot
           receive updates through any of these channels.
 
           The second checkbox enables Microsoft Update on your system. This allows you to receive
-          updates for any supported Microsoft software, not just Windows. If they box is unchecked,
+          updates for any supported Microsoft software, not just Windows. If the box is unchecked,
           you will not receive the update from Microsoft Update, but you can receive updates from
           WSUS or SCCM.
 
@@ -64,7 +64,7 @@ sections:
           There can be several reasons for not receiving the update:
 
           * We may not have published the update yet. Our goal is to make the update available to
-            Microsoft Update within two weeks of release, but there is not guarantee for that
+            Microsoft Update within two weeks of release, but there is no guarantee for that
             availability.
           * Make sure you have checked both checkboxes. Do a repair install using the MSI to ensure
             that both checkboxes are checked.
