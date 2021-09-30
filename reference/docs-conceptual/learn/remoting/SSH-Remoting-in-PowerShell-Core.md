@@ -1,6 +1,6 @@
 ---
 description: Explains how to set up the SSH protocol for PowerShell remoting.
-ms.date: 05/20/2021
+ms.date: 09/30/2021
 title: PowerShell Remoting Over SSH
 ---
 
@@ -42,10 +42,10 @@ PowerShell from GitHub to get the SSH remoting feature. The SSH server must be c
 an SSH subsystem to host a PowerShell process on the remote computer. And, you must enable
 **password** or **key-based** authentication.
 
-## Set up on a Windows computer
+## Install the SSH service on a Windows computer
 
 1. Install the latest version of PowerShell. For more information, see
-   [Installing PowerShell Core on Windows](../../install/installing-powershell-on-windows.md#msi).
+   [Installing PowerShell on Windows](../../install/installing-powershell-on-windows.md#msi).
 
    You can confirm that PowerShell has SSH remoting support by listing the `New-PSSession` parameter
    sets. You'll notice there are parameter set names that begin with **SSH**. Those parameter sets
@@ -122,7 +122,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 1. Add the path where OpenSSH is installed to your Path environment variable. For example,
    `C:\Program Files\OpenSSH\`. This entry allows for the `ssh.exe` to be found.
 
-## Set up on an Ubuntu Linux computer
+## Install the SSH service on an Ubuntu Linux computer
 
 1. Install the latest version of PowerShell, see
    [Installing PowerShell Core on Linux](../../install/install-ubuntu.md).
@@ -163,10 +163,10 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 1. Restart the **ssh** service.
 
    ```bash
-   sudo service ssh restart
+   sudo systemctl restart sshd.service
    ```
 
-## Set up on a macOS computer
+## Install the SSH service on a macOS computer
 
 1. Install the latest version of PowerShell. For more information,
    [Installing PowerShell Core on macOS](../../install/installing-powershell-on-macos.md).
@@ -375,11 +375,11 @@ GitCommitId                    v6.0.0-alpha.17
 
 ## See also
 
-[Installing PowerShell Core on Linux](../../install/install-ubuntu.md)
+[Installing PowerShell on Linux](../../install/install-ubuntu.md)
 
-[Installing PowerShell Core on macOS](../../install/installing-powershell-on-macos.md)
+[Installing PowerShell on macOS](../../install/installing-powershell-on-macos.md)
 
-[Installing PowerShell Core on Windows](../../install/installing-powershell-on-windows.md#msi)
+[Installing PowerShell on Windows](../../install/installing-powershell-on-windows.md#msi)
 
 [Manage Windows with OpenSSH](/windows-server/administration/openssh/openssh_overview)
 
