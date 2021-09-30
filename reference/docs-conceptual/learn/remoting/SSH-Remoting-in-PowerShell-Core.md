@@ -122,10 +122,10 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 1. Add the path where OpenSSH is installed to your Path environment variable. For example,
    `C:\Program Files\OpenSSH\`. This entry allows for the `ssh.exe` to be found.
 
-## Set up on an Ubuntu 16.04 Linux computer
+## Set up on an Ubuntu Linux computer
 
 1. Install the latest version of PowerShell, see
-   [Installing PowerShell Core on Linux](../../install/installing-powershell-on-linux.md#ubuntu-1604).
+   [Installing PowerShell Core on Linux](../../install/install-ubuntu.md).
 1. Install [Ubuntu OpenSSH Server](https://ubuntu.com/server/docs/service-openssh).
 
    ```bash
@@ -375,7 +375,7 @@ GitCommitId                    v6.0.0-alpha.17
 
 ## See also
 
-[Installing PowerShell Core on Linux](../../install/installing-powershell-on-linux.md#ubuntu-1604)
+[Installing PowerShell Core on Linux](../../install/install-ubuntu.md)
 
 [Installing PowerShell Core on macOS](../../install/installing-powershell-on-macos.md)
 
