@@ -12,9 +12,9 @@ PowerShell 7.2 includes the following features, updates, and breaking changes.
 
 - New universal installer packages for most supported Linux distributions
 - Microsoft Update support on Windows
-- 3 new experimental features
-  - Improved native command support
-  - Improved ANSI color support
+- 2 new experimental features
+  - Improved native command argument passing support
+  - ANSI FileInfo color support
 - Improved Tab Completions
 - PSReadLine 2.1 with Predictive IntelliSense
 - 7 experimental features promoted to mainstream and 1 removed
