@@ -7,7 +7,7 @@ metadata:
   title: Install PowerShell on Windows, Linux, and macOS
   description: Learn about installing PowerShell on Windows, Linux, and macOS.
   ms.topic: landing-page
-  ms.date: 09/21/2021
+  ms.date: 08/17/2021
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -20,6 +20,8 @@ landingContent:
         links:
           - text: Install PowerShell on Windows
             url: Installing-PowerShell-on-Windows.md
+          - text: Supported Windows releases
+            url: Installing-PowerShell-on-Windows.md#supported-versions-of-windows
           - text: Install Windows PowerShell 5.1
             url: ../windows-powershell/install/installing-windows-powershell.md
 
@@ -30,20 +32,40 @@ landingContent:
         links:
           - text: Install on macOS
             url: Installing-PowerShell-on-macOS.md
+          - text: Supported macOS releases
+            url: Installing-PowerShell-on-macOS.md#supported-versions-of-macos
 
   # Card
   - title: Linux
     linkLists:
       - linkListType: overview
         links:
-          - text: Install on Linux
+          - text: Linux overview
             url: Installing-PowerShell-on-Linux.md
+          - text: Alpine
+            url: install-alpine.md
+          - text: CentOS
+            url: install-centos.md
+          - text: Debian
+            url: install-debian.md
+          - text: Fedora
+            url: install-fedora.md
+          - text: Raspberry Pi OS
+            url: install-raspbian.md
+          - text: Red Hat Enterprise Linux
+            url: install-rhel.md
+          - text: Ubuntu
+            url: install-ubuntu.md
 
 # Card
   - title: "Q&A"
     linkLists:
       - linkListType: get-started
         links:
+          - text: Alternate install methods
+            url: install-other-linux.md
+          - text: Community supported Linux
+            url: community-support.md
           - text: Using PowerShell in Docker
             url: PowerShell-in-Docker.md
           - text: Arm Processor support
