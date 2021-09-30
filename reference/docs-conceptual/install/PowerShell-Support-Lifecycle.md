@@ -83,27 +83,6 @@ needing access but formal support and updates of any kind are no longer be provi
 > .NET is not supported on ARMv6 architecture devices, including Raspberry Pi Zero and Raspberry Pi
 > devices prior to Raspberry Pi 2.
 
-## PowerShell End-of-support dates
-
-Based on these lifecycle policies, the following table lists the dates when various releases are no
-longer be supported.
-
-|      Version      |      End-of-support       |
-| ----------------- | ------------------------- |
-| 7.2 (LTS-preview) | November 2024 (projected) |
-| 7.1 (current)     | May 31, 2022  (projected) |
-| 7.0 (LTS)         | December 3, 2022          |
-| 6.2               | September 4, 2020         |
-| 6.1               | September 28, 2019        |
-| 6.0               | February 13, 2019         |
-
-Support for PowerShell on a specific platforms is based on the support policy of the version of .NET
-used.
-
-- PowerShell 7.2 (LTS-preview) is based on the [.NET 6.0 Supported OS Lifecycle Policy][net60os]
-- PowerShell 7.1 (current) is based on the [.NET 5.0 Supported OS Lifecycle Policy][net50os]
-- PowerShell 7.0 (LTS) is based on the [.NET Core 3.1 Supported OS Lifecycle Policy][net31os]
-
 ## Windows PowerShell Compatibility
 
 The support lifecycle for PowerShell doesn't cover modules that ship outside of the PowerShell
@@ -138,6 +117,27 @@ use the traditional, paid support options.
 > You must have the latest patch update installed to qualify for support. For example, if you're
 > running PowerShell 7.0 and 7.0.1 has been released, you must update to 7.0.1 to qualify for
 > support.
+
+## PowerShell End-of-support dates
+
+Based on these lifecycle policies, the following table lists the dates when various releases are no
+longer be supported.
+
+|      Version      |      End-of-support       |
+| ----------------- | ------------------------- |
+| 7.2 (LTS-preview) | November 2024 (projected) |
+| 7.1 (current)     | May 31, 2022  (projected) |
+| 7.0 (LTS)         | December 3, 2022          |
+| 6.2               | September 4, 2020         |
+| 6.1               | September 28, 2019        |
+| 6.0               | February 13, 2019         |
+
+Support for PowerShell on a specific platforms is based on the support policy of the version of .NET
+used.
+
+- PowerShell 7.2 (LTS-preview) is based on the [.NET 6.0 Supported OS Lifecycle Policy][net60os]
+- PowerShell 7.1 (current) is based on the [.NET 5.0 Supported OS Lifecycle Policy][net50os]
+- PowerShell 7.0 (LTS) is based on the [.NET Core 3.1 Supported OS Lifecycle Policy][net31os]
 
 ## Release history
 
@@ -176,4 +176,5 @@ for historical reference. It is not intended for use to determine the support li
 [paid]: https://support.serviceshub.microsoft.com/supportforbusiness
 [pscommunity]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [pshub]: /powershell/scripting/community/community-support
+[raspbian]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md
 [semi-annual]: /windows-server/get-started-19/servicing-channels-19
