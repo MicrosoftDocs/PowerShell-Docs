@@ -25,24 +25,24 @@ Content updates
 
 - Install documentation - Did a complete rewrite of the setup documentation. There is now a separate
   article for each supported OS.
-  - [Install PowerShell on Windows](/powershell/scripting/install/Installing-PowerShell-on-Windows)
+  - [Install on Windows](/powershell/scripting/install/Installing-PowerShell-on-Windows)
   - [Install on macOS](/powershell/scripting/install/Installing-PowerShell-on-macOS)
-  - [Linux overview](/powershell/scripting/install/Installing-PowerShell-on-Linux)
-  - [Alpine](/powershell/scripting/install/install-alpine)
-  - [CentOS](/powershell/scripting/install/install-centos)
-  - [Debian](/powershell/scripting/install/install-debian)
-  - [Fedora](/powershell/scripting/install/install-fedora)
-  - [Raspberry Pi OS](/powershell/scripting/install/install-raspbian)
-  - [Red Hat Enterprise Linux](/powershell/scripting/install/install-rhel)
-  - [Ubuntu](/powershell/scripting/install/install-ubuntu)
+  - [Install on Linux](/powershell/scripting/install/Installing-PowerShell-on-Linux)
+    - [Alpine](/powershell/scripting/install/install-alpine)
+    - [CentOS](/powershell/scripting/install/install-centos)
+    - [Debian](/powershell/scripting/install/install-debian)
+    - [Fedora](/powershell/scripting/install/install-fedora)
+    - [Raspberry Pi OS](/powershell/scripting/install/install-raspbian)
+    - [Red Hat Enterprise Linux](/powershell/scripting/install/install-rhel)
+    - [Ubuntu](/powershell/scripting/install/install-ubuntu)
+    - [Alternate install methods](/powershell/scripting/install/install-other-linux)
+    - [Community supported Linux](/powershell/scripting/install/community-support)
 - Supporting documentation
-  - [Alternate install methods](/powershell/scripting/install/install-other-linux)
-  - [Community supported Linux](/powershell/scripting/install/community-support)
   - [Using PowerShell in Docker](/powershell/scripting/install/PowerShell-in-Docker)
   - [Arm Processor support](/powershell/scripting/install/PowerShell-on-ARM)
   - [Microsoft Update for PowerShell FAQ](/powershell/scripting/install/microsoft-update-faq)
   - [PowerShell Support Lifecycle](/powershell/scripting/install/powershell-support-lifecycle)
-- Reformatted and updated the PSScriptAnalyzer rules docmentation. Next month we will publish these
+- Reformatted and updated the PSScriptAnalyzer rules documentation. Next month we plan to publish these
   docs on docs.microsoft.com.
   - [Rules documentation on GitHub](https://github.com/PowerShell/PSScriptAnalyzer/tree/master/RuleDocumentation)
 - Lots of general editorial updates across 4500 files
