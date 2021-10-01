@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2021
-ms.date: 08/02/2021
+ms.date: 10/01/2021
 title: What's New in PowerShell-Docs for 2021
 ---
 # What's new in PowerShell Docs for 2021
@@ -10,6 +10,63 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2021-September
+
+New Content
+
+- SDK - Install documentation
+  - [How to validate an argument using a script](powershell/scripting/developer/cmdlet/how-to-validate-an-argument-using-script)
+  - [ValidateScript Attribute Declaration](powershell/scripting/developer/cmdlet/validatescript-attribute-declaration)
+- Learning content
+  - [PowerShell security features](powershell/scripting/learn/security-features)
+
+Content updates
+
+- Install documentation - Did a complete rewrite of the setup documentation. There is now a separate
+  article for each supported OS.
+  - [Install PowerShell on Windows](/powershell/scripting/install/Installing-PowerShell-on-Windows)
+  - [Install on macOS](/powershell/scripting/install/Installing-PowerShell-on-macOS)
+  - [Linux overview](/powershell/scripting/install/Installing-PowerShell-on-Linux)
+  - [Alpine](/powershell/scripting/install/install-alpine)
+  - [CentOS](/powershell/scripting/install/install-centos)
+  - [Debian](/powershell/scripting/install/install-debian)
+  - [Fedora](/powershell/scripting/install/install-fedora)
+  - [Raspberry Pi OS](/powershell/scripting/install/install-raspbian)
+  - [Red Hat Enterprise Linux](/powershell/scripting/install/install-rhel)
+  - [Ubuntu](/powershell/scripting/install/install-ubuntu)
+- Supporting documentation
+  - [Alternate install methods](/powershell/scripting/install/install-other-linux)
+  - [Community supported Linux](/powershell/scripting/install/community-support)
+  - [Using PowerShell in Docker](/powershell/scripting/install/PowerShell-in-Docker)
+  - [Arm Processor support](/powershell/scripting/install/PowerShell-on-ARM)
+  - [Microsoft Update for PowerShell FAQ](/powershell/scripting/install/microsoft-update-faq)
+  - [PowerShell Support Lifecycle](/powershell/scripting/install/powershell-support-lifecycle)
+- Reformatted and updated the PSScriptAnalyzer rules docmentation. Next month we will publish these
+  docs on docs.microsoft.com.
+  - [Rules documentation on GitHub](https://github.com/PowerShell/PSScriptAnalyzer/tree/master/RuleDocumentation)
+- Lots of general editorial updates across 4500 files
+- PowerShell 7.2-preview.10 documentation updates
+
+### Top Community Contributors
+
+GitHub stats
+
+- 68 PRs merged (6 from Community)
+- 32 issues opened (29 from Community)
+- 49 issues closed (41 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|  GitHub Id  | PRs merged | Issues opened |
+| ----------- | :--------: | :-----------: |
+| RaghuRocks3 |     1      |               |
+| Zhu-Panda   |     1      |               |
+| Jaykul      |     1      |               |
+| juvtib      |     1      |               |
+| przmv       |     1      |               |
+| mklement0   |            |       2       |
 
 ## 2021-August
 
