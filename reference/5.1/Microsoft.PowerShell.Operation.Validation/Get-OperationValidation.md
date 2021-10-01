@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Operation.Validation-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Operation.Validation
-ms.date: 06/09/2017
+ms.date: 10/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.operation.validation/get-operationvalidation?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-OperationValidation
@@ -20,16 +20,22 @@ Get-OperationValidation [[-ModuleName] <String[]>] [-TestType <String[]>] [<Comm
 ```
 
 ## Description
-The **Get-OperationValidation** cmdlet gets Operation Validation Framework tests for installed modules.
 
-Modules that include a Diagnostics folder are inspected for Pester tests in the Simple or Comprehensive subfolder, or both.
+The `Get-OperationValidation` cmdlet gets Operation Validation Framework tests for installed
+modules.
+
+Modules that include a Diagnostics folder are inspected for Pester tests in the Simple or
+Comprehensive subfolder, or both.
 
 ## Examples
 
 ### Example 1: Get Operation Validation tests
 
+```powershell
+Get-OperationValidation -ModuleName "C:\temp\modules\AddNumbers"
 ```
-PS C:\> Get-OperationValidation -ModuleName "C:\temp\modules\AddNumbers"
+
+```Output
     Type:     Simple
     File:     addnum.tests.ps1
     FilePath: C:\temp\modules\AddNumbers\Diagnostics\Simple\addnum.tests.ps1
@@ -46,11 +52,12 @@ PS C:\> Get-OperationValidation -ModuleName "C:\temp\modules\AddNumbers"
         Comprehensive Examples
 ```
 
-This command gets validation tests from the module named AddNumbers in the C:\temp\modules folder.
+This command gets validation tests from the module named **AddNumbers** in the `C:\temp\modules` folder.
 
 ## Parameters
 
 ### -ModuleName
+
 Specifies an array of names of modules.
 
 ```yaml
@@ -66,9 +73,13 @@ Accept wildcard characters: False
 ```
 
 ### -TestType
-Specifies an array of test types.
-Valid values are Simple, Comprehensive, or both.
-The default is "Simple,Comprehensive".
+
+Specifies an array of test types. Valid values are:
+
+- `Simple`
+- `Comprehensive`
+
+The default is `Simple,Comprehensive`.
 
 ```yaml
 Type: System.String[]
@@ -84,16 +95,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
 ### None
+
 You cannot pipe any input to this cmdlet.
 
 ## Outputs
 
 ### PSCustomObject
+
 The **PSCustomObject** describes the validation.
 
 ## Notes

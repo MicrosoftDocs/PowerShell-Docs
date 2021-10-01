@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 09/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Computer
@@ -79,8 +79,8 @@ results of the command.
 Add-Computer -DomainName Domain02 -OUPath "OU=testOU,DC=domain,DC=Domain,DC=com"
 ```
 
-This command adds the local computer to the Domain02 domain.
-It uses the OUPath parameter to specify the organizational unit for the new accounts.
+This command adds the local computer to the Domain02 domain. It uses the OUPath parameter to specify
+the organizational unit for the new accounts.
 
 ### Example 5: Add a local computer to a domain using credentials
 
@@ -127,7 +127,7 @@ permission to join the computer to the Domain02 domain.
 Add-Computer -ComputerName (Get-Content Servers.txt) -DomainName Domain02 -Credential Domain02\Admin02 -Options Win9xUpgrade  -Restart
 ```
 
-This command adds the computers that are listed in the Servers.txt file to the Domain02 domain. It
+This command adds the computers that are listed in the `Servers.txt` file to the Domain02 domain. It
 uses the **Options** parameter to specify the **Win9xUpgrade** option. The **Restart** parameter
 restarts all of the newly added computers after the join operation completes.
 
@@ -291,29 +291,29 @@ Accept wildcard characters: False
 
 ### -Options
 
-Specifies advanced options for the **Add-Computer** join operation. Enter one or more values in a
+Specifies advanced options for the `Add-Computer` join operation. Enter one or more values in a
 comma-separated string.
 
 The acceptable values for this parameter are:
 
-- **AccountCreate**: Creates a domain account. The **Add-Computer** cmdlet automatically creates a
+- **AccountCreate**: Creates a domain account. The `Add-Computer` cmdlet automatically creates a
   domain account when it adds a computer to a domain. This option is included for completeness.
 
 - **Win9XUpgrade**: Indicates that the join operation is part of a Windows operating system upgrade.
 
-- **UnsecuredJoin**: Performs an unsecured join. To request an unsecured join, use the *Unsecure*
+- **UnsecuredJoin**: Performs an unsecured join. To request an unsecured join, use the **Unsecure**
   parameter or this option. If you want to pass a machine password, then you must use this option in
   combination with `PasswordPass` option.
 
-- **PasswordPass**: Sets the machine password to the value of the *Credential*(DomainCredential)
+- **PasswordPass**: Sets the machine password to the value of the **Credential**(DomainCredential)
   parameter after performing an unsecured join. This option also indicates that the value of the
-  *Credential* (DomainCredential) parameter is a machine password, not a user password. This option
+  **Credential** (DomainCredential) parameter is a machine password, not a user password. This option
   is valid only when the `UnsecuredJoin` option is specified. When using this option, the credential
-  provided to the `-Credential` parameter *must* have a null username.
+  provided to the `-Credential` parameter _must_ have a null username.
 
 - **JoinWithNewName**: Renames the computer name in the new domain to the name specified by the
-  *NewName* parameter. When you use the *NewName* parameter, this option is set automatically. This
-  option is designed to be used with the Rename-Computer cmdlet. If you use the **Rename-Computer**
+  **NewName** parameter. When you use the **NewName** parameter, this option is set automatically. This
+  option is designed to be used with the Rename-Computer cmdlet. If you use the `Rename-Computer`
   cmdlet to rename the computer, but do not restart the computer to make the change effective, you
   can use this parameter to join the computer to a domain with its new name.
 

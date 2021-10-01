@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/02/2021
+ms.date: 10/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Type
@@ -318,7 +318,7 @@ Accept wildcard characters: False
 ### -Language
 
 Specifies the language that is used in the source code. The acceptable value for this parameter is
-**CSharp**.
+- `CSharp`
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.Language
@@ -440,9 +440,9 @@ about the values, see [OutputAssemblyType Enumeration](/dotnet/api/microsoft.pow
 
 The acceptable values for this parameter are as follows:
 
-- ConsoleApplication
-- Library
-- WindowsApplication
+- `ConsoleApplication`
+- `Library`
+- `WindowsApplication`
 
 > [!IMPORTANT]
 > As of PowerShell 7.1, `ConsoleApplication` and `WindowsApplication` are not supported and
