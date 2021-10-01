@@ -15,19 +15,24 @@ You can check the version that you are using by running `winver.exe`.
 
 ## <a id="msi" />Installing the MSI package
 
-To install PowerShell on Windows, download the [latest][current] install package from GitHub. You
-can also find the latest [preview][preview] version. Scroll down to the **Assets** section of the
-Release page. The **Assets** section may be collapsed, so you may need to click to expand it.
+To install PowerShell on Windows, download the install package from GitHub. Scroll down to the
+**Assets** section of the Release page. The **Assets** section may be collapsed, so you may need to
+click to expand it.
 
 > [!NOTE]
-> The installation commands in this article are for the latest releases of PowerShell. To install a
-> different version of PowerShell, adjust the command to match the version you need. To see all
-> PowerShell releases, visit the [releases][releases] page in the PowerShell repository on GitHub.
+> The installation commands in this article are for the latest stable release of PowerShell. To
+> install a different version of PowerShell, adjust the command to match the version you need. The
+> following links direct you to the release page for each version in the PowerShell repository on
+> GitHub.
+>
+> - Stable release: [https://aka.ms/powershell-release?tag=stable][current]
+> - Preview release: [https://aka.ms/powershell-release?tag=preview][preview]
+> - LTS release: [https://aka.ms/powershell-release?tag=lts][lts]
 
 The MSI file looks like `PowerShell-<version>-win-<os-arch>.msi`. For example:
 
-- `PowerShell-7.1.4-win-x64.msi`
-- `PowerShell-7.1.4-win-x86.msi`
+- [PowerShell-7.1.4-win-x64.msi][x64msi]
+- [PowerShell-7.1.4-win-x86.msi][x86msi]
 
 Once downloaded, double-click the installer and follow the prompts.
 
@@ -37,23 +42,24 @@ The installer creates a shortcut in the Windows Start Menu.
 - You can launch PowerShell via the Start Menu or `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 > [!NOTE]
-> PowerShell 7.2 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.
-> PowerShell 7.2 is an in-place upgrade that replaces PowerShell 6.x. and higher.
+> PowerShell 7.1 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.
+> PowerShell 7.1 is an in-place upgrade that replaces PowerShell 7.0 and lower.
 >
-> - PowerShell 7.2 is installed to `$env:ProgramFiles\PowerShell\7`
+> - PowerShell 7.1 is installed to `$env:ProgramFiles\PowerShell\7`
 > - The `$env:ProgramFiles\PowerShell\7` folder is added to `$env:PATH`
 > - Folders for previously released versions are deleted
 >
-> Preview releases of PowerShell 7 install to `$env:ProgramFiles\PowerShell\7-preview` so they can
-> be run side-by-side with non-preview releases of PowerShell.
->
-> If you need to run PowerShell 7.2 side-by-side with other versions, use the [ZIP install](#zip)
+> If you need to run PowerShell 7.1 side-by-side with other versions, use the [ZIP install](#zip)
 > method to install the other version to a different folder.
+>
+> Preview releases of PowerShell 7 install to `$env:ProgramFiles\PowerShell\7-preview` so they can
+> be run side-by-side with non-preview releases of PowerShell. PowerShell 7.2-preview.10 is the
+> current preview release.
 
-### Support for Microsoft Update
+### Support for Microsoft Update in PowerShell 7.2
 
-PowerShell 7.2 adds support for Microsoft Update. When you enable this feature, you'll get the
-latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
+PowerShell 7.2-preview.10 has support for Microsoft Update. When you enable this feature, you'll get
+the latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
 that's with Windows Update for Business, WSUS, SCCM, or the interactive MU dialog in Settings.
 
 The PowerShell 7.2 MSI package includes following command-line options:
@@ -90,7 +96,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.4-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1
+msiexec.exe /package PowerShell-7.1.4-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
@@ -101,10 +107,10 @@ For a full list of command-line options for `Msiexec.exe`, see
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
 the following ZIP archives from the [current release][current] page.
 
-- PowerShell-7.1.4-win-x64.zip
-- PowerShell-7.1.4-win-x86.zip
-- PowerShell-7.1.4-win-arm64.zip
-- PowerShell-7.1.4-win-arm32.zip
+- [PowerShell-7.1.4-win-x64.zip][x64zip]
+- [PowerShell-7.1.4-win-x86.zip][x86zip]
+- [PowerShell-7.1.4-win-arm64.zip][arm64.zip]
+- [PowerShell-7.1.4-win-arm32.zip][arm32zip]
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -115,13 +121,6 @@ remoting over WSMan to work properly, ensure that you've met the
 Use this method to install the ARM-based version of PowerShell on computers like the Microsoft
 Surface Pro X. For best results, install PowerShell to the to `$env:ProgramFiles\PowerShell\7`
 folder.
-
-> [!NOTE]
-> You can use this method to install any version of PowerShell including the latest:
->
-> - Stable release: [https://aka.ms/powershell-release?tag=stable][current]
-> - Preview release: [https://aka.ms/powershell-release?tag=preview][preview]
-> - LTS release: [https://aka.ms/powershell-release?tag=lts][lts]
 
 ## Deploying on Windows 10 IoT Enterprise
 
@@ -252,10 +251,10 @@ winget search Microsoft.PowerShell
 ```
 
 ```Output
-Name               Id                           Version
--------------------------------------------------------
-PowerShell         Microsoft.PowerShell         7.1.4.0
-PowerShell Preview Microsoft.PowerShell.Preview 7.2.0.8
+Name               Id                           Version  Source
+----------------------------------------------------------------
+PowerShell         Microsoft.PowerShell         7.1.4.0  winget
+Powershell Preview Microsoft.PowerShell.Preview 7.2.0.10 winget
 ```
 
 Install a version of PowerShell using the `--exact` parameter
@@ -322,18 +321,23 @@ cannot support those methods.
 
 <!-- link references -->
 
-
 [client-faq]: /lifecycle/faq/windows
 [current]: https://aka.ms/powershell-release?tag=stable
+[lts]: https://aka.ms/powershell-release?tag=lts
+[preview]: https://aka.ms/powershell-release?tag=preview
 [eol-windows]: /lifecycle/products/?terms=Windows%20Server&products=windows
 [instance]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register
 [iotimport]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease
-[lts]: https://aka.ms/powershell-release?tag=lts
 [modern]: /lifecycle/#gp/LifeWinFAQ
 [mu-faq]: microsoft-update-faq.yml
-[preview]: https://aka.ms/powershell-release?tag=preview
 [releases]: https://github.com/PowerShell/PowerShell/releases
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [store-app]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [winget]: /windows/package-manager/winget
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
+[arm32zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/PowerShell-7.1.4-win-arm32.zip
+[arm63zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/PowerShell-7.1.4-win-arm64.zip
+[x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/PowerShell-7.1.4-win-x64.msi
+[x64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/PowerShell-7.1.4-win-x64.zip
+[x86msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/PowerShell-7.1.4-win-x86.msi
+[x86zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/PowerShell-7.1.4-win-x86.zip
