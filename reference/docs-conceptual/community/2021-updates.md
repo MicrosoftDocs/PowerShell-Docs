@@ -16,10 +16,10 @@ to get started.
 New Content
 
 - SDK - Install documentation
-  - [How to validate an argument using a script](powershell/scripting/developer/cmdlet/how-to-validate-an-argument-using-script)
-  - [ValidateScript Attribute Declaration](powershell/scripting/developer/cmdlet/validatescript-attribute-declaration)
+  - [How to validate an argument using a script](/powershell/scripting/developer/cmdlet/how-to-validate-an-argument-using-script)
+  - [ValidateScript Attribute Declaration](/powershell/scripting/developer/cmdlet/validatescript-attribute-declaration)
 - Learning content
-  - [PowerShell security features](powershell/scripting/learn/security-features)
+  - [PowerShell security features](/powershell/scripting/learn/security-features)
 
 Content updates
 
