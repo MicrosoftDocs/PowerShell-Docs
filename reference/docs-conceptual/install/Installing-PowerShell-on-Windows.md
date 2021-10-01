@@ -109,7 +109,7 @@ the following ZIP archives from the [current release][current] page.
 
 - [PowerShell-7.1.4-win-x64.zip][x64zip]
 - [PowerShell-7.1.4-win-x86.zip][x86zip]
-- [PowerShell-7.1.4-win-arm64.zip][arm64.zip]
+- [PowerShell-7.1.4-win-arm64.zip][arm64zip]
 - [PowerShell-7.1.4-win-arm32.zip][arm32zip]
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
