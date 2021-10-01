@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/02/2021
+ms.date: 10/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Type
@@ -328,7 +328,7 @@ types defined in `$FSharpCode`. The **TypeDefinition** parameter specifies the s
 defines the types. The **CodeDomProvider** parameter specifies the source code compiler. The
 **PassThru** parameter directs `Add-Type` to return a **Runtime** object that represents the types.
 The objects are sent down the pipeline to the `Where-Object` cmdlet, which returns only the public
-types. The **Where-Object** cmdlet is used because the F# provider generates non-public types to
+types. The `Where-Object` cmdlet is used because the F# provider generates non-public types to
 support the resulting public type.
 
 The Loop method is called as a static method of the type stored in the `$FSharpType` variable.
@@ -425,11 +425,11 @@ Specifies the language that is used in the source code. The `Add-Type` cmdlet us
 parameter to select the appropriate **CodeDomProvider**. CSharp is the default value. The acceptable
 values for this parameter are as follows:
 
-- CSharp
-- CSharpVersion2
-- CSharpVersion3
-- JScript
-- VisualBasic
+- `CSharp`
+- `CSharpVersion2`
+- `CSharpVersion3`
+- `JScript`
+- `VisualBasic`
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.Language
@@ -528,7 +528,7 @@ Accept wildcard characters: False
 ### -OutputAssembly
 
 Generates a DLL file for the assembly with the specified name in the location. Enter an optional
-path and file name. Wildcard characters are permitted. By default, `Add-Type` generates the assembly
+path and filename. Wildcard characters are permitted. By default, `Add-Type` generates the assembly
 only in memory.
 
 ```yaml
@@ -551,9 +551,9 @@ about the values, see [OutputAssemblyType Enumeration](/dotnet/api/microsoft.pow
 
 The acceptable values for this parameter are as follows:
 
-- ConsoleApplication
-- Library
-- WindowsApplication
+- `ConsoleApplication`
+- `Library`
+- `WindowsApplication`
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.OutputAssemblyType
@@ -590,8 +590,8 @@ Accept wildcard characters: False
 Specifies the path to source code files or assembly DLL files that contain the types.
 
 If you submit source code files, `Add-Type` compiles the code in the files and creates an in-memory
-assembly of the types. The file name extension specified in the value of **Path** determines the
-compiler that `Add-Type` uses.
+assembly of the types. The file extension specified in the value of **Path** determines the compiler
+that `Add-Type` uses.
 
 If you submit an assembly file, `Add-Type` takes the types from the assembly. To specify an
 in-memory assembly or the global assembly cache, use the **AssemblyName** parameter.

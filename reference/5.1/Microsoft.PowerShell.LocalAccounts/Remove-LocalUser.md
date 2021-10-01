@@ -34,14 +34,15 @@ Remove-LocalUser [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonPara
 ```
 
 ## Description
-The **Remove-LocalUser** cmdlet deletes local user accounts.
+
+The `Remove-LocalUser` cmdlet deletes local user accounts.
 
 ## Examples
 
 ### Example 1: Delete a user account
 
-```
-PS C:\> Remove-LocalUser -Name "AdminContoso02"
+```powershell
+Remove-LocalUser -Name "AdminContoso02"
 ```
 
 This command deletes the user account named AdminContoso02.
@@ -53,8 +54,9 @@ This command deletes the user account named AdminContoso02.
 ## Parameters
 
 ### -InputObject
-Specifies an array of user accounts that this cmdlet deletes.
-To obtain a user account, use the Get-LocalUser cmdlet.
+
+Specifies an array of user accounts that this cmdlet deletes. To obtain a user account, use the
+`Get-LocalUser` cmdlet.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.LocalUser[]
@@ -69,6 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of names of the user accounts that this cmdlet deletes.
 
 ```yaml
@@ -84,6 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies an array of security IDs (SIDs) of user accounts that this cmdlet deletes.
 
 ```yaml
@@ -99,6 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -114,8 +119,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -130,28 +135,36 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser, System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a local user, a string, or a SID to this cmdlet.
 
 ## Outputs
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## Notes
 
-* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
+- The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
+  follows:
 
 - Local
 - Active Directory
 - Azure Active Directory group
 - Microsoft Account
 
-**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
+**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
+Windows operating system. For earlier versions, the property is blank.
 
 ## Related links
 

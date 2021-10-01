@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 06/09/2017
+ms.date: 09/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/set-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-LocalUser
@@ -40,8 +40,9 @@ Set-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description 
 ```
 
 ## Description
-The **Set-LocalUser** cmdlet modifies a local user account.
-This cmdlet can reset the password of a local user account.
+
+The `Set-LocalUser` cmdlet modifies a local user account. This cmdlet can reset the password of a
+local user account.
 
 > [!NOTE]
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
@@ -51,35 +52,35 @@ This cmdlet can reset the password of a local user account.
 
 ### Example 1: Change a description of a user account
 
-```
-PS C:\> Set-LocalUser -Name "Admin07" -Description "Description of this account."
+```powershell
+Set-LocalUser -Name "Admin07" -Description "Description of this account."
 ```
 
 This command changes the description of a user account named Admin07.
 
 ### Example 2: Change the password on an account
 
+```powershell
+$Password = Read-Host -AsSecureString
+$UserAccount = Get-LocalUser -Name "User02"
+$UserAccount | Set-LocalUser -Password $Password
 ```
-PS C:\> $Password = Read-Host -AsSecureString
-PS C:\> $UserAccount = Get-LocalUser -Name "User02"
-PS C:\> $UserAccount | Set-LocalUser -Password $Password
-```
 
-The first command prompts you for a password by using the Read-Host cmdlet.
-The command stores the password as a secure string in the $Password variable.
+The first command prompts you for a password by using the Read-Host cmdlet. The command stores the
+password as a secure string in the $Password variable.
 
-The second command gets a user account named User02 by using **Get-LocalUser**.
-The command stores the account in the $UserAccount variable.
+The second command gets a user account named User02 by using `Get-LocalUser`. The command stores the
+account in the $UserAccount variable.
 
-The third command sets the new password on the user account stored in $UserAccount.
+The third command sets the new password on the user account stored in `$UserAccount`.
 
 ## Parameters
 
 ### -AccountExpires
-Specifies when the user account expires.
-To obtain a **DateTime** object, use the Get-Date cmdlet.
 
-If you do not want the account to expire, specify the *AccountNeverExpires* parameter.
+Specifies when the user account expires. To obtain a **DateTime** object, use the `Get-Date` cmdlet.
+
+If you do not want the account to expire, specify the **AccountNeverExpires** parameter.
 
 ```yaml
 Type: System.DateTime
@@ -94,6 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -AccountNeverExpires
+
 Indicates that the account does not expire.
 
 ```yaml
@@ -109,8 +111,8 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Specifies a comment for the user account.
-The maximum length is 48 characters.
+
+Specifies a comment for the user account. The maximum length is 48 characters.
 
 ```yaml
 Type: System.String
@@ -125,8 +127,9 @@ Accept wildcard characters: False
 ```
 
 ### -FullName
-Specifies the full name for the user account.
-The full name differs from the user name of the user account.
+
+Specifies the full name for the user account. The full name differs from the user name of the user
+account.
 
 ```yaml
 Type: System.String
@@ -141,8 +144,9 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Specifies the user account that this cmdlet changes.
-To obtain a user account, use the Get-LocalUser cmdlet.
+
+Specifies the user account that this cmdlet changes. To obtain a user account, use the
+`Get-LocalUser` cmdlet.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.LocalUser
@@ -157,6 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the user account that this cmdlet changes.
 
 ```yaml
@@ -172,12 +177,15 @@ Accept wildcard characters: False
 ```
 
 ### -Password
-Specifies a password for the user account.
-If the user account is connected to a Microsoft account, do not set a password.
 
-You can use `Read-Host -GetCredential`, Get-Credential, or ConvertTo-SecureString to create a **SecureString** object for the password.
+Specifies a password for the user account. If the user account is connected to a Microsoft account,
+do not set a password.
 
-If you omit the *Password* and *NoPassword* parameters, **Set-LocalUser** prompts you for the user's password.
+You can use `Read-Host -GetCredential`, `Get-Credential`, or `ConvertTo-SecureString` to create a
+**SecureString** object for the password.
+
+If you omit the **Password** and **NoPassword** parameters, `Set-LocalUser` prompts you for the
+user's password.
 
 ```yaml
 Type: System.Security.SecureString
@@ -192,6 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -PasswordNeverExpires
+
 Indicates whether the password expires.
 
 ```yaml
@@ -207,6 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies the security ID (SID) of the user account that this cmdlet changes.
 
 ```yaml
@@ -222,6 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserMayChangePassword
+
 Indicates that the user can change the password on the user account.
 
 ```yaml
@@ -237,6 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -252,8 +264,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -268,28 +280,36 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser, System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a local user, a string, or a SID to this cmdlet.
 
 ## Outputs
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## Notes
 
-* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
+- The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
+  follows:
 
 - Local
 - Active Directory
 - Azure Active Directory group
 - Microsoft Account
 
-**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
+**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
+Windows operating system. For earlier versions, the property is blank.
 
 ## Related links
 
