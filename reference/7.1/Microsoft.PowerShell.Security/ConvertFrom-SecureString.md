@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 07/27/2020
+ms.date: 10/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-SecureString
@@ -34,7 +34,7 @@ ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>] [<Common
 
 ## Description
 
-The **ConvertFrom-SecureString** cmdlet converts a secure string (**System.Security.SecureString**)
+The `ConvertFrom-SecureString` cmdlet converts a secure string (**System.Security.SecureString**)
 into an encrypted standard string (**System.String**). Unlike a secure string, an encrypted standard
 string can be saved in a file for later use. The encrypted standard string can be converted back to
 its secure string format by using the `ConvertTo-SecureString` cmdlet.
@@ -170,10 +170,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters:
-`-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`,`-InformationVariable`,
-`-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`.
-For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

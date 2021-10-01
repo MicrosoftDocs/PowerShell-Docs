@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 10/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-String
@@ -30,21 +30,20 @@ ConvertFrom-String [-TemplateFile <String[]>] [-TemplateContent <String[]>] [-In
 
 ## Description
 
-The **ConvertFrom-String** cmdlet extracts and parses structured properties from string content.
-This cmdlet generates an object by parsing text from a traditional text stream.
-For each string in the pipeline, the cmdlet splits the input by either a delimiter or a parse
-expression, and then assigns property names to each of the resulting split elements.
-You can provide these property names; if you do not, they are automatically generated for you.
+The `ConvertFrom-String` cmdlet extracts and parses structured properties from string content. This
+cmdlet generates an object by parsing text from a traditional text stream. For each string in the
+pipeline, the cmdlet splits the input by either a delimiter or a parse expression, and then assigns
+property names to each of the resulting split elements. You can provide these property names; if you
+do not, they are automatically generated for you.
 
-The cmdlet's default parameter set, **ByDelimiter**, splits exactly on the regular expression delimiter.
-It does not perform quote matching or delimiter escaping as the `Import-Csv` cmdlet does.
+The cmdlet's default parameter set, **ByDelimiter**, splits exactly on the regular expression
+delimiter. It does not perform quote matching or delimiter escaping as the `Import-Csv` cmdlet does.
 
 The cmdlet's alternate parameter set, **TemplateParsing**, generates elements from the groups that
-are captured by a regular expression. For more information on regular expressions, see
-[about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md).
+are captured by a regular expression. For more information on regular expressions, see [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md).
 
-This cmdlet supports two modes: basic delimited parsing, and automatically-generated,
-example-driven parsing.
+This cmdlet supports two modes: basic delimited parsing, and automatically-generated, example-driven
+parsing.
 
 Delimited parsing, by default, splits the input at white space, and assigns property names to the
 resulting groups.
@@ -52,8 +51,7 @@ resulting groups.
 You can customize the delimiter by piping the `ConvertFrom-String` results into one of the
 `Format-*` cmdlets, or you can use the **Delimiter** parameter.
 
-The cmdlet also supports automatically-generated, example-driven parsing based on the
-[FlashExtract, research work by Microsoft Research](https://www.microsoft.com/research/publication/flashextract-framework-data-extraction-examples/).
+The cmdlet also supports automatically-generated, example-driven parsing based on the [FlashExtract, research work by Microsoft Research](https://www.microsoft.com/research/publication/flashextract-framework-data-extraction-examples/).
 
 ## Examples
 
@@ -73,8 +71,8 @@ This command generates an object with default property names, **P1** and **P2**.
 
 ### Example 1A: Get to know the generated object
 
-This command generates one object with properties **P1**, **P2**;
-both properties are of **String** type, by default.
+This command generates one object with properties **P1**, **P2**; both properties are of **String**
+type, by default.
 
 ```powershell
 "Hello World" | ConvertFrom-String | Get-Member
@@ -131,15 +129,14 @@ IP             Server
 
 The `Get-Content` cmdlet stores the content of a Windows hosts file in `$content`. The second
 command removes any comments at the beginning of the hosts file using a regular expression that
-matches any line that does not start with (`#`). The last command converts the remaining text
-into objects with **Server** and **IP** properties.
+matches any line that does not start with (`#`). The last command converts the remaining text into
+objects with **Server** and **IP** properties.
 
 ### Example 4: Use an expression as the value of the TemplateContent parameter, save the results in a variable.
 
-This command uses an expression as the value of the **TemplateContent** parameter.
-The expression is saved in a variable for simplicity.
-Windows PowerShell understands now that the string that is used on the pipeline to `ConvertFrom-String`
-has three properties:
+This command uses an expression as the value of the **TemplateContent** parameter. The expression is
+saved in a variable for simplicity. Windows PowerShell understands now that the string that is used
+on the pipeline to `ConvertFrom-String` has three properties:
 
 - **Name**
 - **phone**
@@ -192,8 +189,8 @@ data that matches that pattern because there are no hyphens.
 
 ### Example 5: Specifying data types to the generated properties
 
-This is the same example as Example 4, above.
-The difference is that the pattern string includes a data type for each desired property.
+This is the same example as Example 4, above. The difference is that the pattern string includes a
+data type for each desired property.
 
 ```powershell
 $template = @'
@@ -248,10 +245,9 @@ The `Get-Member` cmdlet is used to show that the **age** property is an integer.
 
 ### -Delimiter
 
-Specifies a regular expression that identifies the boundary between elements.
-Elements that are created by the split become properties in the resulting object.
-The delimiter is ultimately used in a call to the **Split** method of the type
-`[System.Text.RegularExpressions.RegularExpression]`.
+Specifies a regular expression that identifies the boundary between elements. Elements that are
+created by the split become properties in the resulting object. The delimiter is ultimately used in
+a call to the **Split** method of the type `[System.Text.RegularExpressions.RegularExpression]`.
 
 ```yaml
 Type: System.String
@@ -299,11 +295,10 @@ Accept wildcard characters: False
 
 ### -PropertyNames
 
-Specifies an array of property names to which to assign split values in the resulting object.
-Every line of text that you split or parse generates elements that represent property values.
-If the element is the result of a capture group, and that capture group is named
-(for example, `(?<name>)` or `(?'name')` ), then the name of that capture group is assigned to the
-property.
+Specifies an array of property names to which to assign split values in the resulting object. Every
+line of text that you split or parse generates elements that represent property values. If the
+element is the result of a capture group, and that capture group is named (for example, `(?<name>)`
+or `(?'name')` ), then the name of that capture group is assigned to the property.
 
 If you provide any elements in the **PropertyName** array, those names are assigned to properties
 that have not yet been named.
@@ -327,8 +322,7 @@ Accept wildcard characters: False
 ### -TemplateContent
 
 Specifies an expression, or an expression saved as a variable, that describes the properties to
-which this cmdlet assigns strings. The syntax of a template field specification is the following:
-`{[optional-typecast]<name>:<example-value>}`.
+which this cmdlet assigns strings. The syntax of a template field specification is the following: `{[optional-typecast]<name>:<example-value>}`.
 
 ```yaml
 Type: System.String[]
@@ -344,13 +338,13 @@ Accept wildcard characters: False
 
 ### -TemplateFile
 
-Specifies a file, as an array, that contains a template for the desired parsing of the string.
-In the template file, properties and their values are enclosed in brackets, as shown below.
-If a property, such as the **Name** property and its associated other properties,
-appears multiple times, you can add an asterisk (`*`) to indicate that this results in
-multiple records. This avoids extracting multiple properties into a single record.
+Specifies a file, as an array, that contains a template for the desired parsing of the string. In
+the template file, properties and their values are enclosed in brackets, as shown below. If a
+property, such as the **Name** property and its associated other properties, appears multiple times,
+you can add an asterisk (`*`) to indicate that this results in multiple records. This avoids
+extracting multiple properties into a single record.
 
-```
+```Output
 {Name*:David Chew}
 {City:Redmond}, {State:WA}
 {Name*:Evan Narvaez}    {Name*:Antonio Moreno}
@@ -371,9 +365,9 @@ Accept wildcard characters: False
 
 ### -UpdateTemplate
 
-Indicates that this cmdlet saves the results of a learning algorithm into a comment in the template file.
-This makes the algorithm learning process faster.
-To use this parameter, you must also specify a template file with the **TemplateFile** parameter.
+Indicates that this cmdlet saves the results of a learning algorithm into a comment in the template
+file. This makes the algorithm learning process faster. To use this parameter, you must also specify
+a template file with the **TemplateFile** parameter.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

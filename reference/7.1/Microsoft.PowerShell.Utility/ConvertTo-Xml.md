@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/12/2020
+ms.date: 10/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-xml?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Xml
@@ -22,8 +22,8 @@ ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation] [-
 ## Description
 
 The `ConvertTo-Xml` cmdlet creates an [XML-based](/dotnet/api/system.xml.xmldocument) representation
-of one or more more .NET objects. To use this cmdlet, pipe one or more objects to the
-cmdlet, or use the **InputObject** parameter to specify the object.
+of one or more .NET objects. To use this cmdlet, pipe one or more objects to the cmdlet, or use the
+**InputObject** parameter to specify the object.
 
 When you pipe multiple objects to `ConvertTo-Xml` or use the **InputObject** parameter to submit
 multiple objects, `ConvertTo-Xml` returns a single, in-memory XML document that includes
@@ -39,16 +39,16 @@ PowerShell. `ConvertTo-Xml` does not have an option to convert objects to CLI XM
 
 ### Example 1: Convert a date to XML
 
-```
-PS C:\> Get-Date | ConvertTo-Xml
+```powershell
+Get-Date | ConvertTo-Xml
 ```
 
 This command converts the current date (a **DateTime** object) to XML.
 
 ### Example 2: Convert processes to XML
 
-```
-PS C:\> ConvertTo-Xml -As "Document" -InputObject (Get-Process) -Depth 3
+```powershell
+ConvertTo-Xml -As "Document" -InputObject (Get-Process) -Depth 3
 ```
 
 This command converts the process objects that represent all of the processes on the computer into
@@ -58,17 +58,16 @@ an XML document. The objects are expanded to a depth of three levels.
 
 ### -As
 
-Determines the output format.
-The acceptable values for this parameter are:
+Determines the output format. The acceptable values for this parameter are:
 
-- String.
-Returns a single string.
-- Stream.
-Returns an array of strings.
-- Document.
-Returns an **XmlDocument** object.
+- `String`
+  Returns a single string.
+- `Stream`
+  Returns an array of strings.
+- `Document`
+ Returns an **XmlDocument** object.
 
-The default value is Document.
+The default value is `Document`.
 
 ```yaml
 Type: System.String
@@ -109,7 +108,7 @@ Accept wildcard characters: False
 ### -InputObject
 
 Specifies the object to be converted. Enter a variable that contains the objects, or type a command
-or expression that gets the objects. You can also pipe objects to **ConvertTo-XML**.
+or expression that gets the objects. You can also pipe objects to `ConvertTo-XML`.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -149,13 +148,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to **ConvertTo-XML**.
+You can pipe any object to `ConvertTo-XML`.
 
 ## Outputs
 
 ### System.String or System.Xml.XmlDocument
 
-The value of the *As* parameter determines the type of object that **ConvertTo-XML** returns.
+The value of the **As** parameter determines the type of object that `ConvertTo-XML` returns.
 
 ## Notes
 
@@ -170,4 +169,3 @@ The value of the *As* parameter determines the type of object that **ConvertTo-X
 [Get-Date](Get-Date.md)
 
 [Import-Clixml](Import-Clixml.md)
-

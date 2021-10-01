@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 09/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/split-path?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Split-Path
@@ -70,9 +70,9 @@ Split-Path -LiteralPath <String[]> [-Resolve] [-Credential <PSCredential>] [<Com
 
 ## Description
 
-The `Split-Path` cmdlet returns only the specified part of a path, such as the parent folder, a
-subfolder, or a file name. It can also get items that are referenced by the split path and tell
-whether the path is relative or absolute.
+The cmdlet returns only the specified part of a path, such as the parent folder, a subfolder, or a
+file name. It can also get items that are referenced by the split path and tell whether the path is
+relative or absolute.
 
 You can use this cmdlet to get or submit only a selected part of a path.
 
@@ -205,7 +205,7 @@ Accept wildcard characters: False
 
 ### -IsAbsolute
 
-Indicates that this cmdlet returns $True if the path is absolute and $False if it is relative. An
+Indicates that this cmdlet returns `$True` if the path is absolute and $False if it is relative. An
 absolute path has a length greater than zero and does not use a dot (`.`) to indicate the current
 path.
 
@@ -259,10 +259,10 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies the paths to be split. Unlike **Path**, the value of **LiteralPath** is used exactly as it is
-typed. No characters are interpreted as wildcard characters. If the path includes escape characters,
-enclose it in single quotation marks. Single quotation marks tell PowerShell not to interpret any
-characters as escape sequences.
+Specifies the paths to be split. Unlike **Path**, the value of **LiteralPath** is used exactly as it
+is typed. No characters are interpreted as wildcard characters. If the path includes escape
+characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
+interpret any characters as escape sequences.
 
 ```yaml
 Type: System.String[]
