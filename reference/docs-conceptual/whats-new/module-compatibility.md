@@ -1,6 +1,6 @@
----
+ ---
 description: This article lists the status of PowerShell 7 with Powershell modules published for other Microsoft products.
-ms.date: 02/03/2020
+ms.date: 10/04/2021
 title: PowerShell 7 module compatibility
 ---
 
@@ -19,8 +19,9 @@ If you have information to share or issues with specific modules, please file an
 The Windows management modules are installed in different ways, dependent on the Edition of Windows,
 and how the module was packaged for that Edition.
 
-On Windows Server, use the feature name with the [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature)
-cmdlet as an Administrator. For example:
+On Windows Server, use the feature name with the
+[Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) cmdlet as an
+Administrator. For example:
 
 ```powershell
 Install-WindowsFeature -Name ActiveDirectory
@@ -200,8 +201,7 @@ administrator**.
 
 ### ServerManager module
 
-This module has some minor compatibility issues with formatted output in PowerShell 7. For example, the
-`Get-WindowsFeature` cmdlet returns the proper object with all properties, but the default display
-formatting makes some properties appear to be empty. The actual values are available in the object
-properties using `Select-Object` or by direct member access.
-
+This module has some minor compatibility issues with formatted output in PowerShell 7. For example,
+the `Get-WindowsFeature` cmdlet returns the proper object with all properties, but the default
+display formatting makes some properties appear to be empty. The actual values are available in the
+object properties using `Select-Object` or by direct member access.

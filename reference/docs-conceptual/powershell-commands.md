@@ -1,6 +1,6 @@
 ---
 description: Commands for PowerShell are known as cmdlets (pronounced command-lets)
-ms.date: 03/31/2021
+ms.date: 10/04/2021
 title: What is a PowerShell command?
 ---
 # What is a PowerShell command (cmdlet)?
