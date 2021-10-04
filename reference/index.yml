@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: sdwheeler
   ms.author: sewhee
-  ms.date: 09/04/2019
+  ms.date: 10/01/2021
 
 # highlightedContent section (optional)
 # Maximum of 8 items
@@ -51,14 +51,14 @@ productDirectory:
     - title: PowerShell
       imageSrc: ./media/index/ps_black_128.svg
       links:
-        - url: /powershell/scripting/install/installing-powershell-core-on-windows
+        - url: /powershell/scripting/install/installing-powershell-on-windows
           text: Install PowerShell on Windows
-        - url: /powershell/scripting/install/installing-powershell-core-on-linux
+        - url: /powershell/scripting/install/installing-powershell-on-linux
           text: Install PowerShell on Linux
-        - url: /powershell/scripting/install/installing-powershell-core-on-macos
+        - url: /powershell/scripting/install/installing-powershell-on-macos
           text: Install PowerShell on macOS
-        - url: /powershell/scripting/whats-new/what-s-new-in-powershell-70
-          text: What's new in PowerShell 7.0
+        - url: /powershell/scripting/whats-new/what-s-new-in-powershell-71
+          text: What's new in PowerShell 7.1
     # Card 2
     - title: Windows PowerShell 5.1
       # imageSrc should be square in ratio with no whitespace
