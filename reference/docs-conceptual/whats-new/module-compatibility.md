@@ -1,9 +1,8 @@
- ---
+---
 description: This article lists the status of PowerShell 7 with Powershell modules published for other Microsoft products.
 ms.date: 10/04/2021
 title: PowerShell 7 module compatibility
 ---
-
 # PowerShell 7 module compatibility
 
 This article contains a list of PowerShell modules published by Microsoft. These modules provide
