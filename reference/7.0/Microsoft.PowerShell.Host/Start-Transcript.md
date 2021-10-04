@@ -146,7 +146,7 @@ Accept wildcard characters: False
 
 ### -NoClobber
 
-Indicates that this cmdlet will not overwrite of an existing file. By default, if a transcript file
+Indicates that this cmdlet does not overwrite an existing file. By default, if a transcript file
 exists in the specified path, `Start-Transcript` overwrites the file without warning.
 
 ```yaml
