@@ -260,8 +260,8 @@ Powershell Preview Microsoft.PowerShell.Preview 7.2.0.10 winget
 Install a version of PowerShell using the `--exact` parameter
 
 ```powershell
-winget install --name PowerShell --exact
-winget install --name PowerShell-Preview --exact
+winget install --name PowerShell --exact --source winget
+winget install --name PowerShell-Preview --exact --source winget
 ```
 
 ## Installing from the Microsoft Store
