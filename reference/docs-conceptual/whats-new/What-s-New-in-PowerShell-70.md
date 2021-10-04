@@ -1,6 +1,6 @@
 ---
 description: New features and changes released in PowerShell 7.0
-ms.date: 03/04/2020
+ms.date: 10/04/2021
 title: What's New in PowerShell 7.0
 ---
 
@@ -17,11 +17,13 @@ In this release, we're introducing a number of new features, including:
   - Pipeline chain operators: `||` and `&&`
   - Null conditional operators: `??` and `??=`
 - A simplified and dynamic error view and `Get-Error` cmdlet for easier investigation of errors
-- A compatibility layer that enables users to import modules in an implicit Windows PowerShell session
+- A compatibility layer that enables users to import modules in an implicit Windows PowerShell
+  session
 - Automatic new version notifications
 - The ability to invoke DSC resources directly from PowerShell 7 (experimental)
 
-To see a full list of features and fixes, see the [changelogs](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.0.md).
+To see a full list of features and fixes, see the
+[changelogs](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.0.md).
 
 ## Where can I install PowerShell?
 
@@ -58,9 +60,9 @@ For more up-to-date information about supported operating systems and support li
 
 ## Running PowerShell 7
 
-PowerShell 7 installs to a directory seperately from Windows PowerShell.
-This enables you to run PowerShell 7 side-by-side with Windows PowerShell 5.1. For
-PowerShell Core 6.x, PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
+PowerShell 7 installs to a directory separately from Windows PowerShell. This enables you to run
+PowerShell 7 side-by-side with Windows PowerShell 5.1. For PowerShell Core 6.x, PowerShell 7 is an
+in-place upgrade that removes PowerShell Core 6.x.
 
 - PowerShell 7 is installed to `%programfiles%\PowerShell\7`
 - The `%programfiles%\PowerShell\7` folder is added to `$env:PATH`
@@ -74,9 +76,9 @@ The PowerShell 7 installer package upgrades previous versions of PowerShell Core
 
 > [!NOTE]
 > In Windows PowerShell, the executable to launch PowerShell is named `powershell.exe`. In version 6
-> and above, the executable name is changed to support side-by-side execution. The new executable name to
-> launch PowerShell 7 is `pwsh.exe`. Preview builds remain in-place as `pwsh-preview` instead
-> of `pwsh` under the 7-preview directory.
+> and above, the executable name is changed to support side-by-side execution. The new executable
+> name to launch PowerShell 7 is `pwsh.exe`. Preview builds remain in-place as `pwsh-preview`
+> instead of `pwsh` under the 7-preview directory.
 
 ## Improved backwards compatibility with Windows PowerShell
 
@@ -115,7 +117,8 @@ $logEntries.Count
 50000
 ```
 
-The **Parallel** parameter specifies the script block that is run in parallel for each input log name.
+The **Parallel** parameter specifies the script block that is run in parallel for each input log
+name.
 
 The new **ThrottleLimit** parameter limits the number of script blocks running in parallel at a
 given time. The default is 5.
@@ -135,8 +138,8 @@ PowerShell's ternary operator is closely modeled from the C# ternary operator sy
 <condition> ? <if-true> : <if-false>
 ```
 
-The condition-expression is always evaluated and its result converted to a **Boolean** to
-determine which branch is evaluated next:
+The condition-expression is always evaluated and its result converted to a **Boolean** to determine
+which branch is evaluated next:
 
 - The `<if-true>` expression is executed if the `<condition>` expression is true
 - The `<if-false>` expression is executed if the `<condition>` expression is false
@@ -157,8 +160,8 @@ For more information
 
 PowerShell 7 implements the `&&` and `||` operators to conditionally chain pipelines. These
 operators are known in PowerShell as "pipeline chain operators", and are similar to AND and OR lists
-in shells like **Bash** and **Zsh**, as well as conditional processing symbols in the
-Windows Command Shell (**cmd.exe**).
+in shells like **Bash** and **Zsh**, as well as conditional processing symbols in the Windows
+Command Shell (**cmd.exe**).
 
 The `&&` operator executes the right-hand pipeline, if the left-hand pipeline succeeded. Conversely,
 the `||` operator executes the right-hand pipeline if the left-hand pipeline failed.
@@ -307,9 +310,9 @@ For more information
 
 ## New view ConciseView and cmdlet Get-Error
 
-PowerShell 7.0 enhances the display of error messages to improve the readability of interactive and script
-errors with a new default view **ConciseView**. The views are user-selectable through the preference
-variable `$ErrorView`.
+PowerShell 7.0 enhances the display of error messages to improve the readability of interactive and
+script errors with a new default view **ConciseView**. The views are user-selectable through the
+preference variable `$ErrorView`.
 
 With **ConciseView**, if an error is not from a script or parser error, then
 it's a single line error message:
@@ -324,11 +327,13 @@ Get-ChildItem: Cannot find path 'C:\NotReal' because it does not exist
 
 If the error occurs during script execution or is a parsing error, PowerShell returns a multiline
 error message that contains the error, a pointer and error message showing where the error is in
-that line. If the terminal doesn't support ANSI color escape sequences (VT100), then colors are not displayed.
+that line. If the terminal doesn't support ANSI color escape sequences (VT100), then colors are not
+displayed.
 
 ![Error display from a script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-The default view in PowerShell 7 is **ConciseView**. The previous default view was **NormalView** and you can select this by setting the preference variable `$ErrorView`.
+The default view in PowerShell 7 is **ConciseView**. The previous default view was **NormalView**
+and you can select this by setting the preference variable `$ErrorView`.
 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
@@ -339,9 +344,9 @@ $ErrorView = 'ConciseView' # Sets the error view to ConciseView
 > A new property **ErrorAccentColor** is added to `$Host.PrivateData` to support changing
 > the accent color of the error message.
 
-A new cmdlet `Get-Error` provides a complete detailed view of the fully qualified error when desired.
-By default the cmdlet displays the full details, including inner exceptions, of the last error that
-occurred.
+A new cmdlet `Get-Error` provides a complete detailed view of the fully qualified error when
+desired. By default the cmdlet displays the full details, including inner exceptions, of the last
+error that occurred.
 
 ![Display from Get-Error](./media/What-s-New-in-PowerShell-70/myscript-geterror.png)
 
@@ -445,7 +450,8 @@ For more information about
 
 - Improvements in breakpoint APIs for remote scenarios (#11312)
 - Fix PowerShell class definition leaking into another Runspace (#11273)
-- Fix a regression in formatting caused by the FirstOrDefault primitive added in 7.0.0-Preview1 (#11258)
+- Fix a regression in formatting caused by the FirstOrDefault primitive added in 7.0.0-Preview1
+  (#11258)
 - Additional Microsoft Modules to track in PS7 Telemetry (#10751)
 - Make approved features non-experimental (#11303)
 - Update ConciseView to use TargetObject if applicable (#11075)
@@ -458,14 +464,18 @@ For more information about
 - Move to .NET Core 3.1 preview 1 (#10798)
 - Refactor reparse tag checks in file system provider (#10431) (Thanks @iSazonov!)
 - Replace CR and new line with a 0x23CE character in script logging (#10616)
-- Fix a resource leak by unregistering the event handler from AppDomain.CurrentDomain.ProcessExit (#10626)
-- Add support to ActionPreference.Break to break into debugger when Debug, Error, Information, Progress, Verbose or Warning messages are generated (#8205) (Thanks @KirkMunro!)
-- Enable starting control panel add-ins within PowerShell Core without specifying .CPL extension. (#9828)
+- Fix a resource leak by unregistering the event handler from AppDomain.CurrentDomain.ProcessExit
+  (#10626)
+- Add support to ActionPreference.Break to break into debugger when Debug, Error, Information,
+  Progress, Verbose or Warning messages are generated (#8205) (Thanks @KirkMunro!)
+- Enable starting control panel add-ins within PowerShell Core without specifying .CPL extension.
+  (#9828)
 - Support negative numbers in -split operator (#8960) (Thanks @ece-jacob-scott!)
 
 ### General Cmdlet Updates and Fixes
 
-- Fix for issue on Raspbian for setting date of file changes in UnixStat Experimental Feature (#11313)
+- Fix for issue on Raspbian for setting date of file changes in UnixStat Experimental Feature
+  (#11313)
 - Add -AsPlainText to ConvertFrom-SecureString (#11142)
 - Added WindowsPS version check for WinCompat (#11148)
 - Fix error-reporting in some WinCompat scenarios (#11259)
@@ -477,13 +487,15 @@ For more information about
 - Add OutputType to Get-Error cmdlet and preserve original typenames (#10856)
 - Fix null reference in SupportsVirtualTerminal property (#11105)
 - Add limit check in Get-WinEvent (#10648) (Thanks @iSazonov!)
-- Fix command runtime so StopUpstreamCommandsException doesn't get populated in -ErrorVariable (#10840)
+- Fix command runtime so StopUpstreamCommandsException doesn't get populated in -ErrorVariable
+  (#10840)
 - Set the output encoding to [Console]::OutputEncoding for native commands (#10824)
 - Support multi-line code blocks in examples (#10776) (Thanks @Greg-Smulko!)
 - Add Culture parameter to Select-String cmdlet (#10943) (Thanks @iSazonov!)
 - Fix Start-Job working directory path with trailing backslash (#11041)
 - ConvertFrom-Json: Unwrap collections by default (#10861) (Thanks @danstur!)
-- Use case-sensitive Hashtable for Group-Object cmdlet with -CaseSensitive and -AsHashtable switches (#11030) (Thanks @vexx32!)
+- Use case-sensitive Hashtable for Group-Object cmdlet with -CaseSensitive and -AsHashtable switches
+  (#11030) (Thanks @vexx32!)
 - Handle exception if enumerating files fails when rebuilding path to have correct casing (#11014)
 - Fix ConciseView to show Activity instead of myCommand (#11007)
 - Allow web cmdlets to ignore HTTP error statuses (#10466) (Thanks @vdamewood!)
@@ -497,12 +509,14 @@ For more information about
 - Support $null for ConvertTo-Json (#10947)
 - Add back Out-Printer command on Windows (#10906)
 - Fix Start-Job -WorkingDirectory with whitespace (#10951)
-- Return default value when getting null for a setting in PSConfiguration.cs (#10963) (Thanks @iSazonov!)
+- Return default value when getting null for a setting in PSConfiguration.cs (#10963) (Thanks
+  @iSazonov!)
 - Handle IO exception as non-terminating (#10950)
 - Add GraphicalHost assembly to enable Out-GridView, Show-Command, and Get-Help -ShowWindow (#10899)
 - Take ComputerName via pipeline in Get-HotFix (#10852) (Thanks @kvprasoon!)
 - Fix tab completion for parameters so that it shows common parameters as available (#10850)
-- Fix GetCorrectCasedPath() to first check if any system file entries is returned before calling First() (#10930)
+- Fix GetCorrectCasedPath() to first check if any system file entries is returned before calling
+  First() (#10930)
 - Set working directory to current directory in Start-Job (#10920) (Thanks @iSazonov!)
 - Change TabExpansion2 to not require -CursorColumn and treat as $InputScript.Length (#10849)
 - Handle case where Host may not return Rows or Columns of screen (#10938)
@@ -511,24 +525,30 @@ For more information about
 - Update FWLink Id for Clear-RecycleBin (#10925)
 - During tab completion, skip file if can't read file attributes (#10910)
 - Add back Clear-RecycleBin for Windows (#10909)
-- Add `$env:__SuppressAnsiEscapeSequences` to control whether to have VT escape sequence in output (#10814)
+- Add `$env:__SuppressAnsiEscapeSequences` to control whether to have VT escape sequence in output
+  (#10814)
 - Add -NoEmphasize parameter to colorize Select-String output (#8963) (Thanks @derek-xia!)
 - Add back Get-HotFix cmdlet (#10740)
 - Make Add-Type usable in applications that host PowerShell (#10587)
 - Use more effective evaluation order in LanguagePrimitives.IsNullLike() (#10781) (Thanks @vexx32!)
-- Improve handling of mixed-collection piped input and piped streams of input in Format-Hex (#8674) (Thanks @vexx32!)
-- Use type conversion in SSHConnection hashtables when value doesn't match expected type (#10720) (Thanks @SeeminglyScience!)
+- Improve handling of mixed-collection piped input and piped streams of input in Format-Hex (#8674)
+  (Thanks @vexx32!)
+- Use type conversion in SSHConnection hashtables when value doesn't match expected type (#10720)
+  (Thanks @SeeminglyScience!)
 - Fix Get-Content -ReadCount 0 behavior when -TotalCount is set (#10749) (Thanks @eugenesmlv!)
 - Reword access denied error message in Get-WinEvent (#10639) (Thanks @iSazonov!)
 - Enable tab completion for variable assignment that is enum or type constrained (#10646)
 - Remove unused SourceLength remoting property causing formatting issues (#10765)
 - Add -Delimiter parameter to ConvertFrom-StringData (#10665) (Thanks @steviecoaster!)
-- Add positional parameter for ScriptBlock when using Invoke-Command with SSH (#10721) (Thanks @machgo!)
+- Add positional parameter for ScriptBlock when using Invoke-Command with SSH (#10721) (Thanks
+  @machgo!)
 - Show line context information if multiple lines but no script name for ConciseView (#10746)
 - Add support for \\wsl$\ paths to file system provider (#10674)
 - Add the missing token text for TokenKind.QuestionMark in parser (#10706)
-- Set current working directory of each ForEach-Object -Parallel running script to the same location as the calling script. (#10672)
-- Replace api-ms-win-core-file-l1-2-2.dll with Kernell32.dll for FindFirstStreamW and FindNextStreamW APIs (#10680) (Thanks @iSazonov!)
+- Set current working directory of each ForEach-Object -Parallel running script to the same location
+  as the calling script. (#10672)
+- Replace api-ms-win-core-file-l1-2-2.dll with Kernell32.dll for FindFirstStreamW and
+  FindNextStreamW APIs (#10680) (Thanks @iSazonov!)
 - Tweak help formatting script to be more StrictMode tolerant (#10563)
 - Add -SecurityDescriptorSDDL parameter to New-Service (#10483) (Thanks @kvprasoon!)
 - Remove informational output, consolidate ping usage in Test-Connection (#10478) (Thanks @vexx32!)
@@ -539,25 +559,32 @@ For more information about
 - Make suggestion system string distance algorithm case-insensitive (#10549) (Thanks @iSazonov!)
 - Fix null reference exception in ForEach-Object -Parallel input processing (#10577)
 - Add PowerShell Core group policy definitions (#10468)
-- Update console host to support XTPUSHSGR/XTPOPSGR VT control sequences that are used in composability scenarios. (#10208)
+- Update console host to support XTPUSHSGR/XTPOPSGR VT control sequences that are used in
+  composability scenarios. (#10208)
 - Add WorkingDirectory parameter to Start-Job (#10324) (Thanks @davinci26!)
-- Remove the event handler that was causing breakpoint changes to be erroneously replicated to the host runspace debugger (#10503) (Thanks @KirkMunro!)
-- Replace api-ms-win-core-job-12-1-0.dll with Kernell32.dll in Microsoft.PowerShell.Commands.NativeMethods P/Invoke API(#10417) (Thanks @iSazonov!)
-- Fix wrong output for New-Service in variable assignment and -OutVariable (#10444) (Thanks @kvprasoon!)
+- Remove the event handler that was causing breakpoint changes to be erroneously replicated to the
+  host runspace debugger (#10503) (Thanks @KirkMunro!)
+- Replace api-ms-win-core-job-12-1-0.dll with Kernell32.dll in
+  Microsoft.PowerShell.Commands.NativeMethods P/Invoke API(#10417) (Thanks @iSazonov!)
+- Fix wrong output for New-Service in variable assignment and -OutVariable (#10444) (Thanks
+  @kvprasoon!)
 - Fix global tool issues around exit code, command line parameters and path with spaces (#10461)
 - Fix recursion into OneDrive - change FindFirstFileEx() to use SafeFindHandle type (#10405)
 - Skip auto-loading PSReadLine on Windows if the NVDA screen reader is active (#10385)
 - Increase built-with-PowerShell module versions to 7.0.0.0 (#10356)
-- Add throwing an error in Add-Type if a type with the same name already exists (#9609) (Thanks @iSazonov!)
+- Add throwing an error in Add-Type if a type with the same name already exists (#9609) (Thanks
+  @iSazonov!)
 
 ### Performance
 
 - Avoid using closure in Parser.SaveError (#11006)
 - Improve the caching when creating new Regex instances (#10657) (Thanks @iSazonov!)
-- Improve processing of the PowerShell built-in type data from types.ps1xml, typesV3.ps1xml and GetEvent.types.ps1xml (#10898)
+- Improve processing of the PowerShell built-in type data from types.ps1xml, typesV3.ps1xml and
+  GetEvent.types.ps1xml (#10898)
 - Update PSConfiguration.ReadValueFromFile to make it faster and more memory efficient (#10839)
 - Add minor performance improvements for runspace initialization (#10569) (Thanks @iSazonov!)
-- Make ForEach-Object faster for its commonly used scenarios (#10454) and fix ForEach-Object -Parallel performance problem with many runspaces (#10455)
+- Make ForEach-Object faster for its commonly used scenarios (#10454) and fix ForEach-Object
+  -Parallel performance problem with many runspaces (#10455)
 
 ### Code Cleanup
 
@@ -566,25 +593,33 @@ For more information about
 - Remove the unused type converter for CommaDelimitedStringCollection (#11000) (Thanks @iSazonov!)
 - Cleanup style in InitialSessionState.cs (#10865) (Thanks @iSazonov!)
 - Code clean up for PSSession class (#11001)
-- Remove the not-working 'run Update-Help from Get-Help when Get-Help runs for the first time' feature (#10974)
+- Remove the not-working 'run Update-Help from Get-Help when Get-Help runs for the first time'
+  feature (#10974)
 - Fix style issues (#10998) (Thanks @iSazonov!)
 - Cleanup: use the built-in type alias (#10882) (Thanks @iSazonov!)
-- Remove the unused setting key ConsolePrompting and avoid unnecessary string creation when querying ExecutionPolicy setting (#10985)
+- Remove the unused setting key ConsolePrompting and avoid unnecessary string creation when querying
+  ExecutionPolicy setting (#10985)
 - Disable update notification check for daily builds (#10903) (Thanks @bergmeister!)
 - Reinstate debugging API lost in #10338 (#10808)
 - Remove WorkflowJobSourceAdapter reference that is no longer used (#10326) (Thanks @KirkMunro!)
-- Cleanup COM interfaces in jump list code by fixing PreserveSig attributes (#9899) (Thanks @weltkante!)
-- Add a comment describing why -ia is not the alias for -InformationAction common parameter (#10703) (Thanks @KirkMunro!)
+- Cleanup COM interfaces in jump list code by fixing PreserveSig attributes (#9899) (Thanks
+  @weltkante!)
+- Add a comment describing why -ia is not the alias for -InformationAction common parameter (#10703)
+  (Thanks @KirkMunro!)
 - Rename InvokeCommandCmdlet.cs to InvokeExpressionCommand.cs (#10659) (Thanks @kilasuit!)
 - Add minor code cleanups related to update notifications (#10698)
 - Remove deprecated workflow logic from the remoting setup scripts (#10320) (Thanks @KirkMunro!)
 - Update help format to use proper case (#10678) (Thanks @tnieto88!)
 - Clean up CodeFactor style issues coming in commits for the last month (#10591) (Thanks @iSazonov!)
 - Fix typo in description of PSTernaryOperator experimental feature (#10586) (Thanks @bergmeister!)
-- Convert ActionPreference.Suspend enumeration value into a non-supported, reserved state, and remove restriction on using ActionPreference.Ignore in preference variables (#10317) (Thanks @KirkMunro!)
-- Replace ArrayList with List\<T> to get more readable and reliable code without changing functionality (#10333) (Thanks @iSazonov!)
+- Convert ActionPreference.Suspend enumeration value into a non-supported, reserved state, and
+  remove restriction on using ActionPreference.Ignore in preference variables (#10317) (Thanks
+  @KirkMunro!)
+- Replace ArrayList with List\<T> to get more readable and reliable code without changing
+  functionality (#10333) (Thanks @iSazonov!)
 - Make code style fixes to TestConnectionCommand (#10439) (Thanks @vexx32!)
-- Cleanup AutomationEngine and remove extra SetSessionStateDrive method call (#10416) (Thanks @iSazonov!)
+- Cleanup AutomationEngine and remove extra SetSessionStateDrive method call (#10416) (Thanks
+  @iSazonov!)
 - Rename default ParameterSetName back to Delimiter for ConvertTo-Csv and ConvertFrom-Csv (#10425)
 
 ### Tools
@@ -592,8 +627,10 @@ For more information about
 - Add default setting for the SDKToUse property so that it builds in VS (#11085)
 - Install-Powershell.ps1: Add parameter to use MSI installation (#10921) (Thanks @MJECloud!)
 - Add basic examples for install-powershell.ps1 (#10914) (Thanks @kilasuit!)
-- Make Install-PowerShellRemoting.ps1 handle empty string in PowerShellHome parameter (#10526) (Thanks @Orca88!)
-- Switch from /etc/lsb-release to /etc/os-release in install-powershell.sh (#10773) (Thanks @Himura2la!)
+- Make Install-PowerShellRemoting.ps1 handle empty string in PowerShellHome parameter (#10526)
+  (Thanks @Orca88!)
+- Switch from /etc/lsb-release to /etc/os-release in install-powershell.sh (#10773) (Thanks
+  @Himura2la!)
 - Check pwsh.exe and pwsh in daily version on Windows (#10738) (Thanks @centreboard!)
 - Remove unneeded tap in installpsh-osx.sh (#10752)
 - Update install-powershell.ps1 to check for already installed daily build (#10489)
@@ -610,7 +647,8 @@ For more information about
 - Sync capitalization in CI YAML (#10767) (Thanks @RDIL!)
 - Add test for the event handler leaking fix (#10768)
 - Add Get-ChildItem test (#10507) (Thanks @iSazonov!)
-- Replace ambiguous language for tests from switch to parameter for accuracy (#10666) (Thanks @romero126!)
+- Replace ambiguous language for tests from switch to parameter for accuracy (#10666) (Thanks
+  @romero126!)
 - Add experimental check to ForEach-Object -Parallel tests (#10354) (Thanks @KirkMunro!)
 - Update tests for Alpine validation (#10428)
 
@@ -678,9 +716,11 @@ For more information about
 - Remove the stale link from powershell-beginners-guide.md (#10926)
 - Merge stable and servicing change logs (#10527)
 - Update used .NET version in build docs (#10775) (Thanks @Greg-Smulko!)
-- Replace links from MSDN to docs.microsoft.com in powershell-beginners-guide.md (#10778) (Thanks @iSazonov!)
+- Replace links from MSDN to docs.microsoft.com in powershell-beginners-guide.md (#10778) (Thanks
+  @iSazonov!)
 - Fix broken DSC overview link (#10702)
-- Update Support_Question.md to link to Stack Overflow as another community resource (#10638) (Thanks @mklement0!)
+- Update Support_Question.md to link to Stack Overflow as another community resource (#10638)
+  (Thanks @mklement0!)
 - Add processor architecture to distribution request template (#10661)
 - Add new PowerShell MoL book to learning PowerShell docs (#10602)
 - Update README.md and metadata for v6.1.6 and v6.2.3 releases (#10523)

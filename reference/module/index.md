@@ -6,7 +6,7 @@ description: Search all PowerShell modules and cmdlets from Microsoft
 layout: ApiBrowserPage
 manager: sewhee
 ms.author: sewhee
-ms.date: 03/17/2021
+ms.date: 09/07/2021
 ms.devlang: powershell
 ms.manager: sewhee
 ms.product: powershell

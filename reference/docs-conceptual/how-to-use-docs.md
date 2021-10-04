@@ -1,6 +1,6 @@
 ---
 description: This articles explains how to use the features of this site including search filtering and version selection.
-ms.date: 07/29/2020
+ms.date: 10/04/2021
 ms.topic: how-to
 title: How to use the PowerShell documentation
 ---
@@ -39,7 +39,7 @@ $PSVersionTable.PSVersion
 ```Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
-5      1      19041  1
+5      1      19041  1237
 ```
 
 If you are new to PowerShell and need help understanding the command syntax, see

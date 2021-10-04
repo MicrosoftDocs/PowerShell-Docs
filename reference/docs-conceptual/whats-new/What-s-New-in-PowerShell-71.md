@@ -1,6 +1,6 @@
 ---
 description: New features and changes released in PowerShell 7.1
-ms.date: 12/15/2020
+ms.date: 10/04/2021
 title: What's New in PowerShell 7.1
 ---
 
@@ -26,7 +26,7 @@ repository.
 
 ## PSReadLine 2.1.0
 
-PowerShell 7.1 also include PSReadLine 2.1.0. This version includes Predictive IntelliSense. For
+PowerShell 7.1 also includes PSReadLine 2.1.0. This version includes Predictive IntelliSense. For
 more information about the Predictive IntelliSense feature, see the
 [announcement](https://devblogs.microsoft.com/powershell/announcing-psreadline-2-1-with-predictive-intellisense/)
 in the PowerShell blog.
@@ -120,7 +120,8 @@ The following experimental features were added in this release:
   match the data type. This parameter takes an integer value that represents in seconds since
   January 1, 1970, 0:00:00.
 
-  This example converts a Unix time (represented by the number of seconds since 1970-01-01 0:00:00) to DateTime.
+  This example converts a Unix time (represented by the number of seconds since 1970-01-01 0:00:00)
+  to DateTime.
 
   ```powershell
   Get-Date -UnixTimeSeconds 1577836800
@@ -128,7 +129,8 @@ The following experimental features were added in this release:
   Wednesday, January 01, 2020 12:00:00 AM
   ```
 
-- Allow explicitly specified named parameter to supersede the same one from hashtable splatting (#13162)
+- Allow explicitly specified named parameter to supersede the same one from hashtable splatting
+  (#13162)
 
   With this change, the named parameters from splatting are moved to the end of the parameter list
   so that they are bound after all explicitly specified named parameters are bound. Parameter
