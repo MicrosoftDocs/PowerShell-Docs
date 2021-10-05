@@ -1,6 +1,6 @@
 ---
 description: This article describes recommended steps to ensure the packages published to the PowerShell Gallery are widely adopted and provide high value to users.
-ms.date: 06/12/2017
+ms.date: 10/05/2021
 title: PowerShell Gallery Publishing Guidelines and Best Practices
 ---
 # PowerShellGallery Publishing Guidelines and Best Practices

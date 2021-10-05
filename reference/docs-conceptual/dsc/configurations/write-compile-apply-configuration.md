@@ -1,6 +1,6 @@
 ---
 description: This exercise walks through creating and applying a DSC configuration from start to finish. In the following example, you will learn how to write and apply a very simple Configuration
-ms.date: 06/22/2020
+ms.date: 10/05/2021
 title: Write, Compile, and Apply a Configuration
 ---
 # Write, Compile, and Apply a Configuration
