@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/22/2020
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
@@ -42,7 +42,7 @@ Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-Cas
 ## Description
 
 The `Select-String` cmdlet searches for text and text patterns in input strings and files. You can
-use `Select-String` similar to **grep** in UNIX or **findstr.exe** in Windows.
+use `Select-String` similar to `grep` in UNIX or `findstr.exe` in Windows.
 
 `Select-String` is based on lines of text. By default, `Select-String` finds the first match in each
 line and, for each match, it displays the file name, line number, and all text in the line
@@ -132,23 +132,24 @@ This example creates a function to search for a pattern in the PowerShell help f
 example, the function only exists in the PowerShell session. When the PowerShell session is closed,
 the function is deleted. For more information, see [about_Functions](../Microsoft.PowerShell.Core/About/about_Functions.md).
 
+```powershell
+Function Search-Help
+{
+  $PSHelp = "$PSHOME\en-US\*.txt"
+  Select-String -Path $PSHelp -Pattern 'About_'
+}
+
+Search-Help
 ```
-PS> Function Search-Help
->> {
->> $PSHelp = "$PSHOME\en-US\*.txt"
->> Select-String -Path $PSHelp -Pattern 'About_'
->> }
-PS>
 
-PS> Search-Help
-
+```Output
 C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_ActivityCommonParameters.help.txt:2:   about_ActivityCommonParameters
 C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_ActivityCommonParameters.help.txt:31:  see about_WorkflowCommonParameters.
 C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_ActivityCommonParameters.help.txt:33:  about_CommonParameters.
 ```
 
 The function is created on the PowerShell command line. The `Function` command uses the name
-**Search-Help**. Press **Enter** to begin adding statements to the function. From the `>>` prompt,
+`Search-Help`. Press **Enter** to begin adding statements to the function. From the `>>` prompt,
 add each statement and press **Enter** as shown in the example. After the closing bracket is added,
 you're returned to a PowerShell prompt.
 
@@ -238,7 +239,7 @@ Select-String -Path .\Command.txt -Pattern 'Get-Computer' -Context 2, 3
 
 The `Get-Command` cmdlet sends objects down the pipeline to the `Out-File` to create the
 **Command.txt** file in the current directory. `Select-String` uses the **Path** parameter to
-specify the **Command.txt** file. The **Pattern** parameter specifies **Get-Computer** as the search
+specify the **Command.txt** file. The **Pattern** parameter specifies `Get-Computer` as the search
 pattern. The **Context** parameter uses two values, before and after, and marks pattern matches in
 the output with an angle bracket (`>`). The **Context** parameter outputs the two lines before the
 first pattern match and three lines after the last pattern match.
@@ -249,16 +250,21 @@ This example shows how the **AllMatches** parameter finds each pattern match in 
 default, `Select-String` only finds the first occurrence of a pattern in a line of text. This
 example uses object properties that are found with the `Get-Member` cmdlet.
 
+```powershell
+$A = Get-ChildItem -Path "$PSHOME\en-US\*.txt" | Select-String -Pattern 'PowerShell'
+$A
 ```
-PS> $A = Get-ChildItem -Path "$PSHOME\en-US\*.txt" | Select-String -Pattern 'PowerShell'
 
-PS> $A
-
+```Output
 C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_ActivityCommonParameters.help.txt:5:    Describes the parameters that Windows PowerShell
 C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_ActivityCommonParameters.help.txt:9:    Windows PowerShell Workflow adds the activity common
+```
 
-PS> $A.Matches
+```powershell
+$A.Matches
+```
 
+```Output
 Groups   : {0}
 Success  : True
 Name     : 0
@@ -266,15 +272,22 @@ Captures : {0}
 Index    : 4
 Length   : 10
 Value    : PowerShell
+```
 
-PS> $A.Matches.Length
+```powershell
+$A.Matches.Length
+```
 
+```Output
 2073
+```
 
-PS> $B = Get-ChildItem -Path "$PSHOME\en-US\*.txt" | Select-String -Pattern 'PowerShell' -AllMatches
+```powershell
+$B = Get-ChildItem -Path "$PSHOME\en-US\*.txt" | Select-String -Pattern 'PowerShell' -AllMatches
+$B.Matches.Length
+```
 
-PS> $B.Matches.Length
-
+```Output
 2200
 ```
 

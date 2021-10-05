@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/22/2020
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
@@ -157,15 +157,16 @@ example, the function only exists in the PowerShell session. When the PowerShell
 the function is deleted. For more information, see [about_Functions](../Microsoft.PowerShell.Core/About/about_Functions.md).
 
 ```
-PS> Function Search-Help
->> {
->> $PSHelp = "$PSHOME\en-US\*.txt"
->> Select-String -Path $PSHelp -Pattern 'About_'
->> }
-PS>
+Function Search-Help
+{
+    $PSHelp = "$PSHOME\en-US\*.txt"
+    Select-String -Path $PSHelp -Pattern 'About_'
+}
 
-PS> Search-Help
+Search-Help
+```
 
+```powershell
 C:\Program Files\PowerShell\6\en-US\default.help.txt:67:    The titles of conceptual topics begin with "About_".
 C:\Program Files\PowerShell\6\en-US\default.help.txt:70:    Get-Help About_<topic-name>
 C:\Program Files\PowerShell\6\en-US\default.help.txt:93:    Get-Help About_Modules : Displays help about PowerShell modules.
@@ -173,7 +174,7 @@ C:\Program Files\PowerShell\6\en-US\default.help.txt:97:    about_Updatable_Help
 ```
 
 The function is created on the PowerShell command line. The `Function` command uses the name
-**Search-Help**. Press **Enter** to begin adding statements to the function. From the `>>` prompt,
+`Search-Help`. Press **Enter** to begin adding statements to the function. From the `>>` prompt,
 add each statement and press **Enter** as shown in the example. After the closing bracket is added,
 you're returned to a PowerShell prompt.
 
@@ -262,7 +263,7 @@ Select-String -Path .\Command.txt -Pattern 'Get-Computer' -Context 2, 3
 
 The `Get-Command` cmdlet sends objects down the pipeline to the `Out-File` to create the
 **Command.txt** file in the current directory. `Select-String` uses the **Path** parameter to
-specify the **Command.txt** file. The **Pattern** parameter specifies **Get-Computer** as the search
+specify the **Command.txt** file. The **Pattern** parameter specifies `Get-Computer` as the search
 pattern. The **Context** parameter uses two values, before and after, and marks pattern matches in
 the output with an angle bracket (`>`). The **Context** parameter outputs the two lines before the
 first pattern match and three lines after the last pattern match.
@@ -273,17 +274,22 @@ This example shows how the **AllMatches** parameter finds each pattern match in 
 default, `Select-String` only finds the first occurrence of a pattern in a line of text. This
 example uses object properties that are found with the `Get-Member` cmdlet.
 
+```powershell
+$A = Get-ChildItem -Path "$PSHOME\en-US\*.txt" | Select-String -Pattern 'PowerShell'
+$A
 ```
-PS> $A = Get-ChildItem -Path "$PSHOME\en-US\*.txt" | Select-String -Pattern 'PowerShell'
 
-PS> $A
-
+```Output
 C:\Program Files\PowerShell\6\en-US\default.help.txt:3:    PowerShell Help System
 C:\Program Files\PowerShell\6\en-US\default.help.txt:6:    Displays help about PowerShell cmdlets and concepts.
 C:\Program Files\PowerShell\6\en-US\default.help.txt:9:    PowerShell Help describes PowerShell cmdlets
+```
 
-PS> $A.Matches
+```powershell
+$A.Matches
+```
 
+```Output
 Groups   : {0}
 Success  : True
 Name     : 0
@@ -291,15 +297,22 @@ Captures : {0}
 Index    : 4
 Length   : 10
 Value    : PowerShell
+```
 
-PS> $A.Matches.Length
+```powershell
+$A.Matches.Length
+```
 
+```Output
 8
+```
 
-PS> $B = Get-ChildItem -Path "$PSHOME\en-US\*.txt" | Select-String -Pattern 'PowerShell' -AllMatches
+```powershell
+$B = Get-ChildItem -Path "$PSHOME\en-US\*.txt" | Select-String -Pattern 'PowerShell' -AllMatches
+$B.Matches.Length
+```
 
-PS> $B.Matches.Length
-
+```Output
 9
 ```
 
@@ -410,9 +423,9 @@ Accept wildcard characters: False
 
 ### -Culture
 
-Specifies a culture name to match the specified pattern. The **Culture** parameter must be used with the
-**SimpleMatch** parameter. The default behavior uses the culture of the current PowerShell runspace
-(session).
+Specifies a culture name to match the specified pattern. The **Culture** parameter must be used with
+the **SimpleMatch** parameter. The default behavior uses the culture of the current PowerShell
+runspace (session).
 
 To get a list of all supported cultures, use `Get-Culture -ListAvailable` command.
 
@@ -422,7 +435,8 @@ In addition, this parameter accepts the following arguments:
 - Ordinal, that is non-linguistic binary comparison;
 - Invariant, that is culture independent comparison.
 
-With `Select-String -Culture Ordinal -CaseSensitive -SimpleMatch` command you gets fastest binary comparison.
+With `Select-String -Culture Ordinal -CaseSensitive -SimpleMatch` command you gets fastest binary
+comparison.
 
 The **Culture** parameter uses tab completion to scroll through the list of arguments that specify
 the available cultures. To list all available arguments, use the following command:
