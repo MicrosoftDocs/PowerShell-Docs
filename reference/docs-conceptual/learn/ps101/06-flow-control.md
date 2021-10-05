@@ -1,7 +1,7 @@
 ---
 description: PowerShell provides methods to create loops, make decisions, and logically control the flow of code in scripts.
 ms.custom: Contributor-mikefrobbins
-ms.date: 06/02/2020
+ms.date: 10/05/2021
 ms.reviewer: mirobb
 title: Flow control
 ---
