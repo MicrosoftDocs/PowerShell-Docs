@@ -24,12 +24,12 @@ information for users who want to run PowerShell.
 
 The Microsoft Virtual Academy videos have been moved to Channel 9.
 
-- [Getting Started with Microsoft PowerShell Series](https://channel9.msdn.com/Series/Getting-Started-with-Microsoft-PowerShell)
+- [Getting Started with Microsoft PowerShell](https://channel9.msdn.com/Series/Getting-Started-with-Microsoft-PowerShell)
 - [Advanced Tools & Scripting with PowerShell 3.0 Jump Start](https://channel9.msdn.com/Series/Advanced-Tools-and-Scripting-with-PowerShell-3.0-Jump-Start)
 - [Testing PowerShell with Pester](https://channel9.msdn.com/Series/Testing-PowerShell-with-Pester)
 - [Getting Started with PowerShell Desired State Configuration (DSC)](https://channel9.msdn.com/Series/Getting-Started-with-PowerShell-DSC)
-- [Advanced PowerShell DSC and Custom Resources Series](https://channel9.msdn.com/Series/Advanced-PowerShell-DSC-and-Custom-Resources)
-- [SharePoint Automation with DSC Series](https://channel9.msdn.com/Series/SharePoint-Automation-with-DSC)
+- [Advanced PowerShell DSC and Custom Resources](https://channel9.msdn.com/Series/Advanced-PowerShell-DSC-and-Custom-Resources)
+- [SharePoint Automation with DSC](https://channel9.msdn.com/Series/SharePoint-Automation-with-DSC)
 
 ## Resources for PowerShell Developers
 
