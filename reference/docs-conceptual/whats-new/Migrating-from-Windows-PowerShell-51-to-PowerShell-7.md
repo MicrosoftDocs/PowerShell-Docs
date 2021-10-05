@@ -1,13 +1,13 @@
 ---
 description: Update from PowerShell 5.1 to PowerShell 7 for your Windows platforms.
-ms.date: 03/25/2020
+ms.date: 10/04/2021
 title: Migrating from Windows PowerShell 5.1 to PowerShell 7
 ---
 
 # Migrating from Windows PowerShell 5.1 to PowerShell 7
 
-Designed for cloud, on-premises, and hybrid environments, PowerShell 7 is packed with
-enhancements and [new features](../whats-new/What-s-New-in-PowerShell-70.md).
+Designed for cloud, on-premises, and hybrid environments, PowerShell 7 is packed with enhancements
+and [new features](../whats-new/What-s-New-in-PowerShell-70.md).
 
 - Installs and runs side-by-side with Windows PowerShell
 - Improved compatibility with existing Windows PowerShell modules
@@ -27,7 +27,7 @@ PowerShell 7 is supported on the following Windows operating systems:
 
 PowerShell 7 also runs on macOS and several Linux distributions. For a list of supported operating
 systems and information about the support lifecycle, see the
-[PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle).
+[PowerShell Support Lifecycle](../install/powershell-support-lifecycle.md).
 
 ## Installing PowerShell 7
 
@@ -35,8 +35,8 @@ For flexibility and to support the needs of IT, DevOps engineers, and developers
 options available to install PowerShell 7. In most cases, the installation options can be reduced to
 the following methods:
 
-- Deploy PowerShell using the [MSI package](/powershell/scripting/install/installing-powershell-core-on-windows#installing-the-msi-package)
-- Deploy PowerShell using the [ZIP package](/powershell/scripting/install/installing-powershell-core-on-windows#installing-the-zip-package)
+- Deploy PowerShell using the [MSI package](../install/installing-powershell-on-windows.md#msi)
+- Deploy PowerShell using the [ZIP package](../install/installing-powershell-on-windows.md#zip)
 
 > [!NOTE]
 > The MSI package can be deployed and updated with management products such as
@@ -49,7 +49,7 @@ full installation.
 
 You may also install PowerShell 7 via the Windows Store or `winget`. For more information about both
 of these methods, see the detailed instructions in
-[Installing PowerShell on Windows](../install/installing-powershell-core-on-windows.md#install-powershell-via-the-windows-package-manager).
+[Installing PowerShell on Windows](../install/installing-powershell-on-windows.md#install-powershell-via-the-windows-package-manager).
 
 ## Using PowerShell 7 side-by-side with Windows PowerShell 5.1
 
@@ -131,8 +131,8 @@ autoloading of modules.
 > Additional paths may exist if you have changed the PSModulePath environment variable or installed
 > custom modules or applications.
 
-For more information, see `PSModulePath` in
-[about_Environment_Variables](/powershell/module/microsoft.powershell.core/about/about_environment_variables#environment-variables-that-store-preferences).
+For more information, see
+[about_PSModulePath](/powershell/module/microsoft.powershell.core/about/about_psmodulepath?view=powershell-7.2&preserve-view=true).
 
 For more information about Modules, see
 [about_Modules](/powershell/module/Microsoft.PowerShell.Core/About/about_Modules).
@@ -160,7 +160,8 @@ The profile filenames have also changed:
    CurrentUserCurrentHost : C:\Users\<user>\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
    ```
 
-For more information [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
+For more information
+[about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
 
 ### PowerShell 7 compatibility with Windows PowerShell 5.1 modules
 
@@ -315,10 +316,10 @@ For details about customizing the VSCode layout to ISE, see
 [How to Replicate the ISE Experience in Visual Studio Code](/powershell/scripting/components/vscode/how-to-replicate-the-ise-experience-in-vscode)
 
 > [!NOTE]
-> There are no plans to update the ISE with new features. The ISE is now a user-uninstallable feature in
-> the latest versions of Windows 10 and Windows Server. There are no plans to permanently remove the
-> ISE. The PowerShell Team and its partners are focused on improving the scripting experience in the
-> PowerShell extension for Visual Studio Code.
+> There are no plans to update the ISE with new features. The ISE is now a user-uninstallable
+> feature in the latest versions of Windows 10 and Windows Server. There are no plans to permanently
+> remove the ISE. The PowerShell Team and its partners are focused on improving the scripting
+> experience in the PowerShell extension for Visual Studio Code.
 
 ## Next Steps
 
