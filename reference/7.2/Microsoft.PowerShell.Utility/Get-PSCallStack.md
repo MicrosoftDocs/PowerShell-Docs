@@ -7,7 +7,6 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: Get-PSCallStack
 ---
-
 # Get-PSCallStack
 
 ## Synopsis
@@ -59,7 +58,9 @@ Name        CommandLineParameters         UnboundArguments              Location
 ----        ---------------------         ----------------              --------
 prompt      {}                            {}                            prompt
 my-alias    {}                            {get-content}                 prompt
-prompt      {}                            {}                            prompt PS C:\> [DBG]: PS C:\ps-test> o
+prompt      {}                            {}                            prompt
+
+PS C:\> [DBG]: PS C:\ps-test> o
 Definition  Name
 ----------  ----
 Get-Content gc
@@ -74,10 +75,11 @@ The first command enters the function at the Windows PowerShell prompt. The seco
 `Set-PSBreakpoint` cmdlet to set a breakpoint on the `My-Alias` function. The third command uses the
 `My-Alias` function to get all of the aliases in the current session for the `Get-Content` cmdlet.
 
-The debugger breaks in at the function call. Two consecutive step-into (s) commands begin executing
-the function line by line. Then, a `Get-PSCallStack` command is used to retrieve the call stack.
+The debugger breaks in at the function call. Two consecutive `step-into` (`s`) commands begin
+executing the function line by line. Then, a `Get-PSCallStack` command is used to retrieve the call
+stack.
 
-The final command is a Step-Out command (o) that exits the debugger and continues executing the
+The final command is a `Step-Out` command (`o`) that exits the debugger and continues executing the
 script to completion.
 
 ## Parameters
@@ -86,7 +88,8 @@ script to completion.
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

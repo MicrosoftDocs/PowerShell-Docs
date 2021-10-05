@@ -18,17 +18,17 @@ Connects to the WinRM service on a remote computer.
 ### ComputerName (Default)
 
 ```
-Connect-WSMan [-ApplicationName <String>] [[-ComputerName] <String>] [-OptionSet <Hashtable>] [-Port <Int32>]
- [-SessionOption <SessionOption>] [-UseSSL] [-Credential <PSCredential>]
- [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
+Connect-WSMan [-ApplicationName <String>] [[-ComputerName] <String>] [-OptionSet <Hashtable>]
+  [-Port <Int32>] [-SessionOption <SessionOption>] [-UseSSL] [-Credential <PSCredential>]
+  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
 ### URI
 
 ```
-Connect-WSMan [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-Port <Int32>] [-SessionOption <SessionOption>]
- [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
- [<CommonParameters>]
+Connect-WSMan [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-Port <Int32>]
+  [-SessionOption <SessionOption>] [-Credential <PSCredential>]
+  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
 ## Description
@@ -153,11 +153,10 @@ by using the specified session options.
 
 ### -ApplicationName
 
-Specifies the application name in the connection.
-The default value of the **ApplicationName** parameter is WSMAN.
-The complete identifier for the remote endpoint is in the following format:
+Specifies the application name in the connection. The default value of the **ApplicationName**
+parameter is WSMAN. The complete identifier for the remote endpoint is in the following format:
 
-\<transport\>://\<server\>:\<port\>/\<ApplicationName\>
+`<Transport>://<Server>:<Port>/<ApplicationName>`
 
 For example: `http://server01:8080/WSMAN`
 
@@ -264,7 +263,7 @@ Accept wildcard characters: False
 
 Specifies the connection endpoint. The format of this string is as follows:
 
-\<Transport\>://\<Server\>:\<Port\>/\<ApplicationName\>
+`<Transport>://<Server>:<Port>/<ApplicationName>`
 
 The following string is a correctly formatted value for this parameter:
 
@@ -287,7 +286,7 @@ Accept wildcard characters: False
 ### -Credential
 
 Specifies a user account that has permission to perform this action. The default is the current
-user. Type a user name, such as User01, Domain01\User01, or User@Domain.com. Or, enter a
+user. Type a user name, such as `User01`, `Domain01\User01`, or `User@Domain.com`. Or, enter a
 **PSCredential** object, such as one returned by the `Get-Credential` cmdlet. When you type a user
 name, this cmdlet prompts you for a password.
 
@@ -393,7 +392,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -409,11 +409,11 @@ This cmdlet does not generate any output.
 
 ## Notes
 
-- You can run management commands or query management data on a remote computer without creating a
-  WS-Management session. You can do this by using the **ComputerName** parameters of
-  `Invoke-WSManAction` and Get-WSManInstance. When you use the **ComputerName** parameter, Windows
-  PowerShell creates a temporary connection that is used for the single command. After the command
-  runs, the connection is closed.
+You can run management commands or query management data on a remote computer without creating a
+WS-Management session. You can do this by using the **ComputerName** parameters of
+`Invoke-WSManAction` and `Get-WSManInstance`. When you use the **ComputerName** parameter, Windows
+PowerShell creates a temporary connection that is used for the single command. After the command
+runs, the connection is closed.
 
 ## Related links
 

@@ -29,15 +29,15 @@ Use this cmdlet to disable CredSSP on the client by specifying Client in the **R
 This cmdlet performs the following actions:
 
 - Disables CredSSP on the client. This cmdlet sets the WS-Management setting
-  **\<localhost|computername\>\Client\Auth\CredSSP** to false.
-- Removes any WSMan/* setting from the Windows CredSSP policy **AllowFreshCredentials** on the
+  `<localhost|computername>\Client\Auth\CredSSP` to false.
+- Removes any `WSMan/*` setting from the Windows CredSSP policy **AllowFreshCredentials** on the
   client.
 
 Use this cmdlet to disable CredSSP on the server by specifying Server in **Role**. This cmdlet
 performs the following action:
 
 - Disables CredSSP on the server. This cmdlet sets the WS-Management setting
-  **\<localhost|computername\>\Service\Auth\CredSSP** to false.
+  `<localhost|computername>\Client\Auth\CredSSP` to false.
 
 > [!CAUTION]
 > CredSSP authentication delegates the user credentials from the local computer to a remote
@@ -73,14 +73,14 @@ parameter are: Client and Server.
 If you specify Client, this cmdlet performs the following actions:
 
 - Disables CredSSP on the client. This cmdlet sets WS-Management setting
-  **\<localhost|computername\>\Client\Auth\CredSSP** to false.
-- Removes any WSMan/* setting from the Windows CredSSP policy **AllowFreshCredentials** on the
+  `<localhost|computername>\Client\Auth\CredSSP` to false.
+- Removes any `WSMan/*` setting from the Windows CredSSP policy **AllowFreshCredentials** on the
   client.
 
 If you specify Server, this cmdlet performs the following action:
 
 - Disables CredSSP on the server. This cmdlet sets the WS-Management setting
-  **\<localhost|computername\>\Service\Auth\CredSSP** to false.
+  `<localhost|computername>\Client\Auth\CredSSP` to false.
 
 ```yaml
 Type: System.String
@@ -99,7 +99,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

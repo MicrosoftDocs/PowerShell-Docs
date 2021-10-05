@@ -62,8 +62,8 @@ Calendar is just one property of UI culture. To see all of the properties, type
 ```
 
 This command displays the short date pattern for the current UI culture. To see all of the
-subproperties of the DateTimeFormat property of the UI culture, type
-`(Get-UICulture).DateTimeFormat | gm`.
+subproperties of the **DateTimeFormat** property of the UI culture, type
+`(Get-UICulture).DateTimeFormat | Get-Member`.
 
 ## Parameters
 
@@ -71,7 +71,8 @@ subproperties of the DateTimeFormat property of the UI culture, type
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -89,8 +90,8 @@ object.
 
 ## Notes
 
-- You can also use the `$PsCulture` and `$PsUICulture` variables. The $PsCulture variable stores the
-  name of the current culture, and the `$PsUICulture` variable stores the name of the current UI
-  culture.
+You can also use the `$PSCulture` and `$PSUICulture` variables. The `$PSCulture` variable stores the
+name of the current culture, and the `$PSUICulture` variable stores the name of the current UI
+culture.
 
 ## Related links

@@ -7,7 +7,6 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.man
 schema: 2.0.0
 title: Get-WSManCredSSP
 ---
-
 # Get-WSManCredSSP
 
 ## Synopsis
@@ -36,10 +35,10 @@ use this kind of authentication.
 The cmdlet performs the following actions:
 
 - Gets the WS-Management CredSSP setting on the client
-  (**\<localhost|computername\>\Client\Auth\CredSSP**).
+  (`<localhost|computername>\Client\Auth\CredSSP`).
 - Gets the Windows CredSSP policy setting **AllowFreshCredentials**.
 - Gets the WS-Management CredSSP setting on the server
-  (**\<localhost|computername\>\Service\Auth\CredSSP**).
+  (`<localhost|computername>\Service\Auth\CredSSP`).
 
 > [!CAUTION]
 > CredSSP authentication delegates the user credentials from the local computer to a remote
@@ -73,7 +72,8 @@ If the computer is not configured for CredSSP, this is the output:
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -89,8 +89,8 @@ This cmdlet does not generate any output.
 
 ## Notes
 
-- To disable CredSSP authentication, use the `Disable-WSManCredSSP` cmdlet. To enable CredSSP
-  authentication, use the `Enable-WSManCredSSP` cmdlet.
+To disable CredSSP authentication, use the `Disable-WSManCredSSP` cmdlet. To enable CredSSP
+authentication, use the `Enable-WSManCredSSP` cmdlet.
 
 ## Related links
 
