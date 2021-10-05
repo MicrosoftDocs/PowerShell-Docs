@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 06/03/2019
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Command
@@ -80,12 +80,12 @@ Get-TargetResource    1.2.0.0    SystemLocaleDsc                 PSGallery
 ```
 
 `Find-Command` uses the **Repository** parameter to search the **PSGallery**. The **Name** parameter
-specifies the command **Get-TargetResource**.
+specifies the command `Get-TargetResource`.
 
 ### Example 3: Find commands by name and install the module
 
 `Find-Command` can locate the command and module, then send the object to `Install-Module`. If a
-command is included in multiple modules, use the `Find-Command` cmdlets **Module-Name** parameter.
+command is included in multiple modules, use the `Find-Command` cmdlets **ModuleName** parameter.
 Otherwise, modules might be installed that you didn't want to install.
 
 ```powershell
@@ -99,7 +99,7 @@ Version   Name               Repository   Description
 1.2.0.0   SystemLocaleDsc    PSGallery    This DSC Resource allows configuration of the Windows...
 ```
 
-`Find-Command` uses the **Name** parameter to specify the command **Get-TargetResource**. The
+`Find-Command` uses the **Name** parameter to specify the command `Get-TargetResource`. The
 **Repository** parameter searches the **PSGallery**. The **ModuleName** parameter specifies the
 module you want to install, **SystemLocaleDsc**. The object is sent down the pipeline to
 `Install-Module` and the module is installed. After the installation finishes, you can use
@@ -117,7 +117,7 @@ VERBOSE: Module 'PSScriptAnalyzer' was saved successfully to path 'C:\Test\Modul
 ```
 
 `Find-Command` uses the **Name** and **Repository** parameters to search for the command
-**Invoke-ScriptAnalyzer** in the **PSGallery** repository. The object is sent down the pipeline to
+`Invoke-ScriptAnalyzer` in the **PSGallery** repository. The object is sent down the pipeline to
 `Save-Module`. The **Path** parameter determines the location to save the module. **Verbose** is an
 optional parameter, but displays status output in the PowerShell console. The verbose output is
 beneficial for troubleshooting.
@@ -361,4 +361,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Select-Object](../Microsoft.PowerShell.Utility/Select-Object.md)
 
 [Uninstall-Module](Uninstall-Module.md)
-

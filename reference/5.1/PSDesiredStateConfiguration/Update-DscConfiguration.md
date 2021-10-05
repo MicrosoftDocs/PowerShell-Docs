@@ -2,7 +2,7 @@
 external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
 Locale: en-US
 Module Name: PSDesiredStateConfiguration
-ms.date: 06/09/2017
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/update-dscconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-DscConfiguration
@@ -30,48 +30,49 @@ Update-DscConfiguration [-Wait] [-JobName <String>] [-ThrottleLimit <Int32>] -Ci
 ```
 
 ## Description
-The `Update-DscConfiguration` cmdlet connects to a pull server, downloads the configuration if it differs from what is current on the node, and then applies the configuration to the computer.
 
-This cmdlet is available only as part of the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850) from the Microsoft Support library.
+The `Update-DscConfiguration` cmdlet connects to a pull server, downloads the configuration if it
+differs from what is current on the node, and then applies the configuration to the computer.
+
+This cmdlet is available only as part of the
+[November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850).
 
 ## Examples
 
 ### Example 1: Update a configuration
 
-```
-PS C:\> Update-DscConfiguration -Wait -Verbose
+```powershell
+Update-DscConfiguration -Wait -Verbose
 ```
 
-After running this command,
-the server will connect to the registered pull service,
-download the latest assigned configuration,
-and then apply it.
-The -Wait and -Verbose parameters are optional.
-When working interactively,
-these parameters combined enable real-time feedback
-about progress and success or failure when applying the configuration.
+After running this command, the server will connect to the registered pull service, download the
+latest assigned configuration, and then apply it. The **Wait** and **Verbose** parameters are
+optional. When working interactively, these parameters combined enable real-time feedback about
+progress and success or failure when applying the configuration.
 
 ### Example 2: Update a configuration by connecting over a CIM session
 
-```
-PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
-PS C:\> Update-DscConfiguration -CimSession $Session -Wait
+```powershell
+$Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
+Update-DscConfiguration -CimSession $Session -Wait
 ```
 
-The first command creates a CIM session by using the **New-CimSession** cmdlet, and then stores the **CimSession** object in the $Session variable.
-The command prompts you for a password.
-For more information, type `Get-Help New-CimSession`.
+The first command creates a CIM session by using the `New-CimSession` cmdlet, and then stores the
+**CimSession** object in the `$Session` variable. The command prompts you for a password. For more
+information, type `Get-Help New-CimSession`.
 
-The second command updates the computer specified in the **CimSession** stored in $Session.
-The command specifies the *Wait* parameter.
-The console does not accept additional commands until the current command finishes.
+The second command updates the computer specified in the **CimSession** stored in `$Session`. The
+command specifies the **Wait** parameter. The console does not accept additional commands until the
+current command finishes.
 
 ## Parameters
 
 ### -CimSession
-Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet.
-The default is the current session on the local computer.
+
+Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session
+object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or
+[Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet. The default is the current
+session on the local computer.
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimSession[]
@@ -86,8 +87,9 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-Specifies an array of computer names.
-The cmdlet applies the configuration settings to the computers that this parameter specifies.
+
+Specifies an array of computer names. The cmdlet applies the configuration settings to the computers
+that this parameter specifies.
 
 ```yaml
 Type: System.String[]
@@ -102,9 +104,10 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-Specifies a user name and password, as a **PSCredential** object, for the target computer.
-To obtain a **PSCredential** object, use the Get-Credential cmdlet.
-For more information, type `Get-Help Get-Credential`.
+
+Specifies a user name and password, as a **PSCredential** object, for the target computer. To obtain
+a **PSCredential** object, use the `Get-Credential` cmdlet. For more information, type
+`Get-Help Get-Credential`.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -119,12 +122,13 @@ Accept wildcard characters: False
 ```
 
 ### -JobName
-Specifies a friendly name for a job.
-If you specify this parameter, the cmdlet runs as a job, and it returns a **Job** object.
+
+Specifies a friendly name for a job. If you specify this parameter, the cmdlet runs as a job, and it
+returns a **Job** object.
 
 By default, Windows PowerShell assigns the name JobN where N is an integer.
 
-If you specify the *Wait* parameter, do not specify this parameter.
+If you specify the **Wait** parameter, do not specify this parameter.
 
 ```yaml
 Type: System.String
@@ -139,9 +143,12 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
-Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
-If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
-The throttle limit applies only to the current cmdlet, not to the session or to the computer.
+
+Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If
+this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an
+optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the
+computer. The throttle limit applies only to the current cmdlet, not to the session or to the
+computer.
 
 ```yaml
 Type: System.Int32
@@ -156,9 +163,10 @@ Accept wildcard characters: False
 ```
 
 ### -Wait
+
 Indicates that the cmdlet blocks the console until it finishes all configuration tasks.
 
-If you specify this parameter, do not specify the *JobName* parameter.
+If you specify this parameter, do not specify the **JobName** parameter.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -173,6 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -188,8 +197,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -204,7 +213,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

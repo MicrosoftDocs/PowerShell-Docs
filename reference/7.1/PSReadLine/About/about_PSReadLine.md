@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 09/23/2021
+ms.date: 10/05/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
@@ -26,7 +26,7 @@ PowerShell console. It provides:
 - Many configuration options
 - Bash style completion (optional in Cmd mode, default in Emacs mode)
 - Emacs yank/kill-ring
-- PowerShell token based "word" movement and deletion
+- PowerShell token based "word" movement and delete
 
 PSReadLine requires PowerShell 3.0, or newer. PSReadLine works with default
 console host, Visual Studio Code, and Window Terminal. It does not work in
@@ -48,6 +48,8 @@ Install-Module -Name PSReadLine -RequiredVersion 2.1.0
 > PowerShell 7.0 on Windows works properly. You can manually load the module if
 > necessary.
 
+The following functions are available in the class
+**Microsoft.PowerShell.PSConsoleReadLine**.
 
 ## Basic editing functions
 
@@ -662,6 +664,8 @@ previous line of multi-line input.
 
 - Cmd: `<LeftArrow>`
 - Emacs: `<LeftArrow>`, `<Ctrl+b>`
+- Vi insert mode: `<LeftArrow>`
+- Vi command mode: `<LeftArrow>`, `<Backspace>`, `<h>`
 
 ### BackwardWord
 
@@ -702,6 +706,8 @@ next line of multi-line input.
 
 - Cmd: `<RightArrow>`
 - Emacs: `<RightArrow>`, `<Ctrl+f>`
+- Vi insert mode: `<RightArrow>`
+- Vi command mode: `<RightArrow>`, `<Space>`, `<l>`
 
 ### ForwardWord
 
@@ -1498,12 +1504,14 @@ typical call looks like
 
 ### Command History
 
-PSReadLine maintains a history file containing all the commands and data you have entered from the
-command line. This may contain sensitive data including passwords. For example, if you use the
-`ConvertTo-SecureString` cmdlet the password is logged in the history file as plain text. The
-history files is a file named `$($host.Name)_history.txt`. On Windows systems the history file is
-stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On non-Windows systems, the
-history files is stored at `$env:XDG_DATA_HOME/powershell/PSReadLine` or
+PSReadLine maintains a history file containing all the commands and data you
+have entered from the command line. This may contain sensitive data including
+passwords. For example, if you use the `ConvertTo-SecureString` cmdlet the
+password is logged in the history file as plain text. The history files is a
+file named `$($host.Name)_history.txt`. On Windows systems the history file is
+stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On
+non-Windows systems, the history files is stored at
+`$env:XDG_DATA_HOME/powershell/PSReadLine` or
 `$env:HOME/.local/share/powershell/PSReadLine`.
 
 ### Feedback & Contributing To PSReadLine

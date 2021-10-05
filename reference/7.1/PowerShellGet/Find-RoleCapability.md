@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 06/05/2019
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-rolecapability?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-RoleCapability
@@ -103,9 +103,11 @@ location to save the module. After the module is saved, `Get-ChildItem` specifie
 `Find-RoleCapability` finds the module and sends the object down the pipeline. `Install-Module`
 installs the module. After the installation, use `Get-InstalledModule` to see the results.
 
+```powershell
+Find-RoleCapability -Name General-Lev1 | Install-Module -Verbose
 ```
-PS> Find-RoleCapability -Name General-Lev1 | Install-Module -Verbose
 
+```Output
 VERBOSE: Downloading 'https://www.powershellgallery.com/api/v2/package/JeaExamples/1.0.0'.
 VERBOSE: Completed downloading 'https://www.powershellgallery.com/api/v2/package/JeaExamples/1.0.0'.
 VERBOSE: Completed downloading 'JeaExamples'.
@@ -113,12 +115,10 @@ VERBOSE: InstallPackageLocal' - name='JeaExamples', version='1.0',
 VERBOSE: Validating the 'JeaExamples' module contents
 VERBOSE: Test-ModuleManifest successfully validated the module manifest file
 VERBOSE: Module 'JeaExamples' was installed successfully to path
+```
 
-PS> Get-InstalledModule
-
-Version    Name            Repository     Description
--------    ----            ----------     -----------
-1.0        JeaExamples     PSGallery      Some example Jea roles for general server maintenance...
+```powershell
+Get-InstalledModule
 ```
 
 `Find-RoleCapability` uses the **Name** parameter to specify the **General-Lev1** role capability.
