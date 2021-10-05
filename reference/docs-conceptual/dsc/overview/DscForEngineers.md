@@ -1,6 +1,6 @@
 ---
 description: This document is intended for developer and operations teams to understand the benefits of PowerShell Desired State Configuration (DSC).
-ms.date: 10/13/2017
+ms.date: 10/05/2021
 title: Desired State Configuration Overview for Engineers
 ---
 # Desired State Configuration Overview for Engineers

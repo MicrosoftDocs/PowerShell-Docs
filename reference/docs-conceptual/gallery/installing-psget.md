@@ -1,6 +1,6 @@
 ---
 description: This article explains how to install the PowerShellGet module in various versions of PowerShell.
-ms.date: 09/19/2019
+ms.date: 10/05/2021
 title: Installing PowerShellGet
 ---
 # Installing PowerShellGet

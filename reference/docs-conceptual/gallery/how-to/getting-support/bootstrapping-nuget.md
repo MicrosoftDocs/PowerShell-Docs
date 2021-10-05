@@ -1,6 +1,6 @@
 ---
 description: This article explains how to install the NuGet components required to support working with the PowerShell Gallery.
-ms.date: 06/12/2017
+ms.date: 10/05/2021
 title: Bootstrapping NuGet
 ---
 # Bootstrap the NuGet provider and NuGet.exe

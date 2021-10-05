@@ -1,6 +1,6 @@
 ---
 description: This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Linux.
-ms.date: 06/04/2021
+ms.date: 10/05/2021
 title: Get started with Desired State Configuration (DSC) for Linux
 ---
 # Get started with Desired State Configuration (DSC) for Linux
@@ -178,20 +178,23 @@ scripts are locate in `/opt/microsoft/dsc/Scripts` and include the following:
 
 - GetDscConfiguration.py
 
-  Returns the current configuration applied to the computer. Similar to the Windows PowerShell cmdlet
-  `Get-DscConfiguration` cmdlet.
+  Returns the current configuration applied to the computer. Similar to the Windows PowerShell
+  cmdlet `Get-DscConfiguration` cmdlet.
 
   `# sudo ./GetDscConfiguration.py`
 
 - GetDscLocalConfigurationManager.py
 
-  Returns the current meta-configuration applied to the computer. Similar to the cmdlet [Get-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) cmdlet.
+  Returns the current meta-configuration applied to the computer. Similar to the cmdlet
+  [Get-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager)
+  cmdlet.
 
   `# sudo ./GetDscLocalConfigurationManager.py`
 
 - InstallModule.py
 
-  Installs a custom DSC resource module. Requires the path to a .zip file containing the module shared object library and schema MOF files.
+  Installs a custom DSC resource module. Requires the path to a .zip file containing the module
+  shared object library and schema MOF files.
 
   `# sudo ./InstallModule.py /tmp/cnx_Resource.zip`
 
