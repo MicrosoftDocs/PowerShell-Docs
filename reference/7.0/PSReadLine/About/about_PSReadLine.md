@@ -1,14 +1,12 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 02/10/2020
+ms.date: 10/05/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
 ---
 # about_PSReadLine
-
-## about_PSReadLine
 
 ## Short Description
 
@@ -28,7 +26,7 @@ PowerShell console. It provides:
 - Many configuration options
 - Bash style completion (optional in Cmd mode, default in Emacs mode)
 - Emacs yank/kill-ring
-- PowerShell token based "word" movement and kill
+- PowerShell token based "word" movement and delete
 
 > [!NOTE]
 > Beginning with PowerShell 7.0, PowerShell skips auto-loading PSReadLine on
@@ -38,13 +36,13 @@ PowerShell console. It provides:
 > necessary.
 
 The following functions are available in the class
-**[Microsoft.PowerShell.PSConsoleReadLine]**.
+**Microsoft.PowerShell.PSConsoleReadLine**.
 
 ## Basic editing functions
 
 ### Abort
 
-Abort current action, e.g. incremental history search.
+Abort current action, for example: incremental history search.
 
 - Emacs: `<Ctrl+g>`
 
@@ -58,7 +56,7 @@ then recall the next item from history the next time ReadLine is called.
 ### AcceptLine
 
 Attempt to execute the current input. If the current input is incomplete (for
-example there is a missing closing parenthesis, bracket, or quote, then the
+example there is a missing closing parenthesis, bracket, or quote) then the
 continuation prompt is displayed on the next line and PSReadLine waits for
 keys to edit the current input.
 
@@ -301,7 +299,7 @@ Repeat the last text modification.
 
 ### RevertLine
 
-Reverts all of the input to the current input.
+Reverts all input to the current input.
 
 - Cmd: `<Escape>`
 - Emacs: `<Alt+r>`, `<Escape,r>`
@@ -356,7 +354,7 @@ word to the cursor. The cleared text is placed in the kill-ring.
 ### ValidateAndAcceptLine
 
 Attempt to execute the current input. If the current input is incomplete (for
-example there is a missing closing parenthesis, bracket, or quote, then the
+example there is a missing closing parenthesis, bracket, or quote) then the
 continuation prompt is displayed on the next line and PSReadLine waits for
 keys to edit the current input.
 
@@ -384,14 +382,14 @@ A new line is inserted below the current line.
 
 ### ViBackwardDeleteGlob
 
-Deletes the previous word, using only white space as the word delimiter.
+Deletes the previous word, using only whitespace as the word delimiter.
 
 - Vi command mode: `<d,B>`
 
 ### ViBackwardGlob
 
-Moves the cursor back to the beginning of the previous word, using only white
-space as delimiters.
+Moves the cursor back to the beginning of the previous word, using only
+whitespace as delimiters.
 
 - Vi command mode: `<B>`
 
@@ -410,7 +408,7 @@ Delete to the end of the word.
 
 ### ViDeleteGlob
 
-Delete the next glob (white space delimited word).
+Delete the next glob (whitespace delimited word).
 
 - Vi command mode: `<d,W>`
 
@@ -762,13 +760,13 @@ set of characters.
 
 ### ViEndOfGlob
 
-Moves the cursor to the end of the word, using only white space as delimiters.
+Moves the cursor to the end of the word, using only whitespace as delimiters.
 
 - Vi command mode: `<E>`
 
 ### ViEndOfPreviousGlob
 
-Moves to the end of the previous word, using only white space as a word
+Moves to the end of the previous word, using only whitespace as a word
 delimiter.
 
 - Function is unbound.
@@ -781,7 +779,7 @@ Similar to GotoBrace, but is character based instead of token based.
 
 ### ViNextGlob
 
-Moves to the next word, using only white space as a word delimiter.
+Moves to the next word, using only whitespace as a word delimiter.
 
 - Vi command mode: `<W>`
 
@@ -798,7 +796,7 @@ defined by a configurable set of characters.
 
 Move to the first item in the history.
 
-- Emacs: `<Alt+`<>`
+- Emacs: `<Alt+<>`
 
 ### ClearHistory
 
@@ -927,7 +925,7 @@ Ends the current edit group, if needed, and invokes TabCompletePrevious.
 ### CaptureScreen
 
 Start interactive screen capture - up/down arrows select lines, enter copies
-selected text to clipboard as text and html.
+selected text to clipboard as text and HTML.
 
 - Function is unbound.
 
@@ -954,8 +952,8 @@ Start a new digit argument to pass to other functions.
 ### InvokePrompt
 
 Erases the current prompt and calls the prompt function to redisplay the
-prompt. Useful for custom key handlers that change state, e.g. change the
-current directory.
+prompt. Useful for custom key handlers that change state. For example, change
+the current directory.
 
 - Function is unbound.
 
@@ -1140,7 +1138,7 @@ Adjust the current selection to include the next word using ShellNextWord.
 Mark the current location of the cursor for use in a subsequent editing
 command.
 
-- Emacs: `<Ctrl+`>`
+- Emacs: `<Ctrl+>`
 
 ## Search functions
 
@@ -1239,7 +1237,7 @@ You can bind a ScriptBlock to a key. The ScriptBlock can do pretty much
 anything you want. Some useful examples include
 
 - edit the command line
-- opening a new window (e.g. help)
+- opening a new window (for example, help)
 - change directories without changing the command line
 
 The ScriptBlock receives two arguments:
@@ -1346,7 +1344,7 @@ a custom key binding.
 void GetSelectionState([ref] int start, [ref] int length)
 ```
 
-If there is no selection on the command line, -1 will be returned in both
+If there is no selection on the command line, the function returns -1 in both
 start and length. If there is a selection on the command line, the start and
 length of the selection are returned.
 
@@ -1408,16 +1406,18 @@ typical call looks like
   [ref]$numericArg, 1)
 ```
 
-## Note
+## Notes
 
 ### Command History
 
-PSReadLine maintains a history file containing all the commands and data you have entered from the
-command line. This may contain sensitive data including passwords. For example, if you use the
-`ConvertTo-SecureString` cmdlet the password is logged in the history file as plain text. The
-history files is a file named `$($host.Name)_history.txt`. On Windows systems the history file is
-stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On non-Windows systems, the
-history files is stored at `$env:XDG_DATA_HOME/powershell/PSReadLine` or
+PSReadLine maintains a history file containing all the commands and data you
+have entered from the command line. This may contain sensitive data including
+passwords. For example, if you use the `ConvertTo-SecureString` cmdlet the
+password is logged in the history file as plain text. The history files is a
+file named `$($host.Name)_history.txt`. On Windows systems the history file is
+stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On
+non-Windows systems, the history files is stored at
+`$env:XDG_DATA_HOME/powershell/PSReadLine` or
 `$env:HOME/.local/share/powershell/PSReadLine`.
 
 ### Feedback & Contributing To PSReadLine

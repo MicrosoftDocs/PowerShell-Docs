@@ -1,6 +1,6 @@
 ---
 description: This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Windows.
-ms.date: 08/15/2019
+ms.date: 10/05/2021
 title: Get started with Desired State Configuration (DSC) for Windows
 ---
 
@@ -56,7 +56,7 @@ PowerShellGet cmdlets.
 Install-Module 'PSDscResources' -Verbose
 ```
 
-#### Define a configuration and generate the configuration document:
+#### Define a configuration and generate the configuration document
 
 ```powershell
 Configuration EnvironmentVariable_Path

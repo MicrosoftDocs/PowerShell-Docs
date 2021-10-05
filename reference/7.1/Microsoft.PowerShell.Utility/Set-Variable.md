@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/06/2021
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Variable
@@ -49,7 +49,7 @@ This example creates a global, read-only variable that contains all processes on
 then it displays all properties of the variable.
 
 ```powershell
-Set-Variable -Name "processes" -Value (Get-Process) -Option Constant -Scope global -Description "All processes" -PassThru |
+Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru |
     Format-List -Property *
 ```
 
@@ -59,20 +59,27 @@ to pass the object to the `Format-List` cmdlet. It uses the **Property** paramet
 with a value of all (`*`) to display all properties of the newly created variable.
 
 The value, `(Get-Process)`, is enclosed in parentheses to ensure that it is executed before being
-stored in the variable. Otherwise, the variable contains the words "**Get-Process**".
+stored in the variable. Otherwise, the variable contains the words `Get-Process`.
 
 ### Example 3: Understand public vs. private variables
 
 This example shows how to change the visibility of a variable to `Private`. This variable can be
 read and changed by scripts with the required permissions, but it is not visible to the user.
 
+```powershell
+New-Variable -Name "counter" -Visibility Public -Value 26
+$Counter
 ```
-PS C:\> New-Variable -Name "counter" -Visibility Public -Value 26
-PS C:\> $Counter
+
+```Output
 26
+```
 
-PS C:\> Get-Variable c*
+```powershell
+Get-Variable c*
+```
 
+```Output
 Name                  Value
 ----                  -----
 Culture               en-US
@@ -80,21 +87,32 @@ ConsoleFileName
 ConfirmPreference     High
 CommandLineParameters {}
 Counter               26
+```
 
-PS C:\> Set-Variable -Name "counter" -Visibility Private
-PS C:\> Get-Variable c*
+```powershell
+Set-Variable -Name "counter" -Visibility Private
+Get-Variable c*
+```
 
+```output
 Name                  Value
 ----                  -----
 Culture               en-US
 ConsoleFileName
 ConfirmPreference     High
 CommandLineParameters {}
+```
 
-PS C:\> $counter
+```powershell
+$counter
+```
+
+```Output
 "Cannot access the variable '$counter' because it is a private variable"
+```
 
-PS C:\> .\use-counter.ps1
+```powershell
+.\use-counter.ps1
 #Commands completed successfully.
 ```
 

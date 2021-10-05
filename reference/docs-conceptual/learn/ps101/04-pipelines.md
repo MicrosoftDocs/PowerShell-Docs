@@ -1,7 +1,7 @@
 ---
 description: A PowerShell one-liner is one continuous pipeline, containing multiple commands, to accomplish a single task.
 ms.custom: Contributor-mikefrobbins
-ms.date: 06/02/2020
+ms.date: 10/05/2021
 ms.reviewer: mirobb
 title: One-liners and the pipeline
 ---
@@ -250,8 +250,8 @@ be used that way in PowerShell, it's not recommended because they're not needed.
 ## Filtering Left
 
 The results of the commands shown in this chapter have been filtered down to a subset. For example,
-`Get-Service` was used with the **Name** parameter to filter the list of services that were returned to
-only the Windows Time service.
+`Get-Service` was used with the **Name** parameter to filter the list of services that were returned
+to only the Windows Time service.
 
 In the pipeline, you always want to filter the results down to what you're looking for as early as
 possible. This is accomplished using parameters on the first command or, the one to the far left.
@@ -368,7 +368,7 @@ version of the help for the `Stop-Service` cmdlet.
 help Stop-Service -Full
 ```
 
-```powershell
+```Output
 ...
 -DisplayName <String[]>
     Specifies the display names of the services to stop. Wildcard characters are
@@ -569,11 +569,11 @@ and updating PowerShell modules (and other artifacts) to or from a NuGet reposit
 ships with PowerShell version 5.0 and higher. It is available as a separate download for PowerShell
 version 3.0 and higher.
 
-Microsoft hosts an online NuGet repository called the [PowerShell Gallery][PowerShell Gallery]. Although this
-repository is hosted by Microsoft, the majority of the modules contained within the repository
-aren't written by Microsoft. Any code obtain from the PowerShell Gallery should be thoroughly
-reviewed in an isolated test environment before being considered suitable for use in a production
-environment.
+Microsoft hosts an online NuGet repository called the [PowerShell Gallery][PowerShell Gallery].
+Although this repository is hosted by Microsoft, the majority of the modules contained within the
+repository aren't written by Microsoft. Any code obtain from the PowerShell Gallery should be
+thoroughly reviewed in an isolated test environment before being considered suitable for use in a
+production environment.
 
 Most companies will want to host their own internal private NuGet repository where they can post
 their internal use only modules as well as modules that they've downloaded from other sources once

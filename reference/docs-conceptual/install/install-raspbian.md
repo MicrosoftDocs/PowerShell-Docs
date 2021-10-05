@@ -24,7 +24,7 @@ run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview releas
 
 ### Install on Raspberry Pi OS
 
-Download the tar.gz package from the [releases][releases] page onto your openSUSE computer. The
+Download the tar.gz package from the [releases][releases] page onto your Raspberry Pi computer. The
 links to the current versions are:
 
 - PowerShell 7.2-preview.10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-7.2.0-preview.10-linux-arm32.tar.gz`

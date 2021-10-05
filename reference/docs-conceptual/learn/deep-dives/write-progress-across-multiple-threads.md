@@ -1,6 +1,6 @@
 ---
 description: How to use Write-Progress across multiple threads with Foreach-Object -Parallel
-ms.date: 08/02/2020
+ms.date: 10/05/2021
 title: Displaying progress while multi-threading
 ---
 

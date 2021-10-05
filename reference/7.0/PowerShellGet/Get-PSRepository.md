@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 06/09/2017
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/powershellget/get-psrepository?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSRepository
@@ -20,34 +20,34 @@ Get-PSRepository [[-Name] <String[]>] [<CommonParameters>]
 
 ## Description
 
-The **Get-PSRepository** cmdlet gets PowerShell module repositories that are registered for the current user.
+The `Get-PSRepository` cmdlet gets PowerShell module repositories that are registered for the
+current user.
 
 ## Examples
 
 ### Example 1: Get all module repositories
 
-```
-PS C:\> Get-PSRepository
-Name                                     SourceLocation                                     OneGetProvider       InstallationPolicy
-----                                     --------------                                     --------------       ------------------
-PSGallery                                http://go.micro...                                 NuGet                Untrusted
-myNuGetSource                            https://myget.c...                                 NuGet                Trusted
+```powershell
+Get-PSRepository
 ```
 
 This command gets all module repositories registered for the current user.
 
 ### Example 2: Get module repositories by name
 
-```
-PS C:\> Get-PSRepository -Name "*NuGet*"
+```powershell
+Get-PSRepository -Name "*NuGet*"
 ```
 
 This command gets all module repositories that include NuGet in their names.
 
 ### Example 3: Get a module repository and format the output
 
+```powershell
+Get-PSRepository -Name "Local01" | Format-List * -Force
 ```
-PS C:\> Get-PSRepository -Name "Local01" | Format-List * -Force
+
+```Output
 Name                      : local01
 SourceLocation            : http://manikb-dev:8765/api/v2/
 Trusted                   : True
@@ -60,7 +60,8 @@ ScriptPublishLocation     : http://pattif-dev:8765/api/v2/package/
 ProviderOptions           : {}
 ```
 
-This command gets the repository named Local01 and uses the pipeline operator to pass that object to the Format-List cmdlet.
+This command gets the repository named Local01 and uses the pipeline operator to pass that object to
+the Format-List cmdlet.
 
 ## Parameters
 
@@ -82,7 +83,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

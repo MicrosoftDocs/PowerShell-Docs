@@ -1,19 +1,19 @@
 ---
 description: Arrays are a fundamental language feature of most programming languages.
 ms.custom: contributor-KevinMarquette
-ms.date: 07/19/2021
+ms.date: 10/05/2021
 title: Everything you wanted to know about arrays
 ---
 # Everything you wanted to know about arrays
 
-[Arrays][Arrays] are a fundamental language feature of most programming languages. They're a collection of
-values or objects that are difficult to avoid. Let's take a close look at arrays and everything they
-have to offer.
+[Arrays][Arrays] are a fundamental language feature of most programming languages. They're a
+collection of values or objects that are difficult to avoid. Let's take a close look at arrays and
+everything they have to offer.
 
 > [!NOTE]
-> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
-> PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][PowerShellExplained.com].
+> The [original version][original version] of this article appeared on the blog written by
+> [@KevinMarquette][@KevinMarquette]. The PowerShell team thanks Kevin for sharing this content with
+> us. Please check out his blog at [PowerShellExplained.com][PowerShellExplained.com].
 
 ## What is an array?
 
@@ -184,7 +184,26 @@ Three
 One word of caution here with the `..` operator. The sequence `0..-1` and `-1..0` evaluate to the
 values `0,-1` and `-1,0`. It's easy to see `$data[0..-1]` and think it would enumerate all items if
 you forget this detail. `$data[0..-1]` gives you the same value as `$data[0,-1]` by giving you the
-first and last item in the array (and none of the other values).
+first and last item in the array (and none of the other values). Here is a larger example:
+
+```powershell
+PS> $a = 1,2,3,4,5,6,7,8
+PS> $a[2..-1]
+3
+2
+1
+8
+```
+
+This is the same as:
+
+```powershell
+PS> $a[2,1,0,-1]
+3
+2
+1
+8
+```
 
 #### Out of bounds
 

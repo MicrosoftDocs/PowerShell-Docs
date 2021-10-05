@@ -1,6 +1,6 @@
 ---
 description: This article is an introduction to the PowerShell scripting environment and its features.
-ms.date: 03/22/2021
+ms.date: 10/04/2021
 title: What is PowerShell?
 ---
 
@@ -29,7 +29,8 @@ the .NET Common Language Runtime (CLR). All inputs and outputs are .NET objects.
 text output to extract information from output. The PowerShell scripting language includes the
 following features:
 
-- Extensible through [functions][functions], [classes][classes], [scripts][scripts], and [modules][modules]
+- Extensible through [functions][functions], [classes][classes], [scripts][scripts], and
+  [modules][modules]
 - Extensible [formatting system][formatting] for easy output
 - Extensible [type system][types] for creating dynamic types
 - Built-in support for common data formats like [CSV][CSV], [JSON][JSON], and [XML][XML]

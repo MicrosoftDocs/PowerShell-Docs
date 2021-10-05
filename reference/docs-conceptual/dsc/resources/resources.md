@@ -1,6 +1,6 @@
 ---
 description: DSC resources provide the building blocks for a DSC configuration. A resource exposes properties that can be configured (schema) and contains the PowerShell script functions used by the LCM to apply the configuration.
-ms.date: 07/23/2020
+ms.date: 10/05/2021
 title: DSC Resources
 ---
 

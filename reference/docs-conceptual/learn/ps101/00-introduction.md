@@ -1,7 +1,7 @@
 ---
 description: This is the introduction of the book PowerShell 101 by Mike F. Robbins.
 ms.custom: Contributor-mikefrobbins
-ms.date: 06/02/2020
+ms.date: 10/05/2021
 ms.reviewer: mirobb
 title: Introduction
 ---
