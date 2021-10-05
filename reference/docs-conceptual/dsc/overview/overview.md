@@ -1,6 +1,6 @@
 ---
 description: DSC is a management platform in PowerShell that enables you to manage your IT and development infrastructure with configuration as code.
-ms.date: 06/12/2017
+ms.date: 10/05/2021
 title: Windows PowerShell Desired State Configuration Overview
 ---
 

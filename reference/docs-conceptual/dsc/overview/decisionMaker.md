@@ -1,6 +1,6 @@
 ---
 description: This document describes the business benefits of using PowerShell Desired State Configuration (DSC), and isn't a technical guide.
-ms.date: 10/11/2019
+ms.date: 10/05/2021
 title: Desired State Configuration Overview for Decision Makers
 ---
 

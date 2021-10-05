@@ -1,6 +1,6 @@
 ---
 description: This Quickstart shows the steps requires to convert a Windows Group Policy to a DSC configuration.
-ms.date: 07/09/2019
+ms.date: 10/05/2021
 title: Quickstart - Convert Group Policy into DSC
 ---
 # Quickstart: Convert Group Policy into DSC

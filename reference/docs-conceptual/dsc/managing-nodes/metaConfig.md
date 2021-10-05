@@ -1,6 +1,6 @@
 ---
 description: The Local Configuration Manager (LCM) is the engine of DSC that is responsible for parsing and applying configurations that are sent to the node.
-ms.date: 12/12/2018
+ms.date: 10/05/2021
 title: Configuring the Local Configuration Manager
 ---
 # Configuring the Local Configuration Manager
