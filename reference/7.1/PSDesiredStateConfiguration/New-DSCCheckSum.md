@@ -34,7 +34,7 @@ together with the associated DSC documents and compressed DSC resources in the D
 New-DscCheckSum -Path "C:\DSC\Configurations\"
 ```
 
-This command creates checksum files for all configurations in the path C:\DSC\Configurations. Any
+This command creates checksum files for all configurations in the path `C:\DSC\Configurations`. Any
 checksum files that already exist are skipped.
 
 ### Example 2: Create checksum files for all configurations in a specific path and overwrite the existing checksum files
@@ -43,7 +43,7 @@ checksum files that already exist are skipped.
 New-DscCheckSum -Path "C:\DSC\Configurations\" -Force
 ```
 
-This command creates new checksum files for all configurations in the path C:\DSC\Configurations.
+This command creates new checksum files for all configurations in the path `C:\DSC\Configurations`.
 Specifying the **Force** parameter causes the command to overwrite any checksum files that already
 exist.
 
@@ -133,7 +133,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

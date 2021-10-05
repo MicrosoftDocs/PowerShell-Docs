@@ -93,7 +93,8 @@ Accept wildcard characters: False
 Gets all installed providers. `Get-PackageProvider` gets provider in paths listed in the
 **PSModulePath** environment variable as well as the package provider assembly folders:
 
-**$env:ProgramFiles\PackageManagement\ProviderAssemblies****$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies**
+- `$env:ProgramFiles\PackageManagement\ProviderAssemblies`
+- `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies`
 
 Without this parameter, `Get-PackageProvider` gets only the providers loaded in the current session.
 
@@ -132,7 +133,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

@@ -87,7 +87,7 @@ the following example:
 
 > [!NOTE]
 > As of PSReadLine 2.0.0, the **Chord** parameter is **case-sensitive**. Meaning,
-> <kbd>Ctrl</kbd>+<kbd>X</kbd> and <kbd>Ctrl</kbd>+<kbd>x</kbd> will create different bindings.
+> <kbd>Ctrl</kbd>+<kbd>X</kbd> and <kbd>Ctrl</kbd>+<kbd>x</kbd> create different bindings.
 
 This parameter accepts an array of strings. Each string is a separate binding, not a sequence of
 keys for a single binding.
@@ -179,9 +179,11 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction,
+-ErrorVariable, -InformationAction, -InformationVariable, -OutVariable,
+-OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -206,4 +208,3 @@ This cmdlet does not generate any output.
 [Get-PSReadLineOption](Get-PSReadLineOption.md)
 
 [Set-PSReadLineOption](Set-PSReadLineOption.md)
-

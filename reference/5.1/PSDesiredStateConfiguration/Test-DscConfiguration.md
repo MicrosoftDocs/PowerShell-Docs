@@ -138,10 +138,12 @@ the `Receive-Job` cmdlet.
 
 To use this parameter, the local and remote computers must be configured for remoting, and on
 Windows Vista and later versions of the Windows operating system, you must open Windows PowerShell
-with the Run as administrator option. For more information, see [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
+with the Run as administrator option. For more information, see
+[about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
 
-For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md)
-and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
+For more information about Windows PowerShell background jobs, see
+[about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and
+[about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -158,8 +160,9 @@ Accept wildcard characters: False
 ### -CimSession
 
 Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session
-object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession)
-cmdlet. The default is the current session on the local computer.
+object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or
+[Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet. The default is the current
+session on the local computer.
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimSession[]
@@ -285,7 +288,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

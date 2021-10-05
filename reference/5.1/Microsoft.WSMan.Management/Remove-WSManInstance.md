@@ -7,7 +7,6 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.man
 schema: 2.0.0
 title: Remove-WSManInstance
 ---
-
 # Remove-WSManInstance
 
 ## Synopsis
@@ -53,11 +52,10 @@ This command deletes the WS-Management HTTP listener on a computer.
 
 ### -ApplicationName
 
-Specifies the application name in the connection.
-The default value of the **ApplicationName** parameter is WSMAN.
-The complete identifier for the remote endpoint is in the following format:
+Specifies the application name in the connection. The default value of the **ApplicationName**
+parameter is WSMAN. The complete identifier for the remote endpoint is in the following format:
 
-\<transport\>://\<server\>:\<port\>/\<ApplicationName\>
+`<Transport>://<Server>:<Port>/<ApplicationName>`
 
 For example: `http://server01:8080/WSMAN`
 
@@ -164,7 +162,7 @@ Accept wildcard characters: False
 
 Specifies the connection endpoint. The format of this string is as follows:
 
-\<Transport\>://\<Server\>:\<Port\>/\<ApplicationName\>
+`<Transport>://<Server>:<Port>/<ApplicationName>`
 
 The following string is a correctly formatted value for this parameter:
 
@@ -187,7 +185,7 @@ Accept wildcard characters: False
 ### -Credential
 
 Specifies a user account that has permission to perform this action. The default is the current
-user. Type a user name, such as User01, Domain01\User01, or User@Domain.com. Or, enter a
+user. Type a user name, such as `User01`, `Domain01\User01`, or `User@Domain.com`. Or, enter a
 **PSCredential** object, such as one returned by the `Get-Credential` cmdlet. When you type a user
 name, this cmdlet prompts you for a password.
 
@@ -228,9 +226,8 @@ Accept wildcard characters: False
 
 ### -Port
 
-Specifies the port to use when the client connects to the WinRM service.
-When the transport is HTTP, the default port is 80.
-When the transport is HTTPS, the default port is 443.
+Specifies the port to use when the client connects to the WinRM service. When the transport is HTTP,
+the default port is 80. When the transport is HTTPS, the default port is 443.
 
 When you use HTTPS as the transport, the value of the **ComputerName** parameter must match the
 server's certificate common name (CN). However, if the **SkipCNCheck** parameter is specified as
@@ -339,7 +336,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -355,8 +353,8 @@ This cmdlet does not generate any output.
 
 ## Notes
 
-- The Remove-WmiObject cmdlet, a Windows Management Instrumentation (WMI) cmdlet, is similar.
-  `Remove-WmiObject` uses the DCOM connection/transport layer to create or update WMI instances.
+The cmdlets in the CimCmdlets module are similar. They use the DCOM connection/transport layer to
+create or update WMI instances.
 
 ## Related links
 

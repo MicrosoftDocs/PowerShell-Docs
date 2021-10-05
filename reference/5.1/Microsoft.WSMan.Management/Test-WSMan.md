@@ -7,7 +7,6 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.man
 schema: 2.0.0
 title: Test-WSMan
 ---
-
 # Test-WSMan
 
 ## Synopsis
@@ -58,7 +57,7 @@ by using the authentication parameter.
 
 Using the authentication parameter enables `Test-WSMan` to return the operating system version.
 
-### Example 4: Determine the status of the WinRM service and the operating system version on a remote computer
+### Example 4: Determine the status of the WinRM service and the OS version on a remote computer
 
 ```powershell
 Test-WSMan -ComputerName "server01" -Authentication default
@@ -76,7 +75,7 @@ Using the authentication parameter enables `Test-WSMan` to return the operating 
 Specifies the application name in the connection. The default value of the **ApplicationName**
 parameter is WSMAN. The complete identifier for the remote endpoint is in the following format:
 
-\<transport\>://\<server\>:\<port\>/\<ApplicationName\>
+`<Transport>://<Server>:<Port>/<ApplicationName>`
 
 For example: `http://server01:8080/WSMAN`
 
@@ -250,7 +249,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -266,9 +266,9 @@ This cmdlet does not generate any output object.
 
 ## Notes
 
-- By default, the `Test-WSMan` cmdlet queries the WinRM service without using authentication, and it
-  returns no information that is specific to the operating-system version. Instead, it displays null
-  values for the operating system version and service pack level (OS: 0.0.0 SP: 0.0).
+By default, the `Test-WSMan` cmdlet queries the WinRM service without using authentication, and it
+returns no information that is specific to the operating-system version. Instead, it displays null
+values for the operating system version and service pack level (OS: 0.0.0 SP: 0.0).
 
 ## Related links
 

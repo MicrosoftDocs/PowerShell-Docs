@@ -76,7 +76,7 @@ to.
 Start-DscConfiguration -Path "C:\DSC\Configurations\" -Wait -Verbose
 ```
 
-This command applies the configuration from C:\DSC\Configurations\ to the local computer. The
+This command applies the configuration from `C:\DSC\Configurations\` to the local computer. The
 command returns **Job** objects for each target node deployed to, in this case, just the local
 computer. This example specifies the **Verbose** parameter. Therefore, the command sends messages to
 the console as it proceeds. The command includes the **Wait** parameter. Therefore, you cannot use
@@ -97,7 +97,7 @@ The first command creates a CIM session by using the `New-CimSession` cmdlet, an
 **CimSession** object in the `$Session` variable. The command prompts you for a password. For more
 information, type `Get-Help NewCimSession`.
 
-The second command applies the configuration settings from C:\DSC\Configurations\ to the computers
+The second command applies the configuration settings from `C:\DSC\Configurations\` to the computers
 identified by the **CimSession** objects stored in the `$Session` variable. In this example, the
 $Session variable contains a CIM session only for the computer named Server01. The command applies
 the configuration. The command creates **Job** objects for each configured computer.
@@ -107,8 +107,9 @@ the configuration. The command creates **Job** objects for each configured compu
 ### -CimSession
 
 Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session
-object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession)
-cmdlet. The default is the current session on the local computer.
+object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or
+[Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet. The default is the current
+session on the local computer.
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimSession[]
@@ -200,7 +201,7 @@ Accept wildcard characters: False
 
 Specifies a file path of a folder that contains configuration settings files. This cmdlet publishes
 and applies these configuration settings to computers that have settings files in the specified
-path. Each target node must have a settings file of the following format: NetBIOS Name.mof.
+path. Each target node must have a settings file of the following format: `<NetBIOS Name>.mof`.
 
 ```yaml
 Type: System.String
@@ -240,7 +241,8 @@ Indicates that this cmdlet applies the existing configuration. The configuration
 target computer by enactment using `Start-DscConfiguration` or by publication using the
 Publish-DscConfiguration cmdlet.
 
-Before you specify this parameter for this cmdlet, review the information in [What's New in Windows PowerShell 5.0](/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50)
+Before you specify this parameter for this cmdlet, review the information in
+[What's New in Windows PowerShell 5.0](/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -308,7 +310,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

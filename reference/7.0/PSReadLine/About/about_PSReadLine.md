@@ -1,14 +1,12 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 10/04/2021
+ms.date: 10/05/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
 ---
 # about_PSReadLine
-
-## about_PSReadLine
 
 ## Short Description
 
@@ -28,7 +26,7 @@ PowerShell console. It provides:
 - Many configuration options
 - Bash style completion (optional in Cmd mode, default in Emacs mode)
 - Emacs yank/kill-ring
-- PowerShell token based "word" movement and kill
+- PowerShell token based "word" movement and delete
 
 > [!NOTE]
 > Beginning with PowerShell 7.0, PowerShell skips auto-loading PSReadLine on
@@ -38,33 +36,33 @@ PowerShell console. It provides:
 > necessary.
 
 The following functions are available in the class
-**[Microsoft.PowerShell.PSConsoleReadLine]**.
+**Microsoft.PowerShell.PSConsoleReadLine**.
 
 ## Basic editing functions
 
 ### Abort
 
-Abort current action, e.g. incremental history search.
+Abort current action, for example: incremental history search.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>g</kbd>
+- Emacs: `<Ctrl+g>`
 
 ### AcceptAndGetNext
 
 Attempt to execute the current input. If it can be executed (like AcceptLine),
 then recall the next item from history the next time ReadLine is called.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>o</kbd>
+- Emacs: `<Ctrl+o>`
 
 ### AcceptLine
 
 Attempt to execute the current input. If the current input is incomplete (for
-example there is a missing closing parenthesis, bracket, or quote, then the
+example there is a missing closing parenthesis, bracket, or quote) then the
 continuation prompt is displayed on the next line and PSReadLine waits for
 keys to edit the current input.
 
-- Cmd: <kbd>Enter</kbd>
-- Emacs: <kbd>Enter</kbd>
-- Vi insert mode: <kbd>Enter</kbd>
+- Cmd: `<Enter>`
+- Emacs: `<Enter>`
+- Vi insert mode: `<Enter>`
 
 ### AddLine
 
@@ -72,41 +70,41 @@ The continuation prompt is displayed on the next line and PSReadLine waits for
 keys to edit the current input. This is useful to enter multi-line input as a
 single command even when a single line is complete input by itself.
 
-- Cmd: <kbd>Shift</kbd>+<kbd>Enter</kbd>
-- Emacs: <kbd>Shift</kbd>+<kbd>Enter</kbd>
-- Vi insert mode: <kbd>Shift</kbd>+<kbd>Enter</kbd>
-- Vi command mode: <kbd>Shift</kbd>+<kbd>Enter</kbd>
+- Cmd: `<Shift+Enter>`
+- Emacs: `<Shift+Enter>`
+- Vi insert mode: `<Shift+Enter>`
+- Vi command mode: `<Shift+Enter>`
 
 ### BackwardDeleteChar
 
 Delete the character before the cursor.
 
-- Cmd: <kbd>Backspace</kbd>, <kbd>Ctrl</kbd>+<kbd>h</kbd>
-- Emacs: <kbd>Backspace</kbd>, <kbd>Ctrl</kbd>+<kbd>Backspace</kbd>, <kbd>Ctrl+<kbd>h</kbd>
-- Vi insert mode: <kbd>Backspace</kbd>
-- Vi command mode: <kbd>X</kbd>, <kbd>d</kbd>,<kbd>h</kbd>
+- Cmd: `<Backspace>`, `<Ctrl+h>`
+- Emacs: `<Backspace>`, `<Ctrl+Backspace>`, `<Ctrl+h>`
+- Vi insert mode: `<Backspace>`
+- Vi command mode: `<X>`, `<d,h>`
 
 ### BackwardDeleteLine
 
 Like BackwardKillLine - deletes text from the point to the start of the line,
 but does not put the deleted text in the kill-ring.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>Home</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>u</kbd>, <kbd>Ctrl</kbd>+<kbd>Home</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>u</kbd>, <kbd>Ctrl</kbd>+<kbd>Home</kbd>, <kbd>d,0</kbd>
+- Cmd: `<Ctrl+Home>`
+- Vi insert mode: `<Ctrl+u>`, `<Ctrl+Home>`
+- Vi command mode: `<Ctrl+u>`, `<Ctrl+Home>`, `<d,0>`
 
 ### BackwardDeleteWord
 
 Deletes the previous word.
 
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>w</kbd>, <kbd>d,b</kbd>
+- Vi command mode: `<Ctrl+w>`, `<d,b>`
 
 ### BackwardKillLine
 
 Clear the input from the start of the input to the cursor. The cleared text is
 placed in the kill-ring.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>u</kbd>, <kbd>Ctrl</kbd>+<kbd>x,Backspace</kbd>
+- Emacs: `<Ctrl+u>`, `<Ctrl+x,Backspace>`
 
 ### BackwardKillWord
 
@@ -114,93 +112,93 @@ Clear the input from the start of the current word to the cursor. If the
 cursor is between words, the input is cleared from the start of the previous
 word to the cursor. The cleared text is placed in the kill-ring.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>Backspace</kbd>
-- Emacs: <kbd>Alt</kbd>+<kbd>Backspace</kbd>, <kbd>Escape,Backspace</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>Backspace</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>Backspace</kbd>
+- Cmd: `<Ctrl+Backspace>`
+- Emacs: `<Alt+Backspace>`, `<Escape,Backspace>`
+- Vi insert mode: `<Ctrl+Backspace>`
+- Vi command mode: `<Ctrl+Backspace>`
 
 ### CancelLine
 
 Cancel the current input, leaving the input on the screen, but returns back to
 the host so the prompt is evaluated again.
 
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>c</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>c</kbd>
+- Vi insert mode: `<Ctrl+c>`
+- Vi command mode: `<Ctrl+c>`
 
 ### Copy
 
 Copy selected region to the system clipboard. If no region is selected, copy
 the whole line.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>C</kbd>
+- Cmd: `<Ctrl+C>`
 
 ### CopyOrCancelLine
 
 If text is selected, copy to the clipboard, otherwise cancel the line.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>c</kbd>
-- Emacs: <kbd>Ctrl</kbd>+<kbd>c</kbd>
+- Cmd: `<Ctrl+c>`
+- Emacs: `<Ctrl+c>`
 
 ### Cut
 
 Delete selected region placing deleted text in the system clipboard.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>x</kbd>
+- Cmd: `<Ctrl+x>`
 
 ### DeleteChar
 
 Delete the character under the cursor.
 
-- Cmd: <kbd>Delete</kbd>
-- Emacs: <kbd>Delete</kbd>
-- Vi insert mode: <kbd>Delete</kbd>
-- Vi command mode: <kbd>Delete</kbd>, <kbd>x</kbd>, <kbd>d</kbd>,<kbd>l</kbd>, <kbd>Space</kbd>
+- Cmd: `<Delete>`
+- Emacs: `<Delete>`
+- Vi insert mode: `<Delete>`
+- Vi command mode: `<Delete>`, `<x>`, `<d,l>`, `<d,Space>`
 
 ### DeleteCharOrExit
 
 Delete the character under the cursor, or if the line is empty, exit the
 process.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>d</kbd>
+- Emacs: `<Ctrl+d>`
 
 ### DeleteEndOfWord
 
 Delete to the end of the word.
 
-- Vi command mode: <kbd>d,e</kbd>
+- Vi command mode: `<d,e>`
 
 ### DeleteLine
 
 Deletes the current line, enabling undo.
 
-- Vi command mode: <kbd>d,d</kbd>
+- Vi command mode: `<d,d>`
 
 ### DeleteLineToFirstChar
 
 Deletes text from the cursor to the first non-blank character of the line.
 
-- Vi command mode: <kbd>d,^</kbd>
+- Vi command mode: `<d,^>`
 
 ### DeleteToEnd
 
 Delete to the end of the line.
 
-- Vi command mode: <kbd>D,d,$</kbd>
+- Vi command mode: `<D>`, `<d,$>`
 
 ### DeleteWord
 
 Delete the next word.
 
-- Vi command mode: <kbd>d,w</kbd>
+- Vi command mode: `<d,w>`
 
 ### ForwardDeleteLine
 
 Like ForwardKillLine - deletes text from the point to the end of the line, but
 does not put the deleted text in the kill-ring.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>End</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>End</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>End</kbd>
+- Cmd: `<Ctrl+End>`
+- Vi insert mode: `<Ctrl+End>`
+- Vi command mode: `<Ctrl+End>`
 
 ### InsertLineAbove
 
@@ -208,7 +206,7 @@ A new empty line is created above the current line regardless of where the
 cursor is on the current line. The cursor moves to the beginning of the new
 line.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>Enter</kbd>
+- Cmd: `<Ctrl+Enter>`
 
 ### InsertLineBelow
 
@@ -216,20 +214,20 @@ A new empty line is created below the current line regardless of where the
 cursor is on the current line. The cursor moves to the beginning of the new
 line.
 
-- Cmd: <kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>Enter</kbd>
+- Cmd: `<Shift+Ctrl+Enter>`
 
 ### InvertCase
 
 Invert the case of the current character and move to the next one.
 
-- Vi command mode: <kbd>~</kbd>
+- Vi command mode: `<~>`
 
 ### KillLine
 
 Clear the input from the cursor to the end of the input. The cleared text is
 placed in the kill-ring.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>k</kbd>
+- Emacs: `<Ctrl+k>`
 
 ### KillRegion
 
@@ -243,18 +241,18 @@ Clear the input from the cursor to the end of the current word. If the cursor
 is between words, the input is cleared from the cursor to the end of the next
 word. The cleared text is placed in the kill-ring.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>Delete</kbd>
-- Emacs: <kbd>Alt</kbd>+<kbd>d</kbd>, <kbd>Escape,d</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>Delete</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>Delete</kbd>
+- Cmd: `<Ctrl+Delete>`
+- Emacs: `<Alt+d>`, `<Escape,d>`
+- Vi insert mode: `<Ctrl+Delete>`
+- Vi command mode: `<Ctrl+Delete>`
 
 ### Paste
 
 Paste text from the system clipboard.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>v</kbd>, <kbd>Shift</kbd>+<kbd>Insert</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>v</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>v</kbd>
+- Cmd: `<Ctrl+v>`, `<Shift+Insert>`
+- Vi insert mode: `<Ctrl+v>`
+- Vi command mode: `<Ctrl+v>`
 
 > [!IMPORTANT]
 > When using the **Paste** function, the entire contents of the clipboard
@@ -270,41 +268,41 @@ Paste text from the system clipboard.
 Paste the clipboard after the cursor, moving the cursor to the end of the
 pasted text.
 
-- Vi command mode: <kbd>p</kbd>
+- Vi command mode: `<p>`
 
 ### PasteBefore
 
 Paste the clipboard before the cursor, moving the cursor to the end of the
 pasted text.
 
-- Vi command mode: <kbd>P</kbd>
+- Vi command mode: `<P>`
 
 ### PrependAndAccept
 
 Prepend a '#' and accept the line.
 
-- Vi command mode: <kbd>#</kbd>
+- Vi command mode: `<#>`
 
 ### Redo
 
 Undo an undo.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>y</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>y</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>y</kbd>
+- Cmd: `<Ctrl+y>`
+- Vi insert mode: `<Ctrl+y>`
+- Vi command mode: `<Ctrl+y>`
 
 ### RepeatLastCommand
 
 Repeat the last text modification.
 
-- Vi command mode: <kbd>.</kbd>
+- Vi command mode: `<.>`
 
 ### RevertLine
 
-Reverts all of the input to the current input.
+Reverts all input to the current input.
 
-- Cmd: <kbd>Escape</kbd>
-- Emacs: <kbd>Alt</kbd>+<kbd>r</kbd>, <kbd>Escape,r</kbd>
+- Cmd: `<Escape>`
+- Emacs: `<Alt+r>`, `<Escape,r>`
 
 ### ShellBackwardKillWord
 
@@ -326,24 +324,24 @@ Function is unbound.
 
 Swap the current character and the one before it.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>t</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>t</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>t</kbd>
+- Emacs: `<Ctrl+t>`
+- Vi insert mode: `<Ctrl+t>`
+- Vi command mode: `<Ctrl+t>`
 
 ### Undo
 
 Undo a previous edit.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>z</kbd>
-- Emacs: <kbd>Ctrl</kbd>+<kbd>_</kbd>, <kbd>Ctrl</kbd>+<kbd>x</kbd>,<kbd>Ctrl</kbd>+<kbd>u</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>z</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>z</kbd>, <kbd>u</kbd>
+- Cmd: `<Ctrl+z>`
+- Emacs: `<Ctrl+_>`, `<Ctrl+x,Ctrl+u>`
+- Vi insert mode: `<Ctrl+z>`
+- Vi command mode: `<Ctrl+z>`, `<u>`
 
 ### UndoAll
 
 Undo all previous edits for line.
 
-- Vi command mode: <kbd>U</kbd>
+- Vi command mode: `<U>`
 
 ### UnixWordRubout
 
@@ -351,242 +349,242 @@ Clear the input from the start of the current word to the cursor. If the
 cursor is between words, the input is cleared from the start of the previous
 word to the cursor. The cleared text is placed in the kill-ring.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>w</kbd>
+- Emacs: `<Ctrl+w>`
 
 ### ValidateAndAcceptLine
 
 Attempt to execute the current input. If the current input is incomplete (for
-example there is a missing closing parenthesis, bracket, or quote, then the
+example there is a missing closing parenthesis, bracket, or quote) then the
 continuation prompt is displayed on the next line and PSReadLine waits for
 keys to edit the current input.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>m</kbd>
+- Emacs: `<Ctrl+m>`
 
 ### ViAcceptLine
 
 Accept the line and switch to Insert mode.
 
-- Vi command mode: <kbd>Enter</kbd>
+- Vi command mode: `<Enter>`
 
 ### ViAcceptLineOrExit
 
 Like DeleteCharOrExit in Emacs mode, but accepts the line instead of deleting
 a character.
 
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>d</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>d</kbd>
+- Vi insert mode: `<Ctrl+d>`
+- Vi command mode: `<Ctrl+d>`
 
 ### ViAppendLine
 
 A new line is inserted below the current line.
 
-- Vi command mode: <kbd>o</kbd>
+- Vi command mode: `<o>`
 
 ### ViBackwardDeleteGlob
 
-Deletes the previous word, using only white space as the word delimiter.
+Deletes the previous word, using only whitespace as the word delimiter.
 
-- Vi command mode: <kbd>d,B</kbd>
+- Vi command mode: `<d,B>`
 
 ### ViBackwardGlob
 
-Moves the cursor back to the beginning of the previous word, using only white
-space as delimiters.
+Moves the cursor back to the beginning of the previous word, using only
+whitespace as delimiters.
 
-- Vi command mode: <kbd>B</kbd>
+- Vi command mode: `<B>`
 
 ### ViDeleteBrace
 
 Find the matching brace, parenthesis, or square bracket and delete all contents
 within, including the brace.
 
-- Vi command mode: <kbd>d,%</kbd>
+- Vi command mode: `<d,%>`
 
 ### ViDeleteEndOfGlob
 
 Delete to the end of the word.
 
-- Vi command mode: <kbd>d,E</kbd>
+- Vi command mode: `<d,E>`
 
 ### ViDeleteGlob
 
-Delete the next glob (white space delimited word).
+Delete the next glob (whitespace delimited word).
 
-- Vi command mode: <kbd>d,W</kbd>
+- Vi command mode: `<d,W>`
 
 ### ViDeleteToBeforeChar
 
 Deletes until given character.
 
-- Vi command mode: <kbd>d,t</kbd>
+- Vi command mode: `<d,t>`
 
 ### ViDeleteToBeforeCharBackward
 
 Deletes until given character.
 
-- Vi command mode: <kbd>d,T</kbd>
+- Vi command mode: `<d,T>`
 
 ### ViDeleteToChar
 
 Deletes until given character.
 
-- Vi command mode: <kbd>d,f</kbd>
+- Vi command mode: `<d,f>`
 
 ### ViDeleteToCharBackward
 
 Deletes backwards until given character.
 
-- Vi command mode: <kbd>d,F</kbd>
+- Vi command mode: `<d,F>`
 
 ### ViInsertAtBegining
 
 Switch to Insert mode and position the cursor at the beginning of the line.
 
-- Vi command mode: <kbd>I</kbd>
+- Vi command mode: `<I>`
 
 ### ViInsertAtEnd
 
 Switch to Insert mode and position the cursor at the end of the line.
 
-- Vi command mode: <kbd>A</kbd>
+- Vi command mode: `<A>`
 
 ### ViInsertLine
 
 A new line is inserted above the current line.
 
-- Vi command mode: <kbd>O</kbd>
+- Vi command mode: `<O>`
 
 ### ViInsertWithAppend
 
 Append from the current line position.
 
-- Vi command mode: <kbd>a</kbd>
+- Vi command mode: `<a>`
 
 ### ViInsertWithDelete
 
 Delete the current character and switch to Insert mode.
 
-- Vi command mode: <kbd>s</kbd>
+- Vi command mode: `<s>`
 
 ### ViJoinLines
 
 Joins the current line and the next line.
 
-- Vi command mode: <kbd>J</kbd>
+- Vi command mode: `<J>`
 
 ### ViReplaceLine
 
 Erase the entire command line.
 
-- Vi command mode: <kbd>S</kbd>, <kbd>c,c</kbd>
+- Vi command mode: `<S>`, `<c,c>`
 
 ### ViReplaceToBeforeChar
 
 Replaces until given character.
 
-- Vi command mode: <kbd>c,t</kbd>
+- Vi command mode: `<c,t>`
 
 ### ViReplaceToBeforeCharBackward
 
 Replaces until given character.
 
-- Vi command mode: <kbd>c,T</kbd>
+- Vi command mode: `<c,T>`
 
 ### ViReplaceToChar
 
 Deletes until given character.
 
-- Vi command mode: <kbd>c,f</kbd>
+- Vi command mode: `<c,f>`
 
 ### ViReplaceToCharBackward
 
 Replaces until given character.
 
-- Vi command mode: <kbd>c,F</kbd>
+- Vi command mode: `<c,F>`
 
 ### ViYankBeginningOfLine
 
 Yank from the beginning of the buffer to the cursor.
 
-- Vi command mode: <kbd>y,0</kbd>
+- Vi command mode: `<y,0>`
 
 ### ViYankEndOfGlob
 
 Yank from the cursor to the end of the WORD(s).
 
-- Vi command mode: <kbd>y,E</kbd>
+- Vi command mode: `<y,E>`
 
 ### ViYankEndOfWord
 
 Yank from the cursor to the end of the word(s).
 
-- Vi command mode: <kbd>y,e</kbd>
+- Vi command mode: `<y,e>`
 
 ### ViYankLeft
 
 Yank character(s) to the left of the cursor.
 
-- Vi command mode: <kbd>y,h</kbd>
+- Vi command mode: `<y,h>`
 
 ### ViYankLine
 
 Yank the entire buffer.
 
-- Vi command mode: <kbd>y,y</kbd>
+- Vi command mode: `<y,y>`
 
 ### ViYankNextGlob
 
 Yank from cursor to the start of the next WORD(s).
 
-- Vi command mode: <kbd>y,W</kbd>
+- Vi command mode: `<y,W>`
 
 ### ViYankNextWord
 
 Yank the word(s) after the cursor.
 
-- Vi command mode: <kbd>y,w</kbd>
+- Vi command mode: `<y,w>`
 
 ### ViYankPercent
 
 Yank to/from matching brace.
 
-- Vi command mode: <kbd>y,%</kbd>
+- Vi command mode: `<y,%>`
 
 ### ViYankPreviousGlob
 
 Yank from beginning of the WORD(s) to cursor.
 
-- Vi command mode: <kbd>y,B</kbd>
+- Vi command mode: `<y,B>`
 
 ### ViYankPreviousWord
 
 Yank the word(s) before the cursor.
 
-- Vi command mode: <kbd>y,b</kbd>
+- Vi command mode: `<y,b>`
 
 ### ViYankRight
 
 Yank character(s) under and to the right of the cursor.
 
-- Vi command mode: <kbd>y,l</kbd>, <kbd>y,Space</kbd>
+- Vi command mode: `<y,l>`, `<y,Space>`
 
 ### ViYankToEndOfLine
 
 Yank from the cursor to the end of the buffer.
 
-- Vi command mode: <kbd>y,$</kbd>
+- Vi command mode: `<y,$>`
 
 ### ViYankToFirstChar
 
 Yank from the first non-whitespace character to the cursor.
 
-- Vi command mode: <kbd>y,^</kbd>
+- Vi command mode: `<y,^>`
 
 ### Yank
 
 Add the most recently killed text to the input.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>y</kbd>
+- Emacs: `<Ctrl+y>`
 
 ### YankLastArg
 
@@ -595,8 +593,8 @@ first time it is invoked, behaves just like YankNthArg. If invoked multiple
 times, instead it iterates through history and arg sets the direction
 (negative reverses the direction.)
 
-- Cmd: <kbd>Alt</kbd>+<kbd>.</kbd>
-- Emacs: <kbd>Alt</kbd>+<kbd>.</kbd>, <kbd>Alt</kbd>+<kbd>\_</kbd>, <kbd>Escape,.</kbd>, <kbd>Escape,_</kbd>
+- Cmd: `<Alt+.>`
+- Emacs: `<Alt+.>`, `<Alt+_>`, `<Escape,.>`, `<Escape,_>`
 
 ### YankNthArg
 
@@ -604,14 +602,14 @@ Yank the first argument (after the command) from the previous history line.
 With an argument, yank the nth argument (starting from 0), if the argument is
 negative, start from the last argument.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>y</kbd>, <kbd>Escape,Ctrl</kbd>+<kbd>y</kbd>
+- Emacs: `<Ctrl+Alt+y>`, `<Escape,Ctrl+y>`
 
 ### YankPop
 
 If the previous operation was Yank or YankPop, replace the previously yanked
 text with the next killed text from the kill-ring.
 
-- Emacs: <kbd>Alt</kbd>+<kbd>y</kbd>, <kbd>Escape,y</kbd>
+- Emacs: `<Alt+y>`, `<Escape,y>`
 
 ## Cursor movement functions
 
@@ -620,10 +618,10 @@ text with the next killed text from the kill-ring.
 Move the cursor one character to the left. This may move the cursor to the
 previous line of multi-line input.
 
-- Cmd: <kbd>LeftArrow</kbd>
-- Emacs: <kbd>LeftArrow</kbd>, <kbd>Ctrl</kbd>+<kbd>b</kbd>
-- Vi insert mode: <kbd>LeftArrow</kbd>
-- Vi command mode: <kbd>LeftArrow</kbd>, <kbd>Backspace</kbd>, <kbd>h</kbd>
+- Cmd: `<LeftArrow>`
+- Emacs: `<LeftArrow>`, `<Ctrl+b>`
+- Vi insert mode: `<LeftArrow>`
+- Vi command mode: `<LeftArrow>`, `<Backspace>`, `<h>`
 
 ### BackwardWord
 
@@ -631,10 +629,10 @@ Move the cursor back to the start of the current word, or if between words,
 the start of the previous word. Word boundaries are defined by a configurable
 set of characters.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>LeftArrow</kbd>
-- Emacs: <kbd>Alt</kbd>+<kbd>b</kbd>, <kbd>Escape,b</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>LeftArrow</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>LeftArrow</kbd>
+- Cmd: `<Ctrl+LeftArrow>`
+- Emacs: `<Alt+b>`, `<Escape,b>`
+- Vi insert mode: `<Ctrl+LeftArrow>`
+- Vi command mode: `<Ctrl+LeftArrow>`
 
 ### BeginningOfLine
 
@@ -642,10 +640,10 @@ If the input has multiple lines, move to the start of the current line, or if
 already at the start of the line, move to the start of the input. If the input
 has a single line, move to the start of the input.
 
-- Cmd: <kbd>Home</kbd>
-- Emacs: <kbd>Home</kbd>, <kbd>Ctrl</kbd>+<kbd>a</kbd>
-- Vi insert mode: <kbd>Home</kbd>
-- Vi command mode: <kbd>Home</kbd>
+- Cmd: `<Home>`
+- Emacs: `<Home>`, `<Ctrl+a>`
+- Vi insert mode: `<Home>`
+- Vi command mode: `<Home>`
 
 ### EndOfLine
 
@@ -653,19 +651,19 @@ If the input has multiple lines, move to the end of the current line, or if
 already at the end of the line, move to the end of the input. If the input has
 a single line, move to the end of the input.
 
-- Cmd: <kbd>End</kbd>
-- Emacs: <kbd>End</kbd>, <kbd>Ctrl</kbd>+<kbd>e</kbd>
-- Vi insert mode: <kbd>End</kbd>
+- Cmd: `<End>`
+- Emacs: `<End>`, `<Ctrl+e>`
+- Vi insert mode: `<End>`
 
 ### ForwardChar
 
 Move the cursor one character to the right. This may move the cursor to the
 next line of multi-line input.
 
-- Cmd: <kbd>RightArrow</kbd>
-- Emacs: <kbd>RightArrow</kbd>, <kbd>Ctrl</kbd>+<kbd>f</kbd>
-- Vi insert mode: <kbd>RightArrow</kbd>
-- Vi command mode: <kbd>RightArrow</kbd>, <kbd>Space</kbd>, <kbd>l</kbd>
+- Cmd: `<RightArrow>`
+- Emacs: `<RightArrow>`, `<Ctrl+f>`
+- Vi insert mode: `<RightArrow>`
+- Vi command mode: `<RightArrow>`, `<Space>`, `<l>`
 
 ### ForwardWord
 
@@ -673,33 +671,33 @@ Move the cursor forward to the end of the current word, or if between words,
 to the end of the next word. Word boundaries are defined by a configurable set
 of characters.
 
-- Emacs: <kbd>Alt</kbd>+<kbd>f</kbd>, <kbd>Escape,f</kbd>
+- Emacs: `<Alt+f>`, `<Escape,f>`
 
 ### GotoBrace
 
 Go to the matching brace, parenthesis, or square bracket.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>]</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>]</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>]</kbd>
+- Cmd: `<Ctrl+]>`
+- Vi insert mode: `<Ctrl+]>`
+- Vi command mode: `<Ctrl+]>`
 
 ### GotoColumn
 
 Move to the column indicated by arg.
 
-- Vi command mode: <kbd>|</kbd>
+- Vi command mode: `<|>`
 
 ### GotoFirstNonBlankOfLine
 
 Move the cursor to the first non-blank character in the line.
 
-- Vi command mode: <kbd>^</kbd>
+- Vi command mode: `<^>`
 
 ### MoveToEndOfLine
 
 Move the cursor to the end of the input.
 
-- Vi command mode: <kbd>End</kbd>, <kbd>$</kbd>
+- Vi command mode: `<End>`, `<$>`
 
 ### NextLine
 
@@ -712,9 +710,9 @@ Move the cursor to the next line.
 Move the cursor forward to the start of the next word. Word boundaries are
 defined by a configurable set of characters.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>RightArrow</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>RightArrow</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>RightArrow</kbd>
+- Cmd: `<Ctrl+RightArrow>`
+- Vi insert mode: `<Ctrl+RightArrow>`
+- Vi command mode: `<Ctrl+RightArrow>`
 
 ### NextWordEnd
 
@@ -722,7 +720,7 @@ Move the cursor forward to the end of the current word, or if between words,
 to the end of the next word. Word boundaries are defined by a configurable set
 of characters.
 
-- Vi command mode: <kbd>e</kbd>
+- Vi command mode: `<e>`
 
 ### PreviousLine
 
@@ -758,17 +756,17 @@ Move the cursor back to the start of the current word, or if between words,
 the start of the previous word. Word boundaries are defined by a configurable
 set of characters.
 
-- Vi command mode: <kbd>b</kbd>
+- Vi command mode: `<b>`
 
 ### ViEndOfGlob
 
-Moves the cursor to the end of the word, using only white space as delimiters.
+Moves the cursor to the end of the word, using only whitespace as delimiters.
 
-- Vi command mode: <kbd>E</kbd>
+- Vi command mode: `<E>`
 
 ### ViEndOfPreviousGlob
 
-Moves to the end of the previous word, using only white space as a word
+Moves to the end of the previous word, using only whitespace as a word
 delimiter.
 
 - Function is unbound.
@@ -777,20 +775,20 @@ delimiter.
 
 Similar to GotoBrace, but is character based instead of token based.
 
-- Vi command mode: <kbd>%</kbd>
+- Vi command mode: `<%>`
 
 ### ViNextGlob
 
-Moves to the next word, using only white space as a word delimiter.
+Moves to the next word, using only whitespace as a word delimiter.
 
-- Vi command mode: <kbd>W</kbd>
+- Vi command mode: `<W>`
 
 ### ViNextWord
 
 Move the cursor forward to the start of the next word. Word boundaries are
 defined by a configurable set of characters.
 
-- Vi command mode: <kbd>w</kbd>
+- Vi command mode: `<w>`
 
 ## History functions
 
@@ -798,40 +796,40 @@ defined by a configurable set of characters.
 
 Move to the first item in the history.
 
-- Emacs: <kbd>Alt</kbd>+<kbd><</kbd>
+- Emacs: `<Alt+<>`
 
 ### ClearHistory
 
 Clears history in PSReadLine. This does not affect PowerShell history.
 
-- Cmd: <kbd>Alt</kbd>+<kbd>F7</kbd>
+- Cmd: `<Alt+F7>`
 
 ### EndOfHistory
 
 Move to the last item (the current input) in the history.
 
-- Emacs: <kbd>Alt</kbd>+<kbd>></kbd>
+- Emacs: `<Alt+>>`
 
 ### ForwardSearchHistory
 
 Perform an incremental forward search through history.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>s</kbd>
-- Emacs: <kbd>Ctrl</kbd>+<kbd>s</kbd>
+- Cmd: `<Ctrl+s>`
+- Emacs: `<Ctrl+s>`
 
 ### HistorySearchBackward
 
 Replace the current input with the 'previous' item from PSReadLine history
 that matches the characters between the start and the input and the cursor.
 
-- Cmd: <kbd>F8</kbd>
+- Cmd: `<F8>`
 
 ### HistorySearchForward
 
 Replace the current input with the 'next' item from PSReadLine history that
 matches the characters between the start and the input and the cursor.
 
-- Cmd: <kbd>Shift</kbd>+<kbd>F8</kbd>
+- Cmd: `<Shift+F8>`
 
 ### NextHistory
 
@@ -846,24 +844,24 @@ Replace the current input with the 'next' item from PSReadLine history.
 
 Replace the current input with the 'previous' item from PSReadLine history.
 
-- Cmd: <kbd>UpArrow</kbd>
-- Emacs: <kbd>UpArrow</kbd>, <kbd>Ctrl</kbd>+<kbd>p</kbd>
-- Vi insert mode: <kbd>UpArrow</kbd>
-- Vi command mode: <kbd>UpArrow</kbd>, <kbd>k</kbd>, <kbd>-</kbd>
+- Cmd: `<UpArrow>`
+- Emacs: `<UpArrow>`, `<Ctrl+p>`
+- Vi insert mode: `<UpArrow>`
+- Vi command mode: `<UpArrow>`, `<k>`, `<->`
 
 ### ReverseSearchHistory
 
 Perform an incremental backward search through history.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>r</kbd>
-- Emacs: <kbd>Ctrl</kbd>+<kbd>r</kbd>
+- Cmd: `<Ctrl+r>`
+- Emacs: `<Ctrl+r>`
 
 ### ViSearchHistoryBackward
 
 Prompts for a search string and initiates search upon AcceptLine.
 
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>r</kbd>
-- Vi command mode: <kbd>/</kbd>, <kbd>Ctrl</kbd>+<kbd>r</kbd>
+- Vi insert mode: `<Ctrl+r>`
+- Vi command mode: `</>`, `<Ctrl+r>`
 
 ## Completion functions
 
@@ -874,7 +872,7 @@ multiple possible completions, the longest unambiguous prefix is used for
 completion. If trying to complete the longest unambiguous completion, a list
 of possible completions is displayed.
 
-- Emacs: <kbd>Tab</kbd>
+- Emacs: `<Tab>`
 
 ### MenuComplete
 
@@ -883,51 +881,51 @@ multiple possible completions, the longest unambiguous prefix is used for
 completion. If trying to complete the longest unambiguous completion, a list
 of possible completions is displayed.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>Space</kbd>
-- Emacs: <kbd>Ctrl</kbd>+<kbd>Space</kbd>
+- Cmd: `<Ctrl+Space>`
+- Emacs: `<Ctrl+Space>`
 
 ### PossibleCompletions
 
 Display the list of possible completions.
 
-- Emacs: <kbd>Alt</kbd>+<kbd>=</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>Space</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>Space</kbd>
+- Emacs: `<Alt+=>`
+- Vi insert mode: `<Ctrl+Space>`
+- Vi command mode: `<Ctrl+Space>`
 
 ### TabCompleteNext
 
 Attempt to complete the text surrounding the cursor with the next available
 completion.
 
-- Cmd: <kbd>Tab</kbd>
-- Vi command mode: <kbd>Tab</kbd>
+- Cmd: `<Tab>`
+- Vi command mode: `<Tab>`
 
 ### TabCompletePrevious
 
 Attempt to complete the text surrounding the cursor with the previous
 available completion.
 
-- Cmd: <kbd>Shift</kbd>+<kbd>Tab</kbd>
-- Vi command mode: <kbd>Shift</kbd>+<kbd>Tab</kbd>
+- Cmd: `<Shift+Tab>`
+- Vi command mode: `<Shift+Tab>`
 
 ### ViTabCompleteNext
 
 Ends the current edit group, if needed, and invokes TabCompleteNext.
 
-- Vi insert mode: <kbd>Tab</kbd>
+- Vi insert mode: `<Tab>`
 
 ### ViTabCompletePrevious
 
 Ends the current edit group, if needed, and invokes TabCompletePrevious.
 
-- Vi insert mode: <kbd>Shift</kbd>+<kbd>Tab</kbd>
+- Vi insert mode: `<Shift+Tab>`
 
 ## Miscellaneous functions
 
 ### CaptureScreen
 
 Start interactive screen capture - up/down arrows select lines, enter copies
-selected text to clipboard as text and html.
+selected text to clipboard as text and HTML.
 
 - Function is unbound.
 
@@ -935,27 +933,27 @@ selected text to clipboard as text and html.
 
 Clear the screen and draw the current line at the top of the screen.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>l</kbd>
-- Emacs: <kbd>Ctrl</kbd>+<kbd>l</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>l</kbd>
-- Vi command mode: <kbd>Ctrl</kbd>+<kbd>l</kbd>
+- Cmd: `<Ctrl+l>`
+- Emacs: `<Ctrl+l>`
+- Vi insert mode: `<Ctrl+l>`
+- Vi command mode: `<Ctrl+l>`
 
 ### DigitArgument
 
 Start a new digit argument to pass to other functions.
 
-- Cmd: <kbd>Alt</kbd>+<kbd>0</kbd>, <kbd>Alt</kbd>+<kbd>1</kbd>, <kbd>Alt</kbd>+<kbd>2</kbd>, <kbd>Alt</kbd>+<kbd>3</kbd>, <kbd>Alt</kbd>+<kbd>4</kbd>, <kbd>Alt</kbd>+<kbd>5</kbd>,
-  <kbd>Alt</kbd>+<kbd>6</kbd>, <kbd>Alt</kbd>+<kbd>7</kbd>, <kbd>Alt</kbd>+<kbd>8</kbd>, <kbd>Alt</kbd>+<kbd>9</kbd>, <kbd>Alt</kbd>+<kbd>-</kbd>
-- Emacs: <kbd>Alt</kbd>+<kbd>0</kbd>, <kbd>Alt</kbd>+<kbd>1</kbd>, <kbd>Alt</kbd>+<kbd>2</kbd>, <kbd>Alt</kbd>+<kbd>3</kbd>, <kbd>Alt</kbd>+<kbd>4</kbd>, <kbd>Alt</kbd>+<kbd>5</kbd>,
-  <kbd>Alt</kbd>+<kbd>6</kbd>, <kbd>Alt</kbd>+<kbd>7</kbd>, <kbd>Alt</kbd>+<kbd>8</kbd>, <kbd>Alt</kbd>+<kbd>9</kbd>, <kbd>Alt</kbd>+<kbd>-</kbd>
-- Vi command mode: <kbd>0</kbd>, <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, <kbd>4</kbd>, <kbd>5</kbd>, <kbd>6</kbd>, <kbd>7</kbd>,
-  <kbd>8</kbd>, <kbd>9</kbd>
+- Cmd: `<Alt+0>`, `<Alt+1>`, `<Alt+2>`, `<Alt+3>`, `<Alt+4>`, `<Alt+5>`,
+  `<Alt+6>`, `<Alt+7>`, `<Alt+8>`, `<Alt+9>`, `<Alt+->`
+- Emacs: `<Alt+0>`, `<Alt+1>`, `<Alt+2>`, `<Alt+3>`, `<Alt+4>`, `<Alt+5>`,
+  `<Alt+6>`, `<Alt+7>`, `<Alt+8>`, `<Alt+9>`, `<Alt+->`
+- Vi command mode: `<0>`, `<1>`, `<2>`, `<3>`, `<4>`, `<5>`, `<6>`, `<7>`,
+  `<8>`, `<9>`
 
 ### InvokePrompt
 
 Erases the current prompt and calls the prompt function to redisplay the
-prompt. Useful for custom key handlers that change state, e.g. change the
-current directory.
+prompt. Useful for custom key handlers that change state. For example, change
+the current directory.
 
 - Function is unbound.
 
@@ -963,41 +961,41 @@ current directory.
 
 Scroll the display down one screen.
 
-- Cmd: <kbd>PageDown</kbd>
-- Emacs: <kbd>PageDown</kbd>
+- Cmd: `<PageDown>`
+- Emacs: `<PageDown>`
 
 ### ScrollDisplayDownLine
 
 Scroll the display down one line.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>PageDown</kbd>
-- Emacs: <kbd>Ctrl</kbd>+<kbd>PageDown</kbd>
+- Cmd: `<Ctrl+PageDown>`
+- Emacs: `<Ctrl+PageDown>`
 
 ### ScrollDisplayToCursor
 
 Scroll the display to the cursor.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>End</kbd>
+- Emacs: `<Ctrl+End>`
 
 ### ScrollDisplayTop
 
 Scroll the display to the top.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>Home</kbd>
+- Emacs: `<Ctrl+Home>`
 
 ### ScrollDisplayUp
 
 Scroll the display up one screen.
 
-- Cmd: <kbd>PageUp</kbd>
-- Emacs: <kbd>PageUp</kbd>
+- Cmd: `<PageUp>`
+- Emacs: `<PageUp>`
 
 ### ScrollDisplayUpLine
 
 Scroll the display up one line.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>PageUp</kbd>
-- Emacs: <kbd>Ctrl</kbd>+<kbd>PageUp</kbd>
+- Cmd: `<Ctrl+PageUp>`
+- Emacs: `<Ctrl+PageUp>`
 
 ### SelfInsert
 
@@ -1009,15 +1007,15 @@ Insert the key.
 
 Show all bound keys.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>?</kbd>
-- Emacs: <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>?</kbd>
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>?</kbd>
+- Cmd: `<Ctrl+Alt+?>`
+- Emacs: `<Ctrl+Alt+?>`
+- Vi insert mode: `<Ctrl+Alt+?>`
 
 ### ViCommandMode
 
 Switch the current operating mode from Vi-Insert to Vi-Command.
 
-- Vi insert mode: <kbd>Escape</kbd>
+- Vi insert mode: `<Escape>`
 
 ### ViDigitArgumentInChord
 
@@ -1031,8 +1029,8 @@ chords.
 Edit the command line in a text editor specified by $env:EDITOR or
 $env:VISUAL.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>x,Ctrl</kbd>+<kbd>e</kbd>
-- Vi command mode: <kbd>v</kbd>
+- Emacs: `<Ctrl+x,Ctrl+e>`
+- Vi command mode: `<v>`
 
 ### ViExit
 
@@ -1044,14 +1042,14 @@ Exits the shell.
 
 Switch to Insert mode.
 
-- Vi command mode: <kbd>i</kbd>
+- Vi command mode: `<i>`
 
 ### WhatIsKey
 
 Read a key and tell me what the key is bound to.
 
-- Cmd: <kbd>Alt</kbd>+<kbd>?</kbd>
-- Emacs: <kbd>Alt</kbd>+<kbd>?</kbd>
+- Cmd: `<Alt+?>`
+- Emacs: `<Alt+?>`
 
 ## Selection functions
 
@@ -1060,61 +1058,61 @@ Read a key and tell me what the key is bound to.
 The cursor is placed at the location of the mark and the mark is moved to the
 location of the cursor.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd>x,Ctrl</kbd>+<kbd>x</kbd>
+- Emacs: `<Ctrl+x,Ctrl+x>`
 
 ### SelectAll
 
 Select the entire line.
 
-- Cmd: <kbd>Ctrl</kbd>+<kbd>a</kbd>
+- Cmd: `<Ctrl+a>`
 
 ### SelectBackwardChar
 
 Adjust the current selection to include the previous character.
 
-- Cmd: <kbd>Shift</kbd>+<kbd>LeftArrow</kbd>
-- Emacs: <kbd>Shift</kbd>+<kbd>LeftArrow</kbd>
+- Cmd: `<Shift+LeftArrow>`
+- Emacs: `<Shift+LeftArrow>`
 
 ### SelectBackwardsLine
 
 Adjust the current selection to include from the cursor to the start of the
 line.
 
-- Cmd: <kbd>Shift</kbd>+<kbd>Home</kbd>
-- Emacs: <kbd>Shift</kbd>+<kbd>Home</kbd>
+- Cmd: `<Shift+Home>`
+- Emacs: `<Shift+Home>`
 
 ### SelectBackwardWord
 
 Adjust the current selection to include the previous word.
 
-- Cmd: <kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>LeftArrow</kbd>
-- Emacs: <kbd>Alt</kbd>+<kbd>B</kbd>
+- Cmd: `<Shift+Ctrl+LeftArrow>`
+- Emacs: `<Alt+B>`
 
 ### SelectForwardChar
 
 Adjust the current selection to include the next character.
 
-- Cmd: <kbd>Shift</kbd>+<kbd>RightArrow</kbd>
-- Emacs: <kbd>Shift</kbd>+<kbd>RightArrow</kbd>
+- Cmd: `<Shift+RightArrow>`
+- Emacs: `<Shift+RightArrow>`
 
 ### SelectForwardWord
 
 Adjust the current selection to include the next word using ForwardWord.
 
-- Emacs: <kbd>Alt</kbd>+<kbd>F</kbd>
+- Emacs: `<Alt+F>`
 
 ### SelectLine
 
 Adjust the current selection to include from the cursor to the end of the line.
 
-- Cmd: <kbd>Shift</kbd>+<kbd>End</kbd>
-- Emacs: <kbd>Shift</kbd>+<kbd>End</kbd>
+- Cmd: `<Shift+End>`
+- Emacs: `<Shift+End>`
 
 ### SelectNextWord
 
 Adjust the current selection to include the next word.
 
-- Cmd: <kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>RightArrow</kbd>
+- Cmd: `<Shift+Ctrl+RightArrow>`
 
 ### SelectShellBackwardWord
 
@@ -1140,7 +1138,7 @@ Adjust the current selection to include the next word using ShellNextWord.
 Mark the current location of the cursor for use in a subsequent editing
 command.
 
-- Emacs: <kbd>Ctrl</kbd>+<kbd><kbd>/kbd>
+- Emacs: `<Ctrl+>`
 
 ## Search functions
 
@@ -1150,10 +1148,10 @@ Read a character and search forward for the next occurrence of that character.
 If an argument is specified, search forward (or backward if negative) for the
 nth occurrence.
 
-- Cmd: <kbd>F3</kbd>
-- Emacs: <kbd>Ctrl</kbd>+<kbd>]</kbd>
-- Vi insert mode: <kbd>F3</kbd>
-- Vi command mode: <kbd>F3</kbd>
+- Cmd: `<F3>`
+- Emacs: `<Ctrl+]>`
+- Vi insert mode: `<F3>`
+- Vi command mode: `<F3>`
 
 ### CharacterSearchBackward
 
@@ -1161,69 +1159,69 @@ Read a character and search backward for the next occurrence of that character. 
 argument is specified, search backward (or forward if negative) for the nth
 occurrence.
 
-- Cmd: <kbd>Shift</kbd>+<kbd>F3</kbd>
-- Emacs: <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>]</kbd>
-- Vi insert mode: <kbd>Shift</kbd>+<kbd>F3</kbd>
-- Vi command mode: <kbd>Shift</kbd>+<kbd>F3</kbd>
+- Cmd: `<Shift+F3>`
+- Emacs: `<Ctrl+Alt+]>`
+- Vi insert mode: `<Shift+F3>`
+- Vi command mode: `<Shift+F3>`
 
 ### RepeatLastCharSearch
 
 Repeat the last recorded character search.
 
-- Vi command mode: <kbd>;</kbd>
+- Vi command mode: `<;>`
 
 ### RepeatLastCharSearchBackwards
 
 Repeat the last recorded character search, but in the opposite direction.
 
-- Vi command mode: <kbd>,</kbd>
+- Vi command mode: `<,>`
 
 ### RepeatSearch
 
 Repeat the last search in the same direction as before.
 
-- Vi command mode: <kbd>n</kbd>
+- Vi command mode: `<n>`
 
 ### RepeatSearchBackward
 
 Repeat the last search in the same direction as before.
 
-- Vi command mode: <kbd>N</kbd>
+- Vi command mode: `<N>`
 
 ### SearchChar
 
 Read the next character and then find it, going forward, and then back off a
 character. This is for 't' functionality.
 
-- Vi command mode: <kbd>f</kbd>
+- Vi command mode: `<f>`
 
 ### SearchCharBackward
 
 Read the next character and then find it, going backward, and then back off a
 character. This is for 'T' functionality.
 
-- Vi command mode: <kbd>F</kbd>
+- Vi command mode: `<F>`
 
 ### SearchCharBackwardWithBackoff
 
 Read the next character and then find it, going backward, and then back off a
 character. This is for 'T' functionality.
 
-- Vi command mode: <kbd>T</kbd>
+- Vi command mode: `<T>`
 
 ### SearchCharWithBackoff
 
 Read the next character and then find it, going forward, and then back off a
 character. This is for 't' functionality.
 
-- Vi command mode: <kbd>t</kbd>
+- Vi command mode: `<t>`
 
 ### SearchForward
 
 Prompts for a search string and initiates search upon AcceptLine.
 
-- Vi insert mode: <kbd>Ctrl</kbd>+<kbd>s</kbd>
-- Vi command mode: <kbd>?</kbd>, <kbd>Ctrl</kbd>+<kbd>s</kbd>
+- Vi insert mode: `<Ctrl+s>`
+- Vi command mode: `<?>`, `<Ctrl+s>`
 
 ## Custom Key Bindings
 
@@ -1239,7 +1237,7 @@ You can bind a ScriptBlock to a key. The ScriptBlock can do pretty much
 anything you want. Some useful examples include
 
 - edit the command line
-- opening a new window (e.g. help)
+- opening a new window (for example, help)
 - change directories without changing the command line
 
 The ScriptBlock receives two arguments:
@@ -1346,7 +1344,7 @@ a custom key binding.
 void GetSelectionState([ref] int start, [ref] int length)
 ```
 
-If there is no selection on the command line, -1 will be returned in both
+If there is no selection on the command line, the function returns -1 in both
 start and length. If there is a selection on the command line, the start and
 length of the selection are returned.
 
@@ -1408,16 +1406,18 @@ typical call looks like
   [ref]$numericArg, 1)
 ```
 
-## Note
+## Notes
 
 ### Command History
 
-PSReadLine maintains a history file containing all the commands and data you have entered from the
-command line. This may contain sensitive data including passwords. For example, if you use the
-`ConvertTo-SecureString` cmdlet the password is logged in the history file as plain text. The
-history files is a file named `$($host.Name)_history.txt`. On Windows systems the history file is
-stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On non-Windows systems, the
-history files is stored at `$env:XDG_DATA_HOME/powershell/PSReadLine` or
+PSReadLine maintains a history file containing all the commands and data you
+have entered from the command line. This may contain sensitive data including
+passwords. For example, if you use the `ConvertTo-SecureString` cmdlet the
+password is logged in the history file as plain text. The history files is a
+file named `$($host.Name)_history.txt`. On Windows systems the history file is
+stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On
+non-Windows systems, the history files is stored at
+`$env:XDG_DATA_HOME/powershell/PSReadLine` or
 `$env:HOME/.local/share/powershell/PSReadLine`.
 
 ### Feedback & Contributing To PSReadLine

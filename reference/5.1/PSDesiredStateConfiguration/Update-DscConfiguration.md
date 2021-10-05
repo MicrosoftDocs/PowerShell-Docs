@@ -34,8 +34,8 @@ Update-DscConfiguration [-Wait] [-JobName <String>] [-ThrottleLimit <Int32>] -Ci
 The `Update-DscConfiguration` cmdlet connects to a pull server, downloads the configuration if it
 differs from what is current on the node, and then applies the configuration to the computer.
 
-This cmdlet is available only as part of the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850)
-from the Microsoft Support library.
+This cmdlet is available only as part of the
+[November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850).
 
 ## Examples
 
@@ -70,8 +70,9 @@ current command finishes.
 ### -CimSession
 
 Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session
-object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession)
-cmdlet. The default is the current session on the local computer.
+object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or
+[Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet. The default is the current
+session on the local computer.
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimSession[]
@@ -215,7 +216,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
