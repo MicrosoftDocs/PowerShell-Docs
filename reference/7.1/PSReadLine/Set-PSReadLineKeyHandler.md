@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 02/16/2021
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
@@ -86,8 +86,8 @@ the following example:
 `Ctrl+X,Ctrl+L`
 
 > [!NOTE]
-> As of PSReadLine 2.0.0, the **Chord** parameter is **case-sensitive**. Meaning, `Ctrl+X` and
-> `Ctrl+x` will create different bindings.
+> As of PSReadLine 2.0.0, the **Chord** parameter is **case-sensitive**. Meaning,
+> <kbd>Ctrl</kbd>+<kbd>X</kbd> and <kbd>Ctrl</kbd>+<kbd>x</kbd> will create different bindings.
 
 This parameter accepts an array of strings. Each string is a separate binding, not a sequence of
 keys for a single binding.
@@ -123,8 +123,8 @@ Accept wildcard characters: False
 
 ### -Function
 
-Specifies the name of an existing key handler provided by PSReadLine. This parameter lets you
-rebind existing key bindings, or bind a handler that is currently unbound.
+Specifies the name of an existing key handler provided by PSReadLine. This parameter lets you rebind
+existing key bindings, or bind a handler that is currently unbound.
 
 ```yaml
 Type: System.String
@@ -141,8 +141,8 @@ Accept wildcard characters: False
 ### -ScriptBlock
 
 Specifies a script block value to run when the chord is entered. PSReadLine passes one or two
-parameters to this script block. The first parameter is a **ConsoleKeyInfo** object representing
-the key pressed. The second argument can be any object depending on the context.
+parameters to this script block. The first parameter is a **ConsoleKeyInfo** object representing the
+key pressed. The second argument can be any object depending on the context.
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -162,8 +162,8 @@ Specify which vi mode the binding applies to.
 
 Valid values are:
 
-- Insert
-- Command
+- `Insert`
+- `Command`
 
 ```yaml
 Type: Microsoft.PowerShell.ViMode
@@ -181,8 +181,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -207,4 +206,3 @@ This cmdlet does not generate any output.
 [Get-PSReadLineOption](Get-PSReadLineOption.md)
 
 [Set-PSReadLineOption](Set-PSReadLineOption.md)
-

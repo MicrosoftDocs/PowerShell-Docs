@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 06/09/2017
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/powershellget/get-installedscript?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-InstalledScript
@@ -21,28 +21,25 @@ Get-InstalledScript [[-Name] <String[]>] [-MinimumVersion <String>] [-RequiredVe
 
 ## Description
 
-The **Get-InstalledScript** cmdlet gets installed scripts for CurrentUser and AllUsers scopes.
+The `Get-InstalledScript` cmdlet gets installed scripts for **CurrentUser** and **AllUsers** scopes.
 
 ## Examples
 
 ### Example 1: Get all installed scripts
 
-```
-PS C:\> Get-InstalledScript
-Version    Name                                Type       Repository           Description
--------    ----                                ----       ----------           -----------
-2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script
-2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script
-2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script
-2.0        Script-WithDependencies1            Script     local1               Description for the Script-WithDependencies1 script
+```powershell
+Get-InstalledScript
 ```
 
 This command gets all installed scripts.
 
 ### Example 2: Get installed scripts by name
 
+```powershell
+Get-InstalledScript -Name "Required-Scri*"
 ```
-PS C:\> Get-InstalledScript -Name "Required-Scri*"
+
+```Output
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script
@@ -50,7 +47,7 @@ Version    Name                                Type       Repository           D
 2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script
 ```
 
-This command gets scripts where the name begins with Required-Scri.
+This command gets scripts where the name begins with **Required-Scri**.
 
 ## Parameters
 
@@ -72,8 +69,9 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-Specifies the maximum, or latest, version of a script to get.
-The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+Specifies the maximum, or latest, version of a script to get. The **MaximumVersion** and
+**RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same
+command.
 
 ```yaml
 Type: System.String
@@ -89,8 +87,8 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Specifies the minimum version of a script to get.
-The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+Specifies the minimum version of a script to get. The **MinimumVersion** and **RequiredVersion**
+parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
 Type: System.String
@@ -106,8 +104,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies an array of names of scripts to get.
-Wildcards are accepted.
+Specifies an array of names of scripts to get. Wildcards are accepted.
 
 ```yaml
 Type: System.String[]
@@ -139,11 +136,19 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
+### System.String[]
+
+### System.String
+
 ## Outputs
+
+### System.Object
 
 ## Notes
 

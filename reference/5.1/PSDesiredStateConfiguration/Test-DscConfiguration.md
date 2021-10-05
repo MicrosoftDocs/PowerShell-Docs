@@ -2,7 +2,7 @@
 external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
 Locale: en-US
 Module Name: PSDesiredStateConfiguration
-ms.date: 06/09/2017
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/test-dscconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-DscConfiguration
@@ -58,9 +58,11 @@ Test-DscConfiguration [-ThrottleLimit <Int32>] -CimSession <CimSession[]> [-AsJo
 ```
 
 ## Description
-The **Test-DscConfiguration** cmdlet tests whether the actual configuration on the nodes matches the desired configuration.
-Specify which computers for which you want to test configurations by using computer names or Common Information Model (CIM) sessions.
-If you do not specify a target computer, the cmdlet tests configuration of the local computer.
+
+The `Test-DscConfiguration` cmdlet tests whether the actual configuration on the nodes matches the
+desired configuration. Specify which computers for which you want to test configurations by using
+computer names or Common Information Model (CIM) sessions. If you do not specify a target computer,
+the cmdlet tests configuration of the local computer.
 
 If the desired and actual configurations match, the cmdlet returns a string value of 'True'.
 Otherwise, it returns a string value of 'False'.
@@ -69,69 +71,77 @@ Otherwise, it returns a string value of 'False'.
 
 ### Example 1: Test configuration for the local computer
 
-```
-PS C:\> Test-DscConfiguration
+```powershell
+Test-DscConfiguration
 ```
 
 This command tests configuration for the local computer.
 
 ### Example 2: Test configuration for a specified computer
 
+```powershell
+$Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
+Test-DscConfiguration -CimSession $Session
 ```
-PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
-PS C:\> Test-DscConfiguration -CimSession $Session
-```
 
-This example test configuration from a computer specified by a CIM session.
-The example creates a CIM session for a computer named Server01 for use with the cmdlet.
-Alternatively, create an array of CIM sessions to apply the cmdlet to multiple specified computers.
+This example test configuration from a computer specified by a CIM session. The example creates a
+CIM session for a computer named Server01 for use with the cmdlet. Alternatively, create an array of
+CIM sessions to apply the cmdlet to multiple specified computers.
 
-The first command creates a CIM session by using the **New-CimSession** cmdlet, and then stores the **CimSession** object in the $Session variable.
-The command prompts you for a password.
-For more information, type `Get-Help New-CimSession`.
+The first command creates a CIM session by using the `New-CimSession` cmdlet, and then stores the
+**CimSession** object in the `$Session` variable. The command prompts you for a password. For more
+information, type `Get-Help New-CimSession`.
 
-The second command tests configuration for the computers identified by the **CimSession** objects stored in the $Session variable, in this case, the computer named Server01.
+The second command tests configuration for the computers identified by the **CimSession** objects
+stored in the `$Session` variable, in this case, the computer named Server01.
 
 ### Example 3: Test configurations with detailed results
 
-```
-PS C:\> Test-DscConfiguration -ComputerName "Server01", "Server02", "Server03" -Detailed
+```powershell
+Test-DscConfiguration -ComputerName "Server01", "Server02", "Server03" -Detailed
 ```
 
-This command tests configurations for a set of computers specified by the *ComputerName* parameter and returns detailed information that includes the overall state, resources that are in the desired state, resources that are not in the desired state and computer name.
+This command tests configurations for a set of computers specified by the **ComputerName** parameter
+and returns detailed information that includes the overall state, resources that are in the desired
+state, resources that are not in the desired state and computer name.
 
 ### Example 4: Test configurations specified in a folder
 
-```
-PS C:\> Test-DscConfiguration -Path "C:\Dsc\Configurations"
+```powershell
+Test-DscConfiguration -Path "C:\Dsc\Configurations"
 ```
 
-This command tests configurations that are defined in a folder specified by the *Path* parameter.
-The configurations are tested against a set of computers, each identified by the file name of the configuration file.
+This command tests configurations that are defined in a folder specified by the **Path** parameter.
+The configurations are tested against a set of computers, each identified by the file name of the
+configuration file.
 
 ### Example 5: Test configurations specified in a file
 
-```
-PS C:\> Test-DscConfiguration -ReferenceConfiguration "C:\Dsc\Configurations\WebServer.mof" -ComputerName "Server01", "Server02", "Server03"
+```powershell
+Test-DscConfiguration -ReferenceConfiguration "C:\Dsc\Configurations\WebServer.mof" -ComputerName "Server01", "Server02", "Server03"
 ```
 
-This command tests a configuration defined in a file against a set of computers specified by the *ComputerName* parameter.
+This command tests a configuration defined in a file against a set of computers specified by the
+**ComputerName** parameter.
 
 ## Parameters
 
 ### -AsJob
+
 Indicates that this cmdlet runs the command as a background job.
 
-If you specify the *AsJob* parameter, the command returns an object that represents the job, and then displays the command prompt.
-You can continue to work in the session until the job finishes.
-The job is created on the local computer and the results from remote computers are automatically returned to the local computer.
-To manage the job, use the Job cmdlets.
-To get the job results, use the Receive-Job cmdlet.
+If you specify the **AsJob** parameter, the command returns an object that represents the job, and
+then displays the command prompt. You can continue to work in the session until the job finishes.
+The job is created on the local computer and the results from remote computers are automatically
+returned to the local computer. To manage the job, use the Job cmdlets. To get the job results, use
+the `Receive-Job` cmdlet.
 
-To use this parameter, the local and remote computers must be configured for remoting, and on Windows Vista and later versions of the Windows operating system, you must open Windows PowerShell with the Run as administrator option.
-For more information, see [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
+To use this parameter, the local and remote computers must be configured for remoting, and on
+Windows Vista and later versions of the Windows operating system, you must open Windows PowerShell
+with the Run as administrator option. For more information, see [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
 
-For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
+For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md)
+and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -146,9 +156,10 @@ Accept wildcard characters: False
 ```
 
 ### -CimSession
-Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet.
-The default is the current session on the local computer.
+
+Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session
+object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession)
+cmdlet. The default is the current session on the local computer.
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimSession[]
@@ -163,8 +174,9 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-Specifies an array of computer names on which this cmdlet tests the configuration.
-The cmdlet tests the configuration document in the location specified by the *Path* parameter to these computers.
+
+Specifies an array of computer names on which this cmdlet tests the configuration. The cmdlet tests
+the configuration document in the location specified by the **Path** parameter to these computers.
 
 ```yaml
 Type: System.String[]
@@ -179,9 +191,10 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-Specifies a user name and password, as a **PSCredential** object, for the target computer.
-To obtain a **PSCredential** object, use the Get-Credential cmdlet.
-For more information, type `Get-Help Get-Credential`.
+
+Specifies a user name and password, as a **PSCredential** object, for the target computer. To obtain
+a **PSCredential** object, use the `Get-Credential` cmdlet. For more information, type
+`Get-Help Get-Credential`.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -196,8 +209,10 @@ Accept wildcard characters: False
 ```
 
 ### -Detailed
-Indicates that this cmdlet returns a detailed result of comparing the configuration document with the desired state of the nodes.
-The result includes information such as overall state, resources that are in the desired state, resources that are not in desired state, and computer name.
+
+Indicates that this cmdlet returns a detailed result of comparing the configuration document with
+the desired state of the nodes. The result includes information such as overall state, resources
+that are in the desired state, resources that are not in desired state, and computer name.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -212,8 +227,10 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the path of a folder that contains configuration document files.
-The cmdlet tests the configuration against the desired state of computers specified by the *ComputerName* or *CimSession* parameter.
+
+Specifies the path of a folder that contains configuration document files. The cmdlet tests the
+configuration against the desired state of computers specified by the **ComputerName** or
+**CimSession** parameter.
 
 ```yaml
 Type: System.String
@@ -228,8 +245,9 @@ Accept wildcard characters: False
 ```
 
 ### -ReferenceConfiguration
-Specifies the path of the configuration document file.
-This cmdlet tests the configuration against the actual state of computers specified by the *ComputerName* or *CimSession* parameter.
+
+Specifies the path of the configuration document file. This cmdlet tests the configuration against
+the actual state of computers specified by the **ComputerName** or **CimSession** parameter.
 
 ```yaml
 Type: System.String
@@ -244,9 +262,12 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
-Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
-If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
-The throttle limit applies only to the current cmdlet, not to the session or to the computer.
+
+Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If
+this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an
+optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the
+computer. The throttle limit applies only to the current cmdlet, not to the session or to the
+computer.
 
 ```yaml
 Type: System.Int32
@@ -261,7 +282,10 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

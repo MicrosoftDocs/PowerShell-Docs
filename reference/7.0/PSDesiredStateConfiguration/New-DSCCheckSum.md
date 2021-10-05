@@ -2,7 +2,7 @@
 external help file: PSDesiredStateConfiguration-help.xml
 Locale: en-US
 Module Name: PSDesiredStateConfiguration
-ms.date: 06/09/2017
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/new-dscchecksum?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-DscChecksum
@@ -20,30 +20,32 @@ New-DscChecksum [-Path] <String[]> [[-OutPath] <String>] [-Force] [-WhatIf] [-Co
 
 ## Description
 
-The **New-DSCCheckSum** cmdlet generates checksum files for PowerShell Desired State Configuration (DSC) documents and compressed DSC resources.
-This cmdlet generates a checksum file for each configuration and resource to be used in pull mode.
-The DSC service uses the checksums to make sure that the correct configuration and resources exist on the target node.
-Place the checksums together with the associated DSC documents and compressed DSC resources in the DSC service store.
+The `New-DSCCheckSum` cmdlet generates checksum files for Windows PowerShell Desired State
+Configuration (DSC) documents and compressed DSC resources. This cmdlet generates a checksum file
+for each configuration and resource to be used in pull mode. The DSC service uses the checksums to
+make sure that the correct configuration and resources exist on the target node. Place the checksums
+together with the associated DSC documents and compressed DSC resources in the DSC service store.
 
 ## Examples
 
 ### Example 1: Create checksum files for all configurations in a specific path
 
-```
-PS C:\> New-DscCheckSum -Path "C:\DSC\Configurations\"
+```powershell
+New-DscCheckSum -Path "C:\DSC\Configurations\"
 ```
 
-This command creates checksum files for all configurations in the path C:\DSC\Configurations.
-Any checksum files that already exist are skipped.
+This command creates checksum files for all configurations in the path C:\DSC\Configurations. Any
+checksum files that already exist are skipped.
 
 ### Example 2: Create checksum files for all configurations in a specific path and overwrite the existing checksum files
 
-```
-PS C:\> New-DscCheckSum -Path "C:\DSC\Configurations\" -Force
+```powershell
+New-DscCheckSum -Path "C:\DSC\Configurations\" -Force
 ```
 
 This command creates new checksum files for all configurations in the path C:\DSC\Configurations.
-Specifying the *Force* parameter causes the command to overwrite any checksum files that already exist.
+Specifying the **Force** parameter causes the command to overwrite any checksum files that already
+exist.
 
 ## Parameters
 
@@ -113,8 +115,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -130,7 +131,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

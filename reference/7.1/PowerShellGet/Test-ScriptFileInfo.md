@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 06/09/2017
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/powershellget/test-scriptfileinfo?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-ScriptFileInfo
@@ -28,18 +28,16 @@ Test-ScriptFileInfo -LiteralPath <String> [<CommonParameters>]
 
 ## Description
 
-The **Test-ScriptFileInfo** cmdlet validates the comment block at the beginning of a script that will be published with the Publish-Script cmdlet.
-If the comment block has an error, this cmdlet returns information about where the error is located or how to correct it.
+The `Test-ScriptFileInfo` cmdlet validates the comment block at the beginning of a script that will
+be published with the Publish-Script cmdlet. If the comment block has an error, this cmdlet returns
+information about where the error is located or how to correct it.
 
 ## Examples
 
 ### Example 1: Test a script file
 
-```
-PS C:\> Test-ScriptFileInfo -Path "C:\temp\temp_scripts\New-ScriptFile.ps1"
-Version    Name                      Author               Description
--------    ----                      ------               -----------
-1.0        New-ScriptFile            pattif               my new script file test
+```powershell
+Test-ScriptFileInfo -Path "C:\temp\temp_scripts\New-ScriptFile.ps1"
 ```
 
 This command tests the New-ScriptFile.ps1 script file and displays the results.
@@ -47,8 +45,11 @@ The script file includes valid metadata.
 
 ### Example 2: Test a script file that has values for all metadata properties
 
+```powershell
+Test-ScriptFileInfo -Path "D:\code\Test-Runbook.ps1" | Format-List *
 ```
-PS C:\> Test-ScriptFileInfo -Path "D:\code\Test-Runbook.ps1" | Format-List *
+
+```Output
 Name                       : Test-Runbook
 Path                       : D:\code\Test-Runbook.ps1
 ScriptBase                 : D:\code
@@ -76,8 +77,11 @@ This command tests the script file Test-Runbook.ps1 and uses the pipeline operat
 
 ### Example 3: Test a script file that has no metadata
 
+```powershell
+Test-ScriptFileInfo -Path "D:\code\Hello-World.ps1"
 ```
-PS C:\> Test-ScriptFileInfo -Path "D:\code\Hello-World.ps1"
+
+```Output
 Test-ScriptFileInfo : Script 'D:\code\Hello-World.ps1' is missing required metadata properties. Verify that the script file has Version, Description
 and Author properties. You can use the Update-ScriptFileInfo or New-ScriptFileInfo cmdlet to add or update the PSScriptInfo to the script file.
 At line:1 char:1
@@ -94,11 +98,10 @@ This command tests the script file Hello-World.ps1, which has no metadata associ
 
 ### -LiteralPath
 
-Specifies a path to one or more locations.
-Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as it is entered.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose them in single quotation marks.
-Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+Specifies a path to one or more locations. Unlike the **Path** parameter, the value of the
+**LiteralPath** parameter is used exactly as it is entered. No characters are interpreted as
+wildcards. If the path includes escape characters, enclose them in single quotation marks. Single
+quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: System.String
@@ -114,9 +117,8 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies a path to one or more locations.
-Wildcards are permitted.
-The default location is the current directory (.).
+Specifies a path to one or more locations. Wildcards are permitted. The default location is the
+current directory (`.`).
 
 ```yaml
 Type: System.String
@@ -132,7 +134,9 @@ Accept wildcard characters: True
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -151,4 +155,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Publish-Script](Publish-Script.md)
 
 [Update-ScriptFileInfo](Update-ScriptFileInfo.md)
-

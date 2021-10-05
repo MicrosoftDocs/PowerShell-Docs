@@ -2,7 +2,7 @@
 external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-help.xml
 Locale: en-US
 Module Name: PSDesiredStateConfiguration
-ms.date: 08/11/2020
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-DscResource
@@ -70,7 +70,11 @@ Invoke-DscResource @SplatParam
 ### -Method
 
 Specifies the method of the resource that this cmdlet invokes. The acceptable values for this
-parameter are: **Get**, **Set**, and **Test**.
+parameter are:
+
+- `Get`
+- `Set`
+- `Test`
 
 ```yaml
 Type: String
@@ -137,8 +141,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 05/22/2019
+ms.date: 10/04/2021
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-package?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Package
@@ -87,7 +87,7 @@ PowerShellGet         2.0.1        https://www.powershellgallery.com/api/v2   Po
 ```
 
 `Get-Package` uses the **ProviderName** parameter to specify a specific provider, **PowerShellGet**.
-The **All-Versions** parameter displays each version that is installed.
+The **AllVersions** parameter displays each version that is installed.
 
 ### Example 4: Get an exact version of a specific package
 
@@ -105,7 +105,7 @@ PackageManagement     1.3.1        https://www.powershellgallery.com/api/v2   Po
 ```
 
 `Get-Package` uses **Name** parameter to specify the package name, **PackageManagement**. The
-**ProviderName** parameter specifies the provider, **PowerShellGet**. The **Required-Version**
+**ProviderName** parameter specifies the provider, **PowerShellGet**. The **RequiredVersion**
 parameter specifies an installed version.
 
 ### Example 5: Uninstall a package
