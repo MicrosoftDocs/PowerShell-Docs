@@ -1,7 +1,7 @@
 ---
 description: PowerShell has had cmdlets for working with WMI since the beginning.
 ms.custom: Contributor-mikefrobbins
-ms.date: 06/02/2020
+ms.date: 10/05/2021
 ms.reviewer: mirobb
 title: Working with WMI
 ---

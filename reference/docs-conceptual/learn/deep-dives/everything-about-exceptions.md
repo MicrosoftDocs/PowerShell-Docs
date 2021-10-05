@@ -1,7 +1,7 @@
 ---
 description: Error handling is just part of life when it comes to writing code.
 ms.custom: contributor-KevinMarquette
-ms.date: 05/23/2020
+ms.date: 10/05/2021
 title: Everything you wanted to know about exceptions
 ---
 # Everything you wanted to know about exceptions

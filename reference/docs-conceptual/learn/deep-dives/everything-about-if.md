@@ -1,7 +1,7 @@
 ---
 description: Like many other languages, PowerShell has statements for conditionally executing code in your scripts.
 ms.custom: contributor-KevinMarquette
-ms.date: 06/09/2021
+ms.date: 10/05/2021
 title: Everything you wanted to know about the if statement
 ---
 # Everything you wanted to know about the `if` statement
