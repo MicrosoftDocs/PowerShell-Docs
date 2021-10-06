@@ -57,7 +57,7 @@ WindowsFeatureSet [string] #ResourceName
 
 ## Example
 
-The following configuration ensures that the `Web-Server` (IIS) and **SMTP Server** features, and
+The following configuration ensures that the **Web-Server (IIS)** and **SMTP Server** features, and
 all subfeatures of each, are installed.
 
 ```powershell

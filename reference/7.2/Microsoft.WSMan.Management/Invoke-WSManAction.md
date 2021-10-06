@@ -145,7 +145,7 @@ Accept wildcard characters: False
 Specifies the application name in the connection. The default value of the ApplicationName parameter
 is WSMAN. The complete identifier for the remote endpoint is in the following format:
 
-\<transport\>://\<server\>:\<port\>/\<ApplicationName\>
+`<Transport>://<Server>:<Port>/<ApplicationName>`
 
 For example:
 
@@ -253,7 +253,7 @@ Accept wildcard characters: False
 
 Specifies the connection endpoint. The format of this string is:
 
-\<Transport\>://\<Server\>:\<Port\>/\<ApplicationName\>
+`<Transport>://<Server>:<Port>/<ApplicationName>`
 
 The following string is a properly formatted value for this parameter:
 
