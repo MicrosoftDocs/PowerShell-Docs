@@ -1,6 +1,6 @@
 ---
 description: This article provides troubleshooting instruction for common errors.
-ms.date: 08/09/2021
+ms.date: 10/05/2021
 title: Troubleshooting DSC
 ---
 # Troubleshooting DSC
@@ -548,7 +548,7 @@ PowerShell DSC resource.
 
 To identify which process is hosting the DSC engine and stop it on a per instance basis, you can
 list the process ID of the WmiPrvSE which is hosting the DSC engine. Then, to update the provider,
-stop the WmiPrvSE process using the commands below, and then run **Start-DscConfiguration** again.
+stop the WmiPrvSE process using the commands below, and then run `Start-DscConfiguration` again.
 
 ```powershell
 ###
@@ -578,7 +578,7 @@ let's look at the default configuration:
 PS C:\> Get-DscLocalConfigurationManager
 ```
 
-```output
+```Output
 AllowModuleOverwrite           : False
 CertificateID                  :
 ConfigurationID                :
@@ -720,7 +720,7 @@ onlyProperty                            PSComputerName
 When applying a metaconfiguration to a server to register it with an instance of Windows Pull Server,
 you might encounter the following error.
 
-```
+```Output
 Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server
 https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
     + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
@@ -737,7 +737,7 @@ Server instance to use a certificate with a corrected name.
 When attempting to run Sysprep to generalize a Windows Server after applying a DSC configuration,
 you might encounter the following error.
 
-```
+```Output
 SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
 ```
 

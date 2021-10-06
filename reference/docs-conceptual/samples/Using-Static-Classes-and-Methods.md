@@ -1,22 +1,30 @@
 ---
 description: This article explains how to identify and use the properties and methods of .NET static classes.
-ms.date: 06/05/2017
+ms.date: 10/05/2021
 title: Using Static Classes and Methods
 ---
 # Using Static Classes and Methods
 
-Not all .NET Framework classes can be created by using **New-Object**. For example, if you try to
-create a **System.Environment** or a **System.Math** object with **New-Object**, you will get the
+Not all .NET Framework classes can be created by using `New-Object`. For example, if you try to
+create a **System.Environment** or a **System.Math** object with `New-Object`, you will get the
 following error messages:
 
+```powershell
+New-Object System.Environment
 ```
-PS> New-Object System.Environment
+
+```Output
 New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Environment.
 At line:1 char:11
 + New-Object  <<<< System.Environment
+```
 
-PS> New-Object System.Math
+```powershell
+New-Object System.Math
+```
+
+```Output
 New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Math.
 At line:1 char:11
@@ -25,7 +33,7 @@ At line:1 char:11
 
 These errors occur because there is no way to create a new object from these classes. These classes
 are reference libraries of methods and properties that do not change state. You don't need to create
-them, you simply use them. Classes and methods such as these are called *static classes* because
+them, you simply use them. Classes and methods such as these are called **static classes** because
 they are not created, destroyed, or changed. To make this clear we will provide examples that use
 static classes.
 
@@ -41,9 +49,11 @@ You can refer to a static class by surrounding the class name with square bracke
 can refer to **System.Environment** by typing the name within brackets. Doing so displays some
 generic type information:
 
+```powershell
+[System.Environment]
 ```
-PS> [System.Environment]
 
+```Output
 IsPublic IsSerial Name                                     BaseType
 -------- -------- ----                                     --------
 True     False    Environment                              System.Object
@@ -51,26 +61,30 @@ True     False    Environment                              System.Object
 
 > [!NOTE]
 > As we mentioned previously, Windows PowerShell automatically prepends '**System.**' to type names
-> when you use **New-Object**. The same thing happens when using a bracketed type name, so you can
+> when you use `New-Object`. The same thing happens when using a bracketed type name, so you can
 > specify **\[System.Environment]** as **\[Environment]**.
 
 The **System.Environment** class contains general information about the working environment for the
-current process, which is powershell.exe when working within Windows PowerShell.
+current process, which is `powershell.exe` when working within Windows PowerShell.
 
 If you try to view details of this class by typing **\[System.Environment] | Get-Member**, the
 object type is reported as being **System.RuntimeType** , not **System.Environment**:
 
+```powershell
+[System.Environment] | Get-Member
 ```
-PS> [System.Environment] | Get-Member
 
+```Output
    TypeName: System.RuntimeType
 ```
 
 To view static members with Get-Member, specify the **Static** parameter:
 
+```powershell
+[System.Environment] | Get-Member -Static
 ```
-PS> [System.Environment] | Get-Member -Static
 
+```Output
    TypeName: System.Environment
 
 Name                       MemberType Definition
@@ -102,20 +116,25 @@ We can now select properties to view from System.Environment.
 ### Displaying Static Properties of System.Environment
 
 The properties of System.Environment are also static, and must be specified in a different way than
-normal properties. We use **::** to indicate to Windows PowerShell that we want to work with a
-static method or property. To see the command that was used to launch Windows PowerShell, we check
-the **CommandLine** property by typing:
+normal properties. We use `::` to indicate to Windows PowerShell that we want to work with a static
+method or property. To see the command that was used to launch Windows PowerShell, we check the
+**CommandLine** property by typing:
 
+```powershell
+[System.Environment]::Commandline
 ```
-PS> [System.Environment]::Commandline
+
+```Output
 "C:\Program Files\Windows PowerShell\v1.0\powershell.exe"
 ```
 
 To check the operating system version, display the OSVersion property by typing:
 
+```powershell
+[System.Environment]::OSVersion
 ```
-PS> [System.Environment]::OSVersion
 
+```Output
            Platform ServicePack         Version             VersionString
            -------- -----------         -------             -------------
             Win32NT Service Pack 2      5.1.2600.131072     Microsoft Windows...
@@ -124,15 +143,18 @@ PS> [System.Environment]::OSVersion
 We can check whether the computer is in the process of shutting down by displaying the
 **HasShutdownStarted** property:
 
+```powershell
+[System.Environment]::HasShutdownStarted
 ```
-PS> [System.Environment]::HasShutdownStarted
+
+```Output
 False
 ```
 
 ## Doing Math with System.Math
 
 The System.Math static class is useful for performing some mathematical operations. The important
-members of **System.Math** are mostly methods, which we can display by using **Get-Member**.
+members of **System.Math** are mostly methods, which we can display by using `Get-Member`.
 
 > [!NOTE]
 > System.Math has several methods with the same name, but they are distinguished by the type of
@@ -140,9 +162,11 @@ members of **System.Math** are mostly methods, which we can display by using **G
 
 Type the following command to list the methods of the **System.Math** class.
 
+```powershell
+[System.Math] | Get-Member -Static -MemberType Methods
 ```
-PS> [System.Math] | Get-Member -Static -MemberType Methods
 
+```Output
    TypeName: System.Math
 
 Name            MemberType Definition
@@ -180,25 +204,25 @@ Truncate        Method     static System.Decimal Truncate(Decimal d), static...
 This displays several mathematical methods. Here is a list of commands that demonstrate how some of
 the common methods work:
 
-```
-PS> [System.Math]::Sqrt(9)
+```powershell
+[System.Math]::Sqrt(9)
 3
-PS> [System.Math]::Pow(2,3)
+[System.Math]::Pow(2,3)
 8
-PS> [System.Math]::Floor(3.3)
+[System.Math]::Floor(3.3)
 3
-PS> [System.Math]::Floor(-3.3)
+[System.Math]::Floor(-3.3)
 -4
-PS> [System.Math]::Ceiling(3.3)
+[System.Math]::Ceiling(3.3)
 4
-PS> [System.Math]::Ceiling(-3.3)
+[System.Math]::Ceiling(-3.3)
 -3
-PS> [System.Math]::Max(2,7)
+[System.Math]::Max(2,7)
 7
-PS> [System.Math]::Min(2,7)
+[System.Math]::Min(2,7)
 2
-PS> [System.Math]::Truncate(9.3)
+[System.Math]::Truncate(9.3)
 9
-PS> [System.Math]::Truncate(-9.3)
+[System.Math]::Truncate(-9.3)
 -9
 ```

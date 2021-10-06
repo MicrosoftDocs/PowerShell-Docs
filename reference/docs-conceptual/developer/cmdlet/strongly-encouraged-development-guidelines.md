@@ -1,6 +1,6 @@
 ---
 description: Strongly Encouraged Development Guidelines
-ms.date: 09/13/2016
+ms.date: 10/05/2021
 ms.topic: reference
 title: Strongly Encouraged Development Guidelines
 ---
@@ -27,7 +27,7 @@ a noun refers to a server that is running an instance of Microsoft SQL Server, u
 to quickly discover and anticipate functionality while avoiding duplication among cmdlet names.
 
 To enhance the user experience, the noun that you choose for a cmdlet name should be singular. For
-example, use the name `Get-Process` instead of **Get-Processes**. It is best to follow this rule for
+example, use the name `Get-Process` instead of `Get-Processes`. It is best to follow this rule for
 all cmdlet names, even when a cmdlet is likely to act upon more than one item.
 
 ### Use Pascal Case for Cmdlet Names (SD02)
@@ -278,7 +278,7 @@ data.
 
 A cmdlet should support wildcard characters if possible. Support for wildcard characters occurs in
 many places in a cmdlet (especially when a parameter takes a string to identify one object from a
-set of objects). For example, the sample **Stop-Proc** cmdlet from the
+set of objects). For example, the sample `Stop-Proc` cmdlet from the
 [StopProc Tutorial](./stopproc-tutorial.md) defines a `Name` parameter to handle strings that
 represent process names. This parameter supports wildcard characters so that the user can easily
 specify the processes to stop.

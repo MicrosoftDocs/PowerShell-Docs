@@ -1,6 +1,6 @@
 ---
 description: An ISEMenuItemCollection object is a collection of ISEMenuItem objects.
-ms.date: 12/31/2019
+ms.date: 10/05/2021
 title: The ISEMenuItemCollection Object
 ---
 

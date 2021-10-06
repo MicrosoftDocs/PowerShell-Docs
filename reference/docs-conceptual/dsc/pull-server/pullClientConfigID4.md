@@ -1,6 +1,6 @@
 ---
 description: This article explains how to set up a Pull Client using Configuration IDs in PowerShell 4.0
-ms.date: 12/12/2018
+ms.date: 10/05/2021
 title: Set up a Pull Client using Configuration IDs in PowerShell 4.0
 ---
 
@@ -35,7 +35,7 @@ Executing any of the examples below creates a new output folder named **PullClie
 puts a metaconfiguration MOF file there. In this case, the metaconfiguration MOF file will be named
 `localhost.meta.mof`.
 
-To apply the configuration, call the **Set-DscLocalConfigurationManager** cmdlet, with the **Path**
+To apply the configuration, call the `Set-DscLocalConfigurationManager` cmdlet, with the **Path**
 set to the location of the metaconfiguration MOF file. For example:
 
 ```powershell
@@ -47,7 +47,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 The examples below set the **ConfigurationID** property of the LCM to a **Guid** that had been
 previously created for this purpose. The **ConfigurationID** is what the LCM uses to find the
 appropriate configuration on the pull server. The configuration MOF file on the pull server must be
-named `ConfigurationID.mof`, where *ConfigurationID* is the value of the **ConfigurationID**
+named `ConfigurationID.mof`, where **ConfigurationID** is the value of the **ConfigurationID**
 property of the target node's LCM. For more information, see
 [Publish Configurations to a Pull Server (v4/v5)](publishConfigs.md).
 
