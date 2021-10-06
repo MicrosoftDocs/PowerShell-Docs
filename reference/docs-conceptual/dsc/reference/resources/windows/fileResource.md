@@ -1,6 +1,6 @@
 ---
 description: DSC File Resource
-ms.date: 07/16/2020
+ms.date: 10/05/2021
 ms.topic: reference
 title: DSC File Resource
 ---
@@ -40,7 +40,7 @@ File [string] #ResourceName
 |Property |Description |
 |---|---|
 |DestinationPath |The location, on the target node, you want to ensure is **Present** or **Absent** with **Ensure**. |
-|Attributes |The desired state of the attributes for the targeted file or directory. Valid values are _Archive_, _Hidden_, _ReadOnly_, and _System_. |
+|Attributes |The desired state of the attributes for the targeted file or directory. Valid values are `Archive`, `Hidden`, `ReadOnly`, and `System`. |
 |Checksum |The checksum type to use when determining whether two files are the same. Valid values include: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. |
 |Contents |Only valid when used with **Type** **File**. Indicates the contents to **Ensure** are **Present** or **Absent** from the targeted file. |
 |Credential |The credentials that are required to access resources, such as source files. |
@@ -81,8 +81,8 @@ File [string] #ResourceName
   contents of the existing directory will be copied. Only the directory specified will be copied.
 - If you specified a value of **ReadOnly** for the **Attributes** property alongside a
   **DestinationPath**, **Ensure** **Present** would create the path specified, while **Contents**
-  would set the contents of the file. An **Ensure** **Absent** setting would ignore the **Attributes**
-  property entirely, and remove any file at the specified path.
+  would set the contents of the file. An **Ensure** **Absent** setting would ignore the
+  **Attributes** property entirely, and remove any file at the specified path.
 
 ## Example
 

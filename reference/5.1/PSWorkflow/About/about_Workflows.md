@@ -1,7 +1,7 @@
 ---
 description: Provides a brief introduction to the PowerShell Workflow feature.
 Locale: en-US
-ms.date: 06/09/2017
+ms.date: 10/05/2021
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Workflows
@@ -99,8 +99,8 @@ Get-Command -CommandType Workflow
 To run a workflow, use the following procedure.
 
 1. When the managed node is the local computer, this step isn't required.
-   Otherwise, on the client computer, start PowerShell with the **Run as
-   administrator** option.
+   Otherwise, on the client computer, start PowerShell with the Run as
+   administrator option.
 
    ```powershell
    Start-Process PowerShell -Verb RunAs
@@ -175,7 +175,7 @@ To run a workflow, use the following procedure.
    managed nodes, target computers, use the **PSComputerName** workflow common
    parameter.
 
-   The following examples run the workflow named **Test-Workflow**.
+   The following examples run the workflow named `Test-Workflow`.
 
    Where the managed node is the computer that hosts the workflow session:
 
@@ -190,7 +190,7 @@ To run a workflow, use the following procedure.
    Test-Workflow -PSComputerName Server01, Server02 }
    ```
 
-   The following example runs the **Test-Workflow** on hundreds of computers. The
+   The following example runs the `Test-Workflow` on hundreds of computers. The
    `Get-Content` cmdlet gets the computer names from a text file and saves them in
    the `$Servers` variable on the local computer.
 
@@ -255,7 +255,7 @@ Invoke-Command -Session $ws {
 ```
 
 Take care to distinguish the remoting parameters that define the connection for
-the workflow session from the **PS-prefixed** workflow common parameters that
+the workflow session from the `PS-prefixed` workflow common parameters that
 define the connection to the managed nodes.
 
 ```powershell

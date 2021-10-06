@@ -1,6 +1,6 @@
 ---
 description: DSC is an optional package that can be installed when you create a VHD for a Windows Nano Server.
-ms.date: 06/12/2017
+ms.date: 10/05/2021
 title: Using DSC on Nano Server
 ---
 
@@ -11,7 +11,7 @@ title: Using DSC on Nano Server
 **DSC on Nano Server** is an optional package in the `NanoServer\Packages` folder of the Windows
 Server 2016 media. The package can be installed when you create a VHD for a Nano Server by
 specifying **Microsoft-NanoServer-DSC-Package** as the value of the **Packages** parameter of the
-**New-NanoServerImage** function. For example, if you are creating a VHD for a virtual machine, the
+`New-NanoServerImage` function. For example, if you are creating a VHD for a virtual machine, the
 command would look like the following:
 
 ```powershell
@@ -135,8 +135,9 @@ The following DSC features are not currently available on Nano Server:
 
 ## Using custom DSC resources on Nano Server
 
-Due to a limited sets of Windows APIs and CLR libraries available on Nano Server, DSC resources that work on the full CLR version of Windows do not necessarily work on Nano Server.
-Complete end-to-end testing before deploying any DSC custom resources to a production environment.
+Due to a limited sets of Windows APIs and CLR libraries available on Nano Server, DSC resources that
+work on the full CLR version of Windows do not necessarily work on Nano Server. Complete end-to-end
+testing before deploying any DSC custom resources to a production environment.
 
 ## See Also
 
