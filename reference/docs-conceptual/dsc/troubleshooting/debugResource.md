@@ -1,6 +1,6 @@
 ---
 description: This article shows you how to enable debugging for DSC configurations.
-ms.date: 06/12/2017
+ms.date: 10/05/2021
 title: Debugging DSC resources
 ---
 
@@ -23,20 +23,23 @@ You can verify that debugging has been enabled by looking at the result of a cal
 The following PowerShell output shows the result of enabling debugging:
 
 ```powershell
-PS C:\DebugTest> $LCM = Get-DscLocalConfigurationManager
+$LCM = Get-DscLocalConfigurationManager
+$LCM.DebugMode
+```
 
-PS C:\DebugTest> $LCM.DebugMode
+```Output
 NONE
+```
 
-PS C:\DebugTest> Enable-DscDebug -BreakAll
+```powershell
+Enable-DscDebug -BreakAll
+$LCM = Get-DscLocalConfigurationManager
+$LCM.DebugMode
+```
 
-PS C:\DebugTest> $LCM = Get-DscLocalConfigurationManager
-
-PS C:\DebugTest> $LCM.DebugMode
+```Output
 ForceModuleImport
 ResourceScriptBreakAll
-
-PS C:\DebugTest>
 ```
 
 ## Starting a configuration with debug enabled
@@ -102,7 +105,7 @@ user credentials. You should now see a prompt that looks similar to:
 ```
 
 The resource script will open in the script pane, and the debugger is stopped at the first line of
-the **Test-TargetResource** function (the **Test()** method of a class-based resource). Now you can
+the `Test-TargetResource` function (the `Test()` method of a class-based resource). Now you can
 use the debug commands in the ISE to step through the resource script, look at variable values, view
 the call stack, and so on. Remember that every line in the resource script (or class) is set as a
 break point.

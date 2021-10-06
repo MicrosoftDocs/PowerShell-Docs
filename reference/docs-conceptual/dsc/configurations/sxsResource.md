@@ -1,6 +1,6 @@
 ---
 description: This article shows how to install and import specific versions of resource modules into your configurations.
-ms.date: 06/12/2017
+ms.date: 10/05/2021
 title: Import a specific version of an installed resource
 ---
 
@@ -15,16 +15,16 @@ resource module can store separate versions of a resource in version named folde
 
 You can use the **MinimumVersion**, **MaximumVersion**, and **RequiredVersion** parameters of the
 [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet to specify which version of
-a module to install. Calling **Install-Module** without specifying a version installs the most
+a module to install. Calling `Install-Module` without specifying a version installs the most
 recent version.
 
 For example, there are multiple versions of the **xFailOverCluster** module, each of which contains
-an **xCluster** resource. Calling **Install-Module** without specifying the version number installs
+an **xCluster** resource. Calling `Install-Module` without specifying the version number installs
 the most recent version of the module.
 
 ```powershell
-PS> Install-Module xFailOverCluster
-PS> Get-DscResource xCluster
+Install-Module xFailOverCluster
+Get-DscResource xCluster
 ```
 
 ```Output
@@ -37,13 +37,13 @@ To install a specific version of a module, specify a **RequiredVersion** of 1.1.
 the specified version side by side with the installed version.
 
 ```powershell
-PS> Install-Module xFailOverCluster -RequiredVersion 1.1
+Install-Module xFailOverCluster -RequiredVersion 1.1
 ```
 
 Now, you see both version of the module listed when you use `Get-DSCResource`.
 
 ```powershell
-PS> Get-DscResource xCluster
+Get-DscResource xCluster
 ```
 
 ```Output
@@ -57,7 +57,7 @@ PowerShell      xCluster      xFailOverCluster      1.2.0.0    {DomainAdministra
 
 If you have separate resource versions installed on a computer, you must specify the version of that
 resource when you use it in a configuration. You do this by specifying the **ModuleVersion**
-parameter of the **Import-DscResource** keyword. If you fail to specify the version of a resource
+parameter of the `Import-DscResource` keyword. If you fail to specify the version of a resource
 module of a resource of which you have more than one version installed, the configuration generates
 an error.
 

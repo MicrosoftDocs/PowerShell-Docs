@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 10/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/tee-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Tee-Object
@@ -92,9 +92,9 @@ Get-ChildItem -Path D: -File -System -Recurse |
 ```
 
 The command uses the `Get-ChildItem` cmdlet to do a recursive search for system files on the D:
-drive. A pipeline operator (|) sends the list to `Tee-Object`, which appends the list to the
+drive. A pipeline operator (`|`) sends the list to `Tee-Object`, which appends the list to the
 AllSystemFiles.txt file and passes the list down the pipeline to the `Out-File` cmdlet, which saves
-the list in the NewSystemFiles.txt file.
+the list in the `NewSystemFiles.txt file`.
 
 ## Parameters
 

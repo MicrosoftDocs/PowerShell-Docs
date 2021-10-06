@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/24/2019
+ms.date: 10/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-alias?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Alias
@@ -97,9 +97,9 @@ information, see [about_Scopes](../microsoft.powershell.core/about/about_scopes.
 
 The acceptable values for this parameter are:
 
-- Global
-- Local
-- Script
+- `Global`
+- `Local`
+- `Script`
 - A number relative to the current scope (0 through the number of scopes, where 0 is the current
   scope and 1 is its parent)
 
@@ -119,14 +119,13 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
 ### System.String[]
 
-You can pipe an alias object to **Remove-Alias**.
+You can pipe an alias object to `Remove-Alias`.
 
 ## Outputs
 
@@ -136,7 +135,7 @@ This cmdlet doesn't return any output.
 
 ## Notes
 
-Changes only affect the current scope. To remove an alias from all sessions, add a **Remove-Alias**
+Changes only affect the current scope. To remove an alias from all sessions, add a `Remove-Alias`
 command to your PowerShell profile.
 
 For more information, see [about_Aliases](../microsoft.powershell.core/about/about_aliases.md).

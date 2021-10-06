@@ -1,16 +1,16 @@
 ---
 description: In PowerShell, each value has a type, and types fall into one of two main categories - value types and reference types.
-ms.date: 05/19/2021
+ms.date: 10/05/2021
 title: Types
 ---
 # 4. Types
 
-In PowerShell, each value has a type, and types fall into one of two main categories: *value types*
-and *reference types*. Consider the type `int`, which is typical of value types. A value of type
+In PowerShell, each value has a type, and types fall into one of two main categories: **value types**
+and **reference types**. Consider the type `int`, which is typical of value types. A value of type
 `int` is completely self-contained; all the bits needed to represent that value are stored in that
 value, and every bit pattern in that value represents a valid value for its type. Now, consider the
 array type `int[]`, which is typical of reference types. A so-called value of an array type can hold
-either a reference to an object that actually contains the array elements, or the *null reference*
+either a reference to an object that actually contains the array elements, or the **null reference**
 whose value is `$null`. The important distinction between the two type categories is best
 demonstrated by the differences in their semantics during assignment. For example,
 
@@ -24,17 +24,17 @@ $a[1] = 50 # element 1 (which has a value type) is changed from 20 to 50
 $b[1] # $b refers to the same array as $a, so $b[1] is 50
 ```
 
-As we can see, the assignment of a reference type value involves a *shallow copy*; that is, a copy
-of the reference to the object rather than its actual value. In contrast, a *deep copy* requires
+As we can see, the assignment of a reference type value involves a **shallow copy**; that is, a copy
+of the reference to the object rather than its actual value. In contrast, a **deep copy** requires
 making a copy of the object as well.
 
-A *numeric* type is one that allows representation of integer or fractional values, and that
+A **numeric** type is one that allows representation of integer or fractional values, and that
 supports arithmetic operations on those values. The set of numerical types includes the integer
 ([§4.2.3][§4.2.3]) and real number ([§4.2.4][§4.2.4]) types, but does not include bool ([§4.2.1][§4.2.1]) or char
 ([§4.2.2][§4.2.2]). An implementation may provide other numeric types (such as signed byte, unsigned
 integer, and integers of other sizes).
 
-A *collection* is a group of one or more related items, which need not have the same type. Examples
+A **collection** is a group of one or more related items, which need not have the same type. Examples
 of collection types are arrays, stacks, queues, lists, and hash tables. A program can *enumerate*
 (or *iterate*) over the elements in a collection, getting access to each element one at a time.
 Common ways to do this are with the foreach statement ([§8.4.4][§8.4.4]) and the
@@ -181,7 +181,7 @@ In PowerShell, `float` and `double` map to `System.Single` and `System.Double`, 
 
 #### 4.2.4.2 decimal
 
-Type decimal uses a 128-bit representation. At a minimum it must support a scale *s* such that 0 <=
+Type decimal uses a 128-bit representation. At a minimum it must support a scale **s** such that 0 <=
 *s* <= at least 28, and a value range -79228162514264337593543950335 to
 79228162514264337593543950335. The actual representation of decimal is implementation defined.
 
@@ -1167,7 +1167,7 @@ The base member set of a type can be augmented by the addition of the following 
 - *extended members*, via the cmdlet [Add-Member](xref:Microsoft.PowerShell.Utility.Add-Member).
 
 In PowerShell, extended members can also be added via `types.ps1xml` files. Adapted and extended
-members are collectively called *synthetic* *members*.
+members are collectively called **synthetic** *members*.
 
 The ETS adds the following members to all PowerShell objects: **psbase**, **psadapted**,
 **psextended**, and **pstypenames**. See the **Force** and **View** parameters in the cmdlet
