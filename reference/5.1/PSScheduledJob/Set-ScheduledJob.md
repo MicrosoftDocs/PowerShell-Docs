@@ -127,7 +127,8 @@ For more information about the execution history and saved job results of schedu
 This command changes the initialization script in all scheduled jobs on remote computers.
 
 ```powershell
-Invoke-Command -Computer "Server01, Server02" -ScriptBlock {Get-ScheduledJob | Set-ScheduledJob -InitializationScript \\SrvA\Scripts\SetForRun.ps1}
+Invoke-Command -Computer "Server01, Server02" -ScriptBlock {Get-ScheduledJob | 
+    Set-ScheduledJob -InitializationScript \\SrvA\Scripts\SetForRun.ps1}
 ```
 
 The command uses the `Invoke-Command` cmdlet to run a command on the Server01 and Server02
@@ -313,7 +314,7 @@ Windows PowerShell deletes the results of the oldest job instance to make room f
 the newest job instance.
 
 The job execution history and job results are saved in the
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs\\\<JobName\>\Output\\\<Timestamp\>`
+`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs\<JobName>\Output\<Timestamp>`
 directories on the computer on which the job is created. To see the execution history, use the
 `Get-Job` cmdlet. To get the job results, use the `Receive-Job` cmdlet.
 

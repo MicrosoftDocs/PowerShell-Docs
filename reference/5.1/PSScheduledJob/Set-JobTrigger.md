@@ -402,7 +402,7 @@ specified by the value of this parameter. The default value, zero (00:00:00), di
 delay.
 
 Enter a timespan object, such as one returned by the `New-TimeSpan` cmdlet, or enter a value in
-\<hours\>:\<minutes\>:\<seconds\> format, which is automatically converted to a timespan object.
+`<hours>:<minutes>:<seconds>` format, which is automatically converted to a timespan object.
 
 ```yaml
 Type: System.TimeSpan
@@ -494,7 +494,7 @@ Accept wildcard characters: False
 ### -User
 
 Specifies the users who trigger an **AtLogon** start of a scheduled job. Enter the name of a user in
-\<UserName\> or \<Domain\Username\> format or enter an asterisk (`*`) to represent all users. The
+`<UserName>` or `<Domain>\<Username>` format or enter an asterisk (`*`) to represent all users. The
 default value is all users.
 
 ```yaml
