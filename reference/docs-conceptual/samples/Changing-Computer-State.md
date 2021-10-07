@@ -1,6 +1,6 @@
 ---
 description: This example shows how you can use external commands from PowerShell to manage the configuration of a computer.
-ms.date: 12/23/2019
+ms.date: 10/07/2021
 title: Changing Computer State
 ---
 # Changing Computer State
@@ -48,14 +48,14 @@ For more information about the **Shutdown** method, see
 [Shutdown method of the Win32_OperatingSystem class](/windows/win32/cimwin32prov/shutdown-method-in-class-win32-operatingsystem)
 
 ```powershell
-Get-CimInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
+Get-CimInstance -ClassName Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
 ```
 
 ## Shutting Down or Restarting a Computer
 
 Shutting down and restarting computers are generally the same types of task. Tools that shut down a
 computer will generally restart it as well—and vice versa. There are two straightforward options for
-restarting a computer from PowerShell. Use either **tsshutdn.exe** or **shutdown.exe** with
+restarting a computer from PowerShell. Use either `tsshutdn.exe` or `shutdown.exe` with
 appropriate arguments. You can get detailed usage information from `tsshutdn.exe /?` or
 `shutdown.exe /?`.
 

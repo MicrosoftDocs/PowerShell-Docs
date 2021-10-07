@@ -1,6 +1,6 @@
 ---
 description: This article is a list of the keyboard shortcuts used in the PowerShell ISE.
-ms.date: 01/02/2020
+ms.date: 10/07/2021
 title: Keyboard Shortcuts for the Windows PowerShell ISE
 ---
 

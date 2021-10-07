@@ -1,6 +1,6 @@
 ---
 description: The Where-Object cmdlet allows you to filter objects that are passed on the pipeline.
-ms.date: 12/23/2019
+ms.date: 10/07/2021
 title: Removing Objects from the Pipeline Where Object
 ---
 # Removing Objects from the Pipeline (Where-Object)

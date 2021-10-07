@@ -1,6 +1,6 @@
 ---
 description: These release notes describe the new features and changes in Windows PowerShell 5.x.
-ms.date: 10/05/2021
+ms.date: 10/07/2021
 title: What's New in Windows PowerShell 5.0
 ---
 
@@ -34,7 +34,7 @@ Management Framework 5.0.
 
 Many updates and improvements to Windows PowerShell Desired State Configuration (DSC) in Windows
 PowerShell 4.0 are available in the
-[November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/)
+[November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2][KB3000850]
 (KB 3000850). You can determine if KB 3000850 is installed on your system by running
 `Get-Hotfix -Id KB3000850` in Windows PowerShell.
 
@@ -970,18 +970,18 @@ features.
 
 1. Module logging for individual modules (LogPipelineExecutionDetails) and the new "Turn on Module
    Logging" Group Policy setting
-2. Extended module objects that expose the values from the module manifest
-3. New **ExportedCommands** property of modules, including nested modules, that combines commands of
+1. Extended module objects that expose the values from the module manifest
+1. New **ExportedCommands** property of modules, including nested modules, that combines commands of
    all types
-4. Improved discovery of available (un-imported) modules, including allowing the **Path** and
+1. Improved discovery of available (un-imported) modules, including allowing the **Path** and
    **ListAvailable** parameters in the same command
-5. New **DefaultCommandPrefix** key in module manifests that avoids name conflicts without changing
+1. New **DefaultCommandPrefix** key in module manifests that avoids name conflicts without changing
    module code.
-6. Improved module requirements, including fully-qualified required modules with version and GUID
+1. Improved module requirements, including fully-qualified required modules with version and GUID
    and automatic importing of required modules
-7. Quieter, streamlined operation of the `New-ModuleManifest` cmdlet.
-8. New **Module** parameter for #Requires
-9. Improved `Import-Module` cmdlet with both **MinimumVersion** and **RequiredVersion** parameters.
+1. Quieter, streamlined operation of the `New-ModuleManifest` cmdlet.
+1. New **Module** parameter for #Requires
+1. Improved `Import-Module` cmdlet with both **MinimumVersion** and **RequiredVersion** parameters.
 
 ### Simplified Command Discovery
 
@@ -1052,10 +1052,13 @@ Started with Windows PowerShell Workflow.
 To improve the ability of Windows PowerShell 3.0 to interpret and correctly handle special
 characters, the **LiteralPath** parameter, which handles special characters in paths, is valid on
 almost all cmdlets that have a **Path** parameter, including the new `Update-Help` and `Save-Help`
-cmdlets. The parser also includes special logic to improve handling of the backtick character (\`)
-and square brackets in file names and paths.
+cmdlets. The parser also includes special logic to improve handling of the backtick character
+(`` ` ``) and square brackets in file names and paths.
 
 ## See Also
 
 - [about_Windows_PowerShell_5.0](/previous-versions/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0)
 - [Windows PowerShell](/powershell/)
+
+<!-- link refs -->
+[KB 3000850]: https://support.microsoft.com/topic/november-2014-update-rollup-for-windows-rt-8-1-windows-8-1-and-windows-server-2012-r2-7be5865b-adaa-dbbf-e2d4-1f819e7c9d87

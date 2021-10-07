@@ -1,6 +1,6 @@
 ---
 description: This article discusses how to deal with registry keys using PowerShell.
-ms.date: 12/23/2019
+ms.date: 10/07/2021
 title: Working with Registry Keys
 ---
 # Working with Registry Keys
@@ -45,7 +45,8 @@ HKEY_CURRENT_USER\WXP
 HKEY_CURRENT_USER\Volatile Environment
 ```
 
-These are the top-level keys visible under `HKEY_CURRENT_USER` in the Registry Editor (Regedit.exe).
+These are the top-level keys visible under `HKEY_CURRENT_USER` in the Registry Editor
+(`regedit.exe`).
 
 You can also specify this registry path by specifying the registry provider's name, followed by
 `::`. The registry provider's full name is `Microsoft.PowerShell.Core\Registry`, but this can
@@ -98,7 +99,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination H
 ```
 
 You can still use other tools you already have available to perform filesystem copies. Any registry
-editing tools—including **reg.exe**, **regini.exe**, **regedit.exe**, and COM objects that support
+editing tools—including `reg.exe`, `regini.exe`, `regedit.exe`, and COM objects that support
 registry editing, such as **WScript.Shell** and WMI's **StdRegProv** class can be used from within
 Windows PowerShell.
 

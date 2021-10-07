@@ -1,6 +1,6 @@
 ---
 description: Tabs in the Windows PowerShell Integrated Scripting Environment (ISE) allow you to simultaneously create and use several execution environments within the same application. Each PowerShell tab corresponds to a separate execution environment or session.
-ms.date: 01/02/2020
+ms.date: 10/07/2021
 title: How to Create a PowerShell Tab in Windows PowerShell ISE
 ---
 
@@ -14,8 +14,9 @@ corresponds to a separate execution environment or session.
 > Variables, functions, and aliases that you create in one tab do not carry over to another. They
 > are different Windows PowerShell sessions.
 
-Use the following steps to open or close a tab in Windows PowerShell. To rename a tab, set the [DisplayName](object-model/The-PowerShellTab-Object.md#displayname)
-property on the Windows PowerShell Tab scripting object.
+Use the following steps to open or close a tab in Windows PowerShell. To rename a tab, set the
+[DisplayName](object-model/The-PowerShellTab-Object.md#displayname) property on the Windows
+PowerShell Tab scripting object.
 
 ## To create and use a new PowerShell Tab
 
@@ -49,7 +50,8 @@ To close a tab, you can use any of the following techniques:
   active tab to close the tab.
 
 If you have unsaved files open in the PowerShell tab that you are closing, you are prompted to save
-or discard them. For more information about how to save a script, see [How to Save a Script](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script).
+or discard them. For more information about how to save a script, see
+[How to Save a Script](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script).
 
 ## See Also
 

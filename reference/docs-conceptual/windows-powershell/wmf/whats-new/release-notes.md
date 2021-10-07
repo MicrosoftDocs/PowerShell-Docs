@@ -1,6 +1,6 @@
 ---
 description: WMF 5.x Release Notes
-ms.date: 06/12/2017
+ms.date: 10/07/2021
 title: WMF 5.x Release Notes
 ---
 

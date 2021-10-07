@@ -1,6 +1,6 @@
 ---
 description: This article describes how to debug scripts on a local computer by using the Windows PowerShell ISE visual debugging features.
-ms.date: 01/02/2020
+ms.date: 10/07/2021
 title: How to Debug Scripts in Windows PowerShell ISE
 ---
 
@@ -31,16 +31,17 @@ You can set three types of breakpoints in the Windows PowerShell debugging envir
 
 Of these, in the Windows PowerShell ISE debugging environment, only line breakpoints can be set by
 using the menu or the keyboard shortcuts. The other two types of breakpoints can be set, but they
-are set from the Console Pane by using the [Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint)
-cmdlet. This section describes how you can perform debugging tasks in Windows PowerShell ISE by
-using the menus where available, and perform a wider range of commands from the Console Pane by
-using scripting.
+are set from the Console Pane by using the
+[Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint) cmdlet. This
+section describes how you can perform debugging tasks in Windows PowerShell ISE by using the menus
+where available, and perform a wider range of commands from the Console Pane by using scripting.
 
 ### To set a breakpoint
 
 A breakpoint can be set in a script only after it has been saved. Right-click the line where you
 want to set a line breakpoint, and then click **Toggle Breakpoint**. Or, click the line where you
-want to set a line breakpoint, and press <kbd>F9</kbd> or, on the **Debug** menu, click **Toggle Breakpoint**.
+want to set a line breakpoint, and press <kbd>F9</kbd> or, on the **Debug** menu, click **Toggle
+Breakpoint**.
 
 The following script is an example of how you can set a variable breakpoint from the Console Pane by
 using the [Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint)
@@ -56,8 +57,8 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 Displays all breakpoints in the current Windows PowerShell session.
 
 On the **Debug** menu, click **List Breakpoints**. The following script is an example of how you can
-list all breakpoints from the Console Pane by using the [Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint)
-cmdlet.
+list all breakpoints from the Console Pane by using the
+[Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint) cmdlet.
 
 ```powershell
 # This command lists all breakpoints in the current session.
@@ -68,12 +69,12 @@ Get-PSBreakpoint
 
 Removing a breakpoint deletes it.
 
-If you think you might want to use it again later, consider [Disable a Breakpoint](#disable-a-breakpoint)
-it instead. Right-click the line where you want to remove a breakpoint, and then click **ToggleBreakpoint**.
-Or, click the line where you want to remove a breakpoint, and on the **Debug** menu, click
-**Toggle Breakpoint**. The following script is an example of how to remove a breakpoint with a
-specified ID from the Console Pane by using the [Remove-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Remove-PSBreakpoint)
-cmdlet.
+If you think you might want to use it again later, consider
+[Disable a Breakpoint](#disable-a-breakpoint) it instead. Right-click the line where you want to
+remove a breakpoint, and then click **ToggleBreakpoint**. Or, click the line where you want to
+remove a breakpoint, and on the **Debug** menu, click **Toggle Breakpoint**. The following script is
+an example of how to remove a breakpoint with a specified ID from the Console Pane by using the
+[Remove-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Remove-PSBreakpoint) cmdlet.
 
 ```powershell
 # This command deletes the breakpoint with breakpoint ID 2.
@@ -82,7 +83,8 @@ Remove-PSBreakpoint -Id 2
 
 ### Remove All Breakpoints
 
-To remove all breakpoints defined in the current session, on the **Debug** menu, click **Remove All Breakpoints**.
+To remove all breakpoints defined in the current session, on the **Debug** menu, click **Remove All
+Breakpoints**.
 
 The following script is an example of how to remove all breakpoints from the Console Pane by using
 the [Remove-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Remove-PSBreakpoint)
@@ -95,12 +97,14 @@ Get-PSBreakpoint | Remove-PSBreakpoint
 
 ### Disable a Breakpoint
 
-Disabling a breakpoint does not remove it; it turns it off until it is enabled. To disable a
+Disabling a breakpoint does not remove it. It turns it off until it is enabled. To disable a
 specific line breakpoint, right-click the line where you want to disable a breakpoint, and then
-click **Disable Breakpoint**. Or, click the line where you want to disable a breakpoint, and press
-<kbd>F9</kbd> or, on the **Debug** menu, click **Disable Breakpoint**. The following script is an
-example of how you can remove a breakpoint with a specified ID from the Console Pane by using the [Disable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Disable-PSBreakpoint)
-cmdlet.
+click **Disable Breakpoint**.
+
+Or, click the line where you want to disable a breakpoint, and press <kbd>F9</kbd> or, on the
+**Debug** menu, click **Disable Breakpoint**. The following script is an example of how you can
+remove a breakpoint with a specified ID from the Console Pane using the
+[Disable-PSBreakpoint](/powershell/module/microsoft.powershell.utility/disable-psbreakpoint) cmdlet.
 
 ```powershell
 # This command disables the breakpoint with breakpoint ID 0.
@@ -125,9 +129,9 @@ Get-PSBreakpoint | Disable-PSBreakpoint
 
 To enable a specific breakpoint, right-click the line where you want to enable a breakpoint, and
 then click **Enable Breakpoint**. Or, click the line where you want to enable a breakpoint, and then
-press <kbd>F9</kbd> or, on the **Debug** menu, click **Enable Breakpoint**. The following script is an
-example of how you can enable specific breakpoints from the Console Pane by using the [Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint)
-cmdlet.
+press <kbd>F9</kbd> or, on the **Debug** menu, click **Enable Breakpoint**. The following script is
+an example of how you can enable specific breakpoints from the Console Pane by using the
+[Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint) cmdlet.
 
 ```powershell
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
@@ -138,8 +142,8 @@ Enable-PSBreakpoint -Id 0, 1, 5
 
 To enable all breakpoints defined in the current session, on the **Debug** menu, click **Enable all
 Breakpoints**. The following script is an example of how you can enable all breakpoints from the
-Console Pane by using the [Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint)
-cmdlet.
+Console Pane by using the
+[Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint) cmdlet.
 
 ```powershell
 # This command enables all breakpoints in the current session.
@@ -150,10 +154,11 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 ## How to manage a debugging session
 
 Before you start debugging, you must set one or more breakpoints. You cannot set a breakpoint unless
-the script that you want to debug is saved. For directions on of how to set a breakpoint, see [How to manage breakpoints](#how-to-manage-breakpoints)
-or [Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint).
-After you start debugging, you cannot edit a script until you stop debugging. A script that has one
-or more breakpoints set is automatically saved before it is run.
+the script that you want to debug is saved. For directions on of how to set a breakpoint, see
+[How to manage breakpoints](#how-to-manage-breakpoints) or
+[Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint). After you
+start debugging, you cannot edit a script until you stop debugging. A script that has one or more
+breakpoints set is automatically saved before it is run.
 
 ### To start debugging
 

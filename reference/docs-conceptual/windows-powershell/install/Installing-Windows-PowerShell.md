@@ -1,6 +1,6 @@
 ---
 description: This article explains how to install Windows PowerShell on various versions of Windows.
-ms.date: 08/09/2017
+ms.date: 10/07/2021
 title: Installing Windows PowerShell
 ---
 # Installing Windows PowerShell

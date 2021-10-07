@@ -1,6 +1,6 @@
 ---
 description: This article describes how to create, edit, run, and save scripts in the Script Pane.
-ms.date: 01/02/2020
+ms.date: 10/07/2021
 title: How to Write and Run Scripts in the Windows PowerShell ISE
 ---
 
@@ -79,18 +79,18 @@ used for all Windows applications.
 
 1. Move the cursor to the Script Pane by clicking anywhere in the Script Pane, or by clicking **Go
    to Script Pane** in the **View** menu.
-2. Create a script. Syntax coloring and tab completion provide a richer editing experience in
+1. Create a script. Syntax coloring and tab completion provide a richer editing experience in
    Windows PowerShell ISE.
-3. See [How to Use Tab Completion in the Script Pane and Console Pane](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
+1. See [How to Use Tab Completion in the Script Pane and Console Pane](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
    for details about using the tab completion feature to help in typing.
 
 ### To find text in the Script Pane
 
 1. To find text anywhere, press <kbd>CTRL</kbd>+<kbd>F</kbd> or, on the **Edit** menu, click **Find
    in Script**.
-2. To find text after the cursor, press <kbd>F3</kbd> or, on the **Edit** menu, click **Find Next in
+1. To find text after the cursor, press <kbd>F3</kbd> or, on the **Edit** menu, click **Find Next in
    Script**.
-3. To find text before the cursor, press <kbd>SHIFT</kbd>+<kbd>F3</kbd> or, on the **Edit** menu,
+1. To find text before the cursor, press <kbd>SHIFT</kbd>+<kbd>F3</kbd> or, on the **Edit** menu,
    click **Find Previous in Script**.
 
 ### To find and replace text in the Script Pane
@@ -103,19 +103,19 @@ text you want to find and the replacement text, then press <kbd>ENTER</kbd>.
 1. In the Script Pane, press <kbd>CTRL</kbd>+<kbd>G</kbd> or, on the **Edit** menu, click **Go to
    Line**.
 
-2. Enter a line number.
+1. Enter a line number.
 
 ### To copy text in the Script Pane
 
 1. In the Script Pane, select the text that you want to copy.
 
-2. Press <kbd>CTRL</kbd>+<kbd>C</kbd> or, on the toolbar, click the **Copy** icon, or on the
+1. Press <kbd>CTRL</kbd>+<kbd>C</kbd> or, on the toolbar, click the **Copy** icon, or on the
    **Edit** menu, click **Copy**.
 
 ### To cut text in the Script Pane
 
 1. In the Script Pane, select the text that you want to cut.
-2. Press <kbd>CTRL</kbd>+<kbd>X</kbd> or, on the toolbar, click the **Cut** icon, or on the **Edit**
+1. Press <kbd>CTRL</kbd>+<kbd>X</kbd> or, on the toolbar, click the **Cut** icon, or on the **Edit**
    menu, click **Cut**.
 
 ### To paste text into the Script Pane
@@ -146,10 +146,10 @@ menu, click **Save**.
 ### To save and name a script
 
 1. On the **File** menu, click **Save As**. The **Save As** dialog box will appear.
-2. In the **File name** box, enter a name for the file.
-3. In the **Save as type** box, select a file type. For example, in the **Save as type** box,
+1. In the **File name** box, enter a name for the file.
+1. In the **Save as type** box, select a file type. For example, in the **Save as type** box,
    select 'PowerShell Scripts (`*.ps1`)'.
-4. Click **Save**.
+1. Click **Save**.
 
 ### To save a script in ASCII encoding
 

@@ -1,6 +1,6 @@
 ---
 description: This article discusses how to deal with specific file and folder manipulation tasks using PowerShell.
-ms.date: 06/05/2017
+ms.date: 10/07/2021
 title: Working with Files and Folders
 ---
 # Working with Files and Folders
