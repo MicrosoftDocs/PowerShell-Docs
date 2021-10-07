@@ -1,6 +1,6 @@
 ---
 description: The Sort-Object cmdlet allows you to sort a collection of objects on one or more properties.
-ms.date: 06/05/2017
+ms.date: 10/07/2021
 title: Sorting Objects
 ---
 # Sorting Objects
@@ -62,16 +62,18 @@ LastWriteTime          Name
 
 ## Using hash tables
 
-You can sort different properties in different orders by using hash tables in an array.
-Each hash table uses an **Expression** key to specify the property name as string and an **Ascending** or **Descending** key to specify the sort order by `$true` or `$false`.
-The **Expression** key is mandatory.
-The **Ascending** or **Descending** key is optional.
+You can sort different properties in different orders by using hash tables in an array. Each hash
+table uses an **Expression** key to specify the property name as string and an **Ascending** or
+**Descending** key to specify the sort order by `$true` or `$false`. The **Expression** key is
+mandatory. The **Ascending** or **Descending** key is optional.
 
-The following example sorts objects in descending **LastWriteTime** order and ascending **Name** order.
+The following example sorts objects in descending **LastWriteTime** order and ascending **Name**
+order.
 
 ```powershell
 Get-ChildItem |
-  Sort-Object -Property @{ Expression = 'LastWriteTime'; Descending = $true }, @{ Expression = 'Name'; Ascending = $true } |
+  Sort-Object -Property @{ Expression = 'LastWriteTime'; Descending = $true },
+                        @{ Expression = 'Name'; Ascending = $true } |
   Format-Table -Property LastWriteTime, Name
 ```
 
@@ -87,10 +89,11 @@ LastWriteTime          Name
 ...
 ```
 
-You can also set a scriptblock to the **Expression** key.
-When running the `Sort-Object` cmdlet, the scriptblock is executed and the result is used for sorting.
+You can also set a scriptblock to the **Expression** key. When running the `Sort-Object` cmdlet, the
+scriptblock is executed and the result is used for sorting.
 
-The following example sorts objects in descending order by the time span between **CreationTime** and **LastWriteTime**.
+The following example sorts objects in descending order by the time span between **CreationTime**
+and **LastWriteTime**.
 
 ```powershell
 Get-ChildItem |
@@ -132,7 +135,8 @@ The keys in the hash tables for sorting can be abbreviated as following:
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-In this example, the **e** stands for **Expression**, the **d** stands for **Descending**, and the **a** stands for **Ascending**.
+In this example, the **e** stands for **Expression**, the **d** stands for **Descending**, and the
+**a** stands for **Ascending**.
 
 To improve readability, you can place the hash tables into a separate variable:
 

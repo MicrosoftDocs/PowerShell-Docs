@@ -1,6 +1,6 @@
 ---
 description: A role capability is a PowerShell data file with the .psrc extension that lists all the cmdlets, functions, providers, and external programs that are made available to connecting users.
-ms.date: 07/10/2019
+ms.date: 10/07/2021
 title: JEA Role Capabilities
 ---
 
@@ -24,15 +24,15 @@ ensure you're on the right path.
 
 1. **Identify** the commands users are using to get their jobs done. This may involve surveying IT
    staff, checking automation scripts, or analyzing PowerShell session transcripts and logs.
-2. **Update** use of command-line tools to PowerShell equivalents, where possible, for the best
+1. **Update** use of command-line tools to PowerShell equivalents, where possible, for the best
    auditing and JEA customization experience. External programs can't be constrained as granularly
    as native PowerShell cmdlets and functions in JEA.
-3. **Restrict** the scope of the cmdlets to only allow specific parameters or parameter
+1. **Restrict** the scope of the cmdlets to only allow specific parameters or parameter
    values. This is especially important if users should manage only part of a system.
-4. **Create** custom functions to replace complex commands or commands that are difficult to
+1. **Create** custom functions to replace complex commands or commands that are difficult to
    constrain in JEA. A simple function that wraps a complex command or applies additional validation
    logic can offer additional control for admins and end-user simplicity.
-5. **Test** the scoped list of allowable commands with your users or automation services, and
+1. **Test** the scoped list of allowable commands with your users or automation services, and
    adjust as necessary.
 
 ### Examples of potentially dangerous commands
@@ -96,8 +96,10 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> The [common PowerShell parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters) are always allowed, even if you restrict the available parameters.
-> You should not explicitly list them in the Parameters field.
+> The
+> [common PowerShell parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters)
+> are always allowed, even if you restrict the available parameters. You should not explicitly list
+> them in the Parameters field.
 
 The table below describes the various ways you can customize a visible cmdlet or function.
 You can mix and match any of the below in the **VisibleCmdlets** field.
@@ -145,8 +147,9 @@ parameters.
 For example, consider the role of a file server admin that manages network shares hosted on a
 system. One way of managing shares is to use `net share`. However, allowing **net.exe** is dangerous
 because the user could use the command to gain admin privileges with
-`net group Administrators unprivilegedjeauser /add`. A more secure option is to allow [Get-SmbShare](/powershell/module/smbshare/get-smbshare),
-which achieves the same result but has a much more limited scope.
+`net group Administrators unprivilegedjeauser /add`. A more secure option is to allow
+[Get-SmbShare](/powershell/module/smbshare/get-smbshare), which achieves the same result but has a
+much more limited scope.
 
 When making external commands available to users in a JEA session, always specify the complete path
 to the executable. This prevents the execution of similarly named and potentially malicious programs
@@ -167,8 +170,9 @@ VisibleProviders = 'Registry'
 For simple tasks that require access to the file system, registry, certificate store, or other
 sensitive providers, consider writing a custom function that works with the provider on the user's
 behalf. The functions, cmdlets, and external programs available in a JEA session aren't subject to
-the same constraints as JEA. They can access any provider by default. Also consider using the [user drive](session-configurations.md#user-drive)
-when copying files to or from a JEA endpoint is required.
+the same constraints as JEA. They can access any provider by default. Also consider using the
+[user drive](session-configurations.md#user-drive) when copying files to or from a JEA endpoint is
+required.
 
 ### Creating custom functions
 
@@ -245,7 +249,8 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-For more information about PowerShell modules, see [Understanding a PowerShell Module](/powershell/scripting/developer/windows-powershell).
+For more information about PowerShell modules, see
+[Understanding a PowerShell Module](/powershell/scripting/developer/windows-powershell).
 
 Starting in PowerShell 6, the **RoleDefinitions** property was added to the session configuration
 file. This property lets you specify the location of a role configuration file for your role
@@ -267,9 +272,9 @@ read access to the role capability files and containing modules.
 
 ## How role capabilities are merged
 
-Users are granted access to all matching role capabilities in the [session configuration file](session-configurations.md)
-when they enter a JEA session. JEA tries to give the user the most permissive set of commands
-allowed by any of the roles.
+Users are granted access to all matching role capabilities in the
+[session configuration file](session-configurations.md) when they enter a JEA session. JEA tries to
+give the user the most permissive set of commands allowed by any of the roles.
 
 ### VisibleCmdlets and VisibleFunctions
 
@@ -280,19 +285,19 @@ The rules are as follows:
 
 1. If a cmdlet is only made visible in one role, it is visible to the user with any applicable
    parameter constraints.
-2. If a cmdlet is made visible in more than one role, and each role has the same constraints on the
+1. If a cmdlet is made visible in more than one role, and each role has the same constraints on the
    cmdlet, the cmdlet is visible to the user with those constraints.
-3. If a cmdlet is made visible in more than one role, and each role allows a different set of
+1. If a cmdlet is made visible in more than one role, and each role allows a different set of
    parameters, the cmdlet and all the parameters defined across every role are visible to the user.
    If one role doesn't have constraints on the parameters, all parameters are allowed.
-4. If one role defines a validate set or validate pattern for a cmdlet parameter, and the other role
+1. If one role defines a validate set or validate pattern for a cmdlet parameter, and the other role
    allows the parameter but does not constrain the parameter values, the validate set or pattern is
    ignored.
-5. If a validate set is defined for the same cmdlet parameter in more than one role, all values from
+1. If a validate set is defined for the same cmdlet parameter in more than one role, all values from
    all validate sets are allowed.
-6. If a validate pattern is defined for the same cmdlet parameter in more than one role, any values
+1. If a validate pattern is defined for the same cmdlet parameter in more than one role, any values
    that match any of the patterns are allowed.
-7. If a validate set is defined in one or more roles, and a validate pattern is defined in another
+1. If a validate set is defined in one or more roles, and a validate pattern is defined in another
    role for the same cmdlet parameter, the validate set is ignored and rule (6) applies to the
    remaining validate patterns.
 
@@ -336,8 +341,8 @@ Be careful to ensure that the combined set of providers from one role capability
 cmdlets/functions/commands from another don't allow users unintentional access to system resources.
 For example, if one role allows the `Remove-Item` cmdlet and another allows the `FileSystem`
 provider, you are at risk of a JEA user deleting arbitrary files on your computer. Additional
-information about identifying users' effective permissions can be found in the [auditing JEA](audit-and-report.md)
-article.
+information about identifying users' effective permissions can be found in the
+[auditing JEA](audit-and-report.md) article.
 
 ## Next steps
 

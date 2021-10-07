@@ -1,6 +1,6 @@
 ---
 description: This article shows how to collection information about computer configuration use WMI and CIM cmdlets.
-ms.date: 12/23/2019
+ms.date: 10/07/2021
 title: Collecting Information About Computers
 ---
 # Collecting Information About Computers
@@ -38,7 +38,8 @@ command to `Select-Object -ExcludeProperty "CIM*"`.
 
 ## Listing BIOS Information
 
-The WMI **Win32_BIOS** class returns fairly compact and complete information about the system BIOS on the local computer:
+The WMI **Win32_BIOS** class returns fairly compact and complete information about the system BIOS
+on the local computer:
 
 ```powershell
 Get-CimInstance -ClassName Win32_BIOS
@@ -131,7 +132,8 @@ the properties returned from WMI class instances, not the object returned to Pow
 the output, use `Select-Object`:
 
 ```powershell
-Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId | Select-Object -Property HotFixId
+Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId |
+    Select-Object -Property HotFixId
 ```
 
 ```Output
@@ -262,7 +264,8 @@ cmdlet. For remote systems, you can use the **Win32_Service** WMI class. If you 
 format will be almost identical to that from `Get-Service`:
 
 ```powershell
-Get-CimInstance -ClassName Win32_Service | Select-Object -Property Status,Name,DisplayName
+Get-CimInstance -ClassName Win32_Service |
+    Select-Object -Property Status,Name,DisplayName
 ```
 
 To allow the complete display of names for the occasional services with extremely long names, you
@@ -270,5 +273,6 @@ may want to use `Format-Table` with the **AutoSize** and **Wrap** parameters, to
 width and allow long names to wrap instead of being truncated:
 
 ```powershell
-Get-CimInstance -ClassName Win32_Service | Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap
+Get-CimInstance -ClassName Win32_Service |
+    Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap
 ```

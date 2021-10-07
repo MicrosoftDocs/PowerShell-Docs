@@ -1,9 +1,9 @@
 ---
 description: This article describes the prerequisites that must be satisfied to start using JEA.
-ms.date: 07/10/2019
+ms.date: 10/07/2021
 title: JEA Prerequisites
 ---
-# Prerequisites
+# JEA Prerequisites
 
 Just Enough Administration is a feature included in PowerShell 5.0 and higher. This article
 describes the prerequisites that must be satisfied to start using JEA.
@@ -59,7 +59,8 @@ You can also use JEA on your home or work computer:
 ### Install Windows Management Framework
 
 If you're running an older version of PowerShell, you may need to update your system with the latest
-Windows Management Framework (WMF) update. For more information, see the [WMF documentation](/powershell/scripting/wmf/overview).
+Windows Management Framework (WMF) update. For more information, see the
+[WMF documentation](/powershell/scripting/wmf/overview).
 
 It's recommended that you test your workload's compatibility with WMF before upgrading all of your
 servers.
@@ -90,18 +91,18 @@ You can configure the PowerShell Module Logging policy using Group Policy.
 
 1. Open the Local Group Policy Editor on a workstation or a Group Policy Object in the Group Policy
    Management Console on an Active Directory Domain Controller
-2. Navigate to **Computer Configuration\\Administrative Templates\\Windows Components\\Windows
+1. Navigate to **Computer Configuration\\Administrative Templates\\Windows Components\\Windows
    PowerShell**
-3. Double-click on **Turn on Module Logging**
-4. Click **Enabled**
-5. In the Options section, click on **Show** next to Module Names
-6. Type `*` in the pop-up window to log commands from all modules.
-7. Click **OK** to set the policy
-8. Double-click on **Turn on PowerShell Script Block Logging**
-9. Click **Enabled**
-10. Click **OK** to set the policy
-11. (On domain-joined machines only) Run `gpupdate` or wait for Group Policy to process the updated
-    policy and apply the settings
+1. Double-click on **Turn on Module Logging**
+1. Click **Enabled**
+1. In the Options section, click on **Show** next to Module Names
+1. Type `*` in the pop-up window to log commands from all modules.
+1. Click **OK** to set the policy
+1. Double-click on **Turn on PowerShell Script Block Logging**
+1. Click **Enabled**
+1. Click **OK** to set the policy
+1. (On domain-joined machines only) Run `gpupdate` or wait for Group Policy to process the updated
+   policy and apply the settings
 
 You can also enable system-wide PowerShell transcription through Group Policy.
 

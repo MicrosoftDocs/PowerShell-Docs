@@ -1,6 +1,6 @@
 ---
 description: This article shows several examples of how to get instances of WMI objects from a computer system.
-ms.date: 12/23/2019
+ms.date: 10/07/2021
 title: Getting WMI Objects Get CimInstance
 ---
 # Getting WMI Objects (Get-CimInstance)
@@ -115,7 +115,7 @@ DataExecutionPrevention_Available         Property   bool DataExecutionPreventio
 ...
 ```
 
-#### Displaying Non-Default Properties with Format Cmdlets
+### Displaying Non-Default Properties with Format Cmdlets
 
 If you want information contained in the **Win32_OperatingSystem** class that is not displayed by
 default, you can display it by using the **Format** cmdlets. For example, if you want to display

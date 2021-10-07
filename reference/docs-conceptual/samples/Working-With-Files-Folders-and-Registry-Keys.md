@@ -1,6 +1,6 @@
 ---
 description: This article discusses how to deal with registry key manipulation tasks using PowerShell.
-ms.date: 07/28/2020
+ms.date: 10/07/2021
 title: Working With Files Folders and Registry Keys
 ---
 # Working With Files, Folders and Registry Keys

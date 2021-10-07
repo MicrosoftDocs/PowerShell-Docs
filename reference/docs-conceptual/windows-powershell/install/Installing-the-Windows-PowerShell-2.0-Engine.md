@@ -1,6 +1,6 @@
 ---
 description: The Windows PowerShell 2.0 Engine is an optional feature of Windows. This article explains how to install the feature and the necessary requirements.
-ms.date: 06/05/2017
+ms.date: 10/07/2021
 title: Installing the Windows PowerShell 2.0 Engine
 ---
 
@@ -24,7 +24,7 @@ cannot run because it is incompatible with Windows PowerShell 3.0, Windows Power
 Microsoft .NET Framework 4. Such cases are expected to be rare.
 
 The Windows PowerShell 2.0 Engine is an optional feature of Windows Server 2012 R2, Windows 8.1,
-Windows&reg; 8 and Windows Server&reg; 2012. On earlier versions of Windows, when you install Windows
+Windows 8 and Windows Server 2012. On earlier versions of Windows, when you install Windows
 Management Framework 3.0, the Windows PowerShell 3.0 installation completely replaces the Windows
 PowerShell 2.0 installation in the Windows PowerShell installation directory. However, the Windows
 PowerShell 2.0 Engine is retained.
@@ -39,24 +39,22 @@ However, to use it, you need to turn on the option for Microsoft .NET Framework 
 requires. This section also explains how to turn the Windows PowerShell 2.0 Engine feature on and
 off.
 
-#### To turn on .NET Framework 3.5
+### To turn on .NET Framework 3.5
 
 1. On the **Start** screen, type **Windows Features**.
-2. On the **Apps** bar, click **Settings**, and then click **Turn Windows features on or off**.
-3. In the **Windows Features** box, click **.NET Framework 3.5 (includes .NET 2.0 and 3.0** to
+1. On the **Apps** bar, click **Settings**, and then click **Turn Windows features on or off**.
+1. In the **Windows Features** box, click **.NET Framework 3.5 (includes .NET 2.0 and 3.0** to
    select it.
 
    When you select **.NET Framework 3.5 (includes .NET 2.0 and 3.0**, the box fills to indicate that
    only part of the feature is selected. However, this is sufficient for the Windows PowerShell 2.0
    Engine.
 
-#### To turn the Windows PowerShell 2.0 Engine on and off
+### To turn the Windows PowerShell 2.0 Engine on and off
 
 1. On the **Start** screen, type **Windows Features**.
-
-2. On the **Apps** bar, click **Settings**, and then click **Turn Windows features on or off**.
-
-3. In the **Windows Features** box, expand the **Windows PowerShell 2.0** node, and click the
+1. On the **Apps** bar, click **Settings**, and then click **Turn Windows features on or off**.
+1. In the **Windows Features** box, expand the **Windows PowerShell 2.0** node, and click the
    **Windows PowerShell 2.0 Engine** box to select or clear it.
 
 ## On Windows Server 2012 R2 and Windows Server 2012
@@ -65,21 +63,21 @@ Use the following procedures to add the Windows PowerShell 2.0 Engine and Micros
 3.5 features. The Windows PowerShell 2.0 Engine requires Microsoft .NET Framework 2.0.50727 at a
 minimum. This requirement is fulfilled by Microsoft .NET Framework 3.5.
 
-#### To add the .NET Framework 3.5 feature
+### To add the .NET Framework 3.5 feature
 
 1. In **Server Manager**, from the **Manage** menu, select **Add Roles and Features**.
 
     Or in **Server Manager**, click **All Servers**, right-click a server name, and then select
     **Add Roles and Features**.
 
-2. On the **Installation Type** page, select **Role-based or feature-based installation**.
+1. On the **Installation Type** page, select **Role-based or feature-based installation**.
 
-3. On the **Features** page, expand the **.NET 3.5 Framework Features** node and select **.NET
+1. On the **Features** page, expand the **.NET 3.5 Framework Features** node and select **.NET
    Framework 3.5 (includes .NET 2.0 and 3.0)**.
 
    The other options under that node are not required for the Windows PowerShell 2.0 Engine.
 
-#### To add the Windows PowerShell 2.0 Engine feature
+### To add the Windows PowerShell 2.0 Engine feature
 
 - In **Server Manager**, from the **Manage** menu, select **Add Roles and Features**.
 

@@ -1,6 +1,6 @@
 ---
 description: This document covers security concerns, recommendations, and best practices when using PowerShell Remoting.
-ms.date: 06/11/2020
+ms.date: 10/07/2021
 title: Security considerations for PowerShell Remoting using WinRM
 ---
 

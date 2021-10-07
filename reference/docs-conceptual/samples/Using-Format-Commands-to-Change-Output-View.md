@@ -1,6 +1,6 @@
 ---
 description: PowerShell has a extensible formatting system that allows you to present output in lists, tables, or custom layouts.
-ms.date: 11/22/2019
+ms.date: 10/07/2021
 title: Using Format Commands to Change Output View
 ---
 # Using Format Commands to Change Output View

@@ -1,7 +1,7 @@
 ---
 author: randomnote1
 description: This article shows how to decode a script block that a PowerShell process is currently running.
-ms.date: 11/13/2018
+ms.date: 10/07/2021
 title: Decode a PowerShell command from a running process
 ---
 
@@ -97,17 +97,11 @@ EncodedCommand : IAAKAAoACgAgAAoAIAAgACAAIAAkAGkAIAA9ACAAMQAgAAoACgAKACAACgAgACA
                  IAAKAAoACgAgAAoAIAAgACAAIAB9ACAACgAKAAoAIAAKAA==
 DecodedCommand :
                      $i = 1
-
                      while ( $i -le 10 )
-
                      {
-
                          Write-Output -InputObject $i
-
                          Start-Sleep -Seconds 60
-
                          $i++
-
                      }
 ```
 
