@@ -1,6 +1,6 @@
 ---
 description: You can use the `Select-Object` cmdlet to create new, custom PowerShell objects that contain properties selected from the objects on the pipeline.
-ms.date: 12/23/2019
+ms.date: 10/07/2021
 title: Selecting Parts of Objects Select Object
 ---
 # Selecting Parts of Objects (Select-Object)

@@ -1,7 +1,7 @@
 ---
 description: This article is an overview of the features of the Windows PowerShell ISE
 ms.custom: ISE-F1-page
-ms.date: 10/05/2021
+ms.date: 10/07/2021
 ms.topic: conceptual
 title: Exploring the Windows PowerShell ISE
 ---
@@ -57,7 +57,6 @@ The following buttons are located on the toolbar.
 | **Show Script Pane Maximized** | Maximizes the Script Pane.                                                                                                                                                       |
 | **Show Command Window** | Shows the Commands Pane for installed Modules, as a separate Window. |
 | **Show Command Add-on** | Shows the Commands Pane for installed Modules, as a sidebar Add-on. |
-
 
 ## Script Tab
 

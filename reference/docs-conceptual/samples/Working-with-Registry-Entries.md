@@ -1,6 +1,6 @@
 ---
 description: This article discusses how to deal with registry entries using PowerShell.
-ms.date: 06/05/2017
+ms.date: 10/07/2021
 title: Working with Registry Entries
 ---
 # Working with Registry Entries
@@ -137,9 +137,9 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
     DevicePath  REG_EXPAND_SZ   %SystemRoot%\inf
 ```
 
-You can also use the **WshShell** COM object as well to find some registry entries, although this
+You can also use the **WshShell** COM object to find some registry entries, although this
 method does not work with large binary data or with registry entry names that include characters
-such as "\\"). Append the property name to the item path with a \\ separator:
+such as backslash (`\`). Append the property name to the item path with a `\` separator:
 
 ```powershell
 (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DevicePath")
@@ -156,8 +156,8 @@ approaches. This example modifies the **Path** entry under `HKEY_CURRENT_USER\En
 **Path** entry specifies where to find executable files.
 
 1. Retrieve the current value of the **Path** entry using `Get-ItemProperty`.
-2. Add the new value, separating it with a `;`.
-3. Use `Set-ItemProperty` with the specified key, entry name, and value to modify the registry
+1. Add the new value, separating it with a `;`.
+1. Use `Set-ItemProperty` with the specified key, entry name, and value to modify the registry
    entry.
 
 ```powershell
@@ -215,14 +215,14 @@ PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 The **PropertyType** must be the name of a **Microsoft.Win32.RegistryValueKind** enumeration member
 from the following table:
 
-|PropertyType Value|Meaning|
-|----------------------|-----------|
-|Binary|Binary data|
-|DWord|A number that is a valid UInt32|
-|ExpandString|A string that can contain environment variables that are dynamically expanded|
-|MultiString|A multiline string|
-|String|Any string value|
-|QWord|8 bytes of binary data|
+| PropertyType Value |                                    Meaning                                    |
+| ------------------ | ----------------------------------------------------------------------------- |
+| Binary             | Binary data                                                                   |
+| DWord              | A number that is a valid UInt32                                               |
+| ExpandString       | A string that can contain environment variables that are dynamically expanded |
+| MultiString        | A multiline string                                                            |
+| String             | Any string value                                                              |
+| QWord              | 8 bytes of binary data                                                        |
 
 > [!NOTE]
 > You can add a registry entry to multiple locations by specifying an array of values for the

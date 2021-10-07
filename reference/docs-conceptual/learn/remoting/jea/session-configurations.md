@@ -1,6 +1,6 @@
 ---
 description: Session configurations define who can use the JEA endpoint and which roles they have access to.
-ms.date: 07/10/2019
+ms.date: 10/07/2021
 title: JEA Session Configurations
 ---
 
@@ -48,7 +48,8 @@ to the following default commands (and aliases):
 
 No PowerShell providers are available, nor are any external programs (executables or scripts).
 
-For more information about language modes, see [about_Language_modes](/powershell/module/microsoft.powershell.core/about/about_language_modes).
+For more information about language modes, see
+[about_Language_modes](/powershell/module/microsoft.powershell.core/about/about_language_modes).
 
 ### Choose the JEA identity
 
@@ -119,8 +120,8 @@ GMSAs should only be used when necessary:
 > Group managed service accounts are only available on domain-joined machines using PowerShell 5.1
 > or newer.
 
-For more information about securing a JEA session, see the [security considerations](security-considerations.md)
-article.
+For more information about securing a JEA session, see the
+[security considerations](security-considerations.md) article.
 
 ### Session transcripts
 
@@ -144,10 +145,10 @@ security administrators that have access to audit the transcripts.
 
 If your connecting users need to copy files to or from the JEA endpoint, you can enable the user
 drive in the session configuration file. The user drive is a **PSDrive** that is mapped to a unique
-folder for each connecting user. This folder allows users to copy files to or from the system without
-giving them access to the full file system or exposing the FileSystem provider. The user drive
-contents are persistent across sessions to accommodate situations where network connectivity may be
-interrupted.
+folder for each connecting user. This folder allows users to copy files to or from the system
+without giving them access to the full file system or exposing the FileSystem provider. The user
+drive contents are persistent across sessions to accommodate situations where network connectivity
+may be interrupted.
 
 ```powershell
 MountUserDrive = $true
@@ -168,7 +169,8 @@ the system to automatically clean up the folder every night.
 > [!NOTE]
 > The user drive is only available in PowerShell 5.1 or newer.
 
-For more information about PSDrives, see [Managing PowerShell drives](/powershell/scripting/samples/managing-windows-powershell-drives).
+For more information about PSDrives, see
+[Managing PowerShell drives](/powershell/scripting/samples/managing-windows-powershell-drives).
 
 ### Role definitions
 
@@ -187,8 +189,8 @@ RoleDefinitions = @{
 ```
 
 If a user belongs to more than one group in the role definition, they get access to the roles of
-each. When two roles grant access to the same cmdlets, the most permissive parameter set is granted to
-the user.
+each. When two roles grant access to the same cmdlets, the most permissive parameter set is granted
+to the user.
 
 When specifying local users or groups in the role definitions field, be sure to use the computer
 name, not **localhost** or wildcards. You can check the computer name by inspecting the
@@ -256,7 +258,8 @@ For a full list of supported properties in the session configuration file, run
 
 ## Testing a session configuration file
 
-You can test a session configuration using the [Test-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile)
+You can test a session configuration using the
+[Test-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile)
 cmdlet. It's recommended that you test your session configuration file if you've manually edited the
 `.pssc` file. Testing ensures the syntax is correct. If a session configuration file fails this
 test, it can't be registered on the system.
