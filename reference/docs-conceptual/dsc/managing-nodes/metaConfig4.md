@@ -1,6 +1,6 @@
 ---
 description: The Local Configuration Manager (LCM) runs on every target node and is responsible for parsing and applying configurations that are sent to the node.
-ms.date: 12/12/2018
+ms.date: 10/05/2021
 title: Configuring the LCM in PowerShell 4.0
 ---
 # Configuring the LCM in PowerShell 4.0
@@ -124,7 +124,7 @@ ExampleConfig -OutputPath "c:\users\public\dsc"
 ```
 
 Running the script in the previous example generates a MOF file that specifies and stores the
-desired settings. To apply the settings, you can use the **Set-DscLocalConfigurationManager**
+desired settings. To apply the settings, you can use the `Set-DscLocalConfigurationManager`
 cmdlet, as shown in the following example.
 
 ```powershell
@@ -136,6 +136,6 @@ Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 > **OutputPath** parameter when you invoked the configuration in the previous example.
 
 To see the current Local Configuration Manager settings, you can use the
-**Get-DscLocalConfigurationManager** cmdlet. If you invoke this cmdlet with no parameters, by
+`Get-DscLocalConfigurationManager` cmdlet. If you invoke this cmdlet with no parameters, by
 default it will get the Local Configuration Manager settings for the node on which you run it. To
 specify another node, use the **CimSession** parameter with this cmdlet.

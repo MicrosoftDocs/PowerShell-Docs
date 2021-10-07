@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 06/09/2017
+ms.date: 10/05/2021
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/unregister-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-ScheduledJob
@@ -11,6 +11,7 @@ title: Unregister-ScheduledJob
 # Unregister-ScheduledJob
 
 ## Synopsis
+
 Deletes scheduled jobs on the local computer.
 
 ## Syntax
@@ -35,20 +36,27 @@ Unregister-ScheduledJob [-Name] <String[]> [-Force] [-WhatIf] [-Confirm] [<Commo
 ```
 
 ## Description
-The **Unregister-ScheduledJob** cmdlet deletes scheduled jobs from the local computer.
 
-When it deletes or unregisters a scheduled job, **Unregister-ScheduledJob** deletes the directory for the scheduled job (in the $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory), which contains the XML file that defines the scheduled job, the job execution history, and all job results.
-This action also deletes the job from Task Scheduler.
+The `Unregister-ScheduledJob` cmdlet deletes scheduled jobs from the local computer.
 
-**Unregister-ScheduledJob** deletes only the scheduled jobs that are created by using the Register-ScheduledJob cmdlet.
-It does not delete scheduled jobs that are created in Task Scheduler.
+When it deletes or unregisters a scheduled job, `Unregister-ScheduledJob` deletes the directory for
+the scheduled job (in the
+`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory`), which contains the XML
+file that defines the scheduled job, the job execution history, and all job results. This action
+also deletes the job from Task Scheduler.
 
-You can use the parameters of **Unregister-ScheduledJob** to delete scheduled jobs by ID or name, or pipe scheduled jobs from Get-ScheduledJob to **Unregister-ScheduledJob**.
+`Unregister-ScheduledJob` deletes only the scheduled jobs that are created by using the
+`Register-ScheduledJob` cmdlet. It does not delete scheduled jobs that are created in Task
+Scheduler.
 
-**Unregister-ScheduledJob** is one of a collection of job scheduling cmdlets in the PSScheduledJob module that is included in Windows PowerShell.
+You can use the parameters of `Unregister-ScheduledJob` to delete scheduled jobs by ID or name, or
+pipe scheduled jobs from `Get-ScheduledJob` to `Unregister-ScheduledJob`.
 
-For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module.
-Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
+`Unregister-ScheduledJob` is one of a collection of job scheduling cmdlets in the PSScheduledJob
+module that is included in Windows PowerShell.
+
+For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module. Import
+the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -56,42 +64,47 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Delete a scheduled job
 
-```
-PS C:\> Unregister-ScheduledJob TestJob
+```powershell
+Unregister-ScheduledJob TestJob
 ```
 
 This command deletes the TestJob scheduled job on the local computer.
 
 ### Example 2: Delete all scheduled jobs
 
-```
-PS C:\> Get-ScheduledJob | Unregister-ScheduledJob -Force
-PS C:\> Unregister-ScheduledJob -Name "*" -Force
+```powershell
+Get-ScheduledJob | Unregister-ScheduledJob -Force
+Unregister-ScheduledJob -Name "*" -Force
 ```
 
 This example shows two different commands that delete all scheduled jobs on the local computer.
 
-The first command uses the Get-ScheduledJob cmdlet to get all scheduled jobs on the local computer.
-A pipeline operator (|) sends the scheduled jobs to **Unregister-ScheduleJob**, which deletes them.
+The first command uses the `Get-ScheduledJob` cmdlet to get all scheduled jobs on the local
+computer. A pipeline operator (`|`) sends the scheduled jobs to `Unregister-ScheduleJob`, which
+deletes them.
 
-The second command uses the *Name* parameter of **Unregister-ScheduledJob** with a value of all (*) to delete all scheduled jobs.
+The second command uses the **Name** parameter of `Unregister-ScheduledJob` with a value of all
+(`*`) to delete all scheduled jobs.
 
-Both commands use the *Force* parameter, which deletes a scheduled job even if an instance of the job is running.
+Both commands use the **Force** parameter, which deletes a scheduled job even if an instance of the
+job is running.
 
 ### Example 3: Delete a scheduled job on a remote computer
 
-```
-PS C:\> Invoke-Command -ComputerName "Server01" { Unregister-ScheduledJob -Name "Test*"}
+```powershell
+Invoke-Command -ComputerName "Server01" { Unregister-ScheduledJob -Name "Test*"}
 ```
 
 This command deletes scheduled jobs with names that begin with Test on the Server01 remote computer.
-The command uses the Invoke-Command cmdlet to run the **Unregister-ScheduledJob** command on the Server02 computer.
+The command uses the `Invoke-Command` cmdlet to run the `Unregister-ScheduledJob` command on the
+Server02 computer.
 
 ## Parameters
 
 ### -Force
-Deletes the scheduled job even if an instance of the job is running.
-By default, **Unregister-ScheduledJob** does not interrupt running jobs.
+
+Deletes the scheduled job even if an instance of the job is running. By default,
+`Unregister-ScheduledJob` does not interrupt running jobs.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -106,8 +119,9 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Deletes the scheduled jobs with the specified identification numbers (ID).
-Enter the IDs of scheduled jobs on the computer.
+
+Deletes the scheduled jobs with the specified identification numbers (ID). Enter the IDs of
+scheduled jobs on the computer.
 
 ```yaml
 Type: System.Int32[]
@@ -122,9 +136,10 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Specifies a scheduled job.
-Enter a variable that contains **ScheduledJob** objects or type a command or expression that gets **ScheduledJob** objects, such as a Get-ScheduledJob command.
-You can also pipe **ScheduledJob** objects to **Unregister-JobTrigger**.
+
+Specifies a scheduled job. Enter a variable that contains **ScheduledJob** objects or type a command
+or expression that gets **ScheduledJob** objects, such as a `Get-ScheduledJob` command. You can also
+pipe **ScheduledJob** objects to `Unregister-JobTrigger`.
 
 ```yaml
 Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition[]
@@ -139,9 +154,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Deletes the scheduled jobs with the specified names.
-Enter the names of one or more scheduled jobs on the computer.
-Wildcards are supported.
+
+Deletes the scheduled jobs with the specified names. Enter the names of one or more scheduled jobs
+on the computer. Wildcards are supported.
 
 ```yaml
 Type: System.String[]
@@ -156,6 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -171,8 +187,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -187,16 +203,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 You can pipe scheduled jobs to Unregister-ScheduledJob
 
 ## Outputs
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## Notes

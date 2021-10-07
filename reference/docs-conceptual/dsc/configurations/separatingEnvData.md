@@ -1,6 +1,6 @@
 ---
 description: It can be useful to separate the data used in a DSC configuration from the configuration itself by using configuration data. By doing this, you can use a single configuration for multiple environments.
-ms.date: 06/12/2017
+ms.date: 10/05/2021
 title: Separating configuration and environment data
 ---
 
@@ -264,7 +264,7 @@ in an additional key with the name `NonNodeData`. Note that you can have as many
 you want, and you can name them anything you want. `NonNodeData` is not a reserved word, it is just
 what we decided to name the additional key.
 
-You access additional keys by using the special variable **$ConfigurationData**. In this example,
+You access additional keys by using the special variable `$ConfigurationData`. In this example,
 `ConfigFileContents` is accessed with the line:
 
 ```powershell

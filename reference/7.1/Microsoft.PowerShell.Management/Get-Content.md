@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/18/2020
+ms.date: 10/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
@@ -100,9 +100,9 @@ This is Line 25
 ```
 
 The `Get-Content` command is wrapped in parentheses so that the command completes before going to
-the next step. `Get-Content`returns an array of lines, this allows you to add the index notation after
-the parenthesis to retrieve a specific line number. In this case, the `[-1]` index specifies the
-last index in the returned array of 25 retrieved lines.
+the next step. `Get-Content`returns an array of lines, this allows you to add the index notation
+after the parenthesis to retrieve a specific line number. In this case, the `[-1]` index specifies
+the last index in the returned array of 25 retrieved lines.
 
 ### Example 4: Get the last line of a text file
 

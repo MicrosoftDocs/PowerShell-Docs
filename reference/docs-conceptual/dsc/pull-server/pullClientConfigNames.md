@@ -1,6 +1,6 @@
 ---
 description: The article explains how to set up a Pull Client using Configuration Names in PowerShell 5.0 and later
-ms.date: 06/12/2017
+ms.date: 10/05/2021
 title: Set up a Pull Client using Configuration Names in PowerShell 5.0 and later
 ---
 # Set up a Pull Client using Configuration Names in PowerShell 5.0 and later
@@ -38,7 +38,7 @@ Executing any of the examples below creates a new output folder named **PullClie
 puts a metaconfiguration MOF file there. In this case, the metaconfiguration MOF file will be named
 `localhost.meta.mof`.
 
-To apply the configuration, call the **Set-DscLocalConfigurationManager** cmdlet, with the **Path**
+To apply the configuration, call the `Set-DscLocalConfigurationManager` cmdlet, with the **Path**
 set to the location of the metaconfiguration MOF file. For example:
 
 ```powershell

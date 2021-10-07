@@ -1,16 +1,16 @@
 ---
 description: Get-Member is a powerful tool that allows to see the type and structure of objects in PowerShell.
-ms.date: 06/05/2017
+ms.date: 10/05/2021
 title: Viewing Object Structure Get Member
 ---
 # Viewing Object Structure (Get-Member)
 
 Because objects play such a central role in Windows PowerShell, there are several native commands
-designed to work with arbitrary object types. The most important one is the **Get-Member** command.
+designed to work with arbitrary object types. The most important one is the `Get-Member` command.
 
 The simplest technique for analyzing the objects that a command returns is to pipe the output of
-that command to the **Get-Member** cmdlet. The **Get-Member** cmdlet shows you the formal name of
-the object type and a complete listing of its members. The number of elements that are returned can
+that command to the `Get-Member` cmdlet. The `Get-Member` cmdlet shows you the formal name of the
+object type and a complete listing of its members. The number of elements that are returned can
 sometimes be overwhelming. For example, a process object can have over 100 members.
 
 To see all the members of a Process object and page the output so you can view all of it, type:
@@ -37,14 +37,15 @@ add_Disposed                   Method         System.Void add_Disposed(Event...
 ```
 
 We can make this long list of information more usable by filtering for elements we want to see. The
-**Get-Member** command lets you list only members that are properties. There are several forms of
-properties. The cmdlet displays properties of any type if we set the **Get-Member MemberType**
-parameter to the value **Properties**. The resulting list is still very long, but a bit more
-manageable:
+`Get-Member` command lets you list only members that are properties. There are several forms of
+properties. The cmdlet displays properties of any type if we set the **MemberType** parameter to the
+value **Properties**. The resulting list is still very long, but a bit more manageable:
 
-```
+```powershell
 PS> Get-Process | Get-Member -MemberType Properties
+```
 
+```Output
    TypeName: System.Diagnostics.Process
 
 Name                       MemberType     Definition
