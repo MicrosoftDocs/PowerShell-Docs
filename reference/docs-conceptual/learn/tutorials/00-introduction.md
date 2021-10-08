@@ -1,7 +1,7 @@
 ---
 description: This is the introduction to the tutorial series PowerShell Bit. Learn PowerShell, a little bit a time.
 ms.custom: chnoring
-ms.date: 02/19/2021
+ms.date: 10/07/2021
 ms.reviewer: sewhee
 title: PowerShell Bits Tutorials
 ---

@@ -1,6 +1,6 @@
 ---
 description: Windows PowerShell 5.x adds new event logging that allows you to audit script block execution.
-ms.date: 06/12/2017
+ms.date: 10/07/2021
 title: Script Tracing and Logging
 ---
 # Script Tracing and Logging
@@ -117,4 +117,7 @@ As with all logging systems that have a limited retention buffer, one way to att
 infrastructure is to flood the log with spurious events to hide earlier evidence. To protect
 yourself from this attack, ensure that you have some form of event log collection set up Windows
 Event Forwarding. For more information, see
-[Spotting the Adversary with Windows Event Log Monitoring](https://apps.nsa.gov/iaarchive/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm).
+[Spotting the Adversary with Windows Event Log Monitoring][report].
+
+<!-- link refs -->
+[report]: https://apps.nsa.gov/iaarchive/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm

@@ -1,6 +1,6 @@
 ---
 description: This article explains how to use Profiles in Windows PowerShell ISE.
-ms.date: 01/02/2020
+ms.date: 10/07/2021
 title: How to Use Profiles in Windows PowerShell ISE
 ---
 
@@ -86,7 +86,7 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
    to edit. For example, to open the "Current user, Windows PowerShell ISE" profile, type:
    `psEdit $PROFILE`
 
-2. Add some items to your profile. The following are a few examples to get you started:
+1. Add some items to your profile. The following are a few examples to get you started:
 
    - To change the default background color of the Console Pane to blue, in the profile file type:
      `$psISE.Options.OutputPaneBackground = 'blue'` . For more information about the `$psISE`
@@ -94,7 +94,7 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
    - To change font size to 20, in the profile file type: `$psISE.Options.FontSize =20`
 
-3. To save your profile file, on the **File** menu, click **Save**. Next time you open the Windows
+1. To save your profile file, on the **File** menu, click **Save**. Next time you open the Windows
    PowerShell ISE, your customizations are applied.
 
 ## See Also

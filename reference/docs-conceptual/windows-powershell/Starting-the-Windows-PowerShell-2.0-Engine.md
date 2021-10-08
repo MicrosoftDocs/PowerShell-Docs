@@ -1,6 +1,6 @@
 ---
 description: The Windows PowerShell 2.0 Engine is intended to be used only when an existing script or host program cannot run because host programs written for Windows PowerShell 2.0 and compiled with CLR 2.0 cannot run without modification.
-ms.date: 06/05/2017
+ms.date: 10/07/2021
 title: Using the Windows PowerShell 2.0 Engine
 ---
 

@@ -1,6 +1,6 @@
 ---
 description: Remoting in PowerShell Core using WSMan
-ms.date: 08/06/2018
+ms.date: 10/07/2021
 title: WS-Management (WSMan) Remoting in PowerShell Core
 ---
 # WS-Management (WSMan) Remoting in PowerShell Core

@@ -1,6 +1,6 @@
 ---
 description: This article shows how to create a multiple-selection list box control using the .NET Framework form-building features in Windows PowerShell.
-ms.date: 06/05/2017
+ms.date: 10/07/2021
 title: Multiple selection List Boxes
 ---
 # Multiple-selection List Boxes

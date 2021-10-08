@@ -1,6 +1,6 @@
 ---
 description: This articles shows how to manage printers in Windows using WMI objects and COM interfaces.
-ms.date: 12/23/2019
+ms.date: 10/07/2021
 title: Working with Printers
 ---
 # Working with Printers in Windows
