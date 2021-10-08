@@ -1,7 +1,8 @@
 ---
 description: Describes how to write comment-based help topics for functions and scripts.
 Locale: en-US
-ms.date: 06/18/2020
+ms.date: 10/08/2021
+no-loc: [.SYNOPSIS, .DESCRIPTION, .PARAMETER, .EXAMPLE, .INPUTS, .OUTPUTS, .NOTES, .LINK, .COMPONENT, .ROLE, .FUNCTIONALITY, .FORWARDHELPTARGETNAME, .FORWARDHELPCATEGORY, .REMOTEHELPRUNSPACE, .EXTERNALHELP]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comment Based Help
