@@ -24,7 +24,7 @@ Installing packages from the Gallery requires the latest version of the PowerShe
 [Installing PowerShellGet](installing-psget.md) for complete instructions.
 
 Check out the [Getting Started](getting-started.md) page for more information on how to use
-PowerShellGet commands with the Gallery. You can also run *Update-Help -Module PowerShellGet* to
+PowerShellGet commands with the Gallery. You can also run `Update-Help -Module PowerShellGet` to
 install local help for these commands.
 
 ## Supported Operating Systems
