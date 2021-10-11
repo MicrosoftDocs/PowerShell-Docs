@@ -1,6 +1,6 @@
 ---
 description: The Deep Dives section of the documentation contains articles the provide more details and examples than the cmdlet reference.
-ms.date: 10/05/2021
+ms.date: 10/11/2021
 title: Deep dives
 ---
 # Deep dive articles
@@ -14,9 +14,9 @@ from [@KevinMarquette][@KevinMarquette] and were originally published at [PowerS
 
 ## How to contribute content
 
-If you're interested in contributing content to this collection, please read the
-[Contributor Guide][Contributor Guide]. When you are ready to propose a contribution, submit an issue in the GitHub
-repository using the [Document Idea template][Document Idea template] and include a link to the existing content you want
+If you're interested in contributing content to this collection, please read the [Contributor Guide][Contributor Guide].
+When you are ready to propose a contribution, submit an issue in the GitHub repository using the
+[Document Idea template][Document Idea template] and include a link to the existing content you want
 to share.
 
 <!-- link references -->
