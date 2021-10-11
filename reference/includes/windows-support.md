@@ -24,7 +24,7 @@ on. These versions remain supported until either the version of
 | &#x2705; Windows Server Nano (1809 or higher)    | &#x2705;  |   &#x2705;    |     &#x2705;      |
 | &#x274c; Windows Server 2012                     | &#x1f7e1; |   &#x1f7e1;   |     &#x274c;      |
 | &#x274c; Windows Server 2008 R2                  | &#x1f7e1; |   &#x1f7e1;   |     &#x274c;      |
-| &#x2705; Windows 10 1601+                        | &#x2705;  |   &#x2705;    |     &#x2705;      |
+| &#x2705; Windows 10 1607+                        | &#x2705;  |   &#x2705;    |     &#x2705;      |
 | &#x2705; Windows 8.1                             | &#x2705;  |   &#x2705;    |     &#x274c;      |
 
 PowerShell has not been tested on Windows 11.
