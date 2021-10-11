@@ -1,6 +1,6 @@
 ---
 description: A PowerShell drive is a data store location that you can access like a file system drive in PowerShell. By default, PowerShell includes providers that support the file system, the registry, certificate stores, and others.
-ms.date: 10/05/2021
+ms.date: 10/11/2021
 title: Managing Windows PowerShell Drives
 ---
 # Managing Windows PowerShell Drives

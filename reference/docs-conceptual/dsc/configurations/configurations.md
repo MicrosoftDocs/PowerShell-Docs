@@ -1,6 +1,6 @@
 ---
 description: DSC configurations are PowerShell scripts that define a special type of function.
-ms.date: 10/05/2021
+ms.date: 10/11/2021
 title: DSC Configurations
 ---
 # DSC Configurations
