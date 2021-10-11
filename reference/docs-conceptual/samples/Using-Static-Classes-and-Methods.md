@@ -1,6 +1,6 @@
 ---
 description: This article explains how to identify and use the properties and methods of .NET static classes.
-ms.date: 10/05/2021
+ms.date: 10/11/2021
 title: Using Static Classes and Methods
 ---
 # Using Static Classes and Methods

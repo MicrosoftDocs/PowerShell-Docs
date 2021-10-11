@@ -1,6 +1,6 @@
 ---
 description: This article explains the various methods for configuring second-hop authentication for PowerShell remoting, including the security implications and recommendations.
-ms.date: 10/05/2021
+ms.date: 10/11/2021
 title: Making the second hop in PowerShell Remoting
 ---
 
@@ -222,14 +222,19 @@ $ServerB2 = Get-ADComputer -Identity ServerB2
 $ServerB3 = Get-ADComputer -Identity ServerB3
 $ServerC  = Get-ADComputer -Identity ServerC
 
+$servers = @(
+    $ServerB1,
+    $ServerB2,
+    $ServerB3
+)
+
 # Grant resource-based Kerberos constrained delegation
-Set-ADComputer -Identity $ServerC `
-    -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
+Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $servers
 ```
 
 If you want to make the second hop across domains, use the **Server** parameter to specify
-fully-qualified domain name (FQDN) of the domain controller of the domain
-to which _ServerB_ belongs:
+fully-qualified domain name (FQDN) of the domain controller of the domain to which _ServerB_
+belongs:
 
 ```powershell
 # For ServerC in Contoso domain and ServerB in other domain
@@ -314,7 +319,7 @@ You can pass credentials inside the **ScriptBlock** parameter of a call to the
 
 ### Example
 
-The following example shows how to pass credentials in an **Invoke-Command** script block:
+The following example shows how to pass credentials in an  script block:
 
 ```powershell
 # This works without delegation, passing fresh creds

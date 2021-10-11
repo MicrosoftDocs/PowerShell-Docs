@@ -1,6 +1,6 @@
 ---
 description: Get-Member is a powerful tool that allows to see the type and structure of objects in PowerShell.
-ms.date: 10/05/2021
+ms.date: 10/11/2021
 title: Viewing Object Structure Get Member
 ---
 # Viewing Object Structure (Get-Member)
@@ -42,7 +42,7 @@ properties. The cmdlet displays properties of any type if we set the **MemberTyp
 value **Properties**. The resulting list is still very long, but a bit more manageable:
 
 ```powershell
-PS> Get-Process | Get-Member -MemberType Properties
+Get-Process | Get-Member -MemberType Properties
 ```
 
 ```Output
