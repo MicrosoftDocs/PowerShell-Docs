@@ -1,6 +1,6 @@
 ---
 description: As an object-oriented scripting language, PowerShell supports both .NET and COM-based objects. This article shows you how to create and interact with these objects.
-ms.date: 10/05/2021
+ms.date: 10/11/2021
 title: Creating .NET and COM Objects New Object
 ---
 # Creating .NET and COM Objects (New-Object)

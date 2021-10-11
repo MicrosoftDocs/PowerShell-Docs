@@ -1,6 +1,6 @@
 ---
 description: PowerShell uses the noun Location to refer to the working directory, and implements a family of cmdlets to examine and manipulate your location.
-ms.date: 10/05/2021
+ms.date: 10/11/2021
 title: Managing Current Location
 ---
 # Managing Current Location
