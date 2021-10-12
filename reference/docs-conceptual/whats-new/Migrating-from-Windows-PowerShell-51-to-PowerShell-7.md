@@ -22,7 +22,7 @@ editions before deployment. Migration is simple, quick, and safe.
 
 PowerShell 7 is supported on the following Windows operating systems:
 
-- Windows 8.1 and 10
+- Windows 8.1, 10, and 11
 - Windows Server 2012, 2012 R2, 2016, and 2019
 
 PowerShell 7 also runs on macOS and several Linux distributions. For a list of supported operating
