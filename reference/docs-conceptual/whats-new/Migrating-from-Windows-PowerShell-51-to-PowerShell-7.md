@@ -22,7 +22,7 @@ editions before deployment. Migration is simple, quick, and safe.
 
 PowerShell 7 is supported on the following Windows operating systems:
 
-- Windows 8.1 and 10
+- Windows 8.1, 10, and 11
 - Windows Server 2012, 2012 R2, 2016, and 2019
 
 PowerShell 7 also runs on macOS and several Linux distributions. For a list of supported operating
@@ -316,10 +316,10 @@ For details about customizing the VSCode layout to ISE, see
 [How to Replicate the ISE Experience in Visual Studio Code](/powershell/scripting/components/vscode/how-to-replicate-the-ise-experience-in-vscode)
 
 > [!NOTE]
-> There are no plans to update the ISE with new features. The ISE is now a user-uninstallable
-> feature in the latest versions of Windows 10 and Windows Server. There are no plans to permanently
-> remove the ISE. The PowerShell Team and its partners are focused on improving the scripting
-> experience in the PowerShell extension for Visual Studio Code.
+> There are no plans to update the ISE with new features. In the latest versions of Windows 10 or
+> Windows Server 2019 and higher, the ISE is now a user-uninstallable feature. There are no plans to
+> permanently remove the ISE. The PowerShell Team and its partners are focused on improving the
+> scripting experience in the PowerShell extension for Visual Studio Code.
 
 ## Next Steps
 

@@ -24,11 +24,13 @@ install Windows Management Framework 5.1. For more information, see
 
 |              Windows version               |                           System requirement                            |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
+| Windows Server 2022                        | Installed by default                                                    |
 | Windows Server 2019                        | Installed by default                                                    |
 | Windows Server 2016                        | Installed by default                                                    |
 | Windows Server 2012 R2                     | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
 | Windows Server 2012                        | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
 | Windows Server 2008 R2 with Service Pack 1 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
+| Windows 11                                 | Installed by default                                                    |
 | Windows 10 version 1607 and up             | Installed by default                                                    |
 | Windows 10 version 1507, 1511              | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
 | Windows 8.1                                | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
@@ -43,11 +45,13 @@ supersedes Windows Management Framework 5.0.
 
 |              Windows version               |                           System requirement                            |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
+| Windows Server 2022                        | Higher version installed by default                                     |
 | Windows Server 2019                        | Higher version installed by default                                     |
 | Windows Server 2016                        | Higher version installed by default                                     |
 | Windows Server 2012 R2                     | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
 | Windows Server 2012                        | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
 | Windows Server 2008 R2 with Service Pack 1 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
+| Windows 11                                 | Higher version installed by default                                     |
 | Windows 10 version 1607 and up             | Higher version installed by default                                     |
 | Windows 10 version 1507, 1511              | Installed by default                                                    |
 | Windows 8.1                                | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |

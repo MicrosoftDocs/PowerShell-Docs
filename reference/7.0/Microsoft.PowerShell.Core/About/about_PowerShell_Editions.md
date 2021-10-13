@@ -46,27 +46,30 @@ as the same as having the value `Desktop`.
 
 ### Edition in `$PSVersionTable`
 
-The `$PSVersionTable` automatic variable also has edition information in PowerShell 5.1 and above:
+The `$PSVersionTable` automatic variable also has **PSEdition** property in PowerShell 5.1 and above:
 
 ```powershell
 $PSVersionTable
 ```
 
 ```Output
+
 Name                           Value
 ----                           -----
-PSVersion                      6.2.0-rc.1
-PSEdition                      Core           # <-- Edition information
-GitCommitId                    6.2.0-rc.1
-OS                             Microsoft Windows 10.0.18865
+PSVersion                      7.2.0
+PSEdition                      Core
+GitCommitId                    7.2.0
+OS                             Microsoft Windows 10.0.19043
 Platform                       Win32NT
 PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
 PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 WSManStackVersion              3.0
+
+
 ```
 
-The `PSEdition` field will have the same value as the `$PSEdition` automatic variable.
+The **PSEdition** field has the same value as the `$PSEdition` automatic variable.
 
 ## The `CompatiblePSEditions` module manifest field
 

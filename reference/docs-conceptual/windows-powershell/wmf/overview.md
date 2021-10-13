@@ -36,8 +36,10 @@ to the links below to review the release notes:
 
 |        Operating System Version         | [WMF 5.1][WMF 5.1] | WMF 5.0<br>*Out of support* | [WMF 4.0][WMF 4.0] | [WMF 3.0][WMF 3.0] | [WMF 2.0][WMF 2.0] |
 | --------------------------------------- | ------------------ | --------------------------- | ------------------ | ------------------ | ------------------ |
+| Windows Server 2022                     | Ships in-box       |                             |                    |                    |                    |
 | Windows Server 2019                     | Ships in-box       |                             |                    |                    |                    |
 | Windows Server 2016                     | Ships in-box       |                             |                    |                    |                    |
+| Windows 11                              | Ships in-box       |                             |                    |                    |                    |
 | Windows 10                              | Ships in-box       | Ships in-box                |                    |                    |                    |
 | Windows Server 2012 R2                  | Yes                | Yes                         | Ships in-box       |                    |                    |
 | Windows 8.1                             | Yes                | Yes                         | Ships in-box       |                    |                    |

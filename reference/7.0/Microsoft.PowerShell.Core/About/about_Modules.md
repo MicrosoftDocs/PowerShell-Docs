@@ -312,7 +312,7 @@ By default, the effective locations assigned to `$env:PSModulePath` are:
   and whether or not you are using folder redirection. Microsoft OneDrive can
   also change the location of your **Documents** folder.
 
-  By default, on Windows 10, that location is
+  By default, on Windows 10 and higher, that location is
   `$HOME\Documents\PowerShell\Modules`. On Linux or Mac, the **CurrentUser**
   location is `$HOME/.local/share/powershell/Modules`.
 

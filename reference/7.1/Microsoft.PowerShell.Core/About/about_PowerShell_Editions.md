@@ -55,10 +55,10 @@ $PSVersionTable
 ```Output
 Name                           Value
 ----                           -----
-PSVersion                      6.2.0-rc.1
-PSEdition                      Core           # <-- Edition information
-GitCommitId                    6.2.0-rc.1
-OS                             Microsoft Windows 10.0.18865
+PSVersion                      7.1.4
+PSEdition                      Core
+GitCommitId                    7.1.4
+OS                             Microsoft Windows 10.0.19043
 Platform                       Win32NT
 PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
 PSRemotingProtocolVersion      2.3

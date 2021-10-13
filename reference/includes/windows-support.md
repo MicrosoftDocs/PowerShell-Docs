@@ -6,7 +6,7 @@ ms.prod: powershell
 ms.topic: include
 ---
 The following table is a list of PowerShell releases and the versions of Windows they are supported
-on. These versions remain supported until either the version of
+on. These versions are supported until either the version of
 [PowerShell reaches end-of-support][lifecycle] or the version of
 [Windows reaches end-of-support][eol-windows].
 
@@ -24,10 +24,9 @@ on. These versions remain supported until either the version of
 | &#x2705; Windows Server Nano (1809 or higher)    | &#x2705;  |   &#x2705;    |     &#x2705;      |
 | &#x274c; Windows Server 2012                     | &#x1f7e1; |   &#x1f7e1;   |     &#x274c;      |
 | &#x274c; Windows Server 2008 R2                  | &#x1f7e1; |   &#x1f7e1;   |     &#x274c;      |
+| &#x2705; Windows 11                              | &#x2705;  |   &#x2705;    |     &#x2705;      |
 | &#x2705; Windows 10 1607+                        | &#x2705;  |   &#x2705;    |     &#x2705;      |
 | &#x2705; Windows 8.1                             | &#x2705;  |   &#x2705;    |     &#x274c;      |
-
-PowerShell has not been tested on Windows 11.
 
 > [!NOTE]
 > Support for a specific version of Windows is determined by the Microsoft Support Lifecycle
@@ -43,8 +42,8 @@ PowerShell is supported on Windows for the following processor architectures.
 | Nano Server Version 1803+    | x64, Arm32 |       x64       |        x64        |
 | Windows Server 2012 R2+      |  x64, x86  |    x64, x86     |     x64, x86      |
 | Windows Server Core 2012 R2+ |  x64, x86  |    x64, x86     |     x64, x86      |
-| Windows 10 Client            |  x64, x86  | x64, x86, Arm64 |  x64, x86, Arm64  |
-| Windows Client 8.1           |  x64, x86  |    x64, x86     |     x64, x86      |
+| Windows 10 or 11 Client      |  x64, x86  | x64, x86, Arm64 |  x64, x86, Arm64  |
+| Windows 8.1 Client           |  x64, x86  |    x64, x86     |     x64, x86      |
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-windows]: /lifecycle/products/?terms=Windows%20Server&products=windows

@@ -39,7 +39,7 @@ Store application in Windows.
 
 Benefits of the Microsoft Store package:
 
-- Automatic updates built right into Windows 10
+- Automatic updates built right into Windows
 - Integrates with other software distribution mechanisms like Intune and SCCM
 
 > [!NOTE]

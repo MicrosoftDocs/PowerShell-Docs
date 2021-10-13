@@ -636,8 +636,8 @@ You can also read the help articles about the commands that come with PowerShell
 `Get-Help` displays help in the locale set for the Windows operating system or in the fallback
 language for that locale. If you don't have help files for the primary or fallback locale,
 `Get-Help` behaves as if there are no help files on the computer. To get help for a different
-locale, use **Region** and **Language** in Control Panel to change the settings. On Windows 10,
-**Settings**, **Time & Language**.
+locale, use **Region** and **Language** in Control Panel to change the settings. On Windows 10 or
+higher, **Settings**, **Time & Language**.
 
 The full view of help includes a table of information about the parameters. The table includes the
 following fields:
