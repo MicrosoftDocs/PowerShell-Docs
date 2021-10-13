@@ -36,7 +36,7 @@ You can use the information from `Get-ComputerRestorePoint` to select a restore 
 use a sequence number to identify a restore point for the `Restore-Computer` cmdlet.
 
 System restore points and the `Get-ComputerRestorePoint` cmdlet are supported only on client
-operating systems such as Windows 10, Windows 7, Windows Vista, and Windows XP.
+operating systems such as Windows 10.
 
 ## Examples
 

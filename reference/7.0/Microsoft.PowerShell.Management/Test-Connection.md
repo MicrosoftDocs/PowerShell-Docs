@@ -308,7 +308,7 @@ Accept wildcard characters: False
 ### -MaxHops
 
 Sets the maximum number of hops that an ICMP request message can be sent. The default value is
-controlled by the operating system. The default value for Windows 10 is 128 hops.
+controlled by the operating system. The default value for Windows 10 and higher is 128 hops.
 
 ```yaml
 Type: System.Int32
@@ -317,7 +317,7 @@ Aliases: Ttl, TimeToLive, Hops
 
 Required: False
 Position: Named
-Default value: 128 hops in Windows 10
+Default value: 128
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

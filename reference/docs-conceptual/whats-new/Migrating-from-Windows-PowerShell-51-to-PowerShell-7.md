@@ -316,10 +316,10 @@ For details about customizing the VSCode layout to ISE, see
 [How to Replicate the ISE Experience in Visual Studio Code](/powershell/scripting/components/vscode/how-to-replicate-the-ise-experience-in-vscode)
 
 > [!NOTE]
-> There are no plans to update the ISE with new features. The ISE is now a user-uninstallable
-> feature in the latest versions of Windows 10 and Windows Server. There are no plans to permanently
-> remove the ISE. The PowerShell Team and its partners are focused on improving the scripting
-> experience in the PowerShell extension for Visual Studio Code.
+> There are no plans to update the ISE with new features. In the latest versions of Windows 10 or
+> Windows Server 2019 and higher, the ISE is now a user-uninstallable feature. There are no plans to
+> permanently remove the ISE. The PowerShell Team and its partners are focused on improving the
+> scripting experience in the PowerShell extension for Visual Studio Code.
 
 ## Next Steps
 
