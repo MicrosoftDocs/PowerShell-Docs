@@ -672,7 +672,7 @@ bold to underlined. The property names makes it easier for you to create
 decorated strings using tab completion:
 
 ```powershell
-"$($PSStyle.Background.LightCyan)Power$($PSStyle.Underline)$($PSStyle.Bold)Shell$($PSStyle.Reset)"
+"$($PSStyle.Background.BrightCyan)Power$($PSStyle.Underline)$($PSStyle.Bold)Shell$($PSStyle.Reset)"
 ```
 
 The following members control how or when ANSI formatting is used:
@@ -690,21 +690,21 @@ The following members control how or when ANSI formatting is used:
   contain the ANSI escape sequences for the 16 standard console colors.
 
   - Black
+  - BrightBlack
   - White
-  - DarkGray
-  - LightGray
+  - BrightWhite
   - Red
-  - LightRed
+  - BrightRed
   - Magenta
-  - LightMagenta
+  - BrightMagenta
   - Blue
-  - LightBlue
+  - BrightBlue
   - Cyan
-  - LightCyan
+  - BrightCyan
   - Green
-  - LightGreen
+  - BrightGreen
   - Yellow
-  - LightYellow
+  - BrightYellow
 
   The values are settable and can contain any number of ANSI escape sequences.
   There is also an `FromRgb()` method to specify 24-bit color. There are two
