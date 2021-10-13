@@ -12,7 +12,7 @@ If you are interested in PowerShell 7 and later, you need to install PowerShell 
 Windows PowerShell. For that, see
 [Installing PowerShell Core on Windows](../../install/Installing-PowerShell-on-Windows.md).
 
-## Finding PowerShell in Windows 10, 8.1, 8.0, and 7
+## Finding PowerShell in Windows 11, 10, 8.1, 8.0, and 7
 
 Sometimes locating PowerShell console or the Integrated Scripting Environment (ISE) in Windows can
 be difficult, as its location moves from one version of Windows to the next.
@@ -24,7 +24,7 @@ here are the original version, as released, with no updates.
 
 |     Version      |                                                            Location                                                            |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Windows 10       | Click left lower corner Windows icon, start typing PowerShell                                                                  |
+| Windows 10, 11   | Click left lower corner Windows icon, start typing PowerShell                                                                  |
 | Windows 8.1, 8.0 | On the start screen, start typing PowerShell.<br/>If on desktop, click left lower corner Windows icon, start typing PowerShell |
 | Windows 7 SP1    | Click left lower corner Windows icon, on the search box start typing PowerShell                                                |
 
@@ -32,7 +32,7 @@ here are the original version, as released, with no updates.
 
 |     Version      |                                                            Location                                                            |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Windows 10       | Click left lower corner Windows icon, start typing ISE                                                                         |
+| Windows 10, 11   | Click left lower corner Windows icon, start typing ISE                                                                         |
 | Windows 8.1, 8.0 | On the start screen, type **PowerShell ISE**.<br/>If on desktop, click left lower corner Windows icon, type **PowerShell ISE** |
 | Windows 7 SP1    | Click left lower corner Windows icon, on the search box start typing PowerShell                                                |
 
@@ -46,8 +46,8 @@ and editions with the GUI are named **Desktop**.
 
 In all Core editions, when you log to the server you get a Windows command prompt window.
 
-Type `powershell` and press **ENTER** to start PowerShell inside the command prompt session. Type
-`exit` to terminate the PowerShell session and return to command prompt.
+Type `powershell` and press <kbd>ENTER</kbd> to start PowerShell inside the command prompt session.
+Type `exit` to close the PowerShell session and return to command prompt.
 
 ### Windows Server Desktop editions
 
@@ -60,7 +60,7 @@ the left lower corner Windows icon, type PowerShell ISE.
 ## How to check the version of PowerShell
 
 To find which version of PowerShell you have installed, start a PowerShell console (or the ISE) and
-type `$PSVersionTable` and press **ENTER**. Look for the `PSVersion` value.
+type `$PSVersionTable` and press <kbd>ENTER</kbd>. Look for the `PSVersion` value.
 
 ## Upgrading existing Windows PowerShell
 

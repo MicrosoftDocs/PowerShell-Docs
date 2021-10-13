@@ -34,12 +34,13 @@ work in Windows PowerShell 5.1 without changes.
   from the Pull Server and when using PowerShellGet cmdlets
 - Responses to a number of user requests and issues
 
-Windows PowerShell 5.1 is installed by default on Windows Server 2016 and
-Windows 10. To install Windows PowerShell 5.1 on Windows Server 2012 R2,
-Windows 8.1 Enterprise, or Windows 8.1 Pro, see
-[Install and Configure WMF 5.1](/powershell/scripting/wmf/setup/install-configure).
-Be sure to read the download details, and meet all system requirements, before
-you install Windows Management Framework 5.1.
+Windows PowerShell 5.1 is installed by default on Windows Server version 2016 and higher and Windows
+client version 10 and higher.
+
+To install Windows PowerShell 5.1 on Windows Server 2012 R2, Windows 8.1 Enterprise, or Windows 8.1
+Pro, see [Install and Configure WMF 5.1](/powershell/scripting/wmf/setup/install-configure). Be sure
+to read the download details, and meet all system requirements, before you install Windows
+Management Framework 5.1.
 
 You can also read about changes to Windows PowerShell 5.1 in
 [What's New in Windows PowerShell](/powershell/scripting/windows-powershell/whats-new/what-s-new-in-windows-powershell-50).

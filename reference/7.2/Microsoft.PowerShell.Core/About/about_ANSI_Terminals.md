@@ -22,7 +22,7 @@ The ANSI features are designed to be compatible with the xterm-based terminals.
 For more information, see [xterm](https://wikipedia.org/wiki/Xterm) in
 Wikipedia.
 
-On Windows 10, the Windows Console Host is xterm compatible. The
+On Windows 10 and higher, the Windows Console Host is xterm compatible. The
 [Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)
 application is also xterm compatible.
 

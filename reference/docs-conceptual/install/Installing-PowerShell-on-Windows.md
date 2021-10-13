@@ -186,7 +186,7 @@ PowerShell binaries can be deployed using two different methods.
    location within the mounted image.
 1. Online - Transfer the zip file over a PowerShell Session and unzip it in your chosen location.
 
-In both cases, you need the Windows 10 x64 ZIP release package. Run the commands within an
+In both cases, you need the Windows x64 ZIP release package. Run the commands within an
 "Administrator" instance of PowerShell.
 
 ### Offline Deployment of PowerShell
@@ -271,7 +271,7 @@ PowerShell 7.1 has been published to the Microsoft Store. You can find the Power
 
 Benefits of the Microsoft Store package:
 
-- Automatic updates built right into Windows 10
+- Automatic updates built right into Windows
 - Integrates with other software distribution mechanisms like Intune and SCCM
 
 ### Known limitations
