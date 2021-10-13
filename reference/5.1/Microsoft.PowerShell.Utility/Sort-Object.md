@@ -340,6 +340,29 @@ sample code, `[int]` converts the string to an integer and `$_` represents each 
 down the pipeline. The integer objects are sent down the pipeline to the `Sort-Object` cmdlet.
 `Sort-Object` sorts the integer objects in numeric order.
 
+### Example 9: Sort by multiple properties
+
+If you want to sort by multiple properties, separate the properties by commas.
+
+```powershell
+Get-ChildItem -Path C:\Test | Sort-Object Length,Name
+```
+
+```Output
+    Directory: C:\Test
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          13/10/2021    22:16              2 File01.txt
+-a---          13/10/2021    22:16              2 File03.txt
+-a---          13/10/2021    22:18             64 File02.txt
+-a---          13/10/2021    22:18             64 File04.txt
+```
+
+The `Get-ChildItem` cmdlet gets the files from the directory specified by the **Path** parameter. The objects are sent
+down the pipeline to the `Sort-Object` cmdlet. `Sort-Object` uses the **Length** and **Name** parameter to sort
+the files by length in ascending order. Since `File01.txt` and `File03.txt` have the same length, they are further sorted by their property **Name**.
+
 ## Parameters
 
 ### -CaseSensitive
@@ -419,7 +442,7 @@ Specifies the property names that `Sort-Object` uses to sort the objects. Wildca
 Objects are sorted based on the property values. If you do not specify a property, `Sort-Object`
 sorts based on default properties for the object type or the objects themselves.
 
-Multiple properties can be sorted in ascending order, descending order, or a combination of sort
+Use commas to separate multiple properties. Multiple properties can be sorted in ascending order, descending order, or a combination of sort
 orders. When you specify multiple properties, the objects are sorted by the first property. If
 multiple objects have the same value for the first property, those objects are sorted by the second
 property. This process continues until there are no more specified properties or no groups of
