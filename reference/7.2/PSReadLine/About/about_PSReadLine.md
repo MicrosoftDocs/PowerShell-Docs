@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 10/05/2021
+ms.date: 10/14/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
@@ -45,7 +45,6 @@ PSReadLine 2.2.0 (beta) added two new predictive IntelliSense features:
 - Connected PSReadLine to the `CommandPrediction` APIs introduced in PS 7.1 to
   allow a user can import a predictor module that can render the suggestions
   from a custom source.
-
 
 ```powershell
 Install-Module -Name PSReadLine -AllowPrerelease
@@ -1623,14 +1622,58 @@ typical call looks like
 ### Command History
 
 PSReadLine maintains a history file containing all the commands and data you
-have entered from the command line. This may contain sensitive data including
-passwords. For example, if you use the `ConvertTo-SecureString` cmdlet the
-password is logged in the history file as plain text. The history files is a
-file named `$($host.Name)_history.txt`. On Windows systems the history file is
-stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On
-non-Windows systems, the history files is stored at
-`$env:XDG_DATA_HOME/powershell/PSReadLine` or
+have entered from the command line. The history files is a file named
+`$($host.Name)_history.txt`. On Windows systems the history file is stored at
+`$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On non-Windows systems,
+the history files is stored at `$env:XDG_DATA_HOME/powershell/PSReadLine` or
 `$env:HOME/.local/share/powershell/PSReadLine`.
+
+The history can contain sensitive data including passwords. PSReadLine attempts
+to filter out sensitive information. Any command lines containing the following
+strings are not written to the history file.
+
+- password
+- asplaintext
+- token
+- apikey
+- secret
+
+PSReadLine 2.2.0 improves the filtering of sensitive data in the following ways:
+
+- Uses the PowerShell Abstract Syntax Tree (AST) of the parsed command line to
+  look for sensitive data.
+- Uses an allowlist of safe cmdlets from the **SecretManagement** module to
+  allow those commands to be added to the history. The allowlist contains:
+  - `Get-Secret`
+  - `Get-SecretInfo`
+  - `Get-SecretVault`
+  - `Register-SecretVault`
+  - `Remove-Secret`
+  - `Set-SecretInfo`
+  - `Set-SecretVaultDefault`
+  - `Test-SecretVault`
+  - `Unlock-SecretVault`
+  - `Unregister-SecretVault`
+
+For example, the following commands are allowed to be written to the history
+file:
+
+```powershell
+Get-Secret PSGalleryApiKey -AsPlainText # Get-Secret is in the allowlist
+$token = Get-Secret -Name github-token -Vault MySecret
+[MyType]::CallRestAPI($token, $url, $args)
+$template -f $token
+```
+
+The following command will not be written to the history file:
+
+```powershell
+$token = 'abcd' # Assign expr-value to sensitive variable name.
+Set-Secret abc $mySecret # Set-Secret is not in the allowlist.
+ConvertTo-SecureString stringValue -AsPlainText # '-AsPlainText' is an alert.
+Invoke-WebRequest -Token xxx # Expr-value as argument to '-Token'.
+Get-ResultFromTwo -Secret1 (Get-Secret -Name blah -AsPlainText) -Secret2 sdv87ysdfayf798hfasd8f7ha # '-Secret2' has expr-value argument.
+```
 
 ### Feedback & Contributing To PSReadLine
 
