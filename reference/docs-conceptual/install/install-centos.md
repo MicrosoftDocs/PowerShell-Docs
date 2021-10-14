@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on CentOS
-ms.date: 09/22/2021
+ms.date: 10/14/2021
 title: Installing PowerShell on CentOS
 ---
 # Installing PowerShell on CentOS
@@ -48,12 +48,12 @@ PowerShell 7.2 is distributed as a universal RPM package. Previous versions of P
 separate package for each OS. Download the RPM package you need onto your CentOS machine.
 
 - PowerShell 7.2-preview.10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-preview-7.2.0_preview.10-1.rh.x86_64.rpm`
-- PowerShell 7.1.4
-  - CentOS 7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell-7.1.4-1.rhel.7.x86_64.rpm`
-  - CentOS 8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell-7.1.4-1.centos.8.x86_64.rpm`
-- PowerShell 7.0.7
-  - CentOS 7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell-7.0.7-1.rhel.7.x86_64.rpm`
-  - CentOS 8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell-7.0.7-1.centos.8.x86_64.rpm`
+- PowerShell 7.1.5
+  - CentOS 7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-1.rhel.7.x86_64.rpm`
+  - CentOS 8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-1.centos.8.x86_64.rpm`
+- PowerShell 7.0.8
+  - CentOS 7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.0.8-1.rhel.7.x86_64.rpm`
+  - CentOS 8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.0.8-1.centos.8.x86_64.rpm`
 
 Change the URL in the following shell commands to match the version you need.
 

@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Debian Linux
-ms.date: 09/22/2021
+ms.date: 10/14/2021
 title: Installing PowerShell on Debian Linux
 ---
 # Installing PowerShell on Debian Linux
@@ -30,12 +30,12 @@ package from the [releases][releases] page onto the Debian 10 machine. The link 
 version is:
 
 - PowerShell 7.2-preview.10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-preview_7.2.0-preview.10-1.deb_amd64.deb`
-- PowerShell 7.1.4
-  - Debian 10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell_7.1.4-1.debian.10_amd64.deb`
-  - Debian 9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/powershell_7.1.4-1.debian.9_amd64.deb`
-- PowerShell 7.0.7
-  - Debian 10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.7/powershell-lts_7.0.7-1.debian.10_amd64.deb`
-  - Debian 9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.7/powershell-lts_7.0.7-1.debian.9_amd64.deb`
+- PowerShell 7.1.5
+  - Debian 10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell_7.1.5-1.debian.10_amd64.deb`
+  - Debian 9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell_7.1.5-1.debian.9_amd64.deb`
+- PowerShell 7.0.8
+  - Debian 10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-lts_7.0.8-1.debian.10_amd64.deb`
+  - Debian 9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-lts_7.0.8-1.debian.9_amd64.deb`
 
 ## Installation on Debian 10 via Package Repository
 
