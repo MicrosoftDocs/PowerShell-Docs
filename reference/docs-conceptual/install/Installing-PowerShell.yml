@@ -33,7 +33,7 @@ landingContent:
           - text: Install on macOS
             url: Installing-PowerShell-on-macOS.md
           - text: Supported macOS releases
-            url: Installing-PowerShell-on-macOS.md#supported-versions-of-macos
+            url: Installing-PowerShell-on-macOS.md#supported-versions
 
   # Card
   - title: Linux

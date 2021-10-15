@@ -1,12 +1,14 @@
 ---
 description: Information about installing PowerShell on Ubuntu
-ms.date: 10/14/2021
+ms.date: 10/15/2021
 title: Installing PowerShell on Ubuntu
 ---
 # Installing PowerShell on Ubuntu
 
 All packages are available on our GitHub [releases][releases] page. After the package is installed,
-run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release.
+run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release. Before
+installing, check the list of [Supported versions](#supported-versions) below.
+
 
 > [!NOTE]
 > PowerShell 7.2 is an in-place upgrade that removes previous versions of PowerShell.
@@ -15,8 +17,6 @@ run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview releas
 > version using the [binary archive](install-other-linux.md#binary-archives) method.
 
 Ubuntu uses APT (Advanced Package Tool) as a package manager.
-
-[!INCLUDE [Ubuntu support](../../includes/ubuntu-support.md)]
 
 ## Installation via Package Repository
 
@@ -100,6 +100,10 @@ The profiles respect PowerShell's per-host configuration, so the default host-sp
 exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
 
 PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.
+
+## Supported versions
+
+[!INCLUDE [Ubuntu support](../../includes/ubuntu-support.md)]
 
 ## Installation support
 
