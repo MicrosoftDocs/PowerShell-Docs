@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/25/2020
+ms.date: 10/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Object
@@ -154,6 +154,9 @@ is only applied to the selected values and not the entire array.
 ```Output
 a
 ```
+
+In this example, **First** selects `"a","a"` as the first 2 items in the array. **Unique** is
+applied to `"a","a"` and returns `a` as the unique value.
 
 ### Example 6: Select newest and oldest events in the event log
 

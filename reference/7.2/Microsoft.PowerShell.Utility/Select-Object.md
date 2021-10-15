@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/25/2020
+ms.date: 10/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Object
@@ -147,7 +147,24 @@ b
 c
 ```
 
-### Example 5: Select newest and oldest events in the event log
+### Example 5: Using `-Unique` with other parameters
+
+The **Unique** parameter filters values after other `Select-Object` parameters are applied. For
+example, if you use the **First** parameter to select the first number of items in an array, **Unique**
+is only applied to the selected values and not the entire array.
+
+```powershell
+"a","a","b","c" | Select-Object -First 2 -Unique
+```
+
+```Output
+a
+```
+
+In this example, **First** selects `"a","a"` as the first 2 items in the array. **Unique** is
+applied to `"a","a"` and returns `a` as the unique value.
+
+### Example 6: Select newest and oldest events in the event log
 
 This example gets the first (newest) and last (oldest) events in the Windows PowerShell event log.
 
@@ -161,7 +178,7 @@ $a = Get-EventLog -LogName "Windows PowerShell"
 $a | Select-Object -Index 0, ($A.count - 1)
 ```
 
-### Example 6: Select all but the first object
+### Example 7: Select all but the first object
 
 This example creates a new PSSession on each of the computers listed in the Servers.txt files,
 except for the first one.
@@ -173,7 +190,7 @@ of computers is set as the value of the **ComputerName** parameter of the `New-P
 New-PSSession -ComputerName (Get-Content Servers.txt | Select-Object -Skip 1)
 ```
 
-### Example 7: Rename files and select several to review
+### Example 8: Rename files and select several to review
 
 This example adds a "-ro" suffix to the base names of text files that have the read-only attribute
 and then displays the first five files so the user can see a sample of the effect.
@@ -193,7 +210,7 @@ Get-ChildItem *.txt -ReadOnly |
     Select-Object -First 5 -Wait
 ```
 
-### Example 8: Demonstrate the intricacies of the -ExpandProperty parameter
+### Example 9: Demonstrate the intricacies of the -ExpandProperty parameter
 
 This example demonstrates the intricacies of the **ExpandProperty** parameter.
 
@@ -251,7 +268,7 @@ ToUInt64    Method       uint64 IConvertible.ToUInt64(System.IFormatProvider pro
 Name        NoteProperty string Name=CustomObject
 ```
 
-### Example 9: Create custom properties on objects
+### Example 10: Create custom properties on objects
 
 The following example demonstrates using `Select-Object` to add a custom property to any object.
 When you specify a property name that does not exist, `Select-Object` creates that property as a
@@ -269,7 +286,7 @@ MyCustomProperty
 New Custom Property
 ```
 
-### Example 10: Create calculated properties for each InputObject
+### Example 11: Create calculated properties for each InputObject
 
 This example demonstrates using `Select-Object` to add calculated properties to your input. Passing
 a **ScriptBlock** to the **Property** parameter causes `Select-Object` to evaluate the expression on
@@ -526,6 +543,8 @@ Accept wildcard characters: False
 
 Specifies that if a subset of the input objects has identical properties and values, only a single
 member of the subset will be selected.
+
+**Unique** selects values _after_ other filtering parameters are applied.
 
 This parameter is case-sensitive. As a result, strings that differ only in character casing are
 considered to be unique.
