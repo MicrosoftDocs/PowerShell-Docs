@@ -184,6 +184,7 @@ current versions are:
 - PowerShell 7.1.5 - [powershell-7.1.5-osx-x64.tar.gz][71x64bin]
 - PowerShell 7.0.8 - [powershell-7.0.8-osx-x64.tar.gz][70x64bin]
 
+
 Use the following commands to install PowerShell from the binary archive. Change the download URL to
 match the version you want to install.
 
