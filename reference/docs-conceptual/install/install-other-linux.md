@@ -78,9 +78,9 @@ scenarios.
 > [!NOTE]
 > You can use this method to install any version of PowerShell including the latest:
 >
-> - Stable release: [https://aka.ms/powershell-release?tag=stable](https://aka.ms/powershell-release?tag=stable)
-> - Preview release: [https://aka.ms/powershell-release?tag=preview](https://aka.ms/powershell-release?tag=preview)
-> - LTS release: [https://aka.ms/powershell-release?tag=lts](https://aka.ms/powershell-release?tag=lts)
+> - Stable release: [https://aka.ms/powershell-release?tag=stable][current]
+> - LTS release: [https://aka.ms/powershell-release?tag=lts][lts]
+> - Preview release: [https://aka.ms/powershell-release?tag=preview][preview]
 
 ### Dependencies
 
@@ -161,3 +161,6 @@ from a new shell by typing `pwsh`.
 [releases]: https://aka.ms/PowerShell-Release?tag=stable
 [community]: /powershell/scripting/community/community-support
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
+[current]: https://aka.ms/powershell-release?tag=stable
+[lts]: https://aka.ms/powershell-release?tag=lts
+[preview]: https://aka.ms/powershell-release?tag=preview
