@@ -11,7 +11,7 @@ different scenarios and workflows. Choose the method that best suits your needs.
 - [MSI package](#msi) - The best choice for the everyday user.
 - [ZIP package](#zip) - The easiest way to install multiple versions or use in a CI/CD pipeline.
   This is the install method for Windows Nano Server, Windows IoT, and Arm-based systems.
-- [.NET Global tool](#dotnet) - A good choice for .NET developers that install use other global
+- [.NET Global tool](#dotnet) - A good choice for .NET developers that install and use other global
   tools.
 - [Winget](#winget) - For users that prefer to use the new Windows Package Manager tool.
 - [Microsoft Store package](#msstore) - An easy way to install for casual users of PowerShell but
