@@ -141,11 +141,11 @@ b
 c
 ```
 
-## Example 5: Using Unique with other Select-Object parameters
+### Example 5: Using `-Unique` with other parameters
 
-**Unique** gets unique values after other `Select-Object` parameters are applied. For example,
-if you use the **First** parameter to select the first number of items in array, **Unique** will
-only be applied to the selected values and not the entire array.
+The **Unique** parameter filters values after other `Select-Object` parameters are applied. For
+example, if you use the **First** parameter to select the first number of items in an array, **Unique**
+is only applied to the selected values and not the entire array.
 
 ```powershell
 "a","a","b","c" | Select-Object -First 2 -Unique
