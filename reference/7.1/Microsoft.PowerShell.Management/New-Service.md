@@ -84,7 +84,7 @@ $SDDL = "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;C
 $params = @{
   BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
-  DisplayName "Test Service"
+  DisplayName = "Test Service"
   StartupType = "Manual"
   Description = "This is a test service."
   SecurityDescriptorSddl = $SDDL
