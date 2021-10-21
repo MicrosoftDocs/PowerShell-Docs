@@ -93,7 +93,7 @@ $i = 5
 The output of this command is:
 
 ```Output
-The value $i is 5.
+The value of $i is 5.
 ```
 
 ## Single-quoted strings
