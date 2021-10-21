@@ -1,7 +1,7 @@
 ---
 description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 09/22/2021
+ms.date: 10/21/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Quoting Rules
@@ -93,7 +93,7 @@ $i = 5
 The output of this command is:
 
 ```Output
-The value $i is 5.
+The value of $i is 5.
 ```
 
 ## Single-quoted strings
