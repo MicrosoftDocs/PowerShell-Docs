@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/18/2020
+ms.date: 10/21/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
@@ -84,7 +84,7 @@ $SDDL = "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;C
 $params = @{
   BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
-  DisplayName "Test Service"
+  DisplayName = "Test Service"
   StartupType = "Manual"
   Description = "This is a test service."
   SecurityDescriptorSddl = $SDDL
