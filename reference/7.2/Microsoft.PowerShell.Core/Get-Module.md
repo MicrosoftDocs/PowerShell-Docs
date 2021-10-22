@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/03/2020
+ms.date: 10/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-module?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Module
@@ -613,10 +613,10 @@ Accept wildcard characters: False
 
 Skips the check of the `CompatiblePSEditions` field.
 
-By default, Get-Module will omit modules in the `%windir%\System32\WindowsPowerShell\v1.0\Modules`
+By default, `Get-Module` omits modules in the `%windir%\System32\WindowsPowerShell\v1.0\Modules`
 directory that do not specify `Core` in the `CompatiblePSEditions` field. When this switch is set,
-modules without `Core` will be included, so that modules under the Windows PowerShell module path
-that are incompatible with PowerShell Core will be returned.
+modules without `Core` are included, so that modules under the Windows PowerShell module path
+that are incompatible with PowerShell v6 and higher are returned.
 
 On macOS and Linux, this parameter does nothing.
 

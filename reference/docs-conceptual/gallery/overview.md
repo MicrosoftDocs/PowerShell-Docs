@@ -1,6 +1,6 @@
 ---
 description: The PowerShell Gallery is the central repository for PowerShell modules, scripts, and DSC resources.
-ms.date: 10/05/2021
+ms.date: 10/22/2021
 title: The PowerShell Gallery
 ---
 # The PowerShell Gallery
@@ -34,12 +34,11 @@ The **PowerShellGet** module requires **PowerShell 3.0 or newer**.
 **PowerShellGet** requires .NET Framework 4.5 or above. For more information, see
 [Install the .NET Framework for developers](/dotnet/framework/install/guide-for-developers).
 
-Since **PowerShell Core** is cross-platform and that means it works on Windows, Linux and MacOS,
-that also makes **PowerShellGet** available on those systems. For a full list of systems supported
-by **PowerShell Core** see
-[Installing PowerShell](/powershell/scripting/install/installing-powershell).
+PowerShell is cross-platform, which means it works on Windows, Linux and MacOS. That also makes
+**PowerShellGet** available on those systems. For a full list of systems supported by PowerShell
+see [Installing PowerShell](/powershell/scripting/install/installing-powershell).
 
-Many modules hosted in the gallery will support different OSes and have additional requirements.
+Many modules hosted in the gallery support different OSes and have additional requirements.
 Please refer to the documentation for the modules for more information.
 
 ## Got a question? Have feedback?

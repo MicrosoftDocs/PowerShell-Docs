@@ -1,15 +1,15 @@
 ---
-description: Remoting in PowerShell Core using WSMan
-ms.date: 10/07/2021
-title: WS-Management (WSMan) Remoting in PowerShell Core
+description: Remoting in PowerShell using WSMan
+ms.date: 10/22/2021
+title: WS-Management (WSMan) Remoting in PowerShell
 ---
-# WS-Management (WSMan) Remoting in PowerShell Core
+# WS-Management (WSMan) Remoting in PowerShell
 
 ## Instructions to Create a Remoting Endpoint
 
-The PowerShell Core package for Windows includes a WinRM plug-in (`pwrshplugin.dll`) and an
-installation script (`Install-PowerShellRemoting.ps1`) in `$PSHome`. These files enable PowerShell
-to accept incoming PowerShell remote connections when its endpoint is specified.
+The PowerShell package for Windows includes a WinRM plug-in (`pwrshplugin.dll`) and an installation
+script (`Install-PowerShellRemoting.ps1`) in `$PSHome`. These files enable PowerShell to accept
+incoming PowerShell remote connections when its endpoint is specified.
 
 ### Motivation
 

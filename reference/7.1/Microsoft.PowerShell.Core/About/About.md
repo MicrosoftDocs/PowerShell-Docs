@@ -200,7 +200,7 @@ Describes the full and relative path name formats in PowerShell.
 Combining commands into pipelines in the PowerShell.
 
 ### [about_PowerShell_Config](about_PowerShell_Config.md)
-Configuration files for PowerShell Core, replacing Registry configuration.
+Configuration files for PowerShell, replacing Registry configuration.
 
 ### [about_PowerShell_Editions](about_PowerShell_Editions.md)
 Different editions of PowerShell run on different underlying runtimes.

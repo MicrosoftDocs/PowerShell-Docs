@@ -1,6 +1,6 @@
 ---
 description: How to set a build task and launch configuration for a PSModule project in .NET Core
-ms.date: 10/19/2020
+ms.date: 10/22/2021
 title: Using Visual Studio Code to debug compiled cmdlets
 ---
 # Using Visual Studio Code to debug compiled cmdlets
@@ -93,7 +93,7 @@ configuration is used to:
 When you invoke your cmdlet in the terminal session, the debugger stops at any breakpoints set in
 your source code.
 
-### Configuring launch.json for PowerShell Core
+### Configuring launch.json for PowerShell
 
 1. Install the [C# for Visual Studio Code][csext] extension
 
@@ -138,13 +138,15 @@ should use the path to that instead. The `/` path separator works on Windows, Li
 must use the integrated terminal to run the PowerShell commands you want to debug.
 
 > [!NOTE]
-> If the debugger doesn't stop at any breakpoints, look in the Visual Studio Code Debug Console for a line that says:
+> If the debugger doesn't stop at any breakpoints, look in the Visual Studio Code Debug Console for
+> a line that says:
 >
 > ```
 > Loaded '/path/to/myModule.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 > ```
 >
-> If you see this, add `"justMyCode": false` to your launch config (at the same level as `"console": "integratedTerminal"`.
+> If you see this, add `"justMyCode": false` to your launch config (at the same level as
+> `"console": "integratedTerminal"`.
 
 ### Configuring launch.json for Windows PowerShell
 

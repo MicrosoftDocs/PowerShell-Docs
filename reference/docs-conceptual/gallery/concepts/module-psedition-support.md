@@ -11,9 +11,8 @@ feature sets and platform compatibility.
 - **Desktop Edition:** Built on .NET Framework, applies to Windows PowerShell v4.0 and below as well
   as Windows PowerShell 5.1 on Windows Desktop, Windows Server, Windows Server Core and most other
   Windows editions.
-- **Core Edition:** Built on .NET Core, applies to PowerShell Core 6.0 and above as well as
-  Windows PowerShell 5.1 on reduced footprint Windows Editions such as Windows IoT and Windows
-  Nanoserver.
+- **Core Edition:** Built on .NET Core, applies to PowerShell 6.0 and above as well as Windows
+  PowerShell 5.1 on reduced footprint Windows Editions such as Windows IoT and Windows Nano Server.
 
 For more information on PowerShell editions, see
 [about_PowerShell_Editions][about_PowerShell_Editions].

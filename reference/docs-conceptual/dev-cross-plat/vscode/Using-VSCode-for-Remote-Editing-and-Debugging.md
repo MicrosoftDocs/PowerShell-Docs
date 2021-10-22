@@ -1,6 +1,6 @@
 ---
 description: Using Visual Studio Code for remote editing and debugging
-ms.date: 06/13/2019
+ms.date: 10/22/2021
 title: Using Visual Studio Code for remote editing and debugging
 ---
 # Using Visual Studio Code for remote editing and debugging
@@ -19,10 +19,11 @@ This guide assumes that you have:
 - PowerShell running on it and the host machine
 - VSCode and the PowerShell extension for VSCode
 
-This feature works on Windows PowerShell and PowerShell Core.
+This feature works on PowerShell and Windows PowerShell.
 
 This feature also works when connecting to a remote machine via WinRM, PowerShell Direct, or SSH. If
-you want to use SSH, but are using Windows, check out the [Win32 version of SSH](https://github.com/PowerShell/Win32-OpenSSH)!
+you want to use SSH, but are using Windows, check out the
+[Win32 version of SSH](https://github.com/PowerShell/Win32-OpenSSH)!
 
 > [!IMPORTANT]
 > The `Open-EditorFile` and `psedit` commands only work in the **PowerShell Integrated Console**
@@ -67,10 +68,12 @@ There's a cmdlet for to do so. It's called `Enter-PSSession`.
 The watered down explanation of the cmdlet is:
 
 - `Enter-PSSession -ComputerName foo` starts a session via WinRM
-- `Enter-PSSession -ContainerId foo` and `Enter-PSSession -VmId foo` start a session via PowerShell Direct
+- `Enter-PSSession -ContainerId foo` and `Enter-PSSession -VmId foo` start a session via PowerShell
+  Direct
 - `Enter-PSSession -HostName foo` starts a session via SSH
 
-For more information, see the documentation for [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession).
+For more information, see the documentation for
+[Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession).
 
 Since we are going from macOS to an Ubuntu VM in Azure, we are using SSH for remoting.
 

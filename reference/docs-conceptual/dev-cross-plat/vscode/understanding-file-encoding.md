@@ -1,6 +1,6 @@
 ---
 description: Configure file encoding in VS Code and PowerShell
-ms.date: 09/29/2021
+ms.date: 10/22/2021
 title: Understanding file encoding in VS Code and PowerShell
 ---
 # Understanding file encoding in VS Code and PowerShell
@@ -21,9 +21,9 @@ the file, they need to use the same encoding system. This process of parsing a P
 goes: _bytes_ -> _characters_ -> _tokens_ -> _abstract syntax tree_ -> _execution_.
 
 Both VS Code and PowerShell are installed with a sensible default encoding configuration. However,
-the default encoding used by PowerShell has changed with the release of PowerShell Core (v6.x). To
-ensure you have no problems using PowerShell or the PowerShell extension in VS Code, you need to
-configure your VS Code and PowerShell settings properly.
+the default encoding used by PowerShell has changed with the release of PowerShell 6. To ensure you
+have no problems using PowerShell or the PowerShell extension in VS Code, you need to configure your
+VS Code and PowerShell settings properly.
 
 ## Common causes of encoding issues
 
@@ -54,12 +54,12 @@ Common reasons for encoding issues are:
 
 Often encoding errors present themselves as parse errors in scripts. If you find strange character
 sequences in your script, this can be the problem. In the example below, an en-dash (`–`) appears as
-the characters `â€“`:
+the characters `â&euro;"`:
 
 ```Output
 Send-MailMessage : A positional parameter cannot be found that accepts argument 'Testing FuseMail SMTP...'.
 At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtpRelay.ps1:6 char:1
-+ Send-MailMessage â€“From $from â€“To $recipient1 â€“Subject $subject  ...
++ Send-MailMessage â&euro;"From $from â&euro;"To $recipient1 â&euro;"Subject $subject  ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Send-MailMessage], ParameterBindingException
     + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SendMailMessage
@@ -67,16 +67,16 @@ At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtp
 
 This problem occurs because VS Code encodes the character `–` in UTF-8 as the bytes
 `0xE2 0x80 0x93`. When these bytes are decoded as Windows-1252, they are interpreted as the
-characters `â€“`.
+characters `â&euro;"`.
 
 Some strange character sequences that you might see include:
 
 <!-- markdownlint-disable MD038 -->
-- `â€“` instead of `–`
-- `â€“` instead of `—`
+- `â&euro;"` instead of `–`
+- `â&euro;"` instead of `—`
 - `Ã„2` instead of `Ä`
 - `Â` instead of ` `  (a non-breaking space)
-- `Ã©` instead of `é`
+- `Ã&copy;` instead of `é`
 <!-- markdownlint-enable MD038 -->
 
 This handy [reference](https://www.i18nqa.com/debug/utf8-debug.html) lists the common patterns that

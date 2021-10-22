@@ -1,6 +1,6 @@
 ---
 description: Explains how to set up the SSH protocol for PowerShell remoting.
-ms.date: 10/11/2021
+ms.date: 10/22/2021
 title: PowerShell Remoting Over SSH
 ---
 
@@ -125,7 +125,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 ## Install the SSH service on an Ubuntu Linux computer
 
 1. Install the latest version of PowerShell, see
-   [Installing PowerShell Core on Linux](../../install/install-ubuntu.md).
+   [Installing PowerShell on Ubuntu](../../install/install-ubuntu.md).
 1. Install [Ubuntu OpenSSH Server](https://ubuntu.com/server/docs/service-openssh).
 
    ```bash
@@ -169,7 +169,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 ## Install the SSH service on a macOS computer
 
 1. Install the latest version of PowerShell. For more information,
-   [Installing PowerShell Core on macOS](../../install/installing-powershell-on-macos.md).
+   [Installing PowerShell on macOS](../../install/installing-powershell-on-macos.md).
 
    Make sure SSH Remoting is enabled by following these steps:
 

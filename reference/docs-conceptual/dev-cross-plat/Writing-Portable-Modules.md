@@ -1,15 +1,15 @@
 ---
 description: This article explains how to create modules new modules or update existing modules so that they work across the platforms supported by PowerShell.
-ms.date: 10/21/2020
+ms.date: 10/22/2021
 title: Writing Portable Modules
 ---
 
 # Portable Modules
 
 Windows PowerShell is written for [.NET Framework][netframe] while PowerShell Core is written for
-[.NET Core][netcore]. Portable modules are modules that work in both Windows PowerShell and PowerShell
-Core. While .NET Framework and .NET Core are highly compatible, there are differences in the
-available APIs between the two. There are also differences in the APIs available in Windows
+[.NET Core][netcore]. Portable modules are modules that work in both Windows PowerShell and
+PowerShell Core. While .NET Framework and .NET Core are highly compatible, there are differences in
+the available APIs between the two. There are also differences in the APIs available in Windows
 PowerShell and PowerShell Core. Modules intended to be used in both environments need to be aware of
 these differences.
 
@@ -32,10 +32,10 @@ implementing the cmdlets.
 ### The .NET Portability Analyzer (aka APIPort)
 
 To port modules written for Windows PowerShell to work with PowerShell Core, start with the
-[.NET Portability Analyzer][portability]. Run this tool against your compiled assembly to determine if the .NET
-APIs used in the module are compatible with .NET Framework, .NET Core, and other .NET runtimes. The
-tool suggests alternate APIs if they exist. Otherwise, you may need to add [runtime checks][checks]
-and restrict capabilities not available in specific runtimes.
+[.NET Portability Analyzer][portability]. Run this tool against your compiled assembly to determine
+if the .NET APIs used in the module are compatible with .NET Framework, .NET Core, and other .NET
+runtimes. The tool suggests alternate APIs if they exist. Otherwise, you may need to add
+[runtime checks][checks] and restrict capabilities not available in specific runtimes.
 
 ## Creating a new module
 
@@ -199,16 +199,16 @@ works with PowerShell Core 6 without recompilation.
 
 ### PowerShell Standard Library
 
-The [PowerShell Standard][psstd] library is a formal specification of PowerShell APIs available in all
-PowerShell versions greater than or equal to the version of that standard.
+The [PowerShell Standard][psstd] library is a formal specification of PowerShell APIs available in
+all PowerShell versions greater than or equal to the version of that standard.
 
 For example, [PowerShell Standard 5.1][psstd51] is compatible with both Windows PowerShell 5.1 and
 PowerShell Core 6.0 or newer.
 
-We recommend you compile your module using PowerShell Standard Library. The library ensures
-the APIs are available and implemented in both Windows PowerShell and PowerShell Core 6.
-PowerShell Standard is intended to always be forwards-compatible. A module built using PowerShell
-Standard Library 5.1 will always be compatible with future versions of PowerShell.
+We recommend you compile your module using PowerShell Standard Library. The library ensures the APIs
+are available and implemented in both Windows PowerShell and PowerShell Core 6. PowerShell Standard
+is intended to always be forwards-compatible. A module built using PowerShell Standard Library 5.1
+will always be compatible with future versions of PowerShell.
 
 ### Module Manifest
 
@@ -292,14 +292,14 @@ Example:
 
 ### Dependency on Native Libraries
 
-Modules intended for use across different operating systems or processor architectures may
-depend on a managed library that itself depends on some native libraries.
+Modules intended for use across different operating systems or processor architectures may depend on
+a managed library that itself depends on some native libraries.
 
-Prior to PowerShell 7, one would have to have custom code to load the appropriate native
-dll so that the managed library can find it correctly.
+Prior to PowerShell 7, one would have to have custom code to load the appropriate native dll so that
+the managed library can find it correctly.
 
-With PowerShell 7, native binaries to load are searched in sub-folders within the managed
-library's location following a subset of the [.NET RID Catalog][rids] notation.
+With PowerShell 7, native binaries to load are searched in sub-folders within the managed library's
+location following a subset of the [.NET RID Catalog][rids] notation.
 
 ```
 managed.dll folder

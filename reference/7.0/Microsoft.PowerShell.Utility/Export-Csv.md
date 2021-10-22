@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/08/2020
+ms.date: 10/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
@@ -303,7 +303,7 @@ This example shows how to use the **Force** and **Append** parameters. When thes
 combined, mismatched object properties can be written to a CSV file.
 
 ```powershell
-$Content = [PSCustomObject]@{Name = 'PowerShell Core'; Version = '6.0'}
+$Content = [PSCustomObject]@{Name = 'PowerShell'; Version = '7.0'}
 $Content | Export-Csv -Path .\ParmFile.csv -NoTypeInformation
 $AdditionalContent = [PSCustomObject]@{Name = 'Windows PowerShell'; Edition = 'Desktop'}
 $AdditionalContent | Export-Csv -Path .\ParmFile.csv -NoTypeInformation -Append
@@ -329,7 +329,7 @@ Import-Csv -Path .\ParmFile.csv
 ```Output
 Name               Version
 ----               -------
-PowerShell Core    6.0
+PowerShell         7.0
 Windows PowerShell
 ```
 

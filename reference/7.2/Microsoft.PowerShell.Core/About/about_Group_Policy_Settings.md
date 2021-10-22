@@ -1,7 +1,7 @@
 ---
 description: Describes the Group Policy settings for PowerShell
 Locale: en-US
-ms.date: 03/25/2020
+ms.date: 10/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_group_policy_settings?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Group Policy Settings
@@ -177,7 +177,7 @@ Restricted.
 
 For more information, see [about_Execution_Policies](about_Execution_Policies.md).
 
-## Turn on powershell transcription
+## Turn on PowerShell transcription
 
 The **Turn on PowerShell Transcription** policy setting lets you capture the
 input and output of PowerShell Core commands into text-based transcripts. If
