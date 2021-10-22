@@ -12,7 +12,7 @@ For general information about DSC, see
 >[!NOTE]
 > This content refers to a legacy version of DSC.
 > To learn about the new version, refer to
-> [Changes to behavior in PowerShell Desired State Configuration for guest configuration](https://docs.microsoft.com/azure/governance/policy/concepts/guest-configuration-custom)
+> [Changes to behavior in PowerShell Desired State Configuration for guest configuration](/azure/governance/policy/concepts/guest-configuration-custom)
 
 ## Supported Linux operation system versions
 
