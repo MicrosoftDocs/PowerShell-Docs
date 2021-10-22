@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/21/2018
+ms.date: 10/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-csv?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Csv
@@ -115,7 +115,7 @@ Information   : System.Management.Automation.PSDataCollection`1[System.Managemen
 
 The `Start-Job` cmdlet starts a background job that runs `Get-Process`. A job object is sent down
 the pipeline to `ConvertTo-Csv` and converted to a CSV string. The **NoTypeInformation** parameter
-removes the type information header from CSV output and is optional in PowerShell Core. The
+removes the type information header from CSV output and is optional in PowerShell v6 and higher. The
 `$Header` variable contains a custom header that replaces the following default values:
 **HasMoreData**, **JobStateInfo**, **PSBeginTime**, **PSEndTime**, and **PSJobTypeName**. The `$J`
 variable contains the CSV string and is used to remove the default header. The `ConvertFrom-Csv`

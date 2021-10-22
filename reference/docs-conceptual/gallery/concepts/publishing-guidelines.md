@@ -1,6 +1,6 @@
 ---
 description: This article describes recommended steps to ensure the packages published to the PowerShell Gallery are widely adopted and provide high value to users.
-ms.date: 10/05/2021
+ms.date: 10/22/2021
 title: PowerShell Gallery Publishing Guidelines and Best Practices
 ---
 # PowerShellGallery Publishing Guidelines and Best Practices
@@ -182,7 +182,7 @@ left side of the package page.
 Use the following tags to demonstrate to users which packages will work well with their environment:
 
 - PSEdition_Desktop: Packages that are compatible with Windows PowerShell
-- PSEdition_Core: Packages that are compatible with PowerShell Core
+- PSEdition_Core: Packages that are compatible with PowerShell 6 and higher
 - Windows: Packages that are compatible with the Windows Operating System
 - Linux: Packages that are compatible with Linux Operating Systems
 - MacOS: Packages that are compatible with the Mac Operating System
@@ -200,9 +200,10 @@ you validate, and provides information on how your code works. It also allows us
 don't break your original functionality if they modify your code to fit their environment.
 
 It's strongly recommended that tests be written to take advantage of the Pester test framework,
-which has been designed specifically for PowerShell. Pester is available in [GitHub](https://github.com/Pester/Pester),
-the [PowerShell Gallery](https://www.powershellgallery.com/packages/Pester/), and ships in Windows
-10, Windows Server 2016, WMF 5.0 and WMF 5.1.
+which has been designed specifically for PowerShell. Pester is available in
+[GitHub](https://github.com/Pester/Pester), the
+[PowerShell Gallery](https://www.powershellgallery.com/packages/Pester/), and ships in Windows 10,
+Windows Server 2016, WMF 5.0 and WMF 5.1.
 
 The [Pester project site in GitHub](https://github.com/Pester/Pester) includes good documentation on
 writing Pester tests, from getting started to best practices.
@@ -216,7 +217,8 @@ with 70% unit test code coverage recommended.
 All packages published to the PowerShell Gallery must specify the license terms, or be bound by the
 license included in the [Terms of Use](https://www.powershellgallery.com/policies/Terms) under
 **Exhibit A**. The best approach to specifying a different license is to provide a link to the
-license using the **LicenseURI** in **PSData**. For more information, see [Packages manifest and Gallery UI](package-manifest-affecting-ui.md).
+license using the **LicenseURI** in **PSData**. For more information, see
+[Packages manifest and Gallery UI](package-manifest-affecting-ui.md).
 
 ```powershell
 PrivateData = @{
@@ -242,9 +244,11 @@ PowerShell supports validation of code signing through two primary approaches:
 
 Signing PowerShell files is a well-established approach to ensuring that the code being executed was
 produced by a reliable source, and hasn't been modified. Details on how to sign PowerShell script
-files is covered in the [About Signing](/powershell/module/microsoft.powershell.core/about/about_signing)
-article. In overview, a signature can be added to any `.PS1` file that PowerShell validates when the
-script is loaded. PowerShell can be constrained using the [Execution Policy](/powershell/module/microsoft.powershell.core/about/about_execution_policies)
+files is covered in the
+[About Signing](/powershell/module/microsoft.powershell.core/about/about_signing) article. In
+overview, a signature can be added to any `.PS1` file that PowerShell validates when the script is
+loaded. PowerShell can be constrained using the
+[Execution Policy](/powershell/module/microsoft.powershell.core/about/about_execution_policies)
 cmdlets to ensure use of signed scripts.
 
 Catalog signing modules is a feature added to PowerShell in version 5.1. How to sign a module is
@@ -289,8 +293,8 @@ elements of SemVer, specifically:
   be supported in a future release of the PowerShell Gallery and **PowerShellGet** cmdlets.
 - PowerShell and the PowerShell Gallery allow version strings with 1, 2, and 4 segments. Many early
   modules did not follow the guidelines, and product releases from Microsoft include build
-  information as a 4th block of numbers (for example `5.1.14393.1066`). From a versioning standpoint,
-  these differences are ignored.
+  information as a 4th block of numbers (for example `5.1.14393.1066`). From a versioning
+  standpoint, these differences are ignored.
 
 ## Test using a local repository
 
@@ -302,7 +306,8 @@ your own local repository. This can be done in a few ways, including:
   [PS Private Gallery project](https://github.com/PowerShell/PSPrivateGallery) in GitHub. This
   preview project will help you set up an instance of the PowerShell Gallery that you can control,
   and use for your tests.
-- Set up an [internal Nuget repository](https://devblogs.microsoft.com/powershell/setting-up-an-internal-powershellget-repository/).
+- Set up an
+  [internal Nuget repository](https://devblogs.microsoft.com/powershell/setting-up-an-internal-powershellget-repository/).
   This will require more work to set up, but will have the advantage of validating a few more of the
   requirements, notably validating use of an API key, and whether or not dependencies are present in
   the target when you publish.
@@ -337,7 +342,7 @@ File an issue in the **PowerShellGet** GitHub repo, and provide the details that
 The most successful approach we have found for packages published to the PowerShell Gallery is this:
 
 - Do initial development in an open-source project site. The PowerShell Team uses GitHub.
-- Use feedback from reviewers and [Powershell Script Analyzer](https://aka.ms/psscriptanalyzer) to
+- Use feedback from reviewers and [PowerShell Script Analyzer](https://aka.ms/psscriptanalyzer) to
   get the code to stable state.
 - Include documentation, so others know how to use your work.
 - Test out the publishing action using a local repository.
@@ -347,6 +352,6 @@ The most successful approach we have found for packages published to the PowerSh
   PowerShell Gallery.
 - Add examples and Pester tests in your project and your module.
 - Decide if you want to code sign your package.
-- When you feel the project is ready to use in a production environment, publish a `1.0.0` version to
-  the PowerShell Gallery.
+- When you feel the project is ready to use in a production environment, publish a `1.0.0` version
+  to the PowerShell Gallery.
 - Continue to gather feedback and iterate on your code based on user input.

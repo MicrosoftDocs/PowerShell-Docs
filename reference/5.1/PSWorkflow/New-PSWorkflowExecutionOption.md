@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.Workflow.ServiceCore.dll-help.xml
 Locale: en-US
 Module Name: PSWorkflow
-ms.date: 06/09/2017
+ms.date: 10/22/2021
 online version: https://docs.microsoft.com/powershell/module/psworkflow/new-psworkflowexecutionoption?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSWorkflowExecutionOption
@@ -182,7 +182,7 @@ Specifies the activities that are permitted to run in the session.
 
 Enter namespace-qualified activity names, such as `Microsoft.Powershell.HyperV.Activities.*`.
 Wildcard characters are supported. The default value, **PSDefaultActivities**, includes the built-in
-Windows Workflow Foundation activities and the activities that represent the Windows PowerShell Core
+Windows Workflow Foundation activities and the activities that represent the core Windows PowerShell
 cmdlets.
 
 ```yaml

@@ -1,6 +1,6 @@
 ---
 description: Windows PowerShell Concepts
-ms.date: 06/12/2019
+ms.date: 10/22/2021
 ms.topic: reference
 title: Windows PowerShell Concepts
 ---
@@ -25,13 +25,13 @@ developer's viewpoint.
 
 [PowerShell Class](/dotnet/api/system.management.automation.powershell)
 
-[PowerShell Core API Reference](/dotnet/api/?view=pscore-6.2.0&preserve-view=true)
+[PowerShell API Reference](/dotnet/api/)
 
 [Windows PowerShell Programmer's Guide](windows-powershell-programmer-s-guide.md)
 
 [Writing Help for Windows PowerShell Modules](../module/writing-help-for-windows-powershell-modules.md)
 
-[Writing a Windows Powershell Provider](../provider/writing-a-windows-powershell-provider.md)
+[Writing a Windows PowerShell Provider](../provider/writing-a-windows-powershell-provider.md)
 
 [Windows PowerShell API Reference](/dotnet/api/?view=powershellsdk-1.1.0&preserve-view=true)
 

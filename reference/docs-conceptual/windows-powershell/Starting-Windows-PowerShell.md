@@ -1,6 +1,6 @@
 ---
 description: This article explains the ways of starting various versions of PowerShell.
-ms.date: 10/07/2021
+ms.date: 10/22/2021
 title: Starting Windows PowerShell
 ---
 
@@ -14,25 +14,23 @@ To start Windows PowerShell on Windows Server 2012 R2, Windows 8.1, Windows Serv
 2012, and Windows 8, see
 [Common Management Tasks and Navigation in Windows](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831491(v=ws.11)).
 
-## PowerShell Core has renamed binary
+## PowerShell has renamed binary
 
-PowerShell Core, referred to as PowerShell, is version 6 and higher that's open source and uses .NET
-Core. Supported versions are available on Windows, macOS, and Linux.
+PowerShell version 6 and higher uses .NET Core. Supported versions are available on Windows, macOS,
+and Linux.
 
 Beginning in PowerShell 6, the PowerShell binary was renamed `pwsh.exe` for Windows and `pwsh` for
 macOS and Linux. You can start PowerShell preview versions using `pwsh-preview`. For more
-information, see
-[What's New in PowerShell Core 6.0](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60#renamed-powershellexe-to-pwshexe)
-and [About pwsh](/powershell/module/microsoft.powershell.core/about/about_pwsh).
+information, see [About pwsh](/powershell/module/microsoft.powershell.core/about/about_pwsh).
 
 To find cmdlet reference and installation documentation for PowerShell 7, use the following links:
 
 | Document | Link |
 | ----- | ----- |
 | Cmdlet reference | [PowerShell Module Browser](/powershell/module/) |
-| Windows installation | [Installing PowerShell Core on Windows](/powershell/scripting/install/installing-powershell-core-on-windows) |
-| macOS installation | [Installing PowerShell Core on macOS](/powershell/scripting/install/installing-powershell-core-on-macos) |
-| Linux installation | [Installing PowerShell Core on Linux](/powershell/scripting/install/installing-powershell-core-on-linux) |
+| Windows installation | [Installing PowerShell on Windows](/powershell/scripting/install/installing-powershell-on-windows) |
+| macOS installation | [Installing PowerShell on macOS](/powershell/scripting/install/installing-powershell-on-macos) |
+| Linux installation | [Installing PowerShell on Linux](/powershell/scripting/install/installing-powershell-on-linux) |
 
 To view content for other PowerShell versions, see [How to use the PowerShell documentation](../how-to-use-docs.md).
 

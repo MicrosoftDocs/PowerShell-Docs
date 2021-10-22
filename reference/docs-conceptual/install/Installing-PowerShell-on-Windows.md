@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 10/15/2021
+ms.date: 10/22/2021
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -311,8 +311,8 @@ If you want WSMan-based remoting, follow the instructions to create a remoting e
 PowerShell supports the PowerShell Remoting Protocol (PSRP) over both WSMan and SSH. For more
 information, see:
 
-- [SSH Remoting in PowerShell Core][ssh-remoting]
-- [WSMan Remoting in PowerShell Core][wsman-remoting]
+- [SSH Remoting in PowerShell][ssh-remoting]
+- [WSMan Remoting in PowerShell][wsman-remoting]
 
 The following prerequisites must be met to enable PowerShell remoting over WSMan on older versions
 of Windows.

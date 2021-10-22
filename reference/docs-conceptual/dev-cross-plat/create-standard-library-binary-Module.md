@@ -1,7 +1,7 @@
 ---
-description: The PowerShell Standard Library allows us to create cross platform modules that work in both PowerShell Core and with Windows PowerShell 5.1.
+description: The PowerShell Standard Library allows us to create cross platform modules that work in both PowerShell and with Windows PowerShell 5.1.
 ms.custom: contributor-KevinMarquette
-ms.date: 05/23/2020
+ms.date: 10/22/2021
 title: How to create a Standard Library Binary Module
 ---
 # How to create a Standard Library binary module
@@ -20,7 +20,7 @@ way.
 ## What is the PowerShell Standard Library?
 
 The PowerShell Standard Library allows us to create cross platform modules that work in both
-PowerShell Core and with Windows PowerShell 5.1 (or 3.0).
+PowerShell and Windows PowerShell 5.1.
 
 ## Planning our module
 

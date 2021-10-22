@@ -1,6 +1,6 @@
 ---
 description: Using Visual Studio Code for PowerShell Development
-ms.date: 08/12/2021
+ms.date: 10/22/2021
 title: Using Visual Studio Code for PowerShell Development
 ---
 
@@ -98,7 +98,7 @@ Use the following steps to choose the version:
    <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>.
 1. Search for **Session**.
 1. Click on **PowerShell: Show Session Menu**.
-1. Choose the version of PowerShell you want to use from the list, for example: **PowerShell Core**.
+1. Choose the version of PowerShell you want to use from the list.
 
 If you installed PowerShell to a non-typical location, it might not show up initially in the Session
 Menu. You can extend the session menu by

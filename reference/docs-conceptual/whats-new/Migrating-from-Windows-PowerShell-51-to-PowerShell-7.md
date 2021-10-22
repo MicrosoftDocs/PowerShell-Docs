@@ -1,6 +1,6 @@
 ---
 description: Update from PowerShell 5.1 to PowerShell 7 for your Windows platforms.
-ms.date: 10/04/2021
+ms.date: 10/22/2021
 title: Migrating from Windows PowerShell 5.1 to PowerShell 7
 ---
 
@@ -72,11 +72,11 @@ PowerShell 7 installs to a new directory, enabling side-by-side execution with W
 Install locations by version:
 
 - Windows PowerShell 5.1: `$env:WINDIR\System32\WindowsPowerShell\v1.0`
-- PowerShell Core 6.x: `$env:ProgramFiles\PowerShell\6`
+- PowerShell 6.x: `$env:ProgramFiles\PowerShell\6`
 - PowerShell 7: `$env:ProgramFiles\PowerShell\7`
 
 The new location is added to your PATH allowing you to run both Windows PowerShell 5.1 and
-PowerShell 7. If you're migrating from PowerShell Core 6.x to PowerShell 7, PowerShell 6 is removed
+PowerShell 7. If you're migrating from PowerShell 6.x to PowerShell 7, PowerShell 6 is removed
 and the PATH replaced.
 
 In Windows PowerShell, the PowerShell executable is named `powershell.exe`. In version 6 and above,
@@ -189,7 +189,7 @@ and data transport. Windows Remote Management (WinRM) uses the WSMAN protocol. I
 enabled, PowerShell 7 uses the existing Windows PowerShell 5.1 endpoint named `Microsoft.PowerShell`
 for remoting connections. To update PowerShell 7 to include its own endpoint, run the
 `Enable-PSRemoting` cmdlet. For information about connecting to specific endpoints, see
-[WS-Management Remoting in PowerShell Core](/powershell/scripting/learn/remoting/wsman-remoting-in-powershell-core)
+[WS-Management Remoting in PowerShell](/powershell/scripting/learn/remoting/wsman-remoting-in-powershell-core)
 
 To use Windows PowerShell remoting, the remote computer must be configured for remote management.
 For more information, including instructions, see
@@ -200,8 +200,8 @@ For more information about working with remoting, see
 
 #### SSH-based remoting
 
-SSH-based remoting was added in PowerShell Core 6.x to support other operating systems that can't
-use Windows native components like **WinRM**. SSH remoting creates a PowerShell host process on the
+SSH-based remoting was added in PowerShell 6.x to support other operating systems that can't use
+Windows native components like **WinRM**. SSH remoting creates a PowerShell host process on the
 target computer as an SSH subsystem. For details and examples on setting up SSH-based remoting on
 Windows or Linux, see:
 [PowerShell remoting over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
@@ -258,7 +258,7 @@ PowerShell 7 includes Group Policy templates and an installation script in `$PSH
 
 Group Policy tools use administrative template files (`.admx`, `.adml`) to populate policy settings
 in the user interface. This allows administrators to manage registry-based policy settings. The
-`InstallPSCorePolicyDefinitions.ps1` script installs PowerShell Core Administrative Templates on the
+`InstallPSCorePolicyDefinitions.ps1` script installs PowerShell Administrative Templates on the
 local machine.
 
 ```powershell

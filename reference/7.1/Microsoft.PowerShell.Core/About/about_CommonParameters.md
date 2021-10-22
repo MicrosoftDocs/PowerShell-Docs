@@ -1,7 +1,7 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 07/13/2021
+ms.date: 10/22/2021
 no-loc: [Debug, Verbose, Confirm]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -250,8 +250,8 @@ in a `Write-Information` command, then asks whether you want to continue.
 `-InformationAction:Continue` displays the informational message, and continues
 running.
 
-`-InformationAction:Suspend` isn't supported on PowerShell Core as it is only
-available for workflows.
+`-InformationAction:Suspend` isn't supported on PowerShell 6 and higher as it
+is only available for workflows.
 
 `-InformationAction:SilentlyContinue` no effect as the informational message
 aren't (Default) displayed, and the script continues without interruption.

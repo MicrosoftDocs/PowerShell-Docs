@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell
-ms.date: 09/23/2021
+ms.date: 10/22/2021
 title: PowerShell Support Lifecycle
 ---
 # PowerShell Support Lifecycle
@@ -95,7 +95,7 @@ Server is supported under the [Windows Support Lifecycle][lifecycle].
 
 ## Notes on licensing
 
-PowerShell Core is released under the [MIT license][mit]. Under this license, and without a paid
+PowerShell is released under the [MIT license][mit]. Under this license, and without a paid
 support agreement, users are limited to [community support][community]. With community support,
 Microsoft makes no guarantees of responsiveness or fixes.
 

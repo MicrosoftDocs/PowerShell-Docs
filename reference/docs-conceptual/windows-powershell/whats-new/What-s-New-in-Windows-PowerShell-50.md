@@ -847,8 +847,8 @@ ordered dictionaries, PSCustomObject casting, and improved comment-based help.
 
 ### New Core Cmdlets
 
-New cmdlets were added to the Windows PowerShell Core installation, including cmdlets to manage
-scheduled jobs, disconnected sessions, CIM integration and the Updatable Help System.
+New cmdlets were added to the Windows PowerShell installation, including cmdlets to manage scheduled
+jobs, disconnected sessions, CIM integration and the Updatable Help System.
 
 - CimCmdlets
   - Get-CimAssociatedInstance
