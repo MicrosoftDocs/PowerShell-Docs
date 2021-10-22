@@ -18,7 +18,7 @@ infrastructure with configuration as code.
 - To start using DSC quickly, see [DSC quick start](../quickstarts/website-quickstart.md).
 
 The latest solution using the DSC platform, is the
-[guest configuration](../../../azure/governance/policy/concepts/guest-configuration)
+[guest configuration](../../../../azure/governance/policy/concepts/guest-configuration)
 feature of Azure Policy.
 
 ## Key Concepts
