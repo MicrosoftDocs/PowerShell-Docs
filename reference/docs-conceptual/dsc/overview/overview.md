@@ -17,6 +17,10 @@ infrastructure with configuration as code.
   [Desired State Configuration Overview for Engineers](DscForEngineers.md).
 - To start using DSC quickly, see [DSC quick start](../quickstarts/website-quickstart.md).
 
+The latest solution using the DSC platform, is the
+[guest configuration](/azure/governance/policy/concepts/guest-configuration)
+feature of Azure Policy.
+
 ## Key Concepts
 
 DSC is a declarative platform used for configuration, deployment, and management of systems. It
