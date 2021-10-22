@@ -9,6 +9,11 @@ This topic explains how to get started using PowerShell Desired State Configurat
 For general information about DSC, see
 [Get Started with Windows PowerShell Desired State Configuration](../overview/overview.md).
 
+>[!NOTE]
+> This content refers to a legacy version of DSC.
+> To learn about the new version, refer to
+> [Changes to behavior in PowerShell Desired State Configuration for guest configuration](/azure/governance/policy/concepts/guest-configuration-custom)
+
 ## Supported Linux operation system versions
 
 The following Linux operating system versions are supported by DSC for Linux.
