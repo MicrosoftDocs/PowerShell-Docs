@@ -1,7 +1,7 @@
 ---
 description: Explains the various argument completion options available for function parameters.
 Locale: en-US
-ms.date: 07/27/2021
+ms.date: 10/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Functions_Argument_Completion?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: About functions argument completion
@@ -150,7 +150,7 @@ function Test-ArgumentCompletions {
 Each of the parameters is provided a list of options to the
 **ArgumentCompletions** attribute to enable tab completion.
 
-This attribute was introduced in PowerShell Core 6.0
+This attribute was introduced in PowerShell 6.0.
 
 ## ArgumentCompleter attribute
 

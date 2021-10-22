@@ -130,7 +130,7 @@ This cmdlet does to generate any output.
 
 ## Notes
 
-- After the provider writes the even to an eventlog, you can use the `Get-WinEvent` cmdlet to get the
+- After the provider writes the event to an eventlog, you can use the `Get-WinEvent` cmdlet to get the
   event from the event log.
 
 ## Related links

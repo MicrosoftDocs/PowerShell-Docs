@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 10/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/save-help?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Help
@@ -179,7 +179,7 @@ information about the location of the newest help files.
 Save-Help -Module Microsoft.PowerShell* -UICulture de-DE, en-US, fr-FR, ja-JP -DestinationPath "D:\Help"
 ```
 
-This command saves help for the PowerShell Core modules in four different UI cultures. The language
+This command saves help for the core PowerShell modules in four different UI cultures. The language
 packs for these locales do not have to be installed on the computer.
 
 `Save-Help` can download help files for modules in different UI cultures only when the module owner
@@ -470,7 +470,7 @@ This cmdlet does not generate any output.
   only for all cmdlets in module. To find the module that contains a particular cmdlet, use the
   **ModuleName** property together with the `Get-Command` cmdlet, for example,
   `(Get-Command \<cmdlet-name\>).ModuleName`
-- `Save-Help` supports all modules and the PowerShell Core snap-ins. It does not support any other
+- `Save-Help` supports all modules and the core PowerShell snap-ins. It does not support any other
   snap-ins.
 - The `Update-Help` and `Save-Help` cmdlets use the following ports to download help files: Port 80
   for HTTP and port 443 for HTTPS.

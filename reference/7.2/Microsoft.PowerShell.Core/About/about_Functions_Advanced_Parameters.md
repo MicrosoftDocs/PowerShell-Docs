@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 09/23/2021
+ms.date: 10/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Parameters
@@ -609,7 +609,7 @@ attribute is similar to **ValidateSet**. Both attributes take a list of values
 to be presented when the user presses <kbd>Tab</kbd> after the parameter name.
 However, unlike **ValidateSet**, the values are not validated.
 
-This attribute was introduced in PowerShell Core 6.0
+This attribute was introduced in PowerShell 6.0.
 
 For more information, see
 [about_Functions_Argument_Completion](about_Functions_Argument_Completion.md#argumentcompletions-attribute).

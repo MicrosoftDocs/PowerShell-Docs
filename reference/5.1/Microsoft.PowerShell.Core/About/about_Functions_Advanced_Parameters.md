@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 09/23/2021
+ms.date: 10/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Parameters
@@ -201,7 +201,7 @@ a file system drive.
 You can also create a parameter that appears only when another parameter is
 used in the function command or when another parameter has a certain value.
 
-Dynamic parameters can be useful, but use them only when necessary because
+Dynamic parameters can be useful, but use them only when necessary, because
 they can be difficult for users to discover. To find a dynamic parameter, the
 user must be in the provider path, use the **ArgumentList** parameter of the
 `Get-Command` cmdlet, or use the **Path** parameter of `Get-Help`.

@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/16/2019
+ms.date: 10/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Help
@@ -69,7 +69,7 @@ The `Update-Help` cmdlet was introduced in Windows PowerShell 3.0.
 > Prior to PowerShell 6.1, the **Scope** parameter was not available.
 >
 > You must be a member of the Administrators group on the computer
-> to update the help files for the PowerShell Core modules.
+> to update the help files for the core PowerShell modules.
 >
 > To download or update the help files for modules in the PowerShell
 > installation directory (`$PSHOME\Modules`), including the PowerShell
@@ -566,11 +566,11 @@ You can pipe a module object from the `Get-Module` cmdlet to `Update-Help`.
 
 ## Notes
 
-To update help for the PowerShell Core modules, that contain the commands that are installed with
+To update help for the core PowerShell modules, that contain the commands that are installed with
 PowerShell, or any module in the `$PSHOME\Modules` directory, start PowerShell with the option to
 **Run as administrator**.
 
-Only members of the Administrators group on the computer can update help for the PowerShell Core
+Only members of the Administrators group on the computer can update help for the core PowerShell
 modules, the commands that are installed together with PowerShell, and for modules in the
 `$PSHOME\Modules` folder. If you don't have permission to update help files, you can read the help
 files online. For example, `Get-Help Update-Help -Online`.
@@ -596,7 +596,7 @@ PowerShell 3.0.
 The `Update-Help` and `Save-Help` cmdlets use the following ports to download help files: Port 80
 for HTTP and port 443 for HTTPS.
 
-`Update-Help` supports all modules and the PowerShell Core snap-ins. It doesn't support any other
+`Update-Help` supports all modules and the core PowerShell snap-ins. It doesn't support any other
 snap-ins.
 
 To update help for a module in a location that isn't listed in the `$env:PSModulePath` environment

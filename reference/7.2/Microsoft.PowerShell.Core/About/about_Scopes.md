@@ -1,7 +1,7 @@
 ---
 description: Explains the concept of scope in PowerShell and shows how to set and change the scope of elements.
 Locale: en-US
-ms.date: 11/04/2020
+ms.date: 10/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Scopes
@@ -118,7 +118,7 @@ optional scope modifiers:
 - `using:` - Used to access variables defined in another scope while running
   scripts via cmdlets like `Start-Job` and `Invoke-Command`.
 - `workflow:` - Specifies that the name exists within a workflow. Note:
-  Workflows are not supported in PowerShell Core.
+  Workflows are not supported in PowerShell v6 and higher.
 - `<variable-namespace>` - A modifier created by a PowerShell PSDrive provider.
   For example:
 

@@ -1,6 +1,6 @@
 ---
 description: New features and changes released in PowerShell 7.0
-ms.date: 10/04/2021
+ms.date: 10/22/2021
 title: What's New in PowerShell 7.0
 ---
 
@@ -61,15 +61,15 @@ For more up-to-date information about supported operating systems and support li
 ## Running PowerShell 7
 
 PowerShell 7 installs to a directory separately from Windows PowerShell. This enables you to run
-PowerShell 7 side-by-side with Windows PowerShell 5.1. For PowerShell Core 6.x, PowerShell 7 is an
-in-place upgrade that removes PowerShell Core 6.x.
+PowerShell 7 side-by-side with Windows PowerShell 5.1. For PowerShell 6.x, PowerShell 7 is an
+in-place upgrade that removes PowerShell 6.x.
 
 - PowerShell 7 is installed to `%programfiles%\PowerShell\7`
 - The `%programfiles%\PowerShell\7` folder is added to `$env:PATH`
 
-The PowerShell 7 installer package upgrades previous versions of PowerShell Core 6.x:
+The PowerShell 7 installer package upgrades previous versions of PowerShell 6.x:
 
-- PowerShell Core 6.x on Windows: `%programfiles%\PowerShell\6` is replaced by
+- PowerShell 6.x on Windows: `%programfiles%\PowerShell\6` is replaced by
   `%programfiles%\PowerShell\7`
 - Linux: `/opt/microsoft/powershell/6` is replaced by `/opt/microsoft/powershell/7`
 - macOS: `/usr/local/microsoft/powershell/6` is replaced by `/usr/local/microsoft/powershell/7`
@@ -468,8 +468,7 @@ For more information about
   (#10626)
 - Add support to ActionPreference.Break to break into debugger when Debug, Error, Information,
   Progress, Verbose or Warning messages are generated (#8205) (Thanks @KirkMunro!)
-- Enable starting control panel add-ins within PowerShell Core without specifying .CPL extension.
-  (#9828)
+- Enable starting control panel add-ins within PowerShell without specifying .CPL extension. (#9828)
 - Support negative numbers in -split operator (#8960) (Thanks @ece-jacob-scott!)
 
 ### General Cmdlet Updates and Fixes
@@ -558,7 +557,7 @@ For more information about
 - Remove [ValidateNotNullOrEmpty] from -InputObject on Get-Random to allow empty string (#10644)
 - Make suggestion system string distance algorithm case-insensitive (#10549) (Thanks @iSazonov!)
 - Fix null reference exception in ForEach-Object -Parallel input processing (#10577)
-- Add PowerShell Core group policy definitions (#10468)
+- Add PowerShell group policy definitions (#10468)
 - Update console host to support XTPUSHSGR/XTPOPSGR VT control sequences that are used in
   composability scenarios. (#10208)
 - Add WorkingDirectory parameter to Start-Job (#10324) (Thanks @davinci26!)
