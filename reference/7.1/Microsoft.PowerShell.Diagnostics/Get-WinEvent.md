@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 11/20/2019
+ms.date: 10/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WinEvent
@@ -149,7 +149,60 @@ The `Get-WinEvent` cmdlet uses the **ListLog** parameter to specify the **Setup*
 sent down the pipeline to the `Format-List` cmdlet. `Format-List` uses the **Property** parameter
 with the asterisk (`*`) wildcard to display each property.
 
-### Example 3: Get event logs from a server
+### Example 3: Configure the classic Security log
+
+This command gets an **EventLogConfiguration** object that represents the classic **Security** log. The
+object is then used to configure settings for the log, such as max file size, file path, and whether the
+log is enabled.
+
+```powershell
+$log = Get-WinEvent -ListLog Security
+$log.MaximumSizeInBytes = 1gb
+try{
+   $log.SaveChanges()
+   Get-WinEvent -ListLog Security | Format-List -Property *
+}catch [System.UnauthorizedAccessException]{
+   $ErrMsg  = 'You do not have permission to configure this log!'
+   $ErrMsg += ' Try running this script with administrator privileges. '
+   $ErrMsg += $_.Exception.Message
+   Write-Error $ErrMsg
+}
+```
+
+```Output
+FileSize                       : 69632
+IsLogFull                      : False
+LastAccessTime                 : 3/13/2019 09:41:46
+LastWriteTime                  : 3/13/2019 09:41:46
+OldestRecordNumber             : 1
+RecordCount                    : 23
+LogName                        : Security
+LogType                        : Administrative
+LogIsolation                   : Custom
+IsEnabled                      : True
+IsClassicLog                   : True
+SecurityDescriptor             : O:BAG:SYD: ...
+LogFilePath                    : %SystemRoot%\System32\Winevt\Logs\Security.evtx
+MaximumSizeInBytes             : 1073741824
+LogMode                        : Circular
+OwningProviderName             :
+ProviderNames                  : {Microsoft-Windows-WUSA, Microsoft-Windows-ActionQueue...
+ProviderLevel                  :
+ProviderKeywords               :
+ProviderBufferSize             : 64
+ProviderMinimumNumberOfBuffers : 0
+ProviderMaximumNumberOfBuffers : 64
+ProviderLatency                : 1000
+ProviderControlGuid            :
+```
+
+The `Get-WinEvent` cmdlet uses the **ListLog** parameter to specify the **Security** log. The object is
+saved to a variable. The **MaximumSizeInBytes** property is set to 1 gigabyte on the object. The 
+**SaveChanges** method is called to push the change to the system inside of a try block to handle
+access violations. The `Get-WinEvent` cmdlet is called again on the **Security** log and piped to the
+`Format-List` cmdlet to verify that the **MaximumSizeInBytes** property has been saved on the machine.
+
+### Example 4: Get event logs from a server
 
 This command only gets event logs on the local computer that contain events. It's possible for a
 log's **RecordCount** to be null or zero. The example uses the `$_` variable. For more information,
@@ -176,7 +229,7 @@ pipeline to the `Where-Object` cmdlet. `Where-Object` uses `$_.RecordCount` to r
 contain data. `$_` is a variable that represents the current object in the pipeline. **RecordCount**
 is a property of the object with a non-null value.
 
-### Example 4: Get event logs from multiple servers
+### Example 5: Get event logs from multiple servers
 
 This example gets objects that represent the **Application** event logs on three computers:
 Server01, Server02, and Server03. The **ForEach** keyword is used because the **ComputerName**
@@ -212,7 +265,7 @@ expression to display the **ComputerName** using the `$Server` variable. The obj
 the pipeline to the `Format-Table` cmdlet to display the output in the PowerShell console. The
 **AutoSize** parameter formats the output to fit the screen.
 
-### Example 5: Get event log providers and log names
+### Example 6: Get event log providers and log names
 
 This command gets the event log providers and the logs to which they write.
 
@@ -236,7 +289,7 @@ The `Get-WinEvent` cmdlet gets log information from the computer. The **ListProv
 uses the asterisk (`*`) wildcard to display information about each provider. In the output, the
 **Name** is the provider and **LogLinks** is the log that the provider writes to.
 
-### Example 6: Get all event log providers that write to a specific log
+### Example 7: Get all event log providers that write to a specific log
 
 This command gets all of the providers that write to the **Application** log.
 
@@ -257,7 +310,7 @@ The `Get-WinEvent` cmdlet gets log information from the computer. The **ListLog*
 **Application** to get objects for that log. **ProviderNames** is a property of the object and
 displays the providers that write to the **Application** log.
 
-### Example 7: Get event log provider names that contain a specific string
+### Example 8: Get event log provider names that contain a specific string
 
 This command gets the event log providers with names that include a specific string in the
 provider's name.
@@ -286,7 +339,7 @@ Tasks    : {}
 The `Get-WinEvent` cmdlet gets log information from the computer. The **ListProvider** parameter
 uses the asterisk (`*`) wildcard to find **Policy** anywhere within the provider's name.
 
-### Example 8: Get Event Ids that the event provider generates
+### Example 9: Get Event Ids that the event provider generates
 
 This command lists the Event Ids that the **Microsoft-Windows-GroupPolicy** event provider generates
 along with the event description.
@@ -310,7 +363,7 @@ specifies the provider, **Microsoft-Windows-GroupPolicy**. The expression is wra
 and uses the **Events** property to get objects. The objects are sent down the pipeline to the
 `Format-Table` cmdlet. `Format-Table` displays the **Id** and **Description** of the event objects.
 
-### Example 9: Get log information from event object properties
+### Example 10: Get log information from event object properties
 
 This example shows how to get information about a log's contents using event object properties.
 Event objects are stored in a variable and then grouped and counted by **Event Id** and **Level**.
@@ -358,7 +411,7 @@ The **NoElement** parameter removes other properties from the output. In the out
 column contains the total number of each event. The **Name** column contains the grouped
 **LevelDisplayName**.
 
-### Example 10: Get error events that have a specified string in their name
+### Example 11: Get error events that have a specified string in their name
 
 This example uses a comma-separated string of log names. The output is grouped by the level such as
 error or warning and the log name.
@@ -391,7 +444,7 @@ other properties from the output. The grouped objects are sent down the pipeline
 **Count** column contains the total number of each event. The **Name** column contains the grouped
 **LevelDisplayName** and **LogName**.
 
-### Example 11: Get events from an archived event log
+### Example 12: Get events from an archived event log
 
 `Get-WinEvent` can get event information from saved log files. This sample uses an archived
 PowerShell log that is stored on the local computer.
@@ -415,7 +468,7 @@ TimeCreated              Id LevelDisplayName  Message
 The `Get-WinEvent` cmdlet gets log information from the computer. The **Path** parameter specifies
 the directory and file name.
 
-### Example 12: Get a specific number of events from an archived event log
+### Example 13: Get a specific number of events from an archived event log
 
 These commands get a specific number of events from an archived event log. `Get-WinEvent` has
 parameters that can get a maximum number of events or the oldest events. This sample uses an
@@ -443,7 +496,7 @@ The `Get-WinEvent` cmdlet gets log information from the computer. The **Path** p
 the directory and filename. The **MaxEvents** parameter specifies that 100 records are displayed,
 from newest to oldest.
 
-### Example 13: Event Tracing for Windows
+### Example 14: Event Tracing for Windows
 
 Event Tracing for Windows (ETW) writes events to the log as events occur. The events are stored in
 the order of oldest to newest. An archived ETW file is saved as an `.etl` such as **TraceLog.etl**.
@@ -463,7 +516,7 @@ order they are written, oldest to newest. The objects are sent down the pipeline
 **TimeCreated** property. The objects are sent down the pipeline to the `Select-Object` cmdlet that
 displays the 100 newest events.
 
-### Example 14: Get events from an event trace log
+### Example 15: Get events from an event trace log
 
 This example shows how to get the events from an event trace log file (`.etl`) and an archived
 Windows PowerShell log file (`.evtx`). You can combine multiple file types in a single command.
@@ -483,7 +536,7 @@ pipeline to the `Where-Object` cmdlet. `Where-Object` uses a script block to fin
 **Id** of **403**. The `$_` variable represents the current object in the pipeline and **Id** is the
 Event Id property.
 
-### Example 15: Filter event log results
+### Example 16: Filter event log results
 
 This example shows a variety of methods to filter and select events from an event log. All of these
 commands get events that occurred in the last 24-hours from the **Windows PowerShell** event log.
@@ -516,7 +569,7 @@ $XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) &lt;= 86400000]
 Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath $XPath
 ```
 
-### Example 16: Use FilterHashtable to get events from the Application log
+### Example 17: Use FilterHashtable to get events from the Application log
 
 This example uses the **FilterHashtable** parameter to get events from the **Application** log. The
 hash table uses **key/value** pairs. For more information about the **FilterHashtable** parameter,
@@ -535,7 +588,7 @@ The `Get-WinEvent` cmdlet gets log information. The **FilterHashtable** paramete
 the output. The **LogName** key specifies the value as the **Application** log. The **StartTime**
 key uses the value stored in the `$Date` variable. The **Id** key uses an Event Id value, **1003**.
 
-### Example 17: Use FilterHashtable to get application errors
+### Example 18: Use FilterHashtable to get application errors
 
 This example uses the **FilterHashtable** parameter to find Internet Explorer application errors
 that occurred within the last week.
@@ -558,7 +611,7 @@ the output. The **LogName** key specifies the value as the **Application** log. 
 key uses the value, **Application Error**, which is the event's **Source**. The **Data** key uses
 the value **iexplore.exe** The **StartTime** key uses the value stored in `$StartTime` variable.
 
-### Example 18: Use SuppressHashFilter to filter application errors
+### Example 19: Use SuppressHashFilter to filter application errors
 
 Like Example 16 above, this example uses the **FilterHashtable** parameter to get events from the
 **Application** log. However, we add the **SuppressHashFilter** key to filter out **Information**
