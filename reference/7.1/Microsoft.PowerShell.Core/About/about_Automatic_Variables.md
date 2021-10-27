@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 08/24/2021
+ms.date: 10/27/2021
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -592,11 +592,34 @@ and change the current loop iteration. For more information, see
 
 ### $this
 
-In a script block that defines a script property or script method, the `$this`
-variable refers to the object that is being extended.
+The `$this` variable is used in script blocks that extend classes to refer to
+the instance of the class itself.
 
-In a custom class, the `$this` variable refers to the class object itself
-allowing access to properties and methods defined in the class.
+PowerShell's Extensible Type System (ETS) allows you to add properties to
+classes using script blocks. In a script block that defines a script property
+or script method, the `$this` variable refers to an instance of object of the
+class that is being extended. For example, PowerShell uses ETS to add the
+**BaseName** property to the **FileInfo** class.
+
+```powershell
+PS> Get-ChildItem .\README.md | Get-Member BaseName | Format-List
+
+TypeName   : System.IO.FileInfo
+Name       : BaseName
+MemberType : ScriptProperty
+Definition : System.Object BaseName {get=if ($this.Extension.Length -gt 0){$this.Name.Remove($this.Name.Length -
+             $this.Extension.Length)}else{$this.Name};}
+```
+
+For more information, see [about_Types.ps1xml](./about_Types.ps1xml.md).
+
+In a PowerShell class, the `$this` variable refers to the instance object of
+the class itself, allowing access to properties and methods defined in the
+class. For more information, see [about_Classes](about_Classes.md).
+
+The `$this` variable is also used by .NET event classes that take script blocks
+as delegates for the event handler. In this scenario, `$this` represents the
+object originating the event, known as the event sender.
 
 ### $true
 
