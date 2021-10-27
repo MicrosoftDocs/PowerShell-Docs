@@ -140,8 +140,8 @@ Powershell Preview Microsoft.PowerShell.Preview 7.2.0.10 winget
 Install Powershell or Powershell Preview using the `id` parameter
 
 ```powershell
-winget install --id Microsoft.Powershell --exact
-winget install --id Microsoft.Powershell.Preview --exact
+winget install --id Microsoft.Powershell --source winget
+winget install --id Microsoft.Powershell.Preview --source winget
 ```
 
 ## <a id="msstore" />Installing from the Microsoft Store
