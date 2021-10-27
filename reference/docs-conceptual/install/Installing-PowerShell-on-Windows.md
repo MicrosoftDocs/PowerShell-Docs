@@ -137,11 +137,11 @@ PowerShell         Microsoft.PowerShell         7.1.5.0  winget
 Powershell Preview Microsoft.PowerShell.Preview 7.2.0.10 winget
 ```
 
-Install a version of PowerShell using the `--exact` parameter
+Install Powershell or Powershell Preview using the `id` parameter
 
 ```powershell
-winget install --name PowerShell --exact --source winget
-winget install --name PowerShell-Preview --exact --source winget
+winget install --id Microsoft.Powershell --source winget
+winget install --id Microsoft.Powershell.Preview --source winget
 ```
 
 ## <a id="msstore" />Installing from the Microsoft Store
