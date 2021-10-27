@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.2
 description: New features and changes released in PowerShell 7.2
-ms.date: 09/23/2021
+ms.date: 10/27/2021
 ---
 
 # What's New in PowerShell 7.2
@@ -143,6 +143,8 @@ Install-Module -Name PSDesiredStateConfiguration -Repository PSGallery -MaximumV
 - Improve detection of mutable value types (#12495)
 - Restrict `New-Object` in **NoLanguage** mode under lock down (#14140)
 - Enforce AppLocker Deny configuration before Execution Policy Bypass configuration (#15035)
+- Change `FileSystemInfo.Target` from a **CodeProperty** to an **AliasProperty** that points to
+  `FileSystemInfo.LinkTarget` (#16165)
 
 <!-- reference links -->
 
