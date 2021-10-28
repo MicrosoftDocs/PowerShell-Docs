@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/14/2019
+ms.date: 10/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ItemProperty
@@ -68,8 +68,8 @@ The file is a **System.IO.FileInfo** object and **IsReadOnly** is just one of it
 To see all of the properties, type `Get-Item C:\GroupFiles\final.doc | Get-Member -MemberType
 Property`.
 
-The `$true` automatic variable represents a value of "TRUE".
-For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+The `$true` automatic variable represents a value of "TRUE". For more information, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 ```powershell
 Set-ItemProperty -Path C:\GroupFiles\final.doc -Name IsReadOnly -Value $true
@@ -115,7 +115,7 @@ NoOfEmployees : 824
 ```
 
 The first command creates the registry entry.
-It uses **Path** to specify the path of the `HKLM:` drive and the "Software\MyCompany" key.
+It uses **Path** to specify the path of the `HKLM:` drive and the `Software\MyCompany` key.
 The command uses **Name** to specify the entry name and **Value** to specify a value.
 
 The second command uses the `Get-ItemProperty` cmdlet to see the new registry entry.
@@ -132,15 +132,9 @@ For more information about how to use PowerShell to manage the registry, type `G
 
 ### Example 3: Modify an item by using the pipeline
 
-These commands show how to use a pipeline operator (`|`) to send an item to `Set-ItemProperty`.
-
-The first part of the command uses `Get-ChildItem` to get an object that represents the "Weekly.txt"
-file. The command uses a pipeline operator to send the file object to `Set-ItemProperty`.
-The `Set-ItemProperty` command uses the **Name** and **Value** parameters to specify the property
-and its new value.
-
-This command is equivalent to using the **InputObject** parameter to specify the object that
-`Get-ChildItem` gets.
+Th example uses `Get-ChildItem` to get the `weekly.txt` file. The file object is piped to
+`Set-ItemProperty`. The `Set-ItemProperty` command uses the **Name** and **Value** parameters to
+specify the property and its new value.
 
 ```powershell
 Get-ChildItem weekly.txt | Set-ItemProperty -Name IsReadOnly -Value $True
@@ -189,11 +183,13 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
-provider is the only installed PowerShell provider that supports the use of filters. You can find
-the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-Filters are more efficient than other parameters, because the provider applies them when the cmdlet
-gets the objects rather than having PowerShell filter the objects after they are retrieved.
+Specifies a filter to qualify the **Path** parameter. The
+[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only
+installed PowerShell provider that supports the use of filters. You can find the syntax for the
+**FileSystem** filter language in
+[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md). Filters are more efficient
+than other parameters, because the provider applies them when the cmdlet gets the objects rather
+than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: System.String
@@ -269,7 +265,8 @@ typed. No characters are interpreted as wildcards. If the path includes escape c
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
 
-For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -415,9 +412,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## Inputs
@@ -431,13 +428,14 @@ You can pipe objects to this cmdlet.
 ### None, System.Management.Automation.PSCustomObject
 
 This cmdlet generates a **PSCustomObject** object that represents the item that was changed and its
-new property value, if you specify the **PassThru** parameter.
-Otherwise, this cmdlet does not generate any output.
+new property value, if you specify the **PassThru** parameter. Otherwise, this cmdlet does not
+generate any output.
 
 ## Notes
 
 `Set-ItemProperty` is designed to work with the data exposed by any provider. To list the providers
-available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+available in your session, type `Get-PSProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## Related links
 
@@ -456,4 +454,3 @@ available in your session, type `Get-PSProvider`. For more information, see [abo
 [Rename-ItemProperty](Rename-ItemProperty.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
