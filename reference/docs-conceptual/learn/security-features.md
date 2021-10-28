@@ -1,6 +1,6 @@
 ---
 description: PowerShell has several features designed to improve the security of your scripting environment.
-ms.date: 09/23/2021
+ms.date: 10/27/2021
 title: PowerShell security features
 ---
 # PowerShell security features
@@ -59,6 +59,10 @@ AppLocker contains new capabilities and extensions that enable you to create rul
 apps from running based on unique identities of files and to specify which users or groups can run
 those apps.
 
+For more information about AppLocker and Windows Defender Application Control (WDAC), see
+[Application Controls for Windows][WDAC] and
+[WDAC and AppLocker feature availability][availability].
+
 ### Security Servicing Criteria
 
 PowerShell follows the [Microsoft Security Servicing Criteria for Windows][mssec].
@@ -72,15 +76,18 @@ The table below outlines the features that meet the servicing criteria and those
 | Constrained language mode - with AppLocker | Defense in Depth |
 | Execution Policy                           | Defense in Depth |
 
-> [!NOTE]
-> There is a corner-case scenario in AppLocker where you only have **Deny** rules and constrained
-> language mode is not used to enforce the policy that allows you to bypass the execution policy.
-> Beginning in PowerShell 7.2, a change was made to ensure AppLocker rules take precedence
-> over a `Set-ExecutionPolicy -ExecutionPolicy Bypass` command.
+### Changes in PowerShell 7.2
 
-For more information about AppLocker and Windows Defender Application Control (WDAC), see
-[Application Controls for Windows][WDAC] and
-[WDAC and AppLocker feature availability][availability].
+- There was a corner-case scenario in AppLocker where you only have **Deny** rules and constrained
+  mode is not used to enforce the policy that allows you to bypass the execution policy. Beginning
+  in PowerShell 7.2, a change was made to ensure AppLocker rules take precedence over a
+  `Set-ExecutionPolicy -ExecutionPolicy Bypass` command.
+
+- PowerShell 7.2 now disallows the use of te `Add-Type` cmdlet in a **NoLanguage** mode PowerShell
+  session on a locked down machine.
+
+- PowerShell 7.2 now disallows scripts from using COM objects in AppLocker system lock down
+  conditions. Cmdlet that use COM or DCOM internally are not affected.
 
 <!-- link references -->
 [applocker]: /windows/security/threat-protection/windows-defender-application-control/applocker/what-is-applocker
