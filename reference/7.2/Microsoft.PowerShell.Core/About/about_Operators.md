@@ -451,6 +451,18 @@ intro
 -----
 Once upon a time...
 ```
+Given a list of indices, the operator returns a list of members corresponding to those indices.
+
+```powershell
+-JOIN '123'[ 2 .. 0 ] -EQ '321'
+```
+
+If an object is not an indexed collection, its first element is the object itself.  Index lists are not supported.
+
+```powershell
+(0)[0] -EQ 0
+(0)[0,0] -EQ $NULL
+```
 
 ### Pipeline operator `|`
 
