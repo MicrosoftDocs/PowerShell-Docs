@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2021
-ms.date: 10/01/2021
+ms.date: 11/01/2021
 title: What's New in PowerShell-Docs for 2021
 ---
 # What's new in PowerShell Docs for 2021
@@ -10,6 +10,43 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2021-October
+
+New Content
+
+- PSScriptAnalyzer documentation
+  - [Overview](/powershell/utility-modules/psscriptanalyzer/overview)
+  - [Rules documentation](/powershell/utility-modules/psscriptanalyzer/rules/readme)
+
+Content updates
+
+- Lots of general editorial and freshness updates across 450 files
+- PowerShell 7.2-rc.1 documentation updates
+
+### Top Community Contributors
+
+GitHub stats
+
+- 49 PRs merged (12 from Community)
+- 33 issues opened (30 from Community)
+- 33 issues closed (32 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| doctordns       |     4      |               |
+| diecknet        |     1      |               |
+| Kagre           |     1      |               |
+| KexyBiscuit     |     1      |               |
+| JohnRoos        |     1      |               |
+| Zhu-Panda       |     1      |               |
+| philanderson888 |     1      |               |
+| BlackFalcons    |     1      |               |
+| milaandahiya    |     1      |               |
+| mklement0       |            |       2       |
 
 ## 2021-September
 

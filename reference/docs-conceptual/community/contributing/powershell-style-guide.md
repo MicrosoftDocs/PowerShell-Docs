@@ -1,6 +1,6 @@
 ---
 description: This article provides the rules of style for writing PowerShell documentation.
-ms.date: 12/09/2020
+ms.date: 11/01/2021
 ms.topic: conceptual
 title: PowerShell-Docs style guide
 ---
@@ -321,6 +321,10 @@ For more information, see [Use links in documentation](/contribute/how-to-write-
   $files = Get-ChildItem C:\Windows
   ```
   ~~~
+
+  - PowerShell keywords and operators should be all lowercase
+
+  - Use proper (Pascal) casing for cmdlet names and parameters
 
   - When referring to a parameter by name, the name should be **bold**. When illustrating the use of
     a parameter with the hyphen prefix, the parameter should be wrapped in backticks. For example:

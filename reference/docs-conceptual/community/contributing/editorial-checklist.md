@@ -1,6 +1,6 @@
 ---
 description: This is a summarized list of rules for editing PowerShell documentation.
-ms.date: 03/05/2020
+ms.date: 11/01/2021
 ms.topic: conceptual
 title: Editorial checklist
 ---
@@ -41,6 +41,8 @@ articles in the Contributor's Guide for detailed explanations and examples of th
 - Line breaks at 100 columns (or at 80 for **about_Topics**)
 - No hard tabs - use spaces only
 - No trailing spaces on lines
+- PowerShell keywords and operators should be all lowercase
+- Use proper (Pascal) casing for cmdlet names and parameters
 
 ### Headers
 
