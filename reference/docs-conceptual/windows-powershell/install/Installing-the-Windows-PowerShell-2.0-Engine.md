@@ -1,6 +1,6 @@
 ---
 description: The Windows PowerShell 2.0 Engine is an optional feature of Windows. This article explains how to install the feature and the necessary requirements.
-ms.date: 10/07/2021
+ms.date: 11/01/2021
 title: Installing the Windows PowerShell 2.0 Engine
 ---
 
@@ -94,15 +94,15 @@ For information about starting the Windows PowerShell 2.0 Engine, see
 
 ## On Earlier Systems
 
-The [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881) package that
-installs Windows PowerShell 4.0 on Windows 7, Windows Server 2008 R2, and Windows Server 2012,
-includes the Windows PowerShell 2.0 Engine. The Windows PowerShell 2.0 Engine is enabled and ready
-to use, if necessary, without additional installation, setup, or configuration.
+The [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855)
+package that installs Windows PowerShell 4.0 on Windows 7, Windows Server 2008 R2, and Windows
+Server 2012, includes the Windows PowerShell 2.0 Engine. The Windows PowerShell 2.0 Engine is
+enabled and ready to use, if necessary, without additional installation, setup, or configuration.
 
-The Windows Management Framework 3.0 package that installs Windows PowerShell 3.0 on Windows 7,
-Windows Server 2008 R2, and Windows Server 2008, includes the Windows PowerShell 2.0 Engine. The
-Windows PowerShell 2.0 Engine is enabled and ready to use, if necessary, without additional
-installation, setup, or configuration.
+The [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595)
+package that installs Windows PowerShell 3.0 on Windows 7, Windows Server 2008 R2, and Windows
+Server 2008, includes the Windows PowerShell 2.0 Engine. The Windows PowerShell 2.0 Engine is
+enabled and ready to use, if necessary, without additional installation, setup, or configuration.
 
 ## See Also
 

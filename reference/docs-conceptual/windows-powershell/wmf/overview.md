@@ -65,4 +65,4 @@ to the links below to review the release notes:
 [WMF 5.1]: https://aka.ms/wmf51download
 [WMF 4.0]: https://aka.ms/wmf4download
 [WMF 3.0]: https://aka.ms/wmf3download
-[WMF 2.0]: https://aka.ms/wmf2download
+[WMF 2.0]: https://www.catalog.update.microsoft.com/Search.aspx?q=968929
