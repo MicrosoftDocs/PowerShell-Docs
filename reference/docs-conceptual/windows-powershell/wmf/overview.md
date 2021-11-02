@@ -1,6 +1,6 @@
 ---
 description: WMF is a prerequisite for Windows PowerShell. This articles shows the history of WMF versions and provides information about how to find and install WMF.
-ms.date: 10/07/2021
+ms.date: 11/02/2021
 title: Windows Management Framework (WMF)
 ---
 
@@ -27,10 +27,10 @@ WMF installation adds and/or updates the following features:
 To learn about various enhancements in PowerShell and other components of a given WMF, please refer
 to the links below to review the release notes:
 
-- [WMF 5.1](whats-new/release-notes.md#wmf-51-changes)
-- [WMF 5.0](whats-new/release-notes.md#wmf-50-changes)
-- [WMF 4.0](https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows%20Management%20Framework%204%200%20Release%20Notes.docx)
-- [WMF 3.0](https://download.microsoft.com/download/E/7/6/E76850B8-DA6E-4FF5-8CCE-A24FC513FD16/WMF%203%20Release%20Notes.docx)
+- [WMF 5.1][wmf51rel]
+- [WMF 5.0][wmf50rel]
+- [WMF 4.0][wmf40rel]
+- [WMF 3.0][wmf30rel]
 
 ## WMF Availability Across Windows Operating Systems
 
@@ -61,8 +61,14 @@ to the links below to review the release notes:
 > [!NOTE]
 > The installer for WMF 5.0 is no longer available or supported. It has been replaced by WMF 5.1.
 
+<!-- link refs -->
+
 [Lifecycle]: https://support.microsoft.com/lifecycle
 [WMF 5.1]: https://aka.ms/wmf51download
 [WMF 4.0]: https://aka.ms/wmf4download
 [WMF 3.0]: https://aka.ms/wmf3download
 [WMF 2.0]: https://aka.ms/wmf2download
+[wmf51rel]: whats-new/release-notes.md#wmf-51-changes
+[wmf50rel]: whats-new/release-notes.md#wmf-50-changes
+[wmf40rel]: https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows%20Management%20Framework%204%200%20Release%20Notes.docx
+[wmf30rel]: https://download.microsoft.com/download/E/7/6/E76850B8-DA6E-4FF5-8CCE-A24FC513FD16/WMF%203%20Release%20Notes.docx

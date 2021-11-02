@@ -74,13 +74,13 @@ install the specified version of the Windows Management Framework for your opera
 Windows PowerShell 3.0 runs on the following versions of Windows. To run Windows PowerShell 3.0,
 install the specified version of the Windows Management Framework for your operating system.
 
-|               Windows version               |                                             System requirement                                             |
-| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Windows 8                                   | Installed by default                                                                                       |
-| Windows Server 2012                         | Installed by default                                                                                       |
+|              Windows version               |                                          System requirement                                          |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| Windows 8                                  | Installed by default                                                                                 |
+| Windows Server 2012                        | Installed by default                                                                                 |
 | Windows 7 with Service Pack 1              | Install [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
 | Windows Server 2008 R2 with Service Pack 1 | Install [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
-| Windows Server 2008 with Service Pack 2     | Install [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
+| Windows Server 2008 with Service Pack 2    | Install [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
 
 ## Microsoft .NET Framework requirements
 

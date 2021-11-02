@@ -1,7 +1,7 @@
 ---
 description: Different editions of PowerShell run on different underlying runtimes.
 Locale: en-US
-ms.date: 03/28/2019
+ms.date: 11/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_editions?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PowerShell Editions
@@ -53,20 +53,17 @@ $PSVersionTable
 ```
 
 ```Output
-
 Name                           Value
 ----                           -----
-PSVersion                      7.2.0
+PSVersion                      7.0.8
 PSEdition                      Core
-GitCommitId                    7.2.0
+GitCommitId                    7.0.8
 OS                             Microsoft Windows 10.0.19043
 Platform                       Win32NT
 PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
 PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 WSManStackVersion              3.0
-
-
 ```
 
 The **PSEdition** field has the same value as the `$PSEdition` automatic variable.
@@ -223,9 +220,9 @@ you use that are affected by edition compatibility.
 Generally, scripts that work in PowerShell 6.1 and above will work with Windows PowerShell 5.1,
 but there are some exceptions.
 
-Version 1.18.0 [PSScriptAnalyzer][pssa] module has rules like [PSUseCompatibleCommands][psucc] and
-[PSUseCompatibleTypes][psuct] that are able to detect possibly incompatible usage of commands
-and .NET APIs in PowerShell scripts.
+[PSScriptAnalyzer][pssa] version 1.18+ has rules like [PSUseCompatibleCommands][psucc] and
+[PSUseCompatibleTypes][psuct] that are able to detect possibly incompatible usage of commands and
+.NET APIs in PowerShell scripts.
 
 ### .NET assemblies
 
@@ -244,8 +241,8 @@ to catch possible behavioral differences between editions. For this you must sti
 - [Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support)
 
 [Pester]: https://github.com/pester/Pester/wiki/Pester
-[pssa]: https://github.com/PowerShell/PSScriptAnalyzer
-[psucc]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleCommands.md
-[psuct]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleTypes.md
+[pssa]: https://www.powershellgallery.com/packages/PSScriptAnalyzer/
+[psucc]: /powershell/utility-modules/psscriptanalyzer/rules/usecompatiblecommands
+[psuct]: /powershell/utility-modules/psscriptanalyzer/rules/usecompatibletypes
 [netstd]: /dotnet/standard/net-standard
 [psstd]: https://devblogs.microsoft.com/powershell/powershell-standard-library-build-single-module-that-works-across-windows-powershell-and-powershell-core/

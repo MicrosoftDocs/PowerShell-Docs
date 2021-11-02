@@ -117,7 +117,7 @@ As with all logging systems that have a limited retention buffer, one way to att
 infrastructure is to flood the log with spurious events to hide earlier evidence. To protect
 yourself from this attack, ensure that you have some form of event log collection set up Windows
 Event Forwarding. For more information, see
-[Spotting the Adversary with Windows Event Log Monitoring][report].
+[Use Azure Monitor to integrate with SIEM tools][SIEM].
 
 <!-- link refs -->
-[report]: https://apps.nsa.gov/iaarchive/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm
+[SIEM]: https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/
