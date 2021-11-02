@@ -1,7 +1,7 @@
 ---
 description: Describes regular expressions in PowerShell.
 Locale: en-US
-ms.date: 03/10/2020
+ms.date: 11/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Regular Expressions
@@ -27,7 +27,7 @@ has several operators and cmdlets that use regular expressions. You can read
 more about their syntax and usage at the links below.
 
 - [Select-String](xref:Microsoft.PowerShell.Utility.Select-String)
-- [-match and -replace operators](about_Comparison_Operators.md)
+- [-match and -replace operators](about_Comparison_Operators.md#matching-operators)
 - [-split](about_Split.md)
 - [switch statement with -regex option](about_Switch.md)
 
@@ -40,7 +40,7 @@ shown above has a different way to force case sensitivity.
 | `switch` statement | use the `-casesensitive` option                            |
 | operators          | prefix with **'c'** (`-cmatch`, `-csplit`, or `-creplace`) |
 
-### Character literals
+## Character literals
 
 A regular expression can be a literal character or a string. The expression
 causes the engine to match the text specified exactly.
@@ -50,12 +50,12 @@ causes the engine to match the text specified exactly.
 'book' -match 'oo'
 ```
 
-### Character classes
+## Character classes
 
 While character literals work if you know the exact pattern, character classes
 allow you to be less specific.
 
-#### Character groups
+## Character groups
 
 `[character group]` allows you to match any number of characters one time,
 while `[^character group]` only matches characters NOT in the group.
@@ -69,7 +69,7 @@ If your list of characters to match includes the hyphen character (`-`), it
 must be at the beginning or end of the list to distinguish it from a character
 range expression.
 
-#### Character ranges
+### Character ranges
 
 A pattern can also be a range of characters. The characters can be alphabetic `[A-Z]`,
 numeric `[0-9]`, or even ASCII-based `[ -~]` (all printable characters).
@@ -79,7 +79,7 @@ numeric `[0-9]`, or even ASCII-based `[ -~]` (all printable characters).
 42 -match '[0-9][0-9]'
 ```
 
-#### Numbers
+### Numbers
 
 The `\d` character class will match any decimal digit. Conversely, `\D` will
 match any non-decimal digit.
@@ -90,7 +90,7 @@ match any non-decimal digit.
 'Server-01' -match 'Server-\d\d'
 ```
 
-#### Word characters
+### Word characters
 
 The `\w` character class will match any word character `[a-zA-Z_0-9]`. To match
 any non-word character, use `\W`.
@@ -101,7 +101,7 @@ any non-word character, use `\W`.
 'Book' -match '\w'
 ```
 
-#### Wildcards
+### Wildcards
 
 The period (`.`) is a wildcard character in regular expressions. It will match
 any character except a newline (`\n`).
@@ -112,7 +112,7 @@ any character except a newline (`\n`).
 'a1\ ' -match '....'
 ```
 
-#### Whitespace
+### Whitespace
 
 Whitespace is matched using the `\s` character class. Any non-whitespace
 character is matched using `\S`. Literal space characters `' '` can also be
@@ -124,7 +124,7 @@ used.
 ' - ' -match '\s- '
 ```
 
-### Quantifiers
+## Quantifiers
 
 Quantifiers control how many instances of each element should be present in the
 input string.
@@ -176,7 +176,7 @@ optional.
 '111-222-3333' -match '\d{3}-\d{3}-\d{4}'
 ```
 
-### Anchors
+## Anchors
 
 Anchors allow you to cause a match to succeed or fail based on the matches
 position within the input string.
@@ -209,7 +209,7 @@ When using anchors in PowerShell, you should understand the difference between
 To read more about these options and how to use them, visit the
 [Regular Expression Language - Quick Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
-### Escaping characters
+## Escaping characters
 
 The backslash (`\`) is used to escape characters so they aren't parsed by the
 regular expression engine.
@@ -240,7 +240,7 @@ There`s a static method of the regex class that can escape text for you.
 > backslashes used in character classes. Be sure to only use it on the portion
 > of your pattern that you need to escape.
 
-#### Other character escapes
+### Other character escapes
 
 There are also reserved character escapes that you can use to match special
 character types.
@@ -253,7 +253,7 @@ The following are a few commonly used character escapes:
 |`\n`|Matches a newline|
 |`\r`|Matches a carriage return|
 
-### Groups, Captures, and Substitutions
+## Groups, Captures, and Substitutions
 
 Grouping constructs separate an input string into substrings that can be
 captured or ignored. Grouped substrings are called subexpressions. By default
@@ -262,7 +262,7 @@ them as well.
 
 A grouping construct is a regular expression surrounded by parentheses. Any
 text matched by the enclosed regular expression is captured. The following
-example will break the input text into two capturing groups.
+example breaks the input text into two capturing groups.
 
 ```powershell
 'The last logged on user was CONTOSO\jsmith' -match '(.+was )(.+)'
@@ -273,7 +273,9 @@ True
 ```
 
 Use the `$Matches` **Hashtable** automatic variable to retrieve captured text.
-The text representing the entire match is stored at key `0`.
+The text representing the entire match is stored at key `0`. It is important to
+note that the `$Matches` hashtable contains only the first occurrence of any
+matching pattern.
 
 ```powershell
 $Matches.0
@@ -317,7 +319,7 @@ Name                           Value
 > Dog
 > ```
 
-#### Named Captures
+### Named Captures
 
 By default, captures are stored in ascending numeric order, from left to right.
 You can also assign a **name** to a capturing group. This **name** becomes a
@@ -375,7 +377,7 @@ N                              jsmith
 For more information, see
 [Grouping Constructs in Regular Expressions](/dotnet/standard/base-types/grouping-constructs-in-regular-expressions).
 
-#### Substitutions in Regular Expressions
+### Substitutions in Regular Expressions
 
 Using the regular expressions with the `-replace` operator allows you to
 dynamically replace text using captured text.
@@ -462,4 +464,3 @@ For more information, see [Substitutions in Regular Expressions](/dotnet/standar
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Operators](about_Operators.md)
-
