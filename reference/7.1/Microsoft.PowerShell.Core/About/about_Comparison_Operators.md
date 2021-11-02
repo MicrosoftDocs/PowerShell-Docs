@@ -1,8 +1,8 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 07/15/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 11/02/2021
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comparison Operators
 ---
@@ -384,6 +384,9 @@ scalar input, and the `-match` result is **True**, or the `-notmatch` result is
 **Hashtable** that always has a key named '0', which stores the entire match.
 If the regular expression contains capture groups, the `$Matches` contains
 additional keys for each group.
+
+It is important to note that the `$Matches` hashtable contains only the first
+occurrence of any matching pattern.
 
 Example:
 
