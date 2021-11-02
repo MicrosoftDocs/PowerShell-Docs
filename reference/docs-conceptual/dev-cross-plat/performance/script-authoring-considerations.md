@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 09/30/2021
+ms.date: 11/01/2021
 title: PowerShell scripting performance considerations
 ---
 
@@ -132,7 +132,8 @@ sense, many scripts use `Write-Host`.
 If you must write many messages to the console, `Write-Host` can be an order of magnitude slower
 than `[Console]::WriteLine()`. However, be aware that `[Console]::WriteLine()` is only a suitable
 alternative for specific hosts like `pwsh.exe`, `powershell.exe`, or `powershell_ise.exe`. It's not
-guaranteed to work in all hosts.
+guaranteed to work in all hosts. Also, output written using `[Console]::WriteLine()` does not get
+written to transcripts started by `Start-Transcript`.
 
 Instead of using `Write-Host`, consider using
 [Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output).
