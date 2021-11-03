@@ -225,7 +225,7 @@ if needed.
    [installation guide](https://www.macports.org/install.php).
 1. Update MacPorts by running `sudo port selfupdate`.
 1. Upgrade MacPorts packages by running `sudo port upgrade outdated`.
-1. Install OpenSSL by running `sudo port install openssl10`.
+1. Install OpenSSL by running `sudo port install openssl10`. (If you're running a newer Mac with Apple Silicon you need to run `sudo port install openssl10 +universal`instead.)
 1. Link the libraries to make them available to PowerShell:
 
    ```sh
