@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 10/22/2021
+ms.date: 11/03/2021
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -172,15 +172,15 @@ For more information, see
 
 The preview version of PowerShell 7.2 can be downloaded using the following link:
 
-- [PowerShell-7.2.0-preview.10-win-x64.msi][72x64msi]
+- [PowerShell-7.2.0-rc.1-win-x64.msi][72x64msi]
 
 Preview releases of PowerShell 7 install to `$env:ProgramFiles\PowerShell\7-preview` so they can
-be run side-by-side with non-preview releases of PowerShell. PowerShell 7.2-preview.10 is the
+be run side-by-side with non-preview releases of PowerShell. PowerShell 7.2-rc.1 is the
 current preview release.
 
 ### Support for Microsoft Update in PowerShell 7.2
 
-PowerShell 7.2-preview.10 has support for Microsoft Update. When you enable this feature, you'll get
+PowerShell 7.2-rc.1 has support for Microsoft Update. When you enable this feature, you'll get
 the latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
 that's with Windows Update for Business, WSUS, SCCM, or the interactive MU dialog in Settings.
 
@@ -357,4 +357,4 @@ cannot support those methods.
 [x64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-x64.zip
 [x86msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-x86.msi
 [x86zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-x86.zip
-[72x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/PowerShell-7.2.0-preview.10-win-x64.msi
+[72x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-rc.1/PowerShell-7.2.0-rc.1-win-x64.msi

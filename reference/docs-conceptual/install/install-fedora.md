@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Fedora Linux
-ms.date: 10/15/2021
+ms.date: 11/03/2021
 title: Installing PowerShell on Fedora Linux
 ---
 # Installing PowerShell on Fedora Linux
@@ -48,14 +48,14 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Th
 contains the dependencies needed by the package. Download the RPM package from the
 [releases][releases] page onto your openSUSE computer. The links to the current versions are:
 
-- PowerShell 7.2-preview.10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-preview-7.2.0_preview.10-1.rh.x86_64.rpm`
+- PowerShell 7.2-rc.1 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-rc.1/powershell-preview-7.2.0_rc.1-1.rh.x86_64.rpm`
 - PowerShell 7.1.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-1.rhel.7.x86_64.rpm`
 - PowerShell 7.0.8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-7.0.8-1.rhel.7.x86_64.rpm`
 
-The following shell command installs PowerShell 7.2-preview.10:
+The following shell command installs PowerShell 7.2-rc.1:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/powershell-preview-7.2.0_preview.10-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-rc.1/powershell-preview-7.2.0_rc.1-1.rh.x86_64.rpm
 ```
 
 Use the following shell commands to download and install the package. Change the URL to match the
