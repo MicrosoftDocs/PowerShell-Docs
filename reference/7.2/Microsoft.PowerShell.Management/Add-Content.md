@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/18/2020
+ms.date: 11/03/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
@@ -54,6 +54,8 @@ The **Path** parameter specifies all `.txt` files in the current directory, but 
 parameter ignores file names that match the specified pattern. The **Value** parameter specifies the
 text string that is written to the files.
 
+Use [Get-Content](Get-Content.md) to display the contents of these files.
+
 ### Example 2: Add a date to the end of the specified files
 
 This example appends the date to files in the current directory and displays the date in the
@@ -70,10 +72,10 @@ Tuesday, May 14, 2019 8:24:27 AM
 5/14/2019 8:24:27 AM
 ```
 
-The `Add-Content` cmdlet creates two new files in the current directory. The **Value** parameter contains
-the output of the `Get-Date` cmdlet. The **PassThru** parameter outputs the added contents to the pipeline.
-Because there is no other cmdlet to receive the output, it is displayed in the PowerShell console.
-The `Get-Content` cmdlet displays the updated file, `DateTimeFile1.log`.
+The `Add-Content` cmdlet creates two new files in the current directory. The **Value** parameter
+contains the output of the `Get-Date` cmdlet. The **PassThru** parameter outputs the added contents
+to the pipeline. Because there is no other cmdlet to receive the output, it is displayed in the
+PowerShell console. The `Get-Content` cmdlet displays the updated file, `DateTimeFile1.log`.
 
 ### Example 3: Add the contents of a specified file to another file
 
@@ -271,11 +273,13 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
-provider is the only installed PowerShell provider that supports the use of filters. You can find
-the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-Filters are more efficient than other parameters, because the provider applies them when the cmdlet
-gets the objects rather than having PowerShell filter the objects after they are retrieved.
+Specifies a filter to qualify the **Path** parameter. The
+[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only
+installed PowerShell provider that supports the use of filters. You can find the syntax for the
+**FileSystem** filter language in
+[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md). Filters are more efficient
+than other parameters, because the provider applies them when the cmdlet gets the objects rather
+than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: System.String
@@ -292,8 +296,7 @@ Accept wildcard characters: True
 ### -Force
 
 Overrides the read-only attribute, allowing you to add content to a read-only file. For example,
-**Force** will override the read-only attribute or create directories to complete a file path, but
-it will not attempt to change file permissions.
+**Force** overrides the read-only attribute but it does not change file permissions.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -334,7 +337,8 @@ typed. No characters are interpreted as wildcards. If the path includes escape c
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
 
-For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -386,11 +390,10 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path to the items that receive the additional content.
-Wildcard characters are permitted.
-The paths must be paths to items, not to containers.
-For example, you must specify a path to one or more files, not a path to a directory.
-If you specify multiple paths, use commas to separate the paths.
+Specifies the path to the items that receive the additional content. Wildcard characters are
+permitted. The paths must be paths to items, not to containers. For example, you must specify a path
+to one or more files, not a path to a directory. If you specify multiple paths, use commas to
+separate the paths.
 
 ```yaml
 Type: System.String[]
@@ -415,11 +418,10 @@ it. Wildcard characters are not supported.
 **Stream** is a dynamic parameter that the FileSystem provider adds to `Add-Content`. This
 parameter works only in file system drives.
 
-You can use the `Add-Content` cmdlet to change the content of any alternate
-data stream, such as `Zone.Identifier`. However, we do not recommend this as
-a way to eliminate security checks that block files that are downloaded from
-the Internet. If you verify that a downloaded file is safe, use the
-`Unblock-File` cmdlet.
+You can use the `Add-Content` cmdlet to change the content of any alternate data stream, such as
+`Zone.Identifier`. However, we do not recommend this as a way to eliminate security checks that
+block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use
+the `Unblock-File` cmdlet.
 
 This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.2, `Add-Content` can
 target alternative data streams on both files and directories.
@@ -512,10 +514,10 @@ represents the content. Otherwise, this cmdlet does not generate any output.
 
 ## Notes
 
-- When you pipe an object to `Add-Content`, the object is converted to a string before it is added to
-  the item. The object type determines the string format, but the format might be different than the
-  default display of the object. To control the string format, use the formatting parameters of the
-  sending cmdlet.
+- When you pipe an object to `Add-Content`, the object is converted to a string before it is added
+  to the item. The object type determines the string format, but the format might be different than
+  the default display of the object. To control the string format, use the formatting parameters of
+  the sending cmdlet.
 - You can also refer to `Add-Content` by its built-in alias, `ac`. For more information, see
   [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 - The `Add-Content` cmdlet is designed to work with the data exposed by any provider. To list the
