@@ -41,11 +41,6 @@ A Windows PowerShell container provider must define a .NET class that derives fr
 base class. Here is the class definition for the Windows PowerShell container provider described in
 this section.
 
-```csharp
-[CmdletProvider("AccessDB", ProviderCapabilities.None)]
-public class AccessDBProvider : ContainerCmdletProvider
-```
-
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="34-35":::
 
 Notice that in this class definition, the
@@ -95,61 +90,6 @@ Here is the implementation of the
 method for this provider. Notice that this method retrieves the child items in all database tables
 when the path indicates the Access database, and retrieves the child items from the rows of that
 table if the path indicates a data table.
-
-```csharp
-protected override void GetChildItems(string path, bool recurse)
-{
-    // If path represented is a drive then the children in the path are
-    // tables. Hence all tables in the drive represented will have to be
-    // returned
-    if (PathIsDrive(path))
-    {
-        foreach (DatabaseTableInfo table in GetTables())
-        {
-            WriteItemObject(table, path, true);
-
-            // if the specified item exists and recurse has been set then
-            // all child items within it have to be obtained as well
-            if (ItemExists(path) && recurse)
-            {
-                GetChildItems(path + pathSeparator + table.Name, recurse);
-            }
-        } // foreach (DatabaseTableInfo...
-    } // if (PathIsDrive...
-    else
-    {
-        // Get the table name, row number and type of path from the
-        // path specified
-        string tableName;
-        int rowNumber;
-
-        PathType type = GetNamesFromPath(path, out tableName, out rowNumber);
-
-        if (type == PathType.Table)
-        {
-            // Obtain all the rows within the table
-            foreach (DatabaseRowInfo row in GetRows(tableName))
-            {
-                WriteItemObject(row, path + pathSeparator + row.RowNumber,
-                        false);
-            } // foreach (DatabaseRowInfo...
-        }
-        else if (type == PathType.Row)
-        {
-            // In this case the user has directly specified a row, hence
-            // just give that particular row
-            DatabaseRowInfo row = GetRow(tableName, rowNumber);
-            WriteItemObject(row, path + pathSeparator + row.RowNumber,
-                        false);
-        }
-        else
-        {
-            // In this case, the path specified is not valid
-            ThrowTerminatingInvalidPathException(path);
-        }
-    } // else
-} // GetChildItems
-```
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="311-362":::
 
@@ -221,52 +161,6 @@ Here is the implementation of the
 [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)
 method for this provider. Notice that the method retrieves table names if the specified path
 indicates the Access database (drive) and row numbers if the path indicates a table.
-
-```csharp
-protected override void GetChildNames(string path,
-                            ReturnContainers returnContainers)
-{
-    // If the path represented is a drive, then the child items are
-    // tables. get the names of all the tables in the drive.
-    if (PathIsDrive(path))
-    {
-        foreach (DatabaseTableInfo table in GetTables())
-        {
-            WriteItemObject(table.Name, path, true);
-        } // foreach (DatabaseTableInfo...
-    } // if (PathIsDrive...
-    else
-    {
-        // Get type, table name and row number from path specified
-        string tableName;
-        int rowNumber;
-
-        PathType type = GetNamesFromPath(path, out tableName, out rowNumber);
-
-        if (type == PathType.Table)
-        {
-            // Get all the rows in the table and then write out the
-            // row numbers.
-            foreach (DatabaseRowInfo row in GetRows(tableName))
-            {
-                WriteItemObject(row.RowNumber, path, false);
-            } // foreach (DatabaseRowInfo...
-        }
-        else if (type == PathType.Row)
-        {
-            // In this case the user has directly specified a row, hence
-            // just give that particular row
-            DatabaseRowInfo row = GetRow(tableName, rowNumber);
-
-            WriteItemObject(row.RowNumber, path, false);
-        }
-        else
-        {
-            ThrowTerminatingInvalidPathException(path);
-        }
-    } // else
-} // GetChildNames
-```
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="369-411":::
 
