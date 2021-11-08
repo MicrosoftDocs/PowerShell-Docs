@@ -20,7 +20,7 @@ contain critical security updates and servicing fixes that are designed to minim
 existing workloads. LTS releases of PowerShell are supported until the end-of-support for .NET.
 
 A **current** release is a release that occurs between LTS releases. Current releases can contain
-critical fixes, innovations, and new features. A current release is supported for three months after
+critical fixes, innovations, and new features. A current release is supported for six months after
 the next release (current or LTS).
 
 > [!IMPORTANT]
