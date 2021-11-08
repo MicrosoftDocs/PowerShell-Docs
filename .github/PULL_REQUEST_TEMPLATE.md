@@ -29,6 +29,7 @@ Select the area of the Table of Contents containing the documents being changed.
 
 **Cmdlet reference & about_ topics**
 - [ ] Preview content
+- [ ] Version 7.2 content
 - [ ] Version 7.1 content
 - [ ] Version 7.0 content
 - [ ] Version 5.1 content

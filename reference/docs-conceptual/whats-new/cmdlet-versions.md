@@ -32,7 +32,7 @@ This is a work in progress. Please help us keep this information fresh.
 | Microsoft.WsMan.Management                | &#x2705; | &#x2705; | &#x2705; | &#x2705; | Windows only                                |
 | PackageManagement                         | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                             |
 | PowershellGet 2.x                         |   v1.1   | &#x2705; | &#x2705; | &#x2705; | New versions available from the Gallery     |
-| PowershellGet 3.x                         |          |          |          |          | Preview available from the Gallery          |
+| PowershellGet 3.x                         |          |          |          |          |  available from the Gallery          |
 | PSDesiredStateConfiguration 2.x           | &#x2705; | &#x2705; | &#x2705; | &#x274c; | Removed in 7.2 - available from the Gallery |
 | PSDesiredStateConfiguration 3.x           |          |          |          |          | Preview available from the Gallery          |
 | PSDiagnostics                             | &#x2705; | &#x2705; | &#x2705; | &#x2705; | Windows only                                |

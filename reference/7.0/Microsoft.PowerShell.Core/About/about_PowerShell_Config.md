@@ -220,7 +220,7 @@ Where:
 > You may want to have different **LogIdentity** values for each different
 > instance of PowerShell you have installed.
 
-In this example, we are configuring the **LogIdentity** for a preview release
+In this example, we are configuring the **LogIdentity** for a  release
 of PowerShell.
 
 ```json

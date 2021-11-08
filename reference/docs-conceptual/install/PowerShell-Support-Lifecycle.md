@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell
-ms.date: 10/22/2021
+ms.date: 11/08/2021
 title: PowerShell Support Lifecycle
 ---
 # PowerShell Support Lifecycle
@@ -30,8 +30,8 @@ the next release (current or LTS).
 
 ## Supported platforms
 
-PowerShell runs on multiple operating systems (OS) and processor architectures. In order to be
-supported by Microsoft, the must meet the following criteria:
+PowerShell runs on multiple operating systems (OS) and processor architectures. To be supported by
+Microsoft, the OS must meet the following criteria:
 
 - The version and processor architecture of the OS is supported by .NET Core.
 - The version of the OS is supported for at least one year.
@@ -125,8 +125,8 @@ longer be supported.
 
 |      Version      |      End-of-support       |
 | ----------------- | ------------------------- |
-| 7.2 (LTS-preview) | November 2024 (projected) |
-| 7.1 (current)     | May 31, 2022  (projected) |
+| 7.2 (LTS-current) | November 2024 (projected) |
+| 7.1               | May 31, 2022              |
 | 7.0 (LTS)         | December 3, 2022          |
 | 6.2               | September 4, 2020         |
 | 6.1               | September 28, 2019        |
@@ -135,8 +135,8 @@ longer be supported.
 Support for PowerShell on a specific platforms is based on the support policy of the version of .NET
 used.
 
-- PowerShell 7.2 (LTS-preview) is based on the [.NET 6.0 Supported OS Lifecycle Policy][net60os]
-- PowerShell 7.1 (current) is based on the [.NET 5.0 Supported OS Lifecycle Policy][net50os]
+- PowerShell 7.2 (LTS-current) is based on the [.NET 6.0 Supported OS Lifecycle Policy][net60os]
+- PowerShell 7.1 is based on the [.NET 5.0 Supported OS Lifecycle Policy][net50os]
 - PowerShell 7.0 (LTS) is based on the [.NET Core 3.1 Supported OS Lifecycle Policy][net31os]
 
 ## Release history
@@ -146,8 +146,8 @@ for historical reference. It is not intended for use to determine the support li
 
 |           Version            | Release Date |                                       Note                                       |
 | ---------------------------- | :----------: | -------------------------------------------------------------------------------- |
-| PowerShell 7.2 (LTS-preview) |     TBD      | Built on .NET 6.0 (LTS-preview).                                                 |
-| PowerShell 7.1 (current)     |   Nov-2020   | Built on .NET 5.0 (current).                                                     |
+| PowerShell 7.2 (LTS-current) |   Nov-2024   | Built on .NET 6.0 (LTS-current).                                                 |
+| PowerShell 7.1               |   Nov-2020   | Built on .NET 5.0.                                                               |
 | PowerShell 7.0 (LTS)         |   Mar-2020   | Built on .NET Core 3.1 (LTS).                                                    |
 | PowerShell 6.2               |   Mar-2019   |                                                                                  |
 | PowerShell 6.1               |   Sep-2018   | Built on .NET Core 2.1.                                                          |

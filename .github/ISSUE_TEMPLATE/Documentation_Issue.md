@@ -36,6 +36,7 @@ Be sure to change the issue title. Titles should be brief and meaningful.
 
 **Cmdlet reference & about_ topics**
 - [ ] Preview content
+- [ ] Version 7.2 content
 - [ ] Version 7.1 content
 - [ ] Version 7.0 content
 - [ ] Version 5.1 content

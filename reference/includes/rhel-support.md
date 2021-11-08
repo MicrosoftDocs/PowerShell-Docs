@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 09/22/2021
+ms.date: 11/08/2021
 ms.prod: powershell
 ms.topic: include
 ---
@@ -16,16 +16,16 @@ they are supported on. These versions remain supported until either the version 
 - When both the version of the OS and the version of PowerShell have &#x2705;, that combination is
   supported
 
-|    RHEL    | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-preview) |
-| ---------- | :-------: | :-----------: | :---------------: |
-| &#x2705; 8 | &#x2705;  |   &#x2705;    |     &#x2705;      |
-| &#x2705; 7 | &#x2705;  |   &#x2705;    |     &#x2705;      |
+|    RHEL    | 7.0 (LTS) |   7.1    | 7.2 (LTS-current) |
+| ---------- | :-------: | :------: | :---------------: |
+| &#x2705; 8 | &#x2705;  | &#x2705; |     &#x2705;      |
+| &#x2705; 7 | &#x2705;  | &#x2705; |     &#x2705;      |
 
 PowerShell is supported on RHEL for the following processor architectures.
 
-|          RHEL          | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-preview) |
-| ---------------------- | :-------: | :-----------: | :---------------: |
-| All supported versions |    x64    |      x64      |    x64, Arm64     |
+|          RHEL          | 7.0 (LTS) |  7.1  | 7.2 (LTS-current) |
+| ---------------------- | :-------: | :---: | :---------------: |
+| All supported versions |    x64    |  x64  |    x64, Arm64     |
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-rhel]: https://access.redhat.com/support/policy/updates/errata/

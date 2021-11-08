@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 11/03/2021
+ms.date: 11/08/2021
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -35,8 +35,8 @@ different scenarios and workflows. Choose the method that best suits your needs.
 To install PowerShell on Windows, use the following links to download the install package from
 GitHub.
 
-- [PowerShell-7.1.5-win-x64.msi][x64msi]
-- [PowerShell-7.1.5-win-x86.msi][x86msi]
+- [PowerShell-7.2.0-win-x64.msi][x64msi]
+- [PowerShell-7.2.0-win-x86.msi][x86msi]
 
 Once downloaded, double-click the installer file and follow the prompts.
 
@@ -74,7 +74,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.5-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.2.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
@@ -85,10 +85,10 @@ For a full list of command-line options for `Msiexec.exe`, see
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
 the following ZIP archives from the [current release][current] page.
 
-- [PowerShell-7.1.5-win-x64.zip][x64zip]
-- [PowerShell-7.1.5-win-x86.zip][x86zip]
-- [PowerShell-7.1.5-win-arm64.zip][arm64zip]
-- [PowerShell-7.1.5-win-arm32.zip][arm32zip]
+- [PowerShell-7.2.0-win-x64.zip][x64zip]
+- [PowerShell-7.2.0-win-x86.zip][x86zip]
+- [PowerShell-7.2.0-win-arm64.zip][arm64zip]
+- [PowerShell-7.2.0-win-arm32.zip][arm32zip]
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -133,7 +133,7 @@ winget search Microsoft.PowerShell
 ```Output
 Name               Id                           Version  Source
 ----------------------------------------------------------------
-PowerShell         Microsoft.PowerShell         7.1.5.0  winget
+PowerShell         Microsoft.PowerShell         7.2.0.0  winget
 Powershell Preview Microsoft.PowerShell.Preview 7.2.0.10 winget
 ```
 
@@ -170,17 +170,18 @@ For more information, see
 
 ## Installing a preview version
 
+<!--
 The preview version of PowerShell 7.2 can be downloaded using the following link:
 
-- [PowerShell-7.2.0-rc.1-win-x64.msi][72x64msi]
-
+- [PowerShell-7.2.0-win-x64.msi][72x64msi]
+-->
 Preview releases of PowerShell 7 install to `$env:ProgramFiles\PowerShell\7-preview` so they can
-be run side-by-side with non-preview releases of PowerShell. PowerShell 7.2-rc.1 is the
-current preview release.
+be run side-by-side with non-preview releases of PowerShell. PowerShell 7.3 will be the
+next preview release.
 
 ### Support for Microsoft Update in PowerShell 7.2
 
-PowerShell 7.2-rc.1 has support for Microsoft Update. When you enable this feature, you'll get
+PowerShell 7.2 has support for Microsoft Update. When you enable this feature, you'll get
 the latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
 that's with Windows Update for Business, WSUS, SCCM, or the interactive MU dialog in Settings.
 
@@ -215,7 +216,7 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
 ```powershell
 # Replace the placeholder information for the following variables:
 $deviceip = '<device ip address'
-$zipfile = 'PowerShell-7.1.5-win-Arm64.zip'
+$zipfile = 'PowerShell-7.2.0-win-Arm64.zip'
 $downloadfolder = 'u:\users\administrator\Downloads'  # The download location is local to the device.
     # There should be enough  space for the zip file and the unzipped contents.
 
@@ -228,10 +229,10 @@ Copy-Item $zipfile -Destination $downloadfolder -ToSession $S
 #Connect to the device and expand the archive
 Enter-PSSession $S
 Set-Location u:\users\administrator\Downloads
-Expand-Archive .\PowerShell-7.1.5-win-Arm64.zip
+Expand-Archive .\PowerShell-7.2.0-win-Arm64.zip
 
 # Set up remoting to PowerShell 7
-Set-Location .\PowerShell-7.1.5-win-Arm64
+Set-Location .\PowerShell-7.2.0-win-Arm64
 # Be sure to use the -PowerShellHome parameter otherwise it tries to create a new
 # endpoint with Windows PowerShell 5.1
 .\Install-PowerShellRemoting.ps1 -PowerShellHome .
@@ -243,7 +244,7 @@ PowerShell has to restart WinRM. Now you can connect to PowerShell 7 endpoint on
 ```powershell
 
 # Be sure to use the -Configuration parameter. If you omit it, you connect to Windows PowerShell 5.1
-Enter-PSSession -ComputerName $deviceIp -Credential Administrator -Configuration PowerShell.7.1.5
+Enter-PSSession -ComputerName $deviceIp -Credential Administrator -Configuration PowerShell.7.2.0
 ```
 
 ## Deploying on Windows 10 IoT Core
@@ -292,7 +293,7 @@ Deploy PowerShell to Nano Server using the following steps.
 # Replace the placeholder information for the following variables:
 $ipaddr = '<Nano Server IP address>'
 $credential = Get-Credential # <An Administrator account on the system>
-$zipfile = 'PowerShell-7.1.5-win-x64.zip'
+$zipfile = 'PowerShell-7.2.0-win-x64.zip'
 # Connect to the built-in instance of Windows PowerShell
 $session = New-PSSession -ComputerName $ipaddr -Credential $credential
 # Copy the file to the Nano Server instance
@@ -300,7 +301,7 @@ Copy-Item $zipfile c:\ -ToSession $session
 # Enter the interactive remote session
 Enter-PSSession $session
 # Extract the ZIP file
-Expand-Archive -Path C:\PowerShell-7.1.5-win-x64.zip -DestinationPath 'C:\Program Files\PowerShell 7'
+Expand-Archive -Path C:\PowerShell-7.2.0-win-x64.zip -DestinationPath 'C:\Program Files\PowerShell 7'
 ```
 
 If you want WSMan-based remoting, follow the instructions to create a remoting endpoint using the
@@ -351,10 +352,10 @@ cannot support those methods.
 [store-app]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [winget]: /windows/package-manager/winget
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
-[arm32zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-arm32.zip
-[arm64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-arm64.zip
-[x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-x64.msi
-[x64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-x64.zip
-[x86msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-x86.msi
-[x86zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-x86.zip
-[72x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-rc.1/PowerShell-7.2.0-rc.1-win-x64.msi
+[arm32zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-arm32.zip
+[arm64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-arm64.zip
+[x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-x64.msi
+[x64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-x64.zip
+[x86msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-x86.msi
+[x86zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-x86.zip
+[72x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-x64.msi
