@@ -1,6 +1,6 @@
 ---
 description: Learn about the Linux distributions supported by PowerShell.
-ms.date: 09/22/2021
+ms.date: 11/08/2021
 title: Install PowerShell on Linux
 ---
 # Install PowerShell on Linux
@@ -79,9 +79,10 @@ PowerShell may be supported by the community for these releases. For more inform
 
 ## Alternate installation methods
 
-There are three other ways to install PowerShell on Linux, including Linux distributions that aren't officially supported. You can try to install PowerShell using
-the PowerShell Snap Package. You can also try deploying PowerShell binaries directly using the Linux
-`tar.gz`. For more information, see [Alternate ways to install PowerShell on Linux][other-linux].
+There are three other ways to install PowerShell on Linux, including Linux distributions that aren't
+officially supported. You can try to install PowerShell using the PowerShell Snap Package. You can
+also try deploying PowerShell binaries directly using the Linux `tar.gz`. For more information, see
+[Alternate ways to install PowerShell on Linux][other-linux].
 
 [community]: community-support.md
 [other-linux]: install-other-linux.md
