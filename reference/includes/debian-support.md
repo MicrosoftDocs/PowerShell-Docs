@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 09/22/2021
+ms.date: 11/08/2021
 ms.prod: powershell
 ms.topic: include
 ---
@@ -16,15 +16,15 @@ they're supported on. These versions remain supported until either the version o
 - When both the version of the OS and the version of PowerShell have &#x2705;, that combination is
   supported
 
-|   Debian    | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-preview) |
-| ----------- | :-------: | :-----------: | :---------------: |
-| &#x2705; 10 | &#x2705;  |   &#x2705;    |     &#x2705;      |
-| &#x2705; 9  | &#x2705;  |   &#x2705;    |     &#x274c;      |
-| &#x274c; 8  | &#x1f7e1; |   &#x274c;    |     &#x274c;      |
+|   Debian    | 7.0 (LTS) |   7.1    | 7.2 (LTS-current) |
+| ----------- | :-------: | :------: | :---------------: |
+| &#x2705; 10 | &#x2705;  | &#x2705; |     &#x2705;      |
+| &#x2705; 9  | &#x2705;  | &#x2705; |     &#x274c;      |
+| &#x274c; 8  | &#x1f7e1; | &#x274c; |     &#x274c;      |
 
 PowerShell is supported on Debian for the following processor architectures.
 
-|   Debian   |     7.0 (LTS)     |   7.1 (current)   | 7.2 (LTS-preview) |
+|   Debian   |     7.0 (LTS)     |        7.1        | 7.2 (LTS-current) |
 | ---------- | :---------------: | :---------------: | :---------------: |
 | Version 9+ | x64, Arm32, Arm64 | x64, Arm32, Arm64 | x64, Arm32, Arm64 |
 

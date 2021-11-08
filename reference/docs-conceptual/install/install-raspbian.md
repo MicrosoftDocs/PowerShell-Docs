@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Raspberry Pi OS
-ms.date: 11/03/2021
+ms.date: 11/08/2021
 title: Installing PowerShell on Raspberry Pi OS
 ---
 # Installing PowerShell on Raspberry Pi OS
@@ -27,7 +27,7 @@ run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview releas
 Download the tar.gz package from the [releases][releases] page onto your Raspberry Pi computer. The
 links to the current versions are:
 
-- PowerShell 7.2-rc.1 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-rc.1/powershell-7.2.0-rc.1-linux-arm32.tar.gz`
+- PowerShell 7.2.0 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-linux-arm32.tar.gz`
 - PowerShell 7.1.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-linux-arm32.tar.gz`
 - PowerShell 7.0.8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-7.0.8-linux-arm32.tar.gz`
 

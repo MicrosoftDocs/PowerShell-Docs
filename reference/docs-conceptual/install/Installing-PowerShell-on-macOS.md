@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 11/03/2021
+ms.date: 11/08/2021
 title: Installing PowerShell on macOS
 ---
 
@@ -126,9 +126,9 @@ brew upgrade powershell
 PowerShell 7.2 adds support for the Apple M1 processor. Download the install package from the
 [releases][releases] page onto your computer. The links to the current versions are:
 
-- PowerShell 7.2-rc.1
-  - x64 processors - [powershell-7.2.0-rc.1-osx-x64.pkg][72x64pkg]
-  - M1 processors - [powershell-7.2.0-rc.1-osx-arm64.pkg][72m1pkg]
+- PowerShell 7.2.0
+  - x64 processors - [powershell-7.2.0-osx-x64.pkg][72x64pkg]
+  - M1 processors - [powershell-7.2.0-osx-arm64.pkg][72m1pkg]
 - PowerShell 7.1.5 - [powershell-7.1.5-osx-x64.pkg][71x64pkg]
 - PowerShell 7.0.8 - [powershell-7.0.8-osx-x64.pkg][70x64pkg]
 
@@ -178,12 +178,11 @@ operations.
 Download the install package from the [releases][releases] page onto your computer. The links to the
 current versions are:
 
-- PowerShell 7.2-rc.1
-  - x64 processors - [powershell-7.2.0-rc.1-osx-x64.tar.gz][72x64bin]
-  - M1 processors - [powershell-7.2.0-rc.1-osx-arm64.tar.gz][72m1bin]
+- PowerShell 7.2.0
+  - x64 processors - [powershell-7.2.0-osx-x64.tar.gz][72x64bin]
+  - M1 processors - [powershell-7.2.0-osx-arm64.tar.gz][72m1bin]
 - PowerShell 7.1.5 - [powershell-7.1.5-osx-x64.tar.gz][71x64bin]
 - PowerShell 7.0.8 - [powershell-7.0.8-osx-x64.tar.gz][70x64bin]
-
 
 Use the following commands to install PowerShell from the binary archive. Change the download URL to
 match the version you want to install.
@@ -300,12 +299,12 @@ support those methods.
 [lts]: https://aka.ms/powershell-release?tag=lts
 [preview]: https://aka.ms/powershell-release?tag=preview
 
-[72x64pkg]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-rc.1/powershell-7.2.0-rc.1-osx-x64.pkg
-[72m1pkg]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-rc.1/powershell-7.2.0-rc.1-osx-arm64.pkg
+[72x64pkg]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-osx-x64.pkg
+[72m1pkg]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-osx-arm64.pkg
 [71x64pkg]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-osx-x64.pkg
 [70x64pkg]: https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-7.0.8-osx-x64.pkg
 
-[72x64bin]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-rc.1/powershell-7.2.0-rc.1-osx-x64.tar.gz
-[72m1bin]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-rc.1/powershell-7.2.0-rc.1-osx-arm64.tar.gz
+[72x64bin]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-osx-x64.tar.gz
+[72m1bin]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-osx-arm64.tar.gz
 [71x64bin]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-osx-x64.tar.gz
 [70x64bin]: https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-7.0.8-osx-x64.tar.gz

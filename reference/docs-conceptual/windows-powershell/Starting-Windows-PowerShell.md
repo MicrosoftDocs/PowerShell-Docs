@@ -25,12 +25,12 @@ information, see [About pwsh](/powershell/module/microsoft.powershell.core/about
 
 To find cmdlet reference and installation documentation for PowerShell 7, use the following links:
 
-| Document | Link |
-| ----- | ----- |
-| Cmdlet reference | [PowerShell Module Browser](/powershell/module/) |
+|       Document       |                                                Link                                                |
+| -------------------- | -------------------------------------------------------------------------------------------------- |
+| Cmdlet reference     | [PowerShell Module Browser](/powershell/module/)                                                   |
 | Windows installation | [Installing PowerShell on Windows](/powershell/scripting/install/installing-powershell-on-windows) |
-| macOS installation | [Installing PowerShell on macOS](/powershell/scripting/install/installing-powershell-on-macos) |
-| Linux installation | [Installing PowerShell on Linux](/powershell/scripting/install/installing-powershell-on-linux) |
+| macOS installation   | [Installing PowerShell on macOS](/powershell/scripting/install/installing-powershell-on-macos)     |
+| Linux installation   | [Installing PowerShell on Linux](/powershell/scripting/install/installing-powershell-on-linux)     |
 
 To view content for other PowerShell versions, see [How to use the PowerShell documentation](../how-to-use-docs.md).
 
