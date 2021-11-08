@@ -56,7 +56,7 @@ package from the [releases][releases] page onto the Ubuntu machine. The link to 
 version is:
 
 - PowerShell 7.2 (universal package) for any support version of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell_7.2.0-1.deb_amd64.deb`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-lts_7.2.0-1.deb_amd64.deb`
 - PowerShell 7.1.5
   - Ubuntu 20.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell_7.1.5-1.ubuntu.20.04_amd64.deb`
   - Ubuntu 18.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell_7.1.5-1.ubuntu.18.04_amd64.deb`

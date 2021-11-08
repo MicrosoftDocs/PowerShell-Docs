@@ -48,18 +48,18 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Th
 contains the dependencies needed by the package. Download the RPM package from the
 [releases][releases] page onto your openSUSE computer. The links to the current versions are:
 
-- PowerShell 7.2.0 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-1.rhel.7.x86_64.rpm`
+- PowerShell 7.2.0 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-lts-7.2.0-1.rh.x86_64.rpm`
 - PowerShell 7.1.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-1.rhel.7.x86_64.rpm`
 - PowerShell 7.0.8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-7.0.8-1.rhel.7.x86_64.rpm`
 
 The following shell command installs PowerShell 7.2:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-1.rhel.7.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-lts-7.2.0-1.rh.x86_64.rpm
 ```
 
-Use the following shell commands to download and install the package. Change the URL to match the
-PowerShell version that you want to install.
+Use the following shell commands to download and install the 7.1.5 package. Change the URL to match
+the PowerShell version that you want to install.
 
 ```sh
 sudo dnf install compat-openssl10

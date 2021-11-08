@@ -59,9 +59,7 @@ with `sudo dnf upgrade powershell`.
 PowerShell 7.2 is distributed as a universal RPM package. Previous versions of PowerShell had
 separate package for each OS. Download the RPM package you need onto your CentOS machine.
 
-- PowerShell 7.2
-  - CentOS 7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-1.rhel.7.x86_64.rpm`
-  - CentOS 8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-1.centos.8.x86_64.rpm`
+- PowerShell 7.2 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-lts-7.2.0-1.rh.x86_64.rpm`
 - PowerShell 7.1.5
   - CentOS 7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-1.rhel.7.x86_64.rpm`
   - CentOS 8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-1.centos.8.x86_64.rpm`
@@ -69,19 +67,19 @@ separate package for each OS. Download the RPM package you need onto your CentOS
   - CentOS 7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-7.0.8-1.rhel.7.x86_64.rpm`
   - CentOS 8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-7.0.8-1.centos.8.x86_64.rpm`
 
-Use the following shell command to install the RPM package on the target version of RHEL. Change the
-URL in the following shell commands to match the version you need.
+Use the following shell command to install the latest RPM package on the target version of RHEL.
+Change the URL in the following shell commands to match the version you need.
 
 On RHEL 7:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-lts-7.2.0-1.rh.x86_64.rpm
 ```
 
 On RHEL 8:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-1.centos.8.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-lts-7.2.0-1.rh.x86_64.rpm
 ```
 
 ## Uninstallation - Red Hat Enterprise Linux (RHEL) 7
