@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 08/04/2021
+ms.date: 11/09/2021
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -130,8 +130,8 @@ The following members control how or when ANSI formatting is used:
 - `$PSStyle.Progress` allows you to control progress view bar rendering.
 
   - **Style** - An ANSI string setting the rendering style.
-  - **MaxWidth** - Sets the max width of the view. Set to `0` for console
-    width. Defaults to `120`
+  - **MaxWidth** - Sets the max width of the view. Defaults to `120`.
+    The minimum values is 18.
   - **View** - An enum with values, `Minimal` and `Classic`. `Classic` is the
     existing rendering with no changes. `Minimal` is a single line minimal
     rendering. `Minimal` is the default.
