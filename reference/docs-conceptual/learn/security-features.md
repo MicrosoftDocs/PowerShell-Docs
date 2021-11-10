@@ -1,6 +1,6 @@
 ---
 description: PowerShell has several features designed to improve the security of your scripting environment.
-ms.date: 10/27/2021
+ms.date: 11/10/2021
 title: PowerShell security features
 ---
 # PowerShell security features
@@ -97,11 +97,11 @@ SBOM is the first step to modernize Federal Government cybersecurity and enhance
 chain security.
 
 The PowerShell team is also producing SBOMs for modules that they own but ship separately from
-PowerShell. For modules, the SBOM is installed in the root of the module folder under
+PowerShell. For modules, the SBOM is installed in the module's folder under
 `_manifest/spdx_2.2/manifest.spdx.json`.
 
 For more information about this initiative, see the blog post
-[Generating Software Bills of Materials (SBOMs) with SPDX at Microsoft](https://devblogs.microsoft.com/engineering-at-microsoft/generating-software-bills-of-materials-sboms-with-spdx-at-microsoft/).
+[Generating Software Bills of Materials (SBOMs) with SPDX at Microsoft][sbomblog].
 
 <!-- link references -->
 [applocker]: /windows/security/threat-protection/windows-defender-application-control/applocker/what-is-applocker
@@ -114,3 +114,4 @@ For more information about this initiative, see the blog post
 [logging]: /powershell/module/microsoft.powershell.core/about/about_group_policy_settings#turn-on-module-logging
 [mssec]: https://www.microsoft.com/msrc/windows-security-servicing-criteria
 [WDAC]: /windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control
+[sbomblog]: https://devblogs.microsoft.com/engineering-at-microsoft/generating-software-bills-of-materials-sboms-with-spdx-at-microsoft/
