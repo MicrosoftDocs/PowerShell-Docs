@@ -1,12 +1,12 @@
 ---
 description: This article describes how to use the PowerShell Gallery to deploy a package to Azure Automation.
-ms.date: 06/12/2017
+ms.date: 11/11/2021
 title: Deploy to Azure Automation
 ---
 # Deploy to Azure Automation
 
-The Deploy to Azure Automation button on the package details page will deploy the package from the
-PowerShell Gallery to Azure Automation.
+The **Deploy to Azure Automation** button on the package details page will deploy the package from
+the PowerShell Gallery to Azure Automation.
 
 ![Deploy to Azure Automation Button](media/deploy-to-azure-automation/DeployToAzureAutomationButton.png)
 
@@ -15,14 +15,22 @@ Azure account credentials. If the package includes dependencies, all the depende
 deployed to Azure Automation as well.
 
 > [!WARNING]
-> If the same package and version already exist in your Automation account, deploying it again from
-> the PowerShell Gallery will overwrite the package in your Automation account.
+> If the same package and version already exists in your Automation account, deploying it again from
+> the PowerShell Gallery overwrites the package in your Automation account.
 
 If you deploy a module, it will appear in the Modules section of Azure Automation. If you deploy a
 script, it will appear in the Runbooks section of Azure Automation.
 
-The Deploy to Azure Automation button can be disabled by adding the AzureAutomationNotSupported tag
-to the package metadata.
+The **Deploy to Azure Automation** button can be disabled by adding the
+**AzureAutomationNotSupported** tag to the package metadata.
+
+> [!IMPORTANT]
+> The **Deploy to Azure Automation** feature does not work for sovereign (air-gapped) clouds like
+> [Azure Government](/azure/azure-government/), [Azure Germany](/azure/germany/), or
+> [Azure China 21Vianet](/azure/china/).
+>
+> We recommend setting up a private repository as described in
+> [Working with private PowerShellGet repositories](../working-with-local-psrepositories.md).
 
 ## Require License Acceptance on Deploy to Azure Automation
 
