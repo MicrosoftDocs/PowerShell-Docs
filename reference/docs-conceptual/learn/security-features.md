@@ -97,7 +97,8 @@ SBOM is the first step to modernize Federal Government cybersecurity and enhance
 chain security.
 
 The PowerShell team is also producing SBOMs for modules that they own but ship separately from
-PowerShell. For modules, the SBOM is installed in the module's folder under
+PowerShell. SBOMs will be added in the next release of the module. For modules, the SBOM is 
+installed in the module's folder under
 `_manifest/spdx_2.2/manifest.spdx.json`.
 
 For more information about this initiative, see the blog post
