@@ -35,7 +35,7 @@ Test-Path -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exc
 The `Test-Path` cmdlet determines whether all elements of the path exist. It returns `$True` if all
 elements exist and `$False` if any are missing. It can also tell whether the path syntax is valid
 and whether the path leads to a container or a terminal or leaf element. If the `Path` is whitespace
-or an empty string, then `$False` is returned. If the `Path` is `$null`, array of `$null` or empty
+or an empty string, then `$False` is returned. If the `Path` is `$null`, array of `$null` or an empty
 array, a non-terminating error is returned.
 
 ## Examples
