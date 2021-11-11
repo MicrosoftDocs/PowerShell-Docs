@@ -1,7 +1,7 @@
 ---
 description: Error handling is just part of life when it comes to writing code.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/05/2021
+ms.date: 11/11/2021
 title: Everything you wanted to know about exceptions
 ---
 # Everything you wanted to know about exceptions
@@ -119,6 +119,7 @@ try
 catch
 {
     Write-Output "Something threw an exception"
+    Write-Output $Error[0]
 }
 
 try
@@ -128,11 +129,13 @@ try
 catch
 {
     Write-Output "Something threw an exception or used Write-Error"
+    Write-Output $Error[0]
 }
 ```
 
 The `catch` script only runs if there's a terminating error. If the `try` executes correctly, then
-it skips over the `catch`.
+it skips over the `catch`. You can access the exception information in the `catch` block using the
+`$Error` variable.
 
 ### Try/Finally
 

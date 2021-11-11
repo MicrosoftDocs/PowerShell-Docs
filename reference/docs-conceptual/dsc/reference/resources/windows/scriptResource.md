@@ -50,14 +50,16 @@ Script [string] #ResourceName
 
 > [!NOTE]
 > The **PsDscRunAsCredential** common property was added in WMF 5.0 to allow running any DSC
-> resource in the context of other credentials. For more information, see [Use Credentials with DSC Resources](../../../configurations/runasuser.md).
+> resource in the context of other credentials. For more information, see
+> [Use Credentials with DSC Resources](../../../configurations/runasuser.md).
 
 ### Additional information
 
 #### GetScript
 
-DSC does not use the output from `GetScript` The [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration)
-cmdlet executes `GetScript` to retrieve a node's current state. A return value is not required from
+DSC does not use the output from `GetScript` The
+[Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet
+executes `GetScript` to retrieve a node's current state. A return value is not required from
 `GetScript` If you specify a return value, it must be a hashtable containing a **Result** key whose
 value is a String.
 
@@ -136,7 +138,8 @@ Configuration ScriptTest
                 return @{ 'Result' = "$currentVersion" }
             }
             TestScript = {
-                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                # Create and invoke a scriptblock using the $GetScript automatic variable,
+                # which contains a string representation of the GetScript.
                 $state = [scriptblock]::Create($GetScript).Invoke()
 
                 if( $state.Result -eq $using:version )
@@ -185,12 +188,13 @@ Configuration ScriptTest
                 return @{ 'Result' = "$currentVersion" }
             }
             TestScript = {
-                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                # Create and invoke a scriptblock using the $GetScript automatic variable,
+                # which contains a string representation of the GetScript.
                 $state = [scriptblock]::Create($GetScript).Invoke()
 
-                if( $state['Result'] -eq $using:Version )
+                if( $state.Result -eq $using:Version )
                 {
-                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state.Result,$using:version)
                     return $true
                 }
 

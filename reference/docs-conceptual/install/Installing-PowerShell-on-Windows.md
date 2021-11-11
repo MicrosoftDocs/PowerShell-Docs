@@ -46,14 +46,14 @@ The installer creates a shortcut in the Windows Start Menu.
 - You can launch PowerShell via the Start Menu or `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 > [!NOTE]
-> PowerShell 7.1 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.
-> PowerShell 7.1 is an in-place upgrade that replaces PowerShell 7.0 and lower.
+> PowerShell 7.2 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.
+> PowerShell 7.2 is an in-place upgrade that replaces PowerShell 7.0 and lower.
 >
-> - PowerShell 7.1 is installed to `$env:ProgramFiles\PowerShell\7`
+> - PowerShell 7.2 is installed to `$env:ProgramFiles\PowerShell\7`
 > - The `$env:ProgramFiles\PowerShell\7` folder is added to `$env:PATH`
 > - Folders for previously released versions are deleted
 >
-> If you need to run PowerShell 7.1 side-by-side with other versions, use the [ZIP install](#zip)
+> If you need to run PowerShell 7.2 side-by-side with other versions, use the [ZIP install](#zip)
 > method to install the other version to a different folder.
 
 ### Administrative install from the command line
@@ -146,7 +146,7 @@ winget install --id Microsoft.Powershell.Preview --source winget
 
 ## <a id="msstore" />Installing from the Microsoft Store
 
-PowerShell 7.1 has been published to the Microsoft Store. You can find the PowerShell release in the
+PowerShell 7.2 has been published to the Microsoft Store. You can find the PowerShell release in the
 [Microsoft Store][store-app] site or in the Store application in Windows.
 
 Benefits of the Microsoft Store package:
