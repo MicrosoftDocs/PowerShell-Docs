@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/20/2021
+ms.date: 11/11/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Path
@@ -183,8 +183,9 @@ At line:1 char:11
 
 ### Example 8: Test a path with whitespace as the value
 
-When a whitespace or empty string is provided for the the `-Path` parameter, it returns **False**.
-The following example show whitespace and empty string.
+When a whitespace string is provided for the the `-Path` parameter, it returns **True**. When an
+empty string is provided, `Test-Path` returns an error. The following example shows whitespace and
+empty string.
 
 ```powershell
 Test-Path ' '
