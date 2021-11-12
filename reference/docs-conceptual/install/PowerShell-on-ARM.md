@@ -1,10 +1,10 @@
 ---
 description: PowerShell on Arm-based systems
-ms.date: 09/23/2021
+ms.date: 11/12/2021
 title: PowerShell on Arm-based systems
 ---
 
-# PowerShell  on Arm processors
+# PowerShell on Arm processors
 
 PowerShell 7.2 is based on the [.NET 6.0 Supported OS Lifecycle Policy][net60os] and supports the
 following platforms:
@@ -20,12 +20,12 @@ following platforms:
 PowerShell 7.1 is based on the [.NET 5.0 Supported OS Lifecycle Policy][net50os] and supports the
 following platforms:
 
-|                OS                 | Architectures |          Lifecycle           |
-| --------------------------------- | ------------- | ---------------------------- |
-| Windows 10 Client Version 1607+   | Arm64         | [Windows][Windows-lifecycle] |
-| Alpine Linux 3.11+                | Arm64         | [Alpine][Alpine-lifecycle]   |
-| Debian 9+                         | Arm64, Arm32  | [Debian][Debian-lifecycle]   |
-| Ubuntu 21.04, 20.04, 18.04, 16.04 | Arm32, Arm64  | [Ubuntu][Ubuntu-lifecycle]   |
+|               OS                | Architectures |          Lifecycle           |
+| ------------------------------- | ------------- | ---------------------------- |
+| Windows 10 Client Version 1607+ | Arm64         | [Windows][Windows-lifecycle] |
+| Alpine Linux 3.11+              | Arm64         | [Alpine][Alpine-lifecycle]   |
+| Debian 9+                       | Arm64, Arm32  | [Debian][Debian-lifecycle]   |
+| Ubuntu 20.04, 18.04, 16.04      | Arm32, Arm64  | [Ubuntu][Ubuntu-lifecycle]   |
 
 Support of PowerShell on Arm is based on the **.NET Core Supported OS Lifecycle Policies**.
 
