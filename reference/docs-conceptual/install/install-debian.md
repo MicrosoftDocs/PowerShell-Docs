@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Debian Linux
-ms.date: 11/08/2021
+ms.date: 11/12/2021
 title: Installing PowerShell on Debian Linux
 ---
 # Installing PowerShell on Debian Linux
@@ -94,6 +94,12 @@ with `sudo apt-get install powershell`.
 ```sh
 sudo apt-get remove powershell
 ```
+
+## Support for Arm processors
+
+PowerShell 7.2 supports running on Debian using 32-bit or 64-bit Arm processors. Use the binary
+archive installation method of installing PowerShell that is described in
+[Alternate ways to install PowerShell on Linux](install-other-linux.md#binary-archives).
 
 ## PowerShell paths
 

@@ -9,7 +9,6 @@ All packages are available on our GitHub [releases][releases] page. After the pa
 run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release. Before
 installing, check the list of [Supported versions](#supported-versions) below.
 
-
 > [!NOTE]
 > PowerShell 7.2 is an in-place upgrade that removes previous versions of PowerShell.
 >
@@ -84,6 +83,12 @@ sudo apt-get install -f
 ```sh
 sudo apt-get remove powershell
 ```
+
+## Support for Arm processors
+
+PowerShell 7.2 supports running on Ubuntu using 32-bit or 64-bit Arm processors. Use the binary
+archive installation method of installing PowerShell that is described in
+[Alternate ways to install PowerShell on Linux](install-other-linux.md#binary-archives).
 
 ## PowerShell paths
 
