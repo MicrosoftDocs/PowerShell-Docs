@@ -337,12 +337,7 @@ Converts or limits objects to the specified type. If the objects cannot be
 converted, PowerShell generates an error.
 
 ```powershell
-# Dates
 [DateTime] '2/20/88' - [DateTime] '1/20/88' -EQ [TimeSpan] '31'
-# Hexadecimal
-[Int] '0xF' -eq 0xF -AND [Int] '#F' -eq 0xF -AND [Int] '&hF' -EQ 0xF
-# Binary
-[Int] '0b1111' -EQ 0b1111
 ```
 
 A cast can also be performed when a variable is assigned to using
