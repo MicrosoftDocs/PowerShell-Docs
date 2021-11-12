@@ -228,6 +228,16 @@ Sign bits are accepted for BigInteger-suffixed numerals:
   `0x` prefix or any suffixes.
 - BigInteger-suffixed binary accepts sign bits at 96 and 128 characters, and at
   every 8 characters after.
+  
+When strings are converted to numbers,
+additional hexadecimal format indicators are supported.
+Those additional formats are not recognised as literals.
+```powershell
+[int] '0xF' -eq 0xF
+[int] '&hF' -eq 0xF
+[int] '#F' -eq 0xF
+[int] '0b1111' -eq 0b1111
+```
 
 ### Commands that look like numeric literals
 
