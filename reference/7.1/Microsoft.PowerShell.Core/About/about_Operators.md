@@ -339,16 +339,10 @@ converted, PowerShell generates an error.
 ```powershell
 # Dates
 [DateTime] '2/20/88' - [DateTime] '1/20/88' -EQ [TimeSpan] '31'
-# Bankers’ rounding
-[Int] (7/2) -EQ 4 -AND [Int] (9/2) -EQ 4
-# Concatenation
-[String] 1 + 0 -EQ '10'
-# Addition
-[Int] '1' + 0 -EQ 1
 # Hexadecimal
-[Int] '0XF' -EQ 0XF -AND [Int] '#F' -EQ 0XF -AND [Int] '&HF' -EQ 0XF
+[Int] '0xF' -eq 0xF -AND [Int] '#F' -eq 0xF -AND [Int] '&hF' -EQ 0xF
 # Binary
-[Int] '0B1111' -EQ 0B1111
+[Int] '0b1111' -EQ 0b1111
 ```
 
 A cast can also be performed when a variable is assigned to using
@@ -428,12 +422,31 @@ indexes are zero-based, so the first object is indexed as `[0]`. For arrays
 (only), you can also use negative indexes to get the last values. Hash tables
 are indexed by key value.
 
+Given a list of indices,
+the index operator returns a list of members corresponding to those indices.
+
+If an object is not an indexed collection,
+accessing its first element returns the object itself.
+Index values beyond the first element return `$null.`
+
 ```
 PS> $a = 1, 2, 3
 PS> $a[0]
 1
 PS> $a[-1]
 3
+PS> $a[2, 1, 0]
+3
+2
+1
+PS> (2)[0]
+2
+PS> (2)[-1]
+2
+PS> (2)[1] -eq $null
+True
+PS> (2)[0,0] -eq $null
+True
 ```
 
 ```powershell
