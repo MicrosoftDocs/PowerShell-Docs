@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Red Hat Enterprise Linux (RHEL)
-ms.date: 11/03/2021
+ms.date: 11/12/2021
 title: Installing PowerShell on Red Hat Enterprise Linux (RHEL)
 ---
 # Installing PowerShell on Red Hat Enterprise Linux (RHEL)
@@ -87,6 +87,12 @@ sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2
 ```sh
 sudo yum remove powershell
 ```
+
+## Support for Arm processors
+
+PowerShell 7.2 supports running on RHEL using a 64-bit Arm processor. Use the binary archive
+installation method of installing PowerShell that is described in
+[Alternate ways to install PowerShell on Linux](install-other-linux.md#binary-archives).
 
 ## PowerShell paths
 
