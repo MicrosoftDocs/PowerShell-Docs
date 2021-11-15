@@ -1,7 +1,7 @@
 ---
 description: The Experimental Features support in PowerShell provides a mechanism for experimental features to coexist with existing stable features in PowerShell or PowerShell modules.
 Locale: en-US
-ms.date: 03/13/2020
+ms.date: 11/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Experimental Features
@@ -70,6 +70,30 @@ function Enable-SSHRemoting {
     [CmdletBinding()]
     param()
     ...
+}
+```
+
+Metadata about an experimental feature is kept in the module manifest. Use the
+`PrivateData.PSData.ExperimentalFeatures` property of a module manifest to
+expose the experimental features from the module. The `ExperimentalFeatures`
+property is a hashtable containing the name and description of the feature.
+
+For example:
+
+```powershell
+PrivateData = @{
+    PSData = @{
+        ExperimentalFeatures = @(
+            @{
+                Name = "PSWebCmdletV2"
+                Description = "Rewrite the web cmdlets for better performance"
+            }
+            @{
+                  Name = "PSRestCmdletV2"
+                  Description = "Rewrite the REST API cmdlets for better performance"
+            }
+        )
+    }
 }
 ```
 
