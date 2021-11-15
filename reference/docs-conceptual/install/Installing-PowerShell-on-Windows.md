@@ -56,6 +56,28 @@ The installer creates a shortcut in the Windows Start Menu.
 > If you need to run PowerShell 7.2 side-by-side with other versions, use the [ZIP install](#zip)
 > method to install the other version to a different folder.
 
+### Support for Microsoft Update in PowerShell 7.2
+
+PowerShell 7.2 has support for Microsoft Update. When you enable this feature, you'll get
+the latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
+that's with Windows Update for Business, WSUS, SCCM, or the interactive MU dialog in Settings.
+
+The PowerShell 7.2 MSI package includes following command-line options:
+
+- `USE_MU` - This property has two possible values:
+  - `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
+  - `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
+- `ENABLE_MU`
+  - `1` (default) - Opts into using Microsoft Update for Automatic Updates
+  - `0` - Do not opt into using Microsoft Update
+
+> [!NOTE]
+> Enabling updates may have been set in a previous installation or manual configuration. Using
+> `ENABLE_MU=0` does not remove the existing settings. Also, this setting can be overruled by Group
+> Policy settings controlled by your administrator.
+
+For more information, see the [PowerShell Microsoft Update FAQ](microsoft-update-faq.yml).
+
 ### Administrative install from the command line
 
 MSI packages can be installed from the command line allowing administrators to deploy packages
@@ -74,7 +96,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.2.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.2.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
@@ -195,28 +217,6 @@ The preview version of PowerShell 7.2 can be downloaded using the following link
 Preview releases of PowerShell 7 install to `$env:ProgramFiles\PowerShell\7-preview` so they can
 be run side-by-side with non-preview releases of PowerShell. PowerShell 7.3 will be the
 next preview release.
-
-### Support for Microsoft Update in PowerShell 7.2
-
-PowerShell 7.2 has support for Microsoft Update. When you enable this feature, you'll get
-the latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
-that's with Windows Update for Business, WSUS, SCCM, or the interactive MU dialog in Settings.
-
-The PowerShell 7.2 MSI package includes following command-line options:
-
-- `USE_MU` - This property has two possible values:
-  - `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
-  - `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
-- `ENABLE_MU`
-  - `1` (default) - Opts into using Microsoft Update for Automatic Updates
-  - `0` - Do not opt into using Microsoft Update
-
-> [!NOTE]
-> Enabling updates may have been set in a previous installation or manual configuration. Using
-> `ENABLE_MU=0` does not remove the existing settings. Also, this setting can be overruled by Group
-> Policy settings controlled by your administrator.
-
-For more information, see the [PowerShell Microsoft Update FAQ](microsoft-update-faq.yml).
 
 ## Upgrading an existing installation
 
