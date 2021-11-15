@@ -76,24 +76,25 @@ function Enable-SSHRemoting {
 Metadata about an experimental feature is kept in the module manifest. Use the
 `PrivateData.PSData.ExperimentalFeatures` property of a module manifest to
 expose the experimental features from the module. The `ExperimentalFeatures`
-property is a hashtable containing the name and description of the feature.
+property is an array of hashtables containing the name and description of the
+feature.
 
 For example:
 
 ```powershell
 PrivateData = @{
-    PSData = @{
-        ExperimentalFeatures = @(
-            @{
-                Name = "PSWebCmdletV2"
-                Description = "Rewrite the web cmdlets for better performance"
-            }
-            @{
-                  Name = "PSRestCmdletV2"
-                  Description = "Rewrite the REST API cmdlets for better performance"
-            }
-        )
-    }
+  PSData = @{
+    ExperimentalFeatures = @(
+      @{
+          Name = "PSWebCmdletV2"
+          Description = "Rewrite the web cmdlets for better performance"
+      },
+      @{
+          Name = "PSRestCmdletV2"
+          Description = "Rewrite the REST API cmdlets for better performance"
+      }
+    )
+  }
 }
 ```
 
