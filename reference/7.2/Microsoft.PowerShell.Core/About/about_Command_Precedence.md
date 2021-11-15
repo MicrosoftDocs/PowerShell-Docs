@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell determines which command to run.
 Locale: en-US
-ms.date: 02/13/2020
+ms.date: 11/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Command Precedence
@@ -98,7 +98,8 @@ C:\temp\test\[a1].ps1
 You can see from the output that `[a1].ps1` runs this time because the literal
 match is the only file match for that wildcard pattern.
 
-For more information about how PowerShell uses wildcards, see [about_Wildcards](about_Wildcards.md).
+For more information about how PowerShell uses wildcards, see
+[about_Wildcards](about_Wildcards.md).
 
 > [!NOTE]
 > To limit the search to a relative path, you must prefix the script name with
@@ -109,10 +110,10 @@ For more information about how PowerShell uses wildcards, see [about_Wildcards](
 If you do not specify a path, PowerShell uses the following precedence order
 when it runs commands for all items loaded in the current session:
 
-  1. Alias
-  2. Function
-  3. Cmdlet
-  4. External executable files (programs and non-PowerShell scripts)
+1. Alias
+2. Function
+3. Cmdlet
+4. External executable files (programs and non-PowerShell scripts)
 
 Therefore, if you type "help", PowerShell first looks for an alias named
 `help`, then a function named `Help`, and finally a cmdlet named `Help`. It
@@ -159,12 +160,13 @@ Also, if you type a function at the command line and then import a function
 with the same name, the original function is replaced and is no longer
 accessible.
 
-### Finding hidden commands
+## Finding hidden commands
 
-The **All** parameter of the [Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
-cmdlet gets all commands with the specified name, even if they are hidden
-or replaced. Beginning in PowerShell 3.0, by default, `Get-Command`
-gets only the commands that run when you type the command name.
+The **All** parameter of the
+[Get-Command](xref:Microsoft.PowerShell.Core.Get-Command) cmdlet gets all
+commands with the specified name, even if they are hidden or replaced.
+Beginning in PowerShell 3.0, by default, `Get-Command` gets only the commands
+that run when you type the command name.
 
 In the following examples, the session includes a `Get-Date` function and a
 [Get-Date](xref:Microsoft.PowerShell.Utility.Get-Date) cmdlet.
@@ -203,7 +205,7 @@ the command from other commands that might have the same name. You can use this
 method to run any command, but it is especially useful for running hidden
 commands.
 
-#### Qualified names
+### Using qualified names
 
 Using the module-qualified name of a cmdlet allows you to run commands hidden
 by an item with the same name. For example, you can run the `Get-Date` cmdlet
@@ -249,14 +251,16 @@ Microsoft.PowerShell.Utility
 > [!NOTE]
 > You cannot qualify variables or aliases.
 
-#### Call operator
+### Using the call operator
 
-You can also use the `Call` operator `&` to run hidden commands by combining
-it with a call to [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
-(the alias is "dir"), `Get-Command` or
+You can also use the `Call` operator `&` to run hidden commands by combining it
+with a call to
+[Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem) (the alias
+is "dir"), `Get-Command` or
 [Get-Module](xref:Microsoft.PowerShell.Core.Get-Module).
 
-The call operator executes strings and script blocks in a child scope. For more information, see [about_Operators](about_Operators.md).
+The call operator executes strings and script blocks in a child scope. For more
+information, see [about_Operators](about_Operators.md).
 
 For example, if you have a function named `Map` that is hidden by an alias
 named `Map`, use the following command to run the function.
@@ -281,7 +285,7 @@ $myMap = (Get-Command -Name map -CommandType function)
 &($myMap)
 ```
 
-### Replaced items
+## Replaced items
 
 A "replaced" item is one that you can no longer access. You can replace items
 by importing items of the same name from a module or snap-in.
@@ -294,7 +298,7 @@ Variables and aliases cannot be hidden because you cannot use a call operator
 or a qualified name to run them. When you import variables and aliases from a
 module or snap-in, they replace variables in the session with the same name.
 
-### Avoiding name conflicts
+## Avoiding name conflicts
 
 The best way to manage command name conflicts is to prevent them. When you name
 your commands, use a unique name. For example, add your initials or company
@@ -315,7 +319,26 @@ and `Set-Date` cmdlets that come with PowerShell when you import the
 Import-Module -Name DateFunctions -Prefix ZZ
 ```
 
-For more information, see `Import-Module` and `Import-PSSession` below.
+## Running external executables
+
+PowerShell treats the file extensions listed in the `$env:PATHEXT` environment
+variable as executable files. Windows executable files are files with `.COM`,
+`.CPL`, or `.EXE` file extensions. Windows executables and any other files with
+extensions listed in `$env:PATHEXT` are executed in the current console
+session.
+
+Files that are not Windows executables are handed to Windows to process. Windows
+looks up the file association and executes the default Windows Shell verb for
+the extension. For Windows to support the execution by file extension, the
+association must be registered with the system.
+
+You can register the executable engine for a file extension using the `ftype`
+and `assoc` commands of the CMD command shell. PowerShell has no direct method
+to register the file handler. For more information, see the documentation for
+the [ftype](/windows-server/administration/windows-commands/ftype) command.
+
+For PowerShell to see a file extension as executable in the current session,
+you must add the extension to the `$env:PATHEXT` environment variable.
 
 ## See also
 
@@ -327,4 +350,3 @@ For more information, see `Import-Module` and `Import-PSSession` below.
 - [Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
 - [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
 - [Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
-
