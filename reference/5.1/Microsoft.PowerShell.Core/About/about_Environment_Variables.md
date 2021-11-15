@@ -338,10 +338,11 @@ The environment variables that store preferences include:
   To ensure that scripts for another scripting language run in the current
   console session, add the file extension used by the scripting language. For
   example, to run Python scripts in the current console, add the `.py`
-  extension the the environment variable. For Windows to support the `.py`
+  extension to the environment variable. For Windows to support the `.py`
   extension as an executable file you must register the file extension using
-  the `ftype` and `assoc` commands of the CMD command shell. For more
-  information, see the documentation for the
+  the `ftype` and `assoc` commands of the CMD command shell. PowerShell has no
+  direct method to register the file handler. For more information, see the
+  documentation for the
   [ftype](/windows-server/administration/windows-commands/ftype) command.
 
   PowerShell scripts always start in the current console session. You do not
