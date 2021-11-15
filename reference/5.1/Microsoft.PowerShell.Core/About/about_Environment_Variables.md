@@ -1,7 +1,7 @@
 ---
 description: Describes how to access Windows environment variables in PowerShell.
 Locale: en-US
-ms.date: 08/18/2021
+ms.date: 11/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Environment Variables
@@ -322,6 +322,30 @@ The environment variables that store preferences include:
   `$env:PSModulePath`.
 
   For more information, see [about_PSModulePath](about_PSModulePath.md).
+
+## Other environment variables used by PowerShell
+
+### Path information
+
+- **PATHEXT**
+
+  The `$env:PATHEXT` variable contains a list of file extensions that Windows
+  considers to be executable files. When a script file with one of the listed
+  extensions is executed from PowerShell, the script runs in the current
+  console or terminal session. If the file extension is not listed, the script
+  runs in a new console session.
+
+  To ensure that scripts for another scripting language run in the current
+  console session, add the file extension used by the scripting language. For
+  example, to run Python scripts in the current console, add the `.py`
+  extension the the environment variable. For Windows to support the `.py`
+  extension as an executable file you must register the file extension using
+  the `ftype` and `assoc` commands of the CMD command shell. For more
+  information, see the documentation for the
+  [ftype](/windows-server/administration/windows-commands/ftype) command.
+
+  PowerShell scripts always start in the current console session. You do not
+  need to add the `.PS1` extension.
 
 ## See also
 
