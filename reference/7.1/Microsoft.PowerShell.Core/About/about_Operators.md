@@ -422,7 +422,7 @@ the index operator returns a list of members corresponding to those indices.
 
 If an object is not an indexed collection,
 accessing its first element returns the object itself.
-Index values beyond the first element return `$null.`
+Index values beyond the first element return `$null`.
 
 ```
 PS> $a = 1, 2, 3
