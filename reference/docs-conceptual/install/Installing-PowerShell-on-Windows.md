@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 11/08/2021
+ms.date: 11/15/2021
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -56,6 +56,28 @@ The installer creates a shortcut in the Windows Start Menu.
 > If you need to run PowerShell 7.2 side-by-side with other versions, use the [ZIP install](#zip)
 > method to install the other version to a different folder.
 
+### Support for Microsoft Update in PowerShell 7.2
+
+PowerShell 7.2 has support for Microsoft Update. When you enable this feature, you'll get
+the latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
+that's with Windows Update for Business, WSUS, SCCM, or the interactive MU dialog in Settings.
+
+The PowerShell 7.2 MSI package includes following command-line options:
+
+- `USE_MU` - This property has two possible values:
+  - `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
+  - `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
+- `ENABLE_MU`
+  - `1` (default) - Opts into using Microsoft Update for Automatic Updates
+  - `0` - Do not opt into using Microsoft Update
+
+> [!NOTE]
+> Enabling updates may have been set in a previous installation or manual configuration. Using
+> `ENABLE_MU=0` does not remove the existing settings. Also, this setting can be overruled by Group
+> Policy settings controlled by your administrator.
+
+For more information, see the [PowerShell Microsoft Update FAQ](microsoft-update-faq.yml).
+
 ### Administrative install from the command line
 
 MSI packages can be installed from the command line allowing administrators to deploy packages
@@ -74,7 +96,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.2.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.2.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
@@ -146,7 +168,7 @@ winget install --id Microsoft.Powershell.Preview --source winget
 
 ## <a id="msstore" />Installing from the Microsoft Store
 
-PowerShell 7.2 has been published to the Microsoft Store. You can find the PowerShell release in the
+PowerShell 7.2 can be installed from the Microsoft Store. You can find the PowerShell release in the
 [Microsoft Store][store-app] site or in the Store application in Windows.
 
 Benefits of the Microsoft Store package:
@@ -156,17 +178,34 @@ Benefits of the Microsoft Store package:
 
 ### Known limitations
 
-Windows Store packages run in an application sandbox that virtualizes access to some filesystem and
-registry locations.
+By default, Windows Store packages run in an application sandbox that virtualizes access to some
+filesystem and registry locations. Changes to virtualized file and registry locations do not persist
+outside of the application sandbox.
 
-- All registry changes under HKEY_CURRENT_USER are copied on write to a private, per-user, per-app
-  location. Therefore, those values are not available to other applications.
-- Any system-level configuration settings stored in `$PSHOME` cannot be modified. This includes the
-  WSMAN configuration. This prevents remote sessions from connecting to Store-based installs of
-  PowerShell. User-level configurations and SSH remoting are supported.
+This sandbox all blocks any changes to the application's root folder. Any system-level configuration
+settings stored in `$PSHOME` cannot be modified. This includes the WSMAN configuration. This
+prevents remote sessions from connecting to Store-based installs of PowerShell. User-level
+configurations and SSH remoting are supported.
+
+The following commands need write to `$PSHOME`. These commands are not supported in a Microsoft
+Store instance of PowerShell.
+
+- `Register-PSSessionConfiguration`
+- `Update-Help -Scope AllUsers`
+- `Enable-ExperimentalFeature -Scope AllUsers`
+- `Set-ExecutionPolicy -Scope LocalMachine`
 
 For more information, see
 [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes).
+
+### Changes for PowerShell 7.2
+
+Beginning in PowerShell 7.2, the PowerShell package is now exempt from file and registry
+virtualization. Changes to virtualized file and registry locations now persist outside of the
+application sandbox. However, changes to the application's root folder are still blocked.
+
+> [!IMPORTANT]
+> You must be running on Windows build 1903 or higher for this exemption to work.
 
 ## Installing a preview version
 
@@ -178,28 +217,6 @@ The preview version of PowerShell 7.2 can be downloaded using the following link
 Preview releases of PowerShell 7 install to `$env:ProgramFiles\PowerShell\7-preview` so they can
 be run side-by-side with non-preview releases of PowerShell. PowerShell 7.3 will be the
 next preview release.
-
-### Support for Microsoft Update in PowerShell 7.2
-
-PowerShell 7.2 has support for Microsoft Update. When you enable this feature, you'll get
-the latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
-that's with Windows Update for Business, WSUS, SCCM, or the interactive MU dialog in Settings.
-
-The PowerShell 7.2 MSI package includes following command-line options:
-
-- `USE_MU` - This property has two possible values:
-  - `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
-  - `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
-- `ENABLE_MU`
-  - `1` (default) - Opts into using Microsoft Update for Automatic Updates
-  - `0` - Do not opt into using Microsoft Update
-
-> [!NOTE]
-> Enabling updates may have been set in a previous installation or manual configuration. Using
-> `ENABLE_MU=0` does not remove the existing settings. Also, this setting can be overruled by Group
-> Policy settings controlled by your administrator.
-
-For more information, see the [PowerShell Microsoft Update FAQ](microsoft-update-faq.yml).
 
 ## Upgrading an existing installation
 
