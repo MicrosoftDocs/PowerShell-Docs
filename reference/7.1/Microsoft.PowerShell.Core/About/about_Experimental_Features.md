@@ -48,7 +48,7 @@ specified and the only valid values are:
 - `Show` means to show this experimental feature if the feature is enabled
 - `Hide` means to hide this experimental feature if the feature is enabled
 
-### Declaring Experimental Features in Modules Written in C\#
+## Declaring Experimental Features in Modules Written in C\#
 
 Module authors who want to use the Experimental Feature flags can declare a
 cmdlet as experimental by using the `Experimental` attribute.
@@ -59,7 +59,7 @@ cmdlet as experimental by using the `Experimental` attribute.
 public class InvokeWebRequestCommandV2 : WebCmdletBaseV2 { ... }
 ```
 
-### Declaring Experimental Features in Modules written in PowerShell
+## Declaring Experimental Features in Modules written in PowerShell
 
 Module written in PowerShell can also use the `Experimental` attribute to
 declare experimental cmdlets:
@@ -97,7 +97,7 @@ PrivateData = @{
 }
 ```
 
-### Mutually Exclusive Experimental Features
+## Mutually Exclusive Experimental Features
 
 There are cases where an experimental feature cannot co-exist side-by-side with
 an existing feature or another experimental feature.
@@ -132,7 +132,7 @@ When the `MyWebCmdlets.PSWebCmdletV2` experimental feature is enabled, the exist
 This allows users to try out the new cmdlet and provide feedback then revert
 to the non-experimental version when needed.
 
-### Experimental Parameters in Cmdlets
+## Experimental Parameters in Cmdlets
 
 The `Experimental` attribute can also be applied to individual parameters. This
 allows you to create an experimental set of parameters for an existing cmdlet
