@@ -180,7 +180,8 @@ operation fails.
 The following examples demonstrate the use of the addition and
 multiplication operators; in operations that include different object
 types.
-Assume `$array = 1,2,3`, `$red = [ConsoleColor]::Red`, `$blue = [ConsoleColor]::Blue`:
+Assume `$array = 1,2,3`,
+`$red = [ConsoleColor]::Red`, `$blue = [ConsoleColor]::Blue`:
 
 |Expression       |Result                 |
 |-----------------|-----------------------|
