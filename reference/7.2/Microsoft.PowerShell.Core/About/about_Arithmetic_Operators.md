@@ -38,9 +38,10 @@ PowerShell supports the following arithmetic operators:
 |        |strings, arrays, and hash tables. |`"file" + "name"`            |
 |        |                                  |`@(1, "one") + @(2.0, "two")`|
 |        |                                  |`@{"one" = 1} + @{"two" = 2}`|
+| +      |Makes a number out of an object   | + 123                       |
 | -      |Subtracts one value from another  |`6 - 2`                      |
 |        |value                             |                             |
-| -      |Makes a number a negative number  |`-6`                         |
+| -      |Calculates the opposite number    |`- -6`                       |
 |        |                                  |`(Get-Date).AddDays(-1)`     |
 | *      |Multiply numbers or copy strings  |`6 * 2`                      |
 |        |and arrays the specified number   |`@("!") * 4`                 |
@@ -178,7 +179,8 @@ operation fails.
 
 The following examples demonstrate the use of the addition and
 multiplication operators; in operations that include different object
-types. Assume `$array = 1,2,3`:
+types.
+Assume `$array = 1,2,3`, `$red = [ConsoleColor]::Red`, `$blue = [ConsoleColor]::Blue`:
 
 |Expression       |Result                 |
 |-----------------|-----------------------|
@@ -187,6 +189,10 @@ types. Assume `$array = 1,2,3`:
 |`$array + "file"`|`1`,`2`,`3`,`file`     |
 |`$array * 2`     |`1`,`2`,`3`,`1`,`2`,`3`|
 |`"file" * 3`     |`filefilefile`         |
+|`$blue + 3`      |`Red`                  |
+|`$red - 3`       |`Blue`                 |
+|`$blue - $red`   |`-3`                   |
+|`+ '123'`        |`123`                  |
 
 Because the method that is used to evaluate statements is determined by the
 leftmost object, addition and multiplication in PowerShell are not strictly
@@ -201,7 +207,7 @@ The following examples demonstrate this principle:
 |`16 + "file"`|`Cannot convert value "file" to type "System.Int32".`|
 |             |`Error: "Input string was not in a correct format."` |
 |             |`At line:1 char:1`                                   |
-|             |+ 16 + "file"`                                       |
+|             |˙+ 16 + "file"`                                      |
 
 Hash tables are a slightly different case. You can add hash tables to
 another hash table, as long as, the added hash tables don't have duplicate
@@ -305,8 +311,7 @@ result without losing precision. For example:
 
 ```powershell
 2 + 3.1
-
-(2). GetType().FullName
+(2).GetType().FullName
 (2 + 3.1).GetType().FullName
 ```
 
