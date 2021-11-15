@@ -183,12 +183,14 @@ their type and value:
 ### Numeric type conversion
 
 When strings are converted to numbers, additional hexadecimal format indicators are
-supported. Those additional formats are not recognised as literals.
+supported. Those additional formats are not recognized as literals.
 
 ```powershell
 [int] '0xF' -eq 0xF
 [int] '&hF' -eq 0xF
 [int] '#F' -eq 0xF
+```
+
 ### Commands that look like numeric literals
 
 Any command that looks like a numeric literal must be executed using the the

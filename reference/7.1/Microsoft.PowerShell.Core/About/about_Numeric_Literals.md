@@ -232,7 +232,7 @@ Sign bits are accepted for BigInteger-suffixed numerals:
 ### Numeric type conversion
 
 When strings are converted to numbers, additional hexadecimal format indicators are
-supported. Those additional formats are not recognised as literals.
+supported. Those additional formats are not recognized as literals.
 
 ```powershell
 [int] '0xF' -eq 0xF
