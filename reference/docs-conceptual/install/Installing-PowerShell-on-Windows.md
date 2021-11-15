@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 11/08/2021
+ms.date: 11/15/2021
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -146,7 +146,7 @@ winget install --id Microsoft.Powershell.Preview --source winget
 
 ## <a id="msstore" />Installing from the Microsoft Store
 
-PowerShell 7.2 has been published to the Microsoft Store. You can find the PowerShell release in the
+PowerShell 7.2 can be installed from the Microsoft Store. You can find the PowerShell release in the
 [Microsoft Store][store-app] site or in the Store application in Windows.
 
 Benefits of the Microsoft Store package:
@@ -156,17 +156,34 @@ Benefits of the Microsoft Store package:
 
 ### Known limitations
 
-Windows Store packages run in an application sandbox that virtualizes access to some filesystem and
-registry locations.
+By default, Windows Store packages run in an application sandbox that virtualizes access to some
+filesystem and registry locations. Changes to virtualized file and registry locations do not persist
+outside of the application sandbox.
 
-- All registry changes under HKEY_CURRENT_USER are copied on write to a private, per-user, per-app
-  location. Therefore, those values are not available to other applications.
-- Any system-level configuration settings stored in `$PSHOME` cannot be modified. This includes the
-  WSMAN configuration. This prevents remote sessions from connecting to Store-based installs of
-  PowerShell. User-level configurations and SSH remoting are supported.
+This sandbox all blocks any changes to the application's root folder. Any system-level configuration
+settings stored in `$PSHOME` cannot be modified. This includes the WSMAN configuration. This
+prevents remote sessions from connecting to Store-based installs of PowerShell. User-level
+configurations and SSH remoting are supported.
+
+The following commands need write to `$PSHOME`. These commands are not supported in a Microsoft
+Store instance of PowerShell.
+
+- `Register-PSSessionConfiguration`
+- `Update-Help -Scope AllUsers`
+- `Enable-ExperimentalFeature -Scope AllUsers`
+- `Set-ExecutionPolicy -Scope LocalMachine`
 
 For more information, see
 [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes).
+
+### Changes for PowerShell 7.2
+
+Beginning in PowerShell 7.2, the PowerShell package is now exempt from file and registry
+virtualization. Changes to virtualized file and registry locations now persist outside of the
+application sandbox. However, changes to the application's root folder are still blocked.
+
+> [!IMPORTANT]
+> You must be running on Windows build 1903 or higher for this exemption to work.
 
 ## Installing a preview version
 
