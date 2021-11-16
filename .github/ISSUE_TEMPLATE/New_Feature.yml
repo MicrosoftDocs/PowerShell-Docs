@@ -1,0 +1,39 @@
+name: Describe new feature or change in behavior 🚀
+description: Update existing documentation for a change in behavior or add new documentation for a new feature.
+labels: doc-idea
+body:
+- type: checkboxes
+  attributes:
+    label: Prerequisites
+    options:
+    - label: Write a descriptive title.
+      required: true
+    - label: Search the existing issues.
+      required: true
+- type: textarea
+  attributes:
+    label: Summary of the new feature or changed behavior
+    description: >
+      A clear and concise description of change.
+    placeholder: >
+      Describe the impact of the change and examples, if possible. Include new and changed
+      parameters and changed output. Put code and output inside ``` blocks.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: List of articles that need to be updated
+    description: Provide a list of files that need to be updated.
+    placeholder: Enter the Docs or GitHub URL to the article to be updated.
+- type: input
+  attributes:
+    label: Link to related PR in PowerShell/PowerShell repo
+    placeholder: PowerShell/PowerShell#12345
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Link to related Issues in PowerShell/PowerShell repo
+    placeholder: PowerShell/PowerShell#12345
+  validations:
+    required: true

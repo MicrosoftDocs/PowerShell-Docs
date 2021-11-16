@@ -1,7 +1,7 @@
 ---
 description: Describes automatic members in all PowerShell objects
 Locale: en-US
-ms.date: 07/14/2021
+ms.date: 11/16/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Inrinsic_Members?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Intrinsic_Members
@@ -95,4 +95,38 @@ information on how to use these methods, see [about_Arrays](about_Arrays.md).
 
 The **Count** and **Length** properties are available to all PowerShell
 objects. These are similar to each other but may work differently depending on
-the data type. For more information about these properties, see [about_Properties](about_Properties.md).
+the data type. For more information about these properties, see
+[about_Properties](about_Properties.md).
+
+## Array indexing scalar types
+
+When an object is not an indexed collection, using the index operator to access
+the first element returns the object itself. Index values beyond the first
+element return `$null`.
+
+```
+PS> (2)[0]
+2
+PS> (2)[-1]
+2
+PS> (2)[1] -eq $null
+True
+PS> (2)[0,0] -eq $null
+True
+```
+
+For more information, see [about_Operators](about_Operators.md#index-operator--).
+
+## New() method for types
+
+Beginning in PowerShell 5.0, PowerShell adds a static `New()` method for all
+.NET types. The following examples produce the same result.
+
+```powershell
+$expression = New-Object -TypeName regex -ArgumentList 'pattern'
+$expression = [regex]::new('pattern')
+```
+
+Using the `new()` method performs better than using `New-Object`.
+
+For more information, see [about_Classes](about_Classes.md).
