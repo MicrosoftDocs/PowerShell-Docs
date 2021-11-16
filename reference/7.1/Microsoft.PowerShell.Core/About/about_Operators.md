@@ -337,10 +337,7 @@ Converts or limits objects to the specified type. If the objects cannot be
 converted, PowerShell generates an error.
 
 ```powershell
-[DateTime]"2/20/88" - [DateTime]"1/20/88"
-[Int] (7/2)
-[String] 1 + 0
-[Int] '1' + 0
+[DateTime] '2/20/88' - [DateTime] '1/20/88' -eq [TimeSpan] '31'
 ```
 
 A cast can also be performed when a variable is assigned to using
@@ -420,12 +417,31 @@ indexes are zero-based, so the first object is indexed as `[0]`. For arrays
 (only), you can also use negative indexes to get the last values. Hash tables
 are indexed by key value.
 
+Given a list of indices,
+the index operator returns a list of members corresponding to those indices.
+
+If an object is not an indexed collection,
+accessing its first element returns the object itself.
+Index values beyond the first element return `$null`.
+
 ```
 PS> $a = 1, 2, 3
 PS> $a[0]
 1
 PS> $a[-1]
 3
+PS> $a[2, 1, 0]
+3
+2
+1
+PS> (2)[0]
+2
+PS> (2)[-1]
+2
+PS> (2)[1] -eq $null
+True
+PS> (2)[0,0] -eq $null
+True
 ```
 
 ```powershell
