@@ -136,7 +136,7 @@ You can double-click the file and follow the prompts, or install it from the ter
 following commands. Change the name of the file to match the file you downloaded.
 
 ```sh
-sudo installer -pkg powershell-7.1.5-osx-x64.pkg -target /
+sudo installer -pkg powershell-7.2.0-osx-x64.pkg -target /
 ```
 
 Install [OpenSSL](#installing-dependencies). OpenSSL is needed for PowerShell remoting and CIM
@@ -189,19 +189,19 @@ match the version you want to install.
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-osx-x64.tar.gz
 
 # Create the target folder where powershell is placed
-sudo mkdir -p /usr/local/microsoft/powershell/7.1.5
+sudo mkdir -p /usr/local/microsoft/powershell/7.2.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.1.5
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.2.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/7.1.5/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/7.2.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/7.1.5/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/7.2.0/pwsh /usr/local/bin/pwsh
 ```
 
 ## Installing dependencies
@@ -224,9 +224,10 @@ if needed.
    [installation guide](https://www.macports.org/install.php).
 1. Update MacPorts by running `sudo port selfupdate`.
 1. Upgrade MacPorts packages by running `sudo port upgrade outdated`.
-1. Install OpenSSL by running `sudo port install openssl10`. 
-1. When running a newer Mac with Apple Silicon run `sudo port install openssl10 +universal` instead.
-1. Link the libraries to make them available to PowerShell:
+1. Install OpenSSL:
+   - For x64-based systems run `sudo port install openssl10`
+   - For M1-based systems run `sudo port install openssl10 +universal`
+4. Link the libraries to make them available to PowerShell:
 
    ```sh
    sudo mkdir -p /usr/local/opt/openssl
@@ -255,7 +256,7 @@ and remove the paths using `sudo rm`.
 
 ## Paths
 
-- `$PSHOME` is `/usr/local/microsoft/powershell/7.1.5/`
+- `$PSHOME` is `/usr/local/microsoft/powershell/7.2.0/`
 - User profiles are read from `~/.config/powershell/profile.ps1`
 - Default profiles are read from `$PSHOME/profile.ps1`
 - User modules are read from `~/.local/share/powershell/Modules`
@@ -269,7 +270,7 @@ exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
 PowerShell respects the [XDG Base Directory Specification][xdg-bds] on macOS.
 
 Because macOS is a derivation of BSD, the prefix `/usr/local` is used instead of `/opt`. So,
-`$PSHOME` is `/usr/local/microsoft/powershell/7.1.5/`, and the symbolic link is placed at
+`$PSHOME` is `/usr/local/microsoft/powershell/7.2.0/`, and the symbolic link is placed at
 `/usr/local/bin/pwsh`.
 
 ## Supported versions
