@@ -1,0 +1,57 @@
+name: Documentation issue report 🐛
+description: Report an issue with current documentation.
+labels: doc-bug
+body:
+- type: markdown
+  attributes:
+    value: |
+      Use this template to report issues with documentation. This can include typos,
+      technical and factual errors, grammar, spelling, formatting, presentation, etc.
+
+      Support questions should be posted to community support forums. See the [Community support](https://docs.microsoft.com/powershell/scripting/community/community-support) page.
+- type: checkboxes
+  attributes:
+    label: Prerequisites
+    options:
+    - label: Write a descriptive title.
+      required: true
+    - label: Search the existing issues.
+      required: true
+    - label: I am reporting the documentation problem for version of PowerShell I am using.
+      required: true
+- type: dropdown
+  attributes:
+    label: Version
+    description: What version of the documentation is affected? (select all that apply)
+    multiple: true
+    options:
+      - 5.1
+      - 7.0
+      - 7.1
+      - 7.2
+      - Preview version
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Link to affected document
+    placeholder: Enter a GitHub or Docs URL to the article.
+  validations: true
+- type: textarea
+  attributes:
+    label: Description of the documentation error
+    description: >
+      Describe the error in the documentation. Include details about what you this is wrong.
+    placeholder: |
+      Example 3 has invalid parameters.
+
+      List of steps, sample code, or failing test to support your claim.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Suggested fix
+    description: >
+      How would you change the document to make it correct.
+  validations:
+    required: false
