@@ -36,7 +36,8 @@ body:
   attributes:
     label: Link to affected document
     placeholder: Enter a GitHub or Docs URL to the article.
-  validations: true
+  validations:
+    required: true
 - type: textarea
   attributes:
     label: Description of the documentation error
