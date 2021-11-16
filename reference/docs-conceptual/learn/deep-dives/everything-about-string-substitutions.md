@@ -1,7 +1,7 @@
 ---
 description: There are many ways to use variables in strings to create formatted text.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/05/2021
+ms.date: 11/10/2021
 title: Everything you wanted to know about variable substitution in strings
 ---
 # Everything you wanted to know about variable substitution in strings
@@ -134,6 +134,11 @@ already well [documented][documented] on it. There are built in ways to format v
 ```powershell
 "{0:yyyyMMdd}" -f (Get-Date)
 "Population {0:N0}" -f  8175133
+```
+
+```Output
+20211110
+Population 8,175,133
 ```
 
 I'm not going to go into them but I just wanted to let you know that this is a very powerful

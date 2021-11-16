@@ -1,7 +1,7 @@
 ---
 description: Describes how to access Windows environment variables in PowerShell.
 Locale: en-US
-ms.date: 08/18/2021
+ms.date: 11/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Environment Variables
@@ -274,7 +274,7 @@ The environment variables that store preferences include:
   hexadecimal suffix so that there is a a unique filename per installation.
 
   > [!NOTE]
-  > If command discovery isn't working correctly, for example Intellisense
+  > If command discovery isn't working correctly, for example IntelliSense
   > shows commands that don't exist, you can delete the cache file. The cache
   > is recreated the next time you start PowerShell.
 
@@ -359,14 +359,60 @@ The environment variables that store preferences include:
 
   For more information, see [about_Telemetry](about_Telemetry.md).
 
-## Third-party environment variables
+## Other environment variables used by PowerShell
 
-On non-Windows platforms, PowerShell uses the following XDG environment
-variables as defined by the [XDG Base Directory Specification][xdg-bds].
+### Path information
 
-- **XDG_CONFIG_HOME**
-- **XDG_DATA_HOME**
-- **XDG_CACHE_HOME**
+- **PATHEXT**
+
+  The `$env:PATHEXT` variable contains a list of file extensions that Windows
+  considers to be executable files. When a script file with one of the listed
+  extensions is executed from PowerShell, the script runs in the current
+  console or terminal session. If the file extension is not listed, the script
+  runs in a new console session.
+
+  To ensure that scripts for another scripting language run in the current
+  console session, add the file extension used by the scripting language. For
+  example, to run Python scripts in the current console, add the `.py`
+  extension to the environment variable. For Windows to support the `.py`
+  extension as an executable file you must register the file extension using
+  the `ftype` and `assoc` commands of the CMD command shell. PowerShell has no
+  direct method to register the file handler. For more information, see the
+  documentation for the
+  [ftype](/windows-server/administration/windows-commands/ftype) command.
+
+  PowerShell scripts always start in the current console session. You do not
+  need to add the `.PS1` extension.
+
+- XDG variables
+
+  On non-Windows platforms, PowerShell uses the following XDG environment
+  variables as defined by the [XDG Base Directory Specification][xdg-bds].
+
+  - **XDG_CONFIG_HOME**
+  - **XDG_DATA_HOME**
+  - **XDG_CACHE_HOME**
+
+### Terminal features
+
+Beginning in PowerShell 7.2, the following environment variables can be used to
+control the Virtual Terminal features like ANSI escape sequences that colorize
+output. Support for ANSI escape sequences can be turned off using the **TERM**
+or **NO_COLOR** environment variables.
+
+- **TERM**
+
+  The following values of `$env:TERM` change the behavior as follows:
+
+  - `dumb` - sets `$Host.UI.SupportsVirtualTerminal = $false`
+  - `xterm-mono` - sets `$PSStyle.OutputRendering = PlainText`
+  - `xtermm` - sets `$PSStyle.OutputRendering = PlainText`
+
+- **NO_COLOR**
+
+  If `$env:NO_COLOR` exists, then `$PSStyle.OutputRendering` is set to
+  **PlainText**. For more information about the **NO_COLOR** environment
+  variable, see [https://no-color.org/](https://no-color.org/).
 
 ## See also
 

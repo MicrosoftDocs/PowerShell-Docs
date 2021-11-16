@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/13/2021
+ms.date: 11/16/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
@@ -605,7 +605,7 @@ Enable-WSManCredSSP -Role Client -DelegateComputer Server02
 $s = New-PSSession Server02
 Invoke-Command -Session $s -ScriptBlock {Enable-WSManCredSSP -Role Server -Force}
 $parameters = @{
-  Session = $s
+  ComputerName = 'Server02'
   ScriptBlock = { Get-Item \\Net03\Scripts\LogFiles.ps1 }
   Authentication = "CredSSP"
   Credential = "Domain01\Admin01"

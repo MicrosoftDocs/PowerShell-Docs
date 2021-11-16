@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/23/2019
+ms.date: 11/03/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
@@ -50,9 +50,9 @@ their file name.
 Add-Content -Path .\*.txt -Exclude help* -Value 'End of file'
 ```
 
-The `Add-Content` cmdlet uses the **Path** parameter to specify all .txt files in the current
-directory. The **Exclude** parameter ignores file names that match the specified pattern. The
-**Value** parameter specifies the text string that is written to the files.
+The **Path** parameter specifies all `.txt` files in the current directory, but the **Exclude**
+parameter ignores file names that match the specified pattern. The **Value** parameter specifies the
+text string that is written to the files.
 
 Use [Get-Content](Get-Content.md) to display the contents of these files.
 
@@ -66,30 +66,18 @@ Add-Content -Path .\DateTimeFile1.log, .\DateTimeFile2.log -Value (Get-Date) -Pa
 Get-Content -Path .\DateTimeFile1.log
 ```
 
-The `Add-Content` cmdlet uses the **Path** and **Value** parameters to create two new files in the
-current directory. The **Value** parameter specifies the `Get-Date` cmdlet to get the date and
-passes the date to `Add-Content`. The `Add-Content` cmdlet writes the date to each file. The
-**PassThru** parameter passes an object that represents the date object. Because there is no other
-cmdlet to receive the passed object, it is displayed in the PowerShell console. The `Get-Content`
-cmdlet displays the updated file, DateTimeFile1.log.
-
-### Example 3: Add the contents of a specified file to another file
-
-This example gets the content from a file and appends that content into another file.
-
-```powershell
-Add-Content -Path .\CopyToFile.txt -Value (Get-Content -Path .\CopyFromFile.txt)
-Get-Content -Path .\CopyToFile.txt
+```Output
+Tuesday, May 14, 2019 8:24:27 AM
+Tuesday, May 14, 2019 8:24:27 AM
+5/14/2019 8:24:27 AM
 ```
 
-The `Add-Content` cmdlet uses the **Path** parameter to specify the new file in the current
-directory, CopyToFile.txt. The **Value** parameter uses the `Get-Content` cmdlet to get the
-contents of the file, CopyFromFile.txt. The parentheses around the `Get-Content` cmdlet ensure that
-the command finishes before the `Add-Content` command begins. The **Value** parameter is passed to
-`Add-Content`. The `Add-Content` cmdlet appends the data to the CopyToFile.txt file. The
-`Get-Content` cmdlet displays the updated file, CopyToFile.txt.
+The `Add-Content` cmdlet creates two new files in the current directory. The **Value** parameter
+contains the output of the `Get-Date` cmdlet. The **PassThru** parameter outputs the added contents
+to the pipeline. Because there is no other cmdlet to receive the output, it is displayed in the
+PowerShell console. The `Get-Content` cmdlet displays the updated file, `DateTimeFile1.log`.
 
-### Example 4: Use a variable to add the contents of a specified file to another file
+### Example 3: Add the contents of a specified file to another file
 
 This example gets the content from a file and stores the content in a variable. The variable is
 used to append the content into another file.
@@ -100,11 +88,24 @@ Add-Content -Path .\CopyToFile.txt -Value $From
 Get-Content -Path .\CopyToFile.txt
 ```
 
-The `Get-Content` cmdlet gets the contents of CopyFromFile.txt and stores the contents in the
-`$From` variable. The `Add-Content` cmdlet uses the **Path** parameter to specify the
-CopyToFile.txt file in the current directory. The **Value** parameter uses the `$From` variable and
-passes the content to `Add-Content`. The `Add-Content` cmdlet updates the CopyToFile.txt file. The
-`Get-Content` cmdlet displays CopyToFile.txt.
+- The `Get-Content` cmdlet gets the contents of `CopyFromFile.txt` and stores the contents in the
+  `$From` variable.
+- The `Add-Content` cmdlet updates the `CopyToFile.txt` file using the contents of the `$From`
+  variable.
+- The `Get-Content` cmdlet displays CopyToFile.txt.
+
+### Example 4: Add the contents of a specified file to another file using the pipeline
+
+This example gets the content from a file and pipes it to the `Add-Content` cmdlet.
+
+```powershell
+Get-Content -Path .\CopyFromFile.txt | Add-Content -Path .\CopyToFile.txt
+Get-Content -Path .\CopyToFile.txt
+```
+
+The `Get-Content` cmdlet gets the contents of `CopyFromFile.txt`. The results are piped to the
+`Add-Content` cmdlet, which updates the `CopyToFile.txt`.
+The last `Get-Content` cmdlet displays `CopyToFile.txt`.
 
 ### Example 5: Create a new file and copy content
 
@@ -115,16 +116,16 @@ Add-Content -Path .\NewFile.txt -Value (Get-Content -Path .\CopyFromFile.txt)
 Get-Content -Path .\NewFile.txt
 ```
 
-The `Add-Content` cmdlet uses the **Path** and **Value** parameters to create a new file in the
-current directory. The **Value** parameter uses the `Get-Content` cmdlet to get the contents of an
-existing file, CopyFromFile.txt. The parentheses around the `Get-Content` cmdlet ensure that the
-command finishes before the `Add-Content` command begins. The **Value** parameter passes the
-content to `Add-Content` which updates the NewFile.txt file. The `Get-Content` cmdlet displays the
-contents of the new file, NewFile.txt.
+- The `Add-Content` cmdlet uses the **Path** and **Value** parameters to create a new file in the
+  current directory.
+- The `Get-Content` cmdlet gets the contents of an existing file, `CopyFromFile.txt`
+  and passes it to the **Value** parameter. The parentheses around the `Get-Content` cmdlet ensure
+  that the command finishes before the `Add-Content` command begins.
+- The `Get-Content` cmdlet displays the contents of the new file, `NewFile.txt`.
 
 ### Example 6: Add content to a read-only file
 
-This command adds the value to the file even if the **IsReadOnly** file attribute is set to True.
+This command adds a value to the file even if the **IsReadOnly** file attribute is set to **True**.
 The steps to create a read-only file are included in the example.
 
 ```powershell
@@ -138,16 +139,18 @@ Get-Content -Path .\IsReadOnlyTextFile.txt
 ```Output
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--ar---        1/28/2019     13:35              0 IsReadOnlyTextFile.txt
+-ar--         1/28/2019     13:35              0 IsReadOnlyTextFile.txt
 ```
 
-The `New-Item` cmdlet uses the **Path** and **ItemType** parameters to create the file
-IsReadOnlyTextFile.txt in the current directory. The `Set-ItemProperty` cmdlet uses the **Name**
-and **Value** parameters to change the file's **IsReadOnly** property to True. The `Get-ChildItem`
-cmdlet shows the file is empty (0) and has the read-only attribute (`r`). The `Add-Content` cmdlet
-uses the **Path** parameter to specify the file. The **Value** parameter includes the text string
-to append to the file. The **Force** parameter writes the text to the read-only file. The
-`Get-Content` cmdlet uses the **Path** parameter to display the file's contents.
+- The `New-Item` cmdlet uses the **Path** and **ItemType** parameters to create the file
+  `IsReadOnlyTextFile.txt` in the current directory.
+- The `Set-ItemProperty` cmdlet uses the **Name** and **Value** parameters to change the file's
+  **IsReadOnly** property to True.
+- The `Get-ChildItem` cmdlet shows the file is empty (0) and has the read-only attribute (`r`).
+- The `Add-Content` cmdlet uses the **Path** parameter to specify the file. The **Value** parameter
+  includes the text string to append to the file. The **Force** parameter writes the text to the
+  read-only file.
+- The `Get-Content` cmdlet uses the **Path** parameter to display the file's contents.
 
 To remove the read-only attribute, use the `Set-ItemProperty` command with the **Value** parameter
 set to `False`.
@@ -156,15 +159,10 @@ set to `False`.
 
 ### -Credential
 
-Specifies a user account that has permission to perform this action. The default is the current
-user.
-
-Type a user name, such as **User01** or **Domain01\User01**, or enter a **PSCredential** object,
-such as one generated by the `Get-Credential` cmdlet. If you type a user name, you will be prompted
-for a password.
-
-> [!WARNING]
+> [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell.
+> To impersonate another user, or elevate your credentials when running this cmdlet,
+> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -215,8 +213,11 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Omits the specified items. The value of this parameter qualifies the **Path** parameter. Enter a
-path element or pattern, such as **\*.txt**. Wildcards are permitted.
+Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: System.String[]
@@ -232,11 +233,13 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Specifies a filter in the provider's format or language. The value of this parameter qualifies the
-**Path** parameter. The syntax of the filter, including the use of wildcards, depends on the
-provider. **Filters** are more efficient than other parameters because the provider applies filters
-when objects are retrieved. Otherwise, PowerShell processes filters after the objects are
-retrieved.
+Specifies a filter to qualify the **Path** parameter. The
+[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only
+installed PowerShell provider that supports the use of filters. You can find the syntax for the
+**FileSystem** filter language in
+[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md). Filters are more efficient
+than other parameters, because the provider applies them when the cmdlet gets the objects rather
+than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: System.String
@@ -253,8 +256,7 @@ Accept wildcard characters: True
 ### -Force
 
 Overrides the read-only attribute, allowing you to add content to a read-only file. For example,
-**Force** will override the read-only attribute or create directories to complete a file path, but
-it will not attempt to change file permissions.
+**Force** overrides the read-only attribute but it does not change file permissions.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -270,8 +272,11 @@ Accept wildcard characters: False
 
 ### -Include
 
-Adds only the specified items. The value of this parameter qualifies the **Path** parameter. Enter
-a path element or pattern, such as **\*.txt**. Wildcards are permitted.
+Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: System.String[]
@@ -287,10 +292,13 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Specifies the path to the items that receive the additional content. Unlike **Path**, the value of
-**LiteralPath** is used exactly as it is typed. No characters are interpreted as wildcards. If the
-path includes escape characters, enclose it in single quotation marks. Single quotation marks tell
-PowerShell not to interpret any characters as escape sequences.
+Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
+it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
+as escape sequences.
+
+For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -342,8 +350,10 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path to the items that receive the additional content. Wildcards are permitted. If
-you specify multiple paths, use commas to separate the paths.
+Specifies the path to the items that receive the additional content. Wildcard characters are
+permitted. The paths must be paths to items, not to containers. For example, you must specify a path
+to one or more files, not a path to a directory. If you specify multiple paths, use commas to
+separate the paths.
 
 ```yaml
 Type: System.String[]
@@ -365,10 +375,10 @@ it. Wildcard characters are not supported.
 **Stream** is a dynamic parameter that the FileSystem provider adds to `Add-Content`. This
 parameter works only in file system drives.
 
-You can use the `Add-Content` cmdlet to change the content of the **Zone.Identifier** alternate
-data stream. However, we do not recommend this as a way to eliminate security checks that block
-files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the
-`Unblock-File` cmdlet.
+You can use the `Add-Content` cmdlet to change the content of any alternate data stream, such as
+`Zone.Identifier`. However, we do not recommend this as a way to eliminate security checks that
+block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use
+the `Unblock-File` cmdlet.
 
 This parameter was introduced in PowerShell 3.0.
 
@@ -456,9 +466,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
@@ -476,17 +486,15 @@ represents the content. Otherwise, this cmdlet does not generate any output.
 
 ## Notes
 
-When you pipe an object to `Add-Content`, the object is converted to a string before it is added to
-the item. The object type determines the string format, but the format might be different than the
-default display of the object. To control the string format, use the formatting parameters of the
-sending cmdlet.
-
-You can also refer to `Add-Content` by its built-in alias, `ac`. For more information, see
-[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
-
-The `Add-Content` cmdlet is designed to work with the data exposed by any provider. To list the
-providers available in your session, type `Get-PSProvider`. For more information, see
-[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+- When you pipe an object to `Add-Content`, the object is converted to a string before it is added
+  to the item. The object type determines the string format, but the format might be different than
+  the default display of the object. To control the string format, use the formatting parameters of
+  the sending cmdlet.
+- You can also refer to `Add-Content` by its built-in alias, `ac`. For more information, see
+  [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+- The `Add-Content` cmdlet is designed to work with the data exposed by any provider. To list the
+  providers available in your session, type `Get-PSProvider`. For more information, see
+  [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## Related links
 

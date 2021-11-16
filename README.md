@@ -35,7 +35,7 @@ The following list describes the main folders in this repository.
   - `5.1` - contains the cmdlet reference and about topics for PowerShell 5.1
   - `7.0` - contains the cmdlet reference and about topics for PowerShell 7.0
   - `7.1` - contains the cmdlet reference and about topics for PowerShell 7.1
-  - `7.2` - contains the cmdlet reference and about topics for PowerShell 7.2 (preview)
+  - `7.2` - contains the cmdlet reference and about topics for PowerShell 7.2
   - `bread` - contains the TOC used for breadcrumb navigation
   - `docs-conceptual` - contains the conceptual articles that are published to the Docs site. In
     general, the folder structure mirrors the Table of Contents (TOC).

@@ -1,6 +1,6 @@
 ---
 description: Local Configuration Manager (LCM) can be centrally managed by a Pull Service solution. When using this approach, the node that is being managed is registered with a service and assigned a configuration in LCM settings.
-ms.date: 11/01/2021
+ms.date: 11/08/2021
 title: DSC Pull Service
 ---
 
@@ -87,9 +87,9 @@ example script is provided below.
 
 ### Supported database systems
 
-| WMF 4.0 |       WMF 5.0        |       WMF 5.1        | WMF 5.1 (Windows Server Insider Preview 17090) |
-| ------- | -------------------- | -------------------- | ---------------------------------------------- |
-| MDB     | ESENT (Default), MDB | ESENT (Default), MDB | ESENT (Default), SQL Server, MDB               |
+| WMF 4.0 |       WMF 5.0        |       WMF 5.1        |             WMF 5.1              |
+| ------- | -------------------- | -------------------- | -------------------------------- |
+| MDB     | ESENT (Default), MDB | ESENT (Default), MDB | ESENT (Default), SQL Server, MDB |
 
 Starting in release 17090 of Windows Server, SQL Server is a supported option for the Pull Service
 (Windows Feature *DSC-Service*). This provides a new option for scaling large DSC environments that

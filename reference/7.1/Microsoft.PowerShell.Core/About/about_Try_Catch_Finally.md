@@ -1,7 +1,7 @@
 ---
-description: Describes how to use the `Try`, `Catch`, and `Finally` blocks to handle terminating errors.
+description: Describes how to use the `try`, `catch`, and `finally` blocks to handle terminating errors.
 Locale: en-US
-ms.date: 04/01/2019
+ms.date: 11/12/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Try Catch Finally
@@ -9,12 +9,12 @@ title: about Try Catch Finally
 # about_Try_Catch_Finally
 
 ## Short description
-Describes how to use the `Try`, `Catch`, and `Finally` blocks to handle
+Describes how to use the `try`, `catch`, and `finally` blocks to handle
 terminating errors.
 
 ## Long description
 
-Use `Try`, `Catch`, and `Finally` blocks to respond to or handle terminating
+Use `try`, `catch`, and `finally` blocks to respond to or handle terminating
 errors in scripts. The `Trap` statement can also be used to handle terminating
 errors in scripts. For more information, see [about_Trap](about_Trap.md).
 
@@ -23,45 +23,45 @@ handle a terminating error in some way, PowerShell also stops running the
 function or script using the current pipeline. In other languages, such as C\#,
 terminating errors are referred to as exceptions.
 
-Use the `Try` block to define a section of a script in which you want
-PowerShell to monitor for errors. When an error occurs within the `Try` block,
+Use the `try` block to define a section of a script in which you want
+PowerShell to monitor for errors. When an error occurs within the `try` block,
 the error is first saved to the `$Error` automatic variable. PowerShell then
-searches for a `Catch` block to handle the error. If the `Try` statement does
-not have a matching `Catch` block, PowerShell continues to search for an
-appropriate `Catch` block or `Trap` statement in the parent scopes. After a
-`Catch` block is completed or if no appropriate `Catch` block or `Trap`
-statement is found, the `Finally` block is run. If the error cannot be handled,
+searches for a `catch` block to handle the error. If the `try` statement does
+not have a matching `catch` block, PowerShell continues to search for an
+appropriate `catch` block or `Trap` statement in the parent scopes. After a
+`catch` block is completed or if no appropriate `catch` block or `Trap`
+statement is found, the `finally` block is run. If the error cannot be handled,
 the error is written to the error stream.
 
-A `Catch` block can include commands for tracking the error or for recovering
-the expected flow of the script. A `Catch` block can specify which error types
-it catches. A `Try` statement can include multiple `Catch` blocks for different
+A `catch` block can include commands for tracking the error or for recovering
+the expected flow of the script. A `catch` block can specify which error types
+it catches. A `try` statement can include multiple `catch` blocks for different
 kinds of errors.
 
-A `Finally` block can be used to free any resources that are no longer needed
+A `finally` block can be used to free any resources that are no longer needed
 by your script.
 
-`Try`, `Catch`, and `Finally` resemble the `Try`, `Catch`, and `Finally`
+`try`, `catch`, and `finally` resemble the `try`, `catch`, and `finally`
 keywords used in the C\# programming language.
 
-### SYNTAX
+## Syntax
 
-A `Try` statement contains a `Try` block, zero or more `Catch` blocks, and zero
-or one `Finally` block. A `Try` statement must have at least one `Catch` block
-or one `Finally` block.
+A `try` statement contains a `try` block, zero or more `catch` blocks, and zero
+or one `finally` block. A `try` statement must have at least one `catch` block
+or one `finally` block.
 
-The following shows the `Try` block syntax:
+The following shows the `try` block syntax:
 
 ```powershell
 try {<statement list>}
 ```
 
-The `Try` keyword is followed by a statement list in braces. If a terminating
+The `try` keyword is followed by a statement list in braces. If a terminating
 error occurs while the statements in the statement list are being run, the
-script passes the error object from the `Try` block to an appropriate `Catch`
+script passes the error object from the `try` block to an appropriate `catch`
 block.
 
-The following shows the `Catch` block syntax:
+The following shows the `catch` block syntax:
 
 ```powershell
 catch [[<error type>][',' <error type>]*] {<statement list>}
@@ -70,48 +70,48 @@ catch [[<error type>][',' <error type>]*] {<statement list>}
 Error types appear in brackets. The outermost brackets indicate the element is
 optional.
 
-The `Catch` keyword is followed by an optional list of error type
+The `catch` keyword is followed by an optional list of error type
 specifications and a statement list. If a terminating error occurs in the
-`Try` block, PowerShell searches for an appropriate `Catch` block. If
-one is found, the statements in the `Catch` block are executed.
+`try` block, PowerShell searches for an appropriate `catch` block. If
+one is found, the statements in the `catch` block are executed.
 
-The `Catch` block can specify one or more error types. An error type is a
+The `catch` block can specify one or more error types. An error type is a
 Microsoft .NET Framework exception or an exception that is derived from a .NET
-Framework exception. A `Catch` block handles errors of the specified .NET
+Framework exception. A `catch` block handles errors of the specified .NET
 Framework exception class or of any class that derives from the specified
 class.
 
-If a `Catch` block specifies an error type, that `Catch` block handles that
-type of error. If a `Catch` block does not specify an error type, that `Catch`
-block handles any error encountered in the `Try` block. A `Try` statement can
-include multiple `Catch` blocks for the different specified error types.
+If a `catch` block specifies an error type, that `catch` block handles that
+type of error. If a `catch` block does not specify an error type, that `catch`
+block handles any error encountered in the `try` block. A `try` statement can
+include multiple `catch` blocks for the different specified error types.
 
-The following shows the `Finally` block syntax:
+The following shows the `finally` block syntax:
 
 ```powershell
 finally {<statement list>}
 ```
 
-The `Finally` keyword is followed by a statement list that runs every time the
-script is run, even if the `Try` statement ran without error or an error was
-caught in a `Catch` statement.
+The `finally` keyword is followed by a statement list that runs every time the
+script is run, even if the `try` statement ran without error or an error was
+caught in a `catch` statement.
 
 Note that pressing <kbd>CTRL</kbd>+<kbd>C</kbd> stops the pipeline. Objects
 that are sent to the pipeline will not be displayed as output. Therefore, if
 you include a statement to be displayed, such as "Finally block has run", it
 will not be displayed after you press <kbd>CTRL</kbd>+<kbd>C</kbd>, even if the
-`Finally` block ran.
+`finally` block ran.
 
-### CATCHING ERRORS
+## Catching errors
 
-The following sample script shows a `Try` block with a `Catch` block:
+The following sample script shows a `try` block with a `catch` block:
 
 ```powershell
 try { NonsenseString }
 catch { "An error occurred." }
 ```
 
-The `Catch` keyword must immediately follow the `Try` block or another `Catch`
+The `catch` keyword must immediately follow the `try` block or another `catch`
 block.
 
 PowerShell does not recognize "NonsenseString" as a cmdlet or other item.
@@ -122,13 +122,13 @@ An error occurred.
 ```
 
 When the script encounters "NonsenseString", it causes a terminating error. The
-`Catch` block handles the error by running the statement list inside the block.
+`catch` block handles the error by running the statement list inside the block.
 
-### USING MULTIPLE CATCH STATEMENTS
+## Using multiple catch statements
 
-A `Try` statement can have any number of `Catch` blocks. For example, the
-following script has a `Try` block that downloads `MyDoc.doc`, and it contains
-two `Catch` blocks:
+A `try` statement can have any number of `catch` blocks. For example, the
+following script has a `try` block that downloads `MyDoc.doc`, and it contains
+two `catch` blocks:
 
 ```powershell
 try {
@@ -144,14 +144,14 @@ catch {
 
 ```
 
-The first `Catch` block handles errors of the **System.Net.WebException** and
-**System.IO.IOException** types. The second `Catch` block does not specify an
-error type. The second `Catch` block handles any other terminating errors that
+The first `catch` block handles errors of the **System.Net.WebException** and
+**System.IO.IOException** types. The second `catch` block does not specify an
+error type. The second `catch` block handles any other terminating errors that
 occur.
 
-PowerShell matches error types by inheritance. A `Catch` block handles errors
+PowerShell matches error types by inheritance. A `catch` block handles errors
 of the specified .NET Framework exception class or of any class that derives
-from the specified class. The following example contains a `Catch` block that
+from the specified class. The following example contains a `catch` block that
 catches a "Command Not Found" error:
 
 ```powershell
@@ -167,25 +167,30 @@ Not Found error:
 catch [System.SystemException] {"Base Exception" }
 ```
 
-This `Catch` block handles the "Command Not Found" error and other errors that
+This `catch` block handles the "Command Not Found" error and other errors that
 inherit from the **SystemException** type.
 
-If you specify an error class and one of its derived classes, place the `Catch`
-block for the derived class before the `Catch` block for the general class.
+If you specify an error class and one of its derived classes, place the `catch`
+block for the derived class before the `catch` block for the general class.
 
-### Using Traps in a Try Catch
+> [!NOTE]
+> PowerShell wraps all exceptions in a **RuntimeException** type. Therefore,
+> specifying the error type **System.Management.Automation.RuntimeException**
+> behaves the same as an unqualified catch block.
 
-When a terminating error occurs in a `Try` block with a `Trap` defined within
-the `Try` block, even if there is a matching `Catch` block, the `Trap` statement
+## Using Traps in a Try Catch
+
+When a terminating error occurs in a `try` block with a `Trap` defined within
+the `try` block, even if there is a matching `catch` block, the `Trap` statement
 takes control.
 
-If a `Trap` exists at a higher block than the `Try`, and there is no matching
-`Catch` block within the current scope, the `Trap` will take control, even if
-any parent scope has a matching `Catch` block.
+If a `Trap` exists at a higher block than the `try`, and there is no matching
+`catch` block within the current scope, the `Trap` will take control, even if
+any parent scope has a matching `catch` block.
 
-### ACCESSING EXCEPTION INFORMATION
+## Accessing exception information
 
-Within a `Catch` block, the current error can be accessed using `$_`, which
+Within a `catch` block, the current error can be accessed using `$_`, which
 is also known as `$PSItem`. The object is of type **ErrorRecord**.
 
 ```powershell
@@ -224,18 +229,18 @@ An Error occurred:
 at <ScriptBlock>, <No file>: line 2
 ```
 
-### FREEING RESOURCES BY USING FINALLY
+## Freeing resources using finally
 
-To free resources used by a script, add a `Finally` block after the `Try` and
-`Catch` blocks. The `Finally` block statements run regardless of whether the
-`Try` block encounters a terminating error. PowerShell runs the `Finally` block
+To free resources used by a script, add a `finally` block after the `try` and
+`catch` blocks. The `finally` block statements run regardless of whether the
+`try` block encounters a terminating error. PowerShell runs the `finally` block
 before the script terminates or before the current block goes out of scope.
 
-A `Finally` block runs even if you use <kbd>CTRL</kbd>+<kbd>C</kbd> to stop the
-script. A `Finally` block also runs if an Exit keyword stops the script from
-within a `Catch` block.
+A `finally` block runs even if you use <kbd>CTRL</kbd>+<kbd>C</kbd> to stop the
+script. A `finally` block also runs if an Exit keyword stops the script from
+within a `catch` block.
 
-### SEE ALSO
+## See also
 
 [about_Break](about_Break.md)
 
@@ -246,4 +251,3 @@ within a `Catch` block.
 [about_Throw](about_Throw.md)
 
 [about_Trap](about_Trap.md)
-

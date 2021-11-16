@@ -232,7 +232,7 @@ truncated to 80 characters:
 ```Output
 Name                         Value
 ----                         -----
-Path                         C:\Program Files\PowerShell\7-preview;C:\WINDOWS…
+Path                         C:\Program Files\PowerShell\7;C:\WINDOWS…
 ```
 
 Considering that the console width may be set arbitrarily on systems where

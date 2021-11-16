@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 11/01/2021
+ms.date: 11/11/2021
 title: PowerShell scripting performance considerations
 ---
 
@@ -39,8 +39,29 @@ overhead though.
 $arrayList.Add($item) | Out-Null
 ```
 
-Piping to `Out-Null` has significant overhead when compared to the alternatives. It should be
-avoiding in performance sensitive code.
+You can also pipe to `Out-Null`. In PowerShell 7.x, this is a bit slower than redirection but
+probably not noticeable for most scripts. However, calling `Out-Null` in a large loop is can be
+significantly slower, even in PowerShell 7.x.
+
+```powershell
+PS> $d = Get-Date; Measure-Command { for($i=0; $i -lt 1mb; $i++) { $null=$d } }| Select-Object TotalSeconds
+
+TotalSeconds
+------------
+   1.0549325
+
+PS> $d = Get-Date; Measure-Command { for($i=0; $i -lt 1mb; $i++) { $d | Out-Null } }| Select-Object TotalSeconds
+
+TotalSeconds
+------------
+   5.9572186
+```
+
+Windows PowerShell 5.1 does not have the same optimizations for `Out-Null` as PowerShell 7.x, so you
+should avoid using `Out-Null` in performance sensitive code.
+
+Introducing a script block and calling it (using dot sourcing or otherwise) then assigning the
+result to `$null` is a convenient technique for suppressing the output of a large block of script.
 
 ```powershell
 $null = . {
@@ -49,8 +70,6 @@ $null = . {
 }
 ```
 
-Introducing a script block and calling it (using dot sourcing or otherwise) then assigning the
-result to `$null` is a convenient technique for suppressing the output of a large block of script.
 This technique performs roughly as well as piping to `Out-Null` and should be avoided in performance
 sensitive script. The extra overhead in this example comes from the creation of and invoking a
 script block that was previously inline script.

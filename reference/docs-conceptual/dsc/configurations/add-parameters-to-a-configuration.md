@@ -1,6 +1,6 @@
 ---
 description: DSC Configurations can be parameterized to allow more dynamic configurations based on user input.
-ms.date: 12/12/2018
+ms.date: 11/05/2021
 title: Add Parameters to a Configuration
 ---
 
@@ -44,7 +44,7 @@ Configurations can also use the following built in parameters, without requiring
 | `-DependsOn`            | Used in defining [Composite Configurations](compositeconfigs.md)                             |
 | `-PSDSCRunAsCredential` | Used in defining [Composite Configurations](compositeconfigs.md)                             |
 | `-ConfigurationData`    | Used to pass in structured [Configuration Data](configData.md) for use in the Configuration. |
-| `-OutputPath`           | Used to specify where your "\<computername\>.mof" file will be compiled                      |
+| `-OutputPath`           | Used to specify where your `<computername>.mof` file will be compiled                        |
 
 ## Adding your own parameters to Configurations
 
@@ -215,8 +215,8 @@ You can read more about the `parameter` and validation attributes in
 
 ## Fully parameterized Configuration
 
-We now have a parameterized Configuration that forces the user to specify an `-InstanceName`,
-`-ServiceName`, and validates the `-State` parameter.
+We now have a parameterized Configuration that forces the user to specify a `-ServiceName`,
+optionally provide a `-ComputerName`, and validates the value of the `-State` parameter.
 
 ```powershell
 Configuration TestConfig

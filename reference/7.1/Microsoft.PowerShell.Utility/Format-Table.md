@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 11/11/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-table?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Table
@@ -413,6 +413,8 @@ Accept wildcard characters: True
 
 Repeats displaying the header of a table after every screen full. The repeated header is useful when
 the output is piped to a pager such as `less` or `more` or paging with a screen reader.
+
+This parameter was added in PowerShell 6.2.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

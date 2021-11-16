@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 10/22/2021
+ms.date: 11/15/2021
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -35,8 +35,8 @@ different scenarios and workflows. Choose the method that best suits your needs.
 To install PowerShell on Windows, use the following links to download the install package from
 GitHub.
 
-- [PowerShell-7.1.5-win-x64.msi][x64msi]
-- [PowerShell-7.1.5-win-x86.msi][x86msi]
+- [PowerShell-7.2.0-win-x64.msi][x64msi]
+- [PowerShell-7.2.0-win-x86.msi][x86msi]
 
 Once downloaded, double-click the installer file and follow the prompts.
 
@@ -46,15 +46,37 @@ The installer creates a shortcut in the Windows Start Menu.
 - You can launch PowerShell via the Start Menu or `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 > [!NOTE]
-> PowerShell 7.1 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.
-> PowerShell 7.1 is an in-place upgrade that replaces PowerShell 7.0 and lower.
+> PowerShell 7.2 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.
+> PowerShell 7.2 is an in-place upgrade that replaces PowerShell 7.0 and lower.
 >
-> - PowerShell 7.1 is installed to `$env:ProgramFiles\PowerShell\7`
+> - PowerShell 7.2 is installed to `$env:ProgramFiles\PowerShell\7`
 > - The `$env:ProgramFiles\PowerShell\7` folder is added to `$env:PATH`
 > - Folders for previously released versions are deleted
 >
-> If you need to run PowerShell 7.1 side-by-side with other versions, use the [ZIP install](#zip)
+> If you need to run PowerShell 7.2 side-by-side with other versions, use the [ZIP install](#zip)
 > method to install the other version to a different folder.
+
+### Support for Microsoft Update in PowerShell 7.2
+
+PowerShell 7.2 has support for Microsoft Update. When you enable this feature, you'll get
+the latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
+that's with Windows Update for Business, WSUS, SCCM, or the interactive MU dialog in Settings.
+
+The PowerShell 7.2 MSI package includes following command-line options:
+
+- `USE_MU` - This property has two possible values:
+  - `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
+  - `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
+- `ENABLE_MU`
+  - `1` (default) - Opts into using Microsoft Update for Automatic Updates
+  - `0` - Do not opt into using Microsoft Update
+
+> [!NOTE]
+> Enabling updates may have been set in a previous installation or manual configuration. Using
+> `ENABLE_MU=0` does not remove the existing settings. Also, this setting can be overruled by Group
+> Policy settings controlled by your administrator.
+
+For more information, see the [PowerShell Microsoft Update FAQ](microsoft-update-faq.yml).
 
 ### Administrative install from the command line
 
@@ -74,7 +96,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.5-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.2.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
@@ -85,10 +107,10 @@ For a full list of command-line options for `Msiexec.exe`, see
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
 the following ZIP archives from the [current release][current] page.
 
-- [PowerShell-7.1.5-win-x64.zip][x64zip]
-- [PowerShell-7.1.5-win-x86.zip][x86zip]
-- [PowerShell-7.1.5-win-arm64.zip][arm64zip]
-- [PowerShell-7.1.5-win-arm32.zip][arm32zip]
+- [PowerShell-7.2.0-win-x64.zip][x64zip]
+- [PowerShell-7.2.0-win-x86.zip][x86zip]
+- [PowerShell-7.2.0-win-arm64.zip][arm64zip]
+- [PowerShell-7.2.0-win-arm32.zip][arm32zip]
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -133,7 +155,7 @@ winget search Microsoft.PowerShell
 ```Output
 Name               Id                           Version  Source
 ----------------------------------------------------------------
-PowerShell         Microsoft.PowerShell         7.1.5.0  winget
+PowerShell         Microsoft.PowerShell         7.2.0.0  winget
 Powershell Preview Microsoft.PowerShell.Preview 7.2.0.10 winget
 ```
 
@@ -146,7 +168,7 @@ winget install --id Microsoft.Powershell.Preview --source winget
 
 ## <a id="msstore" />Installing from the Microsoft Store
 
-PowerShell 7.1 has been published to the Microsoft Store. You can find the PowerShell release in the
+PowerShell 7.2 can be installed from the Microsoft Store. You can find the PowerShell release in the
 [Microsoft Store][store-app] site or in the Store application in Windows.
 
 Benefits of the Microsoft Store package:
@@ -156,49 +178,45 @@ Benefits of the Microsoft Store package:
 
 ### Known limitations
 
-Windows Store packages run in an application sandbox that virtualizes access to some filesystem and
-registry locations.
+By default, Windows Store packages run in an application sandbox that virtualizes access to some
+filesystem and registry locations. Changes to virtualized file and registry locations do not persist
+outside of the application sandbox.
 
-- All registry changes under HKEY_CURRENT_USER are copied on write to a private, per-user, per-app
-  location. Therefore, those values are not available to other applications.
-- Any system-level configuration settings stored in `$PSHOME` cannot be modified. This includes the
-  WSMAN configuration. This prevents remote sessions from connecting to Store-based installs of
-  PowerShell. User-level configurations and SSH remoting are supported.
+This sandbox all blocks any changes to the application's root folder. Any system-level configuration
+settings stored in `$PSHOME` cannot be modified. This includes the WSMAN configuration. This
+prevents remote sessions from connecting to Store-based installs of PowerShell. User-level
+configurations and SSH remoting are supported.
+
+The following commands need write to `$PSHOME`. These commands are not supported in a Microsoft
+Store instance of PowerShell.
+
+- `Register-PSSessionConfiguration`
+- `Update-Help -Scope AllUsers`
+- `Enable-ExperimentalFeature -Scope AllUsers`
+- `Set-ExecutionPolicy -Scope LocalMachine`
 
 For more information, see
 [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes).
 
+### Changes for PowerShell 7.2
+
+Beginning in PowerShell 7.2, the PowerShell package is now exempt from file and registry
+virtualization. Changes to virtualized file and registry locations now persist outside of the
+application sandbox. However, changes to the application's root folder are still blocked.
+
+> [!IMPORTANT]
+> You must be running on Windows build 1903 or higher for this exemption to work.
+
 ## Installing a preview version
 
+<!--
 The preview version of PowerShell 7.2 can be downloaded using the following link:
 
-- [PowerShell-7.2.0-preview.10-win-x64.msi][72x64msi]
-
+- [PowerShell-7.2.0-win-x64.msi][72x64msi]
+-->
 Preview releases of PowerShell 7 install to `$env:ProgramFiles\PowerShell\7-preview` so they can
-be run side-by-side with non-preview releases of PowerShell. PowerShell 7.2-preview.10 is the
-current preview release.
-
-### Support for Microsoft Update in PowerShell 7.2
-
-PowerShell 7.2-preview.10 has support for Microsoft Update. When you enable this feature, you'll get
-the latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
-that's with Windows Update for Business, WSUS, SCCM, or the interactive MU dialog in Settings.
-
-The PowerShell 7.2 MSI package includes following command-line options:
-
-- `USE_MU` - This property has two possible values:
-  - `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
-  - `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
-- `ENABLE_MU`
-  - `1` (default) - Opts into using Microsoft Update for Automatic Updates
-  - `0` - Do not opt into using Microsoft Update
-
-> [!NOTE]
-> Enabling updates may have been set in a previous installation or manual configuration. Using
-> `ENABLE_MU=0` does not remove the existing settings. Also, this setting can be overruled by Group
-> Policy settings controlled by your administrator.
-
-For more information, see the [PowerShell Microsoft Update FAQ](microsoft-update-faq.yml).
+be run side-by-side with non-preview releases of PowerShell. PowerShell 7.3 will be the
+next preview release.
 
 ## Upgrading an existing installation
 
@@ -215,7 +233,7 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
 ```powershell
 # Replace the placeholder information for the following variables:
 $deviceip = '<device ip address'
-$zipfile = 'PowerShell-7.1.5-win-Arm64.zip'
+$zipfile = 'PowerShell-7.2.0-win-Arm64.zip'
 $downloadfolder = 'u:\users\administrator\Downloads'  # The download location is local to the device.
     # There should be enough  space for the zip file and the unzipped contents.
 
@@ -228,10 +246,10 @@ Copy-Item $zipfile -Destination $downloadfolder -ToSession $S
 #Connect to the device and expand the archive
 Enter-PSSession $S
 Set-Location u:\users\administrator\Downloads
-Expand-Archive .\PowerShell-7.1.5-win-Arm64.zip
+Expand-Archive .\PowerShell-7.2.0-win-Arm64.zip
 
 # Set up remoting to PowerShell 7
-Set-Location .\PowerShell-7.1.5-win-Arm64
+Set-Location .\PowerShell-7.2.0-win-Arm64
 # Be sure to use the -PowerShellHome parameter otherwise it tries to create a new
 # endpoint with Windows PowerShell 5.1
 .\Install-PowerShellRemoting.ps1 -PowerShellHome .
@@ -243,7 +261,7 @@ PowerShell has to restart WinRM. Now you can connect to PowerShell 7 endpoint on
 ```powershell
 
 # Be sure to use the -Configuration parameter. If you omit it, you connect to Windows PowerShell 5.1
-Enter-PSSession -ComputerName $deviceIp -Credential Administrator -Configuration PowerShell.7.1.5
+Enter-PSSession -ComputerName $deviceIp -Credential Administrator -Configuration PowerShell.7.2.0
 ```
 
 ## Deploying on Windows 10 IoT Core
@@ -292,7 +310,7 @@ Deploy PowerShell to Nano Server using the following steps.
 # Replace the placeholder information for the following variables:
 $ipaddr = '<Nano Server IP address>'
 $credential = Get-Credential # <An Administrator account on the system>
-$zipfile = 'PowerShell-7.1.5-win-x64.zip'
+$zipfile = 'PowerShell-7.2.0-win-x64.zip'
 # Connect to the built-in instance of Windows PowerShell
 $session = New-PSSession -ComputerName $ipaddr -Credential $credential
 # Copy the file to the Nano Server instance
@@ -300,7 +318,7 @@ Copy-Item $zipfile c:\ -ToSession $session
 # Enter the interactive remote session
 Enter-PSSession $session
 # Extract the ZIP file
-Expand-Archive -Path C:\PowerShell-7.1.5-win-x64.zip -DestinationPath 'C:\Program Files\PowerShell 7'
+Expand-Archive -Path C:\PowerShell-7.2.0-win-x64.zip -DestinationPath 'C:\Program Files\PowerShell 7'
 ```
 
 If you want WSMan-based remoting, follow the instructions to create a remoting endpoint using the
@@ -351,10 +369,10 @@ cannot support those methods.
 [store-app]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [winget]: /windows/package-manager/winget
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
-[arm32zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-arm32.zip
-[arm64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-arm64.zip
-[x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-x64.msi
-[x64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-x64.zip
-[x86msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-x86.msi
-[x86zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/PowerShell-7.1.5-win-x86.zip
-[72x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0-preview.10/PowerShell-7.2.0-preview.10-win-x64.msi
+[arm32zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-arm32.zip
+[arm64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-arm64.zip
+[x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-x64.msi
+[x64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-x64.zip
+[x86msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-x86.msi
+[x86zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-x86.zip
+[72x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/PowerShell-7.2.0-win-x64.msi

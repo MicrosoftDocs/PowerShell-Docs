@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/04/2021
+ms.date: 11/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
@@ -41,17 +41,15 @@ Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-Cas
 
 ## Description
 
-The `Select-String` cmdlet searches for text and text patterns in input strings and files. You can
-use `Select-String` similar to `grep` in UNIX or `findstr.exe` in Windows.
+The `Select-String` cmdlet uses regular expression matching to search for text patterns in input
+strings and files. You can use `Select-String` similar to `grep` in UNIX or `findstr.exe` in
+Windows.
 
 `Select-String` is based on lines of text. By default, `Select-String` finds the first match in each
 line and, for each match, it displays the file name, line number, and all text in the line
 containing the match. You can direct `Select-String` to find multiple matches per line, display text
 before and after the match, or display a Boolean value (True or False) that indicates whether a
 match is found.
-
-`Select-String` uses regular expression matching, but it can also perform a match that searches the
-input for the text that you specify.
 
 `Select-String` can display all the text matches or stop after the first match in each input file.
 `Select-String` can be used to display all text that doesn't match the specified pattern.
@@ -133,10 +131,10 @@ example, the function only exists in the PowerShell session. When the PowerShell
 the function is deleted. For more information, see [about_Functions](../Microsoft.PowerShell.Core/About/about_Functions.md).
 
 ```powershell
-Function Search-Help
+function Search-Help
 {
-  $PSHelp = "$PSHOME\en-US\*.txt"
-  Select-String -Path $PSHelp -Pattern 'About_'
+    $PSHelp = "$PSHOME\en-US\*.txt"
+    Select-String -Path $PSHelp -Pattern 'About_'
 }
 
 Search-Help
@@ -312,6 +310,41 @@ line. The objects stored in the `$A` and `$B` variables are identical.
 
 The `$B.Matches.Length` property increases because for each line, every occurrence of the pattern
 **PowerShell** is counted.
+
+### Example 10 - Convert pipeline objects to strings using `Out-String`
+
+The `ToString()` result of the piped object isn't the same rich string representation produced by
+PowerShell's formatting system. So, you may need to pipe the objects to `Out-String` first.
+
+Piping to `Out-String` converts the formatted output into a single multi-line string object. This
+means that when `Select-String` finds a match it outputs the whole multiline string.
+
+```powershell
+PS> $hash = @{
+    Name = 'foo'
+    Category = 'bar'
+}
+
+# !! NO output, due to .ToString() conversion
+$hash | Select-String -Pattern 'foo'
+
+# Out-String converts the output to a single multi-line string object
+PS> $hash | Out-String | Select-String -Pattern 'foo'
+
+Name                           Value
+----                           -----
+Name                           foo
+Category                       bar
+
+# Out-String -Stream converts the output to a multiple single-line string objects
+PS> $hash | Out-String -Steam | Select-String -Pattern 'foo'
+
+Name                           foo
+```
+
+Piping to `Out-String -String` converts the formatted output into a multipel single-line string
+objects. This means that when `Select-String` finds a match it outputs only the matching line.
+
 
 ## Parameters
 
@@ -639,14 +672,24 @@ the **Quiet** parameter, the output is a Boolean value indicating whether the pa
 
 ## Notes
 
-`Select-String` is similar to **grep** in UNIX or **findstr.exe** in Windows.
+`Select-String` is similar to `grep` in UNIX or `findstr.exe` in Windows.
 
-The **sls** alias for the `Select-String` cmdlet was introduced in PowerShell 3.0.
+The `sls` alias for the `Select-String` cmdlet was introduced in PowerShell 3.0.
 
 > [!NOTE]
-> According to [Approved Verbs for PowerShell Commands](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands),
+> According to
+> [Approved Verbs for PowerShell Commands](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands),
 > the official alias prefix for `Select-*` cmdlets is `sc`, not `sl`. Therefore, the proper alias
 > for `Select-String` should be `scs`, not `sls`. This is an exception to this rule.
+
+When piping objects to `Select-String`:
+
+- **FileInfo** objects are treated as a path to a file. When file paths are specified,
+  `Select-String` searches the contents of the file, not the `ToString()` representation of the
+  object.
+- The `ToString()` result of the piped object isn't the same rich string representation produced by
+  PowerShell's formatting system. So, you may need to pipe the objects to `Out-String` first. For
+  more information, see Example 10.
 
 To use `Select-String`, type the text that you want to find as the value of the **Pattern**
 parameter. To specify the text to be searched, use the following criteria:

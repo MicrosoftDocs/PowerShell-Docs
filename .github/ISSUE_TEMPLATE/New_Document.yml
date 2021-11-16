@@ -1,0 +1,42 @@
+name: New Document Request/Idea 🆕
+description: Suggest a new document or major rewrite of an existing one.
+labels: doc-idea
+body:
+- type: checkboxes
+  attributes:
+    label: Prerequisites
+    options:
+    - label: Write a descriptive title.
+      required: true
+    - label: Search the existing issues.
+      required: true
+- type: textarea
+  attributes:
+    label: Summary of the new document or enhancement
+    description: >
+      A clear and concise description of purpose the new document. Why it is needed?
+      What gap is it filling? Who is the intended audience? What is the intended
+      scenario being addressed?
+    placeholder: >
+      Try formulating it in user story style. 'As a user I need a document about X so that I
+      can Y.' with X being the problem or scenario and Y being the purpose and/or target audience
+      for the document.
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Proposed title
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Proposed location in the TOC
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: List of related articles to link to
+    description: Provide a list of files that need to be updated.
+    placeholder: Enter the Docs or GitHub URL to the article to be updated.
+  validations:
+    required: false
