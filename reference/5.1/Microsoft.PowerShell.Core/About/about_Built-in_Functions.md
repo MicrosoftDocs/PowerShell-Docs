@@ -2,7 +2,7 @@
 description: Describes the built-in functions in PowerShell.
 Locale: en-US
 ms.date: 11/17/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_built-in_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/about/about_built-in_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Built-in Functions
 ---
@@ -56,7 +56,7 @@ For more information see [about_Prompts](about_Prompts.md).
 ## `Clear-Host`
 
 This function clears the screen. For more information, see
-[Clear-Host](xref:Microsoft.Powershell.Core.Clear-Host.md).
+[Clear-Host](xref:Microsoft.PowerShell.Core.Clear-Host).
 
 ## `TabExpansion2`
 
@@ -65,7 +65,7 @@ This is the default function to use for tab expansion.
 ## `Get-Verb`
 
 This function lists PowerShell verbs and the category group they belong to. For
-more information, see [Get-Verb](xref:Microsoft.Powershell.Core.Get-Verb)
+more information, see [Get-Verb](xref:Microsoft.PowerShell.Core.Get-Verb)
 
 ## `oss`
 

@@ -53,7 +53,7 @@ For more information see [about_Prompts](about_Prompts.md).
 ## `Clear-Host`
 
 This function clears the screen. For more information, see
-[Clear-Host](xref:Microsoft.Powershell.Core.Clear-Host.md).
+[Clear-Host](xref:Microsoft.PowerShell.Core.Clear-Host).
 
 ## `TabExpansion2`
 
