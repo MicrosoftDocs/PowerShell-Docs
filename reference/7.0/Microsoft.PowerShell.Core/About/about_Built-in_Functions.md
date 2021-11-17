@@ -36,7 +36,7 @@ between the command and the destination path. This function runs
 ## `Pause`
 
 This function replicates the behavior of CMD's `pause` command. The script
-pauses execution and waits for the user to hit a key to continue.
+pauses execution and prompts the user to hit a key to continue.
 
 ## `help`
 
@@ -46,16 +46,16 @@ non-Windows systems the pager could be `more` or `less`.
 
 ## `prompt`
 
-This function that creates the default prompt for the PowerShell command line.
-You can customize your prompt by overriding this function with your own. For
-more information see [about_Prompts](about_Prompts.md).
+This is the function that creates the default prompt for the PowerShell command
+line. You can customize your prompt by overriding this function with your own.
+For more information see [about_Prompts](about_Prompts.md).
 
 ## `Clear-Host`
 
 This function clears the screen. For more information, see
-[Clear-Host](../Clear-Host.md).
+[Clear-Host](xref:Microsoft.Powershell.Core.Clear-Host.md).
 
-## `TabExpansion2
+## `TabExpansion2`
 
 This is the default function to use for tab expansion.
 
