@@ -23,6 +23,8 @@ Windows they are supported on. These versions remain supported until either the 
 | &#x2705; macOS Mojave 10.14      | &#x2705;  | &#x2705; |     &#x2705;      |
 | &#x2705; macOS High Sierra 10.13 | &#x2705;  | &#x2705; |     &#x274c;      |
 
+macOS Monterey 12.0 has not been tested.
+
 Support of macOS is defined by Apple. For more information, see:
 
 - [Apple Support Sitemap](https://support.apple.com/sitemap)
