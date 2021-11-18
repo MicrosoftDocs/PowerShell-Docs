@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/03/2019
+ms.date: 11/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-Item
@@ -66,6 +66,8 @@ At line:1 char:12
 + CategoryInfo          : InvalidArgument: (:) [Rename-Item], PS>  Move-Item -Path "project.txt" -De
 stination "d:\archive\old-project.txt"
 ```
+
+Use the `Move-Item` cmdlet, instead.
 
 ### Example 3: Rename a registry key
 
