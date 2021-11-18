@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use functions in PowerShell.
 Locale: en-US
-ms.date: 07/30/2021
+ms.date: 11/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions
@@ -46,6 +46,10 @@ A filter is a special kind of function that uses the `Filter` keyword.
 Functions can also act like cmdlets. You can create a function that works
 just like a cmdlet without using `C#` programming. For more information,
 see [about_Functions_Advanced](about_Functions_Advanced.md).
+
+> [!IMPORTANT]
+> Within script files and script-based modules, functions must be defined
+> before they can be called.
 
 ## Syntax
 
