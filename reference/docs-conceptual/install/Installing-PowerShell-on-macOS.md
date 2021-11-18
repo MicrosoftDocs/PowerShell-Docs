@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 11/08/2021
+ms.date: 11/18/2021
 title: Installing PowerShell on macOS
 ---
 
@@ -138,6 +138,29 @@ following commands. Change the name of the file to match the file you downloaded
 ```sh
 sudo installer -pkg powershell-7.2.0-osx-x64.pkg -target /
 ```
+
+If you are running on macOS Big Sur 11.5 or higher you may receive the following error message
+when installing the package:
+
+> "powershell-7.2.0-osx-x64.pkg" can't be opened because Apple cannot check it for malicious
+> software.
+
+There are two ways to work around this issue:
+
+Using the Finder
+
+1. Find the package in Finder.
+1. Control-click (click while pressing the <kbd>Ctrl</kbd> key) on the package.
+1. Select **Open** from the context menu.
+
+From the command line
+
+1. Run `sudo xattr -rd com.apple.quarantine powershell-7.2.0-osx-x64.pkg`. Include the full path to
+   the `.pkg` file.
+1. Install the package as you normally wou
+
+> [!NOTE]
+> This is a known issue related to package notarization that will be addressed in the future.
 
 Install [OpenSSL](#installing-dependencies). OpenSSL is needed for PowerShell remoting and CIM
 operations.

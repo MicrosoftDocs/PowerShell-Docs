@@ -1,7 +1,7 @@
 ---
 description: Describes the built-in functions in PowerShell.
 Locale: en-US
-ms.date: 11/17/2021
+ms.date: 11/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_built-in_functions?view=powershell-7.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Built-in Functions
@@ -19,19 +19,19 @@ session. These functions are similar to cmdlets but they are not included in
 any module. They are defined in the PowerShell engine itself.
 
 These functions are provided as shorthand helpers for common tasks. In many
-cases, these functions call an existing cmdlet with an additional parameter
+cases, these functions call an existing cmdlet with an additional parameter.
 
 ## `cd..`
 
-In Windows CMD shell it is common to run the `cd` command without any spaces
+In the Windows CMD shell it is common to run the `cd` command without any spaces
 between the command and the destination path. This function runs
-`Set-Location ..`.
+`Set-Location ..` to change to the parent folder.
 
 ## `cd\`
 
-In Windows CMD shell it is common to run the `cd` command without any spaces
+In the Windows CMD shell it is common to run the `cd` command without any spaces
 between the command and the destination path. This function runs
-`Set-Location \`.
+`Set-Location \` to change to the root folder.
 
 ## `Pause`
 
