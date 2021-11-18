@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 09/22/2021
+ms.date: 11/18/2021
 ms.prod: powershell
 ms.topic: include
 ---
@@ -16,7 +16,7 @@ they are supported on. These versions remain supported until either the version 
 - When both the version of the OS and the version of PowerShell have &#x2705;, that combination is
   supported
 
-|   CentOS   | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-preview) |
+|   CentOS   | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-current) |
 | ---------- | :-------: | :-----------: | :---------------: |
 | &#x2705; 8 | &#x2705;  |   &#x2705;    |     &#x2705;      |
 | &#x2705; 7 | &#x2705;  |   &#x2705;    |     &#x2705;      |
@@ -27,7 +27,7 @@ supported. For more information, see [Community supported distributions][communi
 
 PowerShell is supported on CentOS for the following processor architectures.
 
-|         CentOS         | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-preview) |
+|         CentOS         | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-current) |
 | ---------------------- | :-------: | :-----------: | :---------------: |
 | All supported versions |    x64    |      x64      |        x64        |
 

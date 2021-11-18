@@ -63,19 +63,6 @@ For more information about AppLocker and Windows Defender Application Control (W
 [Application Controls for Windows][WDAC] and
 [WDAC and AppLocker feature availability][availability].
 
-### Security Servicing Criteria
-
-PowerShell follows the [Microsoft Security Servicing Criteria for Windows][mssec].
-The table below outlines the features that meet the servicing criteria and those that do not.
-
-|                  Feature                   |       Type       |
-| ------------------------------------------ | ---------------- |
-| System Lockdown - with WDAC                | Security Feature |
-| Constrained language mode - with WDAC      | Security Feature |
-| System Lockdown - with AppLocker           | Defense in Depth |
-| Constrained language mode - with AppLocker | Defense in Depth |
-| Execution Policy                           | Defense in Depth |
-
 ### Changes in PowerShell 7.2
 
 - There was a corner-case scenario in AppLocker where you only have **Deny** rules and constrained
@@ -89,6 +76,19 @@ The table below outlines the features that meet the servicing criteria and those
 - PowerShell 7.2 now disallows scripts from using COM objects in AppLocker system lock down
   conditions. Cmdlet that use COM or DCOM internally are not affected.
 
+### Security Servicing Criteria
+
+PowerShell follows the [Microsoft Security Servicing Criteria for Windows][mssec].
+The table below outlines the features that meet the servicing criteria and those that do not.
+
+|                  Feature                   |       Type       |
+| ------------------------------------------ | ---------------- |
+| System Lockdown - with WDAC                | Security Feature |
+| Constrained language mode - with WDAC      | Security Feature |
+| System Lockdown - with AppLocker           | Defense in Depth |
+| Constrained language mode - with AppLocker | Defense in Depth |
+| Execution Policy                           | Defense in Depth |
+
 ## Software Bill of Materials (SBOM)
 
 Beginning with PowerShell 7.2, all install packages contain a Software Bill of Materials (SBOM). The
@@ -97,7 +97,7 @@ SBOM is the first step to modernize Federal Government cybersecurity and enhance
 chain security.
 
 The PowerShell team is also producing SBOMs for modules that they own but ship separately from
-PowerShell. SBOMs will be added in the next release of the module. For modules, the SBOM is 
+PowerShell. SBOMs will be added in the next release of the module. For modules, the SBOM is
 installed in the module's folder under
 `_manifest/spdx_2.2/manifest.spdx.json`.
 
