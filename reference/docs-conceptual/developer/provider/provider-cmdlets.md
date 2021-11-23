@@ -6,100 +6,260 @@ title: Provider cmdlets
 ---
 # Provider cmdlets
 
-The cmdlets that the user can run to manage a data store are referred to as provider cmdlets. To support these cmdlets, you need to overwrite some of the methods defined by the base provider classes and interfaces.
-
-## Provider Cmdlets
+The cmdlets that the user can run to manage a data store are referred to as provider cmdlets.
+To support these cmdlets, you need to overwrite some of the methods defined by the base provider classes and interfaces.
 
 Here are the provider cmdlets that can be run by the user:
 
-### PSDrive cmdlets
+## PSDrive cmdlets
 
-- `Get-PSDrive`: This cmdlet returns the Windows PowerShell drives in the current session. You do not need to overwrite any methods to support this cmdlet.
+### `Get-PSDrive`
 
-- `New-PSDrive`: This cmdlet allows the user to create Windows PowerShell drives to access the data store. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) and [System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) methods.
+This cmdlet returns the PowerShell drives in the current session.
+You do not need to overwrite any methods to support this cmdlet.
 
-- `Remove-PSDrive`: This cmdlet allows the user to remove Windows PowerShell drives that access the data store. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) method.
+### `New-PSDrive`
 
-### Item cmdlets
+This cmdlet allows the user to create PowerShell drives to access the data store.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class:
 
-- `Clear-Item`: This cmdlet allows the user to remove the value of an item in the data store. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) and [System.Management.Automation.Provider.Itemcmdletprovider.Clearitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters) methods.
+- [Newdrive](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)
+- [NewDriveDynamicParameters](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)
 
-- `Copy-Item`: This cmdlet allows the user to copy an item from one location to another. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Containercmdletprovider.Copyitem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) and [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) methods.
+### `Remove-PSDrive`
 
-- `Get-Item`: This cmdlet allows the user to retrieve data from the data store. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Itemcmdletprovider.Getitem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) and [System.Management.Automation.Provider.Itemcmdletprovider.Getitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) methods.
+This cmdlet allows the user to remove PowerShell drives that access the data store.
+To support this cmdlet, overwrite the [System.Management.Automation.Provider.DriveCmdletProvider.Removedrive](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) method.
 
-- `Get-ChildItem`: This cmdlet allows the user to retrieve the child items of the parent item. To support this cmdlet, overwrite the following methods:
+## Item cmdlets
 
-  - [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)
+### `Clear-Item`
 
-  - [System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)
+This cmdlet allows the user to remove the value of an item in the data store.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.ItemCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) class:
 
-  - [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)
+- [Clearitem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)
+- [ClearItemDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)
 
-  - [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)
+### `Copy-Item`
 
-- `Invoke-Item`: This cmdlet allows the user to perform the default action specified by the item. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) and [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) methods.
+This cmdlet allows the user to copy an item from one location to another.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) class:
 
-- `Move-Item`: This cmdlet allows the user to move an item from one location to another location. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) and [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)s methods.
+- [Copyitem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)
+- [CopyItemDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)
 
-- `New-ItemProperty`: This cmdlet allows the user to create a new item in the data store.
+### `Get-Item`
 
-- `Remove-Item`: This cmdlet allows the user to remove items from the data store. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Containercmdletprovider.Removeitem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) and [System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) methods.
+This cmdlet allows the user to retrieve data from the data store.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.ItemCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) class:
 
-- `Rename-Item`: This cmdlet allows the user to rename items in the data store. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Containercmdletprovider.Renameitem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) and [System.Management.Automation.Provider.Containercmdletprovider.Renameitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters) methods.
+- [Getitem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)
+- [GetItemDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters)
 
-- `Set-Item`: This cmdlet allows the user to update the values of items in the data store. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) and [System.Management.Automation.Provider.Itemcmdletprovider.Setitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters) methods.
+### `Get-ChildItem`
 
-### Item content cmdlets
+This cmdlet allows the user to retrieve the child items of the parent item.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) class:
 
-- `Add-Content`: This cmdlet allows the user to add content to an item.
+- [GetChildItems](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)
+- [GetChildItemsDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)
+- [GetChildNames](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)
+- [GetChildNamesDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)
 
-- `Clear-Content`: This cmdlet allows the user to delete content from an item without deleting the item. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) and [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontentdynamicparameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters) methods.
+### `Invoke-Item`
 
-- `Get-Content`: This cmdlet allows the user to retrieve the content of an item. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) and [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreaderdynamicparameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) methods. The [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) method returns an [System.Management.Automation.Provider.Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader) interface that defines the methods used to read the content.
+This cmdlet allows the user to perform the default action specified by the item.
+To support this cmdlet, overwrite the [System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) method.
 
-- `Set-Content`: This cmdlet allows the user to update the content of an item. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) and [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriterdynamicparameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters) methods. The [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) method returns an [System.Management.Automation.Provider.Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter) interface that defines the methods used to write the content.
+### `Move-Item`
 
-### Item property cmdlets
+This cmdlet allows the user to move an item from one location to another location.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class:
 
-- `Clear-ItemProperty`: This cmdlet allows the user to delete the value of a property. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) and [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) methods.
+- [MoveItem](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)
+- [MoveItemDynamicParameters](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)
 
-- `Copy-ItemProperty`: This cmdlet allows the user to copy a property and its value from one location to another. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Copyproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyProperty) and [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Copypropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyPropertyDynamicParameters) methods.
+### `New-ItemProperty`
 
-- `Get-ItemProperty`: This cmdlet retrieves the properties of an item. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) and [System.Management.Automation.Provider.Ipropertycmdletprovider.Getpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) methods.
+This cmdlet allows the user to create a new item in the data store.
 
-- `Move-ItemProperty`: This cmdlet allows the user to move a property and its value from one location to another. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Moveproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MoveProperty) and [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Movepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MovePropertyDynamicParameters) methods.
+### `Remove-Item`
 
-- `New-ItemProperty`: This cmdlet allows the user to create a new property and set its value. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewProperty) and [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters) methods.
+This cmdlet allows the user to remove items from the data store.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) class:
 
-- `Remove-ItemProperty`: This cmdlet allows the user to delete a property and its value. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Removeproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty) and [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Removepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters) methods.
+- [RemoveItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)
+- [RemoveItemDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)
 
-- `Rename-ItemProperty`: This cmdlet allows the user to change the name of a property. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Renameproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty) and [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Renamepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters) methods.
+### `Rename-Item`
 
-- `Set-ItemProperty`: This cmdlet allows the user to update the properties of an item. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) and [System.Management.Automation.Provider.Ipropertycmdletprovider.Setpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters) methods.
+This cmdlet allows the user to rename items in the data store.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) class:
 
-### Location cmdlets
+- [RenameItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)
+- [RenameItemDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters)
 
-- `Get-Location`: Retrieves information about the current working location. You do not need to overwrite any methods to support this cmdlet.
+### `Set-Item`
 
-- `Pop-Location`: This cmdlet changes the current location to the location most recently pushed onto the stack. You do not need to overwrite any methods to support this cmdlet.
+This cmdlet allows the user to update the values of items in the data store.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.ItemCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) class:
 
-- `Push-Location`: This cmdlet adds the current location to the top of a list of locations (a "stack"). You do not need to overwrite any methods to support this cmdlet.
+- [SetItem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)
+- [SetItemDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)
 
-- `Set-Location`: This cmdlet sets the current working location to a specified location. You do not need to overwrite any methods to support this cmdlet.
+## Item content cmdlets
 
-### Path cmdlets
+### `Add-Content`
 
-- `Join-Path`: This cmdlet allows the user to combine a parent and child path segment to create a provider-internal path. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method.
+This cmdlet allows the user to add content to an item.
 
-- `Convert-Path`: This cmdlet converts a path from a Windows PowerShell path to a Windows PowerShell provider path.
+### `Clear-Content`
 
-- `Split-Path`: Returns the specified part of a path.
+This cmdlet allows the user to delete content from an item without deleting the item.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.IContentCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) interface:
 
-- `Resolve-Path`: Resolves the wildcard characters in a path, and displays the path contents.
+- [ClearContent](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)
+- [ClearContentDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)
 
-- `Test-Path`: This cmdlet determines whether all elements of a path exist. To support this cmdlet, overwrite the [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) and [System.Management.Automation.Provider.Itemcmdletprovider.Itemexistsdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters) methods.
+### `Get-Content`
 
-### PSProvider cmdlets
+This cmdlet allows the user to retrieve the content of an item.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.IContentCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) interface:
 
-- `Get-PSProvider`: This cmdlet returns information about the providers available in the session. You do not need to overwrite any methods to support this cmdlet.
+- [GetContentReader](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)
+- [GetContentReaderDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)
+
+The [GetContentReader](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) method returns an [System.Management.Automation.Provider.IContentReader](/dotnet/api/System.Management.Automation.Provider.IContentReader) interface that defines the methods used to read the content.
+
+### `Set-Content`
+
+This cmdlet allows the user to update the content of an item.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.IContentCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) interface:
+
+- [GetContentWriter](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)
+- [GetContentWriterDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters)
+
+The [GetContentWriter](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) method returns an [System.Management.Automation.Provider.IContentWriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter) interface that defines the methods used to write the content.
+
+## Item property cmdlets
+
+### `Clear-ItemProperty`
+
+This cmdlet allows the user to delete the value of a property.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface:
+
+- [ClearProperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)
+- [ClearPropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters)
+
+### `Copy-ItemProperty`
+
+This cmdlet allows the user to copy a property and its value from one location to another.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) interface:
+
+- [CopyProperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyProperty)
+- [CopyPropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyPropertyDynamicParameters)
+
+### `Get-ItemProperty`
+
+This cmdlet retrieves the properties of an item.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface:
+
+- [GetProperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)
+- [GetPropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)
+
+### `Move-ItemProperty`
+
+This cmdlet allows the user to move a property and its value from one location to another.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) interface:
+
+- [MoveProperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MoveProperty)
+- [MovePropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MovePropertyDynamicParameters)
+
+### `New-ItemProperty`
+
+This cmdlet allows the user to create a new property and set its value.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) interface:
+
+- [NewProperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewProperty)
+- [NewPropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)
+
+### `Remove-ItemProperty`
+
+This cmdlet allows the user to delete a property and its value.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) interface:
+
+- [RemoveProperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)
+- [RemovePropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters)
+
+### `Rename-ItemProperty`
+
+This cmdlet allows the user to change the name of a property.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) interface:
+
+- [RenameProperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty)
+- [RenamePropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters)
+
+### `Set-ItemProperty`
+
+This cmdlet allows the user to update the properties of an item.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface:
+
+- [SetProperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)
+- [SetPropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters)
+
+## Location cmdlets
+
+### `Get-Location`
+
+Retrieves information about the current working location.
+You do not need to overwrite any methods to support this cmdlet.
+
+### `Pop-Location`
+
+This cmdlet changes the current location to the location most recently pushed onto the stack.
+You do not need to overwrite any methods to support this cmdlet.
+
+### `Push-Location`
+
+This cmdlet adds the current location to the top of a list of locations (a "stack").
+You do not need to overwrite any methods to support this cmdlet.
+
+### `Set-Location`
+
+This cmdlet sets the current working location to a specified location.
+You do not need to overwrite any methods to support this cmdlet.
+
+## Path cmdlets
+
+### `Join-Path`
+
+This cmdlet allows the user to combine a parent and child path segment to create a provider-internal path.
+To support this cmdlet, overwrite the [System.Management.Automation.Provider.NavigationCmdletProvider.MakePath](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method.
+
+### `Convert-Path`
+
+This cmdlet converts a path from a PowerShell path to a PowerShell provider path.
+
+### `Split-Path`
+
+Returns the specified part of a path.
+
+### `Resolve-Path`
+
+Resolves the wildcard characters in a path, and displays the path contents.
+
+### `Test-Path`
+
+This cmdlet determines whether all elements of a path exist.
+To support this cmdlet, overwrite the following methods of [System.Management.Automation.Provider.ItemCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) class:
+
+- [ItemExists](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)
+- [ItemExistsDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters)
+
+## PSProvider cmdlets
+
+### `Get-PSProvider`
+
+This cmdlet returns information about the providers available in the session.
+You do not need to overwrite any methods to support this cmdlet.
