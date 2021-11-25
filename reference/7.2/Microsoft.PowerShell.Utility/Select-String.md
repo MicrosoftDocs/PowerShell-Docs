@@ -362,7 +362,7 @@ Name                           foo
 Category                       bar
 
 # Out-String -Stream converts the output to a multiple single-line string objects
-PS> $hash | Out-String -Steam | Select-String -Pattern 'foo'
+PS> $hash | Out-String -Stream | Select-String -Pattern 'foo'
 
 Name                           foo
 ```
