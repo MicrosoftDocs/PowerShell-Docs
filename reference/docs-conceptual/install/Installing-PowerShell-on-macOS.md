@@ -60,7 +60,7 @@ brew upgrade powershell --cask
 > but then the PowerShell shell must be exited and restarted to complete the upgrade
 > and refresh the values shown in `$PSVersionTable`.
 
-If you are running PowerShell as your login shell, note that you will need to update your [$PROFILE](/powershell/module/microsoft.powershell.core/about/about_profiles) and let Homebrew update your environment variables. Otherwise, Homebrew and the software installed with it will not work. This can be achieved by adding the following line to `~/.config/powershell/profile.ps1`:
+If you are running PowerShell as your login shell, note that you will need to update your [$PROFILE](/powershell/module/microsoft.powershell.core/about/about_profiles) and let Homebrew adjust your environment variables. Otherwise, Homebrew and the software installed with it will not work. This can be achieved by adding the following line to `~/.config/powershell/profile.ps1`:
 
   ```powershell
   $(if (Test-Path -PathType Leaf /opt/homebrew/bin/brew) {/opt/homebrew/bin/brew shellenv} elseif (Test-Path -PathType Leaf /usr/local/bin/brew) {/usr/local/bin/brew shellenv}) | Invoke-Expression -ErrorAction SilentlyContinue
