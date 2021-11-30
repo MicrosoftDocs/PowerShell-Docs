@@ -267,7 +267,7 @@ To set up `pwsh` as the login shell on UNIX-like operating systems:
   ```sh
   chsh -s /usr/bin/pwsh
   ```
-- If you are using Homebrew on Linux or macOS, you will need to update your [$PROFILE](/powershell/module/microsoft.powershell.core/about/about_profiles) and let Homebrew update your environment variables. Depending on your environment, this could be achieved by adding the following code to `~/.config/powershell/profile.ps1`:
+- If you are using Homebrew on Linux or macOS, you will need to update your [$PROFILE](/powershell/module/microsoft.powershell.core/about/about_profiles) and let Homebrew adjust your environment variables. Depending on your environment, this could be achieved by adding the following code to `~/.config/powershell/profile.ps1`:
 
   ```powershell
   $(
