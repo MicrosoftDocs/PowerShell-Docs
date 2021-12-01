@@ -333,7 +333,7 @@ parameter to delete the private key along with the certificate.
 
 ```powershell
 $expired = Get-ChildItem cert:\LocalMachine\WebHosting -ExpiringInDays 0
-$expired | Remove-Item -DeleteKey
+$expired | Remove-Item.PSpath -DeleteKey
 ```
 
 ## Creating Certificates
