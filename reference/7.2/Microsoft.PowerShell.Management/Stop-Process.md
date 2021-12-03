@@ -17,19 +17,21 @@ Stops one or more running processes.
 ### Id (Default)
 
 ```
-Stop-Process [-Id] <Int32[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Process [-Id] <Int32[]> [-PassThru] [-Force] [-IncludeChildProcess] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Name
 
 ```
-Stop-Process -Name <String[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Process -Name <String[]> [-PassThru] [-Force] [-IncludeChildProcess] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
-Stop-Process [-InputObject] <Process[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Process [-InputObject] <Process[]> [-PassThru] [-Force] [-IncludeChildProcess] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## Description
@@ -145,6 +147,13 @@ PowerShell prompts you for confirmation.
 The second command specifies **Force** to suppress the prompt. As a result, the process is stopped
 without confirmation.
 
+### Example 5: Stop a process and all child processes
+```powershell
+PS> Get-Process -Name "cmd.exe" | Stop-Process -IncludeChildProcess
+```
+
+The first command uses `Get-Process` to get all `cmd.exe` processes. A pipeline operator sends the process to `Stop-Process` to stop it and any child processes attached to them.
+
 ## Parameters
 
 ### -Force
@@ -181,6 +190,21 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -IncludeChildProcess
+Specifies whether to stop the child processes, if any exist, in addition to the specified process. Child processes stopped with this parameter will not be included in `-PassThru` output. If used to stop the host process, this parameter will have no effect.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: Recurse
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
