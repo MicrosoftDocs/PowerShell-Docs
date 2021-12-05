@@ -1,33 +1,30 @@
 # PR Summary
-<!-- Summarize your changes and list related issues here -->
-
-## PR Context
 <!--
-There is a numbered folder for each version of the PowerShell cmdlet content.
-Changes to cmdlet reference should be made to all versions where applicable.
-The /docs-conceptual folder tree does not have version folders.
+    Summarize your changes and list related issues here. For example:
+
+    This changes fixes problem X in the documentation for Y.
+    - Fixes #1234
+    - Fixes #1235
 -->
 
-Select the area of the Table of Contents containing the documents being changed.
+## PR Context
 
-**Conceptual content**
-- [ ] Overview and Install
-- [ ] Learning PowerShell
-  - [ ] PowerShell 101
-  - [ ] Deep dives
-  - [ ] Sample scripts
-  - [ ] Remoting
-- [ ] Release notes (What's New)
-- [ ] Windows PowerShell
-  - WMF, ISE, release notes, etc.
-- [ ] DSC articles
-- [ ] Community resources
-- [ ] Gallery articles
-- [ ] Scripting and development
-  - [ ] Language Spec
-  - [ ] Legacy SDK
+Check the boxes below to indicate the content affected by this PR.
+
+<!-- To mark a checkbox, use [x]. -->
+
+**Repository or docset configuration**
+- [ ] Repo documentation and configuration (.git/.github/.vscode etc.)
+- [ ] Docs build files (.openpublishing.* and build scripts)
+- [ ] Docset configuration (docfx.json, mapping, bread, module folder)
+
+**Conceptual documentation**
+- [ ] Files in docs-conceptual
 
 **Cmdlet reference & about_ topics**
+When changing **cmdlet reference** or **about_ topics**, the changes should be copied to all
+relevant versions. Check the boxes below to indicate the versions affected by this change.
+
 - [ ] Preview content
 - [ ] Version 7.2 content
 - [ ] Version 7.1 content
@@ -41,9 +38,9 @@ Select the area of the Table of Contents containing the documents being changed.
 - [ ] PR is targeted at the _staging_ branch
 - [ ] All relevant versions updated
 - [ ] Includes content related to issues and PRs - see [Closing issues using keywords][key].
-- [ ] This PR is ready to merge and is not **Work in Progress**
-  - If the PR is work in progress, please add the prefix `WIP:` or `[WIP]` to the beginning of the
-    title and remove the prefix when the PR is ready.
+- [ ] This PR is ready to merge and is not **Work in Progress**. If the PR is work in progress,
+  please add the prefix `WIP:` or `[WIP]` to the beginning of the title and remove the prefix when
+  the PR is ready.
 
 [contrib]: https://docs.microsoft.com/powershell/scripting/community/contributing/overview
 [key]: https://help.github.com/en/articles/closing-issues-using-keywords
