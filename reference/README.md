@@ -1,6 +1,6 @@
 ---
 locale: en-us
-ms.date: 11/06/2017
+ms.date: 12/06/2021
 schema: 2.0.0
 title: README
 ---
@@ -29,7 +29,7 @@ Over time, namespaces appeared as:
 | Microsoft.WsMan.Management                |   X   |   X   |   X   |   X   |
 | PackageManagement                         |   X   |   X   |   X   |   X   |
 | PowershellGet                             |   X   |   X   |   X   |   X   |
-| PSDesiredStateConfiguration               |   X   |   X   |   X   |   X   |
+| PSDesiredStateConfiguration               |   X   |   X   |   X   |       |
 | PSDiagnostics                             |   X   |   X   |   X   |   X   |
 | PSReadLine                                |   X   |   X   |   X   |   X   |
 | PSScheduledJob                            |   X   |       |       |       |
