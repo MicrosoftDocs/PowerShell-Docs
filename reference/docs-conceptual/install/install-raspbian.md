@@ -31,6 +31,11 @@ links to the current versions are:
 - PowerShell 7.1.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-linux-arm32.tar.gz`
 - PowerShell 7.0.8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-7.0.8-linux-arm32.tar.gz`
 
+> NOTE: If running Raspberry Pi OS x64 you need to download packages built for x64 instead:
+> - PowerShell 7.2.0 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-7.2.0-linux-arm64.tar.gz`
+> - PowerShell 7.1.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-linux-arm64.tar.gz`
+> - PowerShell 7.0.8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-7.0.8-linux-arm64.tar.gz`
+
 Use the following shell commands to download and install the package. Change the URL to match the
 PowerShell version that you want to install.
 
