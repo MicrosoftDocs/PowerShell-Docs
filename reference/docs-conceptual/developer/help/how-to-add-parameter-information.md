@@ -1,6 +1,6 @@
 ---
 description: How to Add Parameter Information
-ms.date: 09/12/2016
+ms.date: 12/08/2021
 ms.topic: reference
 title: How to Add Parameter Information
 ---
@@ -21,18 +21,19 @@ section of the Help topic. It is the responsibility of the Help author to make s
 
 ### To Add Parameters
 
-1. Open the cmdlet Help file and locate the Command node for the cmdlet you are documenting. If you
-   are adding a new cmdlet you will need to create a new Command node. Your Help file will contain a
-   Command node for each cmdlet that you are providing Help content for. Here is an example of a
-   blank Command node.
+1. Open the cmdlet Help file and locate the **Command** node for the cmdlet you are documenting. If
+   you are adding a new cmdlet you will need to create a new **Command** node. Your Help file will
+   contain a **Command** node for each cmdlet that you are providing Help content for. Here is an
+   example of a blank **Command** node.
 
     ```xml
     <command:command>
     </command:command>
     ```
 
-1. Within the Command node, locate the Description node and add a Parameters node as shown below.
-   Only one Parameters node is allowed, and it should immediately follow the Syntax node.
+1. Within the **Command** node, locate the **Description** node and add a **Parameters** node as
+   shown below. Only one **Parameters** node is allowed, and it should immediately follow the
+   **Syntax** node.
 
     ```xml
     <command:command>
@@ -40,11 +41,12 @@ section of the Help topic. It is the responsibility of the Help author to make s
       <maml:description></maml:description>
       <command:syntax></command:syntax>
       <command:parameters>
-      </command:Parameters>
+      </command:parameters>
     </command:command>
     ```
 
-1. Within the Parameters node, add a **Parameter** node for each parameter of the cmdlet as shown below.
+1. Within the Parameters node, add a **Parameter** node for each parameter of the cmdlet as shown
+   below.
 
    In this example, a **Parameter** node is added for three parameters.
 
@@ -53,18 +55,18 @@ section of the Help topic. It is the responsibility of the Help author to make s
       <command:parameter></command:parameter>
       <command:parameter></command:parameter>
       <command:parameter></command:parameter>
-    </command:Parameters>
+    </command:parameters>
     ```
 
-   Because these are the same XML tags that are used in the Syntax node, and because the parameters
-   specified here must match the parameters specified by the Syntax node, you can copy the Parameter
-   nodes from the Syntax node and paste them into the Parameters node. However, be sure to copy only
-   one instance of a Parameter node, even if the parameter is specified in multiple parameter sets
-   in the syntax.
+   Because these are the same XML tags that are used in the **Syntax** node, and because the
+   parameters specified here must match the parameters specified by the **Syntax** node, you can
+   copy the **Parameter** nodes from the **Syntax** node and paste them into the **Parameters**
+   node. However, be sure to copy only one instance of a **Parameter** node, even if the parameter
+   is specified in multiple parameter sets in the syntax.
 
 1. For each Parameter node, set the attribute values that define the characteristics of each
-   parameter. These attributes include the following: required, globbing, pipelineinput, and
-   position.
+   parameter. These attributes include the following: required, **globbing**, **pipelineinput**, and
+   **position**.
 
     ```xml
     <command:parameters>
@@ -76,11 +78,11 @@ section of the Help topic. It is the responsibility of the Help author to make s
       </command:parameter>
       <command:parameter required="false" globbing="false"
                pipelineInput="false" position="named" ></command:parameter>
-    </command:Parameters>
+    </command:parameters>
     ```
 
-1. For each Parameter node, add the name of the parameter. Here is an example of the parameter name
-   added to the Parameter node.
+1. For each **Parameter** node, add the name of the parameter. Here is an example of the parameter
+   name added to the **Parameter** node.
 
     ```xml
     <command:parameters>
@@ -88,7 +90,7 @@ section of the Help topic. It is the responsibility of the Help author to make s
                pipelineInput="false" position="named">
         <maml:name> Add parameter name...  </maml:name>
       </command:parameter>
-    </command:Parameters>
+    </command:parameters>
     ```
 
 1. For each **Parameter** node, add the description of the parameter. Here is an example of the
@@ -124,8 +126,9 @@ section of the Help topic. It is the responsibility of the Help author to make s
     </command:parameters>
     ```
 
-1. For each **Parameter** node, add the default value of the parameter. The following sentence is added
-   to the parameter description when the content is displayed: **DefaultValue** is the default.
+1. For each **Parameter** node, add the default value of the parameter. The following sentence is
+   added to the parameter description when the content is displayed: **DefaultValue** is the
+   default.
 
    Here is an example of the parameter default value is added to the **Parameter** node.
 
@@ -143,39 +146,39 @@ section of the Help topic. It is the responsibility of the Help author to make s
     </command:parameters>
     ```
 
-1. For each Parameter that has multiple values, add a possible values node.
+1. For each Parameter that has multiple values, add a **possibleValues** node.
 
-   Here is an example of the of a possible values node that defines two possible values for the
+   Here is an example of the of a **possibleValues** node that defines two possible values for the
    parameter
 
     ```xml
-    <dev:possiblevalues>
-      <dev:possiblevalue>
+    <dev:possibleValues>
+      <dev:possibleValue>
         <dev:value>Unknown</dev:value>
         <maml:description>
           <maml:para></maml:para>
         </maml:description>
-      </dev:possiblevalue>
-      <dev:possiblevalue>
+      </dev:possibleValue>
+      <dev:possibleValue>
         <dev:value>String</dev:value>
         <maml:description>
           <maml:para></maml:para>
         </maml:description>
       </dev:possibleValue>
-    </dev:possiblevalues>
+    </dev:possibleValues>
     ```
 
 Here are some things to remember when adding parameters.
 
 - The attributes of the parameter are not displayed in all views of the cmdlet Help topic. However,
   they are displayed in a table following the parameter description when the user asks for the
-  **Full** (`Get-Help <cmdletname> -full`) or **Parameter** (`Get-Help <cmdletname> -parameter`)
+  **Full** (`Get-Help <cmdletname> -Full`) or **Parameter** (`Get-Help <cmdletname> -Parameter`)
   view of the topic.
 
 - The parameter description is one of the most important parts of a cmdlet Help topic. The
   description should be brief, as well as thorough. Also, remember that if the parameter description
   becomes too long, such as when two parameters interact with each other, you can add more content
-  in the NOTES section of the cmdlet Help topic.
+  in the **NOTES** section of the cmdlet Help topic.
 
   The parameter description provides two types of information.
 
@@ -202,8 +205,8 @@ the entry.
 
 The default value of the parameter is not displayed in all views of the cmdlet Help topic. However,
 it is displayed in a table (along with the parameter attributes) following the parameter description
-when the user asks for the **Full** (`Get-Help <cmdletname> -full`) or **Parameter** (`Get-Help
-<cmdletname> -parameter`) view of the topic.
+when the user asks for the **Full** (`Get-Help <cmdletname> -Full`) or **Parameter**
+(`Get-Help <cmdletname> -Parameter`) view of the topic.
 
 The following XML shows a pair of `<dev:defaultValue>` tags added to the `<command:parameter>` node.
 Notice that the default value follows immediately after the closing `</command:parameterValue>` tag
@@ -229,7 +232,7 @@ description. name.
 Add Values for Enumerated Types
 
 If the parameter has multiple values or values of an enumerated type, you can use an optional
-\<dev:possibleValues> node. This node allows you to specify a name and description for multiple
+`<dev:possibleValues>` node. This node allows you to specify a name and description for multiple
 values.
 
 Be aware that the descriptions of the enumerated values do not appear in any of the default Help
