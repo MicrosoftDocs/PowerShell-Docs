@@ -12,7 +12,7 @@ ms.manager: sewhee
 ms.product: powershell
 ms.topic: landing-page
 quickFilterColumn1: powershell-7.1,windowsserver2019-ps
-quickFilterColumn2: azps-6.6.0,win-mdop2-ps
+quickFilterColumn2: azps-7.0.0,win-mdop2-ps
 quickFilterColumn3: sqlserver-ps,systemcenter-ps-2019
 title: PowerShell Module Browser
 ---
