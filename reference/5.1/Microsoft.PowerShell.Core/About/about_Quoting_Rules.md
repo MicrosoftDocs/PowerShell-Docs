@@ -1,7 +1,7 @@
 ---
 description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 10/21/2021
+ms.date: 12/09/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Quoting Rules
@@ -332,6 +332,11 @@ xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
 Here-strings are also a convenient format for input to the
 `ConvertFrom-StringData` cmdlet, which converts here-strings to hash tables.
 For more information, see `ConvertFrom-StringData`.
+
+> [!NOTE]
+> PowerShell allows double- or single-quoted strings to span multiple lines
+> without using the `@` syntax of here-strings. However, full here-string
+> syntax is the preferred usage.
 
 ## Interpretation of expandable strings
 
