@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/11/2021
+ms.date: 12/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Path
@@ -34,9 +34,9 @@ Test-Path -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exc
 
 The `Test-Path` cmdlet determines whether all elements of the path exist. It returns `$True` if all
 elements exist and `$False` if any are missing. It can also tell whether the path syntax is valid
-and whether the path leads to a container or a terminal or leaf element. If the `Path` is whitespace
-an empty string, then `$False` is returned. If the `Path` is `$null`, array of `$null` or empty
-array, a non-terminating error is returned.
+and whether the path leads to a container or a terminal or leaf element. If the **Path** is a
+whitespace or empty string, then `$False` is returned. If the **Path** is `$null`, array of `$null`
+or empty array, a non-terminating error is returned.
 
 ## Examples
 
@@ -50,9 +50,9 @@ Test-Path -Path "C:\Documents and Settings\DavidC"
 True
 ```
 
-This command checks whether all elements in the path exist, that is, the C: directory, the Documents
-and Settings directory, and the DavidC directory. If any are missing, the cmdlet returns `$False`.
-Otherwise, it returns `$True`.
+This command checks whether all elements in the path exist, that is, the `C:` directory, the
+`Documents and Settings` directory, and the `DavidC` directory. If any are missing, the cmdlet
+returns `$False`. Otherwise, it returns `$True`.
 
 ### Example 2: Test the path of a profile
 
@@ -183,9 +183,9 @@ At line:1 char:11
 
 ### Example 8: Test a path with whitespace as the value
 
-When a whitespace string is provided for the the `-Path` parameter, it returns **True**. When an
-empty string is provided, `Test-Path` returns an error. The following example shows whitespace and
-empty string.
+When a whitespace string is provided for the the **Path** parameter, it returns **False**. This is a
+change from Windows PowerShell 5.1. When an empty string is provided, `Test-Path` returns an error.
+The following example shows whitespace and empty string.
 
 ```powershell
 Test-Path ' '
@@ -203,7 +203,8 @@ False
 
 > [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell. To impersonate another
-> user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
+> user, or elevate your credentials when running this cmdlet, use
+> [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
