@@ -178,657 +178,612 @@
     {
       "source_path": "reference/7.1/PSDesiredStateConfiguration/About/about_Classes_and_DSC.md",
       "redirect_url": "/powershell/module/PSDesiredStateConfiguration/About/about_Classes_and_DSC?view=dsc-2.0",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/7.1/PSDesiredStateConfiguration/Get-DscResource.md",
       "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Get-DscResource?view=dsc-2.0",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/7.1/PSDesiredStateConfiguration/Invoke-DscResource.md",
       "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource?view=dsc-2.0",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/7.1/PSDesiredStateConfiguration/New-DSCCheckSum.md",
       "redirect_url": "/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum?view=dsc-2.0",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/7.1/PSDesiredStateConfiguration/PSDesiredStateConfiguration.md",
       "redirect_url": "/powershell/module/PSDesiredStateConfiguration/PSDesiredStateConfiguration?view=dsc-2.0",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/add-parameters-to-a-configuration.md",
       "redirect_url": "/powershell/dsc/configurations/add-parameters-to-a-configuration",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/compositeConfigs.md",
       "redirect_url": "/powershell/dsc/configurations/compositeConfigs",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/configData.md",
       "redirect_url": "/powershell/dsc/configurations/configData",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/configDataCredentials.md",
       "redirect_url": "/powershell/dsc/configurations/configDataCredentials",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/configHelp.md",
       "redirect_url": "/powershell/dsc/configurations/configHelp",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/configurations.md",
       "redirect_url": "/powershell/dsc/configurations/configurations",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/crossNodeDependencies.md",
       "redirect_url": "/powershell/dsc/configurations/crossNodeDependencies",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/flow-control-in-configurations.md",
       "redirect_url": "/powershell/dsc/configurations/flow-control-in-configurations",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/import-dscresource.md",
       "redirect_url": "/powershell/dsc/configurations/import-dscresource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/install-additional-dsc-resources.md",
       "redirect_url": "/powershell/dsc/configurations/install-additional-dsc-resources",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/media/import-dscresource/multiple-resource-versions-broken.png",
       "redirect_url": "/powershell/dsc/configurations/media/import-dscresource/multiple-resource-versions-broken.png",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/media/import-dscresource/multiple-resource-versions-fixed.png",
       "redirect_url": "/powershell/dsc/configurations/media/import-dscresource/multiple-resource-versions-fixed.png",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/media/import-dscresource/resource-intellisense.png",
       "redirect_url": "/powershell/dsc/configurations/media/import-dscresource/resource-intellisense.png",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/reboot-a-node.md",
       "redirect_url": "/powershell/dsc/configurations/reboot-a-node",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/resource-depends-on.md",
       "redirect_url": "/powershell/dsc/configurations/resource-depends-on",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/runAsUser.md",
       "redirect_url": "/powershell/dsc/configurations/runAsUser",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/separatingEnvData.md",
       "redirect_url": "/powershell/dsc/configurations/separatingEnvData",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/sxsResource.md",
       "redirect_url": "/powershell/dsc/configurations/sxsResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/configurations/write-compile-apply-configuration.md",
       "redirect_url": "/powershell/dsc/configurations/write-compile-apply-configuration",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/further-reading/whitepapers.md",
       "redirect_url": "/powershell/dsc/further-reading/whitepapers",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/getting-started/lnxGettingStarted.md",
       "redirect_url": "/powershell/dsc/getting-started/lnxGettingStarted",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/getting-started/nanoDsc.md",
       "redirect_url": "/powershell/dsc/getting-started/nanoDsc",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/getting-started/winGettingStarted.md",
       "redirect_url": "/powershell/dsc/getting-started/winGettingStarted",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/managing-nodes/apply-get-test.md",
       "redirect_url": "/powershell/dsc/managing-nodes/apply-get-test",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/managing-nodes/directCallResource.md",
       "redirect_url": "/powershell/dsc/managing-nodes/directCallResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/managing-nodes/metaConfig.md",
       "redirect_url": "/powershell/dsc/managing-nodes/metaConfig",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/managing-nodes/metaConfig4.md",
       "redirect_url": "/powershell/dsc/managing-nodes/metaConfig4",
-      "redirect_document_id": "false"
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/overview.md",
-      "redirect_url": "/powershell/dsc/overview/overview",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/overview/DscForEngineers.md",
       "redirect_url": "/powershell/dsc/overview/DscForEngineers",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/overview/authoringAdvanced.md",
       "redirect_url": "/powershell/dsc/overview/authoringAdvanced",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/overview/decisionMaker.md",
       "redirect_url": "/powershell/dsc/overview/decisionMaker",
-      "redirect_document_id": "false"
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/overview/media/authoringAdvanced/CompositeResource.jpg",
-      "redirect_url": "/powershell/dsc/overview/media/authoringAdvanced/CompositeResource.jpg",
-      "redirect_document_id": "false"
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/overview/media/authoringAdvanced/PartialConfiguration.jpg",
-      "redirect_url": "/powershell/dsc/overview/media/authoringAdvanced/PartialConfiguration.jpg",
-      "redirect_document_id": "false"
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/overview/media/authoringAdvanced/PartialSinglePipeline.jpg",
-      "redirect_url": "/powershell/dsc/overview/media/authoringAdvanced/PartialSinglePipeline.jpg",
-      "redirect_document_id": "false"
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/overview/media/authoringAdvanced/Pipeline.jpg",
-      "redirect_url": "/powershell/dsc/overview/media/authoringAdvanced/Pipeline.jpg",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/overview/overview.md",
       "redirect_url": "/powershell/dsc/overview/overview",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/enactingConfigurations.md",
       "redirect_url": "/powershell/dsc/pull-server/enactingConfigurations",
-      "redirect_document_id": "false"
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/pull-server/media/enactingConfigurations/pullModel.png",
-      "redirect_url": "/powershell/dsc/pull-server/media/enactingConfigurations/pullModel.png",
-      "redirect_document_id": "false"
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/pull-server/media/enactingConfigurations/pushModel.png",
-      "redirect_url": "/powershell/dsc/pull-server/media/enactingConfigurations/pushModel.png",
-      "redirect_document_id": "false"
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/pull-server/media/package-upload-resources/right-click.gif",
-      "redirect_url": "/powershell/dsc/pull-server/media/package-upload-resources/right-click.gif",
-      "redirect_document_id": "false"
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/pull-server/media/secureMOF/CredentialEncryptionDiagram1.png",
-      "redirect_url": "/powershell/dsc/pull-server/media/secureMOF/CredentialEncryptionDiagram1.png",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/package-upload-resources.md",
       "redirect_url": "/powershell/dsc/pull-server/package-upload-resources",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/partialConfigs.md",
       "redirect_url": "/powershell/dsc/pull-server/partialConfigs",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/publishConfigs.md",
       "redirect_url": "/powershell/dsc/pull-server/publishConfigs",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/pullClient.md",
       "redirect_url": "/powershell/dsc/pull-server/pullClient",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/pullClientConfigID.md",
       "redirect_url": "/powershell/dsc/pull-server/pullClientConfigID",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/pullClientConfigID4.md",
       "redirect_url": "/powershell/dsc/pull-server/pullClientConfigID4",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/pullClientConfigNames.md",
       "redirect_url": "/powershell/dsc/pull-server/pullClientConfigNames",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/pullServer.md",
       "redirect_url": "/powershell/dsc/pull-server/pullServer",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/pullServerSMB.md",
       "redirect_url": "/powershell/dsc/pull-server/pullServerSMB",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/reportServer.md",
       "redirect_url": "/powershell/dsc/pull-server/reportServer",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/secureMOF.md",
       "redirect_url": "/powershell/dsc/pull-server/secureMOF",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/secureServer.md",
       "redirect_url": "/powershell/dsc/pull-server/secureServer",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/pull-server/update-nodes-manually.md",
       "redirect_url": "/powershell/dsc/pull-server/update-nodes-manually",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/quickstarts/gpo-quickstart.md",
       "redirect_url": "/powershell/dsc/quickstarts/gpo-quickstart",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/quickstarts/website-quickstart.md",
       "redirect_url": "/powershell/dsc/quickstarts/website-quickstart",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-rollback",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager.md",
       "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/linux/lnxArchiveResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/linux/lnxArchiveResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/linux/lnxEnvironmentResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/linux/lnxEnvironmentResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/linux/lnxFileLineResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/linux/lnxFileLineResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/linux/lnxFileResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/linux/lnxFileResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/linux/lnxGroupResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/linux/lnxGroupResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/linux/lnxPackageResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/linux/lnxPackageResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/linux/lnxScriptResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/linux/lnxScriptResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/linux/lnxServiceResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/linux/lnxServiceResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/linux/lnxSshAuthorizedKeysResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/linux/lnxSshAuthorizedKeysResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/linux/lnxUserResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/linux/lnxUserResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/packagemanagement/PackageManagementDscResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/packagemanagement/PackageManagementDscResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/packagemanagement/PackageManagementSourceDscResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/packagemanagement/PackageManagementSourceDscResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/archiveResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/archiveResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/environmentResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/environmentResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/fileResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/fileResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/groupResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/groupResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/groupSetResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/groupSetResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/logResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/logResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/packageResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/packageResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/processSetResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/processSetResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/registryResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/registryResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/scriptResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/scriptResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/serviceResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/serviceResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/serviceSetResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/serviceSetResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/userResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/userResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/waitForAllResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/waitForAllResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/waitForAnyResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/waitForAnyResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/waitForSomeResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/waitForSomeResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/windowsFeatureSetResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/windowsFeatureSetResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/windowsOptionalFeatureResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/windowsOptionalFeatureResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/windowsOptionalFeatureSetResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/windowsOptionalFeatureSetResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/windowsPackageCabResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/windowsPackageCabResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/windowsProcessResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/windowsProcessResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/reference/resources/windows/windowsfeatureResource.md",
       "redirect_url": "/powershell/dsc/reference/resources/windows/windowsfeatureResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/resources/authoringResource.md",
       "redirect_url": "/powershell/dsc/resources/authoringResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/resources/authoringResourceClass.md",
       "redirect_url": "/powershell/dsc/resources/authoringResourceClass",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/resources/authoringResourceComposite.md",
       "redirect_url": "/powershell/dsc/resources/authoringResourceComposite",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/resources/authoringResourceMOF.md",
       "redirect_url": "/powershell/dsc/resources/authoringResourceMOF",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/resources/authoringResourceMofCS.md",
       "redirect_url": "/powershell/dsc/resources/authoringResourceMofCS",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/resources/authoringResourceMofDesigner.md",
       "redirect_url": "/powershell/dsc/resources/authoringResourceMofDesigner",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/resources/get-test-set.md",
       "redirect_url": "/powershell/dsc/resources/get-test-set",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/resources/media/get-test-set/get-test-set.png",
       "redirect_url": "/powershell/dsc/resources/media/get-test-set/get-test-set.png",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/resources/media/resources/resource-tabcompletion.png",
       "redirect_url": "/powershell/dsc/resources/media/resources/resource-tabcompletion.png",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/resources/resourceAuthoringChecklist.md",
       "redirect_url": "/powershell/dsc/resources/resourceAuthoringChecklist",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/resources/resources.md",
       "redirect_url": "/powershell/dsc/resources/resources",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/resources/singleInstance.md",
       "redirect_url": "/powershell/dsc/resources/singleInstance",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/troubleshooting/debugResource.md",
       "redirect_url": "/powershell/dsc/troubleshooting/debugResource",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/troubleshooting/troubleshooting.md",
       "redirect_url": "/powershell/dsc/troubleshooting/troubleshooting",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/tutorials/DSCAutomationHostEnabled.md",
       "redirect_url": "/powershell/dsc/tutorials/DSCAutomationHostEnabled",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/dsc/tutorials/bootstrapDsc.md",
       "redirect_url": "/powershell/dsc/tutorials/bootstrapDsc",
-      "redirect_document_id": "false"
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/7.2/PSDesiredStateConfiguration/About/about_Classes_and_DSC.md",
@@ -958,7 +913,7 @@
     {
       "source_path": "reference/docs-conceptual/dsc/index.md",
       "redirect_url": "/powershell/dsc/overview/decisionmaker",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/gallery/index.md",
