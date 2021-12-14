@@ -30,4 +30,4 @@ The documentation for DSC has been moved to a new location so that we can manage
 version-specific information separate from the versions of PowerShell.
 
 See the new documentation at
-[https://docs.microsoft.com/powershell/dsc](https://docs.microsoft.com/powershell/dsc).
+[https://docs.microsoft.com/powershell/dsc](/powershell/dsc).
