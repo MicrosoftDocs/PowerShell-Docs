@@ -251,21 +251,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "reference/docs-conceptual/dsc/configurations/media/import-dscresource/multiple-resource-versions-broken.png",
-      "redirect_url": "/powershell/dsc/configurations/media/import-dscresource/multiple-resource-versions-broken.png",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/configurations/media/import-dscresource/multiple-resource-versions-fixed.png",
-      "redirect_url": "/powershell/dsc/configurations/media/import-dscresource/multiple-resource-versions-fixed.png",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/configurations/media/import-dscresource/resource-intellisense.png",
-      "redirect_url": "/powershell/dsc/configurations/media/import-dscresource/resource-intellisense.png",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "reference/docs-conceptual/dsc/configurations/reboot-a-node.md",
       "redirect_url": "/powershell/dsc/configurations/reboot-a-node",
       "redirect_document_id": false
@@ -738,16 +723,6 @@
     {
       "source_path": "reference/docs-conceptual/dsc/resources/get-test-set.md",
       "redirect_url": "/powershell/dsc/resources/get-test-set",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/resources/media/get-test-set/get-test-set.png",
-      "redirect_url": "/powershell/dsc/resources/media/get-test-set/get-test-set.png",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "reference/docs-conceptual/dsc/resources/media/resources/resource-tabcompletion.png",
-      "redirect_url": "/powershell/dsc/resources/media/resources/resource-tabcompletion.png",
       "redirect_document_id": false
     },
     {
