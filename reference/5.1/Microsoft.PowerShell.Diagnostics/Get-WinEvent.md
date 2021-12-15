@@ -530,7 +530,7 @@ Get-WinEvent -Path 'C:\Tracing\TraceLog.etl', 'C:\Test\Windows PowerShell.evtx' 
 The `Get-WinEvent` cmdlet gets log information from the archived files. The **Path** parameter uses
 a comma-separated list to specify each files directory and file name. The **Oldest** parameter is
 used to output events in the order they are written, oldest to newest. The objects are sent down the
-pipeline to the `Where-Object` cmdlet. `Where-Object` uses a script block to find events with and
+pipeline to the `Where-Object` cmdlet. `Where-Object` uses a script block to find events with an
 **Id** of **403**. The `$_` variable represents the current object in the pipeline and **Id** is the
 Event Id property.
 
