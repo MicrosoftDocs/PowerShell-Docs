@@ -9,9 +9,11 @@ title: PowerShell Desired State Configuration (DSC)
 DSC is a management platform in PowerShell that enables you to manage your IT and development
 infrastructure with configuration as code.
 
-There are two active versions of DSC available:
+There are three versions of DSC available:
 
-- DSC 2.0 is the legacy version of DSC that originally shipped in Windows PowerShell.
+- DSC 1.1 is the legacy version of DSC that originally shipped in Windows PowerShell 5.1.
+
+- DSC 2.0 is the version of DSC that shipped in PowerShell 7.
 
   With the release of PowerShell 7.2, the PSDesiredStateConfiguration module is no longer be
   included in the PowerShell package. Separating DSC into its own module allows us to invest and
@@ -30,4 +32,4 @@ The documentation for DSC has been moved to a new location so that we can manage
 version-specific information separate from the versions of PowerShell.
 
 See the new documentation at
-[https://docs.microsoft.com/powershell/dsc](/powershell/dsc).
+[https://docs.microsoft.com/powershell/dsc](/powershell/dsc/overview).
