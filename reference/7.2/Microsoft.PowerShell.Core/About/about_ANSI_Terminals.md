@@ -75,10 +75,10 @@ The following members control how or when ANSI formatting is used:
     as-is.
 
     > [!IMPORTANT]
-    > When redirecting output to a file or the pipeline that is intended to be
-    > executed downstream, you should use **ANSI** mode. This ensures that the
-    > output is not altered. Using any other mode alters the output, which may
-    > change the execution behavior.
+    > You should use **ANSI** mode when redirecting output to a file or the
+    > pipeline that is intended to be executed downstream. This ensures that
+    > the output is not altered. Using any other mode alters the output, which
+    > may change the execution behavior.
 
   - **PlainText**: ANSI escape sequences are always stripped so that it is only
     plain text.
