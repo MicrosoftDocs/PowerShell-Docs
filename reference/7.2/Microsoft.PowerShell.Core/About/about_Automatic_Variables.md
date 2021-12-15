@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 10/27/2021
+ms.date: 12/15/2021
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -680,11 +680,19 @@ The following members control how or when ANSI formatting is used:
 - `$PSStyle.OutputRendering` is a
   `System.Management.Automation.OutputRendering` enum with the values:
 
-  - **ANSI**: ANSI is always passed through as-is
+  - **ANSI**: This is the default behavior. ANSI is always passed through
+    as-is.
+
+    > [!IMPORTANT]
+    > You should use **ANSI** mode when redirecting output to a file or the
+    > pipeline that is intended to be executed downstream. This ensures that
+    > the output is not altered. Using any other mode alters the output by
+    > removing ANSI escape sequences, which may change the execution behavior.
+
   - **PlainText**: ANSI escape sequences are always stripped so that it is only
-    plain text
-  - **Host**: This is the default behavior. The ANSI escape sequences are
-    removed in redirected or piped output.
+    plain text.
+  - **Host**: The ANSI escape sequences are removed in redirected or piped
+    output.
 
 - The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
   contain the ANSI escape sequences for the 16 standard console colors.
