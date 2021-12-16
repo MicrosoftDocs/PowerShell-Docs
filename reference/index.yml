@@ -84,10 +84,14 @@ productDirectory:
     - title: PowerShell DSC
       imageSrc: /media/common/i_config-tools.svg
       links:
-        - url: /powershell/scripting/dsc/overview/overview
+        - url: /powershell/scripting/dsc/overview
           text: DSC Overview
-        - url: /powershell/scripting/dsc/getting-started/lnxgettingstarted
-          text: Get started with DSC for Linux
+        - url: /powershell/dsc/overview?view=dsc-1.1
+          text: DSC 1.1 in Windows PowerShell
+        - url: /powershell/dsc/overview?view=dsc-2.0
+          text: DSC 2.0
+        - url: /powershell/dsc/overview?view=dsc-3.0
+          text: DSC 3.0 (preview)
         - url: https://dsccommunity.org/
           text: DSC Community
     # Card 5

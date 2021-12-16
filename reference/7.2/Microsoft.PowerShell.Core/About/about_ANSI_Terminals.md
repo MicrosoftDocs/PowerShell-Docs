@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 11/09/2021
+ms.date: 12/15/2021
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -71,11 +71,19 @@ The following members control how or when ANSI formatting is used:
 - `$PSStyle.OutputRendering` is a
   `System.Management.Automation.OutputRendering` enum with the values:
 
-  - **ANSI**: ANSI is always passed through as-is
+  - **ANSI**: This is the default behavior. ANSI is always passed through
+    as-is.
+
+    > [!IMPORTANT]
+    > You should use **ANSI** mode when redirecting output to a file or the
+    > pipeline that is intended to be executed downstream. This ensures that
+    > the output is not altered. Using any other mode alters the output by
+    > removing ANSI escape sequences, which may change the execution behavior.
+
   - **PlainText**: ANSI escape sequences are always stripped so that it is only
-    plain text
-  - **Host**: This is the default behavior. The ANSI escape sequences are
-    removed in redirected or piped output.
+    plain text.
+  - **Host**: The ANSI escape sequences are removed in redirected or piped
+    output.
 
 - The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
   contain the ANSI escape sequences for the 16 standard console colors.
