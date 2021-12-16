@@ -356,7 +356,7 @@ PS D:\> Get-ChildItem | select name,*target
 
 Name     Target
 ----     ------
-tmp      {C:\Users\sdwheeler\AppData\Local\Temp}
+tmp      {C:\Users\user1\AppData\Local\Temp}
 ```
 
 ## Parameters

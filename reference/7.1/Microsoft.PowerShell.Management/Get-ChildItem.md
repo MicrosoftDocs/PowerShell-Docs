@@ -386,7 +386,7 @@ The new properties that are now part of the output are:
 > [!NOTE]
 > This feature was moved from experimental to mainstream in PowerShell 7.1.
 
-### Example 10 - Get the link target for a junction point
+### Example 11 - Get the link target for a junction point
 
 The `dir` command in the Windows Command Shell shows the target location of a filesystem junction
 point. In PowerShell, this information is available from the **LinkTarget** property of the
@@ -398,7 +398,7 @@ PS D:\> Get-ChildItem | select name,LinkTarget
 
 Name     LinkTarget
 ----     ----------
-tmp      C:\Users\sdwheeler\AppData\Local\Temp
+tmp      C:\Users\user1\AppData\Local\Temp
 
 PS D:\> Get-ChildItem
 
@@ -406,7 +406,7 @@ PS D:\> Get-ChildItem
 
 Mode          LastWriteTime    Length Name
 ----          -------------    ------ ----
-l----   12/16/2021  9:29 AM           tmp -> C:\Users\sdwheeler\AppData\Local\Temp
+l----   12/16/2021  9:29 AM           tmp -> C:\Users\user1\AppData\Local\Temp
 ```
 
 ## Parameters
