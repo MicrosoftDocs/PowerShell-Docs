@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/16/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
@@ -343,6 +343,21 @@ d-----        2/14/2019     10:22                SubDir_Level3
 The `Get-ChildItem` cmdlet uses the **Path** parameter to specify **C:\Parent**. The **Depth**
 parameter specifies two levels of recursion. `Get-ChildItem` displays the contents of the directory
 specified by the **Path** parameter and the two levels of subdirectories.
+
+### Example 9 - Get the link target for a junction point
+
+The `dir` command in the Windows Command Shell shows the target location of a filesystem junction
+point. In PowerShell, this information is available from the **Target** property of the filesystem
+object returned by `Get-ChildItem`.
+
+```powershell
+PS D:\> New-Item -ItemType Junction -Name tmp -Target $env:TEMP
+PS D:\> Get-ChildItem | select name,*target
+
+Name     Target
+----     ------
+tmp      {C:\Users\user1\AppData\Local\Temp}
+```
 
 ## Parameters
 
