@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/16/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
@@ -382,6 +382,29 @@ The new properties that are now part of the output are:
 - **User** is the file owner
 - **Group** is the group owner
 - **Size** is the size of the file or directory as represented on a Unix system
+
+### Example 10 - Get the link target for a junction point
+
+The `dir` command in the Windows Command Shell shows the target location of a filesystem junction
+point. In PowerShell, this information is available from the **LinkTarget** property of the
+filesystem object returned by `Get-ChildItem` and is displayed in the default output.
+
+```powershell
+PS D:\> New-Item -ItemType Junction -Name tmp -Target $env:TEMP
+PS D:\> Get-ChildItem | select name,LinkTarget
+
+Name     LinkTarget
+----     ----------
+tmp      C:\Users\sdwheeler\AppData\Local\Temp
+
+PS D:\> Get-ChildItem
+
+    Directory: D:\
+
+Mode          LastWriteTime    Length Name
+----          -------------    ------ ----
+l----   12/16/2021  9:29 AM           tmp -> C:\Users\sdwheeler\AppData\Local\Temp
+```
 
 ## Parameters
 
