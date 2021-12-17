@@ -1,6 +1,6 @@
 ---
-title: What's New in PowerShell 7.3
-description: New features and changes released in PowerShell 7.3
+title: What's New in PowerShell 7.3-preview.1
+description: New features and changes released in PowerShell 7.3-preview.1
 ms.date: 12/16/2021
 ---
 
@@ -8,7 +8,7 @@ ms.date: 12/16/2021
 
 PowerShell 7.3 is the next preview release, built on .NET 6.0.
 
-PowerShell 7.3.preview.1 includes the following features, updates, and breaking changes.
+PowerShell 7.3-preview.1 includes the following features, updates, and breaking changes.
 
 - Set `$?` correctly for command expression with redirections (#16046)
 - Fix a casting error when using `$PSNativeCommandUsesErrorActionPreference` (#15993)
