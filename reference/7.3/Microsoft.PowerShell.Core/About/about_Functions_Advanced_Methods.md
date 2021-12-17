@@ -39,7 +39,7 @@ For the **CmdletBindingAttribute** class, see
 
 The methods described in this section are referred to as the input processing
 methods. For functions, these three methods are represented by the `begin`,
-`process`, and `end`blocks of the function. You aren't required to use any of
+`process`, and `end` blocks of the function. You aren't required to use any of
 these blocks in your functions.
 
 > [!NOTE]
@@ -66,7 +66,7 @@ Function Test-ScriptCmdlet
 > blocks. When using any block, all PowerShell code must be inside one
 > of the blocks.
 
-PowerShell 7.3 includes an experimental feature that adds a `Clean` block
+PowerShell 7.3 includes an experimental feature that adds a `clean` block
 process method.
 
 ### `begin`
