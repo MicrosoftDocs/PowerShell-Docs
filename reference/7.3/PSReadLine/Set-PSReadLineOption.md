@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 08/18/2021
+ms.date: 12/17/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -580,7 +580,7 @@ Specifies the source for PSReadLine to get predictive suggestions.
 Valid values are:
 
 - **None** - disable the predictive IntelliSense feature (default).
--`**History** - enable the predictive IntelliSense feature and use the PSReadLine history as the
+- **History** - enable the predictive IntelliSense feature and use the PSReadLine history as the
   only source.
 - **Plugin** - enable the predictive IntelliSense feature and use the plugins (`CommandPrediction`)
   as the only source. This value was added in PSReadLine 2.2.0
