@@ -21,14 +21,24 @@ PowerShell 7.3-preview.1 includes the following features, updates, and breaking 
 - Specify the executable path as `TargetObject` for non-zero exit code ErrorRecord (#16108) (Thanks
   @rkeithhill!)
 - Invoke-Command: improve handling of variables with $using: expression (#16113) (Thanks @dwtaber!)
+- Add `clean` block to script block as a peer to `begin`, `process`, and `end` to allow easy
+  resource cleanup (#15177)
 
 For a complete list of changes, see the [Change Log][CHANGELOG] in the GitHub repository.
 
 ## Experimental Features
 
-There is a known issue about 7.3.0-preview.1 - Alpine Linux packages are missing the
-`powershell.config.json` file, causing experimental features to be disabled by default. For details,
-see Issue #16636.
+> [!NOTE]
+> There is a known issue in 7.3.0-preview.1 - Alpine Linux packages are missing the
+> `powershell.config.json` file, causing experimental features to be disabled by default. For details,
+> see Issue #16636.
+
+PowerShell 7.3 introduces the following experimental features:
+
+- [PSCleanBlock][exp-clean] - Adds `clean` block to script block as a peer to `begin`, `process`,
+  and `end` to allow easy resource cleanup
+
+For more information about the Experimental Features, see [Using Experimental Features][exp].
 
 ## Breaking Changes and Improvements
 
@@ -39,3 +49,4 @@ see Issue #16636.
 <!-- reference links -->
 
 [CHANGELOG]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0-preview.1
+[exp-clean]: ../learn/experimental-features.md#pscleanblock

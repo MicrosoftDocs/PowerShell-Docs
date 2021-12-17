@@ -110,7 +110,7 @@ function.
 The `clean` block was added as an experimental feature in PowerShell 7.3. To
 use this feature you enable the experimental feature named `PSCleanBlock`. For
 more information, cee
-[Enable-ExperimentalFeature](../Enable-ExperimentalFeature.md).
+[Enable-ExperimentalFeature](xref:Microsoft.PowerShell.Core.Enable-ExperimentalFeature).
 
 The `clean` block is a convenient way for users to clean up resources that span
 across the `begin`, `process`, and `end` blocks. It's semantically similar to a
