@@ -22,7 +22,10 @@
       { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.2", "src": "7.2" },
       { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.2", "src": "7.2" },
 
-      { "dest": "scripting", "files": [ "**/*.md" ], "src": "virtual-directory" },
+      { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.3", "src": "7.3" },
+      { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.3", "src": "7.3" },
+
+          { "dest": "scripting", "files": [ "**/*.md" ], "src": "virtual-directory" },
       { "dest": "module", "files": [ "**/*.md" ], "src": "virtual-directory-module" }
     ],
     "dest": "pscore-reference",
@@ -68,6 +71,8 @@
         "7.1/**.yml": "powershell-cmdlets",
         "7.2/**.md": "powershell-conceptual",
         "7.2/**.yml": "powershell-cmdlets",
+        "7.3/**.md": "powershell-conceptual",
+        "7.3/**.yml": "powershell-cmdlets",
         "docs-conceptual/**/**.md": "powershell-conceptual"
       },
       "ms.tgt_pltfr": {
@@ -82,6 +87,8 @@
         "7.1/**.yml": "managed-reference",
         "7.2/**.md": "managed-reference",
         "7.2/**.yml": "managed-reference",
+        "7.3/**.md": "managed-reference",
+        "7.3/**.yml": "managed-reference",
         "docs-conceptual/**/**.md": "conceptual",
         "docs-conceptual/dev-cross-plat/**/**.md": "reference",
         "docs-conceptual/lang-spec/**/**.md": "reference",
@@ -125,6 +132,10 @@
           "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
           "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
         ],
+        "7.3/**.yml": [
+          "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
+          "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
+        ],
         "docs-conceptual/**/**.md": [
           "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
           "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
@@ -161,7 +172,8 @@
       "powershell-5.1": { "moniker_range": "powershell-5.1" },
       "powershell-7": { "moniker_range": "powershell-7" },
       "powershell-7.1": { "moniker_range": "powershell-7.1" },
-      "powershell-7.2": { "moniker_range": "powershell-7.2" }
+      "powershell-7.2": { "moniker_range": "powershell-7.2" },
+      "powershell-7.3": { "moniker_range": "powershell-7.3" }
     },
     "markdownEngineName": "markdig",
     "overwrite": [],
