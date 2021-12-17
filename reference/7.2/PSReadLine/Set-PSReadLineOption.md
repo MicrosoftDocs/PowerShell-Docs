@@ -580,7 +580,7 @@ Specifies the source for PSReadLine to get predictive suggestions.
 Valid values are:
 
 - **None** - disable the predictive IntelliSense feature (default).
--`**History** - enable the predictive IntelliSense feature and use the PSReadLine history as the
+- **History** - enable the predictive IntelliSense feature and use the PSReadLine history as the
   only source.
 - **Plugin** - enable the predictive IntelliSense feature and use the plugins (`CommandPrediction`)
   as the only source. This value was added in PSReadLine 2.2.0
