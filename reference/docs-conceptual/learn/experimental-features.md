@@ -32,21 +32,22 @@ Legend
 - &#x2705; - indicates the version of PowerShell where the experimental feature became mainstream
 - &#x274c; - indicates the version of PowerShell where the experimental feature was removed
 
-|                             Name                              |       7.0        |       7.1        |       7.2        |
-| ------------------------------------------------------------- | :--------------: | :--------------: | :--------------: |
-| PSNullConditionalOperators                                    | &#x2714;&#xfe0f; |     &#x2705;     |                  |
-| PSUnixFileStat (non-Windows only)                             | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x2705;     |
-| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace    | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x2705;     |
-| PSCultureInvariantReplaceOperator                             |                  | &#x2714;&#xfe0f; |     &#x2705;     |
-| PSNotApplyErrorActionToStderr                                 |                  | &#x2714;&#xfe0f; |     &#x2705;     |
-| PSImplicitRemotingBatching                                    | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x274c;     |
-| PSCommandNotFoundSuggestion                                   | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
-| PSDesiredStateConfiguration.InvokeDscResource                 | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
-| PSNativePSPathResolution                                      |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
-| PSSubsystemPluginModel                                        |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
-| PSNativeCommandArgumentPassing                                |                  |                  | &#x2714;&#xfe0f; |
-| PSAnsiRenderingFileInfo                                       |                  |                  | &#x2714;&#xfe0f; |
-| PSLoadAssemblyFromNativeCode                                  |                  |                  | &#x2714;&#xfe0f; |
+|                            Name                            |       7.0        |       7.1        |       7.2        |       7.3        |
+| ---------------------------------------------------------- | :--------------: | :--------------: | :--------------: | :--------------: |
+| PSNullConditionalOperators                                 | &#x2714;&#xfe0f; |     &#x2705;     |                  |                  |
+| PSUnixFileStat (non-Windows only)                          | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x2705;     |                  |
+| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x2705;     |                  |
+| PSCultureInvariantReplaceOperator                          |                  | &#x2714;&#xfe0f; |     &#x2705;     |                  |
+| PSNotApplyErrorActionToStderr                              |                  | &#x2714;&#xfe0f; |     &#x2705;     |                  |
+| PSImplicitRemotingBatching                                 | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x274c;     |                  |
+| PSCommandNotFoundSuggestion                                | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
+| PSDesiredStateConfiguration.InvokeDscResource              | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
+| PSNativePSPathResolution                                   |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
+| PSSubsystemPluginModel                                     |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
+| PSNativeCommandArgumentPassing                             |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
+| PSAnsiRenderingFileInfo                                    |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
+| PSLoadAssemblyFromNativeCode                               |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
+| PSCleanBlock                                               |                  |                  |                  | &#x2714;&#xfe0f; |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -100,6 +101,30 @@ For more information, see
 
 > [!NOTE]
 > You must have the **PSAnsiRendering** experimental feature enabled to use this feature.
+
+## PSCleanBlock
+
+The `clean` block is a convenient way for users to clean up resources that span
+across the `begin`, `process`, and `end` blocks. It's semantically similar to a
+`finally` block that covers all other named blocks of a script function or a
+script cmdlet. Resource cleanup is enforced for the following scenarios:
+
+1. when the pipeline execution finishes normally without terminating error
+1. when the pipeline execution is interrupted due to terminating error
+1. when the pipeline is halted by `Select-Object -First`
+1. when the pipeline is being stopped by <kbd>Ctrl+c</kbd> or
+   `StopProcessing()`
+
+> [!CAUTON]
+> Adding the `clean` block is a breaking change. Because `clean` is parsed as a
+> keyword, it prevents users from directly calling a command named `clean` as
+> the first statement in a script block. However, it's likely a non-issue in
+> most practical cases, and when it is, the command can still be invoked with
+> the call operator (`& clean`).
+
+For more information about this experimental feature, see
+[RFC0059](https://github.com/PowerShell/PowerShell-RFC/blob/master/Archive/Experimental/RFC0059-Cleanup-Script-Block.md)
+in the PowerShell/PowerShell-RFC repository.
 
 ## PSCommandNotFoundSuggestion
 

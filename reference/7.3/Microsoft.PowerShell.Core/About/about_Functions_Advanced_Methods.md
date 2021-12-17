@@ -1,7 +1,7 @@
 ---
 description: Describes how functions that specify the `CmdletBinding` attribute can use the methods and properties that are available to compiled cmdlets.
 Locale: en-US
-ms.date: 01/03/2018
+ms.date: 12/17/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Methods
@@ -35,76 +35,108 @@ For more information about the `CmdletBinding` attribute, see
 For the **CmdletBindingAttribute** class, see
 [System.Management.Automation.Cmdlet.CmdletBindingAttribute](/dotnet/api/system.management.automation.cmdletbindingattribute).
 
-### Input processing methods
+## Input processing methods
 
 The methods described in this section are referred to as the input processing
-methods. For functions, these three methods are represented by the `Begin`,
-`Process`, and `End` blocks of the function. You aren't required to use any of
+methods. For functions, these three methods are represented by the `begin`,
+`process`, and `end` blocks of the function. You aren't required to use any of
 these blocks in your functions.
 
 > [!NOTE]
 > These blocks are also available to functions that don't use the
 > `CmdletBinding` attribute.
 
-#### Begin
-
-This block is used to provide optional one-time preprocessing for the function.
-The PowerShell runtime uses the code in this block once for each instance of
-the function in the pipeline.
-
-#### Process
-
-This block is used to provide record-by-record processing for the function. You
-can use a `Process` block without defining the other blocks. The number of
-`Process` block executions depends on how you use the function and what input
-the function receives.
-
-The automatic variable `$_` or `$PSItem` contains the current object in the
-pipeline for use in the `Process` block. The `$input` automatic variable
-contains an enumerator that's only available to functions and script blocks.
-For more information, see [about_Automatic_Variables](about_Automatic_Variables.md).
-
-- Calling the function at the beginning, or outside of a pipeline, executes the
-  `Process` block once.
-- Within a pipeline, the `Process` block executes once for each input object
-  that reaches the function.
-- If the pipeline input that reaches the function is empty, the `Process` block
-  **does not** execute.
-  - The `Begin` and `End` blocks still execute.
-
-> [!IMPORTANT]
-> If a function parameter is set to accept pipeline input, and a `Process`
-> block isn't defined, record-by-record processing will fail. In this case,
-> your function will only execute once, regardless of the input.
-
-#### End
-
-This block is used to provide optional one-time post-processing for the
-function.
-
-The following example shows the outline of a function that contains a `Begin`
-block for one-time preprocessing, a `Process` block for multiple record
-processing, and an `End` block for one-time post-processing.
+The following example shows the outline of a function that contains a `begin`
+block for one-time preprocessing, a `process` block for multiple record
+processing, and an `end` block for one-time post-processing.
 
 ```powershell
 Function Test-ScriptCmdlet
 {
 [CmdletBinding(SupportsShouldProcess=$True)]
     Param ($Parameter1)
-    Begin{}
-    Process{}
-    End{}
+    begin{}
+    process{}
+    end{}
 }
 ```
 
 > [!NOTE]
-> Using either a `Begin` or `End` block requires that you define all three
-> blocks. When using all three blocks, all PowerShell code must be inside one
+> Using either a `begin` or `end` block requires that you define all three
+> blocks. When using any block, all PowerShell code must be inside one
 > of the blocks.
 
-### Confirmation methods
+PowerShell 7.3 includes an experimental feature that adds a `clean` block
+process method.
 
-#### ShouldProcess
+### `begin`
+
+This block is used to provide optional one-time preprocessing for the function.
+The PowerShell runtime uses the code in this block once for each instance of
+the function in the pipeline.
+
+### `process`
+
+This block is used to provide record-by-record processing for the function. You
+can use a `process` block without defining the other blocks. The number of
+`process` block executions depends on how you use the function and what input
+the function receives.
+
+The automatic variable `$_` or `$PSItem` contains the current object in the
+pipeline for use in the `process` block. The `$input` automatic variable
+contains an enumerator that's only available to functions and script blocks.
+For more information, see [about_Automatic_Variables](about_Automatic_Variables.md).
+
+- Calling the function at the beginning, or outside of a pipeline, executes the
+  `process` block once.
+- Within a pipeline, the `process` block executes once for each input object
+  that reaches the function.
+- If the pipeline input that reaches the function is empty, the `process` block
+  **does not** execute.
+  - The `begin` and `end` blocks still execute.
+
+> [!IMPORTANT]
+> If a function parameter is set to accept pipeline input, and a `process`
+> block isn't defined, record-by-record processing will fail. In this case,
+> your function will only execute once, regardless of the input.
+
+### `end`
+
+This block is used to provide optional one-time post-processing for the
+function.
+
+### `clean`
+
+The `clean` block was added as an experimental feature in PowerShell 7.3. To
+use this feature you enable the experimental feature named `PSCleanBlock`. For
+more information, cee
+[Enable-ExperimentalFeature](xref:Microsoft.PowerShell.Core.Enable-ExperimentalFeature).
+
+The `clean` block is a convenient way for users to clean up resources that span
+across the `begin`, `process`, and `end` blocks. It's semantically similar to a
+`finally` block that covers all other named blocks of a script function or a
+script cmdlet. Resource cleanup is enforced for the following scenarios:
+
+1. when the pipeline execution finishes normally without terminating error
+1. when the pipeline execution is interrupted due to terminating error
+1. when the pipeline is halted by `Select-Object -First`
+1. when the pipeline is being stopped by <kbd>Ctrl+c</kbd> or
+   `StopProcessing()`
+
+> [!CAUTON]
+> Adding the `clean` block is a breaking change. Because `clean` is parsed as a
+> keyword, it prevents users from directly calling a command named `clean` as
+> the first statement in a script block. However, it's likely a non-issue in
+> most practical cases, and when it is, the command can still be invoked with
+> the call operator (`& clean`).
+
+For more information about this experimental feature, see
+[RFC0059](https://github.com/PowerShell/PowerShell-RFC/blob/master/Archive/Experimental/RFC0059-Cleanup-Script-Block.md)
+in the PowerShell/PowerShell-RFC repository.
+
+## Confirmation methods
+
+### ShouldProcess
 
 This method is called to request confirmation from the user before the function
 performs an action that would change the system. The function can continue
@@ -119,14 +151,14 @@ For more information about this method, see
 For more information about how to request confirmation, see
 [Requesting Confirmation](/powershell/scripting/developer/cmdlet/requesting-confirmation).
 
-#### ShouldContinue
+### ShouldContinue
 
 This method is called to request a second confirmation message. It should be
 called when the `ShouldProcess` method returns `$true`. For more information
 about this method, see
 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/system.management.automation.cmdlet.shouldcontinue).
 
-### Error methods
+## Error methods
 
 Functions can call two different methods when errors occur. When a
 non-terminating error occurs, the function should call the `WriteError` method,
@@ -139,25 +171,25 @@ cmdlet for non-terminating errors.
 For more information, see
 [System.Management.Automation.Cmdlet.ThrowTerminatingError](/dotnet/api/system.management.automation.cmdlet.throwterminatingerror).
 
-### Write methods
+## Write methods
 
 A function can call the following methods to return different types of output.
 Notice that not all the output goes to the next command in the pipeline. You
 can also use the various `Write` cmdlets, such as `Write-Error`.
 
-#### WriteCommandDetail
+### WriteCommandDetail
 
 For information about the `WriteCommandDetails` method, see
 [System.Management.Automation.Cmdlet.WriteCommandDetail](/dotnet/api/system.management.automation.cmdlet.writecommanddetail).
 
-#### WriteDebug
+### WriteDebug
 
 To provide information that can be used to troubleshoot a function, make the
 function call the `WriteDebug` method. The `WriteDebug` method displays debug
 messages to the user. For more information, see
 [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/system.management.automation.cmdlet.writedebug).
 
-#### WriteError
+### WriteError
 
 Functions should call this method when non-terminating errors occur and the
 function is designed to continue processing records. For more information, see
@@ -168,14 +200,14 @@ function is designed to continue processing records. For more information, see
 > [ThrowTerminatingError](/dotnet/api/system.management.automation.cmdlet.throwterminatingerror)
 > method.
 
-#### WriteObject
+### WriteObject
 
 The `WriteObject` method allows the function to send an object to the next
 command in the pipeline. In most cases, `WriteObject` is the method to use when
 the function returns data. For more information, see
 [System.Management.Automation.PSCmdlet.WriteObject](/dotnet/api/system.management.automation.cmdlet.writeobject).
 
-#### WriteProgress
+### WriteProgress
 
 For functions with actions that take a long time to complete, this method
 allows the function to call the `WriteProgress` method so that progress
@@ -183,14 +215,14 @@ information is displayed. For example, you can display the percent completed.
 For more information, see
 [System.Management.Automation.PSCmdlet.WriteProgress](/dotnet/api/system.management.automation.cmdlet.writeprogress).
 
-#### WriteVerbose
+### WriteVerbose
 
 To provide detailed information about what the function is doing, make the
 function call the `WriteVerbose` method to display verbose messages to the
 user. By default, verbose messages aren't displayed. For more information, see
 [System.Management.Automation.PSCmdlet.WriteVerbose](/dotnet/api/system.management.automation.cmdlet.writeverbose).
 
-#### WriteWarning
+### WriteWarning
 
 To provide information about conditions that may cause unexpected results, make
 the function call the WriteWarning method to display warning messages to the
@@ -202,7 +234,7 @@ user. By default, warning messages are displayed. For more information, see
 > variable or by using the `Verbose` and `Debug` command-line options. for more
 > information about the `$WarningPreference` variable, see [about_Preference_Variables](about_Preference_Variables.md).
 
-### Other methods and properties
+## Other methods and properties
 
 For information about the other methods and properties that can be accessed
 through the `$PSCmdlet` variable, see
@@ -229,4 +261,3 @@ parameters that are specified when the function is run.
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
 
 [about_Preference_Variables](about_Preference_Variables.md)
-
