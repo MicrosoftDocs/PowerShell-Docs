@@ -1,7 +1,7 @@
 ---
 description: The PowerShell Standard Library allows us to create cross platform modules that work in both PowerShell and with Windows PowerShell 5.1.
 ms.custom: contributor-KevinMarquette
-ms.date: 11/08/2021
+ms.date: 12/20/2021
 title: How to create a Standard Library Binary Module
 ---
 # How to create a Standard Library binary module
@@ -110,7 +110,7 @@ most recent version available for the level of compatibility that you need. I wo
 latest version but I don't think this module leverages any features newer than PowerShell 3.0.
 
 ```powershell
-dotnet add package PowerShellStandard.Library --version 7.2.0
+dotnet add package PowerShellStandard.Library --version 7.0.0-preview.1
 ```
 
 We should have a src folder that looks like this:
