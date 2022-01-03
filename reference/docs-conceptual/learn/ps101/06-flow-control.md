@@ -297,7 +297,7 @@ foreach ($n in $number) {
 4
 ```
 
-Notice that in the previous example, return outputs the first result and then exists out of the
+Notice that in the previous example, return outputs the first result and then exits out of the
 loop. A more thorough explanation of the result statement can be found in one of my blog articles:
 ["The PowerShell return keyword"]["The PowerShell return keyword"].
 
