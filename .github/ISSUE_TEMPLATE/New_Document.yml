@@ -1,6 +1,8 @@
 name: New Document Request/Idea 🆕
 description: Suggest a new document or major rewrite of an existing one.
-labels: doc-idea
+labels:
+  - needs-triage
+  - doc-idea
 body:
 - type: checkboxes
   attributes:
