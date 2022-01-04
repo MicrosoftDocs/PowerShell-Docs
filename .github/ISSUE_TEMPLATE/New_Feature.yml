@@ -1,6 +1,8 @@
 name: Describe new feature or change in behavior 🚀
 description: Update existing documentation for a change in behavior or add new documentation for a new feature.
-labels: doc-idea
+labels:
+  - needs-triage
+  - doc-idea
 body:
 - type: checkboxes
   attributes:

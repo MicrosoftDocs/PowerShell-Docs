@@ -1,6 +1,8 @@
 name: Documentation issue report 🐛
 description: Report an issue with current documentation.
-labels: doc-bug
+labels:
+  - needs-triage
+  - doc-bug
 body:
 - type: markdown
   attributes:
