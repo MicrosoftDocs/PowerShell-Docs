@@ -219,7 +219,7 @@ command and uses <kbd>Tab</kbd> completion, only **Apple** is returned.
 
 ```powershell
 function MyArgumentCompleter{
-    param ( $commaName,
+    param ( $commandName,
             $parameterName,
             $wordToComplete,
             $commandAst,

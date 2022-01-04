@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 11/15/2021
+ms.date: 01/04/2022
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -58,15 +58,16 @@ The installer creates a shortcut in the Windows Start Menu.
 
 ### Support for Microsoft Update in PowerShell 7.2
 
-PowerShell 7.2 has support for Microsoft Update. When you enable this feature, you'll get
-the latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
-that's with Windows Update for Business, WSUS, SCCM, or the interactive MU dialog in Settings.
+PowerShell 7.2 has support for Microsoft Update. When you enable this feature, you'll get the latest
+PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether that's with
+Windows Update for Business, WSUS, Microsoft Endpoint Configuration Manager, or the interactive MU
+dialog in Settings.
 
 The PowerShell 7.2 MSI package includes following command-line options:
 
 - `USE_MU` - This property has two possible values:
-  - `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
-  - `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
+  - `1` (default) - Opts into updating through Microsoft Update, WSUS, or Configuration Manager
+  - `0` -  Do not opt into updating through Microsoft Update, WSUS, or Configuration Manager
 - `ENABLE_MU`
   - `1` (default) - Opts into using Microsoft Update for Automatic Updates
   - `0` - Do not opt into using Microsoft Update
@@ -78,7 +79,7 @@ The PowerShell 7.2 MSI package includes following command-line options:
 
 For more information, see the [PowerShell Microsoft Update FAQ](microsoft-update-faq.yml).
 
-### Administrative install from the command line
+### Install the MSI package from the command line
 
 MSI packages can be installed from the command line allowing administrators to deploy packages
 without user interaction. The MSI package includes the following properties to control the
@@ -174,7 +175,7 @@ PowerShell 7.2 can be installed from the Microsoft Store. You can find the Power
 Benefits of the Microsoft Store package:
 
 - Automatic updates built right into Windows
-- Integrates with other software distribution mechanisms like Intune and SCCM
+- Integrates with other software distribution mechanisms like Intune and Configuration Manager
 
 ### Known limitations
 

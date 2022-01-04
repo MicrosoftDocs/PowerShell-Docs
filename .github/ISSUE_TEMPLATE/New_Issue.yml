@@ -1,6 +1,8 @@
 name: Documentation issue report 🐛
 description: Report an issue with current documentation.
-labels: doc-bug
+labels:
+  - needs-triage
+  - doc-bug
 body:
 - type: markdown
   attributes:
@@ -29,7 +31,7 @@ body:
       - 7.0
       - 7.1
       - 7.2
-      - Preview version
+      - 7.3 (preview)
   validations:
     required: true
 - type: input
