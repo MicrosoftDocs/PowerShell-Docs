@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 11/15/2021
+ms.date: 01/04/2022
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -78,7 +78,7 @@ The PowerShell 7.2 MSI package includes following command-line options:
 
 For more information, see the [PowerShell Microsoft Update FAQ](microsoft-update-faq.yml).
 
-### Administrative install from the command line
+### Install the MSI package from the command line
 
 MSI packages can be installed from the command line allowing administrators to deploy packages
 without user interaction. The MSI package includes the following properties to control the
