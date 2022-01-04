@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/24/2021
+ms.date: 01/04/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
@@ -302,6 +302,13 @@ window is closed.
 
 The engine is considered to be idle if it is not running a pipeline. The **OnIdle** event is fired
 when PowerShell has been idle for 400 milliseconds (ms).
+
+> [!NOTE]
+> When PSReadLine is in use, the **OnIdle** event is fired when `ReadKey()` times out (no typing in
+> 300ms). The event could be signaled while the user is in the middle of editing a command line, for
+> example, the user is reading help to decide which parameter to use. Beginning in PSReadLine
+> 2.2.0-beta4, **OnIdle** behavior changed to signal the event only if there is a `ReadKey()`
+> timeout and the current editing buffer is empty.
 
 ## Related links
 
