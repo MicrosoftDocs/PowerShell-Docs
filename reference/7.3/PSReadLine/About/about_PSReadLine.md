@@ -1675,6 +1675,15 @@ Invoke-WebRequest -Token xxx # Expr-value as argument to '-Token'.
 Get-ResultFromTwo -Secret1 (Get-Secret -Name blah -AsPlainText) -Secret2 sdv87ysdfayf798hfasd8f7ha # '-Secret2' has expr-value argument.
 ```
 
+### Behavior of the OnIdle event
+
+When PSReadLine is in use, the **OnIdle** event is fired when `ReadKey()` times out (no typing in
+300ms). The event could be signaled while the user is in the middle of editing a command line, for
+example, the user is reading help to decide which parameter to use.
+
+Beginning in PSReadLine 2.2.0-beta4, **OnIdle** behavior changed to signal the event only if there
+is a `ReadKey()` timeout and the current editing buffer is empty.
+
 ### Feedback & Contributing To PSReadLine
 
 [PSReadLine on GitHub](https://github.com/PowerShell/PSReadLine)
