@@ -301,7 +301,7 @@ exited under the control of PowerShell. The event is not fired when the host app
 window is closed.
 
 The engine is considered to be idle if it is not running a pipeline. The **OnIdle** event is fired
-when PowerShell has been idle for 400 milliseconds (ms).
+when PowerShell has been idle for 300 milliseconds (ms).
 
 > [!NOTE]
 > When PSReadLine is in use, the **OnIdle** event is fired when `ReadKey()` times out (no typing in
