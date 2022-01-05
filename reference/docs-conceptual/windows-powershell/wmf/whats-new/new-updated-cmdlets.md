@@ -1,6 +1,6 @@
 ---
 description: Windows PowerShell 5.1 includes many new or updated cmdlets.
-ms.date: 06/12/2017
+ms.date: 01/05/2022
 title: New and updated cmdlets
 ---
 # New and updated cmdlets
@@ -188,23 +188,21 @@ The Item cmdlet and a few related cmdlets have been extended to support symbolic
 ### Symbolic link files
 
 In this example, we create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links
-to $pshome\profile.ps1. All three examples produce the same result.
+to $pshome\profile.ps1. These examples produce the same result.
 
 ```powershell
 New-Item -ItemType SymbolicLink -Path C:\Temp -Name MySymLinkFile.txt -Value $pshome\profile.ps1
 New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
-New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
 ### Symbolic link directories
 
 In this example, we create a new symbolic link directory named MySymLinkDir in C:\Temp which links
-to the $pshome folder. All three examples produce the same result.
+to the $pshome folder. These examples produce the same result.
 
 ```powershell
 New-Item -ItemType SymbolicLink -Path C:\Temp -Name MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
-New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
 ### Hard links
