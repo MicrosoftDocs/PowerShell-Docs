@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 11/11/2021
+ms.date: 01/05/2022
 title: PowerShell scripting performance considerations
 ---
 
@@ -15,7 +15,7 @@ often leveraging the pipeline, and dropping down into .NET only when necessary.
 > of a PowerShell script. Script authors are advised to use idiomatic PowerShell unless performance
 > dictates otherwise.
 
-## Suppressing Output
+## Suppressing output
 
 There are many ways to avoid writing objects to the pipeline:
 
@@ -44,13 +44,17 @@ probably not noticeable for most scripts. However, calling `Out-Null` in a large
 significantly slower, even in PowerShell 7.x.
 
 ```powershell
-PS> $d = Get-Date; Measure-Command { for($i=0; $i -lt 1mb; $i++) { $null=$d } }| Select-Object TotalSeconds
+$d = Get-Date
+Measure-Command { for($i=0; $i -lt 1mb; $i++) { $null=$d } } |
+    Select-Object TotalSeconds
 
 TotalSeconds
 ------------
    1.0549325
 
-PS> $d = Get-Date; Measure-Command { for($i=0; $i -lt 1mb; $i++) { $d | Out-Null } }| Select-Object TotalSeconds
+$d = Get-Date
+Measure-Command { for($i=0; $i -lt 1mb; $i++) { $d | Out-Null } } |
+    Select-Object TotalSeconds
 
 TotalSeconds
 ------------
@@ -74,7 +78,7 @@ This technique performs roughly as well as piping to `Out-Null` and should be av
 sensitive script. The extra overhead in this example comes from the creation of and invoking a
 script block that was previously inline script.
 
-## Array Addition
+## Array addition
 
 Generating a list of items is often done using an array with the addition operator:
 
@@ -85,7 +89,7 @@ $results += Do-SomethingElse
 $results
 ```
 
-This can be very inefficent because arrays are immutable. Each addition to the array actually
+This can be very inefficient because arrays are immutable. Each addition to the array actually
 creates a new array big enough to hold all elements of both the left and right operands, then copies
 the elements of both operands into the new array. For small collections, this overhead may not
 matter. For large collections, this can definitely be an issue.
@@ -115,7 +119,65 @@ In this example, PowerShell creates an `ArrayList` to hold the results written t
 inside the array expression. Just before assigning to `$results`, PowerShell converts the
 `ArrayList` to an `object[]`.
 
-## Processing Large Files
+## String addition
+
+Like arrays, strings are immutable. Each addition to the string actually creates a new string big
+enough to hold the contents of both the left and right operands, then copies the elements of both
+operands into the new string. For small strings, this overhead may not matter. For large strings,
+this can definitely be an issue.
+
+```powershell
+$string = ''
+Measure-Command {
+      foreach( $i in 1..10000)
+      {
+          $string += "Iteration $i`n"
+      }
+      $string
+  } | Select-Object TotalMilliseconds
+
+TotalMilliseconds
+-----------------
+         641.8168
+```
+
+There are a couple of alternatives. You can use the `-join` operator to concatenate strings.
+
+```powershell
+Measure-Command {
+      $string = @(
+          foreach ($i in 1..10000) { "Iteration $i" }
+      ) -join "`n"
+      $string
+  } | Select-Object TotalMilliseconds
+
+TotalMilliseconds
+-----------------
+          22.7069
+```
+
+In this example, using the `-join` operator is nearly 30-times faster than string addition.
+
+You can also use the .NET **StringBuilder** class.
+
+```powershell
+$sb = [System.Text.StringBuilder]::new()
+Measure-Command {
+      foreach( $i in 1..10000)
+      {
+          [void]$sb.Append("Iteration $i`n")
+      }
+      $sb.ToString()
+  } | Select-Object TotalMilliseconds
+
+TotalMilliseconds
+-----------------
+          13.4671
+```
+
+In this example, using the **StringBuilder** is nearly 50-times faster than string addition.
+
+## Processing large files
 
 The idiomatic way to process a file in PowerShell might look something like:
 
