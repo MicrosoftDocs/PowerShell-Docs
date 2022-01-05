@@ -44,13 +44,17 @@ probably not noticeable for most scripts. However, calling `Out-Null` in a large
 significantly slower, even in PowerShell 7.x.
 
 ```powershell
-PS> $d = Get-Date; Measure-Command { for($i=0; $i -lt 1mb; $i++) { $null=$d } }| Select-Object TotalSeconds
+$d = Get-Date
+Measure-Command { for($i=0; $i -lt 1mb; $i++) { $null=$d } } |
+    Select-Object TotalSeconds
 
 TotalSeconds
 ------------
    1.0549325
 
-PS> $d = Get-Date; Measure-Command { for($i=0; $i -lt 1mb; $i++) { $d | Out-Null } }| Select-Object TotalSeconds
+$d = Get-Date
+Measure-Command { for($i=0; $i -lt 1mb; $i++) { $d | Out-Null } } |
+    Select-Object TotalSeconds
 
 TotalSeconds
 ------------
@@ -123,8 +127,8 @@ operands into the new string. For small strings, this overhead may not matter. F
 this can definitely be an issue.
 
 ```powershell
-PS> $string = ''
-PS> Measure-Command {
+$string = ''
+Measure-Command {
       foreach( $i in 1..10000)
       {
           $string += "Iteration $i`n"
@@ -140,7 +144,7 @@ TotalMilliseconds
 There are a couple of alternatives. You can use the `-join` operator to concatenate strings.
 
 ```powershell
-PS> Measure-Command {
+Measure-Command {
       $string = @(
           foreach ($i in 1..10000) { "Iteration $i" }
       ) -join "`n"
@@ -157,8 +161,8 @@ In this example, using the `-join` operator is nearly 30-times faster than strin
 You can also use the .NET **StringBuilder** class.
 
 ```powershell
-PS> $sb = [System.Text.StringBuilder]::new()
-PS> Measure-Command {
+$sb = [System.Text.StringBuilder]::new()
+Measure-Command {
       foreach( $i in 1..10000)
       {
           [void]$sb.Append("Iteration $i`n")
