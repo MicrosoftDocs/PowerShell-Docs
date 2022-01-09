@@ -104,8 +104,8 @@ environment variable, use the following syntax:
 Remove-Item -Path Env:Path
 ```
 
-In this command, the variable is cleared. Note: that the environment
-variable is used as a path and `$` is not used.  
+In this command, the variable is cleared. Note that the environment
+variable is referenced as an Item path and `$` is not used.  
 
 ```powershell
 Set-Item -Path Env:Path -Value ($Env:Path + ";C:\Temp")
