@@ -101,6 +101,13 @@ the `Set-Item` cmdlet to append `;c:\temp` to the value of the `Path`
 environment variable, use the following syntax:
 
 ```powershell
+Remove-Item -Path Env:Path
+```
+
+In this command, the variable is cleared. Note that the environment
+variable is referenced as an Item path and `$` is not used.  
+
+```powershell
 Set-Item -Path Env:Path -Value ($Env:Path + ";C:\Temp")
 ```
 
