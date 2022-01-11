@@ -178,7 +178,7 @@ function Get-FunctionPosition {
       $filesToProcess = if ($_ -is [System.IO.FileSystemInfo]) {
         $_
       } else {
-        $filesToProcess = Get-Item -Path $Path
+        Get-Item -Path $Path
       }
       $parser = [System.Management.Automation.Language.Parser]
       foreach ($item in $filesToProcess) {
