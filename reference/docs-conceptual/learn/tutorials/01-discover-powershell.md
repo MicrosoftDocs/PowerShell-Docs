@@ -121,7 +121,7 @@ well. Verb and noun is something you can filter on as well. Such filtering targe
 command's name.
 
 - **Filter on verb**. The verb part of a command's name is the leftmost part. In the command
-  `Get-Process`, the verb part is `Get`. To filter on th verb part, specify `-Verb` as a parameter
+  `Get-Process`, the verb part is `Get`. To filter on the verb part, specify `-Verb` as a parameter
   like so:
 
    ```powershell
@@ -333,7 +333,7 @@ like what type it operates on and what other similar commands operate on that sa
    --------
    ```
 
-   What you're getting back, is a the types returned by the command `Get-Command`. At this point you
+   What you're getting back, is the types returned by the command `Get-Command`. At this point you
    can now find out what other command also operates on these types.
 
 1. Run the command `Get-Command`:
