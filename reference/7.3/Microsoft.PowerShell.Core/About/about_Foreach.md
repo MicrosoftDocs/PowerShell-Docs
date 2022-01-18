@@ -14,31 +14,31 @@ collection of items.
 
 ## Long description
 
-The `Foreach` statement (also known as a `Foreach` loop) is a language construct
+The `foreach` statement (also known as a `foreach` loop) is a language construct
 for stepping through (iterating) a series of values in a collection of items.
 
 The simplest and most typical type of collection to traverse is an array.
-Within a `Foreach` loop, it is common to run one or more commands against each
+Within a `foreach` loop, it is common to run one or more commands against each
 item in an array.
 
 ## Syntax
 
-The following shows the `ForEach` syntax:
+The following shows the `foreach` syntax:
 
 ```
 foreach ($<item> in $<collection>){<statement list>}
 ```
 
-The part of the `ForEach` statement enclosed in parenthesis represents a
+The part of the `foreach` statement enclosed in parenthesis represents a
 variable and a collection to iterate. PowerShell creates the variable
-`$<item>` automatically when the `Foreach` loop runs. Prior to each
+`$<item>` automatically when the `foreach` loop runs. Prior to each
 iteration through the loop, the variable is set to a value in the collection.
-The block following a `Foreach` statement `{<statement list>}` contains a set
+The block following a `foreach` statement `{<statement list>}` contains a set
 of commands to execute against each item in a collection.
 
 ### Examples
 
-For example, the `Foreach` loop in the following example displays the values
+For example, the `foreach` loop in the following example displays the values
 in the `$letterArray` array.
 
 ```powershell
@@ -50,19 +50,14 @@ foreach ($letter in $letterArray)
 ```
 
 In this example, the `$letterArray` array is created and initialized with the
-string values `"a"`, `"b"`, `"c"`, and `"d"`. The first time the `Foreach`
+string values `"a"`, `"b"`, `"c"`, and `"d"`. The first time the `foreach`
 statement runs, it sets the `$letter` variable equal to the first item in
 `$letterArray` (`"a"`). Then, it uses the `Write-Host` cmdlet to display the
 letter a. The next time through the loop, `$letter` is set to `"b"`, and so
-on. After the `Foreach` loop displays the letter d, PowerShell exits
+on. After the `foreach` loop displays the letter d, PowerShell exits
 the loop.
 
-The entire `Foreach` statement must appear on a single line to run it as a
-command at the PowerShell command prompt. The entire `Foreach` statement does
-not have to appear on a single line if you place the command in a .ps1 script
-file instead.
-
-`Foreach` statements can also be used together with cmdlets that return a
+`foreach` statements can also be used together with cmdlets that return a
 collection of items. In the following example, the Foreach statement steps
 through the list of items that is returned by the `Get-ChildItem` cmdlet.
 
@@ -73,9 +68,9 @@ foreach ($file in Get-ChildItem)
 }
 ```
 
-You can refine the example by using an `If` statement to limit the results
-that are returned. In the following example, the `Foreach` statement performs
-the same looping operation as the previous example, but it adds an `If`
+You can refine the example by using an `if` statement to limit the results
+that are returned. In the following example, the `foreach` statement performs
+the same looping operation as the previous example, but it adds an `if`
 statement to limit the results to files that are greater than 100 kilobytes
 (KB):
 
@@ -89,7 +84,7 @@ foreach ($file in Get-ChildItem)
 }
 ```
 
-In this example, the `Foreach` loop uses a property of the `$file` variable to
+In this example, the `foreach` loop uses a property of the `$file` variable to
 perform a comparison operation (`$file.length -gt 100KB`). The `$file`
 variable contains all the properties in the object that is returned by the
 `Get-ChildItem` cmdlet. Therefore, you can return more than just a file name.
@@ -111,7 +106,7 @@ foreach ($file in Get-ChildItem)
 In this example, you are not limited to running a single command in a
 statement list.
 
-You can also use a variable outside a `Foreach` loop and increment the
+You can also use a variable outside a `foreach` loop and increment the
 variable inside the loop. The following example counts files over 100 KB in
 size:
 
@@ -135,7 +130,7 @@ else {
 
 In the preceding example, the `$i` variable is set to `0` outside the loop,
 and the variable is incremented inside the loop for each file that is found
-that is larger than 100 KB. When the loop exits, an `If` statement evaluates
+that is larger than 100 KB. When the loop exits, an `if` statement evaluates
 the value of `$i` to display a count of all the files over 100 KB. Or, it
 displays a message stating that no files over 100 KB were found.
 
