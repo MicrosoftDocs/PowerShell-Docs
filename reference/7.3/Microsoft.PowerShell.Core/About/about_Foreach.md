@@ -1,7 +1,7 @@
 ---
 description: Describes a language command you can use to traverse all the items in a collection of items.
 Locale: en-US
-ms.date: 02/27/2019
+ms.date: 01/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_foreach?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Foreach
@@ -178,7 +178,7 @@ function Get-FunctionPosition {
       $filesToProcess = if ($_ -is [System.IO.FileSystemInfo]) {
         $_
       } else {
-        $filesToProcess = Get-Item -Path $Path
+        Get-Item -Path $Path
       }
       $parser = [System.Management.Automation.Language.Parser]
       foreach ($item in $filesToProcess) {
@@ -229,4 +229,3 @@ function Get-FunctionPosition {
 [about_If](about_If.md)
 
 [ForEach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
-
