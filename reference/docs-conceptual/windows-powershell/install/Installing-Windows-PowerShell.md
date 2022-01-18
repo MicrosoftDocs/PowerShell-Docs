@@ -1,6 +1,6 @@
 ---
 description: This article explains how to install Windows PowerShell on various versions of Windows.
-ms.date: 10/22/2021
+ms.date: 01/18/2022
 title: Installing Windows PowerShell
 ---
 # Installing Windows PowerShell
@@ -24,7 +24,7 @@ here are the original version, as released, with no updates.
 
 |     Version      |                                                            Location                                                            |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Windows 10, 11   | Click left lower corner Windows icon, start typing PowerShell                                                                  |
+| Windows 10, 11   | Click Windows icon (lower left corner for Windows 10, lower center for Windows 11), start typing PowerShell                                                                  |
 | Windows 8.1, 8.0 | On the start screen, start typing PowerShell.<br/>If on desktop, click left lower corner Windows icon, start typing PowerShell |
 | Windows 7 SP1    | Click left lower corner Windows icon, on the search box start typing PowerShell                                                |
 
@@ -71,12 +71,13 @@ PowerShell.
 If you need to update your existing version of PowerShell, in Windows, use the following table to
 locate the installer for the version of PowerShell you want to update to.
 
-|                    Windows                     |                               PS 3.0                                |                               PS 4.0                                |                               PS 5.0                                |                               PS 5.1                                |
-| ---------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| Windows 10 (see Note1)<br/>Windows Server 2016 | -                                                                   | -                                                                   | -                                                                   | installed                                                           |
-| Windows 8.1<br/>Windows Server 2012 R2         | -                                                                   | installed                                                           | [WMF 5.0](https://www.microsoft.com/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616) |
-| Windows 8<br/>Windows Server 2012              | installed                                                           | [WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616) |
-| Windows 7 SP1<br/>Windows Server 2008 R2 SP1   | [WMF 3.0](https://www.microsoft.com/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616) |
+|                    Windows                     |       PS 3.0       |       PS 4.0       |       PS 5.0       |       PS 5.1       |
+| ---------------------------------------------- | :----------------: | :----------------: | :----------------: | :----------------: |
+| Windows 11 <br/>Windows Server 2022            |         -          |         -          |         -          |     installed      |
+| Windows 10 (see Note1)<br/>Windows Server 2016 |         -          |         -          |         -          |     installed      |
+| Windows 8.1<br/>Windows Server 2012 R2         |         -          |     installed      | [WMF 5.0][WMF 5.0] | [WMF 5.1][WMF 5.1] |
+| Windows 8<br/>Windows Server 2012              |     installed      | [WMF 4.0][WMF 4.0] | [WMF 5.0][WMF 5.0] | [WMF 5.1][WMF 5.1] |
+| Windows 7 SP1<br/>Windows Server 2008 R2 SP1   | [WMF 3.0][WMF 3.0] | [WMF 4.0][WMF 4.0] | [WMF 5.0][WMF 5.0] | [WMF 5.1][WMF 5.1] |
 
 > [!NOTE]
 > On the initial release of Windows 10, with automatic updates enabled, PowerShell gets updated from
@@ -96,3 +97,10 @@ Otherwise, what you might need is
 [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
 
 [Starting Windows PowerShell](../Starting-Windows-PowerShell.md)
+
+<!-- link refs -->
+
+[WMF 3.0]: https://www.microsoft.com/download/details.aspx?id=34595
+[WMF 4.0]: https://www.microsoft.com/download/details.aspx?id=40855
+[WMF 5.0]: https://www.microsoft.com/download/details.aspx?id=50395
+[WMF 5.1]: https://www.microsoft.com/download/details.aspx?id=54616
