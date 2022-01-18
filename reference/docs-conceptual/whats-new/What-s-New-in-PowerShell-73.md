@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.3-preview.1
 description: New features and changes released in PowerShell 7.3-preview.1
-ms.date: 12/16/2021
+ms.date: 01/18/2022
 ---
 
 # What's New in PowerShell 7.3
@@ -30,13 +30,15 @@ For a complete list of changes, see the [Change Log][CHANGELOG] in the GitHub re
 
 > [!NOTE]
 > There is a known issue in 7.3.0-preview.1 - Alpine Linux packages are missing the
-> `powershell.config.json` file, causing experimental features to be disabled by default. For details,
-> see Issue #16636.
+> `powershell.config.json` file, causing experimental features to be disabled by default. For
+> details, see Issue #16636.
 
 PowerShell 7.3 introduces the following experimental features:
 
 - [PSCleanBlock][exp-clean] - Adds `clean` block to script block as a peer to `begin`, `process`,
   and `end` to allow easy resource cleanup
+- [PSStrictModeAssignment][strict] - Adds the **StrictMode** parameter to `Invoke-Command` to allow
+  specifying strict mode when invoking command locally.
 
 For more information about the Experimental Features, see [Using Experimental Features][exp].
 
@@ -50,3 +52,4 @@ For more information about the Experimental Features, see [Using Experimental Fe
 
 [CHANGELOG]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0-preview.1
 [exp-clean]: ../learn/experimental-features.md#pscleanblock
+[strict]: ../learn/experimental-features.md#psstrictmodeassignment

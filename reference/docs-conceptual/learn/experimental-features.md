@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 11/08/2021
+ms.date: 01/18/2022
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -48,6 +48,7 @@ Legend
 | PSAnsiRenderingFileInfo                                    |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSLoadAssemblyFromNativeCode                               |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSCleanBlock                                               |                  |                  |                  | &#x2714;&#xfe0f; |
+| PSStrictModeAssignment                                     |                  |                  |                  | &#x2714;&#xfe0f; |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -385,6 +386,15 @@ variables must use `{}` around the variable name like: `${x?}?.propertyName` or 
 > [!NOTE]
 > This feature has moved out of the experimental phase and is a mainstream feature in PowerShell 7.1
 > and higher.
+
+## PSStrictModeAssignment
+
+PowerShell 7.3-preview.2 adds the **StrictMode** parameter to `Invoke-Command` to allow specifying
+strict mode when invoking command locally. The **StrictMode** parameter sets the provided version
+for the process. Once the process completes, the **StrictMode** version is set back to what it was
+before the `Invoke-Command`.
+
+This feature does not support asynchronous jobs on remote machines.
 
 ## PSUnixFileStat
 

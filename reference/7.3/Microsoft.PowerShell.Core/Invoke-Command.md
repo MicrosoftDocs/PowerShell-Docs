@@ -18,8 +18,8 @@ Runs commands on local and remote computers.
 ### InProcess (Default)
 
 ```
-Invoke-Command [-ScriptBlock] <ScriptBlock> [-NoNewScope] [-InputObject <PSObject>]
- [-ArgumentList <Object[]>] [<CommonParameters>]
+Invoke-Command [-StrictMode <Version>] [-ScriptBlock] <ScriptBlock> [-NoNewScope]
+ [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### FilePathRunspace
@@ -1449,6 +1449,26 @@ Accepted values: true
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StrictMode
+
+The **StrictMode** parameter sets the provided version for the process. Once the process completes,
+the **StrictMode** version is set back to what it was before the `Invoke-Command`.
+
+This is an experimental feature added in PowerShell 7.3-preview.2. You must enable the
+**PSStrictModeAssignment** experiment to use this parameter.
+
+```yaml
+Type: System.Version
+Parameter Sets: InProcess
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
