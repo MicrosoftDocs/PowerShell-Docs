@@ -1,7 +1,7 @@
 ---
 description: Describes a language statement that you can use to run a command block based on the results of a conditional test.
 Locale: en-US
-ms.date: 06/10/2021
+ms.date: 01/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_while?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about While
@@ -14,12 +14,12 @@ the results of a conditional test.
 
 ## Long description
 
-The `While` statement (also known as a `While` loop) is a language construct
+The `while` statement (also known as a `while` loop) is a language construct
 for creating a loop that runs commands in a command block as long as a
-conditional test evaluates to true. The `While` statement is easier to
+conditional test evaluates to true. The `while` statement is easier to
 construct than a For statement because its syntax is less complicated. In
 addition, it is more flexible than the Foreach statement because you specify a
-conditional test in the `While` statement to control how many times the loop
+conditional test in the `while` statement to control how many times the loop
 runs.
 
 The following shows the While statement syntax:
@@ -28,7 +28,7 @@ The following shows the While statement syntax:
 while (<condition>){<statement list>}
 ```
 
-When you run a While statement, PowerShell evaluates the `<condition>` section
+When you run a `while` statement, PowerShell evaluates the `<condition>` section
 of the statement before entering the `<statement list>` section. The condition
 portion of the statement resolves to either true or false. As long as the
 condition remains true, PowerShell reruns the `<statement list>` section. For
@@ -36,9 +36,11 @@ more information about how booleans are evaluated, see
 [about_Booleans](about_Booleans.md).
 
 The `<statement list>` section of the statement contains one or more commands
-that are run each time the loop is entered or repeated.
+that are run each time the loop is entered or repeated. The `<statement list>`
+can contain any valid PowerShell statements, including the `break` and
+`continue` keywords.
 
-For example, the following While statement displays the numbers 1 through 3 if
+For example, the following `while` statement displays the numbers 1 through 3 if
 the `$val` variable has not been created or if the `$val` variable has been
 created and initialized to 0.
 
@@ -68,6 +70,8 @@ the second command that writes the value of `$val` to the console.
 ## See also
 
 - [about_Comparison_Operators](about_Comparison_Operators.md)
+- [about_Break](about_Break.md)
+- [about_Continue](about_Continue.md)
 - [about_Do](about_Do.md)
 - [about_Foreach](about_Foreach.md)
 - [about_For](about_For.md)
