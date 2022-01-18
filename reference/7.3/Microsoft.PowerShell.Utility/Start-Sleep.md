@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/10/2019
+ms.date: 01/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Sleep
@@ -24,6 +24,12 @@ Start-Sleep [-Seconds] <Double> [<CommonParameters>]
 
 ```
 Start-Sleep -Milliseconds <Int32> [<CommonParameters>]
+```
+
+### FromTimeSpan
+
+```
+Start-Sleep -Duration <TimeSpan> [<CommonParameters>]
 ```
 
 ## Description
@@ -48,7 +54,32 @@ This example makes all the commands in the session sleep for one and one-half of
 Start-Sleep -Seconds 1.5
 ```
 
+### Example 3: Sleep commands using a **TimeSpan**
+
+This example makes all the commands in the session sleep for 30 seconds.
+
+```powershell
+Start-Sleep -Duration (New-TimeSpan -Seconds 30)
+```
+
 ## Parameters
+
+### -Duration
+
+Uses a **TimeSpan** object to specify how long the resource sleeps in milliseconds. The value must
+not be a negative **TimeSpan** and must not exceed `[int]::MaxValue` milliseconds.
+
+```yaml
+Type: System.TimeSpan
+Parameter Sets: FromTimeSpan
+Aliases: ts
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
 
 ### -Milliseconds
 
@@ -87,7 +118,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## Inputs
 
@@ -110,4 +142,3 @@ This cmdlet does not return any output.
     [Thread.Sleep Method](/dotnet/api/system.threading.thread.sleep).
 
 ## Related links
-
