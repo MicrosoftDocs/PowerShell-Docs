@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/22/2019
+ms.date: 01/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-psdrive?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSDrive
@@ -11,7 +11,7 @@ title: New-PSDrive
 # New-PSDrive
 
 ## Synopsis
-Creates temporary and persistent mapped network drives.
+Creates temporary and persistent drives that are associated with a location in an item data store.
 
 ## Syntax
 
