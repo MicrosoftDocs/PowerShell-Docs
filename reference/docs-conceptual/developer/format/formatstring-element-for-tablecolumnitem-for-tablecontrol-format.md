@@ -66,7 +66,7 @@ property.
 ```xml
 <TableColumnItem>
   <PropertyName>StartTime</PropertyName>
-  <FormatString>{0:MMM} (0:DD) (0:HH):(0:MM)</FormatString>
+  <FormatString>{0:MMM} {0:DD} {0:HH}:{0:MM}</FormatString>
 </TableColumnItem>
 ```
 
