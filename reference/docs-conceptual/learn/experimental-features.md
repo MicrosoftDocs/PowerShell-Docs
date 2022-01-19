@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 01/18/2022
+ms.date: 01/19/2022
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -47,6 +47,7 @@ Legend
 | PSNativeCommandArgumentPassing                             |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSAnsiRenderingFileInfo                                    |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSLoadAssemblyFromNativeCode                               |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
+| PSExec                                                     |                  |                  |                  | &#x2714;&#xfe0f; |
 | PSCleanBlock                                               |                  |                  |                  | &#x2714;&#xfe0f; |
 | PSStrictModeAssignment                                     |                  |                  |                  | &#x2714;&#xfe0f; |
 
@@ -179,6 +180,19 @@ In earlier previews of PowerShell 7.2, this feature was enabled by default. Begi
 PowerShell 7.2-preview7, the **PSDesiredStateConfiguration** module was removed and this feature is
 disabled by default. To enable this feature you must install the **PSDesiredStateConfiguration**
 v2.0.5 module from the PowerShell Gallery and enable the feature using `Enable-ExperimentalFeature`.
+
+## PSExec
+
+Some native Unix commands shell out to run something (like ssh) and use the `bash` built-in command
+`exec` to spawn a new process that replaces the current one. By default, `exec` is not a valid
+command in PowerShell. This is affecting some known scripts like `copy-ssh-id` and some subcommands
+of AzCLI.
+
+The `PSExec` experimental feature adds a new `Switch-Process` cmdlet aliased to `exec`. The cmdlet
+calls `execv()` function to provide similar behavior as POSIX shells.
+
+The `PSExec` experimental feature must be enabled for this cmdlet to be available. This cmdlet is
+only available for non-Windows systems.
 
 ## PSImplicitRemotingBatching
 
