@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 11/08/2021
+ms.date: 01/19/2022
 ms.prod: powershell
 ms.topic: include
 ---
@@ -16,12 +16,12 @@ supported on. These versions are supported until either the version of
 - When both the version of the OS and the version of PowerShell have &#x2705;, that combination is
   supported
 
-|    Alpine     | 7.0 (LTS) |    7.1    | 7.2 (LTS-current) |
-| ------------- | :-------: | :-------: | :---------------: |
-| &#x2705; 3.12 | &#x2705;  | &#x2705;  |     &#x274c;      |
-| &#x2705; 3.11 | &#x2705;  | &#x2705;  |     &#x274c;      |
-| &#x274c; 3.10 | &#x1f7e1; | &#x1f7e1; |     &#x274c;      |
-| &#x274c; 3.9  | &#x1f7e1; | &#x1f7e1; |     &#x274c;      |
+|    Alpine     | 7.0 (LTS) |    7.1    | 7.2 (LTS-current) | 7.3 (preview) |
+| ------------- | :-------: | :-------: | :---------------: | :-----------: |
+| &#x2705; 3.12 | &#x2705;  | &#x2705;  |     &#x274c;      |   &#x274c;    |
+| &#x2705; 3.11 | &#x2705;  | &#x2705;  |     &#x274c;      |   &#x274c;    |
+| &#x274c; 3.10 | &#x1f7e1; | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
+| &#x274c; 3.9  | &#x1f7e1; | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
 
 PowerShell has not been tested on Alpine versions 3.13 and 3.14.
 
@@ -30,9 +30,9 @@ PowerShell has not been tested on Alpine versions 3.13 and 3.14.
 
 PowerShell is supported on Alpine for the following processor architectures.
 
-|         Alpine         | 7.0 (LTS) |  7.1  | 7.2 (LTS-current) |
-| ---------------------- | :-------: | :---: | :---------------: |
-| All supported versions |    x64    |  x64  |        x64        |
+|         Alpine         | 7.0 (LTS) |  7.1  | 7.2 (LTS-current) | 7.3 (preview) |
+| ---------------------- | :-------: | :---: | :---------------: | :-----------: |
+| All supported versions |    x64    |  x64  |        x64        |      x64      |
 
 PowerShell has not been tested on Alpine using Arm processors.
 
