@@ -12,7 +12,7 @@ schema: 2.0.0
 On Linux and macOS, the cmdlet calls the `execv()` function to provide similar behavior as POSIX
 shells.
 
-## SYNTAX
+## Syntax
 
 ```
 Switch-Process [[-WithCommand] <String[]>] [<CommonParameters>]
