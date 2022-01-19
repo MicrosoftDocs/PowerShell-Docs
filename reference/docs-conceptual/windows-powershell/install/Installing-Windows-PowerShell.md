@@ -32,7 +32,7 @@ here are the original version, as released, with no updates.
 
 |     Version      |                                                            Location                                                            |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Windows 10, 11   | Click left lower corner Windows icon, start typing ISE                                                                         |
+| Windows 10, 11   | Click Windows icon (lower left corner for Windows 10, lower center for Windows 11), start typing ISE                                                                         |
 | Windows 8.1, 8.0 | On the start screen, type **PowerShell ISE**.<br/>If on desktop, click left lower corner Windows icon, type **PowerShell ISE** |
 | Windows 7 SP1    | Click left lower corner Windows icon, on the search box start typing PowerShell                                                |
 
