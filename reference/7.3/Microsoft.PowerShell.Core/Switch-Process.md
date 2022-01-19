@@ -9,7 +9,7 @@ schema: 2.0.0
 # Switch-Process
 
 ## Synopsis
-The cmdlet calls the `execv()` function to provide similar behavior as POSIX shells.
+On Linux and macOS, the cmdlet calls the `execv()` function to provide similar behavior as POSIX shells.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Switch-Process [[-WithCommand] <String[]>] [<CommonParameters>]
 
 ## Description
 
-Some native unix commands shell out to run something (like ssh) and use the bash built-in `exec` to
+Some native Unix commands shell out to run something (like ssh) and use the bash built-in `exec` to
 spawn a new process that replaces the current one. This fails when PowerShell is the default shell
 as `exec` is not a valid command. This is affecting some known scripts like `copy-ssh-id` or some
 subcommands of AzCLI.
