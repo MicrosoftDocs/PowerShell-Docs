@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.3-preview.1
 description: New features and changes released in PowerShell 7.3-preview.1
-ms.date: 01/18/2022
+ms.date: 01/19/2022
 ---
 
 # What's New in PowerShell 7.3
@@ -35,6 +35,8 @@ For a complete list of changes, see the [Change Log][CHANGELOG] in the GitHub re
 
 PowerShell 7.3 introduces the following experimental features:
 
+- [PSExec][psexec] - Adds the new `Switch-Process` cmdlet (alias `exec`) to provide `exec`
+  compatibility for non-Windows systems.
 - [PSCleanBlock][exp-clean] - Adds `clean` block to script block as a peer to `begin`, `process`,
   and `end` to allow easy resource cleanup
 - [PSStrictModeAssignment][strict] - Adds the **StrictMode** parameter to `Invoke-Command` to allow
@@ -52,4 +54,5 @@ For more information about the Experimental Features, see [Using Experimental Fe
 
 [CHANGELOG]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0-preview.1
 [exp-clean]: ../learn/experimental-features.md#pscleanblock
+[psexec]: ../learn/experimental-features.md#psexec
 [strict]: ../learn/experimental-features.md#psstrictmodeassignment
