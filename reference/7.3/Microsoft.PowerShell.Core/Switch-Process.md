@@ -22,7 +22,7 @@ Switch-Process [[-WithCommand] <String[]>] [<CommonParameters>]
 
 Some native Unix commands shell out to run something (like ssh) and use the `bash` built-in command
 `exec` to spawn a new process that replaces the current one. By default, `exec` is not a valid
-command in PowerShell. This is affecting some known scripts like `copy-ssh-id` or some subcommands
+command in PowerShell. This is affecting some known scripts like `copy-ssh-id` and some subcommands
 of AzCLI.
 
 The `PSExec` experimental feature adds a new `Switch-Process` cmdlet aliased to `exec`. The cmdlet

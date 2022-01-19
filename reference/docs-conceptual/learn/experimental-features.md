@@ -183,15 +183,16 @@ v2.0.5 module from the PowerShell Gallery and enable the feature using `Enable-E
 
 ## PSExec
 
-Some native unix commands shell out to run something (like ssh) and use the bash built-in `exec` to
-spawn a new process that replaces the current one. This fails when PowerShell is the default shell
-as `exec` is not a valid command. This is affecting some known scripts like `copy-ssh-id` or some
-subcommands of AzCLI.
+Some native Unix commands shell out to run something (like ssh) and use the `bash` built-in command
+`exec` to spawn a new process that replaces the current one. By default, `exec` is not a valid
+command in PowerShell. This is affecting some known scripts like `copy-ssh-id` and some subcommands
+of AzCLI.
 
-This feature adds a new `Switch-Process` cmdlet aliased to `exec`. The cmdlet calls `execv()`
-function to provide similar behavior as POSIX shells. This is not intended to have parity with the
-`exec` built-in function in POSIX shells (like how file descriptors are handled), but should cover
-most cases. This cmdlet is only available for non-Windows systems.
+The `PSExec` experimental feature adds a new `Switch-Process` cmdlet aliased to `exec`. The cmdlet
+calls `execv()` function to provide similar behavior as POSIX shells.
+
+The `PSExec` experimental feature must be enabled for this cmdlet to be available. This cmdlet is
+only available for non-Windows systems.
 
 ## PSImplicitRemotingBatching
 
