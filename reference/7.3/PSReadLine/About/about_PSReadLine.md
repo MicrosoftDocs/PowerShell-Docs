@@ -92,6 +92,8 @@ The following functions are available in the class
 Abort current action, for example: incremental history search.
 
 - Emacs: `<Ctrl+g>`
+- Vi insert mode: `<Ctrl+g>`
+- Vi command mode: `<Ctrl+g>`
 
 ### AcceptAndGetNext
 
@@ -719,8 +721,6 @@ previous line of multi-line input.
 
 - Cmd: `<LeftArrow>`
 - Emacs: `<LeftArrow>`, `<Ctrl+b>`
-- Vi insert mode: `<LeftArrow>`
-- Vi command mode: `<LeftArrow>`, `<Backspace>`, `<h>`
 
 ### BackwardWord
 
@@ -761,8 +761,6 @@ next line of multi-line input.
 
 - Cmd: `<RightArrow>`
 - Emacs: `<RightArrow>`, `<Ctrl+f>`
-- Vi insert mode: `<RightArrow>`
-- Vi command mode: `<RightArrow>`, `<Space>`, `<l>`
 
 ### ForwardWord
 
@@ -931,6 +929,8 @@ Perform an incremental forward search through history.
 
 - Cmd: `<Ctrl+s>`
 - Emacs: `<Ctrl+s>`
+- Vi insert mode: `<Ctrl+s>`
+- Vi command mode: `<Ctrl+s>`
 
 ### HistorySearchBackward
 
@@ -970,13 +970,14 @@ Perform an incremental backward search through history.
 
 - Cmd: `<Ctrl+r>`
 - Emacs: `<Ctrl+r>`
+- Vi insert mode: `<Ctrl+r>`
+- Vi command mode: `<Ctrl+r>`
 
 ### ViSearchHistoryBackward
 
 Prompts for a search string and initiates search upon AcceptLine.
 
-- Vi insert mode: `<Ctrl+r>`
-- Vi command mode: `</>`, `<Ctrl+r>`
+- Vi command mode: `</>`
 
 ## Completion functions
 
@@ -1429,8 +1430,7 @@ character. This is for 't' functionality.
 
 Prompts for a search string and initiates search upon AcceptLine.
 
-- Vi insert mode: `<Ctrl+s>`
-- Vi command mode: `<?>`, `<Ctrl+s>`
+- Vi command mode: `<?>`
 
 ## Custom Key Bindings
 
