@@ -86,6 +86,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 This feature is not intended to have parity with the built-in `exec` function in POSIX shells (like
 how file descriptors are handled), but should cover most cases.
 
+The `Switch-Process` cmdlet was created to provide `exec` compatibility is other POSIX shells. Under
+normal conditions, the cmdlet was not intended to be used in PowerShell scripts.
+
 ## RELATED LINKS
 
 [Using experimental features](/powershell/learn/experimental-features)
