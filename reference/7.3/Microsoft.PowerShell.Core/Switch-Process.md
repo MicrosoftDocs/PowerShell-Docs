@@ -9,7 +9,8 @@ schema: 2.0.0
 # Switch-Process
 
 ## Synopsis
-On Linux and macOS, the cmdlet calls the `execv()` function to provide similar behavior as POSIX shells.
+On Linux and macOS, the cmdlet calls the `execv()` function to provide similar behavior as POSIX
+shells.
 
 ## SYNTAX
 
@@ -19,41 +20,39 @@ Switch-Process [[-WithCommand] <String[]>] [<CommonParameters>]
 
 ## Description
 
-Some native Unix commands shell out to run something (like ssh) and use the bash built-in `exec` to
-spawn a new process that replaces the current one. This fails when PowerShell is the default shell
-as `exec` is not a valid command. This is affecting some known scripts like `copy-ssh-id` or some
-subcommands of AzCLI.
+Some native Unix commands shell out to run something (like ssh) and use the `bash` built-in command
+`exec` to spawn a new process that replaces the current one. By default, `exec` is not a valid
+command in PowerShell. This is affecting some known scripts like `copy-ssh-id` or some subcommands
+of AzCLI.
 
 The `PSExec` experimental feature adds a new `Switch-Process` cmdlet aliased to `exec`. The cmdlet
-calls `execv()` function to provide similar behavior as POSIX shells. This is not intended to have
-parity with the `exec` built-in function in POSIX shells (like how file descriptors are handled),
-but should cover most cases.
+calls `execv()` function to provide similar behavior as POSIX shells.
 
 The `PSExec` experimental feature must be enabled for this cmdlet to be available. This cmdlet is
 only available for non-Windows systems.
 
 ## Examples
 
-### Example 1 - Execute a native command
+### Example 1 - Execute a command that depends on `exec`
+
+This example assumes that PowerShell is the default shell on a non-Windows system. `ssh-copy-id` is
+a popular bash script to deploy public keys on target machines for key-based authentication. The
+script depends on the bash command, `exec`.
 
 ```powershell
-$id, $uname = pwsh -noprofile -noexit -outputformat text -command { $pid; exec uname -a }
-Get-Process -Id $id -ErrorAction Ignore
-$uname
-uname -a
+ssh-copy-id user@host
 ```
 
-This example runs the Unix native command `uname -a`. Since `pwsh` process gets replaced by the
-newly created process, `Get-Process` returns nothing. However, `$uname` contains the information
-about the new process.
+With the `PSExec` feature enabled, the `ssh-copy-id` script succeeds.
 
 ## Parameters
 
 ### -WithCommand
 
-Specifies the native executable (and any parameters) to be run. All arguments of this parameter are
-passed as an array of strings to be executed. The target command must be a native executable, not a
-PowerShell command.
+Specifies the native executable (and any parameters) to be run. All additional values passed as
+arguments are passed as an array of strings to be executed with the first command.
+
+The target command must be a native executable, not a PowerShell command.
 
 ```yaml
 Type: System.String[]
@@ -83,6 +82,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.Object
 
 ## Notes
+
+This feature is not intended to have parity with the built-in `exec` function in POSIX shells (like
+how file descriptors are handled), but should cover most cases.
 
 ## RELATED LINKS
 
