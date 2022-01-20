@@ -209,7 +209,7 @@ Formatting strings can be added to a view to further define how the data is disp
 ```xml
 <TableColumnItem>
   <PropertyName>StartTime</PropertyName>
-  <FormatString>{0:MMM} (0:DD) (0:HH):(0:MM)</FormatString>
+  <FormatString>{0:MMM} {0:DD} {0:HH}:{0:MM}</FormatString>
 </TableColumnItem>
 ```
 
@@ -226,8 +226,7 @@ In the following example, the `ToString` method is called to format the value of
 ```xml
 <ListItem>
   <ScriptBlock>
-    [String]::Format("(0,10) (1,8)", .LastWriteTime.ToString("d"),
-    $_.LastWriteTime.Totring("t"))
+    [String]::Format("{0,-10} {1,-8}", $_.LastWriteTime.ToString("d"), $_.LastWriteTime.ToString("t"))
   </ScriptBlock>
 </ListItem>
 ```
