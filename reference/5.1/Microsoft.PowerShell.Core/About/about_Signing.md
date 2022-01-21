@@ -1,7 +1,7 @@
 ---
 description: Explains how to sign scripts so that they comply with the PowerShell execution policies.
 Locale: en-US
-ms.date: 06/07/2021
+ms.date: 01/21/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Signing
@@ -224,8 +224,9 @@ you are using the **AllSigned** execution policy, you must sign the
 
 > [!IMPORTANT]
 > The script must be saved using ASCII or UTF8NoBOM encoding. You can sign a
-> script file that uses a different encoding. But the script fails to run or the
-> module containing the script fails to import.
+> script file that uses a different encoding, but the script fails to run or
+> the module containing the script fails to import. The script will also fail
+> if the file contains Unicode (UTF8) characters.
 
 To use this script, copy the following text into a text file, and name it
 `Add-Signature.ps1`.
