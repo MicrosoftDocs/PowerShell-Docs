@@ -1,7 +1,7 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 10/22/2021
+ms.date: 01/21/2022
 no-loc: [Debug, Verbose, Confirm]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -50,8 +50,8 @@ parentheses.
 The **Action** parameters are **ActionPreference** type values.
 **ActionPreference** is an enumeration with the following values:
 
-| Name             | Value |
-|------------------|-------|
+|        Name        | Value |
+| ------------------ | ----- |
 | `Suspend`          | 5     |
 | `Ignore`           | 4     |
 | `Inquire`          | 3     |
@@ -368,15 +368,26 @@ $out
 
 ### -PipelineVariable
 
-**PipelineVariable** stores the value of the current pipeline element as a
-variable, for any named command as it flows through the pipeline.
+**PipelineVariable** allows access to the most recent value passed into the
+next pipeline segment by the command that uses this parameter. Any command in
+the pipeline can access the value using the named **PipelineVariable**. The
+value is assigned to the variable when it is passed into the next pipeline
+segment. This makes the **PipelineVariable** easier to use than a specific
+temporary variable, which might need to be assigned in multiple locations.
+
+Unlike `$_` or `$PSItem`, using a **PipelineVariable** allows any pipeline
+command to access pipeline values passed (and saved) by commands other than the
+immediately preceding command. Pipeline commands can access the last value
+piped from while processing the next item passing through the pipeline. This
+allows a command to _feed back_ its output to a previous command (or itself).
 
 >[!NOTE]
 > Advanced functions can have up to three script blocks: `begin`, `process`,
 > and `end`. When using the **PipelineVariable** parameter with advanced
-> functions, only values from the first defined script block are assigned to the
-> variable as the function runs. For more information, see [Advanced functions](./about_functions_advanced.md).
-> PowerShell 7.2 corrects this behavior.
+> functions, only values from the first defined script block are assigned to
+> the variable as the function runs. For more information, see
+> [Advanced functions](./about_functions_advanced.md). PowerShell 7.2 corrects
+> this behavior.
 
 ```yaml
 Type: String
@@ -391,37 +402,72 @@ Accept wildcard characters: False
 
 Valid values are strings, the same as for any variable names.
 
+> [!CAUTION]
+> The **PipelineVariable** is scoped to the pipeline in which it is invoked.
+> Variables outside the pipeline, which use same name, are removed before the
+> pipeline is executed. The **PipelineVariable** goes out of scope when the
+> pipeline terminates. If multiple commands within the pipeline specify the
+> same **PipelineVariable** then there is only one shared variable. That
+> variable is updated with the most recent piped output from the command that
+> specifies the variable.
+>
+> Some _blocking_ commands collect all the pipeline items before producing any
+> output, for example `Sort-Object` or `Select-Object -Last`. Any
+> **PipelineVariable** assigned in a command before such a blocking command
+> always contains the final piped item from the preceding command when used in
+> a command after the blocking command.
+
 The following is an example of how **PipelineVariable** works. In this example,
 the **PipelineVariable** parameter is added to a `Foreach-Object` command to
-store the results of the command in variables. A range of numbers, 1 to 10, are
+store the results of the command in variables. A range of numbers, 1 to 5, are
 piped into the first `Foreach-Object` command, the results of which are stored
-in a variable named **Left**.
+in a variable named `$temp`.
 
 The results of the first `Foreach-Object` command are piped into a second
-`Foreach-Object` command, which filters the objects returned by the first
-`Foreach-Object` command. The results of the second command are stored in a
-variable named **Right**.
-
-In the third `Foreach-Object` command, the results of the first two
-`Foreach-Object` piped commands, represented by the variables **Left** and
-**Right**, are processed by using a multiplication operator. The command instructs
-objects stored in the **Left** and **Right** variables to be multiplied, and
-specifies that the results should be displayed as "Left range member * Right
-range member = product".
+`Foreach-Object` command, which displays the current values of `$temp` and
+`$_`.
 
 ```powershell
-1..10 | Foreach-Object -PipelineVariable Left -Process { $_ } |
-  Foreach-Object -PV Right -Process { 1..10 } |
-  Foreach-Object -Process { "$Left * $Right = " + ($Left*$Right) }
+# Create a variable named $temp
+$temp=8
+Get-Variable temp
+# Note that the variable just created is not available on the
+# pipeline when -PipelineVariable creates the same variable name
+1..5 | ForEach-Object -PipelineVariable temp -Begin {
+    Write-Host "Step1[BEGIN]:`$temp=$temp"
+} -Process {
+  Write-Host "Step1[PROCESS]:`$temp=$temp - `$_=$_"
+  Write-Output $_
+} | ForEach-Object {
+  Write-Host "`tStep2[PROCESS]:`$temp=$temp - `$_=$_"
+}
+# The $temp variable is deleted when the pipeline finishes
+Get-Variable temp
 ```
 
-```output
-1 * 1 = 1
-1 * 2 = 2
-1 * 3 = 3
-1 * 4 = 4
-1 * 5 = 5
-...
+```Output
+Name                           Value
+----                           -----
+temp                           8
+
+Step1[BEGIN]:$temp=
+Step1[PROCESS]:$temp= - $_=1
+        Step2[PROCESS]:$temp=1 - $_=1
+Step1[PROCESS]:$temp=1 - $_=2
+        Step2[PROCESS]:$temp=2 - $_=2
+Step1[PROCESS]:$temp=2 - $_=3
+        Step2[PROCESS]:$temp=3 - $_=3
+Step1[PROCESS]:$temp=3 - $_=4
+        Step2[PROCESS]:$temp=4 - $_=4
+Step1[PROCESS]:$temp=4 - $_=5
+        Step2[PROCESS]:$temp=5 - $_=5
+
+Get-Variable : Cannot find a variable with the name 'temp'.
+At line:1 char:1
++ Get-Variable temp
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (temp:String) [Get-Variable], ItemNotFoundException
+    + FullyQualifiedErrorId : VariableNotFound,Microsoft.PowerShell.Commands.GetVariableCommand
 ```
 
 ### -Verbose
