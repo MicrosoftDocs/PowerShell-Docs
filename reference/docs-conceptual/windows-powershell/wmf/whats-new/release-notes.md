@@ -109,7 +109,7 @@ present, this resulted in an error.
 In WMF 5.1:
 
 - You can use
-  [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+  [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor).
 
   This hash table has the same format as `Get-Module -FullyQualifiedName`.
 
