@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/02/2021
+ms.date: 01/24/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -18,63 +18,61 @@ Gets content from a web page on the internet.
 ### StandardMethod (Default)
 
 ```
-Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
- [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
- [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>] [-UseDefaultCredentials]
- [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
- [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
- [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
- [-MaximumRetryCount <Int32>] [-RetryIntervalSec <Int32>] [-Method <WebRequestMethod>]
- [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials] [-Body <Object>]
- [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
- [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect]
- [-SkipHeaderValidation] [<CommonParameters>]
+Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-RetryIntervalSec <Int32>] [-Method <WebRequestMethod>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### StandardMethodNoProxy
 
 ```
-Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
- [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
- [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>] [-UseDefaultCredentials]
- [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
- [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
- [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
- [-MaximumRetryCount <Int32>] [-RetryIntervalSec <Int32>] [-Method <WebRequestMethod>] -NoProxy
- [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>]
- [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
+Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-RetryIntervalSec <Int32>] [-Method <WebRequestMethod>] -NoProxy [-Body <Object>] [-Form <IDictionary>]
+ [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
+ [-Resume] [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [<CommonParameters>]
 ```
 
 ### CustomMethod
 
 ```
-Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
- [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
- [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>] [-UseDefaultCredentials]
- [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
- [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
- [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
- [-MaximumRetryCount <Int32>] [-RetryIntervalSec <Int32>] -CustomMethod <String> [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials] [-Body <Object>]
- [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
- [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect]
- [-SkipHeaderValidation] [<CommonParameters>]
+Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-RetryIntervalSec <Int32>] -CustomMethod <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### CustomMethodNoProxy
 
 ```
-Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
- [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
- [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>] [-UseDefaultCredentials]
- [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
- [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
- [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
- [-MaximumRetryCount <Int32>] [-RetryIntervalSec <Int32>] -CustomMethod <String> -NoProxy
- [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>]
- [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
+Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-RetryIntervalSec <Int32>] -CustomMethod <String> -NoProxy [-Body <Object>] [-Form <IDictionary>]
+ [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
+ [-Resume] [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [<CommonParameters>]
 ```
 
 ## Description
@@ -271,6 +269,17 @@ $StatusCode
 The terminating error is caught by the `catch` block, which retrieves the **StatusCode** from the
 **Exception** object.
 
+### Example 8: Send a request using HTTP 2.0
+
+This example gets the links in a web page using the HTTP 2.0 protocol. It uses the
+`Invoke-WebRequest` cmdlet to get the web page content. Then it uses the **Links** property of the
+`BasicHtmlWebResponseObject` that `Invoke-WebRequest` returns, and the **Href** property of each
+link.
+
+```powershell
+(Invoke-WebRequest -Uri 'https://aka.ms/pscore6-docs' -HttpVersion 2.0).Links.Href
+```
+
 ## Parameters
 
 ### -AllowUnencryptedAuthentication
@@ -294,7 +303,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -500,7 +509,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -571,6 +580,29 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HttpVersion
+
+Specifies the HTTP version used for the request. The default is `1.1`.
+
+Valid values are:
+
+- 1.0
+- 1.1
+- 2.0
+- 3.0
+
+```yaml
+Type: System.Version
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 1.1
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -671,7 +703,7 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -709,7 +741,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -731,7 +763,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -791,7 +823,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -830,7 +862,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -905,7 +937,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -930,7 +962,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1089,7 +1121,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1106,7 +1138,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
