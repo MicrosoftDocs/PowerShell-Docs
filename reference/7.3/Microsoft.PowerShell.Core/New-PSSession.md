@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/27/2021
+ms.date: 01/24/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
@@ -63,15 +63,15 @@ New-PSSession [-Name <String[]>] [-ConfigurationName <String>] -ContainerId <Str
 ### UseWindowsPowerShellParameterSet
 
 ```
-New-PSSession -UseWindowsPowerShell [-Name <string[]>] [<CommonParameters>]
+New-PSSession [-Name <String[]>] [-UseWindowsPowerShell] [<CommonParameters>]
 ```
 
 ### SSHHost
 
 ```
 New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserName <String>]
- [-KeyFilePath <String>] [-SSHTransport] [-Subsystem <String>] [-ConnectingTimeout <int>]
- [<CommonParameters>]
+ [-KeyFilePath <String>] [-Subsystem <String>] [-ConnectingTimeout <Int32>] [-SSHTransport]
+ [-Options <Hashtable>] [<CommonParameters>]
 ```
 
 ### SSHHostHashParam
@@ -307,6 +307,21 @@ This example shows how to create multiple sessions using Secure Shell (SSH) and 
 contain connection information for each session. Note that this example requires that the target
 remote computers have SSH configured to support key based user authentication.
 
+### Example 15: Create a new session using SSH options
+
+```powershell
+$options = @{
+    Port=22
+    User = 'UserB'
+    Host = 'LinuxServer5'
+}
+New-PSSession -KeyFilePath '/Users/UserB/id_rsa' -Options $options
+```
+
+This example shows how to create a new SSH-based session a remote Linux-based machine using SSH
+options. The **Options** parameter takes a hashtable of values that are passed as options to the
+underlying `ssh` command the established the connection to the remote system.
+
 ## Parameters
 
 ### -AllowRedirection
@@ -330,7 +345,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -617,7 +632,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -684,6 +699,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Options
+
+Specifies a hashtable of SSH options used when connecting to a remote SSH-based session. The
+possible options are any values supported by the Unix-based version of the
+[ssh](https://man.openbsd.org/ssh#o) command.
+
+Any values explicitly passed by parameters take precedence over values passed in the **Options**
+hashtable. For example, using the **Port** parameter overrides any `Port` key-value pair passed in
+the **Options** hashtable.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Port
 
 Specifies the network port on the remote computer that is used for this connection. To connect to a
@@ -724,7 +761,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -827,7 +864,7 @@ Accepted values: true
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -923,7 +960,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -939,7 +976,7 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1001,22 +1038,44 @@ You can pipe a string, URI, or session object to this cmdlet.
 
 ## Notes
 
-- This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local
-  computer and any remote computers must be configured for PowerShell remoting. For more
-  information, see [about_Remote_Requirements](About/about_Remote_Requirements.md).
-- To create a **PSSession** on the local computer, start PowerShell with the Run as administrator
-  option.
-- When you are finished with the **PSSession**, use the `Remove-PSSession` cmdlet to delete the
-  **PSSession** and release its resources.
-- The **HostName** and **SSHConnection** parameter sets were included starting with PowerShell 6.0.
-  They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and
-  PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting
-  will work over these platforms where PowerShell and SSH are installed and configured. This is
-  separate from the previous Windows only remoting that is based on WinRM and much of the WinRM
-  specific features and limitations do not apply. For example WinRM based quotas, session options,
-  custom endpoint configuration, and disconnect/reconnect features are currently not supported. For
-  more information about how to set up PowerShell SSH remoting, see
-  [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local computer and
+any remote computers must be configured for PowerShell remoting. For more information, see
+[about_Remote_Requirements](About/about_Remote_Requirements.md).
+
+To create a **PSSession** on the local computer, start PowerShell with the Run as administrator
+option.
+
+When you are finished with the **PSSession**, use the `Remove-PSSession` cmdlet to delete the
+**PSSession** and release its resources.
+
+The **HostName** and **SSHConnection** parameter sets were included starting with PowerShell 6.0.
+They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell
+are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting works over these
+platforms where PowerShell and SSH are installed and configured. This is separate from the previous
+Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations
+do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and
+disconnect/reconnect features are currently not supported. For more information about how to set up
+PowerShell SSH remoting, see
+[PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+
+The `ssh` executable obtains configuration data from the following sources in the following order:
+
+1. command-line options
+1. user's configuration file (~/.ssh/config)
+1. system-wide configuration file (/etc/ssh/ssh_config)
+
+The following cmdlet parameters get mapped into `ssh` parameters and options:
+
+|      Cmdlet parameter      |          ssh parameter          |    equivalent ssh -o option     |
+| -------------------------- | ------------------------------- | ------------------------------- |
+| `-KeyFilePath`             | `-i <KeyFilePath>`              | `-o IdentityFile=<KeyFilePath>` |
+| `-UserName`                | `-l <UserName>`                 | `-o User=<UserName>`            |
+| `-Port`                    | `-p <Port>`                     | `-o Port=<Port>`                |
+| `-ComputerName -Subsystem` | `-s <ComputerName> <Subsystem>` | `-o Host=<ComputerName>`        |
+
+Any values explicitly passed by parameters take precedence over values passed in the **Options**
+hashtable. For more information about `ssh_config` files, see
+[ssh_config(5)](https://man.openbsd.org/ssh_config.5).
 
 ## Related links
 
