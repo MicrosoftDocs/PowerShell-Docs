@@ -1642,7 +1642,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -1705,6 +1706,25 @@ don't apply. For example WinRM based quotas, session options, custom endpoint co
 disconnect/reconnect features are currently not supported. For more information about how to set up
 PowerShell SSH remoting, see
 [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+
+The `ssh` executable obtains configuration data from the following sources in the following order:
+
+1. command-line options
+1. user's configuration file (~/.ssh/config)
+1. system-wide configuration file (/etc/ssh/ssh_config)
+
+The following cmdlet parameters get mapped into `ssh` parameters and options:
+
+|      Cmdlet parameter      |          ssh parameter          |          ssh -o option          |
+| -------------------------- | ------------------------------- | ------------------------------- |
+| `-KeyFilePath`             | `-i <KeyFilePath>`              | `-o IdentityFile=<KeyFilePath>` |
+| `-UserName`                | `-l <UserName>`                 | `-o User=<UserName>`            |
+| `-Port`                    | `-p <Port>`                     | `-o Port=<Port>`                |
+| `-ComputerName -Subsystem` | `-s <ComputerName> <Subsystem>` | `-o Host=<ComputerName>`        |
+
+Any values explicitly passed by parameters take precedence over values passed in the **Options**
+hashtable. For more information about `ssh_config` files, see
+[ssh_config(5)](https://man.openbsd.org/ssh_config.5).
 
 ## Related links
 

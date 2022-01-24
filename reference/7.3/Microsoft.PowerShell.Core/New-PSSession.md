@@ -1038,22 +1038,44 @@ You can pipe a string, URI, or session object to this cmdlet.
 
 ## Notes
 
-- This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local
-  computer and any remote computers must be configured for PowerShell remoting. For more
-  information, see [about_Remote_Requirements](About/about_Remote_Requirements.md).
-- To create a **PSSession** on the local computer, start PowerShell with the Run as administrator
-  option.
-- When you are finished with the **PSSession**, use the `Remove-PSSession` cmdlet to delete the
-  **PSSession** and release its resources.
-- The **HostName** and **SSHConnection** parameter sets were included starting with PowerShell 6.0.
-  They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and
-  PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting
-  will work over these platforms where PowerShell and SSH are installed and configured. This is
-  separate from the previous Windows only remoting that is based on WinRM and much of the WinRM
-  specific features and limitations do not apply. For example WinRM based quotas, session options,
-  custom endpoint configuration, and disconnect/reconnect features are currently not supported. For
-  more information about how to set up PowerShell SSH remoting, see
-  [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local computer and
+any remote computers must be configured for PowerShell remoting. For more information, see
+[about_Remote_Requirements](About/about_Remote_Requirements.md).
+
+To create a **PSSession** on the local computer, start PowerShell with the Run as administrator
+option.
+
+When you are finished with the **PSSession**, use the `Remove-PSSession` cmdlet to delete the
+**PSSession** and release its resources.
+
+The **HostName** and **SSHConnection** parameter sets were included starting with PowerShell 6.0.
+They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell
+are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting works over these
+platforms where PowerShell and SSH are installed and configured. This is separate from the previous
+Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations
+do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and
+disconnect/reconnect features are currently not supported. For more information about how to set up
+PowerShell SSH remoting, see
+[PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+
+The `ssh` executable obtains configuration data from the following sources in the following order:
+
+1. command-line options
+1. user's configuration file (~/.ssh/config)
+1. system-wide configuration file (/etc/ssh/ssh_config)
+
+The following cmdlet parameters get mapped into `ssh` parameters and options:
+
+|      Cmdlet parameter      |          ssh parameter          |          ssh -o option          |
+| -------------------------- | ------------------------------- | ------------------------------- |
+| `-KeyFilePath`             | `-i <KeyFilePath>`              | `-o IdentityFile=<KeyFilePath>` |
+| `-UserName`                | `-l <UserName>`                 | `-o User=<UserName>`            |
+| `-Port`                    | `-p <Port>`                     | `-o Port=<Port>`                |
+| `-ComputerName -Subsystem` | `-s <ComputerName> <Subsystem>` | `-o Host=<ComputerName>`        |
+
+Any values explicitly passed by parameters take precedence over values passed in the **Options**
+hashtable. For more information about `ssh_config` files, see
+[ssh_config(5)](https://man.openbsd.org/ssh_config.5).
 
 ## Related links
 

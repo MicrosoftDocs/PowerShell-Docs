@@ -949,7 +949,7 @@ is available. To cancel the `Enter-PSSession` command, press <kbd>CTRL</kbd>+<kb
 
 The **HostName** parameter set was included starting with PowerShell 6.0. It was added to provide
 PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple
-platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where
+platforms (Windows, Linux, macOS) and PowerShell remoting works over these platforms where
 PowerShell and SSH are installed and configured. This is separate from the previous Windows only
 remoting that is based on WinRM and much of the WinRM specific features and limitations do not
 apply. For example, WinRM based quotas, session options, custom endpoint configuration, and
@@ -960,6 +960,27 @@ PowerShell SSH remoting, see
 Prior to PowerShell 7.1, remoting over SSH did not support second-hop remote sessions. This
 capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSSession` and
 `Enter-PSHostProcess` to work from within any interactive remote session.
+
+The `ssh` executable obtains configuration data from the following sources in the following order:
+
+1. command-line options
+1. user's configuration file (~/.ssh/config)
+1. system-wide configuration file (/etc/ssh/ssh_config)
+
+The following cmdlet parameters get mapped into `ssh` parameters and options:
+
+|      Cmdlet parameter      |          ssh parameter          |          ssh -o option          |
+| -------------------------- | ------------------------------- | ------------------------------- |
+| `-KeyFilePath`             | `-i <KeyFilePath>`              | `-o IdentityFile=<KeyFilePath>` |
+| `-UserName`                | `-l <UserName>`                 | `-o User=<UserName>`            |
+| `-Port`                    | `-p <Port>`                     | `-o Port=<Port>`                |
+| `-ComputerName -Subsystem` | `-s <ComputerName> <Subsystem>` | `-o Host=<ComputerName>`        |
+
+Any values explicitly passed by parameters take precedence over values passed in the **Options**
+hashtable. For more information about `ssh_config` files, see
+[ssh_config(5)](https://man.openbsd.org/ssh_config.5).
+
+
 
 ## Related links
 
