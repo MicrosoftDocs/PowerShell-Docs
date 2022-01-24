@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Ubuntu
-ms.date: 11/08/2021
+ms.date: 01/24/2022
 title: Installing PowerShell on Ubuntu
 ---
 # Installing PowerShell on Ubuntu
@@ -68,7 +68,7 @@ the version you downloaded.
 
 ```sh
 # Install the downloaded package
-sudo dpkg -i powershell_7.2.1-1.deb_amd64.deb
+sudo dpkg -i powershell-lts_7.2.1-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f

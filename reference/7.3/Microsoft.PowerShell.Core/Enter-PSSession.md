@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/23/2020
+ms.date: 01/24/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
@@ -26,8 +26,9 @@ Enter-PSSession [-ComputerName] <String> [-EnableNetworkAccess] [[-Credential] <
 ### SSHHost
 
 ```
-Enter-PSSession [-HostName] <String> [-Port <Int32>] [-UserName <String>] [-KeyFilePath <String>]
- [-SSHTransport] [-ConnectingTimeout <int>] [<CommonParameters>]
+Enter-PSSession [-HostName] <String> [-Options <Hashtable>] [-Port <Int32>] [-UserName <String>]
+ [-KeyFilePath <String>] [-Subsystem <String>] [-ConnectingTimeout <Int32>] [-SSHTransport]
+ [<CommonParameters>]
 ```
 
 ### Session
@@ -194,12 +195,27 @@ Otherwise you will have to use SSH key based user authentication.
 ### Example 7: Start an interactive session using SSH and specify the Port and user authentication key
 
 ```powershell
-PS> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\userAKey_rsa
+PS> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\sshkeys\userAKey_rsa
 ```
 
 This example shows how to start an interactive session using SSH. It uses the **Port** parameter to
 specify the port to use and the **KeyFilePath** parameter to specify an RSA key used to authenticate
 the user on the remote computer.
+
+### Example 8: Start an interactive session using SSH options
+
+```powershell
+$options = @{
+    Port=22
+    User = 'UserA'
+    Host = 'LinuxServer02'
+}
+Enter-PSSession -KeyFilePath c:\sshkeys\userAKey_rsa -Options $options
+```
+
+This example shows how to start an interactive session using SSH. The **Options** parameter takes a
+hashtable of values that are passed as options to the underlying `ssh` command the established the
+connection to the remote system.
 
 ## Parameters
 
@@ -224,7 +240,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -505,7 +521,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -621,6 +637,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -Options
+
+Specifies a hashtable of SSH options used when connecting to a remote SSH-based session. The
+possible options are any values supported by the Unix-based version of the
+[ssh](https://man.openbsd.org/ssh#o) command.
+
+Any values explicitly passed by parameters take precedence over values passed in the **Options**
+hashtable. For example, using the **Port** parameter overrides any `Port` key-value pair passed in
+the **Options** hashtable.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Port
 
 Specifies the network port on the remote computer that is used for this command.
@@ -672,7 +710,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -751,7 +789,7 @@ Accepted values: true
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -773,7 +811,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: powershell
+Default value: Powershell
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -828,7 +866,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -911,7 +949,7 @@ is available. To cancel the `Enter-PSSession` command, press <kbd>CTRL</kbd>+<kb
 
 The **HostName** parameter set was included starting with PowerShell 6.0. It was added to provide
 PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple
-platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where
+platforms (Windows, Linux, macOS) and PowerShell remoting works over these platforms where
 PowerShell and SSH are installed and configured. This is separate from the previous Windows only
 remoting that is based on WinRM and much of the WinRM specific features and limitations do not
 apply. For example, WinRM based quotas, session options, custom endpoint configuration, and
@@ -922,6 +960,27 @@ PowerShell SSH remoting, see
 Prior to PowerShell 7.1, remoting over SSH did not support second-hop remote sessions. This
 capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSSession` and
 `Enter-PSHostProcess` to work from within any interactive remote session.
+
+The `ssh` executable obtains configuration data from the following sources in the following order:
+
+1. command-line options
+1. user's configuration file (~/.ssh/config)
+1. system-wide configuration file (/etc/ssh/ssh_config)
+
+The following cmdlet parameters get mapped into `ssh` parameters and options:
+
+|      Cmdlet parameter      |          ssh parameter          |    equivalent ssh -o option     |
+| -------------------------- | ------------------------------- | ------------------------------- |
+| `-KeyFilePath`             | `-i <KeyFilePath>`              | `-o IdentityFile=<KeyFilePath>` |
+| `-UserName`                | `-l <UserName>`                 | `-o User=<UserName>`            |
+| `-Port`                    | `-p <Port>`                     | `-o Port=<Port>`                |
+| `-ComputerName -Subsystem` | `-s <ComputerName> <Subsystem>` | `-o Host=<ComputerName>`        |
+
+Any values explicitly passed by parameters take precedence over values passed in the **Options**
+hashtable. For more information about `ssh_config` files, see
+[ssh_config(5)](https://man.openbsd.org/ssh_config.5).
+
+
 
 ## Related links
 
