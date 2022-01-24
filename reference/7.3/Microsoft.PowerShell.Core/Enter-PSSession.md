@@ -969,7 +969,7 @@ The `ssh` executable obtains configuration data from the following sources in th
 
 The following cmdlet parameters get mapped into `ssh` parameters and options:
 
-|      Cmdlet parameter      |          ssh parameter          |          ssh -o option          |
+|      Cmdlet parameter      |          ssh parameter          |    equivalent ssh -o option     |
 | -------------------------- | ------------------------------- | ------------------------------- |
 | `-KeyFilePath`             | `-i <KeyFilePath>`              | `-o IdentityFile=<KeyFilePath>` |
 | `-UserName`                | `-l <UserName>`                 | `-o User=<UserName>`            |
