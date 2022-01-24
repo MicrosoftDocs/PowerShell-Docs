@@ -119,8 +119,8 @@ Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-Thrott
 ```
 Invoke-Command [-Port <Int32>] [-AsJob] [-HideComputerName] [-JobName <String>]
  [-ScriptBlock] <ScriptBlock> -HostName <String[]> [-UserName <String>] [-KeyFilePath <String>]
- [-SSHTransport] [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
- [-Subsystem <String>] [-ConnectingTimeout <int>] [<CommonParameters>]
+ [-Subsystem <String>] [-ConnectingTimeout <Int32>] [-SSHTransport] [-Options <Hashtable>]
+ [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### ContainerId
@@ -150,15 +150,16 @@ Invoke-Command [-AsJob] [-HideComputerName] [-JobName <String>] [-ScriptBlock] <
 ### FilePathSSHHost
 
 ```
-Invoke-Command [-AsJob] [-HideComputerName] -FilePath <String> -HostName <String[]>
- [-UserName <String>] [-KeyFilePath <String>] [-SSHTransport] [-RemoteDebug]
- [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+Invoke-Command [-AsJob] [-HideComputerName] [-FilePath] <String> -HostName <String[]>
+ [-UserName <String>] [-KeyFilePath <String>] [-Subsystem <String>] [-ConnectingTimeout <Int32>]
+ [-SSHTransport] [-Options <Hashtable>] [-RemoteDebug] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### FilePathSSHHostHash
 
 ```
-Invoke-Command [-AsJob] [-HideComputerName] -FilePath <String> -SSHConnection <Hashtable[]>
+Invoke-Command [-AsJob] [-HideComputerName] [-FilePath] <String> -SSHConnection <Hashtable[]>
  [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
@@ -690,6 +691,21 @@ $sshConnections =
 $results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -SSHConnection $sshConnections
 ```
 
+### Example 22: Connect to a remote SSH session using SSH options
+
+This example shows how to run a script file on a remote Linux-based machine using SSH options. The
+**Options** parameter takes a hashtable of values that are passed as options to the underlying `ssh`
+command the established the connection to the remote system.
+
+```powershell
+$options = @{
+    Port=22
+    User = 'UserB'
+    Host = 'LinuxServer5'
+}
+$results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -KeyFilePath '/Users/UserB/id_rsa' -Options $options
+```
+
 ## Parameters
 
 ### -AllowRedirection
@@ -778,7 +794,7 @@ For more information about PowerShell background jobs, see [about_Jobs](About/ab
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
+Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
 Aliases:
 
 Required: False
@@ -926,12 +942,12 @@ This parameter was introduced in PowerShell 7.2
 
 ```yaml
 Type: System.Int32
-Parameter Sets: SSHHost
+Parameter Sets: SSHHost, FilePathSSHHost
 Aliases:
 
 Required: False
 Position: Named
-Default value: unlimited
+Default value: Unlimited
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1087,7 +1103,7 @@ This parameter affects only the output display. It doesn't change the object.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
+Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
 Aliases: HCN
 
 Required: False
@@ -1245,6 +1261,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Options
+
+Specifies a hashtable of SSH options used when connecting to a remote SSH-based session. The
+possible options are any values supported by the Unix-based version of the
+[ssh](https://man.openbsd.org/ssh#o) command.
+
+Any values explicitly passed by parameters take precedence over values passed in the **Options**
+hashtable. For example, using the **Port** parameter overrides any `Port` key-value pair passed in
+the **Options** hashtable.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: SSHHost, FilePathSSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Port
 
 Specifies the network port on the remote computer that is used for this command. To connect to a
@@ -1280,7 +1318,7 @@ Used to run the invoked command in debug mode in the remote PowerShell session.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
+Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
 Aliases:
 
 Required: False
@@ -1342,7 +1380,7 @@ see [about_PSSessions](./About/about_PSSessions.md).
 
 ```yaml
 Type: System.Management.Automation.Runspaces.PSSession[]
-Parameter Sets: FilePathRunspace, Session
+Parameter Sets: Session, FilePathRunspace
 Aliases:
 
 Required: False
@@ -1485,13 +1523,13 @@ If this parameter is not used, the default is the 'powershell' subsystem.
 
 ```yaml
 Type: System.String
-Parameter Sets: SSHHost
+Parameter Sets: SSHHost, FilePathSSHHost
 Aliases:
 
 Required: False
 Position: Named
 Default value: powershell
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -1504,7 +1542,7 @@ The throttle limit applies only to the current command, not to the session or to
 
 ```yaml
 Type: System.Int32
-Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
+Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
 Aliases:
 
 Required: False

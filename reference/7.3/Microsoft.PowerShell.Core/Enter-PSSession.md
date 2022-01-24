@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/23/2020
+ms.date: 01/24/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
@@ -26,8 +26,9 @@ Enter-PSSession [-ComputerName] <String> [-EnableNetworkAccess] [[-Credential] <
 ### SSHHost
 
 ```
-Enter-PSSession [-HostName] <String> [-Port <Int32>] [-UserName <String>] [-KeyFilePath <String>]
- [-SSHTransport] [-ConnectingTimeout <int>] [<CommonParameters>]
+Enter-PSSession [-HostName] <String> [-Options <Hashtable>] [-Port <Int32>] [-UserName <String>]
+ [-KeyFilePath <String>] [-Subsystem <String>] [-ConnectingTimeout <Int32>] [-SSHTransport]
+ [<CommonParameters>]
 ```
 
 ### Session
@@ -194,12 +195,27 @@ Otherwise you will have to use SSH key based user authentication.
 ### Example 7: Start an interactive session using SSH and specify the Port and user authentication key
 
 ```powershell
-PS> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\userAKey_rsa
+PS> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\sshkeys\userAKey_rsa
 ```
 
 This example shows how to start an interactive session using SSH. It uses the **Port** parameter to
 specify the port to use and the **KeyFilePath** parameter to specify an RSA key used to authenticate
 the user on the remote computer.
+
+### Example 8: Start an interactive session using SSH options
+
+```powershell
+$options = @{
+    Port=22
+    User = 'UserA'
+    Host = 'LinuxServer02'
+}
+Enter-PSSession -KeyFilePath c:\sshkeys\userAKey_rsa -Options $options
+```
+
+This example shows how to start an interactive session using SSH. The **Options** parameter takes a
+hashtable of values that are passed as options to the underlying `ssh` command the established the
+connection to the remote system.
 
 ## Parameters
 
@@ -224,7 +240,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -505,7 +521,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -621,6 +637,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -Options
+
+Specifies a hashtable of SSH options used when connecting to a remote SSH-based session. The
+possible options are any values supported by the Unix-based version of the
+[ssh](https://man.openbsd.org/ssh#o) command.
+
+Any values explicitly passed by parameters take precedence over values passed in the **Options**
+hashtable. For example, using the **Port** parameter overrides any `Port` key-value pair passed in
+the **Options** hashtable.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Port
 
 Specifies the network port on the remote computer that is used for this command.
@@ -672,7 +710,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -751,7 +789,7 @@ Accepted values: true
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -773,7 +811,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: powershell
+Default value: Powershell
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -828,7 +866,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

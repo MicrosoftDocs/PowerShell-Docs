@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/27/2021
+ms.date: 01/24/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
@@ -63,15 +63,15 @@ New-PSSession [-Name <String[]>] [-ConfigurationName <String>] -ContainerId <Str
 ### UseWindowsPowerShellParameterSet
 
 ```
-New-PSSession -UseWindowsPowerShell [-Name <string[]>] [<CommonParameters>]
+New-PSSession [-Name <String[]>] [-UseWindowsPowerShell] [<CommonParameters>]
 ```
 
 ### SSHHost
 
 ```
 New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserName <String>]
- [-KeyFilePath <String>] [-SSHTransport] [-Subsystem <String>] [-ConnectingTimeout <int>]
- [<CommonParameters>]
+ [-KeyFilePath <String>] [-Subsystem <String>] [-ConnectingTimeout <Int32>] [-SSHTransport]
+ [-Options <Hashtable>] [<CommonParameters>]
 ```
 
 ### SSHHostHashParam
@@ -307,6 +307,21 @@ This example shows how to create multiple sessions using Secure Shell (SSH) and 
 contain connection information for each session. Note that this example requires that the target
 remote computers have SSH configured to support key based user authentication.
 
+### Example 15: Create a new session using SSH options
+
+```powershell
+$options = @{
+    Port=22
+    User = 'UserB'
+    Host = 'LinuxServer5'
+}
+New-PSSession -KeyFilePath '/Users/UserB/id_rsa' -Options $options
+```
+
+This example shows how to create a new SSH-based session a remote Linux-based machine using SSH
+options. The **Options** parameter takes a hashtable of values that are passed as options to the
+underlying `ssh` command the established the connection to the remote system.
+
 ## Parameters
 
 ### -AllowRedirection
@@ -330,7 +345,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -617,7 +632,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -684,6 +699,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Options
+
+Specifies a hashtable of SSH options used when connecting to a remote SSH-based session. The
+possible options are any values supported by the Unix-based version of the
+[ssh](https://man.openbsd.org/ssh#o) command.
+
+Any values explicitly passed by parameters take precedence over values passed in the **Options**
+hashtable. For example, using the **Port** parameter overrides any `Port` key-value pair passed in
+the **Options** hashtable.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Port
 
 Specifies the network port on the remote computer that is used for this connection. To connect to a
@@ -724,7 +761,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -827,7 +864,7 @@ Accepted values: true
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -923,7 +960,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -939,7 +976,7 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
