@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/04/2020
+ms.date: 01/25/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-location?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Location
@@ -46,9 +46,6 @@ stack. For more information about location stacks, see the Notes.
 
 ```powershell
 PS C:\> Set-Location -Path "HKLM:\"
-```
-
-```output
 PS HKLM:\>
 ```
 
@@ -60,7 +57,7 @@ This command sets the current location to the root of the `HKLM:` drive.
 PS C:\> Set-Location -Path "Env:\" -PassThru
 ```
 
-```output
+```Output
 Path
 ----
 Env:\
@@ -116,8 +113,6 @@ is typed. No characters are interpreted as wildcard characters. If the path incl
 characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
 interpret any characters as escape sequences.
 
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
-
 ```yaml
 Type: System.String
 Parameter Sets: LiteralPath
@@ -150,8 +145,9 @@ Accept wildcard characters: False
 ### -Path
 
 Specify the path of a new working location. If no path is provided, `Set-Location` defaults to the
-current user's home directory. When wildcards are used, the cmdlet chooses the first path that
-matches the wildcard pattern.
+current user's home directory. When wildcards are used, the cmdlet chooses the container (directory,
+registry key, certificate store) that matches the wildcard pattern. If the wildcard pattern matches
+more than one container, the cmdlet returns an error.
 
 ```yaml
 Type: System.String
@@ -167,12 +163,14 @@ Accept wildcard characters: True
 
 ### -StackName
 
-Specifies the existing location stack name that this cmdlet makes the current location stack. Enter
+Specifies an existing location stack name that this cmdlet makes the current location stack. Enter
 a location stack name. To indicate the unnamed default location stack, type `$null` or an empty
 string (`""`).
 
-The `*-Location` cmdlets act on the current stack unless you use the **StackName** parameter to
-specify a different stack.
+Using this parameter does not change the current location. It only changes the stack used by the
+`*-Location` cmdlets. The `*-Location` cmdlets act on the current stack unless you use the
+**StackName** parameter to specify a different stack. For more information about location stacks,
+see the [Notes](#notes).
 
 ```yaml
 Type: System.String
