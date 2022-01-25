@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/06/2021
+ms.date: 01/25/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compare-Object
@@ -456,9 +456,9 @@ shows which input object the output belongs to.
 ## Notes
 
 When using the **PassThru** parameter, the output displayed in the console may not include the
-**SideIndicator** property. The default format view of the for the object type output by
-`Compare-Object` does not include the **SideIndicator** property. For more information see
-[Example 3](#ex3) in this article.
+**SideIndicator** property. The default format view for the object type output by `Compare-Object`
+does not include the **SideIndicator** property. For more information see [Example 3](#ex3) in this
+article.
 
 ## Related links
 

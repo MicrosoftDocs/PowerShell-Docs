@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/06/2021
+ms.date: 01/25/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compare-Object
@@ -409,7 +409,7 @@ a collection of objects. `Compare-Object` examines adjacent objects when it does
 in the same position in a collection. The default value is `[Int32]::MaxValue`, which means that
 `Compare-Object` examines the entire object collection.
 
-When working with large collections, the default value might not be efficient but is very accurate.
+When working with large collections, the default value might not be efficient but is accurate.
 Specifying a smaller value for **SyncWindow** can increase performance but could have lower
 accuracy.
 
@@ -457,9 +457,9 @@ shows which input object the output belongs to.
 ## Notes
 
 When using the **PassThru** parameter, the output displayed in the console may not include the
-**SideIndicator** property. The default format view of the for the object type output by
-`Compare-Object` does not include the **SideIndicator** property. For more information see
-[Example 3](#ex3) in this article.
+**SideIndicator** property. The default format view for the object type output by `Compare-Object`
+does not include the **SideIndicator** property. For more information see [Example 3](#ex3) in this
+article.
 
 ## Related links
 
