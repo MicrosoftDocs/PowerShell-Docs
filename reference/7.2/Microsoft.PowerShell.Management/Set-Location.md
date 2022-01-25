@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/04/2020
+ms.date: 01/25/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-location?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Location
@@ -45,7 +45,7 @@ independent from the location stack that is accessed using the **StackName** par
 
 ### Example 1: Set the current location
 
-```
+```powershell
 PS C:\> Set-Location -Path "HKLM:\"
 PS HKLM:\>
 ```
@@ -54,7 +54,7 @@ This command sets the current location to the root of the `HKLM:` drive.
 
 ### Example 2: Set the current location and display that location
 
-```
+```powershell
 PS C:\> Set-Location -Path "Env:\" -PassThru
 ```
 
@@ -86,7 +86,7 @@ To get the current location in the PSDrive use `Get-Location -PSDrive <DriveName
 
 ### Example 4: Set the current location to a named stack
 
-```
+```powershell
 PS C:\> Push-Location -Path 'C:\Program Files\PowerShell\' -StackName "Paths"
 PS C:\Program Files\PowerShell\> Set-Location -StackName "Paths"
 PS C:\Program Files\PowerShell\> Get-Location -Stack
@@ -169,15 +169,16 @@ Accept wildcard characters: False
 ### -Path
 
 Specify the path of a new working location. If no path is provided, `Set-Location` defaults to the
-current user's home directory. When wildcards are used, the cmdlet chooses the first path that
-matches the wildcard pattern.
+current user's home directory. When wildcards are used, the cmdlet chooses the container (directory,
+registry key, certificate store) that matches the wildcard pattern. If the wildcard pattern matches
+more than one container, the cmdlet returns an error.
 
 PowerShell keeps a history of the last 20 locations you have set. If the **Path** parameter value
 is the `-` character, then the new working location will be the previous working location in history
 (if it exists). Similarly, if the value is the `+` character, then the new working location will be
 the next working location in history (if it exists). This is similar to using `Pop-Location` and
 `Push-Location` except that the history is a list, not a stack, and is implicitly tracked,
-not manually controlled. Currently, there is no way to view the history list.
+not manually controlled. There is no way to view the history list.
 
 ```yaml
 Type: System.String
@@ -193,12 +194,14 @@ Accept wildcard characters: True
 
 ### -StackName
 
-Specifies the existing location stack name that this cmdlet makes the current location stack. Enter
+Specifies an existing location stack name that this cmdlet makes the current location stack. Enter
 a location stack name. To indicate the unnamed default location stack, type `$null` or an empty
 string (`""`).
 
-The `*-Location` cmdlets act on the current stack unless you use the **StackName** parameter to
-specify a different stack. For more information about location stacks, see the [Notes](#notes).
+Using this parameter does not change the current location. It only changes the stack used by the
+`*-Location` cmdlets. The `*-Location` cmdlets act on the current stack unless you use the
+**StackName** parameter to specify a different stack. For more information about location stacks,
+see the [Notes](#notes).
 
 ```yaml
 Type: System.String
@@ -286,4 +289,3 @@ the current stack, use the **StackName** parameter of the `Set-Location` cmdlet 
 [Pop-Location](Pop-Location.md)
 
 [Push-Location](Push-Location.md)
-
