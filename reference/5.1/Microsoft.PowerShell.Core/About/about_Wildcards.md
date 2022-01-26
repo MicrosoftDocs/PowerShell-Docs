@@ -34,13 +34,13 @@ information, see [about_Regular_Expressions](./about_Regular_Expressions.md).
 
 PowerShell supports the following wildcard characters:
 
-| Wildcard |             Description              |   Example   |      Match       | No Match |
-| -------- | ------------------------------------ | ----------- | ---------------- | -------- |
-| `*`      | Match zero or more characters        | `a*`        | aA, ag, Apple    | banana   |
-| `?`      | Match one character in that position | `?n`        | an, in, on       | ran      |
-| `[ ]`    | Match a range of characters          | `[a-l\]ook` | book, cook, look | took     |
-| `[ ]`    | Match specific characters            | `[bc]ook`   | book, cook       | hook     |
-| `` `* `` | Match any character as a literal (not a wildcard character) | ``12`*4``<br>``*hello`?*`` | 12*4<br>hello? Dolly | 1234<br>hello Dolly |
+| Wildcard |                         Description                         |   Example   |      Match       | No Match |
+| -------- | ----------------------------------------------------------- | ----------- | ---------------- | -------- |
+| `*`      | Match zero or more characters                               | `a*`        | aA, ag, Apple    | banana   |
+| `?`      | Match one character in that position                        | `?n`        | an, in, on       | ran      |
+| `[ ]`    | Match a range of characters                                 | `[a-l\]ook` | book, cook, look | took     |
+| `[ ]`    | Match specific characters                                   | `[bc]ook`   | book, cook       | hook     |
+| `` `* `` | Match any character as a literal (not a wildcard character) | ``12`*4``   | 12*4             | 1234     |
 
 You can include multiple wildcard characters in the same word pattern. For
 example, to find text files with names that begin with the letters **a**
@@ -49,6 +49,11 @@ through **l**, type:
 ```powershell
 Get-ChildItem C:\Techdocs\[a-l]*.txt
 ```
+
+There may be cases where you want to match the literal character rather than
+treat it as a wildcard character. In those cases you can use the backtick
+character to escape the character so that it is compared using the literal
+character. For example, ``'*hello`?*'`` will match strings containing "hello?".
 
 Many cmdlets accept wildcard characters in parameter values. The Help topic for
 each cmdlet describes which parameters accept wildcard characters. For
