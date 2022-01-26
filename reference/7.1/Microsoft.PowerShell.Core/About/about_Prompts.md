@@ -1,7 +1,7 @@
 ---
 description: Describes the `Prompt` function and demonstrates how to create a custom `Prompt` function.
 Locale: en-US
-ms.date: 04/15/2020
+ms.date: 01/26/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Prompts
@@ -141,8 +141,8 @@ PS C:\ps-test>
 ```
 
 If you are in a nested prompt, the function adds two angle brackets (`>>`) to
-the prompt. (You are in a nested prompt if the value of the
-`$NestedPromptLevel` automatic variable is greater than 1.)
+the prompt. You are in a nested prompt if the value of the `$NestedPromptLevel`
+automatic variable is greater than 0.
 
 For example, when you are debugging in a nested prompt, the prompt resembles
 the following prompt:
@@ -294,4 +294,3 @@ profiles. For more information about profiles, see [about_Profiles](about_Profil
 [about_Debuggers](about_Debuggers.md)
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
-
