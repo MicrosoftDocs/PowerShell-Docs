@@ -52,8 +52,9 @@ Get-ChildItem C:\Techdocs\[a-l]*.txt
 
 There may be cases where you want to match the literal character rather than
 treat it as a wildcard character. In those cases you can use the backtick
-character to escape the character so that it is compared using the literal
-character. For example, ``'*hello`?*'`` will match strings containing "hello?".
+(`` ` ``) character to escape the wildcard character so that it is compared
+using the literal character value. For example, ``'*hello`?*'`` matches strings
+containing "hello?".
 
 Many cmdlets accept wildcard characters in parameter values. The Help topic for
 each cmdlet describes which parameters accept wildcard characters. For
