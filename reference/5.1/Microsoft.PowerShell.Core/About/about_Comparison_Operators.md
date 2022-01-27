@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 11/02/2021
+ms.date: 01/27/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comparison Operators
@@ -112,6 +112,26 @@ These operators process all elements of the collection. Example:
 ```output
 zzz
 zzz
+```
+
+The equality operator can compare objects of different types. It is important
+to understand that the value is on the right-hand side of the comparison can be
+converted to the type of the left-hand side value for comparison.
+
+For example, the string `'1.0'` is converted to an integer to be compared to
+the value `1`. This example returns `True`.
+
+```powershell
+PS> 1 -eq '1.0'
+True
+```
+
+In this example, the value `1` is converted to a string to be compared to
+string `'1.0'`. This example returns `False`.
+
+```powershell
+PS> '1.0' -eq 1
+False
 ```
 
 The equality operators accept any two objects, not just a scalar or collection.
