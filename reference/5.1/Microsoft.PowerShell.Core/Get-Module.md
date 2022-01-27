@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/03/2020
+ms.date: 01/27/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Module
@@ -458,7 +458,7 @@ Accept wildcard characters: False
 
 Specifies modules with names that are specified in the form of **ModuleSpecification** objects. See
 the Remarks section of
-[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#microsoft-powershell-commands-modulespecification-ctor(system-collections-hashtable)).
 
 For example, the **FullyQualifiedModule** parameter accepts a module name that is specified in
 either of these formats:
@@ -469,6 +469,14 @@ either of these formats:
 **ModuleName** and **ModuleVersion** are required, but **Guid** is optional. You cannot specify the
 **FullyQualifiedModule** parameter in the same command as a **Module** parameter. the two
 parameters are mutually exclusive.
+
+> [!NOTE]
+> This parameter also accepts simpler forms of input:
+>
+> - A module name
+> - A fully-qualified path to the module
+> - A relative path to the module. When used in a script, the relative path is resolved to a
+>   fully-qualified path relative to the location of the script file.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
