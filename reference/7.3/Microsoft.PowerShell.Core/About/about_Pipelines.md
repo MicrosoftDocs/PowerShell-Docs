@@ -1,7 +1,7 @@
 ---
 description: Combining commands into pipelines in the PowerShell
 Locale: en-US
-ms.date: 03/18/2021
+ms.date: 01/27/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Pipelines
@@ -389,6 +389,19 @@ For example,
 
 It's important to remember that objects sent down the pipeline are delivered
 one at a time.
+
+## Using native commands in the pipeline
+
+PowerShell allows you to include native external commands in the pipeline.
+However, it is important to note that PowerShell's pipeline is object-oriented
+and does not support raw byte data.
+
+Piping or redirecting output from a native program that outputs raw byte data
+converts the output to .NET strings. This conversion can cause corruption of
+the raw data output.
+
+As a workaround, call the native commands using `cmd.exe /c` or `sh -c` and use
+of the `|` and `>` operators provided by the native shell.
 
 ## Investigating pipeline errors
 
