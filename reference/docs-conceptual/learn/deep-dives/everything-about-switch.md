@@ -615,7 +615,7 @@ Value '' is an empty string
 ```
 
 Also, be careful with empty returns from cmdlets. Cmdlets or pipelines that have no output are
-treated it as an empty array that does not match anything, including the `default` case.
+treated as an empty array that does not match anything, including the `default` case.
 
 ```powershell
 $file = Get-ChildItem NonExistantFile*
