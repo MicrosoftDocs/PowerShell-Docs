@@ -1,20 +1,20 @@
 ---
 description: The switch statement in PowerShell offers features that aren't found in other languages.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/05/2021
+ms.date: 01/28/2022
 title: Everything you ever wanted to know about the switch statement
 ---
 # Everything you ever wanted to know about the switch statement
 
 Like many other languages, PowerShell has commands for controlling the flow of execution within your
-scripts. One of those statements is the [switch][switch] statement and in PowerShell, it offers features
-that aren't found in other languages. Today, we take a deep dive into working with the PowerShell
-`switch`.
+scripts. One of those statements is the [switch][switch] statement and in PowerShell, it offers
+features that aren't found in other languages. Today, we take a deep dive into working with the
+PowerShell `switch`.
 
 > [!NOTE]
-> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
-> PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][PowerShellExplained.com].
+> The [original version][original version] of this article appeared on the blog written by
+> [@KevinMarquette][@KevinMarquette]. The PowerShell team thanks Kevin for sharing this content with
+> us. Please check out his blog at [PowerShellExplained.com][PowerShellExplained.com].
 
 ## The `if` statement
 
@@ -241,7 +241,8 @@ switch -Regex ( $message )
 }
 ```
 
-I have more examples of using regex in another article I wrote: [The many ways to use regex][The many ways to use regex].
+I have more examples of using regex in another article I wrote:
+[The many ways to use regex][The many ways to use regex].
 
 ### -File
 
@@ -417,9 +418,9 @@ write-error -message $PSItem : Error: out of disk space
 
 In this case, if we hit any lines that start with `Error` then we get an error and the switch stops.
 This is what that `break` statement is doing for us. If we find `Error` inside the string and not
-just at the beginning, we write it as a warning. We do the same thing for `Warning`. It's
-possible that a line could have both the word `Error` and `Warning`, but we only need one to
-process. This is what the `continue` statement is doing for us.
+just at the beginning, we write it as a warning. We do the same thing for `Warning`. It's possible
+that a line could have both the word `Error` and `Warning`, but we only need one to process. This is
+what the `continue` statement is doing for us.
 
 ### Break labels
 
@@ -561,7 +562,8 @@ It still executes the same way and gives a better visual break when quickly look
 
 We need to revisit regex to touch on something that isn't immediately obvious. The use of regex
 populates the `$matches` variable. I do go into the use of `$matches` more when I talk about
-[The many ways to use regex][The many ways to use regex]. Here is a quick sample to show it in action with named matches.
+[The many ways to use regex][The many ways to use regex]. Here is a quick sample to show it in
+action with named matches.
 
 ``` powershell
 $message = 'my ssn is 123-23-3456 and credit card: 1234-5678-1234-5678'
@@ -592,42 +594,37 @@ WARNING: message may contain a credit card number: 1234-5678-1234-5678
 
 You can match a `$null` value that doesn't have to be the default.
 
-``` powershell
-$value = $null
-
-switch ( $value )
+```powershell
+$values = '', 5, $null
+switch ( $values )
 {
-    $null
-    {
-        'Value is null'
-    }
-    default
-    {
-        'value is not null'
-    }
+    $null   { "Value '$_' is `$null or an empty string" }
+    ''      { "Value '$_' is an empty string" }
+    default { "Value [$_] is not an empty string or `$null" }
 }
-
-```Output
-Value is null
 ```
 
-Same goes for an empty string.
-
-``` powershell
-switch ( '' )
-{
-    ''
-    {
-        'Value is empty'
-    }
-    default
-    {
-        'value is a empty string'
-    }
-}
+Notice that the empty string value doesn't match `$null` but `$null` matches both `$null` and an
+empty string.
 
 ```Output
-Value is empty
+Value '' is an empty string
+Value [5] is not an empty string or $null
+Value '' is $null or an empty string
+Value '' is an empty string
+```
+
+Also, be careful with empty returns from cmdlets. Cmdlets or pipelines that have no output are
+treated it as an empty array that does not match anything, including the `default` case.
+
+```powershell
+$file = Get-ChildItem NonExistantFile*
+switch ( $file )
+{
+    $null   { '$file is $null' }
+    default { "`$file is type $($file.GetType().Name)" }
+}
+# No matches
 ```
 
 ### Constant expression
@@ -662,8 +659,8 @@ Do-Action
 Enabled-AdminMenu
 ```
 
-This is a clean way to evaluate and take action on the status of several boolean fields. The
-cool thing about this is that you can have one match flip the status of a value that hasn't been
+This is a clean way to evaluate and take action on the status of several boolean fields. The cool
+thing about this is that you can have one match flip the status of a value that hasn't been
 evaluated yet.
 
 ``` powershell
@@ -694,9 +691,9 @@ Do-Action
 Show-Animation
 ```
 
-Setting `$isEnabled` to `$true` in this example makes sure that `$isVisible` is also set to
-`$true`. Then when `$isVisible` gets evaluated, its scriptblock is invoked. This is a bit
-counter-intuitive but is a clever use of the mechanics.
+Setting `$isEnabled` to `$true` in this example makes sure that `$isVisible` is also set to `$true`.
+Then when `$isVisible` gets evaluated, its scriptblock is invoked. This is a bit counter-intuitive
+but is a clever use of the mechanics.
 
 ### $switch automatic variable
 
@@ -726,8 +723,8 @@ access that value directly. I would call it madness.
 
 ### Hashtables
 
-One of my most popular posts is the one I did on [hashtables][hashtables]. One of the use cases for a
-`hashtable` is to be a lookup table. That is an alternate approach to a common pattern that a
+One of my most popular posts is the one I did on [hashtables][hashtables]. One of the use cases for
+a `hashtable` is to be a lookup table. That is an alternate approach to a common pattern that a
 `switch` statement is often addressing.
 
 ``` powershell
