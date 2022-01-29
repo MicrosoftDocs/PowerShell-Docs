@@ -311,7 +311,7 @@ public class MyModuleInitializer : IModuleAssemblyInitializer
 // and implements IModuleAssemblyCleanup.
 public class MyModuleCleanup : IModuleAssemblyCleanup
 {
-    public void OnRemove()
+    public void OnRemove(PSModuleInfo psModuleInfo)
     {
         AppDomain.CurrentDomain.AssemblyResolve -= DependencyResolution.ResolveNewtonsoftJson;
     }
@@ -643,16 +643,21 @@ namespace AlcModule.Cmdlets
 
         protected override Assembly Load(AssemblyName assemblyName)
         {
-            // We do the simple logic here of
-            // looking for an assembly of the given name
-            // in the configured dependency directory
+            // We do the simple logic here of looking for an assembly of the given name
+            // in the configured dependency directory.
             string assemblyPath = Path.Combine(
                 _dependencyDirPath,
                 $"{assemblyName.Name}.dll");
 
-            // The ALC must use inherited methods to load assemblies
-            // Assembly.Load*() won't work here
-            return LoadFromAssemblyPath(assemblyPath);
+            if (File.Exists(assemblyPath))
+            {
+                // The ALC must use inherited methods to load assemblies.
+                // Assembly.Load*() won't work here.
+                return LoadFromAssemblyPath(assemblyPath);
+            }
+
+            // For other assemblies, return null to allow other resolutions to continue.
+            return null;
         }
     }
 }
@@ -674,7 +679,8 @@ namespace AlcModule.Cmdlets
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                 "Dependencies"));
 
-        private static readonly AlcModuleAssemblyLoadContext s_dependencyAlc = new AlcModuleAssemblyLoadContext(s_dependencyDirPath);
+        private static readonly AlcModuleAssemblyLoadContext s_dependencyAlc =
+            new AlcModuleAssemblyLoadContext(s_dependencyDirPath);
 
         public void OnImport()
         {
@@ -682,15 +688,13 @@ namespace AlcModule.Cmdlets
             AssemblyLoadContext.Default.Resolving += ResolveAlcEngine;
         }
 
-        public void OnRemove()
+        public void OnRemove(PSModuleInfo psModuleInfo)
         {
-          // Remove the Resolving event handler here
-          AssemblyLoadContext.Default.Resolving -= ResolveAlcEngine;
+            // Remove the Resolving event handler here
+            AssemblyLoadContext.Default.Resolving -= ResolveAlcEngine;
         }
 
-        private static Assembly ResolveAlcEngine(
-            AssemblyLoadContext defaultAlc,
-            AssemblyName assemblyToResolve)
+        private static Assembly ResolveAlcEngine(AssemblyLoadContext defaultAlc, AssemblyName assemblyToResolve)
         {
             // We only want to resolve the Alc.Engine.dll assembly here.
             // Because this will be loaded into the custom ALC,
