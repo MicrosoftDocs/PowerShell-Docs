@@ -125,14 +125,14 @@ $NewAcl.SetAccessRuleProtection($isProtected, $preserveInheritance)
 Set-Acl -Path "C:\Pets\Dog.txt" -AclObject $NewAcl
 ```
 
-These commands is will disable access inheritance from parent folders, while still preserving the
+These commands will disable access inheritance from parent folders, while still preserving the
 existing inherited access rules.
 
 The first command uses the `Get-Acl` cmdlet to get the security descriptor of the Dog.txt file.
 
 Next, variables are created to convert the inherited access rules to explicit access rules. To
 protect the access rules associated with this from inheritance, set the `$isProtected` variable to
-`$true`.to allow inheritance, set `$isProtected` to `$false`. For more information, see
+`$true`; to allow inheritance, set `$isProtected` to `$false`. For more information, see
 [set access rule protection](/dotnet/api/system.security.accesscontrol.objectsecurity.setaccessruleprotection).
 The `$preserveInheritance` variable set to `$true` to preserve inherited access rules; false to
 remove inherited access rules. Then the access rule protection is updated using the
