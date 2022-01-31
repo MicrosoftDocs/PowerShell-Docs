@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/23/2020
+ms.date: 01/31/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pshostprocess?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSHostProcess
@@ -77,7 +77,7 @@ session.
 
 ## Examples
 
-### Example 1: Start debugging a runspace within the PowerShell ISE process
+### Example Part 1: Start debugging a runspace within the PowerShell ISE process
 
 In this example, you run `Enter-PSHostProcess` from within the PowerShell console to enter the
 PowerShell ISE process. In the resulting interactive session, you can find a runspace that you want
@@ -85,10 +85,7 @@ to debug by running `Get-Runspace`, and then debug the runspace.
 
 ```
 PS C:\> Enter-PSHostProcess -Name powershell_ise
-[Process:1520]: PS C:\Test\Documents>
-
-Next, get available runspaces within the process you have entered.
-PS C:\> [Process:1520]: PS C:\>  Get-Runspace
+[Process:1520]: PS C:\>  Get-Runspace
 Id    Name          InstanceId                               State           Availability
 --    -------       -----------                              ------          -------------
 1     Runspace1     2d91211d-9cce-42f0-ab0e-71ac258b32b5     Opened          Available
@@ -96,14 +93,18 @@ Id    Name          InstanceId                               State           Ava
 3     MyLocalRS     2236dbd8-2105-4dec-a15a-a27d0bfaacb5     Opened          LocalDebug
 4     MyRunspace    771356e9-8c44-4b70-9de5-dd17cb41e48e     Opened          Busy
 5     Runspace8     3e517382-a97a-49ba-9c3c-fd21f6664288     Broken          None
+```
 
-The runspace objects returned by Get-Runspace also have a NoteProperty called ScriptStackTrace of
-the running command stack, if available.Next, debug runspace ID 4, that is running another user's
-long-running script. From the list returned from Get-Runspace, note that the runspace state is
-Opened, and Availability is Busy, meaning that the runspace is still running the long-running
-script.
+### Example part 2: Debug a specific runspace
 
-PS C:\> [Process:1520]: PS C:\>  (Get-Runspace -Id 4).ScriptStackTrace
+Next, debug runspace ID 4, that is running another user's long-running script. From the list
+returned from `Get-Runspace`, note that the runspace **State** is Opened, and **Availability** is
+Busy, meaning that the runspace is still running the long-running script. The runspace objects
+returned by `Get-Runspace` also have a **NoteProperty** called **ScriptStackTrace** of the running
+command stack, if available.
+
+```
+[Process:1520]: PS C:\>  (Get-Runspace -Id 4).ScriptStackTrace
 Command                    Arguments                           Location
 -------                    ---------                           --------
 MyModuleWorkflowF1         {}                                  TestNoFile3.psm1: line 6
@@ -111,28 +112,31 @@ WFTest1                    {}                                  TestNoFile2.ps1: 
 TestNoFile2.ps1            {}                                  TestNoFile2.ps1: line 22
 <ScriptBlock>              {}                                  <No file>
 
-Start an interactive debugging session with this runspace by running the Debug-Runspace cmdlet.
-
-PS C:\> [Process: 1520]: PS C:\>  Debug-Runspace -Id 4
+[Process: 1520]: PS C:\>  Debug-Runspace -Id 4
 Hit Line breakpoint on 'C:\TestWFVar1.ps1:83'
 
 At C:\TestWFVar1.ps1:83 char:1
 + $scriptVar = "Script Variable"
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[Process: 1520]: [RSDBG: 4]: PS C:\> >
+[Process: 1520]: [RSDBG: 4]: PS C:\>
+```
+
+Start an interactive debugging session with this runspace by running the `Debug-Runspace` cmdlet.
+
+### Example part 3: Finish the debugging session and exit
 
 After you are finished debugging, allow the script to continue running without the debugger attached
 by running the exit debugger command. Alternatively, you can quit the debugger with the q or Stop
 commands.
 
-PS C:\> [Process:346]: [RSDBG: 3]: PS C:\> > exit
+When you are finished working in the process, exit the process by running the `Exit-PSHostProcess`
+cmdlet. This returns you to the `PS C:\>` prompt.
+
+```
+[Process:346]: [RSDBG: 3]: PS C:\> exit
 [Process:1520]: PS C:\>
-
-When you are finished working in the process, exit the process by running the Exit-PSHostProcess
-cmdlet. This returns you to the PS C:\> prompt.
-
-PS C:\> [Process:1520]: PS C:\>  Exit-PSHostProcess
+[Process:1520]: PS C:\>  Exit-PSHostProcess
 PS C:\>
 ```
 
@@ -276,4 +280,3 @@ capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSS
 [Exit-PSHostProcess](Exit-PSHostProcess.md)
 
 [Get-PSHostProcessInfo](Get-PSHostProcessInfo.md)
-
