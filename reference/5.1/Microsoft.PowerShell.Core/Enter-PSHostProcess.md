@@ -71,7 +71,7 @@ session.
 
 ## Examples
 
-### Example 1: Start debugging a runspace within the PowerShell ISE process
+### Example Part 1: Start debugging a runspace within the PowerShell ISE process
 
 In this example, you run `Enter-PSHostProcess` from within the PowerShell console to enter the
 PowerShell ISE process. In the resulting interactive session, you can find a runspace that you want
@@ -79,12 +79,6 @@ to debug by running `Get-Runspace`, and then debug the runspace.
 
 ```
 PS C:\> Enter-PSHostProcess -Name powershell_ise
-[Process:1520]: PS C:\Test\Documents>
-```
-
-Next, get available runspaces within the process you have entered.
-
-```
 [Process:1520]: PS C:\>  Get-Runspace
 Id    Name          InstanceId                               State           Availability
 --    -------       -----------                              ------          -------------
@@ -95,11 +89,13 @@ Id    Name          InstanceId                               State           Ava
 5     Runspace8     3e517382-a97a-49ba-9c3c-fd21f6664288     Broken          None
 ```
 
-The runspace objects returned by Get-Runspace also have a NoteProperty called ScriptStackTrace of
-the running command stack, if available. Next, debug runspace ID 4, that is running another user's
-long-running script. From the list returned from Get-Runspace, note that the runspace state is
-Opened, and Availability is Busy, meaning that the runspace is still running the long-running
-script.
+### Example part 2: Debug a specific runspace
+
+Next, debug runspace ID 4, that is running another user's long-running script. From the list
+returned from `Get-Runspace`, note that the runspace **State** is Opened, and **Availability** is
+Busy, meaning that the runspace is still running the long-running script. The runspace objects
+returned by `Get-Runspace` also have a **NoteProperty** called **ScriptStackTrace** of the running
+command stack, if available.
 
 ```
 [Process:1520]: PS C:\>  (Get-Runspace -Id 4).ScriptStackTrace
@@ -109,11 +105,7 @@ MyModuleWorkflowF1         {}                                  TestNoFile3.psm1:
 WFTest1                    {}                                  TestNoFile2.ps1: line 14
 TestNoFile2.ps1            {}                                  TestNoFile2.ps1: line 22
 <ScriptBlock>              {}                                  <No file>
-```
 
-Start an interactive debugging session with this runspace by running the Debug-Runspace cmdlet.
-
-```
 [Process: 1520]: PS C:\>  Debug-Runspace -Id 4
 Hit Line breakpoint on 'C:\TestWFVar1.ps1:83'
 
@@ -121,22 +113,23 @@ At C:\TestWFVar1.ps1:83 char:1
 + $scriptVar = "Script Variable"
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[Process: 1520]: [RSDBG: 4]: PS C:\> >
+[Process: 1520]: [RSDBG: 4]: PS C:\>
 ```
+
+Start an interactive debugging session with this runspace by running the `Debug-Runspace` cmdlet.
+
+### Example part 3: Finish the debugging session and exit
 
 After you are finished debugging, allow the script to continue running without the debugger attached
 by running the exit debugger command. Alternatively, you can quit the debugger with the q or Stop
 commands.
 
-```
-[Process:346]: [RSDBG: 3]: PS C:\> > exit
-[Process:1520]: PS C:\>
-```
-
 When you are finished working in the process, exit the process by running the `Exit-PSHostProcess`
 cmdlet. This returns you to the `PS C:\>` prompt.
 
 ```
+[Process:346]: [RSDBG: 3]: PS C:\> exit
+[Process:1520]: PS C:\>
 [Process:1520]: PS C:\>  Exit-PSHostProcess
 PS C:\>
 ```
