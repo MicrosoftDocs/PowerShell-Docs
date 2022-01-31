@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/23/2020
+ms.date: 01/31/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pshostprocess?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSHostProcess
@@ -91,7 +91,7 @@ PS C:\> Enter-PSHostProcess -Name powershell_ise
 Next, get available runspaces within the process you have entered.
 
 ```
-PS C:\> [Process:1520]: PS C:\>  Get-Runspace
+[Process:1520]: PS C:\>  Get-Runspace
 Id    Name          InstanceId                               State           Availability
 --    -------       -----------                              ------          -------------
 1     Runspace1     2d91211d-9cce-42f0-ab0e-71ac258b32b5     Opened          Available
@@ -108,7 +108,7 @@ Opened, and Availability is Busy, meaning that the runspace is still running the
 script.
 
 ```
-PS C:\> [Process:1520]: PS C:\>  (Get-Runspace -Id 4).ScriptStackTrace
+[Process:1520]: PS C:\>  (Get-Runspace -Id 4).ScriptStackTrace
 Command                    Arguments                           Location
 -------                    ---------                           --------
 MyModuleWorkflowF1         {}                                  TestNoFile3.psm1: line 6
@@ -120,7 +120,7 @@ TestNoFile2.ps1            {}                                  TestNoFile2.ps1: 
 Start an interactive debugging session with this runspace by running the Debug-Runspace cmdlet.
 
 ```
-PS C:\> [Process: 1520]: PS C:\>  Debug-Runspace -Id 4
+[Process: 1520]: PS C:\>  Debug-Runspace -Id 4
 Hit Line breakpoint on 'C:\TestWFVar1.ps1:83'
 
 At C:\TestWFVar1.ps1:83 char:1
@@ -135,15 +135,15 @@ by running the exit debugger command. Alternatively, you can quit the debugger w
 commands.
 
 ```
-PS C:\> [Process:346]: [RSDBG: 3]: PS C:\> > exit
+[Process:346]: [RSDBG: 3]: PS C:\> > exit
 [Process:1520]: PS C:\>
 ```
 
 When you are finished working in the process, exit the process by running the `Exit-PSHostProcess`
-cmdlet. This returns you to the PS C:\> prompt.
+cmdlet. This returns you to the `PS C:\>` prompt.
 
 ```
-PS C:\> [Process:1520]: PS C:\>  Exit-PSHostProcess
+[Process:1520]: PS C:\>  Exit-PSHostProcess
 PS C:\>
 ```
 
