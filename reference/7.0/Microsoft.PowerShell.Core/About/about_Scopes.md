@@ -1,7 +1,7 @@
 ---
 description: Explains the concept of scope in PowerShell and shows how to set and change the scope of elements.
 Locale: en-US
-ms.date: 10/22/2021
+ms.date: 01/31/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Scopes
@@ -25,8 +25,10 @@ The following are the basic rules of scope:
   scopes are child scopes of that parent.
 
 - An item is visible in the scope in which it was created and in any child
-  scopes, unless you explicitly make it private. You can place variables,
-  aliases, functions, or PowerShell drives in one or more scopes.
+  scopes, unless you explicitly make it private.
+
+- You can declare variables, aliases, functions, and PowerShell drives in a
+  scope outside of the current scope.
 
 - An item that you created within a scope can be changed only in the scope in
   which it was created, unless you explicitly specify a different scope.

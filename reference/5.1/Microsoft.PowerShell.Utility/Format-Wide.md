@@ -219,7 +219,7 @@ Accept wildcard characters: False
 
 ### -Property
 
-Specifies the object properties that appear in the display and the order in which they appear.
+Specifies the object property that appears in the display.
 Wildcards are permitted.
 
 If you omit this parameter, the properties that appear in the display depend on the object being

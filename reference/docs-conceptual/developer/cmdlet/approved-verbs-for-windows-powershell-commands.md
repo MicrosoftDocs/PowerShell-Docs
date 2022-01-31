@@ -1,6 +1,6 @@
 ---
 description: Approved Verbs for PowerShell Commands
-ms.date: 01/25/2022
+ms.date: 01/31/2022
 ms.topic: reference
 title: Approved Verbs for PowerShell Commands
 ---
@@ -47,6 +47,11 @@ You may get a complete list of verbs using the `Get-Verb` cmdlet.
 ## Similar Verbs for Different Actions
 
 The following similar verbs represent different actions.
+
+### New vs. Add
+
+Use the `New` verb to create a new resource. Use the `Add` to add something to an existing container
+or resource. For example, `Add-Content` adds output to an existing file.
 
 ### New vs. Set
 
