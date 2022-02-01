@@ -39,7 +39,7 @@ For more information, see [Generics in .NET](/dotnet/standard/generics/).
 ## Example
 
 In this example, we create a list of integers then use the `System.Linq.Enumerable` class to
-enumerate the values in the list and transform them to a new value.
+enumerate the values and transform them to a new value.
 
 The variable `$list` is a generic `List<T>` object that can only contain integers. `List<T>` is a
 generic class that allows you to specify the type of its members when you create it.
