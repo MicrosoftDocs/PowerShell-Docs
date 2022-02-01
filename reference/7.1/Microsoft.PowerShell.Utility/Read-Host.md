@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/18/2021
+ms.date: 02/01/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
@@ -92,6 +92,8 @@ Indicates that the cmdlet displays asterisks (`*`) in place of the characters th
 input. When you use this parameter, the output of the `Read-Host` cmdlet is a **String** object.
 This allows you to safely prompt for a password that is returned as plaintext instead of
 **SecureString**.
+
+This parameter was added in PowerShell 7.1.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
