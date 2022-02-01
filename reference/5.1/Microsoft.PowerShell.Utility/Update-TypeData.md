@@ -258,14 +258,14 @@ Accept wildcard characters: False
 
 ### -DefaultDisplayPropertySet
 
-Specifies one or more properties of the type. These properties are displayed by the `Format-List`
-cmdlet when no other properties are specified.
+Specifies one or more properties of the type. These properties are displayed by the `Format-List`,
+`Format-Table`, and `Format-Custom` cmdlets when no other properties are specified.
 
 Type the names of standard or extended properties of the type. The value of this parameter can be
 the names of types that are added in the same command.
 
-This value is effective only when there are no list views defined for the type in a `Format.ps1xml`
-file.
+This value is effective only when there are no list, table, or custom views, respectively,
+defined for the type in a `Format.ps1xml` file.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
