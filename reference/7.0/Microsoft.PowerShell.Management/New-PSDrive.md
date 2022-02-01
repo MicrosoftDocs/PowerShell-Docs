@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/18/2022
+ms.date: 02/01/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-psdrive?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSDrive
@@ -39,7 +39,7 @@ by using `Set-Location`, and access the contents of the drive by using `Get-Item
 
 Because temporary drives are known only to PowerShell, you can't access them by using File Explorer,
 Windows Management Instrumentation (WMI), Component Object Model (COM), Microsoft .NET Framework, or
-with tools such as **net use**.
+with tools such as `net use`.
 
 The following features were added to `New-PSDrive` in PowerShell 3.0:
 
@@ -66,6 +66,10 @@ specified in the value of the **Credential** parameter is used to create the **P
 
 Some code samples use splatting to reduce the line length and improve readability. For more
 information, see [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
+
+> [!NOTE]
+> Unless you use the **Scope** parameter, PSDrives are created in the scope in which the
+> `New-PSDrive` command is run.
 
 ## Examples
 
@@ -246,6 +250,19 @@ LocalName    RemoteName              ConnectionState          Status
 ---------    ----------              ---------------          ------
 X:           \\products\public       Disconnected             Unavailable
 ```
+
+### Example 6: Create persistent drive in a script
+
+PSDrives are created in the scope in which the `New-PSDrive` command is run. When the command is run
+within a script, the drive mapping is local to the script. When the script exits, the drive is no
+longer available.
+
+```powershell
+New-PSDrive -Persist -Name "X" -PSProvider "FileSystem" -Root "\\Server01\Public" -Scope Global
+```
+
+To ensure that the drive is available outside of the script to must use the **Scope** parameter to
+create the drive in the **Global** scope.
 
 ## Parameters
 
