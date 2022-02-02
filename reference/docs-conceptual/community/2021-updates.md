@@ -17,10 +17,10 @@ New Content
 
 - Added PowerShell 7.3-preview.1 [preview content]
 - New DSC 3.0 content
-  - [PowerShell Desired State Configuration overview](/powershell/dsc/overview?view=dsc-3.0&preserve_view=true)
-  - [Manage configuration using PowerShell DSC](/powershell/dsc/getting-started/getting-started?view=dsc-3.0&preserve_view=true)
-  - [DSC Configurations](/powershell/dsc/concepts/configurations?view=dsc-3.0&preserve_view=true)
-  - [DSC Resources](/powershell/dsc/concepts/resources?view=dsc-3.0&preserve_view=true)
+  - [PowerShell Desired State Configuration overview](/powershell/dsc/overview?view=dsc-3.0&preserve-view=true)
+  - [Manage configuration using PowerShell DSC](/powershell/dsc/getting-started/getting-started?view=dsc-3.0&preserve-view=true)
+  - [DSC Configurations](/powershell/dsc/concepts/configurations?view=dsc-3.0&preserve-view=true)
+  - [DSC Resources](/powershell/dsc/concepts/resources?view=dsc-3.0&preserve-view=true)
 
 Content updates
 
