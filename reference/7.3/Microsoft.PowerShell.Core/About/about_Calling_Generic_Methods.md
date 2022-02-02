@@ -13,12 +13,21 @@ and values to be of any type, you can use the <xref:System.Collections.Generic.D
 generic class and specify the types allowed for the **key** and **value** properties. Generics
 provide increased code reusability and type safety.
 
-Prior to PowerShell 7.3, you could not use generic methods of a .NET class without complicated
-workarounds using .NET reflection. For an example, see Lee Holmes' blog post
+For some generic methods, PowerShell is able to figure out generic arguments for a method by
+inferring from the provided arguments. However, method resolution can be complicated when a method
+has both generic and non-generic overloads. PowerShell can fail to resolve the correct method
+without the explicit generic method arguments.
+
+Prior to PowerShell 7.3, to ensure proper method resolution you had to use complicated workarounds
+using .NET reflection. For an example, see Lee Holmes' blog post
 [Invoking generic methods on non-generic classes in PowerShell](https://www.leeholmes.com/invoking-generic-methods-on-non-generic-classes-in-powershell/).
 
-A generic method is a method with two parameter lists: a list of generic type parameters and a list
-of formal parameters.
+Beginning with PowerShell 7.3, you can specify the types for a generic method.
+
+## Syntax
+
+A generic method is a method with two parameter lists: a list of generic types and a list
+of method arguments.
 
 The following examples show the new PowerShell syntax for accessing a generic method:
 
@@ -30,9 +39,11 @@ The following examples show the new PowerShell syntax for accessing a generic me
 $object.MethodName[generic_type_arguments](method_arguments)
 ```
 
-The `generic_type_arguments` can be a a single type, or comma-separated list of types, like
+The `generic_type_arguments` can be a a single type or comma-separated list of types, like
 `[string, int]`, including other generic types like
 `$obj.MethodName[string, System.Collections.Generic.Dictionary[string, int]]()`
+
+The `method_arguments` can be zero or more items.
 
 For more information, see [Generics in .NET](/dotnet/standard/generics/).
 
@@ -43,7 +54,7 @@ enumerate the values and transform them to a new value.
 
 The variable `$list` is a generic `List<T>` object that can only contain integers. `List<T>` is a
 generic class that allows you to specify the type of its members when you create it.
-`[System.Linq.Enumerable]::Select<T,T>()` is a generic method that require two generic type
+`[System.Linq.Enumerable]::Select<T1,T2>(T1,T2)` is a generic method that require two generic type
 parameters and two formal value parameters.
 
 ```powershell
