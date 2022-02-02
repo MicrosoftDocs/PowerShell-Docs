@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2021
-ms.date: 11/01/2021
+ms.date: 02/01/2022
 title: What's New in PowerShell-Docs for 2021
 ---
 # What's new in PowerShell Docs for 2021
@@ -10,6 +10,74 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2021-December
+
+New Content
+
+- Added PowerShell 7.3-preview.1 [preview content]
+- New DSC 3.0 content
+  - [PowerShell Desired State Configuration overview](/powershell/dsc/overview?view=dsc-3.0&preserve-view=true)
+  - [Manage configuration using PowerShell DSC](/powershell/dsc/getting-started/getting-started?view=dsc-3.0&preserve-view=true)
+  - [DSC Configurations](/powershell/dsc/concepts/configurations?view=dsc-3.0&preserve-view=true)
+  - [DSC Resources](/powershell/dsc/concepts/resources?view=dsc-3.0&preserve-view=true)
+
+Content updates
+
+- Moved Desired State Configuration [content](/powershell/dsc/overview) to new docset and repository
+  - DSC is now being developed outside of the PowerShell product.
+  - The move allows for better versioning of documentation for DSC.
+
+### Top Community Contributors
+
+GitHub stats
+
+- 24 PRs merged (4 from Community)
+- 30 issues opened (26 from Community)
+- 12 issues closed (7 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| dAu6jARL        |     1      |               |
+| shriharshmishra |     1      |               |
+| a-sync          |     1      |               |
+| bogdangrigg     |     1      |               |
+
+## 2021-November
+
+New Content
+- [about_Built-in_Functions](/powershell/module/microsoft.powershell.core/about/about_built-in_functions)
+
+Content updates
+
+- PowerShell 7.2 GA documentation updates
+- Update GitHub Issue and PR templates - piloting the new YAML-based forms for issues
+- Updated Crescendo reference for Preview 4 release
+
+### Top Community Contributors
+
+GitHub stats
+
+- 48 PRs merged (13 from Community)
+- 31 issues opened (24 from Community)
+- 34 issues closed (28 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|  GitHub Id  | PRs merged | Issues opened |
+| ----------- | :--------: | :-----------: |
+| matt9ucci   |     4      |               |
+| yecril71pl  |     3      |               |
+| tholabrk    |     1      |               |
+| lukejjh     |     1      |               |
+| Oechiih     |     1      |               |
+| bergmeister |     1      |               |
+| Hrxn        |     1      |               |
+| jebeckham   |     1      |               |
 
 ## 2021-October
 

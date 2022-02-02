@@ -388,6 +388,8 @@ items:
         href: community/hall-of-fame.md
       - name: What's new in Docs
         items:
+          - name: 2022 Updates
+            href: community/2022-updates.md
           - name: 2021 Updates
             href: community/2021-updates.md
           - name: 2020 Updates
