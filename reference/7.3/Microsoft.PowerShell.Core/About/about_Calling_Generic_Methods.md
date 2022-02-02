@@ -1,7 +1,7 @@
 ---
 description: Describes how to call generic methods of .NET types in PowerShell
 Locale: en-US
-ms.date: 02/01/2022
+ms.date: 02/02/2022
 schema: 2.0.0
 title: about Calling Generic Methods
 ---
@@ -15,8 +15,11 @@ provide increased code reusability and type safety.
 
 For some generic methods, PowerShell is able to figure out generic arguments for a method by
 inferring from the provided arguments. However, method resolution can be complicated when a method
-has both generic and non-generic overloads. PowerShell can fail to resolve the correct method
-without the explicit generic method arguments.
+has both generic and non-generic overloads, or when the generic method takes no formal parameter.
+PowerShell can fail to resolve the correct method without the explicit generic method arguments.
+
+For example, `[Array]::Empty<T>()`. The .NET **Array** class has a static, generic method `Empty()`
+that takes no formal parameters.
 
 Prior to PowerShell 7.3, to ensure proper method resolution you had to use complicated workarounds
 using .NET reflection. For an example, see Lee Holmes' blog post
