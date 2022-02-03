@@ -39,7 +39,7 @@ properties.
 Classes are declared using the following syntax:
 
 ```syntax
-class <class-name> [: [<base-class>][,<interface-list]] {
+class <class-name> [: [<base-class>][,<interface-list>]] {
     [[<attribute>] [hidden] [static] <property-definition> ...]
     [<class-name>([<constructor-argument-list>])
       {<constructor-statement-list>} ...]

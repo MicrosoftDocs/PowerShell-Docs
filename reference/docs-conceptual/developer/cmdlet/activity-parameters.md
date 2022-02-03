@@ -1,7 +1,8 @@
 ---
 description: Activity Parameters
-ms.date: 09/13/2016
+ms.date: 02/03/2022
 ms.topic: reference
+no-loc: [Append, Command, String, System.Version, Compress, Keyword, Continuous, Create, array, Drain, Erase, Include, Incremental, Insert, Interval, Notify, Object, Prompt, Quiet, Retry, Select, Strict, Truncate, Verify]
 title: Activity Parameters
 ---
 # Activity Parameters
@@ -18,7 +19,7 @@ The following table lists the recommended names and functionality for activity p
 |**Compress**<br>Data type: Keyword|Implement this parameter so that the user can specify the algorithm to use for data compression.|
 |**Continuous**<br>Data type: SwitchParameter|Implement this parameter so that data is processed until the user terminates the cmdlet when the parameter is specified. If the parameter is not specified, the cmdlet processes a predefined amount of data and then terminates the operation.|
 |**Create**<br>Data type: SwitchParameter|Implement this parameter to indicate that a resource is created if one does not already exist when the parameter is specified.|
-|**Delete**<br>Data type: SwitchParameter|Implement this parameter so that resources are deleted when the cmdlet has completed its operation when the parameter is specified.|
+|**Create**<br>Data type: SwitchParameter|Implement this parameter so that resources are deleted when the cmdlet has completed its operation when the parameter is specified.|
 |**Drain**<br>Data type: SwitchParameter|Implement this parameter to indicate that outstanding work items are processed before the cmdlet processes new data when the parameter is specified. If the parameter is not specified, the work items are processed immediately.|
 |**Erase**<br>Data type: Int32|Implement this parameter so that the user can specify the number of times a resource is erased before it is deleted.|
 |**ErrorLevel**<br>Data type: Int32|Implement this parameter so that the user can specify the level of errors to report.|
