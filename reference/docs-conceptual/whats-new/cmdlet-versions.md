@@ -255,7 +255,7 @@ This is a work in progress. Please help us keep this information fresh.
 | Rename-ItemProperty           | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                  |
 | Reset-ComputerMachinePassword | &#x2705; |          |          |          |          | Windows only                     |
 | Resolve-Path                  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                  |
-| Restart-Computer              | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | AddedLinux/macOSsupportin7.1     |
+| Restart-Computer              | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | Added Linux/macOS support in 7.1 |
 | Restart-Service               | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | Windows only                     |
 | Restore-Computer              | &#x2705; |          |          |          |          | Windows only                     |
 | Resume-Service                | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | Windows only                     |
