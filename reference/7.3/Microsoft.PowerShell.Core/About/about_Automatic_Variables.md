@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 12/15/2021
+ms.date: 02/03/2022
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -509,7 +509,7 @@ objects in a pipeline.
 
 > [!NOTE]
 > `$PSNativeCommandArgumentPassing` is only available when the
-> `PSNativeCommandArgumentPassing` experimental feature ia enabled. For more
+> `PSNativeCommandArgumentPassing` experimental feature is enabled. For more
 > information, see
 > [about_Experimental_Features](about_Experimental_Features.md) and
 > [Using experimental features](/powershell/scripting/learn/experimental-features).
