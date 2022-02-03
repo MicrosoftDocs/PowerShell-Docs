@@ -34,10 +34,10 @@ This is a work in progress. Please help us keep this information fresh.
 | Microsoft.PowerShell.Utility              | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                             |
 | Microsoft.WsMan.Management                | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | Windows only                                |
 | PackageManagement                         | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                             |
-| PowershellGet2.x                          | v1.1     | &#x2705; | &#x2705; | &#x2705; | &#x2705; | New versions available from the Gallery     |
-| PowershellGet3.x                          |          |          |          |          |          | Available from the Gallery                  |
-| PSDesiredStateConfiguration2.x            | &#x2705; | &#x2705; | &#x2705; | &#x274c; |          | Removed in 7.2 - available from the Gallery |
-| PSDesiredStateConfiguration3.x            |          |          |          |          |          | Preview available from the Gallery          |
+| PowershellGet 2.x                         | v1.1     | &#x2705; | &#x2705; | &#x2705; | &#x2705; | New versions available from the Gallery     |
+| PowershellGet 3.x                         |          |          |          |          |          | Available from the Gallery                  |
+| PSDesiredStateConfiguration 2.x           | &#x2705; | &#x2705; | &#x2705; | &#x274c; |          | Removed in 7.2 - available from the Gallery |
+| PSDesiredStateConfiguration 3.x           |          |          |          |          |          | Preview available from the Gallery          |
 | PSDiagnostics                             | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705; | Windows only                                |
 | PSReadLine                                | v1.x     | v2.0     | v2.1     | v2.1     | v2.1     | New versions available from the Gallery     |
 | PSScheduledJob                            | &#x2705; |          |          |          |          | Windows only                                |
@@ -545,7 +545,7 @@ This is a work in progress. Please help us keep this information fresh.
 | Test-DscConfiguration            | &#x2705; |          |          |     |     | Windows only |
 | Update-DscConfiguration          | &#x2705; |          |          |     |     | Windows only |
 
-## PSDesiredStateConfiguration v3.x - Preview
+### PSDesiredStateConfiguration v3.x - Preview
 
 |       Cmdlet name       |     Note     |
 | ----------------------- | ------------ |
