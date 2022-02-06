@@ -510,7 +510,7 @@ of `DomainName\Username` and converts to the `Username@DomainName` format:
 $SearchExp = '^(?<DomainName>[\w-.]+)\\(?<Username>[\w-.]+)$'
 $ReplaceExp = '${Username}@${DomainName}'
 
-'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
+'Contoso.local\John.Doe' -replace $SearchExp, $ReplaceExp
 ```
 
 ```output
@@ -523,8 +523,8 @@ John.Doe@Contoso.local
 >
 > - In PowerShell, between double quotation marks, it designates variables and
 >   acts as a subexpression operator.
-> - In Regex search strings, it denotes end of the line
-> - In Regex substitution strings, it denotes captured groups.Be sure
+> - In Regex search strings, it denotes end of the line.
+> - In Regex substitution strings, it denotes captured groups. Be sure
 >   to either put your regular expressions between single quotation marks or
 >   insert a backtick (`` ` ``) character before them.
 
