@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/05/2021
+ms.date: 02/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
@@ -129,7 +129,8 @@ and line number precede each line of content that contains a match for the **Pat
 ### Example 3: Find a pattern match
 
 In this example, multiple files are searched to find matches for the specified pattern. The pattern
-uses a regular expression quantifier. For more information, see [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/About_Regular_Expressions.md).
+uses a regular expression quantifier. For more information, see
+[about_Regular_Expressions](../Microsoft.PowerShell.Core/About/About_Regular_Expressions.md).
 
 ```powershell
 Select-String -Path "$PSHOME\en-US\*.txt" -Pattern '\?'
@@ -152,7 +153,8 @@ number precede each line of content that contains a match for the **Pattern** pa
 
 This example creates a function to search for a pattern in the PowerShell help files. For this
 example, the function only exists in the PowerShell session. When the PowerShell session is closed,
-the function is deleted. For more information, see [about_Functions](../Microsoft.PowerShell.Core/About/about_Functions.md).
+the function is deleted. For more information, see
+[about_Functions](../Microsoft.PowerShell.Core/About/about_Functions.md).
 
 ```powershell
 function Search-Help
@@ -367,9 +369,8 @@ PS> $hash | Out-String -Stream | Select-String -Pattern 'foo'
 Name                           foo
 ```
 
-Piping to `Out-String -String` converts the formatted output into a multipel single-line string
+Piping to `Out-String -Stream` converts the formatted output into a multiple single-line string
 objects. This means that when `Select-String` finds a match it outputs only the matching line.
-
 
 ## Parameters
 
@@ -620,7 +621,8 @@ Accept wildcard characters: False
 Specifies the path to the files to be searched. The value of the **LiteralPath** parameter is used
 exactly as it's typed. No characters are interpreted as wildcards. If the path includes escape
 characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
-interpret any characters as escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+interpret any characters as escape sequences. For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -697,7 +699,8 @@ Accept wildcard characters: True
 
 Specifies the text to find on each line. The pattern value is treated as a regular expression.
 
-To learn about regular expressions, see [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md).
+To learn about regular expressions, see
+[about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md).
 
 ```yaml
 Type: System.String[]
@@ -776,7 +779,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
