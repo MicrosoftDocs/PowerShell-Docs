@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 01/19/2022
+ms.date: 02/09/2022
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -47,8 +47,9 @@ Legend
 | PSNativeCommandArgumentPassing                             |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSAnsiRenderingFileInfo                                    |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSLoadAssemblyFromNativeCode                               |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
-| PSExec                                                     |                  |                  |                  | &#x2714;&#xfe0f; |
 | PSCleanBlock                                               |                  |                  |                  | &#x2714;&#xfe0f; |
+| PSExec                                                     |                  |                  |                  | &#x2714;&#xfe0f; |
+| PSNativeCommandErrorActionPreference                       |                  |                  |                  | &#x2714;&#xfe0f; |
 | PSStrictModeAssignment                                     |                  |                  |                  | &#x2714;&#xfe0f; |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
@@ -343,6 +344,32 @@ Arg 0 is <a" "b>
 Arg 1 is <a" "b>
 Arg 2 is <a b>
 ```
+
+## PSNativeCommandErrorActionPreference
+
+Native commands usually return an exit code to the calling application that is zero for success or
+non-zero for failure. However, native commands currently do not participate in the PowerShell error
+stream. Redirected **stderr** output is not interpreted the same as the PowerShell error stream.
+Many native commands use stderr as an information or verbose stream, thus only the exit code
+matters. Users working with native commands in their scripts need to check the exit status after
+each call using similar to the following example:
+
+```powershell
+if ($LASTEXITCODE -ne 0) {
+    throw "Command failed. See above errors for details"
+}
+```
+
+Simply relaying the errors through the error stream isn't the solution. The example itself doesn't
+support all cases where `$?` can be false from a cmdlet or function error, making `$LASTEXITCODE`
+stale.
+
+This feature implements a preference variable to enable errors produced by native commands to be
+PowerShell errors. This allows native command failures to produce error objects that are added to
+the PowerShell error stream that may terminate execution of the script without extra handling.
+
+With this feature enabled, native commands with non-zero exit codes issue errors according to
+`$ErrorActionPreference` when `$PSNativeCommandUseErrorActionPreference` is `$true`.
 
 ## PSNativePSPathResolution
 
