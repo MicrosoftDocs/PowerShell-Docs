@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/24/2020
+ms.date: 02/14/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
@@ -647,8 +647,9 @@ Accept wildcard characters: False
 Configures sessions that use this session configuration to expose the `User:` PSDrive. User drives
 are unique for each connecting user and allow users to copy data to and from PowerShell endpoints
 even if the File System provider is not exposed. User drive roots are created under
-`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`. For each user connecting to the
-endpoint, a folder is created with the name `$env:USERDOMAIN_$env:USERNAME`.
+`$env:LOCALAPPDATA\Microsoft\PowerShell\DriveRoots\`. For each user connecting to the endpoint, a
+folder is created with the name `$env:USERDOMAIN_$env:USERNAME`. For computers in workgroups, the
+value of `$env:USERDOMAIN` is the hostname.
 
 Contents in the user drive persist across user sessions and are not automatically removed. By
 default, users can only store up to 50MB of data in the user drive. This can be customized with the
