@@ -1,6 +1,6 @@
 ---
 description: This article is an introduction to the PowerShell scripting environment and its features.
-ms.date: 10/04/2021
+ms.date: 02/15/2022
 title: What is PowerShell?
 ---
 
@@ -9,7 +9,7 @@ title: What is PowerShell?
 PowerShell is a cross-platform task automation solution made up of a command-line shell, a scripting
 language, and a configuration management framework. PowerShell runs on Windows, Linux, and macOS.
 
-## Shell
+## Command-line Shell
 
 PowerShell is a modern command shell that includes the best features of other popular shells. Unlike
 most shells that only accept and return text, PowerShell accepts and returns .NET objects. The shell
@@ -35,7 +35,25 @@ following features:
 - Extensible [type system][types] for creating dynamic types
 - Built-in support for common data formats like [CSV][CSV], [JSON][JSON], and [XML][XML]
 
-## Configuration management
+## Automation platform
+
+The extensible nature of PowerShell has enabled an ecosystem of PowerShell modules to deploy and
+manage almost any technology you work with. For example:
+
+Microsoft
+
+- [Azure](/powershell/azure)
+- [Windows](/powershell/windows/get-started)
+- [Exchange](/powershell/exchange/exchange-management-shell)
+- [SQL](/sql/powershell/sql-server-powershell)
+
+Third-party
+
+- [AWS](https://aws.amazon.com/powershell/)
+- [VMWare](https://core.vmware.com/vmware-powercli)
+- [Google Cloud](https://cloud.google.com/powershell/)
+
+### Configuration management
 
 PowerShell Desired State Configuration ([DSC][DSC]) is a management framework in PowerShell that
 enables you to manage your enterprise infrastructure with configuration as code. With DSC, you can:
