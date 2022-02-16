@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 06/09/2017
+ms.date: 02/16/2022
 online version: https://docs.microsoft.com/powershell/module/powershellget/register-psrepository?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSRepository
@@ -94,6 +94,9 @@ Accept wildcard characters: False
 ```
 
 ### -Default
+
+The parameter is used to register the **PSGallery**. You only need to do this if you removed the
+**PSGallery** repository.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
