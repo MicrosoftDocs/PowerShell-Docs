@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 10/14/2021
+ms.date: 02/17/2022
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
@@ -733,6 +733,13 @@ set of characters.
 - Vi insert mode: `<Ctrl+LeftArrow>`
 - Vi command mode: `<Ctrl+LeftArrow>`
 
+The characters that define word boundaries are configured in the
+[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+property of the **PSConsoleReadLineOptions** object. To view or change the
+**WordDelimiters** property, see
+[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+
 ### BeginningOfLine
 
 If the input has multiple lines, move to the start of the current line, or if
@@ -769,6 +776,13 @@ to the end of the next word. Word boundaries are defined by a configurable set
 of characters.
 
 - Emacs: `<Alt+f>`, `<Escape,f>`
+
+The characters that define word boundaries are configured in the
+[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+property of the **PSConsoleReadLineOptions** object. To view or change the
+**WordDelimiters** property, see
+[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### GotoBrace
 
@@ -811,6 +825,13 @@ defined by a configurable set of characters.
 - Vi insert mode: `<Ctrl+RightArrow>`
 - Vi command mode: `<Ctrl+RightArrow>`
 
+The characters that define word boundaries are configured in the
+[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+property of the **PSConsoleReadLineOptions** object. To view or change the
+**WordDelimiters** property, see
+[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+
 ### NextWordEnd
 
 Move the cursor forward to the end of the current word, or if between words,
@@ -818,6 +839,13 @@ to the end of the next word. Word boundaries are defined by a configurable set
 of characters.
 
 - Vi command mode: `<e>`
+
+The characters that define word boundaries are configured in the
+[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+property of the **PSConsoleReadLineOptions** object. To view or change the
+**WordDelimiters** property, see
+[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### PreviousLine
 
@@ -833,6 +861,13 @@ tokens.
 
 - Function is unbound.
 
+The characters that define word boundaries are configured in the
+[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+property of the **PSConsoleReadLineOptions** object. To view or change the
+**WordDelimiters** property, see
+[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+
 ### ShellForwardWord
 
 Move the cursor forward to the start of the next word. Word boundaries are
@@ -840,12 +875,26 @@ defined by PowerShell tokens.
 
 - Function is unbound.
 
+The characters that define word boundaries are configured in the
+[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+property of the **PSConsoleReadLineOptions** object. To view or change the
+**WordDelimiters** property, see
+[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+
 ### ShellNextWord
 
 Move the cursor forward to the end of the current word, or if between words,
 to the end of the next word. Word boundaries are defined by PowerShell tokens.
 
 - Function is unbound.
+
+The characters that define word boundaries are configured in the
+[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+property of the **PSConsoleReadLineOptions** object. To view or change the
+**WordDelimiters** property, see
+[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### ViBackwardChar
 
@@ -862,6 +911,13 @@ the start of the previous word. Word boundaries are defined by a configurable
 set of characters.
 
 - Vi command mode: `<b>`
+
+The characters that define word boundaries are configured in the
+[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+property of the **PSConsoleReadLineOptions** object. To view or change the
+**WordDelimiters** property, see
+[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### ViForwardChar
 
@@ -902,6 +958,13 @@ Move the cursor forward to the start of the next word. Word boundaries are
 defined by a configurable set of characters.
 
 - Vi command mode: `<w>`
+
+The characters that define word boundaries are configured in the
+[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+property of the **PSConsoleReadLineOptions** object. To view or change the
+**WordDelimiters** property, see
+[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ## History functions
 
