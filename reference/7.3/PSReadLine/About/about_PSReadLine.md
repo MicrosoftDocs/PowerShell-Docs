@@ -738,7 +738,7 @@ The characters that define word boundaries are configured in the
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
 [Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Get-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### BeginningOfLine
 
@@ -782,7 +782,7 @@ The characters that define word boundaries are configured in the
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
 [Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Get-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### GotoBrace
 
@@ -830,7 +830,7 @@ The characters that define word boundaries are configured in the
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
 [Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Get-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### NextWordEnd
 
@@ -845,7 +845,7 @@ The characters that define word boundaries are configured in the
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
 [Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Get-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### PreviousLine
 
@@ -866,7 +866,7 @@ The characters that define word boundaries are configured in the
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
 [Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Get-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### ShellForwardWord
 
@@ -880,7 +880,7 @@ The characters that define word boundaries are configured in the
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
 [Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Get-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### ShellNextWord
 
@@ -894,7 +894,7 @@ The characters that define word boundaries are configured in the
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
 [Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Get-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### ViBackwardChar
 
@@ -917,7 +917,7 @@ The characters that define word boundaries are configured in the
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
 [Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Get-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### ViForwardChar
 
@@ -964,7 +964,7 @@ The characters that define word boundaries are configured in the
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
 [Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Get-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ## History functions
 
