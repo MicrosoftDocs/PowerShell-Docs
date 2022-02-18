@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 02/17/2022
+ms.date: 02/18/2022
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
@@ -861,13 +861,6 @@ tokens.
 
 - Function is unbound.
 
-The characters that define word boundaries are configured in the
-[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
-property of the **PSConsoleReadLineOptions** object. To view or change the
-**WordDelimiters** property, see
-[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
-
 ### ShellForwardWord
 
 Move the cursor forward to the start of the next word. Word boundaries are
@@ -875,26 +868,12 @@ defined by PowerShell tokens.
 
 - Function is unbound.
 
-The characters that define word boundaries are configured in the
-[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
-property of the **PSConsoleReadLineOptions** object. To view or change the
-**WordDelimiters** property, see
-[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
-
 ### ShellNextWord
 
 Move the cursor forward to the end of the current word, or if between words,
 to the end of the next word. Word boundaries are defined by PowerShell tokens.
 
 - Function is unbound.
-
-The characters that define word boundaries are configured in the
-[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
-property of the **PSConsoleReadLineOptions** object. To view or change the
-**WordDelimiters** property, see
-[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
 
 ### ViBackwardChar
 
