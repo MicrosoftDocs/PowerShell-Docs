@@ -822,6 +822,14 @@ to the end of the next word. Word boundaries are defined by PowerShell tokens.
 
 - Function is unbound.
 
+### ViBackwardChar
+
+Move the cursor one character to the left in the Vi edit mode. This may move
+the cursor to the previous line of multi-line input.
+
+- Vi insert mode: `<LeftArrow>`
+- Vi command mode: `<LeftArrow>`, `<Backspace>`, `<h>`
+
 ### ViBackwardWord
 
 Move the cursor back to the start of the current word, or if between words,
