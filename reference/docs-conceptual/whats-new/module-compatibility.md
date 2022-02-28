@@ -89,7 +89,7 @@ administrator**.
 | CimCmdlets                         | Natively Compatible                  | Built into PowerShell 7 |
 | ClusterAwareUpdating               | Untested with Compatibility Layer    |                         |
 | ConfigCI                           | Untested with Compatibility Layer    |                         |
-| Defender                           | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+  |
+| Defender for Cloud                           | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+  |
 | DeliveryOptimization               | Natively Compatible                  | Windows Server 1903+<br>Windows 10 1903+  |
 | DFSN                               | Natively Compatible                  | Windows Server 1809+ with FS-DFS-Namespace<br>Windows 10 1809+ with Rsat.FailoverCluster.Management.Tools |
 | DFSR                               | Untested with Compatibility Layer    |                                   |
