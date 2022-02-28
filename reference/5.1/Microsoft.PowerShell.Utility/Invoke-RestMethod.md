@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/27/2021
+ms.date: 02/28/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -496,25 +496,25 @@ Accept wildcard characters: False
 
 ### -SessionVariable
 
-Creates a web request session and saves it in the value of the specified variable. Enter a variable
-name without the dollar sign (`$`) symbol.
+Creates a variable containing the web request session. Enter a variable name without the dollar sign
+(`$`) symbol.
 
 When you specify a session variable, `Invoke-RestMethod` creates a web request session object and
 assigns it to a variable with the specified name in your PowerShell session. You can use the
 variable in your session as soon as the command completes.
 
-Unlike a remote session, the web request session is not a persistent connection. It is an object
-that contains information about the connection and the request, including cookies, credentials, the
+Unlike a remote session, the web request session isn't a persistent connection. It's an object that
+contains information about the connection and the request, including cookies, credentials, the
 maximum redirection value, and the user agent string. You can use it to share state and data among
 web requests.
 
 To use the web request session in subsequent web requests, specify the session variable in the value
-of the **WebSession** parameter. Windows PowerShell uses the data in the web request session object
-when establishing the new connection. To override a value in the web request session, use a cmdlet
+of the **WebSession** parameter. PowerShell uses the data in the web request session object when
+establishing the new connection. To override a value in the web request session, use a cmdlet
 parameter, such as **UserAgent** or **Credential**. Parameter values take precedence over values in
 the web request session.
 
-You cannot use the **SessionVariable** and **WebSession** parameters in the same command.
+You can't use the **SessionVariable** and **WebSession** parameters in the same command.
 
 ```yaml
 Type: System.String
