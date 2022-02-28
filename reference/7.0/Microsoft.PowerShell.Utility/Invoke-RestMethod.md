@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/27/2021
+ms.date: 02/28/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -264,7 +264,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -476,7 +476,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -502,7 +502,7 @@ Aliases: FL
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -697,7 +697,7 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -760,7 +760,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -822,16 +822,16 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ResponseHeadersVariable
 
-Creates a Response Headers Dictionary and saves it in the value of the specified variable. The keys
-of the dictionary will contain the field names of the Response Header returned by the web server and
-the values will be the respective field values.
+Creates a variable containing a Response Headers Dictionary. Enter a variable name without the
+dollar sign (`$`) symbol. The keys of the dictionary contain the field names and values of the
+Response Header returned by the web server.
 
 This feature was added in PowerShell 6.0.0.
 
@@ -881,7 +881,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -906,8 +906,8 @@ Accept wildcard characters: False
 
 ### -SessionVariable
 
-Specifies a variable for which this cmdlet creates a web request session and saves it in the value.
-Enter a variable name without the dollar sign (`$`) symbol.
+Creates a variable containing the web request session. Enter a variable name without the dollar sign
+(`$`) symbol.
 
 When you specify a session variable, `Invoke-RestMethod` creates a web request session object and
 assigns it to a variable with the specified name in your PowerShell session. You can use the
@@ -956,7 +956,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -981,7 +981,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1038,10 +1038,11 @@ Accept wildcard characters: False
 
 ### -StatusCodeVariable
 
-This parameter specifies a variable that's assigned a status code's integer value. The parameter can
-identify success messages or failure messages when used with the **SkipHttpErrorCheck** parameter.
+Creates a variable containing a HTTP status code result of the request. Enter a variable name
+without the dollar sign (`$`) symbol.
 
-Input the parameter's variable name as a string such as `-StatusCodeVariable "scv"`.
+The parameter can identify success messages or failure messages when used with the
+**SkipHttpErrorCheck** parameter.
 
 This parameter was introduced in PowerShell 7.
 
@@ -1160,7 +1161,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1177,7 +1178,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1271,14 +1272,14 @@ Because of changes in .NET Core 3.1, PowerShell 7.0 and higher use the
 [HttpClient.DefaultProxy](/dotnet/api/system.net.http.httpclient.defaultproxy?view=netcore-3.1)
 property to determine the proxy configuration.
 
-The value of this property is determined by your platform:
+The value of this property is different rules depending on your platform:
 
-- **For Windows**: Reads proxy configuration from environment variables. If those variables are not
-  defined the property is derived from the user's proxy settings.
-- **For macOS**: Reads proxy configuration from environment variables. If those variables are not
-  defined the property is derived from the system's proxy settings.
-- **For Linux**: Reads proxy configuration from environment variables. If those variables are not
-  defined the property initializes a non-configured instance that bypasses all addresses.
+- **For Windows**: Reads proxy configuration from environment variables or, if those are not
+  defined, from the user's proxy settings.
+- **For macOS**: Reads proxy configuration from environment variables or, if those are not defined,
+  from the system's proxy settings.
+- **For Linux**: Reads proxy configuration from environment variables or, in case those are not
+  defined, this property initializes a non-configured instance that bypasses all addresses.
 
 The environment variables used for `DefaultProxy` initialization on Windows and Unix-based platforms
 are:
