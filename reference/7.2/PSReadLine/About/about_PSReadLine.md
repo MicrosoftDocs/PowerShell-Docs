@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 02/18/2022
+ms.date: 03/02/2022
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
@@ -1130,7 +1130,12 @@ Clear the screen and draw the current line at the top of the screen.
 
 ### DigitArgument
 
-Start a new digit argument to pass to other functions.
+Start a new digit argument to pass to other functions. You can use this as a
+multiplier for the next function that is invoked by a keypress. For example,
+pressing `<Alt+1>` `<Alt+0>` sets the **digit-argument** value to 10. Then,
+pressing the `#` key sends 10 `#` characters (`##########`) to the input line.
+Similarly, you can use this with other operations, like `<Delete>` or
+`Left-Arrow`.
 
 - Cmd: `<Alt+0>`, `<Alt+1>`, `<Alt+2>`, `<Alt+3>`, `<Alt+4>`, `<Alt+5>`,
   `<Alt+6>`, `<Alt+7>`, `<Alt+8>`, `<Alt+9>`, `<Alt+->`
