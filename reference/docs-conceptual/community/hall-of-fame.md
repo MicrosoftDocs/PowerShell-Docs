@@ -17,7 +17,6 @@ Pull Requests help us fix those issues and make the documentation better for eve
 
 | Docs PRs Merged | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | Grand Total |
 | --------------- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community       |    3 |   54 |   95 |  212 |  559 |  561 |  333 |   12 |        1829 |
 | Community       |    3 |  194 |  446 |  464 |  318 |  161 |  100 |   13 |        1699 |
 | matt9ucci       |      |      |  157 |   80 |   30 |    1 |    6 |      |         274 |
 | nschonni        |      |      |      |   14 |  138 |   10 |      |      |         162 |
@@ -37,13 +36,13 @@ Pull Requests help us fix those issues and make the documentation better for eve
 | k-takai         |      |      |      |    5 |    1 |    7 |      |      |          13 |
 | PlagueHO        |      |   10 |      |      |    1 |      |      |      |          11 |
 | exchange12rocks |      |      |    7 |    3 |      |      |    1 |      |          11 |
-
 ## GitHub issues opened
 
 GitHub issues help us identify errors and gaps in our documentation.
 
 | Docs Issues Opened | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | Grand Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
+| Community          |    3 |   54 |   95 |  212 |  559 |  561 |  333 |   12 |        1829 |
 | mklement0          |      |      |   19 |   60 |   56 |   61 |   27 |      |         223 |
 | iSazonov           |      |      |    1 |    4 |   10 |    8 |    3 |      |          26 |
 | jszabo98           |      |      |      |    2 |   15 |    6 |    1 |      |          24 |
