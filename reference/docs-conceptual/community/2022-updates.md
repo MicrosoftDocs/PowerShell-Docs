@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2022
-ms.date: 02/01/2022
+ms.date: 03/02/2022
 title: What's New in PowerShell-Docs for 2022
 ---
 # What's new in PowerShell Docs for 2022
@@ -10,6 +10,33 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2022-February
+
+New Content
+
+- [about_Calling_Generic_Methods](/powershell/module/microsoft.powershell.core/about/about_calling_generic_methods?view=powershell-7.3&preserve-view=true)
+
+Content updates
+
+- Catching up on issues
+- Updates for 7.3 preview content
+
+### Top Community Contributors
+
+GitHub stats
+
+- 22 PRs merged (3 from Community)
+- 24 issues opened (19 from Community)
+- 18 issues closed (16 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| sethvs          |     2      |               |
+| guilhermgonzaga |     1      |               |
 
 ## 2022-January
 
