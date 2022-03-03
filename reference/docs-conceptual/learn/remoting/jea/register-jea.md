@@ -60,7 +60,7 @@ endpoint.
 ## Multi-machine configuration with DSC
 
 When deploying JEA on multiple machines, the simplest deployment model uses the JEA
-[Desired State Configuration (DSC)](../../../dsc/overview/overview.md) resource to quickly and
+[Desired State Configuration (DSC)](../../../dsc/overview.md) resource to quickly and
 consistently deploy JEA on each machine.
 
 To deploy JEA with DSC, ensure the following prerequisites are met:

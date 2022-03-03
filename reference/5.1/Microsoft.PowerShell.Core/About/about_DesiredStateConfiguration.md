@@ -28,7 +28,7 @@ maintain and manage existing configurations.
 DSC is introduced in PowerShell 4.0.
 
 For detailed information about DSC, see
-[PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview).
+[PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview).
 
 ## DEVELOPING DSC RESOURCES WITH CLASSES
 
@@ -170,7 +170,7 @@ to browse and learn about available DSC resources.
 
 ## See also
 
-[PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview)
+[PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/)
 
 [Built-In PowerShell Desired State Configuration Resources](/powershell/scripting/dsc/resources/resources)
 
