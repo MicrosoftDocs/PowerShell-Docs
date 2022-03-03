@@ -161,7 +161,7 @@ for historical reference. It is not intended for use to determine the support li
 
 <!-- hyperlink references -->
 
-[assisted]: https://support.microsoft.com/assistedsupportproducts
+[assisted]: https://support.microsoft.com/supportforbusiness/productselection
 [assurance]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default
 [community]: /powershell/scripting/community/community-support
 [enterprise-agreement]: https://www.microsoft.com/licensing/licensing-programs/enterprise

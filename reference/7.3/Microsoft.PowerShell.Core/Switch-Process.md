@@ -91,6 +91,6 @@ normal conditions, the cmdlet was not intended to be used in PowerShell scripts.
 
 ## RELATED LINKS
 
-[Using experimental features](/powershell/learn/experimental-features)
+[Using experimental features](/powershell/scripting/learn/experimental-features)
 
 [about_Experimental_Features](/powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features)
