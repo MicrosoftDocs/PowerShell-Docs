@@ -363,7 +363,7 @@ If you've skipped to the summary, some broad recommendations are:
 [pssdk]: https://www.nuget.org/packages/Microsoft.PowerShell.SDK/
 [psstdlib]: https://www.nuget.org/packages/PowerShellStandard.Library/
 [psstdrepo]: https://github.com/PowerShell/PowerShellStandard
-[refasm]: dotnet/standard/assembly/reference-assemblies
+[refasm]: /dotnet/standard/assembly/reference-assemblies
 [sma]: https://www.nuget.org/packages/System.Management.Automation/
 [Start-Job]: /powershell/module/microsoft.powershell.core/start-job
 [targets]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/Engine/Engine.csproj
