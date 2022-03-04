@@ -1,6 +1,6 @@
 ---
 description: PowerShell has several features designed to improve the security of your scripting environment.
-ms.date: 11/10/2021
+ms.date: 03/04/2022
 title: PowerShell security features
 ---
 # PowerShell security features
@@ -31,6 +31,14 @@ For more information, see the following articles:
 - [about_Group_Policy_Settings][logging]
 - [about_Logging_Windows][log-win]
 - [about_Logging_Non-Windows][log-unix]
+
+## AMSI Support
+
+The Windows Antimalware Scan Interface (AMSI) is an API that allows application actions to be passed
+to an antimalware scanner, such as Windows Defender, to be scanned for malicious payloads. Beginning
+with PowerShell 5.1, PowerShell running on Windows 10 (and higher) passes all script blocks to AMSI.
+
+For more information about AMSI, see [How AMSI helps](/windows/win32/amsi/how-amsi-helps).
 
 ## Constrained language mode
 

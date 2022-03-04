@@ -1,7 +1,7 @@
 ---
 description: Describes WMI Query Language (WQL), which can be used to get WMI objects in Windows PowerShell.
 Locale: en-US
-ms.date: 01/03/2018
+ms.date: 03/04/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wql?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about WQL
@@ -500,7 +500,7 @@ Sort-Object -Property Name
 #### EXAMPLE 4: Any characters -- or none (%)
 
 The following commands get processes that have names that begin with "calc".
-The % symbol in WQL is equivalent to the asterisk (\*) symbol in regular
+The % symbol in WQL is equivalent to the asterisk (`*`) symbol in regular
 expressions.
 
 ```powershell
@@ -685,8 +685,8 @@ Get-CimInstance -Query $q
 
 ## USING THE ESCAPE CHARACTER
 
-WQL uses the backslash (\) as its escape character. This is different from
-Windows PowerShell, which uses the backtick character (`).
+WQL uses the backslash (`\`) as its escape character. This is different from
+Windows PowerShell, which uses the backtick character (`` ` ``).
 
 Quotation marks, and the characters used for quotation marks, often need to be
 escaped so that they are not misinterpreted.
