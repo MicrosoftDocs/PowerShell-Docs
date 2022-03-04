@@ -132,7 +132,7 @@ script cmdlet. Resource cleanup is enforced for the following scenarios:
 1. when the pipeline is being stopped by <kbd>Ctrl+c</kbd> or
    `StopProcessing()`
 
-> [!CAUTON]
+> [!CAUTION]
 > Adding the `clean` block is a breaking change. Because `clean` is parsed as a
 > keyword, it prevents users from directly calling a command named `clean` as
 > the first statement in a script block. However, it's likely a non-issue in
