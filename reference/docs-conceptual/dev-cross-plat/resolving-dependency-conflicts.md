@@ -766,7 +766,7 @@ dependencies that remains robust over time as more dependencies are added.
 For a more detailed example, go to this
 [GitHub repository](https://github.com/rjmholt/ModuleDependencyIsolationExample). This example
 demonstrates how to migrate a module to use an ALC, while keeping that module working in .NET
-Framework. It also show how to use .NET Standard and PowerShell Standard to simplify the core
+Framework. It also shows how to use .NET Standard and PowerShell Standard to simplify the core
 implementation.
 
 This solution is also used by the [Bicep PowerShell module](https://github.com/PSBicep/PSBicep),
@@ -787,7 +787,7 @@ There is a simplified solution to achieve side-by-side assembly loading, by
 - Hooking up a `Resolving` event to a custom Assembly Load Context
 - Or, hooking up a `Resolving` event to `Assembly.LoadFile()`
 
-It comes with two limitations comparing to the above solution but requires way less efforts from the module author.
+It comes with two limitations comparing to the above solution but requires much more less effort from the module author.
 Check out the [PowerShell-ALC-Samples](https://github.com/daxian-dbw/PowerShell-ALC-Samples/tree/main/Resolving-Event-with-ALC)
 repository for the sample code and the detailed scenario analysis regarding this solution.
 
