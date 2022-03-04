@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 02/09/2022
+ms.date: 03/04/2022
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -51,6 +51,7 @@ Legend
 | PSExec                                                     |                  |                  |                  | &#x2714;&#xfe0f; |
 | PSNativeCommandErrorActionPreference                       |                  |                  |                  | &#x2714;&#xfe0f; |
 | PSStrictModeAssignment                                     |                  |                  |                  | &#x2714;&#xfe0f; |
+| PSAMSIMethodInvocationLogging                              |                  |                  |                  | &#x2714;&#xfe0f; |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -88,6 +89,19 @@ In this example, a job is started and a breakpoint is set to break when the `Set
 run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` command with the
 **Runspace** parameter. You can then inspect the breakpoint in the `$breakpoint` variable.
 
+## PSAMSIMethodInvocationLogging
+
+The Windows Antimalware Scan Interface (AMSI) is an API that allows application actions to be passed
+to an antimalware scanner, such as Windows Defender, to be scanned for malicious payloads. Beginning
+with PowerShell 5.1, PowerShell running on Windows 10 (and higher) passes all script blocks to AMSI.
+
+This experimental feature extends the data that is sent to AMSI for inspection. With this feature
+enabled, PowerShell now includes any invocation of a .NET method member.
+
+This experiment was added in PowerShell 7.3.
+
+For more information about AMSI, see [How AMSI helps](/windows/win32/amsi/how-amsi-helps).
+
 ## PSAnsiRenderingFileInfo
 
 This experiment was added in PowerShell 7.2. This feature adds the $PSStyle.FileInfo member and
@@ -103,7 +117,7 @@ For more information, see
 [about_Automatic_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables).
 
 > [!NOTE]
-> You must have the **PSAnsiRendering** experimental feature enabled to use this feature.
+> This feature is dependent on the **PSAnsiRendering** feature that is now a standard feature.
 
 ## PSCleanBlock
 
