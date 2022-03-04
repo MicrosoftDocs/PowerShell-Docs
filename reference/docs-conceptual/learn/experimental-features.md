@@ -91,8 +91,8 @@ run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` c
 
 ## PSAMSIMethodInvocationLogging
 
-The Windows Antimalware Scan Interface (AMSI) is an API that allows application actions to be passed
-to an antimalware scanner, such as Windows Defender, to be scanned for malicious payloads. Beginning
+The Windows Antimalware Scan Interface (AMSI) is an API that allows applications to pass actions 
+to an antimalware scanner, such as Windows Defender, for detecting malicious payloads. Beginning
 with PowerShell 5.1, PowerShell running on Windows 10 (and higher) passes all script blocks to AMSI.
 
 This experimental feature extends the data that is sent to AMSI for inspection. With this feature
