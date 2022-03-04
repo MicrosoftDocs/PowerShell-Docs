@@ -272,94 +272,6 @@ Circumstances where pinning to a common dependency version won't work include:
 - The other dependency version is likely to change often, so settling on a common version is only a
   short-term fix.
 
-### Add an AssemblyResolve event handler to create a dynamic binding redirect
-
-Sometimes changing your own dependency version isn't possible or is too difficult. Another option is
-to set up a dynamic binding redirect by registering an event handler for the `AssemblyResolve`
-event.
-
-As with a static binding redirect, the point is to force all consumers of a dependency to use the
-same actual assembly. You intercept calls to load the dependency and always redirect them to the
-version you want.
-
-This looks something like this:
-
-```csharp
-// Register the event handler as early as you can in your code.
-// A good option is to use the IModuleAssemblyInitializer interface
-// that PowerShell provides to run code early on when your module is loaded.
-
-// This class will be instantiated on module import and the OnImport() method run.
-// Make sure that:
-//  - the class is public
-//  - the class has a public, parameterless constructor
-//  - the class implements IModuleAssemblyInitializer
-public class MyModuleInitializer : IModuleAssemblyInitializer
-{
-    public void OnImport()
-    {
-        AppDomain.CurrentDomain.AssemblyResolve += DependencyResolution.ResolveNewtonsoftJson;
-    }
-}
-
-// Clean up the event handler when the the module is removed
-// to prevent memory leaks.
-//
-// Like IModuleAssemblyInitializer, IModuleAssemblyCleanup allows
-// you to register code to run when a module is removed (with Remove-Module).
-// Make sure it is also public with a public parameterless contructor
-// and implements IModuleAssemblyCleanup.
-public class MyModuleCleanup : IModuleAssemblyCleanup
-{
-    public void OnRemove(PSModuleInfo psModuleInfo)
-    {
-        AppDomain.CurrentDomain.AssemblyResolve -= DependencyResolution.ResolveNewtonsoftJson;
-    }
-}
-
-internal static class DependencyResolution
-{
-    private static readonly string s_modulePath = Path.GetDirectoryName(
-        Assembly.GetExecutingAssembly().Location);
-
-    public static Assembly ResolveNewtonsoftJson(object sender, ResolveEventArgs args)
-    {
-        // Parse the assembly name
-        var assemblyName = new AssemblyName(args.Name);
-
-        // We only want to handle the dependency we care about.
-        // In this example it's Newtonsoft.Json.
-        if (!assemblyName.Name.Equals("Newtonsoft.Json"))
-        {
-            return null;
-        }
-
-        // Generally the version of the dependency you want to load is the higher one,
-        // since it's the most likely to be compatible with all dependent assemblies.
-        // The logic here assumes our module always has the version we want to load.
-        // Also note the use of Assembly.LoadFrom() here rather than Assembly.LoadFile().
-        return Assembly.LoadFrom(Path.Combine(s_modulePath, "Newtonsoft.Json.dll"));
-    }
-}
-```
-
-You can technically register a scriptblock within PowerShell to handle an `AssemblyResolve` event,
-but:
-
-- An `AssemblyResolve` event may be triggered on any thread, something that PowerShell will be
-  unable to handle.
-- Even when events are handled on the right thread, PowerShell's scoping concepts mean that the
-  event handler scriptblock must be written carefully to not depend on variables defined outside it.
-
-There are situations where redirecting to a common version won't work:
-
-- When the dependency has made breaking changes between versions, or when dependent code relies on a
-  functionality otherwise not available in the version you redirect to.
-- When your module isn't loaded before the conflicting dependency. If you register an
-  `AssemblyResolve` event handler after the dependency has been loaded, it will never be fired. If
-  you're trying to prevent dependency conflicts with another module, this may be an issue, since the
-  other module may be loaded first.
-
 ### Use the dependency out of process
 
 This solution is more for module users than module authors. This is a solution to use when
@@ -857,157 +769,27 @@ demonstrates how to migrate a module to use an ALC, while keeping that module wo
 Framework. It also show how to use .NET Standard and PowerShell Standard to simplify the core
 implementation.
 
-### Assembly resolve handler for side-by-side loading with `Assembly.LoadFile()`
+This solution is also used by the [Bicep PowerShell module](https://github.com/PSBicep/PSBicep),
+and the blog post [Resolving PowerShell Module Conflicts](https://pipe.how/get-assemblyloadcontext/)
+is another good read about this solution.
 
-Another, possibly simpler, way to achieve side-by-side assembly loading is to hook up an
-`AssemblyResolve` event to `Assembly.LoadFile()`. Using `Assembly.LoadFile()` has the advantage of
-being the simplest solution to implement and works with both .NET Core and .NET Framework.
+### Assembly resolving handler for side-by-side loading
 
-To show this, let's take a look at a quick example of an implementation that combines ideas from our
-dynamic binding redirect example, and the Assembly Load Context example above.
+Although being robust, the solution described above requires the module assembly to not directly reference the dependency assemblies,
+but instead, to reference a wrapper assembly which then references the dependency assemblies.
+The wrapper assembly acts like a bridge, forwarding the calls from the module assembly to the dependency assemblies.
+This makes it usually a non-trivial amount of work to adopt this solution:
 
-We'll call this module **LoadFileModule**, which has a trivial command
-`Test-LoadFile [-Path] <path>`. This module takes a dependency on the `CsvHelper` assembly (version
-15.0.5).
+- For a new module, this would add additional complexity to the design and implementaion
+- For an existing module, this would require significant refactoring
 
-As with the ALC module, we must first split up the module into two pieces.
+There is a simplified solution to achieve side-by-side assembly loading, by
+- Hooking up a `Resolving` event to a custom Assembly Load Context
+- Or, hooking up a `Resolving` event to `Assembly.LoadFile()`
 
-The first part does the actual implementation, `LoadFileModule.Engine`:
-
-```csharp
-using CsvHelper;
-
-namespace LoadFileModule.Engine
-{
-    public class Runner
-    {
-        public void Use(string path)
-        {
-            // Here's where we use the CsvHelper dependency
-            using (var reader = new StreamReader(path))
-            using (var csvReader = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                // Imagine we do something useful here...
-            }
-        }
-    }
-}
-```
-
-The second part is what PowerShell loads directly, `LoadFileModule.Cmdlets`. We use a strategy
-similar to the ALC module, where we isolate dependencies in a separate directory. But this time, we
-load all assemblies in with a resolve event rather than just `LoadFileModule.Engine.dll`.
-
-```csharp
-using LoadFileModule.Engine;
-
-namespace LoadFileModule.Cmdlets
-{
-    // Actual cmdlet definition
-    [Cmdlet(VerbsDiagnostic.Test, "LoadFile")]
-    public class TestLoadFileCommand : Cmdlet
-    {
-        [Parameter(Mandatory = true)]
-        public string Path { get; set; }
-
-        protected override void EndProcessing()
-        {
-            // Here's where we use LoadFileModule.Engine
-            new Runner().Use(Path);
-        }
-    }
-
-    // This class controls our dependency resolution
-    public class ModuleContextHandler : IModuleAssemblyInitializer, IModuleAssemblyCleanup
-    {
-        // We catalog our dependencies here to ensure we don't load anything else
-        private static IReadOnlyDictionary<string, int> s_dependencies = new Dictionary<string, int>
-        {
-            { "CsvHelper", 15 },
-        };
-
-        // Set up the path to our dependency directory within the module
-        private static string s_dependenciesDirPath = Path.GetFullPath(
-            Path.Combine(
-                Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                "Dependencies"));
-
-        // This makes sure we only try to resolve dependencies when the module is loaded
-        private static bool s_engineLoaded = false;
-
-        public void OnImport()
-          {
-            // Set up our event when the module is loaded
-            AppDomain.CurrentDomain.AssemblyResolve += HandleResolveEvent;
-        }
-
-        public void OnRemove(PSModuleInfo psModuleInfo)
-        {
-            // Unset the event when the module is unloaded
-            AppDomain.CurrentDomain.AssemblyResolve -= HandleResolveEvent;
-        }
-
-        private static Assembly HandleResolveEvent(object sender, ResolveEventArgs args)
-        {
-            var asmName = new AssemblyName(args.Name);
-
-            // First we want to know if this is the top-level assembly
-            if (asmName.Name.Equals("LoadFileModule.Engine"))
-            {
-                s_engineLoaded = true;
-                return Assembly.LoadFile(Path.Combine(s_dependenciesDirPath, "Unrelated.Engine.dll"));
-            }
-
-            // Otherwise, if that assembly has been loaded, we must try to resolve its dependencies too
-            if (s_engineLoaded
-                && s_dependencies.TryGetValue(asmName.Name, out int requiredMajorVersion)
-                && asmName.Version.Major == requiredMajorVersion)
-            {
-                string asmPath = Path.Combine(s_dependenciesDirPath, $"{asmName.Name}.dll");
-                return Assembly.LoadFile(asmPath);
-            }
-
-            return null;
-        }
-    }
-}
-```
-
-Finally, the layout of the module is also similar to the ALC module:
-
-```
-LoadFileModule/
-  + LoadFileModule.Cmdlets.dll
-  + LoadFileModule.psd1
-  + Dependencies/
-  |  + LoadFileModule.Engine.dll
-  |  + CsvHelper.dll
-```
-
-With this structure in place, **LoadFileModule** now supports being loaded alongside other modules
-with a dependency on **CsvHelper**.
-
-Because our handler applies to **all** `AssemblyResolve` events across the Application Domain,
-we need to make some specific design choices here:
-
-- To narrow the window in which our event may interfere with other loading, we only start handling
-  general dependency loading after `LoadFileModule.Engine.dll` has been loaded.
-- We push `LoadFileModule.Engine.dll` out into the Dependencies directory, so that it's loaded by a
-  `LoadFile()` call rather than by PowerShell. This means its own dependency loads always raise an
-  `AssemblyResolve` event, even if another `CsvHelper.dll` (for example) is loaded in PowerShell.
-  This gives us the opportunity to find the correct dependency.
-- Since we must only resolve the specific dependencies for our module, we're forced to code a
-  dictionary of dependency names and versions into our handler. In our particular case, it would be
-  possible to use the `ResolveEventArgs.RequestingAssembly` property to work out whether `CsvHelper`
-  is being requested by our module. But this doesn't work for dependencies of dependencies; for example, if `CsvHelper` itself raised an `AssemblyResolve` event. There are other, harder ways to
-  do this, such as comparing requested assemblies to the metadata of assemblies in the
-  `Dependencies` directory. But, in this example, we've made this checking more explicit to both
-  highlight the issue and simplify the example.
-
-This is the key difference between the `LoadFile()` strategy and the ALC strategy: the
-`AssemblyResolve` event must service all loads in the Application Domain, making it much harder to
-keep our dependency resolution from being tangled with other modules. However, the lack of ALCs in
-.NET Framework makes this option worth understanding.
+It comes with two limitations comparing to the above solution but requires way less efforts from the module author.
+Check out the [PowerShell-ALC-Samples](https://github.com/daxian-dbw/PowerShell-ALC-Samples/tree/main/Resolving-Event-with-ALC)
+repository for the sample code and the detailed scenario analysis regarding this solution.
 
 ### Custom Application Domains
 
