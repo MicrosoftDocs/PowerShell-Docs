@@ -1,7 +1,7 @@
 ---
 description: Information about the Certificate provider.
 Locale: en-US
-ms.date: 06/04/2020
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/about/about_certificate_provider?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Certificate Provider
@@ -25,6 +25,8 @@ Certificate
 Provides access to X.509 certificate stores and certificates in PowerShell.
 
 ## Detailed description
+
+> This information only applies to PowerShell running on Windows.
 
 The PowerShell **Certificate** provider lets you get, add, change, clear, and
 delete certificates and certificate stores in PowerShell.

@@ -1,7 +1,7 @@
 ---
 description: Describes session configurations, which determine the users who can connect to the computer remotely and the commands they can run.
 Locale: en-US
-ms.date: 12/09/2017
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Session Configurations
@@ -36,13 +36,12 @@ New-PSSessionConfiguration cmdlet. For more information about session
 configuration files, see
 [about_Session_Configuration_Files](about_Session_Configuration_Files.md).
 
-Session configurations are a feature of Web Services for Management
-(WS-Management) based PowerShell remoting. They are used only when you use the
-New-PSSession, Invoke-Command, or Enter-PSSession cmdlets to connect to a
-remote computer.
+Session configurations are a feature of WSMAN-based PowerShell remoting. They
+are used only when you use the `New-PSSession`, `Invoke-Command`, or
+`Enter-PSSession` cmdlets to connect to a remote Windows computer.
 
-Note: To manage the session configurations, start PowerShell with the
-"Run as administrator" option.
+To manage the session configurations on a Windows computer, start
+PowerShell with the **Run as administrator** option.
 
 About Session Configurations
 
