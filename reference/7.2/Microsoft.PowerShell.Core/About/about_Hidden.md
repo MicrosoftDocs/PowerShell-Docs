@@ -16,7 +16,7 @@ Get-Member results.
 
 When you use the Hidden keyword in a script, you hide the members of a class
 by default. The Hidden keyword can hide properties, methods (including
-constructors, events, alias properties, and other member types, including
+constructors), events, alias properties, and other member types, including
 static members, from the default results of the Get-Member cmdlet, and from
 IntelliSense and tab completion results. To display members that you have
 hidden with the Hidden keyword, add the -Force parameter to a Get-Member

@@ -1,7 +1,7 @@
 ---
 description: Provides detailed information about PowerShell sessions and the role they play in remote commands.
 Locale: en-US
-ms.date: 06/09/2017
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssession_details?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSSession Details
@@ -150,13 +150,13 @@ and manage only the PSSessions that you created.
 
 ## Can I Connect to a PSSession From a Different Computer?
 
-Beginning in Windows PowerShell 3.0, PSSessions are independent
-of the sessions in which they were created. Active PSSessions
+Beginning in Windows PowerShell 3.0, PSSessions on Windows computers are
+independent of the sessions in which they were created. Active PSSessions
 are maintained on the computer at the remote or "server-side" of
 a connection.
 
-You can use the `Disconnect-PSSession` cmdlet to disconnect
-from a PSSession. The PSSession is disconnected from the
+On a Windows computer, you can use the `Disconnect-PSSession` cmdlet to
+disconnect from a PSSession. The PSSession is disconnected from the
 local session, but is maintained on the remote computer.
 Commands continue to run in the disconnected PSSession. You
 can close PowerShell and shut down the originating computer
@@ -164,7 +164,7 @@ without interrupting the PSSession.
 
 Then, even hours later, you can use the `Get-PSSession` cmdlet to
 get the PSSession and the `Connect-PSSession` cmdlet to connect to the
-PSSession from a new session on a different computer.
+PSSession from a new session on a different Windows computer.
 
 For more information, see [about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md).
 

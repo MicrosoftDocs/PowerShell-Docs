@@ -1,7 +1,7 @@
 ---
 description: Explains language modes and their effect on PowerShell sessions.
 Locale: en-US
-ms.date: 08/03/2021
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Language Modes
@@ -211,8 +211,14 @@ FullLanguage
 ```
 
 On other session configurations, you can find the language mode indirectly by
-finding the language mode of a session that is created by using the session
+finding the language mode of a session that is created with the session
 configuration.
+
+> [!NOTE]
+> Session configurations are a feature of WSMan-based PowerShell remoting. They are used only when you
+> use the `New-PSSession`, `Invoke-Command`, or `Enter-PSSession` cmdlets
+> to connect to a remote Windows computer. The `Get-PSSessionConfiguration`
+> cmdlet is only available on Windows computers.
 
 ### Finding the language mode of a session
 
