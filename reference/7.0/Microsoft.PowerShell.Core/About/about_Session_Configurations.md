@@ -1,7 +1,7 @@
 ---
 description: Describes session configurations, which determine the users who can connect to the computer remotely and the commands they can run.
 Locale: en-US
-ms.date: 12/09/2017
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Session Configurations
@@ -356,3 +356,4 @@ about_SessionConfigurations
 [Test-PSSessionConfigurationFile](xref:Microsoft.PowerShell.Core.Test-PSSessionConfigurationFile)
 
 [Unregister-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Unregister-PSSessionConfiguration)
+

@@ -1,7 +1,7 @@
 ---
 description: Describes how to interpret and format the output of remote commands.
 Locale: en-US
-ms.date: 12/01/2017
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_output?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Remote Output
@@ -175,8 +175,8 @@ in a streaming list.
 
 When objects are not formatted automatically, you can use the formatting
 cmdlets, such as Format-Table or Format-List, to format and display
-selected properties. Or, you can use the Out-GridView cmdlet to display
-the objects in a table.
+selected properties. On a Windows computer, you can use the `Out-GridView`
+cmdlet to display the objects in a table.
 
 Also, if you run a command on a remote computer that uses cmdlets that you
 do not have on your local computer, the objects that the command returns

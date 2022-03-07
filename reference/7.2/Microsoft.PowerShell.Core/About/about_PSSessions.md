@@ -1,7 +1,7 @@
 ---
 description: Describes PowerShell sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
 Locale: en-US
-ms.date: 01/03/2018
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssessions?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSSessions
@@ -27,11 +27,12 @@ You can also create a PSSession on the local computer and run commands in it.
 A local PSSession uses the PowerShell remoting infrastructure to
 create and maintain the PSSession.
 
-Beginning in Windows PowerShell 3.0, PSSessions are independent of the
-sessions in which they are created. Active PSSessions are maintained on the
-remote computer (or the computer at the remote end or "server-side" of the
-connection). As a result, you can disconnect from the PSSession and reconnect
-to it at a later time from the same computer or from a different computer.
+Beginning in Windows PowerShell 3.0, PSSessions on Windows are independent
+of the sessions in which they are created. Active PSSessions are maintained
+on the remote computer (or the computer at the remote end or "server-side"
+of the connection). As a result, on Windows you can disconnect from a PSSession
+on a remote Windows computer and reconnect to it at a later time from the
+same computer or from a different Windows computer.
 
 This topic explains how to create, use, get, and delete PSSessions. For more
 advanced information, see
@@ -256,6 +257,12 @@ Get-Help *-PSSession
 - Receive-PSSession: Gets the results of commands that ran in a disconnected
   session
 - Remove-PSSession: Deletes the PSSessions in the current session
+
+> [!NOTE]
+> Disconnected sessions are only supported on Windows. The `Connect-PSSession`,
+> `Disconnect-PSSession`, and `Receive-PSSession` cmdlets are only available
+> on Windows. For more information about disconnected sessions, see
+> [about_Remote_Disconnected_Session](about_Remote_Disconnected_Sessions.md)
 
 ## For More Information
 

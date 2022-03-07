@@ -1,7 +1,7 @@
 ---
 description: Provides detailed information about PowerShell sessions and the role they play in remote commands.
 Locale: en-US
-ms.date: 06/09/2017
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssession_details?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSSession Details

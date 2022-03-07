@@ -1,7 +1,7 @@
 ---
 description: Explains how to sign scripts so that they comply with the PowerShell execution policies.
 Locale: en-US
-ms.date: 01/21/2022
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Signing
@@ -13,6 +13,8 @@ Explains how to sign scripts so that they comply with the PowerShell execution
 policies.
 
 ## Long description
+
+> This information only applies to PowerShell running on Windows.
 
 The Restricted execution policy does not permit any scripts to run. The
 **AllSigned** and **RemoteSigned** execution policies prevent PowerShell from

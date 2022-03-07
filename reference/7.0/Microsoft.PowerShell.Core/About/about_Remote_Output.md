@@ -1,7 +1,7 @@
 ---
 description: Describes how to interpret and format the output of remote commands.
 Locale: en-US
-ms.date: 12/01/2017
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_output?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Remote Output
@@ -215,3 +215,4 @@ computers are interspersed.
 [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 
 [Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)
+

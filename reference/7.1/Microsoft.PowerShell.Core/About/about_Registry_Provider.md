@@ -1,7 +1,7 @@
 ---
 description: Registry
 Locale: en-US
-ms.date: 09/28/2021
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_registry_provider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Registry Provider
@@ -25,6 +25,8 @@ Registry
 Provides access to the registry keys, entries, and values in PowerShell.
 
 ## Detailed description
+
+> This information only applies to PowerShell running on Windows.
 
 The PowerShell **Registry** provider lets you get, add, change,
 clear, and delete registry keys, entries, and values in PowerShell.

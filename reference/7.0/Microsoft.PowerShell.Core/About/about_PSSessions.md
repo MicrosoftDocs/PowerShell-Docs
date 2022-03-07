@@ -1,7 +1,7 @@
 ---
 description: Describes PowerShell sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
 Locale: en-US
-ms.date: 01/03/2018
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssessions?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSSessions
@@ -291,3 +291,4 @@ For more information about PSSessions, see [about_PSSession_Details](about_PSSes
 [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
 
 [Remove-PSSession](xref:Microsoft.PowerShell.Core.Remove-PSSession)
+

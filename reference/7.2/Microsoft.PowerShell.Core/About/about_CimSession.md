@@ -1,7 +1,7 @@
 ---
 description: Describes a **CimSession** object and the difference between CIM sessions and PowerShell sessions.
 Locale: en-US
-ms.date: 05/13/2020
+ms.date: 03/07/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_cimsession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about CimSession
@@ -14,14 +14,16 @@ PowerShell sessions.
 
 ## Long description
 
+> This information only applies to PowerShell running on Windows.
+
 A Common Information Model (CIM) session is a client-side object that
 represents a connection to a local computer or a remote computer. You can use
 CIM sessions as an alternative to PowerShell sessions (PSSessions). Both
 approaches have advantages.
 
-You can use the `New-CimSession` cmdlet to create a CIM session that contains
-information about a connection, such as computer name, the protocol used for
-the connection, session ID, and instance ID.
+You can use the `New-CimSession` cmdlet on a Windows computer to create a CIM
+session that contains information about a connection, such as computer name,
+the protocol used for the connection, session ID, and instance ID.
 
 After you create a **CimSession** object that specifies information required to
 establish a connection, PowerShell does not establish the connection
