@@ -18,72 +18,72 @@ about topic for the keyword and the information that follows the table.
 
 |   Keyword    |                                                     Reference                                                     |
 | ------------ | ----------------------------------------------------------------------------------------------------------------- |
-| Begin        | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)                    |
-| Break        | [about_Break](about_Break.md), [about_Trap](about_Trap.md)                                                        |
-| Catch        | [about_Try_Catch_Finally](about_Try_Catch_Finally.md)                                                             |
-| Class        | [about_Classes](about_Classes.md)                                                                                 |
-| Continue     | [about_Continue](about_Continue.md), [about_Trap](about_Trap.md)                                                  |
-| Data         | [about_Data_Sections](about_Data_Sections.md)                                                                     |
-| Define       | Reserved for future use                                                                                           |
-| Do           | [about_Do](about_Do.md), [about_While](about_While.md)                                                            |
-| DynamicParam | [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)                                     |
-| Else         | [about_If](about_If.md)                                                                                           |
-| Elseif       | [about_If](about_If.md)                                                                                           |
-| End          | [about_Functions](about_Functions.md), [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)    |
-| Enum         | [about_Enum](about_Enum.md)                                                                                       |
-| Exit         | [Described in this topic](#exit)                                                                                  |
-| Filter       | [about_Functions](about_Functions.md)                                                                             |
-| Finally      | [about_Try_Catch_Finally](about_Try_Catch_Finally.md)                                                             |
-| For          | [about_For](about_For.md)                                                                                         |
-| ForEach      | [about_ForEach](about_ForEach.md)                                                                                 |
-| From         | Reserved for future use                                                                                           |
-| Function     | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)                    |
-| Hidden       | [about_Hidden](about_Hidden.md)                                                                                   |
-| If           | [about_If](about_If.md)                                                                                           |
-| In           | [about_ForEach](about_ForEach.md)                                                                                 |
-| Param        | [about_Functions](about_Functions.md)                                                                             |
-| Process      | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)                    |
-| Return       | [about_Return](about_Return.md)                                                                                   |
-| Static       | [about_Classes](about_Classes.md)                                                                                 |
-| Switch       | [about_Switch](about_Switch.md)                                                                                   |
-| Throw        | [about_Throw](about_Throw.md), [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)            |
-| Trap         | [about_Trap](about_Trap.md), [about_Break](about_Break.md), [about_Try_Catch_Finally](about_Try_Catch_Finally.md) |
-| Try          | [about_Try_Catch_Finally](about_Try_Catch_Finally.md)                                                             |
-| Until        | [about_Do](about_Do.md)                                                                                           |
-| Using        | [about_Using](about_Using.md), [about_Classes](about_Classes.md)                                                  |
-| Var          | Reserved for future use                                                                                           |
-| While        | [about_While](about_While.md), [about_Do](about_Do.md)                                                            |
+| `begin`        | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)                    |
+| `break`        | [about_Break](about_Break.md), [about_Trap](about_Trap.md)                                                        |
+| `catch`        | [about_Try_Catch_Finally](about_Try_Catch_Finally.md)                                                             |
+| `class`        | [about_Classes](about_Classes.md)                                                                                 |
+| `continue`     | [about_Continue](about_Continue.md), [about_Trap](about_Trap.md)                                                  |
+| `data`         | [about_Data_Sections](about_Data_Sections.md)                                                                     |
+| `define`       | Reserved for future use                                                                                           |
+| `do`           | [about_Do](about_Do.md), [about_While](about_While.md)                                                            |
+| `dynamicparam` | [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)                                     |
+| `else`         | [about_If](about_If.md)                                                                                           |
+| `elseif`       | [about_If](about_If.md)                                                                                           |
+| `end`          | [about_Functions](about_Functions.md), [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)    |
+| `enum`         | [about_Enum](about_Enum.md)                                                                                       |
+| `exit`         | [Described in this topic](#exit)                                                                                  |
+| `filter`       | [about_Functions](about_Functions.md)                                                                             |
+| `finally`      | [about_Try_Catch_Finally](about_Try_Catch_Finally.md)                                                             |
+| `for`          | [about_For](about_For.md)                                                                                         |
+| `foreach`      | [about_ForEach](about_ForEach.md)                                                                                 |
+| `from`         | Reserved for future use                                                                                           |
+| `function`     | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)                    |
+| `hidden`       | [about_Hidden](about_Hidden.md)                                                                                   |
+| `if`           | [about_If](about_If.md)                                                                                           |
+| `in`           | [about_ForEach](about_ForEach.md)                                                                                 |
+| `param`        | [about_Functions](about_Functions.md)                                                                             |
+| `process`      | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)                    |
+| `return`       | [about_Return](about_Return.md)                                                                                   |
+| `static`       | [about_Classes](about_Classes.md)                                                                                 |
+| `switch`       | [about_Switch](about_Switch.md)                                                                                   |
+| `throw`        | [about_Throw](about_Throw.md), [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)            |
+| `trap`         | [about_Trap](about_Trap.md), [about_Break](about_Break.md), [about_Try_Catch_Finally](about_Try_Catch_Finally.md) |
+| `try`          | [about_Try_Catch_Finally](about_Try_Catch_Finally.md)                                                             |
+| `until`        | [about_Do](about_Do.md)                                                                                           |
+| `using`        | [about_Using](about_Using.md), [about_Classes](about_Classes.md)                                                  |
+| `var`          | Reserved for future use                                                                                           |
+| `while`        | [about_While](about_While.md), [about_Do](about_Do.md)                                                            |
 
 The following keywords are used by PowerShell workflows:
 
-|   Keyword    |                                  Reference                                   |
-| ------------ | ---------------------------------------------------------------------------- |
-| InlineScript | [about_InlineScript](/powershell/module/psworkflow/about/about_inlinescript) |
-| Parallel     | [about_Parallel](/powershell/module/psworkflow/about/about_Parallel)         |
-| Sequence     | [about_Sequence](/powershell/module/psworkflow/about/about_sequence)         |
-| Workflow     | [about_Workflows](/powershell/module/psworkflow/about/about_workflows)       |
+|    Keyword     |                                  Reference                                   |
+| -------------- | ---------------------------------------------------------------------------- |
+| `inlinescript` | [about_InlineScript](/powershell/module/psworkflow/about/about_inlinescript) |
+| `parallel`     | [about_Parallel](/powershell/module/psworkflow/about/about_Parallel)         |
+| `sequence`     | [about_Sequence](/powershell/module/psworkflow/about/about_sequence)         |
+| `workflow`     | [about_Workflows](/powershell/module/psworkflow/about/about_workflows)       |
 
 For more information about workflows, see
 [Running PowerShell Commands in a Workflow](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574197(v=ws.11)).
 
-## Begin
+## `begin`
 
-Specifies one part of the body of a function, along with the `DynamicParam`,
-`Process`, and `End` keywords. The `Begin` statement list runs one time before
+Specifies one part of the body of a function, along with the `dynamicparam`,
+`process`, and `end` keywords. The `begin` statement list runs one time before
 any objects are received from the pipeline.
 
 Syntax:
 
 ```Syntax
 function <name> {
-    DynamicParam {<statement list>}
+    dynamicparam {<statement list>}
     begin {<statement list>}
     process {<statement list>}
     end {<statement list>}
 }
 ```
 
-## Break
+## `break`
 
 Causes a script to exit a loop.
 
@@ -101,9 +101,9 @@ while (<condition>) {
 }
 ```
 
-## Catch
+## `catch`
 
-Specifies a statement list to run if an error occurs in the accompanying `Try`
+Specifies a statement list to run if an error occurs in the accompanying `try`
 statement list. An error type requires brackets. The second pair of brackets
 indicates that the error type is optional.
 
@@ -114,7 +114,7 @@ try {<statement list>}
 catch [[<error type>]] {<statement list>}
 ```
 
-## Class
+## `class`
 
 Specifies a new class in PowerShell.
 
@@ -128,7 +128,7 @@ class <class-name> {
 }
 ```
 
-## Continue
+## `continue`
 
 Causes a script to stop running a loop and to go back to the condition. If the
 condition is met, the script begins the loop again.
@@ -147,10 +147,10 @@ while (<condition>) {
 }
 ```
 
-## Data
+## `data`
 
 In a script, defines a section that isolates data from the script logic. Can
-also include `If` statements and some limited commands.
+also include `if` statements and some limited commands.
 
 Syntax:
 
@@ -158,42 +158,42 @@ Syntax:
 data <variable> [-supportedCommand <cmdlet-name>] {<permitted content>}
 ```
 
-## Do
+## `do`
 
-Used with the `While` or `Until` keyword as a looping construct. PowerShell
-runs the statement list at least one time, unlike a loop that uses `While`.
+Used with the `while` or `until` keyword as a looping construct. PowerShell
+runs the statement list at least one time, unlike a loop that uses `while`.
 
-Syntax for `While`:
+Syntax for `while`:
 
 ```Syntax
 do {<statement list>} while (<condition>)
 ```
 
-Syntax for `Until`:
+Syntax for `until`:
 
 ```Syntax
 do {<statement list>} until (<condition>)
 ```
 
-## DynamicParam
+## `dynamicparam`
 
-Specifies one part of the body of a function, along with the `Begin`, `Process`,
-and `End` keywords. Dynamic parameters are added at run time.
+Specifies one part of the body of a function, along with the `begin`, `process`,
+and `end` keywords. Dynamic parameters are added at runtime.
 
 Syntax:
 
 ```Syntax
 function <name> {
-   DynamicParam {<statement list>}
+   dynamicparam {<statement list>}
    begin {<statement list>}
    process {<statement list>}
    end {<statement list>}
 }
 ```
 
-## Else
+## `else`
 
-Used with the `If` keyword to specify the default statement list.
+Used with the `if` keyword to specify the default statement list.
 
 Syntax:
 
@@ -202,10 +202,10 @@ if (<condition>) {<statement list>}
 else {<statement list>}
 ```
 
-## Elseif
+## `elseif`
 
-Used with the `If` and `Else` keywords to specify additional conditionals. The
-`Else` keyword is optional.
+Used with the `if` and `else` keywords to specify additional conditionals. The
+`else` keyword is optional.
 
 Syntax:
 
@@ -215,24 +215,24 @@ elseif (<condition>) {<statement list>}
 else {<statement list>}
 ```
 
-## End
+## `end`
 
-Specifies one part of the body of a function, along with the `DynamicParam`,
-`Begin`, and `End` keywords. The `End` statement list runs one time after all
+Specifies one part of the body of a function, along with the `dynamicparam`,
+`begin`, and `end` keywords. The `end` statement list runs one time after all
 the objects have been received from the pipeline.
 
 Syntax:
 
 ```Syntax
 function <name> {
-   DynamicParam {<statement list>}
+   dynamicparam {<statement list>}
    begin {<statement list>}
    process {<statement list>}
    end {<statement list>}
 }
 ```
 
-## Enum
+## `enum`
 
 `enum` is used to declare an enumeration; a distinct type that consists of a
 set of named labels called the enumerator list.
@@ -246,7 +246,7 @@ enum <enum-name> {
 }
 ```
 
-## Exit
+## `exit`
 
 Causes PowerShell to exit a script or a PowerShell instance.
 
@@ -265,14 +265,14 @@ to indicate the post-execution status of the script.
 Any number between `[int]::MinValue` and `[int]::MaxValue` is allowed.
 
 In PowerShell, the `exit` statement sets the value of the `$LASTEXITCODE`
-variable. In the Windows Command Shell (cmd.exe), the exit statement sets the
+variable. In the Windows Command Shell (`cmd.exe`), the exit statement sets the
 value of the `%ERRORLEVEL%` environment variable.
 
 Any argument that is non-numeric or outside the platform-specific range is
 translated to the value of `0`.
 
-In the following example, the user sets the error level variable value to 4 by
-adding `exit 4` to the script file `test.ps1`.
+In the following example, the user sets the error level variable value to **4**
+by adding `exit 4` to the script file `test.ps1`.
 
 ```cmd
 C:\scripts\test>type test.ps1
@@ -290,16 +290,16 @@ C:\scripts\test>echo %ERRORLEVEL%
 4
 ```
 
-When you run `pwsh.exe -File <path to a script>` and the script file terminates
+When you run `powershell.exe -File <path to a script>` and the script file terminates
 with an `exit` command, the exit code is set to the numeric argument used with
 the `exit` command. If the script has no `exit` statement, the exit code is
 always `0` when the script completes without error or `1` when the script
 terminates from an unhandled exception.
 
-## Filter
+## `filter`
 
 Specifies a function in which the statement list runs one time for each input
-object. It has the same effect as a function that contains only a Process
+object. It has the same effect as a function that contains only a `process`
 block.
 
 Syntax:
@@ -308,11 +308,11 @@ Syntax:
 filter <name> {<statement list>}
 ```
 
-## Finally
+## `finally`
 
 Defines a statement list that runs after statements that are associated with
-`Try` and `Catch`. A `Finally` statement list runs even if you press
-<kbd>CTRL</kbd>+<kbd>C</kbd> to leave a script or if you use the Exit keyword
+`try` and `catch`. A `finally` statement list runs even if you press
+<kbd>CTRL</kbd>+<kbd>C</kbd> to leave a script or if you use the `exit` keyword
 in the script.
 
 Syntax:
@@ -323,9 +323,9 @@ catch [<error type>] {<statement list>}
 finally {<statement list>}
 ```
 
-## For
+## `for`
 
-Defines a loop by using a condition.
+Defines a loop with a condition.
 
 Syntax:
 
@@ -333,33 +333,33 @@ Syntax:
 for (<initialize>; <condition>; <iterate>) { <statement list> }
 ```
 
-## ForEach
+## `foreach`
 
-Defines a loop by using each member of a collection.
+Defines a loop using each member of a collection.
 
 Syntax:
 
 ```Syntax
-ForEach (<item> in <collection>) { <statement list> }
+foreach (<item> in <collection>) { <statement list> }
 ```
 
-## From
+## `from`
 
 Reserved for future use.
 
-## Function
+## `function`
 
 Creates a named statement list of reusable code. You can name the scope a
-function belongs to. And, you can specify one or more named parameters by using
-the `Param` keyword. Within the function statement list, you can include
-`DynamicParam`, `Begin`, `Process`, and `End` statement lists.
+function belongs to. You can also specify one or more named parameters by using
+the `param` keyword. Within the function statement list, you can include
+`dynamicparam`, `begin`, `process`, and `end` statement lists.
 
 Syntax:
 
 ```Syntax
 function [<scope:>]<name> {
    param ([type]<$pname1> [, [type]<$pname2>])
-   DynamicParam {<statement list>}
+   dynamicparam {<statement list>}
    begin {<statement list>}
    process {<statement list>}
    end {<statement list>}
@@ -373,14 +373,14 @@ Syntax:
 
 ```Syntax
 function [<scope:>]<name> [([type]<$pname1>, [[type]<$pname2>])] {
-   DynamicParam {<statement list>}
+   dynamicparam {<statement list>}
    begin {<statement list>}
    process {<statement list>}
    end {<statement list>}
 }
 ```
 
-## If
+## `if`
 
 Defines a conditional.
 
@@ -390,29 +390,29 @@ Syntax:
 if (<condition>) {<statement list>}
 ```
 
-## Hidden
+## `hidden`
 
-Hides class members from the default results of the `Get-Member` cmdlet, and
-from IntelliSense and tab completion results.
+Hides class members from the default results of the `Get-Member` cmdlet,
+IntelliSense, and tab completion results.
 
 Syntax:
 
 ```Syntax
-Hidden [data type] $member_name
+hidden [data type] $member_name
 ```
 
-## In
+## `in`
 
-Used in a `ForEach` statement to create a loop that uses each member of a
+Used in a `foreach` statement to create a loop that uses each member of a
 collection.
 
 Syntax:
 
 ```Syntax
-ForEach (<item> in <collection>){<statement list>}
+foreach (<item> in <collection>){<statement list>}
 ```
 
-## Param
+## `param`
 
 Defines the parameters in a function.
 
@@ -425,27 +425,27 @@ function [<scope:>]<name> {
 }
 ```
 
-## Process
+## `process`
 
-Specifies a part of the body of a function, along with the `DynamicParam`,
-`Begin`, and `End` keywords. When a `Process` statement list receives input
-from the pipeline, the `Process` statement list runs one time for each element
-from the pipeline. If the pipeline provides no objects, the `Process` statement
+Specifies a part of the body of a function, along with the `dynamicparam`,
+`begin`, and `end` keywords. When a `process` statement list receives input
+from the pipeline, the `process` statement list runs one time for each element
+from the pipeline. If the pipeline provides no objects, the `process` statement
 list does not run. If the command is the first command in the pipeline, the
-`Process` statement list runs one time.
+`process` statement list runs one time.
 
 Syntax:
 
 ```Syntax
 function <name> {
-   DynamicParam {<statement list>}
+   dynamicparam {<statement list>}
    begin {<statement list>}
    process {<statement list>}
    end {<statement list>}
 }
 ```
 
-## Return
+## `return`
 
 Causes PowerShell to leave the current scope, such as a script or function, and
 writes the optional expression to the output.
@@ -456,19 +456,19 @@ Syntax:
 return [<expression>]
 ```
 
-## Static
+## `static`
 
 Specifies the property or method defined is common to all instances of the
-class in which is defined.
+class in which it is defined.
 
-See `Class` for usage examples.
+See `class` for usage examples.
 
-## Switch
+## `switch`
 
-To check multiple conditions, use a `Switch` statement. The `Switch` statement
-is equivalent to a series of `If` statements, but it is simpler.
+To check multiple conditions, use a `switch` statement. The `switch` statement
+is equivalent to a series of `if` statements, but it is simpler.
 
-The `Switch` statement lists each condition and an optional action. If a
+The `switch` statement lists each condition and an optional action. If a
 condition obtains, the action is performed.
 
 Syntax 1:
@@ -497,7 +497,7 @@ switch [-regex|-wildcard|-exact][-casesensitive] -file <filename>
 }
 ```
 
-## Throw
+## `throw`
 
 Throws an object as an error.
 
@@ -507,7 +507,7 @@ Syntax:
 throw [<object>]
 ```
 
-## Trap
+## `trap`
 
 Defines a statement list to be run if an error is encountered. An error type
 requires brackets. The second pair of brackets indicates that the error type
@@ -519,10 +519,10 @@ Syntax:
 trap [[<error type>]] {<statement list>}
 ```
 
-## Try
+## `try`
 
 Defines a statement list to be checked for errors while the statements run. If
-an error occurs, PowerShell continues running in a `Catch` or `Finally`
+an error occurs, PowerShell continues running in a `catch` or `finally`
 statement. An error type requires brackets. The second pair of brackets
 indicates that the error type is optional.
 
@@ -534,9 +534,9 @@ catch [[<error type>]] {<statement list>}
 finally {<statement list>}
 ```
 
-## Until
+## `until`
 
-Used in a `Do` statement as a looping construct where the statement list is
+Used in a `do` statement as a looping construct where the statement list is
 executed at least one time.
 
 Syntax:
@@ -545,11 +545,10 @@ Syntax:
 do {<statement list>} until (<condition>)
 ```
 
-## Using
+## `using`
 
-Allows to indicate which namespaces are used in the session. Classes and
-members require less typing to mention them. You can also include classes from
-modules.
+Allows indicating which namespaces are used in the session. Classes and members
+require less typing to mention them. You can also include classes from modules.
 
 Syntax #1:
 
@@ -563,10 +562,10 @@ Syntax #2:
 using module <module-name>
 ```
 
-## While
+## `while`
 
 The `while` statement is a looping construct where the condition is tested
-before the statements are executed. If the condition is FALSE, then the
+before the statements are executed. If the condition is false, then the
 statements do not execute.
 
 Statement syntax:
@@ -577,10 +576,10 @@ while (<condition>) {
  }
 ```
 
-When used in a `Do` statement, `while` is part of a looping construct where
+When used in a `do` statement, `while` is part of a looping construct where
 the statement list is executed at least one time.
 
-Do loop Syntax:
+`do` loop Syntax:
 
 ```Syntax
 do {<statement list>} while (<condition>)
