@@ -26,6 +26,8 @@ Provides access to X.509 certificate stores and certificates in PowerShell.
 
 ## Detailed description
 
+> This information only applies to PowerShell running on Windows.
+
 The PowerShell **Certificate** provider lets you get, add, change, clear, and
 delete certificates and certificate stores in PowerShell.
 

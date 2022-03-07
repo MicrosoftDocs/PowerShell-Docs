@@ -14,6 +14,8 @@ policies.
 
 ## Long description
 
+> This information only applies to PowerShell running on Windows.
+
 The Restricted execution policy does not permit any scripts to run. The
 **AllSigned** and **RemoteSigned** execution policies prevent PowerShell from
 running scripts that do not have a digital signature.

@@ -21,7 +21,8 @@ state is maintained and commands in the PSSession continue to run while the
 session is disconnected.
 
 The Disconnected Sessions feature is only available when the remote computer is
-running PowerShell 3.0 or a later version.
+a Windows computer running PowerShell 3.0 or a later version and the local
+computer is running Windows.
 
 The Disconnected Sessions feature allows you to close the session in which a
 PSSession was created, and even close PowerShell, and shut down the computer,
@@ -29,7 +30,7 @@ without disrupting commands running in the PSSession. Disconnected sessions are
 useful for running commands that take an extended time to complete, and
 provides the time and device flexibility that IT professionals require.
 
-You can't disconnect from an interactive session that is started by using the
+You can't disconnect from an interactive session that is started with the
 `Enter-PSSession` cmdlet.
 
 You can use disconnected sessions to manage PSSessions that were disconnected

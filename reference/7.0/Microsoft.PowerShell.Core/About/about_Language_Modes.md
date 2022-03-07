@@ -205,8 +205,14 @@ FullLanguage
 ```
 
 On other session configurations, you can find the language mode indirectly by
-finding the language mode of a session that is created by using the session
+finding the language mode of a session that is created with the session
 configuration.
+
+> [!NOTE]
+> Session configurations are a feature of WSMan-based PowerShell remoting. They are used only when you
+> use the `New-PSSession`, `Invoke-Command`, or `Enter-PSSession` cmdlets
+> to connect to a remote Windows computer. The `Get-PSSessionConfiguration`
+> cmdlet is only available on Windows computers.
 
 ### Finding the language mode of a session
 

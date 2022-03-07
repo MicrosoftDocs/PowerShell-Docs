@@ -54,6 +54,10 @@ your session, type:
 Get-PSProvider
 ```
 
+> [!NOTE]
+> The **Certificate**, **Registry**, and **WSMan** providers are only
+> available on the Windows platform.
+
 ## Installing and removing providers
 
 Providers are typically installed via PowerShell modules. Importing the module

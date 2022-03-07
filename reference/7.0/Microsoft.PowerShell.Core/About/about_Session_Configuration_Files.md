@@ -15,6 +15,8 @@ sessions that use the session configuration.
 
 ## Long description
 
+> This information only applies to PowerShell running on Windows.
+
 A "session configuration file" is a text file with a .pssc file name extension
 that contains a hash table of session configuration properties and values. You
 can use a session configuration file to set the properties of a session

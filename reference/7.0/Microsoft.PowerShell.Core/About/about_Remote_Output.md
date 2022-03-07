@@ -175,8 +175,8 @@ in a streaming list.
 
 When objects are not formatted automatically, you can use the formatting
 cmdlets, such as Format-Table or Format-List, to format and display
-selected properties. Or, you can use the Out-GridView cmdlet to display
-the objects in a table.
+selected properties. On a Windows computer, you can use the `Out-GridView`
+cmdlet to display the objects in a table.
 
 Also, if you run a command on a remote computer that uses cmdlets that you
 do not have on your local computer, the objects that the command returns

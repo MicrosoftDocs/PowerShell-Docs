@@ -36,13 +36,12 @@ New-PSSessionConfiguration cmdlet. For more information about session
 configuration files, see
 [about_Session_Configuration_Files](about_Session_Configuration_Files.md).
 
-Session configurations are a feature of Web Services for Management
-(WS-Management) based PowerShell remoting. They are used only when you use the
-New-PSSession, Invoke-Command, or Enter-PSSession cmdlets to connect to a
-remote computer.
+Session configurations are a feature of WSMAN-based PowerShell remoting. They
+are used only when you use the `New-PSSession`, `Invoke-Command`, or
+`Enter-PSSession` cmdlets to connect to a remote Windows computer.
 
-Note: To manage the session configurations, start PowerShell with the
-"Run as administrator" option.
+To manage the session configurations on a Windows computer, start
+PowerShell with the **Run as administrator** option.
 
 About Session Configurations
 

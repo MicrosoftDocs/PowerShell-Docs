@@ -23,6 +23,8 @@ information.
 
 ## Detailed description
 
+> This information only applies to PowerShell running on Windows.
+
 The **WSMan** provider for PowerShell lets you add, change, clear, and
 delete WS-Management configuration data on local or remote computers.
 

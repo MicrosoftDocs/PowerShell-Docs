@@ -322,7 +322,7 @@ intended or supported for any other use.
 ### -STA
 
 Start PowerShell using a single-threaded apartment. This is the default. This
-switch is only available on Windows.
+switch is only available on the Windows platform.
 
 ### -Version | -v
 
