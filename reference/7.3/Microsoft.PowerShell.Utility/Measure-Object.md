@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/15/2021
+ms.date: 03/08/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Object
@@ -545,6 +545,13 @@ If you use the **Word** parameter, `Measure-Object` returns a **TextMeasureInfo*
 Otherwise, it returns a **GenericMeasureInfo** object.
 
 ## NOTES
+
+Starting in PowerShell 7.3, `Measure-Object` does not return an error when
+processing an object which is missing the property being measured except in
+**StrictMode**. When `Measure-Object` processes an object which is missing the
+specified property in **StrictMode** it returns a
+`System.Management.Automation.PSArgumentException` error for the **Property**
+argument.
 
 ## RELATED LINKS
 
