@@ -10,11 +10,11 @@ title: Export-PSSession
 
 # Export-PSSession
 
-## Synopsis
+## SYNOPSIS
 
 Exports commands from another session and saves them in a PowerShell module.
 
-## Syntax
+## SYNTAX
 
 ```
 Export-PSSession [-Session] <PSSession> [-OutputModule] <string> [[-CommandName] <string[]>]
@@ -24,7 +24,7 @@ Export-PSSession [-Session] <PSSession> [-OutputModule] <string> [[-CommandName]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Export-PSSession` cmdlet gets cmdlets, functions, aliases, and other command types from
 another PowerShell session (PSSession) on a local or remote computer and saves them in a PowerShell
@@ -45,7 +45,7 @@ The `Export-PSSession` cmdlet uses the implicit remoting feature of PowerShell. 
 commands into the current session, they run implicitly in the original session or in a similar
 session on the originating computer.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Export commands from a PSSession
 
@@ -154,7 +154,7 @@ The `New-PSSession` cmdlet creates a new PSSession that connects to the Server01
 imports the commands from the Server01 module. The commands in the module are run in the PSSession
 on the Server01 computer.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowClobber
 
@@ -448,19 +448,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe objects to `Export-PSSession`.
 
-## Outputs
+## OUTPUTS
 
 ### System.IO.FileInfo
 
 `Export-PSSession` returns a list of files that comprise the module that it created.
 
-## Notes
+## NOTES
 
 `Export-PSSession` relies on the PowerShell remoting infrastructure. To use this cmdlet, the
 computer must be configured for remoting. For more information, see
@@ -507,7 +507,7 @@ The module that `Export-PSSession` creates might include a formatting file, even
 does not import formatting data. If the command does not import formatting data, any formatting
 files that are created will not contain formatting data.
 
-## Related links
+## RELATED LINKS
 
 [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)
 

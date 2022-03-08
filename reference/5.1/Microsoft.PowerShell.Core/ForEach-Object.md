@@ -9,10 +9,10 @@ title: ForEach-Object
 ---
 # ForEach-Object
 
-## Synopsis
+## SYNOPSIS
 Performs an operation against each item in a collection of input objects.
 
-## Syntax
+## SYNTAX
 
 ### ScriptBlockSet (Default)
 
@@ -28,7 +28,7 @@ ForEach-Object [-InputObject <PSObject>] [-MemberName] <String> [-ArgumentList <
  [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `ForEach-Object` cmdlet performs an operation on each item in a collection of input objects. The
 input objects can be piped to the cmdlet or specified by using the **InputObject** parameter.
@@ -60,7 +60,7 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
 
   `Get-Process | ForEach-Object ProcessName`
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Divide integers in an array
 
@@ -257,7 +257,7 @@ two
 three
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -ArgumentList
 
@@ -443,19 +443,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSObject
 
 This cmdlet returns objects that are determined by the input.
 
-## Notes
+## NOTES
 
 - The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe
   input to a **Foreach** statement. For more information about the **Foreach** statement, see
@@ -464,7 +464,7 @@ This cmdlet returns objects that are determined by the input.
 - Starting in PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections. You
   can read more about these new methods here [about_arrays](./About/about_Arrays.md)
 
-## Related links
+## RELATED LINKS
 
 [Compare-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
 

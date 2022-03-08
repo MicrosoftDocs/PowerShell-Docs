@@ -9,17 +9,17 @@ title: Unregister-PSSessionConfiguration
 ---
 # Unregister-PSSessionConfiguration
 
-## Synopsis
+## SYNOPSIS
 Deletes registered session configurations from the computer.
 
-## Syntax
+## SYNTAX
 
 ```
 Unregister-PSSessionConfiguration [-Name] <String> [-Force] [-NoServiceRestart] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -34,7 +34,7 @@ If you accidentally delete the default **Microsoft.PowerShell** or **Microsoft.P
 session configurations, use the `Enable-PSRemoting` cmdlet to restore them. For more information,
 see [about_Session_Configurations](About/about_Session_Configurations.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Delete a session configuration
 
@@ -109,7 +109,7 @@ Finally, the `New-PSSession` cmdlet tries to create a session that uses the **Ma
 configuration. This time, the session fails because the **MaintenanceShell** configuration was
 deleted when the WinRM service restarted.
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -213,25 +213,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration
 
 You can pipe a session configuration object from `Get-PSSessionConfiguration` to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any objects.
 
-## Notes
+## NOTES
 
 This cmdlet is only available on Windows platforms.
 
 To run this cmdlet you must start PowerShell by using the **Run as administrator** option.
 
-## Related links
+## RELATED LINKS
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 

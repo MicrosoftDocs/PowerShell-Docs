@@ -10,10 +10,10 @@ title: Add-LocalGroupMember
 
 # Add-LocalGroupMember
 
-## Synopsis
+## SYNOPSIS
 Adds members to a local group.
 
-## Syntax
+## SYNTAX
 
 ### Group
 
@@ -35,7 +35,7 @@ Add-LocalGroupMember [-Member] <LocalPrincipal[]> [-SID] <SecurityIdentifier> [-
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Add-LocalGroupMember` cmdlet adds users or groups to a local security group. All the rights and
 permissions that are assigned to a group are assigned to all members of that group.
@@ -50,7 +50,7 @@ accounts from that domain and from trusted domains to a local group.
 > If the computer is joined to a domain and you try to add a local user that has the same name as a
 > member of the domain it adds the domain member.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Add members to the Administrators group
 
@@ -62,7 +62,7 @@ example uses a placeholder value for the user name of an account at Outlook.com.
 Add-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Group
 
@@ -168,19 +168,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier
 
 You can pipe a local principal, a string, or a SID to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 system.
@@ -197,7 +197,7 @@ follows:
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
 Windows operating system. For earlier versions, the property is blank.
 
-## Related links
+## RELATED LINKS
 
 [Get-LocalGroupMember](Get-LocalGroupMember.md)
 

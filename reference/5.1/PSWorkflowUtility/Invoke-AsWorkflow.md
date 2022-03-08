@@ -9,10 +9,10 @@ title: Invoke-AsWorkflow
 ---
 # Invoke-AsWorkflow
 
-## Synopsis
+## SYNOPSIS
 Runs a command or expression as a Windows PowerShell Workflow.
 
-## Syntax
+## SYNTAX
 
 ### Command (Default)
 
@@ -26,7 +26,7 @@ Invoke-AsWorkflow [-CommandName <String>] [-Parameter <Hashtable>] [-InputObject
 Invoke-AsWorkflow [-Expression <String>] [-InputObject <Object>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Invoke-AsWorkflow` workflow runs any command or expression as an inline script in a workflow.
 These workflows use the standard workflow semantics, have all workflow common parameters, and have all benefits of workflows, including the ability to stop, resume, and recover.
@@ -39,7 +39,7 @@ For more information about workflow common parameters, see [about_WorkflowCommon
 
 This workflow is introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Run a cmdlet as a workflow
 
@@ -100,7 +100,7 @@ The command also uses the `AsJob` and `JobName` workflow common parameters to ru
 
 The command returns a `ContainerParentJob` object (`System.Management.Automation.ContainerParentJob`) that contains the workflow jobs on each computer.
 
-## Parameters
+## PARAMETERS
 
 ### -CommandName
 
@@ -181,22 +181,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 This cmdlet also supports workflow specific common parameters.
 For information, see [about_WorkflowCommonParameters](../PSWorkflow/About/about_WorkflowCommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 
 You can pipe any object to the `InputObject` parameter.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This command does not generate any output.
 However, it runs the workflow, which might generate output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [New-PSWorkflowExecutionOption](../PSWorkflow/New-PSWorkflowExecutionOption.md)
 

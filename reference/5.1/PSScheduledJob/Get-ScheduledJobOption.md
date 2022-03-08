@@ -10,10 +10,10 @@ title: Get-ScheduledJobOption
 
 # Get-ScheduledJobOption
 
-## Synopsis
+## SYNOPSIS
 Gets the job options of scheduled jobs.
 
-## Syntax
+## SYNTAX
 
 ### JobDefinition (Default)
 
@@ -33,7 +33,7 @@ Get-ScheduledJobOption [-Id] <Int32> [<CommonParameters>]
 Get-ScheduledJobOption [-Name] <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-ScheduledJobOption` cmdlet gets the job options of scheduled jobs. You can use this command
 to examine the job options or to pipe the job options to other cmdlets.
@@ -54,7 +54,7 @@ the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [abo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get job options
 
@@ -122,7 +122,7 @@ $O = Invoke-Command -ComputerName "Srv01" -ScriptBlock {Get-ScheduledJob -Name "
 This command uses the `Invoke-Command` cmdlet to get the scheduled job options of the DataDemon job
 on the Srv01 computer. The command saves the options in the `$O` variable.
 
-## Parameters
+## PARAMETERS
 
 ### -Id
 
@@ -188,19 +188,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 You can pipe a scheduled job from `Get-ScheduledJob` to `Get-ScheduledJobOption`.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

@@ -10,10 +10,10 @@ title: New-ScheduledJobOption
 
 # New-ScheduledJobOption
 
-## Synopsis
+## SYNOPSIS
 Creates an object that contains advanced options for a scheduled job.
 
-## Syntax
+## SYNTAX
 
 ```
 New-ScheduledJobOption [-RunElevated] [-HideInTaskScheduler] [-RestartOnIdleResume]
@@ -22,7 +22,7 @@ New-ScheduledJobOption [-RunElevated] [-HideInTaskScheduler] [-RestartOnIdleResu
  [-IdleDuration <TimeSpan>] [-StartIfIdle] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-ScheduledJobOption` cmdlet creates an object that contains advanced options for a scheduled
 job.
@@ -49,7 +49,7 @@ the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [abo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a scheduled job option object with default values
 
@@ -172,7 +172,7 @@ then to the `Format-Table` cmdlet, which displays the names and values of the pr
 This format makes it much easier to find the WakeToRun property of the **ScheduledJobOptions**
 object in `$options` and to verify that its value was changed from `$false` to `$true`.
 
-## Parameters
+## PARAMETERS
 
 ### -ContinueIfGoingOnBattery
 
@@ -481,17 +481,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 
-## Notes
+## NOTES
 
 - You can use the **ScheduledJobOptions** object that `New-ScheduledJobOption` creates as the value
   of the **ScheduledJobOption** parameter of the `Register-ScheduledJob` cmdlet. However, the
@@ -500,7 +500,7 @@ You cannot pipe input to this cmdlet.
 
   `@{ShowInTaskScheduler=$False; RunElevated=$True; IdleDuration="00:05"}`
 
-## Related links
+## RELATED LINKS
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

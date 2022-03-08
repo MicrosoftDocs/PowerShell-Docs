@@ -9,21 +9,21 @@ title: Convert-String
 ---
 # Convert-String
 
-## Synopsis
+## SYNOPSIS
 Formats a string to match examples.
 
-## Syntax
+## SYNTAX
 
 ```
 Convert-String [-Example <System.Collections.Generic.List`1[System.Management.Automation.PSObject]>]
  -InputObject <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The  cmdlet formats a string to match the format of examples.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Convert format of a string
 
@@ -183,7 +183,7 @@ command coverts each string in `$Processes`.
 > The fourth pattern implicitly says that two or more words separated by spaces are matched. Without
 > the fourth pattern, only the first word of the string enclosed in double quotes is matched.
 
-## Parameters
+## PARAMETERS
 
 ### -Example
 
@@ -239,21 +239,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### String
 
 You can pipe strings to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### String
 
 This cmdlet returns a string.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [ConvertFrom-String](ConvertFrom-String.md)
 

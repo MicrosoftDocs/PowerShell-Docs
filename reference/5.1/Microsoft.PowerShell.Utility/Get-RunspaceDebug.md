@@ -9,10 +9,10 @@ title: Get-RunspaceDebug
 ---
 # Get-RunspaceDebug
 
-## Synopsis
+## SYNOPSIS
 Shows runspace debugging options.
 
-## Syntax
+## SYNTAX
 
 ### RunspaceNameParameterSet (Default)
 
@@ -44,11 +44,11 @@ Get-RunspaceDebug [-RunspaceInstanceId] <Guid[]> [<CommonParameters>]
 Get-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-RunspaceDebug` cmdlet shows runspace debugging options.
 
-## Examples
+## EXAMPLES
 
 ### 1: Show the state of the default runspace debugger
 
@@ -62,7 +62,7 @@ Get-RunspaceDebug
   1 Runspace1            False      False
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AppDomainName
 
@@ -167,13 +167,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Disable-RunspaceDebug](Disable-RunspaceDebug.md)
 

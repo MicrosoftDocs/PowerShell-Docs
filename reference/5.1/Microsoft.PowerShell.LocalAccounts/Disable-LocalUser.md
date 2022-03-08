@@ -10,10 +10,10 @@ title: Disable-LocalUser
 
 # Disable-LocalUser
 
-## Synopsis
+## SYNOPSIS
 Disables a local user account.
 
-## Syntax
+## SYNTAX
 
 ### InputObject
 
@@ -33,7 +33,7 @@ Disable-LocalUser [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 Disable-LocalUser [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Disable-LocalUser` cmdlet disables local user accounts. When a user account is disabled, the
 user cannot log on. When a user account is enabled, the user can log on.
@@ -42,7 +42,7 @@ user cannot log on. When a user account is enabled, the user can log on.
 > The **Microsoft.PowerShell.LocalAccounts** module is not available in 32-bit PowerShell on a
 > 64-bit system.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Disable an account by specifying a name
 
@@ -61,7 +61,7 @@ Get-LocalUser Guest | Disable-LocalUser
 This command gets the built-in Guest account by using `Get-LocalUser`, and then passes it to the
 current cmdlet by using the pipeline operator(`|`). That cmdlet disables that account.
 
-## Parameters
+## PARAMETERS
 
 ### -InputObject
 
@@ -150,19 +150,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser, System.String, System.Security.Principal.SecurityIdentifier
 
 You can pipe a local user, a string, or a SID to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
   **LocalPrincipal** objects that describes the source of the object. The possible sources are as
@@ -176,7 +176,7 @@ This cmdlet does not generate any output.
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
 Windows operating system. For earlier versions, the property is blank.
 
-## Related links
+## RELATED LINKS
 
 [Enable-LocalUser](Enable-LocalUser.md)
 

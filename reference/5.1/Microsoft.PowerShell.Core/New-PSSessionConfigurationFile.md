@@ -9,10 +9,10 @@ title: New-PSSessionConfigurationFile
 ---
 # New-PSSessionConfigurationFile
 
-## Synopsis
+## SYNOPSIS
 Creates a file that defines a session configuration.
 
-## Syntax
+## SYNTAX
 
 ```
 New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Guid <Guid>]
@@ -29,7 +29,7 @@ New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Gui
  [-FormatsToProcess <String[]>] [-AssembliesToLoad <String[]>] [-Full] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-PSSessionConfigurationFile` cmdlet creates a file of settings that define a session
 configuration and the environment of sessions that are created by using the session configuration.
@@ -60,7 +60,7 @@ For more information about session configurations and session configuration file
 
 This cmdlet was introduced in PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Creating and using a NoLanguage session
 
@@ -315,7 +315,7 @@ AssembliesToLoad = 'System.Web.Services', 'FSharp.Compiler.CodeDom.dll'
 }
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AliasDefinitions
 
@@ -1054,19 +1054,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe any objects to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - Parameters, such as **VisibleCmdlets** and **VisibleProviders**, do not import items into the
   session. Instead, they select from among the items imported into the session. For example, if the
@@ -1087,7 +1087,7 @@ This cmdlet does not generate any output.
   Before using an edited session configuration file, use the `Test-PSSessionConfigurationFile`
   cmdlet to verify that the configuration file entries are valid.
 
-## Related links
+## RELATED LINKS
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 

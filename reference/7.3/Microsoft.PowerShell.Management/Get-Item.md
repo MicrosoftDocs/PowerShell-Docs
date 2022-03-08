@@ -9,10 +9,10 @@ title: Get-Item
 ---
 # Get-Item
 
-## Synopsis
+## SYNOPSIS
 Gets the item at the specified location.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -28,7 +28,7 @@ Get-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Excl
  [-Force] [-Credential <PSCredential>] [-Stream <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Item` cmdlet gets the item at the specified location. It doesn't get the contents of the
 item at the location unless you use a wildcard character (`*`) to request all the contents of the
@@ -36,7 +36,7 @@ item.
 
 This cmdlet is used by PowerShell providers to navigate through different types of data stores.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the current directory
 
@@ -174,7 +174,7 @@ The new properties that are now part of the output are:
 > [!NOTE]
 > This feature was moved from experimental to mainstream in PowerShell 7.1.
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -347,20 +347,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
 This cmdlet returns the objects that it gets. The type is determined by the type of objects in the
 path.
 
-## Notes
+## NOTES
 
 This cmdlet does not have a **Recurse** parameter, because it gets only an item, not its contents.
 To get the contents of an item recursively, use `Get-ChildItem`.
@@ -373,7 +373,7 @@ This cmdlet is designed to work with the data exposed by any provider. To list t
 available in your session, type `Get-PsProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [Clear-Item](Clear-Item.md)
 

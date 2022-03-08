@@ -9,10 +9,10 @@ title: Install-Module
 ---
 # Install-Module
 
-## Synopsis
+## SYNOPSIS
 Downloads one or more modules from a repository, and installs them on the local computer.
 
-## Syntax
+## SYNTAX
 
 ### NameParameterSet (Default)
 
@@ -31,7 +31,7 @@ Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope 
  [-AcceptLicense] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Install-Module` cmdlet gets one or more modules that meet specified criteria from an online
 repository. The cmdlet verifies that search results are valid modules and copies the module folders
@@ -48,7 +48,7 @@ These examples use the [PowerShell Gallery](https://www.powershellgallery.com/) 
 registered repository. `Get-PSRepository` displays the registered repositories. If you have multiple
 registered repositories, use the `-Repository` parameter to specify the repository's name.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Find and install a module
 
@@ -113,7 +113,7 @@ The `Install-Module` uses the **Name** parameter to specify the **PowerShellGet*
 `Install-Module` downloads and installs the newest version of **PowerShellGet** into the current
 user's directory, `$home\Documents\WindowsPowerShell\Modules`.
 
-## Parameters
+## PARAMETERS
 
 ### -AcceptLicense
 
@@ -451,7 +451,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### PSRepositoryItemInfo
 
@@ -468,14 +468,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Uri
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.PSRepositoryItemInfo
 
 When using the **PassThru** parameter, `Install-Module` outputs a **PSRepositoryItemInfo** object
 for the module. This is the same information that you get from the `Find-Module` cmdlet.
 
-## Notes
+## NOTES
 
 `Install-Module` runs on PowerShell 5.0 or later releases, on Windows 7 or Windows 2008 R2 and later
 releases of Windows.
@@ -528,7 +528,7 @@ the **RequiredVersion** value.
 A module installation will also install any dependent modules specified as required by the module publisher.
 The publisher will specify the required modules and their versions in the module manifest.
 
-## Related links
+## RELATED LINKS
 
 [Find-Module](Find-Module.md)
 

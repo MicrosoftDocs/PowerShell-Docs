@@ -10,10 +10,10 @@ title: Disconnect-PSSession
 
 # Disconnect-PSSession
 
-## Synopsis
+## SYNOPSIS
 Disconnects from a session.
 
-## Syntax
+## SYNTAX
 
 ### Session (Default)
 
@@ -44,7 +44,7 @@ Disconnect-PSSession [-IdleTimeoutSec <Int32>] [-OutputBufferingMode <OutputBuff
  [-ThrottleLimit <Int32>] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -72,7 +72,7 @@ For more information about the Disconnected Sessions feature, see
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Disconnect a session by name
 
@@ -312,7 +312,7 @@ timeout to the 12-hour maximum.
 The seventh command gets the value of the **IdleTimeout** property of the disconnected session,
 which is measured in milliseconds. The output confirms that the command was successful.
 
-## Parameters
+## PARAMETERS
 
 ### -Id
 
@@ -522,19 +522,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](./About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
 
 You can pipe a session to `Disconnect-PSSession`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
 
 `Disconnect-PSSession` returns an object that represents the session that it disconnected.
 
-## Notes
+## NOTES
 
 This cmdlet is only available on Windows platforms.
 
@@ -564,7 +564,7 @@ This cmdlet is only available on Windows platforms.
   For more information about the values of the **Availability** property of sessions, see
   [RunspaceAvailability Enumeration](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
-## Related links
+## RELATED LINKS
 
 [Connect-PSSession](Connect-PSSession.md)
 

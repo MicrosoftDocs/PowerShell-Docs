@@ -10,22 +10,22 @@ title: Import-BinaryMiLog
 
 # Import-BinaryMiLog
 
-## Synopsis
+## SYNOPSIS
 Used to re-create the saved objects based on the contents of an export file.
 
-## Syntax
+## SYNTAX
 
 ```
 Import-BinaryMiLog [-Path] <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 Use this cmdlet to re-create saved objects based on the contents of an export file created by
 `Export-BinaryMILog`. This cmdlet is similar to `Import-Clixml`, except that `Export-BinaryMILog`
 stores the resulting object in a binary encoded file.
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Restore objects exported to a file
 
@@ -33,7 +33,7 @@ stores the resulting object in a binary encoded file.
 Import-BinaryMiLog -Path "Processes.bmil"
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Path
 
@@ -59,14 +59,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS

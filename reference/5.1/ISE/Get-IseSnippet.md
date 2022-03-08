@@ -10,16 +10,16 @@ title: Get-IseSnippet
 
 # Get-IseSnippet
 
-## Synopsis
+## SYNOPSIS
 Gets snippets that the user created.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-IseSnippet [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-IseSnippet` cmdlet gets the PS1XML files that contain reusable text snippets that the user
 created. It works only in Windows PowerShell Integrated Scripting Environment (ISE).
@@ -33,7 +33,7 @@ This cmdlet does not get built-in snippets or snippets that are imported from mo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all user-defined snippets
 
@@ -111,7 +111,7 @@ a snippet file.
 The `Format-Table` cmdlet displays the **DisplayTitle** and **Description** properties of the
 snippets in a table.
 
-## Parameters
+## PARAMETERS
 
 ### CommonParameters
 
@@ -120,15 +120,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
 ### System.IO.FileInfo
 
 This cmdlet returns a file object that represents the snippet file.
 
-## Notes
+## NOTES
 
 * The `New-IseSnippet` cmdlet stores new user-created snippets in unsigned .ps1xml files. As such,
   Windows PowerShell cannot add them to a session in which the execution policy is **AllSigned** or
@@ -141,7 +141,7 @@ This cmdlet returns a file object that represents the snippet file.
   For more information about Windows PowerShell execution policies, see
   [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
 
-## Related links
+## RELATED LINKS
 
 [New-IseSnippet](New-IseSnippet.md)
 

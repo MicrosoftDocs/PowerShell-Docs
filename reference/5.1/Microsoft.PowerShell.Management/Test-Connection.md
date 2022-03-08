@@ -10,10 +10,10 @@ title: Test-Connection
 
 # Test-Connection
 
-## Synopsis
+## SYNOPSIS
 Sends ICMP echo request packets, or pings, to one or more computers.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -42,7 +42,7 @@ Test-Connection [-DcomAuthentication <AuthenticationLevel>] [-WsmanAuthenticatio
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Test-Connection` cmdlet sends Internet Control Message Protocol (ICMP) echo request packets,
 or pings, to one or more remote computers and returns the echo response replies. You can use this
@@ -57,7 +57,7 @@ you can investigate in PowerShell. The **Quiet** parameter returns a **Boolean**
 **System.Boolean** object for each tested connection. If multiple connections are tested, an array
 of **Boolean** values is returned.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Send echo requests to a remote computer
 
@@ -158,7 +158,7 @@ object. The value is `$True` if any of the four pings succeed and is, otherwise,
 If the `Test-Connection` command returns a value of `$True`, the command uses the `New-PSSession`
 cmdlet to create the **PSSession**.
 
-## Parameters
+## PARAMETERS
 
 ### -AsJob
 
@@ -478,13 +478,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You can't pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.ManagementObject#root\cimv2\Win32_PingStatus, System.Management.Automation.RemotingJob, System.Boolean
 
@@ -494,14 +494,14 @@ If you specify the **Quiet** parameter, it returns a **Boolean** value. If multi
 tested, an array of **Boolean** values is returned. Otherwise, `Test-Connection` returns a
 **Win32_PingStatus** object for each ping.
 
-## Notes
+## NOTES
 
 This cmdlet uses the **Win32_PingStatus** class. A `Get-WMIObject Win32_PingStatus` command is
 equivalent to a `Test-Connection` command.
 
 The **Source** parameter set was introduced in PowerShell 3.0.
 
-## Related links
+## RELATED LINKS
 
 [Add-Computer](Add-Computer.md)
 

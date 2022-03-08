@@ -9,10 +9,10 @@ title: Get-PSHostProcessInfo
 ---
 # Get-PSHostProcessInfo
 
-## Synopsis
+## SYNOPSIS
 Gets process information about the PowerShell host.
 
-## Syntax
+## SYNTAX
 
 ### ProcessNameParameterSet (Default)
 
@@ -32,14 +32,14 @@ Get-PSHostProcessInfo [-Process] <Process[]> [<CommonParameters>]
 Get-PSHostProcessInfo [-Id] <Int32[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-PSHostProcessInfo` cmdlet gets information about PowerShell host processes running on the
 local computer.
 
 Beginning in PowerShell 6.2, this cmdlet is supported on non-Windows platforms.
 
-## Examples
+## EXAMPLES
 
 ### 1: Get a list of PowerShell hosts running on the system
 
@@ -66,7 +66,7 @@ ProcessName ProcessId AppDomainName    MainWindowTitle
 powershell      14676 DefaultAppDomain Windows PowerShell
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Id
 
@@ -124,18 +124,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Diagnostics.Process
 
 You can pipe a **Process** object from `Get-Process` to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.PSHostProcessInfo
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-Process](../Microsoft.PowerShell.Management/get-process.md)

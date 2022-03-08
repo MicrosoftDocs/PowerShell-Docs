@@ -9,10 +9,10 @@ title: ConvertTo-Html
 ---
 # ConvertTo-Html
 
-## Synopsis
+## SYNOPSIS
 Converts .NET objects into HTML that can be displayed in a Web browser.
 
-## Syntax
+## SYNTAX
 
 ### Page (Default)
 
@@ -29,7 +29,7 @@ ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [-As <String>]
  [-PostContent <String[]>] [-PreContent <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `ConvertTo-Html` cmdlet converts .NET objects into HTML that can be displayed in a
 Web browser. You can use this cmdlet to display the output of a command in a Web page.
@@ -43,7 +43,7 @@ on the properties of the first object that you submit. If the remaining objects 
 the specified properties, the property value of that object is an empty cell. If the remaining
 objects have additional properties, those property values are not included in the file.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a web page to display the date
 
@@ -203,7 +203,7 @@ cmdlet. The command also uses the `Out-File` cmdlet to send the output to the Se
 A semicolon (`;`) ends the first command and starts a second command, which uses the `Invoke-Item`
 cmdlet to open the `Services.htm` file in the default browser.
 
-## Parameters
+## PARAMETERS
 
 ### -As
 
@@ -403,19 +403,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any .NET object to `ConvertTo-Html`.
 
-## Outputs
+## OUTPUTS
 
 ### System.String or System.Xml.XmlDocument
 
 `ConvertTo-Html` returns series of strings that comprise valid HTML.
 
-## Notes
+## NOTES
 
 To use this cmdlet, pipe one or more objects to the cmdlet or use the **InputObject** parameter to
 specify the object. When the input consists of multiple objects, the output of these two methods is
@@ -436,7 +436,7 @@ quite different.
 
    `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"\>`
 
-## Related links
+## RELATED LINKS
 
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 

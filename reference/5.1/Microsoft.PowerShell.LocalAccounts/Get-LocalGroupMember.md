@@ -10,10 +10,10 @@ title: Get-LocalGroupMember
 
 # Get-LocalGroupMember
 
-## Synopsis
+## SYNOPSIS
 Gets members from a local group.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -33,7 +33,7 @@ Get-LocalGroupMember [-Group] <LocalGroup> [[-Member] <String>] [<CommonParamete
 Get-LocalGroupMember [[-Member] <String>] [-SID] <SecurityIdentifier> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-LocalGroupMember` cmdlet gets members from a local group.
 
@@ -41,7 +41,7 @@ The `Get-LocalGroupMember` cmdlet gets members from a local group.
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all members of the Administrators group
 
@@ -51,7 +51,7 @@ Get-LocalGroupMember -Group "Administrators"
 
 This command gets all the members of the local Administrators group.
 
-## Parameters
+## PARAMETERS
 
 ### -Group
 
@@ -125,19 +125,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier
 
 You can pipe a local group, a string, or a SID to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.SecurityAccountsManager.LocalPrincipal
 
 This cmdlet returns local principals.
 
-## Notes
+## NOTES
 
 - The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
   **LocalPrincipal** objects that describes the source of the object. The possible sources are as
@@ -151,7 +151,7 @@ This cmdlet returns local principals.
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
 Windows operating system. For earlier versions, the property is blank.
 
-## Related links
+## RELATED LINKS
 
 [Add-LocalGroupMember](Add-LocalGroupMember.md)
 

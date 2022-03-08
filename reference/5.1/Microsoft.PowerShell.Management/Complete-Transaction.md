@@ -10,16 +10,16 @@ title: Complete-Transaction
 
 # Complete-Transaction
 
-## Synopsis
+## SYNOPSIS
 Commits the active transaction.
 
-## Syntax
+## SYNTAX
 
 ```
 Complete-Transaction [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Complete-Transaction` cmdlet commits an active transaction. When you commit a transaction, the
 commands in the transaction are finalized and the data affected by the commands is changed.
@@ -30,7 +30,7 @@ If the transaction includes multiple subscribers, to commit the transaction, you
 The `Complete-Transaction` cmdlet is one of a set of cmdlets that support the transactions feature in Windows PowerShell.
 For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Commit a transaction
 
@@ -225,7 +225,7 @@ However, when you add the **UseTransaction** parameter to the `Get-ChildItem` co
 becomes part of the transaction, and it gets the items in the transaction even if they are not yet
 added to the data.
 
-## Parameters
+## PARAMETERS
 
 ### -Confirm
 
@@ -265,19 +265,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - You cannot roll back a transaction that has been committed, or commit a transaction that has been
   rolled back.
@@ -288,7 +288,7 @@ This cmdlet does not generate any output.
   By default, if any part of a transaction cannot be committed, such as when a command in the
   transaction results in an error, the entire transaction is rolled back.
 
-## Related links
+## RELATED LINKS
 
 [Get-Transaction](Get-Transaction.md)
 

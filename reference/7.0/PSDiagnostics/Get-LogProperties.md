@@ -9,23 +9,23 @@ title: Get-LogProperties
 ---
 # Get-LogProperties
 
-## Synopsis
+## SYNOPSIS
 Retrieves the properties of a Windows event log.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-LogProperties [-Name] <Object> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
 This cmdlet gets the configuration settings of a Windows event log. This cmdlet is used by the
 `Enable-PSTrace` and `Disable-PSTrace` cmdlets.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the configuration settings of the Windows PowerShell event log
 
@@ -42,7 +42,7 @@ AutoBackup : False
 MaxLogSize : 15728640
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Name
 
@@ -67,20 +67,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Diagnostics.LogDetails
 
 The **PSDiagnostics** module adds the **LogDetails** class to the
 `Microsoft.PowerShell.Diagnostics` namespace.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Set-LogProperties](Set-LogProperties.md)
 

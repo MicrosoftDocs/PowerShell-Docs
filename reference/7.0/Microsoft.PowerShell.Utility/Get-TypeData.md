@@ -9,16 +9,16 @@ title: Get-TypeData
 ---
 # Get-TypeData
 
-## Synopsis
+## SYNOPSIS
 Gets the extended type data in the current session.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-TypeData [[-TypeName] <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-TypeData` cmdlet gets the extended type data in the current session. This includes type
 data that was added to the session by `Types.ps1xml` file and dynamic type data that was added by
@@ -38,7 +38,7 @@ about dynamic type data that the `Update-TypeData` cmdlet adds, see `Update-Type
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all extended type data
 
@@ -108,7 +108,7 @@ The command gets the **DateTime** key in **Members** and its **GetScriptBlock** 
 The output shows the script block that creates the value of the **DateTime** property of every
 **System.DateTime** object in PowerShell.
 
-## Parameters
+## PARAMETERS
 
 ### -TypeName
 
@@ -138,23 +138,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe type names to `Get-TypeData`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.Runspaces.TypeData
 
-## Notes
+## NOTES
 
 `Get-TypeData` gets only the extended type data in the current session. It does not get extended
 type data that is on the computer, but has not been added to the current session, such as extended
 types that are defined in modules that have not been imported into the current session.
 
-## Related links
+## RELATED LINKS
 
 [about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md)
 

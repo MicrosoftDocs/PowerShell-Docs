@@ -9,16 +9,16 @@ title: Checkpoint-Computer
 ---
 # Checkpoint-Computer
 
-## Synopsis
+## SYNOPSIS
 Creates a system restore point on the local computer.
 
-## Syntax
+## SYNTAX
 
 ```
 Checkpoint-Computer [-Description] <String> [[-RestorePointType] <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Checkpoint-Computer` cmdlet creates a system restore point on the local computer.
 
@@ -26,7 +26,7 @@ System restore points and the `Checkpoint-Computer` cmdlet are supported only on
 
 Beginning in Windows 8, `Checkpoint-Computer` cannot create more than one checkpoint each day.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a system restore point
 
@@ -45,7 +45,7 @@ Checkpoint-Computer -Description "ChangeNetSettings" -RestorePointType MODIFY_SE
 
 This command creates a MODIFY_SETTINGS system restore point called "ChangeNetSettings".
 
-## Parameters
+## PARAMETERS
 
 ### -Description
 
@@ -94,19 +94,19 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe objects to `Checkpoint-Computer`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - This cmdlet uses the **CreateRestorePoint** method of the **SystemRestore** class with a **BEGIN_SYSTEM_CHANGE** event.
 - Beginning in Windows 8, `Checkpoint-Computer` cannot create more than one system restore point each day. If you try to create a new restore point before the 24-hour period has elapsed, Windows PowerShell generates the following error:
@@ -114,7 +114,7 @@ This cmdlet does not generate any output.
   `"A new system restore point cannot be created because one has already been created within the past 24 hours.
   Please try again later."`
 
-## Related links
+## RELATED LINKS
 
 [Disable-ComputerRestore](Disable-ComputerRestore.md)
 

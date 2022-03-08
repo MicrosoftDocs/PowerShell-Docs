@@ -9,10 +9,10 @@ title: Set-Content
 ---
 # Set-Content
 
-## Synopsis
+## SYNOPSIS
 Writes new content or replaces existing content in a file.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -32,7 +32,7 @@ Set-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <st
  [-Stream <string>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 `Set-Content` is a string-processing cmdlet that writes new content or replaces the content in a
 file. `Set-Content` replaces the existing content and differs from the `Add-Content` cmdlet that
@@ -41,7 +41,7 @@ the command line or send content through the pipeline.
 
 If you need to create files or directories for the following examples, see [New-Item](New-Item.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Replace the contents of multiple files in a directory
 
@@ -144,7 +144,7 @@ directory to the **Value** empty.
 Set-Content -Path C:\Temp\* -Filter *.txt -Value "Empty"
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -454,20 +454,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 
 You can pipe an object that contains the new value for the item to `Set-Content`.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.String
 
 When you use the **PassThru** parameter, `Set-Content` generates a **System.String** object that
 represents the content. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - You can also refer to `Set-Content` by its built-in alias, `sc`.
   For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -477,7 +477,7 @@ represents the content. Otherwise, this cmdlet does not generate any output.
   providers available in your session, type `Get-PsProvider`. For more information, see
   [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
 

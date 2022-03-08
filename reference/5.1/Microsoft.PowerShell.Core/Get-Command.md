@@ -9,10 +9,10 @@ title: Get-Command
 ---
 # Get-Command
 
-## Synopsis
+## SYNOPSIS
 Gets all commands.
 
-## Syntax
+## SYNTAX
 
 ### CmdletSet (Default)
 
@@ -30,7 +30,7 @@ Get-Command [[-Name] <String[]>] [-Module <String[]>] [-FullyQualifiedModule <Mo
  [-All] [-ListImported] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Command` cmdlet gets all commands that are installed on the computer, including cmdlets,
 aliases, functions, filters, scripts, and applications. `Get-Command` gets the commands from
@@ -52,7 +52,7 @@ information from help topics.
 Starting in Windows PowerShell 5.0, results of the `Get-Command` cmdlet display a **Version** column
 by default. A new **Version** property has been added to the **CommandInfo** class.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get cmdlets, functions, and aliases
 
@@ -279,7 +279,7 @@ first net adapter that the cmdlet returns. To get the **PSTypeNames** property o
 not the **PSTypeNames** property of a collection of net adapters, the command uses array notation to
 get the first net adapter that the cmdlet returns.
 
-## Parameters
+## PARAMETERS
 
 ### -All
 
@@ -608,13 +608,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe command names to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.CommandInfo
 
@@ -641,7 +641,7 @@ Represents functions and filters.
 
 Represents workflows.
 
-## Notes
+## NOTES
 
 - When more than one command that has the same name is available to the session, `Get-Command`
   returns the command that runs when you type the command name. To get commands that have the same
@@ -653,7 +653,7 @@ Represents workflows.
   `$PSModuleAutoLoadingPreference` preference variable. For more information, see
   [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
-## Related links
+## RELATED LINKS
 
 [Export-PSSession](../Microsoft.PowerShell.Utility/Export-PSSession.md)
 

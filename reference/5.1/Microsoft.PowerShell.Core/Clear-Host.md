@@ -10,17 +10,17 @@ title: Clear-Host
 
 # Clear-Host
 
-## Synopsis
+## SYNOPSIS
 
 Clears the display in the host program.
 
-## Syntax
+## SYNTAX
 
 ```
 Clear-Host [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Clear-Host` function removes all text from the current display, including commands and output
 that might have accumulated. When complete, it displays the command prompt. You can use the function
@@ -33,7 +33,7 @@ function.
 Because the behavior of the `Clear-Host` function is determined by the host program, `Clear-Host`
 might work differently in different host programs.
 
-## Examples
+## EXAMPLES
 
 ### Example 1
 
@@ -73,7 +73,7 @@ PS C:>
 
 This command uses the `cls` alias of `Clear-Host` to clear the current display.
 
-## Parameters
+## PARAMETERS
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
@@ -81,24 +81,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to `Clear-Host`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 `Clear-Host` does not generate any output
 
-## Notes
+## NOTES
 
 `Clear-Host` is a simple function, not an advanced function. As such, you cannot use common
 parameters, such as **Debug**, in a `Clear-Host` command.
 
-## Related links
+## RELATED LINKS
 
 [Get-Host](../Microsoft.PowerShell.Utility/Get-Host.md)
 

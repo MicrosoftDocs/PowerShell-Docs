@@ -10,10 +10,10 @@ title: Start-Trace
 
 # Start-Trace
 
-## Synopsis
+## SYNOPSIS
 Start an Event Trace logging session.
 
-## Syntax
+## SYNTAX
 
 ```
 Start-Trace [-SessionName] <String> [[-OutputFilePath] <String>] [[-ProviderFilePath] <String>]
@@ -21,7 +21,7 @@ Start-Trace [-SessionName] <String> [[-OutputFilePath] <String>] [[-ProviderFile
  [-BufferSizeInKB <Int32>] [-MaxLogFileSizeInMB <Int32>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 This cmdlet starts a Windows Event Trace logging session.
 
 This cmdlet is used by the following cmdlets:
@@ -31,7 +31,7 @@ This cmdlet is used by the following cmdlets:
 
 You must run this cmdlet from an elevated PowerShell session.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Start a WSMan Trace logging session
 
@@ -39,7 +39,7 @@ You must run this cmdlet from an elevated PowerShell session.
 Start-Trace -SessionName 'wsmlog' -ETS -OutputFilePath "$env:windir\system32\wsmtraces.log" -Format 'bincirc' -MinBuffers 16 -MaxBuffers 256 -BufferSizeInKb 64 -MaxLogFileSizeInMB 256 -ProviderFilePath "$env:windir\system32\wsmtraceproviders.txt"
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -BufferSizeInKB
 Event Trace Session buffer size in kilobytes (KB).
@@ -192,17 +192,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Event Tracing](/windows/desktop/ETW/event-tracing-portal)
 

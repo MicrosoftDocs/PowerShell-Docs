@@ -10,16 +10,16 @@ title: Enable-ComputerRestore
 
 # Enable-ComputerRestore
 
-## Synopsis
+## SYNOPSIS
 Enables the System Restore feature on the specified file system drive.
 
-## Syntax
+## SYNTAX
 
 ```
 Enable-ComputerRestore [-Drive] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Enable-ComputerRestore` cmdlet turns on the System Restore feature on one or more file system
 drives. As a result, you can use tools, such as the Restore-Computer cmdlet, to restore the computer
@@ -33,7 +33,7 @@ Restore for each drive, use `Rstrui.exe`.
 System restore points and the ComputerRestore cmdlets are supported only on client operating
 systems, such as Windows 7, Windows Vista, and Windows XP.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Enable System Restore on the specified drive
 
@@ -51,7 +51,7 @@ Enable-ComputerRestore -Drive "C:\", "D:\"
 
 This command enables System Restore on the C: and D: drives of the local computer.
 
-## Parameters
+## PARAMETERS
 
 ### -Drive
 
@@ -116,19 +116,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - To run this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with
   the Run as administrator option.
@@ -139,7 +139,7 @@ This cmdlet does not generate any output.
 
   This cmdlet uses the Windows Management Instrumentation (WMI) **SystemRestore** class.
 
-## Related links
+## RELATED LINKS
 
 [Checkpoint-Computer](Checkpoint-Computer.md)
 

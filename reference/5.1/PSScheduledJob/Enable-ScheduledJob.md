@@ -10,10 +10,10 @@ title: Enable-ScheduledJob
 
 # Enable-ScheduledJob
 
-## Synopsis
+## SYNOPSIS
 Enables a scheduled job.
 
-## Syntax
+## SYNTAX
 
 ### Definition (Default)
 
@@ -34,7 +34,7 @@ Enable-ScheduledJob [-Id] <Int32> [-PassThru] [-WhatIf] [-Confirm] [<CommonParam
 Enable-ScheduledJob [-Name] <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Enable-ScheduledJob` cmdlet re-enables scheduled jobs that are disabled, such as those that are
 disabled by using the `Disable-ScheduledJob` cmdlet. Enabled jobs run automatically when triggered.
@@ -50,7 +50,7 @@ the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [abo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Enable a scheduled job
 
@@ -110,7 +110,7 @@ The command uses the `Invoke-Command` cmdlet to run an `Enable-ScheduledJob` com
 and Srv10 computers. The command uses the **Name** parameter of `Enable-ScheduledJob` to enable the
 Inventory scheduled job on each computer.
 
-## Parameters
+## PARAMETERS
 
 ### -Id
 
@@ -220,25 +220,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 You can pipe a scheduled job to `Enable-ScheduledJob`.
 
-## Outputs
+## OUTPUTS
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 If you use the **Passthru** parameter, `Enable-ScheduledJob` returns the scheduled job that was
 enabled. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - `Enable-ScheduledJob` does not generate warnings or errors if you use it to enable a scheduled job
   that is already enabled.
 
-## Related links
+## RELATED LINKS
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

@@ -10,10 +10,10 @@ title: Remove-EventLog
 
 # Remove-EventLog
 
-## Synopsis
+## SYNOPSIS
 Deletes an event log or unregisters an event source.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -27,7 +27,7 @@ Remove-EventLog [[-ComputerName] <String[]>] [-LogName] <String[]> [-WhatIf] [-C
 Remove-EventLog [[-ComputerName] <String[]>] [-Source <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Remove-EventLog`cmdlet deletes an event log file from a local or remote computer and
 unregisters all its event sources for the log. You can also use this cmdlet to unregister event
@@ -41,7 +41,7 @@ versions of the Windows operating system, use Get-WinEvent.
 > This cmdlet can delete operating system event logs, which might cause application failures and
 > unexpected system behavior.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Remove an event log from the local computer
 
@@ -147,7 +147,7 @@ source.
 
 The third command is identical to the first. It shows that the MyApp event source was deleted.
 
-## Parameters
+## PARAMETERS
 
 ### -ComputerName
 
@@ -244,19 +244,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any output.
 
-## Notes
+## NOTES
 
 - To use `Remove-EventLog`on Windows Vista and later versions of the Windows operating system, start
   Windows PowerShell by using the Run as administrator option.
@@ -268,7 +268,7 @@ This cmdlet does not return any output.
 - When you unregister an event source for a particular log, the event source might be prevented from
   writing entries in other event logs.
 
-## Related links
+## RELATED LINKS
 
 [Clear-EventLog](Clear-EventLog.md)
 

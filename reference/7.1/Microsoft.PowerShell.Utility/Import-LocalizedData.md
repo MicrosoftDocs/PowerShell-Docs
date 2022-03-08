@@ -9,18 +9,18 @@ title: Import-LocalizedData
 ---
 # Import-LocalizedData
 
-## Synopsis
+## SYNOPSIS
 Imports language-specific data into scripts and functions based on the UI culture that is selected
 for the operating system.
 
-## Syntax
+## SYNTAX
 
 ```
 Import-LocalizedData [[-BindingVariable] <String>] [[-UICulture] <String>] [-BaseDirectory <String>]
  [-FileName <String>] [-SupportedCommand <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Import-LocalizedData` cmdlet dynamically retrieves strings from a subdirectory whose name
 matches the UI language set for the current user of the operating system. It is designed to enable
@@ -42,7 +42,7 @@ it easy for scripts to display user messages in the UI language of the current u
 information about this and about the format of the `.psd1` files, see
 [about_Script_Internationalization](../Microsoft.PowerShell.Core/About/about_Script_Internationalization.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Import text strings
 
@@ -205,7 +205,7 @@ The sample output shows the results of running both scripts when the UI culture 
 and there are no matching files or directories for that UI culture. `Day1.ps1` displays an error
 message and English output. `Day2.ps1` just displays the English output.
 
-## Parameters
+## PARAMETERS
 
 ### -BaseDirectory
 
@@ -332,20 +332,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Collections.Hashtable
 
 `Import-LocalizedData` saves the hash table in the variable that is specified by the value of the
 **BindingVariable** parameter.
 
-## Notes
+## NOTES
 
 - Before using `Import-LocalizedData`, localize your user messages. Format the messages for each
   locale (UI culture) in a hash table of key-value pairs, and save the hash table in a file with the
@@ -381,7 +381,7 @@ You cannot pipe input to this cmdlet.
   For more information, see
   [about_Script_Internationalization](../Microsoft.Powershell.Core/About/about_Script_Internationalization.md).
 
-## Related links
+## RELATED LINKS
 
 [Write-Host](Write-Host.md)
 

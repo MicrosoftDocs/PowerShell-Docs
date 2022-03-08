@@ -9,10 +9,10 @@ title: Get-Acl
 ---
 # Get-Acl
 
-## Synopsis
+## SYNOPSIS
 Gets the security descriptor for a resource, such as a file or registry key.
 
-## Syntax
+## SYNTAX
 
 ### ByPath (Default)
 
@@ -35,7 +35,7 @@ Get-Acl [-LiteralPath <String[]>] [-Audit] [-Filter <String>] [-Include <String[
  [-Exclude <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -46,7 +46,7 @@ permissions that users and user groups have to access the resource.
 Beginning in Windows PowerShell 3.0, you can use the **InputObject** parameter of `Get-Acl` to get
 the security descriptor of objects that do not have a path.
 
-## Examples
+## EXAMPLES
 
 ### Example 1- Get an ACL for a folder
 
@@ -111,7 +111,7 @@ storage subsystem object.
 Get-Acl -InputObject (Get-StorageSubSystem -Name S087)
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Audit
 
@@ -252,20 +252,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to `Get-Acl`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Security.AccessControl.FileSecurity, System.Security.AccessControl.DirectorySecurity, System.Security.AccessControl.RegistrySecurity
 
 `Get-Acl` returns an object that represents the ACLs that it gets. The object type depends upon the
 ACL type.
 
-## Notes
+## NOTES
 
 This cmdlet is only available on Windows platforms.
 
@@ -288,6 +288,6 @@ Because `Get-Acl` is supported by the file system and registry providers, you ca
 view the ACL of file system objects, such as files and directories, and registry objects, such as
 registry keys and entries.
 
-## Related links
+## RELATED LINKS
 
 [Set-Acl](Set-Acl.md)

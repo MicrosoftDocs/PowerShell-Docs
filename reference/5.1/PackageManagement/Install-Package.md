@@ -10,10 +10,10 @@ title: Install-Package
 
 # Install-Package
 
-## Synopsis
+## SYNOPSIS
 Installs one or more software packages.
 
-## Syntax
+## SYNTAX
 
 ### PackageBySearch (Default)
 
@@ -108,13 +108,13 @@ Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <P
  [-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Install-Package` cmdlet installs one or more software packages on the local computer. If you
 have multiple software sources, use `Get-PackageProvider` and `Get-PackageSource` to display details
 about your providers.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Install a package by package name
 
@@ -153,7 +153,7 @@ PS> Install-Package -Name NuGet.Core -Source MyNuGet -MinimumVersion 2.8.0 -Maxi
 **MinimumVersion** and **MaximumVersion** parameters specify a range of software versions. The
 highest version in the range is installed.
 
-## Parameters
+## PARAMETERS
 
 ### -AcceptLicense
 
@@ -907,15 +907,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### `Install-Package` accepts input from the pipeline.
 
-## Outputs
+## OUTPUTS
 
 ### SoftwareIdentity[]
 
-## Notes
+## NOTES
 
 Including a package provider in a command can make dynamic parameters available to a cmdlet. Dynamic
 parameters are specific to a package provider. The `Get-Help` cmdlet lists a cmdlet's parameter sets
@@ -934,7 +934,7 @@ parameter set that includes `-NoPathUpdate`, `AllowClobber`, and `SkipPublisherC
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

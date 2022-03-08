@@ -10,10 +10,10 @@ title: Get-CimInstance
 
 # Get-CimInstance
 
-## Synopsis
+## SYNOPSIS
 Gets the CIM instances of a class from a CIM server.
 
-## Syntax
+## SYNTAX
 
 ### ClassNameComputerSet (Default)
 
@@ -77,7 +77,7 @@ Get-CimInstance [-ResourceUri <Uri>] [-ComputerName <String[]>] [-Namespace <Str
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -101,7 +101,7 @@ If the **InputObject** parameter is specified, the cmdlet works in one of the fo
 - If the either the **ComputerName** parameter or the **CimSession** parameter is specified, then
   this cmdlet uses the either the CimSession parameter value or **ComputerName** parameter value.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the CIM instances of a specified class
 
@@ -210,7 +210,7 @@ $s = New-CimSession -ComputerName Server01,Server02
 Get-CimInstance -ClassName Win32_ComputerSystem -CimSession $s
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -CimSession
 
@@ -499,22 +499,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### CIM Instance
 
 This cmdlet accepts an input objects specified with the InputObject parameter.
 
-## Outputs
+## OUTPUTS
 
 ### CIM Instance
 
 This cmdlet returns one or more CIM instance objects representing a snapshot of the CIM instances on
 the CIM server.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Format-Table](../microsoft.powershell.utility/format-table.md)
 

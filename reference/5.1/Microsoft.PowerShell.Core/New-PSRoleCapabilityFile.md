@@ -9,10 +9,10 @@ title: New-PSRoleCapabilityFile
 ---
 # New-PSRoleCapabilityFile
 
-## Synopsis
+## SYNOPSIS
 Creates a file that defines a set of capabilities to be exposed through a session configuration.
 
-## Syntax
+## SYNTAX
 
 ```
 New-PSRoleCapabilityFile [-Path] <String> [-Guid <Guid>] [-Author <String>] [-Description <String>]
@@ -24,7 +24,7 @@ New-PSRoleCapabilityFile [-Path] <String> [-Guid <Guid>] [-Author <String>] [-De
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-PSRoleCapabilityFile` cmdlet creates a file that defines a set of user capabilities that
 can be exposed through session configuration files. This includes determining which cmdlets,
@@ -44,7 +44,7 @@ in the **RoleDefinitions** field in a PowerShell Session Configuration (.pssc) f
 
 This cmdlet was introduced in Windows PowerShell 5.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a blank role capability file
 
@@ -76,7 +76,7 @@ $roleParameters = @{
 New-PSRoleCapabilityFile @roleParameters
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AliasDefinitions
 
@@ -498,13 +498,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 

@@ -9,10 +9,10 @@ title: Remove-Module
 ---
 # Remove-Module
 
-## Synopsis
+## SYNOPSIS
 Removes modules from the current session.
 
-## Syntax
+## SYNTAX
 
 ### name
 
@@ -32,7 +32,7 @@ Remove-Module [-FullyQualifiedName] <ModuleSpecification[]> [-Force] [-WhatIf] [
 Remove-Module [-ModuleInfo] <PSModuleInfo[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Remove-Module` cmdlet removes the members of a module, such as cmdlets and functions, from the
 current session.
@@ -43,7 +43,7 @@ removed, but the assembly is not unloaded.
 This cmdlet does not uninstall the module or delete it from the computer. It affects only the
 current PowerShell session.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Remove a module
 
@@ -103,7 +103,7 @@ Remove-Module -ModuleInfo $a
 
 This command uses the **ModuleInfo** parameter to remove the BitsTransfer module.
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -213,19 +213,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String, System.Management.Automation.PSModuleInfo
 
 You can pipe module names and module objects to `Remove-Module`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 When removing a module, there is an event on the module that will execute.
 This event allows a module to react to being removed and perform some cleanup such as freeing up resources. Example:
@@ -244,7 +244,7 @@ For full consistency, it might be also useful to react to the closing of the Pow
 
 Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Action $OnRemoveScript
 
-## Related links
+## RELATED LINKS
 
 [Get-Module](Get-Module.md)
 

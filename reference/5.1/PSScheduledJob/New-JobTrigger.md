@@ -10,10 +10,10 @@ title: New-JobTrigger
 
 # New-JobTrigger
 
-## Synopsis
+## SYNOPSIS
 Creates a job trigger for a scheduled job.
 
-## Syntax
+## SYNTAX
 
 ### Once (Default)
 
@@ -47,7 +47,7 @@ New-JobTrigger [-RandomDelay <TimeSpan>] [-AtStartup] [<CommonParameters>]
 New-JobTrigger [-RandomDelay <TimeSpan>] [-User <String>] [-AtLogOn] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-JobTrigger` cmdlet creates a job trigger that starts a scheduled job on a one-time or
 recurring schedule, or when an event occurs.
@@ -69,7 +69,7 @@ the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [abo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Once Schedule
 
@@ -218,7 +218,7 @@ New-JobTrigger -Once -At "9/21/2012 0am" -RepetitionInterval (New-TimeSpan -Hour
 The following command creates a job trigger that runs a scheduled job once every 12 hours for an
 indefinite period of time. The schedule begins tomorrow (9/21/2012) at midnight (0:00 AM).
 
-## Parameters
+## PARAMETERS
 
 ### -At
 
@@ -507,17 +507,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
 
-## Notes
+## NOTES
 
 - Job triggers are not saved to disk. However, scheduled jobs are saved to disk, and you can use the
   `Get-JobTrigger` to get the job trigger of any scheduled job.
@@ -535,7 +535,7 @@ You cannot pipe input to this cmdlet.
 `User="Domain1\User01` (or any valid user; used only with the **AtLogon** frequency value)
 }
 
-## Related links
+## RELATED LINKS
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

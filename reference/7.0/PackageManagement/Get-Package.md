@@ -10,10 +10,10 @@ title: Get-Package
 
 # Get-Package
 
-## Synopsis
+## SYNOPSIS
 Returns a list of all software packages that were installed with **PackageManagement**.
 
-## Syntax
+## SYNTAX
 
 ### NuGet
 
@@ -34,13 +34,13 @@ Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <S
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Package` cmdlet returns a list of all software packages on the local computer that were
 installed with **PackageManagement**. You can run `Get-Package` on remote computers by running it as
 part of an `Invoke-Command` or `Enter-PSSession` command or script.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all installed packages
 
@@ -120,7 +120,7 @@ Get-Package -Name posh-git -RequiredVersion 0.7.3 | Uninstall-Package
 **RequiredVersion** parameter is a specific version of the package. The object is sent down the
 pipeline to the `Uninstall-Package` cmdlet. `Uninstall-Package` removes the package.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowClobber
 
@@ -444,13 +444,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
 ### SoftwareIdentity[]
 
-## Notes
+## NOTES
 
 Including a package provider in a command can make dynamic parameters available to a cmdlet. Dynamic
 parameters are specific to a package provider. The `Get-Help` cmdlet lists a cmdlet's parameter sets
@@ -469,7 +469,7 @@ parameter set that includes `-NoPathUpdate`, `AllowClobber`, and `SkipPublisherC
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

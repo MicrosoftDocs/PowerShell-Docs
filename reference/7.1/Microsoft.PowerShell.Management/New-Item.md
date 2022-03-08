@@ -9,10 +9,10 @@ title: New-Item
 ---
 # New-Item
 
-## Synopsis
+## SYNOPSIS
 Creates a new item.
 
-## Syntax
+## SYNTAX
 
 ### pathSet (Default)
 
@@ -28,7 +28,7 @@ New-Item [[-Path] <String[]>] -Name <String> [-ItemType <String>] [-Value <Objec
  [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-Item` cmdlet creates a new item and sets its value. The types of items that can be created
 depend on the location of the item. For example, in the file system, `New-Item` creates files and
@@ -37,7 +37,7 @@ folders. In the registry, `New-Item` creates registry keys and entries.
 `New-Item` can also set the value of the items that it creates. For example, when it creates a new
 file, `New-Item` can add initial content to the file.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a file in the current directory
 
@@ -209,7 +209,7 @@ Mode                LastWriteTime         Length Name
 > the same as when overwriting a file. If the registry key already exists, the key and all
 > properties and values will be overwritten with an empty registry key.
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -385,24 +385,24 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 
 You can pipe a value for the new item to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
 This cmdlet returns the item that it creates.
 
-## Notes
+## NOTES
 
 `New-Item` is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PsProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [Clear-Item](Clear-Item.md)
 

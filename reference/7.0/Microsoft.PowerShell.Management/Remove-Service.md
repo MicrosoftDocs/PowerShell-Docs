@@ -9,10 +9,10 @@ title: Remove-Service
 ---
 # Remove-Service
 
-## Synopsis
+## SYNOPSIS
 Removes a Windows service.
 
-## Syntax
+## SYNTAX
 
 ### Name (Default)
 
@@ -26,13 +26,13 @@ Remove-Service [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 Remove-Service [-InputObject <ServiceController>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Remove-Service` cmdlet removes a Windows service in the registry and in the service database.
 
 The `Remove-Service` cmdlet was introduced in PowerShell 6.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Remove a service
 
@@ -52,7 +52,7 @@ the object to `Remove-Service`, which removes the service.
 Get-Service -DisplayName "Test Service" | Remove-Service
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -InputObject
 
@@ -129,23 +129,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.ServiceProcess.ServiceController, System.String
 
 You can pipe a service object or a string that contains the name of a service to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any output.
 
-## Notes
+## NOTES
 
 To run this cmdlet, start PowerShell by using the **Run as administrator** option.
 
-## Related links
+## RELATED LINKS
 
 [Get-Service](Get-Service.md)
 

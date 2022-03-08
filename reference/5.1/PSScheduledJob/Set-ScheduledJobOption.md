@@ -10,10 +10,10 @@ title: Set-ScheduledJobOption
 
 # Set-ScheduledJobOption
 
-## Synopsis
+## SYNOPSIS
 Changes the job options of a scheduled job.
 
-## Syntax
+## SYNTAX
 
 ```
 Set-ScheduledJobOption [-InputObject] <ScheduledJobOptions> [-PassThru] [-RunElevated] [-HideInTaskScheduler]
@@ -22,7 +22,7 @@ Set-ScheduledJobOption [-InputObject] <ScheduledJobOptions> [-PassThru] [-RunEle
  [-IdleTimeout <TimeSpan>] [-IdleDuration <TimeSpan>] [-StartIfIdle] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-ScheduledJobOptions` cmdlet changes the job options of scheduled jobs.
 
@@ -50,7 +50,7 @@ the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [abo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Change job options
 
@@ -132,7 +132,7 @@ when it is changed.
 The job triggers are piped to the `Set-ScheduledJobOption` cmdlet, which changes the value of the
 **IdleTimeout** option to two hours (2:00:00).
 
-## Parameters
+## PARAMETERS
 
 ### -ContinueIfGoingOnBattery
 
@@ -474,22 +474,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 
 You can pipe a scheduled job options object to `Set-ScheduledJobOption`.
 
-## Outputs
+## OUTPUTS
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 
 When you use the **Passthru** parameter, `Set-ScheduledJobOption` returns the job options that were
 changed. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

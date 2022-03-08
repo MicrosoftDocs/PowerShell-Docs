@@ -9,16 +9,16 @@ title: Measure-Command
 ---
 # Measure-Command
 
-## Synopsis
+## SYNOPSIS
 Measures the time it takes to run script blocks and cmdlets.
 
-## Syntax
+## SYNTAX
 
 ```
 Measure-Command [-InputObject <PSObject>] [-Expression] <ScriptBlock> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the execution of the
 operation, and returns the execution time.
@@ -26,7 +26,7 @@ operation, and returns the execution time.
 > [!NOTE]
 > Script blocks run by `Measure-Command` run in the current scope, not a child scope.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Measure a command
 
@@ -160,7 +160,7 @@ Value 2
 For more information about the invocation operator, see
 [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-).
 
-## Parameters
+## PARAMETERS
 
 ### -Expression
 
@@ -203,21 +203,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe an object to `Measure-Command`.
 
-## Outputs
+## OUTPUTS
 
 ### System.TimeSpan
 
 `Measure-Command` returns a time span object that represents the result.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 

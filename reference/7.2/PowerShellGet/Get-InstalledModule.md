@@ -9,23 +9,23 @@ title: Get-InstalledModule
 ---
 # Get-InstalledModule
 
-## Synopsis
+## SYNOPSIS
 Gets a list of modules on the computer that were installed by PowerShellGet.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-InstalledModule [[-Name] <String[]>] [-MinimumVersion <String>] [-RequiredVersion <String>]
  [-MaximumVersion <String>] [-AllVersions] [-AllowPrerelease] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-InstalledModule` cmdlet gets PowerShell modules that are installed on a computer using
 PowerShellGet. To see all modules installed on the system, use the `Get-Module -ListAvailable`
 command.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all installed modules
 
@@ -57,7 +57,7 @@ Version    Name                                Type       Repository     Descrip
 
 This command gets versions of the AzureRM.Automation module from version 1.0 through version 2.0.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowPrerelease
 
@@ -167,17 +167,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.String[]
 
 ### System.String
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSCustomObject
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 

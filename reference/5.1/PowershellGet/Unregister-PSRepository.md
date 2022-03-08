@@ -9,20 +9,20 @@ title: Unregister-PSRepository
 ---
 # Unregister-PSRepository
 
-## Synopsis
+## SYNOPSIS
 Unregisters a repository.
 
-## Syntax
+## SYNTAX
 
 ```
 Unregister-PSRepository [-Name] <String[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Unregister-PSRepository` cmdlet unregisters a repository for the current user.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Unregister a repository
 
@@ -40,7 +40,7 @@ This example uses `Get-PSRepository` to get all registered repositories, and use
 Get-PSRepository | Unregister-PSRepository
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Name
 
@@ -64,17 +64,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String[]
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-PSRepository](Get-PSRepository.md)
 

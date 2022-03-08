@@ -10,10 +10,10 @@ title: Stop-Computer
 
 # Stop-Computer
 
-## Synopsis
+## SYNOPSIS
 Stops (shuts down) local and remote computers.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -24,7 +24,7 @@ Stop-Computer [-AsJob] [-DcomAuthentication <AuthenticationLevel>] [-WsmanAuthen
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Stop-Computer` cmdlet shuts down the local computer and remote computers.
 
@@ -34,7 +34,7 @@ that are created to run the command, and to force an immediate shut down.
 
 This cmdlet doesn't require PowerShell remoting unless you use the **AsJob** parameter.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Shut down the local computer
 
@@ -108,7 +108,7 @@ computers in the `$s` variable. The **Force** parameter forces an immediate shut
 **ThrottleLimit** parameter limits the command to 10 concurrent connections. The **Credential**
 parameter submits the credentials saved in the `$c` variable.
 
-## Parameters
+## PARAMETERS
 
 ### -AsJob
 
@@ -379,26 +379,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You can't pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Management.Automation.RemotingJob
 
 The cmdlet returns a **System.Management.Automation.RemotingJob** object, if you specify the
 **AsJob** parameter. Otherwise, it doesn't generate any output.
 
-## Notes
+## NOTES
 
 This cmdlet uses the **Win32Shutdown** method of the **Win32_OperatingSystem** WMI class. This
 method requires the **SeShutdownPrivilege** privilege be enabled for the user account used to
 restart the machine.
 
-## Related links
+## RELATED LINKS
 
 [Add-Computer](Add-Computer.md)
 

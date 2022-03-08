@@ -9,10 +9,10 @@ title: Stop-Service
 ---
 # Stop-Service
 
-## Synopsis
+## SYNOPSIS
 Stops one or more running services.
 
-## Syntax
+## SYNTAX
 
 ### InputObject (Default)
 
@@ -35,14 +35,14 @@ Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <S
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Stop-Service` cmdlet sends a stop message to the Windows Service Controller for each of the
 specified services. You can specify the services by their service names or display names, or you can
 use the **InputObject** parameter to pass a service object that represents the service that you want
 to stop.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Stop a service on the local computer
 
@@ -82,7 +82,7 @@ The second command stops the IISAdmin service. The **Force** parameter is requir
 that has dependent services. The command uses the **Confirm** parameter to request confirmation from
 the user before it stops each service.
 
-## Parameters
+## PARAMETERS
 
 ### -DisplayName
 
@@ -255,20 +255,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.ServiceProcess.ServiceController, System.String
 
 You can pipe a service object or a string that contains the name of a service to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None, System.ServiceProcess.ServiceController
 
 This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the
 service, if you use the **PassThru** parameter. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 You can also refer to `Stop-Service` by its built-in alias, **spsv**. For more information, see
 about_Aliases.
@@ -280,7 +280,7 @@ To find the service names and display names of the services on your system, type
 service names appear in the **Name** column and the display names appear in the **DisplayName**
 column.
 
-## Related links
+## RELATED LINKS
 
 [Get-Service](Get-Service.md)
 

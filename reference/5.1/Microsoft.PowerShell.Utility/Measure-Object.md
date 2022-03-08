@@ -9,11 +9,11 @@ title: Measure-Object
 ---
 # Measure-Object
 
-## Synopsis
+## SYNOPSIS
 Calculates the numeric properties of objects, and the characters, words, and lines in string
 objects, such as files of text.
 
-## Syntax
+## SYNTAX
 
 ### GenericMeasure (Default)
 
@@ -29,7 +29,7 @@ Measure-Object [-InputObject <PSObject>] [[-Property] <String[]>] [-Line] [-Word
  [-IgnoreWhiteSpace] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Measure-Object` cmdlet calculates the property values of certain types of object.
 `Measure-Object` performs three types of measurements, depending on the parameters in the command.
@@ -40,7 +40,7 @@ The `Measure-Object` cmdlet performs calculations on the property values of obje
 **Average** of numeric values. For **String** objects, you can also use `Measure-Object` to
 count the number of lines, words, and characters.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Count the files and folders in a directory
 
@@ -192,7 +192,7 @@ Lines Words Characters Property
     3     5
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Average
 
@@ -381,13 +381,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe objects to `Measure-Object`.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.GenericMeasureInfo
 
@@ -396,9 +396,9 @@ You can pipe objects to `Measure-Object`.
 If you use the **Word** parameter, `Measure-Object` returns a **TextMeasureInfo** object.
 Otherwise, it returns a **GenericMeasureInfo** object.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Compare-Object](Compare-Object.md)
 

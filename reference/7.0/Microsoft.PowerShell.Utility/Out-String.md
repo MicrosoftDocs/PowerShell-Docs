@@ -10,10 +10,10 @@ title: Out-String
 
 # Out-String
 
-## Synopsis
+## SYNOPSIS
 Outputs input objects as a string.
 
-## Syntax
+## SYNTAX
 
 ### NoNewLineFormatting (Default)
 
@@ -27,7 +27,7 @@ Out-String [-Width <Int32>] [-NoNewline] [-InputObject <PSObject>] [<CommonParam
 Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Out-String` cmdlet converts input objects into strings. By default, `Out-String`
 accumulates the strings and returns them as a single string, but you can use the **Stream**
@@ -35,7 +35,7 @@ parameter to direct `Out-String` to return one line at a time or create an array
 cmdlet lets you search and manipulate string output as you would in traditional shells when object
 manipulation is less convenient.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the current culture and convert the data to strings
 
@@ -130,7 +130,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -InputObject
 
@@ -215,24 +215,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can send objects down the pipeline to `Out-String`.
 
-## Outputs
+## OUTPUTS
 
 ### System.String
 
 `Out-String` returns the string that it creates from the input object.
 
-## Notes
+## NOTES
 
 The cmdlets that contain the `Out` verb don't format objects. The `Out` cmdlets send objects to the
 formatter for the specified display destination.
 
-## Related links
+## RELATED LINKS
 
 [about_Formatting](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md)
 

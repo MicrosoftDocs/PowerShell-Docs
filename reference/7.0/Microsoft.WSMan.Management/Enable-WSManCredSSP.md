@@ -10,10 +10,10 @@ title: Enable-WSManCredSSP
 
 # Enable-WSManCredSSP
 
-## Synopsis
+## SYNOPSIS
 Enables Credential Security Support Provider (CredSSP) authentication on a computer.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -21,7 +21,7 @@ Enables Credential Security Support Provider (CredSSP) authentication on a compu
 Enable-WSManCredSSP [-Role] <String> [[-DelegateComputer] <String[]>] [-Force] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -43,7 +43,7 @@ the Parameters section.
 > computer is compromised, when credentials are passed to it, the credentials can be used to control
 > the network session.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Delegate client credentials
 
@@ -142,7 +142,7 @@ Set-Item -Path "WSMan:\server02\service\auth\credSSP" -Value $True
 parameter to specify the **WSMan** provider's location. The **Value** parameter sets the **Service**
 setting to true.
 
-## Parameters
+## PARAMETERS
 
 ### -DelegateComputer
 
@@ -219,23 +219,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet doesn't accept any input.
 
-## Outputs
+## OUTPUTS
 
 ### System.Xml.XmlElement
 
 If CredSSP authentication is successfully enabled, this cmdlet generates an **XMLElement** object.
 
-## Notes
+## NOTES
 
 To disable CredSSP authentication, use the `Disable-WSManCredSSP` cmdlet.
 
-## Related links
+## RELATED LINKS
 
 [Connect-WSMan](Connect-WSMan.md)
 

@@ -9,10 +9,10 @@ title: Split-Path
 ---
 # Split-Path
 
-## Synopsis
+## SYNOPSIS
 Returns the specified part of a path.
 
-## Syntax
+## SYNTAX
 
 ### ParentSet (Default)
 
@@ -68,7 +68,7 @@ Split-Path [-Path] <String[]> [-Resolve] -IsAbsolute [-Credential <PSCredential>
 Split-Path -LiteralPath <String[]> [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Split-Path` cmdlet returns only the specified part of a path, such as the parent folder, a
 subfolder, or a file name. It can also get items that are referenced by the split path and tell
@@ -76,7 +76,7 @@ whether the path is relative or absolute.
 
 You can use this cmdlet to get or submit only a selected part of a path.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the qualifier of a path
 
@@ -164,7 +164,7 @@ C:\Documents and Settings\User01\My Documents
 This command uses a pipeline operator (`|`) to send a path to `Split-Path`. The path is enclosed in
 quotation marks to indicate that it is a single token.
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -370,13 +370,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.String, System.Boolean
 
@@ -386,7 +386,7 @@ items, such as a **FileInfo** or **RegistryKey** object.
 
 When you specify the **IsAbsolute** parameter, `Split-Path` returns a **Boolean** value.
 
-## Notes
+## NOTES
 
 - The split location parameters (**Qualifier**, **Parent**, **Extension**, **Leaf**, **LeafBase**,
   and **NoQualifier**) are exclusive. You can use only one in each command.
@@ -403,7 +403,7 @@ When you specify the **IsAbsolute** parameter, `Split-Path` returns a **Boolean*
 - `Split-Path` is designed to work with the data exposed by any provider. To list the providers
   available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [Convert-Path](Convert-Path.md)
 

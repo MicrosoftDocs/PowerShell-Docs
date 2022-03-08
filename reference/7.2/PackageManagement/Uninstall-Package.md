@@ -10,10 +10,10 @@ title: Uninstall-Package
 
 # Uninstall-Package
 
-## Synopsis
+## SYNOPSIS
 Uninstalls one or more software packages.
 
-## Syntax
+## SYNTAX
 
 ### PackageByInputObject
 
@@ -62,12 +62,12 @@ Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
  [-InstallUpdate] [-NoPathUpdate] [-AllowPrereleaseVersions] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Uninstall-Package` cmdlet uninstalls one or more software packages from the local computer. To
 find installed packages, use the `Get-Package` cmdlet.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Uninstall a package
 
@@ -96,7 +96,7 @@ parameter:
 
 `Uninstall-Package -InputObject ( Get-Package -Name NuGet.Core -RequiredVersion 2.14.0 )`
 
-## Parameters
+## PARAMETERS
 
 ### -AllowClobber
 
@@ -481,19 +481,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### SoftwareIdentity
 
 `Uninstall-Package` accepts **SoftwareIdentity** objects from the pipeline as input.
 
-## Outputs
+## OUTPUTS
 
 ### SoftwareIdentity
 
 `Uninstall-Package` returns a **SoftwareIdentity** object for each package uninstalled.
 
-## Notes
+## NOTES
 
 Including a package provider in a command can make dynamic parameters available to a cmdlet. Dynamic
 parameters are specific to a package provider. The `Get-Help` cmdlet lists a cmdlet's parameter sets
@@ -501,7 +501,7 @@ and includes the provider's parameter set. For example, `Uninstall-Package` has 
 **PowerShellGet** parameter set that includes `-NoPathUpdate`, `AllowClobber`, and
 `SkipPublisherCheck`.
 
-## Related links
+## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

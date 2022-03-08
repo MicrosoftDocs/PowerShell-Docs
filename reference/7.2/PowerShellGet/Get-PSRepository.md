@@ -9,21 +9,21 @@ title: Get-PSRepository
 ---
 # Get-PSRepository
 
-## Synopsis
+## SYNOPSIS
 Gets PowerShell repositories.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-PSRepository [[-Name] <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-PSRepository` cmdlet gets PowerShell module repositories that are registered for the
 current user.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all module repositories
 
@@ -63,7 +63,7 @@ ProviderOptions           : {}
 This command gets the repository named Local01 and uses the pipeline operator to pass that object to
 the Format-List cmdlet.
 
-## Parameters
+## PARAMETERS
 
 ### -Name
 
@@ -87,17 +87,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String[]
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Register-PSRepository](Register-PSRepository.md)
 

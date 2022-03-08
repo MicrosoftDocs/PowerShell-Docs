@@ -10,11 +10,11 @@ title: Show-Markdown
 
 # Show-Markdown
 
-## Synopsis
+## SYNOPSIS
 Shows a Markdown file or string in the console in a friendly way using VT100 escape sequences or in
 a browser using HTML.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -34,7 +34,7 @@ Show-Markdown -InputObject <PSObject> [-UseBrowser] [<CommonParameters>]
 Show-Markdown -LiteralPath <String[]> [-UseBrowser] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Show-Markdown` cmdlet is used to render Markdown in a human readable format either in a
 terminal or in a browser.
@@ -52,7 +52,7 @@ You can change how `Show-Markdown` renders Markdown in a terminal by using `Set-
 
 This cmdlet was introduced in PowerShell 6.1.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Simple example specifying a path
 
@@ -81,7 +81,7 @@ __underlines__
 Show-Markdown -Path ./README.md -UseBrowser
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -InputObject
 
@@ -157,18 +157,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 ### System.String[]
 
-## Outputs
+## OUTPUTS
 
 ### System.String
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [ConvertFrom-Markdown](ConvertFrom-Markdown.md)

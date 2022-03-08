@@ -10,10 +10,10 @@ title: Disable-ScheduledJob
 
 # Disable-ScheduledJob
 
-## Synopsis
+## SYNOPSIS
 Disables a scheduled job.
 
-## Syntax
+## SYNTAX
 
 ### Definition (Default)
 
@@ -34,7 +34,7 @@ Disable-ScheduledJob [-Id] <Int32> [-PassThru] [-WhatIf] [-Confirm] [<CommonPara
 Disable-ScheduledJob [-Name] <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Disable-ScheduledJob` cmdlet temporarily disables scheduled jobs. Disabling preserves all job
 properties and does not disable the job triggers, but it prevents the scheduled jobs from starting
@@ -52,7 +52,7 @@ the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [abo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Disable a scheduled job
 
@@ -152,7 +152,7 @@ pipeline operator (`|`) sends the scheduled jobs to the `Where-Object` cmdlet, w
 scheduled job with the specified global ID. Another pipeline operator sends the job to the
 `Disable-ScheduledJob` cmdlet, which disables it.
 
-## Parameters
+## PARAMETERS
 
 ### -Id
 
@@ -262,25 +262,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 You can pipe a scheduled job to `Disable-ScheduledJob`.
 
-## Outputs
+## OUTPUTS
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 If you use the **Passthru** parameter, `Disable-ScheduledJob` returns the scheduled job that was
 disabled. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - `Disable-ScheduledJob` does not generate warnings or errors if you use it to disable a scheduled
   job that is already disabled.
 
-## Related links
+## RELATED LINKS
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

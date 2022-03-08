@@ -9,16 +9,16 @@ title: Get-Verb
 ---
 # Get-Verb
 
-## Synopsis
+## SYNOPSIS
 Gets approved PowerShell verbs.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-Verb [[-verb] <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Verb` function gets verbs that are approved for use in PowerShell commands.
 
@@ -35,7 +35,7 @@ warning message.
 > [Approved Verbs](../../docs-conceptual/developer/cmdlet/approved-verbs-for-windows-powershell-commands.md) in
 > the Microsoft Docs.
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Get a list of all verbs
 
@@ -91,7 +91,7 @@ Cmdlet          Sort-Object     3.1.0.0    Microsoft.PowerShell.Utility
 Cmdlet          Tee-Object      3.1.0.0    Microsoft.PowerShell.Utility
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Verb
 
@@ -113,15 +113,15 @@ Accept wildcard characters: True
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
-## Outputs
+## OUTPUTS
 
 ### Selected.Microsoft.PowerShell.Commands.MemberDefinition
 
-## Notes
+## NOTES
 
 `Get-Verb` returns a modified version of a Microsoft.PowerShell.Commands.MemberDefinition object.
 The object does not have the standard properties of a MemberDefinition object. Instead it has Verb
@@ -146,6 +146,6 @@ Some of the cmdlets that are installed with PowerShell, such as `Tee-Object` and
 unapproved verbs. These cmdlets are historic exceptions and their verbs are classified as
 **reserved**.
 
-## Related links
+## RELATED LINKS
 
 [Import-Module](import-module.md)

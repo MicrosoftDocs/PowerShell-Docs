@@ -9,10 +9,10 @@ title: Get-Process
 ---
 # Get-Process
 
-## Synopsis
+## SYNOPSIS
 Gets the processes that are running on the local computer.
 
-## Syntax
+## SYNTAX
 
 ### Name (Default)
 
@@ -50,7 +50,7 @@ Get-Process -InputObject <Process[]> [-Module] [-FileVersionInfo] [<CommonParame
 Get-Process -InputObject <Process[]> -IncludeUserName [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Process` cmdlet gets the processes on a local or remote computer.
 
@@ -63,7 +63,7 @@ supports methods that let you start and stop the process. You can also use the p
 `Get-Process` cmdlet to get file version information for the program that runs in the process and to
 get the modules that the process loaded.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get a list of all active processes on the local computer
 
@@ -233,7 +233,7 @@ The **mainWindowTitle** property is just one of many useful properties of the **
 that `Get-Process` returns. To view all of the properties, pipe the results of a `Get-Process`
 command to the `Get-Member` cmdlet `Get-Process | Get-Member`.
 
-## Parameters
+## PARAMETERS
 
 ### -FileVersionInfo
 
@@ -366,13 +366,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.Diagnostics.Process
 
 You can pipe a process object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Diagnostics.Process, System.Diagnostics.FileVersionInfo, System.Diagnostics.ProcessModule
 
@@ -381,7 +381,7 @@ By default, this cmdlet returns a **System.Diagnostics.Process** object. If you 
 use the **Module** parameter, without the **FileVersionInfo** parameter, it returns a
 **System.Diagnostics.ProcessModule** object.
 
-## Notes
+## NOTES
 
 - You can also refer to this cmdlet by its built-in aliases, ps and gps. For more information, see
   [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -406,7 +406,7 @@ use the **Module** parameter, without the **FileVersionInfo** parameter, it retu
 - You can also use the built-in alternate views of the processes available with `Format-Table`, such
   as **StartTime** and **Priority**, and you can design your own views.
 
-## Related links
+## RELATED LINKS
 
 [Debug-Process](Debug-Process.md)
 

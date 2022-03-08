@@ -9,16 +9,16 @@ title: Disable-PSRemoting
 ---
 # Disable-PSRemoting
 
-## Synopsis
+## SYNOPSIS
 Prevents PowerShell endpoints from receiving remote connections.
 
-## Syntax
+## SYNTAX
 
 ```
 Disable-PSRemoting [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Disable-PSRemoting` cmdlet blocks remote access to all Windows PowerShell session endpoint
 configurations on the local computer. This includes any endpoints created by PowerShell 6 or higher.
@@ -39,7 +39,7 @@ configurations, see [about_Session_Configurations](About/about_Session_Configura
 
 To run this cmdlet, start Windows PowerShell with the **Run as administrator** option.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Prevent remote access to all session configurations
 
@@ -319,7 +319,7 @@ microsoft.ServerManager       BUILTIN\Administrators AccessAllowed
 WithProfile                   NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 Forces the command to run without asking for user confirmation.
@@ -375,19 +375,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe any objects to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - Disabling the session configurations does not undo all the changes that were made by the
   `Enable-PSRemoting` or `Enable-PSSessionConfiguration` cmdlets. You might have to undo the
@@ -416,7 +416,7 @@ This cmdlet does not generate any output.
   `Disable-PSRemoting` is the equivalent of
   `Set-PSSessionConfiguration -Name \<Configuration name\> -AccessMode Local`
 
-## Related links
+## RELATED LINKS
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 

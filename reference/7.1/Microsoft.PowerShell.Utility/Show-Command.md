@@ -10,17 +10,17 @@ title: Show-Command
 
 # Show-Command
 
-## Synopsis
+## SYNOPSIS
 Displays PowerShell command information in a graphical window.
 
-## Syntax
+## SYNTAX
 
 ```
 Show-Command [[-Name] <String>] [-Height <Double>] [-Width <Double>] [-NoCommonParameter]
  [-ErrorPopup] [-PassThru] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -54,7 +54,7 @@ This cmdlet was reintroduced in PowerShell 7.
 Because this cmdlet requires a user interface, it does not work on Windows Server Core or Windows
 Nano Server. This cmdlet is only available on Windows systems that support the Windows Desktop.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Open the Commands window
 
@@ -184,7 +184,7 @@ command, instead of creating a new command. When you run this command, the `Show
 opens. You can use the window features to set parameter values. To run the command, click the
 **Run** button in the `Show-Command` window.
 
-## Parameters
+## PARAMETERS
 
 ### -ErrorPopup
 
@@ -305,13 +305,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to `Show-Command`.
 
-## Outputs
+## OUTPUTS
 
 ### None, System.String, System.Object
 
@@ -319,10 +319,10 @@ When you use the **PassThru** parameter, `Show-Command` returns a command string
 **ErrorPopup** parameter, `Show-Command` returns the command output (any object). Otherwise,
 `Show-Command` does not generate any output.
 
-## Notes
+## NOTES
 
 This cmdlet is only available on Windows platforms.
 
 `Show-Command` does not work in remote sessions.
 
-## Related links
+## RELATED LINKS

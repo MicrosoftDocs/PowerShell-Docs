@@ -9,22 +9,22 @@ title: Join-Path
 ---
 # Join-Path
 
-## Synopsis
+## SYNOPSIS
 Combines a path and a child path into a single path.
 
-## Syntax
+## SYNTAX
 
 ```
 Join-Path [-Path] <String[]> [-ChildPath] <String> [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Join-Path` cmdlet combines a path and child-path into a single path.
 The provider supplies the path delimiters.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Combine a path with a child path
 
@@ -113,7 +113,7 @@ The `ForEach-Object` statement selects only the Root property of the `PSDriveInf
 
 The output shows that the PowerShell drives on the computer included a drive mapped to the C:\Program Files directory.
 
-## Parameters
+## PARAMETERS
 
 ### -ChildPath
 
@@ -213,19 +213,19 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.String
 
 This cmdlet returns a string that contains the resulting path.
 
-## Notes
+## NOTES
 
 The cmdlets that contain the Path noun (the Path cmdlets) manipulate path names and return the
 names in a concise format that all PowerShell providers can interpret. They are designed for
@@ -240,7 +240,7 @@ This cmdlet is designed to work with the data exposed by any provider.
 To list the providers available in your session, type `Get-PSProvider`.
 For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [Convert-Path](Convert-Path.md)
 

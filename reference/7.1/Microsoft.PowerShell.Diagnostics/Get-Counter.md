@@ -10,10 +10,10 @@ title: Get-Counter
 
 # Get-Counter
 
-## Synopsis
+## SYNOPSIS
 Gets performance counter data from local and remote computers.
 
-## Syntax
+## SYNTAX
 
 ### GetCounterSet (Default)
 
@@ -28,7 +28,7 @@ Get-Counter [[-Counter] <String[]>] [-SampleInterval <Int32>] [-MaxSamples <Int6
 Get-Counter [-ListSet] <String[]> [-ComputerName <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -51,7 +51,7 @@ This cmdlet was reintroduced in PowerShell 7.
 > performance objects, counters, and instances. The names will be different on a system that uses
 > another language. Use the `Get-Counter -ListSet` command to see the localized names.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the counter set list
 
@@ -453,7 +453,7 @@ objects down the pipeline. `Sort-Object` uses the **Property** parameter to sort
 the columns for the output. The **AutoSize** parameter adjusts the column widths to minimize
 truncation.
 
-## Parameters
+## PARAMETERS
 
 ### -ComputerName
 
@@ -611,13 +611,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String[]
 
 `Get-Counter` accepts pipeline input for counter paths and counter set names.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.GetCounter.CounterSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample
 
@@ -630,7 +630,7 @@ that are output are as follows:
 
 **CounterSamples** property: **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample**
 
-## Notes
+## NOTES
 
 If no parameters are specified, `Get-Counter` gets one sample for each specified performance
 counter. Use the **MaxSamples** and **Continuous** parameters to get more samples.
@@ -644,7 +644,7 @@ command. To set different values for different counters, enter separate `Get-Cou
 In PowerShell 7, when using the **ListSet** parameter, `Get-Counter` can't retrieve the
 **Description** property of the counter set. The **Description** is set to `$null`.
 
-## Related links
+## RELATED LINKS
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 

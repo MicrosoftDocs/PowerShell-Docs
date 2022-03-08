@@ -9,10 +9,10 @@ title: Move-ItemProperty
 ---
 # Move-ItemProperty
 
-## Synopsis
+## SYNOPSIS
 Moves a property from one location to another.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -30,14 +30,14 @@ Move-ItemProperty -LiteralPath <String[]> [-Name] <String[]> [-Destination] <Str
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Move-ItemProperty` cmdlet moves a property of an item from one item to another item.
 For instance, it can move a registry entry from one registry key to another registry key.
 When you move an item property, it is added to the new location and deleted from its original
 location.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Move a registry value and its data to another key
 
@@ -48,7 +48,7 @@ subkey of the `HKLM\Software\MyCompany` registry key.
 Move-ItemProperty "HKLM:\Software\MyCompany\MyApp" -Name "Version" -Destination "HKLM:\Software\MyCompany\NewApp"
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -274,25 +274,25 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Management.Automation.PSCustomObject
 
 When you use the **PassThru** parameter, this cmdlet generates a **PSCustomObject** representing the
 moved item property. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [Clear-ItemProperty](Clear-ItemProperty.md)
 

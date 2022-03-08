@@ -9,10 +9,10 @@ title: Select-Object
 ---
 # Select-Object
 
-## Synopsis
+## SYNOPSIS
 Selects objects or object properties.
 
-## Syntax
+## SYNTAX
 
 ### DefaultParameter (Default)
 
@@ -41,7 +41,7 @@ Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>] [<C
 Select-Object [-InputObject <PSObject>] [-Unique] [-SkipIndex <Int32[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Select-Object` cmdlet selects specified properties of an object or set of objects. It can also
 select unique objects, a specified number of objects, or objects in a specified position in an
@@ -60,7 +60,7 @@ objects is generated, even when the command that generates the objects appears b
 `Select-Object` command in the pipeline. To turn off this optimizing behavior, use the **Wait**
 parameter.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Select objects by property
 
@@ -330,7 +330,7 @@ Diagnostics.Format.ps1xml   4.955078125     223
 DotNetTypes.format.ps1xml   134.9833984375  223
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -ExcludeProperty
 
@@ -589,17 +589,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to `Select-Object`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSObject
 
-## Notes
+## NOTES
 
 - You can also refer to the `Select-Object` cmdlet by its built-in alias, `select`. For more
   information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -610,7 +610,7 @@ You can pipe any object to `Select-Object`.
   information, see _Write Single Records to the Pipeline_ in
   [Strongly Encouraged Development Guidelines](/powershell/scripting/developer/windows-powershell).
 
-## Related links
+## RELATED LINKS
 
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 

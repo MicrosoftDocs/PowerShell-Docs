@@ -9,10 +9,10 @@ title: Add-Member
 ---
 # Add-Member
 
-## Synopsis
+## SYNOPSIS
 Adds custom properties and methods to an instance of a PowerShell object.
 
-## Syntax
+## SYNTAX
 
 ### TypeNameSet (Default)
 
@@ -41,7 +41,7 @@ Add-Member -InputObject <PSObject> [-MemberType] <PSMemberTypes> [-Name] <String
  [[-SecondValue] <Object>] [-TypeName <String>] [-Force] [-PassThru] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Add-Member` cmdlet lets you add members (properties and methods) to an instance of a PowerShell
 object. For instance, you can add a NoteProperty member that contains a description of the object or
@@ -72,7 +72,7 @@ Also, beginning in Windows PowerShell 3.0, the **PassThru** parameter, which gen
 object, is needed less frequently. `Add-Member` now adds the new members directly to the input
 object of more types. For more information, see the **PassThru** parameter description.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Add a note property to a PSObject
 
@@ -221,7 +221,7 @@ PSVersion   NoteProperty System.String PSVersion=4.0
 System      NoteProperty System.String System=Server Core
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -472,20 +472,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object type to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Object
 
 When you use the **PassThru** parameter, this cmdlet returns the newly-extended object.
 Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 You can add members only to **PSObject** objects. To determine whether an object is a **PSObject**
 object, use the `-is` operator.
@@ -503,7 +503,7 @@ and methods.
 The `$this` variable refers to the instance of the object to which the properties and methods are
 being added. For more information about the `$this` variable, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
-## Related links
+## RELATED LINKS
 
 [Export-Clixml](Export-Clixml.md)
 

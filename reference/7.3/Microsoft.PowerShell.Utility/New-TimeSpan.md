@@ -9,10 +9,10 @@ title: New-TimeSpan
 ---
 # New-TimeSpan
 
-## Synopsis
+## SYNOPSIS
 Creates a TimeSpan object.
 
-## Syntax
+## SYNTAX
 
 ### Date (Default)
 
@@ -26,7 +26,7 @@ New-TimeSpan [[-Start] <DateTime>] [[-End] <DateTime>] [<CommonParameters>]
 New-TimeSpan [-Days <Int32>] [-Hours <Int32>] [-Minutes <Int32>] [-Seconds <Int32>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-TimeSpan` cmdlet creates a **TimeSpan** object that represents a time interval.
 You can use a **TimeSpan** object to add or subtract time from **DateTime** objects.
@@ -34,7 +34,7 @@ You can use a **TimeSpan** object to add or subtract time from **DateTime** obje
 Without parameters, a `New-TimeSpan` command returns a **TimeSpan** object that represents a time
 interval of zero.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a TimeSpan object for a specified duration
 
@@ -110,7 +110,7 @@ TotalSeconds      : 27813562.3127728
 TotalMilliseconds : 27813562312.7728
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Days
 
@@ -225,21 +225,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.DateTime
 
 You can pipe a **DateTime** object that represents that start time to `New-TimeSpan`.
 
-## Outputs
+## OUTPUTS
 
 ### System.TimeSpan
 
 `New-TimeSpan` returns an object that represents the time span.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-Date](Get-Date.md)
 

@@ -10,16 +10,16 @@ title: Disable-ComputerRestore
 
 # Disable-ComputerRestore
 
-## Synopsis
+## SYNOPSIS
 Disables the System Restore feature on the specified file system drive.
 
-## Syntax
+## SYNTAX
 
 ```Syntax
 Disable-ComputerRestore [-Drive] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Disable-ComputerRestore` cmdlet turns off the System Restore feature on one or more file system
 drives. As a result, attempts to restore the computer do not affect the specified drive.
@@ -33,7 +33,7 @@ Restore for each drive, use `Rstrui.exe`.
 System restore points and the ComputerRestore cmdlets are supported only on client operating
 systems, such as Windows 7, Windows Vista, and Windows XP.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Disable System Restore on the specified drive
 
@@ -52,7 +52,7 @@ Disable-ComputerRestore "C:\", "D:\"
 This command disables System Restore on the C: and D: drives. The command uses the **Drive**
 parameter, but it omits the Drive parameter name.
 
-## Parameters
+## PARAMETERS
 
 ### -Drive
 
@@ -117,19 +117,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - To run this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with
   the Run as administrator option.
@@ -140,7 +140,7 @@ This cmdlet does not generate any output.
 
   This cmdlet uses the Windows Management Instrumentation (WMI) **SystemRestore** class.
 
-## Related links
+## RELATED LINKS
 
 [Checkpoint-Computer](Checkpoint-Computer.md)
 

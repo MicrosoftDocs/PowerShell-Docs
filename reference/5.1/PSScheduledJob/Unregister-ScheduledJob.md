@@ -10,11 +10,11 @@ title: Unregister-ScheduledJob
 
 # Unregister-ScheduledJob
 
-## Synopsis
+## SYNOPSIS
 
 Deletes scheduled jobs on the local computer.
 
-## Syntax
+## SYNTAX
 
 ### Definition (Default)
 
@@ -35,7 +35,7 @@ Unregister-ScheduledJob [-Id] <Int32[]> [-Force] [-WhatIf] [-Confirm] [<CommonPa
 Unregister-ScheduledJob [-Name] <String[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Unregister-ScheduledJob` cmdlet deletes scheduled jobs from the local computer.
 
@@ -60,7 +60,7 @@ the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [abo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Delete a scheduled job
 
@@ -99,7 +99,7 @@ This command deletes scheduled jobs with names that begin with Test on the Serve
 The command uses the `Invoke-Command` cmdlet to run the `Unregister-ScheduledJob` command on the
 Server02 computer.
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -208,21 +208,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 You can pipe scheduled jobs to Unregister-ScheduledJob
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

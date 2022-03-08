@@ -10,16 +10,16 @@ title: ConvertFrom-Json
 
 # ConvertFrom-Json
 
-## Synopsis
+## SYNOPSIS
 Converts a JSON-formatted string to a custom object or a hash table.
 
-## Syntax
+## SYNTAX
 
 ```
 ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-Depth <Int32>] [-NoEnumerate] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `ConvertFrom-Json` cmdlet converts a JavaScript Object Notation (JSON) formatted string to a
 custom **PSCustomObject** object that has a property for each field in the JSON string. JSON is
@@ -37,7 +37,7 @@ This cmdlet was introduced in PowerShell 3.0.
 > be written in the file without corrupting the data or throwing an error as it did in PowerShell
 > 5.1.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Convert a DateTime object to a JSON object
 
@@ -130,7 +130,7 @@ The JSON string contains an array with a single element. Without the switch, con
 a PSObject and then converting it back with the `ConvertTo-Json` command results in a single
 integer.
 
-## Parameters
+## PARAMETERS
 
 ### -AsHashtable
 
@@ -222,19 +222,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a JSON string to `ConvertFrom-Json`.
 
-## Outputs
+## OUTPUTS
 
 ### PSCustomObject
 
 ### System.Collections.Hashtable
 
-## Notes
+## NOTES
 
 This cmdlet is implemented using [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
 
@@ -248,7 +248,7 @@ follows:
   offset is properly converted to the caller's configured time zone. The default output formatting
   does not indicate the original time zone offset.
 
-## Related links
+## RELATED LINKS
 
 [An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](/previous-versions/dotnet/articles/bb299886(v=msdn.10))
 

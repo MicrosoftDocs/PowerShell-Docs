@@ -9,16 +9,16 @@ title: Stop-Trace
 ---
 # Stop-Trace
 
-## Synopsis
+## SYNOPSIS
 Stop an Event Trace logging session.
 
-## Syntax
+## SYNTAX
 
 ```
 Stop-Trace [-SessionName] <Object> [-ETS] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -31,7 +31,7 @@ This cmdlet is used by the following cmdlets:
 
 You must run this cmdlet from an elevated PowerShell session.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Stop a WSMan Trace logging session
 
@@ -39,7 +39,7 @@ You must run this cmdlet from an elevated PowerShell session.
 Stop-Trace -SessionName 'wsmlog'
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -ETS
 Send commands to Event Trace Sessions directly without saving or scheduling.
@@ -77,17 +77,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
-## Outputs
+## OUTPUTS
 
 ### None
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Event Tracing](/windows/desktop/ETW/event-tracing-portal)
 

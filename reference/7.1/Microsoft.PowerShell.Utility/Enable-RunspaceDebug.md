@@ -9,10 +9,10 @@ title: Enable-RunspaceDebug
 ---
 # Enable-RunspaceDebug
 
-## Synopsis
+## SYNOPSIS
 Enables debugging on runspaces where any breakpoint is preserved until a debugger is attached.
 
-## Syntax
+## SYNTAX
 
 ### RunspaceNameParameterSet (Default)
 
@@ -44,12 +44,12 @@ Enable-RunspaceDebug [-RunspaceInstanceId] <Guid[]> [<CommonParameters>]
 Enable-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Enable-RunspaceDebug` cmdlet enables debugging on runspaces where any breakpoint is preserved
 until a debugger is attached.
 
-## Examples
+## EXAMPLES
 
 ### 1: Enable the default runspace debugger
 
@@ -64,7 +64,7 @@ Get-RunspaceDebug
   1 Runspace1            True       False
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AppDomainName
 
@@ -187,13 +187,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Disable-RunspaceDebug](Disable-RunspaceDebug.md)
 

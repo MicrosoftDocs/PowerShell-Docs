@@ -10,10 +10,10 @@ title: New-ScriptFileInfo
 
 # New-ScriptFileInfo
 
-## Synopsis
+## SYNOPSIS
 Creates a script file with metadata.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -26,7 +26,7 @@ New-ScriptFileInfo [[-Path] <String>] [-Version <String>] [-Author <String>] -De
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-ScriptFileInfo` cmdlet creates a PowerShell script file, including metadata about the
 script.
@@ -34,7 +34,7 @@ script.
 The examples use splatting to pass parameters to the `New-ScriptFileInfo` cmdlet. For more
 information, see [about_Splatting](../Microsoft.Powershell.Core/About/about_splatting.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a script file and specify its version, author, and description
 
@@ -215,7 +215,7 @@ Feature 5
 Param()
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Author
 
@@ -563,13 +563,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [about_Splatting](../Microsoft.Powershell.Core/About/about_splatting.md)
 

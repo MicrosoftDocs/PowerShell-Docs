@@ -9,10 +9,10 @@ title: Debug-Runspace
 ---
 # Debug-Runspace
 
-## Synopsis
+## SYNOPSIS
 Starts an interactive debugging session with a runspace.
 
-## Syntax
+## SYNTAX
 
 ### RunspaceParameterSet (Default)
 
@@ -38,7 +38,7 @@ Debug-Runspace [-Id] <Int32> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters
 Debug-Runspace [-InstanceId] <Guid> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Debug-Runspace` cmdlet starts an interactive debugging session with a local or remote active
 runspace. You can find a runspace that you want to debug by first running `Get-Process` to find
@@ -55,7 +55,7 @@ running the process, or you are running the script that you want to debug. Also,
 the host process that is running the current PowerShell session. You can only enter a host process
 that is running a different PowerShell session.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Debug a remote runspace
 
@@ -102,7 +102,7 @@ In the last command, you start debugging an opened runspace that is running a sc
 `TestWFVar1.ps1`, by running `Debug-Runspace`, and identifying the runspace by its ID, 2, by adding
 the **Id** parameter. Because there's a breakpoint in the script, the debugger opens.
 
-## Parameters
+## PARAMETERS
 
 ### -BreakAll
 
@@ -227,15 +227,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.Runspaces.Runspace
 
 You can pipe the results of a `Get-Runspace` command to **Debug-Runspace.**
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
 `Debug-Runspace` works on runspaces that are in the Opened state. If a runspace state changes from
 Opened to another state, that runspace is automatically removed from the running list. A runspace is
@@ -246,7 +246,7 @@ added to the running list only if it meets the following criteria.
 - If it is coming from a PowerShell workflow, and its workflow job ID is the same as the current
   active debugger workflow job ID.
 
-## Related links
+## RELATED LINKS
 
 [about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
 

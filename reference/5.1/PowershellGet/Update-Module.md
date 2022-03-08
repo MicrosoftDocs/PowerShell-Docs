@@ -9,11 +9,11 @@ title: Update-Module
 ---
 # Update-Module
 
-## Synopsis
+## SYNOPSIS
 Downloads and installs the newest version of specified modules from an online gallery to the local
 computer.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -23,7 +23,7 @@ Update-Module [[-Name] <String[]>] [-RequiredVersion <String>] [-MaximumVersion 
  [-Force] [-AllowPrerelease] [-AcceptLicense] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Update-Module` cmdlet installs a module's newest version from an online gallery. You're
 prompted to confirm the update before it's installed. Updates are installed only for modules that
@@ -39,7 +39,7 @@ found in `$env:PSModulePath`, an error is displayed.
 
 To display the installed modules, use `Get-InstalledModule`.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Update all modules
 
@@ -101,7 +101,7 @@ Update-Module -Name SpeculationControl -Force
 `Update-Module` uses the **Name** parameter to specify the module, **SpeculationControl**. The
 **Force** parameter updates the module without requesting user confirmation.
 
-## Parameters
+## PARAMETERS
 
 ### -AcceptLicense
 
@@ -348,7 +348,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String[]
 
@@ -358,11 +358,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Uri
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
 For PowerShell 5.1 or below, the default scope in an elevated session is **AllUsers**, and in a
 non-elevated session, **CurrentUser**. Module updates for **AllUsers**,
@@ -394,7 +394,7 @@ If `Update-Module` attempts to update binaries that are in use, `Update-Module` 
 that identifies the problem processes. The user is informed to retry `Update-Module` after the
 processes are stopped.
 
-## Related links
+## RELATED LINKS
 
 [Find-Module](Find-Module.md)
 

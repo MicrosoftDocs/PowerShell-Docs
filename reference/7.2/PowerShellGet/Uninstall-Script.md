@@ -10,10 +10,10 @@ title: Uninstall-Script
 
 # Uninstall-Script
 
-## Synopsis
+## SYNOPSIS
 Uninstalls a script.
 
-## Syntax
+## SYNTAX
 
 ### NameParameterSet (Default)
 
@@ -28,11 +28,11 @@ Uninstall-Script [-Name] <String[]> [-MinimumVersion <String>] [-RequiredVersion
 Uninstall-Script [-InputObject] <PSObject[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Uninstall-Script` cmdlet uninstalls a specified script from the local computer.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Uninstall a script
 
@@ -56,7 +56,7 @@ Get-InstalledScript -Name UpdateManagement-Template | Uninstall-Script
 `Get-InstalledScript` uses the **Name** parameter to specify the script. The object is sent down the
 pipeline to `Uninstall-Script` and the script is uninstalled.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowPrerelease
 
@@ -211,7 +211,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String[]
 
@@ -219,13 +219,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Find-Script](Find-Script.md)
 

@@ -9,21 +9,21 @@ title: Out-Null
 ---
 # Out-Null
 
-## Synopsis
+## SYNOPSIS
 Hides the output instead of sending it down the pipeline or displaying it.
 
-## Syntax
+## SYNTAX
 
 ```
 Out-Null [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Out-Null` cmdlet sends its output to NULL, in effect, removing it from the pipeline and
 preventing the output to be displayed at the screen.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Delete output
 
@@ -34,7 +34,7 @@ Get-ChildItem | Out-Null
 This command gets items in the current location/directory, but its output is not passed through the
 pipeline nor displayed at the command line. This is useful for hiding output that you do not need.
 
-## Parameters
+## PARAMETERS
 
 ### -InputObject
 
@@ -59,19 +59,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - The cmdlets that contain the **Out** verb (the **Out** cmdlets) do not have parameters for names
   or file paths. To send data to an **Out** cmdlet, use a pipeline operator (`|`) to send the output
@@ -80,7 +80,7 @@ This cmdlet does not generate any output.
 - `Out-Null` does not return any output objects. If you pipe the output of `Out-Null` to the
   Get-Member cmdlet, `Get-Member` reports that no objects have been specified.
 
-## Related links
+## RELATED LINKS
 
 [Out-Default](Out-Default.md)
 

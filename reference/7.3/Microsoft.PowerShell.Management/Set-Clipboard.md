@@ -9,23 +9,23 @@ title: Set-Clipboard
 ---
 # Set-Clipboard
 
-## Synopsis
+## SYNOPSIS
 Sets the contents of the clipboard.
 
-## Syntax
+## SYNTAX
 
 ```
 Set-Clipboard -Value <String[]> [-Append] [-WhatIf] [-Confirm] [-PassThru] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-Clipboard` cmdlet sets the contents of the clipboard.
 
 > [!NOTE]
 > On Linux, this cmdlet requires the `xclip` utility to be in the path.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Copy text to the clipboard
 
@@ -42,7 +42,7 @@ ssh key so that it can be pasted into another application, like GitHub.
 Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Append
 
@@ -131,18 +131,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String[]
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
 In rare cases when using `Set-Clipboard` with a high number of values in rapid succession, like in a
 loop, you might sporadically get a blank value from the clipboard. This can be fixed by using
 `Start-Sleep -Milliseconds 1` in the loop.
 
-## Related links
+## RELATED LINKS
 
 [Get-Clipboard](Get-Clipboard.md)

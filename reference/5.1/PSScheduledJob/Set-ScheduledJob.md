@@ -10,10 +10,10 @@ title: Set-ScheduledJob
 
 # Set-ScheduledJob
 
-## Synopsis
+## SYNOPSIS
 Changes scheduled jobs.
 
-## Syntax
+## SYNTAX
 
 ### ScriptBlock (Default)
 
@@ -42,7 +42,7 @@ Set-ScheduledJob [-InputObject] <ScheduledJobDefinition> [-ClearExecutionHistory
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-ScheduledJob` cmdlet changes the properties of scheduled jobs, such as the commands that
 the jobs run or the credentials required to run the job. You can also use it to clear the execution
@@ -71,7 +71,7 @@ the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [abo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Change the script that a job runs
 
@@ -138,7 +138,7 @@ The remote command begins with a `Get-ScheduledJob` command that gets all schedu
 computer. The scheduled jobs are piped to the `Set-ScheduledJob` cmdlet, which changes the
 initialization script to `SetForRun.ps1`.
 
-## Parameters
+## PARAMETERS
 
 ### -ArgumentList
 
@@ -520,22 +520,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 You can pipe scheduled jobs to `Set-ScheduledJob`.
 
-## Outputs
+## OUTPUTS
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 If you use the **Passthru** parameter, `Set-ScheduledJob` returns the scheduled job that was
 changed. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

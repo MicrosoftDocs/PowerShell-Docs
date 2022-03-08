@@ -10,10 +10,10 @@ title: New-CimInstance
 
 # New-CimInstance
 
-## Synopsis
+## SYNOPSIS
 Creates a CIM instance.
 
-## Syntax
+## SYNTAX
 
 ### ClassNameComputerSet (Default)
 
@@ -61,7 +61,7 @@ New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTi
  [-ComputerName <String[]>] [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -69,7 +69,7 @@ The `New-CimInstance` cmdlet creates an instance of a CIM class based on the cla
 either the local computer or a remote computer. By default, the `New-CimInstance` cmdlet creates an
 instance on the local computer.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create an instance of a CIM class
 
@@ -138,7 +138,7 @@ that **Prop1** and **Prop2** actually exist and that the keys are marked correct
 
 You cannot use the **ComputerName** or **CimSession** parameter with the **ClientOnly** parameter.
 
-## Parameters
+## PARAMETERS
 
 ### -CimClass
 
@@ -389,21 +389,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet accepts no input objects.
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
 This cmdlet returns an object that contains the CIM instance information.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-CimClass](get-cimclass.md)
 

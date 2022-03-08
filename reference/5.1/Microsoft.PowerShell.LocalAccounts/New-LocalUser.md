@@ -10,11 +10,11 @@ title: New-LocalUser
 
 # New-LocalUser
 
-## Synopsis
+## SYNOPSIS
 
 Creates a local user account.
 
-## Syntax
+## SYNTAX
 
 ### Password (Default)
 
@@ -32,7 +32,7 @@ New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description 
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-LocalUser` cmdlet creates a local user account. This cmdlet creates a local user account
 or a local user account that is connected to a Microsoft account.
@@ -41,7 +41,7 @@ or a local user account that is connected to a Microsoft account.
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a user account
 
@@ -71,7 +71,7 @@ password as a secure string in the `$Password` variable.
 The second command creates a local user account by using the password stored in `$Password`. The
 command specifies a user name, full name, and description for the user account.
 
-## Parameters
+## PARAMETERS
 
 ### -AccountExpires
 
@@ -286,20 +286,20 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`,
 `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](/reference/6/Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.String, System.DateTime, System.Boolean, System.Security.SecureString
 
 You can pipe a string, a **DateTime** object, a boolean value, or a secure string to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser
 
 This cmdlet returns a **LocalUser** object.
 This object provides information about the user account.
 
-## Notes
+## NOTES
 
 - A user name cannot be identical to any other user name or group name on the computer. A user name
   cannot consist only of periods `.` or spaces. A user name can contain up to 20 uppercase
@@ -321,7 +321,7 @@ This object provides information about the user account.
 > **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
 > Windows operating system. For earlier versions, the property is blank.
 
-## Related links
+## RELATED LINKS
 
 [Disable-LocalUser](Disable-LocalUser.md)
 

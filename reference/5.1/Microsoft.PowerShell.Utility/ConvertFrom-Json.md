@@ -10,16 +10,16 @@ title: ConvertFrom-Json
 
 # ConvertFrom-Json
 
-## Synopsis
+## SYNOPSIS
 Converts a JSON-formatted string to a custom object.
 
-## Syntax
+## SYNTAX
 
 ```
 ConvertFrom-Json [-InputObject] <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `ConvertFrom-Json` cmdlet converts a JavaScript Object Notation (JSON) formatted string to a
 custom **PSCustomObject** object that has a property for each field in the JSON string. JSON is
@@ -34,7 +34,7 @@ This cmdlet was introduced in PowerShell 3.0.
 > [!NOTE]
 > This cmdlet doesn't support JSON with comments.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Convert a DateTime object to a JSON object
 
@@ -96,7 +96,7 @@ The command uses Get-Content cmdlet to get the strings in a JSON file. Then it u
 operator to send the delimited string to the `ConvertFrom-Json` cmdlet, which converts it to a
 custom object.
 
-## Parameters
+## PARAMETERS
 
 ### -InputObject
 
@@ -127,22 +127,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a JSON string to `ConvertFrom-Json`.
 
-## Outputs
+## OUTPUTS
 
 ### PSCustomObject
 
-## Notes
+## NOTES
 
 The `ConvertFrom-Json` cmdlet is implemented using the
 [JavaScriptSerializer class](/dotnet/api/system.web.script.serialization.javascriptserializer).
 
-## Related links
+## RELATED LINKS
 
 [An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](/previous-versions/dotnet/articles/bb299886(v=msdn.10))
 

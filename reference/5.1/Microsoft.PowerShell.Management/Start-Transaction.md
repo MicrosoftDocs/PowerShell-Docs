@@ -10,18 +10,18 @@ title: Start-Transaction
 
 # Start-Transaction
 
-## Synopsis
+## SYNOPSIS
 
 Starts a transaction.
 
-## Syntax
+## SYNTAX
 
 ```
 Start-Transaction [-Timeout <Int32>] [-Independent] [-RollbackPreference <RollbackSeverity>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Start-Transaction` cmdlet starts a transaction, which is a series of commands that are managed
 as a unit. A transaction can be completed, or committed. Alternatively, it can be completely undone,
@@ -47,7 +47,7 @@ or roll back the new transaction before you make any changes to the original tra
 `Start-Transaction` cmdlet is one of a set of cmdlets that support the transactions feature in
 Windows PowerShell. For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Start and roll back a transaction
 
@@ -318,7 +318,7 @@ rolled back automatically.
 When the time-out expires, you are not notified, but the **Status** property of the transaction
 object is set to RolledBack and commands that use the **UseTransaction** parameter fail.
 
-## Parameters
+## PARAMETERS
 
 ### -Independent
 
@@ -436,21 +436,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Complete-Transaction](Complete-Transaction.md)
 

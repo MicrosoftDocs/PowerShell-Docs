@@ -9,17 +9,17 @@ title: Export-ModuleMember
 ---
 # Export-ModuleMember
 
-## Synopsis
+## SYNOPSIS
 Specifies the module members that are exported.
 
-## Syntax
+## SYNTAX
 
 ```
 Export-ModuleMember [[-Function] <String[]>] [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Export-ModuleMember` cmdlet specifies the module members that are exported from a script module
 (`.psm1`) file, or from a dynamic module created by using the `New-Module` cmdlet. Module members
@@ -35,7 +35,7 @@ module imports from other modules.
 An `Export-ModuleMember` command is optional, but it is a best practice. Even if the command
 confirms the default values, it demonstrates the intention of the module author.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Export functions and aliases in a script module
 
@@ -124,7 +124,7 @@ This command shows how to use `Export-ModuleMember` in a dynamic module that is 
 In this example, `Export-ModuleMember` is used to export both the `Hi` alias and the `SayHello`
 function in the dynamic module.
 
-## Parameters
+## PARAMETERS
 
 ### -Alias
 
@@ -203,24 +203,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe function name strings to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - To exclude a member from the list of exported members, add an `Export-ModuleMember` command that
   lists all other members but omits the member that you want to exclude.
 
-## Related links
+## RELATED LINKS
 
 [Get-Module](Get-Module.md)
 

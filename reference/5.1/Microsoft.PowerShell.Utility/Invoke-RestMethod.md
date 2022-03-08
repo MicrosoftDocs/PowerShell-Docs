@@ -10,10 +10,10 @@ title: Invoke-RestMethod
 
 # Invoke-RestMethod
 
-## Synopsis
+## SYNOPSIS
 Sends an HTTP or HTTPS request to a RESTful web service.
 
-## Syntax
+## SYNTAX
 
 ```
 Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
@@ -25,7 +25,7 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
  [-PassThru] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Invoke-RestMethod` cmdlet sends HTTP and HTTPS requests to Representational State Transfer
 (REST) web services that return richly structured data.
@@ -45,7 +45,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 > By default, script code in the web page may be run when the page is being parsed to populate the
 > `ParsedHtml` property. Use the **UseBasicParsing** switch to suppress this.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the PowerShell RSS feed
 
@@ -173,7 +173,7 @@ $x
 30
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Body
 
@@ -687,13 +687,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 
 You can pipe the body of a web request to `Invoke-RestMethod`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Xml.XmlDocument, Microsoft.PowerShell.Commands.HtmlWebResponseObject, System.String
 
@@ -704,9 +704,9 @@ The output of the cmdlet depends upon the format of the content that is retrieve
 If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that represents the
 strings.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [ConvertTo-Json](ConvertTo-Json.md)
 

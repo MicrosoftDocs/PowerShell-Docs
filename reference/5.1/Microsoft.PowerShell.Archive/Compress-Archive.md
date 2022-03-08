@@ -10,10 +10,10 @@ title: Compress-Archive
 
 # Compress-Archive
 
-## Synopsis
+## SYNOPSIS
 Creates a compressed archive, or zipped file, from specified files and directories.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -57,7 +57,7 @@ Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-Compressi
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Compress-Archive` cmdlet creates a compressed, or zipped, archive file from one or more
 specified files or directories. An archive packages multiple files, with optional compression, into
@@ -71,7 +71,7 @@ The maximum file size is 2 GB because there's a limitation of the underlying API
 Some examples use splatting to reduce the line length of the code samples. For more information, see
 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Compress files to create an archive file
 
@@ -231,7 +231,7 @@ The command updates `Draft.Zip` with newer versions of existing files in the `C:
 directory and its subdirectories. And, new files that were added to `C:\Reference` or its
 subdirectories are included in the updated `Draft.Zip` archive.
 
-## Parameters
+## PARAMETERS
 
 ### -CompressionLevel
 
@@ -405,17 +405,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to one or more files.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
-## Notes
+## NOTES
 
 Using recursion and sending objects down the pipeline can duplicate files in your archive. For
 example, if you use `Get-ChildItem` with the **Recurse** parameter, each **FileInfo** and
@@ -428,7 +428,7 @@ scheme. When extracting files with filenames not stored using UTF-8 encoding, `E
 the raw value found in the archive. This can result in a filename that is different than the source
 filename stored in the archive.
 
-## Related links
+## RELATED LINKS
 
 [Expand-Archive](Expand-Archive.md)
 

@@ -9,10 +9,10 @@ title: Stop-Process
 ---
 # Stop-Process
 
-## Synopsis
+## SYNOPSIS
 Stops one or more running processes.
 
-## Syntax
+## SYNTAX
 
 ### Id (Default)
 
@@ -32,7 +32,7 @@ Stop-Process -Name <String[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<Common
 Stop-Process [-InputObject] <Process[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Stop-Process` cmdlet stops one or more running processes. You can specify a process by process
 name or process ID (PID), or pass a process object to `Stop-Process`. `Stop-Process` works only on
@@ -42,7 +42,7 @@ On Windows Vista and later versions of the Windows operating system, to stop a p
 owned by the current user, you must start PowerShell by using the Run as administrator option. Also,
 you are not prompted for confirmation unless you specify the **Confirm** parameter.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Stop all instances of a process
 
@@ -145,7 +145,7 @@ PowerShell prompts you for confirmation.
 The second command specifies **Force** to suppress the prompt. As a result, the process is stopped
 without confirmation.
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -272,20 +272,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Diagnostics.Process
 
 You can pipe a process object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None, System.Diagnostics.Process
 
 This cmdlet returns a **System.Diagnostics.Process** object that represents the stopped process, if
 you specify the **PassThru** parameter. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - You can also refer to `Stop-Process` by its built-in aliases, `kill` and `spps` For more
   information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -297,7 +297,7 @@ you specify the **PassThru** parameter. Otherwise, this cmdlet does not generate
 - When stopping processes, realize that stopping a process can stop process and services that depend
   on the process. In an extreme case, stopping a process can stop Windows.
 
-## Related links
+## RELATED LINKS
 
 [Debug-Process](Debug-Process.md)
 

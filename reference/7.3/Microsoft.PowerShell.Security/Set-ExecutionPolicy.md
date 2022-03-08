@@ -10,10 +10,10 @@ title: Set-ExecutionPolicy
 
 # Set-ExecutionPolicy
 
-## Synopsis
+## SYNOPSIS
 Sets the PowerShell execution policies for Windows computers.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -22,7 +22,7 @@ Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPol
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-ExecutionPolicy` cmdlet changes PowerShell execution policies for Windows computers. For
 more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
@@ -43,7 +43,7 @@ To display the execution policies for each scope in the order of precedence, use
 `Get-ExecutionPolicy -List`. To see the effective execution policy for your PowerShell session use
 `Get-ExecutionPolicy` with no parameters.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Set an execution policy
 
@@ -248,7 +248,7 @@ effective execution policy, **RemoteSigned**.
 The script, **Start-ActivityTracker.ps1** is executed from the current directory. The script begins
 to run because it was unblocked by the `Unblock-File` cmdlet.
 
-## Parameters
+## PARAMETERS
 
 ### -ExecutionPolicy
 
@@ -377,20 +377,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.ExecutionPolicy, System.String
 
 You can pipe an execution policy object or a string that contains the name of an execution policy to
 `Set-ExecutionPolicy`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 `Set-ExecutionPolicy` doesn't return any output.
 
-## Notes
+## NOTES
 
 `Set-ExecutionPolicy` doesn't change the **MachinePolicy** and **UserPolicy** scopes because they
 are set by Group Policies.
@@ -402,7 +402,7 @@ If the Group Policy **Turn on Script Execution** is enabled for the computer or 
 preference is saved, but it is not effective. PowerShell displays a message that explains the
 conflict.
 
-## Related links
+## RELATED LINKS
 
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 

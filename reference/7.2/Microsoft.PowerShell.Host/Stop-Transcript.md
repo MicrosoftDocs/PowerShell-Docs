@@ -9,21 +9,21 @@ title: Stop-Transcript
 ---
 # Stop-Transcript
 
-## Synopsis
+## SYNOPSIS
 Stops a transcript.
 
-## Syntax
+## SYNTAX
 
 ```
 Stop-Transcript [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Stop-Transcript` cmdlet stops a transcript that was started by the `Start-Transcript` cmdlet.
 Alternatively, you can end a session to stop a transcript.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Stop all transcripts
 
@@ -33,31 +33,31 @@ Stop-Transcript
 
 This command stops all transcripts.
 
-## Parameters
+## PARAMETERS
 
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.String
 
 This cmdlet returns a string that contains a status message and the path to the output file.
 
-## Notes
+## NOTES
 
 * If a transcript has not been started, the command fails.
 
 *
 
-## Related links
+## RELATED LINKS
 
 [Start-Transcript](Start-Transcript.md)
 

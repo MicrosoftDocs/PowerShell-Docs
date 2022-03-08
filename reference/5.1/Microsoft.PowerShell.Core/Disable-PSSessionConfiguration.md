@@ -9,17 +9,17 @@ title: Disable-PSSessionConfiguration
 ---
 # Disable-PSSessionConfiguration
 
-## Synopsis
+## SYNOPSIS
 Disables session configurations on the local computer.
 
-## Syntax
+## SYNTAX
 
 ```
 Disable-PSSessionConfiguration [[-Name] <String[]>] [-Force] [-NoServiceRestart] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Disable-PSSessionConfiguration` cmdlet disables session configurations on the local computer,
 which prevents all users from using the session configurations to create a user-managed sessions
@@ -39,7 +39,7 @@ connect to the computer.
 
 To disable all session configurations on the computer, use `Disable-PSRemoting`.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Disable the default configuration
 
@@ -111,7 +111,7 @@ For more information, see the about_Remote_Troubleshooting Help topic.
 > Disabling the configuration does not prevent you from changing the configuration using the
 > `Set-PSSessionConfiguration` cmdlet. It only prevents use of the configuration.
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -205,24 +205,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration, System.String
 
 You can pipe a session configuration object or a string that contains the name of a session
 configuration to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any objects.
 
-## Notes
+## NOTES
 
 To run this cmdlet you must start PowerShell by using the **Run as administrator** option.
 
-## Related links
+## RELATED LINKS
 
 [Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
 

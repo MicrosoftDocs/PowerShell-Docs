@@ -9,17 +9,17 @@ title: New-IseSnippet
 ---
 # New-IseSnippet
 
-## Synopsis
+## SYNOPSIS
 Creates a Windows PowerShell ISE code snippet.
 
-## Syntax
+## SYNTAX
 
 ```
 New-IseSnippet [-Title] <String> [-Description] <String> [-Text] <String> [-Author <String>]
  [-CaretOffset <Int32>] [-Force] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-ISESnippet` cmdlet creates a reusable text "snippet" for Windows PowerShell ISE. You can
 use snippets to add text to the Script pane or Command pane in Windows PowerShell ISE. This cmdlet
@@ -41,7 +41,7 @@ You cannot use user-created snippets in a session in which the execution policy 
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a Comment-Based help snippet
 
@@ -91,7 +91,7 @@ Copy-Item "$Home\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml"
 This command uses the `Copy-Item` cmdlet to copy the **Mandatory** snippet from the folder where
 `New-ISESnippet` places it to the Server\Share file share.
 
-## Parameters
+## PARAMETERS
 
 ### -Author
 
@@ -204,19 +204,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet does not take input from the pipeline.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 `New-IseSnippet` stores new user-created snippets in unsigned .ps1xml files. As such, Windows
 PowerShell cannot add them to a session in which the execution policy is **AllSigned** or
@@ -238,7 +238,7 @@ For more information about Windows PowerShell execution policies, see [about_Exe
 - You can create a snippet that has the same name as a built-in snippet. Both snippets appear in the
   snippet menu in Windows PowerShell ISE.
 
-## Related links
+## RELATED LINKS
 
 [Get-IseSnippet](Get-IseSnippet.md)
 

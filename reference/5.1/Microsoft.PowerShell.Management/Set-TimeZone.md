@@ -9,10 +9,10 @@ title: Set-TimeZone
 ---
 # Set-TimeZone
 
-## Synopsis
+## SYNOPSIS
 Sets the system time zone to a specified time zone.
 
-## Syntax
+## SYNTAX
 
 ### Name (Default)
 
@@ -32,11 +32,11 @@ Set-TimeZone -Id <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 Set-TimeZone [-InputObject] <TimeZoneInfo> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-TimeZone` cmdlet sets the system time zone to a specified time zone.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Set the time zone by Id
 
@@ -67,7 +67,7 @@ As we saw in the previous example, the **Id** and the **Name** of the Time Zone 
 The **Name** parameter must match the **StandardName** or **DaylightName** properties of the
 **TimeZoneInfo** object.
 
-## Parameters
+## PARAMETERS
 
 ### -Id
 
@@ -175,14 +175,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String, System.TimeZoneInfo, System.String
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-TimeZone](Get-TimeZone.md)

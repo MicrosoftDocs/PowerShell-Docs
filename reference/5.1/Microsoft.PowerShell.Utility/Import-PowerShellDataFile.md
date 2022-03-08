@@ -9,10 +9,10 @@ title: Import-PowerShellDataFile
 ---
 # Import-PowerShellDataFile
 
-## Synopsis
+## SYNOPSIS
 Imports values from a `.PSD1` file without invoking its contents.
 
-## Syntax
+## SYNTAX
 
 ### ByPath (Default)
 
@@ -26,7 +26,7 @@ Import-PowerShellDataFile [[-Path] <String[]>] [<CommonParameters>]
 Import-PowerShellDataFile [-LiteralPath <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Import-PowerShellDataFile` cmdlet safely imports key-value pairs from hashtables defined in a
 `.PSD1` file. The values could be imported using `Invoke-Expression` on the contents of the file.
@@ -34,7 +34,7 @@ However, `Invoke-Expression` runs any code contained in the file. This could pro
 results or execute unsafe code. `Import-PowerShellDataFile` imports the data without invoking the
 code.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Retrieve values from PSD1
 
@@ -66,7 +66,7 @@ NodeName                       DSC-01
 NodeName                       DSC-02
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -LiteralPath
 
@@ -108,15 +108,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
 ### System.Collections.Hashtable
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Invoke-Expression](Invoke-Expression.md)
 

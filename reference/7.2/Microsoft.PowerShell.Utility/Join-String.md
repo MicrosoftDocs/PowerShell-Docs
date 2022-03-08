@@ -10,10 +10,10 @@ title: Join-String
 
 # Join-String
 
-## Synopsis
+## SYNOPSIS
 Combines objects from the pipeline into a single string.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -46,7 +46,7 @@ Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-Outpu
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Join-String` cmdlet joins, or combines, text from pipeline objects into a single string.
 
@@ -62,7 +62,7 @@ or the result of the object that was converted to a string.
 
 This cmdlet was introduced in PowerShell 6.2.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Join directory names
 
@@ -171,7 +171,7 @@ class {
 }
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -DoubleQuote
 
@@ -329,17 +329,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
-## Outputs
+## OUTPUTS
 
 ### System.String
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [about_Automatic_Variables](../microsoft.powershell.core/about/about_automatic_variables.md)
 
