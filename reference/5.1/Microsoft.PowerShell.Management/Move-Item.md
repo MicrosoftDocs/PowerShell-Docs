@@ -9,10 +9,10 @@ title: Move-Item
 ---
 # Move-Item
 
-## Synopsis
+## SYNOPSIS
 Moves an item from one location to another.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -30,14 +30,14 @@ Move-Item -LiteralPath <String[]> [[-Destination] <String>] [-Force] [-Filter <S
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Move-Item` cmdlet moves an item, including its properties, contents, and child items, from one location to another location.
 The locations must be supported by the same provider.
 For example, it can move a file or subdirectory from one directory to another or move a registry subkey from one key to another.
 When you move an item, it is added to the new location and deleted from its original location.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Move a file to another directory and rename it
 
@@ -113,7 +113,7 @@ The **Destination** parameter does not require a literal path, because the Desti
 Move-Item -LiteralPath 'Logs[Sept`06]' -Destination 'Logs[2006]'
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -340,20 +340,20 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None or an object representing the moved item.
 
 When you use the *PassThru* parameter, this cmdlet generates an object representing the moved item.
 Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 This cmdlet will move files between drives that are supported by the same provider, but it will move directories only within the same drive.
 
@@ -363,7 +363,7 @@ This cmdlet is designed to work with the data exposed by any provider.
 To list the providers available in your session, type `Get-PSProvider`.
 For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [Clear-Item](Clear-Item.md)
 

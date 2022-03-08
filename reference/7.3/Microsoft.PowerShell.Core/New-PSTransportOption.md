@@ -10,10 +10,10 @@ title: New-PSTransportOption
 
 # New-PSTransportOption
 
-## Synopsis
+## SYNOPSIS
 Creates an object that contains advanced options for a session configuration.
 
-## Syntax
+## SYNTAX
 
 ```
 New-PSTransportOption [-MaxIdleTimeoutSec <Int32>] [-ProcessIdleTimeoutSec <Int32>] [-MaxSessions <Int32>]
@@ -22,7 +22,7 @@ New-PSTransportOption [-MaxIdleTimeoutSec <Int32>] [-ProcessIdleTimeoutSec <Int3
  [-OutputBufferingMode <OutputBufferingMode>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-PSTransportOption` cmdlet creates an object that contains transport options for session
 configurations. You can use the object as the value of the **TransportOption** parameter of cmdlets
@@ -48,7 +48,7 @@ session configurations, see [about_Session_Configurations](About/about_Session_C
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Generate a default transport option
 
@@ -171,7 +171,7 @@ The fourth command uses the `Format-List` cmdlet to display all properties of th
 `$s` variable in a list. The output shows that the session has an idle time-out of one hour (360,000
 milliseconds).
 
-## Parameters
+## PARAMETERS
 
 ### -IdleTimeoutSec
 
@@ -402,23 +402,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.WSManConfigurationOption
 
-## Notes
+## NOTES
 
 - The properties of a session configuration object vary with the options set for the session
   configuration and the values of those options. Also, session configurations that use a session
   configuration file have additional properties.
 
-## Related links
+## RELATED LINKS
 
 [New-PSSession](New-PSSession.md)
 

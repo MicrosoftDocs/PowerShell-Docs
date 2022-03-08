@@ -9,10 +9,10 @@ title: Set-Variable
 ---
 # Set-Variable
 
-## Synopsis
+## SYNOPSIS
 Sets the value of a variable. Creates the variable if one with the requested name does not exist.
 
-## Syntax
+## SYNTAX
 
 ```
 Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Exclude <String[]>]
@@ -20,12 +20,12 @@ Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Excl
  [-PassThru] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-Variable` cmdlet assigns a value to a specified variable or changes the current value. If
 the variable does not exist, the cmdlet creates it.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Set a variable and get its value
 
@@ -120,7 +120,7 @@ This command shows how to change the visibility of a variable to Private. This v
 can be read and changed by scripts with the required permissions, but it is not visible
 to the user.
 
-## Parameters
+## PARAMETERS
 
 ### -Description
 
@@ -369,13 +369,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 
 You can pipe an object that represents the value of the variable to `Set-Variable`.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Management.Automation.PSVariable
 
@@ -383,9 +383,9 @@ When you use the **PassThru** parameter, `Set-Variable` generates a
 **System.Management.Automation.PSVariable** object representing the new or changed variable.
 Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Clear-Variable](Clear-Variable.md)
 

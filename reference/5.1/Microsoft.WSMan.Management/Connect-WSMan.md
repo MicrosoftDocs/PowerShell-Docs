@@ -10,10 +10,10 @@ title: Connect-WSMan
 
 # Connect-WSMan
 
-## Synopsis
+## SYNOPSIS
 Connects to the WinRM service on a remote computer.
 
-## Syntax
+## SYNTAX
 
 ### ComputerName (Default)
 
@@ -31,7 +31,7 @@ Connect-WSMan [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-Port <Int32>]
   [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Connect-WSMan` cmdlet connects to the WinRM service on a remote computer, and it establishes a
 persistent connection to the remote computer. You can use this cmdlet in the context of the WSMan
@@ -45,7 +45,7 @@ workgroups.
 For information about how to disconnect from the WinRM service on a remote computer, see the
 `Disconnect-WSMan` cmdlet.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Connect to a remote computer
 
@@ -149,7 +149,7 @@ The second command uses the **SessionOption** parameter to pass the credentials 
 the `$a` variable to `Connect-WSMan`. Then, `Connect-WSMan` connects to the remote server01 computer
 by using the specified session options.
 
-## Parameters
+## PARAMETERS
 
 ### -ApplicationName
 
@@ -395,19 +395,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet does not accept any input.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 You can run management commands or query management data on a remote computer without creating a
 WS-Management session. You can do this by using the **ComputerName** parameters of
@@ -415,7 +415,7 @@ WS-Management session. You can do this by using the **ComputerName** parameters 
 PowerShell creates a temporary connection that is used for the single command. After the command
 runs, the connection is closed.
 
-## Related links
+## RELATED LINKS
 
 [Disable-WSManCredSSP](Disable-WSManCredSSP.md)
 

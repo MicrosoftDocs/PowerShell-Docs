@@ -9,16 +9,16 @@ title: Get-PSCallStack
 ---
 # Get-PSCallStack
 
-## Synopsis
+## SYNOPSIS
 Displays the current call stack.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-PSCallStack [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-PSCallStack` cmdlet displays the current call stack.
 
@@ -27,7 +27,7 @@ display the call stack in a script or function outside of the debugger.
 
 To run a `Get-PSCallStack` command while in the debugger, type `k` or `Get-PSCallStack`.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the call stack for a function
 
@@ -82,7 +82,7 @@ stack.
 The final command is a `Step-Out` command (`o`) that exits the debugger and continues executing the
 script to completion.
 
-## Parameters
+## PARAMETERS
 
 ### CommonParameters
 
@@ -91,21 +91,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.CallStackFrame
 
 `Get-PSCallStack` returns an object that represents the items in the call stack.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Disable-PSBreakpoint](Disable-PSBreakpoint.md)
 

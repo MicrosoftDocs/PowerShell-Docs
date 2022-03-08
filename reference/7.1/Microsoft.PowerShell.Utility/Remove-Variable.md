@@ -9,23 +9,23 @@ title: Remove-Variable
 ---
 # Remove-Variable
 
-## Synopsis
+## SYNOPSIS
 Deletes a variable and its value.
 
-## Syntax
+## SYNTAX
 
 ```
 Remove-Variable [-Name] <String[]> [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Scope <String>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Remove-Variable` cmdlet deletes a variable and its value from the scope in which it is defined,
 such as the current session. You cannot use this cmdlet to delete variables that are set as
 constants or those that are owned by the system.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Remove a variable
 
@@ -35,7 +35,7 @@ Remove-Variable Smp
 
 This command deletes the `$Smp` variable.
 
-## Parameters
+## PARAMETERS
 
 ### -Exclude
 
@@ -169,19 +169,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSVariable
 
 You can pipe a variable object to `Remove-Variable`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any output.
 
-## Notes
+## NOTES
 
 - Changes affect only the current scope, such as a session. To delete a variable from all sessions,
   add a `Remove-Variable` command to your PowerShell profile.
@@ -189,7 +189,7 @@ This cmdlet does not return any output.
 - You can also refer to `Remove-Variable` by its built-in alias, `rv`. For more information, see
   [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
-## Related links
+## RELATED LINKS
 
 [Clear-Variable](Clear-Variable.md)
 

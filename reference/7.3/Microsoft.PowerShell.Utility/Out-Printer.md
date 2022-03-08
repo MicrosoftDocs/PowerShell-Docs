@@ -10,16 +10,16 @@ title: Out-Printer
 
 # Out-Printer
 
-## Synopsis
+## SYNOPSIS
 Sends output to a printer.
 
-## Syntax
+## SYNTAX
 
 ```
 Out-Printer [[-Name] <String>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -30,7 +30,7 @@ specified.
 > This cmdlet was reintroduced in PowerShell 7. This cmdlet is only available on Windows systems
 > that support the Windows Desktop.
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Send a file to be printed on the default printer
 
@@ -66,7 +66,7 @@ Out-Printer -InputObject $H
 `Get-Help` gets the full version of the Help topic for `Get-CimInstance` and stores it in the `$H`
 variable. The **InputObject** parameter passes the value of `$H` to `Out-Printer`.
 
-## Parameters
+## PARAMETERS
 
 ### -InputObject
 
@@ -108,19 +108,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to `Out-Printer`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 `Out-Printer` does not return any objects.
 
-## Notes
+## NOTES
 
 This cmdlet is only available on Windows platforms.
 
@@ -132,7 +132,7 @@ cmdlet sends it to a formatting cmdlet before rendering it.
 you pipe the output of `Out-Printer` to `Get-Member`, `Get-Member` reports that no objects have been
 specified.
 
-## Related links
+## RELATED LINKS
 
 [Out-File](Out-File.md)
 

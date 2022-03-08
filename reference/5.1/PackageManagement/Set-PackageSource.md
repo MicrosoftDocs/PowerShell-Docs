@@ -10,10 +10,10 @@ title: Set-PackageSource
 
 # Set-PackageSource
 
-## Synopsis
+## SYNOPSIS
 Replaces a package source for a specified package provider.
 
-## Syntax
+## SYNTAX
 
 ### SourceBySearch (Default)
 
@@ -65,12 +65,12 @@ Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential 
  [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-PackageSource` replaces a package source for a specified package provider. Package sources
 are always managed by a package provider.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Change a package source
 
@@ -81,7 +81,7 @@ eliminates prompts to verify the source when packages are installed.
 PS C:\> Set-PackageSource -Name MyNuget -NewName NewNuGet -Trusted -ProviderName NuGet
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -ConfigFile
 
@@ -416,15 +416,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### `Set-PackageSource` doesn't accept pipeline input.
 
-## Outputs
+## OUTPUTS
 
 ### This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -438,7 +438,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

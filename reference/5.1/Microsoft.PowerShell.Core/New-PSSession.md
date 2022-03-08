@@ -9,10 +9,10 @@ title: New-PSSession
 ---
 # New-PSSession
 
-## Synopsis
+## SYNOPSIS
 Creates a persistent connection to a local or remote computer.
 
-## Syntax
+## SYNTAX
 
 ### ComputerName (Default)
 
@@ -60,7 +60,7 @@ New-PSSession [-Name <String[]>] [-ConfigurationName <String>] -ContainerId <Str
  [-RunAsAdministrator] [-ThrottleLimit <Int32>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-PSSession` cmdlet creates a PowerShell session (**PSSession**) on a local or remote
 computer. When you create a **PSSession**, PowerShell establishes a persistent connection to the
@@ -76,7 +76,7 @@ You can run commands on a remote computer without creating a **PSSession** by us
 **ComputerName** parameter, PowerShell creates a temporary connection that is used for the command
 and is then closed.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a session on the local computer
 
@@ -240,7 +240,7 @@ The second command uses the option in a new session. The command uses the `New-P
 create a new session. The value of the SessionOption parameter is the **SessionOption** object in
 the `$so` variable.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowRedirection
 
@@ -745,17 +745,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
 (https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String, System.URI, System.Management.Automation.Runspaces.PSSession
 
 You can pipe a string, URI, or session object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
 
-## Notes
+## NOTES
 
 - This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local
   computer and any remote computers must be configured for PowerShell remoting. For more
@@ -765,7 +765,7 @@ You can pipe a string, URI, or session object to this cmdlet.
 - When you are finished with the **PSSession**, use the `Remove-PSSession` cmdlet to delete the
   **PSSession** and release its resources.
 
-## Related links
+## RELATED LINKS
 
 [Connect-PSSession](Connect-PSSession.md)
 

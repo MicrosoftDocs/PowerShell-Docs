@@ -9,10 +9,10 @@ title: Receive-Job
 ---
 # Receive-Job
 
-## Synopsis
+## SYNOPSIS
 Gets the results of the PowerShell background jobs in the current session.
 
-## Syntax
+## SYNTAX
 
 ### Location (Default)
 
@@ -56,7 +56,7 @@ Receive-Job [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob] [-WriteEvents
  [-Id] <Int32[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Receive-Job` cmdlet gets the results of PowerShell background jobs, such as those started by
 using the `Start-Job` cmdlet or the **AsJob** parameter of any cmdlet.
@@ -87,7 +87,7 @@ custom job type into the session before it runs a `Receive-Job` command, either 
 For information about a particular custom job type, see the documentation of the custom job type
 feature.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get results for a particular job
 
@@ -287,7 +287,7 @@ Cannot find drive. A drive with the name 'Z' does not exist.
     + PSComputerName        : localhost
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AutoRemoveJob
 
@@ -594,21 +594,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.Job
 
 You can pipe job objects to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### PSObject
 
 This cmdlet returns the results of the commands in the job.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-Job](Get-Job.md)
 

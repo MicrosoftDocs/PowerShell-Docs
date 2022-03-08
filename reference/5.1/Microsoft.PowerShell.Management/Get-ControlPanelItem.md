@@ -9,10 +9,10 @@ title: Get-ControlPanelItem
 ---
 # Get-ControlPanelItem
 
-## Synopsis
+## SYNOPSIS
 Gets control panel items.
 
-## Syntax
+## SYNTAX
 
 ### RegularName (Default)
 
@@ -26,7 +26,7 @@ Get-ControlPanelItem [[-Name] <String[]>] [-Category <String[]>] [<CommonParamet
 Get-ControlPanelItem -CanonicalName <String[]> [-Category <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-ControlPanelItem` cmdlet gets control panel items on the local computer. You can use it
 to find control panel items by name, category, or description, even on systems that do not have a
@@ -39,7 +39,7 @@ without these components.
 This cmdlet was introduced in Windows PowerShell 3.0. It works only on Windows 8 and Windows Server
 2012 and newer.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all control panel items
 
@@ -118,7 +118,7 @@ Sound                   Microsoft.Sound               {Hardware}  Configure your
 The `Get-ControlPanelItem` cmdlet gets all control panel items. The `Where-Object` cmdlet filters
 the items by the value of the **Description** property.
 
-## Parameters
+## PARAMETERS
 
 ### -CanonicalName
 
@@ -184,20 +184,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a name or name pattern to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.ControlPanelItem
 
 This cmdlet gets control panel items on the local computer.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Show-ControlPanelItem](Show-ControlPanelItem.md)

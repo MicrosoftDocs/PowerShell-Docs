@@ -10,10 +10,10 @@ title: Copy-Item
 
 # Copy-Item
 
-## Synopsis
+## SYNOPSIS
 Copies an item from one location to another.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -31,7 +31,7 @@ Copy-Item -LiteralPath <String[]> [[-Destination] <String>] [-Container] [-Force
  [-WhatIf] [-Confirm] [-FromSession <PSSession>] [-ToSession <PSSession>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Copy-Item` cmdlet copies an item from one location to another location in the same namespace.
 For instance, it can copy a file to a folder, but it can't copy a file to a certificate drive.
@@ -44,7 +44,7 @@ This cmdlet can copy and rename items in the same command. To rename an item, en
 the value of the **Destination** parameter. To rename an item and not copy it, use the `Rename-Item`
 cmdlet.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Copy a file to the specified directory
 
@@ -250,7 +250,7 @@ The `Copy-Item` cmdlet has the **Container** parameter set to `$false`. This cau
 the source folder to be copied but does not preserve the folder structure. Notice that files with
 the same name are overwritten in the destination folder.
 
-## Parameters
+## PARAMETERS
 
 ### -Container
 
@@ -527,25 +527,25 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None or an object representing the copied item
 
 When you use the **PassThru** parameter, this cmdlet returns an object that represents the copied
 item. Otherwise, this cmdlet doesn't generate any output.
 
-## Notes
+## NOTES
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

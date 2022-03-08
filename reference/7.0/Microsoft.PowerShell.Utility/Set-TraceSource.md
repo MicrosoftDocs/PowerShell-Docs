@@ -9,10 +9,10 @@ title: Set-TraceSource
 ---
 # Set-TraceSource
 
-## Synopsis
+## SYNOPSIS
 Configures, starts, and stops a trace of PowerShell components.
 
-## Syntax
+## SYNTAX
 
 ### optionsSet (Default)
 
@@ -33,12 +33,12 @@ Set-TraceSource [-Name] <String[]> [-RemoveListener <String[]>] [<CommonParamete
 Set-TraceSource [-Name] <String[]> [-RemoveFileListener <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-TraceSource` cmdlet configures, starts, and stops a trace of a PowerShell component. You
 can use it to specify which components will be traced and where the tracing output is sent.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Trace the ParameterBinding component
 
@@ -62,7 +62,7 @@ This command stops the trace of the **ParameterBinding** component of PowerShell
 **Name** parameter to identify the component that was being traced and the **RemoveListener**
 parameter to identify the trace listener.
 
-## Parameters
+## PARAMETERS
 
 ### -Debugger
 
@@ -298,13 +298,13 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a name to `Set-TraceSource`.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Management.Automation.PSTraceSource
 
@@ -312,7 +312,7 @@ When you use the **PassThru** parameter, `Set-TraceSource` generates a
 **System.Management.Automation.PSTraceSource** object representing the trace session. Otherwise,
 this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - Tracing is a method that developers use to debug and refine programs. When tracing, the program
   generates detailed messages about each step in its internal processing.
@@ -341,7 +341,7 @@ this cmdlet does not generate any output.
   module are loaded automatically when the component is in use, and they appear in the output of
   `Get-TraceSource`.
 
-## Related links
+## RELATED LINKS
 
 [Get-TraceSource](Get-TraceSource.md)
 

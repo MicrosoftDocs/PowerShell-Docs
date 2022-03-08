@@ -9,10 +9,10 @@ title: Resume-Service
 ---
 # Resume-Service
 
-## Synopsis
+## SYNOPSIS
 Resumes one or more suspended (paused) services.
 
-## Syntax
+## SYNTAX
 
 ### InputObject (Default)
 
@@ -35,7 +35,7 @@ Resume-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclu
  [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -45,7 +45,7 @@ is ignored. You can specify the services by their service names or display names
 **InputObject** parameter to pass a service object that represents the services that you want to
 resume.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Resume a service on the local computer
 
@@ -72,7 +72,7 @@ next pipeline operator sends the results to `Resume-Service`, which resumes the 
 In practice, you would use the **WhatIf** parameter to determine the effect of the command before
 you run it.
 
-## Parameters
+## PARAMETERS
 
 ### -DisplayName
 
@@ -213,13 +213,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.ServiceProcess.ServiceController, System.String
 
 You can pipe a service object or a string that contains a service name to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None, System.ServiceProcess.ServiceController
 
@@ -227,7 +227,7 @@ This cmdlet generates a **System.ServiceProcess.ServiceController** object that 
 resumed service, if you specify the **PassThru** parameter. Otherwise, this cmdlet does not generate
 any output.
 
-## Notes
+## NOTES
 
 This cmdlet is only available on Windows platforms.
 
@@ -239,7 +239,7 @@ This cmdlet is only available on Windows platforms.
   The service names appear in the **Name** column, and the display names appear in the
   **DisplayName** column.
 
-## Related links
+## RELATED LINKS
 
 [Get-Service](Get-Service.md)
 

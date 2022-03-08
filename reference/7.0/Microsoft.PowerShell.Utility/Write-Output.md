@@ -9,17 +9,17 @@ title: Write-Output
 ---
 # Write-Output
 
-## Synopsis
+## SYNOPSIS
 Writes the specified objects to the pipeline. If `Write-Output` is the last command in the pipeline,
 the objects are displayed in the console.
 
-## Syntax
+## SYNTAX
 
 ```
 Write-Output [-InputObject] <PSObject[]> [-NoEnumerate] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 Writes the specified objects to the pipeline. If `Write-Output` is the last command in the pipeline,
 the objects are displayed in the console.
@@ -37,7 +37,7 @@ be written, `"Home directory: $HOME"`.
 By default, `Write-Output` enumerates through collection objects. However, `Write-Output` can also
 be used to pass collections down the pipeline as a single object with the **NoEnumerate** parameter.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get objects and write them to the console
 
@@ -81,7 +81,7 @@ Count    : 1
 ...
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -InputObject
 
@@ -132,21 +132,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe objects to `Write-Output`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSObject
 
 `Write-Output` returns the objects that are submitted as input.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 

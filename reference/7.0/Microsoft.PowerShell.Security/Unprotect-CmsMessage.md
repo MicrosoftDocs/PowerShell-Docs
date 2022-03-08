@@ -9,10 +9,10 @@ title: Unprotect-CmsMessage
 ---
 # Unprotect-CmsMessage
 
-## Synopsis
+## SYNOPSIS
 Decrypts content that has been encrypted by using the Cryptographic Message Syntax format.
 
-## Syntax
+## SYNTAX
 
 ### ByWinEvent (Default)
 
@@ -40,7 +40,7 @@ Unprotect-CmsMessage [-LiteralPath] <String> [-IncludeContext] [[-To] <CmsMessag
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -66,7 +66,7 @@ content.
 > [!NOTE]
 > This cmdlet is only available on Windows.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Decrypt a message
 
@@ -87,7 +87,7 @@ Unprotect-CmsMessage -LiteralPath @parameters
 Try the new Break All command
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Content
 
@@ -199,23 +199,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Diagnostics.Eventing.Reader.EventLogRecord or System.String
 
 You can pipe an object containing encrypted content to `Unprotect-CmsMessage`.
 
-## Outputs
+## OUTPUTS
 
 ### System.String
 
 The unencrypted message.
 
-## Notes
+## NOTES
 
 This cmdlet is only available on Windows platforms.
 
-## Related links
+## RELATED LINKS
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

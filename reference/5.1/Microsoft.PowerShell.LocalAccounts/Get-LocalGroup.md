@@ -10,10 +10,10 @@ title: Get-LocalGroup
 
 # Get-LocalGroup
 
-## Synopsis
+## SYNOPSIS
 Gets the local security groups.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -27,7 +27,7 @@ Get-LocalGroup [[-Name] <String[]>] [<CommonParameters>]
 Get-LocalGroup [[-SID] <SecurityIdentifier[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-LocalGroup` cmdlet gets local security groups in Security Account Manager.
 This cmdlet gets default built-in groups and local security groups that you create.
@@ -36,7 +36,7 @@ This cmdlet gets default built-in groups and local security groups that you crea
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the Administrators group
 
@@ -47,7 +47,7 @@ Get-LocalGroup -Name "Administrators"
 This command gets the local Administrators group. The command displays properties of the group in
 the console.
 
-## Parameters
+## PARAMETERS
 
 ### -Name
 
@@ -88,19 +88,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String, System.Security.Principal.SecurityIdentifier
 
 You can pipe a string or a SID to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup
 
 This cmdlet returns a local group.
 
-## Notes
+## NOTES
 
 - The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
   **LocalPrincipal** objects that describes the source of the object. The possible sources are as
@@ -114,7 +114,7 @@ This cmdlet returns a local group.
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
 Windows operating system. For earlier versions, the property is blank.
 
-## Related links
+## RELATED LINKS
 
 [New-LocalGroup](New-LocalGroup.md)
 

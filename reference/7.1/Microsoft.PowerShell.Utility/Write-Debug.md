@@ -9,23 +9,23 @@ title: Write-Debug
 ---
 # Write-Debug
 
-## Synopsis
+## SYNOPSIS
 Writes a debug message to the console.
 
-## Syntax
+## SYNTAX
 
 ```
 Write-Debug [-Message] <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Write-Debug` cmdlet writes debug messages to the host from a script or command.
 
 By default, debug messages are not displayed in the console, but you can display them by using the
 **Debug** parameter or the `$DebugPreference` variable.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Understand $DebugPreference
 
@@ -89,7 +89,7 @@ change only affects the scope of the function. The value is not affected outside
 For more information about the **Debug** common parameter, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Parameters
+## PARAMETERS
 
 ### -Message
 
@@ -114,21 +114,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a debug message to `Write-Debug`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 `Write-Debug` only writes to the debug stream. It does not write any objects to the pipeline.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 

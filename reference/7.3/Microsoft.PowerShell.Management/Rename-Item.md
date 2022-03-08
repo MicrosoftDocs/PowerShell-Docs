@@ -9,10 +9,10 @@ title: Rename-Item
 ---
 # Rename-Item
 
-## Synopsis
+## SYNOPSIS
 Renames an item in a PowerShell provider namespace.
 
-## Syntax
+## SYNTAX
 
 ### ByPath (Default)
 
@@ -28,7 +28,7 @@ Rename-Item -LiteralPath <String> [-NewName] <String> [-Force] [-PassThru]
  [-Credential <PSCredential>] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Rename-Item` cmdlet changes the name of a specified item. This cmdlet does not affect the
 content of the item being renamed.
@@ -36,7 +36,7 @@ content of the item being renamed.
 You can't use `Rename-Item` to move an item, such as by specifying a path together with the new
 name. To move and rename an item, use the `Move-Item` cmdlet.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Rename a file
 
@@ -120,7 +120,7 @@ command through the pipeline. The script block uses the `-replace` operator to r
 extension of each file with `.log`. Notice that matching using the `-replace` operator is not case
 sensitive.
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -275,25 +275,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None or an object that represents the renamed item.
 
 This cmdlet generates an object that represents the renamed item, if you specify the **PassThru**
 parameter. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 `Rename-Item` is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PsProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [Clear-Item](Clear-Item.md)
 

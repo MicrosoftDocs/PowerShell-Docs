@@ -10,10 +10,10 @@ title: New-ModuleManifest
 
 # New-ModuleManifest
 
-## Synopsis
+## SYNOPSIS
 Creates a new module manifest.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -33,7 +33,7 @@ New-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>] [
  [-DefaultCommandPrefix <String>] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-ModuleManifest` cmdlet creates a new module manifest (`.psd1`) file, populates its values,
 and saves the manifest file in the specified path.
@@ -61,7 +61,7 @@ values for certain properties. For more information, see
 [Required metadata for items published to the PowerShell Gallery](/powershell/scripting/gallery/how-to/publishing-packages/publishing-a-package#required-metadata-for-items-published-to-the-powershell-gallery)
 in the Gallery documentation.
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Create a new module manifest
 
@@ -314,7 +314,7 @@ ExportedFormatFiles         : {C:\Windows\system32\WindowsPowerShell\v1.0\Event.
 ExportedTypeFiles           : {C:\Windows\system32\WindowsPowerShell\v1.0\GetEvent.types.ps1xml}
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AliasesToExport
 
@@ -1153,20 +1153,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You can't pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.String
 
 By default, `New-ModuleManifest` doesn't generate any output. However, if you use the **PassThru**
 parameter, it generates a **System.String** object representing the module manifest.
 
-## Notes
+## NOTES
 
 `New-ModuleManifest` running on Windows and non-Windows platforms creates module manifest (`.psd1`)
 files encoded as **UTF8NoBOM**.
@@ -1196,7 +1196,7 @@ The caller's session state is the session state into which a module is imported.
 refers to the global session state, but when a module imports nested modules, the caller is the
 module and the caller's session state is the module's session state.
 
-## Related links
+## RELATED LINKS
 
 [Export-ModuleMember](Export-ModuleMember.md)
 

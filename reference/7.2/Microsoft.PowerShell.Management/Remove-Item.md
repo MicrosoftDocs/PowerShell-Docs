@@ -9,10 +9,10 @@ title: Remove-Item
 ---
 # Remove-Item
 
-## Synopsis
+## SYNOPSIS
 Deletes the specified items.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -30,13 +30,13 @@ Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-E
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Remove-Item` cmdlet deletes one or more items. Because it is supported by many providers, it
 can delete many different types of items, including files, folders, registry keys, variables,
 aliases, and functions.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Delete files that have any file name extension
 
@@ -186,7 +186,7 @@ The **Stream** parameter `Get-Item` gets the `Zone.Identifier` stream of the `Co
 file. `Remove-Item` uses the **Stream** parameter to remove the `Zone.Identifier` stream of the
 file. Finally, the `Get-Item` cmdlet shows that the `Zone.Identifier` stream was deleted.
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -426,19 +426,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path, but not a literal path, to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any output.
 
-## Notes
+## NOTES
 
 The `Remove-Item` cmdlet is designed to work with the data exposed by any provider. To list the
 providers available in your session, type `Get-PsProvider`. For more information, see
@@ -448,7 +448,7 @@ When you try to delete a folder that contains items without using the **Recurse*
 cmdlet prompts for confirmation. Using `-Confirm:$false` does not suppress the prompt. This is by
 design.
 
-## Related links
+## RELATED LINKS
 
 [Clear-Item](Clear-Item.md)
 

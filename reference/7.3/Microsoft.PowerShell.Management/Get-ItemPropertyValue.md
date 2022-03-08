@@ -9,10 +9,10 @@ title: Get-ItemPropertyValue
 ---
 # Get-ItemPropertyValue
 
-## Synopsis
+## SYNOPSIS
 Gets the value for one or more properties of a specified item.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -28,13 +28,13 @@ Get-ItemPropertyValue -LiteralPath <String[]> [-Name] <String[]> [-Filter <Strin
  [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-ItemPropertyValue` gets the current value for a property that you specify when you use the
 **Name** parameter, located in a path that you specify with either the **Path** or **LiteralPath**
 parameters.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the value of the ProductID property
 
@@ -96,7 +96,7 @@ Target              :
 LinkType            :
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -238,13 +238,13 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Boolean, System.String, System.DateTime
 
@@ -252,13 +252,13 @@ This cmdlet returns an object for each item property value that it gets.
 The object type depends on the property value that is retrieved.
 For example, in a file system drive, the cmdlet might return a file or folder.
 
-## Notes
+## NOTES
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, run the `Get-PSProvider` cmdlet. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [Get-ItemProperty](Get-ItemProperty.md)
 

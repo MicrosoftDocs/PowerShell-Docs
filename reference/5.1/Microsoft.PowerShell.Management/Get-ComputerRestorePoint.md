@@ -10,10 +10,10 @@ title: Get-ComputerRestorePoint
 
 # Get-ComputerRestorePoint
 
-## Synopsis
+## SYNOPSIS
 Gets the restore points on the local computer.
 
-## Syntax
+## SYNTAX
 
 ### ID (Default)
 
@@ -27,7 +27,7 @@ Get-ComputerRestorePoint [[-RestorePoint] <Int32[]>] [<CommonParameters>]
 Get-ComputerRestorePoint -LastStatus [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-ComputerRestorePoint` cmdlet gets the local computer's system restore points. And, it can
 display the status of the most recent attempt to restore the computer.
@@ -38,7 +38,7 @@ use a sequence number to identify a restore point for the `Restore-Computer` cmd
 System restore points and the `Get-ComputerRestorePoint` cmdlet are supported only on client
 operating systems such as Windows 10.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all system restore points
 
@@ -137,7 +137,7 @@ output only contains the sequence number.
 `Get-ComputerRestorePoint` uses the **SequenceNumber** property with an array index. The array index
 of `-1` gets the most recent sequence number in the array.
 
-## Parameters
+## PARAMETERS
 
 ### -LastStatus
 
@@ -182,13 +182,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You can't send objects down the pipeline to `Get-ComputerRestorePoint`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.ManagementObject#root\default\SystemRestore or String
 
@@ -197,14 +197,14 @@ Management Instrumentation (WMI) **SystemRestore** class.
 
 When you use the **LastStatus** parameter, `Get-ComputerRestorePoint` returns a string.
 
-## Notes
+## NOTES
 
 To run a `Get-ComputerRestorePoint` command on Windows Vista and later versions of Windows, open
 PowerShell with the **Run as administrator** option.
 
 `Get-ComputerRestorePoint` uses the WMI **SystemRestore** class.
 
-## Related links
+## RELATED LINKS
 
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md)
 

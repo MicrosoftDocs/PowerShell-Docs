@@ -10,16 +10,16 @@ title: Export-BinaryMiLog
 
 # Export-BinaryMiLog
 
-## Synopsis
+## SYNOPSIS
 Creates a binary encoded representation of an object or objects and stores it in a file.
 
-## Syntax
+## SYNTAX
 
 ```
 Export-BinaryMiLog [-InputObject <CimInstance>] [-Path] <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Export-BinaryMILog` cmdlet creates a binary-based representation of an object or objects and
 stores it in a file. You can then use the `Import-BinaryMiLog` cmdlet to re-create the saved object
@@ -28,7 +28,7 @@ based on the contents of that file.
 This cmdlet is similar to `Import-Clixml`, except that `Export-BinaryMILog` stores the resulting
 object in a binary encoded file.
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Create a binary representation of CimInstances
 
@@ -40,7 +40,7 @@ This command exports **CimInstances** to a binary MI log file specified by the P
 the example for Import-BinaryMiLog to see how to recreate the **CimInstances** by importing this
 file.
 
-## Parameters
+## PARAMETERS
 
 ### -InputObject
 
@@ -84,17 +84,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.Management.Infrastructure.CimInstance
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-CimInstance](get-ciminstance.md)
 

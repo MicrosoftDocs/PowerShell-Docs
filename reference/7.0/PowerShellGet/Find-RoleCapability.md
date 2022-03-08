@@ -10,10 +10,10 @@ title: Find-RoleCapability
 
 # Find-RoleCapability
 
-## Synopsis
+## SYNOPSIS
 Finds role capabilities in modules.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -24,7 +24,7 @@ Find-RoleCapability [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion
 [-Repository <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Find-RoleCapability` cmdlet searches registered repositories to find PowerShell role
 capabilities and modules.
@@ -37,7 +37,7 @@ PowerShell role capabilities define which commands and applications are availabl
 Just Enough Administration (JEA) endpoint. Role capabilities are defined by files with a `.psrc`
 extension.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Find role capabilities
 
@@ -126,7 +126,7 @@ The object is sent down the pipeline. `Install-Module` uses the **Verbose** para
 status messages during the installation. After the install is finished, the `Get-InstalledModule`
 output confirms that the **JeaExamples** module was installed.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowPrerelease
 
@@ -335,19 +335,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Uri
 
 ### System.Management.Automation.PSCredential
 
-## Outputs
+## OUTPUTS
 
 ### PSGetRoleCapabilityInfo
 
 The `Find-RoleCapability` cmdlet returns a **PSGetRoleCapabilityInfo** object.
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -361,7 +361,7 @@ The `Find-RoleCapability` cmdlet returns a **PSGetRoleCapabilityInfo** object.
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)
 

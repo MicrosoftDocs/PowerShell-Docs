@@ -9,10 +9,10 @@ title: Install-PackageProvider
 ---
 # Install-PackageProvider
 
-## Synopsis
+## SYNOPSIS
 Installs one or more Package Management package providers.
 
-## Syntax
+## SYNTAX
 
 ### PackageBySearch (Default)
 
@@ -31,7 +31,7 @@ Install-PackageProvider [-Scope <String>] [-InputObject] <SoftwareIdentity[]> [-
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Install-PackageProvider` cmdlet installs matching Package Management providers that are
 available in package sources registered with **PowerShellGet**. By default, this includes modules
@@ -62,7 +62,7 @@ them to your target computer. Use the following steps to do this:
    Then use `Import-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201` to import the provider
    to the current Windows PowerShell session.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Install a package provider from the PowerShell Gallery
 
@@ -102,7 +102,7 @@ so that only the current user can use it.
 Install-PackageProvider -Name GistProvider -Verbose -Scope CurrentUser
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AllVersions
 
@@ -371,16 +371,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PackageManagement.Packaging.SoftwareIdentity
 
 You can pipe a **SoftwareIdentity** object to this cmdlet. Use `Find-PackageProvider` to get a
 **SoftwareIdentity** object that can be piped into `Install-PackageProvider`.
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -394,7 +394,7 @@ You can pipe a **SoftwareIdentity** object to this cmdlet. Use `Find-PackageProv
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [Find-PackageProvider](Find-PackageProvider.md)
 

@@ -10,10 +10,10 @@ title: Save-Module
 
 # Save-Module
 
-## Synopsis
+## SYNOPSIS
 Saves a module and its dependencies on the local computer but doesn't install the module.
 
-## Syntax
+## SYNTAX
 
 ### NameAndPathParameterSet (Default)
 
@@ -49,7 +49,7 @@ Save-Module [-InputObject] <PSObject[]> [-Path] <String> [-Proxy <Uri>]
  [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Save-Module` cmdlet downloads a module and any dependencies from a registered repository.
 `Save-Module` downloads and saves the most current version of a module. The files are saved to a
@@ -60,7 +60,7 @@ inspection by an administrator. The saved module can then be copied into the app
 `Get-PSRepository` displays the local computer's registered repositories. You can use the
 `Find-Module` cmdlet to search registered repositories.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Save a module
 
@@ -136,7 +136,7 @@ The object is sent down the pipeline to `Save-Module`. The **Path** parameter sp
 store the downloaded module. After the download is finished, `Get-ChildItem` displays the contents
 of **Path** where the files are stored.
 
-## Parameters
+## PARAMETERS
 
 ### -AcceptLicense
 
@@ -408,7 +408,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String[]
 
@@ -420,11 +420,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSCredential
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -438,4 +438,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS

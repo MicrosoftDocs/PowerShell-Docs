@@ -10,16 +10,16 @@ title: Show-EventLog
 
 # Show-EventLog
 
-## Synopsis
+## SYNOPSIS
 Displays the event logs of the local or a remote computer in Event Viewer.
 
-## Syntax
+## SYNTAX
 
 ```
 Show-EventLog [[-ComputerName] <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Show-EventLog` cmdlet opens Event Viewer on the local computer and displays in it all of the
 classic event logs on the local computer or a remote computer.
@@ -31,7 +31,7 @@ The cmdlets that contain the **EventLog** noun (the **EventLog** cmdlets) work o
 logs. To get events from logs that use the Windows Event Log technology in Windows Vista and later
 versions of the Windows operating system, use the `Get-WinEvent` cmdlet.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Display event logs for the local computer
 
@@ -49,7 +49,7 @@ Show-EventLog -ComputerName "Server01"
 
 This command opens Event Viewer and displays in it the classic event logs on the Server01 computer.
 
-## Parameters
+## PARAMETERS
 
 ### -ComputerName
 
@@ -79,19 +79,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - The Windows PowerShell command prompt returns as soon as Event Viewer opens. You can work in the
   current session while Event Viewer is open.
@@ -99,7 +99,7 @@ This cmdlet does not generate any output.
   Because this cmdlet requires a user interface, it does not work on Server Core installations of
   Windows Server.
 
-## Related links
+## RELATED LINKS
 
 [Clear-EventLog](Clear-EventLog.md)
 

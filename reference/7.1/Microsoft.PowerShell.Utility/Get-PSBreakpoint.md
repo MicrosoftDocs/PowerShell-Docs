@@ -9,10 +9,10 @@ title: Get-PSBreakpoint
 ---
 # Get-PSBreakpoint
 
-## Synopsis
+## SYNOPSIS
 Gets the breakpoints that are set in the current session.
 
-## Syntax
+## SYNTAX
 
 ### Line (Default)
 
@@ -44,7 +44,7 @@ Get-PSBreakpoint [-Type] <BreakpointType[]> [-Script <string[]>] [<CommonParamet
 Get-PSBreakpoint [-Id] <int[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-PSBreakPoint` cmdlet gets the breakpoints that are set in the current session. You can use
 the cmdlet parameters to get particular breakpoints.
@@ -54,7 +54,7 @@ examine the instructions. `Get-PSBreakpoint` is one of several cmdlets designed 
 PowerShell scripts and commands. For more information about the PowerShell debugger, see
 [about_Debuggers](../microsoft.powershell.core/about/about_debuggers.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all breakpoints for all scripts and functions
 
@@ -141,7 +141,7 @@ This command gets all line and variable breakpoints in the `Sample.ps1` script.
 Get-PSBreakpoint -Type Line, Variable -Script "Sample.ps1"
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Command
 
@@ -242,7 +242,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Int32
 
@@ -250,7 +250,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 You can pipe breakpoint IDs and breakpoint types to `Get-PSBreakPoint`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.CommandBreakpoint
 
@@ -262,11 +262,11 @@ You can pipe breakpoint IDs and breakpoint types to `Get-PSBreakPoint`.
 
 `Get-PSBreakPoint` returns objects that represent the breakpoints in the session.
 
-## Notes
+## NOTES
 
 You can use `Get-PSBreakpoint` or its alias, "gbp".
 
-## Related links
+## RELATED LINKS
 
 [Disable-PSBreakpoint](Disable-PSBreakpoint.md)
 

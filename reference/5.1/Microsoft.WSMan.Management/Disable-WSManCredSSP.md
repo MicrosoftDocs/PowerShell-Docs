@@ -10,16 +10,16 @@ title: Disable-WSManCredSSP
 
 # Disable-WSManCredSSP
 
-## Synopsis
+## SYNOPSIS
 Disables CredSSP authentication on a computer.
 
-## Syntax
+## SYNTAX
 
 ```
 Disable-WSManCredSSP [-Role] <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Disable-WSManCredSSP` cmdlet disables Credential Security Support Provider (CredSSP)
 authentication on a client or on a server computer. When CredSSP authentication is used, the user
@@ -45,7 +45,7 @@ performs the following action:
 > computer is compromised, when credentials are passed to it, the credentials can be used to control
 > the network session.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Disable CredSSP on a client
 
@@ -63,7 +63,7 @@ Disable-WSManCredSSP -Role Server
 
 This command disables CredSSP on the server, which prevents delegation from clients.
 
-## Parameters
+## PARAMETERS
 
 ### -Role
 
@@ -102,23 +102,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet does not accept any input.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - To enable CredSSP authentication, use the Enable-WSManCredSSP cmdlet.
 
-## Related links
+## RELATED LINKS
 
 [Connect-WSMan](Connect-WSMan.md)
 

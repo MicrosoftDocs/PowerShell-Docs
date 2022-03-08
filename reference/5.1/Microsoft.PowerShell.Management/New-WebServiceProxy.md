@@ -10,10 +10,10 @@ title: New-WebServiceProxy
 
 # New-WebServiceProxy
 
-## Synopsis
+## SYNOPSIS
 Creates a Web service proxy object that lets you use and manage the Web service in PowerShell.
 
-## Syntax
+## SYNTAX
 
 ### NoCredentials (Default)
 
@@ -35,7 +35,7 @@ New-WebServiceProxy [-Uri] <Uri> [[-Class] <String>] [[-Namespace] <String>] [-U
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-WebServiceProxy` cmdlet lets you use a Web service in PowerShell. The cmdlet connects to a
 Web service and creates a Web service proxy object in PowerShell. You can use the proxy object to
@@ -45,7 +45,7 @@ A Web service is an XML-based program that exchanges data over a network, especi
 Internet. The Microsoft .NET Framework provides Web service proxy objects that represent the Web
 service as a .NET Framework object.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a proxy for a Web service
 
@@ -124,7 +124,7 @@ PS> $calc.Multiply(6,7)
 This example uses the Web service proxy stored in the `$calc` variable. The command uses the
 **Multiply** method of the proxy.
 
-## Parameters
+## PARAMETERS
 
 ### -Class
 
@@ -235,23 +235,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### A Web service proxy object
 
 This cmdlet returns a Web service proxy object. The namespace and class of the object are determined
 by the parameters of the command. The default is generated from the input URI.
 
-## Notes
+## NOTES
 
 `New-WebServiceProxy` uses the **System.Net.WebClient** class to load the specified Web service.
 
-## Related links
+## RELATED LINKS
 
 [New-Service](New-Service.md)

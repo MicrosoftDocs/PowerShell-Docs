@@ -10,10 +10,10 @@ title: Group-Object
 
 # Group-Object
 
-## Synopsis
+## SYNOPSIS
 Groups objects that contain the same value for specified properties.
 
-## Syntax
+## SYNTAX
 
 ### HashTable
 
@@ -22,7 +22,7 @@ Group-Object [-NoElement] [-AsHashTable] [-AsString] [-InputObject <PSObject>]
  [[-Property] <Object[]>] [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Group-Object` cmdlet displays objects in groups based on the value of a specified property.
 `Group-Object` returns a table with one row for each property value and a column that displays the
@@ -35,7 +35,7 @@ Beginning in PowerShell 7, `Group-Object` can combine the **CaseSensitive** and 
 parameters to create a case-sensitive hash table. The hash table keys use case-sensitive comparisons
 and output a **System.Collections.Hashtable** object.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Group files by extension
 
@@ -230,7 +230,7 @@ pipeline. `Group-Object` groups the objects using the **Property** value **Exten
 **CaseSensitive** and **AsHashTable** parameters create the hash table and the keys are grouped
 using the case-sensitive keys `.txt` and `.TXT`.
 
-## Parameters
+## PARAMETERS
 
 ### -AsHashTable
 
@@ -382,20 +382,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to `Group-Object`.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.GroupInfo or System.Collections.Hashtable
 
 When you use the **AsHashTable** parameter, `Group-Object` returns a **Hashtable** object.
 Otherwise, it returns a **GroupInfo** object.
 
-## Notes
+## NOTES
 
 You can use the **GroupBy** parameter of the formatting cmdlets, such as `Format-Table` and
 `Format-List`, to group objects. Unlike `Group-Object`, which creates a single table with a row for
@@ -424,7 +424,7 @@ type. When grouping objects of different .NET Core types, `Group-Object` uses th
   Objects that don't have a specified property can't be grouped. Objects that aren't grouped appear
   in the final **GroupInfo** object output in a group named `AutomationNull.Value`.
 
-## Related links
+## RELATED LINKS
 
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 

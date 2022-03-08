@@ -9,17 +9,17 @@ title: New-Event
 ---
 # New-Event
 
-## Synopsis
+## SYNOPSIS
 Creates a new event.
 
-## Syntax
+## SYNTAX
 
 ```
 New-Event [-SourceIdentifier] <String> [[-Sender] <PSObject>] [[-EventArguments] <PSObject[]>]
  [[-MessageData] <PSObject>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-Event` cmdlet creates a new custom event.
 
@@ -37,7 +37,7 @@ the event subscription by using the `Unregister-Event` cmdlet, the event subscri
 are deleted from the session. If you do not subscribe to the custom event, to delete the event, you
 must change the program conditions or close the PowerShell session.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a new event in the event queue
 
@@ -71,7 +71,7 @@ Instrumentation (WMI) event that is raised when a new process is created. The co
 Because the events that `New-Event` raises are automatically added to the PowerShell event queue,
 you do not need to register for that event.
 
-## Parameters
+## PARAMETERS
 
 ### -EventArguments
 
@@ -148,17 +148,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSEventArgs
 
-## Notes
+## NOTES
 
 No event sources available on the Linux or macOS platforms.
 
@@ -166,7 +166,7 @@ The new custom event, the event subscription, and the event queue exist only in 
 If you close the current session, the event queue is discarded and the event subscription is
 canceled.
 
-## Related links
+## RELATED LINKS
 
 [Get-Event](Get-Event.md)
 

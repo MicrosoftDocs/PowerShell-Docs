@@ -10,10 +10,10 @@ title: Add-Type
 
 # Add-Type
 
-## Synopsis
+## SYNOPSIS
 Adds a Microsoft .NET class to a PowerShell session.
 
-## Syntax
+## SYNTAX
 
 ### FromSource (Default)
 
@@ -55,7 +55,7 @@ Add-Type [-CompilerParameters <CompilerParameters>] -LiteralPath <String[]>
 Add-Type -AssemblyName <String[]> [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Add-Type` cmdlet lets you define a Microsoft .NET Framework class in your PowerShell session.
 You can then instantiate objects, by using the `New-Object` cmdlet, and use the objects just as you
@@ -73,7 +73,7 @@ You can use the parameters of `Add-Type` to specify an alternate language and co
 default, compiler options, assembly dependencies, the class namespace, the names of the type, and
 the resulting assembly.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Add a .NET type to a session
 
@@ -333,7 +333,7 @@ support the resulting public type.
 
 The Loop method is called as a static method of the type stored in the `$FSharpType` variable.
 
-## Parameters
+## PARAMETERS
 
 ### -AssemblyName
 
@@ -680,20 +680,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You can't send objects down the pipeline to `Add-Type`.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Type
 
 When you use the **PassThru** parameter, `Add-Type` returns a **System.Type** object that represents
 the new type. Otherwise, this cmdlet doesn't generate any output.
 
-## Notes
+## NOTES
 
 The types that you add exist only in the current session. To use the types in all sessions, add them
 to your PowerShell profile. For more information about the profile, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
@@ -707,7 +707,7 @@ output. As a result, types written in these languages can't be used with `Add-Ty
 
 This cmdlet is based on the Microsoft .NET Framework [CodeDomProvider Class](/dotnet/api/system.codedom.compiler.codedomprovider).
 
-## Related links
+## RELATED LINKS
 
 [about_Profiles](../Microsoft.PowerShell.Core/About/about_profiles.md)
 

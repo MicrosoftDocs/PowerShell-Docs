@@ -9,17 +9,17 @@ title: Enable-PSSessionConfiguration
 ---
 # Enable-PSSessionConfiguration
 
-## Synopsis
+## SYNOPSIS
 Enables the session configurations on the local computer.
 
-## Syntax
+## SYNTAX
 
 ```
 Enable-PSSessionConfiguration [[-Name] <String[]>] [-Force] [-SecurityDescriptorSddl <String>]
  [-SkipNetworkProfileCheck] [-NoServiceRestart] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Enable-PSSessionConfiguration` cmdlet enables registered session configurations that have been
 disabled, such as by using the `Disable-PSSessionConfiguration` or `Disable-PSRemoting` cmdlets, or
@@ -39,7 +39,7 @@ also sets the value of the **Enabled** property of the session configuration
 (`AccessMode=Local`) security descriptor setting that allows only users of the local computer to use
 to the session configuration.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Re-enable the default session
 
@@ -81,7 +81,7 @@ $sddl = "O:NSG:BAD:P(A;;GXGWGR;;;BA)(A;;GAGR;;;S-1-5-21-123456789-188441444-3100
 Enable-PSSessionConfiguration -Name MaintenanceShell -SecurityDescriptorSDDL $sddl
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -229,24 +229,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration, System.String
 
 You can pipe a session configuration object or a string that contains the name of a session
 configuration to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any objects.
 
-## Notes
+## NOTES
 
 To use this cmdlet, you must start PowerShell by using the **Run as administrator** option.
 
-## Related links
+## RELATED LINKS
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 

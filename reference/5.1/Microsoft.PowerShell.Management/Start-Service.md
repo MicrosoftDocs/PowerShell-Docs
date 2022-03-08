@@ -9,10 +9,10 @@ title: Start-Service
 ---
 # Start-Service
 
-## Synopsis
+## SYNOPSIS
 Starts one or more stopped services.
 
-## Syntax
+## SYNTAX
 
 ### InputObject (Default)
 
@@ -35,14 +35,14 @@ Start-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclud
  [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Start-Service` cmdlet sends a start message to the Windows Service Controller for each of the
 specified services. If a service is already running, the message is ignored without error. You can
 specify the services by their service names or display names, or you can use the **InputObject**
 parameter to supply a service object that represents the services that you want to start.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Start a service by using its name
 
@@ -110,7 +110,7 @@ that the **StartMode** property of the Tlntsvr service is **Disabled**. The `Set
 changes the start type to **Manual**. Now, we can resubmit the `Start-Service` command. This time,
 the command succeeds. To verify that the command succeeded, run `Get-Service`.
 
-## Parameters
+## PARAMETERS
 
 ### -DisplayName
 
@@ -253,21 +253,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.ServiceProcess.ServiceController, System.String
 
 You can pipe objects that represent the services or strings that contain the service names to this
 cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None, System.ServiceProcess.ServiceController
 
 This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the
 service, if you specify **PassThru**. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - You can also refer to `Start-Service` by its built-in alias, `sasv`. For more information, see
   [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -285,7 +285,7 @@ service, if you specify **PassThru**. Otherwise, this cmdlet does not generate a
   work to do. When PowerShell starts a service that stops itself almost immediately, it displays the
   following message: `Service \<display-name\> start failed.`
 
-## Related links
+## RELATED LINKS
 
 [Get-Service](Get-Service.md)
 

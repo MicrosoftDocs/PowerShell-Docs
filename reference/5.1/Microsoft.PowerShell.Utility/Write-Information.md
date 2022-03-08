@@ -10,17 +10,17 @@ title: Write-Information
 
 # Write-Information
 
-## Synopsis
+## SYNOPSIS
 
 Specifies how PowerShell handles information stream data for a command.
 
-## Syntax
+## SYNTAX
 
 ```
 Write-Information [-MessageData] <Object> [[-Tags] <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Write-Information` cmdlet specifies how PowerShell handles information stream data for a
 command.
@@ -51,7 +51,7 @@ the `InformationAction` common parameter to your command. For more information, 
 
 `Write-Information` is also a supported workflow activity in PowerShell 5.x.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Write information for Get- results
 
@@ -131,7 +131,7 @@ function Test-Info
 Test-Info 6> Info.txt
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -MessageData
 
@@ -175,19 +175,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 `Write-Information` does not accept piped input.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.InformationRecord
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 

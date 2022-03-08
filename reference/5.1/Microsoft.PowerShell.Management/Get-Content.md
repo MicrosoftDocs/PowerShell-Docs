@@ -9,10 +9,10 @@ title: Get-Content
 ---
 # Get-Content
 
-## Synopsis
+## SYNOPSIS
 Gets the content of the item at the specified location.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -32,7 +32,7 @@ Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] -LiteralP
  [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Content` cmdlet gets the content of the item at the location specified by the path, such as
 the text in a file or the content of a function. For files, the content is read one line at a time
@@ -41,7 +41,7 @@ and returns a collection of objects, each of which represents a line of content.
 Beginning in PowerShell 3.0, `Get-Content` can also get a specified number of lines from the
 beginning or end of an item.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the content of a text file
 
@@ -251,7 +251,7 @@ The **Raw** parameter ensures that the bytes are returned as a `[System.Byte[]]`
 parameter was absent, the return value is a stream of bytes, which is interpreted by
 PowerShell as `[System.Object[]]`.
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -610,26 +610,26 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Int64, System.String[], System.Management.Automation.PSCredential
 
 You can pipe the read count, total count, paths, or credentials to `Get-Content`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Byte, System.String
 
 `Get-Content` returns strings or bytes. The output type depends upon the type of content that you
 specify as input.
 
-## Notes
+## NOTES
 
 The `Get-Content` cmdlet is designed to work with the data exposed by any provider. To get the
 providers in your session, use the `Get-PSProvider` cmdlet. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 

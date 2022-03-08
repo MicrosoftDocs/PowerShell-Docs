@@ -10,10 +10,10 @@ title: Update-TypeData
 
 # Update-TypeData
 
-## Synopsis
+## SYNOPSIS
 Updates the extended type data in the session.
 
-## Syntax
+## SYNTAX
 
 ### FileSet (Default)
 
@@ -41,7 +41,7 @@ Update-TypeData [-MemberType <PSMemberTypes>] [-MemberName <String>] [-Value <Ob
 Update-TypeData [-Force] [-TypeData] <TypeData[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Update-TypeData` cmdlet updates the extended type data in the session by reloading the
 `Types.ps1xml` files into memory and adding new extended type data.
@@ -77,7 +77,7 @@ the `Update-TypeData` cmdlet cannot use method syntax.
 For more information about the `Types.ps1xml` files in PowerShell, see
 [about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Update extended types
 
@@ -211,7 +211,7 @@ modules. The value of the **Value** parameter is a script that returns `$True` i
 The second command pipes the module objects from `Get-Module` to the `Format-Table` cmdlet, which
 displays the **Name** and **SupportsUpdatableHelp** properties of all modules in a list.
 
-## Parameters
+## PARAMETERS
 
 ### -AppendPath
 
@@ -710,22 +710,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains the values of the **AppendPath**, **TypeName**, or **TypeData**
 parameters to `Update-TypeData`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md)
 

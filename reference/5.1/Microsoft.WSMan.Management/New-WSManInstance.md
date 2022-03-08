@@ -9,10 +9,10 @@ title: New-WSManInstance
 ---
 # New-WSManInstance
 
-## Synopsis
+## SYNOPSIS
 Creates a new instance of a management resource.
 
-## Syntax
+## SYNTAX
 
 ### ComputerName (Default)
 
@@ -32,14 +32,14 @@ New-WSManInstance [-ConnectionURI <Uri>] [-FilePath <String>] [-OptionSet <Hasht
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-WSManInstance` cmdlet creates a new instance of a management resource. It uses a resource
 URI and a value set or input file to create the new instance of the management resource.
 
 This cmdlet uses the WinRM connection/transport layer to create the management resource instance.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a HTTPS listener
 
@@ -49,7 +49,7 @@ This command creates an instance of a WS-Management HTTPS listener on all IP add
 New-WSManInstance winrm/config/Listener -SelectorSet @{Transport='HTTPS'; Address='*'} -ValueSet @{Hostname="HOST";CertificateThumbprint="XXXXXXXXXX"}
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -ApplicationName
 
@@ -385,24 +385,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet does not accept any input.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 The `Set-WmiInstance` cmdlet, a Windows Management Instrumentation (WMI) cmdlet, is similar.
 `Set-WmiInstance` uses the DCOM connection/transport layer to create or update WMI instances.
 
-## Related links
+## RELATED LINKS
 
 [Connect-WSMan](Connect-WSMan.md)
 

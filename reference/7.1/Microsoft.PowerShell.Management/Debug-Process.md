@@ -9,10 +9,10 @@ title: Debug-Process
 ---
 # Debug-Process
 
-## Synopsis
+## SYNOPSIS
 Debugs one or more processes running on the local computer.
 
-## Syntax
+## SYNTAX
 
 ### Name (Default)
 
@@ -32,7 +32,7 @@ Debug-Process [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 Debug-Process -InputObject <Process[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Debug-Process` cmdlet attaches a debugger to one or more running processes on a local computer.
 You can specify the processes by their process name or process ID (PID), or you can pipe process
@@ -41,7 +41,7 @@ objects to this cmdlet.
 This cmdlet attaches the debugger that is currently registered for the process. Before using this
 cmdlet, verify that a debugger is downloaded and correctly configured.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Attach a debugger to a process on the computer
 
@@ -116,7 +116,7 @@ computer. It saves the resulting process object in the variable named `$P`.
 The second command uses the **InputObject** parameter of the `Debug-Process` cmdlet to submit the
 process object in the `$P` variable.
 
-## Parameters
+## PARAMETERS
 
 ### -Id
 
@@ -211,26 +211,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Int32, System.Diagnostics.Process, System.String
 
 You can pipe a process ID (Int32), a process object (System.Diagnostics.Process), or a process name
 (String) to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 This cmdlet uses the AttachDebugger method of the Windows Management Instrumentation (WMI)
 Win32_Process class. For more information about this method, see
 [AttachDebugger method](https://go.microsoft.com/fwlink/?LinkId=143640) in the MSDN library.
 
-## Related links
+## RELATED LINKS
 
 [Debug-Process](Debug-Process.md)
 

@@ -9,10 +9,10 @@ title: Get-Alias
 ---
 # Get-Alias
 
-## Synopsis
+## SYNOPSIS
 Gets the aliases for the current session.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -26,7 +26,7 @@ Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>] [<CommonP
 Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Alias` cmdlet gets the aliases in the current session. This includes built-in aliases,
 aliases that you have set or imported, and aliases that you have added to your PowerShell profile.
@@ -37,7 +37,7 @@ parameter, `Get-Alias` takes a command name and returns its aliases.
 Beginning in Windows PowerShell 3.0, `Get-Alias` displays non-hyphenated alias names in an
 `<alias> -> <definition>` format to make it even easier to find the information that you need.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all aliases in the current session
 
@@ -111,7 +111,7 @@ that begin with "e".
 The command uses the **Scope** parameter to apply the command in the global scope.
 This is useful in scripts when you want to get the aliases in the session.
 
-## Parameters
+## PARAMETERS
 
 ### -Definition
 
@@ -199,13 +199,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe alias names to `Get-Alias`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.AliasInfo
 
@@ -213,14 +213,14 @@ You can pipe alias names to `Get-Alias`.
 every alias, but PowerShell uses an arrow-based format to display the names of non-hyphenated
 aliases.
 
-## Notes
+## NOTES
 
 - To create a new alias, use `Set-Alias` or `New-Alias`. To delete an alias, use `Remove-Item`.
 - The arrow-based alias name format is not used for aliases that include a hyphen. These are likely
   to be preferred substitute names for cmdlets and functions, instead of typical abbreviations or
   nicknames.
 
-## Related links
+## RELATED LINKS
 
 [Export-Alias](Export-Alias.md)
 

@@ -9,23 +9,23 @@ title: Get-ExperimentalFeature
 ---
 # Get-ExperimentalFeature
 
-## Synopsis
+## SYNOPSIS
 Gets experimental features.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-ExperimentalFeature [[-Name] <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-ExperimentalFeature` cmdlet returns all experimental features discovered by PowerShell.
 Experimental features can come from modules or the PowerShell engine. Experimental features allow
 users to safely test new features and provide feedback (typically via GitHub) before the design is
 considered complete and any changes can become a breaking change.
 
-## Examples
+## EXAMPLES
 
 ### Example 1
 
@@ -41,7 +41,7 @@ Name                         Enabled Source      Description
 PSImplicitRemotingBatching   False PSEngine      Batch implicit remoting proxy commands to improve performance
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Name
 
@@ -65,22 +65,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String[]
 
 Name or names of experimental features to return.
 
-## Outputs
+## OUTPUTS
 
 ### ExperimentalFeature
 
 Returns instances that match the requested names or all experimental features if no name is
 specified.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Disable-ExperimentalFeature](Disable-ExperimentalFeature.md)
 

@@ -10,10 +10,10 @@ title: Remove-JobTrigger
 
 # Remove-JobTrigger
 
-## Synopsis
+## SYNOPSIS
 Delete job triggers from scheduled jobs.
 
-## Syntax
+## SYNTAX
 
 ### JobDefinition (Default)
 
@@ -33,7 +33,7 @@ Remove-JobTrigger [-TriggerId <Int32[]>] [-Id] <Int32[]> [<CommonParameters>]
 Remove-JobTrigger [-TriggerId <Int32[]>] [-Name] <String[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Remove-JobTrigger` cmdlet deletes job triggers from scheduled jobs.
 
@@ -52,7 +52,7 @@ the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [abo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Delete all job triggers
 
@@ -109,7 +109,7 @@ computer. The `Remove-JobTrigger` cmdlet uses the **ID** parameter to identify t
 scheduled job and the **TriggerID** parameter to specify the first trigger. The **ID** parameter is
 especially useful when multiple scheduled jobs have the same or similar names.
 
-## Parameters
+## PARAMETERS
 
 ### -Id
 
@@ -196,21 +196,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 You can pipe scheduled jobs to the `Remove-JobTrigger` cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 The cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

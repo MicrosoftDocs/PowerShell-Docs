@@ -9,16 +9,16 @@ title: Get-Clipboard
 ---
 # Get-Clipboard
 
-## Synopsis
+## SYNOPSIS
 Gets the contents of the clipboard.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-Clipboard [-Raw] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is not supported on macOS.**
 
@@ -28,7 +28,7 @@ returned as an array of strings similar to `Get-Content`.
 > [!NOTE]
 > On Linux, this cmdlet requires the `xclip` utility to be in the path.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the content of the clipboard and display it to the command-line
 
@@ -42,7 +42,7 @@ Get-Clipboard
 hello
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Raw
 
@@ -68,14 +68,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
 ### System.String
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Set-Clipboard](Set-Clipboard.md)

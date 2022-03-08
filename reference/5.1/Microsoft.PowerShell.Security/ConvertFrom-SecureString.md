@@ -9,10 +9,10 @@ title: ConvertFrom-SecureString
 ---
 # ConvertFrom-SecureString
 
-## Synopsis
+## SYNOPSIS
 Converts a secure string to an encrypted standard string.
 
-## Syntax
+## SYNTAX
 
 ### Secure (Default)
 
@@ -26,7 +26,7 @@ ConvertFrom-SecureString [-SecureString] <SecureString> [[-SecureKey] <SecureStr
 ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `ConvertFrom-SecureString` cmdlet converts a secure string (**System.Security.SecureString**)
 into an encrypted standard string (**System.String**). Unlike a secure string, an encrypted standard
@@ -39,7 +39,7 @@ Encryption Standard (AES) encryption algorithm is used. The specified key must h
 key is specified, the Windows Data Protection API (DPAPI) is used to encrypt the standard string
 representation.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a secure string
 
@@ -80,7 +80,7 @@ Because each decimal numeral represents a single byte (8 bits), the key has 24 d
 The second command uses the key in the `$Key` variable to convert the secure string to an encrypted
 standard string.
 
-## Parameters
+## PARAMETERS
 
 ### -Key
 
@@ -137,19 +137,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Security.SecureString
 
 You can pipe a **SecureString** object to ConvertFrom-SecureString.
 
-## Outputs
+## OUTPUTS
 
 ### System.String
 
 ConvertFrom-SecureString returns a standard string object.
 
-## Notes
+## NOTES
 
 - To create a secure string from characters that are typed at the command prompt, use the
   **AsSecureString** parameter of the `Read-Host` cmdlet.
@@ -161,7 +161,7 @@ ConvertFrom-SecureString returns a standard string object.
   them. Avoid using these characters because they may cause problems and misunderstandings when used
   in a password.
 
-## Related links
+## RELATED LINKS
 
 [ConvertTo-SecureString](ConvertTo-SecureString.md)
 

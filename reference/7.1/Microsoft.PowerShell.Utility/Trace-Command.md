@@ -10,10 +10,10 @@ title: Trace-Command
 
 # Trace-Command
 
-## Synopsis
+## SYNOPSIS
 Configures and starts a trace of the specified expression or command.
 
-## Syntax
+## SYNTAX
 
 ### expressionSet (Default)
 
@@ -31,12 +31,12 @@ Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSo
  [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Trace-Command` cmdlet configures and starts a trace of the specified expression or command.
 It works like Set-TraceSource, except that it applies only to the specified command.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Trace metadata processing, parameter binding, and an expression
 
@@ -76,7 +76,7 @@ the **InputObject** parameter. The **InputObject** parameter passes the variable
 expression. In effect, the command being processed during the trace is
 `Get-Alias -InputObject $A" or "$A | Get-Alias`.
 
-## Parameters
+## PARAMETERS
 
 ### -ArgumentList
 
@@ -328,19 +328,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe objects that represent input to the expression to `Trace-Command`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSObject
 
 Returns the command trace in the debug stream.
 
-## Notes
+## NOTES
 
 - Tracing is a method that developers use to debug and refine programs. When tracing, the program
   generates detailed messages about each step in its internal processing.
@@ -365,7 +365,7 @@ Returns the command trace in the debug stream.
   **Expression**, **Option** or **Name**, **Command**, **Option**. If you include the parameter
   names, the parameters can appear in any order.
 
-## Related links
+## RELATED LINKS
 
 [Get-TraceSource](Get-TraceSource.md)
 

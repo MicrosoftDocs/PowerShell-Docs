@@ -9,10 +9,10 @@ title: Wait-Process
 ---
 # Wait-Process
 
-## Synopsis
+## SYNOPSIS
 Waits for the processes to be stopped before accepting more input.
 
-## Syntax
+## SYNTAX
 
 ### Name (Default)
 
@@ -32,7 +32,7 @@ Wait-Process [-Id] <Int32[]> [[-Timeout] <Int32>] [<CommonParameters>]
 Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet does not work on Linux or macOS.**
 
@@ -43,7 +43,7 @@ stopped. You can specify a process by process name or process ID (PID), or pipe 
 
 `Wait-Process` works only on processes running on the local computer.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Stop a process and wait
 
@@ -86,7 +86,7 @@ prompt.
 Wait-Process -Name outlook, winword -Timeout 30
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Id
 
@@ -165,19 +165,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Diagnostics.Process
 
 You can pipe a process object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - This cmdlet uses the **WaitForExit** method of the **System.Diagnostics.Process** class.
 
@@ -185,7 +185,7 @@ This cmdlet does not generate any output.
   `Start-Process -Wait` waits for the process tree (the process and all its descendants) to exit
   before returning control.
 
-## Related links
+## RELATED LINKS
 
 [Debug-Process](Debug-Process.md)
 

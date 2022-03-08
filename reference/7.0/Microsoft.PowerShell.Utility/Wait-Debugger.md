@@ -9,16 +9,16 @@ title: Wait-Debugger
 ---
 # Wait-Debugger
 
-## Synopsis
+## SYNOPSIS
 Stops a script in the debugger before running the next statement in the script.
 
-## Syntax
+## SYNTAX
 
 ```
 Wait-Debugger [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 Stops the PowerShell script execution engine at the point immediately after the `Wait-Debugger`
 cmdlet and waits for a debugger to be attached. This is similar to using
@@ -28,7 +28,7 @@ cmdlet and waits for a debugger to be attached. This is similar to using
 > Make sure you remove the `Wait-Debugger` lines after you are done. A running script appears to be
 > hung when it is stopped at a `Wait-Debugger`.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Insert breakpoint for debugging
 
@@ -124,7 +124,7 @@ class FileResource
 }
 ```
 
-## Parameters
+## PARAMETERS
 
 ### CommonParameters
 
@@ -132,16 +132,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### None
 
-## Outputs
+## OUTPUTS
 
 ### None
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug)

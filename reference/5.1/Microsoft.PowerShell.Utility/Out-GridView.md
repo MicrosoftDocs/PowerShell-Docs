@@ -9,10 +9,10 @@ title: Out-GridView
 ---
 # Out-GridView
 
-## Synopsis
+## SYNOPSIS
 Sends output to an interactive table in a separate window.
 
-## Syntax
+## SYNTAX
 
 ### PassThru (Default)
 
@@ -33,7 +33,7 @@ Out-GridView [-InputObject <PSObject>] [-Title <String>] [-OutputMode <OutputMod
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Out-GridView` cmdlet sends the output from a command to a grid view window where the output is
 displayed in an interactive table.
@@ -51,7 +51,7 @@ You can use the following features of the table to examine your data:
 
 For full instructions, see the [Notes](#notes) section of this article.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Output processes to a grid view
 
@@ -149,7 +149,7 @@ This command line can be used in a Windows shortcut. Without the **Wait** parame
 would exit as soon as the `Out-GridView` window opened, which would close the `Out-GridView` window
 almost immediately.
 
-## Parameters
+## PARAMETERS
 
 ### -InputObject
 
@@ -267,20 +267,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can send any object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 Normally, `Out-GridView` does not return any objects. When using the **PassThru** parameter, the
 objects representing the selected rows are returned to the pipeline.
 
-## Notes
+## NOTES
 
 You cannot use a remote command to open a grid view window on another computer.
 
@@ -408,7 +408,7 @@ The criteria only affects the display. It does not delete items from the table.
 - To delete selected criteria, click the red X beside each criterion.
 - To delete all criteria, click the **Clear All** button.
 
-## Related links
+## RELATED LINKS
 
 [Out-File](Out-File.md)
 

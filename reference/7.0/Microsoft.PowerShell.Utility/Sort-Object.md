@@ -10,10 +10,10 @@ title: Sort-Object
 
 # Sort-Object
 
-## Synopsis
+## SYNOPSIS
 Sorts objects by property values.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -36,7 +36,7 @@ Sort-Object [-Descending] [-Unique] -Bottom <Int32> [-InputObject <PSObject>] [[
  [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Sort-Object` cmdlet sorts objects in ascending or descending order based on object property
 values. If sort properties are not included in a command, PowerShell uses default sort properties
@@ -49,7 +49,7 @@ tables to sort in ascending order, descending order, or a combination of sort or
 sorted as case-sensitive or case-insensitive. Use the **Unique** parameter to eliminate duplicates
 from the output.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Sort the current directory by name
 
@@ -445,7 +445,7 @@ The `Get-ChildItem` cmdlet gets the files from the directory specified by the **
 down the pipeline to the `Sort-Object` cmdlet. `Sort-Object` uses the **Length** and **Name** parameter to sort
 the files by length in ascending order. Since `File01.txt` and `File03.txt` have the same length, they are further sorted by their property **Name**.
 
-## Parameters
+## PARAMETERS
 
 ### -Bottom
 
@@ -635,19 +635,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe the objects to be sorted to `Sort-Object`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSObject
 
 `Sort-Object` returns the sorted objects.
 
-## Notes
+## NOTES
 
 The `Sort-Object` cmdlet sorts objects based on properties specified in the command or the default
 sort properties for the object type. Default sort properties are defined using the `PropertySet`
@@ -670,7 +670,7 @@ see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrolle
 
 The performance of the sorting algorithm is slower when doing a stable sort.
 
-## Related links
+## RELATED LINKS
 
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 

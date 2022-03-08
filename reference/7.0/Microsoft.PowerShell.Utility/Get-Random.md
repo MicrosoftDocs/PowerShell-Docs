@@ -9,10 +9,10 @@ title: Get-Random
 ---
 # Get-Random
 
-## Synopsis
+## SYNOPSIS
 Gets a random number, or selects objects randomly from a collection.
 
-## Syntax
+## SYNTAX
 
 ### RandomNumberParameterSet (Default)
 
@@ -26,7 +26,7 @@ Get-Random [-SetSeed <Int32>] [[-Maximum] <Object>] [-Minimum <Object>] [-Count 
 Get-Random [-SetSeed <Int32>] [-InputObject] <Object[]> [-Count <Int32>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Random` cmdlet gets a randomly selected number. If you submit a collection of objects to
 `Get-Random`, it gets one or more randomly selected objects from the collection.
@@ -49,7 +49,7 @@ objects returned from a collection, or a seed number.
 > the current session until you use **SetSeed** again or close the session. You can't reset the seed
 > to its default value.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get a random integer
 
@@ -264,7 +264,7 @@ Get-Random -InputObject @('a','',$null)
 `Get-Random` will return either `a`, empty string, or `$null`. The empty sting displays as a blank
 line and `$null` returns to a PowerShell prompt.
 
-## Parameters
+## PARAMETERS
 
 ### -Count
 
@@ -390,20 +390,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 
 You can pipe one or more objects. `Get-Random` selects values randomly from the piped objects.
 
-## Outputs
+## OUTPUTS
 
 ### System.Int32, System.Int64, System.Double
 
 `Get-Random` returns an integer or floating-point number, or an object selected randomly from a
 submitted collection.
 
-## Notes
+## NOTES
 
 By default, `Get-Random` generates cryptographically secure randomness using the
 [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) class.
@@ -432,7 +432,7 @@ parameter set accepts arrays that contain an empty string or `$null`. In earlier
 versions, only the **Maximum** parameter in the **RandomNumberParameterSet** parameter set accepted
 an empty string or `$null`.
 
-## Related links
+## RELATED LINKS
 
 [System.Security.Cryptography.RandomNumberGenerator()](/dotnet/api/system.security.cryptography.randomnumbergenerator)
 

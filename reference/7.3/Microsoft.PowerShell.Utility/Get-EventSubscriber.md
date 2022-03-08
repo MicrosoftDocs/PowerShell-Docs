@@ -9,10 +9,10 @@ title: Get-EventSubscriber
 ---
 # Get-EventSubscriber
 
-## Synopsis
+## SYNOPSIS
 Gets the event subscribers in the current session.
 
-## Syntax
+## SYNTAX
 
 ### BySource (Default)
 
@@ -26,7 +26,7 @@ Get-EventSubscriber [[-SourceIdentifier] <String>] [-Force] [<CommonParameters>]
 Get-EventSubscriber [-SubscriptionId] <Int32> [-Force] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-EventSubscriber` cmdlet gets the event subscribers in the current session.
 
@@ -35,7 +35,7 @@ your Windows PowerShell session, and the events to which you subscribed are adde
 queue whenever they are raised. To cancel an event subscription, delete the event subscriber by
 using the `Unregister-Event` cmdlet.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the event subscriber for a timer event
 
@@ -173,7 +173,7 @@ being generated when the Elapsed event occurs.
 For more information about modules, see
 [about_Modules](../Microsoft.PowerShell.Core/About/about_Modules.md).
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -235,19 +235,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSEventSubscriber
 
 `Get-EventSubscriber` returns an object that represents each event subscriber.
 
-## Notes
+## NOTES
 
 The `New-Event` cmdlet, which creates a custom event, does not generate a subscriber. Therefore, the
 `Get-EventSubscriber` cmdlet will not find a subscriber object for these events. However, if you use
@@ -258,7 +258,7 @@ generates.
 Events, event subscriptions, and the event queue exist only in the current session. If you close the
 current session, the event queue is discarded and the event subscription is canceled.
 
-## Related links
+## RELATED LINKS
 
 [Get-Event](Get-Event.md)
 

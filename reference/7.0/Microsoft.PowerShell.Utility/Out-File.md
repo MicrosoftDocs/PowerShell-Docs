@@ -10,10 +10,10 @@ title: Out-File
 
 # Out-File
 
-## Synopsis
+## SYNOPSIS
 Sends output to a file.
 
-## Syntax
+## SYNTAX
 
 ### ByPath (Default)
 
@@ -29,7 +29,7 @@ Out-File [[-Encoding] <Encoding>] -LiteralPath <string> [-Append] [-Force] [-NoC
  [-Width <int>] [-NoNewline] [-InputObject <psobject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Out-File` cmdlet sends output to a file. It implicitly uses PowerShell's formatting system to
 write to the file. The file receives the same display representation as the terminal. This means
@@ -37,7 +37,7 @@ that the output may not be ideal for programmatic processing unless all input ob
 When you need to specify parameters for the output, use `Out-File` rather than the redirection
 operator (`>`). For more information about redirection, see [about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Send output and create a file
 
@@ -165,7 +165,7 @@ DemoDefaultOutFileWidth
 For more information about `$PSDefaultParameterValues`, see
 [about_Preference_Variables](../Microsoft.Powershell.Core/About/about_preference_variables.md#psdefaultparametervalues).
 
-## Parameters
+## PARAMETERS
 
 ### -Append
 
@@ -380,19 +380,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to `Out-File`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 `Out-File` does not generate any output.
 
-## Notes
+## NOTES
 
 Input objects are automatically formatted as they would be in the terminal, but you can use a
 `Format-*` cmdlet to explicitly control the formatting of the output to the file. For example,
@@ -404,7 +404,7 @@ cmdlet.
 
 `Out-File` saves data to a file but it does not produce any output objects to the pipeline.
 
-## Related links
+## RELATED LINKS
 
 [about_Providers](../Microsoft.Powershell.Core/About/about_Providers.md)
 

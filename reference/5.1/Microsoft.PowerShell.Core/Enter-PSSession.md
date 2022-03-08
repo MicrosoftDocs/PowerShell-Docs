@@ -9,10 +9,10 @@ title: Enter-PSSession
 ---
 # Enter-PSSession
 
-## Synopsis
+## SYNOPSIS
 Starts an interactive session with a remote computer.
 
-## Syntax
+## SYNTAX
 
 ### ComputerName (Default)
 
@@ -75,7 +75,7 @@ Enter-PSSession [-ContainerId] <String> [-ConfigurationName <String>] [-RunAsAdm
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Enter-PSSession` cmdlet starts an interactive session with a single remote computer. During the
 session, the commands that you type run on the remote computer, just as if you were typing directly
@@ -89,7 +89,7 @@ interactive session. However, you cannot use the `Disconnect-PSSession`, `Connec
 To end the interactive session and disconnect from the remote computer, use the `Exit-PSSession`
 cmdlet, or type `exit`.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Start an interactive session
 
@@ -164,7 +164,7 @@ This example shows how to start and stop an interactive session. The first comma
 The second command uses the `Exit-PSSession` cmdlet to end the session. You can also use the
 **Exit** keyword to end the interactive session. `Exit-PSSession` and **Exit** have the same effect.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowRedirection
 
@@ -681,19 +681,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String, System.Management.Automation.Runspaces.PSSession
 
 You can pipe a computer name, as a string, or a session object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 The cmdlet does not return any output.
 
-## Notes
+## NOTES
 
 To connect to a remote computer, you must be a member of the Administrators group on the remote
 computer. To start an interactive session on the local computer, you must start PowerShell with the
@@ -718,7 +718,7 @@ If the session you want to enter is busy processing a command, there might be a 
 PowerShell responds to the `Enter-PSSession` command. You are connected as soon as the session
 is available. To cancel the `Enter-PSSession` command, press <kbd>CTRL</kbd>+<kbd>C</kbd>.
 
-## Related links
+## RELATED LINKS
 
 [Exit-PSSession](Exit-PSSession.md)
 

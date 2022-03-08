@@ -10,10 +10,10 @@ title: Get-LocalUser
 
 # Get-LocalUser
 
-## Synopsis
+## SYNOPSIS
 Gets local user accounts.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -27,7 +27,7 @@ Get-LocalUser [[-Name] <String[]>] [<CommonParameters>]
 Get-LocalUser [[-SID] <SecurityIdentifier[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-LocalUser` cmdlet gets local user accounts. This cmdlet gets default built-in user
 accounts, local user accounts that you created, and local accounts that you connected to Microsoft
@@ -37,7 +37,7 @@ accounts.
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get an account by using its name
 
@@ -82,7 +82,7 @@ Name          Enabled Description
 Administrator True    Built-in account for administering the computer/domain
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Name
 
@@ -124,19 +124,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String, System.Security.Principal.SecurityIdentifier
 
 You can pipe a string or SID to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser[]
 
 This cmdlet returns local user accounts.
 
-## Notes
+## NOTES
 
 The **PrincipalSource** property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects
 describes the source of the object. The possible sources are as follows:
@@ -149,7 +149,7 @@ describes the source of the object. The possible sources are as follows:
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
 Windows operating system. For earlier versions, the property is blank.
 
-## Related links
+## RELATED LINKS
 
 [Disable-LocalUser](Disable-LocalUser.md)
 

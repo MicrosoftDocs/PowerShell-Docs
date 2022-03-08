@@ -9,10 +9,10 @@ title: Publish-Script
 ---
 # Publish-Script
 
-## Synopsis
+## SYNOPSIS
 Publishes a script.
 
-## Syntax
+## SYNTAX
 
 ### PathParameterSet (Default)
 
@@ -28,11 +28,11 @@ Publish-Script -LiteralPath <String> [-NuGetApiKey <String>] [-Repository <Strin
  [-Credential <PSCredential>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Publish-Script` cmdlet publishes the specified script to the online gallery.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a script file, add content to it, and publish it
 
@@ -120,7 +120,7 @@ The `Test-ScriptFileInfo` cmdlet validates `Demo-Script.ps1`. The `Publish-Scrip
 the script to the **LocalRepo1** repository. Finally. `Find-Script` is used to search for
 `Demo-Script.ps1` in the **LocalRepo1** repository.
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -261,17 +261,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 ### System.Management.Automation.PSCredential
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -285,7 +285,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [Find-Script](Find-Script.md)
 

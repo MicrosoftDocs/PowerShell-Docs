@@ -9,11 +9,11 @@ title: Get-ChildItem
 ---
 # Get-ChildItem
 
-## Synopsis
+## SYNOPSIS
 
 Gets the items and child items in one or more specified locations.
 
-## Syntax
+## SYNTAX
 
 ### Items (Default)
 
@@ -32,7 +32,7 @@ Get-ChildItem [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>]
  [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-ChildItem` cmdlet gets the items in one or more specified locations. If the item is a
 container, it gets the items inside the container, known as child items. You can use the **Recurse**
@@ -45,7 +45,7 @@ of levels to recurse.
 Locations are exposed to `Get-ChildItem` by PowerShell providers. A location can be a file system
 directory, registry hive, or a certificate store. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get child items from a file system directory
 
@@ -409,7 +409,7 @@ Mode          LastWriteTime    Length Name
 l----   12/16/2021  9:29 AM           tmp -> C:\Users\user1\AppData\Local\Temp
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Attributes
 
@@ -770,13 +770,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to `Get-ChildItem`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
@@ -787,7 +787,7 @@ path.
 
 If you use the **Name** parameter, `Get-ChildItem` returns the object names as strings.
 
-## Notes
+## NOTES
 
 - `Get-ChildItem` can be run using any of the built-in aliases, `ls`, `dir`, and `gci`. For more
   information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -797,7 +797,7 @@ If you use the **Name** parameter, `Get-ChildItem` returns the object names as s
   providers available in your session, type `Get-PSProvider`.
   For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md)
 

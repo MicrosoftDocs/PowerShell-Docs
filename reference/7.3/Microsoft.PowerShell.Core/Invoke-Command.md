@@ -10,10 +10,10 @@ title: Invoke-Command
 
 # Invoke-Command
 
-## Synopsis
+## SYNOPSIS
 Runs commands on local and remote computers.
 
-## Syntax
+## SYNTAX
 
 ### InProcess (Default)
 
@@ -163,7 +163,7 @@ Invoke-Command [-AsJob] [-HideComputerName] [-FilePath] <String> -SSHConnection 
  [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Invoke-Command` cmdlet runs commands on a local or remote computer and returns all output from
 the commands, including errors. Using a single `Invoke-Command` command, you can run commands on
@@ -191,7 +191,7 @@ connection information. For more information about how to set up PowerShell SSH 
 
 Some code samples use splatting to reduce the line length. For more information, see [about_Splatting](./About/about_Splatting.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Run a script on a server
 
@@ -706,7 +706,7 @@ $options = @{
 $results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -KeyFilePath '/Users/UserB/id_rsa' -Options $options
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AllowRedirection
 
@@ -1645,14 +1645,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.ScriptBlock
 
 You can pipe a command in a script block to `Invoke-Command`. Use the `$Input` automatic variable to
 represent the input objects in the command.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSRemotingJob, System.Management.Automation.Runspaces.PSSession, or the output of the invoked command
 
@@ -1660,7 +1660,7 @@ This cmdlet returns a job object, if you use the **AsJob** parameter. If you spe
 **InDisconnectedSession** parameter, `Invoke-Command` returns a **PSSession** object. Otherwise, it
 returns the output of the invoked command, which is the value of the **ScriptBlock** parameter.
 
-## Notes
+## NOTES
 
 On Windows Vista, and later versions of the Windows operating system, to use the **ComputerName**
 parameter of `Invoke-Command` to run a command on the local computer, you must run PowerShell using
@@ -1726,7 +1726,7 @@ Any values explicitly passed by parameters take precedence over values passed in
 hashtable. For more information about `ssh_config` files, see
 [ssh_config(5)](https://man.openbsd.org/ssh_config.5).
 
-## Related links
+## RELATED LINKS
 
 [about_PSSessions](./About/about_PSSessions.md)
 

@@ -9,10 +9,10 @@ title: New-PSSessionOption
 ---
 # New-PSSessionOption
 
-## Synopsis
+## SYNOPSIS
 Creates an object that contains advanced options for a PSSession.
 
-## Syntax
+## SYNTAX
 
 ```
 New-PSSessionOption [-MaximumRedirection <Int32>] [-NoCompression] [-NoMachineProfile] [-Culture <CultureInfo>]
@@ -24,7 +24,7 @@ New-PSSessionOption [-MaximumRedirection <Int32>] [-NoCompression] [-NoMachinePr
  [-OperationTimeout <Int32>] [-NoEncryption] [-UseUTF16] [-IncludePortInSPN] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-PSSessionOption` cmdlet creates an object that contains advanced options for a
 user-managed session (**PSSession**). You can use the object as the value of the **SessionOption**
@@ -48,7 +48,7 @@ in the session configuration. However, they do not take precedence over maximum 
 limits set in the session configuration. For more information about session configurations, see
 [about_Session_Configurations](About/about_Session_Configurations.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a default session option
 
@@ -260,7 +260,7 @@ commands in the remote session. The data appears in the **ApplicationArguments**
 
 The final `Invoke-Command` shows how the data might be used.
 
-## Parameters
+## PARAMETERS
 
 ### -ApplicationArguments
 
@@ -777,17 +777,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.Remoting.PSSessionOption
 
-## Notes
+## NOTES
 
 If the **SessionOption** parameter is not used in a command to create a **PSSession**, the session
 options are determined by the property values of the `$PSSessionOption` preference variable, if it
@@ -798,7 +798,7 @@ The properties of a session configuration object vary with the options set for t
 configuration and the values of those options. Also, session configurations that use a session
 configuration file have additional properties.
 
-## Related links
+## RELATED LINKS
 
 [Enter-PSSession](Enter-PSSession.md)
 

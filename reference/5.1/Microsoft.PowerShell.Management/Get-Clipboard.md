@@ -9,21 +9,21 @@ title: Get-Clipboard
 ---
 # Get-Clipboard
 
-## Synopsis
+## SYNOPSIS
 Gets the current Windows clipboard entry.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-Clipboard [-Format <ClipboardFormat>] [-TextFormatType <TextDataFormat>] [-Raw] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Clipboard` cmdlet gets the current Windows clipboard entry. Multiple lines of text are
 returned as an array of strings similar to `Get-Content`.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the content of the clipboard and display it to the command-line
 
@@ -59,7 +59,7 @@ Mode                LastWriteTime         Length Name
 -a----        6/28/2018   2:28 PM            345 README.md
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Format
 
@@ -129,14 +129,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
 ### System.String, System.IO.FileInfo, System.IO.Stream, System.Drawing.Image
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Set-Clipboard](Set-Clipboard.md)

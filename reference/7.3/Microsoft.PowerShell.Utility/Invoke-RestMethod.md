@@ -10,10 +10,10 @@ title: Invoke-RestMethod
 
 # Invoke-RestMethod
 
-## Synopsis
+## SYNOPSIS
 Sends an HTTP or HTTPS request to a RESTful web service.
 
-## Syntax
+## SYNTAX
 
 ### StandardMethod (Default)
 
@@ -85,7 +85,7 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Invoke-RestMethod` cmdlet sends HTTP and HTTPS requests to Representational State Transfer
 (REST) web services that return richly structured data.
@@ -104,7 +104,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 Beginning in PowerShell 7.0, `Invoke-RestMethod` supports proxy configuration defined by environment
 variables. See the [Notes](#notes) section of this article.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the PowerShell RSS feed
 
@@ -254,7 +254,7 @@ $uri = 'https://api.github.com/repos/microsoftdocs/powershell-docs/issues'
 Invoke-RestMethod -Uri $uri -HttpVersion 2.0 -SkipCertificateCheck
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AllowUnencryptedAuthentication
 
@@ -1288,13 +1288,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 
 You can pipe the body of a web request to `Invoke-RestMethod`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Int64, System.String, System.Xml.XmlDocument
 
@@ -1305,7 +1305,7 @@ The output of the cmdlet depends upon the format of the content that is retrieve
 If the request returns JSON strings, `Invoke-RestMethod` returns a **PSObject** that represents the
 strings.
 
-## Notes
+## NOTES
 
 Some features may not be available on all platforms.
 
@@ -1331,7 +1331,7 @@ are:
   case `HTTP_PROXY` or `HTTPS_PROXY` are not defined.
 - `NO_PROXY`: a comma-separated list of hostnames that should be excluded from proxying.
 
-## Related links
+## RELATED LINKS
 
 [ConvertTo-Json](ConvertTo-Json.md)
 

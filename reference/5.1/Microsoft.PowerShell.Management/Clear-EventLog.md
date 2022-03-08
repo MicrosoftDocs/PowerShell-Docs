@@ -9,16 +9,16 @@ title: Clear-EventLog
 ---
 # Clear-EventLog
 
-## Synopsis
+## SYNOPSIS
 Clears all entries from specified event logs on the local or remote computers.
 
-## Syntax
+## SYNTAX
 
 ```
 Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Clear-EventLog` cmdlet deletes all of the entries from the specified event logs on the local
 computer or on remote computers. To use `Clear-EventLog`, you must be a member of the Administrators
@@ -28,7 +28,7 @@ The cmdlets that contain the **EventLog** noun (the EventLog cmdlets) work only 
 logs. To get events from logs that use the Windows Event Log technology in Windows Vista and later
 versions of Windows, use the Get-WinEvent cmdlet.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Clear specific event log types from the local computer
 
@@ -90,7 +90,7 @@ log list.
 Notice that a few entries were added to the System and Security logs after the logs were cleared but
 before they were displayed.
 
-## Parameters
+## PARAMETERS
 
 ### -ComputerName
 
@@ -176,24 +176,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe objects to `Clear-EventLog`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - To use `Clear-EventLog` on Windows Vista and later versions of Windows, start Windows PowerShell
   with the "Run as administrator" option.
 
-## Related links
+## RELATED LINKS
 
 [Get-EventLog](Get-EventLog.md)
 

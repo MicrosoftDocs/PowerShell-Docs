@@ -10,10 +10,10 @@ title: Remove-Alias
 
 # Remove-Alias
 
-## Synopsis
+## SYNOPSIS
 Remove an alias from the current session.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -21,14 +21,14 @@ Remove an alias from the current session.
 Remove-Alias [-Name] <String[]> [-Scope <String>] [-Force] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Remove-Alias` cmdlet removes an alias from the current PowerShell session. To remove an alias
 with the **Option** property set to **ReadOnly**, use the **Force** parameter.
 
 The `Remove-Alias` cmdlet was introduced in PowerShell 6.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Remove an alias
 
@@ -54,7 +54,7 @@ represent the current pipeline object. The parameter **NE** (not equal), selects
 have an **Options** value set to **Constant**. `Remove-Alias` uses the **Force** parameter to remove
 aliases, including read-only aliases, from the PowerShell session.
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -121,26 +121,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String[]
 
 You can pipe an alias object to `Remove-Alias`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet doesn't return any output.
 
-## Notes
+## NOTES
 
 Changes only affect the current scope. To remove an alias from all sessions, add a `Remove-Alias`
 command to your PowerShell profile.
 
 For more information, see [about_Aliases](../microsoft.powershell.core/about/about_aliases.md).
 
-## Related links
+## RELATED LINKS
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 

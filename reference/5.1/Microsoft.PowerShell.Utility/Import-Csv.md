@@ -9,10 +9,10 @@ title: Import-Csv
 ---
 # Import-Csv
 
-## Synopsis
+## SYNOPSIS
 Creates table-like custom objects from the items in a comma-separated value (CSV) file.
 
-## Syntax
+## SYNTAX
 
 ### Delimiter (Default)
 
@@ -28,7 +28,7 @@ Import-Csv [[-Path] <string[]>] -UseCulture [-LiteralPath <string[]>] [-Header <
  [-Encoding <string>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Import-Csv` cmdlet creates table-like custom objects from the items in CSV files. Each column
 in the CSV file becomes a property of the custom object and the items in rows become the property
@@ -49,7 +49,7 @@ header row name and displays a warning message.
 `Import-Csv` uses the byte-order-mark (BOM) to detect the encoding format of the file. If the
 file has no BOM, it assumes the encoding is UTF8.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Import process objects
 
@@ -295,7 +295,7 @@ The `Get-Content` cmdlet displays the Projects.csv file. The header row is missi
 displays a warning message because **H1** is a default header name. The `(Import-Csv -Path
 .\Projects.csv).H1` command gets the **H1** property values and displays a warning.
 
-## Parameters
+## PARAMETERS
 
 ### -Delimiter
 
@@ -436,19 +436,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to `Import-Csv`.
 
-## Outputs
+## OUTPUTS
 
 ### Object
 
 This cmdlet returns the objects described by the content in the CSV file.
 
-## Notes
+## NOTES
 
 Because the imported objects are CSV versions of the object type, they are not recognized and
 formatted by the PowerShell type formatting entries that format the non-CSV versions of the object
@@ -472,7 +472,7 @@ object. The property values are converted to strings by using the **ToString()**
 object, so they are represented by the name of the property value. `Export-Csv` does not export the
 methods of the object.
 
-## Related links
+## RELATED LINKS
 
 [ConvertFrom-Csv](ConvertFrom-Csv.md)
 

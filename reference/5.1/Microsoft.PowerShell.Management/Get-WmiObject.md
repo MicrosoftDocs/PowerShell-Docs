@@ -9,11 +9,11 @@ title: Get-WmiObject
 ---
 # Get-WmiObject
 
-## Synopsis
+## SYNOPSIS
 Gets instances of Windows Management Instrumentation (WMI) classes or information about the
 available classes.
 
-## Syntax
+## SYNTAX
 
 ### query (Default)
 
@@ -60,7 +60,7 @@ Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-ComputerName <String[]>] [-Namespace <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 Starting in PowerShell 3.0, this cmdlet has been superseded by `Get-CimInstance`.
 
@@ -79,7 +79,7 @@ Beginning in Windows PowerShell 3.0, the **__Server** property of the object tha
 returns has a **PSComputerName** alias. This makes it easier to include the source computer name in
 output and reports.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get processes on the local computer
 
@@ -226,7 +226,7 @@ Get-WmiObject Win32_Service -Credential FABRIKAM\administrator -ComputerName Fab
 > [!NOTE]
 > Credentials cannot be used when targeting the local computer.
 
-## Parameters
+## PARAMETERS
 
 ### -Amended
 
@@ -606,20 +606,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to `Get-WmiObject`.
 
-## Outputs
+## OUTPUTS
 
 ### PSObject or System.Management.Automation.RemotingJob
 
 When you use the **AsJob** parameter, the cmdlet returns a job object. Otherwise, the object that
 `Get-WmiObject` returns depends on the value of the **Class** parameter.
 
-## Notes
+## NOTES
 
 To access WMI information on a remote computer, the cmdlet must run under an account that is a
 member of the local administrators group on the remote computer. Or, the default access control on
@@ -629,7 +629,7 @@ Only some of the properties of each WMI class are displayed by default. The set 
 is displayed for each WMI class is specified in the Types.ps1xml configuration file. To get all
 properties of a WMI object, use the `Get-Member` or `Format-List` cmdlets.
 
-## Related links
+## RELATED LINKS
 
 [Invoke-WmiMethod](Invoke-WmiMethod.md)
 

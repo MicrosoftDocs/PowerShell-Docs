@@ -10,10 +10,10 @@ title: Invoke-WebRequest
 
 # Invoke-WebRequest
 
-## Synopsis
+## SYNOPSIS
 Gets content from a web page on the internet.
 
-## Syntax
+## SYNTAX
 
 ### StandardMethod (Default)
 
@@ -77,7 +77,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Invoke-WebRequest` cmdlet sends HTTP and HTTPS requests to a web page or web service. It parses
 the response and returns collections of links, images, and other significant HTML elements.
@@ -93,7 +93,7 @@ variables. See the [Notes](#notes) section of this article.
 > However, since the `contoso.com` sites do not exist, the examples do not work. Adapt the examples
 > to hosts in your environment.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Send a web request
 
@@ -271,7 +271,7 @@ $StatusCode
 The terminating error is caught by the `catch` block, which retrieves the **StatusCode** from the
 **Exception** object.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowUnencryptedAuthentication
 
@@ -1175,17 +1175,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 
 You can pipe the body of a web request to `Invoke-WebRequest`.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.BasicHtmlWebResponseObject
 
-## Notes
+## NOTES
 
 Beginning with PowerShell 6.0.0 `Invoke-WebRequest` supports basic parsing only.
 
@@ -1214,7 +1214,7 @@ are:
   case `HTTP_PROXY` or `HTTPS_PROXY` are not defined.
 - `NO_PROXY`: a comma-separated list of hostnames that should be excluded from proxying.
 
-## Related links
+## RELATED LINKS
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
 

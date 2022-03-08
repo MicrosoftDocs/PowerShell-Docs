@@ -10,10 +10,10 @@ title: Get-CimAssociatedInstance
 
 # Get-CimAssociatedInstance
 
-## Synopsis
+## SYNOPSIS
 Retrieves the CIM instances that are connected to a specific CIM instance by an association.
 
-## Syntax
+## SYNTAX
 
 ### ComputerSet (Default)
 
@@ -31,7 +31,7 @@ Get-CimAssociatedInstance [[-Association] <String>] [-ResultClassName <String>]
  [-ResourceUri <Uri>] -CimSession <CimSession[]> [-KeyOnly] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -50,7 +50,7 @@ If the InputObject parameter is not specified, the cmdlet works in one of the fo
   cmdlet works against the CIM server specified by either the **ComputerName** parameter or the
   **CimSession** parameter.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all the associated instances of a specific instance
 
@@ -102,7 +102,7 @@ named `$s`. The association class name for the **Win32_DependentService** is ret
 the `Get-CimAssociatedInstance` cmdlet to get all the associated instances of the retrieved
 association class.
 
-## Parameters
+## PARAMETERS
 
 ### -Association
 
@@ -314,21 +314,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet accepts no input objects.
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
 This cmdlet returns an object.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-CimClass](get-cimclass.md)
 

@@ -9,10 +9,10 @@ title: ConvertFrom-StringData
 ---
 # ConvertFrom-StringData
 
-## Synopsis
+## SYNOPSIS
 Converts a string containing one or more key and value pairs to a hash table.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -20,7 +20,7 @@ Converts a string containing one or more key and value pairs to a hash table.
 ConvertFrom-StringData [-StringData] <String> [[-Delimiter] <Char>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `ConvertFrom-StringData` cmdlet converts a string that contains one or more key and value pairs
 into a hash table. Because each key-value pair must be on a separate line, here-strings are often
@@ -44,7 +44,7 @@ sequences in your results.
 
 PowerShell 7 adds the **Delimiter** parameter.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Convert a single-quoted here-string to a hash table
 
@@ -235,7 +235,7 @@ Name                           Value
 Message                        Look in c:\Windows\System32
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Delimiter
 
@@ -290,19 +290,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string containing a key-value pair to `ConvertFrom-StringData`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Collections.Hashtable
 
 This cmdlet returns a hash table that it creates from the key-value pairs.
 
-## Notes
+## NOTES
 
 A here-string is a string consisting of one or more lines within which quotation marks are
 interpreted literally.
@@ -311,4 +311,4 @@ This cmdlet can be useful in scripts that display user messages in multiple spok
 can use the dictionary-style hash tables to isolate text strings from code, such as in resource
 files, and to format the text strings for use in translation tools.
 
-## Related links
+## RELATED LINKS

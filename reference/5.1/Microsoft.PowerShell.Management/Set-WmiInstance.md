@@ -10,11 +10,11 @@ title: Set-WmiInstance
 
 # Set-WmiInstance
 
-## Synopsis
+## SYNOPSIS
 
 Creates or updates an instance of an existing Windows Management Instrumentation (WMI) class.
 
-## Syntax
+## SYNTAX
 
 ### Class (Default)
 
@@ -68,7 +68,7 @@ Set-WmiInstance [-PutType <PutType>] [-AsJob] [-Impersonation <ImpersonationLeve
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-WmiInstance` cmdlet creates or updates an instance of an existing Windows Management
 Instrumentation (WMI) class. The created or updated instance is written to the WMI repository.
@@ -79,7 +79,7 @@ standard. this enables cmdlets to use the same techniques to manage Windows-base
 those running other operating systems. Instead of using `Set-WmiInstance`, consider using the [Set-CimInstance](/powershell/module/cimcmdlets/set-ciminstance)
 or [New-CimInstance](/powershell/module/cimcmdlets/new-ciminstance) cmdlets.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Set WMI logging level
 
@@ -217,7 +217,7 @@ value, together considered a value pair, in the argument parameter. The paramete
 that is defined by the `@{property = value}` construction. The returned class information reflects the
 new value.
 
-## Parameters
+## PARAMETERS
 
 ### -Arguments
 
@@ -578,21 +578,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet does not accept input.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-WmiObject](Get-WmiObject.md)
 

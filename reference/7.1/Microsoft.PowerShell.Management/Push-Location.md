@@ -9,10 +9,10 @@ title: Push-Location
 ---
 # Push-Location
 
-## Synopsis
+## SYNOPSIS
 Adds the current location to the top of a location stack.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -26,7 +26,7 @@ Push-Location [[-Path] <String>] [-PassThru] [-StackName <String>] [<CommonParam
 Push-Location [-LiteralPath <String>] [-PassThru] [-StackName <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Push-Location` cmdlet adds ("pushes") the current location onto a location stack. If you
 specify a path, `Push-Location` pushes the current location onto a location stack and then changes
@@ -39,7 +39,7 @@ does not exist, `Push-Location` creates it.
 
 For more information about location stacks, see the [Notes](#notes).
 
-## Examples
+## EXAMPLES
 
 ### Example 1
 
@@ -89,7 +89,7 @@ the `Pop-Location` cmdlet to pop the original location (`C:\`) from the Stack2 s
 
 For more information about location stacks, see the [Notes](#notes).
 
-## Parameters
+## PARAMETERS
 
 ### -LiteralPath
 
@@ -178,13 +178,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path (but not a literal path) to `Push-Location`.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Management.Automation.PathInfo
 
@@ -192,7 +192,7 @@ When you use the **PassThru** parameter, `Push-Location` generates a
 **System.Management.Automation.PathInfo** object that represents the location. Otherwise, this
 cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
 This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
@@ -243,7 +243,7 @@ The `Push-Location` cmdlet is designed to work with the data exposed by any prov
 providers available in your session, type `Get-PSProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [Get-Location](Get-Location.md)
 

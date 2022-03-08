@@ -10,10 +10,10 @@ title: Enable-PSBreakpoint
 
 # Enable-PSBreakpoint
 
-## Synopsis
+## SYNOPSIS
 Enables the breakpoints in the current console.
 
-## Syntax
+## SYNTAX
 
 ### Id (Default)
 
@@ -28,7 +28,7 @@ Enable-PSBreakpoint [-PassThru] [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Enable-PSBreakpoint` cmdlet re-enables disabled breakpoints. You can use it to enable all
 breakpoints, or specific breakpoints by providing breakpoint objects or IDs.
@@ -44,7 +44,7 @@ Technically, this cmdlet changes the value of the **Enabled** property of a brea
 information about the PowerShell debugger, see
 [about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Enable all breakpoints
 
@@ -114,7 +114,7 @@ Enable-PSBreakpoint -Breakpoint $B
 
 This example is equivalent to running `Enable-PSBreakpoint -Id 3, 5`.
 
-## Parameters
+## PARAMETERS
 
 ### -Breakpoint
 
@@ -208,20 +208,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.Breakpoint
 
 You can pipe a breakpoint object to `Enable-PSBreakpoint`.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Management.Automation.Breakpoint
 
 When you use the **PassThru** parameter, `Enable-PSBreakpoint` returns a breakpoint object that
 represents that breakpoint that was enabled. Otherwise, this cmdlet doesn't generate any output.
 
-## Notes
+## NOTES
 
 - The `Enable-PSBreakpoint` cmdlet doesn't generate an error if you try to enable a breakpoint that
   is already enabled. As such, you can enable all breakpoints without error, even when only a few
@@ -230,7 +230,7 @@ represents that breakpoint that was enabled. Otherwise, this cmdlet doesn't gene
 - Breakpoints are enabled when you create them by using the `Set-PSBreakpoint` cmdlet. You don't
   need to enable newly created breakpoints.
 
-## Related links
+## RELATED LINKS
 
 [Disable-PSBreakpoint](Disable-PSBreakpoint.md)
 

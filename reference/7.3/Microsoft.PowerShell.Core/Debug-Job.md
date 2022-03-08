@@ -10,10 +10,10 @@ title: Debug-Job
 
 # Debug-Job
 
-## Synopsis
+## SYNOPSIS
 Debugs a running background or remote job.
 
-## Syntax
+## SYNTAX
 
 ### JobParameterSet (Default)
 
@@ -39,7 +39,7 @@ Debug-Job [-Id] <Int32> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters>]
 Debug-Job [-InstanceId] <Guid> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Debug-Job` cmdlet lets you debug scripts that are running within jobs. The cmdlet is designed
 to debug PowerShell Workflow jobs, background jobs, and jobs running in remote sessions. `Debug-Job`
@@ -47,7 +47,7 @@ accepts a running job object, name, ID, or instance ID as input, and starts a de
 the script it is running. The debugger `quit` command stops the job and running script. The `exit`
 command detaches the debugger, and allows the job to continue to run.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Debug a job by job ID
 
@@ -88,7 +88,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
              18:  SampleWorkflowTest -MyOutput "Hello"
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -BreakAll
 
@@ -212,15 +212,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.RemotingJob
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-Job](Get-Job.md)
 

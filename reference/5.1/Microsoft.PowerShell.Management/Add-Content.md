@@ -9,10 +9,10 @@ title: Add-Content
 ---
 # Add-Content
 
-## Synopsis
+## SYNOPSIS
 Adds content to the specified items, such as adding words to a file.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -32,14 +32,14 @@ Add-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <st
  [-Stream <string>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Add-Content` cmdlet appends content to a specified item or file. You can specify the content
 by typing the content in the command or by specifying an object that contains the content.
 
 If you need to create files or directories for the following examples, see [New-Item](New-Item.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Add a string to all text files with an exception
 
@@ -155,7 +155,7 @@ Mode                LastWriteTime         Length Name
 To remove the read-only attribute, use the `Set-ItemProperty` command with the **Value** parameter
 set to `False`.
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -471,20 +471,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object, System.Management.Automation.PSCredential
 
 You can pipe values, paths, or credentials to `Set-Content`.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.String
 
 When you use the **PassThru** parameter, `Add-Content` generates a **System.String** object that
 represents the content. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - When you pipe an object to `Add-Content`, the object is converted to a string before it is added
   to the item. The object type determines the string format, but the format might be different than
@@ -496,7 +496,7 @@ represents the content. Otherwise, this cmdlet does not generate any output.
   providers available in your session, type `Get-PSProvider`. For more information, see
   [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
 

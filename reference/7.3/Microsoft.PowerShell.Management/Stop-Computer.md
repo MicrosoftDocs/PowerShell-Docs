@@ -10,10 +10,10 @@ title: Stop-Computer
 
 # Stop-Computer
 
-## Synopsis
+## SYNOPSIS
 Stops (shuts down) local and remote computers.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -22,7 +22,7 @@ Stop-Computer [-WsmanAuthentication <String>] [[-ComputerName] <String[]>]
  [[-Credential] <PSCredential>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Stop-Computer` cmdlet shuts down the local computer and remote computers.
 
@@ -32,7 +32,7 @@ credentials, and to force an immediate shut down.
 In PowerShell 7.1, `Stop-Computer` was added for Linux and macOS. The parameters have no effect on
 these platforms. The cmdlet is just calling the native command `/sbin/shutdown`.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Shut down the local computer
 
@@ -106,7 +106,7 @@ administrator. The credentials are stored in the `$c` variable.
 computers in the `$s` variable. The **Force** parameter forces an immediate shutdown. The
 **Credential** parameter submits the credentials saved in the `$c` variable.
 
-## Parameters
+## PARAMETERS
 
 ### -ComputerName
 
@@ -251,17 +251,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You can't pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
-## Notes
+## NOTES
 
 This cmdlet uses the **Win32Shutdown** method of the **Win32_OperatingSystem** WMI class. This
 method requires the **SeShutdownPrivilege** privilege be enabled for the user account used to
@@ -270,7 +270,7 @@ restart the machine.
 In PowerShell 7.1, `Stop-Computer` was added for Linux and macOS. For these platorms, the cmdlet
 calls the native command `/sbin/shutdown`.
 
-## Related links
+## RELATED LINKS
 
 [Rename-Computer](Rename-Computer.md)
 

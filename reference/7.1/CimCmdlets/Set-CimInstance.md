@@ -9,10 +9,10 @@ title: Set-CimInstance
 ---
 # Set-CimInstance
 
-## Synopsis
+## SYNOPSIS
 Modifies a CIM instance on a CIM server by calling the ModifyInstance method of the CIM class.
 
-## Syntax
+## SYNTAX
 
 ### CimInstanceComputerSet (Default)
 
@@ -46,7 +46,7 @@ Set-CimInstance [-ComputerName <String[]>] [-Namespace <String>] [-OperationTime
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -69,7 +69,7 @@ If the **InputObject** parameter is specified, the cmdlet works in one of the fo
   this cmdlet uses the either the **CimSession** parameter value or **ComputerName** parameter
   value. This is not very common.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Set the CIM instance
 
@@ -147,7 +147,7 @@ $x = New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";Use
 Set-CimInstance -CimInstance $x -Property @{VariableValue="somevalue"} -PassThru
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -CimSession
 
@@ -399,19 +399,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.Management.Infrastructure.CimInstance
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.Management.Infrastructure.CimInstance
 
 When the **Passthru** parameter is specified, this cmdlet returns a modified CIM instance object.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-CimInstance](get-ciminstance.md)
 

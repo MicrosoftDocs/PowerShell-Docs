@@ -10,10 +10,10 @@ title: Invoke-Command
 
 # Invoke-Command
 
-## Synopsis
+## SYNOPSIS
 Runs commands on local and remote computers.
 
-## Syntax
+## SYNTAX
 
 ### InProcess (Default)
 
@@ -128,7 +128,7 @@ Invoke-Command [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob] [
  [-ArgumentList <Object[]>] -ContainerId <String[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Invoke-Command` cmdlet runs commands on a local or remote computer and returns all output from
 the commands, including errors. Using a single `Invoke-Command` command, you can run commands on
@@ -148,7 +148,7 @@ Before using `Invoke-Command` to run commands on a remote computer, read [about_
 
 Some code samples use splatting to reduce the line length. For more information, see [about_Splatting](./About/about_Splatting.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Run a script on a server
 
@@ -614,7 +614,7 @@ and the **IdleTimeout** value is set to **43200000** milliseconds (12 hours).
 To get the results of commands and scripts that run in disconnected sessions, use the
 `Receive-PSSession` cmdlet.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowRedirection
 
@@ -1326,14 +1326,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.ScriptBlock
 
 You can pipe a command in a script block to `Invoke-Command`. Use the `$Input` automatic variable to
 represent the input objects in the command.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSRemotingJob, System.Management.Automation.Runspaces.PSSession, or the output of the invoked command
 
@@ -1341,7 +1341,7 @@ This cmdlet returns a job object, if you use the **AsJob** parameter. If you spe
 **InDisconnectedSession** parameter, `Invoke-Command` returns a **PSSession** object. Otherwise, it
 returns the output of the invoked command, which is the value of the **ScriptBlock** parameter.
 
-## Notes
+## NOTES
 
 On Windows Vista, and later versions of the Windows operating system, to use the **ComputerName**
 parameter of `Invoke-Command` to run a command on the local computer, you must run PowerShell using
@@ -1378,7 +1378,7 @@ session. For more information about the values of the **State** property of sess
 information about the values of the **Availability** property of sessions, see
 [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
-## Related links
+## RELATED LINKS
 
 [about_PSSessions](./About/about_PSSessions.md)
 

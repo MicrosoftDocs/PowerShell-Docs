@@ -10,10 +10,10 @@ title: Import-Clixml
 
 # Import-Clixml
 
-## Synopsis
+## SYNOPSIS
 Imports a CLIXML file and creates corresponding objects in PowerShell.
 
-## Syntax
+## SYNTAX
 
 ### ByPath (Default)
 
@@ -29,7 +29,7 @@ Import-Clixml -LiteralPath <String[]> [-IncludeTotalCount] [-Skip <UInt64>] [-Fi
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Import-Clixml` cmdlet imports a Common Language Infrastructure (CLI) XML file with data that
 represents Microsoft .NET Framework objects and creates the PowerShell objects. For more information
@@ -41,7 +41,7 @@ that were exported as secure XML using `Export-Clixml`. For an example, see Exam
 `Import-Clixml` uses the byte-order-mark (BOM) to detect the encoding format of the file. If the
 file has no BOM, it assumes the encoding is UTF8.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Import a serialized file and recreate an object
 
@@ -85,7 +85,7 @@ To import the credential automatically into your script, run the final two comma
 `Import-Clixml` to import the secured credential object into your script. This import eliminates the
 risk of exposing plain-text passwords in your script.
 
-## Parameters
+## PARAMETERS
 
 ### -First
 
@@ -182,24 +182,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipeline a string that contains a path to `Import-Clixml`.
 
-## Outputs
+## OUTPUTS
 
 ### PSObject
 
 `Import-Clixml` returns objects that were deserialized from the stored XML files.
 
-## Notes
+## NOTES
 
 When specifying multiple values for a parameter, use commas to separate the values. For example,
 `<parameter-name> <value1>, <value2>`.
 
-## Related links
+## RELATED LINKS
 
 [Export-Clixml](Export-Clixml.md)
 

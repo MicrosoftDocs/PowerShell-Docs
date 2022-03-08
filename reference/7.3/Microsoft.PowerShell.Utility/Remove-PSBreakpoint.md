@@ -10,10 +10,10 @@ title: Remove-PSBreakpoint
 
 # Remove-PSBreakpoint
 
-## Synopsis
+## SYNOPSIS
 Deletes breakpoints from the current console.
 
-## Syntax
+## SYNTAX
 
 ### Breakpoint (Default)
 
@@ -27,7 +27,7 @@ Remove-PSBreakpoint [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm] [<CommonPa
 Remove-PSBreakpoint [-Id] <Int32[]> [-Runspace <Runspace>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Remove-PSBreakpoint` cmdlet deletes a breakpoint. Enter a breakpoint object or a breakpoint ID.
 
@@ -39,7 +39,7 @@ not function.
 information about the PowerShell debugger, see
 [about_Debuggers](../microsoft.powershell.core/about/about_debuggers.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Remove all breakpoints
 
@@ -85,7 +85,7 @@ function del-psb { Get-PSBreakpoint | Remove-PSBreakpoint }
 It uses the `Get-PSBreakpoint` cmdlet to get the breakpoints. Then, it uses a pipeline operator
 (`|`) to send the breakpoints to the `Remove-PSBreakpoint` cmdlet, which deletes them.
 
-## Parameters
+## PARAMETERS
 
 ### -Breakpoint
 
@@ -176,7 +176,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.Breakpoint[]
 
@@ -186,15 +186,15 @@ You can pipe breakpoint objects to `Remove-PSBreakpoint`.
 
 ### System.Management.Automation.Runspaces.Runspace
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 The cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Disable-PSBreakpoint](Disable-PSBreakpoint.md)
 

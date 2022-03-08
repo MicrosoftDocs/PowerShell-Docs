@@ -9,10 +9,10 @@ title: Wait-Job
 ---
 # Wait-Job
 
-## Synopsis
+## SYNOPSIS
 Waits until one or all of the PowerShell jobs running in the session are in a terminating state.
 
-## Syntax
+## SYNTAX
 
 ### SessionIdParameterSet (Default)
 
@@ -50,7 +50,7 @@ Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-State] <JobState> [<CommonParamete
 Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Filter] <Hashtable> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Wait-Job` cmdlet waits for a job to be in a terminating state before continuing execution.
 The terminating states are:
@@ -77,7 +77,7 @@ type, import the module that supports the custom job type into the session befor
 module. For information about a particular custom job type, see the documentation of the custom job
 type feature.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Wait for all jobs
 
@@ -275,7 +275,7 @@ Wait-Job -Id 1
 
 This command waits for the job with an ID value of 1.
 
-## Parameters
+## PARAMETERS
 
 ### -Any
 
@@ -477,20 +477,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.RemotingJob
 
 You can pipe a job object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSRemotingJob
 
 This cmdlet returns job objects that represent the jobs in a terminating state. If the wait ends
 because the value of the **Timeout** parameter is exceeded, `Wait-Job` does not return any objects.
 
-## Notes
+## NOTES
 
 By default, `Wait-Job` returns, or ends the wait, when jobs are in one of the following states:
 
@@ -501,7 +501,7 @@ By default, `Wait-Job` returns, or ends the wait, when jobs are in one of the fo
 - Disconnected To direct `Wait-Job` to continue to wait for Suspended and Disconnected jobs, use the
   **Force** parameter.
 
-## Related links
+## RELATED LINKS
 
 [Get-Job](Get-Job.md)
 
