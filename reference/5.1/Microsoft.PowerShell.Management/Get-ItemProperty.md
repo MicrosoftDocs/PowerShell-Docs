@@ -9,10 +9,10 @@ title: Get-ItemProperty
 ---
 # Get-ItemProperty
 
-## Synopsis
+## SYNOPSIS
 Gets the properties of a specified item.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -28,13 +28,13 @@ Get-ItemProperty -LiteralPath <String[]> [[-Name] <String[]>] [-Filter <String>]
  [-Exclude <String[]>] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-ItemProperty` cmdlet gets the properties of the specified items. For example, you can use
 this cmdlet to get the value of the LastAccessTime property of a file object. You can also use this
 cmdlet to view registry entries and their values.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get information about a specific directory
 
@@ -146,7 +146,7 @@ Path            : C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe
 ExecutionPolicy : RemoteSigned
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -302,26 +302,26 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to `Get-ItemProperty`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Boolean, System.String, System.DateTime
 
 `Get-ItemProperty` returns an object for each item property that it gets. The object type depends on
 the object that is retrieved. For example, in a file system drive, it might return a file or folder.
 
-## Notes
+## NOTES
 
 The `Get-ItemProperty` cmdlet is designed to work with the data exposed by any provider. To list the
 providers available in your session, type "`Get-PSProvider`". For more information, see
 about_Providers.
 
-## Related links
+## RELATED LINKS
 
 [Clear-ItemProperty](Clear-ItemProperty.md)
 

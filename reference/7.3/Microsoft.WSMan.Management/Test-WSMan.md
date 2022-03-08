@@ -9,10 +9,10 @@ title: Test-WSMan
 ---
 # Test-WSMan
 
-## Synopsis
+## SYNOPSIS
 Tests whether the WinRM service is running on a local or remote computer.
 
-## Syntax
+## SYNTAX
 
 ```
 Test-WSMan [[-ComputerName] <String>] [-Authentication <AuthenticationMechanism>] [-Port <Int32>] [-UseSSL]
@@ -20,7 +20,7 @@ Test-WSMan [[-ComputerName] <String>] [-Authentication <AuthenticationMechanism>
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -29,7 +29,7 @@ is running on a local or remote computer. If the tested computer is running the 
 displays the WS-Management identity schema, the protocol version, the product vendor, and the
 product version of the tested service.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Determine the status of the WinRM service
 
@@ -70,7 +70,7 @@ server01 using the authentication parameter.
 
 Using the authentication parameter enables `Test-WSMan` to return the operating system version.
 
-## Parameters
+## PARAMETERS
 
 ### -ApplicationName
 
@@ -254,25 +254,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet does not accept any input.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output object.
 
-## Notes
+## NOTES
 
 By default, the `Test-WSMan` cmdlet queries the WinRM service without using authentication, and it
 returns no information that is specific to the operating-system version. Instead, it displays null
 values for the operating system version and service pack level (OS: 0.0.0 SP: 0.0).
 
-## Related links
+## RELATED LINKS
 
 [Connect-WSMan](Connect-WSMan.md)
 

@@ -10,10 +10,10 @@ title: Register-PackageSource
 
 # Register-PackageSource
 
-## Synopsis
+## SYNOPSIS
 Adds a package source for a specified package provider.
 
-## Syntax
+## SYNTAX
 
 ### SourceBySearch
 
@@ -40,13 +40,13 @@ Register-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name]
  [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Register-PackageSource` cmdlet adds a package source for a specified package provider. Package
 sources are always managed by a package provider. If the package provider cannot add or replace a
 package source, the provider generates an error message.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Register a package source for the NuGet provider
 
@@ -64,7 +64,7 @@ Name          ProviderName     IsTrusted  Location
 MyNuGet       NuGet            False      https://www.nuget.org/api/v2
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -ConfigFile
 
@@ -346,11 +346,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -364,7 +364,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

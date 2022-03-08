@@ -9,16 +9,16 @@ title: Write-Verbose
 ---
 # Write-Verbose
 
-## Synopsis
+## SYNOPSIS
 Writes text to the verbose message stream.
 
-## Syntax
+## SYNTAX
 
 ```
 Write-Verbose [-Message] <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Write-Verbose` cmdlet writes text to the verbose message stream in PowerShell. Typically, the
 verbose message stream is used to deliver more in depth information about command processing.
@@ -27,7 +27,7 @@ By default, the verbose message stream is not displayed, but you can display it 
 value of the `$VerbosePreference` variable or using the **Verbose** common parameter in any
 command.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Write a status message
 
@@ -56,7 +56,7 @@ The first command assigns a value of Continue to the `$VerbosePreference` prefer
 default value, `SilentlyContinue`, suppresses verbose messages. The second command writes a verbose
 message.
 
-## Parameters
+## PARAMETERS
 
 ### -Message
 
@@ -82,19 +82,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains the message to `Write-Verbose`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 `Write-Verbose` writes only to the verbose message stream.
 
-## Notes
+## NOTES
 
 - Verbose messages are returned only when the command uses the **Verbose** common parameter. For
   more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
@@ -103,7 +103,7 @@ You can pipe a string that contains the message to `Write-Verbose`.
   For more information about the `$VerbosePreference` variable, see
   [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
-## Related links
+## RELATED LINKS
 
 [about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 

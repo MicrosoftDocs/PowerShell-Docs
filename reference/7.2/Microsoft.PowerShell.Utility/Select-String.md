@@ -10,10 +10,10 @@ title: Select-String
 
 # Select-String
 
-## Synopsis
+## SYNOPSIS
 Finds text in strings and files.
 
-## Syntax
+## SYNTAX
 
 ### File (Default)
 
@@ -63,7 +63,7 @@ Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> 
  [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Select-String` cmdlet uses regular expression matching to search for text patterns in input
 strings and files. You can use `Select-String` similar to `grep` in UNIX or `findstr.exe` in
@@ -82,7 +82,7 @@ You can also specify that `Select-String` should expect a particular character e
 when you're searching files of Unicode text. `Select-String` uses the byte-order-mark (BOM) to
 detect the encoding format of the file. If the file has no BOM, it assumes the encoding is UTF8.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Find a case-sensitive match
 
@@ -372,7 +372,7 @@ Name                           foo
 Piping to `Out-String -Stream` converts the formatted output into a multiple single-line string
 objects. This means that when `Select-String` finds a match it outputs only the matching line.
 
-## Parameters
+## PARAMETERS
 
 ### -AllMatches
 
@@ -782,13 +782,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object that has a `ToString()` method to `Select-String`.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.MatchInfo, System.Boolean, System.String
 
@@ -796,7 +796,7 @@ By default, the output is a set of **MatchInfo** objects with one for each match
 the **Quiet** parameter, the output is a **Boolean** value indicating whether the pattern was found.
 If you use the **Raw** parameter, the output is a set of **String** objects that match the pattern.
 
-## Notes
+## NOTES
 
 `Select-String` is similar to `grep` in UNIX or `findstr.exe` in Windows.
 
@@ -847,7 +847,7 @@ To find the properties of a **MatchInfo** object, type the following command:
 
 `Select-String -Path test.txt -Pattern 'test' | Get-Member | Format-List -Property *`
 
-## Related links
+## RELATED LINKS
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 

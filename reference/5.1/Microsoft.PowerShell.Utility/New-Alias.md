@@ -10,24 +10,24 @@ title: New-Alias
 
 # New-Alias
 
-## Synopsis
+## SYNOPSIS
 Creates a new alias.
 
-## Syntax
+## SYNTAX
 
 ```
 New-Alias [-Name] <String> [-Value] <String> [-Description <String>] [-Option <ScopedItemOptions>] [-PassThru]
  [-Scope <String>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-Alias` cmdlet creates a new alias in the current Windows PowerShell session. Aliases
 created by using `New-Alias` are not saved after you exit the session or close Windows PowerShell.
 You can use the `Export-Alias` cmdlet to save your alias information to a file. You can later use
 `Import-Alias` to retrieve that saved alias information.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create an alias for a cmdlet
 
@@ -49,7 +49,7 @@ description, quick wmi alias, for the alias and makes it read-only. The last lin
 uses `Get-Alias` to get the new alias and pipes it to Format-List to display all of the information
 about it.
 
-## Parameters
+## PARAMETERS
 
 ### -Description
 
@@ -228,13 +228,13 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Management.Automation.AliasInfo
 
@@ -242,12 +242,12 @@ When you use the **Passthru** parameter, `New-Alias` generates a
 **System.Management.Automation.AliasInfo** object representing the new alias. Otherwise, this cmdlet
 does not generate any output.
 
-## Notes
+## NOTES
 
 - To create a new alias, use `Set-Alias` or `New-Alias`. To change an alias, use `Set-Alias`. To delete
 an alias, use `Remove-Item`.
 
-## Related links
+## RELATED LINKS
 
 [Export-Alias](Export-Alias.md)
 

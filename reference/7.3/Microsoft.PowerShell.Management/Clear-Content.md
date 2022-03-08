@@ -9,10 +9,10 @@ title: Clear-Content
 ---
 # Clear-Content
 
-## Synopsis
+## SYNOPSIS
 Deletes the contents of an item, but does not delete the item.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -28,13 +28,13 @@ Clear-Content -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [
  [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Clear-Content` cmdlet deletes the contents of an item, such as deleting the text from a file, but it does not delete the item.
 As a result, the item exists, but it is empty.
 The `Clear-Content` is similar to `Clear-Item`, but it works on items with contents, instead of items with values.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Delete all content from a directory
 
@@ -86,7 +86,7 @@ PS C:\>Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 PS C:\>
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -285,19 +285,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe objects to `Clear-Content`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any objects.
 
-## Notes
+## NOTES
 
 You can use `Clear-Content` with the PowerShell FileSystem provider and with other providers that
 manipulate content. To clear items that are not considered to be content, such as items managed by
@@ -307,7 +307,7 @@ The `Clear-Content` cmdlet is designed to work with the data exposed by any prov
 To list the providers available in your session, type `Get-PsProvider`.
 For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [Add-Content](Add-Content.md)
 

@@ -10,10 +10,10 @@ title: Test-Connection
 
 # Test-Connection
 
-## Synopsis
+## SYNOPSIS
 Sends ICMP echo request packets, or pings, to one or more computers.
 
-## Syntax
+## SYNTAX
 
 ### DefaultPing (Default)
 
@@ -52,7 +52,7 @@ Test-Connection [-TargetName] <string[]> -TcpPort <int> [-IPv4] [-IPv6] [-Resolv
  [-Source <string>] [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Test-Connection` cmdlet sends Internet Control Message Protocol (ICMP) echo request packets, or
 pings, to one or more remote computers and returns the echo response replies. You can use this
@@ -67,7 +67,7 @@ Unlike the familiar **ping** command, `Test-Connection` returns a
 parameter returns a **Boolean** value in a **System.Boolean** object for each tested connection. If
 multiple connections are tested, an array of **Boolean** values is returned.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Send echo requests to a remote computer
 
@@ -205,7 +205,7 @@ The `Test-Connection` command is called with the **Traceroute** parameter. The r
 `[Microsoft.PowerShell.Commands.TestConnectionCommand+TraceStatus]` objects, are output to
 the **Success** output stream.
 
-## Parameters
+## PARAMETERS
 
 ### -BufferSize
 
@@ -517,13 +517,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You can't pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### TestConnectionCommand+PingStatus, TestConnectionCommand+TraceStatus, Boolean, TestConnectionCommand+PingMtuStatus
 
@@ -536,9 +536,9 @@ If you specify the **Traceroute** parameter, the cmdlet will return a
 If you specify the **Quiet** or **TcpPort** parameters, it returns a **Boolean** value. If
 multiple connections are tested, an array of **Boolean** values is returned.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Restart-Computer](Restart-Computer.md)
 

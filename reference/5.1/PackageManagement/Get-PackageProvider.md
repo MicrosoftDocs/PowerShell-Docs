@@ -9,22 +9,22 @@ title: Get-PackageProvider
 ---
 # Get-PackageProvider
 
-## Synopsis
+## SYNOPSIS
 Returns a list of package providers that are connected to Package Management.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-PackageProvider [[-Name] <String[]>] [-ListAvailable] [-Force] [-ForceBootstrap] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-PackageProvider` cmdlet returns a list of package providers that are connected to Package
 Management. Examples of these providers include PSModule, NuGet, and Chocolatey. You can filter the
 results based on all or part of one or more provider names.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all currently loaded package providers
 
@@ -52,7 +52,7 @@ Get-PackageProvider -Name "Chocolatey" -ForceBootstrap
 This command automatically installs the Chocolatey provider if your computer does not have the
 Chocolatey provider installed.
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -136,13 +136,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
 ### PackageProvider[]
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -156,7 +156,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

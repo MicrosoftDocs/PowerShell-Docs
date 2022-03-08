@@ -10,10 +10,10 @@ title: Write-Error
 
 # Write-Error
 
-## Synopsis
+## SYNOPSIS
 Writes an object to the error stream.
 
-## Syntax
+## SYNTAX
 
 ### NoException (Default)
 
@@ -38,7 +38,7 @@ Write-Error -ErrorRecord <ErrorRecord> [-RecommendedAction <String>] [-CategoryA
  [-CategoryReason <String>] [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Write-Error` cmdlet declares a non-terminating error. By default, errors are sent in the error
 stream to the host program to be displayed, along with output.
@@ -53,7 +53,7 @@ continues to process the other items in the collection.
 To declare a terminating error, use the `Throw` keyword.
 For more information, see [about_Throw](../Microsoft.PowerShell.Core/About/about_Throw.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Write an error for RegistryKey object
 
@@ -107,7 +107,7 @@ has a null constructor.
 The second command uses the `Write-Error` cmdlet to declare a non-terminating error. The value of
 the **Exception** parameter is the **Exception** object in the `$E` variable.
 
-## Parameters
+## PARAMETERS
 
 ### -Category
 
@@ -338,25 +338,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains an error message to `Write-Error`.
 
-## Outputs
+## OUTPUTS
 
 ### Error object
 
 `Write-Error` writes only to the error stream. It does not return any objects.
 
-## Notes
+## NOTES
 
 `Write-Error` does not change the value of the `$?` automatic variable, therefore it does not signal
 a terminating error condition. To signal a terminating error, use the
 [$PSCmdlet.WriteError()](/dotnet/api/system.management.automation.cmdlet.writeerror) method.
 
-## Related links
+## RELATED LINKS
 
 [about_Automatic_Variables](../microsoft.powershell.core/about/about_automatic_variables.md)
 

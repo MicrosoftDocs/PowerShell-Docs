@@ -9,10 +9,10 @@ title: New-Object
 ---
 # New-Object
 
-## Synopsis
+## SYNOPSIS
 Creates an instance of a Microsoft .NET Framework or COM object.
 
-## Syntax
+## SYNTAX
 
 ### Net (Default)
 
@@ -26,7 +26,7 @@ New-Object [-TypeName] <String> [[-ArgumentList] <Object[]>] [-Property <IDictio
 New-Object [-ComObject] <String> [-Strict] [-Property <IDictionary>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-Object` cmdlet creates an instance of a .NET Framework or COM object.
 
@@ -35,7 +35,7 @@ you type the fully qualified name of a .NET Framework class and the cmdlet retur
 instance of that class. To create an instance of a COM object, use the **ComObject** parameter and
 specify the ProgID of the object as its value.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a System.Version object
 
@@ -200,7 +200,7 @@ members of `$array` to parameters of the constructor but the constructor does no
 parameter. Wrapping `$array` in another array prevents PowerShell from attempting to bind the three
 members of `$array` to parameters of the constructor.
 
-## Parameters
+## PARAMETERS
 
 ### -ArgumentList
 
@@ -307,19 +307,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### Object
 
 `New-Object` returns the object that is created.
 
-## Notes
+## NOTES
 
 - `New-Object` provides the most commonly-used functionality of the VBScript CreateObject
   function. A statement like `Set objShell = CreateObject("Shell.Application")` in VBScript can be
@@ -327,7 +327,7 @@ You cannot pipe input to this cmdlet.
 - `New-Object` expands upon the functionality available in the Windows Script Host environment by
   making it easy to work with .NET Framework objects from the command line and within scripts.
 
-## Related links
+## RELATED LINKS
 
 [about_Object_Creation](../Microsoft.PowerShell.Core/About/about_Object_Creation.md)
 

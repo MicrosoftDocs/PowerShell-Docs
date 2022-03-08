@@ -9,11 +9,11 @@ title: New-CimSession
 ---
 # New-CimSession
 
-## Synopsis
+## SYNOPSIS
 
 Creates a CIM session.
 
-## Syntax
+## SYNTAX
 
 ### CredentialParameterSet (Default)
 
@@ -31,7 +31,7 @@ New-CimSession [-CertificateThumbprint <String>] [[-ComputerName] <String[]>] [-
  [-SessionOption <CimSessionOptions>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-CimSession` cmdlet creates a CIM session. A CIM session is a client-side object
 representing a connection to a local computer or a remote computer. The CIM session contains
@@ -40,7 +40,7 @@ identifiers.
 
 This cmdlet returns a CIM session object that can be used by all other CIM cmdlets.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a CIM session with default options
 
@@ -113,7 +113,7 @@ $SessionOption = New-CimSessionOption -Protocol DCOM
 New-CimSession -ComputerName Server1 -SessionOption $SessionOption
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Authentication
 
@@ -344,19 +344,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet accepts no inputs.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.Management.Infrastructure.CimSession
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-ChildItem](../Microsoft.Powershell.Management/Get-ChildItem.md)
 

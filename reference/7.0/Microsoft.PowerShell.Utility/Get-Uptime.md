@@ -10,10 +10,10 @@ title: Get-Uptime
 
 # Get-Uptime
 
-## Synopsis
+## SYNOPSIS
 Get the **TimeSpan** since last boot.
 
-## Syntax
+## SYNTAX
 
 ### Timespan (Default)
 
@@ -27,13 +27,13 @@ Get-Uptime [<CommonParameters>]
 Get-Uptime [-Since] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 This cmdlet returns the time elapsed since the last boot of the operating system.
 
 The `Get-Uptime` cmdlet was introduced in PowerShell 6.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Show time since last boot
 
@@ -65,7 +65,7 @@ Get-Uptime -Since
 Tuesday, June 18, 2019 2:34:56 PM
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Since
 
@@ -90,11 +90,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
-## Outputs
+## OUTPUTS
 
 ### System.TimeSpan
 
@@ -111,11 +111,11 @@ This type is returned when using the **Since** parameter.
 > For more information about Windows fast startup, see
 > [Distinguishing Fast Startup from Wake-from-Hibernation](/windows-hardware/drivers/kernel/distinguishing-fast-startup-from-wake-from-hibernation).
 
-## Notes
+## NOTES
 
 On Windows, the value returned is the same as the **LastBootUpTime** property of the
 **Win32_OperatingSystem** class in WMI.
 
-## Related links
+## RELATED LINKS
 
 [Win32_OperatingSystem](/windows/win32/cimwin32prov/win32-operatingsystem#properties)

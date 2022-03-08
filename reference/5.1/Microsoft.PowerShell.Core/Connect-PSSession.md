@@ -9,10 +9,10 @@ title: Connect-PSSession
 ---
 # Connect-PSSession
 
-## Synopsis
+## SYNOPSIS
 Reconnects to disconnected sessions.
 
-## Syntax
+## SYNTAX
 
 ### Name (Default)
 
@@ -73,7 +73,7 @@ Connect-PSSession -InstanceId <Guid[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Conf
 Connect-PSSession [-ThrottleLimit <Int32>] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Connect-PSSession` cmdlet reconnects to user-managed PowerShell sessions (**PSSessions**) that
 were disconnected. It works on sessions that are disconnected intentionally, such as by using the
@@ -92,7 +92,7 @@ For more information about the Disconnected Sessions feature, see
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Reconnect to a session
 
@@ -236,7 +236,7 @@ The ninth command disconnects from the session in the `$s` variable.The administ
 PowerShell and closes the computer. She can reconnect to the session on the next day and check the
 script status from her work computer.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowRedirection
 
@@ -678,19 +678,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
 
 You can pipe a session (**PSSession**) to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
 
 This cmdlet returns an object that represents the session to which it reconnected.
 
-## Notes
+## NOTES
 
 - This cmdlet is only available on Windows platforms.
 
@@ -736,7 +736,7 @@ This cmdlet returns an object that represents the session to which it reconnecte
   sessions are considered to be idle from the moment that they are disconnected, even if commands
   are running in the disconnected session.
 
-## Related links
+## RELATED LINKS
 
 [Disconnect-PSSession](Disconnect-PSSession.md)
 

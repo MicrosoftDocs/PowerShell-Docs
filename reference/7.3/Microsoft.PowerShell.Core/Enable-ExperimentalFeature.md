@@ -9,16 +9,16 @@ title: Enable-ExperimentalFeature
 ---
 # Enable-ExperimentalFeature
 
-## Synopsis
+## SYNOPSIS
 Enable an experimental feature on startup of new instance of PowerShell.
 
-## Syntax
+## SYNTAX
 
 ```
 Enable-ExperimentalFeature [-Name] <String[]> [-Scope <ConfigScope>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Enable-ExperimentalFeature` cmdlet enables experimental features by adding the named
 experimental features to the `powershell.config.json` settings file read on PowerShell startup.
@@ -28,7 +28,7 @@ This cmdlet was introduced in PowerShell 6.2.
 > [!NOTE]
 > Any changes to experimental feature state only takes effect on restart of PowerShell
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Enable an experimental feature
 
@@ -44,7 +44,7 @@ Enable-ExperimentalFeature PSImplicitRemotingBatching
 WARNING: Enabling and disabling experimental features do not take effect until next start of PowerShell.
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Name
 
@@ -119,23 +119,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### ExperimentalFeature
 
 Pipe instances of ExperimentalFeature from `Get-ExperimentalFeature` cmdlet to enable.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any output.
 
-## Notes
+## NOTES
 
 Changes to state of an experimental feature only take effect on restart of PowerShell.
 
-## Related links
+## RELATED LINKS
 
 [Disable-ExperimentalFeature](Disable-ExperimentalFeature.md)
 

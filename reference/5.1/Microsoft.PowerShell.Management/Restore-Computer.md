@@ -10,16 +10,16 @@ title: Restore-Computer
 
 # Restore-Computer
 
-## Synopsis
+## SYNOPSIS
 Starts a system restore on the local computer.
 
-## Syntax
+## SYNTAX
 
 ```
 Restore-Computer [-RestorePoint] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Restore-Computer` cmdlet restores the local computer to the specified system restore point.
 
@@ -28,7 +28,7 @@ The `Restore-Computer` cmdlet restores the local computer to the specified syste
 System restore points and `Restore-Computer` are supported only on client operating systems, such as
 Windows 7, Windows Vista, and Windows XP.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Restore the local computer
 
@@ -69,7 +69,7 @@ The third command uses the **LastStatus** parameter of `Get-ComputerRestorePoint
 the status of the restore operation. Because `Restore-Computer` forces a restart, this command would
 be entered after the computer restarts.
 
-## Parameters
+## PARAMETERS
 
 ### -RestorePoint
 
@@ -126,25 +126,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - To run a `Restore-Computer` command on Windows Vista and later versions of the Windows operating
   system, open Windows PowerShell by using the Run as administrator option.
 - This cmdlet uses the Windows Management Instrumentation (WMI) **SystemRestore** class.
 
-## Related links
+## RELATED LINKS
 
 [Checkpoint-Computer](Checkpoint-Computer.md)
 

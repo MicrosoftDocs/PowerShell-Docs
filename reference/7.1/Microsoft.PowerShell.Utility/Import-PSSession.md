@@ -9,10 +9,10 @@ title: Import-PSSession
 ---
 # Import-PSSession
 
-## Synopsis
+## SYNOPSIS
 Imports commands from another session into the current session.
 
-## Syntax
+## SYNTAX
 
 ```
 Import-PSSession [-Prefix <String>] [-DisableNameChecking] [[-CommandName] <String[]>] [-AllowClobber]
@@ -21,7 +21,7 @@ Import-PSSession [-Prefix <String>] [-DisableNameChecking] [[-CommandName] <Stri
  [-Certificate <X509Certificate2>] [-Session] <PSSession> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Import-PSSession` cmdlet imports commands , such as cmdlets, functions, and aliases, from a
 PSSession on a local or remote computer into the current session. You can import any command that
@@ -59,7 +59,7 @@ Beginning in Windows PowerShell 3.0, you can use the `Import-Module` cmdlet to i
 remote session into the current session. This feature uses implicit remoting. It is equivalent to
 using `Import-PSSession` to import selected modules from a remote session into the current session.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Import all commands from a PSSession
 
@@ -295,7 +295,7 @@ which returns the module name.
 
 The `Get-Command` command is the equivalent of `Get-Command $M.Name`".
 
-## Parameters
+## PARAMETERS
 
 ### -AllowClobber
 
@@ -582,13 +582,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSModuleInfo
 
@@ -596,7 +596,7 @@ You cannot pipe objects to this cmdlet.
 However, the imported module is temporary and exists only in the current session. To create a
 permanent module on disk, use the `Export-PSSession` cmdlet.
 
-## Notes
+## NOTES
 
 - `Import-PSSession` relies on the  PowerShell remoting infrastructure. To use this cmdlet,
   the computer must be configured for WS-Management remoting. For more information, see
@@ -640,6 +640,6 @@ permanent module on disk, use the `Export-PSSession` cmdlet.
   include the prefix that you assign by using the **Prefix** parameter. To get help for an imported
   command in Windows PowerShell 2.0, use the original (non-prefixed) command name.
 
-## Related links
+## RELATED LINKS
 
 [Export-PSSession](Export-PSSession.md)

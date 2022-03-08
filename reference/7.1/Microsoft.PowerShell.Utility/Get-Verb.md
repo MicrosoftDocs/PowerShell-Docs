@@ -9,16 +9,16 @@ title: Get-Verb
 ---
 # Get-Verb
 
-## Synopsis
+## SYNOPSIS
 Gets approved PowerShell verbs.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-Verb [[-Verb] <String[]>] [[-Group] <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Verb` function gets verbs that are approved for use in PowerShell commands.
 
@@ -35,7 +35,7 @@ warning message.
 > [Approved Verbs](../../docs-conceptual/developer/cmdlet/approved-verbs-for-windows-powershell-commands.md) in
 > the Microsoft Docs.
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Get a list of all verbs
 
@@ -91,7 +91,7 @@ Cmdlet          Sort-Object     3.1.0.0    Microsoft.PowerShell.Utility
 Cmdlet          Tee-Object      3.1.0.0    Microsoft.PowerShell.Utility
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Group
 
@@ -135,15 +135,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.VerbInfo
 
-## Notes
+## NOTES
 
 PowerShell verbs are assigned to a group based on their most common use. The groups are designed to
 make the verbs easy to find and compare, not to restrict their use. You can use any approved verb
@@ -163,7 +163,7 @@ Some of the cmdlets that are installed with PowerShell, such as `Tee-Object` and
 unapproved verbs. These cmdlets are historic exceptions and their verbs are classified as
 **reserved**.
 
-## Related links
+## RELATED LINKS
 
 [Import-Module](../microsoft.powershell.core/import-module.md)
 

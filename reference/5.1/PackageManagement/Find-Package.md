@@ -10,10 +10,10 @@ title: Find-Package
 
 # Find-Package
 
-## Synopsis
+## SYNOPSIS
 Finds software packages in available package sources.
 
-## Syntax
+## SYNTAX
 
 ### NuGet
 
@@ -38,12 +38,12 @@ Find-Package [-IncludeDependencies] [-AllVersions] [-Source <String[]>] [-Creden
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 `Find-Package` finds software packages that are available in package sources. `Get-PackageProvider`
 and `Get-PackageSource` display details about your providers.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Find all available packages from a package provider
 
@@ -165,7 +165,7 @@ Microsoft.Web.Xdt    3.0.0      C:\LocalPkg\     Microsoft Xml Document Transfor
 NuGet.Core           2.14.0     C:\LocalPkg\     NuGet.Core is the core framework assembly...
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AcceptLicense
 
@@ -689,19 +689,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 `Find-Package` doesn't accept input from the pipeline.
 
-## Outputs
+## OUTPUTS
 
 ### SoftwareIdentify[]
 
 `Find-Package` outputs a **SoftwareIdentity** object.
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -715,7 +715,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

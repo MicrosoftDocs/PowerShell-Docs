@@ -9,10 +9,10 @@ title: Remove-PSSession
 ---
 # Remove-PSSession
 
-## Synopsis
+## SYNOPSIS
 Closes one or more PowerShell sessions (PSSessions).
 
-## Syntax
+## SYNTAX
 
 ### Id (Default)
 
@@ -62,7 +62,7 @@ Remove-PSSession -Name <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 Remove-PSSession [-ComputerName] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Remove-PSSession` cmdlet closes PowerShell sessions (**PSSessions**) in the current session. It
 stops any commands that are running in the **PSSessions**, ends the **PSSession**, and releases the
@@ -75,7 +75,7 @@ session.
 If you have saved the **PSSession** in a variable, the session object remains in the variable, but
 the state of the **PSSession** is Closed.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Remove sessions by using IDs
 
@@ -159,7 +159,7 @@ Function EndPSS { Get-PSSession | Remove-PSSession }
 This function deletes all of the **PSSessions** in the current session. After you add this function
 to your PowerShell profile, to delete all sessions, type `EndPSS`.
 
-## Parameters
+## PARAMETERS
 
 ### -ComputerName
 
@@ -359,19 +359,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
 
 You can pipe a session object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any objects.
 
-## Notes
+## NOTES
 
 - The **Id** parameter is mandatory. To delete all the **PSSessions** in the current session, type
   `Get-PSSession | Remove-PSSession`.
@@ -380,7 +380,7 @@ This cmdlet does not return any objects.
 - **PSSessions** are specific to the current session. When you end a session, the **PSSessions**
   that you created in that session are forcibly closed.
 
-## Related links
+## RELATED LINKS
 
 [Connect-PSSession](Connect-PSSession.md)
 

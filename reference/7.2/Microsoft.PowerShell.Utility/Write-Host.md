@@ -10,18 +10,18 @@ title: Write-Host
 
 # Write-Host
 
-## Synopsis
+## SYNOPSIS
 
 Writes customized output to a host.
 
-## Syntax
+## SYNTAX
 
 ```
 Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>] [-ForegroundColor <ConsoleColor>]
  [-BackgroundColor <ConsoleColor>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Write-Host` cmdlet's primary purpose is to produce for-(host)-display-only output, such as
 printing colored text like when prompting the user for input in conjunction with [Read-Host](Read-Host.md).
@@ -43,7 +43,7 @@ hosting PowerShell.
 > affect `Write-Host` messages. The exception to this rule is `-InformationAction Ignore`, which
 > effectively suppresses `Write-Host` output. (see "Example 5")
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Write to the console without adding a new line
 
@@ -119,7 +119,7 @@ These commands effectively suppress output of the `Write-Host` cmdlet. The first
 The second example redirects the information stream of the command to the `$null` variable and
 thereby suppresses it.
 
-## Parameters
+## PARAMETERS
 
 ### -BackgroundColor
 
@@ -241,20 +241,20 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 
 You can pipe objects to be written to the host.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 `Write-Host` sends the objects to the host. It does not return any objects. However, the host
 displays the objects that `Write-Host` sends to it.
 
-## Notes
+## NOTES
 
 - When writing a collection to the host, elements of the collection are printed on the same line
   separated by a single space. This can be overridden with the **Separator** parameter.
@@ -263,7 +263,7 @@ displays the objects that `Write-Host` sends to it.
   provide meaningful output. For example, `Write-Host @{a = 1; b = 2}` will print
   `System.Collections.DictionaryEntry System.Collections.DictionaryEntry` to the host.
 
-## Related links
+## RELATED LINKS
 
 [Clear-Host](../Microsoft.PowerShell.Core/Clear-Host.md)
 

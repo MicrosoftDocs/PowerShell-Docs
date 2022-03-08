@@ -9,10 +9,10 @@ title: Import-IseSnippet
 ---
 # Import-IseSnippet
 
-## Synopsis
+## SYNOPSIS
 Imports ISE snippets into the current session
 
-## Syntax
+## SYNTAX
 
 ### FromFolder (Default)
 
@@ -26,7 +26,7 @@ Import-IseSnippet [-Path] <String> [-Recurse] [<CommonParameters>]
 Import-IseSnippet [-Recurse] -Module <String> [-ListAvailable] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Import-IseSnippet` cmdlet imports reusable text "snippets" from a module or a directory into
 the current session. The snippets are immediately available for use in Windows PowerShell ISE. This
@@ -51,7 +51,7 @@ not get imported snippets.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Import snippets from a directory
 
@@ -107,7 +107,7 @@ available in every Windows PowerShell ISE session.
     Copy-Item -Destination $home\Documents\WindowsPowerShell\Snippets
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -ListAvailable
 
@@ -195,19 +195,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet does not take input from the pipeline.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate output.
 
-## Notes
+## NOTES
 
 - You cannot use the `Get-IseSnippet` cmdlet to get imported snippets. `Get-IseSnippet` gets only
   snippets in the `$home\Documents\WindowsPowerShell\Snippets` directory.
@@ -226,7 +226,7 @@ This cmdlet does not generate output.
   For more information about Windows PowerShell execution policies, see
   [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
 
-## Related links
+## RELATED LINKS
 
 [Get-IseSnippet](Get-IseSnippet.md)
 

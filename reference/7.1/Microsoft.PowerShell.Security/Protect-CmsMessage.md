@@ -9,10 +9,10 @@ title: Protect-CmsMessage
 ---
 # Protect-CmsMessage
 
-## Synopsis
+## SYNOPSIS
 Encrypts content by using the Cryptographic Message Syntax format.
 
-## Syntax
+## SYNTAX
 
 ### ByContent (Default)
 
@@ -34,7 +34,7 @@ Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-LiteralPath] <String> [[-OutF
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Protect-CmsMessage` cmdlet encrypts content by using the Cryptographic Message Syntax (CMS)
 format.
@@ -56,7 +56,7 @@ document encryption, see Example 1 in this topic.
 
 Support for Linux and macOS was added in PowerShell 7.1.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a certificate for encrypting content
 
@@ -117,7 +117,7 @@ To view document encryption certificates in the certificate provider, you can ad
 [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md), available only when the
 certificate provider is loaded.
 
-## Parameters
+## PARAMETERS
 
 ### -Content
 
@@ -220,13 +220,13 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

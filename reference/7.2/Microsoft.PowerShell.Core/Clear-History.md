@@ -10,10 +10,10 @@ title: Clear-History
 
 # Clear-History
 
-## Synopsis
+## SYNOPSIS
 Deletes entries from the PowerShell session command history.
 
-## Syntax
+## SYNTAX
 
 ### IDParameter (Default)
 
@@ -28,7 +28,7 @@ Clear-History [[-Count] <int>] [-CommandLine <string[]>] [-Newest] [-WhatIf] [-C
 [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 `Clear-History` deletes the command history from a PowerShell session. Each PowerShell session has
 its own command history. To display the command history, use the `Get-History` cmdlet.
@@ -43,7 +43,7 @@ history. To display the `PSReadLine` configuration for command history, use `Get
 `PSReadLine` shipped with PowerShell 5.0 and above. For more information, see
 [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Delete the command history from a PowerShell session
 
@@ -247,7 +247,7 @@ command history. The **Id** parameter specifies to begin with **Id 7**. The **Co
 specifies to delete five commands, inclusive of the specified **Id**. `Get-History` displays the
 updated command history and confirms that five commands were deleted, **Id 3** - **Id 7**.
 
-## Parameters
+## PARAMETERS
 
 ### -CommandLine
 
@@ -375,19 +375,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe objects to `Clear-History`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 `Clear-History` does not generate any output.
 
-## Notes
+## NOTES
 
 The PowerShell session history is a list of the commands entered during a PowerShell session. You
 can view the history, add and delete commands, and run commands from the history. For more
@@ -397,7 +397,7 @@ The session history is managed separately from the history maintained by the **P
 Both histories are available in sessions where **PSReadLine** is loaded. This cmdlet only works with
 the session history. For more information see, [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
-## Related links
+## RELATED LINKS
 
 [about_History](About/about_History.md)
 

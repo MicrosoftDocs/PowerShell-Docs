@@ -9,16 +9,16 @@ title: Test-ModuleManifest
 ---
 # Test-ModuleManifest
 
-## Synopsis
+## SYNOPSIS
 Verifies that a module manifest file accurately describes the contents of a module.
 
-## Syntax
+## SYNTAX
 
 ```
 Test-ModuleManifest [-Path] <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Test-ModuleManifest` cmdlet verifies that the files that are listed in the module manifest
 (`.psd1`) file are actually in the specified paths.
@@ -31,7 +31,7 @@ module.
 that `Get-Module` returns. If any files are not in the locations specified in the manifest, the
 cmdlet also generates an error for each missing file.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Test a manifest
 
@@ -104,7 +104,7 @@ previous command generates no error, the command displays `$True`, and `$False` 
 You can use this function in conditional statements, such as those that might precede an
 `Import-Module` command or a command that uses the module.
 
-## Parameters
+## PARAMETERS
 
 ### -Path
 
@@ -131,22 +131,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe the path to a module manifest to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSModuleInfo
 
 This cmdlet returns a **PSModuleInfo** object that represents the module. It returns this object
 even if the manifest has errors.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Export-ModuleMember](Export-ModuleMember.md)
 

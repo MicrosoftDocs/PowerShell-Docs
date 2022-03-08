@@ -9,10 +9,10 @@ title: Get-PackageSource
 ---
 # Get-PackageSource
 
-## Synopsis
+## SYNOPSIS
 Gets a list of package sources that are registered for a package provider.
 
-## Syntax
+## SYNTAX
 
 ### NuGet
 
@@ -29,14 +29,14 @@ Get-PackageSource [[-Name] <String>] [-Location <String>] [-Force] [-ForceBootst
  [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-PackageSource` cmdlet gets a list of package sources that are registered with
 **PackageManagement** on the local computer. If you specify a package provider, `Get-PackageSource`
 gets only those sources that are associated with the specified provider. Otherwise, the command
 returns all package sources that are registered with **PackageManagement**.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all package sources
 
@@ -91,7 +91,7 @@ MyNuget              NuGet            False      https://www.nuget.org/api/v2
 `Get-PackageProvider` uses the **Name** parameter specify the provider name, **NuGet**. The object
 is sent down the pipeline to `Get-PackageSource`.
 
-## Parameters
+## PARAMETERS
 
 ### -ConfigFile
 
@@ -277,15 +277,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
 ### PackageSource[]
 
 Specifies one or more package sources.
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -299,7 +299,7 @@ Specifies one or more package sources.
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

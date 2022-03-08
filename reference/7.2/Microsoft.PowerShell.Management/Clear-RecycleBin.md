@@ -10,10 +10,10 @@ title: Clear-RecycleBin
 
 # Clear-RecycleBin
 
-## Synopsis
+## SYNOPSIS
 Clears the contents of a recycle bin.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -21,7 +21,7 @@ Clears the contents of a recycle bin.
 Clear-RecycleBin [[-DriveLetter] <String[]>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -30,7 +30,7 @@ using Windows **Empty Recycle Bin**.
 
 This cmdlet was readded in PowerShell 7.
 
-## Examples
+## EXAMPLES
 
 ### 1: Clear all recycle bins
 
@@ -74,7 +74,7 @@ clear all recycle bins on the local computer.
 
 An alternative is to replace `-Force` with `-Confirm:$false`.
 
-## Parameters
+## PARAMETERS
 
 ### -DriveLetter
 
@@ -148,14 +148,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
 ### None
 
-## Notes
+## NOTES
 
 This cmdlet is only available on Windows platforms.
 
-## Related links
+## RELATED LINKS

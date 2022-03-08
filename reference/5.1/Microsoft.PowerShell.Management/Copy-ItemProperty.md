@@ -9,11 +9,11 @@ title: Copy-ItemProperty
 ---
 # Copy-ItemProperty
 
-## Synopsis
+## SYNOPSIS
 
 Copies a property and value from a specified location to another location.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -31,12 +31,12 @@ Copy-ItemProperty -LiteralPath <String[]> [-Name] <String> [-Destination] <Strin
  [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Copy-ItemProperty` cmdlet copies a property and value from a specified location to another location.
 For instance, you can use this cmdlet to copy one or more registry entries from one registry key to another registry key.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Copy a property from a registry key to another registry key
 
@@ -46,7 +46,7 @@ This command copies the property named "MyProperty" from the "MyApplication" reg
 Copy-ItemProperty -Path "MyApplication" -Destination "HKLM:\Software\MyApplicationRev2" -Name "MyProperty"
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -285,24 +285,24 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Management.Automation.PSCustomObject
 
 When you use the **Passthru** parameter, this cmdlet generates a **PsCustomObject** representing the copied item property.
 Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [Clear-ItemProperty](Clear-ItemProperty.md)
 

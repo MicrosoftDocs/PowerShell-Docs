@@ -10,10 +10,10 @@ title: Export-Clixml
 
 # Export-Clixml
 
-## Synopsis
+## SYNOPSIS
 Creates an XML-based representation of an object or objects and stores it in a file.
 
-## Syntax
+## SYNTAX
 
 ### ByPath (Default)
 
@@ -29,7 +29,7 @@ Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-F
  [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Export-Clixml` cmdlet creates a Common Language Infrastructure (CLI) XML-based representation
 of an object or objects and stores it in a file. You can then use the `Import-Clixml` cmdlet to
@@ -42,7 +42,7 @@ file. `ConvertTo-XML` returns the XML, so you can continue to process it in Powe
 A valuable use of `Export-Clixml` on Windows computers is to export credentials and secure strings
 securely as XML. For an example, see Example 3.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Export a string to an XML file
 
@@ -148,7 +148,7 @@ The output of `Get-Content` in this example has been truncate to focus on the cr
 in the XML file. Note that the plain text value of the password is stored in the XML file as a
 Unicode character array as proven by `Format-Hex`. So the value is encoded but not encrypted.
 
-## Parameters
+## PARAMETERS
 
 ### -Depth
 
@@ -335,21 +335,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipeline any object to `Export-Clixml`.
 
-## Outputs
+## OUTPUTS
 
 ### System.IO.FileInfo
 
 `Export-Clixml` creates a file that contains the XML.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [ConvertTo-Html](ConvertTo-Html.md)
 

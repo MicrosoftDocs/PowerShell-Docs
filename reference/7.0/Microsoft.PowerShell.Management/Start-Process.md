@@ -9,10 +9,10 @@ title: Start-Process
 ---
 # Start-Process
 
-## Synopsis
+## SYNOPSIS
 Starts one or more processes on the local computer.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -32,7 +32,7 @@ Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-WorkingDirecto
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Start-Process` cmdlet starts one or more processes on the local computer. By default,
 `Start-Process` creates a new process that inherits all the environment variables that are defined
@@ -46,7 +46,7 @@ cmdlet.
 You can use the parameters of `Start-Process` to specify options, such as loading a user profile,
 starting the process in a new window, or using alternate credentials.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Start a process that uses default values
 
@@ -155,7 +155,7 @@ In this example, `Start-Process` is running the Linux `nohup` command, which lau
 detached process. For more information, see the man page for
 [nohup](https://linux.die.net/man/1/nohup).
 
-## Parameters
+## PARAMETERS
 
 ### -ArgumentList
 
@@ -491,20 +491,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None, System.Diagnostics.Process
 
 This cmdlet generates a **System.Diagnostics.Process** object, if you specify the **PassThru**
 parameter. Otherwise, this cmdlet does not return any output.
 
-## Notes
+## NOTES
 
 By default, `Start-Process` launches a process _asynchronously_. Control is instantly returned to
 PowerShell even if the new process is still running.
@@ -529,7 +529,7 @@ This cmdlet is implemented by using the **Start** method of the **System.Diagnos
 class. For more information about this method, see
 [Process.Start Method](/dotnet/api/system.diagnostics.process.start#overloads).
 
-## Related links
+## RELATED LINKS
 
 [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md)
 

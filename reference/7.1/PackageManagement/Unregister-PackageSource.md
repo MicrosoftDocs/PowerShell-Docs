@@ -10,10 +10,10 @@ title: Unregister-PackageSource
 
 # Unregister-PackageSource
 
-## Synopsis
+## SYNOPSIS
 Removes a registered package source.
 
-## Syntax
+## SYNTAX
 
 ### SourceBySearch
 
@@ -59,12 +59,12 @@ Unregister-PackageSource [-Credential <PSCredential>] [-Force] [-ForceBootstrap]
  [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Unregister-PackageSource` cmdlet removes a registered package source. Package sources are
 always managed by a package provider. To find package sources, use the `Get-PackageSource` cmdlet.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Unregister a package source for the Nuget provider
 
@@ -96,7 +96,7 @@ parameter:
 
 `Unregister-PackageSource -InputObject ( Get-PackageSource -Name MyNuGet )`
 
-## Parameters
+## PARAMETERS
 
 ### -ConfigFile
 
@@ -354,21 +354,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### `Unregister-PackageSource` accepts **PackageSource** objects from the pipeline as input.
 
-## Outputs
+## OUTPUTS
 
 ### `Unregister-PackageSource` doesn't generate any output.
 
-## Notes
+## NOTES
 
 Including a package provider in a command can make dynamic parameters available to a cmdlet. Dynamic
 parameters are specific to a package provider. The `Get-Help` cmdlet lists a cmdlet's parameter sets
 and includes the provider's parameter set.
 
-## Related links
+## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

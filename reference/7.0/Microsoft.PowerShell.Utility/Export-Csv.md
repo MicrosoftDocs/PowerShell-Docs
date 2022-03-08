@@ -9,11 +9,11 @@ title: Export-Csv
 ---
 # Export-Csv
 
-## Synopsis
+## SYNOPSIS
 Converts objects into a series of comma-separated value (CSV) strings and saves the strings to a
 file.
 
-## Syntax
+## SYNTAX
 
 ### Delimiter (Default)
 
@@ -32,7 +32,7 @@ Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-
  [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Export-CSV` cmdlet creates a CSV file of the objects that you submit. Each object is a row
 that includes a comma-separated list of the object's property values. You can use the `Export-CSV`
@@ -42,7 +42,7 @@ Do not format objects before sending them to the `Export-CSV` cmdlet. If `Export
 formatted objects the CSV file contains the format properties rather than the object properties. To
 export only selected properties of an object, use the `Select-Object` cmdlet.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Export process properties to a CSV file
 
@@ -377,7 +377,7 @@ DisplayHint,DateTime,Date,Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minute,M
 DateTime,"Thursday, August 22, 2019 11:31:00 AM",8/22/2019 12:00:00 AM,22,Thursday,234,11,Local,713,31,8,0,637020702607132640,11:31:00.7132640,2019
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Append
 
@@ -670,19 +670,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object with an Extended Type System (ETS) adapter to `Export-CSV`.
 
-## Outputs
+## OUTPUTS
 
 ### System.String
 
 The CSV list is sent to the file designated in the Path parameter.
 
-## Notes
+## NOTES
 
 The `Export-CSV` cmdlet converts the objects that you submit into a series of CSV strings and saves
 them in the specified text file. You can use `Export-CSV -IncludeTypeInformation` to save objects
@@ -721,7 +721,7 @@ The `ConvertTo-Csv` and `ConvertFrom-Csv` cmdlets convert objects to CSV strings
 strings. `Export-CSV` is the same as `ConvertTo-CSV`, except that it saves the CSV strings in a
 file.
 
-## Related links
+## RELATED LINKS
 
 [ConvertFrom-Csv](ConvertFrom-Csv.md)
 

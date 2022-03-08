@@ -10,16 +10,16 @@ title: Undo-Transaction
 
 # Undo-Transaction
 
-## Synopsis
+## SYNOPSIS
 Rolls back the active transaction.
 
-## Syntax
+## SYNTAX
 
 ```
 Undo-Transaction [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Undo-Transaction` cmdlet rolls back the active transaction. When you roll back a transaction,
 the changes that were made by the commands in the transaction are discarded and the data is restored
@@ -35,7 +35,7 @@ use this cmdlet to roll back the active transaction at any time.
 The `Undo-Transaction` cmdlet is one of a set of cmdlets that support the transactions feature in
 Windows PowerShell. For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Roll back the current transaction
 
@@ -124,7 +124,7 @@ The final command is a `Get-Transaction` command that gets the active, or in thi
 recently active, transaction. The results show that the transaction is rolled back, and that the
 subscriber count is 0, showing that the transaction was rolled back for all subscribers.
 
-## Parameters
+## PARAMETERS
 
 ### -Confirm
 
@@ -166,19 +166,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any output.
 
-## Notes
+## NOTES
 
 - You cannot roll back a transaction that has been committed.
 
@@ -188,7 +188,7 @@ This cmdlet does not return any output.
   Rolling back the transaction ends the transaction. To use a transaction again, you must start a
   new transaction.
 
-## Related links
+## RELATED LINKS
 
 [Complete-Transaction](Complete-Transaction.md)
 

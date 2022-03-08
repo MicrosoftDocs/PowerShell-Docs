@@ -9,10 +9,10 @@ title: Disable-RunspaceDebug
 ---
 # Disable-RunspaceDebug
 
-## Synopsis
+## SYNOPSIS
 Disables debugging on one or more runspaces, and releases any pending debugger stop.
 
-## Syntax
+## SYNTAX
 
 ### RunspaceNameParameterSet (Default)
 
@@ -44,12 +44,12 @@ Disable-RunspaceDebug [-RunspaceInstanceId] <Guid[]> [<CommonParameters>]
 Disable-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Disable-RunspaceDebug` cmdlet disables debugging on one or more runspaces, and releases any
 pending debugger stop.
 
-## Examples
+## EXAMPLES
 
 ### 1: Disable the default runspace debugger
 
@@ -64,7 +64,7 @@ Get-RunspaceDebug
   1 Runspace1            False      False
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AppDomainName
 
@@ -169,13 +169,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Enable-RunspaceDebug](Enable-RunspaceDebug.md)
 

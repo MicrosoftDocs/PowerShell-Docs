@@ -10,10 +10,10 @@ title: Remove-TypeData
 
 # Remove-TypeData
 
-## Synopsis
+## SYNOPSIS
 Deletes extended types from the current session.
 
-## Syntax
+## SYNTAX
 
 ### RemoveTypeDataSet (Default)
 
@@ -33,7 +33,7 @@ Remove-TypeData [-TypeName] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 Remove-TypeData -Path <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Remove-TypeData` cmdlet deletes extended type data from the current session. This cmdlet
 affects only the current session and sessions that are created in the current session.
@@ -46,7 +46,7 @@ files, see [about_Types.ps1xml](../Microsoft.PowerShell.Core/about/about_Types.p
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Remove type data for a specified type
 
@@ -119,7 +119,7 @@ cmdlet to remove extended type data for all CIM types in the sessions in the `$S
 Invoke-Command -Session $S {Get-TypeData -TypeName *CIM* | Remove-TypeData}
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Path
 
@@ -220,7 +220,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.Runspaces.TypeData
 
@@ -232,19 +232,19 @@ You can pipe **TypeData** object, such as the ones that the `Get-TypeData` cmdle
 You can pipe the type names to `Remove-TypeData`. When you pipe an object to `Remove-TypeData`,
 `Remove-TypeData` gets the type name of the object and removes all type data for the object type.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 `Remove-TypeData` can remove only the extended type data in the current session. It cannot remove
 extended type data that is on the computer, but has not been added to the current session, such as
 extended types that are defined in modules that have not been imported into the current session.
 
-## Related links
+## RELATED LINKS
 
 [Get-TypeData](Get-TypeData.md)
 

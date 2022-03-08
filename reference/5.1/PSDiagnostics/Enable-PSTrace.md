@@ -9,23 +9,23 @@ title: Enable-PSTrace
 ---
 # Enable-PSTrace
 
-## Synopsis
+## SYNOPSIS
 Enables the Microsoft-Windows-PowerShell event provider logs.
 
-## Syntax
+## SYNTAX
 
 ```
 Enable-PSTrace [-Force] [-AnalyticOnly]
 ```
 
-## Description
+## DESCRIPTION
 
 This cmdlet enables the Operational and Analytic event logs of the Microsoft-Windows-PowerShell
 event provider.
 
 You must run this cmdlet from an elevated PowerShell session.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Enable the Analytic event log for PowerShell
 
@@ -36,7 +36,7 @@ provider.
 Enable-PSTrace -AnalyticOnly
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AnalyticOnly
 
@@ -71,21 +71,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-## Inputs
+## INPUTS
 
 ### None
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
 This cmdlet uses the `Get-LogProperties` and `Set-LogProperties` cmdlets.
 
 You must run this cmdlet from an elevated PowerShell session.
 
-## Related links
+## RELATED LINKS
 
 [Get-LogProperties](Get-LogProperties.md)
 

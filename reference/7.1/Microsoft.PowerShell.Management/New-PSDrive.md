@@ -10,10 +10,10 @@ title: New-PSDrive
 
 # New-PSDrive
 
-## Synopsis
+## SYNOPSIS
 Creates temporary and persistent drives that are associated with a location in an item data store.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -23,7 +23,7 @@ New-PSDrive [-Name] <String> [-PSProvider] <String> [-Root] <String> [-Descripti
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-PSDrive` cmdlet creates temporary and persistent drives that are mapped to or associated
 with a location in a data store, such as a network drive, a directory on the local computer, or a
@@ -71,7 +71,7 @@ information, see [about_Splatting](../Microsoft.PowerShell.Core/About/about_Spla
 > Unless you use the **Scope** parameter, PSDrives are created in the scope in which the
 > `New-PSDrive` command is run.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a temporary drive mapped to a network share
 
@@ -264,7 +264,7 @@ New-PSDrive -Persist -Name "X" -PSProvider "FileSystem" -Root "\\Server01\Public
 To ensure that the drive is available outside of the script to must use the **Scope** parameter to
 create the drive in the **Global** scope.
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -476,17 +476,17 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You can't pipeline input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSDriveInfo
 
-## Notes
+## NOTES
 
 `New-PSDrive` is designed to work with the data exposed by any provider. To list the providers
 available in your session, use `Get-PSProvider`. For more information about providers, see
@@ -496,7 +496,7 @@ Mapped network drives are specific to a user account. Mapped drives created in e
 sessions using the credential of another user aren't visible in sessions started using different
 credentials.
 
-## Related links
+## RELATED LINKS
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

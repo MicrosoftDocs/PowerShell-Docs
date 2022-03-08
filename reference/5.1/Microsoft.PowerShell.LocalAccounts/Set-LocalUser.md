@@ -10,10 +10,10 @@ title: Set-LocalUser
 
 # Set-LocalUser
 
-## Synopsis
+## SYNOPSIS
 Modifies a local user account.
 
-## Syntax
+## SYNTAX
 
 ### Name (Default)
 
@@ -39,7 +39,7 @@ Set-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description 
  [-UserMayChangePassword <Boolean>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-LocalUser` cmdlet modifies a local user account. This cmdlet can reset the password of a
 local user account.
@@ -48,7 +48,7 @@ local user account.
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Change a description of a user account
 
@@ -74,7 +74,7 @@ account in the $UserAccount variable.
 
 The third command sets the new password on the user account stored in `$UserAccount`.
 
-## Parameters
+## PARAMETERS
 
 ### -AccountExpires
 
@@ -285,19 +285,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser, System.String, System.Security.Principal.SecurityIdentifier
 
 You can pipe a local user, a string, or a SID to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
   **LocalPrincipal** objects that describes the source of the object. The possible sources are as
@@ -311,7 +311,7 @@ This cmdlet does not generate any output.
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
 Windows operating system. For earlier versions, the property is blank.
 
-## Related links
+## RELATED LINKS
 
 [Disable-LocalUser](Disable-LocalUser.md)
 

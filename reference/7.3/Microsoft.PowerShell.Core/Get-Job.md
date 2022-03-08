@@ -9,10 +9,10 @@ title: Get-Job
 ---
 # Get-Job
 
-## Synopsis
+## SYNOPSIS
 Gets PowerShell background jobs that are running in the current session.
 
-## Syntax
+## SYNTAX
 
 ### SessionIdParameterSet (Default)
 
@@ -55,7 +55,7 @@ Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] 
 Get-Job [-Filter] <Hashtable> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Job` cmdlet gets objects that represent the background jobs that were started in the
 current session. You can use `Get-Job` to get jobs that were started by using the `Start-Job`
@@ -81,7 +81,7 @@ into the session before you run a `Get-Job` command, either by using the `Import
 by using or getting a cmdlet in the module. For information about a particular custom job type, see
 the documentation of the custom job type feature.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all background jobs started in the current session
 
@@ -366,7 +366,7 @@ Access is denied.
 For more information, see the
 [about_Remote_Troubleshooting](./about/about_Remote_Troubleshooting.md) Help topic.
 
-## Parameters
+## PARAMETERS
 
 ### -After
 
@@ -669,19 +669,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.RemotingJob
 
 This cmdlet returns objects that represent the jobs in the session.
 
-## Notes
+## NOTES
 
 The **PSJobTypeName** property of jobs indicates the job type of the job. The property value is
 determined by the job type author. The following list shows common job types.
@@ -691,7 +691,7 @@ determined by the job type author. The following list shows common job types.
   `Invoke-Command` cmdlet.
 - **PSWorkflowJob**. Job started by using the **AsJob** common parameter of workflows.
 
-## Related links
+## RELATED LINKS
 
 [Invoke-Command](Invoke-Command.md)
 

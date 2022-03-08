@@ -9,10 +9,10 @@ title: Suspend-Service
 ---
 # Suspend-Service
 
-## Synopsis
+## SYNOPSIS
 Suspends (pauses) one or more running services.
 
-## Syntax
+## SYNTAX
 
 ### InputObject (Default)
 
@@ -35,7 +35,7 @@ Suspend-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Excl
  [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -45,7 +45,7 @@ until resumed, such as by usingthe `Resume-Service` cmdlet. You can specify the 
 service names or display names, or you can use the **InputObject** parameter to pass a service
 object that represents the services that you want to suspend.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Suspend a service
 
@@ -87,7 +87,7 @@ of `$True` for the **CanPauseAndContinue** property. Another pipeline operator p
 `Suspend-Service`. The **Confirm** parameter prompts you for confirmation before suspending each of
 the services.
 
-## Parameters
+## PARAMETERS
 
 ### -DisplayName
 
@@ -233,13 +233,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.ServiceProcess.ServiceController, System.String
 
 You can pipe a service object or a string that contains a service name to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None, System.ServiceProcess.ServiceController
 
@@ -247,7 +247,7 @@ This cmdlet generates a **System.ServiceProcess.ServiceController** object that 
 service, if you specify the **PassThru** parameter. Otherwise, this cmdlet does not generate any
 output.
 
-## Notes
+## NOTES
 
 This cmdlet is only available on Windows platforms.
 
@@ -262,7 +262,7 @@ This cmdlet is only available on Windows platforms.
   The service names appear in the **Name** column, and the display names appear in the
   **DisplayName** column.
 
-## Related links
+## RELATED LINKS
 
 [Get-Service](Get-Service.md)
 

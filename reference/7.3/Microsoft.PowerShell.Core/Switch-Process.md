@@ -8,17 +8,17 @@ schema: 2.0.0
 
 # Switch-Process
 
-## Synopsis
+## SYNOPSIS
 On Linux and macOS, the cmdlet calls the `execv()` function to provide similar behavior as POSIX
 shells.
 
-## Syntax
+## SYNTAX
 
 ```
 Switch-Process [[-WithCommand] <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 Some native Unix commands shell out to run something (like ssh) and use the `bash` built-in command
 `exec` to spawn a new process that replaces the current one. By default, `exec` is not a valid
@@ -31,7 +31,7 @@ calls `execv()` function to provide similar behavior as POSIX shells.
 The `PSExec` experimental feature must be enabled for this cmdlet to be available. This cmdlet is
 only available for non-Windows systems.
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Execute a command that depends on `exec`
 
@@ -45,7 +45,7 @@ ssh-copy-id user@host
 
 With the `PSExec` feature enabled, the `ssh-copy-id` script succeeds.
 
-## Parameters
+## PARAMETERS
 
 ### -WithCommand
 
@@ -73,15 +73,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String[]
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
 This feature is not intended to have parity with the built-in `exec` function in POSIX shells (like
 how file descriptors are handled), but should cover most cases.

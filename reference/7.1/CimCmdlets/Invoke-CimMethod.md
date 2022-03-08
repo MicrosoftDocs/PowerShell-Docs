@@ -10,10 +10,10 @@ title: Invoke-CimMethod
 
 # Invoke-CimMethod
 
-## Synopsis
+## SYNOPSIS
 Invokes a method of a CIM class.
 
-## Syntax
+## SYNTAX
 
 ### ClassNameComputerSet (Default)
 
@@ -93,7 +93,7 @@ Invoke-CimMethod -Query <String> [-QueryDialect <String>] -CimSession <CimSessio
  [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -117,7 +117,7 @@ If the **InputObject** parameter is specified, the cmdlet works in one of the fo
   this cmdlet uses the either the **CimSession** parameter value or **ComputerName** parameter
   value. This is not a common scenario.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Invoke a method
 
@@ -158,7 +158,7 @@ $c = Get-CimClass -ClassName Win32_Process
 Invoke-CimMethod -CimClass $c -MethodName "xyz" -Arguments @{ CommandLine = 'notepad.exe' }
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Arguments
 
@@ -449,7 +449,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### CIM class
 
@@ -459,15 +459,15 @@ This cmdlet accepts a CIM class as an input object.
 
 This cmdlet accepts a CIM instance as an input object.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSCustomObject
 
 This cmdlet returns an object.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Get-CimClass](get-cimclass.md)
 

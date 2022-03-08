@@ -10,10 +10,10 @@ title: Set-JobTrigger
 
 # Set-JobTrigger
 
-## Synopsis
+## SYNOPSIS
 Changes the job trigger of a scheduled job.
 
-## Syntax
+## SYNTAX
 
 ```
 Set-JobTrigger [-InputObject] <ScheduledJobTrigger[]> [-DaysInterval <Int32>] [-WeeksInterval <Int32>]
@@ -22,7 +22,7 @@ Set-JobTrigger [-InputObject] <ScheduledJobTrigger[]> [-DaysInterval <Int32>] [-
  [-Daily] [-Weekly] [-PassThru] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-JobTrigger` cmdlet changes the properties of the job triggers of scheduled jobs. You can
 use it to change the time or frequency at which the jobs start or to change from a time-based
@@ -51,7 +51,7 @@ the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [abo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Change the days in a job trigger
 
@@ -217,7 +217,7 @@ The command does not return any output.
 
 The fourth command displays the effect of the change.The output shows that the trigger starts the
 job once every 90 minutes (RepetitionInterval = 1 hour, 30 minutes) for one day (RepetitionDuration
-= 1 day). ## Parameters
+= 1 day). ## PARAMETERS
 
 ### -At
 
@@ -549,26 +549,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
 
 You can pipe multiple job triggers to `Set-JobTrigger`.
 
-## Outputs
+## OUTPUTS
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
 
 When you use the **Passthru** parameter, `Set-JobTrigger` returns the job triggers that were
 changed. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - Job triggers have a **JobDefintion** property that associates them with the scheduled job. When
   you change the job trigger of a scheduled job, the job is changed. You do not need to use a
   `Set-ScheduledJob` command to apply the changed trigger to the scheduled job.
 
-## Related links
+## RELATED LINKS
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

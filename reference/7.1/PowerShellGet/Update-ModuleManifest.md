@@ -10,10 +10,10 @@ title: Update-ModuleManifest
 
 # Update-ModuleManifest
 
-## Synopsis
+## SYNOPSIS
 Updates a module manifest file.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -34,11 +34,11 @@ Update-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>
  [-RequireLicenseAcceptance] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Update-ModuleManifest` cmdlet updates a module manifest (`.psd1`) file.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Update a module manifest
 
@@ -60,7 +60,7 @@ Update-ModuleManifest @Parms
 **Copyright**. `Update-ModuleManifest` gets the parameter values from `@Parms` and updates the
 module manifest, **TestManifest.psd1**.
 
-## Parameters
+## PARAMETERS
 
 ### -AliasesToExport
 
@@ -853,15 +853,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -875,4 +875,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS

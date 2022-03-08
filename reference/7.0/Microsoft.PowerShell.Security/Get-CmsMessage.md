@@ -9,10 +9,10 @@ title: Get-CmsMessage
 ---
 # Get-CmsMessage
 
-## Synopsis
+## SYNOPSIS
 Gets content that has been encrypted by using the Cryptographic Message Syntax format.
 
-## Syntax
+## SYNTAX
 
 ### ByContent
 
@@ -32,7 +32,7 @@ Get-CmsMessage [-Path] <String> [<CommonParameters>]
 Get-CmsMessage [-LiteralPath] <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -59,7 +59,7 @@ encryption certificate that was used to encrypt the content.
 > [!NOTE]
 > This cmdlet is only available on Windows.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get encrypted content
 
@@ -99,7 +99,7 @@ This command pipes the results of the `Get-CmsMessage` cmdlet from Example 1 to
 the **To** parameter is the value of the encrypting certificate's Subject line. The decrypted
 message, "Try the new Break All command," is the result.
 
-## Parameters
+## PARAMETERS
 
 ### -Content
 
@@ -159,15 +159,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
-## Notes
+## NOTES
 
 This cmdlet is only available on Windows platforms.
 
-## Related links
+## RELATED LINKS
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

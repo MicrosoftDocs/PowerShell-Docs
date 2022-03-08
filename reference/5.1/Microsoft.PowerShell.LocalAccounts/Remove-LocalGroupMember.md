@@ -10,10 +10,10 @@ title: Remove-LocalGroupMember
 
 # Remove-LocalGroupMember
 
-## Synopsis
+## SYNOPSIS
 Removes members from a local group.
 
-## Syntax
+## SYNTAX
 
 ### Group
 
@@ -35,7 +35,7 @@ Remove-LocalGroupMember [-Member] <LocalPrincipal[]> [-SID] <SecurityIdentifier>
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Remove-LocalGroupMember` cmdlet removes users or groups from a local group.
 
@@ -43,7 +43,7 @@ The `Remove-LocalGroupMember` cmdlet removes users or groups from a local group.
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Remove members from the Administrators group
 
@@ -57,7 +57,7 @@ cmdlet removes include a local user account, a Microsoft account, an Azure Activ
 and a domain group. This example uses a placeholder value for the user name of an account at
 Outlook.com.
 
-## Parameters
+## PARAMETERS
 
 ### -Group
 
@@ -164,19 +164,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalPrincipal, System.String, System.Security.Principal.SecurityIdentifier
 
 You can pipe a local principal, a string, or a SID to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
   **LocalPrincipal** objects that describes the source of the object. The possible sources are as
@@ -190,7 +190,7 @@ This cmdlet does not generate any output.
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
 Windows operating system. For earlier versions, the property is blank.
 
-## Related links
+## RELATED LINKS
 
 [Add-LocalGroupMember](Add-LocalGroupMember.md)
 

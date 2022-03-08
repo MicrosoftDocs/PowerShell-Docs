@@ -10,10 +10,10 @@ title: Get-ScheduledJob
 
 # Get-ScheduledJob
 
-## Synopsis
+## SYNOPSIS
 Gets scheduled jobs on the local computer.
 
-## Syntax
+## SYNTAX
 
 ### DefinitionId (Default)
 
@@ -27,7 +27,7 @@ Get-ScheduledJob [[-Id] <Int32[]>] [<CommonParameters>]
 Get-ScheduledJob [-Name] <String[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-ScheduledJob` cmdlet gets scheduled jobs on the local computer. `Get-ScheduledJob` gets
 only scheduled jobs that are created by the current user using the `Register-ScheduledJob` cmdlet.
@@ -48,7 +48,7 @@ the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [abo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all scheduled jobs
 
@@ -88,7 +88,7 @@ Get-ScheduledJob DailyBackup, WeeklyBackup | Get-JobTrigger
 It uses the `Get-ScheduledJob` cmdlet to get the scheduled jobs and pipes them to the
 `Get-JobTrigger` cmdlet to get the job triggers of the scheduled jobs.
 
-## Parameters
+## PARAMETERS
 
 ### -Id
 
@@ -132,17 +132,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to `Get-ScheduledJob`.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
-## Notes
+## NOTES
 
 - Each scheduled job is saved in a subdirectory of the
   `$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on the local computer.
@@ -155,7 +155,7 @@ You cannot pipe input to `Get-ScheduledJob`.
   to manage scheduled jobs that you create with the Scheduled Job cmdlets. However, you cannot use
   the Scheduled Job cmdlets to manage tasks that you create in Task Scheduler.
 
-## Related links
+## RELATED LINKS
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

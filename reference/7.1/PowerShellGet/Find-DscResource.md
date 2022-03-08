@@ -10,10 +10,10 @@ title: Find-DscResource
 
 # Find-DscResource
 
-## Synopsis
+## SYNOPSIS
 Finds Desired State Configuration (DSC) resources.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -24,7 +24,7 @@ Find-DscResource [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <S
  [-Repository <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Find-DscResource` cmdlet searches registered repositories to find DSC resources contained in
 modules. By default `Find-DscResource` searches all registered repositories.
@@ -33,7 +33,7 @@ For each module found by `Find-DscResource`, a **PSGetDscResourceInfo** object i
 **PSGetDscResourceInfo** objects can be sent down the pipeline to the `Install-Module` cmdlet.
 `Install-Module` installs the module.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Find all DSC resources
 
@@ -157,7 +157,7 @@ xDSCFirewall            1.6.21     xDSCFirewall               PSGallery
 dmAwsTagInstance        1.0.1      domainAwsDSCResources      PSGallery
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AllowPrerelease
 
@@ -365,15 +365,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
 ### PSGetDscResourceInfo
 
 `Find-DscResource` returns a **PSGetDscResourceInfo** object.
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -387,7 +387,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [Get-InstalledModule](Get-InstalledModule.md)
 

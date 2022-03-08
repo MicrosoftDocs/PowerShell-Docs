@@ -10,10 +10,10 @@ title: Get-HotFix
 
 # Get-HotFix
 
-## Synopsis
+## SYNOPSIS
 Gets the hotfixes that are installed on local or remote computers.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -22,20 +22,20 @@ Get-HotFix [[-Id] <String[]>] [-ComputerName <String[]>] [-Credential <PSCredent
 [<CommonParameters>]
 ```
 
-### Description
+### DESCRIPTION
 
 ```
 Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
 [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Hotfix` cmdlet gets hotfixes, or updates, that are installed on the local computer or
 specified remote computers. The updates can be installed by Windows Update, Microsoft Update,
 Windows Server Update Services, or manually installed.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all hotfixes on the local computer
 
@@ -96,7 +96,7 @@ This example gets the most recent hotfix installed on a computer.
 objects by ascending order and uses the **Property** parameter to evaluate each **InstalledOn**
 date. The array notation `[-1]` selects the most recent installed hotfix.
 
-## Parameters
+## PARAMETERS
 
 ### -ComputerName
 
@@ -186,19 +186,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### String
 
 You can pipe one or more computer names to Get-HotFix.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.ManagementObject#root\CIMV2\Win32_QuickFixEngineering
 
 `Get-HotFix` returns objects that represent the hotfixes on the computer.
 
-## Notes
+## NOTES
 
 This cmdlet is only available on Windows platforms.
 
@@ -211,7 +211,7 @@ Installer (MSI) or the [Windows Update](https://update.microsoft.com) site are n
 
 The `Get-HotFix` output might vary on different operating systems.
 
-## Related links
+## RELATED LINKS
 
 [about_Arrays](../Microsoft.PowerShell.Core/About/about_Arrays.md)
 

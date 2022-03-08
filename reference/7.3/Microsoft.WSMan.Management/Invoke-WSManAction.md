@@ -9,10 +9,10 @@ title: Invoke-WSManAction
 ---
 # Invoke-WSManAction
 
-## Synopsis
+## SYNOPSIS
 Invokes an action on the object that is specified by the Resource URI and by the selectors.
 
-## Syntax
+## SYNTAX
 
 ### URI (Default)
 
@@ -32,7 +32,7 @@ Invoke-WSManAction [-Action] <String> [-ApplicationName <String>] [-ComputerName
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -41,7 +41,7 @@ parameters are specified by key value pairs.
 
 This cmdlet uses the WSMan connection/transport layer to run the action.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Invoke a method
 
@@ -122,7 +122,7 @@ the remote server01 computer.
 The return value indicates whether the action was successful. In this case, a return value of 0
 indicates success. A return value of 5 indicates that the service is already started.
 
-## Parameters
+## PARAMETERS
 
 ### -Action
 
@@ -471,21 +471,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet does not accept any input.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Connect-WSMan](Connect-WSMan.md)
 

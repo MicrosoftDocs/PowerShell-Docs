@@ -9,10 +9,10 @@ title: New-PSSession
 ---
 # New-PSSession
 
-## Synopsis
+## SYNOPSIS
 Creates a persistent connection to a local or remote computer.
 
-## Syntax
+## SYNTAX
 
 ### ComputerName (Default)
 
@@ -80,7 +80,7 @@ New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserNa
 New-PSSession [-Name <String[]>] -SSHConnection <Hashtable[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-PSSession` cmdlet creates a PowerShell session (**PSSession**) on a local or remote
 computer. When you create a **PSSession**, PowerShell establishes a persistent connection to the
@@ -111,7 +111,7 @@ connection information. For more information about how to set up PowerShell SSH 
 > this if you are in an environment where you can be certain of the server certificate and the
 > network connection to the target system.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a session on the local computer
 
@@ -322,7 +322,7 @@ This example shows how to create a new SSH-based session a remote Linux-based ma
 options. The **Options** parameter takes a hashtable of values that are passed as options to the
 underlying `ssh` command the established the connection to the remote system.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowRedirection
 
@@ -1026,17 +1026,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
 (https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String, System.URI, System.Management.Automation.Runspaces.PSSession
 
 You can pipe a string, URI, or session object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
 
-## Notes
+## NOTES
 
 This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local computer and
 any remote computers must be configured for PowerShell remoting. For more information, see
@@ -1077,7 +1077,7 @@ Any values explicitly passed by parameters take precedence over values passed in
 hashtable. For more information about `ssh_config` files, see
 [ssh_config(5)](https://man.openbsd.org/ssh_config.5).
 
-## Related links
+## RELATED LINKS
 
 [Connect-PSSession](Connect-PSSession.md)
 

@@ -9,16 +9,16 @@ title: Disable-PSWSManCombinedTrace
 ---
 # Disable-PSWSManCombinedTrace
 
-## Synopsis
+## SYNOPSIS
 Stop the logging session started by Enable-PSWSManCombinedTrace.
 
-## Syntax
+## SYNTAX
 
 ```
 Disable-PSWSManCombinedTrace [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -28,7 +28,7 @@ This cmdlet uses the `Stop-Trace` cmdlet.
 
 You must run this cmdlet from an elevated PowerShell session.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Disable the combined logging session
 
@@ -36,7 +36,7 @@ You must run this cmdlet from an elevated PowerShell session.
 Disable-PSWSManCombinedTrace
 ```
 
-## Parameters
+## PARAMETERS
 
 ### CommonParameters
 
@@ -45,17 +45,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
-## Outputs
+## OUTPUTS
 
 ### None
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Event Tracing](/windows/desktop/ETW/event-tracing-portal)
 

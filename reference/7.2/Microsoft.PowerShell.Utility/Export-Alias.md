@@ -9,10 +9,10 @@ title: Export-Alias
 ---
 # Export-Alias
 
-## Synopsis
+## SYNOPSIS
 Exports information about currently defined aliases to a file.
 
-## Syntax
+## SYNTAX
 
 ### ByPath (Default)
 
@@ -28,14 +28,14 @@ Export-Alias -LiteralPath <String> [[-Name] <String[]>] [-PassThru] [-As <Export
  [-Force] [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Export-Alias` cmdlet exports the aliases in the current session to a file.
 If the output file does not exist, the cmdlet will create it.
 
 `Export-Alias` can export the aliases in a particular scope or all scopes, it can generate the data in CSV format or as a series of Set-Alias commands that you can add to a session or to a PowerShell profile.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Export an alias
 
@@ -90,7 +90,7 @@ The third and fourth commands add the aliases in the Alias.ps1 file to a remote 
 The third command uses the `New-PSSession` cmdlet to create the session.
 The fourth command uses the **FilePath** parameter of the `Invoke-Command` cmdlet to run the Alias.ps1 file in the new session.
 
-## Parameters
+## PARAMETERS
 
 ### -Append
 
@@ -329,24 +329,24 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None.
 
 You cannot pipe objects to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Management.Automation.AliasInfo
 
 When you use the **Passthru** parameter, `Export-Alias` returns a **System.Management.Automation.AliasInfo** object that represents the alias.
 Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 * You can only Export-Aliases to a file.
 
-## Related links
+## RELATED LINKS
 
 [Get-Alias](Get-Alias.md)
 

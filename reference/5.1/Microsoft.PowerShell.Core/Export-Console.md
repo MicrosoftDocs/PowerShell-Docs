@@ -10,16 +10,16 @@ title: Export-Console
 
 # Export-Console
 
-## Synopsis
+## SYNOPSIS
 Exports the names of snap-ins in the current session to a console file.
 
-## Syntax
+## SYNTAX
 
 ```
 Export-Console [[-Path] <String>] [-Force] [-NoClobber] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Export-Console` cmdlet exports the names of the Windows PowerShell snap-ins in the current
 session to a Windows PowerShell console file (.psc1). You can use this cmdlet to save the snap-ins
@@ -31,7 +31,7 @@ then use the **PSConsoleFile** parameter of PowerShell.exe to specify the consol
 
 For more information about Windows PowerShell snap-ins, see [about_PSSnapins](About/about_PSSnapins.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Export the names of snap-ins in the current session
 
@@ -128,7 +128,7 @@ The sixth command uses the `Export-Console` cmdlet without a **Path** parameter.
 exports the names of all the Windows PowerShell snap-ins in the current session to the most recently
 used file, `NewConsole.psc1`.
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -231,19 +231,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a path string to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.IO.FileInfo
 
 This cmdlet creates a file that contains the exported aliases.
 
-## Notes
+## NOTES
 
 - When a console file (`.psc1`) is used to start the session, the name of the console file is
   automatically stored in the `$ConsoleFileName` automatic variable. The value of `$ConsoleFileName`
@@ -258,7 +258,7 @@ This cmdlet creates a file that contains the exported aliases.
   You can also save Windows PowerShell snap-ins for future sessions by adding an Add-PSSnapin
   command to your Windows PowerShell profile. For more information, see [about_Profiles](About/about_Profiles.md).
 
-## Related links
+## RELATED LINKS
 
 [Add-PSSnapin](Add-PSSnapin.md)
 

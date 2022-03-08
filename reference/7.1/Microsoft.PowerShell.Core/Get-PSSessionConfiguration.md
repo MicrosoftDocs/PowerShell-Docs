@@ -9,16 +9,16 @@ title: Get-PSSessionConfiguration
 ---
 # Get-PSSessionConfiguration
 
-## Synopsis
+## SYNOPSIS
 Gets the registered session configurations on the computer.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-PSSessionConfiguration [[-Name] <String[]>] [-Force] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-PSSessionConfiguration` cmdlet gets the session configurations that have been registered on
 the local computer. This is an advanced cmdlet that is designed to be used by system administrators
@@ -36,7 +36,7 @@ session configuration authors to examine and compare session configurations.
 To create and register a session configuration, use the `Register-PSSessionConfiguration` cmdlet.
 For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Get session configurations on the local computer
 
@@ -237,7 +237,7 @@ create a session. This variable is set on the local computer, but it specifies a
 the remote computer. For more information about the `$PSSessionConfiguration` variable, see
 [about_Preference_Variables](About/about_Preference_Variables.md).
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -279,17 +279,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](./About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration
 
-## Notes
+## NOTES
 
 - To run this cmdlet, start PowerShell with the **Run as administrator** option.
 
@@ -316,7 +316,7 @@ You cannot pipe input to this cmdlet.
   commands do not generate an error, but they are ineffective. To change properties introduced in
   PowerShell 3.0, use the WSMan: drive in PowerShell 3.0.
 
-## Related links
+## RELATED LINKS
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 

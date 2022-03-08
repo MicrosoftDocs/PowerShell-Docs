@@ -9,10 +9,10 @@ title: Enter-PSSession
 ---
 # Enter-PSSession
 
-## Synopsis
+## SYNOPSIS
 Starts an interactive session with a remote computer.
 
-## Syntax
+## SYNTAX
 
 ### ComputerName (Default)
 
@@ -82,7 +82,7 @@ Enter-PSSession [-ContainerId] <String> [-ConfigurationName <String>] [-RunAsAdm
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Enter-PSSession` cmdlet starts an interactive session with a single remote computer.
 During the session, the commands that you type run on the remote computer, just as if you were
@@ -104,7 +104,7 @@ information about how to set up PowerShell SSH remoting, see
 To end the interactive session and disconnect from the remote computer, use the `Exit-PSSession`
 cmdlet, or type `exit`.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Start an interactive session
 
@@ -201,7 +201,7 @@ This example shows how to start an interactive session using SSH. It uses the **
 specify the port to use and the **KeyFilePath** parameter to specify an RSA key used to authenticate
 the user on the remote computer.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowRedirection
 
@@ -872,19 +872,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String, System.Management.Automation.Runspaces.PSSession
 
 You can pipe a computer name, as a string, or a session object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 The cmdlet does not return any output.
 
-## Notes
+## NOTES
 
 To connect to a remote computer, you must be a member of the Administrators group on the remote
 computer. To start an interactive session on the local computer, you must start PowerShell with the
@@ -923,7 +923,7 @@ Prior to PowerShell 7.1, remoting over SSH did not support second-hop remote ses
 capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSSession` and
 `Enter-PSHostProcess` to work from within any interactive remote session.
 
-## Related links
+## RELATED LINKS
 
 [Exit-PSSession](Exit-PSSession.md)
 

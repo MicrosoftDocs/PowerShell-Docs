@@ -10,16 +10,16 @@ title: Enable-JobTrigger
 
 # Enable-JobTrigger
 
-## Synopsis
+## SYNOPSIS
 Enables the job triggers of scheduled jobs.
 
-## Syntax
+## SYNTAX
 
 ```
 Enable-JobTrigger [-InputObject] <ScheduledJobTrigger[]> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Enable-JobTrigger` cmdlet re-enables job triggers of scheduled jobs, such as those that were
 disabled by using the `Disable-JobTrigger` cmdlet. Enabled and re-enabled job triggers can start
@@ -39,7 +39,7 @@ the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [abo
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Enable a job trigger
 
@@ -105,7 +105,7 @@ displays the selected properties of the job triggers in a table. The properties 
 JobName property that displays the name of the scheduled job in the JobDefinition property of the
 job trigger.
 
-## Parameters
+## PARAMETERS
 
 ### -InputObject
 
@@ -180,24 +180,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
 
 You can pipe job triggers to `Enable-JobTrigger`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - `Enable-JobTrigger` does not generate errors or warnings if you enable a job trigger that is
   already enabled.
 
-## Related links
+## RELATED LINKS
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

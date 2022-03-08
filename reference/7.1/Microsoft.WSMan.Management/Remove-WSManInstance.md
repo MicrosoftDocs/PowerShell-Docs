@@ -9,10 +9,10 @@ title: Remove-WSManInstance
 ---
 # Remove-WSManInstance
 
-## Synopsis
+## SYNOPSIS
 Deletes a management resource instance.
 
-## Syntax
+## SYNTAX
 
 ### ComputerName (Default)
 
@@ -31,7 +31,7 @@ Remove-WSManInstance [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-ResourceU
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
@@ -40,7 +40,7 @@ the **ResourceURI** and **SelectorSet** parameters.
 
 This cmdlet uses the WinRM connection/transport layer to delete the management resource instance.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Delete a listener
 
@@ -50,7 +50,7 @@ Remove-WSManInstance -ResourceUri winrm/config/Listener -SelectorSet Address=tes
 
 This command deletes the WS-Management HTTP listener on a computer.
 
-## Parameters
+## PARAMETERS
 
 ### -ApplicationName
 
@@ -341,24 +341,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 This cmdlet does not accept any input.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 The cmdlets in the CimCmdlets module are similar. They use the DCOM connection/transport layer to
 create or update WMI instances.
 
-## Related links
+## RELATED LINKS
 
 [Connect-WSMan](Connect-WSMan.md)
 

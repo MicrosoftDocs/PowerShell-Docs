@@ -9,10 +9,10 @@ title: Get-Service
 ---
 # Get-Service
 
-## Synopsis
+## SYNOPSIS
 Gets the services on a local or remote computer.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -35,7 +35,7 @@ Get-Service [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] 
  [-Exclude <String[]>] [-InputObject <ServiceController[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Service` cmdlet gets objects that represent the services on a local computer or on a remote
 computer, including running and stopped services.
@@ -43,7 +43,7 @@ computer, including running and stopped services.
 You can direct this cmdlet to get only particular services by specifying the service name or the
 display name of the services, or you can pipe service objects to this cmdlet.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all services on the computer
 
@@ -209,7 +209,7 @@ The command returns the value of the **ServicesDependedOn** property of the serv
 This command gets the WinRM service on the local computer. This example shows that you can pipe a
 service name string (enclosed in quotation marks) to `Get-Service`.
 
-## Parameters
+## PARAMETERS
 
 ### -ComputerName
 
@@ -364,19 +364,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.ServiceProcess.ServiceController, System.String
 
 You can pipe a service object or a service name to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.ServiceProcess.ServiceController
 
 This cmdlet returns objects that represent the services on the computer.
 
-## Notes
+## NOTES
 
 You can also refer to `Get-Service` by its built-in alias, `gsv`. For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
@@ -391,7 +391,7 @@ services. The Status property of a service is an enumerated value in which the n
 represent integer values. The sort is based on the integer value, not the name. "Running" appears
 before "Stopped" because "Stopped" has a value of "1", and "Running" has a value of "4".
 
-## Related links
+## RELATED LINKS
 
 [New-Service](New-Service.md)
 

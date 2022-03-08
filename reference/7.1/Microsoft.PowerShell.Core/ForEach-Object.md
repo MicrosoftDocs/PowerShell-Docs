@@ -9,10 +9,10 @@ title: ForEach-Object
 ---
 # ForEach-Object
 
-## Synopsis
+## SYNOPSIS
 Performs an operation against each item in a collection of input objects.
 
-## Syntax
+## SYNTAX
 
 ### ScriptBlockSet (Default)
 
@@ -35,7 +35,7 @@ ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit
 [-UseNewRunspace] [-TimeoutSeconds <int>] [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `ForEach-Object` cmdlet performs an operation on each item in a collection of input objects. The
 input objects can be piped to the cmdlet or specified by using the **InputObject** parameter.
@@ -98,7 +98,7 @@ command.
   Terminating errors can be converted to non-terminating errors using PowerShell try/catch or trap
   blocks.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Divide integers in an array
 
@@ -486,7 +486,7 @@ Line |
 
 The nested scriptblock can't access the `$test2` variable and an error is thrown.
 
-## Parameters
+## PARAMETERS
 
 ### -ArgumentList
 
@@ -773,19 +773,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSObject
 
 This cmdlet returns objects that are determined by the input.
 
-## Notes
+## NOTES
 
 - The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe
   input to a **Foreach** statement. For more information about the **Foreach** statement, see
@@ -817,7 +817,7 @@ This cmdlet returns objects that are determined by the input.
   > referenced objects that don't change. But if the object state is being modified then you must
   > used thread safe objects, such as .Net **System.Collection.Concurrent** types (See Example 11).
 
-## Related links
+## RELATED LINKS
 
 [Compare-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
 

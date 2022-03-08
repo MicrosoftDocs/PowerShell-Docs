@@ -9,10 +9,10 @@ title: Disable-PSBreakpoint
 ---
 # Disable-PSBreakpoint
 
-## Synopsis
+## SYNOPSIS
 Disables the breakpoints in the current console.
 
-## Syntax
+## SYNTAX
 
 ### Breakpoint (Default)
 
@@ -27,7 +27,7 @@ Disable-PSBreakpoint [-PassThru] [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confir
 Disable-PSBreakpoint [-PassThru] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Disable-PSBreakpoint` cmdlet disables breakpoints, which assures that they are not hit when the
 script runs. You can use it to disable all breakpoints, or you can specify breakpoints by submitting
@@ -42,7 +42,7 @@ instructions in the script. `Disable-PSBreakpoint` is one of several cmdlets des
 PowerShell scripts. For more information about the PowerShell debugger, see
 [about_Debuggers](../microsoft.powershell.core/about/about_debuggers.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Set a breakpoint and disable it
 
@@ -93,7 +93,7 @@ This command disables all breakpoints in the current console.
 `Get-PSBreakpoint` | Disable-PSBreakpoint
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Breakpoint
 
@@ -186,22 +186,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.Breakpoint
 
 You can pipe a breakpoint object to `Disable-PSBreakpoint`.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Management.Automation.Breakpoint
 
 When you use the **PassThru** parameter, `Disable-PSBreakpoint` returns an object that represents
 the disabled breakpoint. Otherwise, this cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Enable-PSBreakpoint](Enable-PSBreakpoint.md)
 

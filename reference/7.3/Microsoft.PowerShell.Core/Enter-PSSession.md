@@ -9,10 +9,10 @@ title: Enter-PSSession
 ---
 # Enter-PSSession
 
-## Synopsis
+## SYNOPSIS
 Starts an interactive session with a remote computer.
 
-## Syntax
+## SYNTAX
 
 ### ComputerName (Default)
 
@@ -83,7 +83,7 @@ Enter-PSSession [-ContainerId] <String> [-ConfigurationName <String>] [-RunAsAdm
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Enter-PSSession` cmdlet starts an interactive session with a single remote computer.
 During the session, the commands that you type run on the remote computer, just as if you were
@@ -105,7 +105,7 @@ information about how to set up PowerShell SSH remoting, see
 To end the interactive session and disconnect from the remote computer, use the `Exit-PSSession`
 cmdlet, or type `exit`.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Start an interactive session
 
@@ -217,7 +217,7 @@ This example shows how to start an interactive session using SSH. The **Options*
 hashtable of values that are passed as options to the underlying `ssh` command the established the
 connection to the remote system.
 
-## Parameters
+## PARAMETERS
 
 ### -AllowRedirection
 
@@ -910,19 +910,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String, System.Management.Automation.Runspaces.PSSession
 
 You can pipe a computer name, as a string, or a session object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 The cmdlet does not return any output.
 
-## Notes
+## NOTES
 
 To connect to a remote computer, you must be a member of the Administrators group on the remote
 computer. To start an interactive session on the local computer, you must start PowerShell with the
@@ -982,7 +982,7 @@ hashtable. For more information about `ssh_config` files, see
 
 
 
-## Related links
+## RELATED LINKS
 
 [Exit-PSSession](Exit-PSSession.md)
 

@@ -10,16 +10,16 @@ title: Get-Transaction
 
 # Get-Transaction
 
-## Synopsis
+## SYNOPSIS
 Gets the current (active) transaction.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-Transaction [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Transaction` cmdlet gets an object that represents the current transaction in the session.
 
@@ -34,7 +34,7 @@ transaction that was most recently active in the session.
 This cmdlet is one of a set of cmdlets that support the transactions feature in Windows PowerShell.
 For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the current transaction
 
@@ -221,7 +221,7 @@ transaction.
 
 The second `Complete-Transaction` command commits the transaction.
 
-## Parameters
+## PARAMETERS
 
 ### CommonParameters
 
@@ -229,21 +229,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSTransaction
 
 This cmdlet returns an object that represents the current transaction.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Complete-Transaction](Complete-Transaction.md)
 

@@ -10,10 +10,10 @@ title: Get-Date
 
 # Get-Date
 
-## Synopsis
+## SYNOPSIS
 Gets the current date and time.
 
-## Syntax
+## SYNTAX
 
 ### Date (Default)
 
@@ -47,7 +47,7 @@ Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>
  -UFormat <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Date` cmdlet gets a **DateTime** object that represents the current date or a date that you
 specify. `Get-Date` can format the date and time in several .NET and UNIX formats. You can use
@@ -57,7 +57,7 @@ programs.
 `Get-Date` uses the computer's culture settings to determine how the output is formatted. To view
 your computer's settings, use `(Get-Culture).DateTimeFormat`.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the current date and time
 
@@ -273,7 +273,7 @@ PS> Get-Date -Date "2020-01-01T00:00:00" -AsUTC
 Wednesday, January 1, 2020 8:00:00 AM
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AsUTC
 
@@ -549,13 +549,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### Pipeline input
 
 `Get-Date` accepts pipeline input. For example, `Get-ChildItem | Get-Date`.
 
-## Outputs
+## OUTPUTS
 
 ### System.DateTime or System.String
 
@@ -570,7 +570,7 @@ The method `(Get-Date).ToString()` converts a **DateTime** object a **String** o
 To display an object's properties and methods, send the object down the pipeline to `Get-Member`.
 For example, `Get-Date | Get-Member`.
 
-## Notes
+## NOTES
 
 **DateTime** objects are in long-date and long-time formats for the system locale.
 
@@ -617,7 +617,7 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%y` | Year in 2-digit format                                                  | 19                       |
 | `%Z` | Time zone offset from Universal Time Coordinate (UTC)                   | -07                      |
 
-## Related links
+## RELATED LINKS
 
 [ForEach-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
 

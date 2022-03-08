@@ -10,16 +10,16 @@ title: Get-MarkdownOption
 
 # Get-MarkdownOption
 
-## Synopsis
+## SYNOPSIS
 Returns the current colors and styles used for rendering Markdown content in the console.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-MarkdownOption [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 Returns the current colors and styles used for rendering Markdown content in the console. The
 strings displayed in the output of this cmdlet contain the ANSI escape codes used to change the
@@ -27,7 +27,7 @@ color and style of the Markdown text being rendered.
 
 For more information about Markdown, see the [CommonMark](https://commonmark.org/) website.
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Get the current colors and style
 
@@ -54,7 +54,7 @@ EmphasisItalics : [36m
 > (`[char]0x1B`) for the ANSI escape sequence. For more information about ANSI escape codes work,
 > see [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).
 
-## Parameters
+## PARAMETERS
 
 ### CommonParameters
 
@@ -63,17 +63,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.MarkdownRender.PSMarkdownOptionInfo
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Set-MarkdownOption](Set-MarkdownOption.md)
 

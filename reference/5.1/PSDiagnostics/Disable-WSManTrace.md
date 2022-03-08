@@ -9,23 +9,23 @@ title: Disable-WSManTrace
 ---
 # Disable-WSManTrace
 
-## Synopsis
+## SYNOPSIS
 Stop the WSMan logging session started by Enable-WSManTrace.
 
-## Syntax
+## SYNTAX
 
 ```
 Disable-WSManTrace [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 This cmdlet stops the WSMan logging session started by Enable-WSManTrace.
 
 This cmdlet uses the `Stop-Trace` cmdlet.
 
 You must run this cmdlet from an elevated PowerShell session.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Stop a WSMan trace
 
@@ -33,7 +33,7 @@ You must run this cmdlet from an elevated PowerShell session.
 Disable-WSManTrace
 ```
 
-## Parameters
+## PARAMETERS
 
 ### CommonParameters
 
@@ -42,17 +42,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Event Tracing](/windows/desktop/ETW/event-tracing-portal)
 

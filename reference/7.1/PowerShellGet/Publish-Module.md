@@ -10,10 +10,10 @@ title: Publish-Module
 
 # Publish-Module
 
-## Synopsis
+## SYNOPSIS
 Publishes a specified module from the local computer to an online gallery.
 
-## Syntax
+## SYNTAX
 
 ### ModuleNameParameterSet (Default)
 
@@ -34,7 +34,7 @@ Publish-Module -Path <String> [-NuGetApiKey <String>] [-Repository <String>]
  [-SkipAutomaticTags] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Publish-Module` cmdlet publishes a module to an online NuGet-based gallery by using an API key,
 stored as part of a user's profile in the gallery. You can specify the module to publish either by
@@ -51,7 +51,7 @@ from the module manifest, some metadata must be specified in `Publish-Module` pa
 **Tag**, **ReleaseNote**, **IconUri**, **ProjectUri**, and **LicenseUri**, because these parameters
 match fields in a NuGet-based gallery.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Publish a module
 
@@ -75,7 +75,7 @@ specifies a name, version, description, and author, an error occurs.
 Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73" -LicenseUri "http://contoso.com/license" -Tag "Active Directory","DSC" -ReleaseNote "Updated the ActiveDirectory DSC Resources to support adding users."
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AllowPrerelease
 
@@ -386,17 +386,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 ### System.Management.Automation.PSCredential
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
-## Notes
+## NOTES
 
 `Publish-Module` runs on PowerShell 3.0 or later releases of PowerShell, on Windows 7 or Windows
 2008 R2 and later releases of Windows.
@@ -419,7 +419,7 @@ module manifest, but some metadata can be specified in `Publish-Module` paramete
 **ReleaseNote**, **IconUri**, **ProjectUri**, and **LicenseUri**. For more information, see
 [Package manifest values that impact the PowerShell Gallery UI](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui).
 
-## Related links
+## RELATED LINKS
 
 [Find-Module](Find-Module.md)
 

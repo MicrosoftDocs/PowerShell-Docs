@@ -9,10 +9,10 @@ title: Set-Location
 ---
 # Set-Location
 
-## Synopsis
+## SYNOPSIS
 Sets the current working location to a specified location.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -32,7 +32,7 @@ Set-Location -LiteralPath <String> [-PassThru] [-UseTransaction] [<CommonParamet
 Set-Location [-PassThru] [-StackName <String>] [-UseTransaction] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-Location` cmdlet sets the working location to a specified location. That location could be
 a directory, a subdirectory, a registry location, or any provider path.
@@ -40,7 +40,7 @@ a directory, a subdirectory, a registry location, or any provider path.
 You can also use the **StackName** parameter to make a named location stack the current location
 stack. For more information about location stacks, see the Notes.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Set the current location
 
@@ -104,7 +104,7 @@ The third command displays the locations in the current location stack.
 The `*-Location` cmdlets use the current location stack unless a different location stack is
 specified in the command. For information about location stacks, see the [Notes](#notes).
 
-## Parameters
+## PARAMETERS
 
 ### -LiteralPath
 
@@ -209,13 +209,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path, but not a literal path, to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None, System.Management.Automation.PathInfo, System.Management.Automation.PathInfoStack
 
@@ -224,7 +224,7 @@ This cmdlet does not generate any output unless you specify the **PassThru** par
 new location. Using **PassThru** with **StackName** generates a **PathInfoStack** object
 representing the new stack context.
 
-## Notes
+## NOTES
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
 This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
@@ -269,7 +269,7 @@ If you make a named location stack the current location stack, you can no longer
 the current stack, use the **StackName** parameter of the `Set-Location` cmdlet with a value of
 `$null` or an empty string (`""`).
 
-## Related links
+## RELATED LINKS
 
 [Get-Location](Get-Location.md)
 

@@ -9,10 +9,10 @@ title: ConvertFrom-SecureString
 ---
 # ConvertFrom-SecureString
 
-## Synopsis
+## SYNOPSIS
 Converts a secure string to an encrypted standard string.
 
-## Syntax
+## SYNTAX
 
 ### Secure (Default)
 
@@ -32,7 +32,7 @@ ConvertFrom-SecureString [-SecureString] <SecureString> [-AsPlainText] [<CommonP
 ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `ConvertFrom-SecureString` cmdlet converts a secure string (**System.Security.SecureString**)
 into an encrypted standard string (**System.String**). Unlike a secure string, an encrypted standard
@@ -49,7 +49,7 @@ representation.
 > Note that per [DotNet](/dotnet/api/system.security.securestring?view=netcore-2.1#remarks), the
 > contents of a SecureString are not encrypted on non-Windows systems.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a secure string
 
@@ -98,7 +98,7 @@ $secureString # 'System.Security.SecureString'
 ConvertFrom-SecureString -SecureString $secureString -AsPlainText # 'Example'
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -AsPlainText
 
@@ -174,19 +174,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Security.SecureString
 
 You can pipe a **SecureString** object to ConvertFrom-SecureString.
 
-## Outputs
+## OUTPUTS
 
 ### System.String
 
 ConvertFrom-SecureString returns a standard string object.
 
-## Notes
+## NOTES
 
 - To create a secure string from characters that are typed at the command prompt, use the
   **AsSecureString** parameter of the `Read-Host` cmdlet.
@@ -198,7 +198,7 @@ ConvertFrom-SecureString returns a standard string object.
   them. Avoid using these characters because they may cause problems and misunderstandings when used
   in a password.
 
-## Related links
+## RELATED LINKS
 
 [ConvertTo-SecureString](ConvertTo-SecureString.md)
 

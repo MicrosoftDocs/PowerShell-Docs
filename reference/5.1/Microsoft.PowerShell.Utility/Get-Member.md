@@ -9,17 +9,17 @@ title: Get-Member
 ---
 # Get-Member
 
-## Synopsis
+## SYNOPSIS
 Gets the properties and methods of objects.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-Member [-InputObject <PSObject>] [[-Name] <String[]>] [-MemberType <PSMemberTypes>]
  [-View <PSMemberViewTypes>] [-Static] [-Force] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-Member` cmdlet gets the members, the properties and methods, of objects.
 
@@ -28,7 +28,7 @@ information about static members, the members of the class, not of the instance,
 parameter. To get only certain types of members, such as **NoteProperties**, use the **MemberType**
 parameter.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the members of process objects
 
@@ -263,7 +263,7 @@ LastWriteTimeUtc
 Attributes
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Force
 
@@ -456,19 +456,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to `Get-Member`.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.MemberDefinition
 
 `Get-Member` returns an object for each property or method that its gets.
 
-## Notes
+## NOTES
 
 You can get information about a collection object either by using the **InputObject** parameter or
 by piping the object, preceded by a comma, to `Get-Member`.
@@ -483,6 +483,6 @@ return information about the `[System.RuntimeType]` type. However, when you use 
 parameter, `Get-Member` returns the static members of the specific type represented by the
 `System.RuntimeType` instance.
 
-## Related links
+## RELATED LINKS
 
 [Add-Member](Add-Member.md)

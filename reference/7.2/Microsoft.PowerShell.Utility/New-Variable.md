@@ -10,10 +10,10 @@ title: New-Variable
 
 # New-Variable
 
-## Synopsis
+## SYNOPSIS
 Creates a new variable.
 
-## Syntax
+## SYNTAX
 
 ```
 New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Option <ScopedItemOptions>]
@@ -21,7 +21,7 @@ New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Opti
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-Variable` cmdlet creates a new variable in Windows PowerShell. You can assign a value to
 the variable while creating it or assign or change the value after it is created.
@@ -32,7 +32,7 @@ a variable, and determine whether variables are public or private.
 Typically, you create a new variable by typing the variable name and its value, such as `$Var = 3`,
 but you can use the `New-Variable` cmdlet to use its parameters.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a variable
 
@@ -144,7 +144,7 @@ abc123xyz
 This command demonstrates that variables with spaces can be created. The variables can be accessed
 using the `Get-Variable` cmdlet or directly by delimiting a variable with braces.
 
-## Parameters
+## PARAMETERS
 
 ### -Description
 
@@ -360,13 +360,13 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 
 You can pipe a value to `New-Variable`.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Management.Automation.PSVariable
 
@@ -374,9 +374,9 @@ When you use the **PassThru** parameter, `New-Variable` generates a
 **System.Management.Automation.PSVariable** object representing the new variable. Otherwise, this
 cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Clear-Variable](Clear-Variable.md)
 

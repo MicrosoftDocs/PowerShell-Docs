@@ -9,10 +9,10 @@ title: New-Service
 ---
 # New-Service
 
-## Synopsis
+## SYNOPSIS
 Creates a new Windows service.
 
-## Syntax
+## SYNTAX
 
 ```
 New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] [-Description <String>]
@@ -20,7 +20,7 @@ New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] 
  [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `New-Service` cmdlet creates a new entry for a Windows service in the registry and in the
 service database. A new service requires an executable file that runs during the service.
@@ -28,7 +28,7 @@ service database. A new service requires an executable file that runs during the
 The parameters of this cmdlet let you set the display name, description, startup type, and
 dependencies of the service.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create a service
 
@@ -85,7 +85,7 @@ This example shows two ways to delete the TestService service. The first command
 option of `Sc.exe`. The second command uses the **Delete** method of the **Win32_Service** objects
 that `Get-CimInstance` returns.
 
-## Parameters
+## PARAMETERS
 
 ### -BinaryPathName
 
@@ -275,19 +275,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.ServiceProcess.ServiceController
 
 This cmdlet returns an object that represents the new service.
 
-## Notes
+## NOTES
 
 To run this cmdlet, start PowerShell by using the **Run as administrator** option.
 
@@ -295,7 +295,7 @@ To delete a service, use Sc.exe, or use the `Get-CimInstance` cmdlet to get the 
 object that represents the service and then use the **Delete** method to delete the service. The
 object that `Get-Service` returns does not have a delete method.
 
-## Related links
+## RELATED LINKS
 
 [Get-Service](Get-Service.md)
 

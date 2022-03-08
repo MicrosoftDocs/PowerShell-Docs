@@ -9,10 +9,10 @@ title: Set-PSBreakpoint
 ---
 # Set-PSBreakpoint
 
-## Synopsis
+## SYNOPSIS
 Sets a breakpoint on a line, command, or variable.
 
-## Syntax
+## SYNTAX
 
 ### Line (Default)
 
@@ -35,7 +35,7 @@ Set-PSBreakpoint [-Action <ScriptBlock>] [[-Script] <String[]>] -Variable <Strin
  [-Mode <VariableAccessMode>] [-Runspace <Runspace>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-PSBreakpoint` cmdlet sets a breakpoint in a script or in any command run in the current
 session. You can use `Set-PSBreakpoint` to set a breakpoint before executing a script or running a
@@ -62,7 +62,7 @@ The `Set-PSBreakpoint` cmdlet is one of several cmdlets designed for debugging P
 For more information about the PowerShell debugger, see
 [about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Set a breakpoint on a line
 
@@ -209,7 +209,7 @@ Script     : C:\ps-test\sample.ps1
 ScriptName : C:\ps-test\sample.ps1
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Action
 
@@ -396,12 +396,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 You cannot pipe input to `Set-PSBreakpoint`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.CommandBreakpoint
 
@@ -411,7 +411,7 @@ You cannot pipe input to `Set-PSBreakpoint`.
 
 `Set-PSBreakpoint` returns an object that represents each breakpoint that it sets.
 
-## Notes
+## NOTES
 
 - `Set-PSBreakpoint` cannot set a breakpoint on a remote computer. To debug a script on a remote
   computer, copy the script to the local computer and then debug it locally.
@@ -420,7 +420,7 @@ You cannot pipe input to `Set-PSBreakpoint`.
 - When setting a breakpoint on a function or variable at the command prompt, you can set the
   breakpoint before or after you create the function or variable.
 
-## Related links
+## RELATED LINKS
 
 [Disable-PSBreakpoint](Disable-PSBreakpoint.md)
 

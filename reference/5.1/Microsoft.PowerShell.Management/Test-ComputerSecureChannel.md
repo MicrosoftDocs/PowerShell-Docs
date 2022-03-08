@@ -10,17 +10,17 @@ title: Test-ComputerSecureChannel
 
 # Test-ComputerSecureChannel
 
-## Synopsis
+## SYNOPSIS
 Tests and repairs the secure channel between the local computer and its domain.
 
-## Syntax
+## SYNTAX
 
 ```
 Test-ComputerSecureChannel [-Repair] [-Server <String>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Test-ComputerSecureChannel` cmdlet verifies that the channel between the local computer and its
 domain is working correctly by checking the status of its trust relationships. If a connection
@@ -33,7 +33,7 @@ more detailed test results, use the **Verbose** parameter.
 This cmdlet works much like `NetDom.exe`. Both NetDom and `Test-ComputerSecureChannel` use the
 **NetLogon** service to perform the actions.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Test a channel between the local computer and its domain
 
@@ -95,7 +95,7 @@ and prevents typing errors.
 The `if` statement checks the value that `Test-ComputerSecureChannel` returns before it runs a
 script.
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -193,26 +193,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Boolean
 
 This cmdlet returns `$True` if the connection is working correctly and `$False` if it is not.
 
-## Notes
+## NOTES
 
 - To run a `Test-ComputerSecureChannel` command on Windows Vista and later versions of the Windows
   operating system, open Windows PowerShell by using the Run as administrator option.
 - `Test-ComputerSecureChannel` is implemented by using the **I_NetLogonControl2** function, which
   controls various aspects of the Netlogon service.
 
-## Related links
+## RELATED LINKS
 
 [Checkpoint-Computer](Checkpoint-Computer.md)
 

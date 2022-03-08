@@ -10,10 +10,10 @@ title: Remove-LocalGroup
 
 # Remove-LocalGroup
 
-## Synopsis
+## SYNOPSIS
 Deletes local security groups.
 
-## Syntax
+## SYNTAX
 
 ### InputObject
 
@@ -33,7 +33,7 @@ Remove-LocalGroup [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 Remove-LocalGroup [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Remove-LocalGroup` cmdlet deletes local security groups. This cmdlet deletes only a local
 group. It does not delete the user accounts, computer accounts, or group accounts that belong to
@@ -47,7 +47,7 @@ the group.
 > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 > system.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Delete a security group
 
@@ -57,7 +57,7 @@ Remove-LocalGroup -Name "SecurityGroup04"
 
 This command deletes the group named SecurityGroup04.
 
-## Parameters
+## PARAMETERS
 
 ### -InputObject
 
@@ -146,19 +146,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier
 
 You can pipe a security group, a string, or a SID to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - This cmdlet cannot delete the following default groups:
 
@@ -192,7 +192,7 @@ This cmdlet does not generate any output.
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
 Windows operating system. For earlier versions, the property is blank.
 
-## Related links
+## RELATED LINKS
 
 [Get-LocalGroup](Get-LocalGroup.md)
 

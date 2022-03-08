@@ -9,10 +9,10 @@ title: Import-Csv
 ---
 # Import-Csv
 
-## Synopsis
+## SYNOPSIS
 Creates table-like custom objects from the items in a comma-separated value (CSV) file.
 
-## Syntax
+## SYNTAX
 
 ### DelimiterPath (Default)
 
@@ -42,7 +42,7 @@ Import-Csv -LiteralPath <String[]> -UseCulture [-Header <String[]>] [-Encoding <
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Import-Csv` cmdlet creates table-like custom objects from the items in CSV files. Each column
 in the CSV file becomes a property of the custom object and the items in rows become the property
@@ -62,7 +62,7 @@ header row name and displays a warning message.
 
 Starting with PowerShell 6.0, `Import-Csv` now supports the W3C Extended Log File Format.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Import process objects
 
@@ -306,7 +306,7 @@ The `Get-Content` cmdlet displays the Projects.csv file. The header row is missi
 displays a warning message because **H1** is a default header name. The `(Import-Csv -Path
 .\Projects.csv).H1` command gets the **H1** property values and displays a warning.
 
-## Parameters
+## PARAMETERS
 
 ### -Delimiter
 
@@ -458,19 +458,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to `Import-Csv`.
 
-## Outputs
+## OUTPUTS
 
 ### Object
 
 This cmdlet returns the objects described by the content in the CSV file.
 
-## Notes
+## NOTES
 
 Because the imported objects are CSV versions of the object type, they are not recognized and
 formatted by the PowerShell type formatting entries that format the non-CSV versions of the object
@@ -499,7 +499,7 @@ comments and ignored unless the comment starts with `#Fields:` and contains deli
 column names. In that case, the cmdlet uses those column names. This is the standard format for
 Windows IIS and other web server logs. For more information, see [Extended Log File Format](https://www.w3.org/TR/WD-logfile.html).
 
-## Related links
+## RELATED LINKS
 
 [ConvertFrom-Csv](ConvertFrom-Csv.md)
 

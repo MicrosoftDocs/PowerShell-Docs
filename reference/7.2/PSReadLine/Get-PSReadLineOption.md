@@ -9,23 +9,23 @@ title: Get-PSReadLineOption
 ---
 # Get-PSReadLineOption
 
-## Synopsis
+## SYNOPSIS
 Gets values for the options that can be configured.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-PSReadLineOption [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-PSReadLineOption` cmdlet returns the current state of the settings that can be configured
 by using the `Set-PSReadLineOption` cmdlet. You can use the returned object to change
 **PSReadLine** options. This provides a slightly simpler way to set syntax coloring options for
 multiple kinds of tokens.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get options and their values
 
@@ -76,7 +76,7 @@ VariableColor                          : "`e[92m"
 
 This command returns the list of available PSReadLine options and their current values.
 
-## Parameters
+## PARAMETERS
 
 ### CommonParameters
 
@@ -85,22 +85,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe objects to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.PSConsoleReadLineOptions
 
 An instance of the current options. Changing the property values of this object updates the settings
 in PSReadLine directly without invoking `Set-PSReadLineOption`.
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Remove-PSReadLineKeyHandler](Remove-PSReadLineKeyHandler.md)
 

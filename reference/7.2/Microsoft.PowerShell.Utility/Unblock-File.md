@@ -9,10 +9,10 @@ title: Unblock-File
 ---
 # Unblock-File
 
-## Synopsis
+## SYNOPSIS
 Unblocks files that were downloaded from the Internet.
 
-## Syntax
+## SYNTAX
 
 ### ByPath (Default)
 
@@ -26,7 +26,7 @@ Unblock-File [-Path] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 Unblock-File -LiteralPath <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 > **This cmdlet only works on the Windows and macOS platforms.**
 
@@ -46,7 +46,7 @@ For more information about PowerShell execution policies, see
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Unblock a file
 
@@ -100,7 +100,7 @@ At line:1 char:1
 PS C:\> Get-Item C:\ps-test\Start-ActivityTracker.ps1 | Unblock-File
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -LiteralPath
 
@@ -176,19 +176,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a file path to `Unblock-File`.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 - Support for macOS was added in PowerShell 7.
 - The `Unblock-File` cmdlet works only in file system drives.
@@ -197,7 +197,7 @@ This cmdlet does not generate any output.
 - If you use the `Unblock-File` cmdlet on a file that is not blocked, the command has no effect on
   the unblocked file and the cmdlet does not generate errors.
 
-## Related links
+## RELATED LINKS
 
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 

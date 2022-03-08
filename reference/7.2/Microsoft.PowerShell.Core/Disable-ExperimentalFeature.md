@@ -9,16 +9,16 @@ title: Disable-ExperimentalFeature
 ---
 # Disable-ExperimentalFeature
 
-## Synopsis
+## SYNOPSIS
 Disable an experimental feature on startup of new instance of PowerShell.
 
-## Syntax
+## SYNTAX
 
 ```
 Disable-ExperimentalFeature [-Name] <String[]> [-Scope <ConfigScope>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Disable-ExperimentalFeature` cmdlet disables experimental features by removing the named
 experimental features from the `powershell.config.json` settings file read on PowerShell startup.
@@ -28,7 +28,7 @@ This cmdlet was introduced in PowerShell 6.2.
 > [!NOTE]
 > Any changes to experimental feature state only takes effect on restart of PowerShell
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Disable an experimental feature
 
@@ -44,7 +44,7 @@ PS C:\> Disable-ExperimentalFeature PSImplicitRemotingBatching
 WARNING: Enabling and disabling experimental features do not take effect until next start of PowerShell.
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Name
 
@@ -120,23 +120,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### ExperimentalFeature
 
 Pipe instances of ExperimentalFeature from `Get-ExperimentalFeature` cmdlet to disable.
 
-## Outputs
+## OUTPUTS
 
 ### None
 
 This cmdlet does not return any output.
 
-## Notes
+## NOTES
 
 Changes to state of an experimental feature only take effect on restart of PowerShell.
 
-## Related links
+## RELATED LINKS
 
 [Enable-ExperimentalFeature](Enable-ExperimentalFeature.md)
 

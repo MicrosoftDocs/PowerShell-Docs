@@ -9,16 +9,16 @@ title: Get-FormatData
 ---
 # Get-FormatData
 
-## Synopsis
+## SYNOPSIS
 Gets the formatting data in the current session.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-FormatData [[-TypeName] <String[]>] [-PowerShellVersion <Version>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-FormatData` cmdlet gets the formatting data in the current session.
 
@@ -33,7 +33,7 @@ cmdlet to serialize the objects, convert them to XML, and save them in `Format.p
 For more information about formatting files in PowerShell, see
 [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all formatting data
 
@@ -153,7 +153,7 @@ TypeNames                               FormatViewDefinition
 > **PowerShellVersion** parameter with the appropriate version. If the parameter and value are
 > omitted, you may not get all the correct type information.
 
-## Parameters
+## PARAMETERS
 
 ### -PowerShellVersion
 
@@ -200,19 +200,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.ExtendedTypeDefinition
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Export-FormatData](Export-FormatData.md)
 

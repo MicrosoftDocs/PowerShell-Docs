@@ -10,10 +10,10 @@ title: Get-ExecutionPolicy
 
 # Get-ExecutionPolicy
 
-## Synopsis
+## SYNOPSIS
 Gets the execution policies for the current session.
 
-## Syntax
+## SYNTAX
 
 ### All
 
@@ -21,7 +21,7 @@ Gets the execution policies for the current session.
 Get-ExecutionPolicy [[-Scope] <ExecutionPolicyScope>] [-List] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 To display the execution policies for each scope in the order of precedence, use
 `Get-ExecutionPolicy -List`. To see the effective execution policy for your PowerShell session use
@@ -32,7 +32,7 @@ The effective execution policy is determined by execution policies that are set 
 
 For more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get all execution policies
 
@@ -160,7 +160,7 @@ effective execution policy, **RemoteSigned**.
 The script, **Start-ActivityTracker.ps1** is executed from the current directory. The script begins
 to run because it was unblocked by the `Unblock-File` cmdlet.
 
-## Parameters
+## PARAMETERS
 
 ### -List
 
@@ -210,23 +210,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 `Get-ExecutionPolicy` doesn't accept input from the pipeline.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.ExecutionPolicy
 
-## Notes
+## NOTES
 
 An execution policy is part of the PowerShell security strategy. Execution policies determine
 whether you can load configuration files, such as your PowerShell profile, or run scripts. And,
 whether scripts must be digitally signed before they are run.
 
-## Related links
+## RELATED LINKS
 
 [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md)
 

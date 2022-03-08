@@ -9,10 +9,10 @@ title: Find-PackageProvider
 ---
 # Find-PackageProvider
 
-## Synopsis
+## SYNOPSIS
 Returns a list of Package Management package providers available for installation.
 
-## Syntax
+## SYNTAX
 
 ```
 Find-PackageProvider [[-Name] <String[]>] [-AllVersions] [-Source <String[]>] [-IncludeDependencies]
@@ -20,7 +20,7 @@ Find-PackageProvider [[-Name] <String[]>] [-AllVersions] [-Source <String[]>] [-
  [-MinimumVersion <String>] [-MaximumVersion <String>] [-Force] [-ForceBootstrap] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Find-PackageProvider` cmdlet finds matching PackageManagement providers that are available in
 package sources registered with PowerShellGet. These are package providers available for
@@ -30,7 +30,7 @@ the PowerShell Gallery with the **PackageManagement** and **Provider** tags.
 `Find-PackageProvider` also finds matching Package Management providers that are available in the
 Package Management Azure Blob store. Use the bootstrapper provider to find and install them.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Find all available package providers
 
@@ -58,7 +58,7 @@ Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 
 This command finds a package provider available by using a specified package source.
 
-## Parameters
+## PARAMETERS
 
 ### -AllVersions
 
@@ -268,16 +268,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PackageManagement.Packaging.SoftwareIdentity
 
 This cmdlet returns a **SoftwareIdentity** object. A **SoftwareIdentity** object can be piped into
 `Install-PackageProvider` to install the results of `Find-PackageProvider`.
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -291,7 +291,7 @@ This cmdlet returns a **SoftwareIdentity** object. A **SoftwareIdentity** object
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

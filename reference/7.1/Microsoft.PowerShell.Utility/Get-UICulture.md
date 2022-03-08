@@ -9,16 +9,16 @@ title: Get-UICulture
 ---
 # Get-UICulture
 
-## Synopsis
+## SYNOPSIS
 Gets the current UI culture settings in the operating system.
 
-## Syntax
+## SYNTAX
 
 ```
 Get-UICulture [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Get-UICulture` cmdlet gets information about the current user interface (UI) culture settings
 for Windows. The UI culture determines which text strings are used for user interface elements, such
@@ -27,7 +27,7 @@ as menus and messages.
 You can also use the `Get-Culture` cmdlet, which gets the current culture on the system. The culture
 determines the display format of items such as numbers, currency, and dates.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the UI culture
 
@@ -65,7 +65,7 @@ This command displays the short date pattern for the current UI culture. To see 
 subproperties of the **DateTimeFormat** property of the UI culture, type
 `(Get-UICulture).DateTimeFormat | Get-Member`.
 
-## Parameters
+## PARAMETERS
 
 ### CommonParameters
 
@@ -74,13 +74,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Globalization.CultureInfo, Microsoft.PowerShell.VistaCultureInfo
 
@@ -88,10 +88,10 @@ You cannot pipe input to this cmdlet.
 it returns a **CultureInfo** object. In Windows PowerShell 2.0, it returns a **VistaCultureInfo**
 object.
 
-## Notes
+## NOTES
 
 You can also use the `$PSCulture` and `$PSUICulture` variables. The `$PSCulture` variable stores the
 name of the current culture, and the `$PSUICulture` variable stores the name of the current UI
 culture.
 
-## Related links
+## RELATED LINKS

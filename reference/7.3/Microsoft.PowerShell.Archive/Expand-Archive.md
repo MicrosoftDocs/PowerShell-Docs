@@ -10,10 +10,10 @@ title: Expand-Archive
 
 # Expand-Archive
 
-## Synopsis
+## SYNOPSIS
 Extracts files from a specified archive (zipped) file.
 
-## Syntax
+## SYNTAX
 
 ### Path (Default)
 
@@ -29,13 +29,13 @@ Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-Pa
  [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Expand-Archive` cmdlet extracts files from a specified zipped archive file to a specified
 destination folder. An archive file allows multiple files to be packaged, and optionally compressed,
 into a single zipped file for easier distribution and storage.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Extract the contents of an archive
 
@@ -58,7 +58,7 @@ specified by the **DestinationPath** parameter.
 Expand-Archive -Path Draftv2.Zip -DestinationPath C:\Reference
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -DestinationPath
 
@@ -183,20 +183,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to an existing archive file.
 
-## Outputs
+## OUTPUTS
 
 ### System.IO.FileSystemInfo
 
 When the `-PassThru` parameter is used, the cmdlet outputs a list of files that were expanded from
 the archive.
 
-## Notes
+## NOTES
 
 The [ZIP file specification](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) does not
 specify a standard way of encoding filenames that contain non-ASCII characters. The
@@ -205,6 +205,6 @@ scheme. When extracting files with filenames not stored using UTF-8 encoding, `E
 the raw value found in the archive. This can result in a filename that is different than the source
 filename stored in the archive.
 
-## Related links
+## RELATED LINKS
 
 [Compress-Archive](compress-archive.md)

@@ -9,10 +9,10 @@ title: Format-Custom
 ---
 # Format-Custom
 
-## Synopsis
+## SYNOPSIS
 Uses a customized view to format the output.
 
-## Syntax
+## SYNTAX
 
 ```
 Format-Custom [[-Property] <Object[]>] [-Depth <Int32>] [-GroupBy <Object>] [-View <String>]
@@ -20,14 +20,14 @@ Format-Custom [[-Property] <Object[]>] [-Depth <Int32>] [-GroupBy <Object>] [-Vi
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Format-Custom` cmdlet formats the output of a command as defined in an alternate view.
 `Format-Custom` is designed to display views that are not just tables or just lists. You can use
 the views defined in the `*format.PS1XML` files in the PowerShell directory, or you can create your
 own views in new PS1XML files and use the `Update-FormatData` cmdlet to add them to PowerShell.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Format output with a custom view
 
@@ -78,7 +78,7 @@ Failed to evaluate expression " $_ / $null ".
 + FullyQualifiedErrorId : PSPropertyExpressionError
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Depth
 
@@ -274,19 +274,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to `Format-Custom`.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.Internal.Format
 
 `Format-Custom` returns the format objects that represent the display.
 
-## Notes
+## NOTES
 
 `Format-Custom` is designed to display views that are not just tables or just lists. To display an
 alternate table view, use `Format-Table`. To display an alternate list view, use `Format-List`.
@@ -297,7 +297,7 @@ You can also refer to `Format-Custom` by its built-in alias, `fc`. For more info
 The **GroupBy** parameter assumes that the objects are sorted. Before using `Format-Custom` to
 group the objects, use `Sort-Object` to sort them.
 
-## Related links
+## RELATED LINKS
 
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 

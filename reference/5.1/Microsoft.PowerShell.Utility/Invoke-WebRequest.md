@@ -9,10 +9,10 @@ title: Invoke-WebRequest
 ---
 # Invoke-WebRequest
 
-## Synopsis
+## SYNOPSIS
 Gets content from a web page on the Internet.
 
-## Syntax
+## SYNTAX
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>] [-SessionVariable <String>]
@@ -23,7 +23,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Invoke-WebRequest` cmdlet sends HTTP, HTTPS, FTP, and FILE requests to a web page or web
 service. It parses the response and returns collections of forms, links, images, and other
@@ -41,7 +41,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 > However, since the `contoso.com` sites do not exist, the examples do not work. Adapt the examples
 > to hosts in your environment.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Send a web request
 
@@ -150,7 +150,7 @@ $StatusCode
 The terminating error is caught by the `catch` block, which retrieves the **StatusCode** from the
 **Exception** object.
 
-## Parameters
+## PARAMETERS
 
 ### -Body
 
@@ -671,19 +671,19 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 
 You can pipe the body of a web request to `Invoke-WebRequest`.
 
-## Outputs
+## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.HtmlWebResponseObject
 
-## Notes
+## NOTES
 
-## Related links
+## RELATED LINKS
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
 

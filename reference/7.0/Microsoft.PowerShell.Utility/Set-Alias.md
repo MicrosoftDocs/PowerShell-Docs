@@ -10,10 +10,10 @@ title: Set-Alias
 
 # Set-Alias
 
-## Synopsis
+## SYNOPSIS
 Creates or changes an alias for a cmdlet or other command in the current PowerShell session.
 
-## Syntax
+## SYNTAX
 
 ### Default (Default)
 
@@ -22,7 +22,7 @@ Set-Alias [-Name] <string> [-Value] <string> [-Description <string>] [-Option <S
  [-PassThru] [-Scope <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-Alias` cmdlet creates or changes an alias for a cmdlet or a command, such as a function,
 script, file, or other executable. An alias is an alternate name that refers to a cmdlet or command.
@@ -35,7 +35,7 @@ as the description.
 An alias that is created or changed by `Set-Alias` is not permanent and is only available during the
 current PowerShell session. When the PowerShell session is closed, the alias is removed.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Create an alias for a cmdlet
 
@@ -183,7 +183,7 @@ Set-Alias -Name Go -Option ReadOnly, Private
 The alias `Go` should already exist. After running the command above, the alias is not be able to
 be changed without using the **Force** parameter and is only available in the current scope.
 
-## Parameters
+## PARAMETERS
 
 ### -Description
 
@@ -371,13 +371,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 
 `Set-Alias` does not accept input from the pipeline.
 
-## Outputs
+## OUTPUTS
 
 ### None or System.Management.Automation.AliasInfo
 
@@ -385,7 +385,7 @@ When you use the **PassThru** parameter, `Set-Alias` generates a
 **System.Management.Automation.AliasInfo** object representing the alias. Otherwise, `Set-Alias`
 does not generate any output.
 
-## Notes
+## NOTES
 
 PowerShell includes built-in aliases that are available in each PowerShell session. The `Get-Alias`
 cmdlet displays the aliases available in a PowerShell session.
@@ -402,7 +402,7 @@ An alias can be saved and reused in another PowerShell session by doing an expor
 save an alias to a file, use `Export-Alias`. To add a saved alias to a new PowerShell session, use
 `Import-Alias`.
 
-## Related links
+## RELATED LINKS
 
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
 

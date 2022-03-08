@@ -9,10 +9,10 @@ title: Set-ItemProperty
 ---
 # Set-ItemProperty
 
-## Synopsis
+## SYNOPSIS
 Creates or changes the value of a property of an item.
 
-## Syntax
+## SYNTAX
 
 ### propertyValuePathSet (Default)
 
@@ -46,7 +46,7 @@ Set-ItemProperty -LiteralPath <String[]> -InputObject <PSObject> [-PassThru] [-F
  [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Set-ItemProperty` cmdlet changes the value of the property of the specified item.
 You can use the cmdlet to establish or change the properties of items.
@@ -56,7 +56,7 @@ file object to `$True`.
 You also use `Set-ItemProperty` to create and change registry values and data.
 For example, you can add a new registry entry to a key and establish or change its value.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Set a property of a file
 
@@ -140,7 +140,7 @@ specify the property and its new value.
 Get-ChildItem weekly.txt | Set-ItemProperty -Name IsReadOnly -Value $True
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -Credential
 
@@ -417,13 +417,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe objects to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### None, System.Management.Automation.PSCustomObject
 
@@ -431,13 +431,13 @@ This cmdlet generates a **PSCustomObject** object that represents the item that 
 new property value, if you specify the **PassThru** parameter. Otherwise, this cmdlet does not
 generate any output.
 
-## Notes
+## NOTES
 
 `Set-ItemProperty` is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related links
+## RELATED LINKS
 
 [Clear-ItemProperty](Clear-ItemProperty.md)
 

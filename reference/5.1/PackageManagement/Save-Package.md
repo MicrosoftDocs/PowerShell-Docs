@@ -10,10 +10,10 @@ title: Save-Package
 
 # Save-Package
 
-## Synopsis
+## SYNOPSIS
 Saves packages to the local computer without installing them.
 
-## Syntax
+## SYNTAX
 
 ### PackageBySearch
 
@@ -72,14 +72,14 @@ Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential
  [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Save-Package` cmdlet saves packages to the local computer but doesn't install the packages.
 This cmdlet saves the newest version of a package unless you specify a **RequiredVerion**. The
 **Path** and **LiteralPath** parameters are mutually exclusive, and cannot be added to the same
 command.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Save a package to the local computer
 
@@ -146,7 +146,7 @@ PS> Install-Package C:\LocalPkg\NuGet.Core.2.14.0.nupkg
 `Save-Package` downloads the package file and its dependencies to the local computer.
 `Install-Package` installs the package and dependencies from the specified directory.
 
-## Parameters
+## PARAMETERS
 
 ### -AcceptLicense
 
@@ -723,15 +723,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### `Save-Package` accepts objects from the pipeline.
 
-## Outputs
+## OUTPUTS
 
 ### This cmdlet does not generate any output.
 
-## Notes
+## NOTES
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -745,7 +745,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
 
-## Related links
+## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 

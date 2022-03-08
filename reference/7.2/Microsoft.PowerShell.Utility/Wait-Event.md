@@ -10,16 +10,16 @@ title: Wait-Event
 
 # Wait-Event
 
-## Synopsis
+## SYNOPSIS
 Waits until a particular event is raised before continuing to run.
 
-## Syntax
+## SYNTAX
 
 ```
 Wait-Event [[-SourceIdentifier] <String>] [-Timeout <Int32>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The `Wait-Event` cmdlet suspends execution of a script or function until a particular event is
 raised. Execution resumes when the event is detected. To cancel the wait, press
@@ -31,7 +31,7 @@ response to an event in two different ways:
 - using the **Action** parameter of the event subscription
 - waiting for an event to return and then respond with an action
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Wait for the next event
 
@@ -88,7 +88,7 @@ identifier of **ProcessStarted**. If the specified time expires, the wait ends.
 Wait-Event -SourceIdentifier "ProcessStarted" -Timeout 90
 ```
 
-## Parameters
+## PARAMETERS
 
 ### -SourceIdentifier
 
@@ -134,20 +134,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.String
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSEventArgs
 
-## Notes
+## NOTES
 
 Events, event subscriptions, and the event queue exist only in the current session. If you close the
 current session, the event queue is discarded and the event subscription is canceled.
 
-## Related links
+## RELATED LINKS
 
 [Get-Event](Get-Event.md)
 
