@@ -891,10 +891,15 @@ faster, especially for large arrays.
 
 ## Arrays of zero or one
 
-Beginning in Windows PowerShell 3.0, a collection of zero or one object has
-the Count and Length property. Also, you can index into an array of one
+Beginning in Windows PowerShell 3.0, a collection of zero or one object has the
+**Count** and **Length** properties. Also, you can index into an array of one
 object. This feature helps you to avoid scripting errors that occur when a
 command that expects a collection gets fewer than two items.
+
+> [!NOTE]
+In Windows PowerShell, objects created by casting a **Hashtable** to
+`[pscustomobject]` do not have the **Length** or **Count** properties.
+Attempting to access these members returns `$null`.
 
 The following examples demonstrate this feature.
 
