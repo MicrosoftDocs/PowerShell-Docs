@@ -546,12 +546,11 @@ Otherwise, it returns a **GenericMeasureInfo** object.
 
 ## NOTES
 
-Starting in PowerShell 7.3, `Measure-Object` does not return an error when
-processing an object which is missing the property being measured except in
-**StrictMode**. When `Measure-Object` processes an object which is missing the
-specified property in **StrictMode** it returns a
-`System.Management.Automation.PSArgumentException` error for the **Property**
-argument.
+Starting in PowerShell 7.3, `Measure-Object` no longer returns an error when
+processing an object that is missing the property being measured unless you are
+running in **StrictMode**. In **StrictMode**, `Measure-Object` returns a
+`System.Management.Automation.PSArgumentException` when processing an object
+that is missing the specified property.
 
 ## RELATED LINKS
 
