@@ -158,8 +158,23 @@ System.Management.Automation.PSCustomObject
 
 ## Notes
 
-Calling `.Length` or its alias `.Count` on an object created by casting a
-**Hashtable** to `[pscustomobject]` returns `$null` in Windows PowerShell.
+In Windows PowerShell, objects created by casting a **Hashtable** to
+`[pscustomobject]` do not have the **Length** or **Count** properties.
+Attempting to access these members returns `$null`.
+
+For example:
+
+```powershell
+PS> $object = [PSCustomObject]@{key = 'value'}
+PS> $object
+
+key
+---
+value
+
+PS> $object.Count
+PS> $object.Length
+```
 
 ## See also
 

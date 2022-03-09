@@ -896,11 +896,10 @@ Beginning in Windows PowerShell 3.0, a collection of zero or one object has the
 object. This feature helps you to avoid scripting errors that occur when a
 command that expects a collection gets fewer than two items.
 
-> [!TIP]
-> In Windows PowerShell, objects created by casting a **Hashtable** to
-> `[pscustomobject]` are an exception and return `$null` for the **Count** and
-> **Length** properties, though they do support the array indexing
-> functionality.
+> [!NOTE]
+In Windows PowerShell, objects created by casting a **Hashtable** to
+`[pscustomobject]` do not have the **Length** or **Count** properties.
+Attempting to access these members returns `$null`.
 
 The following examples demonstrate this feature.
 
