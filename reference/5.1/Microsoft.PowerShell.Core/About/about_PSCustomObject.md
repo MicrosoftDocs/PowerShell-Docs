@@ -1,7 +1,7 @@
 ---
 description: Explains the differences between PSObject and PSCustomObject.
 Locale: en-US
-ms.date: 08/10/2021
+ms.date: 03/08/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pscustomobject?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSCustomObject
@@ -154,6 +154,26 @@ Int32
 
 PS> ([PSCustomObject]@{Property = 'Value'}).GetType().FullName
 System.Management.Automation.PSCustomObject
+```
+
+## Notes
+
+In Windows PowerShell, objects created by casting a **Hashtable** to
+`[pscustomobject]` do not have the **Length** or **Count** properties.
+Attempting to access these members returns `$null`.
+
+For example:
+
+```powershell
+PS> $object = [PSCustomObject]@{key = 'value'}
+PS> $object
+
+key
+---
+value
+
+PS> $object.Count
+PS> $object.Length
 ```
 
 ## See also
