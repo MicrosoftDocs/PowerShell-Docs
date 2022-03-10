@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 01/19/2022
+ms.date: 03/10/2022
 ms.prod: powershell
 ms.topic: include
 ---
@@ -18,11 +18,13 @@ supported on. These versions are supported until either the version of
 
 |   Fedora    | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-current) | 7.3 (preview) |
 | ----------- | :-------: | :-----------: | :---------------: | :-----------: |
-| &#x2705; 32 | &#x1f7e1; |   &#x1f7e1;   |     &#x274c;      |   &#x274c;    |
-| &#x274c; 31 | &#x1f7e1; |   &#x1f7e1;   |     &#x274c;      |   &#x274c;    |
-| &#x274c; 30 | &#x1f7e1; |   &#x1f7e1;   |     &#x274c;      |   &#x274c;    |
+| &#x2705; 34 | &#x274c;  |   &#x274c;    |     &#x2705;      |   &#x2705;    |
+| &#x274c; 33 | &#x274c;  |   &#x274c;    |     &#x274c;      |   &#x274c;    |
+| &#x274c; 32 | &#x274c;  |   &#x1f7e1;   |     &#x1f7e1;     |   &#x274c;    |
+| &#x274c; 31 | &#x274c;  |   &#x274c;    |     &#x274c;      |   &#x274c;    |
+| &#x274c; 30 | &#x1f7e1; |   &#x274c;    |     &#x274c;      |   &#x274c;    |
 
-PowerShell has not been tested on Fedora versions 33 and 34.
+PowerShell has not been tested on Fedora version 35.
 
 PowerShell is supported on Fedora for the following processor architectures.
 
