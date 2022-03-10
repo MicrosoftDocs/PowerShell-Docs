@@ -1,6 +1,6 @@
 ---
 description: Using PlatyPS is the fast and efficient way to create XML-based help.
-ms.date: 07/21/2020
+ms.date: 03/10/2022
 title: Create XML-based help using PlatyPS
 ---
 # Create XML-based help using PlatyPS
@@ -66,7 +66,7 @@ The following flowchart outlines the process for creating or updating PowerShell
        AlphabeticParamsOrder = $true
        WithModulePage = $true
        ExcludeDontShow = $true
-       Encoding = 'UTF8BOM'
+       Encoding = [System.Text.Encoding]::UTF8
    }
    New-MarkdownHelp @parameters
 
@@ -109,7 +109,7 @@ modules that have new cmdlets, new parameters, or parameters that have changed.
        UpdateInputOutput = $true
        ExcludeDontShow = $true
        LogPath = <path to store log file>
-       Encoding = 'UTF8BOM'
+       Encoding = [System.Text.Encoding]::UTF8
    }
    Update-MarkdownHelpModule @parameters
    ```
