@@ -1,7 +1,7 @@
 ---
 description: Describes how to define and use parameter sets in advanced functions.
 Locale: en-US
-ms.date: 09/20/2021
+ms.date: 03/11/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-5.1&WT.mc_id=ps-gethelp
 title: about Parameter Sets
 ---
@@ -16,14 +16,17 @@ PowerShell uses parameter sets to enable you to write a single function that
 can do different actions for different scenarios. Parameter sets enable you to
 expose different parameters to the user. And, to return different information
 based on the parameters specified by the user. You can only use one parameter
-at a time.
+set at a time.
 
 ## Parameter set requirements
 
 The following requirements apply to all parameter sets.
 
+- If no parameter set is specified for a parameter, the parameter belongs to
+  all parameter sets.
+
 - Each parameter set must have a unique combination of parameters. If possible,
-   at least one of the unique parameters should be a mandatory parameter.
+  at least one of the unique parameters should be a mandatory parameter.
 
 - A parameter set that contains multiple positional parameters must define
   unique positions for each parameter. No two positional parameters can specify
@@ -32,9 +35,6 @@ The following requirements apply to all parameter sets.
 - Only one parameter in a set can declare the `ValueFromPipeline` keyword with
   a value of `true`. Multiple parameters can define the
   `ValueFromPipelineByPropertyName` keyword with a value of `true`.
-
-- If no parameter set is specified for a parameter, the parameter belongs to
-  all parameter sets.
 
 > [!NOTE]
 > There is a limit of 32 parameter sets.
