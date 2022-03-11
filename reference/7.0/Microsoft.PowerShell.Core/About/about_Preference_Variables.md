@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 02/09/2022
+ms.date: 03/11/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Preference Variables
@@ -975,8 +975,14 @@ cmdlet.
 ## \$PSModuleAutoloadingPreference
 
 Enables and disables automatic importing of modules in the session. **All** is
-the default. Regardless of the variable's value, you can use
-[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module) to import a module.
+the default. To import a module, get or use any command in the module. For
+example, use `Get-Command`. The `$PSModuleAutoloadingPreference` variable does
+not exist by default. The default behavior when the variable is not defined is
+the same as `$PSModuleAutoloadingPreference = 'All'`.
+
+Regardless of the variable's value, you can use
+[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module) to import a
+module.
 
 The `$PSModuleAutoloadingPreference` variable takes one of the
 [`PSModuleAutoLoadingPreference`](/dotnet/api/system.management.automation.psmoduleautoloadingpreference)
@@ -985,8 +991,7 @@ enumeration values:
 
 Valid values are:
 
-- **All**: Modules are imported automatically on first-use. To import a module,
-  get or use any command in the module. For example, use `Get-Command`.
+- **All**: Modules are imported automatically on first-use.
 - **ModuleQualified**: Modules are imported automatically only when a user uses
   the module-qualified name of a command in the module. For example, if the
   user types `MyModule\MyCommand`, PowerShell imports the **MyModule** module.
