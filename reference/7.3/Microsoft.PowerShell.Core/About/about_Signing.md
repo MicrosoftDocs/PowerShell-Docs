@@ -1,7 +1,7 @@
 ---
 description: Explains how to sign scripts so that they comply with the PowerShell execution policies.
 Locale: en-US
-ms.date: 03/07/2022
+ms.date: 03/14/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Signing
@@ -263,15 +263,15 @@ If PowerShell displays this message when you run a script that you did not
 write, treat the file as you would treat any unsigned script. Review the code
 to determine whether you can trust the script.
 
-## Enable strong private key protection for your certificate
+## Enable strong protection for your private key
 
-If you have a private certificate on your computer, malicious programs might be
+If you have a private key and certificate on your computer, malicious programs might be
 able to sign scripts on your behalf, which authorizes PowerShell to run them.
 
 To prevent automated signing on your behalf, use Certificate Manager
-`Certmgr.exe` to export your signing certificate to a `.pfx` file. Certificate
+`Certmgr.exe` to export your signing key and certificate to a `.pfx` file. Certificate
 Manager is included in the Microsoft .NET SDK, the Microsoft Windows SDK, and
-in internet Explorer.
+in Internet Explorer.
 
 To export the certificate:
 
