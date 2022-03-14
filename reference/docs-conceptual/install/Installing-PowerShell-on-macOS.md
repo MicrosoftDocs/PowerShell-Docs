@@ -157,7 +157,7 @@ From the command line
 
 1. Run `sudo xattr -rd com.apple.quarantine powershell-7.2.1-osx-x64.pkg`. Include the full path to
    the `.pkg` file.
-1. Install the package as you normally wou
+1. Install the package as you normally would.
 
 > [!NOTE]
 > This is a known issue related to package notarization that will be addressed in the future.
