@@ -15,13 +15,13 @@ Improved error handling
 - Set `$?` correctly for command expression with redirections (#16046)
 - Fix a casting error when using `$PSNativeCommandUseErrorActionPreference` (#15993)
 - Make the native command error handling optionally honor `ErrorActionPreference` (#15897)
-- Specify the executable path as `TargetObject` for non-zero exit code ErrorRecord (#16108) (Thanks
+- Specify the executable path as `TargetObject` for non-zero exit code ErrorRecord (#16108) (Thanks @rkeithhill!)
 
 Tab completion improvements
 
 - Fix tab completion within the script block specified for the `ValidateScriptAttribute`. (#14550)
   (Thanks @MartinGC94!)
-- Added tab completion for loop labels after Break/Continue (#16438) (Thanks @MartinGC94!)
+- Added tab completion for loop labels after `break`/`continue` (#16438) (Thanks @MartinGC94!)
 
 Updated cmdlets
 
@@ -29,12 +29,12 @@ Updated cmdlets
 - Add support to web cmdlets for open-ended input tags (#16193) (Thanks @farmerau!)
 - Fix `ConvertTo-Json -Depth` to allow 100 at maximum (#16197) (Thanks @KevRitchie!)
   @rkeithhill!)
-- Invoke-Command: improve handling of variables with `$using`: expression (#16113) (Thanks @dwtaber!)
-- Add -StrictMode to Invoke-Command to allow specifying strict mode when invoking command locally
+- Improve variable handling when calling `Invoke-Command` with the `$using:` expression (#16113) (Thanks @dwtaber!)
+- Add `-StrictMode` to `Invoke-Command` to allow specifying strict mode when invoking command locally
 - Add `clean` block to script block as a peer to `begin`, `process`, and `end` to allow easy
   resource cleanup (#15177)
   (#16545) (Thanks @Thomas-Yu!)
-- Add support for OpenSSH options for PSRP over SSH commands (#12802) (Thanks @BrannenGH!)
+- Add `-Options` to the PSRP over SSH commands to allow passing OpenSSH options directly (#12802) (Thanks @BrannenGH!)
 
 For a complete list of changes, see the [Change Log][CHANGELOG] in the GitHub repository.
 
