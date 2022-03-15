@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/27/2021
+ms.date: 03/15/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-information?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Information
@@ -37,30 +37,30 @@ handles information stream data for a command. Information streams also work for
 
 The `$InformationPreference` preference variable value determines whether the message you provide to
 `Write-Information` is displayed at the expected point in a script's operation. Because the default
-value of this variable is `SilentlyContinue`, by default, informational messages are not shown. If
-you don't want to change the value of `$InformationPreference`, you can override its value by adding
-the `InformationAction` common parameter to your command. For more information, see
+value of this variable is **SilentlyContinue**, by default, informational messages are not shown.
+If you don't want to change the value of `$InformationPreference`, you can override its value by
+adding the **InformationAction** common parameter to your command. For more information, see
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md) and
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 > [!NOTE]
 > Starting in Windows PowerShell 5.0, `Write-Host` is a wrapper for `Write-Information` This allows
-> you to use `Write-Host` to emit output to the information stream. This enables the **capture** or
-> **suppression** of data written using `Write-Host` while preserving backwards compatibility. For
-> more information see [Write-Host](Write-Host.md)
+> you to use `Write-Host` to emit output to the information stream. This enables the capture or
+> suppression of data written using `Write-Host` while preserving backwards compatibility. For more
+> information see [Write-Host](Write-Host.md)
 
-`Write-Information` is also a supported workflow activity in PowerShell 5.x.
+`Write-Information` is also a supported workflow activity in Windows PowerShell 5.1.
 
 ## EXAMPLES
 
 ### Example 1: Write information for Get- results
 
-In this example, you show an informational message, "Got your features!", after running the
-`Get-WindowsFeature` command to find all features that have a Name value that starts with 'p'.
-Because the `$InformationPreference` variable is still set to its default, `SilentlyContinue`, you
-add the `InformationAction` parameter to override the `$InformationPreference` value, and show the
-message. The `InformationAction` value is Continue, which means that your message is shown, but the
-script or command continues, if it is not yet finished.
+In this example, you show an informational message, "Processes starting with 'P'", before running
+the `Get-Process` command to find all processes that have a **Name** value that starts with 'p'.
+Because the `$InformationPreference` variable is still set to its default, **SilentlyContinue**, you
+add the **InformationAction** parameter to override the `$InformationPreference` value, and show the
+message. The **InformationAction** value is **Continue**, which means that your message is shown,
+but the script or command continues, if it is not yet finished.
 
 ```powershell
 Write-Information -MessageData "Processes starting with 'P'" -InformationAction Continue
@@ -88,9 +88,9 @@ Processes starting with 'P'
 ### Example 2: Write information and tag it
 
 In this example, you use `Write-Information` to let users know they'll need to run another command
-after they're done running the current command. The example adds the tag Instructions to the
-informational message. After running this command, if you search the information stream for messages
-tagged Instructions, the message specified here would be among the results.
+after they're done running the current command. The example adds the tag `"Instructions"` to the
+informational message. After running this command, when you search the information stream for
+messages tagged `"Instructions"`, the message is in the results.
 
 ```powershell
 $message = "To filter your results for PowerShell, pipe your results to the Where-Object cmdlet."
@@ -114,13 +114,14 @@ Write-Information -MessageData $message -Tags "Instructions" -InformationAction 
      92   112.04      13.36      82.30   13176   1 pwsh
     106   163.73      93.21     302.25   14620   1 pwsh
     227   764.01      92.16   1,757.22   25328   1 pwsh
+
 To filter your results for PowerShell, pipe your results to the Where-Object cmdlet.
 ```
 
 ### Example 3: Write information to a file
 
-In this example, you redirect the information stream in the function to a `Info.txt` using
-the code `6>`. When you open the `Info.txt` file, you see the text, "Here you go."
+In this example, you redirect the information stream in the function to `Info.txt` using the code
+`6>`. When you open the `Info.txt` file, you see the text "Here you go."
 
 ```powershell
 function Test-Info
