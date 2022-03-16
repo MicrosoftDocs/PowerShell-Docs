@@ -2,7 +2,7 @@
 description: Describes the automatic enumeration of list collection items when using the member-access operator.
 Locale: en-US
 ms.date: 03/16/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_member-access_enumeration?view=powershell-7.2&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_member-access_enumeration?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Member-Access Enumeration
 ---
@@ -128,7 +128,7 @@ $MyString.DoesNotExist()
 ```Output
 True
 
-InvalidOperation: 
+InvalidOperation:
 Line |
    3 |  $MyString.DoesNotExist()
      |  ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -229,7 +229,7 @@ $Collection.DoesNotExist()
 ```Output
 True
 
-InvalidOperation: 
+InvalidOperation:
 Line |
    3 |  $Collection.DoesNotExist()
      |  ~~~~~~~~~~~~~~~~~~~~~~~~~~
