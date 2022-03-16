@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 11/16/2021
+ms.date: 03/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -542,7 +542,7 @@ B
 A
 ```
 
-### Member access operator `.`
+### Member-access operator `.`
 
 Accesses the properties and methods of an object. The member name may be an
 expression.
@@ -552,6 +552,11 @@ $myProcess.peakWorkingSet
 (Get-Process PowerShell).kill()
 'OS', 'Platform' | Foreach-Object { $PSVersionTable. $_ }
 ```
+
+Starting PowerShell 3.0, when you use the operator on a list collection object
+that does not have the member, PowerShell automatically enumerates the items in
+that collection and uses the operator on each of them. For more information, see
+[about_Member-Access_Enumeration](about_Member-Access_Enumeration.md).
 
 ### Static member operator `::`
 
@@ -696,6 +701,8 @@ ${a}?[0]
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Logical_Operators](about_logical_operators.md)
+
+[about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)
 
 [about_Operator_Precedence](about_operator_precedence.md)
 
