@@ -1,7 +1,7 @@
 ---
 description: Describes how to use object properties in PowerShell.
 Locale: en-US
-ms.date: 12/01/2017
+ms.date: 03/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_properties?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Properties
@@ -221,27 +221,17 @@ property of the `System.DateTime` class.
 [System.DateTime]::UtcNow
 ```
 
-### Properties of scalar objects and collections
+## Member-access enumeration
 
-The properties of one ("scalar") object of a particular type are often
-different from the properties of a collection of objects of the same type.
-For example, every service has as **DisplayName** property, but a collection
-of services does not have a **DisplayName** property.
+Starting in PowerShell 3.0, when you use the member-access operator (`.`) to
+access a property that does not exist on a list collection, PowerShell
+automatically enumerates the items in the collection and returns the value of
+the property on each item. For more information, see
+[about_Member-Access_Enumeration](about_Member-Access_Enumeration.md).
 
-The following command gets the value of the **DisplayName** property of the
-'Audiosrv' service.
+### Examples
 
-```powershell
-(Get-Service Audiosrv).DisplayName
-```
-
-```output
-Windows Audio
-```
-
-Beginning in PowerShell 3.0, PowerShell tries to prevent scripting errors that
-result from the differing properties of scalar objects and collections. The
-same command returns the value of the **DisplayName** property of every service
+This command returns the value of the **DisplayName** property of every service
 that `Get-Service` returns.
 
 ```powershell
@@ -257,10 +247,6 @@ Application Information
 ...
 ```
 
-When you submit a collection, but request a property that exists only on
-single ("scalar") objects, PowerShell returns the value of that property
-for every object in the collection.
-
 All collections have a **Count** property that returns how many objects are in
 the collection.
 
@@ -272,8 +258,8 @@ the collection.
 176
 ```
 
-Beginning in PowerShell 3.0, if you request the Count or Length property of
-zero objects or one object, PowerShell returns the correct value.
+Starting in PowerShell 3.0, if you request the **Count** or **Length** property
+of zero objects or one object, PowerShell returns the correct value.
 
 ```powershell
 (Get-Service Audiosrv).Count
@@ -299,18 +285,11 @@ only the collection's property is returned.
  2
  ```
 
-This feature also works on methods of scalar objects and collections. For more
-information, see [about_Methods](about_methods.md).
-
 ## See also
 
-[about_Methods](about_Methods.md)
-
-[about_Objects](about_Objects.md)
-
-[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
-
-[Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)
-
-[Format-List](xref:Microsoft.PowerShell.Utility.Format-List)
-
+- [about_Objects](about_Objects.md)
+- [about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)
+- [about_Methods](about_Methods.md)
+- [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
+- [Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)
+- [Format-List](xref:Microsoft.PowerShell.Utility.Format-List)

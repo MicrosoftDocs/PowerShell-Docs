@@ -1,7 +1,7 @@
 ---
 description: Describes arrays, which are data structures designed to store collections of items.
 Locale: en-US
-ms.date: 06/25/2021
+ms.date: 03/16/2022
 no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -933,14 +933,15 @@ $a[-1]
 4
 ```
 
-## Member enumeration
+## Member-access enumeration
 
-You can use member enumeration to get property values from all members of a
-collection. When you use the member access operator (`.`) with a member name on
-a collection object, such as an array, if the collection object does not have a
-member of that name, the items of the collection are enumerated and PowerShell
-looks for that member on each item. This applies to both property and method
-members.
+Starting in PowerShell 3.0, when you use the member-access operator to access a
+member that does not exist on a list collection, PowerShell automatically
+enumerates the items in the collection and attempts to access the specified
+member on each item. For more information, see
+[about_Member-Access_Enumeration](about_Member-Access_Enumeration.md).
+
+### Examples
 
 The following example creates two new files and stores the resulting objects in
 the array variable `$files`. Since the array object does not have the
@@ -958,8 +959,8 @@ Friday, June 25, 2021 1:21:17 PM
 Friday, June 25, 2021 1:21:17 PM
 ```
 
-Member enumeration can be used to _get_ values from items in a collection, but
-it cannot be used to _set_ values on items in a collection. For example:
+Member-access enumeration enables you to _get_ values from items in a
+collection, but not to _set_ values on items in a collection. For example:
 
 ```powershell
 $files.LastWriteTime = (Get-Date).AddDays(-1)
@@ -1018,6 +1019,7 @@ LastWriteTimeUtc  Property   datetime LastWriteTimeUtc {get;set;}
 
 - [about_Assignment_Operators](about_Assignment_Operators.md)
 - [about_Hash_Tables](about_Hash_Tables.md)
+- [about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)
 - [about_Operators](about_Operators.md)
 - [about_For](about_For.md)
 - [about_Foreach](about_Foreach.md)

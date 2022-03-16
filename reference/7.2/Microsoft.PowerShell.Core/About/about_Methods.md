@@ -1,7 +1,7 @@
 ---
 description: Describes how to use methods to perform actions on objects in PowerShell.
 Locale: en-US
-ms.date: 03/15/2021
+ms.date: 03/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Methods
@@ -140,26 +140,13 @@ file to the `C:\Bin` directory, and to overwrite existing files.
 (Get-ChildItem c:\final.txt).CopyTo("c:\bin\final.txt", $true)
 ```
 
-## Methods of Scalar objects and Collections
+## Member-access enumeration
 
-The methods of one ("scalar") object of a particular type are often different
-from the methods of a collection of objects of the same type.
-
-For example, every process has a `Kill` method, but a collection of processes
-does not have a Kill method.
-
-Beginning in PowerShell 3.0, PowerShell tries to prevent scripting errors that
-result from the differing methods of scalar objects and collections.
-
-If you submit a collection, but request a method that exists only on single
-("scalar") objects, PowerShell invokes the method on every object in the
-collection.
-
-If the method exists on the individual objects and on the collection, only
-the collection's method is invoked.
-
-This feature also works on properties of scalar objects and collections. For
-more information, see [about_Properties](about_Properties.md).
+Starting in PowerShell 3.0, when you use the member-access operator (`.`) to
+access a method that does not exist on a list collection, PowerShell
+automatically enumerates the items in the collection and invokes the method on
+each item. For more information, see
+[about_Member-Access_Enumeration](about_Member-Access_Enumeration.md).
 
 ### Examples
 
@@ -247,7 +234,8 @@ Add-Type -TypeDefinition @'
 '@
 ```
 
-In this example the less specific `object` overload of the **Bar** method was chosen.
+In this example the less specific `object` overload of the **Bar** method was
+chosen.
 
 ```powershell
 [Foo]::new().Bar(1)
@@ -282,8 +270,7 @@ method.
 
 ## See also
 
-[about_Objects](about_Objects.md)
-
-[about_Properties](about_Properties.md)
-
-[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
+- [about_Objects](about_Objects.md)
+- [about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)
+- [about_Properties](about_Properties.md)
+- [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
