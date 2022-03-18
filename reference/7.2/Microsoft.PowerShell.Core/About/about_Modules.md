@@ -530,22 +530,13 @@ logging and group policy articles.
 
 ## See also
 
-[about_Logging_Windows](about_Logging_Windows.md)
-
-[about_Logging_Non-Windows](about_Logging_Non-Windows.md)
-
-[about_Group_Policy_Settings](about_Group_Policy_Settings.md)
-
-[about_Command_Precedence](about_Command_Precedence.md)
-
-[about_Group_Policy_Settings](about_Group_Policy_Settings.md)
-
-[Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
-
-[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)
-
-[Get-Module](xref:Microsoft.PowerShell.Core.Get-Module)
-
-[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
-
-[Remove-Module](xref:Microsoft.PowerShell.Core.Remove-Module)
+- [about_Logging_Windows](about_Logging_Windows.md)
+- [about_Logging_Non-Windows](about_Logging_Non-Windows.md)
+- [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
+- [about_Command_Precedence](about_Command_Precedence.md)
+- [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
+- [Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
+- [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)
+- [Get-Module](xref:Microsoft.PowerShell.Core.Get-Module)
+- [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
+- [Remove-Module](xref:Microsoft.PowerShell.Core.Remove-Module)

@@ -324,6 +324,5 @@ Get-Help Get-ChildItem -Path alias:
 
 ## See also
 
-[about_Aliases](../About/about_Aliases.md)
-
-[about_Providers](../About/about_Providers.md)
+- [about_Aliases](about_Aliases.md)
+- [about_Providers](about_Providers.md)

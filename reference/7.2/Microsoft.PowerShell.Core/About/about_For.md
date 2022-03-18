@@ -229,6 +229,5 @@ for ($i = 0; $i -lt 10; $i++) { Write-Host $i }
 
 ## See also
 
-[about_Comparison_Operators](about_Comparison_Operators.md)
-
-[about_Foreach](about_Foreach.md)
+- [about_Comparison_Operators](about_Comparison_Operators.md)
+- [about_Foreach](about_Foreach.md)

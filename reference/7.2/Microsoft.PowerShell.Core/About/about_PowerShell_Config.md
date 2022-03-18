@@ -392,6 +392,5 @@ This configuration sets a number of options that only work in macOS or Linux:
 
 ## See also
 
-[About Execution Policies](./about_Execution_Policies.md)
-
-[About Automatic Variables](./about_Automatic_Variables.md)
+- [About Automatic Variables](./about_Automatic_Variables.md)
+- [About Execution Policies](./about_Execution_Policies.md)

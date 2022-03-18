@@ -54,9 +54,6 @@ the execution policy change.
 
 ## See also
 
-[about_Execution_Policies](about_Execution_Policies.md)
-
-[about_Group_Policy_Settings](about_Group_Policy_Settings.md)
-
-[about_Scripts](about_Scripts.md)
-
+- [about_Execution_Policies](about_Execution_Policies.md)
+- [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
+- [about_Scripts](about_Scripts.md)

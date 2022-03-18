@@ -429,12 +429,8 @@ statement. For more information, see [about_Try_Catch_Finally](about_Try_Catch_F
 
 ## See also
 
-[about_Break](about_Break.md)
-
-[about_Continue](about_Continue.md)
-
-[about_Scopes](about_Scopes.md)
-
-[about_Throw](about_Throw.md)
-
-[about_Try_Catch_Finally](about_Try_Catch_Finally.md)
+- [about_Break](about_Break.md)
+- [about_Continue](about_Continue.md)
+- [about_Scopes](about_Scopes.md)
+- [about_Throw](about_Throw.md)
+- [about_Try_Catch_Finally](about_Try_Catch_Finally.md)

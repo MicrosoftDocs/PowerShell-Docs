@@ -104,23 +104,13 @@ PackageManagement project on GitHub at https://oneget.org.
 
 ## See also
 
-[Get-PackageProvider](xref:PackageManagement.Get-PackageProvider)
-
-[Get-PackageSource](xref:PackageManagement.Get-PackageSource)
-
-[Register-PackageSource](xref:PackageManagement.Register-PackageSource)
-
-[Set-PackageSource](xref:PackageManagement.Set-PackageSource)
-
-[Unregister-PackageSource](xref:PackageManagement.Unregister-PackageSource)
-
-[Get-Package](xref:PackageManagement.Get-Package)
-
-[Find-Package](xref:PackageManagement.Find-Package)
-
-[Install-Package](xref:PackageManagement.Install-Package)
-
-[Save-Package](xref:PackageManagement.Save-Package)
-
-[Uninstall-Package](xref:PackageManagement.Uninstall-Package)
-
+- [Find-Package](xref:PackageManagement.Find-Package)
+- [Get-Package](xref:PackageManagement.Get-Package)
+- [Install-Package](xref:PackageManagement.Install-Package)
+- [Save-Package](xref:PackageManagement.Save-Package)
+- [Uninstall-Package](xref:PackageManagement.Uninstall-Package)
+- [Get-PackageProvider](xref:PackageManagement.Get-PackageProvider)
+- [Get-PackageSource](xref:PackageManagement.Get-PackageSource)
+- [Register-PackageSource](xref:PackageManagement.Register-PackageSource)
+- [Set-PackageSource](xref:PackageManagement.Set-PackageSource)
+- [Unregister-PackageSource](xref:PackageManagement.Unregister-PackageSource)

@@ -390,10 +390,7 @@ switch (1,4,-1,3,"Hello",2,1)
 
 ## See also
 
-[about_Break](about_Break.md)
-
-[about_Continue](about_Continue.md)
-
-[about_If](about_If.md)
-
-[about_Script_Blocks](about_Script_Blocks.md)
+- [about_Break](about_Break.md)
+- [about_Continue](about_Continue.md)
+- [about_If](about_If.md)
+- [about_Script_Blocks](about_Script_Blocks.md)
