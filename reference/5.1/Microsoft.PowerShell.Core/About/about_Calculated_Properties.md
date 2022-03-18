@@ -470,26 +470,15 @@ Date       Salesperson UnitsSold
 
 ## See also
 
-[about_Hash_Tables](about_hash_tables.md)
-
-[Compare-Object](xref:Microsoft.PowerShell.Utility.Compare-Object)
-
-[ConvertTo-Html](xref:Microsoft.PowerShell.Utility.ConvertTo-Html)
-
-[Format-Custom](xref:Microsoft.PowerShell.Utility.Format-Custom)
-
-[Format-List](xref:Microsoft.PowerShell.Utility.Format-List)
-
-[Format-Table](xref:Microsoft.PowerShell.Utility.Format-Table)
-
-[Format-Wide](xref:Microsoft.PowerShell.Utility.Format-Wide)
-
-[Group-Object](xref:Microsoft.PowerShell.Utility.Group-Object)
-
-[Measure-Object](xref:Microsoft.PowerShell.Utility.Measure-Object)
-
-[Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)
-
-[Sort-Object](xref:Microsoft.PowerShell.Utility.Sort-Object)
-
-[Format types in .NET](/dotnet/standard/base-types/formatting-types)
+- [about_Hash_Tables](about_hash_tables.md)
+- [ConvertTo-Html](xref:Microsoft.PowerShell.Utility.ConvertTo-Html)
+- [Format-Custom](xref:Microsoft.PowerShell.Utility.Format-Custom)
+- [Format-List](xref:Microsoft.PowerShell.Utility.Format-List)
+- [Format-Table](xref:Microsoft.PowerShell.Utility.Format-Table)
+- [Format-Wide](xref:Microsoft.PowerShell.Utility.Format-Wide)
+- [Compare-Object](xref:Microsoft.PowerShell.Utility.Compare-Object)
+- [Group-Object](xref:Microsoft.PowerShell.Utility.Group-Object)
+- [Measure-Object](xref:Microsoft.PowerShell.Utility.Measure-Object)
+- [Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)
+- [Sort-Object](xref:Microsoft.PowerShell.Utility.Sort-Object)
+- [Format types in .NET](/dotnet/standard/base-types/formatting-types)

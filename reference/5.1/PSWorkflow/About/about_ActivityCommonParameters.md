@@ -614,7 +614,7 @@ Workflow Test-Workflow
 [about_Activity_Parameters](about_Activity_Parameters.md)
 [about_ActivityParameters]()about_ActivityParameters.md) -->
 
-## SEE ALSO
+## See Also
 
-[about_Workflows](about_workflows.md)
-[about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)
+- [about_Workflows](about_workflows.md)
+- [about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)

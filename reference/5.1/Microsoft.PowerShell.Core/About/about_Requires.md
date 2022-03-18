@@ -237,10 +237,7 @@ Param
 
 ## See also
 
-[about_Automatic_Variables](about_Automatic_Variables.md)
-
-[about_Language_Keywords](about_Language_Keywords.md)
-
-[about_PSSnapins](about_PSSnapins.md)
-
-[Get-PSSnapin](xref:Microsoft.PowerShell.Core.Get-PSSnapin)
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_Language_Keywords](about_Language_Keywords.md)
+- [about_PSSnapins](about_PSSnapins.md)
+- [Get-PSSnapin](xref:Microsoft.PowerShell.Core.Get-PSSnapin)

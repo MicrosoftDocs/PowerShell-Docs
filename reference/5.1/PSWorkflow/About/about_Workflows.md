@@ -274,12 +274,8 @@ of the workflow common parameters, see
 
 ## See also
 
-[Invoke-AsWorkflow](xref:PSWorkflowUtility.Invoke-AsWorkflow)
-
-[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
-
-[PSWorkflow](xref:PSWorkflow) cmdlets
-
-[Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
-
-[Writing a Windows PowerShell Workflow](/previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)
+- [Invoke-AsWorkflow](xref:PSWorkflowUtility.Invoke-AsWorkflow)
+- [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
+- [PSWorkflow](xref:PSWorkflow) cmdlets
+- [Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
+- [Writing a Windows PowerShell Workflow](/previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)

@@ -97,6 +97,6 @@ else {
 
 ## See also
 
+- [about_Booleans](about_Booleans.md)
 - [about_Comparison_Operators](about_Comparison_Operators.md)
 - [about_Switch](about_Switch.md)
-- [about_Booleans](about_Booleans.md)

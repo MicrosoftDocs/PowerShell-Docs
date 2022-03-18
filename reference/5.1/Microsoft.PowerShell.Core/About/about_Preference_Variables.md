@@ -1713,16 +1713,10 @@ At line:1 char:1
 
 ## See also
 
-[about_Automatic_Variables](about_Automatic_Variables.md)
-
-[about_CommonParameters](about_CommonParameters.md)
-
-[about_Environment_Variables](about_Environment_Variables.md)
-
-[about_Profiles](about_Profiles.md)
-
-[about_Remote](about_Remote.md)
-
-[about_Scopes](about_Scopes.md)
-
-[about_Variables](about_Variables.md)
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_CommonParameters](about_CommonParameters.md)
+- [about_Environment_Variables](about_Environment_Variables.md)
+- [about_Profiles](about_Profiles.md)
+- [about_Remote](about_Remote.md)
+- [about_Scopes](about_Scopes.md)
+- [about_Variables](about_Variables.md)

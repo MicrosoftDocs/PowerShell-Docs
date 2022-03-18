@@ -151,12 +151,8 @@ Only the reference type's variable was changed.
 
 ## See also
 
-[about_Variables](about_Variables.md)
-
-[about_Environment_Variables](about_Environment_Variables.md)
-
-[about_Functions](about_Functions.md)
-
-[about_Script_Blocks](about_Script_Blocks.md)
-
-[about_Scopes](about_scopes.md)
+- [about_Variables](about_Variables.md)
+- [about_Environment_Variables](about_Environment_Variables.md)
+- [about_Functions](about_Functions.md)
+- [about_Script_Blocks](about_Script_Blocks.md)
+- [about_Scopes](about_scopes.md)

@@ -152,12 +152,8 @@ function Get-XMLFiles
 
 ## See also
 
-[about_Break](about_Break.md)
-
-[about_Continue](about_Continue.md)
-
-[about_Scopes](about_Scopes.md)
-
-[about_Trap](about_Trap.md)
-
-[about_Try_Catch_Finally](about_Try_Catch_Finally.md)
+- [about_Break](about_Break.md)
+- [about_Continue](about_Continue.md)
+- [about_Scopes](about_Scopes.md)
+- [about_Trap](about_Trap.md)
+- [about_Try_Catch_Finally](about_Try_Catch_Finally.md)

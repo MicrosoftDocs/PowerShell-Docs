@@ -224,20 +224,12 @@ runspace.
 
 ## See also
 
-[about_Comparison_Operators](about_Comparison_Operators.md)
-
-[about_Continue](about_Continue.md)
-
-[about_For](about_For.md)
-
-[about_Foreach](about_Foreach.md)
-
-[about_Switch](about_Switch.md)
-
-[about_Throw](about_Throw.md)
-
-[about_Trap](about_Trap.md)
-
-[about_Try_Catch_Finally](about_Try_Catch_Finally.md)
-
-[about_While](about_While.md)
+- [about_Comparison_Operators](about_Comparison_Operators.md)
+- [about_Continue](about_Continue.md)
+- [about_For](about_For.md)
+- [about_Foreach](about_Foreach.md)
+- [about_Switch](about_Switch.md)
+- [about_Throw](about_Throw.md)
+- [about_Trap](about_Trap.md)
+- [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
+- [about_While](about_While.md)

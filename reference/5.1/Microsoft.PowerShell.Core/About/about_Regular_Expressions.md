@@ -462,6 +462,5 @@ For more information, see [Substitutions in Regular Expressions](/dotnet/standar
 
 ## See also
 
-[about_Comparison_Operators](about_Comparison_Operators.md)
-
-[about_Operators](about_Operators.md)
+- [about_Operators](about_Operators.md)
+- [about_Comparison_Operators](about_Comparison_Operators.md)

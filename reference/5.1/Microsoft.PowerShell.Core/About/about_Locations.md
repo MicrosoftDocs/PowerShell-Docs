@@ -129,8 +129,6 @@ location).
 
 ## See also
 
-[Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
-
-[about_Providers](about_Providers.md)
-
-[about_Path_Syntax](about_Path_Syntax.md)
+- [about_Path_Syntax](about_Path_Syntax.md)
+- [about_Providers](about_Providers.md)
+- [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)

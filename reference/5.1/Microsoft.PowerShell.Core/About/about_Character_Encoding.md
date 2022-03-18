@@ -217,10 +217,10 @@ the output redirection operators and PowerShell cmdlets use to save to files.
 
 ## See also
 
-- [Introduction to character encoding in .NET](/dotnet/standard/base-types/character-encoding-introduction)
-- [Code Pages - Win32 apps](/windows/win32/intl/code-pages)
-- [The Unicode Standard](https://www.unicode.org/standard/standard.html)
-- [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage)
-- [UTF-16LE](https://wikipedia.org/wiki/UTF-16)
-- [Byte order mark](https://wikipedia.org/wiki/Byte_order_mark)
 - [about_Preference_Variables](about_Preference_Variables.md)
+- [Byte order mark](https://wikipedia.org/wiki/Byte_order_mark)
+- [Code Pages - Win32 apps](/windows/win32/intl/code-pages)
+- [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage)
+- [Introduction to character encoding in .NET](/dotnet/standard/base-types/character-encoding-introduction)
+- [The Unicode Standard](https://www.unicode.org/standard/standard.html)
+- [UTF-16LE](https://wikipedia.org/wiki/UTF-16)

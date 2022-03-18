@@ -228,10 +228,7 @@ information, see
 
 ## See also
 
-[Get-EventLog](xref:Microsoft.PowerShell.Management.Get-EventLog)
-
-[Get-WmiObject](xref:Microsoft.PowerShell.Management.Get-WmiObject)
-
-[about_Group_Policy_Settings](about_Group_Policy_Settings.md)
-
-[about_Preference_Variables](about_Preference_Variables.md)
+- [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
+- [about_Preference_Variables](about_Preference_Variables.md)
+- [Get-EventLog](xref:Microsoft.PowerShell.Management.Get-EventLog)
+- [Get-WmiObject](xref:Microsoft.PowerShell.Management.Get-WmiObject)

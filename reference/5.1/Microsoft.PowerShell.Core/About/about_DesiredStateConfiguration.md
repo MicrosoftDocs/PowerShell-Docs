@@ -170,8 +170,6 @@ to browse and learn about available DSC resources.
 
 ## See also
 
-[PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/)
-
-[Built-In PowerShell Desired State Configuration Resources](/powershell/scripting/dsc/resources/resources)
-
-[Build Custom PowerShell Desired State Configuration Resources](/powershell/scripting/dsc/resources/authoringResource)
+- [PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/)
+- [Built-In PowerShell Desired State Configuration Resources](/powershell/scripting/dsc/resources/resources)
+- [Build Custom PowerShell Desired State Configuration Resources](/powershell/scripting/dsc/resources/authoringResource)
