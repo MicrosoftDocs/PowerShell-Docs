@@ -256,16 +256,16 @@ Get-Help Alias
 
 ## See also
 
-- [New-Alias](xref:Microsoft.PowerShell.Utility.New-Alias)
-- [Get-Alias](xref:Microsoft.PowerShell.Utility.Get-Alias)
-- [Set-Alias](xref:Microsoft.PowerShell.Utility.Set-Alias)
+- [about_Functions](about_Functions.md)
+- [about_Profiles](about_Profiles.md)
+- [about_Providers](about_Providers.md)
 - [Export-Alias](xref:Microsoft.PowerShell.Utility.Export-Alias)
+- [Get-Alias](xref:Microsoft.PowerShell.Utility.Get-Alias)
 - [Import-Alias](xref:Microsoft.PowerShell.Utility.Import-Alias)
-- [Get-PSProvider](xref:Microsoft.PowerShell.Management.Get-PSProvider)
+- [New-Alias](xref:Microsoft.PowerShell.Utility.New-Alias)
+- [Set-Alias](xref:Microsoft.PowerShell.Utility.Set-Alias)
 - [Get-PSDrive](xref:Microsoft.PowerShell.Management.Get-PSDrive)
-- [about_functions](about_functions.md)
-- [about_profiles](about_profiles.md)
-- [about_providers](about_providers.md)
+- [Get-PSProvider](xref:Microsoft.PowerShell.Management.Get-PSProvider)
 
 <!-- External links -->
 [aliasinfo]: /dotnet/api/system.management.automation.aliasinfo

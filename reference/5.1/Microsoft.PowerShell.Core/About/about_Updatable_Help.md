@@ -431,8 +431,6 @@ Preinstallation Environment (Windows PE).
 
 ## See also
 
-[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)
-
-[Save-Help](xref:Microsoft.PowerShell.Core.Save-Help)
-
-[Update-Help](xref:Microsoft.PowerShell.Core.Update-Help)
+- [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)
+- [Save-Help](xref:Microsoft.PowerShell.Core.Save-Help)
+- [Update-Help](xref:Microsoft.PowerShell.Core.Update-Help)

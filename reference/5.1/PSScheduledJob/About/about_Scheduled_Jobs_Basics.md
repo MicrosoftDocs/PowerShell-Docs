@@ -305,14 +305,9 @@ window.
 
 ## See also
 
-[about_Scheduled_Jobs_Advanced](about_Scheduled_Jobs_Advanced.md)
-
-[about_Scheduled_Jobs_Troubleshooting](about_Scheduled_Jobs_Troubleshooting.md)
-
-[about_Scheduled_Jobs](about_Scheduled_Jobs.md)
-
-[about_Splatting.md](../../Microsoft.PowerShell.Core/About/about_Splatting.md)
-
-[PSScheduledJob](xref:PSScheduledJob) module cmdlets
-
-[Task Scheduler](/windows/desktop/TaskSchd/task-scheduler-reference)
+- [about_Scheduled_Jobs](about_Scheduled_Jobs.md)
+- [about_Scheduled_Jobs_Advanced](about_Scheduled_Jobs_Advanced.md)
+- [about_Scheduled_Jobs_Troubleshooting](about_Scheduled_Jobs_Troubleshooting.md)
+- [about_Splatting.md](../../Microsoft.PowerShell.Core/About/about_Splatting.md)
+- [PSScheduledJob](xref:PSScheduledJob) module cmdlets
+- [Task Scheduler](/windows/desktop/TaskSchd/task-scheduler-reference)

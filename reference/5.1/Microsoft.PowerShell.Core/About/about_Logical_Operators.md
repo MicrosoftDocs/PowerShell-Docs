@@ -6,11 +6,9 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: about Logical Operators
 ---
-
 # about_Logical_Operators
 
 ## Short description
-
 Describes the operators that connect statements in PowerShell.
 
 ## Long description
@@ -69,10 +67,7 @@ the same way that you would use the `If` statement.
 
 ## See also
 
-[about_Operators](about_Operators.md)
-
-[Compare-Object](xref:Microsoft.PowerShell.Utility.Compare-Object)
-
-[about_Comparison_operators](about_Comparison_Operators.md)
-
-[about_If](about_If.md)
+- [about_Operators](about_Operators.md)
+- [about_Comparison_operators](about_Comparison_Operators.md)
+- [about_If](about_If.md)
+- [Compare-Object](xref:Microsoft.PowerShell.Utility.Compare-Object)

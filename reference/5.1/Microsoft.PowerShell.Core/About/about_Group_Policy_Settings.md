@@ -193,21 +193,14 @@ about_GroupPolicy
 
 ## See also
 
-[about_Execution_Policies](about_Execution_Policies.md)
-
-[about_Modules](about_Modules.md)
-
-[about_Updatable_Help](about_Updatable_Help.md)
-
-[Get-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy)
-
-[Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
-
-[Get-Module](xref:Microsoft.PowerShell.Core.Get-Module)
-
-[Update-Help](xref:Microsoft.PowerShell.Core.Update-Help)
-
-[Save-Help](xref:Microsoft.PowerShell.Core.Save-Help)
+- [about_Execution_Policies](about_Execution_Policies.md)
+- [about_Modules](about_Modules.md)
+- [about_Updatable_Help](about_Updatable_Help.md)
+- [Get-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy)
+- [Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
+- [Update-Help](xref:Microsoft.PowerShell.Core.Update-Help)
+- [Save-Help](xref:Microsoft.PowerShell.Core.Save-Help)
+- [Get-Module](xref:Microsoft.PowerShell.Core.Get-Module)
 
 <!-- link references -->
 [gpstore]: https://support.microsoft.com/help/3087759

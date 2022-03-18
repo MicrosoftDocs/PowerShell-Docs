@@ -105,14 +105,10 @@ workflow Test-Workflow
 }
 ```
 
-## SEE ALSO
+## See Also
 
-[Writing a Script Workflow](/previous-versions/powershell/scripting/developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script)
-
-[about_ForEach](../../Microsoft.PowerShell.Core/About/about_ForEach.md)
-
-[about_Language_Keywords](../../Microsoft.PowerShell.Core/About/about_Language_Keywords.md)
-
-[about_Parallel](about_Parallel.md)
-
-[about_Workflows](about_Workflows.md)
+- [about_ForEach](../../Microsoft.PowerShell.Core/About/about_ForEach.md)
+- [about_Language_Keywords](../../Microsoft.PowerShell.Core/About/about_Language_Keywords.md)
+- [about_Parallel](about_Parallel.md)
+- [about_Workflows](about_Workflows.md)
+- [Writing a Script Workflow](/previous-versions/powershell/scripting/developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script)

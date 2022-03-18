@@ -387,8 +387,6 @@ article.
 
 ## See also
 
-[about_Parsing](about_Parsing.md)
-
-[about_Special_Characters](about_Special_Characters.md)
-
-[ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
+- [about_Parsing](about_Parsing.md)
+- [about_Special_Characters](about_Special_Characters.md)
+- [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)

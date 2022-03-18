@@ -506,16 +506,10 @@ Get-Help <cmdlet-name>
 
 ## See also
 
-[about_Automatic_Variables](about_Automatic_Variables.md)
-
-[about_Environment_Variables](about_Environment_Variables.md)
-
-[about_Preference_Variables](about_Preference_Variables.md)
-
-[about_Profiles](about_Profiles.md)
-
-[about_Quoting_Rules](about_Quoting_Rules.md)
-
-[about_Scopes](about_Scopes.md)
-
-[about_Remote_Variables](about_Remote_Variables.md)
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_Environment_Variables](about_Environment_Variables.md)
+- [about_Preference_Variables](about_Preference_Variables.md)
+- [about_Profiles](about_Profiles.md)
+- [about_Quoting_Rules](about_Quoting_Rules.md)
+- [about_Remote_Variables](about_Remote_Variables.md)
+- [about_Scopes](about_Scopes.md)

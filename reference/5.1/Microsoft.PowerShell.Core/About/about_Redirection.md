@@ -315,6 +315,10 @@ used. For more information, see the `-gt` operator in
 
 ## See also
 
+- [about_Command_Syntax](about_Command_Syntax.md)
+- [about_Operators](about_Operators.md)
+- [about_Output_Streams](about_Output_Streams.md)
+- [about_Path_Syntax](about_Path_Syntax.md)
 - [Out-File](xref:Microsoft.PowerShell.Utility.Out-File)
 - [Tee-Object](xref:Microsoft.PowerShell.Utility.Tee-Object)
 - [Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
@@ -325,7 +329,3 @@ used. For more information, see the `-gt` operator in
 - [Write-Progress](xref:Microsoft.PowerShell.Utility.Write-Progress)
 - [Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)
 - [Write-Warning](xref:Microsoft.PowerShell.Utility.Write-Warning)
-- [about_Output_Streams](about_Output_Streams.md)
-- [about_Operators](about_Operators.md)
-- [about_Command_Syntax](about_Command_Syntax.md)
-- [about_Path_Syntax](about_Path_Syntax.md)

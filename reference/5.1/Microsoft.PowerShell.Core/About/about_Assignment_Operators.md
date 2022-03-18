@@ -859,14 +859,9 @@ Set-Variable -Name a -Value 1, 2, 3
 
 ## See also
 
-[about_Arrays](about_Arrays.md)
-
-[about_Hash_Tables](about_Hash_Tables.md)
-
-[about_Variables](about_Variables.md)
-
-[Clear-Variable](xref:Microsoft.PowerShell.Utility.Clear-Variable)
-
-[Remove-Variable](xref:Microsoft.PowerShell.Utility.Remove-Variable)
-
-[Set-Variable](xref:Microsoft.PowerShell.Utility.Set-Variable)
+- [about_Arrays](about_Arrays.md)
+- [about_Hash_Tables](about_Hash_Tables.md)
+- [about_Variables](about_Variables.md)
+- [Clear-Variable](xref:Microsoft.PowerShell.Utility.Clear-Variable)
+- [Remove-Variable](xref:Microsoft.PowerShell.Utility.Remove-Variable)
+- [Set-Variable](xref:Microsoft.PowerShell.Utility.Set-Variable)

@@ -198,19 +198,13 @@ information, see [about_EventLogs](about_EventLogs.md).
 
 ## See also
 
-[Add-PsSnapin](xref:Microsoft.PowerShell.Core.Add-PSSnapin)
-
-[Get-PsSnapin](xref:Microsoft.PowerShell.Core.Get-PSSnapin)
-
-[Remove-PsSnapin](xref:Microsoft.PowerShell.Core.Remove-PSSnapin)
-
-[Export-Console](xref:Microsoft.PowerShell.Core.Export-Console)
-
-[Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
-
-[about_Profiles](about_Profiles.md)
-
-[about_Modules](about_Modules.md)
+- [about_Modules](about_Modules.md)
+- [about_Profiles](about_Profiles.md)
+- [Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
+- [Export-Console](xref:Microsoft.PowerShell.Core.Export-Console)
+- [Add-PsSnapin](xref:Microsoft.PowerShell.Core.Add-PSSnapin)
+- [Get-PsSnapin](xref:Microsoft.PowerShell.Core.Get-PSSnapin)
+- [Remove-PsSnapin](xref:Microsoft.PowerShell.Core.Remove-PSSnapin)
 
 ## KEYWORDS
 

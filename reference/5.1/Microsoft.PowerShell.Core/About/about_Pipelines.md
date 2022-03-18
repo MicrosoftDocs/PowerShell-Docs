@@ -553,12 +553,8 @@ enhances readability.
 
 ## See also
 
-[about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)
-
-[about_Objects](about_objects.md)
-
-[about_Parameters](about_parameters.md)
-
-[about_Command_Syntax](about_command_syntax.md)
-
-[about_ForEach](about_foreach.md)
+- [about_Command_Syntax](about_command_syntax.md)
+- [about_ForEach](about_foreach.md)
+- [about_Objects](about_objects.md)
+- [about_Parameters](about_parameters.md)
+- [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)

@@ -565,16 +565,10 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 
 ## See also
 
-[Export-FormatData](xref:Microsoft.PowerShell.Utility.Export-FormatData)
-
-[Get-FormatData](xref:Microsoft.PowerShell.Utility.Get-FormatData)
-
-[Get-TraceSource](xref:Microsoft.PowerShell.Utility.Get-TraceSource)
-
-[Format Schema XML Reference](/powershell/scripting/developer/format/format-schema-xml-reference)
-
-[Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command)
-
-[Update-FormatData](xref:Microsoft.PowerShell.Utility.Update-FormatData)
-
-[Writing a PowerShell Formatting File](/powershell/scripting/developer/format/writing-a-powershell-formatting-file)
+- [Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command)
+- [Export-FormatData](xref:Microsoft.PowerShell.Utility.Export-FormatData)
+- [Get-FormatData](xref:Microsoft.PowerShell.Utility.Get-FormatData)
+- [Update-FormatData](xref:Microsoft.PowerShell.Utility.Update-FormatData)
+- [Get-TraceSource](xref:Microsoft.PowerShell.Utility.Get-TraceSource)
+- [Format Schema XML Reference](/powershell/scripting/developer/format/format-schema-xml-reference)
+- [Writing a PowerShell Formatting File](/powershell/scripting/developer/format/writing-a-powershell-formatting-file)

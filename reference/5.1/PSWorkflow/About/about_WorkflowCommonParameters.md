@@ -345,7 +345,7 @@ network. UseSSL is an additional protection that sends the data across an
 HTTPS, instead of HTTP. If you use this parameter, but SSL is not available on
 the port used for the command, the command fails.
 
-## SEE ALSO
+## See Also
 
 - [about_ActivityCommonParameters](about_ActivityCommonParameters.md)
 - [about_Workflows](about_Workflows.md)

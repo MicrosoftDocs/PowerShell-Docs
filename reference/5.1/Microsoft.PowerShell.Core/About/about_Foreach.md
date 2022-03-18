@@ -223,8 +223,6 @@ function Get-FunctionPosition {
 
 ## See also
 
-[about_Automatic_Variables](about_Automatic_Variables.md)
-
-[about_If](about_If.md)
-
-[ForEach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_If](about_If.md)
+- [ForEach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)

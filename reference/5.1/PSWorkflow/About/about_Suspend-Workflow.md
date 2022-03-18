@@ -125,12 +125,8 @@ PSComputerName    : localhost
 
 ## See also
 
-[about_Workflows](about_Workflows.md)
-
-[about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)
-
-[PSWorkflow](xref:PSWorkflow) cmdlets
-
-[Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
-
-[Writing a Windows PowerShell Workflow](/previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)
+- [about_Workflows](about_Workflows.md)
+- [about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)
+- [PSWorkflow](xref:PSWorkflow) cmdlets
+- [Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
+- [Writing a Windows PowerShell Workflow](/previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)

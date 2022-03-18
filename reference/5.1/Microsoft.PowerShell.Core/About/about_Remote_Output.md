@@ -204,22 +204,13 @@ computers are interspersed.
 
 ## See also
 
-[about_Remote](about_Remote.md)
-
-[about_Remote_Variables](about_Remote_Variables.md)
-
-[Format-Table](xref:Microsoft.PowerShell.Utility.Format-Table)
-
-[Get-EventLog](xref:Microsoft.PowerShell.Management.Get-EventLog)
-
-[Get-Process](xref:Microsoft.PowerShell.Management.Get-Process)
-
-[Get-Service](xref:Microsoft.PowerShell.Management.Get-Service)
-
-[Get-WmiObject](xref:Microsoft.PowerShell.Management.Get-WmiObject)
-
-[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
-
-[Out-GridView](xref:Microsoft.PowerShell.Utility.Out-GridView)
-
-[Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)
+- [about_Remote](about_Remote.md)
+- [about_Remote_Variables](about_Remote_Variables.md)
+- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
+- [Get-EventLog](xref:Microsoft.PowerShell.Management.Get-EventLog)
+- [Out-GridView](xref:Microsoft.PowerShell.Utility.Out-GridView)
+- [Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)
+- [Get-Process](xref:Microsoft.PowerShell.Management.Get-Process)
+- [Get-Service](xref:Microsoft.PowerShell.Management.Get-Service)
+- [Format-Table](xref:Microsoft.PowerShell.Utility.Format-Table)
+- [Get-WmiObject](xref:Microsoft.PowerShell.Management.Get-WmiObject)
