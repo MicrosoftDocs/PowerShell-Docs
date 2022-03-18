@@ -231,20 +231,12 @@ about_Remoting
 
 ## See also
 
-[about_PSSessions](about_PSSessions.md)
-
-[about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
-
-[about_Remote_Requirements](about_Remote_Requirements.md)
-
-[PowerShell Remoting FAQ](/powershell/scripting/learn/remoting/powershell-remoting-faq)
-
-[about_Remote_TroubleShooting](about_Remote_TroubleShooting.md)
-
-[about_Remote_Variables](about_Remote_Variables.md)
-
-[Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
-
-[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
-
-[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
+- [about_PSSessions](about_PSSessions.md)
+- [about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
+- [about_Remote_Requirements](about_Remote_Requirements.md)
+- [about_Remote_TroubleShooting](about_Remote_TroubleShooting.md)
+- [about_Remote_Variables](about_Remote_Variables.md)
+- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
+- [Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
+- [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
+- [PowerShell Remoting FAQ](/powershell/scripting/learn/remoting/powershell-remoting-faq)

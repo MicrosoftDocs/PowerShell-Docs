@@ -423,7 +423,7 @@ or **NO_COLOR** environment variables.
 
 ## See also
 
-- [Environment (provider)](../About/about_Environment_Provider.md)
+- [about_Environment_Provider](about_Environment_Provider.md)
 - [about_Modules](about_Modules.md)
 
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

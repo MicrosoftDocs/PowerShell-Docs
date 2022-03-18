@@ -108,5 +108,5 @@ completed only when you exit the prompt level.
 - [about_Line_Editing](about_Line_Editing.md)
 - [about_Preference_Variables](about_Preference_Variables.md)
 - [about_Profiles](about_Profiles.md)
-- [about_Variables](about_Variables.md)
 - [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)
+- [about_Variables](about_Variables.md)
