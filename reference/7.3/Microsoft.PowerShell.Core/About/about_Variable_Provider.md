@@ -279,9 +279,6 @@ Get-Help Get-ChildItem -Path variable:
 
 ## See also
 
-[about_Variables](../About/about_Variables.md)
-
-[about_Automatic_Variables](../About/about_Automatic_Variables.md)
-
-[about_Providers](../About/about_Providers.md)
-
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_Providers](about_Providers.md)
+- [about_Variables](about_Variables.md)

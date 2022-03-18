@@ -381,10 +381,7 @@ information, see Gael Colas' article [Pseudo-Splatting DSC Resources](https://ga
 
 ## See also
 
-[about_Arrays](about_Arrays.md)
-
-[about_Automatic_Variables](about_Automatic_Variables.md)
-
-[about_Hash_Tables](about_Hash_Tables.md)
-
-[about_Parameters](about_Parameters.md)
+- [about_Arrays](about_Arrays.md)
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_Hash_Tables](about_Hash_Tables.md)
+- [about_Parameters](about_Parameters.md)
