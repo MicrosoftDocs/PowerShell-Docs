@@ -265,15 +265,12 @@ default value when no value is provided in the file.
 
 ## See also
 
-For Linux **syslog** and **rsyslog.conf** information, refer to the Linux
+- For Linux **syslog** and **rsyslog.conf** information, refer to the Linux
 computer's local `man` pages.
-
-For macOS **os_log** information, see
+- For macOS **os_log** information, see
 [os_log developer documentation](https://developer.apple.com/documentation/os/os_log).
-
-[about_Logging_Windows](about_Logging_Windows.md)
-
-[Generic SIEM integration](/cloud-app-security/siem)
+- [about_Logging_Windows](about_Logging_Windows.md)
+- [Generic SIEM integration](/cloud-app-security/siem)
 
 <!-- link references -->
 [SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management

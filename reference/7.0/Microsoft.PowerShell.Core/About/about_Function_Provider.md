@@ -245,6 +245,5 @@ Get-Help Get-ChildItem -Path function:
 
 ## See also
 
-[about_Functions](../About/about_Functions.md)
-
-[about_Providers](../About/about_Providers.md)
+- [about_Functions](about_Functions.md)
+- [about_Providers](about_Providers.md)

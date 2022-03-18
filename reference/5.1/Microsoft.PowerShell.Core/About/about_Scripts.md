@@ -417,26 +417,15 @@ PowerShell has many useful features that you can use in scripts.
 
 ## See also
 
-[about_Command_Precedence](about_Command_Precedence.md)
-
-[about_Comment_Based_Help](about_Comment_Based_Help.md)
-
-[about_Execution_Policies](about_Execution_Policies.md)
-
-[about_Functions](about_Functions.md)
-
-[about_Modules](about_Modules.md)
-
-[about_Profiles](about_Profiles.md)
-
-[about_Requires](about_Requires.md)
-
-[about_Run_With_PowerShell](about_Run_With_PowerShell.md)
-
-[about_Scopes](about_Scopes.md)
-
-[about_Script_Blocks](about_Script_Blocks.md)
-
-[about_Signing](about_Signing.md)
-
-[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
+- [about_Command_Precedence](about_Command_Precedence.md)
+- [about_Comment_Based_Help](about_Comment_Based_Help.md)
+- [about_Execution_Policies](about_Execution_Policies.md)
+- [about_Functions](about_Functions.md)
+- [about_Modules](about_Modules.md)
+- [about_Profiles](about_Profiles.md)
+- [about_Requires](about_Requires.md)
+- [about_Run_With_PowerShell](about_Run_With_PowerShell.md)
+- [about_Scopes](about_Scopes.md)
+- [about_Script_Blocks](about_Script_Blocks.md)
+- [about_Signing](about_Signing.md)
+- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)

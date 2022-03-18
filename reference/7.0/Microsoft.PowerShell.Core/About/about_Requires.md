@@ -238,6 +238,5 @@ Param
 
 ## See also
 
-[about_Automatic_Variables](about_Automatic_Variables.md)
-
-[about_Language_Keywords](about_Language_Keywords.md)
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_Language_Keywords](about_Language_Keywords.md)

@@ -53,4 +53,3 @@ The update notification doesn't provide any way to automatically update
 PowerShell. In the future, there may be more instructions or capabilities to
 update from within PowerShell, but today, you should use the same install
 mechanism you used to install PowerShell to update it.
-

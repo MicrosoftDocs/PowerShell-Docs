@@ -166,6 +166,6 @@ $flavor = 'Chocolate'
 
 ## See also
 
+- [about_Comment_Based_Help](about_Comment_Based_Help.md)
 - [about_Functions_Argument_Completion](about_Functions_Argument_Completion.md)
 - [about_Requires](about_Requires.md)
-- [about_Comment_Based_Help](about_Comment_Based_Help.md)

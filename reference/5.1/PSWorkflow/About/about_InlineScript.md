@@ -152,14 +152,9 @@ Test-Workflow
 
 ## See also
 
-[about_ActivityCommonParameters](about_ActivityCommonParameters.md)
-
-[about_Remote_Variables](../../Microsoft.PowerShell.Core/About/about_Remote_Variables.md)
-
-[about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)
-
-[PSWorkflow](xref:PSWorkflow) cmdlets
-
-[Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
-
-[Writing a Windows PowerShell Workflow](/previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)
+- [about_ActivityCommonParameters](about_ActivityCommonParameters.md)
+- [about_Remote_Variables](../../Microsoft.PowerShell.Core/About/about_Remote_Variables.md)
+- [about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)
+- [PSWorkflow](xref:PSWorkflow) cmdlets
+- [Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
+- [Writing a Windows PowerShell Workflow](/previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)

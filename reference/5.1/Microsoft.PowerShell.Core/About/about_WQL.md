@@ -733,10 +733,7 @@ Get-CimInstance -Query $q
 
 ## See also
 
-[about_Special_Characters](about_Special_Characters.md)
-
-[about_Quoting_Rules](about_Quoting_Rules.md)
-
-[about_WMI](about_WMI.md)
-
-[about_WMI_Cmdlets](about_WMI_Cmdlets.md)
+- [about_Special_Characters](about_Special_Characters.md)
+- [about_Quoting_Rules](about_Quoting_Rules.md)
+- [about_WMI](about_WMI.md)
+- [about_WMI_Cmdlets](about_WMI_Cmdlets.md)

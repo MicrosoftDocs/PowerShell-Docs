@@ -306,14 +306,9 @@ stamp server ensures that users can use your script for many years to come.
 
 ## See also
 
-[about_Execution_Policies](about_Execution_Policies.md)
-
-[about_Profiles](about_Profiles.md)
-
-[Get-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy)
-
-[Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
-
-[Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature)
-
-[Introduction to Code Signing](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85))
+- [about_Execution_Policies](about_Execution_Policies.md)
+- [about_Profiles](about_Profiles.md)
+- [Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature)
+- [Get-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy)
+- [Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
+- [Introduction to Code Signing](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85))

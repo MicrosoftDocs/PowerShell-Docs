@@ -578,12 +578,8 @@ Get-Help Get-ChildItem -Path cert:
 
 ## See also
 
-[about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)
-
-[about_Signing](../../Microsoft.PowerShell.Core/About/about_Signing.md)
-
-[Get-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Get-AuthenticodeSignature)
-
-[Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature)
-
-[Get-PfxCertificate](xref:Microsoft.PowerShell.Security.Get-PfxCertificate)
+- [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)
+- [about_Signing](../../Microsoft.PowerShell.Core/About/about_Signing.md)
+- [Get-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Get-AuthenticodeSignature)
+- [Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature)
+- [Get-PfxCertificate](xref:Microsoft.PowerShell.Security.Get-PfxCertificate)

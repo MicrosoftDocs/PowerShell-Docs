@@ -170,20 +170,12 @@ Invoke-Command -ComputerName S1 -ScriptBlock {
 
 ## See also
 
-[about_PSSessions](about_PSSessions.md)
-
-[about_Remote](about_Remote.md)
-
-[about_Scopes](about_Scopes.md)
-
-[about_Splatting](about_Splatting.md)
-
-[about_Variables](about_Variables.md)
-
-[Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
-
-[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
-
-[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
-
-[Start-ThreadJob](/powershell/module/ThreadJob/Start-ThreadJob)
+- [about_PSSessions](about_PSSessions.md)
+- [about_Remote](about_Remote.md)
+- [about_Scopes](about_Scopes.md)
+- [about_Splatting](about_Splatting.md)
+- [about_Variables](about_Variables.md)
+- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
+- [Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
+- [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
+- [Start-ThreadJob](/powershell/module/ThreadJob/Start-ThreadJob)

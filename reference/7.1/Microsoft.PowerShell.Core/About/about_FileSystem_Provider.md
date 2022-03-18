@@ -238,7 +238,7 @@ in `$e`. It uses an index of 0, because PowerShell arrays are zero-based.
 For more information about `Get-Content` cmdlet, see the help topic for the
 [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content).
 
-For more information about arrays, see [about_Arrays](../About/about_Arrays.md).
+For more information about arrays, see [about_Arrays](about_Arrays.md).
 
 ```powershell
 $e = Get-Content c:\test\employees.txt -Delimited "End Of Employee Record"
@@ -688,4 +688,4 @@ Get-Help Get-ChildItem -Path c:
 
 ## See also
 
-[about_Providers](../About/about_Providers.md)
+[about_Providers](about_Providers.md)

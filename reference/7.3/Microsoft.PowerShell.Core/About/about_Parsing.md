@@ -294,4 +294,4 @@ For more information, see
 
 ## See also
 
-[about_Command_Syntax](about_Command_Syntax.md)
+- [about_Command_Syntax](about_Command_Syntax.md)

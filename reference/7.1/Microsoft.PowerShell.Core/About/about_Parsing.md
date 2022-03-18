@@ -284,4 +284,4 @@ You can build `TestExe` from the source code. See
 
 ## See also
 
-[about_Command_Syntax](about_Command_Syntax.md)
+- [about_Command_Syntax](about_Command_Syntax.md)

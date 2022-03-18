@@ -400,17 +400,10 @@ Send-MailMessage:SmtpServer    ServerXYZ
 
 ## See also
 
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)
-
-[about_Functions_Advanced](about_Functions_Advanced.md)
-
-[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
-
-[about_Hash_Tables](about_Hash_Tables.md)
-
-[about_Preference_Variables](about_Preference_Variables.md)
-
-[about_Profiles](about_Profiles.md)
-
-[about_Script_Blocks](about_Script_Blocks.md)
-
+- [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)
+- [about_Functions_Advanced](about_Functions_Advanced.md)
+- [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
+- [about_Hash_Tables](about_Hash_Tables.md)
+- [about_Preference_Variables](about_Preference_Variables.md)
+- [about_Profiles](about_Profiles.md)
+- [about_Script_Blocks](about_Script_Blocks.md)

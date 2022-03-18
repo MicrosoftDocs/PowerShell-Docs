@@ -97,6 +97,8 @@ support redirection.
 
 ## See also
 
+- [about_CommonParameters](about_CommonParameters.md)
+- [about_Redirection](about_Redirection.md)
 - [Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
 - [Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
 - [Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host)
@@ -105,5 +107,3 @@ support redirection.
 - [Write-Progress](xref:Microsoft.PowerShell.Utility.Write-Progress)
 - [Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)
 - [Write-Warning](xref:Microsoft.PowerShell.Utility.Write-Warning)
-- [about_CommonParameters](about_CommonParameters.md)
-- [about_Redirection](about_Redirection.md)

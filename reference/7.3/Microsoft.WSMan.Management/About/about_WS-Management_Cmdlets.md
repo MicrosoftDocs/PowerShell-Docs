@@ -153,28 +153,17 @@ Windows documentation.
 
 [Events](/windows/win32/winrm/events)
 
-## SEE ALSO
+## See also
 
-[Connect-WSMan](xref:Microsoft.WSMan.Management.Connect-WSMan)
-
-[Disable-WSManCredSSP](xref:Microsoft.WSMan.Management.Disable-WSManCredSSP)
-
-[Disconnect-WSMan](xref:Microsoft.WSMan.Management.Disconnect-WSMan)
-
-[Enable-WSManCredSSP](xref:Microsoft.WSMan.Management.Enable-WSManCredSSP)
-
-[Get-WSManCredSSP](xref:Microsoft.WSMan.Management.Get-WSManCredSSP)
-
-[Get-WSManInstance](xref:Microsoft.WSMan.Management.Get-WSManInstance)
-
-[Invoke-WSManAction](xref:Microsoft.WSMan.Management.Invoke-WSManAction)
-
-[New-WSManInstance](xref:Microsoft.WSMan.Management.New-WSManInstance)
-
-[Remove-WSManInstance](xref:Microsoft.WSMan.Management.Remove-WSManInstance)
-
-[Set-WSManInstance](xref:Microsoft.WSMan.Management.Set-WSManInstance)
-
-[Set-WSManQuickConfig](xref:Microsoft.WSMan.Management.Set-WSManQuickConfig)
-
-[Test-WSMan](xref:Microsoft.WSMan.Management.Test-WSMan)
+- [Connect-WSMan](xref:Microsoft.WSMan.Management.Connect-WSMan)
+- [Test-WSMan](xref:Microsoft.WSMan.Management.Test-WSMan)
+- [Invoke-WSManAction](xref:Microsoft.WSMan.Management.Invoke-WSManAction)
+- [Disconnect-WSMan](xref:Microsoft.WSMan.Management.Disconnect-WSMan)
+- [Disable-WSManCredSSP](xref:Microsoft.WSMan.Management.Disable-WSManCredSSP)
+- [Enable-WSManCredSSP](xref:Microsoft.WSMan.Management.Enable-WSManCredSSP)
+- [Get-WSManCredSSP](xref:Microsoft.WSMan.Management.Get-WSManCredSSP)
+- [Get-WSManInstance](xref:Microsoft.WSMan.Management.Get-WSManInstance)
+- [New-WSManInstance](xref:Microsoft.WSMan.Management.New-WSManInstance)
+- [Remove-WSManInstance](xref:Microsoft.WSMan.Management.Remove-WSManInstance)
+- [Set-WSManInstance](xref:Microsoft.WSMan.Management.Set-WSManInstance)
+- [Set-WSManQuickConfig](xref:Microsoft.WSMan.Management.Set-WSManQuickConfig)

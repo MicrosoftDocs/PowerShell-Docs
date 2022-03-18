@@ -873,8 +873,8 @@ For more information about the `[ref]` type, see
 
 ## See also
 
-- [About_hidden](About_hidden.md)
 - [about_Enum](about_Enum.md)
+- [About_Hidden](About_Hidden.md)
 - [about_Language_Keywords](about_language_keywords.md)
 - [about_Methods](about_methods.md)
 - [about_Using](about_using.md)

@@ -71,5 +71,5 @@ Get-ChildItem /home -Directory | foreach GetFiles .*
 
 - [about_Comparison_Operators](about_Comparison_Operators.md)
 - [about_Foreach](about_Foreach.md)
-- [Where-Object](xref:Microsoft.PowerShell.Core.Where-Object)
 - [Foreach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
+- [Where-Object](xref:Microsoft.PowerShell.Core.Where-Object)

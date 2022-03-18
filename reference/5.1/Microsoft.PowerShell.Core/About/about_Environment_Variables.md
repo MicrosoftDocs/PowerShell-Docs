@@ -357,5 +357,5 @@ The environment variables that store preferences include:
 
 ## See also
 
-- [Environment (provider)](../About/about_Environment_Provider.md)
+- [about_Environment_Provider](about_Environment_Provider.md)
 - [about_Modules](about_Modules.md)

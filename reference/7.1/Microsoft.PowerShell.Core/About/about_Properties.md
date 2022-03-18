@@ -290,6 +290,6 @@ only the collection's property is returned.
 - [about_Objects](about_Objects.md)
 - [about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)
 - [about_Methods](about_Methods.md)
+- [Format-List](xref:Microsoft.PowerShell.Utility.Format-List)
 - [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
 - [Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)
-- [Format-List](xref:Microsoft.PowerShell.Utility.Format-List)

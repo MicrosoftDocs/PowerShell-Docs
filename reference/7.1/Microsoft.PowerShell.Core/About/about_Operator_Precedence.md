@@ -177,23 +177,15 @@ are reading and maintaining your scripts.
 
 ## See also
 
-[about_Operators][ops]
-
-[about_Assignment_Operators][assign]
-
-[about_Comparison_Operators][compare]
-
-[about_Arithmetic_Operators][math]
-
-[about_Join][join]
-
-[about_Redirection][redir]
-
-[about_Scopes][scopes]
-
-[about_Split][split]
-
-[about_Type_Operators][type]
+- [about_Operators][ops]
+- [about_Arithmetic_Operators][math]
+- [about_Assignment_Operators][assign]
+- [about_Comparison_Operators][compare]
+- [about_Type_Operators][type]
+- [about_Join][join]
+- [about_Redirection][redir]
+- [about_Scopes][scopes]
+- [about_Split][split]
 
 <!-- reference links -->
 [math]: about_Arithmetic_Operators.md

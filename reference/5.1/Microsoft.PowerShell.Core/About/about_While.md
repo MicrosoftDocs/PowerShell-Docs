@@ -69,11 +69,11 @@ the second command that writes the value of `$val` to the console.
 
 ## See also
 
-- [about_Comparison_Operators](about_Comparison_Operators.md)
+- [about_Booleans](about_Booleans.md)
 - [about_Break](about_Break.md)
+- [about_Comparison_Operators](about_Comparison_Operators.md)
 - [about_Continue](about_Continue.md)
 - [about_Do](about_Do.md)
-- [about_Foreach](about_Foreach.md)
 - [about_For](about_For.md)
+- [about_Foreach](about_Foreach.md)
 - [about_Language_Keywords](about_Language_Keywords.md)
-- [about_Booleans](about_Booleans.md)

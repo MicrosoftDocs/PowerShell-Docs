@@ -259,24 +259,14 @@ another, it might be because the session is restricted.
 
 ## See also
 
-[about_Jobs](about_Jobs.md)
-
-[about_PSSessions](about_PSSessions.md)
-
-[about_Remote](about_Remote.md)
-
-[about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
-
-[about_Remote_Requirements](about_Remote_Requirements.md)
-
-[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
-
-[Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
-
-[Exit-PSSession](xref:Microsoft.PowerShell.Core.Exit-PSSession)
-
-[Get-PSSession](xref:Microsoft.PowerShell.Core.Get-PSSession)
-
-[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
-
-[Remove-PSSession](xref:Microsoft.PowerShell.Core.Remove-PSSession)
+- [about_Jobs](about_Jobs.md)
+- [about_PSSessions](about_PSSessions.md)
+- [about_Remote](about_Remote.md)
+- [about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
+- [about_Remote_Requirements](about_Remote_Requirements.md)
+- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
+- [Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
+- [Exit-PSSession](xref:Microsoft.PowerShell.Core.Exit-PSSession)
+- [Get-PSSession](xref:Microsoft.PowerShell.Core.Get-PSSession)
+- [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
+- [Remove-PSSession](xref:Microsoft.PowerShell.Core.Remove-PSSession)

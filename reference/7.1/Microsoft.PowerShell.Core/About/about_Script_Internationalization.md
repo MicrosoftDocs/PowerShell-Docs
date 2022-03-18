@@ -245,6 +245,5 @@ Heute ist Freitag
 - [about_Automatic_Variables](about_Automatic_Variables.md)
 - [about_Hash_Tables](about_Hash_Tables.md)
 - [about_Quoting_Rules](about_Quoting_Rules.md)
-- [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
 - [Import-LocalizedData](xref:Microsoft.PowerShell.Utility.Import-LocalizedData)
-
+- [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)

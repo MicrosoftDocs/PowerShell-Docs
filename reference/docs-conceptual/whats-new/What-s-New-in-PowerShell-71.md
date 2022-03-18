@@ -99,6 +99,25 @@ The following experimental features were added in this release:
 
 ## Breaking Changes and Improvements
 
+- String comparison behavior changed in .NET 5.0
+
+  PowerShell 7.1 is built on .NET 5.0, which introduced the following breaking change:
+
+  - [Behavior changes when comparing strings on .NET 5+](/dotnet/standard/base-types/string-comparison-net-5-plus)
+
+  As of .NET 5.0, culture invariant string comparisons ignore non-printing control characters.
+
+  For example, the following two strings are considered to be identical:
+
+  ```powershell
+  # Escape sequence "`a" is Ctrl-G or [char]7
+  'Food' -eq "Foo`ad"
+  ```
+
+  ```Output
+  True
+  ```
+
 - Fix `$?` to not be `$false` when native command writes to `stderr`
   ([#13395](https://github.com/PowerShell/PowerShell/pull/13395))
 

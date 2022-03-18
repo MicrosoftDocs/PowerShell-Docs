@@ -545,16 +545,10 @@ digital signature. For more information, see
 
 ## See also
 
-[about_Signing](about_Signing.md)
-
-[Copy-Item](xref:Microsoft.PowerShell.Management.Copy-Item)
-
-[Copy-ItemProperty](xref:Microsoft.PowerShell.Management.Copy-ItemProperty)
-
-[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
-
-[Get-TypeData](xref:Microsoft.PowerShell.Utility.Get-TypeData)
-
-[Remove-TypeData](xref:Microsoft.PowerShell.Utility.Remove-TypeData)
-
-[Update-TypeData](xref:Microsoft.PowerShell.Utility.Update-TypeData)
+- [about_Signing](about_Signing.md)
+- [Copy-Item](xref:Microsoft.PowerShell.Management.Copy-Item)
+- [Copy-ItemProperty](xref:Microsoft.PowerShell.Management.Copy-ItemProperty)
+- [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
+- [Get-TypeData](xref:Microsoft.PowerShell.Utility.Get-TypeData)
+- [Remove-TypeData](xref:Microsoft.PowerShell.Utility.Remove-TypeData)
+- [Update-TypeData](xref:Microsoft.PowerShell.Utility.Update-TypeData)

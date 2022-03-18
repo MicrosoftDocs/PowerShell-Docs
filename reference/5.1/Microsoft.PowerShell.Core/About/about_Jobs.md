@@ -324,15 +324,15 @@ message:
 
 ## See also
 
+- [about_Job_Details](about_Job_Details.md)
+- [about_PSSessions](about_PSSessions.md)
+- [about_Remote](about_Remote.md)
 - [about_Remote_Jobs](about_Remote_Jobs.md)
 - [about_Thread_Jobs](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs)
-- [about_Job_Details](about_Job_Details.md)
-- [about_Remote](about_Remote.md)
-- [about_PSSessions](about_PSSessions.md)
-- [Start-Job](xref:Microsoft.PowerShell.Core.Start-Job)
+- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 - [Get-Job](xref:Microsoft.PowerShell.Core.Get-Job)
 - [Receive-Job](xref:Microsoft.PowerShell.Core.Receive-Job)
+- [Remove-Job](xref:Microsoft.PowerShell.Core.Remove-Job)
+- [Start-Job](xref:Microsoft.PowerShell.Core.Start-Job)
 - [Stop-Job](xref:Microsoft.PowerShell.Core.Stop-Job)
 - [Wait-Job](xref:Microsoft.PowerShell.Core.Wait-Job)
-- [Remove-Job](xref:Microsoft.PowerShell.Core.Remove-Job)
-- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)

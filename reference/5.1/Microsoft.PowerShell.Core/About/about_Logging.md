@@ -146,9 +146,8 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 
 ## See also
 
-[PowerShell the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
-
-[Generic SIEM integration](/cloud-app-security/siem)
+- [Generic SIEM integration](/cloud-app-security/siem)
+- [PowerShell the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
 
 <!-- link references -->
 [SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management

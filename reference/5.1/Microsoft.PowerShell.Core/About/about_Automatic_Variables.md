@@ -940,22 +940,13 @@ Default (Current): End
 
 ## See also
 
-[about_Functions](about_Functions.md)
-
-[about_Functions_Advanced](about_Functions_Advanced.md)
-
-[about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
-
-[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
-
-[about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
-
-[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
-
-[about_Hash_Tables](about_Hash_Tables.md)
-
-[about_Preference_Variables](about_Preference_Variables.md)
-
-[about_Splatting](about_Splatting.md)
-
-[about_Variables](about_Variables.md)
+- [about_Functions](about_Functions.md)
+- [about_Functions_Advanced](about_Functions_Advanced.md)
+- [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
+- [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+- [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+- [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
+- [about_Hash_Tables](about_Hash_Tables.md)
+- [about_Preference_Variables](about_Preference_Variables.md)
+- [about_Splatting](about_Splatting.md)
+- [about_Variables](about_Variables.md)

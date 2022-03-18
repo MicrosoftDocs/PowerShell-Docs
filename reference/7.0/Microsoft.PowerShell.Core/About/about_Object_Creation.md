@@ -296,12 +296,8 @@ For more information on Generics, see [Generics in .NET](/dotnet/standard/generi
 
 ## See also
 
-[about_Objects](about_Objects.md)
-
-[about_Methods](about_Methods.md)
-
-[about_Properties](about_Properties.md)
-
-[about_Pipelines](about_Pipelines.md)
-
-[about_Types.ps1xml](about_Types.ps1xml.md)
+- [about_Methods](about_Methods.md)
+- [about_Objects](about_Objects.md)
+- [about_Pipelines](about_Pipelines.md)
+- [about_Properties](about_Properties.md)
+- [about_Types.ps1xml](about_Types.ps1xml.md)

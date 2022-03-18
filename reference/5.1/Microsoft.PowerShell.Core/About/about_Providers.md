@@ -352,6 +352,5 @@ Get-Help * -Category Provider
 
 ## See also
 
-[about_Locations](about_Locations.md)
-
-[about_Path_Syntax](about_Path_Syntax.md)
+- [about_Locations](about_Locations.md)
+- [about_Path_Syntax](about_Path_Syntax.md)

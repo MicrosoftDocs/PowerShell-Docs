@@ -620,26 +620,15 @@ methods:
 
 ## See also
 
-[about_Automatic_Variables](about_Automatic_Variables.md)
-
-[about_Comment_Based_Help](about_Comment_Based_Help.md)
-
-[about_Functions_Advanced](about_Functions_Advanced.md)
-
-[about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
-
-[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
-
-[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
-
-[about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
-
-[about_Parameters](about_Parameters.md)
-
-[about_Profiles](about_Profiles.md)
-
-[about_Scopes](about_Scopes.md)
-
-[about_Script_Blocks](about_Script_Blocks.md)
-
-[about_Function_provider](about_Function_provider.md)
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_Comment_Based_Help](about_Comment_Based_Help.md)
+- [about_Function_Provider](about_Function_provider.md)
+- [about_Functions_Advanced](about_Functions_Advanced.md)
+- [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
+- [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+- [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
+- [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+- [about_Parameters](about_Parameters.md)
+- [about_Profiles](about_Profiles.md)
+- [about_Scopes](about_Scopes.md)
+- [about_Script_Blocks](about_Script_Blocks.md)

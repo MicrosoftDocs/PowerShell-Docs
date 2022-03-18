@@ -65,8 +65,6 @@ For more information about ConstrainedLanguage language mode, see
 
 ## See also
 
-[about_Language_Modes](about_Language_Modes.md)
-
-[about_Remote](about_Remote.md)
-
-[about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)
+- [about_Language_Modes](about_Language_Modes.md)
+- [about_Remote](about_Remote.md)
+- [about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)

@@ -209,22 +209,13 @@ information, see
 
 ## See also
 
-[about_Debuggers](about_Debuggers.md)
-
-[about_Profiles](about_Profiles.md)
-
-[about_Updatable_Help](about_Updatable_Help.md)
-
-[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)
-
-[Get-IseSnippet](xref:ISE.Get-IseSnippet)
-
-[Import-IseSnippet](xref:ISE.Import-IseSnippet)
-
-[New-IseSnippet](xref:ISE.New-IseSnippet)
-
-[Save-Help](xref:Microsoft.PowerShell.Core.Save-Help)
-
-[Show-Command](xref:Microsoft.PowerShell.Utility.Show-Command)
-
-[Update-Help](xref:Microsoft.PowerShell.Core.Update-Help)
+- [about_Debuggers](about_Debuggers.md)
+- [about_Profiles](about_Profiles.md)
+- [about_Updatable_Help](about_Updatable_Help.md)
+- [Show-Command](xref:Microsoft.PowerShell.Utility.Show-Command)
+- [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)
+- [Save-Help](xref:Microsoft.PowerShell.Core.Save-Help)
+- [Update-Help](xref:Microsoft.PowerShell.Core.Update-Help)
+- [Get-IseSnippet](xref:ISE.Get-IseSnippet)
+- [Import-IseSnippet](xref:ISE.Import-IseSnippet)
+- [New-IseSnippet](xref:ISE.New-IseSnippet)

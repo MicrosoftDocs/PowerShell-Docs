@@ -72,12 +72,8 @@ The second command passes only the file objects to the third command
 
 ## See also
 
-[about_Methods](about_Methods.md)
-
-[about_Object_Creation](about_Object_Creation.md)
-
-[about_Properties](about_Properties.md)
-
-[about_Pipelines](about_Pipelines.md)
-
-[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
+- [about_Methods](about_Methods.md)
+- [about_Object_Creation](about_Object_Creation.md)
+- [about_Pipelines](about_Pipelines.md)
+- [about_Properties](about_Properties.md)
+- [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)

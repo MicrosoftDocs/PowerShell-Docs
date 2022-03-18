@@ -288,7 +288,7 @@ C
 ## See Also
 
 - [about_Arrays](about_Arrays.md)
+- [about_Intrinsic_Members](about_Intrinsic_Members.md)
 - [about_Methods](about_Methods.md)
 - [about_Operators](about_Operators.md)
 - [about_Properties](about_Properties.md)
-- [about_Intrinsic_Members](about_Intrinsic_Members.md)

@@ -866,10 +866,7 @@ Displays information about PowerShell cmdlets and concepts.
 
 ## See also
 
-[about_Functions](about_Functions.md)
-
-[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
-
-[about_Scripts](about_Scripts.md)
-
-[How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)
+- [about_Functions](about_Functions.md)
+- [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+- [about_Scripts](about_Scripts.md)
+- [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)

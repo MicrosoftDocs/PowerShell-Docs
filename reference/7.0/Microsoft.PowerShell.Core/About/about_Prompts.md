@@ -275,22 +275,13 @@ profiles. For more information about profiles, see [about_Profiles](about_Profil
 
 ## See also
 
-[Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
-
-[Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
-
-[Get-History](xref:Microsoft.PowerShell.Core.Get-History)
-
-[Get-Random](xref:Microsoft.PowerShell.Utility.Get-Random)
-
-[Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host)
-
-[about_Profiles](about_Profiles.md)
-
-[about_Functions](about_Functions.md)
-
-[about_Scopes](about_Scopes.md)
-
-[about_Debuggers](about_Debuggers.md)
-
-[about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_Debuggers](about_Debuggers.md)
+- [about_Functions](about_Functions.md)
+- [about_Profiles](about_Profiles.md)
+- [about_Scopes](about_Scopes.md)
+- [Get-History](xref:Microsoft.PowerShell.Core.Get-History)
+- [Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host)
+- [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
+- [Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
+- [Get-Random](xref:Microsoft.PowerShell.Utility.Get-Random)

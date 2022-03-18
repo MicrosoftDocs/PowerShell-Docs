@@ -285,14 +285,9 @@ $session = New-PSSession -Computer <hostname> -Credential $cred `
 
 ## See also
 
-[about_Remote](about_Remote.md)
-
-[about_Remote_Variables](about_Remote_Variables.md)
-
-[about_PSSessions](about_PSSessions.md)
-
-[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
-
-[Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
-
-[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
+- [about_Remote](about_Remote.md)
+- [about_Remote_Variables](about_Remote_Variables.md)
+- [about_PSSessions](about_PSSessions.md)
+- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
+- [Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
+- [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)

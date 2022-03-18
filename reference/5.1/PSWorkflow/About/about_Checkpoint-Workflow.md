@@ -85,6 +85,6 @@ Workflow Test-Workflow
 }
 ```
 
-## SEE ALSO
+## See Also
 
-[Writing a Windows PowerShell Workflow](/previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)
+- [Writing a Windows PowerShell Workflow](/previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)

@@ -323,18 +323,11 @@ are available in `$s`.
 
 ## See also
 
-[about_Automatic_Variables](about_Automatic_Variables.md)
-
-[about_Functions](about_Functions.md)
-
-[about_Prompts](about_Prompts.md)
-
-[about_Execution_Policies](about_Execution_Policies.md)
-
-[about_Signing](about_Signing.md)
-
-[about_Remote](about_Remote.md)
-
-[about_Scopes](about_Scopes.md)
-
-[Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_Execution_Policies](about_Execution_Policies.md)
+- [about_Functions](about_Functions.md)
+- [about_Prompts](about_Prompts.md)
+- [about_Remote](about_Remote.md)
+- [about_Scopes](about_Scopes.md)
+- [about_Signing](about_Signing.md)
+- [Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
