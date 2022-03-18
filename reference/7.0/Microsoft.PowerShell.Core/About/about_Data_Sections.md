@@ -200,20 +200,12 @@ DATA -supportedCommand Format-XML {
 
 ## See also
 
-[about_Automatic_Variables](about_Automatic_Variables.md)
-
-[about_Comparison_Operators](about_Comparison_Operators.md)
-
-[about_Hash_Tables](about_Hash_Tables.md)
-
-[about_If](about_If.md)
-
-[about_Operators](about_Operators.md)
-
-[about_Quoting_Rules](about_Quoting_Rules.md)
-
-[about_Script_Internationalization](about_Script_Internationalization.md)
-
-[ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
-
-[Import-LocalizedData](xref:Microsoft.PowerShell.Utility.Import-LocalizedData)
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_Comparison_Operators](about_Comparison_Operators.md)
+- [about_Hash_Tables](about_Hash_Tables.md)
+- [about_If](about_If.md)
+- [about_Operators](about_Operators.md)
+- [about_Quoting_Rules](about_Quoting_Rules.md)
+- [about_Script_Internationalization](about_Script_Internationalization.md)
+- [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
+- [Import-LocalizedData](xref:Microsoft.PowerShell.Utility.Import-LocalizedData)

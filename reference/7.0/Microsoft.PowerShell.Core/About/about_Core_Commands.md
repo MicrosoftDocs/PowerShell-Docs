@@ -89,4 +89,4 @@ For more information about a cmdlet, type `get-help <cmdlet-name>`.
 
 ## See also
 
-[about_Providers](about_Providers.md)
+- [about_Providers](about_Providers.md)

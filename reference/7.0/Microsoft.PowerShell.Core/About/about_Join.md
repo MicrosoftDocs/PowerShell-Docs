@@ -1,3 +1,4 @@
+
 ---
 description: Describes how the join operator (-join) combines multiple strings into a single string.
 Locale: en-US
@@ -103,8 +104,6 @@ a b c
 
 ## See also
 
-[about_Operators](about_Operators.md)
-
-[about_Comparison_Operators](about_Comparison_Operators.md)
-
-[about_Split](about_Split.md)
+- [about_Operators](about_Operators.md)
+- [about_Comparison_Operators](about_Comparison_Operators.md)
+- [about_Split](about_Split.md)

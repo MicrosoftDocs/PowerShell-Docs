@@ -649,12 +649,8 @@ Invoke-Command $s {
 
 ## See also
 
-[about_Variables](about_Variables.md)
-
-[about_Environment_Variables](about_Environment_Variables.md)
-
-[about_Functions](about_Functions.md)
-
-[about_Script_Blocks](about_Script_Blocks.md)
-
-[Start-ThreadJob](/powershell/module/ThreadJob/Start-ThreadJob)
+- [about_Variables](about_Variables.md)
+- [about_Environment_Variables](about_Environment_Variables.md)
+- [about_Functions](about_Functions.md)
+- [about_Script_Blocks](about_Script_Blocks.md)
+- [Start-ThreadJob](/powershell/module/ThreadJob/Start-ThreadJob)

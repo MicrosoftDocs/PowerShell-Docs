@@ -342,9 +342,9 @@ you must add the extension to the `$env:PATHEXT` environment variable.
 
 ## See also
 
-- [about_Path_Syntax](about_Path_Syntax.md)
 - [about_Aliases](about_Aliases.md)
 - [about_Functions](about_Functions.md)
+- [about_Path_Syntax](about_Path_Syntax.md)
 - [Alias-Provider](../../Microsoft.PowerShell.Core/About/about_Alias_Provider.md)
 - [Function-Provider](../../Microsoft.PowerShell.Core/About/about_Function_Provider.md)
 - [Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
