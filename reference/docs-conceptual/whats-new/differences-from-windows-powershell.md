@@ -23,7 +23,10 @@ article is to present the current state of PowerShell and how that is different 
 PowerShell. For a detailed discussion of changes between versions and the addition of new features,
 see the **What's New** articles for each version.
 
-- [What's new in PowerShell 7.x](What-s-New-in-PowerShell-71.md)
+- [What's new in PowerShell 7.3](What-s-New-in-PowerShell-73.md)
+- [What's new in PowerShell 7.2](What-s-New-in-PowerShell-72.md)
+- [What's new in PowerShell 7.1](What-s-New-in-PowerShell-71.md)
+- [What's new in PowerShell 7.0](What-s-New-in-PowerShell-70.md)
 - [What's new in PowerShell 6.x](/previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-core-62?view=powershell-6&preserve-view=true)
 
 ## .NET Framework vs .NET Core
@@ -34,6 +37,17 @@ framework types and methods. As a result, scripts that run on Windows may not ru
 platforms because of the differences in the frameworks. For more information about changes in .NET
 Core, see
 [Breaking changes for migration from .NET Framework to .NET Core](/dotnet/core/compatibility/fx-core).
+
+Each new release of PowerShell is built on a newer version of .NET. There can be breaking changes in
+.NET that affect PowerShell.
+
+- PowerShell 7.3 (preview) - Built on .NET 7.0 (preview)
+- PowerShell 7.2 (LTS-current) - Built on .NET 6.0 (LTS-current)
+- PowerShell 7.1 - Built on .NET 5.0
+- PowerShell 7.0 (LTS) - Built on .NET Core 3.1 (LTS)
+- PowerShell 6.2 - Built on .NET Core 2.1
+- PowerShell 6.1 - Built on .NET Core 2.1
+- PowerShell 6.0 - Built on .NET Core 2.0
 
 With the advent of
 [.NET Standard 2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/), PowerShell can
@@ -439,6 +453,25 @@ class M {
 }
 
 [M]::AggregateString((gci).Name, [M]::DoubleStrLen)
+```
+
+### String comparison behavior changed in PowerShell 7.1
+
+PowerShell 7.1 is built on .NET 5.0, which introduced the following breaking change:
+
+- [Behavior changes when comparing strings on .NET 5+](/dotnet/standard/base-types/string-comparison-net-5-plus)
+
+As of .NET 5.0, culture invariant string comparisons ignore non-printing control characters.
+
+For example, the following two strings are considered to be identical:
+
+```powershell
+# Escape sequence "`a" is Ctrl-G or [char]7
+'Food' -eq "Foo`ad"
+```
+
+```Output
+True
 ```
 
 ## Cmdlet changes
