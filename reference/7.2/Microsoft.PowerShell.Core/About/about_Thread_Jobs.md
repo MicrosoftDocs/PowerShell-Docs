@@ -277,14 +277,14 @@ NPM(K)  PM(M)   WS(M) CPU(s)    Id SI ProcessName
 
 ## See also
 
+- [about_Job_Details](about_Job_Details.md)
 - [about_Remote_Jobs](about_Remote_Jobs.md)
 - [about_Thread_Jobs](about_Thread_Jobs.md)
-- [about_Job_Details](about_Job_Details.md)
-- [about_Remote](about_Remote.md)
 - [about_PSSessions](about_PSSessions.md)
-- [Start-Job](xref:Microsoft.PowerShell.Core.Start-Job)
+- [about_Remote](about_Remote.md)
 - [Get-Job](xref:Microsoft.PowerShell.Core.Get-Job)
 - [Receive-Job](xref:Microsoft.PowerShell.Core.Receive-Job)
+- [Remove-Job](xref:Microsoft.PowerShell.Core.Remove-Job)
+- [Start-Job](xref:Microsoft.PowerShell.Core.Start-Job)
 - [Stop-Job](xref:Microsoft.PowerShell.Core.Stop-Job)
 - [Wait-Job](xref:Microsoft.PowerShell.Core.Wait-Job)
-- [Remove-Job](xref:Microsoft.PowerShell.Core.Remove-Job)

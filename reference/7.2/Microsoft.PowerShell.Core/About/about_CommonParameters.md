@@ -747,12 +747,8 @@ about_Common_Parameters
 
 ## See also
 
-[about_Preference_Variables](about_Preference_Variables.md)
-
-[Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
-
-[Write-Warning](xref:Microsoft.PowerShell.Utility.Write-Warning)
-
-[Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
-
-[Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)
+- [about_Preference_Variables](about_Preference_Variables.md)
+- [Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
+- [Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
+- [Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)
+- [Write-Warning](xref:Microsoft.PowerShell.Utility.Write-Warning)

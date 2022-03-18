@@ -706,13 +706,13 @@ $a -isnot $b.GetType() # Output: True
 
 ## See also
 
+- [about_Booleans](about_Booleans.md)
 - [about_Operators](about_Operators.md)
 - [about_Regular_Expressions](about_Regular_Expressions.md)
 - [about_Wildcards](about_Wildcards.md)
 - [Compare-Object](xref:Microsoft.PowerShell.Utility.Compare-Object)
 - [Foreach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
 - [Where-Object](xref:Microsoft.PowerShell.Core.Where-Object)
-- [about_Booleans](about_Booleans.md)
 
 [1]: /dotnet/api/system.icomparable
 [2]: /dotnet/api/system.iequatable-1

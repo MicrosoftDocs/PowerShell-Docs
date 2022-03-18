@@ -242,12 +242,8 @@ within a `catch` block.
 
 ## See also
 
-[about_Break](about_Break.md)
-
-[about_Continue](about_Continue.md)
-
-[about_Scopes](about_Scopes.md)
-
-[about_Throw](about_Throw.md)
-
-[about_Trap](about_Trap.md)
+- [about_Break](about_Break.md)
+- [about_Continue](about_Continue.md)
+- [about_Scopes](about_Scopes.md)
+- [about_Throw](about_Throw.md)
+- [about_Trap](about_Trap.md)

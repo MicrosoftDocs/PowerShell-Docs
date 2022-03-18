@@ -130,14 +130,9 @@ not only exits the pipeline, it potentially terminates the entire runspace.
 
 ## See also
 
-[about_Break](about_Break.md)
-
-[about_For](about_For.md)
-
-[about_Comparison_Operators](about_Comparison_Operators.md)
-
-[about_Throw](about_Throw.md)
-
-[about_Trap](about_Trap.md)
-
-[about_Try_Catch_Finally](about_Try_Catch_Finally.md)
+- [about_Break](about_Break.md)
+- [about_Comparison_Operators](about_Comparison_Operators.md)
+- [about_For](about_For.md)
+- [about_Throw](about_Throw.md)
+- [about_Trap](about_Trap.md)
+- [about_Try_Catch_Finally](about_Try_Catch_Finally.md)

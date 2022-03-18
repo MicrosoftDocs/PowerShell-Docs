@@ -85,8 +85,6 @@ foreach ($point in $p) {
 
 ## See also
 
-[about_Language_Keywords](about_Language_Keywords.md)
-
-[about_If](about_If.md)
-
-[about_Script_Blocks](about_Script_Blocks.md)
+- [about_If](about_If.md)
+- [about_Language_Keywords](about_Language_Keywords.md)
+- [about_Script_Blocks](about_Script_Blocks.md)

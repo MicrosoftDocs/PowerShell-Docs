@@ -694,24 +694,13 @@ ${a}?[0]
 
 ## See also
 
-[about_Arithmetic_Operators](about_Arithmetic_Operators.md)
-
-[about_Assignment_Operators](about_Assignment_Operators.md)
-
-[about_Comparison_Operators](about_Comparison_Operators.md)
-
-[about_Logical_Operators](about_logical_operators.md)
-
-[about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)
-
-[about_Operator_Precedence](about_operator_precedence.md)
-
-[about_Type_Operators](about_Type_Operators.md)
-
-[about_Pipeline_Chain_Operators](about_Pipeline_Chain_Operators.md)
-
-[about_Split](about_Split.md)
-
-[about_Join](about_Join.md)
-
-[about_Redirection](about_Redirection.md)
+- [about_Arithmetic_Operators](about_Arithmetic_Operators.md)
+- [about_Assignment_Operators](about_Assignment_Operators.md)
+- [about_Comparison_Operators](about_Comparison_Operators.md)
+- [about_Logical_Operators](about_logical_operators.md)
+- [about_Operator_Precedence](about_operator_precedence.md)
+- [about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)
+- [about_Type_Operators](about_Type_Operators.md)
+- [about_Split](about_Split.md)
+- [about_Join](about_Join.md)
+- [about_Redirection](about_Redirection.md)
