@@ -215,5 +215,5 @@ Get-Help Get-ChildItem -Path env:
 
 ## See also
 
-[about_Providers](../About/about_Providers.md)
+[about_Providers](about_Providers.md)
 

@@ -398,18 +398,11 @@ Zone check which avoids the problem.
 
 ## See also
 
-[about_Environment_Variables](about_Environment_Variables.md)
-
-[about_Group_Policy_Settings](about_Group_Policy_Settings.md)
-
-[about_Signing](about_Signing.md)
-
-[Get-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy)
-
-[Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
-
-[about_Pwsh](about_pwsh.md)
-
-[Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
-
-[Unblock-File](xref:Microsoft.PowerShell.Utility.Unblock-File)
+- [about_Environment_Variables](about_Environment_Variables.md)
+- [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
+- [about_Pwsh](about_pwsh.md)
+- [about_Signing](about_Signing.md)
+- [Get-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy)
+- [Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
+- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
+- [Unblock-File](xref:Microsoft.PowerShell.Utility.Unblock-File)

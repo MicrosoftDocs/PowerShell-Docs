@@ -498,16 +498,10 @@ For more information about here-strings, see
 
 ## See also
 
-[about_Arrays](about_Arrays.md)
-
-[about_Object_Creation](about_Object_Creation.md)
-
-[about_Quoting_Rules](about_Quoting_Rules.md)
-
-[about_Script_Internationalization](about_Script_Internationalization.md)
-
-[ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
-
-[Import-LocalizedData](xref:Microsoft.PowerShell.Utility.Import-LocalizedData)
-
-[System.Collections.Hashtable](/dotnet/api/system.collections.hashtable)
+- [about_Arrays](about_Arrays.md)
+- [about_Object_Creation](about_Object_Creation.md)
+- [about_Quoting_Rules](about_Quoting_Rules.md)
+- [about_Script_Internationalization](about_Script_Internationalization.md)
+- [Import-LocalizedData](xref:Microsoft.PowerShell.Utility.Import-LocalizedData)
+- [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
+- [System.Collections.Hashtable](/dotnet/api/system.collections.hashtable)

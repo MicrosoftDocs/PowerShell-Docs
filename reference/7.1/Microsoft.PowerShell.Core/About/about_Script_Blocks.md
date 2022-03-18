@@ -188,9 +188,6 @@ Notes on **delay-bind** script blocks as parameters:
 
 ## See also
 
-[about_Functions](about_Functions.md)
-
-[about_Functions_Advanced](about_Functions_Advanced.md)
-
-[about_Operators](about_Operators.md)
-
+- [about_Functions](about_Functions.md)
+- [about_Functions_Advanced](about_Functions_Advanced.md)
+- [about_Operators](about_Operators.md)

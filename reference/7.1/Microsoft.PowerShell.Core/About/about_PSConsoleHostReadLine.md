@@ -49,7 +49,6 @@ issue. When you define a function named PSConsoleHostReadline in the PowerShell
 console host, PowerShell calls that function instead of the "Cooked Mode" input
 mechanism.
 
-### SEE ALSO
+## See Also
 
-[about_Prompts](about_Prompts.md)
-
+- [about_Prompts](about_Prompts.md)

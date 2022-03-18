@@ -507,10 +507,7 @@ LastName, FirstName
 
 ## See also
 
-[Split-Path](xref:Microsoft.PowerShell.Management.Split-Path)
-
-[about_Operators](about_Operators.md)
-
-[about_Comparison_Operators](about_Comparison_Operators.md)
-
-[about_Join](about_Join.md)
+- [Split-Path](xref:Microsoft.PowerShell.Management.Split-Path)
+- [about_Operators](about_Operators.md)
+- [about_Comparison_Operators](about_Comparison_Operators.md)
+- [about_Join](about_Join.md)

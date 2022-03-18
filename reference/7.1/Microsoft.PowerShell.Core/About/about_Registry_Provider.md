@@ -588,4 +588,4 @@ Get-Help Get-ChildItem -Path HKLM:
 
 ## See also
 
-[about_Providers](../About/about_Providers.md)
+[about_Providers](about_Providers.md)

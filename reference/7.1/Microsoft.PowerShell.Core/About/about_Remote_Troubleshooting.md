@@ -858,14 +858,9 @@ instructions.
 
 ## See also
 
-[Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
-
-[Export-PSSession](xref:Microsoft.PowerShell.Utility.Export-PSSession)
-
-[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
-
-[about_Remote](about_Remote.md)
-
-[about_Remote_Requirements](about_Remote_Requirements.md)
-
-[about_Remote_Variables](about_Remote_Variables.md)
+- [about_Remote](about_Remote.md)
+- [about_Remote_Requirements](about_Remote_Requirements.md)
+- [about_Remote_Variables](about_Remote_Variables.md)
+- [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
+- [Export-PSSession](xref:Microsoft.PowerShell.Utility.Export-PSSession)
+- [Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
