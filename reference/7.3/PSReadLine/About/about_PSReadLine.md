@@ -1739,5 +1739,5 @@ Feel free to submit a pull request or submit feedback on the GitHub page.
 
 ## See Also
 
-PSReadLine is heavily influenced by the GNU
-[readline](https://tiswww.case.edu/php/chet/readline/rltop.html) library.
+- PSReadLine is heavily influenced by the GNU
+  [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) library.

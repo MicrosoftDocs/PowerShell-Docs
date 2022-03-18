@@ -353,5 +353,5 @@ For more information, see
 ## See also
 
 - [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
-- [Register-ArgumentCompleter](xref:Microsoft.PowerShell.Core.Register-ArgumentCompleter)
 - [about_Tab_Expansion](about_Tab_Expansion.md)
+- [Register-ArgumentCompleter](xref:Microsoft.PowerShell.Core.Register-ArgumentCompleter)
