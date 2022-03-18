@@ -150,11 +150,7 @@ rides         Property     int rides {get;set;}
 
 ## See also
 
-[about_Classes](about_Classes.md)
-
-[about_Language_Keywords](about_Language_Keywords.md)
-
-[about_Wildcards](about_Wildcards.md)
-
-[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
-
+- [about_Classes](about_Classes.md)
+- [about_Language_Keywords](about_Language_Keywords.md)
+- [about_Wildcards](about_Wildcards.md)
+- [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)

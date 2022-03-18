@@ -527,11 +527,11 @@ right operand determine how many bits of the left operand are shifted.
 
 ## See also
 
-- [about_arrays](about_Arrays.md)
-- [about_assignment_operators](about_Assignment_Operators.md)
-- [about_comparison_operators](about_Comparison_Operators.md)
-- [about_hash_tables](about_Hash_Tables.md)
-- [about_operators](about_Operators.md)
-- [about_variables](about_Variables.md)
+- [about_Arrays](about_Arrays.md)
+- [about_Hash_Tables](about_Hash_Tables.md)
+- [about_Operators](about_Operators.md)
+- [about_Assignment_Operators](about_Assignment_Operators.md)
+- [about_Comparison_Operators](about_Comparison_Operators.md)
+- [about_Variables](about_Variables.md)
 - [Get-Date](xref:Microsoft.PowerShell.Utility.Get-Date)
 - [New-TimeSpan](xref:Microsoft.PowerShell.Utility.New-TimeSpan)
