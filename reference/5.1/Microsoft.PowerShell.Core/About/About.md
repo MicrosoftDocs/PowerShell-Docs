@@ -2,7 +2,7 @@
 description: About topics cover a ranges of concepts about PowerShell.
 Help Version: 6.0
 Locale: en-US
-ms.date: 10/22/2021
+ms.date: 03/18/2022
 title: About topics
 ---
 # About topics
@@ -72,9 +72,6 @@ Provides a brief introduction to the PowerShell Desired State Configuration (DSC
 
 ### [about_Do](about_Do.md)
 Runs a statement list one or more times, subject to a While or Until condition.
-
-### [about_dsclogresource](about_dsclogresource.md)
-Provides a brief introduction to the PowerShell Desired State Configuration (DSC) Log Resource.
 
 ### [about_Enum](about_Enum.md)
 The `enum` statement is used to declare an enumeration. An enumeration is a distinct type that consists of a set of named labels called the enumerator list.
