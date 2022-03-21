@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 02/14/2022
+ms.date: 03/21/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
@@ -646,7 +646,7 @@ Configures sessions that use this session configuration to expose the `User:` PS
 are unique for each connecting user and allow users to copy data to and from PowerShell endpoints
 even if the File System provider is not exposed. User drive roots are created under
 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`. For each user connecting to the
-endpoint, a folder is created with the name `$env:USERDOMAIN_$env:USERNAME`. For computers in
+endpoint, a folder is created with the name `${env:USERDOMAIN}_${env:USERNAME}`. For computers in
 workgroups, the value of `$env:USERDOMAIN` is the hostname.
 
 Contents in the user drive persist across user sessions and are not automatically removed. By
