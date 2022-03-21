@@ -1,6 +1,6 @@
 ### YamlMime:FAQ
 metadata:
-  ms.date: 09/30/2021
+  ms.date: 03/21/2022
   title:  Microsoft Update for PowerShell FAQ
   description: Frequently asked questions about the using Microsoft Update to update PowerShell
   ms.topic: faq
@@ -13,19 +13,38 @@ summary: |
 sections:
   - name: General Information
     questions:
+      - question: What is the Microsoft Update feature in PowerShell?
+        answer: |
+          "The Microsoft Update feature of PowerShell allows you to get the latest PowerShell 7
+          updates in your traditional Microsoft Update (MU) management flow, whether that's with
+          Windows Update for Business, WSUS, Microsoft Endpoint Configuration Manager, or the
+          interactive MU dialog in Settings. Microsoft Update and the related services enable you to
+          deploy updates:"
+
+          - On your schedule
+          - After testing for your environment
+          - At scale across your enterprise
+
+      - question: How soon after release are updates advertised by Microsoft Update?
+        answer: |
+          When a new version of PowerShell is released, it can take up to two weeks for that version
+          to become available through Microsoft Update. Updates are delivered as optional software
+          updates, even if the update contains a security fix.
+
+          If you need to deploy the update before it becomes available in Microsoft Update, download
+          the update from the [Releases](https://github.com/PowerShell/PowerShell/releases) page on
+          GitHub.
+
+  - name: Configuration
+    questions:
       - question: What version of Windows is required to support the Microsoft Update feature?
         answer: |
           You must have Windows 10 RS3 (10.0.16299) or newer installed.
 
-      - question: How soon after release are updates advertised by Microsoft Update?
-        answer: |
-          When a new version of PowerShell is released, it can take up to two weeks for that version to
-          become available through Microsoft Update. Updates are delivered as optional software
-          updates, even if the update contains a security fix.
-
       - question: Do I need to check both boxes in the setup dialog?
         answer: |
-          While the two options on the dialog are independent, in most cases, it's best to check both boxes.
+          While the two options on the dialog are independent, in most cases, it's best to check
+          both boxes.
 
           ![PowerShell setup - Microsoft Update dialog](./media/microsoft-update-faq/ps-msupdate-msi.png)
 
@@ -42,18 +61,19 @@ sections:
 
       - question: What if I want to opt-out later?
         answer: |
-          If you want to opt-out of updates later, you can run the MSI install package and uncheck the first checkbox. Unchecking the second checkbox has no effect.
+          If you want to opt-out of updates later, you can run the MSI install package and uncheck
+          the first checkbox. Unchecking the second checkbox has no effect.
 
       - question: Can I enable these update options from the command line or in a script?
         answer: |
           Yes. The MSI package includes two new MSI options for enabling the update features:
 
-          * `USE_MU` - This property has two possible values:
-          * `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
-          * `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
-          * `ENABLE_MU`
-            * `1` (default) - Opts into using Microsoft Update for Automatic Updates
-            * `0` - Do not opt into using Microsoft Update
+          - `USE_MU` - This property has two possible values:
+          - `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
+          - `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
+          - `ENABLE_MU`
+            - `1` (default) - Opts into using Microsoft Update for Automatic Updates
+            - `0` - Do not opt into using Microsoft Update
 
           > [!NOTE]
           > Setting `ENABLE_MU=0` does not disable Microsoft Update.
@@ -64,10 +84,11 @@ sections:
         answer: |
           There can be several reasons for not receiving the update:
 
-          * We may not have published the update yet. Our goal is to make the update available to
+          - We may not have published the update yet. Our goal is to make the update available to
             Microsoft Update within two weeks of release, but there is no guarantee for that
             availability.
-          * Make sure you have checked both checkboxes. Do a repair install using the MSI to ensure
+          - Make sure you have checked both checkboxes. Do a repair install using the MSI to ensure
             that both checkboxes are checked.
-          * There are group policy settings that control Microsoft Update. Your system administrator
-            may have policies set that prevent you from using Microsoft Update. The checkbox in the installer cannot override the Group Policy.
+          - There are group policy settings that control Microsoft Update. Your system administrator
+            may have policies set that prevent you from using Microsoft Update. The checkbox in the
+            installer cannot override the Group Policy.
