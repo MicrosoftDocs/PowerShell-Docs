@@ -15,11 +15,11 @@ sections:
     questions:
       - question: What is the Microsoft Update feature in PowerShell?
         answer: |
-          "The Microsoft Update feature of PowerShell allows you to get the latest PowerShell 7
+          The Microsoft Update feature of PowerShell allows you to get the latest PowerShell 7
           updates in your traditional Microsoft Update (MU) management flow, whether that's with
           Windows Update for Business, WSUS, Microsoft Endpoint Configuration Manager, or the
           interactive MU dialog in Settings. Microsoft Update and the related services enable you to
-          deploy updates:"
+          deploy updates:
 
           - On your schedule
           - After testing for your environment
