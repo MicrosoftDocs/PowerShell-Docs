@@ -3,7 +3,7 @@
     {
       "source_path": "reference/docs-conceptual/dev-cross-plat/create-help-using-platyps.md",
       "redirect_url": "/powershell/utility-modules/platyps/create-help-using-platyps",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "reference/docs-conceptual/install/Installing-PowerShell-Core-on-Linux.md",
