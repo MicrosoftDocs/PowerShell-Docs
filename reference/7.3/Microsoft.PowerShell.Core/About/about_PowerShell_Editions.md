@@ -1,7 +1,7 @@
 ---
 description: Different editions of PowerShell run on different underlying runtimes.
 Locale: en-US
-ms.date: 11/01/2021
+ms.date: 03/23/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_editions?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PowerShell Editions
@@ -55,10 +55,10 @@ $PSVersionTable
 ```Output
 Name                           Value
 ----                           -----
-PSVersion                      7.2.0
+PSVersion                      7.3.0-preview.3
 PSEdition                      Core
-GitCommitId                    7.2.0
-OS                             Microsoft Windows 10.0.19043
+GitCommitId                    7.3.0-preview.3
+OS                             Microsoft Windows 10.0.22000
 Platform                       Win32NT
 PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
 PSRemotingProtocolVersion      2.3
