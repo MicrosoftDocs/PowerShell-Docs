@@ -27,9 +27,9 @@ run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview releas
 Download the tar.gz package from the [releases][releases] page onto your Raspberry Pi computer. The
 links to the current versions are:
 
-- PowerShell 7.2.1 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.1/powershell-7.2.1-linux-arm32.tar.gz`
-- PowerShell 7.1.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-linux-arm32.tar.gz`
-- PowerShell 7.0.8 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-7.0.8-linux-arm32.tar.gz`
+- PowerShell 7.2.2 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.2/powershell-7.2.2-linux-arm32.tar.gz`
+- PowerShell 7.1.6 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.6/powershell-7.1.6-linux-arm32.tar.gz`
+- PowerShell 7.0.9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.9/powershell-7.0.9-linux-arm32.tar.gz`
 
 Use the following shell commands to download and install the package. Change the URL to match the
 PowerShell version that you want to install.
@@ -49,13 +49,13 @@ sudo apt-get install '^libssl1.0.[0-9]$' libunwind8 -y
 # Download and extract PowerShell
 
 # Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v7.2.1/powershell-7.2.1-linux-arm32.tar.gz
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.2.2/powershell-7.2.2-linux-arm32.tar.gz
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-7.2.1-linux-arm32.tar.gz -C ~/powershell
+tar -xvf ./powershell-7.2.2-linux-arm32.tar.gz -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
