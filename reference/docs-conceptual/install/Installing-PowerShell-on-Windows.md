@@ -154,10 +154,10 @@ winget search Microsoft.PowerShell
 ```
 
 ```Output
-Name               Id                           Version  Source
-----------------------------------------------------------------
-PowerShell         Microsoft.PowerShell         7.2.0.0  winget
-Powershell Preview Microsoft.PowerShell.Preview 7.2.0.10 winget
+Name               Id                           Version Source
+---------------------------------------------------------------
+PowerShell         Microsoft.PowerShell         7.2.2.0 winget
+PowerShell Preview Microsoft.PowerShell.Preview 7.3.0.2 winget
 ```
 
 Install Powershell or Powershell Preview using the `id` parameter
