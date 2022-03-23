@@ -54,21 +54,21 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Do
 package from the [releases][releases] page onto the Ubuntu machine. The link to the current
 version is:
 
-- PowerShell 7.2.1 (universal package) for any support version of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.1/powershell-lts_7.2.1-1.deb_amd64.deb`
-- PowerShell 7.1.5
-  - Ubuntu 20.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell_7.1.5-1.ubuntu.20.04_amd64.deb`
-  - Ubuntu 18.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell_7.1.5-1.ubuntu.18.04_amd64.deb`
-- PowerShell 7.0.8
-  - Ubuntu 20.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-lts_7.0.8-1.ubuntu.20.04_amd64.deb`
-  - Ubuntu 18.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.8/powershell-lts_7.0.8-1.ubuntu.18.04_amd64.deb`
+- PowerShell 7.2.2 (universal package) for any support version of Ubuntu
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.2/powershell-lts_7.2.2-1.deb_amd64.deb`
+- PowerShell 7.1.6
+  - Ubuntu 20.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.6/powershell_7.1.6-1.ubuntu.20.04_amd64.deb`
+  - Ubuntu 18.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.6/powershell_7.1.6-1.ubuntu.18.04_amd64.deb`
+- PowerShell 7.0.9
+  - Ubuntu 20.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.9/powershell-lts_7.0.9-1.ubuntu.20.04_amd64.deb`
+  - Ubuntu 18.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.9/powershell-lts_7.0.9-1.ubuntu.18.04_amd64.deb`
 
 Use the following shell commands to install the package. Change the filename of the package to match
 the version you downloaded.
 
 ```sh
 # Install the downloaded package
-sudo dpkg -i powershell-lts_7.2.1-1.deb_amd64.deb
+sudo dpkg -i powershell-lts_7.2.2-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f
