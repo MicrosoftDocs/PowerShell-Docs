@@ -55,9 +55,9 @@ $PSVersionTable
 ```Output
 Name                           Value
 ----                           -----
-PSVersion                      7.3.0-preview.2
+PSVersion                      7.3.0-preview.3
 PSEdition                      Core
-GitCommitId                    7.3.0-preview.2
+GitCommitId                    7.3.0-preview.3
 OS                             Microsoft Windows 10.0.22000
 Platform                       Win32NT
 PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
