@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/18/2019
+ms.date: 03/24/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-timezone?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-TimeZone
@@ -42,27 +42,28 @@ The `Set-TimeZone` cmdlet sets the system time zone to a specified time zone.
 
 ### Example 1: Set the time zone by Id
 
-This example sets the time zone on the local computer to Central European Standard Time.
+This example sets the time zone on the local computer to UTC.
 
 ```powershell
-Set-TimeZone -Id "Central European Standard Time" -PassThru
+Set-TimeZone -Name 'Coordinated Universal Time' -PassThru
 ```
 
 ```Output
-Id                         : Central European Standard Time
-DisplayName                : (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague
-StandardName               : Central Europe Standard Time
-DaylightName               : Central Europe Daylight Time
-BaseUtcOffset              : 01:00:00
-SupportsDaylightSavingTime : True
+Id                         : UTC
+HasIanaId                  : True
+DisplayName                : (UTC) Coordinated Universal Time
+StandardName               : Coordinated Universal Time
+DaylightName               : Coordinated Universal Time
+BaseUtcOffset              : 00:00:00
+SupportsDaylightSavingTime : False
 ```
 
 ### Example 2: Set the time zone by name
 
-This example sets the time zone on the local computer to Central European Standard Time.
+This example sets the time zone on the local computer to UTC.
 
 ```powershell
-Set-TimeZone -Name "Central European Standard Time"
+Set-TimeZone -Name "UTC"
 ```
 
 As we saw in the previous example, the **Id** and the **Name** of the Time Zone do not always match.
