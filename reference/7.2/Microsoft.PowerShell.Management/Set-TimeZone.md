@@ -42,27 +42,27 @@ The `Set-TimeZone` cmdlet sets the system time zone to a specified time zone.
 
 ### Example 1: Set the time zone by Id
 
-This example sets the time zone on the local computer to Russian Standard Time.
+This example sets the time zone on the local computer to Central European Standard Time.
 
 ```powershell
-Set-TimeZone -Id "Russian Standard Time" -PassThru
+Set-TimeZone -Id "Central European Standard Time" -PassThru
 ```
 
 ```Output
-Id                         : Russian Standard Time
-DisplayName                : (UTC+03:00) Moscow, St. Petersburg
-StandardName               : Russia TZ 2 Standard Time
-DaylightName               : Russia TZ 2 Daylight Time
-BaseUtcOffset              : 03:00:00
+Id                         : Central European Standard Time
+DisplayName                : (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague
+StandardName               : Central Europe Standard Time
+DaylightName               : Central Europe Daylight Time
+BaseUtcOffset              : 01:00:00
 SupportsDaylightSavingTime : True
 ```
 
 ### Example 2: Set the time zone by name
 
-This example sets the time zone on the local computer to Russian Standard Time.
+This example sets the time zone on the local computer to Central European Standard Time.
 
 ```powershell
-Set-TimeZone -Name "Russia TZ 2 Standard Time"
+Set-TimeZone -Name "Central European Standard Time"
 ```
 
 As we saw in the previous example, the **Id** and the **Name** of the Time Zone do not always match.
