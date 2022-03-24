@@ -17,11 +17,6 @@ installing, check the list of [Supported versions](#supported-versions) below.
 
 Debian uses APT (Advanced Package Tool) as a package manager.
 
-## Debian 10
-
-> [!NOTE]
-> Debian 10 is only supported in PowerShell 7.0 and newer.
-
 ## Installation via direct download
 
 PowerShell 7.2 introduced a universal package that makes installation easier. Download the universal
