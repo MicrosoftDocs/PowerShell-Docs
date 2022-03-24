@@ -36,6 +36,29 @@ version is:
   - Debian 10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.9/powershell-lts_7.0.9-1.debian.10_amd64.deb`
   - Debian 9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.9/powershell-lts_7.0.9-1.debian.9_amd64.deb`
 
+## Installation on Debian 11 via Package Repository
+
+PowerShell for Linux is published to package repositories for easy installation and updates.
+
+The preferred method is as follows:
+
+```sh
+# Install system components
+sudo apt update  && sudo apt install -y curl gnupg apt-transport-https
+
+# Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+# Register the Microsoft Product feed
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main" > /etc/apt/sources.list.d/microsoft.list'
+
+# Install PowerShell
+sudo apt update && sudo apt install -y powershell
+
+# Start PowerShell
+pwsh
+```
+
 ## Installation on Debian 10 via Package Repository
 
 PowerShell for Linux is published to package repositories for easy installation and updates.
