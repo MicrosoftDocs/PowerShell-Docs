@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/28/2022
+ms.date: 03/25/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -272,7 +272,7 @@ Accept wildcard characters: False
 ### -Authentication
 
 Specifies the explicit authentication type to use for the request. The default is **None**.
-**Authentication** can't be used with **UseDefaultCredentials**.
+The **Authentication** parameter can't be used with the **UseDefaultCredentials** parameter.
 
 Available Authentication Options:
 
@@ -280,12 +280,12 @@ Available Authentication Options:
   authentication will be used.
 - `Basic`: Requires **Credential**. The credentials will be used to send an RFC 7617 Basic
   Authentication `Authorization: Basic` header in the format of `base64(user:password)`.
-- `Bearer`: Requires **Token**. Will send and RFC 6750 `Authorization: Bearer` header with the
-  supplied token. This is an alias for **OAuth**
-- `OAuth`: Requires **Token**. Will send an RFC 6750 `Authorization: Bearer` header with the
-  supplied token. This is an alias for **Bearer**
+- `Bearer`: Requires the **Token** parameter. Sends an RFC 6750 `Authorization: Bearer` header with
+  the supplied token.
+- `OAuth`: Requires the **Token** parameter. Sends an RFC 6750 `Authorization: Bearer` header with
+  the supplied token.
 
-Supplying **Authentication** will override any `Authorization` headers supplied to **Headers** or
+Supplying **Authentication** overrides any `Authorization` headers supplied to **Headers** or
 included in **WebSession**.
 
 This feature was added in PowerShell 6.0.0.

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/24/2022
+ms.date: 03/25/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -311,18 +311,18 @@ Accept wildcard characters: False
 ### -Authentication
 
 Specifies the explicit authentication type to use for the request. The default is **None**.
-**Authentication** cannot be used with **UseDefaultCredentials**.
+The **Authentication** parameter can't be used with the **UseDefaultCredentials** parameter.
 
 Available Authentication Options:
 
-- `None`: This is the default option when **Authentication** isn't supplied; no explicit
-  authentication is used.
-- `Basic`: Requires **Credential**. The credentials are sent in an RFC 7617 Basic Authentication
-  header in the format of `base64(user:password)`.
-- `Bearer`: Requires **Token**. Sends an RFC 6750 `Authorization: Bearer` header with the supplied
-  token. This is an alias for **OAuth**
-- `OAuth`: Requires **Token**. Sends an RFC 6750 `Authorization: Bearer` header with the supplied
-  token. This is an alias for **Bearer**
+- `None`: This is the default option when **Authentication** is not supplied. No explicit
+  authentication will be used.
+- `Basic`: Requires **Credential**. The credentials will be used to send an RFC 7617 Basic
+  Authentication `Authorization: Basic` header in the format of `base64(user:password)`.
+- `Bearer`: Requires the **Token** parameter. Sends an RFC 6750 `Authorization: Bearer` header with
+  the supplied token.
+- `OAuth`: Requires the **Token** parameter. Sends an RFC 6750 `Authorization: Bearer` header with
+  the supplied token.
 
 Supplying **Authentication** overrides any `Authorization` headers supplied to **Headers** or
 included in **WebSession**.
