@@ -281,9 +281,9 @@ Available Authentication Options:
 - `Basic`: Requires **Credential**. The credentials will be used to send an RFC 7617 Basic
   Authentication `Authorization: Basic` header in the format of `base64(user:password)`.
 - `Bearer`: Requires **Token**. Will send and RFC 6750 `Authorization: Bearer` header with the
-  supplied token. This is an alias for **OAuth**
-- `OAuth`: Requires **Token**. Will send an RFC 6750 `Authorization: Bearer` header with the
   supplied token. This is an alias for **Bearer**
+- `OAuth`: Requires **Token**. Will send an RFC 6750 `Authorization: Bearer` header with the
+  supplied token. This is an alias for **OAuth**
 
 Supplying **Authentication** will override any `Authorization` headers supplied to **Headers** or
 included in **WebSession**.
