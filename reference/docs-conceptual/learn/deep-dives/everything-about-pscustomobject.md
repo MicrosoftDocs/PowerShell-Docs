@@ -59,6 +59,8 @@ hashtable first. This example works because the constructor takes a hashtable fo
 properties. One important note is that while this method works, it isn't an exact equivalent. The
 biggest difference is that the order of the properties isn't preserved.
 
+If you want to preserve the order, see [Ordered hashtables](#ordered-hashtables) below.
+
 ### Legacy approach
 
 You may have seen people use `New-Object` to create custom objects.
