@@ -526,16 +526,20 @@ items:
             href: dev-cross-plat/performance/script-authoring-considerations.md
           - name: Module performance considerations
             href: dev-cross-plat/performance/module-authoring-considerations.md
-      - name: Writing portable modules
-        href: dev-cross-plat/writing-portable-modules.md
-      - name: Creating module help using PlatyPS
-        href: /powershell/utility-modules/platyps/create-help-using-platyps
-      - name: How to create a Standard Library binary module
-        href: dev-cross-plat/create-standard-library-binary-module.md
-      - name: Choosing the right NuGet package for your .NET project
-        href: dev-cross-plat/choosing-the-right-nuget-package.md
-      - name: Resolving module assembly dependency conflicts
-        href: dev-cross-plat/resolving-dependency-conflicts.md
+      - name: Developing modern modules
+        items:
+          - name: Writing portable modules
+            href: dev-cross-plat/writing-portable-modules.md
+          - name: How to create a Standard Library binary module
+            href: dev-cross-plat/create-standard-library-binary-module.md
+          - name: Choosing the right NuGet package for your .NET project
+            href: dev-cross-plat/choosing-the-right-nuget-package.md
+          - name: Resolving module assembly dependency conflicts
+            href: dev-cross-plat/resolving-dependency-conflicts.md
+          - name: Creating a command-line predictor
+            href: dev-cross-plat/create-cmdline-predictor.md
+          - name: Creating module help using PlatyPS
+            href: /powershell/utility-modules/platyps/create-help-using-platyps
       - name: PowerShell Language Specification 3.0
         items:
           - name: 1. Introduction
