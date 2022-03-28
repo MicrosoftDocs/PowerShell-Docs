@@ -11,8 +11,8 @@ that allows you create your own command-line predictors.
 
 Predictive IntelliSense enhances tab completion by providing suggestions, on the command line, as
 you type. The prediction suggestion appears as colored text following your cursor. This enables you
-to discover, edit, and execute full commands based on matching predictions from the user's history
-or additional domain-specific plugins.
+to discover, edit, and execute full commands based on matching predictions from your command
+history or additional domain-specific plugins.
 
 ## System requirements
 
@@ -39,7 +39,7 @@ The following diagram shows the architecture of a predictor in PowerShell.
 To create a predictor, you must have the .NET 6 SDK installed for your platform. For more
 information on the SDK, see [Download .NET 6.0](https://dotnet.microsoft.com/download/dotnet/6.0).
 
-Create a new PowerShell module project using the following commands:
+Create a new PowerShell module project by following these steps:
 
 Use the `dotnet` command-line tool to create a starter classlib project.
 
