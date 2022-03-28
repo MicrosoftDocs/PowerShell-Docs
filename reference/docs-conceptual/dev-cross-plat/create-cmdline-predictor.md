@@ -39,9 +39,9 @@ The following diagram shows the architecture of a predictor in PowerShell.
 To create a predictor, you must have the .NET 6 SDK installed for your platform. For more
 information on the SDK, see [Download .NET 6.0](https://dotnet.microsoft.com/download/dotnet/6.0).
 
-1. Create a new PowerShell module project by following these steps:
+Create a new PowerShell module project by following these steps:
 
-   Use the `dotnet` command-line tool to create a starter classlib project.
+1. Use the `dotnet` command-line tool to create a starter classlib project.
 
    ```powershell
    dotnet new classlib --name SamplePredictor
