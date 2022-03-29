@@ -72,7 +72,7 @@ The **Name** parameter must match the **StandardName** or **DaylightName** prope
 
 > [!NOTE]
 > The time zone names can vary based on the Culture settings in Windows. This example shows the
-> values for system set to `en-US`.
+> values for a system set to `en-US`.
 
 ### Example 3 - List all available time zones
 
