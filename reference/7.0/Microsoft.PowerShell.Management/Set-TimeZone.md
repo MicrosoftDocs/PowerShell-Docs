@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/24/2022
+ms.date: 03/29/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-timezone?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-TimeZone
@@ -45,7 +45,7 @@ The `Set-TimeZone` cmdlet sets the system time zone to a specified time zone.
 This example sets the time zone on the local computer to UTC.
 
 ```powershell
-Set-TimeZone -Name 'Coordinated Universal Time' -PassThru
+Set-TimeZone -Id "UTC"
 ```
 
 ```Output
@@ -62,19 +62,30 @@ SupportsDaylightSavingTime : False
 This example sets the time zone on the local computer to UTC.
 
 ```powershell
-Set-TimeZone -Name "UTC"
+Set-TimeZone -Name 'Coordinated Universal Time' -PassThru
 ```
 
 As we saw in the previous example, the **Id** and the **Name** of the Time Zone do not always match.
 The **Name** parameter must match the **StandardName** or **DaylightName** properties of the
 **TimeZoneInfo** object.
 
+> [!NOTE]
+> The time zone names can vary based on the Culture settings in Windows. This example shows the
+> values for system set to `en-US`.
+
+### Example 3 - List all available time zones
+
+A full list of Time Zone IDs can be obtained by running the following command:
+
+```powershell
+Get-TimeZone -ListAvailable
+```
+
 ## PARAMETERS
 
 ### -Id
 
-Specifies the ID of the time zone that this cmdlet sets. A full list of Time Zone IDs can be
-obtained by running the following command: `Get-TimeZone -ListAvailable`.
+Specifies the ID of the time zone that this cmdlet sets.
 
 ```yaml
 Type: System.String
