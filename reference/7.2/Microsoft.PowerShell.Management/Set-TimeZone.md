@@ -45,7 +45,7 @@ The `Set-TimeZone` cmdlet sets the system time zone to a specified time zone.
 This example sets the time zone on the local computer to UTC.
 
 ```powershell
-Set-TimeZone -Name 'Coordinated Universal Time' -PassThru
+Set-TimeZone -Name 'Co-ordinated Universal Time' -PassThru
 ```
 
 ```Output
@@ -63,7 +63,7 @@ SupportsDaylightSavingTime : False
 This example sets the time zone on the local computer to UTC.
 
 ```powershell
-Set-TimeZone -Name "UTC"
+Set-TimeZone -Id "UTC"
 ```
 
 As we saw in the previous example, the **Id** and the **Name** of the Time Zone do not always match.
