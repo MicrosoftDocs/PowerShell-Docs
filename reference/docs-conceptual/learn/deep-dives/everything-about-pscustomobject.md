@@ -1,20 +1,20 @@
 ---
 description: PSCustomObject is a simple way to create structured data.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/05/2021
+ms.date: 03/30/2022
 title: Everything you wanted to know about PSCustomObject
 ---
 # Everything you wanted to know about PSCustomObject
 
-`PSCustomObject`s are a great tool to add into your PowerShell tool belt. Let's start with the basics
+`PSCustomObject` is a great tool to add into your PowerShell tool belt. Let's start with the basics
 and work our way into the more advanced features. The idea behind using a `PSCustomObject` is to
 have a simple way to create structured data. Take a look at the first example and you'll have a
 better idea of what that means.
 
 > [!NOTE]
-> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
-> PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][PowerShellExplained.com].
+> The [original version][original version] of this article appeared on the blog written by
+> [@KevinMarquette][@KevinMarquette]. The PowerShell team thanks Kevin for sharing this content with
+> us. Please check out his blog at [PowerShellExplained.com][PowerShellExplained.com].
 
 ## Creating a PSCustomObject
 
@@ -59,7 +59,8 @@ hashtable first. This example works because the constructor takes a hashtable fo
 properties. One important note is that while this method works, it isn't an exact equivalent. The
 biggest difference is that the order of the properties isn't preserved.
 
-If you want to preserve the order, see [Ordered hashtables](#ordered-hashtables) below.
+If you want to preserve the order, see
+[Ordered hashtables](everything-about-hashtable.md#ordered-hashtables).
 
 ### Legacy approach
 
@@ -111,8 +112,8 @@ $myObject.psobject.properties.remove('ID')
 ```
 
 The `.psobject` is an intrinsic member that gives you access to base object metadata. For more
-information about intrinsic members, see [about_Intrinsic_Members](/powershell/module/microsoft.powershell.core/about/about_intrinsic_members).
-+
+information about intrinsic members, see
+[about_Intrinsic_Members](/powershell/module/microsoft.powershell.core/about/about_intrinsic_members).
 
 ### Enumerating property names
 
@@ -265,9 +266,10 @@ people do it:
 $myObject.PSObject.TypeNames.Insert(0,"My.Object")
 ```
 
-I recently discovered another way to do this from this [post by /u/markekraus][post by /u/markekraus]. I did a little
-digging and more posts about the idea from [Adam Bertram][Adam Bertram] and [Mike Shepard][Mike Shepard] where they talk
-about this approach that allows you to define it inline.
+I recently discovered another way to do this from this
+[post by /u/markekraus][post by /u/markekraus]. I did a little digging and more posts about the idea
+from [Adam Bertram][Adam Bertram] and [Mike Shepard][Mike Shepard] where they talk about this
+approach that allows you to define it inline.
 
 ```powershell
 $myObject = [PSCustomObject]@{
@@ -288,9 +290,9 @@ name, we can do some more things.
 ## Using DefaultPropertySet (the long way)
 
 PowerShell decides for us what properties to display by default. A lot of the native commands have a
-`.ps1xml` [formatting file][formatting file] that does all the heavy lifting. From this [post by Boe Prox][post by Boe Prox],
-there's another way for us to do this on our custom object using just PowerShell. We can give it a
-`MemberSet` for it to use.
+`.ps1xml` [formatting file][formatting file] that does all the heavy lifting. From this
+[post by Boe Prox][post by Boe Prox], there's another way for us to do this on our custom object
+using just PowerShell. We can give it a `MemberSet` for it to use.
 
 ```powershell
 $defaultDisplaySet = 'Name','Language'
