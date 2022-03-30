@@ -341,7 +341,10 @@ Accept wildcard characters: False
 
 ### -SecurityDescriptorSddl
 
-Specifies the **SecurityDescriptor** for the service in **Sddl** format.
+Specifies the **SecurityDescriptor** for the service in **Sddl** format. The account calling
+`Set-Service` with this parameter must have the WRITE_DAC and WRITE_OWNER permissions. For more
+information, see
+[Service security and access rights](/windows/win32/services/service-security-and-access-rights).
 
 ```yaml
 Type: System.String
