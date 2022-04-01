@@ -1,0 +1,44 @@
+name: Targeting Valid Branch
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - synchronize
+jobs:
+  Test:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    if: github.base_ref == 'live'
+    steps:
+      - name: Authorized to Target Live Branch
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          $Query = @'
+          query author_collaborator_permission($owner: String!, $repo: String!, $actor: String!) {
+            repository(owner: $owner, name: $repo) {
+              collaborators(query: $actor) {
+                edges {
+                  permission
+                }
+              }
+            }
+          }
+          '@
+          $ApiParameters = @(
+            'api', 'graphql'
+            '-F', "owner=${{ github.event.pull_request.base.repo.owner.login}}"
+            '-F', "repo=${{ github.event.pull_request.base.repo.name }}"
+            '-F', "actor=${{ github.event.pull_request.user.login }}"
+            '-f', "query=$Query"
+            '--jq', '.data.repository.collaborators.edges[].permission'
+          )
+          [string[]]$Permissions = gh @ApiParameters
+          if ($Permissions -notcontains 'MAINTAIN' -and $Permissions -notcontains 'ADMIN') {
+            throw "Author does not have permissions to target ${{ github.base_ref }}"
+          } else {
+            echo "Author has permissions to target ${{ github.base_ref }}"
+          }
