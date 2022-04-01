@@ -23,7 +23,7 @@ New Content
   - New docs for Crescendo release
     - [Install Crescendo](/powershell/utility-modules/crescendo/get-started/install-crescendo)
     - [Choose a command-line tool](/powershell/utility-modules/crescendo/get-started/choose-command-line-tool)
-    - [Decide which features amplify](/powershell/utility-modules/crescendo/get-started/research-tool)
+    - [Decide which features to amplify](/powershell/utility-modules/crescendo/get-started/research-tool)
     - [Create a Crescendo cmdlet](/powershell/utility-modules/crescendo/get-started/create-new-cmdlet)
     - [Generate and test a Crescendo module](/powershell/utility-modules/crescendo/get-started/generate-module)
     - We have plans for at least two more documents
