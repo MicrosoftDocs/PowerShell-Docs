@@ -1060,5 +1060,6 @@ cmdlets. The parser also includes special logic to improve handling of the backt
 - [about_Windows_PowerShell_5.0](/previous-versions/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0)
 - [Windows PowerShell](/powershell/)
 
+<!-- end of content -->
 <!-- link refs -->
 [KB 3000850]: https://support.microsoft.com/topic/november-2014-update-rollup-for-windows-rt-8-1-windows-8-1-and-windows-server-2012-r2-7be5865b-adaa-dbbf-e2d4-1f819e7c9d87

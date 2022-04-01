@@ -81,6 +81,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
   resource cleanup (#15177)
 - Change default for `$PSStyle.OutputRendering` to **Ansi**
 
+<!-- end of content -->
 <!-- reference links -->
 
 [CHANGELOG]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0-preview.2

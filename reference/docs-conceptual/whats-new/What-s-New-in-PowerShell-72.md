@@ -146,6 +146,7 @@ Install-Module -Name PSDesiredStateConfiguration -Repository PSGallery -MaximumV
 - Change `FileSystemInfo.Target` from a **CodeProperty** to an **AliasProperty** that points to
   `FileSystemInfo.LinkTarget` (#16165)
 
+<!-- end of content -->
 <!-- reference links -->
 
 [announced]: https://devblogs.microsoft.com/powershell/announcing-powershell-7-2/
