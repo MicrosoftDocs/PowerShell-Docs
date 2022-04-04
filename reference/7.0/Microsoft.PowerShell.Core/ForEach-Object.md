@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/27/2021
+ms.date: 04/04/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -81,19 +81,7 @@ command.
   By default, the parallel scriptblocks use the current working directory of the caller that started
   the parallel tasks.
 
-  Non-terminating errors are written to the cmdlet error stream as they occur in parallel running
-  scriptblocks. Because parallel scriptblock execution order cannot be determined, the order in
-  which errors appear in the error stream is random. Likewise, messages written to other data
-  streams, like warning, verbose, or information are written to those data streams in an
-  indeterminate order.
-
-  Terminating errors, such as exceptions, terminate the individual parallel instance of the
-  scriptblocks in which they occur. A terminating error in one scriptblocks may not cause the
-  termination of the `Foreach-Object` cmdlet. The other scriptblocks, running in parallel, continue
-  to run unless they also encounter a terminating error. The terminating error is written to the
-  error data stream as an **ErrorRecord** with a **FullyQualifiedErrorId** of `PSTaskException`.
-  Terminating errors can be converted to non-terminating errors using PowerShell try/catch or trap
-  blocks.
+  For more information, see the [NOTES](#notes) section of this article.
 
 ## EXAMPLES
 
@@ -444,6 +432,10 @@ Output: 5
 
 `Output: 3` is never written because the parallel scriptblock for that iteration was terminated.
 
+> [!NOTE]
+> [PipelineVariable](About/about_CommonParameters.md) common parameter variables are _not_
+> supported in `Foreach-Object -Parallel` scenarios even with the `$using:` keyword.
+
 ### Example 17: Passing variables in nested parallel script ScriptBlockSet
 
 You can create a variable outside a `Foreach-Object -Parallel` scoped scriptblock and use
@@ -765,17 +757,19 @@ This cmdlet returns objects that are determined by the input.
 
 ## NOTES
 
-- The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe
-  input to a **Foreach** statement. For more information about the **Foreach** statement, see
-  [about_Foreach](./About/about_Foreach.md).
+The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe
+input to a **Foreach** statement. For more information about the **Foreach** statement, see
+[about_Foreach](./About/about_Foreach.md).
 
-- Starting in PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections. You
-  can read more about these new methods here [about_arrays](./About/about_Arrays.md)
+Starting in PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections. You
+can read more about these new methods here [about_arrays](./About/about_Arrays.md)
+
+Using `ForEach-Object -Parallel`:
 
 - The `ForEach-Object -Parallel` parameter set uses PowerShell's internal API to run each script
-  block. This is significantly more overhead than running `ForEach-Object` normally with sequential
-  processing. It is important to use **Parallel** where the overhead of running in parallel is small
-  compared to work the script block performs. For example:
+  block in a new runspace. This is significantly more overhead than running `ForEach-Object`
+  normally with sequential processing. It is important to use **Parallel** where the overhead of
+  running in parallel is small compared to work the script block performs. For example:
 
   - Compute intensive scripts on multi-core machines
   - Scripts that spend time waiting for results or doing file operations
@@ -784,8 +778,34 @@ This cmdlet returns objects that are determined by the input.
   the parallel scripts are trivial. Experiment with **Parallel** to discover where it can be
   beneficial.
 
+- When running in parallel, objects decorated with **ScriptProperties** or **ScriptMethods** cannot
+  be guaranteed to function correctly if they are run in a different runspace than the scripts were
+  originally attached to them.
+
+  Scriptblock invocation always attempts to run in its _home_ runspace, regardless of where it's
+  actually invoked. However, `ForEach-Object -Parallel` creates temporary runspaces that get deleted
+  after use, so there's no runspace for the scripts to execute in anymore.
+
+  This behavior can work if as long as the _home_ runspace still exists. However, you may not get
+  the desired result if the script is dependent on external variables that are only present in the
+  caller's runspace and not the _home_ runspace.
+
+- Non-terminating errors are written to the cmdlet error stream as they occur in parallel running
+  scriptblocks. Because parallel scriptblock execution order cannot be determined, the order in
+  which errors appear in the error stream is random. Likewise, messages written to other data
+  streams, like warning, verbose, or information are written to those data streams in an
+  indeterminate order.
+
+  Terminating errors, such as exceptions, terminate the individual parallel instance of the
+  scriptblocks in which they occur. A terminating error in one scriptblocks may not cause the
+  termination of the `Foreach-Object` cmdlet. The other scriptblocks, running in parallel, continue
+  to run unless they also encounter a terminating error. The terminating error is written to the
+  error data stream as an **ErrorRecord** with a **FullyQualifiedErrorId** of `PSTaskException`.
+  Terminating errors can be converted to non-terminating errors using PowerShell try/catch or trap
+  blocks.
+
 - [PipelineVariable](About/about_CommonParameters.md) common parameter variables are _not_ supported
-  in `Foreach-Object -Parallel` scenarios even with the `$using:` keyword.
+  in parallel scenarios even with the `$using:` keyword.
 
   > [!IMPORTANT]
   > The `ForEach-Object -Parallel` parameter set runs script blocks in parallel on separate process
@@ -793,7 +813,7 @@ This cmdlet returns objects that are determined by the input.
   > thread to each running script block thread. Since the script blocks run in different threads,
   > the object variables passed by reference must be used safely. Generally it is safe to read from
   > referenced objects that don't change. But if the object state is being modified then you must
-  > used thread safe objects, such as .Net **System.Collection.Concurrent** types (See Example 11).
+  > used thread safe objects, such as .NET **System.Collection.Concurrent** types (See Example 11).
 
 ## RELATED LINKS
 
