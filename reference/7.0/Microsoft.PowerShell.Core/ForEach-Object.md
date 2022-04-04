@@ -786,12 +786,12 @@ Using `ForEach-Object -Parallel`:
   actually invoked. However, `ForEach-Object -Parallel` creates temporary runspaces that get deleted
   after use, so there's no runspace for the scripts to execute in anymore.
 
-  This behavior can work if as long as the _home_ runspace still exists. However, you may not get
+  This behavior can work as long as the _home_ runspace still exists. However, you may not get
   the desired result if the script is dependent on external variables that are only present in the
   caller's runspace and not the _home_ runspace.
 
 - Non-terminating errors are written to the cmdlet error stream as they occur in parallel running
-  scriptblocks. Because parallel scriptblock execution order cannot be determined, the order in
+  scriptblocks. Because parallel scriptblock execution order is non-deterministic, the order in
   which errors appear in the error stream is random. Likewise, messages written to other data
   streams, like warning, verbose, or information are written to those data streams in an
   indeterminate order.
