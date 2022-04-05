@@ -37,6 +37,7 @@ jobs:
             '--jq', '.data.repository.collaborators.edges[].permission'
           )
           [string[]]$Permissions = gh @ApiParameters
+          echo "Author '${{ github.event.pull_request.user.login }}' has permissions: '$($Permissions -join ',')'"
           if ($Permissions -notcontains 'MAINTAIN' -and $Permissions -notcontains 'ADMIN') {
             throw "Author does not have permissions to target ${{ github.base_ref }}"
           } else {
