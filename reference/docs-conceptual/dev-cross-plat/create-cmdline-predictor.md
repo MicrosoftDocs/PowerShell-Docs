@@ -1,6 +1,6 @@
 ---
 description: This article describes how to create a command-line predictor to help with command completion in PowerShell.
-ms.date: 03/28/2022
+ms.date: 04/06/2022
 title: How to create a command-line predictor
 ---
 # How to create a command-line predictor
@@ -197,10 +197,10 @@ Create a new PowerShell module project by following these steps:
    }
    ```
 
-   The following example code returns the string "HELLO WORLD" for the prediction result for all user
-   input. Since the sample predictor doesn't process any feedback, the code does not implement the
-   feedback methods from the interface. Change the prediction and feedback code to meet the needs of
-   your predictor.
+   The following example code returns the string "HELLO WORLD" for the prediction result for all
+   user input. Since the sample predictor doesn't process any feedback, the code does not implement
+   the feedback methods from the interface. Change the prediction and feedback code to meet the
+   needs of your predictor.
 
 1. Run `dotnet build` to produce the assembly. You can find the compiled assembly in the
    `bin/Debug/net6.0` location of your project folder.
@@ -232,3 +232,8 @@ Kind              SubsystemType      IsRegistered Implementations
 ----              -------------      ------------ ---------------
 CommandPredictor  ICommandPredictor          True {SamplePredictor}
 ```
+
+> [!NOTE]
+> `Get-PSSubsystem` is an experimental cmdlet that was introduced in PowerShell 7.1 You must enable
+> the `PSSubsystemPluginModel` experimental feature to use this cmdlet. For more information, see
+> [Using Experimental Features](../learn/experimental-features.md#pssubsystempluginmodel).
