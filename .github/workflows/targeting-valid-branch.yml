@@ -13,33 +13,33 @@ jobs:
         shell: pwsh
     if: github.base_ref == 'live'
     steps:
-      - name: Authorized to Target Live Branch
+      - name: Authorized to Target Live Branch?
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.VALID_BRANCH_TOKEN }}
         run: |
-          $Query = @'
-          query author_collaborator_permission($owner: String!, $repo: String!, $actor: String!) {
-            repository(owner: $owner, name: $repo) {
-              collaborators(query: $actor) {
-                edges {
-                  permission
-                }
-              }
-            }
+          $Owner = '${{ github.event.pull_request.base.repo.owner.login}}'
+          $Repo  = '${{ github.event.pull_request.base.repo.name }}'
+          $Actor = '${{ github.event.pull_request.user.login }}'
+
+          $ResultString = gh api repos/$Owner/$Repo/collaborators/$Actor/permission
+          $ExitCode = $LASTEXITCODE
+          if ($ExitCode -ne 0) {
+            throw "GitHub API call failed with exit code ${ExitCode}:`n$ResultString"
           }
-          '@
-          $ApiParameters = @(
-            'api', 'graphql'
-            '-F', "owner=${{ github.event.pull_request.base.repo.owner.login}}"
-            '-F', "repo=${{ github.event.pull_request.base.repo.name }}"
-            '-F', "actor=${{ github.event.pull_request.user.login }}"
-            '-f', "query=$Query"
-            '--jq', '.data.repository.collaborators.edges[].permission'
-          )
-          [string[]]$Permissions = gh @ApiParameters
-          echo "Author '${{ github.event.pull_request.user.login }}' has permissions: '$($Permissions -join ',')'"
-          if ($Permissions -notcontains 'MAINTAIN' -and $Permissions -notcontains 'ADMIN') {
-            throw "Author does not have permissions to target ${{ github.base_ref }}"
-          } else {
+
+          $Permissions = $ResultString
+          | ConvertFrom-Json
+          | Select-Object -Property @{ Name = 'Permissions' ; Expression = { $_.user.permissions } }
+          | Select-Object -ExpandProperty Permissions
+
+          if ($null -eq $Permissions) {
+            throw "Unable to retrieve permissions for author '$Actor':`n$ResultString"
+          }
+
+          echo "Author '$Actor' has permissions:`n$($Permissions | Format-List | Out-String)"
+
+          if ($Permissions.admin -or $Permissions.maintain) {
             echo "Author has permissions to target ${{ github.base_ref }}"
+          } else {
+            throw "Author does not have permissions to target ${{ github.base_ref }}"
           }
