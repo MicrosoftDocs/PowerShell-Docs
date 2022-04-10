@@ -498,8 +498,9 @@ By default, `Wait-Job` returns, or ends the wait, when jobs are in one of the fo
 - Failed
 - Stopped
 - Suspended
-- Disconnected To direct `Wait-Job` to continue to wait for Suspended and Disconnected jobs, use the
-  **Force** parameter.
+- Disconnected 
+
+To direct `Wait-Job` to continue to wait for Suspended and Disconnected jobs, use the**Force** parameter.
 
 ## RELATED LINKS
 
