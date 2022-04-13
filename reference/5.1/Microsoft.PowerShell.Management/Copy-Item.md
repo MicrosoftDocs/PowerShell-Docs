@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/18/2022
+ms.date: 04/12/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/copy-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Copy-Item
@@ -252,6 +252,85 @@ The `Copy-Item` cmdlet has the **Container** parameter set to `$false`. This cau
 the source folder to be copied but does not preserve the folder structure. Notice that files with
 the same name are overwritten in the destination folder.
 
+### Example 13: Limit the files copied from a wildcard-specified path into the current folder
+
+This example shows how to limit the files copied from a wildcard-matching path into the current
+folder using the **Include** parameter.
+
+This list shows the existing folder structure of the path to the files to be copied:
+
+- `C:\temp\tree\examples`
+- `C:\temp\tree\example.ps1`
+- `C:\temp\tree\example.txt`
+- `C:\temp\tree\examples\example_1.txt`
+- `C:\temp\tree\examples\example_2.txt`
+
+In this example, `Copy-Item` is called with a wildcard for both the **Path** and **Include**
+parameters. Specifying a wildcard for the **Path** parameter ensures that it processes all of the
+files and folders which match `C:\temp\tree\*`. The **Include** parameter filters the list of items
+to process, limiting the operation to only those paths which end in `.txt`.
+
+> [!NOTE]
+> The behavior of the **Exclude** parameter is the same as described in this example, except that
+> it limits the operation to only those paths which do not match the pattern.
+
+```powershell
+PS C:\temp\test> Copy-Item -Path C:\temp\tree\* -Include *.txt
+PS C:\temp\test> (Get-ChildItem).FullName
+C:\temp\test\out\example.txt
+
+PS C:\temp\test> Remove-Item .\*
+PS C:\temp\test> Copy-Item -Path C:\temp\tree\* -Include *.txt -Recurse
+PS C:\temp\test> (Get-ChildItem).FullName
+C:\temp\test\out\example.txt
+
+PS C:\temp\test> (Get-Item -Path C:\temp\tree*).FullName
+C:\temp\tree\examples
+C:\temp\tree\example.txt
+```
+
+The first call to `Copy-Item` is non-recursive. It copies the only the `example.txt` file from
+`C:\temp\tree` as the **Include** parameter filtered out both `examples` and `example.txt`.
+
+The second call to `Copy-Item` is recursive and has the same result. This is because the **Include**
+parameter's filter is applied only to the items resolved from the wildcard specified in the
+**Path**.
+
+The call to `Get-Item` shows the files and folders that the **Include** parameter in the calls to
+`Copy-Item` filters against. In those results, the only string that matches the `*.txt` filter
+specified for the **Include** parameter is `C:\temp\tree\example.txt`. This ensures no other items
+are copied.
+
+### Example 14: Limit the files to recursively copy from a wildcard-specified path
+
+This example shows how to limit the files recursively copied from a wildcard-matching path into
+another folder. Example 13 shows that, because the **Include** parameter only filters on the paths
+resolved for a wildcard-specifying **Path**, the **Include** parameter can't be used to limit the
+files recursively copied from a folder. Instead, you can use `Get-ChildItem` to find the items you
+want to copy and pass those items to `Copy-Item`.
+
+This list shows the existing folder structure of the path to the files to be copied:
+
+- `C:\temp\tree\examples`
+- `C:\temp\tree\example.ps1`
+- `C:\temp\tree\example.txt`
+- `C:\temp\tree\examples\example_1.txt`
+- `C:\temp\tree\examples\example_2.txt`
+
+To copy all the `example*.txt` files, use `Get-ChildItem` with the **Recurse** and **Filter**
+parameters and pipe the results to `Copy-Item`.
+
+```powershell
+PS C:\temp\test> Get-ChildItem -Path C:\temp\tree -Recurse -Filter *.txt | Copy-Item
+PS C:\temp\test> (Get-ChildItem).FullName
+C:\temp\out\example_1.txt
+C:\temp\out\example_2.txt
+C:\temp\out\example.txt
+```
+
+Unlike the `Copy-Item`, the **Filter** parameter for `Get-ChildItem` applies to the items discovered
+during recursion. This enables you to find, filter, and then copy items recursively.
+
 ## PARAMETERS
 
 ### -Container
@@ -310,11 +389,12 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
-of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
-`*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
-command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
-specifies the contents of the `C:\Windows` directory.
+Specifies one or more path elements or patterns, such as `"*.txt"`, to limit this cmdlet's
+operation. The value of this parameter filters against the wildcard-matching result of the **Path**
+parameter, not the final results. This parameter is only effective when the **Path** is specified
+with one or more wildcards. Since this parameter only filters on the paths resolved for the **Path**
+parameter, it does not filter any items discovered when recursing through child folders with the
+**Recurse** parameter.
 
 ```yaml
 Type: System.String[]
@@ -385,11 +465,12 @@ Accept wildcard characters: False
 
 ### -Include
 
-Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
-of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
-`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
-command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
-specifies the contents of the `C:\Windows` directory.
+Specifies one or more path elements or patterns, such as `"*.txt"`, to limit this cmdlet's
+operation. The value of this parameter filters against the wildcard-matching result of the **Path**
+parameter, not the final results. This parameter is only effective when the **Path** is specified
+with one or more wildcards. Since this parameter only filters on the paths resolved for the **Path**
+parameter, it does not filter any items discovered when recursing through child folders with the
+**Recurse** parameter.
 
 ```yaml
 Type: System.String[]
