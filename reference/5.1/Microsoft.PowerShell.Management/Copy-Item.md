@@ -257,7 +257,8 @@ the same name are overwritten in the destination folder.
 This example shows how to limit the files copied from a wildcard-matching path into the current
 folder using the **Include** parameter.
 
-This list shows the existing folder structure of the path to the files to be copied:
+The following list shows the existing folder structure of the path to the files to be copied:
+
 
 - `C:\temp\tree\examples`
 - `C:\temp\tree\example.ps1`
@@ -267,7 +268,8 @@ This list shows the existing folder structure of the path to the files to be cop
 
 In this example, `Copy-Item` is called with a wildcard for both the **Path** and **Include**
 parameters. Specifying a wildcard for the **Path** parameter ensures that it processes all of the
-files and folders which match `C:\temp\tree\*`. The **Include** parameter filters the list of items
+files and folders that match `C:\temp\tree\*`. The **Include** parameter filters the list of items
+
 to process, limiting the operation to only those paths which end in `.txt`.
 
 > [!NOTE]
@@ -309,7 +311,8 @@ resolved for a wildcard-specifying **Path**, the **Include** parameter can't be 
 files recursively copied from a folder. Instead, you can use `Get-ChildItem` to find the items you
 want to copy and pass those items to `Copy-Item`.
 
-This list shows the existing folder structure of the path to the files to be copied:
+The following list shows the existing folder structure of the path to the files to be copied:
+
 
 - `C:\temp\tree\examples`
 - `C:\temp\tree\example.ps1`
