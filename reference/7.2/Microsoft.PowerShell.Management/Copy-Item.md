@@ -250,56 +250,81 @@ The `Copy-Item` cmdlet has the **Container** parameter set to `$false`. This cau
 the source folder to be copied but does not preserve the folder structure. Notice that files with
 the same name are overwritten in the destination folder.
 
-### Example 13: Limit the files copied from a wildcard-specified path into the current folder
+### Example 13: Using filters to copy items without recursion
 
-This example shows how to limit the files copied from a wildcard-matching path into the current
-folder using the **Include** parameter.
+This example shows the results using the **Include** parameter to select which items should be
+copied.
 
-This list shows the existing folder structure of the path to the files to be copied:
+This example uses the following folder structure containing the files to be copied:
 
-- `C:\temp\tree\examples`
-- `C:\temp\tree\example.ps1`
-- `C:\temp\tree\example.txt`
-- `C:\temp\tree\examples\example_1.txt`
-- `C:\temp\tree\examples\example_2.txt`
+- `D:\temp\tree\example.ps1`
+- `D:\temp\tree\example.txt`
+- `D:\temp\tree\examples\`
+- `D:\temp\tree\examples\example_1.txt`
+- `D:\temp\tree\examples\example_2.txt`
+- `D:\temp\tree\examples\subfolder\`
+- `D:\temp\tree\examples\subfolder\test.txt`
 
 In this example, `Copy-Item` is called with a wildcard for both the **Path** and **Include**
 parameters. Specifying a wildcard for the **Path** parameter ensures that it processes all of the
-files and folders which match `C:\temp\tree\*`. The **Include** parameter filters the list of items
-to process, limiting the operation to only those paths which end in `.txt`.
+files and folders that match `D:\temp\tree\*`. The **Include** parameter filters the list of items
+to process, limiting the operation to only those paths that begin with `ex`.
+
+```powershell
+PS D:\temp\test\out> Copy-Item -Path D:\temp\tree\* -Include ex*
+PS D:\temp\test\out> (Get-ChildItem -Recurse).FullName
+D:\temp\out\examples
+D:\temp\out\example.ps1
+D:\temp\out\example.txt
+```
+
+The **Include** parameter is applied to the contents of `D:\temp\tree` folder to copy all items that
+match `ex*`. Notice that, without recursion, the `D:\temp\out\examples` folder is copied, but none
+of its contents are copied.
+
+### Example 15: Using filters to copy items with recursion
+
+This example shows the results using the **Include** parameter to select which items should be
+copied.
+
+This example uses the following folder structure containing the files to be copied:
+
+- `D:\temp\tree\example.ps1`
+- `D:\temp\tree\example.txt`
+- `D:\temp\tree\examples\`
+- `D:\temp\tree\examples\example_1.txt`
+- `D:\temp\tree\examples\example_2.txt`
+- `D:\temp\tree\examples\subfolder\`
+- `D:\temp\tree\examples\subfolder\test.txt`
+
+In this example, `Copy-Item` is called with a wildcard for both the **Path** and **Include**
+parameters. Specifying a wildcard for the **Path** parameter ensures that it processes all the files
+and folders that match `D:\temp\tree\*`. The **Include** parameter filters the list of items to
+process, limiting the operation to only those paths that begin with `ex`.
+
+```powershell
+D:\temp\out> Copy-Item -Path D:\temp\tree\* -Include ex* -Recurse
+D:\temp\out> (Get-ChildItem -Recurse).FullName
+D:\temp\out\examples
+D:\temp\out\example.ps1
+D:\temp\out\example.txt
+D:\temp\out\examples\subfolder
+D:\temp\out\examples\example_1.txt
+D:\temp\out\examples\example_2.txt
+D:\temp\out\examples\subfolder\test.txt
+```
+
+The **Include** parameter is applied to the contents of `D:\temp\tree` folder to copy all items that
+match `ex*`. Notice that, with recursion, the `D:\temp\out\examples` folder is copied along with all
+the files and subfolders. The copy includes files that _do not_ match the include filter. When using
+`Copy-Item`, the filters only apply to the top-level specified by the **Path** parameter. Then
+recursion is applied to those matching items.
 
 > [!NOTE]
 > The behavior of the **Exclude** parameter is the same as described in this example, except that
 > it limits the operation to only those paths which do not match the pattern.
 
-```powershell
-PS C:\temp\test> Copy-Item -Path C:\temp\tree\* -Include *.txt
-PS C:\temp\test> (Get-ChildItem).FullName
-C:\temp\test\out\example.txt
-
-PS C:\temp\test> Remove-Item .\*
-PS C:\temp\test> Copy-Item -Path C:\temp\tree\* -Include *.txt -Recurse
-PS C:\temp\test> (Get-ChildItem).FullName
-C:\temp\test\out\example.txt
-
-PS C:\temp\test> (Get-Item -Path C:\temp\tree*).FullName
-C:\temp\tree\examples
-C:\temp\tree\example.txt
-```
-
-The first call to `Copy-Item` is non-recursive. It copies the only the `example.txt` file from
-`C:\temp\tree` as the **Include** parameter filtered out both `examples` and `example.txt`.
-
-The second call to `Copy-Item` is recursive and has the same result. This is because the **Include**
-parameter's filter is applied only to the items resolved from the wildcard specified in the
-**Path**.
-
-The call to `Get-Item` shows the files and folders that the **Include** parameter in the calls to
-`Copy-Item` filters against. In those results, the only string that matches the `*.txt` filter
-specified for the **Include** parameter is `C:\temp\tree\example.txt`. This ensures no other items
-are copied.
-
-### Example 14: Limit the files to recursively copy from a wildcard-specified path
+### Example 15: Limit the files to recursively copy from a wildcard-specified path
 
 This example shows how to limit the files recursively copied from a wildcard-matching path into
 another folder. Example 13 shows that, because the **Include** parameter only filters on the paths
@@ -307,23 +332,27 @@ resolved for a wildcard-specifying **Path**, the **Include** parameter can't be 
 files recursively copied from a folder. Instead, you can use `Get-ChildItem` to find the items you
 want to copy and pass those items to `Copy-Item`.
 
-This list shows the existing folder structure of the path to the files to be copied:
+This example uses the following folder structure containing the files to be copied:
 
-- `C:\temp\tree\examples`
-- `C:\temp\tree\example.ps1`
-- `C:\temp\tree\example.txt`
-- `C:\temp\tree\examples\example_1.txt`
-- `C:\temp\tree\examples\example_2.txt`
+- `D:\temp\tree\example.ps1`
+- `D:\temp\tree\example.txt`
+- `D:\temp\tree\examples\`
+- `D:\temp\tree\examples\example_1.txt`
+- `D:\temp\tree\examples\example_2.txt`
+- `D:\temp\tree\examples\subfolder\`
+- `D:\temp\tree\examples\subfolder\test.txt`
 
-To copy all the `example*.txt` files, use `Get-ChildItem` with the **Recurse** and **Filter**
+To copy all items that begin with `ex*`, use `Get-ChildItem` with the **Recurse** and **Filter**
 parameters and pipe the results to `Copy-Item`.
 
 ```powershell
-PS C:\temp\test> Get-ChildItem -Path C:\temp\tree -Recurse -Filter *.txt | Copy-Item
-PS C:\temp\test> (Get-ChildItem).FullName
-C:\temp\out\example_1.txt
-C:\temp\out\example_2.txt
-C:\temp\out\example.txt
+D:\temp\out> Get-ChildItem -Path D:\temp\tree -Recurse -Filter ex* | Copy-Item
+D:\temp\out> (Get-ChildItem -Recurse).FullName
+D:\temp\out\examples
+D:\temp\out\example_1.txt
+D:\temp\out\example_2.txt
+D:\temp\out\example.ps1
+D:\temp\out\example.txt
 ```
 
 Unlike the `Copy-Item`, the **Filter** parameter for `Get-ChildItem` applies to the items discovered
@@ -408,11 +437,13 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
-provider is the only installed PowerShell provider that supports the use of filters. You can find
-the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-Filters are more efficient than other parameters, because the provider applies them when the cmdlet
-gets the objects rather than having PowerShell filter the objects after they're retrieved.
+Specifies a filter to qualify the **Path** parameter. The
+[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only
+installed PowerShell provider that supports the use of filters. You can find the syntax for the
+**FileSystem** filter language in
+[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md). Filters are more efficient
+than other parameters, because the provider applies them when the cmdlet gets the objects rather
+than having PowerShell filter the objects after they're retrieved.
 
 ```yaml
 Type: System.String
@@ -604,9 +635,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -624,7 +656,8 @@ item. Otherwise, this cmdlet doesn't generate any output.
 ## NOTES
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
-available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+available in your session, type `Get-PSProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 
