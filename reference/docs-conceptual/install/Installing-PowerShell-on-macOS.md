@@ -38,6 +38,7 @@ If the `brew` command is not found, you need to install Homebrew following
 
 > [!NOTE]
 > In macOS machines with Apple M1 CPU, the default install path for brew is  `/usr/homebrew/bin`.
+> 
 > use `export PATH="/opt/homebrew/bin:$PATH' to add this folder to your PATH.
 
 Now, you can install PowerShell:
