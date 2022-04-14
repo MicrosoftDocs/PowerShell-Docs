@@ -129,15 +129,18 @@ your system that were installed directly from the PowerShell Gallery.
 
 ## Network access to the PowerShell Gallery
 
-The PowerShell Gallery uses the following hostnames.
+These hostnames should be added to the allow lists that control access from your network.
+
+Hosts required for package discovery and download:
 
 - `psg-prod-eastus.azureedge.net` - CDN hostname
 - `az818661.vo.msecnd.net` - CDN hostname
+
+Hosts required when using the PowerShell Gallery website:
+
 - `devopsgallerystorage.blob.core.windows.net` - storage account hostname
 - `*.powershellgallery.com` - website
 - `go.microsoft.com` - redirection service
-
-These hostnames should be added to the allow lists that control access from your network.
 
 [!INCLUDE [TLS 1.2 Requirement](../../includes/tls-gallery.md)]
 
