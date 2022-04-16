@@ -135,3 +135,6 @@ issues. Thank you!
 | julian-hansen   |     1      |               |
 | Hrxn            |     1      |               |
 | peteraritchie   |     1      |               |
+
+<!-- Link references -->
+[contrib]: contributing/overview.md
