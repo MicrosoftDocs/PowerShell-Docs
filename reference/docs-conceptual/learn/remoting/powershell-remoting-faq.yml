@@ -2,7 +2,7 @@
 metadata:
   description: Contains questions and answers about running remote commands in PowerShell.
   Locale: en-US
-  ms.date: 06/10/2021
+  ms.date: 04/18/2022
   online version: https
   schema: 2.0.0
   title: PowerShell Remoting FAQ
@@ -79,7 +79,7 @@ sections:
       - question: |
           Do all remote commands require PowerShell remoting?
         answer: |
-          No. Several cmdlets have a **ComputerName** parameter that lets you get objects from the
+          No. Some cmdlets have a **ComputerName** parameter that lets you get objects from the
           remote computer.
 
           These cmdlets do not use PowerShell remoting. So, you can use them on any computer that is
@@ -88,11 +88,10 @@ sections:
 
           These cmdlets include the following:
 
-          - `Get-Process`
-          - `Get-Service`
-          - `Get-WinEvent`
-          - `Get-EventLog`
-          - `Test-Connection`
+          - `Get-Hotfix`
+          - `Rename-Computer`
+          - `Restart-Computer`
+          - `Stop-Computer`
 
           To find all the cmdlets with a **ComputerName** parameter, type:
 
@@ -113,7 +112,7 @@ sections:
           For example:
 
           ```PowerShell
-          Get-Help Get-Process -Parameter ComputerName
+          Get-Help Get-Hotfix -Parameter ComputerName
           ```
 
           For all other commands, use the `Invoke-Command` cmdlet.
