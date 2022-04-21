@@ -21,7 +21,7 @@ have any version of **PowerShellGet** installed.
 The `Save-Module` cmdlet is used in both sets of instructions. `Save-Module` downloads and saves a
 module and any dependencies from a registered repository. The module's most current version is saved
 to a specified path on the local computer, but isn't installed. To install the modules in PowerShell
-3.0 or 4.0, copy the module saved folders to `$env:ProgramFiles\WindowsPowerShell\Modules`.
+3.0 or 4.0, copy the saved module folders to `$env:ProgramFiles\WindowsPowerShell\Modules`.
 
 For more information, see [Save-Module](/powershell/module/PowershellGet/Save-Module).
 

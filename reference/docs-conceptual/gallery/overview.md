@@ -52,4 +52,4 @@ More information about the PowerShell Gallery and **PowerShellGet** can be found
 To see the current status of the PowerShell Gallery services, see the
 [PowerShell Gallery Status](https://aka.ms/psgallery-status) page on GitHub.
 
-Please provide feedback and report issues the [GitHub repository](https://aka.ms/psgallery-issues).
+Please provide feedback and report issues in the [GitHub repository](https://aka.ms/psgallery-issues).
