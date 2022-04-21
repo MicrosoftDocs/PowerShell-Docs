@@ -4,7 +4,7 @@ Help Version: 7.2.0.0
 Locale: en-US
 Module Guid: 1d73a601-4a6c-43c5-ba3f-619b18bbb404
 Module Name: PowerShellGet
-ms.date: 06/09/2017
+ms.date: 04/21/2022
 schema: 2.0.0
 title: PowerShellGet
 ---
@@ -15,13 +15,15 @@ title: PowerShellGet
 PowerShellGet is a module with commands for discovering, installing, updating and publishing
 PowerShell artifacts like Modules, DSC Resources, Role Capabilities, and Scripts.
 
+The cmdlet reference documentation on this site documents the latest version of the module.
+
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
 > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
 > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
 > 1.2:
 >
-> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12`
 >
 > For more information, see the
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
@@ -33,7 +35,7 @@ PowerShell artifacts like Modules, DSC Resources, Role Capabilities, and Scripts
 Finds PowerShell commands in modules.
 
 ### [Find-DscResource](Find-DscResource.md)
-Finds Desired State Configuration (DSC) resources.
+Finds a DSC resource.
 
 ### [Find-Module](Find-Module.md)
 Finds modules in a repository that match specified criteria.
