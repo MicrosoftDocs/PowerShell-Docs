@@ -1,140 +1,115 @@
 ---
 description: This article explains how to install the PowerShellGet module in various versions of PowerShell.
-ms.date: 10/05/2021
+ms.date: 04/21/2022
 title: Installing PowerShellGet
 ---
-# Installing PowerShellGet
+# Installing PowerShellGet on Windows
 
-## PowerShellGet is an in-box module in the following releases
+Windows PowerShell 5.1 comes with version 1.0.0.1 of **PowerShellGet** preinstalled.
 
-- [Windows 10](https://www.microsoft.com/windows) or newer
-- [Windows Server 2016](/windows-server/windows-server) or newer
-- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395)
-  or newer
-- [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
+> [!IMPORTANT]
+> This version of PowerShellGet has a limited features and doesn't support the updated capabilities
+> of the PowerShell Gallery. To be supported, you must update to the latest version.
 
-## Get the latest version from PowerShell Gallery
+PowerShell 6.0 shipped with version 1.6.0 of **PowerShellGet**. PowerShell 7.0 shipped with version
+2.2.3 of **PowerShellGet**. The current supported version of **PowerShellGet** is 2.2.5.
 
-Before updating **PowerShellGet**, you should always install the latest **NuGet** provider. From an
-elevated PowerShell session, run the following command.
+If you are running PowerShell 6 or higher, you have a usable version of **PowerShellGet**. If you
+are running Windows PowerShell 5.1, you must install a newer version.
 
-```powershell
-Install-PackageProvider -Name NuGet -Force
-```
+For best results, you should always install the latest supported version.
 
-[!INCLUDE [TLS 1.2 Requirements](../../includes/tls-gallery.md)]
+## Updating the preinstalled version of PowerShellGet
 
-### For systems with PowerShell 5.0 (or newer) you can install the latest PowerShellGet
+The PowerShellGet module includes cmdlets to install and update modules:
 
-To install PowerShellGet on any system with WMF 5.1 installed, run the following commands from an
-elevated PowerShell session.
+- `Install-Module` installs the latest (non-prerelease) version of a module.
+- `Update-Module` installs the latest (non-prerelease) version of a module if it is newer than the
+  currently installed module. However, this cmdlet only works if the previous version was installed
+  using `Install-Module`.
 
-```powershell
-Install-Module -Name PowerShellGet -Force
-```
+To update the preinstalled module you must use install a new version using `Install-Module`. After
+you have installed the new version from the PowerShell Gallery, you can use `Update-Module` to
+install newer releases.
 
-Use `Update-Module` to get newer versions.
+## Updating PowerShellGet for Windows PowerShell 5.1
 
-```powershell
-Update-Module -Name PowerShellGet
-Exit
-```
+### System requirements
 
-### For computers running PowerShell 3.0 or PowerShell 4.0
+- **PowerShellGet** requires .NET Framework 4.5 or above. For more information, see
+  [Install the .NET Framework for developers](/dotnet/framework/install/guide-for-developers).
 
-These instructions apply to computers that have the **PackageManagement Preview** installed or don't
-have any version of **PowerShellGet** installed.
+- To access the PowerShell Gallery, you must use Transport Layer Security (TLS) 1.2 or higher. By
+  default, PowerShell is not configured to use TLS 1.2. Use the following command to enable TLS 1.2
+  in your PowerShell session.
 
-The `Save-Module` cmdlet is used in both sets of instructions. `Save-Module` downloads and saves a
-module and any dependencies from a registered repository. The module's most current version is saved
-to a specified path on the local computer, but isn't installed. To install the modules in PowerShell
-3.0 or 4.0, copy the module saved folders to `$env:ProgramFiles\WindowsPowerShell\Modules`.
+  ```powershell
+  [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+  ```
 
-For more information, see
-[Save-Module](/powershell/module/PowershellGet/Save-Module).
+  We also recommend adding this line of code to your PowerShell profile script. For more information
+  about profiles, see
+  [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
 
-> [!NOTE]
-> PowerShell 3.0 and PowerShell 4.0 only supported one version of a module. Starting in PowerShell
-> 5.0, modules are installed in `<modulename>\<version>`. This allows you to install
-> multiple versions side-by-side. After downloading the module using `Save-Module` you must copy the
-> files from the `<modulename>\<version>` to the `<modulename>` folder on the destination machine,
-> as shown in the instructions below.
+### Installing the latest version of PowerShellGet
 
-#### Preparatory Step on computers running PowerShell 3.0
-
-The instructions in the sections below install the modules in directory
-`$env:ProgramFiles\WindowsPowerShell\Modules`. In PowerShell 3.0, this directory isn't listed in
-`$env:PSModulePath` by default, so you'll need to add it in order for the modules to be auto-loaded.
-
-Open an elevated PowerShell session and run the following command (which will take effect in future
-sessions):
-
-```powershell
-[Environment]::SetEnvironmentVariable(
-  'PSModulePath',
-  ((([Environment]::GetEnvironmentVariable('PSModulePath', 'Machine') -split ';') + "$env:ProgramFiles\WindowsPowerShell\Modules") -join ';'),
-  'Machine'
-)
-```
-
-#### Computers with the PackageManagement Preview installed
+Windows PowerShell 5.1 comes with **PowerShellGet** version 1.0.0.1, which doesn't include the NuGet
+provider. The provider is required by **PowerShellGet** when working with the PowerShell Gallery.
 
 > [!NOTE]
-> PackageManagement Preview was a downloadable component that made PowerShellGet available to
-> PowerShell versions 3 and 4, but it is no longer available. To test if it was installed on a given
-> computer, run `Get-Module -ListAvailable PowerShellGet`.
+> The following commands must be run from an elevated PowerShell session. Right-click the PowerShell
+> icon and choose **Run as administrator** to start an elevated session.
 
-1. From a PowerShell session, use `Save-Module` to download the current version of
-   **PowerShellGet**. Two folders are downloaded: **PowerShellGet** and **PackageManagement**. Each
-   folder contains a subfolder with a version number.
+There are two ways to install the NuGet provider:
 
-   ```powershell
-   Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
-   ```
+- Use `Install-PackageProvider` to install NuGet before installing other modules
 
-1. Ensure that the **PowerShellGet** and **PackageManagement** modules aren't loaded in any other
-   processes.
+  Run the following command to install the NuGet provider.
 
-1. Reopen the PowerShell console with elevated permissions and run the following command.
+  ```powershell
+  Install-PackageProvider -Name NuGet -Force
+  ```
 
-   ```powershell
-   'PowerShellGet', 'PackageManagement' | % {
-     $targetDir = "$env:ProgramFiles\WindowsPowerShell\Modules\$_"
-     Remove-Item $targetDir\* -Recurse -Force
-     Copy-Item C:\LocalFolder\$_\*\* $targetDir\ -Recurse -Force
-   }
-   ```
+  After you have installed the provider you should be able to use any of the **PowerShellGet**
+  cmdlets with the PowerShell Gallery.
 
-#### Computers without PowerShellGet
+- Let `Install-Module` prompt you to install the NuGet provider
 
-For computers without any version of **PowerShellGet** installed (test with
-`Get-Module -ListAvailable PowerShellGet`), a computer with **PowerShellGet** installed is needed to
-download the modules.
+  The following command attempts to install the updated PowerShellGet module without the NuGet
+  provider.
 
-1. From the computer that has **PowerShellGet** installed, use `Save-Module` to download the current
-   version of **PowerShellGet**. Two folders are downloaded: **PowerShellGet** and
-   **PackageManagement**. Each folder contains a subfolder with a version number.
+  ```powershell
+  Install-Module PowerShellGet -AllowClobber -Force
+  ```
 
-   ```powershell
-   Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
-   ```
+  `Install-Module` prompts you to install the NuGet provider. Type <kbd>Y</kbd> to install the
+  provider.
 
-1. Copy the respective `<version>` subfolder in the **PowerShellGet** and **PackageManagement**
-   folders to the computer that doesn't have **PowerShellGet** installed, into folders
-   `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` and
-   `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` respectively, which requires an
-   elevated session.
+  ```Output
+  NuGet provider is required to continue
+  PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based
+  repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies'
+  or 'C:\Users\user1\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet
+  provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you
+  want PowerShellGet to install and import the NuGet provider now?
+  [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
+  VERBOSE: Installing NuGet provider.
+  ```
 
-1. For instance, if you can access the download folder on the other computer, say `ws1`, from the
-   target computer via a UNC path, say `\\ws1\C$\LocalFolder`, open a PowerShell console with
-   elevated permissions and run the following command:
+> [!NOTE]
+> If you have not configured TLS 1.2, any attempts to install the NuGet provider and other
+> packages will fail.
 
-   ```powershell
-   'PowerShellGet', 'PackageManagement' | % {
-     $targetDir = "$env:ProgramFiles\WindowsPowerShell\Modules\$_"
-     $null = New-Item -Type Directory -Force $targetDir
-     $fromComputer = 'ws1'  # Specify the name of the other computer here.
-     Copy-Item \\$fromComputer\C$\LocalFolder\$_\*\* $targetDir -Recurse -Force
-     if (-not (Get-ChildItem $targetDir)) { Throw "Copying failed." }
-   }
-   ```
+### After installing PowerShellGet
+
+After you have installed the new version of **PowerShellGet**, you should open a new PowerShell
+session. PowerShell automatically loads the newest version of the module when you use a
+**PowerShellGet** cmdlet.
+
+We also recommend that you register the PowerShell Gallery as a trusted repository. Use the following command:
+
+```powershell
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+```
+
+For more information, see [Set-PSRepository](xref:PowerShellGet.Set-PSRepository).
