@@ -134,6 +134,7 @@ These hostnames should be added to the allow lists that control access from your
 Hosts required for package discovery and download:
 
 - `onegetcdn.azureedge.net` - CDN hostname
+- `psg-prod-centralus.azureedge.net` - CDN hostname
 - `psg-prod-eastus.azureedge.net` - CDN hostname
 - `az818661.vo.msecnd.net` - CDN hostname
 

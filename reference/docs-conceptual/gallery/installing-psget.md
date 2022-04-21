@@ -28,9 +28,8 @@ The PowerShellGet module includes cmdlets to install and update modules:
   currently installed module. However, this cmdlet only works if the previous version was installed
   using `Install-Module`.
 
-To update the preinstalled module you must use install a new version using `Install-Module`. After
-you have installed the new version from the PowerShell Gallery, you can use `Update-Module` to
-install newer releases.
+To update the preinstalled module you must use `Install-Module`. After you have installed the new
+version from the PowerShell Gallery, you can use `Update-Module` to install newer releases.
 
 ## Updating PowerShellGet for Windows PowerShell 5.1
 
