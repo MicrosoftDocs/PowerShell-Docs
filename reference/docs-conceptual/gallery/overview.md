@@ -1,54 +1,55 @@
 ---
 description: The PowerShell Gallery is the central repository for PowerShell modules, scripts, and DSC resources.
-ms.date: 10/22/2021
+ms.date: 04/21/2022
 title: The PowerShell Gallery
 ---
 # The PowerShell Gallery
 
-The PowerShell Gallery is the central repository for PowerShell content. In it, you can find useful
-PowerShell modules containing PowerShell commands and Desired State Configuration (DSC) resources.
-You can also find PowerShell scripts, some of which may contain PowerShell workflows, and which
-outline a set of tasks and provide sequencing for those tasks. Some of these packages are authored
-by Microsoft, and others are authored by the PowerShell community.
+The PowerShell Gallery is the central repository for PowerShell content. In it, you can find
+PowerShell scripts, modules containing PowerShell cmdlets and Desired State Configuration (DSC)
+resources. Some of these packages are authored by Microsoft, and others are authored by the
+PowerShell community.
 
-## PowerShellGet Overview
+## The PowerShellGet module
 
-The PowerShellGet module contains cmdlets for discovering, installing, updating and publishing
-PowerShell packages which contain artifacts such as Modules, DSC Resources, Role Capabilities and
-Scripts from the [PowerShell Gallery](https://www.PowerShellGallery.com) and other private
-repositories.
+The **PowerShellGet** module contains cmdlets for discovering, installing, updating, and publishing
+PowerShell packages from the [PowerShell Gallery](https://www.powershellgallery.com). These packages
+can contain artifacts such as Modules, DSC Resources, Role Capabilities, and Scripts.
 
-## Getting Started with the Gallery
+### Version history
 
-Installing packages from the Gallery requires the latest version of the PowerShellGet module. See
-[Installing PowerShellGet](installing-psget.md) for complete instructions.
+Windows PowerShell 5.1 comes with version 1.0.0.1 of **PowerShellGet** preinstalled.
+
+> [!IMPORTANT]
+> This version of PowerShellGet has a limited features and doesn't support the updated capabilities
+> of the PowerShell Gallery. To be supported, you must update to the latest version.
+
+PowerShell 6.0 shipped with version 1.6.0 of **PowerShellGet**. PowerShell 7.0 shipped with version
+2.2.3 of **PowerShellGet**. The current supported version of **PowerShellGet** is 2.2.5.
+
+For best results, use the latest version of the **PowerShellGet** module. See
+[Installing PowerShellGet](installing-psget.md) for complete instructions. The cmdlet reference
+documentation on this site documents the latest version.
+
+## Getting Started with the PowerShell Gallery
 
 Check out the [Getting Started](getting-started.md) page for more information on how to use
-PowerShellGet commands with the Gallery. You can also run `Update-Help -Module PowerShellGet` to
-install local help for these commands.
+**PowerShellGet** commands with the Gallery. You can also run
+`Update-Help -Module PowerShellGet -Force` to install local help for these commands.
 
-## Supported Operating Systems
-
-The **PowerShellGet** module requires **PowerShell 3.0 or newer**.
-
-**PowerShellGet** requires .NET Framework 4.5 or above. For more information, see
-[Install the .NET Framework for developers](/dotnet/framework/install/guide-for-developers).
-
-PowerShell is cross-platform, which means it works on Windows, Linux and MacOS. That also makes
+PowerShell is cross-platform, which means it works on Windows, Linux, and macOS. That also makes
 **PowerShellGet** available on those systems. For a full list of systems supported by PowerShell
 see [Installing PowerShell](/powershell/scripting/install/installing-powershell).
 
-Many modules hosted in the gallery support different OSes and have additional requirements.
-Please refer to the documentation for the modules for more information.
+Modules in the PowerShell Gallery can support different operating systems and have additional
+requirements. For information, see the documentation for the module.
 
 ## Got a question? Have feedback?
 
-More information about the PowerShell Gallery and PowerShellGet can be found in the
+More information about the PowerShell Gallery and **PowerShellGet** can be found in the
 [Getting Started](getting-started.md) page.
 
 To see the current status of the PowerShell Gallery services, see the
-[PowerShell Gallery Status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md)
-page on GitHub.
+[PowerShell Gallery Status](https://aka.ms/psgallery-status) page on GitHub.
 
-Please provide feedback and report issues the
-[GitHub repository](https://github.com/PowerShell/PowerShellGallery/issues).
+Please provide feedback and report issues in the [GitHub repository](https://aka.ms/psgallery-issues).

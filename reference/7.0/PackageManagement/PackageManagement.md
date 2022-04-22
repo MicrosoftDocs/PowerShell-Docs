@@ -4,7 +4,7 @@ Help Version: 7.0.1.0
 Locale: en-US
 Module Guid: 4ae9fd46-338a-459c-8186-07f910774cb8
 Module Name: PackageManagement
-ms.date: 06/09/2017
+ms.date: 04/21/2022
 schema: 2.0.0
 title: PackageManagement
 ---
@@ -12,7 +12,8 @@ title: PackageManagement
 
 ## Description
 
-This topic displays help topics for the Package Management Cmdlets.
+This topic displays help topics for the Package Management Cmdlets. The cmdlet reference
+documentation on this site documents the latest version of the module.
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
@@ -20,7 +21,7 @@ This topic displays help topics for the Package Management Cmdlets.
 > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
 > 1.2:
 >
-> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12`
 >
 > For more information, see the
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the

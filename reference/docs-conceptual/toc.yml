@@ -245,7 +245,7 @@ items:
         href: whats-new/unix-support.md
       - name: Module and cmdlet release history
         href: whats-new/cmdlet-versions.md
-      - name: Module compatibility list
+      - name: Module compatibility
         href: whats-new/module-compatibility.md
   - name: Windows PowerShell
     items:
@@ -420,6 +420,8 @@ items:
         href: gallery/overview.md
       - name: Installing PowerShellGet
         href: gallery/installing-psget.md
+      - name: Installing PowerShellGet on older systems
+        href: gallery/install-on-older-systems.md
       - name: Getting Started
         href: gallery/getting-started.md
       - name: How-To
