@@ -49,14 +49,27 @@ Running  lanmanserver       Server
 Stopped  ServiceLayer       ServiceLayer
 ```
 
-You can use the ComputerName parameter of the Get-Service cmdlet to get the services on remote
-computers. The ComputerName parameter accepts multiple values and wildcard characters, so you can
-get the services on multiple computers with a single command. For example, the following command
-gets the services on the Server01 remote computer.
+## Getting Remote Services
+
+With Windows PowerShell, you can use the **ComputerName** parameter of the `Get-Service` cmdlet to
+get the services on remote computers. The **ComputerName** parameter accepts multiple values and
+wildcard characters, so you can get the services on multiple computers with a single command. For
+example, the following command gets the services on the Server01 remote computer.
 
 ```powershell
 Get-Service -ComputerName Server01
 ```
+
+Starting in PowerShell 6.0, the `*-Service` cmdlets do not have the **ComputerName** parameter. You
+can still get services on remote computers with PowerShell remoting. For example, the following
+command gets the services on the Server02 remote computer.
+
+```powershell
+Invoke-Command -ComputerName Server02 -ScriptBlock { Get-Service }
+```
+
+You can also manage services with the other `*-Service` cmdlets. For more information on PowerShell
+remoting, see [about_Remote](/powershell/module/Microsoft.PowerShell.Core/about_Remote).
 
 ## Getting Required and Dependent Services
 
@@ -177,6 +190,7 @@ For more information, see [Set-Service](/powershell/module/Microsoft.PowerShell.
 
 ## See Also
 
+- [about_Remote](/powershell/module/Microsoft.PowerShell.Core/about_Remote)
 - [Get-Service](/powershell/module/Microsoft.PowerShell.Management/get-service)
 - [Set-Service](/powershell/module/Microsoft.PowerShell.Management/set-service)
 - [Restart-Service](/powershell/module/Microsoft.PowerShell.Management/restart-service)
