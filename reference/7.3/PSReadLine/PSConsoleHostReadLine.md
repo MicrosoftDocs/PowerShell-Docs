@@ -2,7 +2,7 @@
 external help file: PSReadLine-help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 12/07/2018
+ms.date: 04/25/2022
 online version: https://docs.microsoft.com/powershell/module/psreadline/psconsolehostreadline?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: PSConsoleHostReadLine
@@ -10,16 +10,16 @@ title: PSConsoleHostReadLine
 
 # PSConsoleHostReadLine
 
-## Synopsis
+## SYNOPSIS
 This function is the main entry point for PSReadLine.
 
-## Syntax
+## SYNTAX
 
 ```
 PSConsoleHostReadLine
 ```
 
-## Description
+## DESCRIPTION
 
 `PSConsoleHostReadLine` is the main entry point for the PSReadLine module. The PowerShell console
 host automatically loads the PSReadLine module and calls this function. Under normal operating
@@ -29,25 +29,24 @@ The extension point `PSConsoleHostReadLine` is special to the console host. The 
 alias, function, or script with this name. PSReadLine defines this function so that it is called
 from the console host.
 
-## Examples
+## EXAMPLES
 
 ### Example 1
 
 This function is not intended to be used from the command line.
 
-## Parameters
+## PARAMETERS
 
-## Inputs
-
-### None
-
-## Outputs
+## INPUTS
 
 ### None
 
-## Notes
+## OUTPUTS
 
-## Related links
+### None
+
+## NOTES
+
+## RELATED LINKS
 
 [about_PSReadLine](./About/about_PSReadLine.md)
-
