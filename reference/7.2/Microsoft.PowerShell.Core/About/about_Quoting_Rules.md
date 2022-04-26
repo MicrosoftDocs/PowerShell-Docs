@@ -1,7 +1,7 @@
 ---
 description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 12/09/2021
+ms.date: 04/26/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Quoting Rules
@@ -98,7 +98,7 @@ The value of $i is 5.
 
 ## Single-quoted strings
 
-A string enclosed in single-quotation marks is a _verbatim_ string. The string
+A string enclosed in single quotation marks is a _verbatim_ string. The string
 is passed to the command exactly as you type it. No substitution is performed.
 For example:
 
@@ -114,7 +114,7 @@ The value $i is $i.
 ```
 
 Similarly, expressions in single-quoted strings are not evaluated. They are
-interpreted as literals. For example:
+interpreted as string literals. For example:
 
 ```powershell
 'The value of $(2+3) is 5.'
