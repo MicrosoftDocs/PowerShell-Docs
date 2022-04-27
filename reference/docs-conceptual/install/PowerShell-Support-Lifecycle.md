@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell
-ms.date: 03/10/2022
+ms.date: 04/27/2022
 title: PowerShell Support Lifecycle
 ---
 # PowerShell Support Lifecycle
@@ -123,14 +123,14 @@ use the traditional, paid support options.
 Based on these lifecycle policies, the following table lists the dates when various releases are no
 longer be supported.
 
-|      Version      |      End-of-support       |
-| ----------------- | ------------------------- |
-| 7.2 (LTS-current) | November 2024 (projected) |
-| 7.1               | May 31, 2022              |
-| 7.0 (LTS)         | December 3, 2022          |
-| 6.2               | September 4, 2020         |
-| 6.1               | September 28, 2019        |
-| 6.0               | February 13, 2019         |
+|      Version      |   End-of-support   |
+| ----------------- | ------------------ |
+| 7.2 (LTS-current) | November 8, 2024   |
+| 7.1               | May 8, 2022        |
+| 7.0 (LTS)         | December 3, 2022   |
+| 6.2               | September 4, 2020  |
+| 6.1               | September 28, 2019 |
+| 6.0               | February 13, 2019  |
 
 Support for PowerShell on a specific platforms is based on the support policy of the version of .NET
 used.
