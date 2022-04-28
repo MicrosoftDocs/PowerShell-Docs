@@ -39,7 +39,7 @@ sections:
     questions:
       - question: What version of Windows is required to support the Microsoft Update feature?
         answer: |
-          You must have Windows 10 RS3 (10.0.16299) or newer installed.
+          You must have Windows 10 Version 1709 (10.0.16299) or newer installed on an x64-based system.
 
       - question: Do I need to check both boxes in the setup dialog?
         answer: |
