@@ -1,7 +1,7 @@
 ---
 description: Registry
 Locale: en-US
-ms.date: 09/28/2021
+ms.date: 04/28/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_registry_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Registry Provider
@@ -541,19 +541,19 @@ cmdlet. It is also available on the
 [Set-Item](xref:Microsoft.PowerShell.Management.Set-Item) cmdlet in the
 registry drives, but it has no effect.
 
-|     Value      |                         Description                          |
-| -------------- | ------------------------------------------------------------ |
-| `String`       | Specifies a null-terminated string. Equivalent to REG_SZ.    |
-| `ExpandString` | Specifies a null-terminated string that contains unexpanded  |
-|                | references to environment variables that are expanded when   |
-|                | the value is retrieved. Equivalent to REG_EXPAND_SZ.         |
-| `Binary`       | Specifies binary data in any form. Equivalent to REG_BINARY. |
-| `DWord`        | Specifies a 32-bit binary number. Equivalent to REG_DWORD.   |
-| `MultiString`  | Specifies an array of null-terminated strings terminated by  |
-|                | two null characters. Equivalent to REG_MULTI_SZ.             |
-| `QWord`        | Specifies a 64-bit binary number. Equivalent to REG_QWORD.   |
-| `Unknown`      | Indicates an unsupported registry data type, such as         |
-|                | REG_RESOURCE_LIST.                                           |
+|     Value      |                          Description                           |
+| -------------- | -------------------------------------------------------------- |
+| `String`       | Specifies a null-terminated string. Used for REG_SZ values.    |
+| `ExpandString` | Specifies a null-terminated string that contains unexpanded    |
+|                | references to environment variables that are expanded when     |
+|                | the value is retrieved. Used for REG_EXPAND_SZ values.         |
+| `Binary`       | Specifies binary data in any form. Used for REG_BINARY values. |
+| `DWord`        | Specifies a 32-bit binary number. Used for REG_DWORD values.   |
+| `MultiString`  | Specifies an array of null-terminated strings terminated by    |
+|                | two null characters. Used for REG_MULTI_SZ values.             |
+| `QWord`        | Specifies a 64-bit binary number. Used for REG_QWORD values.   |
+| `Unknown`      | Indicates an unsupported registry data type, such as           |
+|                | REG_RESOURCE_LIST values.                                      |
 
 #### Cmdlets supported
 

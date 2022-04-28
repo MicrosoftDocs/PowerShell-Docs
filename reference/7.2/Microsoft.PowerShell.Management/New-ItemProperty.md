@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/14/2019
+ms.date: 04/28/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-itemproperty?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ItemProperty
@@ -277,16 +277,16 @@ Accept wildcard characters: True
 Specifies the type of property that this cmdlet adds.
 The acceptable values for this parameter are:
 
-- **String**: Specifies a null-terminated string. Equivalent to **REG_SZ**.
-- **ExpandString**: Specifies a null-terminated string that contains unexpanded references to
-  environment variables that are expanded when the value is retrieved. Equivalent to
-  **REG_EXPAND_SZ**.
-- **Binary**: Specifies binary data in any form. Equivalent to **REG_BINARY**.
-- **DWord**: Specifies a 32-bit binary number. Equivalent to **REG_DWORD**.
-- **MultiString**: Specifies an array of null-terminated strings terminated by two null characters.
-  Equivalent to **REG_MULTI_SZ**.
-- **Qword**: Specifies a 64-bit binary number. Equivalent to **REG_QWORD**.
-- **Unknown**: Indicates an unsupported registry data type, such as **REG_RESOURCE_LIST**.
+- `String`: Specifies a null-terminated string. Used for **REG_SZ** values.
+- `ExpandString`: Specifies a null-terminated string that contains unexpanded references to
+  environment variables that are expanded when the value is retrieved. Used for **REG_EXPAND_SZ**
+  values.
+- `Binary`: Specifies binary data in any form. Used for **REG_BINARY** values.
+- `DWord`: Specifies a 32-bit binary number. Used for **REG_DWORD** values.
+- `MultiString`: Specifies an array of null-terminated strings terminated by two null characters.
+  Used for **REG_MULTI_SZ** values.
+- `Qword`: Specifies a 64-bit binary number. Used for **REG_QWORD** values.
+- `Unknown`: Indicates an unsupported registry data type, such as **REG_RESOURCE_LIST** values.
 
 ```yaml
 Type: System.String
