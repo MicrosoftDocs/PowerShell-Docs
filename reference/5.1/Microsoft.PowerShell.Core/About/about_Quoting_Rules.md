@@ -1,7 +1,7 @@
 ---
 description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 04/26/2022
+ms.date: 05/02/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Quoting Rules
@@ -201,10 +201,13 @@ Use a quotation mark (`") to begin a string.
 
 The quotation rules for here-strings are slightly different.
 
-A here-string is a single-quoted or double-quoted string in which quotation
-marks are interpreted literally. A here-string can span multiple lines. All the
-lines in a here-string are interpreted as strings even though they are not
-enclosed in quotation marks.
+A here-string is a single-quoted or double-quoted string surrounded by at signs
+(`@`) in which quotation marks are interpreted literally. A here-string spans
+multiple lines and always ends with a newline before the closing mark (`@'` for
+single-quoted or `@"` for double-quoted). The closing mark of a here-string must
+always be the first text on a line. Every line between the opening and closing
+marks of a here-string is interpreted as part of a single string even if they
+aren't enclosed in quotation marks.
 
 Like regular strings, variables are replaced by their values in double-quoted
 here-strings. In single-quoted here-strings, variables are not replaced by
@@ -214,7 +217,7 @@ You can use here-strings for any text, but they are particularly useful for
 the following kinds of text:
 
 - Text that contains literal quotation marks
-- Multiple lines of text, such as the text in an HTML or XML
+- Multiple lines of text, such as the text in an HTML or XML block
 - The Help text for a script or function document
 
 A here-string can have either of the following formats, where `<Enter>`
@@ -237,11 +240,8 @@ Single-quotes:
 '@
 ```
 
-In either format, the closing quotation mark must be the first character in
-the line.
-
-A here-string contains all the text between the two hidden characters. In the
-here-string, all quotation marks are interpreted literally. For example:
+A here-string contains all the text between the opening and closing marks. In
+the here-string, all quotation marks are interpreted literally. For example:
 
 ```powershell
 @"
