@@ -1,7 +1,7 @@
 ---
 description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 05/02/2022
+ms.date: 05/03/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Quoting Rules
@@ -202,11 +202,15 @@ Use a quotation mark (`") to begin a string.
 The quotation rules for here-strings are slightly different.
 
 A here-string is a single-quoted or double-quoted string surrounded by at signs
-(`@`). The opening and closing marks must be on their own line. Quotation marks
-within a here-string are interpreted literally. A here-string spans multiple
-lines and always ends with a newline before the closing mark. The closing mark of
-a here-string must always be the first text on a line. Every line between the
-opening and closing marks of a here-string is part of a single string.
+(`@`). Quotation marks within a here-string are interpreted literally.
+
+A here-string:
+
+- spans multiple lines
+- begins with the opening mark followed by a newline
+- ends with a newline followed by the closing mark
+- includes every line between the opening and closing marks as part of a single
+  string
 
 Like regular strings, variables are replaced by their values in double-quoted
 here-strings. In single-quoted here-strings, variables are not replaced by
