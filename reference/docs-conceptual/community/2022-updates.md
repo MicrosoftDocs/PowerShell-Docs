@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2022
-ms.date: 04/01/2022
+ms.date: 05/03/2022
 title: What's New in PowerShell-Docs for 2022
 ---
 # What's new in PowerShell Docs for 2022
@@ -10,6 +10,43 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2022-April
+
+New content
+
+- No new content this month
+
+Content updates
+
+- Rewrote the install instructions for [PowerShellGet](/powershell/scripting/gallery/installing-psget)
+- Created separate article for
+  [Installing PowerShellGet on older Windows systems](/powershell/scripting/gallery/install-on-older-systems)
+
+Other projects
+
+- PowerShell + DevOps Summit April 25-28
+  - Gave presentation about contributing to Docs
+  - Lightning demo about argument completers
+  - Interview for the [PowerShell Podcast](https://powershellpodcast.podbean.com/e/contributing-to-powershell-made-easy-with-sean-wheeler/)
+
+### Top Community Contributors
+
+GitHub stats
+
+- 24 PRs merged (3 from Community)
+- 22 issues opened (17 from Community)
+- 21 issues closed (15 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|   GitHub Id    | PRs merged | Issues opened |
+| -------------- | :--------: | :-----------: |
+| Hrxn           |     1      |               |
+| kevinholtkamp  |     1      |               |
+| MikeyBronowski |     1      |               |
+| tommymaynard   |            |       4       |
 
 ## 2022-March
 
