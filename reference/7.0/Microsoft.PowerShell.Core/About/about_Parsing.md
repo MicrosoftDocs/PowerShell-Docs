@@ -203,7 +203,7 @@ icacls X:\VMS /grant Dom\HVAdmin:`(CI`)`(OI`)F
 ### The stop-parsing token
 
 Beginning in PowerShell 3.0, you can use the stop-parsing token (`--%`) to
-stop PowerShell from interpreting input asPowerShell commands or expressions.
+stop PowerShell from interpreting input as PowerShell commands or expressions.
 
 > [!NOTE]
 > The stop-parsing token is only intended for use on Windows platforms.
