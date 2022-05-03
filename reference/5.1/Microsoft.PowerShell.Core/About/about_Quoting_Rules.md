@@ -202,12 +202,11 @@ Use a quotation mark (`") to begin a string.
 The quotation rules for here-strings are slightly different.
 
 A here-string is a single-quoted or double-quoted string surrounded by at signs
-(`@`) in which quotation marks are interpreted literally. A here-string spans
-multiple lines and always ends with a newline before the closing mark (`@'` for
-single-quoted or `@"` for double-quoted). The closing mark of a here-string must
-always be the first text on a line. Every line between the opening and closing
-marks of a here-string is interpreted as part of a single string even if they
-aren't enclosed in quotation marks.
+(`@`). The opening and closing marks must be on their own line. Quotation marks
+within a here-string are interpreted literally. A here-string spans multiple
+lines and always ends with a newline before the closing mark. The closing mark of
+a here-string must always be the first text on a line. Every line between the
+opening and closing marks of a here-string is part of a single string.
 
 Like regular strings, variables are replaced by their values in double-quoted
 here-strings. In single-quoted here-strings, variables are not replaced by
@@ -239,6 +238,10 @@ Single-quotes:
 <string> [string] ...<Enter>
 '@
 ```
+
+> [!NOTE]
+> The final newline character is part of the closing mark. It is not added to
+> the here-string.
 
 A here-string contains all the text between the opening and closing marks. In
 the here-string, all quotation marks are interpreted literally. For example:
