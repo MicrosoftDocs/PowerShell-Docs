@@ -2,7 +2,8 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/22/2021
+ms.date: 05/05/2022
+no-loc: [-Scope]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
