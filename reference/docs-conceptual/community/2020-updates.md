@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2020
-ms.date: 01/05/2021
+ms.date: 05/05/2022
 title: What's New in PowerShell Docs for 2020
 ---
 
@@ -384,7 +384,7 @@ issues. Thank you!
   - The PowerShell Docs community pages
     - [Community resources](/powershell/scripting/community/community-support) page
     - [What's new in PowerShell Docs](#2020-march) page (this page)
-    - [PowerShell Infographic](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/assets/PowerShell_7_Infographic.pdf)
+    - [PowerShell Infographic](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/main/assets/PowerShell_7_Infographic.pdf)
       added to the Digital Art page
     - [PowerShell-Doc contributor guide](/powershell/scripting/community/contributing/overview)
   - New PowerShell content

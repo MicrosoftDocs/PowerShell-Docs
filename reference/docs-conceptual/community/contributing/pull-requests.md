@@ -1,6 +1,6 @@
 ---
 description: This article explains how to submit pull requests to the PowerShell-Docs repository.
-ms.date: 12/09/2020
+ms.date: 05/05/2022
 ms.topic: conceptual
 title: How to submit pull requests
 ---
@@ -12,18 +12,18 @@ reviewed before it can be merged. For best results, review the
 
 ## Using git branches
 
-The default branch for PowerShell-Docs is the `staging` branch. Changes made in working branches are
-merged into the `staging` branch before then being published. The `staging` branch is merged into
-the `live` branch every weekday at 3:00 PM (Pacific Time). The `live` branch contains the content
-that is published to docs.microsoft.com.
+The default branch for PowerShell-Docs is the `main` branch. Changes made in working branches are
+merged into the `main` branch before then being published. The `main` branch is merged into the
+`live` branch every weekday at 3:00 PM (Pacific Time). The `live` branch contains the content that
+is published to docs.microsoft.com.
 
 Before starting any changes, create a working branch in your local copy of the PowerShell-Docs
 repository. When working locally, be sure to synchronize your local repository before creating your
-working branch. The working branch should be created from an update-to-date copy of the `staging`
+working branch. The working branch should be created from an update-to-date copy of the `main`
 branch.
 
-All pull requests should target the `staging` branch. Don't submit change to the `live` branch.
-Changes made in the `staging` branch get merged into `live`, overwriting any changes made to `live`.
+All pull requests should target the `main` branch. Don't submit change to the `live` branch. Changes
+made in the `main` branch get merged into `live`, overwriting any changes made to `live`.
 
 ## Make the pull request process work better for everyone
 
