@@ -35,7 +35,7 @@ relevant versions. Check the boxes below to indicate the versions affected by th
 
 - [ ] I have read the [contributors guide][contrib] and followed the style and process guidelines
 - [ ] PR has a meaningful title
-- [ ] PR is targeted at the _staging_ branch
+- [ ] PR is targeted at the _main_ branch
 - [ ] All relevant versions updated
 - [ ] Includes content related to issues and PRs - see [Closing issues using keywords][key].
 - [ ] This PR is ready to merge and is not **Work in Progress**. If the PR is work in progress,

@@ -3,7 +3,7 @@ trigger:
   branches:
     include:
     - live
-    - staging
+    - main
   paths:
     include:
       - '*'
@@ -16,7 +16,7 @@ trigger:
 pr:
   branches:
     include:
-    - staging
+    - main
     - live
   paths:
     include:
