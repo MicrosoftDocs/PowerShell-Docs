@@ -1,6 +1,6 @@
 # Microsoft Open Source Code of Conduct
 
-> Updated: 09/06/2021
+> Updated: 05/05/2022
 
 This project has adopted the
 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more
@@ -9,13 +9,13 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 comments.
 
 [live-badge]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=live
-[staging-badge]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=staging
+[main-badge]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=main
 
 ## Build Status
 
-|          Live Branch          |           Staging Branch            |
+|          live branch          |           main branch            |
 | :---------------------------- | :---------------------------------- |
-| [![live-badge][]][live-badge] | [![staging-badge][]][staging-badge] |
+| [![live-badge][]][live-badge] | [![main-badge][]][main-badge] |
 
 ## PowerShell Documentation
 
@@ -54,7 +54,7 @@ The following list describes the main folders in this repository.
 
 ## Contributing
 
-We welcome public contributions into this repository via pull requests into the _staging_ branch.
+We welcome public contributions into this repository via pull requests into the _main_ branch.
 Please note that before we can accept your pull request you must sign our
 [Contribution License Agreement](https://cla.microsoft.com/). This is a one-time requirement.
 

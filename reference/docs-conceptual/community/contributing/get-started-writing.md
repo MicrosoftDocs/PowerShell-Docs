@@ -1,6 +1,6 @@
 ---
 description: This article is an overview of how to get started as a contributor to the PowerShell documentation.
-ms.date: 12/09/2020
+ms.date: 05/05/2022
 ms.topic: conceptual
 title: Get started contributing to PowerShell documentation
 ---
@@ -31,9 +31,7 @@ The conceptual documentation includes the following content:
 - SDK documentation
 
 The [conceptual documentation][conceptual] is not organized by version. All articles are displayed
-for every version of PowerShell. We're working to create version-specific articles. When that
-feature is available in our documentation, this guide will be update with the appropriate
-information.
+for every version of PowerShell. We're working to create version-specific articles.
 
 > [!NOTE]
 > Anytime a conceptual article is added, removed, or renamed, the TOC must be updated and included
@@ -106,9 +104,9 @@ Both methods end with the creation of a Pull Request (PR). See
 [Submitting a pull request](pull-requests.md) for more information and best practices.
 
 <!--link refs-->
-[conceptual]: https://github.com/MicrosoftDocs/PowerShell-Docs/tree/staging/reference/docs-conceptual
+[conceptual]: https://github.com/MicrosoftDocs/PowerShell-Docs/tree/main/reference/docs-conceptual
 [fork]: /contribute/get-started-setup-local#fork-the-repository
 [making-changes]: /contribute/how-to-write-workflows-major#making-your-changes
 [psdocs]: https://github.com/MicrosoftDocs/PowerShell-Docs
-[ref]: https://github.com/MicrosoftDocs/PowerShell-Docs/tree/staging/reference
+[ref]: https://github.com/MicrosoftDocs/PowerShell-Docs/tree/main/reference
 [rfc]: https://github.com/PowerShell/powershell-rfc/blob/master/RFC0000-RFC-Process.md

@@ -1,6 +1,6 @@
 ---
 description: This article explains how the PowerShell-Docs team manages pull requests.
-ms.date: 12/09/2020
+ms.date: 05/05/2022
 ms.topic: conceptual
 title: How we manage pull requests
 ---
@@ -60,14 +60,14 @@ See the [editorial checklist](editorial-checklist.md) for a more comprehensive l
 
 ## Branch Merge Process
 
-The `staging` branch is the only branch that is merged into `live`. Merges from short-lived
+The `main` branch is the only branch that is merged into `live`. Merges from short-lived
 (working) branches should be squashed.
 
-| *Merge from/to*  | *release-branch* | *staging*        | *live*      |
-| ---------------- |:----------------:|:----------------:|:-----------:|
+| *Merge from/to*  | *release-branch* |      *main*      |   *live*    |
+| ---------------- | :--------------: | :--------------: | :---------: |
 | *working-branch* | squash and merge | squash and merge | Not allowed |
-| *release-branch* | &mdash;          | merge            | Not allowed |
-| *staging*        | rebase           | &mdash;          | merge       |
+| *release-branch* |     &mdash;      |      merge       | Not allowed |
+| *main*           |      rebase      |     &mdash;      |    merge    |
 
 ### PR Merger checklist
 
@@ -102,11 +102,11 @@ unresolved conflicts that need to be fixed.
 
 ## Publishing to Live
 
-Periodically, the changes accumulated in the `staging` branch need to be published to the live
+Periodically, the changes accumulated in the `main` branch need to be published to the live
 website.
 
-- The `staging` branch is merged to `live` each weekday at 3pm PST.
-- The `staging` branch should be merged to `live` after any significant change.
+- The `main` branch is merged to `live` each weekday at 3pm PST.
+- The `main` branch should be merged to `live` after any significant change.
   - Changes to 50 or more files
   - After merging a release branch
   - Changes to repo or docset configurations (docfx.json, OPS configs, build scripts, etc.)
