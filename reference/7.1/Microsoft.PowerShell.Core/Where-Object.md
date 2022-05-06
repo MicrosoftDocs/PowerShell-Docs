@@ -302,7 +302,7 @@ Get-Service | where Status -eq "Stopped"
 
 ### Example 2: Get processes based on working set
 
-These commands list processes that have a working set greater than 250 megabytes (KB). The
+These commands list processes that have a working set greater than 250 megabytes (MB). The
 scriptblock and statement syntax are equivalent and can be used interchangeably.
 
 ```powershell
