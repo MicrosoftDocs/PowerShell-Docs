@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 10/22/2020
+ms.date: 05/09/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-SecureString
@@ -119,8 +119,11 @@ The results are saved in the `$Secure2` variable.
 ### Example 3: Convert a plain text string to a secure string
 
 This command converts the plain text string `P@ssW0rD!` into a secure string and stores the result
-in the `$Secure_String_Pwd` variable. To use the **AsPlainText** parameter, the **Force** parameter
-must also be included in the command.
+in the `$Secure_String_Pwd` variable.
+
+Starting in PowerShell 7, the **Force** parameter is not required when using the **AsPlainText**
+parameter. However, including the **Force** parameter ensures the statement is compatible with
+earlier versions.
 
 ```powershell
 $Secure_String_Pwd = ConvertTo-SecureString "P@ssW0rD!" -AsPlainText -Force
@@ -137,7 +140,7 @@ $Secure_String_Pwd = ConvertTo-SecureString "P@ssW0rD!" -AsPlainText -Force
 Specifies a plain text string to convert to a secure string. The secure string cmdlets help protect
 confidential text. The text is encrypted for privacy and is deleted from computer memory after it is
 used. If you use this parameter to provide plain text as input, the system cannot protect that input
-in this manner. To use this parameter, you must also specify the **Force** parameter.
+in this manner.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -153,8 +156,9 @@ Accept wildcard characters: False
 
 ### -Force
 
-Confirms that you understand the implications of using the **AsPlainText** parameter and still want
-to use it.
+Beginning in PowerShell 7, The **Force** parameter is no longer required when using the
+**AsPlainText** parameter. While the parameter is not used, it was not removed to provide
+compatibility with earlier versions of PowerShell.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
