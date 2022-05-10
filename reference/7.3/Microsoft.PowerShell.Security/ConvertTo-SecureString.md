@@ -156,9 +156,9 @@ Accept wildcard characters: False
 
 ### -Force
 
-Before PowerShell 7, this parameter was mandatory when using the **AsPlainText** parameter. It
-remains to enable you to use this cmdlet on earlier versions of PowerShell without having to update
-your code.
+Beginning in PowerShell 7, The **Force** parameter is no longer required when using the
+**AsPlainText** parameter. While the parameter is not used, it was not removed to provide
+compatibility with earlier versions of PowerShell.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
