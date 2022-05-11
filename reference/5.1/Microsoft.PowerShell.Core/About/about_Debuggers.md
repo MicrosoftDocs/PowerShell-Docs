@@ -765,8 +765,8 @@ PS C:\ps-test>
 Now, create a new command breakpoint with an action. The following command sets
 a command breakpoint with an action that logs the value of the `$scriptName`
 variable when the function is called. Because the Break keyword is not used in
-the action, execution does not stop. (The backtick (`) is the line-continuation
-character.)
+the action, execution does not stop. (The backtick (`` ` ``) is the
+line-continuation character.)
 
 ```powershell
 PS C:\ps-test> Set-PSBreakpoint -command psversion -script test.ps1  `
@@ -777,7 +777,7 @@ PS C:\ps-test> Set-PSBreakpoint -command psversion -script test.ps1  `
 You can also add actions that set conditions for the breakpoint. In the
 following command, the command breakpoint is executed only if the execution
 policy is set to RemoteSigned, the most restrictive policy that still permits
-you to run scripts. (The backtick (`) is the continuation character.)
+you to run scripts. (The backtick (`` ` ``) is the continuation character.)
 
 ```powershell
 PS C:\ps-test> Set-PSBreakpoint -script test.ps1 -command psversion `
