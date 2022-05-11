@@ -73,7 +73,7 @@ The Certificate drive exposes the following types.
 The **Certificate** provider exposes the certificate namespace as the `Cert:`
 drive in PowerShell. This command uses the `Set-Location` command to change the
 current location to the Root certificate store in the LocalMachine store
-location. Use a backslash (\\) or a forward slash (/) to indicate a level of
+location. Use a backslash (`\`) or a forward slash (/) to indicate a level of
 the `Cert:` drive.
 
 ```powershell

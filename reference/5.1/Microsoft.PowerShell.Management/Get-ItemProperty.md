@@ -74,7 +74,7 @@ This command gets the value name and data of the `ProgramFilesDir` registry entr
 `CurrentVersion` registry subkey. The command uses the **Path** parameter to specify the subkey and
 the Name parameter to specify the value name of the entry.
 
-The command uses a back tick or grave accent (\`), the PowerShell continuation character, to
+The command uses a back tick or grave accent (`` ` ``), the PowerShell continuation character, to
 continue the command on the second line.
 
 ```powershell

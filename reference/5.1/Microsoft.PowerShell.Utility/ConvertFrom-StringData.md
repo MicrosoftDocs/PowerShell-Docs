@@ -34,11 +34,11 @@ conform to the rules for a DATA section. For more information, see
 machine translation tools. That is, the cmdlet can interpret backslashes (`\`) as escape characters
 in the string data by using the
 [Regex.Unescape Method](/dotnet/api/system.text.regularexpressions.regex.unescape), instead of the
-PowerShell backtick character (\`) that would normally signal the end of a line in a script. Inside
-the here-string, the backtick character does not work. You can also preserve a literal backslash in
-your results by escaping it with a preceding backslash, like this: `\\`. Unescaped backslash
-characters, such as those that are commonly used in file paths, can render as illegal escape
-sequences in your results.
+PowerShell backtick character (`` ` ``) that would normally signal the end of a line in a script.
+Inside the here-string, the backtick character does not work. You can also preserve a literal
+backslash in your results by escaping it with a preceding backslash, like this: `\\`. Unescaped
+backslash characters, such as those that are commonly used in file paths, can render as illegal
+escape sequences in your results.
 
 ## EXAMPLES
 

@@ -401,7 +401,7 @@ shown in the [Code Sample](#code-sample) section.
 ### NormalizePath Method
 
 This item provider implements a NormalizePath helper method to ensure that the path has a consistent
-format. The format specified uses a backslash (\\) as a separator.
+format. The format specified uses a backslash (`\`) as a separator.
 
 ### PathIsDrive Method
 

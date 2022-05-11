@@ -124,7 +124,7 @@ Move-Item -LiteralPath 'Logs[Sept`06]' -Destination 'Logs[2006]'
 
 The **LiteralPath** parameter is used instead of **Path**, because the original directory name
 includes left bracket and right bracket characters ("\[" and "\]").
-The path is also enclosed in single quotation marks (' '), so that the backtick symbol (\`) is not
+The path is also enclosed in single quotation marks (' '), so that the backtick symbol (`` ` ``) is not
 misinterpreted.
 
 The **Destination** parameter does not require a literal path, because the Destination variable also

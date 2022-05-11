@@ -105,7 +105,7 @@ Move-Item "HKLM:\software\mycompany\*" "HKLM:\software\mynewcompany"
 This command moves the "Logs\[Sept\`06\]" directory (and its contents) into the "Logs\[2006\]" directory.
 
 The **LiteralPath** parameter is used instead of **Path**, because the original directory name includes left bracket and right bracket characters ("\[" and "\]").
-The path is also enclosed in single quotation marks (' '), so that the backtick symbol (\`) is not misinterpreted.
+The path is also enclosed in single quotation marks (' '), so that the backtick symbol (`` ` ``) is not misinterpreted.
 
 The **Destination** parameter does not require a literal path, because the Destination variable also must be enclosed in single quotation marks, because it includes brackets that can be misinterpreted.
 
