@@ -198,7 +198,7 @@ Specifies a query to run on the CIM server. You can specify the query dialect us
 If the value specified contains double quotes ("), single quotes ('), or a backslash (\\), you must
 escape those characters by prefixing them with the backslash (\\) character. If the value specified
 uses the WQL LIKE operator, then you must escape the following characters by enclosing them in
-square brackets (\[\]): percent (%), underscore (_), or opening square bracket (\[).
+square brackets (`[]`): percent (%), underscore (_), or opening square bracket (\[).
 
 ```yaml
 Type: System.String
