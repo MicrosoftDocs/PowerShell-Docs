@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/18/2020
+ms.date: 05/11/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-content?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Content
@@ -17,22 +17,23 @@ Deletes the contents of an item, but does not delete the item.
 ### Path (Default)
 
 ```
-Clear-Content [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String>] [<CommonParameters>]
+Clear-Content [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+[-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Clear-Content -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String>] [<CommonParameters>]
+Clear-Content -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
+[-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String>]
+[<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Clear-Content` cmdlet deletes the contents of an item, such as deleting the text from a file, but it does not delete the item.
-As a result, the item exists, but it is empty.
-The `Clear-Content` is similar to `Clear-Item`, but it works on items with contents, instead of items with values.
+The `Clear-Content` cmdlet deletes the contents of an item, such as deleting the text from a file,
+but it does not delete the item. As a result, the item exists, but it is empty. `Clear-Content` is
+similar to `Clear-Item`, but it works on items with contents, instead of items with values.
 
 ## EXAMPLES
 
@@ -42,8 +43,8 @@ The `Clear-Content` is similar to `Clear-Item`, but it works on items with conte
 Clear-Content "..\SmpUsers\*\init.txt"
 ```
 
-This command deletes all of the content from the "init.txt" files in all subdirectories of the SmpUsers directory.
-The files are not deleted, but they are empty.
+This command deletes all of the content from the `init.txt` files in all subdirectories of the
+`SmpUsers` directory. The files are not deleted, but they are empty.
 
 ### Example 2: Delete content of all files with a wildcard
 
@@ -51,11 +52,11 @@ The files are not deleted, but they are empty.
 Clear-Content -Path "*" -Filter "*.log" -Force
 ```
 
-This command deletes the contents of all files in the current directory with the ".log" file name
+This command deletes the contents of all files in the current directory with the `.log` file name
 extension, including files with the read-only attribute. The asterisk (`*`) in the path represents
 all items in the current directory. The **Force** parameter makes the command effective on read-only
-files. Using a filter to restrict the command to files with the .log file name extension instead of
-specifying \*.log in the path makes the operation faster.
+files. Using a filter to restrict the command to files with the `.log` file name extension instead
+of specifying `*.log` in the path makes the operation faster.
 
 ### Example 3: Clear all data from a stream
 
@@ -63,7 +64,7 @@ This example shows how the `Clear-Content` cmdlet clears the content from an alt
 while leaving the stream intact.
 
 The first command uses the `Get-Content` cmdlet to get the content of the `Zone.Identifier` stream
-in the Copy-Script.ps1 file, which was downloaded from the Internet.
+in the `Copy-Script.ps1` file, which was downloaded from the internet.
 
 The second command uses the `Clear-Content` cmdlet to clear the content.
 
@@ -74,16 +75,22 @@ You can use a method like this one to clear the content of an alternate data str
 not the recommended way to eliminate security checks that block files that are downloaded from the
 Internet. If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
 
+```powershell
+Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 ```
-PS C:\> Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 
+```Output
 [ZoneTransfer]
 ZoneId=3
+```
 
-PS C:\>Clear-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+```powershell
+Clear-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+```
 
-PS C:\>Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
-PS C:\>
+```Output
+
 ```
 
 ## PARAMETERS
@@ -92,7 +99,7 @@ PS C:\>
 
 > [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell. To impersonate another
-> user, or elevate your credentials when running this cmdlet, use Invoke-Command.
+> user, or elevate your credentials when running this cmdlet, use `Invoke-Command`.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -110,7 +117,7 @@ Accept wildcard characters: False
 
 Specifies, as a string array, strings that this cmdlet omits from the path to the content. The value
 of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
-"*.txt". Wildcards are permitted.
+`*.txt`. Wildcards are permitted.
 
 ```yaml
 Type: System.String[]
@@ -162,7 +169,7 @@ Accept wildcard characters: False
 ### -Include
 
 Specifies, as a string array, content that this cmdlet clears. The value of this parameter qualifies
-the **Path** parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+the **Path** parameter. Enter a path element or pattern, such as `*.txt`. Wildcards are permitted.
 
 ```yaml
 Type: System.String[]
@@ -180,8 +187,8 @@ Accept wildcard characters: True
 
 Specifies the paths to the items from which content is deleted. Unlike the **Path** parameter, the
 value of **LiteralPath** is used exactly as it is typed. No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks. Single quotation marks
-tell having PowerShell not to interpret any characters as escape sequences.
+If the path includes escape characters, enclose it in single quotation marks (`'`). Single quotation
+marks tell having PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: System.String[]
@@ -200,7 +207,7 @@ Accept wildcard characters: False
 Specifies the paths to the items from which content is deleted. Wildcards are permitted. The paths
 must be paths to items, not to containers. For example, you must specify a path to one or more
 files, not a path to a directory. Wildcards are permitted. This parameter is required, but the
-parameter name ("Path") is optional.
+parameter name (**Path**) is optional.
 
 ```yaml
 Type: System.String[]
@@ -226,9 +233,9 @@ it. Wildcard characters are not supported.
 parameter works only in file system drives, and will clear the content of alternative data streams
 on both files and directories.
 
-You can use the `Clear-Content` cmdlet to change the content of amy alternate data stream, such as
+You can use the `Clear-Content` cmdlet to change the content of any alternate data stream, such as
 `Zone.Identifier`. However, we do not recommend this as a way to eliminate security checks that
-block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use
+block files that are downloaded from the internet. If you verify that a downloaded file is safe, use
 the `Unblock-File` cmdlet.
 
 This parameter was introduced in PowerShell 3.0. As of PowerShell 7.2, `Clear-Content` can clear the
@@ -309,12 +316,8 @@ For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/a
 
 ## RELATED LINKS
 
-[Add-Content](Add-Content.md)
-
-[Get-Content](Get-Content.md)
-
-[Get-Item](Get-Item.md)
-
-[Set-Content](Set-Content.md)
-
-[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+- [Add-Content](Add-Content.md)
+- [Get-Content](Get-Content.md)
+- [Get-Item](Get-Item.md)
+- [Set-Content](Set-Content.md)
+- [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
