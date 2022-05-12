@@ -115,16 +115,16 @@ Linux `tar.gz` archive.
 The following example shows the steps for installing the x64 binary archive. You must choose the
 correct binary archive that matches the processor type for your platform.
 
-- powershell-7.2.2-linux-arm32.tar.gz
-- powershell-7.2.2-linux-arm64.tar.gz
-- powershell-7.2.2-linux-x64.tar.gz
+- powershell-7.2.3-linux-arm32.tar.gz
+- powershell-7.2.3-linux-arm64.tar.gz
+- powershell-7.2.3-linux-x64.tar.gz
 
 Use the following shell commands to download and install PowerShell from the `tar.gz` binary
 archive. Change the URL to match the version of PowerShell you want to install.
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.2.2/powershell-7.2.2-linux-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.2.3/powershell-7.2.3-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
