@@ -124,7 +124,7 @@ You can also use the `Select-Object` and `Format-List` cmdlets to display the
 property values of an object. `Select-Object` and `Format-List` each have a
 **Property** parameter. You can use the **Property** parameter to specify one
 or more properties and their values. Or, you can use the wildcard character
-(\*) to represent all the properties.
+(`*`) to represent all the properties.
 
 For example, the following command displays the values of all the properties
 of the PowerShell.exe file.

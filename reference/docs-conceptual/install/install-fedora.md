@@ -48,22 +48,22 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Th
 contains the dependencies needed by the package. Download the RPM package from the
 [releases][releases] page onto your openSUSE computer. The links to the current versions are:
 
-- PowerShell 7.2.2 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.2/powershell-lts-7.2.2-1.rh.x86_64.rpm`
-- PowerShell 7.1.6 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.6/powershell-7.1.6-1.rhel.7.x86_64.rpm`
-- PowerShell 7.0.9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.9/powershell-7.0.9-1.rhel.7.x86_64.rpm`
+- PowerShell 7.2.3 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.3/powershell-lts-7.2.3-1.rh.x86_64.rpm`
+- PowerShell 7.1.7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.7/powershell-7.1.7-1.rhel.7.x86_64.rpm`
+- PowerShell 7.0.10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.10/powershell-7.0.10-1.rhel.7.x86_64.rpm`
 
 The following shell command installs PowerShell 7.2:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.2/powershell-lts-7.2.2-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.3/powershell-lts-7.2.3-1.rh.x86_64.rpm
 ```
 
-Use the following shell commands to download and install the 7.1.6 package. Change the URL to match
+Use the following shell commands to download and install the 7.1.7 package. Change the URL to match
 the PowerShell version that you want to install.
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.1.6/powershell-7.1.6-1.rhel.7.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.1.7/powershell-7.1.7-1.rhel.7.x86_64.rpm
 ```
 
 ## Uninstall PowerShell from Fedora

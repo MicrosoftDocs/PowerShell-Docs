@@ -82,7 +82,7 @@ First we use `Get-Service` to get an object that represent the WMI service and s
 variable. Next, we start the service. Without the **PassThru** parameter, `Start-Service` does not
 create any output. The pipeline operator (|) passes the object output by `Start-Service` to the
 `Format-List` cmdlet to format the object as a list of its properties. The append redirection
-operator (\>\>) redirects the output to the services.txt file. The output is added to the end of the
+operator (`>>`) redirects the output to the services.txt file. The output is added to the end of the
 existing file.
 
 ### Example 4: Start a disabled service

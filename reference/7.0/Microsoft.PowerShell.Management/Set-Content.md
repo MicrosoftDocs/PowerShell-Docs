@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/03/2021
+ms.date: 05/11/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-content?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Content
@@ -148,11 +148,11 @@ Set-Content -Path C:\Temp\* -Filter *.txt -Value "Empty"
 
 ### -AsByteStream
 
-Specifies that the content should be read as a stream of bytes. This parameter was introduced in
+Specifies that the content should be written as a stream of bytes. This parameter was introduced in
 PowerShell 6.0.
 
 A warning occurs when you use the **AsByteStream** parameter with the **Encoding** parameter. The
-**AsByteStream** parameter ignores any encoding and the output is returned as a stream of bytes.
+**AsByteStream** parameter ignores any encoding and the output is written as a stream of bytes.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
