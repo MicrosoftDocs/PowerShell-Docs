@@ -84,7 +84,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
 <!-- end of content -->
 <!-- reference links -->
 
-[CHANGELOG]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0-preview.2
+[CHANGELOG]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0-preview.3
 [exp-clean]: ../learn/experimental-features.md#pscleanblock
 [exp-psexec]: ../learn/experimental-features.md#psexec
 [exp-strict]: ../learn/experimental-features.md#psstrictmodeassignment
