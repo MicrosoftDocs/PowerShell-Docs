@@ -45,7 +45,7 @@ slowly.
 
 A typical WMI query begins with a Select statement that gets all properties or
 particular properties of a WMI class. To select all properties of a WMI class,
-use an asterisk (\*). The From keyword specifies the WMI class.
+use an asterisk (`*`). The From keyword specifies the WMI class.
 
 A Select statement has the following format:
 
@@ -611,8 +611,8 @@ All operators, including the Like operators are valid with the Or and And
 operators. And, you can combine the Or and And operators in a single query
 with parentheses that tell Windows PowerShell which clauses to process first.
 
-This command uses the Windows PowerShell continuation character (`) divide the
-command into two lines.
+This command uses the Windows PowerShell continuation character (`` ` ``) divide
+the command into two lines.
 
 ```powershell
 $q = "Select * from Win32_Process `

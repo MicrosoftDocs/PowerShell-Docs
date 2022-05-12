@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/21/2019
+ms.date: 05/11/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-stringdata?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-StringData
@@ -25,20 +25,20 @@ into a hash table. Because each key-value pair must be on a separate line, here-
 used as the input format. By default, the **key** must be separated from the **value** by an equals
 sign (`=`) character.
 
-The `ConvertFrom-StringData` cmdlet is considered to be a safe cmdlet that can be used in the `DATA`
-section of a script or function. When used in a `DATA` section, the contents of the string must
-conform to the rules for a DATA section. For more information, see
+The `ConvertFrom-StringData` cmdlet is considered to be a safe cmdlet that can be used in the
+**DATA** section of a script or function. When used in a **DATA** section, the contents of the
+string must conform to the rules for a **DATA** section. For more information, see
 [about_Data_Sections](../Microsoft.PowerShell.Core/About/about_Data_Sections.md).
 
 `ConvertFrom-StringData` supports escape character sequences that are allowed by conventional
 machine translation tools. That is, the cmdlet can interpret backslashes (`\`) as escape characters
 in the string data by using the
 [Regex.Unescape Method](/dotnet/api/system.text.regularexpressions.regex.unescape), instead of the
-PowerShell backtick character (\`) that would normally signal the end of a line in a script. Inside
-the here-string, the backtick character does not work. You can also preserve a literal backslash in
-your results by escaping it with a preceding backslash, like this: `\\`. Unescaped backslash
-characters, such as those that are commonly used in file paths, can render as illegal escape
-sequences in your results.
+PowerShell backtick character (`` ` ``) that would normally signal the end of a line in a script.
+Inside the here-string, the backtick character does not work. You can also preserve a literal
+backslash in your results by escaping it with a preceding backslash, like this: `\\`. Unescaped
+backslash characters, such as those that are commonly used in file paths, can render as illegal
+escape sequences in your results.
 
 ## EXAMPLES
 
@@ -111,13 +111,13 @@ Bottom           Blue
 Top              Red
 ```
 
-To satisfy the condition that each key-value pair must be on a separate line, the string uses the PowerShell
-newline character (\`n) to separate the pairs.
+To satisfy the condition that each key-value pair must be on a separate line, the string uses the
+PowerShell newline character (`` `n ``) to separate the pairs.
 
 ### Example 4: Use ConvertFrom-StringData in the DATA section of a script
 
-This example shows a `ConvertFrom-StringData` command used in the DATA section of a script.
-The statements below the DATA section display the text to the user.
+This example shows a `ConvertFrom-StringData` command used in the **DATA** section of a script.
+The statements below the **DATA** section display the text to the user.
 
 ```powershell
 $TextMsgs = DATA {
@@ -215,7 +215,7 @@ Specifies the string to be converted. You can use this parameter or pipe a strin
 
 The value of this parameter must be a string that contains one or more key-value pairs. Each
 key-value pair must be on a separate line, or each pair must be separated by newline characters
-(\`n).
+(`` `n ``).
 
 You can include comments in the string, but the comments cannot be on the same line as a key-value
 pair. `ConvertFrom-StringData` ignores single-line comments. The `#` character must be the first
@@ -242,7 +242,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
