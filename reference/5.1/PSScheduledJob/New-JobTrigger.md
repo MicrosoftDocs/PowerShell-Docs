@@ -25,14 +25,15 @@ New-JobTrigger [-RandomDelay <TimeSpan>] -At <DateTime> [-Once] [-RepetitionInte
 ### Daily
 
 ```
-New-JobTrigger [-DaysInterval <Int32>] [-RandomDelay <TimeSpan>] -At <DateTime> [-Daily] [<CommonParameters>]
+New-JobTrigger [-DaysInterval <Int32>] [-RandomDelay <TimeSpan>] -At <DateTime> [-Daily]
+[<CommonParameters>]
 ```
 
 ### Weekly
 
 ```
-New-JobTrigger [-WeeksInterval <Int32>] [-RandomDelay <TimeSpan>] -At <DateTime> -DaysOfWeek <DayOfWeek[]>
- [-Weekly] [<CommonParameters>]
+New-JobTrigger [-WeeksInterval <Int32>] [-RandomDelay <TimeSpan>] -At <DateTime> -DaysOfWeek
+<DayOfWeek[]> [-Weekly] [<CommonParameters>]
 ```
 
 ### AtStartup
@@ -65,7 +66,8 @@ corresponding options in **Task Scheduler**, affect the scheduling and timing of
 is included in Windows PowerShell.
 
 For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module. Import
-the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
+the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see
+[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -79,13 +81,13 @@ This example creates a job trigger to start a scheduled job only once.
 New-JobTrigger -Once -At "1/20/2012 3:00 AM"
 ```
 
-The `New-JobTrigger` cmdlet to create a job trigger that starts a scheduled job
-only one time. The value of the **At** parameter is a string that Windows PowerShell converts into a
-**DateTime** object.
+The `New-JobTrigger` cmdlet to create a job trigger that starts a scheduled job only one time. The
+value of the **At** parameter is a string that Windows PowerShell converts into a **DateTime**
+object.
 
-The **At** parameter value includes an explicit date, not just a time. If the
-date were omitted, the trigger would be created with the current date and 3:00 AM time, which is
-likely to represent a time in the past.
+The **At** parameter value includes an explicit date, not just a time. If the date were omitted, the
+trigger would be created with the current date and 3:00 AM time, which is likely to represent a time
+in the past.
 
 ### Example 2: Daily Schedule
 
@@ -174,12 +176,12 @@ Add-JobTrigger -Name SynchronizeApps -Trigger (New-JobTrigger -Daily -At 3:10AM)
 
 You can add multiple job triggers to any scheduled job.
 
-The command uses the `Add-JobTrigger` cmdlet to add the job trigger to the SynchronizeApps scheduled
-job. The value of the **Trigger** parameter is a `New-JobTrigger` command that runs the job every
-day at 3:10 AM.
+The command uses the `Add-JobTrigger` cmdlet to add the job trigger to the **SynchronizeApps**
+scheduled job. The value of the **Trigger** parameter is a `New-JobTrigger` command that runs the
+job every day at 3:10 AM.
 
-When the command completes, SynchronizeApps is a scheduled job that runs at the times specified by
-the job trigger.
+When the command completes, **SynchronizeApps** is a scheduled job that runs at the times specified
+by the job trigger.
 
 ### Example 8: Create a repeating job trigger
 
@@ -204,7 +206,7 @@ This command forcibly stops the **SecurityCheck** job, which is triggered to run
 until its job trigger expires.
 
 To prevent the job from repeating, the command uses the `Get-JobTrigger` to get the job trigger of
-the SecurityCheck job and the `Set-JobTrigger` cmdlet to change the repetition interval and
+the **SecurityCheck** job and the `Set-JobTrigger` cmdlet to change the repetition interval and
 repetition duration of the job trigger to zero (0).
 
 ### Example 10: Create an hourly job trigger
@@ -364,7 +366,7 @@ specified by the value of this parameter. The default value, zero (00:00:00), di
 delay.
 
 Enter a timespan object, such as one returned by the `New-TimeSpan` cmdlet, or enter a value in
-\<hours\>:\<minutes\>:\<seconds\> format, which is automatically converted to a **TimeSpan** object.
+`<hours>:<minutes>:<seconds>` format, which is automatically converted to a **TimeSpan** object.
 
 ```yaml
 Type: System.TimeSpan
@@ -411,7 +413,7 @@ To run a job indefinitely, add the **RepeatIndefinitely** parameter instead.
 To stop a job before the job trigger repetition duration expires, use the `Set-JobTrigger` cmdlet to
 set the **RepetitionDuration** value to zero (0).
 
-This parameter is valid only when the **Once**, **At** and **RepetitionInterval** parameters are
+This parameter is valid only when the **Once**, **At**, and **RepetitionInterval** parameters are
 used in the command.
 
 ```yaml
@@ -452,7 +454,7 @@ Accept wildcard characters: False
 ### -User
 
 Specifies the users who trigger an **AtLogon** start of a scheduled job. Enter the name of a user in
-\<UserName\> or \<Domain\Username\> format or enter an asterisk (`*`) to represent all users. The
+`<UserName>` or `<Domain\Username>` format or enter an asterisk (`*`) to represent all users. The
 default value is all users.
 
 ```yaml
@@ -505,7 +507,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -523,48 +526,34 @@ You cannot pipe input to this cmdlet.
   `Get-JobTrigger` to get the job trigger of any scheduled job.
 - `New-JobTrigger` does not prevent you from creating a job trigger that will not run a scheduled
   job, such as one-time trigger for a date in the past.
-- The `Register-ScheduledJob` cmdlet accepts a ScheduledJobTrigger object, such as one returned by
-  the `New-JobTrigger` or `Get-JobTrigger` cmdlets, or a hash table with trigger values.
+- The `Register-ScheduledJob` cmdlet accepts a **ScheduledJobTrigger** object, such as one returned
+  by the `New-JobTrigger` or `Get-JobTrigger` cmdlets, or a hash table with trigger values.
 
   To submit a hash table, use the following keys.
 
-  `@{Frequency="Once" (or Daily, Weekly, AtStartup, AtLogon);At="3am"` (or any valid time string);
-`DaysOfWeek="Monday", "Wednesday"` (or any combination of day names);
-`Interval=2` (or any valid frequency interval);
-`RandomDelay="30minutes"` (or any valid timespan string);
-`User="Domain1\User01` (or any valid user; used only with the **AtLogon** frequency value)
-}
+  - **Frequency**: `Once`, `Daily`, `Weekly`, `AtStartup`, or `AtLogon`
+  - **At**: any valid time string, such as `3am`
+  - **DaysOfWeek**: any combination of day names as strings, such as `"Monday", "Wednesday"`
+  - **Interval**: any valid frequency interval as an integer
+  - **RandomDelay**: any valid timespan string, such as `30minutes`
+  - **User**: any valid user, such as `Domain1\User01`; used only with the **AtLogon** frequency
+    value
 
 ## RELATED LINKS
 
-[Add-JobTrigger](Add-JobTrigger.md)
-
-[Disable-JobTrigger](Disable-JobTrigger.md)
-
-[Disable-ScheduledJob](Disable-ScheduledJob.md)
-
-[Enable-JobTrigger](Enable-JobTrigger.md)
-
-[Enable-ScheduledJob](Enable-ScheduledJob.md)
-
-[Get-JobTrigger](Get-JobTrigger.md)
-
-[Get-ScheduledJob](Get-ScheduledJob.md)
-
-[Get-ScheduledJobOption](Get-ScheduledJobOption.md)
-
-[New-JobTrigger](New-JobTrigger.md)
-
-[New-ScheduledJobOption](New-ScheduledJobOption.md)
-
-[Register-ScheduledJob](Register-ScheduledJob.md)
-
-[Remove-JobTrigger](Remove-JobTrigger.md)
-
-[Set-JobTrigger](Set-JobTrigger.md)
-
-[Set-ScheduledJob](Set-ScheduledJob.md)
-
-[Set-ScheduledJobOption](Set-ScheduledJobOption.md)
-
-[Unregister-ScheduledJob](Unregister-ScheduledJob.md)
+- [Add-JobTrigger](Add-JobTrigger.md)
+- [Disable-JobTrigger](Disable-JobTrigger.md)
+- [Disable-ScheduledJob](Disable-ScheduledJob.md)
+- [Enable-JobTrigger](Enable-JobTrigger.md)
+- [Enable-ScheduledJob](Enable-ScheduledJob.md)
+- [Get-JobTrigger](Get-JobTrigger.md)
+- [Get-ScheduledJob](Get-ScheduledJob.md)
+- [Get-ScheduledJobOption](Get-ScheduledJobOption.md)
+- [New-JobTrigger](New-JobTrigger.md)
+- [New-ScheduledJobOption](New-ScheduledJobOption.md)
+- [Register-ScheduledJob](Register-ScheduledJob.md)
+- [Remove-JobTrigger](Remove-JobTrigger.md)
+- [Set-JobTrigger](Set-JobTrigger.md)
+- [Set-ScheduledJob](Set-ScheduledJob.md)
+- [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
+- [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
