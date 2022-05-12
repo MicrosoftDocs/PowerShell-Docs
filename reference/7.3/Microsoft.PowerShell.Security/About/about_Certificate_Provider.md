@@ -412,9 +412,9 @@ provider-enabled drive. These parameters are valid in all subdirectories of the
 
 > [!NOTE]
 > Parameters that perform filtering against the **EnhancedKeyUsageList**
-> property also return items with an empty **`**EnhancedKeyUsageList**`**
-> property value. Certificates that have an empty **EnhancedKeyUsageList** can
-> be used for all purposes.
+> property also return items with an empty**EnhancedKeyUsageList** property
+> value. Certificates that have an empty **EnhancedKeyUsageList** can be used
+> for all purposes.
 
 The following Certificate provider parameters were reintroduced in PowerShell
 7.1.
@@ -499,7 +499,7 @@ number of days. A value of zero (0) gets certificates that have expired.
 
 This parameter was reintroduced in PowerShell 7.1
 
-### ItemType <String>
+### ItemType <System.String>
 
 This parameter allows you to specify the type of item created by `New-Item`.
 

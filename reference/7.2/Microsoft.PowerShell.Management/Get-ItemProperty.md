@@ -256,11 +256,18 @@ providers available in your session, type `Get-PSProvider`. For more information
 
 ## RELATED LINKS
 
-- [Clear-ItemProperty](Clear-ItemProperty.md)
-- [Copy-ItemProperty](Copy-ItemProperty.md)
-- [Move-ItemProperty](Move-ItemProperty.md)
-- [New-ItemProperty](New-ItemProperty.md)
-- [Remove-ItemProperty](Remove-ItemProperty.md)
-- [Rename-ItemProperty](Rename-ItemProperty.md)
-- [Set-ItemProperty](Set-ItemProperty.md)
-- [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[Clear-ItemProperty](Clear-ItemProperty.md)
+
+[Copy-ItemProperty](Copy-ItemProperty.md)
+
+[Move-ItemProperty](Move-ItemProperty.md)
+
+[New-ItemProperty](New-ItemProperty.md)
+
+[Remove-ItemProperty](Remove-ItemProperty.md)
+
+[Rename-ItemProperty](Rename-ItemProperty.md)
+
+[Set-ItemProperty](Set-ItemProperty.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

@@ -332,8 +332,12 @@ For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/a
 
 ## RELATED LINKS
 
-- [Add-Content](Add-Content.md)
-- [Get-Content](Get-Content.md)
-- [Get-Item](Get-Item.md)
-- [Set-Content](Set-Content.md)
-- [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[Add-Content](Add-Content.md)
+
+[Get-Content](Get-Content.md)
+
+[Get-Item](Get-Item.md)
+
+[Set-Content](Set-Content.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

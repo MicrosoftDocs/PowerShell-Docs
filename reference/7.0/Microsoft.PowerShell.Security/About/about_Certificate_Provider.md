@@ -412,7 +412,7 @@ provider-enabled drive. These parameters are valid in all subdirectories of the
 
 > [!NOTE]
 > Parameters that perform filtering against the **EnhancedKeyUsageList**
-> property also return items with an empty **`**EnhancedKeyUsageList**`**
+> property also return items with an empty **EnhancedKeyUsageList**
 > property value. Certificates that have an empty **EnhancedKeyUsageList** can
 > be used for all purposes.
 
@@ -451,7 +451,7 @@ This parameter deletes the associated private key when it deletes the certificat
 
 This parameter was introduced in PowerShell 3.0.
 
-### ItemType <String>
+### ItemType <System.String>
 
 This parameter allows you to specify the type of item created by `New-Item`.
 
