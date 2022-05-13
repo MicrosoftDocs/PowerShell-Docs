@@ -14,7 +14,7 @@ discovery, and speeds up input entry of argument values.
 
 ## Long description
 
-This article describe the different ways you can implement argument completers
+This article describes the different ways you can implement argument completers
 for PowerShell functions. Argument completers provide the possible values for a
 parameter. The available values are calculated at runtime when the user presses
 the <kbd>Tab</kbd> key after the parameter name. There are several ways to
