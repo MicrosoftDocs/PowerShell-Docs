@@ -6,13 +6,12 @@ description: This article summarizes the differences and breaking changes from W
 # Differences between Windows PowerShell 5.1 and PowerShell 7.x
 
 Windows PowerShell 5.1 is built on top of the .NET Framework v4.5. With the release of PowerShell
-6.0, PowerShell became an open source project built on .NET Core 2.0. PowerShell 7.0 is built on
-.NET Core 3.1. And, with the release of PowerShell 7.2, PowerShell will be built on .NET 6.0. Moving
-from the .NET Framework to .NET Core allowed PowerShell to become a cross-platform solution.
-PowerShell runs on Windows, macOS, and Linux.
+6.0, PowerShell became an open source project built on .NET Core 2.0. Moving from the .NET Framework
+to .NET Core allowed PowerShell to become a cross-platform solution. PowerShell runs on Windows,
+macOS, and Linux.
 
 There are few differences in the PowerShell language between Windows PowerShell and PowerShell. The
-differences are most notable in the availability and behavior of PowerShell cmdlets between Windows
+most notable differences are in the availability and behavior of PowerShell cmdlets between Windows
 and non-Windows platforms and the changes that stem from the differences between the .NET Framework
 and .NET Core.
 
@@ -31,7 +30,7 @@ see the **What's New** articles for each version.
 
 ## .NET Framework vs .NET Core
 
-PowerShell on Linux and macOS uses .NET Core, which is a subset of the full .NET Framework on
+PowerShell on Linux and macOS uses .NET core, which is a subset of the full .NET Framework on
 Microsoft Windows. This is significant because PowerShell provides direct access to the underlying
 framework types and methods. As a result, scripts that run on Windows may not run on non-Windows
 platforms because of the differences in the frameworks. For more information about changes in .NET
@@ -60,7 +59,7 @@ For more information see:
 - [about_Windows_PowerShell_Compatibility](/powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility)
 - [PowerShell 7 module compatibility](module-compatibility.md)
 
-[!INCLUDE [Product terminology](../../includes/product-terms.md)]
+!INCLUDE [Product terminology](../../includes/product-terms.md)]
 
 ## Modules no longer shipped with PowerShell
 
@@ -220,7 +219,7 @@ PowerShell and has been published to the PowerShell Gallery. For more informatio
 [announcement](https://devblogs.microsoft.com/powershell/announcing-psdesiredstateconfiguration-on-powershell-gallery/)
 in the PowerShell Team blog.
 
-## Engine/language changes
+## PowerShell executable changes
 
 ### Renamed `powershell.exe` to `pwsh.exe`
 
@@ -251,6 +250,8 @@ The shortened name is also consistent with naming of shells on non-Windows platf
 Previously, using `pwsh.exe` to execute a PowerShell script using `-File` provided no way to pass
 `$true`/`$false` as parameter values. Support for `$true`/`$false` as parsed values to parameters
 was added. Switch values are also supported.
+
+## Engine changes
 
 ### Support PowerShell as a default Unix shell
 
@@ -381,6 +382,14 @@ becomes the first argument in the list, so it is bound to `-Path`.
 PS> SimpleTest @hash "MyPath"
 Name: Hello; Path: MyPath; Args: -Blah: World
 ```
+
+## Language changes
+
+### New operators:
+  - Ternary operator: `a ? b : c`
+  - Pipeline chain operators: `||` and `&&`
+  - Null conditional operators: `??` and `??=`
+
 
 ### Added `&` operator for job control
 
@@ -712,8 +721,8 @@ valid single value JSON `null` literal as `$null`.
 ### Web Cmdlets warn when `-Credential` is sent over unencrypted connections
 
 When using HTTP, content including passwords are sent as clear-text. This change is to not allow
-this by default and return an error if credentials are being passed in an insecure manner. Users
-can bypass this by using the `-AllowUnencryptedAuthentication` switch.
+this by default and return an error if credentials are being passed insecurely. Users can bypass
+this by using the `-AllowUnencryptedAuthentication` switch.
 
 ## API changes
 
