@@ -49,13 +49,15 @@ The variable contains the following properties:
 - **ItalicOff** - Turns Italic off
 - **Underline** - Turns underlining on
 - **UnderlineOff** - Turns underlining off
+- **StrikethroughOff** - Turns strikethrough off
+- **Strikethrough** - Turns strikethrough on
 - **OutputRendering** - Control when output rendering is used
-- **Background** - Nested object to control background coloring
-- **Foreground** - Nested object to control foreground coloring
 - **Formatting** - Nested object that controls default formatting for output streams
 - **Progress** - Nested object that controls the rendering of progress bars
 - **FileInfo** - (experimental) Nested object to control the coloring of
   **FileInfo** objects.
+- **Foreground** - Nested object to control foreground coloring
+- **Background** - Nested object to control background coloring
 
 The base members return strings of ANSI escape sequences mapped to their names.
 The values are settable to allow customization. For example, you could change
