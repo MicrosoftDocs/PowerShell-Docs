@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/11/2019
+ms.date: 05/12/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/update-list?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-List
@@ -280,7 +280,4 @@ You can pipe the objects to be updated to `Update-List`.
 
 ## RELATED LINKS
 
-[Format-List](Format-List.md)
-
 [Select-Object](Select-Object.md)
-
