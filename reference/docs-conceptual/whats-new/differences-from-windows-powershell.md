@@ -1,18 +1,17 @@
 ---
-ms.date: 09/17/2021
+ms.date: 05/16/2022
 title: Differences between Windows PowerShell 5.1 and PowerShell 7.x
 description: This article summarizes the differences and breaking changes from Windows PowerShell 5.1 and the current version of PowerShell that is based on .NET Core.
 ---
 # Differences between Windows PowerShell 5.1 and PowerShell 7.x
 
 Windows PowerShell 5.1 is built on top of the .NET Framework v4.5. With the release of PowerShell
-6.0, PowerShell became an open source project built on .NET Core 2.0. PowerShell 7.0 is built on
-.NET Core 3.1. And, with the release of PowerShell 7.2, PowerShell will be built on .NET 6.0. Moving
-from the .NET Framework to .NET Core allowed PowerShell to become a cross-platform solution.
-PowerShell runs on Windows, macOS, and Linux.
+6.0, PowerShell became an open source project built on .NET Core 2.0. Moving from the .NET Framework
+to .NET Core allowed PowerShell to become a cross-platform solution. PowerShell runs on Windows,
+macOS, and Linux.
 
 There are few differences in the PowerShell language between Windows PowerShell and PowerShell. The
-differences are most notable in the availability and behavior of PowerShell cmdlets between Windows
+most notable differences are in the availability and behavior of PowerShell cmdlets between Windows
 and non-Windows platforms and the changes that stem from the differences between the .NET Framework
 and .NET Core.
 
@@ -23,20 +22,20 @@ article is to present the current state of PowerShell and how that is different 
 PowerShell. For a detailed discussion of changes between versions and the addition of new features,
 see the **What's New** articles for each version.
 
-- [What's new in PowerShell 7.3](What-s-New-in-PowerShell-73.md)
-- [What's new in PowerShell 7.2](What-s-New-in-PowerShell-72.md)
-- [What's new in PowerShell 7.1](What-s-New-in-PowerShell-71.md)
-- [What's new in PowerShell 7.0](What-s-New-in-PowerShell-70.md)
-- [What's new in PowerShell 6.x](/previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-core-62?view=powershell-6&preserve-view=true)
+- [What's new in PowerShell 7.3][WhatsNew73]
+- [What's new in PowerShell 7.2][WhatsNew72]
+- [What's new in PowerShell 7.1][WhatsNew71]
+- [What's new in PowerShell 7.0][WhatsNew70]
+- [What's new in PowerShell 6.x][WhatsNew6x]
 
 ## .NET Framework vs .NET Core
 
-PowerShell on Linux and macOS uses .NET Core, which is a subset of the full .NET Framework on
+PowerShell on Linux and macOS uses .NET core, which is a subset of the full .NET Framework on
 Microsoft Windows. This is significant because PowerShell provides direct access to the underlying
 framework types and methods. As a result, scripts that run on Windows may not run on non-Windows
 platforms because of the differences in the frameworks. For more information about changes in .NET
 Core, see
-[Breaking changes for migration from .NET Framework to .NET Core](/dotnet/core/compatibility/fx-core).
+[Breaking changes for migration from .NET Framework to .NET Core][fxcore].
 
 Each new release of PowerShell is built on a newer version of .NET. There can be breaking changes in
 .NET that affect PowerShell.
@@ -49,16 +48,15 @@ Each new release of PowerShell is built on a newer version of .NET. There can be
 - PowerShell 6.1 - Built on .NET Core 2.1
 - PowerShell 6.0 - Built on .NET Core 2.0
 
-With the advent of
-[.NET Standard 2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/), PowerShell can
-load many traditional Windows PowerShell modules without modification. Additionally, PowerShell 7
-includes a Windows PowerShell Compatibility feature that allows you to use Windows PowerShell
-modules that still require the full framework.
+With the advent of [.NET Standard 2.0][NETStd2], PowerShell can load many traditional Windows
+PowerShell modules without modification. Additionally, PowerShell 7 includes a Windows PowerShell
+Compatibility feature that allows you to use Windows PowerShell modules that still require the full
+framework.
 
 For more information see:
 
-- [about_Windows_PowerShell_Compatibility](/powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility)
-- [PowerShell 7 module compatibility](module-compatibility.md)
+- [about_Windows_PowerShell_Compatibility][about-WinCompat]
+- [PowerShell 7 module compatibility][mod-compat]
 
 [!INCLUDE [Product terminology](../../includes/product-terms.md)]
 
@@ -89,9 +87,6 @@ without the need for PowerShell Workflow.
 If there is a need to use checkpoints to resume a script after the OS restarts, we recommend
 using Task Scheduler to run a script on OS startup, but the script would need to maintain
 its own state (like persisting it to a file).
-
-[workflow]: /previous-versions/powershell/scripting/components/workflows-guide
-[workflow-foundation]: /dotnet/framework/windows-workflow-foundation/
 
 ## Cmdlets removed from PowerShell
 
@@ -217,10 +212,9 @@ Windows-specific features:
 
 Beginning with PowerShell 7.2, the PSDesiredStateConfiguration module has been removed from
 PowerShell and has been published to the PowerShell Gallery. For more information, see the
-[announcement](https://devblogs.microsoft.com/powershell/announcing-psdesiredstateconfiguration-on-powershell-gallery/)
-in the PowerShell Team blog.
+[announcement][PSDSC-announce] in the PowerShell Team blog.
 
-## Engine/language changes
+## PowerShell executable changes
 
 ### Renamed `powershell.exe` to `pwsh.exe`
 
@@ -252,6 +246,33 @@ Previously, using `pwsh.exe` to execute a PowerShell script using `-File` provid
 `$true`/`$false` as parameter values. Support for `$true`/`$false` as parsed values to parameters
 was added. Switch values are also supported.
 
+## Improved backwards compatibility with Windows PowerShell
+
+For Windows, a new switch parameter **UseWindowsPowerShell** is added to `Import-Module`. This
+switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
+implicitly run any cmdlets contained in that module. For more information, see 
+[Import-Module][Import-Module].
+
+For more information on which Microsoft modules work with PowerShell 7.0, see the
+[Module Compatibility Table][mod-compat].
+
+### Microsoft Update support for Windows
+
+PowerShell 7.2 added support for Microsoft Update. When you enable this feature, you'll get the latest
+PowerShell 7 updates in your traditional Windows Update (WU) management flow, whether that's with
+Windows Update for Business, WSUS, SCCM, or the interactive WU dialog in Settings.
+
+The PowerShell 7.2 MSI package includes following command-line options:
+
+- `USE_MU` - This property has two possible values:
+  - `1` (default) - Opts into updating through Microsoft Update or WSUS
+  - `0` -  Do not opt into updating through Microsoft Update or WSUS
+- `ENABLE_MU`
+  - `1` (default) - Opts into using Microsoft Update the Automatic Updates or Windows Update
+  - `0` - Do not opt into using Microsoft Update the Automatic Updates or Windows Update
+
+## Engine changes
+
 ### Support PowerShell as a default Unix shell
 
 On Unix, it is a convention for shells to accept `-i` for an interactive shell and many tools
@@ -267,18 +288,14 @@ adoption in the PowerShell community.
 Due to the complexity of supporting snap-ins and their lack of usage in the community, we no longer
 support custom snap-ins in PowerShell.
 
-[snapin]: /powershell/module/microsoft.powershell.core/about/about_pssnapins
-
 ### Experimental feature flags
 
-We enabled support for [Experimental Features][exp]. This allows PowerShell developers to deliver
-new features and get feedback before the design is complete. This way we avoid making breaking
-changes as the design evolves.
+PowerShell 6.2 enabled support for [Experimental Features][exp]. This allows PowerShell developers
+to deliver new features and get feedback before the design is complete. This way we avoid making
+breaking changes as the design evolves.
 
 Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable or
 disable these features with `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature`.
-
-[exp]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
 
 ### Load assembly from module base path before trying to load from the GAC
 
@@ -382,6 +399,119 @@ PS> SimpleTest @hash "MyPath"
 Name: Hello; Path: MyPath; Args: -Blah: World
 ```
 
+## Language changes
+
+### Null-coalescing operator `??`
+
+The null-coalescing operator `??` returns the value of its left-hand operand if
+it isn't null. Otherwise, it evaluates the right-hand operand and returns its
+result. The `??` operator doesn't evaluate its right-hand operand if the
+left-hand operand evaluates to non-null.
+
+```powershell
+$x = $null
+$x ?? 100
+```
+
+```Output
+100
+```
+
+In the following example, the right-hand operand won't be evaluated.
+
+```powershell
+[string] $todaysDate = '1/10/2020'
+$todaysDate ?? (Get-Date).ToShortDateString()
+```
+
+```Output
+1/10/2020
+```
+
+### Null-coalescing assignment operator `??=`
+
+The null-coalescing assignment operator `??=` assigns the value of its
+right-hand operand to its left-hand operand only if the left-hand operand
+evaluates to null. The `??=` operator doesn't evaluate its right-hand operand
+if the left-hand operand evaluates to non-null.
+
+```powershell
+$x = $null
+$x ??= 100
+$x
+```
+
+```Output
+100
+```
+
+In the following example, the right-hand operand won't be evaluated.
+
+```powershell
+[string] $todaysDate = '1/10/2020'
+$todaysDate ??= (Get-Date).ToShortDateString()
+```
+
+```Output
+1/10/2020
+```
+
+### Null-conditional operators
+
+> [!NOTE]
+> This feature was moved from experimental to mainstream in PowerShell 7.1.
+
+A null-conditional operator applies a member access, `?.`, or element access,
+`?[]`, operation to its operand only if that operand evaluates to non-null;
+otherwise, it returns null.
+
+Since PowerShell allows `?` to be part of the variable name, formal
+specification of the variable name is required for using these operators. So it
+is required to use `{}` around the variable names like `${a}` or when `?` is
+part of the variable name `${a?}`.
+
+In the following example, the value of **PropName** is returned.
+
+```powershell
+$a = @{ PropName = 100 }
+${a}?.PropName
+```
+
+```Output
+100
+```
+
+The following example will return null, without trying to access the member
+name **PropName**.
+
+```powershell
+$a = $null
+${a}?.PropName
+```
+
+Similarly, the value of the element will be returned.
+
+```powershell
+$a = 1..10
+${a}?[0]
+```
+
+```Output
+1
+```
+
+And when the operand is null, the element isn't accessed and null is returned.
+
+```PowerShell
+$a = $null
+${a}?[0]
+```
+
+> [!NOTE]
+> The variable name syntax of `${<name>}` should not be confused with the `$()`
+> subexpression operator. For more information, see Variable name section of
+> [about_Variables][about_Variables].
+
 ### Added `&` operator for job control
 
 Putting `&` at the end of a pipeline causes the pipeline to be run as a PowerShell job. When a
@@ -459,7 +589,7 @@ class M {
 
 PowerShell 7.1 is built on .NET 5.0, which introduced the following breaking change:
 
-- [Behavior changes when comparing strings on .NET 5+](/dotnet/standard/base-types/string-comparison-net-5-plus)
+- [Behavior changes when comparing strings on .NET 5+][NET5-strings]
 
 As of .NET 5.0, culture invariant string comparisons ignore non-printing control characters.
 
@@ -474,7 +604,146 @@ For example, the following two strings are considered to be identical:
 True
 ```
 
+## New cmdlets
+
+### New Get-Uptime cmdlet
+
+The [Get-Uptime][Get-Uptime] cmdlet returns the time elapsed since the last boot of the operating
+system. The cmdlet was introduced in PowerShell 6.0.
+
+### New Remove-Alias cmdlet
+
+The [Remove-Alias][Remove-Alias] cmdlet removes an alias from the current PowerShell session. The
+cmdlet was introduced in PowerShell 6.0.
+
+### New cmdlet Remove-Service
+
+The [Remove-Service][Remove-Service] cmdlet removes a Windows service in the registry and in the service database.
+The `Remove-Service` cmdlet was introduced in PowerShell 6.0.
+
+### New Markdown cmdlets
+
+Markdown is a standard for creating readable plaintext documents with basic formatting that can be
+rendered into HTML.
+
+The following cmdlets were added in PowerShell 6.1:
+
+- [ConvertFrom-Markdown][ConvertFrom-Markdown] - Convert the contents of a string or a file to a
+  **MarkdownInfo** object.
+- [Get-MarkdownOption][Get-MarkdownOption] - Returns the current colors and styles used for
+  rendering Markdown content in the console.
+- [Set-MarkdownOption][Set-MarkdownOption] - Sets the colors and styles used for rendering Markdown
+  content in the console.
+- [Show-Markdown][Show-Markdown] - Displays Markdown content in the console or as HTML
+
+### New Test-Json cmdlet
+
+The [Test-Json][Test-Json] cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document
+and can optionally verify that JSON document against a provided schema.
+
+This cmdlet was introduced in PowerShell 6.1
+
+### New cmdlets to support Experimental Features
+
+The following cmdlets were added in PowerShell 6.2 to support Experimental Features.
+
+- [Disable-ExperimentalFeature][Disable-ExperimentalFeature]
+- [Enable-ExperimentalFeature][Enable-ExperimentalFeature]
+- [Get-ExperimentalFeature][Get-ExperimentalFeature]
+
+### New Join-String cmdlet
+
+The [Join-String][Join-String] cmdlet combines objects from the pipeline into a single string. This cmdlet was
+added in PowerShell 6.2.
+
+### New view ConciseView and cmdlet Get-Error
+
+PowerShell 7.0 enhances the display of error messages to improve the readability of interactive and
+script errors with a new default view, **ConciseView**. The views are user-selectable through the
+preference variable `$ErrorView`.
+
+With **ConciseView**, if an error is not from a script or parser error, then it's a single line
+error message:
+
+```powershell
+Get-Childitem -Path c:\NotReal
+```
+
+```Output
+Get-ChildItem: Cannot find path 'C:\NotReal' because it does not exist
+```
+
+If the error occurs during script execution or is a parsing error, PowerShell returns a multiline
+error message that contains the error, a pointer, and an error message showing where the error is in
+that line. If the terminal doesn't support ANSI color escape sequences (VT100), then colors are not
+displayed.
+
+The default view in PowerShell 7 is **ConciseView**. The previous default view was **NormalView**
+and you can select this by setting the preference variable `$ErrorView`.
+
+```powershell
+$ErrorView = 'NormalView' # Sets the error view to NormalView
+$ErrorView = 'ConciseView' # Sets the error view to ConciseView
+```
+
+> [!NOTE]
+> A new property **ErrorAccentColor** is added to `$Host.PrivateData` to support changing
+> the accent color of the error message.
+
+The new `Get-Error`cmdlet provides a complete detailed view of the fully qualified error when
+desired. By default the cmdlet displays the full details, including inner exceptions, of the last
+error that occurred.
+
+The `Get-Error` cmdlet supports input from the pipeline using the built-in variable `$Error`.
+`Get-Error` displays all piped errors.
+
+```powershell
+$Error | Get-Error
+```
+
+The `Get-Error` cmdlet supports the **Newest** parameter, allowing you to specify how many errors
+from the current session you wish displayed.
+
+```powershell
+Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
+```
+
+For more information, see [Get-Error][Get-Error].
+
 ## Cmdlet changes
+
+### Parallel execution added to ForEach-Object
+
+Beginning in PowerShell 7.0, the `ForEach-Object` cmdlet, which iterates items in a collection, now
+has built-in parallelism with the new **Parallel** parameter.
+
+By default, parallel script blocks use the current working directory of the caller that started the
+parallel tasks.
+
+This example retrieves 50,000 log entries from 5 system logs on a local Windows machine:
+
+```powershell
+$logNames = 'Security','Application','System','Windows PowerShell','Microsoft-Windows-Store/Operational'
+
+$logEntries = $logNames | ForEach-Object -Parallel {
+    Get-WinEvent -LogName $_ -MaxEvents 10000
+} -ThrottleLimit 5
+
+$logEntries.Count
+
+50000
+```
+
+The **Parallel** parameter specifies the script block that is run in parallel for each input log
+name.
+
+The new **ThrottleLimit** parameter limits the number of script blocks running in parallel at a
+given time. The default is 5.
+
+Use the `$_` variable to represent the current input object in the script block. Use the
+`$using:` scope to pass variable references to the running script block.
+
+For more information, see [ForEach-Object][ForEach-Object].
 
 ### Check `system32` for compatible built-in modules on Windows
 
@@ -712,8 +981,13 @@ valid single value JSON `null` literal as `$null`.
 ### Web Cmdlets warn when `-Credential` is sent over unencrypted connections
 
 When using HTTP, content including passwords are sent as clear-text. This change is to not allow
-this by default and return an error if credentials are being passed in an insecure manner. Users
-can bypass this by using the `-AllowUnencryptedAuthentication` switch.
+this by default and return an error if credentials are being passed insecurely. Users can bypass
+this by using the `-AllowUnencryptedAuthentication` switch.
+
+### Make `-OutFile` parameter in web cmdlets to work like `-LiteralPath`
+
+Beginning in PowerShell 7.1, the **OutFile** parameter of the web cmdlets works like **LiteralPath**
+and does not process wildcards.
 
 ## API changes
 
@@ -732,9 +1006,6 @@ rarely used with `Add-Type`. We removed this feature to reduce the size of Power
 Previously, when creating a PowerShell runspace programmatically using the API, you could use the
 legacy [`RunspaceConfiguration`][runspaceconfig] or the newer [`InitialSessionState`][iss] classes.
 This change removed support for `RunspaceConfiguration` and only supports `InitialSessionState`.
-
-[runspaceconfig]: /dotnet/api/system.management.automation.runspaces.runspaceconfiguration
-[iss]: /dotnet/api/system.management.automation.runspaces.initialsessionstate
 
 ### `CommandInvocationIntrinsics.InvokeScript` bind arguments to `$input` instead of `$args`
 
@@ -794,13 +1065,12 @@ supported for non-Windows platforms.
 
 PowerShell also supports PowerShell Remoting (PSRP) over SSH on all platforms (Windows, macOS, and
 Linux). For more information, see
-[SSH remoting in PowerShell](/powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core).
+[SSH remoting in PowerShell][ssh-remote].
 
 ### PowerShell Direct for Containers tries to use `pwsh` first
 
-[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) is a feature of
-PowerShell and Hyper-V that allows you to connect to a Hyper-V VM or Container without network
-connectivity or other remote management services.
+[PowerShell Direct][psdirect] is a feature of PowerShell and Hyper-V that allows you to connect to a
+Hyper-V VM or Container without network connectivity or other remote management services.
 
 In the past, PowerShell Direct connected using the built-in Windows PowerShell instance on the
 Container. Now, PowerShell Direct first attempts to connect using any available `pwsh.exe` on the
@@ -882,3 +1152,42 @@ where PowerShell is used and enables us to prioritize new features and fixes.
 To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY_OPTOUT` to `true`,
 `yes`, or `1`. We no longer support deletion of the file
 `DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` to disable telemetry.
+
+<!-- Link references -->
+[workflow]: /previous-versions/powershell/scripting/components/workflows-guide
+[workflow-foundation]: /dotnet/framework/windows-workflow-foundation/
+[NETStd2]: https://devblogs.microsoft.com/dotnet/introducing-net-standard/
+[about-WinCompat]: /powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility
+[mod-compat]: https://aka.ms/PSModuleCompat
+[WhatsNew73]: What-s-New-in-PowerShell-73.md
+[WhatsNew72]: What-s-New-in-PowerShell-72.md
+[WhatsNew71]: What-s-New-in-PowerShell-71.md
+[WhatsNew70]: What-s-New-in-PowerShell-70.md
+[WhatsNew6x]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-core-62?view=powershell-6&preserve-view=true
+[fxcore]: /dotnet/core/compatibility/fx-core
+[PSDSC-annouce]: https://devblogs.microsoft.com/powershell/announcing-psdesiredstateconfiguration-on-powershell-gallery/
+[Module Compatibility Table]: https://aka.ms/PSModuleCompat
+[NET5-strings]: /dotnet/standard/base-types/string-comparison-net-5-plus
+[ssh-remote]: /powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core
+[PowerShell Direct]: /virtualization/hyper-v-on-windows/user-guide/powershell-direct
+[runspaceconfig]: /dotnet/api/system.management.automation.runspaces.runspaceconfiguration
+[iss]: /dotnet/api/system.management.automation.runspaces.initialsessionstate
+[snapin]: /powershell/module/microsoft.powershell.core/about/about_pssnapins
+[exp]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
+[Disable-ExperimentalFeature]: /powershell/module/Microsoft.PowerShell.Core/Disable-ExperimentalFeature
+[Enable-ExperimentalFeature]: /powershell/module/Microsoft.PowerShell.Core/Enable-ExperimentalFeature
+[Get-ExperimentalFeature]: /powershell/module/Microsoft.PowerShell.Core/Get-ExperimentalFeature
+[Remove-Service]: /powershell/module/Microsoft.PowerShell.Management/Remove-Service
+[ConvertFrom-Markdown]: /powershell/module/Microsoft.PowerShell.Utility/ConvertFrom-Markdown
+[Get-MarkdownOption]: /powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption
+[Set-MarkdownOption]: /powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption
+[Show-Markdown]: /powershell/module/Microsoft.PowerShell.Utility/Show-Markdown
+[Remove-Alias]: /powershell/module/Microsoft.PowerShell.Utility/Remote-Alias
+[Remove-Service]: /powershell/module/Microsoft.PowerShell.Utility/Remote-Service
+[Join-String]: /powershell/module/Microsoft.PowerShell.Utility/Join-String
+[Get-Uptime]: /powershell/module/Microsoft.PowerShell.Utility/Get-Uptime
+[Test-Json]: /powershell/module/Microsoft.PowerShell.Utility/Test-Json
+[Get-Error]: /powershell/module/microsoft.powershell.utility/get-error
+[ForEach-Object]: /powershell/module/microsoft.powershell.core/foreach-object
+[Import-Module]: /powershell/module/microsoft.powershell.core/import-module
+[about_Variables]: /powershell/module/microsoft.powershell.core/about/about_Variables#variable-names-that-include-special-characters
