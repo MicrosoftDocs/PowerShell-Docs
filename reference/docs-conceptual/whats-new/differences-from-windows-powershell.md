@@ -456,7 +456,7 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 1/10/2020
 ```
 
-### Null-conditional operators `?.` and `?[]`
+### Null-conditional operators
 
 > [!NOTE]
 > This feature was moved from experimental to mainstream in PowerShell 7.1.
@@ -508,11 +508,6 @@ ${a}?[0]
 ```
 
 > [!NOTE]
-> Since PowerShell allows `?` to be part of the variable name, formal
-> specification of the variable name is required for using these operators. So
-> it is required to use `{}` around the variable names like `${a}` or when `?`
-> is part of the variable name `${a?}`.
->
 > The variable name syntax of `${<name>}` should not be confused with the `$()`
 > subexpression operator. For more information, see Variable name section of
 > [about_Variables][about_Variables].
@@ -1171,12 +1166,8 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 [WhatsNew6x]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-core-62?view=powershell-6&preserve-view=true
 [fxcore]: /dotnet/core/compatibility/fx-core
 [PSDSC-annouce]: https://devblogs.microsoft.com/powershell/announcing-psdesiredstateconfiguration-on-powershell-gallery/
-[about_Variables]: /powershell/module/microsoft.powershell.core/about/about_Variables#variable-names-that-include-special-characters
-[Import-Module]: /powershell/module/microsoft.powershell.core/import-module
 [Module Compatibility Table]: https://aka.ms/PSModuleCompat
 [NET5-strings]: /dotnet/standard/base-types/string-comparison-net-5-plus
-[Get-Error]: /powershell/module/microsoft.powershell.utility/get-error
-[ForEach-Object]: /powershell/module/microsoft.powershell.core/foreach-object
 [ssh-remote]: /powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core
 [PowerShell Direct]: /virtualization/hyper-v-on-windows/user-guide/powershell-direct
 [runspaceconfig]: /dotnet/api/system.management.automation.runspaces.runspaceconfiguration
@@ -1192,6 +1183,11 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 [Set-MarkdownOption]: /powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption
 [Show-Markdown]: /powershell/module/Microsoft.PowerShell.Utility/Show-Markdown
 [Remove-Alias]: /powershell/module/Microsoft.PowerShell.Utility/Remote-Alias
+[Remove-Service]: /powershell/module/Microsoft.PowerShell.Utility/Remote-Service
 [Join-String]: /powershell/module/Microsoft.PowerShell.Utility/Join-String
 [Get-Uptime]: /powershell/module/Microsoft.PowerShell.Utility/Get-Uptime
 [Test-Json]: /powershell/module/Microsoft.PowerShell.Utility/Test-Json
+[Get-Error]: /powershell/module/microsoft.powershell.utility/get-error
+[ForEach-Object]: /powershell/module/microsoft.powershell.core/foreach-object
+[Import-Module]: /powershell/module/microsoft.powershell.core/import-module
+[about_Variables]: /powershell/module/microsoft.powershell.core/about/about_Variables#variable-names-that-include-special-characters
