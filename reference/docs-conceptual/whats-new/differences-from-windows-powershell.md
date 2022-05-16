@@ -250,7 +250,7 @@ was added. Switch values are also supported.
 
 For Windows, a new switch parameter **UseWindowsPowerShell** is added to `Import-Module`. This
 switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
-implicitly run any cmdlets contained in that module. For more information on
+implicitly run any cmdlets contained in that module. For more information, see 
 [Import-Module][Import-Module].
 
 For more information on which Microsoft modules work with PowerShell 7.0, see the
@@ -258,7 +258,7 @@ For more information on which Microsoft modules work with PowerShell 7.0, see th
 
 ### Microsoft Update support for Windows
 
-PowerShell 7.2 add support for Microsoft Update. When you enable this feature, you'll get the latest
+PowerShell 7.2 added support for Microsoft Update. When you enable this feature, you'll get the latest
 PowerShell 7 updates in your traditional Windows Update (WU) management flow, whether that's with
 Windows Update for Business, WSUS, SCCM, or the interactive WU dialog in Settings.
 
@@ -623,7 +623,7 @@ cmdlet was introduced in PowerShell 6.0.
 
 ### New cmdlet Remove-Service
 
-The `Remove-Service` cmdlet removes a Windows service in the registry and in the service database.
+The [Remove-Service][Remove-Service] cmdlet removes a Windows service in the registry and in the service database.
 The `Remove-Service` cmdlet was introduced in PowerShell 6.0.
 
 ### New Markdown cmdlets
@@ -643,7 +643,7 @@ The following cmdlets were added in PowerShell 6.1:
 
 ### New Test-Json cmdlet
 
-The [Test-Json] cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document
+The [Test-Json][Test-Json] cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document
 and can optionally verify that JSON document against a provided schema.
 
 This cmdlet was introduced in PowerShell 6.1
@@ -658,13 +658,13 @@ The following cmdlets were added in PowerShell 6.2 to support Experimental Featu
 
 ### New Join-String cmdlet
 
-The [Join-String] cmdlet combines objects from the pipeline into a single string. This cmdlet was
+The [Join-String][Join-String] cmdlet combines objects from the pipeline into a single string. This cmdlet was
 added in PowerShell 6.2.
 
 ### New view ConciseView and cmdlet Get-Error
 
 PowerShell 7.0 enhances the display of error messages to improve the readability of interactive and
-script errors with a new default view **ConciseView**. The views are user-selectable through the
+script errors with a new default view, **ConciseView**. The views are user-selectable through the
 preference variable `$ErrorView`.
 
 With **ConciseView**, if an error is not from a script or parser error, then it's a single line
@@ -679,7 +679,7 @@ Get-ChildItem: Cannot find path 'C:\NotReal' because it does not exist
 ```
 
 If the error occurs during script execution or is a parsing error, PowerShell returns a multiline
-error message that contains the error, a pointer and error message showing where the error is in
+error message that contains the error, a pointer, and an error message showing where the error is in
 that line. If the terminal doesn't support ANSI color escape sequences (VT100), then colors are not
 displayed.
 
@@ -695,7 +695,7 @@ $ErrorView = 'ConciseView' # Sets the error view to ConciseView
 > A new property **ErrorAccentColor** is added to `$Host.PrivateData` to support changing
 > the accent color of the error message.
 
-A new cmdlet `Get-Error` provides a complete detailed view of the fully qualified error when
+The new `Get-Error`cmdlet provides a complete detailed view of the fully qualified error when
 desired. By default the cmdlet displays the full details, including inner exceptions, of the last
 error that occurred.
 
@@ -713,7 +713,7 @@ from the current session you wish displayed.
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
 ```
 
-For more information about [Get-Error][Get-Error].
+For more information, see [Get-Error][Get-Error].
 
 ## Cmdlet changes
 
@@ -748,8 +748,7 @@ given time. The default is 5.
 Use the `$_` variable to represent the current input object in the script block. Use the
 `$using:` scope to pass variable references to the running script block.
 
-For more information about
-[ForEach-Object][ForEach-Object].
+For more information, see [ForEach-Object][ForEach-Object].
 
 ### Check `system32` for compatible built-in modules on Windows
 
