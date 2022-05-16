@@ -200,14 +200,14 @@ prevent PowerShell from misinterpreting the parentheses.
 icacls X:\VMS /grant Dom\HVAdmin:`(CI`)`(OI`)F
 ```
 
-### The stop-parsing and end-of-parameters tokens
-
 Beginning in PowerShell 3.0, you can use the _stop-parsing_ (`--%`) and
 _end-of-parameters_ tokens (`--`) to stop PowerShell from interpreting input as
 PowerShell commands or expressions.
 
 > [!NOTE]
 > The stop-parsing token is only intended for use on Windows platforms.
+
+### The stop-parsing token
 
 When calling a native command, place the stop-parsing token before the program
 arguments. This technique is much easier than using escape characters to
@@ -238,6 +238,8 @@ variable the token is passed through as-is.
 
 You cannot use stream redirection (like `>file.txt`) because they are passed
 verbatim as arguments to the target command.
+
+### The end-of-parameters token
 
 The end-of-parameters token (`--`) indicates that all arguments following it
 are to be passed in their actual form as though double quotes were placed
