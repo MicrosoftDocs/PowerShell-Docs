@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/10/2019
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Sleep
@@ -34,19 +34,26 @@ repeating an operation.
 
 ## EXAMPLES
 
-### Example 1: Sleep all commands for 15 seconds
+### Example 1: Pause execution for 1.5 seconds
 
-```powershell
-Start-Sleep -s 15
-```
-
-### Example 2: Sleep all commands for 1.5 seconds
-
-This example makes all the commands in the session sleep for one and one-half of a seconds.
+This example execution of commands for one and one-half of a seconds.
 
 ```powershell
 Start-Sleep -Seconds 1.5
 ```
+
+### Example 2: Pause execution at the command line
+
+This example shows that execution is paused for 5 seconds when run from the command line.
+
+```powershell
+PS> Get-Date; Start-Sleep -Seconds 5; Get-Date
+
+Friday, May 13, 2022 9:38:15 AM
+Friday, May 13, 2022 9:38:20 AM
+```
+
+PowerShell cannot execute the second `Get-Date` command until the sleep timer expires.
 
 ## PARAMETERS
 
@@ -87,7 +94,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -106,8 +114,7 @@ This cmdlet does not return any output.
 - You can also refer to `Start-Sleep` by its built-in alias, `sleep`. For more information, see
   [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 - `Ctrl+C` breaks out of `Start-Sleep`.
-  - `Ctrl+C` does not break out of `[Threading.Thread]::Sleep`. For more information, see
-    [Thread.Sleep Method](/dotnet/api/system.threading.thread.sleep).
+- `Ctrl+C` does not break out of `[Threading.Thread]::Sleep`. For more information, see
+  [Thread.Sleep Method](/dotnet/api/system.threading.thread.sleep).
 
 ## RELATED LINKS
-
