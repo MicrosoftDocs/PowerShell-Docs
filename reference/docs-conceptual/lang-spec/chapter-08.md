@@ -1,6 +1,6 @@
 ---
 description: A statement specifies some sort of action that is to be performed.
-ms.date: 05/19/2021
+ms.date: 05/16/2022
 title: Statements
 ---
 # 8. Statements
@@ -237,9 +237,6 @@ governing arguments are as follows:
 
 - An argument of `--` indicates that all arguments following it are to be passed in their actual
   form as though double quotes were placed around them.
-
-  > [!NOTE]
-  > Editor's note: The `--` argument was never implemented.
 
 - An argument of `--%` indicates that all arguments following it are to be passed with minimal
   parsing and processing. This argument is called the verbatim parameter. Arguments after the

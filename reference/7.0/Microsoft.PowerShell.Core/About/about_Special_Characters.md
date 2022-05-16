@@ -1,7 +1,7 @@
 ---
 description: Describes the special character sequences that control how PowerShell interprets the next characters in the sequence.
 Locale: en-US
-ms.date: 02/08/2021
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Special Characters
@@ -46,11 +46,12 @@ PowerShell also has a special token to mark where you want parsing to stop. All
 characters that follow this token are used as literal values that aren't
 interpreted.
 
-Special parsing token:
+Special parsing tokens:
 
-| Sequence |            Description             |
-| -------- | ---------------------------------- |
-| `--%`    | Stop parsing anything that follows |
+| Sequence |                      Description                       |
+| -------- | ------------------------------------------------------ |
+| `--`     | Treat the remaining values as arguments not parameters |
+| `--%`    | Stop parsing anything that follows                     |
 
 ## Null (`0)
 
@@ -221,6 +222,23 @@ the next line and writes the remaining output at that point.
 There is a vertical tab
                        between the words.
 ```
+
+## The end-of-parameters token (`--`)
+
+The end-of-parameters token (`--`) indicates that all arguments following it
+are to be passed in their actual form as though double quotes were placed
+around them. For example, using `--` you can output the string `-InputObject`
+without using quotes or having it interpreted as a parameter:
+
+```powershell
+Write-Output -- -InputObject
+```
+
+```Output
+-InputObject
+```
+
+This is a convention specified in the POSIX Shell and Utilities specification.
 
 ## Stop-parsing token (--%)
 
