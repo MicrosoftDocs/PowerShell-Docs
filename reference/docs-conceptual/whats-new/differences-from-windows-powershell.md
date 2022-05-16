@@ -290,9 +290,9 @@ support custom snap-ins in PowerShell.
 
 ### Experimental feature flags
 
-We enabled support for [Experimental Features][exp]. This allows PowerShell developers to deliver
-new features and get feedback before the design is complete. This way we avoid making breaking
-changes as the design evolves.
+PowerShell 6.2 enabled support for [Experimental Features][exp]. This allows PowerShell developers
+to deliver new features and get feedback before the design is complete. This way we avoid making
+breaking changes as the design evolves.
 
 Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable or
 disable these features with `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature`.
@@ -611,7 +611,57 @@ True
 
 ## New cmdlets
 
-## New view ConciseView and cmdlet Get-Error
+### New Get-Uptime cmdlet
+
+The [Get-Uptime][Get-Uptime] cmdlet returns the time elapsed since the last boot of the operating
+system. The cmdlet was introduced in PowerShell 6.0.
+
+### New Remove-Alias cmdlet
+
+The [Remove-Alias][Remove-Alias] cmdlet removes an alias from the current PowerShell session. The
+cmdlet was introduced in PowerShell 6.0.
+
+### New cmdlet Remove-Service
+
+The `Remove-Service` cmdlet removes a Windows service in the registry and in the service database.
+The `Remove-Service` cmdlet was introduced in PowerShell 6.0.
+
+### New Markdown cmdlets
+
+Markdown is a standard for creating readable plaintext documents with basic formatting that can be
+rendered into HTML.
+
+The following cmdlets were added in PowerShell 6.1:
+
+- [ConvertFrom-Markdown][ConvertFrom-Markdown] - Convert the contents of a string or a file to a
+  **MarkdownInfo** object.
+- [Get-MarkdownOption][Get-MarkdownOption] - Returns the current colors and styles used for
+  rendering Markdown content in the console.
+- [Set-MarkdownOption][Set-MarkdownOption] - Sets the colors and styles used for rendering Markdown
+  content in the console.
+- [Show-Markdown][Show-Markdown] - Displays Markdown content in the console or as HTML
+
+### New Test-Json cmdlet
+
+The [Test-Json] cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document
+and can optionally verify that JSON document against a provided schema.
+
+This cmdlet was introduced in PowerShell 6.1
+
+### New cmdlets to support Experimental Features
+
+The following cmdlets were added in PowerShell 6.2 to support Experimental Features.
+
+- [Disable-ExperimentalFeature][Disable-ExperimentalFeature]
+- [Enable-ExperimentalFeature][Enable-ExperimentalFeature]
+- [Get-ExperimentalFeature][Get-ExperimentalFeature]
+
+### New Join-String cmdlet
+
+The [Join-String] cmdlet combines objects from the pipeline into a single string. This cmdlet was
+added in PowerShell 6.2.
+
+### New view ConciseView and cmdlet Get-Error
 
 PowerShell 7.0 enhances the display of error messages to improve the readability of interactive and
 script errors with a new default view **ConciseView**. The views are user-selectable through the
@@ -667,7 +717,7 @@ For more information about [Get-Error][Get-Error].
 
 ## Cmdlet changes
 
-## Parallel execution added to ForEach-Object
+### Parallel execution added to ForEach-Object
 
 Beginning in PowerShell 7.0, the `ForEach-Object` cmdlet, which iterates items in a collection, now
 has built-in parallelism with the new **Parallel** parameter.
@@ -1134,3 +1184,15 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 [iss]: /dotnet/api/system.management.automation.runspaces.initialsessionstate
 [snapin]: /powershell/module/microsoft.powershell.core/about/about_pssnapins
 [exp]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
+[Disable-ExperimentalFeature]: /powershell/module/Microsoft.PowerShell.Core/Disable-ExperimentalFeature
+[Enable-ExperimentalFeature]: /powershell/module/Microsoft.PowerShell.Core/Enable-ExperimentalFeature
+[Get-ExperimentalFeature]: /powershell/module/Microsoft.PowerShell.Core/Get-ExperimentalFeature
+[Remove-Service]: /powershell/module/Microsoft.PowerShell.Management/Remove-Service
+[ConvertFrom-Markdown]: /powershell/module/Microsoft.PowerShell.Utility/ConvertFrom-Markdown
+[Get-MarkdownOption]: /powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption
+[Set-MarkdownOption]: /powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption
+[Show-Markdown]: /powershell/module/Microsoft.PowerShell.Utility/Show-Markdown
+[Remove-Alias]: /powershell/module/Microsoft.PowerShell.Utility/Remote-Alias
+[Join-String]: /powershell/module/Microsoft.PowerShell.Utility/Join-String
+[Get-Uptime]: /powershell/module/Microsoft.PowerShell.Utility/Get-Uptime
+[Test-Json]: /powershell/module/Microsoft.PowerShell.Utility/Test-Json
