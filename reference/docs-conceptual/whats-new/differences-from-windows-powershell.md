@@ -58,7 +58,7 @@ For more information see:
 - [about_Windows_PowerShell_Compatibility][about-WinCompat]
 - [PowerShell 7 module compatibility][mod-compat]
 
-!INCLUDE [Product terminology](../../includes/product-terms.md)]
+[!INCLUDE [Product terminology](../../includes/product-terms.md)]
 
 ## Modules no longer shipped with PowerShell
 
