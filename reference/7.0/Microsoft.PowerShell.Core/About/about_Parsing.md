@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell parses commands.
 Locale: en-US
-ms.date: 09/07/2021
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Parsing
@@ -200,10 +200,11 @@ prevent PowerShell from misinterpreting the parentheses.
 icacls X:\VMS /grant Dom\HVAdmin:`(CI`)`(OI`)F
 ```
 
-### The stop-parsing token
+### The stop-parsing and end-of-parameters tokens
 
-Beginning in PowerShell 3.0, you can use the stop-parsing token (`--%`) to
-stop PowerShell from interpreting input as PowerShell commands or expressions.
+Beginning in PowerShell 3.0, you can use the _stop-parsing_ (`--%`) and
+_end-of-parameters_ tokens (`--`) to stop PowerShell from interpreting input as
+PowerShell commands or expressions.
 
 > [!NOTE]
 > The stop-parsing token is only intended for use on Windows platforms.
@@ -237,6 +238,21 @@ variable the token is passed through as-is.
 
 You cannot use stream redirection (like `>file.txt`) because they are passed
 verbatim as arguments to the target command.
+
+The end-of-parameters token (`--`) indicates that all arguments following it
+are to be passed in their actual form as though double quotes were placed
+around them. For example, using `--` you can output the string `-InputObject`
+without using quotes or having it interpreted as a parameter:
+
+```powershell
+Write-Output -- -InputObject
+```
+
+```Output
+-InputObject
+```
+
+This is a convention specified in the POSIX Shell and Utilities specification.
 
 ### Passing arguments that contain quote characters
 
