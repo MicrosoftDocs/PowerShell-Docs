@@ -333,7 +333,7 @@ The default values for the session options are determined by the value of the
 uses the values specified in the session configuration.
 
 For a description of the session options, including the default values, see the
-[New-PSSessionOption](../../Microsoft.PowerShell.Core/New-PSSessionOption.md).
+[New-PSSessionOption](xref:Microsoft.PowerShell.Core.New-PSSessionOption).
 For information about the `$PSSessionOption` preference variable, see
 [about_Preference_Variables](../../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
