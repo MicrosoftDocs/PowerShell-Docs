@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell parses commands.
 Locale: en-US
-ms.date: 05/16/2022
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Parsing
@@ -200,14 +200,13 @@ prevent PowerShell from misinterpreting the parentheses.
 icacls X:\VMS /grant Dom\HVAdmin:`(CI`)`(OI`)F
 ```
 
-Beginning in PowerShell 3.0, you can use the _stop-parsing_ (`--%`) and
-_end-of-parameters_ tokens (`--`) to stop PowerShell from interpreting input as
-PowerShell commands or expressions.
+### The stop-parsing token
+
+Beginning in PowerShell 3.0, you can use the _stop-parsing_ (`--%`) token to
+stop PowerShell from interpreting input as PowerShell commands or expressions.
 
 > [!NOTE]
 > The stop-parsing token is only intended for use on Windows platforms.
-
-### The stop-parsing token
 
 When calling a native command, place the stop-parsing token before the program
 arguments. This technique is much easier than using escape characters to
@@ -238,23 +237,6 @@ variable the token is passed through as-is.
 
 You cannot use stream redirection (like `>file.txt`) because they are passed
 verbatim as arguments to the target command.
-
-### The end-of-parameters token
-
-The end-of-parameters token (`--`) indicates that all arguments following it
-are to be passed in their actual form as though double quotes were placed
-around them. For example, using `--` you can output the string `-InputObject`
-without using quotes or having it interpreted as a parameter:
-
-```powershell
-Write-Output -- -InputObject
-```
-
-```Output
--InputObject
-```
-
-This is a convention specified in the POSIX Shell and Utilities specification.
 
 ### Passing arguments that contain quote characters
 
@@ -299,6 +281,54 @@ Arg 0 is <"C:\Program Files (x86)\Microsoft\">
 
 You can build `TestExe` from the source code. See
 [TestExe](https://github.com/PowerShell/PowerShell/blob/master/test/tools/TestExe/TestExe.cs).
+
+## Passing arguments to PowerShell commands
+
+Beginning in PowerShell 3.0, you can use the _end-of-parameters_ token (`--`)
+to stop PowerShell from interpreting input as PowerShell parameters. This is a
+convention specified in the POSIX Shell and Utilities specification.
+
+The end-of-parameters token (`--`) indicates that all arguments following it
+are to be passed in their actual form as though double quotes were placed
+around them. For example, using `--` you can output the string `-InputObject`
+without using quotes or having it interpreted as a parameter:
+
+```powershell
+Write-Output -- -InputObject
+```
+
+```Output
+-InputObject
+```
+
+Unlike the stop-parsing (`--%`) token, any values following the `--` token can
+be interpreted as expressions by PowerShell.
+
+```powershell
+Write-Output -- -InputObject $env:PROCESSOR_ARCHITECTURE
+```
+
+```Output
+-InputObject
+AMD64
+```
+
+This behavior only applies to PowerShell commands. If you use the `--` token
+when calling an external command, the `--` string is passed as an argument to
+that command.
+
+```powershell
+TestExe -echoargs -a -b -- -c
+```
+
+The output shows that `--` is passed as an argument to `TestExe`.
+
+```Output
+Arg 0 is <-a>
+Arg 1 is <-b>
+Arg 2 is <-->
+Arg 3 is <-c>
+```
 
 ## Experimental feature
 
