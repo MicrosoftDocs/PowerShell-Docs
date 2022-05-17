@@ -1,7 +1,7 @@
 ---
 description: This topic describes the parameters that are valid on all Windows PowerShell workflow commands. Because the Windows PowerShell engine adds them to workflows, you can use these parameters on any workflow and they are automatically enabled on the workflows that you author.
 Locale: en-US
-ms.date: 06/09/2017
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_workflowcommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about WorkflowCommonParameters
@@ -19,21 +19,21 @@ automatically enabled on the workflows that you author.
 
 Windows PowerShell Workflow common parameters are a set of cmdlet parameters
 that you can use with all Windows PowerShell workflows and activities. They are
-added by the Windows PowerShell Workflow engine, not by the workflow author,
-and they are automatically available on workflows and activities. However,
-workflows that are nested three levels deep do not support any common
-parameters, including workflow common parameters.
+added by the Windows PowerShell Workflow engine, not by the workflow author, and
+they are automatically available on workflows and activities. However, workflows
+that are nested three levels deep do not support any common parameters,
+including workflow common parameters.
 
 All workflow parameters are optional and named (not positional). They do not
 take input from the pipeline.
 
-Most of the workflow common parameters have a PS prefix, such as
-`PSComputerName` and `PSCredential`. The PS-prefixed parameters configure the
-connection and the execution environment for the target computers, also known
-as "remote nodes."
+Most of the workflow common parameters have a `PS` prefix, such as
+**PSComputerName** and **PSCredential**. The PS-prefixed parameters configure
+the connection and the execution environment for the target computers, also
+known as "remote nodes."
 
-Many of the workflow common parameters, such as `PSAllowRedirection` and
-`AsJob`, have names that are similar to parameters used in Windows PowerShell
+Many of the workflow common parameters, such as **PSAllowRedirection** and
+**AsJob**, have names that are similar to parameters used in Windows PowerShell
 remoting and background jobs. These parameters work in the same way as the
 similarly-named remoting and job parameters, so you can use the knowledge that
 you developed in remoting and jobs to manage workflows.
@@ -55,11 +55,11 @@ Job cmdlets. To get the job results, use
 #### -JobName \<String\>
 
 Specifies a friendly name for the workflow job. By default, jobs are named
-"Job\<n\>", where \<n\> is an ordinal number.
+`Job<n>`, where `<n>` is an ordinal number.
 
-If you use the JobName parameter in a workflow command, the workflow is run as
-a job and the workflow command returns a job object, even if you do not include
-the `AsJob` parameter in the command.
+If you use the **JobName** parameter in a workflow command, the workflow is run
+as a job and the workflow command returns a job object, even if you do not
+include the **AsJob** parameter in the command.
 
 For more information about Windows PowerShell background jobs, see
 [about_Jobs](../../Microsoft.PowerShell.Core/About/about_Jobs.md).
@@ -68,34 +68,35 @@ For more information about Windows PowerShell background jobs, see
 
 Allows redirection of the connection to the target computers.
 
-When you use the `PSConnectionURI` parameter, the remote destination can return
-an instruction to redirect to a different URI. By default, Windows PowerShell
-does not redirect connections, but you can use the `PSAllowRedirection`
-parameter to allow redirection of the connection to the target computer.
+When you use the **PSConnectionURI** parameter, the remote destination can
+return an instruction to redirect to a different URI. By default, Windows
+PowerShell does not redirect connections, but you can use the
+**PSAllowRedirection** parameter to allow redirection of the connection to the
+target computer.
 
 You can also limit the number of times that the connection is redirected by
-setting the `MaximumConnectionRedirectionCount` property of the
+setting the **MaximumConnectionRedirectionCount** property of the
 `$PSSessionOption` preference variable, or the
-`MaximumConnectionRedirectionCount` property of the value of the
-`PSSessionOption parameter`. The default value is 5. For more information, see
-the description of the `PSSessionOption` parameter and
+**MaximumConnectionRedirectionCount** property of the value of the
+**PSSessionOption** parameter. The default value is `5`. For more information,
+see the description of the **PSSessionOption** parameter and
 [New-PSSessionOption](xref:Microsoft.PowerShell.Core.New-PSSessionOption).
 
 #### -PSApplicationName \<String\>
 
 Specifies the application name segment of the connection URI that is used to
 connect to the target computers. Use this parameter to specify the application
-name when you are not using the `ConnectionURI` parameter in the command.
+name when you are not using the **ConnectionURI** parameter in the command.
 
 The default value is the value of the `$PSSessionApplicationName` preference
 variable on the local computer. If this preference variable is not defined, the
-default value is WSMAN. This value is appropriate for most uses. For more
+default value is `WSMAN`. This value is appropriate for most uses. For more
 information, see
 [about_Preference_Variables](../../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 The WinRM service uses the application name to select a listener to service the
 connection request. The value of this parameter should match the value of the
-`URLPrefix` property of a listener on the remote computer.
+**URLPrefix** property of a listener on the remote computer.
 
 #### -PSAuthentication \<AuthenticationMechanism\>
 
@@ -104,19 +105,19 @@ when connecting to the target computers.
 
 Valid values are:
 
-- **Default**
-- **Basic**
-- **Credssp**
-- **Digest**
-- **Kerberos**
-- **Negotiate**
-- **NegotiateWithImplicitCredential**
+- `Default`
+- `Basic`
+- `Credssp`
+- `Digest`
+- `Kerberos`
+- `Negotiate`
+- `NegotiateWithImplicitCredential`
 
-The default value is **Default**.
+The default value is `Default`.
 
 For information about the values of this parameter, see the description of the
-`System.Management.Automation.Runspaces.AuthenticationMechanism` enumeration in
-the PowerShell SDK.
+**System.Management.Automation.Runspaces.AuthenticationMechanism** enumeration
+in the PowerShell SDK.
 
 > [!WARNING]
 > Credential Security Service Provider (CredSSP) authentication, in which the
@@ -130,20 +131,20 @@ the PowerShell SDK.
 #### -PSAuthenticationLevel \<AuthenticationLevel\>
 
 Specifies the authentication level for the connections to the target computers.
-The default value is **Default**.
+The default value is `Default`.
 
 Valid values are:
 
-|Name |Description |
-|---------|---------|
-|**Unchanged** | The authentication level is the same as the previous command. |
-|**Default** | Windows Authentication. |
-|**None** | No COM authentication.   |
-|**Connect** | Connect-level COM authentication.|
-|**Call** | Call-level COM authentication.   |
-|**Packet** | Packet-level COM authentication.|
-|**PacketIntegrity** | Packet Integrity-level COM authentication.  |
-|**PacketPrivacy** | Packet Privacy-level COM authentication. |
+|       Name        |                          Description                          |
+| ----------------- | ------------------------------------------------------------- |
+| `Unchanged`       | The authentication level is the same as the previous command. |
+| `Default`         | Windows Authentication.                                       |
+| `None`            | No COM authentication.                                        |
+| `Connect`         | Connect-level COM authentication.                             |
+| `Call`            | Call-level COM authentication.                                |
+| `Packet`          | Packet-level COM authentication.                              |
+| `PacketIntegrity` | Packet Integrity-level COM authentication.                    |
+| `PacketPrivacy`   | Packet Privacy-level COM authentication.                      |
 
 #### -PSCertificateThumbprint \<String\>
 
@@ -155,9 +156,9 @@ Certificates are used in client certificate-based authentication. They can only
 be mapped to local user accounts; they do not work with domain accounts.
 
 To get a certificate, use the
-[Get-Item](xref:Microsoft.PowerShell.Management.Get-Item) or [Get-ChildItem]
-(../../Microsoft.PowerShell.Management/Get-Childitem.md) cmdlets in the Windows
-PowerShell Cert: drive.
+[Get-Item](xref:Microsoft.PowerShell.Management.Get-Item) or
+[Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem) cmdlets in
+the Windows PowerShell `Cert:` drive.
 
 #### -PSComputerName \<String[]\>
 
@@ -165,41 +166,43 @@ Specifies the list of computers that are the target nodes of the workflow.
 Commands or activities in a workflow are run on the computers that are
 specified by using this parameter. The default is the local computer.
 
-Type the NETBIOS name, IP address, or fully-qualified domain name of one or
-more computers in a comma-separated list. To specify the local computer, type
-the computer name, "localhost", or a dot (.).
+Type the NETBIOS name, IP address, or fully-qualified domain name of one or more
+computers in a comma-separated list. To specify the local computer, type the
+computer name, `localhost`, or a dot (`.`).
 
-To include the local computer in the value of the `PSComputerName` parameter,
-open Windows PowerShell with the "Run as administrator" option.
+To include the local computer in the value of the **PSComputerName** parameter,
+open Windows PowerShell with the **Run as administrator** option.
 
 If this parameter is omitted from the command, or it value is `$null` or an
-empty string, the workflow target is the local computer and Windows
-PowerShell remoting is not used to run the command.
+empty string, the workflow target is the local computer and Windows PowerShell
+remoting is not used to run the command.
 
-To use an IP address in the value of the `ComputerName` parameter, the
-command must include the `PSCredential` parameter. Also, the computer must be
-configured for HTTPS transport or the IP address of the remote computer
-must be included in the WinRM TrustedHosts list on the local computer. For
-instructions for adding a computer name to the TrustedHosts list, see *"How
-to Add a Computer to the Trusted Host List"* in [about_Remote_Troubleshooting](../../Microsoft.PowerShell.Core/About/about_Remote_Troubleshooting.md).
+To use an IP address in the value of the **ComputerName** parameter, the command
+must include the **PSCredential** parameter. Also, the computer must be
+configured for HTTPS transport or the IP address of the remote computer must be
+included in the WinRM TrustedHosts list on the local computer. For instructions
+for adding a computer name to the TrustedHosts list, see "How to Add a Computer
+to the Trusted Host List" in
+[about_Remote_Troubleshooting](../../Microsoft.PowerShell.Core/About/about_Remote_Troubleshooting.md).
 
 #### -PSConfigurationName \<String\>
 
 Specifies the session configurations that are used to configure sessions on the
 target computers. Enter a session configuration on the target computers (not
-the workflow server computer). The default is `Microsoft.PowerShell.Workflow`.
+the workflow server computer). The default is **Microsoft.PowerShell.Workflow**.
 
 #### -PSConnectionRetryCount \<UInt\>
 
 Specifies the maximum number of attempts to connect to each target computer if
 the first connection attempt fails. Enter a number between 1 and 4,294,967,295
-(UInt.MaxValue). The default value, zero (0), represents no retry attempts.
+(**UInt.MaxValue**). The default value, zero (`0`), represents no retry
+attempts.
 
 #### -PSConnectionRetryIntervalSec \<UInt\>
 
 Specifies the delay between connection retry attempts in seconds. The default
-value is zero (0). This parameter is valid only when the value of
-PSConnectionRetryCount is at least 1.
+value is zero (`0`). This parameter is valid only when the value of
+**PSConnectionRetryCount** is at least `1`.
 
 #### -PSConnectionURI \<System.Uri\>
 
@@ -213,33 +216,32 @@ The format of this string is as follows:
 
 The default value is `http://localhost:5985/WSMAN`.
 
-If you do not specify a `PSConnectionURI`, you can use the `PSUseSSL`,
-`PSComputerName`, `PSPort`, and `PSApplicationName` parameters to specify the
-`PSConnectionURI` values.
+If you do not specify a **PSConnectionURI**, you can use the **PSUseSSL**,
+**PSComputerName**, **PSPort**, and **PSApplicationName** parameters to specify
+the **PSConnectionURI** values.
 
-Valid values for the Transport segment of the URI are **HTTP** and **HTTPS**.
-If you specify a connection URI with a Transport segment, but do not specify a
-port, the session is created with standards ports: 80 for HTTP and 443 for
-HTTPS. To use the default ports for Windows PowerShell remoting, specify
-port 5985 for HTTP or 5986 for HTTPS.
+Valid values for the Transport segment of the URI are **HTTP** and **HTTPS**. If
+you specify a connection URI with a Transport segment, but do not specify a
+port, the session is created with standards ports: `80` for HTTP and `443` for
+HTTPS. To use the default ports for Windows PowerShell remoting, specify port
+`5985` for HTTP or `5986` for HTTPS.
 
 #### -PSCredential \<PSCredential\>
 
 Specifies a user account that has permission to run a workflow on the target
 computer. The default is the current user. This parameter is valid only when
-the PSComputerName parameter is included in the command.
+the **PSComputerName** parameter is included in the command.
 
-Type a user name, such as "User01" or "Domain01\User01", or enter a variable
-that contains a `PSCredential` object, such as one that the `Get-Credential`
-cmdlet returns. If you enter only a user name, you will be prompted for a
-password.
+Type a user name, such as `User01` or `Domain01\User01`, or enter a variable
+that contains a **PSCredential** object, such as one that the `Get-Credential`
+cmdlet returns. If you enter only a user name, you are prompted for a password.
 
 #### -PSElapsedTimeoutSec \<UInt32\>
 
 Determines how long the workflow and all related resources are maintained
 in the system. When the timeout expires, the workflow is deleted, even if
 it is still processing. Enter a value between 10 and 4,294,967,295. The
-default value, 0 (zero), means that there is no elapsed timeout.
+default value, `0` (zero), means that there is no elapsed timeout.
 
 #### -PSParameterCollection \<Hashtable[]\>
 
@@ -247,8 +249,8 @@ Specifies different workflow common parameter values for different target
 computers.
 
 Enter a comma-separated list of hash tables with one hash table for each target
-computer. In each hash table, the first key is `PSComputerName` and its value is
-the name of the target computer. Wildcard characters are permitted in the
+computer. In each hash table, the first key is **PSComputerName** and its value
+is the name of the target computer. Wildcard characters are permitted in the
 computer name. For the remaining keys in the hash table, the key is the
 parameter name and the value is the parameter value.
 
@@ -261,9 +263,9 @@ For example:
 @{PSComputerName="Server01"; PSElapsedTimeoutSec=10}
 ```
 
-In the above example, all connections will have a default PSElapsedTimeoutSec
-of 20 seconds, except for Server01 which overrides the default value
-by specifying its own timeout of 10 seconds.
+In the above example, all connections will have a default **PSElapsedTimeoutSec**
+of `20` seconds, except for Server01 which overrides the default value
+by specifying its own timeout of `10` seconds.
 
 #### -PSPersist \<Boolean\>
 
@@ -271,7 +273,7 @@ Adds checkpoints to the workflow, in addition to any checkpoints that are
 specified in the workflow.
 
 This parameter cannot suppress the checkpoints in a workflow, such as those
-specified by using the `PSPersist` activity common parameter, the
+specified by using the **PSPersist** activity common parameter, the
 `Checkpoint-Workflow` activity, or the `$PSPersistPreference` variable.
 
 A "checkpoint" or "persistence point" is a snapshot of the workflow state and
@@ -282,9 +284,9 @@ point, rather than to restart the workflow.
 
 Valid values:
 
-- (*Default*) If you omit this parameter, a checkpoint is added to the
-  beginning and end of the workflow, in addition to any checkpoints that are
-  specified in the workflow.
+- (Default) If you omit this parameter, a checkpoint is added to the beginning
+  and end of the workflow, in addition to any checkpoints that are specified in
+  the workflow.
 
 - `$True`. Adds a checkpoint to the beginning and end of the workflow and a
   checkpoint after each activity, in addition to any checkpoints that are
@@ -295,10 +297,10 @@ Valid values:
 
 #### -PSPort \<Int32\>
 
-Specifies the network port on the target computers. The default ports are 5985
-(the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
+Specifies the network port on the target computers. The default ports are `5985`
+(the WinRM port for HTTP) and `5986` (the WinRM port for HTTPS).
 
-Do not use the PSPort parameter unless you must. The port set in the command
+Do not use the **PSPort** parameter unless you must. The port set in the command
 applies to all computers or sessions on which the command runs. An alternate
 port setting might prevent the command from running on all computers. Before
 using an alternate port, you must configure the WinRM listener on the remote
@@ -323,7 +325,7 @@ the workflow.
 #### -PSSessionOption \<PSSessionOption\>
 
 Sets advanced options for the sessions to the target computers. Enter a
-`PSSessionOption` object, such as one that you create by using the
+**PSSessionOption** object, such as one that you create by using the
 `New-PSSessionOption` cmdlet.
 
 The default values for the session options are determined by the value of the
@@ -331,9 +333,9 @@ The default values for the session options are determined by the value of the
 uses the values specified in the session configuration.
 
 For a description of the session options, including the default values, see the
-help topic for the `New-PSSessionOption` cmdlet
-(../../Microsoft.PowerShell.Core/New-PSSessionOption.md). For information about the
-`$PSSessionOption` preference variable, see [about_Preference_Variables](../../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+[New-PSSessionOption](../../Microsoft.PowerShell.Core/New-PSSessionOption.md).
+For information about the `$PSSessionOption` preference variable, see
+[about_Preference_Variables](../../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 #### -PSUseSSL \<SwitchParameter\>
 
@@ -341,7 +343,7 @@ Uses the Secure Sockets Layer (SSL) protocol to establish a connection to the
 target computer. By default, SSL is not used.
 
 WS-Management encrypts all Windows PowerShell content transmitted over the
-network. UseSSL is an additional protection that sends the data across an
+network. **UseSSL** is an additional protection that sends the data across an
 HTTPS, instead of HTTP. If you use this parameter, but SSL is not available on
 the port used for the command, the command fails.
 

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/21/2021
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Json
@@ -118,7 +118,7 @@ For more information, see [JSON Schema](https://json-schema.org/).
 ### Example 3: Test an object against a schema from file
 
 JSON schema can reference definitions using `$ref` keyword. The `$ref` can resolve to a URI that
-references another file. The `SchemaFile` parameter accepts literal path to the JSON schema file
+references another file. The **SchemaFile** parameter accepts literal path to the JSON schema file
 and allows JSON files to be validated against such schemas.
 
 In this example we have `schema.json` file which references `definitions.json`.
@@ -162,7 +162,8 @@ PS> Get-Content definitions.json
 True
 ```
 
-For more information, see [Structuring a complex schema](https://json-schema.org/understanding-json-schema/structuring.html).
+For more information, see
+[Structuring a complex schema](https://json-schema.org/understanding-json-schema/structuring.html).
 
 ## PARAMETERS
 
@@ -187,9 +188,9 @@ Accept wildcard characters: False
 
 ### -Schema
 
-Specifies a Schema to validate the JSON input against. If passed `Test-Json` will validate that the
-Json input conforms to the spec specified by the **Schema** parameter and return `$True` only if the
-input conforms to the provided Schema.
+Specifies a schema to validate the JSON input against. If passed, `Test-Json` will validate that the
+JSON input conforms to the spec specified by the **Schema** parameter and return `$true` only if the
+input conforms to the provided schema.
 
 For more information, see [JSON Schema](https://json-schema.org/).
 
@@ -207,8 +208,8 @@ Accept wildcard characters: False
 
 ### -SchemaFile
 
-Specifies a schema file used to validate the JSON input. When used, the `Test-Json` returns `$True`
-only if the JSON input conforms to the Schema defined in the file specified by the **SchemaFile**
+Specifies a schema file used to validate the JSON input. When used, the `Test-Json` returns `$true`
+only if the JSON input conforms to the schema defined in the file specified by the **SchemaFile**
 parameter.
 
 For more information, see [JSON Schema](https://json-schema.org/).

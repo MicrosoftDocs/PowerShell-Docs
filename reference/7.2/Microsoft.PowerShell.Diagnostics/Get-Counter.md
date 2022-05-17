@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 06/21/2021
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Counter
@@ -417,7 +417,7 @@ Path                                         InstanceName        CookedValue
 `Get-Counter` uses the **Counter** parameter to specify the counter
 `\Processor(*)\% Processor Time`. The values are stored in the `$Counter` variable. The objects
 stored in `$Counter.CounterSamples` are sent down the pipeline. `Where-Object` uses a script block
-to compare each objects value against a specified value of 20. The `$_.CookedValue` is a variable
+to compare each objects value against a specified value of `20`. The `$_.CookedValue` is a variable
 for the current object in the pipeline. Counters with a **CookedValue** that is less than 20 are
 displayed.
 
@@ -609,7 +609,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -661,4 +662,3 @@ In PowerShell 7, when using the **ListSet** parameter, `Get-Counter` can't retri
 [Start-Job](../Microsoft.PowerShell.Core/Start-Job.md)
 
 [Where-Object](..//Microsoft.PowerShell.Core/Where-Object.md)
-

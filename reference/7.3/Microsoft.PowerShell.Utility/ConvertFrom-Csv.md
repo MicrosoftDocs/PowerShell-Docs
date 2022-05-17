@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/22/2021
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-csv?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Csv
@@ -147,11 +147,9 @@ generate objects from the CSV strings.
 
 ### -Delimiter
 
-Specifies the delimiter that separates the property values in the CSV strings.
-The default is a comma (,).
-
-Enter a character, such as a colon (:).
-To specify a semicolon (;) enclose it in single quotation marks.
+Specifies the delimiter that separates the property values in the CSV strings. The default is a
+comma (`,`). Enter a character, such as a colon (`:`). To specify a semicolon (`;`) enclose it in
+single quotation marks.
 
 If you specify a character other than the actual string delimiter in the file, `ConvertFrom-Csv`
 cannot create the objects from the CSV strings and will return the CSV strings.

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/03/2021
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
@@ -146,7 +146,7 @@ Mode                LastWriteTime         Length Name
   `IsReadOnlyTextFile.txt` in the current directory.
 - The `Set-ItemProperty` cmdlet uses the **Name** and **Value** parameters to change the file's
   **IsReadOnly** property to True.
-- The `Get-ChildItem` cmdlet shows the file is empty (0) and has the read-only attribute (`r`).
+- The `Get-ChildItem` cmdlet shows the file is empty (`0`) and has the read-only attribute (`r`).
 - The `Add-Content` cmdlet uses the **Path** parameter to specify the file. The **Value** parameter
   includes the text string to append to the file. The **Force** parameter writes the text to the
   read-only file.

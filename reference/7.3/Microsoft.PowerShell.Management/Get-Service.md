@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/30/2019
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Service
 ---
-
 # Get-Service
 
 ## SYNOPSIS
@@ -61,7 +60,7 @@ Get-Service
 
 ### Example 2: Get services that begin with a search string
 
-This example retrieves services with service names that begin with WMI (Windows Management
+This example retrieves services with service names that begin with `WMI` (Windows Management
 Instrumentation).
 
 ```powershell
@@ -70,8 +69,8 @@ Get-Service "wmi*"
 
 ### Example 3: Display services that include a search string
 
-This example displays services with a display name that includes the word network. Searching the
-display name finds network-related services even when the service name doesn't include Net, such as
+This example displays services with a display name that includes the word `network`. Searching the
+display name finds network-related services even when the service name doesn't include `Net`, such as
 xmlprov, the Network Provisioning Service.
 
 ```powershell
@@ -80,7 +79,7 @@ Get-Service -Displayname "*network*"
 
 ### Example 4: Get services that begin with a search string and an exclusion
 
-This example only gets the services with service names that begin with **win**, except for the WinRM
+This example only gets the services with service names that begin with `win`, except for the WinRM
 service.
 
 ```powershell
@@ -89,14 +88,14 @@ Get-Service -Name "win*" -Exclude "WinRM"
 
 ### Example 5: Display services that are currently active
 
-This example displays only the services with a status of Running.
+This example displays only the services with a status of `Running`.
 
 ```powershell
 Get-Service | Where-Object {$_.Status -eq "Running"}
 ```
 
 `Get-Service` gets all the services on the computer and sends the objects down the pipeline. The
-`Where-Object` cmdlet, selects only the services with a **Status** property that equals Running.
+`Where-Object` cmdlet, selects only the services with a **Status** property that equals `Running`.
 
 Status is only one property of service objects. To see all of the properties, type
 `Get-Service | Get-Member`.
@@ -135,9 +134,9 @@ displays the number of dependent services for each service.
 ### Example 7: Sort services by property value
 
 This example shows that when you sort services in ascending order by the value of their **Status**
-property, stopped services appear before running services. The reason is because the value of
-**Status** is an enumeration, in which Stopped has a value of 1, and Running has a value of 4. For
-more information, see
+property, stopped services appear before running services. This happens because the value of
+**Status** is an enumeration, in which `Stopped` has a value of `1`, and `Running` has a value of
+`4`. For more information, see
 [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
 
 To list running services first, use the **Descending** parameter of the `Sort-Object` cmdlet.
@@ -338,12 +337,13 @@ This cmdlet can display services only when the current user has permission to se
 cmdlet does not display services, you might not have permission to see them.
 
 To find the service name and display name of each service on your system, type `Get-Service`. The
-service names appear in the Name column, and the display names appear in the **DisplayName** column.
+service names appear in the **Name** column, and the display names appear in the **DisplayName**
+column.
 
-When you sort in ascending order by the **Status** property's value, Stopped services appear before
-Running services. The service's **Status** property is an enumerated value and the status names
-represent integer values. The sort order is based on the integer value, not the name. Stopped
-appears before because Running because Stopped has a value of 1, and Running has a value of 4. For
+When you sort in ascending order by status value, `Stopped` services appear before `Running`
+services. The **Status** property of a service is an enumerated value in which the names of the
+statuses represent integer values. The sort is based on the integer value, not the name. `Running`
+appears before `Stopped` because `Stopped` has a value of `1`, and `Running` has a value of `4`. For
 more information, see
 [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
 

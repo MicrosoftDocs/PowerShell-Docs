@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-EventLog
@@ -15,7 +15,8 @@ Clears all entries from specified event logs on the local or remote computers.
 ## SYNTAX
 
 ```
-Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-WhatIf] [-Confirm]
+[<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -24,9 +25,9 @@ The `Clear-EventLog` cmdlet deletes all of the entries from the specified event 
 computer or on remote computers. To use `Clear-EventLog`, you must be a member of the Administrators
 group on the affected computer.
 
-The cmdlets that contain the **EventLog** noun (the EventLog cmdlets) work only on classic event
+The cmdlets that contain the `EventLog` noun (the `EventLog` cmdlets) work only on classic event
 logs. To get events from logs that use the Windows Event Log technology in Windows Vista and later
-versions of Windows, use the Get-WinEvent cmdlet.
+versions of Windows, use the `Get-WinEvent` cmdlet.
 
 ## EXAMPLES
 
@@ -97,7 +98,7 @@ before they were displayed.
 Specifies a remote computer. The default is the local computer.
 
 Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of a
-remote computer. To specify the local computer, type the computer name, a dot (.), or "localhost".
+remote computer. To specify the local computer, type the computer name, a dot (`.`), or `localhost`.
 
 This parameter does not rely on Windows PowerShell remoting. You can use the **ComputerName**
 parameter of `Get-EventLog` even if your computer is not configured to run remote commands.
@@ -154,8 +155,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -191,7 +191,7 @@ This cmdlet does not generate any output.
 ## NOTES
 
 - To use `Clear-EventLog` on Windows Vista and later versions of Windows, start Windows PowerShell
-  with the "Run as administrator" option.
+  with the **Run as administrator** option.
 
 ## RELATED LINKS
 
