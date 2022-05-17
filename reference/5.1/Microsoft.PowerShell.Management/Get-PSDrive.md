@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-psdrive?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSDrive
@@ -17,15 +17,13 @@ Gets drives in the current session.
 ### Name (Default)
 
 ```
-Get-PSDrive [[-Name] <String[]>] [-Scope <String>] [-PSProvider <String[]>] [-UseTransaction]
- [<CommonParameters>]
+Get-PSDrive [[-Name] <String[]>] [-Scope <String>] [-PSProvider <String[]>] [<CommonParameters>]
 ```
 
 ### LiteralName
 
 ```
-Get-PSDrive [-LiteralName] <String[]> [-Scope <String>] [-PSProvider <String[]>] [-UseTransaction]
- [<CommonParameters>]
+Get-PSDrive [-LiteralName] <String[]> [-Scope <String>] [-PSProvider <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -215,7 +213,7 @@ Accept wildcard characters: False
 ### -Name
 
 Specifies, as a string array, the name or name of drives that this cmdlet gets in the operation.
-Type the drive name or letter without a colon (:).
+Type the drive name or letter without a colon (`:`).
 
 ```yaml
 Type: System.String[]

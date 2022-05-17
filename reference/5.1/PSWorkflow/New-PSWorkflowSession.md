@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.Workflow.ServiceCore.dll-help.xml
 Locale: en-US
 Module Name: PSWorkflow
-ms.date: 07/10/2019
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/psworkflow/new-psworkflowsession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSWorkflowSession
@@ -24,10 +24,10 @@ New-PSWorkflowSession [[-ComputerName] <String[]>] [-Credential <Object>] [-Name
 
 ## DESCRIPTION
 
-The `New-PSWorkflowSession` cmdlet creates a user-managed session (**PSSession**) that is
-especially designed for running Windows PowerShell workflows. It uses the
-Microsoft.PowerShell.Workflow session configuration, which includes scripts, type and formatting
-files, and options that are required for workflows.
+The `New-PSWorkflowSession` cmdlet creates a user-managed session (**PSSession**) that is especially
+designed for running Windows PowerShell workflows. It uses the **Microsoft.PowerShell.Workflow**
+session configuration, which includes scripts, type and formatting files, and options that are
+required for workflows.
 
 You can use `New-PSWorkflowSession` or its alias, `nwsn`.
 
@@ -64,8 +64,8 @@ the **Credential** parameter to run with the permissions of the domain administr
     New-PSWorkflowSession -Name WorkflowSession -Credential Domain01\Admin01 -ThrottleLimit 150
 ```
 
-The command uses the **ThrottleLimit** parameter to increase the per-command throttle limit to 150.
-This value takes precedence over the default throttle limit of 100 that is set in the
+The command uses the **ThrottleLimit** parameter to increase the per-command throttle limit to
+`150`. This value takes precedence over the default throttle limit of `100` that is set in the
 **Microsoft.PowerShell.Workflow** session configuration.
 
 ## PARAMETERS
@@ -76,7 +76,8 @@ Specifies the application name segment of the connection URI.
 
 The default value is the value of the `$PSSessionApplicationName` preference variable on the local
 computer. If this preference variable is not defined, the default value is WSMAN. This value is
-appropriate for most uses. For more information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+appropriate for most uses. For more information, see
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 The WinRM service uses the application name to select a listener to service the connection request.
 The value of this parameter should match the value of the **URLPrefix** property of a listener on
@@ -96,18 +97,18 @@ Accept wildcard characters: False
 
 ### -Authentication
 
-Specifies the mechanism that is used to authenticate the user credentials.
-The acceptable values for this parameter are:
+Specifies the mechanism that is used to authenticate the user credentials. The acceptable values for
+this parameter are:
 
-- Default
-- Basic
-- Credssp
-- Digest
-- Kerberos
-- Negotiate
-- NegotiateWithImplicitCredential
+- `Default`
+- `Basic`
+- `Credssp`
+- `Digest`
+- `Kerberos`
+- `Negotiate`
+- `NegotiateWithImplicitCredential`
 
-The default value is Default.
+The default value is `Default`.
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions
 of the Windows operating system.
@@ -143,8 +144,8 @@ this action. Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication. They can be mapped only to local
 user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use the `Get-Item` cmdlet or the `Get-ChildItem` cmdlet in the Windows
-PowerShell Cert: drive.
+To get a certificate thumbprint, use the `Get-Item` cmdlet or the `Get-ChildItem` cmdlet in the
+Windows PowerShell `Cert:` drive.
 
 ```yaml
 Type: System.String
@@ -165,15 +166,16 @@ computer names, Windows PowerShell creates multiple **PSSessions**, one for each
 default is the local computer.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more remote
-computers. To specify the local computer, type the computer name, localhost, or a dot (.). When the
-computer is in a different domain than the user, the fully qualified domain name is required. You
-can also pipe a computer name, in quotation marks to `New-PSWorkflowSession`.
+computers. To specify the local computer, type the computer name, `localhost`, or a dot (`.`). When
+the computer is in a different domain than the user, the fully qualified domain name is required.
+You can also pipe a computer name, in quotation marks to `New-PSWorkflowSession`.
 
 To use an IP address in the value of the **ComputerName** parameter, the command must include the
-**Credential** parameter. Also, the computer must be configured for HTTPS transport or the IP address
-of the remote computer must be included in the WinRM TrustedHosts list on the local computer. For
-instructions for adding a computer name to the TrustedHosts list, see "How to Add a Computer to the
-Trusted Host List" in [about_Remote_Troubleshooting](../Microsoft.PowerShell.Core/About/about_Remote_Troubleshooting.md).
+**Credential** parameter. Also, the computer must be configured for HTTPS transport or the IP
+address of the remote computer must be included in the WinRM TrustedHosts list on the local
+computer. For instructions for adding a computer name to the TrustedHosts list, see "How to Add a
+Computer to the Trusted Host List" in
+[about_Remote_Troubleshooting](../Microsoft.PowerShell.Core/About/about_Remote_Troubleshooting.md).
 
 ```yaml
 Type: System.String[]
@@ -190,7 +192,7 @@ Accept wildcard characters: False
 ### -Credential
 
 Specifies a user account that has permission to perform this action. The default is the current
-user. Type a user name, such as User01, Domain01\User01, or User@Domain.com, or enter a
+user. Type a user name, such as `User01`, `Domain01\User01`, or `User@Domain.com`, or enter a
 **PSCredential** object, such as one returned by the `Get-Credential` cmdlet.
 
 When you type a user name, this cmdlet prompts you for a password.
@@ -215,8 +217,8 @@ you can run a command in the session that copies XML files from a remote compute
 computer.
 
 A loopback session is a **PSSession** that originates and ends on the same computer. To create a
-loopback session, do not specify the **ComputerName** parameter or set its value to dot, localhost,
-or the name of the local computer.
+loopback session, do not specify the **ComputerName** parameter or set its value to dot (`.`),
+`localhost`, or the name of the local computer.
 
 By default, loopback sessions are created that have a network token, which might not provide
 sufficient permission to authenticate to remote computers.
@@ -270,7 +272,7 @@ Accept wildcard characters: False
 
 Specifies the network port on the remote computer that is used for this connection. To connect to a
 remote computer, the remote computer must be listening on the port that the connection uses. The
-default ports are 5985 (WinRM port for HTTP) and 5986 (WinRM port for HTTPS).
+default ports are `5985` (WinRM port for HTTP) and `5986` (WinRM port for HTTPS).
 
 Before using another port, you must configure the WinRM listener on the remote computer to listen at
 that port. Use the following commands to configure the listener:
@@ -307,10 +309,12 @@ configuration.
 The session option values take precedence over default values for sessions set in the
 `$PSSessionOption` preference variable and in the session configuration. However, they do not take
 precedence over maximum values, quotas or limits set in the session configuration. For more
-information about session configurations, see [about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md).
+information about session configurations, see
+[about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md).
 
 For a description of the session options, including the default values, see `New-PSSessionOption`.
-For information about the `$PSSessionOption` preference variable, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+For information about the `$PSSessionOption` preference variable, see
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 ```yaml
 Type: System.Management.Automation.Remoting.PSSessionOption
@@ -327,8 +331,8 @@ Accept wildcard characters: False
 ### -ThrottleLimit
 
 Specifies the maximum number of concurrent connections that can be established to run this command.
-If you omit this parameter or enter a value of 0 (zero), the default value for the
-**Microsoft.PowerShellWorkflow** session configuration, 100, is used.
+If you omit this parameter or enter a value of `0` (zero), the default value for the
+**Microsoft.PowerShellWorkflow** session configuration, `100`, is used.
 
 The throttle limit applies only to the current command, not to the session or to the computer.
 
@@ -372,7 +376,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

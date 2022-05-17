@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Html
@@ -71,7 +71,7 @@ the `Out-File` cmdlet to send the HTML code to the `aliases.htm` file.
 ### Example 3: Create a web page to display PowerShell events
 
 ```powershell
-`Get-EventLog` -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
+Get-EventLog -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
 ```
 
 This command creates an HTML page called `pslog.htm` that displays the events in the Windows
@@ -102,7 +102,7 @@ on the computer. The command uses the pipeline operator (`|`) to send the proces
 The command uses the **Property** parameter to select three properties of the process objects to be
 included in the table. The command uses the **Title** parameter to specify a title for the HTML
 page. The command also uses the `Out-File` cmdlet to send the resulting HTML to a file named
-Proc.htm.
+`Proc.htm`.
 
 The second command uses the `Invoke-Item` cmdlet to open the `Proc.htm` in the default browser.
 
@@ -156,7 +156,7 @@ Get-Date | ConvertTo-Html -Fragment
 ```
 
 This command uses `ConvertTo-Html` to generate an HTML table of the current date. The command uses
-the `Get-Date` cmdlet to get the current date. It uses a pipeline operator (|) to send the results
+the `Get-Date` cmdlet to get the current date. It uses a pipeline operator (`|`) to send the results
 to the `ConvertTo-Html` cmdlet.
 
 The `ConvertTo-Html` command includes the **Fragment** parameter, which limits the output to an HTML
@@ -193,12 +193,13 @@ Invoke-Item Services.htm
 ```
 
 This command creates and opens a Web page that displays the services on the computer that begin with
-A. It uses the **Title**, **Body**, **PreContent**, and **PostContent** parameters of
+`A`. It uses the **Title**, **Body**, **PreContent**, and **PostContent** parameters of
 `ConvertTo-Html` to customize the output.
 
 The first part of the command uses the `Get-Service` cmdlet to get the services on the computer that
-begin with A. The command uses a pipeline operator (`|`) to send the results to the `ConvertTo-Html`
-cmdlet. The command also uses the `Out-File` cmdlet to send the output to the Services.htm file.
+begin with `A`. The command uses a pipeline operator (`|`) to send the results to the
+`ConvertTo-Html` cmdlet. The command also uses the `Out-File` cmdlet to send the output to the
+`Services.htm` file.
 
 A semicolon (`;`) ends the first command and starts a second command, which uses the `Invoke-Item`
 cmdlet to open the `Services.htm` file in the default browser.
@@ -267,7 +268,7 @@ Accept wildcard characters: False
 
 ### -Fragment
 
-Generates only an HTML table. The HTML, HEAD, TITLE, and BODY tags are omitted.
+Generates only an HTML table. The `<HTML>`, `<HEAD>`, `<TITLE>`, and `<BODY>` tags are omitted.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -360,10 +361,10 @@ Includes the specified properties of the objects in the HTML. The value of the *
 parameter can be a new calculated property. The calculated property can be a script block or a hash
 table. Valid key-value pairs are:
 
-- Expression - `<string>` or `<script block>`
-- FormatString - `<string>`
-- Width - `<int32>` - must be greater than `0`
-- Alignment - value can be `Left`, `Center`, or `Right`
+- `Expression` - `<string>` or `<script block>`
+- `FormatString` - `<string>`
+- `Width` - `<int32>` - must be greater than `0`
+- `Alignment` - value can be `Left`, `Center`, or `Right`
 
 For more information, see
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
@@ -432,7 +433,7 @@ quite different.
   submit the processes on a computer to `ConvertTo-Html`, the resulting table displays an object
   array and its properties.
 
-  To comply with the XHTML Strict DTD, the DOCTYPE tag is modified accordingly:
+  To comply with the XHTML Strict DTD, the `DOCTYPE` tag is modified accordingly:
 
    `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"\>`
 

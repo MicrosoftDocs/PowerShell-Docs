@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/set-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-JobTrigger
@@ -47,7 +47,8 @@ are retained.
 is included in Windows PowerShell.
 
 For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module. Import
-the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
+the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see
+[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -77,13 +78,13 @@ Id         Frequency       Time                   DaysOfWeek              Enable
 1          Weekly          9/29/2011 12:00:00 AM  {Wednesday, Sunday}     True
 ```
 
-The first command uses the `Get-JobTrigger` cmdlet to get the job trigger of the DeployPackage
+The first command uses the `Get-JobTrigger` cmdlet to get the job trigger of the `DeployPackage`
 scheduled job. The output shows that the trigger starts the job at midnight on Wednesdays and
 Saturdays.
 
-The second command uses the `Get-JobTrigger` cmdlet to get the job trigger of the DeployPackage
+The second command uses the `Get-JobTrigger` cmdlet to get the job trigger of the `DeployPackage`
 scheduled job. A pipeline operator (`|`) sends the trigger to the `Set-JobTrigger` cmdlet, which
-changes the job trigger so that it starts the DeployPackage job on Wednesdays and Sundays. The
+changes the job trigger so that it starts the `DeployPackage` job on Wednesdays and Sundays. The
 command uses the **Passthru** parameter to return the trigger after the change.
 
 This command is not required; it is included only to show the effect of the trigger change.
@@ -91,7 +92,7 @@ This command is not required; it is included only to show the effect of the trig
 ### Example 2: Change the job trigger type
 
 This example shows how to change the type of job trigger that starts a job. The commands in this
-example replace an AtStartup job trigger with a weekly trigger.
+example replace an `AtStartup` job trigger with a weekly trigger.
 
 ```powershell
 Get-JobTrigger -Name "Inventory"
@@ -115,14 +116,15 @@ Id         Frequency       Time                   DaysOfWeek              Enable
 2          Weekly          10/31/2011 12:00:00 AM {Monday}                True
 ```
 
-The first command uses the `Get-JobTrigger` cmdlet to get the job trigger of the Inventory scheduled
-job. The output shows that the job has two triggers a daily trigger and an **AtStartup** trigger.
+The first command uses the `Get-JobTrigger` cmdlet to get the job trigger of the `Inventory`
+scheduled job. The output shows that the job has two triggers a daily trigger and an **AtStartup**
+trigger.
 
 The second command uses the `Get-JobTrigger` cmdlet to get the **AtStartup** job trigger of the
-Inventory job. The command uses the **TriggerID** parameter to identify the job trigger. A pipeline
-operator (`|`) sends the job trigger to the `Set-JobTrigger` cmdlet, which changes it to a weekly
-job trigger that runs every four weeks on Monday at midnight. The command uses the **Passthru**
-parameter to return the trigger after the change.
+`Inventory` job. The command uses the **TriggerID** parameter to identify the job trigger. A
+pipeline operator (`|`) sends the job trigger to the `Set-JobTrigger` cmdlet, which changes it to a
+weekly job trigger that runs every four weeks on Monday at midnight. The command uses the
+**Passthru** parameter to return the trigger after the change.
 
 This command is not required; it is included only to show the effect of the trigger change.
 
@@ -139,12 +141,12 @@ The command uses the `Invoke-Command` cmdlet to run a command on the Server01 co
 
 The remote command begins with a `Get-ScheduledJob` command that gets all scheduled jobs on the
 computer. The scheduled jobs are piped to the `Get-JobTrigger` cmdlet, which gets the job triggers
-of the scheduled jobs. Each job trigger contains a JobDefinition property that contains the
+of the scheduled jobs. Each job trigger contains a **JobDefinition** property that contains the
 scheduled job, so the trigger remains associated with the scheduled job even when it is changed.
 
-The job triggers are piped to the `Where-Object` cmdlet, which gets job triggers that have the User
-property. The selected job triggers are piped to the `Set-JobTrigger` cmdlet, which changes the user
-to Domain01\Admin02.
+The job triggers are piped to the `Where-Object` cmdlet, which gets job triggers that have the
+**User** property. The selected job triggers are piped to the `Set-JobTrigger` cmdlet, which changes
+the user to `Domain01\Admin02`.
 
 ### Example 4: Change one of many job triggers
 
@@ -198,32 +200,34 @@ JobDefinition      : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 ```
 
 The commands in this example changes the repetition interval of the **Once** job trigger of
-SecurityCheck scheduled job from every 60 minutes to every 90 minutes. The SecurityCheck scheduled
-job has three job triggers, so the commands use the **TriggerId** parameter of the `Get-JobTrigger`
-cmdlet to identify the job trigger that is being changed.
+`SecurityCheck` scheduled job from every 60 minutes to every 90 minutes. The `SecurityCheck`
+scheduled job has three job triggers, so the commands use the **TriggerId** parameter of the
+`Get-JobTrigger` cmdlet to identify the job trigger that is being changed.
 
-The first command uses the `Get-JobTrigger` cmdlet to get all job triggers of the SecurityCheck
+The first command uses the `Get-JobTrigger` cmdlet to get all job triggers of the `SecurityCheck`
 scheduled job. The output, which displays the IDs of the job triggers, reveals that the **Once** job
-trigger has an ID of 3.
+trigger has an **ID** of `3`.
 
 The second command uses the **TriggerID** parameter of the `Get-JobTrigger` cmdlet to get the
-**Once** trigger of the SecurityCheck scheduled job. The command pipes the trigger to the
-`Format-List` cmdlet, which displays all of the properties of the **Once** job trigger.The output
-shows that the trigger starts the job once every hour (RepetitionInterval = 1 hour) for one day
-(RepetitionDuration = 1 day).
+**Once** trigger of the `SecurityCheck` scheduled job. The command pipes the trigger to the
+`Format-List` cmdlet, which displays all of the properties of the **Once** job trigger. The output
+shows that the trigger starts the job once every hour (**RepetitionInterval** is 1 hour) for one day
+(**RepetitionDuration** is 1 day).
 
 The third command changes the repetition interval of the job trigger from one hour to 90 minutes.
 The command does not return any output.
 
 The fourth command displays the effect of the change.The output shows that the trigger starts the
-job once every 90 minutes (RepetitionInterval = 1 hour, 30 minutes) for one day (RepetitionDuration
-= 1 day). ## PARAMETERS
+job once every 90 minutes (**RepetitionInterval** is 1 hour, 30 minutes) for one day
+(**RepetitionDuration** is 1 day).
+
+## PARAMETERS
 
 ### -At
 
 Starts the job at the specified date and time. Enter a **DateTime** object, such as one that the
-`Get-Date` cmdlet returns, or a string that can be converted to a time, such as "April 19, 2012
-15:00", "12/31/2013 9:00 PM", or "3am".
+`Get-Date` cmdlet returns, or a string that can be converted to a time, such as
+`April 19, 2012 15:00`, `12/31/2013 9:00 PM`, or `3am`.
 
 If you don't specify an element of the **DateTime** object, such as seconds, that element of the job
 trigger is not changed. If the original job trigger didn't include a **DateTime** object and you
@@ -302,8 +306,8 @@ Accept wildcard characters: False
 
 ### -DaysInterval
 
-Specifies the number of days between occurrences on a daily schedule. For example, a value of 3
-starts the scheduled job on days 1, 4, 7 and so on. The default value is 1.
+Specifies the number of days between occurrences on a daily schedule. For example, a value of `3`
+starts the scheduled job on days `1`, `4`, `7` and so on. The default value is `1`.
 
 ```yaml
 Type: System.Int32
@@ -320,14 +324,14 @@ Accept wildcard characters: False
 ### -DaysOfWeek
 
 Specifies the days of the week on which a weekly scheduled job runs. Enter day names, such as
-Monday, Thursday, integers 0-6, where 0 represents Sunday, or an asterisk (`*`) to represent every
-day. This parameter is required in the Weekly parameter set.
+`Monday`, `Thursday`, integers `0`-`6`, where `0` represents Sunday, or an asterisk (`*`) to
+represent every day. This parameter is required in the **Weekly** parameter set.
 
 Day names are converted to their integer values in the job trigger. When you enclose day names in
-quotation marks in a command, enclose each day name in separate quotation marks, such as "Monday",
-"Tuesday". If you enclose multiple day names in a single quotation mark pair, the corresponding
-integer values are summed. For example, "Monday, Tuesday" (1, 2) results in a value of "Wednesday"
-(3).
+quotation marks in a command, enclose each day name in separate quotation marks, such as
+`"Monday", "Tuesday"`. If you enclose multiple day names in a single quotation mark pair, the
+corresponding integer values are summed. For example, `"Monday, Tuesday"` (`1 + 2`) results in a
+value of `Wednesday` (`3`).
 
 ```yaml
 Type: System.DayOfWeek[]
@@ -398,7 +402,7 @@ Accept wildcard characters: False
 
 Enables a random delay that begins at the scheduled start time, and sets the maximum delay value.
 The length of the delay is set pseudo-randomly for each start and varies from no delay to the time
-specified by the value of this parameter. The default value, zero (00:00:00), disables the random
+specified by the value of this parameter. The default value, zero (`00:00:00`), disables the random
 delay.
 
 Enter a timespan object, such as one returned by the `New-TimeSpan` cmdlet, or enter a value in
@@ -442,12 +446,12 @@ is 5 minutes and the value of **RepetitionDuration** is 2 hours, the job is trig
 minutes for two hours.
 
 Enter a timespan object, such as one that the `New-TimeSpan` cmdlet returns or a string that can be
-converted to a timespan object, such as "1:05:30".
+converted to a timespan object, such as `1:05:30`.
 
 To run a job indefinitely, add the **RepeatIndefinitely** parameter instead.
 
 To stop a job before the job trigger repetition duration expires, set the **RepetitionDuration**
-value to zero (0).
+value to zero (`0`).
 
 To change the repetition duration or repetition interval of a **Once** job trigger, the command must
 include both the **RepetitionInterval** and **RepetitionDuration** parameters. To change the
@@ -469,10 +473,10 @@ Accept wildcard characters: False
 ### -RepetitionInterval
 
 Repeats the job at the specified time interval. For example, if the value of this parameter is 2
-hours, the job is triggered every two hours. The default value, 0, does not repeat the job.
+hours, the job is triggered every two hours. The default value, `0`, does not repeat the job.
 
 Enter a timespan object, such as one that the `New-TimeSpan` cmdlet returns or a string that can be
-converted to a timespan object, such as "1:05:30".
+converted to a timespan object, such as `1:05:30`.
 
 To change the repetition duration or repetition interval of a **Once** job trigger, the command must
 include both the **RepetitionInterval** and **RepetitionDuration** parameters. To change the
@@ -529,7 +533,7 @@ Accept wildcard characters: False
 ### -WeeksInterval
 
 Specifies the number of weeks between occurrences on a weekly job schedule. For example, a value of
-3 starts the scheduled job on weeks 1, 4, 7 and so on. The default value is 1.
+`3` starts the scheduled job on weeks `1`, `4`, `7` and so on. The default value is `1`.
 
 ```yaml
 Type: System.Int32
@@ -547,7 +551,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -564,7 +569,7 @@ changed. Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-- Job triggers have a **JobDefintion** property that associates them with the scheduled job. When
+- Job triggers have a **JobDefinition** property that associates them with the scheduled job. When
   you change the job trigger of a scheduled job, the job is changed. You do not need to use a
   `Set-ScheduledJob` command to apply the changed trigger to the scheduled job.
 

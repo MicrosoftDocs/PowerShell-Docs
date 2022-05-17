@@ -2,7 +2,7 @@
 external help file: ISE-help.xml
 Locale: en-US
 Module Name: ISE
-ms.date: 06/09/2017
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/ise/import-isesnippet?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-IseSnippet
@@ -75,7 +75,7 @@ Import-IseSnippet -Module SnippetModule -ListAvailable
 
 ### Example 3: Find snippets in modules
 
-This example gets snippets in all installed modules in the PSModulePath environment variable.
+This example gets snippets in all installed modules in the **PSModulePath** environment variable.
 
 ```powershell
 ($env:PSModulePath).split(";") |
@@ -97,9 +97,9 @@ you don't need to run a command like this because modules that have snippets wil
 
 ### Example 5: Copy all module snippets
 
-This example copies the snippet files from all installed modules into the Snippets directory of the
-current user. Unlike imported snippets, which affect only the current session, copied snippets are
-available in every Windows PowerShell ISE session.
+This example copies the snippet files from all installed modules into the `Snippets` directory of
+the current user. Unlike imported snippets, which affect only the current session, copied snippets
+are available in every Windows PowerShell ISE session.
 
 ```powershell
 ($env:PSModulePath).split(";") |
@@ -135,8 +135,8 @@ Accept wildcard characters: False
 Imports snippets from the specified module into the current session. Wildcard characters are not
 supported.
 
-This parameter imports snippets from Snippet.ps1xml files in the Snippets subdirectory in the module
-path, such as `$home\Documents\WindowsPowerShell\Modules\<ModuleName>\Snippets`.
+This parameter imports snippets from `Snippet.ps1xml` files in the Snippets subdirectory in the
+module path, such as `$home\Documents\WindowsPowerShell\Modules\<ModuleName>\Snippets`.
 
 This parameter is designed to be used by module authors in a startup script, such as a script
 specified in the **ScriptsToProcess** key of a module manifest. Snippets in a module are not

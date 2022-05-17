@@ -112,7 +112,7 @@ PS C:\> Resolve-Path -LiteralPath 'test[xml]'
 Specifies a user account that has permission to perform this action. The default is the current
 user.
 
-Type a user name, such as User01 or Domain01\User01, or pass a **PSCredential** object. You can
+Type a user name, such as `User01` or `Domain01\User01`, or pass a **PSCredential** object. You can
 create a **PSCredential** object using the `Get-Credential` cmdlet. If you type a user name, this
 cmdlet prompts you for a password.
 
@@ -134,8 +134,8 @@ Accept wildcard characters: False
 
 Specifies the path to be resolved. The value of the **LiteralPath** parameter is used exactly as
 typed. No characters are interpreted as wildcard characters. If the path includes escape characters,
-enclose it in single quotation marks. Single quotation marks tell PowerShell not to interpret any
-characters as escape sequences.
+enclose it in single quotation marks (`'`). Single quotation marks tell PowerShell not to interpret
+any characters as escape sequences.
 
 ```yaml
 Type: System.String[]

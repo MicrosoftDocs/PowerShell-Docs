@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/12/2019
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-unique?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Unique
@@ -47,10 +47,10 @@ $A = $( foreach ($line in Get-Content C:\Test1\File1.txt) {
 $A.count
 ```
 
-The first command gets the content of the File.txt file. It converts each line of text to lowercase
-letters and then splits each word onto a separate line at the space (" "). Then, it sorts the
-resulting list alphabetically (the default) and uses the `Get-Unique` cmdlet to eliminate any
-duplicate words. The results are stored in the `$A` variable.
+The first command gets the content of the `File.txt` file. It converts each line of text to
+lowercase letters and then splits each word onto a separate line at the space (`" "`). Then, it
+sorts the resulting list alphabetically (the default) and uses the `Get-Unique` cmdlet to eliminate
+any duplicate words. The results are stored in the `$A` variable.
 
 The second command uses the **Count** property of the collection of strings in `$A` to determine how
 many items are in `$A`.
@@ -86,7 +86,7 @@ includes files and directories.
 Get-ChildItem | Sort-Object {$_.GetType()} | Get-Unique -OnType
 ```
 
-The pipeline operator (|) sends the results to the `Sort-Object` cmdlet. The `$_.GetType()`
+The pipeline operator (`|`) sends the results to the `Sort-Object` cmdlet. The `$_.GetType()`
 statement applies the **GetType** method to each file or directory. Then, `Sort-Object` sorts the
 items by type. Another pipeline operator sends the results to `Get-Unique`. The **OnType** parameter
 directs `Get-Unique` to return only one object of each type.
@@ -99,11 +99,11 @@ This command gets the names of processes running on the computer with duplicates
 Get-Process | Sort-Object | Select-Object processname | Get-Unique -AsString
 ```
 
-The `Get-Process` command gets all of the processes on the computer. The pipeline operator (|)
+The `Get-Process` command gets all of the processes on the computer. The pipeline operator (`|`)
 passes the result to `Sort-Object`, which, by default, sorts the processes alphabetically by
-ProcessName. The results are piped to the `Select-Object` cmdlet, which selects only the values of
-the ProcessName property of each object. The results are then piped to `Get-Unique` to eliminate
-duplicates.
+**ProcessName**. The results are piped to the `Select-Object` cmdlet, which selects only the values
+of the **ProcessName** property of each object. The results are then piped to `Get-Unique` to
+eliminate duplicates.
 
 The **AsString** parameter tells `Get-Unique` to treat the **ProcessName** values as strings.
 Without this parameter, `Get-Unique` treats the **ProcessName** values as objects and returns only
@@ -187,10 +187,11 @@ The type of object that `Get-Unique` returns is determined by the input.
 
 ## NOTES
 
-You can also refer to `Get-Unique` by its built-in alias, `gu`. For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+You can also refer to `Get-Unique` by its built-in alias, `gu`. For more information, see
+[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
-To sort a list, use Sort-Object. You can also use the **Unique** parameter of `Sort-Object` to find
-the unique items in a list.
+To sort a list, use `Sort-Object`. You can also use the **Unique** parameter of `Sort-Object` to
+find the unique items in a list.
 
 ## RELATED LINKS
 

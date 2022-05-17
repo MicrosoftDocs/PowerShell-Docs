@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 06/21/2021
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/remove-ciminstance?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-CimInstance
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 
 ### -Namespace
 
-Specifies the namespace for the CIM operation. The default namespace is **root/cimv2**. You can use
+Specifies the namespace for the CIM operation. The default namespace is `root/cimv2`. You can use
 tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from
 the local WMI server to provide the list of namespaces.
 
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ### -OperationTimeoutSec
 
 Specifies the amount of time that the cmdlet waits for a response from the computer. By default, the
-value of this parameter is 0, which means that the cmdlet uses the default timeout value for the
+value of this parameter is `0`, which means that the cmdlet uses the default timeout value for the
 server.
 
 If the **OperationTimeoutSec** parameter is set to a value less than the robust connection retry
@@ -195,10 +195,10 @@ Accept wildcard characters: False
 Specifies a query to run on the CIM server. You can specify the query dialect using the
 **QueryDialect** parameter.
 
-If the value specified contains double quotes ("), single quotes ('), or a backslash (`\`), you must
-escape those characters by prefixing them with the backslash (`\`) character. If the value specified
-uses the WQL LIKE operator, then you must escape the following characters by enclosing them in
-square brackets (`[]`): percent (%), underscore (`_`), or opening square bracket (`[`).
+If the value specified contains double quotes (`"`), single quotes (`'`), or a backslash (`\`), you
+must escape those characters by prefixing them with the backslash (`\`) character. If the value
+specified uses the WQL `LIKE` operator, then you must escape the following characters by enclosing
+them in square brackets (`[]`): percent (`%`), underscore (`_`), or opening square bracket (`[`).
 
 ```yaml
 Type: System.String
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 ### -QueryDialect
 
 Specifies the query language used for the Query parameter. The acceptable values for this parameter
-are: **WQL** or **CQL**. The default value is **WQL**.
+are: `WQL` or `CQL`. The default value is `WQL`.
 
 ```yaml
 Type: System.String
@@ -245,7 +245,7 @@ By default, if you do not specify this parameter, the DMTF standard resource URI
 ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying
 the ComputerName parameter, which creates a CIM session using WSMan. If you specify this parameter
 without specifying the ComputerName parameter, or if you specify a CIM session created using DCOM
-protocol, you will get an error, because the DCOM protocol does not support the ResourceURI
+protocol, you get an error, because the DCOM protocol does not support the **ResourceURI**
 parameter.
 
 If both the **ResourceUri** parameter and the **Filter** parameter are specified, the **Filter**

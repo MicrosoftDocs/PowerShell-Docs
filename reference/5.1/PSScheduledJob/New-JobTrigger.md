@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/new-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-JobTrigger
@@ -54,9 +54,9 @@ The `New-JobTrigger` cmdlet creates a job trigger that starts a scheduled job on
 recurring schedule, or when an event occurs.
 
 You can use the **ScheduledJobTrigger** object that `New-JobTrigger` returns to set a job trigger
-for a new or existing scheduled job. You can also create a job trigger by using the `Get-JobTrigger`
-cmdlet to get the job trigger of an existing scheduled job, or by using a hash table value to
-represent a job trigger.
+for a new or existing scheduled job. You can also create a job trigger with the `Get-JobTrigger`
+cmdlet to get the job trigger of an existing scheduled job, or with a hash table value to represent
+a job trigger.
 
 When creating a job trigger, review the default values of the options specified by the
 `New-ScheduledJobOption` cmdlet. These options, which have the same valid and default values as the
@@ -207,7 +207,7 @@ until its job trigger expires.
 
 To prevent the job from repeating, the command uses the `Get-JobTrigger` to get the job trigger of
 the **SecurityCheck** job and the `Set-JobTrigger` cmdlet to change the repetition interval and
-repetition duration of the job trigger to zero (0).
+repetition duration of the job trigger to zero (`0`).
 
 ### Example 10: Create an hourly job trigger
 
@@ -225,9 +225,9 @@ indefinite period of time. The schedule begins tomorrow (9/21/2012) at midnight 
 ### -At
 
 Starts the job at the specified date and time. Enter a **DateTime** object, such as one that the
-`Get-Date` cmdlet returns, or a string that can be converted to a date and time, such as "April 19,
-2012 15:00", "12/31", or "3am". If you don't specify an element of the date, such as the year, the
-date in the trigger has the corresponding element from the current date.
+`Get-Date` cmdlet returns, or a string that can be converted to a date and time, such as
+`April 19, 2012 15:00`, `12/31`, or `3am`. If you don't specify an element of the date, such as the
+year, the date in the trigger has the corresponding element from the current date.
 
 When using the **Once** parameter, set the value of the **At** parameter to a future date and time.
 Because the default date in a **DateTime** object is the current date, if you specify a time before
@@ -301,8 +301,8 @@ Accept wildcard characters: False
 
 ### -DaysInterval
 
-Specifies the number of days between occurrences on a daily schedule. For example, a value of 3
-starts the scheduled job on days 1, 4, 7 and so on. The default value is 1.
+Specifies the number of days between occurrences on a daily schedule. For example, a value of `3`
+starts the scheduled job on days `1`, `4`, `7` and so on. The default value is `1`.
 
 ```yaml
 Type: System.Int32
@@ -319,14 +319,14 @@ Accept wildcard characters: False
 ### -DaysOfWeek
 
 Specifies the days of the week on which a weekly scheduled job runs. Enter day names, such as
-"Monday" or integers 0-6, where 0 represents Sunday. This parameter is required in the Weekly
-parameter set.
+`Monday` or integers `0`-`6`, where `0` represents Sunday. This parameter is required in the
+**Weekly** parameter set.
 
 Day names are converted to their integer values in the job trigger. When you enclose day names in
-quotation marks in a command, enclose each day name in separate quotation marks, such as "Monday",
-"Tuesday". If you enclose multiple day names in a single quotation mark pair, the corresponding
-integer values are summed. For example, "Monday, Tuesday" (1, 2) results in a value of "Wednesday"
-(3).
+quotation marks in a command, enclose each day name in separate quotation marks, such as
+`"Monday", "Tuesday"`. If you enclose multiple day names in a single quotation mark pair, the
+corresponding integer values are summed. For example, `"Monday, Tuesday"` (`1 + 2`) results in a
+value of `Wednesday` (`3`).
 
 ```yaml
 Type: System.DayOfWeek[]
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 
 Enables a random delay that begins at the scheduled start time, and sets the maximum delay value.
 The length of the delay is set pseudo-randomly for each start and varies from no delay to the time
-specified by the value of this parameter. The default value, zero (00:00:00), disables the random
+specified by the value of this parameter. The default value, zero (`00:00:00`), disables the random
 delay.
 
 Enter a timespan object, such as one returned by the `New-TimeSpan` cmdlet, or enter a value in
@@ -406,12 +406,12 @@ is 5 minutes and the value of **RepetitionDuration** is 2 hours, the job is trig
 minutes for two hours.
 
 Enter a timespan object, such as one that the `New-TimeSpan` cmdlet returns or a string that can be
-converted to a timespan object, such as "1:05:30".
+converted to a timespan object, such as `1:05:30`.
 
 To run a job indefinitely, add the **RepeatIndefinitely** parameter instead.
 
 To stop a job before the job trigger repetition duration expires, use the `Set-JobTrigger` cmdlet to
-set the **RepetitionDuration** value to zero (0).
+set the **RepetitionDuration** value to zero (`0`).
 
 This parameter is valid only when the **Once**, **At**, and **RepetitionInterval** parameters are
 used in the command.
@@ -431,10 +431,10 @@ Accept wildcard characters: False
 ### -RepetitionInterval
 
 Repeats the job at the specified time interval. For example, if the value of this parameter is 2
-hours, the job is triggered every two hours. The default value, 0, does not repeat the job.
+hours, the job is triggered every two hours. The default value, `0`, does not repeat the job.
 
 Enter a timespan object, such as one that the `New-TimeSpan` cmdlet returns or a string that can be
-converted to a timespan object, such as "1:05:30".
+converted to a timespan object, such as `1:05:30`.
 
 This parameter is valid only when the **Once**, **At**, and **RepetitionDuration** parameters are
 used in the command.
@@ -471,8 +471,8 @@ Accept wildcard characters: False
 
 ### -Weekly
 
-Specifies a recurring weekly job schedule. Use the other parameters in the Weekly parameter set to
-specify the schedule details.
+Specifies a recurring weekly job schedule. Use the other parameters in the **Weekly** parameter set
+to specify the schedule details.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -489,7 +489,7 @@ Accept wildcard characters: False
 ### -WeeksInterval
 
 Specifies the number of weeks between occurrences on a weekly job schedule. For example, a value of
-3 starts the scheduled job on weeks 1, 4, 7 and so on. The default value is 1.
+`3` starts the scheduled job on weeks `1`, `4`, `7` and so on. The default value is `1`.
 
 ```yaml
 Type: System.Int32

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/30/2019
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-date?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Date
@@ -30,6 +30,7 @@ Set-Date [-Adjust] <TimeSpan> [-DisplayHint <DisplayHintType>] [-WhatIf] [-Confi
 
 The `Set-Date` cmdlet changes the system date and time on the computer to a date and time that you
 specify.
+
 You can specify a new date and/or time by typing a string or by passing a **DateTime** or
 **TimeSpan** object to `Set-Date`. To specify a new date or time, use the **Date** parameter.
 To specify a change interval, use the **Adjust** parameter.
@@ -38,12 +39,11 @@ To specify a change interval, use the **Adjust** parameter.
 
 ### Example 1: Add three days to the system date
 
-This command adds three days to the current system date.
-It does not affect the time.
-The command uses the **Date** parameter to specify the date.
+This command adds three days to the current system date. It does not affect the time. The command
+uses the **Date** parameter to specify the date.
 
 The `Get-Date` cmdlet returns the current date as a **DateTime** object. The **DateTime** object's
-**AddDays** method adds a specified number of days (3) to the current **DateTime** object.
+**AddDays** method adds a specified number of days (`3`) to the current **DateTime** object.
 
 ```powershell
 Set-Date -Date (Get-Date).AddDays(3)
@@ -137,9 +137,9 @@ Accept wildcard characters: False
 Specifies which elements of the date and time are displayed.The acceptable values for this parameter
 are:
 
-- **Date** - displays only the date.
-- **Time** - displays only the time.
-- **DateTime** - displays the date and time.
+- `Date` - displays only the date.
+- `Time` - displays only the time.
+- `DateTime` - displays the date and time.
 
 This parameter affects only the display.
 It does not affect the **DateTime** object that `Get-Date` retrieves.
@@ -216,7 +216,6 @@ You can pipe a date to `Set-Date`.
 - You can use standard .NET methods with the **DateTime** and **TimeSpan** objects used with
   `Set-Date`, such as **AddDays**, **AddMonths**, and **FromFileTime**. For more information, see
   [DateTime Methods](/dotnet/api/system.datetime) and
-
   [TimeSpan Methods](/dotnet/api/system.timespan) in the .NET SDK.
 
 ## RELATED LINKS
