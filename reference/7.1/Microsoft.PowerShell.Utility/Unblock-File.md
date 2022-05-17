@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unblock-File
@@ -10,7 +10,7 @@ title: Unblock-File
 # Unblock-File
 
 ## SYNOPSIS
-Unblocks files that were downloaded from the Internet.
+Unblocks files that were downloaded from the internet.
 
 ## SYNTAX
 
@@ -30,16 +30,16 @@ Unblock-File -LiteralPath <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 
 > **This cmdlet only works on the Windows and macOS platforms.**
 
-The `Unblock-File` cmdlet lets you open files that were downloaded from the Internet. It unblocks
-PowerShell script files that were downloaded from the Internet so you can run them, even when the
+The `Unblock-File` cmdlet lets you open files that were downloaded from the internet. It unblocks
+PowerShell script files that were downloaded from the internet so you can run them, even when the
 PowerShell execution policy is **RemoteSigned**. By default, these files are blocked to protect the
 computer from untrusted files.
 
 Before using the `Unblock-File` cmdlet, review the file and its source and verify that it is safe to
 open.
 
-Internally, the `Unblock-File` cmdlet removes the Zone.Identifier alternate data stream, which has a
-value of "3" to indicate that it was downloaded from the Internet.
+Internally, the `Unblock-File` cmdlet removes the **Zone.Identifier** alternate data stream, which
+has a value of `3` to indicate that it was downloaded from the internet.
 
 For more information about PowerShell execution policies, see
 [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
@@ -50,7 +50,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Unblock a file
 
-This command unblocks the PowerShellTips.chm file.
+This command unblocks the `PowerShellTips.chm` file.
 
 ```
 PS C:\> Unblock-File -Path C:\Users\User01\Documents\Downloads\PowerShellTips.chm
@@ -70,11 +70,11 @@ PS C:\> dir C:\Downloads\*PowerShell* | Unblock-File
 This command shows how to find and unblock PowerShell scripts.
 
 The first command uses the **Stream** parameter of the *Get-Item* cmdlet get files with the
-Zone.Identifier stream.
+**Zone.Identifier** stream.
 
 The second command shows what happens when you run a blocked script in a PowerShell session in which
-the execution policy is **RemoteSigned**. The RemoteSigned policy prevents you from running scripts
-that are downloaded from the Internet unless they are digitally signed.
+the execution policy is **RemoteSigned**. The **RemoteSigned** policy prevents you from running
+scripts that are downloaded from the internet unless they are digitally signed.
 
 The third command uses the `Unblock-File` cmdlet to unblock the script so it can run in the session.
 
@@ -106,8 +106,8 @@ PS C:\> Get-Item C:\ps-test\Start-ActivityTracker.ps1 | Unblock-File
 
 Specifies the files to unblock. Unlike **Path**, the value of the **LiteralPath** parameter is used
 exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape
-characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
-interpret any characters as escape sequences.
+characters, enclose it in single quotation marks (`'`). Single quotation marks tell PowerShell not
+to interpret any characters as escape sequences.
 
 ```yaml
 Type: System.String[]

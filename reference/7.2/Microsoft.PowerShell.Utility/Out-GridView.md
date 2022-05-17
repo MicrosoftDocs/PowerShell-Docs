@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/28/2019
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-GridView
@@ -45,10 +45,10 @@ Nano Server.
 
 You can use the following features of the table to examine your data:
 
-- Hide, Show, and Reorder Columns
+- Hide, show, and reorder columns
 - Sort rows
-- Quick Filter
-- Add Criteria Filter
+- Quick filter
+- Add criteria filter
 - Copy and paste
 
 For full instructions, see the [Notes](#notes) section of this article.
@@ -71,7 +71,8 @@ Get-Process | Out-GridView
 
 ### Example 2: Use a variable to output processes to a grid view
 
-This example also gets the processes running on the local computer and sends them to a grid view window.
+This example also gets the processes running on the local computer and sends them to a grid view
+window.
 
 ```powershell
 $P = Get-Process
@@ -190,10 +191,10 @@ the pipeline, click to select the items and then click OK.
 
 The values of this parameter determine how many items you can send down the pipeline.
 
-- None.  No items. This is the default value.
-- Single. Zero items or one item. Use this value when the next command can take only one input
+- `None`.  No items. This is the default value.
+- `Single`. Zero items or one item. Use this value when the next command can take only one input
   object.
-- Multiple. Zero, one, or many items. Use this value when the next command can take multiple input
+- `Multiple`. Zero, one, or many items. Use this value when the next command can take multiple input
   objects. This value is equivalent to the **Passthru** parameter.
 
 ```yaml
@@ -361,7 +362,7 @@ include the typed text appear in the table.
 
 - Search for text. To search for text in the table, in the Filter box, type the text to find.
 - Search for multiple words. To search for multiple words in the table, type the words separated by
-  spaces. `Out-GridView` displays rows that include all the words (logical AND).
+  spaces. `Out-GridView` displays rows that include all the words (logical **AND**).
 - Search for literal phrases. To search for phrases that include spaces or special characters,
   enclose the phrase in quotation marks. `Out-GridView` displays rows that include an exact match
   for the phrase.
@@ -426,4 +427,3 @@ The criteria only affects the display. It does not delete items from the table.
 [Out-Printer](Out-Printer.md)
 
 [Out-String](Out-String.md)
-

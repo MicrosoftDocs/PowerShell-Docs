@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Process
@@ -82,8 +82,8 @@ Get-Process winword, explorer | Format-List *
 
 This command gets all available data about the Winword and Explorer processes on the computer. It
 uses the **Name** parameter to specify the processes, but it omits the optional parameter name. The
-pipeline operator `|` passes the data to the `Format-List` cmdlet, which displays all available
-properties `*` of the Winword and Explorer process objects.
+pipeline operator (`|`) passes the data to the `Format-List` cmdlet, which displays all available
+properties (`*`) of the Winword and Explorer process objects.
 
 You can also identify the processes by their process IDs. For instance, `Get-Process -Id 664, 2060`.
 
@@ -94,7 +94,7 @@ Get-Process | Where-Object {$_.WorkingSet -gt 20000000}
 ```
 
 This command gets all processes that have a working set greater than 20 MB. It uses the
-`Get-Process` cmdlet to get all running processes. The pipeline operator `|` passes the process
+`Get-Process` cmdlet to get all running processes. The pipeline operator (`|`) passes the process
 objects to the `Where-Object` cmdlet, which selects only the object with a value greater than
 20,000,000 bytes for the **WorkingSet** property.
 
@@ -156,10 +156,10 @@ ProductVersion   FileVersion      FileName
 ```
 
 This command uses the **FileVersionInfo** parameter to get the version information for the
-pwsh.exe file that is the main module for the PowerShell process.
+`pwsh.exe` file that is the main module for the PowerShell process.
 
 To run this command with processes that you do not own on Windows Vista and later versions of
-Windows, you must open PowerShell with the Run as administrator option.
+Windows, you must open PowerShell with the **Run as administrator** option.
 
 ### Example 7: Get modules loaded with the specified process
 
@@ -168,10 +168,10 @@ Get-Process SQL* -Module
 ```
 
 This command uses the **Module** parameter to get the modules that have been loaded by the process.
-This command gets the modules for the processes that have names that begin with SQL.
+This command gets the modules for the processes that have names that begin with `SQL`.
 
 To run this command on Windows Vista and later versions of Windows with processes that you do not
-own, you must start PowerShell with the Run as administrator option.
+own, you must start PowerShell with the **Run as administrator** option.
 
 ### Example 8: Find the owner of a process
 
@@ -186,8 +186,9 @@ Handles      WS(K)   CPU(s)     Id UserName            ProcessName
 ```
 
 This command shows how to find the owner of a process.
-On Windows, the **IncludeUserName** parameter requires elevated user rights (Run as Administrator).
-The output reveals that the owner is Domain01\user01.
+On Windows, the **IncludeUserName** parameter requires elevated user rights
+(**Run as Administrator**).
+The output reveals that the owner is `Domain01\user01`.
 
 ### Example 9: Use an automatic variable to identify the process hosting the current session
 
@@ -240,8 +241,8 @@ command to the `Get-Member` cmdlet `Get-Process | Get-Member`.
 Indicates that this cmdlet gets the file version information for the program that runs in the
 process.
 
-On Windows Vista and later versions of Windows, you must open PowerShell with the Run as
-administrator option to use this parameter on processes that you do not own.
+On Windows Vista and later versions of Windows, you must open PowerShell with the **Run as
+administrator** option to use this parameter on processes that you do not own.
 
 To get file version information for a process on a remote computer, use the `Invoke-Command` cmdlet.
 
@@ -345,7 +346,7 @@ Accept wildcard characters: False
 ### -Name
 
 Specifies one or more processes by process name. You can type multiple process names (separated by
-commas) and use wildcard characters. The parameter name ("Name") is optional.
+commas) and use wildcard characters. The parameter name (`Name`) is optional.
 
 ```yaml
 Type: System.String[]
@@ -383,26 +384,27 @@ use the **Module** parameter, without the **FileVersionInfo** parameter, it retu
 
 ## NOTES
 
-- You can also refer to this cmdlet by its built-in aliases, ps and gps. For more information, see
-  [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+- You can also refer to this cmdlet by its built-in aliases, `ps` and `gps`. For more information,
+  see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 - On computers that are running a 64-bit version of Windows, the 64-bit version of PowerShell gets
   only 64-bit process modules and the 32-bit version of PowerShell gets only 32-bit process modules.
 - You can use the properties and methods of the Windows Management Instrumentation (WMI)
-  Win32_Process object in PowerShell. For information, see `Get-WmiObject` and the WMI SDK.
+  **Win32_Process** object in PowerShell. For information, see `Get-WmiObject` and the WMI SDK.
 - The default display of a process is a table that includes the following columns. For a description
   of all of the properties of process objects, see
   [Process Properties](/dotnet/api/system.diagnostics.process).
-  - Handles: The number of handles that the process has opened.
-  - NPM(K): The amount of non-paged memory that the process is using, in kilobytes.
-  - PM(K): The amount of pageable memory that the process is using, in kilobytes.
-  - WS(K): The size of the working set of the process, in kilobytes.
-    The working set consists of the pages of memory that were recently referenced by the process.
-  - VM(M): The amount of virtual memory that the process is using, in megabytes.
-    Virtual memory includes storage in the paging files on disk.
-  - CPU(s): The amount of processor time that the process has used on all processors, in seconds.
-  - ID: The process ID (PID) of the process.
-  - ProcessName: The name of the process. For explanations of the concepts related to processes, see
-    the Glossary in Help and Support Center and the Help for Task Manager.
+  - **Handles**: The number of handles that the process has opened.
+  - **NPM(K)**: The amount of non-paged memory that the process is using, in kilobytes.
+  - **PM(K)**: The amount of pageable memory that the process is using, in kilobytes.
+  - **WS(K)**: The size of the working set of the process, in kilobytes. The working set consists of
+    the pages of memory that were recently referenced by the process.
+  - **VM(M)**: The amount of virtual memory that the process is using, in megabytes. Virtual memory
+    includes storage in the paging files on disk.
+  - **CPU(s)**: The amount of processor time that the process has used on all processors, in
+    seconds.
+  - **ID**: The process ID (PID) of the process.
+  - **ProcessName**: The name of the process. For explanations of the concepts related to processes,
+    see the Glossary in Help and Support Center and the Help for Task Manager.
 - You can also use the built-in alternate views of the processes available with `Format-Table`, such
   as **StartTime** and **Priority**, and you can design your own views.
 

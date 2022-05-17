@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/19/2018
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-list?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-List
@@ -23,7 +23,7 @@ Format-List [[-Property] <Object[]>] [-GroupBy <Object>] [-View <string>] [-Show
 
 The `Format-List` cmdlet formats the output of a command as a list of properties in which each
 property is displayed on a separate line. You can use `Format-List` to format and display all or
-selected properties of an object as a list (format-list *).
+selected properties of an object as a list (`Format-List -Property *`).
 
 Because more space is available for each item in a list than in a table, PowerShell displays more
 properties of the object in the list, and the property values are less likely to be truncated.
@@ -38,7 +38,7 @@ Get-Service | Format-List
 
 This command formats information about services on the computer as a list. By default, the services
 are formatted as a table. The `Get-Service` cmdlet gets objects representing the services on the
-computer. The pipeline operator (|) passes the results through the pipeline to `Format-List`.
+computer. The pipeline operator (`|`) passes the results through the pipeline to `Format-List`.
 Then, the `Format-List` command formats the service information in a list and sends it to the
 default output cmdlet for display.
 
@@ -62,12 +62,12 @@ the formatted output to the default output cmdlet for display.
 This command displays the name, base priority, and priority class of each process on the computer.
 
 ```powershell
-Get-Process | Format-List -Property name, basepriority, priorityclass
+Get-Process | Format-List -Property Name, BasePriority, PriorityClass
 ```
 
 It uses the `Get-Process` cmdlet to get an object representing each process. The pipeline operator
-(|) passes the process objects through the pipeline to `Format-List`. `Format-List` formats the
-processes as a list of the specified properties. The *Property* parameter name is optional, so you
+(`|`) passes the process objects through the pipeline to `Format-List`. `Format-List` formats the
+processes as a list of the specified properties. The **Property** parameter name is optional, so you
 can omit it.
 
 ### Example 4: Format all properties for a process
@@ -79,9 +79,9 @@ Get-Process winlogon | Format-List -Property *
 ```
 
 It uses the Get-Process cmdlet to get an object representing the Winlogon process. The pipeline
-operator (|) passes the Winlogon process object through the pipeline to `Format-List`. The command
-uses the *Property* parameter to specify the properties and the \* to indicate all properties.
-Because the name of the *Property* parameter is optional, you can omit it and type the command as
+operator (`|`) passes the Winlogon process object through the pipeline to `Format-List`. The command
+uses the **Property** parameter to specify the properties and the `*` to indicate all properties.
+Because the name of the **Property** parameter is optional, you can omit it and type the command as
 `Format-List *`. `Format-List` automatically sends the results to the default output cmdlet for
 display.
 
@@ -129,12 +129,12 @@ Accept wildcard characters: False
 ### -Expand
 
 Specifies the formatted collection object, as well as the objects in the collection. This parameter
-is designed to format objects that support the ICollection (System.Collections) interface. The
-default value is EnumOnly. The acceptable values for this parameter are:
+is designed to format objects that support the **System.Collections.ICollection** interface. The
+default value is `EnumOnly`. The acceptable values for this parameter are:
 
-- EnumOnly. Displays the properties of the objects in the collection.
-- CoreOnly. Displays the properties of the collection object.
-- Both. Displays the properties of the collection object and the properties of objects in the
+- `EnumOnly`. Displays the properties of the objects in the collection.
+- `CoreOnly`. Displays the properties of the collection object.
+- `Both`. Displays the properties of the collection object and the properties of objects in the
   collection.
 
 ```yaml
@@ -176,9 +176,9 @@ property of the output.
 The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
 be a script block or a hash table. Valid key-value pairs are:
 
-- Name (or Label) - `<string>`
-- Expression - `<string>` or `<script block>`
-- FormatString - `<string>`
+- `Name` (or `Label`) - `<string>`
+- `Expression` - `<string>` or `<script block>`
+- `FormatString` - `<string>`
 
 For more information, see
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
@@ -218,15 +218,15 @@ Specifies the object properties that appear in the display and the order in whic
 Wildcards are permitted.
 
 If you omit this parameter, the properties that appear in the display depend on the object being
-displayed. The parameter name "Property" is optional. You cannot use the **Property** and **View**
+displayed. The parameter name **Property** is optional. You cannot use the **Property** and **View**
 parameters in the same command.
 
 The value of the **Property** parameter can be a new calculated property. The calculated property
 can be a script block or a hash table. Valid key-value pairs are:
 
-- Name (or Label) - `<string>`
-- Expression - `<string>` or `<script block>`
-- FormatString - `<string>`
+- `Name` (or `Label`) - `<string>`
+- `Expression` - `<string>` or `<script block>`
+- `FormatString` - `<string>`
 
 For more information, see
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
@@ -299,17 +299,17 @@ You can pipe any object to `Format-List`.
 
 ## NOTES
 
-You can also refer to Format-List by its built-in alias, FL. For more information, see
+You can also refer to `Format-List` by its built-in alias, `fl`. For more information, see
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 The format cmdlets, such as `Format-List`, arrange the data to be displayed but do not display it.
-The data is displayed by the output features of PowerShell and by the cmdlets that contain the Out
-verb (the Out cmdlets), such as `Out-Host` or `Out-File`.
+The data is displayed by the output features of PowerShell and by the cmdlets that contain the `Out`
+verb (the `Out` cmdlets), such as `Out-Host` or `Out-File`.
 
 If you do not use a format cmdlet, PowerShell applies that default format for each object that it
 displays.
 
-The **GroupBy** parameter assumes that the objects are sorted. Use Sort-Object before using
+The **GroupBy** parameter assumes that the objects are sorted. Use `Sort-Object` before using
 `Format-List` to group the objects.
 
 The **View** parameter lets you specify an alternate format for the table. You can use the views

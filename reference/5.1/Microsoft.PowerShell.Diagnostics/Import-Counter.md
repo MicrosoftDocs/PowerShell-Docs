@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 09/28/2021
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/import-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Counter
@@ -18,8 +18,8 @@ the log.
 ### GetCounterSet (Default)
 
 ```
-Import-Counter [-Path] <String[]> [-StartTime <DateTime>] [-EndTime <DateTime>] [-Counter <String[]>]
- [-MaxSamples <Int64>] [<CommonParameters>]
+Import-Counter [-Path] <String[]> [-StartTime <DateTime>] [-EndTime <DateTime>]
+[-Counter <String[]>] [-MaxSamples <Int64>] [<CommonParameters>]
 ```
 
 ### ListSetSet
@@ -111,7 +111,7 @@ $i | Export-Counter -Path .\Interrupts.csv -Format CSV
 ```
 
 The first command uses `Import-Counter` to import all of the performance counter data from the
-`ProcessorData.blg files`. The command saves the data in the `$data` variable.
+`ProcessorData.blg` files. The command saves the data in the `$data` variable.
 
 The second command displays the counter paths in the `$data` variable. To get the display shown in
 the command output, the example uses the `Format-Table` cmdlet to format as a table the counter
@@ -125,9 +125,9 @@ The fourth command displays the selected counter paths in the `$intCtrs` variabl
 
 The fifth command uses the `Import-Counter` cmdlet to import the data. It uses the `$intCtrs`
 variable as the value of the **Counter** parameter to import only data for the counter paths in
-$IntCtrs.
+`$intCtrs`.
 
-The sixth command uses the Export-Counter cmdlet to export the data to the `Interrupts.csv` file.
+The sixth command uses the `Export-Counter` cmdlet to export the data to the `Interrupts.csv` file.
 
 ### Example 4: Display all counter paths in a group of imported counter sets
 
@@ -177,9 +177,9 @@ counter sets that are represented in a counter data file.
 
 The second command gets all of the counter paths from the list set.
 
-### Example 5: Import counter data from a range of time stamps
+### Example 5: Import counter data from a range of timestamps
 
-This example imports only the counter data that has a time stamp between the starting an ending
+This example imports only the counter data that has a timestamp between the starting an ending
 ranges specified in the command.
 
 ```powershell
@@ -188,10 +188,10 @@ $start = [datetime]"7/9/2008 3:47:00 PM"; $end = [datetime]"7/9/2008 3:47:59 PM"
 Import-Counter -Path Disk.blg -StartTime $start -EndTime $end
 ```
 
-The first command lists in a table the time stamps of all of the data in the `ProcessorData.blg`
+The first command lists in a table the timestamps of all of the data in the `ProcessorData.blg`
 file.
 
-The second command saves particular time stamps in the `$start` and `$end` variables. The strings
+The second command saves particular timestamps in the `$start` and `$end` variables. The strings
 are cast to **DateTime** objects.
 
 The third command uses the `Import-Counter` cmdlet to get only counter data that has a time stamp
@@ -200,7 +200,8 @@ parameters of `Import-Counter` to specify the range.
 
 ### Example 6: Import a specified number of the oldest samples from a performance counter log file
 
-This example shows how to import the five oldest and five newest samples from a performance counter log file.
+This example shows how to import the five oldest and five newest samples from a performance counter
+log file.
 
 ```powershell
 Import-Counter -Path "Disk.blg" -MaxSamples 5
@@ -267,7 +268,7 @@ Specifies, as a string array, the performance counters. By default, `Import-Coun
 data from all counters in the input files. Enter one or more counter paths. Wildcards are permitted
 in the Instance part of the path.
 
-Each counter path has the following format. The ComputerName value is required in the path. For
+Each counter path has the following format. The `ComputerName` value is required in the path. For
 instance:
 
 - `\\<ComputerName>\<CounterSet>(<Instance>)\<CounterName>`
@@ -405,7 +406,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

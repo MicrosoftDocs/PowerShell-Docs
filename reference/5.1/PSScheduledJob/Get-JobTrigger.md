@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
+ms.date: 05/17/2022
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/get-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-JobTrigger
@@ -51,7 +51,8 @@ the scheduled jobs by their names or identification numbers, or by entering or p
 is included in Windows PowerShell.
 
 For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module. Import
-the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
+the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see
+[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -63,7 +64,8 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 Get-JobTrigger -Name "BackupJob"
 ```
 
-The command uses the *Name* parameter of `Get-JobTrigger` to get the job triggers of the BackupJob scheduled job.
+The command uses the *Name* parameter of `Get-JobTrigger` to get the job triggers of the `BackupJob`
+scheduled job.
 
 ### Example 2: Get a job trigger by ID
 
@@ -92,7 +94,7 @@ The first command uses the `Get-ScheduledJob` cmdlet to display the scheduled jo
 computer. The display includes the IDs of the scheduled jobs.
 
 The second command uses the `Get-JobTrigger` cmdlet to get the job trigger for the `Test-HelpFiles`
-job (ID = 3)
+job (whose **ID** is `3`).
 
 ### Example 3: Get job triggers by piping a job
 
@@ -102,7 +104,7 @@ This example gets job triggers of jobs that have matching names.
 Get-ScheduledJob -Name *Backup*, *Archive* | Get-JobTrigger
 ```
 
-This command gets the job triggers of all jobs that have Backup or Archive in their names.
+This command gets the job triggers of all jobs that have `Backup` or `Archive` in their names.
 
 ### Example 4: Get the job trigger of a job on a remote computer
 
@@ -113,7 +115,7 @@ Invoke-Command -ComputerName Server01 { Get-ScheduledJob Backup | Get-JobTrigger
 ```
 
 The command uses the `Invoke-Command` cmdlet to run a command on the Server01 computer. It uses the
-`Get-ScheduledJob` cmdlet to get the Backup scheduled job, which it pipes to the `Get-JobTrigger`
+`Get-ScheduledJob` cmdlet to get the `Backup` scheduled job, which it pipes to the `Get-JobTrigger`
 cmdlet. It uses the **TriggerID** parameter to get only the second trigger.
 
 ### Example 5: Get all job triggers
@@ -150,14 +152,15 @@ Get-ScheduledJob | foreach {$_.JobTriggers}
 ```
 
 The first command uses the `Get-ScheduledJob` cmdlet to get the `Test-HelpFiles` scheduled job. Then
-it uses the dot method (`.`) to get the JobTriggers property of the `Test-HelpFiles` scheduled job.
+it uses the dot method (`.`) to get the **JobTriggers** property of the `Test-HelpFiles` scheduled
+job.
 
 The second command uses the `Get-ScheduledJob` cmdlet to get all scheduled jobs on the local
-computer. It uses the `ForEach-Object` cmdlet to get the value of the JobTrigger property of each
-scheduled job.
+computer. It uses the `ForEach-Object` cmdlet to get the value of the **JobTriggers** property of
+each scheduled job.
 
-The job triggers of a scheduled job are stored in the JobTriggers property of the job. This example
-shows alternatives to using the `Get-JobTrigger` cmdlet to get job triggers. The results are
+The job triggers of a scheduled job are stored in the **JobTriggers** property of the job. This
+example shows alternatives to using the `Get-JobTrigger` cmdlet to get job triggers. The results are
 identical to using the `Get-JobTrigger` cmdlet and the techniques can be used interchangeably.
 
 ### Example 7: Compare job triggers
@@ -193,7 +196,7 @@ RandomDelay                                                 SideIndicator
 00:03:00                                                    <=
 ```
 
-The first command gets the job trigger of the ArchiveProjects scheduled job. The command pipes the
+The first command gets the job trigger of the `ArchiveProjects` scheduled job. The command pipes the
 job trigger to the `Tee-Object` cmdlet, which saves the job trigger in the `$t1` variable and
 displays it at the command line.
 
@@ -206,7 +209,7 @@ cmdlet to get the properties of the job trigger in the $t1 variable. It pipes th
 `ForEach-Object` cmdlet, which compares each property to the properties of the job trigger in the
 `$t2` variable by name. The command then pipes the differing properties to the `Format-List` cmdlet,
 which displays them in a list.The output indicates that, although the job triggers appear to be the
-same, the HelpFiles job trigger includes a random delay of three (3) minutes.
+same, the `HelpFiles` job trigger includes a random delay of three (`3`) minutes.
 
 This example shows how to compare the job triggers of two scheduled jobs.
 
@@ -292,7 +295,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

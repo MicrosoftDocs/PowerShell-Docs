@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Service
@@ -78,7 +78,7 @@ Start-Service -InputObject $s -PassThru | Format-List >> services.txt
 
 First we use `Get-Service` to get an object that represent the WMI service and store it in the `$s`
 variable. Next, we start the service. Without the **PassThru** parameter, `Start-Service` does not
-create any output. The pipeline operator (|) passes the object output by `Start-Service` to the
+create any output. The pipeline operator (`|`) passes the object output by `Start-Service` to the
 `Format-List` cmdlet to format the object as a list of its properties. The append redirection
 operator (`>>`) redirects the output to the services.txt file. The output is added to the end of the
 existing file.

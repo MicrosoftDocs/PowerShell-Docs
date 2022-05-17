@@ -1,7 +1,7 @@
 ---
 description: Information about the Certificate provider.
 Locale: en-US
-ms.date: 05/12/2022
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/about/about_certificate_provider?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Certificate Provider
@@ -31,8 +31,8 @@ Provides access to X.509 certificate stores and certificates in PowerShell.
 The PowerShell **Certificate** provider lets you get, add, change, clear, and
 delete certificates and certificate stores in PowerShell.
 
-The **Certificate** drive is a hierarchical namespace containing the
-certificate stores and certificates on your computer.
+The **Certificate** drive is a hierarchical namespace containing the certificate
+stores and certificates on your computer.
 
 The **Certificate** provider supports the following cmdlets, which are covered
 in this article.
@@ -78,9 +78,9 @@ the `Cert:` drive.
 Set-Location Cert:
 ```
 
-You can also work with the certificate provider from any other PowerShell
-drive. To reference an alias from another location, use the `Cert:` drive name
-in the path.
+You can also work with the certificate provider from any other PowerShell drive.
+To reference an alias from another location, use the `Cert:` drive name in the
+path.
 
 ```powershell
 PS Cert:\> Set-Location -Path LocalMachine\Root
@@ -163,8 +163,9 @@ Get-ChildItem -Path cert:\LocalMachine\My, cert:\LocalMachine\WebHosting `
 ### Find expired certificates on remote computers
 
 This command uses the `Invoke-Command` cmdlet to run a `Get-ChildItem` command
-on the Srv01 and Srv02 computers. A value of zero (0) in the **ExpiringInDays**
-parameter gets certificates on the Srv01 and Srv02 computers that have expired.
+on the Srv01 and Srv02 computers. A value of zero (`0`) in the
+**ExpiringInDays** parameter gets certificates on the Srv01 and Srv02 computers
+that have expired.
 
 ```powershell
 Invoke-Command -ComputerName Srv01, Srv02 {Get-ChildItem -Path cert:\* `
@@ -194,8 +195,8 @@ Get-ChildItem -Path cert:\* -Recurse -DNSName "*fabrikam*" `
 
 ## Opening the Certificates MMC Snap-in
 
-The `Invoke-Item` cmdlet will use the default application to open a path
-you specify. For certificates, the default application is the Certificates MMC
+The `Invoke-Item` cmdlet will use the default application to open a path you
+specify. For certificates, the default application is the Certificates MMC
 snap-in.
 
 This command opens the Certificates MMC snap-in to manage the specified
@@ -207,8 +208,8 @@ Invoke-Item cert:\CurrentUser\my\6B8223358119BB08840DEE50FD8AF9EA776CE66B
 
 ## Copying Certificates
 
-Copying certificates is not supported by the **Certificate** provider. When
-you attempt to copy a certificate, you see this error.
+Copying certificates is not supported by the **Certificate** provider. When you
+attempt to copy a certificate, you see this error.
 
 ```
 $path = "Cert:\LocalMachine\Root\E2C0F6662D3C569705B4B31FE2CBF3434094B254"
@@ -240,8 +241,8 @@ This command uses the **SSLServerAuthentication** parameter of the
 `Get-ChildItem` cmdlet to get SSL server authentication certificates in the `My`
 certificate store.
 
-The returned certificates are piped to the `Move-Item` cmdlet, which moves
-the certificates to the `WebHosting` store.
+The returned certificates are piped to the `Move-Item` cmdlet, which moves the
+certificates to the `WebHosting` store.
 
 ```powershell
 Get-ChildItem cert:\LocalMachine\My -SSLServerAuthentication | Move-Item `
@@ -251,12 +252,12 @@ Get-ChildItem cert:\LocalMachine\My -SSLServerAuthentication | Move-Item `
 ## Deleting Certificates and Private Keys
 
 The `Remove-Item` cmdlet will remove certificates that you specify. The
-`-DeleteKey` dynamic parameter deletes the private key.
+**DeleteKey** dynamic parameter deletes the private key.
 
 ### Delete a Certificate from the CA store
 
-This command deletes a certificate from the CA certificate store, but leaves
-the associated private key intact.
+This command deletes a certificate from the CA certificate store, but leaves the
+associated private key intact.
 
 In the `Cert:` drive, the `Remove-Item` cmdlet supports only the **DeleteKey**,
 **Path**, **WhatIf**, and **Confirm** parameters. All other parameters are
@@ -329,9 +330,9 @@ This command uses the **ExpiringInDays** parameter of the `Get-ChildItem` cmdlet
 with a value of `0` to get certificates in the `WebHosting` store that have
 expired.
 
-The variable containing the returned certificates is piped to the
-`Remove-Item` cmdlet, which deletes them. The command uses the **DeleteKey**
-parameter to delete the private key along with the certificate.
+The variable containing the returned certificates is piped to the `Remove-Item`
+cmdlet, which deletes them. The command uses the **DeleteKey** parameter to
+delete the private key along with the certificate.
 
 ```powershell
 $expired = Get-ChildItem cert:\LocalMachine\WebHosting -ExpiringInDays 0
@@ -349,8 +350,8 @@ cmdlet to create a certificate for testing purposes.
 In the `Cert:` drive, the `New-Item` cmdlet creates certificate stores in the
 `LocalMachine` store location. It supports the **Name**, **Path**, **WhatIf**,
 and **Confirm** parameters. All other parameters are ignored. The command
-returns a **System.Security.Cryptography.X509Certificates.X509Store**
-that represents the new certificate store.
+returns a **System.Security.Cryptography.X509Certificates.X509Store** that
+represents the new certificate store.
 
 This command creates a new certificate store named `CustomStore` in the
 `LocalMachine` store location.
@@ -366,8 +367,8 @@ This command creates a new certificate store named `HostingStore` in the
 
 The command uses the `Invoke-Command` cmdlet to run a `New-Item` command on the
 Server01 computer. The command returns a
-**System.Security.Cryptography.X509Certificates.X509Store** that represents
-the new certificate store.
+**System.Security.Cryptography.X509Certificates.X509Store** that represents the
+new certificate store.
 
 ```powershell
 Invoke-Command { New-Item -Path cert:\LocalMachine\CustomStore } `
@@ -405,25 +406,25 @@ Invoke-Command { Remove-Item -Path cert:\LocalMachine\TestStore -Recurse } `
 
 ## Dynamic parameters
 
-Dynamic parameters are cmdlet parameters that are added by a PowerShell
-provider and are available only when the cmdlet is being used in the
-provider-enabled drive. These parameters are valid in all subdirectories of the
-**Certificate** provider, but are effective only on certificates.
+Dynamic parameters are cmdlet parameters that are added by a PowerShell provider
+and are available only when the cmdlet is being used in the provider-enabled
+drive. These parameters are valid in all subdirectories of the **Certificate**
+provider, but are effective only on certificates.
 
 > [!NOTE]
 > Parameters that perform filtering against the **EnhancedKeyUsageList**
-> property also return items with an empty**EnhancedKeyUsageList** property
-> value. Certificates that have an empty **EnhancedKeyUsageList** can be used
-> for all purposes.
+> property also return items with an empty **EnhancedKeyUsageList**
+> property value. Certificates that have an empty **EnhancedKeyUsageList** can
+> be used for all purposes.
 
 The following Certificate provider parameters were reintroduced in PowerShell
 7.1.
 
-- DNSName
-- DocumentEncryptionCert
-- EKU
-- ExpiringInDays
-- SSLServerAuthentication
+- **DNSName**
+- **DocumentEncryptionCert**
+- **EKU**
+- **ExpiringInDays**
+- **SSLServerAuthentication**
 
 ### CodeSigningCert <System.Management.Automation.SwitchParameter>
 
@@ -441,14 +442,15 @@ This parameter gets certificates that have `Code Signing` in their
 
 - [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
 
-This parameter deletes the associated private key when it deletes the certificate.
+This parameter deletes the associated private key when it deletes the
+certificate.
 
 > [!IMPORTANT]
 > To delete a private key that is associated with a user certificate in the
 > `Cert:\CurrentUser` store on a remote computer, you must use delegated
-> credentials. The `Invoke-Command` cmdlet supports credential delegation
-> using the **CredSSP** parameter. You should consider any security risks
-> before using `Remove-Item` with `Invoke-Command` and credential delegation.
+> credentials. The `Invoke-Command` cmdlet supports credential delegation using
+> the **CredSSP** parameter. You should consider any security risks before using
+> `Remove-Item` with `Invoke-Command` and credential delegation.
 
 This parameter was reintroduced in PowerShell 7.1
 
@@ -505,10 +507,10 @@ This parameter allows you to specify the type of item created by `New-Item`.
 
 In a `Certificate` drive, the following values are allowed:
 
-- Certificate Provider
-- Certificate
-- Store
-- StoreLocation
+- `Certificate Provider`
+- `Certificate`
+- `Store`
+- `StoreLocation`
 
 #### Cmdlets Supported
 

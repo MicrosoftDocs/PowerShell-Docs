@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/21/2021
+ms.date: 05/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Json
@@ -127,9 +127,9 @@ Accept wildcard characters: False
 
 ### -Schema
 
-Specifies a Schema to validate the JSON input against. If passed `Test-Json` will validate that the
-Json input conforms to the spec specified by the **Schema** parameter and return `$True` only if the
-input conforms to the provided Schema.
+Specifies a schema to validate the JSON input against. If passed, `Test-Json` will validate that the
+JSON input conforms to the spec specified by the **Schema** parameter and return `$true` only if the
+input conforms to the provided schema.
 
 For more information, see [JSON Schema](https://json-schema.org/).
 
