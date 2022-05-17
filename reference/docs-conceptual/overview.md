@@ -1,6 +1,6 @@
 ---
 description: This article is an introduction to the PowerShell scripting environment and its features.
-ms.date: 02/15/2022
+ms.date: 05/17/2022
 title: What is PowerShell?
 ---
 
@@ -69,8 +69,9 @@ enables you to manage your enterprise infrastructure with configuration as code.
 Are you new to PowerShell and don't know where to start? Take a look at these resources.
 
 - [Installing PowerShell][install]
-- [PowerShell 101][PS101]
 - [PowerShell Bits tutorials][tutorials]
+- [PowerShell 101][PS101]
+- [Microsoft Virtual Academy videos][ch9vids]
 - [PowerShell Learn modules][learn]
 
 ### PowerShell in action
@@ -109,3 +110,4 @@ Take a look at how PowerShell is being used in different scenarios and on differ
 [devops]: /azure/devops/pipelines/release/dsc-cicd
 [exchange]: /powershell/exchange/exchange-management-shell
 [remoting]: /powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core
+[ch9vids]: /shows/browse?terms=powershell
