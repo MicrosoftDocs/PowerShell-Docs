@@ -17,8 +17,8 @@ Creates a new event log and a new event source on a local or remote computer.
 
 ```
 New-EventLog [-LogName] <string> [-Source] <string[]> [[-ComputerName] <string[]>]
-[-CategoryResourceFile <string>] [-MessageResourceFile <string>] [-ParameterResourceFile <string>]
-[<CommonParameters>]
+ [-CategoryResourceFile <string>] [-MessageResourceFile <string>] [-ParameterResourceFile <string>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

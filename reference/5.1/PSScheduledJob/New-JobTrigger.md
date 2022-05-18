@@ -26,7 +26,7 @@ New-JobTrigger [-RandomDelay <TimeSpan>] -At <DateTime> [-Once] [-RepetitionInte
 
 ```
 New-JobTrigger [-DaysInterval <Int32>] [-RandomDelay <TimeSpan>] -At <DateTime> [-Daily]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Weekly

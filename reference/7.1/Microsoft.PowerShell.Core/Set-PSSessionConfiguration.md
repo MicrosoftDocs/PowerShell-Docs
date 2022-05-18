@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/26/2019
+ms.date: 05/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-pssessionconfiguration?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSSessionConfiguration
@@ -17,35 +17,39 @@ Changes the properties of a registered session configuration.
 ### NameParameterSet (Default)
 
 ```
-Set-PSSessionConfiguration [-Name] <String> [-ApplicationBase <String>] [-RunAsCredential <PSCredential>]
- [-ThreadOptions <PSThreadOptions>] [-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess]
- [-StartupScript <String>] [-MaximumReceivedDataSizePerCommandMB <Double>]
- [-MaximumReceivedObjectSizeMB <Double>] [-SecurityDescriptorSddl <String>] [-ShowSecurityDescriptorUI]
- [-Force] [-NoServiceRestart] [-PSVersion <Version>] [-SessionTypeOption <PSSessionTypeOption>]
- [-TransportOption <PSTransportOption>] [-ModulesToImport <Object[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-PSSessionConfiguration [-Name] <String> [-ApplicationBase <String>]
+ [-RunAsCredential <PSCredential>] [-ThreadApartmentState <ApartmentState>]
+ [-ThreadOptions <PSThreadOptions>] [-AccessMode <PSSessionConfigurationAccessMode>]
+ [-UseSharedProcess] [-StartupScript <String>] [-MaximumReceivedDataSizePerCommandMB <Double>]
+ [-MaximumReceivedObjectSizeMB <Double>] [-SecurityDescriptorSddl <String>]
+ [-ShowSecurityDescriptorUI] [-Force] [-NoServiceRestart] [-PSVersion <Version>]
+ [-SessionTypeOption <PSSessionTypeOption>] [-TransportOption <PSTransportOption>]
+ [-ModulesToImport <Object[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### AssemblyNameParameterSet
 
 ```
 Set-PSSessionConfiguration [-Name] <String> [-AssemblyName] <String> [-ApplicationBase <String>]
- [-ConfigurationTypeName] <String> [-RunAsCredential <PSCredential>] [-ThreadOptions <PSThreadOptions>]
+ [-ConfigurationTypeName] <String> [-RunAsCredential <PSCredential>]
+ [-ThreadApartmentState <ApartmentState>] [-ThreadOptions <PSThreadOptions>]
  [-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess] [-StartupScript <String>]
  [-MaximumReceivedDataSizePerCommandMB <Double>] [-MaximumReceivedObjectSizeMB <Double>]
  [-SecurityDescriptorSddl <String>] [-ShowSecurityDescriptorUI] [-Force] [-NoServiceRestart]
- [-PSVersion <Version>] [-SessionTypeOption <PSSessionTypeOption>] [-TransportOption <PSTransportOption>]
- [-ModulesToImport <Object[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-PSVersion <Version>] [-SessionTypeOption <PSSessionTypeOption>]
+ [-TransportOption <PSTransportOption>] [-ModulesToImport <Object[]>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### SessionConfigurationFile
 
 ```
 Set-PSSessionConfiguration [-Name] <String> [-RunAsCredential <PSCredential>]
- [-ThreadOptions <PSThreadOptions>] [-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess]
- [-StartupScript <String>] [-MaximumReceivedDataSizePerCommandMB <Double>]
- [-MaximumReceivedObjectSizeMB <Double>] [-SecurityDescriptorSddl <String>] [-ShowSecurityDescriptorUI]
- [-Force] [-NoServiceRestart] [-TransportOption <PSTransportOption>] -Path <String> [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-ThreadApartmentState <ApartmentState>] [-ThreadOptions <PSThreadOptions>]
+ [-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess] [-StartupScript <String>]
+ [-MaximumReceivedDataSizePerCommandMB <Double>] [-MaximumReceivedObjectSizeMB <Double>]
+ [-SecurityDescriptorSddl <String>] [-ShowSecurityDescriptorUI] [-Force] [-NoServiceRestart]
+ [-TransportOption <PSTransportOption>] -Path <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,15 +61,16 @@ local computer.
 
 Use the **Name** parameter to identify the session configuration that you want to change. Use the
 other parameters to specify new values for the properties of the session configuration. To delete a
-property value from the configuration, and use the default value, enter an empty string ("") or a
+property value from the configuration, and use the default value, enter an empty string (`""`) or a
 value of `$Null` for the corresponding parameter.
 
 Starting in PowerShell 3.0, you can use a session configuration file to define a session
 configuration. This feature provides a simple and discoverable method for setting and changing the
 properties of sessions that use the session configuration. To specify a session configuration file,
 use the **Path** parameter of `Set-PSSessionConfiguration`. For information about session
-configuration files, see [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
-For information about how to create and modify a session configuration file, see the
+configuration files, see
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md). For information
+about how to create and modify a session configuration file, see the
 `New-PSSessionConfigurationFile` cmdlet.
 
 Session configurations define the environment of remote sessions (**PSSessions**) that connect to
@@ -73,7 +78,8 @@ the local computer. Every **PSSession** uses a session configuration. The sessio
 determines the features of the **PSSession**, such as the modules that are available in the session,
 the cmdlets that are permitted to run, the language mode, quotas, and timeouts. The security
 descriptor of the session configuration determines who can use the session configuration to connect
-to the local computer. For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
+to the local computer. For more information about session configurations, see
+[about_Session_Configurations](About/about_Session_Configurations.md).
 
 To see the properties of a session configuration, use the `Get-PSSessionConfiguration` cmdlet or the
 WSMan Provider. For more information about the WSMan Provider, type `Get-Help WSMan`.
@@ -96,9 +102,9 @@ Set-PSSessionConfiguration -Name "AdminShell" -StartupScript $Null
 
 ### Example 2: Display results
 
-This example increases the value of the **MaximumReceivedObjectSizeMB** property to 20. This command
-also prompts you to restart the **WinRM** service. The change is not effective until the **WinRM**
-service is restarted.
+This example increases the value of the **MaximumReceivedObjectSizeMB** property to `20`. This
+command also prompts you to restart the **WinRM** service. The change is not effective until the
+**WinRM** service is restarted.
 
 ```powershell
 Set-PSSessionConfiguration -Name "IncObj" -MaximumReceivedObjectSizeMB 20
@@ -120,14 +126,14 @@ WinRM service need to be restarted to make the changes effective. Do you want to
 
 In this example, `Set-PSSessionConfiguration` changes the startup script in the **MaintenanceShell**
 session configuration to `Maintenance.ps1`. The output shows the change and prompts you to restart
-the **WinRM** service. The response is "y" (yes).
+the **WinRM** service. The response is `y` (yes).
 
 `Get-PSSessionConfiguration` gets the **MaintenanceShell** session configuration. The pipeline
-operator (|) sends the results of the command to `Format-List`, which displays all the properties of
-the configuration object in a list. Next, using the WSMan provider, we view the initialization
-parameters for the **MaintenanceShell** configuration. `Get-ChildItem` (alias `dir`) gets the child
-items in the **InitializationParameters** node for the **MaintenanceShell** plug-in. For more
-information about the WSMan provider, type `Get-Help wsman`.
+operator (`|`) sends the results of the command to `Format-List`, which displays all the properties
+of the configuration object in a list. Next, using the WSMan provider, we view the initialization
+parameters for the **MaintenanceShell** configuration. `Get-ChildItem` gets the child items in the
+**InitializationParameters** node for the **MaintenanceShell** plug-in. For more information about
+the WSMan provider, type `Get-Help wsman`.
 
 ```powershell
 Set-PSSessionConfiguration -Name "MaintenanceShell" -StartupScript "C:\ps-test\Maintenance.ps1"
@@ -168,7 +174,7 @@ Permission       :
 ```
 
 ```powershell
-dir WSMan:\localhost\Plugin\MaintenanceShell\InitializationParameters
+Get-ChildItem WSMan:\localhost\Plugin\MaintenanceShell\InitializationParameters
 ```
 
 ```Output
@@ -185,15 +191,15 @@ startupscript c:\ps-test\Maintenance.ps1
 Enables and disables the session configuration and determines whether it can be used for remote or
 local sessions on the computer. The acceptable values for this parameter are:
 
-- Disabled. Disables the session configuration. It cannot be used for remote or local access to the
-  computer. This value sets the **Enabled** property of the session configuration
-  (`WSMan:\<ComputerName>\PlugIn\<SessionConfigurationName>\Enabled`) to **False**.
-- Local. Adds a **Network_Deny_All** entry to security descriptor of the session configuration.
+- `Disabled`. Disables the session configuration. It cannot be used for remote or local access to
+  the computer. This value sets the **Enabled** property of the session configuration
+  (`WSMan:\<ComputerName>\PlugIn\<SessionConfigurationName>\Enabled`) to `False`.
+- `Local`. Adds a **Network_Deny_All** entry to security descriptor of the session configuration.
   Users of the local computer can use the session configuration to create a local loopback session
   on the same computer, but remote users are denied access.
-- Remote. Removes **Deny_All** and **Network_Deny_All** entries from the security descriptors of the
-  session configuration. Users of local and remote computers can use the session configuration to
-  create sessions and run commands on this computer.
+- `Remote`. Removes **Deny_All** and **Network_Deny_All** entries from the security descriptors of
+  the session configuration. Users of local and remote computers can use the session configuration
+  to create sessions and run commands on this computer.
 
 The default value is **Remote**.
 
@@ -218,7 +224,7 @@ Accept wildcard characters: False
 
 ### -ApplicationBase
 
-Specifies the path of the assembly file (\*.dll) that is specified in the value of the
+Specifies the path of the assembly file (`*.dll`) that is specified in the value of the
 **AssemblyName** parameter.
 
 ```yaml
@@ -238,7 +244,7 @@ Accept wildcard characters: False
 Specifies the assembly name. This cmdlet creates a session configuration based on a class that is
 defined in an assembly.
 
-Enter the filename or full path of an assembly .dll file that defines a session configuration. If
+Enter the filename or full path of an assembly `.dll` file that defines a session configuration. If
 you enter only the file name, you can enter the path in the value of the **ApplicationBase**
 parameter.
 
@@ -296,7 +302,7 @@ Accept wildcard characters: False
 ### -MaximumReceivedDataSizePerCommandMB
 
 Specifies the limit on the amount of data that can be sent to this computer in any single remote
-command. Enter the data size in megabytes (MB). The default is 50 MB.
+command. Enter the data size in megabytes (MB). The default is `50`.
 
 If a data size limit is defined in the configuration type that is specified in the
 **ConfigurationTypeName** parameter, the limit in the configuration type is used. The value of this
@@ -317,7 +323,7 @@ Accept wildcard characters: False
 ### -MaximumReceivedObjectSizeMB
 
 Specifies the limits on the amount of data that can be sent to this computer in any single object.
-Enter the data size in megabytes. The default is 10 MB.
+Enter the data size in megabytes. The default is `10`.
 
 If an object size limit is defined in the configuration type that is specified in the
 **ConfigurationTypeName** parameter, the limit in the configuration type is used. The value of this
@@ -340,15 +346,15 @@ Accept wildcard characters: False
 Specifies the modules and snap-ins that are automatically imported into sessions that use the
 session configuration. Enter the module and snap-in names.
 
-By default, only the **Microsoft.PowerShell.Core** snap-in is imported into sessions, but unless the
-cmdlets are excluded, you can use the `Import-Module` and Add-PSSnapin cmdlets to add modules and
+By default, only the **Microsoft.PowerShell.Core** module is imported into sessions, but unless the
+cmdlets are excluded, you can use the `Import-Module` and `Add-PSSnapin` cmdlets to add modules and
 snap-ins to the session.
 
 The modules specified in this parameter value are imported in additions to modules specified in the
 session configuration file (`New-PSSessionConfigurationFile`). However, settings in the session
 configuration file can hide the commands exported by modules or prevent users from using them.
 
-The modules specified in this parameter value replace the list of modules specified by using the
+The modules specified in this parameter value replace the list of modules specified with the
 **ModulesToImport** parameter of the `Register-PSSessionConfiguration` cmdlet.
 
 This parameter was introduced in PowerShell 3.0.
@@ -408,7 +414,7 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path of a session configuration file (.pssc), such as one created by the
+Specifies the path of a session configuration file (`.pssc`), such as one created by the
 `New-PSSessionConfigurationFile` cmdlet. If you omit the path, the default is the current directory.
 
 For information about how to modify a session configuration file, see the help topic for the
@@ -473,11 +479,11 @@ Accept wildcard characters: False
 Specifies a different Security Descriptor Definition Language (SDDL) string for the configuration.
 
 This string determines the permissions that are required to use the new session configuration. To
-use a session configuration in a session, users must have at least Execute(Invoke) permission for
+use a session configuration in a session, users must have at least `Execute(Invoke)` permission for
 the configuration.
 
-To use the default security descriptor for the configuration, enter an empty string ("") or a value
-of `$Null`. The default is the root SDDL in the WSMan: drive.
+To use the default security descriptor for the configuration, enter an empty string (`""`) or a
+value of `$Null`. The default is the root SDDL in the `WSMan:` drive.
 
 If the security descriptor is complex, consider using the **ShowSecurityDescriptorUI** parameter
 instead of this one. You cannot use both parameters in the same command.
@@ -502,7 +508,7 @@ returns.
 
 The options of sessions that use the session configuration are determined by the values of session
 options and the session configuration options. Unless specified, options set in the session, such as
-by using the `New-PSSessionOption` cmdlet, take precedence over options set in the session
+with the `New-PSSessionOption` cmdlet, take precedence over options set in the session
 configuration. However, session option values cannot exceed maximum values set in the session
 configuration.
 
@@ -527,7 +533,7 @@ configuration. The property sheet appears after you run the `Set-PSSessionConfig
 then restart the **WinRM** service.
 
 When you set permissions to the configuration, remember that users must have at least
-Execute(Invoke) permission to use the session configuration in a session.
+`Execute(Invoke)` permission to use the session configuration in a session.
 
 You cannot use the **SecurityDescriptorSDDL** parameter and this parameter in the same command.
 
@@ -548,7 +554,7 @@ Accept wildcard characters: False
 Specifies the startup script for the configuration. Enter the fully qualified path of a PowerShell
 script. The specified script runs in the new session that uses the session configuration.
 
-To delete a startup script from a session configuration, enter an empty string ("") or a value of
+To delete a startup script from a session configuration, enter an empty string (`""`) or a value of
 `$Null`.
 
 You can use a startup script to further configure the user session. If the script generates an
@@ -571,9 +577,9 @@ Accept wildcard characters: False
 
 Specifies the apartment state of the threading module to be used. Acceptable values are:
 
-- Unknown
-- MTA
-- STA
+- `Unknown`
+- `MTA`
+- `STA`
 
 ```yaml
 Type: System.Threading.ApartmentState
@@ -593,14 +599,15 @@ Specifies the thread options setting in the configuration. This setting defines 
 created and used when a command is executed in the session. The acceptable values for this parameter
 are:
 
-- Default
-- ReuseThread
-- UseCurrentThread
-- UseNewThread
+- `Default`
+- `ReuseThread`
+- `UseCurrentThread`
+- `UseNewThread`
 
-The default value is **UseCurrentThread**.
+The default value is `UseCurrentThread`.
 
-For more information, see [PSThreadOptions Enumeration](/dotnet/api/system.management.automation.runspaces.psthreadoptions).
+For more information, see
+[PSThreadOptions Enumeration](/dotnet/api/system.management.automation.runspaces.psthreadoptions).
 
 ```yaml
 Type: System.Management.Automation.Runspaces.PSThreadOptions
@@ -622,7 +629,7 @@ such as the **WSManConfigurationOption** object that the `New-PSTransportOption`
 
 The options of sessions that use the session configuration are determined by the values of session
 options and the session configuration options. Unless specified, options set in the session, such as
-by using the `New-PSSessionOption` cmdlet, take precedence over options set in the session
+with the `New-PSSessionOption` cmdlet, take precedence over options set in the session
 configuration. However, session option values cannot exceed maximum values set in the session
 configuration.
 
@@ -677,8 +684,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -696,7 +702,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -712,15 +719,15 @@ You cannot pipe input to this cmdlet.
 
 This cmdlet is only available on Windows platforms.
 
-To run this cmdlet, start PowerShell by using the Run as administrator option.
+To run this cmdlet, start PowerShell by using the **Run as administrator** option.
 
 The `Set-PSSessionConfiguration` cmdlet does not change the configuration name and the **WSMan**
 provider does not support the `Rename-Item` cmdlet. To change the name of a session configuration,
 use the `Unregister-PSSessionConfiguration` cmdlet to delete the configuration and then use the
 `Register-PSSessionConfiguration` cmdlet to create and register a new session configuration.
 
-You can use the `Set-PSSessionConfiguration` cmdlet to change the default Microsoft.PowerShell and
-Microsoft.PowerShell32 session configurations. They are not protected. To revert to the original
+You can use the `Set-PSSessionConfiguration` cmdlet to change the default `Microsoft.PowerShell` and
+`Microsoft.PowerShell32` session configurations. They are not protected. To revert to the original
 version of a default session configuration, use the `Unregister-PSSessionConfiguration` cmdlet to
 delete the default session configuration and then use the `Enable-PSRemoting` cmdlet to restore it.
 
@@ -728,11 +735,11 @@ The properties of a session configuration object vary with the options set for t
 configuration and the values of those options. Also, session configurations that use a session
 configuration file have additional properties.
 
-You can use commands in the WSMan: drive to change the properties of session configurations.
-However, you cannot use the WSMan: drive in PowerShell 2.0 to change session configuration
+You can use commands in the `WSMan:` drive to change the properties of session configurations.
+However, you cannot use the `WSMan:` drive in PowerShell 2.0 to change session configuration
 properties that are introduced in PowerShell 3.0, such as **OutputBufferingMode**. Windows
 PowerShell 2.0 commands do not generate an error, but they are ineffective. To change properties
-introduced in PowerShell 3.0, use the WSMan: drive in PowerShell 3.0.
+introduced in PowerShell 3.0, use the `WSMan:` drive in PowerShell 3.0 or later.
 
 ## RELATED LINKS
 

@@ -18,7 +18,7 @@ Gets the processes that are running on the local computer or a remote computer.
 
 ```
 Get-Process [[-Name] <String[]>] [-ComputerName <String[]>] [-Module] [-FileVersionInfo]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### NameWithUserName
@@ -37,7 +37,7 @@ Get-Process -Id <Int32[]> [-IncludeUserName] [<CommonParameters>]
 
 ```
 Get-Process -Id <Int32[]> [-ComputerName <String[]>] [-Module] [-FileVersionInfo]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### InputObjectWithUserName
@@ -50,7 +50,7 @@ Get-Process -InputObject <Process[]> [-IncludeUserName] [<CommonParameters>]
 
 ```
 Get-Process -InputObject <Process[]> [-ComputerName <String[]>] [-Module] [-FileVersionInfo]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

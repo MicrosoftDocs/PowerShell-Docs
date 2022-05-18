@@ -19,7 +19,7 @@ the log.
 
 ```
 Import-Counter [-Path] <String[]> [-StartTime <DateTime>] [-EndTime <DateTime>]
-[-Counter <String[]>] [-MaxSamples <Int64>] [<CommonParameters>]
+ [-Counter <String[]>] [-MaxSamples <Int64>] [<CommonParameters>]
 ```
 
 ### ListSetSet

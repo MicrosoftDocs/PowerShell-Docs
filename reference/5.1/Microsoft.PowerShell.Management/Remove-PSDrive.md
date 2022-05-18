@@ -18,14 +18,14 @@ Deletes temporary PowerShell drives and disconnects mapped network drives.
 
 ```
 Remove-PSDrive [-Name] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-Force] [-WhatIf]
-[-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralName
 
 ```
 Remove-PSDrive [-LiteralName] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-Force]
-[-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
