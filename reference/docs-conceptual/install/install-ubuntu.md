@@ -28,6 +28,9 @@ to the package varies by OS version:
 
 Use the following shell commands to install PowerShell on the target OS.
 
+> [!NOTE]
+> This only works for supported versions of Ubuntu.
+
 ```sh
 # Update the list of packages
 sudo apt-get update
