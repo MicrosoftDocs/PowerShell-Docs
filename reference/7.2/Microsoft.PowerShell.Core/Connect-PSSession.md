@@ -18,14 +18,14 @@ Reconnects to disconnected sessions.
 
 ```
 Connect-PSSession -Name <String[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Session
 
 ```
 Connect-PSSession [-Session] <PSSession[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### ComputerNameGuid
@@ -50,32 +50,32 @@ Connect-PSSession -ComputerName <String[]> [-ApplicationName <String>] [-Configu
 
 ```
 Connect-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri[]> [-AllowRedirection]
--InstanceId <Guid[]> [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
-[-CertificateThumbprint <String>] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>]
-[-WhatIf] [-Confirm] [<CommonParameters>]
+ -InstanceId <Guid[]> [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+ [-CertificateThumbprint <String>] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ConnectionUri
 
 ```
 Connect-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri[]> [-AllowRedirection]
-[-Name <String[]>] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
-[-CertificateThumbprint <String>] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>]
-[-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Name <String[]>] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+ [-CertificateThumbprint <String>] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceId
 
 ```
 Connect-PSSession -InstanceId <Guid[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Id
 
 ```
 Connect-PSSession [-ThrottleLimit <Int32>] [-Id] <Int32[]> [-WhatIf] [-Confirm]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

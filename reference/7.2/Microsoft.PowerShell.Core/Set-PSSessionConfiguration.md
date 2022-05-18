@@ -18,38 +18,38 @@ Changes the properties of a registered session configuration.
 
 ```
 Set-PSSessionConfiguration [-Name] <String> [-ApplicationBase <String>]
-[-RunAsCredential <PSCredential>] [-ThreadApartmentState <ApartmentState>]
-[-ThreadOptions <PSThreadOptions>] [-AccessMode <PSSessionConfigurationAccessMode>]
-[-UseSharedProcess] [-StartupScript <String>] [-MaximumReceivedDataSizePerCommandMB <Double>]
-[-MaximumReceivedObjectSizeMB <Double>] [-SecurityDescriptorSddl <String>]
-[-ShowSecurityDescriptorUI] [-Force] [-NoServiceRestart] [-PSVersion <Version>]
-[-SessionTypeOption <PSSessionTypeOption>] [-TransportOption <PSTransportOption>]
-[-ModulesToImport <Object[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-RunAsCredential <PSCredential>] [-ThreadApartmentState <ApartmentState>]
+ [-ThreadOptions <PSThreadOptions>] [-AccessMode <PSSessionConfigurationAccessMode>]
+ [-UseSharedProcess] [-StartupScript <String>] [-MaximumReceivedDataSizePerCommandMB <Double>]
+ [-MaximumReceivedObjectSizeMB <Double>] [-SecurityDescriptorSddl <String>]
+ [-ShowSecurityDescriptorUI] [-Force] [-NoServiceRestart] [-PSVersion <Version>]
+ [-SessionTypeOption <PSSessionTypeOption>] [-TransportOption <PSTransportOption>]
+ [-ModulesToImport <Object[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### AssemblyNameParameterSet
 
 ```
 Set-PSSessionConfiguration [-Name] <String> [-AssemblyName] <String> [-ApplicationBase <String>]
-[-ConfigurationTypeName] <String> [-RunAsCredential <PSCredential>]
-[-ThreadApartmentState <ApartmentState>] [-ThreadOptions <PSThreadOptions>]
-[-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess] [-StartupScript <String>]
-[-MaximumReceivedDataSizePerCommandMB <Double>] [-MaximumReceivedObjectSizeMB <Double>]
-[-SecurityDescriptorSddl <String>] [-ShowSecurityDescriptorUI] [-Force] [-NoServiceRestart]
-[-PSVersion <Version>] [-SessionTypeOption <PSSessionTypeOption>]
-[-TransportOption <PSTransportOption>] [-ModulesToImport <Object[]>] [-WhatIf] [-Confirm]
-[<CommonParameters>]
+ [-ConfigurationTypeName] <String> [-RunAsCredential <PSCredential>]
+ [-ThreadApartmentState <ApartmentState>] [-ThreadOptions <PSThreadOptions>]
+ [-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess] [-StartupScript <String>]
+ [-MaximumReceivedDataSizePerCommandMB <Double>] [-MaximumReceivedObjectSizeMB <Double>]
+ [-SecurityDescriptorSddl <String>] [-ShowSecurityDescriptorUI] [-Force] [-NoServiceRestart]
+ [-PSVersion <Version>] [-SessionTypeOption <PSSessionTypeOption>]
+ [-TransportOption <PSTransportOption>] [-ModulesToImport <Object[]>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### SessionConfigurationFile
 
 ```
 Set-PSSessionConfiguration [-Name] <String> [-RunAsCredential <PSCredential>]
-[-ThreadApartmentState <ApartmentState>] [-ThreadOptions <PSThreadOptions>]
-[-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess] [-StartupScript <String>]
-[-MaximumReceivedDataSizePerCommandMB <Double>] [-MaximumReceivedObjectSizeMB <Double>]
-[-SecurityDescriptorSddl <String>] [-ShowSecurityDescriptorUI] [-Force] [-NoServiceRestart]
-[-TransportOption <PSTransportOption>] -Path <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ThreadApartmentState <ApartmentState>] [-ThreadOptions <PSThreadOptions>]
+ [-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess] [-StartupScript <String>]
+ [-MaximumReceivedDataSizePerCommandMB <Double>] [-MaximumReceivedObjectSizeMB <Double>]
+ [-SecurityDescriptorSddl <String>] [-ShowSecurityDescriptorUI] [-Force] [-NoServiceRestart]
+ [-TransportOption <PSTransportOption>] -Path <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

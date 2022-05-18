@@ -18,7 +18,7 @@ List the modules imported in the current session or that can be imported from th
 
 ```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Available
@@ -39,8 +39,8 @@ Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-
 
 ```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-ListAvailable]
-[-SkipEditionCheck] [-Refresh] -CimSession <CimSession> [-CimResourceUri <Uri>]
-[-CimNamespace <String>] [<CommonParameters>]
+ [-SkipEditionCheck] [-Refresh] -CimSession <CimSession> [-CimResourceUri <Uri>]
+ [-CimNamespace <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

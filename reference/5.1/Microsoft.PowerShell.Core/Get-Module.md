@@ -18,7 +18,7 @@ List the modules imported in the current session or that can be imported from th
 
 ```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Available

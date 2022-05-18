@@ -16,13 +16,13 @@ Creates an object that contains advanced options for a PSSession.
 
 ```
 New-PSSessionOption [-MaximumRedirection <Int32>] [-NoCompression] [-NoMachineProfile]
-[-Culture <CultureInfo>] [-UICulture <CultureInfo>] [-MaximumReceivedDataSizePerCommand <Int32>]
-[-MaximumReceivedObjectSize <Int32>] [-OutputBufferingMode <OutputBufferingMode>]
-[-MaxConnectionRetryCount <Int32>] [-ApplicationArguments <PSPrimitiveDictionary>]
-[-OpenTimeout <Int32>] [-CancelTimeout <Int32>] [-IdleTimeout <Int32>]
-[-ProxyAccessType <ProxyAccessType>] [-ProxyAuthentication <AuthenticationMechanism>]
-[-ProxyCredential <PSCredential>] [-SkipCACheck] [-SkipCNCheck] [-SkipRevocationCheck]
-[-OperationTimeout <Int32>] [-NoEncryption] [-UseUTF16] [-IncludePortInSPN] [<CommonParameters>]
+ [-Culture <CultureInfo>] [-UICulture <CultureInfo>] [-MaximumReceivedDataSizePerCommand <Int32>]
+ [-MaximumReceivedObjectSize <Int32>] [-OutputBufferingMode <OutputBufferingMode>]
+ [-MaxConnectionRetryCount <Int32>] [-ApplicationArguments <PSPrimitiveDictionary>]
+ [-OpenTimeout <Int32>] [-CancelTimeout <Int32>] [-IdleTimeout <Int32>]
+ [-ProxyAccessType <ProxyAccessType>] [-ProxyAuthentication <AuthenticationMechanism>]
+ [-ProxyCredential <PSCredential>] [-SkipCACheck] [-SkipCNCheck] [-SkipRevocationCheck]
+ [-OperationTimeout <Int32>] [-NoEncryption] [-UseUTF16] [-IncludePortInSPN] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -18,14 +18,14 @@ Reconnects to disconnected sessions.
 
 ```
 Connect-PSSession -Name <String[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Session
 
 ```
 Connect-PSSession [-Session] <PSSession[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### ComputerName
