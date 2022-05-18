@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 03/10/2022
+ms.date: 05/18/2022
 ms.prod: powershell
 ms.topic: include
 ---
@@ -16,10 +16,10 @@ they are supported on. These versions remain supported until either the version 
 - When both the version of the OS and the version of PowerShell have &#x2705;, that combination is
   supported
 
-|   CentOS   | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-current) | 7.3 (preview) |
-| ---------- | :-------: | :-----------: | :---------------: | :-----------: |
-| &#x2705; 8 | &#x2705;  |   &#x2705;    |     &#x2705;      |   &#x2705;    |
-| &#x2705; 7 | &#x2705;  |   &#x2705;    |     &#x2705;      |   &#x2705;    |
+|   CentOS   | 7.0 (LTS) |    7.1    | 7.2 (LTS-current) | 7.3 (preview) |
+| ---------- | :-------: | :-------: | :---------------: | :-----------: |
+| &#x2705; 8 | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
+| &#x2705; 7 | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
 
 Microsoft does not officially support PowerShell on the CentOS Stream releases. For more
 information, see [Comparing CentOS Linux and CentOS Stream][stream]. CentOS Stream is community
@@ -27,9 +27,9 @@ supported. For more information, see [Community supported distributions][communi
 
 PowerShell is supported on CentOS for the following processor architectures.
 
-|         CentOS         | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-current) | 7.3 (preview) |
-| ---------------------- | :-------: | :-----------: | :---------------: | :-----------: |
-| All supported versions |    x64    |      x64      |        x64        |      x64      |
+|         CentOS         | 7.0 (LTS) | 7.2 (LTS-current) | 7.3 (preview) |
+| ---------------------- | :-------: | :---------------: | :-----------: |
+| All supported versions |    x64    |        x64        |      x64      |
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-centos]: https://www.centos.org/centos-linux-eol/

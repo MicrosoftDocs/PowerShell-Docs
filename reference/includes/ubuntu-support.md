@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 03/10/2022
+ms.date: 05/18/2022
 ms.prod: powershell
 ms.topic: include
 ---
@@ -18,8 +18,9 @@ Ubuntu they are supported on. These versions remain supported until either the v
 
 |        Ubuntu        | 7.0 (LTS) |    7.1    | 7.2 (LTS-current) | 7.3 (preview) |
 | -------------------- | :-------: | :-------: | :---------------: | :-----------: |
-| &#x2705; 20.04 (LTS) | &#x2705;  | &#x2705;  |     &#x2705;      |   &#x2705;    |
-| &#x2705; 18.04 (LTS) | &#x2705;  | &#x2705;  |     &#x2705;      |   &#x2705;    |
+| &#x2705; 22.04 (LTS) | &#x274c;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
+| &#x2705; 20.04 (LTS) | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
+| &#x2705; 18.04 (LTS) | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
 | &#x274c; 16.04 (LTS) | &#x1f7e1; | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
 
 Only the LTS releases of Ubuntu are officially supported. Microsoft does not support
@@ -28,9 +29,9 @@ information, see [Community supported distributions][community].
 
 PowerShell is supported on Ubuntu for the following processor architectures.
 
-|         Ubuntu         |     7.0 (LTS)     |        7.1        | 7.2 (LTS-current) |   7.3 (preview)   |
-| ---------------------- | :---------------: | :---------------: | :---------------: | :---------------: |
-| All supported versions | x64, Arm32, Arm64 | x64, Arm32, Arm64 | x64, Arm32, Arm64 | x64, Arm32, Arm64 |
+|         Ubuntu         |     7.0 (LTS)     | 7.2 (LTS-current) |   7.3 (preview)   |
+| ---------------------- | :---------------: | :---------------: | :---------------: |
+| All supported versions | x64, Arm32, Arm64 | x64, Arm32, Arm64 | x64, Arm32, Arm64 |
 
 [eol-ubuntu]: https://wiki.ubuntu.com/Releases
 [interim]: https://ubuntu.com/about/release-cycle

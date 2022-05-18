@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Ubuntu
-ms.date: 01/24/2022
+ms.date: 05/18/2022
 title: Installing PowerShell on Ubuntu
 ---
 # Installing PowerShell on Ubuntu
@@ -22,11 +22,11 @@ Ubuntu uses APT (Advanced Package Tool) as a package manager.
 PowerShell for Linux is published to package repositories for easy installation and updates. The URL
 to the package varies by OS version:
 
+- Ubuntu 22.04 - `https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb`
 - Ubuntu 20.04 - `https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb`
 - Ubuntu 18.04 - `https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb`
 
-Use the following shell commands to install PowerShell on the target OS. Change the URL to match the
-version of the target OS.
+Use the following shell commands to install PowerShell on the target OS.
 
 ```sh
 # Update the list of packages
@@ -34,7 +34,7 @@ sudo apt-get update
 # Install pre-requisite packages.
 sudo apt-get install -y wget apt-transport-https software-properties-common
 # Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
 # Update the list of packages after we added packages.microsoft.com
@@ -54,11 +54,8 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Do
 package from the [releases][releases] page onto the Ubuntu machine. The link to the current
 version is:
 
-- PowerShell 7.2.3 (universal package) for any support version of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.3/powershell-lts_7.2.3-1.deb_amd64.deb`
-- PowerShell 7.1.7
-  - Ubuntu 20.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.7/powershell_7.1.7-1.ubuntu.20.04_amd64.deb`
-  - Ubuntu 18.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.1.7/powershell_7.1.7-1.ubuntu.18.04_amd64.deb`
+- PowerShell 7.2.4 (universal package) for any support version of Ubuntu
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.4/powershell-lts_7.2.4-1.deb_amd64.deb`
 - PowerShell 7.0.10
   - Ubuntu 20.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.10/powershell-lts_7.0.10-1.ubuntu.20.04_amd64.deb`
   - Ubuntu 18.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.10/powershell-lts_7.0.10-1.ubuntu.18.04_amd64.deb`
@@ -68,7 +65,7 @@ the version you downloaded.
 
 ```sh
 # Install the downloaded package
-sudo dpkg -i powershell-lts_7.2.3-1.deb_amd64.deb
+sudo dpkg -i powershell-lts_7.2.4-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f
