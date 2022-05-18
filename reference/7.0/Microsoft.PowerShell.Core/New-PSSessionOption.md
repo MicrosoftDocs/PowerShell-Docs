@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/29/2021
+ms.date: 05/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionoption?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionOption
@@ -15,13 +15,14 @@ Creates an object that contains advanced options for a PSSession.
 ## SYNTAX
 
 ```
-New-PSSessionOption [-MaximumRedirection <Int32>] [-NoCompression] [-NoMachineProfile] [-Culture <CultureInfo>]
- [-UICulture <CultureInfo>] [-MaximumReceivedDataSizePerCommand <Int32>] [-MaximumReceivedObjectSize <Int32>]
- [-OutputBufferingMode <OutputBufferingMode>] [-MaxConnectionRetryCount <Int32>]
- [-ApplicationArguments <PSPrimitiveDictionary>] [-OpenTimeout <Int32>] [-CancelTimeout <Int32>]
- [-IdleTimeout <Int32>] [-ProxyAccessType <ProxyAccessType>] [-ProxyAuthentication <AuthenticationMechanism>]
- [-ProxyCredential <PSCredential>] [-SkipCACheck] [-SkipCNCheck] [-SkipRevocationCheck]
- [-OperationTimeout <Int32>] [-NoEncryption] [-UseUTF16] [-IncludePortInSPN] [<CommonParameters>]
+New-PSSessionOption [-MaximumRedirection <Int32>] [-NoCompression] [-NoMachineProfile]
+[-Culture <CultureInfo>] [-UICulture <CultureInfo>] [-MaximumReceivedDataSizePerCommand <Int32>]
+[-MaximumReceivedObjectSize <Int32>] [-OutputBufferingMode <OutputBufferingMode>]
+[-MaxConnectionRetryCount <Int32>] [-ApplicationArguments <PSPrimitiveDictionary>]
+[-OpenTimeout <Int32>] [-CancelTimeout <Int32>] [-IdleTimeout <Int32>]
+[-ProxyAccessType <ProxyAccessType>] [-ProxyAuthentication <AuthenticationMechanism>]
+[-ProxyCredential <PSCredential>] [-SkipCACheck] [-SkipCNCheck] [-SkipRevocationCheck]
+[-OperationTimeout <Int32>] [-NoEncryption] [-UseUTF16] [-IncludePortInSPN] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,27 +33,28 @@ parameter of cmdlets that create a **PSSession**, such as `New-PSSession`, `Ente
 `Invoke-Command`.
 
 Without parameters, `New-PSSessionOption` generates an object that contains the default values for
-all of the options. Because all of the properties can be edited, you can use the resulting object as
-a template, and create standard option objects for your enterprise.
+all of the options. Because every property can be edited, you can use the resulting object as
+a template and create standard option objects for your enterprise.
 
-You can also save a session option object in the `$PSSessionOption` preference variable. The
-values of this variable establish new default values for the session options. They effective when no
-session options are set for the session and they take precedence over options set in the session
-configuration, but you can override them by specifying session options or a session option object in
-a cmdlet that creates a session. For more information about the `$PSSessionOption` preference
-variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
+You can also save a **SessionOption** object in the `$PSSessionOption` preference variable. The
+values of this variable establish new default values for the session options. They are effective
+when no session options are set for the session and they take precedence over options set in the
+session configuration, but you can override them by specifying session options or a
+**SessionOption** object in a cmdlet that creates a session. For more information about the
+`$PSSessionOption` preference variable, see
+[about_Preference_Variables](About/about_Preference_Variables.md).
 
-When you use a session option object in a cmdlet that creates a session, the session option values
-take precedence over default values for sessions set in the $PSSessionOption preference variable and
-in the session configuration. However, they do not take precedence over maximum values, quotas or
-limits set in the session configuration. For more information about session configurations, see
-[about_Session_Configurations](About/about_Session_Configurations.md).
+When you use a **SessionOption** object in a cmdlet that creates a session, the session option
+values take precedence over default values for sessions set in the `$PSSessionOption` preference
+variable and in the session configuration. However, they do not take precedence over maximum values,
+quotas or limits set in the session configuration. For more information about session
+configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ## EXAMPLES
 
 ### Example 1: Create a default session option
 
-This command creates a session option object that has all of the default values.
+This command creates a **SessionOption** object with the default values.
 
 ```powershell
 New-PSSessionOption
@@ -83,17 +85,17 @@ IdleTimeout                       : 00:04:00
 
 ### Example 2: Configure a session by using a session option object
 
-This example shows how to use a session option object to configure a session.
+This example shows how to use a **SessionOption** object to configure a session.
 
 ```powershell
 $pso = New-PSSessionOption -Culture "fr-fr" -MaximumReceivedObjectSize 10MB
 New-PSSession -ComputerName Server01 -SessionOption $pso
 ```
 
-The first command creates a new session option object and saves it in the value of the `$pso`
+The first command creates a new **SessionOption** object and saves it in the value of the `$pso`
 variable. The second command uses the `New-PSSession` cmdlet to create a session on the Server01
-remote computer. The command uses the session option object in the value of the `$pso` variable as
-the value of the **SessionOption** parameter of the command.
+remote computer. The command uses the **SessionOption** object in the value of the `$pso` variable
+as the value of the **SessionOption** parameter of the command.
 
 ### Example 3: Start an interactive session
 
@@ -112,7 +114,7 @@ The `New-PSSessionOption` command is enclosed in parentheses to make sure that i
 
 ### Example 4: Modify a session option object
 
-This example demonstrates that you can modify the session option object. All properties have
+This example demonstrates that you can modify the **SessionOption** object. All properties have
 read/write values.
 
 ```powershell
@@ -175,9 +177,9 @@ This command creates a `$PSSessionOption` preference variable.
 $PSSessionOption = New-PSSessionOption -OpenTimeOut 120000
 ```
 
-When the `$PSSessionOption` preference variable occurs in the session, it establishes default values
-for options in the sessions that are created by using the `New-PSSession`, `Enter-PSSession`,
-and `Invoke-Command` cmdlets.
+When the `$PSSessionOption` preference variable is set in the session, it establishes default values
+for options in the sessions that are created with the `New-PSSession`, `Enter-PSSession`, and
+`Invoke-Command` cmdlets.
 
 To make the `$PSSessionOption` variable available in all sessions, add it to your PowerShell session
 and to your PowerShell profile.
@@ -196,8 +198,8 @@ $skipCN = New-PSSessionOption -SkipCNCheck
 New-PSSession -ComputerName 171.09.21.207 -UseSSL -Credential Domain01\User01 -SessionOption $SkipCN
 ```
 
-The first command uses the `New-PSSessionOption` cmdlet to create a session option object that has
-the **SkipCNCheck** property. The command saves the resulting session object in the `$skipCN`
+The first command uses the `New-PSSessionOption` cmdlet to create a **SessionOption** object that
+has the **SkipCNCheck** property. The command saves the resulting session object in the `$skipCN`
 variable.
 
 The second command uses the `New-PSSession` cmdlet to create a new session on a remote computer. The
@@ -247,9 +249,10 @@ hash table in the `$team` variable. For more information about hash tables, see
 [about_Hash_Tables](about/about_Hash_Tables.md).
 
 Next, the `New-PSSessionOption` cmdlet, using the **ApplicationArguments** parameter, creates a
-session option object saved in the `$team` variable. When `New-PSSessionOption` creates the session
-option object, it automatically converts the hash table in the value of the **ApplicationArguments**
-parameter to a primitive dictionary so the data can be reliably transmitted to the remote session.
+**SessionOption** object saved in the `$team` variable. When `New-PSSessionOption` creates the
+session option object, it automatically converts the hash table in the value of the
+**ApplicationArguments** parameter to a **PrimitiveDictionary** so the data can be reliably
+transmitted to the remote session.
 
 The `New-PSSession` cmdlet starts a session on the Server01 computer. It uses the **SessionOption**
 parameter to include the options in the `$teamOption` variable.
@@ -264,7 +267,7 @@ The final `Invoke-Command` shows how the data might be used.
 
 ### -ApplicationArguments
 
-Specifies a primitive dictionary that is sent to the remote session. Commands and scripts in the
+Specifies a **PrimitiveDictionary** that is sent to the remote session. Commands and scripts in the
 remote session, including startup scripts in the session configuration, can find this dictionary in
 the **ApplicationArguments** property of the `$PSSenderInfo` automatic variable. You can use this
 parameter to send data to the remote session.
@@ -287,10 +290,10 @@ Accept wildcard characters: False
 
 ### -CancelTimeout
 
-Determines how long PowerShell waits for a cancel operation (CTRL+C) to finish before ending it.
-Enter a value in milliseconds.
+Determines how long PowerShell waits for a cancel operation (<kbd>CTRL</kbd>+<kbd>C</kbd>) to finish
+before ending it. Enter a value in milliseconds.
 
-The default value is 60000 (one minute). A value of 0 (zero) means no time-out; the command
+The default value is `60000` (one minute). A value of `0` (zero) means no time-out; the command
 continues indefinitely.
 
 ```yaml
@@ -335,26 +338,27 @@ closes.
 The idle time-out value is of significant importance if you intend to disconnect and reconnect to a
 session. You can reconnect only if the session has not timed out.
 
-Enter a value in milliseconds. The minimum value is 60000 (1 minute). The maximum is the value of
-the **MaxIdleTimeoutms** property of the session configuration. The default value, -1, does not set
-an idle time-out.
+Enter a value in milliseconds. The minimum value is `60000` (1 minute). The maximum is the value of
+the **MaxIdleTimeoutms** property of the session configuration. The default value, `-1`, does not
+set an idle time-out.
 
-The session uses the idle time-out that is set in the session options, if any. If none is set (-1),
-the session uses the value of the **IdleTimeoutMs** property of the session configuration or the
-WSMan shell time-out value (`WSMan:\<ComputerName>\Shell\IdleTimeout`), whichever is shortest.
+The session uses the idle time-out that is set in the session options, if any. If none is set
+(`-1`), the session uses the value of the **IdleTimeoutMs** property of the session configuration or
+the WSMan shell time-out value (`WSMan:\<ComputerName>\Shell\IdleTimeout`), whichever is shortest.
 
-If the idle timeout set in the session options exceeds the value of the **MaxIdleTimeoutMs**
+If the idle time-out set in the session options exceeds the value of the **MaxIdleTimeoutMs**
 property of the session configuration, the command to create a session fails.
 
-The **IdleTimeoutMs** value of the default **Microsoft.PowerShell** session configuration is 7200000
-milliseconds (2 hours). Its **MaxIdleTimeoutMs** value is 2147483647 milliseconds (\>24 days). The
-default value of the WSMan shell idle time-out (`WSMan:\<ComputerName>\Shell\IdleTimeout`) is
-7200000 milliseconds (2 hours).
+The **IdleTimeoutMs** value of the default **Microsoft.PowerShell** session configuration is
+`7200000` milliseconds (2 hours). Its **MaxIdleTimeoutMs** value is `2147483647` milliseconds (\>24
+days). The default value of the WSMan shell idle time-out
+(`WSMan:\<ComputerName>\Shell\IdleTimeout`) is `7200000` milliseconds (2 hours).
 
 The idle time-out value of a session can also be changed when disconnecting from a session or
 reconnecting to a session. For more information, see `Disconnect-PSSession` and `Connect-PSSession`.
 
-In Windows PowerShell 2.0, the default value of the **IdleTimeout** parameter is 240000 (4 minutes).
+In Windows PowerShell 2.0, the default value of the **IdleTimeout** parameter is `240000` (4
+minutes).
 
 ```yaml
 Type: System.Int32
@@ -379,10 +383,11 @@ are running under different user accounts. For example, an IIS application that 
 authentication can require the default SPN to be registered to a user account that differs from the
 computer account. In such cases, PowerShell remoting cannot use Kerberos to authenticate because it
 requires an SPN that is registered to the computer account. To resolve this problem, administrators
-can create different SPNs, such as by using **Setspn.exe**, that are registered to different user
+can create different SPNs, such as by using `Setspn.exe`, that are registered to different user
 accounts and can distinguish between them by including the port number in the SPN.
 
-For more information, see [Setspn Overview](/previous-versions/windows/it-pro/windows-server-2003/cc773257(v=ws.10)).
+For more information, see
+[Setspn Overview](/previous-versions/windows/it-pro/windows-server-2003/cc773257(v=ws.10)).
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -401,7 +406,7 @@ Accept wildcard characters: False
 ### -MaxConnectionRetryCount
 
 Specifies the number of times that PowerShell attempts to make a connection to a target machine if
-the current attempt fails due to network issues. The default value is 5.
+the current attempt fails due to network issues. The default value is `5`.
 
 This parameter was added for PowerShell version 5.0.
 
@@ -443,7 +448,7 @@ computer. This option is designed to protect the resources on the client compute
 bytes.
 
 In Windows PowerShell 2.0, if you omit this parameter, there is no object size limit. Beginning in
-Windows PowerShell 3.0, if you omit this parameter, the default value is 200 MB.
+Windows PowerShell 3.0, if you omit this parameter, the default value is `200`.
 
 ```yaml
 Type: System.Int32
@@ -460,8 +465,8 @@ Accept wildcard characters: False
 ### -MaximumRedirection
 
 Determines how many times PowerShell redirects a connection to an alternate Uniform Resource
-Identifier (URI) before the connection fails. The default value is 5. A value of 0 (zero) prevents
-all redirection.
+Identifier (URI) before the connection fails. The default value is `5`. A value of `0` (zero)
+prevents all redirection.
 
 This option is used in the session only when the **AllowRedirection** parameter is used in the
 command that creates the session.
@@ -534,7 +539,7 @@ Accept wildcard characters: False
 Determines how long the client computer waits for the session connection to be established. When the
 interval expires, the command to establish the connection fails. Enter a value in milliseconds.
 
-The default value is 180000 (3 minutes). A value of 0 (zero) means no time-out; the command
+The default value is `180000` (3 minutes). A value of `0` (zero) means no time-out; the command
 continues indefinitely.
 
 ```yaml
@@ -552,12 +557,13 @@ Accept wildcard characters: False
 ### -OperationTimeout
 
 Determines the maximum time **WinRM** waits for positive connection tests from a live connection
-before initiating a connection time-out. For more information on WinRM, see the [Windows Remote Management Documentation](/windows/win32/winrm/portal)
+before initiating a connection time-out. For more information on WinRM, see the
+[Windows Remote Management Documentation](/windows/win32/winrm/portal).
 
 **OperationTimeout** does _not_ impose a time limit on commands or processes running in a remote
 session and does _not_ affect other remoting protocols like SSH.
 
-The default value is 180000 (3 minutes). A value of 0 (zero) means no time-out.
+The default value is `180000` (3 minutes). A value of `0` (zero) means no time-out.
 
 ```yaml
 Type: System.Int32
@@ -577,16 +583,16 @@ Determines how command output is managed in disconnected sessions when the outpu
 full.
 
 If the output buffering mode is not set in the session or in the session configuration, the default
-value is **Block**. Users can also change the output buffering mode when disconnecting the session.
+value is `Block`. Users can also change the output buffering mode when disconnecting the session.
 
-If you omit this parameter, the value of the **OutputBufferingMode** of the session option object is
-None. A value of **Block** or **Drop** overrides the output buffering mode transport option set in
+If you omit this parameter, the value of the **OutputBufferingMode** of the **SessionOption** object
+is `None`. A value of `Block` or `Drop` overrides the output buffering mode transport option set in
 the session configuration. The acceptable values for this parameter are:
 
-- Block. When the output buffer is full, execution is suspended until the buffer is clear.
-- Drop. When the output buffer is full, execution continues. As new output is saved, the oldest
+- `Block`. When the output buffer is full, execution is suspended until the buffer is clear.
+- `Drop`. When the output buffer is full, execution continues. As new output is saved, the oldest
   output is discarded.
-- None. No output buffering mode is specified.
+- `None`. No output buffering mode is specified.
 
 For more information about the output buffering mode transport option, see `New-PSTransportOption`.
 
@@ -607,16 +613,16 @@ Accept wildcard characters: False
 
 ### -ProxyAccessType
 
-Determines which mechanism is used to resolve the host name. The acceptable values for this
-parameter are:
+Determines which mechanism is used to resolve the hostname. The acceptable values for this parameter
+are:
 
-- IEConfig
-- WinHttpConfig
-- AutoDetect
-- NoProxyServer
-- None
+- `IEConfig`
+- `WinHttpConfig`
+- `AutoDetect`
+- `NoProxyServer`
+- `None`
 
-The default value is None.
+The default value is `None`.
 
 For information about the values of this parameter, see
 [ProxyAccessType Enumeration](/dotnet/api/system.management.automation.remoting.proxyaccesstype).
@@ -637,7 +643,13 @@ Accept wildcard characters: False
 ### -ProxyAuthentication
 
 Specifies the authentication method that is used for proxy resolution. The acceptable values for
-this parameter are: **Basic**, **Digest**, and **Negotiate**. The default value is **Negotiate**.
+this parameter are:
+
+- `Basic`
+- `Digest`
+- `Negotiate`
+
+The default value is `Negotiate`.
 
 For more information about the values of this parameter, see
 [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
@@ -696,7 +708,7 @@ Accept wildcard characters: False
 
 ### -SkipCNCheck
 
-Specifies that the certificate common name (CN) of the server does not have to match the host name
+Specifies that the certificate common name (CN) of the server does not have to match the hostname
 of the server. This option is used only in remote operations that use the HTTPS protocol.
 
 Use this option only for trusted computers.
@@ -740,7 +752,7 @@ Valid values include:
 - A command that gets a **CultureInfo** object, such as `Get-Culture`
 
 The default value is `$null`, and the UI culture that is set in the operating system when the
-session is created is used in the session.
+session is created.
 
 ```yaml
 Type: System.Globalization.CultureInfo

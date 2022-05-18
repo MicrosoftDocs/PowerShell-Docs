@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/27/2021
+ms.date: 05/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
@@ -90,10 +90,9 @@ variable. To run commands in a **PSSession**, use the `Invoke-Command` cmdlet. T
 **PSSession** to interact directly with a remote computer, use the `Enter-PSSession` cmdlet. For
 more information, see [about_PSSessions](about/about_PSSessions.md).
 
-You can run commands on a remote computer without creating a **PSSession** by using the
-**ComputerName** parameters of `Enter-PSSession` or `Invoke-Command`. When you use the
-**ComputerName** parameter, PowerShell creates a temporary connection that is used for the command
-and is then closed.
+You can run commands on a remote computer without creating a **PSSession** with the **ComputerName**
+parameters of `Enter-PSSession` or `Invoke-Command`. When you use the **ComputerName** parameter,
+PowerShell creates a temporary connection that is used for the command and is then closed.
 
 Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and create
 a session on a remote computer, if SSH is available on the local computer and the remote computer is
@@ -105,10 +104,10 @@ connection information. For more information about how to set up PowerShell SSH 
 
 > [!NOTE]
 > When using WSMan remoting from a Linux or macOS client with a HTTPS endpoint where the server
-> certificate is not trusted (e.g., a self-signed certificate). You must provide a `PSSessionOption`
-> that includes `-SkipCACheck` and `-SkipCNCheck` to successfully establish the connection. Only do
-> this if you are in an environment where you can be certain of the server certificate and the
-> network connection to the target system.
+> certificate is not trusted (e.g., a self-signed certificate). You must provide a
+> **PSSessionOption** that includes the **SkipCACheck** and **SkipCNCheck** values set to `$true` to
+> successfully establish the connection. Only do this if you are in an environment where you can be
+> certain of the server certificate and the network connection to the target system.
 
 ## EXAMPLES
 
@@ -144,14 +143,14 @@ $s1, $s2, $s3 = New-PSSession -ComputerName Server01,Server02,Server03
 This command creates three **PSSession** objects, one on each of the computers specified by the
 **ComputerName** parameter.
 
-The command uses the assignment operator (=) to assign the new **PSSession** objects to variables:
+The command uses the assignment operator (`=`) to assign the new **PSSession** objects to variables:
 `$s1`, `$s2`, `$s3`. It assigns the Server01 **PSSession** to `$s1`, the Server02 **PSSession** to
 `$s2`, and the Server03 **PSSession** to `$s3`.
 
 When you assign multiple objects to a series of variables, PowerShell assigns each object to a
 variable in the series respectively. If there are more objects than variables, all remaining objects
 are assigned to the last variable. If there are more variables than objects, the remaining variables
-are empty (null).
+are empty (`$null`).
 
 ### Example 4: Create a session with a specified port
 
@@ -159,9 +158,9 @@ are empty (null).
 New-PSSession -ComputerName Server01 -Port 8081 -UseSSL -ConfigurationName E12
 ```
 
-This command creates a new **PSSession** on the Server01 computer that connects to server port 8081
-and uses the SSL protocol. The new **PSSession** uses an alternative session configuration called
-E12.
+This command creates a new **PSSession** on the Server01 computer that connects to server port
+`8081` and uses the SSL protocol. The new **PSSession** uses an alternative session configuration
+called `E12`.
 
 Before setting the port, you must configure the WinRM listener on the remote computer to listen on
 port 8081. For more information, see the description of the **Port** parameter.
@@ -177,7 +176,7 @@ use this command format when the resources of an existing **PSSession** are exha
 **PSSession** is needed to offload some of the demand.
 
 The command uses the **Session** parameter of `New-PSSession` to specify the **PSSession** saved in
-the `$s` variable. It uses the credentials of the Domain1\Admin01 user to complete the command.
+the `$s` variable. It uses the credentials of the `Domain1\Admin01` user to complete the command.
 
 ### Example 6: Create a session with a global scope in a different domain
 
@@ -205,9 +204,9 @@ with the credentials of the user.
 $rs = Get-Content C:\Test\Servers.txt | New-PSSession -ThrottleLimit 50
 ```
 
-This command creates a **PSSession** on each of the 200 computers listed in the Servers.txt file and
-it stores the resulting **PSSession** in the `$rs` variable. The **PSSession** objects have a
-throttle limit of 50.
+This command creates a **PSSession** on each of the 200 computers listed in the `Servers.txt` file
+and it stores the resulting **PSSession** in the `$rs` variable. The **PSSession** objects have a
+throttle limit of `50`.
 
 You can use this command format when the names of computers are stored in a database, spreadsheet,
 text file, or other text-convertible format.
@@ -233,14 +232,14 @@ Invoke-Command -Session $s -ScriptBlock {Get-Process PowerShell} -AsJob
 These commands create a set of **PSSession** objects and then run a background job in each of the
 **PSSession** objects.
 
-The first command creates a new **PSSession** on each of the computers listed in the Servers.txt
+The first command creates a new **PSSession** on each of the computers listed in the `Servers.txt`
 file. It uses the `New-PSSession` cmdlet to create the **PSSession**. The value of the
 **ComputerName** parameter is a command that uses the `Get-Content` cmdlet to get the list of
-computer names the Servers.txt file.
+computer names the `Servers.txt` file.
 
 The command uses the **Credential** parameter to create the **PSSession** objects that have the
 permission of a domain administrator, and it uses the **ThrottleLimit** parameter to limit the
-command to 16 concurrent connections. The command saves the **PSSession** objects in the `$s`
+command to `16` concurrent connections. The command saves the **PSSession** objects in the `$s`
 variable.
 
 The second command uses the **AsJob** parameter of the `Invoke-Command` cmdlet to start a background
@@ -271,8 +270,8 @@ The first command uses the `New-PSSessionOption` cmdlet to create a session opti
 resulting **SessionOption** object in the `$so` variable.
 
 The second command uses the option in a new session. The command uses the `New-PSSession` cmdlet to
-create a new session. The value of the SessionOption parameter is the **SessionOption** object in
-the `$so` variable.
+create a new session. The value of the **SessionOption** parameter is the **SessionOption** object
+in the `$so` variable.
 
 ### Example 12: Create a session using SSH
 
@@ -297,14 +296,24 @@ identify and authenticate the user on the remote computer.
 ### Example 14: Create multiple sessions using SSH
 
 ```powershell
-$sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa" }
+$sshConnections = @(
+    @{
+          HostName    = 'WinServer1'
+          UserName    = 'domain\userA'
+          KeyFilePath = 'c:\users\UserA\id_rsa'
+    }
+    @{
+        HostName    = 'UserB@LinuxServer5'
+        KeyFilePath = 'c:\UserB\<path>\id_rsa'
+    }
+)
 New-PSSession -SSHConnection $sshConnections
 ```
 
 This example shows how to create multiple sessions using Secure Shell (SSH) and the
 **SSHConnection** parameter set. The **SSHConnection** parameter takes an array of hash tables that
 contain connection information for each session. Note that this example requires that the target
-remote computers have SSH configured to support key based user authentication.
+remote computers have SSH configured to support key-based user authentication.
 
 ## PARAMETERS
 
@@ -320,7 +329,7 @@ can use this parameter to enable it to redirect the connection.
 You can also limit the number of times the connection is redirected by changing the
 **MaximumConnectionRedirectionCount** session option value. Use the **MaximumRedirection** parameter
 of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCount** property of the
-**$PSSessionOption** preference variable. The default value is 5.
+**$PSSessionOption** preference variable. The default value is `5`.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -340,7 +349,7 @@ Specifies the application name segment of the connection URI. Use this parameter
 application name when you are not using the **ConnectionURI** parameter in the command.
 
 The default value is the value of the `$PSSessionApplicationName` preference variable on the local
-computer. If this preference variable is not defined, the default value is WSMAN. This value is
+computer. If this preference variable is not defined, the default value is `WSMAN`. This value is
 appropriate for most uses. For more information, see
 [about_Preference_Variables](About/about_Preference_Variables.md).
 
@@ -362,18 +371,18 @@ Accept wildcard characters: False
 
 ### -Authentication
 
-Specifies the mechanism that is used to authenticate the user's credentials.
-The acceptable values for this parameter are:
+Specifies the mechanism that is used to authenticate the user's credentials. The acceptable values
+for this parameter are:
 
-- Default
-- Basic
-- Credssp
-- Digest
-- Kerberos
-- Negotiate
-- NegotiateWithImplicitCredential
+- `Default`
+- `Basic`
+- `Credssp`
+- `Digest`
+- `Kerberos`
+- `Negotiate`
+- `NegotiateWithImplicitCredential`
 
-The default value is Default.
+The default value is `Default`.
 
 For more information about the values of this parameter, see
 [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
@@ -406,8 +415,7 @@ this action. Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication. They can be mapped only to local
 user accounts; they do not work with domain accounts.
 
-To get a certificate, use the `Get-Item` or `Get-ChildItem` command in the PowerShell Cert:
-drive.
+To get a certificate, use the `Get-Item` or `Get-ChildItem` command in the PowerShell `Cert:` drive.
 
 ```yaml
 Type: System.String
@@ -428,9 +436,9 @@ Specifies an array of names of computers. This cmdlet creates a persistent conne
 creates multiple **PSSession** objects, one for each computer. The default is the local computer.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more remote
-computers. To specify the local computer, type the computer name, localhost, or a dot (.). When the
-computer is in a different domain than the user, the fully qualified domain name is required. You
-can also pipe a computer name, in quotation marks, to `New-PSSession`.
+computers. To specify the local computer, type the computer name, `localhost`, or a dot (`.`). When
+the computer is in a different domain than the user, the fully qualified domain name is required.
+You can also pipe a computer name, in quotation marks, to `New-PSSession`.
 
 To use an IP address in the value of the **ComputerName** parameter, the command must include the
 **Credential** parameter. Also, the computer must be configured for HTTPS transport or the IP
@@ -440,7 +448,7 @@ Computer to the Trusted Host List" in
 [about_Remote_Troubleshooting](about/about_Remote_Troubleshooting.md).
 
 To include the local computer in the value of the **ComputerName** parameter, start Windows
-PowerShell by using the Run as administrator option.
+PowerShell by using the **Run as administrator option**.
 
 ```yaml
 Type: System.String[]
@@ -466,7 +474,7 @@ The session configuration for a session is located on the remote computer. If th
 configuration does not exist on the remote computer, the command fails.
 
 The default value is the value of the `$PSSessionConfigurationName` preference variable on the local
-computer. If this preference variable is not set, the default is Microsoft.PowerShell. For more
+computer. If this preference variable is not set, the default is `Microsoft.PowerShell`. For more
 information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
@@ -492,13 +500,13 @@ The default value is as follows:
 
 `http://localhost:5985/WSMAN`
 
-If you do not specify a **ConnectionURI**, you can use the **UseSSL**, **ComputerName**, **Port**, and
-**ApplicationName** parameters to specify the **ConnectionURI** values.
+If you do not specify a **ConnectionURI**, you can use the **UseSSL**, **ComputerName**, **Port**,
+and **ApplicationName** parameters to specify the **ConnectionURI** values.
 
 Valid values for the Transport segment of the URI are HTTP and HTTPS. If you specify a connection
 URI with a Transport segment, but do not specify a port, the session is created with standards
-ports: 80 for HTTP and 443 for HTTPS. To use the default ports for PowerShell remoting, specify port
-5985 for HTTP or 5986 for HTTPS.
+ports: `80` for HTTP and `443` for HTTPS. To use the default ports for PowerShell remoting, specify
+port `5985` for HTTP or `5986` for HTTPS.
 
 If the destination computer redirects the connection to a different URI, PowerShell prevents the
 redirection unless you use the **AllowRedirection** parameter in the command.
@@ -538,7 +546,7 @@ Accept wildcard characters: False
 
 Specifies a user account that has permission to do this action. The default is the current user.
 
-Type a user name, such as **User01** or **Domain01\User01**, or enter a **PSCredential** object
+Type a user name, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object
 generated by the `Get-Credential` cmdlet. If you type a user name, you're prompted to enter the
 password.
 
@@ -569,8 +577,8 @@ you can run a command in the session that copies XML files from a remote compute
 computer.
 
 A loopback session is a **PSSession** that originates and ends on the same computer. To create a
-loopback session, omit the **ComputerName** parameter or set its value to dot (.), localhost, or the
-name of the local computer.
+loopback session, omit the **ComputerName** parameter or set its value to dot (`.`), `localhost`, or
+the name of the local computer.
 
 By default, this cmdlet creates loopback sessions by using a network token, which might not provide
 sufficient permission to authenticate to remote computers.
@@ -579,7 +587,7 @@ The **EnableNetworkAccess** parameter is effective only in loopback sessions. If
 **EnableNetworkAccess** when you create a session on a remote computer, the command succeeds, but
 the parameter is ignored.
 
-You can also enable remote access in a loopback session by using the CredSSP value of the
+You can also enable remote access in a loopback session by using the `CredSSP` value of the
 **Authentication** parameter, which delegates the session credentials to other computers.
 
 To protect the computer from malicious access, disconnected loopback sessions that have interactive
@@ -605,7 +613,7 @@ Accept wildcard characters: False
 ### -HostName
 
 Specifies an array of computer names for a Secure Shell (SSH) based connection. This is similar to
-the ComputerName parameter except that the connection to the remote computer is made using SSH
+the **ComputerName** parameter except that the connection to the remote computer is made using SSH
 rather than Windows WinRM.
 
 This parameter was introduced in PowerShell 6.0.
@@ -668,7 +676,7 @@ Accept wildcard characters: False
 
 Specifies the network port on the remote computer that is used for this connection. To connect to a
 remote computer, the remote computer must be listening on the port that the connection uses. The
-default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for
+default ports are `5985`, which is the WinRM port for HTTP, and `5986`, which is the WinRM port for
 HTTPS.
 
 Before using another port, you must configure the WinRM listener on the remote computer to listen at
@@ -768,10 +776,10 @@ Accept wildcard characters: False
 ### -SSHConnection
 
 This parameter takes an array of hashtables where each hashtable contains one or more connection
-parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName,
-KeyFilePath).
+parameters needed to establish a Secure Shell (SSH) connection (**HostName**, **Port**,
+**UserName**, **KeyFilePath**).
 
-The hashtable connection parameters are the same as defined for the **HostName** parameter set.
+The hashtable connection parameters are the same as defined for the **SSHHost** parameter set.
 
 The **SSHConnection** parameter is useful for creating multiple sessions where each session requires
 different connection information.
@@ -816,11 +824,11 @@ Accept wildcard characters: False
 
 Specifies the SSH subsystem used for the new **PSSession**.
 
-This specifies the subsystem to use on the target as defined in sshd_config.
-The subsystem starts a specific version of PowerShell with predefined parameters.
-If the specified subsystem does not exist on the remote computer, the command fails.
+This specifies the subsystem to use on the target as defined in `sshd_config`. The subsystem starts
+a specific version of PowerShell with predefined parameters. If the specified subsystem does not
+exist on the remote computer, the command fails.
 
-If this parameter is not used, the default is the 'powershell' subsystem.
+If this parameter is not used, the default is the `powershell` subsystem.
 
 ```yaml
 Type: System.String
@@ -837,7 +845,7 @@ Accept wildcard characters: False
 ### -ThrottleLimit
 
 Specifies the maximum number of concurrent connections that can be established to run this command.
-If you omit this parameter or enter a value of 0 (zero), the default value, 32, is used.
+If you omit this parameter or enter a value of `0` (zero), the default value, `32`, is used.
 
 The throttle limit applies only to the current command, not to the session or to the computer.
 
@@ -855,20 +863,20 @@ Accept wildcard characters: False
 
 ### -UserName
 
-Specifies the user name for the account used to create a session on the remote computer. User
-authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
+Specifies the username for the account used to create a session on the remote computer. The user
+authentication method depends on how Secure Shell (SSH) is configured on the remote computer.
 
-If SSH is configured for basic password authentication then you will be prompted for the user
+If SSH is configured for basic password authentication then you'll be prompted for the user
 password.
 
-If SSH is configured for key based user authentication then a key file path can be provided via the
-KeyFilePath parameter and no password prompt will occur. Note that if the client user key file is
-located in an SSH known location then the KeyFilePath parameter is not needed for key based
-authentication, and user authentication will occur automatically based on the user name. See SSH
-documentation about key based user authentication for more information.
+If SSH is configured for key-based user authentication then a key file path can be provided via the
+**KeyFilePath** parameter and you won't be prompted for a password. Note that if the client user key
+file is located in an SSH known location then the **KeyFilePath** parameter is not needed for
+key-based authentication, and user authentication occurs automatically based on the username. See
+SSH documentation about key-based user authentication for more information.
 
-This is not a required parameter. If no UserName parameter is specified then the current log on user
-name is used for the connection.
+This is not a required parameter. If no **UserName** parameter is specified then the current log on
+username is used for the connection.
 
 This parameter was introduced in PowerShell 6.0.
 
@@ -926,7 +934,7 @@ Accept wildcard characters: False
 
 ### -VMId
 
-Specifies an array of ID of virtual machines. This cmdlet starts an interactive session with each of
+Specifies an array of virtual machine IDs. This cmdlet starts an interactive session with each of
 the specified virtual machines. To see the virtual machines that are available to you, use the
 following command:
 
@@ -984,19 +992,37 @@ You can pipe a string, URI, or session object to this cmdlet.
 - This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local
   computer and any remote computers must be configured for PowerShell remoting. For more
   information, see [about_Remote_Requirements](About/about_Remote_Requirements.md).
-- To create a **PSSession** on the local computer, start PowerShell with the Run as administrator
-  option.
+- To create a **PSSession** on the local computer, start PowerShell with the **Run as
+  administrator** option.
 - When you are finished with the **PSSession**, use the `Remove-PSSession` cmdlet to delete the
   **PSSession** and release its resources.
 - The **HostName** and **SSHConnection** parameter sets were included starting with PowerShell 6.0.
   They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and
   PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting
   will work over these platforms where PowerShell and SSH are installed and configured. This is
-  separate from the previous Windows only remoting that is based on WinRM and much of the WinRM
-  specific features and limitations do not apply. For example WinRM based quotas, session options,
-  custom endpoint configuration, and disconnect/reconnect features are currently not supported. For
+  separate from the previous Windows-only remoting that is based on WinRM and many of the WinRM
+  specific features and limitations do not apply. For example, WinRM-based quotas, session options,
+  custom endpoint configuration, and disconnect/reconnect features are not supported. For
   more information about how to set up PowerShell SSH remoting, see
   [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+
+The `ssh` executable obtains configuration data from the following sources in the following order:
+
+1. command-line options
+1. user's configuration file (~/.ssh/config)
+1. system-wide configuration file (/etc/ssh/ssh_config)
+
+The following cmdlet parameters get mapped into `ssh` parameters and options:
+
+|      Cmdlet parameter      |          ssh parameter          |    equivalent ssh -o option     |
+| -------------------------- | ------------------------------- | ------------------------------- |
+| `-KeyFilePath`             | `-i <KeyFilePath>`              | `-o IdentityFile=<KeyFilePath>` |
+| `-UserName`                | `-l <UserName>`                 | `-o User=<UserName>`            |
+| `-Port`                    | `-p <Port>`                     | `-o Port=<Port>`                |
+| `-ComputerName -Subsystem` | `-s <ComputerName> <Subsystem>` | `-o Host=<ComputerName>`        |
+
+For more information about `ssh_config` files, see
+[ssh_config(5)](https://man.openbsd.org/ssh_config.5).
 
 ## RELATED LINKS
 

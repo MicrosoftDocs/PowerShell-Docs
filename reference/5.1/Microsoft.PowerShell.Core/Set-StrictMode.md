@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/22/2021
+ms.date: 05/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
@@ -40,7 +40,7 @@ override the setting inherited from the global scope.
 
 When `Set-StrictMode` is off, PowerShell has the following behaviors:
 
-- Uninitialized variables are assumed to have a value of 0 (zero) or `$Null`, depending on type
+- Uninitialized variables are assumed to have a value of `0` (zero) or `$Null`, depending on type
 - References to non-existent properties return `$Null`
 - Results of improper function syntax vary with the error conditions
 - Attempting to retrieve a value using an invalid index in an array returns `$Null`
@@ -72,7 +72,8 @@ At line:1 char:3
 + FullyQualifiedErrorId : VariableIsUndefined
 ```
 
-With strict mode set to version 1.0, attempts to reference variables that are not initialized fail.
+With strict mode set to version `1.0`, attempts to reference variables that are not initialized
+fail.
 
 ### Example 2: Turn on strict mode as version 2.0
 
@@ -140,18 +141,18 @@ At line:1 char:9
 + FullyQualifiedErrorId : PropertyNotFoundStrict
 ```
 
-This command turns strict mode on and sets it to version 2.0. As a result, PowerShell returns an
+This command turns strict mode on and sets it to version `2.0`. As a result, PowerShell returns an
 error if you use method syntax, which uses parentheses and commas, for a function call or reference
 uninitialized variables or non-existent properties.
 
-The sample output shows the effect of version 2.0 strict mode.
+The sample output shows the effect of version `2.0` strict mode.
 
-Without version 2.0 strict mode, the "(3,4)" value is interpreted as a single array object to which
-nothing is added. By using version 2.0 strict mode, it is correctly interpreted as faulty syntax for
-submitting two values.
+Without version `2.0` strict mode, the `(3,4)` value is interpreted as a single array object to
+which nothing is added. By using version `2.0` strict mode, it is correctly interpreted as faulty
+syntax for submitting two values.
 
-Without version 2.0, the reference to the non-existent **Month** property of a string returns only
-`$Null`. By using version 2.0, it is interpreted correctly as a reference error.
+Without version `2.0`, the reference to the non-existent **Month** property of a string returns only
+`$Null`. By using version `2.0`, it is interpreted correctly as a reference error.
 
 ### Example 3: Turn on strict mode as version 3.0
 
@@ -192,7 +193,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : InvalidCastFromStringToInteger
 ```
 
-With strict mode set to version 3 or higher, invalid or out of bounds indexes result in errors.
+With strict mode set to version `3` or higher, invalid or out of bounds indexes result in errors.
 
 ## PARAMETERS
 
@@ -215,32 +216,32 @@ Accept wildcard characters: False
 ### -Version
 
 Specifies the conditions that cause an error in strict mode. This parameter accepts any valid
-PowerShell version number. Any number higher than 3 is treated as **Latest**. The value supplied
-must be the string "Latest" or a string that can be converted to a `[System.Version]` type. The
+PowerShell version number. Any number higher than `3` is treated as `Latest`. The value supplied
+must be the string `Latest` or a string that can be converted to a **System.Version** type. The
 version must match a valid release version of PowerShell.
 
 The effective values for this parameter are:
 
-- 1.0
+- `1.0`
   - Prohibits references to uninitialized variables, except for uninitialized variables in strings.
-- 2.0
+- `2.0`
   - Prohibits references to uninitialized variables. This includes uninitialized variables in
     strings.
   - Prohibits references to non-existent properties of an object.
   - Prohibits function calls that use the syntax for calling methods.
-- 3.0
+- `3.0`
   - Prohibits references to uninitialized variables. This includes uninitialized variables in
     strings.
   - Prohibits references to non-existent properties of an object.
   - Prohibits function calls that use the syntax for calling methods.
   - Prohibit out of bounds or unresolvable array indexes.
-- Latest
+- `Latest`
   - Selects the latest version available. The latest version is the most strict. Use this value to
     make sure that scripts use the strictest available version, even when new versions are added to
     PowerShell.
 
 > [!CAUTION]
-> Using a **Version** of **Latest** in scripts. The meaning of **Latest** can change in new releases
+> Using a **Version** of `Latest` in scripts. The meaning of `Latest` can change in new releases
 > of PowerShell. Therefore, a script written for an older version of PowerShell that uses
 > `Set-StrictMode -Version Latest` is subject to more restrictive rules when run in a newer version
 > of PowerShell.

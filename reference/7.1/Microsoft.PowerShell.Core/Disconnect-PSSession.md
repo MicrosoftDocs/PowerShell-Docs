@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 05/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disconnect-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disconnect-PSSession
@@ -48,24 +48,25 @@ Disconnect-PSSession [-IdleTimeoutSec <Int32>] [-OutputBufferingMode <OutputBuff
 
 > **This cmdlet is only available on the Windows platform.**
 
-The `Disconnect-PSSession` cmdlet disconnects a PowerShell session ("PSSession"), such as
-one started by using the `New-PSSession` cmdlet, from the current session. As a result, the PSSession
-is in a disconnected state. You can connect to the disconnected PSSession from the current session
-or from another session on the local computer or a different computer.
+The `Disconnect-PSSession` cmdlet disconnects a PowerShell session (**PSSession**), such as one
+started by using the `New-PSSession` cmdlet, from the current session. As a result, the
+**PSSession** is in a disconnected state. You can connect to the disconnected **PSSession** from the
+current session or from another session on the local computer or a different computer.
 
-The `Disconnect-PSSession` cmdlet disconnects only open PSSessions that are connected to the
-current session. `Disconnect-PSSession` cannot disconnect broken or closed PSSessions, or
-interactive PSSessions started by using the `Enter-PSSession` cmdlet, and it cannot disconnect
-PSSessions that are connected to other sessions.
+The `Disconnect-PSSession` cmdlet disconnects only open **PSSessions** that are connected to the
+current session. `Disconnect-PSSession` cannot disconnect broken or closed **PSSessions**, or
+interactive **PSSessions** started by using the `Enter-PSSession` cmdlet, and it cannot disconnect
+**PSSessions** that are connected to other sessions.
 
-To reconnect to a disconnected PSSession, use the `Connect-PSSession` or `Receive-PSSession` cmdlets.
+To reconnect to a disconnected **PSSession**, use the `Connect-PSSession` or `Receive-PSSession`
+cmdlets.
 
-When a PSSession is disconnected, the commands in the PSSession continue to run until they
-complete, unless the PSSession times out or the commands in the PSSession are blocked by a full
-output buffer. To change the idle timeout, use the **IdleTimeoutSec** parameter. To change the
+When a **PSSession** is disconnected, the commands in the **PSSession** continue to run until they
+complete, unless the **PSSession** times out or the commands in the **PSSession** are blocked by a
+full output buffer. To change the idle timeout, use the **IdleTimeoutSec** parameter. To change the
 output buffering mode, use the **OutputBufferingMode** parameter You can also use the
-**InDisconnectedSession** parameter of the `Invoke-Command` cmdlet to run a command in a disconnected
-session.
+**InDisconnectedSession** parameter of the `Invoke-Command` cmdlet to run a command in a
+disconnected session.
 
 For more information about the Disconnected Sessions feature, see
 [about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md).
@@ -76,8 +77,8 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1 - Disconnect a session by name
 
-This command disconnects the UpdateSession PSSession on the Server01 computer from the current
-session. The command uses the **Name** parameter to identify the PSSession.
+This command disconnects the `UpdateSession` **PSSession** on the Server01 computer from the current
+session. The command uses the **Name** parameter to identify the **PSSession**.
 
 ```
 PS> Disconnect-PSSession -Name UpdateSession
@@ -86,15 +87,16 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
 1  UpdateSession   Server01        Disconnected  Microsoft.PowerShell          None
 ```
 
-The output shows that the attempt to disconnect was successful. The session state is Disconnected
-and the Availability is None, which indicates that the session is not busy and can be reconnected.
+The output shows that the attempt to disconnect was successful. The session state is `Disconnected`
+and the **Availability** is `None`, which indicates that the session is not busy and can be
+reconnected.
 
 ### Example 2 - Disconnect a session from a specific computer
 
-This command disconnects the ITTask PSSession on the Server12 computer from the current session.
-The ITTask session was created in the current session and connects to the Server12 computer. The
-command uses the `Get-PSSession` cmdlet to get the session and the `Disconnect-PSSession` cmdlet to
-disconnect it.
+This command disconnects the `ITTask` **PSSession** on the Server12 computer from the current
+session. The `ITTask` session was created in the current session and connects to the Server12
+computer. The command uses the `Get-PSSession` cmdlet to get the session and the
+`Disconnect-PSSession` cmdlet to disconnect it.
 
 ```
 PS> Get-PSSession -ComputerName Server12 -Name ITTask |
@@ -105,7 +107,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
 ```
 
 The `Disconnect-PSSession` command uses the **OutputBufferingMode** parameter to set the output
-mode to **Drop**. This setting ensures that the script that is running in the session can continue
+mode to `Drop`. This setting ensures that the script that is running in the session can continue
 to run even if the session output buffer is full. Because the script writes its output to a report
 on a file share, other output can be lost without consequence.
 
@@ -148,25 +150,27 @@ PS> Disconnect-PSSession -Session $s
 ```
 
 The technician begins by creating sessions on several remote computers and running a script in each
-session. The first command uses the `New-PSSession` cmdlet to create the ITTask session on three
-remote computers. The command saves the sessions in the $s variable. The second command uses the
-**FilePath** parameter of the `Invoke-Command` cmdlet to run a script in the sessions in the $s
+session. The first command uses the `New-PSSession` cmdlet to create the `ITTask` session on three
+remote computers. The command saves the sessions in the `$s` variable. The second command uses the
+**FilePath** parameter of the `Invoke-Command` cmdlet to run a script in the sessions in the `$s`
 variable.
 
 The script running on the Srv1 computer generates unexpected errors. The technician contacts his
 manager and asks for assistance. The manager directs the technician to disconnect from the session
-so he can investigate.The second command uses the `Get-PSSession` cmdlet to get the ITTask session on
-the Srv1 computer and the `Disconnect-PSSession` cmdlet to disconnect it. This command does not
-affect the ITTask sessions on the other computers.
+so he can investigate.The second command uses the `Get-PSSession` cmdlet to get the `ITTask` session
+on the Srv1 computer and the `Disconnect-PSSession` cmdlet to disconnect it. This command does not
+affect the `ITTask` sessions on the other computers.
 
-The third command uses the `Get-PSSession` cmdlet to get the ITTask sessions. The output shows that
-the ITTask sessions on the Srv2 and Srv30 computers were not affected by the command to disconnect.
+The third command uses the `Get-PSSession` cmdlet to get the `ITTask` sessions. The output shows
+that the `ITTask` sessions on the Srv2 and Srv30 computers were not affected by the command to
+disconnect.
 
-The manager logs on to his home computer, connects to his corporate network, starts PowerShell, and uses the `Get-PSSession` cmdlet to get the ITTask session on the Srv1 computer. He
-uses the credentials of the technician to access the session.
+The manager logs on to his home computer, connects to his corporate network, starts PowerShell, and
+uses the `Get-PSSession` cmdlet to get the `ITTask` session on the Srv1 computer. He uses the
+credentials of the technician to access the session.
 
-Next, the manager uses the `Connect-PSSession` cmdlet to connect to the ITTask session on the Srv1
-computer. The command saves the session in the $s variable.
+Next, the manager uses the `Connect-PSSession` cmdlet to connect to the `ITTask` session on the Srv1
+computer. The command saves the session in the `$s` variable.
 
 The manager uses the `Invoke-Command` cmdlet to run some diagnostic commands in the session in the
 `$s` variable. He recognizes that the script failed because it did not find a required directory.
@@ -279,31 +283,31 @@ PS> $s.Runspace.ConnectionInfo.IdleTimeout
 ```
 
 The first command uses the `New-PSSessionOption` cmdlet to create a session option object. It uses
-the **IdleTimeout** parameter to set an idle timeout of 48 hours (172800000 milliseconds). The
-command saves the session option object in the $Timeout variable.
+the **IdleTimeout** parameter to set an idle timeout of 48 hours (`172800000` milliseconds). The
+command saves the session option object in the `$Timeout` variable.
 
-The second command uses the `New-PSSession` cmdlet to create the ITTask session on the Server01
-computer. The command save the session in the $s variable. The value of the **SessionOption**
-parameter is the 48-hour idle timeout in the $Timeout variable.
+The second command uses the `New-PSSession` cmdlet to create the `ITTask` session on the Server01
+computer. The command save the session in the `$s` variable. The value of the **SessionOption**
+parameter is the 48-hour idle timeout in the `$Timeout` variable.
 
-The third command disconnects the ITTask session in the $s variable. The command fails because the
-idle timeout value of the session exceeds the **MaxIdleTimeoutMs** quota in the session
+The third command disconnects the `ITTask` session in the `$s` variable. The command fails because
+the idle timeout value of the session exceeds the **MaxIdleTimeoutMs** quota in the session
 configuration. Because the idle timeout is not used until the session is disconnected, this
 violation can go undetected while the session is in use.
 
 The fourth command uses the `Invoke-Command` cmdlet to run a `Get-PSSessionConfiguration` command
-for the Microsoft.PowerShell session configuration on the Server01 computer. The command uses the
+for the `Microsoft.PowerShell` session configuration on the Server01 computer. The command uses the
 `Format-List` cmdlet to display all properties of the session configuration in a list.The output
 shows that the **MaxIdleTimeoutMS** property, which establishes the maximum permitted
-**IdleTimeout** value for sessions that use the session configuration, is 43200000 milliseconds (12
-hours).
+**IdleTimeout** value for sessions that use the session configuration, is `43200000` milliseconds
+(12 hours).
 
-The fifth command gets the session option values of the session in the $s variable. The values of
+The fifth command gets the session option values of the session in the `$s` variable. The values of
 many session options are properties of the **ConnectionInfo** property of the **Runspace** property
 of the session.The output shows that the value of the **IdleTimeout** property of the session is
-172800000 milliseconds (48 hours), which violates the **MaxIdleTimeoutMs** quota of 12 hours in the
-session configuration.To resolve this conflict, you can use the **ConfigurationName** parameter to
-select a different session configuration or use the **IdleTimeout** parameter to reduce the idle
+`172800000` milliseconds (48 hours), which violates the **MaxIdleTimeoutMs** quota of 12 hours in
+the session configuration.To resolve this conflict, you can use the **ConfigurationName** parameter
+to select a different session configuration or use the **IdleTimeout** parameter to reduce the idle
 timeout of the session.
 
 The sixth command disconnects the session. It uses the **IdleTimeoutSec** parameter to set the idle
@@ -317,7 +321,7 @@ which is measured in milliseconds. The output confirms that the command was succ
 ### -Id
 
 Disconnects from sessions with the specified session ID. Type one or more IDs (separated by
-commas), or use the range operator (..) to specify a range of IDs.
+commas), or use the range operator (`..`) to specify a range of IDs.
 
 To get the ID of a session, use the `Get-PSSession` cmdlet. The instance ID is stored in the **ID**
 property of the session.
@@ -336,22 +340,22 @@ Accept wildcard characters: False
 
 ### -IdleTimeoutSec
 
-Changes the idle timeout value of the disconnected PSSession. Enter a value in seconds. The minimum
-value is 60 (1 minute).
+Changes the idle timeout value of the disconnected **PSSession**. Enter a value in seconds. The
+minimum value is `60` (1 minute).
 
-The idle timeout determines how long the disconnected PSSession is maintained on the remote
-computer. When the timeout expires, the PSSession is deleted.
+The idle timeout determines how long the disconnected **PSSession** is maintained on the remote
+computer. When the timeout expires, the **PSSession** is deleted.
 
-Disconnected PSSessions are considered to be idle from the moment that they are disconnected, even
-if commands are running in the disconnected session.
+Disconnected **PSSessions** are considered to be idle from the moment that they are disconnected,
+even if commands are running in the disconnected session.
 
 The default value for the idle timeout of a session is set by the value of the **IdleTimeoutMs**
-property of the session configuration. The default value is 7200000 milliseconds (2 hours).
+property of the session configuration. The default value is `7200000` milliseconds (2 hours).
 
 The value of this parameter takes precedence over the value of the **IdleTimeout** property of the
-$PSSessionOption preference variable and the default idle timeout value in the session
+`$PSSessionOption` preference variable and the default idle timeout value in the session
 configuration. However, this value cannot exceed the value of the **MaxIdleTimeoutMs** property of
-the session configuration. The default value of **MaxIdleTimeoutMs** is 12 hours (43200000
+the session configuration. The default value of **MaxIdleTimeoutMs** is 12 hours (`43200000`
 milliseconds).
 
 ```yaml
@@ -410,20 +414,20 @@ Accept wildcard characters: True
 ### -OutputBufferingMode
 
 Determines how command output is managed in the disconnected session when the output buffer is
-full. The default value is **Block**.
+full. The default value is `Block`.
 
 If the command in the disconnected session is returning output and the output buffer fills, the
 value of this parameter effectively determines whether the command continues to run while the
-session is disconnected. A value of **Block** suspends the command until the session is
-reconnected. A value of **Drop** allows the command to complete, although data might be lost. When
-using the **Drop** value, redirect the command output to a file on disk.
+session is disconnected. A value of `Block` suspends the command until the session is reconnected. A
+value of `Drop` allows the command to complete, although data might be lost. When using the `Drop`
+value, redirect the command output to a file on disk.
 
 Valid values are:
 
-- **Block**: When the output buffer is full, execution is suspended until the buffer is clear.
-- **Drop**: When the output buffer is full, execution continues. As new output is saved, the oldest
+- `Block`: When the output buffer is full, execution is suspended until the buffer is clear.
+- `Drop`: When the output buffer is full, execution continues. As new output is saved, the oldest
   output is discarded.
-- **None**: No output buffering mode is specified. The value of the **OutputBufferingMode** property
+- `None`: No output buffering mode is specified. The value of the **OutputBufferingMode** property
   of the session configuration is used for the disconnected session.
 
 ```yaml
@@ -440,14 +444,14 @@ Accept wildcard characters: False
 
 ### -Session
 
-Disconnects from the specified PSSessions. Enter PSSession objects, such as those that the
-`New-PSSession` cmdlet returns. You can also pipe a PSSession object to `Disconnect-PSSession`.
+Disconnects from the specified **PSSessions**. Enter **PSSession** objects, such as those that the
+`New-PSSession` cmdlet returns. You can also pipe a **PSSession** object to `Disconnect-PSSession`.
 
-The `Get-PSSession` cmdlet can get all PSSessions that terminate at a remote computer, including
-PSSessions that are disconnected and PSSessions that are connected to other sessions on other
-computers. `Disconnect-PSSession` disconnects only PSSession that are connected to the current
-session. If you pipe other PSSessions to `Disconnect-PSSession`, the `Disconnect-PSSession` command
-fails.
+The `Get-PSSession` cmdlet can get all **PSSessions** that terminate at a remote computer, including
+**PSSessions** that are disconnected and **PSSessions** that are connected to other sessions on
+other computers. `Disconnect-PSSession` disconnects only **PSSession** that are connected to the
+current session. If you pipe other **PSSessions** to `Disconnect-PSSession`, the
+`Disconnect-PSSession` command fails.
 
 ```yaml
 Type: System.Management.Automation.Runspaces.PSSession[]
@@ -466,7 +470,7 @@ Accept wildcard characters: False
 Sets the throttle limit for the `Disconnect-PSSession` command.
 
 The throttle limit is the maximum number of concurrent connections that can be established to run
-this command. If you omit this parameter or enter a value of 0, the default value, 32, is used.
+this command. If you omit this parameter or enter a value of `0`, the default value, `32`, is used.
 
 The throttle limit applies only to the current command, not to the session or to the computer.
 
@@ -500,8 +504,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -545,17 +548,17 @@ This cmdlet is only available on Windows platforms.
 - Disconnected loopback sessions with interactive security tokens (those created with the
   **EnableNetworkAccess** parameter) can be reconnected only from the computer on which the session
   was created. This restriction protects the computer from malicious access.
-- When you disconnect a PSSession, the session state is **Disconnected** and the availability is
+- When you disconnect a **PSSession**, the session state is `Disconnected` and the availability is
   **None**.
 
   The value of the **State** property is relative to the current session. Therefore, a value of
-  **Disconnected** means that the PSSession is not connected to the current session. However, it
-  does not mean that the PSSession is disconnected from all sessions. It might be connected to a
+  `Disconnected` means that the **PSSession** is not connected to the current session. However, it
+  does not mean that the **PSSession** is disconnected from all sessions. It might be connected to a
   different session. To determine whether you can connect or reconnect to the session, use the
   **Availability** property.
 
-  An **Availability** value of **None** indicates that you can connect to the session. A value of
-  **Busy** indicates that you cannot connect to the PSSession because it is connected to another
+  An **Availability** value of `None` indicates that you can connect to the session. A value of
+  `Busy` indicates that you cannot connect to the **PSSession** because it is connected to another
   session.
 
   For more information about the values of the **State** property of sessions, see

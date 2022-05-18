@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 11/06/2020
+ms.date: 05/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
@@ -17,13 +17,15 @@ Reconnects to disconnected sessions.
 ### Name (Default)
 
 ```
-Connect-PSSession -Name <String[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Connect-PSSession -Name <String[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm]
+[<CommonParameters>]
 ```
 
 ### Session
 
 ```
-Connect-PSSession [-Session] <PSSession[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Connect-PSSession [-Session] <PSSession[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm]
+[<CommonParameters>]
 ```
 
 ### ComputerNameGuid
@@ -48,29 +50,32 @@ Connect-PSSession -ComputerName <String[]> [-ApplicationName <String>] [-Configu
 
 ```
 Connect-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri[]> [-AllowRedirection]
- -InstanceId <Guid[]> [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
- [-CertificateThumbprint <String>] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+-InstanceId <Guid[]> [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+[-CertificateThumbprint <String>] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>]
+[-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ConnectionUri
 
 ```
-Connect-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri[]> [-AllowRedirection] [-Name <String[]>]
- [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
- [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Connect-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri[]> [-AllowRedirection]
+[-Name <String[]>] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+[-CertificateThumbprint <String>] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>]
+[-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceId
 
 ```
-Connect-PSSession -InstanceId <Guid[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Connect-PSSession -InstanceId <Guid[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm]
+[<CommonParameters>]
 ```
 
 ### Id
 
 ```
-Connect-PSSession [-ThrottleLimit <Int32>] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Connect-PSSession [-ThrottleLimit <Int32>] [-Id] <Int32[]> [-WhatIf] [-Confirm]
+[<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,10 +110,10 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
  4 ITTask          Server01        Opened        ITTasks                  Available
 ```
 
-This command reconnects to the ITTask session on the Server01 computer.
+This command reconnects to the `ITTask` session on the Server01 computer.
 
-The output shows that the command was successful. The **State** of the session is Opened and the
-**Availability** is Available, which indicates that you can run commands in the session.
+The output shows that the command was successful. The **State** of the session is `Opened` and the
+**Availability** is `Available`, which indicates that you can run commands in the session.
 
 ### Example 2: Effect of disconnecting and reconnecting
 
@@ -139,18 +144,18 @@ This example shows the effect of disconnecting and then reconnecting to a sessio
 The first command uses the `Get-PSSession` cmdlet. Without the **ComputerName** parameter, the
 command gets only sessions that were created in the current session.
 
-The output shows that the command gets the Backups session on the local computer. The **State** of
-the session is Opened and the **Availability** is Available.
+The output shows that the command gets the `Backups` session on the local computer. The **State** of
+the session is `Opened` and the **Availability** is `Available`.
 
 The second command uses the `Get-PSSession` cmdlet to get the **PSSession** objects that were
 created in the current session and the `Disconnect-PSSession` cmdlet to disconnect the sessions. The
-output shows that the Backups session was disconnected. The **State** of the session is Disconnected
-and the **Availability** is None.
+output shows that the `Backups` session was disconnected. The **State** of the session is
+`Disconnected` and the **Availability** is `None`.
 
 The third command uses the `Get-PSSession` cmdlet to get the **PSSession** objects that were created
 in the current session and the `Connect-PSSession` cmdlet to reconnect the sessions. The output
-shows that the Backups session was reconnected. The **State** of the session is Opened and the
-**Availability** is Available.
+shows that the `Backups` session was reconnected. The **State** of the session is `Opened` and the
+**Availability** is `Available`.
 
 If you use the `Connect-PSSession` cmdlet on a session that is not disconnected, the command does
 not affect the session and it does not generate any errors.
@@ -164,23 +169,23 @@ Later that evening, the administrator logs on to her home computer and verifies 
 until it is completed.
 
 The administrator starts by creating a sessions on a remote computer and running a script in the
-session.The first command uses the `New-PSSession` cmdlet to create the ITTask session on the
+session.The first command uses the `New-PSSession` cmdlet to create the `ITTask` session on the
 Server01 remote computer. The command uses the **ConfigurationName** parameter to specify the
-ITTasks session configuration. The command saves the sessions in the `$s` variable.
+`ITTasks` session configuration. The command saves the sessions in the `$s` variable.
 
 The second command `Invoke-Command` cmdlet to start a background job in the session in the `$s`
 variable. It uses the **FilePath** parameter to run the script in the background job.
 
 The third command uses the `Disconnect-PSSession` cmdlet to disconnect from the session in the `$s`
-variable. The command uses the **OutputBufferingMode** parameter with a value of Drop to prevent the
-script from being blocked by having to deliver output to the session. It uses the **IdleTimeoutSec**
-parameter to extend the session time-out to 15 hours. When the command is completed, the
-administrator locks her computer and goes home for the evening.
+variable. The command uses the **OutputBufferingMode** parameter with a value of `Drop` to prevent
+the script from being blocked by having to deliver output to the session. It uses the
+**IdleTimeoutSec** parameter to extend the session time-out to 15 hours. When the command is
+completed, the administrator locks her computer and goes home for the evening.
 
 Later that evening, the administrator starts her home computer, logs on to the corporate network,
 and starts PowerShell. The fourth command uses the `Get-PSSession` cmdlet to get the sessions on the
-Server01 computer. The command finds the ITTask session.The fifth command uses the
-`Connect-PSSession` cmdlet to connect to the ITTask session. The command saves the session in the
+Server01 computer. The command finds the `ITTask` session. The fifth command uses the
+`Connect-PSSession` cmdlet to connect to the `ITTask` session. The command saves the session in the
 `$s` variable.
 
 The sixth command uses the `Invoke-Command` cmdlet to run a `Get-Job` command in the session in the
@@ -234,7 +239,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
  1 ITTask          Server01        Disconnected  ITTasks               None
 ```
 
-The ninth command disconnects from the session in the `$s` variable.The administrator closes
+The ninth command disconnects from the session in the `$s` variable. The administrator closes
 PowerShell and closes the computer. She can reconnect to the session on the next day and check the
 script status from her work computer.
 
@@ -251,7 +256,7 @@ this parameter to allow it to redirect the connection.
 You can also limit the number of times the connection is redirected by changing the
 **MaximumConnectionRedirectionCount** session option value. Use the **MaximumRedirection** parameter
 of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCount** property of the
-**$PSSessionOption** preference variable. The default value is 5.
+**$PSSessionOption** preference variable. The default value is `5`.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -294,15 +299,15 @@ Accept wildcard characters: False
 Specifies the mechanism that is used to authenticate user credentials in the command to reconnect to
 the disconnected session. The acceptable values for this parameter are:
 
-- Default
-- Basic
-- Credssp
-- Digest
-- Kerberos
-- Negotiate
-- NegotiateWithImplicitCredential
+- `Default`
+- `Basic`
+- `Credssp`
+- `Digest`
+- `Kerberos`
+- `Negotiate`
+- `NegotiateWithImplicitCredential`
 
-The default value is Default.
+The default value is `Default`.
 
 For more information about the values of this parameter, see
 [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
@@ -335,8 +340,8 @@ to the disconnected session. Enter the certificate thumbprint of the certificate
 Certificates are used in client certificate-based authentication. They can be mapped only to local
 user accounts. They do not work with domain accounts.
 
-To get a certificate thumbprint, use a `Get-Item` or `Get-ChildItem` command in the PowerShell Cert:
-drive.
+To get a certificate thumbprint, use a `Get-Item` or `Get-ChildItem` command in the PowerShell
+`Cert:` drive.
 
 ```yaml
 Type: System.String
@@ -357,8 +362,8 @@ computer that is at the server-side or receiving end of a connection. The defaul
 computer.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name of one computer. Wildcard
-characters are not permitted. To specify the local computer, type the computer name, localhost, or a
-dot (.)
+characters are not permitted. To specify the local computer, type the computer name, `localhost`, or
+a dot (`.`)
 
 ```yaml
 Type: System.String[]
@@ -416,8 +421,8 @@ specify the connection URI values.
 
 Valid values for the **Transport** segment of the URI are HTTP and HTTPS. If you specify a
 connection URI with a Transport segment, but do not specify a port, the session is created with
-standards ports: 80 for HTTP and 443 for HTTPS. To use the default ports for PowerShell remoting,
-specify port 5985 for HTTP or 5986 for HTTPS.
+standards ports: `80` for HTTP and `443` for HTTPS. To use the default ports for PowerShell
+remoting, specify port `5985` for HTTP or `5986` for HTTPS.
 
 If the destination computer redirects the connection to a different URI, PowerShell prevents the
 redirection unless you use the **AllowRedirection** parameter in the command.
@@ -439,7 +444,7 @@ Accept wildcard characters: False
 Specifies a user account that has permission to connect to the disconnected session. The default is
 the current user.
 
-Type a user name, such as `User01` or `Domain01\User01`, or enter a `PSCredential` object
+Type a username, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object
 generated by the `Get-Credential` cmdlet. If you type a user name, you're prompted to enter the
 password.
 
@@ -522,7 +527,7 @@ Accept wildcard characters: False
 
 Specifies the network port on the remote computer that is used to reconnect to the session. To
 connect to a remote computer, the remote computer must be listening on the port that the connection
-uses. The default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM
+uses. The default ports are `5985`, which is the WinRM port for HTTP, and `5986`, which is the WinRM
 port for HTTPS.
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to
@@ -600,7 +605,7 @@ Accept wildcard characters: False
 ### -ThrottleLimit
 
 Specifies the maximum number of concurrent connections that can be established to run this command.
-If you omit this parameter or enter a value of 0, the default value, 32, is used.
+If you omit this parameter or enter a value of `0`, the default value, `32`, is used.
 
 The throttle limit applies only to the current command, not to the session or to the computer.
 
@@ -658,8 +663,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

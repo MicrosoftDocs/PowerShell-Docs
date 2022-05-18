@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/20/2019
+ms.date: 05/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
@@ -110,14 +110,14 @@ $s1, $s2, $s3 = New-PSSession -ComputerName Server01,Server02,Server03
 This command creates three **PSSession** objects, one on each of the computers specified by the
 **ComputerName** parameter.
 
-The command uses the assignment operator (=) to assign the new **PSSession** objects to variables:
+The command uses the assignment operator (`=`) to assign the new **PSSession** objects to variables:
 `$s1`, `$s2`, `$s3`. It assigns the Server01 **PSSession** to `$s1`, the Server02 **PSSession** to
 `$s2`, and the Server03 **PSSession** to `$s3`.
 
 When you assign multiple objects to a series of variables, PowerShell assigns each object to a
 variable in the series respectively. If there are more objects than variables, all remaining objects
 are assigned to the last variable. If there are more variables than objects, the remaining variables
-are empty (null).
+are empty (`$null`).
 
 ### Example 4: Create a session with a specified port
 
@@ -125,9 +125,9 @@ are empty (null).
 New-PSSession -ComputerName Server01 -Port 8081 -UseSSL -ConfigurationName E12
 ```
 
-This command creates a new **PSSession** on the Server01 computer that connects to server port 8081
-and uses the SSL protocol. The new **PSSession** uses an alternative session configuration called
-E12.
+This command creates a new **PSSession** on the Server01 computer that connects to server port
+`8081` and uses the SSL protocol. The new **PSSession** uses an alternative session configuration
+called `E12`.
 
 Before setting the port, you must configure the WinRM listener on the remote computer to listen on
 port 8081. For more information, see the description of the **Port** parameter.
@@ -143,7 +143,7 @@ use this command format when the resources of an existing **PSSession** are exha
 **PSSession** is needed to offload some of the demand.
 
 The command uses the **Session** parameter of `New-PSSession` to specify the **PSSession** saved in
-the `$s` variable. It uses the credentials of the Domain1\Admin01 user to complete the command.
+the `$s` variable. It uses the credentials of the `Domain1\Admin01` user to complete the command.
 
 ### Example 6: Create a session with a global scope in a different domain
 
@@ -171,9 +171,9 @@ with the credentials of the user.
 $rs = Get-Content C:\Test\Servers.txt | New-PSSession -ThrottleLimit 50
 ```
 
-This command creates a **PSSession** on each of the 200 computers listed in the Servers.txt file and
-it stores the resulting **PSSession** in the `$rs` variable. The **PSSession** objects have a
-throttle limit of 50.
+This command creates a **PSSession** on each of the 200 computers listed in the `Servers.txt` file
+and it stores the resulting **PSSession** in the `$rs` variable. The **PSSession** objects have a
+throttle limit of `50`.
 
 You can use this command format when the names of computers are stored in a database, spreadsheet,
 text file, or other text-convertible format.
@@ -199,14 +199,14 @@ Invoke-Command -Session $s -ScriptBlock {Get-Process PowerShell} -AsJob
 These commands create a set of **PSSession** objects and then run a background job in each of the
 **PSSession** objects.
 
-The first command creates a new **PSSession** on each of the computers listed in the Servers.txt
+The first command creates a new **PSSession** on each of the computers listed in the `Servers.txt`
 file. It uses the `New-PSSession` cmdlet to create the **PSSession**. The value of the
 **ComputerName** parameter is a command that uses the `Get-Content` cmdlet to get the list of
-computer names the Servers.txt file.
+computer names the `Servers.txt` file.
 
 The command uses the **Credential** parameter to create the **PSSession** objects that have the
 permission of a domain administrator, and it uses the **ThrottleLimit** parameter to limit the
-command to 16 concurrent connections. The command saves the **PSSession** objects in the `$s`
+command to `16` concurrent connections. The command saves the **PSSession** objects in the `$s`
 variable.
 
 The second command uses the **AsJob** parameter of the `Invoke-Command` cmdlet to start a background
@@ -237,8 +237,8 @@ The first command uses the `New-PSSessionOption` cmdlet to create a session opti
 resulting **SessionOption** object in the `$so` variable.
 
 The second command uses the option in a new session. The command uses the `New-PSSession` cmdlet to
-create a new session. The value of the SessionOption parameter is the **SessionOption** object in
-the `$so` variable.
+create a new session. The value of the **SessionOption** parameter is the **SessionOption** object
+in the `$so` variable.
 
 ## PARAMETERS
 
@@ -254,7 +254,7 @@ can use this parameter to enable it to redirect the connection.
 You can also limit the number of times the connection is redirected by changing the
 **MaximumConnectionRedirectionCount** session option value. Use the **MaximumRedirection** parameter
 of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCount** property of the
-**$PSSessionOption** preference variable. The default value is 5.
+**$PSSessionOption** preference variable. The default value is `5`.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -274,7 +274,7 @@ Specifies the application name segment of the connection URI. Use this parameter
 application name when you are not using the **ConnectionURI** parameter in the command.
 
 The default value is the value of the `$PSSessionApplicationName` preference variable on the local
-computer. If this preference variable is not defined, the default value is WSMAN. This value is
+computer. If this preference variable is not defined, the default value is `WSMAN`. This value is
 appropriate for most uses. For more information, see
 [about_Preference_Variables](About/about_Preference_Variables.md).
 
@@ -296,18 +296,18 @@ Accept wildcard characters: False
 
 ### -Authentication
 
-Specifies the mechanism that is used to authenticate the user's credentials.
-The acceptable values for this parameter are:
+Specifies the mechanism that is used to authenticate the user's credentials. The acceptable values
+for this parameter are:
 
-- Default
-- Basic
-- Credssp
-- Digest
-- Kerberos
-- Negotiate
-- NegotiateWithImplicitCredential
+- `Default`
+- `Basic`
+- `Credssp`
+- `Digest`
+- `Kerberos`
+- `Negotiate`
+- `NegotiateWithImplicitCredential`
 
-The default value is Default.
+The default value is `Default`.
 
 For more information about the values of this parameter, see
 [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
@@ -340,8 +340,7 @@ this action. Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication. They can be mapped only to local
 user accounts; they do not work with domain accounts.
 
-To get a certificate, use the `Get-Item` or `Get-ChildItem` command in the PowerShell Cert:
-drive.
+To get a certificate, use the `Get-Item` or `Get-ChildItem` command in the PowerShell `Cert:` drive.
 
 ```yaml
 Type: System.String
@@ -362,9 +361,9 @@ Specifies an array of names of computers. This cmdlet creates a persistent conne
 creates multiple **PSSession** objects, one for each computer. The default is the local computer.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more remote
-computers. To specify the local computer, type the computer name, localhost, or a dot (.). When the
-computer is in a different domain than the user, the fully qualified domain name is required. You
-can also pipe a computer name, in quotation marks, to `New-PSSession`.
+computers. To specify the local computer, type the computer name, `localhost`, or a dot (`.`). When
+the computer is in a different domain than the user, the fully qualified domain name is required.
+You can also pipe a computer name, in quotation marks, to `New-PSSession`.
 
 To use an IP address in the value of the **ComputerName** parameter, the command must include the
 **Credential** parameter. Also, the computer must be configured for HTTPS transport or the IP
@@ -374,7 +373,7 @@ Computer to the Trusted Host List" in
 [about_Remote_Troubleshooting](about/about_Remote_Troubleshooting.md).
 
 To include the local computer in the value of the **ComputerName** parameter, start Windows
-PowerShell by using the Run as administrator option.
+PowerShell by using the **Run as administrator option**.
 
 ```yaml
 Type: System.String[]
@@ -400,7 +399,7 @@ The session configuration for a session is located on the remote computer. If th
 configuration does not exist on the remote computer, the command fails.
 
 The default value is the value of the `$PSSessionConfigurationName` preference variable on the local
-computer. If this preference variable is not set, the default is Microsoft.PowerShell. For more
+computer. If this preference variable is not set, the default is `Microsoft.PowerShell`. For more
 information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
@@ -426,13 +425,13 @@ The default value is as follows:
 
 `http://localhost:5985/WSMAN`
 
-If you do not specify a **ConnectionURI**, you can use the **UseSSL**, **ComputerName**, **Port**, and
-**ApplicationName** parameters to specify the **ConnectionURI** values.
+If you do not specify a **ConnectionURI**, you can use the **UseSSL**, **ComputerName**, **Port**,
+and **ApplicationName** parameters to specify the **ConnectionURI** values.
 
 Valid values for the Transport segment of the URI are HTTP and HTTPS. If you specify a connection
 URI with a Transport segment, but do not specify a port, the session is created with standards
-ports: 80 for HTTP and 443 for HTTPS. To use the default ports for PowerShell remoting, specify port
-5985 for HTTP or 5986 for HTTPS.
+ports: `80` for HTTP and `443` for HTTPS. To use the default ports for PowerShell remoting, specify
+port `5985` for HTTP or `5986` for HTTPS.
 
 If the destination computer redirects the connection to a different URI, PowerShell prevents the
 redirection unless you use the **AllowRedirection** parameter in the command.
@@ -472,7 +471,7 @@ Accept wildcard characters: False
 
 Specifies a user account that has permission to do this action. The default is the current user.
 
-Type a user name, such as **User01** or **Domain01\User01**, or enter a **PSCredential** object
+Type a user name, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object
 generated by the `Get-Credential` cmdlet. If you type a user name, you're prompted to enter the
 password.
 
@@ -503,8 +502,8 @@ you can run a command in the session that copies XML files from a remote compute
 computer.
 
 A loopback session is a **PSSession** that originates and ends on the same computer. To create a
-loopback session, omit the **ComputerName** parameter or set its value to dot (.), localhost, or the
-name of the local computer.
+loopback session, omit the **ComputerName** parameter or set its value to dot (`.`), `localhost`, or
+the name of the local computer.
 
 By default, this cmdlet creates loopback sessions by using a network token, which might not provide
 sufficient permission to authenticate to remote computers.
@@ -513,7 +512,7 @@ The **EnableNetworkAccess** parameter is effective only in loopback sessions. If
 **EnableNetworkAccess** when you create a session on a remote computer, the command succeeds, but
 the parameter is ignored.
 
-You can also enable remote access in a loopback session by using the CredSSP value of the
+You can also enable remote access in a loopback session by using the `CredSSP` value of the
 **Authentication** parameter, which delegates the session credentials to other computers.
 
 To protect the computer from malicious access, disconnected loopback sessions that have interactive
@@ -560,7 +559,7 @@ Accept wildcard characters: False
 
 Specifies the network port on the remote computer that is used for this connection. To connect to a
 remote computer, the remote computer must be listening on the port that the connection uses. The
-default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for
+default ports are `5985`, which is the WinRM port for HTTP, and `5986`, which is the WinRM port for
 HTTPS.
 
 Before using another port, you must configure the WinRM listener on the remote computer to listen at
@@ -660,7 +659,7 @@ Accept wildcard characters: False
 ### -ThrottleLimit
 
 Specifies the maximum number of concurrent connections that can be established to run this command.
-If you omit this parameter or enter a value of 0 (zero), the default value, 32, is used.
+If you omit this parameter or enter a value of `0` (zero), the default value, `32`, is used.
 
 The throttle limit applies only to the current command, not to the session or to the computer.
 
@@ -702,7 +701,7 @@ Accept wildcard characters: False
 
 ### -VMId
 
-Specifies an array of ID of virtual machines. This cmdlet starts an interactive session with each of
+Specifies an array of virtual machine IDs. This cmdlet starts an interactive session with each of
 the specified virtual machines. To see the virtual machines that are available to you, use the
 following command:
 
@@ -760,8 +759,8 @@ You can pipe a string, URI, or session object to this cmdlet.
 - This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local
   computer and any remote computers must be configured for PowerShell remoting. For more
   information, see [about_Remote_Requirements](About/about_Remote_Requirements.md).
-- To create a **PSSession** on the local computer, start PowerShell with the Run as administrator
-  option.
+- To create a **PSSession** on the local computer, start PowerShell with the **Run as
+  administrator** option.
 - When you are finished with the **PSSession**, use the `Remove-PSSession` cmdlet to delete the
   **PSSession** and release its resources.
 
