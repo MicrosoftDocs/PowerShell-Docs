@@ -141,7 +141,24 @@ the `New-Item` cmdlet creates a `temp.txt` file in all of the directories under 
 directory. The `New-Item` cmdlet outputs the items you created, which is piped to `Select-Object`
 to verify the paths of the newly created files.
 
-### Example 7: Use the -Force parameter to attempt to recreate folders
+### Example 7: Create a symbolic link to a file or folder
+
+This example creates a symbolic link to the Notice.txt file in the current folder.
+
+```powershell
+$link = New-Item -ItemType SymbolicLink -Path .\link -Target .\Notice.txt
+$link | Select-Object LinkType, Target
+```
+
+```Output
+LinkType     Target
+--------     ------
+SymbolicLink {.\Notice.txt}
+```
+
+In this example, **Target** is an alias for the **Value** parameter. The target of the symbolic link
+must be a fully-qualified path.
+### Example 8: Use the -Force parameter to attempt to recreate folders
 
 This example creates a folder with a file inside. Then, attempts to create the same folder using
 `-Force`. It will not overwrite the folder but simply return the existing folder object with the
@@ -166,7 +183,7 @@ Mode                LastWriteTime         Length Name
 -a----         5/1/2020   8:03 AM              0 TestFile.txt
 ```
 
-### Example 8: Use the -Force parameter to overwrite existing files
+### Example 9: Use the -Force parameter to overwrite existing files
 
 This example creates a file with a value and then recreates the file using `-Force`. This overwrites
 The existing file and it will lose it's content as you can see by the length property
