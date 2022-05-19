@@ -1,6 +1,6 @@
 ---
 locale: en-us
-ms.date: 12/06/2021
+ms.date: 05/18/2022
 schema: 2.0.0
 title: README
 ---
@@ -12,7 +12,7 @@ topics.
 
 Over time, namespaces appeared as:
 
-|         Module Name / PS Version          |  5.1  |  7.0  |  7.1  |  7.2  |
+|         Module Name / PS Version          |  5.1  |  7.0  |  7.2  |  7.3  |
 | ----------------------------------------- | :---: | :---: | :---: | :---: |
 | CimCmdlets                                |   X   |   X   |   X   |   X   |
 | ISE (introduced in 2.0)                   |   X   |       |       |       |

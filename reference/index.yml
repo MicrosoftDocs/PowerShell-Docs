@@ -57,8 +57,8 @@ productDirectory:
           text: Install PowerShell on Linux
         - url: /powershell/scripting/install/installing-powershell-on-macos
           text: Install PowerShell on macOS
-        - url: /powershell/scripting/whats-new/what-s-new-in-powershell-71
-          text: What's new in PowerShell 7.1
+        - url: /powershell/scripting/whats-new/what-s-new-in-powershell-72
+          text: What's new in PowerShell 7.2
     # Card 2
     - title: Windows PowerShell 5.1
       # imageSrc should be square in ratio with no whitespace
