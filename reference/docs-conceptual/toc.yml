@@ -233,8 +233,6 @@ items:
             href: whats-new/what-s-new-in-powershell-73.md
           - name: What's new in PowerShell 7.2
             href: whats-new/what-s-new-in-powershell-72.md
-          - name: What's new in PowerShell 7.1
-            href: whats-new/what-s-new-in-powershell-71.md
           - name: What's new in PowerShell 7.0
             href: whats-new/what-s-new-in-powershell-70.md
       - name: Migrating from Windows PowerShell 5.1 to PowerShell 7
