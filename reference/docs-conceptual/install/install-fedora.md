@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Fedora Linux
-ms.date: 05/18/2022
+ms.date: 05/19/2022
 title: Installing PowerShell on Fedora Linux
 ---
 # Installing PowerShell on Fedora Linux
@@ -32,9 +32,6 @@ curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.
 # Update the list of products
 sudo dnf check-update
 
-# Install a system component
-sudo dnf install compat-openssl10
-
 # Install PowerShell
 sudo dnf install -y powershell
 
@@ -55,14 +52,6 @@ The following shell command installs PowerShell 7.2:
 
 ```sh
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.4/powershell-lts-7.2.4-1.rh.x86_64.rpm
-```
-
-Use the following shell commands to download and install the 7.1.7 package. Change the URL to match
-the PowerShell version that you want to install.
-
-```sh
-sudo dnf install compat-openssl10
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.1.7/powershell-7.1.7-1.rhel.7.x86_64.rpm
 ```
 
 ## Uninstall PowerShell from Fedora
