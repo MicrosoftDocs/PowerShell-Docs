@@ -16,9 +16,6 @@
       { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7", "src": "7.0" },
       { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7", "src": "7.0" },
 
-      { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.1", "src": "7.1" },
-      { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.1", "src": "7.1" },
-
       { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.2", "src": "7.2" },
       { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.2", "src": "7.2" },
 
@@ -67,8 +64,6 @@
         "5.1/**.yml": "powershell-cmdlets",
         "7.0/**.md": "powershell-conceptual",
         "7.0/**.yml": "powershell-cmdlets",
-        "7.1/**.md": "powershell-conceptual",
-        "7.1/**.yml": "powershell-cmdlets",
         "7.2/**.md": "powershell-conceptual",
         "7.2/**.yml": "powershell-cmdlets",
         "7.3/**.md": "powershell-conceptual",
@@ -83,8 +78,6 @@
         "5.1/**.yml": "managed-reference",
         "7.0/**.md": "managed-reference",
         "7.0/**.yml": "managed-reference",
-        "7.1/**.md": "managed-reference",
-        "7.1/**.yml": "managed-reference",
         "7.2/**.md": "managed-reference",
         "7.2/**.yml": "managed-reference",
         "7.3/**.md": "managed-reference",
@@ -113,14 +106,6 @@
           "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
         ],
         "7.0/**.yml": [
-          "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
-          "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
-        ],
-        "7.1/**.md": [
-          "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
-          "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
-        ],
-        "7.1/**.yml": [
           "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
           "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
         ],
@@ -171,7 +156,6 @@
       "conceptual": { "moniker_range": ">=powershell-5.1" },
       "powershell-5.1": { "moniker_range": "powershell-5.1" },
       "powershell-7": { "moniker_range": "powershell-7" },
-      "powershell-7.1": { "moniker_range": "powershell-7.1" },
       "powershell-7.2": { "moniker_range": "powershell-7.2" },
       "powershell-7.3": { "moniker_range": "powershell-7.3" }
     },

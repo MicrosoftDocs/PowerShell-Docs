@@ -6,14 +6,14 @@ description: Search all PowerShell modules and cmdlets from Microsoft
 layout: ApiBrowserPage
 manager: sewhee
 ms.author: sewhee
-ms.date: 09/07/2021
+ms.date: 05/18/2022
 ms.devlang: powershell
 ms.manager: sewhee
 ms.product: powershell
 ms.topic: landing-page
-quickFilterColumn1: powershell-7.1,windowsserver2019-ps
+quickFilterColumn1: powershell-7.2,windowsserver2022-ps
 quickFilterColumn2: azps-7.5.0,win-mdop2-ps
-quickFilterColumn3: sqlserver-ps,systemcenter-ps-2019
+quickFilterColumn3: sqlserver-ps,systemcenter-ps-2022
 title: PowerShell Module Browser
 ---
 
