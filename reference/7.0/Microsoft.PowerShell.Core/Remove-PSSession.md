@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/28/2021
+ms.date: 05/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/remove-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-PSSession
@@ -77,13 +77,13 @@ the state of the **PSSession** is Closed.
 
 ## EXAMPLES
 
-### Example 1: Remove sessions by using IDs
+### Example 1: Remove sessions by ID
 
 ```powershell
 Remove-PSSession -Id 1, 2
 ```
 
-This command removes the **PSSessions** that have IDs 1 and 2.
+This command removes the **PSSessions** that have IDs `1` and `2`.
 
 ### Example 2: Remove all the sessions in the current session
 
@@ -97,7 +97,7 @@ Remove-PSSession -Session $s
 These commands remove all of the **PSSessions** in the current session. Although the three command
 formats look different, they have the same effect.
 
-### Example 3: Close sessions by using names
+### Example 3: Close sessions by name
 
 ```powershell
 $r = Get-PSSession -ComputerName Serv*
@@ -105,7 +105,7 @@ $r | Remove-PSSession
 ```
 
 These commands close the **PSSessions** that are connected to computers that have names that begin
-with Serv.
+with `Serv`.
 
 ### Example 4: Close sessions connected to a port
 
@@ -117,7 +117,7 @@ This command closes the **PSSessions** that are connected to port 90. You can us
 format to identify **PSSessions** by properties other than **ComputerName**, **Name**, **InstanceID**, and
 **ID**.
 
-### Example 5: Close a session based on instance ID
+### Example 5: Close a session by instance ID
 
 ```powershell
 Get-PSSession | Format-Table ComputerName, InstanceID  -AutoSize
@@ -156,8 +156,8 @@ instance ID.
 Function EndPSS { Get-PSSession | Remove-PSSession }
 ```
 
-This function deletes all of the **PSSessions** in the current session. After you add this function
-to your PowerShell profile, to delete all sessions, type `EndPSS`.
+This function closes every **PSSession** in the current session. After you add this function to your
+PowerShell profile, to delete all sessions, type `EndPSS`.
 
 ## PARAMETERS
 
@@ -167,7 +167,7 @@ Specifies an array of names of computers. This cmdlet closes the **PSSessions** 
 to the specified computers. Wildcard characters are permitted.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more remote
-computers. To specify the local computer, type the computer name, localhost, or a dot (`.`).
+computers. To specify the local computer, type the computer name, `localhost`, or a dot (`.`).
 
 ```yaml
 Type: System.String[]
@@ -202,7 +202,8 @@ Accept wildcard characters: False
 ### -Id
 
 Specifies an array of IDs of sessions. This cmdlet closes the **PSSessions** with the specified IDs.
-Type one or more IDs, separated by commas, or use the range operator (..) to specify a range of IDs.
+Type one or more IDs, separated by commas, or use the range operator (`..`) to specify a range of
+IDs.
 
 An ID is an integer that uniquely identifies the **PSSession** in the current session. It is easier
 to remember and type than the **InstanceId**, but it is unique only in the current session. To find

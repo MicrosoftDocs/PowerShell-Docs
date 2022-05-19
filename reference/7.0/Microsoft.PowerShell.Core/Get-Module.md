@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/27/2022
+ms.date: 05/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Module
@@ -17,7 +17,8 @@ List the modules imported in the current session or that can be imported from th
 ### Loaded (Default)
 
 ```
-Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All] [<CommonParameters>]
+Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All]
+ [<CommonParameters>]
 ```
 
 ### Available
@@ -38,8 +39,8 @@ Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-
 
 ```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-ListAvailable]
- [-SkipEditionCheck] [-Refresh] -CimSession <CimSession> [-CimResourceUri <Uri>] [-CimNamespace <String>]
- [<CommonParameters>]
+ [-SkipEditionCheck] [-Refresh] -CimSession <CimSession> [-CimResourceUri <Uri>]
+ [-CimNamespace <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,7 +48,7 @@ Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-
 The `Get-Module` cmdlet lists the PowerShell modules that have been imported, or that can be
 imported, into a PowerShell session. Without parameters, `Get-Module` gets modules that have been
 imported into the current session. The **ListAvailable** parameter is used to list the modules that
-are available to be imported from the paths specified in the PSModulePath environment variable
+are available to be imported from the paths specified in the **PSModulePath** environment variable
 (`$env:PSModulePath`).
 
 The module object that `Get-Module` returns contains valuable information about the module. You can
@@ -266,12 +267,12 @@ Get-Content $m.Path
 }
 ```
 
-The first command gets the PSModuleInfo object that represents BitsTransfer module. It saves the
+The first command gets the **PSModuleInfo** object that represents BitsTransfer module. It saves the
 object in the `$m` variable.
 
 The second command uses the `Get-Content` cmdlet to get the content of the manifest file in the
 specified path. It uses dot notation to get the path to the manifest file, which is stored in the
-Path property of the object. The output shows the contents of the module manifest.
+**Path** property of the object. The output shows the contents of the module manifest.
 
 ### Example 8: List files in module directory
 
@@ -304,7 +305,7 @@ Get-Module -PSSession $s -ListAvailable
 These commands get the modules that are installed on the Server01 computer.
 
 The first command uses the `New-PSSession` cmdlet to create a **PSSession** on the Server01
-computer. The command saves the **PSSession** in the $s variable.
+computer. The command saves the **PSSession** in the `$s` variable.
 
 The second command uses the **PSSession** and **ListAvailable** parameters of `Get-Module` to get
 the modules in the **PSSession** in the `$s` variable.
@@ -319,9 +320,9 @@ commands that use these cmdlets actually run the remote session. For more inform
 ### Example 10: Manage a computer that does not run the Windows operating system
 
 The commands in this example enable you to manage the storage systems of a remote computer that is
-not running the Windows operating system.
-In this example, because the administrator of the computer has installed the Module Discovery WMI
-provider, the CIM commands can use the default values, which are designed for the provider.
+not running the Windows operating system. In this example, because the administrator of the computer
+has installed the Module Discovery WMI provider, the CIM commands can use the default values, which
+are designed for the provider.
 
 ```powershell
 $cs = New-CimSession -ComputerName RSDGF03
@@ -350,9 +351,9 @@ computer. The session connects to WMI on the remote computer. The command saves 
 the `$cs` variable.
 
 The second command uses the CIM session in the `$cs` variable to run a `Get-Module` command on the
-RSDGF03 computer. The command uses the Name parameter to specify the Storage module. The command
-uses a pipeline operator (|) to send the Storage module to the `Import-Module` cmdlet, which imports
-it into the local session.
+RSDGF03 computer. The command uses the **Name** parameter to specify the Storage module. The command
+uses a pipeline operator (`|`) to send the Storage module to the `Import-Module` cmdlet, which
+imports it into the local session.
 
 The third command runs the `Get-Command` cmdlet on the `Get-Disk` command in the Storage module.
 When you import a CIM module into the local session, PowerShell converts the CDXML files that
@@ -367,8 +368,8 @@ the remote computer and returns them to the local session.
 ### -All
 
 Indicates that this cmdlet gets all modules in each module folder, including nested modules,
-manifest (.psd1) files, script module (.psm1) files, and binary module (.dll) files. Without this
-parameter, `Get-Module` gets only the default module in each module folder.
+manifest (`.psd1`) files, script module (`.psm1`) files, and binary module (`.dll`) files. Without
+this parameter, `Get-Module` gets only the default module in each module folder.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -518,8 +519,8 @@ Specifies names or name patterns of modules that this cmdlet gets. Wildcard char
 permitted. You can also pipe the names to `Get-Module`. You cannot specify the
 **FullyQualifiedName** parameter in the same command as a **Name** parameter.
 
-**Name** cannot accept a module GUID as a value.
-To return modules by specifying a GUID, use **FullyQualifiedName** instead.
+**Name** cannot accept a module GUID as a value. To return modules by specifying a GUID, use
+**FullyQualifiedName** instead.
 
 ```yaml
 Type: System.String[]
@@ -539,20 +540,19 @@ Gets the modules that support specified edition of PowerShell.
 
 The acceptable values for this parameter are:
 
-- Desktop
-- Core
+- `Desktop`
+- `Core`
 
-The Get-Module cmdlet checks **CompatiblePSEditions** property of **PSModuleInfo** object for the
+The `Get-Module` cmdlet checks **CompatiblePSEditions** property of **PSModuleInfo** object for the
 specified value and returns only those modules that have it set.
 
 > [!NOTE]
->
 > - **Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules
-> targeting versions of PowerShell running on full footprint editions of Windows such as Server Core
-> and Windows Desktop.
+>   targeting versions of PowerShell running on full footprint editions of Windows such as Server
+>   Core and Windows Desktop.
 > - **Core Edition:** Built on .NET Core and provides compatibility with scripts and modules
-> targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano
-> Server and Windows IoT.
+>   targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano
+>   Server and Windows IoT.
 
 ```yaml
 Type: System.String
@@ -619,10 +619,10 @@ Accept wildcard characters: False
 
 ### -SkipEditionCheck
 
-Skips the check of the `CompatiblePSEditions` field.
+Skips the check of the **CompatiblePSEditions** field.
 
 By default, `Get-Module` omits modules in the `%windir%\System32\WindowsPowerShell\v1.0\Modules`
-directory that do not specify `Core` in the `CompatiblePSEditions` field. When this switch is set,
+directory that do not specify `Core` in the **CompatiblePSEditions** field. When this switch is set,
 modules without `Core` are included, so that modules under the Windows PowerShell module path
 that are incompatible with PowerShell v6 and higher are returned.
 
@@ -659,9 +659,9 @@ You can pipe module names to this cmdlet.
 
 ### System.Management.Automation.PSModuleInfo
 
-This cmdlet returns objects that represent modules.
-When you specify the **ListAvailable** parameter, `Get-Module` returns a **ModuleInfoGrouping**
-object, which is a type of **PSModuleInfo** object that has the same properties and methods.
+This cmdlet returns objects that represent modules. When you specify the **ListAvailable**
+parameter, `Get-Module` returns a **ModuleInfoGrouping** object, which is a type of **PSModuleInfo**
+object that has the same properties and methods.
 
 ## NOTES
 
@@ -681,7 +681,7 @@ object, which is a type of **PSModuleInfo** object that has the same properties 
   [CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2).
 
 - `Get-Module` only gets modules in locations that are stored in the value of the **PSModulePath**
-  environment variable ($env:PSModulePath). The `Import-Module` cmdlet can import modules in other
+  environment variable (`$env:PSModulePath`). The `Import-Module` cmdlet can import modules in other
   locations, but you cannot use the `Get-Module` cmdlet to get them.
 
 - Also, starting in PowerShell 3.0, new properties have been added to the object that `Get-Module`

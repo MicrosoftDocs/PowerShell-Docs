@@ -16,8 +16,8 @@ Converts an object to a JSON-formatted string.
 
 ```
 ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
-[-EnumsAsStrings] [-AsArray] [-EscapeHandling <StringEscapeHandling>]
-[<CommonParameters>]
+ [-EnumsAsStrings] [-AsArray] [-EscapeHandling <StringEscapeHandling>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

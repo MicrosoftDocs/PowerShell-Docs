@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 03/10/2022
+ms.date: 05/18/2022
 ms.prod: powershell
 ms.topic: include
 ---
@@ -16,7 +16,7 @@ supported on. These versions are supported until either the version of
 - When both the version of the OS and the version of PowerShell have &#x2705;, that combination is
   supported
 
-|   Fedora    | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-current) | 7.3 (preview) |
+|   Fedora    | 7.0 (LTS) | 7.1 | 7.2 (LTS-current) | 7.3 (preview) |
 | ----------- | :-------: | :-----------: | :---------------: | :-----------: |
 | &#x2705; 34 | &#x274c;  |   &#x274c;    |     &#x2705;      |   &#x2705;    |
 | &#x274c; 33 | &#x274c;  |   &#x274c;    |     &#x274c;      |   &#x274c;    |
@@ -28,9 +28,9 @@ PowerShell has not been tested on Fedora version 35.
 
 PowerShell is supported on Fedora for the following processor architectures.
 
-|         Fedora         | 7.0 (LTS) | 7.1 (current) | 7.2 (LTS-current) | 7.3 (preview) |
-| ---------------------- | :-------: | :-----------: | :---------------: | :-----------: |
-| All supported versions |    x64    |      x64      |        x64        |      x64      |
+|         Fedora         | 7.0 (LTS) | 7.2 (LTS-current) | 7.3 (preview) |
+| ---------------------- | :-------: | :---------------: | :-----------: |
+| All supported versions |    x64    |        x64        |      x64      |
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-fedora]: https://fedoraproject.org/wiki/End_of_life

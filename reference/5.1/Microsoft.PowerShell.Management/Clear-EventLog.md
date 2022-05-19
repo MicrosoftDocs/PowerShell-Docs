@@ -16,7 +16,7 @@ Clears all entries from specified event logs on the local or remote computers.
 
 ```
 Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-WhatIf] [-Confirm]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

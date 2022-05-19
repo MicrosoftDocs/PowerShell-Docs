@@ -23,8 +23,9 @@ Be sure to try the examples on your computer to gain some of that hands-on exper
 ## Requirements
 
 The Active Directory PowerShell module is required by some of the examples shown in this chapter.
-The module is part of the Remote Server Administration Tools (RSAT) for Windows. For the 1809 (or
-higher) build of Windows, the RSAT tools are installed as a Windows feature.
+The module is part of the Remote Server Administration Tools (RSAT) for Windows. For the 1809 (or 
+higher) build of Windows, the RSAT tools are installed as a Windows feature. Support for Active Directory
+is not available on Windows Home.
 
 - For information about installing the RSAT tools, see [Windows Management modules][Windows Management modules].
 - For older versions of Windows, see [RSAT for Windows][RSAT for Windows].

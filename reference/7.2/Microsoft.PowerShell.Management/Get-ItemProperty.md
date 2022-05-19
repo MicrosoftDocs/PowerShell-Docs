@@ -25,7 +25,7 @@ Get-ItemProperty [-Path] <String[]> [[-Name] <String[]>] [-Filter <String>] [-In
 
 ```
 Get-ItemProperty -LiteralPath <String[]> [[-Name] <String[]>] [-Filter <String>]
-[-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

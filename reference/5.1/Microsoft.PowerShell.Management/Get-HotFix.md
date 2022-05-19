@@ -19,14 +19,14 @@ Gets the hotfixes that are installed on local or remote computers.
 
 ```
 Get-HotFix [[-Id] <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### DESCRIPTION
 
 ```
 Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
