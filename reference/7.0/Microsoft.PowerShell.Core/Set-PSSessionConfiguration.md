@@ -528,9 +528,9 @@ Accept wildcard characters: False
 
 ### -ShowSecurityDescriptorUI
 
-Indicates that this cmdlet a property sheet that helps you create a new SDDL for the session
-configuration. The property sheet appears after you run the `Set-PSSessionConfiguration` command and
-then restart the **WinRM** service.
+When this parameter is used the cmdlet opens a property sheet that helps you create a new SDDL for
+the session configuration. The property sheet appears after you run the `Set-PSSessionConfiguration`
+command and then restart the **WinRM** service.
 
 When you set permissions to the configuration, remember that users must have at least
 `Execute(Invoke)` permission to use the session configuration in a session.
@@ -585,6 +585,7 @@ Specifies the apartment state of the threading module to be used. Acceptable val
 Type: System.Threading.ApartmentState
 Parameter Sets: (All)
 Aliases:
+Accepted values: STA, MTA, Unknown
 
 Required: False
 Position: Named
