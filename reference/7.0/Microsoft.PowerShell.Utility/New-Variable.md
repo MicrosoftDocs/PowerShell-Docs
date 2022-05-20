@@ -259,8 +259,8 @@ Specifies the scope of the new variable. The acceptable values for this paramete
 - `Script` - Variables created in the script scope are accessible only within the script file or
   module they are created in.
 - `Private` - Variables created in the private scope cannot be accessed outside the scope they exist
-  in. You can use private scope to create a private version of an item with the same name in another
-  scope.
+  in. You can use the private scope to create a private version of an item with the same name in
+  another scope.
 - A number relative to the current scope (0 through the number of scopes, where 0 is the current
   scope, 1 is its parent, 2 the parent of the parent scope, and so on). Negative numbers cannot be
   used.
