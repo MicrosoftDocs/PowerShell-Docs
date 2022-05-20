@@ -46,8 +46,8 @@ PowerShell comes with hundreds of preinstalled commands. PowerShell command are 
 pronounced as "command-lets".
 
 The name of each cmdlet consists of a "Verb-Noun" pair; for example `Get-Process`. This naming
-convention makes it easier to understand what the cmdlet does. It also make it easier to find the
-command your looking for. When looking for a cmdlet to use, you can filter on the verb or noun.
+convention makes it easier to understand what the cmdlet does. It also makes it easier to find the
+command you're looking for. When looking for a cmdlet to use, you can filter on the verb or noun.
 
 ### Using cmdlets to explore PowerShell
 
