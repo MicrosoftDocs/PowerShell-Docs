@@ -1,7 +1,7 @@
 ---
 description: Describes how to create, use, and sort hash tables in PowerShell.
 Locale: en-US
-ms.date: 06/21/2021
+ms.date: 05/23/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Hash Tables
@@ -226,6 +226,62 @@ For example:
 ```powershell
 $hash["Number"]
 1
+```
+
+## Iterating over keys and values
+
+You can iterate over the keys in a hash table to process the values in several
+ways. Each of the examples in this section has identical output. They iterate
+over the `$hash` variable defined here:
+
+```powershell
+$hash = [ordered]@{ Number = 1; Shape = "Square"; Color = "Blue"}
+```
+
+> [!NOTE]
+> In these examples, `$hash` is defined as an
+> [ordered dictionary](#creating-ordered-dictionaries) to ensure the output is
+> always in the same order. These examples work the same for normal hash tables,
+> but the order of the output is not predictable.
+
+Each example returns a message for every key and its value:
+
+```output
+The value of 'Number' is: 1
+The value of 'Shape' is: Square
+The value of 'Color' is: Blue
+```
+
+This example uses a **foreach** block to iterate over the keys.
+
+```powershell
+foreach ($Key in $hash.Keys) {
+    "The value of '$Key' is: $($hash[$Key])"
+}
+```
+
+This example uses `ForEach-Object` to iterate over the keys.
+
+```powershell
+$hash.Keys | ForEach-Object {
+    "The value of '$_' is: $($hash[$_])"
+}
+```
+
+This example uses the **GetEnumerator** method to send each key-value pair
+through the pipeline to `ForEach-Object`.
+
+```powershell
+$hash.GetEnumerator() | ForEach-Object {
+    "The value of '$($_.Key)' is: $($_.Value)"
+}
+```
+
+This example uses the **GetEnumerator** and **ForEach** methods to iterate over
+each key-value pair.
+
+```powershell
+$hash.GetEnumerator().ForEach({"The value of '$($_.Key)' is: $($_.Value)"})
 ```
 
 ## Adding and Removing Keys and Values
