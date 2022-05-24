@@ -1,7 +1,7 @@
 ---
 description: Prevents a script from running without the required elements.
 Locale: en-US
-ms.date: 10/22/2021
+ms.date: 05/24/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Requires
@@ -17,7 +17,7 @@ Prevents a script from running without the required elements.
 The `#Requires` statement prevents a script from running unless the PowerShell
 version, modules (and version), or snap-ins (and version), and edition
 prerequisites are met. If the prerequisites aren't met, PowerShell doesn't run
-the script.
+the script or provide other runtime features, such as tab completion.
 
 ### Syntax
 
