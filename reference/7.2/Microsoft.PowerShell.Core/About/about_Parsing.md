@@ -32,13 +32,15 @@ expression mode and argument mode.
 > As PowerShell parses command input it tries to resolve the command names to
 > cmdlets or native executables. If a command name does not have an exact
 > match, PowerShell prepends `Get-` to the command as a default verb. For
-> example, PowerShell parses `Process` as `Get-Process`. It's not
+> example, PowerShell parses `Service` as `Get-Service`. It's not
 > recommended to use this feature for the following reasons:
 >
 > - It's inefficient. This causes PowerShell to search multiple times.
 > - External programs with the same name are resolved first, so you may not
->   execute intended cmdlet.
+>   execute the intended cmdlet.
 > - `Get-Help` and `Get-Command` don't recognize verb-less names.
+> - The command name may be a reserved word or a language keyword. `Process` is
+>   both, and will not resolve to `Get-Process`.
 
 ## Expression mode
 
