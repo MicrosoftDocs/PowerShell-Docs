@@ -47,7 +47,7 @@ The following steps describe how to create a PowerShell module.
        [DateTime] $end = $start,
        $firstDayOfWeek,
        [int[]] $highlightDay,
-       [string[]] $highlightDate = [DateTime]::Today.ToString()
+       [string[]] $highlightDate = [DateTime]::Today.ToString('yyyy-MM-dd')
        )
 
        #actual code for the function goes here see the end of the topic for the complete code sample
@@ -168,7 +168,7 @@ member.
 
  .Example
    # Highlight a range of days.
-   Show-Calendar -HighlightDay (1..10 + 22) -HighlightDate "December 25, 2008"
+   Show-Calendar -HighlightDay (1..10 + 22) -HighlightDate "2008-12-25"
 #>
 function Show-Calendar {
 param(
@@ -176,7 +176,7 @@ param(
     [DateTime] $end = $start,
     $firstDayOfWeek,
     [int[]] $highlightDay,
-    [string[]] $highlightDate = [DateTime]::Today.ToString()
+    [string[]] $highlightDate = [DateTime]::Today.ToString('yyyy-MM-dd')
     )
 
 ## Determine the first day of the start and end months.

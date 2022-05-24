@@ -32,13 +32,15 @@ expression mode and argument mode.
 > As PowerShell parses command input it tries to resolve the command names to
 > cmdlets or native executables. If a command name does not have an exact
 > match, PowerShell prepends `Get-` to the command as a default verb. For
-> example, PowerShell parses `Process` as `Get-Process`. It's not
+> example, PowerShell parses `Service` as `Get-Service`. It's not
 > recommended to use this feature for the following reasons:
 >
 > - It's inefficient. This causes PowerShell to search multiple times.
 > - External programs with the same name are resolved first, so you may not
->   execute intended cmdlet.
+>   execute the intended cmdlet.
 > - `Get-Help` and `Get-Command` don't recognize verb-less names.
+> - The command name may be a reserved word or a language keyword. `Process` is
+>   both, and will not resolve to `Get-Process`.
 
 ## Expression mode
 
@@ -99,7 +101,7 @@ uses one of the following syntaxes:
     `$HOME`, are considered part of the same argument. Enclose the variable
     name in braces (`{}`) to separate it from subsequent characters. For
     example, `${HOME}`.
-  - When the variable reference include member access, the first of any
+  - When the variable reference includes member access, the first of any
     additional characters is considered the start of a new argument. For
     example `$HOME.Length-more` results in two arguments: the value of
     `$HOME.Length` and string literal `-more`.
@@ -255,7 +257,7 @@ escaped using extra quotes or backslash (`\`) characters.
 For more information about the escape requirements, see the documentation for
 [ProcessStartInfo.Arguments](/dotnet/api/system.diagnostics.processstartinfo.arguments).
 
-The following examples using the `TestExe.exe` tool. This tool is used by the
+The following examples use the `TestExe.exe` tool. This tool is used by the
 Pester tests in the PowerShell source repo. The goal of these examples is to
 pass the directory path `"C:\Program Files (x86)\Microsoft\"` to a native
 command so that it received the path as a quoted string.
