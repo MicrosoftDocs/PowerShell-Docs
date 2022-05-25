@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 03/07/2022
+ms.date: 05/25/2022
 no-loc: [-File, -f, -Command, -c, -ConfigurationName, -config, -CustomPipeName, -EncodedCommand, -e, -ec, -ExecutionPolicy, -ex, -ep, -InputFormat, -inp, -if, -Interactive, -i, -Login, -l, -MTA, -NoExit, -noe, -NoLogo, -nol, -NonInteractive, -noni, -NoProfile, -nop, -OutputFormat, -o, -of, -SettingsFile, -settings, -SSHServerMode, -sshs, -STA, -Version, -v, -WindowStyle, -w, -WorkingDirectory, -wd, -Help]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -89,6 +89,13 @@ would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current
 execution directory: `pwsh -File %~dp0test.ps1 -TestParam %windir%`. If you
 instead used `.\test.ps1`, PowerShell would throw an error because it cannot
 find the literal path `.\test.ps1`
+
+> [!NOTE]
+> The **File** parameter cannot support scripts using a parameter that expects
+> an array of argument values. This, unfortunately, is a limitation of how a
+> native command gets argument values. When you call a native executable (such
+> as `powershell` or `pwsh`), it does not know what to do with an array, so
+> it's passed as a string.
 
 When the script file terminates with an `exit` command, the process exit code
 is set to the numeric argument used with the `exit` command. With normal

@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `powershell.exe` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 10/05/2020
+ms.date: 05/25/2022
 no-no-loc: [-Command, -ConfigurationName , -EncodedCommand, -ExecutionPolicy, -File, -Help, -InputFormat, -Mta, -NoExit, -NoLogo, -NonInteractive, -NoProfile, -OutputFormat, -PSConsoleFile, -Sta, -Version, -WindowStyle]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -156,6 +156,13 @@ In rare cases, you might need to provide a **Boolean** value for a parameter.
 It is not possible to pass an explicit boolean value for a switch parameter
 when running a script in this way. This limitation was removed in PowerShell 6
 (`pwsh.exe`).
+
+> [!NOTE]
+> The **File** parameter cannot support scripts using a parameter that expects
+> an array of argument values. This, unfortunately, is a limitation of how a
+> native command gets argument values. When you call a native executable (such
+> as `powershell` or `pwsh`), it does not know what to do with an array, so
+> it's passed as a string.
 
 #### -ExecutionPolicy \<ExecutionPolicy\>
 
