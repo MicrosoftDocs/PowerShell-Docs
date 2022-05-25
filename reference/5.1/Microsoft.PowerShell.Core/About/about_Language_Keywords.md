@@ -1,7 +1,7 @@
 ---
 description: Describes the keywords in the PowerShell scripting language.
 Locale: en-US
-ms.date: 06/25/2021
+ms.date: 05/25/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_keywords?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Language Keywords
@@ -547,20 +547,30 @@ do {<statement list>} until (<condition>)
 
 ## `using`
 
-Allows indicating which namespaces are used in the session. Classes and members
-require less typing to mention them. You can also include classes from modules.
+Allows you to indicate which namespaces are used in the session. Type names,
+classes, and members require less typing to reference them. You can also
+include classes from modules.
 
-Syntax #1:
+Namespace syntax:
 
 ```Syntax
 using namespace <.Net-framework-namespace>
 ```
 
-Syntax #2:
+Module syntax:
 
 ```Syntax
 using module <module-name>
 ```
+
+Assembly syntax:
+
+```Syntax
+using assembly <.NET-assembly-path>
+using assembly <.NET-framework-namespace>
+```
+
+For more information, see [about_Using](about_Using.md).
 
 ## `while`
 
