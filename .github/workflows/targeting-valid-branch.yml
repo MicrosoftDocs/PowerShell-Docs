@@ -5,8 +5,13 @@ on:
       - opened
       - reopened
       - synchronize
+permissions:
+  contents: read
+
 jobs:
   Test:
+    permissions:
+      contents: none
     runs-on: windows-latest
     defaults:
       run:
