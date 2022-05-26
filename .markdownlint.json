@@ -1,100 +1,128 @@
 {
-    "blanks-around-fences": true,
-    "blanks-around-headers": true,
-    "blanks-around-lists": true,
-    "code-block-style": {
-        "style": "fenced"
-    },
-    "code-fence-style": {
-        "style": "backtick"
-    },
-    "commands-show-output": true,
-    "fenced-code-language": false,
-    "first-line-h1": {
-        "front_matter_title": ""
-    },
-    "first-line-heading": true,
-    "header-increment": true,
-    "header-start-left": true,
-    "header-style": {
-        "style": "atx"
-    },
-    "hr-style": {
-        "style": "---"
-    },
-    "line-length": {
-        "line_length": 100,
-        "heading_line_length": 100,
-        "code_blocks": false,
-        "headings": true,
-        "strict": true,
-        "tables": false
-    },
-    "list-indent": true,
-    "list-marker-space": true,
-    "no-alt-text": true,
-    "no-bare-urls": true,
-    "no-blanks-blockquote": true,
-    "no-duplicate-header": {
-        "siblings_only": true
-    },
-    "no-emphasis-as-header": true,
-    "no-empty-links": true,
-    "no-hard-tabs": true,
-    "no-inline-html": {
-        "allowed_elements": [
-            "a",
-            "br",
-            "code",
-            "kbd",
-            "li",
-            "properties",
-            "sup",
-            "tags",
-            "ul"
-        ]
-    },
-    "no-missing-space-atx": true,
-    "no-missing-space-closed-atx": true,
-    "no-multiple-blanks": true,
-    "no-multiple-space-atx": true,
-    "no-multiple-space-blockquote": true,
-    "no-multiple-space-closed-atx": true,
-    "no-reversed-links": true,
-    "no-space-in-code": true,
-    "no-space-in-emphasis": true,
-    "no-space-in-links": true,
-    "no-trailing-punctuation": true,
-    "no-trailing-spaces": true,
-    "ol-prefix": {
-        "style": "one"
-    },
-    "proper-names": {
-        "code_blocks": false,
-        "names": [
-            "PowerShell",
-            "IntelliSense",
-            "Authenticode",
-            "CentOS",
-            "Contoso",
-            "CoreOS",
-            "Debian",
-            "Ubuntu",
-            "openSUSE",
-            "RHEL",
-            "JavaScript"
-        ]
-    },
-    "single-h1": {
-        "front_matter_title": ""
-    },
-    "single-trailing-newline": true,
-    "ul-indent": {
-        "indent": 2,
-        "start_indented": false
-    },
-    "ul-start-left": true,
-    "ul-style": {
-        "style": "dash"
-    }
+  "blanks-around-fences": true,
+  "blanks-around-headers": true,
+  "blanks-around-lists": true,
+  "code-block-style": {
+    "style": "fenced"
+  },
+  "code-fence-style": {
+    "style": "backtick"
+  },
+  "commands-show-output": true,
+  "docsmd.alert": true,
+  "docsmd.codesnippet": true,
+  "docsmd.column": true,
+  "docsmd.image": true,
+  "docsmd.moniker": true,
+  "docsmd.no-loc": true,
+  "docsmd.row": true,
+  "docsmd.securelinks": true,
+  "docsmd.syntax": true,
+  "docsmd.video": true,
+  "docsmd.xref": true,
+  "docsmd.zone": true,
+  "emphasis-style": {
+    "style": "underscore"
+  },
+  "fenced-code-language": false,
+  "first-line-h1": {
+    "front_matter_title": ""
+  },
+  "header-increment": true,
+  "header-start-left": true,
+  "header-style": {
+    "style": "atx"
+  },
+  "hr-style": {
+    "style": "---"
+  },
+  "line-length": {
+    "code_blocks": false,
+    "heading_line_length": 100,
+    "headings": true,
+    "line_length": 100,
+    "stern": true,
+    "tables": false
+  },
+  "list-indent": true,
+  "list-marker-space": true,
+  "no-alt-text": true,
+  "no-bare-urls": true,
+  "no-blanks-blockquote": true,
+  "no-duplicate-header": {
+    "siblings_only": true
+  },
+  "no-emphasis-as-header": true,
+  "no-empty-links": true,
+  "no-hard-tabs": true,
+  "no-inline-html": {
+    "allowed_elements": [
+      "a",
+      "br",
+      "code",
+      "kbd",
+      "li",
+      "properties",
+      "sup",
+      "tags",
+      "ul"
+    ]
+  },
+  "no-missing-space-atx": true,
+  "no-missing-space-closed-atx": true,
+  "no-multiple-blanks": true,
+  "no-multiple-space-atx": true,
+  "no-multiple-space-blockquote": true,
+  "no-multiple-space-closed-atx": true,
+  "no-reversed-links": true,
+  "no-space-in-code": true,
+  "no-space-in-emphasis": true,
+  "no-space-in-links": true,
+  "no-trailing-punctuation": {
+    "punctuation": ".,;:!。，；：！？"
+  },
+  "no-trailing-spaces": {
+    "br_spaces": 2,
+    "strict": true
+  },
+  "ol-prefix": {
+    "style": "one"
+  },
+  "proper-names": {
+    "code_blocks": false,
+    "names": [
+      "PowerShell",
+      "IntelliSense",
+      "Authenticode",
+      "CentOS",
+      "Contoso",
+      "CoreOS",
+      "Debian",
+      "Ubuntu",
+      "openSUSE",
+      "RHEL",
+      "JavaScript",
+      ".NET",
+      "NuGet",
+      "VS Code",
+      "Newtonsoft"
+    ]
+  },
+  "required-headers": false,
+  "single-h1": {
+    "front_matter_title": "",
+    "level": 1
+  },
+  "single-trailing-newline": true,
+  "strong-style": {
+    "style": "asterisk"
+  },
+  "ul-indent": {
+    "indent": 2,
+    "start_indented": false
+  },
+  "ul-start-left": true,
+  "ul-style": {
+    "style": "dash"
+  }
 }
