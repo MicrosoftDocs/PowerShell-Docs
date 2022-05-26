@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/12/2022
+ms.date: 05/26/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/copy-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Copy-Item
@@ -102,7 +102,7 @@ Copy-Item -Path "C:\Logfiles" -Destination "C:\Drawings\Logs" -Recurse
 This example uses the `Copy-Item` cmdlet to copy the `Get-Widget.ps1` script from the
 `\\Server01\Share` directory to the `\\Server12\ScriptArchive` directory. As part of the copy
 operation, the command changes the item name from `Get-Widget.ps1` to `Get-Widget.ps1.txt`, so it
-can be attached to email messages.
+can be safely attached to email messages.
 
 ```powershell
 Copy-Item "\\Server01\Share\Get-Widget.ps1" -Destination "\\Server12\ScriptArchive\Get-Widget.ps1.txt"
@@ -127,10 +127,10 @@ Copy-Item "D:\Folder001\test.log" -Destination "C:\Folder001_Copy\" -ToSession $
 A session is created to the remote computer named **Server01** with the credential of
 `Contoso\User01` and stores the results in the variable named `$Session`.
 
-The `Copy-Item` cmdlet copies the `D:\Folder002` folder to the
-`C:\Folder002_Copy` directory on the remote computer using the session information stored in the
-`$Session` variable. Any subfolders or files are not copied without using the **Recurse** switch.
-The operation creates the `Folder002_Copy` folder if it doesn't already exist.
+The `Copy-Item` cmdlet copies the `D:\Folder002` folder to the `C:\Folder002_Copy` directory on the
+remote computer using the session information stored in the `$Session` variable. Any subfolders or
+files are not copied without using the **Recurse** switch. The operation creates the
+`Folder002_Copy` folder if it doesn't already exist.
 
 ```powershell
 $Session = New-PSSession -ComputerName "Server02" -Credential "Contoso\User01"
@@ -159,9 +159,7 @@ A session is created to the remote computer named **Server01** with the credenti
 
 The `Copy-Item` cmdlet copies `scriptingexample.ps1` from the `D:\Folder004` folder to the
 `C:\Folder004_Copy` folder on the remote computer using the session information stored in the
-`$Session` variable. As part of the copy operation, the command changes the item name from
-`scriptingexample.ps1` to `scriptingexample_copy.ps1`, so it can be attached to email messages. The
-original file isn't deleted.
+`$Session` variable. The original file isn't deleted.
 
 ```powershell
 $Session = New-PSSession -ComputerName "Server04" -Credential "Contoso\User01"
