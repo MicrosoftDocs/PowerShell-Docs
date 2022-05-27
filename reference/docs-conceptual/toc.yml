@@ -44,8 +44,6 @@ items:
         href: install/PowerShell-in-Docker.md
       - name: Microsoft Update FAQ for PowerShell
         href: install/microsoft-update-faq.yml
-      - name: PowerShell support lifecycle
-        href: install/powershell-support-lifecycle.md
   - name: Learning PowerShell
     items:
       - name: PowerShell 101
@@ -224,7 +222,7 @@ items:
         href: learn/more-powershell-learning.md
       - name: Glossary
         href: learn/glossary.md
-  - name: What's New
+  - name: What's New in PowerShell
     expanded: true
     items:
       - name: What's new in PowerShell 7.x
@@ -392,24 +390,6 @@ items:
             href: community/2021-updates.md
           - name: 2020 Updates
             href: community/2020-updates.md
-      - name: Contributor's Guide
-        items:
-          - name: Overview
-            href: community/contributing/overview.md
-          - name: How to file a Docs issue
-            href: community/contributing/file-an-issue.md
-          - name: Get started writing docs
-            href: community/contributing/get-started-writing.md
-          - name: Submitting a pull request
-            href: community/contributing/pull-requests.md
-          - name: PowerShell-Docs style guide
-            href: community/contributing/powershell-style-guide.md
-          - name: Editorial checklist
-            href: community/contributing/editorial-checklist.md
-          - name: How we manage issues
-            href: community/contributing/managing-issues.md
-          - name: How we manage pull requests
-            href: community/contributing/managing-pull-requests.md
       - name: Digital art
         href: community/digital-art.md
   - name: PowerShell Gallery
@@ -1721,3 +1701,23 @@ items:
                     href: developer/prog-guide/runspace09-code-sample.md
                   - name: RunSpace10 Code Sample
                     href: developer/prog-guide/runspace10-code-sample.md
+  - name: Docs Contributor's Guide
+    items:
+      - name: Overview
+        href: community/contributing/overview.md
+      - name: How to file a Docs issue
+        href: community/contributing/file-an-issue.md
+      - name: Get started writing docs
+        href: community/contributing/get-started-writing.md
+      - name: Submitting a pull request
+        href: community/contributing/pull-requests.md
+      - name: PowerShell-Docs style guide
+        href: community/contributing/powershell-style-guide.md
+      - name: Editorial checklist
+        href: community/contributing/editorial-checklist.md
+      - name: How we manage issues
+        href: community/contributing/managing-issues.md
+      - name: How we manage pull requests
+        href: community/contributing/managing-pull-requests.md
+  - name: PowerShell support lifecycle
+    href: install/powershell-support-lifecycle.md
