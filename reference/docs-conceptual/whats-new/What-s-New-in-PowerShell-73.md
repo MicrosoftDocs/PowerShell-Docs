@@ -39,6 +39,9 @@ Tab completion improvements
   - **FilterHashtable** parameter for `Get-WinEvent`
   - **Property** parameter for the CIM cmdlets
   - Removes duplicates from member completion scenarios
+- Support forward slashes in network share (UNC path) completion (#17111) (#17117) (Thanks @sba923!)
+- Improve member auto completion (#16504) (Thanks @MartinGC94!)
+- Prioritize ValidateSet completions over Enums for parameters (#15257) (Thanks @MartinGC94!)
 
 Updated cmdlets
 
