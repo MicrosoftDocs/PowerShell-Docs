@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 05/18/2022
+ms.date: 05/31/2022
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -97,7 +97,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.2.4-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1
+msiexec.exe /package PowerShell-7.2.4-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
