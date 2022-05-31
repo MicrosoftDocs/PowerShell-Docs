@@ -20,12 +20,8 @@ items:
             href: install/installing-powershell-on-linux.md
           - name: Installing on Alpine
             href: install/install-alpine.md
-          - name: Installing on CentOS
-            href: install/install-centos.md
           - name: Installing on Debian
             href: install/install-debian.md
-          - name: Installing on Fedora
-            href: install/install-fedora.md
           - name: Installing on Raspberry Pi OS
             href: install/install-raspbian.md
           - name: Installing on RHEL

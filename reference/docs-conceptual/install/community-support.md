@@ -1,6 +1,6 @@
 ---
 description: PowerShell may run on Linux distributions that are not officially supported by Microsoft.
-ms.date: 09/22/2021
+ms.date: 05/31/2022
 title: Community support for PowerShell on Linux
 ---
 # Community support for PowerShell on Linux
@@ -21,15 +21,6 @@ documentation.
 The following distributions are supported by the community. Each distribution has its own community
 support mechanisms. Consult the distribution's website to find their community resources. You may
 also get help from these [PowerShell Community][pscommunity] resources.
-
-## CentOS Stream
-
-The documented steps to install PowerShell on [CentOS Linux](install-centos.md) may work on CentOS
-Stream. However, Microsoft does not officially support PowerShell on the CentOS Stream releases.
-CentOS Stream distributions are continuously updated. This falls into the category of an interim
-release.
-
-For more information, see [Comparing CentOS Linux and CentOS Stream][stream].
 
 ## Ubuntu interim releases
 
@@ -78,6 +69,5 @@ apt -y remove powershell
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 [arch-wiki]: https://wiki.archlinux.org/title/Arch_User_Repository#Installing_and_upgrading_packages
-[stream]: https://www.centos.org/cl-vs-cs/
 [pscommunity]:../community/community-support.md
 [interim]: https://ubuntu.com/about/release-cycle
