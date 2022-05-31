@@ -382,8 +382,18 @@ This feature implements a preference variable to enable errors produced by nativ
 PowerShell errors. This allows native command failures to produce error objects that are added to
 the PowerShell error stream that may terminate execution of the script without extra handling.
 
-With this feature enabled, native commands with non-zero exit codes issue errors according to
-`$ErrorActionPreference` when `$PSNativeCommandUseErrorActionPreference` is `$true`.
+To enable this feature, run the following commands:
+
+```powershell
+Enable-ExperimentalFeature PSNativeCommandErrorActionPreference
+```
+
+You must start a new PowerShell session for this change to be in effect. In the new session, you
+must set the new preference variable:
+
+```powershell
+$PSNativeCommandUseErrorActionPreference = $true
+```
 
 ## PSNativePSPathResolution
 
