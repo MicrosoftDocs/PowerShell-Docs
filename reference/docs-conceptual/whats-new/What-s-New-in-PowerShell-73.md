@@ -42,7 +42,6 @@ Tab completion improvements
 - Support forward slashes in network share (UNC path) completion (#17111) (#17117) (Thanks @sba923!)
 - Improve member auto completion (#16504) (Thanks @MartinGC94!)
 - Prioritize ValidateSet completions over Enums for parameters (#15257) (Thanks @MartinGC94!)
-- Add Custom Remote Connections Feature (#17011)
 
 Updated cmdlets
 
