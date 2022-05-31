@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell
-ms.date: 04/27/2022
+ms.date: 05/31/2022
 title: PowerShell Support Lifecycle
 ---
 # PowerShell Support Lifecycle
@@ -55,17 +55,9 @@ needing access but formal support and updates of any kind are no longer be provi
 
 [!INCLUDE [Alpine support](../../includes/alpine-support.md)]
 
-### CentOS Linux
-
-[!INCLUDE [CentOS support](../../includes/centos-support.md)]
-
 ### Debian Linux
 
 [!INCLUDE [Debian support](../../includes/debian-support.md)]
-
-### Fedora Linux
-
-[!INCLUDE [Fedora support](../../includes/fedora-support.md)]
 
 ### Red Hat Enterprise Linux (RHEL)
 

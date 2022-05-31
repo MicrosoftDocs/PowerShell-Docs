@@ -19,7 +19,7 @@ For the best compatibility, choose a long-term release (LTS) version.
 
 [!INCLUDE [Alpine support](../../includes/alpine-support.md)]
 
-For more information, see [Install .NET on Alpine](install-alpine.md).
+For more information, see [Install PowerShell on Alpine](install-alpine.md).
 
 ## Debian
 
