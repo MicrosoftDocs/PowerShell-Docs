@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on various Linux distributions
-ms.date: 11/08/2021
+ms.date: 05/31/2022
 title: Alternate ways to install PowerShell on Linux
 ---
 # Alternate ways to install PowerShell on Linux
@@ -94,8 +94,6 @@ distribution page for more information:
 
 - [Alpine](/dotnet/core/install/linux-alpine#dependencies)
 - [Debian](/dotnet/core/install/linux-debian#dependencies)
-- [CentOS](/dotnet/core/install/linux-centos#dependencies)
-- [Fedora](/dotnet/core/install/linux-fedora#dependencies)
 - [RHEL](/dotnet/core/install/linux-rhel#dependencies)
 - [SLES](/dotnet/core/install/linux-sles#dependencies)
 - [Ubuntu](/dotnet/core/install/linux-ubuntu#dependencies)

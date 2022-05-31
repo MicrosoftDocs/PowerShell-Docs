@@ -1,6 +1,6 @@
 ---
 description: Learn about the Linux distributions supported by PowerShell.
-ms.date: 11/08/2021
+ms.date: 05/31/2022
 title: Install PowerShell on Linux
 ---
 # Install PowerShell on Linux
@@ -21,14 +21,6 @@ For the best compatibility, choose a long-term release (LTS) version.
 
 For more information, see [Install .NET on Alpine](install-alpine.md).
 
-## CentOS
-
-CentOS 7 uses Yum as a package manager and CentOS 8 uses DNF.
-
-[!INCLUDE [CentOS support](../../includes/centos-support.md)]
-
-For more information, see [Install PowerShell on CentOS](install-centos.md).
-
 ## Debian
 
 Debian uses APT (Advanced Package Tool) as a package manager.
@@ -36,14 +28,6 @@ Debian uses APT (Advanced Package Tool) as a package manager.
 [!INCLUDE [Debian support](../../includes/debian-support.md)]
 
 For more information, see [Install PowerShell on Debian](install-debian.md).
-
-## Fedora
-
-Fedora uses DNF as its package manager.
-
-[!INCLUDE [Fedora support](../../includes/fedora-support.md)]
-
-For more information, see [Install .NET on Fedora](install-fedora.md).
 
 ## Red Hat Enterprise Linux (RHEL)
 
@@ -77,6 +61,9 @@ There are many distributions of Linux that are not officially supported by Micro
 PowerShell may be supported by the community for these releases. For more information, see
 [Community support for PowerShell on Linux][community].
 
+CentOS and Fedora distributions are no longer supported. The versions of these operating systems
+that were supported have reached their end-of-life dates. We are not supporting any newer versions.
+
 ## Alternate installation methods
 
 There are three other ways to install PowerShell on Linux, including Linux distributions that aren't
@@ -88,9 +75,7 @@ also try deploying PowerShell binaries directly using the Linux `tar.gz`. For mo
 [other-linux]: install-other-linux.md
 [lifecycle]: ../PowerShell-Support-Lifecycle.md
 [eol-alpine]: https://alpinelinux.org/releases/
-[eol-centos]: https://www.centos.org/centos-linux-eol/
 [eol-debian]: https://wiki.debian.org/DebianReleases
-[eol-fedora]: https://fedoraproject.org/wiki/End_of_life
 [eol-suse]: https://en.opensuse.org/Lifetime
 [eol-rhel]: https://access.redhat.com/support/policy/updates/errata/
 [eol-ubuntu]: https://wiki.ubuntu.com/Releases
