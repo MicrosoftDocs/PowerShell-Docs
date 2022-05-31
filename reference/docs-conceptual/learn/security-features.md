@@ -86,7 +86,7 @@ For more information about AppLocker and Windows Defender Application Control (W
 
 ### Changes in PowerShell 7.3
 
-- PowerShell 7.3 now supports the ability to allow/block PowerShell script files via the WDAC API.
+- PowerShell 7.3 now supports the ability to block or allow PowerShell script files via the WDAC API.
 
 ### Security Servicing Criteria
 
