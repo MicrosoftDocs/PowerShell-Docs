@@ -19,7 +19,7 @@ For the best compatibility, choose a long-term release (LTS) version.
 
 [!INCLUDE [Alpine support](../../includes/alpine-support.md)]
 
-For more information, see [Install .NET on Alpine](install-alpine.md).
+For more information, see [Install Powershell on Alpine](install-alpine.md).
 
 ## CentOS
 
@@ -43,7 +43,7 @@ Fedora uses DNF as its package manager.
 
 [!INCLUDE [Fedora support](../../includes/fedora-support.md)]
 
-For more information, see [Install .NET on Fedora](install-fedora.md).
+For more information, see [Install Powershell on Fedora](install-fedora.md).
 
 ## Red Hat Enterprise Linux (RHEL)
 
