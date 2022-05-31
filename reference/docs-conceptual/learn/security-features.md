@@ -78,11 +78,15 @@ For more information about AppLocker and Windows Defender Application Control (W
   in PowerShell 7.2, a change was made to ensure AppLocker rules take precedence over a
   `Set-ExecutionPolicy -ExecutionPolicy Bypass` command.
 
-- PowerShell 7.2 now disallows the use of te `Add-Type` cmdlet in a **NoLanguage** mode PowerShell
+- PowerShell 7.2 now disallows the use of the `Add-Type` cmdlet in a **NoLanguage** mode PowerShell
   session on a locked down machine.
 
 - PowerShell 7.2 now disallows scripts from using COM objects in AppLocker system lock down
   conditions. Cmdlet that use COM or DCOM internally are not affected.
+
+### Changes in PowerShell 7.3
+
+- PowerShell 7.3 now supports the ability to allow/block PowerShell script files via the WDAC API.
 
 ### Security Servicing Criteria
 
