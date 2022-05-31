@@ -30,23 +30,19 @@ The host-based telemetry data includes:
 - The geographic location of the host, based on the IP address
 
 > [!NOTE]
-> Application Insights uses the hosts IP address to determine the geographic location. The IP
-> address is never included in the telemetry data or stored in the database.
+> Application Insights uses the hosts IP address to determine the geographic
+> location. The IP address is never included in the telemetry data or stored in
+> the database.
 
 The following PowerShell activities are recorded:
 
-- Count of PowerShell Starts by type (API vs console)
+- Count of PowerShell Starts by type (API vs console) and parameters used
+  (parameter names only, not values)
 - Count of unique PowerShell usage
-- Count of the following execution types:
-  - Application (native commands)
-  - ExternalScript
-  - Script
-  - Function
-  - Cmdlet
 - Count of enabled Microsoft owned experimental features or experimental
   features shipped with PowerShell
 - Count of hosted sessions
-- Count of Microsoft owned modules loaded
+- Count of Microsoft owned modules loaded by version
 
 To opt-out of this telemetry, set the environment variable
 `$env:POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`.

@@ -7,7 +7,7 @@ metadata:
   title: Install PowerShell on Windows, Linux, and macOS
   description: Learn about installing PowerShell on Windows, Linux, and macOS.
   ms.topic: landing-page
-  ms.date: 08/17/2021
+  ms.date: 05/31/2022
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -44,12 +44,8 @@ landingContent:
             url: Installing-PowerShell-on-Linux.md
           - text: Alpine
             url: install-alpine.md
-          - text: CentOS
-            url: install-centos.md
           - text: Debian
             url: install-debian.md
-          - text: Fedora
-            url: install-fedora.md
           - text: Raspberry Pi OS
             url: install-raspbian.md
           - text: Red Hat Enterprise Linux

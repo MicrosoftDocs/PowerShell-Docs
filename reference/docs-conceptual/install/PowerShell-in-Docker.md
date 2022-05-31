@@ -1,6 +1,6 @@
 ---
 description: How to use PowerShell that is preinstalled in a Docker image.
-ms.date: 03/03/2020
+ms.date: 05/31/2022
 ms.devlang: powershell
 ms.topic: conceptual
 title: Using PowerShell in Docker
@@ -17,8 +17,8 @@ The released images require Docker 17.05 or newer. It is also expected that you 
 Docker without `sudo` or local administrative rights. Please follow Docker's official
 [instructions][install] to install `docker` correctly.
 
-The release containers derive from the official distribution image, such as `centos:7`, then install
-dependencies, and finally install the PowerShell package.
+The release containers derive from the official distribution image, then install dependencies, and
+finally install the PowerShell package.
 
 These containers live at [hub.docker.com/r/microsoft/powershell][docker-release].
 
