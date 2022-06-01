@@ -1,0 +1,15 @@
+trigger:
+- live
+- onboard-cabgen # delete after test!
+
+pr: none # Disable pull request triggers.
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: Content CI/ReferenceAutomation
+      ref: refs/heads/master
+
+extends:
+  template: PowerShell/cabgen.yml@templates
