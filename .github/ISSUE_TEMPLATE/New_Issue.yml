@@ -27,11 +27,10 @@ body:
     description: What version of the documentation is affected? (select all that apply)
     multiple: true
     options:
-      - 5.1
-      - 7.0
-      - 7.1
-      - 7.2
-      - 7.3 (preview)
+      - '5.1'
+      - '7.0'
+      - '7.2'
+      - '7.3 (preview)'
   validations:
     required: true
 - type: input
