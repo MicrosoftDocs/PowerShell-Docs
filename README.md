@@ -17,6 +17,10 @@ comments.
 | :---------------------------- | :---------------------------------- |
 | [![live-badge][]][live-badge] | [![main-badge][]][main-badge] |
 
+## PowerShell Updatable Help (CabGen) CI Build Status
+
+[![Build Status](https://apidrop.visualstudio.com/Content%20CI/_apis/build/status/PROD/CabGen(PowerShell_Updatable_Help)/GitHub_MicrosoftDocs_PowerShell-Docs/6ff7e8c3-dfc6-3ebd-da5a-d5e2ff43de8f_cabgen_Publish-Updatable-Help?repoName=MicrosoftDocs%2FPowerShell-Docs&branchName=live)](https://apidrop.visualstudio.com/Content%20CI/_build/latest?definitionId=5076&repoName=MicrosoftDocs%2FPowerShell-Docs&branchName=live)
+
 ## PowerShell Documentation
 
 Welcome to the PowerShell-Docs repository, the home of the official PowerShell documentation.
