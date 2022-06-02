@@ -368,11 +368,10 @@ You can pipe a value to `New-Variable`.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.PSVariable
+### None, System.Management.Automation.PSVariable
 
-When you use the **PassThru** parameter, `New-Variable` generates a
-**System.Management.Automation.PSVariable** object representing the new variable. Otherwise, this
-cmdlet does not generate any output.
+This cmdlet returns a **PSVariable** object representing the new variable, if you specify the
+**PassThru** parameter. Otherwise, it does not return any output.
 
 ## NOTES
 

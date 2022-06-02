@@ -395,9 +395,9 @@ This cmdlet does not accept any input.
 
 ## OUTPUTS
 
-### None
+### System.Xml.XmlElement
 
-This cmdlet does not generate any output.
+This cmdlet returns the created WSMan instance as an **XmlElement** object.
 
 ## NOTES
 

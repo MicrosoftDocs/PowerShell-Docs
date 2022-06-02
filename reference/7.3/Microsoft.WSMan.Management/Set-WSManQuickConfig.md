@@ -146,9 +146,10 @@ This cmdlet doesn't accept any input.
 
 ## OUTPUTS
 
-### None
+### System.String
 
-This cmdlet doesn't generate any output.
+This cmdlet returns a message as a **String** object describing the state of the configuration after
+the operation.
 
 ## NOTES
 

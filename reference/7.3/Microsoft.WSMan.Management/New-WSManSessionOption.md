@@ -271,7 +271,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### SessionOption
+### Microsoft.WSMan.Management.SessionOption
+
+This cmdlet returns the created WSMan session option as a **SessionOption** object.
 
 ## NOTES
 

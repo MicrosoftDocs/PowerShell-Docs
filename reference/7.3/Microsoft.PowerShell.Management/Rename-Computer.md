@@ -288,10 +288,10 @@ the **ComputerName** and **NewName** properties of objects to this cmdlet.
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.ComputerChangeInfo
+### None, Microsoft.PowerShell.Commands.RenameComputerChangeInfo
 
-This cmdlet returns a **ComputerChangeInfo** object, if you specify the **PassThru** parameter.
-Otherwise, it does not return any output.
+This cmdlet returns a **RenameComputerChangeInfo** object, if you specify the **PassThru**
+parameter. Otherwise, it does not return any output.
 
 ## NOTES
 
