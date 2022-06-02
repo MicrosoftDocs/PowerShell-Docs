@@ -195,6 +195,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+### None, System.TimeZoneInfo
+
+This cmdlet returns a **TimeZoneInfo** object, if you specify the **PassThru** parameter. Otherwise,
+it does not return any output.
+
 ## NOTES
 
 This cmdlet is only available on Windows platforms.

@@ -262,9 +262,9 @@ This cmdlet does not accept any input.
 
 ## OUTPUTS
 
-### None
+### System.Xml.XmlElement
 
-This cmdlet does not generate any output object.
+This cmdlet returns an **XmlElement** object representing the result of the test.
 
 ## NOTES
 
