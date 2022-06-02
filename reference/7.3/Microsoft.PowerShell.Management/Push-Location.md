@@ -186,11 +186,10 @@ You can pipe a string that contains a path (but not a literal path) to `Push-Loc
 
 ## OUTPUTS
 
-### None or System.Management.Automation.PathInfo
+### None, System.Management.Automation.PathInfo
 
-When you use the **PassThru** parameter, `Push-Location` generates a
-**System.Management.Automation.PathInfo** object that represents the location. Otherwise, this
-cmdlet does not generate any output.
+This cmdlet returns a **PathInfo** object representing the current path after the cmdlet's
+operation, if you specify the **PassThru** parameter. Otherwise, it does not return any output.
 
 ## NOTES
 

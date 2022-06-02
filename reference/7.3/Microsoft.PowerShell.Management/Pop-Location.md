@@ -127,9 +127,8 @@ You cannot pipe input to this cmdlet.
 
 ### None, System.Management.Automation.PathInfo
 
-This cmdlet generates a **System.Management.Automation.PathInfo** object that represents the
-location, if you specify the **PassThru** parameter. Otherwise, this cmdlet does not generate any
-output.
+This cmdlet returns a **PathInfo** object representing the current path after the cmdlet's
+operation, if you specify the **PassThru** parameter. Otherwise, it does not return any output.
 
 ## NOTES
 

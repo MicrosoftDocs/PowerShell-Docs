@@ -83,9 +83,9 @@ This cmdlet does not accept any input.
 
 ## OUTPUTS
 
-### None
+### System.String
 
-This cmdlet does not generate any output.
+This cmdlet returns a message string describing the configuration state for CredSSP.
 
 ## NOTES
 
