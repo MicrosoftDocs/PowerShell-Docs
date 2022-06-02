@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/18/2022
+ms.date: 06/02/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Module
@@ -120,8 +120,8 @@ This command gets all of the exported files for all available modules.
 ### Example 4: Get a module by its fully qualified name
 
 ```powershell
-$FullyQualifedName = @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"}
-Get-Module -FullyQualifiedName $FullyQualifedName | Format-Table -Property Name,Version
+$FullyQualifiedName = @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"}
+Get-Module -FullyQualifiedName $FullyQualifiedName | Format-Table -Property Name,Version
 ```
 
 ```Output
@@ -130,10 +130,14 @@ Name                             Version
 Microsoft.PowerShell.Management  3.1.0.0
 ```
 
-This command gets the **Microsoft.PowerShell.Management** module by specifying the fully qualified
+This example gets the **Microsoft.PowerShell.Management** module by specifying the fully qualified
 name of the module by using the **FullyQualifiedName** parameter. The command then pipes the results
 into the `Format-Table` cmdlet to format the results as a table with **Name** and **Version** as the
 column headings.
+
+In a fully qualified name for a module, the value **ModuleVersion** acts as minimum version. So, for
+this example, it matches any **Microsoft.PowerShell.Management** module that is version `3.1.0.0` or
+higher.
 
 ### Example 5: Get properties of a module
 
@@ -457,8 +461,8 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedName
 
-Specifies modules with names that are specified in the form of **ModuleSpecification** objects. See
-the Remarks section of
+Specifies modules with names that are specified in the form of **ModuleSpecification** objects.
+See the Remarks section of
 [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#microsoft-powershell-commands-modulespecification-ctor(system-collections-hashtable)).
 
 For example, the **FullyQualifiedModule** parameter accepts a module name that is specified in
@@ -468,8 +472,18 @@ either of these formats:
 - `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
 **ModuleName** and **ModuleVersion** are required, but **Guid** is optional. You cannot specify the
-**FullyQualifiedModule** parameter in the same command as a **Module** parameter. the two
+**FullyQualifiedModule** parameter in the same command as a **Module** parameter. The two
 parameters are mutually exclusive.
+
+The value can be a combination of strings and hash tables. The hash table has the following keys.
+
+- `ModuleName` - **Required** Specifies the module name.
+- `GUID` - **Optional** Specifies the GUID of the module.
+- It's also **Required** to specify one of the three below keys. These keys
+  can't be used together.
+  - `ModuleVersion` - Specifies a minimum acceptable version of the module.
+  - `RequiredVersion` - Specifies an exact, required version of the module.
+  - `MaximumVersion` - Specifies the maximum acceptable version of the module.
 
 > [!NOTE]
 > This parameter also accepts simpler forms of input:
