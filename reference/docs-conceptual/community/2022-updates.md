@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2022
-ms.date: 05/03/2022
+ms.date: 06/01/2022
 title: What's New in PowerShell-Docs for 2022
 ---
 # What's new in PowerShell Docs for 2022
@@ -10,6 +10,54 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2022-May
+
+New content
+
+- [Create a Crescendo configuration using the Crescendo cmdlets](/powershell/utility-modules/crescendo/advanced/using-crescendo-cmdlets)
+- [Overview of the SecretManagement and SecretStore modules](/powershell/utility-modules/secretmanagement/overview)
+- [Get started with the SecretStore module](/powershell/utility-modules/secretmanagement/get-started/using-secretstore)
+- [Understanding the SecretManagement module](/powershell/utility-modules/secretmanagement/get-started/understanding-secretmanagement)
+- [Managing a SecretStore vault](/powershell/utility-modules/secretmanagement/how-to/manage-secretstore)
+
+Content updates
+
+- Renamed the `staging` branch to `main`
+- Updated the Table of Contents for easier discovery
+  - Moved Support Lifecycle to the top level
+  - Moved Contributor Guide to the top level
+- 7.3-preview.4 release notes
+- Bulk formatting cleanup for many docs
+  - PowerShell-Docs content - 272 files
+  - Secrets management - 17 files
+- Updated the PSScriptAnalyzer README and deleted docs that were migrated to docs.microsoft.com
+- Removed CentOS and Fedora from docs - no longer supported
+- Retired 7.1 content - no longer supported
+  - Collapse release notes into diff article
+  - Delete or move content to archive repo
+
+### Top Community Contributors
+
+GitHub stats
+
+- 53 PRs merged (12 from Community)
+- 38 issues opened (21 from Community)
+- 39 issues closed (26 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|    GitHub Id     | PRs merged | Issues opened |
+| ---------------- | :--------: | :-----------: |
+| tommymaynard     |     5      |               |
+| naveensrinivasan |     2      |               |
+| rikurauhala      |     1      |               |
+| joshua6point0    |     1      |               |
+| rhorber          |     1      |               |
+| Raton-Laveur     |     1      |               |
+| StephenRoille    |     1      |               |
+| krlinus          |            |       2       |
 
 ## 2022-April
 
