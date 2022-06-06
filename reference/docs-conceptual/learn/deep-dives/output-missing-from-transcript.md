@@ -6,9 +6,9 @@ title: Limitations of PowerShell transcripts
 ---
 # Limitations of PowerShell transcripts
 
-Mixing and matching objects, strings, and Write-Host output with PowerShell transcription is
-complicated. There is a subtle interaction between the script and how transcription
-works with PowerShell pipelines that can have unexpected results.
+Mixing `Write-Host` output with the output objects, strings, and PowerShell transcription is
+complicated. There is a subtle interaction between the script and how transcription works with
+PowerShell pipelines that can have unexpected results.
 
 When you emit objects from your script the formatting of those objects is handled by `Out-Default`.
 But the formatting can occur after the script has completed and transcription has stopped. This
