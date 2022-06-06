@@ -7,14 +7,14 @@ title: Avoid using Invoke-Expression
 # Avoid using Invoke-Expression
 
 The `Invoke-Expression` cmdlet should only be used as a _last resort_. In most scenarios, safer and
-more robust alternatives are available. Forums like Stack Overflow are riddled with examples of
+more robust alternatives are available. Forums like Stack Overflow are filled with examples of
 `Invoke-Expression` misuse. Also note that **PSScriptAnalyzer** has a rule for this. For more
 information, see
 [AvoidUsingInvokeExpression](/powershell/utility-modules/psscriptanalyzer/rules/avoidusinginvokeexpression).
 
 Carefully consider the security implications. When a string from an untrusted source such as user
 input is passed directly to `Invoke-Expression`, arbitrary commands can be executed. Always consider
-a different, usually more robust and secure solution first.
+a different, more robust and secure solution first.
 
 ## Common scenarios
 
