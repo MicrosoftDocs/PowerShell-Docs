@@ -76,7 +76,7 @@ stack of things that need actual formatting, which sets a bit of state for any r
 that also may need formatting. This is why the second `Write-Output 5` doesn't get added to the
 transcript.
 
-## Scenario 2 - move the object emission to the beginning
+## Scenario 2 - Move the object emission to the beginning
 
 Consider the following script and its output:
 
@@ -125,7 +125,7 @@ End time: 20220606094609
 **********************
 ```
 
-## Scenario 3 - object emission at the end
+## Scenario 3 - Object emitted at the end of the script
 
 For this scenario, the output of the complex object is at the end of the script.
 
@@ -172,7 +172,7 @@ End time: 20220606100342
 **********************
 ```
 
-## One way to ensure full transcription
+## A way to ensure full transcription
 
 This example is a slight variation on the original scenario, but now everything is logged to the
 transcript. The original code is wrapped in a script block and the formatter explicitly invoked via
