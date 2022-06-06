@@ -40,13 +40,14 @@ Consider the following usage scenarios:
   You should only use this interactively. And, while this does make life simpler, this practice
   should be discouraged.
 
-- **Testing for parsing errors.** The PowerShell team tests for parse errors in the source code using
-  `Invoke-Expression` because that's the only way to turn a parse-time error into a runtime one.
+- **Testing for parsing errors.** The PowerShell team tests for parse errors in the source code
+  using `Invoke-Expression` because that's the only way to turn a parse-time error into a runtime
+  one.
 
 ## Conclusion
 
-The PowerShell team testing PowerShell has a reason for `Invoke-Expression`. And as an interpreted
-language, PowerShell must have a way to dynamically run itself. But there's reason to use
+Most other scripting languages have a way to evaluate a string as code, and as an interpreted
+language, PowerShell must have a way to dynamically run itself. But there's no good reason to use
 `Invoke-Expression` in a production environment.
 
 ## References

@@ -31,7 +31,7 @@ variables directly affect the underlying operating system and integration with o
 
 - Module names are case-insensitive (with exceptions)
 
-  The _name_ of the module a pure PowerShell concept and treated case-insensitively. However, there
+  The _name_ of the module is purely a PowerShell concept and treated case-insensitively. However, there
   is a strong mapping to a foldername, which can be case-sensitive in the underlying operating
   system. Importing two modules with the same case-insensitive name has the same behavior as
   importing two modules with the same name from different paths.
