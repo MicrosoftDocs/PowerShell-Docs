@@ -937,10 +937,10 @@ $a[-1]
 
 PowerShell doesn't call a type's true indexer for types that implement the generic
 `IDictionary<TKey, TValue>` interface. Instead, when given a key, PowerShell tests for the existence
-of the key with `TryGetValue()`, which returns `$null` when the key doesn't exist.
+of the key using `TryGetValue()`, which returns `$null` when the key doesn't exist.
 
-By contrast, if you call the type's true indexer using the `Item(<key>)` method, an exception is
-thrown when the key doesn't exist.
+By contrast, if you call the type's true indexer using `Item(<key>)`, the method throws an exception
+when the key doesn't exist.
 
 The following example illustrates the difference.
 

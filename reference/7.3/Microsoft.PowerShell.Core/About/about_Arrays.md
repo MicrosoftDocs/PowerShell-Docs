@@ -956,10 +956,10 @@ For more information, see [System.Tuple](/dotnet/api/system.tuple).
 
 PowerShell doesn't call a type's true indexer for types that implement the generic
 `IDictionary<TKey, TValue>` interface. Instead, when given a key, PowerShell tests for the existence
-of the key with `TryGetValue()`, which returns `$null` when the key doesn't exist.
+of the key using `TryGetValue()`, which returns `$null` when the key doesn't exist.
 
-By contrast, if you call the type's true indexer using the `Item(<key>)` method, an exception is
-thrown when the key doesn't exist.
+By contrast, if you call the type's true indexer using `Item(<key>)`, the method throws an exception
+when the key doesn't exist.
 
 The following example illustrates the difference.
 
@@ -968,12 +968,7 @@ PS> [Collections.Generic.Dictionary[string, int]]::new()['nosuchkey']
 # No output ($null)
 
 PS> [Collections.Generic.Dictionary[string, int]]::new().Item('nosuchkey')
-Exception getting "Item": "The given key 'nosuchkey' was not present in the dictionary."
-At line:1 char:1
-+ [Collections.Generic.Dictionary[string, int]]::new().Item('nosuchkey' ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+ CategoryInfo          : NotSpecified: (:) [], GetValueInvocationException
-+ FullyQualifiedErrorId : ExceptionWhenGetting
+GetValueInvocationException: Exception getting "Item": "The given key 'nosuchkey' was not present in the dictionary."
 ```
 
 ## Member-access enumeration
