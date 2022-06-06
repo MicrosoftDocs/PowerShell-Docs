@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/02/2021
+ms.date: 06/03/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Send-MailMessage
@@ -382,9 +382,8 @@ Accept wildcard characters: False
 
 ### -To
 
-The **To** parameter is required. This parameter specifies the recipient's email address. If there
-are multiple recipients, separate their addresses with a comma (`,`). Enter names (optional) and the
-email address, such as `Name <someone@fabrikam.com>`.
+The **To** parameter is required. This parameter specifies the recipient's email address. Enter
+names (optional) and the email address, such as `Name <someone@fabrikam.com>`.
 
 ```yaml
 Type: System.String[]
@@ -440,4 +439,3 @@ This cmdlet does not generate any output.
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
 
 [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
-
