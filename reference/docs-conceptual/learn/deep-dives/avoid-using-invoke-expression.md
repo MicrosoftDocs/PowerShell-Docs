@@ -22,7 +22,9 @@ Consider the following usage scenarios:
 
 - **It's simpler to redirect PowerShell to execute something naturally.** For example:
 
-  `Get-Content ./file.ps1 | Invoke-Expression`.
+  ```powershell
+  Get-Content ./file.ps1 | Invoke-Expression
+  ```
 
   These cases are trivially avoidable. The script or code already exists in file or AST form, so you
   should write a script with parameters and invoke it directly instead of using `Invoke-Expression`
