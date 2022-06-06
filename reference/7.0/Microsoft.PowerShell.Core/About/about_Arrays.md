@@ -1,7 +1,7 @@
 ---
 description: Describes arrays, which are data structures designed to store collections of items.
 Locale: en-US
-ms.date: 03/16/2022
+ms.date: 06/06/2022
 no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -951,6 +951,30 @@ single object when passed through the pipeline or by parameters that support
 arrays of objects.
 
 For more information, see [System.Tuple](/dotnet/api/system.tuple).
+
+## Indexing .NET types that implement `IDictionary<TKey, TValue>`
+
+PowerShell doesn't call a type's true indexer for types that implement the generic
+`IDictionary<TKey, TValue>` interface. Instead, when given a key, PowerShell tests for the existence
+of the key with `TryGetValue()`, which returns `$null` when the key doesn't exist.
+
+By contrast, if you call the type's true indexer using the `Item(<key>)` method, an exception is
+thrown when the key doesn't exist.
+
+The following example illustrates the difference.
+
+```powershell
+PS> [Collections.Generic.Dictionary[string, int]]::new()['nosuchkey']
+# No output ($null)
+
+PS> [Collections.Generic.Dictionary[string, int]]::new().Item('nosuchkey')
+Exception getting "Item": "The given key 'nosuchkey' was not present in the dictionary."
+At line:1 char:1
++ [Collections.Generic.Dictionary[string, int]]::new().Item('nosuchkey' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : NotSpecified: (:) [], GetValueInvocationException
++ FullyQualifiedErrorId : ExceptionWhenGetting
+```
 
 ## Member-access enumeration
 
