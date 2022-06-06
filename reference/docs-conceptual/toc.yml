@@ -102,6 +102,12 @@ items:
             href: learn/deep-dives/write-progress-across-multiple-threads.md
           - name: Add Credential support to PowerShell functions
             href: learn/deep-dives/add-credentials-to-powershell-functions.md
+          - name: Avoid assigning variables in expressions
+            href: learn/deep-dives/avoid-assigning-variables-in-expressions.md
+          - name: Avoid using Invoke-Expression
+            href: learn/deep-dives/avoid-using-invoke-expression.md
+          - name: Limitations of PowerShell transcripts
+            href: learn/deep-dives/output-missing-from-transcript.md
       - name: Sample scripts
         items:
           - name: Sample scripts for administration
