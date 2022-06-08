@@ -1,0 +1,35 @@
+# This workflow verifies that an author submitting a pull request to the main
+# branch to modify repository files is authorized to do so; only users with
+# maintainer or admin rights may modify the actions or the workflow definitions.
+name: Authorization
+on:
+  pull_request_target:
+    branches:
+      - main
+    paths:
+      - /.github/actions/**
+      - /.github/workflows/**
+      - /.github/CODEOWNERS
+      - /.localization-config
+      - /openpublishing*
+      - /*.yml
+      - LICENSE*
+      - ThirdPartyNotices
+permissions:
+  contents: read
+jobs:
+  Test:
+    name: Check Repo File Permissions
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Checkout Repository
+        id: checkout_repo
+        uses: actions/checkout@v3
+      - name: Authorized to Modify Repo Files?
+        uses: ./.github/actions/verification/authorization/v1
+        with:
+          token: ${{ github.token }}
+          target: path:.github/actions/,.github/workflows/,.github/CODEOWNERS,.localization-config,openpublishing*,*.yml,LICENSE*,ThirdPartyNotices

@@ -1,0 +1,80 @@
+name: Expectations
+description: |
+  Writes a comment on newly opened PRs by community members to set their expectations for how the PR
+  review process will proceed.
+author: PowerShell Docs Team
+inputs:
+  repository:
+    description: |
+      The full name of a repository; to target `https://github.com/MicrosoftDocs/PowerShell-Docs`,
+      the value should be `MicrosoftDocs/PowerShell-Docs`.
+    required: true
+    default: ${{ github.repository }}
+  message_body:
+    description: |
+      The message in Markdown to write as the comment body. This input should not be used with
+      **message_path**; if it is, the action will write a warning in the logs and use the
+      **message_body** when commenting on community Pull Requests.
+    required: false
+  message_path:
+    description: |
+      The path to the Markdown file to write as the comment body. This input should not be used with
+      **message_body**; if it is, the action will write a warning in the logs and use the
+      **message_body** when commenting on community Pull Requests.
+    required: false
+  token:
+    description: |
+      The `GITHUB_TOKEN` to use to authenticate API calls to verify whether a Pull Request's author
+      is a maintainer or community member and to comment on open community Pull Requests.
+
+      This **must** be passed to the action.
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: pwsh
+      env:
+        INPUT_REPOSITORY: ${{ inputs.repository }}
+        INPUT_MESSAGE_BODY: ${{ inputs.message_body }}
+        INPUT_MESSAGE_PATH: ${{ inputs.message_path }}
+        GITHUB_TOKEN: ${{ inputs.token }}
+      run: |
+        Write-Output "::group::Generic Setup"
+        $ActionPath = Resolve-Path '${{ github.action_path }}' | Select-Object -ExpandProperty Path
+        $ParameterHandlers = Join-Path -Path $ActionPath -ChildPath Parameters.psd1
+        | ForEach-Object -Process { Import-PowerShellDataFile -Path $_ }
+        | Select -ExpandProperty Parameters
+        | ForEach-Object -Process { [pscustomobject]$_ }
+        "Action Path: $ActionPath"
+
+        $ActionRootPath = Split-Path -Parent -Path $ActionPath
+        while ((Split-Path -Leaf -Path $ActionRootPath) -ne 'actions') {
+          $ActionRootPath = Split-Path -Parent -Path $ActionRootPath
+        }
+        "Action Root Path: $ActionRootPath"
+        
+        $JoinPathParams = @{
+          Path = $ActionRootPath
+          ChildPath = '.pwsh'
+        }
+
+        $ModulePath = Join-Path @JoinPathParams -AdditionalChildPath @(
+          'module'
+          'gha.psd1'
+        )
+        "Module Path: $ModulePath"
+        Import-Module -Name $ModulePath -PassThru | Format-List
+
+        $ScriptPath = Join-Path @JoinPathParams -AdditionalChildPath @(
+          'scripts',
+          'Add-Expectations.ps1'
+        )
+        "Script Path: $ScriptPath"
+        Write-Output "::endgroup::"
+        Write-Output "::group::Parameter Validation"
+        $ErrorView = 'DetailedView'
+        $Parameters = Get-ActionScriptParameter -ParameterHandler $ParameterHandlers
+        Write-Output "::endgroup::"
+        Write-Output "::group::Add Expectations"
+        . $ScriptPath @Parameters
+        Write-Output "::endgroup::"
