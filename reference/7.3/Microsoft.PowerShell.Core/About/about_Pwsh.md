@@ -23,6 +23,7 @@ pwsh[.exe]
    [-Command { - | <script-block> [-args <arg-array>]
                  | <string> [<CommandParameters>] } ]
    [-ConfigurationName <string>]
+   [-ConfigurationFile <string>]
    [-CustomPipeName <string>]
    [-EncodedCommand <Base64EncodedCommand>]
    [-ExecutionPolicy <ExecutionPolicy>]
@@ -196,6 +197,13 @@ endpoint registered on the local machine including the default PowerShell
 remoting endpoints or a custom endpoint having specific user role capabilities.
 
 Example: `pwsh -ConfigurationName AdminRoles`
+
+### -ConfigurationFile
+
+Specifies a session configuration (`.pssc`) file path. The configuration
+contained in the configuration file will be applied to the PowerShell session.
+
+Example: `pwsh -ConfigurationFile "C:\ProgramData\PowerShell\MyConfig.pssc"`
 
 ### -CustomPipeName
 

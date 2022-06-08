@@ -28,6 +28,14 @@ Improved error handling
 - Specify the executable path as `TargetObject` for non-zero exit code ErrorRecord (#16108) (Thanks
   @rkeithhill!)
 
+Session and remoting improvements
+
+- Add `-Options` to the PSRP over SSH commands to allow passing OpenSSH options directly (#12802)
+  (Thanks @BrannenGH!)
+- Add `-ConfigurationFile` parameter to `pwsh` to allow starting a new process with the session
+  configuration defined in a `.pssc` file (#17447)
+- Add support for using `New-PSSessionConfigurationFile` on non-Windows platforms (#17447)
+
 Tab completion improvements
 
 - Fix tab completion within the script block specified for the `ValidateScriptAttribute`. (#14550)
@@ -55,8 +63,6 @@ Updated cmdlets
 - Add `clean` block to script block as a peer to `begin`, `process`, and `end` to allow easy
   resource cleanup (#15177)
   (#16545) (Thanks @Thomas-Yu!)
-- Add `-Options` to the PSRP over SSH commands to allow passing OpenSSH options directly (#12802)
-  (Thanks @BrannenGH!)
 
 For a complete list of changes, see the [Change Log][CHANGELOG] in the GitHub repository.
 

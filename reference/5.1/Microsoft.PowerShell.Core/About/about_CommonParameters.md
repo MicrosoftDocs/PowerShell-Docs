@@ -153,7 +153,7 @@ in PowerShell 6 and beyond.
 
 > [!NOTE]
 > The **ErrorAction** parameter overrides, but does not replace the value of
-> the `$ErrorAction` preference variable when the parameter is used in a
+> the `$ErrorActionPreference` variable when the parameter is used in a
 > command to run a script or function.
 
 ### -ErrorVariable

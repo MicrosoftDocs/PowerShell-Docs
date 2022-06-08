@@ -31,8 +31,6 @@ New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Gui
 
 ## DESCRIPTION
 
-> **This cmdlet is only available on the Windows platform.**
-
 The `New-PSSessionConfigurationFile` cmdlet creates a file of settings that define a session
 configuration and the environment of sessions that are created by using the session configuration.
 To use the file in a session configuration, use the **Path** parameter of the
@@ -60,7 +58,9 @@ For more information about session configurations and session configuration file
 [about_Session_Configurations](About/about_Session_Configurations.md) and
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
-This cmdlet was introduced in PowerShell 3.0.
+This cmdlet was introduced in PowerShell 3.0. Starting with PowerShell 6.0, this cmdlet was only
+available on the Windows platform. PowerShell 7.3 made this cmdlet available on all supported
+platforms.
 
 ## EXAMPLES
 
@@ -1069,8 +1069,6 @@ You cannot pipe any objects to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
-
-This cmdlet is only available on Windows platforms.
 
 - Parameters, such as **VisibleCmdlets** and **VisibleProviders**, do not import items into the
   session. Instead, they select from among the items imported into the session. For example, if the
