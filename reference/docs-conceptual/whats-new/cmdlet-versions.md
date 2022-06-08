@@ -124,7 +124,7 @@ This is a work in progress. Please help us keep this information fresh.
 | New-ModuleManifest                | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                            |
 | New-PSRoleCapabilityFile          | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                            |
 | New-PSSession                     | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                            |
-| New-PSSessionConfigurationFile    | &#x2705; | &#x2705; | &#x2705; | &#x2705; | Windows only                               |
+| New-PSSessionConfigurationFile    | &#x2705; | &#x2705; | &#x2705; | &#x2705; | Added Linux support in 7.3                 |
 | New-PSSessionOption               | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                            |
 | New-PSTransportOption             | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                            |
 | Out-Default                       | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                            |

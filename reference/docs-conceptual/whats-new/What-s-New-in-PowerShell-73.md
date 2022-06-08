@@ -34,6 +34,7 @@ Session and remoting improvements
   (Thanks @BrannenGH!)
 - Add `-ConfigurationFile` parameter to `pwsh` to allow starting a new process with the session
   configuration defined in a `.pssc` file (#17447)
+- Add support for using `New-PSSessionConfigurationFile` on non-Windows platforms (#17447)
 
 Tab completion improvements
 
