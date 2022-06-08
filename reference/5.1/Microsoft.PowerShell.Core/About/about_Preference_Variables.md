@@ -399,7 +399,6 @@ The valid values are as follows:
 - **Stop**: Displays the error message and stops executing. In addition to the
   error generated, the **Stop** value generates an ActionPreferenceStopException
   object to the error stream.
-  stream
 - **Suspend**: Automatically suspends a workflow job to allow for further
   investigation. After investigation, the workflow can be resumed. The
   **Suspend** value is intended for per-command use, not for use as saved
