@@ -27,7 +27,7 @@ The following are the basic rules of scope:
 - An item is visible in the scope in which it was created and in any child
   scopes, unless you explicitly make it private.
 
-- You can declare variables, aliases, functions, and PowerShell drives in a
+- You can declare variables, aliases, functions, and PowerShell drives for a
   scope outside of the current scope.
 
 - An item that you created within a scope can be changed only in the scope in
@@ -54,10 +54,6 @@ PowerShell supports the following scopes:
 - Script: The scope that is created while a script file runs. Only the commands
   in the script run in the script scope. To the commands in a script, the
   script scope is the local scope.
-
-> [!NOTE]
-> **Private** is not a scope. It is an [option](#private-option) that changes
-> the visibility of an item outside of the scope where the item is defined.
 
 ## Parent and Child Scopes
 
@@ -114,6 +110,11 @@ optional scope modifiers:
   scope is always the **Local** scope.
 - `private:` - Specifies that the name is **Private** and only visible to the
   current scope.
+
+  > [!NOTE]
+  > `private` is not a scope. It is an [option](#private-option) that changes
+  > the visibility of an item outside of the scope where the item is defined.
+
 - `script:` - Specifies that the name exists in the **Script** scope.
   **Script** scope is the nearest ancestor script file's scope or **Global** if
   there is no nearest ancestor script file.
@@ -164,6 +165,40 @@ modifier:
 
 ```powershell
 $global:a = "one"
+Get-Variable a | Format-List *
+```
+
+Notice the **Visibility** and **Options** property values.
+
+```Output
+Name        : a
+Description :
+Value       : one
+Visibility  : Public
+Module      :
+ModuleName  :
+Options     : None
+Attributes  : {}
+```
+
+Compare that to a private variable:
+
+```powershell
+$private:pVar = 'Private variable'
+Get-Variable pVar | Format-List *
+```
+
+Using the `private` scope modifier sets the **Options** property to `Private`.
+
+```Output
+Name        : pVar
+Description :
+Value       : Private variable
+Visibility  : Public
+Module      :
+ModuleName  :
+Options     : Private
+Attributes  : {}
 ```
 
 To create the same variable in the **script** scope, use the `script:` scope
@@ -429,7 +464,7 @@ breakpoint in the script, you enter the script scope.
 ### Private Option
 
 Aliases and variables have an **Option** property that can take a value of
-**Private**. Items that have the **Private** option can be viewed and changed
+`Private`. Items that have the **Private** option can be viewed and changed
 in the scope in which they are created, but they cannot be viewed or changed
 outside that scope.
 
@@ -438,7 +473,7 @@ scope and then run a script, `Get-Variable` commands in the script do not
 display the private variable. Using the global scope modifier in this instance
 does not display the private variable.
 
-You can use the Option parameter of the `New-Variable`, `Set-Variable`,
+You can use the **Option** parameter of the `New-Variable`, `Set-Variable`,
 `New-Alias`, and `Set-Alias` cmdlets to set the value of the Option property to
 Private.
 
@@ -447,10 +482,10 @@ Private.
 The **Visibility** property of a variable or alias determines whether you can
 see the item outside the container, in which it was created. A container could
 be a module, script, or snap-in. Visibility is designed for containers in the
-same way that the **Private** value of the **Option** property is designed for
+same way that the `Private` value of the **Option** property is designed for
 scopes.
 
-The **Visibility** property takes the **Public** and **Private** values. Items
+The **Visibility** property takes the `Public` and `Private` values. Items
 that have private visibility can be viewed and changed only in the container in
 which they were created. If the container is added or imported, the items that
 have private visibility cannot be viewed or changed.
@@ -576,14 +611,14 @@ Local
 ### Example 4: Creating a Private Variable
 
 A private variable is a variable that has an **Option** property that has a
-value of *Private*. *Private* variables are inherited by the child scope,
+value of `Private`. `Private` variables are inherited by the child scope,
 but they can only be viewed or changed in the scope in which they were created.
 
 The following command creates a private variable called `$ptest` in the local
 scope.
 
 ```powershell
-New-Variable -Name ptest -Value 1 -Option private
+New-Variable -Name ptest -Value 1 -Option Private
 ```
 
 You can display and change the value of `$ptest` in the local scope.

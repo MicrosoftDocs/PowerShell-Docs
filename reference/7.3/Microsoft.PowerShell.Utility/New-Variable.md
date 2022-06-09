@@ -23,8 +23,8 @@ New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Opti
 
 ## DESCRIPTION
 
-The `New-Variable` cmdlet creates a new variable in Windows PowerShell. You can assign a value to
-the variable while creating it or assign or change the value after it is created.
+The `New-Variable` cmdlet creates a new variable in PowerShell. You can assign a value to the
+variable while creating it or assign or change the value after it is created.
 
 You can use the parameters of `New-Variable` to set the properties of the variable, set the scope of
 a variable, and determine whether variables are public or private.
@@ -89,6 +89,10 @@ will be available in the current scope and any new scopes created and cannot be 
 
 ### Example 5: Create a private variable
 
+This command demonstrates the behavior of a private variable in a module. The module contains the
+`Get-Counter` cmdlet, which has a private variable named Counter. The command uses the
+**Visibility** parameter with a value of Private to create the variable.
+
 ```
 PS C:\> New-Variable -Name counter -Visibility Private
 
@@ -118,15 +122,14 @@ Counter1     3.1415
 ...
 ```
 
-This command demonstrates the behavior of a private variable in a module. The module contains the
-`Get-Counter` cmdlet, which has a private variable named Counter. The command uses the
-**Visibility** parameter with a value of Private to create the variable.
-
 The sample output shows the behavior of a private variable. The user who has loaded the module
 cannot view or change the value of the Counter variable, but the Counter variable can be read and
 changed by the commands in the module.
 
 ### Example 6: Create a variable with a space
+
+This example demonstrates that variables with spaces can be created. The variables can be accessed
+using the `Get-Variable` cmdlet or directly by delimiting a variable with braces.
 
 ```
 PS C:\> New-Variable -Name 'with space' -Value 'abc123xyz'
@@ -140,9 +143,6 @@ with space                     abc123xyz
 PS C:\> ${with space}
 abc123xyz
 ```
-
-This command demonstrates that variables with spaces can be created. The variables can be accessed
-using the `Get-Variable` cmdlet or directly by delimiting a variable with braces.
 
 ## PARAMETERS
 
