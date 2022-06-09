@@ -1,0 +1,127 @@
+name: Authorization
+description: |
+  Checks to see whether a user may perform a certain action. For example, to target the `live`
+  branch of a repository or to submit a PR editing repo configuration.
+author: PowerShell Docs Team
+inputs:
+  permissions:
+    description: |
+      The permissions a user requires to perform a given task. Must be a comma-separated string of
+      valid permissions. Valid permissions are (case-insensitive):
+      
+      - `Admin`
+      - `Maintain`
+      - `Pull`
+      - `Push`
+      - `Triage`
+
+      If a user has _any_ of the specified permissions, they are authorized.
+    required: false
+    default: 'Maintain,Admin'
+  repository:
+    description: |
+      The full name of a repository; to target `https://github.com/MicrosoftDocs/PowerShell-Docs`,
+      the value should be `MicrosoftDocs/PowerShell-Docs`.
+
+      By default, the value is the repository the _workflow_ is defined in. Unless you are running
+      this action against another repository, you should not need to specify this value.
+    required: true
+    default: ${{ github.repository }}
+  target:
+    description: |
+      The branches or globbed file paths to verify authorization to target for changes. To specify
+      a branch, type a string like `branch:live`. This value determines the messaging for this
+      action but does not limit the authorization status check. To ensure your authorization
+      workflow only runs when a branch is targeted, use the **branches** setting for the
+      `pull_request` or `pull_request_target` trigger. To ensure your authorization workflow only
+      runs when a Pull Request modifies particular files, use the **paths** setting for the
+      `pull_request` or `pull_request_target` trigger. You can use those settings together. For
+      more information, see the documentation for the [branches][syntax-docs-branches] and
+      [paths][syntax-docs-paths] settings for workflows in GitHub's documentation.
+      
+      To specify multiple branches, separate each branch
+      by a comma and/or newline, like `branch: live, production`. To specify a filepath, specify one
+      or more path separated by a comma and/or a newline, like `path: foo/**/*.md, bar/*.json`.
+
+      If you do not specify a prefix like `branch:` or `path:` or specify an invalid prefix, it will
+      be interpreted as branch. The default is `branch:live`.
+
+      When using multiple values, it can be easier to type them in a multiline string block in yaml,
+      like this:
+
+      ```yaml
+      name: Authorized to Modify Repo Files?
+      uses: MicrosoftDocs/PowerShell-Docs/.github/actions/verification/authorization/v1@main
+      with:
+        target: |
+          path:
+            *.config.json
+            first/folder/path
+            another/path
+            final/path/entry/*.jsonc
+      ```
+
+      [syntax-docs-branches]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpull_requestpull_request_targetbranchesbranches-ignore
+      [syntax-docs-paths]:    https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore
+    required: true
+    default: branch:live
+  token:
+    description: |
+      The GITHUB_TOKEN to use to authenticate API calls to verify the user's permissions for the
+      repository. This **must** be passed to the action.
+    required: true
+  user:
+    description: |
+      The GitHub login ID to check permissions for.
+    required: true
+    default: ${{ github.event.pull_request.user.login }}
+runs:
+  using: composite
+  steps:
+    - shell: pwsh
+      env:
+        INPUT_REPOSITORY:  ${{ inputs.repository }}
+        INPUT_PERMISSIONS: ${{ inputs.permissions }}
+        INPUT_TARGET: ${{ inputs.target }}
+        INPUT_USER: ${{ inputs.user }}
+        GITHUB_TOKEN: ${{ inputs.token }}
+      run: |
+        Write-Output "::group::Generic Setup"
+        $ActionPath = Resolve-Path '${{ github.action_path }}' | Select-Object -ExpandProperty Path
+        $ParameterHandlers = Join-Path -Path $ActionPath -ChildPath Parameters.psd1
+        | ForEach-Object -Process { Import-PowerShellDataFile -Path $_ }
+        | Select -ExpandProperty Parameters
+        | ForEach-Object -Process { [pscustomobject]$_ }
+        "Action Path: $ActionPath"
+
+        $ActionRootPath = Split-Path -Parent -Path $ActionPath
+        while ((Split-Path -Leaf -Path $ActionRootPath) -ne 'actions') {
+          $ActionRootPath = Split-Path -Parent -Path $ActionRootPath
+        }
+        "Action Root Path: $ActionRootPath"
+        
+        $JoinPathParams = @{
+          Path = $ActionRootPath
+          ChildPath = '.pwsh'
+        }
+
+        $ModulePath = Join-Path @JoinPathParams -AdditionalChildPath @(
+          'module'
+          'gha.psd1'
+        )
+        "Module Path: $ModulePath"
+        Import-Module -Name $ModulePath -PassThru | Format-List
+
+        $ScriptPath = Join-Path @JoinPathParams -AdditionalChildPath @(
+          'scripts',
+          'Test-Authorization.ps1'
+        )
+        "Script Path: $ScriptPath"
+        Write-Output "::endgroup::"
+        Write-Output "::group::Parameter Validation"
+        $Parameters = Get-ActionScriptParameter -ParameterHandler $ParameterHandlers
+        Write-Output "::endgroup::"
+        Write-Output "::group::Check Authorization"
+        . $ScriptPath @Parameters
+        Write-Output "::endgroup::"
+

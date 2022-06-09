@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 12/15/2021
+ms.date: 06/09/2022
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -71,8 +71,7 @@ The following members control how or when ANSI formatting is used:
 - `$PSStyle.OutputRendering` is a
   `System.Management.Automation.OutputRendering` enum with the values:
 
-  - **ANSI**: This is the default behavior. ANSI is always passed through
-    as-is.
+  - **ANSI**: ANSI is always passed through as-is.
 
     > [!IMPORTANT]
     > You should use **ANSI** mode when redirecting output to a file or the
@@ -82,8 +81,20 @@ The following members control how or when ANSI formatting is used:
 
   - **PlainText**: ANSI escape sequences are always stripped so that it is only
     plain text.
-  - **Host**: The ANSI escape sequences are removed in redirected or piped
-    output.
+  - **Host**: This is the default behavior. The ANSI escape sequences are
+    removed in redirected or piped output.
+
+  > [!NOTE]
+  > When working with pure strings `$PSStyle.OutputRendering` does not change the
+  > output behavior of the string. For example:
+  >
+  > ```powershell
+  > $PSStyle.Foreground.Red + "abc" + $PSStyle.Reset | % { $_.Length }
+  > 12
+  > ```
+  >
+  > The length of the string includes the ANSI escape sequences. The value of
+  > `$PSStyle.OutputRendering` does not change that.
 
 - The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
   contain the ANSI escape sequences for the 16 standard console colors.
@@ -172,7 +183,7 @@ The following members control how or when ANSI formatting is used:
   > [about_Experimental_Features](about_Experimental_Features.md) and
   > [Using experimental features](/powershell/scripting/learn/experimental-features).
 
-## Cmdlets that support ANSI output
+## Cmdlets that generate ANSI output
 
 - The markdown cmdlets - the
   [Show-Markdown](xref:Microsoft.PowerShell.Utility.Show-Markdown) cmdlet
@@ -196,6 +207,19 @@ The following members control how or when ANSI formatting is used:
 - `Write-Progress` - ANSI output is managed using `$PSStyle.Progress`, as
   described above. For more information, see
   [Write-Progress](xref:Microsoft.PowerShell.Utility.Write-Progress)
+
+## Changes in PowerShell 7.3
+
+PowerShell 7.3 changed the behavior of `Out-File` and `Out-String` with respect
+to the **RenderingOutput** setting for the following scenarios:
+
+- When the input object is pure string, these cmdlets keep the string unchanged
+  regardless of the **RenderingOutput** setting.
+- When the input object needs to have a formatting view applied to it, these
+  cmdlets remove escape sequences from the formatting output strings based on
+  the **RenderingOutput** setting.
+
+This change is a breaking change to these cmdlets.
 
 ## Disabling ANSI output
 

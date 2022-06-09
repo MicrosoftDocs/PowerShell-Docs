@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 12/15/2021
+ms.date: 06/09/2022
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -83,7 +83,18 @@ The following members control how or when ANSI formatting is used:
   - **PlainText**: ANSI escape sequences are always stripped so that it is only
     plain text.
   - **Host**: The ANSI escape sequences are removed in redirected or piped
-    output.
+
+  > [!NOTE]
+  > When working with pure strings `$PSStyle.OutputRendering` does not change the
+  > output behavior of the string. For example:
+  >
+  > ```powershell
+  > $PSStyle.Foreground.Red + "abc" + $PSStyle.Reset | % { $_.Length }
+  > 12
+  > ```
+  >
+  > The length of the string includes the ANSI escape sequences. The value of
+  > `$PSStyle.OutputRendering` does not change that.
 
 - The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
   contain the ANSI escape sequences for the 16 standard console colors.
@@ -172,7 +183,7 @@ The following members control how or when ANSI formatting is used:
   > [about_Experimental_Features](about_Experimental_Features.md) and
   > [Using experimental features](/powershell/scripting/learn/experimental-features).
 
-## Cmdlets that support ANSI output
+## Cmdlets that generate ANSI output
 
 - The markdown cmdlets - the
   [Show-Markdown](xref:Microsoft.PowerShell.Utility.Show-Markdown) cmdlet
