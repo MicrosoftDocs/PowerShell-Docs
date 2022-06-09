@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.3-preview.1
 description: New features and changes released in PowerShell 7.3-preview.1
-ms.date: 03/24/2022
+ms.date: 06/09/2022
 ---
 
 # What's New in PowerShell 7.3
@@ -90,6 +90,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
 - Add `clean` block to script block as a peer to `begin`, `process`, and `end` to allow easy
   resource cleanup (#15177)
 - Change default for `$PSStyle.OutputRendering` to **Ansi**
+- Make `Out-String` and `Out-File` keep string input unchanged (#17455)
 
 <!-- end of content -->
 <!-- reference links -->
