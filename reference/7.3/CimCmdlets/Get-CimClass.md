@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 06/09/2017
+ms.date: 06/09/2022
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimclass?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-CimClass
@@ -18,17 +18,17 @@ Gets a list of CIM classes in a specific namespace.
 ### ComputerSet (Default)
 
 ```
-Get-CimClass [[-ClassName] <String>] [[-Namespace] <String>] [-OperationTimeoutSec <UInt32>]
- [-ComputerName <String[]>] [-MethodName <String>] [-PropertyName <String>]
- [-QualifierName <String>] [<CommonParameters>]
+Get-CimClass [[-ClassName] <string>] [[-Namespace] <string>] [-Amended]
+ [-OperationTimeoutSec <uint>] [-ComputerName <string[]>] [-MethodName <string>]
+ [-PropertyName <string>] [-QualifierName <string>] [<CommonParameters>]
 ```
 
 ### SessionSet
 
 ```
-Get-CimClass [[-ClassName] <String>] [[-Namespace] <String>] [-OperationTimeoutSec <UInt32>]
- -CimSession <CimSession[]> [-MethodName <String>] [-PropertyName <String>]
- [-QualifierName <String>] [<CommonParameters>]
+Get-CimClass [[-ClassName] <string>] [[-Namespace] <string>] -CimSession <CimSession[]> [-Amended]
+ [-OperationTimeoutSec <uint>] [-MethodName <string>] [-PropertyName <string>]
+ [-QualifierName <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,6 +113,26 @@ This set of commands creates a session with multiple computers and stores it int
 using the `New-CimSession` cmdlet, and then gets the classes using the `Get-CimClass` cmdlet.
 
 ## PARAMETERS
+
+### -Amended
+
+Indicates that objects returned from the CIM query should contain amended information. Typically,
+amended information is localizable information, such as object and property descriptions that are
+attached to the CIM object. This is useful for translating numeric values to human-readable values.
+
+This parameter was added in PowerShell 7.3.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -CimSession
 
