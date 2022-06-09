@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/20/2021
+ms.date: 06/09/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
@@ -231,6 +231,11 @@ You can send objects down the pipeline to `Out-String`.
 
 The cmdlets that contain the `Out` verb don't format objects. The `Out` cmdlets send objects to the
 formatter for the specified display destination.
+
+PowerShell 7.2 added the ability to control how ANSI escape sequences are rendered. ANSI-decorated
+output that is passed to `Out-String` can be altered based on the setting of the
+`$PSStyle.OutputRendering` property. For more information, see
+[about_ANSI_Terminals](/powershell/module/microsoft.powershell.core/about/about_ansi_terminals).
 
 ## RELATED LINKS
 
