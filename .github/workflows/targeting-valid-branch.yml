@@ -1,50 +1,25 @@
-name: Targeting Valid Branch
+# This workflow verifies that an author submitting a pull request to the live
+# branch is authorized to do so; only users with maintainer or admin rights may
+# target the live branch directly.
+name: Authorization
 on:
   pull_request_target:
-    types:
-      - opened
-      - reopened
-      - synchronize
+    branches:
+      - live
 permissions:
   contents: read
-
 jobs:
   Test:
-    permissions:
-      contents: none
+    name: Check Branch Permissions
     runs-on: windows-latest
     defaults:
       run:
         shell: pwsh
-    if: github.base_ref == 'live'
     steps:
+      - name: Checkout Repository
+        id: checkout_repo
+        uses: actions/checkout@v3
       - name: Authorized to Target Live Branch?
-        env:
-          GITHUB_TOKEN: ${{ secrets.VALID_BRANCH_TOKEN }}
-        run: |
-          $Owner = '${{ github.event.pull_request.base.repo.owner.login}}'
-          $Repo  = '${{ github.event.pull_request.base.repo.name }}'
-          $Actor = '${{ github.event.pull_request.user.login }}'
-
-          $ResultString = gh api repos/$Owner/$Repo/collaborators/$Actor/permission
-          $ExitCode = $LASTEXITCODE
-          if ($ExitCode -ne 0) {
-            throw "GitHub API call failed with exit code ${ExitCode}:`n$ResultString"
-          }
-
-          $Permissions = $ResultString
-          | ConvertFrom-Json
-          | Select-Object -Property @{ Name = 'Permissions' ; Expression = { $_.user.permissions } }
-          | Select-Object -ExpandProperty Permissions
-
-          if ($null -eq $Permissions) {
-            throw "Unable to retrieve permissions for author '$Actor':`n$ResultString"
-          }
-
-          echo "Author '$Actor' has permissions:`n$($Permissions | Format-List | Out-String)"
-
-          if ($Permissions.admin -or $Permissions.maintain) {
-            echo "Author has permissions to target ${{ github.base_ref }}"
-          } else {
-            throw "Author does not have permissions to target ${{ github.base_ref }}"
-          }
+        uses: ./.github/actions/verification/authorization/v1
+        with:
+          token: ${{ github.token }}

@@ -1,0 +1,21 @@
+name: Versioned Content
+description: |
+  Writes a report on the changes to versioned content in a repository on a PR.
+author: PowerShell Docs Team
+inputs:
+  repository:
+    description: |
+      The full name of a repository; to target `https://github.com/MicrosoftDocs/PowerShell-Docs`,
+      the value should be `MicrosoftDocs/PowerShell-Docs`.
+    required: true
+    default: ${{ github.repository }}
+  number:
+    description: |
+      The numerical ID of the PR to check for versioned content. If not specified, the report will
+      run against all open PRs to main.
+    required: false
+runs:
+  using: composite
+  steps:
+    - run: 'hello world'
+      shell: pwsh

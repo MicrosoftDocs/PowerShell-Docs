@@ -1,0 +1,103 @@
+name: Checklist
+description: |
+  Inspects the checklist items on a pull request to see if they have all been filled out. It only
+  looks for mandatory checklist items. If any mandatory checklist items are not checked, the action
+  fails. It writes a summary and console logs indicating which mandatory checklist items were not
+  checked.
+
+  To be interpreted by this action as mandatory checklist items, they must be formatted in Markdown to
+  follow a specific syntax:
+
+  ```markdown
+  - [ ] **Item Name:** Explanation of the item`
+  ```
+
+  To be recognized as a mandatory checklist item by this action, the item must:
+
+  - use valid syntax for checklists on GitHub (i.e. `- [ ]` for an unchecked item and `- [x]` for a
+    checked item)
+  - immediately follow the checklist syntax with a single space and then two asterisks (`**`)
+  - include one or more characters, specifying the name of the mandatory checklist item
+  - close the name of the item with a colon followed by two asterisks (`:**`)
+
+  Including explanatory text after the mandatory checklist item declaration is strictly optional but
+  strongly encouraged.
+
+  This example code block illustrates how this action parses Markdown and what is interpreted as a
+  valid mandatory checklist item for this action to verify:
+
+  ```markdown
+  A paragraph is not a checklist item
+
+  - This is a list item, but not a checklist item.
+  - [ ] This is a checklist item, but not mandatory.
+  - [ ] Not Bold: This is a checklist item, but not recognized as mandatory.
+  - [ ] **Colon Outside**: This is a checklist item, but not recognized as mandatory.
+  - [ ] **Foo:** This is a mandatory checklist item named `Foo`. It is not checked.
+  - [x] **Bar:** This is a mandatory checklist item named `Bar`. It is checked.
+  ```
+author: PowerShell Docs Team
+inputs:
+  body:
+    description: |
+      The body of the GitHub Pull Request to inspect for checklist completion. If using this action
+      on a `pull_request` or `pull_request_target` event, this is handled automatically. Otherwise,
+      it must be specified.
+    required: true
+    default: ${{ github.event.pull_request.body }}
+  reference_url:
+    description: |
+      The URL of the GitHub Pull Request, issue, discussion, or comment to inspect for checklist
+      completion. If using this action on a `pull_request` or `pull_request_target` event, this is
+      handled automatically. Otherwise, it must be specified.
+    required: true
+    default: ${{ github.event.pull_request.url }}
+runs:
+  using: composite
+  steps:
+    - shell: pwsh
+      env:
+        INPUT_REFERENCE_URL: ${{ inputs.reference_url }}
+        INPUT_BODY:  ${{ inputs.body }}
+      run: |
+        Write-Output "::group::Generic Setup"
+        $ActionPath = Resolve-Path '${{ github.action_path }}' | Select-Object -ExpandProperty Path
+        $ParameterHandlers = Join-Path -Path $ActionPath -ChildPath Parameters.psd1
+        | ForEach-Object -Process { Import-PowerShellDataFile -Path $_ }
+        | Select -ExpandProperty Parameters
+        | ForEach-Object -Process { [pscustomobject]$_ }
+        "Action Path: $ActionPath"
+
+        $ActionRootPath = Split-Path -Parent -Path $ActionPath
+        while ((Split-Path -Leaf -Path $ActionRootPath) -ne 'actions') {
+          $ActionRootPath = Split-Path -Parent -Path $ActionRootPath
+        }
+        "Action Root Path: $ActionRootPath"
+        
+        $JoinPathParams = @{
+          Path = $ActionRootPath
+          ChildPath = '.pwsh'
+        }
+
+        $ModulePath = Join-Path @JoinPathParams -AdditionalChildPath @(
+          'module'
+          'gha.psd1'
+        )
+        "Module Path: $ModulePath"
+        Import-Module -Name $ModulePath -PassThru | Format-List
+
+        $ScriptPath = Join-Path @JoinPathParams -AdditionalChildPath @(
+          'scripts',
+          'Test-Checklist.ps1'
+        )
+        "Script Path: $ScriptPath"
+        Write-Output "::endgroup::"
+
+        Write-Output "::group::Parameter Validation"
+        $Parameters = Get-ActionScriptParameter -ParameterHandler $ParameterHandlers
+        Write-Output "::endgroup::"
+        
+        Write-Output "::group::Verify Checklist"
+        . $ScriptPath @Parameters
+        Write-Output "::endgroup::"
+

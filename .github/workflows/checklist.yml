@@ -1,0 +1,30 @@
+name: Checklist
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - ready_for_review
+      - edited
+      - synchronize
+permissions:
+  contents: read
+jobs:
+  Test:
+    name: Verify Status
+    runs-on: windows-latest
+    if: |
+      !contains(github.event.pull_request.title, 'WIP') &&
+      !github.event.pull_request.draft
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Checkout Repository
+        id: checkout_repo
+        uses: actions/checkout@v3
+      - name: Verify Checklist
+        id: verify_checklist
+        uses: ./.github/actions/verification/checklist/v1
