@@ -67,7 +67,7 @@ If there are no matches in the collection, comparison operators return an empty
 array. For example:
 
 ```powershell
-$a = (1, 2 -eq 3)
+$a = (1, 2) -eq 3
 $a.GetType().Name
 $a.Count
 ```
