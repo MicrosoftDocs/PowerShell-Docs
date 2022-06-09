@@ -73,28 +73,14 @@ The following members control how or when ANSI formatting is used:
 
   - **ANSI**: This is the default behavior. ANSI is always passed through
     as-is.
-
-    > [!IMPORTANT]
-    > You should use **ANSI** mode when redirecting output to a file or the
-    > pipeline that is intended to be executed downstream. This ensures that
-    > the output is not altered. Using any other mode alters the output by
-    > removing ANSI escape sequences, which may change the execution behavior.
-
   - **PlainText**: ANSI escape sequences are always stripped so that it is only
     plain text.
   - **Host**: The ANSI escape sequences are removed in redirected or piped
 
   > [!NOTE]
-  > When working with pure strings `$PSStyle.OutputRendering` does not change the
-  > output behavior of the string. For example:
-  >
-  > ```powershell
-  > $PSStyle.Foreground.Red + "abc" + $PSStyle.Reset | % { $_.Length }
-  > 12
-  > ```
-  >
-  > The length of the string includes the ANSI escape sequences. The value of
-  > `$PSStyle.OutputRendering` does not change that.
+  > `$PSStyle.OutputRendering` only applies to rendering in the Host,
+  > `Out-File`, and `Out-String`. The `Out-File` and `Out-String` cmdlets can
+  > alter pure string input based on value of **OutputRendering**.
 
 - The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
   contain the ANSI escape sequences for the 16 standard console colors.

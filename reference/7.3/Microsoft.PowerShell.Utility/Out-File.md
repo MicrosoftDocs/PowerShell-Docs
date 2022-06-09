@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/21/2020
+ms.date: 06/09/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-file?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-File
@@ -34,7 +34,8 @@ The `Out-File` cmdlet sends output to a file. It implicitly uses PowerShell's fo
 write to the file. The file receives the same display representation as the terminal. This means
 that the output may not be ideal for programmatic processing unless all input objects are strings.
 When you need to specify parameters for the output, use `Out-File` rather than the redirection
-operator (`>`). For more information about redirection, see [about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md).
+operator (`>`). For more information about redirection, see
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md).
 
 ## EXAMPLES
 
@@ -136,9 +137,9 @@ file's content in the PowerShell console.
 ### Example 5: Set file output width for entire scope
 
 This example uses `$PSDefaultParameterValues` to set the `Width` parameter for all invocations of
-`Out-File` and the redirection operartors (`>` and `>>`) to 2000.  This is an easy way to ensure
-that everywhere in a scope you output table formatted data to file, PowerShell will use a line
-width of 2000 instead of a line width determined by the PowerShell host's console width.
+`Out-File` and the redirection operartors (`>` and `>>`) to 2000. This ensures that everywhere
+within the current scope that you output table formatted data to file, PowerShell uses a line width
+of 2000 instead of a line width determined by the PowerShell host's console width.
 
 ```powershell
 function DemoDefaultOutFileWidth() {
@@ -382,7 +383,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -408,6 +410,11 @@ cmdlet.
 
 `Out-File` saves data to a file but it does not produce any output objects to the pipeline.
 
+PowerShell 7.2 added the ability to control how ANSI escape sequences are rendered. ANSI-decorated
+output that is passed to `Out-File` can be altered based on the setting of the
+`$PSStyle.OutputRendering` property. For more information, see
+[about_ANSI_Terminals](/powershell/module/microsoft.powershell.core/about/about_ansi_terminals).
+
 ## RELATED LINKS
 
 [about_Providers](../Microsoft.Powershell.Core/About/about_Providers.md)
@@ -423,4 +430,3 @@ cmdlet.
 [Out-String](Out-String.md)
 
 [Tee-Object](Tee-Object.md)
-
