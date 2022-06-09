@@ -7,14 +7,16 @@ on:
     branches:
       - main
     paths:
-      - /.github/actions/**
-      - /.github/workflows/**
-      - /.github/CODEOWNERS
-      - /.localization-config
-      - /openpublishing*
-      - /*.yml
+      - "*.yml"
+      - .github/**
+      - .localization-config
+      - .openpublishing*
       - LICENSE*
+      - reference/docfx.json
+      - reference/mapping/**
+      - tests/**
       - ThirdPartyNotices
+      - tools/**
 permissions:
   contents: read
 jobs:
@@ -32,4 +34,15 @@ jobs:
         uses: ./.github/actions/verification/authorization/v1
         with:
           token: ${{ github.token }}
-          target: path:.github/actions/,.github/workflows/,.github/CODEOWNERS,.localization-config,openpublishing*,*.yml,LICENSE*,ThirdPartyNotices
+          target: |
+            path:
+              *.yml
+              .github/**
+              .localization-config
+              .openpublishing*
+              LICENSE*
+              reference/docfx.json
+              reference/mapping/**
+              tests/**
+              ThirdPartyNotices
+              tools/**

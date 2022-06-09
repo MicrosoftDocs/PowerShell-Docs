@@ -30,12 +30,39 @@ inputs:
   target:
     description: |
       The branches or globbed file paths to verify authorization to target for changes. To specify
-      a branch, type a string like `branch:live`. To specify multiple branches, separate each branch
-      by a comma, like `branch:live,production`. To specify a filepath, specify one or more path
-      separated by a comma, like `path:foo/**/*.md,bar/*.json`.
+      a branch, type a string like `branch:live`. This value determines the messaging for this
+      action but does not limit the authorization status check. To ensure your authorization
+      workflow only runs when a branch is targeted, use the **branches** setting for the
+      `pull_request` or `pull_request_target` trigger. To ensure your authorization workflow only
+      runs when a Pull Request modifies particular files, use the **paths** setting for the
+      `pull_request` or `pull_request_target` trigger. You can use those settings together. For
+      more information, see the documentation for the [branches][syntax-docs-branches] and
+      [paths][syntax-docs-paths] settings for workflows in GitHub's documentation.
+      
+      To specify multiple branches, separate each branch
+      by a comma and/or newline, like `branch: live, production`. To specify a filepath, specify one
+      or more path separated by a comma and/or a newline, like `path: foo/**/*.md, bar/*.json`.
 
       If you do not specify a prefix like `branch:` or `path:` or specify an invalid prefix, it will
       be interpreted as branch. The default is `branch:live`.
+
+      When using multiple values, it can be easier to type them in a multiline string block in yaml,
+      like this:
+
+      ```yaml
+      name: Authorized to Modify Repo Files?
+      uses: MicrosoftDocs/PowerShell-Docs/.github/actions/verification/authorization/v1@main
+      with:
+        target: |
+          path:
+            *.config.json
+            first/folder/path
+            another/path
+            final/path/entry/*.jsonc
+      ```
+
+      [syntax-docs-branches]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpull_requestpull_request_targetbranchesbranches-ignore
+      [syntax-docs-paths]:    https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore
     required: true
     default: branch:live
   token:
