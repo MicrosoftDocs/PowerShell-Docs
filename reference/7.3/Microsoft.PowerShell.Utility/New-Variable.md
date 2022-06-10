@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/30/2021
+ms.date: 06/09/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-variable?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Variable
@@ -23,8 +23,8 @@ New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Opti
 
 ## DESCRIPTION
 
-The `New-Variable` cmdlet creates a new variable in Windows PowerShell. You can assign a value to
-the variable while creating it or assign or change the value after it is created.
+The `New-Variable` cmdlet creates a new variable in PowerShell. You can assign a value to the
+variable while creating it or assign or change the value after it is created.
 
 You can use the parameters of `New-Variable` to set the properties of the variable, set the scope of
 a variable, and determine whether variables are public or private.
@@ -89,6 +89,10 @@ will be available in the current scope and any new scopes created and cannot be 
 
 ### Example 5: Create a private variable
 
+This command demonstrates the behavior of a private variable in a module. The module contains the
+`Get-Counter` cmdlet, which has a private variable named Counter. The command uses the
+**Visibility** parameter with a value of Private to create the variable.
+
 ```
 PS C:\> New-Variable -Name counter -Visibility Private
 
@@ -118,15 +122,14 @@ Counter1     3.1415
 ...
 ```
 
-This command demonstrates the behavior of a private variable in a module. The module contains the
-`Get-Counter` cmdlet, which has a private variable named Counter. The command uses the
-**Visibility** parameter with a value of Private to create the variable.
-
 The sample output shows the behavior of a private variable. The user who has loaded the module
 cannot view or change the value of the Counter variable, but the Counter variable can be read and
 changed by the commands in the module.
 
 ### Example 6: Create a variable with a space
+
+This example demonstrates that variables with spaces can be created. The variables can be accessed
+using the `Get-Variable` cmdlet or directly by delimiting a variable with braces.
 
 ```
 PS C:\> New-Variable -Name 'with space' -Value 'abc123xyz'
@@ -140,9 +143,6 @@ with space                     abc123xyz
 PS C:\> ${with space}
 abc123xyz
 ```
-
-This command demonstrates that variables with spaces can be created. The variables can be accessed
-using the `Get-Variable` cmdlet or directly by delimiting a variable with braces.
 
 ## PARAMETERS
 
@@ -255,19 +255,18 @@ Specifies the scope of the new variable. The acceptable values for this paramete
 - `Global` - Variables created in the global scope are accessible everywhere in a PowerShell
   process.
 - `Local` - The local scope refers to the current scope, this can be any scope depending on the
-  context.
+  context. `Local` is the default scope when the scope parameter is not specified.
 - `Script` - Variables created in the script scope are accessible only within the script file or
   module they are created in.
-- `Private` - Variables created in the private scope cannot be accessed outside the scope they exist
-  in. You can use the private scope to create a private version of an item with the same name in
-  another scope.
 - A number relative to the current scope (0 through the number of scopes, where 0 is the current
   scope, 1 is its parent, 2 the parent of the parent scope, and so on). Negative numbers cannot be
   used.
 
-`Local` is the default scope when the scope parameter is not specified.
-
-For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
+> [!NOTE]
+> The parameter also accepts the value of `Private`. `Private` is not actually a scope but an
+> optional setting for a variable. However, using the `Private` value with this cmdlet does not
+> change the visibility of the variable. For more information, see
+> [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
 Type: System.String
