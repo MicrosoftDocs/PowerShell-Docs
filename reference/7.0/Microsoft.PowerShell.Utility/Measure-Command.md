@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/09/2020
+ms.date: 06/10/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Command
@@ -44,7 +44,7 @@ uses the **Path** parameter to get only `.txt` files in the `C:\Windows` directo
 subdirectories.
 
 The second command measures the time it takes to process a recursive `Get-ChildItem` command that
-uses the provider-specific ` parameter.
+uses the provider-specific **Filter** parameter.
 
 These commands show the value of using a provider-specific filter in PowerShell commands.
 
