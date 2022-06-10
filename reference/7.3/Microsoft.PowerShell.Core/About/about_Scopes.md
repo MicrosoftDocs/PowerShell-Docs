@@ -1,7 +1,7 @@
 ---
 description: Explains the concept of scope in PowerShell and shows how to set and change the scope of elements.
 Locale: en-US
-ms.date: 01/31/2022
+ms.date: 06/09/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Scopes
@@ -464,7 +464,7 @@ breakpoint in the script, you enter the script scope.
 ### Private Option
 
 Aliases and variables have an **Option** property that can take a value of
-`Private`. Items that have the **Private** option can be viewed and changed
+`Private`. Items that have the `Private` option can be viewed and changed
 in the scope in which they are created, but they cannot be viewed or changed
 outside that scope.
 

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/30/2021
+ms.date: 06/09/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-variable?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Variable
@@ -255,19 +255,18 @@ Specifies the scope of the new variable. The acceptable values for this paramete
 - `Global` - Variables created in the global scope are accessible everywhere in a PowerShell
   process.
 - `Local` - The local scope refers to the current scope, this can be any scope depending on the
-  context.
+  context. `Local` is the default scope when the scope parameter is not specified.
 - `Script` - Variables created in the script scope are accessible only within the script file or
   module they are created in.
-- `Private` - Variables created in the private scope cannot be accessed outside the scope they exist
-  in. You can use the private scope to create a private version of an item with the same name in
-  another scope.
 - A number relative to the current scope (0 through the number of scopes, where 0 is the current
   scope, 1 is its parent, 2 the parent of the parent scope, and so on). Negative numbers cannot be
   used.
 
-`Local` is the default scope when the scope parameter is not specified.
-
-For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
+> [!NOTE]
+> The parameter also accepts the value of `Private`. `Private` is not actually a scope but an
+> optional setting for a variable. However, using the `Private` value with this cmdlet does not
+> change the visibility of the variable. For more information, see
+> [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
 Type: System.String
