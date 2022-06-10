@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/24/2020
+ms.date: 06/10/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Command
@@ -222,4 +222,3 @@ You can pipe an object to `Measure-Command`.
 [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Trace-Command](Trace-Command.md)
-
