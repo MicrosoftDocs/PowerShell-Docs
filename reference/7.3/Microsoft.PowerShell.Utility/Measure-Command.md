@@ -44,7 +44,7 @@ uses the **Path** parameter to get only `.txt` files in the `C:\Windows` directo
 subdirectories.
 
 The second command measures the time it takes to process a recursive `Get-ChildItem` command that
-uses the provider-specific ` parameter.
+uses the provider-specific **Filter** parameter.
 
 These commands show the value of using a provider-specific filter in PowerShell commands.
 
