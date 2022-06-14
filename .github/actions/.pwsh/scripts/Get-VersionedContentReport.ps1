@@ -157,9 +157,9 @@ process {
     'versioned file will have one of the following statuses:'
   ).AppendLine().AppendLine()
   $null = $Summary.AppendLine('- **Added:** The file was added. Git status `A`.')
-  $null = $Summary.AppendLine("- **Changed:** The file's type was changed. Git status `T`.")
+  $null = $Summary.AppendLine("- **Changed:** The file's type was changed. Git status ``T``.")
   $null = $Summary.AppendLine('- **Copied:** The file was copied. Git status `C`.')
-  $null = $Summary.AppendLine("- **Modified:** The file's contents were changed. Git status `M`.")
+  $null = $Summary.AppendLine("- **Modified:** The file's contents were changed. Git status ``M``.")
   $null = $Summary.AppendLine('- **Removed:** The file was deleted. Git status `D`.')
   $null = $Summary.AppendLine('- **Renamed:** The file was renamed. Git status `R`.')
   $null = $Summary.AppendLine('- **Unchanged:** The file was not modified.')
