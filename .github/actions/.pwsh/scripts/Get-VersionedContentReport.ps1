@@ -1,7 +1,10 @@
 <#
 .SYNOPSIS
+
   Analyzes changes for versioned content.
+
 .DESCRIPTION
+
   This script analyzes a changeset to discover versioned content and writes a report in the console
   and as a GitHub Action summary, enumerating the versioned content changes and whether those
   changes were made across all versions of the content.
@@ -10,20 +13,45 @@
   content was changed (or that it was not changed). This report still requires human analysis and
   investigation but is intended to provide an easier way to see the aggregated changes across
   versioned content to understand if all affected versions have been updated or not.
-.PARAMETER Owner
-  The owner of the repository with the PR to inspect for changes. For `https://github.com/foo/bar`,
-  the owner is `foo`.
-.PARAMETER Repo
-  The name of the repository with the PR to inspect for changes. For `https://github.com/foo/bar`,
-  the repo is `bar`.
-.PARAMETER Number
-  The number of the PR to inspect for changes.
-.EXAMPLE
-  ./.github/pwsh/scripts/Add-Expectations.ps1 -Owner Foo -Repo Bar -Number 123
 
-  The script finds the changes made in https://github.com/foo/bar/pulls/123` and analyzes those
+.PARAMETER Owner
+
+  Specify the owner of the repository with the PR to inspect for changes. For
+  `https://github.com/foo/bar`, the owner is `foo`.
+
+.PARAMETER Repo
+
+  Specify the name of the repository with the PR to inspect for changes. For
+  `https://github.com/foo/bar`, the repo is `bar`.
+
+.PARAMETER Number
+
+  Specify the number of the PR to inspect for changes.
+
+.PARAMETER ExcludePathPattern
+
+  Specify one or more regex patterns as a string. The list of changed files for the Pull Request is
+  filtered, comparing the path of the changed file to each pattern in this list. If the path of the
+  changed file matches any of the patterns specified, that change is discarded from the change
+  report.
+
+.PARAMETER IncludePathPattern
+
+  Specify one or more regex patterns as a string. The list of changed files for the Pull Request is
+  filtered, comparing the path of the changed file to each pattern in this list. If the path of the
+  changed file does not match any of the patterns specified, that change is discarded from the
+  change report.
+
+.EXAMPLE
+
+  ```powershell
+  ./Add-Expectations.ps1 -Owner Foo -Repo Bar -Number 123
+  ```
+
+  The script finds the changes made in `https://github.com/foo/bar/pulls/123` and analyzes those
   changes to find changes to versioned content. It then writes a report for each changed folder and
   file enumerating the high-level changes across all versions that file belongs in.
+
 #>
 [cmdletbinding()]
 param(
@@ -32,7 +60,9 @@ param(
   [Parameter(Mandatory)]
   [string]$Repo,
   [Parameter(Mandatory)]
-  [int]$Number
+  [int]$Number,
+  [string[]]$ExcludePathPattern,
+  [string[]]$IncludePathPattern
 )
 
 begin {
@@ -48,12 +78,10 @@ begin {
     - Need to grab the path to the body file for the PR comment.
   #>
   $GitHubFolder = Split-Path -Parent $PSScriptRoot | Split-Path -Parent
-  $ModuleFile = Resolve-Path -Path "$GitHubFolder/pwsh/gha/gha.psm1"
+  $ModuleFile = Resolve-Path -Path "$GitHubFolder/.pwsh/module/gha.psd1"
   | Select-Object -ExpandProperty Path
   Import-Module $ModuleFile -Force
   $Summary = New-Object -TypeName System.Text.StringBuilder
-  $Ansi = [System.Management.Automation.OutputRendering]::Ansi
-  $Plain = [System.Management.Automation.OutputRendering]::PlainText
 }
 
 process {
@@ -64,11 +92,56 @@ process {
     Write-ActionFailureSummary -Record $Record -Synopsis 'Unable to find open PRs.'
     $PSCmdlet.ThrowTerminatingError($_)
   }
+
+  Write-Host "Discovered Changed Content:" -ForegroundColor Blue
+  Write-Host ($ChangedContent | Format-Table | Out-String)
+
+  if ($IncludePath.Count -gt 0) {
+    $ChangedContent = $ChangedContent | Where-Object -FilterScript {
+      foreach ($Pattern in $IncludePathPattern) {
+        if ($_.Path -match $Pattern) {
+          return $true
+        }
+      }
+      return $false
+    }
+  }
+
+  if ($ExcludePath.Count -gt 0) {
+    $ChangedContent = $ChangedContent | Where-Object -FilterScript {
+      foreach ($Pattern in $ExcludePathPattern) {
+        if ($_.Path -notmatch $Pattern) {
+          return $true
+        }
+      }
+      return $false
+    }
+  }
+
+  $null = $Summary.AppendLine('# Versioned Content Change Report').AppendLine()
+  $null = $Summary.AppendLine('> Pull Request:').AppendLine('>')
+  $null = $Summary.AppendLine('> ```yaml')
+  $null = $Summary.AppendLine("> Owner:  $Owner")
+  $null = $Summary.AppendLine("> Repo:   $Repo")
+  $null = $Summary.AppendLine("> Number: $Number")
+  $null = $Summary.AppendLine('> ```').AppendLine()
+
+
+  if ($ChangedContent.Count -eq 0) {
+    $null = $Summary.AppendLine('No changes to versioned content found.').AppendLine()
+    $Summary.ToString() >> $ENV:GITHUB_STEP_SUMMARY
+    exit 0
+  } else {
+    Write-Host "Changed Content after inclusion/exclusion:" -ForegroundColor Blue
+    Write-Host ($ChangedContent | Format-Table | Out-String)
+  }
   
   $ChangeSetsWithStatus = Get-VersionedContentChangeStatus -ChangedContent $ChangedContent
   | Sort-Object -Stable -Property BaseFolder, VersionRelativePath
 
-  $null = $Summary.AppendLine('# Versioned Content Change Report').AppendLine()
+  # Find the column widths for all tables in the future
+  $RelativePathWidth, $VersionWidth = Get-VersionedContentTableColumnWidth -ChangeSet $ChangeSetsWithStatus
+
   $null = $Summary.AppendJoin(
     ' ',
     'This report is organized by base folder (a folder containing multiple versions of content)',
@@ -83,14 +156,14 @@ process {
     'base folder and has a version-relative path of `Foo/Bar/Baz.md`. For change status, every',
     'versioned file will have one of the following statuses:'
   ).AppendLine().AppendLine()
-  $null = $Summary.AppendLine('- `added`: The file was added. Git status `A`.')
-  $null = $Summary.AppendLine("- ``changed``: The file's type was changed. Git status `T`.")
-  $null = $Summary.AppendLine('- `copied`: The file was copied. Git status `C`.')
-  $null = $Summary.AppendLine("- ``modified``: The file's contents were changed. Git status `M`.")
-  $null = $Summary.AppendLine('- `removed`: The file was deleted. Git status `D`.')
-  $null = $Summary.AppendLine('- `renamed`: The file was renamed. Git status `R`.')
-  $null = $Summary.AppendLine('- `unchanged`: The file was not modified.')
-  $null = $Summary.AppendLine('- `n/a`: The file does not exist for this version.')
+  $null = $Summary.AppendLine('- **Added:** The file was added. Git status `A`.')
+  $null = $Summary.AppendLine("- **Changed:** The file's type was changed. Git status `T`.")
+  $null = $Summary.AppendLine('- **Copied:** The file was copied. Git status `C`.')
+  $null = $Summary.AppendLine("- **Modified:** The file's contents were changed. Git status `M`.")
+  $null = $Summary.AppendLine('- **Removed:** The file was deleted. Git status `D`.')
+  $null = $Summary.AppendLine('- **Renamed:** The file was renamed. Git status `R`.')
+  $null = $Summary.AppendLine('- **Unchanged:** The file was not modified.')
+  $null = $Summary.AppendLine('- **N/A:** The file does not exist for this version.')
   $null = $Summary.AppendLine().AppendJoin(
     ' ',
     'In cases where the change status of a file is not the same across versions, the Pull Request',
@@ -111,6 +184,43 @@ process {
       "See below for details per folder."
     ).AppendLine().AppendLine()
 
+    Write-Host "Changes in ${BaseFolder}:" -ForegroundColor Blue
+    foreach ($ChangeSet in $ChangeSetsInBaseFolder) {
+      Write-Host $ChangeSet.VersionRelativePath -ForegroundColor Cyan
+      $VersionInfo = [PSCustomObject]@{}
+      foreach ($Version in $ChangeSet.Versions) {
+        $PropertyParameters = @{
+          Name       = $Version.Version
+          Value      = $Version.ChangeType
+          MemberType = 'NoteProperty'
+        }
+        $VersionInfo | Add-Member @PropertyParameters
+      }
+      Write-Host ($VersionInfo | Format-List | Out-String)
+    }
+
+    <#
+      Handle changes in the root of the version folder first, before all subfolders. For example:
+
+      reference/1.2/foo.md     # in root
+      reference/1.2/bar/baz.md # not in root
+    #>
+    $ChangesInVersionRootFolder = $ChangeSetsInBaseFolder | Where-Object {
+      $_.VersionRelativePath -notmatch '(\\|\/)'
+    }
+
+    if ($ChangesInVersionRootFolder.Count -gt 0) {
+      $ChangeSets = $ChangesInVersionRootFolder
+      $null = $Summary.AppendLine("### Change Sets in the version root folder").AppendLine()
+      $TableParameters = @{
+        ChangeSet         = $ChangeSets
+        Summary           = $Summary
+        RelativePathWidth = $RelativePathWidth
+        VersionWidth      = $VersionWidth
+      }
+      Add-VersionedContentTable @TableParameters
+    }
+
     [string[]]$ChangeSetFolders = $ChangeSetsInBaseFolder | ForEach-Object {
       $Folder = Split-Path -Parent $_.VersionRelativePath
       while (![string]::IsNullOrEmpty($Folder)) {
@@ -127,47 +237,17 @@ process {
         continue
       }
       $null = $Summary.AppendLine("### Change Sets for ``$Folder``").AppendLine()
-      $RelativePathWidth = 30
-      $ChangeSets.VersionRelativePath | ForEach-Object -Process {
-        if (($_.Length + 4) -gt $RelativePathWidth) {
-          $RelativePathWidth = $_.Length + 4
-        }
+      $TableParameters = @{
+        ChangeSet         = $ChangeSets
+        Summary           = $Summary
+        RelativePathWidth = $RelativePathWidth
+        VersionWidth      = $VersionWidth
       }
-      $VersionList = $ChangeSets.Versions.Version | Select-Object -Unique
-      $VersionWidth = 14
-      $VersionList | ForEach-Object -Process {
-        if (($_.Length + 4) -gt $VersionWidth) {
-          $VersionWidth = $_.Length + 4
-        }
-      }
-      # Setup table header
-      $null = $Summary.Append("|$(' Version-Relative Path'.PadRight($RelativePathWidth))")
-      foreach ($Version in $VersionList) {
-        $null = $Summary.Append("|$(" $Version".PadRight($VersionWidth))")
-      }
-      $null = $Summary.AppendLine('|')
-      $null = $Summary.Append("|:$('-' * ($RelativePathWidth - 1))")
-      foreach($Version in $VersionList) {
-        $null = $Summary.Append("|:$('-' * ($VersionWidth - 2)):")
-      }
-      $null = $Summary.AppendLine('|')
-      # loop over change sets; version status or `N/A` if it doesn't exist.
-      foreach ($ChangeSet in $ChangeSets) {
-        $RelativePath = $ChangeSet.VersionRelativePath
-        $null = $Summary.Append("|$(" ``$RelativePath`` ".PadRight($RelativePathWidth))")
-        foreach ($Version in $VersionList) {
-          $ChangeType = $ChangeSet.Versions.Where({$_.Version -eq $Version}).ChangeType
-          if ([string]::IsNullOrEmpty($ChangeType)) {
-            $ChangeType = 'n/a'
-          }
-          $null = $Summary.Append("|$(" ``$ChangeType`` ".PadRight($VersionWidth))")
-        }
-        $null = $summary.AppendLine('|')
-      }
-      $null = $Summary.AppendLine()
+      Add-VersionedContentTable @TableParameters
     }
   }
-  $Summary.ToString()
+  $Summary.ToString() >> $ENV:GITHUB_STEP_SUMMARY
+  exit 0
 }
 
 end {}

@@ -138,6 +138,15 @@ function Get-VersionedContentChangeStatus {
                 }
             }
         }
+        # Find all the version folders immediately beneath the base folders.
+        $BaseFolders = @{}
+        $VersionedContent.BaseFolder | Select-Object -Unique | ForEach-Object -Process {
+            $FolderName = $_
+            $Versions = Get-ChildItem -Path $_ -Directory | Where-Object -FilterScript {
+                $_.BaseName -match $VersionPattern
+            } | Select-Object -ExpandProperty BaseName
+            $BaseFolders.Add($FolderName, $Versions)
+        }
         # Loops over the items after initial processing to find unchanged files in other versions.
         foreach ($Item in $VersionedContent) {
             $VersionRelativePath = $Item.VersionRelativePath
@@ -154,8 +163,28 @@ function Get-VersionedContentChangeStatus {
                     }
                 }
             }
+            # Handle versions where the file does not exist:
+            $BaseFolders.$BaseFolder
+            | Where-Object -FilterScript {
+                $_ -notin $Item.Versions.Version
+            } | ForEach-Object -Process {
+                $Item.Versions += [PSCustomObject]@{
+                    Version = $_
+                    ChangeType = 'n/a'
+                }
+            }
             # Make sure to sort versions not by discovery order but by version number
-            $Item.Versions = $Item.Versions | Sort-Object -Property { [version]$_.Version }
+            $Item.Versions = $Item.Versions | Sort-Object -Property {
+                $Version = $_.Version
+                if ($Version -match '^v(?<Major>\d+)(?<RemainingSegments>(\.\d+)*((-|\+)\w+)*)') {
+                    if ([string]::IsNullOrEmpty($Matches.RemainingSegments)) {
+                        $Version = "$($Matches.Major).0"
+                    } else {
+                        $Version = "$($Matches.Major)$($Matches.RemainingSegments)"
+                    }
+                }
+                [System.Management.Automation.SemanticVersion]$Version
+            }
             # Send the result to the pipeline
             $Item
         }
