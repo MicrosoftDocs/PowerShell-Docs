@@ -23,6 +23,8 @@ function Write-ActionFailureSummary {
     )
     
     begin {
+        $Ansi = [System.Management.Automation.OutputRendering]::Ansi
+        $Plain = [System.Management.Automation.OutputRendering]::PlainText
     }
     
     process {

@@ -1,0 +1,29 @@
+# This workflow verifies that an author submitting a pull request to the main
+# branch to modify repository files is authorized to do so; only users with
+# maintainer or admin rights may modify the actions or the workflow definitions.
+name: Reporting
+on:
+  pull_request_target:
+    branches:
+      - main
+    paths:
+      - reference/*.*/**
+permissions:
+  contents: read
+jobs:
+  Report:
+    name: Versioned Content
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Checkout Repository
+        id: checkout_repo
+        uses: actions/checkout@v3
+      - name: Write Report
+        uses: ./.github/actions/reporting/versioned-content/v1
+        with:
+          token: ${{ github.token }}
+          include_path_pattern: |
+            ^reference\/\d+\.\d+\/.+

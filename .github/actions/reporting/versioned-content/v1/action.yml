@@ -1,21 +1,118 @@
 name: Versioned Content
 description: |
-  Writes a report on the changes to versioned content in a repository on a PR.
+  Writes a report on the changes to versioned content in a repository by Pull Request. The report
+  summarizes how many changes in the Pull Request were to versioned content and writes tables
+  enumerating every changed file by folder and how, if at all, the Pull Request modified each file
+  by version.
 author: PowerShell Docs Team
 inputs:
   repository:
     description: |
       The full name of a repository; to target `https://github.com/MicrosoftDocs/PowerShell-Docs`,
-      the value should be `MicrosoftDocs/PowerShell-Docs`.
+      the value should be `MicrosoftDocs/PowerShell-Docs`. By default, this action uses the name
+      of the repository it is called from.
     required: true
     default: ${{ github.repository }}
   number:
     description: |
-      The numerical ID of the PR to check for versioned content. If not specified, the report will
-      run against all open PRs to main.
+      The numerical ID of the PR to check for versioned content. By default, this action uses the
+      number for the current Pull Request if the calling workflow is triggered by the `pull_request`
+      or `pull_request_target` event.
+    required: true
+    default: ${{ github.event.pull_request.number }}
+  include_path_pattern:
+    description: |
+      Regular expression patterns to compare to the changed content file paths. Only changes whose
+      path matches one or more of the specified patterns are included in the report.
+
+      To specify multiple patterns, separate each branch by a newline in a multiline string block in
+      yaml, like this:
+
+      ```yaml
+      name: Versioned Content Report
+      uses: MicrosoftDocs/PowerShell-Docs/.github/actions/reporting/versioned-content/v1@main
+      with:
+        include_path_pattern: |
+          ^reference\/
+          AlwaysReport
+      ```
+
+      Only changes to file paths matching `^reference\/` (anything under the `reference` folder in
+      the repository's root folder) and `AlwaysReport` (any file in the repository with that text in
+      its path) is included in the report.
     required: false
+  exclude_path_pattern:
+    description: |
+      Regular expression patterns to compare to the changed content file paths. Only changes whose
+      path matches _none_ of the specified patterns are included in the report.
+
+      To specify multiple patterns, separate each branch by a newline in a multiline string block in
+      yaml, like this:
+
+      ```yaml
+      name: Versioned Content Report
+      uses: MicrosoftDocs/PowerShell-Docs/.github/actions/reporting/versioned-content/v1@main
+      with:
+        exclude_path_pattern: |
+          ^reference\/
+          AlwaysReport
+      ```
+
+      Any changes to file paths matching `^reference\/` (anything under the `reference` folder in
+      the repository's root folder) or `AlwaysReport` (any file in the repository with that text in
+      its path) is excluded from the report.
+    required: false
+  token:
+    description: |
+      The GITHUB_TOKEN to use to authenticate API calls to retrieve the changes a Pull Request
+      makes. This **must** be passed to the action.
+    required: true
 runs:
   using: composite
   steps:
-    - run: 'hello world'
-      shell: pwsh
+    - shell: pwsh
+      env:
+        INPUT_REPOSITORY: ${{ inputs.repository }}
+        INPUT_NUMBER:     ${{ inputs.number }}
+        INPUT_EXCLUDE_PATH_PATTERN: ${{ inputs.exclude_path_pattern }}
+        INPUT_INCLUDE_PATH_PATTERN: ${{ inputs.include_path_pattern }}
+        GITHUB_TOKEN: ${{ inputs.token }}
+      run: |
+        Write-Output "::group::Generic Setup"
+        $ActionPath = Resolve-Path '${{ github.action_path }}' | Select-Object -ExpandProperty Path
+        $ParameterHandlers = Join-Path -Path $ActionPath -ChildPath Parameters.psd1
+        | ForEach-Object -Process { Import-PowerShellDataFile -Path $_ }
+        | Select -ExpandProperty Parameters
+        | ForEach-Object -Process { [pscustomobject]$_ }
+        "Action Path: $ActionPath"
+
+        $ActionRootPath = Split-Path -Parent -Path $ActionPath
+        while ((Split-Path -Leaf -Path $ActionRootPath) -ne 'actions') {
+          $ActionRootPath = Split-Path -Parent -Path $ActionRootPath
+        }
+        "Action Root Path: $ActionRootPath"
+        
+        $JoinPathParams = @{
+          Path = $ActionRootPath
+          ChildPath = '.pwsh'
+        }
+
+        $ModulePath = Join-Path @JoinPathParams -AdditionalChildPath @(
+          'module'
+          'gha.psd1'
+        )
+        "Module Path: $ModulePath"
+        Import-Module -Name $ModulePath -PassThru | Format-List
+
+        $ScriptPath = Join-Path @JoinPathParams -AdditionalChildPath @(
+          'scripts',
+          'Get-VersionedContentReport.ps1'
+        )
+        "Script Path: $ScriptPath"
+        Write-Output "::endgroup::"
+        Write-Output "::group::Parameter Validation"
+        $Parameters = Get-ActionScriptParameter -ParameterHandler $ParameterHandlers
+        Write-Output "::endgroup::"
+        Write-Output "::group::Report on Versioned Content"
+        . $ScriptPath @Parameters
+        Write-Output "::endgroup::"
