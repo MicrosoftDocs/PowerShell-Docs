@@ -733,25 +733,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UseNewRunspace
-
-Causes the parallel invocation to create a new runspace for every loop iteration instead of reusing
-runspaces from the runspace pool.
-
-This parameter was introduced in PowerShell 7.1
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: ParallelParameterSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 
 Prompts you for confirmation before running the cmdlet.
