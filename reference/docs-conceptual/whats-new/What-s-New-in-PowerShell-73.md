@@ -1,6 +1,6 @@
 ---
-title: What's New in PowerShell 7.3-preview.1
-description: New features and changes released in PowerShell 7.3-preview.1
+title: What's New in PowerShell 7.3-preview.4
+description: New features and changes released in PowerShell 7.3-preview.4
 ms.date: 06/21/2022
 ---
 
@@ -8,7 +8,7 @@ ms.date: 06/21/2022
 
 PowerShell 7.3 is the next preview release, built on .NET 7.0.
 
-PowerShell 7.3-preview.3 includes the following features, updates, and breaking changes.
+PowerShell 7.3-preview.4 includes the following features, updates, and breaking changes.
 
 ## Known issues in 7.3-preview.4
 
