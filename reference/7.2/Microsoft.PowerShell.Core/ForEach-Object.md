@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/04/2022
+ms.date: 06/21/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -38,7 +38,7 @@ ForEach-Object [-InputObject <PSObject>] -Parallel <ScriptBlock> [-ThrottleLimit
 ## DESCRIPTION
 
 The `ForEach-Object` cmdlet performs an operation on each item in a collection of input objects. The
-input objects can be piped to the cmdlet or specified by using the **InputObject** parameter.
+input objects can be piped to the cmdlet or specified using the **InputObject** parameter.
 
 Starting in Windows PowerShell 3.0, there are two different ways to construct a `ForEach-Object`
 command.
@@ -129,12 +129,12 @@ $events | ForEach-Object -Begin {Get-Date} -Process {Out-File -FilePath Events.t
 `$Events` variable. `$Events` is then piped to the `ForEach-Object` cmdlet. The **Begin** parameter
 displays the current date and time. Next, the **Process** parameter uses the `Out-File` cmdlet to
 create a text file that is named events.txt and stores the message property of each of the events in
-that file. Last, the **End** parameter is used to display the date and time after all of the
-processing has completed.
+that file. Last, the **End** parameter is used to display the date and time after all the processing
+has completed.
 
 ### Example 4: Change the value of a Registry key
 
-This example changes the value of the **RemotePath** registry entry in all of the subkeys under the
+This example changes the value of the **RemotePath** registry entry in all the subkeys under the
 `HKCU:\Network` key to uppercase text.
 
 ```powershell
@@ -149,9 +149,9 @@ Each subkey in the **Network** key represents a mapped network drive that reconn
 drive to `\\Server\Share`, an **E** subkey is created in `HKCU:\Network` with the **RemotePath**
 registry value set to `\\Server\Share`.
 
-The command uses the `Get-ItemProperty` cmdlet to get all of the subkeys of the **Network** key and
-the `Set-ItemProperty` cmdlet to change the value of the **RemotePath** registry entry in each key.
-In the `Set-ItemProperty` command, the path is the value of the **PSPath** property of the registry
+The command uses the `Get-ItemProperty` cmdlet to get all the subkeys of the **Network** key and the
+`Set-ItemProperty` cmdlet to change the value of the **RemotePath** registry entry in each key. In
+the `Set-ItemProperty` command, the path is the value of the **PSPath** property of the registry
 key. This is a property of the Microsoft .NET Framework object that represents the registry key, not
 a registry entry. The command uses the **ToUpper()** method of the **RemotePath** value, which is a
 string (REG_SZ).
@@ -159,9 +159,9 @@ string (REG_SZ).
 Because `Set-ItemProperty` is changing the property of each key, the `ForEach-Object` cmdlet is
 required to access the property.
 
-### Example 5: Use the $Null automatic variable
+### Example 5: Use the $null automatic variable
 
-This example shows the effect of piping the `$Null` automatic variable to the `ForEach-Object`
+This example shows the effect of piping the `$null` automatic variable to the `ForEach-Object`
 cmdlet.
 
 ```powershell
@@ -175,8 +175,8 @@ Hello
 Hello
 ```
 
-Because PowerShell treats null as an explicit placeholder, the `ForEach-Object` cmdlet generates a
-value for `$Null`, just as it does for other objects that you pipe to it.
+Because PowerShell treats `$null` as an explicit placeholder, the `ForEach-Object` cmdlet generates
+a value for `$null` as it does for other objects piped to it.
 
 ### Example 6: Get property values
 
@@ -286,7 +286,7 @@ three
 
 ### Example 11: Run slow script in parallel batches
 
-This example runs a simple script block that evaluates a string and sleeps for one second.
+This example runs a script block that evaluates a string and sleeps for one second.
 
 ```powershell
 $Message = "Output:"
@@ -334,7 +334,7 @@ name. The **ThrottleLimit** parameter ensures that all five script blocks run at
 
 ### Example 13: Run in parallel as a job
 
-This example runs a simple script block in parallel, creating two background jobs at a time.
+This example creates a job that runs a script block in parallel, two at a time.
 
 ```powershell
 $job = 1..10 | ForEach-Object -Parallel {
@@ -359,8 +359,8 @@ Output: 10
 ```
 
 the `$job` variable receives the job object that collects output data and monitors running state.
-The job object is piped to `Receive-Job` with the **Wait** switch parameter. And this streams output
-to the console, just as if `ForEach-Object -Parallel` was run without **AsJob**.
+The job object is piped to `Receive-Job` with the **Wait** switch parameter, which streams output to
+the console as if `ForEach-Object -Parallel` was run without **AsJob**.
 
 ### Example 14: Using thread safe variable references
 
@@ -477,6 +477,27 @@ Line |
 ```
 
 The nested scriptblock can't access the `$test2` variable and an error is thrown.
+
+### Example 18: Creating multiple jobs that run scripts in parallel
+
+The ThrottleLimit parameter limits the number of parallel scripts running during each instance of
+`ForEach-Object -Parallel`. It does not limit the number of jobs that can be created when using the
+**AsJob** parameter. Since jobs themselves run concurrently, it is possible to create a number of
+parallel jobs, each running up to the throttle limit number of concurrent scriptblocks.
+
+```powershell
+$jobs = for ($i=0; $i -lt 10; $i++) {
+    1..10 | ForEach-Object -Parallel {
+        ./RunMyScript.ps1
+    } -AsJob -ThrottleLimit 5
+}
+
+$jobs | Receive-Job -Wait
+```
+
+This example creates 10 running jobs. Each job runs no more that 5 scripts concurrently. The total
+number of instances running concurrently is limited to 50 (10 jobs times the **ThrottleLimit** of
+5).
 
 ## PARAMETERS
 
@@ -670,6 +691,11 @@ Accept wildcard characters: False
 Specifies the number of script blocks that in parallel. Input objects are blocked until
 the running script block count falls below the **ThrottleLimit**. The default value is `5`.
 
+The ThrottleLimit parameter limits the number of parallel scripts running during each instance of
+`ForEach-Object -Parallel`. It does not limit the number of jobs that can be created when using the
+**AsJob** parameter. Since jobs themselves run concurrently, it is possible to create a number of
+parallel jobs, each running up to the throttle limit number of concurrent scriptblocks.
+
 This parameter was introduced in PowerShell 7.0.
 
 ```yaml
@@ -823,8 +849,8 @@ Using `ForEach-Object -Parallel`:
   termination of the `Foreach-Object` cmdlet. The other scriptblocks, running in parallel, continue
   to run unless they also encounter a terminating error. The terminating error is written to the
   error data stream as an **ErrorRecord** with a **FullyQualifiedErrorId** of `PSTaskException`.
-  Terminating errors can be converted to non-terminating errors using PowerShell try/catch or trap
-  blocks.
+  Terminating errors can be converted to non-terminating errors using PowerShell `try`/`catch` or
+  `trap` blocks.
 
 - [PipelineVariable](About/about_CommonParameters.md) common parameter variables are _not_ supported
   in parallel scenarios even with the `$using:` keyword.

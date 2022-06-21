@@ -1,26 +1,27 @@
 ---
-title: What's New in PowerShell 7.3-preview.1
-description: New features and changes released in PowerShell 7.3-preview.1
-ms.date: 06/09/2022
+title: What's New in PowerShell 7.3-preview.4
+description: New features and changes released in PowerShell 7.3-preview.4
+ms.date: 06/21/2022
 ---
 
 # What's New in PowerShell 7.3
 
 PowerShell 7.3 is the next preview release, built on .NET 7.0.
 
-PowerShell 7.3-preview.3 includes the following features, updates, and breaking changes.
+PowerShell 7.3-preview.4 includes the following features, updates, and breaking changes.
 
-Known issues in 7.3-preview.3
+## Known issues in 7.3-preview.4
 
-These issues should be fixed in the next release of .NET 7
+These issues should be fixed in the next release of .NET 7 and included in a future preview of
+PowerShell 7.3.
 
 - `Test-Connection` is broken due to an
   [intentional breaking change](https://github.com/dotnet/runtime/issues/66746) in .NET 7. It's
   tracked by [#17018](https://github.com/PowerShell/PowerShell/issues/17018)
-- `AssemblyName.FullName` has unexpected behavior due to a
+- `AssemblyName.FullName` has unexpected behavior caused by a
   [regression](https://github.com/dotnet/runtime/issues/66785) in .NET 7
 
-Improved error handling
+## Improved error handling
 
 - Set `$?` correctly for command expression with redirections (#16046)
 - Fix a casting error when using `$PSNativeCommandUseErrorActionPreference` (#15993)
@@ -28,7 +29,7 @@ Improved error handling
 - Specify the executable path as `TargetObject` for non-zero exit code ErrorRecord (#16108) (Thanks
   @rkeithhill!)
 
-Session and remoting improvements
+## Session and remoting improvements
 
 - Add `-Options` to the PSRP over SSH commands to allow passing OpenSSH options directly (#12802)
   (Thanks @BrannenGH!)
@@ -36,7 +37,7 @@ Session and remoting improvements
   configuration defined in a `.pssc` file (#17447)
 - Add support for using `New-PSSessionConfigurationFile` on non-Windows platforms (#17447)
 
-Tab completion improvements
+## Tab completion improvements
 
 - Fix tab completion within the script block specified for the `ValidateScriptAttribute`. (#14550)
   (Thanks @MartinGC94!)
@@ -51,7 +52,7 @@ Tab completion improvements
 - Improve member auto completion (#16504) (Thanks @MartinGC94!)
 - Prioritize ValidateSet completions over Enums for parameters (#15257) (Thanks @MartinGC94!)
 
-Updated cmdlets
+## Updated cmdlets
 
 - Add `-HttpVersion` parameter to web cmdlets (#15853) (Thanks @hayhay27!)
 - Add support to web cmdlets for open-ended input tags (#16193) (Thanks @farmerau!)
