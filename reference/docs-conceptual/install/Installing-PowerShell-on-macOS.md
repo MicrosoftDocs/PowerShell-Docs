@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 05/18/2022
+ms.date: 06/22/2022
 title: Installing PowerShell on macOS
 ---
 
@@ -25,9 +25,6 @@ There are several ways to install PowerShell on macOS. Choose one of the followi
 - Install using [Homebrew][brew]. Homebrew is the preferred package manager for macOS.
 - Install PowerShell via [Direct Download](#installation-via-direct-download)
 - Install from [binary archives](#binary-archives).
-
-After installing PowerShell, you should install [OpenSSL](#installing-dependencies). OpenSSL is
-needed for PowerShell WSMan remoting.
 
 If the `brew` command is not found, you need to install Homebrew following
 [their instructions][brew].
