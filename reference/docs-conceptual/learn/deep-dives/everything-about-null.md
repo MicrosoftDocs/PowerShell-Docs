@@ -224,7 +224,7 @@ looking for exactly what you're expecting it to look for. I read that line of co
 
 But that's not the whole story. That line is actually saying:
 
-> If `$value` is not `$null` or `0` or `$false` or an `empty string` or a non-empty `array`
+> If `$value` is not `$null` or `0` or `$false` or an empty string or an empty array.
 
 Here is a more complete sample of that statement.
 
