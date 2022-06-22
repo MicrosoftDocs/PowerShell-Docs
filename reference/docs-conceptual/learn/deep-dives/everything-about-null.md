@@ -96,7 +96,7 @@ False
 
 ### In place of a collection
 
-A collection allow you use an index to access values. If you try to index into a collection that is
+A collection allows you use an index to access values. If you try to index into a collection that is
 actually `null`, you get this error: `Cannot index into a null array`.
 
 ```powershell
@@ -224,7 +224,7 @@ looking for exactly what you're expecting it to look for. I read that line of co
 
 But that's not the whole story. That line is actually saying:
 
-> If `$value` is not `$null` or `0` or `$false` or an `empty string`
+> If `$value` is not `$null` or `0` or `$false` or an `empty string` or a non-empty `array`
 
 Here is a more complete sample of that statement.
 
@@ -232,6 +232,7 @@ Here is a more complete sample of that statement.
 if ( $null -ne $value -and
         $value -ne 0 -and
         $value -ne '' -and
+        ($value -isnot [array] -or $value.Length -ne 0) -and
         $value -ne $false )
 {
     Do-Something
