@@ -208,6 +208,8 @@ items:
             href: learn/remoting/ssh-remoting-in-powershell-core.md
           - name: WS-Management (WSMan) remoting in PowerShell Core
             href: learn/remoting/wsman-remoting-in-powershell-core.md
+          - name: WSMan remoting is not supported on non-Windows platforms
+            href: learn/remoting/wsman-unsupported-for-nonwindows.md
           - name: WinRM Security
             href: learn/remoting/winrmsecurity.md
           - name: Making the second hop in PowerShell Remoting
