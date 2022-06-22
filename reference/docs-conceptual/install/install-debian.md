@@ -23,7 +23,7 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Do
 package from the [releases][releases] page onto the Debian 10 machine. The link to the current
 version is:
 
-- PowerShell 7.2.4 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.4/powershell-lts_7.2.4-1.deb_amd64.deb`
+- PowerShell 7.2.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/powershell-lts_7.2.5-1.deb_amd64.deb`
 - PowerShell 7.0.10
   - Debian 10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.10/powershell-lts_7.0.10-1.debian.10_amd64.deb`
   - Debian 9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.10/powershell-lts_7.0.10-1.debian.9_amd64.deb`

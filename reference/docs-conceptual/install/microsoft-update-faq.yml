@@ -96,7 +96,7 @@ sections:
             installation of the MSI from the command line:
 
             ```powershell
-            msiexec.exe /fmu .\PowerShell-7.2.4-win-x64.msi USE_MU=1 ENABLE_MU=1
+            msiexec.exe /fmu .\PowerShell-7.2.5-win-x64.msi USE_MU=1 ENABLE_MU=1
             ```
 
             For more information about running `msiexec.exe` from the command line, see
