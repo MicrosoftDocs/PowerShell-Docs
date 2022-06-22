@@ -7,7 +7,7 @@ title: WSMan remoting is not supported on non-Windows platforms
 
 Since the release of PowerShell 6, support for remoting over WS-Management (WSMan) on non-Windows
 platforms has only been available to a limited set of Linux distributions. All versions of those
-distributions that supported WSMan are no longer supported.
+distributions that supported WSMan are no longer supported by the Linux vendors that created them.
 
 On non-Windows, WSMan relied on the
 [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) project, which no longer
