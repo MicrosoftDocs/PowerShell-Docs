@@ -1,16 +1,16 @@
 ---
-title: What's New in PowerShell 7.3-preview.4
-description: New features and changes released in PowerShell 7.3-preview.4
-ms.date: 06/21/2022
+title: What's New in PowerShell 7.3-preview.5
+description: New features and changes released in PowerShell 7.3-preview.5
+ms.date: 06/23/2022
 ---
 
 # What's New in PowerShell 7.3
 
 PowerShell 7.3 is the next preview release, built on .NET 7.0.
 
-PowerShell 7.3-preview.4 includes the following features, updates, and breaking changes.
+PowerShell 7.3-preview.5 includes the following features, updates, and breaking changes.
 
-## Known issues in 7.3-preview.4
+## Known issues in 7.3-preview.5
 
 These issues should be fixed in the next release of .NET 7 and included in a future preview of
 PowerShell 7.3.
@@ -51,6 +51,11 @@ PowerShell 7.3.
 - Support forward slashes in network share (UNC path) completion (#17111) (#17117) (Thanks @sba923!)
 - Improve member auto completion (#16504) (Thanks @MartinGC94!)
 - Prioritize ValidateSet completions over Enums for parameters (#15257) (Thanks @MartinGC94!)
+- Add type inference support for generic methods with type parameters (#16951) (Thanks @MartinGC94!)
+- Improve type inference and completions (#16963) (Thanks @MartinGC94!)
+  - Allows methods to be shown in completion results for `ForEach-Object -MemberName`
+  - Prevents completion on expressions that return void like `([void](""))`
+  - Allows non-default Class constructors to show up when class completion is based on the AST
 
 ## Updated cmdlets
 
@@ -96,7 +101,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
 <!-- end of content -->
 <!-- reference links -->
 
-[CHANGELOG]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0-preview.3
+[CHANGELOG]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0-preview.5
 [exp-clean]: ../learn/experimental-features.md#pscleanblock
 [exp-psexec]: ../learn/experimental-features.md#psexec
 [exp-strict]: ../learn/experimental-features.md#psstrictmodeassignment
