@@ -8,14 +8,22 @@ ms.date: 02/10/2020
 schema: 2.0.0
 title: PSReadLine
 ---
-
 # PSReadLine Module
 
 ## Description
 
 The PSReadLine module contains cmdlets that let you customize the command-line editing environment
-in PowerShell. These articles document PSReadLine v2.0. This version ships in PowerShell v6 and
-the Windows 10 October 2018 Update (Build 1809).
+in PowerShell.
+
+There have been many updates to PSReadLine since the version that ships in
+Windows PowerShell 5.1.
+
+- PowerShell 7.3-preview.5 ships with PSReadLine 2.2.5
+- PowerShell 7.2.5 ships with PSReadLine 2.1.0
+- PowerShell 7.0.11 ships with PSReadLine 2.0.4
+- PowerShell 5.1 ships with PSReadLine 2.0.0
+
+These articles document version 2.0.4 of PSReadLine.
 
 > [!NOTE]
 > Beginning with PowerShell 7.0, PowerShell skips auto-loading PSReadLine on

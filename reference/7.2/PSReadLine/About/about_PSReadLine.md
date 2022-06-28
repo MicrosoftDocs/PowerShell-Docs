@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 03/02/2022
+ms.date: 06/27/2022
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
@@ -15,7 +15,12 @@ PowerShell console.
 
 ## Long Description
 
-PSReadLine 2.1 provides a powerful command-line editing experience for the
+PowerShell 7.2 ships with PSReadLine 2.1.0. There are newer versions
+available. The current version of PSReadLine can be installed and used on
+Windows PowerShell 5.1 and newer. For some features, you need to be running
+PowerShell 7.1 or higher.
+
+PSReadLine provides a powerful command-line editing experience for the
 PowerShell console. It provides:
 
 - Syntax coloring of the command line
@@ -28,26 +33,18 @@ PowerShell console. It provides:
 - Emacs yank/kill-ring
 - PowerShell token based "word" movement and deletion
 - Predictive IntelliSense
+- Dynamic display of Help in the console without losing your place on the
+  command line
 
-PSReadLine requires PowerShell 3.0, or newer. PSReadLine works with default
-console host, Visual Studio Code, and Window Terminal. It does not work in
-PowerShell ISE.
+PSReadLine requires PowerShell 5.1, or newer. PSReadLine works with the default
+Windows console host, Window Terminal, and Visual Studio Code. It does not work
+in the Windows PowerShell ISE.
 
-PSReadLine 2.1.0 ships with PowerShell 7.2 and is supported in all supported
-versions of PowerShell. It is available to install from the PowerShell Gallery.
-To install PSReadLine 2.1.0 in a supported version of PowerShell run the
-following command.
-
-PSReadLine 2.2.0 (beta) added two new predictive IntelliSense features:
-
-- Added the **PredictionViewStyle** parameter to allow for the selection of the
-  new `ListView`.
-- Connected PSReadLine to the `CommandPrediction` APIs introduced in PS 7.1 to
-  allow a user can import a predictor module that can render the suggestions
-  from a custom source.
+PSReadLine can be installed from the PowerShell Gallery. To install PSReadLine
+in a supported version of PowerShell run the following command.
 
 ```powershell
-Install-Module -Name PSReadLine -AllowPrerelease
+Install-Module -Name PSReadLine -AllowClobber -Force
 ```
 
 > [!NOTE]
@@ -1731,7 +1728,63 @@ example, the user is reading help to decide which parameter to use.
 Beginning in PSReadLine 2.2.0-beta4, **OnIdle** behavior changed to signal the event only if there
 is a `ReadKey()` timeout and the current editing buffer is empty.
 
-### Feedback & Contributing To PSReadLine
+### PSReadLine release history
+
+There have been many updates to PSReadLine since the version that ships in
+Windows PowerShell 5.1.
+
+- PowerShell 7.3-preview.5 ships with PSReadLine 2.2.5
+- PowerShell 7.2.5 ships with PSReadLine 2.1.0
+- PowerShell 7.0.11 ships with PSReadLine 2.0.4
+- PowerShell 5.1 ships with PSReadLine 2.0.0
+
+For a full list of changes, see the PSReadLine
+[ChangeLog](https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/Changes.txt).
+
+- **PSReadLine 2.2.6**
+
+  In this release, the Predictive IntelliSense feature is enabled by default
+  depending on the following conditions:
+
+  - If Virtual Terminal (VT) is supported and PSReadLine running in PowerShell
+    7.2 or higher, **PredictionSource** is set to `HistoryAndPlugin`
+  - If VT is supported and PSReadLine running in PowerShell prior to 7.2,
+    **PredictionSource** is set to `History`
+  - If VT is not supported, **PredictionSource** is set to `None`
+
+- **PSReadLine 2.2.5**
+
+  This release rolls up the following enhancements added since the 2.1.0
+  release:
+
+  - PSReadLine added two new predictive IntelliSense features:
+    - Added the **PredictionViewStyle** parameter to allow for the selection of
+      the new `ListView`.
+    - Connected PSReadLine to the `CommandPrediction` APIs introduced in
+      PowerShell 7.1 to allow a user can import a predictor module that can
+      render the suggestions from a custom source.
+  - Updated to use the 1.0.0 version of `Microsoft.PowerShell.Pager` for
+    dynamic help
+  - Improved the scrubbing of sensitive history items
+  - Lots of bug fixes and smaller improvements
+
+- **PSReadLine 2.1.0**
+
+  This release rolls up the following enhancements added since the 2.0.4
+  release:
+
+  - Add Predictive IntelliSense suggestions from the command history
+  - Many bug fixes and API enhancements
+
+- **PSReadLine 2.0.4**
+
+  This release rolls up the following enhancements added since the 2.0.0
+  release:
+
+  - Added the `-Chord` parameter to `Get-PSReadLineKeyHandler` to allow
+    searching for specific key bindings
+
+### Feedback & contributing to PSReadLine
 
 [PSReadLine on GitHub](https://github.com/PowerShell/PSReadLine)
 
