@@ -17,7 +17,7 @@ PowerShell console.
 
 PowerShell 7.3 ships with PSReadLine 2.2.5. There are newer versions
 available. The current version of PSReadLine can be installed and used on
-Windows PowerShell 5.1 and newer. For some features, you need running
+Windows PowerShell 5.1 and newer. For some features, you need to be running
 PowerShell 7.1 or higher.
 
 PSReadLine provides a powerful command-line editing experience for the
@@ -84,7 +84,7 @@ Set-PSReadLineOption -PredictionSource None
 > information see, the [PSReadLine release history](#psreadline-release-history)
 > in the **Notes** section below.
 
-## Using the **Microsoft.PowerShell.PSConsoleReadLine** class
+## Using the Microsoft.PowerShell.PSConsoleReadLine class
 
 The following functions are available in the class
 **Microsoft.PowerShell.PSConsoleReadLine**.
