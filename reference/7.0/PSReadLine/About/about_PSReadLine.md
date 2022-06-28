@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 06/27/2022
+ms.date: 06/28/2022
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
@@ -18,7 +18,7 @@ PowerShell console.
 PowerShell 7.0 ships with PSReadLine 2.0.4. There are newer versions
 available. The current version of PSReadLine can be installed and used on
 Windows PowerShell 5.1 and newer. For some features, you need to be running
-PowerShell 7.1 or higher.
+PowerShell 7.2 or higher.
 
 PSReadLine provides a powerful command-line editing experience for the
 PowerShell console. It provides:
@@ -1523,7 +1523,7 @@ For a full list of changes, see the PSReadLine
     - Added the **PredictionViewStyle** parameter to allow for the selection of
       the new `ListView`.
     - Connected PSReadLine to the `CommandPrediction` APIs introduced in
-      PowerShell 7.1 to allow a user can import a predictor module that can
+      PowerShell 7.2 to allow a user can import a predictor module that can
       render the suggestions from a custom source.
   - Updated to use the 1.0.0 version of `Microsoft.PowerShell.Pager` for
     dynamic help
