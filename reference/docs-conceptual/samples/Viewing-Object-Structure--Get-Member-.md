@@ -5,7 +5,7 @@ title: Viewing Object Structure Get Member
 ---
 # Viewing Object Structure (Get-Member)
 
-Because objects play such a central role in Windows PowerShell, there are several native commands
+Because objects play such a central role in PowerShell, there are several native commands
 designed to work with arbitrary object types. The most important one is the `Get-Member` command.
 
 The simplest technique for analyzing the objects that a command returns is to pipe the output of
@@ -68,14 +68,14 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 > ScriptProperty, Properties, PropertySet, Method, CodeMethod, ScriptMethod, Methods,
 > ParameterizedProperty, MemberSet, and All.
 
-There are over 60 properties for a process. The reason Windows PowerShell often shows only a handful
+There are over 60 properties for a process. The reason PowerShell often shows only a handful
 of properties for any well-known object is that showing all of them would produce an unmanageable
 amount of information.
 
 > [!NOTE]
-> Windows PowerShell determines how to display an object type by using information stored in XML
+> PowerShell determines how to display an object type by using information stored in XML
 > files that have names ending in .format.ps1xml. The formatting data for process objects, which are
 > .NET System.Diagnostics.Process objects, is stored in DotNetTypes.format.ps1xml.
 
-If you need to look at properties other than those that Windows PowerShell displays by default, you
+If you need to look at properties other than those that PowerShell displays by default, you
 will need to format the output data yourself. This can be done by using the format cmdlets.
