@@ -42,7 +42,7 @@ repeating an operation.
 
 ### Example 1: Pause execution for 1.5 seconds
 
-This example execution of commands pauses for one and one-half seconds.
+In this example, the execution of commands pauses for one and one-half seconds.
 
 ```powershell
 Start-Sleep -Seconds 1.5
