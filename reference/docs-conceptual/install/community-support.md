@@ -1,6 +1,6 @@
 ---
 description: PowerShell may run on Linux distributions that are not officially supported by Microsoft.
-ms.date: 05/31/2022
+ms.date: 06/29/2022
 title: Community support for PowerShell on Linux
 ---
 # Community support for PowerShell on Linux
@@ -15,7 +15,7 @@ To be supported by Microsoft, the Linux distribution must meet the following cri
 - The version of the distribution is not an interim release or equivalent.
 - The PowerShell team has tested the version of the distribution.
 
-For more information, see the [PowerShell Support Lifecycle][powershell-support-lifecycle.md]
+For more information, see the [PowerShell Support Lifecycle](powershell-support-lifecycle.md)
 documentation.
 
 The following distributions are supported by the community. Each distribution has its own community
