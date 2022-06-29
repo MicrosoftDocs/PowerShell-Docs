@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 06/29/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-host?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Host
@@ -17,7 +17,7 @@ Clears the display in the host program.
 ## SYNTAX
 
 ```
-Clear-Host [<CommonParameters>]
+Clear-Host
 ```
 
 ## DESCRIPTION
@@ -75,11 +75,7 @@ This command uses the `cls` alias of `Clear-Host` to clear the current display.
 
 ## PARAMETERS
 
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+There are no parameters.
 
 ## INPUTS
 
