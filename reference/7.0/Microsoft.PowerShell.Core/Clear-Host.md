@@ -73,10 +73,6 @@ PS C:>
 
 This command uses the `cls` alias of `Clear-Host` to clear the current display.
 
-## PARAMETERS
-
-There are no parameters.
-
 ## INPUTS
 
 ### None
@@ -91,8 +87,7 @@ You cannot pipe input to `Clear-Host`.
 
 ## NOTES
 
-`Clear-Host` is a simple function, not an advanced function. As such, you cannot use common
-parameters, such as **Debug**, in a `Clear-Host` command.
+`Clear-Host` is a simple function, not an advanced function. There are no parameters.
 
 ## RELATED LINKS
 
