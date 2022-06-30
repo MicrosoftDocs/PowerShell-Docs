@@ -21,7 +21,7 @@ Installation on Alpine is based on downloading tar.gz package from the [releases
 The URL to the package depends on the version of PowerShell you want to install.
 
 - PowerShell 7.2.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/powershell-7.2.5-linux-alpine-x64.tar.gz`
-- PowerShell 7.0.10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.10/powershell-7.0.10-linux-alpine-x64.tar.gz`
+- PowerShell 7.0.11 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.11/powershell-7.0.11-linux-alpine-x64.tar.gz`
 
 Then, in the terminal, execute the following shell commands to install PowerShell 7.2:
 
