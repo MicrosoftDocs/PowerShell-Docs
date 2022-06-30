@@ -24,9 +24,8 @@ package from the [releases][releases] page onto the Debian 10 machine. The link 
 version is:
 
 - PowerShell 7.2.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/powershell-lts_7.2.5-1.deb_amd64.deb`
-- PowerShell 7.0.10
-  - Debian 10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.10/powershell-lts_7.0.10-1.debian.10_amd64.deb`
-  - Debian 9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.10/powershell-lts_7.0.10-1.debian.9_amd64.deb`
+- PowerShell 7.0.11
+  - Debian 10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.11/powershell-lts_7.0.11-1.debian.10_amd64.deb`
 
 ## Installation on Debian 11 via Package Repository
 
@@ -73,36 +72,6 @@ sudo apt-get install -y powershell
 # Start PowerShell
 pwsh
 ```
-
-## Installation on Debian 9 via Package Repository
-
-PowerShell for Linux is published to package repositories for easy installation and updates.
-
-The preferred method is as follows:
-
-```sh
-# Install system components
-sudo apt-get update
-sudo apt-get install -y curl gnupg apt-transport-https
-
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-# Register the Microsoft Product feed
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/microsoft.list'
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-As superuser, register the Microsoft repository once. After registration, you can update PowerShell
-with `sudo apt-get install powershell`.
 
 ## Uninstallation
 
