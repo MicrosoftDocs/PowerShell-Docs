@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 05/18/2022
+ms.date: 06/30/2022
 ms.prod: powershell
 ms.topic: include
 ---
@@ -20,7 +20,7 @@ they're supported on. These versions remain supported until either the version o
 | ----------- | :-------: | :-------: | :---------------: | :-----------: |
 | &#x2705; 11 | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
 | &#x2705; 10 | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
-| &#x2705; 9  | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
+| &#x2705; 9  | &#x1f7e1; | &#x1f7e1; |     &#x1f7e1;     |   &#x1f7e1;   |
 | &#x274c; 8  | &#x1f7e1; | &#x274c;  |     &#x274c;      |   &#x274c;    |
 
 PowerShell is supported on Debian for the following processor architectures.
