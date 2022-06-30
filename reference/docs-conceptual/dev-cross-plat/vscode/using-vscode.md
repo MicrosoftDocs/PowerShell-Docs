@@ -105,9 +105,15 @@ Menu. You can extend the session menu by
 [adding your own custom paths](#adding-your-own-powershell-paths-to-the-session-menu) as described
 below.
 
+The PowerShell session menu can also be accessed from the `{}` icon in the bottom right corner of
+status bar. Hovering on or selecting this icon displays a shortcut to the session menu and a small
+pin icon. If you select the pin icon, the version number is added to the status bar. The version
+number is a shortcut to the session menu requiring fewer clicks.
+
 > [!NOTE]
-> The PowerShell session menu can also be accessed from the green version number in the bottom right
-> corner of status bar. Clicking this version number opens the session menu.
+> Pinning the version number replicates the behavior of the extension in versions of VS Code before
+> 1.65. The 1.65 release of VS Code changed the APIs the PowerShell extension uses and standardized
+> the status bar for language extensions.
 
 ## Configuration settings for Visual Studio Code
 
