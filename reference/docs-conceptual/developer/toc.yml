@@ -1,1146 +1,1146 @@
 items:
   - name: Overview
-    href: windows-powershell
+    href: windows-powershell.md
   - name: Installing the Windows PowerShell SDK
-    href: installing-the-windows-powershell-sdk
+    href: installing-the-windows-powershell-sdk.md
   - name: Windows PowerShell Reference
-    href: windows-powershell-reference
+    href: windows-powershell-reference.md
   - name: What's New
-    href: windows-powershell-reference-whats-new
+    href: windows-powershell-reference-whats-new.md
   - name: Writing a PowerShell Cmdlet
     items:
       - name: Cmdlet Overview
-        href: cmdlet/cmdlet-overview
+        href: cmdlet/cmdlet-overview.md
       - name: PowerShell Cmdlet Concepts
-        href: cmdlet/windows-powershell-cmdlet-concepts
+        href: cmdlet/windows-powershell-cmdlet-concepts.md
         items:
           - name: Cmdlet Development Guidelines
-            href: cmdlet/cmdlet-development-guidelines
+            href: cmdlet/cmdlet-development-guidelines.md
             items:
               - name: Required Development Guidelines
-                href: cmdlet/required-development-guidelines
+                href: cmdlet/required-development-guidelines.md
               - name: Strongly Encouraged Development Guidelines
-                href: cmdlet/strongly-encouraged-development-guidelines
+                href: cmdlet/strongly-encouraged-development-guidelines.md
               - name: Advisory Development Guidelines
-                href: cmdlet/advisory-development-guidelines
+                href: cmdlet/advisory-development-guidelines.md
           - name: Cmdlet Class Declaration
-            href: cmdlet/cmdlet-class-declaration
+            href: cmdlet/cmdlet-class-declaration.md
           - name: Approved Verbs for PowerShell Commands
-            href: cmdlet/approved-verbs-for-windows-powershell-commands
+            href: cmdlet/approved-verbs-for-windows-powershell-commands.md
           - name: Cmdlet Input Processing Methods
-            href: cmdlet/cmdlet-input-processing-methods
+            href: cmdlet/cmdlet-input-processing-methods.md
           - name: Cmdlet Parameters
-            href: cmdlet/cmdlet-parameters
+            href: cmdlet/cmdlet-parameters.md
             items:
               - name: Declaring Properties as Parameters
-                href: cmdlet/declaring-properties-as-parameters
+                href: cmdlet/declaring-properties-as-parameters.md
               - name: Types of Cmdlet Parameters
-                href: cmdlet/types-of-cmdlet-parameters
+                href: cmdlet/types-of-cmdlet-parameters.md
               - name: Standard Cmdlet Parameter Names and Types
-                href: cmdlet/standard-cmdlet-parameter-names-and-types
+                href: cmdlet/standard-cmdlet-parameter-names-and-types.md
                 items:
                   - name: Activity Parameters
-                    href: cmdlet/activity-parameters
+                    href: cmdlet/activity-parameters.md
                   - name: Date and Time Parameters
-                    href: cmdlet/date-and-time-parameters
+                    href: cmdlet/date-and-time-parameters.md
                   - name: Format Parameters
-                    href: cmdlet/format-parameters
+                    href: cmdlet/format-parameters.md
                   - name: Property Parameters
-                    href: cmdlet/property-parameters
+                    href: cmdlet/property-parameters.md
                   - name: Quantity Parameters
-                    href: cmdlet/quantity-parameters
+                    href: cmdlet/quantity-parameters.md
                   - name: Resource Parameters
-                    href: cmdlet/resource-parameters
+                    href: cmdlet/resource-parameters.md
                   - name: Security Parameters
-                    href: cmdlet/security-parameters
+                    href: cmdlet/security-parameters.md
               - name: Parameter Aliases
-                href: cmdlet/parameter-aliases
+                href: cmdlet/parameter-aliases.md
               - name: Common Parameter Names
-                href: cmdlet/common-parameter-names
+                href: cmdlet/common-parameter-names.md
               - name: Cmdlet Parameter Sets
-                href: cmdlet/cmdlet-parameter-sets
+                href: cmdlet/cmdlet-parameter-sets.md
               - name: Cmdlet Dynamic Parameters
-                href: cmdlet/cmdlet-dynamic-parameters
+                href: cmdlet/cmdlet-dynamic-parameters.md
               - name: Supporting Wildcard Characters in Cmdlet Parameters
-                href: cmdlet/supporting-wildcard-characters-in-cmdlet-parameters
+                href: cmdlet/supporting-wildcard-characters-in-cmdlet-parameters.md
               - name: Validating Parameter Input
-                href: cmdlet/validating-parameter-input
+                href: cmdlet/validating-parameter-input.md
               - name: Input Filter Parameters
-                href: cmdlet/input-filter-parameters
+                href: cmdlet/input-filter-parameters.md
           - name: Cmdlet Attributes
-            href: cmdlet/cmdlet-attributes
+            href: cmdlet/cmdlet-attributes.md
             items:
               - name: Attributes in Cmdlet Code
-                href: cmdlet/attributes-in-cmdlet-code
+                href: cmdlet/attributes-in-cmdlet-code.md
               - name: Attribute Types
-                href: cmdlet/attribute-types
+                href: cmdlet/attribute-types.md
               - name: Alias Attribute Declaration
-                href: cmdlet/alias-attribute-declaration
+                href: cmdlet/alias-attribute-declaration.md
               - name: Cmdlet Attribute Declaration
-                href: cmdlet/cmdlet-attribute-declaration
+                href: cmdlet/cmdlet-attribute-declaration.md
               - name: Credential Attribute Declaration
-                href: cmdlet/credential-attribute-declaration
+                href: cmdlet/credential-attribute-declaration.md
               - name: OutputType Attribute Declaration
-                href: cmdlet/outputtype-attribute-declaration
+                href: cmdlet/outputtype-attribute-declaration.md
               - name: Parameter Attribute Declaration
-                href: cmdlet/parameter-attribute-declaration
+                href: cmdlet/parameter-attribute-declaration.md
               - name: ValidateCount Attribute Declaration
-                href: cmdlet/validatecount-attribute-declaration
+                href: cmdlet/validatecount-attribute-declaration.md
               - name: ValidateLength Attribute Declaration
-                href: cmdlet/validatelength-attribute-declaration
+                href: cmdlet/validatelength-attribute-declaration.md
               - name: ValidatePattern Attribute Declaration
-                href: cmdlet/validatepattern-attribute-declaration
+                href: cmdlet/validatepattern-attribute-declaration.md
               - name: ValidateRange Attribute Declaration
-                href: cmdlet/validaterange-attribute-declaration
+                href: cmdlet/validaterange-attribute-declaration.md
               - name: ValidateScript Attribute Declaration
-                href: cmdlet/validatescript-attribute-declaration
+                href: cmdlet/validatescript-attribute-declaration.md
               - name: ValidateSet Attribute Declaration
-                href: cmdlet/validateset-attribute-declaration
+                href: cmdlet/validateset-attribute-declaration.md
           - name: Cmdlet Aliases
-            href: cmdlet/cmdlet-aliases
+            href: cmdlet/cmdlet-aliases.md
           - name: Cmdlet Output
-            href: cmdlet/cmdlet-output
+            href: cmdlet/cmdlet-output.md
             items:
               - name: Types of Cmdlet Output
-                href: cmdlet/types-of-cmdlet-output
+                href: cmdlet/types-of-cmdlet-output.md
               - name: Cmdlet Error Reporting
-                href: cmdlet/cmdlet-error-reporting
+                href: cmdlet/cmdlet-error-reporting.md
               - name: Extending Output Objects
-                href: cmdlet/extending-output-objects
+                href: cmdlet/extending-output-objects.md
                 items:
                   - name: Extending Properties for Objects
-                    href: cmdlet/extending-properties-for-objects
+                    href: cmdlet/extending-properties-for-objects.md
                   - name: Defining Default Methods for Objects
-                    href: cmdlet/defining-default-methods-for-objects
+                    href: cmdlet/defining-default-methods-for-objects.md
                   - name: Defining Default Member Sets for Objects
-                    href: cmdlet/defining-default-member-sets-for-objects
+                    href: cmdlet/defining-default-member-sets-for-objects.md
               - name: Custom Formatting Files
-                href: cmdlet/custom-formatting-files
+                href: cmdlet/custom-formatting-files.md
           - name: Requesting Confirmation
-            href: cmdlet/requesting-confirmation
+            href: cmdlet/requesting-confirmation.md
             items:
               - name: Requesting Confirmation from Cmdlets
-                href: cmdlet/requesting-confirmation-from-cmdlets
+                href: cmdlet/requesting-confirmation-from-cmdlets.md
               - name: Users Requesting Confirmation
-                href: cmdlet/users-requesting-confirmation
+                href: cmdlet/users-requesting-confirmation.md
               - name: Confirmation Messages
-                href: cmdlet/confirmation-messages
+                href: cmdlet/confirmation-messages.md
           - name: PowerShell Error Reporting
-            href: cmdlet/windows-powershell-error-reporting
+            href: cmdlet/windows-powershell-error-reporting.md
             items:
               - name: Error Reporting Concepts
-                href: cmdlet/error-reporting-concepts
+                href: cmdlet/error-reporting-concepts.md
               - name: Terminating Errors
-                href: cmdlet/terminating-errors
+                href: cmdlet/terminating-errors.md
               - name: Non-Terminating Errors
-                href: cmdlet/non-terminating-errors
+                href: cmdlet/non-terminating-errors.md
               - name: Displaying Error Information
-                href: cmdlet/displaying-error-information
+                href: cmdlet/displaying-error-information.md
               - name: PowerShell Error Records
-                href: cmdlet/windows-powershell-error-records
+                href: cmdlet/windows-powershell-error-records.md
               - name: Interpreting ErrorRecord Objects
-                href: cmdlet/interpreting-errorrecord-objects
+                href: cmdlet/interpreting-errorrecord-objects.md
           - name: Background Jobs
-            href: cmdlet/background-jobs
+            href: cmdlet/background-jobs.md
           - name: Invoking Cmdlets and Scripts Within a Cmdlet
-            href: cmdlet/invoking-cmdlets-and-scripts-within-a-cmdlet
+            href: cmdlet/invoking-cmdlets-and-scripts-within-a-cmdlet.md
           - name: Cmdlet Sets
-            href: cmdlet/cmdlet-sets
+            href: cmdlet/cmdlet-sets.md
           - name: PowerShell Session State
-            href: cmdlet/windows-powershell-session-state
+            href: cmdlet/windows-powershell-session-state.md
       - name: Examples of Cmdlet Code
-        href: cmdlet/examples-of-cmdlet-code
+        href: cmdlet/examples-of-cmdlet-code.md
         items:
           - name: How to Write a Simple Cmdlet
-            href: cmdlet/how-to-write-a-simple-cmdlet
+            href: cmdlet/how-to-write-a-simple-cmdlet.md
           - name: How to Declare Cmdlet Parameters
-            href: cmdlet/how-to-declare-cmdlet-parameters
+            href: cmdlet/how-to-declare-cmdlet-parameters.md
           - name: How to Declare Parameter Sets
-            href: cmdlet/how-to-declare-parameter-sets
+            href: cmdlet/how-to-declare-parameter-sets.md
           - name: How to Validate Parameter Input
-            href: cmdlet/how-to-validate-parameter-input
+            href: cmdlet/how-to-validate-parameter-input.md
             items:
               - name: How to Validate an Argument using a script
-                href: cmdlet/how-to-validate-an-argument-using-script
+                href: cmdlet/how-to-validate-an-argument-using-script.md
               - name: How to Validate an Argument Set
-                href: cmdlet/how-to-validate-an-argument-set
+                href: cmdlet/how-to-validate-an-argument-set.md
               - name: How to Validate an Argument Range
-                href: cmdlet/how-to-validate-an-argument-range
+                href: cmdlet/how-to-validate-an-argument-range.md
               - name: How to Validate an Argument Pattern
-                href: cmdlet/how-to-validate-an-argument-pattern
+                href: cmdlet/how-to-validate-an-argument-pattern.md
               - name: How to Validate the Argument Length
-                href: cmdlet/how-to-validate-the-argument-length
+                href: cmdlet/how-to-validate-the-argument-length.md
               - name: How to Validate an Argument Count
-                href: cmdlet/how-to-validate-an-argument-count
+                href: cmdlet/how-to-validate-an-argument-count.md
           - name: How to Declare Dynamic Parameters
-            href: cmdlet/how-to-declare-dynamic-parameters
+            href: cmdlet/how-to-declare-dynamic-parameters.md
           - name: How to Invoke Scripts Within a Cmdlet
-            href: cmdlet/how-to-invoke-scripts-within-a-cmdlet
+            href: cmdlet/how-to-invoke-scripts-within-a-cmdlet.md
           - name: How to Override Input Processing Methods
-            href: cmdlet/how-to-override-input-processing-methods
+            href: cmdlet/how-to-override-input-processing-methods.md
           - name: How to Request Confirmations
-            href: cmdlet/how-to-request-confirmations
+            href: cmdlet/how-to-request-confirmations.md
           - name: How to Support Transactions
-            href: cmdlet/how-to-support-transactions
+            href: cmdlet/how-to-support-transactions.md
           - name: How to Support Jobs
-            href: cmdlet/how-to-support-jobs
+            href: cmdlet/how-to-support-jobs.md
           - name: How to Invoke a Cmdlet from Within a Cmdlet
-            href: cmdlet/how-to-invoke-a-cmdlet-from-within-a-cmdlet
+            href: cmdlet/how-to-invoke-a-cmdlet-from-within-a-cmdlet.md
       - name: Tutorials for Writing Cmdlets
-        href: cmdlet/tutorials-for-writing-cmdlets
+        href: cmdlet/tutorials-for-writing-cmdlets.md
         items:
           - name: GetProc Tutorial
-            href: cmdlet/getproc-tutorial
+            href: cmdlet/getproc-tutorial.md
             items:
               - name: Creating a Cmdlet without Parameters
-                href: cmdlet/creating-a-cmdlet-without-parameters
+                href: cmdlet/creating-a-cmdlet-without-parameters.md
               - name: Adding Parameters That Process Command-Line Input
-                href: cmdlet/adding-parameters-that-process-command-line-input
+                href: cmdlet/adding-parameters-that-process-command-line-input.md
               - name: Adding Parameters that Process Pipeline Input
-                href: cmdlet/adding-parameters-that-process-pipeline-input
+                href: cmdlet/adding-parameters-that-process-pipeline-input.md
               - name: Adding Non-Terminating Error Reporting to Your Cmdlet
-                href: cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet
+                href: cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md
           - name: StopProc Tutorial
-            href: cmdlet/stopproc-tutorial
+            href: cmdlet/stopproc-tutorial.md
             items:
               - name: Creating a Cmdlet that Modifies the System
-                href: cmdlet/creating-a-cmdlet-that-modifies-the-system
+                href: cmdlet/creating-a-cmdlet-that-modifies-the-system.md
               - name: Adding User Messages to Your Cmdlet
-                href: cmdlet/adding-user-messages-to-your-cmdlet
+                href: cmdlet/adding-user-messages-to-your-cmdlet.md
               - name: Adding Aliases, Wildcard Expansion, and Help to Cmdlet Parameters
-                href: cmdlet/adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters
+                href: cmdlet/adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters.md
               - name: Adding Parameter Sets to a Cmdlet
-                href: cmdlet/adding-parameter-sets-to-a-cmdlet
+                href: cmdlet/adding-parameter-sets-to-a-cmdlet.md
           - name: SelectStr Tutorial
-            href: cmdlet/selectstr-tutorial
+            href: cmdlet/selectstr-tutorial.md
             items:
               - name: Creating a Cmdlet to Access a Data Store
-                href: cmdlet/creating-a-cmdlet-to-access-a-data-store
+                href: cmdlet/creating-a-cmdlet-to-access-a-data-store.md
       - name: Cmdlet Samples
-        href: cmdlet/cmdlet-samples
+        href: cmdlet/cmdlet-samples.md
         items:
           - name: GetProcessSample01 Sample
-            href: cmdlet/getprocesssample01-sample
+            href: cmdlet/getprocesssample01-sample.md
           - name: GetProcessSample02 Sample
-            href: cmdlet/getprocesssample02-sample
+            href: cmdlet/getprocesssample02-sample.md
           - name: GetProcessSample03 Sample
-            href: cmdlet/getprocesssample03-sample
+            href: cmdlet/getprocesssample03-sample.md
           - name: GetProcessSample04 Sample
-            href: cmdlet/getprocesssample04-sample
+            href: cmdlet/getprocesssample04-sample.md
           - name: GetProcessSample05 Sample
-            href: cmdlet/getprocesssample05-sample
+            href: cmdlet/getprocesssample05-sample.md
           - name: StopProcessSample01 Sample
-            href: cmdlet/stopprocesssample01-sample
+            href: cmdlet/stopprocesssample01-sample.md
           - name: StopProcessSample02 Sample
-            href: cmdlet/stopprocesssample02-sample
+            href: cmdlet/stopprocesssample02-sample.md
           - name: StopProcessSample03 Sample
-            href: cmdlet/stopprocesssample03-sample
+            href: cmdlet/stopprocesssample03-sample.md
           - name: StopProcessSample04 Sample
-            href: cmdlet/stopprocesssample04-sample
+            href: cmdlet/stopprocesssample04-sample.md
           - name: Events01 Sample
-            href: cmdlet/events01-sample
+            href: cmdlet/events01-sample.md
   - name: Writing a PowerShell Module
     items:
       - name: Overview
-        href: module/writing-a-windows-powershell-module
+        href: module/writing-a-windows-powershell-module.md
       - name: Understanding a PowerShell Module
-        href: module/understanding-a-windows-powershell-module
+        href: module/understanding-a-windows-powershell-module.md
       - name: How to Write a PowerShell Script Module
-        href: module/how-to-write-a-powershell-script-module
+        href: module/how-to-write-a-powershell-script-module.md
       - name: How to Write a PowerShell Binary Module
-        href: module/how-to-write-a-powershell-binary-module
+        href: module/how-to-write-a-powershell-binary-module.md
       - name: How to Write a PowerShell Module Manifest
-        href: module/how-to-write-a-powershell-module-manifest
+        href: module/how-to-write-a-powershell-module-manifest.md
       - name: Installing a PowerShell Module
-        href: module/installing-a-powershell-module
+        href: module/installing-a-powershell-module.md
       - name: Registering Cmdlets
         items:
           - name: Overview
-            href: module/registering-cmdlets
+            href: module/registering-cmdlets.md
           - name: Modules and Snap-ins
-            href: module/modules-and-snap-ins
+            href: module/modules-and-snap-ins.md
           - name: How to Import Cmdlets Using Modules
-            href: module/how-to-import-cmdlets-using-modules
+            href: module/how-to-import-cmdlets-using-modules.md
           - name: How to Create a Windows PowerShell Snap-in
             items:
               - name: Overview
-                href: module/how-to-create-a-windows-powershell-snap-in
+                href: module/how-to-create-a-windows-powershell-snap-in.md
               - name: Writing a PowerShell Snap-in
-                href: module/writing-a-windows-powershell-snap-in
+                href: module/writing-a-windows-powershell-snap-in.md
               - name: Writing a Custom PowerShell Snap-in
-                href: module/writing-a-custom-windows-powershell-snap-in
+                href: module/writing-a-custom-windows-powershell-snap-in.md
       - name: Importing a PowerShell Module
-        href: module/importing-a-powershell-module
+        href: module/importing-a-powershell-module.md
   - name: Writing a PowerShell Provider
     items:
       - name: PowerShell Provider Quickstart
-        href: provider/windows-powershell-provider-quickstart
+        href: provider/windows-powershell-provider-quickstart.md
       - name: PowerShell Provider Overview
-        href: provider/windows-powershell-provider-overview
+        href: provider/windows-powershell-provider-overview.md
         items:
           - name: Provider types
-            href: provider/provider-types
+            href: provider/provider-types.md
           - name: Provider cmdlets
-            href: provider/provider-cmdlets
+            href: provider/provider-cmdlets.md
           - name: Provider cmdlet parameters
-            href: provider/provider-cmdlet-parameters
+            href: provider/provider-cmdlet-parameters.md
           - name: Provider cmdlet dynamic parameters
-            href: provider/provider-cmdlet-dynamic-parameters
+            href: provider/provider-cmdlet-dynamic-parameters.md
       - name: Writing an item provider
-        href: provider/writing-an-item-provider
+        href: provider/writing-an-item-provider.md
       - name: Writing a container provider
-        href: provider/writing-a-container-provider
+        href: provider/writing-a-container-provider.md
       - name: Writing a navigation provider
-        href: provider/writing-a-navigation-provider
+        href: provider/writing-a-navigation-provider.md
       - name: Provider Samples
-        href: provider/provider-samples
+        href: provider/provider-samples.md
         items:
           - name: AccessDBProviderSample01
-            href: provider/accessdbprovidersample01
+            href: provider/accessdbprovidersample01.md
           - name: AccessDBProviderSample02
-            href: provider/accessdbprovidersample02
+            href: provider/accessdbprovidersample02.md
           - name: AccessDBProviderSample03
-            href: provider/accessdbprovidersample03
+            href: provider/accessdbprovidersample03.md
           - name: AccessDBProviderSample04
-            href: provider/accessdbprovidersample04
+            href: provider/accessdbprovidersample04.md
           - name: AccessDBProviderSample05
-            href: provider/accessdbprovidersample05
+            href: provider/accessdbprovidersample05.md
           - name: AccessDBProviderSample06
-            href: provider/accessdbprovidersample06
+            href: provider/accessdbprovidersample06.md
   - name: Writing a PowerShell Host Application
     items:
       - name: PowerShell Host Quickstart
-        href: hosting/windows-powershell-host-quickstart
+        href: hosting/windows-powershell-host-quickstart.md
       - name: Creating Runspaces
-        href: hosting/creating-runspaces
+        href: hosting/creating-runspaces.md
         items:
           - name: Creating an InitialSessionState
-            href: hosting/creating-an-initialsessionstate
+            href: hosting/creating-an-initialsessionstate.md
           - name: Creating a constrained runspace
-            href: hosting/creating-a-constrained-runspace
+            href: hosting/creating-a-constrained-runspace.md
           - name: Creating multiple runspaces
-            href: hosting/creating-multiple-runspaces
+            href: hosting/creating-multiple-runspaces.md
       - name: Adding and invoking commands
-        href: hosting/adding-and-invoking-commands
+        href: hosting/adding-and-invoking-commands.md
       - name: Creating remote runspaces
-        href: hosting/creating-remote-runspaces
+        href: hosting/creating-remote-runspaces.md
       - name: Creating a custom user interface
-        href: hosting/creating-a-custom-user-interface
+        href: hosting/creating-a-custom-user-interface.md
       - name: Host Application Samples
-        href: hosting/host-application-samples
+        href: hosting/host-application-samples.md
         items:
           - name: PowerShell API Samples
-            href: hosting/windows-powershell-api-samples
+            href: hosting/windows-powershell-api-samples.md
             items:
               - name: PowerShell01 Sample
-                href: hosting/windows-powershell01-sample
+                href: hosting/windows-powershell01-sample.md
               - name: PowerShell02 Sample
-                href: hosting/windows-powershell02-sample
+                href: hosting/windows-powershell02-sample.md
           - name: Custom Host Samples
-            href: hosting/custom-host-samples
+            href: hosting/custom-host-samples.md
             items:
               - name: Host01 Sample
-                href: hosting/host01-sample
+                href: hosting/host01-sample.md
               - name: Host02 Sample
-                href: hosting/host02-sample
+                href: hosting/host02-sample.md
               - name: Host03 Sample
-                href: hosting/host03-sample
+                href: hosting/host03-sample.md
               - name: Host04 Sample
-                href: hosting/host04-sample
+                href: hosting/host04-sample.md
               - name: Host05 Sample
-                href: hosting/host05-sample
+                href: hosting/host05-sample.md
               - name: Host06 Sample
-                href: hosting/host06-sample
+                href: hosting/host06-sample.md
           - name: Runspace Samples
-            href: hosting/runspace-samples
+            href: hosting/runspace-samples.md
             items:
               - name: Runspace01 Sample
-                href: hosting/runspace01-sample
+                href: hosting/runspace01-sample.md
               - name: Runspace02 Sample
-                href: hosting/runspace02-sample
+                href: hosting/runspace02-sample.md
               - name: Runspace03 Sample
-                href: hosting/runspace03-sample
+                href: hosting/runspace03-sample.md
               - name: Runspace04 Sample
-                href: hosting/runspace04-sample
+                href: hosting/runspace04-sample.md
               - name: Runspace05 Sample
-                href: hosting/runspace05-sample
+                href: hosting/runspace05-sample.md
               - name: Runspace06 Sample
-                href: hosting/runspace06-sample
+                href: hosting/runspace06-sample.md
               - name: Runspace07 Sample
-                href: hosting/runspace07-sample
+                href: hosting/runspace07-sample.md
               - name: Runspace08 Sample
-                href: hosting/runspace08-sample
+                href: hosting/runspace08-sample.md
               - name: Runspace09 Sample
-                href: hosting/runspace09-sample
+                href: hosting/runspace09-sample.md
               - name: Runspace10 Sample
-                href: hosting/runspace10-sample
+                href: hosting/runspace10-sample.md
               - name: Runspace11 Sample
-                href: hosting/runspace11-sample
+                href: hosting/runspace11-sample.md
           - name: Remote Runspace Samples
-            href: hosting/remote-runspace-samples
+            href: hosting/remote-runspace-samples.md
             items:
               - name: RemoteRunspace01 Sample
-                href: hosting/remoterunspace01-sample
+                href: hosting/remoterunspace01-sample.md
               - name: RemoteRunspacePool01 Sample
-                href: hosting/remoterunspacepool01-sample
+                href: hosting/remoterunspacepool01-sample.md
   - name: Writing a PowerShell Formatting File
     items:
       - name: Formatting File Overview
-        href: format/formatting-file-overview
+        href: format/formatting-file-overview.md
       - name: Formatting File Concepts
         items:
           - name: Overview
-            href: format/formatting-file-concepts
+            href: format/formatting-file-concepts.md
           - name: Creating a Table View
-            href: format/creating-a-table-view
+            href: format/creating-a-table-view.md
           - name: Creating a List View
-            href: format/creating-a-list-view
+            href: format/creating-a-list-view.md
           - name: Creating a Wide View
-            href: format/creating-a-wide-view
+            href: format/creating-a-wide-view.md
           - name: Creating Custom Controls
-            href: format/creating-custom-controls
+            href: format/creating-custom-controls.md
           - name: Loading and Exporting Formatting Data
-            href: format/loading-and-exporting-formatting-data
+            href: format/loading-and-exporting-formatting-data.md
           - name: Defining Selection Sets
-            href: format/defining-selection-sets
+            href: format/defining-selection-sets.md
           - name: Defining Conditions for Displaying Data
-            href: format/defining-conditions-for-displaying-data
+            href: format/defining-conditions-for-displaying-data.md
           - name: Formatting Displayed Data
-            href: format/formatting-displayed-data
+            href: format/formatting-displayed-data.md
       - name: PowerShell Formatting Files
         items:
           - name: Overview
-            href: format/powershell-formatting-files
+            href: format/powershell-formatting-files.md
           - name: How to Create a Formatting File (.format.ps1xml)
-            href: format/how-to-create-a-formatting-file-format-ps1xml
+            href: format/how-to-create-a-formatting-file-format-ps1xml.md
       - name: Examples of Formatting Files
         items:
           - name: Wide View (Basic)
-            href: format/wide-view-basic
+            href: format/wide-view-basic.md
           - name: Wide View (GroupBy)
-            href: format/wide-view-groupby
+            href: format/wide-view-groupby.md
           - name: List View (Basic)
-            href: format/list-view-basic
+            href: format/list-view-basic.md
           - name: List View (Labels)
-            href: format/list-view-labels
+            href: format/list-view-labels.md
           - name: List View (GroupBy)
-            href: format/list-view-groupby
+            href: format/list-view-groupby.md
       - name: Format Schema XML Reference
-        href: format/format-schema-xml-reference
+        href: format/format-schema-xml-reference.md
         items:
           - name: Configuration Element
-            href: format/configuration-element-format
+            href: format/configuration-element-format.md
           - name: Controls Element for Configuration
-            href: format/controls-element-for-configuration-format
+            href: format/controls-element-for-configuration-format.md
             items:
               - name: Control Element for Controls for Configuration
-                href: format/control-element-for-controls-for-configuration-format
+                href: format/control-element-for-controls-for-configuration-format.md
               - name: CustomControl Element for Control for Controls for Configuration
-                href: format/customcontrol-element-for-control-for-controls-for-configuration-format
+                href: format/customcontrol-element-for-control-for-controls-for-configuration-format.md
                 items:
                   - name: CustomEntries Element for CustomControl for Controls for Configuration
-                    href: format/customentries-element-for-customcontrol-for-controls-for-configuration-format
+                    href: format/customentries-element-for-customcontrol-for-controls-for-configuration-format.md
                   - name: CustomEntry Element for CustomControl for Controls for Configuration
-                    href: format/customentry-element-for-customcontrol-for-controls-for-configuration-format
+                    href: format/customentry-element-for-customcontrol-for-controls-for-configuration-format.md
                     items:
                       - name: CustomItem Element for CustomEntry for Controls for Configuration
-                        href: format/customitem-element-for-customentry-for-controls-for-configuration-format
+                        href: format/customitem-element-for-customentry-for-controls-for-configuration-format.md
                         items:
                           - name: ExpressionBinding Element for CustomItem for Controls for Configuration
-                            href: format/expressionbinding-element-for-customitem-for-controls-for-configuration-format
+                            href: format/expressionbinding-element-for-customitem-for-controls-for-configuration-format.md
                             items:
                               - name: CustomControlName Element for ExpressionBinding for Controls for Configuration
-                                href: format/customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format
+                                href: format/customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md
                               - name: EnumerateCollection Element for ExpressionBinding for Controls for Configuration
-                                href: format/enumeratecollection-element-for-expressionbinding-for-controls-for-configuration-format
+                                href: format/enumeratecollection-element-for-expressionbinding-for-controls-for-configuration-format.md
                               - name: ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration
-                                href: format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format
+                                href: format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
                                 items:
                                   - name: PropertyName Element for ItemSelectionCondition for Controls for Configuration
-                                    href: format/propertyname-element-for-itemselectioncondition-for-controls-for-configuration-format
+                                    href: format/propertyname-element-for-itemselectioncondition-for-controls-for-configuration-format.md
                                   - name: ScriptBlock Element for ItemSelectionCondition for Controls for Configuration
-                                    href: format/scriptblock-element-for-itemSelectioncondition-for-controls-for-configuration-format
+                                    href: format/scriptblock-element-for-itemSelectioncondition-for-controls-for-configuration-format.md
                               - name: PropertyName Element for ExpressionBinding for Controls for Configuration
-                                href: format/propertyname-element-for-expressionbinding-for-controls-for-configuration-format
+                                href: format/propertyname-element-for-expressionbinding-for-controls-for-configuration-format.md
                               - name: ScriptBlock Element for ExpressionBinding for Controls for Configuration
-                                href: format/scriptblock-element-for-expressionbinding-for-controls-for-configuration-format
+                                href: format/scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md
                           - name: Frame Element for CustomItem for Controls for Configuration
-                            href: format/frame-element-for-customitem-for-controls-for-configuration-format
+                            href: format/frame-element-for-customitem-for-controls-for-configuration-format.md
                             items:
                               - name: FirstLineHanging Element for Frame for Controls for Configuration
-                                href: format/firstlinehanging-element-for-frame-for-controls-for-configuration-format
+                                href: format/firstlinehanging-element-for-frame-for-controls-for-configuration-format.md
                               - name: FirstLineIndent Element for Frame for Controls for Configuration
-                                href: format/firstlineindent-element-for-frame-for-controls-for-configuration-format
+                                href: format/firstlineindent-element-for-frame-for-controls-for-configuration-format.md
                               - name: LeftIndent Element for Frame for Controls for Configuration
-                                href: format/leftindent-element-for-frame-for-controls-for-configuration-format
+                                href: format/leftindent-element-for-frame-for-controls-for-configuration-format.md
                               - name: RightIndent Element for Frame for Controls for Configuration
-                                href: format/rightindent-element-for-frame-for-controls-for-configuration-format
+                                href: format/rightindent-element-for-frame-for-controls-for-configuration-format.md
                           - name: NewLine Element for CustomItem for Controls for Configuration
-                            href: format/newline-element-for-customitem-for-controls-for-configuration-format
+                            href: format/newline-element-for-customitem-for-controls-for-configuration-format.md
                           - name: Text Element for CustomItem for Controls for Configuration
-                            href: format/text-element-for-customitem-for-controls-for-configuration-format
+                            href: format/text-element-for-customitem-for-controls-for-configuration-format.md
                       - name: EntrySelectedBy Element for CustomEntry for Controls for Configuration
-                        href: format/entryselectedby-element-for-customentry-for-controls-for-configuration-format
+                        href: format/entryselectedby-element-for-customentry-for-controls-for-configuration-format.md
                         items:
                           - name: SelectionCondition Element for EntrySelectedBy for Controls for Configuration
-                            href: format/selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format
+                            href: format/selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md
                             items:
                               - name: PropertyName Element for SelectionCondition for Controls for Configuration
-                                href: format/propertyname-element-for-selectioncondition-for-controls-for-configuration-format
+                                href: format/propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md
                               - name: ScriptBlock Element for SelectionCondition for Controls for Configuration
-                                href: format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format
+                                href: format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
                               - name: SelectionSetName Element for SelectionCondition for Controls for Configuration
-                                href: format/selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format
+                                href: format/selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md
                               - name: TypeName Element for SelectionCondition for Controls for Configuration
-                                href: format/typename-element-for-selectioncondition-for-controls-for-configuration-format
+                                href: format/typename-element-for-selectioncondition-for-controls-for-configuration-format.md
                           - name: SelectionSetName Element for EntrySelectedBy for Controls for Configuration
-                            href: format/selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format
+                            href: format/selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format.md
                           - name: TypeName Element for EntrySelectedBy for Controls for Configuration
-                            href: format/typename-element-for-entryselectedby-for-controls-for-configuration-format
+                            href: format/typename-element-for-entryselectedby-for-controls-for-configuration-format.md
               - name: Name Element for Control for Controls for Configuration
-                href: format/name-element-for-control-for-controls-for-configuration-format
+                href: format/name-element-for-control-for-controls-for-configuration-format.md
           - name: DefaultSettings Element
-            href: format/defaultsettings-element-format
+            href: format/defaultsettings-element-format.md
             items:
               - name: DisplayError Element
-                href: format/displayerror-element-format
+                href: format/displayerror-element-format.md
               - name: EnumerableExpansions Element
-                href: format/enumerableexpansions-element-format
+                href: format/enumerableexpansions-element-format.md
                 items:
                   - name: EnumerableExpansion Element
-                    href: format/enumerableexpansion-element-format
+                    href: format/enumerableexpansion-element-format.md
                   - name: EntrySelectedBy Element for EnumerableExpansion
-                    href: format/entryselectedby-element-for-enumerableexpansion-format
+                    href: format/entryselectedby-element-for-enumerableexpansion-format.md
                     items:
                       - name: SelectionCondition Element for EntrySelectedBy for EnumerableExpansion
-                        href: format/selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format
+                        href: format/selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md
                         items:
                           - name: PropertyName Element for SelectionCondition for Controls for View
-                            href: format/propertyname-element-for-selectioncondition-for-controls-for-view-format
+                            href: format/propertyname-element-for-selectioncondition-for-controls-for-view-format.md
                           - name: ScriptBlock Element for SelectionCondition for Controls for View
-                            href: format/scriptblock-element-for-selectioncondition-for-controls-for-view-format
+                            href: format/scriptblock-element-for-selectioncondition-for-controls-for-view-format.md
                           - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
-                            href: format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format
+                            href: format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
                           - name: TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
-                            href: format/typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format
+                            href: format/typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
                       - name: SelectionSetName Element for EntrySelectedBy for EnumerableExpansion
-                        href: format/selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format
+                        href: format/selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md
                       - name: TypeName Element for EntrySelectedBy for EnumerableExpansion
-                        href: format/typename-element-for-entryselectedby-for-enumerableexpansion-format
+                        href: format/typename-element-for-entryselectedby-for-enumerableexpansion-format.md
                   - name: Expand Element for EnumerableExpansion
-                    href: format/expand-element-format
+                    href: format/expand-element-format.md
               - name: PropertyCountForTable Element
-                href: format/propertycountfortable-element-format
+                href: format/propertycountfortable-element-format.md
               - name: ShowError Element
-                href: format/showerror-element-format
+                href: format/showerror-element-format.md
               - name: WrapTables Element
-                href: format/wraptables-element-format
+                href: format/wraptables-element-format.md
           - name: SelectionSets Element
-            href: format/selectionsets-element-format
+            href: format/selectionsets-element-format.md
             items:
               - name: SelectionSet Element
-                href: format/selectionset-element-format
+                href: format/selectionset-element-format.md
               - name: Name Element for SelectionSet
-                href: format/name-element-for-selectionset-format
+                href: format/name-element-for-selectionset-format.md
               - name: Types Element for SelectionSet
-                href: format/types-element-for-selectionset-format
+                href: format/types-element-for-selectionset-format.md
                 items:
                   - name: TypeName Element for Types
-                    href: format/typename-element-for-types-format
+                    href: format/typename-element-for-types-format.md
           - name: ViewDefinitions Element
-            href: format/viewdefinitions-element-format
+            href: format/viewdefinitions-element-format.md
             items:
               - name: View Element
-                href: format/view-element-format
+                href: format/view-element-format.md
               - name: Controls Element for View
-                href: format/controls-element-for-view-format
+                href: format/controls-element-for-view-format.md
                 items:
                   - name: Control Element for Controls for View
-                    href: format/control-element-for-controls-for-view-format
+                    href: format/control-element-for-controls-for-view-format.md
                   - name: CustomControl Element for Control for Controls for View
-                    href: format/customcontrol-element-for-control-for-controls-for-view-format
+                    href: format/customcontrol-element-for-control-for-controls-for-view-format.md
                     items:
                       - name: CustomEntries Element for CustomControl for Controls for View
-                        href: format/customentries-element-for-customcontrol-for-controls-for-view-format
+                        href: format/customentries-element-for-customcontrol-for-controls-for-view-format.md
                       - name: CustomEntry Element for CustomEntries for Controls for View
-                        href: format/customentry-element-for-customentries-for-controls-for-view-format
+                        href: format/customentry-element-for-customentries-for-controls-for-view-format.md
                         items:
                           - name: CustomItem Element for CustomEntry for Controls for View
-                            href: format/customitem-element-for-customentry-for-controls-for-view-format
+                            href: format/customitem-element-for-customentry-for-controls-for-view-format.md
                             items:
                               - name: ExpressionBinding Element for CustomItem for Controls for View
-                                href: format/expressionbinding-element-for-customitem-for-controls-for-view-format
+                                href: format/expressionbinding-element-for-customitem-for-controls-for-view-format.md
                                 items:
                                   - name: CustomControlName Element for ExpressionBinding for Controls for View
-                                    href: format/customcontrolname-element-for-expressionbinding-for-controls-for-view-format
+                                    href: format/customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md
                                   - name: EnumerateCollection Element for ExpressionBinding for Controls for View
-                                    href: format/enumeratecollection-element-for-expressionbinding-for-controls-for-view-format
+                                    href: format/enumeratecollection-element-for-expressionbinding-for-controls-for-view-format.md
                                   - name: ItemSelectionCondition Element for ExpressionBinding for Controls for View
-                                    href: format/itemselectioncondition-element-for-expressionbinding-for-controls-for-view-format
+                                    href: format/itemselectioncondition-element-for-expressionbinding-for-controls-for-view-format.md
                                     items:
                                       - name: PropertyName Element for ItemSelectionCondition for Controls for View
-                                        href: format/propertyname-element-for-itemselectioncondition-for-controls-for-view-format
+                                        href: format/propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md
                                       - name: ScriptBlock Element for ItemSelectionCondition for Controls for View
-                                        href: format/scriptblock-element-for-itemselectioncondition-for-controls-for-view-format
+                                        href: format/scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md
                                   - name: PropertyName Element for ExpressionBinding for Controls for View
-                                    href: format/propertyname-element-for-expressionbinding-for-controls-for-view-format
+                                    href: format/propertyname-element-for-expressionbinding-for-controls-for-view-format.md
                                   - name: ScriptBlock Element for ExpressionBinding for Controls for View
-                                    href: format/scriptblock-element-for-expressionbinding-for-controls-for-view-format
+                                    href: format/scriptblock-element-for-expressionbinding-for-controls-for-view-format.md
                               - name: Frame Element for CustomItem for Controls for View
-                                href: format/frame-element-for-customitem-for-controls-for-view-format
+                                href: format/frame-element-for-customitem-for-controls-for-view-format.md
                                 items:
                                   - name: FirstLineHanging Element for Frame for Controls for View
-                                    href: format/firstlinehanging-element-for-frame-for-controls-for-view-format
+                                    href: format/firstlinehanging-element-for-frame-for-controls-for-view-format.md
                                   - name: FirstLineIndent Element for Frame for Controls for View
-                                    href: format/firstlineindent-element-for-frame-for-controls-for-view-format
+                                    href: format/firstlineindent-element-for-frame-for-controls-for-view-format.md
                                   - name: LeftIndent Element for Frame for Controls for View
-                                    href: format/leftindent-element-for-frame-for-controls-for-view-format
+                                    href: format/leftindent-element-for-frame-for-controls-for-view-format.md
                                   - name: RightIndent Element for Frame for Controls for View
-                                    href: format/rightindent-element-for-frame-for-controls-for-view-format
+                                    href: format/rightindent-element-for-frame-for-controls-for-view-format.md
                               - name: NewLine Element for CustomItem for Controls for View
-                                href: format/newline-element-for-customitem-for-controls-for-view-format
+                                href: format/newline-element-for-customitem-for-controls-for-view-format.md
                               - name: Text Element for CustomItem for Controls for View
-                                href: format/text-element-for-customitem-for-controls-for-view-format
+                                href: format/text-element-for-customitem-for-controls-for-view-format.md
                           - name: EntrySelectedBy Element for CustomEntry for Controls for View
-                            href: format/entryselectedby-element-for-customentry-for-controls-for-view-format
+                            href: format/entryselectedby-element-for-customentry-for-controls-for-view-format.md
                             items:
                               - name: SelectionCondition Element for EntrySelectedBy for Controls for View
-                                href: format/selectioncondition-element-for-entryselectedby-for-controls-for-view-format
+                                href: format/selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md
                                 items:
                                   - name: PropertyName Element for SelectionCondition for CustomControl for View
-                                    href: format/propertyname-element-for-selectioncondition-for-customcontrol-for-view-format
+                                    href: format/propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md
                                   - name: ScriptBlock Element for SelectionCondition for CustomControl for View
-                                    href: format/scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format
+                                    href: format/scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md
                                   - name: SelectionSetName Element for SelectionCondition for Controls for View
-                                    href: format/selectionsetname-element-for-selectioncondition-for-controls-for-view-format
+                                    href: format/selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md
                                   - name: TypeName Element for SelectionCondition for Controls for View
-                                    href: format/typename-element-for-selectioncondition-for-controls-for-view-format
+                                    href: format/typename-element-for-selectioncondition-for-controls-for-view-format.md
                               - name: SelectionSetName Element for EntrySelectedBy for Controls for View
-                                href: format/selectionsetname-element-for-entryselectedby-for-controls-for-view-format
+                                href: format/selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md
                               - name: TypeName Element for EntrySelectedBy for Controls for View
-                                href: format/typename-element-for-entryselectedby-for-controls-for-view-format
+                                href: format/typename-element-for-entryselectedby-for-controls-for-view-format.md
                   - name: Name Element for Control for Controls for View
-                    href: format/name-element-for-control-for-controls-for-view-format
+                    href: format/name-element-for-control-for-controls-for-view-format.md
               - name: CustomControl Element for View
-                href: format/customcontrol-element-for-view-format
+                href: format/customcontrol-element-for-view-format.md
                 items:
                   - name: CustomEntries Element for CustomControl for View
-                    href: format/customentries-element-for-customcontrol-for-view-format
+                    href: format/customentries-element-for-customcontrol-for-view-format.md
                   - name: CustomEntry Element for CustomEntries for CustomControl for View
-                    href: format/customentry-element-for-customentries-for-customcontrol-for-view-format
+                    href: format/customentry-element-for-customentries-for-customcontrol-for-view-format.md
                     items:
                       - name: CustomItem Element for CustomEntry for CustomControl for View
-                        href: format/customitem-element-for-customentry-for-customcontrol-for-view-format
+                        href: format/customitem-element-for-customentry-for-customcontrol-for-view-format.md
                         items:
                           - name: ExpressionBinding Element for CustomItem for CustomControl for View
-                            href: format/expressionbinding-element-for-customitem-for-customcontrol-for-view-format
+                            href: format/expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md
                             items:
                               - name: CustomControlName Element for ExpressionBinding for CustomControl for View
-                                href: format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format
+                                href: format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
                               - name: EnumerateCollection Element for ExpressionBinding for CustomControl for View
-                                href: format/enumeratecollection-element-for-expressionbinding-for-customcontrol-for-view-format
+                                href: format/enumeratecollection-element-for-expressionbinding-for-customcontrol-for-view-format.md
                               - name: ItemSelectionCondition Element for ExpressionBinding for CustomControl
-                                href: format/itemselectioncondition-element-for-expressionbinding-for-customcontrol-format
+                                href: format/itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md
                                 items:
                                   - name: PropertyName Element for ItemSelectionCondition for CustomControl for View
-                                    href: format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format
+                                    href: format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
                                   - name: ScriptBlock Element for ItemSelectionCondition for CustomControl for View
-                                    href: format/scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format
+                                    href: format/scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
                               - name: PropertyName Element for ExpressionBinding for CustomControl for View
-                                href: format/propertyname-element-for-expressionbinding-for-customcontrol-for-view-format
+                                href: format/propertyname-element-for-expressionbinding-for-customcontrol-for-view-format.md
                               - name: ScriptBlock Element for ExpressionBinding for CustomControl for View
-                                href: format/scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format
+                                href: format/scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format.md
                           - name: Frame Element for CustomItem for CustomControl for View
-                            href: format/frame-element-for-customitem-for-customcontrol-for-view-format
+                            href: format/frame-element-for-customitem-for-customcontrol-for-view-format.md
                             items:
                               - name: FirstLineHanging Element for Frame for CustomControl for View
-                                href: format/firstlinehanging-element-for-frame-for-customcontrol-for-view-format
+                                href: format/firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md
                               - name: FirstLineIndent Element for Frame for CustomControl for View
-                                href: format/firstlineindent-element-for-frame-for-customcontrol-for-view-format
+                                href: format/firstlineindent-element-for-frame-for-customcontrol-for-view-format.md
                               - name: LeftIndent Element for Frame for CustomControl for View
-                                href: format/leftindent-element-for-frame-for-customcontrol-for-view-format
+                                href: format/leftindent-element-for-frame-for-customcontrol-for-view-format.md
                               - name: RightIndent Element for Frame for CustomControl for View
-                                href: format/rightindent-element-for-frame-for-customcontrol-for-view-format
+                                href: format/rightindent-element-for-frame-for-customcontrol-for-view-format.md
                           - name: NewLine Element for CustomItem for CustomControl for View
-                            href: format/newline-element-for-customitem-for-customcontrol-for-view-format
+                            href: format/newline-element-for-customitem-for-customcontrol-for-view-format.md
                           - name: Text Element for CustomItem for CustomView for View
-                            href: format/text-element-for-customitem-for-customview-for-view-format
+                            href: format/text-element-for-customitem-for-customview-for-view-format.md
                       - name: EntrySelectedBy Element for CustomEntry for CustomControl for View
-                        href: format/entryselectedby-element-for-customentry-for-customcontrol-for-view-format
+                        href: format/entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md
                         items:
                           - name: SelectionCondition Element for EntrySelectedBy for CustomControl
-                            href: format/selectioncondition-element-for-entryselectedby-for-customcontrol-format
+                            href: format/selectioncondition-element-for-entryselectedby-for-customcontrol-format.md
                             items:
                               - name: PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
-                                href: format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format
+                                href: format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
                               - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion
-                                href: format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format
+                                href: format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
                               - name: SelectionSetName Element for SelectionCondition for CustomControl for View
-                                href: format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format
+                                href: format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
                               - name: TypeName Element for SelectionCondition for CustomControl for View
-                                href: format/typename-element-for-selectioncondition-for-customcontrol-for-view-format
+                                href: format/typename-element-for-selectioncondition-for-customcontrol-for-view-format.md
                           - name: SelectionSetName Element for EntrySelectedBy for CustomControl for View
-                            href: format/selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format
+                            href: format/selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md
                           - name: TypeName Element for EntrySelectedBy for CustomEntry for View
-                            href: format/typename-element-for-entryselectedby-for-customentry-for-view-format
+                            href: format/typename-element-for-entryselectedby-for-customentry-for-view-format.md
               - name: GroupBy Element for View
-                href: format/groupby-element-for-view-format
+                href: format/groupby-element-for-view-format.md
                 items:
                   - name: CustomControl Element for GroupBy
-                    href: format/customcontrol-element-for-groupby-format
+                    href: format/customcontrol-element-for-groupby-format.md
                     items:
                       - name: CustomEntries Element for CustomControl for GroupBy
-                        href: format/customentries-element-for-customcontrol-for-groupby-format
+                        href: format/customentries-element-for-customcontrol-for-groupby-format.md
                       - name: CustomEntry Element for CustomControl for GroupBy
-                        href: format/customentry-element-for-customcontrol-for-groupby-format
+                        href: format/customentry-element-for-customcontrol-for-groupby-format.md
                         items:
                           - name: CustomItem Element for CustomEntry for GroupBy
-                            href: format/customitem-element-for-customentry-for-groupby-format
+                            href: format/customitem-element-for-customentry-for-groupby-format.md
                             items:
                               - name: ExpressionBinding Element for CustomItem for GroupBy
-                                href: format/expressionbinding-element-for-customitem-for-groupby-format
+                                href: format/expressionbinding-element-for-customitem-for-groupby-format.md
                                 items:
                                   - name: CustomControlName Element for ExpressionBinding for GroupBy
-                                    href: format/customcontrolname-element-for-expressionbinding-for-groupby-format
+                                    href: format/customcontrolname-element-for-expressionbinding-for-groupby-format.md
                                   - name: EnumerateCollection Element for ExpressionBinding for GroupBy
-                                    href: format/enumeratecollection-element-for-expressionbinding-for-groupby-format
+                                    href: format/enumeratecollection-element-for-expressionbinding-for-groupby-format.md
                                   - name: ItemSelectionCondition Element for ExpressionBinding for GroupBy
-                                    href: format/itemselectioncondition-element-for-expressionbinding-for-groupby-format
+                                    href: format/itemselectioncondition-element-for-expressionbinding-for-groupby-format.md
                                     items:
                                       - name: PropertyName Element for ItemSelectionCondition for GroupBy
-                                        href: format/propertyname-element-for-itemselectioncondition-for-groupby-format
+                                        href: format/propertyname-element-for-itemselectioncondition-for-groupby-format.md
                                       - name: ScriptBlock Element for ItemSelectionCondition for GroupBy
-                                        href: format/scriptblock-element-for-itemselectioncondition-for-groupby-format
+                                        href: format/scriptblock-element-for-itemselectioncondition-for-groupby-format.md
                                   - name: PropertyName Element for ExpressionBinding for GroupBy
-                                    href: format/propertyname-element-for-expressionbinding-for-groupby-format
+                                    href: format/propertyname-element-for-expressionbinding-for-groupby-format.md
                                   - name: ScriptBlock Element for ExpressionBinding for GroupBy
-                                    href: format/scriptblock-element-for-expressionbinding-for-groupby-format
+                                    href: format/scriptblock-element-for-expressionbinding-for-groupby-format.md
                               - name: Frame Element for CustomItem for GroupBy
-                                href: format/frame-element-for-customitem-for-groupby-format
+                                href: format/frame-element-for-customitem-for-groupby-format.md
                                 items:
                                   - name: FirstLineHanging Element for Frame for GroupBy
-                                    href: format/firstlinehanging-element-for-frame-for-groupby-format
+                                    href: format/firstlinehanging-element-for-frame-for-groupby-format.md
                                   - name: FirstLineIndent Element for Frame for GroupBy
-                                    href: format/firstlineindent-element-for-frame-for-groupby-format
+                                    href: format/firstlineindent-element-for-frame-for-groupby-format.md
                                   - name: LeftIndent Element for Frame for GroupBy
-                                    href: format/leftindent-element-for-frame-for-groupby-format
+                                    href: format/leftindent-element-for-frame-for-groupby-format.md
                                   - name: RightIndent Element for Frame for GroupBy
-                                    href: format/rightindent-element-for-frame-for-groupby-format
+                                    href: format/rightindent-element-for-frame-for-groupby-format.md
                               - name: NewLine Element for CustomItem for GroupBy
-                                href: format/newline-element-for-customitem-for-groupby-format
+                                href: format/newline-element-for-customitem-for-groupby-format.md
                               - name: Text Element for CustomItem for GroupBy
-                                href: format/text-element-for-customitem-for-groupby-format
+                                href: format/text-element-for-customitem-for-groupby-format.md
                           - name: EntrySelectedBy Element for CustomEntry for GroupBy
-                            href: format/entryselectedby-element-for-customentry-for-groupby-format
+                            href: format/entryselectedby-element-for-customentry-for-groupby-format.md
                             items:
                               - name: SelectionCondition Element for EntrySelectedBy for GroupBy
-                                href: format/selectioncondition-element-for-entryselectedby-for-groupby-format
+                                href: format/selectioncondition-element-for-entryselectedby-for-groupby-format.md
                                 items:
                                   - name: PropertyName Element for SelectionCondition for GroupBy
-                                    href: format/propertyname-element-for-selectioncondition-for-groupby-format
+                                    href: format/propertyname-element-for-selectioncondition-for-groupby-format.md
                                   - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for GroupBy
-                                    href: format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format
+                                    href: format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
                                   - name: SelectionSetName Element for SelectionCondition for GroupBy
-                                    href: format/selectionsetname-element-for-selectioncondition-for-groupby-format
+                                    href: format/selectionsetname-element-for-selectioncondition-for-groupby-format.md
                                   - name: TypeName Element for SelectionCondition for GroupBy
-                                    href: format/typename-element-for-selectioncondition-for-groupby-format
+                                    href: format/typename-element-for-selectioncondition-for-groupby-format.md
                               - name: SelectionSetName Element for EntrySelectedBy for GroupBy
-                                href: format/selectionsetname-element-for-entryselectedby-for-groupby-format
+                                href: format/selectionsetname-element-for-entryselectedby-for-groupby-format.md
                               - name: TypeName Element for EntrySelectedBy for GroupBy
-                                href: format/typename-element-for-entryselectedby-for-groupby-format
+                                href: format/typename-element-for-entryselectedby-for-groupby-format.md
                   - name: CustomControlName Element for GroupBy
-                    href: format/customcontrolname-element-for-groupby-format
+                    href: format/customcontrolname-element-for-groupby-format.md
                   - name: Label Element for GroupBy
-                    href: format/label-element-for-groupby-format
+                    href: format/label-element-for-groupby-format.md
                   - name: PropertyName Element for GroupBy
-                    href: format/propertyname-element-for-groupby-format
+                    href: format/propertyname-element-for-groupby-format.md
                   - name: ScriptBlock Element for GroupBy
-                    href: format/scriptblock-element-for-groupby-format
+                    href: format/scriptblock-element-for-groupby-format.md
               - name: ListControl Element
-                href: format/listcontrol-element-format
+                href: format/listcontrol-element-format.md
                 items:
                   - name: ListEntries Element for ListControl
-                    href: format/listentries-element-for-listcontrol-format
+                    href: format/listentries-element-for-listcontrol-format.md
                   - name: ListEntry Element for ListControl
-                    href: format/listentry-element-for-listcontrol-format
+                    href: format/listentry-element-for-listcontrol-format.md
                     items:
                       - name: EntrySelectedBy Element for ListEntry for ListControl
-                        href: format/entryselectedby-element-for-listentry-for-listcontrol-format
+                        href: format/entryselectedby-element-for-listentry-for-listcontrol-format.md
                         items:
                           - name: SelectionCondition Element for EntrySelectedBy for ListControl
-                            href: format/selectioncondition-element-for-entryselectedby-for-listcontrol-format
+                            href: format/selectioncondition-element-for-entryselectedby-for-listcontrol-format.md
                             items:
                               - name: PropertyName Element for SelectionCondition for EntrySelectedBy for ListControl
-                                href: format/propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format
+                                href: format/propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md
                               - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListControl
-                                href: format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format
+                                href: format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md
                               - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry
-                                href: format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format
+                                href: format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
                               - name: TypeName Element for SelectionCondition for EntrySelectedBy for ListControl
-                                href: format/typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format
+                                href: format/typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md
                           - name: SelectionSetName Element for EntrySelectedBy for ListControl
-                            href: format/selectionsetname-element-for-entryselectedby-for-listcontrol-format
+                            href: format/selectionsetname-element-for-entryselectedby-for-listcontrol-format.md
                           - name: TypeName Element for EntrySelectedBy for ListControl
-                            href: format/typename-element-for-entryselectedby-for-listcontrol-format
+                            href: format/typename-element-for-entryselectedby-for-listcontrol-format.md
                       - name: ListItems Element for ListEntry for ListControl
-                        href: format/listitems-element-for-listentry-for-listcontrol-format
+                        href: format/listitems-element-for-listentry-for-listcontrol-format.md
                         items:
                           - name: FormatString Element for ListItem for ListControl
-                            href: format/formatstring-element-for-listitem-for-listcontrol-format
+                            href: format/formatstring-element-for-listitem-for-listcontrol-format.md
                           - name: ItemSelectionCondition Element for ListItem for ListControl
-                            href: format/itemselectioncondition-element-for-listitem-for-listcontrol-format
+                            href: format/itemselectioncondition-element-for-listitem-for-listcontrol-format.md
                             items:
                               - name: PropertyName Element for ItemSelectionCondition for ListControl
-                                href: format/propertyname-element-for-itemselectioncondition-for-listcontrol-format
+                                href: format/propertyname-element-for-itemselectioncondition-for-listcontrol-format.md
                               - name: ScriptBlock Element for ItemSelectionCondition for ListControl
-                                href: format/scriptblock-element-for-itemselectioncondition-for-listcontrol-format
+                                href: format/scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md
                           - name: Label Element for ListItem for ListControl
-                            href: format/label-element-for-listitem-for-listcontrol-format
+                            href: format/label-element-for-listitem-for-listcontrol-format.md
                           - name: ListItem Element for ListItems for ListControl
-                            href: format/listitem-element-for-listitems-for-listcontrol-format
+                            href: format/listitem-element-for-listitems-for-listcontrol-format.md
                             items:
                               - name: PropertyName Element for ListItem for ListControl
-                                href: format/propertyname-element-for-listitem-for-listcontrol-format
+                                href: format/propertyname-element-for-listitem-for-listcontrol-format.md
                               - name: ScriptBlock Element for ListItem for ListControl
-                                href: format/scriptblock-element-for-listitem-for-listcontrol-format
+                                href: format/scriptblock-element-for-listitem-for-listcontrol-format.md
               - name: Name Element for View
-                href: format/name-element-for-view-format
+                href: format/name-element-for-view-format.md
               - name: OutOfBand Element for View
-                href: format/outofband-element-for-view-format
+                href: format/outofband-element-for-view-format.md
               - name: TableControl Element
-                href: format/tablecontrol-element-format
+                href: format/tablecontrol-element-format.md
                 items:
                   - name: AutoSize Element for TableControl
-                    href: format/autosize-element-for-tablecontrol-format
+                    href: format/autosize-element-for-tablecontrol-format.md
                   - name: HideTableHeaders Element
-                    href: format/hidetableheaders-element-format
+                    href: format/hidetableheaders-element-format.md
                   - name: TableHeaders Element
-                    href: format/tableheaders-element-format
+                    href: format/tableheaders-element-format.md
                     items:
                       - name: TableColumnHeader Element
-                        href: format/tablecolumnheader-element-format
+                        href: format/tablecolumnheader-element-format.md
                       - name: Alignment Element for TableColumnHeader for TableControl
-                        href: format/alignment-element-for-tablecolumnheader-for-tablecontrol-format
+                        href: format/alignment-element-for-tablecolumnheader-for-tablecontrol-format.md
                       - name: Label Element for TableColumnHeader for TableControl
-                        href: format/label-element-for-tablecolumnheader-for-tablecontrol-format
+                        href: format/label-element-for-tablecolumnheader-for-tablecontrol-format.md
                       - name: Width Element for TableColumnHeader for TableControl
-                        href: format/width-element-for-tablecolumnheader-for-tablecontrol-format
+                        href: format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
                   - name: TableRowEntries Element for TableControl
-                    href: format/tablerowentries-element-for-tablecontrol-format
+                    href: format/tablerowentries-element-for-tablecontrol-format.md
                     items:
                       - name: TableColumnItems Element for TableRowEntry for TableControl
-                        href: format/tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format
+                        href: format/tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md
                         items:
                           - name: TableColumnItem Element for TableColumnItems for TableControl
-                            href: format/tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format
+                            href: format/tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md
                           - name: Alignment Element for TableColumnItem for TableControl
-                            href: format/alignment-element-for-tablecolumnitem-for-tablecontrol-format
+                            href: format/alignment-element-for-tablecolumnitem-for-tablecontrol-format.md
                           - name: FormatString Element for TableColumnItem for TableControl
-                            href: format/formatstring-element-for-tablecolumnitem-for-tablecontrol-format
+                            href: format/formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md
                           - name: PropertyName Element for TableColumnItem for TableControl
-                            href: format/propertyname-element-for-tablecolumnitem-for-tablecontrol-format
+                            href: format/propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md
                           - name: ScriptBlock Element for TableColumnItem for TableControl
-                            href: format/scriptblock-element-for-tablecolumnitem-for-tablecontrol-format
+                            href: format/scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md
                       - name: TableRowEntry Element for TableRowEntries for TableControl
-                        href: format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format
+                        href: format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md
                         items:
                           - name: EntrySelectedBy Element for TableRowEntry for TableControl
-                            href: format/entryselectedby-element-for-tablerowentry-for-tablecontrol-format
+                            href: format/entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md
                           - name: SelectionCondition Element for EntrySelectedBy for TableControl
-                            href: format/selectioncondition-element-for-entryselectedby-for-tablecontrol-format
+                            href: format/selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md
                             items:
                               - name: PropertyName Element for SelectionCondition for EntrySelectedBy for TableRowEntry
-                                href: format/propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format
+                                href: format/propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md
                               - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for TableControl
-                                href: format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format
+                                href: format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md
                               - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl
-                                href: format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format
+                                href: format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md
                               - name: TypeName Element for SelectionCondition for EntrySelectedBy for TableControl
-                                href: format/typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format
+                                href: format/typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md
                           - name: SelectionSetName Element for EntrySelectedBy for TableControl
-                            href: format/selectionsetname-element-for-entryselectedby-for-tablecontrol-format
+                            href: format/selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md
                           - name: TypeName Element for EntrySelectedBy for TableControl
-                            href: format/typename-element-for-entryselectedby-for-tablecontrol-format
+                            href: format/typename-element-for-entryselectedby-for-tablecontrol-format.md
                       - name: Wrap Element for TableRowEntry for TableControl
-                        href: format/wrap-element-for-tablerowentry-for-tablecontrol-format
+                        href: format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
               - name: ViewSelectedBy Element
-                href: format/viewselectedby-element-format
+                href: format/viewselectedby-element-format.md
                 items:
                   - name: SelectionSetName Element for ViewSelectedBy
-                    href: format/selectionsetname-element-for-viewselectedby-format
+                    href: format/selectionsetname-element-for-viewselectedby-format.md
                   - name: TypeName Element for ViewSelectedBy
-                    href: format/typename-element-for-viewselectedby-format
+                    href: format/typename-element-for-viewselectedby-format.md
               - name: WideControl Element
-                href: format/widecontrol-element-format
+                href: format/widecontrol-element-format.md
                 items:
                   - name: AutoSize Element for WideControl
-                    href: format/autosize-element-for-widecontrol-format
+                    href: format/autosize-element-for-widecontrol-format.md
                   - name: ColumnNumber Element for WideControl
-                    href: format/columnnumber-element-for-widecontrol-format
+                    href: format/columnnumber-element-for-widecontrol-format.md
                   - name: WideEntries Element for WideControl
-                    href: format/wideentries-element-for-widecontrol-format
+                    href: format/wideentries-element-for-widecontrol-format.md
                     items:
                       - name: WideEntry Element for WideControl
-                        href: format/wideentry-element-for-widecontrol-format
+                        href: format/wideentry-element-for-widecontrol-format.md
                       - name: EntrySelectedBy Element for WideEntry
-                        href: format/entryselectedby-element-for-wideentry-format
+                        href: format/entryselectedby-element-for-wideentry-format.md
                         items:
                           - name: SelectionCondition Element for EntrySelectedBy for WideControl
-                            href: format/selectioncondition-element-for-entryselectedby-for-widecontrol-format
+                            href: format/selectioncondition-element-for-entryselectedby-for-widecontrol-format.md
                             items:
                               - name: PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry
-                                href: format/propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format
+                                href: format/propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md
                               - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for WideControl
-                                href: format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format
+                                href: format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
                               - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry
-                                href: format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format
+                                href: format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md
                               - name: TypeName Element for SelectionCondition for EntrySelectedBy for WideControl
-                                href: format/typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format
+                                href: format/typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
                           - name: TypeName Element for EntrySelectedBy for WideEntry
-                            href: format/typename-element-for-entryselectedby-for-wideentry-format
+                            href: format/typename-element-for-entryselectedby-for-wideentry-format.md
                           - name: SelectionSetName Element for EntrySelectedBy for WideControl
-                            href: format/selectionsetname-element-for-entryselectedby-for-widecontrol-format
+                            href: format/selectionsetname-element-for-entryselectedby-for-widecontrol-format.md
                       - name: WideItem Element for WideControl
-                        href: format/wideitem-element-for-widecontrol-format
+                        href: format/wideitem-element-for-widecontrol-format.md
                         items:
                           - name: FormatString Element for WideItem for WideControl
-                            href: format/formatstring-element-for-wideitem-for-widecontrol-format
+                            href: format/formatstring-element-for-wideitem-for-widecontrol-format.md
                           - name: PropertyName Element for WideItem for WideControl
-                            href: format/propertyname-element-for-wideitem-for-widecontrol-format
+                            href: format/propertyname-element-for-wideitem-for-widecontrol-format.md
                           - name: ScriptBlock Element for WideItem for WideControl
-                            href: format/scriptblock-element-for-wideitem-for-widecontrol-format
+                            href: format/scriptblock-element-for-wideitem-for-widecontrol-format.md
   - name: Writing Help for PowerShell
     items:
       - name: Overview
-        href: help/writing-help-for-windows-powershell-scripts-and-functions
+        href: help/writing-help-for-windows-powershell-scripts-and-functions.md
       - name: Writing Comment-Based Help Topics
         items:
           - name: Overview
-            href: help/writing-comment-based-help-topics
+            href: help/writing-comment-based-help-topics.md
           - name: Syntax of Comment-Based Help
-            href: help/syntax-of-comment-based-help
+            href: help/syntax-of-comment-based-help.md
           - name: Comment-Based Help Keywords
-            href: help/comment-based-help-keywords
+            href: help/comment-based-help-keywords.md
           - name: Placing Comment-Based Help in Functions
-            href: help/placing-comment-based-help-in-functions
+            href: help/placing-comment-based-help-in-functions.md
           - name: Placing Comment-Based Help in Scripts
-            href: help/placing-comment-based-help-in-scripts
+            href: help/placing-comment-based-help-in-scripts.md
           - name: Autogenerated Elements of Comment-Based Help
-            href: help/autogenerated-elements-of-comment-based-help
+            href: help/autogenerated-elements-of-comment-based-help.md
           - name: Examples of Comment-Based Help
-            href: help/examples-of-comment-based-help
+            href: help/examples-of-comment-based-help.md
       - name: Writing XML-Based Help Topics for Commands
         items:
           - name: Writing Help for PowerShell Cmdlets
             items:
               - name: Overview
-                href: help/writing-help-for-windows-powershell-cmdlets
+                href: help/writing-help-for-windows-powershell-cmdlets.md
               - name: How to Create the Cmdlet Help File
-                href: help/how-to-create-the-cmdlet-help-file
+                href: help/how-to-create-the-cmdlet-help-file.md
               - name: How to Add the Cmdlet Name and Synopsis to a Cmdlet Help Topic
-                href: help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic
+                href: help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
               - name: How to Add a Cmdlet Description
-                href: help/how-to-add-a-cmdlet-description
+                href: help/how-to-add-a-cmdlet-description.md
               - name: How to Add Syntax to a Cmdlet Help Topic
-                href: help/how-to-add-syntax-to-a-cmdlet-help-topic
+                href: help/how-to-add-syntax-to-a-cmdlet-help-topic.md
               - name: How to Add Parameter Information
-                href: help/how-to-add-parameter-information
+                href: help/how-to-add-parameter-information.md
               - name: How to Add Input Types to a Cmdlet Help Topic
-                href: help/how-to-add-input-types-to-a-cmdlet-help-topic
+                href: help/how-to-add-input-types-to-a-cmdlet-help-topic.md
               - name: How to Add Return Values to a Cmdlet Help Topic
-                href: help/how-to-add-return-values-to-a-cmdlet-help-topic
+                href: help/how-to-add-return-values-to-a-cmdlet-help-topic.md
               - name: How to Add Notes to a Cmdlet Help Topic
-                href: help/how-to-add-notes-to-a-cmdlet-help-topic
+                href: help/how-to-add-notes-to-a-cmdlet-help-topic.md
               - name: How to Add Examples to a Cmdlet Help Topic
-                href: help/how-to-add-examples-to-a-cmdlet-help-topic
+                href: help/how-to-add-examples-to-a-cmdlet-help-topic.md
               - name: How to Add Related Links to a Cmdlet Help Topic
-                href: help/how-to-add-related-links-to-a-cmdlet-help-topic
+                href: help/how-to-add-related-links-to-a-cmdlet-help-topic.md
           - name: Writing Help for PowerShell Modules
             items:
               - name: Overview
-                href: help/writing-help-for-windows-powershell-modules
+                href: help/writing-help-for-windows-powershell-modules.md
               - name: Naming Help Files
-                href: help/naming-help-files
+                href: help/naming-help-files.md
               - name: Supporting Updatable Help
-                href: help/supporting-updatable-help
+                href: help/supporting-updatable-help.md
                 items:
                   - name: Updatable Help Overview
-                    href: help/updatable-help-overview
+                    href: help/updatable-help-overview.md
                   - name: "Updatable Help Authoring: Step-by-Step"
-                    href: help/updatable-help-authoring-step-by-step
+                    href: help/updatable-help-authoring-step-by-step.md
                   - name: How Updatable Help Works
-                    href: help/how-updatable-help-works
+                    href: help/how-updatable-help-works.md
                   - name: How to Create a HelpInfo XML File
-                    href: help/how-to-create-a-helpinfo-xml-file
+                    href: help/how-to-create-a-helpinfo-xml-file.md
                     items:
                       - name: HelpInfo XML Schema
-                        href: help/helpinfo-xml-schema
+                        href: help/helpinfo-xml-schema.md
                       - name: HelpInfo XML Sample File
-                        href: help/helpinfo-xml-sample-file
+                        href: help/helpinfo-xml-sample-file.md
                       - name: How to Name a HelpInfo XML File
-                        href: help/how-to-name-a-helpinfo-xml-file
+                        href: help/how-to-name-a-helpinfo-xml-file.md
                       - name: How to Set HelpInfo XML Version Numbers
-                        href: help/how-to-set-helpinfo-xml-version-numbers
+                        href: help/how-to-set-helpinfo-xml-version-numbers.md
                   - name: How to Prepare Updatable Help CAB Files
-                    href: help/how-to-prepare-updatable-help-cab-files
+                    href: help/how-to-prepare-updatable-help-cab-files.md
                     items:
                       - name: How to Create and Upload CAB Files
-                        href: help/how-to-create-and-upload-cab-files
+                        href: help/how-to-create-and-upload-cab-files.md
                       - name: How to Name an Updatable Help CAB File
-                        href: help/how-to-name-an-updatable-help-cab-file
+                        href: help/how-to-name-an-updatable-help-cab-file.md
                       - name: File Types Permitted in an Updatable Help CAB File
-                        href: help/file-types-permitted-in-an-updatable-help-cab-file
+                        href: help/file-types-permitted-in-an-updatable-help-cab-file.md
                       - name: How to Update Help Files
-                        href: help/how-to-update-help-files
+                        href: help/how-to-update-help-files.md
                       - name: How to Test Updatable Help
-                        href: help/how-to-test-updatable-help
+                        href: help/how-to-test-updatable-help.md
                   - name: Supporting Online Help
-                    href: help/supporting-online-help
+                    href: help/supporting-online-help.md
           - name: Writing Help for PowerShell Providers
             items:
               - name: How to Add Dynamic Parameters to a Provider Help Topic
-                href: help/how-to-add-dynamic-parameters-to-a-provider-help-topic
+                href: help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
               - name: How to Add a See Also Section to a Provider Help Topic
-                href: help/how-to-add-a-see-also-section-to-a-provider-help-topic
+                href: help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
   - name: Extended Type System (ETS)
     items:
       - name: ETS Overview
-        href: ets/overview
+        href: ets/overview.md
       - name: ETS members
-        href: ets/members
+        href: ets/members.md
       - name: ETS member sets
-        href: ets/membersets
+        href: ets/membersets.md
       - name: ETS properties
-        href: ets/properties
+        href: ets/properties.md
       - name: ETS methods
-        href: ets/methods
+        href: ets/methods.md
       - name: ETS type converters
-        href: ets/typeconverters
+        href: ets/typeconverters.md
       - name: Errors and exceptions in ETS
-        href: ets/errors-exceptions
+        href: ets/errors-exceptions.md
   - name: Windows PowerShell Programmer's Guide
-    href: prog-guide/windows-powershell-programmer-s-guide
+    href: prog-guide/windows-powershell-programmer-s-guide.md
     items:
       - name: How to Create a PowerShell Provider
-        href: prog-guide/how-to-create-a-windows-powershell-provider
+        href: prog-guide/how-to-create-a-windows-powershell-provider.md
         items:
           - name: Designing Your PowerShell Provider
-            href: prog-guide/designing-your-windows-powershell-provider
+            href: prog-guide/designing-your-windows-powershell-provider.md
           - name: Creating a Basic PowerShell Provider
-            href: prog-guide/creating-a-basic-windows-powershell-provider
+            href: prog-guide/creating-a-basic-windows-powershell-provider.md
           - name: Creating a PowerShell Drive Provider
-            href: prog-guide/creating-a-windows-powershell-drive-provider
+            href: prog-guide/creating-a-windows-powershell-drive-provider.md
           - name: Creating a PowerShell Item Provider
-            href: prog-guide/creating-a-windows-powershell-item-provider
+            href: prog-guide/creating-a-windows-powershell-item-provider.md
           - name: Creating a PowerShell Container Provider
-            href: prog-guide/creating-a-windows-powershell-container-provider
+            href: prog-guide/creating-a-windows-powershell-container-provider.md
           - name: Creating a PowerShell Navigation Provider
-            href: prog-guide/creating-a-windows-powershell-navigation-provider
+            href: prog-guide/creating-a-windows-powershell-navigation-provider.md
           - name: Creating a PowerShell Content Provider
-            href: prog-guide/creating-a-windows-powershell-content-provider
+            href: prog-guide/creating-a-windows-powershell-content-provider.md
           - name: Creating a PowerShell Property Provider
-            href: prog-guide/creating-a-windows-powershell-property-provider
+            href: prog-guide/creating-a-windows-powershell-property-provider.md
       - name: How to Create a Console Shell
-        href: prog-guide/how-to-create-a-console-shell
+        href: prog-guide/how-to-create-a-console-shell.md
       - name: PowerShell Concepts
-        href: prog-guide/windows-powershell-concepts
+        href: prog-guide/windows-powershell-concepts.md
       - name: PowerShell Sample Code
-        href: prog-guide/windows-powershell-sample-code
+        href: prog-guide/windows-powershell-sample-code.md
         items:
           - name: AccessDbProviderSample01 Code Sample
-            href: prog-guide/accessdbprovidersample01-code-sample
+            href: prog-guide/accessdbprovidersample01-code-sample.md
           - name: AccessDbProviderSample02 Code Sample
-            href: prog-guide/accessdbprovidersample02-code-sample
+            href: prog-guide/accessdbprovidersample02-code-sample.md
           - name: AccessDbProviderSample03 Code Sample
-            href: prog-guide/accessdbprovidersample03-code-sample
+            href: prog-guide/accessdbprovidersample03-code-sample.md
           - name: AccessDbProviderSample04 Code Sample
-            href: prog-guide/accessdbprovidersample04-code-sample
+            href: prog-guide/accessdbprovidersample04-code-sample.md
           - name: AccessDbProviderSample05 Code Sample
-            href: prog-guide/accessdbprovidersample05-code-sample
+            href: prog-guide/accessdbprovidersample05-code-sample.md
           - name: AccessDbProviderSample06 Code Sample
-            href: prog-guide/accessdbprovidersample06-code-sample
+            href: prog-guide/accessdbprovidersample06-code-sample.md
           - name: GetProc01 Code Samples
-            href: prog-guide/getproc01-code-samples
+            href: prog-guide/getproc01-code-samples.md
             items:
               - name: GetProc01 (C#) Sample Code
-                href: prog-guide/getproc01-csharp-sample-code
+                href: prog-guide/getproc01-csharp-sample-code.md
               - name: GetProc01 (VB.NET) Sample Code
-                href: prog-guide/getproc01-vb-net-sample-code
+                href: prog-guide/getproc01-vb-net-sample-code.md
           - name: GetProc02 Code Samples
-            href: prog-guide/getproc02-code-samples
+            href: prog-guide/getproc02-code-samples.md
             items:
               - name: GetProc02 (C#) Sample Code
-                href: prog-guide/getproc02-csharp-sample-code
+                href: prog-guide/getproc02-csharp-sample-code.md
               - name: GetProc02 (VB.NET) Sample Code
-                href: prog-guide/getproc02-vb-net-sample-code
+                href: prog-guide/getproc02-vb-net-sample-code.md
           - name: GetProc03 Code Samples
-            href: prog-guide/getproc03-code-samples
+            href: prog-guide/getproc03-code-samples.md
             items:
               - name: GetProc03 (C#) Sample Code
-                href: prog-guide/getproc03-csharp-sample-code
+                href: prog-guide/getproc03-csharp-sample-code.md
               - name: GetProc03 (VB.NET) Sample Code
-                href: prog-guide/getproc03-vb-net-sample-code
+                href: prog-guide/getproc03-vb-net-sample-code.md
           - name: GetProc04 Code Samples
-            href: prog-guide/getproc04-code-samples
+            href: prog-guide/getproc04-code-samples.md
             items:
               - name: GetProc04 (C#) Sample Code
-                href: prog-guide/getproc04-csharp-sample-code
+                href: prog-guide/getproc04-csharp-sample-code.md
               - name: GetProc04 (VB.NET) Sample Code
-                href: prog-guide/getproc04-vb-net-sample-code
+                href: prog-guide/getproc04-vb-net-sample-code.md
           - name: GetProc05 Code Samples
-            href: prog-guide/getproc05-code-samples
+            href: prog-guide/getproc05-code-samples.md
             items:
               - name: GetProc05 (C#) Sample Code
-                href: prog-guide/getproc05-csharp-sample-code
+                href: prog-guide/getproc05-csharp-sample-code.md
               - name: GetProc05 (VB.NET) Sample Code
-                href: prog-guide/getproc05-vb-net-sample-code
+                href: prog-guide/getproc05-vb-net-sample-code.md
           - name: StopProc01 Code Samples
-            href: prog-guide/stopproc01-code-samples
+            href: prog-guide/stopproc01-code-samples.md
             items:
               - name: StopProc01 (C#) Sample Code
-                href: prog-guide/stopproc01-csharp-sample-code
+                href: prog-guide/stopproc01-csharp-sample-code.md
           - name: StopProcessSample04 Code Samples
-            href: prog-guide/stopprocesssample04-code-samples
+            href: prog-guide/stopprocesssample04-code-samples.md
             items:
               - name: StopProcessSample04 (C#) Sample Code
-                href: prog-guide/stopprocesssample04-csharp-sample-code
+                href: prog-guide/stopprocesssample04-csharp-sample-code.md
               - name: StopProcessSample04 (VB.NET) Sample Code
-                href: prog-guide/stopprocesssample04-vb-net-sample-code
+                href: prog-guide/stopprocesssample04-vb-net-sample-code.md
           - name: Runspace01 Code Samples
-            href: prog-guide/runspace01-code-samples
+            href: prog-guide/runspace01-code-samples.md
             items:
               - name: Runspace01 (C#) Code Sample
-                href: prog-guide/runspace01-csharp-code-sample
+                href: prog-guide/runspace01-csharp-code-sample.md
               - name: Runspace01 (VB.NET) Code Sample
-                href: prog-guide/runspace01-vb-net-code-sample
+                href: prog-guide/runspace01-vb-net-code-sample.md
           - name: Runspace02 Code Samples
-            href: prog-guide/runspace02-code-samples
+            href: prog-guide/runspace02-code-samples.md
             items:
               - name: Runspace02 (C#) Code Sample
-                href: prog-guide/runspace02-csharp-code-sample
+                href: prog-guide/runspace02-csharp-code-sample.md
               - name: Runspace02 (VB.NET) Code Sample
-                href: prog-guide/runspace02-vb-net-code-sample
+                href: prog-guide/runspace02-vb-net-code-sample.md
           - name: RunSpace03 Code Samples
-            href: prog-guide/runspace03-code-samples
+            href: prog-guide/runspace03-code-samples.md
             items:
               - name: RunSpace03 (C#) Code Sample
-                href: prog-guide/runspace03-csharp-code-sample
+                href: prog-guide/runspace03-csharp-code-sample.md
               - name: RunSpace03 (VB.NET) Code Sample
-                href: prog-guide/runspace03-vb-net-code-sample
+                href: prog-guide/runspace03-vb-net-code-sample.md
           - name: RunSpace04 Code Samples
-            href: prog-guide/runspace04-code-samples
+            href: prog-guide/runspace04-code-samples.md
             items:
               - name: RunSpace04  (VB.NET) Code Sample
-                href: prog-guide/runspace04-vb-net-code-sample
+                href: prog-guide/runspace04-vb-net-code-sample.md
           - name: RunSpace05 Code Sample
-            href: prog-guide/runspace05-code-sample
+            href: prog-guide/runspace05-code-sample.md
           - name: RunSpace06 Code Sample
-            href: prog-guide/runspace06-code-sample
+            href: prog-guide/runspace06-code-sample.md
           - name: RunSpace07 Code Sample
-            href: prog-guide/runspace07-code-sample
+            href: prog-guide/runspace07-code-sample.md
           - name: RunSpace08 Code Sample
-            href: prog-guide/runspace08-code-sample
+            href: prog-guide/runspace08-code-sample.md
           - name: RunSpace09 Code Sample
-            href: prog-guide/runspace09-code-sample
+            href: prog-guide/runspace09-code-sample.md
           - name: RunSpace10 Code Sample
-            href: prog-guide/runspace10-code-sample
+            href: prog-guide/runspace10-code-sample.md
