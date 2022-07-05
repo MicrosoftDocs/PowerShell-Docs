@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/10/2021
+ms.date: 07/05/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Progress
@@ -31,8 +31,7 @@ text that appears above and below the progress bar.
 ### Example 1: Display the progress of a For loop
 
 ```powershell
-for ($i = 1; $i -le 100; $i++ )
-{
+for ($i = 1; $i -le 100; $i++ ) {
     Write-Progress -Activity "Search in Progress" -Status "$i% Complete:" -PercentComplete $i
     Start-Sleep -Milliseconds 250
 }
@@ -46,12 +45,24 @@ variable `$i` (the counter in the For loop), which indicates the relative comple
 ### Example 2: Display the progress of nested For loops
 
 ```powershell
-for($I = 1; $I -lt 101; $I++ )
-{
-    Write-Progress -Activity Updating -Status 'Progress->' -PercentComplete $I -CurrentOperation OuterLoop
-    for($j = 1; $j -lt 101; $j++ )
-    {
-        Write-Progress -Id 1 -Activity Updating -Status 'Progress' -PercentComplete $j -CurrentOperation InnerLoop
+for($I = 0; $I -lt 10; $I++ ) {
+    $OuterLoopProgressParameters = @{
+        Activity         = 'Updating'
+        Status           = 'Progress->'
+        PercentComplete  = $I * 10
+        CurrentOperation = 'OuterLoop'
+    }
+    Write-Progress @OuterLoopProgressParameters
+    for($j = 1; $j -lt 101; $j++ ) {
+        $InnerLoopProgressParameters = @{
+            ID               = 1
+            Activity         = 'Updating'
+            Status           = 'Progress'
+            PercentComplete  = $j
+            CurrentOperation = 'InnerLoop'
+        }
+        Write-Progress @InnerLoopProgressParameters
+        Start-Sleep -Milliseconds 25
     }
 }
 ```
@@ -98,9 +109,12 @@ $Events | ForEach-Object -Begin {
     }
     # Increment the $i counter variable which is used to create the progress bar.
     $i = $i+1
+    # Determine the completion percentage
+    $Completed = ($i/$Events.count*100)
     # Use Write-Progress to output a progress bar.
-    # The Activity and Status parameters create the first and second lines of the progress bar heading, respectively.
-    Write-Progress -Activity "Searching Events" -Status "Progress:" -PercentComplete ($i/$Events.count*100)
+    # The Activity and Status parameters create the first and second lines of the progress bar
+    # heading, respectively.
+    Write-Progress -Activity "Searching Events" -Status "Progress:" -PercentComplete $Completed
 } -End {
     # Display the matching messages using the out variable.
     $out
@@ -121,7 +135,8 @@ foreach ( $i in 1..10 ) {
   foreach ( $j in 1..10 ) {
     Write-Progress -Id 1 -ParentId 0 "Step $i - Substep $j"
     foreach ( $k in 1..10 ) {
-      Write-Progress -Id 2  -ParentId 1 "Step $i - Substep $j - iteration $k"; start-sleep -m 150
+      Write-Progress -Id 2  -ParentId 1 "Step $i - Substep $j - iteration $k"
+      Start-Sleep -Milliseconds 150
     }
   }
 }

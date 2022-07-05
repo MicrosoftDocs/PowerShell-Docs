@@ -1,7 +1,7 @@
 ---
 description: Describes how to write comment-based help topics for functions and scripts.
 Locale: en-US
-ms.date: 10/08/2021
+ms.date: 07/05/2022
 no-loc: [.SYNOPSIS, .DESCRIPTION, .PARAMETER, .EXAMPLE, .INPUTS, .OUTPUTS, .NOTES, .LINK, .COMPONENT, .ROLE, .FUNCTIONALITY, .FORWARDHELPTARGETNAME, .FORWARDHELPCATEGORY, .REMOTEHELPRUNSPACE, .EXTERNALHELP]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -693,7 +693,7 @@ directory that is listed in the `$env:Path` environment variable, the
 `Get-Help` command that gets the script help must specify the script path.
 
 ```powershell
-Get-Help -Path .\update-month.ps1 -Full
+Get-Help -Name .\update-month.ps1 -Full
 ```
 
 ```Output
