@@ -65,7 +65,7 @@ one thing we need to do first - enter our PowerShell session to the remote serve
 
 There's a cmdlet for to do so. It's called `Enter-PSSession`.
 
-The watered down explanation of the cmdlet is:
+In short:
 
 - `Enter-PSSession -ComputerName foo` starts a session via WinRM
 - `Enter-PSSession -ContainerId foo` and `Enter-PSSession -VmId foo` start a session via PowerShell
@@ -75,7 +75,7 @@ The watered down explanation of the cmdlet is:
 For more information, see the documentation for
 [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession).
 
-Since we are going from macOS to an Ubuntu VM in Azure, we are using SSH for remoting.
+Since we are remoting to an Ubuntu VM in Azure, we are using SSH.
 
 First, in the Integrated Console, run `Enter-PSSession`. You're connected to the remote session
 when `[<hostname>]` shows up to the left of your prompt.
