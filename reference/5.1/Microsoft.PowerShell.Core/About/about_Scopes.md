@@ -417,7 +417,7 @@ placed at the top of the module1 session state. If you use
 `Import-Module -Scope local`, then the exports are placed into the current
 scope object rather than at the top level. If you are _in a module_ and use
 `Import-Module -Scope global` (or `Import-Module -Global`) to load another
-module, that module and it's exports are loaded into the global session state
+module, that module and its exports are loaded into the global session state
 instead of the module's local session state. This feature was designed for
 writing module that manipulate modules. The **WindowsCompatibility** module
 does this to import proxy modules into the global session state.
