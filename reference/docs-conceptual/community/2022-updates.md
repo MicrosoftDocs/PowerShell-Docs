@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2022
-ms.date: 06/01/2022
+ms.date: 07/05/2022
 title: What's New in PowerShell-Docs for 2022
 ---
 # What's new in PowerShell Docs for 2022
@@ -10,6 +10,47 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2022-June
+
+New content migrated from GitHub wiki
+
+- [Limitations of PowerShell transcripts](/powershell/scripting/learn/deep-dives/output-missing-from-transcript)
+- [Avoid using Invoke-Expression](/powershell/scripting/learn/deep-dives/avoid-using-invoke-expression)
+- [Avoid assigning variables in expressions](/powershell/scripting/learn/deep-dives/avoid-assigning-variables-in-expressions)
+- [about_Case-Sensitivity]( /powershell/module/microsoft.powershell.core/about/about_case-sensitivity)
+- Updated [about_Arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
+
+New SecretManagement content
+
+- [Understanding the security features of SecretManagement and SecretStore](/powershell/utility-modules/secretmanagement/security-concepts)
+- [Using the SecretStore in automation](/powershell/utility-modules/secretmanagement/how-to/using-secrets-in-automation)
+- [Using Azure Key Vault in automation](/powershell/utility-modules/secretmanagement/how-to/using-azure-keyvault)
+
+Content updates
+
+- Updated release notes for 7.3-preview.5 and PSReadLine 2.2.6
+
+### Top Community Contributors
+
+GitHub stats
+
+- 44 PRs merged (8 from Community)
+- 23 issues opened (14 from Community)
+- 23 issues closed (13 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+| GitHub Id  | PRs merged | Issues opened |
+| ---------- | :--------: | :-----------: |
+| mcdonaldjc |     2      |       1       |
+| radrow     |     1      |               |
+| yecril71pl |     1      |               |
+| muhahaaa   |     1      |               |
+| windin7cc  |     1      |               |
+| fabiod89   |     1      |               |
+| NaridaL    |     1      |               |
 
 ## 2022-May
 

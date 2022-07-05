@@ -1,7 +1,7 @@
 ---
 description: Describes the special character sequences that control how PowerShell interprets the next characters in the sequence.
 Locale: en-US
-ms.date: 05/16/2022
+ms.date: 07/05/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Special Characters
@@ -29,18 +29,18 @@ strings.
 
 PowerShell recognizes these escape sequences:
 
-|  Sequence   |       Description       |
-| ----------- | ----------------------- |
-| `` `0 ``    | Null                    |
-| `` `a ``    | Alert                   |
-| `` `b ``    | Backspace               |
-| `` `e ``    | Escape                  |
-| `` `f ``    | Form feed               |
-| `` `n ``    | New line                |
-| `` `r ``    | Carriage return         |
-| `` `t ``    | Horizontal tab          |
-| `` `u{x} `` | Unicode escape sequence |
-| `` `v ``    | Vertical tab            |
+|  Sequence   |                   Description                   |
+| :---------: | :---------------------------------------------- |
+|  `` `0 ``   | Null                                            |
+|  `` `a ``   | Alert                                           |
+|  `` `b ``   | Backspace                                       |
+|  `` `e ``   | Escape (added in PowerShell 6)                  |
+|  `` `f ``   | Form feed                                       |
+|  `` `n ``   | New line                                        |
+|  `` `r ``   | Carriage return                                 |
+|  `` `t ``   | Horizontal tab                                  |
+| `` `u{x} `` | Unicode escape sequence (added in PowerShell 6) |
+|  `` `v ``   | Vertical tab                                    |
 
 PowerShell also has a special token to mark where you want parsing to stop. All
 characters that follow this token are used as literal values that aren't
@@ -88,6 +88,9 @@ back out
 ```
 
 ## Escape (`e)
+
+> [!NOTE]
+> This special character was added in PowerShell 6.0.
 
 The escape (`` `e ``) character is most commonly used to specify a virtual
 terminal sequence (ANSI escape sequence) that modifies the color of text and
@@ -171,6 +174,9 @@ Column1         Column2         Column3
 ```
 
 ## Unicode character (`u{x})
+
+> [!NOTE]
+> This special character was added in PowerShell 6.0.
 
 The Unicode escape sequence (`` `u{x} ``) allows you to specify any Unicode
 character by the hexadecimal representation of its code point. This includes
