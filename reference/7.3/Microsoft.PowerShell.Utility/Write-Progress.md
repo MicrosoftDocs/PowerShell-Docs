@@ -59,7 +59,7 @@ variable `$i` (the counter in the For loop), which indicates the relative comple
 ### Example 2: Display the progress of nested For loops
 
 ```powershell
-$PSStyle.Progress.View = 'classic'
+$PSStyle.Progress.View = 'Classic'
 
 for($I = 0; $I -lt 10; $I++ ) {
     $OuterLoopProgressParameters = @{
@@ -94,7 +94,7 @@ Progress
 InnerLoop
 ```
 
-This example sets the progress view to classic and then displays the progress of two nested **for**
+This example sets the progress view to `Classic` and then displays the progress of two nested `for`
 loops, each represented by a progress bar.
 
 The `Write-Progress` command for the second progress bar includes the **Id** parameter that
@@ -146,7 +146,7 @@ that result by 100.
 ### Example 4: Display progress for each level of a nested process
 
 ```powershell
-$PSStyle.Progress.View = 'classic'
+$PSStyle.Progress.View = 'Classic'
 
 foreach ( $i in 1..10 ) {
   Write-Progress -Id 0 "Step $i"
