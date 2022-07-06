@@ -1,7 +1,7 @@
 ---
 description: Describes how you can use classes to create your own custom types.
 Locale: en-US
-ms.date: 01/19/2021
+ms.date: 07/06/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Classes
@@ -72,14 +72,14 @@ class Device {
 }
 
 $dev = [Device]::new()
-$dev.Brand = "Microsoft"
+$dev.Brand = "Fabrikam, Inc."
 $dev
 ```
 
 ```Output
 Brand
 -----
-Microsoft
+Fabrikam, Inc.
 ```
 
 ## Class properties
@@ -98,17 +98,17 @@ class Device {
 }
 
 $device = [Device]::new()
-$device.Brand = "Microsoft"
-$device.Model = "Surface Pro 4"
+$device.Brand = "Fabrikam, Inc."
+$device.Model = "Fbk5040"
 $device.VendorSku = "5072641000"
 
 $device
 ```
 
 ```Output
-Brand     Model         VendorSku
------     -----         ---------
-Microsoft Surface Pro 4 5072641000
+Brand          Model   VendorSku
+-----          -----   ---------
+Fabrikam, Inc. Fbk5040 5072641000
 ```
 
 ### Example complex types in class properties
@@ -201,12 +201,12 @@ class Rack {
 
 $rack = [Rack]::new()
 
-$surface = [Device]::new()
-$surface.Brand = "Microsoft"
-$surface.Model = "Surface Pro 4"
-$surface.VendorSku = "5072641000"
+$device = [Device]::new()
+$device.Brand = "Fabrikam, Inc."
+$device.Model = "Fbk5040"
+$device.VendorSku = "5072641000"
 
-$rack.AddDevice($surface, 2)
+$rack.AddDevice($device, 2)
 
 $rack
 $rack.GetAvailableSlots()
@@ -215,11 +215,11 @@ $rack.GetAvailableSlots()
 ```Output
 
 Slots     : 8
+Devices   : {$null, $null, Fabrikam, Inc.|Fbk5040|5072641000, $null…}
 Brand     :
 Model     :
 VendorSku :
 AssetId   :
-Devices   : {$null, $null, Microsoft|Surface Pro 4|5072641000, $null...}
 
 0
 1
@@ -331,15 +331,19 @@ class Device {
     }
 }
 
-[Device]$surface = [Device]::new("Microsoft", "Surface Pro 4", "5072641000")
+[Device]$device = [Device]::new(
+    "Fabrikam, Inc.",
+    "Fbk5040",
+    "5072641000"
+)
 
-$surface
+$device
 ```
 
 ```Output
-Brand     Model         VendorSku
------     -----         ---------
-Microsoft Surface Pro 4 5072641000
+Brand          Model   VendorSku
+-----          -----   ---------
+Fabrikam, Inc. Fbk5040 5072641000
 ```
 
 ### Example with multiple constructors
@@ -371,18 +375,21 @@ class Device {
     }
 }
 
-[Device]$somedevice = [Device]::new()
-[Device]$surface = [Device]::new("Microsoft", "Surface Pro 4", "5072641000")
+[Device]$someDevice = [Device]::new()
+[Device]$server = [Device]::new(
+    "Fabrikam, Inc.",
+    "Fbk5040",
+    "5072641000"
+)
 
-$somedevice
-$surface
+$someDevice, $server
 ```
 
 ```Output
-Brand       Model           VendorSku
------       -----           ---------
+Brand          Model   VendorSku
+-----          -----   ---------
 Undefined
-Microsoft   Surface Pro 4   5072641000
+Fabrikam, Inc. Fbk5040 5072641000
 ```
 
 ## Hidden attribute
@@ -427,7 +434,7 @@ class Rack {
     }
 }
 
-[Rack]$r1 = [Rack]::new("Microsoft", "Surface Pro 4", 16)
+[Rack]$r1 = [Rack]::new("Fabrikam, Inc.", "Fbk5040", 16)
 
 $r1
 $r1.Devices.Length
@@ -435,9 +442,9 @@ $r1.Slots
 ```
 
 ```Output
-Brand     Model         Devices
------     -----         -------
-Microsoft Surface Pro 4 {$null, $null, $null, $null...}
+Devices                       Brand          Model
+-------                       -----          -----
+{$null, $null, $null, $null…} Fabrikam, Inc. Fbk5040
 16
 16
 ```
@@ -740,9 +747,9 @@ class Child : Person
     }
 }
 
-[Child]$littleone = [Child]::new(10, "Silver Fir Elementary School")
+[Child]$littleOne = [Child]::new(10, "Silver Fir Elementary School")
 
-$littleone.Age
+$littleOne.Age
 ```
 
 ```Output
