@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ThreadJob.dll-Help.xml
 Locale: en-US
 Module Name: ThreadJob
-ms.date: 12/05/2020
+ms.date: 07/07/2022
 online version: https://docs.microsoft.com/powershell/module/threadjob/start-threadjob?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-ThreadJob
@@ -138,6 +138,49 @@ PS>
 Notice that the prompt from `Read-Host` is displayed and you are able to type input. Then, the
 message from `Write-Warning` is displayed. The `Receive-Job` cmdlet returns all the output from the
 job.
+
+### Example 5 - Download multiple files at the same time
+
+The `Invoke-WebRequest` cmdlet can only download one file at a time. The following example uses
+`Start-ThreadJob` to create multiple thread jobs to download multiple files at the same time.
+
+```powershell
+$baseUri = 'https://github.com/PowerShell/PowerShell/releases/download'
+$files = @(
+    @{
+        Uri = "$baseUri/v7.3.0-preview.5/PowerShell-7.3.0-preview.5-win-x64.msi"
+        OutFile = 'PowerShell-7.3.0-preview.5-win-x64.msi'
+    },
+    @{
+        Uri = "$baseUri/v7.3.0-preview.5/PowerShell-7.3.0-preview.5-win-x64.zip"
+        OutFile = 'PowerShell-7.3.0-preview.5-win-x64.zip'
+    },
+    @{
+        Uri = "$baseUri/v7.2.5/PowerShell-7.2.5-win-x64.msi"
+        OutFile = 'PowerShell-7.2.5-win-x64.msi'
+    },
+    @{
+        Uri = "$baseUri/v7.2.5/PowerShell-7.2.5-win-x64.zip"
+        OutFile = 'PowerShell-7.2.5-win-x64.zip'
+    }
+)
+
+$jobs = @()
+
+foreach ($file in $files) {
+    $jobs += Start-ThreadJob -Name $file.OutFile -ScriptBlock {
+        $params = $using:file
+        Invoke-WebRequest @params
+    }
+}
+
+Write-Host "Downloads started..."
+Wait-Job -Job $jobs
+
+foreach ($job in $jobs) {
+    Receive-Job -Job $job
+}
+```
 
 ## PARAMETERS
 
