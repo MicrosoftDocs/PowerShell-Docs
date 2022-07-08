@@ -61,7 +61,7 @@ article, you must specify which versions are affected by the issue. The issue te
 includes a checklist of versions. Use the checkboxes to specify which versions of the content are
 affected.
 
-Check all version of the article to see if the same change is needed in the other versions. Apply
+Check all versions of the article to see if the same change is needed in the other versions. Apply
 the appropriate change to each version of the file.
 
 ## Localized content
