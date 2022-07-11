@@ -1,0 +1,192 @@
+name: Stale Content
+description: |
+  Writes a report enumerating stale content in one or more folders of a repository. The report
+  notes the folder, path, and when the document was last updated by folder and subfolder.
+
+  To determine whether a document is stale, it inspects the `ms.date` key in the document's
+  frontmatter and compares that to a specified date (by default, 330 days before the action runs).
+
+  By default, this action writes the report in the action's console logs and job summary. You can
+  use the **UploadArtifact** parameter to automatically upload the report as a CSV file as an
+  [artifact] automatically, write the report as a CSV to the runner for use in a future step, or
+  use the output data as a variable for a future step in your own workflow.
+author: PowerShell Docs Team
+inputs:
+  relative_folder_path:
+    description: |
+      Specify the path to the folder or folders to recursively search for stale documents, relative
+      to the root of the repository. If not specified, the default value is the repository's root
+      folder.
+
+      To specify multiple folders, separate each folder by a newline in a multiline string block in
+      yaml, like this:
+
+      ```yaml
+      name: Stale Content Report
+      uses: MicrosoftDocs/PowerShell-Docs/.github/actions/reporting/stale-content/v1@main
+      with:
+        relative_folder_path: |
+          reference/conceptual
+          reference/contribution
+      ```
+
+      In this example, only the `reference/conceptual` and `reference/contribution` folders in the
+      root folder for the repository are inspected for stale documentation.
+    required: false
+  exclude_folder_segment:
+    description: |
+      Specify one or more complete folder segments as strings to exclude from the list of files to
+      report on. Any file whose path case-insensitively matches an excluded segment are discarded
+      from the list before inspection.
+
+      To specify multiple folders, separate each folder by a newline in a multiline string block in
+      yaml, like this:
+
+      ```yaml
+      name: Stale Content Report
+      uses: MicrosoftDocs/PowerShell-Docs/.github/actions/reporting/stale-content/v1@main
+      with:
+        exclude_folder_segment: |
+          archived
+          release-notes
+      ```
+
+      In this example, any documents in folders named `archived` and `release-notes` are ignored
+      during inspection, regardless of the rest of their root path or how nested they are. So the
+      files in the folders `reference/archived/v1/`, `reference/foo/release-notes/`, and
+      'reference/bar/release-notes' would be ignored, but not files in `reference/baz/release/notes`
+      or the `reference/archived.md` file.
+    required: false
+  days_until_stale:
+    description: |
+      Specify an integer representing how many days can pass before a document is considered stale.
+      If any document's `ms.date` key is older than this value, it is returned as a stale document.
+
+      If used with the **stale_since_date** parameter, this value is ignored and the action emits a
+      warning.If neither this parameter nor **stale_since_date** are specified, the action treats
+      files with an `ms.date` value older than 330 days from when the action is run as stale.
+    required: false
+  stale_since_date:
+    description: |
+      Specify an [ISO 8601][iso-8601] date-time string representing the point at which any older
+      documents are considered stale. If any document's `ms.date` key is older than this value, it
+      is returned as a stale document.
+
+      If used with the **days_until_stale** parameter, this value is used and the action emits a
+      warning. If neither this parameter nor **days_until_stale** are specified, the action treats
+      files with an `ms.date` value older than 330 days from when the action is run as stale.
+
+      [iso-8601]: https://www.iso.org/iso-8601-date-and-time-format.html
+    required: false
+  upload_artifact:
+    description: |
+      Specify as `true` to upload the CSV of the report as an [action artifact][artifacts]. If this
+      parameter is not specified or is specified as anything other than `true` (case-insensitive),
+      the action does not automatically upload the report as an artifact. This parameter implies the
+      use of **export_as_csv**, you do not need to specify them together.
+
+      If this action is used to upload the report as an artifact, it does so with the name of the
+      artifact set to the same value as the path to the CSV file (see the **export_path** parameter)
+      with the default retention period.
+
+      For more control over how reports are uploaded, consider using the
+      [actions/upload-artifact][artifact-action] action directly, like so:
+
+      ```yaml
+      - name: Stale Content Report
+        uses: MicrosoftDocs/PowerShell-Docs/.github/actions/reporting/stale-content/v1@main
+        with:
+          export_as_csv: true
+          export_path: report.csv
+      - name: Upload Stale Content Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: stale-report
+          path: report.csv
+          retention-days: 30
+      ```
+
+      This example uses this action to generate a stale content report CSV file and then uses the
+      `actions/upload-artifact` action separately to upload the artifact with workflow-defined name
+      (`stale-report`) and retention period (`30` days).
+
+      [artifacts]:
+      [artifact-action]:
+    required: false
+  export_as_csv:
+    description: |
+      Specify as `true` to export the stale content report as a comma-separated values (CSV) file.
+      If this parameter is not specified or is specified as anything other than `true`
+      (case-insensitive), the action does not export the report. It still writes the report in
+      the console logs and Markdown summary for the workflow. Using the **upload_artifact**
+      parameter implies this parameter. You do not need to specify them together.
+
+      By default, the report is exported to the project root as `StaleContentReport.<%Y-%m-%d>.csv`,
+      where `<%Y-%m-%d>` is the date the action is run. For example, if run on July 12 2022, the
+      filename is `StaleContentReport.2022-07-12.csv`. Use the **export_path** parameter to set a
+      different path or name for the report.
+    required: false
+  export_path:
+    description: |
+      Specify the path to where the CSV file should be written. This parameter is only valid with
+      the **UploadArtifact** or **ExportAsCsv** parameters. If used without them, the value is
+      ignored.
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - shell: pwsh
+      env:
+        INPUT_RELATIVE_FOLDER_PATH: ${{ inputs.relative_folder_path }}
+        INPUT_EXCLUDE_FOLDER_SEGMENT: ${{ inputs.exclude_folder_segment }}
+        INPUT_DAYS_UNTIL_STALE: ${{ inputs.days_until_stale }}
+        INPUT_STALE_SINCE_DATE: ${{ inputs.stale_since_date }}
+        INPUT_UPLOAD_ARTIFACT: ${{ inputs.upload_artifact }}
+        INPUT_EXPORT_AS_CSV: ${{ inputs.export_as_csv }}
+        INPUT_EXPORT_PATH: ${{ inputs.export_path }}
+      run: |
+        Write-Output "::group::Generic Setup"
+        $ActionPath = Resolve-Path '${{ github.action_path }}' | Select-Object -ExpandProperty Path
+        $ParameterHandlers = Join-Path -Path $ActionPath -ChildPath Parameters.psd1
+        | ForEach-Object -Process { Import-PowerShellDataFile -Path $_ }
+        | Select -ExpandProperty Parameters
+        | ForEach-Object -Process { [pscustomobject]$_ }
+        "Action Path: $ActionPath"
+
+        $ActionRootPath = Split-Path -Parent -Path $ActionPath
+        while ((Split-Path -Leaf -Path $ActionRootPath) -ne 'actions') {
+          $ActionRootPath = Split-Path -Parent -Path $ActionRootPath
+        }
+        "Action Root Path: $ActionRootPath"
+        
+        $JoinPathParams = @{
+          Path = $ActionRootPath
+          ChildPath = '.pwsh'
+        }
+
+        $ModulePath = Join-Path @JoinPathParams -AdditionalChildPath @(
+          'module'
+          'gha.psd1'
+        )
+        "Module Path: $ModulePath"
+        Import-Module -Name $ModulePath -PassThru | Format-List
+
+        $ScriptPath = Join-Path @JoinPathParams -AdditionalChildPath @(
+          'scripts',
+          'Get-StaleContentReport.ps1'
+        )
+        "Script Path: $ScriptPath"
+        Write-Output "::endgroup::"
+        Write-Output "::group::Parameter Validation"
+        $Parameters = Get-ActionScriptParameter -ParameterHandler $ParameterHandlers
+        Write-Output "::endgroup::"
+        Write-Output "::group::Report on Stale Content"
+        . $ScriptPath @Parameters
+        Write-Output "::endgroup::"
+    - name: Upload Artifact
+      if: ${{ inputs.upload_artifact }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: StaleContentReporting
+        path: ${{ env.artifactPath }}

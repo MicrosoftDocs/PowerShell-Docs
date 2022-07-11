@@ -82,6 +82,18 @@ It can retrieve errors from the `$error` variable or act on an input object.
 
 For more information, review the [source code][utility-Get-GHAConsoleError]
 
+### `Get-StaleDocument`
+
+This cmdlet searches a specified folder for stale documents as determined by comparing the value of
+their `ms.date` metadata key with a specified date. By default, any document not updated in the last
+330 days is considered stale.
+
+It returns the list of stale documents with their **RootPath** (the folder searched recursively),
+**RelativePath** (the path to the document relative to the **RootPath**), and **MSDate** (the
+**System.DateTime** value for their `ms.date` property).
+
+For more information, review the [source code][utility-Get-StaleDocument].
+
 ### `Get-VersionedContentStatus`
 
 This cmdlet returns the change status of versioned content for a pull request. This information can
@@ -149,6 +161,7 @@ For more information, review the [source code][utility-Write-HostParameter]
 [utility-Format-GHAConsoleText]:      ./functions/utility/Format-GHAConsoleText.ps1
 [utility-Get-GHAConsoleError]:        ./functions/utility/Get-GHAConsoleError.ps1
 [utility-Get-ActionScriptParameter]:              ./functions/utility/Get-ActionScriptParameter.ps1
+[utility-Get-StaleDocument]: ./functions/utility/Get-StaleDocument.ps1
 [utility-Get-VersionedContentStatus]: ./functions/utility/Get-VersionedContentStatus.ps1
 [utility-New-CliErrorRecord]:         ./functions/utility/New-CliErrorRecord.ps1
 [utility-New-InvalidParameterError]:  ./functions/utility/New-InvalidParameterError.ps1

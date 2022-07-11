@@ -1,0 +1,36 @@
+# This workflow inspects the specified relative folder path for stale documents,
+# defined as any markdown files with an `ms.date` key whose value is more than
+# 330 days from the time this workflow is run.
+#
+# It ignores the folders in the exclude_path_segment input as those documents
+# are not expected to be fresh at this time.
+name: Reporting
+on:
+  schedule:
+    # midnight UTC on the first of every month
+    - cron: 0 0 1 * *
+permissions:
+  contents: read
+jobs:
+  Report:
+    name: Stale Content
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Checkout Repository
+        id: checkout_repo
+        uses: actions/checkout@v3
+      - name: Write Report
+        uses: ./.github/actions/reporting/stale-content/v1
+        with:
+          relative_folder_path: |
+            reference/docs-conceptual
+          exclude_folder_segment: |
+            lang-spec
+            media
+            samples
+            windows-powershell
+            developer
+          upload_artifact: true
