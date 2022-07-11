@@ -10,7 +10,7 @@ isn't used universally, the community generally agrees that several types of "sc
    commands, etc) to automate a specific business process. A script is not intended to be reusable;
    it is intended to make use of reuse by leveraging functions and other commands
 
-For example, you might write a "New-CorpUser" script, which provisions new users. In it, you might
+For example, you might write a "New-CorpUser" script which provisions new users. In it, you might
 call numerous commands and functions to create a user account, mailbox-enable them, provision a home
 folder, and so on. Those discrete tasks might also be used in other processes, so you build them as
 functions. The script is only intended to automate that one process, and so it doesn't need to
