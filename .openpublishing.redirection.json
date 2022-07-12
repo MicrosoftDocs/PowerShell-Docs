@@ -1,6 +1,16 @@
 {
   "redirections": [
     {
+      "source_path": "reference/docs-conceptual/learn/tutorials/00-introduction.md",
+      "redirect_url": "/powershell/scripting/discover-powershell",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "reference/docs-conceptual/learn/tutorials/01-discover-powershell.md",
+      "redirect_url": "/powershell/scripting/discover-powershell",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "reference/docs-conceptual/dev-cross-plat/create-help-using-platyps.md",
       "redirect_url": "/powershell/utility-modules/platyps/create-help-using-platyps",
       "redirect_document_id": false
