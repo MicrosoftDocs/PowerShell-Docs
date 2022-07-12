@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 05/18/2022
+ms.date: 07/12/2022
 ms.prod: powershell
 ms.topic: include
 ---
@@ -18,17 +18,14 @@ supported on. These versions are supported until either the version of
 
 |    Alpine     | 7.0 (LTS) |    7.1    | 7.2 (LTS-current) | 7.3 (preview) |
 | ------------- | :-------: | :-------: | :---------------: | :-----------: |
-| &#x2705; 3.14 | &#x274c;  | &#x274c;  |     &#x2705;      |   &#x2705;    |
+| &#x2705; 3.14 | &#x274c;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
 | &#x2705; 3.13 | &#x274c;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
 | &#x2705; 3.12 | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
 | &#x2705; 3.11 | &#x274c;  | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
 | &#x274c; 3.10 | &#x1f7e1; | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
 | &#x274c; 3.9  | &#x1f7e1; | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
 
-PowerShell has not been tested on Alpine 3.15.
-
-> [!NOTE]
-> CIM, PowerShell Remoting, and DSC are not supported on Alpine.
+Alpine 3.15 is in the process of being tested for PowerShell 7.3 (preview).
 
 PowerShell is supported on Alpine for the following processor architectures.
 
@@ -36,7 +33,7 @@ PowerShell is supported on Alpine for the following processor architectures.
 | ---------------------- | :-------: | :---------------: | :-----------: |
 | All supported versions |    x64    |        x64        |      x64      |
 
-PowerShell has not been tested on Alpine using Arm processors.
+PowerShell hasn't been tested on Alpine using Arm processors.
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-alpine]: https://alpinelinux.org/releases/

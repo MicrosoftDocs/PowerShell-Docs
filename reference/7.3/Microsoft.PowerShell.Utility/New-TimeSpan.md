@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/01/2019
+ms.date: 07/12/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-timespan?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-TimeSpan
@@ -23,7 +23,8 @@ New-TimeSpan [[-Start] <DateTime>] [[-End] <DateTime>] [<CommonParameters>]
 ### Time
 
 ```
-New-TimeSpan [-Days <Int32>] [-Hours <Int32>] [-Minutes <Int32>] [-Seconds <Int32>] [<CommonParameters>]
+New-TimeSpan [-Days <Int32>] [-Hours <Int32>] [-Minutes <Int32>] [-Seconds <Int32>]
+ [-Milliseconds <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,7 +66,7 @@ TotalMilliseconds : 5100000
 This example creates a new **TimeSpan** object that represents the interval between the time that
 the command is run and January 1, 2010.
 
-This command does not require the **Start** parameter, because the default value of the **Start**
+This command doesn't require the **Start** parameter, because the default value of the **Start**
 parameter is the current date and time.
 
 ```powershell
@@ -83,10 +84,9 @@ These commands return the date that is 90 days after the current date.
 
 ### Example 4: Discover the TimeSpan since a file was updated
 
-This command tells you how long it has been since the [about_remote](../Microsoft.PowerShell.Core/About/about_Remote.md)
-help file was last updated.
-You can use this command format on any file, or any other object that has a **LastWriteTime**
-property.
+This command tells you how long it has been since the
+[about_remote](../Microsoft.PowerShell.Core/About/about_Remote.md) help file was last updated. You
+can use this command format on any file, or any other object that has a **LastWriteTime** property.
 
 This command works because the **Start** parameter of `New-TimeSpan` has an alias of
 **LastWriteTime**. When you pipe an object that has a **LastWriteTime** property to `New-TimeSpan`,
@@ -114,8 +114,7 @@ TotalMilliseconds : 27813562312.7728
 
 ### -Days
 
-Specifies the days in the time span.
-The default value is 0.
+Specifies the days in the time span. The default value is 0.
 
 ```yaml
 Type: System.Int32
@@ -131,8 +130,7 @@ Accept wildcard characters: False
 
 ### -End
 
-Specifies the end of a time span.
-The default value is the current date and time.
+Specifies the end of a time span. The default value is the current date and time.
 
 ```yaml
 Type: System.DateTime
@@ -148,8 +146,23 @@ Accept wildcard characters: False
 
 ### -Hours
 
-Specifies the hours in the time span.
-The default value is zero.
+Specifies the hours in the time span. The default value is 0.
+
+```yaml
+Type: System.Int32
+Parameter Sets: Time
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Milliseconds
+
+Specifies the length of the time span in milliseconds. The default value is 0.
 
 ```yaml
 Type: System.Int32
@@ -182,8 +195,7 @@ Accept wildcard characters: False
 
 ### -Seconds
 
-Specifies the length of the time span in seconds.
-The default value is 0.
+Specifies the length of the time span in seconds. The default value is 0.
 
 ```yaml
 Type: System.Int32
@@ -199,13 +211,13 @@ Accept wildcard characters: False
 
 ### -Start
 
-Specifies the start of a time span.
-Enter a string that represents the date and time, such as "3/15/09" or a **DateTime** object, such
-as one from a `Get-Date` command. The default value is the current date and time.
+Specifies the start of a time span. Enter a string that represents the date and time, such as
+"3/15/09" or a **DateTime** object, such as one from a `Get-Date` command. The default value is the
+current date and time.
 
-You can use **Start** or its alias, **LastWriteTime**.
-The **LastWriteTime** alias lets you pipe objects that have a **LastWriteTime** property,
-such as files in the file system `[System.Io.FileIO]`, to the **Start** parameter of `New-TimeSpan`.
+You can use **Start** or its alias, **LastWriteTime**. The **LastWriteTime** alias lets you pipe
+objects that have a **LastWriteTime** property, such as files in the file system
+`[System.Io.FileIO]`, to the **Start** parameter of `New-TimeSpan`.
 
 ```yaml
 Type: System.DateTime
@@ -223,7 +235,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -244,4 +257,3 @@ You can pipe a **DateTime** object that represents that start time to `New-TimeS
 [Get-Date](Get-Date.md)
 
 [Set-Date](Set-Date.md)
-

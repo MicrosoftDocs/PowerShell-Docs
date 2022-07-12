@@ -22,7 +22,7 @@ specified patterns. PowerShell includes the following comparison operators:
 
 - `-eq`, `-ieq`, `-ceq` - equals
 - `-ne`, `-ine`, `-cne` - not equals
-- `-gt`, `-igt`, `-igt` - greater than
+- `-gt`, `-igt`, `-cgt` - greater than
 - `-ge`, `-ige`, `-cge` - greater than or equal
 - `-lt`, `-ilt`, `-clt` - less than
 - `-le`, `-ile`, `-cle` - less than or equal
