@@ -1,7 +1,7 @@
 ---
 description: Learn what PowerShell is and some essential commands used to discover more about PowerShell.
 ms.custom: chnoring
-ms.date: 10/07/2021
+ms.date: 07/12/2022
 ms.reviewer: sewhee
 title: Discover PowerShell
 ---
@@ -15,12 +15,9 @@ cross platform and can be used for a variety of tasks.
 The thing that makes PowerShell unique is that accepts and returns .NET objects, rather than text.
 This fact makes it easier to connect different commands in series, in a _pipeline_.
 
-> [!NOTE]
-> Pipelines will be covered more in detail in this tutorial series.
-
 Even then, you might need to _massage_ the results a little.
 
-## What can PowerShell  be used for?
+## What can PowerShell be used for?
 
 Usage of PowerShell has grown since the days when it was Windows-only. It's still used for Windows
 task automation, but today, you can use for a variety of tasks like:
@@ -31,8 +28,8 @@ task automation, but today, you can use for a variety of tasks like:
 - **Automate tasks for Active Directory and Exchange**. You can use it to automate almost any task
   on Windows like creating users in Active Directory and mailboxes in Exchange.
 
-There are many more areas of usage but the list above gives you a hint that PowerShell has come a
-long way.
+There are many more areas of usage but the preceding list gives you a hint that PowerShell has come
+a long way.
 
 ## Who uses PowerShell?
 
@@ -43,24 +40,24 @@ used by people calling themselves DevOps, Cloud Ops, and even Developers.
 ## PowerShell cmdlets
 
 PowerShell comes with hundreds of preinstalled commands. PowerShell command are called cmdlets;
-pronounced as "command-lets".
+pronounced as _command-lets_.
 
-The name of each cmdlet consists of a "Verb-Noun" pair; for example `Get-Process`. This naming
+The name of each cmdlet consists of a _Verb-Noun_ pair. For example, `Get-Process`. This naming
 convention makes it easier to understand what the cmdlet does. It also makes it easier to find the
 command you're looking for. When looking for a cmdlet to use, you can filter on the verb or noun.
 
 ### Using cmdlets to explore PowerShell
 
 When you first pick up PowerShell, it might feel intimidating as there seems to be so much to learn.
-However, PowerShell is designed to help you learn a little at a time, as you need it.
+PowerShell is designed to help you learn a little at a time, as you need it.
 
 PowerShell includes cmdlets that help you discover PowerShell. Using these three cmdlets, you can
 discover what commands available, what they do, and what types they operate on.
 
 - `Get-Verb`. Running this command returns a list of verbs that most commands adhere to.
-  Additionally, the response describes what these verbs does. As most commands follow this naming,
-  it sets expectations on what a command does, which helps you select the appropriate command but
-  also what to name a command, should you be creating one.
+  The response includes a description of what these verbs do. As most commands follow this naming,
+  it sets expectations on what a command does. This helps you select the appropriate command and
+  what to name a command, should you be creating one.
 - `Get-Command`. This command retrieves a list of all commands installed on your machine.
 - `Get-Member`. It operates on object based output and is able to discover what object, properties
   and methods are available for a command.
@@ -165,8 +162,8 @@ Apart from using parameters to filter, you can also use commands to help you wit
 some commands that can act as filters:
 
 - `Select-Object`. It's a very versatile command that helps you pick out specific properties from
-  one or more objects. Additionally by using it's parameters you can limit the response you get
-  back. Here's an example of `Select-Object` being used to ask for a limited number of records:
+  one or more objects. Additionally, using it's parameters you can limit the response you get back.
+  Here's an example of `Select-Object` being used to ask for a limited number of records:
 
    ```powershell
    Get-Command | Select-Object -First 3
@@ -192,14 +189,14 @@ some commands that can act as filters:
   `p`, you could use `Where-Object` like so:
 
   ```powershell
-  Get-Process | Where-Object {$_.ProcessName -Like "p*"}
+  Get-Process | Where-Object {$_.ProcessName -like "p*"}
   ```
 
   Above, the `Get-Process` cmdlet produces a collection of process objects. To filter down the
   response, you _pipe_ the command `Where-Object`. Piping means that two or more commands are
   connected via a pipe `|` character. The idea is that the output from one command serves as the
   input for the next command, as read from left to right. The `Where-Object` uses an expression to
-  filter. The expression itself uses the `-Like` operator and string argument that is a wildcard
+  filter. The expression uses the `-like` operator and string argument containing a wildcard
   expression.
 
 ## Explore objects with Get-Member
@@ -215,8 +212,8 @@ the output. The output is interesting for several reasons like:
   to look at what input and output it produces. The idea is that the output of a command is used as
   the input of another command.
 
-The `Get-Member` cmdlet displays the properties and methods of the result. Additionally it also show
-the type of the object. Pipe the output you want to inspect to `Get-Member`.
+The `Get-Member` cmdlet displays the type, properties, and methods of the result object. Pipe the
+output you want to inspect to `Get-Member`.
 
 ```powershell
 Get-Process | Get-Member
@@ -318,7 +315,7 @@ In this exercise your goal is to learn more about a command. In doing so you'll 
 like what type it operates on and what other similar commands operate on that same type.
 
 1. Ensure you have a started PowerShell shell
-1. Run the the command `Get-Process`:
+1. Run the command `Get-Process`:
 
    ```powershell
    Get-Process | Get-Member | Select-Object TypeName -Unique
