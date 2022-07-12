@@ -146,7 +146,7 @@ Accept wildcard characters: False
 
 ### -Hours
 
-Specifies the hours in the time span. The default value is zero.
+Specifies the hours in the time span. The default value is 0.
 
 ```yaml
 Type: System.Int32
