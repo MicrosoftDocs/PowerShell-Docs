@@ -6,9 +6,9 @@ Locale: en-US
 ms.date: 07/14/2022
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about PSReadLine
+title: about PSReadLine Functions
 ---
-# about_PSReadLine
+# about_PSReadLine_Functions
 
 ## Short Description
 
