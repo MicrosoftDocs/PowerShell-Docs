@@ -1,0 +1,149 @@
+---
+description: This article describes the features and usage of Predictive IntelliSense in PSReadLine.
+no-loc: [<kbd>Tab</kbd>, <kbd>F2</kbd>, <kbd>RightArrow</kdb>, <kbd>Enter</kbd>]
+title: Using predictors is PSReadLine
+ms.date: 7/14/2022
+---
+# Using predictors is PSReadLine
+
+**PSReadLine** 2.1.0 introduced the **Predictive IntelliSense** feature. Predictive IntelliSense
+provides suggestions for full commands based on items from your **PSReadLine** history.
+**PSReadLine** 2.2.0 extends the power of Predictive IntelliSense by adding support for plug-in
+modules that use advanced logic to provide suggestions for full commands. The latest version,
+**PSReadLine** 2.2.6, enables predictions by default.
+
+## Using Predictive IntelliSense
+
+When Predictive IntelliSense is enabled, the prediction suggestion appears as colored text following
+the user's cursor. The suggestions from Predictive IntelliSense help new and experienced users of
+PowerShell discover, edit, and execute full commands based on matching predictions. Suggestions can
+come from the user's history and additional domain specific plugins.
+
+![Inline view of a prediction](media/using-predictors/predictor-inline-1.png)
+
+The previous images shows the default `InlineView` of the suggestion. Pressing <kbd>RightArrow</kdb>
+key accepts an inline suggestion. After accepting the suggestion, you can edit the command line
+before hitting <kbd>Enter</kbd> to run the command.
+
+**PSReadLine** also offers a `ListView` presentation of the suggestions.
+
+![List view of predictions](media/using-predictors/predictor-listview-1.png)
+
+When in the list view, you can use the arrow keys to scroll through the available suggestions. List
+view also shows the source of the prediction.
+
+**PSReadLine** defaults to `InlineView`. You can switch between `InlineView` and `ListView` by
+pressing the <kbd>F2</kbd> key. You can also use the **PredictionViewStyle** parameter of
+`Set-PSReadLineOption` to change the view.
+
+## Managing Predictive IntelliSense
+
+To use Predictive IntelliSense you must have a newer version of **PSReadLine** installed. For best
+results, install the latest version of the module.
+
+To install **PSReadLine** using **PowerShellGet**:
+
+```powershell
+Install-Module -Name PSReadLine
+```
+
+Or install using the new [PowerShellGet v3][PSGetv3] module:
+
+```powershell
+Install-PSResource -Name PSReadLine
+```
+
+**PSReadLine** can be installed in Window PowerShell 5.1 or in PowerShell 7 or higher. To use
+predictor plug-ins you must be running in PowerShell 7.2 or higher. Window PowerShell 5.1 can use
+the history-based predictor.
+
+In **PSReadLine** 2.2.6, Predictive IntelliSense is enabled by default depending on the following
+conditions:
+
+- If Virtual Terminal (VT) is supported and **PSReadLine** running in PowerShell 7.2 or higher,
+  **PredictionSource** is set to `HistoryAndPlugin`
+- If VT is supported and **PSReadLine** running in PowerShell older than 7.2, **PredictionSource**
+  is set to `History`
+- If VT isn't supported, **PredictionSource** is set to `None`.
+
+Use the following command to see the current setting:
+
+```powershell
+Get-PSReadLineOption | Select-Object -Property PredictionSource
+```
+
+You can change the prediction source using the `Set-PSReadLineOption` cmdlet with the
+**PredictionSource** parameter. The **PredictionSource** can be set to:
+
+- `None`
+- `History`
+- `Plugin`
+- `HistoryAndPlugin`
+
+### Setting the prediction color
+
+By default, predictions appear in light grey text on the same line the user is typing. To support
+accessibility needs, you can customize the prediction color. Colors are defined using ANSI escape
+sequences. You can use `$PSStyle` to compose ANSI escape sequences.
+
+```powershell
+Set-PSReadLineOption -Colors @{ InlinePrediction = $PSStyle.Background.Blue }
+```
+
+Or you can create your own. The default light-grey prediction text color can be restored using the
+following ANSI escape sequence.
+
+```powershell
+Set-PSReadLineOption -Colors @{ InlinePrediction = "`e[38;5;238m" }
+```
+
+For more information about setting prediction color and other PSReadLine settings, see
+[Set-PSReadLineOption][Set-PSReadLineOption].
+
+### Changing keybindings
+
+PSReadLine contains functions to navigate and accept predictions. For example:
+
+- `AcceptSuggestion` - Accept the current inline suggestion
+- `AcceptNextSuggestionWord` - Accept the next word of the inline suggestion
+- `AcceptSuggestion` is built within `ForwardChar`, which is bound to
+  <kdb>RightArrow</kbd> by default
+- `AcceptNextSuggestionWord` is built within the function `ForwardWord`, which can be bound to
+  <kbd>Ctrl</kbd>+<kbd>f</kbd>
+
+You can use the `Set-PSReadLineKeyHandler` cmdlet to change key bindings.
+
+```powershell
+Set-PSReadLineKeyHandler -Chord "Ctrl+f" -Function ForwardWord
+```
+
+With this binding, pressing <kbd>Ctrl</kbd>+<kbd>f</kbd> accepts the next word of an inline
+suggestion when the cursor is at the end of current editing line. You can bind other keys to
+`AcceptSuggestion` and `AcceptNextSuggestionWord` for similar functionalities. For example, you may
+want to make <kdb>RightArrow</kbd> accept the next word of the inline suggestion, instead of the
+whole suggestion line.
+
+```powershell
+Set-PSReadLineKeyHandler -Chord "RightArrow" -Function ForwardWord
+```
+
+## Using other predictor plug-ins
+
+The **Az.Tools.Predictor** module was the first plug-in for Predictive IntelliSense. It uses Machine
+Learning to predict what Azure PowerShell command you want to run and the parameters you want to
+use. For more information and installation instructions, see
+[Announcing General Availability of Az.Tools.Predictor][azpredictor].
+
+The **CompletionPredictor** module adds an IntelliSense experience for anything that can be
+tab-completed in PowerShell. With **PSReadLine** set to `InlineView`, you get the normal tab
+completion experience. When you switch to `ListView`, you get the IntelliSense experience.
+
+![PowerShell IntelliSense using the CompletionPredictor](media/using-predictors/completion-predictor.gif)
+
+You can [CompletionPredictor][CompletionPredictor] install the module from the PowerShell Gallery.
+
+<!-- link references -->
+[azpredictor]: https://techcommunity.microsoft.com/t5/azure-tools-blog/announcing-general-availability-of-az-tools-predictor/ba-p/3297956
+[Set-PSReadLineOption]: xref:PSReadLine.Set-PSReadLineOption
+[PSGetv3]: https://www.powershellgallery.com/packages/PowerShellGet/3.0.14-beta14
+[CompletionPredictor]: https://www.powershellgallery.com/packages/CompletionPredictor

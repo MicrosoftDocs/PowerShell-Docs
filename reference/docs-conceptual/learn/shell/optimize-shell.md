@@ -1,0 +1,48 @@
+---
+description: >
+  This article provides an overview of the shell features that help users improve
+  their user experience.
+no-loc: [<kbd>Tab</kbd>, <kbd>F2</kbd>, <kbd>RightArrow</kdb>, <kbd>Enter</kbd>]
+title: Optimizing your shell experience
+ms.date: 7/14/2022
+---
+# Optimizing your shell experience
+
+PowerShell is a command-line shell and a scripting language used for automation.
+
+[Wikipedia][wiki] include the following description of a shell:
+
+> A shell manages the user-system interaction by prompting users for input, interpreting their
+> input, and then handling output from the underlying operating system (much like a read-eval-print
+> loop or [REPL][REPL]).
+
+## The PowerShell Shell
+
+PowerShell is a modern command shell that includes the best features of other popular shells. Unlike
+most shells that only accept and return text, PowerShell accepts and returns .NET objects. The shell
+has several features that can be used to optimize your interactive user experience.
+
+- Robust command-line [history][history]
+- [Tab completion][tab] and [command prediction][prediction]
+- Supports command and parameter [aliases][aliases]
+- [Pipeline][Pipeline] for chaining commands
+- In-console [help][help] system, similar to Unix `man` pages
+
+## Running commands in the shell
+
+PowerShell commands are known as _cmdlets_ (pronounced command-lets). In addition to cmdlets, the
+shell allows you to run any command available on your system.
+
+Cmdlets are native PowerShell commands, not stand-alone executables. Cmdlets are collected into
+PowerShell modules that can be loaded on demand. Cmdlets can be written in any compiled .NET
+language or in the PowerShell scripting language itself.
+
+<!-- link reference -->
+[aliases]: /powershell/module/microsoft.powershell.core/about/about_aliases
+[help]: dynamic-help.md
+[history]: /powershell/module/microsoft.powershell.core/about/about_history
+[Pipeline]: /powershell/module/microsoft.powershell.core/about/about_pipelines
+[prediction]: using-predictors.md
+[REPL]: https://wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
+[tab]: tab-completion.md
+[wiki]: https://wikipedia.org/wiki/Shell_(computing)#Overview
