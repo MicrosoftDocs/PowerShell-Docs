@@ -11,7 +11,7 @@ can download and leverage. You use the cmdlets in the
 Gallery. You don't need to sign in to download items from the PowerShell Gallery.
 
 > [!NOTE]
-> it's possible to download a package from the PowerShell Gallery directly, but this isn't a
+> It's possible to download a package from the PowerShell Gallery directly, but this isn't a
 > recommended approach. For more details, see
 > [Manual Package Download](how-to/working-with-packages/manual-download.md).
 
