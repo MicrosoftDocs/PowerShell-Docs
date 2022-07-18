@@ -1,7 +1,7 @@
 ---
 description: Describes the automatic enumeration of list collection items when using the member-access operator.
 Locale: en-US
-ms.date: 03/16/2022
+ms.date: 07/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_member-access_enumeration?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Member-Access Enumeration
@@ -191,6 +191,22 @@ a
 b
 c
 ```
+
+> [!NOTE]
+> Collections that implement the **System.Collections.IDictionary** interface,
+> such as **HashTable** and **OrderedDictionary**, have a different behavior.
+> When you use the member-access operator on a dictionary that has a key with
+> the same name as a property, it returns the key's value instead of the
+> property's.
+>
+> You can access the dictionary object's property value with the **psbase**
+> [intrinsic member](about_Intrinsic_Members.md). For example, if the key name
+> is `keys` and you want to return the collection of the **HashTable** keys, use
+> this syntax:
+>
+> ```powershell
+> $hashtable.PSBase.Keys
+> ```
 
 ### Accessing members that exist on all items in a collection but not itself
 
