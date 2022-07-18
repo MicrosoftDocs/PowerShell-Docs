@@ -1,7 +1,8 @@
 ---
 description: Explains how to use the Tab Expansion feature in PowerShell.
 Locale: en-US
-ms.date: 07/27/2021
+ms.date: 07/18/2022
+no-loc: [<kbd>Tab</kbd>, <kbd>Ctrl</kbd>, <kbd>Space</kbd>]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_tab_expansion?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: About tab expansion
@@ -10,7 +11,7 @@ title: About tab expansion
 
 ## Short description
 PowerShell provides completions on input to provide hints, enable discovery, and
-speed up input entry. Command names, parameter names, argument values, and file
+speed up input entry. Command names, parameter names, argument values and file
 paths can all be completed by pressing the <kbd>Tab</kbd> key.
 
 ## Long description

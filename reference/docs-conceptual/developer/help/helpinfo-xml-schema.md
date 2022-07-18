@@ -15,7 +15,7 @@ HelpInfo XML files are based on the following XML schema.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<schema targetNamespace="http://schemas.microsoft.com/powershell/help/2010/05" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/powershell/help/2010/05" xmlns="http://www.w3.org/2001/XMLSchema">
   <element name="HelpInfo">
     <complexType>
       <sequence>
