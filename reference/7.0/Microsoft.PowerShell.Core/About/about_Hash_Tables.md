@@ -1,7 +1,7 @@
 ---
 description: Describes how to create, use, and sort hash tables in PowerShell.
 Locale: en-US
-ms.date: 05/23/2022
+ms.date: 07/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Hash Tables
@@ -200,14 +200,6 @@ $hash.Color
 Blue
 ```
 
-If the key name collides with one of the property names of the HashTable type,
-you can use `PSBase` to access those properties. For example, if the key name
-is `keys` and you want to return the collection of Keys, use this syntax:
-
-```powershell
-$hashtable.PSBase.Keys
-```
-
 Hash tables have a Count property that indicates the number of key-value pairs
 in the hash table.
 
@@ -226,6 +218,20 @@ For example:
 $hash["Number"]
 1
 ```
+
+### Handling Name Collisions
+
+If the key name collides with one of the property names of the **HashTable**
+type, you can use the **psbase** [intrinsic member](about_Intrinsic_Members.md)
+to access those properties. For example, if the key name is `keys` and you want
+to return the collection of the **HashTable** keys, use this syntax:
+
+```powershell
+$hashtable.psbase.Keys
+```
+
+This applies for other types which implement the
+**System.Collections.IDictionary** interface, like **OrderedDictionary**.
 
 ## Iterating over keys and values
 
