@@ -219,7 +219,7 @@ $hash["Number"]
 1
 ```
 
-### Handling Name Collisions
+### Handling property name collisions
 
 If the key name collides with one of the property names of the **HashTable**
 type, you can use the **psbase** [intrinsic member](about_Intrinsic_Members.md)
