@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 03/04/2022
+ms.date: 07/19/2022
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -42,7 +42,7 @@ Legend
 | PSImplicitRemotingBatching                                 | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x274c;     |                  |
 | PSCommandNotFoundSuggestion                                | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSDesiredStateConfiguration.InvokeDscResource              | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
-| PSNativePSPathResolution                                   |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
+| PSNativePSPathResolution                                   |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x274c;         |
 | PSSubsystemPluginModel                                     |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSNativeCommandArgumentPassing                             |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSAnsiRenderingFileInfo                                    |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
@@ -396,6 +396,9 @@ $PSNativeCommandUseErrorActionPreference = $true
 ```
 
 ## PSNativePSPathResolution
+
+> [!NOTE]
+> This experimental feature was removed in PowerShell 7.3 and is no longer supported.
 
 If a PSDrive path that uses the FileSystem provider is passed to a native command, the resolved file
 path is passed to the native command. This means a command like `code temp:/test.txt` now works as

@@ -133,6 +133,15 @@ the host so the prompt is evaluated again.
 - Vi insert mode: `<Ctrl+c>`
 - Vi command mode: `<Ctrl+c>`
 
+### CapitalizeWord
+
+> Added in PSReadLine 2.3.0
+
+Convert the first character of the next word to upper case and the remaining
+characters to lower case.
+
+- Emacs: `<Alt+c>`, `<Escape,c>`
+
 ### Copy
 
 Copy selected region to the system clipboard. If no region is selected, copy
@@ -236,6 +245,14 @@ Delete to the end of the line.
 Delete the next word.
 
 - Vi command mode: `<d,w>`
+
+### DowncaseWord
+
+> Added in PSReadLine 2.3.0
+
+Convert the next word to lower case.
+
+- Emacs: `<Alt+l>`, `<Escape,l>`
 
 ### ForwardDeleteInput
 
@@ -403,6 +420,14 @@ is between words, the input is cleared from the start of the previous word to
 the cursor. The cleared text is placed in the kill-ring.
 
 - Emacs: `<Ctrl+w>`
+
+### UpcaseWord
+
+> Added in PSReadLine 2.3.0
+
+Convert the next word to upper case.
+
+- Emacs: `<Alt+u>`, `<Escape,u>`
 
 ### ValidateAndAcceptLine
 

@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 05/23/2019
+ms.date: 07/19/2022
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-package?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Package
 ---
-
 # Install-Package
 
 ## SYNOPSIS
@@ -113,6 +112,8 @@ Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <P
 The `Install-Package` cmdlet installs one or more software packages on the local computer. If you
 have multiple software sources, use `Get-PackageProvider` and `Get-PackageSource` to display details
 about your providers.
+
+[!INCLUDE [nuget-module](../../includes/nuget-module.md)]
 
 ## EXAMPLES
 

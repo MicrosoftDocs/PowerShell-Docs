@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/19/2020
+ms.date: 07/19/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
@@ -134,14 +134,18 @@ integer.
 
 ### -AsHashtable
 
-Converts the JSON to a hash table object. This switch was introduced in PowerShell 6.0. There are
-several scenarios where it can overcome some limitations of the `ConvertFrom-Json` cmdlet.
+Converts the JSON to an hash table object. This switch was introduced in PowerShell 6.0. Starting
+with PowerShell 7.3, the object is an **OrderedHashtable** and preserves the ordering of the keys
+from the JSON. In prior versions, the object is a **Hashtable**.
 
-- If the JSON contains a list with keys that only differ in casing. Without the switch, those keys
-  would be seen as identical keys and therefore only the last one would get used.
-- If the JSON contains a key that is an empty string. Without the switch, the cmdlet would throw an
-  error since a `PSCustomObject` does not allow for that but a hash table does. An example use case
-  where this can occurs are `project.lock.json` files.
+There are several scenarios where it can overcome some limitations of the `ConvertFrom-Json` cmdlet.
+
+- Without this switch, when two or more keys in a JSON object are case-insensitively identical, they
+  are treated as identical keys. In that case, only the last of those case-insensitively identical
+  keys is included in the converted object.
+- Without this switch, the cmdlet throws an error whenever the JSON contains a key that is an empty
+  string. **PSCustomObject** can't have property names that are empty strings. For example, this can
+  occur in `project.lock.json` files.
 - Hash tables can be processed faster for certain data structures.
 
 ```yaml
@@ -232,7 +236,7 @@ You can pipe a JSON string to `ConvertFrom-Json`.
 
 ### PSCustomObject
 
-### System.Collections.Hashtable
+### System.Management.Automation.OrderedHashtable
 
 ## NOTES
 
