@@ -140,7 +140,6 @@ the host so the prompt is evaluated again.
 Convert the first character of the next word to upper case and the remaining
 characters to lower case.
 
-- Cmd: `<Alt+c>`
 - Emacs: `<Escape,c>`
 
 ### Copy
@@ -253,7 +252,6 @@ Delete the next word.
 
 Convert the next word to lower case.
 
-- Cmd: `<Alt+l>`
 - Emacs: `<Escape,l>`
 
 ### ForwardDeleteInput
@@ -429,7 +427,6 @@ the cursor. The cleared text is placed in the kill-ring.
 
 Convert the next word to upper case.
 
-- Cmd: `<Alt+u>`
 - Emacs: `<Escape,u>`
 
 ### ValidateAndAcceptLine
