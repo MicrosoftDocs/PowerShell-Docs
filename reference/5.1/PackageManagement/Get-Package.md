@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 10/04/2021
+ms.date: 07/19/2022
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-package?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Package
 ---
-
 # Get-Package
 
 ## SYNOPSIS
@@ -55,6 +54,8 @@ Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <S
 The `Get-Package` cmdlet returns a list of all software packages on the local computer that were
 installed with **PackageManagement**. You can run `Get-Package` on remote computers by running it as
 part of an `Invoke-Command` or `Enter-PSSession` command or script.
+
+[!INCLUDE [nuget-module](../../includes/nuget-module.md)]
 
 ## EXAMPLES
 

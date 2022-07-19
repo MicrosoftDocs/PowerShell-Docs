@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 06/04/2021
+ms.date: 07/19/2022
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/uninstall-package?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Uninstall-Package
 ---
-
 # Uninstall-Package
 
 ## SYNOPSIS
@@ -94,6 +93,8 @@ Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
 
 The `Uninstall-Package` cmdlet uninstalls one or more software packages from the local computer. To
 find installed packages, use the `Get-Package` cmdlet.
+
+[!INCLUDE [nuget-module](../../includes/nuget-module.md)]
 
 ## EXAMPLES
 
