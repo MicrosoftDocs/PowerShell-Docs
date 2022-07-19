@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 05/10/2021
+ms.date: 07/19/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-AuthenticodeSignature
@@ -59,7 +59,12 @@ it to sign a PowerShell script.
 
 ```powershell
 $cert=Get-ChildItem -Path Cert:\CurrentUser\My -CodeSigningCert
-Set-AuthenticodeSignature -FilePath PsTestInternet2.ps1 -Certificate $cert
+$signingParameters = @{
+    FilePath      = 'PsTestInternet2.ps1'
+    Certificate   = $cert
+    HashAlgorithm = 'SHA256'
+}
+Set-AuthenticodeSignature @signingParameters
 ```
 
 The first command uses the `Get-ChildItem` cmdlet and the PowerShell certificate provider to get the
@@ -68,9 +73,13 @@ is the drive exposed by the certificate provider. The **CodeSigningCert** parame
 supported only by the certificate provider, limits the certificates retrieved to those with
 code-signing authority. The command stores the result in the `$cert` variable.
 
-The second command uses the `Set-AuthenticodeSignature` cmdlet to sign the `PSTestInternet2.ps1`
-script. It uses the **FilePath** parameter to specify the name of the script and the **Certificate**
-parameter to specify that the certificate is stored in the `$cert` variable.
+The second command defines the `$signingParameters` variable as a **HashTable** with the parameters
+for the `Set-AuthenticodeSignature` cmdlet to sign the `PSTestInternet2.ps1` script. It uses the
+**FilePath** parameter to specify the name of the script, the **Certificate** parameter to specify
+that the certificate is stored in the `$cert` variable, and the **HashAlgorithm** parameter to set
+the hashing algorithm to SHA256.
+
+The third command signs the script by splatting the parameters defined in `$signingParameters`.
 
 > [!NOTE]
 > Using the **CodeSigningCert** parameter with `Get-ChildItem` only returns certificates that have
@@ -84,15 +93,24 @@ to sign a PowerShell script.
 
 ```powershell
 $cert = Get-PfxCertificate -FilePath C:\Test\Mysign.pfx
-Set-AuthenticodeSignature -FilePath ServerProps.ps1 -Certificate $cert
+$signingParameters = @{
+    FilePath      = 'ServerProps.ps1'
+    Certificate   = $cert
+    HashAlgorithm = 'SHA256'
+}
+Set-AuthenticodeSignature @signingParameters
 ```
 
 The first command uses the `Get-PfxCertificate` cmdlet to load the C:\Test\MySign.pfx certificate
 into the `$cert` variable.
 
-The second command uses `Set-AuthenticodeSignature` to sign the script. The **FilePath** parameter
-of `Set-AuthenticodeSignature` specifies the path to the script file being signed and the **Cert**
-parameter passes the `$cert` variable containing the certificate to `Set-AuthenticodeSignature`.
+The second command defines the `$signingParameters` variable as a **HashTable** with the parameters
+for the `Set-AuthenticodeSignature` cmdlet to sign the `ServerProps.ps1` script. It uses the
+**FilePath** parameter to specify the name of the script, the **Certificate** parameter to specify
+that the certificate is stored in the `$cert` variable, and the **HashAlgorithm** parameter to set
+the hashing algorithm to SHA256.
+
+The third command signs the script by splatting the parameters defined in `$signingParameters`.
 
 If the certificate file is password protected, PowerShell prompts you for the password.
 
@@ -102,14 +120,25 @@ This command adds a digital signature that includes the root authority in the tr
 signed by a third-party timestamp server.
 
 ```powershell
-Set-AuthenticodeSignature -FilePath c:\scripts\Remodel.ps1 -Certificate $cert -IncludeChain All -TimestampServer "http://timestamp.fabrikam.com/scripts/timstamper.dll"
+$signingParameters = @{
+    FilePath      = 'C:\scripts\Remodel.ps1'
+    Certificate   = $cert
+    HashAlgorithm = 'SHA256'
+    IncludeChain  = 'All'
+    TimestampServer = 'http://timestamp.fabrikam.com/scripts/timstamper.dll'
+}
+Set-AuthenticodeSignature @signingParameters
 ```
 
-The command uses the **FilePath** parameter to specify the script being signed and the
-**Certificate** parameter to specify the certificate that is saved in the `$cert` variable. It uses
-the **IncludeChain** parameter to include all of the signatures in the trust chain, including the
-root authority. It also uses the **TimeStampServer** parameter to add a timestamp to the signature.
-This prevents the script from failing when the certificate expires.
+The first command defines the `$signingParameters` variable as a **HashTable** with the parameters
+for the `Set-AuthenticodeSignature` cmdlet to sign the script. It uses the **FilePath** parameter to
+specify the path to the script, the **Certificate** parameter to specify that the certificate is
+stored in the `$cert` variable, and the **HashAlgorithm** parameter to set the hashing algorithm to
+SHA256. It uses the **IncludeChain** parameter to include all of the signatures in the trust chain,
+including the root authority. It also uses the **TimeStampServer** parameter to add a timestamp to
+the signature. This prevents the script from failing when the certificate expires.
+
+The second command signs the script by splatting the parameters defined in `$signingParameters`.
 
 ## PARAMETERS
 
@@ -189,10 +218,9 @@ Accept wildcard characters: False
 
 Specifies the hashing algorithm that Windows uses to compute the digital signature for the file.
 
-For PowerShell 3.0, the default is SHA256, which is the Windows default hashing algorithm. For
-PowerShell 2.0, the default is SHA1. Files that are signed with a different hashing algorithm might
-not be recognized on other systems. Which algorithms are supported depends on the version of the
-operating system.
+The default is SHA1. Files that are signed with a different hashing algorithm might not be
+recognized on other systems. Which algorithms are supported depends on the version of the operating
+system.
 
 For a list of possible values, see [HashAlgorithmName Struct](/dotnet/api/system.security.cryptography.hashalgorithmname?view=netframework-4.7.2#properties).
 
@@ -203,7 +231,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: SHA256
+Default value: Null
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
