@@ -4,7 +4,7 @@ Help Version: 7.0.1.0
 Locale: en-US
 Module Guid: 4ae9fd46-338a-459c-8186-07f910774cb8
 Module Name: PackageManagement
-ms.date: 04/21/2022
+ms.date: 07/19/2022
 schema: 2.0.0
 title: PackageManagement
 ---
@@ -26,6 +26,8 @@ documentation on this site documents the latest version of the module.
 > For more information, see the
 > [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the
 > PowerShell blog.
+
+[!INCLUDE [nuget-module](../../includes/nuget-module.md)]
 
 ## PackageManagement Cmdlets
 

@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 04/03/2019
+ms.date: 07/19/2022
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/find-package?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Package
 ---
-
 # Find-Package
 
 ## SYNOPSIS
@@ -42,6 +41,8 @@ Find-Package [-IncludeDependencies] [-AllVersions] [-Source <String[]>] [-Creden
 
 `Find-Package` finds software packages that are available in package sources. `Get-PackageProvider`
 and `Get-PackageSource` display details about your providers.
+
+[!INCLUDE [nuget-module](../../includes/nuget-module.md)]
 
 ## EXAMPLES
 
