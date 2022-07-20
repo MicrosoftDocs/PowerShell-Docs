@@ -16,7 +16,14 @@ PowerShell is a command-line shell and a scripting language used for automation.
 > input, and then handling output from the underlying operating system (much like a read-eval-print
 > loop or [REPL][REPL]).
 
-## The PowerShell Shell
+Similar to other shells like `bash` or `cmd.exe`, PowerShell allows you to run any command available
+on your system, not just PowerShell commands.
+
+PowerShell commands are known as _cmdlets_ (pronounced command-lets). Cmdlets are PowerShell
+commands, not stand-alone executables. PowerShell commands can't be run in other shells without
+running PowerShell first.
+
+## Features of the PowerShell command-line interface
 
 PowerShell is a modern command shell that includes the best features of other popular shells. Unlike
 most shells that only accept and return text, PowerShell accepts and returns .NET objects. The shell
@@ -27,15 +34,6 @@ has several features that you can use to optimize your interactive user experien
 - Supports command and parameter [aliases][aliases]
 - [Pipeline][Pipeline] for chaining commands
 - In-console [help][help] system, similar to Unix `man` pages
-
-## Running commands in the shell
-
-PowerShell commands are known as _cmdlets_ (pronounced command-lets). In addition to cmdlets, the
-shell allows you to run any command available on your system.
-
-Cmdlets are native PowerShell commands, not stand-alone executables. Cmdlets are collected into
-PowerShell modules that can be loaded on demand. Cmdlets can be written in any compiled .NET
-language or in the PowerShell scripting language itself.
 
 <!-- link reference -->
 [aliases]: /powershell/module/microsoft.powershell.core/about/about_aliases
