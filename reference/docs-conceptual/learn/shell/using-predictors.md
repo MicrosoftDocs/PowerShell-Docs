@@ -80,6 +80,11 @@ You can change the prediction source using the `Set-PSReadLineOption` cmdlet wit
 - `Plugin`
 - `HistoryAndPlugin`
 
+> [!NOTE]
+> History-based predictions come from the history maintained by **PSReadLine**. That history is more
+> comprehensive that the session-based history you can see using `Get-History`. For more
+> information, see **Command history** section of [about_psreadline][psr-history].
+
 ### Setting the prediction color
 
 By default, predictions appear in light grey text on the same line the user is typing. To support
@@ -136,14 +141,27 @@ use. For more information and installation instructions, see
 
 The **CompletionPredictor** module adds an IntelliSense experience for anything that can be
 tab-completed in PowerShell. With **PSReadLine** set to `InlineView`, you get the normal tab
-completion experience. When you switch to `ListView`, you get the IntelliSense experience.
+completion experience. When you switch to `ListView`, you get the IntelliSense experience. You can
+install the [CompletionPredictor][CompletionPredictor] module from the PowerShell Gallery.
 
 ![PowerShell IntelliSense using the CompletionPredictor](media/using-predictors/completion-predictor.gif)
 
-You can install the [CompletionPredictor][CompletionPredictor] module from the PowerShell Gallery.
+As previously noted, `ListView` shows you the source of the prediction. If you have multiple
+plug-ins installed the predictions are grouped by source with **History** listed first followed by
+each plug-in in the order that they were loaded.
+
+## Creating your own predictor module
+
+You can write your own predictor using C# to create a compiled PowerShell module. The module must
+implement the **System.Management.Automation.Subsystem.Prediction.ICommandPredictor** interface.
+This interface declares the methods used to query for prediction results and provide feedback.
+
+For more information, see [How to create a command-line predictor][custom-predictor].
 
 <!-- link references -->
 [azpredictor]: https://techcommunity.microsoft.com/t5/azure-tools-blog/announcing-general-availability-of-az-tools-predictor/ba-p/3297956
 [Set-PSReadLineOption]: xref:PSReadLine.Set-PSReadLineOption
 [PSGetv3]: https://www.powershellgallery.com/packages/PowerShellGet/3.0.14-beta14
 [CompletionPredictor]: https://www.powershellgallery.com/packages/CompletionPredictor
+[psr-history]: /powershell/module/psreadline/about/about_psreadline#command-history
+[custom-predictor]: /powershell/scripting/dev-cross-plat/create-cmdline-predictor
