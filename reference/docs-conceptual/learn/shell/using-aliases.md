@@ -11,7 +11,7 @@ executable name.
 
 ## Managing command aliases
 
-PowerShell provide cmdlets for managing command aliases.
+PowerShell provides cmdlets for managing command aliases.
 
 ```powershell
 Get-Command -Noun Alias
@@ -108,7 +108,7 @@ the **Recurse** and **ReadOnly** parameters. To uniquely identify the **Recurse*
 need to provide `-rec`. If you combine that with the command alias, `Get-ChildItem -Recurse` can be
 shortened to `dir -rec`.
 
-## Don't use aliases in script
+## Don't use aliases in scripts
 
 Aliases are a convenience feature to be used interactively in the shell. You should always use
 the full command and parameter names in your scripts.

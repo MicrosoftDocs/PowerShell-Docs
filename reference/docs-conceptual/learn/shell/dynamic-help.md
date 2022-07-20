@@ -6,8 +6,8 @@ ms.date: 7/14/2022
 ---
 # Using dynamic help
 
-Dynamic Help provides just-in-time help that allows you to stay focused on your work losing your
-place typing on the command line.
+Dynamic Help provides just-in-time help that allows you to stay focused on your work without losing
+your place typing on the command line.
 
 ## Getting cmdlet help
 

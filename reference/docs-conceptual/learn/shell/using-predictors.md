@@ -21,7 +21,7 @@ come from the user's history and additional domain specific plugins.
 
 ![Inline view of a prediction](media/using-predictors/predictor-inline-1.png)
 
-The previous images shows the default `InlineView` of the suggestion. Pressing <kbd>RightArrow</kdb>
+The previous images shows the default `InlineView` of the suggestion. Pressing <kbd>RightArrow</kbd>
 key accepts an inline suggestion. After accepting the suggestion, you can edit the command line
 before hitting <kbd>Enter</kbd> to run the command.
 

@@ -20,7 +20,7 @@ PowerShell is a command-line shell and a scripting language used for automation.
 
 PowerShell is a modern command shell that includes the best features of other popular shells. Unlike
 most shells that only accept and return text, PowerShell accepts and returns .NET objects. The shell
-has several features that can be used to optimize your interactive user experience.
+has several features that you can use to optimize your interactive user experience.
 
 - Robust command-line [history][history]
 - [Tab completion][tab] and [command prediction][prediction]
