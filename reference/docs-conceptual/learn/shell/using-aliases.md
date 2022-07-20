@@ -5,9 +5,9 @@ title: Using aliases
 ---
 # Using aliases
 
-An alias is an alternate name or nickname for a cmdlet or for a command element, such as a function,
-script, file, or executable file. You can run the command using the alias instead of the executable
-name.
+An alias is an alternate name or shorthand name for a cmdlet or for a command element, such as a
+function, script, file, or executable file. You can run the command using the alias instead of the
+executable name.
 
 ## Managing command aliases
 
@@ -31,7 +31,7 @@ Cmdlet      Set-Alias    7.0.0.0 Microsoft.PowerShell.Utility
 For more information, see [about_Aliases][about_Aliases].
 
 Use the [Get-Alias][Get-Alias] cmdlet to list the aliases available in your environment. To list the
-aliases for a single cmdlet, use the **Definition** parameter and specify the cmdlet name.
+aliases for a single cmdlet, use the **Definition** parameter and specify the executable name.
 
 ```powershell
 Get-Alias -Definition Get-ChildItem
@@ -60,8 +60,8 @@ Alias           gci -> Get-ChildItem
 ## Compatibility aliases in Windows
 
 PowerShell has several aliases that allow **UNIX** and **cmd.exe** users to use familiar commands in
-Windows. The commands and their related PowerShell cmdlet and PowerShell alias are shown in the
-following table:
+Windows. The following table show common commands, the related PowerShell cmdlet, and the PowerShell
+alias:
 
 |            cmd.exe command            | UNIX command | PowerShell cmdlet |             PowerShell alias              |
 | ------------------------------------- | ------------ | ----------------- | ----------------------------------------- |
@@ -110,7 +110,7 @@ shortened to `dir -rec`.
 
 ## Don't use aliases in script
 
-Aliases are meant to be a convenience feature used interactively in the shell. You should always use
+Aliases are a convenience feature to be used interactively in the shell. You should always use
 the full command and parameter names in your scripts.
 
 - Aliases can be deleted or redefined in a profile script

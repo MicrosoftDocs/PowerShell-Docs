@@ -8,7 +8,7 @@ ms.date: 7/14/2022
 
 **PSReadLine** 2.1.0 introduced the **Predictive IntelliSense** feature. Predictive IntelliSense
 provides suggestions for full commands based on items from your **PSReadLine** history.
-**PSReadLine** 2.2.0 extends the power of Predictive IntelliSense by adding support for plug-in
+**PSReadLine** 2.2.2 extends the power of Predictive IntelliSense by adding support for plug-in
 modules that use advanced logic to provide suggestions for full commands. The latest version,
 **PSReadLine** 2.2.6, enables predictions by default.
 
@@ -140,7 +140,7 @@ completion experience. When you switch to `ListView`, you get the IntelliSense e
 
 ![PowerShell IntelliSense using the CompletionPredictor](media/using-predictors/completion-predictor.gif)
 
-You can [CompletionPredictor][CompletionPredictor] install the module from the PowerShell Gallery.
+You can install the [CompletionPredictor][CompletionPredictor] module from the PowerShell Gallery.
 
 <!-- link references -->
 [azpredictor]: https://techcommunity.microsoft.com/t5/azure-tools-blog/announcing-general-availability-of-az-tools-predictor/ba-p/3297956

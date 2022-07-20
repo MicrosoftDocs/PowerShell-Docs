@@ -10,7 +10,7 @@ ms.date: 7/14/2022
 
 PowerShell is a command-line shell and a scripting language used for automation.
 
-[Wikipedia][wiki] include the following description of a shell:
+[Wikipedia][wiki] includes the following description of a shell:
 
 > A shell manages the user-system interaction by prompting users for input, interpreting their
 > input, and then handling output from the underlying operating system (much like a read-eval-print
