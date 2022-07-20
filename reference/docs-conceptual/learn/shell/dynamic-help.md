@@ -28,8 +28,8 @@ position on the command line on the primary screen.
 ## Focused parameter help
 
 Pressing <kbd>Alt</kbd>-<kbd>h</kbd> provides dynamic help for parameters. The help is shown below
-the current command line similar to `MenuComplete`. The cursor must be at the end of the fully
-expanded parameter name when you press the <kbd>Alt</kbd>-<kbd>h</kbd> key.
+the current command line similar to [MenuComplete][MenuComplete]. The cursor must be at the end of
+the fully expanded parameter name when you press the <kbd>Alt</kbd>-<kbd>h</kbd> key.
 
 ![Focused help for a parameter using Alt-h](./media/dynamic-help/dynamic-help-alt-h.png)
 
@@ -50,3 +50,6 @@ macOS. Mac users can map help functions to an available key combination. For exa
 Set-PSReadLineKeyHandler -chord "Ctrl+l" -Function ShowParameterHelp
 Set-PSReadLineKeyHandler -Chord "Ctrl+k" -Function SelectCommandArgument
 ```
+
+<!-- link references -->
+[MenuComplete]: tab-completion.md#command-and-parameter-name-completion
