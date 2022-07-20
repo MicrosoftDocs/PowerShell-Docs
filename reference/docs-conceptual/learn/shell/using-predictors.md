@@ -83,7 +83,7 @@ You can change the prediction source using the `Set-PSReadLineOption` cmdlet wit
 > [!NOTE]
 > History-based predictions come from the history maintained by **PSReadLine**. That history is more
 > comprehensive that the session-based history you can see using `Get-History`. For more
-> information, see **Command history** section of [about_psreadline][psr-history].
+> information, see **Command history** section of [about_PSReadLine][psr-history].
 
 ### Setting the prediction color
 
