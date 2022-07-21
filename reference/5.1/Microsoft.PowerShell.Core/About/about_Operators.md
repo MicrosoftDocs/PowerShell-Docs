@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 03/16/2022
+ms.date: 07/20/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -329,6 +329,18 @@ right side of the operator.
 1 hello      3.14
 ```
 
+You can zero-pad a numeric value with the ["0" custom specifier][zero-padding].
+The number of zeroes following the `:` indicates the maximum width to pad the
+formatted string to.
+
+```powershell
+"{0:00} {1:000} {2:000000}" -f 7, 24, 365
+```
+
+```output
+07 024 000365
+```
+
 If you need to keep the curly braces (`{}`) in the formatted string, you can
 escape them by doubling the curly braces.
 
@@ -471,3 +483,7 @@ of the `Get-Member` cmdlet.  The member name may be an expression.
 - [about_Split](about_Split.md)
 - [about_Join](about_Join.md)
 - [about_Redirection](about_Redirection.md)
+
+<!-- Reference Links -->
+
+[zero-padding]: /dotnet/standard/base-types/custom-numeric-format-strings#Specifier0
