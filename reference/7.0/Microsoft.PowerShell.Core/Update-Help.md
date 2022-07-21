@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/22/2021
+ms.date: 07/21/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Help
@@ -52,8 +52,8 @@ current session are included. PowerShell modules are stored in a location listed
 You can use the **Module** parameter to update help files for a particular module. Use the
 **UICulture** parameter to download help files in multiple languages and locales.
 
-You can also use `Update-Help` on computers that are not connected to the internet. First, use the
-`Save-Help`cmdlet to download help files from the internet and save them in a shared folder that is
+You can also use `Update-Help` on computers that aren't connected to the internet. First, use the
+`Save-Help`cmdlet to download help files from the internet and save them in a shared folder that's
 accessible to the system not connected to the internet. Then use the **SourcePath** parameter of
 `Update-Help` to download the updated help files from the shared and install them on the computer.
 
@@ -64,17 +64,16 @@ limit, use the **Force** parameter.
 The `Update-Help` cmdlet was introduced in Windows PowerShell 3.0.
 
 > [!IMPORTANT]
-> `Update-Help` requires administrative privileges in PowerShell 6.0 and below.
-> PowerShell 6.1 and above set the default **Scope** to `CurrentUser`.
-> Prior to PowerShell 6.1, the **Scope** parameter was not available.
+> `Update-Help` requires administrative privileges in PowerShell 6.0 and below. PowerShell 6.1 and
+> above set the default **Scope** to `CurrentUser`. Prior to PowerShell 6.1, the **Scope** parameter
+> wasn't available.
 >
-> You must be a member of the Administrators group on the computer
-> to update the help files for the core PowerShell modules.
+> You must be a member of the Administrators group on the computer to update the help files for the
+> core PowerShell modules.
 >
-> To download or update the help files for modules in the PowerShell
-> installation directory (`$PSHOME\Modules`), including the PowerShell
-> Core modules, start PowerShell by using the **Run as administrator** option.
-> For example: `Start-Process pwsh.exe -Verb RunAs`.
+> To download or update the help files for modules in the PowerShell installation directory
+> (`$PSHOME\Modules`), including the PowerShell Core modules, start PowerShell using the **Run as
+> administrator** option. For example: `Start-Process pwsh.exe -Verb RunAs`.
 
 ## EXAMPLES
 
@@ -96,23 +95,25 @@ The `Update-Help` cmdlet updates help files only for module names that begin wit
 Update-Help -Module Microsoft.PowerShell*
 ```
 
-### Example 3: Update help files for different languages
+### Example 3: Updating help on a system not set to the en-US locale
 
-The `Update-Help` cmdlet updates the Japanese (ja-JP) and English (en-US) help files for all
-modules.
+The `Update-Help` cmdlet is designed to download help in multiple languages. However, when there is
+no help available for the language your system uses, an error message is displayed for the module
+and UI culture.
 
-If a module doesn't provide help files for a specified UI culture, an error message is displayed for
-the module and UI culture. In this example, the error message indicates that the **ja-JP** help
-files were not found for module **Microsoft.PowerShell.Utility**.
+In this example, `Update-Help` is being run on a system that's set to the `en-GB` locale.
 
 ```powershell
-Update-Help -UICulture ja-JP, en-US
+Update-Help Microsoft.PowerShell.Utility -Force
 ```
 
 ```Output
-Update-Help : Failed to update Help for the module(s) 'Microsoft.PowerShell.Utility' with UI culture(s) {ja-JP}
-No UI culture was found that matches the following pattern: ja-JP.
+Update-Help : Failed to update Help for the module(s) 'Microsoft.PowerShell.Utility' with UI
+culture(s) {en-GB} No UI culture was found that matches the following pattern: en-GB.
 ```
+
+The help files are always published for the `en-US` locale. To download the English help, run
+`Update-Help` with the **UICulture** parameter and specify the `en-US` locale.
 
 ### Example 4: Update help files on multiple computers from a file share
 
@@ -156,7 +157,7 @@ Update-Help -Module Microsoft.PowerShell.Utility -Verbose
 
 This example lists modules that support Updatable Help. The command uses the module's
 **HelpInfoUri** property to identify modules that support Updatable Help. The **HelpInfoUri**
-property contains an address that is redirected when the `Update-Help` cmdlet is run.
+property contains an address that's redirected when the `Update-Help` cmdlet is run.
 
 ```powershell
 Get-Module -ListAvailable | Where-Object -Property HelpInfoUri
@@ -185,7 +186,7 @@ Manifest   1.0.0.0    BitLocker                           Core,Desk {Unlock-BitL
 In this example, the script `Get-UpdateHelpVersion.ps1` creates an inventory of the Updatable Help
 files for each module and their version numbers.
 
-The script identifies modules that support Updatable Help by using the **HelpInfoUri** property of
+The script identifies modules that support Updatable Help using the **HelpInfoUri** property of
 modules. For modules that support Updatable Help, the script looks for and parses the help
 information file (*helpinfo.xml) to find the latest version number.
 
@@ -303,9 +304,9 @@ Accept wildcard characters: False
 
 Specifies modules with names that are specified in the form of **ModuleSpecification** objects.
 These modules are described in the Remarks section of
-[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
-For example, the **FullyQualifiedModule** parameter accepts a module name that is specified in the
+For example, the **FullyQualifiedModule** parameter accepts a module name that's specified in the
 format:
 
 `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
@@ -364,7 +365,7 @@ comma-separated list, or specify a file that lists one module name on each line.
 are permitted. You can pipeline modules from the `Get-Module` cmdlet to the `Update-Help` cmdlet.
 
 The modules that you specify must be installed on the computer, but they don't have to be imported
-into the current session. You can specify any module in the session or any module that is installed
+into the current session. You can specify any module in the session or any module that's installed
 in a location listed in the `$env:PSModulePath` environment variable.
 
 A value of `*` (all) attempts to update help for all modules that are installed on the computer.
@@ -470,7 +471,7 @@ By default, `Update-Help` gets help files in the UI culture set for the operatin
 specify the **UICulture** parameter, `Update-Help` looks for help only for the specified UI culture.
 
 > [!NOTE]
-> Ubuntu 18.04 changed the default locale setting to `C.UTF.8`, which is not a recognized UI
+> Ubuntu 18.04 changed the default locale setting to `C.UTF.8`, which isn't a recognized UI
 > culture. `Update-Help` silently fails to download help unless you use this parameter with a
 > supported locale like `en-US`. This could occur on any platform that uses an unsupported value.
 
@@ -492,7 +493,7 @@ Accept wildcard characters: False
 
 ### -UseDefaultCredentials
 
-Indicates that `Update-Help` runs the command, including the internet download, by using the
+Indicates that `Update-Help` runs the command, including the internet download, using the
 credentials of the current user. By default, the command runs without explicit credentials.
 
 This parameter is effective only when the web download uses NT LAN Manager (NTLM), negotiate, or
@@ -546,7 +547,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -608,7 +610,7 @@ module file or module manifest file.
 Any module can support Updatable Help. For instructions for supporting Updatable Help in the modules
 that you author, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
-The `Update-Help` and `Save-Help` cmdlets are not supported on Windows Preinstallation Environment
+The `Update-Help` and `Save-Help` cmdlets aren't supported on Windows Preinstallation Environment
 (Windows PE).
 
 ## RELATED LINKS
