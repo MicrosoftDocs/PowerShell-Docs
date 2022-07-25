@@ -70,6 +70,18 @@ items:
             href: learn/ps101/10-script-modules.md
           - name: Appendix A - Help Syntax
             href: learn/ps101/appendix-a.md
+      - name: Optimizing your shell experience
+        items:
+          - name: Overview of the Shell
+            href: learn/shell/optimize-shell.md
+          - name: Using tab completion
+            href: learn/shell/tab-completion.md
+          - name: Using command predictors
+            href: learn/shell/using-predictors.md
+          - name: Getting dynamic help
+            href: learn/shell/dynamic-help.md
+          - name: Using aliases
+            href: learn/shell/using-aliases.md
       - name: Deep dives
         items:
           - name: Overview
