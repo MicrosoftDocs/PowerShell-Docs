@@ -196,8 +196,9 @@ For a full list of changes, see the PSReadLine
 
 - **PSReadLine 2.2.5**
 
-  This release rolls up the following enhancements added since the 2.1.0
-  release:
+  Official servicing release with minor bug fixes.
+
+- **PSReadLine 2.2.2**
 
   - PSReadLine added two new predictive IntelliSense features:
     - Added the **PredictionViewStyle** parameter to allow for the selection of

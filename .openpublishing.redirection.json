@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "reference/docs-conceptual/learn/Compatibility-Aliases.md",
+      "redirect_url": "/powershell/scripting/learn/shell/using-aliases",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "reference/docs-conceptual/learn/tutorials/00-introduction.md",
       "redirect_url": "/powershell/scripting/discover-powershell",
       "redirect_document_id": false
