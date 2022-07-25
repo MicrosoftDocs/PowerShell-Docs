@@ -1,14 +1,13 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 05/18/2022
+ms.date: 07/25/2022
 ms.prod: powershell
 ms.topic: include
 ---
-The following table is a list of currently supported PowerShell releases and the versions of
-Windows they are supported on. These versions remain supported until either the version of
-[PowerShell reaches end-of-support][lifecycle] or the version of
-[macOS reaches end-of-support][eol-windows].
+The following table contains a list of PowerShell releases and the status of support for versions of
+macOS. These versions remain supported until either the version of
+[PowerShell reaches end-of-support][lifecycle] or the version of macOS reaches end-of-support.
 
 - A &#x2705; indicates that the version of the OS or PowerShell is still supported
 - A &#x274c; indicates that the version of the OS or PowerShell isn't supported
@@ -27,7 +26,7 @@ macOS Monterey 12.0 has not been tested.
 
 Support of macOS is defined by Apple. For more information, see:
 
-- [Apple Support Sitemap](https://support.apple.com/sitemap)
+- [macOS release notes](https://developer.apple.com/documentation/macos-release-notes)
 - [Apple Security Updates](https://support.apple.com/HT201222)
 
 PowerShell is supported on macOS for the following processor architectures:
