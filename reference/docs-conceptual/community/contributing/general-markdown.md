@@ -4,7 +4,7 @@ ms.date: 07/26/2022
 ms.topic: conceptual
 title: Markdown best practices
 ---
-# PowerShell-Docs style guide
+# Markdown best practices
 
 This article provides specific guidance for using Markdown in our documentation. This is not a
 tutorial for Markdown, but list specific rules and best practice for Markdown in the PowerShell
