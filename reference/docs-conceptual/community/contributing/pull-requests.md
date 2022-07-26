@@ -1,21 +1,21 @@
 ---
 description: This article explains how to submit pull requests to the PowerShell-Docs repository.
-ms.date: 05/05/2022
+ms.date: 07/26/2022
 ms.topic: conceptual
 title: How to submit pull requests
 ---
 # How to submit pull requests
 
 To make changes to content, submit a pull request (PR) from your fork. A pull request must be
-reviewed before it can be merged. For best results, review the
-[editorial checklist](editorial-checklist.md) before submitting your pull request.
+reviewed before it can be merged. For best results, review the [editorial checklist][1] before
+submitting your pull request.
 
 ## Using git branches
 
 The default branch for PowerShell-Docs is the `main` branch. Changes made in working branches are
 merged into the `main` branch before then being published. The `main` branch is merged into the
 `live` branch every weekday at 3:00 PM (Pacific Time). The `live` branch contains the content that
-is published to docs.microsoft.com.
+is published to `docs.microsoft.com`.
 
 Before starting any changes, create a working branch in your local copy of the PowerShell-Docs
 repository. When working locally, be sure to synchronize your local repository before creating your
@@ -42,7 +42,7 @@ changed files. Large PRs are difficult to review and are more prone to contain e
 When renaming or deleting files, there must be an issue associated with the PR. That issue must
 discuss the need to rename or delete the files.
 
-Avoid mixing content additions or change with file renames and deletes. Any file that is renamed or
+Avoid mixing content additions or change with file renames and deletes. Any file that's renamed or
 deleted must be added to the global redirection file. When possible, update any files that link to
 the renamed or deleted content, including any TOC files.
 
@@ -58,7 +58,7 @@ You'll see the following behavior:
    enabled on the repository. In this example, there are two checks enabled, "Commit Validation" and
    "OpenPublishing.Build":
 
-   ![validation status - some checks failed](media/pull-requests/validation-failed.png)
+   ![validation status - some checks failed][2]
 
    The build can pass even if commit validation fails.
 
@@ -67,10 +67,10 @@ You'll see the following behavior:
    to fix the issues.
 1. When validation succeeds, the following comment is added to the PR:
 
-   ![Validation status: success](media/pull-requests/build-validation.png)
+   ![Validation status: success][3]
 
 > [!NOTE]
-> If you are an external (not a Microsoft employee) contributor you do not have access to the
+> If you are an external (not a Microsoft employee) contributor you don't have access to the
 > detailed build reports or preview links.
 
 When the PR is reviewed, you may be asked to make changes or fix validation warning messages. The
@@ -78,11 +78,15 @@ PowerShell-Docs team can help you understand validation errors and editorial req
 
 ## Next steps
 
-[PowerShell-Docs style guide](powershell-style-guide.md)
+[PowerShell-Docs style guide][4]
 
 ## Additional resources
 
-[How we manage pull requests](managing-pull-requests.md)
+[How we manage pull requests][5]
 
 <!--link refs-->
-[fork]: /contribute/get-started-setup-local#fork-the-repository
+[1]: editorial-checklist.md
+[2]: media/pull-requests/validation-failed.png
+[3]: media/pull-requests/build-validation.png
+[4]: powershell-style-guide.md
+[5]: managing-pull-requests.md

@@ -572,14 +572,16 @@ items:
     items:
       - name: Overview
         href: community/contributing/overview.md
-      - name: How to file a Docs issue
-        href: community/contributing/file-an-issue.md
       - name: Get started writing docs
         href: community/contributing/get-started-writing.md
-      - name: Submitting a pull request
-        href: community/contributing/pull-requests.md
+      - name: Markdown best practices
+        href: community/contributing/general-markdown.md
       - name: PowerShell-Docs style guide
         href: community/contributing/powershell-style-guide.md
+      - name: How to file a Docs issue
+        href: community/contributing/file-an-issue.md
+      - name: Submitting a pull request
+        href: community/contributing/pull-requests.md
       - name: Editorial checklist
         href: community/contributing/editorial-checklist.md
       - name: How we manage issues
