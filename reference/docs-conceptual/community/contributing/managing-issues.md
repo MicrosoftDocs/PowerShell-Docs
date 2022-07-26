@@ -1,14 +1,14 @@
 ---
 description: This article explains how the PowerShell-Docs team manages issues.
-ms.date: 12/09/2020
+ms.date: 07/25/2022
 ms.topic: conceptual
 title: How we manage issues
 ---
 # How we manage issues
 
-This article documents how we manage issues in the PowerShell-Docs repo. This article is designed to
-be a job aid for members of the PowerShell-Docs team. It's published here to provide process
-transparency for our public contributors.
+This article documents how we manage issues in the PowerShell-Docs repository. This article is
+designed to be a job aid for members of the PowerShell-Docs team. It's published here to provide
+process transparency for our public contributors.
 
 ## Sources of issues
 
@@ -28,14 +28,12 @@ transparency for our public contributors.
 
 #### Label Types
 
-|   Type   | Description                                                         |
-| -------- | ------------------------------------------------------------------- |
-| Area     | Used to indicate what part of PowerShell or the docs that the issue is discussing.<br>Useful for feature owners to find issues for their feature. |
-| Issue    | Indicates the type of issue                                         |
-| Priority | Indicates the priority of the issue. Value range 0 (high) -4 (low)  |
-| Status   | Indicates the status of the work item or why it was closed          |
-| Tag      | Labels used to for additional classification                        |
-| Waiting  | Indicates that we're waiting on someone or some other event         |
+- **Area** - Identifies the part of PowerShell or the docs that the issue is discussing
+- **Issue** - The type of issue: like bug, feedback, or idea
+- **Priority** - The priority of the issue; value range 0-3 (high-low)
+- **Status** - The status of the work item or why it was closed
+- **Tag** - Used to for additional classification like availability or doc-a-thons
+- **Waiting** - Shows that we're waiting on some external person or event
 
 #### Milestones
 
@@ -44,17 +42,17 @@ specific version, then no milestone is used. PRs and related issues for changes 
 merged into the PowerShell code base should be assigned to the **Future** milestone. After the code
 change has been merged, change the milestone to the appropriate version.
 
-|    Milestone     |                    Description                     |
-| ---------------- | -------------------------------------------------- |
-| 7.0.0            | Work items related to PowerShell 7.0               |
-| 7.1.0            | Work items related to PowerShell 7.1               |
-| 7.2.0            | Work items related to PowerShell 7.2               |
-| Future           | Work items a future version of PowerShell          |
+| Milestone |                Description                |
+| --------- | ----------------------------------------- |
+| 7.0.0     | Work items related to PowerShell 7.0      |
+| 7.2.0     | Work items related to PowerShell 7.2      |
+| 7.3.0     | Work items related to PowerShell 7.3      |
+| Future    | Work items a future version of PowerShell |
 
 ## Triage process
 
 PowerShell docs team members review the issues daily and triage new issues as they arrive. The team
-meets weekly to discuss issues that need triage or remain unresolved.
+meets weekly to discuss difficult issues need triage and prioritize the work.
 
 ### Misplaced product feedback
 
@@ -63,7 +61,7 @@ meets weekly to discuss issues that need triage or remain unresolved.
   item, and close the issue.
 
   The default location for PowerShell issues is
-  [https://github.com/PowerShell/PowerShell/issues/new/choose](https://github.com/PowerShell/PowerShell/issues/new/choose).
+  [https://github.com/PowerShell/PowerShell/issues/new/choose][1].
 
 ### Support requests
 
@@ -79,8 +77,10 @@ meets weekly to discuss issues that need triage or remain unresolved.
 
 ### Code of conduct violations
 
-- Edit the issue to remove any offensive content, if necessary.
+- Edit the issue to remove any offensive content, if necessary
 - Enter a comment indicating the issue is spam, close the issue, and then lock it to prevent further
-  comments.
+  comments
 - Each violation should be discussed in the weekly triage to determine the need for further action
-  (report to GitHub or Microsoft Legal).
+
+<!-- link references -->
+[1]: https://github.com/PowerShell/PowerShell/issues/new/choose
