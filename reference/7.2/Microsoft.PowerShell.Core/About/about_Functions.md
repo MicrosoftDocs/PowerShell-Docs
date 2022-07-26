@@ -162,7 +162,7 @@ in the following sample syntax:
 
 ```Syntax
 function <name> {
-  param ([type]$parameter1 [,[type]$parameter2])
+  param ([type]$parameter1, [type]$parameter2)
   <statement list>
 }
 ```
@@ -171,7 +171,7 @@ You can also define parameters outside the braces without the `Param` keyword,
 as shown in the following sample syntax:
 
 ```Syntax
-function <name> [([type]$parameter1[,[type]$parameter2])] {
+function <name> ([type]$parameter1, [type]$parameter2) {
   <statement list>
 }
 ```
