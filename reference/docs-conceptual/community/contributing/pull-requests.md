@@ -46,6 +46,14 @@ Avoid mixing content additions or change with file renames and deletes. Any file
 deleted must be added to the global redirection file. When possible, update any files that link to
 the renamed or deleted content, including any TOC files.
 
+## Expectations Comment
+
+After you submit your PR, a bot will comment on your PR to provide you with resources and to set
+expectations for the rest of the process. Always review this comment, even if you've contributed
+before, because it contains accurate and up-to-date information.
+
+![example expectation comment][2]
+
 ## Docs PR validation service
 
 The Docs PR validation service is a GitHub app that runs validation rules on your changes. You must
@@ -58,7 +66,7 @@ You'll see the following behavior:
    enabled on the repository. In this example, there are two checks enabled, "Commit Validation" and
    "OpenPublishing.Build":
 
-   ![validation status - some checks failed][2]
+   ![validation status - some checks failed][3]
 
    The build can pass even if commit validation fails.
 
@@ -67,7 +75,7 @@ You'll see the following behavior:
    to fix the issues.
 1. When validation succeeds, the following comment is added to the PR:
 
-   ![Validation status: success][3]
+   ![Validation status: success][4]
 
 > [!NOTE]
 > If you are an external (not a Microsoft employee) contributor you don't have access to the
@@ -78,15 +86,16 @@ PowerShell-Docs team can help you understand validation errors and editorial req
 
 ## Next steps
 
-[PowerShell-Docs style guide][4]
+[PowerShell-Docs style guide][5]
 
 ## Additional resources
 
-[How we manage pull requests][5]
+[How we manage pull requests][6]
 
 <!--link refs-->
 [1]: editorial-checklist.md
-[2]: media/pull-requests/validation-failed.png
-[3]: media/pull-requests/build-validation.png
-[4]: powershell-style-guide.md
-[5]: managing-pull-requests.md
+[2]: media/pull-requests/expectations.png
+[3]: media/pull-requests/validation-failed.png
+[4]: media/pull-requests/build-validation.png
+[5]: powershell-style-guide.md
+[6]: managing-pull-requests.md
