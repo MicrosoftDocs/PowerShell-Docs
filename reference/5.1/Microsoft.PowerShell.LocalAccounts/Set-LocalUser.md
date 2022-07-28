@@ -181,7 +181,7 @@ Accept wildcard characters: False
 Specifies a password for the user account. If the user account is connected to a Microsoft account,
 do not set a password.
 
-You can use `Read-Host -GetCredential`, `Get-Credential`, or `ConvertTo-SecureString` to create a
+You can use `Read-Host -AsSecureString`, `Get-Credential`, or `ConvertTo-SecureString` to create a
 **SecureString** object for the password.
 
 If you omit the **Password** and **NoPassword** parameters, `Set-LocalUser` prompts you for the
