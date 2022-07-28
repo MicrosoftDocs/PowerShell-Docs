@@ -25,9 +25,10 @@ process transparency for our public contributors.
 ## PR Process steps
 
 1. Writer: Create PR
+   - Fill out the [PR template][2]
    - Link any issues resolved by the PR
-   - Use GitHub's [autoclose][2]
-     feature to close the issue
+   - Use GitHub's [autoclose][3] feature to close the issue
+   - Work through and check off each item in the checklist
 1. Writer: Assign peer reviewer
 1. Reviewer: proofreads and comments (as necessary)
 1. Writer: Incorporate review feedback
@@ -38,7 +39,7 @@ process transparency for our public contributors.
 
 ## Content Reviewer Checklist
 
-See the [editorial checklist][3] for a more comprehensive list.
+See the [editorial checklist][4] for a more comprehensive list.
 
 - Proofread for grammar, style, concision, technical accuracy
 - Ensure examples still apply for the target version
@@ -59,6 +60,8 @@ See the [editorial checklist][3] for a more comprehensive list.
     - URL links for files outside of the docset
   - Remove locales from URLs
   - Simplify URLs pointing to `docs.microsoft.com`
+- Verify versioned content is correct across all versions
+  - Review the [versioned content change report][5] to see summarized changes
 
 ## Branch Merge Process
 
@@ -77,8 +80,10 @@ branches should be squashed.
 - Correct target branch for the change
 - No merge conflicts
 - All validation and build step pass
-  - Warnings and suggestions should be fixed (see [Notes][4] for exceptions)
+  - Warnings and suggestions should be fixed (see [Notes][6] for exceptions)
   - No broken links
+  - The [Checklist][7] action ran and passed
+  - If an [Authorization][8] check was triggered, it passed
 - Merge according to table
 
 ### Notes
@@ -100,7 +105,7 @@ When a PR is merged, the HEAD of the target branch is changed. Any open PRs that
 previous HEAD are now outdated. The outdated PR can be merged using Admin rights to override the
 merge warnings in GitHub. This is safe to do if the previously merged PRs haven't touched the same
 files. Clicking the **Update Branch** button is the safest option. Choose **Update with rebase**
-option. For more information see [Updating your pull request branch][5].
+option. For more information see [Updating your pull request branch][9].
 
 ## Publishing to Live
 
@@ -118,7 +123,11 @@ website.
 
 <!-- link references -->
 [1]: https://docs.github.com/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
-[2]: https://help.github.com/en/articles/closing-issues-using-keywords
-[3]: editorial-checklist.md
-[4]: #notes
-[5]: https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/keeping-your-pull-request-in-sync-with-the-base-branch#updating-your-pull-request-branch
+[2]: pull-requests.md#use-the-pr-template
+[3]: https://help.github.com/en/articles/closing-issues-using-keywords
+[4]: editorial-checklist.md
+[5]: pull-requests.md#versioned-content-change-reporting
+[6]: #notes
+[7]: pull-requests.md#checklist-verification
+[8]: pull-requests.md#authorization-verification
+[9]: https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/keeping-your-pull-request-in-sync-with-the-base-branch#updating-your-pull-request-branch
