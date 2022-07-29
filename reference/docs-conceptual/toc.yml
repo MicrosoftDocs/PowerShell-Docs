@@ -82,6 +82,8 @@ items:
             href: learn/shell/dynamic-help.md
           - name: Using aliases
             href: learn/shell/using-aliases.md
+          - name: Customizing your shell environment
+            href: learn/shell/creating-profiles.md
       - name: Deep dives
         items:
           - name: Overview
