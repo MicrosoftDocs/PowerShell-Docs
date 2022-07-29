@@ -23,7 +23,7 @@ a different .NET runtime. As of PowerShell 6.0 there are two editions of PowerSh
 - **Core**, which runs on .NET Core. PowerShell 6.0 and later is installed
   side-by-side with earlier PowerShell releases on full-featured Windows editions, some
   reduced-footprint Windows editions such as Windows Nano Server and Windows IoT, or on non-Windows
-  platforms such as Linux and MacOs.
+  platforms such as Linux and macOS.
 
 Because the edition of PowerShell corresponds to its .NET runtime, it is the primary indicator
 of .NET API and PowerShell module compatibility; some .NET APIs, types or methods are not available
