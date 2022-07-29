@@ -27,9 +27,9 @@ properties of `$PROFILE`.
 - **CurrentUserCurrentHost**
 
 You can see, you can create profile scripts that run for all users or just one user, the
-**CurrentUser**. **CurrentUser** profiles are store in the user's home directory.
+**CurrentUser**. **CurrentUser** profiles are stored in the user's home directory.
 
-There are also profiles that will run for all PowerShell hosts or specific hosts. The profile script
+There are also profiles that run for all PowerShell hosts or specific hosts. The profile script
 for each PowerShell host has a name unique for that host. For example, the filename for the standard
 Console Host on Windows or the default terminal application on other platforms is
 `Microsoft.PowerShell_profile.ps1`. For Visual Studio Code (VS Code), the filename is
@@ -80,8 +80,8 @@ code $PROFILE
 
 You could also use `notepad.exe` on Windows, `vi` on Linux, or any other text editor.
 
-The following profile script contains example for many of the customizations mentioned in the
-previous articles. You can use any of these settings in your own profile
+The following profile script has examples for many of the customizations mentioned in the
+previous articles. You can use any of these settings in your own profile.
 
 ```powershell
 ## Map PSDrives to other registry hives
@@ -137,7 +137,7 @@ This profile script provides examples for the following customization:
   define the ANSI color settings.
 - Adds tab completion for the [dotnet CLI][9] tool. The tool provides parameters to help resolve the
   command-line arguments. The script block for [Register-ArgumentCompleter][10] uses that
-  functionality to provide the tab completion.
+  feature to provide the tab completion.
 
 <!-- link references -->
 
