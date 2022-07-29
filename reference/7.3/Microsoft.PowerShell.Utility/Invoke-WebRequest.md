@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/07/2022
+ms.date: 07/29/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -88,7 +88,7 @@ variables. See the [Notes](#notes) section of this article.
 > [!IMPORTANT]
 > The examples in this article reference hosts in the `contoso.com` domain. This is a fictitious
 > domain used by Microsoft for examples. The examples are designed to show how to use the cmdlets.
-> However, since the `contoso.com` sites do not exist, the examples do not work. Adapt the examples
+> However, since the `contoso.com` sites don't exist, the examples don't work. Adapt the examples
 > to hosts in your environment.
 
 ## EXAMPLES
@@ -126,40 +126,29 @@ $Body = @{
     password = 'P@S$w0rd!'
 }
 $LoginResponse = Invoke-WebRequest 'https://www.contoso.com/login/' -SessionVariable 'Session' -Body $Body -Method 'POST'
-
-$Session
-
 $ProfileResponse = Invoke-WebRequest 'https://www.contoso.com/profile/' -WebSession $Session
-
-$ProfileResponse
 ```
 
 The first call to `Invoke-WebRequest` sends a sign-in request. The command specifies a value of
-"Session" for the value of the **-SessionVariable** parameter, and saves the result in the
-`$LoginResponse` variable. When the command completes, the `$LoginResponse` variable contains an
-`BasicHtmlWebResponseObject` and the `$Session` variable contains a `WebRequestSession` object. This
-logs the user into the site.
+`Session` for the value of the **SessionVariable** parameter. When the command completes, the
+`$LoginResponse` variable contains an **BasicHtmlWebResponseObject** and the `$Session` variable
+contains a `WebRequestSession` object. This logs the user into the site.
 
-The call to `$Session` by itself shows the `WebRequestSession` object in the variable.
-
-The second call to `Invoke-WebRequest` fetches the user's profile which requires that the user be
-logged into the site. The session data stored in the `$Session` variable is used to provide session
-cookies to the site created during the login. The result is saved in the `$ProfileResponse`
-variable.
-
-The call to `$ProfileResponse` by itself shows the `BasicHtmlWebResponseObject` in the variable.
+The second call to `Invoke-WebRequest` fetches the user's profile, which requires the user be signed
+into the site. The session data stored in the `$Session` variable provides session cookies
+to the site created during the login.
 
 ### Example 3: Get links from a web page
 
 This example gets the links in a web page. It uses the `Invoke-WebRequest` cmdlet to get the web
-page content. Then it uses the **Links** property of the `BasicHtmlWebResponseObject` that
+page content. Then it uses the **Links** property of the **BasicHtmlWebResponseObject** that
 `Invoke-WebRequest` returns, and the **Href** property of each link.
 
 ```powershell
 (Invoke-WebRequest -Uri "https://aka.ms/pscore6-docs").Links.Href
 ```
 
-### Example 4: Writes the response content to a file using the encoding defined in the requested page.
+### Example 4: Write response content to a file using the encoding defined in the requested page
 
 This example uses the `Invoke-WebRequest` cmdlet to retrieve the web page content of a PowerShell
 documentation page.
@@ -177,10 +166,11 @@ finally {
 
 The first command retrieves the page and saves the response object in the `$Response` variable.
 
-The second command creates a `StreamWriter` to use to write the response content to a file. The
+The second command creates a **StreamWriter** to use to write the response content to a file. The
 **Encoding** property of the response object is used to set the encoding for the file.
 
-The final few commands write the **Content** property to the file then disposes the `StreamWriter`.
+The final few commands write the **Content** property to the file then disposes the
+**StreamWriter**.
 
 Note that the **Encoding** property is null if the web request doesn't return text content.
 
@@ -236,7 +226,7 @@ values of the HashTable are converted to strings. If a **System.IO.FileInfo** va
 file contents are submitted. If a collection such as arrays or lists are present, the form field is
 submitted multiple times.
 
-By using `Get-Item` on the `avatar` key, the `FileInfo` object is set as the value. The result is
+Using `Get-Item` on the `avatar` key, the `FileInfo` object is set as the value. The result is
 that the image data for `jdoe.png` is submitted.
 
 By supplying a list to the `hobbies` key, the `hobbies` field is present in the submissions once for
@@ -273,7 +263,7 @@ The terminating error is caught by the `catch` block, which retrieves the **Stat
 
 This example gets the links in a web page using the HTTP 2.0 protocol. It uses the
 `Invoke-WebRequest` cmdlet to get the web page content. Then it uses the **Links** property of the
-`BasicHtmlWebResponseObject` that `Invoke-WebRequest` returns, and the **Href** property of each
+**BasicHtmlWebResponseObject** that `Invoke-WebRequest` returns, and the **Href** property of each
 link.
 
 ```powershell
@@ -328,14 +318,14 @@ foreach ($job in $jobs) {
 ### -AllowUnencryptedAuthentication
 
 Allows sending of credentials and secrets over unencrypted connections. By default, supplying
-**Credential** or any **Authentication** option with a **Uri** that does not begin with `https://`
+**Credential** or any **Authentication** option with a **Uri** that doesn't begin with `https://`
 results in an error and the request is aborted to prevent unintentionally communicating secrets in
 plain text over unencrypted connections. To override this behavior at your own risk, supply the
 **AllowUnencryptedAuthentication** parameter.
 
 > [!WARNING]
-> Using this parameter is not secure and is not recommended. It is provided only for compatibility
-> with legacy systems that cannot provide encrypted connections. Use at your own risk.
+> Using this parameter isn't secure and isn't recommended. It is provided only for compatibility
+> with legacy systems that can't provide encrypted connections. Use at your own risk.
 
 This feature was added in PowerShell 6.0.0.
 
@@ -358,9 +348,9 @@ The **Authentication** parameter can't be used with the **UseDefaultCredentials*
 
 Available Authentication Options:
 
-- `None`: This is the default option when **Authentication** is not supplied. No explicit
-  authentication will be used.
-- `Basic`: Requires **Credential**. The credentials will be used to send an RFC 7617 Basic
+- `None`: This is the default option when **Authentication** isn't supplied. No explicit
+  authentication is used.
+- `Basic`: Requires **Credential**. The credentials are sent as an RFC 7617 Basic
   Authentication `Authorization: Basic` header in the format of `base64(user:password)`.
 - `Bearer`: Requires the **Token** parameter. Sends an RFC 6750 `Authorization: Bearer` header with
   the supplied token.
@@ -393,9 +383,9 @@ You can also pipe a body value to `Invoke-WebRequest`.
 The **Body** parameter can be used to specify a list of query parameters or specify the content of
 the response.
 
-When the input is a GET request and the body is an `IDictionary` (typically, a hash table), the body
-is added to the URI as query parameters. For other request types (such as POST), the body is set as
-the value of the request body in the standard `name=value` format.
+When the input is a GET request and the body is an **IDictionary** (typically, a hash table), the
+body is added to the URI as query parameters. For other request types (such as POST), the body is
+set as the value of the request body in the standard `name=value` format.
 
 The **Body** parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This
 facilitates `multipart/form-data` requests. When a **MultipartFormDataContent** object is supplied
@@ -448,7 +438,7 @@ To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command i
 `Cert:` drive.
 
 > [!NOTE]
-> This feature is currently only supported on Windows OS platforms.
+> This feature is only supported on Windows OS platforms.
 
 ```yaml
 Type: System.String
@@ -652,7 +642,7 @@ Accept wildcard characters: False
 
 ### -InFile
 
-Gets the content of the web request from a file. Enter a path and file name. If you omit the path,
+Gets the content of the web request from a file. Enter a path and filename. If you omit the path,
 the default is the current location.
 
 ```yaml
@@ -753,7 +743,7 @@ Accept wildcard characters: False
 
 ### -OutFile
 
-Specifies the output file for which this cmdlet saves the response body. Enter a path and file name.
+Specifies the output file for which this cmdlet saves the response body. Enter a path and filename.
 If you omit the path, the default is the current location. The name is treated as a literal path.
 Names that contain brackets (`[]`) must be enclosed in single quotes (`'`).
 
@@ -830,11 +820,11 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Specifies a user account that has permission to use the proxy server that is specified by the
-**Proxy** parameter. The default is the current user.
+Specifies a user account that has permission to use the proxy server specified by the **Proxy**
+parameter. The default is the current user.
 
-Type a user name, such as **User01** or **Domain01\User01**, **User@Domain.Com**, or enter a
-`PSCredential` object, such as one generated by the `Get-Credential` cmdlet.
+Type a user name, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object, such as
+one generated by the `Get-Credential` cmdlet.
 
 This parameter is valid only when the **Proxy** parameter is also used in the command. You can't use
 the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
@@ -889,11 +879,11 @@ If the local file size is larger than the remote file size, then the local file 
 the entire remote file is re-downloaded. This behavior is the same as using **OutFile** without
 **Resume**.
 
-If the remote server does not support download resuming, then the local file is overwritten and the
+If the remote server doesn't support download resuming, then the local file is overwritten and the
 entire remote file is re-downloaded. This behavior is the same as using **OutFile** without
 **Resume**.
 
-If the local file does not exist, then the local file is created and the entire remote file is
+If the local file doesn't exist, then the local file is created and the entire remote file is
 downloaded. This behavior is the same as using **OutFile** without **Resume**.
 
 This feature was added in PowerShell 6.1.0.
@@ -937,7 +927,7 @@ When you specify a session variable, `Invoke-WebRequest` creates a web request s
 assigns it to a variable with the specified name in your PowerShell session. You can use the
 variable in your session as soon as the command completes.
 
-Unlike a remote session, the web request session is not a persistent connection. It's an object that
+Unlike a remote session, the web request session isn't a persistent connection. It's an object that
 contains information about the connection and the request, including cookies, credentials, the
 maximum redirection value, and the user agent string. You can use it to share state and data among
 web requests.
@@ -968,7 +958,7 @@ Skips certificate validation checks. This includes all validations such as expir
 trusted root authority, etc.
 
 > [!WARNING]
-> Using this parameter is not secure and is not recommended. This switch is only intended to be used
+> Using this parameter isn't secure and isn't recommended. This switch is only intended to be used
 > against known hosts using a self-signed certificate for testing purposes. Use at your own risk.
 
 This feature was added in PowerShell 6.0.0.
@@ -989,7 +979,7 @@ Accept wildcard characters: False
 
 Indicates the cmdlet should add headers to the request without validation.
 
-This switch should be used for sites that require header values that do not conform to standards.
+This switch should be used for sites that require header values that don't conform to standards.
 Specifying this switch disables validation to allow the value to be passed unchecked. When
 specified, all headers are added without validation.
 
@@ -1037,14 +1027,14 @@ protocols for compliance purposes.
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to
 set multiple flags using this parameter. The values can be passed to the **SslProtocol** parameter
-as an array of values or as a comma-separated string of those values. The cmdlet will combine the
-values using a binary-OR operation. Passing values as an array is the simplest option and also
-allows you to use tab-completion on the values. You may not be able to define multiple options on
-all platforms.
+as an array of values or as a comma-separated string of those values. The cmdlet combines the values
+using a binary-OR operation. Passing values as an array is the simplest option and also allows you
+to use tab-completion on the values. You may not be able to define multiple options on all
+platforms.
 
 > [!NOTE]
 > On non-Windows platforms it may not be possible to supply `Tls` or `Tls12` as an option. Support
-> for `Tls13` is not available on all operating systems and will need to be verified on a per
+> for `Tls13` isn't available on all operating systems and will need to be verified on a per
 > operating system basis.
 
 This feature was added in PowerShell 6.0.0 and support for `Tls13` was added in PowerShell 7.1.
@@ -1069,8 +1059,8 @@ default value, 0, specifies an indefinite time-out.
 
 A Domain Name System (DNS) query can take up to 15 seconds to return or time out. If your request
 contains a host name that requires resolution, and you set **TimeoutSec** to a value greater than
-zero, but less than 15 seconds, it can take 15 seconds or more before a WebException is thrown, and
-your request times out.
+zero, but less than 15 seconds, it can take 15 seconds or more before a **WebException** is thrown,
+and your request times out.
 
 ```yaml
 Type: System.Int32
@@ -1087,7 +1077,7 @@ Accept wildcard characters: False
 ### -Token
 
 The OAuth or Bearer token to include in the request. **Token** is required by certain
-**Authentication** options. It cannot be used independently.
+**Authentication** options. It can't be used independently.
 
 **Token** takes a `SecureString` containing the token. To supply the token manually use the
 following:
@@ -1113,11 +1103,11 @@ Accept wildcard characters: False
 Specifies a value for the transfer-encoding HTTP response header. The acceptable values for this
 parameter are:
 
-- Chunked
-- Compress
-- Deflate
-- GZip
-- Identity
+- `Chunked`
+- `Compress`
+- `Deflate`
+- `GZip`
+- `Identity`
 
 ```yaml
 Type: System.String
@@ -1194,7 +1184,7 @@ The default user agent is similar to
 `Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.15063; en-US) PowerShell/6.0.0` with slight
 variations for each operating system and platform.
 
-To test a website with the standard user agent string that is used by most internet browsers, use
+To test a website with the standard user agent string that's used by most internet browsers, use
 the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class,
 such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
@@ -1276,11 +1266,11 @@ Property to determine the proxy configuration.
 
 The value of this property is determined by your platform:
 
-- **For Windows**: Reads proxy configuration from environment variables. If those variables are not
+- **For Windows**: Reads proxy configuration from environment variables. If those variables aren't
   defined the property is derived from the user's proxy settings.
-- **For macOS**: Reads proxy configuration from environment variables. If those variables are not
+- **For macOS**: Reads proxy configuration from environment variables. If those variables aren't
   defined the property is derived from the system's proxy settings.
-- **For Linux**: Reads proxy configuration from environment variables. If those variables are not
+- **For Linux**: Reads proxy configuration from environment variables. If those variables aren't
   defined the property initializes a non-configured instance that bypasses all addresses.
 
 The environment variables used for `DefaultProxy` initialization on Windows and Unix-based platforms
@@ -1289,7 +1279,7 @@ are:
 - `HTTP_PROXY`: the hostname or IP address of the proxy server used on HTTP requests.
 - `HTTPS_PROXY`: the hostname or IP address of the proxy server used on HTTPS requests.
 - `ALL_PROXY`: the hostname or IP address of the proxy server used on HTTP and HTTPS requests in
-  case `HTTP_PROXY` or `HTTPS_PROXY` are not defined.
+  case `HTTP_PROXY` or `HTTPS_PROXY` aren't defined.
 - `NO_PROXY`: a comma-separated list of hostnames that should be excluded from proxying.
 
 ## RELATED LINKS
