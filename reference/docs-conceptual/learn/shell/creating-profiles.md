@@ -8,9 +8,16 @@ title: Customizing your shell environment
 # Customizing your shell environment
 
 A PowerShell profile is a script that runs when PowerShell starts. You can use the profile to
-customize the environment. You can add aliases, functions, variables, load modules, create
-PowerShell drives, and change preference settings. Putting these settings in your profile ensures
-they are available whenever you start PowerShell on your system.
+customize the environment. You can:
+
+- add aliases, functions, and variables
+- load modules
+- create PowerShell drives
+- run arbitrary commands
+- and change preference settings
+
+Putting these settings in your profile ensures they are available whenever you start PowerShell on
+your system.
 
 ## The $PROFILE variable
 
@@ -26,8 +33,8 @@ properties of `$PROFILE`.
 - **CurrentUserAllHosts**
 - **CurrentUserCurrentHost**
 
-You can see, you can create profile scripts that run for all users or just one user, the
-**CurrentUser**. **CurrentUser** profiles are stored in the user's home directory.
+You can create profile scripts that run for all users or just one user, the **CurrentUser**.
+**CurrentUser** profiles are stored in the user's home directory.
 
 There are also profiles that run for all PowerShell hosts or specific hosts. The profile script
 for each PowerShell host has a name unique for that host. For example, the filename for the standard
@@ -50,8 +57,9 @@ C:\Program Files\PowerShell\7\profile.ps1
 
 ## How to create your personal profile
 
-When you first install PowerShell on a system, profile script and the directory path it belong is
-don't exist. The following command creates the profile script file if the file doesn't exist.
+When you first install PowerShell on a system, the profile script files and the directories they
+belong to don't exist. The following command creates the "Current User, Current Current Host"
+profile script file if it doesn't exist.
 
 ```powershell
 if (!(Test-Path -Path $PROFILE)) {
