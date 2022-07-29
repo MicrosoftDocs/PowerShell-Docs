@@ -14,15 +14,16 @@ Different editions of PowerShell run on different underlying runtimes.
 ## Long description
 
 From PowerShell 5.1, there are multiple *editions* of PowerShell that each run on
-a different .NET runtime. As of PowerShell 6.2 there are two editions of PowerShell:
+a different .NET runtime. As of PowerShell 6.0 there are two editions of PowerShell:
 
 - **Desktop**, which runs on .NET Framework. PowerShell 4 and below, as well as
-  PowerShell 5.1 on full-featured Windows editions like Windows Desktop, Windows Server,
-  Windows Server Core and most other Windows operating systems are Desktop edition.
-  This is the original PowerShell edition.
-- **Core**, which runs on .NET Core. PowerShell 6.0 and above, as well as PowerShell 5.1 on
-  some reduced-footprint Windows editions such as Windows Nano Server and Windows IoT where
-  .NET Framework is unavailable.
+  PowerShell 5.1 are available for full-featured Windows editions like Windows Desktop,
+  Windows Server, Windows Server Core and most other Windows operating systems. This is the original
+  PowerShell edition and is included in the default installation of the operating system.
+- **Core**, which runs on .NET Core. PowerShell 6.0 and later is installed
+  side-by-side with earlier PowerShell releases on full-featured Windows editions, some
+  reduced-footprint Windows editions such as Windows Nano Server and Windows IoT, or on non-Windows
+  platforms such as Linux and macOS.
 
 Because the edition of PowerShell corresponds to its .NET runtime, it is the primary indicator
 of .NET API and PowerShell module compatibility; some .NET APIs, types or methods are not available

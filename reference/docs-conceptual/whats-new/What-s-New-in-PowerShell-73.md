@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.3-preview.5
 description: New features and changes released in PowerShell 7.3-preview.5
-ms.date: 06/23/2022
+ms.date: 07/28/2022
 ---
 
 # What's New in PowerShell 7.3
@@ -10,16 +10,14 @@ PowerShell 7.3 is the next preview release, built on .NET 7.0.
 
 PowerShell 7.3-preview.5 includes the following features, updates, and breaking changes.
 
-## Known issues in 7.3-preview.5
+## Known issues in 7.3-preview.6
 
 These issues should be fixed in the next release of .NET 7 and included in a future preview of
 PowerShell 7.3.
 
-- `Test-Connection` is broken due to an
-  [intentional breaking change](https://github.com/dotnet/runtime/issues/66746) in .NET 7. It's
-  tracked by [#17018](https://github.com/PowerShell/PowerShell/issues/17018)
-- `AssemblyName.FullName` has unexpected behavior caused by a
-  [regression](https://github.com/dotnet/runtime/issues/66785) in .NET 7
+- `Test-Connection` is broken due to an intentional
+  [breaking change](https://github.com/dotnet/runtime/issues/66746) in .NET 7. It's tracked by
+  [#17018](https://github.com/PowerShell/PowerShell/issues/17018)
 
 ## Improved error handling
 
@@ -70,6 +68,11 @@ PowerShell 7.3.
 - Add `clean` block to script block as a peer to `begin`, `process`, and `end` to allow easy
   resource cleanup (#15177)
 - Add `-Amended` switch to `Get-CimClass` cmdlet (#17477) (Thanks @iSazonov)
+- Changed `ConvertFrom-Json -AsHashtable` to use ordered hashtable (#17405)
+- Removed ANSI escape sequences in strings before sending to `Out-GridView` (#17664)
+- Added the **Milliseconds** parameter to `New-TimeSpan` (#17621) (Thanks @NoMoreFood!)
+- Show optional parameters when displaying method definitions and overloads (#13799) (Thanks
+  @eugenesmlv!)
 
 For a complete list of changes, see the [Change Log][CHANGELOG] in the GitHub repository.
 

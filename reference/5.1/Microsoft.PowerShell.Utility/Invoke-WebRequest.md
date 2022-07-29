@@ -38,18 +38,18 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 > [!IMPORTANT]
 > The examples in this article reference hosts in the `contoso.com` domain. This is a fictitious
 > domain used by Microsoft for examples. The examples are designed to show how to use the cmdlets.
-> However, since the `contoso.com` sites do not exist, the examples do not work. Adapt the examples
+> However, since the `contoso.com` sites don't exist, the examples don't work. Adapt the examples
 > to hosts in your environment.
 
 ## EXAMPLES
 
 ### Example 1: Send a web request
 
-This command uses the `Invoke-WebRequest` cmdlet to send a web request to the Bing.com site.
+This example uses the `Invoke-WebRequest` cmdlet to send a web request to the Bing.com site.
 
 ```powershell
-$R = Invoke-WebRequest -URI https://www.bing.com?q=how+many+feet+in+a+mile
-$R.AllElements | Where-Object {
+$Response = Invoke-WebRequest -URI https://www.bing.com?q=how+many+feet+in+a+mile
+$Response.AllElements | Where-Object {
     $_.name -like "* Value" -and $_.tagName -eq "INPUT"
 } | Select-Object Name, Value
 ```
@@ -61,7 +61,7 @@ From Value 1
 To Value   5280
 ```
 
-The first command issues the request and saves the response in the `$R` variable.
+The first command issues the request and saves the response in the `$Response` variable.
 
 The second command filters the objects in the **AllElements** property where the **name** property
 is like "* Value" and the **tagName** is "INPUT". The filtered results are piped to `Select-Object`
@@ -127,7 +127,7 @@ returned **HtmlWebResponseObject** is used to display the **Href** property of e
 
 When `Invoke-WebRequest` encounters a non-success HTTP message (404, 500, etc.), it returns no
 output and throws a terminating error. To catch the error and view the **StatusCode** you can
-enclose execution in a `try/catch` block. The following example shows how to accomplish this.
+enclose execution in a `try/catch` block.
 
 ```powershell
 try
@@ -201,16 +201,15 @@ foreach ($job in $jobs) {
 
 ### -Body
 
-Specifies the body of the request.
-The body is the content of the request that follows the headers.
+Specifies the body of the request. The body is the content of the request that follows the headers.
 You can also pipe a body value to `Invoke-WebRequest`.
 
 The **Body** parameter can be used to specify a list of query parameters or specify the content of
 the response.
 
 When the input is a GET request and the body is an **IDictionary** (typically, a hash table), the
-body is added to the URI as query parameters. For other GET requests, the body is set as the value
-of the request body in the standard `name=value` format.
+body is added to the URI as query parameters. For other request types (such as POST), the body is
+set as the value of the request body in the standard `name=value` format.
 
 When the body is a form, or it is the output of an `Invoke-WebRequest` call, PowerShell sets the
 request content to the form fields.
@@ -239,12 +238,12 @@ Accept wildcard characters: False
 
 ### -Certificate
 
-Specifies the client certificate that is used for a secure web request. Enter a variable that
+Specifies the client certificate that's used for a secure web request. Enter a variable that
 contains a certificate or a command or expression that gets the certificate.
 
-To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdlet in the
-**Certificate** (`Cert:`) drive. If the certificate is not valid or does not have sufficient
-authority, the command fails.
+To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdlet in the Certificate
+(`Cert:`) drive. If the certificate isn't valid or doesn't have sufficient authority, the command
+fails.
 
 ```yaml
 Type: System.Security.Cryptography.X509Certificates.X509Certificate
@@ -261,9 +260,10 @@ Accept wildcard characters: False
 ### -CertificateThumbprint
 
 Specifies the digital public key certificate (X509) of a user account that has permission to send
-the request. Enter the certificate thumbprint of the certificate. Certificates are used in client
-certificate-based authentication. They can be mapped only to local user accounts; they do not work
-with domain accounts.
+the request. Enter the certificate thumbprint of the certificate.
+
+Certificates are used in client certificate-based authentication. They can be mapped only to local
+user accounts; they don't work with domain accounts.
 
 To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command in the PowerShell
 `Cert:` drive.
@@ -285,7 +285,8 @@ Accept wildcard characters: False
 Specifies the content type of the web request.
 
 If this parameter is omitted and the request method is POST, `Invoke-WebRequest` sets the content
-type to application/x-www-form-urlencoded. Otherwise, the content type is not specified in the call.
+type to `application/x-www-form-urlencoded`. Otherwise, the content type isn't specified in the
+call.
 
 ```yaml
 Type: System.String
@@ -482,14 +483,14 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Specifies a user account that has permission to use the proxy server that is specified by the
-**Proxy** parameter. The default is the current user.
+Specifies a user account that has permission to use the proxy server specified by the **Proxy**
+parameter. The default is the current user.
 
 Type a user name, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object, such as
 one generated by the `Get-Credential` cmdlet.
 
-This parameter is valid only when the **Proxy** parameter is also used in the command. You cannot
-use the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
+This parameter is valid only when the **Proxy** parameter is also used in the command. You can't use
+the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -508,8 +509,8 @@ Accept wildcard characters: False
 Indicates that the cmdlet uses the credentials of the current user to access the proxy server that
 is specified by the **Proxy** parameter.
 
-This parameter is valid only when the **Proxy** parameter is also used in the command. You cannot
-use the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
+This parameter is valid only when the **Proxy** parameter is also used in the command. You can't use
+the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -532,8 +533,8 @@ When you specify a session variable, `Invoke-WebRequest` creates a web request s
 assigns it to a variable with the specified name in your PowerShell session. You can use the
 variable in your session as soon as the command completes.
 
-Unlike a remote session, the web request session is not a persistent connection. It is an object
-that contains information about the connection and the request, including cookies, credentials, the
+Unlike a remote session, the web request session isn't a persistent connection. It's an object that
+contains information about the connection and the request, including cookies, credentials, the
 maximum redirection value, and the user agent string. You can use it to share state and data among
 web requests.
 
@@ -543,7 +544,7 @@ establishing the new connection. To override a value in the web request session,
 parameter, such as **UserAgent** or **Credential**. Parameter values take precedence over values in
 the web request session.
 
-You cannot use the **SessionVariable** and **WebSession** parameters in the same command.
+You can't use the **SessionVariable** and **WebSession** parameters in the same command.
 
 ```yaml
 Type: System.String
@@ -608,7 +609,7 @@ Accept wildcard characters: False
 Specifies the Uniform Resource Identifier (URI) of the Internet resource to which the web request is
 sent. Enter a URI. This parameter supports HTTP, HTTPS, FTP, and FILE values.
 
-This parameter is required.
+This parameter is required. The parameter name **Uri** is optional.
 
 ```yaml
 Type: System.Uri
@@ -692,12 +693,12 @@ that contains information about the connection and the request, including cookie
 maximum redirection value, and the user agent string. You can use it to share state and data among
 web requests.
 
-To create a web request session, enter a variable name (without a dollar sign) in the value of the
+To create a web request session, enter a variable name, without a dollar sign, in the value of the
 **SessionVariable** parameter of an `Invoke-WebRequest` command. `Invoke-WebRequest` creates the
 session and saves it in the variable. In subsequent commands, use the variable as the value of the
 **WebSession** parameter.
 
-You cannot use the **SessionVariable** and **WebSession** parameters in the same command.
+You can't use the **SessionVariable** and **WebSession** parameters in the same command.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebRequestSession
@@ -713,9 +714,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
