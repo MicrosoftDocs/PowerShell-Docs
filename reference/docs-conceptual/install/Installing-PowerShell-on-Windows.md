@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 05/31/2022
+ms.date: 08/03/2022
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -111,7 +111,6 @@ the following ZIP archives from the [current release][current] page.
 - [PowerShell-7.2.5-win-x64.zip][x64zip]
 - [PowerShell-7.2.5-win-x86.zip][x86zip]
 - [PowerShell-7.2.5-win-arm64.zip][arm64zip]
-- [PowerShell-7.2.5-win-arm32.zip][arm32zip]
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -160,7 +159,7 @@ PowerShell         Microsoft.PowerShell         7.2.5.0 winget
 PowerShell Preview Microsoft.PowerShell.Preview 7.3.0.3 winget
 ```
 
-Install Powershell or Powershell Preview using the `id` parameter
+Install PowerShell or PowerShell Preview using the `id` parameter
 
 ```powershell
 winget install --id Microsoft.Powershell --source winget
@@ -176,6 +175,7 @@ Benefits of the Microsoft Store package:
 
 - Automatic updates built right into Windows
 - Integrates with other software distribution mechanisms like Intune and Configuration Manager
+- Can install on Windows systems using x86, x64, or Arm64 processors
 
 ### Known limitations
 
@@ -210,11 +210,6 @@ application sandbox. However, changes to the application's root folder are still
 
 ## Installing a preview version
 
-<!--
-The preview version of PowerShell 7.2 can be downloaded using the following link:
-
-- [PowerShell-7.2.0-win-x64.msi][72x64msi]
--->
 Preview releases of PowerShell 7 install to `$env:ProgramFiles\PowerShell\7-preview` so they can
 be run side-by-side with non-preview releases of PowerShell. PowerShell 7.3 will be the
 next preview release.
@@ -370,7 +365,6 @@ cannot support those methods.
 [store-app]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [winget]: /windows/package-manager/winget
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
-[arm32zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/PowerShell-7.2.5-win-arm32.zip
 [arm64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/PowerShell-7.2.5-win-arm64.zip
 [x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/PowerShell-7.2.5-win-x64.msi
 [x64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/PowerShell-7.2.5-win-x64.zip
