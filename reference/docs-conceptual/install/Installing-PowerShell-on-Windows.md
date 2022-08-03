@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 05/31/2022
+ms.date: 08/03/2022
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -111,7 +111,6 @@ the following ZIP archives from the [current release][current] page.
 - [PowerShell-7.2.5-win-x64.zip][x64zip]
 - [PowerShell-7.2.5-win-x86.zip][x86zip]
 - [PowerShell-7.2.5-win-arm64.zip][arm64zip]
-- [PowerShell-7.2.5-win-arm32.zip][arm32zip]
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -176,6 +175,7 @@ Benefits of the Microsoft Store package:
 
 - Automatic updates built right into Windows
 - Integrates with other software distribution mechanisms like Intune and Configuration Manager
+- Can install on Windows systems using x86, x64, or Arm64 processors
 
 ### Known limitations
 
@@ -370,7 +370,6 @@ cannot support those methods.
 [store-app]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [winget]: /windows/package-manager/winget
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
-[arm32zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/PowerShell-7.2.5-win-arm32.zip
 [arm64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/PowerShell-7.2.5-win-arm64.zip
 [x64msi]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/PowerShell-7.2.5-win-x64.msi
 [x64zip]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/PowerShell-7.2.5-win-x64.zip
