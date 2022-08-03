@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2022
-ms.date: 07/05/2022
+ms.date: 08/01/2022
 title: What's New in PowerShell-Docs for 2022
 ---
 # What's new in PowerShell Docs for 2022
@@ -10,6 +10,44 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2022-July
+
+New content
+
+- [Optimizing your shell experience](/powershell/scripting/learn/shell/optimize-shell)
+- [Using tab completion](/powershell/scripting/learn/shell/tab-completion)
+- [Using command predictors](/powershell/scripting/learn/shell/using-predictors)
+- [Getting dynamic help](/powershell/scripting/learn/shell/dynamic-help)
+- [Using aliases](/powershell/scripting/learn/shell/using-aliases)
+- [Customizing your shell environment](/powershell/scripting/learn/shell/creating-profiles)
+
+Content updates
+
+- Updated PowerShell 7.3-preview.6 [release notes](/powershell/scripting/whats-new/what-s-new-in-powershell-73)
+- Started reviewing and testing PowerShellGet v3 cmdlet reference (currently in beta) to ensure
+  accuracy and release readiness.
+- Refresh of our Community [Contributor Guide](https://aka.ms/PSDocsContributor)
+
+### Top Community Contributors
+
+GitHub stats
+
+- 50 PRs merged (6 from Community)
+- 22 issues opened (14 from Community)
+- 29 issues closed (19 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|  GitHub Id   | PRs merged | Issues opened |
+| ------------ | :--------: | :-----------: |
+| Alvynskio    |     1      |               |
+| bergmeister  |     1      |               |
+| BusHero      |     1      |               |
+| lewis-yeung  |     1      |               |
+| sethvs       |     1      |               |
+| tommymaynard |     1      |               |
 
 ## 2022-June
 
