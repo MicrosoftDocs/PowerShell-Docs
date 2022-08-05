@@ -94,8 +94,7 @@ For information about starting the Windows PowerShell 2.0 Engine, see
 
 ## On Earlier Systems
 
-The [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855)
-package that installs Windows PowerShell 4.0 on Windows 7, Windows Server 2008 R2, and Windows
+The Windows Management Framework 4.0 package that installs Windows PowerShell 4.0 on Windows 7, Windows Server 2008 R2, and Windows
 Server 2012, includes the Windows PowerShell 2.0 Engine. The Windows PowerShell 2.0 Engine is
 enabled and ready to use, if necessary, without additional installation, setup, or configuration.
 
