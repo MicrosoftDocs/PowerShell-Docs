@@ -239,6 +239,8 @@ items:
   - name: What's New in PowerShell
     expanded: true
     items:
+      - name: Overview
+        href: whats-new/overview.yml
       - name: What's new in PowerShell 7.x
         items:
           - name: What's new in PowerShell 7.3 (preview)
