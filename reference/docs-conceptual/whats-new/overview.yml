@@ -1,10 +1,10 @@
 ### YamlMime:Landing
 
-title: Overview of What's new in PowerShell
+title: Overview of what's new in PowerShell
 summary: A collection of release notes and documentation about the new features available in new versions of PowerShell.
 
 metadata:
-  title: Overview of What's new in PowerShell
+  title: Overview of what's new in PowerShell
   description: A collection of release notes and documentation about the new features available in new versions of PowerShell.
   ms.topic: landing-page
   author: sdwheeler
@@ -17,7 +17,7 @@ metadata:
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
-  - title: What's New in PowerShell 7
+  - title: What's new in PowerShell 7
     linkLists:
       - linkListType: whats-new
         links:
@@ -32,7 +32,7 @@ landingContent:
           - text: PowerShell differences on non-Windows platforms
             url: ./unix-support.md
 
-  - title: What's New in PowerShell 5.1
+  - title: What's new in PowerShell 5.1
     linkLists:
       - linkListType: whats-new
         links:
@@ -52,7 +52,7 @@ landingContent:
           - text: Module compatibility
             url: ./module-compatibility.md
 
-  - title: What's New in previous versions of PowerShell
+  - title: What's new in previous versions of PowerShell
     linkLists:
       - linkListType: whats-new
         links:
