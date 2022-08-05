@@ -10,7 +10,7 @@ Use the following keyboard shortcuts to perform actions in Windows PowerShell&re
 Environment (ISE). Windows PowerShell ISE is available as part of the Windows Server and Windows
 client operating systems, but can also be installed on some older Windows operating systems as part
 of the
-[Windows Management Framework 4.0 download package](https://www.microsoft.com/download/details.aspx?id=40855).
+Windows Management Framework 4.0 download package.
 
 ## Keyboard shortcuts for editing text
 
