@@ -76,8 +76,8 @@ locate the installer for the version of PowerShell you want to update to.
 | Windows 11 <br/>Windows Server 2022            |         -          |         -          |         -          |     installed      |
 | Windows 10 (see Note1)<br/>Windows Server 2016 |         -          |         -          |         -          |     installed      |
 | Windows 8.1<br/>Windows Server 2012 R2         |         -          |     installed      | [WMF 5.0][WMF 5.0] | [WMF 5.1][WMF 5.1] |
-| Windows 8<br/>Windows Server 2012              |     installed      | [WMF 4.0][WMF 4.0] | [WMF 5.0][WMF 5.0] | [WMF 5.1][WMF 5.1] |
-| Windows 7 SP1<br/>Windows Server 2008 R2 SP1   | [WMF 3.0][WMF 3.0] | [WMF 4.0][WMF 4.0] | [WMF 5.0][WMF 5.0] | [WMF 5.1][WMF 5.1] |
+| Windows 8<br/>Windows Server 2012              |     installed      | WMF 4.0 | [WMF 5.0][WMF 5.0] | [WMF 5.1][WMF 5.1] |
+| Windows 7 SP1<br/>Windows Server 2008 R2 SP1   | [WMF 3.0][WMF 3.0] | WMF 4.0 | [WMF 5.0][WMF 5.0] | [WMF 5.1][WMF 5.1] |
 
 > [!NOTE]
 > On the initial release of Windows 10, with automatic updates enabled, PowerShell gets updated from
@@ -101,6 +101,6 @@ Otherwise, what you might need is
 <!-- link refs -->
 
 [WMF 3.0]: https://www.microsoft.com/download/details.aspx?id=34595
-[WMF 4.0]: https://www.microsoft.com/download/details.aspx?id=40855
+WMF 4.0: 
 [WMF 5.0]: https://www.microsoft.com/download/details.aspx?id=50395
 [WMF 5.1]: https://www.microsoft.com/download/details.aspx?id=54616
