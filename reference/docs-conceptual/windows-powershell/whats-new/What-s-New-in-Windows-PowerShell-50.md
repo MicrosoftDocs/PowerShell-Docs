@@ -393,7 +393,7 @@ work in Windows PowerShell 4.0 without changes.
 
 Windows PowerShell 4.0 is installed by default on Windows 8.1 and Windows Server 2012 R2. To install
 Windows PowerShell 4.0 on Windows 7 with SP1, or Windows Server 2008 R2, download and install
-[Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855). Be
+Windows Management Framework 4.0. Be
 sure to read the download details, and meet all system requirements, before you install Windows
 Management Framework 4.0.
 
