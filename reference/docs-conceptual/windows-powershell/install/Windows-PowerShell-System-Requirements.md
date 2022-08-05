@@ -66,8 +66,8 @@ install the specified version of the Windows Management Framework for your opera
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Windows 8.1                                 | Installed by default                                                                                       |
 | Windows Server 2012 R2                      | Installed by default                                                                                       |
-| Windows 7 with Service Pack 1              | Install [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) |
-| Windows Server 2008 R2 with Service Pack 1 | Install [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) |
+| Windows 7 with Service Pack 1              | Install Windows Management Framework 4.0 |
+| Windows Server 2008 R2 with Service Pack 1 | Install Windows Management Framework 4.0 |
 
 ### Windows PowerShell 3.0
 
