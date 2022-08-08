@@ -126,7 +126,7 @@ Name                                               Type
 System.String                                      System.String
 ```
 
-### Example 2: Use the Output attribute to indicate dynamic output types
+### Example 2: Use the OutputType attribute to indicate dynamic output types
 
 The following advanced function uses the OutputType attribute to indicate that
 the function returns different types depending on the parameter set used in the
@@ -226,8 +226,14 @@ format.
 (Get-Command Get-Time).OutputType | ForEach {$_.Name}
 ```
 
+Or its shorter version.
+
+```powershell
+(Get-Command Get-Time).OutputType.Name
+```
+
 The value of the OutputType property can be null. Use a null value when
-the output is a not a .NET type, such as a **WMI** object or a formatted view
+the output is not a .NET type, such as a **WMI** object or a formatted view
 of an object.
 
 ## See also
