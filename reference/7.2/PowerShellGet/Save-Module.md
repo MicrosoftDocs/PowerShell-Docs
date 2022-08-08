@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 11/11/2019
+ms.date: 08/08/2022
 online version: https://docs.microsoft.com/powershell/module/powershellget/save-module?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Module
@@ -188,7 +188,8 @@ Accept wildcard characters: False
 
 ### -Force
 
-Forces `Save-Module` to run without asking for user confirmation.
+If the location specified by the **Path** parameter doesn't exist, the cmdlet returns an error.
+Using the **Force** parameter creates the target path.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
