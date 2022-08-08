@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/25/2022
+ms.date: 08/08/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -98,7 +98,7 @@ deserializes, the content into `[PSCustomObject]` objects.
 This cmdlet is introduced in Windows PowerShell 3.0.
 
 Beginning in PowerShell 7.0, `Invoke-RestMethod` supports proxy configuration defined by environment
-variables. See the [Notes](#notes) section of this article.
+variables. See the [Notes][1] section of this article.
 
 ## EXAMPLES
 
@@ -158,10 +158,9 @@ for the resulting CSV output file.
 
 ### Example 3: Follow relation links
 
-Some REST APIs support pagination via Relation Links per
-[RFC5988](https://tools.ietf.org/html/rfc5988#page-6). Instead of parsing the header to get the URL
-for the next page, you can have the cmdlet do this for you. This example returns the first two pages
-of issues from the PowerShell GitHub repository.
+Some REST APIs support pagination via Relation Links per [RFC5988][2]. Instead of parsing the header
+to get the URL for the next page, you can have the cmdlet do this for you. This example returns the
+first two pages of issues from the PowerShell GitHub repository.
 
 ```powershell
 $url = 'https://api.github.com/repos/powershell/powershell/issues'
@@ -240,6 +239,47 @@ Invoke-RestMethod -Uri $uri | Write-Output | ForEach-Object { $x++ }
 $x
 30
 ```
+
+### Example 7: Skipping Header Validation
+
+By default, the `Invoke-RestMethod` cmdlet validates the values of well-known headers that have a
+standardards-defined value format. The following example shows how this validation can raise an
+error and how you can use the **SkipHeaderValidation** parameter to avoid validating values for
+endpoints that tolerate invalidly formatted values.
+
+```powershell
+$Uri = 'https://httpbin.org/headers'
+$InvalidHeaders = @{
+    'If-Match' = '12345'
+}
+
+Invoke-RestMethod -Uri $Uri -Headers $InvalidHeaders
+
+Invoke-RestMethod -Uri $Uri -Headers $InvalidHeaders -SkipHeaderValidation |
+    Format-List
+```
+
+```Output
+Invoke-RestMethod: The format of value '12345' is invalid.
+
+headers : @{Host=httpbin.org; If-Match=12345; User-Agent=Mozilla/5.0 (Windows NT 10.0; Microsoft Windows
+          10.0.19044; en-US) PowerShell/7.2.5;  X-Amzn-Trace-Id=Root=1-62f150a6-27754fd4226f31b43a3d2874}
+```
+
+[httpbin.org][3] is a service that returns information about web requests and responses for
+troubleshooting. The `$Uri` variable is assigned to the `/headers` endpoint of the service, which
+returns a request's headers as the content in its response.
+
+The `If-Match` request header is defined in [RFC-7232 section 3.1][4] and requires the value for
+that header to be defined with surrounding quotes. The `$InvalidHeaders` variable is assigned a hash
+table where the value of `If-Match` is invalid because it's defined as `12345` instead of `"12345"`.
+
+Calling `Invoke-RestMethod` with the invalid headers returns an error reporting that the formatted
+value is invalid. The request is not sent to the endpoint.
+
+Calling `Invoke-RestMethod` with the **SkipHeaderValidation** parameter ignores the validation
+failure and sends the request to the endpoint. Because the endpoint tolerates non-compliant header
+values, the cmdlet returns the response object without error.
 
 ## PARAMETERS
 
@@ -418,12 +458,11 @@ options. When used alone, it will only supply credentials to the remote server i
 sends an authentication challenge request. When used with **Authentication** options, the
 credentials will be explicitly sent.
 
-Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential)
-object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).
+Credentials are stored in a [PSCredential][5] object and the password is stored as a
+[SecureString][6].
 
 > [!NOTE]
-> For more information about **SecureString** data protection, see
-> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+> For more information about **SecureString** data protection, see [How secure is SecureString?][7].
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -485,10 +524,9 @@ Accept wildcard characters: False
 
 Indicates the cmdlet should follow relation links.
 
-Some REST APIs support pagination via Relation Links per
-[RFC5988](https://tools.ietf.org/html/rfc5988#page-6). Instead of parsing the header to get the URL
-for the next page, you can have the cmdlet do this for you. To set how many times to follow relation
-links, use the **MaximumFollowRelLink** parameter.
+Some REST APIs support pagination via Relation Links per [RFC5988][8]. Instead of parsing the header
+to get the URL for the next page, you can have the cmdlet do this for you. To set how many times to
+follow relation links, use the **MaximumFollowRelLink** parameter.
 
 When using this switch, the cmdlet returns a collection of pages of results. Each page of results
 may contain multiple result items.
@@ -728,8 +766,7 @@ is to have the results written to the file and to the pipeline.
 
 > [!NOTE]
 > When you use the **PassThru** parameter, the output is written to the pipeline but the file is not
-> created. For more information, see
-> [PowerShell Issue #15409](https://github.com/PowerShell/PowerShell/issues/15409).
+> created. For more information, see [PowerShell Issue #15409][9].
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -969,8 +1006,8 @@ This switch should be used for sites that require header values that do not conf
 Specifying this switch disables validation to allow the value to be passed unchecked. When
 specified, all headers are added without validation.
 
-This will disable validation for values passed to the **ContentType**, **Headers**, and **UserAgent**
-parameters.
+This will disable validation for values passed to the **ContentType**, **Headers**, and
+**UserAgent** parameters.
 
 This feature was added in PowerShell 6.0.0.
 
@@ -1192,8 +1229,8 @@ The default user agent is similar to
 variations for each operating system and platform.
 
 To test a website with the standard user agent string that is used by most internet browsers, use
-the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class,
-such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
+the properties of the [PSUserAgent][10] class, such as Chrome, FireFox, InternetExplorer, Opera, and
+Safari.
 
 ```yaml
 Type: System.String
@@ -1244,8 +1281,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters][11].
 
 ## INPUTS
 
@@ -1269,8 +1305,7 @@ strings.
 Some features may not be available on all platforms.
 
 Because of changes in .NET Core 3.1, PowerShell 7.0 and higher use the
-[HttpClient.DefaultProxy](/dotnet/api/system.net.http.httpclient.defaultproxy?view=netcore-3.1)
-property to determine the proxy configuration.
+[HttpClient.DefaultProxy][12] property to determine the proxy configuration.
 
 The value of this property is different rules depending on your platform:
 
@@ -1292,8 +1327,25 @@ are:
 
 ## RELATED LINKS
 
-[ConvertTo-Json](ConvertTo-Json.md)
+[ConvertTo-Json][13]
 
-[ConvertFrom-Json](ConvertFrom-Json.md)
+[ConvertFrom-Json][14]
 
-[Invoke-WebRequest](Invoke-WebRequest.md)
+[Invoke-WebRequest][15]
+
+<!-- Reference Links -->
+[1]: #notes
+[2]: https://tools.ietf.org/html/rfc5988#page-6
+[3]: https://httpbin.org/
+[4]: https://www.rfc-editor.org/rfc/rfc7232.html#section-3.1
+[5]: /dotnet/api/system.management.automation.pscredential
+[6]: /dotnet/api/system.security.securestring
+[7]: /dotnet/api/system.security.securestring#how-secure-is-securestring
+[8]: https://tools.ietf.org/html/rfc5988#page-6
+[9]: https://github.com/PowerShell/PowerShell/issues/15409
+[10]: /dotnet/api/microsoft.powershell.commands.psuseragent
+[11]: https://go.microsoft.com/fwlink/?LinkID=113216
+[12]: /dotnet/api/system.net.http.httpclient.defaultproxy?view=netcore-3.1
+[13]: ConvertTo-Json.md
+[14]: ConvertFrom-Json.md
+[15]: Invoke-WebRequest.md
