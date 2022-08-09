@@ -8,12 +8,12 @@ title: Installing PowerShell on Windows
 There are multiple ways to install PowerShell in Windows. Each install method is designed to support
 different scenarios and workflows. Choose the method that best suits your needs.
 
-- [MSI package](#msi) - The best choice for the everyday user.
-- [ZIP package](#zip) - The easiest way to install multiple versions or use in a CI/CD pipeline.
+- [Winget](#winget) - Recommended way to install PowerShell in Windows.
+- [MSI package](#msi) - Best choice for enterprise deployment tools.
+- [ZIP package](#zip) - Easiest way to "side load" or install multiple versions.
   This is the install method for Windows Nano Server, Windows IoT, and Arm-based systems.
 - [.NET Global tool](#dotnet) - A good choice for .NET developers that install and use other global
   tools.
-- [Winget](#winget) - For users that prefer to use the new Windows Package Manager tool.
 - [Microsoft Store package](#msstore) - An easy way to install for casual users of PowerShell but
   has limitations.
 
@@ -29,6 +29,37 @@ different scenarios and workflows. Choose the method that best suits your needs.
 >
 > Download links for every package are found in the **Assets** section of the Release page. The
 > **Assets** section may be collapsed, so you may need to click to expand it.
+
+## <a id="winget" />Install PowerShell using Winget (recommended)
+
+Winget, the Windows Package Manager, is a command-line tool enables developers to discover, install,
+upgrade, remove, and configure applications on Windows 10 computers. This tool is the client
+interface to the Windows Package Manager service.
+
+> [!NOTE]
+> See the [winget documentation][winget] for a list of system requirements and install instructions.
+
+The following commands can be used to install PowerShell using the published `winget` packages:
+
+Search for the latest version of PowerShell
+
+```powershell
+winget search Microsoft.PowerShell
+```
+
+```Output
+Name               Id                           Version Source
+---------------------------------------------------------------
+PowerShell         Microsoft.PowerShell         7.2.5.0 winget
+PowerShell Preview Microsoft.PowerShell.Preview 7.3.0.3 winget
+```
+
+Install PowerShell or PowerShell Preview using the `id` parameter
+
+```powershell
+winget install --id Microsoft.Powershell --source winget
+winget install --id Microsoft.Powershell.Preview --source winget
+```
 
 ## <a id="msi" />Installing the MSI package
 
@@ -134,37 +165,6 @@ dotnet tool install --global PowerShell
 The dotnet tool installer adds `$env:USERPROFILE\.dotnet\tools` to your `$env:PATH` environment
 variable. However, the currently running shell doesn't have the updated `$env:PATH`. You can start
 PowerShell from a new shell by typing `pwsh`.
-
-## <a id="winget" />Install PowerShell using Winget
-
-Winget, the Windows Package Manager, is a command-line tool enables developers to discover, install,
-upgrade, remove, and configure applications on Windows 10 computers. This tool is the client
-interface to the Windows Package Manager service.
-
-> [!NOTE]
-> See the [winget documentation][winget] for a list of system requirements and install instructions.
-
-The following commands can be used to install PowerShell using the published `winget` packages:
-
-Search for the latest version of PowerShell
-
-```powershell
-winget search Microsoft.PowerShell
-```
-
-```Output
-Name               Id                           Version Source
----------------------------------------------------------------
-PowerShell         Microsoft.PowerShell         7.2.5.0 winget
-PowerShell Preview Microsoft.PowerShell.Preview 7.3.0.3 winget
-```
-
-Install PowerShell or PowerShell Preview using the `id` parameter
-
-```powershell
-winget install --id Microsoft.Powershell --source winget
-winget install --id Microsoft.Powershell.Preview --source winget
-```
 
 ## <a id="msstore" />Installing from the Microsoft Store
 
