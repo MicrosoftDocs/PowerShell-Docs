@@ -75,9 +75,22 @@ function New-CliErrorRecord {
         [string]$ErrorID
     )
     
-    begin {}
+    begin {
+        $AcceptableErrors = @(
+            @{
+                Pattern = 'HTTP 403: .+ rate limit'
+                Message = 'Rate limited by GitHub API; unable to continue.'
+            }
+        )
+    }
   
     process {
+        foreach ($AcceptableError in $AcceptableErrors) {
+            if ($ResultString -match $AcceptableError.Pattern) {
+                Write-Host -ForegroundColor DarkMagenta $AcceptableError.Message
+                exit
+            }
+        }
         $Message = New-Object -TypeName System.Text.StringBuilder
         $null = $Message.AppendLine("GitHub API call to $Intent failed with exit code ${ExitCode}:")
         $null = $Message.AppendLine("    $ResultString")
