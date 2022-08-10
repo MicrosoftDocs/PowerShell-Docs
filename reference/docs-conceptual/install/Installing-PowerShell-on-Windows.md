@@ -8,7 +8,7 @@ title: Installing PowerShell on Windows
 There are multiple ways to install PowerShell in Windows. Each install method is designed to support
 different scenarios and workflows. Choose the method that best suits your needs.
 
-- [Winget](#winget) - Recommended way to install PowerShell in Windows.
+- [Winget](#winget) - Recommended way to install PowerShell in Windows clients.
 - [MSI package](#msi) - Best choice for enterprise deployment tools.
 - [ZIP package](#zip) - Easiest way to "side load" or install multiple versions.
   This is the install method for Windows Nano Server, Windows IoT, and Arm-based systems.
@@ -33,7 +33,7 @@ different scenarios and workflows. Choose the method that best suits your needs.
 ## <a id="winget" />Install PowerShell using Winget (recommended)
 
 Winget, the Windows Package Manager, is a command-line tool enables developers to discover, install,
-upgrade, remove, and configure applications on Windows 10 computers. This tool is the client
+upgrade, remove, and configure applications on Windows client computers. This tool is the client
 interface to the Windows Package Manager service.
 
 > [!NOTE]
