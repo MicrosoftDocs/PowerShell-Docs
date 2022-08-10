@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/21/2022
+ms.date: 08/10/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Help
@@ -43,23 +43,24 @@ your computer. You need not restart PowerShell to make the change effective. You
 for a module or if your help files are outdated, `Update-Help` downloads the newest help files. The
 help files can be downloaded and installed from the internet or a file share.
 
-Without parameters, `Update-Help` updates the help files for modules in the session and for all
-installed modules that support Updatable Help. Modules that are installed but not loaded in the
-current session are included. PowerShell modules are stored in a location listed in the
-`$env:PSModulePath` environment variable. For more information, see
-[about_Updatable_Help](./About/about_Updatable_Help.md).
+Without parameters, `Update-Help` updates the help files for modules that support updateable help
+and are loaded in the session or installed in a location included in the `$env:PSModulePath`. For
+more information, see [about_Updatable_Help](./About/about_Updatable_Help.md).
 
-You can use the **Module** parameter to update help files for a particular module. Use the
-**UICulture** parameter to download help files in multiple languages and locales.
+`Update-Help` checks the version of the help installed. If `Update-Help` can't find updated help
+files for a module it continues silently without displaying an error message. Use the **Force**
+parameter to skip the version check. Use the **Verbose** parameter to see status and progress
+details. Use the **Module** parameter to update help files for a particular module.
+
+If the cultural settings of your operating system are configured for a language that's not
+available for updateable help, `Update-Help` continues silently without downloading any help. Use
+the **UICulture** parameter to download help files in a supported language. Help is always available
+for the `en-US` locale.
 
 You can also use `Update-Help` on computers that aren't connected to the internet. First, use the
 `Save-Help`cmdlet to download help files from the internet and save them in a shared folder that's
 accessible to the system not connected to the internet. Then use the **SourcePath** parameter of
 `Update-Help` to download the updated help files from the shared and install them on the computer.
-
-You can automate help updates by adding the `Update-Help` cmdlet to your PowerShell profile. By
-default, `Update-Help` runs only one time per day on each computer. To override the once-per-day
-limit, use the **Force** parameter.
 
 The `Update-Help` cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -136,8 +137,8 @@ The **DestinationPath** parameter saves the files in the `\\Server01\Share\PSHel
 The `Invoke-Command` cmdlet runs remote `Update-Help` commands on multiple computers. The
 **ComputerName** parameter gets a list of remote computers from the **Servers.txt** file. The
 **ScriptBlock** parameter runs the `Update-Help` command and uses the **SourcePath** parameter to
-specify the file share that contains the updated help files. The **Credential** parameter specifies
-a user who can access the file share and run the remote `Update-Help` command.
+specify the file share containing the updated help files. The **Credential** parameter specifies a
+user who can access the file share and run the remote `Update-Help` command.
 
 ### Example 5: Get a list of updated help files
 
@@ -157,7 +158,7 @@ Update-Help -Module Microsoft.PowerShell.Utility -Verbose
 
 This example lists modules that support Updatable Help. The command uses the module's
 **HelpInfoUri** property to identify modules that support Updatable Help. The **HelpInfoUri**
-property contains an address that's redirected when the `Update-Help` cmdlet is run.
+property contains a URL that's redirected when the `Update-Help` cmdlet is run.
 
 ```powershell
 Get-Module -ListAvailable | Where-Object -Property HelpInfoUri
@@ -463,7 +464,7 @@ Accept wildcard characters: False
 ### -UICulture
 
 Specifies UI culture values that `Update-Help` uses to get updated help files. Enter one or more
-language codes, such as **es-ES**, a variable that contains culture objects, or a command that gets
+language codes, such as **es-ES**, a variable containing culture objects, or a command that gets
 culture objects, such as a `Get-Culture` or `Get-UICulture` command. Wildcard characters aren't
 permitted and you can't submit a partial language code, such as **de**.
 
@@ -578,16 +579,12 @@ modules, the commands that are installed together with PowerShell, and for modul
 files online. For example, `Get-Help Update-Help -Online`.
 
 Modules are the smallest unit of updatable help. You can't update help for a particular cmdlet. To
-find the module that contains a particular cmdlet, use the **ModuleName** property of the
-`Get-Command` cmdlet, for example, `(Get-Command Update-Help).ModuleName`.
+find the module containing a particular cmdlet, use the **ModuleName** property of the `Get-Command`
+cmdlet, for example, `(Get-Command Update-Help).ModuleName`.
 
 Because help files are installed in the module directory, the `Update-Help` cmdlet can install
 updated help file only for modules that are installed on the computer. However, the `Save-Help`
 cmdlet can save help for modules that aren't installed on the computer.
-
-If `Update-Help` can't find updated help files for a module, or can't find updated help in the
-specified language, it continues silently without displaying an error message. To see status and
-progress details, use the **Verbose** parameter.
 
 The `Update-Help` cmdlet was introduced in Windows PowerShell 3.0. It doesn't work in earlier
 versions of PowerShell. On computers that have both Windows PowerShell 2.0 and Windows
@@ -608,7 +605,8 @@ variable, import the module into the current session and then run an `Update-Hel
 module file or module manifest file.
 
 Any module can support Updatable Help. For instructions for supporting Updatable Help in the modules
-that you author, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
+that you author, see
+[Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
 The `Update-Help` and `Save-Help` cmdlets aren't supported on Windows Preinstallation Environment
 (Windows PE).
