@@ -8,14 +8,14 @@ title: Installing PowerShell on Windows
 There are multiple ways to install PowerShell in Windows. Each install method is designed to support
 different scenarios and workflows. Choose the method that best suits your needs.
 
-- [Winget](#winget) - Recommended way to install PowerShell in Windows clients.
-- [MSI package](#msi) - Best choice for enterprise deployment tools.
-- [ZIP package](#zip) - Easiest way to "side load" or install multiple versions.
-  This is the install method for Windows Nano Server, Windows IoT, and Arm-based systems.
+- [Winget](#winget) - Recommended way to install PowerShell on Windows clients
+- [MSI package](#msi) - Best choice for Windows Servers and enterprise deployment scenarios
+- [ZIP package](#zip) - Easiest way to "side load" or install multiple versions
+  - Use this method for Windows Nano Server, Windows IoT, and Arm-based systems
 - [.NET Global tool](#dotnet) - A good choice for .NET developers that install and use other global
-  tools.
+  tools
 - [Microsoft Store package](#msstore) - An easy way to install for casual users of PowerShell but
-  has limitations.
+  has limitations
 
 > [!NOTE]
 > The installation commands in this article are for the latest stable release of PowerShell. To
@@ -32,12 +32,14 @@ different scenarios and workflows. Choose the method that best suits your needs.
 
 ## <a id="winget" />Install PowerShell using Winget (recommended)
 
-Winget, the Windows Package Manager, is a command-line tool enables developers to discover, install,
+Winget, the Windows Package Manager, is a command-line tool enables users to discover, install,
 upgrade, remove, and configure applications on Windows client computers. This tool is the client
-interface to the Windows Package Manager service.
+interface to the Windows Package Manager service. The `winget` command-line tool is bundled with
+Windows 11 and modern versions of Windows 10 by default as the **App Installer**.
 
 > [!NOTE]
 > See the [winget documentation][winget] for a list of system requirements and install instructions.
+> `Winget` does not currently run on Windows servers.
 
 The following commands can be used to install PowerShell using the published `winget` packages:
 
@@ -51,7 +53,7 @@ winget search Microsoft.PowerShell
 Name               Id                           Version Source
 ---------------------------------------------------------------
 PowerShell         Microsoft.PowerShell         7.2.5.0 winget
-PowerShell Preview Microsoft.PowerShell.Preview 7.3.0.3 winget
+PowerShell Preview Microsoft.PowerShell.Preview 7.3.0.6 winget
 ```
 
 Install PowerShell or PowerShell Preview using the `id` parameter
