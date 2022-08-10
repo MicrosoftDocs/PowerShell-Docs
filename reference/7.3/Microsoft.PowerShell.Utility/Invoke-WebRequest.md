@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/29/2022
+ms.date: 08/08/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -83,7 +83,7 @@ the response and returns collections of links, images, and other significant HTM
 This cmdlet was introduced in PowerShell 3.0.
 
 Beginning in PowerShell 7.0, `Invoke-WebRequest` supports proxy configuration defined by environment
-variables. See the [Notes](#notes) section of this article.
+variables. See the [Notes][1] section of this article.
 
 > [!IMPORTANT]
 > The examples in this article reference hosts in the `contoso.com` domain. This is a fictitious
@@ -121,11 +121,16 @@ filtered results are piped to `Select-Object` to select the **Name** and **Value
 This example shows how to use the `Invoke-WebRequest` cmdlet with a stateful web service.
 
 ```powershell
-$Body = @{
-    User = 'jdoe'
-    password = 'P@S$w0rd!'
+$LoginParameters = @{
+    Uri             = 'https://www.contoso.com/login/'
+    SessionVariable = 'Session'
+    Method          = 'POST'
+    Body            = @{
+        User     = 'jdoe'
+        Password = 'P@S$w0rd!'
+    }
 }
-$LoginResponse = Invoke-WebRequest 'https://www.contoso.com/login/' -SessionVariable 'Session' -Body $Body -Method 'POST'
+$LoginResponse = Invoke-WebRequest @LoginParameters
 $ProfileResponse = Invoke-WebRequest 'https://www.contoso.com/profile/' -WebSession $Session
 ```
 
@@ -158,8 +163,7 @@ $Response = Invoke-WebRequest -Uri "https://aka.ms/pscore6-docs"
 $Stream = [System.IO.StreamWriter]::new('.\docspage.html', $false, $Response.Encoding)
 try {
     $Stream.Write($Response.Content)
-}
-finally {
+} finally {
     $Stream.Dispose()
 }
 ```
@@ -244,9 +248,7 @@ try
     $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost"
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
-}
-catch
-{
+} catch {
     $StatusCode = $_.Exception.Response.StatusCode.value__
 }
 $StatusCode
@@ -259,18 +261,7 @@ $StatusCode
 The terminating error is caught by the `catch` block, which retrieves the **StatusCode** from the
 **Exception** object.
 
-### Example 8: Send a request using HTTP 2.0
-
-This example gets the links in a web page using the HTTP 2.0 protocol. It uses the
-`Invoke-WebRequest` cmdlet to get the web page content. Then it uses the **Links** property of the
-**BasicHtmlWebResponseObject** that `Invoke-WebRequest` returns, and the **Href** property of each
-link.
-
-```powershell
-(Invoke-WebRequest -Uri 'https://aka.ms/pscore6-docs' -HttpVersion 2.0).Links.Href
-```
-
-### Example 9: Download multiple files at the same time
+### Example 8: Download multiple files at the same time
 
 The `Invoke-WebRequest` cmdlet can only download one file at a time. The following example uses
 `Start-ThreadJob` to create multiple thread jobs to download multiple files at the same time.
@@ -311,6 +302,76 @@ Wait-Job -Job $jobs
 foreach ($job in $jobs) {
     Receive-Job -Job $job
 }
+```
+
+### Example 9: Skipping Header Validation
+
+By default, the `Invoke-WebRequest` cmdlet validates the values of well-known headers that have a
+standardards-defined value format. The following example shows how this validation can raise an
+error and how you can use the **SkipHeaderValidation** parameter to avoid validating values for
+endpoints that tolerate invalidly formatted values.
+
+```powershell
+$Uri = 'https://httpbin.org/headers'
+$InvalidHeaders = @{
+    'If-Match' = '12345'
+}
+
+Invoke-WebRequest -Uri $Uri -Headers $InvalidHeaders
+
+Invoke-WebRequest -Uri $Uri -Headers $InvalidHeaders -SkipHeaderValidation
+```
+
+```Output
+Invoke-WebRequest: The format of value '12345' is invalid.
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : {
+                      "headers": {
+                        "Host": "httpbin.org",
+                        "If-Match": "12345",
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.19044; en-US) PowerShell/7.2.5",
+                        "X-Amzn-Trace-Id": …
+RawContent        : HTTP/1.1 200 OK
+                    Date: Mon, 08 Aug 2022 16:24:24 GMT
+                    Connection: keep-alive
+                    Server: gunicorn/19.9.0
+                    Access-Control-Allow-Origin: *
+                    Access-Control-Allow-Credentials: true
+                    Content-Type: application…
+Headers           : {[Date, System.String[]], [Connection, System.String[]], [Server, System.String[]], [Access-Control-Allow-Origin, System.String[]]…}
+Images            : {}
+InputFields       : {}
+Links             : {}
+RawContentLength  : 249
+RelationLink      : {}
+```
+
+[httpbin.org][2] is a service that returns information about web requests and responses for
+troubleshooting. The `$Uri` variable is assigned to the `/headers` endpoint of the service, which
+returns a request's headers as the content in its response.
+
+The `If-Match` request header is defined in [RFC-7232 section 3.1][3] and requires the value for
+that header to be defined with surrounding quotes. The `$InvalidHeaders` variable is assigned a hash
+table where the value of `If-Match` is invalid because it's defined as `12345` instead of `"12345"`.
+
+Calling `Invoke-WebRequest` with the invalid headers returns an error reporting that the formatted
+value is invalid. The request is not sent to the endpoint.
+
+Calling `Invoke-WebRequest` with the **SkipHeaderValidation** parameter ignores the validation
+failure and sends the request to the endpoint. Because the endpoint tolerates non-compliant header
+values, the cmdlet returns the response object without error.
+
+### Example 10: Send a request using HTTP 2.0
+
+This example gets the links in a web page using the HTTP 2.0 protocol. It uses the
+`Invoke-WebRequest` cmdlet to get the web page content. Then it uses the **Links** property of the
+**BasicHtmlWebResponseObject** that `Invoke-WebRequest` returns, and the **Href** property of each
+link.
+
+```powershell
+(Invoke-WebRequest -Uri 'https://aka.ms/pscore6-docs' -HttpVersion 2.0).Links.Href
 ```
 
 ## PARAMETERS
@@ -490,8 +551,7 @@ Credentials are stored in a [PSCredential](/dotnet/api/system.management.automat
 object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).
 
 > [!NOTE]
-> For more information about **SecureString** data protection, see
-> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+> For more information about **SecureString** data protection, see [How secure is SecureString?][6].
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -1184,9 +1244,9 @@ The default user agent is similar to
 `Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.15063; en-US) PowerShell/6.0.0` with slight
 variations for each operating system and platform.
 
-To test a website with the standard user agent string that's used by most internet browsers, use
-the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class,
-such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
+To test a website with the standard user agent string that's used by most internet browsers, use the
+properties of the [PSUserAgent][7] class, such as Chrome, FireFox, InternetExplorer, Opera, and
+Safari.
 
 For example, the following command uses the user agent string for Internet Explorer:
 `Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`
@@ -1240,8 +1300,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters][8].
 
 ## INPUTS
 
@@ -1257,12 +1316,10 @@ You can pipe the body of a web request to `Invoke-WebRequest`.
 
 Beginning with PowerShell 6.0.0 `Invoke-WebRequest` supports basic parsing only.
 
-For more information, see
-[BasicHtmlWebResponseObject](/dotnet/api/microsoft.powershell.commands.basichtmlwebresponseobject).
+For more information, see [BasicHtmlWebResponseObject][9].
 
 Because of changes in .NET Core 3.1, PowerShell 7.0 and higher use the
-[HttpClient.DefaultProxy](/dotnet/api/system.net.http.httpclient.defaultproxy?view=netcore-3.1)
-Property to determine the proxy configuration.
+[HttpClient.DefaultProxy][10] Property to determine the proxy configuration.
 
 The value of this property is determined by your platform:
 
@@ -1284,8 +1341,23 @@ are:
 
 ## RELATED LINKS
 
-[Invoke-RestMethod](Invoke-RestMethod.md)
+[Invoke-RestMethod][11]
 
-[ConvertFrom-Json](ConvertFrom-Json.md)
+[ConvertFrom-Json][12]
 
-[ConvertTo-Json](ConvertTo-Json.md)
+[ConvertTo-Json][13]
+
+<!-- Reference Links -->
+[1]: #notes
+[2]: https://httpbin.org/
+[3]: https://www.rfc-editor.org/rfc/rfc7232.html#section-3.1
+[4]: /dotnet/api/system.management.automation.pscredential
+[5]: /dotnet/api/system.security.securestring
+[6]: /dotnet/api/system.security.securestring#how-secure-is-securestring
+[7]: /dotnet/api/microsoft.powershell.commands.psuseragent
+[8]: https://go.microsoft.com/fwlink/?LinkID=113216
+[9]: /dotnet/api/microsoft.powershell.commands.basichtmlwebresponseobject
+[10]: /dotnet/api/system.net.http.httpclient.defaultproxy?view=netcore-3.1
+[11]: Invoke-RestMethod.md
+[12]: ConvertFrom-Json.md
+[13]: ConvertTo-Json.md

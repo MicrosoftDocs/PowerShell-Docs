@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/14/2020
+ms.date: 08/10/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Host
@@ -107,17 +107,14 @@ parameter.
 ```powershell
 # The following two statements can be used to effectively suppress output from Write-Host
 Write-Host "I won't print" -InformationAction Ignore
-Write-Host "I won't print" 6>$null
-```
-
-```output
-
+Write-Host "I won't print" 6> $null
 ```
 
 These commands effectively suppress output of the `Write-Host` cmdlet. The first one uses the
 `InformationAction` parameter with the `Ignore` Value to suppress output to the information stream.
 The second example redirects the information stream of the command to the `$null` variable and
-thereby suppresses it.
+thereby suppresses it. For more information, see
+[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md).
 
 ## PARAMETERS
 
@@ -239,7 +236,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

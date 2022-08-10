@@ -355,7 +355,7 @@ $SingleArray = ,1
 Write-Output (,1)
 ```
 
-Since `Write-Object` expects an argument, you must put the expression in
+Since `Write-Output` expects an argument, you must put the expression in
 parentheses.
 
 ### Dot sourcing operator `.`

@@ -14,7 +14,7 @@
     The username to retrieve permissions for.
 .EXAMPLE
     Get-AuthorPermission -Owner foo -Repo bar -Author baz
-    
+
     The cmdlet checks the `baz` user's permissions in the `https://github.com/foo/bar` repository.
 #>
 
@@ -28,7 +28,7 @@ function Get-AuthorPermission {
         [parameter(Mandatory)]
         [string]$Author
     )
-  
+
     begin {
         $ApiQueryParams = @(
             'api', "repos/$Owner/$Repo/collaborators/$Author/permission"
@@ -57,11 +57,11 @@ function Get-AuthorPermission {
             }
         )
     }
-  
+
     process {
         [string]$ResultString = gh @ApiQueryParams 2>&1
         $ExitCode = $LASTEXITCODE
-      
+
         if ($ExitCode -ne 0) {
             $ErrorParameters = @{
                 ResultString = $ResultString
@@ -71,11 +71,18 @@ function Get-AuthorPermission {
                 ErrorID      = 'GitHub.ApiQueryFailure'
             }
             $Record = New-CliErrorRecord @ErrorParameters
-            $PSCmdlet.ThrowTerminatingError($Record)
+
+            # If an error record is returned, the error is unhandled and the action should fail.
+            # If no error record is returned, the error is acceptable and the action should exit.
+            if ($Record) {
+                $PSCmdlet.ThrowTerminatingError($Record)
+            } else {
+                exit
+            }
         }
-  
+
         $ResultString | ConvertFrom-Json | Select-Object -Property $ReturnProperties
     }
-  
+
     end {}
 }
