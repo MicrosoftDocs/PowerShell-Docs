@@ -25,7 +25,7 @@ function Get-OpenPRWithoutExpectation {
         [parameter(Mandatory)]
         [string]$Repo
     )
-  
+
     begin {
         $ApiQueryParams = @(
             'search', 'prs'
@@ -48,13 +48,13 @@ function Get-OpenPRWithoutExpectation {
             }
         )
     }
-  
+
     process {
         [string[]]$ResultString = gh @ApiQueryParams 2>&1
         Write-Verbose -Message "Command:`n`tgh $($ApiQueryParams -join ' ')"
         Write-Verbose -Message "Result String:`n`t$($ResultString -join "`n`t")"
         $ExitCode = $LASTEXITCODE
-      
+
         if ($ExitCode -ne 0) {
             $ErrorParameters = @{
                 ResultString = ($ResultString -join "`n")
@@ -64,11 +64,18 @@ function Get-OpenPRWithoutExpectation {
                 ErrorID      = 'GitHub.ApiQueryFailure'
             }
             $Record = New-CliErrorRecord @ErrorParameters
-            $PSCmdlet.ThrowTerminatingError($Record)
+
+            # If an error record is returned, the error is unhandled and the action should fail.
+            # If no error record is returned, the error is acceptable and the action should exit.
+            if ($Record) {
+                $PSCmdlet.ThrowTerminatingError($Record)
+            } else {
+                exit
+            }
         }
-  
+
         $ResultString | ConvertFrom-Json | Select-Object -Property $ReturnProperties
     }
-  
+
     end {}
 }
