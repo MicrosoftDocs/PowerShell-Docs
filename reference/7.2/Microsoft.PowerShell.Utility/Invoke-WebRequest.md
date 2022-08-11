@@ -85,7 +85,7 @@ the response and returns collections of links, images, and other significant HTM
 This cmdlet was introduced in PowerShell 3.0.
 
 Beginning in PowerShell 7.0, `Invoke-WebRequest` supports proxy configuration defined by environment
-variables. See the [Notes][1] section of this article.
+variables. See the [Notes](#notes) section of this article.
 
 > [!IMPORTANT]
 > The examples in this article reference hosts in the `contoso.com` domain. This is a fictitious
@@ -350,13 +350,15 @@ RawContentLength  : 249
 RelationLink      : {}
 ```
 
-[httpbin.org][2] is a service that returns information about web requests and responses for
-troubleshooting. The `$Uri` variable is assigned to the `/headers` endpoint of the service, which
-returns a request's headers as the content in its response.
+[httpbin.org](https://httpbin.org/) is a service that returns information about web requests and
+responses for troubleshooting. The `$Uri` variable is assigned to the `/headers` endpoint of the
+service, which returns a request's headers as the content in its response.
 
-The `If-Match` request header is defined in [RFC-7232 section 3.1][3] and requires the value for
-that header to be defined with surrounding quotes. The `$InvalidHeaders` variable is assigned a hash
-table where the value of `If-Match` is invalid because it's defined as `12345` instead of `"12345"`.
+The `If-Match` request header is defined in
+[RFC-7232 section 3.1](https://www.rfc-editor.org/rfc/rfc7232.html#section-3.1) and requires the
+value for that header to be defined with surrounding quotes. The `$InvalidHeaders` variable is
+assigned a hash table where the value of `If-Match` is invalid because it's defined as `12345`
+instead of `"12345"`.
 
 Calling `Invoke-WebRequest` with the invalid headers returns an error reporting that the formatted
 value is invalid. The request is not sent to the endpoint.
@@ -538,11 +540,12 @@ options. When used alone, it only supplies credentials to the remote server if t
 sends an authentication challenge request. When used with **Authentication** options, the
 credentials are explicitly sent.
 
-Credentials are stored in a [PSCredential][4] object and the password is stored as a
-[SecureString][5].
+Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential)
+object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).
 
 > [!NOTE]
-> For more information about **SecureString** data protection, see [How secure is SecureString?][6].
+> For more information about **SecureString** data protection, see
+> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -1213,8 +1216,8 @@ The default user agent is similar to
 variations for each operating system and platform.
 
 To test a website with the standard user agent string that's used by most internet browsers, use the
-properties of the [PSUserAgent][7] class, such as Chrome, FireFox, InternetExplorer, Opera, and
-Safari.
+properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class, such
+as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
 For example, the following command uses the user agent string for Internet Explorer:
 `Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`
@@ -1268,7 +1271,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters][8].
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -1284,10 +1288,12 @@ You can pipe the body of a web request to `Invoke-WebRequest`.
 
 Beginning with PowerShell 6.0.0 `Invoke-WebRequest` supports basic parsing only.
 
-For more information, see [BasicHtmlWebResponseObject][9].
+For more information, see
+[BasicHtmlWebResponseObject](/dotnet/api/microsoft.powershell.commands.basichtmlwebresponseobject).
 
 Because of changes in .NET Core 3.1, PowerShell 7.0 and higher use the
-[HttpClient.DefaultProxy][10] Property to determine the proxy configuration.
+[HttpClient.DefaultProxy](/dotnet/api/system.net.http.httpclient.defaultproxy?view=netcore-3.1)
+Property to determine the proxy configuration.
 
 The value of this property is determined by your platform:
 
@@ -1309,23 +1315,8 @@ are:
 
 ## RELATED LINKS
 
-[Invoke-RestMethod][11]
+[Invoke-RestMethod](Invoke-RestMethod.md)
 
-[ConvertFrom-Json][12]
+[ConvertFrom-Json](ConvertFrom-Json.md)
 
-[ConvertTo-Json][13]
-
-<!-- Reference Links -->
-[1]: #notes
-[2]: https://httpbin.org/
-[3]: https://www.rfc-editor.org/rfc/rfc7232.html#section-3.1
-[4]: /dotnet/api/system.management.automation.pscredential
-[5]: /dotnet/api/system.security.securestring
-[6]: /dotnet/api/system.security.securestring#how-secure-is-securestring
-[7]: /dotnet/api/microsoft.powershell.commands.psuseragent
-[8]: https://go.microsoft.com/fwlink/?LinkID=113216
-[9]: /dotnet/api/microsoft.powershell.commands.basichtmlwebresponseobject
-[10]: /dotnet/api/system.net.http.httpclient.defaultproxy?view=netcore-3.1
-[11]: Invoke-RestMethod.md
-[12]: ConvertFrom-Json.md
-[13]: ConvertTo-Json.md
+[ConvertTo-Json](ConvertTo-Json.md)
