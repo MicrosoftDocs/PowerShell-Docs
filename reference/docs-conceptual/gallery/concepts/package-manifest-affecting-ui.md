@@ -9,7 +9,7 @@ This article explains how the metadata in your packages is used by the PowerShel
 modules, the metadata is stored in the module manifest. For scripts, the metadata is store using
 comment-based keywords. The following cmdlets are use to create or update this metadata:
 
-- [New-ModuleManifest](xref:PowerShellGet.New-ModuleManifest)
+- [New-ModuleManifest](xref:Microsoft.PowerShell.Core.New-ModuleManifest)
 - [Update-ModuleManifest](xref:PowerShellGet.Update-ModuleManifest)
 - [New-ScriptFileInfo](xref:PowerShellGet.New-ScriptFileInfo)
 - [Update-ScriptFileInfo](xref:PowerShellGet.Update-ScriptFileInfo)
