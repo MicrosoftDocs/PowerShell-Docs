@@ -1,7 +1,7 @@
 ---
 description: ShouldProcess is an important feature that is often overlooked is. The WhatIf and Confirm parameters make it easy to add to your functions.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/05/2021
+ms.date: 08/11/2022
 title: Everything you wanted to know about ShouldProcess
 ---
 # Everything you wanted to know about ShouldProcess
@@ -516,7 +516,7 @@ function Test-ShouldProcess {
         [Switch]$Force
     )
 
-    if ($Force){
+    if ($Force -and -not $Confirm){
         $ConfirmPreference = 'None'
     }
 
@@ -542,7 +542,7 @@ param(
 Focusing in on the `-Force` logic here:
 
 ```powershell
-if ($Force){
+if ($Force -and -not $Confirm){
     $ConfirmPreference = 'None'
 }
 ```
@@ -553,7 +553,7 @@ If the user specifies `-Force`, we want to suppress the confirm prompt unless th
 `$ConfirmPreference` to none, disabling prompt for confirmation.
 
 ```powershell
-if ($Force -or $PSCmdlet.ShouldProcess('TARGET')){
+if ($PSCmdlet.ShouldProcess('TARGET')){
         Write-Output "Some Action"
     }
 ```
