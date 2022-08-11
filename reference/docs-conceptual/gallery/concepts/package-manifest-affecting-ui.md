@@ -9,10 +9,10 @@ This article explains how the metadata in your packages is used by the PowerShel
 modules, the metadata is stored in the module manifest. For scripts, the metadata is store using
 comment-based keywords. The following cmdlets are use to create or update this metadata:
 
-- [New-ModuleManifest](xref:Microsoft.PowerShell.Core.New-ModuleManifest)
-- [Update-ModuleManifest](xref:PowerShellGet.Update-ModuleManifest)
-- [New-ScriptFileInfo](xref:PowerShellGet.New-ScriptFileInfo)
-- [Update-ScriptFileInfo](xref:PowerShellGet.Update-ScriptFileInfo)
+- [New-ModuleManifest][1]
+- [Update-ModuleManifest][2]
+- [New-ScriptFileInfo][3]
+- [Update-ScriptFileInfo][4]
 
 ## PowerShell Gallery feature elements controlled by the module manifest
 
@@ -23,22 +23,20 @@ by the module manifest.
 
 - **Version** - The version displayed is the version string in the metadata, and a prerelease label
   if is specified. The specified prerelease string is appended to the **ModuleVersion**. For
-  information about prerelease strings in modules, see
-  [Prerelease Module Versions](module-prerelease-support.md).
+  information about prerelease strings in modules, see [Prerelease Module Versions][5].
 
 - **Description** - This is the **Description** in the module manifest.
 
 - **Require license acceptance** - A module can require that the user accept a license, by setting
   `RequireLicenseAcceptance = $true`, supplying a **LicenseURI**, and providing a `license.txt` file
-  in the root of the module folder. For more information, see
-  [Require License Acceptance](../how-to/working-with-packages/packages-that-require-license-acceptance.md).
+  in the root of the module folder. For more information, see [Require License Acceptance][6].
 
 - **Release notes** - This information is comes from the **ReleaseNotes** section, under
   `PSData\PrivateData`.
 
 - **Owners** - Owners are the list of users in the PowerShell Gallery who can update a package. The
   owner list isn't included in the package manifest. Additional documentation describes how to
-  [manage item owners](../how-to/publishing-packages/managing-package-owners.md).
+  [manage item owners][7].
 
 - **Author** - This is included in the module manifest as the **Author**. The Author field is often
   used to specify a company or organization associated with a package.
@@ -51,7 +49,7 @@ by the module manifest.
   system. This is the NuGet package manifest for the package and can be ignored.
 
 - **Tags** - **Tags** are included under `PrivateData\PSData` in the module manifest. Tags have
-  specific requirements and meanings that are described in the [Tag Details](#tag-details) section.
+  specific requirements and meanings that are described in the [Tag Details][8] section.
 
 - **Cmdlets** - This is provided in the module manifest using **CmdletsToExport**. It's a best
   practice to explicitly list the cmdlet names rather than using the wildcard `*`. Having a list
@@ -65,14 +63,13 @@ by the module manifest.
   only supported for modules in PowerShell 5.0 and higher.
 
 - **Role capabilities** - Roles are listed when the module has one or more role capability (`.psrc`)
-  files. These files are used by JEA. For more information, see
-  [role capabilities](/powershell/scripting/learn/remoting/jea/role-capabilities).
+  files. These files are used by JEA. For more information, see [role capabilities][9].
 
 - **PowerShell Editions** - For modules designed for PowerShell 5.0 and lower, this is controlled
   using **Tags**. For Desktop, use the tag PSEdition_Desktop, and for core, use the tag
   PSEdition_Core. For modules designed for PowerShell 5.1 and higher, there is a
   **CompatiblePSEditions** key in the manifest. For more information, see
-  [PSEdition support for modules](module-psedition-support.md).
+  [PSEdition support for modules][10].
 
 - **Dependencies** - This is provided in the manifest using **RequiredModules**.
 
@@ -91,7 +88,7 @@ by the module manifest.
   > [!IMPORTANT]
   > If a license isn't provided via the **LicenseURI** or within the package then the Terms of Use
   > for the PowerShell Gallery apply to the package. For more information, see the
-  > [Terms of Use](https://www.powershellgallery.com/policies/Terms).
+  > [Terms of Use][11].
 
 - **Icon** - A link is provided for modules in the `PrivateData\PSData` section of the module
   manifest by specifying an **IconURI**. The URI should point to an 85x85 image with transparency
@@ -108,22 +105,21 @@ by the comment-based metadata in a script file.
 - **Version** - The version displayed is the version string in the metadata, and a prerelease label
   if is specified. The value comes from the `.VERSION` keyword in the metadata comment block. When
   publishing prerelease script, append the prerelease string to the version. For information about
-  specifying prerelease strings in modules, see
-  [Prerelease versions of scripts](script-prerelease-support.md).
+  specifying prerelease strings in modules, see [Prerelease versions of scripts][12].
 
 - **Description** - This information comes from the `.DESCRIPTION` keyword in the comment-based help
   of a script file.
 
 - **Require license acceptance** - A script can require that the user accept a license by setting
   `.LICENSEURI` keyword in the metadata comment block. For more information, see
-  [Requiring license acceptance for scripts](script-license-acceptance.md).
+  [Requiring license acceptance for scripts][13].
 
 - **Release notes** - This information comes from the `.RELEASENOTES` keyword in the comment-based
   metadata of a script file.
 
 - **Owners** - Owners are the list of users in the PowerShell Gallery who can update a package. The
   owner list isn't included in the package manifest. For more information, see
-  [manage item owners](../how-to/publishing-packages/managing-package-owners.md).
+  [manage item owners][7].
 
 - **Author** - This information comes from the `.AUTHOR` keyword in the comment-based metadata of a
   script file. The Author field is often used to specify a company or organization associated with a
@@ -139,13 +135,13 @@ by the comment-based metadata in a script file.
 
 - **Tags** - *This information comes from the `.TAGS` keyword in the comment-based metadata of a
   script file. Tags have specific requirements and meanings that are described in the
-  [Tag Details](#tag-details) section.
+  [Tag Details][8] section.
 
 - **PowerShell Editions** - For modules designed for PowerShell 5.0 and lower, this is controlled
   using **Tags**. For Desktop, use the tag PSEdition_Desktop, and for core, use the tag
   PSEdition_Core. For modules designed for PowerShell 5.1 and higher, there is a
   **CompatiblePSEditions** key in the manifest. For more information, see
-  [PSEdition support for modules](module-psedition-support.md).
+  [PSEdition support for modules][10].
 
 - **Version History** - Shows a list of versions of the module that have been published to the
   Gallery. Packages hidden using the **Delete** feature aren't displayed in the version history
@@ -160,7 +156,7 @@ by the comment-based metadata in a script file.
   > [!IMPORTANT]
   > If a license isn't provided via the `.LICENSEURI` or within the package then the Terms of Use
   > for the PowerShell Gallery apply to the package. For more information, see the
-  > [Terms of Use](https://www.powershellgallery.com/policies/Terms).
+  > [Terms of Use][11].
 
 - **Icon** - This information comes from the `.ICONURI` keyword in the comment-based metadata of a
   script file. The URI should point to an 85x85 image with transparency background. The URI **must**
@@ -273,3 +269,22 @@ best search results.
 | MSI               |                                                                                                 |
 | MacOS             |                                                                                                 |
 | PoshBot           |                                                                                                 |
+
+<!-- link references -->
+[1]: xref:Microsoft.PowerShell.Core.New-ModuleManifest
+[2]: xref:PowerShellGet.Update-ModuleManifest
+[3]: xref:PowerShellGet.New-ScriptFileInfo
+[4]: xref:PowerShellGet.Update-ScriptFileInfo
+[5]: module-prerelease-support.md
+[6]: ../how-to/working-with-packages/packages-that-require-license-acceptance.md
+[7]: ../how-to/publishing-packages/managing-package-owners.md
+[8]: #tag-details
+[9]: /powershell/scripting/learn/remoting/jea/role-capabilities
+[10]: module-psedition-support.md
+[11]: https://www.powershellgallery.com/policies/Terms
+[12]: script-prerelease-support.md
+[13]: script-license-acceptance.md
+[14]: ../how-to/publishing-packages/managing-package-owners.md
+[15]: #tag-details
+[16]: module-psedition-support.md
+[17]: https://www.powershellgallery.com/policies/Terms
