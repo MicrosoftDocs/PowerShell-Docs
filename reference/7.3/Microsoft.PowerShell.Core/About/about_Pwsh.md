@@ -18,30 +18,28 @@ command-line parameters and describes the syntax.
 ## Syntax
 
 ```
-pwsh[.exe]
-   [[-File] <filePath> [args]]
-   [-Command { - | <script-block> [-args <arg-array>]
-                 | <string> [<CommandParameters>] } ]
-   [-ConfigurationName <string>]
-   [-ConfigurationFile <string>]
-   [-CustomPipeName <string>]
-   [-EncodedCommand <Base64EncodedCommand>]
-   [-ExecutionPolicy <ExecutionPolicy>]
-   [-InputFormat {Text | XML}]
-   [-Interactive]
-   [-Login]
-   [-MTA]
-   [-NoExit]
-   [-NoLogo]
-   [-NonInteractive]
-   [-NoProfile]
-   [-OutputFormat {Text | XML}]
-   [-SettingsFile <SettingsFilePath>]
-   [-SSHServerMode]
-   [-STA]
-   [-Version]
-   [-WindowStyle <style>]
-   [-WorkingDirectory <directoryPath>]
+Usage: pwsh[.exe]
+    [-Login]
+    [[-File] <filePath> [args]]
+    [-Command { - | <script-block> [-args <arg-array>]
+                  | <string> [<CommandParameters>] } ]
+    [-ConfigurationName <string>]
+    [-CustomPipeName <string>]
+    [-EncodedCommand <Base64EncodedCommand>]
+    [-ExecutionPolicy <ExecutionPolicy>]
+    [-InputFormat {Text | XML}]
+    [-Interactive]
+    [-MTA]
+    [-NoExit]
+    [-NoLogo]
+    [-NonInteractive]
+    [-NoProfile]
+    [-NoProfileLoadTime]
+    [-OutputFormat {Text | XML}]
+    [-SettingsFile <filePath>]
+    [-SSHServerMode] [-STA]
+    [-Version] [-WindowStyle <style>]
+    [-WorkingDirectory <directoryPath>]
 
 pwsh[.exe] -h | -Help | -? | /?
 ```
@@ -133,10 +131,10 @@ pwsh -Command {Get-WinEvent -LogName security}
 ```
 
 In `cmd.exe`, there is no such thing as a script block (or **ScriptBlock**
-type), so the value passed to **Command** will _always_ be a string. You can
-write a script block inside the string, but instead of being executed it will
-behave exactly as though you typed it at a typical PowerShell prompt, printing
-the contents of the script block back out to you.
+type), so the value passed to **Command** is _always_ a string. You can write a
+script block inside the string, but instead of being executed it behaves
+exactly as though you typed it at a typical PowerShell prompt, printing the
+contents of the script block back out to you.
 
 A string passed to **Command** is still executed as PowerShell code, so the
 script block curly braces are often not required in the first place when
@@ -312,6 +310,11 @@ statement-terminating errors.
 ### -NoProfile | -nop
 
 Does not load the PowerShell profiles.
+
+### -NoProfileLoadTime
+
+Hides the PowerShell profile load time text shown at startup when the load time
+exceeds 500 milliseconds.
 
 ### -OutputFormat | -o | -of
 
