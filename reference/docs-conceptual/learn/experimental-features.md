@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 07/19/2022
+ms.date: 08/12/2022
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -276,6 +276,7 @@ When the preference variable is set to `Windows`, invocations of the following f
 use the `Legacy` style argument passing.
 
 - `cmd.exe`
+- `find.exe`
 - `cscript.exe`
 - `wscript.exe`
 - ending with `.bat`
