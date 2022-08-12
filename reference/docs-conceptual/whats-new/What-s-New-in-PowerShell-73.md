@@ -1,23 +1,14 @@
 ---
 title: What's New in PowerShell 7.3-preview.5
 description: New features and changes released in PowerShell 7.3-preview.5
-ms.date: 07/28/2022
+ms.date: 08/12/2022
 ---
 
 # What's New in PowerShell 7.3
 
 PowerShell 7.3 is the next preview release, built on .NET 7.0.
 
-PowerShell 7.3-preview.6 includes the following features, updates, and breaking changes.
-
-## Known issues in 7.3-preview.6
-
-These issues should be fixed in the next release of .NET 7 and included in a future preview of
-PowerShell 7.3.
-
-- `Test-Connection` is broken due to an intentional
-  [breaking change](https://github.com/dotnet/runtime/issues/66746) in .NET 7. It's tracked by
-  [#17018](https://github.com/PowerShell/PowerShell/issues/17018)
+PowerShell 7.3-preview.7 includes the following features, updates, and breaking changes.
 
 ## Improved error handling
 
@@ -40,20 +31,28 @@ PowerShell 7.3.
 - Fix tab completion within the script block specified for the `ValidateScriptAttribute`. (#14550)
   (Thanks @MartinGC94!)
 - Added tab completion for loop labels after `break`/`continue` (#16438) (Thanks @MartinGC94!)
-- Improve Hashtable completion in multiple scenarios (#16498)  (Thanks @MartinGC94!)
+- Improve Hashtable completion in multiple scenarios (#16498) (Thanks @MartinGC94!)
   - Parameter splatting
   - **Arguments** parameter for `Invoke-CimMethod`
   - **FilterHashtable** parameter for `Get-WinEvent`
   - **Property** parameter for the CIM cmdlets
   - Removes duplicates from member completion scenarios
-- Support forward slashes in network share (UNC path) completion (#17111) (#17117) (Thanks @sba923!)
-- Improve member auto completion (#16504) (Thanks @MartinGC94!)
+- Support forward slashes in network share (UNC path) completion (#17111) (Thanks @sba923!)
+- Improve member autocompletion (#16504) (Thanks @MartinGC94!)
 - Prioritize ValidateSet completions over Enums for parameters (#15257) (Thanks @MartinGC94!)
 - Add type inference support for generic methods with type parameters (#16951) (Thanks @MartinGC94!)
 - Improve type inference and completions (#16963) (Thanks @MartinGC94!)
   - Allows methods to be shown in completion results for `ForEach-Object -MemberName`
   - Prevents completion on expressions that return void like `([void](""))`
   - Allows non-default Class constructors to show up when class completion is based on the AST
+- Improve type inference for `$_` (#17716) (Thanks @MartinGC94!)
+- Fix type inference for **ICollection** (#17752) (Thanks @MartinGC94!)
+- Prevent braces from being removed when completing variables (#17751) (Thanks @MartinGC94!)
+- Add completion for index expressions for dictionaries (#17619) (Thanks @MartinGC94!)
+- Fix type completion for attribute tokens (#17484) (Thanks @MartinGC94!)
+- Improve dynamic parameter tab completion (#17661) (Thanks @MartinGC94!)
+- Avoid binding positional parameters when completing parameter in front of value (#17693) (Thanks
+  @MartinGC94!)
 
 ## Updated cmdlets
 
@@ -73,6 +72,14 @@ PowerShell 7.3.
 - Added the **Milliseconds** parameter to `New-TimeSpan` (#17621) (Thanks @NoMoreFood!)
 - Show optional parameters when displaying method definitions and overloads (#13799) (Thanks
   @eugenesmlv!)
+- Allow commands to still be executed even if the current working directory no longer exists
+  (#17579)
+- Add support for HTTPS with `Set-AuthenticodeSignature -TimeStampServer` (#16134) (Thanks
+  @Ryan-Hutchison-USAF!)
+- Render decimal numbers in a table using current culture (#17650)
+- Add type accelerator ordered for **OrderedDictionary** (#17804) (Thanks @fflaten!)
+- Add `find.exe` to legacy argument binding behavior for Windows (#17715)
+- Add `-noprofileloadtime` switch to pwsh (#17535) (Thanks @rkeithhill!)
 
 For a complete list of changes, see the [Change Log][CHANGELOG] in the GitHub repository.
 
@@ -89,17 +96,28 @@ PowerShell 7.3 introduces the following experimental features:
 - [PSNativeCommandErrorActionPreference][exp-error] - Adds the
   `$PSNativeCommandUseErrorActionPreference` variable to enable errors produced by native commands
   to be PowerShell errors.
-- [PSAMSIMethodInvocationLogging][exp-amsi] - Extends the data that is sent to AMSI for inspection
-  to include all invocations of .NET method members.
+- [PSAMSIMethodInvocationLogging][exp-amsi] - Extends the data sent to AMSI for inspection to
+  include all invocations of .NET method members.
+- Remove [PSNativePSPathResolution][exp-path] experimental feature
 
 For more information about the Experimental Features, see [Using Experimental Features][exp].
 
 ## Breaking Changes and Improvements
 
+- `Test-Connection` is broken due to an intentional
+  [breaking change](https://github.com/dotnet/runtime/issues/66746) in .NET 7. It's tracked by
+  [#17018](https://github.com/PowerShell/PowerShell/issues/17018)
 - Add `clean` block to script block as a peer to `begin`, `process`, and `end` to allow easy
   resource cleanup (#15177)
 - Change default for `$PSStyle.OutputRendering` to **Ansi**
 - Make `Out-String` and `Out-File` keep string input unchanged (#17455)
+- Move the type data definition of System.Security.AccessControl.ObjectSecurity to the
+  Microsoft.PowerShell.Security module (#16355) (Thanks @iSazonov!)
+  - Before this change, a user doesn't need to explicitly import the
+    **Microsoft.PowerShell.Security** module to use the code properties defined for an instance of
+    **System.Security.AccessControl.ObjectSecurity**.
+  - After this change, a user needs to explicitly import **Microsoft.PowerShell.Security** module in
+    order to use those code properties and code methods.
 
 <!-- end of content -->
 <!-- reference links -->
@@ -110,3 +128,4 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [exp-strict]: ../learn/experimental-features.md#psstrictmodeassignment
 [exp-error]: ../learn/experimental-features.md#psnativecommanderroractionpreference
 [exp-amsi]: ../learn/experimental-features.md?#psamsimethodinvocationlogging
+[exp-path]: ../learn/experimental-features.md?#psnativepspathresolution
