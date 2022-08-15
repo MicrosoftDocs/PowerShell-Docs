@@ -29,7 +29,7 @@ On RHEL 7:
 curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
 
 # Install PowerShell
-sudo yum install -y powershell
+sudo yum install --assumeyes powershell
 
 # Start PowerShell
 pwsh
@@ -45,7 +45,7 @@ On RHEL 8:
 curl https://packages.microsoft.com/config/rhel/8/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
 
 # Install PowerShell
-sudo dnf install powershell
+sudo dnf install --assumeyes powershell
 
 # Start PowerShell
 pwsh
