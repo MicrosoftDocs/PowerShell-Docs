@@ -197,8 +197,8 @@ Otherwise you will have to use SSH key based user authentication.
 PS> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
-This example shows how to start an interactive session using SSH. It uses the **Port** parameter to
-specify the port to use and the **KeyFilePath** parameter to specify an RSA key used to authenticate
+This example shows how to start an interactive session using SSH. It uses the number after the `:` (22) 
+to specify the **Port** to use and the **KeyFilePath** parameter to specify an RSA key used to authenticate
 the user on the remote computer.
 
 ## PARAMETERS
