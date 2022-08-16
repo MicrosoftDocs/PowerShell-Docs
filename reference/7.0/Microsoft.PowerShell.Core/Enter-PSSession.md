@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/23/2020
+ms.date: 08/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
@@ -133,7 +133,7 @@ The fourth command confirms that the Process.txt file is on the remote computer.
 
 ```powershell
 PS C:\> Enter-PSSession -ComputerName Server01
-[Server01]: PS>
+[Server01]: PS C:\>
 [Server01]: PS C:\> Get-Process PowerShell > C:\ps-test\Process.txt
 [Server01]: PS C:\> exit
 PS C:\>
@@ -188,18 +188,18 @@ PS> Enter-PSSession -HostName UserA@LinuxServer01
 ```
 
 This example shows how to start an interactive session using Secure Shell (SSH). If SSH is
-configured on the remote computer to prompt for passwords then you will get a password prompt.
-Otherwise you will have to use SSH key based user authentication.
+configured on the remote computer to use passwords then you are prompted to enter a password.
+Otherwise, you must use key-based user authentication.
 
-### Example 7: Start an interactive session using SSH and specify the Port and user authentication key
+### Example 7: Start an interactive session using SSH with a port and user authentication key
 
 ```powershell
-PS> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\userAKey_rsa
+PS> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\sshkeys\userAKey_rsa
 ```
 
-This example shows how to start an interactive session using SSH. It uses the **Port** parameter to
-specify the port to use and the **KeyFilePath** parameter to specify an RSA key used to authenticate
-the user on the remote computer.
+This example shows how to start an interactive session using SSH. The username and SSH port number
+are specified as parts of the value of the **HostName** parameter. The **KeyFilePath** parameter
+specifies the location of an RSA key used to authenticate the user on the remote computer.
 
 ## PARAMETERS
 
@@ -224,7 +224,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -276,11 +276,12 @@ of the Windows operating system.
 For more information about the values of this parameter, see
 [AuthenticationMechanism Enum](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
-Caution: Credential Security Support Provider (CredSSP) authentication, in which the user's
-credentials are passed to a remote computer to be authenticated, is designed for commands that
-require authentication on more than one resource, such as accessing a remote network share. This
-mechanism increases the security risk of the remote operation. If the remote computer is
-compromised, the credentials that are passed to it can be used to control the network session.
+> [!CAUTION]
+> Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are
+> passed to a remote computer to be authenticated, is designed for commands that require
+> authentication on more than one resource, such as accessing a remote network share. This mechanism
+> increases the security risk of the remote operation. If the remote computer is compromised, the
+> credentials that are passed to it can be used to control the network session.
 
 ```yaml
 Type: System.Management.Automation.Runspaces.AuthenticationMechanism
@@ -332,9 +333,9 @@ computer. For instructions for adding a computer name to the TrustedHosts list, 
 Computer to the Trusted Host List" in
 [about_Remote_Troubleshooting](About/about_Remote_Troubleshooting.md).
 
-Note: In Windows Vista and later versions of the Windows operating system, to include the local
-computer in the value of the **ComputerName** parameter, you must start PowerShell with the Run as
-administrator option.
+> [!NOTE]
+> On the Windows operating system, to include the local computer in the value of the
+> **ComputerName** parameter, you must start PowerShell with the Run as administrator option.
 
 ```yaml
 Type: System.String
@@ -486,7 +487,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -653,7 +654,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -732,7 +733,7 @@ Accepted values: true
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -754,7 +755,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: powershell
+Default value: Powershell
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -809,7 +810,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -892,7 +893,7 @@ is available. To cancel the `Enter-PSSession` command, press <kbd>CTRL</kbd>+<kb
 
 The **HostName** parameter set was included starting with PowerShell 6.0. It was added to provide
 PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple
-platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where
+platforms (Windows, Linux, macOS) and PowerShell remoting works over these platforms where
 PowerShell and SSH are installed and configured. This is separate from the previous Windows only
 remoting that is based on WinRM and much of the WinRM specific features and limitations do not
 apply. For example, WinRM based quotas, session options, custom endpoint configuration, and

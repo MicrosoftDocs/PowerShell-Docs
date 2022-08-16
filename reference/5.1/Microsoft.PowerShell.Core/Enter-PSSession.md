@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/15/2019
+ms.date: 08/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
@@ -108,8 +108,10 @@ session as text.
 
 The first command uses the `Enter-PSSession` cmdlet to start an interactive session with Server01, a
 remote computer. When the session starts, the command prompt changes to include the computer name.
-The second command gets the Windows PowerShell process and redirects the output to the Process.txt
-file. The command is submitted to the remote computer, and the file is saved on the remote computer.
+
+The second command gets the PowerShell process and redirects the output to the Process.txt file. The
+command is submitted to the remote computer, and the file is saved on the remote computer.
+
 The third command uses the **Exit** keyword to end the interactive session and close the connection.
 The fourth command confirms that the Process.txt file is on the remote computer. A `Get-ChildItem`
 ("dir") command on the local computer cannot find the file.
@@ -137,7 +139,7 @@ PS C:\> Enter-PSSession -Session $s
 ```
 
 These commands use the **Session** parameter of `Enter-PSSession` to run the interactive session in
-an existing Windows PowerShell session (**PSSession**).
+an existing PowerShell session (**PSSession**).
 
 ### Example 4: Start an interactive session and specify the Port and Credential parameters
 
@@ -172,8 +174,8 @@ Allows redirection of this connection to an alternate Uniform Resource Identifie
 redirection is not allowed.
 
 When you use the **ConnectionURI** parameter, the remote destination can return an instruction to
-redirect to a different URI. By default, Windows PowerShell does not redirect connections, but you
-can use this parameter to allow it to redirect the connection.
+redirect to a different URI. By default, PowerShell does not redirect connections, but you can use
+this parameter to allow it to redirect the connection.
 
 You can also limit the number of times the connection is redirected by changing the
 **MaximumConnectionRedirectionCount** session option value. Use the **MaximumRedirection** parameter
@@ -187,7 +189,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -239,11 +241,12 @@ of the Windows operating system.
 For more information about the values of this parameter, see
 [AuthenticationMechanism Enum](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
-Caution: Credential Security Support Provider (CredSSP) authentication, in which the user's
-credentials are passed to a remote computer to be authenticated, is designed for commands that
-require authentication on more than one resource, such as accessing a remote network share. This
-mechanism increases the security risk of the remote operation. If the remote computer is
-compromised, the credentials that are passed to it can be used to control the network session.
+> [!CAUTION]
+> Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are
+> passed to a remote computer to be authenticated, is designed for commands that require
+> authentication on more than one resource, such as accessing a remote network share. This mechanism
+> increases the security risk of the remote operation. If the remote computer is compromised, the
+> credentials that are passed to it can be used to control the network session.
 
 ```yaml
 Type: System.Management.Automation.Runspaces.AuthenticationMechanism
@@ -266,8 +269,7 @@ this action. Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication. They can be mapped only to local
 user accounts; they do not work with domain accounts.
 
-To get a certificate, use the `Get-Item` or `Get-ChildItem` command in the Windows PowerShell Cert:
-drive.
+To get a certificate, use the `Get-Item` or `Get-ChildItem` command in the PowerShell Cert: drive.
 
 ```yaml
 Type: System.String
@@ -296,9 +298,9 @@ computer. For instructions for adding a computer name to the TrustedHosts list, 
 Computer to the Trusted Host List" in
 [about_Remote_Troubleshooting](About/about_Remote_Troubleshooting.md).
 
-Note: In Windows Vista and later versions of the Windows operating system, to include the local
-computer in the value of the **ComputerName** parameter, you must start Windows PowerShell with the
-Run as administrator option.
+> [!NOTE]
+> On the Windows operating system, to include the local computer in the value of the
+> **ComputerName** parameter, you must start PowerShell with the Run as administrator option.
 
 ```yaml
 Type: System.String
@@ -355,11 +357,11 @@ and **ApplicationName** parameters to specify the **ConnectionURI** values.
 
 Valid values for the Transport segment of the URI are HTTP and HTTPS. If you specify a connection
 URI with a Transport segment, but do not specify a port, the session is created by using standards
-ports: 80 for HTTP and 443 for HTTPS. To use the default ports for Windows PowerShell remoting,
-specify port 5985 for HTTP or 5986 for HTTPS.
+ports: 80 for HTTP and 443 for HTTPS. To use the default ports for PowerShell remoting, specify port
+5985 for HTTP or 5986 for HTTPS.
 
-If the destination computer redirects the connection to a different URI, Windows PowerShell prevents
-the redirection unless you use the **AllowRedirection** parameter in the command.
+If the destination computer redirects the connection to a different URI, PowerShell prevents the
+redirection unless you use the **AllowRedirection** parameter in the command.
 
 ```yaml
 Type: System.Uri
@@ -556,7 +558,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -637,7 +639,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
