@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/08/2022
+ms.date: 08/17/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -967,7 +967,7 @@ Accept wildcard characters: False
 
 Specifies the interval between retries for the connection when a failure code between 400 and 599,
 inclusive or 304 is received. Also see **MaximumRetryCount** parameter for specifying number of
-retries.
+retries. The value must be between `1` and `[int]::MaxValue`.
 
 ```yaml
 Type: System.Int32
