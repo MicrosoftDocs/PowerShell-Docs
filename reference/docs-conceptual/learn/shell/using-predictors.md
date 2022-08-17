@@ -1,10 +1,10 @@
 ---
 description: This article describes the features and usage of Predictive IntelliSense in PSReadLine.
 no-loc: [<kbd>Tab</kbd>, <kbd>F2</kbd>, <kbd>RightArrow</kdb>, <kbd>Enter</kbd>]
-title: Using predictors is PSReadLine
+title: Using predictors in PSReadLine
 ms.date: 7/14/2022
 ---
-# Using predictors is PSReadLine
+# Using predictors in PSReadLine
 
 **PSReadLine** 2.1.0 introduced the **Predictive IntelliSense** feature. Predictive IntelliSense
 provides suggestions for full commands based on items from your **PSReadLine** history.
