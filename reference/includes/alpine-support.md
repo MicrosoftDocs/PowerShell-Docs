@@ -5,6 +5,7 @@ ms.date: 07/12/2022
 ms.prod: powershell
 ms.topic: include
 ---
+<!-- markdownlint-disable first-line-h1 -->
 The following table lists the supported PowerShell releases and the versions of Alpine they're
 supported on. These versions are supported until either the version of
 [PowerShell reaches end-of-support][lifecycle] or the version of

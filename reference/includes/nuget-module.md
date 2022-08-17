@@ -5,6 +5,7 @@ ms.date: 07/19/2022
 ms.prod: powershell
 ms.topic: include
 ---
+<!-- markdownlint-disable first-line-h1 -->
 > [!IMPORTANT]
 > The commands contained in the **PackageManagement** module are different than the commands
 > provided by the **NuGet** module in the Package Manager Console of Visual Studio. Each module has

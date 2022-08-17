@@ -37,7 +37,8 @@
     "style": "---"
   },
   "line-length": {
-    "code_blocks": false,
+    "code_block_line_length": 90,
+    "code_blocks": true,
     "heading_line_length": 100,
     "headings": true,
     "line_length": 100,
@@ -124,5 +125,8 @@
   "ul-start-left": true,
   "ul-style": {
     "style": "dash"
-  }
+  },
+  "link-fragments": true,
+  "reference-links-images": true,
+  "link-image-reference-definitions": true
 }
