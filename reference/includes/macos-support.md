@@ -5,6 +5,7 @@ ms.date: 07/25/2022
 ms.prod: powershell
 ms.topic: include
 ---
+<!-- markdownlint-disable first-line-h1 -->
 The following table contains a list of PowerShell releases and the status of support for versions of
 macOS. These versions remain supported until either the version of
 [PowerShell reaches end-of-support][lifecycle] or the version of macOS reaches end-of-support.

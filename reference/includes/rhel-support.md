@@ -5,6 +5,7 @@ ms.date: 05/18/2022
 ms.prod: powershell
 ms.topic: include
 ---
+<!-- markdownlint-disable first-line-h1 -->
 The following table is a list of currently supported versions of PowerShell and the versions of RHEL
 they are supported on. These versions remain supported until either the version of
 [PowerShell reaches end-of-support][lifecycle] or the version of

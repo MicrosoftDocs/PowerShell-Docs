@@ -5,6 +5,7 @@ ms.date: 06/29/2021
 ms.prod: powershell
 ms.topic: include
 ---
+<!-- markdownlint-disable first-line-h1 -->
 ## Product terminology used in the documentation
 
 The documentation for PowerShell consists of two types of content: cmdlet reference and conceptual

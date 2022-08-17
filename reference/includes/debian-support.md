@@ -5,6 +5,7 @@ ms.date: 06/30/2022
 ms.prod: powershell
 ms.topic: include
 ---
+<!-- markdownlint-disable first-line-h1 -->
 The following table is a list of currently supported PowerShell releases and the versions of Debian
 they're supported on. These versions remain supported until either the version of
 [PowerShell reaches end-of-support][lifecycle] or the version of
