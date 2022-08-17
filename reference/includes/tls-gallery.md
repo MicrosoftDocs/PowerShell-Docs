@@ -5,6 +5,7 @@ ms.date: 11/18/2020
 ms.prod: powershell
 ms.topic: include
 ---
+<!-- markdownlint-disable first-line-h1 -->
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
 > versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
