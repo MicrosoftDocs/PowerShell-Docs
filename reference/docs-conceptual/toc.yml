@@ -390,6 +390,8 @@ items:
         href: windows-powershell/starting-the-windows-powershell-2.0-engine.md
   - name: Desired State Configuration (DSC)
     href: dsc/overview.md
+  - name: PowerShell Gallery
+    href: gallery/toc.yml
   - name: Community
     items:
       - name: Community update
