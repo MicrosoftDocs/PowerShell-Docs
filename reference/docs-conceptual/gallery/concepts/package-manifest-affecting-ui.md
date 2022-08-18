@@ -1,6 +1,6 @@
 ---
 description: This article documents the package metadata values that are used by the PowerShell Gallery.
-ms.date: 08/11/2022
+ms.date: 08/18/2022
 title: Package metadata values that impact the PowerShell Gallery UI
 ---
 # Package metadata values that impact the PowerShell Gallery UI
@@ -207,68 +207,69 @@ best search results.
 
 |   Preferred tag   |                                     Alternatives and notes                                      |
 | ----------------- | ----------------------------------------------------------------------------------------------- |
-| Azure             |                                                                                                 |
-| DSC               | DesiredStateConfiguration is less desirable, it's too long                                      |
-| ResourceManager   | "Arm" is used to describe group of processors, and shouldn't be used for Azure Resource Manager |
-| DSCResourceKit    |                                                                                                 |
-| SQL               |                                                                                                 |
-| AWS               |                                                                                                 |
-| DSCResource       |                                                                                                 |
-| Automation        |                                                                                                 |
-| REST              |                                                                                                 |
 | ActiveDirectory   | AD isn't currently used by itself                                                               |
-| SQLServer         |                                                                                                 |
-| DBA               |                                                                                                 |
-| Security          | Defense is less precise                                                                         |
-| Database          | Databases (plural) is less desirable                                                            |
-| DevOps            |                                                                                                 |
-| Windows           |                                                                                                 |
-| Build             |                                                                                                 |
-| Deployment        | Deploy is used somewhat less often                                                              |
-| Cloud             |                                                                                                 |
-| GIT               |                                                                                                 |
-| Test              | Testing is less desirable                                                                       |
-| VersionControl    | Version is less precise, although used more frequently                                          |
-| Logging           | Preferred use of logging as an action                                                           |
-| Log               | Preferred use of Log as a thing                                                                 |
-| Backup            |                                                                                                 |
-| IaaS              |                                                                                                 |
-| Linux             |                                                                                                 |
-| IIS               |                                                                                                 |
-| AzureAutomation   |                                                                                                 |
-| Storage           |                                                                                                 |
-| GitHub            |                                                                                                 |
-| Json              |                                                                                                 |
-| Exchange          |                                                                                                 |
-| Network           | Networking is similar, less often used                                                          |
-| SharePoint        |                                                                                                 |
-| Reporting         | Reporting is an action, report is a thing                                                       |
-| Report            | Report is a thing                                                                               |
-| WinRM             |                                                                                                 |
-| Monitoring        |                                                                                                 |
-| VSTS              |                                                                                                 |
-| Excel             |                                                                                                 |
-| Google            |                                                                                                 |
-| Color             |                                                                                                 |
-| DNS               |                                                                                                 |
-| Office365         | Spelling out Office is preferable. O365 is less commonly used, although shorter                 |
-| Gitlab            |                                                                                                 |
-| Pester            |                                                                                                 |
+| Appveyor          |                                                                                                 |
+| Automation        |                                                                                                 |
+| AWS               |                                                                                                 |
+| Azure             |                                                                                                 |
 | AzureAD           |                                                                                                 |
+| AzureAutomation   |                                                                                                 |
+| AzureRm           | Used primarily for the AzureRM modules                                                          |
+| Backup            |                                                                                                 |
+| Build             |                                                                                                 |
+| ChatOps           |                                                                                                 |
+| Cloud             |                                                                                                 |
+| Color             |                                                                                                 |
+| Configuration     |                                                                                                 |
+| CrescendoBuilt    | This tag is added automatically by Crescendo when you export the module                         |
+| Database          | Databases (plural) is less desirable                                                            |
+| DBA               |                                                                                                 |
+| Deployment        | Deploy is used somewhat less often                                                              |
+| DevOps            |                                                                                                 |
+| DNS               |                                                                                                 |
+| Docker            |                                                                                                 |
+| DSC               | DesiredStateConfiguration is less desirable, it's too long                                      |
+| DSCResource       |                                                                                                 |
+| DSCResourceKit    |                                                                                                 |
+| Excel             |                                                                                                 |
+| Exchange          |                                                                                                 |
+| Firewall          |                                                                                                 |
+| GIT               |                                                                                                 |
+| GitHub            |                                                                                                 |
+| Gitlab            |                                                                                                 |
+| Google            |                                                                                                 |
 | HTML              |                                                                                                 |
 | Hyper-V           | HyperV is less common as a tag                                                                  |
-| Configuration     |                                                                                                 |
-| ChatOps           |                                                                                                 |
-| PackageManagement |                                                                                                 |
-| WMI               |                                                                                                 |
-| Firewall          |                                                                                                 |
-| Docker            |                                                                                                 |
-| Appveyor          |                                                                                                 |
-| AzureRm           | Used primarily for the AzureRM modules                                                          |
-| Zip               |                                                                                                 |
-| MSI               |                                                                                                 |
+| IaaS              |                                                                                                 |
+| IIS               |                                                                                                 |
+| Json              |                                                                                                 |
+| Linux             |                                                                                                 |
+| Log               | Preferred use of Log as a thing                                                                 |
+| Logging           | Preferred use of logging as an action                                                           |
 | MacOS             |                                                                                                 |
+| Monitoring        |                                                                                                 |
+| MSI               |                                                                                                 |
+| Network           | Networking is similar, less often used                                                          |
+| Office365         | Spelling out Office is preferable. O365 is less commonly used, although shorter                 |
+| PackageManagement |                                                                                                 |
+| Pester            |                                                                                                 |
 | PoshBot           |                                                                                                 |
+| Report            | Report is a thing                                                                               |
+| Reporting         | Reporting is an action, report is a thing                                                       |
+| ResourceManager   | "Arm" is used to describe group of processors, and shouldn't be used for Azure Resource Manager |
+| REST              |                                                                                                 |
+| Security          | Defense is less precise                                                                         |
+| SharePoint        |                                                                                                 |
+| SQL               |                                                                                                 |
+| SQLServer         |                                                                                                 |
+| Storage           |                                                                                                 |
+| Test              | Testing is less desirable                                                                       |
+| VersionControl    | Version is less precise, although used more frequently                                          |
+| VSTS              |                                                                                                 |
+| Windows           |                                                                                                 |
+| WinRM             |                                                                                                 |
+| WMI               |                                                                                                 |
+| Zip               |                                                                                                 |
 
 <!-- link references -->
 [1]: xref:Microsoft.PowerShell.Core.New-ModuleManifest
