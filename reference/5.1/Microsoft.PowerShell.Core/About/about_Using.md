@@ -1,7 +1,7 @@
 ---
 description: Allows you to indicate which namespaces are used in the session.
 Locale: en-US
-ms.date: 01/19/2021
+ms.date: 08/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Using
@@ -58,11 +58,11 @@ A module specification is a hash table that has the following keys.
 
 - `ModuleName` - **Required** Specifies the module name.
 - `GUID` - **Optional** Specifies the GUID of the module.
-- It's also **Required** to specify one of the three below keys. These keys
-  can't be used together.
+- It's also **Required** to specify at least one of the three below keys.
   - `ModuleVersion` - Specifies a minimum acceptable version of the module.
-  - `RequiredVersion` - Specifies an exact, required version of the module.
   - `MaximumVersion` - Specifies the maximum acceptable version of the module.
+  - `RequiredVersion` - Specifies an exact, required version of the module.
+    This cannot be used with the other Version keys.
 
 The `using module` statement imports classes from the root module
 (`ModuleToProcess`) of a script module or binary module. It does not
