@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 08/12/2022
+ms.date: 08/18/2022
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -35,14 +35,14 @@ Legend
 |                            Name                            |       7.0        |       7.1        |       7.2        |       7.3        |
 | ---------------------------------------------------------- | :--------------: | :--------------: | :--------------: | :--------------: |
 | PSNullConditionalOperators                                 | &#x2714;&#xfe0f; |     &#x2705;     |                  |                  |
-| PSUnixFileStat (non-Windows only)                          | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x2705;     |                  |
+| PSUnixFileStat (non-Windows only)                          | &#x2714;&#xfe0f; |     &#x2705;     |                  |                  |
 | Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x2705;     |                  |
 | PSCultureInvariantReplaceOperator                          |                  | &#x2714;&#xfe0f; |     &#x2705;     |                  |
 | PSNotApplyErrorActionToStderr                              |                  | &#x2714;&#xfe0f; |     &#x2705;     |                  |
 | PSImplicitRemotingBatching                                 | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x274c;     |                  |
 | PSCommandNotFoundSuggestion                                | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSDesiredStateConfiguration.InvokeDscResource              | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
-| PSNativePSPathResolution                                   |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x274c;         |
+| PSNativePSPathResolution                                   |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x274c;     |
 | PSSubsystemPluginModel                                     |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSNativeCommandArgumentPassing                             |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSAnsiRenderingFileInfo                                    |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
@@ -161,6 +161,9 @@ gcs.
 ```
 
 ## PSCultureInvariantReplaceOperator
+
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.2.
 
 When the left-hand operand in a `-replace` operator statement is not a string, that operand is
 converted to a string.
@@ -414,6 +417,9 @@ operating system.
 
 ## PSNotApplyErrorActionToStderr
 
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.2.
+
 When this experimental feature is enabled, error records redirected from native commands, like when
 using redirection operators (`2>&1`), are not written to the `$Error` variable and the preference
 variable `$ErrorActionPreference` does not affect the redirected output.
@@ -426,6 +432,9 @@ When a native command has a non-zero exit code, `$?` is set to `$false`. If the 
 `$?` is set to `$true`.
 
 ## PSNullConditionalOperators
+
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.1.
 
 Introduces new operators for Null conditional member access operators - `?.` and `?[]`. Null member
 access operators can be used on scalar types and array types. Return the value of the accessed
