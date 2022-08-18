@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/05/2021
+ms.date: 08/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-pssession?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-PSSession
@@ -486,18 +486,25 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-Specifies modules with names that are specified in the form of **ModuleSpecification** objects
-(described in the Remarks section of
-[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)
-in the PowerShell SDK. For example, the **FullyQualifiedModule** parameter accepts a module name
-that is specified in the format:
+The value can be a module name, a full module specification, or a path to a module file.
 
-- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}` or
-- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`.
+When the value is a path, the path can be fully qualified or relative. A relative path is resolved
+relative to the script that contains the using statement.
 
-**ModuleName** and **ModuleVersion** are required, but **Guid** is optional.
+When the value is a name or module specification, PowerShell searches the **PSModulePath** for the
+specified module.
 
-You cannot specify the **FullyQualifiedModule** parameter in the same command as a **Module**
+A module specification is a hashtable that has the following keys.
+
+- `ModuleName` - **Required** Specifies the module name.
+- `GUID` - **Optional** Specifies the GUID of the module.
+- It's also **Required** to specify at least one of the three below keys.
+  - `ModuleVersion` - Specifies a minimum acceptable version of the module.
+  - `MaximumVersion` - Specifies the maximum acceptable version of the module.
+  - `RequiredVersion` - Specifies an exact, required version of the module. This can't be used with
+    the other Version keys.
+
+You can't specify the **FullyQualifiedModule** parameter in the same command as a **Module**
 parameter. The two parameters are mutually exclusive.
 
 ```yaml
