@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 03/11/2019
+ms.date: 08/18/2022
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-module?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Module
@@ -214,6 +214,32 @@ Version    Name              Repository           Description
 
 The `Find-Module` cmdlet uses the **Filter** parameter to search the repository for **AppDomain**.
 
+### Example 9: Find a module by tag
+
+This example shows how to find modules by a tag. The `CrescendoBuilt` value is a tag that is
+automatically added to modules created using the **Microsoft.PowerShell.Crescendo** module.
+
+```powershell
+Find-Module -Tag CrescendoBuilt
+```
+
+```Output
+Version Name            Repository Description
+------- ----            ---------- -----------
+0.1.0   Foil            PSGallery  A PowerShell Crescendo wrapper for Chocolatey
+0.3.1   Cobalt          PSGallery  A PowerShell Crescendo wrapper for WinGet
+1.1.0   SysInternals    PSGallery  PowerShell cmdlets for SysInternal tools
+0.0.4   Croze           PSGallery  A PowerShell Crescendo wrapper for Homebrew
+0.0.2   AptPackage      PSGallery  PowerShell Crescendo-generated Module to query APT-Package Information
+1.0.1   RoboCopy        PSGallery  PowerShell cmdlet for the official RoboCopy.exe
+1.0.2   TShark          PSGallery  PowerShell cmdlet for tshark.exe
+1.0.0   SpeedTestCLI    PSGallery  PowerShell cmdlets speedtest-cli
+1.0.0   SpeedTest-CLI   PSGallery  PowerShell cmdlets for Internet Speed Test
+1.0.2   Image2Text      PSGallery  PowerShell Images into ASCII art
+0.1.1   Quser.Crescendo PSGallery  This module displays session information of users logged onto a local or remote m...
+1.0.2   Takeown         PSGallery  Crescendo Powershell wrapper of takeown.exe
+```
+
 ## PARAMETERS
 
 ### -AllowPrerelease
@@ -406,7 +432,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Proxy
