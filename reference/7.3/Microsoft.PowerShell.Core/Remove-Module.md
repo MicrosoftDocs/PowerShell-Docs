@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/28/2021
+ms.date: 08/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/remove-module?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Module
@@ -126,7 +126,23 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedName
 
-Specifies the fully qualified names of modules to remove.
+The value can be a module name, a full module specification, or a path to a module file.
+
+When the value is a path, the path can be fully qualified or relative. A relative path is resolved
+relative to the script that contains the using statement.
+
+When the value is a name or module specification, PowerShell searches the **PSModulePath** for the
+specified module.
+
+A module specification is a hashtable that has the following keys.
+
+- `ModuleName` - **Required** Specifies the module name.
+- `GUID` - **Optional** Specifies the GUID of the module.
+- It's also **Required** to specify at least one of the three below keys.
+  - `ModuleVersion` - Specifies a minimum acceptable version of the module.
+  - `MaximumVersion` - Specifies the maximum acceptable version of the module.
+  - `RequiredVersion` - Specifies an exact, required version of the module. This can't be used with
+    the other Version keys.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

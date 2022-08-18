@@ -114,8 +114,8 @@ and an optional version number.
 If the required modules aren't in the current session, PowerShell imports them.
 If the modules can't be imported, PowerShell throws a terminating error.
 
-For each module, type the module name (\<String\>) or a hash table. The value
-can be a combination of strings and hash tables. The hash table has the
+For each module, type the module name (\<String\>) or a hashtable. The value
+can be a combination of strings and hashtables. The hashtable has the
 following keys.
 
 - `ModuleName` - **Required** Specifies the module name.
@@ -124,7 +124,7 @@ following keys.
   - `ModuleVersion` - Specifies a minimum acceptable version of the module.
   - `MaximumVersion` - Specifies the maximum acceptable version of the module.
   - `RequiredVersion` - Specifies an exact, required version of the module.
-    This cannot be used with the other Version keys.
+    This can't be used with the other Version keys.
 
 > [!NOTE]
 > `RequiredVersion` was added in Windows PowerShell 5.0.

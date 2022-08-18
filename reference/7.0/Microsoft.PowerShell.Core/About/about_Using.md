@@ -59,7 +59,7 @@ statement.
 When `<module-name>` is a name or module specification, PowerShell searches the
 **PSModulePath** for the specified module.
 
-A module specification is a hash table that has the following keys.
+A module specification is a hashtable that has the following keys.
 
 - `ModuleName` - **Required** Specifies the module name.
 - `GUID` - **Optional** Specifies the GUID of the module.
@@ -67,7 +67,7 @@ A module specification is a hash table that has the following keys.
   - `ModuleVersion` - Specifies a minimum acceptable version of the module.
   - `MaximumVersion` - Specifies the maximum acceptable version of the module.
   - `RequiredVersion` - Specifies an exact, required version of the module.
-    This cannot be used with the other Version keys.
+    This can't be used with the other Version keys.
 
 The `using module` statement imports classes from the root module
 (`ModuleToProcess`) of a script module or binary module. It does not
