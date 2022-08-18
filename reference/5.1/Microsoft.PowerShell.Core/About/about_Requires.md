@@ -1,7 +1,7 @@
 ---
 description: Prevents a script from running without the required elements.
 Locale: en-US
-ms.date: 05/24/2022
+ms.date: 08/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Requires
@@ -114,17 +114,17 @@ and an optional version number.
 If the required modules aren't in the current session, PowerShell imports them.
 If the modules can't be imported, PowerShell throws a terminating error.
 
-For each module, type the module name (\<String\>) or a hash table. The value
-can be a combination of strings and hash tables. The hash table has the
+For each module, type the module name (\<String\>) or a hashtable. The value
+can be a combination of strings and hashtables. The hashtable has the
 following keys.
 
 - `ModuleName` - **Required** Specifies the module name.
 - `GUID` - **Optional** Specifies the GUID of the module.
-- It's also **Required** to specify one of the three below keys. These keys
-  can't be used together.
+- It's also **Required** to specify at least one of the three below keys.
   - `ModuleVersion` - Specifies a minimum acceptable version of the module.
-  - `RequiredVersion` - Specifies an exact, required version of the module.
   - `MaximumVersion` - Specifies the maximum acceptable version of the module.
+  - `RequiredVersion` - Specifies an exact, required version of the module.
+    This can't be used with the other Version keys.
 
 > [!NOTE]
 > `RequiredVersion` was added in Windows PowerShell 5.0.
