@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell parses commands.
 Locale: en-US
-ms.date: 05/17/2022
+ms.date: 08/18/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Parsing
@@ -239,6 +239,26 @@ variable the token is passed through as-is.
 
 You cannot use stream redirection (like `>file.txt`) because they are passed
 verbatim as arguments to the target command.
+
+Using the stop-parsing token is also the best way to ensure that quoted strings
+that are passed as parameters to `cmd.exe` or Windows batch (`.cmd` or `.bat`)
+files are handled properly.
+
+In the following example, the first step runs a command without using the
+stop-parsing token. PowerShell evaluates the quoted string and passes the value
+(without quotes) to `cmd.exe`, which results in an error.
+
+```powershell
+PS> cmd /c echo "a|b"
+'b' is not recognized as an internal or external command,
+operable program or batch file.
+PS> cmd /c --% echo "a|b"
+"a|b"
+```
+
+> [!NOTE]
+> Some commands on Windows systems are implemented as a Windows batch file. For
+> example, that `az` command for Azure CLI is a Windows batch file.
 
 ### Passing arguments that contain quote characters
 
