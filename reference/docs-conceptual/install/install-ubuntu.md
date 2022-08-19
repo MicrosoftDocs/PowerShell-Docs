@@ -57,18 +57,18 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Do
 package from the [releases][releases] page onto the Ubuntu machine. The link to the current
 version is:
 
-- PowerShell 7.2.5 (universal package) for any support version of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/powershell-lts_7.2.5-1.deb_amd64.deb`
-- PowerShell 7.0.11
-  - Ubuntu 20.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.11/powershell-lts_7.0.11-1.ubuntu.20.04_amd64.deb`
-  - Ubuntu 18.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.11/powershell-lts_7.0.11-1.ubuntu.18.04_amd64.deb`
+- PowerShell 7.2.6 (universal package) for any support version of Ubuntu
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.6/powershell-lts_7.2.6-1.deb_amd64.deb`
+- PowerShell 7.0.12
+  - Ubuntu 20.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.12/powershell-lts_7.0.12-1.ubuntu.20.04_amd64.deb`
+  - Ubuntu 18.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.12/powershell-lts_7.0.12-1.ubuntu.18.04_amd64.deb`
 
 Use the following shell commands to install the package. Change the filename of the package to match
 the version you downloaded.
 
 ```sh
 # Install the downloaded package
-sudo dpkg -i powershell-lts_7.2.5-1.deb_amd64.deb
+sudo dpkg -i powershell-lts_7.2.6-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f
