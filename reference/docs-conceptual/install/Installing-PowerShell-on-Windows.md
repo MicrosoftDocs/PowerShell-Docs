@@ -126,7 +126,7 @@ installation options:
   installation.
 - `REGISTER_MANIFEST` - This property controls the option for registering the Windows Event
   Logging manifest.
-- `ADD_PATH` - This property controls the option for adding PowerShell to the Windows PATH environment varilable.
+- `ADD_PATH` - This property controls the option for adding PowerShell to the Windows PATH environment variable.
 
 The following example shows how to silently install PowerShell with all the install options enabled.
 
