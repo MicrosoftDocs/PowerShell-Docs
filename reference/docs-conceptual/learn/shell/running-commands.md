@@ -30,7 +30,7 @@ For any shell in any operating system there are three types of commands:
 
 - **Shell environment-specifc commands** are commands defined in external files that can only be
   used within the runtime environment of the shell. These include scripts and functions, or they can
-  be specially compiled modules that add commands to the shell runtime. In PowerShell, these command
+  be specially compiled modules that add commands to the shell runtime. In PowerShell, these commands
   are known as _cmdlets_ (pronounced "command-lets").
 
 ## Running OS-native commands
@@ -61,7 +61,7 @@ sdwheeler:x:1000:1000:,,,:/home/sdwheeler:/bin/bash
 
 Most shells include features for using variables, evaluating expressions, and handling strings. But
 each shell does these differently. In PowerShell, all parameters are start with a hyphen (`-`)
-character. In `cmd.exe`, most parameter use a slash (`/`) character. Other command-line tools may
+character. In `cmd.exe`, most parameters use a slash (`/`) character. Other command-line tools may
 not have a special character for parameters.
 
 Each shell has its own way of handling and evaluating strings on the command line. When running
@@ -74,7 +74,7 @@ For more information, see the following articles:
 - [about_Quoting_Rules][2]
 
 PowerShell 7.2 introduced a new experimental feature `PSNativeCommandArgumentPassing` that improved
-native command handling. For more information, see [PSNativeCommandArgumentPassing][3].
+OS-native command handling. For more information, see [PSNativeCommandArgumentPassing][3].
 
 ### Handling output and errors
 
@@ -86,14 +86,14 @@ In general, the output sent to **stdout** by an OS-native command is sent to the
 in PowerShell. Output sent to **stderr** by an OS-native command is sent to the **Error** stream in
 PowerShell.
 
-When a native command has a non-zero exit code, `$?` is set to `$false`. If the exit code is zero,
+When an OS-native command has a non-zero exit code, `$?` is set to `$false`. If the exit code is zero,
 `$?` is set to `$true`.
 
-However, this changed in PowerShell 7.2. Error records redirected from native commands, like when
+However, this changed in PowerShell 7.2. Error records redirected from OS-native commands, like when
 using redirection operators (`2>&1`), are not written to PowerShell's `$Error` variable and the
 preference variable `$ErrorActionPreference` does not affect the redirected output.
 
-Many native commands write to `stderr` as an alternative stream for additional information. This
+Many native commands write to **stderr** as an alternative stream for additional information. This
 behavior can cause confusion in PowerShell when looking through errors and the additional output
 information can be lost if `$ErrorActionPreference` is set to a state that mutes the output.
 
@@ -110,11 +110,11 @@ language or using the PowerShell scripting language itself.
 ### PowerShell commands that run other commands
 
 The PowerShell **call operator** (`&`) lets you run commands that are stored in variables and
-represented by strings or script blocks. You can use this to run any native command or PowerShell
+represented by strings or script blocks. You can use this to run any OS-native command or PowerShell
 command. This is useful in a script when you need to dynamically construct the command-line
-parameters for a native command. For more information, see the [call operator][7].
+parameters for an OS-native command. For more information, see the [call operator][7].
 
-The `Start-Process` cmdlet can be used to run native commands, but should only be used when you need
+The `Start-Process` cmdlet can be used to run OS-native commands, but should only be used when you need
 to control how the command is executed. The cmdlet has parameters to support the following
 scenarios:
 
@@ -123,7 +123,7 @@ scenarios:
 - Redirect **stdin**, **stdout**, and **stderr** streams
 - Use a different working directory for the command
 
-The following example runs the native command `sort.exe` with redirected input and output streams.
+The following example runs the OS-native command `sort.exe` with redirected input and output streams.
 
 ```powershell
 $processOptions = @{
@@ -138,12 +138,12 @@ Start-Process @processOptions
 
 For more information, see [Start-Process][8].
 
-On Windows, the `Invoke-Item` command performs the default action for the specified item. For
+On Windows, the `Invoke-Item` cmdlet performs the default action for the specified item. For
 example, it runs an executable file or opens a document file using the application associated with
 the document file type. The default action depends on the type of item and is resolved by the
 PowerShell provider that provides access to the item.
 
-The following example opens the PowerShell source code respoitory in your default web browser.
+The following example opens the PowerShell source code repository in your default web browser.
 
 ```powershell
 Invoke-Item https://github.com/PowerShell/PowerShell
