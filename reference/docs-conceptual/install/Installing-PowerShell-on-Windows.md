@@ -126,11 +126,12 @@ installation options:
   installation.
 - `REGISTER_MANIFEST` - This property controls the option for registering the Windows Event
   Logging manifest.
+- `ADD_PATH` - This property controls the option for adding PowerShell to the Windows PATH environment variable.
 
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.2.6-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1
+msiexec.exe /package PowerShell-7.2.6-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1 ADD_PATH=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
