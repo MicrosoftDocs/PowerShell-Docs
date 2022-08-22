@@ -57,7 +57,7 @@ PS /home/sdwheeler> grep sdwheeler /etc/passwd
 sdwheeler:x:1000:1000:,,,:/home/sdwheeler:/bin/bash
 ```
 
-### Passing arguments to native commands
+### Passing arguments to OS-native commands
 
 Most shells include features for using variables, evaluating expressions, and handling strings. But
 each shell does these differently. In PowerShell, all parameters are start with a hyphen (`-`)
