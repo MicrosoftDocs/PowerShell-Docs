@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `powershell.exe` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 05/25/2022
+ms.date: 08/23/2022
 no-no-loc: [-Command, -ConfigurationName , -EncodedCommand, -ExecutionPolicy, -File, -Help, -InputFormat, -Mta, -NoExit, -NoLogo, -NonInteractive, -NoProfile, -OutputFormat, -PSConsoleFile, -Sta, -Version, -WindowStyle]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -81,7 +81,10 @@ Does not load the PowerShell profile.
 
 #### -NonInteractive
 
-Does not present an interactive prompt to the user.
+This switch is used to create sessions that shouldn't require user input. This
+is useful for scripts that run in scheduled tasks or CI/CD pipelines. Any
+attempts to use interactive features, like `Read-Host` or confirmation prompts,
+result in statement terminating errors rather than hanging.
 
 #### -InputFormat {Text | XML}
 
