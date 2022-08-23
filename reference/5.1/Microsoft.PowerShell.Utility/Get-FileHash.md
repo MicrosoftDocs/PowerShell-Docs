@@ -157,7 +157,7 @@ Accepted values: SHA1, SHA256, SHA384, SHA512, MACTripleDES, MD5, RIPEMD160
 
 Required: False
 Position: Named
-Default value: None
+Default value: SHA256
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

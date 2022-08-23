@@ -74,6 +74,8 @@ items:
         items:
           - name: Overview of the Shell
             href: learn/shell/optimize-shell.md
+          - name: Running commands in the Shell
+            href: learn/shell/running-commands.md
           - name: Using tab completion
             href: learn/shell/tab-completion.md
           - name: Using command predictors
