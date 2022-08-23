@@ -30,14 +30,14 @@ For any shell in any operating system there are three types of commands:
 
 - **Shell environment-specifc commands** are commands defined in external files that can only be
   used within the runtime environment of the shell. These include scripts and functions, or they can
-  be specially compiled modules that add commands to the shell runtime. In PowerShell, these commands
-  are known as _cmdlets_ (pronounced "command-lets").
+  be specially compiled modules that add commands to the shell runtime. In PowerShell, these
+  commands are known as _cmdlets_ (pronounced "command-lets").
 
-## Running OS-native commands
+## Running native commands
 
-Any OS-native command can be run from the PowerShell command line. In most cases you run the command
-exactly has you would in `bash` or `cmd.exe`. The following example shows running the `grep` command
-in `bash` on Ubuntu Linux.
+Any native command can be run from the PowerShell command line. Usually you run the command exactly
+has you would in `bash` or `cmd.exe`. The following example shows running the `grep` command in
+`bash` on Ubuntu Linux.
 
 ```bash
 sdwheeler@circumflex:~$ grep sdwheeler /etc/passwd
@@ -57,7 +57,7 @@ PS /home/sdwheeler> grep sdwheeler /etc/passwd
 sdwheeler:x:1000:1000:,,,:/home/sdwheeler:/bin/bash
 ```
 
-### Passing arguments to OS-native commands
+### Passing arguments to native commands
 
 Most shells include features for using variables, evaluating expressions, and handling strings. But
 each shell does these differently. In PowerShell, all parameters are start with a hyphen (`-`)
@@ -65,7 +65,7 @@ character. In `cmd.exe`, most parameters use a slash (`/`) character. Other comm
 not have a special character for parameters.
 
 Each shell has its own way of handling and evaluating strings on the command line. When running
-OS-native commands in PowerShell that expect strings to be quoted in a specific way, you may need
+native commands in PowerShell that expect strings to be quoted in a specific way, you may need
 adjust how you pass those strings.
 
 For more information, see the following articles:
@@ -73,8 +73,8 @@ For more information, see the following articles:
 - [about_Parsing][1]
 - [about_Quoting_Rules][2]
 
-PowerShell 7.2 introduced a new experimental feature `PSNativeCommandArgumentPassing` that improved
-OS-native command handling. For more information, see [PSNativeCommandArgumentPassing][3].
+PowerShell 7.2 introduced a new experimental feature `PSnativeCommandArgumentPassing` that improved
+native command handling. For more information, see [PSnativeCommandArgumentPassing][3].
 
 ### Handling output and errors
 
@@ -82,39 +82,39 @@ PowerShell also has several more output streams than other shells. The `bash` an
 have **stdout** and **stderr**. PowerShell has six output streams. For more information, see
 [about_Redirection][4] and [about_Output_Streams][5].
 
-In general, the output sent to **stdout** by an OS-native command is sent to the **Success** stream
-in PowerShell. Output sent to **stderr** by an OS-native command is sent to the **Error** stream in
+In general, the output sent to **stdout** by an native command is sent to the **Success** stream in
+PowerShell. Output sent to **stderr** by an native command is sent to the **Error** stream in
 PowerShell.
 
-When an OS-native command has a non-zero exit code, `$?` is set to `$false`. If the exit code is zero,
+When an native command has a non-zero exit code, `$?` is set to `$false`. If the exit code is zero,
 `$?` is set to `$true`.
 
-However, this changed in PowerShell 7.2. Error records redirected from OS-native commands, like when
-using redirection operators (`2>&1`), are not written to PowerShell's `$Error` variable and the
-preference variable `$ErrorActionPreference` does not affect the redirected output.
+However, this changed in PowerShell 7.2. Error records redirected from native commands, like when
+using redirection operators (`2>&1`), aren't written to PowerShell's `$Error` variable and the
+preference variable `$ErrorActionPreference` doesn't affect the redirected output.
 
 Many native commands write to **stderr** as an alternative stream for additional information. This
 behavior can cause confusion in PowerShell when looking through errors and the additional output
 information can be lost if `$ErrorActionPreference` is set to a state that mutes the output.
 
-PowerShell 7.3 added a new experimental feature `PSNativeCommandErrorActionPreference` that allows
+PowerShell 7.3 added a new experimental feature `PSnativeCommandErrorActionPreference` that allows
 you to control whether output to `stderr` is treated as an error. For more information, see
-[PSNativeCommandErrorActionPreference][6].
+[PSnativeCommandErrorActionPreference][6].
 
 ## Running PowerShell commands
 
-As previous noted, PowerShell commands are are known as cmdlets. Cmdlets are collected into
-PowerShell modules that can be loaded on demand. Cmdlets can be written in any compiled .NET
-language or using the PowerShell scripting language itself.
+As previously noted, PowerShell commands are known as cmdlets. Cmdlets are collected into PowerShell
+modules that can be loaded on demand. Cmdlets can be written in any compiled .NET language or using
+the PowerShell scripting language itself.
 
 ### PowerShell commands that run other commands
 
 The PowerShell **call operator** (`&`) lets you run commands that are stored in variables and
-represented by strings or script blocks. You can use this to run any OS-native command or PowerShell
+represented by strings or script blocks. You can use this to run any native command or PowerShell
 command. This is useful in a script when you need to dynamically construct the command-line
-parameters for an OS-native command. For more information, see the [call operator][7].
+parameters for an native command. For more information, see the [call operator][7].
 
-The `Start-Process` cmdlet can be used to run OS-native commands, but should only be used when you need
+The `Start-Process` cmdlet can be used to run native commands, but should only be used when you need
 to control how the command is executed. The cmdlet has parameters to support the following
 scenarios:
 
@@ -123,7 +123,7 @@ scenarios:
 - Redirect **stdin**, **stdout**, and **stderr** streams
 - Use a different working directory for the command
 
-The following example runs the OS-native command `sort.exe` with redirected input and output streams.
+The following example runs the native command `sort.exe` with redirected input and output streams.
 
 ```powershell
 $processOptions = @{
