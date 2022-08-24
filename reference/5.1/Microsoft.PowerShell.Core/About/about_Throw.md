@@ -1,46 +1,45 @@
 ---
 description: Describes the Throw keyword, which generates a terminating error.
 Locale: en-US
-ms.date: 12/01/2017
+ms.date: 08/24/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_throw?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Throw
 ---
-
 # about_Throw
 
 ## Short description
-
-Describes the Throw keyword, which generates a terminating error.
+Describes the `throw` keyword that generates a terminating error.
 
 ## Long description
 
-The Throw keyword causes a terminating error. You can use the Throw keyword to
-stop the processing of a command, function, or script.
+The `throw` keyword causes a terminating error. You can use the `throw` keyword
+to stop the processing of a command, function, or script.
 
-For example, you can use the Throw keyword in the script block of an If
-statement to respond to a condition or in the Catch block of a
-Try-Catch-Finally statement. You can also use the Throw keyword in a parameter
-declaration to make a function parameter mandatory.
+For example, you can use the `throw` keyword in the script block of an `if`
+statement to respond to a condition or in the `catch` block of a
+`try`-`catch`-`finally` statement.
 
-The Throw keyword can throw any object, such as a user message string or the
+The `throw` keyword can throw any object, such as a user message string or the
 object that caused the error.
 
 ## Syntax
 
-The syntax of the Throw keyword is as follows:
+The syntax of the `throw` keyword is as follows:
 
 ```powershell
 throw [<expression>]
 ```
 
-The expression in the Throw syntax is optional. When the Throw statement does
-not appear in a Catch block, and it does not include an expression, it
-generates a ScriptHalted error.
+The expression in the `throw` syntax is optional. When the `throw` statement
+doesn't appear in a `catch` block, and it doesn't include an expression, it
+generates a **ScriptHalted** error.
 
 ```powershell
-C:\PS> throw
+throw
+```
 
+```Output
 ScriptHalted
 At line:1 char:6
 + throw <<<<
@@ -48,18 +47,20 @@ At line:1 char:6
 + FullyQualifiedErrorId : ScriptHalted
 ```
 
-If the Throw keyword is used in a Catch block without an expression, it throws
-the current RuntimeException again. For more information, see
-about_Try_Catch_Finally.
+If the `throw` keyword is used in a `catch` block without an expression, it
+throws the current RuntimeException again. For more information, see
+[about_Try_Catch_Finally](about_Try_Catch_Finally.md).
 
-## THROWING A STRING
+## Throwing a string
 
-The optional expression in a Throw statement can be a string, as shown in the
+The optional expression in a `throw` statement can be a string, as shown in the
 following example:
 
 ```powershell
-C:\PS> throw "This is an error."
+throw "This is an error."
+```
 
+```Output
 This is an error.
 At line:1 char:6
 + throw <<<<  "This is an error."
@@ -68,15 +69,16 @@ untimeException
 + FullyQualifiedErrorId : This is an error.
 ```
 
-## THROWING OTHER OBJECTS
+## Throwing other objects
 
-The expression can also be an object that throws the object that represents
-the PowerShell process, as shown in the following example:
+The expression can also be an object that throws the object that represents the
+PowerShell process, as shown in the following example:
 
 ```powershell
-C:\PS> throw (get-process PowerShell)
+throw (Get-Process pwsh)
+```
 
-System.Diagnostics.Process (PowerShell)
+```Output
 At line:1 char:6
 + throw <<<<  (get-process PowerShell)
 + CategoryInfo          : OperationStopped: (System.Diagnostics.Process (Pow
@@ -85,26 +87,29 @@ RuntimeException
 + FullyQualifiedErrorId : System.Diagnostics.Process (PowerShell)
 ```
 
-You can use the TargetObject property of the ErrorRecord object in the
-$error automatic variable to examine the error.
+You can use the **TargetObject** property of the **ErrorRecord** object in the
+`$Error` automatic variable to examine the error.
 
 ```powershell
-C:\PS> $error[0].targetobject
+$Error[0].TargetObject
+```
 
+```Output
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
 319      26    61016      70864   568     3.28   5548 PowerShell
 ```
 
-You can also throw an ErrorRecord object or a Microsoft .NET Framework
-exception. The following example uses the Throw keyword to throw a
-System.FormatException object.
+You can also `throw` an **ErrorRecord** object or a .NET exception. The
+following example uses the `throw` keyword to throw a
+**System.FormatException** object.
 
 ```powershell
-C:\PS> $formatError = new-object system.formatexception
+$formatError = New-Object System.FormatException
+throw $formatError
+```
 
-C:\PS> throw $formatError
-
+```Output
 One of the identified items was in an invalid format.
 At line:1 char:6
 + throw <<<<  $formatError
@@ -113,42 +118,22 @@ At line:1 char:6
 format.
 ```
 
-## RESULTING ERROR
+## The resulting error
 
-The Throw keyword can generate an ErrorRecord object. The Exception property
-of the ErrorRecord object contains a RuntimeException object. The remainder of
-the ErrorRecord object and the RuntimeException object vary with the object
-that the Throw keyword throws.
+The `throw` keyword can generate an **ErrorRecord** object. The **Exception**
+property of the **ErrorRecord** object contains a **RuntimeException** object.
+The remainder of the **ErrorRecord** object and the **RuntimeException** object
+varies depending on the object thrown.
 
-The RunTimeException object is wrapped in an ErrorRecord object, and the
-ErrorRecord object is automatically saved in the $Error automatic variable.
+The `throw` object is wrapped in an **ErrorRecord** object, and the ErrorRecord
+object is automatically saved in the `$Error` automatic variable.
 
-## USING THROW TO CREATE A MANDATORY PARAMETER
+## Using `throw` to create a mandatory parameter
 
-You can use the Throw keyword to make a function parameter mandatory.
-
-This is an alternative to using the Mandatory parameter of the Parameter
-keyword. When you use the Mandatory parameter, the system prompts the user
-for the required parameter value. When you use the Throw keyword, the
-command stops and displays the error record.
-
-For example, the Throw keyword in the parameter subexpression makes the
-Path parameter a required parameter in the function.
-
-In this case, the Throw keyword throws a message string, but it is the
-presence of the Throw keyword that generates the terminating error if the
-Path parameter is not specified. The expression that follows Throw is
-optional.
-
-```powershell
-function Get-XMLFiles
-{
-  param ($path = $(throw "The Path parameter is required."))
-  dir -path $path\*.xml -recurse |
-    sort lastwritetime |
-      ft lastwritetime, attributes, name  -auto
-}
-```
+Unlike past versions of PowerShell, don't use the `throw` keyword for parameter
+validation. See
+[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+for the correct way.
 
 ## See also
 
