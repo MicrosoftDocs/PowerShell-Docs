@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/18/2022
+ms.date: 08/24/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
@@ -32,10 +32,10 @@ The `Set-StrictMode` cmdlet configures strict mode for the current scope and all
 turns it on and off. When strict mode is on, PowerShell generates a terminating error when the
 content of an expression, script, or script block violates basic best-practice coding rules.
 
-Use the **Version** parameter to determine which coding rules are enforced.
+Use the **Version** parameter to determine the coding rules to enforce.
 
 `Set-PSDebug -Strict` cmdlet turns on strict mode for the global scope. `Set-StrictMode` affects
-only the current scope and its child scopes. Therefore, you can use it in a script or function to
+only the current scope and its child scopes. Then, you can use it in a script or function to
 override the setting inherited from the global scope.
 
 When `Set-StrictMode` is off, PowerShell has the following behaviors:
@@ -67,8 +67,7 @@ $a -gt 5
 InvalidOperation: The variable '$a' cannot be retrieved because it has not been set.
 ```
 
-With strict mode set to version `1.0`, attempts to reference variables that are not initialized
-fail.
+With strict mode set to version `1.0`, attempts to reference variables that aren't initialized fail.
 
 ### Example 2: Turn on strict mode as version 2.0
 
@@ -134,11 +133,11 @@ uninitialized variables or non-existent properties.
 The sample output shows the effect of version `2.0` strict mode.
 
 Without version `2.0` strict mode, the `(3,4)` value is interpreted as a single array object to
-which nothing is added. By using version `2.0` strict mode, it is correctly interpreted as faulty
+which nothing is added. With version `2.0` strict mode, it's correctly interpreted as faulty
 syntax for submitting two values.
 
 Without version `2.0`, the reference to the non-existent **Month** property of a string returns only
-`$Null`. By using version `2.0`, it is interpreted correctly as a reference error.
+`$Null`. With version `2.0`, it's interpreted correctly as a reference error.
 
 ### Example 3: Turn on strict mode as version 3.0
 
@@ -157,7 +156,7 @@ True
 ```
 
 ```powershell
-Set-StrictMode -Version 3
+Set-StrictMode -Version 3.0
 $a = @(1)
 $null -eq $a[2]
 $null -eq $a['abc']
@@ -217,8 +216,8 @@ The effective values for this parameter are:
     PowerShell.
 
 > [!CAUTION]
-> Using a **Version** of `Latest` in scripts. The meaning of `Latest` can change in new releases
-> of PowerShell. Therefore, a script written for an older version of PowerShell that uses
+> Using `Latest` for **Version** in scripts isn't deterministic. The meaning of `Latest` can change
+> in new releases of PowerShell. A script written for an older version of PowerShell that uses
 > `Set-StrictMode -Version Latest` is subject to more restrictive rules when run in a newer version
 > of PowerShell.
 
@@ -245,21 +244,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not return any output.
+This cmdlet doesn't return any output.
 
 ## NOTES
 
-While `Set-StrictMode` **Version** parameter will accept values greater than `3.0`, currently there
-are no additional rules defined for anything higher than `3.0`.
+While the **Version** parameter accepts values greater than `3.0`, there are no additional rules
+defined for anything higher than `3.0`.
 
-`Set-StrictMode` is effective only in the scope in which it is set and in its child scopes. For
-more information about scopes in PowerShell, see [about_Scopes](about/about_Scopes.md).
+`Set-StrictMode` is effective only in the scope it's set in and in its child scopes. For more
+information about scopes in PowerShell, see [about_Scopes](about/about_Scopes.md).
 
 ## RELATED LINKS
 
