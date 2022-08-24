@@ -15,8 +15,8 @@ Describes how to use operators to assign values to variables.
 
 Assignment operators assign one or more values to a variable. The equals sign
 (`=`) is the PowerShell assignment operator. PowerShell also has the following
-_compound_ assignment operators: `+=`, `-=`, `*=`, `%=`, `++`, `--`. Compound
-assignment operators perform numeric operations on the values before the
+_compound_ assignment operators: `+=`, `-=`, `*=`, `%=`, `++`, `--`, `??=`.
+Compound assignment operators perform operations on the values before the
 assignment.
 
 ## Syntax
@@ -142,20 +142,35 @@ Compound assignment operators perform numeric operations on the values before
 the assignment.
 
 > [!IMPORTANT]
-> Compound assignment operators do not use dynamic scoping. The variable is
-> always in the current scope. In the following example, the variable `$x` is
-> defined in the global scope. The braces create a new scope. The variable `$x`
-> inside the braces is a new instance and not a reference to the global
-> variable.
->
-> ```powershell
-> $x = 1 # Global scope
-> & { $x += 1; $x }
-> ```
->
-> ```Output
-> 1
-> ```
+> Compound assignment operators don't use dynamic scoping. The variable is
+> always in the current scope.
+
+In the following example, the variable `$x` is defined in the global scope. The
+braces create a new scope. The variable `$x` inside the braces is a new
+instance and not a copy of the global variable.
+
+```powershell
+$x = 1 # Global scope
+& { $x += 1; $x }
+```
+
+```Output
+1
+```
+
+When you use the regular assignment operator, you get a copy of the variable
+from the parent scope. But notice that `$x` in the parent scope is not changed.
+
+```powershell
+$x = 1 # Global scope
+& { $x = $x + 1; $x }
+"Global `$x = $x"
+```
+
+```Output
+2
+Global $x = 1
+```
 
 ### The assignment by addition operator
 
@@ -615,6 +630,27 @@ $d
 ```Output
 7
 ```
+
+### Null-coalescing assignment operator
+
+The null-coalescing assignment operator `??=` assigns the value of its
+right-hand operand to its left-hand operand only if the left-hand operand
+evaluates to null. The `??=` operator doesn't evaluate its right-hand operand
+if the left-hand operand evaluates to non-null.
+
+```powershell
+$x = $null
+$x ??= 100
+$x
+```
+
+```Output
+100
+```
+
+For more information, see
+[Null-coalescing operator](about_operators.md#null-coalescing-operator-).
+
 
 ## Microsoft .NET types
 
