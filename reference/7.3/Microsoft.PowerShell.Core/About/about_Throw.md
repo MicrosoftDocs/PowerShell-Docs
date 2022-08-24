@@ -44,7 +44,7 @@ Exception: ScriptHalted
 
 If the Throw keyword is used in a Catch block without an expression, it throws
 the current RuntimeException again. For more information, see
-about_Try_Catch_Finally.
+[about_Try_Catch_Finally](about_Try_Catch_Finally.md).
 
 ## Throwing a string
 
