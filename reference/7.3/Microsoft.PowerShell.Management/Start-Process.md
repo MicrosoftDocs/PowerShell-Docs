@@ -148,8 +148,8 @@ elevated rights.
 
 ```powershell
 $cred = Get-Credential
-$arguments = '-noprofile -command "Start-Process cmd.exe -Verb RunAs -args /k"'
-Start-Process pwsh.exe -Credential $cred -WindowStyle Hidden -args $arguments
+$args = '-noprofile -command "Start-Process cmd.exe -Verb RunAs -args /k"'
+Start-Process pwsh.exe -Credential $cred -WindowStyle Hidden -ArgumentList $args
 ```
 
 The example starts `cmd.exe` with elevated permissions from a PowerShell session that is running
