@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/20/2021
+ms.date: 08/25/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -39,8 +39,8 @@ The `Start-Process` cmdlet starts one or more processes on the local computer. B
 in the current process.
 
 To specify the program that runs in the process, enter an executable file or script file, or a file
-that can be opened by using a program on the computer. If you specify a non-executable file,
-`Start-Process` starts the program that is associated with the file, similar to the `Invoke-Item`
+that can be opened using a program on the computer. If you specify a non-executable file,
+`Start-Process` starts the program that's associated with the file, similar to the `Invoke-Item`
 cmdlet.
 
 You can use the parameters of `Start-Process` to specify options, such as loading a user profile,
@@ -51,7 +51,7 @@ starting the process in a new window, or using alternate credentials.
 ### Example 1: Start a process that uses default values
 
 This example starts a process that uses the `Sort.exe` file in the current folder. The command uses
-all of the default values, including the default window style, working folder, and credentials.
+all the default values, including the default window style, working folder, and credentials.
 
 ```powershell
 Start-Process -FilePath "sort.exe"
@@ -67,7 +67,7 @@ Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test" -Verb Print
 
 ### Example 3: Start a process to sort items to a new file
 
-This example starts a process that sorts items in the `Testsort.txt` file and returns the sorted
+This example starts a process that sorts items in the `TestSort.txt` file and returns the sorted
 items in the `Sorted.txt` files. Any errors are written to the `SortError.txt` file. The
 **UseNewEnvironment** parameter specifies that the process runs with its own environment variables.
 
@@ -96,7 +96,7 @@ Start-Process -FilePath "notepad" -Wait -WindowStyle Maximized
 
 ### Example 5: Start PowerShell as an administrator
 
-This example starts PowerShell by using the **Run as administrator** option.
+This example starts PowerShell using the **Run as administrator** option.
 
 ```powershell
 Start-Process -FilePath "powershell" -Verb RunAs
@@ -108,7 +108,7 @@ This example shows how to find the verbs that can be used when starting a proces
 verbs are determined by the filename extension of the file that runs in the process.
 
 ```powershell
-$startExe = New-Object System.Diagnostics.ProcessStartInfo -Args PowerShell.exe
+$startExe = New-Object System.Diagnostics.ProcessStartInfo -Args powershell.exe
 $startExe.verbs
 ```
 
@@ -119,9 +119,9 @@ runasuser
 ```
 
 The example uses `New-Object` to create a **System.Diagnostics.ProcessStartInfo** object for
-**PowerShell.exe**, the file that runs in the PowerShell process. The **Verbs** property of the
-**ProcessStartInfo** object shows that you can use the **Open** and **RunAs** verbs with
-`PowerShell.exe`, or with any process that runs a `.exe` file.
+`powershell.exe`, the file that runs in the PowerShell process. The **Verbs** property of the
+**ProcessStartInfo** object shows that you can use the **Open** and `RunAs` verbs with
+`powershell.exe`, or with any process that runs a `.exe` file.
 
 ### Example 7: Specifying arguments to the process
 
@@ -131,11 +131,31 @@ Note that the first command specifies a string as **ArgumentList**. The second c
 array.
 
 ```powershell
-Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
-Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
+Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%SystemDrive%\Program Files`""
+Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%SystemDrive%\Program Files`""
 ```
 
-### Example 8: Create a detached process on Linux
+### Example 8: Run a command as an Administrator using alternate credentials
+
+On Windows, you can run `Start-Process -Verb RunAs` to start a process with elevated permissions.
+This elevates the current user's context. The **Credential** parameter allows you to specify an
+alternate username and password, allowing you to start a process in a different user content.
+Howver, the **Credential** and **Verb** parameters can't be used together.
+
+To start a process with elevated rights, using alternate credentials, you must first start
+PowerShell using the alternate credentials, then use `Start-Process` to start the process with
+elevated rights.
+
+```powershell
+$cred = Get-Credential
+$arguments = '-noprofile -command "Start-Process cmd.exe -Verb RunAs -args /k"'
+Start-Process pwsh.exe -Credential $cred -WindowStyle Hidden -args $arguments
+```
+
+The example starts `cmd.exe` with elevated permissions from a PowerShell session that is running
+under alternate credentials.
+
+### Example 9: Create a detached process on Linux
 
 On Windows, `Start-Process` creates an independent process that remains running independently of the
 launching shell. On non-Windows platforms, the newly started process is attached to the shell that
@@ -164,12 +184,12 @@ be accepted as a single string with the arguments separated by spaces, or as an 
 separated by commas. The cmdlet joins the array into a single string with each element of the array
 separated by a single space.
 
-The outer quotes of the PowerShell strings are not included when the **ArgumentList** values are
+The outer quotes of the PowerShell strings aren't included when the **ArgumentList** values are
 passed to the new process. If parameters or parameter values contain a space or quotes, they need to
 be surrounded with escaped double quotes. For more information, see
 [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
-For the best results, use a single **ArgumentList** value containing all of the arguments and any
+For the best results, use a single **ArgumentList** value containing all the arguments and any
 needed quote characters.
 
 ```yaml
@@ -215,7 +235,7 @@ Accept wildcard characters: False
 ### -FilePath
 
 Specifies the optional path and filename of the program that runs in the process. Enter the name of
-an executable file or of a document, such as a `.txt` or `.doc` file, that is associated with a
+an executable file or of a document, such as a `.txt` or `.doc` file, that's associated with a
 program on the computer. This parameter is required.
 
 If you specify only a filename, use the **WorkingDirectory** parameter to specify the path.
@@ -235,9 +255,9 @@ Accept wildcard characters: False
 ### -LoadUserProfile
 
 Indicates that this cmdlet loads the Windows user profile stored in the `HKEY_USERS` registry key
-for the current user. The parameter does not apply for non-Windows systems.
+for the current user. The parameter doesn't apply to non-Windows systems.
 
-This parameter does not affect the PowerShell profiles. For more information, see
+This parameter doesn't affect the PowerShell profiles. For more information, see
 [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
 ```yaml
@@ -257,9 +277,9 @@ Accept wildcard characters: False
 Start the new process in the current console window. By default on Windows, PowerShell opens a new
 window. On non-Windows systems, you never get a new window.
 
-You cannot use the **NoNewWindow** and **WindowStyle** parameters in the same command.
+You can't use the **NoNewWindow** and **WindowStyle** parameters in the same command.
 
-The parameter does not apply for non-Windows systems.
+The parameter doesn't apply to non-Windows systems.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -275,7 +295,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Returns a process object for each process that the cmdlet started. By default, this cmdlet does not
+Returns a process object for each process that the cmdlet started. By default, this cmdlet doesn't
 generate any output.
 
 ```yaml
@@ -376,7 +396,7 @@ To find the verbs that can be used with the file that runs in a process, use the
 to create a **System.Diagnostics.ProcessStartInfo** object for the file. The available verbs are in
 the **Verbs** property of the **ProcessStartInfo** object. For details, see the examples.
 
-The parameter does not apply for non-Windows systems.
+The parameter doesn't apply to non-Windows systems.
 
 ```yaml
 Type: System.String
@@ -410,13 +430,17 @@ Accept wildcard characters: False
 
 ### -WindowStyle
 
-Specifies the state of the window that is used for the new process. The acceptable values for this
-parameter are: **Normal**, **Hidden**, **Minimized**, and **Maximized**. The default value is
-**Normal**.
+Specifies the state of the window that's used for the new process. The default value is `Normal`.
+The acceptable values for this parameter are:
 
-You cannot use the **WindowStyle** and **NoNewWindow** parameters in the same command.
+- `Normal`
+- `Hidden`
+- `Minimized`
+- `Maximized`
 
-The parameter does not apply for non-Windows systems. When using on non-Windows systems, you never
+You can't use the **WindowStyle** and **NoNewWindow** parameters in the same command.
+
+The parameter doesn't apply to non-Windows systems. When using on non-Windows systems, you never
 get a new window.
 
 ```yaml
@@ -435,8 +459,8 @@ Accept wildcard characters: False
 ### -WorkingDirectory
 
 Specifies the location that the new process should start in. The default is the location of the
-executable file or document being started. Wildcards are not supported. The path name must not
-contain characters that would be interpreted as wildcards.
+executable file or document being started. Wildcards aren't supported. The path must not contain
+characters that would be interpreted as wildcards.
 
 ```yaml
 Type: System.String
@@ -468,7 +492,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 This parameter was introduced in PowerShell 6.0.
 
@@ -495,24 +519,32 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.Diagnostics.Process
 
 This cmdlet generates a **System.Diagnostics.Process** object, if you specify the **PassThru**
-parameter. Otherwise, this cmdlet does not return any output.
+parameter. Otherwise, this cmdlet doesn't return any output.
 
 ## NOTES
+
+Native commands are executable files installed in the operating system. These executables can be run
+from any command-line shell, like PowerShell. Usually you run the command exactly as you would in
+`bash` or `cmd.exe`. The `Start-Process` cmdlet can be used to run any native commands, but should
+only be used when you need to control how the command is executed.
+
+`Start-Process` is useful for running GUI programs on non-Windows platforms. For example, run
+`Start-Proces gedit` to launch the graphical text editor common the GNOME Desktop environments.
 
 By default, `Start-Process` launches a process _asynchronously_. Control is instantly returned to
 PowerShell even if the new process is still running.
 
 - On the local system, the launched process lives on independent from the calling process.
 - On a remote system, the new process is terminated when the remote session ends, immediately
-  following the `Start-Process` command. Therefore, you cannot use `Start-Process` in a remote session
-  expecting the launched process to outlive the session.
+  following the `Start-Process` command. Therefore, you can't use `Start-Process` in a remote
+  session expecting the launched process to outlive the session.
 
 If you do need to use `Start-Process` in a remote session, invoke it with the **Wait** parameter. Or
 you could use other methods to create a new process on the remote system.
@@ -525,7 +557,7 @@ On Windows, the most common use case for `Start-Process` is to use the **Wait** 
 progress until the new process exits. On non-Windows system, this is rarely needed since the default
 behavior for command-line applications is equivalent to `Start-Process -Wait`.
 
-This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process**
+This cmdlet is implemented using the **Start** method of the **System.Diagnostics.Process**
 class. For more information about this method, see
 [Process.Start Method](/dotnet/api/system.diagnostics.process.start#overloads).
 
