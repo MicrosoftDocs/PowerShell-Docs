@@ -1,0 +1,10 @@
+adml
+admx
+asmx
+bmil
+cdxml
+dylib
+evtx
+maml
+mogg
+msix
