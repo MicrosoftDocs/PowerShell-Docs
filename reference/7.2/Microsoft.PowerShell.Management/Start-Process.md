@@ -140,7 +140,7 @@ Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%SystemDrive%
 On Windows, you can run `Start-Process -Verb RunAs` to start a process with elevated permissions.
 This elevates the current user's context. The **Credential** parameter allows you to specify an
 alternate username and password, allowing you to start a process in a different user content.
-Howver, the **Credential** and **Verb** parameters can't be used together.
+However, the **Credential** and **Verb** parameters can't be used together.
 
 To start a process with elevated rights, using alternate credentials, you must first start
 PowerShell using the alternate credentials, then use `Start-Process` to start the process with
@@ -367,7 +367,7 @@ Indicates that this cmdlet uses new environment variables specified for the proc
 started process runs with the environment variables inherited from the parent process.
 
 On Windows, when you use **UseNewEnvironment**, the new process starts only containing the default
-environment variables defined for the **Machine** scope. This has the side affect that the
+environment variables defined for the **Machine** scope. This has the side effect that the
 `$env:USERNAME` is set to **SYSTEM**. None of the variables from the **User** scope are included.
 
 ```yaml
