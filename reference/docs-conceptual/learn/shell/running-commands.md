@@ -36,7 +36,7 @@ For any shell in any operating system there are three types of commands:
 ## Running native commands
 
 Any native command can be run from the PowerShell command line. Usually you run the command exactly
-has you would in `bash` or `cmd.exe`. The following example shows running the `grep` command in
+as you would in `bash` or `cmd.exe`. The following example shows running the `grep` command in
 `bash` on Ubuntu Linux.
 
 ```bash
