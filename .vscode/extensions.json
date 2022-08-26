@@ -3,11 +3,12 @@
   // for the documentation about the extensions.json format
   "recommendations": [
     "Acrolinx.vscode-sidebar",
+    "docsmsft.docs-authoring-pack",
     "marvhen.reflow-markdown",
     "ms-vscode.powershell",
+    "shuworks.vscode-table-formatter",
+    "streetsidesoftware.code-spell-checker",
     "wmaurer.change-case",
-    "yzane.markdown-pdf",
-    "docsmsft.docs-authoring-pack",
-    "shuworks.vscode-table-formatter"
+    "yzane.markdown-pdf"
   ]
 }

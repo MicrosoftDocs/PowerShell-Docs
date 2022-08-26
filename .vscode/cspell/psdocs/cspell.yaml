@@ -1,0 +1,158 @@
+enabled: true
+description: >
+  This configuration defines the default spellcheck settings for all PowerShell documentation. Where
+  needed, other projects and subfolders can extend or override these defaults.
+
+# Ensure that any comments in code files to controll cSpell are correct.
+validateDirectives: true
+
+# These apply to all files unless otherwise specified. They're defined in NPM modules that are
+# available by default with the extension.
+dictionaries:
+  - azureTerms
+  - companies
+  - filetypes
+  - misc
+  - powershell
+  - softwareTerms
+
+# These are locally defined. They must be specified for the document type they're used in.
+dictionaryDefinitions:
+  - name: externalCommands
+    description: >
+      Dictionary of common commands external to PowerShell. Add entries to this dictionary for
+      commands, services, and script keywords that are referenced in documentation but are not
+      specific to or included in PowerShell.
+    path: ./dictionaries/externalCommands.txt
+  - name: fictionalCorps
+    description: >
+      Dictionary of fictional company names used in documentation. Add entries to this dictionary
+      when using a valid but nonexistant fictional company or organization.
+    path: ./dictionaries/fictionalCorps.txt
+  - name: fileExtensions
+    description: >
+      Dictionary of file extensions referenced in documentation. Add entries to this dictionary
+      when a valid file extension is marked as an unknown spelling.
+    path: ./dictionaries/fileExtensions.txt
+  - name: psdocs
+    description: >
+      General PowerShell documentation dictionary. Add entries to this dictionary for PowerShell
+      concepts, terms, or other names. Consider submitting them to the upstream PowerShell
+      dictionary if sensible.
+    path: ./dictionaries/psdocs.txt
+  - name: pwshAliases
+    description: >
+      Dictionary of PowerShell aliases. Add entries to this dictionary for command and parameter
+      aliases to keep the main dictionary easier to use.
+    path: ./dictionaries/pwshAliases.txt
+
+# Defining patterns here makes it easier to understand the definitions for the ignore and include
+# pattern lists (`*RegExpList`). Also allows us to document these patterns to some degree.
+patterns:
+  - name: domain-azure-edge
+    description: Ignore misspellings caused by lowercase domain names for Azure edge domains.
+    pattern: /\S+\.azureedge\.net/
+  - name: domain-windows-blob
+    description: Ignore misspellings caused by lowercase domain names Windows blob storage domains
+    pattern: /\S+\.blob\.core\.windows\.net/
+  - name: domain-gallery
+    description: Ignore segments preceeding or following the powershellgallery domain name.
+    pattern: /(\S+\.)?powershellgallery\.com(\S+)?/
+  - name: domains
+    description: Ignore apparent misspellings as components of well-known domain name.
+    pattern:
+      - domain-azure-edge
+      - domain-gallery
+      - domain-windows-blob
+
+  - name: markdown-code-block-output
+    description: Ignore text in output code blocks.
+    pattern: '/(?:```[oO]utput[\s\S]*?```)/g'
+  - name: markdown-code-block-syntax
+    description: Ignore text in output code blocks.
+    pattern: '/(?:```[sS]yntax[\s\S]*?```)/g'
+  - name: markdown-code-blocks
+    description: Don't check spelling in output or syntax blocks.
+    pattern: 
+      - markdown-code-block-output
+      - markdown-code-block-syntax
+
+  - name: markdown-link-reference
+    description: Matches 'foobar' in '[foo bar][foobar]'
+    pattern: /(?<=\])\[[^\]]+\]/
+  - name: markdown-link-inline
+    description: Matches '/foo/bar' in '[foo bar](/foo/bar)'
+    pattern: '/(?<=\])\([^\)]+\)/'
+  - name: markdown-link-definition
+    description: "Matches '/foo/bar' in '[foobar]: /foo/bar'"
+    pattern: '/(?<=\]:\s)(\s*((https?:)?|\/|\.{1,2}))(\/\S+)/'
+  - name: markdown-links
+    description: Don't check link definitions or references.
+    pattern:
+      - markdown-link-inline
+      - markdown-link-reference
+      - markdown-link-definition
+
+  - name: registry-paths
+    description: Ignore Windows registry paths
+    pattern: /(HK(CR|CU|LM))(:\S*)?/
+
+  - name: wildcard-fragment-prefix
+    description: Ignore misspellings caused by partial words with a wildcard at the start.
+    pattern: '/[^\*]\*\w+/'
+  - name: wildcard-fragment-suffix
+    description: Ignore misspellings caused by partial words with a wildcard at the end.
+    pattern: '/\w+\*[^\*]/'
+  - name: wildcard-fragments
+    pattern:
+      - wildcard-fragment-prefix
+      - wildcard-fragment-suffix
+
+# Any patterns listed here are ignored for spellcheck.
+#
+# We ignore the URLs for inline markdown links, Markdown link references, and Markdown link
+# reference definitions because these will otherwise be very noisy and they're not displayed to
+# readers anyway.
+#
+# We ignore the spelling for all text in output code blocks for Markdown files because that text
+# represents output from real commands and any spelling errors are not a fault in the documentation.
+#
+# We ignore registry paths, wildcard fragments, and components of well-known domains because those
+# are intentionally or uncontrollably downcased or "incorrect" spellings.
+ignoreRegExpList:
+  - domains
+  - markdown-code-blocks
+  - markdown-links
+  - registry-paths
+  - wildcard-fragments
+
+# The default locale for this documentation is US English.
+language: 'en,en-US'
+
+# These settings are applied to combinations of language (file type) and locale. For any given file
+# and locale, all matching dictionaries are applied.
+languageSettings:
+  # Any file written in English
+  - languageId: '*'
+    locale: en
+    dictionaries:
+      - wordsEn
+  # Any file written in US English
+  - languageId: '*'
+    locale: en-US
+    dictionaries:
+      - wordsEn
+  # Any file written in British English
+  - languageId: '*'
+    locale: en-GB
+    dictionaries:
+      - wordsEnGb
+  # Any Markdown file
+  - languageId: markdown
+    locale: '*'
+    dictionaries:
+      - externalCommands
+      - fictionalCorps
+      - fileExtensions
+      - psdocs
+      - pwshAliases
