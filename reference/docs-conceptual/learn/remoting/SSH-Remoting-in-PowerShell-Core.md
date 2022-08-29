@@ -248,9 +248,9 @@ see prompts from SSH asking to verify the host computer and prompting for a pass
 same thing on a Windows computer to ensure remoting is working. Then, remote between computers by
 changing the host name.
 
+### Linux to Linux
+
 ```powershell
-# Linux to Linux
-#
 $session = New-PSSession -HostName UbuntuVM1 -UserName TestUser
 ```
 
@@ -294,10 +294,9 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName           
       0       0        0         20       3.07  11076 076 powershell                     UbuntuVM1
 ```
 
+### Linux to Windows
+
 ```powershell
-#
-# Linux to Windows
-#
 Enter-PSSession -HostName WinVM1 -UserName PTestName
 ```
 
@@ -313,10 +312,9 @@ PTestName@WinVM1s password:
 Microsoft Windows [Version 10.0.10586]
 ```
 
+### Windows to Windows
+
 ```powershell
-#
-# Windows to Windows
-#
 C:\Users\PSUser\Documents>pwsh.exe
 ```
 
