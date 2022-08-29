@@ -233,23 +233,23 @@ Values marked with an asterisk, such as `Operational*`, indicate the default
 value when no value is provided in the file.
 
 - `LogIdentity`
-  - Values: "<string name>", powershell*
+  - Values: `<string name>`, `powershell*`
   - Description: The name to use when logging. The default identity is
-    **powershell**. This value can be used to tell the difference between two
+    `powershell`. This value can be used to tell the difference between two
     instances of a PowerShell installation, such as a release and beta version.
     This value is also used to redirect log output to a separate file on Linux.
     See the discussion of **rsyslog** above.
-- `LogChannels`
-  - Values: Operational*, Analytic
+- **LogChannels**
+  - Values: `Operational*`, `Analytic`
   - Description: The channels to enable. Separate the values with a comma when
     specifying more than one.
-- `LogLevel`
-  - Values: Always, Critical, Error, Warning, Informational*, Verbose, Debug
+- **LogLevel**
+  - Values: `Always`, `Critical`, `Error`, `Warning`, `Informational*`, `Verbose`, `Debug`
   - Description: Specify a single value. The value enables itself and all
     values above it.
-- `LogKeywords`
-  - Values: Runspace, Pipeline, Protocol, Transport, Host, Cmdlets, Serializer,
-    Session, ManagedPlugin
+- **LogKeywords**
+  - Values: `Runspace`, `Pipeline`, `Protocol`, `Transport`, `Host`, `Cmdlets`, `Serializer`,
+    `Session`, `ManagedPlugin`
   - Description: Keywords provide the ability to limit logging to specific
     components within PowerShell. By default, all keywords are enabled and
     change this value is only useful for very specialized troubleshooting.
