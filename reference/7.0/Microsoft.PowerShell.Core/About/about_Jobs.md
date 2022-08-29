@@ -1,7 +1,7 @@
 ---
 description: Provides information about how PowerShell background jobs run a command or expression in the background without interacting with the current session.
 Locale: en-US
-ms.date: 03/26/2021
+ms.date: 08/29/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Jobs
@@ -26,15 +26,15 @@ jobs types provided by PowerShell to support concurrency.
   [about_Thread_Jobs](about_Thread_Jobs.md).
 
 Running scripts remotely, on a separate machine or in a separate process,
-provides great isolation. Any errors that occur in the remote job do not affect
+provides great isolation. Any errors that occur in the remote job don't affect
 other running jobs or the parent session that started the job. However, the
 remoting layer adds overhead, including object serialization. All objects are
-serialized and deserialized as they are passed between the parent session and
+serialized and deserialized as they're passed between the parent session and
 the remote (job) session. Serialization of large complex data objects can
 consume large amounts of compute and memory resources and transfer large
 amounts of data across the network.
 
-Thread-based jobs are not as robust as remote and background jobs, because they
+Thread-based jobs aren't as robust as remote and background jobs, because they
 run in the same process on different threads. If one job has a critical error
 that crashes the process, then all other jobs in the process are terminated.
 
@@ -60,19 +60,17 @@ There are two ways work around this situation:
 
 ## The job cmdlets
 
-|Cmdlet          |Description                                            |
-|----------------|-------------------------------------------------------|
-|`Start-Job`     |Starts a background job on a local computer.           |
-|`Get-Job`       |Gets the background jobs that were started in the      |
-|                |current session.                                       |
-|`Receive-Job`   |Gets the results of background jobs.                   |
-|`Stop-Job`      |Stops a background job.                                |
-|`Wait-Job`      |Suppresses the command prompt until one or all jobs are|
-|                |complete.                                              |
-|`Remove-Job`    |Deletes a background job.                              |
-|`Invoke-Command`|The **AsJob** parameter creates a background job on a  |
-|                |remote computer. You can use `Invoke-Command` to run   |
-|                |any job command remotely, including `Start-Job`.       |
+- `Start-Job` - Starts a background job on a local computer.
+- `Get-Job` - Gets the background jobs that were started in the current
+  session.
+- `Receive-Job` - Gets the results of background jobs.
+- `Stop-Job` - Stops a background job.
+- `Wait-Job` - Suppresses the command prompt until one or all jobs are
+  complete.
+- `Remove-Job` - Deletes a background job.
+- `Invoke-Command` - The **AsJob** parameter creates a background job on a
+  remote computer. You can use `Invoke-Command` to run any job command
+  remotely, including `Start-Job`.
 
 ## How to start a job on the local computer
 
@@ -93,7 +91,7 @@ if the job takes an extended time to complete. You can continue to work in the
 session without interruption while the job runs.
 
 The `Start-Job` command returns an object that represents the job. The job
-object contains useful information about the job, but it does not contain the
+object contains useful information about the job, but it doesn't contain the
 job results.
 
 You can save the job object in a variable and then use it with the other
@@ -145,7 +143,7 @@ $job = Get-Job -Id 1
 
 ## Getting the results of a job
 
-When you run a background job, the results do not appear immediately. To get
+When you run a background job, the results don't appear immediately. To get
 the results of a background job, use the `Receive-Job` cmdlet.
 
 The following example, the `Receive-Job` cmdlet gets the results of the job
@@ -205,7 +203,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 Use the **Keep** parameter to prevent `Receive-Job` from deleting the job
 results that are returned. The following commands show the effect of using the
-**Keep** parameter on a job that is not yet complete.
+**Keep** parameter on a job that's not yet complete.
 
 ```powershell
 C:\PS> Receive-Job -Job $job -Keep
@@ -231,8 +229,8 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 If you run a command that takes a long time to complete, you can use the
 properties of the job object to determine when the job is complete. The
-following command uses the `Get-Job` object to get all of the background jobs
-in the current session.
+following command uses the `Get-Job` object to get all the background jobs in
+the current session.
 
 ```powershell
 Get-Job
@@ -256,7 +254,7 @@ get all of the results. Use the **State** property to determine when the job is
 complete.
 
 You can also use the **Wait** parameter of the `Receive-Job` cmdlet. When use
-use this parameter, the cmdlet does not return the command prompt until the job
+use this parameter, the cmdlet doesn't return the command prompt until the job
 is completed and all results are available.
 
 You can also use the `Wait-Job` cmdlet to wait for any or all of the results of

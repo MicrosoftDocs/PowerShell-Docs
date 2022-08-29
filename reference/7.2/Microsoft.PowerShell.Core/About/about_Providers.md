@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell providers provide access to data and components that wouldn't otherwise be easily accessible at the command line. The data is presented in a consistent format that resembles a file system drive.
 Locale: en-US
-ms.date: 03/07/2022
+ms.date: 08/29/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Providers
@@ -9,10 +9,9 @@ title: about Providers
 # about_Providers
 
 ## Short description
-Describes how PowerShell providers provide access to data and
-components that wouldn't otherwise be easily accessible at the command line.
-The data is presented in a consistent format that resembles a file system
-drive.
+Describes how PowerShell providers provide access to data and components that
+wouldn't otherwise be easily accessible at the command line. The data is
+presented in a consistent format that resembles a file system drive.
 
 ## Long description
 
@@ -28,27 +27,38 @@ parameters are only available when you use the cmdlet with the provider data.
 
 ## Built-in providers
 
-PowerShell includes a set of built-in providers that you can use to
-access the different types of data stores.
+PowerShell includes a set of built-in providers that provide access to
+different types of objects.
 
-| Provider   |   Drive(s)  |OutputType                                                    |
-|----------- |------------ |--------------------------------------------------------------|
-|Alias       |Alias:       |System.Management.Automation.AliasInfo                        |
-|Certificate |Cert:        |Microsoft.PowerShell.Commands.X509StoreLocation               |
-|            |             |System.Security.Cryptography.X509Certificates.X509Certificate2|
-|Environment |Env:         |System.Collections.DictionaryEntry                            |
-|FileSystem  |C: (*)       |System.IO.FileInfo                                            |
-|            |             |System.IO.DirectoryInfo                                       |
-|Function    |Function:    |System.Management.Automation.FunctionInfo                     |
-|Registry    |HKLM: HKCU:  |Microsoft.Win32.RegistryKey                                   |
-|Variable    |Variable:    |System.Management.Automation.PSVariable                       |
-|WSMan       |WSMan:       |Microsoft.WSMan.Management.WSManConfigContainerElement        |
-
-(*) The FileSystem drives vary on each system.
+- **Alias** provider
+  - Drive - `Alias:`
+  - Object types - **System.Management.Automation.AliasInfo**
+- **Certificate** provider
+  - Drive - `Cert:`
+  - Object types - **Microsoft.PowerShell.Commands.X509StoreLocation**,
+    **System.Security.Cryptography.X509Certificates.X509Certificate2**
+- **Environment** provider
+  - Drive - `Env:`
+  - Object types - **System.Collections.DictionaryEntry**
+- **FileSystem** provider
+  - Drive - `C:` and other depending on hardware
+  - Object types - **System.IO.FileInfo**, **System.IO.DirectoryInfo**
+- **Function** provider
+  - Drive - `Function:`
+  - Object types - **System.Management.Automation.FunctionInfo**
+- **Registry** provider
+  - Drive - `HKLM:`, `HKCU:`
+  - Object types - **Microsoft.Win32.RegistryKey**
+- **Variable** provider
+  - Drive - `Variable:`
+  - Object types - **System.Management.Automation.PSVariable**
+- **WSMan** provider
+  - Drive - `WSMan:`
+  - Object types - **Microsoft.WSMan.Management.WSManConfigContainerElement**
 
 You can also create your own PowerShell providers, and you can install
-providers that others develop. To list the providers that are available in
-your session, type:
+providers that others develop. To list the providers that are available in your
+session, type:
 
 ```powershell
 Get-PSProvider
@@ -90,11 +100,11 @@ provider. You can use the same cmdlets in the same way to manage the different
 types of data that providers expose. After you learn to manage the data of one
 provider, you can use the same procedures with the data from any provider.
 
-For example, the `New-Item` cmdlet creates a new item. In the `C:` drive that is
-supported by the **FileSystem** provider, you can use `New-Item` to create a new
-file or folder. In the drives that are supported by the **Registry** provider,
-you can use `New-Item` to create a new registry key. In the `Alias:` drive,
-you can use `New-Item` to create a new alias.
+For example, the `New-Item` cmdlet creates a new item. In the `C:` drive that's
+supported by the **FileSystem** provider, you can use `New-Item` to create a
+new file or folder. In the drives that are supported by the **Registry**
+provider, you can use `New-Item` to create a new registry key. In the `Alias:`
+drive, you can use `New-Item` to create a new alias.
 
 For detailed information about any of the following cmdlets, type:
 
@@ -163,13 +173,12 @@ Get-Help <cmdlet-name> -Detailed
 
 ## Viewing provider data
 
-The primary benefit of a provider is that it exposes its data in a familiar
-and consistent way. The model for data presentation is a file system
-drive.
+The primary benefit of a provider is that it exposes its data in a familiar and
+consistent way. The model for data presentation is a file system drive.
 
 The provider allows you to view, navigate, and change items in the data store
-as though they were data in a file system. The data store is accessed by the name
-of the drive that it supports.
+as though they were data in a file system. The data store is accessed by the
+name of the drive that it supports.
 
 The drive is listed in the default display of the `Get-PSProvider` cmdlet, but
 you can get information about the provider drive using the `Get-PSDrive`
@@ -179,34 +188,34 @@ cmdlet. For example, to get all the properties of the Function: drive, type:
 Get-PSDrive Function | Format-List *
 ```
 
-You can view and move through the data in a provider drive just as
-you would on a file system drive.
+You can view and move through the data in a provider drive just as you would on
+a file system drive.
 
-To view the contents of a provider drive, use the Get-Item or Get-ChildItem
-cmdlets. Type the drive name followed by a colon (:). For example, to
-view the contents of the Alias: drive, type:
+To view the contents of a provider drive, use the `Get-Item` or `Get-ChildItem`
+cmdlets. Type the drive name followed by a colon (`:`). For example, to view
+the contents of the `Alias:` drive, type:
 
 ```powershell
 Get-Item alias:
 ```
 
-You can view and manage the data in any drive from another drive by
-including the drive name in the path. For example, to view the
-HKLM\Software registry key in the HKLM: drive from another drive, type:
+You can view and manage the data in any drive from another drive by including
+the drive name in the path. For example, to view the `HKLM\Software` registry
+key in the `HKLM:` drive from another drive, type:
 
 ```powershell
 Get-ChildItem HKLM:\SOFTWARE\
 ```
 
-To open the drive, use the Set-Location cmdlet. Remember the colon
-when you specify the drive path. For example, to change your location
-to the root directory of the Cert: drive, type:
+To open the drive, use the `Set-Location` cmdlet. Remember the colon when you
+specify the drive path. For example, to change your location to the root
+directory of the `Cert:` drive, type:
 
 ```powershell
 Set-Location cert:
 ```
 
-Then, to view the contents of the Cert: drive, type:
+Then, to view the contents of the `Cert:` drive, type:
 
 ```powershell
 Get-ChildItem
@@ -214,16 +223,16 @@ Get-ChildItem
 
 ## Moving through hierarchical data
 
-You can move through a provider drive just as you would a hard disk drive.
-If the data is arranged in a hierarchy of items within items, use a
-backslash (`\`) to indicate a child item. Use the following format:
+You can move through a provider drive just as you would a hard disk drive. If
+the data is arranged in a hierarchy of items within items, use a backslash
+(`\`) to indicate a child item. Use the following format:
 
 ```
 drive:\location\child-location\...
 ```
 
-For example, to change your location to the HKLM\Software registry key,
-type a Set-Location command, such as:
+For example, to change your location to the `HKLM\Software` registry key, type
+a `Set-Location `command, such as:
 
 ```powershell
 Set-Location HKLM:\SOFTWARE\
@@ -257,7 +266,7 @@ PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters>
 
 ## Provider Home
 
-Providers also have a **Home** location.  This location is shared by all
+Providers also have a **Home** location. This location is shared by all
 `PSDrives` backed by the provider. It can be retrieved by viewing the **Home**
 property of the provider.
 
@@ -288,8 +297,8 @@ using its property.
 (Get-PSProvider FileSystem).Home = "C:\"
 ```
 
-The `~` character can be used to represent the provider's home directory.
-If the provider doesn't have a **Home** location set, you see an error.
+The `~` character can be used to represent the provider's home directory. If
+the provider doesn't have a **Home** location set, you see an error.
 
 ```powershell
 Cert:\> Set-Location ~
@@ -313,8 +322,8 @@ provider. These parameters are available only when the cmdlet is used with the
 provider that added them.
 
 For example, the `Cert:` drive adds the **CodeSigningCert** parameter to the
-`Get-Item` and `Get-ChildItem` cmdlets. You can use this parameter only when you
-use `Get-Item` or `Get-ChildItem` in the `Cert:` drive.
+`Get-Item` and `Get-ChildItem` cmdlets. You can use this parameter only when
+you use `Get-Item` or `Get-ChildItem` in the `Cert:` drive.
 
 For a list of the dynamic parameters that a provider supports, see the Help
 file for the provider. Type:
