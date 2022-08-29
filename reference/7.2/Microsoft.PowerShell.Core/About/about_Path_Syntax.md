@@ -1,7 +1,7 @@
 ---
-description: Describes the full and relative path name formats in  PowerShell.
+description: Describes the full and relative path formats in  PowerShell.
 Locale: en-US
-ms.date: 06/09/2017
+ms.date: 08/29/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_path_syntax?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Path Syntax
@@ -9,34 +9,34 @@ title: about Path Syntax
 # about_Path_Syntax
 
 ## Short description
-Describes the full and relative path name formats in  PowerShell.
+Describes the full and relative path formats in  PowerShell.
 
 ## Long description
 
 All items in a data store accessible through a PowerShell provider can be
-uniquely identified by their path names. A path name is a combination of the
+uniquely identified by their path names. A path is a combination of the
 item name, the container and subcontainers in which the item is located, and
 the PowerShell drive through which the containers are accessed.
 
 In PowerShell, path names are divided into one of two types: fully qualified
-and relative. A fully qualified path name consists of all elements that make
+and relative. A fully qualified path consists of all elements that make
 up a path. The following syntax shows the elements in a fully qualified path
 name:
 
-```powershell
+```Syntax
 [<provider>::]<drive>:[\<container>[\<subcontainer>...]]\<item>
 ```
 
-The \<provider\> placeholder refers to the PowerShell provider through which
+The `<provider>` placeholder refers to the PowerShell provider through which
 you access the data store. For example, the FileSystem provider allows you to
 access the files and directories on your computer. This element of the syntax
 is optional and is never needed because the drive names are unique across all
 providers.
 
-The \<drive\> placeholder refers to the PowerShell drive that is supported by
+The `<drive>` placeholder refers to the PowerShell drive that's supported by
 a particular PowerShell provider. In the case of the FileSystem provider, the
 PowerShell drives map to the Windows drives that are configured on your
-system. For example, if your system includes an A: drive and a C: drive, the
+system. For example, if your system includes an A: drive and a `C:` drive, the
 FileSystem provider creates the same drives in PowerShell.
 
 After you have specified the drive, you must specify any containers and
@@ -49,7 +49,7 @@ compatibility with other PowerShells.)
 
 After the container and subcontainers have been specified, you must provide
 the item name, preceded by a backslash. For example, the fully qualified path
-name for the Shell.dll file in the C:\\Windows\\System32 directory is as
+name for the Shell.dll file in the `C:\Windows\System32` directory is as
 follows:
 
 ```powershell
@@ -60,53 +60,54 @@ In this case, the drive through which the containers are accessed is the C:
 drive, the top-level container is Windows, the subcontainer is System32
 (located within the Windows container), and the item is Shell.dll.
 
-In some situations, you do not need to specify a fully qualified path name and
-can instead use a relative path name. A relative path name is based on the
-current working location. PowerShell allows you to identify an item based on
-its location relative to the current working location. You can specify
-relative path names by using special characters. The following table describes
-each of these characters and provides examples of relative path names and
-fully qualified path names. The examples in the table are based on the current
-working directory being set to C:\Windows.
+In some situations, you don't need to specify a fully qualified path and can
+instead use a relative path. PowerShell allows you to identify an item based on
+its location relative to the current working location.
 
-|Symbol|Description               |Relative path    |Full path          |
-|------|--------------------------|-----------------|-------------------|
-|.     |Current location          |.\\System        |c:\\Windows\\System|
-|..    |Parent of current location|..\\Program Files|c:\\Program Files  |
-|\     |Drive root of current     |\\Program Files  |c:\\Program Files  |
-|      |location                  |                 |                   |
-|[none]|No special characters     |System           |c:\\Windows\\System|
+PowerShell uses the following character sequences to specify relative paths.
 
-When using a path name in a command, you enter that name in the same way
-whether you use a fully qualified path name or a relative one. For example,
-suppose that your current working directory is C:\Windows. The following
-Get-ChildItem command retrieves all items in the C:\Techdocs directory:
+- (`.`) - Current location
+- (`..`) - Parent of current location
+- (`\`) - Root of current location
+
+The following examples are based on the current working directory being set to
+`C:\Windows`.
+
+- The relative path `.\System` resolves as `C:\Windows\System`
+- The relative path `..\Program Files` resolves as `C:\Program Files`
+- The relative path `\Program Files` resolves as `C:\Program Files`
+- The relative path `System` resolves as `C:\Windows\System`
+
+When using a path in a command, you can use a fully qualified path or a
+relative one. For example, suppose that your current working directory is
+`C:\Windows`. The following `Get-ChildItem` command retrieves all items in the
+`C:\TechDocs `directory:
 
 ```powershell
-Get-ChildItem \techdocs
+Get-ChildItem \TechDocs
 ```
 
 The backslash indicates that the drive root of the current working location
-should be used. Because the working directory is C:\\Windows, the drive root
-is the C: drive. Because the techdocs directory is located off the root, you
-need to specify only the backslash.
+should be used. Because the working directory is `C:\Windows`, the drive root
+is the `C:` drive. Because the `TechDocs` directory is located off the root,
+you need to specify only the backslash.
 
-You can achieve the same results by using the following command:
+You get the same results using the fully qualified path:
 
 ```powershell
-Get-ChildItem c:\techdocs
+Get-ChildItem C:\TechDocs
 ```
 
-Regardless of whether you use a fully qualified path name or a relative path
-name, a path name is important not only because it locates an item but also
+Regardless of whether you use a fully qualified path or a relative path
+name, a path is important not only because it locates an item but also
 because it uniquely identifies the item even if that item shares the same name
 as another item in a different container.
 
-For instance, suppose that you have two files that are each named Results.txt.
-The first file is in a directory named C:\\Techdocs\\Jan, and the second file
-is in a directory named C:\\Techdocs\\Feb. The path name for the first file
-(C:\\Techdocs\\Jan\\Results.txt) and the path name for the second file
-(C:\\Techdocs\\Feb\\Results.txt) allow you to clearly distinguish between the
+For instance, suppose that you have two files that are each named
+`Results.txt`. The first file is in a directory named `C:\TechDocs\Jan`, and
+the second file is in a directory named `C:\TechDocs\Feb`. The path for the
+first file (`C:\TechDocs\Jan\Results.txt`) and the path for the second file
+(`C:\TechDocs\Feb\Results.txt`) allow you to clearly distinguish between the
 two files.
 
 ## See also

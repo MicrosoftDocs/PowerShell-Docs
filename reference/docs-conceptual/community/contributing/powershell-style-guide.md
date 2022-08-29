@@ -1,6 +1,6 @@
 ---
 description: This article provides the rules of style for writing PowerShell documentation.
-ms.date: 07/26/2022
+ms.date: 08/29/2022
 ms.topic: conceptual
 title: PowerShell-Docs style guide
 ---
@@ -361,30 +361,10 @@ Basic formatting guidelines:
     The `$foo` variable is used to store ...
     ```
 
-- Tables need to fit within 76 characters
-  - Manually wrap contents of cells across multiple lines
+- Markdown tables
+  - For `About_*` topics, tables must fit within 76 characters
+    - If the content doesn't fit within 76 character limit, use bullet lists instead
   - Use opening and closing `|` characters on each line
-  - The following example illustrates how to construct a table containing information that wraps on
-    multiple lines within a cell.
-
-    ~~~markdown
-    ```
-    |Operator|Description                |Example                          |
-    |--------|---------------------------|---------------------------------|
-    |`-is`   |Returns TRUE when the input|`(get-date) -is [DateTime]`      |
-    |        |is an instance of the      |`True`                           |
-    |        |specified .NET type.       |                                 |
-    |`-isNot`|Returns TRUE when the input|`(get-date) -isNot [DateTime]`   |
-    |        |not an instance of the     |`False`                          |
-    |        |specified.NET type.        |                                 |
-    |`-as`   |Converts the input to the  |`"5/7/07" -as [DateTime]`        |
-    |        |specified .NET type.       |`Monday, May 7, 2007 12:00:00 AM`|
-    ```
-    ~~~
-
-    > [!NOTE]
-    > The 76-column limitation applies only to `About_*` topics. You can use wide columns in
-    > conceptual or cmdlet reference articles.
 
 ## Next steps
 

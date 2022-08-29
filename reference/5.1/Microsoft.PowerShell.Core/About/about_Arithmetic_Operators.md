@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that perform arithmetic in PowerShell.
 Locale: en-US
-ms.date: 10/08/2020
+ms.date: 08/29/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Arithmetic Operators
@@ -17,74 +17,122 @@ Arithmetic operators calculate numeric values. You can use one or more
 arithmetic operators to add, subtract, multiply, and divide values, and to
 calculate the remainder (modulus) of a division operation.
 
-In addition, the addition operator (`+`) and multiplication operator (`*`)
-also operate on strings, arrays, and hash tables. The addition operator
-concatenates the input. The multiplication operator returns multiple copies
-of the input. You can even mix object types in an arithmetic statement. The
-method that is used to evaluate the statement is determined by the type of
-the leftmost object in the expression.
+The addition operator (`+`) and multiplication operator (`*`) also operate on
+strings, arrays, and hashtables. The addition operator concatenates the input.
+The multiplication operator returns multiple copies of the input. You can even
+mix object types in an arithmetic statement. The method that's used to evaluate
+the statement is determined by the type of the leftmost object in the
+expression.
 
-Beginning in PowerShell 2.0, all arithmetic operators work on 64-bit
-numbers.
+Beginning in PowerShell 2.0, all arithmetic operators work on 64-bit numbers.
 
-Beginning in PowerShell 3.0, the `-shr` (shift-right) and `-shl`
-(shift-left) are added to support bitwise arithmetic in PowerShell.
+Beginning in PowerShell 3.0, the `-shr` (shift-right) and `-shl` (shift-left)
+are added to support bitwise arithmetic in PowerShell. The bitwise operators
+only work on integer types.
 
 PowerShell supports the following arithmetic operators:
 
-|Operator|Description                       |Example                      |
-|--------|----------------------------------|-----------------------------|
-| +      |Adds integers; concatenates       |`6 + 2`                      |
-|        |strings, arrays, and hash tables. |`"file" + "name"`            |
-|        |                                  |`@(1, "one") + @(2.0, "two")`|
-|        |                                  |`@{"one" = 1} + @{"two" = 2}`|
-| +      |Makes a number out of an object   | + 123                       |
-| -      |Subtracts one value from another  |`6 - 2`                      |
-|        |value                             |                             |
-| -      |Calculates the opposite number    |`- -6`                       |
-|        |                                  |`(Get-Date).AddDays(-1)`     |
-| *      |Multiply numbers or copy strings  |`6 * 2`                      |
-|        |and arrays the specified number   |`@("!") * 4`                 |
-|        |of times.                         |`"!" * 3`                    |
-| /      |Divides two values.               |`6 / 2`                      |
-| %      |Modulus - returns the remainder of|`7 % 2`                      |
-|        |a division operation.             |                             |
-|-band   |Bitwise AND                       |`5 -band 3`                  |
-|-bnot   |Bitwise NOT                       |`-bnot 5`                    |
-|-bor    |Bitwise OR                        |`5 -bor 0x03`                |
-|-bxor   |Bitwise XOR                       |`5 -bxor 3`                  |
-|-shl    |Shifts bits to the left           |`102 -shl 2`                 |
-|-shr    |Shifts bits to the right          |`102 -shr 2`                 |
+- Addition (`+`) - Adds numbers, concatenates strings, arrays, and hash tables
 
-The bitwise operators only work on integer types.
+  ```powershell
+  6 + 2                        # result = 8
+  "file" + "name"              # result = "filename"
+  @(1, "one") + @(2.0, "two")  # result = @(1, "one", 2.0, "two")
+  @{"one" = 1} + @{"two" = 2}  # result = @{"one" = 1; "two" = 2}
+  ```
+
+- Subtraction (`-`) - Subtracts or negates numbers
+
+  ```powershell
+  6 - 2   # result = 4
+  - -6    # result = 6
+  (Get-Date).AddDays(-1) # Yesterday's date
+  ```
+
+- Multiplication (`*`) - Multiply numbers or copy strings and arrays the
+  specified number of times
+
+  ```powershell
+  6 * 2       # result = 12
+  @("!") * 4  # result = @("!","!","!","!")
+  "!" * 3     # result = "!!!"
+  ```
+
+- Division (`/`) - Divides numbers
+
+  ```powershell
+  6 / 2  # result = 3
+  ```
+
+- Modulus (`%`) - returns the remainder of a division operation.
+
+  ```powershell
+  7 % 2  # result = 1
+  ```
+
+- Bitwise AND (`-band`)
+
+  ```powershell
+  5 -band 3  # result = 1
+  ```
+
+- Bitwise NOT (`-bnot`)
+
+  ```powershell
+  -bnot 5  # result = -6
+  ```
+
+- Bitwise OR (`-bor`)
+
+  ```powershell
+  5 -bor 0x03  # result = 7
+  ```
+
+- Bitwise XOR (`-bxor`)
+
+  ```powershell
+  5 -bxor 3   # result = 6
+  ```
+
+- Shifts bits to the left (`-shl`)
+
+  ```powershell
+  102 -shl 2  # result = 408
+  ```
+
+- Shifts bits to the right (`-shr`)
+
+  ```powershell
+  102 -shr 2  # result = 25
+  ```
 
 ## Operator precedence
 
 PowerShell processes arithmetic operators in the following order:
 
-|Precedence|Operator          |Description                            |
-|----------|------------------|---------------------------------------|
-|1         | `()`             |Parentheses                            |
-|2         | `-`              |For a negative number or unary operator|
-|3         | `*`, `/`, `%`    |For multiplication and division        |
-|4         | `+`, `-`         |For addition and subtraction           |
-|5         | `-band`, `-bnot` |For bitwise operations                 |
-|5         | `-bor`, `-bxor`  |For bitwise operations                 |
-|5         | `-shr`, `-shl`   |For bitwise operations                 |
+| Precedence |     Operator     |               Description               |
+| ---------- | ---------------- | --------------------------------------- |
+| 1          | `()`             | Parentheses                             |
+| 2          | `-`              | For a negative number or unary operator |
+| 3          | `*`, `/`, `%`    | For multiplication and division         |
+| 4          | `+`, `-`         | For addition and subtraction            |
+| 5          | `-band`, `-bnot` | For bitwise operations                  |
+| 5          | `-bor`, `-bxor`  | For bitwise operations                  |
+| 5          | `-shr`, `-shl`   | For bitwise operations                  |
 
 PowerShell processes the expressions from left to right according to the
 precedence rules. The following examples show the effect of the precedence
 rules:
 
-|Expression |Result|
-|-----------|------|
-|`3+6/3*4`  |`11`  |
-|`3+6/(3*4)`|`3.5` |
-|`(3+6)/3*4`|`12`  |
+```powershell
+3+6/3*4    # result = 11
+3+6/(3*4)  # result = 3.5
+(3+6)/3*4  # result = 12
+```
 
 The order in which PowerShell evaluates expressions might differ from other
-programming and scripting languages that you have used. The following
-example shows a complicated assignment statement.
+programming and scripting languages that you have used. The following example
+shows a complicated assignment statement.
 
 ```powershell
 $a = 0
@@ -94,13 +142,12 @@ $c = @(-1,-2)
 $b[$a] = $c[$a++]
 ```
 
-In this example, the expression `$a++` is evaluated before `$b[$a]`.
-Evaluating `$a++` changes the value of `$a` after it is used in the
-statement `$c[$a++]`; but, before it is used in `$b[$a]`. The variable `$a`
-in `$b[$a]` equals `1`, not `0`; so, the statement assigns a value to
-`$b[1]`, not `$b[0]`.
+In this example, the expression `$a++` is evaluated before `$b[$a]`. Evaluating
+`$a++` changes the value of `$a` after it's used in the statement `$c[$a++]`,
+but before it's used in `$b[$a]`. The variable `$a` in `$b[$a]` equals `1`, not
+`0`. Therefore, the statement assigns a value to `$b[1]`, not `$b[0]`.
 
-The above code is equivalent to:
+The code above is equivalent to:
 
 ```powershell
 $a = 0
@@ -114,43 +161,45 @@ $b[$a] = $tmp
 
 ## Division and rounding
 
-When the quotient of a division operation is an integer, PowerShell rounds
-the value to the nearest integer. When the value is `.5`, it rounds to the
-nearest even integer.
+When the quotient of a division operation is an integer, PowerShell rounds the
+value to the nearest integer. When the value is `.5`, it rounds to the nearest
+even integer.
 
-The following example shows the effect of rounding to the nearest even
-integer.
+The following example shows the effect of rounding to the nearest even integer.
 
-|Expression      |Result|
-|----------------|------|
-|`[int]( 5 / 2 )`|`2`   |
-|`[int]( 7 / 2 )`|`4`   |
+```powershell
+PS> [int]( 5 / 2 )  # Result is rounded down
+2
 
-Notice how **_5/2_ = 2.5** gets rounded to **2**. But, **_7/2_ = 3.5** gets
-rounded to **4**.
+PS> [int]( 7 / 2 )  # Result is rounded up
+4
+```
 
 You can use the `[Math]` class to get different rounding behavior.
 
-|                          Expression                          | Result |
-| ------------------------------------------------------------ | ------ |
-| `[int][Math]::Round(5 / 2,[MidpointRounding]::AwayFromZero)` | `3`    |
-| `[int][Math]::Ceiling(5 / 2)`                                | `3`    |
-| `[int][Math]::Floor(5 / 2)`                                  | `2`    |
+```powershell
+PS> [int][Math]::Round(5 / 2,[MidpointRounding]::AwayFromZero
+3
 
-For more information, see the
-[Math.Round](/dotnet/api/system.math.round) method.
+PS> [int][Math]::Ceiling(5 / 2)
+3
+
+PS> [int][Math]::Floor(5 / 2)
+2
+```
+
+For more information, see the [Math.Round](/dotnet/api/system.math.round)
+method.
 
 ## Adding and multiplying non numeric types
 
-You can add numbers, strings, arrays, and hash tables. And, you can
-multiply numbers, strings, and arrays. However, you cannot multiply hash
-tables.
+You can add numbers, strings, arrays, and hash tables. And, you can multiply
+numbers, strings, and arrays. However, you can't multiply hash tables.
 
-When you add strings, arrays, or hash tables, the elements are
-concatenated. When you concatenate collections, such as arrays or hash
-tables, a new object is created that contains the objects from both
-collections. If you try to concatenate hash tables that have the same key,
-the operation fails.
+When you add strings, arrays, or hash tables, the elements are concatenated.
+When you concatenate collections, such as arrays or hash tables, a new object
+is created that contains the objects from both collections. If you try to
+concatenate hash tables that have the same key, the operation fails.
 
 For example, the following commands create two arrays and then add them:
 
@@ -177,42 +226,43 @@ in converting the objects, it performs the operation appropriate to the .NET
 type of the first object. If it fails to convert any of the objects, the
 operation fails.
 
-The following examples demonstrate the use of the addition and
-multiplication operators; in operations that include different object
-types.
-Assume `$array = 1,2,3`,
-`$red = [ConsoleColor]::Red`, `$blue = [ConsoleColor]::Blue`:
+The following examples demonstrate the use of the addition and multiplication
+operators in operations that include different object types.
 
-|Expression       |Result                 |
-|-----------------|-----------------------|
-|`"file" + 16`    |`file16`               |
-|`$array + 16`    |`1`,`2`,`3`,`16`       |
-|`$array + "file"`|`1`,`2`,`3`,`file`     |
-|`$array * 2`     |`1`,`2`,`3`,`1`,`2`,`3`|
-|`"file" * 3`     |`filefilefile`         |
-|`$blue + 3`      |`Red`                  |
-|`$red - 3`       |`Blue`                 |
-|`$blue - $red`   |`-3`                   |
-|`+ '123'`        |`123`                  |
+```powershell
+$array = 1,2,3
+$red = [ConsoleColor]::Red
+$blue = [ConsoleColor]::Blue
 
-Because the method that is used to evaluate statements is determined by the
-leftmost object, addition and multiplication in PowerShell are not strictly
-commutative. For example, `(a + b)` does not always equal `(b + a)`, and
-`(ab)` does not always equal `(ba)`.
+"file" + 16      # result = "file16"
+$array + 16      # result = 1,2,3,16
+$array + "file"  # result = 1,2,3,"file"
+$array * 2       # result = 1,2,3,1,2,3
+"file" * 3       # result = "filefilefile"
+$blue + 3        # result = Red
+$red - 3         # result = Blue
+$blue - $red     # result = -3
++ '123'          # result = 123
+```
+
+Because the method that's used to evaluate statements is determined by the
+leftmost object, addition and multiplication in PowerShell aren't strictly
+commutative. For example, `(a + b)` doesn't always equal `(b + a)`, and `(ab)`
+doesn't always equal `(ba)`.
 
 The following examples demonstrate this principle:
 
-|Expression   |Result                                               |
-|-------------|-----------------------------------------------------|
-|`"file" + 16`|`file16`                                             |
-|`16 + "file"`|`Cannot convert value "file" to type "System.Int32".`|
-|             |`Error: "Input string was not in a correct format."` |
-|             |`At line:1 char:1`                                   |
-|             |`+ 16 + "file"`                                       |
+```powershell
+PS> "file" + 16
+file16
 
-Hash tables are a slightly different case. You can add hash tables to
-another hash table, as long as, the added hash tables don't have duplicate
-keys.
+PS> 16 + "file"
+InvalidArgument: can't convert value "file" to type "System.Int32". Error:
+"Input string wasn't in a correct format."
+```
+
+Hash tables are a slightly different case. You can add hash tables to another
+hash table, as long as, the added hash tables don't have duplicate keys.
 
 The following example show how to add hash tables to each other.
 
@@ -232,8 +282,8 @@ c1                             Server01
 c                              3
 ```
 
-The following example throws an error because one of the keys is duplicated
-in both hash tables.
+The following example throws an error because one of the keys is duplicated in
+both hash tables.
 
 ```powershell
 $hash1 = @{a=1; b=2; c=3}
@@ -242,16 +292,15 @@ $hash1 + $hash2
 ```
 
 ```output
-Item has already been added. Key in dictionary: 'c'  Key being added: 'c'
-At line:3 char:1
-+ $hash1 + $hash2
-+ ~~~~~~~~~~~~~~~
-    + CategoryInfo          : OperationStopped: (:) [], ArgumentException
-    + FullyQualifiedErrorId : System.ArgumentException
+OperationStopped:
+Line |
+   3 |  $hash1 + $hash2
+     |  ~~~~~~~~~~~~~~~
+     | Item has already been added. Key in dictionary: 'c'  Key being added: 'c'
 ```
 
-Also, you can add a hash table to an array; and, the entire hash table
-becomes an item in the array.
+Also, you can add a hash table to an array; and, the entire hash table becomes
+an item in the array.
 
 ```powershell
 $array1 = @(0, "Hello World", [datetime]::Now)
@@ -275,23 +324,20 @@ Value : 2
 Name  : b
 ```
 
-However, you cannot add any other type to a hash table.
+However, you can't add any other type to a hash table.
 
 ```powershell
 $hash1 + 2
 ```
 
 ```output
-A hash table can only be added to another hash table.
-At line:3 char:1
-+ $hash1 + 2
+InvalidOperation: A hash table can only be added to another hash table.
 ```
 
-Although the addition operators are very useful, use the assignment
-operators to add elements to hash tables and arrays. For more information
-see [about_assignment_operators](about_Assignment_Operators.md). The
-following examples use the `+=` assignment operator to add items to an
-array:
+Although the addition operators are very useful, use the assignment operators
+to add elements to hash tables and arrays. For more information see
+[about_assignment_operators](about_Assignment_Operators.md). The following
+examples use the `+=` assignment operator to add items to an array:
 
 ```powershell
 $array = @()
@@ -335,9 +381,9 @@ System.Int32
 System.Double
 ```
 
-The type of the result will not necessarily be the same as one of the operands.
-In the following example, the negative value cannot be cast to an unsigned
-integer, and the unsigned integer is too large to be cast to `Int32`:
+The type of the result isn't always the same as one of the operands. In the
+following example, the negative value can't be cast to an unsigned integer, and
+the unsigned integer is too large to be cast to `Int32`:
 
 ```powershell
 ([int32]::minvalue + [uint32]::maxvalue).gettype().fullname
@@ -349,15 +395,17 @@ System.Int64
 
 In this example, `Int64` can accommodate both types.
 
-The `System.Decimal` type is an exception. If either operand has the **Decimal**
-type, the result will be of the Decimal type. If the result is too large for
-the **Decimal** type, it will not be cast to Double. Instead, an error results.
+The `System.Decimal` type is an exception. If either operand has the
+**Decimal** type, the result is **Decimal** type. Any result too large for the
+**Decimal** value is an error.
 
-|Expression               |Result                                         |
-|-------------------------|-----------------------------------------------|
-|`[Decimal]::maxvalue`    |`79228162514264337593543950335`                |
-|`[Decimal]::maxvalue + 1`|`Value was either too large or too small for a`|
-|                         |`Decimal.`                                     |
+```powershell
+PS> [Decimal]::maxvalue
+79228162514264337593543950335
+
+PS> [Decimal]::maxvalue + 1
+RuntimeException: Value was either too large or too small for a Decimal.
+```
 
 ## Arithmetic operators and variables
 
@@ -365,10 +413,17 @@ You can also use arithmetic operators with variables. The operators act on the
 values of the variables. The following examples demonstrate the use of
 arithmetic operators with variables:
 
-| Expression                                    |Result      |
-|-----------------------------------------------|------------|
-|`$intA = 6`<br/>`$intB = 4`<br/>`$intA + $intB`|`10`        |
-|`$a = "Power"`<br/>`$b = "Shell"`<br/>`$a + $b`|`PowerShell`|
+```powershell
+PS> $intA = 6
+PS> $intB = 4
+PS> $intA + $intB
+10
+
+PS> $a = "Power"
+PS> $b = "Shell"
+PS> $a + $b
+PowerShell
+```
 
 ## Arithmetic operators and commands
 
@@ -403,19 +458,18 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ```
 
 In the above expression, each process working space (`$_.ws`) is multiplied by
-`2`; and, the result, compared against `50mb` to see if it is greater than
-that.
+`2`; and, the result, compared against `50mb` to see if it's greater than that.
 
 ## Bitwise operators
 
 PowerShell supports the standard bitwise operators, including bitwise-AND
-(`-bAnd`), the inclusive and exclusive bitwise-OR operators (`-bOr` and
-`-bXor`), and bitwise-NOT (`-bNot`).
+(`-band`), the inclusive and exclusive bitwise-OR operators (`-bor` and
+`-bxor`), and bitwise-NOT (`-bnot`).
 
 Beginning in PowerShell 2.0, all bitwise operators work with 64-bit integers.
 
-Beginning in PowerShell 3.0, the `-shr` (shift-right) and `-shl`
-(shift-left) are introduced to support bitwise arithmetic in PowerShell.
+Beginning in PowerShell 3.0, the `-shr` (shift-right) and `-shl` (shift-left)
+are introduced to support bitwise arithmetic in PowerShell.
 
 PowerShell supports the following bitwise operators.
 
@@ -433,7 +487,7 @@ structure for the number 10 is 00001010 (based on 1 byte), and the bit
 structure for the number 3 is 00000011. When you use a bitwise operator to
 compare 10 to 3, the individual bits in each byte are compared.
 
-In a bitwise AND operation, the resulting bit is set to 1 only when both input
+In a bitwise AND operation, the resulting bit's set to 1 only when both input
 bits are 1.
 
 ```
@@ -443,9 +497,9 @@ bits are 1.
 0010      ( 2)
 ```
 
-In a bitwise OR (inclusive) operation, the resulting bit is set to 1 when
-either or both input bits are 1. The resulting bit is set to 0 only when both
-input bits are set to 0.
+In a bitwise OR (inclusive) operation, the resulting bit's set to 1 when either
+or both input bits are 1. The resulting bit's set to 0 only when both input
+bits are set to 0.
 
 ```
 1010      (10)
@@ -454,8 +508,8 @@ input bits are set to 0.
 1011      (11)
 ```
 
-In a bitwise OR (exclusive) operation, the resulting bit is set to 1 only
-when one input bit is 1.
+In a bitwise OR (exclusive) operation, the resulting bit's set to 1 only when
+one input bit's 1.
 
 ```
 1010      (10)
@@ -484,46 +538,46 @@ For example, the binary complement of 0 is -1, the maximum unsigned integer
 1111 1111 1111 0101  (-11, xfffffff5)
 ```
 
-In a bitwise shift-left operation, all bits are moved "n" places to the
-left, where "n" is the value of the right operand. A zero is inserted in
-the ones place.
+In a bitwise shift-left operation, all bits are moved "n" places to the left,
+where "n" is the value of the right operand. A zero is inserted in the ones
+place.
 
 When the left operand is an Integer (32-bit) value, the lower 5 bits of the
 right operand determine how many bits of the left operand are shifted.
 
-When the left operand is a Long (64-bit) value, the lower 6 bits of the
-right operand determine how many bits of the left operand are shifted.
+When the left operand is a Long (64-bit) value, the lower 6 bits of the right
+operand determine how many bits of the left operand are shifted.
 
-|Expression |Result|Binary Result|
-|-----------|------|-------------|
-|`21 -shl 0`|21    |0001 0101    |
-|`21 -shl 1`|42    |0010 1010    |
-|`21 -shl 2`|84    |0101 0100    |
+| Expression  | Result | Binary Result |
+| ----------- | ------ | ------------- |
+| `21 -shl 0` | 21     | 0001 0101     |
+| `21 -shl 1` | 42     | 0010 1010     |
+| `21 -shl 2` | 84     | 0101 0100     |
 
-In a bitwise shift-right operation, all bits are moved "n" places to the
-right, where "n" is specified by the right operand. The shift-right
-operator (-shr) inserts a zero in the left-most place when shifting a
-positive or unsigned value to the right.
+In a bitwise shift-right operation, all bits are moved "n" places to the right,
+where "n" is specified by the right operand. The shift-right operator (-shr)
+inserts a zero in the left-most place when shifting a positive or unsigned
+value to the right.
 
 When the left operand is an Integer (32-bit) value, the lower 5 bits of the
 right operand determine how many bits of the left operand are shifted.
 
-When the left operand is a Long (64-bit) value, the lower 6 bits of the
-right operand determine how many bits of the left operand are shifted.
+When the left operand is a Long (64-bit) value, the lower 6 bits of the right
+operand determine how many bits of the left operand are shifted.
 
-|Expression              |Result      |Binary     |Hex         |
-|------------------------|------------|-----------|------------|
-|`21 -shr 0`             | 21         | 0001 0101 | 0x15       |
-|`21 -shr 1`             | 10         | 0000 1010 | 0x0A       |
-|`21 -shr 2`             | 5          | 0000 0101 | 0x05       |
-|`21 -shr 31`            | 0          | 0000 0000 | 0x00       |
-|`21 -shr 32`            | 21         | 0001 0101 | 0x15       |
-|`21 -shr 64`            | 21         | 0001 0101 | 0x15       |
-|`21 -shr 65`            | 10         | 0000 1010 | 0x0A       |
-|`21 -shr 66`            | 5          | 0000 0101 | 0x05       |
-|`[int]::MaxValue -shr 1`| 1073741823 |           | 0x3FFFFFFF |
-|`[int]::MinValue -shr 1`| -1073741824|           | 0xC0000000 |
-|`-1 -shr 1`             | -1         |           | 0xFFFFFFFF |
+|        Expression        |   Result    |  Binary   |    Hex     |
+| ------------------------ | ----------- | --------- | ---------- |
+| `21 -shr 0`              | 21          | 0001 0101 | 0x15       |
+| `21 -shr 1`              | 10          | 0000 1010 | 0x0A       |
+| `21 -shr 2`              | 5           | 0000 0101 | 0x05       |
+| `21 -shr 31`             | 0           | 0000 0000 | 0x00       |
+| `21 -shr 32`             | 21          | 0001 0101 | 0x15       |
+| `21 -shr 64`             | 21          | 0001 0101 | 0x15       |
+| `21 -shr 65`             | 10          | 0000 1010 | 0x0A       |
+| `21 -shr 66`             | 5           | 0000 0101 | 0x05       |
+| `[int]::MaxValue -shr 1` | 1073741823  |           | 0x3FFFFFFF |
+| `[int]::MinValue -shr 1` | -1073741824 |           | 0xC0000000 |
+| `-1 -shr 1`              | -1          |           | 0xFFFFFFFF |
 
 ## See also
 

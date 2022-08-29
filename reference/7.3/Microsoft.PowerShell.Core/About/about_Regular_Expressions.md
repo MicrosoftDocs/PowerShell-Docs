@@ -1,7 +1,7 @@
 ---
 description: Describes regular expressions in PowerShell.
 Locale: en-US
-ms.date: 11/02/2021
+ms.date: 08/29/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Regular Expressions
@@ -28,17 +28,16 @@ more about their syntax and usage at the links below.
 
 - [Select-String](xref:Microsoft.PowerShell.Utility.Select-String)
 - [-match and -replace operators](about_Comparison_Operators.md#matching-operators)
-- [-split](about_Split.md)
+- [-split operator](about_Split.md)
 - [switch statement with -regex option](about_Switch.md)
 
 PowerShell regular expressions are case-insensitive by default. Each method
 shown above has a different way to force case sensitivity.
 
-|       Method       |                      Case Sensitivity                      |
-| ------------------ | ---------------------------------------------------------- |
-| `Select-String`    | use `-CaseSensitive` switch                                |
-| `switch` statement | use the `-casesensitive` option                            |
-| operators          | prefix with **'c'** (`-cmatch`, `-csplit`, or `-creplace`) |
+- For `Select-String`, use the **CaseSensitive** parameter.
+- For operators that use regular expressions, use the case-sensitive version:
+  `-cmatch`, `-creplace`, or `-csplit`
+- For the `switch` statement, use the `-casesensitive` option
 
 ## Character literals
 
@@ -247,11 +246,11 @@ character types.
 
 The following are a few commonly used character escapes:
 
-|Character Escape  |Description  |
-|---------|---------|
-|`\t`|Matches a tab|
-|`\n`|Matches a newline|
-|`\r`|Matches a carriage return|
+| Character Escape |        Description        |
+| ---------------- | ------------------------- |
+| `\t`             | Matches a tab             |
+| `\n`             | Matches a newline         |
+| `\r`             | Matches a carriage return |
 
 ## Groups, Captures, and Substitutions
 
@@ -294,11 +293,11 @@ $Matches
 ```
 
 ```Output
-Name                           Value
-----                           -----
-2                              CONTOSO\jsmith
-1                              The last logged on user was
-0                              The last logged on user was CONTOSO\jsmith
+Name           Value
+----           -----
+2              CONTOSO\jsmith
+1              The last logged on user was
+0              The last logged on user was CONTOSO\jsmith
 ```
 
 > [!IMPORTANT]
