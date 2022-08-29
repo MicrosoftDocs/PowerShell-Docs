@@ -1,7 +1,7 @@
 ---
 description: PowerShell logs internal operations from the engine, providers, and cmdlets.
 Locale: en-US
-ms.date: 03/30/2020
+ms.date: 08/29/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logging Non-Windows
@@ -14,9 +14,9 @@ PowerShell logs internal operations from the engine, providers, and cmdlets.
 
 ## Long description
 
-PowerShell logs details of PowerShell operations. For example, PowerShell will
-log operations such as starting and stopping the engine and starting and
-stopping providers. It will also log details about PowerShell commands.
+PowerShell logs details of PowerShell operations, such as starting and stopping
+the engine and starting and stopping providers. It also logs details about
+PowerShell commands.
 
 The location of PowerShell logs is dependent on the target platform. On
 **Linux**, PowerShell logs to **syslog** and **rsyslog.conf** can be used. For
@@ -31,28 +31,26 @@ view **syslog** contents may be used.
 
 The format of the log entries uses the following template:
 
-```
+```Syntax
 TIMESTAMP MACHINENAME powershell[PID]: (COMMITID:TID:CID)
   [EVENTID:TASK.OPCODE.LEVEL] MESSAGE
 ```
 
-|Field        |Description                                             |
-|-------------|--------------------------------------------------------|
-|`TIMESTAMP`  |A date/time when the log entry was produced.            |
-|`MACHINENAME`|The name of the system where the log was produced.      |
-|`PID`        |The process ID of the process that wrote the log entry. |
-|`COMMITID`   |The `git commit` ID or tag used to produce the build.   |
-|`TID`        |The thread ID of the thread that wrote the log entry.   |
-|`CID`        |The hex channel identifier of the log entry.            |
-|             |10 = Operational, 11 = Analytic                         |
-|`EVENTID`    |The event identifier of the log entry.                  |
-|`TASK`       |The task identifier for the event entry                 |
-|`OPCODE`     |The opcode for the event entry                          |
-|`LEVEL`      |The log level for the event entry                       |
-|`MESSAGE`    |The message associated with the event entry             |
+- **TIMESTAMP** - A date/time when the log entry was produced.
+- **MACHINENAME** - The name of the system where the log was produced.
+- **PID** - The process ID of the process that wrote the log entry.
+- **COMMITID** - The **git commit** ID or tag used to produce the build.
+- **TID** - The thread ID of the thread that wrote the log entry.
+- **CID** - The hex channel identifier of the log entry. 10 = Operational, 11 =
+  Analytic
+- **EVENTID** - The event identifier of the log entry.
+- **TASK** - The task identifier for the event entry
+- **OPCODE** - The opcode for the event entry
+- **LEVEL** - The log level for the event entry
+- **MESSAGE** - The message associated with the event entry
 
 > [!NOTE]
-> `EVENTID`, `TASK`, `OPCODE`, and `LEVEL` are the same values as used when
+> **EVENTID**, **TASK**, **OPCODE**, and **LEVEL** are the same values as used when
 > logging to the Windows event log.
 
 ### Filtering PowerShell log entries using rsyslog
@@ -170,13 +168,13 @@ SIEM in Azure. For more information, see
 On Windows, logging is configured by creating ETW trace listeners or by using
 the Event Viewer to enable Analytic logging. On Linux and macOS, logging is
 configured using the file `powershell.config.json`. The rest of this section
-will discuss configuring PowerShell logging on a non-Windows system.
+discusses configuring PowerShell logging on a non-Windows system.
 
 By default, PowerShell enables informational logging to the operational
-channel. What this means is any log output produced by PowerShell that is
-marked as operational and has a log (trace) level greater than informational
-will be logged. Occasionally, diagnoses may require additional log output, such
-as verbose log output or enabling analytic log output.
+channel. This means that any PowerShell log output that's marked as operational
+and has a log (trace) level greater than informational is logged. Occasionally,
+diagnoses may require additional log output, such as verbose log output or
+enabling analytic log output.
 
 The file `powershell.config.json` is a **JSON** formatted file residing in the
 PowerShell `$PSHOME` directory. Each installation of PowerShell uses its own
@@ -230,45 +228,38 @@ The following code is an example configuration:
 }
 ```
 
-The properties for configuring PowerShell logging are listed in the following
-table. Values marked with an asterisk, such as `Operational*`, indicate the
-default value when no value is provided in the file.
+The following is a list of properties for configuring PowerShell logging.
+Values marked with an asterisk, such as `Operational*`, indicate the default
+value when no value is provided in the file.
 
-|Property   |Values        |Description                                  |
-|-----------|--------------|---------------------------------------------|
-|`LogIdentity`|(string name) |The name to use when logging. By default,  |
-|           |powershell*   |powershell is the identity. This value can be|
-|           |              |used to tell the difference between two      |
-|           |              |instances of a PowerShell installation, such |
-|           |              |as a release and beta version. This value is |
-|           |              |also used to redirect log output to a        |
-|           |              |separate file on Linux. See the discussion of|
-|           |              |**rsyslog** above.                           |
-|`LogChannels`|Operational*  |The channels to enable. Separate the values|
-|           |Analytic      |with a comma when specifying more than one.  |
-|`LogLevel`   |Always        |Specify a single value. The value enables  |
-|           |Critical      |itself and all values above it in the        |
-|           |Error         |list to the left.                            |
-|           |Warning       |                                             |
-|           |Informational*|                                             |
-|           |Verbose       |                                             |
-|           |Debug         |                                             |
-|`LogKeywords`|Runspace      |Keywords provide the ability to limit logging|
-|           |Pipeline      |to specific components within PowerShell. By |
-|           |Protocol      |default, all keywords are enabled and change |
-|           |Transport     |this value is only useful for very           |
-|           |Host          |specialized troubleshooting.                |
-|           |Cmdlets       |                                             |
-|           |Serializer    |                                             |
-|           |Session       |                                             |
-|           |ManagedPlugin |                                             |
+- **LogIdentity**
+  - Values: `<string name>`, `powershell*`
+  - Description: The name to use when logging. The default identity is
+    `powershell`. This value can be used to tell the difference between two
+    instances of a PowerShell installation, such as a release and beta version.
+    This value is also used to redirect log output to a separate file on Linux.
+    See the discussion of **rsyslog** above.
+- **LogChannels**
+  - Values: `Operational*`, `Analytic`
+  - Description: The channels to enable. Separate the values with a comma when
+    specifying more than one.
+- **LogLevel**
+  - Values: `Always`, `Critical`, `Error`, `Warning`, `Informational*`, `Verbose`, `Debug`
+  - Description: Specify a single value. The value enables itself and all
+    values above it.
+- **LogKeywords**
+  - Values: `Runspace`, `Pipeline`, `Protocol`, `Transport`, `Host`, `Cmdlets`, `Serializer`,
+    `Session`, `ManagedPlugin`
+  - Description: Keywords provide the ability to limit logging to specific
+    components within PowerShell. By default, all keywords are enabled and
+    change this value is only useful for very specialized troubleshooting.
 
 ## See also
 
 - For Linux **syslog** and **rsyslog.conf** information, refer to the Linux
-computer's local `man` pages.
+  computer's local `man` pages.
 - For macOS **os_log** information, see
-[os_log developer documentation](https://developer.apple.com/documentation/os/os_log).
+  [os_log developer documentation](https://developer.apple.com/documentation/os/os_log).
 - [about_Logging_Windows](about_Logging_Windows.md)
 - [Generic SIEM integration](/cloud-app-security/siem)
 

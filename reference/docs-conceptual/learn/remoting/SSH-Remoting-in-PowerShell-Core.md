@@ -1,6 +1,6 @@
 ---
 description: Explains how to set up the SSH protocol for PowerShell remoting.
-ms.date: 10/22/2021
+ms.date: 08/29/2022
 title: PowerShell Remoting Over SSH
 ---
 
@@ -36,16 +36,15 @@ a password. You can also use SSH key authentication using a private key file wit
 PowerShell 6 or higher, and SSH must be installed on all computers. Install both the SSH client
 (`ssh.exe`) and server (`sshd.exe`) so that you can remote to and from the computers. OpenSSH for
 Windows is now available in Windows 10 build 1809 and Windows Server 2019. For more information, see
-[Manage Windows with OpenSSH](/windows-server/administration/openssh/openssh_overview). For Linux,
-install SSH, including sshd server, that's appropriate for your platform. You also need to install
-PowerShell from GitHub to get the SSH remoting feature. The SSH server must be configured to create
-an SSH subsystem to host a PowerShell process on the remote computer. And, you must enable
-**password** or **key-based** authentication.
+[Manage Windows with OpenSSH][1]. For Linux, install SSH, including sshd server, that's appropriate
+for your platform. You also need to install PowerShell from GitHub to get the SSH remoting feature.
+The SSH server must be configured to create an SSH subsystem to host a PowerShell process on the
+remote computer. And, you must enable **password** or **key-based** authentication.
 
 ## Install the SSH service on a Windows computer
 
 1. Install the latest version of PowerShell. For more information, see
-   [Installing PowerShell on Windows](../../install/installing-powershell-on-windows.md#msi).
+   [Installing PowerShell on Windows][2].
 
    You can confirm that PowerShell has SSH remoting support by listing the `New-PSSession` parameter
    sets. You'll notice there are parameter set names that begin with **SSH**. Those parameter sets
@@ -63,11 +62,11 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    ```
 
 1. Install the latest Win32 OpenSSH. For installation instructions, see
-   [Getting started with OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
+   [Getting started with OpenSSH][3].
 
    > [!NOTE]
    > If you want to set PowerShell as the default shell for OpenSSH, see
-   > [Configuring Windows for OpenSSH](/windows-server/administration/openssh/openssh_server_configuration).
+   > [Configuring Windows for OpenSSH][4].
 
 1. Edit the `sshd_config` file located at `$env:ProgramData\ssh`.
 
@@ -80,8 +79,12 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    Create the SSH subsystem that hosts a PowerShell process on the remote computer:
 
    ```
-   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo
+   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -nologo
    ```
+
+   > [!NOTE]
+   > Starting in PowerShell 7.3, you no longer need to use the `-nologo` parameter when running
+   > PowerShell in SSH server mode.
 
    > [!NOTE]
    > The default location of the PowerShell executable is `c:/progra~1/powershell/7/pwsh.exe`. The
@@ -89,7 +92,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    >
    > You must use the 8.3 short name for any file paths that contain spaces. There's a bug in
    > OpenSSH for Windows that prevents spaces from working in subsystem executable paths. For more
-   > information, see this [GitHub issue](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+   > information, see this [GitHub issue][5].
    >
    > The 8.3 short name for the `Program Files` folder in Windows is usually `Progra~1`. However,
    > you can use the following command to make sure:
@@ -111,7 +114,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    PubkeyAuthentication yes
    ```
 
-   For more information, see [Managing OpenSSH Keys](/windows-server/administration/openssh/openssh_keymanagement).
+   For more information, see [Managing OpenSSH Keys][6].
 
 1. Restart the **sshd** service.
 
@@ -124,9 +127,8 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 
 ## Install the SSH service on an Ubuntu Linux computer
 
-1. Install the latest version of PowerShell, see
-   [Installing PowerShell on Ubuntu](../../install/install-ubuntu.md).
-1. Install [Ubuntu OpenSSH Server](https://ubuntu.com/server/docs/service-openssh).
+1. Install the latest version of PowerShell, see [Installing PowerShell on Ubuntu][7].
+1. Install [Ubuntu OpenSSH Server][8].
 
    ```bash
    sudo apt install openssh-client
@@ -148,17 +150,21 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    ```
 
    For more information about creating SSH keys on Ubuntu, see the manpage for
-   [ssh-keygen](http://manpages.ubuntu.com/manpages/xenial/man1/ssh-keygen.1.html).
+   [ssh-keygen][9].
 
    Add a PowerShell subsystem entry:
 
    ```
-   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo
+   Subsystem powershell /usr/bin/pwsh -sshs -nologo
    ```
 
    > [!NOTE]
    > The default location of the PowerShell executable is `/usr/bin/pwsh`. The location can vary
    > depending on how you installed PowerShell.
+
+   > [!NOTE]
+   > Starting in PowerShell 7.3, you no longer need to use the `-nologo` parameter when running
+   > PowerShell in SSH server mode.
 
 1. Restart the **ssh** service.
 
@@ -169,7 +175,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 ## Install the SSH service on a macOS computer
 
 1. Install the latest version of PowerShell. For more information,
-   [Installing PowerShell on macOS](../../install/installing-powershell-on-macos.md).
+   [Installing PowerShell on macOS][10].
 
    Make sure SSH Remoting is enabled by following these steps:
 
@@ -195,12 +201,16 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    Add a PowerShell subsystem entry:
 
    ```
-   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo
+   Subsystem powershell /usr/local/bin/pwsh -sshs -nologo
    ```
 
    > [!NOTE]
    > The default location of the PowerShell executable is `/usr/local/bin/pwsh`. The location can
    > vary depending on how you installed PowerShell.
+
+   > [!NOTE]
+   > Starting in PowerShell 7.3, you no longer need to use the `-nologo` parameter when running
+   > PowerShell in SSH server mode.
 
    Optionally, enable key authentication:
 
@@ -238,14 +248,14 @@ see prompts from SSH asking to verify the host computer and prompting for a pass
 same thing on a Windows computer to ensure remoting is working. Then, remote between computers by
 changing the host name.
 
+### Linux to Linux
+
 ```powershell
-# Linux to Linux
-#
 $session = New-PSSession -HostName UbuntuVM1 -UserName TestUser
 ```
 
 ```Output
-The authenticity of host 'UbuntuVM1 (9.129.17.107)' cannot be established.
+The authenticity of host 'UbuntuVM1 (9.129.17.107)' can't be established.
 ECDSA key fingerprint is SHA256:2kCbnhT2dUE6WCGgVJ8Hyfu1z2wE4lifaJXLO7QJy0Y.
 Are you sure you want to continue connecting (yes/no)?
 TestUser@UbuntuVM1s password:
@@ -284,10 +294,9 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName           
       0       0        0         20       3.07  11076 076 powershell                     UbuntuVM1
 ```
 
+### Linux to Windows
+
 ```powershell
-#
-# Linux to Windows
-#
 Enter-PSSession -HostName WinVM1 -UserName PTestName
 ```
 
@@ -303,10 +312,9 @@ PTestName@WinVM1s password:
 Microsoft Windows [Version 10.0.10586]
 ```
 
+### Windows to Windows
+
 ```powershell
-#
-# Windows to Windows
-#
 C:\Users\PSUser\Documents>pwsh.exe
 ```
 
@@ -364,25 +372,39 @@ GitCommitId                    v6.0.0-alpha.17
 
 - The **sudo** command doesn't work in a remote session to a Linux computer.
 
-- PSRemoting over SSH does not support Profiles and does not have access to `$PROFILE`. Once in a
-  session, you can load a profile by dot sourcing the profile with the full filepath. This is not
+- PSRemoting over SSH doesn't support Profiles and doesn't have access to `$PROFILE`. Once in a
+  session, you can load a profile by dot sourcing the profile with the full filepath. This isn't
   related to SSH profiles. You can configure the SSH server to use PowerShell as the default shell
   and to load a profile through SSH. See the SSH documentation for more information.
 
-- Prior to PowerShell 7.1, remoting over SSH did not support second-hop remote sessions. This
+- Prior to PowerShell 7.1, remoting over SSH didn't support second-hop remote sessions. This
   capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSSession` and
   `Enter-PSHostProcess` to work from within any interactive remote session.
 
 ## See also
 
-[Installing PowerShell on Linux](../../install/install-ubuntu.md)
+- [Installing PowerShell on Linux][11]
+- [Installing PowerShell on macOS][10]
+- [Installing PowerShell on Windows][2]
+- [Manage Windows with OpenSSH][1]
+- [Managing OpenSSH Keys][6]
+- [Ubuntu SSH][16]
 
-[Installing PowerShell on macOS](../../install/installing-powershell-on-macos.md)
 
-[Installing PowerShell on Windows](../../install/installing-powershell-on-windows.md#msi)
-
-[Manage Windows with OpenSSH](/windows-server/administration/openssh/openssh_overview)
-
-[Managing OpenSSH Keys](/windows-server/administration/openssh/openssh_keymanagement)
-
-[Ubuntu SSH](https://ubuntu.com/server/docs/service-openssh)
+<!-- link references -->
+[1]: /windows-server/administration/openssh/openssh_overview
+[2]: ../../install/installing-powershell-on-windows.md#msi
+[3]: /windows-server/administration/openssh/openssh_install_firstuse
+[4]: /windows-server/administration/openssh/openssh_server_configuration
+[5]: https://github.com/PowerShell/Win32-OpenSSH/issues/784
+[6]: /windows-server/administration/openssh/openssh_keymanagement
+[7]: ../../install/install-ubuntu.md
+[8]: https://ubuntu.com/server/docs/service-openssh
+[9]: http://manpages.ubuntu.com/manpages/xenial/man1/ssh-keygen.1.html
+[10]: ../../install/installing-powershell-on-macos.md
+[11]: ../../install/install-ubuntu.md
+[12]: ../../install/installing-powershell-on-macos.md
+[13]: ../../install/installing-powershell-on-windows.md#msi
+[14]: /windows-server/administration/openssh/openssh_overview
+[15]: /windows-server/administration/openssh/openssh_keymanagement
+[16]: https://ubuntu.com/server/docs/service-openssh

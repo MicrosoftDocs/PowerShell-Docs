@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that work with Microsoft .NET types.
 Locale: en-US
-ms.date: 10/15/2020
+ms.date: 08/29/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_type_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Type Operators
@@ -13,9 +13,9 @@ Describes the operators that work with Microsoft .NET types.
 
 ## Long description
 
-The Boolean type operators (`-is` and `-isNot`) tell whether an object is an
+The Boolean type operators (`-is` and `-isnot`) tell whether an object is an
 instance of a specified .NET type. The `-is` operator returns a value of
-**TRUE** if the type matches and a value of **FALSE** otherwise. The `-isNot`
+**TRUE** if the type matches and a value of **FALSE** otherwise. The `-isnot`
 operator returns a value of **FALSE** if the type matches and a value of
 **TRUE** otherwise.
 
@@ -23,18 +23,25 @@ The `-as` operator tries to convert the input object to the specified .NET
 type. If it succeeds, it returns the converted object. If it fails, it returns
 `$null`. It does not return an error.
 
-The following table lists the type operators in PowerShell.
+PowerShell has the  following type operators:
 
-|Operator|Description                |Example                          |
-|--------|---------------------------|---------------------------------|
-|`-is`   |Returns TRUE when the input|`(get-date) -is [DateTime]`      |
-|        |is an instance of the      |`True`                           |
-|        |specified .NET type.       |                                 |
-|`-isNot`|Returns TRUE when the input|`(get-date) -isNot [DateTime]`   |
-|        |not an instance of the     |`False`                          |
-|        |specified.NET type.        |                                 |
-|`-as`   |Converts the input to the  |`"5/7/07" -as [DateTime]`        |
-|        |specified .NET type.       |`Monday, May 7, 2007 12:00:00 AM`|
+- `-is`   |Returns TRUE when the input is an instance of the specified .NET type.
+
+  ```powershell
+  (get-date) -is [DateTime]     # Result is True
+  ```
+
+- `-isnot`|Returns TRUE when the input not an instance of the specified.NET type.
+
+  ```powershell
+  (get-date) -isnot [DateTime]  # Result is False
+  ```
+
+- `-as`   |Converts the input to the   specified .NET type.
+
+  ```powershell
+  "5/7/07" -as [DateTime]       # Result is Monday, May 7, 2007 12:00:00 AM
+  ```
 
 The syntax of the type operators is as follows:
 
@@ -59,9 +66,9 @@ The type operators always operate on the input object as a whole. That is, if
 the input object is a collection, it is the _collection_ type that is tested,
 not the types of the collection's _elements_.
 
-### -is/isNot operators
+### -is/isnot operators
 
-The **Boolean** type operators (`-is` and `-isNot`) always return a **Boolean**
+The **Boolean** type operators (`-is` and `-isnot`) always return a **Boolean**
 value, even if the input is a collection of objects.
 
 If `<input>` is a type that is the same as or is _derived_ from the .NET Type,
@@ -224,4 +231,4 @@ PS>
 
 ## See also
 
-[about_Operators](about_Operators.md)
+- [about_Operators](about_Operators.md)

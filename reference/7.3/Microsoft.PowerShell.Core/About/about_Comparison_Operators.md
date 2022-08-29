@@ -531,7 +531,7 @@ John.Doe@Contoso.local
 ```
 
 > [!WARNING]
-> The `$` character has syntatic roles in both PowerShell and regular
+> The `$` character has syntactic roles in both PowerShell and regular
 > expressions:
 >
 > - In PowerShell, between double quotation marks, it designates variables and

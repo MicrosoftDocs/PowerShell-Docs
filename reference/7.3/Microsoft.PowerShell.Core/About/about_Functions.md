@@ -503,11 +503,17 @@ The following filter takes log entries from the pipeline and then displays
 either the whole entry or only the message portion of the entry:
 
 ```powershell
-filter Get-ErrorLog ([switch]$message)
+filter Get-ErrorLog ([switch]$Message)
 {
-  if ($message) { Out-Host -InputObject $_.Message }
+  if ($Message) { Out-Host -InputObject $_.Message }
   else { $_ }
 }
+```
+
+It can be used as follows:
+
+```powershell
+Get-WinEvent -LogName System -MaxEvents 100 | Get-ErrorLog -Message
 ```
 
 ## Function Scope

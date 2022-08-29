@@ -408,7 +408,7 @@ value that shouldn't be changed at any time. This value is known at creation
 time.
 
 Using the hidden attribute allows the developer to keep the number of slots
-hidden and prevents unintentional changes the size of the rack.
+hidden and prevents unintentional changes to the size of the rack.
 
 ```powershell
 class Device {
@@ -747,9 +747,9 @@ class Child : Person
     }
 }
 
-[Child]$littleone = [Child]::new(10, "Silver Fir Elementary School")
+[Child]$littleOne = [Child]::new(10, "Silver Fir Elementary School")
 
-$littleone.Age
+$littleOne.Age
 ```
 
 ```Output
