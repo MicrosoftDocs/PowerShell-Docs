@@ -31,26 +31,26 @@ view **syslog** contents may be used.
 
 The format of the log entries uses the following template:
 
-```
+```Syntax
 TIMESTAMP MACHINENAME powershell[PID]: (COMMITID:TID:CID)
   [EVENTID:TASK.OPCODE.LEVEL] MESSAGE
 ```
 
-- `TIMESTAMP` - A date/time when the log entry was produced.
-- `MACHINENAME` - The name of the system where the log was produced.
-- `PID` - The process ID of the process that wrote the log entry.
-- `COMMITID` - The `git commit` ID or tag used to produce the build.
-- `TID` - The thread ID of the thread that wrote the log entry.
-- `CID` - The hex channel identifier of the log entry. 10 = Operational, 11 =
+- **TIMESTAMP** - A date/time when the log entry was produced.
+- **MACHINENAME** - The name of the system where the log was produced.
+- **PID** - The process ID of the process that wrote the log entry.
+- **COMMITID** - The **git commit** ID or tag used to produce the build.
+- **TID** - The thread ID of the thread that wrote the log entry.
+- **CID** - The hex channel identifier of the log entry. 10 = Operational, 11 =
   Analytic
-- `EVENTID` - The event identifier of the log entry.
-- `TASK` - The task identifier for the event entry
-- `OPCODE` - The opcode for the event entry
-- `LEVEL` - The log level for the event entry
-- `MESSAGE` - The message associated with the event entry
+- **EVENTID** - The event identifier of the log entry.
+- **TASK** - The task identifier for the event entry
+- **OPCODE** - The opcode for the event entry
+- **LEVEL** - The log level for the event entry
+- **MESSAGE** - The message associated with the event entry
 
 > [!NOTE]
-> `EVENTID`, `TASK`, `OPCODE`, and `LEVEL` are the same values as used when
+> **EVENTID**, **TASK**, **OPCODE**, and **LEVEL** are the same values as used when
 > logging to the Windows event log.
 
 ### Filtering PowerShell log entries using rsyslog
@@ -232,7 +232,7 @@ The following is a list of properties for configuring PowerShell logging.
 Values marked with an asterisk, such as `Operational*`, indicate the default
 value when no value is provided in the file.
 
-- `LogIdentity`
+- **LogIdentity**
   - Values: `<string name>`, `powershell*`
   - Description: The name to use when logging. The default identity is
     `powershell`. This value can be used to tell the difference between two
