@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/19/2022
+ms.date: 08/30/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
@@ -92,12 +92,12 @@ This example shows how to use the `ConvertFrom-Json` cmdlet to convert a JSON fi
 custom object.
 
 ```powershell
-Get-Content JsonFile.JSON | ConvertFrom-Json
+Get-Content -Raw JsonFile.JSON | ConvertFrom-Json
 ```
 
-The command uses Get-Content cmdlet to get the strings in a JSON file. Then it uses the pipeline
-operator to send the delimited string to the `ConvertFrom-Json` cmdlet, which converts it to a
-custom object.
+The command uses Get-Content cmdlet to get the strings in a JSON file. The **Raw** parameter
+returns the whole file as a single JSON object. Then it uses the pipeline operator to send the
+delimited string to the `ConvertFrom-Json` cmdlet, which converts it to a custom object.
 
 ### Example 4: Convert a JSON string to a hash table
 
