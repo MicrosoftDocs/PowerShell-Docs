@@ -109,8 +109,8 @@ session as text.
 The first command uses the `Enter-PSSession` cmdlet to start an interactive session with Server01, a
 remote computer. When the session starts, the command prompt changes to include the computer name.
 
-The second command gets the PowerShell process and redirects the output to the Process.txt file. The
-command is submitted to the remote computer, and the file is saved on the remote computer.
+The second command gets the PowerShell process and redirects the output to the `Process.txt` file.
+The command is submitted to the remote computer, and the file is saved on the remote computer.
 
 The third command uses the **Exit** keyword to end the interactive session and close the connection.
 The fourth command confirms that the Process.txt file is on the remote computer. A `Get-ChildItem`
@@ -122,10 +122,10 @@ PS C:\> Enter-PSSession -ComputerName Server01
 [Server01]: PS C:\> Get-Process PowerShell > C:\ps-test\Process.txt
 [Server01]: PS C:\> exit
 PS C:\>
-PS C:\> dir C:\ps-test\process.txt
-Get-ChildItem : Cannot find path 'C:\ps-test\process.txt' because it does not exist.
+PS C:\> dir C:\ps-test\Process.txt
+Get-ChildItem : Cannot find path 'C:\ps-test\Process.txt' because it does not exist.
 At line:1 char:4
-+ dir <<<<  c:\ps-test\process.txt
++ dir <<<<  c:\ps-test\Process.txt
 ```
 
 This command shows how to work in an interactive session with a remote computer.
@@ -133,9 +133,9 @@ This command shows how to work in an interactive session with a remote computer.
 ### Example 3: Use the Session parameter
 
 ```powershell
-PS C:\> $s = New-PSSession -ComputerName Server01
-PS C:\> Enter-PSSession -Session $s
-[Server01]: PS C:\>
+PS> $s = New-PSSession -ComputerName Server01
+PS> Enter-PSSession -Session $s
+[Server01]: PS>
 ```
 
 These commands use the **Session** parameter of `Enter-PSSession` to run the interactive session in
@@ -144,8 +144,8 @@ an existing PowerShell session (**PSSession**).
 ### Example 4: Start an interactive session and specify the Port and Credential parameters
 
 ```powershell
-PS C:\> Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
-[Server01]: PS C:\>
+PS> Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
+[Server01]: PS>
 ```
 
 This command starts an interactive session with the Server01 computer. It uses the **Port**
@@ -155,9 +155,9 @@ has permission to connect to the remote computer.
 ### Example 5: Stop an interactive session
 
 ```powershell
-PS C:\> Enter-PSSession -ComputerName Server01
-[Server01]: PS C:\> Exit-PSSession
-PS C:\>
+PS> Enter-PSSession -ComputerName Server01
+[Server01]: PS> Exit-PSSession
+PS>
 ```
 
 This example shows how to start and stop an interactive session. The first command uses the
