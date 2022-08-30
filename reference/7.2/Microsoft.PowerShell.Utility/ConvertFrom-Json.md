@@ -92,10 +92,10 @@ This example shows how to use the `ConvertFrom-Json` cmdlet to convert a JSON fi
 custom object.
 
 ```powershell
-Get-Content JsonFile.JSON | ConvertFrom-Json
+Get-Content -Raw JsonFile.JSON | ConvertFrom-Json
 ```
 
-The command uses Get-Content cmdlet to get the strings in a JSON file. Then it uses the pipeline
+The command uses Get-Content cmdlet to get the strings in a JSON file. It uses `-Raw` to get the whole file as a single JSON object. Then it uses the pipeline
 operator to send the delimited string to the `ConvertFrom-Json` cmdlet, which converts it to a
 custom object.
 
