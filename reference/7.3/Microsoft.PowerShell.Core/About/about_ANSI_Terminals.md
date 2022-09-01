@@ -189,7 +189,7 @@ sequences are removed from redirected or piped output.
 **OutputRendering** only applies to rendering in the Host, `Out-File`, and
 `Out-String`. Output from native executables isn't affected.
 
-PowerShell 7.3 changed the behavior of `Out-File` and `Out-String` for the
+PowerShell 7.2.6 changed the behavior of `Out-File` and `Out-String` for the
 following scenarios:
 
 - When the input object is pure string, these cmdlets keep the string unchanged
