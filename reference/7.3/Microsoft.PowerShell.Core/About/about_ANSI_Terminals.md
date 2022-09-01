@@ -203,7 +203,7 @@ This is a breaking change in these cmdlets compared to PowerShell 7.2.
 **OutputRendering** doesn't apply to output from the PowerShell host process,
 for example when you run `pwsh` from a command line and redirect the output.
 
-In the following example, PowerShell 7.3 is run on Linux from `bash`. The
+In the following example, PowerShell is run on Linux from `bash`. The
 `Get-ChildItem` cmdlet produces ANSI-decorated text. Since redirection occurs
 in the `bash` process, outside of the PowerShell host, the output isn't
 affected by **OutputRendering**.
