@@ -189,6 +189,17 @@ sequences are removed from redirected or piped output.
 **OutputRendering** only applies to rendering in the Host, `Out-File`, and
 `Out-String`. Output from native executables isn't affected.
 
+PowerShell 7.2.6 changed the behavior of `Out-File` and `Out-String` for the
+following scenarios:
+
+- When the input object is pure string, these cmdlets keep the string unchanged
+  regardless of the **OutputRendering** setting.
+- When the input object needs to have a formatting view applied to it, these
+  cmdlets keep or remove escape sequences from the formatting output strings
+  based on the **OutputRendering** setting.
+
+This is a breaking change in these cmdlets compared to PowerShell 7.2.
+
 **OutputRendering** doesn't apply to output from the PowerShell host process,
 for example when you run `pwsh` from a command line and redirect the output.
 
