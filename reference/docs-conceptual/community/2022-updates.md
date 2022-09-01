@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2022
-ms.date: 08/01/2022
+ms.date: 09/01/2022
 title: What's New in PowerShell-Docs for 2022
 ---
 # What's new in PowerShell Docs for 2022
@@ -10,6 +10,59 @@ contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2022-August
+
+New content
+
+- New [landing page](/powershell/scripting/whats-new/overview) for What's
+  new content
+
+- Shell experience docs
+  - [Running commands in the shell](/powershell/scripting/learn/shell/running-commands)
+
+- DSC 2.0 docs
+  - [Conceptual](/powershell/dsc/overview?view=dsc-2.0&preserve-view=true)
+    content - 15 new articles
+  - [PSDscResources](/powershell/dsc/reference/psdscresources/overview?view=dsc-2.0&preserve-view=true)
+    module reference - 58 new articles
+
+Content updates
+
+- [PowerShell VS Code docs](https://code.visualstudio.com/docs/languages/powershell)
+- Release notes for [7.3-preview.7](/powershell/scripting/whats-new/what-s-new-in-powershell-73)
+- Cleaned up markdown tables in About topics for better accessibility and localization
+
+Other Projects
+
+- [Get-WhatsNew](https://devblogs.microsoft.com/powershell/announcing-the-release-of-get-whatsnew/)
+  cmdlet released - This cmdlet displays release notes for all versions of PowerShell so you can see
+  what's new for a particular version.
+
+GitHub stats
+
+- 57 PRs merged (16 from Community)
+- 24 issues opened (12 from Community)
+- 26 issues closed (15 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|         GitHub Id         | PRs merged | Issues opened |
+| ------------------------- | :--------: | :-----------: |
+| sethvs                    |     4      |               |
+| BEEDELLROKEJULIANLOCKHART |     1      |               |
+| Chemerevsky               |     1      |               |
+| ClaudioESSilva            |     1      |               |
+| davidhaymond              |     1      |               |
+| DavidMetcalfe             |     1      |               |
+| dharmatech                |     1      |               |
+| kozhemyak                 |     1      |               |
+| mcawai                    |     1      |               |
+| NaridaL                   |     1      |               |
+| Nicicalu                  |     1      |               |
+| sdarwin                   |     1      |               |
+| seansaleh                 |     1      |               |
 
 ## 2022-July
 
@@ -190,7 +243,6 @@ New Content
     - [Decide which features to amplify](/powershell/utility-modules/crescendo/get-started/research-tool)
     - [Create a Crescendo cmdlet](/powershell/utility-modules/crescendo/get-started/create-new-cmdlet)
     - [Generate and test a Crescendo module](/powershell/utility-modules/crescendo/get-started/generate-module)
-    - We have plans for at least two more documents
   - Moved PlatyPS article from PowerShell docs to the PlatyPS documentation
     - [Moved PlatyPS article](/powershell/utility-modules/platyps/create-help-using-platyps)
   - Migrated more PSScriptAnalyzer documentation from the source code repository
@@ -270,7 +322,7 @@ issues. Thank you!
 
 New Content
 
-- No new content. We are down to one writer for PowerShell. I was out of the office for half of
+- No new content. We're down to one writer for PowerShell. I was out of the office for half of
   December for vacation then half of January for COVID.
 
 Content updates
