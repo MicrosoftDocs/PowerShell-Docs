@@ -70,7 +70,7 @@ The following members control how or when ANSI formatting is used:
 - `$PSStyle.OutputRendering` is a
   `System.Management.Automation.OutputRendering` enum with the values:
 
-  - `ANSI`: ANSI is always passed through as-is.
+  - `ANSI`: ANSI escape sequences are always passed through as-is.
   - `PlainText`: ANSI escape sequences are always stripped so that it's only
     plain text.
   - `Host`: This is the default behavior. The ANSI escape sequences are removed
