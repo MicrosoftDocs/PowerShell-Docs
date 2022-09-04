@@ -7,7 +7,7 @@ title: PowerShell learning resources
 
 Additional resources for learning about PowerShell.
 
-## Microsoft Learn modules
+## Learn modules
 
 Microsoft Learn is a free, online training platform that provides interactive learning for Microsoft
 products and more. Our goal is to help you become proficient on our technologies and learn more

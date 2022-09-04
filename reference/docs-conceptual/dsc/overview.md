@@ -31,5 +31,4 @@ There are three versions of DSC available:
 The documentation for DSC has been moved to a new location so that we can manage the DSC
 version-specific information separate from the versions of PowerShell.
 
-See the new documentation at
-[https://docs.microsoft.com/powershell/dsc](/powershell/dsc/overview).
+See the new documentation in [Desired State Configuration 2.0](/powershell/dsc/overview).
