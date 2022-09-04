@@ -66,7 +66,7 @@ with the Begin and End blocks, is described in the
 Advanced functions differ from compiled cmdlets in the following ways:
 
 - Advanced function parameter binding does not throw an exception when an array
-  of strings is bound to a Boolean parameter.
+  of strings is bound to a `Switch` parameter.
 - The ValidateSet attribute and the ValidatePattern attribute cannot pass named
   parameters.
 - Advanced functions cannot be used in transactions.
