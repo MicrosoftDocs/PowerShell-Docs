@@ -342,7 +342,7 @@ issues. Thank you!
     - [Variables can be assigned values as part of an expression (with limitations)](https://github.com/MicrosoftDocs/PowerShell-Docs/wiki/Variables-can-be-assigned-values-as-part-of-an-expression-(with-limitations))
 
 - Documentation maintenance
-  - Now publishing updates to docs.microsoft.com on a daily schedule
+  - Now publishing updates to Microsoft Docs on a daily schedule
     - Monday-Friday 3pm Redmond Time (UTC-8)
   - Restructured the Community content
   - Many editorial cleanups

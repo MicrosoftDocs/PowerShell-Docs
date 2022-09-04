@@ -109,7 +109,7 @@ New content migrated from GitHub wiki
 - [Limitations of PowerShell transcripts](/powershell/scripting/learn/deep-dives/output-missing-from-transcript)
 - [Avoid using Invoke-Expression](/powershell/scripting/learn/deep-dives/avoid-using-invoke-expression)
 - [Avoid assigning variables in expressions](/powershell/scripting/learn/deep-dives/avoid-assigning-variables-in-expressions)
-- [about_Case-Sensitivity]( /powershell/module/microsoft.powershell.core/about/about_case-sensitivity)
+- [about_Case-Sensitivity](/powershell/module/microsoft.powershell.core/about/about_case-sensitivity)
 - Updated [about_Arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 New SecretManagement content
@@ -163,7 +163,7 @@ Content updates
 - Bulk formatting cleanup for many docs
   - PowerShell-Docs content - 272 files
   - Secrets management - 17 files
-- Updated the PSScriptAnalyzer README and deleted docs that were migrated to docs.microsoft.com
+- Updated the PSScriptAnalyzer README and deleted docs that were migrated to Microsoft Docs
 - Removed CentOS and Fedora from docs - no longer supported
 - Retired 7.1 content - no longer supported
   - Collapse release notes into diff article

@@ -34,7 +34,7 @@ The following list describes the main folders in this repository.
   Code)
 - `assets` - contains downloadable files linked in the documentation
 - `reference` - contains the documentation published to
-  [docs.microsoft.com]([https://docs.microsoft.com/powershell/scripting/). This includes both
+  [PowerShell technical documentation](/powershell/scripting/). This includes both
   reference and conceptual content.
   - `5.1` - contains the cmdlet reference and about topics for PowerShell 5.1
   - `7.0` - contains the cmdlet reference and about topics for PowerShell 7.0
