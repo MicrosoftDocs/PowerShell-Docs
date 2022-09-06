@@ -148,7 +148,7 @@ Content updates
   - [Microsoft Update for PowerShell FAQ](/powershell/scripting/install/microsoft-update-faq)
   - [PowerShell Support Lifecycle](/powershell/scripting/install/powershell-support-lifecycle)
 - Reformatted and updated the PSScriptAnalyzer rules documentation. Next month we plan to publish these
-  docs on docs.microsoft.com.
+  docs on Microsoft Docs.
   - [Rules documentation on GitHub](https://github.com/PowerShell/PSScriptAnalyzer/tree/master/docs/Rules)
 - Lots of general editorial updates across 4500 files
 - PowerShell 7.2-preview.10 documentation updates
