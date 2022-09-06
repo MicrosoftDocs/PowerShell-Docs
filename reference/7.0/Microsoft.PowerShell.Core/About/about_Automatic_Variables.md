@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 07/01/2022
+ms.date: 09/06/2022
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -224,9 +224,23 @@ Otherwise contains `$False`.
 Contains `$TRUE` if the current session is running on a Windows operating
 system. Otherwise contains `$FALSE`.
 
-### $LastExitCode
+### $LASTEXITCODE
 
-Contains the exit code of the last native program that was run.
+Contains the exit code of the last native program or PowerShell script that was
+run.
+
+For PowerShell scripts, the value of `$LASTEXITCODE` depends on how the script
+was called and whether the `exit` keyword was used:
+
+- When a script uses the `exit` keyword, `$LASTEXITCODE` is set to the
+  specified value, regardless of how the script was called. For more
+  information, see [about_Language_Keywords](about_language_keywords.md#exit).
+- When a script is called directly, like `./Test.ps1`, or with the
+  [call operator](about_operators.md#call-operator-) (`&`) like `& ./Test.ps1`,
+  the value of `$LASTEXITCODE` isn't changed.
+- When a script is called with `pwsh` and the **File** parameter, the value of
+  `$LASTEXITCODE` is set to `1` if the script terminated due to a thrown
+  exception and `0` otherwise.
 
 ### $Matches
 
