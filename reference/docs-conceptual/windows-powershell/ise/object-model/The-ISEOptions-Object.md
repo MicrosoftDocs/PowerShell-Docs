@@ -531,7 +531,7 @@ Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier ve
 Specifies whether the locally installed Help or the online Help appears when you press <kbd>F1</kbd>
 with the cursor positioned in a keyword. If set to `$true`, then a pop-up window shows content from
 the locally installed Help. You can install the Help files by running the `Update-Help` command. If
-set to `$false`, then your browser opens to a page on docs.microsoft.com.
+set to `$false`, then your browser opens to a page on Microsoft Docs.
 
 ```powershell
 # Sets the option for the online help to be displayed.
