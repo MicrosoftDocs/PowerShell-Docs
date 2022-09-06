@@ -186,7 +186,7 @@ highlightint the significance of the content. The following alert types are supp
 > Dangerous certain consequences of an action.
 ```
 
-These alerts look like this on docs.microsoft.com:
+These alerts look like this on Microsoft Docs:
 
 Note block
 

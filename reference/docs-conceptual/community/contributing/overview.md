@@ -52,7 +52,7 @@ Also, read the [Writing essentials][12] section of the centralized Contributor's
 excellent resource is the [Microsoft Writing Style Guide][13].
 
 Minor corrections or clarifications to documentation and code examples in public repositories are
-covered by the docs.microsoft.com [Terms of Use][14].
+covered by the [docs.microsoft.com Terms of Use][14].
 
 Use the full GitHub workflow when you're making significant changes. If you're not an employee of
 Microsoft, our PR validation system adds a comment to the pull request asking you to sign the online
@@ -62,7 +62,7 @@ repository. You will be asked to sign the CLA for each time you contribute to a 
 
 ## Code of conduct
 
-All repositories that publish to docs.microsoft.com have adopted the
+All repositories that publish to Microsoft Docs have adopted the
 [Microsoft Open Source Code of Conduct][16] or the
 [.NET Foundation Code of Conduct][17]. For more
 information, see the [Code of Conduct FAQ][18].
