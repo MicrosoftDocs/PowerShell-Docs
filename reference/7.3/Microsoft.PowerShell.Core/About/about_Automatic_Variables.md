@@ -34,12 +34,12 @@ last command succeeded and **False** if it failed.
 
 For cmdlets and advanced functions that are run at multiple stages in a
 pipeline, for example in both `process` and `end` blocks, calling
-`this.WriteError()` or `$PSCmdlet.WriteError()` respectively at any point will
-set `$?` to **False**, as will `this.ThrowTerminatingError()` and
+`this.WriteError()` or `$PSCmdlet.WriteError()` respectively at any point
+sets `$?` to **False**, as does `this.ThrowTerminatingError()` and
 `$PSCmdlet.ThrowTerminatingError()`.
 
-The `Write-Error` cmdlet always sets `$?` to **False** immediately after it is
-executed, but will not set `$?` to **False** for a function calling it:
+The `Write-Error` cmdlet always sets `$?` to **False** immediately after it's
+executed, but won't set `$?` to **False** for a function calling it:
 
 ```powershell
 function Test-WriteError
@@ -61,7 +61,7 @@ is 0, and set to **False** when `$LASTEXITCODE` is any other value.
 > Until PowerShell 7, containing a statement within parentheses `(...)`,
 > subexpression syntax `$(...)` or array expression `@(...)` always reset
 > `$?` to **True**, so that `(Write-Error)` shows `$?` as **True**.
-> This has been changed in PowerShell 7, so that `$?` will always reflect
+> This has been changed in PowerShell 7, so that `$?` always reflects
 > the actual success of the last command run in these expressions.
 
 ### $^
@@ -78,11 +78,11 @@ selected objects in a pipeline.
 
 Contains an array of values for undeclared parameters that are passed to a
 function, script, or script block. When you create a function, you can declare
-the parameters by using the `param` keyword or by adding a comma-separated list
+the parameters with the `param` keyword or by adding a comma-separated list
 of parameters in parentheses after the function name.
 
 In an event action, the `$args` variable contains objects that represent the
-event arguments of the event that is being processed. This variable is
+event arguments of the event that's being processed. This variable is
 populated only within the `Action` block of an event registration command. The
 value of this variable can also be found in the **SourceArgs** property of the
 **PSEventArgs** object that `Get-Event` returns.
@@ -96,7 +96,7 @@ export snap-in names to a console file.
 
 When you use the `Export-Console` cmdlet without parameters, it automatically
 updates the console file that was most recently used in the session. You can
-use this automatic variable to determine which file will be updated.
+use this automatic variable to determine the file to update.
 
 ### $Error
 
@@ -109,17 +109,17 @@ information, see [about_CommonParameters](about_CommonParameters.md).
 
 ### $Event
 
-Contains a **PSEventArgs** object that represents the event that is being
+Contains a **PSEventArgs** object that represents the event that's being
 processed. This variable is populated only within the `Action` block of an
 event registration command, such as `Register-ObjectEvent`. The value of this
-variable is the same object that the `Get-Event` cmdlet returns. Therefore, you
+variable is the same object that the `Get-Event` cmdlet returns. You
 can use the properties of the `Event` variable, such as `$Event.TimeGenerated`,
 in an `Action` script block.
 
 ### $EventArgs
 
 Contains an object that represents the first event argument that derives from
-**EventArgs** of the event that is being processed. This variable is populated
+**EventArgs** of the event that's being processed. This variable is populated
 only within the `Action` block of an event registration command. The value of
 this variable can also be found in the **SourceEventArgs** property of the
 **PSEventArgs** object that `Get-Event` returns.
@@ -127,7 +127,7 @@ this variable can also be found in the **SourceEventArgs** property of the
 ### $EventSubscriber
 
 Contains a **PSEventSubscriber** object that represents the event subscriber of
-the event that is being processed. This variable is populated only within the
+the event that's being processed. This variable is populated only within the
 `Action` block of an event registration command. The value of this variable is
 the same object that the `Get-EventSubscriber` cmdlet returns.
 
@@ -140,7 +140,7 @@ that are available to cmdlets.
 ### $false
 
 Contains **False**. You can use this variable to represent **False** in
-commands and scripts instead of using the string "false". The string can be
+commands and scripts instead of using the string `"false"`. The string can be
 interpreted as **True** if it's converted to a non-empty string or to a
 non-zero integer.
 
@@ -165,28 +165,28 @@ variables, typically `C:\Users\<UserName>`.
 Contains an object that represents the current host application for PowerShell.
 You can use this variable to represent the current host in commands or to
 display or change the properties of the host, such as `$Host.version` or
-`$Host.CurrentCulture`, or `$host.ui.rawui.setbackgroundcolor("Red")`.
+`$Host.CurrentCulture`, or `$host.UI.RawUI.SetBackGroundColor("Red")`.
 
 ### $input
 
-Contains an enumerator that enumerates all input that is passed to a function.
+Contains an enumerator that enumerates all input that's passed to a function.
 The `$input` variable is available only to functions and script blocks (which
 are unnamed functions).
 
-- In a function without a `Begin`, `Process`, or `End` block, the `$input`
+- In a function without a `begin`, `process`, or `end` block, the `$input`
   variable enumerates the collection of all input to the function.
 
-- In the `Begin` block, the `$input` variable contains no data.
+- In the `begin` block, the `$input` variable contains no data.
 
-- In the `Process` block, the `$input` variable contains the object that is
+- In the `process` block, the `$input` variable contains the object that's
   currently in the pipeline.
 
-- In the `End` block, the `$input` variable enumerates the collection of all
+- In the `end` block, the `$input` variable enumerates the collection of all
   input to the function.
 
   > [!NOTE]
-  > You cannot use the `$input` variable inside both the Process block and the
-  > End block in the same function or script block.
+  > You can't use the `$input` variable inside both the `process` block and the
+  > `end` block in the same function or script block.
 
 Since `$input` is an enumerator, accessing any of its properties causes
 `$input` to no longer be available. You can store `$input` in another variable
@@ -262,16 +262,16 @@ invoked, such as the name of the script that called the current command.
 `$MyInvocation` is populated only for scripts, function, and script blocks. You
 can use the information in the **System.Management.Automation.InvocationInfo**
 object that `$MyInvocation` returns in the current script, such as the path and
-file name of the script (`$MyInvocation.MyCommand.Path`) or the name of a
+filename of the script (`$MyInvocation.MyCommand.Path`) or the name of a
 function (`$MyInvocation.MyCommand.Name`) to identify the current command. This
-is particularly useful for finding the name of the current script.
+is useful for finding the name of the current script.
 
 Beginning in PowerShell 3.0, `MyInvocation` has the following new properties.
 
 - **PSScriptRoot** - Contains the full path to the script that invoked the
   current command. The value of this property is populated only when the caller
   is a script.
-- **PSCommandPath** - Contains the full path and file name of the script that
+- **PSCommandPath** - Contains the full path and filename of the script that
   invoked the current command. The value of this property is populated only
   when the caller is a script.
 
@@ -364,7 +364,7 @@ Appointment on Friday: Team lunch
 
 ### $PID
 
-Contains the process identifier (PID) of the process that is hosting the
+Contains the process identifier (PID) of the process that's hosting the
 current PowerShell session.
 
 ### $PROFILE
@@ -446,7 +446,7 @@ and [about_Functions_Advanced](about_Functions_Advanced.md).
 
 ### $PSCommandPath
 
-Contains the full path and file name of the script that's being run. This
+Contains the full path and filename of the script that's being run. This
 variable is valid in all scripts.
 
 ### $PSCulture
@@ -464,11 +464,11 @@ and dates, and is stored in a **System.Globalization.CultureInfo** object. Use
 
 While debugging, this variable contains information about the debugging
 environment. Otherwise, it contains a **null** value. As a result, you can use
-it to indicate whether the debugger has control. When populated, it contains a
+it to determine whether the debugger has control. When populated, it contains a
 **PsDebugContext** object that has **Breakpoints** and **InvocationInfo**
 properties. The **InvocationInfo** property has several useful properties,
 including the **Location** property. The **Location** property indicates the
-path of the script that is being debugged.
+path of the script that's being debugged.
 
 ### $PSHOME
 
@@ -518,14 +518,14 @@ use the `Get-UICulture` cmdlet.
 ### $PSVersionTable
 
 Contains a read-only hash table that displays details about the version of
-PowerShell that is running in the current session. The table includes the
+PowerShell that's running in the current session. The table includes the
 following items:
 
 - **PSVersion** - The PowerShell version number
 - **PSEdition** This property has the value of 'Desktop' for PowerShell 4 and
   below as well as PowerShell 5.1 on full-featured Windows editions. This
-  property has the value of `Core` for PowerShell 6 and above as well as
-  PowerShell PowerShell 5.1 on reduced-footprint editions like Windows Nano
+  property has the value of `Core` for PowerShell 6 and higher as well as
+  Windows PowerShell 5.1 on reduced-footprint editions like Windows Nano
   Server or Windows IoT.
 - **GitCommitId** - The commit Id of the source files, in GitHub,
 - **OS** - Description of the operating system that PowerShell is running on.
@@ -545,7 +545,7 @@ location for the current PowerShell runspace.
 
 > [!NOTE]
 > PowerShell supports multiple runspaces per process. Each runspace has its own
-> _current directory_. This is not the same as the current directory of the
+> _current directory_. This isn't the same as the current directory of the
 > process: `[System.Environment]::CurrentDirectory`.
 
 ### $Sender
@@ -582,7 +582,7 @@ the instance of the class itself.
 PowerShell's Extensible Type System (ETS) allows you to add properties to
 classes using script blocks. In a script block that defines a script property
 or script method, the `$this` variable refers to an instance of object of the
-class that is being extended. For example, PowerShell uses ETS to add the
+class that's being extended. For example, PowerShell uses ETS to add the
 **BaseName** property to the **FileInfo** class.
 
 ```powershell
@@ -777,11 +777,11 @@ After MoveNext:
 
 ### Example 3: Using the $input.Current property
 
-By using the **Current** property, the current pipeline value can be accessed
+With the **Current** property, the current pipeline value can be accessed
 multiple times without using the **Reset** method. The process block doesn't
 automatically call the **MoveNext** method.
 
-The **Current** property will never be populated unless you explicitly call
+The **Current** property is never populated unless you explicitly call
 **MoveNext**. The **Current** property can be accessed multiple times inside
 the process block without clearing its value.
 
@@ -826,7 +826,7 @@ access the current collection element, and the **Reset** and **MoveNext**
 methods to change its value.
 
 > [!NOTE]
-> Each iteration of the `foreach` loop will automatically call the **MoveNext**
+> Each iteration of the `foreach` loop automatically calls the **MoveNext**
 > method.
 
 The following loop only executes twice. In the second iteration, the collection
