@@ -34,8 +34,8 @@ last command succeeded and **False** if it failed.
 
 For cmdlets and advanced functions that are run at multiple stages in a
 pipeline, for example in both `process` and `end` blocks, calling
-`this.WriteError()` or `$PSCmdlet.WriteError()` respectively at any point
-sets `$?` to **False**, as does `this.ThrowTerminatingError()` and
+`this.WriteError()` or `$PSCmdlet.WriteError()` respectively at any point sets
+`$?` to **False**, as does `this.ThrowTerminatingError()` and
 `$PSCmdlet.ThrowTerminatingError()`.
 
 The `Write-Error` cmdlet always sets `$?` to **False** immediately after it's
@@ -59,10 +59,10 @@ is 0, and set to **False** when `$LASTEXITCODE` is any other value.
 
 > [!NOTE]
 > Until PowerShell 7, containing a statement within parentheses `(...)`,
-> subexpression syntax `$(...)` or array expression `@(...)` always reset
-> `$?` to **True**, so that `(Write-Error)` shows `$?` as **True**.
-> This has been changed in PowerShell 7, so that `$?` always reflects
-> the actual success of the last command run in these expressions.
+> subexpression syntax `$(...)` or array expression `@(...)` always reset `$?`
+> to **True**, so that `(Write-Error)` shows `$?` as **True**. This has been
+> changed in PowerShell 7, so that `$?` always reflects the actual success of
+> the last command run in these expressions.
 
 ### $^
 
@@ -78,13 +78,13 @@ selected objects in a pipeline.
 
 Contains an array of values for undeclared parameters that are passed to a
 function, script, or script block. When you create a function, you can declare
-the parameters with the `param` keyword or by adding a comma-separated list
-of parameters in parentheses after the function name.
+the parameters with the `param` keyword or by adding a comma-separated list of
+parameters in parentheses after the function name.
 
 In an event action, the `$args` variable contains objects that represent the
-event arguments of the event that's being processed. This variable is
-populated only within the `Action` block of an event registration command. The
-value of this variable can also be found in the **SourceArgs** property of the
+event arguments of the event that's being processed. This variable is populated
+only within the `Action` block of an event registration command. The value of
+this variable can also be found in the **SourceArgs** property of the
 **PSEventArgs** object that `Get-Event` returns.
 
 ### $ConsoleFileName
@@ -112,9 +112,9 @@ information, see [about_CommonParameters](about_CommonParameters.md).
 Contains a **PSEventArgs** object that represents the event that's being
 processed. This variable is populated only within the `Action` block of an
 event registration command, such as `Register-ObjectEvent`. The value of this
-variable is the same object that the `Get-Event` cmdlet returns. You
-can use the properties of the `Event` variable, such as `$Event.TimeGenerated`,
-in an `Action` script block.
+variable is the same object that the `Get-Event` cmdlet returns. You can use
+the properties of the `Event` variable, such as `$Event.TimeGenerated`, in an
+`Action` script block.
 
 ### $EventArgs
 
@@ -230,8 +230,8 @@ operators. For more information about the `switch` statement, see
 > [!NOTE]
 > When `$Matches` is populated in a session, it retains the matched value until
 > it's overwritten by another match. If `-match` is used again and no match is
-> found, it doesn't reset `$Matches` to `$null`. The previously matched value is
-> kept in `$Matches` until another match is found.
+> found, it doesn't reset `$Matches` to `$null`. The previously matched value
+> is kept in `$Matches` until another match is found.
 
 ### $MyInvocation
 
@@ -289,8 +289,8 @@ PowerShell treats `$null` as an object with a value, that is, as an explicit
 placeholder, so you can use `$null` to represent an empty value in a series of
 values.
 
-For example, when `$null` is included in a collection, it's counted as one
-of the objects.
+For example, when `$null` is included in a collection, it's counted as one of
+the objects.
 
 ```powershell
 $a = "one", $null, "three"
@@ -564,8 +564,9 @@ PS> Get-ChildItem .\README.md | Get-Member BaseName | Format-List
 TypeName   : System.IO.FileInfo
 Name       : BaseName
 MemberType : ScriptProperty
-Definition : System.Object BaseName {get=if ($this.Extension.Length -gt 0){$this.Name.Remove($this.Name.Length -
-             $this.Extension.Length)}else{$this.Name};}
+Definition : System.Object BaseName {get=if ($this.Extension.Length -gt 0)
+             {$this.Name.Remove($this.Name.Length - $this.Extension.Length
+             )}else{$this.Name};}
 ```
 
 For more information, see [about_Types.ps1xml](./about_Types.ps1xml.md).
