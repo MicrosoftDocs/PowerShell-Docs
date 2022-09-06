@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use a PowerShell profile.
 Locale: en-US
-ms.date: 08/29/2022
+ms.date: 09/06/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Profiles
@@ -39,22 +39,11 @@ For example, the PowerShell console supports the following basic profile files.
 The profiles are listed in precedence order. The first profile has the highest
 precedence.
 
-- All Users, All Hosts
-  - Windows - `$PSHOME\Profile.ps1`
-  - Linux - `/usr/local/microsoft/powershell/7/profile.ps1`
-  - macOS - `/usr/local/microsoft/powershell/7/profile.ps1`
-- All Users, Current Host
-  - Windows - `$PSHOME\Microsoft.PowerShell_profile.ps1`
-  - Linux - `/usr/local/microsoft/powershell/7/Microsoft.Powershell_profile.ps1`
-  - macOS - `/usr/local/microsoft/powershell/7/Microsoft.Powershell_profile.ps1`
-- Current User, All Hosts
-  - Windows - `$Home\Documents\PowerShell\Profile.ps1`
-  - Linux - `~/.config/powershell/profile.ps1`
-  - macOS - `~/.config/powershell/profile.ps1`
-- Current user, Current Host
-  - Windows - `$Home\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`
-  - Linux - `~/.config/powershell/Microsoft.Powershell_profile.ps1`
-  - macOS - `~/.config/powershell/Microsoft.Powershell_profile.ps1`
+- All Users, All Hosts - `$PSHOME\Profile.ps1`
+- All Users, Current Host - `$PSHOME\Microsoft.PowerShell_profile.ps1`
+- Current User, All Hosts - `$Home\Documents\WindowsPowerShell\\Profile.ps1`
+- Current user, Current Host -
+  `$Home\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
 
 The profile paths include the following variables:
 
