@@ -778,12 +778,16 @@ this solution:
 - For a new module, this would add additional complexity to the design and implementaion
 - For an existing module, this would require significant refactoring
 
-There is a simplified solution to achieve side-by-side assembly loading, by
+There is a simplified solution to achieve side-by-side assembly loading,
+by hooking up a `Resolving` event with a custom `AssemblyLoadContext` instance.
 
-- Hooking up a `Resolving` event to a custom Assembly Load Context
-- Or, hooking up a `Resolving` event to `Assembly.LoadFile()`
+> **NOTE:** Do not use `Assembly.LoadFile` for the dependency isolation purpose.</br>
+> This API does load an assembly to a separate `AssemblyLoadContext` instance, but assemblies loaded by
+> this API are discoverable by PowerShell's type resolution code (see code [here][33]).
+> So, your module could run into the "_Type Identity_" issue when loading an assembly by `Assembly.LoadFile`
+> while another module loads a different version of the same assembly into the default `AssemblyLoadContext`.
 
-It comes with two limitations comparing to the above solution but requires much more less effort
+It comes with two limitations comparing to the above solution but requires much less effort
 from the module author. Check out the [PowerShell-ALC-Samples][16] repository for the sample code
 and the detailed scenario analysis regarding this solution.
 
@@ -894,7 +898,7 @@ jumping off points:
 [13]: https://github.com/rjmholt/ModuleDependencyIsolationExample
 [14]: https://github.com/PSBicep/PSBicep
 [15]: https://pipe.how/get-assemblyloadcontext/
-[16]: https://github.com/daxian-dbw/PowerShell-ALC-Samples/tree/main/Resolving-Event-with-ALC
+[16]: https://github.com/daxian-dbw/PowerShell-ALC-Samples
 [17]: /dotnet/framework/app-domains/application-domains
 [18]: /dotnet/framework/app-domains/use
 [19]: /dotnet/standard/assembly/
@@ -911,3 +915,4 @@ jumping off points:
 [30]: https://weblog.west-wind.com/posts/2012/Nov/03/Back-to-Basics-When-does-a-NET-Assembly-Dependency-get-loaded
 [31]: https://codeblog.jonskeet.uk/2019/06/30/versioning-limitations-in-net/
 [32]: https://natemcmaster.com/blog/2017/12/21/netcore-primitives/
+[33]: https://github.com/PowerShell/PowerShell/blob/918bb8c952af1d461abfc98bc709a1d359168a1c/src/System.Management.Automation/utils/ClrFacade.cs#L56-L61
