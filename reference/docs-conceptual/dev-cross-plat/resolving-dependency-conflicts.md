@@ -775,21 +775,21 @@ dependency assemblies. The wrapper assembly acts like a bridge, forwarding the c
 assembly to the dependency assemblies. This makes it usually a non-trivial amount of work to adopt
 this solution:
 
-- For a new module, this would add additional complexity to the design and implementaion
+- For a new module, this would add additional complexity to the design and implementation
 - For an existing module, this would require significant refactoring
 
-There is a simplified solution to achieve side-by-side assembly loading,
-by hooking up a `Resolving` event with a custom `AssemblyLoadContext` instance.
+There is a simplified solution to achieve side-by-side assembly loading, by hooking up a `Resolving`
+event with a custom `AssemblyLoadContext` instance. Using this method is easier for the module
+author but has two limitations. Check out the [PowerShell-ALC-Samples][16] repository for sample
+code and documentation that describes these limitations and detailed scenarios for this solution.
 
-> **NOTE:** Do not use `Assembly.LoadFile` for the dependency isolation purpose.</br>
-> This API does load an assembly to a separate `AssemblyLoadContext` instance, but assemblies loaded by
-> this API are discoverable by PowerShell's type resolution code (see code [here][33]).
-> So, your module could run into the "_Type Identity_" issue when loading an assembly by `Assembly.LoadFile`
-> while another module loads a different version of the same assembly into the default `AssemblyLoadContext`.
-
-It comes with two limitations comparing to the above solution but requires much less effort
-from the module author. Check out the [PowerShell-ALC-Samples][16] repository for the sample code
-and the detailed scenario analysis regarding this solution.
+> [!IMPORTANT]
+> Do not use `Assembly.LoadFile` for the dependency isolation purpose. Using `Assembly.LoadFile`
+> creates a _Type Identity_ issue when another module loads a different version of the same assembly
+> into the default `AssemblyLoadContext`. While this API loads an assembly to a separate
+> `AssemblyLoadContext` instance, the assemblies loaded are discoverable by PowerShell's
+> [type resolution code][33]. Therefore, there are duplicate instances of the same fully qualifed
+> type name available from two different ALCs.
 
 ### Custom Application Domains
 
