@@ -788,7 +788,7 @@ code and documentation that describes these limitations and detailed scenarios f
 > creates a _Type Identity_ issue when another module loads a different version of the same assembly
 > into the default `AssemblyLoadContext`. While this API loads an assembly to a separate
 > `AssemblyLoadContext` instance, the assemblies loaded are discoverable by PowerShell's
-> [type resolution code][33]. Therefore, there are duplicate instances of the same fully qualifed
+> [type resolution code][33]. Therefore, there could be duplicate types with the same fully qualifed
 > type name available from two different ALCs.
 
 ### Custom Application Domains
