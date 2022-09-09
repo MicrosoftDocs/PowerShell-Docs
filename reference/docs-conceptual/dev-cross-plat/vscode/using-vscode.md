@@ -1,6 +1,6 @@
 ---
 description: Using Visual Studio Code for PowerShell Development
-ms.date: 10/22/2021
+ms.date: 09/09/2022
 title: Using Visual Studio Code for PowerShell Development
 ---
 
@@ -157,57 +157,59 @@ You can add other PowerShell executable paths to the session menu through the
 [Visual Studio Code setting](https://code.visualstudio.com/docs/getstarted/settings):
 `powershell.powerShellAdditionalExePaths`.
 
-Add an item to the list `powershell.powerShellAdditionalExePaths` or create the list if it doesn't
-exist in your `settings.json`:
+You can do this using the GUI:
+
+1. From the **Command Palette** search for and select **Open User Settings**. Or use the
+   keyboard shortcut on Windows or Linux <kbd>Ctrl</kbd>+<kbd>,</kbd>. On macOS, use
+   <kbd>Cmd</kbd>+<kbd>,</kbd>.
+1. In the **Settings** editor, search for **PowerShell Additional Exe Paths**.
+1. Click **Add Item**.
+1. For the key (under **Item**), provide your choice of name for this additional
+   PowerShell installation.
+1. For the value (under **Value**), provide the absolute path to the executable itself.
+
+You can add as many additional paths as you like, and they will show up in the session
+menu with the given key as the name.
+
+Alternatively you can add key/value pairs to the object
+`powershell.powerShellAdditionalExePaths` in your `settings.json`:
 
 ```json
 {
-    // other settings...
-
-    "powershell.powerShellAdditionalExePaths": [
-        {
-            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
-            "versionName": "Downloaded PowerShell"
-        }
-    ],
-
-    // other settings...
+    "powershell.powerShellAdditionalExePaths": {
+        "Downloaded PowerShell": "C:/Users/username/Downloads/PowerShell/pwsh.exe",
+        "Built PowerShell": "C:/Users/username/src/PowerShell/src/powershell-win-core/bin/Debug/net6.0/win7-x64/publish/pwsh.exe"
+    },
 }
 ```
-
-Each item must have:
-
-- `exePath`: The path to the `pwsh` or `powershell` executable.
-- `versionName`: The text that will show up in the session menu.
-
-To set the default PowerShell version, set the value `powershell.powerShellDefaultVersion` to the
-text displayed in the session menu (also known as the `versionName`):
-
-```json
-{
-    // other settings...
-
-    "powershell.powerShellAdditionalExePaths": [
-        {
-            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
-            "versionName": "Downloaded PowerShell"
-        }
-    ],
-
-    "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
-
-    // other settings...
-}
-```
-
-After you've configured this setting, restart VS Code or to reload the current VS Code window from
-the **Command Palette**, type `Developer: Reload Window`.
-
-If you open the session menu, you now see your additional PowerShell versions!
 
 > [!NOTE]
-> If you build PowerShell from source, this is a great way to test out your local build of
-> PowerShell.
+> This setting used to be a list of objects with the required keys `exePath` and
+> `versionName`. A breaking change was introduced to support configuration via GUI. If you
+> had previously configured this setting, please convert it the new format. The value
+> given for `versionName` will now be the key, and the value given for `exePath` will be
+> the value. You can do this more easily be resetting the value and using the GUI.
+
+To set the default PowerShell version, set the value `powershell.powerShellDefaultVersion`
+to the text displayed in the session menu (the text used for the key):
+
+```json
+{
+    "powershell.powerShellAdditionalExePaths": {
+        "Downloaded PowerShell": "C:/Users/username/Downloads/PowerShell/pwsh.exe",
+    },
+    "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
+}
+```
+
+After you've configured this setting, restart VS Code or to reload the current VS Code
+window from the **Command Palette**, type `Developer: Reload Window`.
+
+If you open the session menu, you now see your additional PowerShell installations!
+
+> [!TIP]
+> If you build PowerShell from source, this is a great way to test out your local
+> build of PowerShell.
 
 ## Debugging with Visual Studio Code
 
