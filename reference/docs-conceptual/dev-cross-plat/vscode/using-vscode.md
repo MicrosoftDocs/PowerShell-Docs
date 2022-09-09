@@ -17,7 +17,7 @@ It supports the following PowerShell versions:
 - Windows PowerShell 5.1 (Windows-only)
 
 > [!NOTE]
-> Visual Studio Code is not the same as [Visual Studio][vsent].
+> Visual Studio Code isn't the same as [Visual Studio][vsent].
 
 ## Getting started
 
@@ -31,10 +31,10 @@ macOS, and Linux, see the following links:
 For traditional Windows PowerShell workloads, see [Installing Windows PowerShell][install-winps].
 
 > [!IMPORTANT]
-> The [Windows PowerShell ISE][ise] is still available for Windows. However, it is no longer in
+> The [Windows PowerShell ISE][ise] is still available for Windows. However, it's no longer in
 > active feature development. The ISE only works with PowerShell 5.1 and older. As a component of
 > Windows, it continues to be officially supported for security and high-priority servicing fixes.
-> We have no plans to remove the ISE from Windows.
+> we've no plans to remove the ISE from Windows.
 
 ## Install VS Code and the PowerShell Extension
 
@@ -61,8 +61,8 @@ For traditional Windows PowerShell workloads, see [Installing Windows PowerShell
    1. After VS Code has reloaded, you're ready for editing.
 
 For example, to create a new file, click **File > New**. To save it, click **File > Save** and then
-provide a file name, such as `HelloWorld.ps1`. To close the file, click the `X` next to the file
-name. To exit VS Code, **File > Exit**.
+provide a filename, such as `HelloWorld.ps1`. To close the file, click the `X` next to the filename.
+To exit VS Code, **File > Exit**.
 
 ### Installing the PowerShell Extension on Restricted Systems
 
@@ -82,8 +82,8 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 ```
 
 You're prompted with **Do you want to run software from this untrusted publisher?** Type `A` to run
-the file. Then, open VS Code and check that the PowerShell extension is functioning properly. If you
-still have problems getting started, let us know on [GitHub issues][ghi].
+the file. Then, open VS Code and verify that the PowerShell extension is functioning properly. If
+you still have problems getting started, let us know in a [GitHub issue][ghi].
 
 ### Choosing a version of PowerShell to use with the extension
 
@@ -164,14 +164,14 @@ You can do this using the GUI:
    <kbd>Cmd</kbd>+<kbd>,</kbd>.
 1. In the **Settings** editor, search for **PowerShell Additional Exe Paths**.
 1. Click **Add Item**.
-1. For the key (under **Item**), provide your choice of name for this additional
-   PowerShell installation.
-1. For the value (under **Value**), provide the absolute path to the executable itself.
+1. For the **Key** (under **Item**), provide your choice of name for this additional PowerShell
+   installation.
+1. For the **Value** (under **Value**), provide the absolute path to the executable itself.
 
-You can add as many additional paths as you like, and they will show up in the session
-menu with the given key as the name.
+You can add as many additional paths as you like. The added items show up in the session menu with
+the given key as the name.
 
-Alternatively you can add key/value pairs to the object
+Alternatively you can add key-value pairs to the object
 `powershell.powerShellAdditionalExePaths` in your `settings.json`:
 
 ```json
@@ -184,14 +184,14 @@ Alternatively you can add key/value pairs to the object
 ```
 
 > [!NOTE]
-> This setting used to be a list of objects with the required keys `exePath` and
-> `versionName`. A breaking change was introduced to support configuration via GUI. If you
-> had previously configured this setting, please convert it the new format. The value
-> given for `versionName` will now be the key, and the value given for `exePath` will be
-> the value. You can do this more easily be resetting the value and using the GUI.
+> Prior to version 2022.5.0 of the extension, this setting was a list of objects with the required
+> keys `exePath` and `versionName`. A breaking change was introduced to support configuration via
+> GUI. If you had previously configured this setting, please convert it the new format. The value
+> given for `versionName` is now the **Key**, and the value given for `exePath` is now the
+> **Value**. You can do this more easily by resetting the value and using the Settings interface.
 
-To set the default PowerShell version, set the value `powershell.powerShellDefaultVersion`
-to the text displayed in the session menu (the text used for the key):
+To set the default PowerShell version, set the value `powershell.powerShellDefaultVersion` to the
+text displayed in the session menu (the text used for the key):
 
 ```json
 {
@@ -202,14 +202,14 @@ to the text displayed in the session menu (the text used for the key):
 }
 ```
 
-After you've configured this setting, restart VS Code or to reload the current VS Code
-window from the **Command Palette**, type `Developer: Reload Window`.
+After you've configured this setting, restart VS Code or to reload the current VS Code window from
+the **Command Palette**, type `Developer: Reload Window`.
 
-If you open the session menu, you now see your additional PowerShell installations!
+If you open the session menu, you now see your additional PowerShell installations.
 
 > [!TIP]
-> If you build PowerShell from source, this is a great way to test out your local
-> build of PowerShell.
+> If you build PowerShell from source, this is a great way to test out your local build of
+> PowerShell.
 
 ## Debugging with Visual Studio Code
 
@@ -222,7 +222,7 @@ contains the PowerShell script.
 1. Set a breakpoint - select a line then press <kbd>F9</kbd>
 1. Press <kbd>F5</kbd> to start debugging
 
-You should see the Debug actions pane appear which allows you to break into the debugger, step,
+You should see the Debug actions pane appear that allows you to break into the debugger, step,
 resume, and stop debugging.
 
 ### Workspace debugging
@@ -285,7 +285,7 @@ configurations. One useful configuration to add is **PowerShell: Launch Script**
 configuration, you can specify a file containing optional arguments that are used whenever you press
 <kbd>F5</kbd> no matter which file is active in the editor.
 
-After the debug configuration is established, you can select which configuration you want to use
+After the debug configuration is established, you can select the configuration you want to use
 during a debug session. Select a configuration from the debug configuration drop-down in the
 **Debug** view's toolbar.
 
