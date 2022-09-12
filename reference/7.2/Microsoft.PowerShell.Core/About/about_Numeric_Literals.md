@@ -1,7 +1,8 @@
 ---
 description: Both integer and real numeric literals can have type and multiplier suffixes.
 Locale: en-US
-ms.date: 11/15/2021
+ms.date: 09/12/2022
+no-loc: [482gb]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Numeric Literals
@@ -21,19 +22,19 @@ Integer literals can have a type suffix and a multiplier suffix.
 
 | Suffix |            Meaning             |          Note           |
 | ------ | ------------------------------ | ----------------------- |
-| y      | signed byte data type          | Added in PowerShell 6.2 |
-| uy     | unsigned byte data type        | Added in PowerShell 6.2 |
-| s      | short data type                | Added in PowerShell 6.2 |
-| us     | unsigned short data type       | Added in PowerShell 6.2 |
-| l      | long data type                 |                         |
-| u      | unsigned int or long data type | Added in PowerShell 6.2 |
-| ul     | unsigned long data type        | Added in PowerShell 6.2 |
-| n      | BigInteger data type           | Added in PowerShell 7.0 |
-| kb     | kilobyte multiplier            |                         |
-| mb     | megabyte multiplier            |                         |
-| gb     | gigabyte multiplier            |                         |
-| tb     | terabyte multiplier            |                         |
-| pb     | petabyte multiplier            |                         |
+| `y`    | signed byte data type          | Added in PowerShell 6.2 |
+| `uy`   | unsigned byte data type        | Added in PowerShell 6.2 |
+| `s`    | short data type                | Added in PowerShell 6.2 |
+| `us`   | unsigned short data type       | Added in PowerShell 6.2 |
+| `l`    | long data type                 |                         |
+| `u`    | unsigned int or long data type | Added in PowerShell 6.2 |
+| `ul`   | unsigned long data type        | Added in PowerShell 6.2 |
+| `n`    | BigInteger data type           | Added in PowerShell 7.0 |
+| `kb`   | kilobyte multiplier            |                         |
+| `mb`   | megabyte multiplier            |                         |
+| `gb`   | gigabyte multiplier            |                         |
+| `tb`   | terabyte multiplier            |                         |
+| `pb`   | petabyte multiplier            |                         |
 
 The type of an integer literal is determined by its value, the type suffix, and
 the numeric multiplier suffix.
@@ -70,12 +71,12 @@ Real literals can have a type suffix and a multiplier suffix.
 
 | Suffix |       Meaning       |
 | ------ | ------------------- |
-| d      | decimal data type   |
-| kb     | kilobyte multiplier |
-| mb     | megabyte multiplier |
-| gb     | gigabyte multiplier |
-| tb     | terabyte multiplier |
-| pb     | petabyte multiplier |
+| `d`    | decimal data type   |
+| `kb`   | kilobyte multiplier |
+| `mb`   | megabyte multiplier |
+| `gb`   | gigabyte multiplier |
+| `tb`   | terabyte multiplier |
+| `pb`   | petabyte multiplier |
 
 There are two kinds of real literal: double and decimal. These are indicated by
 the absence or presence, respectively, of decimal-type suffix. PowerShell does

@@ -1,7 +1,7 @@
 ---
 description: Describes how to edit commands at the PowerShell command prompt.
 Locale: en-US
-ms.date: 07/10/2019
+ms.date: 09/12/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_line_editing?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Line Editing
@@ -27,16 +27,15 @@ continuation prompt. Press <kbd>Enter</kbd> to execute the command.
 
 ### Move left and right
 
-To move the cursor one character to the left, press the <kbd>Left arrow</kbd>.
+To move the cursor one character to the left, press the <kbd>LeftArrow</kbd>.
 
-To move the cursor one word to the left, press <kbd>Ctrl</kbd>+<kbd>Left
-arrow</kbd>.
+To move the cursor one word to the left, press
+<kbd>Ctrl</kbd>+<kbd>LeftArrow</kbd>.
 
-To move the cursor one character to the right, press the <kbd>Right
-arrow</kbd>.
+To move the cursor one character to the right, press the <kbd>RightArrow</kbd>.
 
-To move the cursor one word to the right, press <kbd>Ctrl</kbd>+<kbd>Right
-arrow</kbd>.
+To move the cursor one word to the right, press
+<kbd>Ctrl</kbd>+<kbd>RightArrow</kbd>.
 
 ### Move to a line's beginning or end
 

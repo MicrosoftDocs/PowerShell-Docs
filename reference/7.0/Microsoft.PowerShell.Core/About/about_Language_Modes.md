@@ -1,7 +1,8 @@
 ---
 description: Explains language modes and their effect on PowerShell sessions.
 Locale: en-US
-ms.date: 03/07/2022
+ms.date: 08/03/2021
+no-loc: [FullLanguage, ConstrainedLanguage, RestrictedLanguage, NoLanguage]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Language Modes
@@ -23,7 +24,7 @@ PowerShell supports the following language modes:
 - **RestrictedLanguage**
 - **NoLanguage**
 
-### WHAT IS A LANGUAGE MODE?
+### What is a language mode?
 
 The language mode determines the language elements that are permitted in the
 session.
@@ -44,13 +45,13 @@ language mode of the session. To specify the session configuration of a
 PSSession, use the ConfigurationName parameter of cmdlets that create a
 session.
 
-### LANGUAGE MODES
+### Language modes
 
 This section describes the language modes in PowerShell sessions.
 
-#### FULL LANGUAGE (FullLanguage)
+#### Full language (FullLanguage)
 
-The FullLanguage mode permits all language elements in the session.
+The **FullLanguage** mode permits all language elements in the session.
 FullLanguage is the default language mode for default sessions on all versions
 of Windows except for Windows RT.
 
@@ -86,7 +87,7 @@ permitted.
 
 #### No language (NoLanguage)
 
-NoLanguage mode can only be used through the API. NoLanguage mode means no
+**NoLanguage** mode can only be used through the API. NoLanguage mode means no
 script text of any form is permitted. This precludes the use of the
 **AddScript()** method which sends fragments of PowerShell script to be parsed
 and executed. You can only use **AddCommand()** and **AddParameter()** which
@@ -140,58 +141,58 @@ The features of **ConstrainedLanguage** mode are as follows:
   - **Scripting.FileSystemObject**
   - **VBScript.RegExp**
 
-The following types are permitted in ConstrainedLanguage mode. Users
+The following types are permitted in **ConstrainedLanguage** mode. Users
 can get properties, invoke methods, and convert objects to these types.
 
 Allowed Types:
 
-- AliasAttribute
-- AllowEmptyCollectionAttribute
-- AllowEmptyStringAttribute
-- AllowNullAttribute
-- Array
-- Bool
-- byte
-- char
-- CmdletBindingAttribute
-- DateTime
-- decimal
-- DirectoryEntry
-- DirectorySearcher
-- double
-- float
-- Guid
-- Hashtable
-- int
-- Int16
-- long
-- ManagementClass
-- ManagementObject
-- ManagementObjectSearcher
-- NullString
-- OutputTypeAttribute
-- ParameterAttribute
-- PSCredential
-- PSDefaultValueAttribute
-- PSListModifier
-- PSObject
-- PSPrimitiveDictionary
-- PSReference
-- PSTypeNameAttribute
-- Regex
-- SByte
-- string
-- SupportsWildcardsAttribute
-- SwitchParameter
-- System.Globalization.CultureInfo
-- System.Net.IPAddress
-- System.Net.Mail.MailAddress
-- System.Numerics.BigInteger
-- System.Security.SecureString
-- TimeSpan
-- UInt16
-- UInt32
-- UInt64
+- `[AliasAttribute]`
+- `[AllowEmptyCollectionAttribute]`
+- `[AllowEmptyStringAttribute]`
+- `[AllowNullAttribute]`
+- `[Array]`
+- `[Bool]`
+- `[byte]`
+- `[char]`
+- `[CmdletBindingAttribute]`
+- `[DateTime]`
+- `[decimal]`
+- `[DirectoryEntry]`
+- `[DirectorySearcher]`
+- `[double]`
+- `[float]`
+- `[Guid]`
+- `[Hashtable]`
+- `[int]`
+- `[Int16]`
+- `[long]`
+- `[ManagementClass]`
+- `[ManagementObject]`
+- `[ManagementObjectSearcher]`
+- `[NullString]`
+- `[OutputTypeAttribute]`
+- `[ParameterAttribute]`
+- `[PSCredential]`
+- `[PSDefaultValueAttribute]`
+- `[PSListModifier]`
+- `[PSObject]`
+- `[PSPrimitiveDictionary]`
+- `[PSReference]`
+- `[PSTypeNameAttribute]`
+- `[Regex]`
+- `[SByte]`
+- `[String]`
+- `[SupportsWildcardsAttribute]`
+- `[SwitchParameter]`
+- `[System.Globalization.CultureInfo]`
+- `[System.Net.IPAddress]`
+- `[System.Net.Mail.MailAddress]`
+- `[System.Numerics.BigInteger]`
+- `[System.Security.SecureString]`
+- `[TimeSpan]`
+- `[UInt16]`
+- `[UInt32]`
+- `[UInt64]`
 
 ### Finding the language mode of a session configuration
 
@@ -205,14 +206,14 @@ FullLanguage
 ```
 
 On other session configurations, you can find the language mode indirectly by
-finding the language mode of a session that is created with the session
+finding the language mode of a session that is created using the session
 configuration.
 
 > [!NOTE]
-> Session configurations are a feature of WSMan-based PowerShell remoting. They are used only when you
-> use the `New-PSSession`, `Invoke-Command`, or `Enter-PSSession` cmdlets
-> to connect to a remote Windows computer. The `Get-PSSessionConfiguration`
-> cmdlet is only available on Windows computers.
+> Session configurations are a feature of WSMan-based PowerShell remoting.
+> They are used only when you use the `New-PSSession`, `Invoke-Command`, or
+> `Enter-PSSession` cmdlets to connect to a remote Windows computer. The
+> `Get-PSSessionConfiguration` cmdlet is only available on Windows computers.
 
 ### Finding the language mode of a session
 
