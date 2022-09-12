@@ -1,7 +1,8 @@
 ---
 description: Both integer and real numeric literals can have type and multiplier suffixes.
 Locale: en-US
-ms.date: 11/15/2021
+ms.date: 09/12/2022
+no-loc: [482gb]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Numeric Literals
@@ -20,12 +21,12 @@ Integer literals can have a type suffix and a multiplier suffix.
 
 | Suffix |       Meaning       |
 | ------ | ------------------- |
-| l      | long data type      |
-| kb     | kilobyte multiplier |
-| mb     | megabyte multiplier |
-| gb     | gigabyte multiplier |
-| tb     | terabyte multiplier |
-| pb     | petabyte multiplier |
+| `l`    | long data type      |
+| `kb`   | kilobyte multiplier |
+| `mb`   | megabyte multiplier |
+| `gb`   | gigabyte multiplier |
+| `tb`   | terabyte multiplier |
+| `Pb`   | petabyte multiplier |
 
 The type of an integer literal is determined by its value, the type suffix, and
 the numeric multiplier suffix.
@@ -62,12 +63,12 @@ Real literals can have a type suffix and a multiplier suffix.
 
 | Suffix |       Meaning       |
 | ------ | ------------------- |
-| d      | decimal data type   |
-| kb     | kilobyte multiplier |
-| mb     | megabyte multiplier |
-| gb     | gigabyte multiplier |
-| tb     | terabyte multiplier |
-| pb     | petabyte multiplier |
+| `d`    | decimal data type   |
+| `kb`   | kilobyte multiplier |
+| `mb`   | megabyte multiplier |
+| `gb`   | gigabyte multiplier |
+| `tb`   | terabyte multiplier |
+| `pb`   | petabyte multiplier |
 
 There are two kinds of real literal: double and decimal. These are indicated by
 the absence or presence, respectively, of decimal-type suffix. PowerShell does

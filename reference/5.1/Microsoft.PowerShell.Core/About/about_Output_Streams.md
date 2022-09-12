@@ -1,7 +1,8 @@
 ---
 description: Explains the availability and purpose of output streams in PowerShell.
 Locale: en-US
-ms.date: 12/13/2021
+ms.date: 09/12/2022
+no-loc: [Success, Error, Warning, Verbose, Debug, Information, Progress]
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_output_streams?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Output Streams
