@@ -174,7 +174,7 @@ Hosts required when using the PowerShell Gallery website:
 [Install-Script]: /powershell/module/powershellget/Install-Script
 [Publish-Module]: /powershell/module/powershellget/Publish-Module
 [Publish-Script]: /powershell/module/powershellget/Publish-Script
-[Register-PSRepository]: /powershell/module/powershellget/Register-Repository
+[Register-PSRepository]: /powershell/module/powershellget/register-psrepository
 [Save-Module]: /powershell/module/powershellget/Save-Module
 [Save-Script]: /powershell/module/powershellget/Save-Script
 [Update-Module]: /powershell/module/powershellget/Update-Module

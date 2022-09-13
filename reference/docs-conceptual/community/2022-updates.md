@@ -295,7 +295,7 @@ issues. Thank you!
 
 New Content
 
-- [about_Calling_Generic_Methods](/powershell/module/microsoft.powershell.core/about/about_calling_generic_methods&preserve-view=true)
+- [about_Calling_Generic_Methods](/powershell/module/microsoft.powershell.core/about/about_calling_generic_methods?view=powershell-7.3&preserve-view=true)
 
 Content updates
 

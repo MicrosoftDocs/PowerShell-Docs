@@ -134,9 +134,9 @@ Content updates
   - [Install on macOS](/powershell/scripting/install/Installing-PowerShell-on-macOS)
   - [Install on Linux](/powershell/scripting/install/Installing-PowerShell-on-Linux)
     - [Alpine](/powershell/scripting/install/install-alpine)
-    - [CentOS](/powershell/scripting/install/install-centos)
+    - CentOS
     - [Debian](/powershell/scripting/install/install-debian)
-    - [Fedora](/powershell/scripting/install/install-fedora)
+    - Fedora
     - [Raspberry Pi OS](/powershell/scripting/install/install-raspbian)
     - [Red Hat Enterprise Linux](/powershell/scripting/install/install-rhel)
     - [Ubuntu](/powershell/scripting/install/install-ubuntu)
