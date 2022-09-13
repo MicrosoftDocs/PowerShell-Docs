@@ -1182,7 +1182,7 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 [Get-MarkdownOption]: /powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption
 [Set-MarkdownOption]: /powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption
 [Show-Markdown]: /powershell/module/Microsoft.PowerShell.Utility/Show-Markdown
-[Remove-Alias]: /powershell/module/Microsoft.PowerShell.Utility/Remote-Alias
+[Remove-Alias]: /powershell/module/Microsoft.PowerShell.Utility/Remove-Alias
 [Remove-Service]: /powershell/module/Microsoft.PowerShell.Utility/Remote-Service
 [Join-String]: /powershell/module/Microsoft.PowerShell.Utility/Join-String
 [Get-Uptime]: /powershell/module/Microsoft.PowerShell.Utility/Get-Uptime

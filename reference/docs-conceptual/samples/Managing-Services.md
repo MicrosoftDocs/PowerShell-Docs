@@ -69,7 +69,7 @@ Invoke-Command -ComputerName Server02 -ScriptBlock { Get-Service }
 ```
 
 You can also manage services with the other `*-Service` cmdlets. For more information on PowerShell
-remoting, see [about_Remote](/powershell/module/Microsoft.PowerShell.Core/about_Remote).
+remoting, see [about_Remote](/powershell/module/Microsoft.PowerShell.Core/about/about_Remote).
 
 ## Getting Required and Dependent Services
 
@@ -190,7 +190,7 @@ For more information, see [Set-Service](/powershell/module/Microsoft.PowerShell.
 
 ## See Also
 
-- [about_Remote](/powershell/module/Microsoft.PowerShell.Core/about_Remote)
+- [about_Remote](/powershell/module/Microsoft.PowerShell.Core/about/about_Remote)
 - [Get-Service](/powershell/module/Microsoft.PowerShell.Management/get-service)
 - [Set-Service](/powershell/module/Microsoft.PowerShell.Management/set-service)
 - [Restart-Service](/powershell/module/Microsoft.PowerShell.Management/restart-service)
