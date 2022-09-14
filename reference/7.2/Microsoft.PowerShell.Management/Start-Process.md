@@ -2,10 +2,15 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/25/2022
+ms.date: 09/14/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
+alias:
+  - all: saps
+  - linux:
+  - macos:
+  - windows: start
 ---
 # Start-Process
 
@@ -533,6 +538,13 @@ This cmdlet generates a **System.Diagnostics.Process** object, if you specify th
 parameter. Otherwise, this cmdlet doesn't return any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Start-Process`:
+
+- All platforms
+  - `saps`
+- Windows
+  - `start`
 
 Native commands are executable files installed in the operating system. These executables can be run
 from any command-line shell, like PowerShell. Usually you run the command exactly as you would in
