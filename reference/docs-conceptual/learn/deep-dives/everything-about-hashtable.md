@@ -1086,6 +1086,86 @@ intensive and if you are cloning huge hashtables, that might be a problem. Anoth
 **CliXml** is there is a depth limitation of 48. Meaning, if you have a hashtable with 48 layers of
 nested hashtables, the cloning will fail and no hashtable will be output at all.
 
+## Share them with compiled code
+
+Being .NET objects they travel well across the contextual boundry between the PowerShell runtime and 
+compiled code; however there are a few gotchas to look out for on the compiled side when you're more 
+familiar with them from a PowerShell perspective:
++ The `[ordered]@{}` version is actually a `Specialized.OrderedDictionary` instead of a `Hashtable`
++ `ht.ContainsKey(key)` is your friend except when it's actually `od.Contains(key)` instead.
++ You can still get to the value using the `ht[key]` syntax, but it's going to be an `objet` class type
+until you cast it otherwise.
++ If you give an OrderedDictionary to a class which is expecting a Hashtable then PowerShell will
+automagically downgrade it for you.
+
+### Sharing a Hashtable
+
+```powershell
+PS> (@{}).GetType().FullName
+System.Collections.Hashtable
+PS> Add-Type -TypeDefinition @'
+using System.Collections;
+
+namespace PowershellExamples{
+public class HTDemoClass{
+   public Hashtable ht;
+   
+   public void IncKeyVal(object key){
+      if(ht.ContainsKey(key)){
+         ht[key] = (int)ht[key] + 1;
+      }
+   }
+}}
+'@
+PS> $c    = [PowershellExamples.HTDemoClass]::new()
+PS> $c.ht = @{kk = 0};  $c.ht
+
+Name                           Value
+----                           -----
+kk                             0
+
+PS> $c.IncKeyVal('kk'); $c.ht
+
+Name                           Value
+----                           -----
+kk                             1
+
+```
+
+### Sharing an OrderedDictionary
+
+```powershell
+PS> ([ordered]@{}).GetType().FullName
+System.Collections.Specialized.OrderedDictionary
+PS> Add-Type -TypeDefinition @'
+using System.Collections.Specialized;
+
+namespace PowershellExamples{
+public class ODDemoClass{
+   public OrderedDictionary od;
+   
+   public void IncKeyVal(object key){
+      if(od.Contains(key)){
+         od[key] = (int)od[key] + 1;
+      }
+   }
+}}
+'@
+PS> $c    = [PowershellExamples.ODDemoClass]::new()
+PS> $c.od = [ordered]@{kk = 0}; $c.od
+
+Name                           Value
+----                           -----
+kk                             0
+
+PS> $c.IncKeyVal('kk');         $c.od
+
+Name                           Value
+----                           -----
+kk                             1
+
+```
+
 ## Anything else?
 
 I covered a lot of ground quickly. My hope is that you walk away leaning something new or
