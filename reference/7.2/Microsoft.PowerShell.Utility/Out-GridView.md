@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/17/2022
+ms.date: 09/16/2022
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-GridView
@@ -196,6 +196,8 @@ The values of this parameter determine how many items you can send down the pipe
   object.
 - `Multiple`. Zero, one, or many items. Use this value when the next command can take multiple input
   objects. This value is equivalent to the **Passthru** parameter.
+
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.OutputModeOption
