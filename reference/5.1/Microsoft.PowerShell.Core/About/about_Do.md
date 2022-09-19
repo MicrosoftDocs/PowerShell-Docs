@@ -2,7 +2,7 @@
 description: Runs a statement list one or more times, subject to a While or Until condition.
 Locale: en-US
 ms.date: 06/10/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_do?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_do?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Do
 ---

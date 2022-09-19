@@ -2,7 +2,7 @@
 description: Explains advanced scheduled job topics, including the file structure that underlies scheduled jobs.
 Locale: en-US
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_advanced?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_advanced?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Scheduled Jobs Advanced
 ---
@@ -172,7 +172,7 @@ instance in a table. A calculated property named **Label** displays the elapsed
 time of each job instance.
 
 ```powershell
-Get-job -Name UpdateHelpJob | 
+Get-job -Name UpdateHelpJob |
   Format-Table -Property ID, PSBeginTime, PSEndTime,
 @{Label="Elapsed Time";Expression={$.PsEndTime - $.PSBeginTime}}
 ```
@@ -248,7 +248,7 @@ The following command gets the values of the name and
 displays them in a table.
 
 ```powershell
-Get-ScheduledJob | 
+Get-ScheduledJob |
   Format-Table -Property Name, ExecutionHistoryLength -AutoSize
 ```
 

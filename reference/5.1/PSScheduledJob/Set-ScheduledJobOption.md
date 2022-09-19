@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 10/05/2021
-online version: https://docs.microsoft.com/powershell/module/psscheduledjob/set-scheduledjoboption?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psscheduledjob/set-scheduledjoboption?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ScheduledJobOption
 ---
@@ -76,7 +76,7 @@ JobDefinition          :
 ```
 
 ```powershell
-Get-ScheduledJobOption -Name "DeployPackage" | 
+Get-ScheduledJobOption -Name "DeployPackage" |
     Set-ScheduledJobOption -WakeToRun -RequireNetwork:$false -Passthru
 ```
 
@@ -112,8 +112,8 @@ This command is not required; it is included only to show the effect of the opti
 
 ```powershell
 Invoke-Command -Computer "Server01" -ScriptBlock {
-    Get-ScheduledJob | 
-        Get-ScheduledJobOption | 
+    Get-ScheduledJob |
+        Get-ScheduledJobOption |
         Set-ScheduledJobOption -IdleTimeout 2:00:00
 }
 ```

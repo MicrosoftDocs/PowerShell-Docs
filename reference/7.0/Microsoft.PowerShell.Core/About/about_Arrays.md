@@ -3,7 +3,7 @@ description: Describes arrays, which are data structures designed to store colle
 Locale: en-US
 ms.date: 06/06/2022
 no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Arrays
 ---

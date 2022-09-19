@@ -15,7 +15,7 @@ submitting your pull request.
 The default branch for PowerShell-Docs is the `main` branch. Changes made in working branches are
 merged into the `main` branch before then being published. The `main` branch is merged into the
 `live` branch every weekday at 3:00 PM (Pacific Time). The `live` branch contains the content that
-is published to `docs.microsoft.com`.
+is published to `learn.microsoft.com`.
 
 Before starting any changes, create a working branch in your local copy of the PowerShell-Docs
 repository. When working locally, be sure to synchronize your local repository before creating your
@@ -109,8 +109,8 @@ this:
     This helps us understand whether or not your PR is ready to review.
 -->
 
-[contrib]: https://docs.microsoft.com/powershell/scripting/community/contributing/overview
-[style]: https://docs.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide
+[contrib]: /powershell/scripting/community/contributing/overview
+[style]: /powershell/scripting/community/contributing/powershell-style-guide
 ```
 
 In the "PR Summary" section, write a short summary of your changes and list any related issues by

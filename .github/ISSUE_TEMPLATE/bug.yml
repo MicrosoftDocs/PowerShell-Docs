@@ -10,7 +10,7 @@ body:
       value: |
         Use this template to report issues with documentation. This can include typos, technical and factual errors, grammar, spelling, formatting, presentation, etc.
 
-        Support questions should be posted to community support forums. See the [Community support](https://docs.microsoft.com/powershell/scripting/community/community-support) page.
+        Support questions should be posted to community support forums. See the [Community support](https://learn.microsoft.com/powershell/scripting/community/community-support) page.
   - type: checkboxes
     id: prerequisites
     attributes:
@@ -47,7 +47,7 @@ body:
         the problem instead of the page itself.
       placeholder: |
         - https://github.com/MicrosoftDocs/PowerShell-Docs-Modules/blob/2d7879a4c26b4a9d3aac906d18847f27ae509cdd/reference/docs-conceptual/Crescendo/overview.md?plain=1#L31-L38
-        - https://docs.microsoft.com/powershell/utility-modules/crescendo/overview?view=ps-modules#crescendo-specific-terminology
+        - https://learn.microsoft.com/powershell/utility-modules/crescendo/overview?view=ps-modules#crescendo-specific-terminology
   - type: textarea
     id: summary
     validations:

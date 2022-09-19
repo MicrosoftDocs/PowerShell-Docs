@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 02/27/2020
-online version: https://docs.microsoft.com/powershell/module/powershellget/get-installedmodule?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/powershellget/get-installedmodule?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-InstalledModule
 ---

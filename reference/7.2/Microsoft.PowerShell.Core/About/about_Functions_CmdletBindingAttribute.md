@@ -2,7 +2,7 @@
 description: Describes the attribute that makes a function work like a compiled cmdlet.
 Locale: en-US
 ms.date: 09/23/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute?view=powershell-7.2&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions CmdletBindingAttribute
 ---

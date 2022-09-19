@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 06/04/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/find-dscresource?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/powershellget/find-dscresource?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-DscResource
 ---

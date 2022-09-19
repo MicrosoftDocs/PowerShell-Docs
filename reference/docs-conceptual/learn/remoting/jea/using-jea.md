@@ -147,7 +147,7 @@ object.
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";
-// See https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential
+// See https://learn.microsoft.com/dotnet/api/system.management.automation.pscredential
 var creds        = // create a PSCredential object here
 
 WSManConnectionInfo connectionInfo = new WSManConnectionInfo(

@@ -4,7 +4,7 @@ Locale: en-US
 Module Name: CimCmdlets
 ms.date: 07/06/2022
 no-loc: [-Forward]
-online version: https://docs.microsoft.com/powershell/module/cimcmdlets/register-cimindicationevent?view=powershell-7.2&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/cimcmdlets/register-cimindicationevent?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-CimIndicationEvent
 ---

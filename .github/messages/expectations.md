@@ -30,8 +30,8 @@ all requirements are satisfied, the docs team marks your PR as **Approved** and 
 PR is merged, it is included the next time the documentation is published. For this project, the
 documentation is published daily at 3 p.m. Pacific Standard Time (PST).
 
-[contrib-checklist]: https://docs.microsoft.com/powershell/scripting/community/contributing/editorial-checklist
-[contrib-managing-prs]: https://docs.microsoft.com/powershell/scripting/community/contributing/managing-pull-requests
-[contrib]: https://docs.microsoft.com/powershell/scripting/community/contributing/overview
+[contrib-checklist]: https://learn.microsoft.com/powershell/scripting/community/contributing/editorial-checklist
+[contrib-managing-prs]: https://learn.microsoft.com/powershell/scripting/community/contributing/managing-pull-requests
+[contrib]: https://learn.microsoft.com/powershell/scripting/community/contributing/overview
 [gh-drafts]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#draft-pull-requests
 [gh-review-request]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review

@@ -2,7 +2,7 @@
 description: Provides essential information about objects in PowerShell.
 Locale: en-US
 ms.date: 06/02/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_objects?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_objects?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Objects
 ---
@@ -38,7 +38,7 @@ in commands to take action and manage data.
 You can discover an objects properties and methods using
 [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) or the `psobject`
  [intrinsic member](about_Intrinsic_Members.md).
- 
+
 ## Objects in Pipelines
 
 When commands are combined in a pipeline, they pass information to each

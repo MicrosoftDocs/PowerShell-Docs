@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 08/18/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
 ---
@@ -131,9 +131,9 @@ that the Certificate provider adds to the `Get-ChildItem` cmdlet when it is used
 function Get-DynamicParameters
 {
     param ($Cmdlet, $PSDrive)
-    (Get-Command -Name $Cmdlet -ArgumentList $PSDrive).ParameterSets | 
-      ForEach-Object {$_.Parameters} | 
-        Where-Object { $_.IsDynamic } | 
+    (Get-Command -Name $Cmdlet -ArgumentList $PSDrive).ParameterSets |
+      ForEach-Object {$_.Parameters} |
+        Where-Object { $_.IsDynamic } |
           Select-Object -Property Name -Unique
 }
 Get-DynamicParameters -Cmdlet Get-ChildItem -PSDrive Cert:

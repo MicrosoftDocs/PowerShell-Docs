@@ -3,7 +3,7 @@ description: Explains how to use the `powershell.exe` command-line interface. Di
 Locale: en-US
 ms.date: 08/23/2022
 no-no-loc: [-Command, -ConfigurationName , -EncodedCommand, -ExecutionPolicy, -File, -Help, -InputFormat, -Mta, -NoExit, -NoLogo, -NonInteractive, -NoProfile, -OutputFormat, -PSConsoleFile, -Sta, -Version, -WindowStyle]
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PowerShell exe
 ---

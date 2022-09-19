@@ -3,7 +3,7 @@ external help file: Microsoft.Powershell.Workflow.ServiceCore.dll-help.xml
 Locale: en-US
 Module Name: PSWorkflow
 ms.date: 05/17/2022
-online version: https://docs.microsoft.com/powershell/module/psworkflow/new-psworkflowsession?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psworkflow/new-psworkflowsession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSWorkflowSession
 ---

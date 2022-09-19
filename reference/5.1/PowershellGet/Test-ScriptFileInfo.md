@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 10/04/2021
-online version: https://docs.microsoft.com/powershell/module/powershellget/test-scriptfileinfo?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/powershellget/test-scriptfileinfo?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-ScriptFileInfo
 ---

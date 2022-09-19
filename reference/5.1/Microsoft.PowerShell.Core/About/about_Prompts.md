@@ -2,7 +2,7 @@
 description: Describes the `Prompt` function and demonstrates how to create a custom `Prompt` function.
 Locale: en-US
 ms.date: 01/26/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Prompts
 ---

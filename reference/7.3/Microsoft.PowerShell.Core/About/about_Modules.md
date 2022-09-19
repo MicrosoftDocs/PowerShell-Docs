@@ -2,7 +2,7 @@
 description: Explains how to install, import, and use PowerShell modules.
 Locale: en-US
 ms.date: 12/03/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Modules
 ---

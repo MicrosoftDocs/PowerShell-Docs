@@ -92,4 +92,4 @@ body:
         the nearest header for the relevant content instead of the page itself.
       placeholder: |
         - https://github.com/MicrosoftDocs/PowerShell-Docs/blob/211f4d77e387c52659428be15f208a3e137ff1cc/reference/docs-conceptual/dev-cross-plat/create-cmdline-predictor.md?plain=1#L44-L48
-        - https://docs.microsoft.com/powershell/scripting/dev-cross-plat/create-cmdline-predictor#creating-the-code
+        - https://learn.microsoft.com/powershell/scripting/dev-cross-plat/create-cmdline-predictor#creating-the-code

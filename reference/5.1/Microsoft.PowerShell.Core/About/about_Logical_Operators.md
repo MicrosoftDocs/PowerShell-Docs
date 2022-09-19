@@ -2,7 +2,7 @@
 description: Describes the operators that connect statements in PowerShell.
 Locale: en-US
 ms.date: 08/29/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logical_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logical_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logical Operators
 ---

@@ -2,7 +2,7 @@
 description: Explains Data sections, which isolate text strings and other read-only data from script logic.
 Locale: en-US
 ms.date: 04/23/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-7.2&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Data Sections
 ---

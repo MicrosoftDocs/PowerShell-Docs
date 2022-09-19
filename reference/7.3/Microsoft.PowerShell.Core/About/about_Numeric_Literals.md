@@ -3,7 +3,7 @@ description: Both integer and real numeric literals can have type and multiplier
 Locale: en-US
 ms.date: 09/12/2022
 no-loc: [482gb]
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Numeric Literals
 ---

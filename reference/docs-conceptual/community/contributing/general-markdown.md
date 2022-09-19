@@ -234,9 +234,9 @@ Warning block
 
 #### URL-type Links
 
-- URL links to other articles on `docs.microsoft.com` must use site-relative paths. The simplest
+- URL links to other articles on `learn.microsoft.com` must use site-relative paths. The simplest
   way to create a relative link is to copy the URL from your browser then remove
-  `https://docs.microsoft.com/en-us` from the value you paste into markdown.
+  `https://learn.microsoft.com/en-us` from the value you paste into markdown.
 - Don't include locales in URLs on Microsoft properties (remove `/en-us` from URL).
 - Remove any unnecessary query parameters from the URL. Examples that should be removed:
   - `?view=powershell-5.1` - used to link to a specific version of PowerShell

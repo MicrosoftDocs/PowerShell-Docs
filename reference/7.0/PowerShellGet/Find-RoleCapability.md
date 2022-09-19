@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 10/04/2021
-online version: https://docs.microsoft.com/powershell/module/powershellget/find-rolecapability?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/powershellget/find-rolecapability?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-RoleCapability
 ---
@@ -18,9 +18,9 @@ Finds role capabilities in modules.
 ### All
 
 ```
-Find-RoleCapability [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <String>] 
- [-MaximumVersion <String>] [-RequiredVersion <String>] [-AllVersions] [-AllowPrerelease] 
- [-Tag <String[]>] [-Filter <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] 
+Find-RoleCapability [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <String>]
+ [-MaximumVersion <String>] [-RequiredVersion <String>] [-AllVersions] [-AllowPrerelease]
+ [-Tag <String[]>] [-Filter <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-Repository <String[]>] [<CommonParameters>]
 ```
 

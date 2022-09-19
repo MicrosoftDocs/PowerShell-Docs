@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
 ms.date: 06/30/2020
-online version: https://docs.microsoft.com/powershell/module/psreadline/get-psreadlineoption?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psreadline/get-psreadlineoption?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSReadLineOption
 ---
