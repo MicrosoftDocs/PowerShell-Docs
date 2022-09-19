@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/29/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Sleep
 ---
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 ### -Seconds
 
 Specifies how long the resource sleeps in seconds. You can omit the parameter name or you can
-abbreviate it as **s**. 
+abbreviate it as **s**.
 
 ```yaml
 Type: System.Int32

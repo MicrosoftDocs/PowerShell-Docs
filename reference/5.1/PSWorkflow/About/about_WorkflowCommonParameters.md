@@ -2,7 +2,7 @@
 description: This topic describes the parameters that are valid on all Windows PowerShell workflow commands. Because the Windows PowerShell engine adds them to workflows, you can use these parameters on any workflow and they are automatically enabled on the workflows that you author.
 Locale: en-US
 ms.date: 05/17/2022
-online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_workflowcommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psworkflow/about/about_workflowcommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about WorkflowCommonParameters
 ---

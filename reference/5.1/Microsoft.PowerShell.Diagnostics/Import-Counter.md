@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
 ms.date: 05/17/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/import-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/import-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Counter
 ---

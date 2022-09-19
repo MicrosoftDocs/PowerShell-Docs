@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Workflow.ServiceCore.dll-help.xml
 Locale: en-US
 Module Name: PSWorkflowUtility
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/psworkflowutility/invoke-asworkflow?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psworkflowutility/invoke-asworkflow?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-AsWorkflow
 ---

@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.ScheduledJob.dll-help.xml
 Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 10/05/2021
-online version: https://docs.microsoft.com/powershell/module/psscheduledjob/add-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psscheduledjob/add-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-JobTrigger
 ---

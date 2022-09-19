@@ -2,7 +2,7 @@
 description: Provides a brief introduction to the PowerShell Workflow feature.
 Locale: en-US
 ms.date: 10/05/2021
-online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Workflows
 ---
