@@ -3,7 +3,7 @@ external help file: Microsoft.WSMan.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
 ms.date: 10/05/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/invoke-wsmanaction?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/invoke-wsmanaction?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WSManAction
 ---

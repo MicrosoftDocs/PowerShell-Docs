@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Operation.Validation-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Operation.Validation
 ms.date: 10/01/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.operation.validation/invoke-operationvalidation?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.operation.validation/invoke-operationvalidation?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-OperationValidation
 ---

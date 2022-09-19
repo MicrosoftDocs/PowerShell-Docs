@@ -2,7 +2,7 @@
 description: Explains how to use `Types.ps1xml` files to extend the types of objects that are used in PowerShell.
 Locale: en-US
 ms.date: 04/30/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_types.ps1xml?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_types.ps1xml?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Types.ps1xml
 ---
@@ -59,7 +59,7 @@ directory (`$PSHOME`).
 
 There are three sources of extended type data in PowerShell sessions.
 
-- Extended type data is defined by PowerShell and loaded automatically into 
+- Extended type data is defined by PowerShell and loaded automatically into
   every PowerShell session.
 
 - The `Types.ps1xml` files that modules export are loaded when the module

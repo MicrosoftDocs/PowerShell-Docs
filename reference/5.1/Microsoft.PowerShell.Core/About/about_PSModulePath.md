@@ -2,7 +2,7 @@
 description: The PSModulePath environment variable contains a list of folder locations that are searched to find modules and resources.
 Locale: en-US
 ms.date: 01/05/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSModulePath
 ---

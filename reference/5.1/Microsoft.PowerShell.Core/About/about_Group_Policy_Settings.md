@@ -2,7 +2,7 @@
 description: Describes the Group Policy settings for PowerShell
 Locale: en-US
 ms.date: 10/22/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_group_policy_settings?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_group_policy_settings?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Group Policy Settings
 ---

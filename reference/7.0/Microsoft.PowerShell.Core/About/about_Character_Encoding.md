@@ -2,7 +2,7 @@
 description: Describes how PowerShell uses character encoding for input and output of string data.
 Locale: en-US
 ms.date: 10/22/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Character Encoding
 ---

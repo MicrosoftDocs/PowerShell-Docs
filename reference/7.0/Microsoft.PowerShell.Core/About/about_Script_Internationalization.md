@@ -2,7 +2,7 @@
 description: Describes the script internationalization features that make it easy for scripts to display messages and instructions to users in their user interface (UI) language.
 Locale: en-US
 ms.date: 03/20/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_internationalization?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_internationalization?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Script Internationalization
 ---

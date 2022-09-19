@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 03/26/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-EventLog
 ---
@@ -45,7 +45,7 @@ Application, System, or Security. To get logs that use the Windows Event Log tec
 Vista and later Windows versions, use `Get-WinEvent`.
 
 > [!NOTE]
-> `Get-EventLog` uses a Win32 API that is deprecated. The results may not be accurate. Use the 
+> `Get-EventLog` uses a Win32 API that is deprecated. The results may not be accurate. Use the
 > `Get-WinEvent` cmdlet instead.
 
 ## EXAMPLES

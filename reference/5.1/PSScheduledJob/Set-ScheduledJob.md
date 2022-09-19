@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 10/05/2021
-online version: https://docs.microsoft.com/powershell/module/psscheduledjob/set-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psscheduledjob/set-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ScheduledJob
 ---
@@ -127,7 +127,7 @@ For more information about the execution history and saved job results of schedu
 This command changes the initialization script in all scheduled jobs on remote computers.
 
 ```powershell
-Invoke-Command -Computer "Server01, Server02" -ScriptBlock {Get-ScheduledJob | 
+Invoke-Command -Computer "Server01, Server02" -ScriptBlock {Get-ScheduledJob |
     Set-ScheduledJob -InitializationScript \\SrvA\Scripts\SetForRun.ps1}
 ```
 

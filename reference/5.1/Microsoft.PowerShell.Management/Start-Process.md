@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 09/14/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
 alias:
@@ -22,17 +22,17 @@ Starts one or more processes on the local computer.
 ### Default (Default)
 
 ```
-Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-Credential <pscredential>] 
- [-WorkingDirectory <string>] [-LoadUserProfile] [-NoNewWindow] [-PassThru] 
- [-RedirectStandardError <string>] [-RedirectStandardInput <string>] 
- [-RedirectStandardOutput <string>] [-WindowStyle <ProcessWindowStyle>] [-Wait] 
+Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-Credential <pscredential>]
+ [-WorkingDirectory <string>] [-LoadUserProfile] [-NoNewWindow] [-PassThru]
+ [-RedirectStandardError <string>] [-RedirectStandardInput <string>]
+ [-RedirectStandardOutput <string>] [-WindowStyle <ProcessWindowStyle>] [-Wait]
  [-UseNewEnvironment] [<CommonParameters>]
 ```
 
 ### UseShellExecute
 
 ```
-Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-WorkingDirectory <string>] 
+Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-WorkingDirectory <string>]
  [-PassThru] [-Verb <string>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [<CommonParameters>]
 ```
 

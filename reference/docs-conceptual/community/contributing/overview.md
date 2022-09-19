@@ -10,7 +10,7 @@ Thank you for your support of PowerShell!
 
 The Contributor's Guide is a collection of articles that describe the tools and processes we use to
 create documentation at Microsoft. Some of these guides cover information common to any
-documentation set published to `docs.microsoft.com`. Other guides are specific to how we write
+documentation set published to `learn.microsoft.com`. Other guides are specific to how we write
 documentation for PowerShell.
 
 The common articles are available in our centralized [Contributor's Guide][1]. The
@@ -52,7 +52,7 @@ Also, read the [Writing essentials][12] section of the centralized Contributor's
 excellent resource is the [Microsoft Writing Style Guide][13].
 
 Minor corrections or clarifications to documentation and code examples in public repositories are
-covered by the [docs.microsoft.com Terms of Use][14].
+covered by the [learn.microsoft.com Terms of Use][14].
 
 Use the full GitHub workflow when you're making significant changes. If you're not an employee of
 Microsoft, our PR validation system adds a comment to the pull request asking you to sign the online

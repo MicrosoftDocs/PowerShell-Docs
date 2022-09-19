@@ -72,7 +72,7 @@ meets weekly to discuss difficult issues need triage and prioritize the work.
   ```Markdown
   > This is not the right forum for these kinds of questions. Try posting your question in a
   > community support forum. For a list of community forums see:
-  > https://docs.microsoft.com/powershell/scripting/community/community-support
+  > https://learn.microsoft.com/powershell/scripting/community/community-support
   ```
 
 ### Code of conduct violations

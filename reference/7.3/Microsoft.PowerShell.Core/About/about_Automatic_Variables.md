@@ -3,7 +3,7 @@ description: Describes variables that store state information for PowerShell. Th
 Locale: en-US
 ms.date: 09/06/2022
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Automatic Variables
 ---

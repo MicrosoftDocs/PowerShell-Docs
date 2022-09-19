@@ -2,7 +2,7 @@
 description: PowerShell logs internal operations from the engine, providers, and cmdlets.
 Locale: en-US
 ms.date: 08/29/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logging Non-Windows
 ---

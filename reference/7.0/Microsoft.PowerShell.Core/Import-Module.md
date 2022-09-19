@@ -4,7 +4,7 @@ Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 08/18/2022
 no-loc: [Import-Module, -Scope]
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
 ---

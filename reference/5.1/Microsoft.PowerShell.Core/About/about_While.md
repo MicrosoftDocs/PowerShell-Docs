@@ -2,7 +2,7 @@
 description: Describes a language statement that you can use to run a command block based on the results of a conditional test.
 Locale: en-US
 ms.date: 01/18/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_while?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_while?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about While
 ---

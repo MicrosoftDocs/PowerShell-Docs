@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 09/28/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/out-null?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/out-null?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Null
 ---

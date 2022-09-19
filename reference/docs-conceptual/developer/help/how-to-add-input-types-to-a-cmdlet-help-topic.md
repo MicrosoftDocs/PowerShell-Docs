@@ -45,7 +45,7 @@ The following XML shows an example of using the `<maml:inputTypes>` node to docu
   <command:inputType>
     <dev:type>
       <maml:name>System.DateTime</maml:name>
-      <maml:uri>https://docs.microsoft.com/dotnet/api/system.datetime</maml:uri>
+      <maml:uri>https://learn.microsoft.com/dotnet/api/system.datetime</maml:uri>
       <maml:description/>
     </dev:type>
     <maml:description>

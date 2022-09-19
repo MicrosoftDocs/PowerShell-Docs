@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 Locale: en-US
 Module Name: PackageManagement
 ms.date: 04/26/2021
-online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-packageprovider?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/packagemanagement/install-packageprovider?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-PackageProvider
 ---

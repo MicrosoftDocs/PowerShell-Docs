@@ -2,7 +2,7 @@
 description: Describes regular expressions in PowerShell.
 Locale: en-US
 ms.date: 08/29/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Regular Expressions
 ---

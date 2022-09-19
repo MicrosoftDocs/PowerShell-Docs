@@ -2,7 +2,7 @@
 description: FileSystem
 Locale: en-US
 ms.date: 04/28/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about FileSystem Provider
 ---

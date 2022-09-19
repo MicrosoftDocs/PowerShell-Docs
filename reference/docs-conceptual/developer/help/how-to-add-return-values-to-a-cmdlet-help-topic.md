@@ -52,7 +52,7 @@ type.
   <command:returnValue>
     <dev:type>
       <maml:name> System.DateTime </maml:name>
-      <maml:uri>  https://docs.microsoft.com/dotnet/api/system.datetime </maml:uri>
+      <maml:uri>  https://learn.microsoft.com/dotnet/api/system.datetime </maml:uri>
       <maml:description/>
     </dev:type>
     <maml:description>

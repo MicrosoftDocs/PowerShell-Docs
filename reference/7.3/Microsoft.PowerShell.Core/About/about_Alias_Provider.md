@@ -3,7 +3,7 @@ description: Alias
 Locale: en-US
 ms.date: 10/18/2018
 no-loc: [Alias, Definition, AllScope, Option, None, Constant, Private]
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_alias_provider?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_alias_provider?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Alias Provider
 ---

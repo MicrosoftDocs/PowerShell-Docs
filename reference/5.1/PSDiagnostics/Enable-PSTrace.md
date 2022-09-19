@@ -3,7 +3,7 @@ external help file: PSDiagnostics-help.xml
 Locale: en-US
 Module Name: PSDiagnostics
 ms.date: 11/27/2018
-online version: https://docs.microsoft.com/powershell/module/psdiagnostics/enable-pstrace?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psdiagnostics/enable-pstrace?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSTrace
 ---

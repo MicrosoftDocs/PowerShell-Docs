@@ -2,7 +2,7 @@
 description: Explains the various argument completion options available for function parameters.
 Locale: en-US
 ms.date: 10/22/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_argument_completion?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_argument_completion?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: About functions argument completion
 ---

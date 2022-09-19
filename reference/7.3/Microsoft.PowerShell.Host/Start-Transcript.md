@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
 ms.date: 01/26/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
 ---

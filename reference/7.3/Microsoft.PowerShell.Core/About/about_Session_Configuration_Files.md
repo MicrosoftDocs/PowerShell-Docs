@@ -2,7 +2,7 @@
 description: Describes session configuration files, which are used in a session configuration (also known as an endpoint) to define the environment of sessions that use the session configuration.
 Locale: en-US
 ms.date: 03/07/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Session Configuration Files
 ---
