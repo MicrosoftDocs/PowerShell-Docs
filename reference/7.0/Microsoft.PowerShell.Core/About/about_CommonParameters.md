@@ -3,7 +3,7 @@ description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
 ms.date: 10/22/2021
 no-loc: [Debug, Verbose, Confirm]
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about CommonParameters
 ---

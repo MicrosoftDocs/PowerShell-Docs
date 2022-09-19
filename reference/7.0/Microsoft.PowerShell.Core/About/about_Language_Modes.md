@@ -3,7 +3,7 @@ description: Explains language modes and their effect on PowerShell sessions.
 Locale: en-US
 ms.date: 08/03/2021
 no-loc: [FullLanguage, ConstrainedLanguage, RestrictedLanguage, NoLanguage]
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Language Modes
 ---

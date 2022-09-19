@@ -2,7 +2,7 @@
 description: Explains how to sign scripts so that they comply with the PowerShell execution policies.
 Locale: en-US
 ms.date: 03/14/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Signing
 ---
