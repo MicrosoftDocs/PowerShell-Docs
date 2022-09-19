@@ -2,7 +2,7 @@
 description: Different editions of PowerShell run on different underlying runtimes.
 Locale: en-US
 ms.date: 03/23/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_editions?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_editions?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PowerShell Editions
 ---

@@ -2,7 +2,7 @@
 description: Describes the settings and practices for writing module manifest files.
 Locale: en-US
 ms.date: 03/30/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_module_manifests?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_module_manifests?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Module Manifests
 ---
@@ -807,7 +807,7 @@ Import-Module .\example7x.psd1 -Force
 ```Output
 Example State is:
 
-Example not initialized.     
+Example not initialized.
 Initializing now...
 
 Example State is: Initialized

@@ -2,7 +2,7 @@
 description: Describes how to access items from the working location in PowerShell.
 Locale: en-US
 ms.date: 03/15/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_locations?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_locations?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Locations
 ---

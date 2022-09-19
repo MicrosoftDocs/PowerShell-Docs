@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
 ms.date: 12/07/2018
-online version: https://docs.microsoft.com/powershell/module/psreadline/remove-psreadlinekeyhandler?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psreadline/remove-psreadlinekeyhandler?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-PSReadLineKeyHandler
 ---

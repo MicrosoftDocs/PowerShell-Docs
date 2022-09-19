@@ -2,7 +2,7 @@
 description: Explains how to use the Split operator to split one or more strings into substrings.
 Locale: en-US
 ms.date: 03/30/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Split
 ---
