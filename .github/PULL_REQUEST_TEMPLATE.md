@@ -31,5 +31,5 @@
     This helps us understand whether or not your PR is ready to review.
 -->
 
-[contrib]: https://docs.microsoft.com/powershell/scripting/community/contributing/overview
-[style]: https://docs.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide
+[contrib]: https://learn.microsoft.com/powershell/scripting/community/contributing/overview
+[style]: https://learn.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide

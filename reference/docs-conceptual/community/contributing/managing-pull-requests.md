@@ -59,7 +59,7 @@ See the [editorial checklist][4] for a more comprehensive list.
     - File links for local files
     - URL links for files outside of the docset
   - Remove locales from URLs
-  - Simplify URLs pointing to `docs.microsoft.com`
+  - Simplify URLs pointing to `learn.microsoft.com`
 - Verify versioned content is correct across all versions
   - Review the [versioned content change report][5] to see summarized changes
 

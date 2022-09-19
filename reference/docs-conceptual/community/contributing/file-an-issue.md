@@ -16,7 +16,7 @@ There are two ways to create an issue:
 For a full description of the feedback controls, see the Docs Team blog announcing this
 [feature][1].
 
-At the bottom of most pages on `docs.microsoft.com`, you'll see two feedback buttons. One is a link
+At the bottom of most pages on `learn.microsoft.com`, you'll see two feedback buttons. One is a link
 for product feedback and one is for documentation feedback. The documentation feedback requires a
 GitHub account. Clicking the button takes you in GitHub and presents an issue template. Enter your
 feedback and submit the form.
