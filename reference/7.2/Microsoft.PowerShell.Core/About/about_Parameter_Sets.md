@@ -2,7 +2,7 @@
 description: Describes how to define and use parameter sets in advanced functions.
 Locale: en-US
 ms.date: 03/11/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-7.2&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-7.2&WT.mc_id=ps-gethelp
 title: about Parameter Sets
 ---
 # about_Parameter_Sets
