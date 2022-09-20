@@ -105,7 +105,7 @@ Take a look at how PowerShell is being used in different scenarios and on differ
 [install]: /powershell/scripting/install/installing-powershell
 [PS101]: /powershell/scripting/learn/ps101/00-introduction
 [tutorials]: /powershell/scripting/learn/tutorials/00-introduction
-[learn]: /learn/browse/?terms=PowerShell
+[learn]: /training/browse/?terms=PowerShell
 [azure]: /powershell/azure/get-started-azureps
 [devops]: /azure/devops/pipelines/release/dsc-cicd
 [exchange]: /powershell/exchange/exchange-management-shell
