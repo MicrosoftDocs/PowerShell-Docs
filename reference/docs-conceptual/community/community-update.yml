@@ -38,7 +38,7 @@ landingContent:
         - text: Deep Dives
           url: ../learn/deep-dives/overview.md
         - text: PowerShell Learn modules
-          url: /learn/browse/?terms=PowerShell
+          url: /training/browse/?terms=PowerShell
     - linkListType: video
       links:
       - text: Microsoft Virtual Academy videos

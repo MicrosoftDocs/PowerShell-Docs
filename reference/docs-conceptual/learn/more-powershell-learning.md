@@ -47,7 +47,7 @@ functions, cmdlets, providers, and hosting applications.
 - [PowerShell SDK API Browser][12]
 
 <!-- link references -->
-[1]: /learn/browse/?terms=PowerShell
+[1]: /training/browse/?terms=PowerShell
 [2]: https://devblogs.microsoft.com/powershell/
 [3]: https://devblogs.microsoft.com/powershell-community/
 [4]: /powershell/scripting/community/community-support
