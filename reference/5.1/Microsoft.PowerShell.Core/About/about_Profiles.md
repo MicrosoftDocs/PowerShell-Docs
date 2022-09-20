@@ -41,7 +41,7 @@ precedence.
 
 - All Users, All Hosts - `$PSHOME\Profile.ps1`
 - All Users, Current Host - `$PSHOME\Microsoft.PowerShell_profile.ps1`
-- Current User, All Hosts - `$Home\Documents\WindowsPowerShell\\Profile.ps1`
+- Current User, All Hosts - `$Home\Documents\WindowsPowerShell\Profile.ps1`
 - Current user, Current Host -
   `$Home\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
 
