@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/24/2021
+ms.date: 09/20/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
@@ -62,7 +62,7 @@ It uses the wildcard character (`*`) to specify the contents of the current fold
 
 ### Example 3: Delete hidden, read-only files
 
-This command deletes a file that is both *hidden* and *read-only*.
+This command deletes a file that is both _hidden_ and _read-only_.
 
 ```powershell
 Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
@@ -86,7 +86,7 @@ Get-ChildItem * -Include *.csv -Recurse | Remove-Item
 
 In the `Get-ChildItem` command, **Path** has a value of (`*`), which represents the contents of the
 current folder. It uses **Include** to specify the CSV file type, and it uses **Recurse** to make
-the retrieval recursive. If you try to specify the file type the path, such as `-Path *.csv`, the
+the retrieval recursive. If you try to specify the file type in the path, such as `-Path *.csv`, the
 cmdlet interprets the subject of the search to be a file that has no child items, and **Recurse**
 fails.
 
