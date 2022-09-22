@@ -163,7 +163,7 @@ Content updates
 - Bulk formatting cleanup for many docs
   - PowerShell-Docs content - 272 files
   - Secrets management - 17 files
-- Updated the PSScriptAnalyzer README and deleted docs that were migrated to Microsoft Docs
+- Updated the PSScriptAnalyzer README and deleted docs that were migrated to Microsoft Learn
 - Removed CentOS and Fedora from docs - no longer supported
 - Retired 7.1 content - no longer supported
   - Collapse release notes into diff article

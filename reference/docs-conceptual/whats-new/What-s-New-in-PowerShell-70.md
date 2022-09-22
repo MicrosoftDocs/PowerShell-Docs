@@ -715,7 +715,7 @@ For more information about
 - Remove the stale link from powershell-beginners-guide.md (#10926)
 - Merge stable and servicing change logs (#10527)
 - Update used .NET version in build docs (#10775) (Thanks @Greg-Smulko!)
-- Replace links from MSDN to Microsoft Docs in powershell-beginners-guide.md (#10778) (Thanks @iSazonov!)
+- Replace links from MSDN to Microsoft Learn in powershell-beginners-guide.md (#10778) (Thanks @iSazonov!)
 - Fix broken DSC overview link (#10702)
 - Update Support_Question.md to link to Stack Overflow as another community resource (#10638)
   (Thanks @mklement0!)
