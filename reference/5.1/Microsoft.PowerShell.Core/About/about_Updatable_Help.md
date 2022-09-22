@@ -419,8 +419,7 @@ name).
 If you author a module, you can support online help and Updatable Help for your
 modules. For more information, see
 [Supporting Updatable Help](/powershell/scripting/developer/help/supporting-updatable-help)
-and [Supporting Online Help](/powershell/scripting/developer/module/supporting-online-help)
-in the Microsoft Docs.
+and [Supporting Online Help](/powershell/scripting/developer/module/supporting-online-help).
 
 Updatable help not available for PowerShell snap-ins or comment-based help.
 

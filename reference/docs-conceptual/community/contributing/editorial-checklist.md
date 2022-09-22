@@ -109,7 +109,7 @@ articles in the Contributor's Guide for detailed explanations and examples of th
 ## Linking to other documents
 
 - When linking outside the docset or between cmdlet reference and conceptual
-  - Use site-relative URLs when linking to Microsoft Docs (remove `https://learn.microsoft.com/en-us`)
+  - Use site-relative URLs when linking to Microsoft Learn (remove `https://learn.microsoft.com/en-us`)
   - don't include locales in URLs on Microsoft properties (eg. remove `/en-us` from URL)
   - All URLs to external websites should use HTTPS unless that's not valid for the target site
 - When linking within the docset
