@@ -142,8 +142,7 @@ PowerShell commands. These verbs help us to keep our command names consistent
 and easy for users to understand.
 
 For more information about the standard PowerShell verbs, see
-[Approved Verbs](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands)
-in the Microsoft Docs.
+[Approved Verbs](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
 
 ## Functions with Parameters
 

@@ -10,7 +10,7 @@ PowerShell 3.0. The specification document is available as a Microsoft Word docu
 Microsoft Download Center at:
 [https://www.microsoft.com/download/details.aspx?id=36389](https://www.microsoft.com/download/details.aspx?id=36389)
 
-That Word document as been converted for presentation here on Microsoft Docs. During conversion,
+That Word document has been converted for presentation here on Microsoft Learn. During conversion,
 some editorial changes have been made to accommodate formatting for the Docs platform. Some typos
 and minor errors have been corrected.
 

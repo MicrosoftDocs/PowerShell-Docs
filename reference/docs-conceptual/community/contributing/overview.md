@@ -62,7 +62,7 @@ repository. You will be asked to sign the CLA for each time you contribute to a 
 
 ## Code of conduct
 
-All repositories that publish to Microsoft Docs have adopted the
+All repositories that publish to Microsoft Learn have adopted the
 [Microsoft Open Source Code of Conduct][16] or the
 [.NET Foundation Code of Conduct][17]. For more
 information, see the [Code of Conduct FAQ][18].

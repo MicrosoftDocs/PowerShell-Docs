@@ -777,8 +777,7 @@ You can also include a **HelpUri** value in the first related link of an XML-bas
 or the .Link directive of comment-based help in a function.
 
 For more information about supporting online help, see
-[Supporting Online Help](/powershell/scripting/developer/module/supporting-online-help) in the
-Microsoft Docs.
+[Supporting Online Help](/powershell/scripting/developer/module/supporting-online-help).
 
 ### CIM integration
 

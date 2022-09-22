@@ -167,7 +167,7 @@ The following image file types are supported: `*.png`, `*.gif`, `*.jpeg`, `*.jpg
 
 The [Microsoft Docs Authoring Pack][8] contains tools that support features unique to our publishing
 system. Alerts are a Markdown extension to create blockquotes that render with colors and icons
-highlightint the significance of the content. The following alert types are supported:
+highlighting the significance of the content. The following alert types are supported:
 
 ```markdown
 > [!NOTE]
@@ -186,7 +186,7 @@ highlightint the significance of the content. The following alert types are supp
 > Dangerous certain consequences of an action.
 ```
 
-These alerts look like this on Microsoft Docs:
+These alerts look like this on Microsoft Learn:
 
 Note block
 

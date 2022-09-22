@@ -32,8 +32,7 @@ warning message.
 > [!NOTE]
 > The verb list that `Get-Verb` returns might not be complete. For an updated list of approved
 > PowerShell verbs with descriptions, see
-> [Approved Verbs](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands)
-> in the Microsoft Docs.
+> [Approved Verbs](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
 
 ## EXAMPLES
 
