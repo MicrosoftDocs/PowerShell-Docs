@@ -15,7 +15,7 @@ Describes how to use object properties in PowerShell.
 
 PowerShell uses structured collections of information called objects to
 represent the items in data stores or the state of the computer. Typically, you
-work with object that are part of the Microsoft .NET Framework, but you can
+work with objects that are part of the Microsoft .NET Framework, but you can
 also create custom objects in PowerShell.
 
 The association between an item and its object is very close. When you change

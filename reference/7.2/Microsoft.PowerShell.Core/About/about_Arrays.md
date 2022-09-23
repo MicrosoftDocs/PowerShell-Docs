@@ -543,7 +543,7 @@ type; the following example shows how to convert a list of string dates to
 `[DateTime]` type.
 
 ```powershell
-@("1/1/2017", "2/1/2017", "3/1/2017").ForEach([datetime])
+("1/1/2017", "2/1/2017", "3/1/2017").ForEach([datetime])
 ```
 
 ```Output
