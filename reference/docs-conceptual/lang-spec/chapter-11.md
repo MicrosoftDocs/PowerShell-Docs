@@ -228,7 +228,7 @@ function Get-NextID ([int]$startValue = 1) {
 
 $v1 = Get-NextID      # get a scriptblock with $startValue of 0
 & $v1                 # invoke Get-NextID getting back 1
-& $v1                 # invoke Get-NextID getting back 1
+& $v1                 # invoke Get-NextID getting back 2
 
 $v2 = Get-NextID 100  # get a scriptblock with $startValue of 100
 & $v2                 # invoke Get-NextID getting back 100
