@@ -1,6 +1,6 @@
 ---
-title: What's New in PowerShell 7.3-preview.5
-description: New features and changes released in PowerShell 7.3-preview.5
+title: What's New in PowerShell 7.3-preview.8
+description: New features and changes released in PowerShell 7.3-preview.8
 ms.date: 08/12/2022
 ---
 
@@ -8,7 +8,14 @@ ms.date: 08/12/2022
 
 PowerShell 7.3 is the next preview release, built on .NET 7.0.
 
-PowerShell 7.3-preview.7 includes the following features, updates, and breaking changes.
+PowerShell 7.3-preview.8 includes the following features, updates, and breaking changes.
+
+> [!NOTE]
+> There is a known issue about `Console.ReadKey()` on Unix platforms that the `KeyChar` isn't
+> preserved for `Ctrl+Letter` inputs. This causes all key bindings in the form of `Ctrl+Letter` to
+> not work in PowerShell v7.3.0-preview.8 on Unix platforms. For details, see the .NET issue
+> [dotnet/runtime#75795][ukb-issue]. The fix ([dotnet/runtime#75853][ukb-pr]) will be included in
+> .NET `7.0.0-rc.2` and we plan to include this in the next PowerShell 7.3 release.
 
 ## Improved error handling
 
@@ -129,3 +136,5 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [exp-error]: ../learn/experimental-features.md#psnativecommanderroractionpreference
 [exp-amsi]: ../learn/experimental-features.md?#psamsimethodinvocationlogging
 [exp-path]: ../learn/experimental-features.md?#psnativepspathresolution
+[ukb-issue]: https://github.com/dotnet/runtime/issues/75795
+[ukb-pr]: https://github.com/dotnet/runtime/pull/75853
