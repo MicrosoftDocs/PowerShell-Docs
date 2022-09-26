@@ -20,7 +20,7 @@ The CommonMark spec is much stricter about the construction of some Markdown ele
 attention to the details provided in this document.
 
 We use the [markdownlint][4] extension in VS Code to enforce our style and formatting rules. This
-extension is installed as part of the **Docs Authoring Pack**.
+extension is installed as part of the **Learn Authoring Pack**.
 
 ### Blank lines, spaces, and tabs
 
@@ -165,7 +165,7 @@ The following image file types are supported: `*.png`, `*.gif`, `*.jpeg`, `*.jpg
 
 ### Markdown extensions supported by Open Publishing
 
-The [Docs Authoring Pack][8] contains tools that support features unique to our publishing
+The [Learn Authoring Pack][8] contains tools that support features unique to our publishing
 system. Alerts are a Markdown extension to create blockquotes that render with colors and icons
 highlighting the significance of the content. The following alert types are supported:
 
