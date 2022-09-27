@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 07/01/2022
+ms.date: 09/27/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Preference Variables
@@ -1395,6 +1395,9 @@ objects.
 > experimental feature is enabled. For more information, see
 > [about_Experimental_Features](about_Experimental_Features.md) and
 > [Using experimental features](/powershell/scripting/learn/experimental-features).
+>
+> In PowerShell 7.3-preview.8, the `PSAnsiRenderingFileInfo` feature became
+> mainstream and available by default.
 
 ## $Transcript
 

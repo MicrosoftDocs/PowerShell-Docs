@@ -1,7 +1,7 @@
 ---
 description: Describes how functions that specify the `CmdletBinding` attribute can use the methods and properties that are available to compiled cmdlets.
 Locale: en-US
-ms.date: 12/17/2021
+ms.date: 09/27/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Methods
@@ -107,10 +107,7 @@ function.
 
 ### `clean`
 
-The `clean` block was added as an experimental feature in PowerShell 7.3. To
-use this feature you enable the experimental feature named `PSCleanBlock`. For
-more information, cee
-[Enable-ExperimentalFeature](xref:Microsoft.PowerShell.Core.Enable-ExperimentalFeature).
+The `clean` block was added in PowerShell 7.3.
 
 The `clean` block is a convenient way for users to clean up resources that span
 across the `begin`, `process`, and `end` blocks. It's semantically similar to a

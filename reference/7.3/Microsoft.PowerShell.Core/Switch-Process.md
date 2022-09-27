@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Module Name: Microsoft.PowerShell.Core
 online version: https://go.microsoft.com/fwlink/?linkid=2181448
-ms.date: 01/19/2022
+ms.date: 09/27/2022
 schema: 2.0.0
 ---
 
@@ -21,15 +21,14 @@ Switch-Process [[-WithCommand] <String[]>] [<CommonParameters>]
 ## DESCRIPTION
 
 Some native Unix commands shell out to run something (like ssh) and use the `bash` built-in command
-`exec` to spawn a new process that replaces the current one. By default, `exec` is not a valid
+`exec` to spawn a new process that replaces the current one. By default, `exec` isn't a valid
 command in PowerShell. This is affecting some known scripts like `copy-ssh-id` and some subcommands
 of AzCLI.
 
-The `PSExec` experimental feature adds a new `Switch-Process` cmdlet aliased to `exec`. The cmdlet
+Starting in PowerShell 7.3-preview.8, the `Switch-Process` cmdlet is aliased to `exec`. The cmdlet
 calls `execv()` function to provide similar behavior as POSIX shells.
 
-The `PSExec` experimental feature must be enabled for this cmdlet to be available. This cmdlet is
-only available for non-Windows systems.
+This cmdlet is only available for non-Windows systems.
 
 ## EXAMPLES
 

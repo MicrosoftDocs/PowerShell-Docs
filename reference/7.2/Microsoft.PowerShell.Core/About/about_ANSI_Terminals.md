@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 06/09/2022
+ms.date: 09/27/2022
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -164,6 +164,9 @@ The following members control how or when ANSI formatting is used:
   > `$PSStyle.FileInfo` is only available when the `PSAnsiRenderingFileInfo`
   > experimental feature ia enabled. For more information, see
   > [about_Experimental_Features][3] and [Using experimental features][4].
+  >
+  > In PowerShell 7.3-preview.8, the `PSAnsiRenderingFileInfo` feature became
+  > mainstream and available by default.
 
 ## Cmdlets that generate ANSI output
 
