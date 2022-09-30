@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 10/22/2021
+ms.date: 09/30/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Parameters
@@ -96,8 +96,8 @@ following error.
 
 ```Output
 Get-Date_Func: Cannot process argument transformation on parameter 'Date'.
-Cannot convert value "19-06-2018" to type "System.DateTime". Error: "String
-'19-06-2018' was not recognized as a valid DateTime."
+Cannot convert value "19-06-2018" to type "System.DateTime". Error:
+"String '19-06-2018' was not recognized as a valid DateTime."
 ```
 
 ## Static parameters
@@ -123,10 +123,10 @@ Param(
 
 ## Switch parameters
 
-Switch parameters are parameters that take no parameter value.
-Instead, they convey a Boolean true-or-false value through their presence or absence,
-so that when a switch parameter is present it has a **true** value
-and when absent it has a **false** value.
+Switch parameters are parameters that take no parameter value. Instead, they
+convey a Boolean true-or-false value through their presence or absence, so that
+when a switch parameter is present it has a **true** value and when absent it
+has a **false** value.
 
 For example, the **Recurse** parameter of `Get-ChildItem` is a switch
 parameter.
@@ -159,18 +159,19 @@ value is required.
 
 ### Switch parameter design considerations
 
-- Switch parameters should not be given default values. They should always
+- Switch parameters shouldn't be given default values. They should always
   default to false.
-- Switch parameters are excluded from positional parameters by default.
-  Even when other parameters are implicitly positional, switch parameters are not.
-  You _can_ override that in the Parameter attribute, but it will confuse users.
+- Switch parameters are excluded from positional parameters by default. Even
+  when other parameters are implicitly positional, switch parameters aren't.
+  You _can_ override that in the Parameter attribute, but it will confuse
+  users.
 - Switch parameters should be designed so that setting them moves a command
-  from its default functionality to a less common or more complicated mode. The
-  simplest behavior of a command should be the default behavior that does not
+  from its default behavior to a less common or more complicated mode. The
+  simplest behavior of a command should be the default behavior that doesn't
   require the use of switch parameters.
-- Switch parameters should not be mandatory.
-  The only case where it is necessary to make a switch parameter
-  mandatory is when it is needed to differentiate a parameter set.
+- Switch parameters shouldn't be mandatory. The only case where it's necessary
+  to make a switch parameter mandatory is when it's needed to differentiate a
+  parameter set.
 - Explicitly setting a switch from a boolean can be done with
   `-MySwitch:$boolValue` and in splatting with
   `$params = @{ MySwitch = $boolValue }`.
@@ -354,21 +355,21 @@ name alias or abbreviation, must precede the parameter value whenever the
 parameter is used in a command.
 
 By default, all function parameters are positional. PowerShell assigns position
-numbers to parameters in the order in which the parameters are declared in the
-function. To disable this feature, set the value of the `PositionalBinding`
-argument of the **CmdletBinding** attribute to `$False`. The `Position`
-argument takes precedence over the value of the `PositionalBinding` argument of
-the **CmdletBinding** attribute. For more information, see `PositionalBinding`
-in [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
+numbers to parameters in the order the parameters are declared in the function.
+To disable this feature, set the value of the `PositionalBinding` argument of
+the **CmdletBinding** attribute to `$False`. The `Position` argument takes
+precedence over the value of the `PositionalBinding` argument of the
+**CmdletBinding** attribute. For more information, see `PositionalBinding` in
+[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
 
 The value of the `Position` argument is specified as an integer. A position
 value of **0** represents the first position in the command, a position value
 of **1** represents the second position in the command, and so on.
 
 If a function has no positional parameters, PowerShell assigns positions to
-each parameter based on the order in which the parameters are declared.
-However, as a best practice, don't rely on this assignment. When you want
-parameters to be positional, use the `Position` argument.
+each parameter based on the order the parameters are declared. However, as a
+best practice, don't rely on this assignment. When you want parameters to be
+positional, use the `Position` argument.
 
 The following example declares the **ComputerName** parameter. It uses the
 `Position` argument with a value of **0**. As a result, when `-ComputerName` is
@@ -385,11 +386,10 @@ Param(
 
 #### ParameterSetName argument
 
-The `ParameterSetName` argument specifies the parameter set to which a
-parameter belongs. If no parameter set is specified, the parameter belongs to
-all the parameter sets defined by the function. Therefore, to be unique, each
-parameter set must have at least one parameter that isn't a member of any other
-parameter set.
+The `ParameterSetName` argument specifies the parameter set a parameter belongs
+to. If no parameter set is specified, the parameter belongs to all the
+parameter sets defined by the function. To be unique, each parameter set must
+have at least one parameter that isn't a member of any other parameter set.
 
 > [!NOTE]
 > For a cmdlet or function, there is a limit of 32 parameter sets.
@@ -417,8 +417,8 @@ Param(
 ```
 
 You can specify only one `ParameterSetName` value in each argument and only one
-`ParameterSetName` argument in each **Parameter** attribute. To indicate that a
-parameter appears in more than one parameter set, add additional **Parameter**
+`ParameterSetName` argument in each **Parameter** attribute. To include a
+parameter in more than one parameter set, add additional **Parameter**
 attributes.
 
 The following example explicitly adds the **Summary** parameter to the
@@ -444,7 +444,8 @@ Param(
 )
 ```
 
-For more information about parameter sets, see [About Parameter Sets](about_parameter_sets.md).
+For more information about parameter sets, see
+[About Parameter Sets](about_parameter_sets.md).
 
 #### ValueFromPipeline argument
 
@@ -494,10 +495,12 @@ Param(
 >
 > The _delay-bind_ script block is run automatically during
 > **ParameterBinding**. The result is bound to the parameter. Delay binding
-> does not work for parameters defined as type `ScriptBlock` or
-> `System.Object`. The script block is passed through _without_ being invoked.
+> doesn't work for parameters defined as type **ScriptBlock** or
+> **System.Object**. The script block is passed through _without_ being
+> invoked.
 >
-> You can read about _delay-bind_ script blocks here [about_Script_Blocks.md](about_Script_Blocks.md).
+> You can read about _delay-bind_ script blocks here
+> [about_Script_Blocks.md](about_Script_Blocks.md#using-delay-bind-script-blocks-with-parameters).
 
 #### ValueFromRemainingArguments argument
 
@@ -535,8 +538,8 @@ Found 2 elements
 ```
 
 > [!NOTE]
-> Prior to PowerShell 6.2, the **ValueFromRemainingArguments** collection was
-> joined as single entity under index **0**.
+> Before PowerShell 6.2, the **ValueFromRemainingArguments** collection was
+> joined as single entity under index `0`.
 
 #### HelpMessage argument
 
@@ -593,7 +596,7 @@ Param(
 )
 ```
 
-Using this attribute does not automatically enable wildcard support. The cmdlet
+Using this attribute doesn't automatically enable wildcard support. The cmdlet
 developer must implement the code to handle the wildcard input. The wildcards
 supported can vary according to the underlying API or PowerShell provider. For
 more information, see [about_Wildcards](about_Wildcards.md).
@@ -607,7 +610,7 @@ to a specific parameter. An **ArgumentCompletions** attribute must be defined
 for each parameter that needs tab completion. The **ArgumentCompletions**
 attribute is similar to **ValidateSet**. Both attributes take a list of values
 to be presented when the user presses <kbd>Tab</kbd> after the parameter name.
-However, unlike **ValidateSet**, the values are not validated.
+However, unlike **ValidateSet**, the values aren't validated.
 
 This attribute was introduced in PowerShell 6.0.
 
@@ -618,7 +621,7 @@ For more information, see
 
 The **ArgumentCompleter** attribute allows you to add tab completion values to
 a specific parameter. An **ArgumentCompleter** attribute must be defined for
-each parameter that needs tab completion. Similar to **DynamicParameters**, the
+each parameter that needs tab completion. Like **DynamicParameters**, the
 available values are calculated at runtime when the user presses <kbd>Tab</kbd>
 after the parameter name.
 
@@ -631,7 +634,7 @@ Validation attributes direct PowerShell to test the parameter values that users
 submit when they call the advanced function. If the parameter values fail the
 test, an error is generated and the function isn't called. Parameter validation
 is only applied to the input provided and any other values like default values
-are not validated.
+aren't validated.
 
 You can also use the validation attributes to restrict the values that users
 can specify for variables. When you use a type converter along with a
@@ -663,7 +666,7 @@ Param(
 
 > [!NOTE]
 > The **AllowNull** attribute doesn't work if the type converter is set to
-> string as the string type will not accept a null value. You can use the
+> string as the string type won't accept a null value. You can use the
 > **AllowEmptyString** attribute for this scenario.
 
 ### AllowEmptyString validation attribute
@@ -811,7 +814,7 @@ than zero.
 
 ### ValidateScript validation attribute
 
-The **ValidateScript** attribute specifies a script that is used to validate a
+The **ValidateScript** attribute specifies a script that's used to validate a
 parameter or variable value. PowerShell pipes the value to the script, and
 generates an error if the script returns `$false` or if the script throws an
 exception.
@@ -840,7 +843,7 @@ than or equal to the current date and time.
 ```
 
 > [!NOTE]
-> If you use **ValidateScript**, you cannot pass a `$null` value to the
+> If you use **ValidateScript**, you can't pass a `$null` value to the
 > parameter. When you pass a null value **ValidateScript** can't validate the
 > argument.
 
@@ -934,7 +937,7 @@ The **ValidateNotNull** attribute specifies that the parameter value can't be
 The **ValidateNotNull** attribute is designed to be used when the parameter is
 optional and the type is undefined or has a type converter that can't
 implicitly convert a null value like **object**. If you specify a type that
-that will implicitly convert a null value such as a **string**, the null value
+that implicitly converts a null value, such as a **string**, the null value
 is converted to an empty string even when using the **ValidateNotNull**
 attribute. For this scenario use the **ValidateNotNullOrEmpty**
 
@@ -983,9 +986,9 @@ Param(
 ### ValidateUserDrive validation attribute
 
 The **ValidateUserDrive** attribute specifies that the parameter value must
-represent the path, that is referring to `User` drive. PowerShell generates an
-error if the path refers to a different drive. The validation attribute only
-tests for the existence of the drive portion of the path.
+represent in the `User` drive. PowerShell generates an error if the path refers
+to a different drive. The validation attribute only tests for the existence of
+the drive prefix of the path.
 
 If you use relative path, the current drive must be `User`.
 
@@ -1041,7 +1044,7 @@ True
 
 This attribute was added in PowerShell 6.1.1.
 
-At this time, the attribute is used internally by PowerShell itself and is not
+At this time, the attribute is used internally by PowerShell itself and isn't
 intended for external usage.
 
 ## See also
