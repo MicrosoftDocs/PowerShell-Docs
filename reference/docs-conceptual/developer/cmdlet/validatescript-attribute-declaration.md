@@ -17,14 +17,18 @@ variable. You can use the `$_` variable to refer to the value in the script.
 
 ```csharp
 [ValidateScriptAttribute(ScriptBlock scriptBlock)]
+[ValidateScriptAttribute(ScriptBlock scriptBlock, Named Parameters)]
 ```
 
 ### Parameters
 
 - `scriptBlock` - ([System.Management.Automation.ScriptBlock][01]) Required. The script block used
   to validate the input.
-- `ErrorMessage` - Optional - The item being validated and the validating scriptblock are passed as
-  the first and second formatting arguments.
+- `ErrorMessage` - Optional named parameter - The item being validated and the validating
+  scriptblock are passed as the first and second formatting arguments.
+
+> [!NOTE]
+> The `ErrorMessage` argument was added in PowerShell 6.
 
 ## Remarks
 

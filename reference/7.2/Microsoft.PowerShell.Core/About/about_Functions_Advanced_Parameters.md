@@ -847,6 +847,63 @@ than or equal to the current date and time.
 > parameter. When you pass a null value **ValidateScript** can't validate the
 > argument.
 
+#### Overriding the default error message
+
+Starting in PowerShell 6, you can override the default error message generated
+when a specified value is invalid with the `ErrorMessage` argument. Specify a
+[composite format string](/dotnet/standard/base-types/composite-formatting#composite-format-string).
+The `0` index component uses the input value. The `1` index component uses the
+**ScriptBlock** used to validate the input value.
+
+In the following example, the value of the **EventDate** parameter must be
+greater than or equal to the current date and time. If the value is invalid,
+the error message reports that the specified date and time is too old.
+
+```powershell
+Param(
+    [Parameter(Mandatory)]
+    [ValidateScript(
+        {$_ -ge (Get-Date)},
+        ErrorMessage = "{0} isn't a future date. Specify a later date."
+    )]
+    [DateTime]
+    $EventDate
+)
+```
+
+When the specified value is a past date, the custom error message is returned.
+
+```output
+Cannot validate argument on parameter 'EventDate'. 1/1/1999 12:00:00 AM
+isn't a future date. Specify a later date.
+```
+
+You can apply further formatting in the string with optional
+[format string components](/dotnet/standard/base-types/composite-formatting#format-string-component).
+
+In the following example, the value of the **EventDate** parameter must be
+greater than or equal to the current date and time. If the value is invalid,
+the error message reports that the specified date is too old.
+
+```powershell
+Param(
+    [Parameter(Mandatory)]
+    [ValidateScript(
+        {$_ -ge (Get-Date).Date},
+        ErrorMessage = "{0:d} isn't a future date. Specify a later date."
+    )]
+    [DateTime]
+    $EventDate
+)
+```
+
+When the specified value is a past date, the custom error message is returned.
+
+```output
+Cannot validate argument on parameter 'EventDate'. 1/1/1999 isn't a future
+date. Specify a later date.
+```
+
 ### ValidateSet attribute
 
 The **ValidateSet** attribute specifies a set of valid values for a parameter
