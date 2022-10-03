@@ -72,6 +72,7 @@ doc-a-thon
 doc-a-thons
 docfx
 docset
+docsmd
 documentationcenter
 DPAPI
 DWORD
@@ -124,6 +125,7 @@ LCID
 lifecycle
 lockdown
 markdig
+markdownlint
 msiexec
 MSIL
 MSRC
@@ -209,6 +211,7 @@ Sddl
 SDII
 SDKs
 sdwheeler
+setext
 sewhee
 SIEM
 SLES
@@ -235,6 +238,7 @@ subpipeline
 subpipelines
 subproperties
 subproperty
+superceded
 symlink
 systemdrive
 taskbar
