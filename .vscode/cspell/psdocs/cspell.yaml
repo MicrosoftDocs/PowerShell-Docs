@@ -156,3 +156,12 @@ languageSettings:
       - fileExtensions
       - psdocs
       - pwshAliases
+  # Any yml file
+  - languageId: yaml
+    locale: '*'
+    dictionaries:
+      - externalCommands
+      - fictionalCorps
+      - fileExtensions
+      - psdocs
+      - pwshAliases
