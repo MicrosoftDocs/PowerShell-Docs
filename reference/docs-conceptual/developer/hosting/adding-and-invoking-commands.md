@@ -6,7 +6,7 @@ title: Adding and invoking commands
 ---
 # Adding and invoking commands
 
-After creating a runspace, you can add Windows PowerShellcommands and scripts to a pipeline, and
+After creating a runspace, you can add Windows PowerShell commands and scripts to a pipeline, and
 then invoke the pipeline synchronously or asynchronously.
 
 ## Creating a pipeline
