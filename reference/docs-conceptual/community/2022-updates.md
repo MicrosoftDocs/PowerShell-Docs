@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2022
-ms.date: 09/01/2022
+ms.date: 10/03/2022
 title: What's New in PowerShell-Docs for 2022
 ---
 # What's new in PowerShell Docs for 2022
@@ -11,12 +11,45 @@ contributions from the community.
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
 
+## 2022-October
+
+- Help us clean up the docs for [Hacktoberfest 2022](https://github.com/MicrosoftDocs/PowerShell-Docs/issues/9257)
+
+## 2022-September
+
+No new content this month.
+
+Content updates
+
+- [PSScriptAnalyzer 1.21](/powershell/utility-modules/psscriptanalyzer/overview) update release
+- Release notes for [7.3-preview.8](/powershell/scripting/whats-new/what-s-new-in-powershell-73)
+
+GitHub stats
+
+- 31 PRs merged (8 from Community)
+- 18 issues opened (9 from Community)
+- 16 issues closed (8 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|   GitHub Id    | PRs merged | Issues opened |
+| -------------- | :--------: | :-----------: |
+| DonaldDWebster |     1      |               |
+| emerconghaile  |     1      |               |
+| floojah        |     1      |               |
+| imere          |     1      |               |
+| mcdonaldjc     |     1      |               |
+| rayden84       |     1      |               |
+| sirsql         |     1      |               |
+| tig            |     1      |               |
+| b-long         |            |       2       |
+
 ## 2022-August
 
 New content
 
-- New [landing page](/powershell/scripting/whats-new/overview) for What's
-  new content
+- New [landing page](/powershell/scripting/whats-new/overview) for What's new content
 
 - Shell experience docs
   - [Running commands in the shell](/powershell/scripting/learn/shell/running-commands)
