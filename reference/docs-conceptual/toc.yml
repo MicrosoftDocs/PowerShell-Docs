@@ -492,12 +492,14 @@ items:
         href: community/contributing/general-markdown.md
       - name: PowerShell-Docs style guide
         href: community/contributing/powershell-style-guide.md
+      - name: Editorial checklist
+        href: community/contributing/editorial-checklist.md
       - name: How to file a Docs issue
         href: community/contributing/file-an-issue.md
       - name: Submitting a pull request
         href: community/contributing/pull-requests.md
-      - name: Editorial checklist
-        href: community/contributing/editorial-checklist.md
+      - name: Hacktoberfest and other hack-a-thon events
+        href: community/contributing/hackathons.md
       - name: How we manage issues
         href: community/contributing/managing-issues.md
       - name: How we manage pull requests
