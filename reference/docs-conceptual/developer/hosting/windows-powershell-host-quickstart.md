@@ -157,6 +157,7 @@ PowerShell ps = PowerShell.Create();
 ps.Runspace = rs;
 ps.AddCommand("Get-Command");
 ps.Invoke();
+rs.Close();
 ```
 
 ### Constraining the runspace
@@ -216,6 +217,12 @@ foreach (var entry in result)
 {
     Console.WriteLine(entry.Name);
 }
+```
+
+Close the runspace.
+
+```csharp
+rs.Close();
 ```
 
 When run, the output of this code will look as follows.
