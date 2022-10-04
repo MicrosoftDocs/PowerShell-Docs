@@ -33,30 +33,29 @@ namespace SampleHost
   {
     static void Main(string[] args)
     {
-      // Call the InitialSessionState.CreateDefault method to create
-      // an empty InitialSessionState object, and then add the
-      // elements that will be available when the runspace is opened.
+      // Call InitialSessionState.CreateDefault() to create an empty 
+      // InitialSessionState object, then add the variables that will be 
+      // available when the runspace is opened.
       InitialSessionState iss = InitialSessionState.CreateDefault();
-      SessionStateVariableEntry var1 = new
-          SessionStateVariableEntry("test1",
-                                    "MyVar1",
-                                    "Initial session state MyVar1 test");
+      SessionStateVariableEntry var1 = 
+        new SessionStateVariableEntry("test1",
+                                      "MyVar1",
+                                      "Initial session state MyVar1 test");
       iss.Variables.Add(var1);
 
-      SessionStateVariableEntry var2 = new
-          SessionStateVariableEntry("test2",
-                                    "MyVar2",
-                                    "Initial session state MyVar2 test");
+      SessionStateVariableEntry var2 = 
+        new SessionStateVariableEntry("test2",
+                                      "MyVar2",
+                                      "Initial session state MyVar2 test");
       iss.Variables.Add(var2);
 
-      // Call the RunspaceFactory.CreateRunspace(InitialSessionState)
-      // method to create the runspace where the pipeline is run.
+      // Call RunspaceFactory.CreateRunspace(InitialSessionState) to 
+      // create the runspace where the pipeline is run.
       Runspace rs = RunspaceFactory.CreateRunspace(iss);
       rs.Open();
 
-      // Call the PowerShell.Create() method to create the PowerShell object,
-      // and then specify the runspace and commands to the pipeline.
-      // and create the command pipeline.
+      // Call PowerShell.Create() to create the PowerShell object, then 
+      // specify the runspace and pipeline commands.
       PowerShell ps = PowerShell.Create();
       ps.Runspace = rs;
       ps.AddCommand("Get-Variable");
@@ -65,8 +64,7 @@ namespace SampleHost
       Console.WriteLine("Variable             Value");
       Console.WriteLine("--------------------------");
 
-      // Call the PowerShell.Invoke() method to run
-      // the pipeline synchronously.
+      // Call ps.Invoke() to run the pipeline synchronously.
       foreach (PSObject result in ps.Invoke())
       {
         Console.WriteLine("{0,-20}{1}",
