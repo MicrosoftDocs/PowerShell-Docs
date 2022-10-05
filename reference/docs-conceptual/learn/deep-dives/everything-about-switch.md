@@ -79,7 +79,7 @@ $result
 ```
 
 For this example, the value of `$day` matches one of the numeric values, then the correct name is
-assigned to `$result`. we're only doing a variable assignment in this example, but any PowerShell
+assigned to `$result`. We're only doing a variable assignment in this example, but any PowerShell
 can be executed in those script blocks.
 
 ### Assign to a variable
@@ -99,7 +99,7 @@ $result = switch ( $day )
 }
 ```
 
-we're placing the value on the PowerShell pipeline and assigning it to the `$result`. You can do
+We're placing the value on the PowerShell pipeline and assigning it to the `$result`. You can do
 this same thing with the `if` and `foreach` statements.
 
 ### Default
@@ -560,7 +560,7 @@ It still executes the same way and gives a better visual break when quickly look
 
 ### Regex $matches
 
-We need to revisit regex to touch on something that'sn't immediately obvious. The use of regex
+We need to revisit regex to touch on something that isn't immediately obvious. The use of regex
 populates the `$matches` variable. I do go into the use of `$matches` more when I talk about
 [The many ways to use regex][The many ways to use regex]. Here is a quick sample to show it in
 action with named matches.
@@ -647,7 +647,7 @@ switch ( $file )
 ### Constant expression
 
 Lee Dailey pointed out that we can use a constant `$true` expression to evaluate `[bool]` items.
-Imagine if we've several boolean checks that need to happen.
+Imagine if we have several boolean checks that need to happen.
 
 ``` powershell
 $isVisible = $false
@@ -741,7 +741,7 @@ access that value directly. I would call it madness.
 ### Hashtables
 
 One of my most popular posts is the one I did on [hashtables][hashtables]. One of the use cases for
-a `hashtable` is to be a lookup table. that's an alternate approach to a common pattern that a
+a `hashtable` is to be a lookup table. That's an alternate approach to a common pattern that a
 `switch` statement is often addressing.
 
 ``` powershell
