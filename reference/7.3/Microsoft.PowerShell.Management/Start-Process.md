@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/14/2022
+ms.date: 10/05/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -394,12 +394,12 @@ determined by the filename extension of the file that runs in the process.
 
 The following table shows the verbs for some common process file types.
 
-| File type |                Verbs                |
-| --------- | ----------------------------------- |
-| .cmd      | Edit, Open, Print, RunAs, RunAsUser |
-| .exe      | Open, RunAs, RunAsUser              |
-| .txt      | Open, Print, PrintTo                |
-| .wav      | Open, Play                          |
+| File type |                     Verbs                     |
+| --------- | --------------------------------------------- |
+| .cmd      | `Edit`, `Open`, `Print`, `RunAs`, `RunAsUser` |
+| .exe      | `Open`, `RunAs`, `RunAsUser`                  |
+| .txt      | `Open`, `Print`, `PrintTo`                    |
+| .wav      | `Open`, `Play`                                |
 
 To find the verbs that can be used with the file that runs in a process, use the `New-Object` cmdlet
 to create a **System.Diagnostics.ProcessStartInfo** object for the file. The available verbs are in
