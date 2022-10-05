@@ -1,0 +1,104 @@
+{
+  "redirections": [
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/About/about_Classes_and_DSC?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/About/about_Classes_and_DSC.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Disable-DscDebug.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Enable-DscDebug.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Get-DscConfiguration.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Get-DscResource?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Get-DscResource.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Invoke-DscResource.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/New-DSCCheckSum.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/PSDesiredStateConfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/PSDesiredStateConfiguration.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Publish-DscConfiguration.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Remove-DscConfigurationDocument.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Restore-DscConfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Restore-DscConfiguration.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Start-DscConfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Stop-DscConfiguration.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Test-DscConfiguration.md"
+    },
+    {
+      "redirect_document_id": "true",
+      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/PSDesiredStateConfiguration/Update-DscConfiguration.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-verb?view=powershell-5.1",
+      "source_path": "reference/5.1/microsoft.powershell.core/functions/get-verb.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq",
+      "source_path": "reference/5.1/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md"
+    }
+  ]
+}
