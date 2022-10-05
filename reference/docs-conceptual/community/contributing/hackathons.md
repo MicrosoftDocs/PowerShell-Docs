@@ -78,14 +78,14 @@ see [GitHub: About pull requests][15].
 - [Official Hacktoberfest site][17]
 
 <!-- link references -->
-[01]: /contribute/get-started-setup-github
-[02]: /contribute/get-started-setup-tools
+[01]: https://github.com/MicrosoftDocs/Contribute/blob/main/Contribute/get-started-setup-github.md
+[02]: https://github.com/MicrosoftDocs/Contribute/blob/main/Contribute/get-started-setup-tools.md
 [03]: https://hacktoberfest.com/auth/
 [04]: https://hacktoberfest.com/participation/
 [05]: https://github.com/MicrosoftDocs/PowerShell-Docs/issues/9257
-[06]: /powershell/module/microsoft.powershell.core/about/about_splatting
-[07]: /powershell/scripting/community/contributing/powershell-style-guide
-[08]: /powershell/scripting/community/contributing/editorial-checklist
+[06]: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_splatting
+[07]: https://learn.microsoft.com/en-us/powershell/scripting/community/contributing/powershell-style-guide
+[08]: https://learn.microsoft.com/en-us/powershell/scripting/community/contributing/editorial-checklist
 [09]: https://github.com/MicrosoftDocs/PowerShell-Docs/issues/new?assignees=&labels=&template=00-hacktoberfest.yml&title=%F0%9F%8E%83+2022%3A+
 [10]: https://github.com/MicrosoftDocs/PowerShell-Docs-DSC/issues/new?assignees=&labels=&template=00-hacktoberfest.yml&title=%F0%9F%8E%83+2022%3A+
 [11]: https://github.com/MicrosoftDocs/PowerShell-Docs-Modules/issues/new?assignees=&labels=&template=00-hacktoberfest.yml&title=%F0%9F%8E%83+2022%3A+
@@ -93,5 +93,5 @@ see [GitHub: About pull requests][15].
 [13]: https://github.com/MicrosoftDocs/azure-docs-powershell/issues/new?assignees=&labels=&template=00-hacktoberfest.yml&title=%F0%9F%8E%83+2022%3A+
 [14]: https://hacktoberfest.com/participation/#values
 [15]: https://docs.github.com/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
-[16]: /contribute/git-github-fundamentals
+[16]: https://learn.microsoft.com/en-us/contribute/git-github-fundamentals
 [17]: https://hacktoberfest.com/
