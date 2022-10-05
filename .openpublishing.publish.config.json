@@ -71,6 +71,14 @@
   "need_generate_pdf_url_template": false,
   "need_preview_pull_request": true,
   "notification_subscribers": [],
+  "redirection_files": [
+    ".openpublishing.redirection.json",
+    ".openpublishing.redirection.51.json",
+    ".openpublishing.redirection.70.json",
+    ".openpublishing.redirection.71.json",
+    ".openpublishing.redirection.72.json",
+    ".openpublishing.redirection.virtual.json"
+  ],
   "skip_source_output_uploading": false,
   "sync_notification_subscribers": [],
   "targets": {}
