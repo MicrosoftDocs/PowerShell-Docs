@@ -7,8 +7,8 @@ title: How to invoke a PSCmdlet from within a PSCmdlet
 # How to invoke a PSCmdlet from within a PSCmdlet
 
 This example shows how to invoke a PSCmdlet from within another PSCmdlet. In this example, the new
-PSCmdlet `Get-Clipboard` cmdlet is called to get the contents of the clipboard. The new PSCmdlet
-reverses the order of the characters and returns the reversed strint.
+PSCmdlet `Get-ClipboardReverse` calls `Get-Clipboard` to get the contents of the clipboard. The
+`Get-ClipboardReverse` reverses the order of the characters and returns the reversed string.
 
 ## To invoke a cmdlet from within a cmdlet
 
