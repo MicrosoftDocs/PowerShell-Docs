@@ -11,10 +11,10 @@ the new PSCmdlet `Get-ClipboardReverse` calls `Get-Clipboard` to get the content
 The `Get-ClipboardReverse` reverses the order of the characters and returns the reversed string.
 
 > [!NOTE]
-> The **PSCmdlet** class differs from the **Cmdlet** class. With the **PSCmdlet** class you must
-> invoke another cmdlet using the PowerShell pipeline API. When invoking another cmdlet from the
-> **Cmdlet** class there is runspace context information. This allows you to call the cmdlet's .NET
-> API directly. For an example, see [How to invoke a Cmdlet from within a Cmdlet][03].
+> The **PSCmdlet** class differs from the **Cmdlet** class. **PSCmdlet** implementations use
+> runspace context information so you must invoke another cmdlet using the PowerShell pipeline API.
+> In **Cmdlet** implementations you can call the cmdlet's .NET API directly. For an example, see
+> [How to invoke a Cmdlet from within a Cmdlet][03].
 
 ## To invoke a cmdlet from within a PSCmdlet
 
