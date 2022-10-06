@@ -29,8 +29,8 @@ Get-Process -name [a-t]
 
     ```csharp
     using System.Diagnostics;
-    using System.Management.Automation;   // Windows PowerShell assembly.
-    using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
+    using System.Management.Automation;   // PowerShell assembly.
+    using Microsoft.PowerShell.Commands;  // PowerShell cmdlets assembly you want to call.
     ```
 
 1. In the input processing method of the cmdlet, create a new instance of the cmdlet to be invoked.
