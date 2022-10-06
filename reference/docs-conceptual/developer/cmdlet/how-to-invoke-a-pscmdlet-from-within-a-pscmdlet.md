@@ -6,9 +6,15 @@ title: How to invoke a PSCmdlet from within a PSCmdlet
 ---
 # How to invoke a PSCmdlet from within a PSCmdlet
 
-This example shows how to invoke a PSCmdlet from within another PSCmdlet. In this example, the new
-PSCmdlet `Get-ClipboardReverse` calls `Get-Clipboard` to get the contents of the clipboard. The
-`Get-ClipboardReverse` reverses the order of the characters and returns the reversed string.
+This example shows how to invoke a **PSCmdlet** from within another **PSCmdlet**. In this example,
+the new PSCmdlet `Get-ClipboardReverse` calls `Get-Clipboard` to get the contents of the clipboard.
+The `Get-ClipboardReverse` reverses the order of the characters and returns the reversed string.
+
+> [!NOTE]
+> The **PSCmdlet** class differs from the **Cmdlet** class. With the **PSCmdlet** class you must
+> invoke another cmdlet using the PowerShell pipeline API. When invoking another cmdlet from the
+> **Cmdlet** class there is runspace context information. This allows you to call the cmdlet's .NET
+> API directly. For an example, see [How to invoke a Cmdlet from within a Cmdlet][03].
 
 ## To invoke a cmdlet from within a PSCmdlet
 
@@ -20,8 +26,8 @@ PSCmdlet `Get-ClipboardReverse` calls `Get-Clipboard` to get the contents of the
     using System.Text;
     ```
 
-1. To invoke a PSCmdlet from within another PSCmdlet you must use the Pipeline API to construct a
-   new pipeline and add the cmdlet to be invoked. Call the
+1. To invoke a **PSCmdlet** from within another **PSCmdlet** you must use the Pipeline API to
+   construct a new pipeline and add the cmdlet to be invoked. Call the
    [System.Management.Automation.PowerShell.Invoke\<T>()][01] method to invoke the pipeline
 
     ```csharp
@@ -32,8 +38,8 @@ PSCmdlet `Get-ClipboardReverse` calls `Get-Clipboard` to get the contents of the
 
 ## Example
 
-In this example, the new `Get-ClipboardReverse` cmdlet is derived from the PSCmdlet class. To call
-another cmdlet from within this class you must build a PowerShell pipeline with the command and
+In this example, the new `Get-ClipboardReverse` cmdlet is derived from the **PSCmdlet** class. To
+call another cmdlet from within this class you must build a PowerShell pipeline with the command and
 parameters you want to execute, then invoke the pipeline.
 
 ```csharp
@@ -81,3 +87,4 @@ namespace ClipboardReverse
 <!-- link references -->
 [01]: /dotnet/api/system.management.automation.powershell.invoke#system-management-automation-powershell-invoke-1
 [02]: ./writing-a-windows-powershell-cmdlet.md
+[03]: ./how-to-invoke-a-cmdlet-from-within-a-cmdlet.md
