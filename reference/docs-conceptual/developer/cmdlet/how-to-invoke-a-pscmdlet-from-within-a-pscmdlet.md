@@ -10,7 +10,7 @@ This example shows how to invoke a PSCmdlet from within another PSCmdlet. In thi
 PSCmdlet `Get-ClipboardReverse` calls `Get-Clipboard` to get the contents of the clipboard. The
 `Get-ClipboardReverse` reverses the order of the characters and returns the reversed string.
 
-## To invoke a cmdlet from within a cmdlet
+## To invoke a cmdlet from within a PSCmdlet
 
 1. Ensure that the assembly that defines the cmdlet to be invoked is referenced and that the
    appropriate `using` statement is added. In this example, the following namespaces are added.
@@ -32,7 +32,7 @@ PSCmdlet `Get-ClipboardReverse` calls `Get-Clipboard` to get the contents of the
 
 ## Example
 
-In this example, the new `Get-ClipboardReverse` cmdlet derived from the PSCmdlet class. To call
+In this example, the new `Get-ClipboardReverse` cmdlet is derived from the PSCmdlet class. To call
 another cmdlet from within this class you must build a PowerShell pipeline with the command and
 parameters you want to execute, then invoke the pipeline.
 
