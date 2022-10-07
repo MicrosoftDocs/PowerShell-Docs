@@ -6,8 +6,7 @@ ms.custom: template-glossary-pattern
 ---
 # PowerShell Glossary
 
-This article lists common terms used to talk about PowerShell. It includes definitions and
-guidelines such as capitalization.
+This article lists common terms used to talk about PowerShell.
 
 ## B
 
