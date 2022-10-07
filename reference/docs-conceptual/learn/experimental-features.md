@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 09/27/2022
+ms.date: 10/07/2022
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -15,11 +15,10 @@ breaking changes.
 > [!CAUTION]
 > Experimental features aren't intended to be used in production since the changes are allowed to be
 > breaking. Experimental features aren't officially supported. However, we appreciate any feedback
-> and bug reports. You can file issues in the
-> [GitHub source repository](https://github.com/PowerShell/PowerShell/issues/new/choose).
+> and bug reports. You can file issues in the [GitHub source repository][01].
 
 For more information about enabling or disabling these features, see
-[about_Experimental_Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features).
+[about_Experimental_Features][02].
 
 ## Available features
 
@@ -41,7 +40,7 @@ Legend
 | PSNotApplyErrorActionToStderr                              |                  | &#x2714;&#xfe0f; |     &#x2705;     |                  |
 | PSImplicitRemotingBatching                                 | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x274c;     |                  |
 | PSCommandNotFoundSuggestion                                | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
-| PSDesiredStateConfiguration.InvokeDscResource              | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
+| PSDesiredStateConfiguration.InvokeDscResource (DSC v2)     | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSNativePSPathResolution                                   |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x274c;     |
 | PSSubsystemPluginModel                                     |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
 | PSNativeCommandArgumentPassing                             |                  |                  | &#x2714;&#xfe0f; | &#x2705; |
@@ -103,7 +102,7 @@ enabled, PowerShell adds all invocations of .NET method members.
 
 This experiment was added in PowerShell 7.3.
 
-For more information about AMSI, see [How AMSI helps](/windows/win32/amsi/how-amsi-helps).
+For more information about AMSI, see [How AMSI helps][03].
 
 ## PSAnsiRenderingFileInfo
 
@@ -120,37 +119,34 @@ enables coloring of specific file types.
   The **Extension** member pre-includes extensions for archive and PowerShell files.
 
 For more information, see
-[about_Automatic_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables).
+[about_Automatic_Variables][04].
 
 > [!NOTE]
-> This feature is dependent on the **PSAnsiRendering** feature that is now a standard feature.
+> This feature is dependent on the **PSAnsiRendering** feature that's now a standard feature.
 
 ## PSCleanBlock
 
 > [!NOTE]
 > This feature became mainstream in PowerShell 7.3.preview-8.
 
-The `clean` block is a convenient way for users to clean up resources that span
-across the `begin`, `process`, and `end` blocks. It's semantically similar to a
-`finally` block that covers all other named blocks of a script function or a
-script cmdlet. Resource cleanup is enforced for the following scenarios:
+The `clean` block is a convenient way for users to clean up resources that span across the `begin`,
+`process`, and `end` blocks. It's semantically similar to a `finally` block that covers all other
+named blocks of a script function or a script cmdlet. Resource cleanup is enforced for the following
+scenarios:
 
 1. when the pipeline execution finishes normally without terminating error
 1. when the pipeline execution is interrupted due to terminating error
 1. when the pipeline is halted by `Select-Object -First`
-1. when the pipeline is being stopped by <kbd>Ctrl+c</kbd> or
-   `StopProcessing()`
+1. when the pipeline is being stopped by <kbd>Ctrl+c</kbd> or `StopProcessing()`
 
 > [!CAUTION]
-> Adding the `clean` block is a breaking change. Because `clean` is parsed as a
-> keyword, it prevents users from directly calling a command named `clean` as
-> the first statement in a script block. However, it's likely a non-issue in
-> most practical cases, and when it is, the command can still be invoked with
-> the call operator (`& clean`).
+> Adding the `clean` block is a breaking change. Because `clean` is parsed as a keyword, it prevents
+> users from directly calling a command named `clean` as the first statement in a script block.
+> However, it's likely a non-issue in most practical cases, and when it's, the command can still be
+> invoked with the call operator (`& clean`).
 
-For more information about this experimental feature, see
-[RFC0059](https://github.com/PowerShell/PowerShell-RFC/blob/master/Archive/Experimental/RFC0059-Cleanup-Script-Block.md)
-in the PowerShell/PowerShell-RFC repository.
+For more information about this experimental feature, see [RFC0059][05] in the
+**PowerShell/PowerShell-RFC** repository.
 
 ## PSCommandNotFoundSuggestion
 
@@ -161,7 +157,7 @@ PS> get
 ```
 
 ```Output
-get: The term 'get' is not recognized as the name of a cmdlet, function, script file,
+get: The term 'get' isn't recognized as the name of a cmdlet, function, script file,
 or operable program. Check the spelling of the name, or if a path was included, verify
 that the path is correct and try again.
 
@@ -207,6 +203,10 @@ In earlier previews of PowerShell 7.2, this feature was enabled by default. Begi
 PowerShell 7.2-preview7, the **PSDesiredStateConfiguration** module was removed and this feature is
 disabled by default. To enable this feature you must install the **PSDesiredStateConfiguration**
 v2.0.5 module from the PowerShell Gallery and enable the feature using `Enable-ExperimentalFeature`.
+
+DSC v3 doesn't have this experimental feature. DSC v3 only supports `Invoke-DSCResource` and doesn't
+use or support MOF compilation. For more information, see
+[PowerShell Desired State Configuration v3][06].
 
 ## PSExec
 
@@ -283,7 +283,7 @@ a native executable.
 > [!CAUTION]
 > The new behavior is a **breaking change** from current behavior. This may break scripts and
 > automation that work around the various issues when invoking native applications. Historically,
-> quotes must be escaped and it is not possible to provide empty arguments to a native application.
+> quotes must be escaped and it'sn't possible to provide empty arguments to a native application.
 
 This feature adds a new automatic variable `$PSNativeCommandArgumentPassing` that allows you to
 select the behavior at runtime. The valid values are `Legacy`, `Standard`, and `Windows`. `Legacy`
@@ -380,12 +380,12 @@ Arg 2 is <a b>
 
 ## PSNativeCommandErrorActionPreference
 
-Native commands usually return an exit code to the calling application that is zero for success or
+Native commands usually return an exit code to the calling application that's zero for success or
 non-zero for failure. However, native commands currently don't participate in the PowerShell error
-stream. Redirected **stderr** output isn't interpreted the same as the PowerShell error stream.
-Many native commands use stderr as an information or verbose stream, thus only the exit code
-matters. Users working with native commands in their scripts need to check the exit status after
-each call using similar to the following example:
+stream. Redirected **stderr** output isn't interpreted the same as the PowerShell error stream. Many
+native commands use stderr as an information or verbose stream, thus only the exit code matters.
+Users working with native commands in their scripts need to check the exit status after each call
+using similar to the following example:
 
 ```powershell
 if ($LASTEXITCODE -ne 0) {
@@ -423,11 +423,11 @@ If a PSDrive path that uses the FileSystem provider is passed to a native comman
 path is passed to the native command. This means a command like `code temp:/test.txt` now works as
 expected.
 
-Also, on Windows, if the path starts with `~`, that is resolved to the full path and passed to the
+Also, on Windows, if the path starts with `~`, that's resolved to the full path and passed to the
 native command. In both cases, the path is normalized to the directory separators for the relevant
 operating system.
 
-- If the path is not a PSDrive or `~` (on Windows), then path normalization doesn't occur
+- If the path isn't a PSDrive or `~` (on Windows), then path normalization doesn't occur
 - If the path is in single quotes, then it's not resolved and treated as literal
 
 ## PSNotApplyErrorActionToStderr
@@ -436,12 +436,12 @@ operating system.
 > This feature became mainstream in PowerShell 7.2.
 
 When this experimental feature is enabled, error records redirected from native commands, like when
-using redirection operators (`2>&1`), are not written to the `$Error` variable and the preference
-variable `$ErrorActionPreference` does not affect the redirected output.
+using redirection operators (`2>&1`), aren't written to the `$Error` variable and the preference
+variable `$ErrorActionPreference` doesn't affect the redirected output.
 
 Many native commands write to `stderr` as an alternative stream for additional information. This
-behavior can cause confusion when looking through errors or the additional output information can
-be lost to the user if `$ErrorActionPreference` is set to a state that mutes the output.
+behavior can cause confusion when looking through errors or the additional output information can be
+lost to the user if `$ErrorActionPreference` is set to a state that mutes the output.
 
 When a native command has a non-zero exit code, `$?` is set to `$false`. If the exit code is zero,
 `$?` is set to `$true`.
@@ -453,7 +453,7 @@ When a native command has a non-zero exit code, `$?` is set to `$false`. If the 
 
 Introduces new operators for Null conditional member access operators - `?.` and `?[]`. Null member
 access operators can be used on scalar types and array types. Return the value of the accessed
-member if the variable is not null. If the value of the variable is null, then return null.
+member if the variable isn't null. If the value of the variable is null, then return null.
 
 ```powershell
 $x = $null
@@ -466,10 +466,10 @@ ${x?}?[0]
 ${x}?.MyMethod()
 ```
 
-The property `propname` is accessed and it's value is returned only if `$x` is not null. Similarly,
-the indexer is used only if `$x` is not null. If `$x` is null, then null is returned.
+The property `propname` is accessed and it's value is returned only if `$x` isn't null. Similarly,
+the indexer is used only if `$x` isn't null. If `$x` is null, then null is returned.
 
-The `?.` and `?[]` operators are member access operators and do not allow a space in between the
+The `?.` and `?[]` operators are member access operators and don't allow a space in between the
 variable name and the operator.
 
 Since PowerShell allows `?` as part of the variable name, disambiguation is required when the
@@ -526,10 +526,18 @@ allows these components to become optional features for a minimal PowerShell ins
 
 Currently, only the **CommandPredictor** subsystem is supported. This subsystem is used along with
 the PSReadLine module to provide custom prediction plugins. In future, **Job**,
-**CommandCompleter**, **Remoting** and other components could be separated into subsystem
-assemblies outside of `System.Management.Automation.dll`.
+**CommandCompleter**, **Remoting** and other components could be separated into subsystem assemblies
+outside of `System.Management.Automation.dll`.
 
-The experimental feature includes a new cmdlet,
-[Get-PSSubsystem](xref:Microsoft.PowerShell.Core.Get-PSSubsystem). This cmdlet is only available
+The experimental feature includes a new cmdlet, [Get-PSSubsystem][07]. This cmdlet is only available
 when the feature is enabled. This cmdlet returns information about the subsystems that are available
 on the system.
+
+<!-- added link references -->
+[01]: https://github.com/PowerShell/PowerShell/issues/new/choose
+[02]: /powershell/module/microsoft.powershell.core/about/about_experimental_features
+[03]: /windows/win32/amsi/how-amsi-helps
+[04]: /powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables
+[05]: https://github.com/PowerShell/PowerShell-RFC/blob/master/Archive/Experimental/RFC0059-Cleanup-Script-Block.md
+[06]: /powershell/dsc/overview?view=dsc-3.0&preserve-view=true
+[07]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
