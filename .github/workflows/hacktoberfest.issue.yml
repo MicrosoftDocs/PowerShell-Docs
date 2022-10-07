@@ -1,0 +1,105 @@
+name: "Hacktoberfest Issues"
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  # Check if the issue is for hacktoberfest; all other jobs depend on this one.
+  hacktober:
+    name: Verify issue is for hacktoberfest
+    runs-on: ubuntu-latest
+    outputs:
+      check: ${{ steps.is-hacktober.outputs.match != '' }}
+    steps:
+      - uses: actions-ecosystem/action-regex-match@v2
+        id: is-hacktober
+        with:
+          text: ${{ github.event.issue.body }}
+          regex: "🎃 2022: Foo"
+          flags: gm
+
+  project:
+    name: Add to project
+    needs: hacktober
+    if: needs.hacktober.outputs.check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v0.3.0
+        with:
+          project-url: https://github.com/orgs/MicrosoftDocs/projects/15/views/1
+          github-token: ${{ secrets.hacktober_token }}
+
+  assign:
+    name: Assign to author
+    needs: hacktober
+    if: needs.hacktober.outputs.check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-ecosystem/action-add-assignees@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          assignees: ${{ github.event.issue.user.login }}
+
+  associate:
+    name: Associate with meta issue
+    needs: hacktober
+    if: needs.hacktober.outputs.check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-ecosystem/action-regex-match@v2
+        id: body-associated
+        with:
+          text: ${{ github.event.issue.body }}
+          regex: '^- MicrosoftDocs\/PowerShell-Docs#9257$'
+      - if: steps.body-associated.outputs.match == ''
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}
+          BODY: ${{ github.event.issue.body }}
+          PREFIX: |
+            This issue's related to [Hacktoberfest 2022][01]. For more info, see the meta-issue below:
+
+            - MicrosoftDocs/PowerShell-Docs#9257
+
+            [01]: https://hacktoberfest.com/participation/
+        run: |
+          $env:PREFIX, $env:BODY
+          | Join-String -Separator "`n"
+          | Out-File -FilePath combined.txt -Encoding utf8
+
+          gh issue edit $env:ISSUE --body-file combined.txt
+
+  label:
+    name: Add quality labels
+    needs: hacktober
+    if: needs.hacktober.outputs.check
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - regex: Aliases
+            label: quality-aliases
+          - regex: Formatting code samples
+            label: quality-format-code-samples
+          - regex: Formatting command syntax
+            label: quality-format-command-syntax
+          - regex: Link references
+            label: quality-link-references
+          - regex: Markdown linting
+            label: quality-markdownlint
+          - regex: Spelling
+            label: quality-spelling
+    steps:
+      - uses: actions-ecosystem/action-regex-match@v2
+        id: matcher
+        with:
+          text: ${{ github.event.issue.body }}
+          regex: '^### Quality Areas\s*^.*${{ matrix.regex }}.*$'
+          flags: gm
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: steps.matcher.outputs.match != ''
+        with:
+          labels: ${{ matrix.label }}
