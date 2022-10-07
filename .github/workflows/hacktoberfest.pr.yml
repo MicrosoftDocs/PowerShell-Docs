@@ -1,0 +1,62 @@
+name: "Hacktoberfest"
+on:
+  pull_request_target:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - edited
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  # Check if PR is for hacktoberfest and in what condition; all other jobs depend on these checks.
+  check:
+    name: Check if PR is for Hacktoberfest
+    outputs:
+      title:   ${{ steps.title.outputs.check   == 'true' }}
+      labeled: ${{ steps.labeled.outputs.check == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: title
+        run: |
+          $Check = "${{ contains(github.event.pull_request.title, '🎃') }}"
+          "Check: $Check"
+          "::set-output name=check::$Check"
+      - id: labeled
+        env:
+          NEW_LABEL: >-
+            ${{ github.event.label.name == 'hacktoberfest-candidate' }}
+          HAS_LABEL: >-
+            ${{ contains(github.event.pull_request.labels.*.name, 'hacktoberfest-candidate')}}
+        run: |
+          $Check = [bool]::Parse($env:NEW_LABEL) -or [bool]::Parse($env:HAS_LABEL)
+          "Check: $Check"
+          "::set-output name=check::$Check"
+
+  label:
+    name: Add hacktoberfest candidate label
+    needs: check
+    if: |
+      needs.check.outputs.title
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: hacktoberfest-candidate
+
+  project:
+    name: Add pull request to project
+    needs: check
+    if: |
+      needs.check.outputs.title ||
+      needs.check.outputs.labeled
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v0.3.0
+        with:
+          project-url: https://github.com/orgs/MicrosoftDocs/projects/15/views/1
+          github-token: ${{ secrets.hacktober_token }}

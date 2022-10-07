@@ -282,7 +282,7 @@ This is a work in progress. Please help us keep this information fresh.
 | Test-Path                     | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                  |
 | Undo-Transaction              | &#x2705; |          |          |          | Windows only                     |
 | Use-Transaction               | &#x2705; |          |          |          | Windows only                     |
-| Wait-Process                  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | Does not work on Linux/macOS     |
+| Wait-Process                  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |                                  |
 | Write-EventLog                | &#x2705; |          |          |          | Windows only                     |
 
 ### Microsoft.PowerShell.ODataUtils
