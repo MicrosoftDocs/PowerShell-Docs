@@ -32,7 +32,7 @@ command is completed.
 
 ### Dynamic module
 
-A module that exists only in memory. The New-Module and Import-PSSession cmdlets create dynamic
+A module that exists only in memory. The `New-Module` and `Import-PSSession` cmdlets create dynamic
 modules.
 
 ### Dynamic parameter
