@@ -1,7 +1,7 @@
 ---
 description: PowerShell logs internal operations from the engine, providers, and cmdlets to the Windows event log.
 Locale: en-US
-ms.date: 03/30/2020
+ms.date: 10/07/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logging Windows
@@ -25,6 +25,16 @@ stopping the engine and providers, and executing PowerShell commands.
 > information, see the cmdlet documentation and about_EventLogs for your
 > version of Windows PowerShell.
 
+## Registering the PowerShell event provider on Windows
+
+Unlike Linux or macOS, Windows requires the event provider to be registered
+before events can be written to the event log. To enable the PowerShell event
+provider, run the following command from an elevated PowerShell prompt.
+
+```powershell
+$PSHOME\RegisterManifest.ps1
+```
+
 ## Viewing the PowerShell event log entries on Windows
 
 PowerShell logs can be viewed using the Windows Event Viewer. The event log is
@@ -43,16 +53,6 @@ the `PowerShellCore/Operational` log:
 | Opcode  | `Create`          |
 | Task    | `CommandStart`    |
 | Keyword | `Runspace`        |
-
-### Registering the PowerShell event provider on Windows
-
-Unlike Linux or macOS, Windows requires the event provider to be registered
-before events can be written to the event log. To enable the PowerShell event
-provider, run the following command from an elevated PowerShell prompt.
-
-```powershell
-$PSHOME\RegisterManifest.ps1
-```
 
 ### Unregistering the PowerShell event provider on Windows
 
@@ -127,13 +127,13 @@ content and decrypt content are kept separate.
 The public key can be shared widely and isn't sensitive data. Any content
 encrypted with this public key can only be decrypted by the private key. For
 more information about Public Key Cryptography, see
-[Wikipedia - Public Key Cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
+[Wikipedia - Public Key Cryptography][01].
 
 To enable a Protected Event Logging policy, deploy a public key to all machines
 that have event log data to protect. The corresponding private key is used to
 post-process the event logs at a more secure location such as a central event
-log collector, or [SIEM][SIEM] aggregator. You can set up SIEM in Azure. For more
-information, see [Generic SIEM integration](/cloud-app-security/siem).
+log collector, or [SIEM][02] aggregator. You can set up SIEM in Azure. For more
+information, see [Generic SIEM integration][03].
 
 ### Enabling Protected Event Logging via Group Policy
 
@@ -172,9 +172,14 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 
 ## See also
 
-- [about_Logging_Non-Windows](about_Logging_Non-Windows.md)
-- [PowerShell the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
-- [Generic SIEM integration](/cloud-app-security/siem)
+- [about_Logging_Non-Windows][04]
+- [PowerShell the Blue Team][05]
+- [Generic SIEM integration][03]
 
-<!-- link references -->
-[SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management
+<!-- added link references -->
+[01]: https://en.wikipedia.org/wiki/Public-key_cryptography
+[02]: https://wikipedia.org/wiki/Security_information_and_event_management
+[03]: /cloud-app-security/siem
+[04]: about_Logging_Non-Windows.md
+[05]: https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
+[06]: /cloud-app-security/siem
