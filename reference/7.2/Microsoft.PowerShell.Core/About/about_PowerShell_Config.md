@@ -1,7 +1,7 @@
 ---
 description: Configuration files for PowerShell, replacing Registry configuration.
 Locale: en-US
-ms.date: 10/22/2021
+ms.date: 10/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PowerShell Config
@@ -78,7 +78,7 @@ The following example sets the execution policy of PowerShell to `RemoteSigned`.
 
 ```json
 {
-  "Microsoft.PowerShell.ExecutionPolicy": "RemoteSigned"
+  "Microsoft.PowerShell:ExecutionPolicy": "RemoteSigned"
 }
 ```
 
@@ -365,7 +365,7 @@ This configuration has more settings explicitly set:
 
 ```json
 {
-  "Microsoft.PowerShell.ExecutionPolicy": "AllSigned",
+  "Microsoft.PowerShell:ExecutionPolicy": "AllSigned",
   "PSModulePath": "Z:\\Marisol's Shared Drive\\Modules",
   "ExperimentalFeatures": ["PSImplicitRemotingBatching"],
 }
