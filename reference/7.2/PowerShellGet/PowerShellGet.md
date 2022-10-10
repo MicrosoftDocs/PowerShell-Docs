@@ -4,7 +4,7 @@ Help Version: 7.2.0.0
 Locale: en-US
 Module Guid: 1d73a601-4a6c-43c5-ba3f-619b18bbb404
 Module Name: PowerShellGet
-ms.date: 04/21/2022
+ms.date: 10/10/2022
 schema: 2.0.0
 title: PowerShellGet
 ---
@@ -15,13 +15,20 @@ title: PowerShellGet
 PowerShellGet is a module with commands for discovering, installing, updating and publishing
 PowerShell artifacts like Modules, DSC Resources, Role Capabilities, and Scripts.
 
+> [!IMPORTANT]
+> Windows PowerShell 5.1 comes with version 1.0.0.1 of **PowerShellGet** preinstalled. This version
+> of PowerShellGet has a limited features and doesn't support the updated capabilities of the
+> PowerShell Gallery. To be supported, you must update to the latest version.
+
+PowerShell 6.0 shipped with version 1.6.0 of **PowerShellGet**. PowerShell 7.0 shipped with version
+2.2.3 of **PowerShellGet**. The current supported version of **PowerShellGet** is 2.2.5. If you are
+running Windows PowerShell 5.1, you must install a newer version.
+
 The cmdlet reference documentation on this site documents the latest version of the module.
 
 > [!IMPORTANT]
-> As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
-> versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
-> trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
-> 1.2:
+> The PowerShell Gallery only supports Transport Layer Security (TLS) 1.2 or higher. Use the
+> following command to ensure you are using TLS 1.2:
 >
 > `[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12`
 >

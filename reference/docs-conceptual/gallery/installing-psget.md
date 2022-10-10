@@ -1,21 +1,18 @@
 ---
 description: This article explains how to install the PowerShellGet module in various versions of PowerShell.
-ms.date: 04/21/2022
+ms.date: 10/10/2022
 title: Installing PowerShellGet
 ---
 # Installing PowerShellGet on Windows
 
-Windows PowerShell 5.1 comes with version 1.0.0.1 of **PowerShellGet** preinstalled.
-
 > [!IMPORTANT]
-> This version of PowerShellGet has a limited features and doesn't support the updated capabilities
-> of the PowerShell Gallery. To be supported, you must update to the latest version.
+> Windows PowerShell 5.1 comes with version 1.0.0.1 of **PowerShellGet** preinstalled. This version
+> of PowerShellGet has a limited features and doesn't support the updated capabilities of the
+> PowerShell Gallery. To be supported, you must update to the latest version.
 
 PowerShell 6.0 shipped with version 1.6.0 of **PowerShellGet**. PowerShell 7.0 shipped with version
-2.2.3 of **PowerShellGet**. The current supported version of **PowerShellGet** is 2.2.5.
-
-If you are running PowerShell 6 or higher, you have a usable version of **PowerShellGet**. If you
-are running Windows PowerShell 5.1, you must install a newer version.
+2.2.3 of **PowerShellGet**. The current supported version of **PowerShellGet** is 2.2.5. If you are
+running Windows PowerShell 5.1, you must install a newer version.
 
 For best results, you should always install the latest supported version.
 
