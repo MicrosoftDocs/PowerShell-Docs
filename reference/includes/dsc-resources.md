@@ -7,7 +7,7 @@ ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
 > [!NOTE]
-> This documentation of this DSC resource covers the version that is included with PowerShell. The
+> This documentation of this DSC resource covers the version that's included with PowerShell. The
 > **PSDscResources** module contains new and updated that are officially supported by Microsoft.
 > The **PSDscResources** module is available from the PowerShell Gallery.
 >

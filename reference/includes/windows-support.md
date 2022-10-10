@@ -11,23 +11,30 @@ on. These versions are supported until either the version of
 [PowerShell reaches end-of-support][lifecycle] or the version of
 [Windows reaches end-of-support][eol-windows].
 
-- A &#x2705; indicates that the version of the OS or PowerShell is still supported
-- A &#x274c; indicates that the version of the OS or PowerShell isn't supported
-- A &#x1f7e1; indicates the version of PowerShell is no longer supported on that version of the OS
-- When both the version of the OS and the version of PowerShell have &#x2705;, that combination is
-  supported
+- The ![Supported][1] icon indicates that the version of the OS or PowerShell is still supported
+- The ![Out of Support][4] icon indicates the version of PowerShell is no longer supported on that
+  version of the OS
+- The ![In Test][2] icon indicates that we haven't finished testing PowerShell on that OS
+- The ![Not Supported][3] icon indicates that the version of the OS or PowerShell isn't supported
+- When both the version of the OS and the version of PowerShell have a ![Supported][1] icon, that
+  combination is supported
 
-|                     Windows                      | 7.0 (LTS) |    7.1    | 7.2 (LTS-current) | 7.3 (preview) |
-| ------------------------------------------------ | :-------: | :-------: | :---------------: | :-----------: |
-| &#x2705; Windows Server 2016, 2019, or 2022      | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
-| &#x2705; Windows Server 2012 R2                  | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
-| &#x2705; Windows Server Core (2012 R2 or higher) | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
-| &#x2705; Windows Server Nano (1809 or higher)    | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
-| &#x274c; Windows Server 2012                     | &#x1f7e1; | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
-| &#x274c; Windows Server 2008 R2                  | &#x1f7e1; | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
-| &#x2705; Windows 11                              | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
-| &#x2705; Windows 10 1607+                        | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
-| &#x2705; Windows 8.1                             | &#x2705;  | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
+[1]: ../media/shared/check-mark-button_2705.svg
+[2]: ../media/shared/construction-sign_1f6a7.svg
+[3]: ../media/shared/cross-mark_274c.svg
+[4]: ../media/shared/large-yellow-circle_1f7e1.svg
+
+|                         Windows                         |      7.0 (LTS)       |         7.1          |  7.2 (LTS-current)  |    7.3 (preview)    |
+| ------------------------------------------------------- | :------------------: | :------------------: | :-----------------: | :-----------------: |
+| ![Supported][1] Windows Server 2016, 2019, or 2022      |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
+| ![Supported][1] Windows Server 2012 R2                  |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
+| ![Supported][1] Windows Server Core (2012 R2 or higher) |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
+| ![Supported][1] Windows Server Nano (1809 or higher)    |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
+| ![Not Supported][3] Windows Server 2012                 | ![Out of Support][4] | ![Out of Support][4] | ![Not Supported][3] | ![Not Supported][3] |
+| ![Not Supported][3] Windows Server 2008 R2              | ![Out of Support][4] | ![Out of Support][4] | ![Not Supported][3] | ![Not Supported][3] |
+| ![Supported][1] Windows 11                              |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
+| ![Supported][1] Windows 10 1607+                        |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
+| ![Supported][1] Windows 8.1                             |   ![Supported][1]    | ![Out of Support][4] | ![Not Supported][3] | ![Not Supported][3] |
 
 > [!NOTE]
 > Support for a specific version of Windows is determined by the Microsoft Support Lifecycle
