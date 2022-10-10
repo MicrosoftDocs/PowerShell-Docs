@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 07/12/2022
+ms.date: 10/10/2022
 ms.prod: powershell
 ms.topic: include
 ---
@@ -19,14 +19,15 @@ supported on. These versions are supported until either the version of
 
 |    Alpine     | 7.0 (LTS) |    7.1    | 7.2 (LTS-current) | 7.3 (preview) |
 | ------------- | :-------: | :-------: | :---------------: | :-----------: |
+| &#x2705; 3.15 | &#x274c;  | &#x274c;  |     &#x1f7e1;*    |   &#x1f7e1;*  |
 | &#x2705; 3.14 | &#x274c;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
-| &#x2705; 3.13 | &#x274c;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
-| &#x2705; 3.12 | &#x2705;  | &#x1f7e1; |     &#x2705;      |   &#x2705;    |
-| &#x2705; 3.11 | &#x274c;  | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
+| &#x274c; 3.13 | &#x274c;  | &#x1f7e1; |     &#x1f7e1;     |   &#x1f7e1;   |
+| &#x274c; 3.12 | &#x1f7e1; | &#x1f7e1; |     &#x1f7e1;     |   &#x1f7e1;   |
+| &#x274c; 3.11 | &#x274c;  | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
 | &#x274c; 3.10 | &#x1f7e1; | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
 | &#x274c; 3.9  | &#x1f7e1; | &#x1f7e1; |     &#x274c;      |   &#x274c;    |
 
-Alpine 3.15 is in the process of being tested for PowerShell 7.3 (preview).
+\* Alpine 3.15 is in the process of being tested.
 
 PowerShell is supported on Alpine for the following processor architectures.
 
