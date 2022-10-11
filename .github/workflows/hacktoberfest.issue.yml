@@ -22,7 +22,7 @@ jobs:
   project:
     name: Add to project
     needs: hacktober
-    if: needs.hacktober.outputs.check
+    if: needs.hacktober.outputs.check == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/add-to-project@v0.3.0
@@ -33,7 +33,7 @@ jobs:
   assign:
     name: Assign to author
     needs: hacktober
-    if: needs.hacktober.outputs.check
+    if: needs.hacktober.outputs.check == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions-ecosystem/action-add-assignees@v1
@@ -44,7 +44,7 @@ jobs:
   associate:
     name: Associate with meta issue
     needs: hacktober
-    if: needs.hacktober.outputs.check
+    if: needs.hacktober.outputs.check == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions-ecosystem/action-regex-match@v2
@@ -74,7 +74,7 @@ jobs:
   label:
     name: Add quality labels
     needs: hacktober
-    if: needs.hacktober.outputs.check
+    if: needs.hacktober.outputs.check == 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
