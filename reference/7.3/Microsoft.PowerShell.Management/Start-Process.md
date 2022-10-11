@@ -6,11 +6,6 @@ ms.date: 10/05/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
-alias:
-  - all: saps
-  - linux:
-  - macos:
-  - windows: start
 ---
 # Start-Process
 
