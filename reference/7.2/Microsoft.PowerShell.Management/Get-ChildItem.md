@@ -6,14 +6,6 @@ ms.date: 10/03/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
-alias:
-  - all:
-    - dir
-    - gci
-  - linux:
-  - macos:
-  - windows:
-    - ls
 ---
 # Get-ChildItem
 
