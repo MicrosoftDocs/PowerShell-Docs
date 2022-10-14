@@ -233,4 +233,4 @@ A workflow is a sequence of programmed, connected steps that perform long-runnin
 the coordination of multiple steps across multiple devices or managed nodes. Windows PowerShell
 Workflow lets IT pros and developers author sequences of multi-device management activities, or
 single tasks within a workflow, as workflows. Windows PowerShell Workflow lets you adapt and run
-both PowerShell scripts and XAML files as workflows.
+both PowerShell scripts and XAML files as workflows. 
