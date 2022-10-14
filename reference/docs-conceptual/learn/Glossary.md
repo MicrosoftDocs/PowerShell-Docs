@@ -1,6 +1,6 @@
 ---
 description: A glossary of PowerShell-related terminology.
-ms.date: 06/11/2020
+ms.date: 10/13/2022
 title: PowerShell Glossary
 ms.custom: template-glossary-pattern
 ---
@@ -10,46 +10,46 @@ This article lists common terms used to talk about PowerShell.
 
 ## B
 
-### Binary module
+### binary module
 
 A PowerShell module whose root module is a binary (`.dll`) file. A binary module may or may not
 include a module manifest.
 
 ## C
 
-### Common Parameter
+### CommonParameter
 
 A parameter that's added to all cmdlets, advanced functions, and workflows by the PowerShell engine.
 
 ## D
 
-### Dot source
+### dot source
 
 In PowerShell, to start a command by typing a dot and a space before the command. Commands that are
 dot sourced run in the current scope instead of in a new scope. Any variables, aliases, functions,
 or drives that command creates are created in the current scope and are available to users when the
 command is completed.
 
-### Dynamic module
+### dynamic module
 
 A module that exists only in memory. The `New-Module` and `Import-PSSession` cmdlets create dynamic
 modules.
 
-### Dynamic parameter
+### dynamic parameter
 
 A parameter that's added to a PowerShell cmdlet, function, or script under certain conditions.
 Cmdlets, functions, providers, and scripts can add dynamic parameters.
 
 ## F
 
-### Formatting file
+### format file
 
 A PowerShell XML file that has the `.format.ps1xml` extension and that defines how PowerShell
 displays an object based on its .NET Framework type.
 
 ## G
 
-### Global session state
+### global session state
 
 The session state that contains the data that's accessible to the user of a PowerShell session.
 
@@ -60,13 +60,13 @@ The session state that contains the data that's accessible to the user of a Powe
 The interface that the PowerShell engine uses to communicate with the user. For example, the host
 specifies how prompts are handled between PowerShell and the user.
 
-### Host application
+### host application
 
 A program that loads the PowerShell engine into its process and uses it to perform operations.
 
 ## I
 
-### Input processing method
+### input processing method
 
 A method that a cmdlet can use to process the records it receives as input. The input processing
 methods include the `BeginProcessing` method, the `ProcessRecord` method, the `EndProcessing`
@@ -74,54 +74,54 @@ method, and the `StopProcessing` method.
 
 ## M
 
-### Manifest module
+### manifest module
 
 A PowerShell module that has a manifest and whose **RootModule** key is empty.
 
-### Member-access enumeration
+### member-access enumeration
 
 A PowerShell convenience feature to automatically enumerate items in a collection when using the
 member-access operator (`.`).
 
-### Module
+### module
 
 A self-contained reusable unit that allows you to partition, organize, and abstract your PowerShell
 code. A module can contain cmdlets, providers, functions, variables, and other types of resources
 that can be imported as a single unit.
 
-### Module manifest
+### module manifest
 
 A PowerShell data file (`.psd1`) that describes the contents of a module and that controls how a
 module is processed.
 
-### Module session state
+### module session state
 
 The session state that contains the public and private data of a PowerShell module. The private data
 in this session state isn't available to the user of a PowerShell session.
 
 ## N
 
-### Non-terminating error
+### non-terminating error
 
 An error that doesn't stop PowerShell from continuing to process the command.
 
-### Noun
+### noun
 
 The word that follows the hyphen in a PowerShell cmdlet name. The noun describes the resources upon
 which the cmdlet acts.
 
 ## P
 
-### Parameter set
+### parameter set
 
 A group of parameters that can be used in the same command to perform a specific action.
 
-### Pipe
+### pipe
 
 In PowerShell, to send the results of the preceding command as input to the next command in the
 pipeline.
 
-### Pipeline
+### pipeline
 
 A series of commands connected by pipeline operators (`|`). Each pipeline operator sends the results
 of the preceding command as input to the next command.
@@ -147,7 +147,7 @@ A virtual drive that provides direct access to a data store. It can be defined b
 provider or created at the command line. Drives created at the command line are session-specific
 drives and are lost when the session is closed.
 
-### Provider
+### provider
 
 A Microsoft .NET Framework-based program that makes the data in a specialized data store available
 in PowerShell so that you can view and manage it.
@@ -158,52 +158,53 @@ A type of PowerShell session that's created, managed, and closed by the user.
 
 ## R
 
-### Root module
+### root module
 
-The module specified in the RootModule key in a module manifest.
+The module specified in the **RootModule** key in a module manifest.
 
-### Runspace
+### runspace
 
 In PowerShell, the operating environment in which each command in a pipeline is executed.
 
 ## S
 
-### Script block
+### script block
 
 In the PowerShell programming language, a collection of statements or expressions that can be used
 as a single unit. A script block can accept arguments and return values.
 
-### Script file
+### script file
 
 A file that has the `.ps1` extension and contains a script written in the PowerShell language.
 
-### Script module
+### script module
 
 A PowerShell module whose root module is a script module (`.psm1`) file. A script module may include
 a module manifest. The script defines the members that the script module exports.
 
-### Shell
+### shell
 
 The command interpreter that's used to pass commands to the operating system.
 
-### Switch parameter
+### switch parameter
 
-A parameter that doesn't take an argument.
+A parameter that doesn't take an argument. The value of a switch parameter defaults to `$false`.
+When a switch parameter is used, its value becomes `$true`.
 
 ## T
 
-### Terminating error
+### terminating error
 
 An error that stops PowerShell from processing the command.
 
-### Transaction
+### transaction
 
 An atomic unit of work. The work in a transaction must be completed as a whole. If any part of the
 transaction fails, the entire transaction fails.
 
-### Types file
+### type file
 
-A PowerShell XML file that has the `.ps1xml` extension and that extends the properties of Microsoft
+A PowerShell XML file that has the `.types.ps1xml` extension and that extends the properties of Microsoft
 .NET Framework types in PowerShell.
 
 ## V
@@ -232,4 +233,4 @@ A workflow is a sequence of programmed, connected steps that perform long-runnin
 the coordination of multiple steps across multiple devices or managed nodes. Windows PowerShell
 Workflow lets IT pros and developers author sequences of multi-device management activities, or
 single tasks within a workflow, as workflows. Windows PowerShell Workflow lets you adapt and run
-both PowerShell scripts and XAML files as workflows.
+both PowerShell scripts and XAML files as workflows. 
