@@ -253,7 +253,7 @@ $fourth.Key = 4
 Clone creates a shallow copy of the object. They have different instances now and `$third.key` is 3
 and `$fourth.Key` is 4 in this example.
 
-I call this a shallow copy because if you have nested objects (i.e. objects whose properties contain other
+I call this a shallow copy because if you have nested objects (objects with properties contain other
 objects), only the top-level values are copied. The child objects will reference each other.
 
 ### PSTypeName for custom object types
