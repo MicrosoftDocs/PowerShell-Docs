@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/01/2022
+ms.date: 10/17/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-psdrive?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSDrive
@@ -261,7 +261,7 @@ longer available.
 New-PSDrive -Persist -Name "X" -PSProvider "FileSystem" -Root "\\Server01\Public" -Scope Global
 ```
 
-To ensure that the drive is available outside of the script to must use the **Scope** parameter to
+To ensure that the drive is available outside of the script you must use the **Scope** parameter to
 create the drive in the **Global** scope.
 
 ## PARAMETERS

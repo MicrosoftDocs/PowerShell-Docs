@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 07/20/2022
+ms.date: 10/17/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -514,11 +514,16 @@ For more information, see [About_Pipeline_Chain_Operators](About_Pipeline_Chain_
 
 ### Range operator `..`
 
-Represents the sequential integers in an integer array, given an upper, and
-lower boundary.
+The range operator can be used to represents an array of sequential integers or
+characters. The values joined by the range operator define the start and end
+values of the range.
+
+> [!NOTE]
+> Support for character ranges was added in PowerShell 6.
 
 ```powershell
 1..10
+$max = 10
 foreach ($a in 1..$max) {Write-Host $a}
 ```
 
@@ -529,10 +534,7 @@ You can also create ranges in reverse order.
 5..-5 | ForEach-Object {Write-Output $_}
 ```
 
-Beginning in PowerShell 6, the range operator works with **Characters** as
-well as **Integers**.
-
-To create a range of characters, enclose the boundary characters in quotes.
+To create a range of characters, enclose the characters in quotes.
 
 ```powershell
 PS> 'a'..'f'
@@ -553,6 +555,71 @@ C
 B
 A
 ```
+
+If you assign a character range to a string, it's treated the same assigning a
+character array to a string.
+
+```powershell
+PS> [string]$s = 'a'..'e'
+$s
+a b c d e
+$a = 'a', 'b', 'c', 'd', 'e'
+$a
+a b c d e
+```
+
+The characters in the array are joined into a string. The characters are
+separated by the value of the `$OFS` preference variable. For more information,
+see [about_Preference_Variables](about_Preference_Variables.md#ofs).
+
+The order of the characters in the array is determined by the ASCII value of
+the character. For example, the ASCII values of `c` and `X` are 99 and 88,
+respectively. That range would be presented in reverse order.
+
+```powershell
+PS> 'c'..'X'
+c
+b
+a
+`
+_
+^
+]
+\
+[
+Z
+Y
+X
+```
+
+The start and end values of the range can be any pair of expressions that
+evaluate to an integer or a character. For example, you could use the members
+of an enumeration for your start and end values.
+
+```powershell
+PS> enum Food {
+      Apple
+      Banana = 3
+      Kiwi = 10
+    }
+PS> [Food]::Apple..[Food]::Kiwi
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
+> [!IMPORTANT]
+> The resulting range isn't limited to the values of the enumeration. Instead
+> it represents the range of values between the two values provided. You can't
+> use the range operator to reliably represent the members of an enumeration.
 
 ### Member-access operator `.`
 
