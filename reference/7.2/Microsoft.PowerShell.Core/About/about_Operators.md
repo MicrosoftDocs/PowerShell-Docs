@@ -556,6 +556,71 @@ B
 A
 ```
 
+If you assign a character range to a string, it's treated the same assigning a
+character array to a string.
+
+```powershell
+PS> [string]$s = 'a'..'e'
+$s
+a b c d e
+$a = 'a', 'b', 'c', 'd', 'e'
+$a
+a b c d e
+```
+
+The characters in the array are joined into a string. The characters are
+separated by the value of the `$OFS` preference variable. For more information,
+see [about_Preference_Variables](about_Preference_Variables.md#ofs).
+
+The order of the characters in the array is determined by the ASCII value of
+the character. For example, the ASCII values of `c` and `X` are 99 and 88,
+respectively. That range would be presented in reverse order.
+
+```powershell
+PS> 'c'..'X'
+c
+b
+a
+`
+_
+^
+]
+\
+[
+Z
+Y
+X
+```
+
+The start and end values of the range can be any pair of expressions that
+evaluate to an integer or a character. For example, you could use the members
+of an enumeration for your start and end values.
+
+```powershell
+PS> enum Food {
+      Apple
+      Banana = 3
+      Kiwi = 10
+    }
+PS> [Food]::Apple..[Food]::Kiwi
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
+> [!IMPORTANT]
+> The resulting range isn't limited to the values of the enumeration. Instead
+> is represents the range of values between the two values provided. You can't
+> use the range operator to reliably represent the members of an enumeration.
+
 ### Member-access operator `.`
 
 Accesses the properties and methods of an object. The member name may be an
