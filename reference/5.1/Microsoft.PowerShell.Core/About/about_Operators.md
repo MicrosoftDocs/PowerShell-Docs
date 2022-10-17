@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 07/20/2022
+ms.date: 10/17/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -429,11 +429,16 @@ Get-Service | Where-Object {$_.StartType -eq 'Automatic'}
 
 ### Range operator `..`
 
-Represents the sequential integers in an integer array, given an upper, and
-lower boundary.
+The range operator can be used to represents an array of sequential integers.
+The values joined by the range operator define the start and end values of the
+range.
+
+> [!NOTE]
+> Support for character ranges was added in PowerShell 6.
 
 ```powershell
 1..10
+$max = 10
 foreach ($a in 1..$max) {Write-Host $a}
 ```
 
@@ -443,6 +448,35 @@ You can also create ranges in reverse order.
 10..1
 5..-5 | ForEach-Object {Write-Output $_}
 ```
+
+The start and end values of the range can be any pair of expressions that
+evaluate to an integer. For example, you could use the members of an
+enumeration for your start and end values.
+
+```powershell
+PS> enum Food {
+      Apple
+      Banana = 3
+      Kiwi = 10
+    }
+PS> [Food]::Apple..[Food]::Kiwi
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
+> [!IMPORTANT]
+> The resulting range isn't limited to the values of the enumeration. Instead
+> is represents the range of values between the two values provided. You can't
+> use the range operator to reliably represent the members of an enumeration.
 
 ### Member-access operator `.`
 

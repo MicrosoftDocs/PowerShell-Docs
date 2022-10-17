@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 07/20/2022
+ms.date: 10/17/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -514,11 +514,16 @@ For more information, see [About_Pipeline_Chain_Operators](About_Pipeline_Chain_
 
 ### Range operator `..`
 
-Represents the sequential integers in an integer array, given an upper, and
-lower boundary.
+The range operator can be used to represents an array of sequential integers or
+characters. The values joined by the range operator define the start and end
+values of the range.
+
+> [!NOTE]
+> Support for character ranges was added in PowerShell 6.
 
 ```powershell
 1..10
+$max = 10
 foreach ($a in 1..$max) {Write-Host $a}
 ```
 
@@ -529,10 +534,7 @@ You can also create ranges in reverse order.
 5..-5 | ForEach-Object {Write-Output $_}
 ```
 
-Beginning in PowerShell 6, the range operator works with **Characters** as
-well as **Integers**.
-
-To create a range of characters, enclose the boundary characters in quotes.
+To create a range of characters, enclose the characters in quotes.
 
 ```powershell
 PS> 'a'..'f'
@@ -646,7 +648,8 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 ### Null-conditional operators `?.` and `?[]`
 
 > [!NOTE]
-> This feature was moved from experimental to mainstream in PowerShell 7.1.
+> This is an experimental feature. For more information see
+> [about_Experimental_Features](about_Experimental_Features.md).
 
 A null-conditional operator applies a member access, `?.`, or element access,
 `?[]`, operation to its operand only if that operand evaluates to non-null;
