@@ -433,9 +433,6 @@ The range operator can be used to represents an array of sequential integers.
 The values joined by the range operator define the start and end values of the
 range.
 
-> [!NOTE]
-> Support for character ranges was added in PowerShell 6.
-
 ```powershell
 1..10
 $max = 10
@@ -475,7 +472,7 @@ PS> [Food]::Apple..[Food]::Kiwi
 
 > [!IMPORTANT]
 > The resulting range isn't limited to the values of the enumeration. Instead
-> is represents the range of values between the two values provided. You can't
+> it represents the range of values between the two values provided. You can't
 > use the range operator to reliably represent the members of an enumeration.
 
 ### Member-access operator `.`

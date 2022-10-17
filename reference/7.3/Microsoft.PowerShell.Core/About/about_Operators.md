@@ -618,7 +618,7 @@ PS> [Food]::Apple..[Food]::Kiwi
 
 > [!IMPORTANT]
 > The resulting range isn't limited to the values of the enumeration. Instead
-> is represents the range of values between the two values provided. You can't
+> it represents the range of values between the two values provided. You can't
 > use the range operator to reliably represent the members of an enumeration.
 
 ### Member-access operator `.`
