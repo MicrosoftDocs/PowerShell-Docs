@@ -429,7 +429,7 @@ Get-Service | Where-Object {$_.StartType -eq 'Automatic'}
 
 ### Range operator `..`
 
-The range operator can be used to represents an array of sequential integers.
+The range operator can be used to represent an array of sequential integers.
 The values joined by the range operator define the start and end values of the
 range.
 
