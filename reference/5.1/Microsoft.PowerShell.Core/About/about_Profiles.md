@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use a PowerShell profile.
 Locale: en-US
-ms.date: 09/06/2022
+ms.date: 10/18/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Profiles
@@ -27,7 +27,7 @@ doesn't create the profiles for you. This topic describes the profiles, and it
 describes how to create and maintain profiles on your computer.
 
 It explains how to use the **NoProfile** parameter of the PowerShell console
-(PowerShell.exe) to start PowerShell without any profiles. And, it explains the
+(`PowerShell.exe`) to start PowerShell without any profiles. And, it explains the
 effect of the PowerShell execution policy on profiles.
 
 ## The Profile Files
@@ -252,7 +252,7 @@ For more information about the PowerShell prompt, see
 ## The NoProfile parameter
 
 To start PowerShell without profiles, use the **NoProfile** parameter of
-**PowerShell.exe**, the program that starts PowerShell.
+`PowerShell.exe`, the program that starts PowerShell.
 
 To begin, open a program that can start PowerShell, such as Cmd.exe or
 PowerShell itself. You can also use the Run dialog box in Windows.
