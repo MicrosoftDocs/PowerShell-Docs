@@ -514,7 +514,7 @@ For more information, see [About_Pipeline_Chain_Operators](About_Pipeline_Chain_
 
 ### Range operator `..`
 
-The range operator can be used to represents an array of sequential integers or
+The range operator can be used to represent an array of sequential integers or
 characters. The values joined by the range operator define the start and end
 values of the range.
 
