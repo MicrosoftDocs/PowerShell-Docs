@@ -240,7 +240,7 @@ function Get-CmdletAlias ($cmdletname) {
 function Color-Console {
   $Host.ui.rawui.backgroundcolor = "white"
   $Host.ui.rawui.foregroundcolor = "black"
-  $hosttime = (Get-ChildItem -Path $PSHOME\PowerShell.exe).CreationTime
+  $hosttime = (Get-ChildItem -Path $PSHOME\pwsh.exe).CreationTime
   $hostversion="$($Host.Version.Major)`.$($Host.Version.Minor)"
   $Host.UI.RawUI.WindowTitle = "PowerShell $hostversion ($hosttime)"
   Clear-Host
