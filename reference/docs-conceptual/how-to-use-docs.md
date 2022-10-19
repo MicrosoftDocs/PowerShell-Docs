@@ -31,7 +31,8 @@ The version selector does not filter conceptual documentation. The conceptual do
 the **Reference** node in the Table of Contents. The same documents appear for any version selected.
 If there are version-specific differences, the documentation makes note of those differences.
 
-![Using the version picker](media/how-to-use-docs/version-search.gif)
+![Using the version picker][01]
+
 
 You can verify the version of PowerShell you are using by inspecting the `$PSversionTable.PSVersion`
 value. The following example shows the output for Windows PowerShell 5.1.
@@ -47,12 +48,12 @@ Major  Minor  Build  Revision
 ```
 
 If you are new to PowerShell and need help understanding the command syntax, see
-[about_Command_Syntax](/powershell/module/microsoft.powershell.core/about/about_command_syntax).
+[about_Command_Syntax][02].
 
 ## Finding articles for previous versions
 
 Documentation for older versions of PowerShell has been archived in our
-[Previous Versions](https://aka.ms/PSLegacyDocs) site.
+[Previous Versions][03] site.
 
 This site contains documentation for the following topics:
 
@@ -63,3 +64,8 @@ This site contains documentation for the following topics:
 - PowerShell 7.1
 - PowerShell Workflows
 - PowerShell Web Access
+
+<!-- link references -->
+[01]: (media/how-to-use-docs/version-search.gif)
+[02]: (/powershell/module/microsoft.powershell.core/about/about_command_syntax)
+[03]: (https://aka.ms/PSLegacyDocs)
