@@ -365,5 +365,9 @@ powerful help system.
 
 ### Additional resources
 
-- [Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
-- [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
+- [Get-Command][01]
+- [Get-Member][02]
+
+<!-- link references -->
+[01]: xref:Microsoft.PowerShell.Core.Get-Command
+[02]: xref:Microsoft.PowerShell.Utility.Get-Member
