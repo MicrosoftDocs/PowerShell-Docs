@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use a PowerShell profile.
 Locale: en-US
-ms.date: 08/29/2022
+ms.date: 10/18/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Profiles
@@ -27,7 +27,7 @@ doesn't create the profiles for you. This topic describes the profiles, and it
 describes how to create and maintain profiles on your computer.
 
 It explains how to use the **NoProfile** parameter of the PowerShell console
-(PowerShell.exe) to start PowerShell without any profiles. And, it explains the
+(`pwsh.exe`) to start PowerShell without any profiles. And, it explains the
 effect of the PowerShell execution policy on profiles.
 
 ## The Profile Files
@@ -240,7 +240,7 @@ function Get-CmdletAlias ($cmdletname) {
 function Color-Console {
   $Host.ui.rawui.backgroundcolor = "white"
   $Host.ui.rawui.foregroundcolor = "black"
-  $hosttime = (Get-ChildItem -Path $PSHOME\PowerShell.exe).CreationTime
+  $hosttime = (Get-ChildItem -Path $PSHOME\pwsh.exe).CreationTime
   $hostversion="$($Host.Version.Major)`.$($Host.Version.Minor)"
   $Host.UI.RawUI.WindowTitle = "PowerShell $hostversion ($hosttime)"
   Clear-Host
@@ -263,21 +263,21 @@ For more information about the PowerShell prompt, see
 ## The NoProfile parameter
 
 To start PowerShell without profiles, use the **NoProfile** parameter of
-**PowerShell.exe**, the program that starts PowerShell.
+`pwsh.exe`, the program that starts PowerShell.
 
 To begin, open a program that can start PowerShell, such as Cmd.exe or
 PowerShell itself. You can also use the Run dialog box in Windows.
 
 Type:
 
-```
-PowerShell -NoProfile
+```powershell
+pwsh -NoProfile
 ```
 
-For a complete list of the parameters of PowerShell.exe, type:
+For a complete list of the parameters of `pwsh.exe`, type:
 
-```
-PowerShell -?
+```powershell
+pwsh -?
 ```
 
 ## Profiles and Execution Policy
