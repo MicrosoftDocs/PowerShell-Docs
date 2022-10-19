@@ -15,11 +15,11 @@ PowerShell is a modern command shell that includes the best features of other po
 most shells that only accept and return text, PowerShell accepts and returns .NET objects. The shell
 includes the following features:
 
-- Robust command-line [history][history]
-- Tab completion and command prediction (See [about_PSReadLine][about_PSReadLine])
-- Supports command and parameter [aliases][aliases]
-- [Pipeline][Pipeline] for chaining commands
-- In-console [help][help] system, similar to Unix `man` pages
+- Robust command-line [history][01]
+- Tab completion and command prediction (See [about_PSReadLine][02])
+- Supports command and parameter [aliases][03]
+- [Pipeline][04] for chaining commands
+- In-console [help][05] system, similar to Unix `man` pages
 
 ## Scripting language
 
@@ -29,11 +29,11 @@ the .NET Common Language Runtime (CLR). All inputs and outputs are .NET objects.
 text output to extract information from output. The PowerShell scripting language includes the
 following features:
 
-- Extensible through [functions][functions], [classes][classes], [scripts][scripts], and
-  [modules][modules]
-- Extensible [formatting system][formatting] for easy output
-- Extensible [type system][types] for creating dynamic types
-- Built-in support for common data formats like [CSV][CSV], [JSON][JSON], and [XML][XML]
+- Extensible through [functions][06], [classes][07], [scripts][08], and
+  [modules][09]
+- Extensible [formatting system][10] for easy output
+- Extensible [type system][11] for creating dynamic types
+- Built-in support for common data formats like [CSV][12], [JSON][13], and [XML][14]
 
 ## Automation platform
 
@@ -42,25 +42,25 @@ manage almost any technology you work with. For example:
 
 Microsoft
 
-- [Azure](/powershell/azure)
-- [Windows](/powershell/windows/get-started)
-- [Exchange](/powershell/exchange/exchange-management-shell)
-- [SQL](/sql/powershell/sql-server-powershell)
+- [Azure][15]
+- [Windows][16]
+- [Exchange][17]
+- [SQL][18]
 
 Third-party
 
-- [AWS](https://aws.amazon.com/powershell/)
-- [VMWare](https://core.vmware.com/vmware-powercli)
-- [Google Cloud](https://cloud.google.com/powershell/)
+- [AWS][19]
+- [VMWare][20]
+- [Google Cloud][21]
 
 ### Configuration management
 
-PowerShell Desired State Configuration ([DSC][DSC]) is a management framework in PowerShell that
+PowerShell Desired State Configuration ([DSC][22]) is a management framework in PowerShell that
 enables you to manage your enterprise infrastructure with configuration as code. With DSC, you can:
 
-- Create declarative [configurations][configurations] and custom scripts for repeatable deployments
+- Create declarative [configurations][23] and custom scripts for repeatable deployments
 - Enforce configuration settings and report on configuration drift
-- Deploy configuration using [push or pull][push-pull] models
+- Deploy configuration using [push or pull][24] models
 
 ## Next steps
 
@@ -68,46 +68,52 @@ enables you to manage your enterprise infrastructure with configuration as code.
 
 Are you new to PowerShell and don't know where to start? Take a look at these resources.
 
-- [Installing PowerShell][install]
-- [PowerShell Bits tutorials][tutorials]
-- [PowerShell 101][PS101]
-- [Microsoft Virtual Academy videos][ch9vids]
-- [PowerShell Learn modules][learn]
+- [Installing PowerShell][25]
+- [PowerShell Bits tutorials][26]
+- [PowerShell 101][27]
+- [Microsoft Virtual Academy videos][28]
+- [PowerShell Learn modules][29]
 
 ### PowerShell in action
 
 Take a look at how PowerShell is being used in different scenarios and on different platforms.
 
-- [PowerShell remoting over SSH][remoting]
-- [Getting started with Azure PowerShell][azure]
-- [Building a CI/CD pipeline with DSC][devops]
-- [Managing Microsoft Exchange][exchange]
+- [PowerShell remoting over SSH][30]
+- [Getting started with Azure PowerShell][31]
+- [Building a CI/CD pipeline with DSC][32]
+- [Managing Microsoft Exchange][33]
 
 <!-- link references -->
-
-[history]: /powershell/module/microsoft.powershell.core/about/about_history
-[about_PSReadLine]: /powershell/module/psreadline/about/about_psreadline
-[aliases]: /powershell/module/microsoft.powershell.core/about/about_aliases
-[Pipeline]: /powershell/module/microsoft.powershell.core/about/about_pipelines
-[help]: /powershell/module/microsoft.powershell.core/get-help
-[modules]: /powershell/module/microsoft.powershell.core/about/about_modules
-[functions]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
-[classes]: /powershell/module/microsoft.powershell.core/about/about_classes
-[scripts]: /powershell/module/microsoft.powershell.core/about/about_scripts
-[formatting]: /powershell/module/microsoft.powershell.core/about/about_format.ps1xml
-[types]: /powershell/module/microsoft.powershell.core/about/about_types.ps1xml
-[CSV]: /powershell/module/microsoft.powershell.utility/convertfrom-csv
-[JSON]: /powershell/module/microsoft.powershell.utility/convertfrom-json
-[XML]: /powershell/module/microsoft.powershell.utility/convertto-xml
-[configurations]: /powershell/scripting/dsc/configurations/configurations
-[DSC]: /powershell/scripting/dsc/overview/dscforengineers
-[push-pull]: /powershell/scripting/dsc/pull-server/enactingconfigurations
-[install]: /powershell/scripting/install/installing-powershell
-[PS101]: /powershell/scripting/learn/ps101/00-introduction
-[tutorials]: /powershell/scripting/learn/tutorials/00-introduction
-[learn]: /training/browse/?terms=PowerShell
-[azure]: /powershell/azure/get-started-azureps
-[devops]: /azure/devops/pipelines/release/dsc-cicd
-[exchange]: /powershell/exchange/exchange-management-shell
-[remoting]: /powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core
-[ch9vids]: /shows/browse?terms=powershell
+[01]: /powershell/module/microsoft.powershell.core/about/about_history
+[02]: /powershell/module/psreadline/about/about_psreadline
+[03]: /powershell/module/microsoft.powershell.core/about/about_aliases
+[04]: /powershell/module/microsoft.powershell.core/about/about_pipelines
+[05]: /powershell/module/microsoft.powershell.core/get-help
+[06]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
+[07]: /powershell/module/microsoft.powershell.core/about/about_classes
+[08]: /powershell/module/microsoft.powershell.core/about/about_scripts
+[09]: /powershell/module/microsoft.powershell.core/about/about_modules
+[10]: /powershell/module/microsoft.powershell.core/about/about_format.ps1xml
+[11]: /powershell/module/microsoft.powershell.core/about/about_types.ps1xml
+[12]: /powershell/module/microsoft.powershell.utility/convertfrom-csv
+[13]: /powershell/module/microsoft.powershell.utility/convertfrom-json
+[14]: /powershell/module/microsoft.powershell.utility/convertto-xml
+[15]: /powershell/azure
+[16]: /powershell/windows/get-started
+[17]: /powershell/exchange/exchange-management-shell
+[18]: /sql/powershell/sql-server-powershell
+[19]: https://aws.amazon.com/powershell/
+[20]: https://core.vmware.com/vmware-powercli
+[21]: https://cloud.google.com/powershell/
+[22]: /powershell/scripting/dsc/overview/dscforengineers
+[23]: /powershell/scripting/dsc/configurations/configurations
+[24]: /powershell/scripting/dsc/pull-server/enactingconfigurations
+[25]: /powershell/scripting/install/installing-powershell
+[26]: /powershell/scripting/learn/tutorials/00-introduction
+[27]: /powershell/scripting/learn/ps101/00-introduction
+[28]: /shows/browse?terms=powershell
+[29]: /training/browse/?terms=PowerShell
+[30]: /powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core
+[31]: /powershell/azure/get-started-azureps
+[32]: /azure/devops/pipelines/release/dsc-cicd
+[33]: /powershell/exchange/exchange-management-shell

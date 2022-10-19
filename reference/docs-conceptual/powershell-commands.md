@@ -24,16 +24,23 @@ the cmdlet performs its action.
 ## Next steps
 
 To learn more about PowerShell and how to find other cmdlets, see the PowerShell Bits tutorial
-[Discover PowerShell](learn/tutorials/01-discover-powershell.md).
+[Discover PowerShell][01].
 
 For more information about creating your own cmdlets, see the following resources:
 
 Script-based cmdlets
 
-- [about_Functions_Advanced](/powershell/module/microsoft.powershell.core/about/about_functions_advanced)
-- [about_Functions_CmdletBindingAttribute](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute)
-- [about_Functions_Advanced_Methods](/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods)
+- [about_Functions_Advanced][02]
+- [about_Functions_CmdletBindingAttribute][03]
+- [about_Functions_Advanced_Methods][04]
 
 Compiled cmdlets (PowerShell SDK docs)
 
-- [Cmdlet overview](developer/cmdlet/cmdlet-overview.md)
+- [Cmdlet overview][05]
+
+<!-- link references -->
+[01]: learn/tutorials/01-discover-powershell.md
+[02]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
+[03]: /powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute
+[04]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods
+[05]: developer/cmdlet/cmdlet-overview.md
