@@ -66,7 +66,7 @@ New-Item -Path $module -Type Directory
 
 ### Binary module setup
 
-This article os focused on the binary module so that is where we'll start. This section pulls
+This article is focused on the binary module so that is where we'll start. This section pulls
 examples from the [Creating a cross-platform binary module][xplat] guide. Review that guide if you
 need more details or have any issues.
 
