@@ -66,6 +66,6 @@ This site contains documentation for the following topics:
 - PowerShell Web Access
 
 <!-- link references -->
-[01]: (media/how-to-use-docs/version-search.gif)
-[02]: (/powershell/module/microsoft.powershell.core/about/about_command_syntax)
-[03]: (https://aka.ms/PSLegacyDocs)
+[01]: media/how-to-use-docs/version-search.gif
+[02]: /powershell/module/microsoft.powershell.core/about/about_command_syntax
+[03]: https://aka.ms/PSLegacyDocs

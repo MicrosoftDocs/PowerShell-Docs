@@ -39,8 +39,8 @@ Compiled cmdlets (PowerShell SDK docs)
 - [Cmdlet overview][05]
 
 <!-- link references -->
-[01]: (learn/tutorials/01-discover-powershell.md)
-[02]: (/powershell/module/microsoft.powershell.core/about/about_functions_advanced)
-[03]: (/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute)
-[04]: (/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods)
-[05]: (developer/cmdlet/cmdlet-overview.md)
+[01]: learn/tutorials/01-discover-powershell.md
+[02]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
+[03]: /powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute
+[04]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods
+[05]: developer/cmdlet/cmdlet-overview.md
