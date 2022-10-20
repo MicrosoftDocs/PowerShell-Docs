@@ -18,15 +18,17 @@ Updates a module manifest file.
 ### All
 
 ```
-Update-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>] [-Author <String>]
- [-CompanyName <String>] [-Copyright <String>] [-RootModule <String>] [-ModuleVersion <Version>]
- [-Description <String>] [-ProcessorArchitecture <ProcessorArchitecture>]
- [-CompatiblePSEditions <String[]>] [-PowerShellVersion <Version>] [-ClrVersion <Version>]
+Update-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>]
+ [-Author <String>] [-CompanyName <String>] [-Copyright <String>] [-RootModule <String>]
+ [-ModuleVersion <Version>] [-Description <String>]
+ [-ProcessorArchitecture <ProcessorArchitecture>] [-CompatiblePSEditions <String[]>]
+ [-PowerShellVersion <Version>] [-ClrVersion <Version>]
  [-DotNetFrameworkVersion <Version>] [-PowerShellHostName <String>]
- [-PowerShellHostVersion <Version>] [-RequiredModules <Object[]>] [-TypesToProcess <String[]>]
- [-FormatsToProcess <String[]>] [-ScriptsToProcess <String[]>] [-RequiredAssemblies <String[]>]
- [-FileList <String[]>] [-ModuleList <Object[]>] [-FunctionsToExport <String[]>]
- [-AliasesToExport <String[]>] [-VariablesToExport <String[]>] [-CmdletsToExport <String[]>]
+ [-PowerShellHostVersion <Version>] [-RequiredModules <Object[]>]
+ [-TypesToProcess <String[]>] [-FormatsToProcess <String[]>]
+ [-ScriptsToProcess <String[]>] [-RequiredAssemblies <String[]>] [-FileList <String[]>]
+ [-ModuleList <Object[]>] [-FunctionsToExport <String[]>] [-AliasesToExport <String[]>]
+ [-VariablesToExport <String[]>] [-CmdletsToExport <String[]>]
  [-DscResourcesToExport <String[]>] [-PrivateData <Hashtable>] [-Tags <String[]>]
  [-ProjectUri <Uri>] [-LicenseUri <Uri>] [-IconUri <Uri>] [-ReleaseNotes <String[]>]
  [-Prerelease <String>] [-HelpInfoUri <Uri>] [-PassThru] [-DefaultCommandPrefix <String>]
@@ -42,22 +44,23 @@ The `Update-ModuleManifest` cmdlet updates a module manifest (`.psd1`) file.
 
 ### Example 1: Update a module manifest
 
-This example updates an existing module manifest file. Splatting is used to pass parameter values to
-`Update-ModuleManifest`. For more information, see [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
+This example updates an existing module manifest file. Splatting is used to pass parameter values
+to `Update-ModuleManifest`. For more information, see
+[about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
 
 ```powershell
-$Parms = @{
+$Params = @{
   Path = "C:\Test\TestManifest.psd1"
   Author = "TestUser1"
   CompanyName = "Contoso Corporation"
   Copyright = "(c) 2019 Contoso Corporation. All rights reserved."
 }
 
-Update-ModuleManifest @Parms
+Update-ModuleManifest @Params
 ```
 
-`$Parms` is a splat that stores the parameter values for **Path**, **Author**, **CompanyName**, and
-**Copyright**. `Update-ModuleManifest` gets the parameter values from `@Parms` and updates the
+`$Params` is a splat that stores the parameter values for **Path**, **Author**, **CompanyName**, and
+**Copyright**. `Update-ModuleManifest` gets the parameter values from `@Params` and updates the
 module manifest, **TestManifest.psd1**.
 
 ## PARAMETERS
@@ -344,8 +347,10 @@ The **HelpInfo XML** file supports the Updatable Help feature that was introduce
 version 3.0. It contains information about the location of the module's downloadable help files and
 the version numbers of the newest help files for each supported locale.
 
-For information about Updatable Help, see [about_Updatable_Help](../Microsoft.PowerShell.Core/About/about_Updatable_Help.md).
-For information about the **HelpInfo XML** file, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
+For information about Updatable Help, see
+[about_Updatable_Help](../Microsoft.PowerShell.Core/About/about_Updatable_Help.md). For information
+about the **HelpInfo XML** file, see
+[Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
 ```yaml
 Type: System.Uri
@@ -851,7 +856,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

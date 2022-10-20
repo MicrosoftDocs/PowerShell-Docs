@@ -204,7 +204,16 @@ This example creates a new module manifest. It uses the **PowerShellVersion** an
 **AliasesToExport** parameters to add values to the corresponding manifest keys.
 
 ```powershell
-New-ModuleManifest -PowerShellVersion 1.0 -AliasesToExport JKBC, DRC, TAC -Path C:\ps-test\ManifestTest.psd1
+$moduleSettings = @{
+    PowerShellVersion = 1.0
+    Path   = 'C:\ps-test\ManifestTest.psd1'
+    AliasesToExport   = @(
+      'JKBC'
+      'DRC'
+      'TAC'
+    )
+}
+New-ModuleManifest @moduleSettings
 ```
 
 ### Example 3 - Create a manifest that requires other modules
@@ -607,7 +616,8 @@ contains information about the location of downloadable help files for the modul
 numbers of the newest help files for each supported locale.
 
 For information about Updatable Help, see [about_Updatable_Help](./About/about_Updatable_Help.md).
-For information about the HelpInfo XML file, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
+For information about the HelpInfo XML file, see
+[Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
 This parameter was introduced in PowerShell 3.0.
 
@@ -1089,7 +1099,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
