@@ -385,18 +385,18 @@ The acceptable values for this parameter are:
 - `All`: Gets all command types. This parameter value is the equivalent of `Get-Command *`.
 
 - `Application`: Gets non-PowerShell files in paths listed in the **Path** environment variable
-  (`$env:path`), including .txt, .exe, and .dll files. For more information about the **Path**
+  (`$env:path`), including `.txt`, `.exe`, and `.dll` files. For more information about the **Path**
   environment variable, see [about_Environment_Variables](About/about_Environment_Variables.md).
 
 - `Cmdlet`: Gets all cmdlets.
 
-- `ExternalScript`: Gets all .ps1 files in the paths listed in the **Path** environment variable
+- `ExternalScript`: Gets all `.ps1` files in the paths listed in the **Path** environment variable
   (`$env:path`).
 
 - `Filter` and `Function`: Gets all PowerShell advanced and simple functions and filters.
 
-- `Script`: Gets all script blocks. To get PowerShell scripts (.ps1 files), use the `ExternalScript`
-  value.
+- `Script`: Gets all script blocks. To get PowerShell scripts (`.ps1 `files), use the
+  `ExternalScript` value.
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to
 set multiple flags using this parameter. The values can be passed to the **CommandType** parameter
@@ -602,7 +602,7 @@ Accept wildcard characters: False
 
 Indicates that this cmdlet gets only the following specified data about the command:
 
-- Aliases. Gets the standard name and syntax.
+- Aliases. Gets the standard name.
 - Cmdlets. Gets the syntax.
 - Functions and filters. Gets the function definition.
 - Scripts and applications or files. Gets the path and filename.

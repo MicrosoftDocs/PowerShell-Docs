@@ -17,17 +17,19 @@ Gets all commands.
 ### CmdletSet (Default)
 
 ```
-Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
- [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
- [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo]
+ [[-ArgumentList] <Object[]>] [-All] [-ListImported] [-ParameterName <String[]>]
+ [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
 ### AllCommandSet
 
 ```
-Get-Command [[-Name] <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
- [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>]
- [-All] [-ListImported] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+Get-Command [[-Name] <String[]>] [-Module <String[]>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>]
+ [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
+ [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -347,19 +349,19 @@ The acceptable values for this parameter are:
 - `All`: Gets all command types. This parameter value is the equivalent of `Get-Command *`.
 
 - `Application`: Gets non-PowerShell files in paths listed in the **Path** environment variable
-  (`$env:path`), including .txt, .exe, and .dll files. For more information about the **Path**
+  (`$env:path`), including `.txt`, `.exe`, and `.dll` files. For more information about the **Path**
   environment variable, see [about_Environment_Variables](About/about_Environment_Variables.md).
 
 - `Cmdlet`: Gets all cmdlets.
 
-- `ExternalScript`: Gets all .ps1 files in the paths listed in the **Path** environment variable
+- `ExternalScript`: Gets all `.ps1` files in the paths listed in the **Path** environment variable
   (`$env:path`).
 
 - `Filter` and `Function`: Gets all PowerShell advanced and simple functions and filters.
 
-- `Script`: Gets all script blocks. To get PowerShell scripts (.ps1 files), use the `ExternalScript`
-  value.
-  
+- `Script`: Gets all script blocks. To get PowerShell scripts (`.ps1 `files), use the
+  `ExternalScript` value.
+
 - `Workflow`: Gets all workflows. For more information about workflows, see Introducing Windows
   PowerShell Workflow.
 
