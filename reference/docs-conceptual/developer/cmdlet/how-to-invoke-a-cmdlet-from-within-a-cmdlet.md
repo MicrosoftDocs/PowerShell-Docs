@@ -6,12 +6,12 @@ title: How to Invoke a Cmdlet from Within a Cmdlet
 ---
 # How to Invoke a Cmdlet from Within a Cmdlet
 
-This example shows how to invoke a binary cmdlet that derives from `Cmdlet` directly from within
-another binary cmdlet, which allows you to add the functionality of the invoked cmdlet to the binary
-cmdlet you are developing. In this example, the `Get-Process` cmdlet is invoked to get the processes
-that are running on the local computer. The call to the `Get-Process` cmdlet is equivalent to the
-following command. This command retrieves all the processes whose names start with the characters
-"a" through "t".
+This example shows how to invoke a binary cmdlet that derives from
+`[System.Management.Automation.Cmdlet]` directly from within another binary cmdlet, which allows you
+to add the functionality of the invoked cmdlet to the binary cmdlet you are developing. In this
+example, the `Get-Process` cmdlet is invoked to get the processes that are running on the local
+computer. The call to the `Get-Process` cmdlet is equivalent to the following command. This command
+retrieves all the processes whose names start with the characters "a" through "t".
 
 ```powershell
 Get-Process -name [a-t]*
