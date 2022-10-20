@@ -6,14 +6,15 @@ title: How to Invoke a Cmdlet from Within a Cmdlet
 ---
 # How to Invoke a Cmdlet from Within a Cmdlet
 
-This example shows how to invoke a cmdlet from within another cmdlet, which allows you to add the
-functionality of the invoked cmdlet to the cmdlet you are developing. In this example, the
-`Get-Process` cmdlet is invoked to get the processes that are running on the local computer. The
-call to the `Get-Process` cmdlet is equivalent to the following command. This command retrieves all
-the processes whose names start with the characters "a" through "t".
+This example shows how to invoke a binary cmdlet that derives from
+`[System.Management.Automation.Cmdlet]` directly from within another binary cmdlet, which allows you
+to add the functionality of the invoked cmdlet to the binary cmdlet you are developing. In this
+example, the `Get-Process` cmdlet is invoked to get the processes that are running on the local
+computer. The call to the `Get-Process` cmdlet is equivalent to the following command. This command
+retrieves all the processes whose names start with the characters "a" through "t".
 
 ```powershell
-Get-Process -name [a-t]
+Get-Process -name [a-t]*
 ```
 
 > [!IMPORTANT]
@@ -62,8 +63,8 @@ In this example, the `Get-Process` cmdlet is invoked from within the
 ```csharp
 using System;
 using System.Diagnostics;
-using System.Management.Automation;   // Windows PowerShell assembly.
-using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
+using System.Management.Automation;   // PowerShell assembly.
+using Microsoft.PowerShell.Commands;  // PowerShell cmdlets assembly you want to call.
 
 namespace SendGreeting
 {
@@ -74,12 +75,7 @@ namespace SendGreeting
   {
     // Declare the parameters for the cmdlet.
     [Parameter(Mandatory = true)]
-    public string Name
-    {
-      get { return name; }
-      set { name = value; }
-    }
-    private string name;
+    public string Name { get; set; }
 
     // Override the BeginProcessing method to invoke
     // the Get-Process cmdlet.
@@ -89,7 +85,7 @@ namespace SendGreeting
       gp.Name = new string[] { "[a-t]*" };
       foreach (Process p in gp.Invoke<Process>())
       {
-        Console.WriteLine(p.ToString());
+        WriteVerbose(p.ToString());
       }
     }
 
@@ -99,7 +95,7 @@ namespace SendGreeting
     // method.
     protected override void ProcessRecord()
     {
-      WriteObject("Hello " + name + "!");
+      WriteObject("Hello " + Name + "!");
     }
   }
 }
