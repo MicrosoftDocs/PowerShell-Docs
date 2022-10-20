@@ -19,7 +19,7 @@ of the characters and returns the reversed string.
 
 ## To invoke a cmdlet from within a PSCmdlet
 
-1. Ensure that the namespace for the `PowerShell` API is reference. In this example, the following
+1. Ensure that the namespace for the `PowerShell` API is referenced. In this example, the following
    namespaces are added.
 
     ```csharp
