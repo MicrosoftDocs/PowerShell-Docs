@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/14/2020
+ms.date: 10/19/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
@@ -204,7 +204,16 @@ This example creates a new module manifest. It uses the **PowerShellVersion** an
 **AliasesToExport** parameters to add values to the corresponding manifest keys.
 
 ```powershell
-New-ModuleManifest -PowerShellVersion 1.0 -AliasesToExport JKBC, DRC, TAC -Path C:\ps-test\ManifestTest.psd1
+$moduleSettings = @{
+    PowerShellVersion = 1.0
+    Path   = 'C:\ps-test\ManifestTest.psd1'
+    AliasesToExport   = @(
+      'JKBC'
+      'DRC'
+      'TAC'
+    )
+}
+New-ModuleManifest @moduleSettings
 ```
 
 ### Example 3 - Create a manifest that requires other modules
@@ -352,6 +361,11 @@ Accept wildcard characters: False
 Specifies the minimum version of the Common Language Runtime (CLR) of the Microsoft .NET Framework
 that the module requires.
 
+> [!NOTE]
+> This setting is valid for the PowerShell Desktop edition only, such as Windows PowerShell 5.1,
+> and only applies to .NET Framework versions lower than 4.5. This requirement has no effect for
+> newer versions of PowerShell or the .NET Framework.
+
 ```yaml
 Type: System.Version
 Parameter Sets: (All)
@@ -486,6 +500,11 @@ Accept wildcard characters: False
 
 Specifies the minimum version of the Microsoft .NET Framework that the module requires.
 
+> [!NOTE]
+> This setting is valid for the PowerShell Desktop edition only, such as Windows PowerShell 5.1,
+> and only applies to .NET Framework versions lower than 4.5. This requirement has no effect for
+> newer versions of PowerShell or the .NET Framework.
+
 ```yaml
 Type: System.Version
 Parameter Sets: (All)
@@ -607,7 +626,8 @@ contains information about the location of downloadable help files for the modul
 numbers of the newest help files for each supported locale.
 
 For information about Updatable Help, see [about_Updatable_Help](./About/about_Updatable_Help.md).
-For information about the HelpInfo XML file, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
+For information about the HelpInfo XML file, see
+[Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
 This parameter was introduced in PowerShell 3.0.
 
@@ -1089,7 +1109,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
