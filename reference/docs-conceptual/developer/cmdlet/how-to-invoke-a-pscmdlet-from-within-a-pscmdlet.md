@@ -8,7 +8,7 @@ title: How to invoke a PSCmdlet from within a PSCmdlet
 
 This example shows how to invoke a script based cmdlet or binary cmdlet inheriting from `PSCmdlet`
 from within a binary cmdlet. In this example, the new cmdlet `Get-ClipboardReverse` calls
-`Get-Clipboard` to get the contents of the clipboard.  The `Get-ClipboardReverse` reverses the order
+`Get-Clipboard` to get the contents of the clipboard. The `Get-ClipboardReverse` reverses the order
 of the characters and returns the reversed string.
 
 > [!NOTE]
@@ -20,7 +20,7 @@ of the characters and returns the reversed string.
 ## To invoke a cmdlet from within a PSCmdlet
 
 1. Ensure that the namespace for the `PowerShell` API is reference. In this example, the following
-    namespaces are added.
+   namespaces are added.
 
     ```csharp
     using System.Management.Automation;   // PowerShell assembly.
