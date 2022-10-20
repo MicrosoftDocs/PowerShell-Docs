@@ -1,7 +1,7 @@
 ---
 description: Describes the settings and practices for writing module manifest files.
 Locale: en-US
-ms.date: 03/30/2022
+ms.date: 10/19/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_module_manifests?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Module Manifests
@@ -495,8 +495,14 @@ the module requires.
 | **Value if unset**    | `$null`         |
 | **Accepts wildcards** | No              |
 
-This setting only applies to Windows PowerShell. The value of this setting must
-be convertible to `System.Version` when you run `Import-Module`.
+> [!NOTE]
+> This setting is valid for the PowerShell Desktop edition only, such as
+> Windows PowerShell 5.1, and only applies to .NET Framework versions lower
+> than 4.5. This requirement has no effect for newer versions of PowerShell or
+> the .NET Framework.
+
+The value of this setting must be convertible to `System.Version` when you run
+`Import-Module`.
 
 For example, this manifest declares that its module can be imported in any
 PowerShell or Windows PowerShell session, regardless of the version of the
@@ -531,8 +537,14 @@ of the Microsoft .NET Framework that the module requires.
 | **Value if unset**    | `$null`         |
 | **Accepts wildcards** | No              |
 
-This setting only applies to Windows PowerShell. The value of this setting must
-be convertible to `System.Version` when you run `Import-Module`.
+> [!NOTE]
+> This setting is valid for the PowerShell Desktop edition only, such as
+> Windows PowerShell 5.1, and only applies to .NET Framework versions lower
+> than 4.5. This requirement has no effect for newer versions of PowerShell or
+> the .NET Framework.
+
+The value of this setting must be convertible to `System.Version` when you run
+`Import-Module`.
 
 For example, this manifest declares that its module can be imported in any
 PowerShell or Windows PowerShell session, regardless of the version of the

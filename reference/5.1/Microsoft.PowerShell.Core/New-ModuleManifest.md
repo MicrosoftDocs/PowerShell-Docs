@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/14/2020
+ms.date: 10/19/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
@@ -361,6 +361,11 @@ Accept wildcard characters: False
 Specifies the minimum version of the Common Language Runtime (CLR) of the Microsoft .NET Framework
 that the module requires.
 
+> [!NOTE]
+> This setting is valid for the PowerShell Desktop edition only, such as Windows PowerShell 5.1,
+> and only applies to .NET Framework versions lower than 4.5. This requirement has no effect for
+> newer versions of PowerShell or the .NET Framework.
+
 ```yaml
 Type: System.Version
 Parameter Sets: (All)
@@ -494,6 +499,11 @@ Accept wildcard characters: False
 ### -DotNetFrameworkVersion
 
 Specifies the minimum version of the Microsoft .NET Framework that the module requires.
+
+> [!NOTE]
+> This setting is valid for the PowerShell Desktop edition only, such as Windows PowerShell 5.1,
+> and only applies to .NET Framework versions lower than 4.5. This requirement has no effect for
+> newer versions of PowerShell or the .NET Framework.
 
 ```yaml
 Type: System.Version
