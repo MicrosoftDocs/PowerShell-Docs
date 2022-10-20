@@ -6,41 +6,41 @@ title: How to invoke a PSCmdlet from within a PSCmdlet
 ---
 # How to invoke a PSCmdlet from within a PSCmdlet
 
-This example shows how to invoke a **PSCmdlet** from within another **PSCmdlet**. In this example,
-the new PSCmdlet `Get-ClipboardReverse` calls `Get-Clipboard` to get the contents of the clipboard.
-The `Get-ClipboardReverse` reverses the order of the characters and returns the reversed string.
+This example shows how to invoke a script based cmdlet or binary cmdlet inheriting from `PSCmdlet`
+from within a binary cmdlet. In this example, the new cmdlet `Get-ClipboardReverse` calls
+`Get-Clipboard` to get the contents of the clipboard.  The `Get-ClipboardReverse` reverses the order
+of the characters and returns the reversed string.
 
 > [!NOTE]
-> The **PSCmdlet** class differs from the **Cmdlet** class. **PSCmdlet** implementations use
+> The `PSCmdlet` class differs from the `Cmdlet` class. `PSCmdlet` implementations use
 > runspace context information so you must invoke another cmdlet using the PowerShell pipeline API.
-> In **Cmdlet** implementations you can call the cmdlet's .NET API directly. For an example, see
+> In `Cmdlet` implementations you can call the cmdlet's .NET API directly. For an example, see
 > [How to invoke a Cmdlet from within a Cmdlet][03].
 
 ## To invoke a cmdlet from within a PSCmdlet
 
-1. Ensure that the assembly that defines the cmdlet to be invoked is referenced and that the
-   appropriate `using` statement is added. In this example, the following namespaces are added.
+1. Ensure that the namespace for the `PowerShell` API is reference. In this example, the following
+    namespaces are added.
 
     ```csharp
     using System.Management.Automation;   // PowerShell assembly.
     using System.Text;
     ```
 
-1. To invoke a **PSCmdlet** from within another **PSCmdlet** you must use the Pipeline API to
+1. To invoke a command from within another binary cmdlet you must use the `PowerShell` API to
    construct a new pipeline and add the cmdlet to be invoked. Call the
-   [System.Management.Automation.PowerShell.Invoke\<T>()][01] method to invoke the pipeline
+   [System.Management.Automation.PowerShell.Invoke\<T>()][01] method to invoke the pipeline.
 
     ```csharp
-    var ps = PowerShell.Create();
+    using var ps = PowerShell.Create(RunspaceMode.CurrentRunspace);
     ps.AddCommand("Get-Clipboard").AddParameter("Raw");
     var output = ps.Invoke<string>();
     ```
 
 ## Example
 
-In this example, the new `Get-ClipboardReverse` cmdlet is derived from the **PSCmdlet** class. To
-call another cmdlet from within this class you must build a PowerShell pipeline with the command and
-parameters you want to execute, then invoke the pipeline.
+To invoke a script based cmdlet or binary cmdlet inheriting from `PSCmdlet` you must build a
+PowerShell pipeline with the command and parameters you want to execute, then invoke the pipeline.
 
 ```csharp
 using System;
@@ -55,7 +55,7 @@ namespace ClipboardReverse
     {
         protected override void EndProcessing()
         {
-            var ps = PowerShell.Create();
+            using var ps = PowerShell.Create(RunspaceMode.CurrentRunspace);
             ps.AddCommand("Get-Clipboard").AddParameter("Raw");
             var output = ps.Invoke<string>();
             if (ps.HadErrors)
