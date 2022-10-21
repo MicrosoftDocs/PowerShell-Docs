@@ -29,8 +29,7 @@ the .NET Common Language Runtime (CLR). All inputs and outputs are .NET objects.
 text output to extract information from output. The PowerShell scripting language includes the
 following features:
 
-- Extensible through [functions][06], [classes][07], [scripts][08], and
-  [modules][09]
+- Extensible through [functions][06], [classes][07], [scripts][08], and [modules][09]
 - Extensible [formatting system][10] for easy output
 - Extensible [type system][11] for creating dynamic types
 - Built-in support for common data formats like [CSV][12], [JSON][13], and [XML][14]

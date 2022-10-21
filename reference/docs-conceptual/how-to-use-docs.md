@@ -52,8 +52,8 @@ If you are new to PowerShell and need help understanding the command syntax, see
 
 ## Finding articles for previous versions
 
-Documentation for older versions of PowerShell has been archived in our
-[Previous Versions][03] site.
+Documentation for older versions of PowerShell has been archived in our [Previous Versions][03]
+site.
 
 This site contains documentation for the following topics:
 
