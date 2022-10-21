@@ -180,8 +180,7 @@ some commands that can act as filters:
    Alias           Add-AdlStoreFirewallRule                           1.3.0      Az.DataLakeStore
    ```
 
-   It's worth looking into to this command further as it can do a lot more
-   [docs Select-Object](/powershell/module/microsoft.powershell.utility/select-object)
+   It's worth looking into to this command further as it can do a lot more [docs Select-Object][01]
 
 - `Where-Object`. The where object helps you select objects from a collection based on the values
   of properties. The command takes an expression in which you are able to express what column/s you
@@ -365,9 +364,10 @@ powerful help system.
 
 ### Additional resources
 
-- [Get-Command][01]
-- [Get-Member][02]
+- [Get-Command][02]
+- [Get-Member][03]
 
 <!-- link references -->
-[01]: xref:Microsoft.PowerShell.Core.Get-Command
-[02]: xref:Microsoft.PowerShell.Utility.Get-Member
+[01]: /powershell/module/microsoft.powershell.utility/select-object
+[02]: xref:Microsoft.PowerShell.Core.Get-Command
+[03]: xref:Microsoft.PowerShell.Utility.Get-Member
