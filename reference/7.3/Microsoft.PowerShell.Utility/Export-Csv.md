@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/22/2021
+ms.date: 10/24/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
@@ -412,10 +412,10 @@ In PowerShell 7.2 and above, when you export a hashtable that has additional pro
 file.
 
 ```powershell
-$allPeople | Add-Member -Name ExtraProp -Value 42
-$allPeople | Export-Csv
+$allPeople | Add-Member -Name ExtraProp -Value 42 -MemberType NoteProperty
+$allPeople | Export-Csv -Path .\People.csv
 
-Get-Content -Path .\People.csv -Path .\People.csv
+Get-Content -Path .\People.csv
 ```
 
 ```Output
