@@ -477,7 +477,6 @@ PowerShell includes the following aliases for `Import-Csv`:
 - All platforms:
   - `ipcsv`
 
-
 Because the imported objects are CSV versions of the object type, they are not recognized and
 formatted by the PowerShell type formatting entries that format the non-CSV versions of the object
 type.
