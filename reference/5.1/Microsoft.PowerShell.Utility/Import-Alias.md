@@ -198,6 +198,11 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
+PowerShell includes the following aliases for `Import-Alias`:
+
+- All platforms:
+  - `ipal`
+
 ## RELATED LINKS
 
 [Export-Alias](Export-Alias.md)

@@ -344,6 +344,11 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
+PowerShell includes the following aliases for `Export-Alias`:
+
+- All platforms:
+  - `epal`
+
 * You can only Export-Aliases to a file.
 
 ## RELATED LINKS

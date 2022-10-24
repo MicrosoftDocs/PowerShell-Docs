@@ -215,6 +215,11 @@ aliases.
 
 ## NOTES
 
+PowerShell includes the following aliases for `Get-Alias`:
+
+- All platforms:
+  - `gal`
+
 - To create a new alias, use `Set-Alias` or `New-Alias`. To delete an alias, use `Remove-Item`.
 - The arrow-based alias name format is not used for aliases that include a hyphen. These are likely
   to be preferred substitute names for cmdlets and functions, instead of typical abbreviations or

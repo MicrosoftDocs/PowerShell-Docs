@@ -387,6 +387,11 @@ does not generate any output.
 
 ## NOTES
 
+PowerShell includes the following aliases for `Set-Alias`:
+
+- All platforms:
+  - `sal`
+
 PowerShell includes built-in aliases that are available in each PowerShell session. The `Get-Alias`
 cmdlet displays the aliases available in a PowerShell session.
 
