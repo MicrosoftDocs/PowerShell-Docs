@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 10/24/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-alias?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Alias
@@ -343,6 +343,11 @@ When you use the **Passthru** parameter, `Export-Alias` returns a **System.Manag
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Export-Alias`:
+
+- All platforms:
+  - `epal`
 
 * You can only Export-Aliases to a file.
 
