@@ -244,6 +244,11 @@ does not generate any output.
 
 ## NOTES
 
+PowerShell includes the following aliases for `New-Alias`:
+
+- All platforms:
+  - `nal`
+
 - To create a new alias, use `Set-Alias` or `New-Alias`. To change an alias, use `Set-Alias`. To delete
 an alias, use `Remove-Item`.
 
