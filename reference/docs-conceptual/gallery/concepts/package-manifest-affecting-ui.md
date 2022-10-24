@@ -1,6 +1,6 @@
 ---
 description: This article documents the package metadata values that are used by the PowerShell Gallery.
-ms.date: 08/18/2022
+ms.date: 10/24/2022
 title: Package metadata values that impact the PowerShell Gallery UI
 ---
 # Package metadata values that impact the PowerShell Gallery UI
@@ -110,9 +110,9 @@ by the comment-based metadata in a script file.
 - **Description** - This information comes from the `.DESCRIPTION` keyword in the comment-based help
   of a script file.
 
-- **Require license acceptance** - A script can require that the user accept a license by setting
-  `.LICENSEURI` keyword in the metadata comment block. For more information, see
-  [Requiring license acceptance for scripts][13].
+- **Require license acceptance** - License Acceptance is not supported for scripts. However, the
+  scenario where a script depends on a module that requires license acceptance is supported. For
+  more information, see [Requiring license acceptance for scripts][13].
 
 - **Release notes** - This information comes from the `.RELEASENOTES` keyword in the comment-based
   metadata of a script file.
@@ -147,10 +147,10 @@ by the comment-based metadata in a script file.
   Gallery. Packages hidden using the **Delete** feature aren't displayed in the version history
   unless you are a package owner.
 
-- **Project Site** - This information comes from the `.LICENSEURI` keyword in the comment-based
+- **Project Site** - This information comes from the `.PROJECTURI` keyword in the comment-based
   metadata of a script file.
 
-- **License** - This information comes from the `.PROJECTURI` keyword in the comment-based metadata
+- **License** - This information comes from the `.LICENSEURI` keyword in the comment-based metadata
   of a script file.
 
   > [!IMPORTANT]
@@ -285,7 +285,3 @@ best search results.
 [11]: https://www.powershellgallery.com/policies/Terms
 [12]: script-prerelease-support.md
 [13]: script-license-acceptance.md
-[14]: ../how-to/publishing-packages/managing-package-owners.md
-[15]: #tag-details
-[16]: module-psedition-support.md
-[17]: https://www.powershellgallery.com/policies/Terms
