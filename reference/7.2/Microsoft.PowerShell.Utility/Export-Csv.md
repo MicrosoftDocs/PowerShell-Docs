@@ -743,6 +743,11 @@ The CSV list is sent to the file designated in the Path parameter.
 
 ## NOTES
 
+PowerShell includes the following aliases for `Export-Csv`:
+
+- All platforms:
+  - `epcsv`
+
 The `Export-CSV` cmdlet converts the objects that you submit into a series of CSV strings and saves
 them in the specified text file. You can use `Export-CSV -IncludeTypeInformation` to save objects
 in a CSV file and then use the `Import-Csv` cmdlet to create objects from the text in the CSV file.
