@@ -413,9 +413,9 @@ file.
 
 ```powershell
 $allPeople | Add-Member -Name ExtraProp -Value 42 -MemberType NoteProperty
-$allPeople | Export-Csv
+$allPeople | Export-Csv -Path .\People.csv
 
-Get-Content -Path .\People.csv -Path .\People.csv
+Get-Content -Path .\People.csv
 ```
 
 ```Output
