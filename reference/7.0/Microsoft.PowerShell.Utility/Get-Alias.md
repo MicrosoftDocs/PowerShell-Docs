@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/01/2021
+ms.date: 10/24/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-alias?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Alias
@@ -214,6 +214,11 @@ every alias, but PowerShell uses an arrow-based format to display the names of n
 aliases.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Get-Alias`:
+
+- All platforms:
+  - `gal`
 
 - To create a new alias, use `Set-Alias` or `New-Alias`. To delete an alias, use `Remove-Item`.
 - The arrow-based alias name format is not used for aliases that include a hyphen. These are likely

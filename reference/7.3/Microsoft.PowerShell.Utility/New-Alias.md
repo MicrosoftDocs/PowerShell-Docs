@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/02/2021
+ms.date: 10/24/2021
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Alias
@@ -243,6 +243,11 @@ When you use the **Passthru** parameter, `New-Alias` generates a
 does not generate any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `New-Alias`:
+
+- All platforms:
+  - `nal`
 
 - To create a new alias, use `Set-Alias` or `New-Alias`. To change an alias, use `Set-Alias`. To delete
 an alias, use `Remove-Item`.
