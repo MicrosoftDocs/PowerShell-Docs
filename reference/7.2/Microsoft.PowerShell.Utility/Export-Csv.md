@@ -412,7 +412,7 @@ In PowerShell 7.2 and above, when you export a hashtable that has additional pro
 file.
 
 ```powershell
-$allPeople | Add-Member -Name ExtraProp -Value 42
+$allPeople | Add-Member -Name ExtraProp -Value 42 -MemberType NoteProperty
 $allPeople | Export-Csv
 
 Get-Content -Path .\People.csv -Path .\People.csv
