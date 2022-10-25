@@ -57,8 +57,7 @@ see [Install and Configure WMF 5.1][04].
 
 ### Windows PowerShell 4.0
 
-Windows PowerShell 4.0 runs on the following versions of Windows. To run Windows PowerShell 4.0,
-install the specified version of the Windows Management Framework for your operating system.
+Windows PowerShell 4.0 runs on the following versions of Windows.
 
 |              Windows version               |               System requirement               |
 | ------------------------------------------ | ---------------------------------------------- |
