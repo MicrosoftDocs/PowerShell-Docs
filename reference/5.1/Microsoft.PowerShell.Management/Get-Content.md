@@ -627,11 +627,9 @@ specify as input.
 
 PowerShell includes the following aliases for `Get-Content`:
 
-- All platforms:
-  - `gc`
-  - `type`
-- Windows:
-  - `cat`
+- `cat`
+- `gc`
+- `type`
 
 The `Get-Content` cmdlet is designed to work with the data exposed by any provider. To get the
 providers in your session, use the `Get-PSProvider` cmdlet. For more information, see
