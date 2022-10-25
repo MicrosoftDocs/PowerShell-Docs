@@ -324,8 +324,7 @@ This cmdlet does not return any objects.
 
 PowerShell includes the following aliases for `Clear-Content`:
 
-- All platforms:
-  - `clc`
+- `clc`
 
 You can use `Clear-Content` with the PowerShell FileSystem provider and with other providers that
 manipulate content. To clear items that are not considered to be content, such as items managed by
