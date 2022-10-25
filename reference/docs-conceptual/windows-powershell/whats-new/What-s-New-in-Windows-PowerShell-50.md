@@ -33,8 +33,8 @@ details, and meet all system requirements, before you install Windows Management
 
 Many updates and improvements to Windows PowerShell Desired State Configuration (DSC) in Windows
 PowerShell 4.0 are available in the
-[November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2][01] (KB
-3000850). You can determine if KB 3000850 is installed on your system by running
+[November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2][01]
+(KB3000850). You can determine if KB3000850 is installed on your system by running
 `Get-Hotfix -Id KB3000850` in Windows PowerShell.
 
 - Updates to existing cmdlets in the [PSDesiredStateConfiguration][13] module
@@ -111,10 +111,10 @@ PowerShell 4.0 are available in the
 
 ### New features in Windows PowerShell
 
-- Starting in Windows PowerShell 5.0, you can develop by using classes, by using formal syntax and
-  semantics that are similar to other object-oriented programming languages. **Class**, **Enum**,
-  and other keywords have been added to the Windows PowerShell language to support the new feature.
-  For more information about working with classes, see about_Classes.
+- Starting in Windows PowerShell 5.0, you can develop using classes, formal syntax, and semantics
+  that are similar to other object-oriented programming languages. **Class**, **Enum**, and other
+  keywords have been added to the Windows PowerShell language to support the new feature. For more
+  information about working with classes, see about_Classes.
 
 - Windows PowerShell 5.0 introduces a new, structured information stream that you can use to
   transmit structured data between a script and its callers (or hosting environment). You can now
@@ -179,9 +179,9 @@ PowerShell 4.0 are available in the
   logs all script blocks to the Event Tracing for Windows (ETW) event log,
   **Microsoft-Windows-PowerShell/Operational**.
 - Starting in Windows PowerShell 5.0, new Cryptographic Message Syntax cmdlets support encryption
-  and decryption of content by using the IETF standard format for cryptographically protecting
-  messages as documented by [RFC5652][73]. The Get-CmsMessage, Protect-CmsMessage, and
-  Unprotect-CmsMessage cmdlets have been added to the [Microsoft.PowerShell.Security][11] module.
+  and decryption of content using the IETF standard format for cryptographically protecting messages
+  as documented by [RFC5652][73]. The Get-CmsMessage, Protect-CmsMessage, and Unprotect-CmsMessage
+  cmdlets have been added to the [Microsoft.PowerShell.Security][11] module.
 - New cmdlets in the [Microsoft.PowerShell.Utility][12] module, Get-Runspace, Debug-Runspace,
   Get-RunspaceDebug, Enable-RunspaceDebug, and Disable-RunspaceDebug, let you set debug options on a
   runspace, and start and stop debugging on a runspace. For debugging arbitrary runspaces (that is,
@@ -240,7 +240,7 @@ PowerShell 4.0 are available in the
   ApplicationInfo.
 - Get-Command has a new parameter, -ShowCommandInfo, that returns ShowCommand information as
   PSObjects. This is especially useful functionality for when Show-Command is run in Windows
-  PowerShell ISE by using Windows PowerShell remoting. The -ShowCommandInfo parameter replaces the
+  PowerShell ISE using Windows PowerShell remoting. The -ShowCommandInfo parameter replaces the
   existing Get-SerializedCommand function in the Microsoft.PowerShell.Utility module, but the
   Get-SerializedCommand script is still available to support downlevel scripting.
 - A new Get-ItemPropertyValue cmdlet lets you get the value of a property without using dot
@@ -266,7 +266,7 @@ PowerShell 4.0 are available in the
 ### New features in Windows PowerShell Desired State Configuration
 
 - Windows PowerShell language enhancements let you define Windows PowerShell Desired State
-  Configuration (DSC) resources by using classes. Import-DscResource is now a true dynamic keyword;
+  Configuration (DSC) resources using classes. Import-DscResource is now a true dynamic keyword;
   Windows PowerShell parses the specified module's root module, searching for classes that contain
   the DscResource attribute. You can now use classes to define DSC resources, in which neither a MOF
   file nor a DSCResource subfolder in the module folder is required. A Windows PowerShell module
@@ -314,10 +314,10 @@ PowerShell 4.0 are available in the
   documents to a node in fragments. For a node to receive multiple fragments of a configuration
   document, the node's Local Configuration Manager must be first set to specify the expected
   fragments
-- Cross-computer synchronization is new in DSC in Windows PowerShell 5.0. By using the built-in
+- Cross-computer synchronization is new in DSC in Windows PowerShell 5.0. using the built-in
   WaitFor\* resources (**WaitForAll**, **WaitForAny**, and **WaitForSome**), you can now specify
   dependencies across computers during configuration runs, without external orchestrations. These
-  resources provide node-to-node synchronization by using CIM connections over the WS-Man protocol.
+  resources provide node-to-node synchronization using CIM connections over the WS-Man protocol.
   A configuration can wait for another computer's specific resource state to change.
 - Just Enough Administration (JEA), a new delegation security feature, leverages DSC and Windows
   PowerShell constrained runspaces to help secure enterprises from data loss or compromise by
@@ -383,7 +383,7 @@ requirements, before you install Windows Management Framework 4.0.
 
 Windows PowerShell 4.0 includes the following new features.
 
-### <a name="new-features-in-windows-powershell-1" />New features in Windows PowerShell
+### <a name="new-features-in-windows-powershell-1"/>New features in Windows PowerShell
 
 - **Windows PowerShell Desired State Configuration** (DSC) is a new management system in Windows
   PowerShell 4.0 that enables the deployment and management of configuration data for software
@@ -400,16 +400,16 @@ Windows PowerShell 4.0 includes the following new features.
   remote sessions. Remote debugging sessions are preserved over Windows PowerShell remote sessions
   that are disconnected and then later reconnected.
 - A **RunNow** parameter for **Register-ScheduledJob** and **Set-ScheduledJob** eliminates the need
-  to set an immediate start date and time for jobs by using the **Trigger** parameter.
-- **Invoke-RestMethod** and **Invoke-WebRequest** now let you set all headers by using the Headers
+  to set an immediate start date and time for jobs using the **Trigger** parameter.
+- **Invoke-RestMethod** and **Invoke-WebRequest** now let you set all headers using the Headers
   parameter. Although this parameter has always existed, it was one of several parameters for the
   web cmdlets that resulted in exceptions or errors.
 - **Get-Module** has a new parameter, **FullyQualifiedName**, of the type
   **ModuleSpecification\[]**. The **FullyQualifiedName** parameter of Get-Module now lets you
-  specify a module by using the module's name, version, and optionally, its GUID.
+  specify a module using the module's name, version, and optionally, its GUID.
 - The default execution policy setting on Windows Server 2012 R2 is **RemoteSigned**. On Windows
   8.1, there is no change in default setting.
-- Starting in Windows PowerShell 4.0, method invocation by using dynamic method names is supported.
+- Starting in Windows PowerShell 4.0, method invocation using dynamic method names is supported.
   You can use a variable to store a method name, and then dynamically invoke the method by calling
   the variable.
 - Asynchronous workflow jobs are no longer deleted when the time-out period that is specified by the
@@ -425,8 +425,8 @@ Windows PowerShell 4.0 includes the following new features.
 - A new common parameter, **PipelineVariable**, has been added. PipelineVariable lets you save the
   results of a piped command (or part of a piped command) as a variable that can be passed through
   the remainder of the pipeline.
-- Collection filtering by using a method syntax is now supported. This means that you can now filter
-  a collection of objects by using simplified syntax, similar to that for Where() or Where-Object,
+- Collection filtering using a method syntax is now supported. This means that you can now filter
+  a collection of objects using simplified syntax, similar to that for Where() or Where-Object,
   formatted as a method call. The following is an example: (Get-Process).where({$_.Name -match
   'powershell'})
 - The **Get-Process** cmdlet has a new switch parameter, **IncludeUserName**.
@@ -434,7 +434,7 @@ Windows PowerShell 4.0 includes the following new features.
   file, has been added.
 - In Windows PowerShell 4.0, if a module uses the **DefaultCommandPrefix** key in its manifest, or
   if the user imports a module with the **Prefix** parameter, the **ExportedCommands** property of
-  the module shows the commands in the module with the prefix. When you run the commands by using
+  the module shows the commands in the module with the prefix. When you run the commands using
   the module-qualified syntax, ModuleName\\CommandName, the command names must include the prefix.
 - The value of **$PSVersionTable.PSVersion** has been updated to 4.0.
 - **Where()** operator behavior has changed. `Collection.Where('property -match name')` accepting a
@@ -453,7 +453,7 @@ Windows PowerShell 4.0 includes the following new features.
 
 - Support has been added for a new **PipelineVariable** common parameter in the context of iterative
   pipelines, such as those used by System Center Orchestrator; that is, pipelines that run commands
-  simply left-to-right, as opposed to interspersed running by using streaming.
+  simply left-to-right, as opposed to interspersed running using streaming.
 - Parameter binding has been significantly enhanced to work outside of tab completion scenarios,
   such as with commands that do not exist in the current runspace.
 - Support for custom container activities has been added to Windows PowerShell Workflow. If an
@@ -462,7 +462,7 @@ Windows PowerShell 4.0 includes the following new features.
   Workflow converts the script block to XAML, as with normal Windows PowerShell script-to-workflow
   compilation.
 - After a crash, Windows PowerShell Workflow automatically reconnects to managed nodes.
-- You can now throttle **Foreach -Parallel** activity statements by using the **ThrottleLimit**
+- You can now throttle **Foreach -Parallel** activity statements using the **ThrottleLimit**
   property.
 - The **ErrorAction** common parameter has a new valid value, **Suspend**, that is exclusively for
   workflows.
@@ -538,7 +538,7 @@ Windows PowerShell 4.0 includes the following new features.
 - **ConvertTo-Json** and **ConvertFrom-Json** can now accept terms within double quotes, and its
   error messages are now localizable.
 - **Get-Job** now returns any completed scheduled jobs, even in new sessions.
-- Issues with mounting and unmounting VHDs by using the **FileSystem** provider in Windows
+- Issues with mounting and unmounting VHDs using the **FileSystem** provider in Windows
   PowerShell 4.0 have been fixed. Windows PowerShell is now able to detect new drives when they are
   mounted in the same session.
 - You no longer need to explicitly load **ScheduledJob** or **Workflow** modules to work with their
@@ -656,7 +656,7 @@ scenarios.
 ### Disconnected Sessions
 
 Beginning in Windows PowerShell 3.0, persistent user-managed sessions ("PSSessions") that you create
-by using the New-PSSession cmdlet are saved on the remote computer. They are no longer dependent on
+using the New-PSSession cmdlet are saved on the remote computer. They are no longer dependent on
 the session in which they were created.
 
 You can now disconnect from a session without disrupting the commands that are running in the
@@ -684,7 +684,7 @@ connection cannot be reestablished in the allotted time, the user is notified an
 disconnected. During the attempt to reconnect, Windows PowerShell provides continuous feedback to
 the user.
 
-If the disconnected session was started by using the InvokeCommand, Windows PowerShell creates a job
+If the disconnected session was started using the InvokeCommand, Windows PowerShell creates a job
 for the disconnected session to make it easier to reconnect and resume execution.
 
 These features provide a more reliable and recoverable remoting experience and allow users to
@@ -765,7 +765,7 @@ Framework. API, CIM management cmdlets and WMI 2.0 providers.
 
 ### Session Configuration Files
 
-Beginning in Windows PowerShell 3.0, you can design a custom session configuration by using a file.
+Beginning in Windows PowerShell 3.0, you can design a custom session configuration using a file.
 The new session configuration file lets you determine the environment of sessions that use the
 session configuration, including which modules, scripts, and format files are loaded into sessions,
 which cmdlets and language elements users can use, which modules and scripts they can run, and which
@@ -777,7 +777,7 @@ advanced tasks.
 
 In previous versions of Windows PowerShell, control at this level was available only to those who
 could write a C# program or a complex start-up script. Now, any member of the Administrators group
-on the computer can customize a session configuration by using a configuration file.
+on the computer can customize a session configuration using a configuration file.
 
 To create a session configuration file, use the `New-PSSessionConfigurationFile` cmdlet. To apply
 the session configuration file to a session configuration, use the `Register-PSSessionConfiguration`
@@ -795,7 +795,7 @@ Windows PowerShell scheduled jobs are a useful hybrid of Windows PowerShell back
 Scheduler tasks.
 
 Like Windows PowerShell background jobs, scheduled jobs run asynchronously in the background.
-Instances of scheduled jobs that have completed can be managed by using the job cmdlets, such as
+Instances of scheduled jobs that have completed can be managed using the job cmdlets, such as
 `Start-Job` and `Get-Job`.
 
 Like Task Scheduler tasks, you can run scheduled jobs on a one-time or recurrent schedule, or in
@@ -903,7 +903,7 @@ persistent network drives, and alternate data streams in file system drives.
 
 Windows PowerShell 3.0 extends module discovery, importing, and implicit remoting capabilities on
 remote computers. The Module cmdlets get modules on remote computers and import the modules to the
-remote or local computer by using Windows PowerShell remoting. New CIM session support allows you to
+remote or local computer using Windows PowerShell remoting. New CIM session support allows you to
 use CIM and WMI to manage non-Windows computers by importing commands to the local computer that run
 implicitly on the remote computer.
 
@@ -925,10 +925,10 @@ When you get the cmdlet that you need, you can use it immediately without import
 Windows PowerShell modules are now imported automatically when you use any cmdlet in the module. You
 no longer need to search for the module and import it to use its cmdlets.
 
-Automatic importing of modules is triggered by using the cmdlet in a command, running `Get-Command`
+Automatic importing of modules is triggered using the cmdlet in a command, running `Get-Command`
 for a cmdlet without wildcards, or running `Get-Help` for a cmdlet without wildcards.
 
-You can enable, disable, and configure automatic importing of modules by using the
+You can enable, disable, and configure automatic importing of modules using the
 **$PSModuleAutoLoadingPreference** preference variable.
 
 For more information, see [about_Modules][04], [about_Preference_Variables][05], and the help topics
@@ -1032,7 +1032,6 @@ cmdlets. The parser also includes special logic to improve handling of the backt
 - [Windows PowerShell][02]
 
 <!-- link references -->
-[KB 3000850]: https://support.microsoft.com/topic/november-2014-update-rollup-for-windows-rt-8-1-windows-8-1-and-windows-server-2012-r2-7be5865b-adaa-dbbf-e2d4-1f819e7c9d87
 [01]: https://www.microsoft.com/download/details.aspx?id=44975
 [02]: /powershell/
 [03]: /powershell/module/Microsoft.PowerShell.Core

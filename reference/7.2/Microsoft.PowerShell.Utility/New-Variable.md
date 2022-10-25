@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2022
+ms.date: 10/25/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/new-variable?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Variable
@@ -373,6 +373,11 @@ This cmdlet returns a **PSVariable** object representing the new variable, if yo
 **PassThru** parameter. Otherwise, it does not return any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `New-Variable`:
+
+- All platforms:
+  - `nv`
 
 ## RELATED LINKS
 
