@@ -33,6 +33,12 @@ In the Windows CMD shell it is common to run the `cd` command without any spaces
 between the command and the destination path. This function runs
 `Set-Location \` to change to the root folder.
 
+## `cd~`
+
+In the Windows CMD shell it is common to run the `cd` command without any spaces
+between the command and the destination path. This function runs
+`Set-Location ~` to change to the user's home folder.
+
 ## `Pause`
 
 This function replicates the behavior of CMD's `pause` command. The script
