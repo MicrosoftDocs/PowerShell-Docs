@@ -471,8 +471,7 @@ represents the content. Otherwise, this cmdlet does not generate any output.
 
 PowerShell includes the following aliases for `Set-Content`:
 
-- Windows:
-  - `sc`
+- `sc`
 
 - `Set-Content` is designed for string processing. If you pipe non-string objects to `Set-Content`,
   it converts the object to a string before writing it. To write objects to files, use `Out-File`.
