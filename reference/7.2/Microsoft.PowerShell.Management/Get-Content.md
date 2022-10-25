@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/05/2021
+ms.date: 10/25/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
@@ -658,6 +658,14 @@ You can pipe the read count, total count, paths, or credentials to `Get-Content`
 specify as input.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Get-Content`:
+
+- All platforms:
+  - `gc`
+  - `type`
+- Windows:
+  - `cat`
 
 The `Get-Content` cmdlet is designed to work with the data exposed by any provider. To get the
 providers in your session, use the `Get-PSProvider` cmdlet. For more information, see
