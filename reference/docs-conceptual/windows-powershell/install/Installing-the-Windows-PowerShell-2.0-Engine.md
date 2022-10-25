@@ -1,6 +1,6 @@
 ---
 description: The Windows PowerShell 2.0 Engine is an optional feature of Windows. This article explains how to install the feature and the necessary requirements.
-ms.date: 11/01/2021
+ms.date: 10/25/2022
 title: Installing the Windows PowerShell 2.0 Engine
 ---
 
@@ -30,7 +30,7 @@ PowerShell 2.0 installation in the Windows PowerShell installation directory. Ho
 PowerShell 2.0 Engine is retained.
 
 For information about starting the Windows PowerShell 2.0 Engine, see
-[Starting the Windows PowerShell 2.0 Engine](../Starting-the-Windows-PowerShell-2.0-Engine.md).
+[Starting the Windows PowerShell 2.0 Engine][01].
 
 ## On Windows 8.1 and Windows 8
 
@@ -90,23 +90,21 @@ minimum. This requirement is fulfilled by Microsoft .NET Framework 3.5.
   PowerShell 2.0 Engine**.
 
 For information about starting the Windows PowerShell 2.0 Engine, see
-[Starting the Windows PowerShell 2.0 Engine](../Starting-the-Windows-PowerShell-2.0-Engine.md).
-
-## On Earlier Systems
-
-The [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855)
-package that installs Windows PowerShell 4.0 on Windows 7, Windows Server 2008 R2, and Windows
-Server 2012, includes the Windows PowerShell 2.0 Engine. The Windows PowerShell 2.0 Engine is
-enabled and ready to use, if necessary, without additional installation, setup, or configuration.
-
-The [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595)
-package that installs Windows PowerShell 3.0 on Windows 7, Windows Server 2008 R2, and Windows
-Server 2008, includes the Windows PowerShell 2.0 Engine. The Windows PowerShell 2.0 Engine is
-enabled and ready to use, if necessary, without additional installation, setup, or configuration.
+[Starting the Windows PowerShell 2.0 Engine][01].
 
 ## See Also
 
-- [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
-- [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
-- [Starting Windows PowerShell](/previous-versions/ms714415(v=vs.85))
-- [Starting the Windows PowerShell 2.0 Engine](../Starting-the-Windows-PowerShell-2.0-Engine.md)
+- [Windows PowerShell System Requirements][06]
+- [Installing Windows PowerShell][05]
+- [Starting Windows PowerShell][02])
+- [Starting the Windows PowerShell 2.0 Engine][01]
+
+<!-- link references -->
+[01]: ../Starting-the-Windows-PowerShell-2.0-Engine.md
+[02]: /previous-versions/ms714415(v=vs.85)
+[05]: Installing-Windows-PowerShell.md
+[06]: Windows-PowerShell-System-Requirements.md
+<!--
+[03]: https://www.microsoft.com/download/details.aspx?id=34595 "WMF 4.0"
+[04]: https://www.microsoft.com/download/details.aspx?id=40855 "WMF 3.0"
+-->
