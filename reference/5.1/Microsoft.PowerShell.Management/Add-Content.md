@@ -488,8 +488,7 @@ represents the content. Otherwise, this cmdlet does not generate any output.
 
 PowerShell includes the following aliases for `Add-Content`:
 
-- Windows:
-  - `ac`
+- `ac`
 
 - When you pipe an object to `Add-Content`, the object is converted to a string before it is added
   to the item. The object type determines the string format, but the format might be different than
