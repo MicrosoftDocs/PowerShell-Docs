@@ -160,6 +160,9 @@ Preinstallation Environment (Windows PE). However, the following cmdlets aren't 
 
 The **WinRM** service isn't present on Windows PE.
 
+For information on installing Windows PowerShell 5.1 on Windows PE, see
+[Adding Windows PowerShell support to Windows PE][25].
+
 ## See also
 
 - [Installing Windows PowerShell][24]
@@ -188,3 +191,4 @@ The **WinRM** service isn't present on Windows PE.
 [21]: https://www.microsoft.com/download/details.aspx?id=34595
 [23]: Installing-the-Windows-PowerShell-2.0-Engine.md
 [24]: Installing-Windows-PowerShell.md
+[25]: /windows-hardware/manufacture/desktop/winpe-adding-powershell-support-to-windows-pe
