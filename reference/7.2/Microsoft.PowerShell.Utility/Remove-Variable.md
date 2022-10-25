@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/21/2020
+ms.date: 10/25/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/remove-variable?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Variable
@@ -183,11 +183,13 @@ This cmdlet does not return any output.
 
 ## NOTES
 
+PowerShell includes the following aliases for `Remove-Variable`:
+
+- All platforms:
+  - `rv`
+
 - Changes affect only the current scope, such as a session. To delete a variable from all sessions,
   add a `Remove-Variable` command to your PowerShell profile.
-
-- You can also refer to `Remove-Variable` by its built-in alias, `rv`. For more information, see
-  [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 ## RELATED LINKS
 

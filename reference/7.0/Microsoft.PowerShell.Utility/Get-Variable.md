@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/28/2019
+ms.date: 10/25/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-variable?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Variable
@@ -188,6 +188,11 @@ processing the variable's values one at a time. A workaround to force collection
 enclose the `Get-Variable` command in parenthesis.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Get-Variable`:
+
+- All platforms:
+  - `gv`
 
 - This cmdlet does not manage environment variables. To manage environment variables, you can use
 the environment variable provider.
