@@ -20,8 +20,8 @@ installing, check the list of [Supported versions](#supported-versions) below.
 Installation on Alpine is based on downloading tar.gz package from the [releases][releases] page.
 The URL to the package depends on the version of PowerShell you want to install.
 
-- PowerShell 7.2.6 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.6/powershell-7.2.6-linux-alpine-x64.tar.gz`
-- PowerShell 7.0.12 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.12/powershell-7.0.12-linux-alpine-x64.tar.gz`
+- PowerShell 7.2.7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/powershell-7.2.7-linux-alpine-x64.tar.gz`
+- PowerShell 7.0.13 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.13/powershell-7.0.13-linux-alpine-x64.tar.gz`
 
 Then, in the terminal, execute the following shell commands to install PowerShell 7.2:
 
@@ -46,7 +46,7 @@ sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.2.6/powershell-7.2.6-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/powershell-7.2.7-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
