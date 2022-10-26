@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 11/16/2021
+ms.date: 10/26/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
@@ -178,7 +178,8 @@ session, use the **InDisconnectedSession** parameter. To run a command in a back
 You can also use `Invoke-Command` on a local computer to a run script block as a command. PowerShell
 runs the script block immediately in a child scope of the current scope.
 
-Before using `Invoke-Command` to run commands on a remote computer, read [about_Remote](./About/about_Remote.md).
+Before using `Invoke-Command` to run commands on a remote computer, read
+[about_Remote](./About/about_Remote.md).
 
 Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and invoke
 commands on remote computers. SSH must be installed on the local computer and the remote computer
@@ -188,7 +189,8 @@ you use the **HostName** or **SSHConnection** parameters to specify the remote c
 connection information. For more information about how to set up PowerShell SSH remoting, see
 [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
-Some code samples use splatting to reduce the line length. For more information, see [about_Splatting](./About/about_Splatting.md).
+Some code samples use splatting to reduce the line length. For more information, see
+[about_Splatting](./About/about_Splatting.md).
 
 ## EXAMPLES
 
@@ -208,7 +210,9 @@ on the remote computer and the results are returned to the local computer.
 This example runs a `Get-Culture` command on the Server01 remote computer.
 
 ```powershell
-Invoke-Command -ComputerName Server01 -Credential Domain01\User01 -ScriptBlock { Get-Culture }
+Invoke-Command -ComputerName Server01 -Credential Domain01\User01 -ScriptBlock {
+    Get-Culture
+}
 ```
 
 The **ComputerName** parameter specifies the name of the remote computer. The **Credential**
@@ -226,7 +230,7 @@ remote computer named Server02.
 
 ```powershell
 $s = New-PSSession -ComputerName Server02 -Credential Domain01\User01
-Invoke-Command -Session $s -ScriptBlock {Get-Culture}
+Invoke-Command -Session $s -ScriptBlock { Get-Culture }
 ```
 
 The `New-PSSession` cmdlet creates a session on the Server02 remote computer and saves it in the
@@ -245,11 +249,11 @@ This example compares the effects of using **ComputerName** and **Session** para
 data.
 
 ```powershell
-Invoke-Command -ComputerName Server02 -ScriptBlock {$p = Get-Process PowerShell}
-Invoke-Command -ComputerName Server02 -ScriptBlock {$p.VirtualMemorySize}
+Invoke-Command -ComputerName Server02 -ScriptBlock { $p = Get-Process PowerShell }
+Invoke-Command -ComputerName Server02 -ScriptBlock { $p.VirtualMemorySize }
 $s = New-PSSession -ComputerName Server02
-Invoke-Command -Session $s -ScriptBlock {$p = Get-Process PowerShell}
-Invoke-Command -Session $s -ScriptBlock {$p.VirtualMemorySize}
+Invoke-Command -Session $s -ScriptBlock { $p = Get-Process PowerShell }
+Invoke-Command -Session $s -ScriptBlock { $p.VirtualMemorySize }
 ```
 
 ```Output
@@ -280,8 +284,10 @@ script block is saved in a variable, you can specify the variable as the value o
 **ScriptBlock** parameter.
 
 ```powershell
-$command = { Get-WinEvent -LogName PowerShellCore/Operational |
-  Where-Object {$_.Message -like "*certificate*"} }
+$command = {
+    Get-WinEvent -LogName PowerShellCore/Operational |
+      Where-Object -FilterScript { $_.Message -like '*certificate*' }
+}
 Invoke-Command -ComputerName S1, S2 -ScriptBlock $command
 ```
 
@@ -294,9 +300,9 @@ This example demonstrates how to use `Invoke-Command` to run a single command on
 
 ```powershell
 $parameters = @{
-  ComputerName = "Server01", "Server02", "TST-0143", "localhost"
+  ComputerName      = 'Server01', 'Server02', 'TST-0143', 'localhost'
   ConfigurationName = 'MySession.PowerShell'
-  ScriptBlock = { Get-WinEvent -LogName PowerShellCore/Operational }
+  ScriptBlock       = { Get-WinEvent -LogName PowerShellCore/Operational }
 }
 Invoke-Command @parameters
 ```
@@ -311,7 +317,9 @@ parameter runs `Get-WinEvent` to get the PowerShellCore/Operational event logs f
 This example gets the version of the PowerShell host program running on 200 remote computers.
 
 ```powershell
-$version = Invoke-Command -ComputerName (Get-Content Machines.txt) -ScriptBlock {(Get-Host).Version}
+$version = Invoke-Command -ComputerName (Get-Content Machines.txt) -ScriptBlock {
+    (Get-Host).Version
+}
 ```
 
 Because only one command is run, you don't have to create persistent connections to each of the
@@ -334,7 +342,7 @@ but the job exists on the local computer. The results are transmitted to the loc
 
 ```powershell
 $s = New-PSSession -ComputerName Server01, Server02
-Invoke-Command -Session $s -ScriptBlock {Get-EventLog system} -AsJob
+Invoke-Command -Session $s -ScriptBlock { Get-EventLog system } -AsJob
 ```
 
 ```Output
@@ -388,11 +396,14 @@ This example shows how to include the values of local variables in a command run
 computer. The command uses the `Using` scope modifier to identify a local variable in a remote
 command. By default, all variables are assumed to be defined in the remote session. The `Using`
 scope modifier was introduced in PowerShell 3.0. For more information about the `Using` scope
-modifier, see [about_Remote_Variables](./About/about_Remote_Variables.md) and [about_Scopes](./about/about_scopes.md).
+modifier, see [about_Remote_Variables](./About/about_Remote_Variables.md) and
+[about_Scopes](./about/about_scopes.md).
 
 ```powershell
-$Log = "PowerShellCore/Operational"
-Invoke-Command -ComputerName Server01 -ScriptBlock {Get-WinEvent -LogName $Using:Log -MaxEvents 10}
+$Log = 'PowerShellCore/Operational'
+Invoke-Command -ComputerName Server01 -ScriptBlock {
+    Get-WinEvent -LogName $Using:Log -MaxEvents 10
+}
 ```
 
 The `$Log` variable stores the name of the event log, PowerShellCore/Operational. The
@@ -408,7 +419,7 @@ display. You can still use the **Format** cmdlets to display the **PsComputerNam
 of the affected objects.
 
 ```powershell
-Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
+Invoke-Command -ComputerName S1, S2 -ScriptBlock { Get-Process PowerShell }
 ```
 
 ```Output
@@ -419,7 +430,9 @@ S2                777      14        35100      30988   150     3.68     67   Po
 ```
 
 ```powershell
-Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell} -HideComputerName
+Invoke-Command -ComputerName S1, S2 -HideComputerName -ScriptBlock {
+    Get-Process PowerShell
+}
 ```
 
 ```Output
@@ -445,9 +458,12 @@ For more information about the `Param` keyword, see
 
 ```powershell
 $parameters = @{
-    ComputerName = "Server01"
-    ScriptBlock = { Param ($param1,$param2) Get-ChildItem -Name $param1 -Include $param2 }
-    ArgumentList = "a*", "*.pdf"
+    ComputerName = 'Server01'
+    ScriptBlock  = {
+        Param ($param1, $param2)
+        Get-ChildItem -Name $param1 -Include $param2
+    }
+    ArgumentList = 'a*', '*.pdf'
 }
 Invoke-Command @parameters
 ```
@@ -475,9 +491,9 @@ For more information about the `$args` variable, see
 
 ```powershell
 $parameters = @{
-    ComputerName = "Server01"
-    ScriptBlock = { Get-ChildItem $args[0] $args[1] }
-    ArgumentList = "C:\Test", "*.txt*"
+    ComputerName = 'Server01'
+    ScriptBlock  = { Get-ChildItem $args[0] $args[1] }
+    ArgumentList = 'C:\Test', '*.txt*'
 }
 Invoke-Command @parameters
 ```
@@ -504,7 +520,12 @@ file. This command lets you run the script on the remote computers, even if the 
 accessible to the remote computers.
 
 ```powershell
-Invoke-Command -ComputerName (Get-Content Servers.txt) -FilePath C:\Scripts\Sample.ps1 -ArgumentList Process, Service
+$parameters = @{
+    ComputerName = (Get-Content Servers.txt)
+    FilePath     = 'C:\Scripts\Sample.ps1'
+    ArgumentList = 'Process', 'Service'
+}
+Invoke-Command @parameters
 ```
 
 When you submit the command, the content of the `Sample.ps1` file is copied into a script block and
@@ -520,10 +541,10 @@ Identifier (URI). This particular example runs a `Set-Mailbox` command on a remo
 $LiveCred = Get-Credential
 $parameters = @{
   ConfigurationName = 'Microsoft.Exchange'
-  ConnectionUri = 'https://ps.exchangelabs.com/PowerShell'
-  Credential = $LiveCred
-  Authentication = 'Basic'
-  ScriptBlock = {Set-Mailbox Dan -DisplayName "Dan Park"}
+  ConnectionUri     = 'https://ps.exchangelabs.com/PowerShell'
+  Credential        = $LiveCred
+  Authentication    = 'Basic'
+  ScriptBlock       = { Set-Mailbox Dan -DisplayName 'Dan Park' }
 }
 Invoke-Command @parameters
 ```
@@ -544,7 +565,14 @@ This example shows how to create and use a **SessionOption** parameter.
 
 ```powershell
 $so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
-Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-HotFix } -SessionOption $so -Credential server01\user01
+$parameters = @{
+    ComputerName  = 'server01'
+    UseSSL        = $true
+    ScriptBlock   = { Get-HotFix }
+    SessionOption = $so
+    Credential    = 'server01\user01'
+}
+Invoke-Command @parameters
 ```
 
 The `New-PSSessionOption` cmdlet creates a session option object that causes the remote end not to
@@ -565,10 +593,10 @@ URI redirection in a remote command.
 ```powershell
 $max = New-PSSessionOption -MaximumRedirection 1
 $parameters = @{
-  ConnectionUri = "https://ps.exchangelabs.com/PowerShell"
-  ScriptBlock = { Get-Mailbox dan }
+  ConnectionUri    = 'https://ps.exchangelabs.com/PowerShell'
+  ScriptBlock      = { Get-Mailbox dan }
   AllowRedirection = $true
-  SessionOption = $max
+  SessionOption    = $max
 }
 Invoke-Command @parameters
 ```
@@ -603,12 +631,12 @@ and the remote computer.
 ```powershell
 Enable-WSManCredSSP -Role Client -DelegateComputer Server02
 $s = New-PSSession Server02
-Invoke-Command -Session $s -ScriptBlock {Enable-WSManCredSSP -Role Server -Force}
+Invoke-Command -Session $s -ScriptBlock { Enable-WSManCredSSP -Role Server -Force }
 $parameters = @{
-  ComputerName = 'Server02'
-  ScriptBlock = { Get-Item \\Net03\Scripts\LogFiles.ps1 }
-  Authentication = "CredSSP"
-  Credential = "Domain01\Admin01"
+  ComputerName   = 'Server02'
+  ScriptBlock    = { Get-Item \\Net03\Scripts\LogFiles.ps1 }
+  Authentication = 'CredSSP'
+  Credential     = 'Domain01\Admin01'
 }
 Invoke-Command @parameters
 ```
@@ -637,10 +665,13 @@ The script continues to run in the disconnected sessions.
 
 ```powershell
 $parameters = @{
-  ComputerName = (Get-Content -Path C:\Test\Servers.txt)
+  ComputerName          = (Get-Content -Path C:\Test\Servers.txt)
   InDisconnectedSession = $true
-  FilePath = "\\Scripts\Public\ConfigInventory.ps1"
-  SessionOption = @{OutputBufferingMode="Drop";IdleTimeout=43200000}
+  FilePath              = '\\Scripts\Public\ConfigInventory.ps1'
+  SessionOption         = @{
+      OutputBufferingMode = 'Drop'
+      IdleTimeout         = [timespan]::FromHours(12)
+  }
 }
 Invoke-Command @parameters
 ```
@@ -650,8 +681,8 @@ a `Get-Content` command that gets the names of the remote computers from a text 
 **InDisconnectedSession** parameter disconnects the sessions as soon as it starts the command. The
 value of the **FilePath** parameter is the script that `Invoke-Command` runs on each computer.
 
-The value of **SessionOption** is a hash table. The **OutputBufferingMode** value is set to **Drop**
-and the **IdleTimeout** value is set to **43200000** milliseconds (12 hours).
+The value of **SessionOption** is a hash table. The **OutputBufferingMode** value is set to `Drop`
+and the **IdleTimeout** value is set to 12 hours.
 
 To get the results of commands and scripts that run in disconnected sessions, use the
 `Receive-PSSession` cmdlet.
@@ -673,7 +704,12 @@ user authentication. You won't be prompted for a password unless the key authent
 the remote computer is configured to allow basic password authentication.
 
 ```powershell
-Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * } -KeyFilePath /UserA/UserAKey_rsa
+$parameters = @{
+    HostName    = 'UserA@LinuxServer01'
+    ScriptBlock = { Get-MailBox * }
+    KeyFilePath = '/UserA/UserAKey_rsa'
+}
+Invoke-Command 
 ```
 
 ### Example 21: Run a script file on multiple remote computers using SSH as a job
@@ -684,10 +720,18 @@ contain connection information for each computer. This example requires that the
 computers have SSH configured to support key-based user authentication.
 
 ```powershell
-$sshConnections =
-@{ HostName="WinServer1"; UserName="Domain\UserA"; KeyFilePath="C:\Users\UserA\id_rsa" },
-@{ HostName="UserB@LinuxServer5"; KeyFilePath="/Users/UserB/id_rsa" }
-$results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -SSHConnection $sshConnections
+$sshConnections = @(
+    @{
+        HostName    = "WinServer1"
+        UserName    = "Domain\UserA"
+        KeyFilePath = "C:\Users\UserA\id_rsa"
+    }
+    @{
+        HostName    = "UserB@LinuxServer5"
+        KeyFilePath = "/Users/UserB/id_rsa"
+    }
+)
+$results = Invoke-Command -FilePath c:\Scripts\GetInfo.ps1 -SSHConnection $sshConnections
 ```
 
 ## PARAMETERS
@@ -724,7 +768,8 @@ application name when you aren't using the **ConnectionURI** parameter in the co
 
 The default value is the value of the `$PSSessionApplicationName` preference variable on the local
 computer. If this preference variable isn't defined, the default value is WSMAN. This value is
-appropriate for most uses. For more information, see [about_Preference_Variables](./About/about_Preference_Variables.md).
+appropriate for most uses. For more information, see
+[about_Preference_Variables](./About/about_Preference_Variables.md).
 
 The WinRM service uses the application name to select a listener to service the connection request.
 The value of this parameter should match the value of the **URLPrefix** property of a listener on
@@ -744,9 +789,10 @@ Accept wildcard characters: False
 
 ### -ArgumentList
 
-Supplies the values of parameters for the scriptblock. The parameters in the script block are passed
-by position from the array value supplied to **ArgumentList**. This is known as array splatting. For
-more information about the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
+Supplies the values of parameters for the scriptblock. The parameters in the script block are
+passed by position from the array value supplied to **ArgumentList**. This is known as array
+splatting. For more information about the behavior of **ArgumentList**, see
+[about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: System.Object[]
@@ -774,7 +820,8 @@ remotely. However, with **AsJob**, the job is created on the local computer, eve
 runs on a remote computer. The results of the remote job are automatically returned to the local
 computer.
 
-For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
+For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and
+[about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -1124,7 +1171,8 @@ You can set the output buffering mode and idle time-out in the **SessionOption**
 `$PSSessionOption` preference variable. For more information about session options, see
 `New-PSSessionOption` and [about_Preference_Variables](./about/about_preference_variables.md).
 
-For more information about the Disconnected Sessions feature, see [about_Remote_Disconnected_Sessions](about/about_Remote_Disconnected_Sessions.md).
+For more information about the Disconnected Sessions feature, see
+[about_Remote_Disconnected_Sessions](about/about_Remote_Disconnected_Sessions.md).
 
 This parameter was introduced in PowerShell 3.0.
 
@@ -1359,6 +1407,15 @@ Specifies advanced options for the session. Enter a **SessionOption** object, su
 create using the `New-PSSessionOption` cmdlet, or a hash table in which the keys are session option
 names and the values are session option values.
 
+> [!NOTE]
+> If you specify a hashtable for **SessionOption**, PowerShell converts the hashtable into a
+> **System.Management.Autiomation.Remoting.PSSessionOption** object. The values for keys specified
+> in the hashtable are cast to the matching property of the object. This behaves differently from
+> calling `New-PSSessionOption`. For example, the **System.TimeSpan** values for the timeout
+> properties, like **IdleTimeout**, convert an integer value into ticks instead of milliseconds.
+> For more information on the **PSSessionOption** object and its properties, see
+> [PSSessionOption](/dotnet/api/system.management.automation.remoting.pssessionoption)
+
 The default values for the options are determined by the value of the `$PSSessionOption` preference
 variable, if it's set. Otherwise, the default values are established by options set in the session
 configuration.
@@ -1368,8 +1425,9 @@ The session option values take precedence over default values for sessions set i
 precedence over maximum values, quotas, or limits set in the session configuration.
 
 For a description of the session options that includes the default values, see
-`New-PSSessionOption`. For information about the `$PSSessionOption` preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
-For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
+`New-PSSessionOption`. For information about the `$PSSessionOption` preference variable, see
+[about_Preference_Variables](About/about_Preference_Variables.md). For more information about
+session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
 Type: System.Management.Automation.Remoting.PSSessionOption
@@ -1442,7 +1500,7 @@ This specifies the subsystem to use on the target as defined in sshd_config.
 The subsystem starts a specific version of PowerShell with predefined parameters.
 If the specified subsystem does not exist on the remote computer, the command fails.
 
-If this parameter is not used, the default is the 'powershell' subsystem.
+If this parameter is not used, the default is the `powershell` subsystem.
 
 ```yaml
 Type: System.String
@@ -1565,7 +1623,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
