@@ -1,7 +1,7 @@
 ---
 description: Describes the telemetry collected in PowerShell and how to opt-out.
 Locale: en-US
-ms.date: 09/30/2021
+ms.date: 10/26/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_telemetry?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Telemetry
@@ -31,8 +31,8 @@ The host-based telemetry data includes:
 
 > [!NOTE]
 > Application Insights uses the hosts IP address to determine the geographic
-> location. The IP address is never included in the telemetry data or stored in
-> the database.
+> location. The IP address is never included in the telemetry data or stored
+> in the database.
 
 The following PowerShell activities are recorded:
 
