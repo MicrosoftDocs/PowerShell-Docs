@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/16/2022
+ms.date: 10/25/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
@@ -514,12 +514,15 @@ represents the content. Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
+PowerShell includes the following aliases for `Add-Content`:
+
+- Windows:
+  - `ac`
+
 - When you pipe an object to `Add-Content`, the object is converted to a string before it is added
   to the item. The object type determines the string format, but the format might be different than
   the default display of the object. To control the string format, use the formatting parameters of
   the sending cmdlet.
-- You can also refer to `Add-Content` by its built-in alias, `ac`. For more information, see
-  [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 - The `Add-Content` cmdlet is designed to work with the data exposed by any provider. To list the
   providers available in your session, type `Get-PSProvider`. For more information, see
   [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
