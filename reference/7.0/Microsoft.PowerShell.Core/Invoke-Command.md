@@ -1414,7 +1414,7 @@ names and the values are session option values.
 > calling `New-PSSessionOption`. For example, the **System.TimeSpan** values for the timeout
 > properties, like **IdleTimeout**, convert an integer value into ticks instead of milliseconds.
 > For more information on the **PSSessionOption** object and its properties, see
-> [PSSessionOption](https://learn.microsoft.com/dotnet/api/system.management.automation.remoting.pssessionoption)
+> [PSSessionOption](/dotnet/api/system.management.automation.remoting.pssessionoption)
 
 The default values for the options are determined by the value of the `$PSSessionOption` preference
 variable, if it's set. Otherwise, the default values are established by options set in the session
