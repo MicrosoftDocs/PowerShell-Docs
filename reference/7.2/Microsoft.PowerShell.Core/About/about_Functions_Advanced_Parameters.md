@@ -573,8 +573,7 @@ ComputerName[1]:
 ```
 
 If there is no [comment-based help](./about_comment_based_help.md) for the
-function (for example, `.SYNOPSIS`) then this message is displayed in the
-`Get-Help -Full` output.
+function then this message is displayed in the `Get-Help -Full` output.
 
 This argument has no effect on optional parameters.
 
