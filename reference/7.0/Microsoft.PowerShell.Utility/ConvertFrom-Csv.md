@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/16/2022
+ms.date: 10/26/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-csv?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Csv
@@ -10,8 +10,8 @@ title: ConvertFrom-Csv
 # ConvertFrom-Csv
 
 ## SYNOPSIS
-Converts object properties in comma-separated value (CSV) format into CSV versions of the original
-objects.
+Converts object properties in character-separated value (CSV) format into CSV versions of the
+original objects.
 
 ## SYNTAX
 
@@ -83,7 +83,9 @@ properties in the resulting imported object.
 
 ```powershell
 $J = Start-Job -ScriptBlock { Get-Process } | ConvertTo-Csv  -NoTypeInformation
-$Header = 'State', 'MoreData', 'StatusMessage', 'Location', 'Command', 'StateInfo', 'Finished', 'InstanceId', 'Id', 'Name', 'ChildJobs', 'BeginTime', 'EndTime', 'JobType', 'Output', 'Error', 'Progress', 'Verbose', 'Debug', 'Warning', 'Information'
+$Header = 'State', 'MoreData', 'StatusMessage', 'Location', 'Command', 'StateInfo',
+          'Finished', 'InstanceId', 'Id', 'Name', 'ChildJobs', 'BeginTime', 'EndTime',
+          'JobType', 'Output', 'Error', 'Progress', 'Verbose', 'Debug', 'Warning', 'Information'
 # Delete the default header from $J
 $J = $J[1..($J.count - 1)]
 $J | ConvertFrom-Csv -Header $Header
@@ -171,7 +173,7 @@ Accept wildcard characters: False
 Specifies an alternate column header row for the imported string. The column header determines the
 property names of the objects created by `ConvertFrom-Csv`.
 
-Enter column headers as a comma-separated list. Do not enclose the header string in quotation
+Enter column headers as a character-separated list. Do not enclose the header string in quotation
 marks. Enclose each column header in single quotation marks.
 
 If you enter fewer column headers than there are data columns, the remaining data columns are
@@ -195,9 +197,9 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies the CSV strings to be converted to objects. Enter a variable that contains the CSV
-strings or type a command or expression that gets the CSV strings. You can also pipe the CSV
-strings to `ConvertFrom-Csv`.
+Specifies the CSV strings to be converted to objects. Enter a variable that contains the CSV strings
+or type a command or expression that gets the CSV strings. You can also pipe the CSV strings to
+`ConvertFrom-Csv`.
 
 ```yaml
 Type: System.Management.Automation.PSObject[]
@@ -253,8 +255,8 @@ Because the imported objects are CSV versions of the object type, they are not r
 formatted by the PowerShell type formatting entries that format the non-CSV versions of the object
 type.
 
-In CSV format, each object is represented by a comma-separated list of the property values of the
-object. The property values are converted to strings (by using the **ToString()** method of the
+In CSV format, each object is represented by a character-separated list of the property values of
+the object. The property values are converted to strings (by using the **ToString()** method of the
 object), so they are represented by the name of the property value. This cmdlet does not export the
 methods of the object.
 
