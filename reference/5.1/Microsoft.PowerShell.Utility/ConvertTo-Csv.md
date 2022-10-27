@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/07/2019
+ms.date: 10/26/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-csv?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Csv
@@ -11,7 +11,7 @@ title: ConvertTo-Csv
 # ConvertTo-Csv
 
 ## SYNOPSIS
-Converts .NET objects into a series of comma-separated value (CSV) strings.
+Converts .NET objects into a series of character-separated value (CSV) strings.
 
 ## SYNTAX
 
@@ -30,10 +30,10 @@ ConvertTo-Csv [-InputObject] <psobject> [-UseCulture] [-NoTypeInformation] [<Com
 
 ## DESCRIPTION
 
-The `ConvertTo-CSV` cmdlet returns a series of comma-separated value (CSV) strings that represent
-the objects that you submit. You can then use the `ConvertFrom-Csv` cmdlet to recreate objects from
-the CSV strings. The objects converted from CSV are string values of the original objects that
-contain property values and no methods.
+The `ConvertTo-CSV` cmdlet returns a series of character-separated value (CSV) strings that
+represent the objects that you submit. You can then use the `ConvertFrom-Csv` cmdlet to recreate
+objects from the CSV strings. The objects converted from CSV are string values of the original
+objects that contain property values and no methods.
 
 You can use the `Export-Csv` cmdlet to convert objects to CSV strings. `Export-CSV` is similar to
 `ConvertTo-CSV`, except that it saves the CSV strings to a file.
@@ -98,8 +98,8 @@ Get-WinEvent -LogName 'Windows PowerShell' | ConvertTo-Csv -UseCulture -NoTypeIn
 
 The `Get-Culture` cmdlet uses the nested properties **TextInfo** and **ListSeparator** and displays
 the current culture's default list separator. The `Get-WinEvent` cmdlet gets the event log objects
-and uses the **LogName** parameter to specify the log file name. The event log objects are sent
-down the pipeline to the `ConvertTo-Csv` cmdlet. The `ConvertTo-Csv` cmdlet converts the event log
+and uses the **LogName** parameter to specify the log file name. The event log objects are sent down
+the pipeline to the `ConvertTo-Csv` cmdlet. The `ConvertTo-Csv` cmdlet converts the event log
 objects to a series of CSV strings. The **UseCulture** parameter uses the current culture's default
 list separator as the delimiter. The **NoTypeInformation** parameter removes the **#TYPE**
 information header from the CSV output.
@@ -127,8 +127,7 @@ Accept wildcard characters: False
 ### -InputObject
 
 Specifies the objects that are converted to CSV strings. Enter a variable that contains the objects
-or type a command or expression that gets the objects. You can also pipe objects to
-`ConvertTo-CSV`.
+or type a command or expression that gets the objects. You can also pipe objects to `ConvertTo-CSV`.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -197,7 +196,7 @@ The CSV output is returned as a collection of strings.
 
 ## NOTES
 
-In CSV format, each object is represented by a comma-separated list of its property value. The
+In CSV format, each object is represented by a character-separated list of its property value. The
 property values are converted to strings using the object's **ToString()** method. The strings are
 represented by the property value name. `ConvertTo-CSV` does not export the object's methods.
 
@@ -209,8 +208,8 @@ The CSV strings are output as follows:
   contain the first object's property names as a comma-separated list.
 - The remaining strings contain comma-separated lists of each object's property values.
 
-When you submit multiple objects to `ConvertTo-CSV`, `ConvertTo-CSV` orders the strings based on
-the properties of the first object that you submit. If the remaining objects do not have one of the
+When you submit multiple objects to `ConvertTo-CSV`, `ConvertTo-CSV` orders the strings based on the
+properties of the first object that you submit. If the remaining objects do not have one of the
 specified properties, the property value of that object is Null, as represented by two consecutive
 commas. If the remaining objects have additional properties, those property values are ignored.
 
