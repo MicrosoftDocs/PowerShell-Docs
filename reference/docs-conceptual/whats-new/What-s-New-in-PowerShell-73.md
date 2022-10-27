@@ -43,7 +43,7 @@ PowerShell 7.3-rc.1 includes the following features, updates, and breaking chang
 - Add type inference support for generic methods with type parameters (#16951) (Thanks @MartinGC94!)
 - Improve type inference and completions (#16963) (Thanks @MartinGC94!)
   - Allows methods to be shown in completion results for `ForEach-Object -MemberName`
-  - Prevents completion on expressions that return void like `([void][""])`
+  - Prevents completion on expressions that return void like `([void](""))`
   - Allows non-default Class constructors to show up when class completion is based on the AST
 - Improve type inference for `$_` (#17716) (Thanks @MartinGC94!)
 - Fix type inference for **ICollection** (#17752) (Thanks @MartinGC94!)
@@ -88,19 +88,19 @@ For a complete list of changes, see the [Change Log][11] in the GitHub repositor
 PowerShell 7.3 introduces the following experimental features:
 
 - [PSExec][05] - Adds the new `Switch-Process` cmdlet (alias `exec`) to provide `exec`
-  compatibility for non-Windows systems. In PowerShell 7.3-rc.1, this feature became
+  compatibility for non-Windows systems. In PowerShell 7.3-preview.8, this feature became
   mainstream.
 - [PSCleanBlock][04] - Adds `clean` block to script block as a peer to `begin`, `process`,
-  and `end` to allow easy resource cleanup. In PowerShell 7.3-rc.1, this feature became
+  and `end` to allow easy resource cleanup. In PowerShell 7.3-preview.8, this feature became
   mainstream.
 - [PSStrictModeAssignment][07] - Adds the **StrictMode** parameter to `Invoke-Command` to
-  allow specifying strict mode when invoking command locally. In PowerShell 7.3-rc.1, this
+  allow specifying strict mode when invoking command locally. In PowerShell 7.3-preview.8, this
   feature was removed.
 - [PSNativeCommandErrorActionPreference][06] - Adds the
   `$PSNativeCommandUseErrorActionPreference` variable to enable errors produced by native commands
   to be PowerShell errors.
 - [PSAMSIMethodInvocationLogging][02] - Extends the data sent to AMSI for inspection to
-  include all invocations of .NET method members. In PowerShell 7.3-rc.1, this feature became
+  include all invocations of .NET method members. In PowerShell 7.3-preview.8, this feature became
   mainstream.
 - Remove [PSNativePSPathResolution][03] experimental feature.
 
@@ -108,8 +108,11 @@ For more information about the Experimental Features, see [Using Experimental Fe
 
 ## Breaking Changes and Improvements
 
-- `Test-Connection` is broken due to an intentional
-  [breaking change][09] in .NET 7. It's tracked by
+- In this release, Windows APIs were updated or removed for compliance, which means that PowerShell
+  7.3 doesn't run on Windows 7. While Windows 7 is no longer supported, previous builds could run on
+  Windows 7.
+- PowerShell Direct for Hyper-V is only supported on Windows 10, version 1809 and higher.
+- `Test-Connection` is broken due to an intentional [breaking change][09] in .NET 7. It's tracked by
   [#17018][10]
 - Add `clean` block to script block as a peer to `begin`, `process`, and `end` to allow easy
   resource cleanup (#15177)
@@ -122,10 +125,6 @@ For more information about the Experimental Features, see [Using Experimental Fe
     **System.Security.AccessControl.ObjectSecurity**.
   - After this change, a user needs to explicitly import **Microsoft.PowerShell.Security** module in
     order to use those code properties and code methods.
-- In this release, Windows APIs were updated or removed for compliance, which means that PowerShell
-  7.3 doesn't run on Windows 7. While Windows 7 is no longer supported, previous builds could run on
-  Windows 7.
-- PowerShell Direct for Hyper-V is only supported on Windows 10, version 1809 and higher.
 
 <!-- end of content -->
 <!-- reference links -->
