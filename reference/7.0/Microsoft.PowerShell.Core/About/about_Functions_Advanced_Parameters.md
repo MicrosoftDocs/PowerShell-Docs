@@ -572,9 +572,9 @@ ComputerName[0]: localhost
 ComputerName[1]:
 ```
 
-If there is no other [comment-based help](./about_comment_based_help.md) syntax
-for the function (for example, `.SYNOPSIS`) then this message also shows up in
-`Get-Help` output.
+If there is no [comment-based help](./about_comment_based_help.md) for the
+function (for example, `.SYNOPSIS`) then this message is displays in
+`Get-Help -Full` output.
 
 This argument has no effect on optional parameters.
 
