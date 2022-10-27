@@ -53,7 +53,7 @@ winget search Microsoft.PowerShell
 Name               Id                           Version Source
 ---------------------------------------------------------------
 PowerShell         Microsoft.PowerShell         7.2.7.0 winget
-PowerShell Preview Microsoft.PowerShell.Preview 7.3.0.8 winget
+PowerShell Preview Microsoft.PowerShell.Preview 7.3.8.0 winget
 ```
 
 Install PowerShell or PowerShell Preview using the `id` parameter

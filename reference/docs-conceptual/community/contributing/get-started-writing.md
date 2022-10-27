@@ -49,7 +49,7 @@ location should be included in the issue discussion.
 
 Where applicable, cmdlet reference articles are duplicated across all versions of PowerShell
 maintained in this repository. When reporting an issue about a cmdlet reference or an `About_`
-article, list the versions the article that have the problem.
+article, list the versions of the article that have the problem.
 
 Apply the appropriate change to each version of the file.
 

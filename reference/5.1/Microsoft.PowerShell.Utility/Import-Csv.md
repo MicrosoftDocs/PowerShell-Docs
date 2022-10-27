@@ -10,7 +10,7 @@ title: Import-Csv
 # Import-Csv
 
 ## SYNOPSIS
-Creates table-like custom objects from the items in a comma-separated value (CSV) file.
+Creates table-like custom objects from the items in a character-separated value (CSV) file.
 
 ## SYNTAX
 
@@ -268,7 +268,8 @@ Import-Csv -Path .\Projects.csv
 ```
 
 ```Output
-WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
+WARNING: One or more headers were not specified. Default names starting with "H" have been used in
+place of any missing headers.
 
 ProjectID ProjectName H1      Completed
 --------- ----------- --      ---------
@@ -282,7 +283,8 @@ ProjectID ProjectName H1      Completed
 ```
 
 ```Output
-WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
+WARNING: One or more headers were not specified. Default names starting with "H" have been used in
+place of any missing headers.
 Redmond
 FarEast
 Europe
@@ -354,7 +356,7 @@ Accept wildcard characters: False
 Specifies an alternate column header row for the imported file. The column header determines the
 property names of the objects created by `Import-Csv`.
 
-Enter column headers as a comma-separated list. Do not enclose the header string in quotation
+Enter column headers as a character-separated list. Do not enclose the header string in quotation
 marks. Enclose each column header in single quotation marks.
 
 If you enter fewer column headers than there are data columns, the remaining data columns are
@@ -472,8 +474,8 @@ values than the header row, the additional values are ignored.
 If the column header row is missing a value or contains a null or empty value, `Import-Csv` uses
 **H** followed by a number for the missing column header and property name.
 
-In the CSV file, each object is represented by a comma-separated list of the property values of the
-object. The property values are converted to strings by using the **ToString()** method of the
+In the CSV file, each object is represented by a character-separated list of the property values of
+the object. The property values are converted to strings by using the **ToString()** method of the
 object, so they are represented by the name of the property value. `Export-Csv` does not export the
 methods of the object.
 

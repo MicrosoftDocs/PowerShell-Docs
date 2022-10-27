@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/18/2022
+ms.date: 10/27/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
@@ -339,7 +339,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -625,7 +625,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -732,7 +732,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -835,7 +835,7 @@ Accepted values: true
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -931,7 +931,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -947,18 +947,18 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -VMId
 
-Specifies an array of virtual machine IDs. This cmdlet starts an interactive session with each of
-the specified virtual machines. To see the virtual machines that are available to you, use the
-following command:
+Specifies an array of virtual machine IDs. This cmdlet starts a PowerShell Direct interactive
+session with each of the specified virtual machines. For more information, see
+[Virtual Machine automation and management using PowerShell](/virtualization/hyper-v-on-windows/user-guide/powershell-direct).
 
-`Get-VM | Select-Object -Property Name, ID`
+Use `Get-VM` to see the virtual machines that are available on your Hyper-V host.
 
 ```yaml
 Type: System.Guid[]
@@ -974,9 +974,11 @@ Accept wildcard characters: False
 
 ### -VMName
 
-Specifies an array of names of virtual machines. This cmdlet starts an interactive session with each
-of the specified virtual machines. To see the virtual machines that are available to you, use the
-`Get-VM` cmdlet.
+Specifies an array of names of virtual machines. This cmdlet starts a PowerShell Direct interactive
+session with each of the specified virtual machines. For more information, see
+[Virtual Machine automation and management using PowerShell](/virtualization/hyper-v-on-windows/user-guide/powershell-direct).
+
+Use `Get-VM` to see the virtual machines that are available on your Hyper-V host.
 
 ```yaml
 Type: System.String[]
