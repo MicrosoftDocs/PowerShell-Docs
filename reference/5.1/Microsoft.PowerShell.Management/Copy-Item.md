@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 07/22/2022
+ms.date: 10/28/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/copy-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Copy-Item
@@ -664,6 +664,12 @@ When you use the **PassThru** parameter, this cmdlet returns an object that repr
 item. Otherwise, this cmdlet doesn't generate any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Copy-Item`:
+
+- `copy`
+- `cp`
+- `cpi`
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see
