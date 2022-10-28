@@ -1,7 +1,7 @@
 ---
 description: Describes an attribute that reports the type of object that the function returns.
 Locale: en-US
-ms.date: 01/03/2018
+ms.date: 10/27/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions OutputTypeAttribute
@@ -201,7 +201,7 @@ System.DateTime                           System.DateTime
 
 ### Example 4: A function  that shouldn't have output
 
-The following example shows a custom function that should perform and action
+The following example shows a custom function that should perform an action
 but not return anything.
 
 ```powershell

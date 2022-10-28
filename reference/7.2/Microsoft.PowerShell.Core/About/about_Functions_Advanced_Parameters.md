@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 09/30/2022
+ms.date: 10/27/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Parameters
@@ -544,16 +544,12 @@ Found 2 elements
 #### HelpMessage argument
 
 The `HelpMessage` argument specifies a string that contains a brief description
-of the parameter or its value. PowerShell displays this message in the prompt
-that appears when a mandatory parameter value is missing from a command. This
-argument has no effect on optional parameters.
+of the parameter or its value. If you run the command without the mandatory
+parameter, PowerShell prompts you for input. To see the help message, type `!?`
+at the prompt and hit <kbd>Enter</kbd>.
 
 The following example declares a mandatory **ComputerName** parameter and a
 help message that explains the expected parameter value.
-
-If there is no other [comment-based help](./about_comment_based_help.md) syntax
-for the function (for example, `.SYNOPSIS`) then this message also shows up in
-`Get-Help` output.
 
 ```powershell
 Param(
@@ -563,6 +559,23 @@ Param(
     $ComputerName
 )
 ```
+
+Example output:
+
+```Output
+cmdlet  at command pipeline position 1
+Supply values for the following parameters:
+(Type !? for Help.)
+ComputerName[0]: !?
+Enter one or more computer names separated by commas.
+ComputerName[0]: localhost
+ComputerName[1]:
+```
+
+If there is no [comment-based help](./about_comment_based_help.md) for the
+function then this message is displayed in the `Get-Help -Full` output.
+
+This argument has no effect on optional parameters.
 
 ### Alias attribute
 

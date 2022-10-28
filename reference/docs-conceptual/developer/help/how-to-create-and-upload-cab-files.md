@@ -1,6 +1,6 @@
 ---
 description: How to Create and Upload CAB Files
-ms.date: 09/13/2016
+ms.date: 10/26/2022
 ms.topic: reference
 title: How to Create and Upload CAB Files
 ---
@@ -21,28 +21,27 @@ culture. Use the following procedure to create CAB files for Updatable Help.
    module, each for a different UI culture.
 
 1. Verify that help files include only the file types permitted for Updatable Help and validate them
-   against a help file schema. If the `Update-Help` cmdlet encounters a file that is invalid or is
-   not a permitted type, it does not install the invalid file and stops installing files from the
+   against a help file schema. If the `Update-Help` cmdlet encounters a file that's invalid or is
+   not a permitted type, it doesn't install the invalid file and stops installing files from the
    CAB. For a list of permitted file types, see
    [File Types Permitted in an Updatable Help CAB File](./file-types-permitted-in-an-updatable-help-cab-file.md).
 
-1. Digitally sign the help files. Digital signatures are not required, but they are a best practice.
-
-1. Include all of help files for the module in the UI culture, not only files that are new or have
+1. Include all the help files for the module in the UI culture, not only files that are new or have
    changed. If the CAB file is incomplete, users who download help files for the first time or do
-   not download every update, will not have all of the module help files.
+   not download every update, won't have all the help files.
 
-1. Use a utility that creates cabinet files, such as `MakeCab.exe`. PowerShell does not include
+1. Use a utility that creates cabinet files, such as `MakeCab.exe`. PowerShell doesn't include
    cmdlets that create CAB files.
 
 1. Name the CAB files. For more information, see
    [How to Name an Updatable Help CAB File](./how-to-name-an-updatable-help-cab-file.md).
 
-1. Upload the CAB files for the module to the location that is specified by the **HelpContentUri**
+1. Upload the CAB files for the module to the location that's specified by the **HelpContentUri**
    element in the HelpInfo XML file for the module. Then upload the HelpInfo XML file to the
-   location that is specified by the **HelpInfoUri** key of the module manifest. The
+   location that's specified by the **HelpInfoUri** key of the module manifest. The
    **HelpContentUri** and **HelpInfoUri** can point to the same location.
 
 > [!CAUTION]
 > The value of the **HelpInfoUri** key and the **HelpContentUri** element must begin with `http` or
-> `https`. The value must indicate an Internet location and it must not include a filename.
+> `https`. The value must a URL path pointing to the location (folder) containing the updateable
+> help. The URL must end with `/`. The URL must not include a filename.

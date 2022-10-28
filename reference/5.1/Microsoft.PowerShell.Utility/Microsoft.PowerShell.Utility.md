@@ -4,7 +4,7 @@ Help Version: 5.2.0.0
 Locale: en-US
 Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/02/2021
+ms.date: 10/26/2022
 schema: 2.0.0
 title: Microsoft.PowerShell.Utility
 ---
@@ -34,8 +34,7 @@ Compares two sets of objects.
 Formats a string to match examples.
 
 ### [ConvertFrom-Csv](ConvertFrom-Csv.md)
-Converts object properties in comma-separated value (CSV) format into CSV versions of the original
-objects.
+Converts object properties in character-separated value (CSV) format into CSV versions of the original objects.
 
 ### [ConvertFrom-Json](ConvertFrom-Json.md)
 Converts a JSON-formatted string to a custom object.
@@ -50,7 +49,7 @@ Extracts and parses structured properties from string content.
 Converts a string containing one or more key and value pairs to a hash table.
 
 ### [ConvertTo-Csv](ConvertTo-Csv.md)
-Converts .NET objects into a series of comma-separated value (CSV) strings.
+Converts .NET objects into a series of character-separated value (CSV) strings.
 
 ### [ConvertTo-Html](ConvertTo-Html.md)
 Converts .NET objects into HTML that can be displayed in a Web browser.
@@ -83,8 +82,7 @@ Exports information about currently defined aliases to a file.
 Creates an XML-based representation of an object or objects and stores it in a file.
 
 ### [Export-Csv](Export-Csv.md)
-Converts objects into a series of comma-separated value (CSV) strings and saves the strings to a
-file.
+Converts objects into a series of character-separated value (CSV) strings and saves the strings to a file.
 
 ### [Export-FormatData](Export-FormatData.md)
 Saves formatting data from the current session in a formatting file.
@@ -177,14 +175,13 @@ Imports an alias list from a file.
 Imports a CLIXML file and creates corresponding objects in PowerShell.
 
 ### [Import-Csv](Import-Csv.md)
-Creates table-like custom objects from the items in a comma-separated value (CSV) file.
+Creates table-like custom objects from the items in a character-separated value (CSV) file.
 
 ### [Import-LocalizedData](Import-LocalizedData.md)
-Imports language-specific data into scripts and functions based on the UI culture that is selected
-for the operating system.
+Imports language-specific data into scripts and functions based on the UI culture that is selected for the operating system.
 
 ### [Import-PowerShellDataFile](Import-PowerShellDataFile.md)
-Imports values from a .PSD1 file without invoking its contents
+Imports values from a `.PSD1` file without invoking its contents.
 
 ### [Import-PSSession](Import-PSSession.md)
 Imports commands from another session into the current session.
@@ -202,8 +199,7 @@ Gets content from a web page on the Internet.
 Measures the time it takes to run script blocks and cmdlets.
 
 ### [Measure-Object](Measure-Object.md)
-Calculates the numeric properties of objects, and the characters, words, and lines in string
-objects, such as files of text.
+Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.
 
 ### [New-Alias](New-Alias.md)
 Creates a new alias.

@@ -1,21 +1,14 @@
 ---
-title: What's New in PowerShell 7.3-preview.8
-description: New features and changes released in PowerShell 7.3-preview.8
-ms.date: 09/26/2022
+title: What's New in PowerShell 7.3-rc.1
+description: New features and changes released in PowerShell 7.3-rc.1
+ms.date: 10/27/2022
 ---
 
 # What's New in PowerShell 7.3
 
 PowerShell 7.3 is the next preview release, built on .NET 7.0.
 
-PowerShell 7.3-preview.8 includes the following features, updates, and breaking changes.
-
-> [!NOTE]
-> There is a known issue about `Console.ReadKey()` on Unix platforms that the `KeyChar` isn't
-> preserved for `Ctrl+Letter` inputs. This causes all key bindings in the form of `Ctrl+Letter` to
-> not work in PowerShell v7.3.0-preview.8 on Unix platforms. For details, see the .NET issue
-> [dotnet/runtime#75795][ukb-issue]. The fix ([dotnet/runtime#75853][ukb-pr]) will be included in
-> .NET `7.0.0-rc.2` and we plan to include this in the next PowerShell 7.3 release.
+PowerShell 7.3-rc.1 includes the following features, updates, and breaking changes.
 
 ## Improved error handling
 
@@ -88,36 +81,39 @@ PowerShell 7.3-preview.8 includes the following features, updates, and breaking 
 - Add `find.exe` to legacy argument binding behavior for Windows (#17715)
 - Add `-noprofileloadtime` switch to pwsh (#17535) (Thanks @rkeithhill!)
 
-For a complete list of changes, see the [Change Log][CHANGELOG] in the GitHub repository.
+For a complete list of changes, see the [Change Log][11] in the GitHub repository.
 
 ## Experimental Features
 
 PowerShell 7.3 introduces the following experimental features:
 
-- [PSExec][exp-psexec] - Adds the new `Switch-Process` cmdlet (alias `exec`) to provide `exec`
+- [PSExec][05] - Adds the new `Switch-Process` cmdlet (alias `exec`) to provide `exec`
   compatibility for non-Windows systems. In PowerShell 7.3-preview.8, this feature became
   mainstream.
-- [PSCleanBlock][exp-clean] - Adds `clean` block to script block as a peer to `begin`, `process`,
+- [PSCleanBlock][04] - Adds `clean` block to script block as a peer to `begin`, `process`,
   and `end` to allow easy resource cleanup. In PowerShell 7.3-preview.8, this feature became
   mainstream.
-- [PSStrictModeAssignment][exp-strict] - Adds the **StrictMode** parameter to `Invoke-Command` to
+- [PSStrictModeAssignment][07] - Adds the **StrictMode** parameter to `Invoke-Command` to
   allow specifying strict mode when invoking command locally. In PowerShell 7.3-preview.8, this
   feature was removed.
-- [PSNativeCommandErrorActionPreference][exp-error] - Adds the
+- [PSNativeCommandErrorActionPreference][06] - Adds the
   `$PSNativeCommandUseErrorActionPreference` variable to enable errors produced by native commands
   to be PowerShell errors.
-- [PSAMSIMethodInvocationLogging][exp-amsi] - Extends the data sent to AMSI for inspection to
+- [PSAMSIMethodInvocationLogging][02] - Extends the data sent to AMSI for inspection to
   include all invocations of .NET method members. In PowerShell 7.3-preview.8, this feature became
   mainstream.
-- Remove [PSNativePSPathResolution][exp-path] experimental feature.
+- Remove [PSNativePSPathResolution][03] experimental feature.
 
-For more information about the Experimental Features, see [Using Experimental Features][exp].
+For more information about the Experimental Features, see [Using Experimental Features][01].
 
 ## Breaking Changes and Improvements
 
-- `Test-Connection` is broken due to an intentional
-  [breaking change](https://github.com/dotnet/runtime/issues/66746) in .NET 7. It's tracked by
-  [#17018](https://github.com/PowerShell/PowerShell/issues/17018)
+- In this release, Windows APIs were updated or removed for compliance, which means that PowerShell
+  7.3 doesn't run on Windows 7. While Windows 7 is no longer supported, previous builds could run on
+  Windows 7.
+- PowerShell Direct for Hyper-V is only supported on Windows 10, version 1809 and higher.
+- `Test-Connection` is broken due to an intentional [breaking change][09] in .NET 7. It's tracked by
+  [#17018][10]
 - Add `clean` block to script block as a peer to `begin`, `process`, and `end` to allow easy
   resource cleanup (#15177)
 - Change default for `$PSStyle.OutputRendering` to **Ansi**
@@ -132,13 +128,13 @@ For more information about the Experimental Features, see [Using Experimental Fe
 
 <!-- end of content -->
 <!-- reference links -->
-
-[CHANGELOG]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0-preview.7
-[exp-clean]: ../learn/experimental-features.md#pscleanblock
-[exp-psexec]: ../learn/experimental-features.md#psexec
-[exp-strict]: ../learn/experimental-features.md#psstrictmodeassignment
-[exp-error]: ../learn/experimental-features.md#psnativecommanderroractionpreference
-[exp-amsi]: ../learn/experimental-features.md?#psamsimethodinvocationlogging
-[exp-path]: ../learn/experimental-features.md?#psnativepspathresolution
-[ukb-issue]: https://github.com/dotnet/runtime/issues/75795
-[ukb-pr]: https://github.com/dotnet/runtime/pull/75853
+[01]: ../learn/experimental-features.md
+[02]: ../learn/experimental-features.md?#psamsimethodinvocationlogging
+[03]: ../learn/experimental-features.md?#psnativepspathresolution
+[04]: ../learn/experimental-features.md#pscleanblock
+[05]: ../learn/experimental-features.md#psexec
+[06]: ../learn/experimental-features.md#psnativecommanderroractionpreference
+[07]: ../learn/experimental-features.md#psstrictmodeassignment
+[09]: https://github.com/dotnet/runtime/issues/66746
+[10]: https://github.com/PowerShell/PowerShell/issues/17018
+[11]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0-rc.1
