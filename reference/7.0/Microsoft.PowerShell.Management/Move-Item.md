@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/11/2022
+ms.date: 10/28/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/move-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Move-Item
@@ -356,6 +356,14 @@ When you use the **PassThru** parameter, this cmdlet generates an object represe
 item. Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Move-Item`:
+
+- All platforms:
+  - `mi`
+  - `move`
+- Windows:
+  - `mv`
 
 - This cmdlet will move files between drives that are supported by the same provider, but it will
   move directories only within the same drive.
