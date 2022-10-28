@@ -649,9 +649,9 @@ PowerShell includes the following aliases for `Copy-Item`:
 
 - All platforms:
   - `copy`
-  - `cp`
-- Windows:
   - `cpi`
+- Windows:
+  - `cp`
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see

@@ -1,5 +1,5 @@
 ---
-ms.date: 05/16/2022
+ms.date: 10/28/2022
 title: Differences between Windows PowerShell 5.1 and PowerShell 7.x
 description: This article summarizes the differences and breaking changes from Windows PowerShell 5.1 and the current version of PowerShell that is based on .NET Core.
 ---
@@ -250,7 +250,7 @@ was added. Switch values are also supported.
 
 For Windows, a new switch parameter **UseWindowsPowerShell** is added to `Import-Module`. This
 switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
-implicitly run any cmdlets contained in that module. For more information, see 
+implicitly run any cmdlets contained in that module. For more information, see
 [Import-Module][Import-Module].
 
 For more information on which Microsoft modules work with PowerShell 7.0, see the
