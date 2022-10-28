@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/18/2018
+ms.date: 10/28/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/clear-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Item
@@ -278,6 +278,10 @@ You can pipe a path string to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Clear-Item`:
+
+- `cli`
 
 - The `Clear-Item` cmdlet is supported only by several PowerShell providers, including the **Alias**,
   **Environment**, **Function**, **Registry**, and **Variable** providers. As such, you can use

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/24/2021
+ms.date: 10/28/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
@@ -361,6 +361,11 @@ This cmdlet returns the objects that it gets. The type is determined by the type
 path.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Get-Item`:
+
+- All platforms:
+  - `gi`
 
 This cmdlet does not have a **Recurse** parameter, because it gets only an item, not its contents.
 To get the contents of an item recursively, use `Get-ChildItem`.

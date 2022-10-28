@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/23/2021
+ms.date: 10/28/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Item
@@ -400,6 +400,11 @@ You can pipe a value for the new item to this cmdlet.
 This cmdlet returns the item that it creates.
 
 ## NOTES
+
+PowerShell includes the following aliases for `New-Item`:
+
+- All platforms:
+  - `ni`
 
 `New-Item` is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PsProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).

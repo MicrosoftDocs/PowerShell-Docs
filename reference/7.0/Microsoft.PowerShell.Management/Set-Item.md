@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/14/2019
+ms.date: 10/28/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Item
@@ -297,6 +297,11 @@ This cmdlet generates an object that represent the item, if you specify the *Pas
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Set-Item`:
+
+- All platforms:
+  - `si`
 
 - `Set-Item` is not supported by the PowerShell FileSystem provider. To change the values of items in
   the file system, use the `Set-Content` cmdlet.

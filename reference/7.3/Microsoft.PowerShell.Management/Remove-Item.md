@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/20/2022
+ms.date: 10/28/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
@@ -439,6 +439,17 @@ You can pipe a string that contains a path, but not a literal path, to this cmdl
 This cmdlet does not return any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Remove-Item`:
+
+- All platforms:
+  - `del`
+  - `erase`
+  - `rd`
+  - `ri`
+- Windows:
+  - `rm`
+  - `rmdir`
 
 The `Remove-Item` cmdlet is designed to work with the data exposed by any provider. To list the
 providers available in your session, type `Get-PsProvider`. For more information, see
