@@ -1,5 +1,5 @@
 ---
-ms.date: 05/16/2022
+ms.date: 10/28/2022
 title: Differences between Windows PowerShell 5.1 and PowerShell 7.x
 description: This article summarizes the differences and breaking changes from Windows PowerShell 5.1 and the current version of PowerShell that is based on .NET Core.
 ---
@@ -206,6 +206,42 @@ Windows-specific features:
 - The `Out-GridView` cmdlet
 - The **ShowWindow** parameter of `Get-Help`
 
+### Aliases not available on Linux or macOS
+
+The following table lists the aliases available for Windows that are not available on non-Windows
+platforms. These aliases are not available because the target cmdlet is not available or the alias
+conflicts with a native command on those platforms.
+
+|   Alias   |         Cmdlet         |
+| --------- | ---------------------- |
+| `ac`      | `Add-Content`          |
+| `cat`     | `Get-Content`          |
+| `clear`   | `Clear-Host`           |
+| `cnsn`    | `Connect-PSSession`    |
+| `compare` | `Compare-Object`       |
+| `cp`      | `Copy-Item`            |
+| `cpp`     | `Copy-ItemProperty`    |
+| `diff`    | `Compare-Object`       |
+| `dnsn`    | `Disconnect-PSSession` |
+| `gsv`     | `Get-Service`          |
+| `kill`    | `Stop-Process`         |
+| `ls`      | `Get-ChildItem`        |
+| `man`     | `help`                 |
+| `mount`   | `New-PSDrive`          |
+| `mv`      | `Move-Item`            |
+| `ogv`     | `Out-GridView`         |
+| `ps`      | `Get-Process`          |
+| `rm`      | `Remove-Item`          |
+| `rmdir`   | `Remove-Item`          |
+| `sasv`    | `Start-Service`        |
+| `shcm`    | `Show-Command`         |
+| `sleep`   | `Start-Sleep`          |
+| `sort`    | `Sort-Object`          |
+| `spsv`    | `Stop-Service`         |
+| `start`   | `Start-Process`        |
+| `tee`     | `Tee-Object`           |
+| `write`   | `Write-Output`         |
+
 ### PowerShell Desired State Configuration (DSC) changes
 
 `Invoke-DscResource` was restored as an experimental feature in PowerShell 7.0.
@@ -250,7 +286,7 @@ was added. Switch values are also supported.
 
 For Windows, a new switch parameter **UseWindowsPowerShell** is added to `Import-Module`. This
 switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
-implicitly run any cmdlets contained in that module. For more information, see 
+implicitly run any cmdlets contained in that module. For more information, see
 [Import-Module][Import-Module].
 
 For more information on which Microsoft modules work with PowerShell 7.0, see the
