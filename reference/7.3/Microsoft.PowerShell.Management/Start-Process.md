@@ -172,8 +172,7 @@ Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; s
 ```
 
 In this example, `Start-Process` is running the Linux `nohup` command, which launches `pwsh` as a
-detached process. For more information, see the man page for
-[nohup](https://linux.die.net/man/1/nohup).
+detached process. For more information, type [`man nohup`](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/nohup.html).
 
 ## PARAMETERS
 
@@ -238,7 +237,8 @@ Specifies the optional path and filename of the program that runs in the process
 an executable file or of a document, such as a `.txt` or `.doc` file, that's associated with a
 program on the computer. This parameter is required.
 
-If you specify only a filename, use the **WorkingDirectory** parameter to specify the path.
+If you specify only a filename that does not correspond to a system command,
+use the **WorkingDirectory** parameter to specify the path.
 
 ```yaml
 Type: System.String
@@ -462,8 +462,11 @@ Accept wildcard characters: False
 
 ### -WorkingDirectory
 
-Specifies the location that the new process should start in. The default is the location of the
-executable file or document being started. Wildcards aren't supported. The path must not contain
+Specifies the location that the new process should start in.
+The default is the location of the executable file
+or document being started, if explicitly provided,
+or the current working directory of the calling process.
+Wildcards aren't supported. The path must not contain
 characters that would be interpreted as wildcards.
 
 ```yaml
