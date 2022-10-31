@@ -284,6 +284,9 @@ a native executable.
 > The new behavior is a **breaking change** from current behavior. This may break scripts and
 > automation that work around the various issues when invoking native applications. Historically,
 > quotes must be escaped and it isn't possible to provide empty arguments to a native application.
+>
+> Use the [stop-parsing token][08] (`--%`) or the [`Start-Process`][09] cmdlet to sidestep native
+> argument passing when needed.
 
 This feature adds a new automatic variable `$PSNativeCommandArgumentPassing` that allows you to
 select the behavior at runtime. The valid values are `Legacy`, `Standard`, and `Windows`. `Legacy`
@@ -541,3 +544,5 @@ on the system.
 [05]: https://github.com/PowerShell/PowerShell-RFC/blob/master/Archive/Experimental/RFC0059-Cleanup-Script-Block.md
 [06]: /powershell/dsc/overview?view=dsc-3.0&preserve-view=true
 [07]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
+[08]: /powershell/module/Microsoft.PowerShell.Core/About/about_Parsing#the-stop-parsing-token
+[09]: xref:Microsoft.PowerShell.Management.Start-Process
