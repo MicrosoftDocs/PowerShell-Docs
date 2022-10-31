@@ -284,6 +284,9 @@ a native executable.
 > The new behavior is a **breaking change** from current behavior. This may break scripts and
 > automation that work around the various issues when invoking native applications. Historically,
 > quotes must be escaped and it isn't possible to provide empty arguments to a native application.
+>
+> Use the [stop-parsing token][08] (`--%`) or the [`Start-Process`][09] cmdlet to sidestep native
+> argument passing when needed.
 
 This feature adds a new automatic variable `$PSNativeCommandArgumentPassing` that allows you to
 select the behavior at runtime. The valid values are `Legacy`, `Standard`, and `Windows`. `Legacy`
@@ -377,12 +380,6 @@ Arg 0 is <a" "b>
 Arg 1 is <a" "b>
 Arg 2 is <a b>
 ```
-> ![NOTE]
-> Use the
-> [stop&shy;&#8209;parsing token](/powershell/module/Microsoft.PowerShell.Core/About/about_Parsing#the-stop-parsing-token)
-> `--%`
-> or the [`Start-Process`](xref:Microsoft.PowerShell.Management.Start-Process) cmdlet
-> to sidestep native argument passing when needed.
 
 ## PSNativeCommandErrorActionPreference
 
@@ -535,7 +532,7 @@ the PSReadLine module to provide custom prediction plugins. In future, **Job**,
 **CommandCompleter**, **Remoting** and other components could be separated into subsystem assemblies
 outside of `System.Management.Automation.dll`.
 
-The experimental feature includes a new cmdlet, [`Get-PSSubsystem`][07]. This cmdlet is only available
+The experimental feature includes a new cmdlet, [Get-PSSubsystem][07]. This cmdlet is only available
 when the feature is enabled. This cmdlet returns information about the subsystems that are available
 on the system.
 
@@ -547,3 +544,5 @@ on the system.
 [05]: https://github.com/PowerShell/PowerShell-RFC/blob/master/Archive/Experimental/RFC0059-Cleanup-Script-Block.md
 [06]: /powershell/dsc/overview?view=dsc-3.0&preserve-view=true
 [07]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
+[08]: /powershell/module/Microsoft.PowerShell.Core/About/about_Parsing#the-stop-parsing-token
+[09]: xref:Microsoft.PowerShell.Management.Start-Process
