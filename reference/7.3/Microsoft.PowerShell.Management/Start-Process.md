@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/05/2022
+ms.date: 10/31/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -172,8 +172,8 @@ Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; s
 ```
 
 In this example, `Start-Process` is running the Linux `nohup` command, which launches `pwsh` as a
-detached process. For more information, see the man page for
-[nohup](https://linux.die.net/man/1/nohup).
+detached process. For more information, see the [nohup](https://wikipedia.org/wiki/Nohup) article on
+Wikipedia.
 
 ## PARAMETERS
 
@@ -238,7 +238,8 @@ Specifies the optional path and filename of the program that runs in the process
 an executable file or of a document, such as a `.txt` or `.doc` file, that's associated with a
 program on the computer. This parameter is required.
 
-If you specify only a filename, use the **WorkingDirectory** parameter to specify the path.
+If you specify only a filename that does not correspond to a system command, use the
+**WorkingDirectory** parameter to specify the path.
 
 ```yaml
 Type: System.String
@@ -462,9 +463,14 @@ Accept wildcard characters: False
 
 ### -WorkingDirectory
 
-Specifies the location that the new process should start in. The default is the location of the
-executable file or document being started. Wildcards aren't supported. The path must not contain
-characters that would be interpreted as wildcards.
+Specifies the location that the new process should start in.
+
+When not specified, the cmdlet defaults to the fully-qualified location specified in the
+**FilePath** parameter. If the value of the **FilePath** parameter is not fully-qualified, it
+defaults to the current working directory of the calling process.
+
+Wildcards aren't supported. The path must not contain characters that would be interpreted as
+wildcards.
 
 ```yaml
 Type: System.String
