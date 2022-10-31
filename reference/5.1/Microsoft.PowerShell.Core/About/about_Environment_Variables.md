@@ -391,9 +391,7 @@ The environment variables that store preferences include:
 
   The `$env:PATH` environment variable contains a list of folder locations that
   the operating system searches for executable files. On Windows, the list of
-  folder locations is separated by the semi-colon (`;`) character. On
-  non-Windows platforms, the colon (`:`) separates the folder locations in the
-  environment variable.
+  folder locations is separated by the semi-colon (`;`) character.
 
 - **PATHEXT**
 
