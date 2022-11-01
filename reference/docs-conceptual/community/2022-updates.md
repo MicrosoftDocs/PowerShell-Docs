@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2022
-ms.date: 10/03/2022
+ms.date: 11/01/2022
 title: What's New in PowerShell-Docs for 2022
 ---
 # What's new in PowerShell Docs for 2022
@@ -13,7 +13,49 @@ to get started.
 
 ## 2022-October
 
-- Help us clean up the docs for [Hacktoberfest 2022](https://github.com/MicrosoftDocs/PowerShell-Docs/issues/9257)
+New Content
+
+- [Create a class-based DSC Resource](/powershell/dsc/tutorials/create-class-based-resource?view=dsc-2.0&preserve-view=true)
+- [Hacktoberfest and other hack-a-thon events](/powershell/scripting/community/contributing/hackathons?)
+
+Content updates
+
+- [Hacktoberfest 2022](https://github.com/MicrosoftDocs/PowerShell-Docs/pulls?q=is%3Apr+is%3Aclosed+label%3Ahacktoberfest-accepted)
+  cleanup efforts
+  - Thank you to @ehmiiz, @TSanzo-BLE, and @chadmando for their Hacktoberfest PRs! Their 11 PRs
+    touched 114 articles.
+- Published PowerShell SDK .NET API content for
+  [PowerShell 7.2](/dotnet/api/?view=powershellsdk-7.2.0&preserve-view=true) and
+  [7.3-preview](/dotnet/api/?view=powershellsdk-7.3.0&preserve-view=true)
+  - The first updates since PowerShell 7.1 released in November 2020
+  - Removed the unsupported versions 6.0 and 7.1
+- Added a list of aliases not available on Linux and macOS to
+  [PowerShell differences on non-Windows platforms](/powershell/scripting/whats-new/unix-support)
+
+GitHub stats
+
+- 65 PRs merged (21 from Community)
+- 42 issues opened (28 from Community)
+- 34 issues closed (23 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|      GitHub Id      | PRs merged | Issues opened |
+| ------------------- | :--------: | :-----------: |
+| ehmiiz              |     5      |       5       |
+| TSanzo-BLE          |     4      |               |
+| yecril71pl          |     2      |               |
+| chadmando           |     2      |               |
+| GigaScratch         |     1      |       1       |
+| rbleattler          |     1      |               |
+| spjeff              |     1      |               |
+| adamdriscoll        |     1      |               |
+| manuelcarriernunes  |     1      |               |
+| michelangelobottura |     1      |               |
+| dmpe                |     1      |               |
+| KamilPacanek        |     1      |               |
+| SetTrend            |            |       2       |
 
 ## 2022-September
 
