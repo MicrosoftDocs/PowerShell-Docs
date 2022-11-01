@@ -206,42 +206,6 @@ Windows-specific features:
 - The `Out-GridView` cmdlet
 - The **ShowWindow** parameter of `Get-Help`
 
-### Aliases not available on Linux or macOS
-
-The following table lists the aliases available for Windows that are not available on non-Windows
-platforms. These aliases are not available because the target cmdlet is not available or the alias
-conflicts with a native command on those platforms.
-
-|   Alias   |         Cmdlet         |
-| --------- | ---------------------- |
-| `ac`      | `Add-Content`          |
-| `cat`     | `Get-Content`          |
-| `clear`   | `Clear-Host`           |
-| `cnsn`    | `Connect-PSSession`    |
-| `compare` | `Compare-Object`       |
-| `cp`      | `Copy-Item`            |
-| `cpp`     | `Copy-ItemProperty`    |
-| `diff`    | `Compare-Object`       |
-| `dnsn`    | `Disconnect-PSSession` |
-| `gsv`     | `Get-Service`          |
-| `kill`    | `Stop-Process`         |
-| `ls`      | `Get-ChildItem`        |
-| `man`     | `help`                 |
-| `mount`   | `New-PSDrive`          |
-| `mv`      | `Move-Item`            |
-| `ogv`     | `Out-GridView`         |
-| `ps`      | `Get-Process`          |
-| `rm`      | `Remove-Item`          |
-| `rmdir`   | `Remove-Item`          |
-| `sasv`    | `Start-Service`        |
-| `shcm`    | `Show-Command`         |
-| `sleep`   | `Start-Sleep`          |
-| `sort`    | `Sort-Object`          |
-| `spsv`    | `Stop-Service`         |
-| `start`   | `Start-Process`        |
-| `tee`     | `Tee-Object`           |
-| `write`   | `Write-Output`         |
-
 ### PowerShell Desired State Configuration (DSC) changes
 
 `Invoke-DscResource` was restored as an experimental feature in PowerShell 7.0.
