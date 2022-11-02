@@ -147,8 +147,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 PowerShell includes the following aliases for `Get-TimeZone`:
 
-- All platforms:
-  - `gtz`
+- `gtz`
 
 ## RELATED LINKS
 
