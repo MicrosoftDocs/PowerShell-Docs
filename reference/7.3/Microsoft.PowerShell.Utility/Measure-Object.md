@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/08/2022
+ms.date: 11/03/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Object
@@ -545,6 +545,11 @@ If you use the **Word** parameter, `Measure-Object` returns a **TextMeasureInfo*
 Otherwise, it returns a **GenericMeasureInfo** object.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Measure-Object`:
+
+- All platforms:
+  - `measure`
 
 Starting in PowerShell 7.3, `Measure-Object` no longer returns an error when
 processing an object that is missing the property being measured unless you are
