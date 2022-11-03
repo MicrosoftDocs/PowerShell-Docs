@@ -498,6 +498,8 @@ items:
         href: community/contributing/file-an-issue.md
       - name: Submitting a pull request
         href: community/contributing/pull-requests.md
+      - name: Contributing quality improvements
+        href: community/contributing/quality-improvements.md
       - name: Hacktoberfest and other hack-a-thon events
         href: community/contributing/hackathons.md
       - name: How we manage issues

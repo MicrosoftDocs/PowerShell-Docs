@@ -1,39 +1,39 @@
-name: "Hacktoberfest Issues"
+name: "Quality Contribution Issues"
 on:
   issues:
     types:
       - opened
 
 jobs:
-  # Check if the issue is for hacktoberfest; all other jobs depend on this one.
-  hacktober:
-    name: Verify issue is for hacktoberfest
+  # Check if the issue is for quality contributions; all other jobs depend on this one.
+  quality:
+    name: Is Quality Contribution?
     runs-on: ubuntu-latest
     outputs:
-      check: ${{ steps.is-hacktober.outputs.match != '' }}
+      check: ${{ steps.is-quality.outputs.match != '' }}
     steps:
       - uses: actions-ecosystem/action-regex-match@v2
-        id: is-hacktober
+        id: is-quality
         with:
           text: ${{ github.event.issue.body }}
-          regex: "🎃 2022: Foo"
+          regex: "Quality: Foo"
           flags: gm
 
   project:
     name: Add to project
-    needs: hacktober
-    if: needs.hacktober.outputs.check == 'true'
+    needs: quality
+    if: needs.quality.outputs.check == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/add-to-project@v0.3.0
         with:
           project-url: https://github.com/orgs/MicrosoftDocs/projects/15/views/1
-          github-token: ${{ secrets.hacktober_token }}
+          github-token: ${{ secrets.quality_token }}
 
   assign:
     name: Assign to author
-    needs: hacktober
-    if: needs.hacktober.outputs.check == 'true'
+    needs: quality
+    if: needs.quality.outputs.check == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions-ecosystem/action-add-assignees@v1
@@ -41,40 +41,10 @@ jobs:
           github_token: ${{ secrets.github_token }}
           assignees: ${{ github.event.issue.user.login }}
 
-  associate:
-    name: Associate with meta issue
-    needs: hacktober
-    if: needs.hacktober.outputs.check == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions-ecosystem/action-regex-match@v2
-        id: body-associated
-        with:
-          text: ${{ github.event.issue.body }}
-          regex: '^- MicrosoftDocs\/PowerShell-Docs#9257$'
-      - if: steps.body-associated.outputs.match == ''
-        shell: pwsh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE: ${{ github.event.issue.html_url }}
-          BODY: ${{ github.event.issue.body }}
-          PREFIX: |
-            This issue's related to [Hacktoberfest 2022][01]. For more info, see the meta-issue below:
-
-            - MicrosoftDocs/PowerShell-Docs#9257
-
-            [01]: https://hacktoberfest.com/participation/
-        run: |
-          $env:PREFIX, $env:BODY
-          | Join-String -Separator "`n"
-          | Out-File -FilePath combined.txt -Encoding utf8
-
-          gh issue edit $env:ISSUE --body-file combined.txt
-
   label:
     name: Add quality labels
-    needs: hacktober
-    if: needs.hacktober.outputs.check == 'true'
+    needs: quality
+    if: needs.quality.outputs.check == 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
