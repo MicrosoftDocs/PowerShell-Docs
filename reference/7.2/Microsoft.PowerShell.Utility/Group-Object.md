@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/17/2022
+ms.date: 11/03/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/group-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Group-Object
@@ -424,6 +424,11 @@ When you use the **AsHashTable** parameter, `Group-Object` returns a **Hashtable
 Otherwise, it returns a **GroupInfo** object.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Group-Object`:
+
+- All platforms:
+  - `group`
 
 You can use the **GroupBy** parameter of the formatting cmdlets, such as `Format-Table` and
 `Format-List`, to group objects. Unlike `Group-Object`, which creates a single table with a row for
