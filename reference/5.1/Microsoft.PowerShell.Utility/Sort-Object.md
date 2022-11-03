@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/17/2022
+ms.date: 11/03/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/sort-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Sort-Object
@@ -23,6 +23,10 @@ Sort-Object [[-Property] <Object[]>] [-Descending] [-Unique] [-InputObject <psob
 ```
 
 ## DESCRIPTION
+
+PowerShell includes the following aliases for `Sort-Object`:
+
+- `sort`
 
 The `Sort-Object` cmdlet sorts objects in ascending or descending order based on object property
 values. If sort properties aren't included in a command, PowerShell uses default sort properties of
