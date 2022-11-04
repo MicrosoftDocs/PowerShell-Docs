@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/05/2021
+ms.date: 11/04/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/tee-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Tee-Object
@@ -210,6 +210,10 @@ You can pipe objects to `Tee-Object`.
 `Tee-Object` returns the object that it redirects.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Tee-Object`:
+
+  - `tee`
 
 You can also use the `Out-File` cmdlet or the redirection operator, both of which save the output in
 a file but do not send it down the pipeline.
