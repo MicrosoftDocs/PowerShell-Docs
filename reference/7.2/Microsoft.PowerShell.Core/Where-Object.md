@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/18/2022
+ms.date: 11/04/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Where-Object
@@ -1166,6 +1166,12 @@ You can pipe the objects to this cmdlet.
 This cmdlet returns selected items from the input object set.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Where-Object`:
+
+- All Platforms:
+  - `?`
+  - `where`
 
 Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with
 collections.

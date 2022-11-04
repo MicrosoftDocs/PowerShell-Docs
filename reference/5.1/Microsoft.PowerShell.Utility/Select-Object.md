@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/17/2022
+ms.date: 11/04/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Object
@@ -605,14 +605,15 @@ You can pipe any object to `Select-Object`.
 
 ## NOTES
 
-- You can also refer to the `Select-Object` cmdlet by its built-in alias, `select`. For more
-  information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+Windows PowerShell includes the following aliases for `Select-Object`:
 
-- The optimization feature of `Select-Object` is available only for commands that write objects to
-  the pipeline as they're processed. It has no effect on commands that buffer processed objects and
-  write them as a collection. Writing objects immediately is a cmdlet design best practice. For more
-  information, see _Write Single Records to the Pipeline_ in
-  [Strongly Encouraged Development Guidelines](/powershell/scripting/developer/windows-powershell).
+- `select`
+
+The optimization feature of `Select-Object` is available only for commands that write objects to
+the pipeline as they're processed. It has no effect on commands that buffer processed objects and
+write them as a collection. Writing objects immediately is a cmdlet design best practice. For more
+information, see _Write Single Records to the Pipeline_ in
+[Strongly Encouraged Development Guidelines](/powershell/scripting/developer/windows-powershell).
 
 ## RELATED LINKS
 

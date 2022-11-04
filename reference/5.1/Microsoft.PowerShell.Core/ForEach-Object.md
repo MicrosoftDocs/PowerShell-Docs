@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/27/2021
+ms.date: 11/04/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -458,6 +458,11 @@ You can pipe any object to this cmdlet.
 This cmdlet returns objects that are determined by the input.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `ForEach-Object`:
+
+  - `%`
+  - `foreach`
 
 The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe
 input to a **Foreach** statement. For more information about the **Foreach** statement, see
