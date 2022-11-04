@@ -54,12 +54,12 @@ body:
         - [Markdown linting][c5]: Ensure content follows markdownlint rules
         - [Spelling][c6]: Ensure proper casing and spelling for words
 
-        [c1]: https://learn.microsoft.com/powershell/scripting/community/contributing/contributing-quality-improvements#aliases
-        [c2]: https://learn.microsoft.com/powershell/scripting/community/contributing/contributing-quality-improvements#formatting-code-samples
-        [c3]: https://learn.microsoft.com/powershell/scripting/community/contributing/contributing-quality-improvements#formatting-command-syntax
-        [c4]: https://learn.microsoft.com/powershell/scripting/community/contributing/contributing-quality-improvements#link-references
-        [c5]: https://learn.microsoft.com/powershell/scripting/community/contributing/contributing-quality-improvements#markdown-linting
-        [c6]: https://learn.microsoft.com/powershell/scripting/community/contributing/contributing-quality-improvements#spelling
+        [c1]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements#aliases
+        [c2]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements#formatting-code-samples
+        [c3]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements#formatting-command-syntax
+        [c4]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements#link-references
+        [c5]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements#markdown-linting
+        [c6]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements#spelling
       multiple: true
       options:
         - Aliases
