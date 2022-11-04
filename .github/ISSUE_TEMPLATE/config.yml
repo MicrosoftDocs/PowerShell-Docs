@@ -1,10 +1,10 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 🎃 Hacktoberfest 2022
-    url: https://github.com/MicrosoftDocs/PowerShell-Docs/issues/9257
+  - name: Quality Contributions
+    url: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements
     about: >-
-      If you'd like to participate in Hacktoberfest 2022, before filing an issue, check the info
-      and instructions.
+      If you'd like to commit to improving quality for the documentation, before filing an issue,
+      check the info and instructions.
   - name: PowerShell Product Feedback
     url: https://github.com/PowerShell/PowerShell/issues/new/choose
     about: Please open feature requests for current PowerShell here.

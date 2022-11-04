@@ -1,0 +1,39 @@
+name: "Quality Contributions"
+on:
+  pull_request_target:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - edited
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  # Check if the PR is for quality contributions; all other jobs depend on this one.
+  check:
+    name: Is Quality Contribution?
+    outputs:
+      title:   ${{ steps.title.outputs.check   == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: title
+        run: |
+          $Check = "${{ contains(github.event.pull_request.title, 'Quality:') }}"
+          "Check: $Check"
+          "::set-output name=check::$Check"
+
+  project:
+    name: Add pull request to project
+    needs: check
+    if: |
+      needs.check.outputs.title == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v0.3.0
+        with:
+          project-url: https://github.com/orgs/MicrosoftDocs/projects/15/views/1
+          github-token: ${{ secrets.quality_token }}
