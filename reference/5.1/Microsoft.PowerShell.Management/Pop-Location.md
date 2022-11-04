@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/04/2020
+ms.date: 11/04/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/pop-location?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Pop-Location
@@ -151,6 +151,10 @@ output.
 
 ## NOTES
 
+Windows PowerShell includes the following aliases for `Pop-Location`:
+
+- `popd`
+
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
 This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
 when calling .NET APIs or running native applications without providing explicit directory paths.
@@ -192,9 +196,6 @@ If you make a named location stack the current location stack, you can no longer
 `Get-Location` cmdlet to display the locations in the unnamed stack. To make the unnamed stack
 the current stack, use the **StackName** parameter of the `Set-Location` cmdlet with a value of
 `$Null` or an empty string (`""`).
-
-You can also refer to `Pop-Location` by its built-in alias, `popd`. For more information, see
-[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 `Pop-Location` is designed to work with the data exposed by any provider. To list the
 providers available in your session, type `Get-PSProvider`. For more information, see
