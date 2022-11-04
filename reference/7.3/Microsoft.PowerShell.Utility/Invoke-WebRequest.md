@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/17/2022
+ms.date: 11/04/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -446,11 +446,20 @@ You can also pipe a body value to `Invoke-WebRequest`.
 The **Body** parameter can be used to specify a list of query parameters or specify the content of
 the response.
 
-When the input is a GET request and the body is an **IDictionary** (typically, a hash table), the
-body is added to the URI as query parameters. For other request types (such as POST), the body is
-set as the value of the request body in the standard `name=value` format.
+When the input is a POST request and the body is a **String**, the value to the left of the first
+equals sign (`=`) is set as a key in the form data and the remaining text is set as the value. To
+specify multiple keys, use an **IDictionary** object, such as a hash table, for the **Body**.
 
-The **Body** parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This
+When the input is a GET request and the body is an **IDictionary** (typically, a hash table), the
+body is added to the URI as query parameters. For other request types (such as PATCH), the body is
+set as the value of the request body in the standard `name=value` format with the values
+URL-encoded.
+
+When the input is a **System.Xml.XmlNode** object and the XML declaration specifies an encoding,
+that encoding is used for the data in the request unless overridden by the **ContentType**
+parameter.
+
+The **Body** parameter also accepts a `System.Net.Http.MultipartFormDataContent` object. This
 facilitates `multipart/form-data` requests. When a **MultipartFormDataContent** object is supplied
 for **Body**, any Content related headers supplied to the **ContentType**, **Headers**, or
 **WebSession** parameters is overridden by the Content headers of the **MultipartFormDataContent**
@@ -518,6 +527,12 @@ Accept wildcard characters: False
 ### -ContentType
 
 Specifies the content type of the web request.
+
+If the value for **ContentType** contains the encoding format (as `charset`), the cmdlet uses that
+format to encode the body of the web request. If the **ContentType** doesn't specify an encoding
+format, the default encoding format is used instead. An example of a **ContentType** with an
+encoding format is `text/plain; charset=iso-8859-5`, which specifies the
+[Latin/Cyrillic](https://www.iso.org/standard/28249.html) alphabet.
 
 If this parameter is omitted and the request method is POST, `Invoke-WebRequest` sets the content
 type to `application/x-www-form-urlencoded`. Otherwise, the content type isn't specified in the
