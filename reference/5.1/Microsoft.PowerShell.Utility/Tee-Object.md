@@ -211,7 +211,7 @@ You can pipe objects to `Tee-Object`.
 
 ## NOTES
 
-PowerShell includes the following aliases for `Tee-Object`:
+Windows PowerShell includes the following aliases for `Tee-Object`:
 
   - `tee`
 

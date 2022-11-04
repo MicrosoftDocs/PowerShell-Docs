@@ -459,7 +459,7 @@ This cmdlet returns objects that are determined by the input.
 
 ## NOTES
 
-PowerShell includes the following aliases for `ForEach-Object`:
+Windows PowerShell includes the following aliases for `ForEach-Object`:
 
   - `%`
   - `foreach`

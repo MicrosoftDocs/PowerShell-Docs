@@ -537,7 +537,7 @@ You can pipe the objects to be sorted to `Sort-Object`.
 
 ## NOTES
 
-PowerShell includes the following aliases for `Sort-Object`:
+Windows PowerShell includes the following aliases for `Sort-Object`:
 
   - `sort`
 

@@ -1119,7 +1119,7 @@ This cmdlet returns selected items from the input object set.
 
 ## NOTES
 
-PowerShell includes the following aliases for `Where-Object`:
+Windows PowerShell includes the following aliases for `Where-Object`:
 
   - `?`
   - `where`
