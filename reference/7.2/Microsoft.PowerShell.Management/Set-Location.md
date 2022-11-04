@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/25/2022
+ms.date: 11/04/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-location?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Location
@@ -238,6 +238,13 @@ new location. Using **PassThru** with **StackName** generates a **PathInfoStack*
 representing the new stack context.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Set-Location`:
+
+- All Platforms:
+  - `cd`
+  - `chdir`
+  - `sl`
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
 This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue

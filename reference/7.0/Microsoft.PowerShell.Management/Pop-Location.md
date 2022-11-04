@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/04/2020
+ms.date: 11/04/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/pop-location?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Pop-Location
@@ -132,6 +132,11 @@ location, if you specify the **PassThru** parameter. Otherwise, this cmdlet does
 output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Pop-Location`:
+
+- All Platforms:
+  - `popd`
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
 This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue

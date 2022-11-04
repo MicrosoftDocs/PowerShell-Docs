@@ -193,6 +193,11 @@ operation, if you specify the **PassThru** parameter. Otherwise, it does not ret
 
 ## NOTES
 
+PowerShell includes the following aliases for `Push-Location`:
+
+- All Platforms:
+  - `pushd`
+
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
 This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
 when calling .NET APIs or running native applications without providing explicit directory paths.
