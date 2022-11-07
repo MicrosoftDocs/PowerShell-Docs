@@ -6,8 +6,8 @@ title: Using Visual Studio Code for PowerShell Development
 
 # Using Visual Studio Code for PowerShell Development
 
-[Visual Studio Code][vscode] (VS Code) is a cross-platform script editor by Microsoft. Together with
-the [PowerShell extension][psext], it provides a rich and interactive script editing experience,
+[Visual Studio Code][01] (VS Code) is a cross-platform script editor by Microsoft. Together with
+the [PowerShell extension][02], it provides a rich and interactive script editing experience,
 making it easier to write reliable PowerShell scripts. Visual Studio Code with the PowerShell
 extension is the recommended editor for writing PowerShell scripts.
 
@@ -17,21 +17,21 @@ It supports the following PowerShell versions:
 - Windows PowerShell 5.1 (Windows-only)
 
 > [!NOTE]
-> Visual Studio Code isn't the same as [Visual Studio][vsent].
+> Visual Studio Code isn't the same as [Visual Studio][03].
 
 ## Getting started
 
 Before you begin, make sure PowerShell exists on your system. For modern workloads on Windows,
 macOS, and Linux, see the following links:
 
-- [Installing PowerShell on Linux][install-linux]
-- [Installing PowerShell on macOS][install-macos]
-- [Installing PowerShell on Windows][install-windows]
+- [Installing PowerShell on Linux][04]
+- [Installing PowerShell on macOS][05]
+- [Installing PowerShell on Windows][06]
 
-For traditional Windows PowerShell workloads, see [Installing Windows PowerShell][install-winps].
+For traditional Windows PowerShell workloads, see [Installing Windows PowerShell][07].
 
 > [!IMPORTANT]
-> The [Windows PowerShell ISE][ise] is still available for Windows. However, it's no longer in
+> The [Windows PowerShell ISE][08] is still available for Windows. However, it's no longer in
 > active feature development. The ISE only works with PowerShell 5.1 and older. As a component of
 > Windows, it continues to be officially supported for security and high-priority servicing fixes.
 > we've no plans to remove the ISE from Windows.
@@ -39,13 +39,13 @@ For traditional Windows PowerShell workloads, see [Installing Windows PowerShell
 ## Install VS Code and the PowerShell Extension
 
 1. Install Visual Studio Code. For more information, see the overview
-   [Setting up Visual Studio Code][vsc-setup].
+   [Setting up Visual Studio Code][09].
 
    There are installation instructions for each platform:
 
-   - [Running Visual Studio Code on Windows][vsc-setup-win]
-   - [Running Visual Studio Code on macOS][vsc-setup-macOS]
-   - [Running Visual Studio Code on Linux][vsc-setup-linux]
+   - [Running Visual Studio Code on Windows][10]
+   - [Running Visual Studio Code on macOS][11]
+   - [Running Visual Studio Code on Linux][12]
 
 1. Install the PowerShell Extension.
 
@@ -83,7 +83,7 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 
 You're prompted with **Do you want to run software from this untrusted publisher?** Type `A` to run
 the file. Then, open VS Code and verify that the PowerShell extension is functioning properly. If
-you still have problems getting started, let us know in a [GitHub issue][ghi].
+you still have problems getting started, let us know in a [GitHub issue][13].
 
 ### Choosing a version of PowerShell to use with the extension
 
@@ -101,9 +101,7 @@ Use the following steps to choose the version:
 1. Choose the version of PowerShell you want to use from the list.
 
 If you installed PowerShell to a non-typical location, it might not show up initially in the Session
-Menu. You can extend the session menu by
-[adding your own custom paths](#adding-your-own-powershell-paths-to-the-session-menu) as described
-below.
+Menu. You can extend the session menu by [adding your own custom paths][14] as described below.
 
 The PowerShell session menu can also be accessed from the `{}` icon in the bottom right corner of
 status bar. Hovering on or selecting this icon displays a shortcut to the session menu and a small
@@ -118,7 +116,7 @@ number is a shortcut to the session menu requiring fewer clicks.
 ## Configuration settings for Visual Studio Code
 
 First, if you're not familiar with how to change settings in VS Code, we recommend reading
-[Visual Studio Code's settings][vsc-settings] documentation.
+[Visual Studio Code's settings][15] documentation.
 
 After reading the documentation, you can add configuration settings in `settings.json`.
 
@@ -147,14 +145,14 @@ field. For example:
 
 > [!TIP]
 > For more information about file encoding in VS Code, see
-> [Understanding file encoding][file-encoding]. Also, check out
-> [How to replicate the ISE experience in VS Code][vsc-ise] for other tips on how to configure VS
+> [Understanding file encoding][16]. Also, check out
+> [How to replicate the ISE experience in VS Code][17] for other tips on how to configure VS
 > Code for PowerShell editing.
 
 ### Adding your own PowerShell paths to the session menu
 
 You can add other PowerShell executable paths to the session menu through the
-[Visual Studio Code setting](https://code.visualstudio.com/docs/getstarted/settings):
+[Visual Studio Code setting][18]:
 `powershell.powerShellAdditionalExePaths`.
 
 You can do this using the GUI:
@@ -292,7 +290,7 @@ during a debug session. Select a configuration from the debug configuration drop
 ## Troubleshooting the PowerShell extension
 
 If you experience any issues using VS Code for PowerShell script development, see the
-[troubleshooting guide][troubleshooting] on GitHub.
+[troubleshooting guide][19] on GitHub.
 
 ## Useful resources
 
@@ -301,60 +299,58 @@ extension for VS Code:
 
 ### Videos
 
-- [Using Visual Studio Code as Your Default PowerShell Editor](https://youtu.be/bGn45vIeAMM)
-- [Visual Studio Code: deep dive into debugging your PowerShell scripts](https://youtu.be/cSbIXmlkr8o)
+- [Using Visual Studio Code as Your Default PowerShell Editor][20]
+- [Visual Studio Code: deep dive into debugging your PowerShell scripts][21]
 
 ### Blog posts
 
-- [PowerShell Extension][pscdn]
-- [Write and debug PowerShell scripts in Visual Studio Code][debug]
-- [Debugging Visual Studio Code Guidance][psdbgblog]
-- [Debugging PowerShell in Visual Studio Code][psdbg-gh]
-- [Get started with PowerShell development in Visual Studio Code][getting-started]
-- [Visual Studio Code editing features for PowerShell development - Part 1][editing-part1]
-- [Visual Studio Code editing features for PowerShell development - Part 2][editing-part2]
-- [Debugging PowerShell script in Visual Studio Code - Part 1][debugging-part1]
-- [Debugging PowerShell script in Visual Studio Code - Part 2][debugging-part2]
+- [PowerShell Extension][22]
+- [Write and debug PowerShell scripts in Visual Studio Code][23]
+- [Debugging Visual Studio Code Guidance][24]
+- [Debugging PowerShell in Visual Studio Code][25]
+- [Get started with PowerShell development in Visual Studio Code][26]
+- [Visual Studio Code editing features for PowerShell development - Part 1][27]
+- [Visual Studio Code editing features for PowerShell development - Part 2][28]
+- [Debugging PowerShell script in Visual Studio Code - Part 1][29]
+- [Debugging PowerShell script in Visual Studio Code - Part 2][30]
 
 ## PowerShell extension project source code
 
-The PowerShell extension's source code can be found on [GitHub][psext-src].
+The PowerShell extension's source code can be found on [GitHub][31].
 
 If you're interested in contributing, Pull Requests are greatly appreciated. Follow along with the
-[developer documentation][dev-docs] on GitHub to get started.
+[developer documentation][32] on GitHub to get started.
 
-<!-- related articles -->
-[ise]:                    ../../windows-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md
-[install-linux]:          ../../install/Installing-PowerShell-on-Linux.md
-[install-macos]:          ../../install/Installing-PowerShell-on-macOS.md
-[install-windows]:        ../../install/Installing-PowerShell-on-Windows.md
-[install-winps]:          ../../install/Installing-Windows-PowerShell.md
-[file-encoding]:          understanding-file-encoding.md
-[vsc-ise]:                How-To-Replicate-the-ISE-Experience-In-VSCode.md
-
-<!-- blogs -->
-[debug]:                  https://devblogs.microsoft.com/powershell/announcing-powershell-language-support-for-visual-studio-code-and-more/
-[debugging-part1]:        https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-1/
-[debugging-part2]:        https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-2/
-[editing-part1]:          https://devblogs.microsoft.com/scripting/visual-studio-code-editing-features-for-powershell-development-part-1/
-[editing-part2]:          https://devblogs.microsoft.com/scripting/visual-studio-code-editing-features-for-powershell-development-part-2/
-[getting-started]:        https://devblogs.microsoft.com/scripting/get-started-with-powershell-development-in-visual-studio-code/
-[psdbgblog]:              https://johnpapa.net/debugging-with-visual-studio-code/
-[psdbg-gh]:               https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[pscdn]:                  /archive/blogs/cdndevs/visual-studio-code-powershell-extension
-
-<!-- issues -->
-[ghi]:                    https://github.com/PowerShell/vscode-powershell/issues
-
-<!-- product links -->
-[vsent]:                  https://visualstudio.microsoft.com/
-[vscode]:                 https://code.visualstudio.com/
-[psext]:                  https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell
-[vsc-settings]:           https://code.visualstudio.com/docs/getstarted/settings
-[vsc-setup]:              https://code.visualstudio.com/Docs/setup/setup-overview
-[vsc-setup-win]:          https://code.visualstudio.com/docs/setup/windows
-[vsc-setup-macos]:        https://code.visualstudio.com/docs/setup/mac
-[vsc-setup-linux]:        https://code.visualstudio.com/docs/setup/linux
-[psext-src]:              https://github.com/PowerShell/vscode-powershell
-[troubleshooting]:        https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md
-[dev-docs]:               https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md
+<!-- Link references -->
+[01]: https://code.visualstudio.com/
+[02]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell
+[03]: https://visualstudio.microsoft.com/
+[04]: ../../install/Installing-PowerShell-on-Linux.md
+[05]: ../../install/Installing-PowerShell-on-macOS.md
+[06]: ../../install/Installing-PowerShell-on-Windows.md
+[07]: ../../install/Installing-Windows-PowerShell.md
+[08]: ../../windows-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md
+[09]: https://code.visualstudio.com/Docs/setup/setup-overview
+[10]: https://code.visualstudio.com/docs/setup/windows
+[11]: https://code.visualstudio.com/docs/setup/mac
+[12]: https://code.visualstudio.com/docs/setup/linux
+[13]: https://github.com/PowerShell/vscode-powershell/issues
+[14]: #adding-your-own-powershell-paths-to-the-session-menu
+[15]: https://code.visualstudio.com/docs/getstarted/settings
+[16]: understanding-file-encoding.md
+[17]: How-To-Replicate-the-ISE-Experience-In-VSCode.md
+[18]: https://code.visualstudio.com/docs/getstarted/settings
+[19]: https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md
+[20]: https://youtu.be/bGn45vIeAMM
+[21]: https://youtu.be/cSbIXmlkr8o
+[22]: /archive/blogs/cdndevs/visual-studio-code-powershell-extension
+[23]: https://devblogs.microsoft.com/powershell/announcing-powershell-language-support-for-visual-studio-code-and-more/
+[24]: https://johnpapa.net/debugging-with-visual-studio-code/
+[25]: https://github.com/PowerShell/vscode-powershell/tree/master/examples
+[26]: https://devblogs.microsoft.com/scripting/get-started-with-powershell-development-in-visual-studio-code/
+[27]: https://devblogs.microsoft.com/scripting/visual-studio-code-editing-features-for-powershell-development-part-1/
+[28]: https://devblogs.microsoft.com/scripting/visual-studio-code-editing-features-for-powershell-development-part-2/
+[29]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-1/
+[30]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-2/
+[31]: https://github.com/PowerShell/vscode-powershell
+[32]: https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md

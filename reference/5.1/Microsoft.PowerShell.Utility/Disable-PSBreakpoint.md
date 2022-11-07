@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/19/2021
+ms.date: 11/06/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/disable-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSBreakpoint
@@ -199,6 +199,10 @@ When you use the **PassThru** parameter, `Disable-PSBreakpoint` returns an objec
 the disabled breakpoint. Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Disable-PSBreakpoint`:
+
+- `dbp`
 
 ## RELATED LINKS
 

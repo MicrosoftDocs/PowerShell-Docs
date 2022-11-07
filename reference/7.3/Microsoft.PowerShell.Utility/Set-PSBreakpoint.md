@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/19/2021
+ms.date: 11/06/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSBreakpoint
@@ -412,6 +412,11 @@ You cannot pipe input to `Set-PSBreakpoint`.
 `Set-PSBreakpoint` returns an object that represents each breakpoint that it sets.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Set-PSBreakpoint`:
+
+- All platforms:
+  - `sbp`
 
 - `Set-PSBreakpoint` cannot set a breakpoint on a remote computer. To debug a script on a remote
   computer, copy the script to the local computer and then debug it locally.
