@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/19/2021
+ms.date: 11/06/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/enable-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSBreakpoint
@@ -222,6 +222,10 @@ When you use the **PassThru** parameter, `Enable-PSBreakpoint` returns a breakpo
 represents that breakpoint that was enabled. Otherwise, this cmdlet doesn't generate any output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Enable-PSBreakpoint`:
+
+- `ebp`
 
 - The `Enable-PSBreakpoint` cmdlet doesn't generate an error if you try to enable a breakpoint that
   is already enabled. As such, you can enable all breakpoints without error, even when only a few

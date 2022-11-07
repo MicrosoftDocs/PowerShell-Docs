@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/19/2021
+ms.date: 11/06/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-psbreakpoint?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSBreakpoint
@@ -281,7 +281,10 @@ You can pipe breakpoint IDs and breakpoint types to `Get-PSBreakPoint`.
 
 ## NOTES
 
-You can use `Get-PSBreakpoint` or its alias, "gbp".
+PowerShell includes the following aliases for `Get-PSBreakpoint`:
+
+- All platforms:
+  - `gbp`
 
 ## RELATED LINKS
 
