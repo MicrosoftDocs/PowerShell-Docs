@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/16/2020
+ms.date: 11/07/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSRemoting
@@ -15,7 +15,8 @@ Configures the computer to receive remote commands.
 ## SYNTAX
 
 ```
-Enable-PSRemoting [-Force] [-SkipNetworkProfileCheck] [-WhatIf] [-Confirm] [<CommonParameters>]
+Enable-PSRemoting [-Force] [-SkipNetworkProfileCheck] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,14 +46,14 @@ remoting endpoint will be configured that runs PowerShell 6.2. If you run `Enabl
 running PowerShell 7-preview, a remoting endpoint will be configured that runs PowerShell 7-preview.
 
 `Enable-PSRemoting` creates two remoting endpoint configurations as needed. If the endpoint
-configurations already exist, then they are simply ensured to be enabled. The created configurations
-are identical but have different names. One will have a simple name corresponding to the PowerShell
-version that hosts the session. The other configuration name contains more detailed information
-about the PowerShell version which hosts the session. For example, when running `Enable-PSRemoting`
-in PowerShell 6.2, you will get two configured endpoints named **PowerShell.6**, **PowerShell.6.2.2**.
-This allows you to create a connection to the latest PowerShell 6 host version by using the simple
-name **PowerShell.6**. Or you can connect to a specific PowerShell host version by using the longer
-name **PowerShell.6.2.2**.
+configurations already exist, then they are simply ensured to be enabled. The created
+configurations are identical but have different names. One will have a simple name corresponding to
+the PowerShell version that hosts the session. The other configuration name contains more detailed
+information about the PowerShell version which hosts the session. For example, when running
+`Enable-PSRemoting` in PowerShell 6.2, you will get two configured endpoints named
+**PowerShell.6**, **PowerShell.6.2.2**. This allows you to create a connection to the latest
+PowerShell 6 host version by using the simple name **PowerShell.6**. Or you can connect to a
+specific PowerShell host version by using the longer name **PowerShell.6.2.2**.
 
 To use the newly enabled remoting endpoints, you must specify them by name with the
 **ConfigurationName** parameter when creating a remote connection using the
@@ -91,9 +92,9 @@ Enable-PSRemoting
 ```
 
 ```Output
-WARNING: PowerShell remoting has been enabled only for PowerShell Core configurations and does not
-affect Windows PowerShell remoting configurations. Run this cmdlet in Windows PowerShell to affect
-all PowerShell remoting configurations.
+WARNING: PowerShell remoting has been enabled only for PowerShell Core configurations and
+does not affect Windows PowerShell remoting configurations. Run this cmdlet in Windows
+PowerShell to affect all PowerShell remoting configurations.
 ```
 
 ### Example 2: Configure a computer to receive remote commands without a confirmation prompt
@@ -106,9 +107,9 @@ Enable-PSRemoting -Force
 ```
 
 ```Output
-WARNING: PowerShell remoting has been enabled only for PowerShell Core configurations and does not
-affect Windows PowerShell remoting configurations. Run this cmdlet in Windows PowerShell to affect
-all PowerShell remoting configurations.
+WARNING: PowerShell remoting has been enabled only for PowerShell Core configurations and
+does not affect Windows PowerShell remoting configurations. Run this cmdlet in Windows 
+PowerShell to affect all PowerShell remoting configurations.
 ```
 
 ### Example 3: Allow remote access on clients
@@ -158,8 +159,8 @@ The first command enables PowerShell remoting on the computer.
 The second command lists the endpoint configurations.
 
 The third command creates a remote PowerShell session to the same machine, specifying the
-**PowerShell.6** endpoint by name. The remote session will be hosted with the latest PowerShell 6
-version (6.2.2).
+**PowerShell.7** endpoint by name. The remote session will be hosted with the latest PowerShell 7
+version (7.0.13).
 
 The last command accesses the `$PSVersionTable` variable in the remote session to display the
 PowerShell version that is hosting the session.
@@ -169,28 +170,30 @@ Enable-PSRemoting -Force
 
 Get-PSSessionConfiguration
 
-$session = New-PSSession -ComputerName localhost -ConfigurationName PowerShell.6
+$session = New-PSSession -ComputerName localhost -ConfigurationName PowerShell.7
 
 Invoke-Command -Session $session -ScriptBlock { $PSVersionTable }
 ```
 
 ```Output
-WARNING: PowerShell remoting has been enabled only for PowerShell Core configurations and does not
-affect Windows PowerShell remoting configurations. Run this cmdlet in Windows PowerShell to affect
-all PowerShell remoting configurations.
+WARNING: PowerShell remoting has been enabled only for PowerShell Core configurations and
+does not affect Windows PowerShell remoting configurations. Run this cmdlet in Windows 
+PowerShell to affect all PowerShell remoting configurations.
 
-Name          : PowerShell.6
-PSVersion     : 6.2
+Name          : PowerShell.7
+PSVersion     : 7.0
 StartupScript :
 RunAsUser     :
-Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators AccessAllowed,
+Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed,
+                BUILTIN\Administrators AccessAllowed,
                 BUILTIN\Remote Management Users AccessAllowed
 
-Name          : PowerShell.6.2.2
-PSVersion     : 6.2
+Name          : PowerShell.7.0.13
+PSVersion     : 7.0
 StartupScript :
 RunAsUser     :
-Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators AccessAllowed,
+Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed,
+                BUILTIN\Administrators AccessAllowed,
                 BUILTIN\Remote Management Users AccessAllowed
 
 Name                           Value
@@ -292,7 +295,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
