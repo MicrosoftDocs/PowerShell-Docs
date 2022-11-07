@@ -23,7 +23,7 @@ This feature works on PowerShell and Windows PowerShell.
 
 This feature also works when connecting to a remote machine via WinRM, PowerShell Direct, or SSH. If
 you want to use SSH, but are using Windows, check out the
-[Win32 version of SSH](https://github.com/PowerShell/Win32-OpenSSH)!
+[Win32 version of SSH][01]!
 
 > [!IMPORTANT]
 > The `Open-EditorFile` and `psedit` commands only work in the **PowerShell Integrated Console**
@@ -40,7 +40,7 @@ With the PowerShell extension for VSCode started and the PowerShell Integrated C
 can type `Open-EditorFile foo.ps1` or `psedit foo.ps1` to open the local foo.ps1 file right in the
 editor.
 
-![Open-EditorFile foo.ps1 works locally](media/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
+![Open-EditorFile foo.ps1 works locally][02]
 
 >[!NOTE]
 > The file `foo.ps1` must already exist.
@@ -49,11 +49,11 @@ From there, we can:
 
 - Add breakpoints to the gutter
 
-  ![Adding a breakpoint to the gutter](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![Adding a breakpoint to the gutter][03]
 
 - Hit F5 to debug the PowerShell script.
 
-  ![debugging the local PowerShell script](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![debugging the local PowerShell script][04]
 
 While debugging, you can interact with the debug console, check out the variables in the scope on
 the left, and all the other standard debugging tools.
@@ -73,27 +73,39 @@ In short:
 - `Enter-PSSession -HostName foo` starts a session via SSH
 
 For more information, see the documentation for
-[Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession).
+[Enter-PSSession][05].
 
 Since we are remoting to an Ubuntu VM in Azure, we are using SSH.
 
 First, in the Integrated Console, run `Enter-PSSession`. You're connected to the remote session
 when `[<hostname>]` shows up to the left of your prompt.
 
-![Call Enter-PSSession to connect to a remote session](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![Call Enter-PSSession to connect to a remote session][06]
 
 Now, we can do the same steps as if we are editing a local script.
 
 1. Run `Open-EditorFile test.ps1` or `psedit test.ps1` to open the remote `test.ps1` file
 
-  ![Edit the script on the remote system](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![Edit the script on the remote system][07]
 
 1. Edit the file/set breakpoints
 
-   ![Edit and set breakpoints](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+   ![Edit and set breakpoints][08]
 
 1. Start debugging (F5) the remote file
 
-   ![Debugging the remote script](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![Debugging the remote script][09]
 
-If you have any problems, you can open issues in the [GitHub repo](https://github.com/powershell/vscode-powershell).
+If you have any problems, you can open issues in the [GitHub repo][10].
+
+<!-- Link references -->
+[01]: https://github.com/PowerShell/Win32-OpenSSH
+[02]: media/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png
+[03]: media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png
+[04]: media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png
+[05]: /powershell/module/microsoft.powershell.core/enter-pssession
+[06]: media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png
+[07]: media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png
+[08]: media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png
+[09]: media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png
+[10]: https://github.com/powershell/vscode-powershell
