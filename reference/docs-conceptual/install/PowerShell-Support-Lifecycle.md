@@ -112,11 +112,12 @@ use the traditional, paid support options.
 
 ## PowerShell End-of-support dates
 
-Based on these lifecycle policies, the following table lists the dates when currently supported version will no
-longer be supported:
+Based on these lifecycle policies, the following table lists the dates when currently supported
+version will no longer be supported:
 
 |      Version      |   End-of-support   |
 | ----------------- | ------------------ |
+| 7.3 (Stable)      | May 8, 2024        |
 | 7.2 (LTS-current) | November 8, 2024   |
 | 7.0 (LTS)         | December 3, 2022   |
 
@@ -124,6 +125,7 @@ longer be supported:
 Support for PowerShell on a specific platforms is based on the support policy of the version of .NET
 used.
 
+- PowerShell 7.3 (Stable) is based on the [.NET 7.0 Supported OS Lifecycle Policy][net70os]
 - PowerShell 7.2 (LTS-current) is based on the [.NET 6.0 Supported OS Lifecycle Policy][net60os]
 - PowerShell 7.0 (LTS) is based on the [.NET Core 3.1 Supported OS Lifecycle Policy][net31os]
 
@@ -143,7 +145,7 @@ for historical reference. It is not intended for use to determine the support li
 
 |           Version            | Release Date |                                      Note                                       |
 | ---------------------------- | :----------: | ------------------------------------------------------------------------------- |
-| PowerShell 7.3 (preview)     |   Jan-2022   | Built on .NET 7.0 (preview)                                                     |
+| PowerShell 7.3               |   Nov-2022   | Built on .NET 7.0                                                               |
 | PowerShell 7.2 (LTS-current) |   Nov-2021   | Built on .NET 6.0 (LTS-current)                                                 |
 | PowerShell 7.1               |   Nov-2020   | Built on .NET 5.0                                                               |
 | PowerShell 7.0 (LTS)         |   Mar-2020   | Built on .NET Core 3.1 (LTS)                                                    |
@@ -171,6 +173,7 @@ for historical reference. It is not intended for use to determine the support li
 [net31os]: https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md
 [net50os]: https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md
 [net60os]: https://github.com/dotnet/core/blob/main/release-notes/6.0/supported-os.md
+[net70os]: https://github.com/dotnet/core/blob/main/release-notes/7.0/supported-os.md
 [paid]: https://support.serviceshub.microsoft.com/supportforbusiness
 [pscommunity]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [pshub]: /powershell/scripting/community/community-support
