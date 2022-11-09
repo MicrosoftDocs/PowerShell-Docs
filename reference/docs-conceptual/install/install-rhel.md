@@ -10,9 +10,9 @@ run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview releas
 installing, check the list of [Supported versions](#supported-versions) below.
 
 > [!NOTE]
-> PowerShell 7.2 is an in-place upgrade that removes previous versions of PowerShell.
+> PowerShell 7.3 is an in-place upgrade that removes previous versions of PowerShell.
 >
-> If you need to run PowerShell 7.2 side-by-side with a previous version, reinstall the previous
+> If you need to run PowerShell 7.3 side-by-side with a previous version, reinstall the previous
 > version using the [binary archive](install-other-linux.md#binary-archives) method.
 
 RHEL 7 uses yum and RHEL 8 uses the dnf package manager.
@@ -56,9 +56,11 @@ with `sudo dnf upgrade powershell`.
 
 ### Installation via direct download
 
-PowerShell 7.2 is distributed as a universal RPM package. Previous versions of PowerShell had
-separate package for each OS. Download the RPM package you need onto your CentOS machine.
+Starting with version 7.2, PowerShell is distributed as a universal RPM package. Previous versions
+of PowerShell had separate package for each OS. Download the RPM package you need onto your CentOS
+machine.
 
+- PowerShell 7.3.0 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.0/powershell-7.3.0-1.rh.x86_64.rpm`
 - PowerShell 7.2.7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/powershell-lts-7.2.7-1.rh.x86_64.rpm`
 - PowerShell 7.0.13 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.13/powershell-lts-7.0.13-1.rhel.7.x86_64.rpm`
 
@@ -68,13 +70,13 @@ Change the URL in the following shell commands to match the version you need.
 On RHEL 7:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/powershell-lts-7.2.7-1.rh.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.3.0/powershell-7.3.0-1.rh.x86_64.rpm
 ```
 
 On RHEL 8:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/powershell-lts-7.2.7-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.3.0/powershell-7.3.0-1.rh.x86_64.rpm
 ```
 
 ## Uninstallation - Red Hat Enterprise Linux (RHEL) 7
@@ -85,8 +87,8 @@ sudo yum remove powershell
 
 ## Support for Arm processors
 
-PowerShell 7.2 supports running on RHEL using a 64-bit Arm processor. Use the binary archive
-installation method of installing PowerShell that is described in
+PowerShell 7.2 and newer supports running on RHEL using a 64-bit Arm processor. Use the binary
+archive installation method of installing PowerShell that is described in
 [Alternate ways to install PowerShell on Linux](install-other-linux.md#binary-archives).
 
 ## PowerShell paths

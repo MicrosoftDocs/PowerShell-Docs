@@ -1,14 +1,14 @@
 ---
-title: What's New in PowerShell 7.3-rc.1
-description: New features and changes released in PowerShell 7.3-rc.1
+title: What's New in PowerShell 7.3
+description: New features and changes released in PowerShell 7.3
 ms.date: 10/27/2022
 ---
 
 # What's New in PowerShell 7.3
 
-PowerShell 7.3 is the next preview release, built on .NET 7.0.
+PowerShell 7.3 is the next stable release, built on .NET 7.0.
 
-PowerShell 7.3-rc.1 includes the following features, updates, and breaking changes.
+PowerShell 7.3 includes the following features, updates, and breaking changes.
 
 ## Improved error handling
 
@@ -137,4 +137,4 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [07]: ../learn/experimental-features.md#psstrictmodeassignment
 [09]: https://github.com/dotnet/runtime/issues/66746
 [10]: https://github.com/PowerShell/PowerShell/issues/17018
-[11]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0-rc.1
+[11]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0

@@ -6,6 +6,17 @@ title: PowerShell on Arm-based systems
 
 # PowerShell on Arm processors
 
+PowerShell 7.3 is based on the [.NET 7.0 Supported OS Lifecycle Policy][net70os] and supports the
+following platforms:
+
+|                 OS                 | Architectures |          Lifecycle           |
+| ---------------------------------- | ------------- | ---------------------------- |
+| Windows 10 Client Version 1607+    | Arm64         | [Windows][Windows-lifecycle] |
+| macOS 10.15+                       | Arm64         | [macOS][macOS-lifecycle]     |
+| Debian 10+                         | Arm32, Arm64  | [Debian][Debian-lifecycle]   |
+| Red Hat Enterprise Linux (RHEL) 7+ | Arm64         | [Red Hat][RHEL-lifecycle]    |
+| Ubuntu 20.04, 18.04                | Arm32, Arm64  | [Ubuntu][Ubuntu-lifecycle]   |
+
 PowerShell 7.2 is based on the [.NET 6.0 Supported OS Lifecycle Policy][net60os] and supports the
 following platforms:
 
@@ -65,6 +76,7 @@ Raspbery Pi
 [net31os]: https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md
 [net50os]: https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md
 [net60os]: https://github.com/dotnet/core/blob/main/release-notes/6.0/supported-os.md
+[net70os]: https://github.com/dotnet/core/blob/main/release-notes/7.0/supported-os.md
 [RHEL-lifecycle]: https://access.redhat.com/support/policy/updates/errata/
 [Ubuntu-lifecycle]: https://wiki.ubuntu.com/Releases
 [Windows-lifecycle]: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet
