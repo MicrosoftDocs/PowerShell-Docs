@@ -1,6 +1,6 @@
 ---
 description: This article explains how the PowerShell-Docs team manages issues.
-ms.date: 07/25/2022
+ms.date: 11/09/2022
 ms.topic: conceptual
 title: How we manage issues
 ---
@@ -31,9 +31,12 @@ process transparency for our public contributors.
 - **Area** - Identifies the part of PowerShell or the docs that the issue is discussing
 - **Issue** - The type of issue: like bug, feedback, or idea
 - **Priority** - The priority of the issue; value range 0-3 (high-low)
+- **Quality** - The [quality improvement][03] effort the issue commits to resolving
 - **Status** - The status of the work item or why it was closed
 - **Tag** - Used to for additional classification like availability or doc-a-thons
 - **Waiting** - Shows that we're waiting on some external person or event
+
+For more information on specific labels, see [Labeling][02].
 
 #### Milestones
 
@@ -61,7 +64,7 @@ meets weekly to discuss difficult issues need triage and prioritize the work.
   item, and close the issue.
 
   The default location for PowerShell issues is
-  [https://github.com/PowerShell/PowerShell/issues/new/choose][1].
+  [https://github.com/PowerShell/PowerShell/issues/new/choose][01].
 
 ### Support requests
 
@@ -83,4 +86,6 @@ meets weekly to discuss difficult issues need triage and prioritize the work.
 - Each violation should be discussed in the weekly triage to determine the need for further action
 
 <!-- link references -->
-[1]: https://github.com/PowerShell/PowerShell/issues/new/choose
+[01]: https://github.com/PowerShell/PowerShell/issues/new/choose
+[02]: labelling-in-github.md
+[03]: quality-improvements.md

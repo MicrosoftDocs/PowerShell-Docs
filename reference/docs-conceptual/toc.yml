@@ -506,5 +506,7 @@ items:
         href: community/contributing/managing-issues.md
       - name: How we manage pull requests
         href: community/contributing/managing-pull-requests.md
+      - name: Labelling in GitHub
+        href: community/contributing/labelling-in-github.md
   - name: PowerShell support lifecycle
     href: install/powershell-support-lifecycle.md
