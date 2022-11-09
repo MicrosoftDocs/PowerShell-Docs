@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Archive-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 02/20/2020
+ms.date: 11/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.archive/compress-archive?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compress-Archive
@@ -83,7 +83,7 @@ archive file because the **Path** only specifies file names.
 $compress = @{
   Path = "C:\Reference\Draftdoc.docx", "C:\Reference\Images\*.vsd"
   CompressionLevel = "Fastest"
-  DestinationPath = "C:\Archives\Draft.Zip"
+  DestinationPath = "C:\Archives\Draft.zip"
 }
 Compress-Archive @compress
 ```
@@ -103,7 +103,7 @@ structure in the archive file because the **Path** only specifies file names.
 $compress = @{
 LiteralPath= "C:\Reference\Draft Doc.docx", "C:\Reference\Images\diagram2.vsd"
 CompressionLevel = "Fastest"
-DestinationPath = "C:\Archives\Draft.Zip"
+DestinationPath = "C:\Archives\Draft.zip"
 }
 Compress-Archive @compress
 ```
@@ -220,16 +220,16 @@ duplicate file:
 
 ### Example 9: Update an existing archive file
 
-This example updates an existing archive file, `Draft.Zip`, in the `C:\Archives` directory. In this
+This example updates an existing archive file, `Draft.zip`, in the `C:\Archives` directory. In this
 example, the existing archive file contains the root directory, and its files and subdirectories.
 
 ```powershell
-Compress-Archive -Path C:\Reference -Update -DestinationPath C:\Archives\Draft.Zip
+Compress-Archive -Path C:\Reference -Update -DestinationPath C:\Archives\Draft.zip
 ```
 
-The command updates `Draft.Zip` with newer versions of existing files in the `C:\Reference`
+The command updates `Draft.zip` with newer versions of existing files in the `C:\Reference`
 directory and its subdirectories. And, new files that were added to `C:\Reference` or its
-subdirectories are included in the updated `Draft.Zip` archive.
+subdirectories are included in the updated `Draft.zip` archive.
 
 ## PARAMETERS
 
@@ -453,4 +453,3 @@ filename stored in the archive.
 [Expand-Archive](Expand-Archive.md)
 
 [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)
-

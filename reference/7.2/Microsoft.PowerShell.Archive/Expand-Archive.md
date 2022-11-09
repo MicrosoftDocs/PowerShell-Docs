@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Archive-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 07/17/2020
+ms.date: 11/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Expand-Archive
@@ -43,7 +43,7 @@ This example extracts the contents of an existing archive file into the folder s
 **DestinationPath** parameter.
 
 ```powershell
-Expand-Archive -LiteralPath 'C:\Archives\Draft[v1].Zip' -DestinationPath C:\Reference
+Expand-Archive -LiteralPath 'C:\Archives\Draft[v1].zip' -DestinationPath C:\Reference
 ```
 
 In this example, the **LiteralPath** parameter is used because the filename contains characters that
@@ -55,7 +55,7 @@ This example extracts the contents of an existing archive file in the current fo
 specified by the **DestinationPath** parameter.
 
 ```powershell
-Expand-Archive -Path Draftv2.Zip -DestinationPath C:\Reference
+Expand-Archive -Path Draftv2.zip -DestinationPath C:\Reference
 ```
 
 ## PARAMETERS
