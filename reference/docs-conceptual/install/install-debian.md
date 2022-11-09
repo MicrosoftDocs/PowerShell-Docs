@@ -10,9 +10,9 @@ run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview releas
 installing, check the list of [Supported versions](#supported-versions) below.
 
 > [!NOTE]
-> PowerShell 7.2 is an in-place upgrade that removes previous versions of PowerShell.
+> PowerShell 7.3 is an in-place upgrade that removes previous versions of PowerShell.
 >
-> If you need to run PowerShell 7.2 side-by-side with a previous version, reinstall the previous
+> If you need to run PowerShell 7.3 side-by-side with a previous version, reinstall the previous
 > version using the [binary archive](install-other-linux.md#binary-archives) method.
 
 Debian uses APT (Advanced Package Tool) as a package manager.
@@ -23,6 +23,7 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Do
 package from the [releases][releases] page onto the Debian 10 machine. The link to the current
 version is:
 
+- PowerShell 7.3.0 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.0/powershell_7.3.0-1.deb_amd64.deb`
 - PowerShell 7.2.7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/powershell-lts_7.2.7-1.deb_amd64.deb`
 - PowerShell 7.0.13
   - Debian 10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.13/powershell-lts_7.0.13-1.debian.10_amd64.deb`
@@ -81,7 +82,7 @@ sudo apt-get remove powershell
 
 ## Support for Arm processors
 
-PowerShell 7.2 supports running on Debian using 32-bit or 64-bit Arm processors. Use the binary
+PowerShell 7.3 supports running on Debian using 32-bit or 64-bit Arm processors. Use the binary
 archive installation method of installing PowerShell that is described in
 [Alternate ways to install PowerShell on Linux](install-other-linux.md#binary-archives).
 

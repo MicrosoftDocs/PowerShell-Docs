@@ -10,9 +10,9 @@ run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview releas
 installing, check the list of [Supported versions](#supported-versions) below.
 
 > [!NOTE]
-> PowerShell 7.2 is an in-place upgrade that removes previous versions of PowerShell.
+> PowerShell 7.3 is an in-place upgrade that removes previous versions of PowerShell.
 >
-> If you need to run PowerShell 7.2 side-by-side with a previous version, reinstall the previous
+> If you need to run PowerShell 7.3 side-by-side with a previous version, reinstall the previous
 > version using the [binary archive](install-other-linux.md#binary-archives) method.
 
 Ubuntu uses APT (Advanced Package Tool) as a package manager.
@@ -57,7 +57,9 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Do
 package from the [releases][releases] page onto the Ubuntu machine. The link to the current
 version is:
 
-- PowerShell 7.2.7 (universal package) for any support version of Ubuntu
+- PowerShell 7.3.0 (universal package) for any supported version of Ubuntu
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.0/powershell_7.3.0-1.deb_amd64.deb`
+- PowerShell 7.2.7 (universal package) for any supported version of Ubuntu
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/powershell-lts_7.2.7-1.deb_amd64.deb`
 - PowerShell 7.0.13
   - Ubuntu 20.04 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.13/powershell-lts_7.0.13-1.ubuntu.20.04_amd64.deb`
@@ -68,7 +70,7 @@ the version you downloaded.
 
 ```sh
 # Install the downloaded package
-sudo dpkg -i powershell-lts_7.2.7-1.deb_amd64.deb
+sudo dpkg -i powershell-lts_7.3.0-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f
@@ -86,8 +88,8 @@ sudo apt-get remove powershell
 
 ## Support for Arm processors
 
-PowerShell 7.2 supports running on Ubuntu using 32-bit or 64-bit Arm processors. Use the binary
-archive installation method of installing PowerShell that is described in
+PowerShell 7.2 and newer supports running on Ubuntu using 32-bit or 64-bit Arm processors. Use the
+binary archive installation method of installing PowerShell that is described in
 [Alternate ways to install PowerShell on Linux](install-other-linux.md#binary-archives).
 
 ## PowerShell paths

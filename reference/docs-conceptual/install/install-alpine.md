@@ -10,9 +10,9 @@ run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview releas
 installing, check the list of [Supported versions](#supported-versions) below.
 
 > [!NOTE]
-> PowerShell 7.2 is an in-place upgrade that removes previous versions of PowerShell.
+> PowerShell 7.3 is an in-place upgrade that removes previous versions of PowerShell.
 >
-> If you need to run PowerShell 7.2 side-by-side with a previous version, reinstall the previous
+> If you need to run PowerShell 7.3 side-by-side with a previous version, reinstall the previous
 > version using the [binary archive](install-other-linux.md#binary-archives) method.
 
 ## Installation steps
@@ -20,10 +20,11 @@ installing, check the list of [Supported versions](#supported-versions) below.
 Installation on Alpine is based on downloading tar.gz package from the [releases][releases] page.
 The URL to the package depends on the version of PowerShell you want to install.
 
+- PowerShell 7.3.0 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.0/powershell-7.3.0-linux-alpine-x64.tar.gz`
 - PowerShell 7.2.7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/powershell-7.2.7-linux-alpine-x64.tar.gz`
 - PowerShell 7.0.13 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.13/powershell-7.0.13-linux-alpine-x64.tar.gz`
 
-Then, in the terminal, execute the following shell commands to install PowerShell 7.2:
+Then, in the terminal, execute the following shell commands to install PowerShell 7.3:
 
 ```sh
 # install the requirements
@@ -46,7 +47,7 @@ sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/powershell-7.2.7-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.3.0/powershell-7.3.0-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
