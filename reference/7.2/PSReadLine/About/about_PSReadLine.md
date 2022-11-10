@@ -194,7 +194,7 @@ $token = Get-Secret -Name github-token -Vault MySecret
 $template -f $token
 ```
 
-The following command isn't be written to the history file:
+The following commands are not being written to the history file:
 
 ```powershell
 $token = 'abcd' # Assign expr-value to sensitive variable name.
