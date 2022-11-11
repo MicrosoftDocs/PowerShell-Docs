@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/26/2022
+ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
@@ -589,10 +589,9 @@ The CSV list is sent to the file designated in the **Path** parameter.
 
 ## NOTES
 
-PowerShell includes the following aliases for `Export-Csv`:
+Windows PowerShell includes the following aliases for `Export-Csv`:
 
-- All platforms:
-  - `epcsv`
+- `epcsv`
 
 The `Export-CSV` cmdlet converts the objects that you submit into a series of CSV strings and saves
 them in the specified text file. You can use `Export-CSV` to save objects in a CSV file and then use

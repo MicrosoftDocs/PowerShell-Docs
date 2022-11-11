@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/25/2022
+ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/clear-variable?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Variable
@@ -230,10 +230,9 @@ this cmdlet does not generate any output.
 
 ## NOTES
 
-PowerShell includes the following aliases for `Clear-Variable`:
+Windows PowerShell includes the following aliases for `Clear-Variable`:
 
-- All platforms:
-  - `clv`
+- `clv`
 
 - To delete a variable, along with its value, use `Remove-Variable` or `Remove-Item`.
 

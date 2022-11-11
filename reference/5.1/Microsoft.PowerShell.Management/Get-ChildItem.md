@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/03/2022
+ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
@@ -743,12 +743,11 @@ If you use the **Name** parameter, `Get-ChildItem` returns the object names as s
 
 ## NOTES
 
-PowerShell includes the following aliases for `Get-ChildItem`:
+Windows PowerShell includes the following aliases for `Get-ChildItem`:
 
-- All platforms:
-  - `dir`, `gci`
-- Windows:
-  - `ls`
+- `ls`
+- `dir`
+- `gci`
 
 `Get-ChildItem` doesn't get hidden items by default. To get hidden items, use the **Force**
 parameter.

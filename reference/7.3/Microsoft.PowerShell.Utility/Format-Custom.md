@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-custom?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Custom
@@ -288,11 +288,13 @@ You can pipe any object to `Format-Custom`.
 
 ## NOTES
 
+PowerShell includes the following aliases for `Format-Custom`:
+
+- All platforms:
+  - `fc`
+
 `Format-Custom` is designed to display views that are not just tables or just lists. To display an
 alternate table view, use `Format-Table`. To display an alternate list view, use `Format-List`.
-
-You can also refer to `Format-Custom` by its built-in alias, `fc`. For more information, see
-[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 The **GroupBy** parameter assumes that the objects are sorted. Before using `Format-Custom` to
 group the objects, use `Sort-Object` to sort them.
