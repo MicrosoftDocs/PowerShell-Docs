@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/25/2022
+ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-content?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Content
@@ -469,7 +469,7 @@ represents the content. Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-PowerShell includes the following aliases for `Set-Content`:
+Windows PowerShell includes the following aliases for `Set-Content`:
 
 - `sc`
 
