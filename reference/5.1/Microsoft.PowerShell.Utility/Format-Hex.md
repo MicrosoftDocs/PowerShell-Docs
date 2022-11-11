@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Utility-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/22/2021
+ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-hex?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Hex
@@ -255,6 +255,10 @@ by `Format-Hex`. If you specify the **Path** or **LiteralPath** parameter, the o
 the path of the file that contains each byte.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Format-Hex`:
+
+- `fhx`
 
 The right-most column of output tries to render the bytes as characters:
 

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/22/2021
+ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-hex?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Hex
@@ -337,6 +337,11 @@ by `Format-Hex`. The output also states they type of bytes being processed. If y
 each byte. If you pass a string, boolean, integer, etc, it will be labeled appropriately.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Format-Hex`:
+
+- All platforms:
+  - `fhx`
 
 The right-most column of output tries to render the bytes as ASCII characters:
 

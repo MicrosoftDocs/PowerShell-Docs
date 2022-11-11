@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/16/2022
+ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-wide?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Wide
@@ -301,6 +301,11 @@ You can pipe any object to `Format-Wide`.
 `Format-Wide` returns format objects that represent the table.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Format-Wide`:
+
+- All platforms:
+  - `fw`
 
 You can also refer to `Format-Wide` by its built-in alias, `fw`. For more information, see
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).

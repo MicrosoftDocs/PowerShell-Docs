@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/16/2022
+ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-list?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-List
@@ -299,8 +299,9 @@ You can pipe any object to `Format-List`.
 
 ## NOTES
 
-You can also refer to `Format-List` by its built-in alias, `fl`. For more information, see
-[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+Windows PowerShell includes the following aliases for `Format-List`:
+
+- `fl`
 
 The format cmdlets, such as `Format-List`, arrange the data to be displayed but do not display it.
 The data is displayed by the output features of PowerShell and by the cmdlets that contain the `Out`

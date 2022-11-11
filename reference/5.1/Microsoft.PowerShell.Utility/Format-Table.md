@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-table?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Table
@@ -508,6 +508,10 @@ You can send any object down the pipeline to `Format-Table`.
 `Format-Table` returns format objects that represent the table.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Format-Table`:
+
+- `ft`
 
 ## RELATED LINKS
 
