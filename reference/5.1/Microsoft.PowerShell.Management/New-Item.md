@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/28/2022
+ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Item
@@ -414,7 +414,7 @@ This cmdlet returns the item that it creates.
 
 ## NOTES
 
-PowerShell includes the following aliases for `New-Item`:
+Windows PowerShell includes the following aliases for `New-Item`:
 
 - `ni`
 

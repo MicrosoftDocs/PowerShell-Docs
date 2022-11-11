@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/24/2022
+ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-alias?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Alias
@@ -344,10 +344,9 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-PowerShell includes the following aliases for `Export-Alias`:
+Windows PowerShell includes the following aliases for `Export-Alias`:
 
-- All platforms:
-  - `epal`
+- `epal`
 
 * You can only Export-Aliases to a file.
 
