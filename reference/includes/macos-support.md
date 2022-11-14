@@ -23,7 +23,7 @@ macOS. These versions remain supported until either the version of
 [3]: ../media/shared/cross-mark_274c.svg
 [4]: ../media/shared/large-yellow-circle_1f7e1.svg
 
-|                 macOS                  |      7.0 (LTS)       |         7.1          |  7.2 (LTS-current)   |    7.3 (preview)     |
+|                 macOS                  |      7.0 (LTS)       |         7.1          |  7.2 (LTS-current)   |         7.3          |
 | -------------------------------------- | :------------------: | :------------------: | :------------------: | :------------------: |
 | ![Supported][1] Big Sur 11.5           |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]    |   ![Supported][1]    |
 | ![Out of Support][4] Catalina 10.15    | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] |
@@ -39,7 +39,7 @@ Support of macOS is defined by Apple. For more information, see:
 
 PowerShell is supported on macOS for the following processor architectures:
 
-|          macOS           | 7.0 (LTS) | 7.2 (LTS-current) | 7.3 (preview) |
+|          macOS           | 7.0 (LTS) | 7.2 (LTS-current) |7.3 |
 | ------------------------ | :-------: | :---------------: | :-----------: |
 | macOS Big Sur 11.5       |    x64    |    x64, Arm64     |  x64, Arm64   |
 | macOS High Sierra 10.13+ |    x64    |        x64        |      x64      |

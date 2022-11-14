@@ -115,11 +115,11 @@ use the traditional, paid support options.
 Based on these lifecycle policies, the following table lists the dates when currently supported
 version will no longer be supported:
 
-|      Version      |   End-of-support   |
-| ----------------- | ------------------ |
-| 7.3 (Stable)      | May 8, 2024        |
-| 7.2 (LTS-current) | November 8, 2024   |
-| 7.0 (LTS)         | December 3, 2022   |
+|      Version      |   Release Date   |  End-of-support  |
+| ----------------- | ---------------- | ---------------- |
+| 7.3 (Stable)      | November 9, 2022 | May 8, 2024      |
+| 7.2 (LTS-current) | November 8, 2021 | November 8, 2024 |
+| 7.0 (LTS)         | March 4, 2020    | December 3, 2022 |
 
 
 Support for PowerShell on a specific platforms is based on the support policy of the version of .NET
@@ -131,12 +131,12 @@ used.
 
 End of support dates for already retired versions were:
 
-|      Version      |   End-of-support   |
-| ----------------- | ------------------ |
-| 7.1               | May 8, 2022        |
-| 6.2               | September 4, 2020  |
-| 6.1               | September 28, 2019 |
-| 6.0               | February 13, 2019  |
+| Version |   End-of-support   |   End-of-support   |
+| ------- | ------------------ | ------------------ |
+| 7.1     | November 11, 2020  | May 8, 2022        |
+| 6.2     | March 28, 2019     | September 4, 2020  |
+| 6.1     | September 13, 2018 | September 28, 2019 |
+| 6.0     | January 20, 2018   | February 13, 2019  |
 
 ## Release history
 

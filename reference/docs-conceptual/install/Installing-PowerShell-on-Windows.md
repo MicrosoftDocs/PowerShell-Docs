@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 11/08/2022
+ms.date: 11/14/2022
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -214,7 +214,7 @@ application sandbox. However, changes to the application's root folder are still
 ## Installing a preview version
 
 Preview releases of PowerShell 7 install to `$env:ProgramFiles\PowerShell\7-preview` so they can
-be run side-by-side with non-preview releases of PowerShell. PowerShell 7.3 will be the
+be run side-by-side with non-preview releases of PowerShell. PowerShell 7.4 will be the
 next preview release.
 
 ## Upgrading an existing installation
@@ -227,7 +227,7 @@ information in this article. If you installed via the MSI package, that informat
 
 > [!NOTE]
 > When upgrading, PowerShell won't upgrade from an LTS version to a non-LTS version. It only
-> upgrades to the latest version of that LTS. For example, from 7.2.3 to 7.2.7. To upgrade from an
+> upgrades to the latest version of LTS, for example, from 7.2.3 to 7.2.7. To upgrade from an
 > LTS release to a newer stable version or the next LTS, you need to install the new version with
 > the MSI for that release.
 >
@@ -241,7 +241,7 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
 ```powershell
 # Replace the placeholder information for the following variables:
 $deviceip = '<device ip address'
-$zipfile = 'PowerShell-7.3.0-win-Arm64.zip'
+$zipfile = 'PowerShell-7.3.0-win-arm64.zip'
 $downloadfolder = 'u:\users\administrator\Downloads'  # The download location is local to the device.
     # There should be enough  space for the zip file and the unzipped contents.
 
@@ -254,10 +254,10 @@ Copy-Item $zipfile -Destination $downloadfolder -ToSession $S
 #Connect to the device and expand the archive
 Enter-PSSession $S
 Set-Location u:\users\administrator\Downloads
-Expand-Archive .\PowerShell-7.3.0-win-Arm64.zip
+Expand-Archive .\PowerShell-7.3.0-win-arm64.zip
 
 # Set up remoting to PowerShell 7
-Set-Location .\PowerShell-7.3.0-win-Arm64
+Set-Location .\PowerShell-7.3.0-win-arm64
 # Be sure to use the -PowerShellHome parameter otherwise it tries to create a new
 # endpoint with Windows PowerShell 5.1
 .\Install-PowerShellRemoting.ps1 -PowerShellHome .
