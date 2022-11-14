@@ -315,7 +315,7 @@ Basic formatting guidelines:
 
 <!-- link references -->
 [1]: overview.md#get-started-writing-docs
-[2]: /contribute/code-in-docs#fenced-code-blocks
+[2]: /contribute/code-in-docs#inline-code-blocks
 [3]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [4]: https://en.wikipedia.org/wiki/PascalCase
 [5]: https://github.com/powershell/platyps
