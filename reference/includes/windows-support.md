@@ -24,7 +24,7 @@ on. These versions are supported until either the version of
 [3]: ../media/shared/cross-mark_274c.svg
 [4]: ../media/shared/large-yellow-circle_1f7e1.svg
 
-|                         Windows                         |      7.0 (LTS)       |         7.1          |  7.2 (LTS-current)  |    7.3 (preview)    |
+|                         Windows                         |      7.0 (LTS)       |         7.1          |  7.2 (LTS-current)  |         7.3         |
 | ------------------------------------------------------- | :------------------: | :------------------: | :-----------------: | :-----------------: |
 | ![Supported][1] Windows Server 2016, 2019, or 2022      |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
 | ![Supported][1] Windows Server 2012 R2                  |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
@@ -45,7 +45,7 @@ on. These versions are supported until either the version of
 
 PowerShell is supported on Windows for the following processor architectures.
 
-|           Windows            | 7.0 (LTS)  | 7.2 (LTS-current) |  7.3 (preview)  |
+|           Windows            | 7.0 (LTS)  | 7.2 (LTS-current) | 7.3  |
 | ---------------------------- | :--------: | :---------------: | :-------------: |
 | Nano Server Version 1803+    | x64, Arm32 |        x64        |       x64       |
 | Windows Server 2012 R2+      |  x64, x86  |     x64, x86      |    x64, x86     |

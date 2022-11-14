@@ -24,7 +24,7 @@ they're supported on. These versions remain supported until either the version o
 [3]: ../media/shared/cross-mark_274c.svg
 [4]: ../media/shared/large-yellow-circle_1f7e1.svg
 
-|        Debian         |      7.0 (LTS)       |         7.1          |  7.2 (LTS-current)   |    7.3 (preview)     |
+|        Debian         |      7.0 (LTS)       |         7.1          |  7.2 (LTS-current)   |         7.3          |
 | --------------------- | :------------------: | :------------------: | :------------------: | :------------------: |
 | ![Supported][1] 11    |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]    |   ![Supported][1]    |
 | ![Supported][1] 10    |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]    |   ![Supported][1]    |
@@ -33,7 +33,7 @@ they're supported on. These versions remain supported until either the version o
 
 PowerShell is supported on Debian for the following processor architectures.
 
-|   Debian   |     7.0 (LTS)     | 7.2 (LTS-current) |   7.3 (preview)   |
+|   Debian   |     7.0 (LTS)     | 7.2 (LTS-current) |  7.3   |
 | ---------- | :---------------: | :---------------: | :---------------: |
 | Version 9+ | x64, Arm32, Arm64 | x64, Arm32, Arm64 | x64, Arm32, Arm64 |
 
