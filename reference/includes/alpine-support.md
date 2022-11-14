@@ -24,10 +24,10 @@ supported on. These versions are supported until either the version of
 [3]: ../media/shared/cross-mark_274c.svg
 [4]: ../media/shared/large-yellow-circle_1f7e1.svg
 
-|          Alpine          |      7.0 (LTS)       |         7.1          |  7.2 (LTS-current)   |    7.3 (preview)     |
+|          Alpine          |      7.0 (LTS)       |         7.1          |  7.2 (LTS-current)   |         7.3          |
 | :----------------------: | :------------------: | :------------------: | :------------------: | :------------------: |
-| ![Supported][1] 3.15     | ![Not Supported][3]  | ![Not Supported][3]  |    ![In Test][2]     |    ![In Test][2]     |
-| ![Supported][1] 3.14     | ![Not Supported][3]  | ![Out of Support][4] |   ![Supported][1]    |   ![Supported][1]    |
+|   ![Supported][1] 3.15   | ![Not Supported][3]  | ![Not Supported][3]  |    ![In Test][2]     |    ![In Test][2]     |
+|   ![Supported][1] 3.14   | ![Not Supported][3]  | ![Out of Support][4] |   ![Supported][1]    |   ![Supported][1]    |
 | ![Not Supported][3] 3.13 | ![Not Supported][3]  | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] |
 | ![Not Supported][3] 3.12 | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] |
 | ![Not Supported][3] 3.11 | ![Not Supported][3]  | ![Out of Support][4] | ![Not Supported][3]  | ![Not Supported][3]  |
@@ -38,7 +38,7 @@ Alpine 3.15 is in the process of being tested.
 
 PowerShell is supported on Alpine for the following processor architectures.
 
-|         Alpine         | 7.0 (LTS) | 7.2 (LTS-current) | 7.3 (preview) |
+|         Alpine         | 7.0 (LTS) | 7.2 (LTS-current) |7.3 |
 | ---------------------- | :-------: | :---------------: | :-----------: |
 | All supported versions |    x64    |        x64        |      x64      |
 

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/17/2022
+ms.date: 11/14/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-wmiobject?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WmiObject
@@ -253,16 +253,10 @@ finish.
 
 When you use the **AsJob** parameter, the command returns an object that represents the background
 job and then displays the command prompt. You can continue to work in the session while the job
-finishes. If `Get-WmiObject` is used on a remote computer, the job is created on the local
-computer, and the results from remote computers are automatically returned to the local computer. To
-manage the job, use the cmdlets that contain the `Job` noun. To get the job results, use the
-`Receive-Job` cmdlet.
-
-> [!NOTE]
-> To use this parameter with remote computers, the local and remote computers must be configured for
-> remoting. Additionally, you must start Windows PowerShell by using the **Run as administrator**
-> option in Windows Vista and later versions of Windows. For more information, see
-> [about_Remote_Requirements](../Microsoft.PowerShell.Core/about/about_Remote_Requirements.md).
+finishes. If `Get-WmiObject` is used with the **ComputerName** parameter, the job is created on the
+local computer, and the results from remote computers are automatically returned to the local
+computer. To manage the job, use the cmdlets that contain the `Job` noun. To get the job results,
+use the `Receive-Job` cmdlet.
 
 For more information about Windows PowerShell background jobs, see
 [about_Jobs](../Microsoft.PowerShell.Core/about/about_Jobs.md) and
@@ -356,6 +350,9 @@ local computer, the fully qualified domain name is required.
 
 The default is the local computer. To specify the local computer, such as in a list of computer
 names, use `localhost`, the local computer name, or a dot (`.`).
+
+When specifying a remote computer, your current account or the one you specify with the
+**Credential** parameter must have appropriate permissions to access the information.
 
 This parameter does not rely on Windows PowerShell remoting, which uses WS-Management. You can use
 the **ComputerName** parameter of `Get-WmiObject` even if your computer is not configured to run

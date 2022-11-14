@@ -4,7 +4,7 @@ Help Version: 7.2.0.0
 Locale: en-US
 Module Guid: 5714753b-2afd-4492-a5fd-01d9e2cff8b5
 Module Name: PSReadLine
-ms.date: 06/27/2022
+ms.date: 11/14/2022
 schema: 2.0.0
 title: PSReadLine
 ---
@@ -18,7 +18,7 @@ in PowerShell.
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
 
-- PowerShell 7.3-preview.5 ships with PSReadLine 2.2.5
+- PowerShell 7.3.0 ships with PSReadLine 2.2.6
 - PowerShell 7.2.5 ships with PSReadLine 2.1.0
 - PowerShell 7.0.11 ships with PSReadLine 2.0.4
 - PowerShell 5.1 ships with PSReadLine 2.0.0
@@ -54,4 +54,3 @@ Binds keys to user-defined or PSReadLine key handler functions.
 
 ### [Set-PSReadLineOption](Set-PSReadLineOption.md)
 Customizes the behavior of command line editing in **PSReadLine**.
-

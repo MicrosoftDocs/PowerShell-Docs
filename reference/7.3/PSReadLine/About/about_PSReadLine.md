@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 07/13/2022
+ms.date: 11/14/2022
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
@@ -15,7 +15,7 @@ PowerShell console.
 
 ## Long Description
 
-PowerShell 7.3 ships with PSReadLine 2.2.5. There are newer versions
+PowerShell 7.3 ships with PSReadLine 2.2.6. There are newer versions
 available. The current version of PSReadLine can be installed and used on
 Windows PowerShell 5.1 and newer. For some features, you need to be running
 PowerShell 7.2 or higher.
@@ -209,7 +209,7 @@ Get-ResultFromTwo -Secret1 (Get-Secret -Name blah -AsPlainText) -Secret2 sdv87ys
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
 
-- PowerShell 7.3-preview.5 ships with PSReadLine 2.2.5
+- PowerShell 7.3 ships with PSReadLine 2.2.6
 - PowerShell 7.2.5 ships with PSReadLine 2.1.0
 - PowerShell 7.0.11 ships with PSReadLine 2.0.4
 - PowerShell 5.1 ships with PSReadLine 2.0.0
