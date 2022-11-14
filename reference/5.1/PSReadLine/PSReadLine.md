@@ -18,7 +18,7 @@ in PowerShell.
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
 
-- PowerShell 7.3-preview.5 ships with PSReadLine 2.2.5
+- PowerShell 7.3.0 ships with PSReadLine 2.2.6
 - PowerShell 7.2.5 ships with PSReadLine 2.1.0
 - PowerShell 7.0.11 ships with PSReadLine 2.0.4
 - PowerShell 5.1 ships with PSReadLine 2.0.0

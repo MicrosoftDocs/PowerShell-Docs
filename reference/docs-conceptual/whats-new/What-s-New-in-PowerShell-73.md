@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.3
 description: New features and changes released in PowerShell 7.3
-ms.date: 10/27/2022
+ms.date: 11/14/2022
 ---
 
 # What's New in PowerShell 7.3
@@ -28,6 +28,8 @@ PowerShell 7.3 includes the following features, updates, and breaking changes.
 
 ## Tab completion improvements
 
+- PowerShell 7.3 includes PSReadline 2.2.6, which provide Predictive IntelliSense. For more
+  information, see [about_PSReadLine][12].
 - Fix tab completion within the script block specified for the `ValidateScriptAttribute`. ([#14550][14550])
   (Thanks @MartinGC94!)
 - Added tab completion for loop labels after `break`/`continue` ([#16438][16438]) (Thanks @MartinGC94!)
@@ -138,7 +140,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [09]: https://github.com/dotnet/runtime/issues/66746
 [10]: https://github.com/PowerShell/PowerShell/issues/17018
 [11]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0
-
+[12]: /powershell/module/psreadline/about/about_psreadline#psreadline-release-history
 [12802]: https://github.com/PowerShell/PowerShell/pull/12802
 [13799]: https://github.com/PowerShell/PowerShell/pull/13799
 [14550]: https://github.com/PowerShell/PowerShell/pull/14550
