@@ -494,6 +494,8 @@ items:
         href: community/contributing/powershell-style-guide.md
       - name: Editorial checklist
         href: community/contributing/editorial-checklist.md
+      - name: Product terminology and branding guidelines
+        href: community/contributing/product-terminology.md
       - name: How to file a Docs issue
         href: community/contributing/file-an-issue.md
       - name: Submitting a pull request
