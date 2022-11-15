@@ -198,7 +198,7 @@ Accept wildcard characters: False
 Deletes the current execution history and the saved results of the scheduled job.
 
 The job execution history and job results are saved with the scheduled job in the
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on the computer on which
+`$HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on the computer on which
 the job is created. To see the execution history, use the `Get-Job` cmdlet. To get the job results,
 use the `Receive-Job` cmdlet.
 
@@ -314,7 +314,7 @@ Windows PowerShell deletes the results of the oldest job instance to make room f
 the newest job instance.
 
 The job execution history and job results are saved in the
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs\<JobName>\Output\<Timestamp>`
+`$HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs\<JobName>\Output\<Timestamp>`
 directories on the computer on which the job is created. To see the execution history, use the
 `Get-Job` cmdlet. To get the job results, use the `Receive-Job` cmdlet.
 

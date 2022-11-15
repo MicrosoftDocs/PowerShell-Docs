@@ -143,8 +143,8 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
  1 ITTask          Srv1            Disconnected  Microsoft.PowerShell          None
 
 PS> $s = Connect-PSSession -ComputerName Srv1 -Name ITTask -Credential Domain01\User01
-PS> Invoke-Command -Session $s {dir $home\Scripts\PatchStatusOutput.ps1}
-PS> Invoke-Command -Session $s {mkdir $home\Scripts\PatchStatusOutput}
+PS> Invoke-Command -Session $s {dir $HOME\Scripts\PatchStatusOutput.ps1}
+PS> Invoke-Command -Session $s {mkdir $HOME\Scripts\PatchStatusOutput}
 PS> Invoke-Command -Session $s -FilePath \\Server01\Scripts\Get-PatchStatus.ps1
 PS> Disconnect-PSSession -Session $s
 ```

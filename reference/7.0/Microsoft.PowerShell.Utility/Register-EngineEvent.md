@@ -63,13 +63,13 @@ This example shows how to run `Register-EngineEvent` to take a specific action w
 
 ```powershell
 Register-EngineEvent -SourceIdentifier PowerShell.Exiting -SupportEvent -Action {
-    Get-History | Export-Clixml $Home\history.clixml
+    Get-History | Export-Clixml $HOME\history.clixml
 }
 ```
 
 The **SupportEvent** parameter is added to hide the event subscription. When PowerShell exits, in
 this case, the command history from the exiting session is exported an XML file in the user's
-`$Home` directory.
+`$HOME` directory.
 
 ### Example 3: Create and subscribe to a user-defined event
 

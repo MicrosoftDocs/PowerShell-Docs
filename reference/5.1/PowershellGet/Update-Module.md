@@ -289,7 +289,7 @@ accessible to all users of the computer:
 The **CurrentUser** doesn't require elevated permissions and installs modules in a location that is
 accessible only to the current user of the computer:
 
-`$home\Documents\PowerShell\Modules`
+`$HOME\Documents\PowerShell\Modules`
 
 When no **Scope** is defined, the default is set based on the PowerShellGet version.
 
@@ -367,7 +367,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 For PowerShell 5.1 or below, the default scope in an elevated session is **AllUsers**, and in a
 non-elevated session, **CurrentUser**. Module updates for **AllUsers**,
 `$env:ProgramFiles\PowerShell\Modules`, need elevated permissions. Module updates for
-**CurrentUser**, `$home\Documents\PowerShell\Modules`, don't need elevated permissions.
+**CurrentUser**, `$HOME\Documents\PowerShell\Modules`, don't need elevated permissions.
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)

@@ -184,7 +184,7 @@ permitted.
 
 If you do not specify a path, `Start-Transcript` uses the path in the value of the `$Transcript`
 global variable. If you have not created this variable, `Start-Transcript` stores the transcripts in
-the `$Home\My Documents directory as \PowerShell_transcript.<time-stamp>.txt` files.
+the `$HOME\My Documents directory as \PowerShell_transcript.<time-stamp>.txt` files.
 
 If any of the directories in the path do not exist, the command fails.
 

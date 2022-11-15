@@ -221,7 +221,7 @@ value of the **InnerXml** property of the node.
 ```powershell
 $SnippetNamespace = @{snip = "http://schemas.microsoft.com/PowerShell/Snippets"}
 
-Select-Xml -Path $Home\Documents\WindowsPowerShell\Snippets -Namespace $SnippetNamespace -XPath "//snip:Title" |
+Select-Xml -Path $HOME\Documents\WindowsPowerShell\Snippets -Namespace $SnippetNamespace -XPath "//snip:Title" |
     ForEach-Object {$_.Node.Innerxml}
 ```
 

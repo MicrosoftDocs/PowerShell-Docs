@@ -421,7 +421,7 @@ Accept wildcard characters: False
 ### -OutputModule
 
 Specifies an optional path and name for the module created by `Export-PSSession`. The default path
-is `$home\Documents\WindowsPowerShell\Modules`. This parameter is required.
+is `$HOME\Documents\WindowsPowerShell\Modules`. This parameter is required.
 
 If the module subdirectory or any of the files that `Export-PSSession` creates already exist, the
 command fails. To overwrite existing files, use the **Force** parameter.
@@ -433,7 +433,7 @@ Aliases: PSPath, ModuleName
 
 Required: True
 Position: 1
-Default value: $home\Documents\WindowsPowerShell\Modules
+Default value: $HOME\Documents\WindowsPowerShell\Modules
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

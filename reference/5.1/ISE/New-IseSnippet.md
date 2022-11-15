@@ -32,7 +32,7 @@ PowerShell modules. To see snippets in Windows PowerShell ISE, from the **Edit**
 **Start Snippets** or press <kbd>CTRL</kbd>+<kbd>J</kbd>.
 
 The `New-ISESnippet` cmdlet creates a `<Title>.Snippets.ps1xml` file in the
-`$home\Documents\WindowsPowerShell\Snippets` directory with the title that you specify. To include a
+`$HOME\Documents\WindowsPowerShell\Snippets` directory with the title that you specify. To include a
 snippet file in a module that you are authoring, add the snippet file to a Snippets subdirectory of
 your module directory.
 
@@ -60,7 +60,7 @@ New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-bas
 
 This command creates a Comment-BasedHelp snippet for Windows PowerShell ISE. It creates a file named
 `Comment-BasedHelp.snippets.ps1xml` in the user's Snippets directory
-`$home\Documents\WindowsPowerShell\Snippets`.
+`$HOME\Documents\WindowsPowerShell\Snippets`.
 
 ### Example 2: Create a mandatory snippet
 
@@ -85,7 +85,7 @@ the same name.
 ### Example 3: Copy a mandatory snippet from a folder to a destination folder
 
 ```
-Copy-Item "$Home\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml" -Destination "\\Server\Share"
+Copy-Item "$HOME\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml" -Destination "\\Server\Share"
 ```
 
 This command uses the `Copy-Item` cmdlet to copy the **Mandatory** snippet from the folder where

@@ -38,7 +38,7 @@ This cmdlet runs only on Windows 7, Windows Server 2008 R2, and later versions o
 This example exports counter data to a BLG file.
 
 ```powershell
-Get-Counter "\Processor(*)\% Processor Time" | Export-Counter -Path $home\Counters.blg
+Get-Counter "\Processor(*)\% Processor Time" | Export-Counter -Path $HOME\Counters.blg
 ```
 
 The command uses the `Get-Counter` cmdlet to collect processor time data. It uses a pipeline

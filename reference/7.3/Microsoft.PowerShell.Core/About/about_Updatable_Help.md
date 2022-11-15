@@ -139,8 +139,8 @@ member of the Administrators group on the computer.
 If you are not a member of the Administrators group, you cannot update help for
 these modules; but if you have internet access, you can view help online.
 
-Updating help for modules in the directory `$home/Documents/PowerShell/Modules`
-or modules in other subdirectories of the `$home` directory does not require
+Updating help for modules in the directory `$HOME/Documents/PowerShell/Modules`
+or modules in other subdirectories of the `$HOME` directory does not require
 special permissions.
 
 The `Update-Help` and `Save-Help` cmdlets have a **UseDefaultCredentials**

@@ -1263,7 +1263,7 @@ Used by `Start-Transcript` to specify the name and location of the transcript
 file. If you do not specify a value for the **Path** parameter,
 `Start-Transcript` uses the path in the value of the `$Transcript` global
 variable. If you have not created this variable, `Start-Transcript` stores the
-transcripts in the `$Home\My Documents` directory as
+transcripts in the `$HOME\My Documents` directory as
 `\PowerShell_transcript.<time-stamp>.txt` files.
 
 ## $VerbosePreference

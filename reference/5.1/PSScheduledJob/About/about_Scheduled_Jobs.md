@@ -211,7 +211,7 @@ job cmdlets to view and manage the job instance.
 
 Scheduled jobs are saved to disk and use the cmdlet verb, `Register`, instead
 of `New`. The XML files are located on the local computer in the directory
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs`.
+`$HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs`.
 
 PowerShell creates a directory for each scheduled job and saves the job
 commands, job triggers, job options and job results in the scheduled job

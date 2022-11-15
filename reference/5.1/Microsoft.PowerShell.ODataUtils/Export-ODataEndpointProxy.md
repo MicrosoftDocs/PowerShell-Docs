@@ -214,7 +214,7 @@ commands.
 
 This cmdlet copies a binary module, module manifest, and formatting file, if applicable, to the
 specified folder. If you specify only the name of the module, `Export-ODataEndpointProxy` saves the
-module in the `$home\Documents\WindowsPowerShell\Modules` folder. If you specify a path, the cmdlet
+module in the `$HOME\Documents\WindowsPowerShell\Modules` folder. If you specify a path, the cmdlet
 creates the module folder in that path.
 
 ```yaml
