@@ -435,12 +435,12 @@ If you don't use this parameter, the default path is as follows:
 
 **Windows**
 
-- `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($HOST.Name)_history.txt`
+- `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($Host.Name)_history.txt`
 
 **non-Windows**
 
-- `$env:XDG_DATA_HOME/powershell/PSReadLine/$($HOST.Name)_history.txt`
-- `$HOME/.local/share/powershell/PSReadLine/$($HOST.Name)_history.txt`
+- `$env:XDG_DATA_HOME/powershell/PSReadLine/$($Host.Name)_history.txt`
+- `$HOME/.local/share/powershell/PSReadLine/$($Host.Name)_history.txt`
 
 ```yaml
 Type: System.String
@@ -449,7 +449,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: A file named $($HOST.Name)_history.txt in $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine on Windows and $env:XDG_DATA_HOME/powershell/PSReadLine or $HOME/.local/share/powershell/PSReadLine on non-Windows platforms
+Default value: A file named $($Host.Name)_history.txt in $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine on Windows and $env:XDG_DATA_HOME/powershell/PSReadLine or $HOME/.local/share/powershell/PSReadLine on non-Windows platforms
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

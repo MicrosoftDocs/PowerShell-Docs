@@ -165,7 +165,7 @@ If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, you can ins
 dotnet tool install --global PowerShell
 ```
 
-The dotnet tool installer adds `$HOMWE\.dotnet\tools` to your `$env:PATH` environment variable.
+The dotnet tool installer adds `$HOME\.dotnet\tools` to your `$env:PATH` environment variable.
 However, the currently running shell doesn't have the updated `$env:PATH`. You can start PowerShell
 from a new shell by typing `pwsh`.
 
