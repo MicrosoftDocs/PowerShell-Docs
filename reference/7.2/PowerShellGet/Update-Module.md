@@ -290,7 +290,7 @@ accessible to all users of the computer:
 The **CurrentUser** doesn't require elevated permissions and installs modules in a location that is
 accessible only to the current user of the computer:
 
-`$home\Documents\PowerShell\Modules`
+`$HOME\Documents\PowerShell\Modules`
 
 When no **Scope** is defined, the default is set based on the PowerShellGet version.
 
@@ -366,7 +366,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 For PowerShell version 6.0 and above, the default installation scope is always **CurrentUser**.
-Module updates for **CurrentUser**, `$home\Documents\PowerShell\Modules`, don't need elevated
+Module updates for **CurrentUser**, `$HOME\Documents\PowerShell\Modules`, don't need elevated
 permissions. Module updates for **AllUsers**, `$env:ProgramFiles\PowerShell\Modules`, need elevated
 permissions.
 

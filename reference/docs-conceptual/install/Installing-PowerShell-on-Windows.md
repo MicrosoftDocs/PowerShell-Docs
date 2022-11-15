@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 11/14/2022
+ms.date: 11/15/2022
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -165,9 +165,9 @@ If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, you can ins
 dotnet tool install --global PowerShell
 ```
 
-The dotnet tool installer adds `$env:USERPROFILE\.dotnet\tools` to your `$env:PATH` environment
-variable. However, the currently running shell doesn't have the updated `$env:PATH`. You can start
-PowerShell from a new shell by typing `pwsh`.
+The dotnet tool installer adds `$HOME\.dotnet\tools` to your `$env:PATH` environment variable.
+However, the currently running shell doesn't have the updated `$env:PATH`. You can start PowerShell
+from a new shell by typing `pwsh`.
 
 ## <a id="msstore" />Installing from the Microsoft Store
 

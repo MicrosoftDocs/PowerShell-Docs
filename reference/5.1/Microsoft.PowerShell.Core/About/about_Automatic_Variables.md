@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 09/06/2022
+ms.date: 11/15/2022
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -157,8 +157,12 @@ and change the current loop iteration. For more information, see
 ### $HOME
 
 Contains the full path of the user's home directory. This variable is the
-equivalent of the `"$env:homedrive$env:homepath"` Windows environment
+equivalent of the `"$env:HOMEDRIVE$env:HOMEPATH"` Windows environment
 variables, typically `C:\Users\<UserName>`.
+
+> [!IMPORTANT]
+> Windows can redirect the location of the user's profile. This means that
+> `$HOME` may not have the same value as `$env:USERPROFILE`.
 
 ### $Host
 

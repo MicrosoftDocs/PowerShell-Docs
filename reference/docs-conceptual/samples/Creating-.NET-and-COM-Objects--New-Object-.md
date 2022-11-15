@@ -231,12 +231,12 @@ Count              AliasProperty Count = Length
 The **WScript.Shell CreateShortcut** method accepts a single argument, the path to the shortcut file
 to create. We could type in the full path to the desktop, but there is an easier way. The desktop is
 normally represented by a folder named Desktop inside the home folder of the current user. Windows
-PowerShell has a variable `$Home` that contains the path to this folder. We can specify the path to
+PowerShell has a variable `$HOME` that contains the path to this folder. We can specify the path to
 the home folder by using this variable, and then add the name of the Desktop folder and the name for
 the shortcut to create by typing:
 
 ```powershell
-$lnk = $WshShell.CreateShortcut("$Home\Desktop\PSHome.lnk")
+$lnk = $WshShell.CreateShortcut("$HOME\Desktop\PSHome.lnk")
 ```
 
 When you use something that looks like a variable name inside double-quotes, Windows PowerShell
@@ -244,7 +244,7 @@ tries to substitute a matching value. If you use single-quotes, Windows PowerShe
 substitute the variable value. For example, try typing the following commands:
 
 ```powershell
-"$Home\Desktop\PSHome.lnk"
+"$HOME\Desktop\PSHome.lnk"
 ```
 
 ```Output
@@ -252,11 +252,11 @@ C:\Documents and Settings\aka\Desktop\PSHome.lnk
 ```
 
 ```powershell
-'$Home\Desktop\PSHome.lnk'
+'$HOME\Desktop\PSHome.lnk'
 ```
 
 ```Output
-$Home\Desktop\PSHome.lnk
+$HOME\Desktop\PSHome.lnk
 ```
 
 We now have a variable named `$lnk` that contains a new shortcut reference. If you want to see its

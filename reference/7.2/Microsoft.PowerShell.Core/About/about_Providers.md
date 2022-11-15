@@ -287,7 +287,7 @@ Certificate
 ```
 
 The **FileSystem** provider is the only provider that has a default value for
-**Home**. It's the same value as `$Home`. For more information, see
+**Home**. It's the same value as `$HOME`. For more information, see
 [about_Automatic_Variables](about_Automatic_Variables.md).
 
 You can set the **Home** directory for a provider, for the current session,

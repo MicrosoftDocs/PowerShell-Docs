@@ -48,18 +48,18 @@ precedence.
   - Linux - `/usr/local/microsoft/powershell/7/Microsoft.Powershell_profile.ps1`
   - macOS - `/usr/local/microsoft/powershell/7/Microsoft.Powershell_profile.ps1`
 - Current User, All Hosts
-  - Windows - `$Home\Documents\PowerShell\Profile.ps1`
+  - Windows - `$HOME\Documents\PowerShell\Profile.ps1`
   - Linux - `~/.config/powershell/profile.ps1`
   - macOS - `~/.config/powershell/profile.ps1`
 - Current user, Current Host
-  - Windows - `$Home\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`
+  - Windows - `$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`
   - Linux - `~/.config/powershell/Microsoft.Powershell_profile.ps1`
   - macOS - `~/.config/powershell/Microsoft.Powershell_profile.ps1`
 
 The profile paths include the following variables:
 
 - The `$PSHOME` variable stores the installation directory for PowerShell
-- The `$Home` variable stores the current user's home directory
+- The `$HOME` variable stores the current user's home directory
 
 Other programs that host PowerShell can support their own profiles. For
 example, Visual Studio Code (VS Code) supports the following host-specific
@@ -67,7 +67,7 @@ profiles.
 
 - All users, Current Host - `$PSHOME\Microsoft.VSCode_profile.ps1`
 - Current user, Current Host -
-  `$Home\Documents\PowerShell\Microsoft.VSCode_profile.ps1`
+  `$HOME\Documents\PowerShell\Microsoft.VSCode_profile.ps1`
 
 In PowerShell Help, the "CurrentUser, Current Host" profile is the profile most
 often referred to as _your PowerShell profile_.

@@ -360,7 +360,7 @@ qualified path of the job definition. Use this parameter to start custom job typ
 definition path, such as scheduled jobs.
 
 For scheduled jobs, the value of the **DefinitionPath** parameter is
-`$home\AppData\Local\Windows\PowerShell\ScheduledJob`.
+`$HOME\AppData\Local\Windows\PowerShell\ScheduledJob`.
 
 This parameter was introduced in PowerShell 3.0.
 
