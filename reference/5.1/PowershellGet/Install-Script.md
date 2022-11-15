@@ -447,7 +447,7 @@ The AllUsers scope lets modules be installed in a location that is accessible to
 computer, that is, `$env:ProgramFiles\WindowsPowerShell\Scripts`.
 
 The CurrentUser scope lets modules be installed only to
-`$home\Documents\WindowsPowerShell\Scripts`, so that the module is available only to the current
+`$HOME\Documents\WindowsPowerShell\Scripts`, so that the module is available only to the current
 user.
 
 When no **Scope** is defined, the default will be set based on the current session:

@@ -41,7 +41,7 @@ To find information about the parameters of a script, use the full path to the
 script file. For example:
 
 ```powershell
-Get-Help $home\Documents\Scripts\Get-Function.ps1
+Get-Help $HOME\Documents\Scripts\Get-Function.ps1
 ```
 
 The `Get-Help` cmdlet returns various details about the command, including a

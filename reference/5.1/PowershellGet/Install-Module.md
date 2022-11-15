@@ -111,7 +111,7 @@ Install-Module -Name PowerShellGet -Scope CurrentUser
 
 The `Install-Module` uses the **Name** parameter to specify the **PowerShellGet** module.
 `Install-Module` downloads and installs the newest version of **PowerShellGet** into the current
-user's directory, `$home\Documents\WindowsPowerShell\Modules`.
+user's directory, `$HOME\Documents\WindowsPowerShell\Modules`.
 
 ## PARAMETERS
 
@@ -373,7 +373,7 @@ computer:
 The **CurrentUser** installs modules in a location that is accessible only to the current user of
 the computer. For example:
 
-`$home\Documents\WindowsPowerShell\Modules`
+`$HOME\Documents\WindowsPowerShell\Modules`
 
 When no **Scope** is defined, the default is set based on the PowerShellGet version.
 

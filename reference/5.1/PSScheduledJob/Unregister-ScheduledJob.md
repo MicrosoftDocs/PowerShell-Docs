@@ -41,7 +41,7 @@ The `Unregister-ScheduledJob` cmdlet deletes scheduled jobs from the local compu
 
 When it deletes or unregisters a scheduled job, `Unregister-ScheduledJob` deletes the directory for
 the scheduled job (in the
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory`), which contains the XML
+`$HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory`), which contains the XML
 file that defines the scheduled job, the job execution history, and all job results. This action
 also deletes the job from Task Scheduler.
 

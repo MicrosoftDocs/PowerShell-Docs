@@ -27,13 +27,13 @@ Microsoft .NET Framework Serialization XML format.
 
 When you create a scheduled job, PowerShell creates a directory for the
 scheduled job in the
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on
+`$HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on
 the local computer. The directory name is the same as the job name.
 
 The following is a sample **ScheduledJobs** directory.
 
 ```powershell
-Get-ChildItem $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs
+Get-ChildItem $HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs
 ```
 
 ```Output
@@ -55,7 +55,7 @@ Each scheduled job has its own directory. The directory contains the scheduled
 job XML file and an **Output** subdirectory.
 
 ```powershell
-$Path = "$home\AppData\Local\Microsoft\Windows\PowerShell"
+$Path = "$HOME\AppData\Local\Microsoft\Windows\PowerShell"
 $Path += "\ScheduledJobs\ProcessJob"
 Get-ChildItem $Path
 ```
@@ -80,7 +80,7 @@ The following command shows the execution history directories for the
 **ProcessJob** scheduled job.
 
 ```powershell
-$Path = "$home\AppData\Local\Microsoft"
+$Path = "$HOME\AppData\Local\Microsoft"
 $Path += "\Windows\PowerShell\ScheduledJobs\ProcessJob\Output"
 Get-ChildItem $Path
 ```
@@ -101,7 +101,7 @@ d----         11/7/2011   3:00 AM            20111107-030002-376
 ```
 
 ```powershell
-$Path = "$home\AppData\Local\Microsoft\Windows\PowerShell\"
+$Path = "$HOME\AppData\Local\Microsoft\Windows\PowerShell\"
 $Path += "ScheduledJobs\ProcessJob\Output\20111102-030002-260"
 Get-ChildItem $Path
 ```

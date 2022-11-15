@@ -152,10 +152,10 @@ APIs are documented in
 ### Command History
 
 PSReadLine maintains a history file containing all the commands and data you've entered from the command line. The history files are a file named
-`$($host.Name)_history.txt`. On Windows systems the history file is stored at
+`$($Host.Name)_history.txt`. On Windows systems the history file is stored at
 `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On non-Windows systems,
 the history files are stored at `$env:XDG_DATA_HOME/powershell/PSReadLine` or
-`$env:HOME/.local/share/powershell/PSReadLine`.
+`$HOME/.local/share/powershell/PSReadLine`.
 
 The history can contain sensitive data including passwords. PSReadLine attempts
 to filter out sensitive information. Any command lines containing the following

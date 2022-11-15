@@ -1,6 +1,6 @@
 ---
 description: Installing a PowerShell Module
-ms.date: 09/13/2016
+ms.date: 11/15/2022
 ms.topic: reference
 title: Installing a PowerShell Module
 ---
@@ -39,7 +39,7 @@ module directories, but you can add to and edit the value.
   > This location is reserved for modules that ship with Windows. Do not install modules to this
   > location.
 
-- `$Home\Documents\WindowsPowerShell\Modules` (`%UserProfile%\Documents\WindowsPowerShell\Modules`)
+- `$HOME\Documents\WindowsPowerShell\Modules` (`%HOMEDRIVE%%HOMEPATH%\Documents\WindowsPowerShell\Modules`)
 
 - `$Env:ProgramFiles\WindowsPowerShell\Modules` (`%ProgramFiles%\WindowsPowerShell\Modules`)
 
@@ -142,7 +142,7 @@ If you create your own module or get a module from another party, such as a Wind
 community website, and you want the module to be available for your user account only, install the
 module in your user-specific Modules directory.
 
-`$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
+`$HOME\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 The user-specific Modules directory is added to the value of the **PSModulePath** environment
 variable by default.

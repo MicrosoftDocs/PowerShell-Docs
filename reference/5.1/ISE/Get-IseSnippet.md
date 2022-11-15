@@ -25,7 +25,7 @@ The `Get-IseSnippet` cmdlet gets the PS1XML files that contain reusable text sni
 created. It works only in Windows PowerShell Integrated Scripting Environment (ISE).
 
 When you use the `New-IseSnippet` cmdlet to create a snippet, `New-IseSnippet` creates a
-`<SnippetTitle>.Snippets.ps1xml` file in the `$home\Documents\WindowsPowerShell\Snippets` directory.
+`<SnippetTitle>.Snippets.ps1xml` file in the `$HOME\Documents\WindowsPowerShell\Snippets` directory.
 `Get-IseSnippet` gets the snippet files in the Snippets directory.
 
 This cmdlet does not get built-in snippets or snippets that are imported from modules through the
