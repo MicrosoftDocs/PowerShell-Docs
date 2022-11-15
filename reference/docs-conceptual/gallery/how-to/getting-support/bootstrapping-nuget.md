@@ -185,7 +185,7 @@ binary will be located in one of two folders:
 - If the cmdlets were executed as a user without elevated permissions:
 
   ```powershell
-  $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
+  $HOME\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
   ```
 
 A second option is to download NuGet.exe from the NuGet.Org website:
@@ -194,7 +194,7 @@ version for production machines, make sure it is later than 2.8.5.208, and ident
 that has been labeled "recommended". Remember to unblock the file if it was downloaded using a
 browser. This can be performed by using the `Unblock-File` cmdlet.
 
-In either case, the NuGet.exe file can be copied to any location in `$env:path`, but the standard
+In either case, the NuGet.exe file can be copied to any location in `$env:PATH`, but the standard
 locations are:
 
 - To make the executable available so that all users can use `Publish-Module` and `Publish-Script`
@@ -208,5 +208,5 @@ locations are:
   user's profile:
 
   ```powershell
-  $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
+  $HOME\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
   ```

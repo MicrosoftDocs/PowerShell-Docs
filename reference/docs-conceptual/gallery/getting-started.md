@@ -81,11 +81,11 @@ cmdlet, depending on the package type.
 
 `Install-Module` installs the module to `$env:ProgramFiles\WindowsPowerShell\Modules` by default.
 This requires an administrator account. If you add the `-Scope CurrentUser` parameter, the module is
-installed to `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
+installed to `$HOME\Documents\WindowsPowerShell\Modules` .
 
 `Install-Script` installs the script to `$env:ProgramFiles\WindowsPowerShell\Scripts` by default.
 This requires an administrator account. If you add the `-Scope CurrentUser` parameter, the script is
-installed to `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
+installed to `$HOME\Documents\WindowsPowerShell\Scripts` .
 
 By default, `Install-Module` and `Install-Script` installs the most
 current version of a package. To install an older version of the package, add the `-RequiredVersion`
