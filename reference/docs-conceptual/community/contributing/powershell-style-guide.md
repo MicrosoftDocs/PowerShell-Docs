@@ -1,6 +1,6 @@
 ---
 description: This article provides the rules of style for writing PowerShell documentation.
-ms.date: 08/29/2022
+ms.date: 11/14/2022
 ms.topic: conceptual
 title: PowerShell-Docs style guide
 ---
@@ -8,63 +8,6 @@ title: PowerShell-Docs style guide
 
 This article provides style guidance specific to the PowerShell-Docs content. It builds on the
 information outlined in the [Overview][1].
-
-## Product Terminology
-
-There are several variants of PowerShell and related modules.
-
-### PowerShell
-
-- **PowerShell** - PowerShell is a scripting language and an interactive shell. This is the default
-  name.
-  - **PowerShell Core** - The name used for PowerShell v6, built on .NET Core. This name
-    should not be used anymore.
-- **Windows PowerShell** - * Windows PowerShell is a trademarked name that refers to the version of
-  PowerShell that's included in Windows and requires the full .NET Framework.
-
-  In general, references to "Windows PowerShell" in documentation can be changed to _PowerShell_.
-  "Windows PowerShell" should be used when _Windows PowerShell_-specific behavior is being
-  discussed.
-
-### Azure PowerShell
-
-- **Azure PowerShell** is the name of the collection of PowerShell modules designed for Azure.
-- The name **Azure PowerShell** should always be used when referring to these modules, collectively.
-  Never just **PowerShell**.
-- Use the more specific name (listed below) when referring to a specific version.
-- There are many versions of Azure PowerShell and many Azure PowerShell related modules.
-  - **Az PowerShell** - the currently supported collection of modules for use with Azure
-  - **AzureRM PowerShell** - the older collection of modules that use the Azure Resource Manager
-    model for managing your Azure resources (deprecated and no longer supported after 29 February
-    2024)
-  - **Azure Service Management PowerShell** - the oldest collection of modules are for managing
-    legacy Azure resources that use Service Management APIs.
-  - **Azure Stack PowerShell** - this is a collection of PowerShell modules used to manage Azure
-    Stack environments. These modules are used together with other Azure PowerShell modules.
-- Azure PowerShell related modules - These are individual modules that aren't included in the Azure
-  PowerShell collection, but are used to manage Azure resources. These should always be referred to
-  by their full name.
-  - Azure Active Directory PowerShell
-  - AIP PowerShell
-  - Azure Deployment Manager PowerShell
-  - Azure Elastic DB Jobs PowerShell
-  - Azure Service Fabric PowerShell
-
-### Other PowerShell modules
-
-There are many other Microsoft products and services that publish PowerShell modules designed to
-manage those offerings. Those modules should always be referred to by their collective names or by
-the specific module name. For example:
-
-- "Windows management modules" (collectively) or the Hyper-V PowerShell module (specifically)
-
-### Related products
-
-- **Visual Studio Code (VS Code)** - This is Microsoft's free, open source editor. At first mention,
-  the full name should be used. After that you may use **VS Code**. Don't use **VSCode**.
-- **PowerShell Extension for Visual Studio Code** - The extension turns VS Code into the preferred
-  IDE for PowerShell. At first mention, the full name should be used. After that you may use
-  **PowerShell extension**.
 
 ## Formatting command syntax elements
 
@@ -372,7 +315,7 @@ Basic formatting guidelines:
 
 <!-- link references -->
 [1]: overview.md#get-started-writing-docs
-[2]: /contribute/code-in-docs#fenced-code-blocks
+[2]: /contribute/code-in-docs#inline-code-blocks
 [3]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [4]: https://en.wikipedia.org/wiki/PascalCase
 [5]: https://github.com/powershell/platyps
