@@ -1,6 +1,6 @@
-name: "🛠️ Quality Contribution"
+name: "🦾 Commit to a Quality Contribution"
 description: >-
-  File a new issue to tackle quality improvement opportunities
+  File an issue to take part in the PowerShell Docs Quality Contributions project.
 title: "Quality: "
 body:
   - type: markdown

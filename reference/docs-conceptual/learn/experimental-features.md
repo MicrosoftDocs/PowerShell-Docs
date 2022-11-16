@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 10/07/2022
+ms.date: 11/16/2022
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -26,31 +26,33 @@ This article describes the experimental features that are available and how to u
 
 Legend
 
-- &#x2714;&#xfe0f; - indicates that the experimental feature is available in the version of
-  PowerShell
-- &#x2705; - indicates the version of PowerShell where the experimental feature became mainstream
-- &#x274c; - indicates the version of PowerShell where the experimental feature was removed
+- The ![Experimental][X] icon indicates that the experimental feature is available in the version
+  of PowerShell
+- The ![Mainstream][M] icon indicates the version of PowerShell where the experimental feature
+  became mainstream
+- The ![Discontinued][D] icon indicates the version of PowerShell where the experimental feature was
+  removed
 
-|                            Name                            |       7.0        |       7.1        |       7.2        |       7.3        |
-| ---------------------------------------------------------- | :--------------: | :--------------: | :--------------: | :--------------: |
-| PSNullConditionalOperators                                 | &#x2714;&#xfe0f; |     &#x2705;     |                  |                  |
-| PSUnixFileStat (non-Windows only)                          | &#x2714;&#xfe0f; |     &#x2705;     |                  |                  |
-| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x2705;     |                  |
-| PSCultureInvariantReplaceOperator                          |                  | &#x2714;&#xfe0f; |     &#x2705;     |                  |
-| PSNotApplyErrorActionToStderr                              |                  | &#x2714;&#xfe0f; |     &#x2705;     |                  |
-| PSImplicitRemotingBatching                                 | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x274c;     |                  |
-| PSCommandNotFoundSuggestion                                | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
-| PSDesiredStateConfiguration.InvokeDscResource (DSC v2)     | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
-| PSNativePSPathResolution                                   |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |     &#x274c;     |
-| PSSubsystemPluginModel                                     |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
-| PSNativeCommandArgumentPassing                             |                  |                  | &#x2714;&#xfe0f; | &#x2705; |
-| PSAnsiRenderingFileInfo                                    |                  |                  | &#x2714;&#xfe0f; | &#x2705; |
-| PSLoadAssemblyFromNativeCode                               |                  |                  | &#x2714;&#xfe0f; | &#x2714;&#xfe0f; |
-| PSCleanBlock                                               |                  |                  |                  | &#x2705; |
-| PSExec                                                     |                  |                  |                  | &#x2705; |
-| PSNativeCommandErrorActionPreference                       |                  |                  |                  | &#x2714;&#xfe0f; |
-| PSStrictModeAssignment                                     |                  |                  |                  | &#x274c; |
-| PSAMSIMethodInvocationLogging                              |                  |                  |                  | &#x2705; |
+|                            Name                            |        7.0         |        7.1         |        7.2         |        7.3         |
+| ---------------------------------------------------------- | :----------------: | :----------------: | :----------------: | :----------------: |
+| PSNullConditionalOperators                                 | ![Experimental][X] |  ![Mainstream][M]  |                    |                    |
+| PSUnixFileStat (non-Windows only)                          | ![Experimental][X] |  ![Mainstream][M]  |                    |                    |
+| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace | ![Experimental][X] | ![Experimental][X] |  ![Mainstream][M]  |                    |
+| PSCultureInvariantReplaceOperator                          |                    | ![Experimental][X] |  ![Mainstream][M]  |                    |
+| PSNotApplyErrorActionToStderr                              |                    | ![Experimental][X] |  ![Mainstream][M]  |                    |
+| PSImplicitRemotingBatching                                 | ![Experimental][X] | ![Experimental][X] | ![Discontinued][D] |                    |
+| PSCommandNotFoundSuggestion                                | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] |
+| PSDesiredStateConfiguration.InvokeDscResource (DSC v2)     | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] |
+| PSNativePSPathResolution                                   |                    | ![Experimental][X] | ![Experimental][X] | ![Discontinued][D] |
+| PSSubsystemPluginModel                                     |                    | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] |
+| PSNativeCommandArgumentPassing                             |                    |                    | ![Experimental][X] |  ![Mainstream][M]  |
+| PSAnsiRenderingFileInfo                                    |                    |                    | ![Experimental][X] |  ![Mainstream][M]  |
+| PSLoadAssemblyFromNativeCode                               |                    |                    | ![Experimental][X] | ![Experimental][X] |
+| PSCleanBlock                                               |                    |                    |                    |  ![Mainstream][M]  |
+| PSExec                                                     |                    |                    |                    |  ![Mainstream][M]  |
+| PSNativeCommandErrorActionPreference                       |                    |                    |                    | ![Experimental][X] |
+| PSStrictModeAssignment                                     |                    |                    |                    | ![Discontinued][D] |
+| PSAMSIMethodInvocationLogging                              |                    |                    |                    |  ![Mainstream][M]  |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -91,7 +93,7 @@ run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` c
 ## PSAMSIMethodInvocationLogging
 
 > [!NOTE]
-> This feature became mainstream in PowerShell 7.3.preview-8.
+> This feature became mainstream in PowerShell 7.3.
 
 The Windows Antimalware Scan Interface (AMSI) is an API that allows applications to pass actions to
 an antimalware scanner, such as Windows Defender, for detecting malicious payloads. Beginning with
@@ -107,7 +109,7 @@ For more information about AMSI, see [How AMSI helps][03].
 ## PSAnsiRenderingFileInfo
 
 > [!NOTE]
-> This feature became mainstream in PowerShell 7.3.preview-8.
+> This feature became mainstream in PowerShell 7.3.
 
 This experiment was added in PowerShell 7.2. This feature adds the $PSStyle.FileInfo member and
 enables coloring of specific file types.
@@ -118,8 +120,7 @@ enables coloring of specific file types.
 - `$PSStyle.FileInfo.Extension` - Use this member to define colors for different file extensions.
   The **Extension** member pre-includes extensions for archive and PowerShell files.
 
-For more information, see
-[about_Automatic_Variables][04].
+For more information, see [about_Automatic_Variables][04].
 
 > [!NOTE]
 > This feature is dependent on the **PSAnsiRendering** feature that's now a standard feature.
@@ -127,7 +128,7 @@ For more information, see
 ## PSCleanBlock
 
 > [!NOTE]
-> This feature became mainstream in PowerShell 7.3.preview-8.
+> This feature became mainstream in PowerShell 7.3.
 
 The `clean` block is a convenient way for users to clean up resources that span across the `begin`,
 `process`, and `end` blocks. It's semantically similar to a `finally` block that covers all other
@@ -211,7 +212,7 @@ use or support MOF compilation. For more information, see
 ## PSExec
 
 > [!NOTE]
-> This feature became mainstream in PowerShell 7.3.preview-8.
+> This feature became mainstream in PowerShell 7.3.
 
 Some native Unix commands shell out to run something (like ssh) and use the `bash` built-in command
 `exec` to spawn a new process that replaces the current one. By default, `exec` isn't a valid
@@ -274,7 +275,7 @@ Exposes an API to allow assembly loading from native code.
 ## PSNativeCommandArgumentPassing
 
 > [!NOTE]
-> This feature became mainstream in PowerShell 7.3.preview-8.
+> This feature became mainstream in PowerShell 7.3.
 
 When this experimental feature is enabled PowerShell uses the `ArgumentList` property of the
 `StartProcessInfo` object rather than our current mechanism of reconstructing a string when invoking
@@ -486,7 +487,7 @@ variables must use `{}` around the variable name like: `${x?}?.propertyName` or 
 ## PSStrictModeAssignment
 
 > [!NOTE]
-> This feature was removed in PowerShell 7.3.preview-8.
+> This feature was removed in PowerShell 7.3.
 
 PowerShell 7.3-preview.2 adds the **StrictMode** parameter to `Invoke-Command` to allow specifying
 strict mode when invoking command locally. The **StrictMode** parameter sets the provided version
@@ -546,3 +547,6 @@ on the system.
 [07]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
 [08]: /powershell/module/Microsoft.PowerShell.Core/About/about_Parsing#the-stop-parsing-token
 [09]: xref:Microsoft.PowerShell.Management.Start-Process
+[X]: ../../media/shared/construction-sign_1f6a7.svg
+[M]: ../../media/shared/check-mark-button_2705.svg
+[D]: ../../media/shared/cross-mark_274c.svg
