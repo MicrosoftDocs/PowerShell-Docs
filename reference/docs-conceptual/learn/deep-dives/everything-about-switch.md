@@ -1,7 +1,7 @@
 ---
 description: The switch statement in PowerShell offers features that aren't found in other languages.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/05/2022
+ms.date: 11/16/2022
 title: Everything you ever wanted to know about the switch statement
 ---
 # Everything you ever wanted to know about the switch statement

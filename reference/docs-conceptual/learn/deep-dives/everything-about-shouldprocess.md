@@ -1,7 +1,7 @@
 ---
 description: ShouldProcess is an important feature that is often overlooked is. The WhatIf and Confirm parameters make it easy to add to your functions.
 ms.custom: contributor-KevinMarquette
-ms.date: 08/11/2022
+ms.date: 11/16/2022
 title: Everything you wanted to know about ShouldProcess
 ---
 # Everything you wanted to know about ShouldProcess

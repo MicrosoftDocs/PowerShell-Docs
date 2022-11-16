@@ -1,6 +1,6 @@
 ---
 description: This article lists the modules and cmdlets that are included in various versions of PowerShell.
-ms.date: 05/18/2022
+ms.date: 11/16/2022
 title: Release history of modules and cmdlets
 ---
 # Release history of modules and cmdlets
@@ -9,10 +9,10 @@ This article lists the modules and cmdlets that are included in various versions
 is a summary of information found in the release notes. More detailed information can be found in
 the release notes:
 
-- [What's new in PowerShell 7.3](what-s-new-in-powershell-73.md)
-- [What's new in PowerShell 7.2](what-s-new-in-powershell-72.md)
-- [What's new in PowerShell 7.1](what-s-new-in-powershell-71.md)
-- [What's new in PowerShell 7.0](what-s-new-in-powershell-70.md)
+- [What's new in PowerShell 7.3][04]
+- [What's new in PowerShell 7.2][03]
+- [What's new in PowerShell 7.1][02]
+- [What's new in PowerShell 7.0][01]
 
 This is a work in progress. Please help us keep this information fresh.
 
@@ -615,3 +615,9 @@ This is a work in progress. Please help us keep this information fresh.
 |   Cmdlet name   | 5.1 |   7.0    |   7.2    |   7.3    |                Note                |
 | --------------- | --- | -------- | -------- | -------- | ---------------------------------- |
 | Start-ThreadJob |     | &#x2705; | &#x2705; | &#x2705; | Can be installed in PowerShell 5.1 |
+
+<!-- link references -->
+[01]: what-s-new-in-powershell-70.md
+[02]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-71
+[03]: what-s-new-in-powershell-72.md
+[04]: what-s-new-in-powershell-73.md

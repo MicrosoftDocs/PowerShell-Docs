@@ -1,6 +1,6 @@
 ---
 description: List of resources created for and by PowerShell users
-ms.date: 04/29/2020
+ms.date: 11/16/2022
 title: PowerShell community support resources
 ---
 # Getting support from the community
@@ -15,7 +15,7 @@ find help from other members of the community in one of these public forums:
 - [User Groups](https://aka.ms/psusergroup)
 - [PowerShell Tech Community](https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell)
 - [DSC Community](https://dsccommunity.org/)
-- [PowerShell.org](https://powershell.org/)
+- [PowerShell.org](https://forums.powershell.org/)
 - [StackOverFlow](https://stackoverflow.com/questions/tagged/powershell)
 - [r/PowerShell subreddit](https://www.reddit.com/r/PowerShell/)
 - PowerShell Virtual User Group - join via:
