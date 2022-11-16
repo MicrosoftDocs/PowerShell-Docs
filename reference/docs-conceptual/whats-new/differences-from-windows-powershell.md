@@ -22,11 +22,11 @@ article is to present the current state of PowerShell and how that is different 
 PowerShell. For a detailed discussion of changes between versions and the addition of new features,
 see the **What's New** articles for each version.
 
-- [What's new in PowerShell 7.3][37]
-- [What's new in PowerShell 7.2][36]
-- [What's new in PowerShell 7.1][35]
-- [What's new in PowerShell 7.0][34]
-- [What's new in PowerShell 6.x][29]
+- [What's new in PowerShell 7.3][34]
+- [What's new in PowerShell 7.2][33]
+- [What's new in PowerShell 7.1][27]
+- [What's new in PowerShell 7.0][32]
+- [What's new in PowerShell 6.x][28]
 
 ## .NET Framework vs .NET Core
 
@@ -35,7 +35,7 @@ Microsoft Windows. This is significant because PowerShell provides direct access
 framework types and methods. As a result, scripts that run on Windows may not run on non-Windows
 platforms because of the differences in the frameworks. For more information about changes in .NET
 Core, see
-[Breaking changes for migration from .NET Framework to .NET Core][05].
+[Breaking changes for migration from .NET Framework to .NET Core][03].
 
 Each new release of PowerShell is built on a newer version of .NET. There can be breaking changes in
 .NET that affect PowerShell.
@@ -48,17 +48,15 @@ Each new release of PowerShell is built on a newer version of .NET. There can be
 - PowerShell 6.1 - Built on .NET Core 2.1
 - PowerShell 6.0 - Built on .NET Core 2.0
 
-With the advent of [.NET Standard 2.0][32], PowerShell can load many traditional Windows
+With the advent of [.NET Standard 2.0][30], PowerShell can load many traditional Windows
 PowerShell modules without modification. Additionally, PowerShell 7 includes a Windows PowerShell
 Compatibility feature that allows you to use Windows PowerShell modules that still require the full
 framework.
 
 For more information see:
 
-- [about_Windows_PowerShell_Compatibility][11]
-- [PowerShell 7 module compatibility][31]
-
-[!INCLUDE [Product terminology][02]]
+- [about_Windows_PowerShell_Compatibility][09]
+- [PowerShell 7 module compatibility][29]
 
 ## Modules no longer shipped with PowerShell
 
@@ -74,8 +72,8 @@ For various compatibility reasons, the following modules are no longer included 
 
 ### PowerShell Workflow
 
-[PowerShell Workflow][28] is a feature in Windows PowerShell that builds on top of
-[Windows Workflow Foundation (WF)][06] that enables the creation of robust runbooks
+[PowerShell Workflow][26] is a feature in Windows PowerShell that builds on top of
+[Windows Workflow Foundation (WF)][04] that enables the creation of robust runbooks
 for long-running or parallelized tasks.
 
 Due to the lack of support for Windows Workflow Foundation in .NET Core, we removed PowerShell
@@ -212,7 +210,7 @@ Windows-specific features:
 
 Beginning with PowerShell 7.2, the PSDesiredStateConfiguration module has been removed from
 PowerShell and has been published to the PowerShell Gallery. For more information, see the
-[announcement][01] in the PowerShell Team blog.
+[announcement][31] in the PowerShell Team blog.
 
 ## PowerShell executable changes
 
@@ -250,10 +248,10 @@ was added. Switch values are also supported.
 
 For Windows, a new switch parameter **UseWindowsPowerShell** is added to `Import-Module`. This
 switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
-implicitly run any cmdlets contained in that module. For more information, see [Import-Module][16].
+implicitly run any cmdlets contained in that module. For more information, see [Import-Module][14].
 
 For more information on which Microsoft modules work with PowerShell 7.0, see the
-[Module Compatibility Table][31].
+[Module Compatibility Table][29].
 
 ### Microsoft Update support for Windows
 
@@ -281,7 +279,7 @@ as short hand to match `-inputformat`, which now needs to be `-in`.
 
 ### Custom snap-ins
 
-[PowerShell snap-ins][09] are a predecessor to PowerShell modules that do not have widespread
+[PowerShell snap-ins][07] are a predecessor to PowerShell modules that do not have widespread
 adoption in the PowerShell community.
 
 Due to the complexity of supporting snap-ins and their lack of usage in the community, we no longer
@@ -289,7 +287,7 @@ support custom snap-ins in PowerShell.
 
 ### Experimental feature flags
 
-PowerShell 6.2 enabled support for [Experimental Features][08]. This allows PowerShell developers to
+PowerShell 6.2 enabled support for [Experimental Features][06]. This allows PowerShell developers to
 deliver new features and get feedback before the design is complete. This way we avoid making
 breaking changes as the design evolves.
 
@@ -504,7 +502,7 @@ ${a}?[0]
 
 > [!NOTE]
 > The variable name syntax of `${<name>}` should not be confused with the `$()` subexpression
-> operator. For more information, see Variable name section of [about_Variables][10].
+> operator. For more information, see Variable name section of [about_Variables][08].
 
 ### Added `&` operator for job control
 
@@ -583,7 +581,7 @@ class M {
 
 PowerShell 7.1 is built on .NET 5.0, which introduced the following breaking change:
 
-- [Behavior changes when comparing strings on .NET 5+][07]
+- [Behavior changes when comparing strings on .NET 5+][05]
 
 As of .NET 5.0, culture invariant string comparisons ignore non-printing control characters.
 
@@ -602,17 +600,17 @@ True
 
 ### New Get-Uptime cmdlet
 
-The [Get-Uptime][21] cmdlet returns the time elapsed since the last boot of the operating system.
+The [Get-Uptime][19] cmdlet returns the time elapsed since the last boot of the operating system.
 The cmdlet was introduced in PowerShell 6.0.
 
 ### New Remove-Alias cmdlet
 
-The [Remove-Alias][23] cmdlet removes an alias from the current PowerShell session. The cmdlet was
+The [Remove-Alias][21] cmdlet removes an alias from the current PowerShell session. The cmdlet was
 introduced in PowerShell 6.0.
 
 ### New cmdlet Remove-Service
 
-The [Remove-Service][17] cmdlet removes a Windows service in the registry and in the service
+The [Remove-Service][15] cmdlet removes a Windows service in the registry and in the service
 database. The `Remove-Service` cmdlet was introduced in PowerShell 6.0.
 
 ### New Markdown cmdlets
@@ -622,17 +620,17 @@ rendered into HTML.
 
 The following cmdlets were added in PowerShell 6.1:
 
-- [ConvertFrom-Markdown][18] - Convert the contents of a string or a file to a **MarkdownInfo**
+- [ConvertFrom-Markdown][16] - Convert the contents of a string or a file to a **MarkdownInfo**
   object.
-- [Get-MarkdownOption][20] - Returns the current colors and styles used for rendering Markdown
+- [Get-MarkdownOption][18] - Returns the current colors and styles used for rendering Markdown
   content in the console.
-- [Set-MarkdownOption][24] - Sets the colors and styles used for rendering Markdown content in the
+- [Set-MarkdownOption][22] - Sets the colors and styles used for rendering Markdown content in the
   console.
-- [Show-Markdown][25] - Displays Markdown content in the console or as HTML
+- [Show-Markdown][23] - Displays Markdown content in the console or as HTML
 
 ### New Test-Json cmdlet
 
-The [Test-Json][26] cmdlet tests whether a string is a valid JavaScript Object Notation (JSON)
+The [Test-Json][24] cmdlet tests whether a string is a valid JavaScript Object Notation (JSON)
 document and can optionally verify that JSON document against a provided schema.
 
 This cmdlet was introduced in PowerShell 6.1
@@ -641,13 +639,13 @@ This cmdlet was introduced in PowerShell 6.1
 
 The following cmdlets were added in PowerShell 6.2 to support Experimental Features.
 
-- [Disable-ExperimentalFeature][12]
-- [Enable-ExperimentalFeature][13]
-- [Get-ExperimentalFeature][15]
+- [Disable-ExperimentalFeature][10]
+- [Enable-ExperimentalFeature][11]
+- [Get-ExperimentalFeature][13]
 
 ### New Join-String cmdlet
 
-The [Join-String][22] cmdlet combines objects from the pipeline into a single string. This cmdlet
+The [Join-String][20] cmdlet combines objects from the pipeline into a single string. This cmdlet
 was added in PowerShell 6.2.
 
 ### New view ConciseView and cmdlet Get-Error
@@ -702,7 +700,7 @@ from the current session you wish displayed.
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
 ```
 
-For more information, see [Get-Error][19].
+For more information, see [Get-Error][17].
 
 ## Cmdlet changes
 
@@ -737,7 +735,7 @@ given time. The default is 5.
 Use the `$_` variable to represent the current input object in the script block. Use the `$using:`
 scope to pass variable references to the running script block.
 
-For more information, see [ForEach-Object][14].
+For more information, see [ForEach-Object][12].
 
 ### Check `system32` for compatible built-in modules on Windows
 
@@ -998,7 +996,7 @@ rarely used with `Add-Type`. We removed this feature to reduce the size of Power
 ### Removed `RunspaceConfiguration` support
 
 Previously, when creating a PowerShell runspace programmatically using the API, you could use the
-legacy [`RunspaceConfiguration`][04] or the newer [`InitialSessionState`][03] classes. This change
+legacy [`RunspaceConfiguration`][02] or the newer [`InitialSessionState`][01] classes. This change
 removed support for `RunspaceConfiguration` and only supports `InitialSessionState`.
 
 ### `CommandInvocationIntrinsics.InvokeScript` bind arguments to `$input` instead of `$args`
@@ -1058,11 +1056,11 @@ HTTPS. PSRP on macOS only supports Basic Auth over HTTPS. Kerberos-based authent
 supported for non-Windows platforms.
 
 PowerShell also supports PowerShell Remoting (PSRP) over SSH on all platforms (Windows, macOS, and
-Linux). For more information, see [SSH remoting in PowerShell][27].
+Linux). For more information, see [SSH remoting in PowerShell][25].
 
 ### PowerShell Direct for Containers tries to use `pwsh` first
 
-[PowerShell Direct][01] is a feature of PowerShell and Hyper-V that allows you to connect to a
+[PowerShell Direct][31] is a feature of PowerShell and Hyper-V that allows you to connect to a
 Hyper-V VM or Container without network connectivity or other remote management services.
 
 In the past, PowerShell Direct connected using the built-in Windows PowerShell instance on the
@@ -1147,38 +1145,37 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 `DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` to disable telemetry.
 
 <!-- link references -->
-[01]: https://devblogs.microsoft.com/powershell/announcing-psdesiredstateconfiguration-on-powershell-gallery/
-[02]: ../../includes/product-terms.md
-[03]: /dotnet/api/system.management.automation.runspaces.initialsessionstate
-[04]: /dotnet/api/system.management.automation.runspaces.runspaceconfiguration
-[05]: /dotnet/core/compatibility/fx-core
-[06]: /dotnet/framework/windows-workflow-foundation/
-[07]: /dotnet/standard/base-types/string-comparison-net-5-plus
-[08]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
-[09]: /powershell/module/microsoft.powershell.core/about/about_pssnapins
-[10]: /powershell/module/microsoft.powershell.core/about/about_Variables#variable-names-that-include-special-characters
-[11]: /powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility
-[12]: /powershell/module/Microsoft.PowerShell.Core/Disable-ExperimentalFeature
-[13]: /powershell/module/Microsoft.PowerShell.Core/Enable-ExperimentalFeature
-[14]: /powershell/module/microsoft.powershell.core/foreach-object
-[15]: /powershell/module/Microsoft.PowerShell.Core/Get-ExperimentalFeature
-[16]: /powershell/module/microsoft.powershell.core/import-module
-[17]: /powershell/module/Microsoft.PowerShell.Management/Remove-Service
-[18]: /powershell/module/Microsoft.PowerShell.Utility/ConvertFrom-Markdown
-[19]: /powershell/module/microsoft.powershell.utility/get-error
-[20]: /powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption
-[21]: /powershell/module/Microsoft.PowerShell.Utility/Get-Uptime
-[22]: /powershell/module/Microsoft.PowerShell.Utility/Join-String
-[23]: /powershell/module/Microsoft.PowerShell.Utility/Remove-Alias
-[24]: /powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption
-[25]: /powershell/module/Microsoft.PowerShell.Utility/Show-Markdown
-[26]: /powershell/module/Microsoft.PowerShell.Utility/Test-Json
-[27]: /powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core
-[28]: /previous-versions/powershell/scripting/components/workflows-guide
-[29]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-core-62?view=powershell-6&preserve-view=true
-[31]: https://aka.ms/PSModuleCompat
-[32]: https://devblogs.microsoft.com/dotnet/introducing-net-standard/
-[34]: What-s-New-in-PowerShell-70.md
-[35]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-71
-[36]: What-s-New-in-PowerShell-72.md
-[37]: What-s-New-in-PowerShell-73.md
+[01]: /dotnet/api/system.management.automation.runspaces.initialsessionstate
+[02]: /dotnet/api/system.management.automation.runspaces.runspaceconfiguration
+[03]: /dotnet/core/compatibility/fx-core
+[04]: /dotnet/framework/windows-workflow-foundation/
+[05]: /dotnet/standard/base-types/string-comparison-net-5-plus
+[06]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
+[07]: /powershell/module/microsoft.powershell.core/about/about_pssnapins
+[08]: /powershell/module/microsoft.powershell.core/about/about_Variables#variable-names-that-include-special-characters
+[09]: /powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility
+[10]: /powershell/module/Microsoft.PowerShell.Core/Disable-ExperimentalFeature
+[11]: /powershell/module/Microsoft.PowerShell.Core/Enable-ExperimentalFeature
+[12]: /powershell/module/microsoft.powershell.core/foreach-object
+[13]: /powershell/module/Microsoft.PowerShell.Core/Get-ExperimentalFeature
+[14]: /powershell/module/microsoft.powershell.core/import-module
+[15]: /powershell/module/Microsoft.PowerShell.Management/Remove-Service
+[16]: /powershell/module/Microsoft.PowerShell.Utility/ConvertFrom-Markdown
+[17]: /powershell/module/microsoft.powershell.utility/get-error
+[18]: /powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption
+[19]: /powershell/module/Microsoft.PowerShell.Utility/Get-Uptime
+[20]: /powershell/module/Microsoft.PowerShell.Utility/Join-String
+[21]: /powershell/module/Microsoft.PowerShell.Utility/Remove-Alias
+[22]: /powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption
+[23]: /powershell/module/Microsoft.PowerShell.Utility/Show-Markdown
+[24]: /powershell/module/Microsoft.PowerShell.Utility/Test-Json
+[25]: /powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core
+[26]: /previous-versions/powershell/scripting/components/workflows-guide
+[27]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-71
+[28]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-core-62?view=powershell-6&preserve-view=true
+[29]: https://aka.ms/PSModuleCompat
+[30]: https://devblogs.microsoft.com/dotnet/introducing-net-standard/
+[31]: https://devblogs.microsoft.com/powershell/announcing-psdesiredstateconfiguration-on-powershell-gallery/
+[32]: What-s-New-in-PowerShell-70.md
+[33]: What-s-New-in-PowerShell-72.md
+[34]: What-s-New-in-PowerShell-73.md

@@ -10,8 +10,6 @@ in .NET Core and platform-specific differences, some features behave differently
 available. Additional changes have been made to improve interoperability of PowerShell on
 non-Windows platforms.
 
-[!INCLUDE [Product terminology][01]]
-
 ## .NET Framework vs .NET Core
 
 PowerShell on Linux and macOS uses .NET Core, which is a subset of the full .NET Framework on
@@ -19,7 +17,7 @@ Microsoft Windows. As a result, scripts that run on Windows may not run on non-W
 because of the differences in the frameworks.
 
 For more information about changes in .NET Core, see
-[Breaking changes for migration from .NET Framework to .NET Core][02].
+[Breaking changes for migration from .NET Framework to .NET Core][01].
 
 ## General Unix interoperability changes
 
@@ -84,13 +82,13 @@ specifying a path.
 
 ## Logging
 
-On macOS, PowerShell uses the native `os_log` APIs to log to Apple's [unified logging system][09].
-On Linux, PowerShell uses [Syslog][10], a ubiquitous logging solution.
+On macOS, PowerShell uses the native `os_log` APIs to log to Apple's [unified logging system][08].
+On Linux, PowerShell uses [Syslog][09], a ubiquitous logging solution.
 
 ## Job Control
 
 There is no Unix-style job-control support in PowerShell on Linux or macOS. The `fg` and `bg`
-commands aren't available. You can use [PowerShell jobs][03] that do work across all platforms.
+commands aren't available. You can use [PowerShell jobs][02] that do work across all platforms.
 
 Putting `&` at the end of a pipeline causes the pipeline to be run as a PowerShell job. When a
 pipeline is backgrounded, a job object is returned. Once the pipeline is running as a job, all
@@ -105,7 +103,7 @@ HTTPS. PSRP on macOS only supports Basic Auth over HTTPS. Kerberos-based authent
 supported.
 
 PowerShell supports PowerShell Remoting (PSRP) over SSH on all platforms (Windows, macOS, and
-Linux). For more information, see [SSH remoting in PowerShell][05].
+Linux). For more information, see [SSH remoting in PowerShell][04].
 
 ## Just-Enough-Administration (JEA) Support
 
@@ -128,7 +126,7 @@ functional. Future releases may correct these problems by fixing the broken cmdl
 ones over time.
 
 For a comprehensive list of modules and cmdlets and the platforms they support, see
-[Release history of modules and cmdlets][06].
+[Release history of modules and cmdlets][05].
 
 ## Modules no longer shipped with PowerShell
 
@@ -167,7 +165,7 @@ For non-Windows platforms, PowerShell includes the following modules:
 
 However, some cmdlets have been removed from PowerShell, and others aren't available or may work
 differently on non-Windows platforms. For a comprehensive list of cmdlets removed from PowerShell,
-see [Cmdlets removed from PowerShell][07].
+see [Cmdlets removed from PowerShell][06].
 
 ### Microsoft.PowerShell.Core
 
@@ -258,20 +256,19 @@ Support for DSC on non-Windows platforms is limited and mostly experimental. The
 
 DSC isn't supported on macOS.
 
-For more information about using DSC on Linux, see [Get started with DSC for Linux][04].
+For more information about using DSC on Linux, see [Get started with DSC for Linux][03].
 
 Beginning with PowerShell 7.2, the **PSDesiredStateConfiguration** module has been removed from
 PowerShell and is published to the PowerShell Gallery. For more information, see the
-[announcement][08] in the PowerShell Team blog.
+[announcement][07] in the PowerShell Team blog.
 
-<!-- updated link references -->
-[01]: ../../includes/product-terms.md
-[02]: /dotnet/core/compatibility/fx-core
-[03]: /powershell/module/microsoft.powershell.core/about/about_jobs
-[04]: /powershell/scripting/dsc/getting-started/lnxgettingstarted
-[05]: /powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core
-[06]: cmdlet-versions.md
-[07]: differences-from-windows-powershell.md#cmdlets-removed-from-powershell
-[08]: https://devblogs.microsoft.com/powershell/announcing-psdesiredstateconfiguration-on-powershell-gallery/
-[09]: https://developer.apple.com/documentation/os/logging
-[10]: https://en.wikipedia.org/wiki/Syslog
+<!-- link references -->
+[01]: /dotnet/core/compatibility/fx-core
+[02]: /powershell/module/microsoft.powershell.core/about/about_jobs
+[03]: /powershell/scripting/dsc/getting-started/lnxgettingstarted
+[04]: /powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core
+[05]: cmdlet-versions.md
+[06]: differences-from-windows-powershell.md#cmdlets-removed-from-powershell
+[07]: https://devblogs.microsoft.com/powershell/announcing-psdesiredstateconfiguration-on-powershell-gallery/
+[08]: https://developer.apple.com/documentation/os/logging
+[09]: https://en.wikipedia.org/wiki/Syslog

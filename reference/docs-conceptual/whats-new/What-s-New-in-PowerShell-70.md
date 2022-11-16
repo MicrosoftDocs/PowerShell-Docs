@@ -1,10 +1,10 @@
-
+---
 description: New features and changes released in PowerShell 7.0
 ms.date: 11/16/2022
-title: What's New in PowerShell 7.0
+title: What's new in PowerShell 7.0
 ---
 
-# What's New in PowerShell 7.0
+# What's new in PowerShell 7.0
 
 PowerShell 7.0 is an open-source, cross-platform (Windows, macOS, and Linux) edition of PowerShell,
 built to manage heterogeneous environments and hybrid cloud.
