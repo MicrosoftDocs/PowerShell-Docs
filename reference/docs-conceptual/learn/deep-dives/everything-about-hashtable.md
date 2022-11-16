@@ -1,7 +1,7 @@
 ---
 description: Hashtables are really important in PowerShell so it's good to have a solid understanding of them.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/05/2021
+ms.date: 11/16/2022
 title: Everything you wanted to know about hashtables
 ---
 # Everything you wanted to know about hashtables

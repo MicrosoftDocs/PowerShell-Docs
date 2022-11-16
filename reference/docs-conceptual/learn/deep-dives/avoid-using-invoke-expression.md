@@ -1,7 +1,7 @@
 ---
 description: This article explains why Invoke-Expression should only be used as a last resort.
 ms.custom: wiki-migration
-ms.date: 06/06/2022
+ms.date: 11/16/2022
 title: Avoid using Invoke-Expression
 ---
 # Avoid using Invoke-Expression
