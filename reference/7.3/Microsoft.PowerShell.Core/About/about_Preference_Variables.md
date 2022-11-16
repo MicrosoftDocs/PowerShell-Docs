@@ -1003,7 +1003,7 @@ rather than reconstructing a string when invoking a native executable.
 > invoking native applications. Historically, quotes must be escaped and it is
 > not possible to provide empty arguments to a native application.
 
-The automatic variable `$PSNativeCommandArgumentPassing` that allows you to
+The automatic variable `$PSNativeCommandArgumentPassing` allows you to
 select the behavior at runtime. The valid values are `Legacy`, `Standard`, and
 `Windows`. `Legacy` is the historic behavior. The default when the experimental
 feature is enabled is the new `Standard` behavior.
