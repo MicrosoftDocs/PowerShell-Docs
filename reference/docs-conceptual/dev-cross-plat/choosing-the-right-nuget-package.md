@@ -1,14 +1,14 @@
 ---
 description: Alongside the executable packages published with each PowerShell release, the PowerShell team also maintains several packages available on NuGet. These packages allow targeting PowerShell as an API platform in .NET.
 ms.custom: rjmholt
-ms.date: 06/25/2020
+ms.date: 11/16/2022
 title: Choosing the right PowerShell NuGet package for your .NET project
 ---
 # Choosing the right PowerShell NuGet package for your .NET project
 
 Alongside the `pwsh` executable packages published with each PowerShell release, the PowerShell team
-also maintains several packages available on [NuGet][NuGet]. These packages allow targeting PowerShell as
-an API platform in .NET.
+also maintains several packages available on [NuGet][25]. These packages allow targeting PowerShell
+as an API platform in .NET.
 
 As a .NET application that provides APIs and expects to load .NET libraries implementing its own
 (binary modules), it's essential that PowerShell be available in the form of a NuGet package.
@@ -27,8 +27,8 @@ PowerShell in their own applications.
 - **Referencing** is for when a project, usually a module, is intended to be loaded into PowerShell.
   It must be compiled against the APIs that PowerShell provides in order to interact with it, but
   the PowerShell implementation is supplied by the PowerShell process loading it in. For
-  referencing, a project can use [reference assemblies][refasm] or the actual runtime assemblies as
-  a compilation target, but must ensure that it does not publish any of these with its build.
+  referencing, a project can use [reference assemblies][07] or the actual runtime assemblies as a
+  compilation target, but must ensure that it does not publish any of these with its build.
 - **Hosting** is when a project needs its own implementation of PowerShell, usually because it is a
   standalone application that needs to run PowerShell. In this case, pure reference assemblies
   cannot be used. Instead, a concrete PowerShell implementation must be depended upon. Because a
@@ -43,7 +43,7 @@ PowerShell in their own applications.
 > runtime.
 
 In order to prevent publishing project dependencies that are just being used as compilation
-reference targets, it is recommended to set the [PrivateAssets][PrivateAssets] attribute:
+reference targets, it is recommended to set the [PrivateAssets][06] attribute:
 
 ```xml
 <PackageReference Include="PowerShellStandard.Library" Version="5.1.0.0" PrivateAssets="all" />
@@ -62,17 +62,16 @@ PowerShell APIs:
 - **Implementing a PowerShell binary module**
 
   PowerShell binary modules are .NET libraries loaded by PowerShell that must implement PowerShell
-  APIs like the [PSCmdlet][PSCmdlet] or [CmdletProvider][CmdletProvider] types in order to expose
-  cmdlets or providers respectively. Because they are loaded in, modules seek to compile against
-  references to PowerShell without publishing it in their build. It's also common for modules to
-  want to support multiple PowerShell versions and platforms, ideally with a minimum of overhead of
-  disk space, complexity, or repeated implementation. See [about_Modules][about_Modules] for more
-  information about modules.
+  APIs like the [PSCmdlet][04] or [CmdletProvider][03] types in order to expose cmdlets or providers
+  respectively. Because they are loaded in, modules seek to compile against references to PowerShell
+  without publishing it in their build. It's also common for modules to want to support multiple
+  PowerShell versions and platforms, ideally with a minimum of overhead of disk space, complexity,
+  or repeated implementation. See [about_Modules][09] for more information about modules.
 
 - **Implementing a PowerShell Host**
 
   A PowerShell Host provides an interaction layer for the PowerShell runtime. It is a specific form
-  of _hosting_, where a [PSHost][PSHost] is implemented as a new user interface to PowerShell. For
+  of _hosting_, where a [PSHost][01] is implemented as a new user interface to PowerShell. For
   example, the PowerShell ConsoleHost provides a terminal user interface for PowerShell executables,
   while the PowerShell Editor Services Host and the ISE Host both provide an editor-integrated
   partially graphical user interface around PowerShell. While it's possible to load a host onto an
@@ -91,29 +90,29 @@ PowerShell APIs:
 - **Unit testing PowerShell modules from .NET**
 
   While modules and other libraries designed to expose functionality to PowerShell should be
-  primarily tested from PowerShell (we recommend [Pester][Pester]), sometimes it's necessary to unit test
-  APIs written for a PowerShell module from .NET. This situation involves the module code trying to
-  target a number of PowerShell versions, while testing should run it on specific, concrete
-  implementations.
+  primarily tested from PowerShell (we recommend [Pester][15]), sometimes it's necessary to unit
+  test APIs written for a PowerShell module from .NET. This situation involves the module code
+  trying to target a number of PowerShell versions, while testing should run it on specific,
+  concrete implementations.
 
 ## PowerShell NuGet packages at a glance
 
 In this article, we'll cover the following NuGet packages
 that expose PowerShell APIs:
 
-- [PowerShellStandard.Library][psstdlib], a reference assembly that enables building a single
-  assembly that can be loaded by multiple PowerShell runtimes.
-- [Microsoft.PowerShell.SDK][pssdk], the way to target and rehost the whole PowerShell SDK
-- The [System.Management.Automation][sma] package, the core PowerShell runtime and engine
+- [PowerShellStandard.Library][31], a reference assembly that enables building a single assembly
+  that can be loaded by multiple PowerShell runtimes.
+- [Microsoft.PowerShell.SDK][12], the way to target and rehost the whole PowerShell SDK
+- The [System.Management.Automation][32] package, the core PowerShell runtime and engine
   implementation, that can be useful in minimal hosted implementations and for version-specific
   targeting scenarios.
 - The **Windows PowerShell reference assemblies**, the way to target and effectively rehost Windows
   PowerShell (PowerShell versions 5.1 and below).
 
 > [!NOTE]
-> The [PowerShell NuGet][psnuget] package is not a .NET library package at all, but instead provides
-> the PowerShell dotnet global tool implementation. This should not be used by any projects, since
-> it only provides an executable.
+> The [PowerShell NuGet][30] package is not a .NET library package at all, but instead provides the
+> PowerShell dotnet global tool implementation. This should not be used by any projects, since it
+> only provides an executable.
 
 ## PowerShellStandard.Library
 
@@ -129,17 +128,17 @@ applications.
 
 ### Using PowerShell Standard with different .NET runtimes
 
-PowerShell Standard targets the [.NET Standard 2.0][netstd20] target runtime, which is a façade
-runtime designed to provide a common surface area shared by .NET Framework and .NET Core. This
-allows targeting a single runtime to produce a single assembly that will work with multiple
-PowerShell versions, but has the following consequences:
+PowerShell Standard targets the [.NET Standard 2.0][08] target runtime, which is a façade runtime
+designed to provide a common surface area shared by .NET Framework and .NET Core. This allows
+targeting a single runtime to produce a single assembly that will work with multiple PowerShell
+versions, but has the following consequences:
 
 - The PowerShell loading the module or library must be running a minimum of .NET 4.6.1; .NET 4.6 and
   .NET 4.5.2 do not support .NET Standard. Note that a newer Windows PowerShell version does not
   mean a newer .NET Framework version; Windows PowerShell 5.1 may run on .NET 4.5.2.
 - In order to work with a PowerShell running .NET Framework 4.7.1 or below, the .NET 4.6.1
-  [NETStandard.Library][netstdlib] implementation is required to provide the netstandard.dll and
-  other shim assemblies in older .NET Framework versions.
+  [NETStandard.Library][29] implementation is required to provide the netstandard.dll and other shim
+  assemblies in older .NET Framework versions.
 
 PowerShell 6+ provides its own shim assemblies for type forwarding from .NET Framework 4.6.1 (and
 above) to .NET Core. This means that as long as a module uses only APIs that exist in .NET Core,
@@ -174,8 +173,8 @@ a testing dependency with .NET Core (with the version set to match the desired P
 and the appropriate Windows PowerShell reference assemblies with .NET Framework.
 
 For more information on PowerShell Standard and using it to write a binary module that works in
-multiple PowerShell versions, see [this blog post][blog]. Also see the
-[PowerShell Standard repository][psstdrepo] on GitHub.
+multiple PowerShell versions, see [this blog post][14]. Also see the
+[PowerShell Standard repository][19] on GitHub.
 
 ## Microsoft.PowerShell.SDK
 
@@ -193,8 +192,8 @@ of the PowerShell application; version 7.0 contains the implementation of PowerS
 commands or scripts with it will largely behave like running them in PowerShell 7.0.
 
 Running PowerShell commands from the SDK is mostly, but not totally, the same as running them from
-`pwsh`. For example, [Start-Job][Start-Job] currently depends on the `pwsh` executable being
-available, and so will not work with `Microsoft.Powershell.SDK` by default.
+`pwsh`. For example, [Start-Job][10] currently depends on the `pwsh` executable being available, and
+so will not work with `Microsoft.Powershell.SDK` by default.
 
 Targeting `Microsoft.Powershell.SDK` from a .NET application allows you to integrate with all of
 PowerShell's implementation assemblies, such as `System.Management.Automation`,
@@ -203,7 +202,7 @@ PowerShell's implementation assemblies, such as `System.Management.Automation`,
 Publishing an application targeting `Microsoft.Powershell.SDK` will include all these assemblies,
 and any dependencies PowerShell requires. It will also include other assets that PowerShell required
 in its build, such as the module manifests for `Microsoft.PowerShell.*` modules and the `ref`
-directory required by [Add-Type][Add-Type].
+directory required by [Add-Type][11].
 
 Given the completeness of `Microsoft.Powershell.SDK`, it's best suited for:
 
@@ -236,7 +235,7 @@ functionality when:
   `System.Management.Automation.Language` namespace) like the PowerShell parser, AST, and AST
   visitor APIs (for example for static analysis of PowerShell).
 - You only wish to execute specific commands from the `Microsoft.PowerShell.Core` module and can
-  execute them in a session state created with the [CreateDefault2][CreateDefault2] factory method.
+  execute them in a session state created with the [CreateDefault2][05] factory method.
 
 Additionally, `System.Management.Automation` is a useful reference assembly when:
 
@@ -255,12 +254,12 @@ rehost Windows PowerShell, acting the same as the PowerShell SDK does for versio
 Rather than being differentiated by version, Windows PowerShell reference assemblies have a
 different package for each version of Windows PowerShell:
 
-- [PowerShell 5.1](https://www.nuget.org/packages/Microsoft.PowerShell.5.ReferenceAssemblies/)
-- [PowerShell 4](https://www.nuget.org/packages/Microsoft.PowerShell.4.ReferenceAssemblies/)
-- [PowerShell 3](https://www.nuget.org/packages/Microsoft.PowerShell.3.ReferenceAssemblies/)
+- [PowerShell 5.1][28]
+- [PowerShell 4][27]
+- [PowerShell 3][26]
 
 Information on how to use the Windows PowerShell reference assemblies can be found in the
-[Windows PowerShell SDK][pssdk].
+[Windows PowerShell SDK][12].
 
 ## Real-world examples using these NuGet packages
 
@@ -269,9 +268,9 @@ needs. Listed here are some notable examples.
 
 ### PSReadLine
 
-[PSReadLine][PSReadLine], the PowerShell module that provides much of PowerShell's rich console
-experience, targets PowerShell Standard as a dependency rather than a specific PowerShell version,
-and targets the `net461` .NET runtime in its [csproj][csproj].
+[PSReadLine][20], the PowerShell module that provides much of PowerShell's rich console experience,
+targets PowerShell Standard as a dependency rather than a specific PowerShell version, and targets
+the `net461` .NET runtime in its [csproj][21].
 
 PowerShell 6+ supplies its own shim assemblies that allow a DLL targeting the `net461` runtime to
 "just work" when loaded in (by redirecting binding to .NET Framework's `mscorlib.dll` to the
@@ -286,8 +285,8 @@ The .NET 4.6.1 target does mean that Windows PowerShell running on
 
 ### PowerShell Editor Services
 
-[PowerShell Editor Services][pses] (PSES) is the backend for the [PowerShell extension][psext] for
-[Visual Studio Code][vscode], and is actually a form of PowerShell module that gets loaded by a
+[PowerShell Editor Services][16] (PSES) is the backend for the [PowerShell extension][24] for
+[Visual Studio Code][13], and is actually a form of PowerShell module that gets loaded by a
 PowerShell executable and then takes over that process to rehost PowerShell within itself while also
 providing Language Service Protocol and Debug Adapter features.
 
@@ -298,22 +297,21 @@ and PowerShell Standard. This allows it to pull in dependencies required for .NE
 Framework platforms, while still simplifying most of the codebase behind a uniform abstraction.
 
 Because it is built against PowerShell Standard, PSES requires a runtime implementation of
-PowerShell in order to be tested correctly. To do this, [PSES's xUnit][xunit] tests pull in
+PowerShell in order to be tested correctly. To do this, [PSES's xUnit][18] tests pull in
 `Microsoft.PowerShell.SDK` and `Microsoft.PowerShell.5.ReferenceAssemblies` in order to provide a
 PowerShell implementation in the test environment.
 
-As with PSReadLine, PSES cannot support .NET 4.6 and below, but it [performs a check][check] at
-runtime before calling any of the APIs that could cause a crash on the lower .NET Framework
-runtimes.
+As with PSReadLine, PSES cannot support .NET 4.6 and below, but it [performs a check][17] at runtime
+before calling any of the APIs that could cause a crash on the lower .NET Framework runtimes.
 
 ### PSScriptAnalyzer
 
-[PSScriptAnalyzer][pssa], the linter for PowerShell, must target syntactic elements only introduced
-in certain versions of PowerShell. Because recognition of these syntactic elements is accomplished
-by implementing an [AstVisitor2][AstVisitor2], it's not possible to use PowerShellStandard and also
-implement AST visitor methods for newer PowerShell syntaxes.
+[PSScriptAnalyzer][22], the linter for PowerShell, must target syntactic elements only introduced in
+certain versions of PowerShell. Because recognition of these syntactic elements is accomplished by
+implementing an [AstVisitor2][02], it's not possible to use PowerShellStandard and also implement
+AST visitor methods for newer PowerShell syntaxes.
 
-Instead, PSScriptAnalyzer [targets each PowerShell version][targets] as a build configuration, and
+Instead, PSScriptAnalyzer [targets each PowerShell version][23] as a build configuration, and
 produces a separate DLL for each of them. This increases build size and complexity, but allows:
 
 - Version-specific API targeting
@@ -337,35 +335,35 @@ If you've skipped to the summary, some broad recommendations are:
   assemblies (that is, not publishing the PowerShell dependencies).
 
 <!--link references -->
-
-
-[about_Modules]: /powershell/module/microsoft.powershell.core/about/about_modules
-[Add-Type]: /powershell/module/microsoft.powershell.utility/add-type
-[AstVisitor2]: /dotnet/api/system.management.automation.language.astvisitor2
-[blog]: https://devblogs.microsoft.com/powershell/powershell-standard-library-build-single-module-that-works-across-windows-powershell-and-powershell-core/
-[check]: https://github.com/PowerShell/PowerShellEditorServices/blob/8c500ee1752201d3c1cc2e5d90f1a2af3b1eb15d/src/PowerShellEditorServices.Hosting/EditorServicesLoader.cs#L231-L251
-[CmdletProvider]: /dotnet/api/system.management.automation.provider.cmdletprovider
-[CreateDefault2]: /dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2
-[csproj]: https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/PSReadLine.csproj
-[netstd20]: /dotnet/standard/net-standard
-[netstdlib]: https://www.nuget.org/packages/NETStandard.Library/
-[NuGet]: https://www.nuget.org/
-[Pester]: https://github.com/Pester/Pester
-[PrivateAssets]: /dotnet/core/tools/csproj#packagereference
-[PSCmdlet]: /dotnet/api/system.management.automation.pscmdlet
-[pses]: https://github.com/PowerShell/PowerShellEditorServices/
-[psext]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell
-[PSHost]: /dotnet/api/system.management.automation.host.pshost
-[psnuget]: https://www.nuget.org/packages/PowerShell/
-[PSReadLine]: https://github.com/PowerShell/PSReadLine
-[pssa]: https://github.com/powershell/psscriptanalyzer
-[pssdk]: /powershell/scripting/developer/windows-powershell
-[pssdk]: https://www.nuget.org/packages/Microsoft.PowerShell.SDK/
-[psstdlib]: https://www.nuget.org/packages/PowerShellStandard.Library/
-[psstdrepo]: https://github.com/PowerShell/PowerShellStandard
-[refasm]: /dotnet/standard/assembly/reference-assemblies
-[sma]: https://www.nuget.org/packages/System.Management.Automation/
-[Start-Job]: /powershell/module/microsoft.powershell.core/start-job
-[targets]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/Engine/Engine.csproj
-[vscode]: https://code.visualstudio.com/
-[xunit]: https://github.com/PowerShell/PowerShellEditorServices/blob/8c500ee1752201d3c1cc2e5d90f1a2af3b1eb15d/test/PowerShellEditorServices.Test/PowerShellEditorServices.Test.csproj#L15-L20
+[01]: /dotnet/api/system.management.automation.host.pshost
+[02]: /dotnet/api/system.management.automation.language.astvisitor2
+[03]: /dotnet/api/system.management.automation.provider.cmdletprovider
+[04]: /dotnet/api/system.management.automation.pscmdlet
+[05]: /dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2
+[06]: /dotnet/core/tools/csproj#packagereference
+[07]: /dotnet/standard/assembly/reference-assemblies
+[08]: /dotnet/standard/net-standard
+[09]: /powershell/module/microsoft.powershell.core/about/about_modules
+[10]: /powershell/module/microsoft.powershell.core/start-job
+[11]: /powershell/module/microsoft.powershell.utility/add-type
+[12]: /powershell/scripting/developer/windows-powershell
+[13]: https://code.visualstudio.com/
+[14]: https://devblogs.microsoft.com/powershell/powershell-standard-library-build-single-module-that-works-across-windows-powershell-and-powershell-core/
+[15]: https://github.com/Pester/Pester
+[16]: https://github.com/PowerShell/PowerShellEditorServices/
+[17]: https://github.com/PowerShell/PowerShellEditorServices/blob/8c500ee1752201d3c1cc2e5d90f1a2af3b1eb15d/src/PowerShellEditorServices.Hosting/EditorServicesLoader.cs#L231-L251
+[18]: https://github.com/PowerShell/PowerShellEditorServices/blob/8c500ee1752201d3c1cc2e5d90f1a2af3b1eb15d/test/PowerShellEditorServices.Test/PowerShellEditorServices.Test.csproj#L15-L20
+[19]: https://github.com/PowerShell/PowerShellStandard
+[20]: https://github.com/PowerShell/PSReadLine
+[21]: https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/PSReadLine.csproj
+[22]: https://github.com/powershell/psscriptanalyzer
+[23]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/Engine/Engine.csproj
+[24]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell
+[25]: https://www.nuget.org/
+[26]: https://www.nuget.org/packages/Microsoft.PowerShell.3.ReferenceAssemblies/
+[27]: https://www.nuget.org/packages/Microsoft.PowerShell.4.ReferenceAssemblies/
+[28]: https://www.nuget.org/packages/Microsoft.PowerShell.5.ReferenceAssemblies/
+[29]: https://www.nuget.org/packages/NETStandard.Library/
+[30]: https://www.nuget.org/packages/PowerShell/
+[31]: https://www.nuget.org/packages/PowerShellStandard.Library/
+[32]: https://www.nuget.org/packages/System.Management.Automation/

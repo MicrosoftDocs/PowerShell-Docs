@@ -6,18 +6,18 @@ title: JEA Role Capabilities
 
 # JEA Role Capabilities
 
-When creating a JEA endpoint, you need to define one or more role capabilities that describe
-what someone can do in a JEA session. A role capability is a PowerShell data file with the `.psrc`
+When creating a JEA endpoint, you need to define one or more role capabilities that describe what
+someone can do in a JEA session. A role capability is a PowerShell data file with the `.psrc`
 extension that lists all the cmdlets, functions, providers, and external programs that are made
 available to connecting users.
 
 ## Determine which commands to allow
 
 The first step in creating a role capability file is to consider what the users need access to. The
-requirements gathering process can take a while, but it's an important process. Giving users
-access to too few cmdlets and functions can prevent them from getting their job done. Allowing
-access to too many cmdlets and functions can allow users to do more than you intended and weaken
-your security stance.
+requirements gathering process can take a while, but it's an important process. Giving users access
+to too few cmdlets and functions can prevent them from getting their job done. Allowing access to
+too many cmdlets and functions can allow users to do more than you intended and weaken your security
+stance.
 
 How you go about this process depends on your organization and goals. The following tips can help
 ensure you're on the right path.
@@ -27,13 +27,13 @@ ensure you're on the right path.
 1. **Update** use of command-line tools to PowerShell equivalents, where possible, for the best
    auditing and JEA customization experience. External programs can't be constrained as granularly
    as native PowerShell cmdlets and functions in JEA.
-1. **Restrict** the scope of the cmdlets to only allow specific parameters or parameter
-   values. This is especially important if users should manage only part of a system.
+1. **Restrict** the scope of the cmdlets to only allow specific parameters or parameter values. This
+   is especially important if users should manage only part of a system.
 1. **Create** custom functions to replace complex commands or commands that are difficult to
    constrain in JEA. A simple function that wraps a complex command or applies additional validation
    logic can offer additional control for admins and end-user simplicity.
-1. **Test** the scoped list of allowable commands with your users or automation services, and
-   adjust as necessary.
+1. **Test** the scoped list of allowable commands with your users or automation services, and adjust
+   as necessary.
 
 ### Examples of potentially dangerous commands
 
@@ -55,9 +55,7 @@ point.
 
 ## Create a role capability file
 
-You can create a new PowerShell role capability file with the
-[New-PSRoleCapabilityFile](/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile)
-cmdlet.
+You can create a new PowerShell role capability file with the [New-PSRoleCapabilityFile][04] cmdlet.
 
 ```powershell
 New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
@@ -87,8 +85,8 @@ VisibleCmdlets = @{ Name = 'Restart-Computer'; Parameters = @{ Name = 'Name' }}
 ```
 
 In more advanced scenarios, you may also need to restrict the values a user may use with these
-parameters. Role capabilities let you define a set of values or a regular expression pattern
-that determine what input is allowed.
+parameters. Role capabilities let you define a set of values or a regular expression pattern that
+determine what input is allowed.
 
 ```powershell
 VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; ValidateSet = 'Dns', 'Spooler' }},
@@ -96,13 +94,11 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> The
-> [common PowerShell parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters)
-> are always allowed, even if you restrict the available parameters. You should not explicitly list
-> them in the Parameters field.
+> The [common PowerShell parameters][02] are always allowed, even if you restrict the available
+> parameters. You shouldn't explicitly list them in the Parameters field.
 
-The table below describes the various ways you can customize a visible cmdlet or function.
-You can mix and match any of the below in the **VisibleCmdlets** field.
+The table below describes the various ways you can customize a visible cmdlet or function. You can
+mix and match any of the below in the **VisibleCmdlets** field.
 
 |                                           Example                                           |                                                             Use case                                                              |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -115,7 +111,7 @@ You can mix and match any of the below in the **VisibleCmdlets** field.
 | `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`    | Allows the user to run `My-Func` with the `Param1` parameter. Any value starting with "contoso" can be supplied to the parameter. |
 
 > [!WARNING]
-> For best security practices, it is not recommended to use wildcards when defining visible cmdlets
+> For best security practices, it'sn't recommended to use wildcards when defining visible cmdlets
 > or functions. Instead, you should explicitly list each trusted command to ensure no other commands
 > that share the same naming scheme are unintentionally authorized.
 
@@ -124,9 +120,9 @@ You can't apply both a **ValidatePattern** and **ValidateSet** to the same cmdle
 If you do, the **ValidatePattern** overrides the **ValidateSet**.
 
 For more information about **ValidatePattern**, check out
-[this *Hey, Scripting Guy!* post](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/)
+[this *Hey, Scripting Guy!* post][09]
 and the
-[PowerShell Regular Expressions](/powershell/module/microsoft.powershell.core/about/about_regular_expressions)
+[PowerShell Regular Expressions][03]
 reference content.
 
 ### Allowing external commands and PowerShell scripts
@@ -148,8 +144,7 @@ For example, consider the role of a file server admin that manages network share
 system. One way of managing shares is to use `net share`. However, allowing **net.exe** is dangerous
 because the user could use the command to gain admin privileges with
 `net group Administrators unprivilegedjeauser /add`. A more secure option is to allow
-[Get-SmbShare](/powershell/module/smbshare/get-smbshare), which achieves the same result but has a
-much more limited scope.
+[Get-SmbShare][06], which achieves the same result but has a much more limited scope.
 
 When making external commands available to users in a JEA session, always specify the complete path
 to the executable. This prevents the execution of similarly named and potentially malicious programs
@@ -171,8 +166,7 @@ For simple tasks that require access to the file system, registry, certificate s
 sensitive providers, consider writing a custom function that works with the provider on the user's
 behalf. The functions, cmdlets, and external programs available in a JEA session aren't subject to
 the same constraints as JEA. They can access any provider by default. Also consider using the
-[user drive](session-configurations.md#user-drive) when copying files to or from a JEA endpoint is
-required.
+[user drive][11] when copying files to or from a JEA endpoint is required.
 
 ### Creating custom functions
 
@@ -214,7 +208,7 @@ By default, `Select-Object` is a constrained cmdlet in all JEA sessions that doe
 selection of arbitrary properties on objects. To use the unconstrained `Select-Object` in functions,
 you must explicitly request the full implementation using the FQMN. Any constrained cmdlet in a JEA
 session has the same constraints when invoked from a function. For more information, see
-[about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence).
+[about_Command_Precedence][01].
 
 If you're writing several custom functions, it's more convenient to put them in a PowerShell script
 module. You make those functions visible in the JEA session using the **VisibleFunctions** field
@@ -249,13 +243,11 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-For more information about PowerShell modules, see
-[Understanding a PowerShell Module](/powershell/scripting/developer/windows-powershell).
+For more information about PowerShell modules, see [Understanding a PowerShell Module][07].
 
 Starting in PowerShell 6, the **RoleDefinitions** property was added to the session configuration
 file. This property lets you specify the location of a role configuration file for your role
-definition. See the examples in
-[New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile).
+definition. See the examples in [New-PSSessionConfigurationFile][05].
 
 ## Updating role capabilities
 
@@ -272,9 +264,9 @@ read access to the role capability files and containing modules.
 
 ## How role capabilities are merged
 
-Users are granted access to all matching role capabilities in the
-[session configuration file](session-configurations.md) when they enter a JEA session. JEA tries to
-give the user the most permissive set of commands allowed by any of the roles.
+Users are granted access to all matching role capabilities in the [session configuration file][10]
+when they enter a JEA session. JEA tries to give the user the most permissive set of commands
+allowed by any of the roles.
 
 ### VisibleCmdlets and VisibleFunctions
 
@@ -283,7 +275,7 @@ parameter values limited in JEA.
 
 The rules are as follows:
 
-1. If a cmdlet is only made visible in one role, it is visible to the user with any applicable
+1. If a cmdlet is only made visible in one role, it's visible to the user with any applicable
    parameter constraints.
 1. If a cmdlet is made visible in more than one role, and each role has the same constraints on the
    cmdlet, the cmdlet is visible to the user with those constraints.
@@ -291,7 +283,7 @@ The rules are as follows:
    parameters, the cmdlet and all the parameters defined across every role are visible to the user.
    If one role doesn't have constraints on the parameters, all parameters are allowed.
 1. If one role defines a validate set or validate pattern for a cmdlet parameter, and the other role
-   allows the parameter but does not constrain the parameter values, the validate set or pattern is
+   allows the parameter but doesn't constrain the parameter values, the validate set or pattern is
    ignored.
 1. If a validate set is defined for the same cmdlet parameter in more than one role, all values from
    all validate sets are allowed.
@@ -341,9 +333,22 @@ Be careful to ensure that the combined set of providers from one role capability
 cmdlets/functions/commands from another don't allow users unintentional access to system resources.
 For example, if one role allows the `Remove-Item` cmdlet and another allows the `FileSystem`
 provider, you are at risk of a JEA user deleting arbitrary files on your computer. Additional
-information about identifying users' effective permissions can be found in the
-[auditing JEA](audit-and-report.md) article.
+information about identifying users' effective permissions can be found in the [auditing JEA][08]
+article.
 
 ## Next steps
 
-[Create a session configuration file](session-configurations.md)
+[Create a session configuration file][10]
+
+<!-- link references -->
+[01]: /powershell/module/microsoft.powershell.core/about/about_command_precedence
+[02]: /powershell/module/microsoft.powershell.core/about/about_commonparameters
+[03]: /powershell/module/microsoft.powershell.core/about/about_regular_expressions
+[04]: /powershell/module/microsoft.powershell.core/new-psrolecapabilityfile
+[05]: /powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile
+[06]: /powershell/module/smbshare/get-smbshare
+[07]: /powershell/scripting/developer/windows-powershell
+[08]: audit-and-report.md
+[09]: https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/
+[10]: session-configurations.md
+[11]: session-configurations.md#user-drive

@@ -1,6 +1,6 @@
 ---
 description: Explains the methods for running commands on remote systems using PowerShell.
-ms.date: 10/22/2021
+ms.date: 11/16/2022
 title: Running Remote Commands
 ---
 # Running Remote Commands
@@ -14,8 +14,8 @@ supported. In PowerShell 7 and above, RPC is supported only in Windows.
 
 For more information about remoting in PowerShell, see the following articles:
 
-- [SSH Remoting in PowerShell][ssh-remoting]
-- [WSMan Remoting in PowerShell][wsman-remoting]
+- [SSH Remoting in PowerShell][23]
+- [WSMan Remoting in PowerShell][24]
 
 ## Windows PowerShell Remoting Without Configuration
 
@@ -25,22 +25,24 @@ and work on all Windows operating systems without any special configuration.
 
 These cmdlets include:
 
-- [Restart-Computer](/powershell/module/microsoft.powershell.management/restart-computer)
-- [Test-Connection](/powershell/module/microsoft.powershell.management/test-connection)
-- [Clear-EventLog](/powershell/module/microsoft.powershell.management/clear-eventlog)
-- [Get-EventLog](/powershell/module/microsoft.powershell.management/get-eventlog)
-- [Get-HotFix](/powershell/module/microsoft.powershell.management/get-hotfix)
-- [Get-Process](/powershell/module/microsoft.powershell.management/get-process)
-- [Get-Service](/powershell/module/microsoft.powershell.management/get-service)
-- [Set-Service](/powershell/module/microsoft.powershell.management/set-service)
-- [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/get-winevent)
-- [Get-WmiObject](/powershell/module/microsoft.powershell.management/get-wmiobject)
+- [Restart-Computer][16]
+- [Test-Connection][18]
+- [Clear-EventLog][10]
+- [Get-EventLog][11]
+- [Get-HotFix][12]
+- [Get-Process][13]
+- [Get-Service][14]
+- [Set-Service][17]
+- [Get-WinEvent][09]
+- [Get-WmiObject][15]
 
 Typically, cmdlets that support remoting without special configuration have the ComputerName
 parameter and don't have the Session parameter. To find these cmdlets in your session, type:
 
 ```powershell
-Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
+Get-Command | Where-Object {
+    $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"
+}
 ```
 
 ## Windows PowerShell Remoting
@@ -50,18 +52,15 @@ command on one or more remote computers. You can establish persistent connection
 sessions, and run scripts on remote computers.
 
 To use Windows PowerShell remoting, the remote computer must be configured for remote management.
-For more information, including instructions, see
-[About Remote Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements).
+For more information, including instructions, see [About Remote Requirements][04].
 
 Once you have configured Windows PowerShell remoting, many remoting strategies are available to you.
-This article lists just a few of them. For more information, see
-[About Remote](/powershell/module/microsoft.powershell.core/about/about_remote).
+This article lists just a few of them. For more information, see [About Remote][02].
 
 ### Start an Interactive Session
 
-To start an interactive session with a single remote computer, use the
-[Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet. For example,
-to start an interactive session with the Server01 remote computer, type:
+To start an interactive session with a single remote computer, use the [Enter-PSSession][06] cmdlet.
+For example, to start an interactive session with the Server01 remote computer, type:
 
 ```powershell
 Enter-PSSession Server01
@@ -78,15 +77,13 @@ Exit-PSSession
 
 For more information about the Enter-PSSession and Exit-PSSession cmdlets, see:
 
-- [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession)
-- [Exit-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession)
+- [Enter-PSSession][06]
+- [Exit-PSSession][07]
 
 ### Run a Remote Command
 
-To run a command on one or more computers, use the
-[Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) cmdlet. For example,
-to run a [Get-UICulture](/powershell/module/microsoft.powershell.utility/get-uiculture) command on
-the Server01 and Server02 remote computers, type:
+To run a command on one or more computers, use the [Invoke-Command][08] cmdlet. For example, to run
+a [Get-UICulture][19] command on the Server01 and Server02 remote computers, type:
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
@@ -153,32 +150,56 @@ more.
 Windows PowerShell includes a WSMan provider. The provider creates a `WSMAN:` drive that lets you
 navigate through a hierarchy of configuration settings on the local computer and remote computers.
 
-For more information about the WSMan provider, see
-[WSMan Provider](/powershell/module/microsoft.wsman.management/about/about_wsman_provider) and
-[About WS-Management Cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets),
-or in the Windows PowerShell console, type `Get-Help wsman`.
+For more information about the WSMan provider, see [WSMan Provider][21] and
+[About WS-Management Cmdlets][20], or in the Windows PowerShell console, type `Get-Help wsman`.
 
 For more information, see:
 
-- [PowerShell Remoting FAQ](powershell-remoting-faq.yml)
-- [Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
-- [Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
+- [PowerShell Remoting FAQ][22]
+- [Register-PSSessionConfiguration][27]
+- [Import-PSSession][28]
 
-For help with remoting errors, see
-[about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting).
+For help with remoting errors, see [about_Remote_Troubleshooting][05].
 
 ## See Also
 
-- [about_Remote](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
-- [about_Remote_Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
-- [about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting)
-- [about_PSSessions](/powershell/module/microsoft.powershell.core/about/about_PSSessions)
-- [about_WS-Management_Cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets)
-- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
-- [Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
-- [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
-- [Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
-- [WSMan Provider](/powershell/module/microsoft.wsman.management/about/about_wsman_provider)
+- [about_Remote][03]
+- [about_Remote_Requirements][04]
+- [about_Remote_Troubleshooting][05]
+- [about_PSSessions][01]
+- [about_WS-Management_Cmdlets][20]
+- [Invoke-Command][25]
+- [Import-PSSession][28]
+- [New-PSSession][26]
+- [Register-PSSessionConfiguration][27]
+- [WSMan Provider][21]
 
-[wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
-[ssh-remoting]: SSH-Remoting-in-PowerShell-Core.md
+<!-- link references -->
+[01]: /powershell/module/microsoft.powershell.core/about/about_PSSessions
+[02]: /powershell/module/microsoft.powershell.core/about/about_remote
+[03]: /powershell/module/microsoft.powershell.core/about/about_remote_faq
+[04]: /powershell/module/microsoft.powershell.core/about/about_remote_requirements
+[05]: /powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting
+[06]: /powershell/module/microsoft.powershell.core/enter-pssession
+[07]: /powershell/module/microsoft.powershell.core/exit-pssession
+[08]: /powershell/module/microsoft.powershell.core/invoke-command
+[09]: /powershell/module/microsoft.powershell.diagnostics/get-winevent
+[10]: /powershell/module/microsoft.powershell.management/clear-eventlog
+[11]: /powershell/module/microsoft.powershell.management/get-eventlog
+[12]: /powershell/module/microsoft.powershell.management/get-hotfix
+[13]: /powershell/module/microsoft.powershell.management/get-process
+[14]: /powershell/module/microsoft.powershell.management/get-service
+[15]: /powershell/module/microsoft.powershell.management/get-wmiobject
+[16]: /powershell/module/microsoft.powershell.management/restart-computer
+[17]: /powershell/module/microsoft.powershell.management/set-service
+[18]: /powershell/module/microsoft.powershell.management/test-connection
+[19]: /powershell/module/microsoft.powershell.utility/get-uiculture
+[20]: /powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets
+[21]: /powershell/module/microsoft.wsman.management/about/about_wsman_provider
+[22]: powershell-remoting-faq.yml
+[23]: SSH-Remoting-in-PowerShell-Core.md
+[24]: WSMan-Remoting-in-PowerShell-Core.md
+[25]: xref:Microsoft.PowerShell.Core.Invoke-Command
+[26]: xref:Microsoft.PowerShell.Core.New-PSSession
+[27]: xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration
+[28]: xref:Microsoft.PowerShell.Utility.Import-PSSession
