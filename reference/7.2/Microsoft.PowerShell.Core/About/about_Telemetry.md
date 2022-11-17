@@ -36,8 +36,9 @@ host application.
 
 > [!NOTE]
 > Application Insights uses the hosts IP Address to determine the geographic
-> location. The IP Address is never included in the telemetry data or stored
-> in the database.
+> location. The IP Address is never included in the telemetry data or stored in
+> the database. For more information, see
+> [Geolocation and IP address handling][02].
 
 PowerShell sends the following information during the session:
 
@@ -53,4 +54,8 @@ To opt-out of this telemetry, set the environment variable
 `$env:POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`.
 
 For more information about these environment variables, see
-[about_Environment_Variables](about_environment_variables.md#powershell-environment-variables).
+[about_Environment_Variables][01].
+
+<!-- link references -->
+[01]: about_environment_variables.md#powershell-environment-variables
+[02]: https://learn.microsoft.com/en-us/azure/azure-monitor/app/ip-collection?tabs=net
