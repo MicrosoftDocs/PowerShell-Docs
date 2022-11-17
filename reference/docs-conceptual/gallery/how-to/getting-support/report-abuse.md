@@ -1,6 +1,6 @@
 ---
 description: How to report abuse in the PowerShell Gallery
-ms.date: 06/12/2017
+ms.date: 11/16/2022
 title: How to report abuse in the PowerShell Gallery
 ---
 # Report abuse

@@ -1,6 +1,6 @@
 ---
 description: This article explains how to delete personal data from the PowerShell Gallery and can be used to support your obligations under the GDPR.
-ms.date: 03/27/2018
+ms.date: 11/16/2022
 title: PowerShell Gallery GDPR compliance
 ---
 # PowerShell Gallery GDPR compliance

@@ -1,6 +1,6 @@
 ---
 description: This article explains how the PowerShellGet cmdlets support the Desktop and Core editions of PowerShell modules.
-ms.date: 06/10/2020
+ms.date: 11/16/2022
 title: Modules with compatible PowerShell Editions
 ---
 # Modules with compatible PowerShell Editions

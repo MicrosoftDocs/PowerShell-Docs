@@ -1,6 +1,6 @@
 ---
 description: This article describe how and when to contact an administrator of the PowerShell Gallery
-ms.date: 12/01/2020
+ms.date: 11/16/2022
 title: Contact Gallery administrators
 ---
 # Contact Gallery administrators

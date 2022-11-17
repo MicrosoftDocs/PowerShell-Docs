@@ -1,6 +1,6 @@
 ---
 description: How to contact package owners
-ms.date: 06/12/2017
+ms.date: 11/16/2022
 title: How to contact package owners
 ---
 # Contacting package owners

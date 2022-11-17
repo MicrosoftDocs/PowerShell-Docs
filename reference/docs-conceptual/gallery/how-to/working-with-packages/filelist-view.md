@@ -1,6 +1,6 @@
 ---
 description: How to use the FileList feature in the Gallery
-ms.date: 06/12/2017
+ms.date: 11/16/2022
 title: How to use the FileList feature in the Gallery
 ---
 # FileList feature in the Gallery
