@@ -54,7 +54,7 @@ PowerShell Remoting sessions, available at [Investigating PowerShell Attacks][06
 
 ## Encryption and transport protocols
 
-it's helpful to consider the security of a PowerShell Remoting connection from two perspectives:
+It's helpful to consider the security of a PowerShell Remoting connection from two perspectives:
 initial authentication, and ongoing communication.
 
 Regardless of the transport protocol used (HTTP or HTTPS), WinRM always encrypts all PowerShell

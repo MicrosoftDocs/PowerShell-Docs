@@ -39,7 +39,7 @@ With the PowerShell extension for VSCode started and the PowerShell Integrated C
 can type `Open-EditorFile foo.ps1` or `psedit foo.ps1` to open the local foo.ps1 file right in the
 editor.
 
-[Open-EditorFile foo.ps1 works locally][04]
+![Open-EditorFile foo.ps1 works locally][04]
 
 > [!NOTE]
 > The file `foo.ps1` must already exist.
@@ -48,11 +48,11 @@ From there, we can:
 
 - Add breakpoints to the gutter
 
-  [Adding a breakpoint to the gutter][05]
+  ![Adding a breakpoint to the gutter][05]
 
 - Hit F5 to debug the PowerShell script.
 
-  [debugging the local PowerShell script][06]
+  ![debugging the local PowerShell script][06]
 
 While debugging, you can interact with the debug console, check out the variables in the scope on
 the left, and all the other standard debugging tools.
@@ -79,21 +79,21 @@ Since we're remoting to an Ubuntu VM in Azure, we're using SSH.
 First, in the Integrated Console, run `Enter-PSSession`. You're connected to the remote session when
 `[<hostname>]` shows up to the left of your prompt.
 
-[Call Enter-PSSession to connect to a remote session][07]
+![Call Enter-PSSession to connect to a remote session][07]
 
 Now, we can do the same steps as if we're editing a local script.
 
 1. Run `Open-EditorFile test.ps1` or `psedit test.ps1` to open the remote `test.ps1` file
 
-  [Edit the script on the remote system][08]
+   ![Edit the script on the remote system][08]
 
 1. Edit the file/set breakpoints
 
-   [Edit and set breakpoints][09]
+   ![Edit and set breakpoints][09]
 
 1. Start debugging (F5) the remote file
 
-   [Debugging the remote script][10]
+   ![Debugging the remote script][10]
 
 If you have any problems, you can open issues in the [GitHub repo][02].
 

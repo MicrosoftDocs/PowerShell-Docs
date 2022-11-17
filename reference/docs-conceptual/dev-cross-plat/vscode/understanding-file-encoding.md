@@ -57,7 +57,7 @@ sequences in your script, this can be the problem. In the example below, an en-d
 the characters `â&euro;"`:
 
 ```Output
-Send-MailMessage : A positional parameter can't be found that accepts argument 'Testing FuseMail SMTP...'.
+Send-MailMessage : A positional parameter cannot be found that accepts argument 'Testing FuseMail SMTP...'.
 At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtpRelay.ps1:6 char:1
 + Send-MailMessage â&euro;"From $from â&euro;"To $recipient1 â&euro;"Subject $subject  ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,7 +92,7 @@ The PowerShell extension interacts with scripts in a number of ways:
 1. When scripts are executed directly in the Integrated Console, they're read from the file by
    PowerShell directly. If PowerShell's encoding differs from VS Code's, something can go wrong
    here.
-1. When a script that's open in VS Code references another script that'sn't open in VS Code, the
+1. When a script that's open in VS Code references another script that isn't open in VS Code, the
    extension falls back to loading that script's content from the file system. The PowerShell
    extension defaults to UTF-8 encoding, but uses [byte-order mark][23], or BOM, detection to select
    the correct encoding.

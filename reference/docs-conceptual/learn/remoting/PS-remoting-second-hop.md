@@ -70,10 +70,10 @@ transition.
 
 ### Cons
 
-- doesn't support the second hop for WinRM.
+- Doesn't support the second hop for WinRM.
 - Requires Domain Administrator access to configure.
 - Must be configured on the Active Directory object of the remote server (_ServerB_).
-- Limited to one domain. can't cross domains or forests.
+- Limited to one domain. Can't cross domains or forests.
 - Requires rights to update objects and Service Principal Names (SPNs).
 - _ServerB_ can acquire a Kerberos ticket to _ServerC_ on behalf of the user without user
   intervention.
@@ -95,13 +95,13 @@ credentials.
 
 - Credentials aren't stored.
 - Configured using PowerShell cmdlets. No special coding required.
-- doesn't require Domain Administrator access to configure.
+- Doesn't require Domain Administrator access to configure.
 - Works across domains and forests.
 
 ### Cons
 
 - Requires Windows Server 2012 or later.
-- doesn't support the second hop for WinRM.
+- Doesn't support the second hop for WinRM.
 - Requires rights to update objects and Service Principal Names (SPNs).
 
 > [!NOTE]
@@ -182,7 +182,7 @@ Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccou
 ```
 
 The Kerberos [Key Distribution Center (KDC)][13] caches denied-access attempts (negative cache) for
-15 minutes. If _ServerB_ has previously attempted to access _ServerC_, you will need to clear the
+15 minutes. If _ServerB_ has previously attempted to access _ServerC_, you need to clear the
 cache on _ServerB_ by invoking the following command:
 
 ```powershell
@@ -265,7 +265,7 @@ You can also use Kerberos unconstrained delegation to make the second hop. Like 
 scenarios, credentials aren't stored. This method doesn't support the second hop for WinRM.
 
 > [!WARNING]
-> This method provides no control of where delegated credentials are used. it's less secure than
+> This method provides no control of where delegated credentials are used. It's less secure than
 > CredSSP. This method should only be used for testing scenarios.
 
 ## Just Enough Administration (JEA)
@@ -308,7 +308,7 @@ You can pass credentials inside the **ScriptBlock** parameter of a call to the
 
 ### Pros
 
-- doesn't require special server configuration.
+- Doesn't require special server configuration.
 - Works on any server running WMF 2.0 or later.
 
 ### Cons

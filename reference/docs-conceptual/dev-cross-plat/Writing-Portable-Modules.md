@@ -191,7 +191,7 @@ Targeting .NET Standard helps ensure that, as the module evolves, incompatible A
 accidentally get introduced into the module. Incompatibilities are discovered at compile time
 instead of runtime.
 
-However, it'sn't required to target .NET Standard for a module to work with both Windows PowerShell
+However, it isn't required to target .NET Standard for a module to work with both Windows PowerShell
 and PowerShell Core, as long as you use compatible APIs. The Intermediate Language (IL) is
 compatible between the two runtimes. You can target .NET Framework 4.6.1, which is compatible with
 .NET Standard 2.0. If you don't use APIs outside of .NET Standard 2.0, then your module works with

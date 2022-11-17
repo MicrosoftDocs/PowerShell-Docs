@@ -111,7 +111,7 @@ mix and match any of the below in the **VisibleCmdlets** field.
 | `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`    | Allows the user to run `My-Func` with the `Param1` parameter. Any value starting with "contoso" can be supplied to the parameter. |
 
 > [!WARNING]
-> For best security practices, it'sn't recommended to use wildcards when defining visible cmdlets
+> For best security practices, it isn't recommended to use wildcards when defining visible cmdlets
 > or functions. Instead, you should explicitly list each trusted command to ensure no other commands
 > that share the same naming scheme are unintentionally authorized.
 

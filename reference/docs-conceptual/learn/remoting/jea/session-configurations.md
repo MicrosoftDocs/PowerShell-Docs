@@ -265,7 +265,7 @@ can't be registered on the system.
 ## Sample session configuration file
 
 The following example shows how to create and validate a session configuration for JEA. The role
-definitions are created and stored in the `$roles` variable for convenience and readability. it'sn't
+definitions are created and stored in the `$roles` variable for convenience and readability. it isn't
 a requirement to do so.
 
 ```powershell
