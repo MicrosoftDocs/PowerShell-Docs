@@ -1,7 +1,7 @@
 ---
 description: Describes how to access and manage environment variables in PowerShell.
 Locale: en-US
-ms.date: 10/31/2022
+ms.date: 11/17/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Environment Variables
@@ -292,7 +292,7 @@ System Control Panel:
 1. Select **Environment Variables...**.
 1. Make your changes.
 
-## PowerShell's environment variables
+## PowerShell environment variables
 
 PowerShell features can use environment variables to store user preferences.
 These variables work like preference variables, but they're inherited by child
@@ -423,12 +423,6 @@ The environment variables that store preferences include:
   `1`.
 
   For more information, see [about_Telemetry][08].
-
-- **POWERSHELL_DISTRIBUTION_CHANNEL**
-
-  Beginning in PowerShell 7.2, this environment variable is set by the
-  installer packages to record the method and source of installation for
-  PowerShell.
 
 ## Other environment variables used by PowerShell
 
