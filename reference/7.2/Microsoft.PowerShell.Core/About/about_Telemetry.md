@@ -16,7 +16,7 @@ Describes the telemetry collected in PowerShell and how to opt-out.
 
 PowerShell sends basic telemetry data to Microsoft using Application Insights.
 This data allows us to better understand the environments where PowerShell is
-used and enables us to prioritize new features and fixes. The telemetry is
+used and enables us to prioritize new features and fixes. The telemetry
 includes anonymized information about the host running PowerShell, and
 information about how PowerShell is used.
 
