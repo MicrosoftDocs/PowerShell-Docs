@@ -20,7 +20,7 @@ used and enables us to prioritize new features and fixes. The telemetry
 includes anonymized information about the host running PowerShell, and
 information about how PowerShell is used.
 
-PowerShell send the following information at startup:
+PowerShell sends the following information at startup:
 
 - The manufacturer, name, and version of the operating system
 - The version of PowerShell
@@ -33,8 +33,8 @@ PowerShell send the following information at startup:
 - A randomly generated GUID representing the session instance
 
 Startup telemetry data is only collected when starting the `pwsh` executable.
-This information isn't sent if the PowerShell engine is embedded in some other host
-application.
+This information isn't sent if the PowerShell engine is embedded in some other
+host application.
 
 > [!NOTE]
 > Application Insights uses the hosts IP Address to determine the geographic
@@ -43,10 +43,10 @@ application.
 
 PowerShell sends the following information during the session:
 
-- The count of calls to the PowerShell.Create() API
+- The count of calls to the `PowerShell.Create()` API
 - The names and versions of Microsoft-owned modules loaded
 - The names of enabled experimental features
-- The count of remote session open events
+- The count of remote session open operations
 
 This information is sent periodically during the lifetime of the session. This
 information is sent regardless of the host application.
