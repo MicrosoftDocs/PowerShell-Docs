@@ -60,4 +60,4 @@ For more information about these environment variables, see
 
 <!-- link references -->
 [01]: about_environment_variables.md#powershell-environment-variables
-[02]: https://learn.microsoft.com/en-us/azure/azure-monitor/app/ip-collection?tabs=net
+[02]: /azure/azure-monitor/app/ip-collection?tabs=net
