@@ -16,13 +16,13 @@ Describes the telemetry collected in PowerShell and how to opt-out.
 
 PowerShell sends basic telemetry data to Microsoft using Application Insights.
 This data allows us to better understand the environments where PowerShell is
-used and enables us to prioritize new features and fixes. The telemetry is
+used and enables us to prioritize new features and fixes. The telemetry
 includes anonymized information about the host running PowerShell, and
 information about how PowerShell is used.
 
 PowerShell send the following information at startup:
 
-- The name and version of the operating system
+- The manufacturer, name, and version of the operating system
 - The version of PowerShell
 - The value of the **POWERSHELL_DISTRIBUTION_CHANNEL** environment variable
 - The version of the Application Insights SDK used by PowerShell
@@ -33,7 +33,7 @@ PowerShell send the following information at startup:
 - A randomly generated GUID representing the session instance
 
 Startup telemetry data is only collected when starting the `pwsh` executable.
-This information isn't sent if PowerShell is embedded in some other host
+This information isn't sent if the PowerShell engine is embedded in some other host
 application.
 
 > [!NOTE]
