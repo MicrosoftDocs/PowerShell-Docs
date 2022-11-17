@@ -1,6 +1,6 @@
 ---
 description: JEA is a security technology that enables delegated administration for anything managed by PowerShell.
-ms.date: 10/11/2021
+ms.date: 11/16/2022
 title: Overview of Just Enough Administration (JEA)
 ---
 
@@ -19,10 +19,10 @@ anything managed by PowerShell. With JEA, you can:
 **Why is JEA important?**
 
 Highly privileged accounts used to administer your servers pose a serious security risk. Should an
-attacker compromise one of these accounts, they could launch [lateral attacks](https://aka.ms/pth)
-across your organization. Each compromised account gives an attacker access to even more accounts
-and resources, and puts them one step closer to stealing company secrets, launching a
-denial-of-service attack, and more.
+attacker compromise one of these accounts, they could launch [lateral attacks][01] across your
+organization. Each compromised account gives an attacker access to even more accounts and resources,
+and puts them one step closer to stealing company secrets, launching a denial-of-service attack, and
+more.
 
 It's not always easy to remove administrative privileges, either. Consider the common scenario where
 the DNS role is installed on the same machine as your Active Directory Domain Controller. Your DNS
@@ -43,9 +43,14 @@ roles and carefully control what they can do on each machine.
 
 ## Next steps
 
-To learn more about the requirements to use JEA, see the [Prerequisites](prerequisites.md) article.
+To learn more about the requirements to use JEA, see the [Prerequisites][03] article.
 
 ## Samples and DSC resource
 
 Sample JEA configurations and the JEA DSC resource can be found in the
-[JEA GitHub repository](https://github.com/PowerShell/JEA).
+[JEA GitHub repository][02].
+
+<!-- link references -->
+[01]: https://aka.ms/pth
+[02]: https://github.com/PowerShell/JEA
+[03]: prerequisites.md

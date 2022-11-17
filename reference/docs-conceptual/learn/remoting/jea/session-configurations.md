@@ -1,6 +1,6 @@
 ---
 description: Session configurations define who can use the JEA endpoint and which roles they have access to.
-ms.date: 10/07/2021
+ms.date: 11/16/2022
 title: JEA Session Configurations
 ---
 
@@ -37,19 +37,18 @@ The `-SessionType RestrictedRemoteServer` field indicates that the session confi
 JEA for secure management. Sessions of this type operate in **NoLanguage** mode and only have access
 to the following default commands (and aliases):
 
-- Clear-Host (cls, clear)
-- Exit-PSSession (exsn, exit)
-- Get-Command (gcm)
-- Get-FormatData
-- Get-Help
-- Measure-Object (measure)
-- Out-Default
-- Select-Object (select)
+- `Clear-Host` (`cls`, `clear`)
+- `Exit-PSSession` (`exsn`, `exit`)
+- `Get-Command` (`gcm`)
+- `Get-FormatData`
+- `Get-Help`
+- `Measure-Object` (`measure`)
+- `Out-Default`
+- `Select-Object` (`select`)
 
 No PowerShell providers are available, nor are any external programs (executables or scripts).
 
-For more information about language modes, see
-[about_Language_modes](/powershell/module/microsoft.powershell.core/about/about_language_modes).
+For more information about language modes, see [about_Language_modes][01].
 
 ### Choose the JEA identity
 
@@ -94,8 +93,7 @@ RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 #### Group-managed service account
 
 A group-managed service account (GMSA) is the appropriate identity to use when JEA users need to
-access network resources such as file shares and web services. GMSAs give you a domain identity that
-is used to authenticate with resources on any machine within the domain. The rights that a GMSA
+access network resources such as file shares and web services. GMSAs give you a domain identity that's used to authenticate with resources on any machine within the domain. The rights that a GMSA
 provides are determined by the resources you're accessing. You don't have admin rights on any
 machines or services unless the machine or service administrator has explicitly granted those rights
 to the GMSA.
@@ -121,7 +119,7 @@ GMSAs should only be used when necessary:
 > or newer.
 
 For more information about securing a JEA session, see the
-[security considerations](security-considerations.md) article.
+[security considerations][07] article.
 
 ### Session transcripts
 
@@ -144,7 +142,7 @@ security administrators that have access to audit the transcripts.
 ### User drive
 
 If your connecting users need to copy files to or from the JEA endpoint, you can enable the user
-drive in the session configuration file. The user drive is a **PSDrive** that is mapped to a unique
+drive in the session configuration file. The user drive is a **PSDrive** that's mapped to a unique
 folder for each connecting user. This folder allows users to copy files to or from the system
 without giving them access to the full file system or exposing the FileSystem provider. The user
 drive contents are persistent across sessions to accommodate situations where network connectivity
@@ -169,8 +167,7 @@ the system to automatically clean up the folder every night.
 > [!NOTE]
 > The user drive is only available in PowerShell 5.1 or newer.
 
-For more information about PSDrives, see
-[Managing PowerShell drives](/powershell/scripting/samples/managing-windows-powershell-drives).
+For more information about PSDrives, see [Managing PowerShell drives][03].
 
 ### Role definitions
 
@@ -238,10 +235,12 @@ your rules. Here are some examples of how to use this field:
 RequiredGroups = @{ And = 'elevated-jea' }
 
 # Example 2: Connecting users must have signed on with 2 factor authentication or a smart card
-# The 2 factor authentication group name is "2FA-logon" and the smart card group name is "smartcard-logon"
+# The 2 factor authentication group name is "2FA-logon" and the smart card group
+# name is "smartcard-logon"
 RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
 
-# Example 3: Connecting users must elevate into "elevated-jea" with their JIT system and have logged on with 2FA or a smart card
+# Example 3: Connecting users must elevate into "elevated-jea" with their JIT system and
+# have logged on with 2FA or a smart card
 RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon' }}
 ```
 
@@ -258,17 +257,16 @@ For a full list of supported properties in the session configuration file, run
 
 ## Testing a session configuration file
 
-You can test a session configuration using the
-[Test-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile)
-cmdlet. It's recommended that you test your session configuration file if you've manually edited the
-`.pssc` file. Testing ensures the syntax is correct. If a session configuration file fails this
-test, it can't be registered on the system.
+You can test a session configuration using the [Test-PSSessionConfigurationFile][02] cmdlet. It's
+recommended that you test your session configuration file if you've manually edited the `.pssc`
+file. Testing ensures the syntax is correct. If a session configuration file fails this test, it
+can't be registered on the system.
 
 ## Sample session configuration file
 
 The following example shows how to create and validate a session configuration for JEA. The role
-definitions are created and stored in the `$roles` variable for convenience and readability. It
-isn't a requirement to do so.
+definitions are created and stored in the `$roles` variable for convenience and readability. it isn't
+a requirement to do so.
 
 ```powershell
 $roles = @{
@@ -277,17 +275,34 @@ $roles = @{
     'CONTOSO\JEA_DNS_AUDITORS'  = @{ RoleCapabilities = 'DnsAuditor' }
 }
 
-New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\JEAConfig.pssc -RunAsVirtualAccount -TranscriptDirectory 'C:\ProgramData\JEAConfiguration\Transcripts' -RoleDefinitions $roles -RequiredGroups @{ Or = '2FA-logon', 'smartcard-logon' }
+$parameters = @{
+    SessionType = 'RestrictedRemoteServer'
+    Path = '.\JEAConfig.pssc'
+    RunAsVirtualAccount = $true
+    TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
+    RoleDefinitions = $roles
+    RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
+}
+New-PSSessionConfigurationFile @parameters
 Test-PSSessionConfigurationFile -Path .\JEAConfig.pssc # should yield True
 ```
 
 ## Updating session configuration files
 
 To change the properties of a JEA session configuration, including the mapping of users to roles,
-you must [unregister](register-jea.md#unregistering-jea-configurations). Then, [re-register](register-jea.md)
-the JEA session configuration using an updated session configuration file.
+you must [unregister][05]. Then, [re-register][04] the JEA session configuration using an updated
+session configuration file.
 
 ## Next steps
 
-- [Register a JEA configuration](register-jea.md)
-- [Author JEA roles](role-capabilities.md)
+- [Register a JEA configuration][04]
+- [Author JEA roles][06]
+
+<!-- link references -->
+[01]: /powershell/module/microsoft.powershell.core/about/about_language_modes
+[02]: /powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile
+[03]: /powershell/scripting/samples/managing-windows-powershell-drives
+[04]: register-jea.md
+[05]: register-jea.md#unregistering-jea-configurations
+[06]: role-capabilities.md
+[07]: security-considerations.md

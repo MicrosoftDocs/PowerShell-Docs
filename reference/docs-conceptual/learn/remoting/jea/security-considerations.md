@@ -1,9 +1,8 @@
 ---
 description: Since JEA allows these users to run admin commands without having full admin access, you can then remove those users from highly privileged security groups.
-ms.date: 07/10/2019
+ms.date: 11/16/2022
 title: JEA Security Considerations
 ---
-
 # JEA Security Considerations
 
 JEA helps you improve your security posture by reducing the number of permanent administrators on
@@ -16,8 +15,9 @@ privileged security groups.
 ## Run-As account
 
 Each JEA endpoint has a designated **run-as** account. This is the account under which the
-connecting user's actions are executed. This account is configurable in the [session configuration file](session-configurations.md),
-and the account you choose has a significant bearing on the security of your endpoint.
+connecting user's actions are executed. This account is configurable in the
+[session configuration file][05], and the account you choose has a significant bearing on the
+security of your endpoint.
 
 **Virtual accounts** are the recommended way of configuring the **run-as** account. Virtual accounts
 are one-time, temporary local accounts that are created for the connecting user to use during the
@@ -79,7 +79,7 @@ connecting user's credential to run commands on the remote server. This requires
 connecting user direct access to privileged management groups. This configuration is **not**
 recommended for JEA. If the connecting user already has admin privileges, they can avoid JEA and
 manage the system via other, unconstrained means. For more information, see the section below on how
-[JEA doesn't protect against admins](#jea-doesnt-protect-against-admins).
+[JEA doesn't protect against admins][02].
 
 **Standard run-as accounts** allow you to specify any user account under which the entire PowerShell
 session runs. Session configurations using fixed **run-as** accounts (with the `-RunAsCredential`
@@ -107,7 +107,7 @@ New-PSSessionConfigurationFile -Path '.\jea.pssc' -SessionType RestrictedRemoteS
 Register-PSSessionConfiguration -Path '.\jea.pssc' -Name 'MyJEAEndpoint'
 ```
 
-You can audit user permissions with the [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration)
+You can audit user permissions with the [Get-PSSessionConfiguration][01]
 cmdlet.
 
 ```powershell
@@ -129,7 +129,7 @@ to update the permissions. Users need at least *Invoke* rights to access the JEA
 It's possible to create a JEA endpoint that doesn't map a defined role to every user that has
 access. These users can start a JEA session, but only have access to the default cmdlets. You can
 audit user permissions in a JEA endpoint by running `Get-PSSessionCapability`. For more information,
-see [Auditing and Reporting on JEA](audit-and-report.md).
+see [Auditing and Reporting on JEA][03].
 
 ## Least privilege roles
 
@@ -163,8 +163,8 @@ A more secure version of this same role capability would look like:
 }
 ```
 
-Avoid using wildcards in role capabilities. Be sure to regularly [audit effective user permissions](audit-and-report.md#check-effective-rights-for-a-specific-user)
-to understand which commands are accessible to the user.
+Avoid using wildcards in role capabilities. Be sure to regularly
+[audit effective user permissions][04] to understand which commands are accessible to the user.
 
 ## JEA doesn't protect against admins
 
@@ -182,3 +182,10 @@ privileged access management solution that allows users to temporarily become lo
 emergency situations. This helps ensure users aren't permanent admins on the system, but can get
 those rights if, and only when, they complete a workflow that documents their use of those
 permissions.
+
+<!-- link references -->
+[01]: /powershell/module/microsoft.powershell.core/get-pssessionconfiguration
+[02]: #jea-doesnt-protect-against-admins
+[03]: audit-and-report.md
+[04]: audit-and-report.md#check-effective-rights-for-a-specific-user
+[05]: session-configurations.md
