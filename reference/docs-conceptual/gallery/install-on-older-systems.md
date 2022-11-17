@@ -1,6 +1,6 @@
 ---
 description: This article explains how to install the PowerShellGet module in older versions of PowerShell.
-ms.date: 04/21/2022
+ms.date: 11/16/2022
 title: Installing PowerShellGet on older Windows systems
 ---
 # Installing PowerShellGet on older Windows systems

@@ -1,6 +1,6 @@
 ---
 description: How to view the package license on the item details page
-ms.date: 06/12/2017
+ms.date: 11/16/2022
 title: Require license acceptance
 ---
 # Require license acceptance

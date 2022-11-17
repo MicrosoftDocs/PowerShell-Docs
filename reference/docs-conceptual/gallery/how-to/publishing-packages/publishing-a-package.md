@@ -1,6 +1,6 @@
 ---
 description: This article covers the mechanics and important steps for preparing a script or module, and publishing it to the PowerShell Gallery
-ms.date: 06/12/2017
+ms.date: 11/16/2022
 title: Creating and publishing an item
 ---
 # Creating and publishing an item

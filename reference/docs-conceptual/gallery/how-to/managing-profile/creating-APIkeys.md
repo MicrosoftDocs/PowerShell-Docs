@@ -1,6 +1,6 @@
 ---
 description: The PowerShell Gallery uses API keys to authenticate access to the Gallery for content publishers.
-ms.date: 09/10/2018
+ms.date: 11/16/2022
 title: Managing API keys
 ---
 # Managing API keys

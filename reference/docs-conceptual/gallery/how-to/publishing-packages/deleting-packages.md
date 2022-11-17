@@ -1,6 +1,6 @@
 ---
 description: How to delete packages from the PowerShell Gallery
-ms.date: 06/12/2017
+ms.date: 11/16/2022
 title: How to delete packages from the PowerShell Gallery
 ---
 # Deleting Packages
