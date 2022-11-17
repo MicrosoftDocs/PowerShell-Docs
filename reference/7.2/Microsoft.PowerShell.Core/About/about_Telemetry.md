@@ -54,4 +54,4 @@ To opt-out of this telemetry, set the environment variable
 `$env:POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`.
 
 For more information about these environment variables, see
-[about_Environment_Variables](about_environment_variables.md#power-shell-environment-variables).
+[about_Environment_Variables](about_environment_variables.md#powershell-environment-variables).
