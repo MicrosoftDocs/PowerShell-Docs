@@ -1,6 +1,6 @@
 ---
 description: This article documents the package metadata values that are used by the PowerShell Gallery.
-ms.date: 10/24/2022
+ms.date: 11/16/2022
 title: Package metadata values that impact the PowerShell Gallery UI
 ---
 # Package metadata values that impact the PowerShell Gallery UI

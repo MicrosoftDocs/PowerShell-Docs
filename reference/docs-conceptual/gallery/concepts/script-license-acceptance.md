@@ -1,6 +1,6 @@
 ---
 description: The article explains how to work with scripts published in the PowerShell Gallery that require acceptance of an end user license.
-ms.date: 06/09/2017
+ms.date: 11/16/2022
 title: Requiring license acceptance for scripts
 ---
 # Requiring license acceptance for scripts

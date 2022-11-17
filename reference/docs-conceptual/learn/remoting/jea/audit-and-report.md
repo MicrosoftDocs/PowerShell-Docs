@@ -1,6 +1,6 @@
 ---
 description: Auditing helps you assess that the correct people have access to the JEA endpoint and their assigned roles are still appropriate.
-ms.date: 07/10/2019
+ms.date: 11/16/2022
 title: Auditing and Reporting on JEA
 ---
 
@@ -13,11 +13,12 @@ appropriate.
 ## Find registered JEA sessions on a machine
 
 To check which JEA sessions are registered on a machine, use the
-[Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration)
+[Get-PSSessionConfiguration][02]
 cmdlet.
 
 ```powershell
-# Filter for sessions that are configured as 'RestrictedRemoteServer' to find JEA-like session configurations
+# Filter for sessions that are configured as 'RestrictedRemoteServer' to
+# find JEA-like session configurations
 Get-PSSessionConfiguration | Where-Object { $_.SessionType -eq 'RestrictedRemoteServer' }
 ```
 
@@ -32,9 +33,9 @@ Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS 
 
 The effective rights for the endpoint are listed in the **Permission** property. These users have
 the right to connect to the JEA endpoint. However, the roles and commands they have access to is
-determined by the **RoleDefinitions** property in the [session configuration file](session-configurations.md)
-that was used to register the endpoint. Expand the **RoleDefinitions** property to evaluate the role
-mappings in a registered JEA endpoint.
+determined by the **RoleDefinitions** property in the [session configuration file][05] that was used
+to register the endpoint. Expand the **RoleDefinitions** property to evaluate the role mappings in a
+registered JEA endpoint.
 
 ```powershell
 # Get the desired session configuration
@@ -72,15 +73,14 @@ function Find-LocalRoleCapability {
 ```
 
 > [!NOTE]
-> The order of results from this function is not necessarily the order in which the role
-> capabilities will be selected if multiple role capabilities share the same name.
+> The order of results from this function isn't necessarily the order in which the role capabilities
+> will be selected if multiple role capabilities share the same name.
 
 ## Check effective rights for a specific user
 
-The [Get-PSSessionCapability](/powershell/module/microsoft.powershell.core/Get-PSSessionCapability)
-cmdlet enumerates all the commands available on a JEA endpoint based on a user's group memberships.
-The output of `Get-PSSessionCapability` is identical to that of the specified user running
-`Get-Command -CommandType All` in a JEA session.
+The [Get-PSSessionCapability][01] cmdlet enumerates all the commands available on a JEA endpoint
+based on a user's group memberships. The output of `Get-PSSessionCapability` is identical to that of
+the specified user running `Get-Command -CommandType All` in a JEA session.
 
 ```powershell
 Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\Alice'
@@ -111,8 +111,8 @@ logging enabled is required to trace a specific command invocation back to the *
 Commands run in a JEA session that interact with external applications or services may log events to
 their own event logs. Unlike PowerShell logs and transcripts, other logging mechanisms don't capture
 the connected user of the JEA session. Instead, those applications only log the virtual run-as user.
-To determine who ran the command, you need to consult a [session transcript](#session-transcripts)
-or correlate PowerShell event logs with the time and user shown in the application event log.
+To determine who ran the command, you need to consult a [session transcript][03] or correlate
+PowerShell event logs with the time and user shown in the application event log.
 
 The WinRM log can also help you correlate run-as users to the connecting user in an application
 event log. Event ID **193** in the **Microsoft-Windows-Windows Remote Management/Operational** log
@@ -170,4 +170,11 @@ that object are printed a few lines below, closely mimicking what the user would
 
 ## See also
 
-[*PowerShell ♥ the Blue Team* blog post on security](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
+[*PowerShell ♥ the Blue Team* blog post on security][04]
+
+<!-- link references -->
+[01]: /powershell/module/microsoft.powershell.core/Get-PSSessionCapability
+[02]: /powershell/module/microsoft.powershell.core/get-pssessionconfiguration
+[03]: #session-transcripts
+[04]: https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
+[05]: session-configurations.md

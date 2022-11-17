@@ -11,9 +11,9 @@ This article describes the various ways you can connect to and use a JEA endpoin
 ## Using JEA interactively
 
 If you're testing your JEA configuration or have simple tasks for users, you can use JEA the same
-way you would a regular PowerShell remoting session. For complex remoting tasks, it's recommended
-to use [implicit remoting](#using-jea-with-implicit-remoting). Implicit remoting allows users to
-operate with the data objects locally.
+way you would a regular PowerShell remoting session. For complex remoting tasks, it's recommended to
+use [implicit remoting][09]. Implicit remoting allows users to operate with the data objects
+locally.
 
 To use JEA interactively, you need:
 
@@ -21,8 +21,8 @@ To use JEA interactively, you need:
 - The name of the JEA endpoint registered on that computer
 - Credentials that have access to the JEA endpoint on that computer
 
-Given that information, you can start a JEA session using the [New-PSSession](/powershell/module/microsoft.powershell.core/New-PSSession)
-or [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) cmdlets.
+Given that information, you can start a JEA session using the [New-PSSession][05] or
+[Enter-PSSession][02] cmdlets.
 
 ```powershell
 $nonAdminCred = Get-Credential
@@ -58,19 +58,19 @@ Start-VM -VMName 'SQL01'
 ```
 
 For more complex command invocations that make this approach difficult, consider using
-[implicit remoting](#using-jea-with-implicit-remoting) or
-[creating custom functions](role-capabilities.md#creating-custom-functions) that wrap the
+[implicit remoting][09] or
+[creating custom functions][12] that wrap the
 functionality you require.
 
 ## Using JEA with implicit remoting
 
 PowerShell has an implicit remoting model that lets you import proxy cmdlets from a remote machine
 and interact with them as if they were local commands. Implicit remoting is explained in this **Hey,
-Scripting Guy!** [blog post](https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/).
-Implicit remoting is useful when working with JEA because it allows you to work with JEA cmdlets in
-a full language mode. You can use tab completion, variables, manipulate objects, and even use local
-scripts to automate tasks against a JEA endpoint. Anytime you invoke a proxy command, the data is
-sent to the JEA endpoint on the remote machine and executed there.
+Scripting Guy!** [blog post][10]. Implicit remoting is useful when working with JEA because it
+allows you to work with JEA cmdlets in a full language mode. You can use tab completion, variables,
+manipulate objects, and even use local scripts to automate tasks against a JEA endpoint. Anytime you
+invoke a proxy command, the data is sent to the JEA endpoint on the remote machine and executed
+there.
 
 Implicit remoting works by importing cmdlets from an existing PowerShell session. You can optionally
 choose to prefix the nouns of each proxy cmdlet with a string of your choosing. The prefix allows
@@ -114,9 +114,9 @@ $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notconta
 Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
-You can also persist the proxied cmdlets from implicit remoting using [Export-PSSession](/powershell/module/microsoft.powershell.utility/Export-PSSession).
-For more information about implicit remoting, see the documentation for [Import-PSSession](/powershell/module/microsoft.powershell.utility/import-pssession)
-and [Import-Module](/powershell/module/microsoft.powershell.core/import-module).
+You can also persist the proxied cmdlets from implicit remoting using [Export-PSSession][06]. For
+more information about implicit remoting, see the documentation for [Import-PSSession][07] and
+[Import-Module][03].
 
 ## Using JEA programmatically
 
@@ -124,8 +124,7 @@ JEA can also be used in automation systems and in user applications, such as in-
 and websites. The approach is the same as that for building apps that talk to unconstrained
 PowerShell endpoints. Ensure the program is designed to work with limitation imposed by JEA.
 
-For simple, one-off tasks, you can use [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command)
-to run commands in a JEA session.
+For simple, one-off tasks, you can use [Invoke-Command][04] to run commands in a JEA session.
 
 ```powershell
 Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Process; Get-Service }
@@ -140,8 +139,7 @@ $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Fo
 ```
 
 If you're building a C# app, you can create a PowerShell runspace that connects to a JEA session by
-specifying the configuration name in a [WSManConnectionInfo](/dotnet/api/system.management.automation.runspaces.wsmanconnectioninfo)
-object.
+specifying the configuration name in a [WSManConnectionInfo][01] object.
 
 ```csharp
 // using System.Management.Automation;
@@ -185,9 +183,9 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 
 ## Using JEA with PowerShell Direct
 
-Hyper-V in Windows 10 and Windows Server 2016 offers [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct),
-a feature that allows Hyper-V administrators to manage virtual machines with PowerShell regardless
-of the network configuration or remote management settings on the virtual machine.
+Hyper-V in Windows 10 and Windows Server 2016 offers [PowerShell Direct][08], a feature that allows
+Hyper-V administrators to manage virtual machines with PowerShell regardless of the network
+configuration or remote management settings on the virtual machine.
 
 You can use PowerShell Direct with JEA to give a Hyper-V administrator limited access to your VM.
 This can be useful if you lose network connectivity to your VM and need a datacenter admin to fix
@@ -213,3 +211,16 @@ Windows machine by default, including using unconstrained PowerShell. That allow
 file system and learn more about your OS environment. To lock down a Hyper-V administrator and limit
 them to only access a VM using PowerShell Direct with JEA, you must deny local logon rights to the
 Hyper-V admin's JEA account.
+
+<!-- link references -->
+[01]: /dotnet/api/system.management.automation.runspaces.wsmanconnectioninfo
+[02]: /powershell/module/microsoft.powershell.core/enter-pssession
+[03]: /powershell/module/microsoft.powershell.core/import-module
+[04]: /powershell/module/microsoft.powershell.core/invoke-command
+[05]: /powershell/module/microsoft.powershell.core/New-PSSession
+[06]: /powershell/module/microsoft.powershell.utility/Export-PSSession
+[07]: /powershell/module/microsoft.powershell.utility/import-pssession
+[08]: /virtualization/hyper-v-on-windows/user-guide/powershell-direct
+[09]: #using-jea-with-implicit-remoting
+[10]: https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/
+[12]: role-capabilities.md#creating-custom-functions

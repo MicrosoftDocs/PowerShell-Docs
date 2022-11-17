@@ -1,6 +1,6 @@
 ---
 description: The PowerShell Gallery is the central repository for PowerShell modules, scripts, and DSC resources.
-ms.date: 04/21/2022
+ms.date: 11/16/2022
 title: The PowerShell Gallery
 ---
 # The PowerShell Gallery

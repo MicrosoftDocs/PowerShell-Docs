@@ -1,6 +1,6 @@
 ---
 description: This article describes the prerequisites that must be satisfied to start using JEA.
-ms.date: 10/07/2021
+ms.date: 11/16/2022
 title: JEA Prerequisites
 ---
 # JEA Prerequisites
@@ -59,8 +59,7 @@ You can also use JEA on your home or work computer:
 ### Install Windows Management Framework
 
 If you're running an older version of PowerShell, you may need to update your system with the latest
-Windows Management Framework (WMF) update. For more information, see the
-[WMF documentation](/powershell/scripting/wmf/overview).
+Windows Management Framework (WMF) update. For more information, see the [WMF documentation][02].
 
 It's recommended that you test your workload's compatibility with WMF before upgrading all of your
 servers.
@@ -72,7 +71,7 @@ PowerShell.
 
 PowerShell Remoting provides the foundation on which JEA is built. It's necessary to ensure
 PowerShell Remoting is enabled and properly secured before you can use JEA. For more information,
-see [WinRM Security](/powershell/scripting/learn/remoting/winrmsecurity).
+see [WinRM Security][01].
 
 PowerShell Remoting is enabled by default on Windows Server 2012, 2012 R2, and 2016. You can enable
 PowerShell Remoting by running the following command in an elevated PowerShell window.
@@ -108,12 +107,17 @@ You can also enable system-wide PowerShell transcription through Group Policy.
 
 ## Next steps
 
-[Create a role capability file](role-capabilities.md)
-
-[Create a session configuration file](session-configurations.md)
+- [Create a role capability file][04]
+- [Create a session configuration file][05]
 
 ## See also
 
-[WinRM Security](/powershell/scripting/learn/remoting/winrmsecurity)
+- [WinRM Security][01]
+- [PowerShell ♥ the Blue Team][03]
 
-[PowerShell ♥ the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
+<!-- link references -->
+[01]: /powershell/scripting/learn/remoting/winrmsecurity
+[02]: /powershell/scripting/wmf/overview
+[03]: https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
+[04]: role-capabilities.md
+[05]: session-configurations.md

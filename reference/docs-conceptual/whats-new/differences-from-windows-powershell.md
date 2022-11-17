@@ -22,11 +22,11 @@ article is to present the current state of PowerShell and how that is different 
 PowerShell. For a detailed discussion of changes between versions and the addition of new features,
 see the **What's New** articles for each version.
 
-- [What's new in PowerShell 7.3][WhatsNew73]
-- [What's new in PowerShell 7.2][WhatsNew72]
-- [What's new in PowerShell 7.1][WhatsNew71]
-- [What's new in PowerShell 7.0][WhatsNew70]
-- [What's new in PowerShell 6.x][WhatsNew6x]
+- [What's new in PowerShell 7.3][34]
+- [What's new in PowerShell 7.2][33]
+- [What's new in PowerShell 7.1][27]
+- [What's new in PowerShell 7.0][32]
+- [What's new in PowerShell 6.x][28]
 
 ## .NET Framework vs .NET Core
 
@@ -35,7 +35,7 @@ Microsoft Windows. This is significant because PowerShell provides direct access
 framework types and methods. As a result, scripts that run on Windows may not run on non-Windows
 platforms because of the differences in the frameworks. For more information about changes in .NET
 Core, see
-[Breaking changes for migration from .NET Framework to .NET Core][fxcore].
+[Breaking changes for migration from .NET Framework to .NET Core][03].
 
 Each new release of PowerShell is built on a newer version of .NET. There can be breaking changes in
 .NET that affect PowerShell.
@@ -48,17 +48,15 @@ Each new release of PowerShell is built on a newer version of .NET. There can be
 - PowerShell 6.1 - Built on .NET Core 2.1
 - PowerShell 6.0 - Built on .NET Core 2.0
 
-With the advent of [.NET Standard 2.0][NETStd2], PowerShell can load many traditional Windows
+With the advent of [.NET Standard 2.0][30], PowerShell can load many traditional Windows
 PowerShell modules without modification. Additionally, PowerShell 7 includes a Windows PowerShell
 Compatibility feature that allows you to use Windows PowerShell modules that still require the full
 framework.
 
 For more information see:
 
-- [about_Windows_PowerShell_Compatibility][about-WinCompat]
-- [PowerShell 7 module compatibility][mod-compat]
-
-[!INCLUDE [Product terminology](../../includes/product-terms.md)]
+- [about_Windows_PowerShell_Compatibility][09]
+- [PowerShell 7 module compatibility][29]
 
 ## Modules no longer shipped with PowerShell
 
@@ -74,8 +72,8 @@ For various compatibility reasons, the following modules are no longer included 
 
 ### PowerShell Workflow
 
-[PowerShell Workflow][workflow] is a feature in Windows PowerShell that builds on top of
-[Windows Workflow Foundation (WF)][workflow-foundation] that enables the creation of robust runbooks
+[PowerShell Workflow][26] is a feature in Windows PowerShell that builds on top of
+[Windows Workflow Foundation (WF)][04] that enables the creation of robust runbooks
 for long-running or parallelized tasks.
 
 Due to the lack of support for Windows Workflow Foundation in .NET Core, we removed PowerShell
@@ -212,7 +210,7 @@ Windows-specific features:
 
 Beginning with PowerShell 7.2, the PSDesiredStateConfiguration module has been removed from
 PowerShell and has been published to the PowerShell Gallery. For more information, see the
-[announcement][PSDSC-announce] in the PowerShell Team blog.
+[announcement][31] in the PowerShell Team blog.
 
 ## PowerShell executable changes
 
@@ -250,11 +248,10 @@ was added. Switch values are also supported.
 
 For Windows, a new switch parameter **UseWindowsPowerShell** is added to `Import-Module`. This
 switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
-implicitly run any cmdlets contained in that module. For more information, see
-[Import-Module][Import-Module].
+implicitly run any cmdlets contained in that module. For more information, see [Import-Module][14].
 
 For more information on which Microsoft modules work with PowerShell 7.0, see the
-[Module Compatibility Table][mod-compat].
+[Module Compatibility Table][29].
 
 ### Microsoft Update support for Windows
 
@@ -282,7 +279,7 @@ as short hand to match `-inputformat`, which now needs to be `-in`.
 
 ### Custom snap-ins
 
-[PowerShell snap-ins][snapin] are a predecessor to PowerShell modules that do not have widespread
+[PowerShell snap-ins][07] are a predecessor to PowerShell modules that do not have widespread
 adoption in the PowerShell community.
 
 Due to the complexity of supporting snap-ins and their lack of usage in the community, we no longer
@@ -290,8 +287,8 @@ support custom snap-ins in PowerShell.
 
 ### Experimental feature flags
 
-PowerShell 6.2 enabled support for [Experimental Features][exp]. This allows PowerShell developers
-to deliver new features and get feedback before the design is complete. This way we avoid making
+PowerShell 6.2 enabled support for [Experimental Features][06]. This allows PowerShell developers to
+deliver new features and get feedback before the design is complete. This way we avoid making
 breaking changes as the design evolves.
 
 Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable or
@@ -315,9 +312,9 @@ the result of the pipeline or statements executed.
 
 ### Fix `$?` to not be `$false` when native command writes to `stderr`
 
-`$?` is not set to `$false` when native command writes to `stderr`. It is common for native
-commands to write to `stderr` without intending to indicate a failure. `$?` is set to `$false` only
-when the native command has a non-zero exit code.
+`$?` is not set to `$false` when native command writes to `stderr`. It is common for native commands
+to write to `stderr` without intending to indicate a failure. `$?` is set to `$false` only when the
+native command has a non-zero exit code.
 
 ### Make `$ErrorActionPreference` not affect `stderr` output of native commands
 
@@ -333,9 +330,9 @@ tools and operating systems.
 
 ### Unify cmdlets with parameter `-Encoding` to be of type `System.Text.Encoding`
 
-The `-Encoding` value `Byte` has been removed from the filesystem provider cmdlets. A new
-parameter, `-AsByteStream`, is now used to specify that a byte stream is required as input or that
-the output is a stream of bytes.
+The `-Encoding` value `Byte` has been removed from the filesystem provider cmdlets. A new parameter,
+`-AsByteStream`, is now used to specify that a byte stream is required as input or that the output
+is a stream of bytes.
 
 ### Change `New-ModuleManifest` encoding to `UTF8NoBOM` on non-Windows platforms
 
@@ -351,8 +348,8 @@ for a few frequently used aliases where the lookup was faster.
 ### `-Verbose` and `-Debug` no longer overrides `$ErrorActionPreference`
 
 Previously, if `-Verbose` or `-Debug` were specified, it overrode the behavior of
-`$ErrorActionPreference`. With this change, `-Verbose` and `-Debug` no longer affect the behavior
-of `$ErrorActionPreference`.
+`$ErrorActionPreference`. With this change, `-Verbose` and `-Debug` no longer affect the behavior of
+`$ErrorActionPreference`.
 
 Also, the `-Debug` parameter sets `$DebugPreference` to **Continue** instead of **Inquire**.
 
@@ -403,10 +400,9 @@ Name: Hello; Path: MyPath; Args: -Blah: World
 
 ### Null-coalescing operator `??`
 
-The null-coalescing operator `??` returns the value of its left-hand operand if
-it isn't null. Otherwise, it evaluates the right-hand operand and returns its
-result. The `??` operator doesn't evaluate its right-hand operand if the
-left-hand operand evaluates to non-null.
+The null-coalescing operator `??` returns the value of its left-hand operand if it isn't null.
+Otherwise, it evaluates the right-hand operand and returns its result. The `??` operator doesn't
+evaluate its right-hand operand if the left-hand operand evaluates to non-null.
 
 ```powershell
 $x = $null
@@ -430,10 +426,9 @@ $todaysDate ?? (Get-Date).ToShortDateString()
 
 ### Null-coalescing assignment operator `??=`
 
-The null-coalescing assignment operator `??=` assigns the value of its
-right-hand operand to its left-hand operand only if the left-hand operand
-evaluates to null. The `??=` operator doesn't evaluate its right-hand operand
-if the left-hand operand evaluates to non-null.
+The null-coalescing assignment operator `??=` assigns the value of its right-hand operand to its
+left-hand operand only if the left-hand operand evaluates to null. The `??=` operator doesn't
+evaluate its right-hand operand if the left-hand operand evaluates to non-null.
 
 ```powershell
 $x = $null
@@ -461,14 +456,12 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 > [!NOTE]
 > This feature was moved from experimental to mainstream in PowerShell 7.1.
 
-A null-conditional operator applies a member access, `?.`, or element access,
-`?[]`, operation to its operand only if that operand evaluates to non-null;
-otherwise, it returns null.
+A null-conditional operator applies a member access, `?.`, or element access, `?[]`, operation to
+its operand only if that operand evaluates to non-null; otherwise, it returns null.
 
-Since PowerShell allows `?` to be part of the variable name, formal
-specification of the variable name is required for using these operators. So it
-is required to use `{}` around the variable names like `${a}` or when `?` is
-part of the variable name `${a?}`.
+Since PowerShell allows `?` to be part of the variable name, formal specification of the variable
+name is required for using these operators. So it is required to use `{}` around the variable names
+like `${a}` or when `?` is part of the variable name `${a?}`.
 
 In the following example, the value of **PropName** is returned.
 
@@ -508,9 +501,8 @@ ${a}?[0]
 ```
 
 > [!NOTE]
-> The variable name syntax of `${<name>}` should not be confused with the `$()`
-> subexpression operator. For more information, see Variable name section of
-> [about_Variables][about_Variables].
+> The variable name syntax of `${<name>}` should not be confused with the `$()` subexpression
+> operator. For more information, see Variable name section of [about_Variables][08].
 
 ### Added `&` operator for job control
 
@@ -589,7 +581,7 @@ class M {
 
 PowerShell 7.1 is built on .NET 5.0, which introduced the following breaking change:
 
-- [Behavior changes when comparing strings on .NET 5+][NET5-strings]
+- [Behavior changes when comparing strings on .NET 5+][05]
 
 As of .NET 5.0, culture invariant string comparisons ignore non-printing control characters.
 
@@ -608,18 +600,18 @@ True
 
 ### New Get-Uptime cmdlet
 
-The [Get-Uptime][Get-Uptime] cmdlet returns the time elapsed since the last boot of the operating
-system. The cmdlet was introduced in PowerShell 6.0.
+The [Get-Uptime][19] cmdlet returns the time elapsed since the last boot of the operating system.
+The cmdlet was introduced in PowerShell 6.0.
 
 ### New Remove-Alias cmdlet
 
-The [Remove-Alias][Remove-Alias] cmdlet removes an alias from the current PowerShell session. The
-cmdlet was introduced in PowerShell 6.0.
+The [Remove-Alias][21] cmdlet removes an alias from the current PowerShell session. The cmdlet was
+introduced in PowerShell 6.0.
 
 ### New cmdlet Remove-Service
 
-The [Remove-Service][Remove-Service] cmdlet removes a Windows service in the registry and in the service database.
-The `Remove-Service` cmdlet was introduced in PowerShell 6.0.
+The [Remove-Service][15] cmdlet removes a Windows service in the registry and in the service
+database. The `Remove-Service` cmdlet was introduced in PowerShell 6.0.
 
 ### New Markdown cmdlets
 
@@ -628,18 +620,18 @@ rendered into HTML.
 
 The following cmdlets were added in PowerShell 6.1:
 
-- [ConvertFrom-Markdown][ConvertFrom-Markdown] - Convert the contents of a string or a file to a
-  **MarkdownInfo** object.
-- [Get-MarkdownOption][Get-MarkdownOption] - Returns the current colors and styles used for
-  rendering Markdown content in the console.
-- [Set-MarkdownOption][Set-MarkdownOption] - Sets the colors and styles used for rendering Markdown
+- [ConvertFrom-Markdown][16] - Convert the contents of a string or a file to a **MarkdownInfo**
+  object.
+- [Get-MarkdownOption][18] - Returns the current colors and styles used for rendering Markdown
   content in the console.
-- [Show-Markdown][Show-Markdown] - Displays Markdown content in the console or as HTML
+- [Set-MarkdownOption][22] - Sets the colors and styles used for rendering Markdown content in the
+  console.
+- [Show-Markdown][23] - Displays Markdown content in the console or as HTML
 
 ### New Test-Json cmdlet
 
-The [Test-Json][Test-Json] cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document
-and can optionally verify that JSON document against a provided schema.
+The [Test-Json][24] cmdlet tests whether a string is a valid JavaScript Object Notation (JSON)
+document and can optionally verify that JSON document against a provided schema.
 
 This cmdlet was introduced in PowerShell 6.1
 
@@ -647,14 +639,14 @@ This cmdlet was introduced in PowerShell 6.1
 
 The following cmdlets were added in PowerShell 6.2 to support Experimental Features.
 
-- [Disable-ExperimentalFeature][Disable-ExperimentalFeature]
-- [Enable-ExperimentalFeature][Enable-ExperimentalFeature]
-- [Get-ExperimentalFeature][Get-ExperimentalFeature]
+- [Disable-ExperimentalFeature][10]
+- [Enable-ExperimentalFeature][11]
+- [Get-ExperimentalFeature][13]
 
 ### New Join-String cmdlet
 
-The [Join-String][Join-String] cmdlet combines objects from the pipeline into a single string. This cmdlet was
-added in PowerShell 6.2.
+The [Join-String][20] cmdlet combines objects from the pipeline into a single string. This cmdlet
+was added in PowerShell 6.2.
 
 ### New view ConciseView and cmdlet Get-Error
 
@@ -687,8 +679,8 @@ $ErrorView = 'ConciseView' # Sets the error view to ConciseView
 ```
 
 > [!NOTE]
-> A new property **ErrorAccentColor** is added to `$Host.PrivateData` to support changing
-> the accent color of the error message.
+> A new property **ErrorAccentColor** is added to `$Host.PrivateData` to support changing the accent
+> color of the error message.
 
 The new `Get-Error`cmdlet provides a complete detailed view of the fully qualified error when
 desired. By default the cmdlet displays the full details, including inner exceptions, of the last
@@ -708,7 +700,7 @@ from the current session you wish displayed.
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
 ```
 
-For more information, see [Get-Error][Get-Error].
+For more information, see [Get-Error][17].
 
 ## Cmdlet changes
 
@@ -740,10 +732,10 @@ name.
 The new **ThrottleLimit** parameter limits the number of script blocks running in parallel at a
 given time. The default is 5.
 
-Use the `$_` variable to represent the current input object in the script block. Use the
-`$using:` scope to pass variable references to the running script block.
+Use the `$_` variable to represent the current input object in the script block. Use the `$using:`
+scope to pass variable references to the running script block.
 
-For more information, see [ForEach-Object][ForEach-Object].
+For more information, see [ForEach-Object][12].
 
 ### Check `system32` for compatible built-in modules on Windows
 
@@ -765,8 +757,8 @@ We created a standard parameter alias `-lp` for all the built-in PowerShell cmdl
 ### Fix `Get-Item -LiteralPath a*b` if `a*b` doesn't actually exist to return error
 
 Previously, `-LiteralPath` given a wildcard would treat it the same as `-Path` and if the wildcard
-found no files, it would silently exit. Correct behavior should be that `-LiteralPath` is literal
-so if the file doesn't exist, it should error. Change is to treat wildcards used with `-Literal` as
+found no files, it would silently exit. Correct behavior should be that `-LiteralPath` is literal so
+if the file doesn't exist, it should error. Change is to treat wildcards used with `-Literal` as
 literal.
 
 ### Set working directory to current directory in `Start-Job`
@@ -853,8 +845,8 @@ Use `-IncludeTypeInformation` to retain the previous behavior.
 ### Allow `*` to be used in registry path for `Remove-Item`
 
 Previously, `-LiteralPath` given a wildcard would treat it the same as `-Path` and if the wildcard
-found no files, it would silently exit. Correct behavior should be that `-LiteralPath` is literal
-so if the file doesn't exist, it should error. Change is to treat wildcards used with `-Literal` as
+found no files, it would silently exit. Correct behavior should be that `-LiteralPath` is literal so
+if the file doesn't exist, it should error. Change is to treat wildcards used with `-Literal` as
 literal.
 
 ### Group-Object now sorts the groups
@@ -975,8 +967,8 @@ Internet Explorer have resulted in several breaking changes within `Invoke-WebRe
 ### Invoke-RestMethod returns useful info when no data is returned
 
 When an API returns just `null`, `Invoke-RestMethod` was serializing this as the string `"null"`
-instead of `$null`. This change fixes the logic in `Invoke-RestMethod` to properly serialize a
-valid single value JSON `null` literal as `$null`.
+instead of `$null`. This change fixes the logic in `Invoke-RestMethod` to properly serialize a valid
+single value JSON `null` literal as `$null`.
 
 ### Web Cmdlets warn when `-Credential` is sent over unencrypted connections
 
@@ -1004,8 +996,8 @@ rarely used with `Add-Type`. We removed this feature to reduce the size of Power
 ### Removed `RunspaceConfiguration` support
 
 Previously, when creating a PowerShell runspace programmatically using the API, you could use the
-legacy [`RunspaceConfiguration`][runspaceconfig] or the newer [`InitialSessionState`][iss] classes.
-This change removed support for `RunspaceConfiguration` and only supports `InitialSessionState`.
+legacy [`RunspaceConfiguration`][02] or the newer [`InitialSessionState`][01] classes. This change
+removed support for `RunspaceConfiguration` and only supports `InitialSessionState`.
 
 ### `CommandInvocationIntrinsics.InvokeScript` bind arguments to `$input` instead of `$args`
 
@@ -1052,8 +1044,8 @@ in a `PSObject` brings unneeded troubles:
 
 - When the value is converted to the delegate return type, the `PSObject` essentially gets
   unwrapped. So the `PSObject` is unneeded.
-- When the delegate return type is `object`, it gets wrapped in a `PSObject` making it hard to
-  work with in C# code.
+- When the delegate return type is `object`, it gets wrapped in a `PSObject` making it hard to work
+  with in C# code.
 
 After this change, the returned object is the underlying object.
 
@@ -1064,12 +1056,11 @@ HTTPS. PSRP on macOS only supports Basic Auth over HTTPS. Kerberos-based authent
 supported for non-Windows platforms.
 
 PowerShell also supports PowerShell Remoting (PSRP) over SSH on all platforms (Windows, macOS, and
-Linux). For more information, see
-[SSH remoting in PowerShell][ssh-remote].
+Linux). For more information, see [SSH remoting in PowerShell][25].
 
 ### PowerShell Direct for Containers tries to use `pwsh` first
 
-[PowerShell Direct][psdirect] is a feature of PowerShell and Hyper-V that allows you to connect to a
+[PowerShell Direct][31] is a feature of PowerShell and Hyper-V that allows you to connect to a
 Hyper-V VM or Container without network connectivity or other remote management services.
 
 In the past, PowerShell Direct connected using the built-in Windows PowerShell instance on the
@@ -1088,8 +1079,8 @@ Container. Now, PowerShell Direct first attempts to connect using any available 
 This behavior is useful if you want to have multiple PowerShell 6 versions installed and accessible
 on the same machine.
 
-Additionally, preview versions of PowerShell now get their own
-remoting session configurations after running the `Enable-PSRemoting` cmdlet:
+Additionally, preview versions of PowerShell now get their own remoting session configurations after
+running the `Enable-PSRemoting` cmdlet:
 
 ```powershell
 C:\WINDOWS\system32> Enable-PSRemoting
@@ -1153,41 +1144,38 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 `yes`, or `1`. We no longer support deletion of the file
 `DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` to disable telemetry.
 
-<!-- Link references -->
-[workflow]: /previous-versions/powershell/scripting/components/workflows-guide
-[workflow-foundation]: /dotnet/framework/windows-workflow-foundation/
-[NETStd2]: https://devblogs.microsoft.com/dotnet/introducing-net-standard/
-[about-WinCompat]: /powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility
-[mod-compat]: https://aka.ms/PSModuleCompat
-[WhatsNew73]: What-s-New-in-PowerShell-73.md
-[WhatsNew72]: What-s-New-in-PowerShell-72.md
-[WhatsNew71]: What-s-New-in-PowerShell-71.md
-[WhatsNew70]: What-s-New-in-PowerShell-70.md
-[WhatsNew6x]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-core-62?view=powershell-6&preserve-view=true
-[fxcore]: /dotnet/core/compatibility/fx-core
-[PSDSC-annouce]: https://devblogs.microsoft.com/powershell/announcing-psdesiredstateconfiguration-on-powershell-gallery/
-[Module Compatibility Table]: https://aka.ms/PSModuleCompat
-[NET5-strings]: /dotnet/standard/base-types/string-comparison-net-5-plus
-[ssh-remote]: /powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core
-[PowerShell Direct]: /virtualization/hyper-v-on-windows/user-guide/powershell-direct
-[runspaceconfig]: /dotnet/api/system.management.automation.runspaces.runspaceconfiguration
-[iss]: /dotnet/api/system.management.automation.runspaces.initialsessionstate
-[snapin]: /powershell/module/microsoft.powershell.core/about/about_pssnapins
-[exp]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
-[Disable-ExperimentalFeature]: /powershell/module/Microsoft.PowerShell.Core/Disable-ExperimentalFeature
-[Enable-ExperimentalFeature]: /powershell/module/Microsoft.PowerShell.Core/Enable-ExperimentalFeature
-[Get-ExperimentalFeature]: /powershell/module/Microsoft.PowerShell.Core/Get-ExperimentalFeature
-[Remove-Service]: /powershell/module/Microsoft.PowerShell.Management/Remove-Service
-[ConvertFrom-Markdown]: /powershell/module/Microsoft.PowerShell.Utility/ConvertFrom-Markdown
-[Get-MarkdownOption]: /powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption
-[Set-MarkdownOption]: /powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption
-[Show-Markdown]: /powershell/module/Microsoft.PowerShell.Utility/Show-Markdown
-[Remove-Alias]: /powershell/module/Microsoft.PowerShell.Utility/Remove-Alias
-[Remove-Service]: /powershell/module/Microsoft.PowerShell.Utility/Remote-Service
-[Join-String]: /powershell/module/Microsoft.PowerShell.Utility/Join-String
-[Get-Uptime]: /powershell/module/Microsoft.PowerShell.Utility/Get-Uptime
-[Test-Json]: /powershell/module/Microsoft.PowerShell.Utility/Test-Json
-[Get-Error]: /powershell/module/microsoft.powershell.utility/get-error
-[ForEach-Object]: /powershell/module/microsoft.powershell.core/foreach-object
-[Import-Module]: /powershell/module/microsoft.powershell.core/import-module
-[about_Variables]: /powershell/module/microsoft.powershell.core/about/about_Variables#variable-names-that-include-special-characters
+<!-- link references -->
+[01]: /dotnet/api/system.management.automation.runspaces.initialsessionstate
+[02]: /dotnet/api/system.management.automation.runspaces.runspaceconfiguration
+[03]: /dotnet/core/compatibility/fx-core
+[04]: /dotnet/framework/windows-workflow-foundation/
+[05]: /dotnet/standard/base-types/string-comparison-net-5-plus
+[06]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
+[07]: /powershell/module/microsoft.powershell.core/about/about_pssnapins
+[08]: /powershell/module/microsoft.powershell.core/about/about_Variables#variable-names-that-include-special-characters
+[09]: /powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility
+[10]: /powershell/module/Microsoft.PowerShell.Core/Disable-ExperimentalFeature
+[11]: /powershell/module/Microsoft.PowerShell.Core/Enable-ExperimentalFeature
+[12]: /powershell/module/microsoft.powershell.core/foreach-object
+[13]: /powershell/module/Microsoft.PowerShell.Core/Get-ExperimentalFeature
+[14]: /powershell/module/microsoft.powershell.core/import-module
+[15]: /powershell/module/Microsoft.PowerShell.Management/Remove-Service
+[16]: /powershell/module/Microsoft.PowerShell.Utility/ConvertFrom-Markdown
+[17]: /powershell/module/microsoft.powershell.utility/get-error
+[18]: /powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption
+[19]: /powershell/module/Microsoft.PowerShell.Utility/Get-Uptime
+[20]: /powershell/module/Microsoft.PowerShell.Utility/Join-String
+[21]: /powershell/module/Microsoft.PowerShell.Utility/Remove-Alias
+[22]: /powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption
+[23]: /powershell/module/Microsoft.PowerShell.Utility/Show-Markdown
+[24]: /powershell/module/Microsoft.PowerShell.Utility/Test-Json
+[25]: /powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core
+[26]: /previous-versions/powershell/scripting/components/workflows-guide
+[27]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-71
+[28]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-core-62?view=powershell-6&preserve-view=true
+[29]: https://aka.ms/PSModuleCompat
+[30]: https://devblogs.microsoft.com/dotnet/introducing-net-standard/
+[31]: https://devblogs.microsoft.com/powershell/announcing-psdesiredstateconfiguration-on-powershell-gallery/
+[32]: What-s-New-in-PowerShell-70.md
+[33]: What-s-New-in-PowerShell-72.md
+[34]: What-s-New-in-PowerShell-73.md

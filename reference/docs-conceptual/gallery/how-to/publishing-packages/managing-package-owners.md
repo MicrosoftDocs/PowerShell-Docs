@@ -1,6 +1,6 @@
 ---
 description: Ownership of a package in the PowerShell Gallery is defined by who published the package to the gallery.
-ms.date: 06/12/2017
+ms.date: 11/16/2022
 title: Managing package owners
 ---
 # Managing package owners

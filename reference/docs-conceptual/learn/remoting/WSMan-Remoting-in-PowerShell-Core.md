@@ -1,6 +1,6 @@
 ---
 description: Remoting in PowerShell using WSMan
-ms.date: 10/22/2021
+ms.date: 11/16/2022
 title: WS-Management (WSMan) Remoting in PowerShell
 ---
 # WS-Management (WSMan) Remoting in PowerShell
@@ -18,8 +18,7 @@ An installation of PowerShell can establish PowerShell sessions to remote comput
 connections, the user must create a WinRM remoting endpoint. This is an explicit opt-in scenario
 where the user runs Install-PowerShellRemoting.ps1 to create the WinRM endpoint. The installation
 script is a short-term solution until we add additional functionality to `Enable-PSRemoting` to
-perform the same action. For more details, please see issue
-[#1193](https://github.com/PowerShell/PowerShell/issues/1193).
+perform the same action. For more details, please see issue [#1193][01].
 
 ### Script Actions
 
@@ -69,5 +68,8 @@ New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```
 
-Note that `New-PSSession` and `Enter-PSSession` invocations that do not specify `-ConfigurationName`
+Note that `New-PSSession` and `Enter-PSSession` invocations that don't specify `-ConfigurationName`
 will target the default PowerShell endpoint, `microsoft.powershell`.
+
+<!-- link references -->
+[01]: https://github.com/PowerShell/PowerShell/issues/1193

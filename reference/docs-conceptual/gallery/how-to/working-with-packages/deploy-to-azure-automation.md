@@ -1,6 +1,6 @@
 ---
 description: This article describes how to use the PowerShell Gallery to deploy a package to Azure Automation.
-ms.date: 11/11/2021
+ms.date: 11/16/2022
 title: Deploy to Azure Automation
 ---
 # Deploy to Azure Automation

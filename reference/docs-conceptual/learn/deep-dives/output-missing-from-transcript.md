@@ -1,7 +1,7 @@
 ---
 description: This articles explains the limitations of PowerShell transcripts and the cases than can cause data to be logged out of order or be missing from the transcript.
 ms.custom: wiki-migration
-ms.date: 06/06/2022
+ms.date: 11/16/2022
 title: Limitations of PowerShell transcripts
 ---
 # Limitations of PowerShell transcripts

@@ -1,6 +1,6 @@
 ---
 description: The PowerShellGet module provides support for tagging modules with versions greater than 1.0.0 as a prerelease using semantic versioning.
-ms.date: 09/26/2017
+ms.date: 11/16/2022
 title: Prerelease Module Versions
 ---
 # Prerelease Module Versions
