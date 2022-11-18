@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/14/2019
+ms.date: 11/18/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/rename-itemproperty?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-ItemProperty
@@ -287,6 +287,11 @@ This cmdlet generates a **PSCustomObject** that represents the renamed item prop
 the **PassThru** parameter. Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Rename-ItemProperty`:
+
+- All platforms:
+  - `rnp`
 
 `Remove-ItemProperty` is designed to work with the data exposed by any provider. To list the
 providers available in your session, type `Get-PSProvider`. For more information, see

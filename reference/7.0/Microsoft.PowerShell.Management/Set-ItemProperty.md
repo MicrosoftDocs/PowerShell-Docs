@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/28/2022
+ms.date: 11/18/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ItemProperty
@@ -432,6 +432,11 @@ new property value, if you specify the **PassThru** parameter. Otherwise, this c
 generate any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Set-ItemProperty`:
+
+- All platforms:
+  - `sp`
 
 `Set-ItemProperty` is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see

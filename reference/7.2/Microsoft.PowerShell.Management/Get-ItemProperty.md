@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/11/2022
+ms.date: 11/18/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-itemproperty?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ItemProperty
@@ -249,6 +249,11 @@ You can pipe a string that contains a path to `Get-ItemProperty`.
 the object that is retrieved. For example, in a file system drive, it might return a file or folder.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Get-ItemProperty`:
+
+- All platforms:
+  - `gp`
 
 The `Get-ItemProperty` cmdlet is designed to work with the data exposed by any provider. To list the
 providers available in your session, type `Get-PSProvider`. For more information, see

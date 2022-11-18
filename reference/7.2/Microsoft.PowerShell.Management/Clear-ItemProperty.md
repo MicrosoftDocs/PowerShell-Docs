@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/14/2019
+ms.date: 11/18/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/clear-itemproperty?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-ItemProperty
@@ -271,6 +271,11 @@ When you use the **PassThru** parameter, `Clear-ItemProperty` generates a **PSCu
 that represents the cleared item property. Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Clear-ItemProperty`:
+
+- All platforms:
+  - `clp`
 
 - You can use `Clear-ItemProperty` to delete the data in registry values without deleting the value.
   If the data type of the value is Binary or DWORD, clearing the data sets the value to zero.
