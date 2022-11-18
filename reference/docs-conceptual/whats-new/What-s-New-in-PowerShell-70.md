@@ -300,8 +300,7 @@ $a = $null
 ${a}?[0]
 ```
 
-For more information
-[About_Operators][04].
+For more information [About_Operators][04].
 
 ## New view ConciseView and cmdlet Get-Error
 
