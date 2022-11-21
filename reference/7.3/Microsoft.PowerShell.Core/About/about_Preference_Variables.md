@@ -1099,15 +1099,16 @@ Arg 2 is <a b>
 
 ## $PSNativeCommandUseErrorActionPreference
 
-This preference variable is only available in PowerShell 7.3 with the
+This preference variable is available in PowerShell 7.3 and later with the
 `PSNativeCommandErrorActionPreference` feature enabled.
 
 With this feature enabled, native commands with non-zero exit codes issue
 errors according to `$ErrorActionPreference` when
 `$PSNativeCommandUseErrorActionPreference` is `$true`.
 
-For more information, see
-[PSNativeCommandErrorActionPreference][13].
+> [!NOTE]
+> `PSNativeCommandUseErrorActionPreference` is an experimental feature added in
+> PowerShell 7.3. For more information, see [Using experimental features][13].
 
 ## $PSSessionApplicationName
 
@@ -1375,8 +1376,8 @@ objects.
 > [about_Experimental_Features][39] and
 > [Using experimental features][12].
 >
-> In PowerShell 7.3-preview.8, the `PSAnsiRenderingFileInfo` feature became
-> mainstream and available by default.
+> In PowerShell 7.3, the `PSAnsiRenderingFileInfo` feature became mainstream
+> and available by default.
 
 ## $Transcript
 
