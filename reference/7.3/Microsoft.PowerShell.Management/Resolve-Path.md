@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/16/2022
+ms.date: 11/22/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resolve-Path
@@ -203,6 +203,11 @@ Returns a **PathInfo** object. Returns a string value for the resolved path if y
 **Relative** parameter.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Resolve-Path`:
+
+- All platforms:
+  - `rvpa`
 
 The `*-Path` cmdlets work with the **FileSystem**, **Registry**, and **Certificate** providers.
 

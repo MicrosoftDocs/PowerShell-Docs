@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/12/2020
+ms.date: 11/22/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/convert-path?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Convert-Path
@@ -118,6 +118,11 @@ You can pipe a path, but not a literal path, to this cmdlet.
 This cmdlet returns a string that contains the converted path.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Convert-Path`:
+
+- All platforms:
+  - `cvpa`
 
 The cmdlets that contain the Path noun manipulate path names and return the names in a concise
 format that all PowerShell providers can interpret. They are designed for use in programs and
