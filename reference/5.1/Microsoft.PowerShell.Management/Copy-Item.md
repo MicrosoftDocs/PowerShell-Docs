@@ -665,7 +665,7 @@ item. Otherwise, this cmdlet doesn't generate any output.
 
 ## NOTES
 
-PowerShell includes the following aliases for `Copy-Item`:
+Windows PowerShell includes the following aliases for `Copy-Item`:
 
 - `copy`
 - `cp`
