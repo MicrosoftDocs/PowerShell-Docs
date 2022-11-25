@@ -10,37 +10,36 @@ title: Import-PowerShellDataFile
 # Import-PowerShellDataFile
 
 ## SYNOPSIS
+
 Imports values from a `.PSD1` file without invoking its contents.
 
 ## SYNTAX
 
 ### ByPath (Default)
 
-```
+```powershell
 Import-PowerShellDataFile [[-Path] <String[]>] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
-```
+```powershell
 Import-PowerShellDataFile [-LiteralPath <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Import-PowerShellDataFile` cmdlet safely imports key-value pairs from hashtables defined in a
-`.PSD1` file. The values could be imported using `Invoke-Expression` on the contents of the file.
-However, `Invoke-Expression` runs any code contained in the file. This could produce unwanted
-results or execute unsafe code. `Import-PowerShellDataFile` imports the data without invoking the
-code.
+The `Import-PowerShellDataFile` cmdlet safely imports key-value pairs from hashtables defined in a `.PSD1` file.
+The values could be imported using `Invoke-Expression` on the contents of the file.
+However, `Invoke-Expression` runs any code contained in the file. This could produce unwanted results or execute unsafe code.
+`Import-PowerShellDataFile` imports the data without invoking the code.
 
 ## EXAMPLES
 
 ### Example 1: Retrieve values from PSD1
 
-This example retrieves the key-value pairs stored in the hashtable kept inside the
-`Configuration.psd1` file. `Get-Content` is used to show the contents of the `Configuration.psd1`
-file.
+This example retrieves the key-value pairs stored in the hashtable kept inside the `Configuration.psd1` file.
+`Get-Content` is used to show the contents of the `Configuration.psd1` file.
 
 ```powershell
 Get-Content .\Configuration.psd1
@@ -48,7 +47,7 @@ $config = Import-PowerShellDataFile .\Configuration.psd1
 $config.AllNodes
 ```
 
-```Output
+```output
 @{
     AllNodes = @(
         @{
@@ -104,9 +103,8 @@ Accept wildcard characters: True
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
