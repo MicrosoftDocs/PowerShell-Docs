@@ -524,7 +524,7 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%Z` | Time zone offset from Universal Time Coordinate (UTC)                   | -07                      |
 
 > [!NOTE]
-> Window sPowerShell's behavior with `Get-Date -UFormat %s` is incorrect in two respects:
+> Windows PowerShell's behavior with `Get-Date -UFormat %s` is incorrect in two respects:
 >
 > - The return value is based on local time instead of UTC time.
 > - The string representation of the seconds value has a fractional part. The output is
