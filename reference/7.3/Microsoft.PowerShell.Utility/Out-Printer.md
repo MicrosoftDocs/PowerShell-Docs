@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/28/2019
+ms.date: 11/28/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/out-printer?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Printer
@@ -24,7 +24,8 @@ Out-Printer [[-Name] <String>] [-InputObject <PSObject>] [<CommonParameters>]
 > **This cmdlet is only available on the Windows platform.**
 
 The `Out-Printer` cmdlet sends output to the default printer or to an alternate printer, if one is
-specified.
+specified. Since the cmdlet doesn't have any way to configure the print job, the resulting print job
+uses the default settings defined for the printer.
 
 > [!NOTE]
 > This cmdlet was reintroduced in PowerShell 7. This cmdlet is only available on Windows systems
