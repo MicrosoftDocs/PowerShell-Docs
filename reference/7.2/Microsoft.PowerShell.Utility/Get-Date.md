@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/25/2020
+ms.date: 11/28/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
@@ -110,7 +110,7 @@ The .NET format specifiers used in this example are defined as follows:
 | `MM`      | Month number                                          |
 | `dd`      | Day of the month - 2 digits                           |
 | `yyyy`    | Year in 4-digit format                                |
-| `HH:mm`   | Time in 24-hour format - no seconds                    |
+| `HH:mm`   | Time in 24-hour format - no seconds                   |
 | `K`       | Time zone offset from Universal Time Coordinate (UTC) |
 
 For more information about .NET format specifiers, see
@@ -139,7 +139,7 @@ The **UFormat** format specifiers used in this example are defined as follows:
 | `%m`      | Month number                                          |
 | `%d`      | Day of the month - 2 digits                           |
 | `%Y`      | Year in 4-digit format                                |
-| `%R`      | Time in 24-hour format - no seconds                    |
+| `%R`      | Time in 24-hour format - no seconds                   |
 | `%Z`      | Time zone offset from Universal Time Coordinate (UTC) |
 
 For a list of valid **UFormat** format specifiers, see the [Notes](#notes) section.
@@ -576,6 +576,12 @@ For example, `Get-Date | Get-Member`.
 
 The valid **UFormat specifiers** are displayed in the following table:
 
+> [!IMPORTANT]
+> Additional **UFormat** specifiers are added in newer versions of PowerShell. For example, `%F` was
+> added in PowerShell 6.2, so it isn't available in Windows PowerShell 5.1 or older. Keep this in
+> mind when using **UFormat** specifiers in scripts designed to be run on multiple versions of
+> PowerShell.
+
 | Format specifier |                                 Meaning                     |         Example          |
 | ---- | ----------------------------------------------------------------------- | ------------------------ |
 | `%A` | Day of the week - full name                                             | Monday                   |
@@ -603,7 +609,7 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%R` | Time in 24-hour format -no seconds                                      | 17:45                    |
 | `%r` | Time in 12-hour format                                                  | 09:15:36 AM              |
 | `%S` | Seconds                                                                 | 05                       |
-| `%s` | Seconds elapsed since January 1, 1970 00:00:00                          | 1150451174               |
+| `%s` | Seconds elapsed since January 1, 1970 00:00:00 (UTC)                    | 1150451174               |
 | `%t` | Horizontal tab character                                                |                          |
 | `%T` | Time in 24-hour format                                                  | 17:45:52                 |
 | `%U` | Same as 'W'                                                             |                          |
@@ -616,6 +622,15 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%Y` | Year in 4-digit format                                                  | 2019                     |
 | `%y` | Year in 2-digit format                                                  | 19                       |
 | `%Z` | Time zone offset from Universal Time Coordinate (UTC)                   | -07                      |
+
+> [!NOTE]
+> Window PowerShell's behavior with `Get-Date -UFormat %s` is incorrect in two respects:
+>
+> - The return value is based on local time instead of UTC time.
+> - The string representation of the seconds value has a fractional part. The output is
+>   culture-sensitive with respect to the decimal mark.
+>
+> These behaviors have been fixed in PowerShell 6 and higher.
 
 ## RELATED LINKS
 

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/25/2020
+ms.date: 11/28/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
@@ -88,14 +88,14 @@ Tuesday 06/25/2019 16:17 -07:00
 
 The .NET format specifiers used in this example are defined as follows:
 
-| Specifier | Definition |
-| --- | --- |
-| `dddd` | Day of the week - full name |
-| `MM` | Month number |
-| `dd` | Day of the month - 2 digits |
-| `yyyy` | Year in 4-digit format |
-| `HH:mm` | Time in 24-hour format -no seconds |
-| `K` | Time zone offset from Universal Time Coordinate (UTC) |
+| Specifier |                      Definition                       |
+| --------- | ----------------------------------------------------- |
+| `dddd`    | Day of the week - full name                           |
+| `MM`      | Month number                                          |
+| `dd`      | Day of the month - 2 digits                           |
+| `yyyy`    | Year in 4-digit format                                |
+| `HH:mm`   | Time in 24-hour format - no seconds                   |
+| `K`       | Time zone offset from Universal Time Coordinate (UTC) |
 
 For more information about .NET format specifiers, see
 [Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).
@@ -117,14 +117,14 @@ Tuesday 06/25/2019 16:19 -07
 
 The **UFormat** format specifiers used in this example are defined as follows:
 
-| Specifier | Definition |
-| --- | --- |
-| `%A` | Day of the week - full name |
-| `%m` | Month number |
-| `%d` | Day of the month - 2 digits |
-| `%Y` | Year in 4-digit format |
-| `%R` | Time in 24-hour format -no seconds |
-| `%Z` | Time zone offset from Universal Time Coordinate (UTC) |
+| Specifier |                      Definition                       |
+| --------- | ----------------------------------------------------- |
+| `%A`      | Day of the week - full name                           |
+| `%m`      | Month number                                          |
+| `%d`      | Day of the month - 2 digits                           |
+| `%Y`      | Year in 4-digit format                                |
+| `%R`      | Time in 24-hour format - no seconds                   |
+| `%Z`      | Time zone offset from Universal Time Coordinate (UTC) |
 
 For a list of valid **UFormat** format specifiers, see the [Notes](#notes) section.
 
@@ -412,12 +412,8 @@ Accept wildcard characters: False
 
 Displays the date and time in UNIX format. The **UFormat** parameter outputs a string object.
 
-**UFormat** specifiers are preceded by a percent sign (`%`), for example, `%m`, `%d`, and `%Y`. The [Notes](#notes)
-section contains a table of valid **UFormat specifiers**.
-
-When the **UFormat** parameter is used, `Get-Date` only gets the **DateTime** object's properties
-necessary to display the date. As a result, some of the properties and methods of **DateTime**
-objects might not be available.
+**UFormat** specifiers are preceded by a percent sign (`%`), for example, `%m`, `%d`, and `%Y`. The
+[Notes](#notes) section contains a table of valid **UFormat specifiers**.
 
 ```yaml
 Type: System.String
@@ -451,7 +447,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -480,6 +477,12 @@ For example, `Get-Date | Get-Member`.
 
 The valid **UFormat specifiers** are displayed in the following table:
 
+> [!IMPORTANT]
+> Additional **UFormat** specifiers are added in newer versions of PowerShell. For example, `%F` was
+> added in PowerShell 6.2, so it isn't available in Windows PowerShell 5.1 or older. Keep this in
+> mind when using **UFormat** specifiers in scripts designed to be run on multiple versions of
+> PowerShell.
+
 | Format specifier |                                 Meaning                     |         Example          |
 | ---- | ----------------------------------------------------------------------- | ------------------------ |
 | `%A` | Day of the week - full name                                             | Monday                   |
@@ -507,19 +510,28 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%R` | Time in 24-hour format -no seconds                                      | 17:45                    |
 | `%r` | Time in 12-hour format                                                  | 09:15:36 AM              |
 | `%S` | Seconds                                                                 | 05                       |
-| `%s` | Seconds elapsed since January 1, 1970 00:00:00                          | 1150451174               |
+| `%s` | Seconds elapsed since January 1, 1970 00:00:00 (UTC)                    | 1150451174               |
 | `%t` | Horizontal tab character                                                |                          |
 | `%T` | Time in 24-hour format                                                  | 17:45:52                 |
 | `%U` | Same as 'W'                                                             |                          |
-| `%u` | Day of the week - number                                                | Sunday = 0               |
+| `%u` | Numeric day of the week (0-6)                                           | Sunday = 0, Saturday = 6 |
 | `%V` | Week of the year                                                        | 01-53                    |
-| `%w` | Same as 'u'                                                             |                          |
+| `%w` | Numeric day of the week (0-6)                                           | Sunday = 0, Saturday = 6 |
 | `%W` | Week of the year                                                        | 00-52                    |
 | `%X` | Same as 'T'                                                             |                          |
 | `%x` | Date in standard format for locale                                      | 06/27/19 for English-US  |
 | `%Y` | Year in 4-digit format                                                  | 2019                     |
 | `%y` | Year in 2-digit format                                                  | 19                       |
 | `%Z` | Time zone offset from Universal Time Coordinate (UTC)                   | -07                      |
+
+> [!NOTE]
+> Window PowerShell's behavior with `Get-Date -UFormat %s` is incorrect in two respects:
+>
+> - The return value is based on local time instead of UTC time.
+> - The string representation of the seconds value has a fractional part. The output is
+>   culture-sensitive with respect to the decimal mark.
+>
+> These behaviors have been fixed in PowerShell 6 and higher.
 
 ## RELATED LINKS
 
