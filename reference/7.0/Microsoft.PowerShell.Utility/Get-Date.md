@@ -478,7 +478,7 @@ For example, `Get-Date | Get-Member`.
 The valid **UFormat specifiers** are displayed in the following table:
 
 > [!IMPORTANT]
-> Additional **UFormat** specifiers are added in newer versions of PowerShell. For example, `%F` was
+> **UFormat** specifiers are changed or added in newer versions of PowerShell. For example, `%F` was
 > added in PowerShell 6.2, so it isn't available in Windows PowerShell 5.1 or older. Keep this in
 > mind when using **UFormat** specifiers in scripts designed to be run on multiple versions of
 > PowerShell.
@@ -525,13 +525,10 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%Z` | Time zone offset from Universal Time Coordinate (UTC)                   | -07                      |
 
 > [!NOTE]
-> Window PowerShell's behavior with `Get-Date -UFormat %s` is incorrect in two respects:
+> The behavior of `-UFormat %s` was changed to fix problems with the behavior in Windows PowerShell.
 >
-> - The return value is based on local time instead of UTC time.
-> - The string representation of the seconds value has a fractional part. The output is
->   culture-sensitive with respect to the decimal mark.
->
-> These behaviors have been fixed in PowerShell 6 and higher.
+> - The return value is based on UTC time.
+> - The value is a whole number of seconds value (no fractional part).
 
 ## RELATED LINKS
 

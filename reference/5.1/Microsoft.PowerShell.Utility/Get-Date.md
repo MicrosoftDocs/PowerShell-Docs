@@ -94,7 +94,7 @@ The .NET format specifiers used in this example are defined as follows:
 | `MM`      | Month number                                          |
 | `dd`      | Day of the month - 2 digits                           |
 | `yyyy`    | Year in 4-digit format                                |
-| `HH:mm`   | Time in 24-hour format -no seconds                    |
+| `HH:mm`   | Time in 24-hour format - no seconds                   |
 | `K`       | Time zone offset from Universal Time Coordinate (UTC) |
 
 For more information about .NET format specifiers, see
@@ -123,7 +123,7 @@ The **UFormat** format specifiers used in this example are defined as follows:
 | `%m`      | Month number                                          |
 | `%d`      | Day of the month - 2 digits                           |
 | `%Y`      | Year in 4-digit format                                |
-| `%R`      | Time in 24-hour format -no seconds                    |
+| `%R`      | Time in 24-hour format - no seconds                   |
 | `%Z`      | Time zone offset from Universal Time Coordinate (UTC) |
 
 For a list of valid **UFormat** format specifiers, see the [Notes](#notes) section.
@@ -447,7 +447,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -477,7 +478,7 @@ For example, `Get-Date | Get-Member`.
 The valid **UFormat specifiers** are displayed in the following table:
 
 > [!IMPORTANT]
-> Additional **UFormat** specifiers are added in newer versions of PowerShell. For example, `%F` was
+> **UFormat** specifiers are changed or added in newer versions of PowerShell. For example, `%F` was
 > added in PowerShell 6.2, so it isn't available in Windows PowerShell 5.1 or older. Keep this in
 > mind when using **UFormat** specifiers in scripts designed to be run on multiple versions of
 > PowerShell.
@@ -523,7 +524,7 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%Z` | Time zone offset from Universal Time Coordinate (UTC)                   | -07                      |
 
 > [!NOTE]
-> Window PowerShell's behavior with `Get-Date -UFormat %s` is incorrect in two respects:
+> Window sPowerShell's behavior with `Get-Date -UFormat %s` is incorrect in two respects:
 >
 > - The return value is based on local time instead of UTC time.
 > - The string representation of the seconds value has a fractional part. The output is
