@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.3
 description: New features and changes released in PowerShell 7.3
-ms.date: 11/14/2022
+ms.date: 11/28/2022
 ---
 
 # What's New in PowerShell 7.3
@@ -10,21 +10,25 @@ PowerShell 7.3 is the next stable release, built on .NET 7.0.
 
 PowerShell 7.3 includes the following features, updates, and breaking changes.
 
-## Improved error handling
+## Breaking Changes and Improvements
 
-- Set `$?` correctly for command expression with redirections ([#16046][16046])
-- Fix a casting error when using `$PSNativeCommandUseErrorActionPreference` ([#15993][15993])
-- Make the native command error handling optionally honor `ErrorActionPreference` ([#15897][15897])
-- Specify the executable path as `TargetObject` for non-zero exit code ErrorRecord ([#16108][16108]) (Thanks
-  @rkeithhill!)
-
-## Session and remoting improvements
-
-- Add `-Options` to the PSRP over SSH commands to allow passing OpenSSH options directly ([#12802][12802])
-  (Thanks @BrannenGH!)
-- Add `-ConfigurationFile` parameter to `pwsh` to allow starting a new process with the session
-  configuration defined in a `.pssc` file ([#17447][17447])
-- Add support for using `New-PSSessionConfigurationFile` on non-Windows platforms ([#17447][17447])
+- In this release, Windows APIs were updated or removed for compliance, which means that PowerShell
+  7.3 doesn't run on Windows 7. While Windows 7 is no longer supported, previous builds could run on
+  Windows 7.
+- PowerShell Direct for Hyper-V is only supported on Windows 10, version 1809 and higher.
+- `Test-Connection` is broken due to an intentional [breaking change][09] in .NET 7. It's tracked by
+  [#17018][10]
+- Add `clean` block to script block as a peer to `begin`, `process`, and `end` to allow easy
+  resource cleanup ([#15177][15177])
+- Change default for `$PSStyle.OutputRendering` to **Ansi**
+- Make `Out-String` and `Out-File` keep string input unchanged ([#17455][17455])
+- Move the type data definition of System.Security.AccessControl.ObjectSecurity to the
+  Microsoft.PowerShell.Security module ([#16355][16355]) (Thanks @iSazonov!)
+  - Before this change, a user doesn't need to explicitly import the
+    **Microsoft.PowerShell.Security** module to use the code properties defined for an instance of
+    **System.Security.AccessControl.ObjectSecurity**.
+  - After this change, a user needs to explicitly import **Microsoft.PowerShell.Security** module in
+    order to use those code properties and code methods.
 
 ## Tab completion improvements
 
@@ -55,6 +59,22 @@ PowerShell 7.3 includes the following features, updates, and breaking changes.
 - Improve dynamic parameter tab completion ([#17661][17661]) (Thanks @MartinGC94!)
 - Avoid binding positional parameters when completing parameter in front of value ([#17693][17693]) (Thanks
   @MartinGC94!)
+
+## Improved error handling
+
+- Set `$?` correctly for command expression with redirections ([#16046][16046])
+- Fix a casting error when using `$PSNativeCommandUseErrorActionPreference` ([#15993][15993])
+- Make the native command error handling optionally honor `ErrorActionPreference` ([#15897][15897])
+- Specify the executable path as `TargetObject` for non-zero exit code ErrorRecord ([#16108][16108]) (Thanks
+  @rkeithhill!)
+
+## Session and remoting improvements
+
+- Add `-Options` to the PSRP over SSH commands to allow passing OpenSSH options directly ([#12802][12802])
+  (Thanks @BrannenGH!)
+- Add `-ConfigurationFile` parameter to `pwsh` to allow starting a new process with the session
+  configuration defined in a `.pssc` file ([#17447][17447])
+- Add support for using `New-PSSessionConfigurationFile` on non-Windows platforms ([#17447][17447])
 
 ## Updated cmdlets
 
@@ -107,26 +127,6 @@ PowerShell 7.3 introduces the following experimental features:
 - Remove [PSNativePSPathResolution][03] experimental feature.
 
 For more information about the Experimental Features, see [Using Experimental Features][01].
-
-## Breaking Changes and Improvements
-
-- In this release, Windows APIs were updated or removed for compliance, which means that PowerShell
-  7.3 doesn't run on Windows 7. While Windows 7 is no longer supported, previous builds could run on
-  Windows 7.
-- PowerShell Direct for Hyper-V is only supported on Windows 10, version 1809 and higher.
-- `Test-Connection` is broken due to an intentional [breaking change][09] in .NET 7. It's tracked by
-  [#17018][10]
-- Add `clean` block to script block as a peer to `begin`, `process`, and `end` to allow easy
-  resource cleanup ([#15177][15177])
-- Change default for `$PSStyle.OutputRendering` to **Ansi**
-- Make `Out-String` and `Out-File` keep string input unchanged ([#17455][17455])
-- Move the type data definition of System.Security.AccessControl.ObjectSecurity to the
-  Microsoft.PowerShell.Security module ([#16355][16355]) (Thanks @iSazonov!)
-  - Before this change, a user doesn't need to explicitly import the
-    **Microsoft.PowerShell.Security** module to use the code properties defined for an instance of
-    **System.Security.AccessControl.ObjectSecurity**.
-  - After this change, a user needs to explicitly import **Microsoft.PowerShell.Security** module in
-    order to use those code properties and code methods.
 
 <!-- end of content -->
 <!-- reference links -->
