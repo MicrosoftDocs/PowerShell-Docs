@@ -30,19 +30,22 @@ You can place help content files for different modules in the same location.
 
 Add a **HelpInfoURI** key to your module manifest. The value of the key is the Uniform Resource
 Identifier (URI) of the location of the HelpInfo XML information file for your module. For security,
-the address must begin with "http" or "https". The URI should specify an internet location, but must
-not include the HelpInfo XML filename.
+the address must begin with `http:` or `https:`. The URI should specify an internet location for the
+HelpInfo XML file. Do not include the HelpInfo XML filename.
 
 For example:
 
 ```powershell
-
 @{
-RootModule = TestModule.psm1
-ModuleVersion = '2.0'
-HelpInfoURI = 'https://go.microsoft.com/fwlink/?LinkID=0123'
+    RootModule = TestModule.psm1
+    ModuleVersion = '2.0'
+    HelpInfoURI = 'https://go.microsoft.com/fwlink/?LinkID=0123'
 }
 ```
+
+> [!NOTE]
+> The **HelpInfoURI** must end with a forward slash (`/`) character or redirect to a location that
+> ends with a forward slash (`/`).
 
 ### Step 3: Create a HelpInfo XML file
 
