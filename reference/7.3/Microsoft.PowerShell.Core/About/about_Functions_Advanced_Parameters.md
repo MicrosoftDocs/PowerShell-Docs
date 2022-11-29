@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 10/27/2022
+ms.date: 11/29/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Parameters
@@ -650,17 +650,47 @@ is only applied to the input provided and any other values like default values
 aren't validated.
 
 You can also use the validation attributes to restrict the values that users
-can specify for variables. When you use a type converter along with a
-validation attribute, the type converter has to be defined before the
-attribute.
+can specify for variables.
 
 ```powershell
-[int32][AllowNull()] $number = 7
+[AllowNull()][int]$number = 7
 ```
 
+Validation attributes can be applied to any variable, not just parameters. You
+can define validation for any variable within a script.
+
 > [!NOTE]
-> Validation attributes can be applied to any variable, not just parameters.
-> You can define validation for any variable within a script.
+> When using any attributes with a typed variable, it's best practice to
+> declare the attribute before the type.
+>
+> If you declare a type with a line break before the attribute and variable
+> name, the type is treated as its own statement.
+>
+> ```powershell
+> [string]
+> [ValidateLength(1,5)] $Text = 'Okay'
+> ```
+>
+> ```output
+> IsPublic IsSerial Name                                     BaseType
+> -------- -------- ----                                     --------
+> True     True     String                                   System.Object
+> ```
+>
+> If you declare a validation attribute after a type, the value being assigned
+> is validated before type conversion, which can lead to unexpected validation
+> failures.
+>
+> ```powershell
+> [string][ValidateLength(1,5)]$TicketIDFromInt        = 43
+> [string][ValidateLength(1,5)]$TicketIDFromString     = '43'
+> [ValidateLength(1,5)][string]$TicketIDAttributeFirst = 43
+> ```
+>
+> ```output
+> MetadataError: The attribute cannot be added because variable
+> TicketIDFromInt with value 43 would no longer be valid.
+> ```
 
 ### AllowNull validation attribute
 
@@ -749,17 +779,12 @@ Param(
 )
 ```
 
-In the following example, the value of the variable `$number` must be a minimum
+In the following example, the value of the variable `$text` must be a minimum
 of one character in length, and a maximum of ten characters.
 
 ```powershell
-[Int32][ValidateLength(1,10)]$number = '01'
+[ValidateLength(1,10)][string] $text = 'valid'
 ```
-
-> [!NOTE]
-> In this example, the value of `01` is wrapped in single quotes. The
-> **ValidateLength** attribute won't accept a number without being wrapped in
-> quotes.
 
 ### ValidatePattern validation attribute
 
@@ -779,11 +804,11 @@ Param(
 )
 ```
 
-In the following example, the value of the variable `$number` must be exactly a
-four-digit number, and each digit must be a number zero to nine.
+In the following example, the value of the variable `$ticketID` must be exactly
+a four-digit number, and each digit must be a number zero to nine.
 
 ```powershell
-[Int32][ValidatePattern("^[0-9][0-9][0-9][0-9]$")]$number = 1111
+[ValidatePattern("^[0-9][0-9][0-9][0-9]$")][string]$ticketID = 1111
 ```
 
 ### ValidateRange validation attribute
@@ -815,14 +840,14 @@ In the following example, the value of the variable `$number` must be between
 zero and ten.
 
 ```powershell
-[Int32][ValidateRange(0,10)]$number = 5
+[ValidateRange(0,10)][int]$number = 5
 ```
 
 In the following example, the value of the variable `$number` must be greater
 than zero.
 
 ```powershell
-[Int32][ValidateRange("Positive")]$number = 1
+[ValidateRange("Positive")][int]$number = 1
 ```
 
 ### ValidateScript validation attribute
@@ -848,11 +873,11 @@ Param(
 )
 ```
 
-In the following example, the value of the variable `$date` must be greater
-than or equal to the current date and time.
+In the following example, the value of the variable `$date` must be less than
+or equal to the current date and time.
 
 ```powershell
-[DateTime][ValidateScript({$_ -ge (Get-Date)})]$date = (Get-Date)
+[ValidateScript({$_ -le (Get-Date)})][DateTime]$date = (Get-Date)
 ```
 
 > [!NOTE]
