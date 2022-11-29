@@ -1,7 +1,7 @@
 ---
 description: Defines what a script block is and explains how to use script blocks in the PowerShell programming language.
 Locale: en-US
-ms.date: 04/08/2020
+ms.date: 11/29/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_blocks?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Script Blocks
@@ -147,27 +147,34 @@ For more information about the call operator, see [about_Operators](about_Operat
 
 ## Using delay-bind script blocks with parameters
 
-A typed parameter that accepts pipeline input (`by Value`) or
-(`by PropertyName`) enables use of **delay-bind** script blocks on the parameter.
-Within the **delay-bind** script block, you can reference the piped in object
+A typed parameter that accepts pipeline input enables use of _delay-bind_
+script blocks on the parameter. You can use delay-bind script blocks as a
+shorthand to define parameters for a pipelined cmdlet before executing it.
+
+Within the delay-bind script block, you can reference the piped in object
 using the pipeline variable `$_`.
 
 ```powershell
-# Renames config.log to old_config.log
-dir config.log | Rename-Item -NewName {"old_" + $_.Name}
+# Both examples rename config.log to old_config.log
+# Without delay-binding
+dir config.log | ForEach-Object -Process {
+  Rename-Item -Path $_ -NewName "old_$($_.Name)"
+}
+# With delay-binding
+dir config.log | Rename-Item -NewName { "old_$($_.Name)" }
 ```
 
 In more complex cmdlets, delay-bind script blocks allow the reuse of one piped
 in object to populate other parameters.
 
-Notes on **delay-bind** script blocks as parameters:
+Notes on delay-bind script blocks as parameters:
 
-- You must explicitly specify any parameter names you use with **delay-bind**
+- You must explicitly specify any parameter names you use with delay-bind
   script blocks.
 - The parameter must not be untyped, and the parameter's type cannot be
   `[scriptblock]` or `[object]`.
-- You receive an error if you use a **delay-bind** script block without
-  providing pipeline input.
+- You receive an error if you use a delay-bind script block without providing
+  pipeline input.
 
   ```powershell
   Rename-Item -NewName {$_.Name + ".old"}
