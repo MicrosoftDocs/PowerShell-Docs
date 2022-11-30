@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 09/27/2022
+ms.date: 11/30/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Preference Variables
@@ -1283,8 +1283,7 @@ The following members control how or when ANSI formatting is used:
 - `$PSStyle.OutputRendering` is a
   `System.Management.Automation.OutputRendering` enum with the values:
 
-  - **ANSI**: This is the default behavior. ANSI is always passed through
-    as-is.
+  - **ANSI**: ANSI is always passed through as-is.
 
     > [!IMPORTANT]
     > You should use **ANSI** mode when redirecting output to a file or the
@@ -1294,8 +1293,8 @@ The following members control how or when ANSI formatting is used:
 
   - **PlainText**: ANSI escape sequences are always stripped so that it is only
     plain text.
-  - **Host**: The ANSI escape sequences are removed in redirected or piped
-    output.
+  - **Host**: This is the default behavior. The ANSI escape sequences are
+    removed in redirected or piped output.
 
 - The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
   contain the ANSI escape sequences for the 16 standard console colors.
