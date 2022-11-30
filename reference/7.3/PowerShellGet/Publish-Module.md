@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 10/03/2019
+ms.date: 11/30/2022
 online version: https://learn.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Publish-Module
@@ -72,7 +72,14 @@ Directory; a brief release note is added. If MyDscModule is not a valid manifest
 specifies a name, version, description, and author, an error occurs.
 
 ```powershell
-Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73" -LicenseUri "http://contoso.com/license" -Tag "Active Directory","DSC" -ReleaseNote "Updated the ActiveDirectory DSC Resources to support adding users."
+$parameters = @{
+    Name        = "MyDscModule"
+    NuGetApiKey = "11e4b435-6cb4-4bf7-8611-5162ed75eb73"
+    LicenseUri  = "http://contoso.com/license"
+    Tag         = "Active Directory","DSC"
+    ReleaseNote = "Updated the ActiveDirectory DSC Resources to support adding users."
+}
+Publish-Module @parameters
 ```
 
 ## PARAMETERS
@@ -233,7 +240,7 @@ Accept wildcard characters: False
 ### -Path
 
 Specifies the path to the module that you want to publish. This parameter accepts the path to the
-folder that contains the module.
+folder that contains the module. The folder must have the same name as the module.
 
 ```yaml
 Type: System.String
