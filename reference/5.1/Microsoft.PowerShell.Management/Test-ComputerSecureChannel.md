@@ -11,6 +11,7 @@ title: Test-ComputerSecureChannel
 # Test-ComputerSecureChannel
 
 ## SYNOPSIS
+
 Tests and repairs the secure channel between the local computer and its domain.
 
 ## SYNTAX
@@ -89,11 +90,7 @@ else {
 This example shows how to use `Test-ComputerSecureChannel` to test a connection before you run a
 script that requires the connection.
 
-The first command uses the Set-Alias cmdlet to create an alias for the cmdlet name. This saves space
-and prevents typing errors.
-
-The `if` statement checks the value that `Test-ComputerSecureChannel` returns before it runs a
-script.
+The `if` statement checks the value that `Test-ComputerSecureChannel` returns before it runs a script.
 
 ## PARAMETERS
 
