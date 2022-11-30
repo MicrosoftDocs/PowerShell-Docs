@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.3
 description: New features and changes released in PowerShell 7.3
-ms.date: 11/28/2022
+ms.date: 11/30/2022
 ---
 
 # What's New in PowerShell 7.3
@@ -20,7 +20,7 @@ PowerShell 7.3 includes the following features, updates, and breaking changes.
   [#17018][10]
 - Add `clean` block to script block as a peer to `begin`, `process`, and `end` to allow easy
   resource cleanup ([#15177][15177])
-- Change default for `$PSStyle.OutputRendering` to **Ansi**
+- Change default for `$PSStyle.OutputRendering` to **Host**
 - Make `Out-String` and `Out-File` keep string input unchanged ([#17455][17455])
 - Move the type data definition of System.Security.AccessControl.ObjectSecurity to the
   Microsoft.PowerShell.Security module ([#16355][16355]) (Thanks @iSazonov!)
