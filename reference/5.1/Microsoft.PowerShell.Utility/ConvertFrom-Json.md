@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/30/2022
+ms.date: 11/29/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
@@ -22,17 +22,23 @@ ConvertFrom-Json [-InputObject] <String> [<CommonParameters>]
 ## DESCRIPTION
 
 The `ConvertFrom-Json` cmdlet converts a JavaScript Object Notation (JSON) formatted string to a
-custom **PSCustomObject** object that has a property for each field in the JSON string. JSON is
-commonly used by web sites to provide a textual representation of objects. The JSON standard does
-not prohibit usage that is prohibited with a **PSCustomObject**. For example, if the JSON string
-contains duplicate keys, only the last key is used by this cmdlet. See other examples below.
+custom **PSObject** or **Hashtable** object that has a property for each field in the JSON string.
+JSON is commonly used by web sites to provide a textual representation of objects. The cmdlet adds
+the properties to the new object as it processes each line of the JSON string.
+
+The JSON standard allows duplicate key names, which are prohibited in **PSObject** end **Hashtable**
+types. For example, if the JSON string contains duplicate keys, only the last key is used by this
+cmdlet. See other examples below.
 
 To generate a JSON string from any object, use the `ConvertTo-Json` cmdlet.
 
 This cmdlet was introduced in PowerShell 3.0.
 
 > [!NOTE]
-> This cmdlet doesn't support JSON with comments.
+> Beginning with PowerShell 6, the cmdlet supports JSON with comments. JSON comments start with two
+> forward slashes (`//`) characters. JSON comments aren't captured in the objects output by the
+> cmdlet. Prior to PowerShell 6, `ConvertFrom-Json` would return an error when it encountered a JSON
+> comment.
 
 ## EXAMPLES
 
@@ -105,8 +111,8 @@ or type a command or expression that gets the string. You can also pipe a string
 `ConvertFrom-Json`.
 
 The **InputObject** parameter is required, but its value can be an empty string. When the input
-object is an empty string, `ConvertFrom-Json` does not generate any output. The **InputObject**
-value cannot be `$null`.
+object is an empty string, `ConvertFrom-Json` doesn't generate any output. The **InputObject**
+value can't be `$null`.
 
 ```yaml
 Type: System.String
@@ -141,6 +147,10 @@ You can pipe a JSON string to `ConvertFrom-Json`.
 
 The `ConvertFrom-Json` cmdlet is implemented using the
 [JavaScriptSerializer class](/dotnet/api/system.web.script.serialization.javascriptserializer).
+
+The **PSObject** type maintains the order of the properties as presented in the JSON string. While
+the key-value pairs are added to the **Hashtable** in the order presented in the JSON string,
+**Hashtable** objects don't maintain that order.
 
 ## RELATED LINKS
 
