@@ -462,7 +462,7 @@ You can add members only to **PSObject** type objects. To determine whether an o
 **PSObject** type objects maintain their list of members in the order that the members were added to
 the object.
 
-For instance, to test an object stored in the `$obj` variable, type `$obj -is [PSObject]`.
+For instance, to test an object stored in the `$obj` variable, type `$obj -is [psobject]`.
 
 The names of the **MemberType**, **Name**, **Value**, and **SecondValue** parameters are optional.
 If you omit the parameter names, the unnamed parameter values must appear in this order:

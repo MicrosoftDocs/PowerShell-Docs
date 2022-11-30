@@ -1,5 +1,5 @@
 ---
-description: Explains the differences between the [PSObject] and [PSCustomObject] type accelerators.
+description: Explains the differences between the [psobject] and [pscustomobject] type accelerators.
 Locale: en-US
 ms.date: 11/29/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pscustomobject?view=powershell-7.3&WT.mc_id=ps-gethelp
@@ -9,12 +9,12 @@ title: about PSCustomObject
 # about_PSCustomObject
 
 ## Short description
-Explains the differences between the `[PSObject]` and `[PSCustomObject]` type
+Explains the differences between the `[psobject]` and `[pscustomobject]` type
 accelerators.
 
 ## Long description
 
-The `[PSCustomObject]` type accelerator was added in PowerShell 4.0.
+The `[pscustomobject]` type accelerator was added in PowerShell 4.0.
 
 Prior to adding this type accelerator, creating an object with member
 properties and values was more complicated. Originally, you had to use
@@ -70,11 +70,11 @@ one two
   1   2
 ```
 
-Since PowerShell 3.0, casting a **Hashtable** to `[PSCustomObject]` achieves
+Since PowerShell 4.0, casting a **Hashtable** to `[pscustomobject]` achieves
 the same result.
 
 ```powershell
-PS> $object3 = [PSCustomObject]@{one=1; two=2}
+PS> $object3 = [pscustomobject]@{one=1; two=2}
 PS> $object3 | Get-Member
 
    TypeName: System.Management.Automation.PSCustomObject
@@ -102,7 +102,7 @@ order of the key-value pairs. Therefore, if you want properties of the
 or use and ordered hashtable. For example:
 
 ```powershell
-$Asset = [PSCustomObject]([ordered]@{
+$Asset = [pscustomobject]([ordered]@{
     Name      = "Server30"
     System    = "Server Core"
     PSVersion = "4.0"
@@ -111,63 +111,63 @@ $Asset = [PSCustomObject]([ordered]@{
 
 ## Understanding the type accelerators
 
-`[PSObject]` and `[PSCustomObject]` are type accelerators.
+`[psobject]` and `[pscustomobject]` are type accelerators.
 
 For more information, see [about_Type_Accelerators](about_type_accelerators.md).
 
-Even though you might think that `[PSCustomObject]` should map to
+Even though you might think that `[pscustomobject]` should map to
 **System.Management.Automation.PSCustomObject**, the types are different.
 
 ```powershell
-PS> [PSCustomObject] -eq [System.Management.Automation.PSCustomObject]
+PS> [pscustomobject] -eq [System.Management.Automation.PSCustomObject]
 False
 ```
 
 Both type accelerators are mapped to the same class, **PSObject**:
 
 ```powershell
-PS> [PSCustomObject]
+PS> [pscustomobject]
 
 IsPublic IsSerial Name                                     BaseType
 -------- -------- ----                                     --------
 True     True     PSObject                                 System.Object
 
-PS> [PSObject]
+PS> [psobject]
 
 IsPublic IsSerial Name                                     BaseType
 -------- -------- ----                                     --------
 True     True     PSObject                                 System.Object
 ```
 
-When the `[PSCustomObject]` type accelerator was added to PowerShell, it
+When the `[pscustomobject]` type accelerator was added to PowerShell, it
 included extra code to handle conversion of a **Hashtable** to a **PSObject**
 type. This extra code is only invoked when a new object is being created.
-Therefore, you can't use `[PSCustomObject]` for type coercion or type
+Therefore, you can't use `[pscustomobject]` for type coercion or type
 comparison, because all objects are treated as **PSObject** types.
 
 For example, using the `-is` operator to check that an object returned by a
-cmdlet is a `[PSCustomObject]` is the same as comparing it to `[PSObject]`.
+cmdlet is a `[pscustomobject]` is the same as comparing it to `[psobject]`.
 
 ```powershell
-PS> (Get-Item /) -is [PSCustomObject]
+PS> (Get-Item /) -is [pscustomobject]
 True
 
-PS> (Get-Item /) -is [PSObject]
+PS> (Get-Item /) -is [psobject]
 True
 ```
 
-When you cast any object to `[PSObject]` you get the type of the original
+When you cast any object to `[psobject]` you get the type of the original
 object. Therefore, casting anything other than a **Hashtable** to
-`[PSCustomObject]` results in the same type.
+`[pscustomobject]` results in the same type.
 
 ```powershell
-PS> ([PSObject]@{Property = 'Value'}).GetType().FullName
+PS> ([psobject]@{Property = 'Value'}).GetType().FullName
 System.Collections.Hashtable
 
-PS> ([PSCustomObject]123).GetType().Name
+PS> ([pscustomobject]123).GetType().Name
 Int32
 
-PS> ([PSCustomObject]@{Property = 'Value'}).GetType().FullName
+PS> ([pscustomobject]@{Property = 'Value'}).GetType().FullName
 System.Management.Automation.PSCustomObject
 ```
 
