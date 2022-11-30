@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/30/2022
+ms.date: 11/29/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
@@ -22,20 +22,23 @@ ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-Depth <Int32>] [-NoEnu
 ## DESCRIPTION
 
 The `ConvertFrom-Json` cmdlet converts a JavaScript Object Notation (JSON) formatted string to a
-custom **PSCustomObject** object that has a property for each field in the JSON string. JSON is
-commonly used by web sites to provide a textual representation of objects. The JSON standard does
-not prohibit usage that is prohibited with a **PSCustomObject**. For example, if the JSON string
-contains duplicate keys, only the last key is used by this cmdlet. See other examples below.
+custom **PSObject** or **Hashtable** object that has a property for each field in the JSON string.
+JSON is commonly used by web sites to provide a textual representation of objects. The cmdlet adds
+the properties to the new object as it processes each line of the JSON string.
+
+The JSON standard allows duplicate key names, which are prohibited in **PSObject** end **Hashtable**
+types. For example, if the JSON string contains duplicate keys, only the last key is used by this
+cmdlet. See other examples below.
 
 To generate a JSON string from any object, use the `ConvertTo-Json` cmdlet.
 
 This cmdlet was introduced in PowerShell 3.0.
 
 > [!NOTE]
-> Beginning with PowerShell 6, this cmdlet supports JSON with comments. Accepted comments are
-> started with two forward slashes (`//`). The comment will not be represented in the data and can
-> be written in the file without corrupting the data or throwing an error as it did in PowerShell
-> 5.1.
+> Beginning with PowerShell 6, the cmdlet supports JSON with comments. JSON comments start with two
+> forward slashes (`//`) characters. JSON comments aren't captured in the objects output by the
+> cmdlet. Prior to PowerShell 6, `ConvertFrom-Json` would return an error when it encountered a JSON
+> comment.
 
 ## EXAMPLES
 
@@ -140,7 +143,7 @@ several scenarios where it can overcome some limitations of the `ConvertFrom-Jso
 - Without this switch, when two or more keys in a JSON object are case-insensitively identical, they
   are treated as identical keys. In that case, only the last of those case-insensitively identical
   keys is included in the converted object.
-- Without this switch, the cmdlet throws an error whenever the JSON contains a key that is an empty
+- Without this switch, the cmdlet throws an error whenever the JSON contains a key that's an empty
   string. **PSCustomObject** can't have property names that are empty strings. For example, this can
   occur in `project.lock.json` files.
 - Hash tables can be processed faster for certain data structures.
@@ -159,7 +162,7 @@ Accept wildcard characters: False
 
 ### -Depth
 
-Gets or sets the maximum depth the JSON input is allowed to have. By default, it is 1024.
+Gets or sets the maximum depth the JSON input is allowed to have. The default is 1024.
 
 This parameter was introduced in PowerShell 6.2.
 
@@ -182,8 +185,8 @@ or type a command or expression that gets the string. You can also pipe a string
 `ConvertFrom-Json`.
 
 The **InputObject** parameter is required, but its value can be an empty string. When the input
-object is an empty string, `ConvertFrom-Json` does not generate any output. The **InputObject**
-value cannot be `$null`.
+object is an empty string, `ConvertFrom-Json` doesn't generate any output. The **InputObject**
+value can't be `$null`.
 
 ```yaml
 Type: System.String
@@ -199,7 +202,7 @@ Accept wildcard characters: False
 
 ### -NoEnumerate
 
-Specifies that output is not enumerated.
+Specifies that output isn't enumerated.
 
 Setting this parameter causes arrays to be sent as a single object instead of sending every element
 separately. This guarantees that JSON can be round-tripped via `ConvertTo-Json`.
@@ -247,7 +250,11 @@ follows:
 - `Utc`, if the time zone information is a trailing `Z`.
 - `Local`, if the time zone information is given as a trailing UTC _offset_ like `+02:00`. The
   offset is properly converted to the caller's configured time zone. The default output formatting
-  does not indicate the original time zone offset.
+  doesn't indicate the original time zone offset.
+
+The **PSObject** type maintains the order of the properties as presented in the JSON string. While
+the key-value pairs are added to the **Hashtable** in the order presented in the JSON string,
+**Hashtable** objects don't maintain that order.
 
 ## RELATED LINKS
 

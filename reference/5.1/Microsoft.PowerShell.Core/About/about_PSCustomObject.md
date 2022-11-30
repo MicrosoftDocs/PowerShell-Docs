@@ -1,7 +1,7 @@
 ---
-description: Explains the differences between PSObject and PSCustomObject.
+description: Explains the differences between the [psobject] and [pscustomobject] type accelerators.
 Locale: en-US
-ms.date: 03/08/2022
+ms.date: 11/29/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pscustomobject?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSCustomObject
@@ -9,7 +9,8 @@ title: about PSCustomObject
 # about_PSCustomObject
 
 ## Short description
-Explains the differences between **PSObject** and **PSCustomObject**.
+Explains the differences between the `[psobject]` and `[pscustomobject]` type
+accelerators.
 
 ## Long description
 
@@ -21,7 +22,7 @@ properties and values was more complicated. Originally, you had to use
 example:
 
 ```powershell
-PS> $object1 = New-Object -TypeName psobject
+PS> $object1 = New-Object -TypeName PSObject
 PS> Add-Member -InputObject $object1 -MemberType NoteProperty -Name one -Value 1
 PS> Add-Member -InputObject $object1 -MemberType NoteProperty -Name two -Value 2
 PS> $object1 | Get-Member
@@ -48,7 +49,7 @@ Later, you could use the **Property** parameter of `New-Object` to pass a
 **Hashtable** containing the members and values. For example:
 
 ```powershell
-PS> $object2 = New-Object -TypeName psobject -Property @{one=1; two=2}
+PS> $object2 = New-Object -TypeName PSObject -Property @{one=1; two=2}
 PS> $object2 | Get-Member
 
    TypeName: System.Management.Automation.PSCustomObject
@@ -69,7 +70,7 @@ one two
   1   2
 ```
 
-Since PowerShell 3.0, casting a **Hashtable** to `[pscustomobject]` achieves
+Since PowerShell 4.0, casting a **Hashtable** to `[pscustomobject]` achieves
 the same result.
 
 ```powershell
@@ -92,6 +93,20 @@ PS> $object3
 one two
 --- ---
   1   2
+```
+
+**PSObject** type objects maintain the list of members in the order that the
+members were added to the object. **Hashtable** objects don't guarantee the
+order of the key-value pairs. Therefore, if you want properties of the
+**PSObject** to appear in a specific order you must add them using `Add-Member`
+or use and ordered hashtable. For example:
+
+```powershell
+$Asset = [pscustomobject]([ordered]@{
+    Name      = "Server30"
+    System    = "Server Core"
+    PSVersion = "4.0"
+})
 ```
 
 ## Understanding the type accelerators
@@ -124,11 +139,11 @@ IsPublic IsSerial Name                                     BaseType
 True     True     PSObject                                 System.Object
 ```
 
-When the `[pscustomobject]` type accelerator was added, it included extra code
-to handle conversion of **Hashtable** objects. This extra code is only invoked
-when a new object is being created. Therefore, you can't use
-`[pscustomobject]` for type coercion or type comparison, because all objects
-are treated as a **PSObject** types.
+When the `[pscustomobject]` type accelerator was added to PowerShell, it
+included extra code to handle conversion of a **Hashtable** to a **PSObject**
+type. This extra code is only invoked when a new object is being created.
+Therefore, you can't use `[pscustomobject]` for type coercion or type
+comparison, because all objects are treated as **PSObject** types.
 
 For example, using the `-is` operator to check that an object returned by a
 cmdlet is a `[pscustomobject]` is the same as comparing it to `[psobject]`.
@@ -146,13 +161,13 @@ object. Therefore, casting anything other than a **Hashtable** to
 `[pscustomobject]` results in the same type.
 
 ```powershell
-PS> ([PSObject]@{Property = 'Value'}).GetType().FullName
+PS> ([psobject]@{Property = 'Value'}).GetType().FullName
 System.Collections.Hashtable
 
 PS> ([pscustomobject]123).GetType().Name
 Int32
 
-PS> ([PSCustomObject]@{Property = 'Value'}).GetType().FullName
+PS> ([pscustomobject]@{Property = 'Value'}).GetType().FullName
 System.Management.Automation.PSCustomObject
 ```
 

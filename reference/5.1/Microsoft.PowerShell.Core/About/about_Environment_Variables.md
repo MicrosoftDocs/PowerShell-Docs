@@ -1,7 +1,7 @@
 ---
 description: Describes how to access and manage environment variables in PowerShell.
 Locale: en-US
-ms.date: 11/17/2022
+ms.date: 11/30/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Environment Variables
@@ -306,6 +306,32 @@ The environment variables that store preferences include:
 
     For more information, see [about_Execution_Policies][04].
 
+- **PSModulePath**
+
+  The `$env:PSModulePath` environment variable contains a list of folder
+  locations that are searched to find modules and resources.
+
+  By default, the effective locations assigned to `$env:PSModulePath` are:
+
+  - System-wide locations: These folders contain modules that ship with
+    PowerShell. The modules are store in the `$PSHOME\Modules` location. Also,
+    This is the location where the Windows management modules are installed.
+
+  - User-installed modules: These are modules installed by the user.
+    `Install-Module` has a **Scope** parameter that allows you to specify
+    whether the module is installed for the current user or for all users. For
+    more information, see [Install-Module][13].
+
+    - On Windows, the location of the user-specific **CurrentUser** scope is
+      the `$HOME\Documents\PowerShell\Modules` folder. The location of the
+      **AllUsers** scope is `$env:ProgramFiles\PowerShell\Modules`.
+
+  In addition, setup programs that install modules in other directories, such
+  as the Program Files directory, can append their locations to the value of
+  `$env:PSModulePath`.
+
+  For more information, see [about_PSModulePath][07].
+
 - **PSModuleAnalysisCachePath**
 
   PowerShell provides control over the file that's used to cache data about
@@ -356,32 +382,6 @@ The environment variables that store preferences include:
 
   Setting this environment variable takes effect immediately in the current
   process.
-
-- **PSModulePath**
-
-  The `$env:PSModulePath` environment variable contains a list of folder
-  locations that are searched to find modules and resources.
-
-  By default, the effective locations assigned to `$env:PSModulePath` are:
-
-  - System-wide locations: These folders contain modules that ship with
-    PowerShell. The modules are store in the `$PSHOME\Modules` location. Also,
-    This is the location where the Windows management modules are installed.
-
-  - User-installed modules: These are modules installed by the user.
-    `Install-Module` has a **Scope** parameter that allows you to specify
-    whether the module is installed for the current user or for all users. For
-    more information, see [Install-Module][13].
-
-    - On Windows, the location of the user-specific **CurrentUser** scope is
-      the `$HOME\Documents\PowerShell\Modules` folder. The location of the
-      **AllUsers** scope is `$env:ProgramFiles\PowerShell\Modules`.
-
-  In addition, setup programs that install modules in other directories, such
-  as the Program Files directory, can append their locations to the value of
-  `$env:PSModulePath`.
-
-  For more information, see [about_PSModulePath][07].
 
 ## Other environment variables used by PowerShell
 
