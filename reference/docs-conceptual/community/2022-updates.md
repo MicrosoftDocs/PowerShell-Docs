@@ -1,15 +1,57 @@
 ---
 description: List of changes to the PowerShell documentation for 2022
-ms.date: 11/01/2022
+ms.date: 12/01/2022
 title: What's New in PowerShell-Docs for 2022
 ---
 # What's new in PowerShell Docs for 2022
 
-This article lists some of the major changes to docs during this previous month and celebrates the
+This article lists some of the major changes to docs during the previous month and celebrates the
 contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2022-November
+
+New Content
+
+- [Contributing quality improvements](contributing/quality-improvements.md)
+  - See examples under [Quality project updates](#quality-nov)
+- [Product terminology and branding guidelines](contributing/product-terminology.md)
+- [Labelling in GitHub](contributing/labelling-in-github.md)
+
+Content updates
+
+- Updated release notes for the PowerShell 7.3 GA release
+- Updated [about_Telemetry](/powershell/module/microsoft.powershell.core/about/about_telemetry)
+- Improved the description of delay-binding in
+  [about_Script_Blocks](/powershell/module/Microsoft.PowerShell.Core/About/about_Script_Blocks)
+- Added a best practice recommendation to
+  [about_Functions_Advanced_Parameters](/powershell/module/Microsoft.PowerShell.Core/About/about_Functions_Advanced_Parameters)
+
+<span id='quality-nov'>Quality project updates</span>
+
+- Added alias information to 129 cmdlet articles (Thanks @ehmiiz!)
+- Added links to PRs in the PowerShell 7.3 release notes (Thanks @skycommand!)
+- Converted hyperlinks to link references in 5 articles (Thanks @chadmando!)
+
+GitHub stats
+
+- 52 PRs merged (12 from Community)
+- 41 issues opened (27 from Community)
+- 42 issues closed (28 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|   GitHub Id    | PRs merged | Issues opened |
+| -------------- | :--------: | :-----------: |
+| ehmiiz         |     9      |       8       |
+| chadmando      |     1      |               |
+| baardhermansen |     1      |               |
+| skycommand     |     1      |               |
+| mklement0      |            |       3       |
+| peetrike       |            |       2       |
 
 ## 2022-October
 
