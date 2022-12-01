@@ -155,7 +155,6 @@ Windows PowerShell includes the following aliases for `Get-History`:
   - `history`
   - `ghy`
 
-
 The session history is a list of the commands entered during the session. The session history
 represents the run order, the status, and the start and end times of the command. As you enter each
 command, PowerShell adds it to the history so that you can reuse it. For more information about the
