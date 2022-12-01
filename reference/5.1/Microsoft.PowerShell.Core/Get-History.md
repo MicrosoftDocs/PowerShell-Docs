@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/06/2020
+ms.date: 12/01/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-history?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-History
@@ -148,6 +148,12 @@ You can pipe a history ID to this cmdlet.
 This cmdlet returns a history object for each history item that it gets.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Get-History`:
+
+  - `h`
+  - `history`
+  - `ghy`
 
 The session history is a list of the commands entered during the session. The session history
 represents the run order, the status, and the start and end times of the command. As you enter each
