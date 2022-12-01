@@ -1,6 +1,6 @@
 # Microsoft Open Source Code of Conduct
 
-> Updated: 05/18/2022
+> Updated: 12/01/2022
 
 This project has adopted the
 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more
@@ -37,7 +37,6 @@ The following list describes the main folders in this repository.
   [learn.microsoft.com]([https://learn.microsoft.com/powershell/scripting/). This includes both
   reference and conceptual content.
   - `5.1` - contains the cmdlet reference and about topics for PowerShell 5.1
-  - `7.0` - contains the cmdlet reference and about topics for PowerShell 7.0
   - `7.2` - contains the cmdlet reference and about topics for PowerShell 7.2
   - `7.3` - contains the cmdlet reference and about topics for PowerShell 7.3
   - `bread` - contains the TOC used for breadcrumb navigation

@@ -1,6 +1,6 @@
 ---
 description: This article describes how to create a command-line predictor to help with command completion in PowerShell.
-ms.date: 09/20/2022
+ms.date: 12/01/2022
 title: How to create a command-line predictor
 ---
 # How to create a command-line predictor
@@ -223,7 +223,7 @@ With the assembly is loaded in the session, you see the text "HELLO WORLD" appea
 terminal. You can press <kbd>F2</kbd> to switch between the `Inline` view and the `List` view.
 
 For more information about PSReadLine options, see
-[Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.3&preserve-view=true).
+[Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption).
 
 You can get a list of installed predictors, using the following command:
 

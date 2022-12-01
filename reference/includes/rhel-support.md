@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 05/18/2022
+ms.date: 12/01/2022
 ms.prod: powershell
 ms.topic: include
 ---
@@ -24,16 +24,16 @@ they are supported on. These versions remain supported until either the version 
 [3]: ../media/shared/cross-mark_274c.svg
 [4]: ../media/shared/large-yellow-circle_1f7e1.svg
 
-|       RHEL        |    7.0 (LTS)    |         7.1          | 7.2 (LTS-current) |       7.3       |
-| ----------------- | :-------------: | :------------------: | :---------------: | :-------------: |
-| ![Supported][1] 8 | ![Supported][1] | ![Out of Support][4] |  ![Supported][1]  | ![Supported][1] |
-| ![Supported][1] 7 | ![Supported][1] | ![Out of Support][4] |  ![Supported][1]  | ![Supported][1] |
+|       RHEL        |      7.0 (LTS)       |         7.1          | 7.2 (LTS-current) |       7.3       |
+| ----------------- | :------------------: | :------------------: | :---------------: | :-------------: |
+| ![Supported][1] 8 | ![Out of Support][4] | ![Out of Support][4] |  ![Supported][1]  | ![Supported][1] |
+| ![Supported][1] 7 | ![Out of Support][4] | ![Out of Support][4] |  ![Supported][1]  | ![Supported][1] |
 
 PowerShell is supported on RHEL for the following processor architectures.
 
-|          RHEL          | 7.0 (LTS) | 7.2 (LTS-current) |7.3 |
-| ---------------------- | :-------: | :---------------: | :-----------: |
-| All supported versions |    x64    |    x64, Arm64     |  x64, Arm64   |
+|          RHEL          | 7.2 (LTS-current) |    7.3     |
+| ---------------------- | :---------------: | :--------: |
+| All supported versions |    x64, Arm64     | x64, Arm64 |
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-rhel]: https://access.redhat.com/support/policy/updates/errata/

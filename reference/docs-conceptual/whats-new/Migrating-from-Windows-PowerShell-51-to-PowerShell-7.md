@@ -1,6 +1,6 @@
 ---
 description: Update from PowerShell 5.1 to PowerShell 7 for your Windows platforms.
-ms.date: 10/22/2021
+ms.date: 12/01/2022
 title: Migrating from Windows PowerShell 5.1 to PowerShell 7
 ---
 
@@ -129,11 +129,9 @@ autoloading of modules.
 > Additional paths may exist if you have changed the PSModulePath environment variable or installed
 > custom modules or applications.
 
-For more information, see
-[about_PSModulePath][11].
+For more information, see [about_PSModulePath][11].
 
-For more information about Modules, see
-[about_Modules][09].
+For more information about Modules, see [about_Modules][09].
 
 ### Separate profiles
 
@@ -313,8 +311,7 @@ For details about customizing the VSCode layout to ISE, see
 
 ## Next Steps
 
-Armed with the knowledge to effectively migrate,
-[install PowerShell 7][16] now!
+Armed with the knowledge to effectively migrate, [install PowerShell 7][16] now!
 
 <!-- link references -->
 [01]: ../install/installing-powershell-on-windows.md#msi
@@ -327,7 +324,7 @@ Armed with the knowledge to effectively migrate,
 [08]: /powershell/module/microsoft.powershell.core/about/about_logging_windows
 [09]: /powershell/module/Microsoft.PowerShell.Core/About/about_Modules
 [10]: /powershell/module/microsoft.powershell.core/about/about_profiles
-[11]: /powershell/module/microsoft.powershell.core/about/about_psmodulepath?view=powershell-7.2&preserve-view=true
+[11]: /powershell/module/microsoft.powershell.core/about/about_psmodulepath
 [12]: /powershell/module/microsoft.powershell.core/about/about_remote
 [13]: /powershell/module/microsoft.powershell.core/about/about_remote_requirements
 [14]: /powershell/module/Microsoft.PowerShell.Core/About/about_windows_powershell_compatibility

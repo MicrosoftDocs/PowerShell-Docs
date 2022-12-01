@@ -2,6 +2,11 @@
   "redirections": [
     {
       "redirect_document_id": true,
+      "redirect_url": "/previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-70",
+      "source_path": "reference/docs-conceptual/whats-new/what-s-new-in-powershell-70.md"
+    },
+    {
+      "redirect_document_id": true,
       "redirect_url": "/powershell/scripting/learn/shell/using-aliases",
       "source_path": "reference/docs-conceptual/learn/Compatibility-Aliases.md"
     },

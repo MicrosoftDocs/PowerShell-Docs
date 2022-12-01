@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 10/10/2022
+ms.date: 12/01/2022
 ms.prod: powershell
 ms.topic: include
 ---
@@ -38,9 +38,9 @@ Alpine 3.15 is in the process of being tested.
 
 PowerShell is supported on Alpine for the following processor architectures.
 
-|         Alpine         | 7.0 (LTS) | 7.2 (LTS-current) |7.3 |
-| ---------------------- | :-------: | :---------------: | :-----------: |
-| All supported versions |    x64    |        x64        |      x64      |
+|         Alpine         | 7.2 (LTS-current) |  7.3  |
+| ---------------------- | :---------------: | :---: |
+| All supported versions |        x64        |  x64  |
 
 PowerShell hasn't been tested on Alpine using Arm processors.
 
