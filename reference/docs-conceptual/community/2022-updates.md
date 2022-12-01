@@ -18,7 +18,7 @@ New Content
 - [Contributing quality improvements](contributing/quality-improvements.md)
   -  See examples under [Quality project updates](#quality-nov)
 - [Product terminology and branding guidelines](contributing/product-terminology.md)
-- [Labelling in GitHub](community/contributing/labelling-in-github.md)
+- [Labelling in GitHub](contributing/labelling-in-github.md)
 
 Content updates
 
