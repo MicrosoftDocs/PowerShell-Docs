@@ -1,6 +1,5 @@
 ---
 description: This article describes the features and usage of Predictive IntelliSense in PSReadLine.
-no-loc: [<kbd>Tab</kbd>, <kbd>F2</kbd>, <kbd>RightArrow</kdb>, <kbd>Enter</kbd>]
 title: Using predictors in PSReadLine
 ms.date: 7/14/2022
 ---
@@ -112,7 +111,7 @@ PSReadLine contains functions to navigate and accept predictions. For example:
 - `AcceptSuggestion` - Accept the current inline suggestion
 - `AcceptNextSuggestionWord` - Accept the next word of the inline suggestion
 - `AcceptSuggestion` is built within `ForwardChar`, which is bound to
-  <kdb>RightArrow</kbd> by default
+  <kbd>RightArrow</kbd> by default
 - `AcceptNextSuggestionWord` is built within the function `ForwardWord`, which can be bound to
   <kbd>Ctrl</kbd>+<kbd>f</kbd>
 
@@ -125,7 +124,7 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+f" -Function ForwardWord
 With this binding, pressing <kbd>Ctrl</kbd>+<kbd>f</kbd> accepts the next word of an inline
 suggestion when the cursor is at the end of current editing line. You can bind other keys to
 `AcceptSuggestion` and `AcceptNextSuggestionWord` for similar functionalities. For example, you may
-want to make <kdb>RightArrow</kbd> accept the next word of the inline suggestion, instead of the
+want to make <kbd>RightArrow</kbd> accept the next word of the inline suggestion, instead of the
 whole suggestion line.
 
 ```powershell
