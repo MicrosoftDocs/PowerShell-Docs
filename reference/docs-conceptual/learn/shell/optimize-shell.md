@@ -2,7 +2,6 @@
 description: >
   This article provides an overview of the shell features that help users improve
   their user experience.
-no-loc: [<kbd>Tab</kbd>, <kbd>F2</kbd>, <kbd>RightArrow</kdb>, <kbd>Enter</kbd>]
 title: Optimizing your shell experience
 ms.date: 7/14/2022
 ---
