@@ -2,7 +2,7 @@
 description: >
   This article explains how to use your profile to save preferred PowerShell settings and optimize
   your shell experience.
-ms.date: 07/28/2022
+ms.date: 12/01/2022
 title: Customizing your shell environment
 ---
 # Customizing your shell environment
@@ -115,6 +115,23 @@ function prompt {
     $body = 'PS ' + $(Get-Location)
     $suffix = $(if ($NestedPromptLevel -ge 1) { '>>' }) + '> '
     $prefix + $body + $suffix
+}
+
+## Create $PSStyle if running on a version older than 7.2
+## - Add other ANSI color definitions as needed
+
+if ($PSVersionTable.PSVersion.ToString() -lt '7.2.0') {
+    # define escape char since "`e" may not be supported
+    $esc = [char]0x1b
+    $PSStyle = [pscustomobject]@{
+        Foreground = @{
+            Magenta = "${esc}[35m"
+            BrightYellow = "${esc}[93m"
+        }
+        Background = @{
+            BrightBlack = "${esc}[100m"
+        }
+    }
 }
 
 ## Set PSReadLine options and keybindings
