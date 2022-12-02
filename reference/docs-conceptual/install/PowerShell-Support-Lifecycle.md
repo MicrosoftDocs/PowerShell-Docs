@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell
-ms.date: 05/31/2022
+ms.date: 12/01/2022
 title: PowerShell Support Lifecycle
 ---
 # PowerShell Support Lifecycle
@@ -25,7 +25,7 @@ the next release (current or LTS).
 
 > [!IMPORTANT]
 > You must have the latest patch update installed to qualify for support. For example, if you're
-> running PowerShell 7.0 and 7.0.1 has been released, you must update to 7.0.1 to qualify for
+> running PowerShell 7.3 and 7.3.1 has been released, you must update to 7.3.1 to qualify for
 > support.
 
 ## Supported platforms
@@ -107,7 +107,7 @@ use the traditional, paid support options.
 
 > [!IMPORTANT]
 > You must have the latest patch update installed to qualify for support. For example, if you're
-> running PowerShell 7.0 and 7.0.1 has been released, you must update to 7.0.1 to qualify for
+> running PowerShell 7.3 and 7.3.1 has been released, you must update to 7.3.1 to qualify for
 > support.
 
 ## PowerShell End-of-support dates
@@ -119,24 +119,24 @@ version will no longer be supported:
 | ----------------- | ---------------- | ---------------- |
 | 7.3 (Stable)      | November 9, 2022 | May 8, 2024      |
 | 7.2 (LTS-current) | November 8, 2021 | November 8, 2024 |
-| 7.0 (LTS)         | March 4, 2020    | December 3, 2022 |
-
 
 Support for PowerShell on a specific platforms is based on the support policy of the version of .NET
 used.
 
 - PowerShell 7.3 (Stable) is based on the [.NET 7.0 Supported OS Lifecycle Policy][net70os]
 - PowerShell 7.2 (LTS-current) is based on the [.NET 6.0 Supported OS Lifecycle Policy][net60os]
+- PowerShell 7.1 (Stable) is based on the [.NET 5.0 Supported OS Lifecycle Policy][net50os]
 - PowerShell 7.0 (LTS) is based on the [.NET Core 3.1 Supported OS Lifecycle Policy][net31os]
 
 End of support dates for already retired versions were:
 
-| Version |   End-of-support   |   End-of-support   |
-| ------- | ------------------ | ------------------ |
-| 7.1     | November 11, 2020  | May 8, 2022        |
-| 6.2     | March 28, 2019     | September 4, 2020  |
-| 6.1     | September 13, 2018 | September 28, 2019 |
-| 6.0     | January 20, 2018   | February 13, 2019  |
+|  Version  |    Release Date    |   End-of-support   |
+| --------- | ------------------ | ------------------ |
+| 7.0 (LTS) | March 4, 2020      | December 3, 2022   |
+| 7.1       | November 11, 2020  | May 8, 2022        |
+| 6.2       | March 28, 2019     | September 4, 2020  |
+| 6.1       | September 13, 2018 | September 28, 2019 |
+| 6.0       | January 20, 2018   | February 13, 2019  |
 
 ## Release history
 
