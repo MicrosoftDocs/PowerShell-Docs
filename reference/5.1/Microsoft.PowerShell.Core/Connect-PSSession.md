@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/18/2022
+ms.date: 12/02/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
@@ -693,6 +693,10 @@ You can pipe a session (**PSSession**) to this cmdlet.
 This cmdlet returns an object that represents the session to which it reconnected.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Connect-PSSession`:
+
+- `cnsn`
 
 - This cmdlet is only available on Windows platforms.
 

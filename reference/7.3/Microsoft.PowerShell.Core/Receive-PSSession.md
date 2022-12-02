@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/11/2019
+ms.date: 12/02/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
@@ -891,6 +891,11 @@ value or default value of the **OutTarget** parameter is Job, `Receive-PSSession
 object. Otherwise, it returns objects that represent that command results.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Receive-PSSession`:
+
+- All platforms:
+  - `rcsn`
 
 This cmdlet is only available on Windows platforms.
 

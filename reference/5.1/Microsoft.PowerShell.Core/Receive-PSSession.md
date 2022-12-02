@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/11/2019
+ms.date: 12/02/2012
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
@@ -889,6 +889,10 @@ value or default value of the **OutTarget** parameter is Job, `Receive-PSSession
 object. Otherwise, it returns objects that represent that command results.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Receive-PSSession`:
+
+- `rcsn`
 
 `Receive-PSSession` gets results only from sessions that were disconnected. Only sessions that are
 connected to, or terminate at, computers that run PowerShell 3.0 or later versions can be
