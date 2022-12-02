@@ -1,7 +1,7 @@
 {
   "redirections": [
     {
-      "redirect_document_id": true,
+      "redirect_document_id": false,
       "redirect_url": "/previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-70",
       "source_path": "reference/docs-conceptual/whats-new/what-s-new-in-powershell-70.md"
     },
