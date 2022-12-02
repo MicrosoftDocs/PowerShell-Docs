@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 05/18/2022
+ms.date: 12/01/2022
 ms.prod: powershell
 ms.topic: include
 ---
@@ -27,8 +27,8 @@ Ubuntu they are supported on. These versions remain supported until either the v
 |             Ubuntu              |      7.0 (LTS)       |         7.1          |  7.2 (LTS-current)  |         7.3         |
 | ------------------------------- | :------------------: | :------------------: | :-----------------: | :-----------------: |
 | ![Supported][1] 22.04 (LTS)     | ![Not Supported][3]  | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
-| ![Supported][1] 20.04 (LTS)     |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
-| ![Supported][1] 18.04 (LTS)     |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
+| ![Supported][1] 20.04 (LTS)     | ![Out of Support][4] | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
+| ![Supported][1] 18.04 (LTS)     | ![Out of Support][4] | ![Out of Support][4] |   ![Supported][1]   |   ![Supported][1]   |
 | ![Not Supported][3] 16.04 (LTS) | ![Out of Support][4] | ![Out of Support][4] | ![Not Supported][3] | ![Not Supported][3] |
 
 Only the LTS releases of Ubuntu are officially supported. Microsoft does not support
@@ -37,9 +37,9 @@ information, see [Community supported distributions][community].
 
 PowerShell is supported on Ubuntu for the following processor architectures.
 
-|         Ubuntu         |     7.0 (LTS)     | 7.2 (LTS-current) |  7.3   |
-| ---------------------- | :---------------: | :---------------: | :---------------: |
-| All supported versions | x64, Arm32, Arm64 | x64, Arm32, Arm64 | x64, Arm32, Arm64 |
+|         Ubuntu         | 7.2 (LTS-current) |        7.3        |
+| ---------------------- | :---------------: | :---------------: |
+| All supported versions | x64, Arm32, Arm64 | x64, Arm32, Arm64 |
 
 [eol-ubuntu]: https://wiki.ubuntu.com/Releases
 [interim]: https://ubuntu.com/about/release-cycle

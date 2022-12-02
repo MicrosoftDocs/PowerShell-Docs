@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 07/25/2022
+ms.date: 12/01/2022
 ms.prod: powershell
 ms.topic: include
 ---
@@ -25,7 +25,7 @@ macOS. These versions remain supported until either the version of
 
 |                 macOS                  |      7.0 (LTS)       |         7.1          |  7.2 (LTS-current)   |         7.3          |
 | -------------------------------------- | :------------------: | :------------------: | :------------------: | :------------------: |
-| ![Supported][1] Big Sur 11.5           |   ![Supported][1]    | ![Out of Support][4] |   ![Supported][1]    |   ![Supported][1]    |
+| ![Supported][1] Big Sur 11.5           | ![Out of Support][4] | ![Out of Support][4] |   ![Supported][1]    |   ![Supported][1]    |
 | ![Out of Support][4] Catalina 10.15    | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] |
 | ![Out of Support][4] Mojave 10.14      | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] |
 | ![Out of Support][4] High Sierra 10.13 | ![Out of Support][4] | ![Out of Support][4] | ![Not Supported][3]  | ![Not Supported][3]  |
@@ -39,9 +39,9 @@ Support of macOS is defined by Apple. For more information, see:
 
 PowerShell is supported on macOS for the following processor architectures:
 
-|          macOS           | 7.0 (LTS) | 7.2 (LTS-current) |7.3 |
-| ------------------------ | :-------: | :---------------: | :-----------: |
-| macOS Big Sur 11.5       |    x64    |    x64, Arm64     |  x64, Arm64   |
-| macOS High Sierra 10.13+ |    x64    |        x64        |      x64      |
+|          macOS           | 7.2 (LTS-current) |    7.3     |
+| ------------------------ | :---------------: | :--------: |
+| macOS Big Sur 11.5       |    x64, Arm64     | x64, Arm64 |
+| macOS High Sierra 10.13+ |        x64        |    x64     |
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
