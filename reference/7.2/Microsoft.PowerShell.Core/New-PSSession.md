@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/27/2022
+ms.date: 12/02/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
@@ -1010,6 +1010,11 @@ You can pipe a string, URI, or session object to this cmdlet.
 ### System.Management.Automation.Runspaces.PSSession
 
 ## NOTES
+
+PowerShell includes the following aliases for `New-PSSession`:
+
+- All platforms:
+  - `nsn`
 
 - This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local
   computer and any remote computers must be configured for PowerShell remoting. For more
