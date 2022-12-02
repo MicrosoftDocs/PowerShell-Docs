@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/18/2022
+ms.date: 12/02/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
@@ -468,6 +468,10 @@ You cannot pipe objects to `Export-PSSession`.
 `Export-PSSession` returns a list of files that comprise the module that it created.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Export-PSSession`:
+
+- `epsn`
 
 `Export-PSSession` relies on the PowerShell remoting infrastructure. To use this cmdlet, the
 computer must be configured for remoting. For more information, see

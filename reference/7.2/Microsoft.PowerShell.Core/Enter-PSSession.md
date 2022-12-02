@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/16/2022
+ms.date: 12/02/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
@@ -887,6 +887,11 @@ You can pipe a computer name, as a string, or a session object to this cmdlet.
 The cmdlet does not return any output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Enter-PSSession`:
+
+- All platforms:
+  - `etsn`
 
 To connect to a remote computer, you must be a member of the Administrators group on the remote
 computer. To start an interactive session on the local computer, you must start PowerShell with the
