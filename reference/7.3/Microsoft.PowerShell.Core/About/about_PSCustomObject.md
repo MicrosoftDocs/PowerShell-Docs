@@ -1,7 +1,7 @@
 ---
 description: Explains the differences between the [psobject] and [pscustomobject] type accelerators.
 Locale: en-US
-ms.date: 11/29/2022
+ms.date: 12/05/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pscustomobject?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSCustomObject
@@ -14,7 +14,7 @@ accelerators.
 
 ## Long description
 
-The `[pscustomobject]` type accelerator was added in PowerShell 4.0.
+The `[pscustomobject]` type accelerator was added in PowerShell 3.0.
 
 Prior to adding this type accelerator, creating an object with member
 properties and values was more complicated. Originally, you had to use
@@ -70,7 +70,7 @@ one two
   1   2
 ```
 
-Since PowerShell 4.0, casting a **Hashtable** to `[pscustomobject]` achieves
+Since PowerShell 3.0, casting a **Hashtable** to `[pscustomobject]` achieves
 the same result.
 
 ```powershell
@@ -96,24 +96,35 @@ one two
 ```
 
 **PSObject** type objects maintain the list of members in the order that the
-members were added to the object. **Hashtable** objects don't guarantee the
-order of the key-value pairs. Therefore, if you want properties of the
-**PSObject** to appear in a specific order you must add them using `Add-Member`
-or use and ordered hashtable. For example:
+members were added to the object. Even though **Hashtable** objects don't
+guarantee the order of the key-value pairs, casting a literal hashtable to
+`[pscustomobject]` maintains the order.
+
+The hashtable must be a literal. Tf you wrap the hashtable in parentheses or if
+you cast a variable containing a hashtable, there is no guarantee that the
+order is preserved.
 
 ```powershell
-$Asset = [pscustomobject]([ordered]@{
+$hash = @{
     Name      = "Server30"
     System    = "Server Core"
     PSVersion = "4.0"
-})
+}
+$Asset = [pscustomobject]$hash
+$Asset
+```
+
+```output
+System      Name     PSVersion
+------      ----     ---------
+Server Core Server30 4.0
 ```
 
 ## Understanding the type accelerators
 
 `[psobject]` and `[pscustomobject]` are type accelerators.
 
-For more information, see [about_Type_Accelerators](about_type_accelerators.md).
+For more information, see [about_Type_Accelerators][03].
 
 Even though you might think that `[pscustomobject]` should map to
 **System.Management.Automation.PSCustomObject**, the types are different.
@@ -171,9 +182,65 @@ PS> ([pscustomobject]@{Property = 'Value'}).GetType().FullName
 System.Management.Automation.PSCustomObject
 ```
 
+While, casting an object to `[psobject]` appears to have no affect on the type,
+PowerShell adds an _invisible_ `[psobject]` wrapper around the object. This can
+have subtle side effects.
+
+- Wrapped objects will match their original type and the
+  `[psobject]` type.
+
+  ```powershell
+  PS> 1 -is [Int32]
+  True
+  PS> 1 -is [psobject]
+  False
+  PS> ([psobject] 1) -is [Int32]
+  True
+  PS> ([psobject] 1) -is [psobject]
+  True
+  ```
+
+- The format operator (`-f`) doesn't recognized an array wrapped by
+  `[psobject]`.
+
+  ```powershell
+  PS> '{0} {1}' -f (1, 2)
+  1 2
+  PS> '{0} {1}' -f ([psobject] (1, 2))
+  Error formatting a string: Index (zero based) must be greater than or equal
+  to zero and less than the size of the argument list..
+  ```
+
+## Notes
+
+In Windows PowerShell, objects created by casting a **Hashtable** to
+`[pscustomobject]` do not have the **Length** or **Count** properties.
+Attempting to access these members returns `$null`.
+
+For example:
+
+```powershell
+PS> $object = [PSCustomObject]@{key = 'value'}
+PS> $object
+
+key
+---
+value
+
+PS> $object.Count
+PS> $object.Length
+```
+
 ## See also
 
-- [about_Object_Creation](about_Object_Creation.md)
-- [about_Objects](about_Objects.md)
-- [System.Management.Automation.PSObject](xref:System.Management.Automation.PSObject)
-- [System.Management.Automation.PSCustomObject](xref:System.Management.Automation.PSCustomObject)
+- [about_Object_Creation][01]
+- [about_Objects][02]
+- [System.Management.Automation.PSObject][05]
+- [System.Management.Automation.PSCustomObject][04]
+
+<!-- link references -->
+[01]: about_Object_Creation.md
+[02]: about_Objects.md
+[03]: about_type_accelerators.md
+[04]: xref:System.Management.Automation.PSCustomObject
+[05]: xref:System.Management.Automation.PSObject
