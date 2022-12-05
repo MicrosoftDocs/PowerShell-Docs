@@ -146,7 +146,7 @@ Wrapping the statement in parentheses turns it into an expression that outputs
 the value of `$var`.
 
 This behavior applies to all the assignment operators, including compound
-operators like `+=`, and then increment (`++`) and decrement (`--`) operators.
+operators like `+=`, and the increment (`++`) and decrement (`--`) operators.
 However, the order of operation for increment and decrement depends on their
 position.
 
@@ -177,7 +177,7 @@ In this example, if no files match, the `Get-ChildItem` command returns nothing
 and assigns nothing to `$textFiles`, which is considered `$false` in a boolean
 context. If one or more **FileInfo** objects are assigned to `$textFiles`, the
 conditional evaluates to `$true`. You can work with the value of `$textFiles`
-in the body of the if statement.
+in the body of the `if` statement.
 
 > [!NOTE]
 > While this technique is convenient and concise, it can lead to confusion
@@ -279,7 +279,7 @@ when using the call operator.
 
 ```
 PS> & "1+1"
-& : The term '1+1' isn't recognized as the name of a cmdlet, function, script
+& : The term '1+1' is not recognized as the name of a cmdlet, function, script
 file, or operable program. Check the spelling of the name, or if a path was
 included, verify that the path is correct and try again.
 At line:1 char:2
