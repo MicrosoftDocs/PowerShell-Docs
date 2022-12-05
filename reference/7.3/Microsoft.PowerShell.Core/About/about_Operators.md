@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 10/17/2022
+ms.date: 12/02/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -31,8 +31,7 @@ operators on any .NET type that implements them, such as: `Int`, `String`,
 Bitwise operators (`-band`, `-bor`, `-bxor`, `-bnot`, `-shl`, `-shr`)
 manipulate the bit patterns in values.
 
-For more information, see
-[about_Arithmetic_Operators](about_Arithmetic_Operators.md).
+For more information, see [about_Arithmetic_Operators][04].
 
 ## Assignment Operators
 
@@ -40,14 +39,13 @@ Use assignment operators (`=`, `+=`, `-=`, `*=`, `/=`, `%=`) to assign, change,
 or append values to variables. You can combine arithmetic operators with
 assignment to assign the result of the arithmetic operation to a variable.
 
-For more information, see
-[about_Assignment_Operators](about_Assignment_Operators.md).
+For more information, see [about_Assignment_Operators][05].
 
 ## Comparison Operators
 
 Use comparison operators (`-eq`, `-ne`, `-gt`, `-lt`, `-le`, `-ge`) to compare
 values and test conditions. For example, you can compare two string values to
-determine whether they are equal.
+determine whether they're equal.
 
 The comparison operators also include operators that find or replace patterns
 in text. The (`-match`, `-notmatch`, `-replace`) operators use regular
@@ -59,8 +57,7 @@ reference set (`-in`, `-notin`, `-contains`, `-notcontains`).
 Type comparison operators (`-is`, `-isnot`) determine whether an object is of a
 given type.
 
-For more information, see
-[about_Comparison_Operators](about_Comparison_Operators.md).
+For more information, see [about_Comparison_Operators][06].
 
 ## Logical Operators
 
@@ -69,7 +66,7 @@ conditional statements into a single complex conditional. For example, you can
 use a logical `-and` operator to create an object filter with two different
 conditions.
 
-For more information, see [about_Logical_Operators](about_logical_operators.md).
+For more information, see [about_Logical_Operators][12].
 
 ## Redirection Operators
 
@@ -79,7 +76,7 @@ work like the `Out-File` cmdlet (without parameters) but they also let you
 redirect error output to specified files. You can also use the `Tee-Object`
 cmdlet to redirect output.
 
-For more information, see [about_Redirection](about_Redirection.md)
+For more information, see [about_Redirection][17]
 
 ## Split and Join Operators
 
@@ -87,15 +84,14 @@ The `-split` and `-join` operators divide and combine substrings. The `-split`
 operator splits a string into substrings. The `-join` operator concatenates
 multiple strings into a single string.
 
-For more information, see [about_Split](about_Split.md) and
-[about_Join](about_Join.md).
+For more information, see [about_Split][20] and [about_Join][11].
 
 ## Type Operators
 
 Use the type operators (`-is`, `-isnot`, `-as`) to find or change the .NET
 Framework type of an object.
 
-For more information, see [about_Type_Operators](about_Type_Operators.md).
+For more information, see [about_Type_Operators][21].
 
 ## Unary Operators
 
@@ -103,11 +99,11 @@ Use the unary `++`  and `--` operators to increment or decrement values and
 `-` for negation. For example, to increment the variable `$a` from `9` to
 `10`, you type `$a++`.
 
-For more information, see [about_Arithmetic_Operators](about_Arithmetic_Operators.md).
+For more information, see [about_Arithmetic_Operators][04].
 
 ## Special Operators
 
-Special operators have specific use-cases that do not fit into any other
+Special operators have specific use-cases that don't fit into any other
 operator group. For example, special operators allow you to run commands,
 change a value's data type, or retrieve elements from an array.
 
@@ -118,19 +114,75 @@ expressions. For example: `(1 + 2) / 3`
 
 However, in PowerShell, there are additional behaviors.
 
-- `(...)` allows you to let output from a _command_ participate in an
-  expression. For example:
+`(...)` allows you to let output from a _command_ participate in an expression.
+For example:
 
-  ```powershell
-  PS> (Get-Item *.txt).Count -gt 10
-  True
-  ```
+```powershell
+PS> (Get-Item *.txt).Count -gt 10
+True
+```
 
-- When used as the first segment of a pipeline, wrapping a command or
-  expression in parentheses invariably causes _enumeration_ of the expression
-  result. If the parentheses wrap a _command_, it is run to completion with all
-  output _collected in memory_ before the results are sent through the
-  pipeline.
+#### Grouping assignment statements
+
+Ungrouped assignment statements don't output values. When grouping an
+assignment statement, the value of the assigned variable is _passed through_
+and can be used in larger expressions. For example:
+
+```powershell
+PS> ($var = 1 + 2)
+3
+PS> ($var = 1 + 2) -eq 3
+True
+```
+
+Wrapping the statement in parentheses turns it into an expression that outputs
+the value of `$var`.
+
+This behavior applies to all the assignment operators, including compound
+operators like `+=`, and the increment (`++`) and decrement (`--`) operators.
+However, the order of operation for increment and decrement depends on their
+position.
+
+```powershell
+PS> $i = 0
+PS> (++$i) # prefix
+1
+PS> $i = 0
+PS> ($i++) # postfix
+0
+PS> $i
+1
+```
+
+In the prefix case, the value of `$i` is incremented before being output. In
+the postfix case, the value of `$i` is incremented after being output.
+
+You can also use this technique In the context of a conditional statement, such
+as the `if` statement.
+
+```powershell
+if ($textFiles = Get-ChildItem *.txt) {
+    $textFiles.Count
+}
+```
+
+In this example, if no files match, the `Get-ChildItem` command returns nothing
+and assigns nothing to `$textFiles`, which is considered `$false` in a boolean
+context. If one or more **FileInfo** objects are assigned to `$textFiles`, the
+conditional evaluates to `$true`. You can work with the value of `$textFiles`
+in the body of the `if` statement.
+
+> [!NOTE]
+> While this technique is convenient and concise, it can lead to confusion
+> between the assignment operator (`=`) and the equality-comparison operator
+> (`-eq`).
+
+#### Piping grouped expressions
+
+When used as the first segment of a pipeline, wrapping a command or expression
+in parentheses invariably causes _enumeration_ of the expression result. If the
+parentheses wrap a _command_, it's run to completion with all output _collected
+in memory_ before the results are sent through the pipeline.
 
 ### Subexpression operator `$( )`
 
@@ -175,15 +227,15 @@ PS> $list.Count
 
 ### Hash table literal syntax `@{}`
 
-Similar to the array subexpression, this syntax is used to declare a hash table.
-For more information, see [about_Hash_Tables](about_Hash_Tables.md).
+Similar to the array subexpression, this syntax is used to declare a hash
+table. For more information, see [about_Hash_Tables][08].
 
 ### Call operator `&`
 
 Runs a command, script, or script block. The call operator, also known as the
 "invocation operator", lets you run commands that are stored in variables and
 represented by strings or script blocks. The call operator executes in a child
-scope. For more about scopes, see [about_Scopes](about_Scopes.md).
+scope. For more about scopes, see [about_Scopes][18].
 
 This example stores a command in a string and executes it using the call
 operator.
@@ -196,7 +248,7 @@ PS> & $c
 AllSigned
 ```
 
-The call operator does not parse strings. This means that you cannot use
+The call operator doesn't parse strings. This means that you can't use
 command parameters within a string when you use the call operator.
 
 ```
@@ -210,20 +262,15 @@ the name, or if a path was included, verify that the path is correct and
 try again.
 ```
 
-The [Invoke-Expression](xref:Microsoft.PowerShell.Utility.Invoke-Expression)
-cmdlet can execute code that causes parsing errors when using the call
-operator.
+The [Invoke-Expression][24] cmdlet can execute code that causes parsing errors
+when using the call operator.
 
 ```
 PS> & "1+1"
-& : The term '1+1' is not recognized as the name of a cmdlet, function, script
-file, or operable program. Check the spelling of the name, or if a path was
+&: The term '1+1' is not recognized as a name of a cmdlet, function, script
+file, or executable program. Check the spelling of the name, or if a path was
 included, verify that the path is correct and try again.
-At line:1 char:2
-+ & "1+1"
-+  ~~~~~
-    + CategoryInfo          : ObjectNotFound: (1+1:String) [], CommandNotFoundException
-    + FullyQualifiedErrorId : CommandNotFoundException
+
 PS> Invoke-Expression "1+1"
 2
 ```
@@ -250,7 +297,7 @@ PS C:\Scripts> & ".\script name with spaces.ps1"
 Hello World!
 ```
 
-For more about script blocks, see [about_Script_Blocks](about_Script_Blocks.md).
+For more about script blocks, see [about_Script_Blocks][19].
 
 ### Background operator `&`
 
@@ -329,11 +376,11 @@ all on one line, simply place `&` between and after each of the commands.
 Get-Process -Name pwsh & Get-Service -Name BITS & Get-CimInstance -ClassName Win32_ComputerSystem &
 ```
 
-For more information on PowerShell jobs, see [about_Jobs](about_Jobs.md).
+For more information on PowerShell jobs, see [about_Jobs][10].
 
 ### Cast operator `[ ]`
 
-Converts or limits objects to the specified type. If the objects cannot be
+Converts or limits objects to the specified type. If the objects can't be
 converted, PowerShell generates an error.
 
 ```powershell
@@ -341,7 +388,7 @@ converted, PowerShell generates an error.
 ```
 
 A cast can also be performed when a variable is assigned to using
-[cast notation](about_Variables.md).
+[cast notation][22].
 
 ### Comma operator `,`
 
@@ -396,8 +443,8 @@ right side of the operator.
 1 hello      3.14
 ```
 
-You can zero-pad a numeric value with the ["0" custom specifier][zero-padding].
-The number of zeroes following the `:` indicates the maximum width to pad the
+You can zero-pad a numeric value with the ["0" custom specifier][03]. The
+number of zeroes following the `:` indicates the maximum width to pad the
 formatted string to.
 
 ```powershell
@@ -419,8 +466,8 @@ escape them by doubling the curly braces.
 foo vs. {0}
 ```
 
-For more information, see the [String.Format](/dotnet/api/system.string.format)
-method and [Composite Formatting](/dotnet/standard/base-types/composite-formatting).
+For more information, see the [String.Format][01] method and
+[Composite Formatting][02].
 
 ### Index operator `[ ]`
 
@@ -468,7 +515,7 @@ intro
 Once upon a time...
 ```
 
-When an object is not an indexed collection, using the index operator to access
+When an object isn't an indexed collection, using the index operator to access
 the first element returns the object itself. Index values beyond the first
 element return `$null`.
 
@@ -510,7 +557,7 @@ Get-Process notepad && Stop-Process -Name notepad
 npm install || Remove-Item -Recurse ./node_modules
 ```
 
-For more information, see [About_Pipeline_Chain_Operators](About_Pipeline_Chain_Operators.md).
+For more information, see [About_Pipeline_Chain_Operators][15].
 
 ### Range operator `..`
 
@@ -570,7 +617,7 @@ a b c d e
 
 The characters in the array are joined into a string. The characters are
 separated by the value of the `$OFS` preference variable. For more information,
-see [about_Preference_Variables](about_Preference_Variables.md#ofs).
+see [about_Preference_Variables][16].
 
 The order of the characters in the array is determined by the ASCII value of
 the character. For example, the ASCII values of `c` and `X` are 99 and 88,
@@ -633,15 +680,15 @@ $myProcess.peakWorkingSet
 ```
 
 Starting PowerShell 3.0, when you use the operator on a list collection object
-that does not have the member, PowerShell automatically enumerates the items in
-that collection and uses the operator on each of them. For more information, see
-[about_Member-Access_Enumeration](about_Member-Access_Enumeration.md).
+that doesn't have the member, PowerShell automatically enumerates the items in
+that collection and uses the operator on each of them. For more information,
+see [about_Member-Access_Enumeration][13].
 
 ### Static member operator `::`
 
-Calls the static properties and methods of a .NET Framework class. To
-find the static properties and methods of an object, use the Static parameter
-of the `Get-Member` cmdlet.  The member name may be an expression.
+Calls the static properties and methods of a .NET Framework class. To find the
+static properties and methods of an object, use the Static parameter of the
+`Get-Member` cmdlet. The member name may be an expression.
 
 ```powershell
 [datetime]::Now
@@ -653,7 +700,7 @@ of the `Get-Member` cmdlet.  The member name may be an expression.
 You can use the ternary operator as a replacement for the `if-else` statement
 in simple conditional cases.
 
-For more information, see [about_If](about_If.md).
+For more information, see [about_If][09].
 
 ### Null-coalescing operator `??`
 
@@ -720,9 +767,14 @@ A null-conditional operator applies a member access, `?.`, or element access,
 otherwise, it returns null.
 
 Since PowerShell allows `?` to be part of the variable name, formal
-specification of the variable name is required for using these operators. So it
-is required to use `{}` around the variable names like `${a}` or when `?` is
+specification of the variable name is required for using these operators. You
+must use braces (`{}`) around the variable names like `${a}` or when `?` is
 part of the variable name `${a?}`.
+
+> [!NOTE]
+> The variable name syntax of `${<name>}` shouldn't be confused with the `$()`
+> subexpression operator. For more information, see Variable name section of
+> [about_Variables][23].
 
 In the following example, the value of **PropName** is returned.
 
@@ -735,15 +787,15 @@ ${a}?.PropName
 100
 ```
 
-The following example will return null, without trying to access the member
-name **PropName**.
+The following example returns null without trying to access the member name
+**PropName**.
 
 ```powershell
 $a = $null
 ${a}?.PropName
 ```
 
-Similarly, the value of the element will be returned.
+In this example, the value of the indexed element is returned.
 
 ```powershell
 $a = 1..10
@@ -754,36 +806,48 @@ ${a}?[0]
 1
 ```
 
-And when the operand is null, the element isn't accessed and null is returned.
+The following example returns null without trying to access indexed element.
 
 ```PowerShell
 $a = $null
 ${a}?[0]
 ```
 
-> [!NOTE]
-> Since PowerShell allows `?` to be part of the variable name, formal
-> specification of the variable name is required for using these operators. So
-> it is required to use `{}` around the variable names like `${a}` or when `?`
-> is part of the variable name `${a?}`.
->
-> The variable name syntax of `${<name>}` should not be confused with the `$()`
-> subexpression operator. For more information, see Variable name section of
-> [about_Variables](about_Variables.md#variable-names-that-include-special-characters).
-
 ## See also
 
-- [about_Arithmetic_Operators](about_Arithmetic_Operators.md)
-- [about_Assignment_Operators](about_Assignment_Operators.md)
-- [about_Comparison_Operators](about_Comparison_Operators.md)
-- [about_Logical_Operators](about_logical_operators.md)
-- [about_Operator_Precedence](about_operator_precedence.md)
-- [about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)
-- [about_Type_Operators](about_Type_Operators.md)
-- [about_Split](about_Split.md)
-- [about_Join](about_Join.md)
-- [about_Redirection](about_Redirection.md)
+- [about_Arithmetic_Operators][04]
+- [about_Assignment_Operators][05]
+- [about_Comparison_Operators][06]
+- [about_Logical_Operators][12]
+- [about_Operator_Precedence][14]
+- [about_Member-Access_Enumeration][13]
+- [about_Type_Operators][21]
+- [about_Split][20]
+- [about_Join][11]
+- [about_Redirection][17]
 
-<!-- Reference Links -->
-
-[zero-padding]: /dotnet/standard/base-types/custom-numeric-format-strings#Specifier0
+<!-- link references -->
+[01]: /dotnet/api/system.string.format
+[02]: /dotnet/standard/base-types/composite-formatting
+[03]: /dotnet/standard/base-types/custom-numeric-format-strings#Specifier0
+[04]: about_Arithmetic_Operators.md
+[05]: about_Assignment_Operators.md
+[06]: about_Comparison_Operators.md
+[07]: about_Experimental_Features.md
+[08]: about_Hash_Tables.md
+[09]: about_If.md
+[10]: about_Jobs.md
+[11]: about_Join.md
+[12]: about_logical_operators.md
+[13]: about_Member-Access_Enumeration.md
+[14]: about_operator_precedence.md
+[15]: About_Pipeline_Chain_Operators.md
+[16]: about_Preference_Variables.md#ofs
+[17]: about_Redirection.md
+[18]: about_Scopes.md
+[19]: about_Script_Blocks.md
+[20]: about_Split.md
+[21]: about_Type_Operators.md
+[22]: about_Variables.md
+[23]: about_Variables.md#variable-names-that-include-special-characters
+[24]: xref:Microsoft.PowerShell.Utility.Invoke-Expression
