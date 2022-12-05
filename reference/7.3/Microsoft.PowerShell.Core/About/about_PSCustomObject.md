@@ -96,7 +96,7 @@ one two
 ```
 
 **PSObject** type objects maintain the list of members in the order that the
-members were added to the object. Eventhough **Hashtable** objects don't
+members were added to the object. Even though **Hashtable** objects don't
 guarantee the order of the key-value pairs, casting a literal hashtable to
 `[pscustomobject]` maintains the order.
 
@@ -186,7 +186,7 @@ While, casting an object to `[psobject]` appears to have no affect on the type,
 PowerShell adds an _invisible_ `[psobject]` wrapper around the object. This can
 have subtle side effects.
 
-- For example, the wrapped objects will match their original type and the
+- Wrapped objects will match their original type and the
   `[psobject]` type.
 
   ```powershell

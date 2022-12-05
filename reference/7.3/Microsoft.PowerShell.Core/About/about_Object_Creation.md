@@ -212,7 +212,7 @@ standard objects.
 ```
 
 **PSObject** type objects maintain the list of members in the order that the
-members were added to the object. Eventhough **Hashtable** objects don't
+members were added to the object. Even though **Hashtable** objects don't
 guarantee the order of the key-value pairs, casting a literal hashtable to
 `[pscustomobject]` maintains the order.
 
