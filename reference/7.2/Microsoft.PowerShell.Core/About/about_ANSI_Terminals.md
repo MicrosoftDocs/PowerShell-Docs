@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 09/27/2022
+ms.date: 12/05/2022
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -133,7 +133,7 @@ The following members control how or when ANSI formatting is used:
 
   - **Style** - An ANSI string setting the rendering style.
   - **MaxWidth** - Sets the max width of the view. Defaults to `120`.
-    The minimum values is 18.
+    The minimum value is 18.
   - **View** - An enum with values, `Minimal` and `Classic`. `Classic` is the
     existing rendering with no changes. `Minimal` is a single line minimal
     rendering. `Minimal` is the default.

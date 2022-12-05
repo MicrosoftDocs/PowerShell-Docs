@@ -1,7 +1,7 @@
 ---
 description: Explains how to create objects in PowerShell.
 Locale: en-US
-ms.date: 09/22/2020
+ms.date: 12/05/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_object_creation?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Object Creation
@@ -19,27 +19,24 @@ commands and scripts.
 
 There are many ways to create objects, this list is not definitive:
 
-- [New-Object](xref:Microsoft.PowerShell.Utility.New-Object): Creates an
-  instance of a .NET Framework object or COM object.
-- [Import-Csv](xref:Microsoft.PowerShell.Utility.Import-Csv)/
-  [ConvertFrom-CSV](xref:Microsoft.PowerShell.Utility.ConvertFrom-Csv):
-  Creates custom objects (**PSCustomObject**) from the items defined as comma
-  separated values.
-- [ConvertFrom-Json](xref:Microsoft.PowerShell.Utility.ConvertFrom-Json):
-  Creates custom objects defined in JavaScript Object Notation (JSON).
-- [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData):
-  Creates custom objects defined as key value pairs.
-- [Add-Type](xref:Microsoft.PowerShell.Utility.Add-Type): Allows you to
-  define a class in your PowerShell session that you can instantiate with
-  `New-Object`.
-- [New-Module](xref:Microsoft.PowerShell.Core.New-Module): The **AsCustomObject** parameter creates a
-  custom object you define using script block.
-- [Add-Member](xref:Microsoft.PowerShell.Utility.Add-Member): Adds
-  properties to existing objects. You can use `Add-Member` to create a custom
-  object out of a simple type, like `[System.Int32]`.
-- [Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object): Selects
-  properties on an object. You can use `Select-Object` to create custom and
-  calculated properties on an already instantiated object.
+- [New-Object][14]: Creates an instance of a .NET Framework object or COM
+  object.
+- [Import-Csv][13]/[ConvertFrom-CSV][10]: Creates custom objects
+  (**PSCustomObject**) from the items defined as character separated values.
+- [ConvertFrom-Json][11]: Creates custom objects defined in JavaScript Object
+  Notation (JSON).
+- [ConvertFrom-StringData][12]: Creates custom objects defined as key value
+  pairs.
+- [Add-Type][09]: Allows you to define a class in your PowerShell session that
+  you can instantiate with `New-Object`.
+- [New-Module][07]: The **AsCustomObject** parameter creates a custom object
+  you define using script block.
+- [Add-Member][08]: Adds properties to existing objects. You can use
+  `Add-Member` to create a custom object out of a simple type, like
+  `[System.Int32]`.
+- [Select-Object][15]: Selects properties on an object. You can use
+  `Select-Object` to create custom and calculated properties on an already
+  instantiated object.
 
 The following additional methods are covered in this article:
 
@@ -134,7 +131,8 @@ Count Name
    18 Method
 ```
 
-For more information about the Extended Type System, see [about_Types.ps1xml](about_Types.ps1xml.md).
+For more information about the Extended Type System, see
+[about_Types.ps1xml][06].
 
 This feature was added in PowerShell 5.0
 
@@ -211,6 +209,31 @@ standard objects.
 ```Output
  PSScheduledJob
  PSWorkflow
+```
+
+**PSObject** type objects maintain the list of members in the order that the
+members were added to the object. Even though **Hashtable** objects don't
+guarantee the order of the key-value pairs, casting a literal hashtable to
+`[pscustomobject]` maintains the order.
+
+The hashtable must be a literal. Tf you wrap the hashtable in parentheses or if
+you cast a variable containing a hashtable, there is no guarantee that the
+order is preserved.
+
+```powershell
+$hash = @{
+    Name      = "Server30"
+    System    = "Server Core"
+    PSVersion = "4.0"
+}
+$Asset = [pscustomobject]$hash
+$Asset
+```
+
+```output
+System      Name     PSVersion
+------      ----     ---------
+Server Core Server30 4.0
 ```
 
 ## Create non-custom objects from hash tables
@@ -292,12 +315,29 @@ Key Value
 One     1
 ```
 
-For more information on Generics, see [Generics in .NET](/dotnet/standard/generics).
+For more information on Generics, see [Generics in .NET][01].
 
 ## See also
 
-- [about_Methods](about_Methods.md)
-- [about_Objects](about_Objects.md)
-- [about_Pipelines](about_Pipelines.md)
-- [about_Properties](about_Properties.md)
-- [about_Types.ps1xml](about_Types.ps1xml.md)
+- [about_Methods][02]
+- [about_Objects][03]
+- [about_Pipelines][04]
+- [about_Properties][05]
+- [about_Types.ps1xml][06]
+
+<!-- link references -->
+[01]: /dotnet/standard/generics
+[02]: about_Methods.md
+[03]: about_Objects.md
+[04]: about_Pipelines.md
+[05]: about_Properties.md
+[06]: about_Types.ps1xml.md
+[07]: xref:Microsoft.PowerShell.Core.New-Module
+[08]: xref:Microsoft.PowerShell.Utility.Add-Member
+[09]: xref:Microsoft.PowerShell.Utility.Add-Type
+[10]: xref:Microsoft.PowerShell.Utility.ConvertFrom-Csv
+[11]: xref:Microsoft.PowerShell.Utility.ConvertFrom-Json
+[12]: xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData
+[13]: xref:Microsoft.PowerShell.Utility.Import-Csv
+[14]: xref:Microsoft.PowerShell.Utility.New-Object
+[15]: xref:Microsoft.PowerShell.Utility.Select-Object
