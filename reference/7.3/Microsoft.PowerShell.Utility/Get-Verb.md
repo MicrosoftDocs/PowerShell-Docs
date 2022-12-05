@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/07/2018
+ms.date: 12/05/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-verb?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Verb
@@ -22,7 +22,7 @@ Get-Verb [[-Verb] <String[]>] [[-Group] <String[]>] [<CommonParameters>]
 
 The `Get-Verb` function gets verbs that are approved for use in PowerShell commands.
 
-It is recommended that PowerShell cmdlet and function names have the `Verb-Noun` format and include
+It's recommended that PowerShell cmdlet and function names have the `Verb-Noun` format and include
 an approved verb. This practice makes command names more consistent, predictable, and easier to use.
 
 Commands that use unapproved verbs, still run in PowerShell. However, when you import a module that
@@ -94,7 +94,7 @@ Cmdlet          Tee-Object      3.1.0.0    Microsoft.PowerShell.Utility
 
 ### -Group
 
-Gets only the specified groups. Enter the name of a group. Wildcards are not allowed.
+Gets only the specified groups. Enter the name of a group. Wildcards aren't allowed.
 
 This parameter was introduced in PowerShell 6.0.
 
@@ -102,10 +102,11 @@ This parameter was introduced in PowerShell 6.0.
 Type: System.String[]
 Parameter Sets: (All)
 Aliases:
+Accepted values: Common, Communications, Data, Diagnostic, Lifecycle, Other, Security
 
 Required: False
-Position: 0
-Default value: All verbs
+Position: 1
+Default value: All groups
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
@@ -118,11 +119,10 @@ Gets only the specified verbs. Enter the name of a verb or a name pattern. Wildc
 Type: System.String[]
 Parameter Sets: (All)
 Aliases:
-Accepted values: Common, Communications, Data, Diagnostic, Lifecycle, Other, Security
 
 Required: False
-Position: 1
-Default value: All groups
+Position: 0
+Default value: All verbs
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
@@ -158,11 +158,10 @@ Each PowerShell verb is assigned to one of the following groups.
 - Security: Define actions that apply to security, such as Revoke.
 - Other: Define other types of actions.
 
-Some of the cmdlets that are installed with PowerShell, such as `Tee-Object` and `Where-Object`, use
+Some of the cmdlets installed with PowerShell, such as `Tee-Object` and `Where-Object`, use
 unapproved verbs. These cmdlets are historic exceptions and their verbs are classified as
 **reserved**.
 
 ## RELATED LINKS
 
 [Import-Module](../microsoft.powershell.core/import-module.md)
-
