@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 11/21/2022
+ms.date: 12/06/2022
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -71,8 +71,10 @@ Contains the first token in the last line received by the session.
 ### $_
 
 Same as `$PSItem`. Contains the current object in the pipeline object. You can
-use this variable in commands that perform an action on every object or on
-selected objects in a pipeline.
+use this variable in commands that perform an action on every object in a
+pipeline.
+
+For more information, see [about_PSItem](about_PSItem.md).
 
 ### $args
 
@@ -503,8 +505,9 @@ Select-String -Pattern Variable -Path $pshome\*.txt
 ### $PSItem
 
 Same as `$_`. Contains the current object in the pipeline object. You can use
-this variable in commands that perform an action on every object or on selected
-objects in a pipeline.
+this variable in commands that perform an action on every object in a pipeline.
+
+For more information, see [about_PSItem](about_PSItem.md).
 
 ### $PSScriptRoot
 
