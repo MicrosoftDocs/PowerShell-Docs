@@ -2,7 +2,7 @@
 description: The automatic variable that contains the current object in the pipeline object.
 Locale: en-US
 ms.date: 12/06/2022
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_psitem?view=powershell-7.3&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_psitem?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSItem
 ---
@@ -15,9 +15,9 @@ The automatic variable that contains the current object in the pipeline object.
 ## Long description
 
 PowerShell includes the `$PSItem` variable and its alias, `$_`, as
-[automatic variables][01] in scriptblocks that process pipeline objects. This
-article uses `$PSItem` in the examples, but `$PSItem` can be replaced with `$_`
-in every example.
+[automatic variables][01] in scriptblocks that process the current object, such
+as in the pipeline. This article uses `$PSItem` in the examples, but `$PSItem`
+can be replaced with `$_` in every example.
 
 You can use this variable in commands that perform an action on every object in
 a pipeline.
@@ -33,6 +33,7 @@ There are a few common use cases for `$PSItem`:
 - in a `switch` statement's conditional values and associated scriptblocks
 - in the `process` block of a function
 - in a `filter` definition
+- in the scriptblock of the **ValidateScript** attribute
 - in the substitution operand scriptblock of the `-replace` operator
 
 The rest of this article includes examples of using `$PSItem` for these use
@@ -294,6 +295,62 @@ False
 In this example, the `Test-IsEven` filter outputs `$true` if the current object
 is an even number and `$false` if it isn't.
 
+## The ValidateScript attribute scriptblock
+
+You can use `$PSItem` in the scriptblock of a [ValidateScript][15] attribute.
+When used with **ValidateScript**, `$PSItem` is the value of the current object
+being validated. When the variable or parameter value is an array, the
+scriptblock is called once for each object in the array with `$PSItem` as the
+current object.
+
+```powershell
+function Add-EvenNumber {
+    param(
+        [ValidateScript({ 0 -eq ($PSItem % 2) })]
+        [int[]]$Number
+    )
+
+    begin {
+        [int]$total = 0
+    }
+
+    process {
+        foreach ($n in $Number) {
+            $total += $n
+        }
+    }
+
+    end {
+        $total
+    }
+}
+
+Add-EvenNumber -Number 2, 4, 6
+
+Add-EvenNumber -Number 1, 2
+```
+
+```output
+12
+
+Add-EvenNumber: 
+Line |
+  24 |  Add-EvenNumber -Number 1, 2
+     |                         ~~~~
+     | Cannot validate argument on parameter 'Number'. The
+" 0 -eq ($PSItem % 2) " validation script for the argument
+with value "1" did not return a result of True. Determine
+why the validation script failed, and then try the command
+again.
+```
+
+In this example the scriptblock for the **ValidateScript** attribute runs once
+for each value passed to the **Number** parameter, returning an error if any
+value isn't even.
+
+The `Add-EvenNumber` function adds the valid input numbers and returns the
+total.
+
 ## The -replace operator's substitution scriptblock
 
 Starting in PowerShell 6, you can use `$PSItem` when calling the [replace][12]
@@ -339,3 +396,4 @@ with the default format for the current culture by casting the value to
 [12]: about_Comparison_Operators.md#replacement-operator
 [13]: about_Comparison_Operators.md#replacement-with-a-script-block
 [14]: about_Script_Blocks.md
+[15]: about_Functions_Advanced_Parameters.md#validatescript-validation-attribute
