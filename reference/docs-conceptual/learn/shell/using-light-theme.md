@@ -6,12 +6,12 @@ title: Configuring a light colored theme
 ---
 # Configuring a light colored theme
 
-The default colors for both PowerShell and **PSReadLine** are selected for dark background terminal.
-However, some users may choose to use a light background with dark text. Since most of the default
-colors don't set the background, using light foreground colors on a light background produces
-unreadable text.
+The default colors for both PowerShell and **PSReadLine** are selected for a dark background
+terminal. However, some users may choose to use a light background with dark text. Since most of the
+default colors don't set the background, using light foreground colors on a light background
+produces unreadable text.
 
-The **PSReadLine** allows you to define colors for 18 different syntax elements. You can view the
+**PSReadLine** allows you to define colors for 18 different syntax elements. You can view the
 current settings using the `Get-PSReadLineOption` cmdlet.
 
 ```Output
