@@ -1,7 +1,7 @@
 ---
 description: The automatic variable that contains the current object in the pipeline object.
 Locale: en-US
-ms.date: 12/06/2022
+ms.date: 12/07/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_psitem?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSItem
@@ -81,7 +81,7 @@ You can use `$PSItem` in the scriptblock of the **FilterScript** parameter,
 which executes once for each input object in the pipeline.
 
 ```powershell
-1, 2, 3 | Where-Object -FilterScript { ($PSItem % 2) -eq $true }
+1, 2, 3 | Where-Object -FilterScript { ($PSItem % 2) -eq 0 }
 ```
 
 ```output
@@ -89,7 +89,8 @@ which executes once for each input object in the pipeline.
 ```
 
 In this example, the **FilterScript** checks to see if the current object is
-even, filters out any odd values, and returns only `2` from the original list.
+even, filtering out any odd values, and returns only `2` from the original
+list.
 
 ## ForEach and Where methods
 
@@ -138,8 +139,8 @@ switch ($numbers) {
 ```
 
 In this example, the statement condition scriptblock checks whether the current
-object is even. If it is, the associated action scriptblock outputs a message
-indicating the current object is even.
+object is even. If it's event, the associated action scriptblock outputs a
+message indicating the current object is even.
 
 The action scriptblock for the `default` condition outputs a message indicating
 the current object is odd.
@@ -185,7 +186,7 @@ parameters that take input from the pipeline.
 
 ```powershell
 function Write-JsonLog {
-    [cmdletbinding()]
+    [CmdletBinding()]
     param(
         [parameter(ValueFromPipelineByPropertyName)]
         [string]$Message
