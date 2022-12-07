@@ -65,7 +65,7 @@ better for a light-colored background.
 
 ## Defining colors for a light theme
 
-The original PowerShell ISE can be configured to use a light theme for both the editor and console
+The PowerShell ISE can be configured to use a light theme for both the editor and console
 panes. You can also view and change the colors that the ISE uses for various syntax and output
 types. You can use these color choices to define a similar theme for **PSReadLine**.
 
