@@ -139,7 +139,7 @@ switch ($numbers) {
 ```
 
 In this example, the statement condition scriptblock checks whether the current
-object is even. If it's event, the associated action scriptblock outputs a
+object is even. If it's even, the associated action scriptblock outputs a
 message indicating the current object is even.
 
 The action scriptblock for the `default` condition outputs a message indicating
