@@ -131,7 +131,7 @@ you.
 
 <!-- link references -->
 [01]: /powershell/module/Microsoft.PowerShell.Core/About/about_ANSI_Terminals
-[02]: creating-profile.md
+[02]: creating-profiles.md
 [03]: https://contrast-ratio.com/
 [04]: https://en.wikipedia.org/wiki/ANSI_escape_code
 [05]: https://www.w3.org/
