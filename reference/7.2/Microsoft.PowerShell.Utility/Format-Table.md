@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/11/2022
+ms.date: 12/08/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-table?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Table
@@ -18,9 +18,9 @@ Formats the output as a table.
 ### All
 
 ```
-Format-Table [-AutoSize] [-RepeatHeader] [-HideTableHeaders] [-Wrap] [[-Property] <Object[]>]
- [-GroupBy <Object>] [-View <String>] [-ShowError] [-DisplayError] [-Force] [-Expand <String>]
- [-InputObject <PSObject>] [<CommonParameters>]
+Format-Table [[-Property] <Object[]>] [-AutoSize] [-RepeatHeader] [-HideTableHeaders] [-Wrap]
+ [-GroupBy <Object>] [-View <string>] [-ShowError] [-DisplayError] [-Force] [-Expand <string>]
+ [-InputObject <psobject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -414,8 +414,6 @@ Accept wildcard characters: True
 Repeats displaying the header of a table after every screen full. The repeated header is useful when
 the output is piped to a pager such as `less` or `more` or paging with a screen reader.
 
-This parameter was added in PowerShell 6.2.
-
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
@@ -515,6 +513,11 @@ PowerShell includes the following aliases for `Format-Table`:
 
 - All platforms:
   - `ft`
+
+PowerShell 7.2 introduced new features to colorize output. The colors can be managed using the
+`$PSStyle` automatic variable. The `$PSStyle.Formatting.TableHeader` property defines the color used
+for the header of the table displayed by `Format-Table`. For more information about this setting,
+see [about_ANSI_Terminals](../microsoft.powershell.core/about/about_ansi_terminals.md).
 
 ## RELATED LINKS
 
