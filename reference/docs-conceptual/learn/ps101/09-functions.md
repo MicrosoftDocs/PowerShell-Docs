@@ -2,6 +2,7 @@
 description: PowerShell functions allow you to create tools that can be reused in scripts.
 ms.custom: Contributor-mikefrobbins
 ms.date: 10/05/2021
+ms.topic: conceptual
 ms.reviewer: mirobb
 title: Functions
 ---

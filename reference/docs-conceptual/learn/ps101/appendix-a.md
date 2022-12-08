@@ -2,6 +2,7 @@
 description: This article explains how to read and understand the syntax of a cmdlet as presented by Get-Help.
 ms.custom: Contributor-mikefrobbins
 ms.date: 10/05/2021
+ms.topic: conceptual
 ms.reviewer: mirobb
 title: Appendix A - Help Syntax
 ---
