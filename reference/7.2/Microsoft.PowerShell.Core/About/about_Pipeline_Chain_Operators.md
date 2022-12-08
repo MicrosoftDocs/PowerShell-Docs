@@ -188,9 +188,8 @@ Get-ChildItem -Path ./file.txt |
 will group as:
 
 ```powershell
-(
-    Get-ChildItem -Path ./file.txt || Write-Error "file.txt doesn't exist"
-) && Get-Content -Raw ./file.txt
+(Get-ChildItem -Path ./file.txt || Write-Error "file.txt doesn't exist") &&
+    Get-Content -Raw ./file.txt
 ```
 
 being equivalent to:
