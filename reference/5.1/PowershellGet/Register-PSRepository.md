@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 02/16/2022
+ms.date: 12/08/2022
 online version: https://learn.microsoft.com/powershell/module/powershellget/register-psrepository?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSRepository
@@ -204,8 +204,8 @@ Accept wildcard characters: False
 
 ### -PublishLocation
 
-Specifies the URI of the publish location. For example, for NuGet-based repositories, the publish
-location is similar to `https://someNuGetUrl.com/api/v2/Packages`.
+Specifies the URI of the publish location for modules. For example, for NuGet-based repositories,
+the publish location is similar to `https://someNuGetUrl.com/api/v2/package`.
 
 ```yaml
 Type: System.Uri
@@ -221,7 +221,8 @@ Accept wildcard characters: False
 
 ### -ScriptPublishLocation
 
-Specifies the script publish location.
+Specifies the URI of the publish location for scripts. For example, for NuGet-based repositories,
+the publish location is similar to `https://someNuGetUrl.com/api/v2/package/`.
 
 ```yaml
 Type: System.Uri
@@ -237,7 +238,11 @@ Accept wildcard characters: False
 
 ### -ScriptSourceLocation
 
-Specifies the script source location.
+Specifies the URI for discovering and installing scripts from this repository. A URI can be a NuGet
+server feed (most common situation), HTTP, HTTPS, FTP or file location.
+
+For example, for NuGet-based repositories, the source location is similar to
+`https://someNuGetUrl.com/api/v2/items/psscript`.
 
 ```yaml
 Type: System.Uri
