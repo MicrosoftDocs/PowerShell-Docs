@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/17/2022
+ms.date: 12/08/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Process
@@ -128,20 +128,21 @@ Get-Process pwsh | Format-Table `
     @{Label = "WS(K)"; Expression = {[int]($_.WS / 1024)}},
     @{Label = "VM(M)"; Expression = {[int]($_.VM / 1MB)}},
     @{Label = "CPU(s)"; Expression = {if ($_.CPU) {$_.CPU.ToString("N")}}},
-    Id, MachineName, ProcessName -AutoSize
+    Id, ProcessName, StartTime -AutoSize
 ```
 
 ```Output
-NPM(K) PM(K) WS(K) VM(M) CPU(s)   Id MachineName ProcessName
------- ----- ----- ----- ------   -- ----------- -----------
-     6 23500 31340   142 1.70   1980 .           pwsh
-     6 23500 31348   142 2.75   4016 .           pwsh
-    27 54572 54520   576 5.52   4428 .           pwsh
+NPM(K)  PM(K)  WS(K)   VM(M) CPU(s)    Id ProcessName StartTime
+------  -----  -----   ----- ------    -- ----------- ---------
+   143 239540 259384 2366162 22.73  12720 pwsh        12/5/2022 3:21:51 PM
+   114  61776 104588 2366127 11.45  18336 pwsh        12/5/2022 7:30:53 AM
+   156  77924  82060 2366185 10.47  18812 pwsh        12/5/2022 7:30:52 AM
+    85  48216 115192 2366074 1.14   24428 pwsh        12/8/2022 9:14:15 AM
 ```
 
-This example retrieves processes from the local computer and a remote computer (S1). The retrieved
-processes are piped to the `Format-Table` command that adds the **MachineName** property to the
-standard `Get-Process` output display.
+This example retrieves processes from the local computer. The retrieved processes are piped to the
+`Format-Table` command that adds the **StartTime** property to the standard `Get-Process` output
+display.
 
 ### Example 6: Get version information for a process
 
