@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/learn/shell/optimize-shell",
+      "source_path": "reference/docs-conceptual/windows-powershell/install/Creating-a-Custom-PowerShell-Shortcut.md"
+    },
+    {
       "redirect_document_id": false,
       "redirect_url": "/previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-70",
       "source_path": "reference/docs-conceptual/whats-new/what-s-new-in-powershell-70.md"
