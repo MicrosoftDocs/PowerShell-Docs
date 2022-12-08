@@ -81,7 +81,7 @@
         "docs-conceptual/developer/**/**.md": "reference",
         "docs-conceptual/learn/**.md": "tutorial",
         "docs-conceptual/learn/deep-dives/**.md": "tutorial",
-        "docs-conceptual/learn/ps101/**.md": "guide",
+        "docs-conceptual/learn/ps101/**.md": "conceptual",
         "docs-conceptual/learn/remoting/**.md": "tutorial",
         "docs-conceptual/samples/**/**.md": "sample"
       },
