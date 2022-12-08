@@ -1,12 +1,13 @@
 ---
 description: This articles shows how to manage printers in Windows using WMI objects and COM interfaces.
-ms.date: 10/07/2021
+ms.date: 12/08/2022
 title: Working with Printers
 ---
 # Working with Printers in Windows
 
-You can use PowerShell to manage printers by using WMI and the **WScript.Network** COM object from
-WSH. We will use a mix of both tools to demonstrate specific tasks.
+> This sample only applies to Windows platforms.
+
+You can use PowerShell to manage printers using WMI and the **WScript.Network** COM object from WSH.
 
 ## Listing Printer Connections
 
@@ -17,15 +18,15 @@ class:
 Get-CimInstance -Class Win32_Printer
 ```
 
-You can also list the printers by using the **WScript.Network** COM object that is typically used in
-WSH scripts:
+You can also list the printers using the **WScript.Network** COM object that's typically used in WSH
+scripts:
 
 ```powershell
 (New-Object -ComObject WScript.Network).EnumPrinterConnections()
 ```
 
 Because this command returns a simple string collection of port names and printer device names
-without any distinguishing labels, it is not easy to interpret.
+without any distinguishing labels, it isn't easy to interpret.
 
 ## Adding a Network Printer
 

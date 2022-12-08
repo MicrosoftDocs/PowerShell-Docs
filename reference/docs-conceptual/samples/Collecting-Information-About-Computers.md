@@ -1,15 +1,17 @@
 ---
 description: This article shows how to collection information about computer configuration use WMI and CIM cmdlets.
-ms.date: 10/07/2021
+ms.date: 12/08/2022
 title: Collecting Information About Computers
 ---
 # Collecting Information About Computers
 
+> This sample only applies to Windows platforms.
+
 Cmdlets from **CimCmdlets** module are the most important cmdlets for general system management
 tasks. All critical subsystem settings are exposed through WMI. Furthermore, WMI treats data as
-objects that are in collections of one or more items. Because Windows PowerShell also works with
-objects and has a pipeline that allows you to treat single or multiple objects in the same way,
-generic WMI access allows you to perform some advanced tasks with very little work.
+objects that are in collections of one or more items. Because PowerShell also works with objects and
+has a pipeline that allows you to treat single or multiple objects in the same way, generic WMI
+access allows you to perform some advanced tasks with very little work.
 
 ## Listing Desktop Settings
 
@@ -19,7 +21,7 @@ We'll begin with a command that collects information about the desktops on the l
 Get-CimInstance -ClassName Win32_Desktop
 ```
 
-This returns information for all desktops, whether they are in use or not.
+This returns information for all desktops, whether they're in use or not.
 
 > [!NOTE]
 > Information returned by some WMI classes can be very detailed, and often include metadata about
@@ -81,7 +83,7 @@ MyPC Jane Doe         WORKGROUP 804765696           DA243A-ABA 6415cl NA910 Comp
 ```
 
 Your output from commands such as this, which return information directly from some hardware, is
-only as good as the data you have. Some information is not correctly configured by hardware
+only as good as the data you have. Some information isn't correctly configured by hardware
 manufacturers and may therefore be unavailable.
 
 ## Listing Installed Hotfixes
@@ -153,12 +155,13 @@ Get-CimInstance -ClassName Win32_OperatingSystem |
   Select-Object -Property BuildNumber,BuildType,OSType,ServicePackMajorVersion,ServicePackMinorVersion
 ```
 
-You can also use wildcards with the `Select-Object`'s **Property** parameter. Because all the
-properties beginning with either **Build** or **ServicePack** are important to use here, we can
-shorten this to the following form:
+You can also use wildcards with the **Property** parameter. Because all the properties beginning
+with either **Build** or **ServicePack** are important to use here, we can shorten this to the
+following form:
 
 ```powershell
-Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object -Property Build*,OSType,ServicePack*
+Get-CimInstance -ClassName Win32_OperatingSystem |
+    Select-Object -Property Build*,OSType,ServicePack*
 ```
 
 ```Output
@@ -171,13 +174,12 @@ ServicePackMinorVersion : 0
 
 ## Listing Local Users and Owner
 
-Local general user information — number of licensed users, current number of users, and owner name —
-can be found with a selection of **Win32_OperatingSystem** class properties. You can explicitly
-select the properties to display like this:
+General information about local users can be found with a selection of **Win32_OperatingSystem**
+class properties. You can explicitly select the properties to display like this:
 
 ```powershell
 Get-CimInstance -ClassName Win32_OperatingSystem |
-  Select-Object -Property NumberOfLicensedUsers,NumberOfUsers,RegisteredUser
+    Select-Object -Property NumberOfLicensedUsers, NumberOfUsers, RegisteredUser
 ```
 
 A more succinct version using wildcards is:
@@ -188,8 +190,8 @@ Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object -Property *user
 
 ## Getting Available Disk Space
 
-To see the disk space and free space for local drives, you can use the Win32_LogicalDisk WMI class.
-You need to see only instances with a DriveType of 3 — the value WMI uses for fixed hard disks.
+To see the disk space and free space for local drives, you can use the **Win32_LogicalDisk** class.
+You need to see only instances with a **DriveType** of 3, the value WMI uses for fixed hard disks.
 
 ```powershell
 Get-CimInstance -ClassName Win32_LogicalDisk -Filter "DriveType=3"
@@ -204,7 +206,7 @@ Q:       3                      New Volume 122934034432 44298250240 .
 
 ```powershell
 Get-CimInstance -ClassName Win32_LogicalDisk -Filter "DriveType=3" |
-  Measure-Object -Property FreeSpace,Size -Sum |
+    Measure-Object -Property FreeSpace,Size -Sum |
     Select-Object -Property Property,Sum
 ```
 
@@ -226,8 +228,8 @@ Get-CimInstance -ClassName Win32_LogonSession
 
 ## Getting the User Logged on to a Computer
 
-You can display the user logged on to a particular computer system using Win32_ComputerSystem. This
-command returns only the user logged on to the system desktop:
+You can display the user logged on to a particular computer system using **Win32_ComputerSystem**.
+This command returns only the user logged on to the system desktop:
 
 ```powershell
 Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName
@@ -235,7 +237,7 @@ Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName
 
 ## Getting Local Time from a Computer
 
-You can retrieve the current local time on a specific computer by using the **Win32_LocalTime** WMI
+You can retrieve the current local time on a specific computer using the **Win32_LocalTime** WMI
 class.
 
 ```powershell
@@ -261,18 +263,18 @@ PSComputerName :
 To view the status of all services on a specific computer, you can locally use the `Get-Service`
 cmdlet. For remote systems, you can use the **Win32_Service** WMI class. If you also use
 `Select-Object` to filter the results to **Status**, **Name**, and **DisplayName**, the output
-format will be almost identical to that from `Get-Service`:
+format is almost identical to that from `Get-Service`:
 
 ```powershell
 Get-CimInstance -ClassName Win32_Service |
     Select-Object -Property Status,Name,DisplayName
 ```
 
-To allow the complete display of names for the occasional services with extremely long names, you
-may want to use `Format-Table` with the **AutoSize** and **Wrap** parameters, to optimize column
-width and allow long names to wrap instead of being truncated:
+To allow the complete display of names for services with long names, use the **AutoSize** and
+**Wrap** parameters of `Format-Table`. These parameters optimize column width and allow long names
+to wrap instead of being truncated:
 
 ```powershell
 Get-CimInstance -ClassName Win32_Service |
-    Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap
+    Format-Table -Property Status, Name, DisplayName -AutoSize -Wrap
 ```

@@ -1,22 +1,24 @@
 ---
 author: randomnote1
 description: This article shows how to decode a script block that a PowerShell process is currently running.
-ms.date: 10/07/2021
+ms.date: 12/08/2022
 title: Decode a PowerShell command from a running process
 ---
 
 # Decode a PowerShell command from a running process
 
-At times, you may have a PowerShell process running that is taking up a large amount of resources.
-This process could be running in the context of a [Task Scheduler][task] job or a
-[SQL Server Agent][sqlagent] job. Where there are multiple PowerShell processes running, it can be
+> This sample only runs on Windows platforms.
+
+At times, you may have a PowerShell process running that's taking up a large amount of resources.
+This process could be running in the context of a [Task Scheduler][03] job or a
+[SQL Server Agent][01] job. Where there are multiple PowerShell processes running, it can be
 difficult to know which process represents the problem. This article shows how to decode a script
 block that a PowerShell process is currently running.
 
 ## Create a long running process
 
-To demonstrate this scenario, open a new PowerShell window and run the following code. It
-executes a PowerShell command that outputs a number every minute for 10 minutes.
+To demonstrate this scenario, open a new PowerShell window and run the following code. It executes a
+PowerShell command that outputs a number every minute for 10 minutes.
 
 ```powershell
 powershell.exe -Command {
@@ -32,16 +34,15 @@ powershell.exe -Command {
 
 ## View the process
 
-The body of the command which PowerShell is executing is stored in the **CommandLine** property of
-the [Win32_Process][Win32_Process] class. If the command is an encoded command, the **CommandLine**
+The body of the command that PowerShell is executing is stored in the **CommandLine** property of
+the [Win32_Process][02] class. If the command is an encoded command, the **CommandLine**
 property contains the string "EncodedCommand". Using this information, the encoded command can be
 de-obfuscated via the following process.
 
-Start PowerShell as Administrator. It is vital that PowerShell is running as administrator,
-otherwise no results are returned when querying the running processes.
+Start PowerShell as Administrator. It's vital that PowerShell is running as administrator, otherwise
+no results are returned when querying the running processes.
 
-Execute the following command to get all of the PowerShell processes that have an encoded
-command:
+Execute the following command to get all the PowerShell processes that have an encoded command:
 
 ```powershell
 $powerShellProcesses = Get-CimInstance -ClassName Win32_Process -Filter 'CommandLine LIKE "%EncodedCommand%"'
@@ -108,3 +109,8 @@ DecodedCommand :
 [task]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [sqlagent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
+
+<!-- link references -->
+[01]: /sql/ssms/agent/sql-server-agent
+[02]: /windows/desktop/CIMWin32Prov/win32-process
+[03]: /windows/desktop/TaskSchd/task-scheduler-start-page

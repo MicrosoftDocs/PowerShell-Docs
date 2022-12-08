@@ -3,13 +3,17 @@
 title: Sample scripts for system administration # < 60 chars
 summary: A collection of examples walks through scenarios for administering systems with PowerShell. # < 160 chars
 
+description:
+
 metadata:
-  title: Sample scripts for system administration # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: A collection of examples walks through scenarios for administering systems with PowerShell. # Required; article description that is displayed in search results. < 160 chars.
-  ms.topic: landing-page # Required
-  author: sdwheeler #Required; your GitHub user alias, with correct capitalization.
-  ms.author: sewhee #Required; microsoft alias of author; optional team alias.
-  ms.date: 10/07/2021
+  title: Sample scripts for system administration
+  description: > # < 160 chars
+    A collection of examples walks through scenarios for administering systems with PowerShell.
+    NOTE: Most of these examples only work on Windows.
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 12/08/2022
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn |
 #               overview | quickstart | reference | tutorial | video | whats-new
