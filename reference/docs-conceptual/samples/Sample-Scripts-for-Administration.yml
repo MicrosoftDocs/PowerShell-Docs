@@ -3,8 +3,6 @@
 title: Sample scripts for system administration # < 60 chars
 summary: A collection of examples walks through scenarios for administering systems with PowerShell. # < 160 chars
 
-description:
-
 metadata:
   title: Sample scripts for system administration
   description: > # < 160 chars
