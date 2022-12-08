@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 07/02/2019
+ms.date: 12/08/2022
 online version: https://learn.microsoft.com/powershell/module/powershellget/uninstall-module?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Uninstall-Module
@@ -32,7 +32,11 @@ Uninstall-Module [-InputObject] <PSObject[]> [-Force] [-WhatIf] [-Confirm] [<Com
 ## DESCRIPTION
 
 The `Uninstall-Module` cmdlet uninstalls a specified module from the local computer. You can't
-uninstall a module if it has other modules as dependencies.
+uninstall a module if other modules depend on it or the module wasn't installed with the
+`Install-Module` cmdlet.
+
+You can manually delete module files, but doing so may break any modules that depend on the deleted
+module.
 
 ## EXAMPLES
 
