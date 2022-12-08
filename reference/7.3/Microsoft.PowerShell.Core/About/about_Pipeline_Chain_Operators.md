@@ -1,7 +1,7 @@
 ---
 description: Describes chaining pipelines with the `&&` and `||` operators in PowerShell.
 Locale: en-US
-ms.date: 09/30/2019
+ms.date: 12/08/2022
 online version: https://learn.microsoft.com/powershell/module/psscheduledjob/about/about_pipeline_chain_operators?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Pipeline Chain Operators
@@ -17,7 +17,7 @@ Describes chaining pipelines with the `&&` and `||` operators in PowerShell.
 
 Beginning in PowerShell 7, PowerShell implements the `&&` and `||` operators to
 conditionally chain pipelines. These operators are known in PowerShell as
-*pipeline chain operators*, and are similar to
+_pipeline chain operators_, and are similar to
 [AND-OR lists](https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_09_03)
 in POSIX shells like bash, zsh and sh, as well as
 [conditional processing symbols](/previous-versions/windows/it-pro/windows-xp/bb490954(v=technet.10)#using-multiple-commands-and-conditional-processing-symbols)
@@ -121,8 +121,8 @@ $result
 2
 ```
 
-If a script-terminating error occurs during assignment from a pipeline chain, the assignment does
-not succeed:
+If a script-terminating error occurs during assignment from a pipeline chain,
+the assignment does not succeed:
 
 ```powershell
 try
@@ -176,17 +176,20 @@ As of PowerShell 7, the behaviour of these syntaxes has been changed
 so that `$?` is set as expected when a command succeeds or fails
 within parentheses or a subexpression.
 
-Like most other operators in PowerShell, `&&` and `||` are also *left-associative*,
-meaning they group from the left. For example:
+Like most other operators in PowerShell, `&&` and `||` are also
+_left-associative_, meaning they group from the left. For example:
 
 ```powershell
-Get-ChildItem -Path ./file.txt || Write-Error "file.txt does not exist" && Get-Content -Raw ./file.txt
+Get-ChildItem -Path ./file.txt |
+    Write-Error "file.txt doesn't exist" &&
+    Get-Content -Raw ./file.txt
 ```
 
 will group as:
 
-```
-[Get-ChildItem -Path ./file.txt || Write-Error "file.txt does not exist"] && Get-Content -Raw ./file.txt
+```powershell
+(Get-ChildItem -Path ./file.txt || Write-Error "file.txt doesn't exist") &&
+    Get-Content -Raw ./file.txt
 ```
 
 being equivalent to:
@@ -246,7 +249,9 @@ function Test-NonTerminatingError
     $errorId = 'BAD'
     $errorCategory = 'NotSpecified'
 
-    $errorRecord = [System.Management.Automation.ErrorRecord]::new($exception, $errorId, $errorCategory, $null)
+    $errorRecord = [System.Management.Automation.ErrorRecord]::new(
+        $exception, $errorId, $errorCategory, $null
+    )
 
     $PSCmdlet.WriteError($errorRecord)
 }
@@ -263,7 +268,7 @@ Second
 
 Pipeline chain operators, by their name, can be used to chain pipelines, rather
 than just commands. This matches the behavior of other shells, but can make
-*success* harder to determine:
+success harder to determine:
 
 ```powershell
 function Test-NotTwo
@@ -285,7 +290,9 @@ function Test-NotTwo
         $errorId = 'InputTwo'
         $errorCategory = 'InvalidData'
 
-        $errorRecord = [System.Management.Automation.ErrorRecord]::new($exception, $errorId, $errorCategory, $null)
+        $errorRecord = [System.Management.Automation.ErrorRecord]::new(
+            $exception, $errorId, $errorCategory, $null
+        )
 
         $PSCmdlet.WriteError($errorRecord)
     }
