@@ -1,9 +1,9 @@
 ---
 description: PowerShell has a extensible formatting system that allows you to present output in lists, tables, or custom layouts.
-ms.date: 10/07/2021
-title: Using Format Commands to Change Output View
+ms.date: 12/08/2022
+title: Using Format commands to change output view
 ---
-# Using Format Commands to Change Output View
+# Using Format commands to change output view
 
 PowerShell has a set of cmdlets that allow you to control how properties are displayed for
 particular objects. The names of all the cmdlets begin with the verb `Format`. They let you select
@@ -25,13 +25,13 @@ Cmdlet          Format-Wide        6.1.0.0    Microsoft.PowerShell.Utility
 
 This article describes the `Format-Wide`, `Format-List`, and `Format-Table` cmdlets.
 
-Each object type in PowerShell has default properties that are used when you don't specify which
-properties to display. Each cmdlet also uses the same **Property** parameter to specify which
-properties you want to display. Because `Format-Wide` only shows a single property, its **Property**
-parameter only takes a single value, but the property parameters of `Format-List` and `Format-Table`
-accept a list of property names.
+Each object type in PowerShell has default properties that are used when you don't select the
+properties to display. Each cmdlet uses the same **Property** parameter to specify which properties
+you want displayed. Because `Format-Wide` only shows a single property, its **Property** parameter
+only takes a single value, but the property parameters of `Format-List` and `Format-Table` accept a
+list of property names.
 
-In this example, the default output of `Get-Process` cmdlet shows that we have two instances of
+In this example, the default output of `Get-Process` cmdlet shows that we've two instances of
 Internet Explorer running.
 
 ```powershell
@@ -47,7 +47,7 @@ The default format for **Process** objects displays the properties shown here:
      52    11.46      26.46       3.55   21748   1 iexplore
 ```
 
-## Using Format-Wide for Single-Item Output
+## Using Format-Wide for single-item output
 
 The `Format-Wide` cmdlet, by default, displays only the default property of an object. The
 information associated with each object is displayed in a single column:
@@ -74,7 +74,7 @@ List                   Table
 Wide
 ```
 
-### Controlling Format-Wide Display with Column
+### Controlling Format-Wide display with column
 
 With the `Format-Wide` cmdlet, you can only display a single property at a time. This makes it
 useful for displaying large lists in multiple columns.
@@ -89,10 +89,10 @@ Table                  Wide
 
 ```
 
-## Using Format-List for a List View
+## Using Format-List for a list view
 
-The `Format-List` cmdlet displays an object in the form of a listing, with each property labeled
-and displayed on a separate line:
+The `Format-List` cmdlet displays an object in the form of a listing, with each property labeled and
+displayed on a separate line:
 
 ```powershell
 Get-Process -Name iexplore | Format-List
@@ -130,13 +130,13 @@ StartTime   : 10/22/2019 11:23:57 AM
 Id          : 21748
 ```
 
-### Getting Detailed Information by Using Format-List with Wildcards
+### Getting detailed information using Format-List with wildcards
 
 The `Format-List` cmdlet lets you use a wildcard as the value of its **Property** parameter. This
 lets you display detailed information. Often, objects include more information than you need, which
-is why PowerShell doesn't show all property values by default. To show all of properties of
-an object, use the `Format-List -Property *` command. The following command generates over 60
-lines of output for a single process:
+is why PowerShell doesn't show all property values by default. To show all properties of an object,
+use the `Format-List -Property *` command. The following command generates more than 60 lines of
+output for a single process:
 
 ```powershell
 Get-Process -Name iexplore | Format-List -Property *
@@ -145,7 +145,7 @@ Get-Process -Name iexplore | Format-List -Property *
 Although the `Format-List` command is useful for showing detail, if you want an overview of output
 that includes many items, a simpler tabular view is often more useful.
 
-## Using Format-Table for Tabular Output
+## Using Format-Table for tabular output
 
 If you use the `Format-Table` cmdlet with no property names specified to format the output of the
 `Get-Process` command, you get exactly the same output as you do without a `Format` cmdlet. By
@@ -164,7 +164,10 @@ Running  Winmgmt            Windows Management Instrumentation
 Running  WinRM              Windows Remote Management (WS-Manag...
 ```
 
-### Improving Format-Table Output (AutoSize)
+> [!NOTE]
+> `Get-Service` is only available on Windows platforms.
+
+### Improving Format-Table output
 
 Although a tabular view is useful for displaying lots of information, it may be difficult to
 interpret if the display is too narrow for the data. In the previous example, the output is
@@ -185,12 +188,13 @@ Running Winmgmt             Windows Management Instrumentation
 Running WinRM               Windows Remote Management (WS-Management)
 ```
 
-The `Format-Table` cmdlet might still truncate data, but it only truncates at the end of the
-screen. Properties, other than the last one displayed, are given as much size as they need for their
-longest data element to display correctly.
+The `Format-Table` cmdlet might still truncate data, but it only truncates at the end of the screen.
+Properties, other than the last one displayed, are given as much size as they need for their longest
+data element to display correctly.
 
 ```powershell
-Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -AutoSize
+Get-Service -Name win* |
+    Format-Table -Property Name, Status, StartType, DisplayName, DependentServices -AutoSize
 ```
 
 ```Output
@@ -203,19 +207,20 @@ Winmgmt             Running Automatic Windows Management Instrumentation        
 WinRM               Running Automatic Windows Remote Management (WS-Management) {}
 ```
 
-The `Format-Table` command assumes that properties are listed in order of importance. So it attempts
-to fully display the properties nearest the beginning. If the `Format-Table` command can't display
-all the properties, it removes some columns from the display. You can see this behavior in the
-**DependentServices** property previous example.
+The `Format-Table` command assumes that properties are listed in order of importance. The cmdlet
+attempts to fully display the properties nearest the beginning. If the `Format-Table` command can't
+display all the properties, it removes some columns from the display. You can see this behavior in
+the **DependentServices** property previous example.
 
-### Wrapping Format-Table Output in Columns (Wrap)
+### Wrapping Format-Table output in columns
 
-You can force lengthy `Format-Table` data to wrap within its display column by using the **Wrap**
-parameter. Using the **Wrap** parameter may not do what you expect, since it uses
-default settings if you don't also specify **AutoSize**:
+You can force lengthy `Format-Table` data to wrap within its display column using the **Wrap**
+parameter. Using the **Wrap** parameter may not do what you expect, since it uses default settings
+if you don't also specify **AutoSize**:
 
 ```powershell
-Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -Wrap
+Get-Service -Name win* |
+    Format-Table -Property Name, Status, StartType, DisplayName, DependentServices -Wrap
 ```
 
 ```Output
@@ -247,7 +252,8 @@ column is wrapped, if necessary.
 In the following example, we specify the widest properties first.
 
 ```powershell
-Get-Process -Name iexplore | Format-Table -Wrap -AutoSize -Property FileVersion,Path,Name,Id
+Get-Process -Name iexplore |
+    Format-Table -Wrap -AutoSize -Property FileVersion, Path, Name, Id
 ```
 
 Even with wrapping, the final **Id** column is omitted:
@@ -264,7 +270,7 @@ FileVersion                          Path                                       
                                                                                            re
 ```
 
-### Organizing Table Output (-GroupBy)
+### Organizing table output
 
 Another useful parameter for tabular output control is **GroupBy**. Longer tabular listings in
 particular may be hard to compare. The **GroupBy** parameter groups output based on a property

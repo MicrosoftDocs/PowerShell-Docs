@@ -1,9 +1,9 @@
 ---
 description: PowerShell uses the noun Location to refer to the working directory, and implements a family of cmdlets to examine and manipulate your location.
-ms.date: 10/11/2021
-title: Managing Current Location
+ms.date: 12/08/2022
+title: Managing current location
 ---
-# Managing Current Location
+# Managing current location
 
 When navigating folder systems in File Explorer, you usually have a specific working location -
 namely, the current open folder. Items in the current folder can be manipulated easily by clicking
@@ -11,10 +11,10 @@ them. For command-line interfaces such as Cmd.exe, when you are in the same fold
 file, you can access it by specifying a relatively short name, rather than needing to specify the
 entire path to the file. The current directory is called the working directory.
 
-Windows PowerShell uses the noun **Location** to refer to the working directory, and implements a
-family of cmdlets to examine and manipulate your location.
+PowerShell uses the noun **Location** to refer to the working directory, and implements a family of
+cmdlets to examine and manipulate your location.
 
-## Getting Your Current Location (Get-Location)
+## Getting your current location (Get-Location)
 
 To determine the path of your current directory location, enter the `Get-Location` command:
 
@@ -32,7 +32,7 @@ C:\Documents and Settings\PowerUser
 > The `Get-Location` cmdlet is similar to the **pwd** command in the BASH shell. The `Set-Location`
 > cmdlet is similar to the **cd** command in Cmd.exe.
 
-## Setting Your Current Location (Set-Location)
+## Setting your current location (Set-Location)
 
 The `Get-Location` command is used with the `Set-Location` command. The `Set-Location` command
 allows you to specify your current directory location.
@@ -41,11 +41,11 @@ allows you to specify your current directory location.
 Set-Location -Path C:\Windows
 ```
 
-After you enter the command, you will notice that you do not receive any direct feedback about the
-effect of the command. Most Windows PowerShell commands that perform an action produce little or no
-output because the output is not always useful. To verify that a successful directory change has
-occurred when you enter the `Set-Location` command, include the **-PassThru** parameter when you
-enter the `Set-Location` command:
+After you enter the command, notice that you don't receive any direct feedback about the effect of
+the command. Most PowerShell commands that perform an action produce little or no output because the
+output isn't always useful. To verify that a successful directory change has occurred when you enter
+the `Set-Location` command, include the **PassThru** parameter when you enter the `Set-Location`
+command:
 
 ```powershell
 Set-Location -Path C:\Windows -PassThru
@@ -57,8 +57,8 @@ Path
 C:\WINDOWS
 ```
 
-The **PassThru** parameter can be used with many Set commands in Windows PowerShell to return
-information about the result in cases in which there is no default output.
+The **PassThru** parameter can be used with many Set commands in PowerShell to return information
+about the result for cases in which there is no default output.
 
 You can specify paths relative to your current location in the same way as you would in most UNIX
 and Windows command shells. In standard notation for relative paths, a period (`.`) represents your
@@ -67,7 +67,7 @@ location.
 
 For example, if you are in the `C:\Windows` folder, a period (`.`) represents `C:\Windows` and
 double periods (`..`) represent `C:`. You can change from your current location to the root of the
-C: drive by typing:
+`C:` drive by typing:
 
 ```powershell
 Set-Location -Path .. -PassThru
@@ -79,8 +79,8 @@ Path
 C:\
 ```
 
-The same technique works on Windows PowerShell drives that are not file system drives, such as
-**HKLM:**. You can set your location to the `HKLM\\Software` key in the registry by typing:
+The same technique works on PowerShell drives that aren't file system drives, such as `HKLM:`. You
+can set your location to the `HKLM\Software` key in the registry by typing:
 
 ```powershell
 Set-Location -Path HKLM:\SOFTWARE -PassThru
@@ -92,7 +92,7 @@ Path
 HKLM:\SOFTWARE
 ```
 
-You can then change the directory location to the parent directory, which is the root of the Windows PowerShell HKLM: drive, by using a relative path:
+You can then change the directory location to the parent directory, using a relative path:
 
 ```powershell
 Set-Location -Path .. -PassThru
@@ -104,7 +104,8 @@ Path
 HKLM:\
 ```
 
-You can type `Set-Location` or use any of the built-in Windows PowerShell aliases for `Set-Location` (cd, chdir, sl). For example:
+You can type `Set-Location` or use any of the built-in PowerShell aliases for `Set-Location` (`cd`,
+`chdir`, `sl`). For example:
 
 ```powershell
 cd -Path C:\Windows
@@ -118,14 +119,14 @@ chdir -Path .. -PassThru
 sl -Path HKLM:\SOFTWARE -PassThru
 ```
 
-## Saving and Recalling Recent Locations (Push-Location and Pop-Location)
+## Saving and recalling recent locations (Push-Location and Pop-Location)
 
-When changing locations, it is helpful to keep track of where you have been and to be able to return
-to your previous location. The `Push-Location` cmdlet in Windows PowerShell creates a ordered
-history (a "stack") of directory paths where you have been, and you can step back through the
-history of directory paths by using the complementary `Pop-Location` cmdlet.
+When changing locations, it's helpful to keep track of where you have been and to be able to return
+to your previous location. The `Push-Location` cmdlet in PowerShell creates a ordered history (a
+"stack") of directory paths where you have been, and you can step back through the history of
+directory paths using the `Pop-Location` cmdlet.
 
-For example, Windows PowerShell typically starts in the user's home directory.
+For example, PowerShell typically starts in the user's home directory.
 
 ```powershell
 Get-Location
@@ -210,7 +211,7 @@ You can use the `Push-Location` and `Set-Location` commands to change the locati
 drive. For example, if you have a local CD-ROM drive with drive letter D that contains a data CD,
 you can change the location to the CD drive by entering the `Set-Location D:` command.
 
-If the drive is empty, you will get the following error message:
+If the drive is empty, you get the following error message:
 
 ```powershell
 Set-Location D:
@@ -220,7 +221,6 @@ Set-Location D:
 Set-Location : Cannot find path 'D:\' because it does not exist.
 ```
 
-When you are using a command-line interface, it is not convenient to use File Explorer to examine
-the available physical drives. Also, File Explorer would not show you the all of the Windows
-PowerShell drives. Windows PowerShell provides a set of commands for manipulating Windows PowerShell
-drives, and we will talk about these next.
+When you are using a command-line interface, it's not convenient to use File Explorer to examine the
+available physical drives. Also, File Explorer would not show you the all the PowerShell drives.
+PowerShell provides a set of commands for manipulating PowerShell drives.

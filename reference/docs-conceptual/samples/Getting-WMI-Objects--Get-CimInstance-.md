@@ -1,23 +1,23 @@
 ---
 description: This article shows several examples of how to get instances of WMI objects from a computer system.
-ms.date: 10/07/2021
-title: Getting WMI Objects Get CimInstance
+ms.date: 12/08/2022
+title: Getting WMI objects with Get-CimInstance
 ---
-# Getting WMI Objects (Get-CimInstance)
+# Getting WMI objects with Get-CimInstance
 
-## Getting WMI Objects (Get-CimInstance)
+> This sample only applies to Windows plaforms.
 
 Windows Management Instrumentation (WMI) is a core technology for Windows system administration
 because it exposes a wide range of information in a uniform manner. Because of how much WMI makes
-possible, the PowerShell cmdlet for accessing WMI objects, `Get-CimInstance`, is one of the
-most useful for doing real work. We are going to discuss how to use the CimCmdlets to access WMI
-objects and then how to use WMI objects to do specific things.
+possible, the PowerShell cmdlet for accessing WMI objects, `Get-CimInstance`, is one of the most
+useful for doing real work. We're going to discuss how to use the CIM cmdlets to access WMI objects
+and then how to use WMI objects to do specific things.
 
-### Listing WMI Classes
+## Listing WMI classes
 
-The first problem most WMI users encounter is trying to find out what can be done with WMI. WMI
-classes describe the resources that can be managed. There are hundreds of WMI classes, some of which
-contain dozens of properties.
+The first problem most WMI users face is trying to find out what can be done with WMI. WMI classes
+describe the resources that can be managed. There are hundreds of WMI classes, some of which contain
+dozens of properties.
 
 `Get-CimClass` addresses this problem by making WMI discoverable. You can get a list of the WMI
 classes available on the local computer by typing:
@@ -44,8 +44,8 @@ Win32_ThreadStopTrace
 ...
 ```
 
-You can retrieve the same information from a remote computer by using the **ComputerName**
-parameter, specifying a computer name or IP address:
+You can retrieve the same information from a remote computer using the **ComputerName** parameter,
+specifying a computer name or IP address:
 
 ```powershell
 Get-CimClass -Namespace root/CIMV2 -ComputerName 192.168.1.29
@@ -57,10 +57,10 @@ computer is running and the particular WMI extensions added by installed applica
 > [!NOTE]
 > When using CIM cmdlets to connect to a remote computer, the remote computer must be running WMI
 > and the account you are using must be in the local administrators group on the remote computer.
-> The remote system does not need to have PowerShell installed. This allows you to administer
-> operating systems that are not running PowerShell, but do have WMI available.
+> The remote system doesn't need to have PowerShell installed. This allows you to administer
+> operating systems that aren't running PowerShell, but do have WMI available.
 
-### Displaying WMI Class Details
+## Displaying WMI class details
 
 If you already know the name of a WMI class, you can use it to get information immediately. For
 example, one of the WMI classes commonly used for retrieving information about a computer is
@@ -76,8 +76,8 @@ SystemDirectory     Organization BuildNumber RegisteredUser SerialNumber        
 C:\WINDOWS\system32 Microsoft    18362       USER1          00330-80000-00000-AA175 10.0.18362
 ```
 
-Although we are showing all of the parameters, the command can be expressed in a more succinct way.
-The **ComputerName** parameter is not necessary when connecting to the local system. We show it to
+Although we're showing all of the parameters, the command can be expressed in a more succinct way.
+The **ComputerName** parameter isn't necessary when connecting to the local system. We show it to
 demonstrate the most general case and remind you about the parameter. The **Namespace** defaults to
 `root/CIMV2`, and can be omitted as well. Finally, most cmdlets allow you to omit the name of common
 parameters. With `Get-CimInstance`, if no name is specified for the first parameter, PowerShell
@@ -115,9 +115,9 @@ DataExecutionPrevention_Available         Property   bool DataExecutionPreventio
 ...
 ```
 
-### Displaying Non-Default Properties with Format Cmdlets
+## Displaying non-default properties with Format cmdlets
 
-If you want information contained in the **Win32_OperatingSystem** class that is not displayed by
+If you want information contained in the **Win32_OperatingSystem** class that isn't displayed by
 default, you can display it by using the **Format** cmdlets. For example, if you want to display
 available memory data, type:
 

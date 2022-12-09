@@ -1,17 +1,19 @@
 ---
 description: This article shows how to create a custom calendar-style control by using the .NET Framework form-building features in Windows PowerShell.
-ms.date: 10/07/2021
-title: Creating a Graphical Date Picker
+ms.date: 12/08/2022
+title: Creating a graphical date picker
 ---
-# Creating a Graphical Date Picker
+# Creating a graphical date picker
+
+> This sample only applies to Windows platforms.
 
 Use Windows PowerShell 3.0 and later releases to create a form with a graphical, calendar-style
 control that lets users select a day of the month.
 
 ## Create a graphical date-picker control
 
-Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows
-PowerShell script (.ps1).
+Copy and then paste the following into Windows PowerShell ISE, and then save it as a PowerShell
+script (`.ps1`) file.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -58,7 +60,7 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 
 The script begins by loading two .NET Framework classes: **System.Drawing** and
 **System.Windows.Forms**. You then start a new instance of the .NET Framework class
-**Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.
+**Windows.Forms.Form**. That provides a blank form or window to which you can start adding controls.
 
 ```powershell
 $form = New-Object Windows.Forms.Form -Property @{
@@ -86,9 +88,8 @@ hashtable.
 1. **Topmost**: By setting this property to `$true`, you can force the window to open atop other
    open windows and dialog boxes.
 
-Next, create and then add a calendar control in your form.
-In this example, the current day is not highlighted or circled.
-Users can select only one day on the calendar at one time.
+Next, create and then add a calendar control in your form. In this example, the current day isn't
+highlighted or circled. Users can select only one day on the calendar at one time.
 
 ```powershell
 $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
@@ -114,8 +115,8 @@ $form.AcceptButton = $okButton
 $form.Controls.Add($okButton)
 ```
 
-Similarly, you create a **Cancel** button.
-The **Cancel** button is 165 pixels from the top, but 113 pixels from the left edge of the window.
+Similarly, you create a **Cancel** button. The **Cancel** button is 165 pixels from the top, but 113
+pixels from the left edge of the window.
 
 ```powershell
 $cancelButton = New-Object Windows.Forms.Button -Property @{
@@ -145,7 +146,11 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-## See Also
+## See also
 
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week:  Creating a Graphical Date Picker](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10))
+- [GitHub: Dave Wyatt's WinFormsExampleUpdates][02]
+- [Windows PowerShell Tip of the Week: Creating a Graphical Date Picker][01])
+
+<!-- link references -->
+[01]: /previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10)
+[02]: https://github.com/dlwyatt/WinFormsExampleUpdates

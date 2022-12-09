@@ -1,17 +1,19 @@
 ---
 description: This article shows how to create a custom input box by using the .NET Framework form-building features in Windows PowerShell.
-ms.date: 10/07/2021
-title: Creating a Custom Input Box
+ms.date: 12/08/2022
+title: Creating a custom input box
 ---
-# Creating a Custom Input Box
+# Creating a custom input box
 
-Script a graphical custom input box by using Microsoft .NET Framework form-building features in
-Windows PowerShell 3.0 and later releases.
+> This sample only applies to Windows platforms.
+
+Script a graphical custom input box using Microsoft .NET Framework form-building features in Windows
+PowerShell 3.0 and later releases.
 
 ## Create a custom, graphical input box
 
-Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows
-PowerShell script (.ps1).
+Copy and then paste the following into Windows PowerShell ISE, and then save it as a PowerShell
+script (`.ps1`) file.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -63,7 +65,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 The script begins by loading two .NET Framework classes: **System.Drawing** and
 **System.Windows.Forms**. You then start a new instance of the .NET Framework class
-**System.Windows.Forms.Form**; that provides a blank form or window to which you can start adding
+**System.Windows.Forms.Form**. That provides a blank form or window to which you can start adding
 controls.
 
 ```powershell
@@ -73,10 +75,8 @@ $form = New-Object System.Windows.Forms.Form
 After you create an instance of the Form class, assign values to three properties of this class.
 
 - **Text.** This becomes the title of the window.
-
 - **Size.** This is the size of the form, in pixels. The preceding script creates a form that's 300
   pixels wide by 200 pixels tall.
-
 - **StartingPosition.** This optional property is set to **CenterScreen** in the preceding script.
   If you don't add this property, Windows selects a location when the form is opened. By setting the
   **StartingPosition** to **CenterScreen**, you're automatically displaying the form in the middle
@@ -127,8 +127,8 @@ $form.Controls.Add($label)
 ```
 
 Add the control (in this case, a text box) that lets users provide the information you've described
-in your label text. There are many other controls you can apply besides text boxes; for more
-controls, see [System.Windows.Forms Namespace](/dotnet/api/system.windows.forms).
+in your label text. There are many other controls you can apply besides text boxes. For more
+controls, see [System.Windows.Forms Namespace][01].
 
 ```powershell
 $textBox = New-Object System.Windows.Forms.TextBox
@@ -144,7 +144,8 @@ dialog boxes.
 $form.Topmost = $true
 ```
 
-Next, add this line of code to activate the form, and set the focus to the text box that you created.
+Next, add this line of code to activate the form, and set the focus to the text box that you
+created.
 
 ```powershell
 $form.Add_Shown({$textBox.Select()})
@@ -160,14 +161,18 @@ Finally, the code inside the **If** block instructs Windows what to do with the 
 provide text in the text box, and then click the **OK** button or press the **Enter** key.
 
 ```powershell
-if ($result -eq [System.Windows.Forms.DialogResult]::OK)
-{
-    $x = $textBox.Text
-    $x
+if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
+    $x = $textBox.Text
+    $x
 }
 ```
 
-## See Also
+## See also
 
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730941(v=technet.10))
-- [Windows PowerShell Tip of the Week:  Creating a Custom Input Box](https://technet.microsoft.com/library/ff730941.aspx)
+- [GitHub: Dave Wyatt's WinFormsExampleUpdates][02])
+- [Windows PowerShell Tip of the Week:  Creating a Custom Input Box][03]
+
+<!-- link references -->
+[01]: /dotnet/api/system.windows.forms
+[02]: https://github.com/dlwyatt/WinFormsExampleUpdates
+[03]: /previous-versions/windows/it-pro/windows-powershell-1.0/ff730941(v=technet.10)

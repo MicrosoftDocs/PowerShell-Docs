@@ -1,14 +1,16 @@
 ---
 description: PowerShell provides several cmdlets that help manage processes on local and remote computers.
-ms.date: 10/11/2021
-title: Managing Processes with Process Cmdlets
+ms.date: 12/08/2022
+title: Managing processes with Process cmdlets
 ---
-# Managing Processes with Process Cmdlets
+# Managing processes with Process cmdlets
 
-You can use the Process cmdlets in Windows PowerShell to manage local and remote processes in
-Windows PowerShell.
+> This sample only applies to Windows PowerShell 5.1.
 
-## Getting Processes (Get-Process)
+You can use the Process cmdlets in PowerShell to manage local and remote processes in
+PowerShell.
+
+## Getting processes
 
 To get the processes running on the local computer, run a `Get-Process` with no parameters.
 
@@ -25,10 +27,10 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
       0       0        0         16     0               0 Idle
 ```
 
-Although it is normal for cmdlets to return no data in some situations, when you specify a process
-by its ProcessId, `Get-Process` generates an error if it finds no matches, because the usual
-intent is to retrieve a known running process. If there is no process with that Id, it is likely
-that the Id is incorrect or that the process of interest has already exited:
+Although it's normal for cmdlets to return no data in some situations, when you specify a process by
+its **ProcessId**, `Get-Process` generates an error if it finds no matches, because the usual intent
+is to retrieve a known running process. If there is no process with that ID, it's likely that the ID
+is incorrect or that the process of interest has already exited:
 
 ```powershell
 Get-Process -Id 99
@@ -57,10 +59,9 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     555      15    34500      12384   134   105.25    728 explorer
 ```
 
-Because the .NET System.Diagnostics.Process class is the foundation for Windows PowerShell
-processes, it follows some of the conventions used by System.Diagnostics.Process. One of those
-conventions is that the process name for an executable never includes the ".exe" at the end of the
-executable name.
+Because the .NET **System.Diagnostics.Process** class is the foundation for PowerShell processes, it
+follows some of the conventions used by **System.Diagnostics.Process**. One of those conventions is
+that the process name for an executable never includes the `.exe` at the end of the executable name.
 
 `Get-Process` also accepts multiple values for the Name parameter.
 
@@ -91,10 +92,10 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-The computer names are not evident in this display, but they are stored in the MachineName property
-of the process objects that `Get-Process` returns. The following command uses the `Format-Table`
-cmdlet to display the process **ID**, **ProcessName** and **MachineName** (ComputerName) properties
-of the process objects.
+The computer names aren't evident in this display, but they're stored in the **MachineName** property of
+the process objects that `Get-Process` returns. The following command uses the `Format-Table` cmdlet
+to display the process **ID**, **ProcessName** and **MachineName** (ComputerName) properties of the
+process objects.
 
 ```powershell
 Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 |
@@ -130,13 +131,13 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
     605       9  30668 29800   155 7.11    3052 powershell Server02
 ```
 
-## Stopping Processes (Stop-Process)
+## Stopping processes
 
-Windows PowerShell gives you flexibility for listing processes, but what about stopping a process?
+PowerShell gives you flexibility for listing processes, but what about stopping a process?
 
-The `Stop-Process` cmdlet takes a Name or Id to specify a process you want to stop. Your ability
-to stop processes depends on your permissions. Some processes cannot be stopped. For example, if you
-try to stop the idle process, you get an error:
+The `Stop-Process` cmdlet takes a **Name** or **Id** to specify a process you want to stop. Your ability to
+stop processes depends on your permissions. Some processes can't be stopped. For example, if you try
+to stop the idle process, you get an error:
 
 ```powershell
 Stop-Process -Name Idle
@@ -151,7 +152,7 @@ At line:1 char:13
 
 You can also force prompting with the **Confirm** parameter. This parameter is particularly useful
 if you use a wildcard when specifying the process name, because you may accidentally match some
-processes you do not want to stop:
+processes you don't want to stop:
 
 ```powershell
 Stop-Process -Name t*,e* -Confirm
@@ -171,8 +172,8 @@ Performing operation "Stop-Process" on Target "taskmgr (4072)".
 ```
 
 Complex process manipulation is possible by using some of the object filtering cmdlets. Because a
-Process object has a Responding property that is true when it is no longer responding, you can stop
-all nonresponsive applications with the following command:
+Process object has a **Responding** property that's true when it's no longer responding, you can
+stop all nonresponsive applications with the following command:
 
 ```powershell
 Get-Process | Where-Object -FilterScript {$_.Responding -eq $false} | Stop-Process
@@ -180,16 +181,16 @@ Get-Process | Where-Object -FilterScript {$_.Responding -eq $false} | Stop-Proce
 
 You can use the same approach in other situations. For example, suppose a secondary notification
 area application automatically runs when users start another application. You may find that this
-does not work correctly in Terminal Services sessions, but you still want to keep it in sessions
-that run on the physical computer console. Sessions connected to the physical computer desktop
-always have a session ID of 0, so you can stop all instances of the process that are in other
-sessions by using `Where-Object` and the process, **SessionId**:
+doesn't work correctly in Terminal Services sessions, but you still want to keep it in sessions that
+run on the physical computer console. Sessions connected to the physical computer desktop always
+have a session ID of 0, so you can stop all instances of the process that are in other sessions by
+using `Where-Object` and the process, **SessionId**:
 
 ```powershell
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
 ```
 
-The `Stop-Process` cmdlet does not have a ComputerName parameter. Therefore, to run a stop process
+The `Stop-Process` cmdlet doesn't have a **ComputerName** parameter. Therefore, to run a stop process
 command on a remote computer, you need to use the `Invoke-Command` cmdlet. For example, to stop the
 PowerShell process on the Server01 remote computer, type:
 
@@ -197,14 +198,14 @@ PowerShell process on the Server01 remote computer, type:
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
 ```
 
-## Stopping All Other Windows PowerShell Sessions
+## Stopping All Other PowerShell Sessions
 
-It may occasionally be useful to be able to stop all running Windows PowerShell sessions other than
-the current session. If a session is using too many resources or is inaccessible (it may be running
+It may occasionally be useful to be able to stop all running PowerShell sessions other than the
+current session. If a session is using too many resources or is inaccessible (it may be running
 remotely or in another desktop session), you may not be able to directly stop it. If you try to stop
 all running sessions, however, the current session may be terminated instead.
 
-Each Windows PowerShell session has an environment variable PID that contains the Id of the Windows
+Each PowerShell session has an environment variable PID that contains the **Id** of the Windows
 PowerShell process. You can check the $PID against the Id of each session and terminate only Windows
 PowerShell sessions that have a different Id. The following pipeline command does this and returns
 the list of terminated sessions (because of the use of the **PassThru** parameter):
@@ -225,17 +226,25 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     287       9    21044      26928   143     1.02   3672 powershell
 ```
 
-## Starting, Debugging, and Waiting for Processes
+## Starting, debugging, and waiting for processes
 
-Windows PowerShell also comes with cmdlets to start (or restart), debug a process, and wait for a
-process to complete before running a command. For information about these cmdlets, see the cmdlet
-help topic for each cmdlet.
+PowerShell also comes with cmdlets to start (or restart), debug a process, and wait for a process to
+complete before running a command. For information about these cmdlets, see the cmdlet help topic
+for each cmdlet.
 
-## See Also
+## See also
 
-- [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)
-- [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process)
-- [Start-Process](/powershell/module/Microsoft.PowerShell.Management/Start-Process)
-- [Wait-Process](/powershell/module/Microsoft.PowerShell.Management/Wait-Process)
-- [Debug-Process](/powershell/module/Microsoft.PowerShell.Management/Debug-Process)
-- [Invoke-Command](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)
+- [Get-Process][03]
+- [Stop-Process][05]
+- [Start-Process][04]
+- [Wait-Process][06]
+- [Debug-Process][02]
+- [Invoke-Command][01]
+
+<!-- link references -->
+[01]: /powershell/module/Microsoft.PowerShell.Core/Invoke-Command
+[02]: /powershell/module/Microsoft.PowerShell.Management/Debug-Process
+[03]: /powershell/module/Microsoft.PowerShell.Management/Get-Process
+[04]: /powershell/module/Microsoft.PowerShell.Management/Start-Process
+[05]: /powershell/module/Microsoft.PowerShell.Management/Stop-Process
+[06]: /powershell/module/Microsoft.PowerShell.Management/Wait-Process

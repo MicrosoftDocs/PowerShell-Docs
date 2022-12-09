@@ -1,17 +1,19 @@
 ---
 description: This article shows how to create a multiple-selection list box control using the .NET Framework form-building features in Windows PowerShell.
-ms.date: 10/07/2021
-title: Multiple selection List Boxes
+ms.date: 12/08/2022
+title: Multiple selection list boxes
 ---
-# Multiple-selection List Boxes
+# Multiple-selection list boxes
+
+> This sample only applies to Windows platforms.
 
 Use Windows PowerShell 3.0 and later releases to create a multiple-selection list box control in a
 custom Windows Form.
 
 ## Create list box controls that allow multiple selections
 
-Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows
-PowerShell script (.ps1).
+Copy and then paste the following into Windows PowerShell ISE, and then save it as a PowerShell
+script (`.ps1`) file.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -71,7 +73,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 The script begins by loading two .NET Framework classes: **System.Drawing** and
 **System.Windows.Forms**. You then start a new instance of the .NET Framework class
-**System.Windows.Forms.Form**; that provides a blank form or window to which you can start adding
+**System.Windows.Forms.Form**. That provides a blank form or window to which you can start adding
 controls.
 
 ```powershell
@@ -81,10 +83,8 @@ $form = New-Object System.Windows.Forms.Form
 After you create an instance of the Form class, assign values to three properties of this class.
 
 - **Text.** This becomes the title of the window.
-
 - **Size.** This is the size of the form, in pixels. The preceding script creates a form that's 300
   pixels wide by 200 pixels tall.
-
 - **StartingPosition.** This optional property is set to **CenterScreen** in the preceding script.
   If you don't add this property, Windows selects a location when the form is opened. By setting the
   **StartingPosition** to **CenterScreen**, you're automatically displaying the form in the middle
@@ -136,7 +136,7 @@ $form.Controls.Add($label)
 
 Add the control (in this case, a list box) that lets users provide the information you've described
 in your label text. There are many other controls you can apply besides text boxes; for more
-controls, see [System.Windows.Forms Namespace](/dotnet/api/system.windows.forms).
+controls, see [System.Windows.Forms Namespace][01].
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.Listbox
@@ -180,7 +180,7 @@ Add the following line of code to display the form in Windows.
 $result = $form.ShowDialog()
 ```
 
-Finally, the code inside the **If** block instructs Windows what to do with the form after users
+Finally, the code inside the `if` block instructs Windows what to do with the form after users
 select one or more options from the list box, and then click the **OK** button or press the
 **Enter** key.
 
@@ -192,8 +192,14 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## See Also
+## See also
 
-- [Weekend Scripter: Fixing PowerShell GUI Examples](https://devblogs.microsoft.com/scripting/weekend-scripter-fixing-powershell-gui-examples/)
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week: Multi-Select List Boxes - And More!](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730950(v=technet.10))
+- [Weekend Scripter: Fixing PowerShell GUI Examples][03]
+- [GitHub: Dave Wyatt's WinFormsExampleUpdates][04]
+- [Windows PowerShell Tip of the Week: Multi-Select List Boxes - And More!][02])
+
+<!-- link references -->
+[01]: /dotnet/api/system.windows.forms
+[02]: /previous-versions/windows/it-pro/windows-powershell-1.0/ff730950(v=technet.10)
+[03]: https://devblogs.microsoft.com/scripting/weekend-scripter-fixing-powershell-gui-examples/
+[04]: https://github.com/dlwyatt/WinFormsExampleUpdates
