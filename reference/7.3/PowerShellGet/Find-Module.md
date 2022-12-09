@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 08/18/2022
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/powershellget/find-module?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Module
@@ -47,6 +47,12 @@ module that does not exceed the version specified.
 If the **RequiredVersion** parameter is specified, `Find-Module` only returns the module version
 that is an exact match to the specified version. `Find-Module` searches through all available
 modules, because name conflicts between sources can occur.
+
+The parameters that take module version number take strings formatted as version numbers.
+
+- Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
+- Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is
+  arbitrary string assigned to that release.
 
 The following examples use the [PowerShell Gallery](https://www.powershellgallery.com/) as the only
 registered repository. `Get-PSRepository` displays the registered repositories. If you have multiple
@@ -112,21 +118,18 @@ The `Find-Module` cmdlet uses the **Name** parameter to specify the **PowerShell
 
 ### Example 4: Find a module by specific version
 
-This example returns an object that represents a module's specific version. If the specified version
-is not found, an error is returned.
+This example shows how to install a specific prerelease version of a module. Prerelease versions
+have a format of `<version_number>-<prerelease_label>`.
 
 ```powershell
-Find-Module -Name PowerShellGet -RequiredVersion 1.6.5
+Find-Module PSReadLine -AllowPrerelease -RequiredVersion 2.2.4-beta1
 ```
 
 ```Output
-Version   Name             Repository     Description
--------   ----             ----------     -----------
-1.6.5     PowerShellGet    PSGallery      PowerShell module with commands for discovering...
+Version        Name             Repository       Description
+-------        ----             ----------       -----------
+2.2.4-beta1    PSReadLine       PSGallery        Great command line editing in the PowerS…
 ```
-
-The `Find-Module` cmdlet uses the **Name** parameter to specify the **PowerShellGet** module. The
-**RequiredVersion** parameter specifies version **1.6.5**.
 
 ### Example 5: Find a module in a specific repository
 
@@ -328,8 +331,8 @@ Accept wildcard characters: False
 ### -Filter
 
 Specifies a filter based on the **PackageManagement** provider-specific search syntax. For NuGet
-modules, this parameter is the equivalent of searching by using the Search bar on the [PowerShell Gallery](https://www.powershellgallery.com/)
-website.
+modules, this parameter is the equivalent of searching using the Search bar on the
+[PowerShell Gallery](https://www.powershellgallery.com/) website.
 
 ```yaml
 Type: System.String
