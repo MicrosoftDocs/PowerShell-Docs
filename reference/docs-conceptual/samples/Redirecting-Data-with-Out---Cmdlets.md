@@ -15,7 +15,7 @@ Therefore, the text is formatted as you see it in the PowerShell console window.
 Second, these cmdlets use the PowerShell verb **Out** because they send information out from
 PowerShell to somewhere else.
 
-## Console Output (Out-Host)
+## Console output
 
 By default, PowerShell sends data to the host window, which is exactly what the `Out-Host`
 cmdlet does. The primary use for the `Out-Host` cmdlet is paging. For example, the following command
@@ -87,7 +87,7 @@ pipeline.
 > All the **Out** cmdlets render output as text, using the formatting in effect for the console
 > window, including line length limits.
 
-## Discarding Output (Out-Null)
+## Discarding output
 
 The `Out-Null` cmdlet is designed to immediately discard any input it receives. This is useful for
 discarding unnecessary data that you get as a side-effect of running a command. When type the
@@ -107,7 +107,7 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-## Printing Data (Out-Printer)
+## Printing data
 
 > `Out-Printer` is only available on Windows platforms.
 
@@ -121,7 +121,7 @@ data to an image file by typing:
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-## Saving Data (Out-File)
+## Saving data
 
 You can send output to a file instead of the console window using the `Out-File` cmdlet. The
 following command line sends a list of processes to the file `C:\temp\processlist.txt`:

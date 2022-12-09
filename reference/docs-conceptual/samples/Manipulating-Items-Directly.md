@@ -30,7 +30,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-## Creating new Items (New-Item)
+## Creating new items
 
 To create a new item in the filesystem, use the `New-Item` cmdlet. Include the **Path** parameter
 with path to the item, and the **ItemType** parameter with a value of `file` or `directory`.
@@ -83,7 +83,7 @@ SKC  VC Name                           Property
 When typing a registry path, be sure to include the colon (`:`) in the PowerShell drive names,
 `HKLM:` and `HKCU:`. Without the colon, PowerShell doesn't recognize the drive name in the path.
 
-## Why Registry Values aren't Items
+## Why registry values aren't items
 
 When you use the `Get-ChildItem` cmdlet to find the items in a registry key, you will never see
 actual registry entries or their values.
@@ -113,7 +113,7 @@ Furthermore, because registry entry names can contain the backslash character (`
 entries were items, then you couldn't use the path notation to distinguish a registry entry named
 `Windows\CurrentVersion\Run` from the subkey that's located in that path.
 
-## Renaming existing Items (Rename-Item)
+## Renaming existing items
 
 To change the name of a file or folder, use the `Rename-Item` cmdlet. The following command changes
 the name of the `file1.txt` file to `fileOne.txt`.
@@ -136,7 +136,7 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-## Moving Items (Move-Item)
+## Moving items
 
 To move a file or folder, use the `Move-Item` cmdlet.
 
@@ -156,7 +156,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-## Copying Items (Copy-Item)
+## Copying items
 
 If you are familiar with the copy operations in other shells, you might find the behavior of the
 `Copy-Item` cmdlet in PowerShell to be unusual. When you copy an item from one location to another,
@@ -204,7 +204,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-## Deleting Items (Remove-Item)
+## Deleting items
 
 To delete files and folders, use the `Remove-Item` cmdlet. PowerShell cmdlets, such as
 `Remove-Item`, that can make significant, irreversible changes will often prompt for confirmation
@@ -231,7 +231,7 @@ Because `Yes` is the default response, to delete the folder and its files, press
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-## Executing Items (Invoke-Item)
+## Executing items
 
 PowerShell uses the `Invoke-Item` cmdlet to perform a default action for a file or folder. This
 default action is determined by the default application handler in the registry; the effect is the

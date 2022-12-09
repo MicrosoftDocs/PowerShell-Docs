@@ -1,9 +1,9 @@
 ---
 description: This article shows several examples of how to get instances of WMI objects from a computer system.
 ms.date: 12/08/2022
-title: Getting WMI Objects with Get-CimInstance
+title: Getting WMI objects with Get-CimInstance
 ---
-# Getting WMI Objects with Get-CimInstance
+# Getting WMI objects with Get-CimInstance
 
 > This sample only applies to Windows plaforms.
 
@@ -13,7 +13,7 @@ possible, the PowerShell cmdlet for accessing WMI objects, `Get-CimInstance`, is
 useful for doing real work. We're going to discuss how to use the CIM cmdlets to access WMI objects
 and then how to use WMI objects to do specific things.
 
-## Listing WMI Classes
+## Listing WMI classes
 
 The first problem most WMI users face is trying to find out what can be done with WMI. WMI classes
 describe the resources that can be managed. There are hundreds of WMI classes, some of which contain
@@ -60,7 +60,7 @@ computer is running and the particular WMI extensions added by installed applica
 > The remote system doesn't need to have PowerShell installed. This allows you to administer
 > operating systems that aren't running PowerShell, but do have WMI available.
 
-## Displaying WMI Class Details
+## Displaying WMI class details
 
 If you already know the name of a WMI class, you can use it to get information immediately. For
 example, one of the WMI classes commonly used for retrieving information about a computer is
@@ -115,7 +115,7 @@ DataExecutionPrevention_Available         Property   bool DataExecutionPreventio
 ...
 ```
 
-## Displaying Non-Default Properties with Format Cmdlets
+## Displaying non-default properties with Format cmdlets
 
 If you want information contained in the **Win32_OperatingSystem** class that isn't displayed by
 default, you can display it by using the **Format** cmdlets. For example, if you want to display

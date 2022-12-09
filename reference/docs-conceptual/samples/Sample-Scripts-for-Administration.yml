@@ -25,9 +25,9 @@ landingContent:
         links:
           - text: Viewing object structure
             url: ./viewing-object-structure--get-member-.md
-          - text: Selecting parts of object
+          - text: Selecting parts of objects
             url: ./selecting-parts-of-objects--select-object-.md
-          - text: Filtering objects in the pipeline
+          - text: Removing objects from the pipeline
             url: ./removing-objects-from-the-pipeline--where-object-.md
           - text: Sorting objects
             url: ./sorting-objects.md
@@ -35,7 +35,7 @@ landingContent:
             url: ./creating-.net-and-com-objects--new-object-.md
           - text: Using static classes and methods
             url: ./using-static-classes-and-methods.md
-          - text: Getting WMI objects - Get-CimInstance
+          - text: Getting WMI objects with Get-CimInstance
             url: ./getting-wmi-objects--get-ciminstance-.md
           - text: Manipulating items directly
             url: ./manipulating-items-directly.md
@@ -57,8 +57,6 @@ landingContent:
             url: ./managing-processes-with-process-cmdlets.md
           - text: Managing services
             url: ./managing-services.md
-          - text: Managing Windows PowerShell drives
-            url: ./managing-windows-powershell-drives.md
           - text: Working with printers
             url: ./working-with-printers.md
           - text: Performing networking tasks
@@ -71,7 +69,7 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Redirecting data with Out-* cmdlets
+          - text: Redirecting output
             url: ./redirecting-data-with-out---cmdlets.md
           - text: Using format commands to change output view
             url: ./using-format-commands-to-change-output-view.md
@@ -81,6 +79,8 @@ landingContent:
         links:
           - text: Managing current location
             url: ./managing-current-location.md
+          - text: Managing PowerShell drives
+            url: ./managing-windows-powershell-drives.md
           - text: Working with files and folders
             url: ./working-with-files-and-folders.md
           - text: Working with files folders and registry keys

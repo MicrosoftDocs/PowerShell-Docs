@@ -1,9 +1,9 @@
 ---
 description: PowerShell provides several cmdlets that help manage services on local and remote computers.
 ms.date: 12/08/2022
-title: Managing Services
+title: Managing services
 ---
-# Managing Services
+# Managing services
 
 > This sample only applies to Windows PowerShell 5.1.
 
@@ -12,7 +12,7 @@ only looks at listing and changing running state for services. You can get a lis
 using `Get-Command *-Service`. You can find information about each cmdlet by using
 `Get-Help <Cmdlet-Name>`, such as `Get-Help New-Service`.
 
-## Getting Services
+## Getting services
 
 You can get the services on a local or remote computer by using the `Get-Service` cmdlet. As with
 `Get-Process`, using the `Get-Service` command without parameters returns all services. You can
@@ -51,7 +51,7 @@ Running  lanmanserver       Server
 Stopped  ServiceLayer       ServiceLayer
 ```
 
-## Getting Remote Services
+## Getting remote services
 
 With Windows PowerShell, you can use the **ComputerName** parameter of the `Get-Service` cmdlet to
 get the services on remote computers. The **ComputerName** parameter accepts multiple values and
@@ -73,7 +73,7 @@ Invoke-Command -ComputerName Server02 -ScriptBlock { Get-Service }
 You can also manage services with the other `*-Service` cmdlets. For more information on PowerShell
 remoting, see [about_Remote][01].
 
-## Getting Required and Dependent Services
+## Getting required and dependent services
 
 The Get-Service cmdlet has two parameters that are very useful in service administration. The
 DependentServices parameter gets services that depend on the service.
@@ -113,7 +113,7 @@ Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices
   Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
-## Stopping, Starting, Suspending, and Restarting Services
+## Stopping, starting, suspending, and restarting services
 
 The Service cmdlets all have the same general form. Services can be specified by common name or
 display name, and take lists and wildcards as values. To stop the print spooler, use:
@@ -172,7 +172,7 @@ Spooler service on the Server01 remote computer.
 Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 ```
 
-## Setting Service Properties
+## Setting service properties
 
 The `Set-Service` cmdlet changes the properties of a service on a local or remote computer. Because
 the service status is a property, you can use this cmdlet to start, stop, and suspend a service.
@@ -184,7 +184,7 @@ as administrator** option.
 
 For more information, see [Set-Service][04]
 
-## See Also
+## See also
 
 - [about_Remote][01]
 - [Get-Service][02]

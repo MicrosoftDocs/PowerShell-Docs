@@ -1,15 +1,15 @@
 ---
 description: This articles shows how to manage printers in Windows using WMI objects and COM interfaces.
 ms.date: 12/08/2022
-title: Working with Printers
+title: Working with printers
 ---
-# Working with Printers in Windows
+# Working with printers in Windows
 
 > This sample only applies to Windows platforms.
 
 You can use PowerShell to manage printers using WMI and the **WScript.Network** COM object from WSH.
 
-## Listing Printer Connections
+## Listing printer connections
 
 The simplest way to list the printers installed on a computer is to use the WMI **Win32_Printer**
 class:
@@ -28,7 +28,7 @@ scripts:
 Because this command returns a simple string collection of port names and printer device names
 without any distinguishing labels, it isn't easy to interpret.
 
-## Adding a Network Printer
+## Adding a network printer
 
 To add a new network printer, use **WScript.Network**:
 
@@ -36,7 +36,7 @@ To add a new network printer, use **WScript.Network**:
 (New-Object -ComObject WScript.Network).AddWindowsPrinterConnection("\\Printserver01\Xerox5")
 ```
 
-## Setting a Default Printer
+## Setting a default printer
 
 To use WMI to set the default printer, find the printer in the **Win32_Printer** collection and then
 invoke the **SetDefaultPrinter** method:
@@ -53,7 +53,7 @@ takes only the printer name as an argument:
 (New-Object -ComObject WScript.Network).SetDefaultPrinter('HP LaserJet 5Si')
 ```
 
-## Removing a Printer Connection
+## Removing a printer connection
 
 To remove a printer connection, use the **WScript.Network RemovePrinterConnection** method:
 

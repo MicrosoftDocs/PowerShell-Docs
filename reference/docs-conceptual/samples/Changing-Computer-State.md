@@ -1,9 +1,9 @@
 ---
 description: This example shows how you can use external commands from PowerShell to manage the configuration of a computer.
 ms.date: 12/08/2022
-title: Changing Computer State
+title: Changing computer state
 ---
-# Changing Computer State
+# Changing computer state
 
 > This sample only applies to Windows platforms.
 
@@ -12,7 +12,7 @@ Although you are using PowerShell only to run the tool, learning how to change a
 state in PowerShell illustrates some of the important details about working with external tools in
 PowerShell.
 
-## Locking a Computer
+## Locking a computer
 
 The only way to lock a computer directly with the standard available tools is to call the
 **LockWorkstation()** function in **user32.dll**:
@@ -29,7 +29,7 @@ computer displays the user logon screen rather than starting the current user's 
 
 To shut down particular sessions on a Terminal Server, use the **tsshutdn.exe** command-line tool.
 
-## Logging Off the Current Session
+## Logging off the current session
 
 You can use several different techniques to log off of a session on the local system. The simplest
 way is to use the Remote Desktop/Terminal Services command-line tool, **logoff.exe** (For details,
@@ -51,7 +51,7 @@ For more information, see the [Shutdown method][01] of the **Win32_OperatingSyst
 Get-CimInstance -ClassName Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
 ```
 
-## Shutting Down or Restarting a Computer
+## Shutting down or restarting a computer
 
 Shutting down and restarting computers are are similar tasks. Most command-line tools support both
 actions. Windows includes two command-line tools for restarting a computer. Use either

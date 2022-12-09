@@ -102,7 +102,7 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-## Adding New PowerShell Drives (New-PSDrive)
+## Adding new PowerShell drives
 
 You can add your own PowerShell drives by using the `New-PSDrive` command. To get the syntax for the
 `New-PSDrive` command, enter the `Get-Command` command with the **Syntax** parameter:
@@ -181,7 +181,7 @@ PowerShell window, the new drive is lost. To save a PowerShell drive, use the `E
 to export the current PowerShell session, and then use the `PowerShell.exe` **PSConsoleFile**
 parameter to import it. Or, add the new drive to your Windows PowerShell profile.
 
-## Deleting PowerShell Drives (Remove-PSDrive)
+## Deleting PowerShell drives
 
 You can delete drives from PowerShell using the `Remove-PSDrive` cmdlet. For example, if you added
 the `Office:` PowerShell drive, as shown in the `New-PSDrive` topic, you can delete it by typing:
@@ -209,9 +209,10 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-## Adding and Removing Drives Outside PowerShell
+## Adding and removing drives outside PowerShell
 
-PowerShell detects filesystem drives that are added or removed in Windows, including network drives
-that are mapped, USB drives that are attached, and drives that are deleted by using either the
-`net use` command or the **WScript.NetworkMapNetworkDrive** and **RemoveNetworkDrive** methods from
-a Windows Script Host (WSH) script.
+PowerShell detects filesystem drives that are added or removed in Windows, including:
+
+- network drives that are mapped
+- USB drives that are attached
+- Drives that are deleted using the `net use` command or from a Windows Script Host (WSH) script

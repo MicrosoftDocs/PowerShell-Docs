@@ -1,9 +1,9 @@
 ---
 description: PowerShell uses the noun Location to refer to the working directory, and implements a family of cmdlets to examine and manipulate your location.
 ms.date: 12/08/2022
-title: Managing Current Location
+title: Managing current location
 ---
-# Managing Current Location
+# Managing current location
 
 When navigating folder systems in File Explorer, you usually have a specific working location -
 namely, the current open folder. Items in the current folder can be manipulated easily by clicking

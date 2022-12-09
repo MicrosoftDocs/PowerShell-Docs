@@ -1,16 +1,16 @@
 ---
 description: This article shows how to use WMI classes in PowerShell to manage network configuration setting in Windows.
 ms.date: 12/08/2022
-title: Performing Networking Tasks
+title: Performing networking tasks
 ---
-# Performing Networking Tasks
+# Performing networking tasks
 
 > This sample only applies to Windows platforms.
 
 Because TCP/IP is the most commonly used network protocol, most low-level network protocol
 administration tasks involve TCP/IP. In this section, we use PowerShell and WMI to do these tasks.
 
-## Listing IP Addresses for a Computer
+## Listing IP addresses for a computer
 
 To get all IP addresses in use on the local computer, use the following command:
 
@@ -55,7 +55,7 @@ The IPAddress property for each network adapter is actually an array. The braces
 indicate that **IPAddress** isn't a **System.String** value, but an array of **System.String**
 values.
 
-## Listing IP Configuration Data
+## Listing IP configuration data
 
 To display detailed IP configuration data for each network adapter, use the following command:
 
@@ -79,7 +79,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
 This command returns detailed information about DHCP, DNS, routing, and other minor IP configuration
 properties.
 
-## Pinging Computers
+## Pinging computers
 
 You can perform a simple ping against a computer using by **Win32_PingStatus**. The following
 command performs the ping, but returns lengthy output:
@@ -138,7 +138,7 @@ generate a complete set of addresses in this way:
 $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 ```
 
-## Retrieving Network Adapter Properties
+## Retrieving network adapter properties
 
 Earlier, we mentioned that you could retrieve general configuration properties using the
 **Win32_NetworkAdapterConfiguration** class. Although not strictly TCP/IP information, network
@@ -149,7 +149,7 @@ going on with a computer. To get a summary of this information, use the followin
 Get-CimInstance -Class Win32_NetworkAdapter -ComputerName .
 ```
 
-## Assigning the DNS Domain for a Network Adapter
+## Assigning the DNS domain for a network adapter
 
 To assign the DNS domain for automatic name resolution, use the **SetDNSDomain** method of the
 **Win32_NetworkAdapterConfiguration**. The **Query** parameter of `Invoke-CimMethod` takes a WQL
@@ -166,12 +166,12 @@ of the network adapter configurations on a computer aren't true TCP/IP adapters.
 software elements supporting RAS, VPN, QoS, and other services for all adapters and thus don't have
 an address of their own.
 
-## Performing DHCP Configuration Tasks
+## Performing DHCP configuration tasks
 
 Modifying DHCP details involves working with a set of network adapters, just as the DNS
 configuration does. There are several distinct actions you can perform using WMI.
 
-### Determining DHCP-Enabled Adapters
+### Finding DHCP-enabled adapters
 
 To find the DHCP-enabled adapters on a computer, use the following command:
 
@@ -185,7 +185,7 @@ To exclude adapters with IP configuration problems, you can retrieve only IP-ena
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true"
 ```
 
-### Retrieving DHCP Properties
+### Retrieving DHCP properties
 
 Because DHCP-related properties for an adapter generally begin with `DHCP`, you can use the Property
 parameter of `Format-Table` to display only those properties:
@@ -195,7 +195,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter  "IPEnabled=$tr
   Format-Table -Property DHCP*
 ```
 
-### Enabling DHCP on Each Adapter
+### Enabling DHCP on each adapter
 
 To enable DHCP on all adapters, use the following command:
 
@@ -207,7 +207,7 @@ Invoke-CimMethod -MethodName ReleaseDHCPLease -Query $wql
 Using the filter statement `IPEnabled=True and DHCPEnabled=False` avoids enabling DHCP where it's
 already enabled.
 
-### Releasing and Renewing DHCP Leases on Specific Adapters
+### Releasing and renewing DHCP leases on specific adapters
 
 Instances of the **Win32_NetworkAdapterConfiguration** class has `ReleaseDHCPLease` and
 `RenewDHCPLease` methods. Both are used in the same way. In general, use these methods if you only
@@ -233,7 +233,7 @@ Invoke-CimMethod -MethodName RenewDHCPLease -Query $wql
 > When using these methods on a remote computer, be aware that you can lose access to the remote
 > system if you are connected to it through the adapter with the released or renewed lease.
 
-### Releasing and Renewing DHCP Leases on All Adapters
+### Releasing and renewing DHCP leases on all adapters
 
 You can perform global DHCP address releases or renewals on all adapters by using the
 **Win32_NetworkAdapterConfiguration** methods, `ReleaseDHCPLeaseAll` and `RenewDHCPLeaseAll`.
@@ -251,7 +251,7 @@ You can use the same command format to invoke the **RenewDHCPLeaseAll** method:
 Invoke-CimMethod -ClassName Win32_NetworkAdapterConfiguration -MethodName RenewDHCPLeaseAll
 ```
 
-## Creating a Network Share
+## Creating a network share
 
 To create a network share, use the `Create` method of **Win32_Share**:
 
@@ -310,7 +310,7 @@ You can also read the documentation for
 [Create][02] method of the
 **Win32_Share** class.
 
-## Removing a Network Share
+## Removing a network share
 
 You can remove a network share with **Win32_Share**, but the process is slightly different from
 creating a share, because you need to retrieve the specific instance to be removed, rather than the
@@ -321,7 +321,7 @@ $wql = 'SELECT * from Win32_Share WHERE Name="TempShare"'
 Invoke-CimMethod -MethodName Delete -Query $wql
 ```
 
-## Connecting a Windows Accessible Network Drive
+## Connecting a Windows-accessible network drive
 
 The `New-PSDrive` cmdlet can create a PowerShell drive that's mapped to a network share.
 

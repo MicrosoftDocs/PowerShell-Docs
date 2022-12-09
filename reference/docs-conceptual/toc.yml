@@ -128,19 +128,19 @@ items:
             href: samples/sample-scripts-for-administration.yml
           - name: Working with objects
             items:
-              - name: Viewing object structure - Get-Member
+              - name: Viewing object structure
                 href: samples/viewing-object-structure--get-member-.md
-              - name: Selecting parts of object - Select-Object
+              - name: Selecting parts of objects
                 href: samples/selecting-parts-of-objects--select-object-.md
-              - name: Removing objects from the pipeline - Where-Object
+              - name: Removing objects from the pipeline
                 href: samples/removing-objects-from-the-pipeline--where-object-.md
               - name: Sorting objects
                 href: samples/sorting-objects.md
-              - name: Creating .NET and COM objects - New-Object
+              - name: Creating .NET and COM objects
                 href: samples/creating-.net-and-com-objects--new-object-.md
               - name: Using static classes and methods
                 href: samples/using-static-classes-and-methods.md
-              - name: Getting WMI objects - Get-CimInstance
+              - name: Getting WMI objects
                 href: samples/getting-wmi-objects--get-ciminstance-.md
               - name: Manipulating items directly
                 href: samples/manipulating-items-directly.md
@@ -158,8 +158,6 @@ items:
                 href: samples/managing-processes-with-process-cmdlets.md
               - name: Managing services
                 href: samples/managing-services.md
-              - name: Managing PowerShell drives
-                href: samples/managing-windows-powershell-drives.md
               - name: Working with printers
                 href: samples/working-with-printers.md
               - name: Performing networking tasks
@@ -172,15 +170,17 @@ items:
             items:
               - name: Redirecting data with Out-* cmdlets
                 href: samples/redirecting-data-with-out---cmdlets.md
-              - name: Using format commands to change output view
+              - name: Using Format commands to change output view
                 href: samples/using-format-commands-to-change-output-view.md
           - name: Manage drives & files
             items:
               - name: Managing current location
                 href: samples/managing-current-location.md
+              - name: Managing PowerShell drives
+                href: samples/managing-windows-powershell-drives.md
               - name: Working with files and folders
                 href: samples/working-with-files-and-folders.md
-              - name: Working with files folders and registry keys
+              - name: Working with files, folders, and registry keys
                 href: samples/working-with-files-folders-and-registry-keys.md
               - name: Working with registry entries
                 href: samples/working-with-registry-entries.md

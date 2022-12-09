@@ -1,9 +1,9 @@
 ---
 description: As an object-oriented scripting language, PowerShell supports both .NET and COM-based objects. This article shows you how to create and interact with these objects.
 ms.date: 12/08/2022
-title: Creating .NET and COM Objects New Object
+title: Creating .NET and COM objects
 ---
-# Creating .NET and COM Objects (New-Object)
+# Creating .NET and COM objects
 
 > This sample only runs on Windows platforms.
 
@@ -14,7 +14,7 @@ PowerShell don't work against remote computers. We will demonstrate how to get a
 limitation when managing event logs by using the .NET Framework **System.Diagnostics.EventLog**
 class directly from PowerShell.
 
-## Using New-Object for Event Log Access
+## Using New-Object for event log access
 
 The .NET Framework Class Library includes a class named **System.Diagnostics.EventLog** that can be
 used to manage event logs. You can create a new instance of a .NET Framework class by using the
@@ -33,7 +33,7 @@ New-Object -TypeName System.Diagnostics.EventLog
 Although the command has created an instance of the **EventLog** class, the instance doesn't include any
 data. that's because we didn't specify a particular event log. How do you get a real event log?
 
-### Using Constructors with New-Object
+### Using constructors with New-Object
 
 To refer to a specific event log, you need to specify the name of the log. `New-Object` has an
 **ArgumentList** parameter. The arguments you pass as values to this parameter are used by a special
@@ -85,7 +85,7 @@ $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-### Accessing a Remote Event Log with New-Object
+### Accessing a remote event log with New-Object
 
 The commands used in the preceding section target the local computer; the `Get-EventLog` cmdlet can
 do that. To access the Application log on a remote computer, you must supply both the log name and a
@@ -105,7 +105,7 @@ $RemoteAppLog
 Now that we have a reference to an event log stored in the `$RemoteAppLog` variable, what tasks can
 we perform on it?
 
-### Clearing an Event Log with Object Methods
+### Clearing an event log with object methods
 
 Objects often have methods that can be called to perform tasks. You can use `Get-Member` to display
 the methods associated with an object. The following command and selected output show some the
@@ -152,7 +152,7 @@ $RemoteAppLog
 
 Notice that the event log was cleared and now has 0 entries instead of 262.
 
-## Creating COM Objects with New-Object
+## Creating COM objects with New-Object
 
 You can use `New-Object` to work with Component Object Model (COM) components. Components range from
 the various libraries included with Windows Script Host (WSH) to ActiveX applications such as
@@ -179,7 +179,7 @@ New-Object -ComObject Scripting.FileSystemObject
 Although most of the functionality of these classes is made available in other ways in Windows
 PowerShell, a few tasks such as shortcut creation are still easier to do using the WSH classes.
 
-## Creating a Desktop Shortcut with WScript.Shell
+## Creating a desktop shortcut with WScript.Shell
 
 One task that can be performed quickly with a COM object is creating a shortcut. Suppose you want to
 create a shortcut on your desktop that links to the home folder for PowerShell. You first
@@ -363,7 +363,7 @@ Remove-Variable ie
 > the application may or may not exit. For this reason, you should test termination behavior for
 > each ActiveX executable you want to use in PowerShell.
 
-## Getting Warnings About .NET Framework-Wrapped COM Objects
+## Getting warnings about .NET Framework-wrapped COM objects
 
 In some cases, a COM object might have an associated .NET Framework **Runtime-Callable Wrapper**
 (RCW) that's used by `New-Object`. Since the behavior of the RCW may be different from the behavior

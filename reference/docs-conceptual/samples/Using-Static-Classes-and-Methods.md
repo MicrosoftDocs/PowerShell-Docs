@@ -3,7 +3,7 @@ description: This article explains how to identify and use the properties and me
 ms.date: 12/08/2022
 title: Using Static Classes and Methods
 ---
-# Using Static Classes and Methods
+# Using static classes and methods
 
 Not all .NET Framework classes can be created using `New-Object`. For example, if you try to
 create a **System.Environment** or a **System.Math** object with `New-Object`, you will get the
@@ -37,13 +37,13 @@ them, you simply use them. Classes and methods such as these are called _static 
 they're not created, destroyed, or changed. To make this clear we will provide examples that use
 static classes.
 
-## Getting Environment Data with System.Environment
+## Getting environment data with System.Environment
 
 Usually, the first step in working with an object in Windows PowerShell is to use Get-Member to find
 out what members it contains. With static classes, the process is a little different because the
 actual class isn't an object.
 
-### Referring to the Static System.Environment Class
+### Referring to the static System.Environment class
 
 You can refer to a static class by surrounding the class name with square brackets. For example, you
 can refer to **System.Environment** by typing the name within brackets. Doing so displays some
@@ -113,7 +113,7 @@ TickCount                               ExitCode
 
 We can now select properties to view from System.Environment.
 
-### Displaying Static Properties of System.Environment
+### Displaying static properties of System.Environment
 
 The properties of System.Environment are also static, and must be specified in a different way than
 normal properties. We use `::` to indicate to Windows PowerShell that we want to work with a static
@@ -151,7 +151,7 @@ We can check whether the computer is in the process of shutting down by displayi
 False
 ```
 
-## Doing Math with System.Math
+## Doing math with System.Math
 
 The **System.Math** static class is useful for performing some mathematical operations. The class
 includes several useful methods, which we can display using `Get-Member`.

@@ -1,9 +1,9 @@
 ---
 description: PowerShell has a extensible formatting system that allows you to present output in lists, tables, or custom layouts.
 ms.date: 12/08/2022
-title: Using Format Commands to Change Output View
+title: Using Format commands to change output view
 ---
-# Using Format Commands to Change Output View
+# Using Format commands to change output view
 
 PowerShell has a set of cmdlets that allow you to control how properties are displayed for
 particular objects. The names of all the cmdlets begin with the verb `Format`. They let you select
@@ -47,7 +47,7 @@ The default format for **Process** objects displays the properties shown here:
      52    11.46      26.46       3.55   21748   1 iexplore
 ```
 
-## Using Format-Wide for Single-Item Output
+## Using Format-Wide for single-item output
 
 The `Format-Wide` cmdlet, by default, displays only the default property of an object. The
 information associated with each object is displayed in a single column:
@@ -74,7 +74,7 @@ List                   Table
 Wide
 ```
 
-### Controlling Format-Wide Display with Column
+### Controlling Format-Wide display with column
 
 With the `Format-Wide` cmdlet, you can only display a single property at a time. This makes it
 useful for displaying large lists in multiple columns.
@@ -89,7 +89,7 @@ Table                  Wide
 
 ```
 
-## Using Format-List for a List View
+## Using Format-List for a list view
 
 The `Format-List` cmdlet displays an object in the form of a listing, with each property labeled and
 displayed on a separate line:
@@ -130,7 +130,7 @@ StartTime   : 10/22/2019 11:23:57 AM
 Id          : 21748
 ```
 
-### Getting Detailed Information using Format-List with Wildcards
+### Getting detailed information using Format-List with wildcards
 
 The `Format-List` cmdlet lets you use a wildcard as the value of its **Property** parameter. This
 lets you display detailed information. Often, objects include more information than you need, which
@@ -145,7 +145,7 @@ Get-Process -Name iexplore | Format-List -Property *
 Although the `Format-List` command is useful for showing detail, if you want an overview of output
 that includes many items, a simpler tabular view is often more useful.
 
-## Using Format-Table for Tabular Output
+## Using Format-Table for tabular output
 
 If you use the `Format-Table` cmdlet with no property names specified to format the output of the
 `Get-Process` command, you get exactly the same output as you do without a `Format` cmdlet. By
@@ -167,7 +167,7 @@ Running  WinRM              Windows Remote Management (WS-Manag...
 > [!NOTE]
 > `Get-Service` is only available on Windows platforms.
 
-### Improving Format-Table Output (AutoSize)
+### Improving Format-Table output
 
 Although a tabular view is useful for displaying lots of information, it may be difficult to
 interpret if the display is too narrow for the data. In the previous example, the output is
@@ -212,7 +212,7 @@ attempts to fully display the properties nearest the beginning. If the `Format-T
 display all the properties, it removes some columns from the display. You can see this behavior in
 the **DependentServices** property previous example.
 
-### Wrapping Format-Table Output in Columns (Wrap)
+### Wrapping Format-Table output in columns
 
 You can force lengthy `Format-Table` data to wrap within its display column using the **Wrap**
 parameter. Using the **Wrap** parameter may not do what you expect, since it uses default settings
@@ -270,7 +270,7 @@ FileVersion                          Path                                       
                                                                                            re
 ```
 
-### Organizing Table Output (-GroupBy)
+### Organizing table output
 
 Another useful parameter for tabular output control is **GroupBy**. Longer tabular listings in
 particular may be hard to compare. The **GroupBy** parameter groups output based on a property

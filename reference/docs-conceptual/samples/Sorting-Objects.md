@@ -1,9 +1,9 @@
 ---
 description: The Sort-Object cmdlet allows you to sort a collection of objects on one or more properties.
 ms.date: 12/08/2022
-title: Sorting Objects
+title: Sorting objects
 ---
-# Sorting Objects
+# Sorting objects
 
 We can organize displayed data to make it easier to scan using the `Sort-Object` cmdlet.
 `Sort-Object` takes the name of one or more properties to sort on, and returns data sorted by the

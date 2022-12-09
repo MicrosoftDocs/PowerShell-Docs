@@ -1,9 +1,9 @@
 ---
 description: This article shows how to create a list box control using the .NET Framework form-building features in Windows PowerShell.
 ms.date: 12/08/2022
-title: Selecting Items from a List Box
+title: Selecting items from a list box
 ---
-# Selecting Items from a List Box
+# Selecting items from a list box
 
 > This sample only applies to Windows platforms.
 
@@ -190,7 +190,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-## See Also
+## See also
 
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates][03]
 - [Windows PowerShell Tip of the Week: Selecting Items from a List Box][02]

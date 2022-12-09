@@ -1,9 +1,9 @@
 ---
 description: This article shows how to use WMI to manage software installed in Windows.
 ms.date: 12/08/2022
-title: Working with Software Installations
+title: Working with software installations
 ---
-# Working with Software Installations
+# Working with software installations
 
 Applications that are designed to use Windows Installer can be accessed through WMI's
 **Win32_Product** class, but not all applications in use today use the Windows Installer.
@@ -21,7 +21,7 @@ can manage these applications as files and folders using the techniques discusse
 > repairing the install. The validation is a slow process and may result in errors in the event
 > logs. For more information seek [KB article 974524][01].
 
-## Listing Windows Installer Applications
+## Listing Windows Installer applications
 
 To list the applications installed with the Windows Installer on a local or remote system, use the
 following WMI query:
@@ -107,7 +107,7 @@ Version           : 16.72.26629
 IdentifyingNumber : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
 ```
 
-## Listing All Uninstallable Applications
+## Listing all uninstallable applications
 
 Because most standard applications register an uninstaller with Windows, we can work with those
 locally by finding them in the Windows registry. There is no guaranteed way to find every
@@ -162,7 +162,7 @@ $UninstallableApplications | ForEach-Object -Process { $_.GetValue('DisplayName'
 > [!NOTE]
 > There is no guarantee that the **DisplayName** values are unique.
 
-## Installing Applications
+## Installing applications
 
 You can use the **Win32_Product** class to install Windows Installer packages, remotely or locally.
 
@@ -182,7 +182,7 @@ Applications that don't use Windows Installer technology may have application-sp
 automated deployment. Check the documentation for the application or consult the application
 vendor's support system.
 
-## Removing Applications
+## Removing applications
 
 Removing a Windows Installer package using PowerShell works in approximately the same way as
 installing a package. Here is an example that selects the package to uninstall based on its name. In
@@ -214,7 +214,7 @@ Get-ChildItem -Path Uninstall: |
 However, these strings may not be directly usable from the PowerShell prompt without some
 modification.
 
-## Upgrading Windows Installer Applications
+## Upgrading Windows Installer applications
 
 To upgrade an application, you need to know the name of the application and the path to the
 application upgrade package. With that information, you can upgrade an application with a single

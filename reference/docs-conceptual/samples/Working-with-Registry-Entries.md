@@ -1,16 +1,16 @@
 ---
 description: This article discusses how to deal with registry entries using PowerShell.
 ms.date: 12/08/2022
-title: Working with Registry Entries
+title: Working with registry entries
 ---
-# Working with Registry Entries
+# Working with registry entries
 
 > This sample only applies to Windows platforms.
 
 Because registry entries are properties of keys and, as such, can't be directly browsed, we need to
 take a slightly different approach when working with them.
 
-## Listing Registry Entries
+## Listing registry entries
 
 There are many different ways to examine registry entries. The simplest way is to get the property
 names associated with a key. For example, to see the names of the entries in the registry key
@@ -94,7 +94,7 @@ Path expansion works the same as it does within the filesystem, so from this loc
 the **ItemProperty** listing for `HKLM:\SOFTWARE\Microsoft\Windows\Help` using
 `Get-ItemProperty -Path ..\Help`.
 
-## Getting a Single Registry Entry
+## Getting a single registry entry
 
 If you want to retrieve a specific entry in a registry key, you can use one of several possible
 approaches. This example finds the value of **DevicePath** in
@@ -151,7 +151,7 @@ backslash (`\`). Append the property name to the item path with a `\` separator:
 %SystemRoot%\inf
 ```
 
-## Setting a Single Registry Entry
+## Setting a single registry entry
 
 If you want to change a specific entry in a registry key, you can use one of several possible
 approaches. This example modifies the **Path** entry under `HKEY_CURRENT_USER\Environment`. The
@@ -191,7 +191,7 @@ reg add HKCU\Environment /v Path /d $newpath /f
 The operation completed successfully.
 ```
 
-## Creating New Registry Entries
+## Creating new registry entries
 
 To add a new entry named "PowerShellPath" to the **CurrentVersion** key, use `New-ItemProperty` with
 the path to the key, the entry name, and the value of the entry. For this example, we will take the
@@ -237,7 +237,7 @@ New-ItemProperty -Name PowerShellPath -PropertyType String -Value $PSHome `
 You can also overwrite a pre-existing registry entry value by adding the **Force** parameter to any
 `New-ItemProperty` command.
 
-## Renaming Registry Entries
+## Renaming registry entries
 
 To rename the **PowerShellPath** entry to "PSHome," use `Rename-ItemProperty`:
 
@@ -251,7 +251,7 @@ To display the renamed value, add the **PassThru** parameter to the command.
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-## Deleting Registry Entries
+## Deleting registry entries
 
 To delete both the PSHome and PowerShellPath registry entries, use `Remove-ItemProperty`:
 

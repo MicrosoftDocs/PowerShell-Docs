@@ -1,15 +1,15 @@
 ---
 description: This article discusses how to deal with specific file and folder manipulation tasks using PowerShell.
 ms.date: 12/08/2022
-title: Working with Files and Folders
+title: Working with files and folders
 ---
-# Working with Files and Folders
+# Working with files and folders
 
 Navigating through PowerShell drives and manipulating the items on them is similar to manipulating
 files and folders on Windows disk drives. This article discusses how to deal with specific file and
 folder manipulation tasks using PowerShell.
 
-## Listing All the Files and Folders Within a Folder
+## Listing all files and folders within a folder
 
 You can get all items directly within a folder using `Get-ChildItem`. Add the optional **Force**
 parameter to display hidden or system items. For example, this command displays the direct contents
@@ -41,7 +41,7 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe |
     }
 ```
 
-## Copying Files and Folders
+## Copying files and folders
 
 Copying is done with `Copy-Item`. The following command backs up `C:\boot.ini` to `C:\boot.bak`:
 
@@ -80,7 +80,7 @@ Script Host **Scripting.FileSystem** COM class to back up `C:\boot.ini` to `C:\b
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
-## Creating Files and Folders
+## Creating files and folders
 
 Creating new items works the same on all PowerShell providers. If a PowerShell provider has more
 than one type of item—for example, the FileSystem PowerShell provider distinguishes between
@@ -104,7 +104,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 > folder object. However, if you use `New-Item -Force` on a file that already exists, the file
 > is overwritten.
 
-## Removing All Files and Folders Within a Folder
+## Removing all files and folders within a folder
 
 You can remove contained items using `Remove-Item`, but you will be prompted to confirm the
 removal if the item contains anything else. For example, if you attempt to delete the folder
@@ -128,7 +128,7 @@ If you don't want to be prompted for each contained item, specify the **Recurse*
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-## Mapping a Local Folder as a drive
+## Mapping a local folder as a drive
 
 You can also map a local folder, using the `New-PSDrive` command. The following command creates a
 local drive `P:` rooted in the local Program Files directory, visible only from the PowerShell
@@ -142,7 +142,7 @@ Just as with network drives, drives mapped within PowerShell are immediately vis
 PowerShell shell. To create a mapped drive visible from File Explorer, use the **Persist**
 parameter. However, only remote paths can be used with **Persist**.
 
-## Reading a Text File into an Array
+## Reading a text file into an array
 
 One of the more common storage formats for text data is in a file with separate lines treated as
 distinct data elements. The `Get-Content` cmdlet can be used to read an entire file in one step,

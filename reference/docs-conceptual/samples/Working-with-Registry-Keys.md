@@ -1,9 +1,9 @@
 ---
 description: This article discusses how to deal with registry keys using PowerShell.
 ms.date: 12/08/2022
-title: Working with Registry Keys
+title: Working with registry keys
 ---
-# Working with Registry Keys
+# Working with registry keys
 
 > This sample only applies to Windows platforms.
 
@@ -12,7 +12,7 @@ with files and folders. One critical difference is that every item on a registry
 drive is a container, just like a folder on a file system drive. However, registry entries and their
 associated values are properties of the items, not distinct items.
 
-## Listing All Subkeys of a Registry Key
+## Listing all subkeys of a registry key
 
 You can show all items directly within a registry key using `Get-ChildItem`. Add the optional
 **Force** parameter to display hidden or system items. For example, this command displays the items
@@ -82,7 +82,7 @@ Get-ChildItem -Path HKCU:\Software -Recurse |
     Where-Object {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-## Copying Keys
+## Copying keys
 
 Copying is done with `Copy-Item`. The following example copies the `CurrentVersion` subkey of
 `HKLM:\SOFTWARE\Microsoft\Windows\` and all of its properties to `HKCU:\`.
@@ -105,7 +105,7 @@ editing tools—including `reg.exe`, `regini.exe`, `regedit.exe`, and COM object
 registry editing, such as **WScript.Shell** and WMI's **StdRegProv** class can be used from within
 PowerShell.
 
-## Creating Keys
+## Creating keys
 
 Creating new keys in the registry is simpler than creating a new item in a file system. Because all
 registry keys are containers, you don't need to specify the item type. Just provide an explicit
@@ -121,7 +121,7 @@ You can also use a provider-based path to specify a key:
 New-Item -Path Registry::HKCU\Software_DeleteMe
 ```
 
-## Deleting Keys
+## Deleting keys
 
 Deleting items is essentially the same for all providers. The following commands silently remove
 items:
@@ -131,7 +131,7 @@ Remove-Item -Path HKCU:\Software_DeleteMe
 Remove-Item -Path 'HKCU:\key with spaces in the name'
 ```
 
-## Removing All Keys Under a Specific Key
+## Removing all keys under a specific key
 
 You can remove contained items using `Remove-Item`, but you will be prompted to confirm the removal
 if the item contains anything else. For example, if we attempt to delete the `HKCU:\CurrentVersion`

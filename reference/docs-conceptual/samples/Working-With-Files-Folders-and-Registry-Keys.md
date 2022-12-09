@@ -1,9 +1,9 @@
 ---
 description: This article discusses how to deal with registry key manipulation tasks using PowerShell.
 ms.date: 12/08/2022
-title: Working With Files Folders and Registry Keys
+title: Working with files folders and registry keys
 ---
-# Working With Files, Folders and Registry Keys
+# Working with files, folders and registry keys
 
 > This sample only applies to Windows platforms.
 
@@ -12,7 +12,7 @@ the PowerShell FileSystem provider, an **Item** might be a file, a folder, or th
 Listing and working with these items is a critical basic task in most administrative settings, so we
 want to discuss these tasks in detail.
 
-## Enumerating Files, Folders, and Registry Keys (Get-ChildItem)
+## Enumerating files, folders, and registry keys
 
 Since getting a collection of items from a particular location is such a common task, the
 `Get-ChildItem` cmdlet is designed specifically to return all items found within a container such as
@@ -45,7 +45,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 These parameters can be mixed and matched to get highly customized output.
 
-### Listing all Contained Items (-Recurse)
+### Listing all contained items
 
 To see both the items inside a Windows folder and any items that are contained within the
 subfolders, use the **Recurse** parameter of `Get-ChildItem`. The listing displays everything within
@@ -62,7 +62,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-### Filtering Items by Name (-Name)
+### Filtering items by name
 
 To display only the names of items, use the **Name** parameter of `Get-Childitem`:
 
@@ -74,7 +74,7 @@ assembly
 ...
 ```
 
-### Forcibly Listing Hidden Items (-Force)
+### Forcibly listing hidden items
 
 Items that are hidden in File Explorer or `cmd.exe` aren't displayed in the output of a
 `Get-ChildItem` command. To display hidden items, use the **Force** parameter of `Get-ChildItem`.
@@ -89,7 +89,7 @@ This parameter is named **Force** because you can forcibly override the normal b
 wouldn't normally perform, although it can't perform any action that compromises the security of the
 system.
 
-### Matching Item Names with Wildcards
+### Matching item names with wildcards
 
 The `Get-ChildItem` command accepts wildcards in the path of the items to list.
 
@@ -136,7 +136,7 @@ Get-ChildItem -Path C:\Windows\[xz]*
 
 For more information about wildcards, see [about_Wildcards][01].
 
-### Excluding Items (-Exclude)
+### Excluding items
 
 You can exclude specific items using the **Exclude** parameter of `Get-ChildItem`. This lets you
 perform complex filtering in a single statement.
@@ -164,7 +164,7 @@ Mode                 LastWriteTime         Length Name
 -a---           3/18/2019  9:44 PM          64792 wtsapi32.dll
 ```
 
-### Mixing Get-ChildItem Parameters
+### Mixing Get-ChildItem parameters
 
 You can use several of the parameters of the `Get-ChildItem` cmdlet in the same command. Before you
 mix parameters, be sure that you understand wildcard matching. For example, the following command

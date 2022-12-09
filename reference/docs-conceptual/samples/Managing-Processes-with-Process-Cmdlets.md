@@ -1,16 +1,16 @@
 ---
 description: PowerShell provides several cmdlets that help manage processes on local and remote computers.
 ms.date: 12/08/2022
-title: Managing Processes with Process Cmdlets
+title: Managing processes with Process cmdlets
 ---
-# Managing Processes with Process Cmdlets
+# Managing processes with Process cmdlets
 
 > This sample only applies to Windows PowerShell 5.1.
 
 You can use the Process cmdlets in PowerShell to manage local and remote processes in
 PowerShell.
 
-## Getting Processes (Get-Process)
+## Getting processes
 
 To get the processes running on the local computer, run a `Get-Process` with no parameters.
 
@@ -131,7 +131,7 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
     605       9  30668 29800   155 7.11    3052 powershell Server02
 ```
 
-## Stopping Processes (Stop-Process)
+## Stopping processes
 
 PowerShell gives you flexibility for listing processes, but what about stopping a process?
 
@@ -226,13 +226,13 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     287       9    21044      26928   143     1.02   3672 powershell
 ```
 
-## Starting, Debugging, and Waiting for Processes
+## Starting, debugging, and waiting for processes
 
 PowerShell also comes with cmdlets to start (or restart), debug a process, and wait for a process to
 complete before running a command. For information about these cmdlets, see the cmdlet help topic
 for each cmdlet.
 
-## See Also
+## See also
 
 - [Get-Process][03]
 - [Stop-Process][05]

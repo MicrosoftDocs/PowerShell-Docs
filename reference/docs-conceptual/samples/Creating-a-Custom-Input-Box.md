@@ -1,9 +1,9 @@
 ---
 description: This article shows how to create a custom input box by using the .NET Framework form-building features in Windows PowerShell.
 ms.date: 12/08/2022
-title: Creating a Custom Input Box
+title: Creating a custom input box
 ---
-# Creating a Custom Input Box
+# Creating a custom input box
 
 > This sample only applies to Windows platforms.
 
@@ -167,7 +167,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-## See Also
+## See also
 
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates][02])
 - [Windows PowerShell Tip of the Week:  Creating a Custom Input Box][03]

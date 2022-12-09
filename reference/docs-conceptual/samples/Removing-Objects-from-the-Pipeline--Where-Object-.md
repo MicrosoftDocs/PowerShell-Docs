@@ -1,9 +1,9 @@
 ---
 description: The Where-Object cmdlet allows you to filter objects that are passed on the pipeline.
 ms.date: 12/08/2022
-title: Removing Objects from the Pipeline Where Object
+title: Removing objects from the pipeline
 ---
-# Removing Objects from the Pipeline (Where-Object)
+# Removing objects from the pipeline
 
 In PowerShell, you often generate and pass along more objects to a pipeline than you want. You can
 specify the properties of particular objects to display using the `Format-*` cmdlets, but this
@@ -16,7 +16,7 @@ only pass it along the pipeline if it meets a particular test condition. Objects
 test are removed from the pipeline. You supply the test condition as the value of the
 **FilterScript** parameter.
 
-## Performing Simple Tests with Where-Object
+## Performing simple tests with Where-Object
 
 The value of **FilterScript** is a _script block_ - one or more PowerShell commands surrounded by
 braces (`{}`) - that evaluates to true or false. These script blocks can be simple, but creating
@@ -55,7 +55,7 @@ the ones that are less than 3, you can use `Where-Object` to filter the numbers 
 2
 ```
 
-## Filtering Based on Object Properties
+## Filtering based on object properties
 
 Since `$_` refers to the current pipeline object, we can access its properties for our tests.
 
