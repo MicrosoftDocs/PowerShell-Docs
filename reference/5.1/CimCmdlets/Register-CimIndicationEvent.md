@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 07/06/2022
+ms.date: 12/09/2022
 no-loc: [-Forward]
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/register-cimindicationevent?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -378,13 +378,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet accepts no input objects.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Object
 
-This cmdlet outputs an **EventSubscription** object.
+This cmdlet returns an **EventSubscription** object.
 
 ## NOTES
 
