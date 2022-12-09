@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/18/2022
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/save-help?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Help
@@ -449,13 +449,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSModuleInfo
 
-You can pipe a module object from the `Get-Module` cmdlet to the **Module** parameter of `Save-Help`.
+You can pipe a module object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

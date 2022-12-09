@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/02/2012
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
@@ -882,11 +882,14 @@ You can pipe session names to this cmdlet.
 
 ## OUTPUTS
 
-### System.Management.Automation.Job or PSObject
+### System.Management.Automation.Job
 
-This cmdlet returns the results of commands that ran in the disconnected session, if any. If the
-value or default value of the **OutTarget** parameter is Job, `Receive-PSSession` returns a job
-object. Otherwise, it returns objects that represent that command results.
+If the value or default value of the **OutTarget** parameter is `Job`, `Receive-PSSession` returns a
+job object.
+
+### System.Management.Automation.PSObject
+
+This cmdlet returns the results of commands that ran in the disconnected session, if any.
 
 ## NOTES
 

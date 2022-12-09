@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/26/2021
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-experimentalfeature?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExperimentalFeature
@@ -69,14 +69,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String[]
 
-Name or names of experimental features to return.
+You can pipe a string containing the name of an experimental feature to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.ExperimentalFeature
 
-Returns instances that match the requested names or all experimental features if no name is
-specified.
+This cmdlet returns instances that match the requested names or all experimental features if no
+name is specified.
 
 ## RELATED LINKS
 

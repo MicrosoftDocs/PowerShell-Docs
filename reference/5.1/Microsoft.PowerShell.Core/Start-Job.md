@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Job
@@ -567,14 +567,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can use the pipeline to send an object with the **Name** property to the **Name** parameter. For
-example, you can pipeline a **FileInfo** object from `Get-ChildItem` to `Start-Job`.
+You can pipe an object with the **Name** property to the **Name** parameter to this cmdlet. For
+example, you can pipe a **FileInfo** object from `Get-ChildItem`.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSRemotingJob
 
-`Start-Job` returns a **PSRemotingJob** object that represents the job that it started.
+This cmdlet returns a **PSRemotingJob** object representing the job that it started.
 
 ## NOTES
 

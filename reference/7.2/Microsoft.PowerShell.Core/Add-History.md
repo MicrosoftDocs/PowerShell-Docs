@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/13/2020
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/add-history?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-History
@@ -170,10 +170,13 @@ You can pipe a **HistoryInfo** object to this cmdlet.
 
 ## OUTPUTS
 
-### None or Microsoft.PowerShell.Commands.HistoryInfo
+### None
 
-This cmdlet returns a **HistoryInfo** object if you specify the **PassThru** parameter. Otherwise,
-this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### Microsoft.PowerShell.Commands.HistoryInfo
+
+When you use the **PassThru** parameter, this cmdlet returns a **HistoryInfo** object.
 
 ## NOTES
 
@@ -214,4 +217,3 @@ file, and use `Add-History` to append it to the current session history.
 [Get-PSReadLineOption](/powershell/module/psreadline/get-psreadlineoption)
 
 [Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption)
-

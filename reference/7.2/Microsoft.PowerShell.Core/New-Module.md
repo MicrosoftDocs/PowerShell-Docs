@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-module?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Module
@@ -397,11 +397,18 @@ You can pipe a module name to this cmdlet.
 
 ## OUTPUTS
 
-### System.Management.Automation.PSModuleInfo, System.Management.Automation.PSCustomObject, or None
+### System.Management.Automation.PSModuleInfo
 
-This cmdlet generates a **PSModuleInfo** object, by default. If you use the **AsCustomObject**
-parameter, it generates a **PSCustomObject** object. If you use the **ReturnResult** parameter, it
-returns the result of evaluating the script block in the dynamic module.
+This cmdlet generates a **PSModuleInfo** object by default.
+
+### System.Management.Automation.PSCustomObject
+
+If you use the **AsCustomObject** parameter, it generates a **PSCustomObject** object.
+
+### System.Object
+
+If you use the **ReturnResult** parameter, this cmdlet returns the result of evaluating the script
+block in the dynamic module.
 
 ## NOTES
 

@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 02/20/2019
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/import-binarymilog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-BinaryMiLog
@@ -62,6 +62,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 

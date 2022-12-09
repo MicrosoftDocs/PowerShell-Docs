@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/26/2019
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/remove-job?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Job
@@ -416,13 +416,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.Job
 
-You can send a job object down the pipeline to `Remove-Job`.
+You can pipe a **Job** object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-`Remove-Job` doesn't generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 
@@ -450,4 +450,3 @@ If a job stops before completion and its process hasn't exited, the process is f
 [Stop-Job](Stop-Job.md)
 
 [Wait-Job](Wait-Job.md)
-
