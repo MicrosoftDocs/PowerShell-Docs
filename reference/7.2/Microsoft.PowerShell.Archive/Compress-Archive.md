@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Archive-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 11/09/2022
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.archive/compress-archive?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compress-Archive
@@ -431,9 +431,13 @@ You can pipe a string that contains a path to one or more files.
 
 ## OUTPUTS
 
+### None
+
+By default, this cmdlet returns no output.
+
 ### System.IO.FileInfo
 
-The cmdlet only returns a **FileInfo** object when you use the **PassThru** parameter.
+When you use the **PassThru** parameter, this cmdlet returns a **FileInfo** object.
 
 ## NOTES
 
