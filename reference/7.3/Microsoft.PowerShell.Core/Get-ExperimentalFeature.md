@@ -69,14 +69,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String[]
 
-Name or names of experimental features to return.
+You can pipe a string containing the name of an experimental feature to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.ExperimentalFeature
 
-Returns instances that match the requested names or all experimental features if no name is
-specified.
+This cmdlet returns instances that match the requested names or all experimental features if no
+name is specified.
 
 ## RELATED LINKS
 

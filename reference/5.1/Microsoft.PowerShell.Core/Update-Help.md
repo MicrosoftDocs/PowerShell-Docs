@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/18/2022
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Help
@@ -567,17 +567,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.IO.DirectoryInfo
 
-You can pipe a directory path to `Update-Help`.
+You can pipe a directory path object to this cmdlet.
 
 ### System.Management.Automation.PSModuleInfo
 
-You can pipe a module object from the `Get-Module` cmdlet to `Update-Help`.
+You can pipe a module object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-`Update-Help` doesn't generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

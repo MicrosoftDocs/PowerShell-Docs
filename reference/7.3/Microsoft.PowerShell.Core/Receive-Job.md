@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/22/2021
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/receive-job?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-Job
@@ -602,7 +602,7 @@ You can pipe job objects to this cmdlet.
 
 ## OUTPUTS
 
-### PSObject
+### System.Management.Automation.PSObject
 
 This cmdlet returns the results of the commands in the job.
 
@@ -621,4 +621,3 @@ This cmdlet returns the results of the commands in the job.
 [Stop-Job](Stop-Job.md)
 
 [Wait-Job](Wait-Job.md)
-

@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/18/2022
+ms.date: 12/09/2022
 no-loc: [Import-Module, -Scope]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -1141,17 +1141,33 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String, System.Management.Automation.PSModuleInfo, System.Reflection.Assembly
+### System.String
 
-You can pipe a module name, module object, or assembly object to this cmdlet.
+You can pipe a module name to this cmdlet.
+
+### System.Management.Automation.PSModuleInfo
+
+You can pipe a module object to this cmdlet.
+
+### System.Reflection.Assembly
+
+You can pipe an assembly object to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.Management.Automation.PSModuleInfo, or System.Management.Automation.PSCustomObject
+### None
 
-By default, `Import-Module` does not generate any output. If you specify the **PassThru** parameter,
-the cmdlet generates a **System.Management.Automation.PSModuleInfo** object that represents the
-module. If you specify the **AsCustomObject** parameter, it generates a **PSCustomObject** object.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSModuleInfo
+
+If you specify the **PassThru** parameter, the cmdlet generates a
+**System.Management.Automation.PSModuleInfo** object that represents the module.
+
+### System.Management.Automation.PSCustomObject
+
+If you specify the **AsCustomObject** and **PassThru** parameters together, the cmdlet generates a
+**PSCustomObject** object that represents the module.
 
 ## NOTES
 
