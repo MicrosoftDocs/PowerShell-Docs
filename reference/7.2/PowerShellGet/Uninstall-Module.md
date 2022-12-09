@@ -38,7 +38,7 @@ uninstall a module if other modules depend on it or the module wasn't installed 
 You can manually delete module files, but doing so may break any modules that depend on the deleted
 module.
 
-The parameters that take module version number take strings formatted as version numbers.
+The parameters that take module version numbers expect strings formatted as version numbers.
 
 - Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
 - Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is

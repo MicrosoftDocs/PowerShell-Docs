@@ -51,7 +51,7 @@ from the module manifest, some metadata must be specified in `Publish-Module` pa
 **Tag**, **ReleaseNote**, **IconUri**, **ProjectUri**, and **LicenseUri**, because these parameters
 match fields in a NuGet-based gallery.
 
-The parameters that take module version number take strings formatted as version numbers.
+The parameters that take module version numbers expect strings formatted as version numbers.
 
 - Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
 - Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is

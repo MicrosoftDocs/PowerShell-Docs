@@ -34,7 +34,7 @@ were installed on the local computer with `Install-Module`. `Update-Module` sear
 update, use the **Name** parameter. You can update to a module's specific version using the
 **RequiredVersion** parameter.
 
-The parameters that take module version number take strings formatted as version numbers.
+The parameters that take module version numbers expect strings formatted as version numbers.
 
 - Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
 - Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is

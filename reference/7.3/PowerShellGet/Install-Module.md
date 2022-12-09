@@ -44,7 +44,7 @@ module, warning messages are displayed. After you confirm that you want to insta
 override the warnings, use the `-Force` and `-AllowClobber` parameters. Dependent upon your
 repository settings, you might need to answer a prompt for the module installation to continue.
 
-The parameters that take module version number take strings formatted as version numbers.
+The parameters that take module version numbers expect strings formatted as version numbers.
 
 - Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
 - Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is

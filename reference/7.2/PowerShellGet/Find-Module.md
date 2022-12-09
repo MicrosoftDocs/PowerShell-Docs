@@ -48,7 +48,7 @@ If the **RequiredVersion** parameter is specified, `Find-Module` only returns th
 that is an exact match to the specified version. `Find-Module` searches through all available
 modules, because name conflicts between sources can occur.
 
-The parameters that take module version number take strings formatted as version numbers.
+The parameters that take module version numbers expect strings formatted as version numbers.
 
 - Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
 - Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is

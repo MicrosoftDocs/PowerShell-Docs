@@ -60,7 +60,7 @@ inspection by an administrator. The saved module can then be copied into the app
 `Get-PSRepository` displays the local computer's registered repositories. You can use the
 `Find-Module` cmdlet to search registered repositories.
 
-The parameters that take module version number take strings formatted as version numbers.
+The parameters that take module version numbers expect strings formatted as version numbers.
 
 - Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
 - Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is

@@ -44,7 +44,7 @@ module, warning messages are displayed. After you confirm that you want to insta
 override the warnings, use the `-Force` and `-AllowClobber` parameters. Dependent upon your
 repository settings, you might need to answer a prompt for the module installation to continue.
 
-The parameters that take module version number take strings formatted as version numbers.
+The parameters that take module version numbers expect strings formatted as version numbers.
 
 - Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
 - Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is
@@ -133,8 +133,8 @@ you get the latest stable version of the module.
 
 ### Example 7: Install a specific prerelease version of a module
 
-This example shows how to install a specific prerelease version of a module. The `Find-Module`
-cmdlet can be used to find prerelease versions of modules in the PowerShell Gallery.
+This example shows how to install a specific prerelease version of a module. You can use the `Find-Module`
+cmdlet to find prerelease versions of modules in the PowerShell Gallery.
 
 Prerelease versions have a format of `<version_number>-<prerelease_label>`.
 
@@ -370,8 +370,8 @@ Accept wildcard characters: False
 
 ### -Repository
 
-Use the **Repository** parameter to specify the name of repository from which to download and
-install a module. Used when multiple repositories are registered. Specifies the name of a registered
+Use the **Repository** parameter to specify the name of the repository to download and
+install a module from. Used when multiple repositories are registered. Specifies the name of a registered
 repository in the `Install-Module` command. To register a repository, use `Register-PSRepository`.
 To display registered repositories, use `Get-PSRepository`.
 
