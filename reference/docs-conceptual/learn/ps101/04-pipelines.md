@@ -1,7 +1,7 @@
 ---
 description: A PowerShell one-liner is one continuous pipeline, containing multiple commands, to accomplish a single task.
 ms.custom: Contributor-mikefrobbins
-ms.date: 11/16/2022
+ms.date: 12/08/2022
 ms.reviewer: mirobb
 title: One-liners and the pipeline
 ---
@@ -238,7 +238,7 @@ separate commands on one line, separated by a semicolon.
 $Service = 'w32time'; Get-Service -Name $Service
 ```
 
-```powershell
+```Output
 Status   Name               DisplayName
 ------   ----               -----------
 Running  w32time            Windows Time
