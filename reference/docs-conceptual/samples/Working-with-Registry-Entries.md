@@ -124,7 +124,7 @@ property.
 > be used to filter by property name. These parameters refer to registry keys, which are item
 > paths and not registry entries, which are item properties.
 
-Another option is to use the `reg.exe` command line tool. For help with reg.exe, type `reg.exe /?`
+Another option is to use the `reg.exe` command line tool. For help with `reg.exe`, type `reg.exe /?`
 at a command prompt. To find the **DevicePath** entry, use `reg.exe` as shown in the following
 command:
 
@@ -220,7 +220,7 @@ from the following table:
 | PropertyType Value |                                    Meaning                                    |
 | ------------------ | ----------------------------------------------------------------------------- |
 | Binary             | Binary data                                                                   |
-| DWord              | A number that's a valid UInt32                                                |
+| DWord              | A number that's a valid **UInt32**                                            |
 | ExpandString       | A string that can contain environment variables that are dynamically expanded |
 | MultiString        | A multiline string                                                            |
 | String             | Any string value                                                              |

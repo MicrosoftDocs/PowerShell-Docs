@@ -218,7 +218,7 @@ Set-Location D:
 ```
 
 ```Output
-Set-Location : can't find path 'D:\' because it doesn't exist.
+Set-Location : Cannot find path 'D:\' because it does not exist.
 ```
 
 When you are using a command-line interface, it's not convenient to use File Explorer to examine the

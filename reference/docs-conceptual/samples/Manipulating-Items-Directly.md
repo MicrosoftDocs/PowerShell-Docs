@@ -66,7 +66,7 @@ Mode                LastWriteTime     Length Name
 
 You can use the same technique to create a new registry key. In fact, a registry key is easier to
 create because the only item type in the Windows registry is a key. (Registry entries are item
-**properties**.) For example, to create a key named `_Test` in the `CurrentVersion` subkey, type:
+_properties_.) For example, to create a key named `_Test` in the `CurrentVersion` subkey, type:
 
 ```powershell
 New-Item -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\_Test
@@ -142,7 +142,7 @@ To move a file or folder, use the `Move-Item` cmdlet.
 
 For example, the following command moves the New.Directory directory from the `C:\temp` directory to
 the root of the `C:` drive. To verify that the item was moved, include the **PassThru** parameter of
-the `Move-Item` cmdlet. Without **Passthru**, the `Move-Item` cmdlet doesn't display any results.
+the `Move-Item` cmdlet. Without **PassThru**, the `Move-Item` cmdlet doesn't display any results.
 
 ```powershell
 Move-Item -Path C:\temp\New.Directory -Destination C:\ -PassThru
@@ -160,7 +160,7 @@ d----        2006-05-18  12:14 PM            New.Directory
 
 If you are familiar with the copy operations in other shells, you might find the behavior of the
 `Copy-Item` cmdlet in PowerShell to be unusual. When you copy an item from one location to another,
-Copy-Item doesn't copy its contents by default.
+`Copy-Item` doesn't copy its contents by default.
 
 For example, if you copy the `New.Directory` directory from the C: drive to the `C:\temp` directory,
 the command succeeds, but the files in the New.Directory directory aren't copied.
@@ -217,7 +217,7 @@ Remove-Item C:\temp\New.Directory
 
 ```Output
 Confirm
-The item at C:\temp\New.Directory has children and the -recurse parameter wasn't
+The item at C:\temp\New.Directory has children and the -recurse parameter was not
 specified. If you continue, all children will be removed with the item. Are you
  sure you want to continue?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help

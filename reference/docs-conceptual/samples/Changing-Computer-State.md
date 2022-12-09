@@ -21,8 +21,8 @@ The only way to lock a computer directly with the standard available tools is to
 rundll32.exe user32.dll,LockWorkStation
 ```
 
-This command immediately locks the workstation. It uses **rundll32.exe** to run call the
-LockWorkStation function in `user32.dll`.
+This command immediately locks the workstation. It uses `rundll32.exe` to call the
+`LockWorkStation` function in `user32.dll`.
 
 When you lock a workstation while Fast User Switching is enabled, such as on Windows XP, the
 computer displays the user logon screen rather than starting the current user's screensaver.
@@ -45,7 +45,7 @@ shutdown.exe -l
 Another option is to use WMI. The **Win32_OperatingSystem** class has a **Shutdown** method.
 Invoking the method with the 0 flag initiates logoff:
 
-For more information, see the [Shutdown method][01] of the Win32_OperatingSystem class.
+For more information, see the [Shutdown method][01] of the **Win32_OperatingSystem** class.
 
 ```powershell
 Get-CimInstance -ClassName Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
@@ -60,7 +60,7 @@ from `tsshutdn.exe /?` or `shutdown.exe /?`.
 
 You can also perform shutdown and restart operations directly from PowerShell.
 
-To shut down the computer, use the Stop-Computer command
+To shut down the computer, use the `Stop-Computer` command
 
 ```powershell
 Stop-Computer

@@ -10,7 +10,7 @@ title: Getting WMI Objects with Get-CimInstance
 Windows Management Instrumentation (WMI) is a core technology for Windows system administration
 because it exposes a wide range of information in a uniform manner. Because of how much WMI makes
 possible, the PowerShell cmdlet for accessing WMI objects, `Get-CimInstance`, is one of the most
-useful for doing real work. we're going to discuss how to use the CimCmdlets to access WMI objects
+useful for doing real work. We're going to discuss how to use the CIM cmdlets to access WMI objects
 and then how to use WMI objects to do specific things.
 
 ## Listing WMI Classes

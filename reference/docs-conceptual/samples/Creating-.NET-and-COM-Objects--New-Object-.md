@@ -30,7 +30,7 @@ New-Object -TypeName System.Diagnostics.EventLog
   ------ ------ --------------        ------- ----
 ```
 
-Although the command has created an instance of the EventLog class, the instance doesn't include any
+Although the command has created an instance of the **EventLog** class, the instance doesn't include any
 data. that's because we didn't specify a particular event log. How do you get a real event log?
 
 ### Using Constructors with New-Object
@@ -102,7 +102,7 @@ $RemoteAppLog
      512      7 OverwriteOlder            262 Application
 ```
 
-Now that we've a reference to an event log stored in the `$RemoteAppLog` variable, what tasks can
+Now that we have a reference to an event log stored in the `$RemoteAppLog` variable, what tasks can
 we perform on it?
 
 ### Clearing an Event Log with Object Methods
@@ -184,7 +184,7 @@ PowerShell, a few tasks such as shortcut creation are still easier to do using t
 One task that can be performed quickly with a COM object is creating a shortcut. Suppose you want to
 create a shortcut on your desktop that links to the home folder for PowerShell. You first
 need to create a reference to **WScript.Shell**, which we will store in a variable named
-**$WshShell**:
+`$WshShell`:
 
 ```powershell
 $WshShell = New-Object -ComObject WScript.Shell
@@ -296,9 +296,9 @@ You create an Internet Explorer instance by specifying the Internet Explorer Pro
 $ie = New-Object -ComObject InternetExplorer.Application
 ```
 
-This command starts Internet Explorer, but doesn't make it visible. If you type Get-Process, you can
-see that a process named iexplore is running. In fact, if you exit PowerShell, the process will
-continue to run. You must reboot the computer or use a tool like Task Manager to end the iexplore
+This command starts Internet Explorer, but doesn't make it visible. If you type `Get-Process`, you can
+see that a process named `iexplore` is running. In fact, if you exit PowerShell, the process will
+continue to run. You must reboot the computer or use a tool like Task Manager to end the `iexplore`
 process.
 
 > [!NOTE]
@@ -366,7 +366,7 @@ Remove-Variable ie
 ## Getting Warnings About .NET Framework-Wrapped COM Objects
 
 In some cases, a COM object might have an associated .NET Framework **Runtime-Callable Wrapper**
-(RCW) that is used by `New-Object`. Since the behavior of the RCW may be different from the behavior
+(RCW) that's used by `New-Object`. Since the behavior of the RCW may be different from the behavior
 of the normal COM object, `New-Object` has a **Strict** parameter to warn you about RCW access. If
 you specify the **Strict** parameter and then create a COM object that uses an RCW, you get a
 warning message:
@@ -377,9 +377,9 @@ $xl = New-Object -ComObject Excel.Application -Strict
 
 ```Output
 New-Object : The object written to the pipeline is an instance of the type "Mic
-rosoft.Office.Interop.Excel.ApplicationClass" from the component's primary inte rop assembly. If
+rosoft.Office.Interop.Excel.ApplicationClass" from the component's primary interop assembly. If
 this type exposes different members than the IDispatch members , scripts written to work with this
-object might not work if the primary intero p assembly isn't installed. At line:1 char:17 + $xl =
+object might not work if the primary interop assembly isn't installed. At line:1 char:17 + $xl =
 New-Object <<<< -ComObject Excel.Application -Strict
 ```
 

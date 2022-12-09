@@ -8,7 +8,7 @@ title: Managing Services
 > This sample only applies to Windows PowerShell 5.1.
 
 There are eight core **Service** cmdlets, designed for a wide range of service tasks . This article
-only looks at listing and changing running state for services. You can get a list of Service cmdlets
+only looks at listing and changing running state for services. You can get a list of service cmdlets
 using `Get-Command *-Service`. You can find information about each cmdlet by using
 `Get-Help <Cmdlet-Name>`, such as `Get-Help New-Service`.
 

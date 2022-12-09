@@ -12,7 +12,7 @@ PowerShell. The PowerShell providers create some drives for you, such as the fil
 system drives (including `C:` and `D:`), the registry drives (`HKCU:` and `HKLM:`), and the
 certificate drive (`Cert:`), and you can create your own PowerShell drives. These drives are
 useful, but they're available only within PowerShell. You can't access them using other Windows
-tools, such as File Explorer or Cmd.exe.
+tools, such as File Explorer or `Cmd.exe`.
 
 PowerShell uses the noun, **PSDrive**, for commands that work with PowerShell
 drives. For a list of the PowerShell drives in your PowerShell session, use the
@@ -120,10 +120,10 @@ New-[-Description <String>] [-Scope <String>] [-Credential <PSCredential>] [-Ver
 To create a new PowerShell drive, you must supply three parameters:
 
 - A name for the drive (you can use any valid PowerShell name)
-- The PSProvider - use "FileSystem" for filesystem locations and "Registry" for registry locations
+- The PSProvider - use `FileSystem` for filesystem locations and `Registry` for registry locations
 - The root, that is, the path to the root of the new drive
 
-For example, you can create a drive named "Office" that's mapped to the folder that contains the
+For example, you can create a drive named `Office` that's mapped to the folder that contains the
 Microsoft Office applications on your computer, such as `C:\Program Files\MicrosoftOffice\OFFICE11`.
 To create the drive, type the following command:
 
@@ -176,9 +176,9 @@ Path
 cvkey:\
 ```
 
-The New-PsDrive cmdlet adds the new drive only to the current PowerShell session. If you close the
-PowerShell window, the new drive is lost. To save a PowerShell drive, use the Export-Console cmdlet
-to export the current PowerShell session, and then use the PowerShell.exe **PSConsoleFile**
+The `New-PSDrive` cmdlet adds the new drive only to the current PowerShell session. If you close the
+PowerShell window, the new drive is lost. To save a PowerShell drive, use the `Export-Console` cmdlet
+to export the current PowerShell session, and then use the `PowerShell.exe` **PSConsoleFile**
 parameter to import it. Or, add the new drive to your Windows PowerShell profile.
 
 ## Deleting PowerShell Drives (Remove-PSDrive)
@@ -190,7 +190,7 @@ the `Office:` PowerShell drive, as shown in the `New-PSDrive` topic, you can del
 Remove-PSDrive -Name Office
 ```
 
-To delete the **cvkey:** PowerShell drive, use the following command:
+To delete the `cvkey:` PowerShell drive, use the following command:
 
 ```powershell
 Remove-PSDrive -Name cvkey
@@ -200,11 +200,11 @@ However, you can't delete it while you are in the drive. For example:
 
 ```powershell
 cd office:
-Remove-PSDrive -name office
+Remove-PSDrive -Name office
 ```
 
 ```Output
-Remove-PSDrive : can't remove drive 'Office' because it's in use.
+Remove-PSDrive : Cannot remove drive 'Office' because it is in use.
 At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```

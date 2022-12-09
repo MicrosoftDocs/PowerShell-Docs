@@ -63,7 +63,7 @@ Get-ChildItem -Path Microsoft.PowerShell.Core\Registry::HKCU
 Get-ChildItem HKCU:
 ```
 
-These commands list only the directly contained items, much like using `DIR` in **Cmd.exe** or `ls`
+These commands list only the directly contained items, much like using `DIR` in `cmd.exe` or `ls`
 in a UNIX shell. To show contained items, you need to specify the **Recurse** parameter. To list all
 registry keys in `HKCU:`, use the following command.
 
@@ -144,7 +144,7 @@ Remove-Item -Path HKCU:\CurrentVersion
 ```Output
 Confirm
 The item at HKCU:\CurrentVersion\AdminDebug has children and the -recurse
-parameter wasn't specified. If you continue, all children will be removed with
+parameter was not specified. If you continue, all children will be removed with
 the item. Are you sure you want to continue?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```

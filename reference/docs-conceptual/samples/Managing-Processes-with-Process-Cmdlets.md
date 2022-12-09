@@ -28,9 +28,9 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ```
 
 Although it's normal for cmdlets to return no data in some situations, when you specify a process by
-its ProcessId, `Get-Process` generates an error if it finds no matches, because the usual intent is
-to retrieve a known running process. If there is no process with that Id, it's likely that the Id is
-incorrect or that the process of interest has already exited:
+its **ProcessId**, `Get-Process` generates an error if it finds no matches, because the usual intent
+is to retrieve a known running process. If there is no process with that ID, it's likely that the ID
+is incorrect or that the process of interest has already exited:
 
 ```powershell
 Get-Process -Id 99
@@ -61,7 +61,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 Because the .NET **System.Diagnostics.Process** class is the foundation for PowerShell processes, it
 follows some of the conventions used by **System.Diagnostics.Process**. One of those conventions is
-that the process name for an executable never includes the ".exe" at the end of the executable name.
+that the process name for an executable never includes the `.exe` at the end of the executable name.
 
 `Get-Process` also accepts multiple values for the Name parameter.
 
@@ -92,7 +92,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-The computer names aren't evident in this display, but they're stored in the MachineName property of
+The computer names aren't evident in this display, but they're stored in the **MachineName** property of
 the process objects that `Get-Process` returns. The following command uses the `Format-Table` cmdlet
 to display the process **ID**, **ProcessName** and **MachineName** (ComputerName) properties of the
 process objects.
@@ -135,7 +135,7 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
 
 PowerShell gives you flexibility for listing processes, but what about stopping a process?
 
-The `Stop-Process` cmdlet takes a Name or Id to specify a process you want to stop. Your ability to
+The `Stop-Process` cmdlet takes a **Name** or **Id** to specify a process you want to stop. Your ability to
 stop processes depends on your permissions. Some processes can't be stopped. For example, if you try
 to stop the idle process, you get an error:
 
@@ -144,7 +144,7 @@ Stop-Process -Name Idle
 ```
 
 ```Output
-Stop-Process : Process 'Idle (0)' can't be stopped due to the following error:
+Stop-Process : Process 'Idle (0)' cannot be stopped due to the following error:
  Access is denied
 At line:1 char:13
 + Stop-Process  <<<< -Name Idle
@@ -190,7 +190,7 @@ using `Where-Object` and the process, **SessionId**:
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
 ```
 
-The `Stop-Process` cmdlet doesn't have a ComputerName parameter. Therefore, to run a stop process
+The `Stop-Process` cmdlet doesn't have a **ComputerName** parameter. Therefore, to run a stop process
 command on a remote computer, you need to use the `Invoke-Command` cmdlet. For example, to stop the
 PowerShell process on the Server01 remote computer, type:
 
@@ -205,7 +205,7 @@ current session. If a session is using too many resources or is inaccessible (it
 remotely or in another desktop session), you may not be able to directly stop it. If you try to stop
 all running sessions, however, the current session may be terminated instead.
 
-Each PowerShell session has an environment variable PID that contains the Id of the Windows
+Each PowerShell session has an environment variable PID that contains the **Id** of the Windows
 PowerShell process. You can check the $PID against the Id of each session and terminate only Windows
 PowerShell sessions that have a different Id. The following pipeline command does this and returns
 the list of terminated sessions (because of the use of the **PassThru** parameter):
