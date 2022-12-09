@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/26/2022
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
@@ -1711,11 +1711,18 @@ represent the input objects in the command.
 
 ## OUTPUTS
 
-### System.Management.Automation.PSRemotingJob, System.Management.Automation.Runspaces.PSSession, or the output of the invoked command
+### System.Management.Automation.PSRemotingJob
 
-This cmdlet returns a job object, if you use the **AsJob** parameter. If you specify the
-**InDisconnectedSession** parameter, `Invoke-Command` returns a **PSSession** object. Otherwise, it
-returns the output of the invoked command, which is the value of the **ScriptBlock** parameter.
+If you use the **AsJob** parameter, this cmdlet returns a job object.
+
+### System.Management.Automation.Runspaces.PSSession
+
+If you use the **InDisconnectedSession** parameter, this cmdlet returns a **PSSession** object.
+
+### System.Object
+
+By default, this cmdlet returns the output of the invoked command, which is the value of the
+**ScriptBlock** parameter.
 
 ## NOTES
 

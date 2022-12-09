@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/02/2022
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/disconnect-pssession?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disconnect-PSSession
@@ -529,13 +529,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.Runspaces.PSSession
 
-You can pipe a session to `Disconnect-PSSession`.
+You can pipe a session to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
 
-`Disconnect-PSSession` returns an object that represents the session that it disconnected.
+This cmdlet returns an object representing the session that it disconnected.
 
 ## NOTES
 

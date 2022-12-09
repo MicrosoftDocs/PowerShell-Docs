@@ -1,11 +1,11 @@
 ---
 description: This article explains how to identify and use the properties and methods of .NET static classes.
-ms.date: 10/11/2021
+ms.date: 12/08/2022
 title: Using Static Classes and Methods
 ---
-# Using Static Classes and Methods
+# Using static classes and methods
 
-Not all .NET Framework classes can be created by using `New-Object`. For example, if you try to
+Not all .NET Framework classes can be created using `New-Object`. For example, if you try to
 create a **System.Environment** or a **System.Math** object with `New-Object`, you will get the
 following error messages:
 
@@ -32,18 +32,18 @@ At line:1 char:11
 ```
 
 These errors occur because there is no way to create a new object from these classes. These classes
-are reference libraries of methods and properties that do not change state. You don't need to create
-them, you simply use them. Classes and methods such as these are called **static classes** because
-they are not created, destroyed, or changed. To make this clear we will provide examples that use
+are reference libraries of methods and properties that don't change state. You don't need to create
+them, you simply use them. Classes and methods such as these are called _static classes_ because
+they're not created, destroyed, or changed. To make this clear we will provide examples that use
 static classes.
 
-## Getting Environment Data with System.Environment
+## Getting environment data with System.Environment
 
 Usually, the first step in working with an object in Windows PowerShell is to use Get-Member to find
 out what members it contains. With static classes, the process is a little different because the
-actual class is not an object.
+actual class isn't an object.
 
-### Referring to the Static System.Environment Class
+### Referring to the static System.Environment class
 
 You can refer to a static class by surrounding the class name with square brackets. For example, you
 can refer to **System.Environment** by typing the name within brackets. Doing so displays some
@@ -113,7 +113,7 @@ TickCount                               ExitCode
 
 We can now select properties to view from System.Environment.
 
-### Displaying Static Properties of System.Environment
+### Displaying static properties of System.Environment
 
 The properties of System.Environment are also static, and must be specified in a different way than
 normal properties. We use `::` to indicate to Windows PowerShell that we want to work with a static
@@ -151,13 +151,13 @@ We can check whether the computer is in the process of shutting down by displayi
 False
 ```
 
-## Doing Math with System.Math
+## Doing math with System.Math
 
-The System.Math static class is useful for performing some mathematical operations. The important
-members of **System.Math** are mostly methods, which we can display by using `Get-Member`.
+The **System.Math** static class is useful for performing some mathematical operations. The class
+includes several useful methods, which we can display using `Get-Member`.
 
 > [!NOTE]
-> System.Math has several methods with the same name, but they are distinguished by the type of
+> **System.Math** has several methods with the same name, but they're distinguished by the type of
 > their parameters.
 
 Type the following command to list the methods of the **System.Math** class.

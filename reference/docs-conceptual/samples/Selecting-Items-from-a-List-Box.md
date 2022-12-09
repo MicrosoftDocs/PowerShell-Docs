@@ -1,17 +1,19 @@
 ---
 description: This article shows how to create a list box control using the .NET Framework form-building features in Windows PowerShell.
-ms.date: 10/07/2021
-title: Selecting Items from a List Box
+ms.date: 12/08/2022
+title: Selecting items from a list box
 ---
-# Selecting Items from a List Box
+# Selecting items from a list box
+
+> This sample only applies to Windows platforms.
 
 Use Windows PowerShell 3.0 and later releases to create a dialog box that lets users select items
 from a list box control.
 
 ## Create a list box control, and select items from it
 
-Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows
-PowerShell script (.ps1).
+Copy and then paste the following into Windows PowerShell ISE, and then save it as a PowerShell
+script (`.ps1`) file.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -72,7 +74,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 The script begins by loading two .NET Framework classes: **System.Drawing** and
 **System.Windows.Forms**. You then start a new instance of the .NET Framework class
-**System.Windows.Forms.Form**; that provides a blank form or window to which you can start adding
+**System.Windows.Forms.Form**. That provides a blank form or window to which you can start adding
 controls.
 
 ```powershell
@@ -80,13 +82,11 @@ Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 ```
 
-After you create an instance of the Form class, assign values to three properties of this class.
+After you create an instance of the **Form** class, assign values to three properties of this class.
 
 - **Text.** This becomes the title of the window.
-
 - **Size.** This is the size of the form, in pixels. The preceding script creates a form that's 300
   pixels wide by 200 pixels tall.
-
 - **StartingPosition.** This optional property is set to **CenterScreen** in the preceding script.
   If you don't add this property, Windows selects a location when the form is opened. By setting the
   **StartingPosition** to **CenterScreen**, you're automatically displaying the form in the middle
@@ -139,7 +139,7 @@ $form.Controls.Add($label)
 
 Add the control (in this case, a list box) that lets users provide the information you've described
 in your label text. There are many other controls you can apply besides list boxes; for more
-controls, see [System.Windows.Forms Namespace](/dotnet/api/system.windows.forms).
+controls, see [System.Windows.Forms Namespace][01].
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -154,7 +154,7 @@ In the next section, you specify the values you want the list box to display to 
 > The list box created by this script allows only one selection. To create a list box
 > control that allows multiple selections, specify a value for the **SelectionMode** property,
 > similarly to the following: `$listBox.SelectionMode = 'MultiExtended'`. For more information, see
-> [Multiple-selection List Boxes](Multiple-selection-List-Boxes.md).
+> [Multiple-selection List Boxes][04].
 
 ```powershell
 [void] $listBox.Items.Add('atl-dc-001')
@@ -184,14 +184,19 @@ Finally, the code inside the **If** block instructs Windows what to do with the 
 select an option from the list box, and then click the **OK** button or press the **Enter** key.
 
 ```powershell
-if ($result -eq [System.Windows.Forms.DialogResult]::OK)
-{
-    $x = $listBox.SelectedItem
-    $x
+if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
+    $x = $listBox.SelectedItem
+    $x
 }
 ```
 
-## See Also
+## See also
 
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week: Selecting Items from a List Box](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))
+- [GitHub: Dave Wyatt's WinFormsExampleUpdates][03]
+- [Windows PowerShell Tip of the Week: Selecting Items from a List Box][02]
+
+<!-- link references -->
+[01]: /dotnet/api/system.windows.forms
+[02]: /previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10)
+[03]: https://github.com/dlwyatt/WinFormsExampleUpdates
+[04]: Multiple-selection-List-Boxes.md

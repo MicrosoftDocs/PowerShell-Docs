@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Archive-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 11/09/2022
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Expand-Archive
@@ -191,9 +191,13 @@ You can pipe a string that contains a path to an existing archive file.
 
 ## OUTPUTS
 
+### None
+
+By default, this cmdlet returns no output.
+
 ### System.IO.FileSystemInfo
 
-When the `-PassThru` parameter is used, the cmdlet outputs a list of files that were expanded from
+When you use the **PassThru** parameter, this cmdlet returns a list of files that were expanded from
 the archive.
 
 ## NOTES

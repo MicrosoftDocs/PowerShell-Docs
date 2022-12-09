@@ -1,23 +1,23 @@
 ---
 description: The Sort-Object cmdlet allows you to sort a collection of objects on one or more properties.
-ms.date: 10/07/2021
-title: Sorting Objects
+ms.date: 12/08/2022
+title: Sorting objects
 ---
-# Sorting Objects
+# Sorting objects
 
-We can organize displayed data to make it easier to scan by using the `Sort-Object` cmdlet.
+We can organize displayed data to make it easier to scan using the `Sort-Object` cmdlet.
 `Sort-Object` takes the name of one or more properties to sort on, and returns data sorted by the
 values of those properties.
 
 ## Basic sorting
 
-Consider the problem of listing subdirectories and files in the current directory.
-If we want to sort by **LastWriteTime** and then by **Name**, we can do it by typing:
+Consider the problem of listing subdirectories and files in the current directory. If we want to
+sort by **LastWriteTime** and then by **Name**, we can do it by typing:
 
 ```powershell
 Get-ChildItem |
-  Sort-Object -Property LastWriteTime, Name |
-  Format-Table -Property LastWriteTime, Name
+    Sort-Object -Property LastWriteTime, Name |
+    Format-Table -Property LastWriteTime, Name
 ```
 
 ```output
@@ -62,8 +62,8 @@ LastWriteTime          Name
 
 ## Using hash tables
 
-You can sort different properties in different orders by using hash tables in an array. Each hash
-table uses an **Expression** key to specify the property name as string and an **Ascending** or
+You can sort different properties in different orders using hash tables in an array. Each hash table
+uses an **Expression** key to specify the property name as string and an **Ascending** or
 **Descending** key to specify the sort order by `$true` or `$false`. The **Expression** key is
 mandatory. The **Ascending** or **Descending** key is optional.
 
@@ -97,8 +97,8 @@ and **LastWriteTime**.
 
 ```powershell
 Get-ChildItem |
-  Sort-Object -Property @{ Expression = { $_.LastWriteTime - $_.CreationTime }; Descending = $true } |
-  Format-Table -Property LastWriteTime, CreationTime
+    Sort-Object -Property @{ Exp = { $_.LastWriteTime - $_.CreationTime }; Desc = $true } |
+    Format-Table -Property LastWriteTime, CreationTime
 ```
 
 ```output
@@ -147,6 +147,6 @@ $order = @(
 )
 
 Get-ChildItem |
-  Sort-Object $order |
-  Format-Table LastWriteTime, Name
+    Sort-Object $order |
+    Format-Table LastWriteTime, Name
 ```

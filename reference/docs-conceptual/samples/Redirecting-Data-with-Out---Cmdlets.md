@@ -1,23 +1,23 @@
 ---
 description: This article shows how to use the cmdlets that manage output in PowerShell.
-ms.date: 07/28/2021
-title: Redirecting Data with Out Cmdlets
+ms.date: 12/08/2022
+title: Redirecting output
 ---
-# Redirecting Data with Out-* Cmdlets
+# Redirecting output
 
-Windows PowerShell provides several cmdlets that let you control data output directly. These cmdlets
-share two important characteristics.
+PowerShell provides several cmdlets that let you control data output directly. These cmdlets share
+two important characteristics.
 
 First, they generally transform data to some form of text. They do this because they output the data
 to system components that require text input. This means they need to represent the objects as text.
-Therefore, the text is formatted as you see it in the Windows PowerShell console window.
+Therefore, the text is formatted as you see it in the PowerShell console window.
 
-Second, these cmdlets use the Windows PowerShell verb **Out** because they send information out from
-Windows PowerShell to somewhere else.
+Second, these cmdlets use the PowerShell verb **Out** because they send information out from
+PowerShell to somewhere else.
 
-## Console Output (Out-Host)
+## Console output
 
-By default, Windows PowerShell sends data to the host window, which is exactly what the `Out-Host`
+By default, PowerShell sends data to the host window, which is exactly what the `Out-Host`
 cmdlet does. The primary use for the `Out-Host` cmdlet is paging. For example, the following command
 uses `Out-Host` to page the output of the `Get-Command` cmdlet:
 
@@ -25,9 +25,9 @@ uses `Out-Host` to page the output of the `Get-Command` cmdlet:
 Get-Command | Out-Host -Paging
 ```
 
-The host window display is outside of Windows PowerShell. This is important because when data is
-sent out of Windows PowerShell, it is actually removed. You can see this if you try to create a
-pipeline that pages data to the host window, and then attempt to format it as a list, as shown here:
+The host window display is outside of PowerShell. This is important because when data is sent out of
+PowerShell, it's actually removed. You can see this if you try to create a pipeline that pages data
+to the host window, and then attempt to format it as a list, as shown here:
 
 ```powershell
 Get-Process | Out-Host -Paging | Format-List
@@ -51,9 +51,9 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 The `Out-Host` cmdlet sends the data directly to the console, so the `Format-List` command never
 receives anything to format.
 
-The correct way to structure this command is to put the `Out-Host` cmdlet at the end of the
-pipeline as shown below. This causes the process data to be formatted in a list before being paged
-and displayed.
+The correct way to structure this command is to put the `Out-Host` cmdlet at the end of the pipeline
+as shown below. This causes the process data to be formatted in a list before being paged and
+displayed.
 
 ```powershell
 Get-Process | Format-List | Out-Host -Paging
@@ -87,63 +87,64 @@ pipeline.
 > All the **Out** cmdlets render output as text, using the formatting in effect for the console
 > window, including line length limits.
 
-## Discarding Output (Out-Null)
+## Discarding output
 
 The `Out-Null` cmdlet is designed to immediately discard any input it receives. This is useful for
 discarding unnecessary data that you get as a side-effect of running a command. When type the
-following command, you do not get anything back from the command:
+following command, you don't get anything back from the command:
 
 ```powershell
 Get-Command | Out-Null
 ```
 
-The `Out-Null` cmdlet does not discard error output. For example, if you enter the following
-command, a message is displayed informing you that Windows PowerShell does not recognize
-'Is-NotACommand':
+The `Out-Null` cmdlet doesn't discard error output. For example, if you enter the following command,
+a message is displayed informing you that PowerShell doesn't recognize `Is-NotACommand`:
 
 ```
 PS> Get-Command Is-NotACommand | Out-Null
-Get-Command : 'Is-NotACommand' is not recognized as a cmdlet, function, operable program, or script file.
+Get-Command : 'Is-NotACommand' isn't recognized as a cmdlet, function, operable program, or script file.
 At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-## Printing Data (Out-Printer)
+## Printing data
 
-You can print data by using the `Out-Printer` cmdlet. The `Out-Printer` cmdlet will use your
-default printer if you do not provide a printer name. You can use any Windows-based printer by
-specifying its display name. There is no need for any kind of printer port mapping or even a real
-physical printer. For example, if you have the Microsoft Office document imaging tools installed,
-you can send the data to an image file by typing:
+> `Out-Printer` is only available on Windows platforms.
+
+You can print data using the `Out-Printer` cmdlet. The `Out-Printer` cmdlet uses your default
+printer if you don't provide a printer name. You can use any Windows-based printer by specifying its
+display name. There is no need for any kind of printer port mapping or even a real physical printer.
+For example, if you have the Microsoft Office document imaging tools installed, you can send the
+data to an image file by typing:
 
 ```powershell
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-## Saving Data (Out-File)
+## Saving data
 
-You can send output to a file instead of the console window by using the `Out-File` cmdlet. The
+You can send output to a file instead of the console window using the `Out-File` cmdlet. The
 following command line sends a list of processes to the file `C:\temp\processlist.txt`:
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt
 ```
 
-The results of using the `Out-File` cmdlet may not be what you expect if you are used to
-traditional output redirection. To understand its behavior, you must be aware of the context in
-which the `Out-File` cmdlet operates.
+The results of using the `Out-File` cmdlet may not be what you expect if you are used to traditional
+output redirection. To understand its behavior, you must be aware of the context in which the
+`Out-File` cmdlet operates.
 
-By default, the `Out-File` cmdlet creates a Unicode file. This is the best default in the long
-run, but it means that tools that expect ASCII files will not work correctly with the default output
-format. You can change the default output format to ASCII by using the **Encoding** parameter:
+On Window PowerShell 5.1, the `Out-File` cmdlet creates a Unicode file. Some tools, that expect
+ASCII files, don't work correctly with the default output format. You can change the default output
+format to ASCII using the **Encoding** parameter:
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt -Encoding ASCII
 ```
 
-`Out-file` formats file contents to look like console output. This causes the output to be
-truncated just as it is in a console window in most circumstances. For example, if you run the
-following command:
+`Out-file` formats file contents to look like console output. This causes the output to be truncated
+just as it's in a console window in most circumstances. For example, if you run the following
+command:
 
 ```powershell
 Get-Command | Out-File -FilePath c:\temp\output.txt
@@ -159,7 +160,7 @@ Cmdlet          Add-History                     Add-History [[-InputObject] ...
 ...
 ```
 
-To get output that does not force line wraps to match the screen width, you can use the **Width**
+To get output that doesn't force line wraps to match the screen width, you can use the **Width**
 parameter to specify line width. Because **Width** is a 32-bit integer parameter, the maximum value
 it can have is 2147483647. Type the following to set the line width to this maximum value:
 
@@ -167,6 +168,5 @@ it can have is 2147483647. Type the following to set the line width to this maxi
 Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647
 ```
 
-The `Out-File` cmdlet is most useful when you want to save output as it would have displayed on
-the console. For finer control over output format, you need more advanced tools. We will look at
-those in the next chapter, along with some details about object manipulation.
+The `Out-File` cmdlet is most useful when you want to save output as it would have displayed on the
+console.

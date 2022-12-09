@@ -1,13 +1,15 @@
 ---
 description: This article how to use the FilterHashtable of Get-WinEvent to query the Windows Event logs.
-ms.date: 10/11/2021
+ms.date: 12/08/2022
 title: Creating Get-WinEvent queries with FilterHashtable
 ---
 
 # Creating Get-WinEvent queries with FilterHashtable
 
+> This sample only applies to Windows platforms.
+
 To read the original June 3, 2014 **Scripting Guy** blog post, see
-[Use FilterHashTable to Filter Event Log with PowerShell](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/).
+[Use FilterHashTable to Filter Event Log with PowerShell][09].
 
 This article is an excerpt of the original blog post and explains how to use the `Get-WinEvent`
 cmdlet's **FilterHashtable** parameter to filter event logs. PowerShell's `Get-WinEvent` cmdlet is a
@@ -38,17 +40,15 @@ Get-WinEvent -FilterHashtable @{
 
 This article presents information about how to use enumerated values in a hash table. For more
 information about enumeration, read these **Scripting Guy** blog posts. To create a function that
-returns the enumerated values, see
-[Enumerations and Values](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values).
-For more information, see the
-[Scripting Guy series of blog posts about enumeration](https://devblogs.microsoft.com/scripting/?s=about+enumeration).
+returns the enumerated values, see [Enumerations and Values][08]. For more information, see the
+[Scripting Guy series of blog posts about enumeration][07].
 
 ## Hash table key-value pairs
 
 To build efficient queries, use the `Get-WinEvent` cmdlet with the **FilterHashtable** parameter.
 **FilterHashtable** accepts a hash table as a filter to get specific information from Windows event
 logs. A hash table uses **key-value** pairs. For more information about hash tables, see
-[about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
+[about_Hash_Tables][05].
 
 If the **key-value** pairs are on the same line, they must be separated by a semicolon. If each
 **key-value** pair is on a separate line, the semicolon isn't needed. For example, this article
@@ -58,8 +58,7 @@ This sample uses several of the **FilterHashtable** parameter's **key-value** pa
 query includes **LogName**, **ProviderName**, **Keywords**, **ID**, and **Level**.
 
 The accepted **key-value** pairs are shown in the following table and are included in the
-documentation for the [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
-**FilterHashtable** parameter.
+documentation for the [Get-WinEvent][06] **FilterHashtable** parameter.
 
 The following table displays the key names, data types, and whether wildcard characters are accepted
 for a data value.
@@ -117,7 +116,7 @@ Continue to build the hash table with the **ProviderName** key. Usually, the **P
 name that appears in the **Source** field in the **Windows Event Viewer**. For example,
 `.NET Runtime` in the following screenshot:
 
-![Image of Windows Event Viewer sources](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
+[Image of Windows Event Viewer sources][02]
 
 Update the hash table and include the **key-value** pair with the key, **ProviderName**, and the
 value, `.NET Runtime`.
@@ -136,12 +135,13 @@ Get-WinEvent -FilterHashtable @{
 
 If your query needs to get data from archived event logs, use the **Path** key. The **Path** value
 specifies the full path to the log file. For more information, see the **Scripting Guy** blog post,
-[Use PowerShell to Parse Saved Event Logs for Errors](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors).
+[Use PowerShell to Parse Saved Event Logs for Errors][10].
 
 ## Using enumerated values in a hash table
 
-**Keywords** is the next key in the hash table. The **Keywords** data type is an array of the `[long]`
-value type that holds a large number. Use the following command to find the maximum value of `[long]`:
+**Keywords** is the next key in the hash table. The **Keywords** data type is an array of the
+`[long]` value type that holds a large number. Use the following command to find the maximum value
+of `[long]`:
 
 ```powershell
 [long]::MaxValue
@@ -152,19 +152,20 @@ value type that holds a large number. Use the following command to find the maxi
 ```
 
 For the **Keywords** key, PowerShell uses a number, not a string such as **Security**. **Windows
-Event Viewer** displays the **Keywords** as strings, but they are enumerated values. In the hash
+Event Viewer** displays the **Keywords** as strings, but they're enumerated values. In the hash
 table, if you use the **Keywords** key with a string value, an error message is displayed.
 
 Open the **Windows Event Viewer** and from the **Actions** pane, click on **Filter current log**.
 The **Keywords** drop-down menu displays the available keywords, as shown in the following
 screenshot:
 
-![Image of Windows Event Viewer keywords](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
+[Image of Windows Event Viewer keywords][01]
 
 Use the following command to display the `StandardEventKeywords` property names.
 
 ```powershell
-[System.Diagnostics.Eventing.Reader.StandardEventKeywords] | Get-Member -Static -MemberType Property
+[System.Diagnostics.Eventing.Reader.StandardEventKeywords] |
+    Get-Member -Static -MemberType Property
 ```
 
 ```Output
@@ -184,7 +185,7 @@ WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEv
 ```
 
 The enumerated values are documented in the **.NET Framework**. For more information, see
-[StandardEventKeywords Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords).
+[StandardEventKeywords Enumeration][03].
 
 The **Keywords** names and enumerated values are as follows:
 
@@ -249,14 +250,15 @@ Get-WinEvent -FilterHashtable @{
 ## Filtering by Level
 
 To further refine the results and include only events that are errors, use the **Level** key.
-**Windows Event Viewer** displays the **Level** as string values, but they are enumerated values. In
+**Windows Event Viewer** displays the **Level** as string values, but they're enumerated values. In
 the hash table, if you use the **Level** key with a string value, an error message is displayed.
 
 **Level** has values such as **Error**, **Warning**, or **Informational**. Use the following command
 to display the `StandardEventLevel` property names.
 
 ```powershell
-[System.Diagnostics.Eventing.Reader.StandardEventLevel] | Get-Member -Static -MemberType Property
+[System.Diagnostics.Eventing.Reader.StandardEventLevel] |
+    Get-Member -Static -MemberType Property
 ```
 
 ```Output
@@ -273,7 +275,7 @@ Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 ```
 
 The enumerated values are documented in the **.NET Framework**. For more information, see
-[StandardEventLevel Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel).
+[StandardEventLevel Enumeration][04].
 
 The **Level** key's names and enumerated values are as follows:
 
@@ -316,3 +318,15 @@ Get-WinEvent -FilterHashtable @{
    Level=$C.Value__
 }
 ```
+
+<!-- link references -->
+[01]: ./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png
+[02]: ./media/creating-get-winEvent-queries-with-filterhashtable/providername.png
+[03]: /dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords
+[04]: /dotnet/api/system.diagnostics.eventing.reader.standardeventlevel
+[05]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
+[06]: /powershell/module/microsoft.powershell.diagnostics/Get-WinEvent
+[07]: https://devblogs.microsoft.com/scripting/?s=about+enumeration
+[08]: https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values
+[09]: https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/
+[10]: https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors

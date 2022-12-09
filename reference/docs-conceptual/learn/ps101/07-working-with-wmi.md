@@ -1,7 +1,7 @@
 ---
 description: PowerShell has had cmdlets for working with WMI since the beginning.
 ms.custom: Contributor-mikefrobbins
-ms.date: 11/16/2022
+ms.date: 12/08/2022
 ms.reviewer: mirobb
 title: Working with WMI
 ---
@@ -183,7 +183,7 @@ Get-CimInstance -ComputerName dc01 -ClassName Win32_BIOS
 Get-CimInstance : Access is denied.
 At line:1 char:1
 + Get-CimInstance -ComputerName dc01 -ClassName Win32_BIOS
-+ ``````````````````````````````````````````````````````~~
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : PermissionDenied: (root\cimv2:Win32_BIOS:String) [Get-CimI
    nstance], CimException
     + FullyQualifiedErrorId : HRESULT 0x80070005,Microsoft.Management.Infrastructure.Cim

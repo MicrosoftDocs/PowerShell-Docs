@@ -1,7 +1,7 @@
 ---
 description: This is the introduction of the book PowerShell 101 by Mike F. Robbins.
 ms.custom: Contributor-mikefrobbins
-ms.date: 11/16/2022
+ms.date: 12/08/2022
 ms.reviewer: mirobb
 title: Introduction
 ---
@@ -55,6 +55,6 @@ PowerShell or operating system, your results may differ from those shown here.
 
 <!-- link references -->
 [@mikefrobbins]: https://twitter.com/mikefrobbins
-[mikefrobbins.com]: http://mikefrobbins.com/
+[mikefrobbins.com]: https://mikefrobbins.com/
 [PowerShell 101]: https://leanpub.com/powershell101
 [Azure PowerShell]: /powershell/azure

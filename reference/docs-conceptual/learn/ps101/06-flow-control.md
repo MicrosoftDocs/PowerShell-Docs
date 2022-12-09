@@ -1,7 +1,7 @@
 ---
 description: PowerShell provides methods to create loops, make decisions, and logically control the flow of code in scripts.
 ms.custom: Contributor-mikefrobbins
-ms.date: 11/16/2022
+ms.date: 12/08/2022
 ms.reviewer: mirobb
 title: Flow control
 ---
@@ -95,7 +95,7 @@ Get-ADComputer : Cannot convert 'System.Object[]' to the type
 Specified method is not supported.
 At line:1 char:26
 + Get-ADComputer -Identity 'DC01', 'WEB01'
-+                          ```````````````
++                          ~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Get-ADComputer], ParameterBindingExc
    eption
     + FullyQualifiedErrorId : CannotConvertArgument,Microsoft.ActiveDirectory.Management

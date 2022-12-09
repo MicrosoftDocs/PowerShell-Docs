@@ -1,7 +1,7 @@
 ---
 description: There are many different ways to run commands against remote computers in PowerShell.
 ms.custom: Contributor-mikefrobbins
-ms.date: 11/16/2022
+ms.date: 12/08/2022
 ms.reviewer: mirobb
 title: PowerShell remoting
 ---
@@ -19,43 +19,39 @@ Get-Command -ParameterName ComputerName
 ```
 
 ```Output
-CommandType Name                        Version Source
------------ ----                        ------- ------
-Cmdlet      Connect-PSSession           7.0.1.0 Microsoft.PowerShell.Core
-Cmdlet      Connect-WSMan               7.0.0.0 Microsoft.WSMan.Management
-Cmdlet      Disconnect-WSMan            7.0.0.0 Microsoft.WSMan.Management
-Cmdlet      Enter-PSSession             7.0.1.0 Microsoft.PowerShell.Core
-Cmdlet      Get-CimAssociatedInstance   7.0.0.0 CimCmdlets
-Cmdlet      Get-CimClass                7.0.0.0 CimCmdlets
-Cmdlet      Get-CimInstance             7.0.0.0 CimCmdlets
-Cmdlet      Get-CimSession              7.0.0.0 CimCmdlets
-Cmdlet      Get-Counter                 7.0.0.0 Microsoft.PowerShell.Diagnostics
-Cmdlet      Get-HotFix                  7.0.0.0 Microsoft.PowerShell.Management
-Cmdlet      Get-PSSession               7.0.1.0 Microsoft.PowerShell.Core
-Cmdlet      Get-WinEvent                7.0.0.0 Microsoft.PowerShell.Diagnostics
-Cmdlet      Get-WSManInstance           7.0.0.0 Microsoft.WSMan.Management
-Cmdlet      Invoke-CimMethod            7.0.0.0 CimCmdlets
-Cmdlet      Invoke-Command              7.0.1.0 Microsoft.PowerShell.Core
-Cmdlet      Invoke-WSManAction          7.0.0.0 Microsoft.WSMan.Management
-Cmdlet      New-CimInstance             7.0.0.0 CimCmdlets
-Cmdlet      New-CimSession              7.0.0.0 CimCmdlets
-Cmdlet      New-PSSession               7.0.1.0 Microsoft.PowerShell.Core
-Cmdlet      New-WSManInstance           7.0.0.0 Microsoft.WSMan.Management
-Cmdlet      Receive-Job                 7.0.1.0 Microsoft.PowerShell.Core
-Cmdlet      Receive-PSSession           7.0.1.0 Microsoft.PowerShell.Core
-Cmdlet      Register-CimIndicationEvent 7.0.0.0 CimCmdlets
-Cmdlet      Remove-CimInstance          7.0.0.0 CimCmdlets
-Cmdlet      Remove-CimSession           7.0.0.0 CimCmdlets
-Cmdlet      Remove-PSSession            7.0.1.0 Microsoft.PowerShell.Core
-Cmdlet      Remove-WSManInstance        7.0.0.0 Microsoft.WSMan.Management
-Cmdlet      Rename-Computer             7.0.0.0 Microsoft.PowerShell.Management
-Cmdlet      Restart-Computer            7.0.0.0 Microsoft.PowerShell.Management
-Cmdlet      Send-MailMessage            7.0.0.0 Microsoft.PowerShell.Utility
-Cmdlet      Set-CimInstance             7.0.0.0 CimCmdlets
-Cmdlet      Set-WSManInstance           7.0.0.0 Microsoft.WSMan.Management
-Cmdlet      Stop-Computer               7.0.0.0 Microsoft.PowerShell.Management
-Cmdlet      Test-Connection             7.0.0.0 Microsoft.PowerShell.Management
-Cmdlet      Test-WSMan                  7.0.0.0 Microsoft.WSMan.Management
+CommandType     Name                           Version    Source
+-----------     ----                           -------    ------
+Cmdlet          Add-Computer                   3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Clear-EventLog                 3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Connect-PSSession              3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Enter-PSSession                3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Get-EventLog                   3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Get-HotFix                     3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Get-Process                    3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Get-PSSession                  3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Get-Service                    3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Get-WmiObject                  3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Invoke-Command                 3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Invoke-WmiMethod               3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Limit-EventLog                 3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          New-EventLog                   3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          New-PSSession                  3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Receive-Job                    3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Receive-PSSession              3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Register-WmiEvent              3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Remove-Computer                3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Remove-EventLog                3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Remove-PSSession               3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Remove-WmiObject               3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Rename-Computer                3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Restart-Computer               3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Send-MailMessage               3.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Set-Service                    3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Set-WmiInstance                3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Show-EventLog                  3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Stop-Computer                  3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Test-Connection                3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Write-EventLog                 3.1.0.0    Microsoft.PowerShell.Management
 ```
 
 Commands such as `Get-Process` and `Get-Hotfix` have a **ComputerName** parameter. This isn't the

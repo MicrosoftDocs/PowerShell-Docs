@@ -1,6 +1,6 @@
 ---
 description: PowerShell supports arrays of one or more dimensions with each dimension having zero or more elements.
-ms.date: 05/19/2021
+ms.date: 12/09/2022
 title: Arrays
 ---
 # 9. Arrays
@@ -244,16 +244,16 @@ multidimensional array, the elements are processed in row-major order. For examp
 ```powershell
 $a = 10, 53, 16, -43
 foreach ($elem in $a) {
-    # do something with element via $e
+    # do something with element via $elem
 }
 
 foreach ($elem in -5..5) {
-    # do something with element via $e
+    # do something with element via $elem
 }
 
 $a = New-Object 'int[,]' 3, 2
 foreach ($elem in $a) {
-    # do something with element via $e
+    # do something with element via $elem
 }
 ```
 

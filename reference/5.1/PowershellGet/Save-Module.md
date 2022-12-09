@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 08/08/2022
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/powershellget/save-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Module
@@ -21,7 +21,7 @@ Saves a module and its dependencies on the local computer but doesn't install th
 Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
  [-RequiredVersion <String>] [-Repository <String[]>] [-Path] <String> [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AllowPrerelease]
- [-AcceptLicense]  [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameAndLiteralPathParameterSet
@@ -30,7 +30,7 @@ Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <Stri
 Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
  [-RequiredVersion <String>] [-Repository <String[]>] -LiteralPath <String> [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AllowPrerelease]
- [-AcceptLicense]  [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObjectAndLiteralPathParameterSet
@@ -59,6 +59,12 @@ inspection by an administrator. The saved module can then be copied into the app
 
 `Get-PSRepository` displays the local computer's registered repositories. You can use the
 `Find-Module` cmdlet to search registered repositories.
+
+The parameters that take module version numbers expect strings formatted as version numbers.
+
+- Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
+- Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is
+  arbitrary string assigned to that release.
 
 ## EXAMPLES
 

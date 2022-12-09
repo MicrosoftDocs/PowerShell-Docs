@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 11/04/2022
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Where-Object
@@ -1157,13 +1157,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe the objects to this cmdlet.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
 ### Object
 
-This cmdlet returns selected items from the input object set.
+This cmdlet returns the selected items from the input object set.
 
 ## NOTES
 

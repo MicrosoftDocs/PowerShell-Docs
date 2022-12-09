@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 11/30/2022
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Publish-Module
@@ -50,6 +50,12 @@ metadata includes the module name, version, description, and author. Although mo
 from the module manifest, some metadata must be specified in `Publish-Module` parameters, such as
 **Tag**, **ReleaseNote**, **IconUri**, **ProjectUri**, and **LicenseUri**, because these parameters
 match fields in a NuGet-based gallery.
+
+The parameters that take module version numbers expect strings formatted as version numbers.
+
+- Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
+- Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is
+  arbitrary string assigned to that release.
 
 ## EXAMPLES
 

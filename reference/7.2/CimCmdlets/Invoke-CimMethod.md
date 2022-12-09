@@ -451,13 +451,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### CIM class
+### Microsoft.Management.Infrastructure.CimClass
 
-This cmdlet accepts a CIM class as an input object.
+You can pipe a CIM class to this cmdlet.
 
-### CIM instance
+### Microsoft.Management.Infrastructure.CimInstance
 
-This cmdlet accepts a CIM instance as an input object.
+You can pipe a CIM instance to this cmdlet.
 
 ## OUTPUTS
 
@@ -476,4 +476,3 @@ This cmdlet returns an object.
 [Get-CimSession](Get-CimSession.md)
 
 [New-CimSession](New-CimSession.md)
-

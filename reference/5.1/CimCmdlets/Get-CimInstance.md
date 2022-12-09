@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 06/21/2021
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/get-ciminstance?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-CimInstance
@@ -501,13 +501,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Management.Infrastructure.CimInstance
 
-This cmdlet accepts an input objects specified with the InputObject parameter.
+You can pipe a CIM instance object to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.Management.Infrastructure.CimInstance
 
-This cmdlet returns one or more CIM instance objects representing a snapshot of the CIM instances on the CIM server.
+This cmdlet returns one or more CIM instance objects representing a snapshot of the CIM instances on
+the CIM server.
 
 ## NOTES
 
