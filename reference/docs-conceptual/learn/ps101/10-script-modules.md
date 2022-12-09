@@ -1,7 +1,7 @@
 ---
 description: Script modules are an easy way to package scripts and functions into a reusable tool.
 ms.custom: Contributor-mikefrobbins
-ms.date: 11/16/2022
+ms.date: 12/08/2022
 ms.reviewer: mirobb
 title: Script modules
 ---
@@ -335,10 +335,12 @@ itself.
 
 ```powershell
 Get-Command -Module MyScriptModule
+```
 
-CommandType     Name                        Version    Source
------------     ----                        -------    ------
-Function        Get-MrPSVersion             1.0        MyScript...
+```Output
+CommandType     Name                                            Version    Source
+-----------     ----                                            -------    ------
+Function        Get-MrPSVersion                                 1.0        MyScriptModule
 ```
 
 If you've added a module manifest to your module (and you should), then I recommend specifying the

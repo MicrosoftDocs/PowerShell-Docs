@@ -1,7 +1,7 @@
 ---
 description: You don't have to be a developer to understand and use objects, properties, and methods.
 ms.custom: Contributor-mikefrobbins
-ms.date: 11/16/2022
+ms.date: 12/08/2022
 ms.reviewer: mirobb
 title: Discovering objects, properties, and methods
 ---
@@ -23,7 +23,7 @@ Be sure to try the examples on your computer to gain some of that hands-on exper
 ## Requirements
 
 The Active Directory PowerShell module is required by some of the examples shown in this chapter.
-The module is part of the Remote Server Administration Tools (RSAT) for Windows. For the 1809 (or 
+The module is part of the Remote Server Administration Tools (RSAT) for Windows. For the 1809 (or
 higher) build of Windows, the RSAT tools are installed as a Windows feature. Support for Active Directory
 is not available on Windows Home.
 
@@ -185,7 +185,7 @@ Wildcard characters can be used when specifying the property names with `Select-
 Get-Service -Name w32time | Select-Object -Property Status, DisplayName, Can*
 ```
 
-```powershell
+```Output
 Status              : Running
 DisplayName         : Windows Time
 CanPauseAndContinue : False
