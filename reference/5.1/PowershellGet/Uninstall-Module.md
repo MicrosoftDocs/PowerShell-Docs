@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 12/08/2022
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/powershellget/uninstall-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Uninstall-Module
@@ -37,6 +37,12 @@ uninstall a module if other modules depend on it or the module wasn't installed 
 
 You can manually delete module files, but doing so may break any modules that depend on the deleted
 module.
+
+The parameters that take module version numbers expect strings formatted as version numbers.
+
+- Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
+- Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is
+  arbitrary string assigned to that release.
 
 ## EXAMPLES
 

@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 06/23/2021
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/powershellget/install-module?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Module
@@ -35,7 +35,7 @@ Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope 
 
 The `Install-Module` cmdlet gets one or more modules that meet specified criteria from an online
 repository. The cmdlet verifies that search results are valid modules and copies the module folders
-to the installation location. Installed modules are not automatically imported after installation.
+to the installation location. Installed modules aren't automatically imported after installation.
 You can filter which module is installed based on the minimum, maximum, and exact versions of
 specified modules.
 
@@ -43,6 +43,12 @@ If the module being installed has the same name or version, or contains commands
 module, warning messages are displayed. After you confirm that you want to install the module and
 override the warnings, use the `-Force` and `-AllowClobber` parameters. Dependent upon your
 repository settings, you might need to answer a prompt for the module installation to continue.
+
+The parameters that take module version numbers expect strings formatted as version numbers.
+
+- Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
+- Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is
+  arbitrary string assigned to that release.
 
 These examples use the [PowerShell Gallery](https://www.powershellgallery.com/) as the only
 registered repository. `Get-PSRepository` displays the registered repositories. If you have multiple
@@ -113,12 +119,52 @@ The `Install-Module` uses the **Name** parameter to specify the **PowerShellGet*
 `Install-Module` downloads and installs the newest version of **PowerShellGet** into the current
 user's directory, `$HOME\Documents\PowerShell\Modules`.
 
+### Example 6: Install the latest prerelease version of a module
+
+This example shows how to install the latest version of a module when that version is a prerelease
+version. Installing a prerelease version requires the **AllowPrerelease** parameter.
+
+```powershell
+Install-Module -Name Microsoft.PowerShell.Crescendo -AllowPrerelease
+```
+
+Using this method you get the latest version available. If the latest version isn't a prerelease,
+you get the latest stable version of the module.
+
+### Example 7: Install a specific prerelease version of a module
+
+This example shows how to install a specific prerelease version of a module. The `Find-Module`
+cmdlet can be used to find prerelease versions of modules in the PowerShell Gallery.
+
+Prerelease versions have a format of `<version_number>-<prerelease_label>`.
+
+```powershell
+Find-Module PSReadLine -AllVersions -AllowPrerelease | Select-Object -First 5
+```
+
+```Output
+Version        Name             Repository       Description
+-------        ----             ----------       -----------
+2.2.6          PSReadLine       PSGallery        Great command line editing in the PowerS…
+2.2.5          PSReadLine       PSGallery        Great command line editing in the PowerS…
+2.2.4-beta1    PSReadLine       PSGallery        Great command line editing in the PowerS…
+2.2.3          PSReadLine       PSGallery        Great command line editing in the PowerS…
+2.2.2          PSReadLine       PSGallery        Great command line editing in the PowerS…
+```
+
+```powershell
+Install-Module -Name PSReadLine -RequiredVersion 2.2.4-beta1 -AllowPrerelease
+```
+
+Use the version shown in the PowerShell Gallery for the value of the **RequiredVersion** parameter.
+
 ## PARAMETERS
 
 ### -AcceptLicense
 
 For modules that require a license, **AcceptLicense** automatically accepts the license agreement
-during installation. For more information, see [Modules Requiring License Acceptance](/powershell/scripting/gallery/concepts/module-license-acceptance).
+during installation. For more information, see
+[Modules Requiring License Acceptance](/powershell/scripting/gallery/concepts/module-license-acceptance).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -222,8 +268,8 @@ Accept wildcard characters: False
 ### -MaximumVersion
 
 Specifies the maximum version of a single module to install. The version installed must be less than
-or equal to **MaximumVersion**. If you want to install multiple modules, you cannot use
-**MaximumVersion**. **MaximumVersion** and **RequiredVersion** cannot be used in the same
+or equal to **MaximumVersion**. If you want to install multiple modules, you can't use
+**MaximumVersion**. **MaximumVersion** and **RequiredVersion** can't be used in the same
 `Install-Module` command.
 
 ```yaml
@@ -242,8 +288,8 @@ Accept wildcard characters: False
 
 Specifies the minimum version of a single module to install. The version installed must be greater than
 or equal to **MinimumVersion**. If there is a newer version of the module available, the newer
-version is installed. If you want to install multiple modules, you cannot use **MinimumVersion**.
-**MinimumVersion** and **RequiredVersion** cannot be used in the same `Install-Module` command.
+version is installed. If you want to install multiple modules, you can't use **MinimumVersion**.
+**MinimumVersion** and **RequiredVersion** can't be used in the same `Install-Module` command.
 
 ```yaml
 Type: System.String
@@ -307,7 +353,7 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Specifies a user account that has permission to use the proxy server that is specified by the
+Specifies a user account that has permission to use the proxy server that's specified by the
 **Proxy** parameter.
 
 ```yaml
@@ -324,8 +370,8 @@ Accept wildcard characters: False
 
 ### -Repository
 
-Use the **Repository** parameter to specify which repository is used to download and install a
-module. Used when multiple repositories are registered. Specifies the name of a registered
+Use the **Repository** parameter to specify the name of repository from which to download and
+install a module. Used when multiple repositories are registered. Specifies the name of a registered
 repository in the `Install-Module` command. To register a repository, use `Register-PSRepository`.
 To display registered repositories, use `Get-PSRepository`.
 
@@ -345,7 +391,7 @@ Accept wildcard characters: False
 
 Specifies the exact version of a single module to install. If there is no match in the repository
 for the specified version, an error is displayed. If you want to install multiple modules, you
-cannot use **RequiredVersion**. **RequiredVersion** cannot be used in the same `Install-Module`
+can't use **RequiredVersion**. **RequiredVersion** can't be used in the same `Install-Module`
 command as **MinimumVersion** or **MaximumVersion**.
 
 ```yaml
@@ -365,19 +411,19 @@ Accept wildcard characters: False
 Specifies the installation scope of the module. The acceptable values for this parameter are
 **AllUsers** and **CurrentUser**.
 
-The **AllUsers** scope installs modules in a location that is accessible to all users of the
+The **AllUsers** scope installs modules in a location that's accessible to all users of the
 computer:
 
 `$env:ProgramFiles\PowerShell\Modules`
 
-The **CurrentUser** installs modules in a location that is accessible only to the current user of
+The **CurrentUser** installs modules in a location that's accessible only to the current user of
 the computer. For example:
 
 `$HOME\Documents\PowerShell\Modules`
 
 When no **Scope** is defined, the default is set based on the PowerShellGet version.
 
-- In PowerShellGet versions 2.0.0 and above, the default is **CurrentUser**, which does not require
+- In PowerShellGet versions 2.0.0 and above, the default is **CurrentUser**, which doesn't require
   elevation for install.
 - In PowerShellGet 1.x versions, the default is **AllUsers**, which requires elevation for install.
 
@@ -397,7 +443,7 @@ Accept wildcard characters: False
 ### -SkipPublisherCheck
 
 Allows you to install a newer version of a module that already exists on your computer. For example,
-when an existing module is digitally signed by a trusted publisher but the new version is not
+when an existing module is digitally signed by a trusted publisher but the new version isn't
 digitally signed by a trusted publisher.
 
 ```yaml
@@ -430,7 +476,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if an `Install-Module` command was run. The cmdlet is not run.
+Shows what would happen if an `Install-Module` command was run. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -482,7 +528,7 @@ releases of Windows.
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)
-> versions 1.0 and 1.1. If you are not using TLS 1.2 or higher, you will receive an error when
+> versions 1.0 and 1.1. If you aren't using TLS 1.2 or higher, you will receive an error when
 > trying to access the PowerShell Gallery. Use the following command to ensure you are using TLS
 > 1.2:
 >
@@ -493,14 +539,14 @@ releases of Windows.
 > PowerShell blog.
 
 As a security best practice, evaluate a module's code before running any cmdlets or functions for
-the first time. To prevent running modules that contain malicious code, installed modules are not
+the first time. To prevent running modules that contain malicious code, installed modules aren't
 automatically imported after installation.
 
-If the module name specified by the **Name** parameter does not exist in the repository,
+If the module name specified by the **Name** parameter doesn't exist in the repository,
 `Install-Module` returns an error.
 
 To install multiple modules, use the **Name** parameter and specify a comma-separated array of
-module names. If you specify multiple module names, you cannot use **MinimumVersion**,
+module names. If you specify multiple module names, you can't use **MinimumVersion**,
 **MaximumVersion**, or **RequiredVersion**. `Find-Module` creates **PSRepositoryItemInfo** objects
 that can be sent down the pipeline to `Install-Module`. The pipeline is another way to specify
 multiple modules to install in a single command.
@@ -509,24 +555,24 @@ By default, modules for the scope of **AllUsers** are installed in
 `$env:ProgramFiles\PowerShell\Modules`. The default prevents confusion when you install PowerShell
 Desired State Configuration (DSC) resources.
 
-A module installation fails and cannot be imported if it does not have a `.psm1`, `.psd1`, or `.dll`
+A module installation fails and can't be imported if it doesn't have a `.psm1`, `.psd1`, or `.dll`
 of the same name within the folder. Use the **Force** parameter to install the module.
 
 If an existing module's version matches the name specified by the **Name** parameter, and the
-**MinimumVersion** or **RequiredVersion** parameter are not used, `Install-Module` silently
-continues but does not install the module.
+**MinimumVersion** or **RequiredVersion** parameter aren't used, `Install-Module` silently continues
+but doesn't install the module.
 
 If an existing module's version is greater than the value of the **MinimumVersion** parameter, or
 equal to the value of the **RequiredVersion** parameter, `Install-Module` silently continues but
-does not install the module.
+doesn't install the module.
 
-If the existing module does not match the values specified by the **MinimumVersion** or
+If the existing module doesn't match the values specified by the **MinimumVersion** or
 **RequiredVersion** parameters, an error occurs in the `Install-Module` command. For example, if the
 version of the existing installed module is lower than the **MinimumVersion** value or not equal to
 the **RequiredVersion** value.
 
-A module installation will also install any dependent modules specified as required by the module publisher.
-The publisher will specify the required modules and their versions in the module manifest.
+`Install-Module` also installs any dependent modules specified as required by the module publisher.
+The publisher lists the required modules and their versions in the module manifest.
 
 ## RELATED LINKS
 

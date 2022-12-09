@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 07/16/2019
+ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/powershellget/update-module?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Module
@@ -32,8 +32,14 @@ were installed on the local computer with `Install-Module`. `Update-Module` sear
 `$env:PSModulePath` for installed modules.
 
 `Update-Module` with no parameters specified updates all installed modules. To specify a module to
-update, use the **Name** parameter. You can update to a module's specific version by using the
+update, use the **Name** parameter. You can update to a module's specific version using the
 **RequiredVersion** parameter.
+
+The parameters that take module version numbers expect strings formatted as version numbers.
+
+- Standard version numbers have a format of `x.y.z` where x, y, and z are numbers
+- Prerelease versions have a format of `x.y.z-<prerelease_label>` where the `<prerelease_label>` is
+  arbitrary string assigned to that release.
 
 If an installed module is already the newest version, the module isn't updated. If the module isn't
 found in `$env:PSModulePath`, an error is displayed.
@@ -385,8 +391,8 @@ permissions.
 `Update-Module` runs on PowerShell 3.0 or later releases of PowerShell, on Windows 7 or Windows 2008
 R2 and later releases of Windows.
 
-If the module that you specify with the **Name** parameter wasn't installed by using
-`Install-Module`, an error occurs.
+If the module that you specify with the **Name** parameter wasn't installed using `Install-Module`,
+an error occurs.
 
 You can only run `Update-Module` on modules that you installed from the online gallery by running
 `Install-Module`.
