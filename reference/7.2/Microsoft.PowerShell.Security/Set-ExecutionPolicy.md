@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 03/22/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ExecutionPolicy
@@ -379,16 +379,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.PowerShell.ExecutionPolicy, System.String
+### Microsoft.PowerShell.ExecutionPolicy
 
-You can pipe an execution policy object or a string that contains the name of an execution policy to
-`Set-ExecutionPolicy`.
+You can pipe an execution policy object to this cmdlet.
+
+### System.String
+
+You can pipe a string that contains the name of an execution policy to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-`Set-ExecutionPolicy` doesn't return any output.
+This cmdlet returns no output.
 
 ## NOTES
 
@@ -421,4 +424,3 @@ conflict.
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [Unblock-File](../Microsoft.PowerShell.Utility/Unblock-File.md)
-

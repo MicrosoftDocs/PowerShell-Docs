@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 04/10/2020
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
 ---
+
 # Get-AuthenticodeSignature
 
 ## SYNOPSIS
@@ -177,13 +178,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains a file path to `Get-AuthenticodeSignature`.
+You can pipe a string that contains a file path to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.Signature
 
-`Get-AuthenticodeSignature` returns a signature object for each signature that it gets.
+This cmdlet returns a signature object for each signature that it gets.
 
 ## NOTES
 

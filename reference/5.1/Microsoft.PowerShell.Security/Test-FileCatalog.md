@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 11/02/2018
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-FileCatalog
 ---
+
 # Test-FileCatalog
 
 ## SYNOPSIS
@@ -172,22 +173,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.IO.DirectoryInfo[], System.String[]
+### System.IO.DirectoryInfo
 
-The pipeline accepts an array of strings or `DirectoryInfo` objects that represent paths to the
-files that need to be validated.
+You can pipe a `DirectoryInfo` object representing the path to the files that need to be validated.
+
+### System.String
+
+You can pipe a string representing the path to the files that need to be validated.
 
 ## OUTPUTS
 
 ### System.Management.Automation.CatalogValidationStatus
 
-The default return type containing a value of either `Valid` or `ValidationFailed`.
+By default, this cmdlet returns a **CatalogValidationStatus** object with a value of either `Valid`
+or `ValidationFailed`.
 
 ### System.Management.Automation.CatalogInformation
 
-A more detailed object returned when using `-Detailed` which can be used to analyze specific files
-that may or may not have passed validation, which hashes were expected vs. found, and the algorithm
-used in the catalog.
+When you use the **Detailed** parameter, the cmdlet returns a **CatalogInformation** object for
+each file, which can be used to analyze specific files that may or may not have passed validation,
+which hashes were expected vs. found, and the algorithm used in the catalog.
 
 ## NOTES
 
