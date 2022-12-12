@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/18/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-module?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Module
@@ -666,6 +666,11 @@ parameter, `Get-Module` returns a **ModuleInfoGrouping** object, which is a type
 object that has the same properties and methods.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Get-Module`:
+
+- All platforms:
+  - `gmo`
 
 - Beginning in Windows PowerShell 3.0, the core commands that are included in PowerShell are
   packaged in modules. The exception is **Microsoft.PowerShell.Core**, which is a snap-in
