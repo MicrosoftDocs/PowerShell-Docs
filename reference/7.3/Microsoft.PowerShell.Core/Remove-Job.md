@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/remove-job?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Job
@@ -425,6 +425,11 @@ You can pipe a **Job** object to this cmdlet.
 This cmdlet returns no output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Remove-Job`:
+
+- All platforms:
+  - `rjb`
 
 A PowerShell job creates a new process. When the job completes, the process exits. When `Remove-Job`
 is run, the job's state is removed.

@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/28/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/wait-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Job
@@ -491,6 +491,10 @@ This cmdlet returns job objects that represent the jobs in a terminating state. 
 because the value of the **Timeout** parameter is exceeded, `Wait-Job` does not return any objects.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Wait-Job`:
+
+- `wjb`
 
 By default, `Wait-Job` returns, or ends the wait, when jobs are in one of the following states:
 
