@@ -2,7 +2,7 @@
 external help file: PSDiagnostics-help.xml
 Locale: en-US
 Module Name: PSDiagnostics
-ms.date: 11/27/2018
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/psdiagnostics/start-trace?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Trace
@@ -39,12 +39,24 @@ You must run this cmdlet from an elevated PowerShell session.
 ### Example 1: Start a WSMan Trace logging session
 
 ```powershell
-Start-Trace -SessionName 'wsmlog' -ETS -OutputFilePath "$env:windir\system32\wsmtraces.log" -Format 'bincirc' -MinBuffers 16 -MaxBuffers 256 -BufferSizeInKb 64 -MaxLogFileSizeInMB 256 -ProviderFilePath "$env:windir\system32\wsmtraceproviders.txt"
+$parameters = @{
+    SessionName         = 'wsmlog'
+    ETS                 = $true
+    OutputFilePath      = "$env:windir\system32\wsmtraces.log"
+    Format              = 'bincirc'
+    MinBuffers          = 16
+    MaxBuffers          = 256
+    BufferSizeInKb      = 64
+    MaxLogFileSizeInMB  = 256
+    ProviderFilePath    = "$env:windir\system32\wsmtraceproviders.txt"
+}
+Start-Trace @parameters
 ```
 
 ## PARAMETERS
 
 ### -BufferSizeInKB
+
 Event Trace Session buffer size in kilobytes (KB).
 
 ```yaml
@@ -60,6 +72,7 @@ Accept wildcard characters: False
 ```
 
 ### -ETS
+
 Send commands to Event Trace Sessions directly without saving or scheduling.
 
 ```yaml
@@ -75,8 +88,10 @@ Accept wildcard characters: False
 ```
 
 ### -Format
-Specifies the log format for the data collector. For SQL database format, you must use the **OutputFilePath**
-option in the command line with the `dsn!log` value. The default is binary (bin). The possible values are:
+
+Specifies the log format for the data collector. For SQL database format, you must use the
+**OutputFilePath** option in the command line with the `dsn!log` value. The default is binary
+(bin). The possible values are:
 
 - bin - binary
 - bincirc - binary with circular logging
@@ -98,6 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxBuffers
+
 Sets the maximum number of Event Trace Session buffers.
 
 ```yaml
@@ -113,6 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxLogFileSizeInMB
+
 Sets the maximum log file size in megabytes (MB) or number of records for SQL logs.
 
 ```yaml
@@ -128,6 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinBuffers
+
 Sets the minimum number of Event Trace Session buffers.
 
 ```yaml
@@ -143,6 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputFilePath
+
 Path of the output log file or the DSN and log set name in a SQL database. The default path is
 `$env:systemdrive\PerfLogs\Admin`.
 
@@ -159,6 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderFilePath
+
 File listing multiple Event Trace providers to enable.
 
 ```yaml
@@ -174,6 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionName
+
 The name of the Event Trace session. To stop a trace session you must know the session name.
 
 ```yaml
@@ -199,9 +220,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
+You can't pipe objects to this cmdlet.
+
 ## OUTPUTS
 
 ### None
+
+This cmdlet returns no output.
 
 ## NOTES
 
@@ -218,4 +243,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Enable-PSWSManCombinedTrace](Enable-PSWSManCombinedTrace.md)
 
 [Enable-WSManTrace](Enable-WSManTrace.md)
-
