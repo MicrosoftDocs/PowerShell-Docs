@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 10/26/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WinEvent
@@ -917,23 +917,31 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String, System.Xml.XmlDocument, System.Collections.Hashtable
+### System.String
 
-You can pipeline a **LogName** (string), a **FilterXML** query, or a **FilterHashtable** query to
-`Get-WinEvent`.
+You can pipe a **LogName** (string) to this cmdlet.
+
+### System.Xml.XmlDocument
+
+You can pipe a **FilterXML** query to this cmdlet.
+
+### System.Collections.Hashtable
+
+You can pipe a **FilterHashtable** query to this cmdlet.
 
 ## OUTPUTS
 
-### System.Diagnostics.Eventing.Reader.EventLogConfiguration, System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.Eventing.Reader.ProviderMetadata
+### System.Diagnostics.Eventing.Reader.EventLogConfiguration
 
-With the **ListLog** parameter, `Get-WinEvent` returns
-**System.Diagnostics.Eventing.Reader.EventLogConfiguration** objects.
+With the **ListLog** parameter, this cmdlet returns **EventLogConfiguration** objects.
 
-With the **ListProvider** parameter, `Get-WinEvent` returns
-**System.Diagnostics.Eventing.Reader.ProviderMetadata** objects.
+### System.Diagnostics.Eventing.Reader.EventLogRecord
 
-With all other parameters, `Get-WinEvent` returns
-**System.Diagnostics.Eventing.Reader.EventLogRecord** objects.
+By default, this cmdlet returns **EventLogRecord** objects.
+
+### System.Diagnostics.Eventing.Reader.ProviderMetadata
+
+With the **ListProvider** parameter, this cmdlet returns **ProviderMetadata** objects.
 
 ## NOTES
 

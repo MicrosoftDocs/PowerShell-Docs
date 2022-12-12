@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 05/04/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/new-winevent?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-WinEvent
 ---
+
 # New-WinEvent
 
 ## SYNOPSIS
@@ -196,13 +197,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not take input from the pipeline.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does to generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

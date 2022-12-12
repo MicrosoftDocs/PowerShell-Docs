@@ -2,11 +2,12 @@
 external help file: PSDiagnostics-help.xml
 Locale: en-US
 Module Name: PSDiagnostics
-ms.date: 11/27/2018
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/psdiagnostics/stop-trace?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Trace
 ---
+
 # Stop-Trace
 
 ## SYNOPSIS
@@ -42,6 +43,7 @@ Stop-Trace -SessionName 'wsmlog'
 ## PARAMETERS
 
 ### -ETS
+
 Send commands to Event Trace Sessions directly without saving or scheduling.
 
 ```yaml
@@ -57,6 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionName
+
 The name of the Event Trace session to be stopped.
 
 ```yaml
@@ -72,6 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
@@ -81,9 +85,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
+You can't pipe objects to this cmdlet.
+
 ## OUTPUTS
 
 ### None
+
+This cmdlet returns no output.
 
 ## NOTES
 
@@ -100,4 +108,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Enable-PSWSManCombinedTrace](Enable-PSWSManCombinedTrace.md)
 
 [Enable-WSManTrace](Enable-WSManTrace.md)
-

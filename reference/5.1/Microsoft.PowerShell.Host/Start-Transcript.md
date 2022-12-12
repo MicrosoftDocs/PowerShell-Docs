@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ConsoleHost.dll-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 01/26/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
@@ -244,13 +244,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe objects to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.String
 
-This cmdlet returns a string that contains a confirmation message and the path to the output file.
+This cmdlet returns a string containing a confirmation message and the path to the output file.
 
 ## NOTES
 

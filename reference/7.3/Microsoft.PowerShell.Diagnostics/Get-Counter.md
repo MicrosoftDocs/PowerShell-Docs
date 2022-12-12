@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 05/17/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Counter
@@ -620,16 +620,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.GetCounter.CounterSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample
+### Microsoft.PowerShell.Commands.GetCounter.CounterSet
 
-To view an object's properties, send the output down the pipeline to `Get-Member`. The object types
-that are output are as follows:
+With the **ListSet** parameter, this cmdlet returns **CounterSet** objects.
 
-**ListSet** parameter: **Microsoft.PowerShell.Commands.GetCounter.CounterSet**
+### Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet
 
-**Counter** parameter: **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet**
-
-**CounterSamples** property: **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample**
+By default and with the **Counter** parameter, this cmdlet returns **PerformanceCounterSampleSet**
+objects.
 
 ## NOTES
 
