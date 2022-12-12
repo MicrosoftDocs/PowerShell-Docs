@@ -1,7 +1,7 @@
 ---
 description: Describes how to use splatting to pass parameters to commands in PowerShell.
 Locale: en-US
-ms.date: 08/11/2020
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Splatting
@@ -134,9 +134,7 @@ Invoke-Command -ScriptBlock {
   param([string[]]$words) $words -join ' '
   } -ArgumentList $array
 ```
-<!--
-01234567890123456789012345678901234567890123456789012345678901234567890123456789
--->
+
 In this example, only the first item in `$array` is passed to the script block.
 
 ```Output
@@ -191,7 +189,7 @@ Write-Host @Colors "This is another test."
 
 ### Example 2: Forward parameters using $PSBoundParameters
 
-This example shows how to forward their parameters to other commands by using
+This example shows how to forward their parameters to other commands using
 splatting and the `$PSBoundParameters` automatic variable.
 
 The `$PSBoundParameters` automatic variable is a dictionary object
@@ -208,9 +206,9 @@ function Test1
 {
     param($a, $b, $c)
 
-    $a
-    $b
-    $c
+    "a = $a"
+    "b = $b"
+    "c = $c"
 }
 
 function Test2
@@ -218,22 +216,22 @@ function Test2
     param($a, $b, $c)
 
     #Call the Test1 function with $a, $b, and $c.
-    Test1 @PsBoundParameters
+    Test1 @PSBoundParameters
 
     #Call the Test1 function with $b and $c, but not with $a
-    $LimitedParameters = $PSBoundParameters
-    $LimitedParameters.Remove("a") | Out-Null
-    Test1 @LimitedParameters
+    Test1 -b $PSBoundParameters.b -c $PSBoundParameters.c
 }
+
+Test2 -a 1 -b 2 -c 3
 ```
 
 ```Output
-Test2 -a 1 -b 2 -c 3
-1
-2
-3
-2
-3
+a = 1
+b = 2
+c = 3
+a =
+b = 2
+c = 3
 ```
 
 ### Example 3: Override splatted parameters with explicitly defined parameters
