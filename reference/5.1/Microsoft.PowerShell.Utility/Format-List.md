@@ -325,7 +325,7 @@ fails. If the alternate view is a table, use `Format-Table`. If the alternate vi
 a table, use `Format-Custom`.
 
 If you want to use `Format-List` with the **Property** parameter, you need to include the **Force**
-parameter under one of the following conditions:
+parameter under any of the following conditions:
 
 - The input objects are formatted out-of-band using the `ToString()` method. This applies to
   `[string]` and .NET primitive types that are a superset of the built-in numeric types such as

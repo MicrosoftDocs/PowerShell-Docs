@@ -527,7 +527,7 @@ for the header of the table displayed by `Format-Table`. For more information ab
 see [about_ANSI_Terminals](../microsoft.powershell.core/about/about_ansi_terminals.md).
 
 If you want to use `Format-Table` with the **Property** parameter, you need to include the **Force**
-parameter under one of the following conditions:
+parameter under any of the following conditions:
 
 - The input objects are normally formatted out-of-band using the `ToString()` method. This applies
   to `[string]` and .NET primitive types, which are a superset of the built-in numeric types such as
