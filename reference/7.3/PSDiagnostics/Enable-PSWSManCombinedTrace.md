@@ -2,11 +2,12 @@
 external help file: PSDiagnostics-help.xml
 Locale: en-US
 Module Name: PSDiagnostics
-ms.date: 11/29/2018
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/psdiagnostics/enable-pswsmancombinedtrace?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSWSManCombinedTrace
 ---
+
 # Enable-PSWSManCombinedTrace
 
 ## SYNOPSIS
@@ -45,8 +46,8 @@ Enable-PSWSManCombinedTrace
 
 ### -DoNotOverwriteExistingTrace
 
-By default, the events are written to "$pshome\Traces\PSTrace.etl". When this parameter is used,
-the cmdlet creates a unique filename: "$pshome\Traces\PSTrace_{guid}.etl"
+By default, the events are written to `$PSHOME\Traces\PSTrace.etl`. When this parameter is used,
+the cmdlet creates a unique filename: `$PSHOME\Traces\PSTrace_{guid}.etl`
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -71,9 +72,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
+You can't pipe objects to this cmdlet.
+
 ## OUTPUTS
 
 ### None
+
+This cmdlet returns no output.
 
 ## NOTES
 
@@ -84,4 +89,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Start-Trace](start-trace.md)
 
 [Disable-PSWSManCombinedTrace](Disable-PSWSManCombinedTrace.md)
-

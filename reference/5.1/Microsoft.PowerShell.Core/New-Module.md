@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Module
@@ -411,6 +411,10 @@ If you use the **ReturnResult** parameter, this cmdlet returns the result of eva
 block in the dynamic module.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `New-Module`:
+
+- `nmo`
 
 You can also refer to `New-Module` by its alias, `nmo`. For more information, see
 [about_Aliases](About/about_Aliases.md).

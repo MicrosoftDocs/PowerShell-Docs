@@ -2,11 +2,12 @@
 external help file: PSDiagnostics-help.xml
 Locale: en-US
 Module Name: PSDiagnostics
-ms.date: 11/27/2018
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/psdiagnostics/get-logproperties?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-LogProperties
 ---
+
 # Get-LogProperties
 
 ## SYNOPSIS
@@ -71,9 +72,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
+You can pipe a string containing the name of a log provider to this cmdlet.
+
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Diagnostics.LogDetails
+
+This cmdlet returns a **LogDetails** object.
 
 The **PSDiagnostics** module adds the **LogDetails** class to the
 `Microsoft.PowerShell.Diagnostics` namespace.
@@ -87,4 +92,3 @@ The **PSDiagnostics** module adds the **LogDetails** class to the
 [Enable-PSTrace](Enable-PSTrace.md)
 
 [Disable-PSTrace](Disable-PSTrace.md)
-

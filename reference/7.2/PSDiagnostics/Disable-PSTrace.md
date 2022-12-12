@@ -2,11 +2,12 @@
 external help file: PSDiagnostics-help.xml
 Locale: en-US
 Module Name: PSDiagnostics
-ms.date: 11/27/2018
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/psdiagnostics/disable-pstrace?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSTrace
 ---
+
 # Disable-PSTrace
 
 ## SYNOPSIS
@@ -58,15 +59,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
+You can't pipe objects to this cmdlet.
+
 ## OUTPUTS
 
 ### None
+
+This cmdlet returns no output.
 
 ## NOTES
 
@@ -81,4 +90,3 @@ You must run this cmdlet from an elevated PowerShell session.
 [Set-LogProperties](Set-LogProperties.md)
 
 [Enable-PSTrace](Enable-PSTrace.md)
-

@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 06/09/2017
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/stop-transcript?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Transcript
 ---
+
 # Stop-Transcript
 
 ## SYNOPSIS
@@ -37,13 +38,16 @@ This command stops all transcripts.
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
@@ -53,11 +57,8 @@ This cmdlet returns a string that contains a status message and the path to the 
 
 ## NOTES
 
-* If a transcript has not been started, the command fails.
-
-*
+- If a transcript has not been started, the command fails.
 
 ## RELATED LINKS
 
 [Start-Transcript](Start-Transcript.md)
-

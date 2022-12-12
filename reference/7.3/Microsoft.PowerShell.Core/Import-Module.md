@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 12/12/2022
 no-loc: [Import-Module, -Scope]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -1238,6 +1238,11 @@ If you specify the **AsCustomObject** and **PassThru** parameters together, the 
 **PSCustomObject** object that represents the module.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Import-Module`:
+
+- All platforms:
+  - `ipmo`
 
 - Before you can import a module, the module must be installed on the local computer. That is, the
   module directory must be copied to a directory that is accessible to your local computer. For more
