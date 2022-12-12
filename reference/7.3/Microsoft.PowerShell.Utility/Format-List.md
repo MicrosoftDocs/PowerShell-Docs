@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/11/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-list?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-List
@@ -72,7 +72,7 @@ can omit it.
 
 ### Example 4: Format all properties for a process
 
-This command displays all of the properties of the Winlogon process.
+This command displays all the properties of the Winlogon process.
 
 ```powershell
 Get-Process winlogon | Format-List -Property *
@@ -152,9 +152,12 @@ Accept wildcard characters: False
 
 ### -Force
 
-Indicates that this cmdlet displays all of the error information. Use with the **DisplayError** or
+Indicates that this cmdlet displays all the error information. Use with the **DisplayError** or
 **ShowError** parameter. By default, when an error object is written to the error or display
-streams, only some of the error information is displayed.
+streams, only some error information is displayed.
+
+Also required when formatting certain .NET types. For more information, see the [Notes](#notes)
+section.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -304,9 +307,6 @@ PowerShell includes the following aliases for `Format-List`:
 - All platforms:
   - `fl`
 
-You can also refer to `Format-List` by its built-in alias, `fl`. For more information, see
-[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
-
 The format cmdlets, such as `Format-List`, arrange the data to be displayed but do not display it.
 The data is displayed by the output features of PowerShell and by the cmdlets that contain the `Out`
 verb (the `Out` cmdlets), such as `Out-Host` or `Out-File`.
@@ -319,11 +319,33 @@ The **GroupBy** parameter assumes that the objects are sorted. Use `Sort-Object`
 
 The **View** parameter lets you specify an alternate format for the table. You can use the views
 defined in the `*.format.PS1XML` files in the PowerShell directory, or you can create your own views
-in new PS1XML files and use the Update-FormatData cmdlet to include them in PowerShell.
+in new PS1XML files and use the `Update-FormatData` cmdlet to include them in PowerShell.
 
 The alternate view for the **View** parameter must use the list format, otherwise, the command
 fails. If the alternate view is a table, use `Format-Table`. If the alternate view is not a list or
 a table, use `Format-Custom`.
+
+If you want to use `Format-List` with the **Property** parameter, you need to include the **Force**
+parameter under one of the following conditions:
+
+- The input objects are formatted out-of-band using the `ToString()` method. This applies to
+  `[string]` and .NET primitive types that are a superset of the built-in numeric types such as
+  `[int]`, `[long]`, and others.
+
+- The input objects have no public properties.
+
+- The input objects are instances of the wrapper types PowerShell uses for output streams other
+  than the Success output stream. This applies only when these wrapper types are sent to the Success
+  output stream, which requires either having captured them via common parameters such as
+  **ErrorVariable** first or using a redirection such as `*>&1`.
+
+  - The wrapper types include:
+
+    - [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
+    - [System.Management.Automation.WarningRecord](/dotnet/api/System.Management.Automation.WarningRecord)
+    - [System.Management.Automation.VerboseRecord](/dotnet/api/System.Management.Automation.VerboseRecord)
+    - [System.Management.Automation.DebugRecord](/dotnet/api/System.Management.Automation.DebugRecord)
+    - [System.Management.Automation.InformationRecord](/dotnet/api/System.Management.Automation.InformationRecord)
 
 ## RELATED LINKS
 
