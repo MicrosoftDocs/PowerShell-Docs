@@ -46,8 +46,8 @@ Enable-PSWSManCombinedTrace
 
 ### -DoNotOverwriteExistingTrace
 
-By default, the events are written to `$pshome\Traces\PSTrace.etl`. When this parameter is used,
-the cmdlet creates a unique filename: `$pshome\Traces\PSTrace_{guid}.etl`
+By default, the events are written to `$PSHOME\Traces\PSTrace.etl`. When this parameter is used,
+the cmdlet creates a unique filename: `$PSHOME\Traces\PSTrace_{guid}.etl`
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
