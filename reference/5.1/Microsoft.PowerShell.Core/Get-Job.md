@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Job
@@ -682,6 +682,10 @@ You can't pipe objects to this cmdlet.
 This cmdlet returns objects that represent the jobs in the session.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Get-Job`:
+
+- `gjb`
 
 The **PSJobTypeName** property of jobs indicates the job type of the job. The property value is
 determined by the job type author. The following list shows common job types.

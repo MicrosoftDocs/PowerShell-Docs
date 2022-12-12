@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Job
@@ -687,6 +687,11 @@ example, you can pipe a **FileInfo** object from `Get-ChildItem`.
 This cmdlet returns a **PSRemotingJob** object representing the job that it started.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Start-Job`:
+
+- All platforms:
+  - `sajb`
 
 To run in the background, `Start-Job` runs in its own session in the current session. When you use
 the `Invoke-Command` cmdlet to run a `Start-Job` command in a session on a remote computer,
