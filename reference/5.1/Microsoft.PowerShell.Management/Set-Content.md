@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/11/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-content?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Content
 ---
+
 # Set-Content
 
 ## SYNOPSIS
@@ -458,14 +459,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe an object that contains the new value for the item to `Set-Content`.
+You can pipe an object that contains the new value for the item to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.String
+### None
 
-When you use the **PassThru** parameter, `Set-Content` generates a **System.String** object that
-represents the content. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.String
+
+When you use the **PassThru** parameter, this cmdlet returns a string representing the content.
 
 ## NOTES
 

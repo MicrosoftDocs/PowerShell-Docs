@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/08/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Process
 ---
+
 # Get-Process
 
 ## SYNOPSIS
@@ -433,12 +434,18 @@ You can pipe a process object to this cmdlet.
 
 ## OUTPUTS
 
-### System.Diagnostics.Process, System.Diagnostics.FileVersionInfo, System.Diagnostics.ProcessModule
+### System.Diagnostics.Process
 
-By default, this cmdlet returns a **System.Diagnostics.Process** object. If you use the
-**FileVersionInfo** parameter, it returns a **System.Diagnostics.FileVersionInfo** object. If you
-use the **Module** parameter, without the **FileVersionInfo** parameter, it returns a
-**System.Diagnostics.ProcessModule** object.
+By default, this cmdlet returns a **System.Diagnostics.Process** object.
+
+### System.Diagnostics.FileVersionInfo
+
+If you use the **FileVersionInfo** parameter, this cmdlet returns a **FileVersionInfo** object.
+
+### System.Diagnostics.ProcessModule
+
+ If you use the **Module** parameter, without the **FileVersionInfo** parameter, this cmdlet returns
+a **ProcessModule** object.
 
 ## NOTES
 

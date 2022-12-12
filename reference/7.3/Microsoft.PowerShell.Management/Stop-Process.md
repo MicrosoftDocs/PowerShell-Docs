@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/30/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/stop-process?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Process
 ---
+
 # Stop-Process
 
 ## SYNOPSIS
@@ -280,10 +281,14 @@ You can pipe a process object to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.Diagnostics.Process
+### None
 
-This cmdlet returns a **System.Diagnostics.Process** object that represents the stopped process, if
-you specify the **PassThru** parameter. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Diagnostics.Process
+
+When you use the **PassThru** parameter, this cmdlet returns a **Process** object representing the
+stopped process.
 
 ## NOTES
 

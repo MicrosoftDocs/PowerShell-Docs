@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/30/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/split-path?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Split-Path
 ---
+
 # Split-Path
 
 ## SYNOPSIS
@@ -345,13 +346,15 @@ You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### System.String, System.Boolean
+### System.String
 
-`Split-Path` returns text strings. When you specify the **Resolve** parameter, `Split-Path` returns
-a string that describes the location of the items; it does not return objects that represent the
+This cmdlet returns text strings. When you specify the **Resolve** parameter, it returns a
+string that describes the location of the items. It does not return objects that represent the
 items, such as a **FileInfo** or **RegistryKey** object.
 
-When you specify the *IsAbsolute* parameter, `Split-Path` returns a **Boolean** value.
+### System.Boolean
+
+When you specify the **IsAbsolute** parameter, this cmdlet returns a **Boolean** value.
 
 ## NOTES
 

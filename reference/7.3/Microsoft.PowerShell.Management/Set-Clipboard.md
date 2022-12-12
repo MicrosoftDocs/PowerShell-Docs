@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/03/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
 ---
+
 # Set-Clipboard
 
 ## SYNOPSIS
@@ -133,9 +134,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String[]
+### System.String
+
+You can pipe a string containing the content to set to the clipboard to this cmdlet.
 
 ## OUTPUTS
+
+### None
+
+This cmdlet returns no output.
 
 ## NOTES
 

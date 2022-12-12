@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/15/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/push-location?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Push-Location
 ---
+
 # Push-Location
 
 ## SYNOPSIS
@@ -182,14 +183,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains a path (but not a literal path) to `Push-Location`.
+You can pipe a string that contains a path (but not a literal path) to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.Management.Automation.PathInfo
+### None
 
-This cmdlet returns a **PathInfo** object representing the current path after the cmdlet's
-operation, if you specify the **PassThru** parameter. Otherwise, it does not return any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PathInfo
+
+When you use the **PassThru** parameter, this cmdlet returns a **PathInfo** object representing the
+current path after the cmdlet's operation.
 
 ## NOTES
 

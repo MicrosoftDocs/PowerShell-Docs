@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 07/02/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-computerinfo?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ComputerInfo
 ---
+
 # Get-ComputerInfo
 
 ## SYNOPSIS
@@ -88,9 +89,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String[]
 
+You can pipe a string containing the name of a property to this cmdlet.
+
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Management.ComputerInfo
+
+This cmdlet returns a **ComputerInfo** object.
 
 ## NOTES
 

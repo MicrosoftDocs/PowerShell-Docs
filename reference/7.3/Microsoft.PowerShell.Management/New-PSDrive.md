@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/17/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-psdrive?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSDrive
@@ -480,11 +480,13 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 
 ### None
 
-You can't pipeline input to this cmdlet.
+You can't pipe objects to this cmdlet
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSDriveInfo
+
+This cmdlet returns a **PSDriveInfo** object representing the created drive.
 
 ## NOTES
 

@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/18/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/clear-itemproperty?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-ItemProperty
 ---
+
 # Clear-ItemProperty
 
 ## SYNOPSIS
@@ -265,10 +266,14 @@ You can pipe a path string to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.PSCustomObject
+### None
 
-When you use the **PassThru** parameter, `Clear-ItemProperty` generates a **PSCustomObject** object
-that represents the cleared item property. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSCustomObject
+
+When you use the **PassThru** parameter, this cmdlet returns a **PSCustomObject** object
+representing the cleared item property.
 
 ## NOTES
 
@@ -297,4 +302,3 @@ PowerShell includes the following aliases for `Clear-ItemProperty`:
 [Rename-ItemProperty](Rename-ItemProperty.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

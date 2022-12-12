@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/20/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-HotFix
@@ -192,13 +192,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### String
 
-You can pipe one or more computer names to Get-HotFix.
+You can pipe a string containing a computer name to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.ManagementObject#root\CIMV2\Win32_QuickFixEngineering
 
-`Get-HotFix` returns objects that represent the hotfixes on the computer.
+This cmdlet returns objects representing the hotfixes on the computer.
 
 ## NOTES
 
